@@ -1,0 +1,92 @@
+{
+  "slug": "vercel-analytics",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Vercel — Analytics & Observability (site officiel)", "url": "https://vercel.com/products/observability" }
+  ],
+  "facts": {
+    "what": "Suite d'outils d'observabilité pour applications web hébergées sur Vercel, incluant Web Analytics (visites, référents, géo), Speed Insights (Core Web Vitals), et Monitoring (performance, erreurs, trafic bot).",
+    "what_en": "Observability suite for web apps deployed on Vercel, including Web Analytics (traffic, referrers, geography), Speed Insights (Core Web Vitals), and Monitoring (performance, errors, bot traffic).",
+    "pricing_model": "Inclus gratuitement avec les déploiements Vercel ; données anonymisées, pas de cookies tiers.",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit pour tous les déploiements Vercel ; intégré à la plateforme." },
+    "plans": [
+      { "name": "Web Analytics", "price": "Gratuit (inclus avec Vercel)" },
+      { "name": "Speed Insights", "price": "Gratuit (inclus avec Vercel)" },
+      { "name": "Monitoring", "price": "Gratuit (inclus avec Vercel)" }
+    ],
+    "key_features": [
+      "Web Analytics (top pages, referrers, géo, OS/browsers)",
+      "Speed Insights avec Core Web Vitals",
+      "Monitoring (visualize bandwidth, errors, performance)",
+      "Données anonymisées (pas de cookies tiers)",
+      "Dashboard intégré à Vercel Console",
+      "Queryable depuis Vercel CLI"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Votre app est hébergée sur Vercel.",
+        "Vous avez besoin de metrics de performance basiques.",
+        "Vous voulez une solution zéro-friction."
+      ],
+      "avoidIf": [
+        "Votre app n'est pas sur Vercel.",
+        "Vous avez besoin d'analytics très détaillés.",
+        "Vous utilisez déjà Google Analytics ou Segment."
+      ],
+      "threshold": "Vercel Analytics s'impose pour les développeurs déployant sur Vercel cherchant une observabilité simple et intégrée ; pour apps elsewhere, des outils spécialisés (GA, Posthog) conviennent mieux."
+    },
+    "pros": [
+      "Entièrement gratuit et intégré à Vercel.",
+      "Données anonymisées (respect de la vie privée).",
+      "Setup zéro — fonctionne out-of-the-box.",
+      "Core Web Vitals et performance en temps réel."
+    ],
+    "cons": [
+      "Limité aux apps sur Vercel.",
+      "Moins de features que Google Analytics ou Amplitude.",
+      "Pas de segmentation avancée ou custom events."
+    ],
+    "use_cases": [
+      "Monitorer la performance d'une app déployée sur Vercel.",
+      "Tracker les Core Web Vitals pour SEO.",
+      "Debugger des problèmes de performance en production.",
+      "Analyser le trafic et les visites par page."
+    ],
+    "relevant_for": ["Développeurs Vercel", "Équipes frontend", "Startups sur Vercel"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "Your app is hosted on Vercel.",
+        "You need basic performance metrics.",
+        "You want a zero-friction solution."
+      ],
+      "avoidIf": [
+        "Your app is not on Vercel.",
+        "You need very detailed analytics.",
+        "You already use Google Analytics or Segment."
+      ],
+      "threshold": "Vercel Analytics works for developers deploying on Vercel seeking simple integrated observability; for apps elsewhere, specialized tools (GA, Posthog) fit better."
+    },
+    "pros": [
+      "Completely free and integrated with Vercel.",
+      "Anonymized data (privacy-friendly).",
+      "Zero setup — works out of the box.",
+      "Core Web Vitals and real-time performance."
+    ],
+    "cons": [
+      "Limited to apps on Vercel.",
+      "Fewer features than Google Analytics or Amplitude.",
+      "No advanced segmentation or custom events."
+    ],
+    "use_cases": [
+      "Monitor performance of a Vercel-deployed app.",
+      "Track Core Web Vitals for SEO.",
+      "Debug production performance issues.",
+      "Analyze traffic and page views."
+    ]
+  }
+}

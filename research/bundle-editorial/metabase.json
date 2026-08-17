@@ -1,0 +1,88 @@
+{
+  "slug": "metabase",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Metabase — plateforme d'analytique (site officiel)", "url": "https://metabase.com" }
+  ],
+  "facts": {
+    "what": "Plateforme d'analytique open source qui fournit des réponses guidées par une couche sémantique. Permet d'explorer et visualiser les données via une interface sans code avec IA intégrée.",
+    "what_en": "Open-source analytics platform providing AI-guided answers through a semantic layer. Enables data exploration and visualization through a no-code interface with built-in AI.",
+    "pricing_model": "Freemium : version open source auto-hébergée gratuite, ou cloud avec plans payants (Starter, Pro, Enterprise)",
+    "free_tier": { "exists": true, "detail": "Version open source entièrement gratuite à auto-héberger. Essai cloud gratuit de 14 jours disponible." },
+    "plans": [
+      { "name": "Open Source", "price": "Gratuit (auto-hébergement)" },
+      { "name": "Starter Cloud", "price": "montants sur la page officielle" },
+      { "name": "Pro Cloud", "price": "montants sur la page officielle" },
+      { "name": "Enterprise", "price": "montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Interrogation AI en langage naturel (Metabot)",
+      "Générateur de requêtes visuel sans code",
+      "Dashboards interactifs et documents collaboratifs",
+      "Support de 40+ sources de données",
+      "Couche sémantique pour métriques fiables"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez analyser des données sans expertise SQL.",
+        "Vous privilégiez l'open source auto-hébergé.",
+        "Vous avez besoin d'une IA pour poser des questions en langage naturel."
+      ],
+      "avoidIf": [
+        "Vous cherchez une solution entièrement gratuite cloud (hors essai).",
+        "Vous avez un très petit volume de données et peu d'utilisateurs."
+      ],
+      "threshold": "Metabase s'impose pour les équipes qui veulent explorer les données sans SQL ; l'option auto-hébergée convient aux budgets limités, le cloud aux besoins d'équipe."
+    },
+    "pros": [
+      "Option open source gratuite à auto-héberger.",
+      "Interface sans code intuitive et accessible.",
+      "Metabot IA pour poser des questions en langage naturel.",
+      "Support étendu de sources de données."
+    ],
+    "cons": [
+      "L'auto-hébergement demande maintenance et infrastructure.",
+      "Cloud payant vire vite cher à l'échelle.",
+      "Moins puissant qu'un EDW complet pour requêtes complexes."
+    ],
+    "use_cases": [
+      "Explorer des données métier sans SQL.",
+      "Créer des dashboards d'équipe collaboratifs.",
+      "Analyser des bases de données sans expert BI."
+    ],
+    "relevant_for": ["Petites équipes", "Startups", "Analystes métier"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want to analyze data without SQL expertise.",
+        "You prefer open-source self-hosted solutions.",
+        "You need AI to ask questions in natural language."
+      ],
+      "avoidIf": [
+        "You need a completely free cloud solution.",
+        "You have minimal data volume and few users."
+      ],
+      "threshold": "Metabase fits teams exploring data without SQL; self-hosted for budget-conscious, cloud for team scale."
+    },
+    "pros": [
+      "Free open-source self-hosted option.",
+      "Intuitive no-code interface.",
+      "Metabot AI for natural language queries.",
+      "Wide data source support."
+    ],
+    "cons": [
+      "Self-hosting requires maintenance and infrastructure.",
+      "Cloud pricing scales quickly.",
+      "Less powerful than full EDW for complex queries."
+    ],
+    "use_cases": [
+      "Explore business data without SQL.",
+      "Create collaborative team dashboards.",
+      "Analyze databases without BI experts."
+    ]
+  }
+}

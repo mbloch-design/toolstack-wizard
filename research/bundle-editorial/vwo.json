@@ -1,0 +1,95 @@
+{
+  "slug": "vwo",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "VWO — Pricing (site officiel)", "url": "https://vwo.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Plateforme de test A/B (VWO Testing) et d'optimisation de conversion (CRO), avec heatmaps, session recordings, et personnalisation web, tarifiée selon les utilisateurs mensuels suivis (MTU).",
+    "what_en": "A/B testing and conversion optimization platform featuring heatmaps, session recordings, and web personalization, priced based on monthly tracked users (MTU).",
+    "pricing_model": "Modèle freemium avec plan gratuit limité, puis plans payants Starter, Growth, Pro, et Enterprise basés sur les MTU et les modules.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit limité pour petits sites avec A/B testing basique." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (A/B testing basique, limité)" },
+      { "name": "Growth", "price": "À partir de 198 $/mois (30k MTU, tarifs sur la page officielle)" },
+      { "name": "Pro", "price": "Montants personnalisés (100k+ MTU, multi-modules)" },
+      { "name": "Enterprise", "price": "Montants personnalisés (all features, dedicated support)" }
+    ],
+    "key_features": [
+      "A/B Testing et Multivariate Testing",
+      "Heatmaps et Session Recordings",
+      "VWO Insights (analytics et segmentation)",
+      "Web Personalization et targeting",
+      "VWO Rollouts (feature flags)",
+      "FullStack testing (SDK pour backend)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous testez régulièrement des variations pour optimiser les conversions.",
+        "Vous avez un site web avec trafic significatif.",
+        "Vous voulez des heatmaps et session recordings."
+      ],
+      "avoidIf": [
+        "Votre trafic est très faible.",
+        "Vous cherchez un outil gratuit pour expérimenter.",
+        "Vous ne faites qu'occasionnellement du A/B testing."
+      ],
+      "threshold": "VWO s'impose pour les équipes CRO avec trafic moyen à élevé cherchant une plateforme complète ; pour les petits sites ou tests ponctuels, un outil gratuit convient."
+    },
+    "pros": [
+      "Plan gratuit utile pour débuter.",
+      "Suite complète (Testing, Heatmaps, Personalization).",
+      "Tarification par MTU (scalable avec la croissance).",
+      "Support et intégrations larges (Google Analytics, etc.)."
+    ],
+    "cons": [
+      "Plan gratuit très limité pour CRO sérieuse.",
+      "Prix par MTU peut croître rapidement avec le trafic.",
+      "Contrats avec engagements multi-ans.",
+      "Complexité élevée pour débuter (courbe d'apprentissage)."
+    ],
+    "use_cases": [
+      "Tester des variations de CTA, headlines, layouts.",
+      "Analyser le comportement utilisateur (heatmaps).",
+      "Lancer des expériences A/B multi-variantes.",
+      "Personnaliser l'expérience par segment utilisateur."
+    ],
+    "relevant_for": ["Spécialistes CRO", "Growth marketers", "Équipes UX/Produit", "E-commerçants"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You regularly test variations to optimize conversions.",
+        "You have a website with meaningful traffic.",
+        "You want heatmaps and session recordings."
+      ],
+      "avoidIf": [
+        "Your traffic is very low.",
+        "You're looking for a free experimentation tool.",
+        "You only do A/B testing occasionally."
+      ],
+      "threshold": "VWO works for CRO teams with medium-to-high traffic seeking a complete platform; for small sites or one-off tests, a free tool fits better."
+    },
+    "pros": [
+      "Useful free plan to start.",
+      "Complete suite (Testing, Heatmaps, Personalization).",
+      "MTU-based pricing (scales with growth).",
+      "Broad support and integrations (Google Analytics, etc.)."
+    ],
+    "cons": [
+      "Free plan very limited for serious CRO.",
+      "Per-MTU pricing can grow quickly with traffic.",
+      "Multi-year contracts with commitments.",
+      "High complexity for beginners (steep learning curve)."
+    ],
+    "use_cases": [
+      "Test variations of CTA, headlines, layouts.",
+      "Analyze user behavior (heatmaps).",
+      "Launch multivariate A/B experiments.",
+      "Personalize experience by user segment."
+    ]
+  }
+}

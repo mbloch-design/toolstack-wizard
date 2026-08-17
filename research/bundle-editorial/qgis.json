@@ -1,0 +1,88 @@
+{
+  "slug": "qgis",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "QGIS — système SIG (site officiel)", "url": "https://qgis.org" }
+  ],
+  "facts": {
+    "what": "Système d'information géographique (SIG) gratuit et open source. Permet créer, éditer, visualiser, analyser et partager des données géospatiales sur Windows, Mac et Linux.",
+    "what_en": "Free and open-source geographic information system (GIS). Enables creating, editing, visualizing, analyzing, and sharing geospatial data on Windows, Mac, and Linux.",
+    "pricing_model": "Open source gratuit sous licence GNU GPLv2+. Aucun frais d'utilisation.",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit et open source. Téléchargement et utilisation sans restrictions." },
+    "plans": [],
+    "key_features": [
+      "Création et édition de cartes (points, lignes, polygones, mailles)",
+      "Support de formats géospatiaux standards (Shapefile, GeoJSON, WMS, WFS)",
+      "Analyse et traitement géospatial intégré",
+      "Visualisation cartographique pour bureau, mobile, cloud, impression",
+      "Workflows automatisés et scripts",
+      "API et plugins pour étendre les fonctionnalités"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous travaillez avec des données géospatiales ou cartographie.",
+        "Vous voulez un SIG professionnel gratuit et sans vendor lock-in.",
+        "Vous êtes à l'aise avec l'open source et l'auto-support."
+      ],
+      "avoidIf": [
+        "Vous cherchez une solution SaaS cloud entièrement managée.",
+        "Vous avez peu d'expertise technique pour déploiement/scripts."
+      ],
+      "threshold": "QGIS s'impose pour les professionnels géospatial avec budget zéro ; pour SaaS cloud, ArcGIS Online ou Mapbox conviennent mieux."
+    },
+    "pros": [
+      "Entièrement gratuit et open source.",
+      "Professionnel de grade, utilisé par orga gouvernementales.",
+      "Support étendu de formats standards SIG.",
+      "Ecosystem communautaire et plugins actifs."
+    ],
+    "cons": [
+      "Demande expertise technique pour utilisation avancée.",
+      "Pas de support commercial/SLA (communauté voluntary).",
+      "Interface desktop seulement (pas SaaS cloud native).",
+      "Performance peut être limitée sur gros datasets."
+    ],
+    "use_cases": [
+      "Créer et éditer des cartes et données géospatiales.",
+      "Analyser des phénomènes spatiaux (proximité, overlap, etc.).",
+      "Visualiser et exporter des cartes pour rapports ou pubs.",
+      "Intégrer des données SIG dans workflows métier."
+    ],
+    "relevant_for": ["Professionnels géospatial", "Chercheurs", "Orga gouvernementales", "Cartographes"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You work with geospatial data or mapping.",
+        "You want professional GIS free and vendor-lock-in free.",
+        "You're comfortable with open source and self-support."
+      ],
+      "avoidIf": [
+        "You seek a fully managed cloud SaaS solution.",
+        "You have limited technical expertise for deployment/scripting."
+      ],
+      "threshold": "QGIS fits geospatial pros with zero budget; for cloud SaaS, ArcGIS Online or Mapbox suit better."
+    },
+    "pros": [
+      "Completely free and open source.",
+      "Professional-grade, used by government orgs.",
+      "Wide support for GIS standards.",
+      "Active community and plugins ecosystem."
+    ],
+    "cons": [
+      "Requires technical expertise for advanced use.",
+      "No commercial support/SLA (voluntary community).",
+      "Desktop interface only (not cloud-native SaaS).",
+      "Performance may be limited on large datasets."
+    ],
+    "use_cases": [
+      "Create and edit maps and geospatial data.",
+      "Analyze spatial phenomena (proximity, overlap, etc.).",
+      "Visualize and export maps for reports or pubs.",
+      "Integrate GIS data into business workflows."
+    ]
+  }
+}

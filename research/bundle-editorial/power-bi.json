@@ -1,0 +1,91 @@
+{
+  "slug": "power-bi",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Power BI — analytics Microsoft (site officiel)", "url": "https://powerbi.microsoft.com" }
+  ],
+  "facts": {
+    "what": "Plateforme d'analytics et BI de Microsoft. Combine dashboards interactifs, rapports, et capacité premium pour partage sécurisé. S'intègre nativement à l'écosystème Microsoft 365.",
+    "what_en": "Microsoft analytics and BI platform. Combines interactive dashboards, reports, and premium capacity for secure sharing. Natively integrates with Microsoft 365 ecosystem.",
+    "pricing_model": "Freemium : Power BI Desktop gratuit, puis licences par utilisateur (Pro) ou capacité (Premium/Fabric). Licences par mois.",
+    "free_tier": { "exists": true, "detail": "Power BI Desktop gratuit pour création locale. Accès au cloud via essai ou licence Pro." },
+    "plans": [
+      { "name": "Power BI Desktop", "price": "Gratuit (creation locale)" },
+      { "name": "Pro", "price": "montants sur la page officielle (par utilisateur/mois)" },
+      { "name": "Premium Per User (PPU)", "price": "montants sur la page officielle (par utilisateur/mois, plus cher que Pro)" },
+      { "name": "Fabric", "price": "montants sur la page officielle (capacity-based, partir ~262 €/mois)" }
+    ],
+    "key_features": [
+      "Desktop local sans coût pour création de rapports",
+      "Dashboards interactifs et temps réel",
+      "Intégration native Excel, Teams et Microsoft 365",
+      "Visualisations riches et rapides",
+      "Q&A IA pour requêtes en langage naturel",
+      "Embedded pour applications tierces"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez Microsoft 365 ou écosystème Microsoft.",
+        "Vous voulez une BI puissante avec rapide intégration Excel.",
+        "Vous avez besoin de partage sécurisé pour équipes."
+      ],
+      "avoidIf": [
+        "Vous refusez le vendor lock-in Microsoft.",
+        "Votre équipe est petite et budget très serré."
+      ],
+      "threshold": "Power BI s'impose pour les orga Microsoft 365 ; pour autres, Tableau ou Looker peuvent être alternatives."
+    },
+    "pros": [
+      "Desktop gratuit sans limitations de creation.",
+      "Intégration Excel et Microsoft 365 très serrée.",
+      "Performance et visualisations rapides.",
+      "Écosystème Fabric en croissance pour data moderne."
+    ],
+    "cons": [
+      "Coûts Pro/PPU/Fabric montent vite à l'échelle.",
+      "Moins flexible hors écosystème Microsoft.",
+      "Courbe d'apprentissage pour capacités avancées."
+    ],
+    "use_cases": [
+      "Créer des rapports Excel exécutifs avec données live.",
+      "Partager dashboards sécurisés avec groupes Teams.",
+      "Analyser données stockées dans SQL Server, Azure.",
+      "Intégrer BI dans applications custom avec Embedded."
+    ],
+    "relevant_for": ["Entreprises Microsoft", "Équipes finance/ventes", "Organisations Azure"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You use Microsoft 365 or Microsoft ecosystem.",
+        "You want powerful BI with fast Excel integration.",
+        "You need secure sharing for teams."
+      ],
+      "avoidIf": [
+        "You reject Microsoft vendor lock-in.",
+        "Your team is small and budget is tight."
+      ],
+      "threshold": "Power BI fits Microsoft 365 orgs; for others, Tableau or Looker may be alternatives."
+    },
+    "pros": [
+      "Free Desktop with unlimited creation.",
+      "Tight Excel and Microsoft 365 integration.",
+      "Fast performance and rich visualizations.",
+      "Growing Fabric ecosystem for modern data."
+    ],
+    "cons": [
+      "Pro/PPU/Fabric costs scale quickly.",
+      "Less flexible outside Microsoft ecosystem.",
+      "Learning curve for advanced capabilities."
+    ],
+    "use_cases": [
+      "Create executive Excel reports with live data.",
+      "Share secure dashboards with Teams groups.",
+      "Analyze data in SQL Server, Azure.",
+      "Embed BI in custom applications with Embedded."
+    ]
+  }
+}

@@ -1,10 +1,5 @@
 [
   {
-    "slug": "frase",
-    "name": "Frase",
-    "url": "https://www.frase.io"
-  },
-  {
     "slug": "ga4",
     "name": "Google Analytics 4",
     "url": "https://analytics.google.com"

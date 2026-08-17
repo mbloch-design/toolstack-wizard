@@ -1,0 +1,92 @@
+{
+  "slug": "usertesting",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "UserTesting — Pricing (site officiel)", "url": "https://www.usertesting.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme de testing utilisateur (UX research) permettant de tester des prototypes, sites web, ou applications avec de vrais utilisateurs, via des sessions modérées ou enregistrées.",
+    "what_en": "User testing and experience research platform for testing prototypes, websites, and apps with real users through moderated or unmoderated testing sessions.",
+    "pricing_model": "Tarification personnalisée basée sur un système de crédits annuels, sans prix public affiché ; contrats personnalisés pour tous les plans.",
+    "free_tier": { "exists": false, "detail": "Pas de plan gratuit ; point d'entrée minimum autour de 25000-35000 $/an." },
+    "plans": [
+      { "name": "Essentials", "price": "Montants personnalisés (moyenne ~36265 $/an)" },
+      { "name": "Advanced", "price": "Montants personnalisés (moyenne ~40000-60000 $/an)" },
+      { "name": "Ultimate / Enterprise", "price": "Montants personnalisés (moyenne ~147756 $/an+)" }
+    ],
+    "key_features": [
+      "Tests utilisateur modérés et enregistrés",
+      "Panel de testeurs géré ou bring-your-own testers",
+      "Rapports vidéo et verbatim des sessions",
+      "Intégrations à Jira, Slack, figma",
+      "Analyseur de sentiment et tagging automatique",
+      "Support dédié et customer success (plans payants)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous validez régulièrement des designs avec utilisateurs réels.",
+        "Vous avez un budget substantiel pour UX research.",
+        "Vous gérez plusieurs produits/équipes ayant besoin de testing."
+      ],
+      "avoidIf": [
+        "Votre budget est limité ou vous commencez tout juste.",
+        "Vous voulez faire du testing ponctuel ou gratuit.",
+        "Vous cherchez un outil d'analytics simple."
+      ],
+      "threshold": "UserTesting s'impose pour les grandes organisations cherchant une plateforme UX research mature et scalable ; pour les startups ou tests ponctuels, des alternatives plus accessibles conviennent mieux."
+    },
+    "pros": [
+      "Panel de testeurs large et diversifié.",
+      "Tests modérés et enregistrés dans la même plateforme.",
+      "Intégrations profondes (Figma, Jira, Slack).",
+      "Support dédié et onboarding robuste (Enterprise)."
+    ],
+    "cons": [
+      "Tarification très élevée sans option entry-level.",
+      "Pas de plan gratuit ou freemium.",
+      "Contrats annuels obligatoires avec minimums."
+    ],
+    "use_cases": [
+      "Tester des prototypes haute fidélité avec utilisateurs.",
+      "Conduire des interviews modérées (moderator-led tests).",
+      "Valider des hypothèses de design avant développement.",
+      "Générer des insights qualitatifs pour itération produit."
+    ],
+    "relevant_for": ["Équipes produit", "UX/Designers", "Agences de design", "Directeurs innovation"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You regularly validate designs with real users.",
+        "You have substantial budget for UX research.",
+        "You manage multiple products needing user testing."
+      ],
+      "avoidIf": [
+        "Your budget is limited or you're just starting.",
+        "You want one-off or free testing.",
+        "You're looking for simple analytics."
+      ],
+      "threshold": "UserTesting works for large organizations seeking a mature, scalable UX research platform; for startups or one-off testing, more accessible alternatives fit better."
+    },
+    "pros": [
+      "Large and diverse tester panel.",
+      "Moderated and unmoderated tests in one platform.",
+      "Deep integrations (Figma, Jira, Slack).",
+      "Dedicated support and robust onboarding (Enterprise)."
+    ],
+    "cons": [
+      "Very high pricing with no entry-level option.",
+      "No free or freemium plan.",
+      "Annual contracts required with minimums."
+    ],
+    "use_cases": [
+      "Test high-fidelity prototypes with real users.",
+      "Conduct moderated interviews (moderator-led tests).",
+      "Validate design hypotheses before dev.",
+      "Generate qualitative insights for product iteration."
+    ]
+  }
+}

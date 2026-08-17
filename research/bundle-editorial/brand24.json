@@ -1,0 +1,93 @@
+{
+  "slug": "brand24",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Brand24 — Social Listening Platform (site officiel)", "url": "https://brand24.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de social listening et monitoring de marque. Surveille mentions de marque/produits sur réseaux sociaux, presse, forums et blogs. Détecte sentiment (positif/négatif/neutre), alertes temps réel, rapports concurrence.",
+    "what_en": "Social listening and brand monitoring platform. Tracks brand/product mentions across social media, news, forums, and blogs. Detects sentiment, sends real-time alerts, analyzes competitors.",
+    "pricing_model": "Abonnement mensuel ou annuel. Plans tiérés : Starter, Team, Pro, Business, Enterprise. Tarification progressive selon besoins.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite permanente. Essai gratuit 14 jours disponible." },
+    "plans": [
+      { "name": "Starter", "price": "199 $/mois (annuel), 249 $/mois (mensuel)" },
+      { "name": "Team", "price": "299 $/mois (annuel), 349 $/mois (mensuel)" },
+      { "name": "Pro", "price": "399 $/mois (annuel), 449 $/mois (mensuel)" },
+      { "name": "Business", "price": "599 $/mois (annuel), 699 $/mois (mensuel)" }
+    ],
+    "key_features": [
+      "Surveillance 25M+ sources en ligne (réseaux, presse, blogs, forums).",
+      "Détection sentiment avec analyse sarcasme.",
+      "Alertes temps réel via email et Slack.",
+      "Suivi jusqu'à 5 concurrents par projet.",
+      "Rapports PDF/CSV exportables avec graphiques.",
+      "Dashboard en ligne et analytics."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez la réputation d'une marque ou produit.",
+        "Vous avez besoin de surveiller mentions en temps réel.",
+        "Vous analysez stratégies concurrents."
+      ],
+      "avoidIf": [
+        "Vous ne cherchez que social media management standard.",
+        "Vous avez un budget très limité.",
+        "Vous n'avez pas besoin d'alertes temps réel."
+      ],
+      "threshold": "Brand24 convient aux équipes marketing/communications professionnelles ; pour besoins simples de social management, autres outils suffisent."
+    },
+    "pros": [
+      "Couverture de sources très large (25M+).",
+      "Détection sentiment avancée avec sarcasme.",
+      "Alertes temps réel pratiques via Slack/Email.",
+      "Suivi concurrence intégré.",
+      "Essai 14 jours offert."
+    ],
+    "cons": [
+      "Pas de version gratuite.",
+      "Prix plus élevé pour petites équipes.",
+      "Moins de fonctionnalités de publication que Hootsuite."
+    ],
+    "use_cases": [
+      "Monitorer réputation de marque en temps réel.",
+      "Analyser sentiment envers concurrents.",
+      "Générer rapports influenceurs et mentions clés."
+    ],
+    "relevant_for": ["Community managers", "Marketing managers", "PR/Communications", "Brand reputation specialists"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage brand or product reputation.",
+        "You need real-time mention monitoring.",
+        "You analyze competitor strategies."
+      ],
+      "avoidIf": [
+        "You only want standard social media management.",
+        "Your budget is very tight.",
+        "You don't need real-time alerts."
+      ],
+      "threshold": "Brand24 suits professional marketing/communications teams; for simple social management needs, other tools suffice."
+    },
+    "pros": [
+      "Very wide coverage of sources (25M+).",
+      "Advanced sentiment detection with sarcasm.",
+      "Real-time alerts via Slack/Email.",
+      "Built-in competitor tracking.",
+      "14-day trial offered."
+    ],
+    "cons": [
+      "No free version.",
+      "Higher price for small teams.",
+      "Fewer publishing features than Hootsuite."
+    ],
+    "use_cases": [
+      "Monitor brand reputation in real-time.",
+      "Analyze sentiment toward competitors.",
+      "Generate influencer and mention reports."
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "slug": "lighthouse",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Lighthouse (documentation Chrome DevTools)", "url": "https://developer.chrome.com/docs/lighthouse" }
+  ],
+  "facts": {
+    "what": "Outil d'audit open source intégré à Chrome DevTools et PageSpeed Insights, évaluant les performances, accessibilité, bonnes pratiques et SEO d'une page web avec rapports détaillés et recommandations d'optimisation.",
+    "what_en": "Open-source auditing tool built into Chrome DevTools and PageSpeed Insights, evaluating web page performance, accessibility, best practices, and SEO with detailed reports and optimization recommendations.",
+    "pricing_model": "Gratuit - intégré à Chrome DevTools et disponible en ligne via PageSpeed Insights.",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit. Aucune limite d'audits, accès via Chrome DevTools, PageSpeed Insights en ligne, CLI, ou Node module." },
+    "plans": [
+      { "name": "Lighthouse", "price": "Gratuit" }
+    ],
+    "key_features": [
+      "Audits de performance : LCP, FID, CLS, temps de chargement, optimisations",
+      "Audits accessibilité : contraste couleur, navigation clavier, labels ARIA, screen readers",
+      "Audits bonnes pratiques : HTTPS, console errors, dependencies, code moderne",
+      "Audits SEO : meta tags, structured data, mobile-friendly, crawlability",
+      "Modes d'audit : Navigation, Timespan, Snapshot pour différents scénarios",
+      "Intégration AI Assistance (Chrome DevTools) pour recommandations ciblées",
+      "Disponible via Chrome DevTools, PageSpeed Insights, CLI, Node module"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous optimisez les performances et l'accessibilité d'un site web.",
+        "Vous cherchez un outil de diagnostic gratuit sans installation (PageSpeed Insights).",
+        "Vous voulez une baseline pour Core Web Vitals et SEO."
+      ],
+      "avoidIf": [
+        "Vous faites du monitoring continu de performances (Lighthouse = point-in-time; utiliser Sentry, DataDog pour continu).",
+        "Vous testez surtout les interactions complexes (Lighthouse audite la page, pas les flows utilisateur).",
+        "Vous avez besoin d'une solution très détaillée en profiling (utiliser Chrome Performance panel)."
+      ],
+      "threshold": "Lighthouse est indispensable pour tout propriétaire de site web ; gratuit, officiel Google, c'est la première étape pour optimiser performances, accès et SEO."
+    },
+    "pros": [
+      "Entièrement gratuit et officiel (Google Chrome).",
+      "Pas d'installation requise (Chrome DevTools ou PageSpeed Insights).",
+      "Audits complets (performance, accessibilité, SEO, bonnes pratiques).",
+      "Recommandations actionables et documentées.",
+      "Available en CLI et Node module pour CI/CD.",
+      "Nouveaux modes d'audit (Timespan, Snapshot) pour scénarios variés.",
+      "AI Assistance intégrée dans Chrome DevTools 2026."
+    ],
+    "cons": [
+      "Point-in-time (pas de monitoring continu).",
+      "Audits de page seulement (pas de flows utilisateur complexes).",
+      "Parfois des faux positifs (ex. sur les images externalisées).",
+      "Moins profond qu'un Chrome Performance profiling manuel."
+    ],
+    "use_cases": [
+      "Tester les Core Web Vitals et performances initiales d'une page.",
+      "Vérifier l'accessibilité (contraste, navigation clavier, labels).",
+      "Checker SEO basique (meta tags, mobile-friendly, structured data).",
+      "Obtenir une checklist d'optimisations pour un sprint développement."
+    ],
+    "relevant_for": ["Web developers", "Frontend engineers", "Performance engineers", "Product managers", "SEO specialists"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You optimize web site performance and accessibility.",
+        "You want a free diagnostic tool with no installation (PageSpeed Insights).",
+        "You need a baseline for Core Web Vitals and SEO."
+      ],
+      "avoidIf": [
+        "You do continuous performance monitoring (Lighthouse is point-in-time; use Sentry, DataDog for continuous).",
+        "You mainly test complex user interactions (Lighthouse audits the page, not workflows).",
+        "You need detailed profiling (use Chrome Performance panel)."
+      ],
+      "threshold": "Lighthouse is essential for every website owner; free, official Google tool, it's the first step to optimize performance, accessibility, and SEO."
+    },
+    "pros": [
+      "Completely free and official (Google Chrome).",
+      "No installation required (Chrome DevTools or PageSpeed Insights).",
+      "Complete audits (performance, accessibility, SEO, best practices).",
+      "Actionable and documented recommendations.",
+      "Available as CLI and Node module for CI/CD.",
+      "New audit modes (Timespan, Snapshot) for varied scenarios.",
+      "AI Assistance built into Chrome DevTools 2026."
+    ],
+    "cons": [
+      "Point-in-time only (no continuous monitoring).",
+      "Page audits only (no complex user workflows).",
+      "Occasional false positives (e.g., on externalized images).",
+      "Less deep than manual Chrome Performance profiling."
+    ],
+    "use_cases": [
+      "Test Core Web Vitals and initial page performance.",
+      "Verify accessibility (contrast, keyboard nav, labels).",
+      "Check basic SEO (meta tags, mobile-friendly, structured data).",
+      "Get optimization checklist for a development sprint."
+    ],
+    "relevant_for": ["Web developers", "Frontend engineers", "Performance engineers", "Product managers", "SEO specialists"]
+  }
+}

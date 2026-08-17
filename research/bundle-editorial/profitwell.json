@@ -1,0 +1,89 @@
+{
+  "slug": "profitwell",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "ProfitWell Metrics — analytics SaaS (site officiel)", "url": "https://www.paddle.com/" }
+  ],
+  "facts": {
+    "what": "Outil d'analytique pour les entreprises de revenus récurrents (SaaS, subscription). Fourni gratuitement par Paddle, affiche MRR, LTV, ARPU, churn et cohorts de rétention.",
+    "what_en": "Analytics tool for recurring revenue businesses (SaaS, subscriptions). Provided free by Paddle, shows MRR, LTV, ARPU, churn and retention cohorts.",
+    "pricing_model": "Gratuit (acquisition par Paddle). Monétisation via add-ons : Retain (dunning/churn recovery) et Price Intelligently (pricing strategy), détails sur devis.",
+    "free_tier": { "exists": true, "detail": "ProfitWell Metrics entièrement gratuit et illimité. Connectez Stripe, Zuora, Zapier ou autre source de facturation et voyez les métriques en 5 minutes." },
+    "plans": [
+      { "name": "Metrics", "price": "Gratuit (illimité)" },
+      { "name": "Retain (add-on)", "price": "montants sur devis" },
+      { "name": "Price Intelligently (add-on)", "price": "montants sur devis" }
+    ],
+    "key_features": [
+      "Calculs MRR, LTV, ARPU, CAC automatiques",
+      "Analyses de churn et cohortes de rétention",
+      "Intégrations faciles (Stripe, Zuora, Zapier...)",
+      "Dashboards temps réel sans setup technique",
+      "Alertes sur métriques clés"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez un modèle de revenu d'abonnement ou SaaS.",
+        "Vous voulez tracker MRR, LTV, churn gratuitement.",
+        "Vous utilisez déjà Stripe ou Zuora."
+      ],
+      "avoidIf": [
+        "Vous avez un modèle de revenue à transaction unique.",
+        "Vous voulez une suite analytics complète, pas juste métriques subscription."
+      ],
+      "threshold": "ProfitWell s'impose pour les SaaS qui veulent une vue claire de leur santé revenue gratuite ; les add-ons Retain et Price Intelligently payants si besoin."
+    },
+    "pros": [
+      "Gratuit sans limite pour métriques subscription core.",
+      "Setup rapide via intégration Stripe ou Zapier.",
+      "Métriques SaaS fondamentales (MRR, LTV, churn) complètes.",
+      "Cohorts de rétention détaillés et naturels."
+    ],
+    "cons": [
+      "Limité aux modèles subscription (pas e-commerce classique).",
+      "Add-ons Retain et Price Intelligently payants et chers.",
+      "Moins d'analytics comportemental que Mixpanel/Amplitude."
+    ],
+    "use_cases": [
+      "Tracker la santé financière de votre SaaS en temps réel.",
+      "Analyser le churn par cohorte et type de client.",
+      "Optimiser la pricing et retention avec data-driven insights.",
+      "Récupérer les clients qui churnent avec Retain."
+    ],
+    "relevant_for": ["Entreprises SaaS", "Startups subscription", "Équipes finance produit"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You have a subscription or SaaS revenue model.",
+        "You want to track MRR, LTV, churn for free.",
+        "You already use Stripe or Zuora."
+      ],
+      "avoidIf": [
+        "You have one-time transaction revenue.",
+        "You want a complete analytics suite, not just subscription metrics."
+      ],
+      "threshold": "ProfitWell fits SaaS wanting a clear free view of revenue health; add-ons Retain and Price Intelligently pay-as-you-go if needed."
+    },
+    "pros": [
+      "Free and unlimited for core subscription metrics.",
+      "Quick setup via Stripe or Zapier integration.",
+      "Core SaaS metrics (MRR, LTV, churn) comprehensive.",
+      "Detailed and natural retention cohorts."
+    ],
+    "cons": [
+      "Limited to subscription models (not classical e-commerce).",
+      "Retain and Price Intelligently add-ons paid and expensive.",
+      "Less behavioral analytics than Mixpanel/Amplitude."
+    ],
+    "use_cases": [
+      "Track your SaaS financial health in real-time.",
+      "Analyze churn by cohort and customer type.",
+      "Optimize pricing and retention with data-driven insights.",
+      "Recover churning customers with Retain."
+    ]
+  }
+}

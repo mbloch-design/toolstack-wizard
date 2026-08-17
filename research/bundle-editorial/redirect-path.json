@@ -1,0 +1,83 @@
+{
+  "slug": "redirect-path",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Redirect Path — Chrome Web Store (site officiel)", "url": "https://chromewebstore.google.com/detail/redirect-path/aomidfkchockcldhbkggjokdkkebmdll" }
+  ],
+  "facts": {
+    "what": "Extension Chrome gratuite développée par Ayima pour analyser les chaînes de redirection HTTP en temps réel et détecter les codes d'erreur (301, 302, 404, 500) lors de vos audits SEO.",
+    "what_en": "Free Chrome extension by Ayima to analyze HTTP redirect chains in real time and detect error codes (301, 302, 404, 500) during your SEO audits.",
+    "pricing_model": "Gratuit",
+    "free_tier": { "exists": true, "detail": "Extension entièrement gratuite, aucune limite, aucune version premium. Version 4 inclut l'intégration Ayima AI (gratuite)." },
+    "plans": [],
+    "key_features": [
+      "Détection des chaînes de redirection en temps réel",
+      "Codes HTTP visibles (301, 302, 404, 500)",
+      "Détection des redirects JavaScript et meta",
+      "En-têtes HTTP complets accessibles",
+      "Intégration Ayima AI pour déboguer les redirects"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous faites des audits SEO et des migrations de sites.",
+        "Vous voulez vérifier rapidement les redirects sans ouvrir DevTools.",
+        "Vous avez besoin d'un outil simple et gratuit pour checker les codes HTTP."
+      ],
+      "avoidIf": [
+        "Vous cherchez un outil complet d'audit SEO (Redirect Path fait une seule chose).",
+        "Vous n'utilisez pas Chrome ou Edge."
+      ],
+      "threshold": "Redirect Path est indispensable pour tout SEO qui vérifie les redirects ; c'est gratuit, léger et ciblé. Pour un audit complet, l'associer à d'autres outils."
+    },
+    "pros": [
+      "Entièrement gratuit, aucune limite.",
+      "Installation instantanée, interface épurée.",
+      "Détecte les chaînes de redirection complexes.",
+      "Intégration Ayima AI incluse (gratuite)."
+    ],
+    "cons": [
+      "Une seule fonction (redirects seulement).",
+      "Chrome/Edge seulement, pas de Firefox support natif."
+    ],
+    "use_cases": [
+      "Auditer une migration de domaine avant le lancement.",
+      "Vérifier les codes 404 et erreurs pendant une refonte.",
+      "Déboguer les redirects multiples en cascade.",
+      "Analyser les redirects d'une concurrence."
+    ],
+    "relevant_for": ["SEO specialists", "Webmasters", "Développeurs front-end", "Agences digitales"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You run SEO audits and site migrations.",
+        "You want to quickly verify redirects without opening DevTools.",
+        "You need a simple, free HTTP status code checker."
+      ],
+      "avoidIf": [
+        "You're looking for a comprehensive SEO audit tool (Redirect Path does one thing).",
+        "You don't use Chrome or Edge."
+      ],
+      "threshold": "Redirect Path is essential for any SEO checking redirects; it's free, lightweight, and focused. Pair it with other tools for full audits."
+    },
+    "pros": [
+      "Completely free, unlimited use.",
+      "Instant installation, clean interface.",
+      "Detects complex redirect chains.",
+      "Free Ayima AI integration included."
+    ],
+    "cons": [
+      "Single function (redirects only).",
+      "Chrome/Edge only, no native Firefox support."
+    ],
+    "use_cases": [
+      "Audit a domain migration before launch.",
+      "Check for 404s and errors during a redesign.",
+      "Debug multiple redirect chains.",
+      "Analyze competitor redirects."
+    ]
+  }
+}

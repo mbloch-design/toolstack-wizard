@@ -1,0 +1,92 @@
+{
+  "slug": "dovetail",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Dovetail — User Research Platform (site officiel)", "url": "https://dovetail.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Plateforme d'analyse de recherche utilisateur. Centralise interviews, sondages, feedback dans un workspace. Transcription automatique, tagging, synthèse insights. Support éditeurs et viewers avec permissions.",
+    "what_en": "User research analysis platform. Centralize interviews, surveys, feedback in workspace. Auto-transcription, tagging, insight synthesis. Supports editors and viewers with permissions.",
+    "pricing_model": "Par-siège annuel/mensuel. Plans tiérés : Starter, Team, Business. Distinction éditeurs/viewers. Free tier limité 3 utilisateurs.",
+    "free_tier": { "exists": true, "detail": "Free Starter : jusqu'à 3 utilisateurs, 10 heures transcription/mois, 50 GB stockage." },
+    "plans": [
+      { "name": "Starter", "price": "30 $/mois ou 300 $/an, 10 heures transcription, 50 GB" },
+      { "name": "Team", "price": "375 $/mois ou 3600 $/an, 25 heures transcription, 100 GB" },
+      { "name": "Business", "price": "1800 $/mois ou 21600 $/an annuel, 100 heures transcription, 500 GB" }
+    ],
+    "key_features": [
+      "Transcription automatique d'interviews/vidéos.",
+      "Tagging et codage automatisés avec IA.",
+      "Synthèse insights et rapports.",
+      "Permissions granulaires (éditeurs, viewers).",
+      "Support équipes collaboratif.",
+      "Export et partage insights."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous menez régulièrement des recherches utilisateur.",
+        "Vous avez besoin de centraliser feedback et interviews.",
+        "Votre équipe collabore sur insights."
+      ],
+      "avoidIf": [
+        "Vous faites très peu de recherche utilisateur.",
+        "Vous cherchez un outil gratuit complet.",
+        "Vous ne faites que sondages simples."
+      ],
+      "threshold": "Dovetail convient pour équipes UX/research professionnelles ; pour usage occasionnel, alternatives légères suffisent."
+    },
+    "pros": [
+      "Transcription automatique très précise.",
+      "Tagging IA et synthèse insights rapides.",
+      "Viewers gratuits pour partage à stakeholders.",
+      "Tier free très utile pour démontrer.",
+      "Interface collaborative intuitive."
+    ],
+    "cons": [
+      "Prix peut être élevé pour petites équipes.",
+      "Heures transcription limitées par plan.",
+      "Moins de fonctionnalités research que UserTesting."
+    ],
+    "use_cases": [
+      "Analyser interviews clients et feedback.",
+      "Centraliser et synthétiser research utilisateur.",
+      "Partager insights avec PMs et stakeholders."
+    ],
+    "relevant_for": ["UX Researchers", "Product managers", "UX Designers", "Research operations"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You regularly conduct user research.",
+        "You need to centralize feedback and interviews.",
+        "Your team collaborates on insights."
+      ],
+      "avoidIf": [
+        "You do very little user research.",
+        "You're looking for a free complete tool.",
+        "You only run simple surveys."
+      ],
+      "threshold": "Dovetail suits professional UX/research teams; for occasional use, lighter alternatives suffice."
+    },
+    "pros": [
+      "Very accurate automatic transcription.",
+      "AI tagging and fast insight synthesis.",
+      "Free viewers for stakeholder sharing.",
+      "Free tier very useful for trials.",
+      "Intuitive collaborative interface."
+    ],
+    "cons": [
+      "Can be expensive for small teams.",
+      "Transcription hours limited per plan.",
+      "Fewer research features than UserTesting."
+    ],
+    "use_cases": [
+      "Analyze customer interviews and feedback.",
+      "Centralize and synthesize user research.",
+      "Share insights with PMs and stakeholders."
+    ]
+  }
+}

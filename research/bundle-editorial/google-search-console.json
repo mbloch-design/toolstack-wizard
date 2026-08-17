@@ -1,0 +1,93 @@
+{
+  "slug": "google-search-console",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Google Search Console (site officiel)", "url": "https://search.google.com/search-console/about" }
+  ],
+  "facts": {
+    "what": "Plateforme gratuite de Google pour surveiller et optimiser la visibilité d'un site dans les résultats de recherche, avec rapports de performance, inspection d'URLs et alertes sur les problèmes détectés.",
+    "what_en": "Free Google platform to monitor and optimize a website's visibility in search results, with performance reports, URL inspection, and alerts on detected issues.",
+    "pricing_model": "Gratuit - pas de version payante.",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit pour tous les propriétaires de sites web." },
+    "plans": [
+      { "name": "Google Search Console", "price": "Gratuit" }
+    ],
+    "key_features": [
+      "Rapports de performance (impressions, clics, position moyenne sur les recherches)",
+      "Inspection d'URL et informations d'indexation",
+      "Soumission de sitemaps et d'URLs pour crawl",
+      "Alertes sur les problèmes techniques détectés",
+      "Monitoring Core Web Vitals et rich results",
+      "Intégration directe avec Google Analytics et autres outils Google"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes propriétaire d'un site web.",
+        "Vous voulez comprendre votre performance en recherche organique.",
+        "Vous cherchez une solution SEO essentiellement gratuite et officielle."
+      ],
+      "avoidIf": [
+        "Vous avez besoin de fonctionnalités SEO avancées (analyse de backlinks détaillée, recommandations IA poussées).",
+        "Vous privilégiez un seul outil tout-en-un au-delà de la search."
+      ],
+      "threshold": "Google Search Console est indispensable pour tout propriétaire de site ; gratuit et officiel, c'est un passage obligé pour le SEO basique et la communication avec Google."
+    },
+    "pros": [
+      "Entièrement gratuit et officiel.",
+      "Données directement de Google (le plus fiable).",
+      "Inspection d'URL et informations d'indexation détaillées.",
+      "Alertes sur les problèmes techniques détectés automatiquement.",
+      "Intégration Analytics et Search Console nativisée."
+    ],
+    "cons": [
+      "Focus limité à la search de Google (pas de data de Bing, DuckDuckGo, etc.).",
+      "Pas d'analyse de backlinks détaillée (besoin d'outils tiers pour cela).",
+      "Interface classique, moins moderne que certaines alternatives.",
+      "Fonction recommandations IA naissante, moins poussée que concurrents."
+    ],
+    "use_cases": [
+      "Vérifier que votre site est indexé par Google et visible.",
+      "Diagnostiquer les problèmes techniques (mobile usability, rich results).",
+      "Analyser les requêtes qui amènent du traffic organique.",
+      "Soumettre un sitemap ou demander l'exploration d'une URL spécifique."
+    ],
+    "relevant_for": ["Webmasters", "SEO specialists", "Content managers", "Responsables marketing web"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You own a website.",
+        "You want to understand your organic search performance.",
+        "You're looking for an essential, free, official SEO solution."
+      ],
+      "avoidIf": [
+        "You need advanced SEO features (detailed backlink analysis, strong AI recommendations).",
+        "You prefer a single all-in-one tool beyond search."
+      ],
+      "threshold": "Google Search Console is mandatory for any site owner; free and official, it's essential for basic SEO and communicating with Google."
+    },
+    "pros": [
+      "Completely free and official.",
+      "Data directly from Google (most reliable).",
+      "Detailed URL inspection and indexing information.",
+      "Automatic alerts on detected technical issues.",
+      "Native Analytics and Search Console integration."
+    ],
+    "cons": [
+      "Limited to Google search (no Bing, DuckDuckGo data).",
+      "No detailed backlink analysis (need third-party tools).",
+      "Classic interface, less modern than some alternatives.",
+      "AI recommendations nascent, less advanced than competitors."
+    ],
+    "use_cases": [
+      "Verify your site is indexed by Google and visible.",
+      "Diagnose technical issues (mobile usability, rich results).",
+      "Analyze queries driving organic traffic.",
+      "Submit a sitemap or request crawling of a specific URL."
+    ],
+    "relevant_for": ["Webmasters", "SEO specialists", "Content managers", "Web marketing managers"]
+  }
+}

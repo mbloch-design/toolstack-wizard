@@ -1,0 +1,93 @@
+{
+  "slug": "tubebuddy",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "TubeBuddy — Pricing (site officiel)", "url": "https://www.tubebuddy.com/pricing" }
+  ],
+  "facts": {
+    "what": "Suite d'outils pour créateurs YouTube, offrant l'optimisation SEO des vidéos, l'analyse des performances, la gestion des commentaires, et des suggestions basées sur les tendances de recherche.",
+    "what_en": "Toolkit for YouTube creators providing video SEO optimization, performance analytics, comment management, and search trend-based recommendations.",
+    "pricing_model": "Abonnement mensuel ou annuel, avec quatre niveaux tarifaires (Free, Pro, Star, Legend).",
+    "free_tier": { "exists": true, "detail": "Plan gratuit avec un canal, tag videos, analytics basique, et thumbnail generator limité." },
+    "plans": [
+      { "name": "Free", "price": "0 $/mois (gratuit limité)" },
+      { "name": "Pro", "price": "9 $/mois (ou ~36 $/an en facturation annuelle)" },
+      { "name": "Star", "price": "19 $/mois (ou ~144 $/an en facturation annuelle)" },
+      { "name": "Legend", "price": "39 $/mois (ou ~250-278 $/an en facturation annuelle)" }
+    ],
+    "key_features": [
+      "Keyword Explorer (recherche de mots-clés YouTube)",
+      "SEO Studio (optimisation des titles, descriptions, tags)",
+      "Video Analytics (Videolytics) et performance tracking",
+      "A/B Testing des thumbnails (Star+)",
+      "Comment filtering et canned responses",
+      "Competitor Analysis et tracking des rankings"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes créateur YouTube actif cherchant à croître.",
+        "Vous voulez optimiser le SEO de vos vidéos.",
+        "Vous analysez les performances de votre chaîne."
+      ],
+      "avoidIf": [
+        "Vous n'avez qu'une chaîne YouTube très jeune.",
+        "Vous uploadez très rarement.",
+        "Vous disposez déjà d'une équipe d'analystes."
+      ],
+      "threshold": "TubeBuddy s'impose pour les créateurs YouTube cherchant à croître via l'optimisation SEO et l'analyse ; pour un créateur occasionnel ou débutant, le plan gratuit suffit."
+    },
+    "pros": [
+      "Plan gratuit utile avec Keyword Explorer limité.",
+      "Optimisation SEO très détaillée pour YouTube.",
+      "A/B Testing des thumbnails inclus.",
+      "Analyses compétitives pour benchmarking."
+    ],
+    "cons": [
+      "Fonctionnalités basiques sur plan gratuit.",
+      "Plans payants montrent leur valeur surtout à partir de Star.",
+      "Coût annuel s'additionne pour les créateurs multiples."
+    ],
+    "use_cases": [
+      "Trouver les mots-clés trending sur YouTube.",
+      "Optimiser les titles et descriptions pour le classement.",
+      "Analyser les performances de la chaîne et concurrents.",
+      "Tester et optimiser les thumbnails pour le CTR."
+    ],
+    "relevant_for": ["Créateurs YouTube", "Producteurs de contenu", "YouTubers fulltime"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're an active YouTube creator looking to grow.",
+        "You want to optimize video SEO.",
+        "You analyze your channel performance."
+      ],
+      "avoidIf": [
+        "Your YouTube channel is very new.",
+        "You upload very rarely.",
+        "You already have an analytics team."
+      ],
+      "threshold": "TubeBuddy works for YouTube creators seeking growth via SEO optimization and analytics; for occasional or new creators, the free plan suffices."
+    },
+    "pros": [
+      "Useful free plan with limited Keyword Explorer.",
+      "Detailed YouTube SEO optimization.",
+      "Thumbnail A/B testing included.",
+      "Competitive analysis for benchmarking."
+    ],
+    "cons": [
+      "Limited features on free plan.",
+      "Paid plans show value starting at Star tier.",
+      "Annual cost adds up for multiple channels."
+    ],
+    "use_cases": [
+      "Find trending keywords on YouTube.",
+      "Optimize titles and descriptions for rankings.",
+      "Analyze channel and competitor performance.",
+      "Test and optimize thumbnails for CTR."
+    ]
+  }
+}

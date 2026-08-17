@@ -1,0 +1,94 @@
+{
+  "slug": "surferseo",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Surfer SEO — Pricing (site officiel)", "url": "https://surferseo.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Plateforme IA de gestion SEO et d'optimisation de contenu, conçue pour augmenter la visibilité sur Google, les AI Overviews, et les modèles IA (ChatGPT, Gemini, Claude).",
+    "what_en": "AI-powered SEO and content optimization platform designed to improve visibility across Google search, AI Overviews, and AI models like ChatGPT, Gemini, and Claude.",
+    "pricing_model": "Abonnement mensuel ou annuel, avec cinq niveaux de tarification (Discovery, Standard, Pro, Peace of Mind, Enterprise).",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite ; essai gratuit proposé." },
+    "plans": [
+      { "name": "Discovery", "price": "49 $/mois (ou montants réduits en facturation annuelle)" },
+      { "name": "Standard", "price": "99 $/mois" },
+      { "name": "Pro", "price": "182 $/mois" },
+      { "name": "Peace of Mind", "price": "299 $/mois" },
+      { "name": "Enterprise", "price": "À partir de 999 $/mois" }
+    ],
+    "key_features": [
+      "Content Score (système basé sur l'IA pour indiquer ce qui génère la visibilité)",
+      "Content Editor (interface d'optimisation en temps réel)",
+      "Content Audit (identifie les pages peu performantes)",
+      "Topical Map (découverte d'angles de contenu)",
+      "AI Tracker (suivi des mentions dans les réponses IA)",
+      "Brand Voice Integration (intégration du positionnement de marque)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez un site avec stratégie SEO active.",
+        "Vous voulez suivre votre visibilité dans les AI Overviews.",
+        "Vous avez besoin d'optimisation de contenu automatisée."
+      ],
+      "avoidIf": [
+        "Votre site est très petit ou peu visité.",
+        "Vous faites un audit SEO ponctuel sans besoin continu.",
+        "Vous disposez d'une équipe SEO très expérimentée."
+      ],
+      "threshold": "Surfer SEO s'impose pour les équipes marketing et agences cherchant à automatiser l'optimisation SEO et suivre la visibilité IA ; pour un audit ponctuel ou une stratégie SEO minimaliste, un autre outil convient."
+    },
+    "pros": [
+      "Suivi avancé de la visibilité IA (AI Tracker).",
+      "Optimisation de contenu en temps réel.",
+      "Interface conviviale pour rédacteurs et SEO.",
+      "Intégration Brand Voice pour cohérence éditoriale."
+    ],
+    "cons": [
+      "Pas de version gratuite.",
+      "Plans Enterprise nécessitent contact commercial.",
+      "Tarif entry-level peut être élevé pour petites équipes."
+    ],
+    "use_cases": [
+      "Optimiser des articles de blog pour Google et AI.",
+      "Auditer un site et identifier les contenus à retravailler.",
+      "Gérer la visibilité multi-canal (SEO + IA).",
+      "Conseiller des clients sur l'optimisation SEO (agences)."
+    ],
+    "relevant_for": ["Agences digitales", "Éditorialistes", "Gestionnaires de contenu", "Spécialistes SEO"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage a site with active SEO strategy.",
+        "You want to track visibility in AI Overviews.",
+        "You need automated content optimization at scale."
+      ],
+      "avoidIf": [
+        "Your site is very small or receives minimal traffic.",
+        "You're doing a one-off SEO audit without ongoing needs.",
+        "You have an experienced in-house SEO team."
+      ],
+      "threshold": "Surfer SEO makes sense for marketing teams and agencies automating SEO optimization and tracking AI visibility; for one-time audits or minimal SEO strategy, another tool fits better."
+    },
+    "pros": [
+      "Advanced AI visibility tracking (AI Tracker).",
+      "Real-time content optimization guidance.",
+      "User-friendly interface for writers and SEO pros.",
+      "Brand Voice integration for editorial consistency."
+    ],
+    "cons": [
+      "No free version.",
+      "Enterprise plans require sales contact.",
+      "Entry-level pricing may be high for small teams."
+    ],
+    "use_cases": [
+      "Optimize blog articles for Google and AI search.",
+      "Audit a site and identify content to improve.",
+      "Manage multi-channel visibility (SEO + AI).",
+      "Advise clients on SEO optimization (agencies)."
+    ]
+  }
+}

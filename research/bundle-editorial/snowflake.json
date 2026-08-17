@@ -1,0 +1,103 @@
+{
+  "slug": "snowflake",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Snowflake — The AI Data Cloud (site officiel)", "url": "https://www.snowflake.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de données cloud entièrement managée pour data engineering, analytics, AI et collaboration. Stocke les données dans un data warehouse cloud avec compute scalable, compatible cross-cloud (AWS, Azure, GCP).",
+    "what_en": "Fully managed cloud data platform for data engineering, analytics, AI, and collaboration. Stores data in a scalable cloud warehouse compatible with cross-cloud (AWS, Azure, GCP).",
+    "pricing_model": "Pricing basée sur consumption : crédits pour compute (2-4 $/crédit selon édition) + storage (23 $/TB/month). Pre-purchase ou on-demand. Ingestion data libre, egress multi-cloud chargée.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit 30 jours avec $400 de crédits inclus, sans engagement, accès complet aux features." },
+    "plans": [
+      { "name": "Standard Edition", "price": "2 $/crédit compute + 23 $/TB storage/month" },
+      { "name": "Enterprise Edition", "price": "3 $/crédit compute + 23 $/TB storage/month" },
+      { "name": "Business Critical", "price": "4 $/crédit compute + 23 $/TB storage/month" },
+      { "name": "Pre-Purchase Discount", "price": "Réduction 20% vs on-demand avec commitment annuel" }
+    ],
+    "key_features": [
+      "Data warehouse cloud scalable et multi-cloud",
+      "Compute à la demande, scaling automatique",
+      "Collaboration temps réel sur données",
+      "Support native SQL, Python, Scala",
+      "Intégration AI (ML models, generative AI)",
+      "Data sharing between organizations",
+      "Query optimization et caching natif",
+      "Monitoring et alertes d'anomalies"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez des volumes data importants (plusieurs TB).",
+        "Vous avez besoin d'une data warehouse cloud scalable.",
+        "Vous collaborez entre teams sur l'analytics et ML.",
+        "Vous hébergez des données multi-cloud ou cross-region."
+      ],
+      "avoidIf": [
+        "Vous débutez en data et préférez une solution simple / low-code.",
+        "Vos données sont faibles volumes (quelques GB suffisent).",
+        "Votre budget est très limité (Snowflake peut coûter cher)."
+      ],
+      "threshold": "Snowflake est leader pour les data warehouses d'entreprise cloud. Pour PoC ou petits data teams, considérer BigQuery ou alternatives plus lean."
+    },
+    "pros": [
+      "Scalabilité théorique illimitée en compute et storage.",
+      "Cross-cloud et multi-region native.",
+      "Collaboration et data sharing sécurisé.",
+      "Essai gratuit généreux, avec crédits offerts.",
+      "Pricing transparent par crédit + storage."
+    ],
+    "cons": [
+      "Pricing complexe, coûts en escalade rapide avec volume.",
+      "Caching et optimization prise en main délicate.",
+      "Setup initial requires data engineering skills.",
+      "Egress data inter-région onéreux."
+    ],
+    "use_cases": [
+      "Construire un data warehouse centralisé pour l'entreprise.",
+      "Analytics et reporting à l'échelle de milliers d'utilisateurs.",
+      "ML pipelines et feature engineering.",
+      "Data sharing sécurisé avec partenaires ou clients.",
+      "Consolidation données multi-sources (ERP, CRM, logs)."
+    ],
+    "relevant_for": ["Data engineers", "Data scientists", "Équipes analytics", "Entreprises avec maturité data"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage significant data volumes (multiple TBs).",
+        "You need a scalable cloud data warehouse.",
+        "Teams collaborate on analytics and ML.",
+        "You host data multi-cloud or cross-region."
+      ],
+      "avoidIf": [
+        "You're new to data and prefer simple, low-code solutions.",
+        "Your data volumes are small (a few GBs suffice).",
+        "Your budget is very tight (Snowflake scales costly)."
+      ],
+      "threshold": "Snowflake is the leader for enterprise cloud data warehouses. For PoCs or small data teams, consider BigQuery or leaner alternatives."
+    },
+    "pros": [
+      "Theoretically unlimited compute and storage scalability.",
+      "Native cross-cloud and multi-region.",
+      "Secure collaboration and data sharing.",
+      "Generous free trial (30 days + 400 USD credits).",
+      "Transparent per-credit and storage pricing."
+    ],
+    "cons": [
+      "Complex pricing, rapid cost escalation with volume.",
+      "Caching and optimization optimization steep learning curve.",
+      "Initial setup requires data engineering skills.",
+      "Inter-region data egress is expensive."
+    ],
+    "use_cases": [
+      "Build centralized data warehouse for the enterprise.",
+      "Analytics and reporting at scale for thousands of users.",
+      "ML pipelines and feature engineering.",
+      "Secure data sharing with partners or customers.",
+      "Consolidate multi-source data (ERP, CRM, logs)."
+    ]
+  }
+}

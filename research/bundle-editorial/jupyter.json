@@ -1,0 +1,105 @@
+{
+  "slug": "jupyter",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Jupyter (site officiel)", "url": "https://jupyter.org" }
+  ],
+  "facts": {
+    "what": "Environnement interactif open source permettant de créer et partager des documents de calcul (notebooks) combinant code, texte narrative, équations LaTeX et visualisations, avec support de 40+ langages de programmation.",
+    "what_en": "Open-source interactive environment for creating and sharing computational notebooks combining code, narrative text, LaTeX equations, and visualizations, supporting 40+ programming languages.",
+    "pricing_model": "Open source gratuit. JupyterHub (déploiement multi-utilisateurs) disponible en versions self-hosted ou cloud managées.",
+    "free_tier": { "exists": true, "detail": "Jupyter est entièrement libre et open source. Aucune version payante, aucune licence commerciale. JupyterHub peut être auto-hébergé ou déployé sur cloud (AWS/Azure/GCP) sans frais de licence." },
+    "plans": [
+      { "name": "Jupyter (local)", "price": "Gratuit et open source" },
+      { "name": "JupyterHub (self-hosted)", "price": "Gratuit et open source (infra et support à votre charge)" },
+      { "name": "JupyterHub (cloud managé)", "price": "Dépend du fournisseur cloud (AWS, Azure, GCP)" }
+    ],
+    "key_features": [
+      "JupyterLab : interface moderne, flexible, modulable",
+      "Jupyter Notebook : interface classique, épurée, streaming-friendly",
+      "Support Python, R, Julia, Scala et 40+ autres langages",
+      "Widgets interactifs pour créer des dashboards et contrôles",
+      "Voilà : transformer des notebooks en apps web autonomes",
+      "Jupyter Book : créer des livres et articles computationnels",
+      "Binder : partager des notebooks exécutables sans installation",
+      "JupyterHub : déploiement multi-utilisateurs (entreprises, universités)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous faites de la science des données, du machine learning ou de la recherche scientifique.",
+        "Vous voulez mélanger code exécutable, documentation et visualisations dans un seul document.",
+        "Vous valorisez l'open source et la flexibilité (self-hosted ou cloud au choix)."
+      ],
+      "avoidIf": [
+        "Vous cherchez surtout un outil de documentation / blogging (d'autres outils sont plus simples).",
+        "Vous avez besoin de workflows en pipeline et jobs batch (utilisez Airflow, Prefect, etc.).",
+        "Vous préférez une IDE graphique sans ligne de commande."
+      ],
+      "threshold": "Jupyter est le standard de facto pour la data science, ML et recherche scientifique ; gratuit, extensible et adopté par les majors (Google, Microsoft, IBM), c'est l'incontournable."
+    },
+    "pros": [
+      "Entièrement gratuit et open source.",
+      "Écosystème immense (intégrations, extensions, community).",
+      "Mélange code exécutable + documentation + visualisations.",
+      "Support 40+ langages (Python, R, Julia, etc.).",
+      "Widgets et Voilà pour créer des dashboards interactifs.",
+      "JupyterHub pour multi-utilisateurs en entreprise.",
+      "Binder pour partager des notebooks exécutables sans installation."
+    ],
+    "cons": [
+      "Pas idéal pour le code production (plutôt du prototypage/exploration).",
+      "Performance limitée sur très gros volumes de données.",
+      "Pas de workflow orchestration native (utiliser Airflow, etc.).",
+      "Sécurité / sandboxing à gérer soi-même si auto-hébergé."
+    ],
+    "use_cases": [
+      "Exploration et analyse de données (EDA).",
+      "Prototypage d'algorithmes et modèles ML.",
+      "Rédaction d'articles scientifiques avec code et résultats.",
+      "Documentation technique interactive et tutoriels reproducibles.",
+      "Dashboards et rapports dynamiques avec Voilà."
+    ],
+    "relevant_for": ["Data scientists", "Researchers", "ML engineers", "Analysts", "Educators"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You do data science, machine learning, or scientific research.",
+        "You want to blend executable code, documentation, and visualizations in one document.",
+        "You value open source and flexibility (self-hosted or cloud)."
+      ],
+      "avoidIf": [
+        "You're mainly looking for a documentation/blogging tool (simpler alternatives exist).",
+        "You need pipeline workflows and batch jobs (use Airflow, Prefect, etc.).",
+        "You prefer a graphical IDE without command line."
+      ],
+      "threshold": "Jupyter is the de facto standard for data science, ML, and scientific research; free, extensible, and adopted by majors (Google, Microsoft, IBM), it's essential."
+    },
+    "pros": [
+      "Completely free and open source.",
+      "Massive ecosystem (integrations, extensions, community).",
+      "Blend executable code + documentation + visualizations.",
+      "Support for 40+ languages (Python, R, Julia, etc.).",
+      "Widgets and Voilà for interactive dashboards.",
+      "JupyterHub for multi-user enterprise deployments.",
+      "Binder to share executable notebooks without installation."
+    ],
+    "cons": [
+      "Not ideal for production code (more for prototyping/exploration).",
+      "Performance limited on very large data volumes.",
+      "No native workflow orchestration (use Airflow, etc.).",
+      "Security/sandboxing to manage yourself if self-hosted."
+    ],
+    "use_cases": [
+      "Data exploration and analysis (EDA).",
+      "Prototyping algorithms and ML models.",
+      "Writing scientific papers with code and results.",
+      "Interactive technical documentation and reproducible tutorials.",
+      "Dynamic dashboards and reports with Voilà."
+    ],
+    "relevant_for": ["Data scientists", "Researchers", "ML engineers", "Analysts", "Educators"]
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "slug": "sentry",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Sentry — Error Tracking & Monitoring (site officiel)", "url": "https://sentry.io" }
+  ],
+  "facts": {
+    "what": "Plateforme de monitoring d'erreurs et tracing de performance qui capture, classe et alerte sur les exceptions, crashes et performance issues en temps réel, avec session replay et dashboards d'anomalies.",
+    "what_en": "Error tracking and performance monitoring platform that captures, categorizes, and alerts on exceptions, crashes, and performance issues in real time, with session replay and anomaly dashboards.",
+    "pricing_model": "Freemium : plan gratuit (5K erreurs/mois), puis abonnement mensuel (Team, Business) ou Enterprise sur devis. Pricing pay-as-you-go pour overages.",
+    "free_tier": { "exists": true, "detail": "Developer Plan : gratuit, 1 utilisateur, 5K erreurs/mois, 10 dashboards personnalisés, alertes mail." },
+    "plans": [
+      { "name": "Developer (Gratuit)", "price": "0 € (5K erreurs/mois, 1 utilisateur)" },
+      { "name": "Team", "price": "26 $/month (facturation annuelle, utilisateurs illimités, 20 dashboards)" },
+      { "name": "Business", "price": "80 $/month (facturation annuelle, dashboards illimités, anomaly detection)" },
+      { "name": "Enterprise", "price": "Sur devis (account manager, support premium)" }
+    ],
+    "key_features": [
+      "Monitoring des erreurs et exceptions en temps réel",
+      "Tracing de performance et profiling",
+      "Session replay pour reproduire les bugs",
+      "Anomaly detection par machine learning (Business+)",
+      "Intégration avec GitHub, Jira, Slack",
+      "Dashboards et alertes personnalisés",
+      "Gestion des quotas (overages pay-as-you-go)",
+      "SAML + SCIM pour Enterprise"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez une application web ou mobile en production.",
+        "Vous devez monitorer les erreurs en temps réel.",
+        "Vous analysez les incidents et optimisez la performance.",
+        "Vous intégrez avec GitHub, Slack ou Jira."
+      ],
+      "avoidIf": [
+        "Vous voulez une solution entièrement gratuite et sans limites.",
+        "Votre application genère très peu d'erreurs (overages coûtent cher).",
+        "Vous avez juste besoin de logs simples."
+      ],
+      "threshold": "Sentry est indispensable pour tout développeur en production. Le plan gratuit suffit pour tester ; pour un usage réel, le plan Team rapidement nécessaire."
+    },
+    "pros": [
+      "Plan gratuit roiste (5K erreurs).",
+      "Session replay pour debugger les bugs.",
+      "Intégrations natives (GitHub, Slack, Jira).",
+      "Machine learning (anomaly detection).",
+      "Support infractions/performance tracing."
+    ],
+    "cons": [
+      "Pricing opaque et scaling rapide.",
+      "Session replay et performance monitoring facturés séparément (overages vite chers).",
+      "Configuration peut être complexe."
+    ],
+    "use_cases": [
+      "Capturer les erreurs JavaScript/Python en production.",
+      "Analyser les session replays pour reproduire les bugs.",
+      "Monitorer la performance et détecter les anomalies.",
+      "Alerter l'équipe sur les incidents critiques.",
+      "Suivre les erreurs pour chaque release."
+    ],
+    "relevant_for": ["Développeurs", "Équipes DevOps", "Startups tech", "Agences web"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You develop web or mobile applications in production.",
+        "You need real-time error monitoring.",
+        "You analyze incidents and optimize performance.",
+        "You integrate with GitHub, Slack, or Jira."
+      ],
+      "avoidIf": [
+        "You want a fully free, unlimited solution.",
+        "Your app generates few errors (overages add up fast).",
+        "You just need simple logging."
+      ],
+      "threshold": "Sentry is essential for any developer running production apps. Free plan works for testing; real-world use quickly requires Team plan."
+    },
+    "pros": [
+      "Generous free plan (5K errors).",
+      "Session replay to debug bugs.",
+      "Native integrations (GitHub, Slack, Jira).",
+      "Machine learning (anomaly detection).",
+      "Performance tracing and monitoring."
+    ],
+    "cons": [
+      "Opaque, rapidly scaling pricing.",
+      "Session replay and performance monitoring charged separately (overages add up).",
+      "Setup can be complex."
+    ],
+    "use_cases": [
+      "Capture JavaScript/Python errors in production.",
+      "Analyze session replays to reproduce bugs.",
+      "Monitor performance and detect anomalies.",
+      "Alert team on critical incidents.",
+      "Track errors per release."
+    ]
+  }
+}

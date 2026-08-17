@@ -1,0 +1,91 @@
+{
+  "slug": "convertkit-analytics",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "ConvertKit — Email Marketing Platform (site officiel)", "url": "https://convertkit.com" }
+  ],
+  "facts": {
+    "what": "Analytics intégrés dans ConvertKit (plateforme email marketing). Suive taux d'ouverture, clics, croissance abonnés, engagement. Tableaux de bord segmentés par étapes du funnel (Acquisition, Engagement, Ventes, Vélocité).",
+    "what_en": "Built-in analytics in ConvertKit email marketing platform. Tracks open rates, clicks, subscriber growth, engagement. Segmented dashboards by funnel stage (Acquisition, Engagement, Sales, Velocity).",
+    "pricing_model": "Inclus dans plans ConvertKit. Analytics basiques dans tous les plans ; analytics avancés dans Creator Pro. Plans : Creator Standard, Creator Pro.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Plans payants à partir de montants sur page officielle." },
+    "plans": [
+      { "name": "Creator Standard", "price": "Montants sur la page officielle ConvertKit" },
+      { "name": "Creator Pro", "price": "Montants sur la page officielle ConvertKit, inclut analytics avancés"  }
+    ],
+    "key_features": [
+      "Taux d'ouverture, taux de clic par email.",
+      "Suivi croissance et churn abonnés.",
+      "Dashboards Acquisition, Engagement, Ventes, Vélocité.",
+      "Segmentation par comportement abonné.",
+      "Prédictions IA pour optimiser taux conversion.",
+      "Intégration SegMetrics pour analytics avancés."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez ConvertKit pour vos emails.",
+        "Vous avez besoin d'analytics email natifs.",
+        "Vous monétisez votre audience email."
+      ],
+      "avoidIf": [
+        "Vous ne cherchez que email marketing simple.",
+        "Vous préférez outils analytics web généralists.",
+        "Vous n'avez pas encore de plan ConvertKit."
+      ],
+      "threshold": "ConvertKit analytics convient si vous êtes déjà utilisateur ConvertKit ; pour analytics web générales, Google Analytics est mieux."
+    },
+    "pros": [
+      "Intégré nativement dans ConvertKit.",
+      "Dashboards intuitifs segmentés par funnel.",
+      "Prédictions IA pour optimisation contenu.",
+      "Suivi revenus email et abonnés payants.",
+      "SegMetrics integration pour profondeur."
+    ],
+    "cons": [
+      "Disponible uniquement si utilisateur ConvertKit.",
+      "Analytics avancés dans plan Creator Pro uniquement.",
+      "Moins complet que des outils analytics dédiés."
+    ],
+    "use_cases": [
+      "Analyser performance emails et newsletters.",
+      "Optimiser taux d'ouverture et conversion.",
+      "Suivre revenus créateurs (sponsorships, paywall)."
+    ],
+    "relevant_for": ["Email creators", "Newsletter writers", "Email marketers", "Creators monétisés"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You use ConvertKit for email.",
+        "You need native email analytics.",
+        "You monetize your email audience."
+      ],
+      "avoidIf": [
+        "You only want simple email marketing.",
+        "You prefer general web analytics tools.",
+        "You're not yet a ConvertKit user."
+      ],
+      "threshold": "ConvertKit analytics make sense if you're already using ConvertKit; for general web analytics, Google Analytics is better."
+    },
+    "pros": [
+      "Natively integrated in ConvertKit.",
+      "Intuitive dashboards segmented by funnel.",
+      "AI predictions for content optimization.",
+      "Track email revenue and paid subscribers.",
+      "SegMetrics integration for depth."
+    ],
+    "cons": [
+      "Only available if you're a ConvertKit user.",
+      "Advanced analytics in Creator Pro plan only.",
+      "Less complete than dedicated analytics tools."
+    ],
+    "use_cases": [
+      "Analyze email and newsletter performance.",
+      "Optimize open and conversion rates.",
+      "Track creator revenue (sponsorships, paywall)."
+    ]
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "slug": "wp-rocket",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "WP Rocket — Pricing (site officiel)", "url": "https://wp-rocket.me/pricing/" }
+  ],
+  "facts": {
+    "what": "Plugin WordPress premium de cache et d'optimisation des performances, offrant la minification, la mise en cache au navigateur, le lazy loading, et l'optimisation des images.",
+    "what_en": "Premium WordPress caching and performance optimization plugin featuring browser caching, minification, lazy loading, and image optimization.",
+    "pricing_model": "Licence annuelle perpétuelle par nombre de sites WordPress (1 site, 3 sites, ou illimité). Tarification annuelle unique, sans abonnement récurrent.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite ; plugin premium uniquement." },
+    "plans": [
+      { "name": "Single Site", "price": "59 $/an (1 site WordPress)" },
+      { "name": "3 Sites", "price": "119 $/an (3 sites WordPress)" },
+      { "name": "Unlimited", "price": "299 $/an (sites illimités)" }
+    ],
+    "key_features": [
+      "Caching au navigateur et server-side",
+      "Minification CSS/JS automatique",
+      "Lazy loading des images",
+      "Optimisation des CDN (CloudFlare, etc.)",
+      "Préchargement (preloading) de ressources",
+      "Optimisation des core web vitals",
+      "Support et mises à jour inclus"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez un ou plusieurs sites WordPress.",
+        "Vous voulez optimiser la performance simplement.",
+        "Vous cherchez une solution clé en main pour WordPress."
+      ],
+      "avoidIf": [
+        "Vous n'avez pas WordPress (vous utilisez un autre CMS).",
+        "Vous voulez une solution gratuite.",
+        "Vous avez une équipe DevOps gérant le caching."
+      ],
+      "threshold": "WP Rocket s'impose pour les propriétaires WordPress cherchant une optimisation de performance simple et fiable ; pour non-WordPress ou budgets très serrés, des alternatives gratuites conviennent."
+    },
+    "pros": [
+      "Installation et configuration très simples.",
+      "Performance améliorée out-of-the-box.",
+      "Support WordPress réputé et actif.",
+      "Prix décourage (tarif annuel unique, renouvellement avec réduction)."
+    ],
+    "cons": [
+      "Pas de version gratuite.",
+      "Limité à WordPress uniquement.",
+      "Renouvellement annuel obligatoire (bien qu'avec réduction)."
+    ],
+    "use_cases": [
+      "Accélérer un site WordPress lent.",
+      "Optimiser les Core Web Vitals pour SEO.",
+      "Mettre en cache le contenu statique.",
+      "Réduire la charge serveur avec lazy loading."
+    ],
+    "relevant_for": ["Propriétaires de sites WordPress", "Agences web", "Freelances WordPress", "Blogueurs/éditorialistes"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You have one or more WordPress sites.",
+        "You want simple performance optimization.",
+        "You're looking for a turnkey WordPress solution."
+      ],
+      "avoidIf": [
+        "You don't use WordPress (different CMS).",
+        "You want a free solution.",
+        "You have a DevOps team managing caching."
+      ],
+      "threshold": "WP Rocket works for WordPress site owners seeking simple, reliable performance optimization; for non-WordPress or tight budgets, free alternatives fit better."
+    },
+    "pros": [
+      "Very simple install and setup.",
+      "Performance improvement out-of-the-box.",
+      "Trusted active WordPress support.",
+      "Reasonable yearly pricing (with renewal discounts)."
+    ],
+    "cons": [
+      "No free version.",
+      "WordPress-only.",
+      "Annual renewal required (though discounted)."
+    ],
+    "use_cases": [
+      "Speed up a slow WordPress site.",
+      "Optimize Core Web Vitals for SEO.",
+      "Cache static content.",
+      "Reduce server load with lazy loading."
+    ]
+  }
+}

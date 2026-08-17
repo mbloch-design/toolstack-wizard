@@ -1,0 +1,92 @@
+{
+  "slug": "bigquery",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "BigQuery — Google Cloud (site officiel)", "url": "https://cloud.google.com/bigquery" }
+  ],
+  "facts": {
+    "what": "Data warehouse cloud serverless de Google. Stockage et analyse haute performance de données massives via SQL. Infrastructure gérée, scaling automatique, intégration Vertex AI/Gemini.",
+    "what_en": "Google's serverless cloud data warehouse. Store and analyze massive datasets with high-performance SQL. Fully managed infrastructure, automatic scaling, Vertex AI/Gemini integration.",
+    "pricing_model": "Freemium : tier gratuit + on-demand pricing. Modèles tarifaires multiples : on-demand (requête), capacity (slots), BigQuery Editions (Enterprise).",
+    "free_tier": { "exists": true, "detail": "Tier gratuit : 1 TiB requêtes/mois, 10 GiB stockage/mois. Au-delà, on-demand à 6.25 $/TiB scanné." },
+    "plans": [
+      { "name": "Free Tier", "price": "1 TiB requêtes + 10 GiB stockage/mois gratuit" },
+      { "name": "On-Demand", "price": "6.25 $/TiB scanné (requêtes cachées gratuites)" },
+      { "name": "Capacity", "price": "0.04 $/slot-hour (Standard), 0.06 $/slot-hour (Enterprise), 0.10 $/slot-hour (Enterprise Plus)" }
+    ],
+    "key_features": [
+      "SQL queries serverless sans gestion infrastructure.",
+      "Stockage actif 23.55 $/TiB/mois, long-term 50% réduit.",
+      "Intégration Vertex AI et Gemini pour IA.",
+      "Partitioning et clustering automatiques.",
+      "Streaming insert et batch load.",
+      "Access control fine-grained, audit logs."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous analysez des volumes massifs de données.",
+        "Vous cherchez une solution serverless sans ops.",
+        "Vous avez besoin d'intégrations Google Cloud/IA."
+      ],
+      "avoidIf": [
+        "Vous avez peu de données à analyser.",
+        "Vous préférez infrastructure on-premise.",
+        "Vos coûts d'infrastructure sont très serrés."
+      ],
+      "threshold": "BigQuery s'impose pour données massives et équipes sans ops ; pour petits volumes, solutions plus légères existent."
+    },
+    "pros": [
+      "Architecture serverless complète, zéro ops.",
+      "Scaling automatique et performance SQL très rapide.",
+      "Tier gratuit généreux pour prototyping.",
+      "Intégrations Vertex AI et Gemini natives.",
+      "UI intuitive, excellente documentation."
+    ],
+    "cons": [
+      "Coûts peuvent devenir élevés avec gros volumes.",
+      "Apprentissage du modèle tarifaire TiB scanné.",
+      "Moins flexible qu'une base données traditionnelle."
+    ],
+    "use_cases": [
+      "Analyser événements/logs à grande échelle.",
+      "Construire dashboards data pour métier.",
+      "Machine learning sur données massives avec Vertex."
+    ],
+    "relevant_for": ["Data analysts", "Data engineers", "Data scientists", "Startups data-driven"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You analyze massive data volumes.",
+        "You want serverless with no ops.",
+        "You need Google Cloud/AI integrations."
+      ],
+      "avoidIf": [
+        "You have limited data to analyze.",
+        "You prefer on-premise infrastructure.",
+        "Your infrastructure budget is very tight."
+      ],
+      "threshold": "BigQuery makes sense for big data and ops-free teams; for small volumes, lighter solutions exist."
+    },
+    "pros": [
+      "Fully serverless architecture, zero ops.",
+      "Automatic scaling and very fast SQL performance.",
+      "Generous free tier for prototyping.",
+      "Native Vertex AI and Gemini integrations.",
+      "Intuitive UI, excellent documentation."
+    ],
+    "cons": [
+      "Costs can scale with large volumes.",
+      "Learning curve for per-TiB-scanned pricing.",
+      "Less flexible than traditional database."
+    ],
+    "use_cases": [
+      "Analyze events/logs at massive scale.",
+      "Build data dashboards for business.",
+      "Machine learning on big data with Vertex."
+    ]
+  }
+}

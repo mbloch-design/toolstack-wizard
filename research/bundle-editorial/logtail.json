@@ -1,0 +1,105 @@
+{
+  "slug": "logtail",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Logtail via Better Stack (site officiel)", "url": "https://betterstack.com/logtail" },
+    { "label": "Better Stack Pricing", "url": "https://betterstack.com/pricing" }
+  ],
+  "facts": {
+    "what": "Produit de gestion de logs (Logtail) maintenant intégré à Better Stack, permettant l'ingestion, le stockage et la recherche structurée de logs via SQL, PromQL ou interface drag-and-drop, avec intégration OpenTelemetry et stockage custom S3.",
+    "what_en": "Log management product (Logtail) now integrated into Better Stack, enabling log ingestion, storage, and structured search via SQL, PromQL, or drag-and-drop interface, with OpenTelemetry integration and custom S3 storage.",
+    "pricing_model": "Freemium : plan gratuit limité ; plans payants usage-based à partir de 24 $ pour logs, 29 $ pour uptime+incidents.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit : 3 GB de logs retenus 3 jours, 10 monitors uptime inclus, alertes email/Slack, 1 page de statut." },
+    "plans": [
+      { "name": "Better Stack Free", "price": "Gratuit (3 GB logs/3 jours, 10 monitors)" },
+      { "name": "Log Management (Logtail) Paid", "price": "À partir de 24 $ par mois (30 jours rétention, 10 GB/mois ingestion)" },
+      { "name": "Uptime + Incidents Paid", "price": "À partir de 29 $ par mois (monitoring externe, incident response)" },
+      { "name": "Enterprise", "price": "Tarification custom (audit logs, SSO, support dédié)"  }
+    ],
+    "key_features": [
+      "Ingestion de logs structurés (JSON) et non-structurés",
+      "Recherche SQL pour requêtes complexes et analyse de patterns",
+      "Interface drag-and-drop pour filtrage sans code",
+      "VRL (Vector Remap Language) et transformations JavaScript",
+      "Live tail et alertes anomalies avec détection IA",
+      "Stockage custom S3 (pas de distinction hot/cold storage)",
+      "One-click pattern filtering pour triage rapide",
+      "OpenTelemetry-native et compatible eBPF"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous collectez et analysez des logs d'applications ou infra.",
+        "Vous voulez éviter les coûts très élevés de Datadog ou New Relic.",
+        "Vous préférez stocker les logs dans votre propre S3 (flexibilité et coûts)."
+      ],
+      "avoidIf": [
+        "Vous cherchez surtout une observabilité complète (Grafana, Datadog meilleur fit).",
+        "Vous avez besoin de support premium 24/7 en entreprise.",
+        "Vous aimez les interfaces BI graphiques (Better Stack est CLI/search-heavy)."
+      ],
+      "threshold": "Logtail/Better Stack est le choix idéal pour les équipes cherchant à réduire drastiquement les coûts de logs sans sacrifier la puissance ; stockage S3 custom et search SQL le différencient."
+    },
+    "pros": [
+      "Nettement moins cher que Datadog à volume équivalent.",
+      "Stockage logs dans votre S3 (propriété des données).",
+      "Recherche SQL pour requêtes complexes et ad-hoc.",
+      "Live tail et anomaly detection avec IA.",
+      "Pattern filtering one-click pour triage rapide.",
+      "OpenTelemetry-native (flexible pour sources).",
+      "Plan gratuit généreux (3 GB, 3 jours)."
+    ],
+    "cons": [
+      "Interface moins moderne que Datadog/NewRelic.",
+      "Écosystème plus petit (moins d'intégrations prêtes à l'emploi).",
+      "Support gratuit limité (communauté).",
+      "Requiert une certaine expertise pour SQL et PromQL."
+    ],
+    "use_cases": [
+      "Ingérer et rechercher des logs d'applications en production.",
+      "Détecter les patterns d'erreurs rapidement (pattern filtering).",
+      "Construire des alertes custom sur des patterns de logs.",
+      "Analyser des incident post-mortem via search SQL historique."
+    ],
+    "relevant_for": ["DevOps engineers", "SREs", "Platform engineers", "Backend developers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You collect and analyze application or infrastructure logs.",
+        "You want to avoid the very high costs of Datadog or New Relic.",
+        "You prefer storing logs in your own S3 (flexibility and cost control)."
+      ],
+      "avoidIf": [
+        "You're mainly looking for complete observability (Grafana, Datadog better fit).",
+        "You need premium 24/7 enterprise support.",
+        "You prefer graphical BI interfaces (Better Stack is CLI/search-heavy)."
+      ],
+      "threshold": "Logtail/Better Stack is ideal for teams wanting to drastically cut log costs without sacrificing power; custom S3 storage and SQL search set it apart."
+    },
+    "pros": [
+      "Markedly cheaper than Datadog at equivalent volume.",
+      "Store logs in your S3 (data ownership).",
+      "SQL search for complex ad-hoc queries.",
+      "Live tail and anomaly detection with AI.",
+      "One-click pattern filtering for quick triage.",
+      "OpenTelemetry-native (flexible for sources).",
+      "Generous free plan (3 GB, 3 days)."
+    ],
+    "cons": [
+      "Interface less modern than Datadog/NewRelic.",
+      "Smaller ecosystem (fewer out-of-the-box integrations).",
+      "Limited free support (community).",
+      "Requires some SQL and PromQL expertise."
+    ],
+    "use_cases": [
+      "Ingest and search production application logs.",
+      "Detect error patterns quickly (pattern filtering).",
+      "Build custom alerts on log patterns.",
+      "Analyze incident post-mortems via historical SQL search."
+    ],
+    "relevant_for": ["DevOps engineers", "SREs", "Platform engineers", "Backend developers"]
+  }
+}

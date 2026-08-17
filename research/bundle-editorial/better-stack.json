@@ -1,0 +1,92 @@
+{
+  "slug": "better-stack",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Better Stack — Pricing (site officiel)", "url": "https://betterstack.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme SRE tout-en-un : surveillance de disponibilité (uptime), gestion d'incidents, logs centralisés, session replay, métriques et suivi d'erreurs. Infrastructure cloud complète.",
+    "what_en": "All-in-one SRE platform: uptime monitoring, incident management, centralized logs, session replay, metrics, and error tracking. Complete cloud infrastructure.",
+    "pricing_model": "Modèle modulaire : chaque produit (uptime, logs, incidents, etc.) au tarif indépendant. Tier gratuit limité, puis abonnement par fonctionnalité et utilisation.",
+    "free_tier": { "exists": true, "detail": "Tier gratuit : 10 monitors, 1 status page, stockage limité, 1 alerte téléphone." },
+    "plans": [
+      { "name": "Free Tier", "price": "10 monitors + 1 status page gratuit" },
+      { "name": "Responder License", "price": "29 $/mois annuel ou 34 $/mois mensuel par personne" },
+      { "name": "Telemetry Storage", "price": "Montants sur la page officielle selon région et volume" }
+    ],
+    "key_features": [
+      "10 monitors gratuits pour uptime.",
+      "Gestion d'incidents avec calendriers on-call.",
+      "Logs centralisés, session replay, traces.",
+      "Statuspage incluse.",
+      "Slack/Teams integration, PagerDuty sync.",
+      "Garantie remboursement 60 jours."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez la disponibilité d'applications critiques.",
+        "Vous avez des équipes on-call organisées.",
+        "Vous cherchez un observability complet (logs + uptime + incidents)."
+      ],
+      "avoidIf": [
+        "Vous cherchez juste une simple surveillance de domaine.",
+        "Vous n'avez pas d'équipe d'incidents dédiée.",
+        "Vous ne voulez payer que pour une fonctionnalité."
+      ],
+      "threshold": "Better Stack convient aux équipes SRE/DevOps agiles ; pour besoins simple de monitoring, solutions allégées suffisent."
+    },
+    "pros": [
+      "Tier gratuit très généreux et utile.",
+      "Modèle modulaire payant à l'utilisation.",
+      "Excellente UI et onboarding rapide.",
+      "Garantie 60 jours remboursement.",
+      "Intégrations natives complètes."
+    ],
+    "cons": [
+      "Coût peut monter si plusieurs produits utilisés.",
+      "Moins spécialisé que des outils dédiés (e.g., DataDog).",
+      "Tier gratuit limité en fonctionnalités avancées."
+    ],
+    "use_cases": [
+      "Monitorer disponibilité d'applications web.",
+      "Coordonner équipes d'incidents avec on-call.",
+      "Centraliser logs et traces applications."
+    ],
+    "relevant_for": ["Équipes DevOps", "SRE (Site Reliability Engineers)", "Startups tech", "Monitorage d'applications critiques"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage availability of critical applications.",
+        "You have organized on-call teams.",
+        "You want complete observability (logs + uptime + incidents)."
+      ],
+      "avoidIf": [
+        "You just need simple domain monitoring.",
+        "You don't have a dedicated incidents team.",
+        "You only want to pay for one feature."
+      ],
+      "threshold": "Better Stack suits agile SRE/DevOps teams; for simple monitoring needs, lighter solutions suffice."
+    },
+    "pros": [
+      "Very generous free tier and useful.",
+      "Modular pay-as-you-go pricing model.",
+      "Excellent UI and quick onboarding.",
+      "60-day money-back guarantee.",
+      "Complete native integrations."
+    ],
+    "cons": [
+      "Cost can escalate with multiple products.",
+      "Less specialized than dedicated tools.",
+      "Free tier limited in advanced features."
+    ],
+    "use_cases": [
+      "Monitor application availability.",
+      "Coordinate incident teams with on-call.",
+      "Centralize application logs and traces."
+    ]
+  }
+}

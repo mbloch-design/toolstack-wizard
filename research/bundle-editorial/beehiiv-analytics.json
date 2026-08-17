@@ -1,0 +1,91 @@
+{
+  "slug": "beehiiv-analytics",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "beehiiv — Newsletter Platform & Analytics (site officiel)", "url": "https://www.beehiiv.com/features/analytics" }
+  ],
+  "facts": {
+    "what": "Plateforme de newsletter tout-en-un avec analytics intégrés. Suit abonnés, taux d'ouverture, clics, revenus publicitaires et contenu payant, avec dashboards temps réel et rapports détaillés.",
+    "what_en": "All-in-one newsletter platform with built-in analytics. Tracks subscribers, open rates, clicks, ad revenue, and paid content performance, with real-time dashboards and detailed reporting.",
+    "pricing_model": "Inclus dans les plans beehiiv (Free, Premium, Premium+). Les analytics sont disponibles à tous les niveaux d'abonnement newsletter.",
+    "free_tier": { "exists": true, "detail": "Analytics disponibles dans le plan Free de beehiiv. Plans payants offrent analytics plus avancés." },
+    "plans": [
+      { "name": "Inclus dans beehiiv Free", "price": "Gratuit avec plan Free beehiiv" },
+      { "name": "Inclus dans beehiiv Premium", "price": "Montants sur la page officielle beehiiv" }
+    ],
+    "key_features": [
+      "Suivi en temps réel des taux d'ouverture et clics.",
+      "Analyse des performances par campagne.",
+      "Tracking des revenus publicitaires et contenu payant.",
+      "Gestion des abonnés et segmentation.",
+      "Analytics prédictives alimentées par IA.",
+      "Rapports exportables et dashboards personnalisables."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez une newsletter ou publication récurrente.",
+        "Vous avez besoin de comprendre l'engagement des lecteurs.",
+        "Vous monétisez via publicités ou contenu payant."
+      ],
+      "avoidIf": [
+        "Vous ne publiez pas régulièrement par email.",
+        "Vous cherchez un outil d'analytics web généralist.",
+        "Vous n'avez besoin que d'analytics très basiques."
+      ],
+      "threshold": "beehiiv analytics s'impose pour newsletters ; pour analytiques générales web, Google Analytics convient mieux."
+    },
+    "pros": [
+      "Analytics intégrés directement dans la plateforme.",
+      "Dashboards temps réel et intuitifs.",
+      "Suivi du revenu publicitaire natif.",
+      "IA prédictive pour optimisation contenu.",
+      "Disponible dans le plan Free."
+    ],
+    "cons": [
+      "Analytics limités au canal email.",
+      "Moins complet que des plateformes analytics dédiées.",
+      "Dépendance à l'écosystème beehiiv."
+    ],
+    "use_cases": [
+      "Analyser la performance d'une newsletter.",
+      "Optimiser temps d'envoi et contenu.",
+      "Suivre revenus publicitaires et abonnements payants."
+    ],
+    "relevant_for": ["Newsletter creators", "Content creators", "Email marketers", "Creators monétisés"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage a regular newsletter or publication.",
+        "You need to understand reader engagement.",
+        "You monetize via ads or paid content."
+      ],
+      "avoidIf": [
+        "You don't publish regularly via email.",
+        "You're looking for a general web analytics tool.",
+        "You only need very basic analytics."
+      ],
+      "threshold": "beehiiv analytics makes sense for newsletters; for general web analytics, Google Analytics fits better."
+    },
+    "pros": [
+      "Analytics built directly into the platform.",
+      "Real-time and intuitive dashboards.",
+      "Native ad revenue tracking.",
+      "Predictive AI for content optimization.",
+      "Available in the Free plan."
+    ],
+    "cons": [
+      "Analytics limited to email channel.",
+      "Less complete than dedicated analytics platforms.",
+      "Dependency on beehiiv ecosystem."
+    ],
+    "use_cases": [
+      "Analyze newsletter performance.",
+      "Optimize send times and content.",
+      "Track ad revenue and paid subscriptions."
+    ]
+  }
+}

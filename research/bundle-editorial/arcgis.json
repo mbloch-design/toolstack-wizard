@@ -1,0 +1,89 @@
+{
+  "slug": "arcgis",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "ArcGIS Online — Pricing & Licensing (site officiel)", "url": "https://www.esri.com/en-us/arcgis/products/arcgis-online/buy" }
+  ],
+  "facts": {
+    "what": "Plateforme SIG (Système d'Information Géographique) basée sur le cloud pour créer des cartes interactives, des applications géospatiales et analyser des données localisées. Infrastructure gérée entièrement par Esri.",
+    "what_en": "Cloud-based GIS (Geographic Information System) platform for creating interactive maps, geospatial applications, and analyzing location-based data. Infrastructure fully managed by Esri.",
+    "pricing_model": "Abonnement annuel par type d'utilisateur (Creator, Professional, Professional Plus, Mobile Worker, Contributor, Viewer). Licence par siège.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite permanente. Essai gratuit disponible." },
+    "plans": [
+      { "name": "Creator", "price": "Abonnement annuel, montants sur la page officielle" },
+      { "name": "Professional", "price": "Abonnement annuel, montants sur la page officielle" },
+      { "name": "Professional Plus", "price": "Abonnement annuel, montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Création et édition de cartes interactives",
+      "Analyse géospatiale et modélisation spatiale",
+      "Gestion des données et intégration",
+      "Applications web et dashboard en temps réel",
+      "Accès à l'écosystème ArcGIS (Pro, Field Maps, Survey123)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous travaillez avec des données géographiques et des cartographies.",
+        "Vous avez besoin d'analyser des phénomènes spatialisés.",
+        "Vous construisez des applications SIG professionnelles."
+      ],
+      "avoidIf": [
+        "Vous cherchez un outil de cartographie gratuit.",
+        "Vous n'avez pas besoin d'analyses géospatiales complexes.",
+        "Votre usage est très occasionnel."
+      ],
+      "threshold": "ArcGIS s'impose pour l'analyse géospatiale professionnelle ; pour une cartographie simple et gratuite, d'autres solutions conviennent mieux."
+    },
+    "pros": [
+      "Leader du marché SIG depuis 30+ ans.",
+      "Infrastructure cloud entièrement gérée.",
+      "Écosystème produits très complet.",
+      "Capacités d'analyse spatiale avancées."
+    ],
+    "cons": [
+      "Modèle tarifaire complexe avec six types d'utilisateurs.",
+      "Courbe d'apprentissage pour la communauté SIG.",
+      "Pas de version gratuite permanente."
+    ],
+    "use_cases": [
+      "Créer des cartes interactives pour le public.",
+      "Analyser des impacts environnementaux ou géographiques.",
+      "Gérer des données de localisation en temps réel."
+    ],
+    "relevant_for": ["Cartographes", "Géomaticiens", "Analystes urbains", "Environnement et conservation"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You work with geographic data and mapping projects.",
+        "You need advanced spatial analysis capabilities.",
+        "You're building professional GIS applications."
+      ],
+      "avoidIf": [
+        "You want free mapping tools.",
+        "You don't need complex geospatial analysis.",
+        "Your usage is very occasional."
+      ],
+      "threshold": "ArcGIS is essential for professional geospatial analysis; for simple free mapping, other solutions work better."
+    },
+    "pros": [
+      "Market leader in GIS for 30+ years.",
+      "Fully managed cloud infrastructure.",
+      "Complete product ecosystem.",
+      "Advanced spatial analysis capabilities."
+    ],
+    "cons": [
+      "Complex pricing model with six user types.",
+      "Steep learning curve for GIS professionals.",
+      "No permanent free version."
+    ],
+    "use_cases": [
+      "Create interactive maps for public consumption.",
+      "Analyze environmental or geographic impacts.",
+      "Manage real-time location data."
+    ]
+  }
+}

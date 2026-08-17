@@ -1,0 +1,89 @@
+{
+  "slug": "notionlytics",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Notionlytics — analytics pour Notion (site officiel)", "url": "https://notionlytics.com" }
+  ],
+  "facts": {
+    "what": "Outil d'analytique avancée pour les pages Notion partagées. Propose des widgets à intégrer pour suivre les vues, sessions, localisation et recueillir des retours anonymes.",
+    "what_en": "Advanced analytics tool for shared Notion pages. Provides embeddable widgets to track views, sessions, location, and collect anonymous feedback.",
+    "pricing_model": "Abonnement mensuel avec trois plans : Pro, Team, Business. Basé sur le nombre de pages et membres.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Essai présumé via inscription (détails non spécifiés sur le site)." },
+    "plans": [
+      { "name": "Pro", "price": "montants sur la page officielle (jusqu'à 100 pages)" },
+      { "name": "Team", "price": "montants sur la page officielle (pages illimitées, 5 membres)" },
+      { "name": "Business", "price": "montants sur la page officielle (pages illimitées, 100 membres, support prioritaire)" }
+    ],
+    "key_features": [
+      "Widgets d'analytique en temps réel sans code",
+      "Suivi des vues, sessions et localisation",
+      "Intégration avec Google Analytics et Facebook Pixel",
+      "Retours interactifs et anonymes des lecteurs",
+      "Compatible pages publiques et privées Notion"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous partagez des pages Notion publiques ou semi-privées.",
+        "Vous voulez comprendre l'engagement de votre contenu Notion.",
+        "Vous explorez Notion comme CMS ou wiki pour équipe."
+      ],
+      "avoidIf": [
+        "Vous cherchez une solution entièrement gratuite.",
+        "Vous n'utilisez pas Notion ou avez peu de pages à suivre."
+      ],
+      "threshold": "Notionlytics s'impose pour ceux qui monétisent ou partagent largement du contenu Notion ; moins pertinent pour les petits wikis privés."
+    },
+    "pros": [
+      "Intégration native simple avec Notion, zéro code.",
+      "Widgets en temps réel pour tracking immédiat.",
+      "Retours anonymes des lecteurs intégrés.",
+      "Support d'intégrations tier (Google Analytics, Facebook)."
+    ],
+    "cons": [
+      "Pas de version gratuite, payant à partir du Pro.",
+      "Limité aux pages Notion (pas d'usage web classique).",
+      "Petit marché de niche comparé aux outils generalist."
+    ],
+    "use_cases": [
+      "Analyser l'engagement de votre wiki d'équipe ou documentation.",
+      "Suivre le trafic sur les pages de ressources Notion partagées.",
+      "Recueillir des retours des lecteurs sur vos documents.",
+      "Optimiser la structure du contenu Notion basé sur les vues."
+    ],
+    "relevant_for": ["Créateurs de contenu", "Équipes avec documentation Notion", "Startups avec wikis"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You share public or semi-private Notion pages.",
+        "You want to understand engagement on your Notion content.",
+        "You explore Notion as a CMS or team wiki."
+      ],
+      "avoidIf": [
+        "You need a free solution.",
+        "You don't use Notion or have few pages to track."
+      ],
+      "threshold": "Notionlytics fits those monetizing or widely sharing Notion content; less relevant for small private wikis."
+    },
+    "pros": [
+      "Simple native Notion integration, zero code.",
+      "Real-time widgets for instant tracking.",
+      "Anonymous reader feedback built-in.",
+      "Third-party integrations (Google Analytics, Facebook)."
+    ],
+    "cons": [
+      "No free tier, paid from Pro.",
+      "Limited to Notion pages (no web tracking).",
+      "Small niche compared to general-purpose tools."
+    ],
+    "use_cases": [
+      "Analyze engagement on your team wiki or documentation.",
+      "Track traffic on shared Notion resource pages.",
+      "Collect reader feedback on your documents.",
+      "Optimize Notion content structure based on views."
+    ]
+  }
+}

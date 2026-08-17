@@ -1,0 +1,94 @@
+{
+  "slug": "excel",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Microsoft Excel — Pricing (site officiel)", "url": "https://www.microsoft.com/microsoft-365/excel" }
+  ],
+  "facts": {
+    "what": "Tableur bureautique de Microsoft pour analyser, visualiser et organiser données. Support formules, tableaux croisés dynamiques, graphiques, macros VBA. Versions desktop et web.",
+    "what_en": "Microsoft's spreadsheet application for analyzing, visualizing, and organizing data. Formula support, pivot tables, charts, VBA macros. Desktop and web versions.",
+    "pricing_model": "Standalone payant ou inclus dans Microsoft 365 (personnel, famille, affaires). Version web gratuite (excel.com). Abonnement mensuel ou annuel.",
+    "free_tier": { "exists": true, "detail": "Version web gratuite (excel.com). Applications desktop et mobile complètes via Microsoft 365 (Personnel, Famille, Business Standard/Premium)." },
+    "plans": [
+      { "name": "Excel Web (Gratuit)", "price": "Gratuit avec compte Microsoft" },
+      { "name": "Microsoft 365 Personal", "price": "6.99 $/mois ou 69.99 $/an" },
+      { "name": "Microsoft 365 Family", "price": "12.99 $/mois ou 129.99 $/an" },
+      { "name": "Microsoft 365 Business Standard", "price": "6 $/utilisateur/mois (web/mobile), desktop à 12.50 $/utilisateur/mois" }
+    ],
+    "key_features": [
+      "Tableurs avec formules Excel complexes.",
+      "Tableaux croisés dynamiques et analyses.",
+      "Graphiques interactifs et sparklines.",
+      "Collaboration temps réel (Microsoft 365).",
+      "Macros VBA (desktop seulement).",
+      "Intégration Power BI et Power Query.",
+      "Stockage OneDrive inclus (Microsoft 365)."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin d'un tableur bureautique standard.",
+        "Vous travaillez avec des données en colonnes/lignes.",
+        "Vous collaborez sur budgets et analyses."
+      ],
+      "avoidIf": [
+        "Vous ne voulez que l'outil gratuit basique.",
+        "Vous cherchez une base de données relationnelle.",
+        "Vous avez besoin de BI avancée (→ Power BI)."
+      ],
+      "threshold": "Excel est indispensable pour la plupart des métiers ; pour analytics avancée, Power BI est mieux."
+    },
+    "pros": [
+      "Standard universel pour les données tabulaires.",
+      "Version web gratuite très complète.",
+      "Collaboration temps réel en Microsoft 365.",
+      "Formules et automatisations très puissantes.",
+      "Compatibilité 30+ ans d'archives."
+    ],
+    "cons": [
+      "Coûts Microsoft 365 si desktop complet voulu.",
+      "Moins performant que BI pour gros volumes.",
+      "Courbe apprentissage formules avancées."
+    ],
+    "use_cases": [
+      "Gérer budgets, listes, données tabulaires.",
+      "Analyser et visualiser données simples.",
+      "Automatiser tâches répétitives avec macros."
+    ],
+    "relevant_for": ["Tous les métiers", "Analysts", "Comptables", "Project managers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need standard spreadsheet software.",
+        "You work with columnar data.",
+        "You collaborate on budgets and analysis."
+      ],
+      "avoidIf": [
+        "You only want the basic free tool.",
+        "You're looking for relational databases.",
+        "You need advanced BI (→ Power BI)."
+      ],
+      "threshold": "Excel is essential for most professions; for advanced analytics, Power BI is better."
+    },
+    "pros": [
+      "Universal standard for tabular data.",
+      "Very complete free web version.",
+      "Real-time collaboration in Microsoft 365.",
+      "Very powerful formulas and automations.",
+      "30+ years of archive compatibility."
+    ],
+    "cons": [
+      "Microsoft 365 costs if you want full desktop.",
+      "Less efficient than BI for large volumes.",
+      "Learning curve for advanced formulas."
+    ],
+    "use_cases": [
+      "Manage budgets, lists, tabular data.",
+      "Analyze and visualize simple data.",
+      "Automate repetitive tasks with macros."
+    ]
+  }
+}

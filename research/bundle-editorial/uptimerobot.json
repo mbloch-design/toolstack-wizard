@@ -1,0 +1,93 @@
+{
+  "slug": "uptimerobot",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "UptimeRobot — Pricing (site officiel)", "url": "https://uptimerobot.com/pricing" }
+  ],
+  "facts": {
+    "what": "Service de surveillance en continu d'uptime et de disponibilité pour sites web, API, et services en ligne, avec alertes instantanées en cas de défaillance.",
+    "what_en": "Website and API uptime monitoring service with instant alerts when downtime occurs, supporting monitoring from global locations.",
+    "pricing_model": "Plan gratuit avec 50 moniteurs, plans payants (Solo, Team, Enterprise) pour plus de moniteurs et d'intervalles de vérification plus courts.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit avec 50 moniteurs à intervalles de 5 minutes, usage personnel/non-commercial uniquement." },
+    "plans": [
+      { "name": "Free", "price": "0 $/mois (50 moniteurs, 5 min interval)" },
+      { "name": "Solo", "price": "À partir de 7 $/mois (facturation annuelle)" },
+      { "name": "Team", "price": "À partir de 29 $/mois (100 moniteurs, full integrations)" },
+      { "name": "Enterprise", "price": "À partir de 54 $/mois (intervalles de 30 secondes, options avancées)" }
+    ],
+    "key_features": [
+      "Surveillance HTTP/HTTPS, Ping, Port, DNS",
+      "SSL certificate et domain expiry monitoring",
+      "Alertes multiples (email, SMS, voice, Slack, Teams, PagerDuty)",
+      "Status pages avec branding custom",
+      "Incident management et reporting",
+      "Webhooks et intégrations API"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Votre site/application est critique pour votre business.",
+        "Vous voulez des alertes instantanées en cas de panne.",
+        "Vous avez besoin d'une status page publique."
+      ],
+      "avoidIf": [
+        "Votre site est très personnel ou faible trafic.",
+        "Vous n'avez pas besoin d'alertes temps réel.",
+        "Vous utilisez déjà un hosting avec monitoring inclus."
+      ],
+      "threshold": "UptimeRobot s'impose pour les applications/sites critiques et les agences gérant plusieurs clients ; pour un site personnel ou hobbyiste, le plan gratuit suffit."
+    },
+    "pros": [
+      "Plan gratuit généreux (50 moniteurs).",
+      "Alertes rapides et fiables (< 1 min).",
+      "Intégrations larges (Slack, Teams, PagerDuty, etc.).",
+      "Status pages avec branding custom (gratuit)."
+    ],
+    "cons": [
+      "Plan gratuit limité à usage personnel.",
+      "Tarif Team peut être élevé pour petites équipes.",
+      "Ajouter des sièges (Team/Enterprise) augmente le coût."
+    ],
+    "use_cases": [
+      "Surveiller la disponibilité d'une application en production.",
+      "Alerter les oncall via Slack/SMS en cas de panne.",
+      "Publier une status page pour les utilisateurs.",
+      "Gérer le monitoring d'uptime pour plusieurs clients (agences)."
+    ],
+    "relevant_for": ["DevOps / SRE", "Agences web", "Startups", "Équipes d'infrastructure"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "Your site/app is business-critical.",
+        "You want instant alerts on downtime.",
+        "You need a public status page."
+      ],
+      "avoidIf": [
+        "Your site is personal or low-traffic.",
+        "You don't need real-time alerts.",
+        "Your hosting already includes monitoring."
+      ],
+      "threshold": "UptimeRobot works for critical applications and agencies managing multiple clients; for personal or hobbyist sites, the free plan suffices."
+    },
+    "pros": [
+      "Generous free plan (50 monitors).",
+      "Fast and reliable alerts (< 1 min).",
+      "Broad integrations (Slack, Teams, PagerDuty, etc.).",
+      "Custom-branded status pages (free)."
+    ],
+    "cons": [
+      "Free plan limited to personal use.",
+      "Team plan pricing can be high for small teams.",
+      "Adding seats (Team/Enterprise) increases cost."
+    ],
+    "use_cases": [
+      "Monitor production app availability.",
+      "Alert oncall via Slack/SMS on downtime.",
+      "Publish status page for users.",
+      "Manage uptime monitoring for multiple clients (agencies)."
+    ]
+  }
+}

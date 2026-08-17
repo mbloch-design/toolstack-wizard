@@ -1,0 +1,97 @@
+{
+  "slug": "screaming-frog",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Screaming Frog SEO Spider (site officiel)", "url": "https://www.screamingfrog.co.uk/seo-spider/" }
+  ],
+  "facts": {
+    "what": "Crawler web de bureau leader pour l'audit SEO technique, détectant plus de 300 problèmes SEO (liens brisés, doublons, métadonnées manquantes, codes 404/redirects) et générant des sitemaps XML.",
+    "what_en": "Leading desktop website crawler for technical SEO audits, detecting 300+ SEO issues (broken links, duplicates, missing metadata, 404s/redirects) and generating XML sitemaps.",
+    "pricing_model": "Freemium : gratuit jusqu'à 500 URLs, ou licence annuelle pour crawl illimité.",
+    "free_tier": { "exists": true, "detail": "Version gratuite : crawl jusqu'à 500 URLs, détection des liens cassés, erreurs, redirects, analyse des titres et métadonnées, génération de sitemaps XML." },
+    "plans": [
+      { "name": "Gratuit", "price": "0 € (500 URLs max)" },
+      { "name": "Licence annuelle", "price": "£199/year (illimité + features avancées)" }
+    ],
+    "key_features": [
+      "Crawl de sites (Windows, macOS, Linux)",
+      "Détection de 300+ problèmes SEO",
+      "Rendu JavaScript (Chromium) pour sites modernes",
+      "Extraction custom (XPath, CSS selectors)",
+      "Intégration Google Analytics, Search Console, PageSpeed",
+      "Audit d'accessibilité et données structurées",
+      "Visualisation de l'architecture du site",
+      "Comparaison de crawls pour suivi des progrès"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous auditez régulièrement la santé technique de sites.",
+        "Vous gérez des migrations ou des refactoring SEO importants.",
+        "Vous détectez des doublons, erreurs 404 ou problèmes de métadonnées à l'échelle du site."
+      ],
+      "avoidIf": [
+        "Vous voulez une solution entièrement gratuite sans limites.",
+        "Vous cherchez surtout une analyse de backlinks ou ranking keywords.",
+        "Vous auditez uniquement quelques pages (l'outil brille sur de gros sites)."
+      ],
+      "threshold": "Screaming Frog s'impose pour les audits SEO techniques approfondis ; la version gratuite aide pour les petits sites, la licence annuelle est un standard pour les agences et professionnels."
+    },
+    "pros": [
+      "Outil le plus complet pour l'audit technique SEO.",
+      "Version gratuite robuste (500 URLs).",
+      "Crawl JavaScript / sites modernes (React, Vue, Angular).",
+      "Rapports détaillés et visualisations de l'architecture.",
+      "Exports multiples (CSV, XML, custom)."
+    ],
+    "cons": [
+      "Interface dense, courbe d'apprentissage.",
+      "La version payante reste limitée : crawl seul (pas d'analytics, ranking, backlinks).",
+      "Ressource CPU intensive pour gros sites."
+    ],
+    "use_cases": [
+      "Auditer un site pré-migration de domaine.",
+      "Détecter et corriger les erreurs 404, redirects cassés.",
+      "Analyser la structure de liens internes.",
+      "Vérifier la conformité des schémas structurés (schema.org).",
+      "Comparer deux crawls pour tracker les améliorations SEO."
+    ],
+    "relevant_for": ["SEO specialists", "Agences digitales", "Webmasters", "Consultants SEO"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You regularly audit site technical health.",
+        "You manage migrations or significant SEO refactoring.",
+        "You detect duplicates, 404s, or metadata issues across large sites."
+      ],
+      "avoidIf": [
+        "You want a completely free, unlimited solution.",
+        "You're mainly looking for backlink analysis or keyword rankings.",
+        "You audit only a few pages (the tool shines on large sites)."
+      ],
+      "threshold": "Screaming Frog is the standard for thorough technical SEO audits; free version helps small sites, annual license is industry standard for agencies and pros."
+    },
+    "pros": [
+      "Most comprehensive tool for technical SEO audits.",
+      "Robust free version (500 URLs).",
+      "Crawls JavaScript and modern frameworks (React, Vue, Angular).",
+      "Detailed reports and site structure visualizations.",
+      "Multiple export options (CSV, XML, custom)."
+    ],
+    "cons": [
+      "Dense interface, learning curve.",
+      "Paid version still limited: crawling only (no analytics, rankings, backlinks).",
+      "CPU-intensive for large sites."
+    ],
+    "use_cases": [
+      "Audit a site before domain migration.",
+      "Detect and fix 404s and broken redirects.",
+      "Analyze internal linking structure.",
+      "Verify schema markup compliance.",
+      "Compare two crawls to track SEO improvements."
+    ]
+  }
+}

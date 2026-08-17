@@ -1,0 +1,92 @@
+{
+  "slug": "flourish",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Flourish — Data Visualization (site officiel)", "url": "https://flourish.studio/pricing/" }
+  ],
+  "facts": {
+    "what": "Plateforme de visualisation de données interactives. Tableaux, cartes, animations, graphiques en temps réel sans code. Import données CSV/API, templates visualisations. Propriété Canva depuis 2024.",
+    "what_en": "Interactive data visualization platform. Charts, maps, animations, real-time graphics without code. Import CSV/API data, visualization templates. Owned by Canva since 2024.",
+    "pricing_model": "Freemium : plan gratuit illimité (public), plans payants pour graphiques privés et white-label. Plans payants tiérés.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit très généreux : visualisations illimitées (publiques), la plupart des fonctionnalités." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit, visualisations publiques" },
+      { "name": "Pro (Custom)", "price": "À partir de 15.99 $/mois, graphiques privés et branding" }
+    ],
+    "key_features": [
+      "Visualisations interactives sans code.",
+      "Graphiques, cartes, animations, storytelling.",
+      "Import données CSV, Google Sheets, API.",
+      "Mise à jour données en temps réel.",
+      "Embedding sur sites et dashboards.",
+      "White-label pour plans payants.",
+      "Modèles de visualisations préconfigurés."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez des visualisations de données interactives.",
+        "Vous n'avez pas de compétences code.",
+        "Vous cherchez un outil accessible et rapide."
+      ],
+      "avoidIf": [
+        "Vous avez besoin de dashboards BI complexes (→ Tableau).",
+        "Vous préférez code/Python (→ matplotlib/plotly).",
+        "Vous ne voulez que des graphiques statiques."
+      ],
+      "threshold": "Flourish convient pour data storytelling et visualisations publiques ; pour BI professionnel, Tableau/Power BI est mieux."
+    },
+    "pros": [
+      "Plan gratuit très généreux et complet.",
+      "Pas de code requis, très accessible.",
+      "Visualisations élégantes et interactives.",
+      "Mise à jour données en temps réel possible.",
+      "Intégration facile sur sites/dashboards."
+    ],
+    "cons": [
+      "Moins de contrôle que code personnalisé.",
+      "Limité pour BI très avancée.",
+      "White-label seulement sur plans payants."
+    ],
+    "use_cases": [
+      "Créer infographies interactives de données.",
+      "Visualiser données publiques (stats, sondages).",
+      "Storytelling avec données animées."
+    ],
+    "relevant_for": ["Data journalists", "Content creators", "Analysts", "Marketing storytellers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You create interactive data visualizations.",
+        "You don't have coding skills.",
+        "You want an accessible and fast tool."
+      ],
+      "avoidIf": [
+        "You need complex BI dashboards (→ Tableau).",
+        "You prefer code/Python (→ matplotlib/plotly).",
+        "You only want static charts."
+      ],
+      "threshold": "Flourish suits data storytelling and public visualizations; for professional BI, Tableau/Power BI is better."
+    },
+    "pros": [
+      "Very generous and complete free plan.",
+      "No code required, very accessible.",
+      "Elegant and interactive visualizations.",
+      "Real-time data updates possible.",
+      "Easy embedding on sites/dashboards."
+    ],
+    "cons": [
+      "Less control than custom code.",
+      "Limited for very advanced BI.",
+      "White-label only on paid plans."
+    ],
+    "use_cases": [
+      "Create interactive data infographics.",
+      "Visualize public data (stats, surveys).",
+      "Data storytelling with animations."
+    ]
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "slug": "webpagetest",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "WebPageTest — Open-Source Web Performance Optimization (site officiel)", "url": "https://www.webpagetest.org/" }
+  ],
+  "facts": {
+    "what": "Outil open-source de test de performance web permettant de mesurer la vitesse de chargement, les Core Web Vitals, et les détails techniques de performance (waterfall, timeline). Hébergé par Catchpoint (depuis 2020).",
+    "what_en": "Open-source web performance testing tool measuring page load speed, Core Web Vitals, and detailed performance metrics (waterfall, timeline). Hosted by Catchpoint since 2020.",
+    "pricing_model": "Entièrement gratuit ; open-source et hébergé gratuitement par Catchpoint. Tests illimités dans les limites raisonnables.",
+    "free_tier": { "exists": true, "detail": "Plateforme entièrement gratuite, sans limite d'utilisation (usage personnel et commercial autorisé)." },
+    "plans": [
+      { "name": "Free (WebPageTest public)", "price": "0 $ (tests illimités raisonnables)" }
+    ],
+    "key_features": [
+      "Tests de performance depuis multiples localisations",
+      "Waterfall charts détaillés (DNS, TCP, TLS, render)",
+      "Core Web Vitals et metrics de performance",
+      "Filmstrip view et video comparisons",
+      "Connection throttling (3G, 4G simulation)",
+      "Rétention de 13 mois de données de test"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous optimisez la performance d'une application web.",
+        "Vous avez besoin d'analyses détaillées et waterfall charts.",
+        "Vous faites des audits de performance techniques."
+      ],
+      "avoidIf": [
+        "Vous cherchez un dashboard temps réel permanent.",
+        "Vous avez besoin de monitoring continu (non ponctuel).",
+        "Vous voulez un support commercial dédié."
+      ],
+      "threshold": "WebPageTest s'impose pour les développeurs/DevOps effectuant des audits de performance ponctuels ; pour le monitoring continu, une plateforme commerciale convient mieux."
+    },
+    "pros": [
+      "Entièrement gratuit et open-source.",
+      "Analyses très détaillées et très fiables.",
+      "Aucune limite d'utilisation.",
+      "Références de l'industrie pour la performance."
+    ],
+    "cons": [
+      "Interface un peu datée.",
+      "Pas de monitoring continu (tests ponctuels).",
+      "Pas de support commercial.",
+      "Pas de dashboards réutilisables ou rapports automatisés."
+    ],
+    "use_cases": [
+      "Auditer la performance d'un site avant/après optimisation.",
+      "Comparer les temps de chargement sur réseau 3G/4G.",
+      "Identifier les goulets d'étranglement (waterfall analysis).",
+      "Valider les Core Web Vitals lors de déploiements."
+    ],
+    "relevant_for": ["Développeurs frontend", "DevOps/SRE", "Performance engineers", "Web architects"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're optimizing web application performance.",
+        "You need detailed waterfall chart analysis.",
+        "You do technical performance audits."
+      ],
+      "avoidIf": [
+        "You need a persistent real-time dashboard.",
+        "You require continuous monitoring (not one-off).",
+        "You want dedicated commercial support."
+      ],
+      "threshold": "WebPageTest works for developers/DevOps doing one-off performance audits; for continuous monitoring, a commercial platform fits better."
+    },
+    "pros": [
+      "Completely free and open-source.",
+      "Very detailed and reliable analysis.",
+      "No usage limits.",
+      "Industry reference for web performance."
+    ],
+    "cons": [
+      "UI feels a bit dated.",
+      "No continuous monitoring (one-off tests).",
+      "No commercial support.",
+      "No reusable dashboards or automated reports."
+    ],
+    "use_cases": [
+      "Audit site performance before/after optimization.",
+      "Compare load times on 3G/4G networks.",
+      "Identify bottlenecks (waterfall analysis).",
+      "Validate Core Web Vitals before deployments."
+    ]
+  }
+}

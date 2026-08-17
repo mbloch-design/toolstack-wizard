@@ -1,11 +1,5 @@
 [
   {
-    "category": "design-tools",
-    "done": 10,
-    "todo": 111,
-    "total": 121
-  },
-  {
     "category": "analytics",
     "done": 7,
     "todo": 73,
@@ -106,6 +100,12 @@
     "done": 12,
     "todo": 2,
     "total": 14
+  },
+  {
+    "category": "design-tools",
+    "done": 117,
+    "todo": 1,
+    "total": 118
   },
   {
     "category": "vendor-risk-data",

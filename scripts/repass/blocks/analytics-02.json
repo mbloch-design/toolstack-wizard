@@ -1,33 +1,8 @@
 [
   {
-    "slug": "callrail",
-    "name": "CallRail",
-    "url": "https://www.callrail.com"
-  },
-  {
-    "slug": "chartmogul",
-    "name": "Chartmogul",
-    "url": "https://chartmogul.com"
-  },
-  {
     "slug": "convertkit-analytics",
     "name": "ConvertKit Analytics",
     "url": ""
-  },
-  {
-    "slug": "datadog",
-    "name": "Datadog",
-    "url": "https://datadoghq.com"
-  },
-  {
-    "slug": "datawrapper",
-    "name": "Datawrapper",
-    "url": "https://www.datawrapper.de"
-  },
-  {
-    "slug": "dbt",
-    "name": "dbt",
-    "url": "https://www.getdbt.com"
   },
   {
     "slug": "dovetail",

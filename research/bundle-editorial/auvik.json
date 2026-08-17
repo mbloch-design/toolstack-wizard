@@ -1,0 +1,88 @@
+{
+  "slug": "auvik",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Auvik — Network Monitoring Pricing (site officiel)", "url": "https://www.auvik.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Plateforme de surveillance réseau SaaS pour ITOps. Monitore les dispositifs réseau, infrastructure et edge en temps réel, détecte les problèmes automatiquement et centralise alertes et dashboards.",
+    "what_en": "Cloud-based network monitoring platform for ITOps teams. Monitors network devices, infrastructure, and edge devices in real-time, auto-discovers problems, and centralizes alerts and dashboards.",
+    "pricing_model": "Abonnement mensuel ou annuel basé sur le nombre et le type de dispositifs supervisés (réseau, infrastructure, edge). Tiers Basic et Core avec fonctionnalités différentes.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite, essai disponible. Certains dispositifs (points d'accès, imprimantes, UPS) ne consomment pas de licences." },
+    "plans": [
+      { "name": "Basic", "price": "À partir de 150 $/mois basé sur dispositifs" },
+      { "name": "Core", "price": "À partir de 150 $/mois basé sur dispositifs" }
+    ],
+    "key_features": [
+      "Découverte automatique des dispositifs réseau.",
+      "Surveillance temps réel et alertes.",
+      "Dashboards centralisés et rapports.",
+      "Support multi-sites et multi-localisations.",
+      "Intégrations Slack, Teams, PagerDuty."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez une infrastructure réseau complexe.",
+        "Vous avez besoin de surveillance 24/7 des équipements critiques.",
+        "Vous travaillez dans une équipe ITOps dédiée."
+      ],
+      "avoidIf": [
+        "Vous avez un petit réseau avec peu de dispositifs.",
+        "Vous cherchez un outil gratuit.",
+        "Vous ne travaillez pas en mode opérationnel continu."
+      ],
+      "threshold": "Auvik convient aux entreprises avec infrastructure réseau importante ; pour petits réseaux, des solutions plus légères suffisent."
+    },
+    "pros": [
+      "Découverte automatique des équipements réseau.",
+      "Alertes intelligentes et reconnaissance des problèmes.",
+      "Dashboards ergonomiques et rapports détaillés.",
+      "Support multi-sites natif."
+    ],
+    "cons": [
+      "Modèle tarifaire complexe, demande devis personnalisé.",
+      "Prix peut être élevé pour nombreux dispositifs.",
+      "Pas de version gratuite."
+    ],
+    "use_cases": [
+      "Surveiller la performance d'un réseau distribué.",
+      "Alerter équipes ITOps sur incidents réseau.",
+      "Générer rapports de conformité réseau."
+    ],
+    "relevant_for": ["Administrateurs réseau", "Équipes ITOps", "MSP (Managed Service Providers)", "Infrastructures distribuées"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage complex network infrastructure.",
+        "You need 24/7 monitoring of critical equipment.",
+        "You work in a dedicated ITOps team."
+      ],
+      "avoidIf": [
+        "You have a small network with few devices.",
+        "You're looking for free tools.",
+        "You don't operate in continuous operational mode."
+      ],
+      "threshold": "Auvik suits enterprises with substantial network infrastructure; for small networks, lighter solutions suffice."
+    },
+    "pros": [
+      "Automatic device discovery and mapping.",
+      "Intelligent alerts and problem recognition.",
+      "Ergonomic dashboards and detailed reporting.",
+      "Native multi-site support."
+    ],
+    "cons": [
+      "Complex pricing model requiring custom quotes.",
+      "Can be expensive with many devices.",
+      "No free version."
+    ],
+    "use_cases": [
+      "Monitor performance of distributed networks.",
+      "Alert ITOps teams to network incidents.",
+      "Generate network compliance reports."
+    ]
+  }
+}

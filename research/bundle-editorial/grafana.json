@@ -1,0 +1,101 @@
+{
+  "slug": "grafana",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Grafana (site officiel)", "url": "https://grafana.com" },
+    { "label": "Grafana Pricing", "url": "https://grafana.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Plateforme d'observabilité complète combinant métriques, logs, traces et profiles pour monitorer les infrastructures et applications modernes, avec dashboards interactifs et alertes.",
+    "what_en": "Full-stack observability platform combining metrics, logs, traces, and profiles to monitor modern infrastructures and applications, with interactive dashboards and alerting.",
+    "pricing_model": "Freemium : plan gratuit limité ; Grafana Cloud Pro à partir de 19 $/mois + usage ; Grafana Enterprise à partir de 25 000 $/an.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit illimité (« Forever Free ») incluant dashboards limités, 14 jours de rétention (métriques/logs/traces), support communauté." },
+    "plans": [
+      { "name": "Grafana Free", "price": "Gratuit (limité)" },
+      { "name": "Grafana Cloud Pro", "price": "À partir de 19 $ par mois + usage (métriques ~6.50 $/1k series, logs/traces ~0.050 $/GB)" },
+      { "name": "Grafana Enterprise", "price": "À partir de 25 000 $ par an (support premium, rétention custom)" }
+    ],
+    "key_features": [
+      "Tableaux de bord unifiés (métriques, logs, traces, profiles) en temps réel",
+      "Support Prometheus, Loki, Tempo, Jaeger, Datadog, etc.",
+      "Alertes multi-canaux (email, Slack, SMS, webhooks)",
+      "Grafana Assistant (IA pour analyser la télémétrie)",
+      "Adaptive Telemetry pour réduire les coûts (jusqu'à 80%)",
+      "Kubernetes monitoring et app/database observability",
+      "Open source (auto-hébergé) ou Grafana Cloud (SaaS)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez une infra complexe (Kubernetes, microservices, multi-cloud).",
+        "Vous voulez unifier métriques, logs et traces en un seul endroit.",
+        "Vous cherchez un outil open source + option SaaS managée."
+      ],
+      "avoidIf": [
+        "Vous avez un monitoring simple (quelques serveurs classiques).",
+        "Vous trouvez l'écosystème trop fragmenté (trop de sources de données).",
+        "Vous avez un budget très limité pour l'observabilité."
+      ],
+      "threshold": "Grafana s'impose comme leader dans l'observabilité moderne pour les infrastructures complexes ; l'open source + Cloud offer flexibilité et scalabilité."
+    },
+    "pros": [
+      "Plateforme unifiée pour tous les types de télémétrie.",
+      "Plan gratuit robuste (pas une simple démo).",
+      "Open source (auto-hébergé possible).",
+      "Support Prometheus/Loki/Tempo natif (standards ouverts).",
+      "Adaptive Telemetry pour optimiser les coûts.",
+      "Grafana Assistant (IA) pour l'analyse."
+    ],
+    "cons": [
+      "Interface de configuration complexe pour les débutants.",
+      "Coûts d'usage importants sans Adaptive Telemetry activé.",
+      "Support gratuit limité (communauté).",
+      "Nécessite expertise technique en observabilité."
+    ],
+    "use_cases": [
+      "Monitorer une infrastructure Kubernetes en production.",
+      "Centraliser logs, métriques et traces pour troubleshooting cross-layer.",
+      "Mettre en place des alertes d'incident sur des services critiques.",
+      "Construire des dashboards pour présentations opérationnelles."
+    ],
+    "relevant_for": ["DevOps engineers", "SREs", "Platform engineers", "Infrastructure teams"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You have complex infrastructure (Kubernetes, microservices, multi-cloud).",
+        "You want to unify metrics, logs, and traces in one place.",
+        "You value open source + managed SaaS option."
+      ],
+      "avoidIf": [
+        "You have simple monitoring needs (few classic servers).",
+        "You find the ecosystem too fragmented (too many data sources).",
+        "You have a very tight budget for observability."
+      ],
+      "threshold": "Grafana is the leader in modern observability for complex infrastructure; open source + Cloud offering gives flexibility and scalability."
+    },
+    "pros": [
+      "Unified platform for all telemetry types.",
+      "Robust free plan (not just a demo).",
+      "Open source (self-hosted possible).",
+      "Native Prometheus/Loki/Tempo support (open standards).",
+      "Adaptive Telemetry to optimize costs.",
+      "Grafana Assistant (AI) for analysis."
+    ],
+    "cons": [
+      "Complex configuration interface for beginners.",
+      "Significant usage costs without Adaptive Telemetry enabled.",
+      "Limited free support (community).",
+      "Requires observability expertise."
+    ],
+    "use_cases": [
+      "Monitor a Kubernetes production infrastructure.",
+      "Centralize logs, metrics, traces for cross-layer troubleshooting.",
+      "Set up incident alerts on critical services.",
+      "Build dashboards for operational presentations."
+    ],
+    "relevant_for": ["DevOps engineers", "SREs", "Platform engineers", "Infrastructure teams"]
+  }
+}

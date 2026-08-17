@@ -1,0 +1,99 @@
+{
+  "slug": "google-tag-manager",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Google Tag Manager (site officiel)", "url": "https://tagmanager.google.com" },
+    { "label": "Google Tag Manager Help Center", "url": "https://support.google.com/tagmanager/answer/7582054" }
+  ],
+  "facts": {
+    "what": "Plateforme gratuite de gestion de tags permettant de déployer codes de tracking (analytics, pixels, conversions) sans modifier le code source, avec modes preview et version control intégrés.",
+    "what_en": "Free tag management platform to deploy tracking codes (analytics, pixels, conversions) without modifying source code, with integrated preview modes and version control.",
+    "pricing_model": "Gratuit pour Google Tag Manager Standard. Google Tag Manager 360 (version entreprise) disponible sur devis.",
+    "free_tier": { "exists": true, "detail": "Google Tag Manager Standard entièrement gratuit avec tags illimités, permissions d'accès utilisateur et workspaces illimités." },
+    "plans": [
+      { "name": "Google Tag Manager", "price": "Gratuit" },
+      { "name": "Google Tag Manager 360", "price": "Montants sur devis (version entreprise)" }
+    ],
+    "key_features": [
+      "Déploiement de tags sans code (événements, pixels, codes de conversion)",
+      "Preview mode pour tester avant publication en production",
+      "Version history et contrôle de versions complet",
+      "Workspaces et permissions utilisateur granulaires",
+      "Server-side tagging pour améliorer les performances et la conformité",
+      "Intégration avec Google Analytics, Ads, Floodlight et outils tiers"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous déployez régulièrement de nouveaux tags de tracking (Google Ads, pixels, conversions).",
+        "Vous voulez éviter de modifier le code à chaque changement de tracking.",
+        "Vous travaillez en équipe et avez besoin de contrôle de versions et permissions."
+      ],
+      "avoidIf": [
+        "Vous n'avez qu'un ou deux tags simples (code direct suffira).",
+        "Vous privilégiez une plateforme indépendante de l'écosystème Google.",
+        "Vous avez besoin de support premium 24/7 (utilisez GTM 360)."
+      ],
+      "threshold": "GTM est l'incontournable pour la gestion centralisée des tags ; gratuit, versionnné et intégré à Google Analytics, c'est le choix naturel pour la plupart des équipes marketing."
+    },
+    "pros": [
+      "Entièrement gratuit et puissant.",
+      "Pas besoin de coder pour ajouter/modifier des tags.",
+      "Preview mode et version control intégrés.",
+      "Permissions granulaires pour la collaboration en équipe.",
+      "Server-side tagging pour la conformité et les performances.",
+      "Intégration directe Google Analytics, Ads, autres outils."
+    ],
+    "cons": [
+      "Interface complexe pour les débutants (courbe d'apprentissage raide).",
+      "Support gratuit limité (communauté principalement).",
+      "Tag manager limité aux cas d'usage classiques (GTM 360 pour les cas complexes).",
+      "Dépendance à l'écosystème Google pour les meilleures features."
+    ],
+    "use_cases": [
+      "Ajouter le pixel Facebook sans toucher au code du site.",
+      "Suivre les conversions Google Ads sans développeur.",
+      "Déployer de nouveaux événements analytics via version control.",
+      "Tester des changements de tracking en preview avant production."
+    ],
+    "relevant_for": ["Responsables marketing digital", "Marketing operations", "Data analysts", "Webmasters"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You regularly deploy new tracking tags (Google Ads, pixels, conversions).",
+        "You want to avoid modifying code every time you change tracking.",
+        "You work in a team and need version control and permissions."
+      ],
+      "avoidIf": [
+        "You only have one or two simple tags (direct code will do).",
+        "You prefer a platform independent of Google ecosystem.",
+        "You need 24/7 premium support (use GTM 360)."
+      ],
+      "threshold": "GTM is the go-to for centralized tag management; free, versioned, and integrated with Google Analytics, it's the natural choice for most marketing teams."
+    },
+    "pros": [
+      "Completely free and powerful.",
+      "No coding needed to add/modify tags.",
+      "Preview mode and version control built-in.",
+      "Granular permissions for team collaboration.",
+      "Server-side tagging for compliance and performance.",
+      "Direct integration with Google Analytics, Ads, other tools."
+    ],
+    "cons": [
+      "Complex interface for beginners (steep learning curve).",
+      "Limited free support (community mainly).",
+      "Tag manager limited to standard use cases (GTM 360 for complex needs).",
+      "Dependence on Google ecosystem for best features."
+    ],
+    "use_cases": [
+      "Add Facebook pixel without touching site code.",
+      "Track Google Ads conversions without a developer.",
+      "Deploy new analytics events via version control.",
+      "Test tracking changes in preview before production."
+    ],
+    "relevant_for": ["Digital marketing managers", "Marketing operations", "Data analysts", "Webmasters"]
+  }
+}

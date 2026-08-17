@@ -1,0 +1,99 @@
+{
+  "slug": "keeptruckin",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Motive (anciennement KeepTruckin) - site officiel", "url": "https://gomotive.com/" }
+  ],
+  "facts": {
+    "what": "Plateforme de gestion de flotte intégrée (anciennement KeepTruckin, rebaptisée Motive) combinant suivi GPS, télémétrie véhicule, dashcams, conformité réglementaire (ELD) et gestion des conducteurs, pour améliorer la sécurité et l'efficacité opérationnelle.",
+    "what_en": "Integrated fleet management platform (formerly KeepTruckin, now Motive) combining GPS tracking, vehicle telematics, dashcams, regulatory compliance (ELD), and driver management to improve safety and operational efficiency.",
+    "pricing_model": "Tarification sur devis personnalisé. Motive ne publie pas ses tarifs officiels ; contact commercial nécessaire pour devis.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Motive offre des démos et essais sur demande auprès de l'équipe commerciale." },
+    "plans": [
+      { "name": "Motive (tous plans)", "price": "Montants sur devis personnalisé (contact ventes)" }
+    ],
+    "key_features": [
+      "GPS tracking temps réel et historique de localisation",
+      "Télémétrie véhicule : santé moteur, consommation fuel, maintenance predictive",
+      "Dashcams et video (360°) pour sécurité conducteur et incidents",
+      "ELD FMCSA-enregistré pour conformité réglementaire DOT",
+      "Gestion des conducteurs : coaching, qualifications, inspections véhicules",
+      "Rapports compliance et fuel tax reporting",
+      "API et intégrations tiers pour workflows custom",
+      "AI-powered incidents analysis et driver coaching"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez une flotte de véhicules commerciaux (transporteurs, logistique).",
+        "Vous êtes soumis aux régulations DOT (ELD obligatoire).",
+        "Vous cherchez une solution complète : tracking + dashcam + compliance + driver coaching."
+      ],
+      "avoidIf": [
+        "Vous avez une flotte petite (< 5 véhicules) et besoin de tracking simple.",
+        "Vous cherchez un outil gratuit ou low-cost (Motive est premium).",
+        "Vous privilégiez une solution indépendante (Motive est très intégrée)."
+      ],
+      "threshold": "Motive/KeepTruckin s'impose pour les flottes professionnelles soumises à la compliance DOT ; l'intégration complète (tracking + video + ELD + coaching) justifie le prix pour les flottes moyennes/grandes."
+    },
+    "pros": [
+      "Plateforme complète et intégrée (pas besoin de plusieurs outils).",
+      "Dashcams et video 360° pour sécurité et incidents.",
+      "ELD FMCSA-certified pour compliance DOT.",
+      "Maintenance predictive via télémétrie (réduit downtime).",
+      "Driver coaching et qualifications intégrées.",
+      "AI analysis pour les incidents et recommandations."
+    ],
+    "cons": [
+      "Pas de tarification transparente (devis requis).",
+      "Prix premium (solution non accessible pour petites flottes).",
+      "Plateforme très complexe (beaucoup de features).",
+      "Support variable (dépend du contrat)."
+    ],
+    "use_cases": [
+      "Flotte de transporteurs : suivi temps réel et compliance ELD.",
+      "Logistique/delivery : dashcam pour incidents et responsabilité.",
+      "Gestion carburant : tracking consommation et optimisation routes.",
+      "Driver safety : coaching via video et incidents AI-analyzed."
+    ],
+    "relevant_for": ["Fleet managers", "Logistics directors", "Operations managers", "Safety officers (transportation)"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage a commercial vehicle fleet (trucking, logistics).",
+        "You're subject to DOT regulations (ELD mandatory).",
+        "You want an all-in-one solution: tracking + dashcam + compliance + driver coaching."
+      ],
+      "avoidIf": [
+        "You have a small fleet (< 5 vehicles) needing basic tracking.",
+        "You're looking for free or low-cost tools (Motive is premium).",
+        "You prefer an independent solution (Motive is very integrated)."
+      ],
+      "threshold": "Motive/KeepTruckin is essential for professional fleets subject to DOT compliance; full integration (tracking + video + ELD + coaching) justifies the cost for medium-to-large fleets."
+    },
+    "pros": [
+      "Complete and integrated platform (no need for multiple tools).",
+      "Dashcams and 360° video for safety and incidents.",
+      "ELD FMCSA-certified for DOT compliance.",
+      "Predictive maintenance via telematics (reduces downtime).",
+      "Driver coaching and qualifications built-in.",
+      "AI analysis for incidents and recommendations."
+    ],
+    "cons": [
+      "No transparent pricing (custom quotes required).",
+      "Premium price (not accessible for small fleets).",
+      "Very complex platform (many features).",
+      "Variable support (depends on contract)."
+    ],
+    "use_cases": [
+      "Trucking fleet: real-time tracking and ELD compliance.",
+      "Logistics/delivery: dashcam for incidents and liability.",
+      "Fuel management: track consumption and optimize routes.",
+      "Driver safety: coaching via video and AI-analyzed incidents."
+    ],
+    "relevant_for": ["Fleet managers", "Logistics directors", "Operations managers", "Safety officers (transportation)"]
+  }
+}

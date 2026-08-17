@@ -1,0 +1,90 @@
+{
+  "slug": "switch-monster",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "switch.monster — Call Tracking Platform (site officiel)", "url": "https://switch.monster/" }
+  ],
+  "facts": {
+    "what": "Plateforme de suivi d'appels téléphoniques et d'attribution marketing, permettant de relier les appels entrants aux campagnes numériques (Google Ads, SEO, PPC).",
+    "what_en": "Call tracking and marketing attribution platform that connects inbound phone calls to digital campaign sources (Google Ads, SEO, PPC) through call recording and analytics.",
+    "pricing_model": "Gratuit ; construite sur l'infrastructure Twilio du client.",
+    "free_tier": { "exists": true, "detail": "Plateforme entièrement gratuite ; les utilisateurs fournissent leur propre compte Twilio." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (gratuit, basé sur compte Twilio du client)" }
+    ],
+    "key_features": [
+      "Suivi et enregistrement d'appels",
+      "Attribution d'appels aux campagnes digitales",
+      "Routage intelligent et IVR menus",
+      "Rapports en temps réel",
+      "Analyse de la qualité des appels",
+      "Intégration aux données Google Ads et SEO"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez un compte Twilio établi.",
+        "Vos prospects vous contactent principalement par téléphone.",
+        "Vous voulez attribuer les appels à vos campagnes marketing."
+      ],
+      "avoidIf": [
+        "Vous ne recevez que peu d'appels entrants.",
+        "Vous n'avez pas de compte Twilio.",
+        "Vous cherchez une solution hébergée clé en main."
+      ],
+      "threshold": "switch.monster est idéale pour les entreprises utilisant Twilio qui veulent tracer l'ROI de leurs appels téléphoniques ; pour un tracé léger sans Twilio, une plateforme SaaS hosted convient mieux."
+    },
+    "pros": [
+      "Entièrement gratuit.",
+      "Intégration native avec Twilio.",
+      "Routage et IVR flexibles.",
+      "Enregistrement d'appels inclus."
+    ],
+    "cons": [
+      "Nécessite un compte Twilio actif.",
+      "Pas d'interface hébergée — configuration technique requise.",
+      "Support limité ; documentation communautaire."
+    ],
+    "use_cases": [
+      "Relier les appels aux campagnes Google Ads.",
+      "Analyser la qualité des prospects par canal.",
+      "Construire une attribution multi-touchs incluant les appels.",
+      "Automatiser le routage d'appels par source."
+    ],
+    "relevant_for": ["Agences digitales", "Lead generators", "Entreprises B2B", "Services avec hotline"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You have an established Twilio account.",
+        "Most prospects contact you by phone.",
+        "You want to attribute calls to marketing campaigns."
+      ],
+      "avoidIf": [
+        "You receive very few inbound calls.",
+        "You don't have a Twilio account.",
+        "You want a fully managed, hosted solution."
+      ],
+      "threshold": "switch.monster works for Twilio users who need to track call ROI; for lightweight tracking without Twilio, a hosted SaaS platform fits better."
+    },
+    "pros": [
+      "Completely free.",
+      "Native Twilio integration.",
+      "Flexible routing and IVR menus.",
+      "Call recording included."
+    ],
+    "cons": [
+      "Requires active Twilio account.",
+      "No managed interface — technical setup needed.",
+      "Limited support; community documentation."
+    ],
+    "use_cases": [
+      "Link calls to Google Ads campaigns.",
+      "Analyze lead quality by marketing channel.",
+      "Build multi-touch attribution including calls.",
+      "Automate call routing by source."
+    ]
+  }
+}

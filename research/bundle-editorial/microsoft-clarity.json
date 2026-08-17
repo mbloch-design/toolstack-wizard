@@ -1,0 +1,83 @@
+{
+  "slug": "microsoft-clarity",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Microsoft Clarity — web analytics (site officiel)", "url": "https://clarity.microsoft.com" }
+  ],
+  "facts": {
+    "what": "Plateforme web analytics gratuite qui combine heatmaps, session recordings et IA pour comprendre le comportement utilisateur. Fourni par Microsoft avec IA Copilot intégrée.",
+    "what_en": "Free web analytics platform combining heatmaps, session recordings, and AI to understand user behavior. Provided by Microsoft with built-in Copilot AI.",
+    "pricing_model": "Entièrement gratuit avec aucune limite de trafic, aucun plafond de sessions.",
+    "free_tier": { "exists": true, "detail": "Gratuit à jamais. Pas de version payante. Zéro limite de trafic, sessions illimitées, utilisateurs illimités." },
+    "plans": [],
+    "key_features": [
+      "Session recordings illimitées",
+      "Heatmaps (click, scroll, hover)",
+      "Copilot IA pour insights automatiques",
+      "Intégrations mobiles (iOS, Android, Flutter, React Native)",
+      "Compliance GDPR et CCPA"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez une analytics web gratuite sans limite de trafic.",
+        "Vous avez besoin de heatmaps et session recordings.",
+        "Vous apprécié les insights IA ready-to-use."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'événements traçables personnalisés (limité en Clarity).",
+        "Vous voulez des cohorts et segmentation avancée."
+      ],
+      "threshold": "Clarity s'impose pour la web analytics gratuite et l'observation utilisateur ; moins idéal si vous avez besoin de tracking événementiel profond."
+    },
+    "pros": [
+      "Entièrement gratuit sans limite de trafic.",
+      "Session recordings et heatmaps de qualité.",
+      "Copilot IA pour insights immédiats.",
+      "Zéro configuration de tarification."
+    ],
+    "cons": [
+      "Tracking événementiel limité comparé à Mixpanel.",
+      "Segmentation et cohorts moins avancés.",
+      "Microsoft collecte des données anonymisées."
+    ],
+    "use_cases": [
+      "Observer comment les utilisateurs navigent votre site.",
+      "Identifier les points de friction avec heatmaps.",
+      "Analyser le comportement mobile avec Copilot."
+    ],
+    "relevant_for": ["Startups", "PME", "Petites équipes produit"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want free web analytics with no traffic limits.",
+        "You need heatmaps and session recordings.",
+        "You like ready-to-use AI insights."
+      ],
+      "avoidIf": [
+        "You need custom event tracking (Clarity is limited).",
+        "You want advanced cohorts and segmentation."
+      ],
+      "threshold": "Clarity wins for free web analytics and user observation; less ideal if you need deep event tracking."
+    },
+    "pros": [
+      "Completely free with no traffic limits.",
+      "Quality session recordings and heatmaps.",
+      "Copilot AI for instant insights.",
+      "Zero pricing configuration."
+    ],
+    "cons": [
+      "Limited event tracking vs. Mixpanel.",
+      "Less advanced segmentation and cohorts.",
+      "Microsoft collects anonymized data."
+    ],
+    "use_cases": [
+      "Watch how users navigate your site.",
+      "Identify friction points with heatmaps.",
+      "Analyze mobile behavior with Copilot."
+    ]
+  }
+}

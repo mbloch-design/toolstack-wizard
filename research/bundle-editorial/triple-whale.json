@@ -1,0 +1,93 @@
+{
+  "slug": "triple-whale",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Triple Whale — Pricing (site officiel)", "url": "https://www.triplewhale.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme d'analyse et d'attribution pour e-commerce, conçue pour suivre les performances multi-touchs, les cohortes clients, et fournir des recommandations d'optimisation via l'IA (Moby AI).",
+    "what_en": "E-commerce analytics and attribution platform that tracks multi-touch customer journeys, cohort analysis, and provides AI-powered optimization recommendations via Moby AI operator.",
+    "pricing_model": "Abonnement par niveau (Foundation, Automate, Enterprise), tarification basée sur le volume annuel de GMV de votre boutique.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit pour boutiques en dessous d'un certain seuil de GMV ; montants exacts sur le site officiel." },
+    "plans": [
+      { "name": "Free", "price": "0 $/mois pour GMV faible" },
+      { "name": "Foundation", "price": "219 $/mois (pour boutiques avec GMV modéré)" },
+      { "name": "Automate", "price": "749 $/mois (pour boutiques plus grandes)" },
+      { "name": "Enterprise", "price": "Tarification personnalisée (sur contact ventes)" }
+    ],
+    "key_features": [
+      "Attribution multi-touchs avec suivi de cohortes",
+      "Dashboards analytiques et SQL editor",
+      "Moby AI pour recommandations d'optimisation",
+      "Tracking de conversion et événements personnalisés",
+      "Intégrations e-commerce (Shopify, etc.)",
+      "Rapports de cohort et lifetime value"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez une boutique e-commerce avec GMV significatif.",
+        "Vous avez besoin d'attribution multi-touchs précise.",
+        "Vous voulez optimiser vos campagnes marketing via l'IA."
+      ],
+      "avoidIf": [
+        "Votre boutique est très petite ou en test.",
+        "Vous cherchez une solution d'analytics gratuite.",
+        "Vous faites surtout de l'advertising sur une seule plateforme."
+      ],
+      "threshold": "Triple Whale s'impose pour les boutiques e-commerce ayant des budgets marketing significatifs et besoin d'attribution multi-touchs ; pour une startup ou un petit commerce, un analytics basique suffit."
+    },
+    "pros": [
+      "Attribution multi-touchs très détaillée.",
+      "Moby AI pour recommandations d'optimisation.",
+      "Dashboards puissants et SQL editor avancé.",
+      "Plan gratuit pour démarrer."
+    ],
+    "cons": [
+      "Tarification liée au GMV croît rapidement avec la croissance.",
+      "Les plans payants peuvent être élevés pour PME.",
+      "Certification complexe pour certaines intégrations."
+    ],
+    "use_cases": [
+      "Analyser l'ROI multi-touchs des campagnes marketing.",
+      "Optimiser le customer journey et repeat rate.",
+      "Identifier les cohorts clients à fort lifetime value.",
+      "Automatiser les recommendations d'optimisation avec l'IA."
+    ],
+    "relevant_for": ["E-commerçants", "Gestionnaires marketing", "Analystes de données e-commerce", "Directeurs croissance"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage an e-commerce store with meaningful GMV.",
+        "You need accurate multi-touch attribution.",
+        "You want AI-powered campaign optimization."
+      ],
+      "avoidIf": [
+        "Your store is very small or in testing phase.",
+        "You're looking for a free analytics solution.",
+        "You mostly run ads on a single platform."
+      ],
+      "threshold": "Triple Whale works for e-commerce stores with significant marketing budgets needing multi-touch attribution; for startups or small shops, basic analytics suffices."
+    },
+    "pros": [
+      "Detailed multi-touch attribution.",
+      "Moby AI for optimization recommendations.",
+      "Powerful dashboards and advanced SQL editor.",
+      "Free plan to start."
+    ],
+    "cons": [
+      "Pricing tied to GMV grows quickly with revenue.",
+      "Paid plans can be high for SMBs.",
+      "Complex certification for some integrations."
+    ],
+    "use_cases": [
+      "Analyze multi-touch campaign ROI.",
+      "Optimize customer journey and repeat rate.",
+      "Identify high-lifetime-value customer cohorts.",
+      "Automate optimization recommendations with AI."
+    ]
+  }
+}

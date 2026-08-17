@@ -1,0 +1,90 @@
+{
+  "slug": "tiktok-ads",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "TikTok Ads Manager (plateforme officielle)", "url": "https://ads.tiktok.com" }
+  ],
+  "facts": {
+    "what": "Plateforme publicitaire officielle de TikTok permettant de créer et gérer des campagnes publicitaires, ciblées par audience et comportement utilisateur sur le réseau social.",
+    "what_en": "TikTok's official advertising platform for creating and managing ad campaigns with audience targeting and performance tracking.",
+    "pricing_model": "Modèle de facturation à la performance (CPC, CPM, ou CPA selon le type de campagne) ; pas d'abonnement, vous ne payez que ce que vous dépensez.",
+    "free_tier": { "exists": true, "detail": "Gratuit de créer un compte ; vous ne payez que pour les impressions/clics/conversions générés." },
+    "plans": [
+      { "name": "Pay-per-performance", "price": "Aucun frais d'abonnement ; facturation selon l'activité publicitaire" }
+    ],
+    "key_features": [
+      "Création de campagnes multi-formats (vidéo, image, collections)",
+      "Ciblage par démographie, intérêts, comportements",
+      "Dashboard avec métriques en temps réel",
+      "Outils de création d'annonces intégrés",
+      "Audiences customisées et lookalike audiences",
+      "Tracking de conversion et pixel de suivi"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Votre audience cible est active sur TikTok.",
+        "Vous avez un budget publicité flexible.",
+        "Vous faites de la publicité performance-based."
+      ],
+      "avoidIf": [
+        "TikTok n'est pas pertinent pour votre cible.",
+        "Vous voulez une seule plateforme pour tous les canaux.",
+        "Vous gérez des campagnes très complexes multi-plateformes."
+      ],
+      "threshold": "TikTok Ads s'impose pour les marques dont l'audience démographique est sur TikTok (Gen Z, jeunes adultes) ; pour un ciblage B2B ou audiences plus âgées, d'autres canaux conviennent mieux."
+    },
+    "pros": [
+      "Accès direct à la plateforme officielle TikTok.",
+      "Ciblage démographique et comportemental très fin.",
+      "Tarifs compétitifs par rapport à Facebook/Instagram.",
+      "Métriques et tracking en temps réel."
+    ],
+    "cons": [
+      "Pas de version gratuite (bien que démarrage à faible budget possible).",
+      "Besoin d'expertise en création de contenu TikTok.",
+      "Changements fréquents dans l'algorithme et les politiques."
+    ],
+    "use_cases": [
+      "Promouvoir des produits auprès de Gen Z.",
+      "Tester rapidement des créatives vidéo courtes.",
+      "Générer du trafic et des conversions e-commerce.",
+      "Augmenter la notoriété de marque auprès de jeunes audiences."
+    ],
+    "relevant_for": ["Marques e-commerce", "Influenceurs", "Agences créatives", "Créateurs de contenu"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "Your target audience is active on TikTok.",
+        "You have flexible ad budget.",
+        "You run performance-based advertising."
+      ],
+      "avoidIf": [
+        "TikTok isn't relevant for your demographic.",
+        "You want a single platform for all channels.",
+        "You manage very complex cross-platform campaigns."
+      ],
+      "threshold": "TikTok Ads works for brands whose audience is on TikTok (Gen Z, young adults); for B2B targeting or older audiences, other platforms fit better."
+    },
+    "pros": [
+      "Direct access to TikTok's official platform.",
+      "Granular demographic and behavioral targeting.",
+      "Competitive pricing vs. Facebook/Instagram.",
+      "Real-time metrics and tracking."
+    ],
+    "cons": [
+      "No free version (though low-budget starts are possible).",
+      "Need expertise in TikTok-native video content.",
+      "Frequent algorithm and policy changes."
+    ],
+    "use_cases": [
+      "Promote products to Gen Z audiences.",
+      "Test short-form video creatives quickly.",
+      "Drive ecommerce traffic and conversions.",
+      "Build brand awareness with younger users."
+    ]
+  }
+}

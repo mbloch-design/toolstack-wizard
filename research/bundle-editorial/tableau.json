@@ -1,0 +1,94 @@
+{
+  "slug": "tableau",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Tableau — Pricing (site officiel)", "url": "https://www.tableau.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme de business intelligence et de visualisation de données, permettant de créer des tableaux de bord interactifs et des rapports analytiques à partir de sources de données variées.",
+    "what_en": "Business intelligence and data visualization platform for creating interactive dashboards and analytical reports from multiple data sources.",
+    "pricing_model": "Abonnement par siège/utilisateur sur Tableau Cloud, tarification basée sur le rôle utilisateur (Viewer, Explorer, Creator) et avec options premium.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite permanente ; essai gratuit disponible." },
+    "plans": [
+      { "name": "Viewer", "price": "15 $/utilisateur/mois (ou montants réduits en facturation annuelle)" },
+      { "name": "Explorer", "price": "42 $/utilisateur/mois" },
+      { "name": "Creator", "price": "75 $/utilisateur/mois" },
+      { "name": "Tableau Next (Creator)", "price": "40 $/utilisateur/mois (AI-powered analytics)" },
+      { "name": "Tableau+ (premium bundle)", "price": "Montants sur la page officielle"  }
+    ],
+    "key_features": [
+      "Dashboards interactifs et rapports visuels",
+      "Connexions à multiples sources de données",
+      "Analyse exploratoire et drill-down",
+      "Collaboration en temps réel",
+      "Tableau Next avec capacités IA",
+      "Gestion d'accès basée sur les rôles"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez des données complexes à explorer et visualiser.",
+        "Votre équipe a besoin de partager des dashboards interactifs.",
+        "Vous travaillez avec plusieurs sources de données."
+      ],
+      "avoidIf": [
+        "Vous cherchez un outil gratuit ou très bon marché.",
+        "Votre usage est très ponctuel ou exploratoire.",
+        "Vous ne nécessitez que des rapports statiques."
+      ],
+      "threshold": "Tableau s'impose pour les équipes data et BI cherchant une plateforme robuste et scalable ; pour un usage léger ou des budgets serrés, un outil gratuit ou abordable convient mieux."
+    },
+    "pros": [
+      "Visualisations interactives très puissantes.",
+      "Connexion à presque toutes les sources de données.",
+      "Collaboration en temps réel.",
+      "Tableau Next pour l'analyse assistée par IA."
+    ],
+    "cons": [
+      "Pas de version gratuite.",
+      "Tarif par utilisateur peut être élevé pour grandes équipes.",
+      "Contrats multi-ans avec escalades tarifaires typiques."
+    ],
+    "use_cases": [
+      "Créer des dashboards BI pour la direction.",
+      "Analyser des données de ventes et marketing.",
+      "Explorer des données complexes multi-sources.",
+      "Partager des insights avec des stakeholders."
+    ],
+    "relevant_for": ["Analystes de données", "Équipes BI", "Data scientists", "Directeurs métier"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You have complex data to explore and visualize.",
+        "Your team needs to share interactive dashboards.",
+        "You work with multiple data sources."
+      ],
+      "avoidIf": [
+        "You're looking for a free or very cheap tool.",
+        "Your use is very occasional or exploratory.",
+        "You only need static reports."
+      ],
+      "threshold": "Tableau makes sense for data and BI teams seeking a robust, scalable platform; for light use or tight budgets, free or affordable tools fit better."
+    },
+    "pros": [
+      "Very powerful interactive visualizations.",
+      "Connection to almost any data source.",
+      "Real-time collaboration.",
+      "Tableau Next for AI-assisted analytics."
+    ],
+    "cons": [
+      "No free version.",
+      "Per-user pricing can add up for large teams.",
+      "Multi-year contracts with typical price escalations."
+    ],
+    "use_cases": [
+      "Build BI dashboards for leadership.",
+      "Analyze sales and marketing data.",
+      "Explore complex multi-source data.",
+      "Share insights with stakeholders."
+    ]
+  }
+}

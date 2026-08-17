@@ -1,0 +1,88 @@
+{
+  "slug": "prometheus",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Prometheus — système de monitoring (site officiel)", "url": "https://prometheus.io" }
+  ],
+  "facts": {
+    "what": "Système de monitoring open source conçu pour l'écosystème cloud natif. Scrape les métriques des services, les stocke en time-series, et propose un langage de requête puissant (PromQL) pour alertes et visualisations.",
+    "what_en": "Open-source monitoring system designed for cloud-native ecosystems. Scrapes metrics from services, stores them as time-series, and provides a powerful query language (PromQL) for alerts and visualization.",
+    "pricing_model": "Open source gratuit sous licence Apache 2.0. Aucun frais d'utilisation.",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit et open source. Déploiement auto-hébergé sur ses propres serveurs ou Kubernetes." },
+    "plans": [],
+    "key_features": [
+      "Modèle de données dimensionnel (métriques + labels)",
+      "Langage de requête PromQL pour manipulations avancées",
+      "Alertes basées sur PromQL",
+      "Serveurs indépendants, déploiement simple en binaire ou container",
+      "Intégrations ubiquitaires (Kubernetes, Docker, etc.)",
+      "Projet CNCF diplômé"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez Kubernetes ou infrastructure cloud native.",
+        "Vous voulez un monitoring open source sans frais.",
+        "Vous avez du personnel capable de déployer et maintenir."
+      ],
+      "avoidIf": [
+        "Vous cherchez une solution SaaS entièrement managée.",
+        "Vous n'avez pas l'expertise DevOps pour déployer Prometheus."
+      ],
+      "threshold": "Prometheus s'impose pour les orga cloud native avec équipes DevOps ; pour autres, Datadog ou New Relic conviennent mieux."
+    },
+    "pros": [
+      "Entièrement gratuit et open source.",
+      "Standard de facto pour monitoring Kubernetes.",
+      "PromQL très puissant pour requêtes complexes.",
+      "Déploiement simple et léger."
+    ],
+    "cons": [
+      "Nécessite expertise DevOps pour production.",
+      "Auto-hébergé donc maintenance/infrastructure à charge.",
+      "Moins de visualisations native comparé à Grafana.",
+      "Rétention des données limitée par espace disque."
+    ],
+    "use_cases": [
+      "Monitorer les conteneurs et pods Kubernetes.",
+      "Collecter des métriques d'applications (CPU, mémoire, etc.).",
+      "Déclencher des alertes sur seuils de performance.",
+      "Analyser les trends historiques de performance."
+    ],
+    "relevant_for": ["Équipes DevOps", "Orga cloud native", "Startups sans budget monitoring"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You use Kubernetes or cloud-native infrastructure.",
+        "You want open-source monitoring with no fees.",
+        "You have personnel capable of deploying and maintaining."
+      ],
+      "avoidIf": [
+        "You seek a fully managed SaaS solution.",
+        "You lack DevOps expertise to deploy Prometheus."
+      ],
+      "threshold": "Prometheus fits cloud-native orgs with DevOps teams; for others, Datadog or New Relic suit better."
+    },
+    "pros": [
+      "Completely free and open source.",
+      "De facto standard for Kubernetes monitoring.",
+      "PromQL very powerful for complex queries.",
+      "Simple, lightweight deployment."
+    ],
+    "cons": [
+      "Requires DevOps expertise for production.",
+      "Self-hosted so maintenance/infrastructure on you.",
+      "Fewer native visualizations vs. Grafana.",
+      "Data retention limited by disk space."
+    ],
+    "use_cases": [
+      "Monitor Kubernetes containers and pods.",
+      "Collect application metrics (CPU, memory, etc.).",
+      "Trigger alerts on performance thresholds.",
+      "Analyze historical performance trends."
+    ]
+  }
+}

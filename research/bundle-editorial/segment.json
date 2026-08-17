@@ -1,0 +1,99 @@
+{
+  "slug": "segment",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Segment — Customer Data Platform (site officiel)", "url": "https://segment.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de données client (CDP) intégrée à Twilio qui collecte, nettoie et achemine les données de clients depuis tout point de contact (web, mobile, serveur) vers plus de 550 destinations (data warehouses, outils analytics, plateformes marketing).",
+    "what_en": "Customer Data Platform (CDP) integrated with Twilio that collects, cleanses, and routes customer data from any touchpoint (web, mobile, server) to 550+ destinations (data warehouses, analytics, marketing platforms).",
+    "pricing_model": "Pricing transparent, basé sur Monthly Tracked Users (MTU), avec plans escaladables. Essai gratuit, pas de carte bancaire requise.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit sans engagement, accès aux fonctionnalités core. Tarification basée sur volume de données et MTU." },
+    "plans": [
+      { "name": "Free Trial", "price": "Essai gratuit (pas de carte bancaire requise)" },
+      { "name": "Pricing personnalisée", "price": "Montants sur la page officielle selon volume (MTU, events)" }
+    ],
+    "key_features": [
+      "Collecte de données depuis web, mobile, serveurs",
+      "Plus de 550 intégrations de destinations",
+      "Data warehouse connections (Snowflake, BigQuery, etc.)",
+      "Unification des profils clients",
+      "Audiences avancées (Segment Unify)",
+      "Activation temps réel (Segment Engage)",
+      "Governance et conformité données",
+      "Support API et webhooks"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin de centraliser les données clients de multiples sources.",
+        "Vous routez vers des data warehouses ou outils d'activation.",
+        "Vous gérez une équipe data/martech avec des besoins complexity accrus.",
+        "Vous priorisez la gouvernance et la conformité des données."
+      ],
+      "avoidIf": [
+        "Vous cherchez une simple analytics (Google Analytics suffit).",
+        "Vous avez un seul canal de données ou une architecture très simple.",
+        "Le budget est serré : les CDP sont structurantes mais coûteuses."
+      ],
+      "threshold": "Segment est leader pour unifier les données clients et les activer en temps réel. C'est un investissement clé pour les martech stacks matures et data-driven."
+    },
+    "pros": [
+      "Plus grande couverture d'intégrations du marché.",
+      "Infrastructure fiable et scalable.",
+      "Essai gratuit accessible.",
+      "Support du gouvernement de données et conformité.",
+      "Activation audience en temps réel."
+    ],
+    "cons": [
+      "Pricing complexe et opaque (sur devis).",
+      "Configuration initiale dense et longue.",
+      "Coûts peuvent vite monter avec la volumétrie."
+    ],
+    "use_cases": [
+      "Centraliser données web, mobile et serveur.",
+      "Envoyer données client vers data warehouse (Snowflake, BigQuery).",
+      "Synchroniser audiences vers plateforme de marketing automation.",
+      "Auditer et gouverner les flux de données.",
+      "Piloter expériences client avec données unifiées."
+    ],
+    "relevant_for": ["Équipes data engineering", "Martech teams", "Agences martech", "E-commerce platforms"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need to centralize customer data from multiple sources.",
+        "You route data to data warehouses or activation tools.",
+        "Your data/martech team manages complex requirements.",
+        "You prioritize data governance and compliance."
+      ],
+      "avoidIf": [
+        "You want simple analytics (Google Analytics is enough).",
+        "You have a single data source or very simple architecture.",
+        "Budget is tight: CDPs are strategic but expensive."
+      ],
+      "threshold": "Segment is the market leader for unifying customer data and activating it in real time. It's a key investment for mature, data-driven martech stacks."
+    },
+    "pros": [
+      "Largest integration coverage in the market.",
+      "Reliable, scalable infrastructure.",
+      "Accessible free trial.",
+      "Data governance and compliance support.",
+      "Real-time audience activation."
+    ],
+    "cons": [
+      "Complex, opaque pricing (quote-based).",
+      "Lengthy initial setup and configuration.",
+      "Costs can escalate quickly with volume."
+    ],
+    "use_cases": [
+      "Centralize web, mobile, and server customer data.",
+      "Send customer data to data warehouse (Snowflake, BigQuery).",
+      "Sync audiences to marketing automation platform.",
+      "Audit and govern data flows.",
+      "Drive customer experiences with unified data."
+    ]
+  }
+}

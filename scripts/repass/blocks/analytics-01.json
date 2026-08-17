@@ -1,25 +1,5 @@
 [
   {
-    "slug": "ahrefs",
-    "name": "Ahrefs",
-    "url": "https://ahrefs.com"
-  },
-  {
-    "slug": "airbyte",
-    "name": "Airbyte",
-    "url": "https://airbyte.com"
-  },
-  {
-    "slug": "algolia",
-    "name": "Algolia",
-    "url": "https://www.algolia.com"
-  },
-  {
-    "slug": "amplitude",
-    "name": "Amplitude",
-    "url": "https://amplitude.com"
-  },
-  {
     "slug": "arcgis",
     "name": "ArcGIS",
     "url": "https://www.arcgis.com"
