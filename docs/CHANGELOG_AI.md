@@ -2,6 +2,15 @@
 
 ---
 
+## 2026-08-17 — Grille Explorer réalignée
+
+- La fiche source et les six premières recommandations forment désormais un bloc à deux colonnes dont les bords supérieur et inférieur sont strictement alignés.
+- Les recommandations suivantes repartent sur une grille pleine largeur, sans effet de masonry ni remontée indépendante des colonnes.
+- Les variantes tablette et mobile conservent une lecture régulière en trois, deux puis une colonne.
+- Validation : build production PASS et contrôle navigateur sur l’exploration autour de Figma Tokens.
+
+---
+
 ## 2026-08-17 — Story scénographie Atelier Hors-Champ
 
 - Nouvelle Story fictive consacrée à une agence de scénographie, depuis la maquette et les essais lumière jusqu’au montage et à l’ouverture de l’exposition.

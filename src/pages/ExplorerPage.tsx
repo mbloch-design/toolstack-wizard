@@ -197,7 +197,6 @@ export default function ExplorerPage() {
   const sourceNeed = source?.type === "objectif" ? state.needs.find((need) => need.id === source.id) || null : null;
   const sourceTool = source?.type === "outil" ? toolBySlug.get(source.slug) || null : null;
   const objectiveSourceSnapshot = useRef<{ id: string; slugs: string[] } | null>(null);
-  const masonryRef = useRef<HTMLElement>(null);
   const loadMoreRef = useRef<HTMLDivElement>(null);
   const loadingMoreRef = useRef(false);
   if (source?.type === "objectif" && objectiveSourceSnapshot.current?.id !== source.id) {
@@ -239,43 +238,6 @@ export default function ExplorerPage() {
   const visibleCandidates = filteredCandidates.slice(0, resultLimit);
   const hasMoreCandidates = visibleCandidates.length < filteredCandidates.length;
   const sourceKey = source?.type === "objectif" ? `objectif:${source.id}` : source ? `outil:${source.slug}` : "unknown";
-
-  useEffect(() => {
-    if (isObjectiveSource) return;
-    const masonry = masonryRef.current;
-    if (!masonry) return;
-    let frame = 0;
-
-    const updateSpans = () => {
-      cancelAnimationFrame(frame);
-      frame = requestAnimationFrame(() => {
-        const styles = window.getComputedStyle(masonry);
-        const rowHeight = Number.parseFloat(styles.gridAutoRows);
-        const rowGap = Number.parseFloat(styles.rowGap) || 0;
-        const items = masonry.querySelectorAll<HTMLElement>(".ex-tag-filter, .ex-tool-focus, .ex-card");
-        if (!Number.isFinite(rowHeight) || rowHeight <= 0) {
-          items.forEach((item) => { item.style.gridRowEnd = "auto"; });
-          return;
-        }
-        items.forEach((item) => {
-          const height = item.getBoundingClientRect().height;
-          const span = Math.max(1, Math.ceil((height + rowGap) / (rowHeight + rowGap)));
-          item.style.gridRowEnd = `span ${span}`;
-        });
-      });
-    };
-
-    const items = masonry.querySelectorAll<HTMLElement>(".ex-tag-filter, .ex-tool-focus, .ex-card");
-    const resizeObserver = new ResizeObserver(updateSpans);
-    items.forEach((item) => resizeObserver.observe(item));
-    updateSpans();
-    window.addEventListener("resize", updateSpans);
-    return () => {
-      cancelAnimationFrame(frame);
-      resizeObserver.disconnect();
-      window.removeEventListener("resize", updateSpans);
-    };
-  }, [isLoadingMore, isObjectiveSource, sourceKey, visibleCandidates.length]);
 
   useEffect(() => {
     setResultLimit(INITIAL_RESULT_COUNT);
@@ -459,6 +421,8 @@ export default function ExplorerPage() {
     ? Boolean(sourceStackEntry?.needIds.includes(destination.id))
     : Boolean(sourceStackEntry);
   const sourceIsAdding = Boolean(sourceToolSlug && addingSlug === sourceToolSlug);
+  const stageCandidates = isObjectiveSource ? [] : visibleCandidates.slice(0, 6);
+  const gridCandidates = isObjectiveSource ? visibleCandidates : visibleCandidates.slice(stageCandidates.length);
   const tagFilters = (
     <ExplorerTagFilterNav
       activeId={isObjectiveSource ? activeThemeId || "all" : angle}
@@ -473,8 +437,52 @@ export default function ExplorerPage() {
     />
   );
 
+  const renderCandidateCard = (candidate: (typeof visibleCandidates)[number]) => {
+    const slug = getExplorationToolKey(candidate.tool);
+    const isAdding = addingSlug === slug;
+    const inDestination = candidate.stackState === "in-destination";
+    const inStackWithoutDestination = !destination && candidate.stackState === "in-stack";
+    const description = t(
+      candidate.tool.shortDescription,
+      candidate.tool.shortDescriptionEn || candidate.tool.shortDescription,
+    ) as string;
+
+    return (
+      <article key={slug} data-tool-slug={slug} className={`ex-card${inDestination || inStackWithoutDestination ? " is-present" : ""}${isAdding ? " is-adding" : ""}`}>
+        <button
+          type="button"
+          className="ex-card-main"
+          onClick={() => recenter(candidate.tool)}
+          aria-label={t(`Explorer autour de ${candidate.tool.name}`, `Explore around ${candidate.tool.name}`) as string}
+          aria-describedby={`explore-card-${slug}-description`}
+        >
+          <span className="ex-card-header">
+            <ToolLogo tool={candidate.tool} size={52} className="ex-card-logo" />
+            <span className="ex-card-identity">
+              <strong>{candidate.tool.name}</strong>
+              <small>{candidate.categoryLabel}</small>
+            </span>
+          </span>
+          <span id={`explore-card-${slug}-description`} className="ex-card-description">{description}</span>
+        </button>
+        <div className="ex-card-actions">
+          <button type="button" onClick={(event) => addTool(candidate.tool, event)} disabled={inDestination || inStackWithoutDestination || isAdding} aria-label={inDestination
+            ? t(`${candidate.tool.name} déjà dans ${destination?.labelFr}`, `${candidate.tool.name} already in ${destination?.labelEn}`) as string
+            : inStackWithoutDestination
+              ? t(`${candidate.tool.name} déjà dans Ma stack`, `${candidate.tool.name} already in My stack`) as string
+              : destination && candidate.stackState === "in-stack"
+                ? t(`Ajouter ${candidate.tool.name} à ${destination.labelFr}`, `Add ${candidate.tool.name} to ${destination.labelEn}`) as string
+                : t(`Ajouter ${candidate.tool.name} à Ma stack`, `Add ${candidate.tool.name} to My stack`) as string}>
+              {inDestination || inStackWithoutDestination ? <Check size={16} aria-hidden /> : <Plus size={16} aria-hidden />}
+              <span>{inDestination ? t("Déjà ajouté", "Already added") : inStackWithoutDestination ? t("Dans Ma stack", "In My stack") : destination && candidate.stackState === "in-stack" ? t("Ajouter ici", "Add here") : t("Ajouter", "Add")}</span>
+          </button>
+        </div>
+      </article>
+    );
+  };
+
   return (
-    <main ref={masonryRef} className={`ex-page${isObjectiveSource ? "" : " ex-page--tool"}`} aria-labelledby="explorer-title">
+    <main className={`ex-page${isObjectiveSource ? "" : " ex-page--tool"}`} aria-labelledby="explorer-title">
       {!isObjectiveSource && tagFilters}
       {isObjectiveSource ? (
         <header className="ex-source-banner ex-source-banner--objective">
@@ -489,6 +497,7 @@ export default function ExplorerPage() {
           </div>
         </header>
       ) : sourceTool && (
+        <section className="ex-tool-stage" aria-label={t(`Explorer autour de ${sourceLabel}`, `Explore around ${sourceLabel}`) as string}>
         <header className="ex-tool-focus">
           <div className="ex-tool-focus-top">
             <button type="button" className="ex-back" onClick={handleBack} aria-label={t(`Retour à ${previousLabel}`, `Back to ${previousLabel}`) as string}>
@@ -545,54 +554,17 @@ export default function ExplorerPage() {
             </div>
           </div>
         </header>
+        <div className="ex-tool-stage-grid">
+          {stageCandidates.map(renderCandidateCard)}
+        </div>
+        </section>
       )}
 
       {isObjectiveSource && tagFilters}
 
       {visibleCandidates.length > 0 ? (
-        <section className="ex-grid" aria-label={t("Outils associés", "Related tools") as string}>
-          {visibleCandidates.map((candidate) => {
-            const slug = getExplorationToolKey(candidate.tool);
-            const isAdding = addingSlug === slug;
-            const inDestination = candidate.stackState === "in-destination";
-            const inStackWithoutDestination = !destination && candidate.stackState === "in-stack";
-            const description = t(
-              candidate.tool.shortDescription,
-              candidate.tool.shortDescriptionEn || candidate.tool.shortDescription,
-            ) as string;
-            return (
-              <article key={slug} data-tool-slug={slug} className={`ex-card${inDestination || inStackWithoutDestination ? " is-present" : ""}${isAdding ? " is-adding" : ""}`}>
-                <button
-                  type="button"
-                  className="ex-card-main"
-                  onClick={() => recenter(candidate.tool)}
-                  aria-label={t(`Explorer autour de ${candidate.tool.name}`, `Explore around ${candidate.tool.name}`) as string}
-                  aria-describedby={`explore-card-${slug}-description`}
-                >
-                  <span className="ex-card-header">
-                    <ToolLogo tool={candidate.tool} size={52} className="ex-card-logo" />
-                    <span className="ex-card-identity">
-                      <strong>{candidate.tool.name}</strong>
-                      <small>{candidate.categoryLabel}</small>
-                    </span>
-                  </span>
-                  <span id={`explore-card-${slug}-description`} className="ex-card-description">{description}</span>
-                </button>
-                <div className="ex-card-actions">
-                  <button type="button" onClick={(event) => addTool(candidate.tool, event)} disabled={inDestination || inStackWithoutDestination || isAdding} aria-label={inDestination
-                    ? t(`${candidate.tool.name} déjà dans ${destination?.labelFr}`, `${candidate.tool.name} already in ${destination?.labelEn}`) as string
-                    : inStackWithoutDestination
-                      ? t(`${candidate.tool.name} déjà dans Ma stack`, `${candidate.tool.name} already in My stack`) as string
-                      : destination && candidate.stackState === "in-stack"
-                        ? t(`Ajouter ${candidate.tool.name} à ${destination.labelFr}`, `Add ${candidate.tool.name} to ${destination.labelEn}`) as string
-                        : t(`Ajouter ${candidate.tool.name} à Ma stack`, `Add ${candidate.tool.name} to My stack`) as string}>
-                    {inDestination || inStackWithoutDestination ? <Check size={16} aria-hidden /> : <Plus size={16} aria-hidden />}
-                    <span>{inDestination ? t("Déjà ajouté", "Already added") : inStackWithoutDestination ? t("Dans Ma stack", "In My stack") : destination && candidate.stackState === "in-stack" ? t("Ajouter ici", "Add here") : t("Ajouter", "Add")}</span>
-                  </button>
-                </div>
-              </article>
-            );
-          })}
+        gridCandidates.length > 0 && <section className="ex-grid" aria-label={t("Outils associés", "Related tools") as string}>
+          {gridCandidates.map(renderCandidateCard)}
           {hasMoreCandidates && (
             <>
               {isLoadingMore && Array.from({ length: Math.min(SKELETON_COUNT, filteredCandidates.length - visibleCandidates.length) }, (_, index) => (
