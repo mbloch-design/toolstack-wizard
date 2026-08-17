@@ -48,7 +48,7 @@ const AI_SLUGS = [
 const AI_PAGE_SIZE = 4; // 1 row × 4 cols — AI tools carousel
 
 const HOME_TOOL_ASSETS: Record<string, { cover: string | null; logo?: string }> = {
-  "affinity-photo": { cover: null, logo: "/home-logos/affinity-photo.webp" },
+  "affinity-photo": { cover: "/home-cards/affinity-photo.webp", logo: "/home-logos/affinity-photo.webp" },
   box: { cover: "/home-cards/box.webp", logo: "/home-logos/box.webp" },
   chatgpt: { cover: "/og-screenshots/chatgpt.png", logo: "/home-logos/chatgpt.webp" },
   circle: { cover: "/home-cards/circle.webp", logo: "/home-logos/circle.webp" },
