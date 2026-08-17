@@ -3854,3 +3854,9 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Les outils encore absents de la projection utilisent individuellement la source JSON historique, sans interrompre ni dégrader les fiches déjà canoniques.
 - Une vraie erreur réseau, HTTP ou une perte d'outil dans les deux sources reste bloquante et déclenche le fallback global de sécurité.
 - Le journal de build résume explicitement le nombre de fiches projetées et de fallbacks JSON, sans stack trace trompeuse pour une migration progressive attendue.
+
+# 2026-08-17 — Réparation du garde-fou des design tokens
+
+- Remplacement des couleurs locales des illustrations Stories, familles de stacks et tutoriels vidéo par des tokens sémantiques nommés.
+- Alignement des quinze rayons littéraux ajoutés récemment sur l’échelle canonique `--radius-*`.
+- La dette CSS mesurée redescend de 64 à 52 couleurs en dur et reste à zéro rayon littéral, sans relever la tolérance du CI.
