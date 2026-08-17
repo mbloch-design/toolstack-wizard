@@ -1,6 +1,21 @@
 {
   "fr": [
     {
+      "slug": "atelier-hors-champ-scenographie-espace-raconte",
+      "title": "Dessiner ce que le visiteur ressent avant ce qu’il regarde",
+      "date": "2026-08-17",
+      "tags": [
+        "stories",
+        "scénographie",
+        "agence créative",
+        "exposition",
+        "architecture éphémère",
+        "direction artistique",
+        "workflow"
+      ],
+      "thumbnail": "/editorial/stories/atelier-hors-champ/hero.jpg"
+    },
+    {
       "slug": "auditer-stack-saas-45-minutes",
       "title": "Auditer sa stack SaaS en 45 minutes : supprimer les doublons sans casser son travail",
       "date": "2026-08-16",
@@ -173,22 +188,6 @@
         "2026"
       ],
       "thumbnail": null
-    },
-    {
-      "slug": "agents-ia-freelances-2026-lesquels-valent-le-coup",
-      "title": "Agents IA pour freelances en 2026 : lesquels valent vraiment le coup ?",
-      "date": "2026-04-22",
-      "tags": [
-        "agents ia",
-        "freelance",
-        "claude code",
-        "zapier",
-        "make",
-        "notion ai",
-        "dust",
-        "2026"
-      ],
-      "thumbnail": "/editorial/agents-ia-freelances-2026/hero-agent.jpg"
     }
   ],
   "en": [

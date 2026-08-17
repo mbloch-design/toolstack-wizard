@@ -2,6 +2,15 @@
 
 ---
 
+## 2026-08-17 — Story scénographie Atelier Hors-Champ
+
+- Nouvelle Story fictive consacrée à une agence de scénographie, depuis la maquette et les essais lumière jusqu’au montage et à l’ouverture de l’exposition.
+- Le récit distingue les outils du jugement métier : la stack accompagne les changements d’échelle sans remplacer les arbitrages spatiaux, matériels ou humains.
+- Direction photographique originale en quatre images : documentaire de chantier cinématographique, cadrages obliques, flash latéral, bois brut, textile indigo et lumière tungstène — sans portrait corporate ni écran décoratif.
+- Sources éditoriales synchronisées dans `src/data` et `public/data`, avec métadonnées SEO et déclaration fictive explicite.
+
+---
+
 ## 2026-08-17 — Visuel ChatGPT ressourcé
 
 - La couverture ChatGPT utilise désormais une capture publique et actuelle de la page produit officielle française.
