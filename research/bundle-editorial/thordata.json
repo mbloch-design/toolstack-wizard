@@ -1,0 +1,89 @@
+{
+  "slug": "thordata",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Thordata — proxies et collecte de données (site officiel)", "url": "https://www.thordata.com/" }
+  ],
+  "facts": {
+    "what": "Réseau de proxies et plateforme de collecte de données : proxies résidentiels, datacenter, ISP et mobiles dans de nombreux pays, plus des API de scraping (Web Scraper API, SERP API, Web Unlocker) avec résolution de CAPTCHA et rendu JavaScript.",
+    "what_en": "Proxy network and data collection platform: residential, datacenter, ISP and mobile proxies across many countries, plus scraping APIs (Web Scraper API, SERP API, Web Unlocker) with CAPTCHA solving and JavaScript rendering.",
+    "pricing_model": "Paiement à l'usage, facturé au Go (proxies résidentiels/mobiles) ou par IP (ISP), sans engagement minimum. Tarif dégressif marqué avec le volume. Offre illimitée à la journée disponible.",
+    "free_tier": { "exists": false, "detail": "Pas de palier gratuit permanent ; essai limité disponible sur demande et offre de découverte pour les nouveaux comptes." },
+    "plans": [
+      { "name": "Proxies résidentiels", "price": "à partir de 3,50 $/Go, dégressif jusqu'à ~0,40 $/Go à fort volume" },
+      { "name": "Proxies ISP", "price": "à partir de 0,75 $ par IP" },
+      { "name": "Proxies mobiles", "price": "à partir de 2,20 $/Go" },
+      { "name": "Offre illimitée", "price": "69 $/jour en bande passante non plafonnée" }
+    ],
+    "key_features": [
+      "Proxies résidentiels, datacenter, ISP et mobiles",
+      "API de scraping et SERP API",
+      "Web Unlocker et navigateur de scraping",
+      "Résolution de CAPTCHA et rendu JavaScript"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous collectez de la donnée web à l'échelle et vous vous heurtez aux blocages.",
+        "Vous faites de la veille tarifaire ou concurrentielle automatisée.",
+        "Vous préférez payer à l'usage sans engagement."
+      ],
+      "avoidIf": [
+        "Vous n'avez qu'un besoin de scraping ponctuel et léger.",
+        "Vous voulez un outil clé en main sans configuration technique.",
+        "Vos volumes sont trop faibles pour bénéficier de la dégressivité."
+      ],
+      "threshold": "Thordata s'impose pour de la collecte web régulière et bloquée par les protections anti-bot ; pour un besoin ponctuel, une bibliothèque de scraping simple suffit."
+    },
+    "pros": [
+      "Large parc de proxies résidentiels et mobiles.",
+      "API de scraping avec contournement des protections.",
+      "Paiement à l'usage sans engagement.",
+      "Tarif fortement dégressif au volume."
+    ],
+    "cons": [
+      "Pas de palier gratuit permanent.",
+      "Nécessite des compétences techniques pour être exploité.",
+      "Usage à cadrer juridiquement selon les sites ciblés."
+    ],
+    "use_cases": [
+      "Collecter des données produit ou tarifaires à grande échelle.",
+      "Vérifier l'affichage d'annonces par pays.",
+      "Alimenter une veille concurrentielle automatisée."
+    ],
+    "relevant_for": ["Équipes data", "Growth et e-commerce", "Développeurs scraping"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You collect web data at scale and hit blocking.",
+        "You run automated price or competitive monitoring.",
+        "You prefer pay-as-you-go with no commitment."
+      ],
+      "avoidIf": [
+        "You only have a light, one-off scraping need.",
+        "You want a turnkey tool with no technical setup.",
+        "Your volumes are too small to benefit from volume discounts."
+      ],
+      "threshold": "Thordata makes sense for regular web collection blocked by anti-bot protections; for a one-off need, a simple scraping library suffices."
+    },
+    "pros": [
+      "Large pool of residential and mobile proxies.",
+      "Scraping APIs that bypass protections.",
+      "Pay-as-you-go with no commitment.",
+      "Steep volume discounts."
+    ],
+    "cons": [
+      "No permanent free tier.",
+      "Requires technical skills to operate.",
+      "Usage needs legal framing depending on target sites."
+    ],
+    "use_cases": [
+      "Collect product or pricing data at scale.",
+      "Verify ad display by country.",
+      "Feed automated competitive monitoring."
+    ]
+  }
+}

@@ -3,13 +3,19 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Redirect Path — Chrome Web Store (site officiel)", "url": "https://chromewebstore.google.com/detail/redirect-path/aomidfkchockcldhbkggjokdkkebmdll" }
+    {
+      "label": "Redirect Path — Chrome Web Store (site officiel)",
+      "url": "https://chromewebstore.google.com/detail/redirect-path/aomidfkchockcldhbkggjokdkkebmdll"
+    }
   ],
   "facts": {
     "what": "Extension Chrome gratuite développée par Ayima pour analyser les chaînes de redirection HTTP en temps réel et détecter les codes d'erreur (301, 302, 404, 500) lors de vos audits SEO.",
     "what_en": "Free Chrome extension by Ayima to analyze HTTP redirect chains in real time and detect error codes (301, 302, 404, 500) during your SEO audits.",
     "pricing_model": "Gratuit",
-    "free_tier": { "exists": true, "detail": "Extension entièrement gratuite, aucune limite, aucune version premium. Version 4 inclut l'intégration Ayima AI (gratuite)." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Extension entièrement gratuite, aucune limite, aucune version premium. Version 4 inclut l'intégration Ayima AI (gratuite)."
+    },
     "plans": [],
     "key_features": [
       "Détection des chaînes de redirection en temps réel",
@@ -40,7 +46,8 @@
     ],
     "cons": [
       "Une seule fonction (redirects seulement).",
-      "Chrome/Edge seulement, pas de Firefox support natif."
+      "Chrome/Edge seulement, pas de Firefox support natif.",
+      "Utilité limitée si vous n'auditez pas régulièrement des redirections."
     ],
     "use_cases": [
       "Auditer une migration de domaine avant le lancement.",
@@ -48,7 +55,12 @@
       "Déboguer les redirects multiples en cascade.",
       "Analyser les redirects d'une concurrence."
     ],
-    "relevant_for": ["SEO specialists", "Webmasters", "Développeurs front-end", "Agences digitales"]
+    "relevant_for": [
+      "SEO specialists",
+      "Webmasters",
+      "Développeurs front-end",
+      "Agences digitales"
+    ]
   },
   "en": {
     "verdict": {
@@ -71,7 +83,8 @@
     ],
     "cons": [
       "Single function (redirects only).",
-      "Chrome/Edge only, no native Firefox support."
+      "Chrome/Edge only, no native Firefox support.",
+      "Limited value if you don't regularly audit redirects."
     ],
     "use_cases": [
       "Audit a domain migration before launch.",

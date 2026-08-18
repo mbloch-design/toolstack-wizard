@@ -1,0 +1,87 @@
+{
+  "slug": "zoho",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Zoho One — suite d'applications métier (site officiel)", "url": "https://www.zoho.com/one/" }
+  ],
+  "facts": {
+    "what": "Suite d'applications métier de Zoho : plus de cinquante outils couvrant CRM, comptabilité, RH, gestion de projet, marketing et support, avec gestion centralisée des utilisateurs, SSO et automatisations transverses.",
+    "what_en": "Zoho's business application suite: over fifty tools covering CRM, accounting, HR, project management, marketing and support, with centralised user management, SSO and cross-app automations.",
+    "pricing_model": "Deux formules d'abonnement : « All Employee » (licence pour tous les salariés, tarif par employé) ou « Flexible User » (licence pour une partie des utilisateurs seulement, tarif plus élevé par siège). Facturation annuelle avantageuse. Les applications Zoho restent aussi disponibles à l'unité.",
+    "free_tier": { "exists": false, "detail": "Zoho One est payant ; plusieurs applications Zoho prises isolément proposent en revanche un palier gratuit." },
+    "plans": [
+      { "name": "All Employee", "price": "environ 37 $/employé/mois (annuel), licence obligatoire pour tout l'effectif" },
+      { "name": "Flexible User", "price": "environ 90 $/utilisateur/mois (annuel), sans obligation de licencier tout l'effectif" }
+    ],
+    "key_features": [
+      "Plus de cinquante applications métier intégrées",
+      "CRM, comptabilité, RH, projets et marketing",
+      "Gestion centralisée des utilisateurs et SSO",
+      "Automatisations et API entre applications"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez remplacer plusieurs abonnements par une suite unique.",
+        "Vous cherchez CRM, compta et RH chez le même éditeur.",
+        "Votre effectif est stable et peut être licencié en totalité."
+      ],
+      "avoidIf": [
+        "Vous n'avez besoin que d'une ou deux applications (les prendre à l'unité coûte moins cher).",
+        "Vous tenez à des outils best-of-breed spécialisés.",
+        "Votre effectif comporte beaucoup de profils qui n'utiliseraient pas la suite."
+      ],
+      "threshold": "Zoho One s'impose quand on remplace plusieurs abonnements par une suite unique ; pour un ou deux besoins précis, les applications Zoho à l'unité reviennent moins cher."
+    },
+    "pros": [
+      "Très large couverture fonctionnelle pour un seul abonnement.",
+      "Applications intégrées entre elles (SSO, données partagées).",
+      "Économies réelles face à un empilement d'outils.",
+      "Automatisations transverses et API."
+    ],
+    "cons": [
+      "Chaque application est souvent moins aboutie que le leader de sa catégorie.",
+      "La formule « tout l'effectif » impose de licencier même les non-utilisateurs.",
+      "Prise en main longue vu l'étendue de la suite."
+    ],
+    "use_cases": [
+      "Remplacer un empilement d'abonnements par une suite unique.",
+      "Équiper une PME en CRM, compta et RH d'un coup.",
+      "Automatiser des flux entre ventes, finance et support."
+    ],
+    "relevant_for": ["PME", "Dirigeants et ops", "Entreprises multi-services"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want to replace several subscriptions with one suite.",
+        "You want CRM, accounting and HR from a single vendor.",
+        "Your headcount is stable and can be fully licensed."
+      ],
+      "avoidIf": [
+        "You only need one or two apps (buying them separately costs less).",
+        "You insist on specialised best-of-breed tools.",
+        "Much of your headcount would never use the suite."
+      ],
+      "threshold": "Zoho One makes sense when replacing several subscriptions with a single suite; for one or two specific needs, individual Zoho apps cost less."
+    },
+    "pros": [
+      "Very broad functional coverage for one subscription.",
+      "Apps integrated together (SSO, shared data).",
+      "Real savings versus a stack of separate tools.",
+      "Cross-app automations and APIs."
+    ],
+    "cons": [
+      "Each app is often less polished than its category leader.",
+      "The all-employee plan forces licensing non-users too.",
+      "Long ramp-up given the breadth of the suite."
+    ],
+    "use_cases": [
+      "Replace a stack of subscriptions with one suite.",
+      "Equip an SMB with CRM, accounting and HR at once.",
+      "Automate flows between sales, finance and support."
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "slug": "netsuite",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Oracle NetSuite — site officiel", "url": "https://www.netsuite.com/portal/products/erp.shtml" }
+  ],
+  "facts": {
+    "what": "ERP cloud d'Oracle réunissant finance, gestion des commandes, stocks, CRM et e-commerce dans un système unique. Lancé en 1998, racheté par Oracle en 2016 ; les fonctions IA sont intégrées à la plateforme depuis 2026.",
+    "what_en": "Oracle's cloud ERP unifying financials, order management, inventory, CRM and e-commerce in a single system. Launched in 1998, acquired by Oracle in 2016; AI features are embedded in the platform since 2026.",
+    "pricing_model": "Sur devis, en trois composantes : abonnement de plateforme, licences par utilisateur, puis modules additionnels (CRM, e-commerce, production, WMS). Tarification non publique et fortement négociée.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite ni d'essai libre ; démonstration commerciale et devis sur mesure." },
+    "plans": [
+      { "name": "Plateforme (socle)", "price": "à partir d'environ 999 $/mois" },
+      { "name": "Licence utilisateur", "price": "environ 129 à 199 $/utilisateur/mois (le tarif de base est passé de 99 à 129 $ en 2026)" },
+      { "name": "Modules additionnels", "price": "sur devis (CRM, e-commerce, production, WMS)" }
+    ],
+    "key_features": [
+      "Comptabilité et finance consolidées",
+      "Gestion des commandes et des stocks",
+      "CRM et e-commerce intégrés",
+      "Reporting multi-entités et multi-devises"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous pilotez une entreprise multi-entités ou multi-devises.",
+        "Vous voulez finance, stocks et commandes dans un seul système.",
+        "Vous avez les moyens d'un déploiement ERP accompagné."
+      ],
+      "avoidIf": [
+        "Vous êtes indépendant ou TPE (largement surdimensionné).",
+        "Vous voulez une tarification transparente et prévisible.",
+        "Vous n'avez pas de budget d'implémentation ni d'équipe pour le projet."
+      ],
+      "threshold": "NetSuite s'impose pour une entreprise structurée qui a besoin d'un ERP cloud consolidé ; en dessous d'une certaine taille, un outil de gestion plus léger suffit largement."
+    },
+    "pros": [
+      "ERP cloud complet et mature.",
+      "Finance, stocks, CRM et e-commerce unifiés.",
+      "Adapté au multi-entités et multi-devises.",
+      "Écosystème Oracle et large réseau d'intégrateurs."
+    ],
+    "cons": [
+      "Tarification opaque et négociée au cas par cas.",
+      "Coût total élevé une fois l'implémentation incluse.",
+      "Hausses tarifaires au renouvellement rapportées par des clients."
+    ],
+    "use_cases": [
+      "Consolider la finance de plusieurs entités.",
+      "Piloter stocks et commandes à l'échelle.",
+      "Unifier ERP, CRM et e-commerce."
+    ],
+    "relevant_for": ["ETI et grandes PME", "Directions financières", "Groupes multi-entités"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You run a multi-entity or multi-currency business.",
+        "You want financials, inventory and orders in one system.",
+        "You can fund a supported ERP rollout."
+      ],
+      "avoidIf": [
+        "You're a freelancer or micro-business (heavily oversized).",
+        "You want transparent, predictable pricing.",
+        "You have no implementation budget or project team."
+      ],
+      "threshold": "NetSuite makes sense for a structured company needing a consolidated cloud ERP; below a certain size, a lighter management tool is plenty."
+    },
+    "pros": [
+      "Complete, mature cloud ERP.",
+      "Unified financials, inventory, CRM and e-commerce.",
+      "Built for multi-entity and multi-currency.",
+      "Oracle ecosystem and a large integrator network."
+    ],
+    "cons": [
+      "Opaque, case-by-case negotiated pricing.",
+      "High total cost once implementation is included.",
+      "Renewal price increases reported by customers."
+    ],
+    "use_cases": [
+      "Consolidate financials across entities.",
+      "Run inventory and orders at scale.",
+      "Unify ERP, CRM and e-commerce."
+    ]
+  }
+}

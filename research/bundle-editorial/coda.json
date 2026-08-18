@@ -3,18 +3,36 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Coda — Pricing (site officiel)", "url": "https://coda.io/pricing" }
+    {
+      "label": "Coda — Pricing (site officiel)",
+      "url": "https://coda.io/pricing"
+    }
   ],
   "facts": {
     "what": "Espace de travail collaboratif tout-en-un combinant documents, tableaux interactifs et applications sans code, avec intégrations vers 600+ outils et IA assistante.",
     "what_en": "All-in-one collaborative workspace combining documents, interactive tables and no-code applications, with integrations to 600+ tools and AI assistant.",
     "pricing_model": "Abonnement par Doc Maker (éditeurs de structure) ; éditeurs et lecteurs illimités et gratuits.",
-    "free_tier": { "exists": true, "detail": "Free tier offert sans carte de crédit, avec documents non partagés illimités et accès à Coda AI." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Free tier offert sans carte de crédit, avec documents non partagés illimités et accès à Coda AI."
+    },
     "plans": [
-      { "name": "Free", "price": "Gratuit" },
-      { "name": "Pro", "price": "10-12 $/Doc Maker/mois selon facturation" },
-      { "name": "Team", "price": "30-36 $/Doc Maker/mois selon facturation" },
-      { "name": "Enterprise", "price": "Tarification personnalisée" }
+      {
+        "name": "Free",
+        "price": "Gratuit"
+      },
+      {
+        "name": "Pro",
+        "price": "10-12 $/Doc Maker/mois selon facturation"
+      },
+      {
+        "name": "Team",
+        "price": "30-36 $/Doc Maker/mois selon facturation"
+      },
+      {
+        "name": "Enterprise",
+        "price": "Tarification personnalisée"
+      }
     ],
     "key_features": [
       "Documents collaboratifs type Docs avec structure et données",
@@ -44,14 +62,19 @@
     ],
     "cons": [
       "Tarification peut devenir complexe avec plusieurs Doc Makers.",
-      "Courbe d'apprentissage pour les automations avancées."
+      "Courbe d'apprentissage pour les automations avancées.",
+      "Moins pertinent si vous n'avez besoin que d'un simple document ou tableur."
     ],
     "use_cases": [
       "Documenter et suivre un projet avec tableaux de suivi intégrés.",
       "Remplacer des classeurs Excel avec calculs et automations.",
       "Créer un hub centralisé pour une équipe produit."
     ],
-    "relevant_for": ["Équipes produit", "Consultants", "PME"]
+    "relevant_for": [
+      "Équipes produit",
+      "Consultants",
+      "PME"
+    ]
   },
   "en": {
     "verdict": {
@@ -74,7 +97,8 @@
     ],
     "cons": [
       "Pricing can get complex with multiple Doc Makers.",
-      "Learning curve for advanced automations."
+      "Learning curve for advanced automations.",
+      "Less relevant if you only need a plain document or spreadsheet."
     ],
     "use_cases": [
       "Document and track a project with built-in tracking tables.",

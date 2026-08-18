@@ -3,18 +3,36 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Houzz Pro — Software for Contractors & Designers (site officiel)", "url": "https://pro.houzz.com/pro" }
+    {
+      "label": "Houzz Pro — Software for Contractors & Designers (site officiel)",
+      "url": "https://pro.houzz.com/pro"
+    }
   ],
   "facts": {
     "what": "Suite logicielle tout-en-un pour entrepreneurs en construction et designers, combinant plans 3D, gestion de projets, suite financière et outils de marketing.",
     "what_en": "All-in-one software suite for contractors and designers, combining 3D plans, project management, financial suite and marketing tools.",
     "pricing_model": "Abonnement annuel avec plusieurs niveaux selon les besoins métier.",
-    "free_tier": { "exists": true, "detail": "Essai gratuit disponible ; pas de plan gratuit permanent." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Essai gratuit disponible ; pas de plan gratuit permanent."
+    },
     "plans": [
-      { "name": "Starter", "price": "À partir de 249 $/année (opérateurs solo)" },
-      { "name": "Standard", "price": "Montants sur la page officielle" },
-      { "name": "Professional", "price": "Montants sur la page officielle" },
-      { "name": "Custom/Enterprise", "price": "Tarification personnalisée (équipes multiples)" }
+      {
+        "name": "Starter",
+        "price": "À partir de 249 $/année (opérateurs solo)"
+      },
+      {
+        "name": "Standard",
+        "price": "Montants sur la page officielle"
+      },
+      {
+        "name": "Professional",
+        "price": "Montants sur la page officielle"
+      },
+      {
+        "name": "Custom/Enterprise",
+        "price": "Tarification personnalisée (équipes multiples)"
+      }
     ],
     "key_features": [
       "Plans 3D et visualisations de projets",
@@ -45,14 +63,19 @@
     ],
     "cons": [
       "Tarification croît rapidement avec les fonctionnalités avancées.",
-      "Solution spécialisée, moins flexible pour autres métiers."
+      "Solution spécialisée, moins flexible pour autres métiers.",
+      "Pertinent surtout pour les métiers du bâtiment et de la rénovation."
     ],
     "use_cases": [
       "Créer des plans 3D et propositions pour des clients.",
       "Gérer tout un projet de rénovation (budget, équipes, suivi).",
       "Automatiser les factures et intégrer les paiements client."
     ],
-    "relevant_for": ["Entrepreneurs bâtiment", "Designers d'intérieur", "Freelances construction"]
+    "relevant_for": [
+      "Entrepreneurs bâtiment",
+      "Designers d'intérieur",
+      "Freelances construction"
+    ]
   },
   "en": {
     "verdict": {
@@ -75,7 +98,8 @@
     ],
     "cons": [
       "Pricing grows quickly with advanced features.",
-      "Specialized solution, less flexible for other industries."
+      "Specialized solution, less flexible for other industries.",
+      "Mostly relevant to construction and renovation trades."
     ],
     "use_cases": [
       "Create 3D plans and proposals for clients.",

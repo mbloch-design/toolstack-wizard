@@ -3,17 +3,32 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Canny — Pricing (site officiel)", "url": "https://canny.io/pricing" }
+    {
+      "label": "Canny — Pricing (site officiel)",
+      "url": "https://canny.io/pricing"
+    }
   ],
   "facts": {
     "what": "Plateforme de gestion des retours clients pilotée par IA, qui centralise les feedbacks issus de multiples canaux (Slack, Intercom, Gong) et les priorise pour guider la roadmap produit.",
     "what_en": "AI-powered customer feedback management platform that centralizes feedback from multiple channels (Slack, Intercom, Gong) and prioritizes it to guide product roadmap.",
     "pricing_model": "Abonnement mensuel basé sur le nombre d'utilisateurs tracés (tracked users).",
-    "free_tier": { "exists": true, "detail": "Free tier offert, sans carte de crédit requise, jusqu'à 25 utilisateurs tracés." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Free tier offert, sans carte de crédit requise, jusqu'à 25 utilisateurs tracés."
+    },
     "plans": [
-      { "name": "Free", "price": "0 $ / mois (jusqu'à 25 tracked users)" },
-      { "name": "Pro", "price": "À partir de 79 $ / mois (facturé annuellement, pour 100+ tracked users)" },
-      { "name": "Business", "price": "Tarification personnalisée (5 000+ tracked users)" }
+      {
+        "name": "Free",
+        "price": "0 $ / mois (jusqu'à 25 tracked users)"
+      },
+      {
+        "name": "Pro",
+        "price": "À partir de 79 $ / mois (facturé annuellement, pour 100+ tracked users)"
+      },
+      {
+        "name": "Business",
+        "price": "Tarification personnalisée (5 000+ tracked users)"
+      }
     ],
     "key_features": [
       "Capture automatique des retours clients via Autopilot IA",
@@ -43,14 +58,19 @@
     ],
     "cons": [
       "Tarification peut monter vite avec le nombre d'utilisateurs.",
-      "Nécessite une intégration avec ses outils actuels."
+      "Nécessite une intégration avec ses outils actuels.",
+      "Surdimensionné si vous collectez peu de retours utilisateurs."
     ],
     "use_cases": [
       "Centraliser les feedbacks clients d'équipes support et commerciales.",
       "Construire une roadmap produit basée sur la demande réelle.",
       "Fermer la boucle avec les clients sur les changements livrés."
     ],
-    "relevant_for": ["Product managers", "Responsables innovation", "Équipes produit"]
+    "relevant_for": [
+      "Product managers",
+      "Responsables innovation",
+      "Équipes produit"
+    ]
   },
   "en": {
     "verdict": {
@@ -73,7 +93,8 @@
     ],
     "cons": [
       "Cost can rise quickly with user count.",
-      "Requires integration with existing tools."
+      "Requires integration with existing tools.",
+      "Oversized if you collect little user feedback."
     ],
     "use_cases": [
       "Centralize customer feedback from support and sales teams.",
