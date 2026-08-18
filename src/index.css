@@ -17457,38 +17457,22 @@ section[id] {
 /* ─────────────────────────────────────────────────────────────────────────
    Footer — editorial dark slab (Committed color strategy)
    ─────────────────────────────────────────────────────────────────────────
-   Brief: hybrid utility + editorial closer. Dark surface breaks from the
-   page's light Restrained palette so the footer reads as a deliberate
-   "end of article" moment, not a fade-out.
-
-   Scene: freelance closing a comparison at 23h, just made a decision,
-   returns to the world. The footer says "we exist, we're serious, we're
-   back tomorrow."
-
-   References: Stripe.com (dark + giant wordmark), Linear.app (asymmetric
-   + dense), Vercel (mark architectural).
-
-   Color palette (OKLCH, tinted toward neutral with a hint of brand hue) :
-     surface  oklch(0.18 0.005 270)  ≈ #1d1d1f deep neutral
-     border   oklch(0.28 0.005 270)
-     text     oklch(0.92 0.005 270)  ≈ off-white
-     muted    oklch(0.62 0.005 270)
-
-   Structure (3 strata, unchanged from v1):
-     1. Baseline — tagline + intro
-     2. Links — 3 asymmetric columns
-     3. Signature — logo XL + monospace meta bar
+   Quiet utility footer. It continues the page instead of turning into a
+   decorative closing slab: light surface, compact type and deliberate air.
+   The hierarchy follows the restrained information density used by the
+   OpenAI reference while keeping ToolTrim's own navigation and product CTA.
    ───────────────────────────────────────────────────────────────────────── */
 .tt-footer {
-  --tt-footer-surface: oklch(0.18 0.005 270);
-  --tt-footer-border:  oklch(0.28 0.005 270);
-  --tt-footer-text:    oklch(0.92 0.005 270);
-  --tt-footer-muted:   oklch(0.62 0.005 270);
+  --tt-footer-surface: var(--color-surface);
+  --tt-footer-border: var(--color-border-soft);
+  --tt-footer-text: var(--color-text);
+  --tt-footer-muted: var(--color-muted);
 
   background: var(--tt-footer-surface);
   color: var(--tt-footer-text);
-  padding: clamp(56px, 6vw, 96px) 0 0;
-  margin-top: clamp(64px, 7vw, 120px);
+  padding: clamp(64px, 6vw, 88px) 0 0;
+  margin-top: clamp(72px, 8vw, 128px);
+  border-top: 1px solid var(--tt-footer-border);
 }
 .tt-footer-container {
   max-width: var(--layout-content, 1280px);
@@ -17498,56 +17482,122 @@ section[id] {
 
 /* ── 1. Baseline ────────────────────────────────────────── */
 .tt-footer-baseline {
-  padding-bottom: clamp(40px, 4vw, 56px);
+  padding-bottom: clamp(56px, 6vw, 88px);
+}
+.tt-footer-baseline-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--space-2xl);
+  align-items: end;
+}
+.tt-footer-baseline-copy {
+  min-width: 0;
 }
 .tt-footer-tagline {
-  margin: 0 0 16px;
+  margin: 0 0 var(--space-md);
   font-family: var(--font-brand);
-  font-size: clamp(32px, 4vw, 52px);
-  font-weight: 700;
-  letter-spacing: -0.045em;
-  line-height: 1;
+  font-size: clamp(30px, 3.2vw, 44px);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
   color: var(--tt-footer-text);
 }
 .tt-footer-intro {
   margin: 0;
   max-width: 56ch;
   font-family: var(--font-ui);
-  font-size: var(--tt-size-body-large);
-  line-height: 1.5;
+  font-size: var(--tt-size-body);
+  line-height: 1.55;
   letter-spacing: -0.015em;
   color: var(--tt-footer-muted);
+}
+.tt-footer-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+.tt-footer-action {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: 0 20px;
+  border: 1px solid var(--tt-footer-border);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-fact-compact);
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  transition: background-color 180ms cubic-bezier(0.25, 1, 0.5, 1),
+              color 180ms cubic-bezier(0.25, 1, 0.5, 1),
+              border-color 180ms cubic-bezier(0.25, 1, 0.5, 1);
+}
+.tt-footer-action svg {
+  width: 15px;
+  height: 15px;
+  flex: 0 0 auto;
+}
+.tt-footer-action--primary {
+  color: var(--color-hover-text);
+  background: var(--tt-footer-text);
+  border-color: var(--tt-footer-text);
+}
+.tt-footer-action--primary:hover {
+  background: var(--color-hover-strong);
+  border-color: var(--color-hover-strong);
+}
+.tt-footer-action--secondary {
+  color: var(--tt-footer-text);
+  background: transparent;
+}
+.tt-footer-action--secondary:hover {
+  color: var(--tt-footer-text);
+  background: var(--color-surface-soft);
+  border-color: var(--color-border);
 }
 
 /* ── 2. Link columns ────────────────────────────────────── */
 .tt-footer-links {
-  padding: clamp(40px, 4vw, 56px) 0;
-  border-top: 1px solid var(--tt-footer-border);
+  padding: 0 0 clamp(72px, 8vw, 112px);
 }
 .tt-footer-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1.5fr;
-  gap: clamp(32px, 4vw, 64px);
+  grid-template-columns: 1.25fr repeat(3, minmax(0, 1fr));
+  gap: clamp(40px, 5vw, 80px);
   align-items: start;
+}
+.tt-footer-brand {
+  min-width: 0;
+}
+.tt-footer-brand p {
+  margin: var(--space-md) 0 0;
+  max-width: 22ch;
+  color: var(--tt-footer-muted);
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-fact-compact);
+  line-height: 1.45;
 }
 .tt-footer-col {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 .tt-footer-col-label {
   font-family: var(--font-ui);
-  font-size: var(--tt-size-kicker);
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: var(--tt-size-fact-compact);
+  font-weight: 500;
+  letter-spacing: -0.01em;
   color: var(--tt-footer-muted);
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 .tt-footer-col a {
   font-family: var(--font-ui);
-  font-size: var(--tt-size-body);
-  font-weight: 500;
+  font-size: var(--tt-size-fact-compact);
+  font-weight: 450;
   letter-spacing: -0.01em;
   color: var(--tt-footer-text);
   text-decoration: underline;
@@ -17558,61 +17608,43 @@ section[id] {
               text-decoration-color 180ms cubic-bezier(0.25, 1, 0.5, 1);
 }
 .tt-footer-col a:hover {
-  color: oklch(0.99 0 0); /* pure off-white on hover */
-  text-decoration-color: oklch(0.99 0 0);
+  color: var(--color-text-strong);
+  text-decoration-color: var(--color-text-strong);
 }
 
-/* ── 3. Signature — brand logo + meta ───────────────────── */
+/* ── 3. Quiet legal rail ────────────────────────────────── */
 .tt-footer-signature {
-  padding-top: clamp(40px, 5vw, 72px);
   border-top: 1px solid var(--tt-footer-border);
 }
-/* Brand logo — architectural scale, ratio 136.26:30.07 ≈ 4.53:1.
-   The source SVG ships with fill #222 (dark). On a dark slab that would
-   be invisible, so we invert via CSS filter — the SVG file stays untouched
-   (still consumed at full color by the Navbar on the light surface). */
 .tt-footer-logo {
   display: block;
-  width: 100%;
-  max-width: 960px;
+  width: 124px;
   height: auto;
   user-select: none;
-  margin-left: -2px;
-  filter: invert(1) brightness(0.92);
+  margin-left: -1px;
 }
+.dark .tt-footer-logo { filter: invert(1) brightness(0.9); }
 .tt-footer-meta {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
-  gap: 16px;
-  padding: 28px 0 32px;
-  border-top: 1px solid var(--tt-footer-border);
-  margin-top: clamp(32px, 4vw, 48px);
-}
-.tt-footer-stamp {
-  font-family: ui-monospace, "SF Mono", "Roboto Mono", Menlo, Consolas, monospace;
-  font-size: var(--tt-size-kicker);
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  color: var(--tt-footer-muted);
+  gap: var(--space-md);
+  padding: 24px 0 28px;
 }
 .tt-footer-legal {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 12px;
-  font-family: ui-monospace, "SF Mono", "Roboto Mono", Menlo, Consolas, monospace;
-  font-size: var(--tt-size-kicker);
-  font-weight: 500;
-  letter-spacing: 0.02em;
+  gap: 20px;
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-fact-compact);
+  font-weight: 450;
+  letter-spacing: -0.01em;
   color: var(--tt-footer-muted);
 }
 .tt-footer-copyright {
   white-space: nowrap;
-}
-.tt-footer-sep {
-  color: var(--tt-footer-border);
 }
 .tt-footer-legal a {
   color: var(--tt-footer-muted);
@@ -17630,13 +17662,31 @@ section[id] {
 
 /* ── Responsive ────────────────────────────────────────── */
 @media (max-width: 900px) {
+  .tt-footer-baseline-grid {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+  .tt-footer-actions {
+    justify-content: flex-start;
+  }
   .tt-footer-grid {
     grid-template-columns: 1fr 1fr;
     gap: 32px;
   }
-  .tt-footer-col--wide { grid-column: 1 / -1; }
+  .tt-footer-brand {
+    grid-column: 1 / -1;
+    margin-bottom: var(--space-md);
+  }
+  .tt-footer-col--wide { grid-column: auto; }
 }
 @media (max-width: 560px) {
+  .tt-footer-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .tt-footer-action {
+    width: 100%;
+  }
   .tt-footer-grid {
     grid-template-columns: 1fr;
     gap: 28px;
@@ -17646,6 +17696,11 @@ section[id] {
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
+  }
+  .tt-footer-legal {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
   }
 }
 

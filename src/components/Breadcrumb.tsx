@@ -17,6 +17,11 @@ interface BreadcrumbProps {
   includeHome?: boolean;
   /** Custom label for the home item. Defaults to "ToolTrim". */
   homeLabel?: string;
+  /**
+   * Disable JSON-LD when the parent page already publishes its canonical
+   * BreadcrumbList. This prevents duplicate and potentially divergent schemas.
+   */
+  includeSchema?: boolean;
 }
 
 /**
@@ -33,7 +38,7 @@ interface BreadcrumbProps {
  *
  * Keeps Schema.org BreadcrumbList JSON-LD for SEO.
  */
-const Breadcrumb = ({ items, includeHome = true, homeLabel }: BreadcrumbProps) => {
+const Breadcrumb = ({ items, includeHome = true, homeLabel, includeSchema = true }: BreadcrumbProps) => {
   const { lang, prefix } = useLang();
 
   // Schema items: home + provided items (canonical for crawlers).
@@ -63,9 +68,11 @@ const Breadcrumb = ({ items, includeHome = true, homeLabel }: BreadcrumbProps) =
 
   return (
     <nav aria-label="Breadcrumb" className="cp-breadcrumb">
-      <Helmet>
-        <script type="application/ld+json">{JSON.stringify(schema)}</script>
-      </Helmet>
+      {includeSchema && (
+        <Helmet>
+          <script type="application/ld+json">{JSON.stringify(schema)}</script>
+        </Helmet>
+      )}
       {visibleItems.flatMap((item, i) => {
         const isLast = i === visibleItems.length - 1;
         const sep = i > 0 ? [<span key={`sep-${i}`}>/</span>] : [];

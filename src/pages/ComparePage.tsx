@@ -2215,7 +2215,7 @@ const ComparePage = () => {
             <Breadcrumb items={[
               { label: t("Comparatifs", "Comparisons"), href: `${prefix}/comparatifs` },
               { label: `${toolA.name} vs ${toolB.name}` },
-            ]} />
+            ]} includeSchema={false} />
             {content.checkedAt && (() => {
               const d = new Date(content.checkedAt);
               const monthFr = ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."];

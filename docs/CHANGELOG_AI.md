@@ -1,5 +1,23 @@
 # ToolTrim — AI Changelog
 
+## 2026-08-18 · Fil d’Ariane JSON-LD dédupliqué
+
+- Les fiches outils, comparatifs et guides ne publient plus un second `BreadcrumbList` depuis leur composant visuel.
+- Le schéma canonique généré par chaque page reste la seule source structurée.
+- Le libellé anglais de catégorie retombe désormais sur le libellé principal lorsqu’il est absent.
+- La correction vise l’erreur Google Search Console sur `itemListElement.name` observée pour Red Giant.
+
+---
+
+## 2026-08-18 — Footer recentré sur la décision
+
+- Le footer se termine désormais par deux suites logiques du parcours : composer sa sélection d’outils ou explorer le catalogue.
+- La promesse évite la contradiction entre choix et découverte, et formule directement la réduction des abonnements inutiles.
+- Les liens sont regroupés par intention — décider, explorer, comprendre ToolTrim — plutôt que par taxonomie interne.
+- Le traitement visuel abandonne le grand panneau sombre et le wordmark décoratif au profit d’une surface claire, d’une marque compacte et d’une grille de liens plus fine inspirée des proportions du footer OpenAI.
+- La date de mise à jour générée automatiquement a été retirée afin de ne pas simuler une fraîcheur éditoriale.
+- Les actions produit restent visibles sans dominer la navigation de fin de page.
+
 ---
 
 ## 2026-08-17 — Grille Explorer réalignée

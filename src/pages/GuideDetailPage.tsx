@@ -238,7 +238,7 @@ const GuideDetailPage = () => {
             <Breadcrumb items={[
               { label: t("Guides", "Guides"), href: `${prefix}/guides` },
               { label: post.title },
-            ]} />
+            ]} includeSchema={false} />
 
             <div className="ga-eyebrow-row">
               {formattedDate && (

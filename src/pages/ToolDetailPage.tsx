@@ -375,13 +375,13 @@ const ToolDetailPage = () => {
           <Breadcrumb items={[
             { label: t("Outils", "Tools"), href: `${prefix}/tools` },
             ...(category ? [{
-              label: t(catName, catNameEn),
+              label: lang === "fr" ? catName : (catNameEn || catName),
               href: `${prefix}/category/${category.slug}`,
             }] : []),
             ...(subpageBreadcrumbLabel
               ? [{ label: tool.name, href: baseToolPath }, { label: subpageBreadcrumbLabel }]
               : [{ label: tool.name }]),
-          ]} />
+          ]} includeSchema={false} />
         </div>
 
         <div className="td-body-grid td-page-grid">
