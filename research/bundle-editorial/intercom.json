@@ -71,7 +71,7 @@
         "You want a platform with SLA and HIPAA support (Expert)."
       ],
       "avoidIf": [
-        "Your budget is very tight (USD 29/seat minimum).",
+        "Your budget is very tight.",
         "You only need web live chat without omnichannel.",
         "You refuse per-seat pricing (not usage-based)."
       ],
@@ -86,8 +86,8 @@
       "Native integrations (Salesforce, HubSpot, Stripe)."
     ],
     "cons": [
-      "Per-seat pricing can be expensive (USD 29/month minimum per person).",
-      "Additional usage-based costs for Fin outcomes (USD 0.99 per resolution).",
+      "Per-seat pricing gets expensive quickly.",
+      "Additional usage-based costs for Fin agent resolutions.",
       "SMS, WhatsApp, and email campaigns billed separately.",
       "Less flexible than pay-per-use architecture."
     ],

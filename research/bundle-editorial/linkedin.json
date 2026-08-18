@@ -40,7 +40,7 @@
       ],
       "avoidIf": [
         "Vous ne travaillez qu'en B2C ou marketing consumer.",
-        "Votre budget ne justifie pas 40-160 $/mois par licence.",
+        "Votre budget ne justifie pas une licence Premium.",
         "Vous cherchez un CRM dédié plutôt qu'une plateforme sociale."
       ],
       "threshold": "LinkedIn excelle pour prospection B2B, recrutement et développement professionnel ; pour B2C ou un CRM spécialisé, d'autres solutions s'imposent."
@@ -48,13 +48,13 @@
     "pros": [
       "Plateforme gratuite avec beaucoup de valeur.",
       "Réseau professionnel le plus grand et pertinent au monde.",
-      "Plans Premium accessibles avec réduction annuelle (25-50% off).",
+      "Plans Premium plus accessibles avec l'engagement annuel.",
       "Sales Navigator pour prospection B2B sophistiquée.",
       "Learning courses intégrés (LinkedIn Learning).",
       "Publishing platform native pour pensées leader."
     ],
     "cons": [
-      "Plans Premium peuvent être chers (40-160 $/mois/license).",
+      "Les plans Premium peuvent revenir cher par licence.",
       "Algorithme d'engagement peut être imprévisible.",
       "Fonctionnalités CRM-like moins développées qu'un Salesforce.",
       "Limites de messages gratuits (InMail sur payant)."
@@ -76,7 +76,7 @@
       ],
       "avoidIf": [
         "You only work in B2C or consumer marketing.",
-        "Your budget can't justify USD 40-160/month per license.",
+        "Your budget can't justify a Premium licence.",
         "You want a dedicated CRM rather than a social platform."
       ],
       "threshold": "LinkedIn excels for B2B prospecting, recruitment, and professional development; for B2C or specialized CRM, other solutions work better."
@@ -84,13 +84,13 @@
     "pros": [
       "Free platform with significant value.",
       "Largest and most relevant professional network worldwide.",
-      "Affordable Premium plans with annual discount (25-50% off).",
+      "Premium plans are more affordable on annual billing.",
       "Sales Navigator for sophisticated B2B prospecting.",
       "Built-in Learning courses (LinkedIn Learning).",
       "Native publishing platform for thought leadership."
     ],
     "cons": [
-      "Premium plans can be pricey (USD 40-160/month/license).",
+      "Premium plans can get pricey per licence.",
       "Engagement algorithm can be unpredictable.",
       "CRM-like features less developed than Salesforce.",
       "Free messaging limits (InMail on paid)."

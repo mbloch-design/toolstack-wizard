@@ -69,7 +69,7 @@
         "You want a solution with no long-term contract."
       ],
       "avoidIf": [
-        "Your budget is very tight (minimum EUR 10/month/user).",
+        "Your budget is very tight.",
         "You only need occasional calls (not justified).",
         "You need coverage beyond France/USA/Canada."
       ],
@@ -83,7 +83,7 @@
       "No long-term contract."
     ],
     "cons": [
-      "Minimum EUR 10/month/user.",
+      "Per-user entry ticket.",
       "Global coverage limited (France/USA/Canada focus).",
       "Interface less modern than Ringover or RingCentral.",
       "Support quality can vary by user feedback."
