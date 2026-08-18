@@ -1,0 +1,90 @@
+{
+  "slug": "calendly",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Calendly — logiciel de planification (site officiel)", "url": "https://calendly.com" }
+  ],
+  "facts": {
+    "what": "Logiciel de planification de rendez-vous en ligne permettant de connecter jusqu'à six calendriers pour automatiser la planification avec disponibilité en temps réel, avec plus de 100 intégrations.",
+    "what_en": "Online appointment scheduling software allowing connection of up to six calendars for automated scheduling with real-time availability, featuring 100+ integrations.",
+    "pricing_model": "Abonnement mensuel ou annuel par siège avec quatre niveaux tarifaires.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit à vie avec fonctionnalités de base." },
+    "plans": [
+      { "name": "Gratuit", "price": "Gratuit (à vie)" },
+      { "name": "Standard", "price": "10 $/mois/siège (facturation annuelle)" },
+      { "name": "Teams", "price": "16 $/mois/siège (facturation annuelle)" },
+      { "name": "Enterprise", "price": "À partir de 15 000 $/an (tarification personnalisée)" }
+    ],
+    "key_features": [
+      "Synchronisation de multiples calendriers",
+      "Intégrations de vidéoconférence",
+      "Personnalisation des types d'événements",
+      "Plus de 100 intégrations avec outils populaires",
+      "Rappels automatiques et confirmations"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez la solution de planification la plus simple et fiable.",
+        "Vous voulez un service éprouvé avec large écosystème d'intégrations.",
+        "Vous organisez beaucoup de rendez-vous clients."
+      ],
+      "avoidIf": [
+        "Vous devez absolument rester gratuit à long terme.",
+        "Vous voulez une solution entièrement open source."
+      ],
+      "threshold": "Calendly est le standard de facto de la planification ; pour alternatives gratuites, Cal.com offre plus ; pour simplicité, Calendly gagne."
+    },
+    "pros": [
+      "La solution de planification la plus populaire et fiable.",
+      "Écosystème d'intégrations énorme (100+).",
+      "Plan gratuit complet pour tester.",
+      "Interface très intuitive.",
+      "Tarification annuelle avec réductions attrayantes."
+    ],
+    "cons": [
+      "Le plan gratuit a des limites (1 calendrier, type d'événement unique).",
+      "Standard et Teams peu différenciés.",
+      "Payant obligatoire pour fonctionnalités avancées."
+    ],
+    "use_cases": [
+      "Publier un lien de disponibilité unique pour clients/prospects.",
+      "Synchroniser calendrier personnel et professionnel.",
+      "Automatiser les rappels de rendez-vous et intégrations CRM."
+    ],
+    "relevant_for": ["Freelances", "Commerciaux", "Petites équipes", "Consultants"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want the simplest, most reliable scheduling solution.",
+        "You need a proven service with huge integration ecosystem.",
+        "You schedule many client appointments."
+      ],
+      "avoidIf": [
+        "You must stay free long-term.",
+        "You want a fully open-source solution."
+      ],
+      "threshold": "Calendly is the de facto scheduling standard; for free alternatives, Cal.com wins; for simplicity, Calendly wins."
+    },
+    "pros": [
+      "Most popular and reliable scheduling solution.",
+      "Huge integration ecosystem (100+).",
+      "Complete free plan to try.",
+      "Very intuitive interface.",
+      "Attractive annual discount pricing."
+    ],
+    "cons": [
+      "Free plan has limits (1 calendar, 1 event type).",
+      "Standard and Teams tiers are close.",
+      "Paid required for advanced features."
+    ],
+    "use_cases": [
+      "Share a single availability link with clients/prospects.",
+      "Sync personal and work calendars.",
+      "Automate appointment reminders and CRM integrations."
+    ]
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "slug": "pipelinepro",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-08-17",
+  "sources": [
+    { "label": "PipelinePRO — site officiel", "url": "https://pipelinepro.io" }
+  ],
+  "facts": {
+    "what": "Plateforme de gestion de production pour les studios d'animation et VFX, permettant d'automatiser les flux de travail, d'intégrer les outils créatifs, et de gérer les actifs et les tâches de manière centralisée.",
+    "what_en": "Production management platform for animation and VFX studios, enabling workflow automation, creative tool integration, and centralized asset and task management.",
+    "pricing_model": "Montants sur la page officielle ; tarification par niveau d'utilisation ou d'équipe.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite ; contacter le vendeur pour tarification." },
+    "plans": [],
+    "key_features": [
+      "Gestion des actifs et des shots avec interface centralisée",
+      "Intégrations API et GraphQL pour les outils créatifs",
+      "Moteur de logique pour automatiser les workflows sans code",
+      "Gestion des versions et historique des modifications",
+      "Tableau de bord de suivi des tâches et des performances"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous dirigez un studio d'animation ou VFX avec équipe distribuée.",
+        "Vous avez besoin d'automatiser des étapes répétitives de production.",
+        "Vous utilisez plusieurs outils créatifs (Maya, Nuke, etc.) que vous voulez synchroniser."
+      ],
+      "avoidIf": [
+        "Vous êtes freelancer solo.",
+        "Vous cherchez une solution très bon marché.",
+        "Vous ne produisez qu'occasionnellement du contenu créatif."
+      ],
+      "threshold": "PipelinePRO convient aux studios établis cherchant à optimiser leur pipeline de production ; pour un freelancer ou petit projet, c'est surdimensionné."
+    },
+    "pros": [
+      "Automatisation native des workflows de production créatif.",
+      "Intégrations API complètes pour une extensibilité maximale.",
+      "Gestion centralisée des actifs et des versions.",
+      "Moteur de logique pour les non-programmeurs."
+    ],
+    "cons": [
+      "Tarification opaque (sur demande).",
+      "Complexité initiale pour la mise en place.",
+      "Nécessite une équipe pour maximiser le ROI."
+    ],
+    "use_cases": [
+      "Automatiser le rendu et la publication dans Blender/Maya.",
+      "Centraliser la gestion des actifs pour un studio multi-équipes.",
+      "Créer des workflows personnalisés sans code."
+    ],
+    "relevant_for": ["Studios d'animation", "Studios VFX", "Producteurs créatifs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You run an animation or VFX studio with a distributed team.",
+        "You need to automate repetitive production steps.",
+        "You use multiple creative tools (Maya, Nuke, etc.) you want to sync."
+      ],
+      "avoidIf": [
+        "You're a solo freelancer.",
+        "You're looking for a very budget solution.",
+        "You only occasionally produce creative content."
+      ],
+      "threshold": "PipelinePRO suits established studios seeking to optimize their production pipeline; for solo freelancers or small projects, it's oversized."
+    },
+    "pros": [
+      "Native automation of creative production workflows.",
+      "Complete API integrations for maximum extensibility.",
+      "Centralized asset and version management.",
+      "Logic engine for non-programmers."
+    ],
+    "cons": [
+      "Opaque pricing (quote-based).",
+      "Initial setup complexity.",
+      "Requires a team to maximize ROI."
+    ],
+    "use_cases": [
+      "Automate rendering and publishing in Blender/Maya.",
+      "Centralize asset management for a multi-team studio.",
+      "Build custom workflows without code."
+    ]
+  }
+}

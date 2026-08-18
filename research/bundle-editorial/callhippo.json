@@ -1,0 +1,90 @@
+{
+  "slug": "callhippo",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "CallHippo — plateforme de communication IA (site officiel)", "url": "https://callhippo.com" },
+    { "label": "CallHippo — tarification (site officiel)", "url": "https://callhippo.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Plateforme de communication commerciale alimentée par l'IA unifiant appels, messagerie et automatisation avec agents vocaux autonomes, boîte de réception omnicanal et numéros virtuels mondiaux.",
+    "what_en": "AI-powered business communications platform unifying calls, messaging, and automation with autonomous voice agents, omnichannel inbox, and global virtual numbers.",
+    "pricing_model": "Abonnement par utilisateur avec plans adapté aux tailles d'entreprise. Essai gratuit de 10 jours.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit de 10 jours sans carte de crédit requise." },
+    "plans": [
+      { "name": "Petites entreprises (1-50 employés)", "price": "Montants sur la page officielle" },
+      { "name": "Moyennes entreprises (50-500 employés)", "price": "Montants sur la page officielle" },
+      { "name": "Grandes entreprises (500+ employés)", "price": "Montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Agents vocaux IA autonomes (24/7 en 35+ langues)",
+      "Boîte de réception omnicanal unifiée (voix, SMS, WhatsApp, email)",
+      "Numéros virtuels dans 150+ pays",
+      "Synchronisation CRM post-appel automatisée",
+      "Transcription et analyse conversationnelle IA"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez des appels clients en volume.",
+        "Vous voulez des agents vocaux IA 24/7.",
+        "Vous avez besoin de numéros virtuels mondiaux."
+      ],
+      "avoidIf": [
+        "Vous avez un budget très restreint.",
+        "Vous ne gérez que quelques appels par jour."
+      ],
+      "threshold": "CallHippo convient aux centres de contact modernes avec exigences IA ; pour appels simples ponctuels, solutions légères suffisent."
+    },
+    "pros": [
+      "Agents vocaux IA multilingues performants.",
+      "Boîte de réception omnicanal vraiment unifiée.",
+      "Numéros virtuels dans 150+ pays.",
+      "Essai gratuit sans carte de crédit.",
+      "Automatisation CRM directe post-appel."
+    ],
+    "cons": [
+      "Pricing détaillé consultable seulement sur le site.",
+      "Mieux pour équipes établies que startups.",
+      "Interface nécessite apprentissage."
+    ],
+    "use_cases": [
+      "Lancer un centre de contact AI pour support 24/7.",
+      "Gérer les appels de multiple pays avec numéros locaux.",
+      "Automatiser la récupération et qualification des appels."
+    ],
+    "relevant_for": ["Centres de contact", "Équipes support", "Entreprises internationales"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You handle customer calls at volume.",
+        "You want 24/7 AI voice agents.",
+        "You need global virtual numbers."
+      ],
+      "avoidIf": [
+        "You have a tight budget.",
+        "You handle only a few calls per day."
+      ],
+      "threshold": "CallHippo suits modern contact centers with AI requirements; for simple occasional calls, lighter solutions work."
+    },
+    "pros": [
+      "Strong multilingual AI voice agents.",
+      "Truly unified omnichannel inbox.",
+      "Virtual numbers in 150+ countries.",
+      "Free trial without credit card.",
+      "Direct post-call CRM automation."
+    ],
+    "cons": [
+      "Detailed pricing requires site consultation.",
+      "Better for established teams than startups.",
+      "Interface requires learning."
+    ],
+    "use_cases": [
+      "Launch an AI contact center for 24/7 support.",
+      "Manage calls from multiple countries with local numbers.",
+      "Automate call capture and qualification."
+    ]
+  }
+}

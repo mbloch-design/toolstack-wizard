@@ -1,0 +1,87 @@
+{
+  "slug": "responsetap",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-08-17",
+  "sources": [
+    { "label": "ResponseTap — site officiel", "url": "https://responsetap.com" }
+  ],
+  "facts": {
+    "what": "Logiciel de suivi des appels et analytics qui relie les interactions numériques (publicités, pages d'accueil, clics) aux conversions hors ligne (appels téléphoniques), permettant de mesurer le ROI des campagnes marketing.",
+    "what_en": "Call tracking and analytics software that links digital interactions (ads, landing pages, clicks) to offline conversions (phone calls), enabling ROI measurement of marketing campaigns.",
+    "pricing_model": "Abonnement mensuel pour petites entreprises ou plans personnalisés pour grandes entreprises.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Essai ou démo disponible sur demande." },
+    "plans": [
+      { "name": "Small Business", "price": "199 £/mois ou montants personnalisés" }
+    ],
+    "key_features": [
+      "Numéro de téléphone unique par session visiteur pour traçabilité précise",
+      "Technologie Smart Match pour l'upload de données de vente",
+      "Enregistrement et analyse des appels",
+      "Intégrations CRM et outils marketing",
+      "Rapports de ROI et performance par source marketing"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez des campagnes marketing numériques générant des appels entrants.",
+        "Vous voulez mesurer précisément quel canal/mot-clé génère des ventes par téléphone.",
+        "Vous gérez un budget marketing important et cherchez à optimiser le ROI."
+      ],
+      "avoidIf": [
+        "Vous avez peu d'appels entrants.",
+        "Votre activité est purement en ligne (pas de composante téléphonique)."
+      ],
+      "threshold": "ResponseTap convient aux entreprises B2B/B2C avec appels entrants forts ; pour les activités purement numériques, il n'apporte pas de valeur."
+    },
+    "pros": [
+      "Traçabilité précise des appels vers les sources marketing.",
+      "Smart Match pour faciliter l'upload des données de vente.",
+      "Enregistrement des appels pour la formation et la conformité.",
+      "Intégrations CRM directes pour un flux de données unifié."
+    ],
+    "cons": [
+      "Tarification opaque ; devis requis pour la plupart des cas.",
+      "Frais de mise en œuvre facturés en supplément, variables selon le périmètre.",
+      "Pas d'essai gratuit (démo sur demande).",
+      "Courbe d'apprentissage pour exploiter toute la plateforme."
+    ],
+    "use_cases": [
+      "Mesurer le ROI des campagnes PPC générant des appels.",
+      "Optimiser les mots-clés et pages selon les appels réels convertis.",
+      "Former les équipes d'appels avec des enregistrements."
+    ],
+    "relevant_for": ["Agences marketing", "B2B SaaS avec ventes téléphoniques", "E-commerce avec support appels"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You have digital marketing campaigns generating inbound calls.",
+        "You want to measure precisely which channel/keyword drives phone sales.",
+        "You manage a large marketing budget and seek to optimize ROI."
+      ],
+      "avoidIf": [
+        "You have few inbound calls.",
+        "Your business is purely online (no phone component)."
+      ],
+      "threshold": "ResponseTap suits B2B/B2C companies with strong inbound call volume; for purely digital businesses, it adds no value."
+    },
+    "pros": [
+      "Precise call-to-marketing-source attribution.",
+      "Smart Match simplifies sales data uploads.",
+      "Call recording for training and compliance.",
+      "Direct CRM integrations for unified data flow."
+    ],
+    "cons": [
+      "Opaque pricing; quote required for most cases.",
+      "Implementation fees between 500 USD and 5,000 USD.",
+      "No free trial (demo on request).",
+      "Learning curve to leverage the full platform."
+    ],
+    "use_cases": [
+      "Measure ROI of PPC campaigns generating calls.",
+      "Optimize keywords and pages based on actual converted calls.",
+      "Train call teams with recordings."
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "slug": "aircall",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Aircall — plateforme de communication (site officiel)", "url": "https://aircall.io" },
+    { "label": "Aircall — tarification (site officiel)", "url": "https://aircall.io/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme de communication alimentée par l'IA pour les équipes de vente et support, combinant systèmes téléphoniques modernes, agents vocaux IA et workflows automatisés.",
+    "what_en": "AI-powered communications platform for sales and support teams, combining modern phone systems, AI voice agents, and automated workflows.",
+    "pricing_model": "Abonnement par utilisateur et par licence, avec modules IA supplémentaires à l'usage.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit disponible sans carte de crédit." },
+    "plans": [
+      { "name": "Essentials", "price": "À partir de 3 licences minimum (tarification annuelle)" },
+      { "name": "Professional", "price": "À partir de 3 licences minimum (tarification annuelle)" },
+      { "name": "Custom", "price": "À partir de 25 licences minimum (tarification personnalisée)" },
+      { "name": "AI Voice Agents", "price": "À partir de quelques centimes par minute" }
+    ],
+    "key_features": [
+      "Systèmes téléphoniques modernes intégrés",
+      "Agents vocaux IA répondant 24/7 en 35+ langues",
+      "Intégrations CRM (Salesforce, HubSpot)",
+      "Analyse conversationnelle et coaching en direct"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez une équipe de vente ou support avec besoins téléphoniques complexes.",
+        "Vous recherchez des agents IA pour automatiser les appels.",
+        "Vous voulez des intégrations CRM natives."
+      ],
+      "avoidIf": [
+        "Vous avez un budget très limité.",
+        "Vous n'avez besoin que de communication basique sans IA."
+      ],
+      "threshold": "Aircall convient aux équipes modernes cherchant une solution téléphonique avec IA ; pour des besoins simples, des alternatives plus légères suffisent."
+    },
+    "pros": [
+      "Agents vocaux IA performants en multilingue.",
+      "Intégration profonde aux CRM principaux.",
+      "Interface intuitive et setup rapide.",
+      "Support de la conformité entreprise."
+    ],
+    "cons": [
+      "Tarification élevée pour les petites équipes.",
+      "Minimum de 3 licences requis sur certains plans.",
+      "Modules IA supplémentaires à coûts additionnels."
+    ],
+    "use_cases": [
+      "Automatiser le répondeur téléphonique avec IA.",
+      "Suivre les appels commerciaux et analyser les conversations.",
+      "Centraliser l'accueil omnicanal (voix, SMS, email)."
+    ],
+    "relevant_for": ["Équipes commerciales", "Centres de support client", "Entreprises moyenne/grande"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage sales or support teams with complex phone needs.",
+        "You want AI voice agents for outbound or inbound calls.",
+        "You need deep CRM integrations."
+      ],
+      "avoidIf": [
+        "You have a tight budget.",
+        "You only need basic phone features without AI."
+      ],
+      "threshold": "Aircall suits modern teams seeking smart telephony with AI; for simple needs, lighter tools work."
+    },
+    "pros": [
+      "Powerful multilingual AI voice agents.",
+      "Deep integrations with major CRMs.",
+      "Intuitive interface and fast setup.",
+      "Enterprise compliance support."
+    ],
+    "cons": [
+      "Expensive for small teams.",
+      "Minimum 3 licenses required on some plans.",
+      "AI modules come with extra costs."
+    ],
+    "use_cases": [
+      "Automate phone reception with AI.",
+      "Track and analyze sales calls in detail.",
+      "Centralize omnichannel reception (voice, SMS, email)."
+    ]
+  }
+}

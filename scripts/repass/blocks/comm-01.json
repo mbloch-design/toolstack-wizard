@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "aircall",
+    "name": "Aircall",
+    "url": "https://aircall.io"
+  },
+  {
+    "slug": "aloware",
+    "name": "Aloware",
+    "url": "https://aloware.com"
+  },
+  {
+    "slug": "apollo-io",
+    "name": "Apollo.io",
+    "url": "https://www.apollo.io"
+  },
+  {
+    "slug": "around",
+    "name": "Around",
+    "url": "https://around.co"
+  },
+  {
+    "slug": "boompop",
+    "name": "BoomPop",
+    "url": "https://boompop.com"
+  },
+  {
+    "slug": "cal-com",
+    "name": "Cal.com",
+    "url": "https://cal.com"
+  },
+  {
+    "slug": "calendly",
+    "name": "Calendly",
+    "url": "https://calendly.com"
+  },
+  {
+    "slug": "callhippo",
+    "name": "CallHippo",
+    "url": "https://callhippo.com"
+  },
+  {
+    "slug": "calltrackingmetrics",
+    "name": "CallTrackingMetrics",
+    "url": "https://calltrackingmetrics.com"
+  },
+  {
+    "slug": "capsule",
+    "name": "Capsule",
+    "url": "https://capsulecrm.com"
+  }
+]

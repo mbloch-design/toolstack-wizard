@@ -1,0 +1,87 @@
+{
+  "slug": "openphone",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-08-17",
+  "sources": [
+    { "label": "Quo (formerly OpenPhone) — site officiel", "url": "https://quo.com" }
+  ],
+  "facts": {
+    "what": "Système téléphonique d'entreprise alimenté par l'IA, qui consolide appels, SMS, messages vocaux et contacts dans un espace de travail partagé. Les équipes collaborent sur les communications client et peuvent déléguer les appels à des agents IA.",
+    "what_en": "AI-powered business phone system that consolidates calls, texts, voicemails, and contacts into a single shared workspace. Teams collaborate on customer communications and can delegate calls to AI agents.",
+    "pricing_model": "Abonnement par utilisateur, avec essai gratuit.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit disponible (durée à vérifier sur la page officielle)." },
+    "plans": [
+      { "name": "Starter", "price": "15 $/mois par utilisateur (facturation annuelle)" },
+      { "name": "Business", "price": "23 $/mois par utilisateur (facturation annuelle)" },
+      { "name": "Scale", "price": "35 $/mois par utilisateur (facturation annuelle)" }
+    ],
+    "key_features": [
+      "Numéro de téléphone partagé par équipe avec appels et SMS illimités",
+      "Agent IA Sona pour répondre automatiquement aux appels",
+      "Transcription et résumé des appels (plans Business et supérieurs)",
+      "Intégration HubSpot et Salesforce",
+      "Menu téléphonique (IVR) personnalisé"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous travaillez en équipe et gérez de nombreux appels clients.",
+        "Vous voulez automatiser les réponses aux appels avec l'IA.",
+        "Vous avez besoin d'une solution téléphonique unifiée avec SMS."
+      ],
+      "avoidIf": [
+        "Vous n'avez pas besoin de collaboration d'équipe sur les appels.",
+        "Vous préférez une solution tout gratuit."
+      ],
+      "threshold": "Quo convient aux petites équipes de vente et de support qui veulent une solution téléphonique centralisée et collaborative ; pour les solopreneurs avec peu d'appels, elle peut être surdimensionnée."
+    },
+    "pros": [
+      "Interface centralisée pour appels, SMS et voicemails.",
+      "Agent IA inclus pour répondre automatiquement aux appels.",
+      "Intégrations CRM directes (Salesforce, HubSpot).",
+      "Tarifs transparents sans frais cachés importants."
+    ],
+    "cons": [
+      "Frais de taxe et de conformité en plus du tarif affiché.",
+      "Frais de configuration et d'enregistrement (TCR).",
+      "Plans avec peu de différenciation (surtout entre Business et Scale)."
+    ],
+    "use_cases": [
+      "Centraliser la communication téléphonique d'une petite équipe.",
+      "Automatiser les réponses aux appels fréquentes avec Sona AI.",
+      "Harmoniser CRM et communications téléphoniques."
+    ],
+    "relevant_for": ["Petites équipes commerciales", "Support client", "Agences"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You work in a team and manage many customer calls.",
+        "You want to automate call answering with AI.",
+        "You need a unified phone solution with SMS and shared access."
+      ],
+      "avoidIf": [
+        "You don't need team collaboration on calls.",
+        "You prefer a fully free solution."
+      ],
+      "threshold": "Quo is for small sales and support teams wanting a centralized, collaborative phone solution; for solo users with few calls, it may be oversized."
+    },
+    "pros": [
+      "Unified interface for calls, texts, and voicemails.",
+      "Built-in AI agent (Sona) for automatic call answering.",
+      "Direct CRM integrations (Salesforce, HubSpot).",
+      "Transparent pricing without major hidden fees."
+    ],
+    "cons": [
+      "Telecom taxes and compliance fees on top of base price.",
+      "Setup and carrier registration (TCR) fees.",
+      "Limited differentiation between Business and Scale plans."
+    ],
+    "use_cases": [
+      "Centralize phone communication for a small team.",
+      "Automate frequent call responses with Sona AI.",
+      "Unify CRM and phone communications."
+    ]
+  }
+}

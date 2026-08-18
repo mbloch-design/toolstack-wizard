@@ -1,0 +1,83 @@
+{
+  "slug": "product-hunt",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-08-17",
+  "sources": [
+    { "label": "Product Hunt — site officiel", "url": "https://producthunt.com" }
+  ],
+  "facts": {
+    "what": "Plateforme communautaire de découverte et de lancement de produits tech, permettant aux entrepreneurs de présenter leurs innovations et aux utilisateurs de voter pour leurs préférées et partager des avis.",
+    "what_en": "Community platform for discovering and launching tech products, enabling entrepreneurs to showcase innovations and users to upvote favorites and share feedback.",
+    "pricing_model": "Gratuit (plateforme d'accès public).",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit ; aucune limite d'accès à la plateforme de base." },
+    "plans": [],
+    "key_features": [
+      "Système de vote et classement des produits par popularité",
+      "Profils de produit avec description, images et vidéos",
+      "Commentaires et discussions communautaires",
+      "Événement annuel des Golden Kitty Awards pour les meilleurs produits",
+      "Accès aux statistiques de lancement et retours utilisateurs"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous lancez un nouveau produit et cherchez une audience tech réceptive.",
+        "Vous voulez obtenir des retours précieux d'utilisateurs tôt.",
+        "Vous avez besoin de visibilité auprès d'une communauté d'early adopters."
+      ],
+      "avoidIf": [
+        "Votre produit n'a rien de nouveau ou d'innovant.",
+        "Vous cherchez une plateforme de distribution classique."
+      ],
+      "threshold": "Product Hunt est essentiel pour les startups tech lançant un nouveau produit ; pour une entreprise établie ou un produit non-tech, les bénéfices sont limités."
+    },
+    "pros": [
+      "Accès à une communauté tech passionnée et réceptive.",
+      "Feedback qualitatif et quantitatif immédiat.",
+      "Opportunité de PR et d'amplification média.",
+      "Entièrement gratuit."
+    ],
+    "cons": [
+      "Très compétitif ; beaucoup de produits lancés chaque jour.",
+      "Le succès dépend beaucoup de la présentation et du timing.",
+      "Pas de garantie de traction commerciale."
+    ],
+    "use_cases": [
+      "Annoncer le lancement d'un nouveau produit tech.",
+      "Collecter des avis et du feedback utilisateur.",
+      "Générer du buzz et de la crédibilité auprès d'investisseurs."
+    ],
+    "relevant_for": ["Startups tech", "Entrepreneurs", "Créateurs de produits"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're launching a new product and want a receptive tech audience.",
+        "You want valuable user feedback early on.",
+        "You need visibility with an early adopter community."
+      ],
+      "avoidIf": [
+        "Your product isn't novel or innovative.",
+        "You're looking for a traditional distribution platform."
+      ],
+      "threshold": "Product Hunt is essential for tech startups launching a new product; for an established company or non-tech product, benefits are limited."
+    },
+    "pros": [
+      "Access to an engaged and receptive tech community.",
+      "Immediate qualitative and quantitative feedback.",
+      "Opportunity for PR and media amplification.",
+      "Entirely free."
+    ],
+    "cons": [
+      "Highly competitive; many products launch daily.",
+      "Success depends heavily on presentation and timing.",
+      "No guarantee of commercial traction."
+    ],
+    "use_cases": [
+      "Announce the launch of a new tech product.",
+      "Collect user feedback and opinions.",
+      "Generate buzz and credibility with investors."
+    ]
+  }
+}

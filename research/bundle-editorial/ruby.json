@@ -1,0 +1,84 @@
+{
+  "slug": "ruby",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-08-17",
+  "sources": [
+    { "label": "Ruby — site officiel", "url": "https://ruby.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de réceptionniste virtuelle 24/7 offrant prise d'appels en direct, prise de rendez-vous, et chat en ligne. Automatise les interactions client entrantes et livre les informations à votre CRM.",
+    "what_en": "24/7 virtual receptionist platform offering live call answering, appointment scheduling, and live website chat. Automates inbound customer interactions and delivers information to your CRM.",
+    "pricing_model": "Abonnement mensuel avec variation selon le nombre de minutes de réceptionniste allouées.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Garantie de remboursement 21 jours." },
+    "plans": [],
+    "key_features": [
+      "Réceptionnistes virtuelles avec prise d'appels en direct",
+      "Chat en direct sur le site web",
+      "Prise de rendez-vous et gestion d'agenda automatisée",
+      "Intégrations CRM (Clio, Zapier, Grasshopper, etc.)",
+      "Routage d'appels personnalisé selon les critères définis",
+      "Gestion des chatbots personnalisés"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous recevez beaucoup d'appels entrants que vous ne pouvez pas tous répondre.",
+        "Vous voulez professionnaliser la première impression client.",
+        "Vous avez besoin de prendre rendez-vous et gérer un agenda."
+      ],
+      "avoidIf": [
+        "Vous avez très peu d'appels entrants.",
+        "Vous préférez un chatbot bot purement automatisé."
+      ],
+      "threshold": "Ruby convient aux petites entreprises de services (avocat, cabinet médical, consulting) avec beaucoup d'appels ; pour un solopreneur léger, elle peut être disproportionnée."
+    },
+    "pros": [
+      "Réceptionnistes réels (humains), pas juste bots.",
+      "Prise de rendez-vous intégrée et professionnelle.",
+      "Intégrations CRM directes pour un flux de données unifié.",
+      "Tarification claire par minutes de service."
+    ],
+    "cons": [
+      "Pas de version gratuite.",
+      "Coût peut être élevé pour beaucoup d'appels.",
+      "Dépendance à la disponibilité des réceptionnistes."
+    ],
+    "use_cases": [
+      "Gérer les appels entrants pour un cabinet professionnel (avocat, médecin).",
+      "Accueillir les clients après les heures de bureau.",
+      "Centraliser prises de rendez-vous et communications client."
+    ],
+    "relevant_for": ["Cabinets professionnels", "Petites entreprises de services", "Agences"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You receive many inbound calls you can't answer yourself.",
+        "You want to professionalize the first customer impression.",
+        "You need appointment scheduling and calendar management."
+      ],
+      "avoidIf": [
+        "You have very few inbound calls.",
+        "You prefer a purely automated chatbot."
+      ],
+      "threshold": "Ruby suits small service businesses (law, medical, consulting) with high call volume; for a lean solo user, it may be disproportionate."
+    },
+    "pros": [
+      "Real receptionists (humans), not just bots.",
+      "Integrated appointment scheduling and professional.",
+      "Direct CRM integrations for unified data flow.",
+      "Clear pricing by service minutes."
+    ],
+    "cons": [
+      "No free version.",
+      "Cost can be high for many calls.",
+      "Dependency on receptionist availability."
+    ],
+    "use_cases": [
+      "Manage inbound calls for a professional practice (law, medical).",
+      "Welcome clients after business hours.",
+      "Centralize appointment booking and customer communications."
+    ]
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "slug": "cal-com",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Cal.com — logiciel de planification (site officiel)", "url": "https://cal.com" }
+  ],
+  "facts": {
+    "what": "Logiciel de planification de rendez-vous entièrement personnalisable et open-source pour individus, entreprises et développeurs, avec synchronisation calendaire, détection de fuseau horaire et appels vidéo intégrés.",
+    "what_en": "Fully customizable, open-source appointment scheduling software for individuals, businesses, and developers, featuring calendar sync, timezone detection, and integrated video calls.",
+    "pricing_model": "Plan gratuit illimité, puis abonnements mensuels pour équipes et entreprises.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit complet avec types d'événements illimités, synchronisation, automatisation et intégrations Stripe et Cal Video." },
+    "plans": [
+      { "name": "Gratuit", "price": "Gratuit (complet)" },
+      { "name": "Teams", "price": "16 $/utilisateur/mois" },
+      { "name": "Organizations", "price": "37 $/utilisateur/mois" },
+      { "name": "Enterprise", "price": "Tarification personnalisée" }
+    ],
+    "key_features": [
+      "Open-source et hébergeable",
+      "Synchronisation calendaires multiples",
+      "Détection automatique des fuseaux horaires",
+      "Appels vidéo natifs (Cal Video)",
+      "Automatisation des flux de travail et paiements Stripe"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez un outil de planification gratuit complet.",
+        "Vous avez besoin de personnalisation avancée.",
+        "Vous préférez une solution open-source auto-hébergeable."
+      ],
+      "avoidIf": [
+        "Vous voulez absolument l'interface la plus polish.",
+        "Vous privilégiez le support réactif premium."
+      ],
+      "threshold": "Cal.com rivalise avec Calendly sur fonctionnalités à coût inférieur ; pour des besoins complexes d'équipe, les plans payants restent compétitifs."
+    },
+    "pros": [
+      "Plan gratuit complet et généreux.",
+      "Open-source avec possibilité d'auto-hébergement.",
+      "Personnalisation très avancée.",
+      "Vidéo intégrée (Cal Video) sur tous les plans.",
+      "Tarification équitable pour les équipes."
+    ],
+    "cons": [
+      "Support communautaire plutôt que premium sur gratuit.",
+      "Interface légèrement moins polish que Calendly.",
+      "Écosystème tiers plus petit."
+    ],
+    "use_cases": [
+      "Remplacer Calendly avec un outil open-source.",
+      "Planifier des rendez-vous clients avec vidéo intégrée.",
+      "Orchestrer des calendriers d'équipe complexes et flux automatisés."
+    ],
+    "relevant_for": ["Freelances", "Petites équipes", "Développeurs/startups"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want a fully-featured free scheduling tool.",
+        "You need advanced customization.",
+        "You prefer open-source self-hostable solutions."
+      ],
+      "avoidIf": [
+        "You want the most polished UI.",
+        "You prioritize premium reactive support."
+      ],
+      "threshold": "Cal.com matches Calendly in features at lower cost; for complex team needs, paid tiers remain competitive."
+    },
+    "pros": [
+      "Generous free plan with full features.",
+      "Open-source and self-hostable.",
+      "Extensive customization.",
+      "Native video (Cal Video) on all tiers.",
+      "Fair pricing for teams."
+    ],
+    "cons": [
+      "Community support on free tier instead of premium.",
+      "UI slightly less polished than Calendly.",
+      "Smaller third-party ecosystem."
+    ],
+    "use_cases": [
+      "Replace Calendly with an open-source tool.",
+      "Schedule client meetings with integrated video.",
+      "Orchestrate complex team calendars and automated workflows."
+    ]
+  }
+}

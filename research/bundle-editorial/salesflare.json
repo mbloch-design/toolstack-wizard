@@ -1,0 +1,87 @@
+{
+  "slug": "salesflare",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-08-17",
+  "sources": [
+    { "label": "Salesflare — site officiel", "url": "https://salesflare.com" }
+  ],
+  "facts": {
+    "what": "CRM automatisé et intuitif conçu pour les équipes de vente, qui récupère automatiquement les données client depuis email, calendrier, téléphone et réseaux sociaux pour construire des historiques complets sans saisie manuelle.",
+    "what_en": "Automated and intuitive CRM designed for sales teams, automatically gathering customer data from email, calendar, phone, and social media to build complete histories without manual entry.",
+    "pricing_model": "Abonnement par utilisateur (trois niveaux), avec essai gratuit de 30 jours.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite permanente, mais essai gratuit de 30 jours inclus." },
+    "plans": [
+      { "name": "Growth", "price": "29 $/mois par utilisateur (facturation annuelle)" },
+      { "name": "Pro", "price": "49 $/mois par utilisateur (facturation annuelle)" },
+      { "name": "Enterprise", "price": "99 $/mois par utilisateur (facturation annuelle, minimum 5 utilisateurs)" }
+    ],
+    "key_features": [
+      "Intégration automatique avec email, calendrier, réseaux sociaux et sources publiques",
+      "Sidebar Google Workspace et Microsoft Office 365",
+      "Suivi des ouvertures, clics et visites de site web",
+      "Enrichissement de contacts automatisé avec données publiques",
+      "Séquences d'emails automatisés pour l'outreach personnalisé"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Votre équipe passe trop de temps à saisir manuellement des données CRM.",
+        "Vous voulez une vue 360 de chaque client avec tout l'historique.",
+        "Vous utilisez Google Workspace ou Microsoft Office 365."
+      ],
+      "avoidIf": [
+        "Vous cherchez un CRM très bon marché ou gratuit.",
+        "Vous gérez des données très complexes nécessitant beaucoup de customisation."
+      ],
+      "threshold": "Salesflare convient aux équipes de vente cherchant automation et réduction de saisie manuelle ; pour un solopreneur ou processus très custom, un CRM plus configurable sera mieux."
+    },
+    "pros": [
+      "Automatisation aggressive de la collecte de données client.",
+      "Intégration directe dans le sidebar Google Workspace/Office 365.",
+      "Sidebar intégré pour un workflow naturel.",
+      "Essai gratuit de 30 jours inclus."
+    ],
+    "cons": [
+      "Pas de version gratuite permanente.",
+      "Prix plus élevé que certains concurrents.",
+      "Moins flexible pour les workflows très personnalisés."
+    ],
+    "use_cases": [
+      "Réduire la saisie manuelle de données dans une équipe de vente.",
+      "Créer des timelines client automatiques avec tout l'historique.",
+      "Automatiser les séquences d'emails de suivi personnalisées."
+    ],
+    "relevant_for": ["Équipes de vente", "Agences", "Services professionnels"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "Your team spends too much time manually entering CRM data.",
+        "You want a 360-degree view of each customer with full history.",
+        "You use Google Workspace or Microsoft Office 365."
+      ],
+      "avoidIf": [
+        "You're looking for a very budget or free CRM.",
+        "You manage very complex data requiring extensive customization."
+      ],
+      "threshold": "Salesflare suits sales teams seeking automation and manual data entry reduction; for solo users or highly custom workflows, a more configurable CRM is better."
+    },
+    "pros": [
+      "Aggressive automation of customer data collection.",
+      "Direct integration into Google Workspace/Office 365 sidebar.",
+      "Integrated sidebar for natural workflow.",
+      "30-day free trial included."
+    ],
+    "cons": [
+      "No permanent free version.",
+      "Higher price than some competitors.",
+      "Less flexible for highly customized workflows."
+    ],
+    "use_cases": [
+      "Reduce manual data entry in a sales team.",
+      "Build automatic customer timelines with complete history.",
+      "Automate personalized follow-up email sequences."
+    ]
+  }
+}

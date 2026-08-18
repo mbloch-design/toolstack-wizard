@@ -1,0 +1,89 @@
+{
+  "slug": "aloware",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Aloware — plateforme de contact center IA (site officiel)", "url": "https://aloware.com" },
+    { "label": "Aloware — tarification (site officiel)", "url": "https://aloware.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme de centre de contact conforme alimentée par l'IA pour les équipes de vente et support, offrant agents vocaux, numéroteur amélioré, SMS professionnel et intégration CRM.",
+    "what_en": "Compliant AI-powered contact center platform for sales and support teams, featuring AI voice agents, power dialer, business SMS, and CRM integration.",
+    "pricing_model": "Abonnement mensuel par utilisateur ou forfaits startup à volume fixe.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit de 7 jours sans carte de crédit." },
+    "plans": [
+      { "name": "iPro + AI (10 min users)", "price": "À partir de 30 $/utilisateur/mois" },
+      { "name": "uPro + AI (5 min users)", "price": "60 $/utilisateur/mois" },
+      { "name": "xPro + AI (5 min users)", "price": "85 $/utilisateur/mois" },
+      { "name": "Startup 3 users", "price": "199 $/mois" },
+      { "name": "Startup 5 users", "price": "399 $/mois" }
+    ],
+    "key_features": [
+      "Agents vocaux IA en 35+ langues",
+      "Power dialer pour prospection automatisée",
+      "SMS et messagerie WhatsApp intégrés",
+      "Routage intelligent et automatisation des flux"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous prospectez activement par téléphone ou SMS.",
+        "Vous avez besoin d'agents vocaux IA conformes.",
+        "Vous voulez un package complet (appels + SMS + CRM)."
+      ],
+      "avoidIf": [
+        "Vous cherchez un outil de support réactif léger.",
+        "Vous n'avez pas besoin de prospection multicanal."
+      ],
+      "threshold": "Aloware excelle en prospection de vitesse multicanal ; pour du support réactif simple, d'autres outils conviennent."
+    },
+    "pros": [
+      "Package complet : appels + SMS + WhatsApp.",
+      "Agents vocaux IA et power dialer performants.",
+      "Essai gratuit sans engagement.",
+      "Plans startup abordables pour petites équipes."
+    ],
+    "cons": [
+      "Modèles tarifaires complexes avec plusieurs minimums.",
+      "Intégrations CRM natives limitées.",
+      "Volume minimum requis sur les plans élevés."
+    ],
+    "use_cases": [
+      "Lancer des campagnes de prospection multicanale.",
+      "Automatiser les appels de suivi avec agents IA.",
+      "Gérer la communication SMS et WhatsApp d'équipe."
+    ],
+    "relevant_for": ["Équipes de vente B2B", "Centres de prospection", "Startups en croissance"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You actively prospect by phone and SMS.",
+        "You need compliant AI voice agents.",
+        "You want an all-in-one package (calls + SMS + CRM)."
+      ],
+      "avoidIf": [
+        "You need lightweight reactive support.",
+        "You don't require multi-channel outreach."
+      ],
+      "threshold": "Aloware shines in multi-channel speed-to-lead; for simple reactive support, other tools fit better."
+    },
+    "pros": [
+      "Complete package: calls + SMS + WhatsApp.",
+      "Strong AI voice agents and power dialer.",
+      "Free trial with no commitment.",
+      "Affordable startup plans for small teams."
+    ],
+    "cons": [
+      "Complex tiered pricing with volume minimums.",
+      "Limited native CRM integrations.",
+      "Minimum volumes required on higher tiers."
+    ],
+    "use_cases": [
+      "Launch multi-channel prospecting campaigns.",
+      "Automate follow-up calls with AI agents.",
+      "Manage team SMS and WhatsApp communication."
+    ]
+  }
+}

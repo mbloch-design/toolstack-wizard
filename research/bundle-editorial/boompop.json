@@ -1,0 +1,85 @@
+{
+  "slug": "boompop",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "BoomPop — gestion d'événements IA (site officiel)", "url": "https://boompop.com" }
+  ],
+  "facts": {
+    "what": "Plateforme moderne de gestion d'événements alimentée par l'IA permettant de décrire un événement et laissant BoomPop gérer les logistiques : approvisionnement en hôtels, fournisseurs, budgets et messagerie IA.",
+    "what_en": "Modern AI-powered event management platform where you describe your event and BoomPop handles logistics: hotel procurement, vendor sourcing, budgets, and AI messaging.",
+    "pricing_model": "Montants sur la page officielle (forfaits à consulter).",
+    "free_tier": { "exists": false, "detail": "Essai gratuit ou démo proposée, mais pas de version gratuite permanente." },
+    "plans": [
+      { "name": "Starter", "price": "Montants sur la page officielle" },
+      { "name": "Full Service Event Planning", "price": "Montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Gestion d'événements et des invités assistée par IA",
+      "Approvisionnement automatisé en hôtels et fournisseurs",
+      "Suivi des budgets et dépenses",
+      "Messagerie IA pour planification logistique"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous organisez des événements complexes fréquemment.",
+        "Vous voulez déléguer la logistique fournisseurs.",
+        "Vous recherchez une plateforme IA pour la coordination."
+      ],
+      "avoidIf": [
+        "Vous organisez des événements très simples ponctuels.",
+        "Vous préférez gérer les fournisseurs manuellement."
+      ],
+      "threshold": "BoomPop excelle pour événements d'entreprise complexes ; pour des événements simples, les outils classiques suffisent."
+    },
+    "pros": [
+      "Automatisation complète de la logistique d'événement.",
+      "IA pour messagerie et coordination en temps réel.",
+      "Clients prestigieux (Salesforce, Shopify, Google, Amazon).",
+      "Intégration budgets et tracking centralisé."
+    ],
+    "cons": [
+      "Tarification non transparente sur le site.",
+      "Tarification consultable à titre démonstratif.",
+      "Apprentissage de la plateforme requis."
+    ],
+    "use_cases": [
+      "Organiser une conférence ou grand événement professionnel.",
+      "Gérer les déplacements et hôtels de groupe.",
+      "Automatiser la coordination fournisseurs massale."
+    ],
+    "relevant_for": ["Organisateurs d'événements", "Entreprises technologiques", "Agences événementiel"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You organize complex events frequently.",
+        "You want to delegate vendor logistics.",
+        "You're looking for AI-powered coordination."
+      ],
+      "avoidIf": [
+        "You organize simple one-off events.",
+        "You prefer managing vendors manually."
+      ],
+      "threshold": "BoomPop excels for complex corporate events; for simple events, traditional tools suffice."
+    },
+    "pros": [
+      "Complete automation of event logistics.",
+      "AI for real-time messaging and coordination.",
+      "Prestigious clients (Salesforce, Shopify, Google, Amazon).",
+      "Centralized budget and tracking."
+    ],
+    "cons": [
+      "Opaque pricing on the website.",
+      "Pricing requires demo consultation.",
+      "Platform learning curve."
+    ],
+    "use_cases": [
+      "Organize a conference or major corporate event.",
+      "Manage group travel and hotels.",
+      "Automate large-scale vendor coordination."
+    ]
+  }
+}

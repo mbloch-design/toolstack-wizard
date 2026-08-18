@@ -1,0 +1,85 @@
+{
+  "slug": "calltrackingmetrics",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "CTM (CallTrackingMetrics) — analyse conversationnelle (site officiel)", "url": "https://www.ctm.com/" }
+  ],
+  "facts": {
+    "what": "Logiciel d'analyse conversationnelle pour équipes commerciales et marketing reliant chaque appel à la campagne publicitaire correspondante, avec intelligence IA et gestion des prospects.",
+    "what_en": "Conversation intelligence software for sales and marketing teams linking each call to its source advertising campaign, with AI insights and lead management.",
+    "pricing_model": "Montants sur la page officielle (plans adaptés par taille d'équipe).",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite permanente. Essai ou démonstration disponibles." },
+    "plans": [
+      { "name": "Plans par taille d'équipe", "price": "Montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Suivi d'appels reliant contact et campagne publicitaire",
+      "Intelligence conversationnelle alimentée par l'IA",
+      "Gestion des prospects avec routage intelligent",
+      "Intégrations (Google Ads, HubSpot, Salesforce)",
+      "Plans pour agences avec structure de sous-comptes flexible"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous suivez les appels pour attribuer les conversions aux campagnes.",
+        "Vous avez besoin d'analyse conversationnelle IA.",
+        "Vous intégrez Google Ads, HubSpot ou Salesforce."
+      ],
+      "avoidIf": [
+        "Vous n'avez besoin que d'un système téléphonique simple.",
+        "Votre volume d'appels est très faible."
+      ],
+      "threshold": "CTM excelle pour marketing d'attribution d'appels ; pour gestion d'appels simple, des solutions légères suffisent."
+    },
+    "pros": [
+      "Attribution d'appels à campagnes très précise.",
+      "Intelligence conversationnelle IA avancée.",
+      "Intégrations natives avec Google Ads, HubSpot, Salesforce.",
+      "Plans d'agence avec sous-comptes flexibles."
+    ],
+    "cons": [
+      "Pricing consultable seulement sur le site.",
+      "Pas de plan gratuit.",
+      "Courbe d'apprentissage pour les agences."
+    ],
+    "use_cases": [
+      "Attribuer chaque appel client à la campagne publicitaire correspondante.",
+      "Analyser les préférences clients via transcription et scoring IA.",
+      "Gérer un portefeuille de comptes clients (agences)."
+    ],
+    "relevant_for": ["Équipes marketing B2B", "Agences", "Équipes commerciales data-driven"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You track calls to attribute conversions to campaigns.",
+        "You need AI conversation intelligence.",
+        "You integrate with Google Ads, HubSpot, or Salesforce."
+      ],
+      "avoidIf": [
+        "You only need basic phone systems.",
+        "Your call volume is very low."
+      ],
+      "threshold": "CTM excels for call attribution marketing; for simple call management, lighter solutions work."
+    },
+    "pros": [
+      "Precise call-to-campaign attribution.",
+      "Advanced AI conversation intelligence.",
+      "Native integrations with Google Ads, HubSpot, Salesforce.",
+      "Agency plans with flexible sub-accounts."
+    ],
+    "cons": [
+      "Pricing requires site consultation.",
+      "No free plan.",
+      "Learning curve for agencies."
+    ],
+    "use_cases": [
+      "Attribute each customer call to its source ad campaign.",
+      "Analyze customer preferences via AI transcription and scoring.",
+      "Manage a portfolio of customer accounts (agencies)."
+    ]
+  }
+}

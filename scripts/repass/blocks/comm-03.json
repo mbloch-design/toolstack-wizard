@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "insightly",
+    "name": "Insightly",
+    "url": "https://insightly.com"
+  },
+  {
+    "slug": "instagram",
+    "name": "Instagram",
+    "url": "https://www.instagram.com"
+  },
+  {
+    "slug": "intercom",
+    "name": "Intercom",
+    "url": "https://intercom.com"
+  },
+  {
+    "slug": "kavkom",
+    "name": "Kavkom",
+    "url": "https://kavkom.com"
+  },
+  {
+    "slug": "kixie",
+    "name": "Kixie",
+    "url": "https://kixie.com"
+  },
+  {
+    "slug": "krispcall",
+    "name": "KrispCall",
+    "url": "https://krispcall.com"
+  },
+  {
+    "slug": "leadsquared",
+    "name": "LeadSquared",
+    "url": "https://leadsquared.com"
+  },
+  {
+    "slug": "liinks",
+    "name": "Liinks",
+    "url": "https://liinks.co"
+  },
+  {
+    "slug": "linkedin",
+    "name": "Linkedin",
+    "url": "https://linkedin.com"
+  },
+  {
+    "slug": "loom",
+    "name": "Loom",
+    "url": "https://loom.com"
+  }
+]

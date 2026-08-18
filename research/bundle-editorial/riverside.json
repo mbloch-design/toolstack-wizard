@@ -1,0 +1,88 @@
+{
+  "slug": "riverside",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-08-17",
+  "sources": [
+    { "label": "Riverside.fm — site officiel", "url": "https://riverside.fm" }
+  ],
+  "facts": {
+    "what": "Plateforme d'enregistrement de podcasts et de vidéos en ligne avec enregistrement lossless local, édition IA automatique, et distribution multi-plateforme. Permet de créer des contenus vidéo et audio de haute qualité.",
+    "what_en": "Online podcast and video recording platform with local lossless recording, automatic AI editing, and multi-platform distribution. Enables high-quality audio and video content creation.",
+    "pricing_model": "Freemium avec plans payants ; tarification par abonnement mensuel.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit limité : 2 heures d'enregistrement, contenu watermarké, vidéo jusqu'à 720p." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (2 heures)" },
+      { "name": "Standard", "price": "19 $/mois (facturation annuelle) — enregistrement illimité, 1080p" },
+      { "name": "Pro", "price": "29 $/mois (facturation annuelle) — vidéo 4K, 15 heures de transcription/mois" },
+      { "name": "Teams", "price": "24 $/utilisateur/mois (facturation annuelle) — espaces de travail partagés" }
+    ],
+    "key_features": [
+      "Enregistrement lossless local sur chaque participant",
+      "Pistes audio et vidéo séparées pour mixing professionnel",
+      "Magic Clips : extraction automatique de meilleurs moments pour réseaux sociaux",
+      "Magic Audio : amélioration automatique du son (bruit de fond, équilibre).",
+      "Transcription et sous-titrage automatique"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez des podcasts ou vidéos d'interview avec une ou plusieurs personnes.",
+        "Vous voulez une qualité audio/vidéo élevée sans complexité technique.",
+        "Vous avez besoin d'extraits automatiques pour réseaux sociaux."
+      ],
+      "avoidIf": [
+        "Vous enregistrez uniquement vous-même (webcam).",
+        "Vous cherchez une solution très bon marché."
+      ],
+      "threshold": "Riverside convient aux créateurs podcast/vidéo collaboratif cherchant qualité pro et édition IA ; pour des enregistrements solo simples, une webcam suffit."
+    },
+    "pros": [
+      "Enregistrement local sans dépendance à la connexion Internet.",
+      "Magic Clips pour générer automatiquement des extraits viraux.",
+      "Pistes séparées pour un contrôle d'édition maximal.",
+      "Plan gratuit généreux pour essayer."
+    ],
+    "cons": [
+      "Plan gratuit limité en durée (2 heures).",
+      "Plan Pro cher pour les petits créateurs.",
+      "Watermark sur le plan gratuit."
+    ],
+    "use_cases": [
+      "Produire un podcast audio d'entretien professionnel.",
+      "Créer une série vidéo YouTube avec plusieurs invités.",
+      "Générer rapidement des Shorts/Reels à partir de longs contenus."
+    ],
+    "relevant_for": ["Producteurs de podcasts", "YouTubers", "Créateurs de contenu"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You create podcasts or interview videos with multiple people.",
+        "You want high audio/video quality without technical complexity.",
+        "You need automatic clips for social media."
+      ],
+      "avoidIf": [
+        "You're only recording yourself (webcam).",
+        "You're looking for a very budget solution."
+      ],
+      "threshold": "Riverside suits collaborative podcast/video creators seeking pro quality and AI editing; for simple solo recordings, a webcam suffices."
+    },
+    "pros": [
+      "Local recording independent of internet speed.",
+      "Magic Clips auto-generates viral-ready excerpts.",
+      "Separate tracks for maximum editing control.",
+      "Generous free plan to try."
+    ],
+    "cons": [
+      "Free plan limited in duration (2 hours).",
+      "Pro plan pricey for small creators.",
+      "Watermark on free plan."
+    ],
+    "use_cases": [
+      "Produce a professional interview audio podcast.",
+      "Create a YouTube video series with multiple guests.",
+      "Quickly generate Shorts/Reels from long-form content."
+    ]
+  }
+}

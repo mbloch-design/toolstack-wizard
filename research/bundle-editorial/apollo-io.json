@@ -1,0 +1,86 @@
+{
+  "slug": "apollo-io",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Apollo.io — plateforme de vente IA (site officiel)", "url": "https://www.apollo.io" },
+    { "label": "Apollo.io — tarification (site officiel)", "url": "https://www.apollo.io/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme de vente alimentée par l'IA combinant prospection sortante, gestion des leads entrants, enrichissement de données et exécution commerciale avec accès à 240M+ contacts vérifiés.",
+    "what_en": "AI-powered sales platform combining outbound prospecting, inbound lead management, data enrichment, and deal execution with access to 240M+ verified contacts.",
+    "pricing_model": "Modèle par crédits avec plans starter gratuit et plans payants avec allocations croissantes de crédits.",
+    "free_tier": { "exists": true, "detail": "Plan Starter gratuit à vie avec crédits limités. Essais payants incluent 50 crédits et 5 crédits mobiles." },
+    "plans": [
+      { "name": "Starter", "price": "Gratuit à vie (crédits limités)" },
+      { "name": "Plans payants", "price": "Montants sur la page officielle (modèle par crédits)" }
+    ],
+    "key_features": [
+      "Base de 240M+ contacts et 30M+ entreprises vérifiés",
+      "Campagnes sortantes multicanales alimentées par IA",
+      "Identification et qualification instantanées des visiteurs",
+      "Enrichissement de données et synchronisation CRM"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous prospectez massivement avec données fiables requises.",
+        "Vous cherchez une plateforme tout-en-un (données + outreach + CRM).",
+        "Vous voulez une base de contacts actualisée et vérifiée."
+      ],
+      "avoidIf": [
+        "Vous n'avez besoin que d'un outil CRM réactif.",
+        "Vous préférez des outils spécialisés légers."
+      ],
+      "threshold": "Apollo.io remplace cinq outils distincts pour la prospection ; pour une utilisation CRM simple, d'autres solutions suffisent."
+    },
+    "pros": [
+      "Base de données énorme et continuellement actualisée.",
+      "Plateforme intégrée remplaçant plusieurs outils.",
+      "Campagnes multicanales automatisées.",
+      "Plan gratuit pour débuter."
+    ],
+    "cons": [
+      "Apprentissage de la complexité des crédits.",
+      "Pricing flexible mais exigeant de consulter le site.",
+      "Meilleur pour équipes prospection plutôt que support."
+    ],
+    "use_cases": [
+      "Bâtir des listes de prospection massives vérifiées.",
+      "Lancer des campagnes outbound multicanales automatisées.",
+      "Qualifier les visitants du site avec synchronisation CRM."
+    ],
+    "relevant_for": ["Équipes de vente B2B", "Agences de prospection", "Startups SaaS"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You prospect at scale with accurate data requirements.",
+        "You want an all-in-one platform (data + outreach + CRM).",
+        "You need a constantly updated, verified contact database."
+      ],
+      "avoidIf": [
+        "You only need reactive CRM features.",
+        "You prefer lightweight specialized tools."
+      ],
+      "threshold": "Apollo.io consolidates five tools for outbound; for simple CRM use, other solutions suffice."
+    },
+    "pros": [
+      "Massive, continuously refreshed contact database.",
+      "Integrated platform replacing multiple tools.",
+      "Automated multi-channel campaigns.",
+      "Free plan to get started."
+    ],
+    "cons": [
+      "Learning curve around credit system.",
+      "Flexible pricing requires site consultation.",
+      "Better for outbound than reactive support."
+    ],
+    "use_cases": [
+      "Build massive verified prospecting lists.",
+      "Launch automated multi-channel outbound campaigns.",
+      "Qualify website visitors with CRM sync."
+    ]
+  }
+}

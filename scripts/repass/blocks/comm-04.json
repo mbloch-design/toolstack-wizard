@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "openphone",
+    "name": "OpenPhone",
+    "url": "https://openphone.com"
+  },
+  {
+    "slug": "pipedrive",
+    "name": "Pipedrive",
+    "url": "https://pipedrive.com"
+  },
+  {
+    "slug": "pipelinepro",
+    "name": "PipelinePRO",
+    "url": "https://pipelinepro.io"
+  },
+  {
+    "slug": "product-hunt",
+    "name": "Product Hunt",
+    "url": "https://producthunt.com"
+  },
+  {
+    "slug": "responsetap",
+    "name": "ResponseTap",
+    "url": "https://responsetap.com"
+  },
+  {
+    "slug": "riverside",
+    "name": "Riverside",
+    "url": "https://riverside.fm"
+  },
+  {
+    "slug": "ruby",
+    "name": "Ruby",
+    "url": "https://ruby.com"
+  },
+  {
+    "slug": "salesflare",
+    "name": "Salesflare",
+    "url": "https://salesflare.com"
+  },
+  {
+    "slug": "salesforce",
+    "name": "Salesforce",
+    "url": "https://salesforce.com"
+  },
+  {
+    "slug": "slido",
+    "name": "Slido",
+    "url": "https://www.slido.com"
+  }
+]

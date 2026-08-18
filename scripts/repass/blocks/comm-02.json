@@ -1,0 +1,52 @@
+[
+  {
+    "slug": "chatbase",
+    "name": "Chatbase",
+    "url": "https://www.chatbase.co"
+  },
+  {
+    "slug": "close",
+    "name": "Close",
+    "url": "https://close.com"
+  },
+  {
+    "slug": "cloudtask-marketplace",
+    "name": "CloudTask Marketplace",
+    "url": "https://cloudtask.com/marketplace"
+  },
+  {
+    "slug": "cognism",
+    "name": "Cognism",
+    "url": "https://cognism.com"
+  },
+  {
+    "slug": "cossistant",
+    "name": "Cossistant",
+    "url": "https://cossistant.com"
+  },
+  {
+    "slug": "crisp",
+    "name": "Crisp",
+    "url": "https://crisp.chat"
+  },
+  {
+    "slug": "discord",
+    "name": "Discord",
+    "url": "https://discord.com"
+  },
+  {
+    "slug": "elgato-stream-deck",
+    "name": "Elgato Stream Deck",
+    "url": "https://elgatostreamdeck.com"
+  },
+  {
+    "slug": "eventbrite",
+    "name": "Eventbrite",
+    "url": "https://www.eventbrite.com"
+  },
+  {
+    "slug": "helpscout",
+    "name": "Helpscout",
+    "url": "https://helpscout.com"
+  }
+]
