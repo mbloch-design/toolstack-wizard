@@ -171,8 +171,13 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
             <img src={logoToolTrim} alt="ToolTrim" width={127} height={28} />
           </Link>
 
-          <button className="asv2-search" onClick={() => setSearchOpen(true)}>
-            <Search style={{ width: 15, height: 15 }} />
+          <button
+            type="button"
+            className="asv2-search"
+            onClick={() => setSearchOpen(true)}
+            aria-label={t("Rechercher un outil", "Search for a tool")}
+          >
+            <Search style={{ width: 15, height: 15 }} aria-hidden />
             <span>{t("Rechercher un outil...", "Search a tool...")}</span>
             <kbd className="asv2-kbd">⌘K</kbd>
           </button>
