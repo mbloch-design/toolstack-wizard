@@ -1,0 +1,96 @@
+{
+  "slug": "whatsapp-business",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "WhatsApp Business Platform — pricing officiel", "url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme de messagerie pour entreprises utilisant l'API WhatsApp, avec tarification par message (marketing, utilitaire, authentification) et gratuité pour messages de service clientèle.",
+    "what_en": "Business messaging platform using WhatsApp API, with per-message pricing (marketing, utility, authentication) and free service messages.",
+    "pricing_model": "Par message livré (montants variables selon marché et type)",
+    "free_tier": { "exists": true, "detail": "1000 conversations de service (initiées par utilisateur) gratuites/mois par compte. Messages de service gratuits. Pas de charge pour utility templates en réponse dans fenêtre 24h." },
+    "plans": [
+      { "name": "Messages Marketing", "price": "Tarification par message (montants sur page officielle, varie par pays)" },
+      { "name": "Messages Authentification", "price": "Tarification par message avec réductions volume" },
+      { "name": "Messages Utilitaire", "price": "Gratuit en réponse utilisateur (fenêtre 24h)" },
+      { "name": "Messages Service", "price": "Gratuit (pas de charge)" }
+    ],
+    "key_features": [
+      "Envoi de messages templates approuvés (marketing, auth, utility)",
+      "Envoi de messages libres dans fenêtre 24h client actif",
+      "Tarification volume (remises pour haut volume)",
+      "Mise à jour tarifaire 1x/trimestre (1er jour du mois)",
+      "Intégrations avec CRM, chatbots, et systèmes métier"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous envoyez des messages transactionnels (OTP, confirmations).",
+        "Vous ciblez des marchés où WhatsApp domine (Asie, Latam).",
+        "Vous avez besoin de livraison fiable avec haute délivrabilité.",
+        "Vous cherchez canal de service clientèle direct et non-SMS."
+      ],
+      "avoidIf": [
+        "Vous faites du marketing pur sans consentement client.",
+        "Vous travaillez dans géographie où SMS est standard (pays nordiques).",
+        "Vous avez besoin de interactions longues (WhatsApp meilleur pour court)."
+      ],
+      "threshold": "WhatsApp Business s'impose pour transactionnel et support ; pour marketing massif ou régions SMS-native, SMS/email reste plus efficace."
+    },
+    "pros": [
+      "Très haute délivrabilité et ouverture (vs SMS/email).",
+      "Gratuité des messages de service clientèle.",
+      "1000 conversations service gratuites/mois.",
+      "Deux-sens native (client peut répondre).",
+      "Tarification transparente et scalable avec volume."
+    ],
+    "cons": [
+      "Tarification par message peut être élevée (vs SMS) pour volume marketing.",
+      "Templates marketing doivent être approuvés (délai).",
+      "Géographie limitée si pays sans masse d'utilisateurs WhatsApp.",
+      "Pas de personnalisation visuelle riche (texte + image/vidéo simple)."
+    ],
+    "use_cases": [
+      "Envoyer OTPs et confirmations de paiement.",
+      "Fournir support client en WhatsApp (moins cher que téléphone).",
+      "Notifier partenaires ou colis en livraison."
+    ],
+    "relevant_for": ["SaaS et fintech", "E-commerce et logistique", "Telecom et services", "Entreprises B2C Asie/Latam"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You send transactional messages (OTPs, confirmations).",
+        "You target geographies where WhatsApp dominates (Asia, Latam).",
+        "You need reliable delivery with high deliverability.",
+        "You want direct customer service channel outside SMS."
+      ],
+      "avoidIf": [
+        "You do pure marketing without customer consent.",
+        "You operate in SMS-native geographies (Nordic countries).",
+        "You need long interactions (WhatsApp is better for brief)."
+      ],
+      "threshold": "WhatsApp Business makes sense for transactional and support; for bulk marketing or SMS-native regions, SMS/email remains more effective."
+    },
+    "pros": [
+      "Very high deliverability and open rates (vs SMS/email).",
+      "Free customer service messages.",
+      "1000 service conversations free per month.",
+      "Two-way native (customer can reply).",
+      "Transparent and scalable pricing with volume."
+    ],
+    "cons": [
+      "Per-message pricing can be high (vs SMS) for marketing volume.",
+      "Marketing templates must be approved (delays).",
+      "Limited geography if country lacks WhatsApp user base.",
+      "No rich visual customization (text + simple image/video)."
+    ],
+    "use_cases": [
+      "Send OTPs and payment confirmations.",
+      "Provide customer support via WhatsApp (cheaper than phone).",
+      "Notify partners or track shipments in delivery."
+    ]
+  }
+}

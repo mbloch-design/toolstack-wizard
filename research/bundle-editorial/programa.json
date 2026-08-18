@@ -1,0 +1,95 @@
+{
+  "slug": "programa",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Programa — pricing et plans (site officiel)", "url": "https://programa.design/pricing" }
+  ],
+  "facts": {
+    "what": "Logiciel de gestion de projets conçu spécifiquement pour designers d'intérieur et architectes, couvrant les spécifications FF&E, calendriers, approbations clients, procurements et coordination de projets.",
+    "what_en": "Project management software designed specifically for interior designers and architects, covering FF&E specifications, schedules, client approvals, procurement, and project coordination.",
+    "pricing_model": "Abonnement mensuel ou annuel par utilisateur",
+    "free_tier": { "exists": true, "detail": "Essai gratuit de 7 jours sans carte de crédit requise." },
+    "plans": [
+      { "name": "Pro", "price": "$71/mois (1 siège inclus) ou équivalent annuel" },
+      { "name": "Sièges additionnels", "price": "$31/mois par utilisateur supplémentaire" }
+    ],
+    "key_features": [
+      "Spécifications FF&E, finitions et calendriers",
+      "Bibliothèque de produits avec tarifs fournisseurs",
+      "Tableau de bord client avec accès en temps réel",
+      "Suivi du temps pour heures facturables",
+      "Gestion des documents par flux de travail",
+      "Mobile-responsive pour sites (inspections sur terrain)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes designer d'intérieur ou architecte.",
+        "Vous gérez des spécifications produits et calendriers de projet.",
+        "Vous avez besoin de partager des approbations clients datées.",
+        "Vous travaillez sur projets résidentiels, commerciaux ou hôteliers."
+      ],
+      "avoidIf": [
+        "Vous cherchez un outil de gestion de projet généraliste.",
+        "Vous travaillez dans un secteur non-design (IT, marketing).",
+        "Votre équipe a peu de besoins spécifiques à l'intérieur design."
+      ],
+      "threshold": "Programa s'impose pour studios de design d'intérieur avec workflows spécialisés ; pour équipes sans design produit complexe, un outil généraliste suffit."
+    },
+    "pros": [
+      "Construit pour les workflows réels de design d'intérieur.",
+      "Partage de bibliothèque produits avec les fournisseurs.",
+      "Approbations clients documentées et horodatées.",
+      "Suivi du temps facturé intégré.",
+      "6000+ studios l'utilisent (preuve de fiabilité).",
+      "Essai gratuit sans carte bancaire."
+    ],
+    "cons": [
+      "Spécialisé : peu utile hors design d'intérieur.",
+      "Prix par siège peut monter pour petits studios.",
+      "Tarification pour grandes équipes non détaillée."
+    ],
+    "use_cases": [
+      "Gérer les spécifications FF&E d'un projet résidentiel.",
+      "Partagée un mood board et approbations client.",
+      "Importer des produits depuis fournisseurs automatiquement."
+    ],
+    "relevant_for": ["Designers d'intérieur", "Architectes", "Studios de design", "Cabinets d'architecture"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You are an interior designer or architect.",
+        "You manage product specifications and project schedules.",
+        "You need timestamped client approvals.",
+        "You work on residential, commercial, or hospitality projects."
+      ],
+      "avoidIf": [
+        "You want a general-purpose project management tool.",
+        "You work outside design (IT, marketing).",
+        "Your team has few needs specific to interior design."
+      ],
+      "threshold": "Programa makes sense for interior design studios with specialized workflows; for teams without complex product design, a general tool works fine."
+    },
+    "pros": [
+      "Built for real interior design workflows.",
+      "Product library sharing with suppliers.",
+      "Timestamped and documented client approvals.",
+      "Built-in time tracking for billing.",
+      "6000+ studios use it (proof of reliability).",
+      "Free trial with no credit card required."
+    ],
+    "cons": [
+      "Specialized: of limited use outside interior design.",
+      "Per-seat pricing can add up for small studios.",
+      "Pricing for large teams not detailed."
+    ],
+    "use_cases": [
+      "Manage FF&E specifications for a residential project.",
+      "Share mood boards and client approvals.",
+      "Auto-import products from suppliers."
+    ]
+  }
+}

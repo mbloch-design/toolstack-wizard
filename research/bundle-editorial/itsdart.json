@@ -1,0 +1,87 @@
+{
+  "slug": "itsdart",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Dart — AI workplace for the agent era (site officiel)", "url": "https://www.dartai.com/" }
+  ],
+  "facts": {
+    "what": "Plateforme de gestion de projets pilotée par IA, permettant aux équipes de créer et orchestrer des agents IA aux côtés de collaborateurs humains pour automatiser les workflows.",
+    "what_en": "AI-powered project management platform enabling teams to create and orchestrate AI agents alongside human collaborators to automate workflows.",
+    "pricing_model": "Freemium avec abonnements par utilisateur pour les fonctionnalités avancées et gestion d'équipe.",
+    "free_tier": { "exists": true, "detail": "Personal tier gratuit pour jusqu'à quatre coéquipiers, avec accès aux agents IA et automations de base." },
+    "plans": [
+      { "name": "Personal", "price": "Gratuit (jusqu'à 4 équipiers)" },
+      { "name": "Premium", "price": "8 $/mois par utilisateur (équipe illimitée, IA avancée)" },
+      { "name": "Business", "price": "12 $/mois par utilisateur (SSO SAML, gestionnaire dédié)" }
+    ],
+    "key_features": [
+      "Agents IA intégrés (Sara, Rob, Scout) ou connectés (Claude, Cursor)",
+      "Orchestration multi-agents pour collaboration humain-machine",
+      "Remplissage automatique de propriétés et génération de sous-tâches",
+      "Intégrations (Slack, GitHub, Notion, Google Calendar)",
+      "Interface en langage naturel"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez automatiser les workflows avec des agents IA.",
+        "Votre équipe cherche une alternative légère à ClickUp ou Asana.",
+        "Vous avez des tâches répétitives que l'IA peut orchestrer."
+      ],
+      "avoidIf": [
+        "Vous cherchez une solution complète avec financials et marketing.",
+        "Votre équipe préfère une interface ultra-simple sans IA."
+      ],
+      "threshold": "Dart brille pour les équipes cherchant l'orchestration humain-IA ; les équipes métier classiques choisiront des outils plus génériques."
+    },
+    "pros": [
+      "Agents IA intégrés pour automatiser les workflows.",
+      "Offre gratuite généreuse (jusqu'à 4 équipiers).",
+      "Interface en langage naturel pour plus d'accessibilité.",
+      "Intégrations modernes (Slack, GitHub, Notion)."
+    ],
+    "cons": [
+      "Plateforme encore en évolution (startup jeune).",
+      "Moins de fonctionnalités que les suites matures.",
+      "Interface peut être moins intuitive pour les non-tech."
+    ],
+    "use_cases": [
+      "Automatiser la création de sous-tâches avec agents IA.",
+      "Orchestrer des revues de code et support client avec agents.",
+      "Centraliser tâches, chat et agents IA dans un seul endroit."
+    ],
+    "relevant_for": ["Équipes tech", "Startups", "Consultants IA"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want to automate workflows with AI agents.",
+        "Your team wants a lightweight alternative to ClickUp or Asana.",
+        "You have repetitive tasks that AI can orchestrate."
+      ],
+      "avoidIf": [
+        "You're looking for a complete suite with financials and marketing.",
+        "Your team prefers an ultra-simple interface without AI."
+      ],
+      "threshold": "Dart excels for teams seeking human-AI orchestration; mainstream teams will choose more generic tools."
+    },
+    "pros": [
+      "Built-in AI agents to automate workflows.",
+      "Generous free tier (up to 4 teammates).",
+      "Natural language interface for better accessibility.",
+      "Modern integrations (Slack, GitHub, Notion)."
+    ],
+    "cons": [
+      "Platform still evolving (young startup).",
+      "Fewer features than mature suites.",
+      "Interface may be less intuitive for non-tech users."
+    ],
+    "use_cases": [
+      "Automate subtask creation with AI agents.",
+      "Orchestrate code reviews and customer support with agents.",
+      "Centralize tasks, chat and AI agents in one place."
+    ]
+  }
+}

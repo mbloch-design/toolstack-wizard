@@ -1,0 +1,87 @@
+{
+  "slug": "airtable",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Airtable — Pricing (site officiel)", "url": "https://airtable.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme collaborative de gestion de données permettant de construire des applications sans code, avec des tables reliées, des automations, et une interface personnalisable pour équipes.",
+    "what_en": "Collaborative data management platform that enables building no-code applications, with linked tables, automations, and customizable interfaces for teams.",
+    "pricing_model": "Abonnement par utilisateur avec droits d'édition ; collaborateurs en lecture seule gratuits.",
+    "free_tier": { "exists": true, "detail": "Free tier offert à tous les utilisateurs." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit" },
+      { "name": "Team", "price": "20 $/utilisateur/mois (facturation annuelle)" },
+      { "name": "Business", "price": "45 $/utilisateur/mois (facturation annuelle)" },
+      { "name": "Enterprise Scale", "price": "Tarification personnalisée sur devis" }
+    ],
+    "key_features": [
+      "Tables reliées pour modéliser des données complexes",
+      "Automations pour réduire les tâches répétitives",
+      "Interfaces personnalisées sans code",
+      "Intégrations extensibles et API robuste"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin d'une base de données visuelle pour équipe.",
+        "Vous voulez construire des processus métier sans coder.",
+        "Votre cas d'usage demande des mises à jour collaboratives en temps réel."
+      ],
+      "avoidIf": [
+        "Vous cherchez une solution strictement gratuite.",
+        "Votre équipe préfère l'approche classique tableur."
+      ],
+      "threshold": "Airtable convient aux équipes recherchant une base de données visuelle et collaborative ; pour un tableur classique, une alternative gratuite suffira."
+    },
+    "pros": [
+      "Interface intuitive et pas besoin de coder.",
+      "Collaboration en temps réel entre équipes.",
+      "Automations qui réduisent le travail manuel.",
+      "Modèles prêts à l'emploi pour accélérer le démarrage."
+    ],
+    "cons": [
+      "Tarif croissant avec le nombre d'utilisateurs.",
+      "Limite de stockage selon le plan.",
+      "Courbe d'apprentissage pour les automations avancées."
+    ],
+    "use_cases": [
+      "Gérer un inventaire produit partagé.",
+      "Suivre un pipeline de ventes avec colonnes et automations.",
+      "Organiser un calendrier éditorial avec dépendances."
+    ],
+    "relevant_for": ["Équipes métier", "Product managers", "Consultants"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need a visual database for your team.",
+        "You want to build business workflows without code.",
+        "Your use case requires real-time collaborative updates."
+      ],
+      "avoidIf": [
+        "You're looking for a strictly free solution.",
+        "Your team prefers traditional spreadsheet approaches."
+      ],
+      "threshold": "Airtable is ideal for teams seeking a visual, collaborative database; for classic spreadsheets, a free alternative will suffice."
+    },
+    "pros": [
+      "Intuitive interface with no coding required.",
+      "Real-time collaboration across teams.",
+      "Automations that reduce manual work.",
+      "Ready-made templates to accelerate setup."
+    ],
+    "cons": [
+      "Cost grows with user count.",
+      "Storage limits depending on plan.",
+      "Learning curve for advanced automations."
+    ],
+    "use_cases": [
+      "Manage a shared product inventory.",
+      "Track a sales pipeline with columns and automations.",
+      "Organize an editorial calendar with dependencies."
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "slug": "clickup",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "ClickUp — Pricing (site officiel)", "url": "https://clickup.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme intégrée de gestion de projets combinant tâches, documents, chat, calendrier et automations avec des agents IA pour orchestrer le travail d'équipe.",
+    "what_en": "Integrated project management platform combining tasks, documents, chat, calendar and automations with AI agents to orchestrate team work.",
+    "pricing_model": "Freemium avec plans par abonnement ; option IA séparée disponible.",
+    "free_tier": { "exists": true, "detail": "Free Forever : tâches illimitées, stockage limité à 60 MB, intégrations essentielles." },
+    "plans": [
+      { "name": "Free Forever", "price": "Gratuit indéfiniment" },
+      { "name": "Unlimited", "price": "7 $/mois (annuel) ou 10 $/mois (mensuel)" },
+      { "name": "Business", "price": "12 $/mois (annuel) ou 19 $/mois (mensuel)" },
+      { "name": "Enterprise", "price": "Tarification personnalisée" }
+    ],
+    "key_features": [
+      "Gestion de tâches flexible (listes, tableaux Kanban, Gantt)",
+      "Agents IA pour automatiser les workflows",
+      "Docs intégrés et whiteboards collaboratifs",
+      "Plus de 1 000 intégrations disponibles"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez une solution tout-en-un de gestion de projets.",
+        "Votre équipe préfère avoir outils et chat au même endroit.",
+        "Vous voulez tirer parti des automations IA pour réduire le travail."
+      ],
+      "avoidIf": [
+        "Vous préférez une solution minimaliste et légère.",
+        "Votre équipe est déjà fortement investie dans d'autres outils."
+      ],
+      "threshold": "ClickUp convient aux équipes recherchant une plateforme centrale ; pour des besoins ponctuels, une solution mono-tâche sera plus légère."
+    },
+    "pros": [
+      "Offre gratuite permamente et généreuse.",
+      "Interface flexible adaptable à plusieurs méthodologies.",
+      "Agents IA pour automatiser les processus.",
+      "Écosystème fermé (tout en un seul endroit)."
+    ],
+    "cons": [
+      "Interface peut être overwhelming au premier abord.",
+      "Stockage limité sur le plan gratuit.",
+      "Les options IA requièrent un paiement additionnel."
+    ],
+    "use_cases": [
+      "Gérer un projet transverse avec équipes distribuées.",
+      "Centraliser documents, tâches et communications de sprint.",
+      "Automatiser les tâches répétitives avec des agents IA."
+    ],
+    "relevant_for": ["Équipes agiles", "Project managers", "Startups"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want an all-in-one project management solution.",
+        "Your team prefers having tools and chat in one place.",
+        "You want to leverage AI automations to reduce manual work."
+      ],
+      "avoidIf": [
+        "You prefer a minimal, lightweight solution.",
+        "Your team is already heavily invested in other tools."
+      ],
+      "threshold": "ClickUp suits teams seeking a central platform; for specific needs, a single-purpose tool will be lighter."
+    },
+    "pros": [
+      "Generous free tier available forever.",
+      "Flexible interface adaptable to multiple methodologies.",
+      "AI agents to automate processes.",
+      "Closed ecosystem (everything in one place)."
+    ],
+    "cons": [
+      "Interface can be overwhelming at first.",
+      "Limited storage on free plan.",
+      "AI options require additional payment."
+    ],
+    "use_cases": [
+      "Manage a cross-functional project with distributed teams.",
+      "Centralize documents, tasks and sprint communications.",
+      "Automate repetitive tasks with AI agents."
+    ]
+  }
+}

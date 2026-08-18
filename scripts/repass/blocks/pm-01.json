@@ -1,0 +1,42 @@
+[
+  {
+    "slug": "airtable",
+    "name": "Airtable",
+    "url": "https://airtable.com"
+  },
+  {
+    "slug": "canny",
+    "name": "Canny",
+    "url": "https://canny.io"
+  },
+  {
+    "slug": "clickup",
+    "name": "ClickUp",
+    "url": "https://clickup.com"
+  },
+  {
+    "slug": "coda",
+    "name": "Coda",
+    "url": ""
+  },
+  {
+    "slug": "github",
+    "name": "GitHub",
+    "url": "https://github.com"
+  },
+  {
+    "slug": "github-actions",
+    "name": "GitHub Actions",
+    "url": "https://github.com/features/actions"
+  },
+  {
+    "slug": "houzz-pro",
+    "name": "Houzz Pro",
+    "url": "https://houzz.com/pro"
+  },
+  {
+    "slug": "itsdart",
+    "name": "Dart (PM)",
+    "url": "https://www.itsdart.com/"
+  }
+]

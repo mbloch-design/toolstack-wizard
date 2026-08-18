@@ -1,0 +1,87 @@
+{
+  "slug": "github-actions",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "GitHub Actions — Features & Pricing (site officiel)", "url": "https://github.com/features/actions" }
+  ],
+  "facts": {
+    "what": "Système d'automatisation CI/CD intégré nativement dans GitHub, permettant de déclencher des workflows (tests, builds, déploiements) sur événements de code.",
+    "what_en": "Native CI/CD automation system integrated into GitHub, enabling workflows (tests, builds, deployments) triggered by code events.",
+    "pricing_model": "Gratuit pour les dépôts publics et runners GitHub hébergés ; minutes payantes pour les dépôts privés selon le runner utilisé.",
+    "free_tier": { "exists": true, "detail": "Gratuit pour les dépôts publics (unlimited) ; dépôts privés : minutes incluses selon le plan GitHub, puis tarification à l'usage." },
+    "plans": [
+      { "name": "Public Repositories", "price": "Gratuit (illimité)" },
+      { "name": "Private with Free GitHub Plan", "price": "2 000 minutes/mois incluses" },
+      { "name": "Private with Paid Plans", "price": "Minutes selon runner (Linux, macOS, Windows, GPU)" }
+    ],
+    "key_features": [
+      "Runners hébergés (Linux, macOS, Windows, ARM, GPU)",
+      "Builds en matrice sur plusieurs OS/versions",
+      "Marketplace d'actions réutilisables",
+      "Secrets et variables d'environnement sécurisés",
+      "Logs temps réel et artefacts de build"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez GitHub et voulez une CI/CD intégrée.",
+        "Vous avez des projets open source nécessitant des tests automatisés.",
+        "Vous cherchez une alternative légère à Jenkins ou autre CI externe."
+      ],
+      "avoidIf": [
+        "Vous utilisez une autre plateforme Git (GitLab, Gitea).",
+        "Vous avez une infrastructure CI/CD complexe et mature."
+      ],
+      "threshold": "GitHub Actions s'impose pour les équipes GitHub ; les utilisateurs d'autres forges Git choisiront leurs outils natifs."
+    },
+    "pros": [
+      "Intégrée directement à GitHub sans outil externe.",
+      "Gratuite pour dépôts publics et projets open source.",
+      "Marketplace riche d'actions prêtes à l'emploi.",
+      "Configuration simple en YAML au cœur du repo."
+    ],
+    "cons": [
+      "Coût peut grandir avec usage des runners privés.",
+      "Pas optimale pour pipelines très complexes.",
+      "Moins de fonctionnalités avancées qu'une CI dédiée."
+    ],
+    "use_cases": [
+      "Lancer des tests unitaires à chaque push sur une branche.",
+      "Automatiser la construction et le déploiement d'une app web.",
+      "Publier une librairie npm ou Docker image à chaque release."
+    ],
+    "relevant_for": ["Équipes GitHub", "Développeurs open source", "Startups"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You use GitHub and want integrated CI/CD.",
+        "You have open source projects requiring automated tests.",
+        "You want a lightweight alternative to Jenkins or external CI."
+      ],
+      "avoidIf": [
+        "You use another Git platform (GitLab, Gitea).",
+        "You have a complex, mature CI/CD infrastructure."
+      ],
+      "threshold": "GitHub Actions is ideal for GitHub teams; users of other Git forges will choose their native tools."
+    },
+    "pros": [
+      "Integrated directly into GitHub without external tools.",
+      "Free for public repos and open source projects.",
+      "Rich marketplace of ready-to-use actions.",
+      "Simple YAML configuration at the heart of your repo."
+    ],
+    "cons": [
+      "Cost can grow with private runner usage.",
+      "Not optimal for very complex pipelines.",
+      "Fewer advanced features than dedicated CI tools."
+    ],
+    "use_cases": [
+      "Run unit tests on every push to a branch.",
+      "Automate building and deploying a web app.",
+      "Publish an npm or Docker image on every release."
+    ]
+  }
+}

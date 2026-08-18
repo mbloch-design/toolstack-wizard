@@ -1,0 +1,93 @@
+{
+  "slug": "microsoft-project",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Microsoft Project — plans et tarification (site officiel)", "url": "https://www.microsoft.com/en-us/microsoft-365/project/project-management-software" }
+  ],
+  "facts": {
+    "what": "Logiciel de gestion de projet robuste de Microsoft, disponible en plans cloud par abonnement (Plan 1, 3, 5) et licences desktop perpétuelles, pour la planification, le suivi des ressources, et la gestion de portefeuille.",
+    "what_en": "Robust project management software from Microsoft, available as cloud subscription plans (Plan 1, 3, 5) and perpetual desktop licenses, for planning, resource tracking, and portfolio management.",
+    "pricing_model": "Abonnement par utilisateur (cloud) ou licence perpétuelle (desktop)",
+    "free_tier": { "exists": false, "detail": "Essai gratuit de 30 jours disponible ; pas de version gratuite permanente." },
+    "plans": [
+      { "name": "Project Plan 1", "price": "$10/user/month" },
+      { "name": "Project Plan 3", "price": "$30/user/month (gestion des ressources incluse)" },
+      { "name": "Project Plan 5", "price": "$55/user/month (gestion de portefeuille incluse)" },
+      { "name": "Project Standard 2024", "price": "$679.99 (licence unique, achat perpétuel)" },
+      { "name": "Project Professional 2024", "price": "$1,129.99 (licence unique, achat perpétuel)" }
+    ],
+    "key_features": [
+      "Planification de projet et gestion des tâches",
+      "Suivi des ressources et allocation",
+      "Vues multiples (Gantt, Calendrier, Diagramme réseau)",
+      "Gestion de portefeuille (Plan 5)",
+      "Intégration avec Microsoft 365"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Votre équipe utilise Microsoft 365 et Office sur Windows.",
+        "Vous gérez des projets complexes avec suivi multi-niveaux.",
+        "Vous avez besoin d'une gestion de portefeuille d'entreprise."
+      ],
+      "avoidIf": [
+        "Vous cherchez une solution gratuite.",
+        "Vous préférez un outil léger et simple pour petits projets.",
+        "Vous utilisez principalement macOS ou n'êtes pas dans l'écosystème Microsoft."
+      ],
+      "threshold": "Microsoft Project s'impose en contexte Microsoft 365 et pour la gestion d'entreprise complexe ; pour un usage léger ou cross-platform, un outil plus simple suffit."
+    },
+    "pros": [
+      "Intégration native avec l'écosystème Microsoft 365.",
+      "Gestion de ressources puissante et granulaire.",
+      "Options de déploiement (cloud ou desktop).",
+      "Supports des formats Project classiques."
+    ],
+    "cons": [
+      "Tarification élevée par utilisateur en abonnement.",
+      "Courbe d'apprentissage raide.",
+      "Interface dense et complexe.",
+      "Orienté grandes organisations."
+    ],
+    "use_cases": [
+      "Planifier un programme de transformation IT multiniveaux.",
+      "Gérer les ressources et la capacité d'une agence.",
+      "Consolider les portefeuilles de projets dispersés."
+    ],
+    "relevant_for": ["Directeurs de projet", "Directeurs PMO", "Agences IT", "Grandes organisations"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "Your team uses Microsoft 365 and Office on Windows.",
+        "You manage complex projects with multi-level tracking.",
+        "You need enterprise portfolio management."
+      ],
+      "avoidIf": [
+        "You want a free solution.",
+        "You prefer lightweight and simple tools for small projects.",
+        "You mainly use macOS or are outside the Microsoft ecosystem."
+      ],
+      "threshold": "Microsoft Project makes sense in Microsoft 365 environments and for complex enterprise management; for lighter use or cross-platform needs, a simpler tool works fine."
+    },
+    "pros": [
+      "Native integration with Microsoft 365 ecosystem.",
+      "Powerful and granular resource management.",
+      "Deployment options (cloud or desktop).",
+      "Support for classic Project formats."
+    ],
+    "cons": [
+      "High per-user pricing in subscription model.",
+      "Steep learning curve.",
+      "Dense and complex interface.",
+      "Oriented toward large organizations."
+    ],
+    "use_cases": [
+      "Plan a multi-tier IT transformation program.",
+      "Manage resources and capacity for an agency.",
+      "Consolidate dispersed project portfolios."
+    ]
+  }
+}

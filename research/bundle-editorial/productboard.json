@@ -1,0 +1,96 @@
+{
+  "slug": "productboard",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Productboard — pricing et plans (site officiel)", "url": "https://www.productboard.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Plateforme de gestion de produits alimentée par l'IA, spécialisée dans la collecte de feedback client, la priorisation et la feuille de route, avec tarification à la place de « maker » (responsable produit).",
+    "what_en": "AI-powered product management platform specialized in customer feedback collection, prioritization, and roadmapping, with pricing based on number of 'makers' (product managers).",
+    "pricing_model": "Abonnement par maker (gestionnaire de produit)",
+    "free_tier": { "exists": true, "detail": "Plan gratuit pour 1 maker avec 50 crédits IA/mois, 500 notes de feedback et 25 contributeurs." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (1 maker)" },
+      { "name": "Plus", "price": "$19/maker/mois en annuel ($25/mois mensuel)" },
+      { "name": "Business", "price": "$59/maker/mois en annuel ($75/mois mensuel), minimum 2 makers" },
+      { "name": "Enterprise", "price": "Tarif personnalisé, minimum 5 makers" }
+    ],
+    "key_features": [
+      "Collecte et analyse de feedback client (Spark IA)",
+      "Tableau de bord de priorisation et scoring",
+      "Feuille de route personnalisable",
+      "Intégrations Jira, Slack, Zendesk, Intercom",
+      "Crédits IA inclus par maker"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Votre équipe produit collecte activement du feedback client.",
+        "Vous avez besoin de prioriser features et initiatives rapidement.",
+        "Vous utilisez Jira et Slack pour la collaboration.",
+        "L'IA pour analyser le feedback vous intéresse."
+      ],
+      "avoidIf": [
+        "Vous cherchez un outil de gestion de projet généraliste.",
+        "Votre équipe ne capte pas de feedback client structuré.",
+        "Vous avez un budget très serré pour plus de 3 makers."
+      ],
+      "threshold": "Productboard s'impose pour équipes produit collectant du feedback client actif ; pour du suivi de tâches classique, un outil généraliste suffit."
+    },
+    "pros": [
+      "Spark IA puissante pour analyser le feedback.",
+      "Feuille de route visuelle et intuitive.",
+      "Intégrations solides avec l'écosystème produit.",
+      "Plan gratuit généreux pour petites équipes.",
+      "Distinction makers/contributeurs réduit les coûts."
+    ],
+    "cons": [
+      "Prix par maker peut monter rapidement pour équipes grandes.",
+      "Minimum de 2 makers requis sur Business.",
+      "Apprentissage requis sur la structuration du feedback.",
+      "Moins adapté au suivi généraliste de projets."
+    ],
+    "use_cases": [
+      "Analyser 1000 retours client pour prioriser Q3.",
+      "Valider une feuille de route avec stakeholders via portail.",
+      "Mesurer l'impact d'une feature auprès des utilisateurs."
+    ],
+    "relevant_for": ["Responsables produit", "Équipes SaaS B2B", "Agences de conseil produit", "PMO produit"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "Your product team actively collects customer feedback.",
+        "You need to prioritize features and initiatives quickly.",
+        "You use Jira and Slack for collaboration.",
+        "AI to analyze feedback interests you."
+      ],
+      "avoidIf": [
+        "You want a general-purpose project management tool.",
+        "Your team doesn't capture structured customer feedback.",
+        "Your budget is tight for more than 3 makers."
+      ],
+      "threshold": "Productboard makes sense for product teams actively collecting customer feedback; for generic task tracking, a general tool works fine."
+    },
+    "pros": [
+      "Powerful Spark AI to analyze feedback.",
+      "Visual and intuitive roadmap.",
+      "Strong integrations with product ecosystem.",
+      "Generous free plan for small teams.",
+      "Maker/contributor distinction reduces costs."
+    ],
+    "cons": [
+      "Per-maker pricing can grow quickly for large teams.",
+      "Minimum 2 makers required on Business tier.",
+      "Learning curve on feedback structuring.",
+      "Less suitable for general project tracking."
+    ],
+    "use_cases": [
+      "Analyze 1,000 customer inputs to prioritize Q3.",
+      "Validate a roadmap with stakeholders via portal.",
+      "Measure a feature's impact among users."
+    ]
+  }
+}

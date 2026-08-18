@@ -1,0 +1,97 @@
+{
+  "slug": "trello",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Trello — pricing et plans (site officiel)", "url": "https://trello.com/pricing" }
+  ],
+  "facts": {
+    "what": "Outil de gestion de projet visuellement axé sur Kanban, avec un plan gratuit pour 10 tableaux/10 collaborateurs, et plans payants scalables pour équipes illimitées et automation avancée.",
+    "what_en": "Visual Kanban-based project management tool, with a free plan for 10 boards/10 collaborators, and scalable paid plans for unlimited teams and advanced automation.",
+    "pricing_model": "Freemium avec abonnement par utilisateur",
+    "free_tier": { "exists": true, "detail": "Plan gratuit : jusqu'à 10 tableaux, 10 collaborateurs par Workspace, 250 automations/mois, 10 Mo/fichier." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (10 tableaux, 10 collaborateurs)" },
+      { "name": "Standard", "price": "$5/user/mois en annuel ou $6/user/mois en mensuel" },
+      { "name": "Premium", "price": "$10/user/mois en annuel ou $12.50/user/mois en mensuel" },
+      { "name": "Enterprise", "price": "$17.50/user/mois en annuel (Workspaces illimités, SSO)" }
+    ],
+    "key_features": [
+      "Tableaux Kanban visuels et flexibles",
+      "Cartes illimitées et champs personnalisés",
+      "Vues multiples (Calendar, Timeline, Table, Dashboard)",
+      "Automations (Standard et +)",
+      "Power-Ups et intégrations (100+)",
+      "Modèles de Workspace réutilisables"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez une solution Kanban visuelle et intuitive.",
+        "Votre équipe a peu besoin de features complexes (parfait pour petit).",
+        "Vous avez un budget serré (plan gratuit très usable).",
+        "Vous aimez les Power-Ups et customization légère."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'approbations complexes ou proofing.",
+        "Votre équipe > 50 personnes et dépense < budget.",
+        "Vous exigez gestion de ressources avancée."
+      ],
+      "threshold": "Trello s'impose pour équipes petites et moyennes cherchant Kanban simple ; pour besoins complexes (ressources, approbations), un outil plus riche s'impose."
+    },
+    "pros": [
+      "Interface très intuitive et visuellement claire.",
+      "Plan gratuit généreux pour petites équipes.",
+      "Vues multiples (Gantt, Timeline) sans extra.",
+      "Automations et Power-Ups flexibles.",
+      "Tarification par siège très raisonnable."
+    ],
+    "cons": [
+      "Pas d'approbation de fichiers native.",
+      "Gestion de ressources limitée.",
+      "Moins adapté aux projets très complexes.",
+      "Automatisations plus limitées sur Free/Standard."
+    ],
+    "use_cases": [
+      "Organiser le backlog d'une startup lean.",
+      "Gérer les tâches d'une équipe marketing de 5 personnes.",
+      "Suivre l'onboarding client avec checklist collaborative."
+    ],
+    "relevant_for": ["Startups et PME", "Équipes marketing", "Équipes agiles", "Petits studios créatifs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want a visual and intuitive Kanban solution.",
+        "Your team has limited needs for complex features (perfect for small).",
+        "You have a tight budget (free plan is very usable).",
+        "You like Power-Ups and light customization."
+      ],
+      "avoidIf": [
+        "You need complex approvals or file proofing.",
+        "Your team > 50 people and budget is constrained.",
+        "You require advanced resource management."
+      ],
+      "threshold": "Trello makes sense for small to medium teams seeking simple Kanban; for complex needs (resources, approvals), a richer tool is better."
+    },
+    "pros": [
+      "Very intuitive and visually clear interface.",
+      "Generous free plan for small teams.",
+      "Multiple views (Gantt, Timeline) included.",
+      "Flexible automations and Power-Ups.",
+      "Very reasonable per-seat pricing."
+    ],
+    "cons": [
+      "No native file approval.",
+      "Limited resource management.",
+      "Less suited for very complex projects.",
+      "More limited automations on Free/Standard."
+    ],
+    "use_cases": [
+      "Organize a lean startup's backlog.",
+      "Manage tasks for a 5-person marketing team.",
+      "Track customer onboarding with collaborative checklist."
+    ]
+  }
+}

@@ -36,6 +36,7 @@ const files = [
   "scripts/sql/archive-wunderlist.sql",
   "scripts/sql/archive-repass-flags-7.sql",
   "scripts/sql/archive-repass-flags-8.sql",
+  "scripts/sql/archive-repass-flags-9.sql",
 ];
 
 let totalArchived = 0;

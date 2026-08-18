@@ -1,0 +1,94 @@
+{
+  "slug": "techpacker",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Techpacker — pricing et plans (site officiel)", "url": "https://techpacker.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Plateforme de gestion de production pour la mode, spécialisée dans la création de fiches techniques (tech packs), le suivi de production, les feuilles d'essayage et la collaboration avec fournisseurs.",
+    "what_en": "Production management platform for fashion, specialized in tech pack creation, production tracking, line sheets, and supplier collaboration.",
+    "pricing_model": "Abonnement mensuel par utilisateur (facturation annuelle ou mensuelle)",
+    "free_tier": { "exists": false, "detail": "Essai gratuit de 7 jours offert. Garantie de remboursement de 60 jours avec abonnement annuel et onboarding." },
+    "plans": [
+      { "name": "Techpack Builder", "price": "$35/user/mois en annuel (création tech pack, collaboration basique)" },
+      { "name": "PLM Professional", "price": "$95/user/mois en annuel (templates, BOMs, Excel export, suivi production)" },
+      { "name": "PLM Premium", "price": "$125/user/mois en annuel (automation, Gantt, live updates, support dédié)" }
+    ],
+    "key_features": [
+      "Création de fiches techniques (tech packs) modulaires",
+      "Édition d'images et création de visuels",
+      "Bibliothèques de nomenclatures (BOMs)",
+      "Suivi de production en temps réel",
+      "Feuilles d'essayage (line sheets) et rapports",
+      "Intégration PLM avec connectedité fournisseurs"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous dirigez une marque mode ou une fabrique.",
+        "Vous créez régulièrement des fiches techniques.",
+        "Vous collaborez avec fournisseurs externes et contrôle qualité.",
+        "Vous avez besoin de suivi de production de A à Z."
+      ],
+      "avoidIf": [
+        "Vous cherchez un outil généraliste de gestion de projet.",
+        "Vous n'êtes pas dans le secteur mode/textile.",
+        "Votre volume est très faible (< 5 collections/an)."
+      ],
+      "threshold": "Techpacker s'impose pour marques de mode et ateliers ; pour gestion générique ou secteurs non-mode, un outil classique suffit."
+    },
+    "pros": [
+      "Dédié aux processus réels de mode et fabrication.",
+      "Collaboration fournisseurs intégrée.",
+      "Suivi de production en temps réel.",
+      "Exportation flexible (PDF, Excel) pour flux partenaires.",
+      "7 jours gratuit + 60 jours remboursable."
+    ],
+    "cons": [
+      "Spécialisé : peu utile hors mode/textile.",
+      "Tarification par utilisateur peut être élevée pour petites équipes.",
+      "Pas d'essai gratuit prolongé (7 jours seulement)."
+    ],
+    "use_cases": [
+      "Créer et versionner 50 fiches techniques pour une collection.",
+      "Coordonner qualité avec fournisseurs en temps réel.",
+      "Exporter nomenclatures pour intégration ERP."
+    ],
+    "relevant_for": ["Marques de mode", "Ateliers et fabricants", "Designers et producteurs mode", "Équipes PLM mode"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You run a fashion brand or manufacturing facility.",
+        "You create tech packs regularly.",
+        "You collaborate with external suppliers and QA.",
+        "You need end-to-end production tracking."
+      ],
+      "avoidIf": [
+        "You want a general-purpose project management tool.",
+        "You are not in fashion/textiles.",
+        "Your volume is very low (< 5 collections/year)."
+      ],
+      "threshold": "Techpacker makes sense for fashion brands and workshops; for generic management or non-fashion sectors, a classic tool works fine."
+    },
+    "pros": [
+      "Tailored to real fashion and manufacturing processes.",
+      "Integrated supplier collaboration.",
+      "Real-time production tracking.",
+      "Flexible export (PDF, Excel) for partner workflows.",
+      "7 days free + 60 days money-back."
+    ],
+    "cons": [
+      "Specialized: of limited use outside fashion/textiles.",
+      "Per-user pricing can be high for small teams.",
+      "No extended free trial (7 days only)."
+    ],
+    "use_cases": [
+      "Create and version 50 tech packs for a collection.",
+      "Coordinate quality with suppliers in real-time.",
+      "Export BOMs for ERP integration."
+    ]
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "slug": "houzz-pro",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Houzz Pro — Software for Contractors & Designers (site officiel)", "url": "https://pro.houzz.com/pro" }
+  ],
+  "facts": {
+    "what": "Suite logicielle tout-en-un pour entrepreneurs en construction et designers, combinant plans 3D, gestion de projets, suite financière et outils de marketing.",
+    "what_en": "All-in-one software suite for contractors and designers, combining 3D plans, project management, financial suite and marketing tools.",
+    "pricing_model": "Abonnement annuel avec plusieurs niveaux selon les besoins métier.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit disponible ; pas de plan gratuit permanent." },
+    "plans": [
+      { "name": "Starter", "price": "À partir de 249 $/année (opérateurs solo)" },
+      { "name": "Standard", "price": "Montants sur la page officielle" },
+      { "name": "Professional", "price": "Montants sur la page officielle" },
+      { "name": "Custom/Enterprise", "price": "Tarification personnalisée (équipes multiples)" }
+    ],
+    "key_features": [
+      "Plans 3D et visualisations de projets",
+      "Estimations et propositions automatisées",
+      "Gestion de projets avec calendriers et suivi temps",
+      "Suite financière (factures, paiements, intégration QuickBooks)",
+      "Outils marketing (sites web, campagnes email, lead gen)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes entrepreneur en bâtiment ou designer d'intérieur.",
+        "Vous avez besoin de gérer à la fois projets, finances et propositions.",
+        "Vous voulez un flux complet du devis au paiement."
+      ],
+      "avoidIf": [
+        "Vous faites surtout du design graphique web.",
+        "Vous cherchez une solution uniquement de gestion de projets."
+      ],
+      "threshold": "Houzz Pro convient aux professionnels du bâtiment/design cherchant une suite intégrée ; pour d'autres métiers, des outils génériques suffisent."
+    },
+    "pros": [
+      "Suite intégrée : plans 3D, finances, marketing au même endroit.",
+      "Essai gratuit pour tester avant investissement.",
+      "Automatisation des estimations et factures.",
+      "Plus de 3 millions de professionnels utilisateurs établis."
+    ],
+    "cons": [
+      "Tarification croît rapidement avec les fonctionnalités avancées.",
+      "Solution spécialisée, moins flexible pour autres métiers."
+    ],
+    "use_cases": [
+      "Créer des plans 3D et propositions pour des clients.",
+      "Gérer tout un projet de rénovation (budget, équipes, suivi).",
+      "Automatiser les factures et intégrer les paiements client."
+    ],
+    "relevant_for": ["Entrepreneurs bâtiment", "Designers d'intérieur", "Freelances construction"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You are a contractor or interior designer.",
+        "You need to manage projects, finances and proposals.",
+        "You want an end-to-end flow from quote to payment."
+      ],
+      "avoidIf": [
+        "You mainly do web graphic design.",
+        "You're looking for project management only."
+      ],
+      "threshold": "Houzz Pro is ideal for construction/design professionals seeking an integrated suite; other professions can use generic tools."
+    },
+    "pros": [
+      "Integrated suite: 3D plans, financials, marketing in one place.",
+      "Free trial to test before investing.",
+      "Automating estimates and invoices.",
+      "Over 3 million established professional users."
+    ],
+    "cons": [
+      "Pricing grows quickly with advanced features.",
+      "Specialized solution, less flexible for other industries."
+    ],
+    "use_cases": [
+      "Create 3D plans and proposals for clients.",
+      "Manage an entire renovation project (budget, teams, tracking).",
+      "Automate invoices and integrate client payments."
+    ]
+  }
+}

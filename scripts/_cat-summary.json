@@ -6,12 +6,6 @@
     "total": 61
   },
   {
-    "category": "communication",
-    "done": 6,
-    "todo": 53,
-    "total": 59
-  },
-  {
     "category": "finance",
     "done": 8,
     "todo": 52,
@@ -118,6 +112,12 @@
     "done": 2,
     "todo": 0,
     "total": 2
+  },
+  {
+    "category": "communication",
+    "done": 57,
+    "todo": 0,
+    "total": 57
   },
   {
     "category": "creation",

@@ -1,0 +1,97 @@
+{
+  "slug": "proofhub",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "ProofHub — pricing et plans (site officiel)", "url": "https://www.proofhub.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme collaborative de gestion de projet et d'approbation avec tarification forfaitaire (pas de frais par utilisateur), couvrant tâches, Gantt, discussions, chat, approbations de fichiers (proofing) et intégrations.",
+    "what_en": "Collaborative project management and approval platform with flat-rate pricing (no per-user fees), covering tasks, Gantt charts, discussions, chat, file approvals (proofing), and integrations.",
+    "pricing_model": "Forfait mensuel par plan (utilisateurs illimités)",
+    "free_tier": { "exists": false, "detail": "Pas de plan gratuit ; essai gratuit sur demande." },
+    "plans": [
+      { "name": "Essential", "price": "$45/mois en annuel ou $50/mois en mensuel (40 projets, 15 Go)" },
+      { "name": "Ultimate Control", "price": "$89/mois first 3 months annual then $135/mois, or $99/mois first 3 months monthly then $150/mois (projets illimités, 100 Go)" }
+    ],
+    "key_features": [
+      "Gestion des tâches et planification Gantt",
+      "Approbation de fichiers (proofing) avec annotations",
+      "Discussions et chat en temps réel",
+      "Calendrier collaboratif et partage de fichiers",
+      "Suivi du temps et rapports de ressources",
+      "Intégrations avec 100+ outils (Slack, Google, Zapier)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez des projets nécessitant approbations de fichiers.",
+        "Vous avez une équipe sans limite (la tarification est forfaitaire).",
+        "Vous cherchez un outil tout-en-un : tâches + proofing + chat.",
+        "Vous faites des itérations de design ou contenu fréquentes."
+      ],
+      "avoidIf": [
+        "Vous cherchez une solution gratuite.",
+        "Votre équipe < 3 personnes et n'a pas besoins d'approbation.",
+        "Vous préférez une interface légère et simple."
+      ],
+      "threshold": "ProofHub s'impose pour équipes créatives avec approbations ; la tarification forfaitaire récompense les grandes équipes, contrairement aux modèles par siège."
+    },
+    "pros": [
+      "Tarification forfaitaire : pas de surprise avec les utilisateurs.",
+      "Approbation de fichiers (proofing) robuste et intuitive.",
+      "Suivi du temps facturé intégré.",
+      "Utilisateurs illimités sur tous les plans.",
+      "Intégrations nombreuses et fiables.",
+      "Blanc sur blanc (white-label) possible."
+    ],
+    "cons": [
+      "Pas de plan gratuit.",
+      "Prix peut être élevé pour très petites équipes.",
+      "Interface chargée, moins épurée que concurrents.",
+      "Pas de crédits IA intégrés."
+    ],
+    "use_cases": [
+      "Itérer des créatifs (design, vidéo) avec boucle d'approbation.",
+      "Gérer un portefeuille client sans limite de sièges.",
+      "Consolider suivi temps + tâches + approbations en un outil."
+    ],
+    "relevant_for": ["Agences créatives", "Studios de design", "Équipes marketing", "PME avec équipes distribuées"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage projects requiring file approvals.",
+        "You have a large team (flat pricing rewards this).",
+        "You want an all-in-one tool: tasks + proofing + chat.",
+        "You iterate designs or content frequently."
+      ],
+      "avoidIf": [
+        "You want a free solution.",
+        "Your team is < 3 people with no approval needs.",
+        "You prefer a lightweight and simple interface."
+      ],
+      "threshold": "ProofHub makes sense for creative teams with approvals; flat-rate pricing rewards large teams, unlike per-seat models."
+    },
+    "pros": [
+      "Flat-rate pricing: no surprises with user growth.",
+      "Robust and intuitive file approval (proofing).",
+      "Built-in time tracking for billing.",
+      "Unlimited users across all plans.",
+      "Numerous and reliable integrations.",
+      "White-labeling available."
+    ],
+    "cons": [
+      "No free plan.",
+      "Price can be high for very small teams.",
+      "Loaded interface, less polished than competitors.",
+      "No built-in AI credits."
+    ],
+    "use_cases": [
+      "Iterate creatives (design, video) with approval loop.",
+      "Manage a client portfolio without user limits.",
+      "Consolidate time tracking + tasks + approvals in one tool."
+    ]
+  }
+}

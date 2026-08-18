@@ -1,0 +1,98 @@
+{
+  "slug": "taskade",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Taskade — pricing et plans (site officiel)", "url": "https://taskade.com/pricing" }
+  ],
+  "facts": {
+    "what": "Espace de travail IA collaboratif avec gestion de tâches, applis no-code intégrées et crédits d'IA mensuels, fondé sur un modèle freemium avec essai gratuit sans limite d'essai.",
+    "what_en": "Collaborative AI workspace with task management, built-in no-code apps, and monthly AI credits, based on a freemium model with free trial unlimited in scope.",
+    "pricing_model": "Freemium avec abonnement par utilisateur ou équipe",
+    "free_tier": { "exists": true, "detail": "Plan gratuit : 1 utilisateur, 3 applis, 1 agent IA, 3 automatisations IA, 250 Mo stockage, crédit unique une fois (pas mensuel)." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (limité à 1 user)" },
+      { "name": "Pro", "price": "$10/mois ou 50% de réduction en annuel (10 membres, applis illimitées)" },
+      { "name": "Business", "price": "$25/mois (membres illimités, 1 To stockage)" },
+      { "name": "Max", "price": "$100/mois (agents autonomes, 400 000 crédits/mois)" },
+      { "name": "Enterprise", "price": "$250/mois+ (contrats SLA, SCIM, BYOK)" }
+    ],
+    "key_features": [
+      "Gestion de tâches et listes collaboratives",
+      "Agents IA et automatisations",
+      "Applis no-code intégrées (Zapier, webhooks)",
+      "Crédits IA mensuels (selon plan)",
+      "500+ templates communautaires",
+      "Intégrations Slack, Google Drive"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez un espace collaboratif avec IA intégrée.",
+        "Votre équipe aime les workflows automatisés et no-code.",
+        "Vous avez besoin de stocker beaucoup de fichiers (1 To).",
+        "Vous testez des idées : applis no-code, agents IA."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'approbations de fichiers complexes.",
+        "Votre équipe préfère interface traditionnelle et simple.",
+        "Vous cherchez un outil entièrement établi et ancré (moins de risque)."
+      ],
+      "threshold": "Taskade s'impose pour équipes tech/automation curieuses ; pour approches classiques, un outil établi et simple suffit."
+    },
+    "pros": [
+      "Gratuit sans limite d'essai.",
+      "Agents IA et automatisations intégrés.",
+      "Applis no-code et webhooks inclus.",
+      "500+ templates pour démarrer vite.",
+      "Tarification flexible par besoin (Pro petit, Business illimité)."
+    ],
+    "cons": [
+      "Interface peut être confuse pour débutants.",
+      "Moins d'intégrations que Trello ou Asana.",
+      "Plan gratuit très limité (1 seul utilisateur).",
+      "Audience moins établie que les concurrents."
+    ],
+    "use_cases": [
+      "Automatiser une boucle récurrente (email → Slack → task).",
+      "Prototyper un workflow no-code avant l'étape suivante.",
+      "Collaborer sur listes de tâches avec IA générant résumés."
+    ],
+    "relevant_for": ["Équipes startup", "Makers et entrepreneurs", "Équipes automation-first", "Innovateurs produit"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want a collaborative workspace with built-in AI.",
+        "Your team loves automated workflows and no-code.",
+        "You need large file storage (1 TB).",
+        "You experiment with AI agents and no-code apps."
+      ],
+      "avoidIf": [
+        "You need complex file approvals.",
+        "Your team prefers a traditional and simple interface.",
+        "You want an entirely established tool with less risk."
+      ],
+      "threshold": "Taskade makes sense for tech-curious automation teams; for classic approaches, a simple established tool works fine."
+    },
+    "pros": [
+      "Free without time limit on trial.",
+      "AI agents and automations built-in.",
+      "No-code apps and webhooks included.",
+      "500+ templates to get started quickly.",
+      "Flexible pricing by need (Pro small, Business unlimited)."
+    ],
+    "cons": [
+      "Interface can be confusing for beginners.",
+      "Fewer integrations than Trello or Asana.",
+      "Free plan very limited (1 user only).",
+      "Less established audience than competitors."
+    ],
+    "use_cases": [
+      "Automate a recurring loop (email → Slack → task).",
+      "Prototype a no-code workflow before next step.",
+      "Collaborate on task lists with AI generating summaries."
+    ]
+  }
+}

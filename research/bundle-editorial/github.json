@@ -1,0 +1,87 @@
+{
+  "slug": "github",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "GitHub — Pricing (site officiel)", "url": "https://github.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme collaborative de gestion de code source (Git) et de développement logiciel, avec outils pour issues, pull requests, reviews et intégration continue (GitHub Actions).",
+    "what_en": "Collaborative code management platform (Git) and software development, with tools for issues, pull requests, code reviews and continuous integration (GitHub Actions).",
+    "pricing_model": "Freemium pour les dépôts publics et privés ; plans payants pour équipes et entreprises.",
+    "free_tier": { "exists": true, "detail": "Free tier offert : dépôts illimités, 2 000 minutes CI/CD/mois, Actions gratuites pour dépôts publics." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (2 000 minutes Actions/mois)" },
+      { "name": "Team", "price": "4 $/utilisateur/mois pendant 12 mois (3 000 minutes Actions/mois)" },
+      { "name": "Enterprise", "price": "À partir de 21 $/utilisateur/mois (50 000 minutes Actions/mois)" }
+    ],
+    "key_features": [
+      "Gestion de version Git complète et intégrée",
+      "GitHub Copilot pour l'assistance IA au code",
+      "Gestion de projets avec Issues et Projects",
+      "Automations CI/CD via GitHub Actions",
+      "Code review collaboratif et protections de branche"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez des logiciels et avez besoin de Git.",
+        "Votre équipe recherche une plateforme tout-en-un dev + CI/CD.",
+        "Vous voulez intégrer l'IA (Copilot) dans votre workflow."
+      ],
+      "avoidIf": [
+        "Vous cherchez une solution purement de gestion de documents.",
+        "Votre équipe est exclusivement non-technique."
+      ],
+      "threshold": "GitHub s'impose pour les équipes de développement ; les équipes non-tech préféreront une plateforme plus généraliste."
+    },
+    "pros": [
+      "Plateforme dominante et incontournable pour le code.",
+      "Intégration native des workflows dev et CI/CD.",
+      "Large écosystème d'actions et d'intégrations.",
+      "Offre gratuite généreuse pour les projets open source."
+    ],
+    "cons": [
+      "Pente d'apprentissage pour les débutants en Git.",
+      "Tarification peut monter avec l'équipe et Actions.",
+      "Interface complexe avec de nombreuses options."
+    ],
+    "use_cases": [
+      "Héberger et versionner le code source d'une application.",
+      "Mettre en place une CI/CD pipeline avec Actions.",
+      "Collaborer sur une codebase avec reviews et branches protégées."
+    ],
+    "relevant_for": ["Développeurs", "Équipes tech", "Projets open source"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You develop software and need Git.",
+        "Your team wants an all-in-one dev + CI/CD platform.",
+        "You want to integrate AI (Copilot) into your workflow."
+      ],
+      "avoidIf": [
+        "You're looking for purely document management.",
+        "Your team is exclusively non-technical."
+      ],
+      "threshold": "GitHub is essential for development teams; non-technical teams will prefer a more generalist platform."
+    },
+    "pros": [
+      "Dominant and unavoidable platform for code.",
+      "Native integration of dev and CI/CD workflows.",
+      "Large ecosystem of actions and integrations.",
+      "Generous free offering for open source projects."
+    ],
+    "cons": [
+      "Learning curve for Git beginners.",
+      "Cost can grow with team size and Actions usage.",
+      "Complex interface with many options."
+    ],
+    "use_cases": [
+      "Host and version control source code for an application.",
+      "Set up a CI/CD pipeline with Actions.",
+      "Collaborate on a codebase with reviews and protected branches."
+    ]
+  }
+}

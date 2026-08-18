@@ -1,0 +1,42 @@
+[
+  {
+    "slug": "microsoft-project",
+    "name": "Microsoft Project",
+    "url": ""
+  },
+  {
+    "slug": "plane",
+    "name": "Plane",
+    "url": "https://plane.so"
+  },
+  {
+    "slug": "productboard",
+    "name": "Productboard",
+    "url": "https://productboard.com"
+  },
+  {
+    "slug": "programa",
+    "name": "Programa",
+    "url": "https://programa.design"
+  },
+  {
+    "slug": "proofhub",
+    "name": "ProofHub",
+    "url": "https://www.proofhub.com"
+  },
+  {
+    "slug": "taskade",
+    "name": "Taskade",
+    "url": "https://taskade.com"
+  },
+  {
+    "slug": "techpacker",
+    "name": "Techpacker",
+    "url": "https://techpacker.com"
+  },
+  {
+    "slug": "trello",
+    "name": "Trello",
+    "url": "https://trello.com"
+  }
+]

@@ -1,0 +1,84 @@
+{
+  "slug": "canny",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Canny — Pricing (site officiel)", "url": "https://canny.io/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme de gestion des retours clients pilotée par IA, qui centralise les feedbacks issus de multiples canaux (Slack, Intercom, Gong) et les priorise pour guider la roadmap produit.",
+    "what_en": "AI-powered customer feedback management platform that centralizes feedback from multiple channels (Slack, Intercom, Gong) and prioritizes it to guide product roadmap.",
+    "pricing_model": "Abonnement mensuel basé sur le nombre d'utilisateurs tracés (tracked users).",
+    "free_tier": { "exists": true, "detail": "Free tier offert, sans carte de crédit requise, jusqu'à 25 utilisateurs tracés." },
+    "plans": [
+      { "name": "Free", "price": "0 $ / mois (jusqu'à 25 tracked users)" },
+      { "name": "Pro", "price": "À partir de 79 $ / mois (facturé annuellement, pour 100+ tracked users)" },
+      { "name": "Business", "price": "Tarification personnalisée (5 000+ tracked users)" }
+    ],
+    "key_features": [
+      "Capture automatique des retours clients via Autopilot IA",
+      "Intégrations avec outils produit (Jira, Asana, Linear, GitHub)",
+      "Priorisation par impact revenue et demande",
+      "Fermeture de boucle avec notification aux clients"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin de centraliser les retours clients.",
+        "Vous cherchez à prioriser la roadmap produit selon l'impact.",
+        "Vous intégrez déjà Slack, Intercom ou d'autres outils de support."
+      ],
+      "avoidIf": [
+        "Vous êtes en phase très précoce sans feedback existant.",
+        "Vous cherchez une solution strictement gratuite et illimitée."
+      ],
+      "threshold": "Canny s'impose pour les équipes produit sérieuses ; pour un usage ponctuel, les retours directs peuvent suffire."
+    },
+    "pros": [
+      "IA qui capture automatiquement les retours sans action manuelle.",
+      "Intégrations nombreuses avec l'écosystème produit.",
+      "Priorisation basée sur revenue et demande.",
+      "Fermeture de boucle pour fidéliser les clients."
+    ],
+    "cons": [
+      "Tarification peut monter vite avec le nombre d'utilisateurs.",
+      "Nécessite une intégration avec ses outils actuels."
+    ],
+    "use_cases": [
+      "Centraliser les feedbacks clients d'équipes support et commerciales.",
+      "Construire une roadmap produit basée sur la demande réelle.",
+      "Fermer la boucle avec les clients sur les changements livrés."
+    ],
+    "relevant_for": ["Product managers", "Responsables innovation", "Équipes produit"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need to centralize customer feedback.",
+        "You want to prioritize your product roadmap by impact.",
+        "You already use Slack, Intercom or other support tools."
+      ],
+      "avoidIf": [
+        "You're very early stage with minimal feedback.",
+        "You're looking for a strictly free, unlimited solution."
+      ],
+      "threshold": "Canny is essential for serious product teams; for occasional use, direct feedback gathering may suffice."
+    },
+    "pros": [
+      "AI automatically captures feedback without manual effort.",
+      "Numerous integrations with the product ecosystem.",
+      "Prioritization based on revenue and demand.",
+      "Closes the loop to increase customer loyalty."
+    ],
+    "cons": [
+      "Cost can rise quickly with user count.",
+      "Requires integration with existing tools."
+    ],
+    "use_cases": [
+      "Centralize customer feedback from support and sales teams.",
+      "Build a product roadmap driven by real user demand.",
+      "Close the loop with customers about delivered changes."
+    ]
+  }
+}

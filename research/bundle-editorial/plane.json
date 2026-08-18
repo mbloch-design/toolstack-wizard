@@ -1,0 +1,96 @@
+{
+  "slug": "plane",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Plane — pricing et plans (site officiel)", "url": "https://plane.so/pricing" }
+  ],
+  "facts": {
+    "what": "Outil de gestion de projet open source avec freemium cloud, proposant un tier gratuit pour 12 utilisateurs, des plans Pro et Business par utilisateur, et une option d'auto-hébergement complètement gratuite.",
+    "what_en": "Open-source project management tool with freemium cloud, offering a free tier for 12 users, per-seat Pro and Business plans, and a completely free self-hosted option.",
+    "pricing_model": "Freemium par utilisateur + auto-hébergement open source gratuit",
+    "free_tier": { "exists": true, "detail": "Plan gratuit pour 12 utilisateurs, avec projets, flux de travail, modules et intégrations de base ; auto-hébergement gratuit illimité." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit jusqu'à 12 utilisateurs" },
+      { "name": "Pro", "price": "$6/siège/mois (utilisateurs illimités)" },
+      { "name": "Business", "price": "$13/siège/mois (utilisateurs illimités)" },
+      { "name": "Self-hosted Open Source", "price": "Gratuit (auto-hébergement sans limite)" }
+    ],
+    "key_features": [
+      "Gestion de projets et flux de travail",
+      "Cycles et modules (sprints et fonctionnalités)",
+      "Pages et documentation collaborative",
+      "Intégrations Jira et GitHub",
+      "Crédits IA inclus par plan"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous valorisez l'open source et la transparence.",
+        "Vous avez une petite équipe (≤12 personnes) et cherchez du gratuit.",
+        "Vous voulez l'auto-hébergement sans dépendre d'un éditeur.",
+        "Vous utilisez Jira ou GitHub."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'une interface très intuitive sans courbe d'apprentissage.",
+        "Vous exigez le support commercial établi.",
+        "Vous voulez des intégrations nombreuses et testées."
+      ],
+      "threshold": "Plane excelle en freemium et auto-hébergement pour équipes tech ; pour un public non-tech ou gourmand en intégrations, un solution propriétaire établie s'impose mieux."
+    },
+    "pros": [
+      "Gratuit pour 12 utilisateurs en cloud.",
+      "Auto-hébergement open source sans limite de sièges.",
+      "Intégrations Jira et GitHub natives.",
+      "Crédits IA inclus dans tous les plans.",
+      "Communauté active et feuille de route transparente."
+    ],
+    "cons": [
+      "Interface moins intuitive que les concurrents établis.",
+      "Support limité en tier gratuit.",
+      "Écosystème d'intégrations plus petit.",
+      "Documentation en anglais principalement."
+    ],
+    "use_cases": [
+      "Gérer le backlog d'une startup tech.",
+      "Remplacer Jira pour une équipe resserrée.",
+      "Auto-héberger un outil de suivi pour la conformité."
+    ],
+    "relevant_for": ["Startups tech", "Équipes open source", "Développeurs et producteurs", "Équipes cherchant l'autonomie"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You value open source and transparency.",
+        "You have a small team (≤12 people) and want free.",
+        "You want self-hosted independence from a vendor.",
+        "You use Jira or GitHub."
+      ],
+      "avoidIf": [
+        "You need a very intuitive interface without learning curve.",
+        "You require established commercial support.",
+        "You want many tested integrations."
+      ],
+      "threshold": "Plane excels in freemium and self-hosting for tech teams; for non-technical users or heavy integration needs, an established proprietary solution works better."
+    },
+    "pros": [
+      "Free for 12 users in cloud.",
+      "Open-source self-hosted with unlimited seats.",
+      "Native Jira and GitHub integrations.",
+      "AI credits included in all plans.",
+      "Active community and transparent roadmap."
+    ],
+    "cons": [
+      "Interface less intuitive than established competitors.",
+      "Limited support in free tier.",
+      "Smaller integration ecosystem.",
+      "Documentation primarily in English."
+    ],
+    "use_cases": [
+      "Manage the backlog of a tech startup.",
+      "Replace Jira for a lean team.",
+      "Self-host a tracking tool for compliance."
+    ]
+  }
+}

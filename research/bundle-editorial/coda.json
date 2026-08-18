@@ -1,0 +1,85 @@
+{
+  "slug": "coda",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Coda — Pricing (site officiel)", "url": "https://coda.io/pricing" }
+  ],
+  "facts": {
+    "what": "Espace de travail collaboratif tout-en-un combinant documents, tableaux interactifs et applications sans code, avec intégrations vers 600+ outils et IA assistante.",
+    "what_en": "All-in-one collaborative workspace combining documents, interactive tables and no-code applications, with integrations to 600+ tools and AI assistant.",
+    "pricing_model": "Abonnement par Doc Maker (éditeurs de structure) ; éditeurs et lecteurs illimités et gratuits.",
+    "free_tier": { "exists": true, "detail": "Free tier offert sans carte de crédit, avec documents non partagés illimités et accès à Coda AI." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit" },
+      { "name": "Pro", "price": "10-12 $/Doc Maker/mois selon facturation" },
+      { "name": "Team", "price": "30-36 $/Doc Maker/mois selon facturation" },
+      { "name": "Enterprise", "price": "Tarification personnalisée" }
+    ],
+    "key_features": [
+      "Documents collaboratifs type Docs avec structure et données",
+      "Tableaux interactifs remplaçant les feuilles de calcul",
+      "Automations sans code et formulaires",
+      "Intégrations massives (Google, Slack, Figma, Jira)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez fusionner documents et données dans un seul espace.",
+        "Votre équipe cherche à réduire les feuilles de calcul.",
+        "Vous apprécier la collaboration temps réel documentée."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'une solution ultra-minimaliste.",
+        "Votre flux de travail repose sur l'export/import fréquent."
+      ],
+      "threshold": "Coda brille pour les équipes cherchant à centraliser documentation et données ; une approche classique docs+sheets conviendra autrement."
+    },
+    "pros": [
+      "Fusion docs et données dans une seule plateforme.",
+      "Collaborateurs illimités (seuls les Doc Makers payent).",
+      "IA intégrée pour des automations intelligentes.",
+      "600+ intégrations pour connecter l'écosystème existant."
+    ],
+    "cons": [
+      "Tarification peut devenir complexe avec plusieurs Doc Makers.",
+      "Courbe d'apprentissage pour les automations avancées."
+    ],
+    "use_cases": [
+      "Documenter et suivre un projet avec tableaux de suivi intégrés.",
+      "Remplacer des classeurs Excel avec calculs et automations.",
+      "Créer un hub centralisé pour une équipe produit."
+    ],
+    "relevant_for": ["Équipes produit", "Consultants", "PME"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want to merge documents and data in one space.",
+        "Your team is looking to reduce spreadsheet usage.",
+        "You value real-time documented collaboration."
+      ],
+      "avoidIf": [
+        "You need an ultra-minimal solution.",
+        "Your workflow relies on frequent export/import."
+      ],
+      "threshold": "Coda shines for teams seeking to centralize documentation and data; a classic docs+sheets approach works otherwise."
+    },
+    "pros": [
+      "Merges docs and data in one platform.",
+      "Unlimited collaborators (only Doc Makers pay).",
+      "Built-in AI for intelligent automations.",
+      "600+ integrations to connect your existing ecosystem."
+    ],
+    "cons": [
+      "Pricing can get complex with multiple Doc Makers.",
+      "Learning curve for advanced automations."
+    ],
+    "use_cases": [
+      "Document and track a project with built-in tracking tables.",
+      "Replace Excel workbooks with calculations and automations.",
+      "Create a centralized hub for a product team."
+    ]
+  }
+}
