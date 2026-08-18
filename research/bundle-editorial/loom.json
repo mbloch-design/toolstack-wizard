@@ -1,0 +1,105 @@
+{
+  "slug": "loom",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Loom Pricing (site officiel)", "url": "https://www.loom.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme d'enregistrement et partage de vidéos d'écran avec IA, permettant de créer des vidéos explicatives sans montage complexe, avec auto-transcription, auto-résumés et édition IA (Business + AI).",
+    "what_en": "Screen recording and AI-powered video sharing platform for creating explainer videos without complex editing, with auto-transcription, auto-summaries, and AI editing (Business + AI).",
+    "pricing_model": "Plans mensuels payants ou annuels (économie 17% avec facturation annuelle). Essai gratuit 14 jours sur plan Business + AI.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit : jusqu'à 25 vidéos, durée max 5 minutes, transcription basique, jusqu'à 50 membres workspace." },
+    "plans": [
+      { "name": "Starter (Free)", "price": "Gratuit (25 vidéos max, 5 min max, transcription basique)" },
+      { "name": "Business", "price": "18 $/utilisateur/mois (annuel) — vidéos illimitées, HD 4K, édition basique" },
+      { "name": "Business + AI", "price": "24 $/utilisateur/mois (annuel) — tout Business + auto-summaries, auto-chapters, filler removal" },
+      { "name": "Enterprise", "price": "Tarif personnalisé (SSO, SCIM, 99.95% SLA, dedicated support)"  }
+    ],
+    "key_features": [
+      "Enregistrement d'écran rapide et sans friction",
+      "Auto-transcription en temps réel",
+      "Auto-summaries et auto-chapters (Business + AI)",
+      "Filler word removal (Business + AI)",
+      "Click emphasis et drawing tools",
+      "Custom branding et logo removal",
+      "Engagement insights et calls-to-action",
+      "Storage illimité (Business+)",
+      "Recording length up to 6 hours",
+      "Intégrations Salesforce et outils tiers"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez beaucoup de vidéos de démonstration ou tutoriels.",
+        "Vous avez besoin d'une transcription et résumés automatisés (Business + AI).",
+        "Votre équipe enregistre des screencasts régulièrement."
+      ],
+      "avoidIf": [
+        "Vous faites du montage vidéo complexe ou créatif.",
+        "Votre besoin est occasionnel (plan gratuit ou alternatives gratuites suffisent).",
+        "Vous demandez une suite de production vidéo complète."
+      ],
+      "threshold": "Loom excelle pour les équipes créant du contenu asynchrone (démos, tutoriels, onboarding) ; pour la production vidéo créative, d'autres outils s'imposent."
+    },
+    "pros": [
+      "Plan gratuit très utilisable (jusqu'à 25 vidéos).",
+      "Enregistrement ultra-rapide sans apprentissage technique.",
+      "IA pour auto-transcription, résumés, suppression de filler words.",
+      "Intégrations natives Salesforce et Slack.",
+      "Storage illimité sur Business+ (pas de limite vidéos).",
+      "Essai 14 jours gratuit sur Business + AI."
+    ],
+    "cons": [
+      "Plan gratuit limité à 5 minutes et 25 vidéos.",
+      "Tarification par utilisateur peut augmenter vite en équipe.",
+      "Moins de features créatives qu'un Adobe Premier.",
+      "Capacités de montage avancé limitées."
+    ],
+    "use_cases": [
+      "Créer des vidéos de démonstration produit rapidement.",
+      "Onboarding asynchrone pour clients ou collaborateurs.",
+      "Tutorial et explainer videos pour documentation.",
+      "Sales enablement : enregistrements de démo de vente à partager.",
+      "Support client avec vidéos guides."
+    ],
+    "relevant_for": ["Équipes SaaS", "Créateurs de contenu éducatif", "Support client", "Sales enablement", "Formateurs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You create many demo or tutorial videos.",
+        "You need automatic transcription and summaries (Business + AI).",
+        "Your team records screencasts regularly."
+      ],
+      "avoidIf": [
+        "You do complex or creative video editing.",
+        "Your needs are occasional (free plan or free alternatives suffice).",
+        "You want a complete video production suite."
+      ],
+      "threshold": "Loom excels for teams creating asynchronous content (demos, tutorials, onboarding); for creative video production, other tools work better."
+    },
+    "pros": [
+      "Very usable free plan (up to 25 videos).",
+      "Ultra-fast recording without technical learning.",
+      "AI for auto-transcription, summaries, filler word removal.",
+      "Native Salesforce and Slack integrations.",
+      "Unlimited storage on Business+ (no video limits).",
+      "14-day free trial on Business + AI."
+    ],
+    "cons": [
+      "Free plan limited to 5 minutes and 25 videos.",
+      "Per-user pricing can escalate fast in teams.",
+      "Fewer creative features than Adobe Premier.",
+      "Advanced editing capabilities limited."
+    ],
+    "use_cases": [
+      "Create product demo videos quickly.",
+      "Async onboarding for customers or collaborators.",
+      "Tutorials and explainer videos for documentation.",
+      "Sales enablement: share sales demo recordings.",
+      "Customer support with video guides."
+    ]
+  }
+}

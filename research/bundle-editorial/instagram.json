@@ -1,0 +1,102 @@
+{
+  "slug": "instagram",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Instagram About (site officiel)", "url": "https://about.instagram.com/" }
+  ],
+  "facts": {
+    "what": "Plateforme de partage de contenus visuels (photos, vidéos, stories) orientée créateurs et marques, avec outils de monétisation optionnels (abonnements, bonus creator, Reels) pour générer des revenus.",
+    "what_en": "Visual content-sharing platform (photos, videos, stories) for creators and brands, with optional monetization tools (subscriptions, creator bonuses, Reels) to earn income.",
+    "pricing_model": "Service gratuit de base. Options de monétisation payantes : abonnements creator, Instagram Plus (subscription pour utilisateurs), Reels bonus (rémunération). Partage des revenus variant entre 50-90% selon le programme.",
+    "free_tier": { "exists": true, "detail": "Accès gratuit et illimité à la plateforme pour créer, publier, interagir. Options de monétisation optionnelles et rémunérées." },
+    "plans": [
+      { "name": "Instagram Free", "price": "Gratuit (création, publication, partage illimité)" },
+      { "name": "Instagram Plus (Subscription)", "price": "Tarifs variables selon la région (~USD 0.99-9.99/mois selon les options)" },
+      { "name": "Creator Subscriptions", "price": "Gratuit à mettre en place ; Instagram prend ~30% des revenus" },
+      { "name": "Reels Bonus Program", "price": "Rémunération variable selon engagement (Instagram prend ~45%)"  }
+    ],
+    "key_features": [
+      "Partage de photos et vidéos avec filtres et édition intégrée",
+      "Stories ephémère (24h)",
+      "Reels (vidéos courtes format TikTok)",
+      "IGTV pour les vidéos longues",
+      "Messaging privé (Direct Messages)",
+      "Instagram Shopping pour les produits intégrés",
+      "Creator Studio pour la gestion multiplateforme (Meta)",
+      "Analytics détaillés pour comptes pro/business",
+      "Abonnements creator et Reels Bonus pour monétisation"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes un créateur cherchant une plateforme pour générer des revenus via monétisation.",
+        "Vous gérez une marque et voulez atteindre une audience visuelle (mode, lifestyle, art).",
+        "Vous produisez du contenu vidéo court format (Reels) ou long format (IGTV)."
+      ],
+      "avoidIf": [
+        "Vous cherchez une plateforme de business-to-business B2B.",
+        "Vous avez besoin de contrôle absolu sur vos données et vos revenus.",
+        "Vous refusez les frais de plateforme prélevés sur la monétisation."
+      ],
+      "threshold": "Instagram excelle pour les créateurs et marques visuelles ; pour la monétisation de contenu de qualité, les frais de plateforme sont l'investissement pour l'audience massive."
+    },
+    "pros": [
+      "Plateforme gratuite avec une audience massive (2 milliards d'utilisateurs).",
+      "Options de monétisation natives (abonnements, Reels Bonus) sans appel tiers.",
+      "Outils d'analytics détaillés pour les comptes pro.",
+      "Instagram Shopping intégré pour les vendeurs.",
+      "Creator Studio pour gérer plusieurs comptes et crosspost vers Facebook/Threads."
+    ],
+    "cons": [
+      "Plateforme très concurrentielle (viralité imprévisible).",
+      "Instagram prélève une part importante des revenus de monétisation.",
+      "Modération de contenu et shadowbanning peuvent impacter reach.",
+      "Changement d'algorithme fréquent affectant la portée.",
+      "Dépendance à Meta pour toute feature nouvelle."
+    ],
+    "use_cases": [
+      "Créateurs visuels (photographes, illustrateurs, designers) monétisant via abonnements.",
+      "Influenceurs générant revenus avec Reels Bonus et sponsoring.",
+      "Marques de mode, lifestyle, beauté établissant connexion avec audience.",
+      "PME vendant produits via Instagram Shopping (intégration e-commerce)."
+    ],
+    "relevant_for": ["Créateurs de contenu", "Influenceurs", "Marques lifestyle/mode/beauté", "PME avec produits visuels"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a creator seeking a platform to earn money via monetization.",
+        "You manage a brand and want to reach a visual audience (fashion, lifestyle, art).",
+        "You produce short-form (Reels) or long-form (IGTV) video content."
+      ],
+      "avoidIf": [
+        "You're looking for a B2B platform.",
+        "You need absolute control over data and revenue.",
+        "You refuse the platform fees taken on monetization."
+      ],
+      "threshold": "Instagram excels for visual creators and brands; for monetizing quality content, platform fees are the investment for massive audience reach."
+    },
+    "pros": [
+      "Free platform with massive audience (2 billion users).",
+      "Native monetization (subscriptions, Reels Bonus) without third parties.",
+      "Detailed analytics for pro accounts.",
+      "Instagram Shopping built-in for sellers.",
+      "Creator Studio to manage multiple accounts and crosspost to Facebook/Threads."
+    ],
+    "cons": [
+      "Highly competitive platform (virality unpredictable).",
+      "Instagram takes a significant share of monetization revenue.",
+      "Content moderation and shadowbanning can impact reach.",
+      "Frequent algorithm changes affecting visibility.",
+      "Dependency on Meta for any new features."
+    ],
+    "use_cases": [
+      "Visual creators (photographers, illustrators, designers) monetizing via subscriptions.",
+      "Influencers earning with Reels Bonus and sponsorships.",
+      "Fashion, lifestyle, beauty brands connecting with audience.",
+      "SMBs selling products via Instagram Shopping (e-commerce integration)."
+    ]
+  }
+}

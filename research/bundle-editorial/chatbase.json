@@ -1,0 +1,98 @@
+{
+  "slug": "chatbase",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Chatbase Pricing (site officiel)", "url": "https://www.chatbase.co/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme de création d'agents IA personnalisés capables de fournir un support client 24/7, de qualifier des leads et de répondre aux questions fréquentes, en s'appuyant sur les données de l'entreprise.",
+    "what_en": "Platform for building custom AI agents that provide 24/7 customer support, lead qualification, and instant FAQ responses, trained on company-specific data.",
+    "pricing_model": "Modèle à crédits de messages. Plan gratuit limité à 50 crédits/mois. Plans payants commençant à 40$/mois avec crédit-based architecture. Possibilité de recharger les crédits à la demande à 40$ par 1 000 crédits.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit : 50 crédits de messages/mois, 1 membre, accès limité aux modèles, agents supprimés après 14 jours d'inactivité." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (50 crédits de messages/mois)" },
+      { "name": "Hobby", "price": "40 $/mois (700 crédits de messages/mois)" },
+      { "name": "Standard", "price": "150 $/mois (4 000 crédits de messages/mois) — plan populaire" },
+      { "name": "Pro", "price": "500 $/mois (15 000 crédits de messages/mois)" },
+      { "name": "Enterprise", "price": "Tarif personnalisé (limites élevées, facturation souple, SSO, white-label)" }
+    ],
+    "key_features": [
+      "Agents IA entraînés sur des données propriétaires",
+      "Support multilingue (95+ langues)",
+      "Intégrations avec WhatsApp, Slack, email, voix et téléphonie",
+      "Auto-entraînement des agents en continu",
+      "Intégrations avec Stripe, Zendesk, Salesforce, HubSpot",
+      "API d'accès et webhooks"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous recherchez une solution de support client entièrement automatisée.",
+        "Vous avez besoin de qualifier des leads 24/7 sans ressources humaines.",
+        "Votre entreprise gère de grands volumes de questions répétitives."
+      ],
+      "avoidIf": [
+        "Votre support client demande une expertise humaine très élevée.",
+        "Vous posez des données très sensibles et craignez la dépendance à des modèles tiers.",
+        "Vous êtes en phase de démarrage avec un budget d'exploitation très limité."
+      ],
+      "threshold": "Chatbase excelle pour automatiser les tâches de support et de qualification à grande échelle ; si la nuance humaine ou la confidentialité extrême est critique, une solution autonome s'impose."
+    },
+    "pros": [
+      "Agents IA avancés avec modèles GPT dernière génération.",
+      "Plan gratuit à titre permanent.",
+      "Intégrations nombreuses avec CRM et plateformes de communication.",
+      "Entraînement continu des agents sans intervention manuelle.",
+      "Facturation transparente basée sur les crédits."
+    ],
+    "cons": [
+      "Le plan gratuit est très limité (50 crédits/mois).",
+      "Les coûts augmentent rapidement avec le volume de messages.",
+      "Dépendance à des modèles IA tiers (OpenAI, etc.).",
+      "Configuration initiale requise pour entraîner les agents."
+    ],
+    "use_cases": [
+      "Fournir un support client 24/7 pour une boutique en ligne.",
+      "Qualifier des leads et programmer des rendez-vous automatiquement.",
+      "Répondre à un volume élevé de questions fréquentes (FAQ).",
+      "Intégrer un assistant IA sur un site web ou une application."
+    ],
+    "relevant_for": ["E-commerce", "SaaS B2B", "Startups avec ressources limitées", "Centres de contact à fort volume"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need fully automated customer support.",
+        "Lead qualification 24/7 without human resources is a priority.",
+        "Your business handles high volumes of repetitive questions."
+      ],
+      "avoidIf": [
+        "Your support requires deep human expertise.",
+        "You have very sensitive data and fear third-party AI dependency.",
+        "You're bootstrapping with an extremely tight budget."
+      ],
+      "threshold": "Chatbase excels at automating support and qualification at scale; if human nuance or extreme privacy is critical, an autonomous solution is better."
+    },
+    "pros": [
+      "Advanced AI agents with latest GPT models.",
+      "Free plan available permanently.",
+      "Numerous integrations with CRM and communication platforms.",
+      "Continuous agent training without manual intervention.",
+      "Transparent credit-based billing."
+    ],
+    "cons": [
+      "Free plan is very limited (50 credits/month).",
+      "Costs escalate quickly with message volume.",
+      "Dependence on third-party AI models (OpenAI, etc.).",
+      "Initial setup required to train agents."
+    ],
+    "use_cases": [
+      "Provide 24/7 customer support for an online store.",
+      "Automatically qualify leads and schedule appointments.",
+      "Answer high volumes of frequently asked questions.",
+      "Integrate an AI assistant into a website or app."
+    ]
+  }
+}

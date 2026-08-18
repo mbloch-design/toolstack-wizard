@@ -1,0 +1,96 @@
+{
+  "slug": "cognism",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Cognism Pricing (site officiel)", "url": "https://www.cognism.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme de prospection B2B européenne fournissant des données de contacts vérifiées, des signaux d'intention d'achat et des outils d'enrichissement de CRM pour optimiser la qualification et l'outreach commercial.",
+    "what_en": "European B2B prospecting platform providing verified contact data, buying intent signals, and CRM enrichment tools to optimize lead qualification and sales outreach.",
+    "pricing_model": "Modèle basé sur les crédits avec abonnement à siège. Un crédit = un contact révélé, réutilisable sans coûts supplémentaires sauf changement d'emploi.",
+    "free_tier": { "exists": false, "detail": "Pas de plan gratuit. Démo gratuite disponible pour évaluer la plateforme avant achat." },
+    "plans": [
+      { "name": "Standard", "price": "Montants sur la page officielle (5 sièges inclus, avec crédits pour révéler les contacts)" },
+      { "name": "Pro", "price": "Montants sur la page officielle (5 sièges inclus, data mobile haut de gamme + verification à la demande)" }
+    ],
+    "key_features": [
+      "Base de données de contacts et sociétés européens vérifiés",
+      "Numéros mobiles vérifiés pour améliorer les taux de connection",
+      "Signaux d'intention d'achat (intent data)",
+      "Verification à la demande pour les contacts prioritaires",
+      "Enrichissement de CRM à grande échelle",
+      "Modèle transparent : crédits réutilisables",
+      "Intégrations avec Salesforce, HubSpot, etc."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous ciblez principalement les entreprises européennes.",
+        "La qualité des numéros de téléphone vérifiés augmente vos taux de décrochage.",
+        "Vous utilisez déjà un CRM (Salesforce, HubSpot) que vous souhaitez enrichir."
+      ],
+      "avoidIf": [
+        "Vous cherchez une plateforme mondial couvrant aussi l'Asie et l'Amérique.",
+        "Votre prospection est léger et n'exige pas une data premium.",
+        "Vous demandez une solution gratuite ou très bon marché."
+      ],
+      "threshold": "Cognism excelle pour l'enrichissement de pipelines européens avec data vérifiée ; pour une couverture mondiale ou une prospection légère, d'autres solutions conviennent."
+    },
+    "pros": [
+      "Données européennes hautement vérifiées et complètes.",
+      "Numéros mobiles vérifiés améliorant les taux de connection.",
+      "Signaux d'intention d'achat pour prioriser.",
+      "Crédits réutilisables = tarification transparente.",
+      "Intégrations CRM native."
+    ],
+    "cons": [
+      "Pas de plan gratuit ou de trial illimité.",
+      "Couverture principalement en Europe (moins pour autre régions).",
+      "Tarification finale demande un devis (pas transparence totale).",
+      "Plus approprié pour les équipes de vente structure qu'un usage solo."
+    ],
+    "use_cases": [
+      "Enrichir une base de leads en CRM avec données vérifiées.",
+      "Identifier les signaux d'intention d'achat pour prioriser les appels.",
+      "Augmenter les taux de décrochage avec des numéros mobiles vérifiés.",
+      "Prospection B2B en Europe vers des décideurs."
+    ],
+    "relevant_for": ["Équipes commerciales B2B", "Agences spécialisées en prospection européenne", "PME cherchant de la prospection qualifiée"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You primarily target European companies.",
+        "Verified phone numbers increase your answer rates.",
+        "You use a CRM (Salesforce, HubSpot) you want to enrich."
+      ],
+      "avoidIf": [
+        "You need global coverage across Asia and Americas.",
+        "Your prospecting is light and doesn't require premium data.",
+        "You want a free or very cheap solution."
+      ],
+      "threshold": "Cognism excels at enriching European pipelines with verified data; for global coverage or light prospecting, other solutions are better."
+    },
+    "pros": [
+      "Highly verified and complete European data.",
+      "Verified mobile numbers boost answer rates.",
+      "Buying intent signals for prioritization.",
+      "Reusable credits = transparent pricing.",
+      "Native CRM integrations."
+    ],
+    "cons": [
+      "No free plan or unlimited trial.",
+      "Coverage primarily in Europe (less for other regions).",
+      "Final pricing requires a quote (not fully transparent).",
+      "Better for structured sales teams than solo use."
+    ],
+    "use_cases": [
+      "Enrich a lead base in CRM with verified data.",
+      "Identify buying intent signals to prioritize calls.",
+      "Boost answer rates with verified mobile numbers.",
+      "B2B prospecting in Europe toward decision-makers."
+    ]
+  }
+}

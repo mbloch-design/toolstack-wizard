@@ -1,0 +1,100 @@
+{
+  "slug": "krispcall",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "KrispCall Pricing (site officiel)", "url": "https://krispcall.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Plateforme de téléphonie cloud (VoIP) avec CRM intégré, offrant appels illimités, IVR, call recording et intégrations (Pipedrive, Zapier, Slack) pour petites et moyennes équipes commerciales.",
+    "what_en": "Cloud phone system (VoIP) with integrated CRM, offering unlimited calls, IVR, call recording, and integrations (Pipedrive, Zapier, Slack) for small-to-medium sales teams.",
+    "pricing_model": "Plans mensuels payants par utilisateur. Réduction annuelle disponible (sauvegarde sur la facturation annuelle vs. mensuelle).",
+    "free_tier": { "exists": false, "detail": "Pas de plan gratuit permanent. Essai gratuit probablement disponible avant achat." },
+    "plans": [
+      { "name": "Essential", "price": "15 $/utilisateur/mois (annuel) ou 19 $/mois (mensuel) — max 5 utilisateurs" },
+      { "name": "Standard", "price": "40 $/utilisateur/mois (annuel) ou 59 $/mois (mensuel) — utilisateurs illimités" },
+      { "name": "Enterprise", "price": "Tarif personnalisé (developer support, account manager, bundle calling/SMS)"  }
+    ],
+    "key_features": [
+      "Appels illimités (USA/Canada inclus)",
+      "CRM léger intégré avec gestion de pipelines",
+      "IVR (Interactive Voice Response) et call routing",
+      "Call recording et playback avec fast-forward",
+      "Number porting natif",
+      "SMS intégré",
+      "Intégrations Pipedrive, Zapier, Slack",
+      "Garantie 14 jours remboursement sur plans payants"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez une téléphonie cloud simple avec CRM léger inclus.",
+        "Vous utilisez déjà Pipedrive ou Zapier (intégrations natives).",
+        "Vous avez une petite équipe de vente (3-20 personnes)."
+      ],
+      "avoidIf": [
+        "Vous demandez un CRM très robuste (préférez Close ou Salesforce).",
+        "Vous n'avez besoin que de téléphonie sans CRM.",
+        "Votre budget est extrêmement limité."
+      ],
+      "threshold": "KrispCall excelle pour les petites équipes cherchant téléphonie + CRM léger ; pour un CRM complet ou une téléphonie ultra-basique, d'autres options s'imposent."
+    },
+    "pros": [
+      "Appels illimités inclus (USA/Canada).",
+      "CRM léger mais fonctionnel intégré.",
+      "Intégrations natives Pipedrive, Zapier, Slack.",
+      "Tarification transparente et accessible.",
+      "Garantie 14 jours remboursement sur plans payants.",
+      "IVR et call recording inclus."
+    ],
+    "cons": [
+      "Pas de plan gratuit.",
+      "CRM intégré moins riche qu'une solution spécialisée.",
+      "Plan Essential limité à 5 utilisateurs.",
+      "Support technique peut être variable."
+    ],
+    "use_cases": [
+      "PME avec petite équipe de vente cherchant téléphonie + CRM simple.",
+      "Équipes Pipedrive cherchant une téléphonie intégrée.",
+      "Agences cherchant à ajouter VoIP à leur stack Zapier.",
+      "Startups avec budget limité pour téléphonie + CRM."
+    ],
+    "relevant_for": ["Petites équipes commerciales", "Startups", "PME cherchant VoIP + CRM", "Utilisateurs Pipedrive"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want simple cloud phone with lightweight CRM included.",
+        "You already use Pipedrive or Zapier (native integrations).",
+        "You have a small sales team (3-20 people)."
+      ],
+      "avoidIf": [
+        "You need a robust CRM (prefer Close or Salesforce).",
+        "You only need phone without CRM.",
+        "Your budget is extremely tight."
+      ],
+      "threshold": "KrispCall excels for small teams wanting phone + light CRM; for a complete CRM or basic phone only, other options work better."
+    },
+    "pros": [
+      "Unlimited calls included (USA/Canada).",
+      "Lightweight but functional CRM built-in.",
+      "Native integrations with Pipedrive, Zapier, Slack.",
+      "Transparent and affordable pricing.",
+      "14-day money-back guarantee on paid plans.",
+      "IVR and call recording included."
+    ],
+    "cons": [
+      "No free plan.",
+      "Built-in CRM less rich than specialized solutions.",
+      "Essential plan limited to 5 users.",
+      "Support quality can be variable."
+    ],
+    "use_cases": [
+      "SMBs with small sales team wanting phone + simple CRM.",
+      "Pipedrive teams seeking integrated phone.",
+      "Agencies adding VoIP to their Zapier stack.",
+      "Startups with limited budget for phone + CRM."
+    ]
+  }
+}

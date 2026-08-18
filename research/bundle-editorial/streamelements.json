@@ -1,0 +1,89 @@
+{
+  "slug": "streamelements",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "StreamElements — Overlays et Widgets (site officiel)", "url": "https://streamelements.com/features/overlays" }
+  ],
+  "facts": {
+    "what": "Plateforme gratuite de widgets et overlays pour le streaming en direct sur Twitch, YouTube et Facebook : alertes, super themes, générateur d'overlay.",
+    "what_en": "Free streaming widget and overlay platform for live streaming on Twitch, YouTube, and Facebook: alerts, super themes, overlay builder.",
+    "pricing_model": "Entièrement gratuit. Monétisation via marketplace de sponsoring et commissions sur les donations.",
+    "free_tier": { "exists": true, "detail": "Tous les outils sont gratuits et illimités, sans version payante." },
+    "plans": [],
+    "key_features": [
+      "Générateur d'overlays personnalisables",
+      "Alertes pour donations/abonnements/raids",
+      "Super Themes (packages prédéfinis complets)",
+      "Écrans BRB et ending screens",
+      "Intégration Twitch, YouTube, Facebook",
+      "Widgets de chat et tipping",
+      "Support des sponsorships"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous streamez sur Twitch, YouTube ou Facebook et vous voulez des overlays professionnels.",
+        "Vous voulez des alertes personnalisées pour les donations ou abonnements.",
+        "Vous cherchez une solution gratuite sans engagement ni limites."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'une suite plus large (enregistrement, édition, multistream).",
+        "Vous cherchez une solution avec support pro ou contrats de service."
+      ],
+      "threshold": "StreamElements est le choix évident pour les overlays gratuits ; presque tous les streamers l'utilisent, peu importe le niveau."
+    },
+    "pros": [
+      "Complètement gratuit, aucune limitation ni abonnement.",
+      "Large gamme de thèmes prédéfinis (Super Themes).",
+      "Interface drag-and-drop intuitive.",
+      "Hautement personnalisable et extensible.",
+      "Marketplace de sponsorships intégrée."
+    ],
+    "cons": [
+      "Pas de support direct premium.",
+      "Dépend du bon fonctionnement de la plateforme (à la merci des changements API).",
+      "Certaines fonctionnalités avancées demandent du temps de setup."
+    ],
+    "use_cases": [
+      "Créer un overlay professionnel en quelques minutes.",
+      "Mettre en place des alertes pour les donations/abonnements.",
+      "Utiliser des écrans entre les streams (BRB, Ending).",
+      "Intégrer des widgets de chat ou de tips en live."
+    ],
+    "relevant_for": ["Streamers Twitch/YouTube", "Content creators", "Esports teams"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You stream on Twitch, YouTube, or Facebook and want professional overlays.",
+        "You want custom alerts for donations or subscriptions.",
+        "You're looking for a free solution with no commitment or limits."
+      ],
+      "avoidIf": [
+        "You need a broader suite (recording, editing, multistream).",
+        "You're looking for professional support or service contracts."
+      ],
+      "threshold": "StreamElements is the obvious choice for free overlays; nearly all streamers use it, regardless of level."
+    },
+    "pros": [
+      "Completely free with no limits or subscriptions.",
+      "Large range of preset themes (Super Themes).",
+      "Intuitive drag-and-drop interface.",
+      "Highly customizable and extensible.",
+      "Integrated sponsorship marketplace."
+    ],
+    "cons": [
+      "No premium direct support.",
+      "Dependent on platform reliability (subject to API changes).",
+      "Some advanced features require setup time."
+    ],
+    "use_cases": [
+      "Create a professional overlay in minutes.",
+      "Set up alerts for donations/subscriptions.",
+      "Use between-stream screens (BRB, Ending).",
+      "Integrate chat widgets or tips widgets live."
+    ]
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "slug": "upwork",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Upwork — Marketplace de freelancers (site officiel)", "url": "https://www.upwork.com" }
+  ],
+  "facts": {
+    "what": "Marketplace de freelancers leader pour projets court terme : devs, designers, writers, managers, etc. Facturation horaire ou forfaitaire, frais de plateforme de 0-15% (freelancers), 3-10% (clients).",
+    "what_en": "Leading freelancer marketplace for short-term projects: devs, designers, writers, managers, etc. Hourly or fixed-price billing, platform fees 0-15% (freelancers), 3-10% (clients).",
+    "pricing_model": "Gratuit à rejoindre. Frais de service déducted sur paiements ; abonnements optionnels pour features supplémentaires.",
+    "free_tier": { "exists": true, "detail": "Inscription gratuite pour freelancers et clients. Frais de service appliqués à chaque transaction." },
+    "plans": [
+      { "name": "Freelancer Basic", "price": "Gratuit (10 Connects/mois, frais de service jusqu'à 15%)" },
+      { "name": "Freelancer Plus", "price": "19,99 $ par mois (100 Connects/mois, 0% frais contrats directs)" },
+      { "name": "Client Basic", "price": "Gratuit (frais de service 3-5%)" },
+      { "name": "Client Business Plus", "price": "Montants sur la page officielle (frais de service réduits)" }
+    ],
+    "key_features": [
+      "Recherche et hiring de freelancers",
+      "Système d'offres et de propositions",
+      "Time tracking et project management",
+      "Messaging et collaboration",
+      "Verification et reviews (pour côté freelancer)",
+      "Payments sécurisés et escrow",
+      "Intégrations avec outils tiers",
+      "Availability badge et proposal insights (Plus)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez des freelancers ponctuels pour des projets courts.",
+        "Vous êtes freelancer et vous voulez une source de leads diversifiée.",
+        "Vous avez un besoin urgent et vous préférez commencer rapidement."
+      ],
+      "avoidIf": [
+        "Vous cherchez une collaboration long terme ou une embauche CDI.",
+        "Vous trouvez les frais de plateforme trop élevés côté freelance.",
+        "Vous cherchez à économiser sur les frais de transaction."
+      ],
+      "threshold": "Upwork est incontournable pour les projets ponctuels et la diversification de clientèle ; pour du long terme, une embauche directe ou une agence dédiée sera mieux."
+    },
+    "pros": [
+      "Énorme bassein de freelancers qualifiés de toutes disciplines.",
+      "Processus rapide et sécurisé (escrow, reviews).",
+      "Flexibilité sur la durée et le format (horaire, forfaitaire, retainer).",
+      "Outils de collaboration et time tracking intégrés.",
+      "Possibility de trouver du talent à bas coût dans certaines régions."
+    ],
+    "cons": [
+      "Frais de service importants, variables selon le plan.",
+      "Surcharge de spécialistes juniors et faible qualité.",
+      "Modèle de concurrence par enchère qui tire les prix vers le bas.",
+      "Besoin de vérifier soigneusement les profils et propositions.",
+      "Risque de fragmentation de projet et communication lente."
+    ],
+    "use_cases": [
+      "Trouver un développeur freelance pour un MVP ou correctif.",
+      "Recruter un designer pour un travail ponctuel.",
+      "Augmenter une équipe interne avec du soutien temporal.",
+      "Tester un freelancer avant engagement long terme."
+    ],
+    "relevant_for": ["PMEs", "Startups", "Agences", "Freelancers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need one-off freelancers for short projects.",
+        "You're a freelancer and want a diversified lead source.",
+        "You have an urgent need and prefer starting quickly."
+      ],
+      "avoidIf": [
+        "You're looking for long-term collaboration or full-time hiring.",
+        "You find the platform fees too high on the freelancer side.",
+        "You want to minimize transaction fees."
+      ],
+      "threshold": "Upwork is essential for ad-hoc projects and client diversification; for long-term, direct hiring or a dedicated agency will be better."
+    },
+    "pros": [
+      "Huge pool of qualified freelancers across all disciplines.",
+      "Fast, secure process (escrow, reviews).",
+      "Flexibility on duration and format (hourly, fixed-price, retainer).",
+      "Built-in collaboration and time tracking tools.",
+      "Possibility of finding talent at low cost in certain regions."
+    ],
+    "cons": [
+      "Significant platform fees, varying by plan.",
+      "Oversupply of junior specialists and variable quality.",
+      "Bidding competition model that drives prices down.",
+      "Need to carefully verify profiles and proposals.",
+      "Risk of project fragmentation and slow communication."
+    ],
+    "use_cases": [
+      "Find a freelance developer for an MVP or fix.",
+      "Recruit a designer for one-off work.",
+      "Augment an internal team with temporary support.",
+      "Test a freelancer before long-term engagement."
+    ]
+  }
+}

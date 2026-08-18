@@ -1,0 +1,95 @@
+{
+  "slug": "tally",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Tally — Tarification (site officiel)", "url": "https://tally.so/pricing" }
+  ],
+  "facts": {
+    "what": "Constructeur de formulaires gratuit et généreux : formulaires illimités, soumissions illimités, logique conditionnelle, paiements, uploads fichiers, signatures, webhooks, intégrations Notion/Airtable/Sheets.",
+    "what_en": "Generous free form builder: unlimited forms, unlimited submissions, conditional logic, payments, file uploads, signatures, webhooks, Notion/Airtable/Sheets integrations.",
+    "pricing_model": "Freemium : plan gratuit très complet, options Pro et Business optionnelles.",
+    "free_tier": { "exists": true, "detail": "Formulaires illimités, soumissions illimités, 99% des features incluses. Pas de limites sauf conditions équitables d'usage." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (illimité)" },
+      { "name": "Pro", "price": "29 $ par mois" },
+      { "name": "Business", "price": "89 $ par mois" }
+    ],
+    "key_features": [
+      "Formulaires illimités et soumissions illimités",
+      "Logique conditionnelle (show/hide champs)",
+      "Champs de paiement intégrés",
+      "Upload de fichiers",
+      "Signatures électroniques",
+      "Webhooks (gratuit)",
+      "Intégrations Notion, Airtable, Google Sheets",
+      "Branding personnalisé (Pro+)",
+      "Domaines custom (Pro+)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin de formulaires simples ou complexes sans engagement.",
+        "Vous voulez éviter les paiements mensuels et vous ne craignez pas les limits équitables.",
+        "Vous intégrez avec Notion, Airtable ou Google Sheets."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'une solution entièrement branding custom (Pro minimum).",
+        "Vous créez des formulaires d'inscription critique avec énorme volume."
+      ],
+      "threshold": "Tally est imbattable en freemium ; la plupart des cas d'usage ne justifient jamais la mise à niveau vers Pro."
+    },
+    "pros": [
+      "Plan gratuit vraiment généreux (formules illimitées, soumissions illimitées).",
+      "Pas de publicité ni de limites arbitraires.",
+      "Intégrations low-code (Notion, Airtable, Sheets) incluses gratuitement.",
+      "Webhooks gratuits pour automatisations custom.",
+      "Interface drag-and-drop simple et rapide."
+    ],
+    "cons": [
+      "Moins de templates pré-conçus que Typeform ou JotForm.",
+      "Branding custom et domaines custom demandent Pro.",
+      "Community-driven plutôt que support pro."
+    ],
+    "use_cases": [
+      "Créer des formulaires d'inscription ou de feedback.",
+      "Collecter des paiements ponctuels (donation, petite commande).",
+      "Automatiser l'envoi de réponses vers Notion/Airtable.",
+      "Faire des sondages ou questionnaires sans limite de participants."
+    ],
+    "relevant_for": ["Freelancers", "Petites équipes", "Nonprofits", "Creators"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need simple or complex forms with no commitment.",
+        "You want to avoid monthly payments and aren't worried about fair-use limits.",
+        "You integrate with Notion, Airtable, or Google Sheets."
+      ],
+      "avoidIf": [
+        "You need fully custom branding (Pro minimum).",
+        "You build critical signup forms with massive volume."
+      ],
+      "threshold": "Tally is unbeatable in freemium; most use cases never justify upgrading to Pro."
+    },
+    "pros": [
+      "Truly generous free plan (unlimited forms, unlimited submissions).",
+      "No ads or arbitrary limits.",
+      "Low-code integrations (Notion, Airtable, Sheets) free.",
+      "Webhooks free for custom automation.",
+      "Simple, fast drag-and-drop interface."
+    ],
+    "cons": [
+      "Fewer pre-designed templates than Typeform or JotForm.",
+      "Custom branding and domains require Pro.",
+      "Community-driven rather than pro support."
+    ],
+    "use_cases": [
+      "Create signup or feedback forms.",
+      "Collect one-off payments (donation, small purchase).",
+      "Automate sending responses to Notion/Airtable.",
+      "Run surveys or questionnaires with unlimited participants."
+    ]
+  }
+}

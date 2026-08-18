@@ -1,0 +1,90 @@
+{
+  "slug": "youtube-studio",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "YouTube Studio — Dashboard pour créateurs (site officiel)", "url": "https://studio.youtube.com" }
+  ],
+  "facts": {
+    "what": "Dashboard web et app officiel de YouTube pour gérer sa chaîne : upload vidéos, analytics en temps réel, gestion des commentaires, modération, accès à la monétisation (YouTube Partner Program) et autres créateur features.",
+    "what_en": "Official YouTube web and app dashboard to manage your channel: upload videos, real-time analytics, comment management, moderation, access to monetization (YouTube Partner Program) and other creator features.",
+    "pricing_model": "Entièrement gratuit pour tous les créateurs YouTube.",
+    "free_tier": { "exists": true, "detail": "Tous les outils sont gratuits et inclus pour les comptes de créateur YouTube." },
+    "plans": [],
+    "key_features": [
+      "Upload et gestion de vidéos",
+      "Analytics en temps réel (vues, abonnés, durée de visionnage)",
+      "Gestion et modération des commentaires",
+      "Accès à YouTube Partner Program (monétisation)",
+      "Mobile live streaming et compositing",
+      "Thumbnails et card insertion",
+      "Transcriptions automatiques et traduction",
+      "Tier access par ancienneté du créateur (Standard, Intermediate, Advanced)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez des vidéos YouTube régulièrement et vous voulez mieux comprendre vos stats.",
+        "Vous êtes eligible au YouTube Partner Program et vous voulez monétiser.",
+        "Vous gérez les commentaires et vous voulez une modération centralisée."
+      ],
+      "avoidIf": [
+        "Vous êtes un créateur très occasionnel et vous postez via l'app mobile uniquement."
+      ],
+      "threshold": "YouTube Studio est indispensable pour tout créateur YouTube sérieux ; c'est l'équivalent du studio TikTok/Twitch Studio."
+    },
+    "pros": [
+      "Complètement gratuit et très complet.",
+      "Analytics détaillées et en temps réel (beaucoup mieux que l'app mobile).",
+      "Monétisation directe via YouTube Partner Program.",
+      "Mobile live streaming intégré.",
+      "Transcriptions automatiques et traduction intégrées.",
+      "Interface intuitive et orientée créateur."
+    ],
+    "cons": [
+      "Fonctionnalités d'édition limitées (édition basique seulement).",
+      "Tier access : certaines features demandent de l'ancienneté (phone verification, etc.).",
+      "Toujours sous le contrôle de YouTube et ses politiques."
+    ],
+    "use_cases": [
+      "Charger et gérer un portfolio de vidéos YouTube.",
+      "Analyser les performances et identifier les tendances.",
+      "Modérer commentaires et gérer la communauté.",
+      "Accéder à YouTube Partner Program pour monétisation (ads, YouTube Premium)."
+    ],
+    "relevant_for": ["Créateurs de contenu YouTube", "Influencers", "Éducateurs", "Streamers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You create YouTube videos regularly and want to understand your stats better.",
+        "You're eligible for YouTube Partner Program and want to monetize.",
+        "You manage comments and want centralized moderation."
+      ],
+      "avoidIf": [
+        "You're an occasional creator and only post via mobile app."
+      ],
+      "threshold": "YouTube Studio is essential for any serious YouTube creator; it's the equivalent of TikTok Studio/Twitch Studio."
+    },
+    "pros": [
+      "Completely free and very complete.",
+      "Detailed, real-time analytics (much better than mobile app).",
+      "Direct monetization via YouTube Partner Program.",
+      "Integrated mobile live streaming.",
+      "Built-in auto-transcripts and translation.",
+      "Intuitive, creator-oriented interface."
+    ],
+    "cons": [
+      "Limited editing features (basic only).",
+      "Tier access: some features require account age (phone verification, etc.).",
+      "Always under YouTube's control and policies."
+    ],
+    "use_cases": [
+      "Upload and manage a portfolio of YouTube videos.",
+      "Analyze performance and identify trends.",
+      "Moderate comments and manage community.",
+      "Access YouTube Partner Program for monetization (ads, YouTube Premium)."
+    ]
+  }
+}

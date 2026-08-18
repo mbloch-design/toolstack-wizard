@@ -1,0 +1,94 @@
+{
+  "slug": "salesforce",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Salesforce — Tarification (site officiel)", "url": "https://www.salesforce.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Plateforme CRM d'entreprise pour la gestion des ventes, du service client et du marketing, avec modules de gestion de contrats, de portefeuille et de reporting avancé.",
+    "what_en": "Enterprise CRM platform for managing sales, customer service, and marketing, with modules for contract management, portfolio management, and advanced reporting.",
+    "pricing_model": "Abonnement par utilisateur, facturation mensuelle ou annuelle. Plusieurs éditions selon les besoins.",
+    "free_tier": { "exists": false, "detail": "Essai gratuit de 30 jours disponible. Pas de version gratuite permanente." },
+    "plans": [
+      { "name": "Starter Suite", "price": "25 $ par utilisateur/mois" },
+      { "name": "Pro Suite", "price": "165 $ par utilisateur/mois" },
+      { "name": "Enterprise", "price": "330 $ par utilisateur/mois" },
+      { "name": "Unlimited", "price": "550 $ par utilisateur/mois" }
+    ],
+    "key_features": [
+      "Gestion complète du cycle de vente",
+      "Service client et support",
+      "Marketing automation",
+      "Analytics et dashboards personnalisés",
+      "Intégrations tierces (APIs)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes une équipe de ventes structurée et vous avez besoin d'une source unique pour les leads et contrats.",
+        "Votre entreprise requiert une conformité avancée et des rapports détaillés.",
+        "Vous voulez des intégrations poussées avec d'autres systèmes d'entreprise."
+      ],
+      "avoidIf": [
+        "Vous êtes un freelance ou une petite équipe avec un budget limité.",
+        "Vous cherchez une solution légère pour des tâches ponctuelles.",
+        "Vous trouvez les tarifs ou la complexité dissuasifs."
+      ],
+      "threshold": "Salesforce s'impose pour les équipes commerciales structurées ; pour une PME, l'investissement doit être justifié par le volume de contrats et la croissance attendue."
+    },
+    "pros": [
+      "Ecosystème très vaste et mature avec des décennies de mise à jour.",
+      "Flexibilité maximale grâce aux modules et extensions.",
+      "Support professionnel et accès à des consultants certifiés.",
+      "Conformité et audit trail complets pour les secteurs réglementés."
+    ],
+    "cons": [
+      "Coûts élevés, surtout pour les petites équipes.",
+      "Courbe d'apprentissage importante ; besoin de formation.",
+      "Interface parfois lourde et non intuitive.",
+      "Contrats généralement pluriannuels avec engagement."
+    ],
+    "use_cases": [
+      "Gérer un pipeline de centaines de leads en parallèle.",
+      "Orchestrer ventes, service et marketing sous une source unique.",
+      "Piloter une agence avec des clients multiples.",
+      "Respecter des obligations de conformité sectorielles."
+    ],
+    "relevant_for": ["Équipes commerciales structurées", "Entreprises en croissance", "Cabinets de conseil"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage structured sales teams and need a single source of truth for leads and contracts.",
+        "Your business requires advanced compliance and detailed reporting.",
+        "You want deep integrations with other enterprise systems."
+      ],
+      "avoidIf": [
+        "You're a freelancer or small team with tight budgets.",
+        "You need lightweight solutions for ad-hoc tasks.",
+        "You find the price or complexity prohibitive."
+      ],
+      "threshold": "Salesforce is best for structured sales teams; for SMBs, the investment must be justified by contract volume and expected growth."
+    },
+    "pros": [
+      "Vast, mature ecosystem with decades of updates.",
+      "Maximum flexibility through modules and extensions.",
+      "Professional support and certified consultant access.",
+      "Complete compliance and audit trails for regulated industries."
+    ],
+    "cons": [
+      "High costs, especially for small teams.",
+      "Steep learning curve; training required.",
+      "Interface can be heavy and non-intuitive.",
+      "Contracts typically multi-year with commitment."
+    ],
+    "use_cases": [
+      "Manage pipelines of hundreds of leads in parallel.",
+      "Orchestrate sales, service, and marketing under one source of truth.",
+      "Run an agency with multiple clients.",
+      "Meet sector-specific compliance obligations."
+    ]
+  }
+}

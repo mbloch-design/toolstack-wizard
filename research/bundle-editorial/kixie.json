@@ -1,0 +1,98 @@
+{
+  "slug": "kixie",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Kixie PowerCall Features (site officiel)", "url": "https://www.kixie.com/features/" }
+  ],
+  "facts": {
+    "what": "Outil de prospection téléphonique (power dialer) intégré au CRM pour automatiser les appels en masse, la gestion des voicemails, et le compliance réglementaire (DNC), dédié aux équipes de vente.",
+    "what_en": "Prospecting telephone tool (power dialer) integrated in CRM to automate bulk calling, voicemail management, and regulatory compliance (DNC) for sales teams.",
+    "pricing_model": "Tarification sur devis (quote-based). Pas de tarification publique transparente disponible. Frais supplémentaires pour les appels internationaux au-delà de USA/Canada.",
+    "free_tier": { "exists": false, "detail": "Pas de plan gratuit. Essai probablement disponible sur demande auprès de l'équipe ventes." },
+    "plans": [
+      { "name": "Enterprise", "price": "Montants sur devis (appels illimités USA/Canada inclus)" }
+    ],
+    "key_features": [
+      "Power dialer avec CRM nativement intégré",
+      "Appels illimités USA/Canada inclus",
+      "Local Presence Dialing (50 000+ numéros rotations)",
+      "Voicemail drop avec messages personnalisés illimités",
+      "Compliance DNC automatique",
+      "Call recording et coaching",
+      "SMS intégré",
+      "Numéros locaux et toll-free en 65+ pays"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez une équipe de prospection téléphonique importante.",
+        "Vous faites du dialing en masse (power dialing) et cherchez l'automation.",
+        "Le compliance DNC (Do Not Call) est une priorité."
+      ],
+      "avoidIf": [
+        "Votre budget est limité (Kixie est premium).",
+        "Vous ne faites que d'occasionnels appels entrants/sortants.",
+        "Vous cherchez une solution tout-en-un CRM + téléphonie à bas coût."
+      ],
+      "threshold": "Kixie excelle pour les call centers et grandes équipes de prospection cherchant une automation d'appels massifs ; pour les besoins simples, une solution CRM classique suffit."
+    },
+    "pros": [
+      "Power dialer automation pour prospection en masse.",
+      "Local Presence Dialing avec 50 000+ numéros.",
+      "Voicemail drop illimité avec messages personnalisés.",
+      "Compliance DNC automatique.",
+      "Enregistrement d'appels et coaching intégrés.",
+      "SMS intégré nativement."
+    ],
+    "cons": [
+      "Tarification sur devis uniquement (pas de transparence).",
+      "Solution premium, coûts probablement élevés.",
+      "Appels internationaux facturés en sus (USA/Canada illimités).",
+      "Courbe d'apprentissage pour optimiser la configuration."
+    ],
+    "use_cases": [
+      "Équipes de prospection effectuant 100+ appels/jour.",
+      "Centers de contact cherchant compliance réglementaire.",
+      "Entreprises leveraging Local Presence Dialing pour meilleur taux de réponse.",
+      "Gestion de campagnes d'appels massifs avec follow-up automatisé."
+    ],
+    "relevant_for": ["Call centers", "Grandes équipes de prospection", "Agences de vente B2B", "Entreprises avec forte activité téléphonique"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You have a large prospecting phone team.",
+        "You do bulk dialing (power dialing) and need automation.",
+        "DNC (Do Not Call) compliance is a priority."
+      ],
+      "avoidIf": [
+        "Your budget is limited (Kixie is premium).",
+        "You only do occasional inbound/outbound calls.",
+        "You want an all-in-one CRM + phone at low cost."
+      ],
+      "threshold": "Kixie excels for call centers and large prospecting teams wanting bulk call automation; for simple needs, a basic CRM works."
+    },
+    "pros": [
+      "Power dialer automation for bulk prospecting.",
+      "Local Presence Dialing with 50,000+ numbers.",
+      "Unlimited voicemail drop with custom messages.",
+      "Automatic DNC compliance.",
+      "Call recording and coaching built-in.",
+      "Native SMS integration."
+    ],
+    "cons": [
+      "Quote-based pricing only (no transparency).",
+      "Premium solution, costs likely high.",
+      "International calls billed extra (USA/Canada unlimited).",
+      "Learning curve to optimize setup."
+    ],
+    "use_cases": [
+      "Prospecting teams making 100+ calls/day.",
+      "Contact centers seeking regulatory compliance.",
+      "Businesses leveraging Local Presence Dialing for better answer rates.",
+      "Managing bulk call campaigns with auto follow-up."
+    ]
+  }
+}

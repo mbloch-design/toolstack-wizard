@@ -1,0 +1,92 @@
+{
+  "slug": "capsule",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Capsule CRM Pricing (site officiel)", "url": "https://capsulecrm.com/signup/" }
+  ],
+  "facts": {
+    "what": "Système de gestion des relations clients (CRM) destiné aux petites équipes et aux freelances, avec une interface intuitive et une intégration email native. Offre des pipelines de vente, gestion des contacts et automatisations de flux de travail.",
+    "what_en": "Customer relationship management (CRM) system designed for small teams and freelancers, with an intuitive interface and native email integration. Provides sales pipelines, contact management, and workflow automations.",
+    "pricing_model": "Plan gratuit limité ; plans payants par utilisateur/mois (facturation annuelle avec réduction jusqu'à 15%). Pas de frais de configuration.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit avec jusqu'à 2 utilisateurs, 250 contacts, 5 champs personnalisés, 1 pipeline de vente. Essai 14 jours pour les plans payants (pas de carte de crédit requise)." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit avec limites (2 utilisateurs, 250 contacts)" },
+      { "name": "Starter", "price": "Montants sur la page officielle (facturation annuelle)" },
+      { "name": "Growth", "price": "Montants sur la page officielle (facturation annuelle) — plan recommandé" },
+      { "name": "Advanced", "price": "Montants sur la page officielle (facturation annuelle)" },
+      { "name": "Ultimate", "price": "Montants sur la page officielle (facturation annuelle) — support dédié" }
+    ],
+    "key_features": [
+      "Pipelines de vente et gestion des opportunités",
+      "Gestion de contacts avec champs personnalisés",
+      "Email partagé et templates d'email",
+      "Automatisations de flux de travail",
+      "Tableau de bord de performance et rapports",
+      "Intégrations avec 50+ applications tiers"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez une petite équipe ou une freelance avec une structure de vente simple.",
+        "Vous recherchez un CRM avec une courbe d'apprentissage douce.",
+        "L'intégration email native est importante pour votre flux de travail."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'une solution multilingue ou d'une localisation poussée.",
+        "Votre équipe compte plus de 100 collaborateurs.",
+        "Vous demandez un support dédié à bas coût."
+      ],
+      "threshold": "Capsule convient aux petites équipes cherchant une gestion de contacts et de pipelines sans complexité ; pour les grandes organisations ou les besoins particuliers, une plateforme plus robuste s'impose."
+    },
+    "pros": [
+      "Interface conviviale et facile à mettre en place.",
+      "Plan gratuit utilisable à titre permanent.",
+      "Email intégré nativement dans le CRM.",
+      "Automatisations de flux de travail sur tous les plans."
+    ],
+    "cons": [
+      "Les plans Ultimate demandent de contacter le support pour les tarifs.",
+      "Limites strictes sur le plan gratuit (2 utilisateurs seulement).",
+      "Moins de fonctionnalités haut de gamme qu'un Salesforce."
+    ],
+    "use_cases": [
+      "Gérer un portefeuille de clients pour une petite agence.",
+      "Automatiser le suivi des prospects dans un pipeline de vente.",
+      "Centraliser l'historique des échanges par email avec les clients."
+    ],
+    "relevant_for": ["Petites équipes de vente", "Freelances en B2B", "Startups en phase de croissance"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage a small team or are a solo freelancer with straightforward sales.",
+        "You want a CRM that's easy to adopt and doesn't require training.",
+        "Native email integration is essential for your workflow."
+      ],
+      "avoidIf": [
+        "You need advanced multi-language or localization features.",
+        "Your team exceeds 100 people.",
+        "You require enterprise support at low cost."
+      ],
+      "threshold": "Capsule is ideal for small teams seeking contact and pipeline management without complexity; for larger organizations or specialized needs, a more robust platform is better."
+    },
+    "pros": [
+      "User-friendly interface with quick setup.",
+      "Free plan available permanently.",
+      "Email built directly into the CRM.",
+      "Workflow automation on all tiers."
+    ],
+    "cons": [
+      "Ultimate plans require contacting sales for pricing.",
+      "Free plan has strict limits (2 users only).",
+      "Fewer advanced features compared to Salesforce."
+    ],
+    "use_cases": [
+      "Manage a client portfolio for a small sales agency.",
+      "Automate prospect tracking in a sales pipeline.",
+      "Centralize email communication history with customers."
+    ]
+  }
+}

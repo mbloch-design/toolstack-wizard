@@ -1,0 +1,94 @@
+{
+  "slug": "streamlabs",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Streamlabs — Tarification (site officiel)", "url": "https://streamlabs.com" }
+  ],
+  "facts": {
+    "what": "Suite de streaming tout-en-un gratuite (Desktop) + formule Ultra payante : multistreaming cloud, thèmes premium, Talk Studio Pro, Video Editor Pro, et intégration multi-plateforme (Twitch, YouTube, TikTok, Kick, Facebook).",
+    "what_en": "All-in-one streaming suite: free Desktop software + paid Ultra plan with cloud multistreaming, premium themes, Talk Studio Pro, Video Editor Pro, and multi-platform integration (Twitch, YouTube, TikTok, Kick, Facebook).",
+    "pricing_model": "Freemium : logiciel Desktop gratuit, Ultra bundle à abonnement mensuel ou annuel.",
+    "free_tier": { "exists": true, "detail": "Desktop logiciel gratuit avec thèmes limités, Cloudbot basique, 1 Collab Cam, alertes et widgets standards, page de tips basique." },
+    "plans": [
+      { "name": "Starter (Free Desktop)", "price": "Gratuit" },
+      { "name": "Ultra", "price": "27 $ par mois, ou 179-189 $ par an" }
+    ],
+    "key_features": [
+      "Desktop software gratuit pour capture et streaming",
+      "Dual Output (horizontal/vertical)",
+      "Multistreaming vers Twitch, YouTube, TikTok, Kick, Facebook, RTMP custom",
+      "Cloud multistreaming (Ultra)",
+      "Talk Studio Pro pour interviews/podcasts",
+      "Cross Clip Pro pour créer des clips courts",
+      "Video Editor Pro",
+      "Cloudbot modération",
+      "Thèmes d'overlay (limités en gratuit, premium en Ultra)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous streamez sur une seule plateforme et vous voulez une solution gratuite et simple.",
+        "Vous faites du multistreaming et vous voulez le faire depuis le cloud (Ultra).",
+        "Vous produisez du contenu court (clips, TikTok, YouTube Shorts) et vous voulez des outils pour ça."
+      ],
+      "avoidIf": [
+        "Vous avez déjà un workflow complexe et vous n'avez pas envie de migrer.",
+        "Vous cherchez une solution très légère (OBS est peut-être plus direct)."
+      ],
+      "threshold": "Streamlabs brille pour les créateurs tout-en-un ; pour une seule plateforme et budget zéro, le Desktop gratuit suffit."
+    },
+    "pros": [
+      "Desktop software gratuit et complet.",
+      "Ultra offre multistreaming cloud (avantage décisif sur concurrent).",
+      "Talk Studio intégré pour interviews et podcasts.",
+      "Cross Clip pour créer des courts rapidement.",
+      "Interface plus conviviale qu'OBS pour les débutants."
+    ],
+    "cons": [
+      "Desktop gratuit limité dans les thèmes et fonctionnalités.",
+      "Ultra n'est pas indispensable si vous streamez sur une plateforme unique.",
+      "Concurrence avec OBS (gratuit et entièrement open source)."
+    ],
+    "use_cases": [
+      "Streamer sur Twitch et YouTube simultanément.",
+      "Créer des clips YouTube Shorts ou TikToks à partir d'un stream.",
+      "Faire des entretiens ou podcasts en live (Talk Studio).",
+      "Passer du Desktop Desktop à cloud pour plus de flexibilité."
+    ],
+    "relevant_for": ["Streamers multi-plateforme", "Content creators", "Podcasters", "Esports teams"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You stream on one platform and want a free, simple solution.",
+        "You multistream and want cloud-based multistreaming (Ultra).",
+        "You produce short-form content (clips, TikTok, YouTube Shorts) and want tools for it."
+      ],
+      "avoidIf": [
+        "You already have a complex workflow and don't want to migrate.",
+        "You're looking for a very lightweight solution (OBS might be more direct)."
+      ],
+      "threshold": "Streamlabs shines for all-in-one creators; for single-platform streaming and zero budget, free Desktop is enough."
+    },
+    "pros": [
+      "Free, complete Desktop software.",
+      "Ultra offers cloud multistreaming (decisive advantage).",
+      "Integrated Talk Studio for interviews and podcasts.",
+      "Cross Clip to generate shorts quickly.",
+      "More beginner-friendly interface than OBS."
+    ],
+    "cons": [
+      "Free Desktop limited in themes and features.",
+      "Ultra is unnecessary if you stream on a single platform.",
+      "Competition from OBS (free and fully open source)."
+    ],
+    "use_cases": [
+      "Stream to Twitch and YouTube simultaneously.",
+      "Create YouTube Shorts or TikToks from a stream.",
+      "Host interviews or podcasts live (Talk Studio).",
+      "Move from Desktop to cloud for more flexibility."
+    ]
+  }
+}

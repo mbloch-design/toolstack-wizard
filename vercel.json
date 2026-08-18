@@ -109,6 +109,8 @@
     { "source": "/:lang(fr|en)/tool/otter/:path*", "destination": "/:lang/tool/otter-ai/:path*", "permanent": true },
     { "source": "/:lang(fr|en)/tool/figma-weave", "destination": "/:lang/tool/figma", "permanent": true },
     { "source": "/:lang(fr|en)/tool/figma-weave/:path*", "destination": "/:lang/tool/figma/:path*", "permanent": true },
+    { "source": "/:lang(fr|en)/tool/elgato-stream-deck", "destination": "/:lang/tool/elgato", "permanent": true },
+    { "source": "/:lang(fr|en)/tool/elgato-stream-deck/:path*", "destination": "/:lang/tool/elgato/:path*", "permanent": true },
     { "source": "/:lang(fr|en)/tool/ga4", "destination": "/:lang/tool/google-analytics", "permanent": true },
     { "source": "/:lang(fr|en)/tool/ga4/:path*", "destination": "/:lang/tool/google-analytics/:path*", "permanent": true },
     { "source": "/en/guide/loom-prix-alternatives", "destination": "/en/guide/loom-pricing-alternatives", "permanent": true },

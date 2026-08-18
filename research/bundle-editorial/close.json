@@ -1,0 +1,95 @@
+{
+  "slug": "close",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Close CRM Pricing (site officiel)", "url": "https://close.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme CRM tout-en-un spécialisée en communication commerciale, intégrant les appels téléphoniques, les emails, les SMS et un assistant IA pour la prospection et la gestion des ventes.",
+    "what_en": "All-in-one CRM platform specialized in sales communication, integrating phone calls, email, SMS, and an AI assistant for prospecting and sales management.",
+    "pricing_model": "Plans mensuels ou annuels (réduction appliquée pour l'annuel). Coûts d'utilisation supplémentaires pour les appels, les SMS et les numéros de téléphone (tarification à l'utilisation).",
+    "free_tier": { "exists": false, "detail": "Pas de plan gratuit permanent. Essai gratuit disponible avec garantie de remboursement 30 jours après achat." },
+    "plans": [
+      { "name": "Solo", "price": "9 $/utilisateur/mois (facturation annuelle) ou 19 $/mois (facturation mensuelle) — limité à 1 utilisateur" },
+      { "name": "Essentials", "price": "35 $/utilisateur/mois (facturation annuelle) ou 49 $/mois (facturation mensuelle)" },
+      { "name": "Growth", "price": "99 $/utilisateur/mois (facturation annuelle) ou 109 $/mois (facturation mensuelle)" },
+      { "name": "Scale", "price": "139 $/utilisateur/mois (facturation annuelle) ou 149 $/mois (facturation mensuelle)" }
+    ],
+    "key_features": [
+      "Appels téléphoniques illimités (US/Canada) intégrés",
+      "Email, SMS et messages intégrés nativement",
+      "Chloe — assistant IA intégré pour la prospection",
+      "Workflows d'automation",
+      "Gestion des tâches et des opportunités",
+      "Portabilité de numéros et configurations d'IVR"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez une équipe commerciale ayant besoin d'appels intégrés au CRM.",
+        "La prospection par téléphone ou SMS est une activité clé.",
+        "Vous préférez un système tout-en-un plutôt que d'empiler les outils."
+      ],
+      "avoidIf": [
+        "Votre budget n'autorise que des micro-forfaits.",
+        "Vous n'avez besoin que de la gestion des contacts basique.",
+        "Vous demandez une plateforme gratuite ou très économique."
+      ],
+      "threshold": "Close s'impose pour les équipes de vente téléphonique sophistiquées ; pour la prospection légère ou le support client, une solution plus simple suffit."
+    },
+    "pros": [
+      "Communications (appels, SMS, email) intégrées nativement.",
+      "Assistant IA pour la prospection et la gestion des ventes.",
+      "Workflows d'automation puissants.",
+      "Tarification par utilisateur plutôt que par contact.",
+      "Intégration profonde avec les outils de productivité."
+    ],
+    "cons": [
+      "Pas de plan gratuit.",
+      "Coûts d'utilisation supplémentaires pour les appels internationaux et les numéros de téléphone.",
+      "Apprentissage de l'interface peut être lent pour les débutants.",
+      "Le plan Solo est très limité (1 utilisateur uniquement)."
+    ],
+    "use_cases": [
+      "Gérer une équipe de prospecteurs effectuant des appels entrants/sortants.",
+      "Centraliser les communications (appels, SMS, email) avec les prospects.",
+      "Mettre en place des workflows de suivi automatiques après une proposition."
+    ],
+    "relevant_for": ["Équipes commerciales B2B", "Call centers", "Agences de prospection", "PME avec prospection téléphonique"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage a sales team needing built-in calling in the CRM.",
+        "Phone or SMS outreach is a core activity.",
+        "You prefer an all-in-one system rather than stacking tools."
+      ],
+      "avoidIf": [
+        "Your budget allows only micro-plans.",
+        "You need only basic contact management.",
+        "You require a free or very budget-friendly platform."
+      ],
+      "threshold": "Close is ideal for sophisticated phone sales teams; for light prospecting or customer support, a simpler solution works fine."
+    },
+    "pros": [
+      "Communications (calls, SMS, email) natively integrated.",
+      "AI assistant for prospecting and sales management.",
+      "Powerful workflow automation.",
+      "Per-user pricing rather than per-contact.",
+      "Deep integration with productivity tools."
+    ],
+    "cons": [
+      "No free plan.",
+      "Additional usage costs for international calls and phone numbers.",
+      "Interface can have a steep learning curve.",
+      "Solo plan is very limited (1 user only)."
+    ],
+    "use_cases": [
+      "Manage a team of prospectors making inbound/outbound calls.",
+      "Centralize communications (calls, SMS, email) with prospects.",
+      "Set up automatic follow-up workflows after a proposal."
+    ]
+  }
+}

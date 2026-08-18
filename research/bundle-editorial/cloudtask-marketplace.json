@@ -1,0 +1,94 @@
+{
+  "slug": "cloudtask-marketplace",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "CloudTask Marketplace (site officiel)", "url": "https://cloudtask.com/marketplace" }
+  ],
+  "facts": {
+    "what": "Plateforme de marché qui met en relation les entreprises avec des prestataires (freelances, agences) pour des tâches commerciales et de prospection, offrant des garanties de qualité et une attribution transparent de la rémunération.",
+    "what_en": "Marketplace platform connecting businesses with service providers (freelancers, agencies) for sales and outreach tasks, offering quality guarantees and transparent payment attribution.",
+    "pricing_model": "Modèle sans commissions directes sur de nombreux engagements. Tarification basée sur les résultats (par lead qualifié, par rendez-vous, par deal fermé) ou forfaitaire selon l'arrangement.",
+    "free_tier": { "exists": false, "detail": "Pas de plan gratuit. Accès gratuit pour consulter les profils des prestataires, mais les contrats demandent une rémunération." },
+    "plans": [
+      { "name": "Marketplace Access", "price": "Gratuit pour la consultation ; montants sur la page officielle pour les engagements payants" }
+    ],
+    "key_features": [
+      "Profils détaillés des prestataires avec vidéos et études de cas",
+      "Modèles de rémunération flexibles (par lead, par rendez-vous, par deal)",
+      "Portail Cloud pour les partenaires avec suivi en temps réel",
+      "Garantie de rendez-vous qualifiés",
+      "Crédits en cas de non-conformité aux critères",
+      "Support d'experts CloudTask pour l'ICP et la stratégie"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin de prospecteurs ou d'agences de vente supplémentaires rapidement.",
+        "Vous préférez payer aux résultats (par lead, rendez-vous ou deal).",
+        "La transparence dans l'attribution et le suivi des prospects est cruciale."
+      ],
+      "avoidIf": [
+        "Vous demandez une solution interne et autonome pour la prospection.",
+        "Votre budget est très limité et vous ne pouvez payer que par résultats garantis.",
+        "Vous exigez un contrôle total et une disponibilité réactive 24/7."
+      ],
+      "threshold": "CloudTask Marketplace excelle pour les compagnies cherchant des prestataires externes flexibles et paiement aux résultats ; pour une solution interne ou une automatisation, d'autres outils conviennent mieux."
+    },
+    "pros": [
+      "Pas de frais de courtage ou d'abonnement sur de nombreux engagements.",
+      "Transparence complète dans l'attribution de la rémunération.",
+      "Modèles de paiement flexibles (résultats ou forfaitaire).",
+      "Garanties de qualité et crédits en cas de non-conformité.",
+      "Support expert pour la stratégie commerciale."
+    ],
+    "cons": [
+      "Dépendance à la qualité et la disponibilité des prestataires du marché.",
+      "Nécessite un processus d'intégration avec chaque nouveau prestataire.",
+      "Moins d'automatisation qu'une plateforme logicielle interne.",
+      "Tarification finale dépend de l'arrangement avec le prestataire."
+    ],
+    "use_cases": [
+      "Louer une équipe de prospecteurs pour une campagne limitée dans le temps.",
+      "Tester une agence de vente avant un engagement à plus long terme.",
+      "Augmenter rapidement les capacités commerciales sans embauche.",
+      "Accéder à une expertise dans des marchés ou langues spécifiques."
+    ],
+    "relevant_for": ["PME cherchant de la prospection externalisée", "Startups sans équipe commerciale", "Entreprises en forte croissance"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need extra prospectors or sales agencies fast.",
+        "You prefer pay-for-results models (per lead, meeting, or deal).",
+        "Transparency in attribution and prospect tracking is critical."
+      ],
+      "avoidIf": [
+        "You want an internal, autonomous prospecting solution.",
+        "Your budget is very tight and you can only pay guaranteed results.",
+        "You demand total control and 24/7 responsiveness."
+      ],
+      "threshold": "CloudTask Marketplace excels for companies seeking flexible external providers and results-based payment; for an internal solution or automation, other tools work better."
+    },
+    "pros": [
+      "No brokerage fees or subscriptions on many engagements.",
+      "Complete transparency in payment attribution.",
+      "Flexible payment models (results or fixed fee).",
+      "Quality guarantees and credits if criteria unmet.",
+      "Expert support for sales strategy."
+    ],
+    "cons": [
+      "Dependent on marketplace provider quality and availability.",
+      "Requires onboarding with each new provider.",
+      "Less automation than an internal software platform.",
+      "Final pricing depends on provider arrangement."
+    ],
+    "use_cases": [
+      "Hire a prospecting team for a time-limited campaign.",
+      "Test a sales agency before long-term commitment.",
+      "Quickly scale sales capacity without hiring.",
+      "Access expertise in specific markets or languages."
+    ]
+  }
+}

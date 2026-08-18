@@ -1,0 +1,98 @@
+{
+  "slug": "kavkom",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Kavkom Cloud Telephony Pricing (site officiel)", "url": "https://kavkom.com/en/pricing/" }
+  ],
+  "facts": {
+    "what": "Solution de téléphonie cloud (VoIP) pour entreprises, combinant appels voix, conférences audio, messagerie instantanée et partage de documents, avec absence de contrat et facturation au prorata.",
+    "what_en": "Cloud telephony solution (VoIP) for businesses combining voice calls, audio conferencing, instant messaging, and document sharing, with no-commitment and pro-rata billing.",
+    "pricing_model": "Plans mensuels sans engagement avec facturation au prorata. Tarification par utilisateur/mois en euros. Accès aux appels illimités en France, USA et Canada selon le plan.",
+    "free_tier": { "exists": false, "detail": "Pas de plan gratuit. Essai gratuit disponible pour évaluer la plateforme avant engagement." },
+    "plans": [
+      { "name": "Starter", "price": "À partir de 10 €/utilisateur/mois (appels illimités en France seulement)" },
+      { "name": "Standard", "price": "À partir de 30 €/utilisateur/mois (appels illimités France, USA, Canada)" },
+      { "name": "Premium", "price": "À partir de 50 €/utilisateur/mois (appels illimités + features avancées)"  }
+    ],
+    "key_features": [
+      "Appels VoIP illimités (géographies variables par plan)",
+      "Conférences téléphoniques audio intégrées",
+      "Messagerie instantanée et présence",
+      "Partage de documents",
+      "Softphone pour appels depuis ordinateur",
+      "Voicemail et enregistrement d'appels",
+      "Numéros locaux et internationaux",
+      "Intégrations CRM et PBX"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin d'une solution de téléphonie cloud avec appels illimités.",
+        "Votre équipe travaille en France, USA ou Canada (couverture principale).",
+        "Vous cherchez une solution sans contrat à long terme."
+      ],
+      "avoidIf": [
+        "Votre budget est très limité.",
+        "Vous n'avez besoin que d'appels occasionnels (pas justifié).",
+        "Vous cherchez une solution au-delà de France/USA/Canada uniquement."
+      ],
+      "threshold": "Kavkom excelle pour les entreprises cherchant une téléphonie cloud sans contrat en Europe/Amérique du Nord ; pour une couverture mondiale complète, d'autres solutions s'imposent."
+    },
+    "pros": [
+      "Appels illimités sans engagement sur les principaux pays.",
+      "Facturation au prorata (payer seulement ce qu'on utilise).",
+      "Tarification transparente en euros.",
+      "Ensemble de features incluses (conférences, messaging, documents).",
+      "Pas de contrat à long terme."
+    ],
+    "cons": [
+      "Ticket d'entrée par utilisateur.",
+      "Couverture mondiale limitée (focus France/USA/Canada).",
+      "Interface moins moderne qu'un Ringover ou RingCentral.",
+      "Support technique peut être inégal selon les retours utilisateurs."
+    ],
+    "use_cases": [
+      "Remplacer une solution de téléphonie traditionnelle par du cloud VoIP.",
+      "Mettre en place des appels illimités pour équipe multi-pays (France/USA/Canada).",
+      "Organiser des conférences téléphoniques intégrées.",
+      "Centrale téléphonique virtuelle pour PME."
+    ],
+    "relevant_for": ["PME en France", "Équipes France/USA/Canada", "Entreprises cherchant VoIP sans contrat"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need cloud VoIP with unlimited calls.",
+        "Your team operates in France, USA, or Canada (main coverage).",
+        "You want a solution with no long-term contract."
+      ],
+      "avoidIf": [
+        "Your budget is very tight (minimum EUR 10/month/user).",
+        "You only need occasional calls (not justified).",
+        "You need coverage beyond France/USA/Canada."
+      ],
+      "threshold": "Kavkom excels for companies wanting cloud telephony without contract in Europe/North America; for complete global coverage, other solutions work better."
+    },
+    "pros": [
+      "Unlimited calls without commitment on main countries.",
+      "Pro-rata billing (pay only for what you use).",
+      "Transparent pricing in euros.",
+      "Rich feature set included (conferencing, messaging, documents).",
+      "No long-term contract."
+    ],
+    "cons": [
+      "Minimum EUR 10/month/user.",
+      "Global coverage limited (France/USA/Canada focus).",
+      "Interface less modern than Ringover or RingCentral.",
+      "Support quality can vary by user feedback."
+    ],
+    "use_cases": [
+      "Replace traditional telephony with cloud VoIP.",
+      "Set up unlimited calling for multi-country teams (France/USA/Canada).",
+      "Run integrated audio conferences.",
+      "Virtual phone switchboard for SMBs."
+    ]
+  }
+}

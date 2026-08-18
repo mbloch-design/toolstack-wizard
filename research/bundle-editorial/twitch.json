@@ -1,0 +1,92 @@
+{
+  "slug": "twitch",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Twitch — Plateforme de streaming (site officiel)", "url": "https://www.twitch.tv" }
+  ],
+  "facts": {
+    "what": "Plateforme de streaming en direct leader pour jeux vidéo, mais aussi IRL, esports, musique et créateurs : jeu, chat interactif, monétisation (Bits, abonnements, partenaires).",
+    "what_en": "Leading live streaming platform for video games, but also IRL, esports, music, and creators: gameplay, interactive chat, monetization (Bits, subscriptions, partners).",
+    "pricing_model": "Plateforme gratuite pour les spectateurs et streamers. Monétisation optionnelle pour les streamers (Bits, abonnements, publicités pour les partenaires).",
+    "free_tier": { "exists": true, "detail": "Créer un compte et streamer est complètement gratuit. Monétisation optionnelle via Bits, abonnements (partenaires), publicités." },
+    "plans": [],
+    "key_features": [
+      "Streaming en direct multi-bitrate",
+      "Chat interactif et modération",
+      "Bits (monnaie virtuelle donnée par viewers)",
+      "Abonnements (pour les partenaires)",
+      "Publicités (pour les partenaires)",
+      "VODs (vidéos à la demande) stockées",
+      "Intégrations tierces (bots, overlays, etc.)",
+      "Studio de streaming intégré (Twitch Studio)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous jouez en live ou vous faites de l'IRL et vous voulez une audience large.",
+        "Vous êtes un esports team ou producteur d'événement live.",
+        "Vous voulez construire une communauté autour de votre gaming ou contenu créatif."
+      ],
+      "avoidIf": [
+        "Vous ne faites que de la production vidéo pré-enregistrée (YouTube plutôt).",
+        "Vous streamez du contenu confidentiel ou corporate."
+      ],
+      "threshold": "Twitch est la plateforme incontournable pour le streaming gaming et live ; YouTube Live et autres sont des alternatives mais Twitch domine."
+    },
+    "pros": [
+      "Plateforme numéro 1 pour le gaming et le streaming live.",
+      "Communauté massive et culture de streameurs établie.",
+      "Outils de monétisation clairs (Bits, abonnements, publicités).",
+      "Chat interactif et modération intégrée.",
+      "Intégrations tierces nombreuses et mature (bots, overlays, etc.)."
+    ],
+    "cons": [
+      "Algorithme et algorithme de découverte opaque.",
+      "Concurrence intense pour les nouveaux streameurs.",
+      "Politiques de monétisation strictes (partenariat requis).",
+      "Propriété d'Amazon ; dépendance à une grande plateforme."
+    ],
+    "use_cases": [
+      "Streamer du gaming en live et construire une audience.",
+      "Participer aux tournois et événements esports.",
+      "Faire de l'IRL streaming (travel, créatif, etc.).",
+      "Monétiser sa communauté via Bits et abonnements."
+    ],
+    "relevant_for": ["Gamers", "Esports teams", "Content creators", "Streamers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You play live or do IRL and want a large audience.",
+        "You're an esports team or live event producer.",
+        "You want to build a community around your gaming or creative content."
+      ],
+      "avoidIf": [
+        "You only produce pre-recorded video content (YouTube instead).",
+        "You stream confidential or corporate content."
+      ],
+      "threshold": "Twitch is the go-to platform for gaming and live streaming; YouTube Live and others are alternatives but Twitch dominates."
+    },
+    "pros": [
+      "Number 1 platform for gaming and live streaming.",
+      "Massive community and established streamer culture.",
+      "Clear monetization tools (Bits, subscriptions, ads).",
+      "Interactive chat and built-in moderation.",
+      "Numerous and mature third-party integrations (bots, overlays, etc.)."
+    ],
+    "cons": [
+      "Algorithm and discovery algorithm opaque.",
+      "Intense competition for new streamers.",
+      "Strict monetization policies (partnership required).",
+      "Owned by Amazon; dependence on a large platform."
+    ],
+    "use_cases": [
+      "Stream gaming live and build an audience.",
+      "Participate in esports tournaments and events.",
+      "Do IRL streaming (travel, creative, etc.).",
+      "Monetize your community via Bits and subscriptions."
+    ]
+  }
+}

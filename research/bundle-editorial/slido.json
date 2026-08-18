@@ -1,0 +1,94 @@
+{
+  "slug": "slido",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Slido — Tarification (site officiel)", "url": "https://www.slido.com" }
+  ],
+  "facts": {
+    "what": "Plateforme d'engagement d'audience pour créer des sondages, Q&A, quiz et word clouds en direct lors d'événements, conférences et présentations.",
+    "what_en": "Audience engagement platform for creating live polls, Q&A, quizzes, and word clouds during events, conferences, and presentations.",
+    "pricing_model": "Freemium avec options d'abonnement annuel ou modèle forfaitaire entreprise.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit illimité jusqu'à 100 participants par événement. Core features incluses." },
+    "plans": [
+      { "name": "Basic", "price": "Gratuit jusqu'à 100 participants" },
+      { "name": "Engage", "price": "17,50 $ par mois" },
+      { "name": "Professional", "price": "75 $ par mois (annuel : environ 40 $/mois)" },
+      { "name": "Enterprise", "price": "200 $ par mois ou forfait personnalisé" }
+    ],
+    "key_features": [
+      "Sondages et votes en direct",
+      "Q&A avec modération et upvoting",
+      "Quiz interactifs",
+      "Word clouds",
+      "Intégration PowerPoint et Google Slides",
+      "Analytics et export de données",
+      "Contrôles de modération"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous animez des événements, conférences ou formations régulièrement.",
+        "Vous voulez impliquer l'audience en direct et mesurer l'engagement.",
+        "Vous avez besoin d'une intégration native avec PowerPoint ou Google Slides."
+      ],
+      "avoidIf": [
+        "Vous n'animez que des événements ponctuels ou fermés.",
+        "Vous cherchez un sondage ou formulaire pour collecter des réponses écrites longues.",
+        "Vous avez un tout petit budget pour une utilisation très ponctuelle."
+      ],
+      "threshold": "Slido brille pour les événements en direct et l'engagement collectif ; pour des retours écrits ou asynchrones, un formulaire classique suffit."
+    },
+    "pros": [
+      "Plan gratuit très généreux (100 participants, core features).",
+      "Intégration directe PowerPoint et Google Slides.",
+      "Interface intuitive et rapide à mettre en place.",
+      "Analytics en temps réel et export de données."
+    ],
+    "cons": [
+      "Les plans payants ne facturent qu'en annuel (pas de mensuel flexible).",
+      "Limité à 100 participants sur le plan gratuit.",
+      "Pas de personnalisation avancée sur les éditions inférieures."
+    ],
+    "use_cases": [
+      "Lancer des sondages en live pendant une présentation.",
+      "Modérer une session Q&A lors d'une conférence.",
+      "Évaluer la compréhension avec un quiz interactif.",
+      "Collecter des idées de la foule en temps réel."
+    ],
+    "relevant_for": ["Formateurs et conférenciers", "Organisateurs d'événements", "Équipes RH/interne"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You regularly host events, conferences, or training sessions.",
+        "You want to engage audiences in real time and measure engagement.",
+        "You need native integration with PowerPoint or Google Slides."
+      ],
+      "avoidIf": [
+        "You only host occasional or closed events.",
+        "You need a survey or form for long-form written responses.",
+        "You have a tiny budget for very occasional use."
+      ],
+      "threshold": "Slido shines for live events and collective engagement; for written feedback or async surveys, a standard form works fine."
+    },
+    "pros": [
+      "Very generous free plan (100 participants, core features).",
+      "Direct PowerPoint and Google Slides integration.",
+      "Intuitive interface and quick setup.",
+      "Real-time analytics and data export."
+    ],
+    "cons": [
+      "Paid plans are annual only (no flexible monthly).",
+      "Capped at 100 participants on free plan.",
+      "No advanced customization on lower editions."
+    ],
+    "use_cases": [
+      "Launch polls live during a presentation.",
+      "Moderate a Q&A session at a conference.",
+      "Test understanding with an interactive quiz.",
+      "Collect crowd ideas in real time."
+    ]
+  }
+}

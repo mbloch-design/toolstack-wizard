@@ -167,7 +167,7 @@ const DEPRECATED_TOOL_SLUGS = new Set([
   "magicbrief", "modo", "opusclip",
   "webxr", "topaz-video",
   "relume-ai", "pageai", "liquid-web-partner-program", "are-na", "invision", "specify", "dovetail-ai", "shield-app", "seo-mode", "ga4", "sql", "wunderlist",
-  "openai", "anthropic", "descript", "flux", "kling-ai", "magnific-ai", "otter", "figma-weave",
+  "openai", "anthropic", "descript", "flux", "kling-ai", "magnific-ai", "otter", "figma-weave", "elgato-stream-deck",
 ]);
 
 const staticToolSummaries: ToolSummary[] = (toolsIndexJson as any[]).map((t: any) => ({

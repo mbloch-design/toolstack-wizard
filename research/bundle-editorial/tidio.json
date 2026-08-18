@@ -1,0 +1,100 @@
+{
+  "slug": "tidio",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Tidio — Tarification (site officiel)", "url": "https://www.tidio.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de live chat et chatbot IA (Lyro) pour website, Facebook Messenger et SMS. Conversation-based billing avec add-ons IA et règles d'automatisation.",
+    "what_en": "Live chat and AI chatbot platform (Lyro) for website, Facebook Messenger, and SMS. Conversation-based billing with AI add-ons and automation rules.",
+    "pricing_model": "Freemium + plans payants basés sur le nombre de conversations. Add-ons IA facturés séparément.",
+    "free_tier": { "exists": true, "detail": "50 conversations/mois, 100 déclencheurs de flow/mois, 50 conversations Lyro gratuites (une fois)." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (50 conversations/mois)" },
+      { "name": "Starter", "price": "29 $ par mois (100 conversations)" },
+      { "name": "Growth", "price": "59 $ par mois (plans populaires)" },
+      { "name": "Plus", "price": "À partir de 749 $ par mois" },
+      { "name": "Lyro AI add-on", "price": "À partir de 39 $ par mois (50 conversations IA)" }
+    ],
+    "key_features": [
+      "Live chat sur website",
+      "Intégrations Facebook Messenger et SMS",
+      "Chatbot Lyro avec IA (add-on)",
+      "Automatisation et workflows",
+      "Modération et routing vers équipe",
+      "Rapports et analytics",
+      "Intégrations CRM et outils tiers",
+      "Ticketing et suivi des conversations"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez peu de conversations et cherchez une solution gratuite.",
+        "Vous vendez B2C et vous voulez gérer chat, SMS et Messenger depuis une plateforme unique.",
+        "Vous voulez un chatbot IA mais vous avez peu de volume."
+      ],
+      "avoidIf": [
+        "Vous avez un volume très élevé de conversations ; les coûts réels seront 2-3x les prix annoncés.",
+        "Vous trouver le modèle de facturation très compliqué et opaque.",
+        "Vous avez besoin d'une seule plateforme sans add-ons."
+      ],
+      "threshold": "Tidio convient aux petites équipes avec peu de volume ; dès que le volume monte, les coûts réels explosent et d'autres solutions peuvent être mieux."
+    },
+    "pros": [
+      "Plan gratuit décent pour débuter.",
+      "Lyro AI chatbot permet d'automatiser réponses fréquentes.",
+      "Multi-canal (website, Facebook, SMS) depuis une plateforme unique.",
+      "Workflow d'automatisation puissant.",
+      "Intégrations CRM complètes."
+    ],
+    "cons": [
+      "Modèle de facturation très compliqué (conversations + add-ons IA + SMS).",
+      "Coût réel pour la plupart des cas d'usage 2-3x le prix affiché.",
+      "Écart tarifaire important entre Growth et Plus, sans palier intermédiaire.",
+      "SMS et IA factorés séparément (coûts cachés)."
+    ],
+    "use_cases": [
+      "Répondre aux questions fréquentes sur le website avec un chatbot IA.",
+      "Gérer chat website + Facebook Messenger + SMS depuis une boîte unique.",
+      "Automatiser les réponses de faible complexité avec workflows.",
+      "Faire de l'escalade intelligente vers une équipe humaine au besoin."
+    ],
+    "relevant_for": ["E-commerce", "Équipes de support client", "SaaS"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You have few conversations (< 50/month) and want a free solution.",
+        "You're B2C and want to manage chat, SMS, and Messenger from one platform.",
+        "You want an AI chatbot but have low volume."
+      ],
+      "avoidIf": [
+        "You have very high conversation volume; real costs will be 2-3x listed prices.",
+        "You find the billing model too complicated and opaque.",
+        "You need one platform without add-ons."
+      ],
+      "threshold": "Tidio suits small teams with low volume; once volume grows, real costs explode and other solutions may be better."
+    },
+    "pros": [
+      "Decent free plan to get started.",
+      "Lyro AI chatbot automates frequent answers.",
+      "Multi-channel (website, Facebook, SMS) from one platform.",
+      "Powerful automation workflows.",
+      "Complete CRM integrations."
+    ],
+    "cons": [
+      "Very complicated billing model (conversations + AI add-ons + SMS).",
+      "Real cost for most use cases 2-3x listed price.",
+      "Large pricing gap between Growth and Plus, with nothing in between.",
+      "SMS and AI billed separately (hidden costs)."
+    ],
+    "use_cases": [
+      "Answer frequent questions on your website with an AI chatbot.",
+      "Manage website chat + Facebook Messenger + SMS from one inbox.",
+      "Automate low-complexity responses with workflows.",
+      "Intelligently escalate to a human team when needed."
+    ]
+  }
+}

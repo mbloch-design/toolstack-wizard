@@ -1,0 +1,101 @@
+{
+  "slug": "intercom",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Intercom Pricing (site officiel)", "url": "https://www.intercom.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme de communication client et support omnicanal avec IA (Fin AI Agent), permettant live chat, email, SMS, WhatsApp et phone intégrés pour les équipes commerciales et support.",
+    "what_en": "Omnichannel customer communication and support platform with AI (Fin AI Agent), enabling integrated live chat, email, SMS, WhatsApp, and phone for sales and support teams.",
+    "pricing_model": "Tarification par siège (seat-based) pour les plans. Plans usage-based additionnels pour Fin AI, SMS, WhatsApp, email campaigns et phone. Essai gratuit 14 jours sans CB.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit 14 jours de tous les plans (Essential, Advanced, Expert) + Fin AI Agent et Proactive Support Plus inclus dans le trial." },
+    "plans": [
+      { "name": "Essential", "price": "À partir de 29 $/siège/mois (messenger, shared inbox, ticketing, help center)" },
+      { "name": "Advanced", "price": "85 $/siège/mois (automation, multiples inboxes, 20 lite seats gratuits)" },
+      { "name": "Expert", "price": "132 $/siège/mois (SSO, HIPAA, SLA, 50 lite seats gratuits)" }
+    ],
+    "key_features": [
+      "Fin AI Agent pour automation du support et lead qualification",
+      "Live chat omnicanal (web, email, SMS, WhatsApp, phone, Messenger)",
+      "Workflow automation et routing intelligent",
+      "Copilot AI pour assistance à la rédaction",
+      "Shared inbox pour équipes de support",
+      "Ticketing et gestion de files d'attente",
+      "Help Center (base de connaissances)",
+      "Analytics détaillés et reportings",
+      "Intégrations (Salesforce, HubSpot, Stripe, Slack)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez un besoin omnicanal (chat + email + SMS + WhatsApp + phone).",
+        "L'automatisation IA (Fin) pour qualifier les leads et supporter les clients vous intéresse.",
+        "Vous cherchez une plateforme avec support SLA et HIPAA (Expert)."
+      ],
+      "avoidIf": [
+        "Votre budget est très limité.",
+        "Vous avez besoin que du live chat web sans omnicanal.",
+        "Vous refusez une tarification par siège (pas de pricing usage-based)."
+      ],
+      "threshold": "Intercom excelle pour les équipes commerciales et support cherchant IA + omnicanal ; pour les besoins simples live chat, une solution plus basique suffit."
+    },
+    "pros": [
+      "Fin AI Agent pour automatiser la qualification et le support.",
+      "Omnicanal natif : web, email, SMS, WhatsApp, phone.",
+      "Essai 14 jours gratuit sans CB pour tous les plans.",
+      "Lite seats gratuits pour réduire les coûts (20 ou 50 selon le plan).",
+      "Copilot IA pour assistance à la rédaction.",
+      "Intégrations natives (Salesforce, HubSpot, Stripe)."
+    ],
+    "cons": [
+      "Tarification par siège qui revient vite cher.",
+      "Coûts à l'usage additionnels pour les résolutions de l'agent Fin.",
+      "SMS, WhatsApp et email campaigns facturés séparément.",
+      "Moins flexible qu'une architecture pay-per-use."
+    ],
+    "use_cases": [
+      "Équipe commerciale et support utilisant multiples canaux (chat, SMS, WhatsApp, email).",
+      "Automatiser la première réponse et qualification des leads avec Fin AI.",
+      "Fournir support 24/7 avec chatbot IA + escalade humaine.",
+      "Centraliser toutes communications clients dans un seul dashboard."
+    ],
+    "relevant_for": ["SaaS B2B avec support omnicanal", "Équipes commerciales sales-driven", "PME cherchant IA + omnicanal"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need omnichannel (chat + email + SMS + WhatsApp + phone).",
+        "AI automation (Fin) for lead qualification and customer support interests you.",
+        "You want a platform with SLA and HIPAA support (Expert)."
+      ],
+      "avoidIf": [
+        "Your budget is very tight (USD 29/seat minimum).",
+        "You only need web live chat without omnichannel.",
+        "You refuse per-seat pricing (not usage-based)."
+      ],
+      "threshold": "Intercom excels for sales and support teams wanting AI + omnichannel; for simple live chat needs, a more basic solution works."
+    },
+    "pros": [
+      "Fin AI Agent automates qualification and support.",
+      "Native omnichannel: web, email, SMS, WhatsApp, phone.",
+      "14-day free trial without CC for all plans.",
+      "Free lite seats reduce costs (20 or 50 depending on plan).",
+      "Copilot AI for writing assistance.",
+      "Native integrations (Salesforce, HubSpot, Stripe)."
+    ],
+    "cons": [
+      "Per-seat pricing can be expensive (USD 29/month minimum per person).",
+      "Additional usage-based costs for Fin outcomes (USD 0.99 per resolution).",
+      "SMS, WhatsApp, and email campaigns billed separately.",
+      "Less flexible than pay-per-use architecture."
+    ],
+    "use_cases": [
+      "Sales and support teams using multiple channels (chat, SMS, WhatsApp, email).",
+      "Automate first response and lead qualification with Fin AI.",
+      "Provide 24/7 support with AI chatbot + human escalation.",
+      "Centralize all customer communications in one dashboard."
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "slug": "leadsquared",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "LeadSquared Pricing (site officiel)", "url": "https://www.leadsquared.com/sales-crm-pricing/" }
+  ],
+  "facts": {
+    "what": "Plateforme CRM et marketing automation pour les équipes commerciales, spécialisée en gestion de leads, communication contextualisée multi-canal (Email, Chat, WhatsApp, SMS, Phone) et field sales management.",
+    "what_en": "CRM and marketing automation platform for sales teams, specialized in lead management, contextualized multi-channel communication (Email, Chat, WhatsApp, SMS, Phone), and field sales management.",
+    "pricing_model": "Plans payants par utilisateur/mois (facturation annuelle). Tarification également disponible en INR pour marché indien. Modules d'add-on supplémentaires disponibles.",
+    "free_tier": { "exists": false, "detail": "Pas de plan gratuit permanent. Essai gratuit probablement disponible sur demande." },
+    "plans": [
+      { "name": "Sales Pro", "price": "40 $/utilisateur/mois (facturation annuelle) ou tarif INR équivalent" },
+      { "name": "Sales Super", "price": "60 $/utilisateur/mois (facturation annuelle) — features avancées" }
+    ],
+    "key_features": [
+      "Gestion de leads et opportunités",
+      "Communications multi-canal (Email, Chat, WhatsApp, SMS, Phone)",
+      "Field sales management pour équipes terrain",
+      "Workflows d'automation",
+      "Reporting et analytics personnalisés",
+      "API ouverte et LAPPS developer platform",
+      "Integrations CRM natives",
+      "Chiffrement de niveau bancaire",
+      "Solutions verticales (fintech, edtech, real estate, healthtech)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez une équipe commerciale avec besoins multi-canal (appels, SMS, WhatsApp).",
+        "Vous avez besoin de mobile CRM pour agents terrain.",
+        "Vous travaillez dans un secteur spécialisé (fintech, edtech, real estate)."
+      ],
+      "avoidIf": [
+        "Vous cherchez un CRM très simple pour PME léger.",
+        "Votre budget est extrêmement serré.",
+        "Vous demandez une solution marketing automation poussée (préférez HubSpot)."
+      ],
+      "threshold": "LeadSquared excelle pour les équipes commerciales avec communication multi-canal et field sales complexe ; pour les PME simples ou marketing automation, d'autres outils conviennent."
+    },
+    "pros": [
+      "Communication multi-canal nativement intégrée (Email, Chat, WhatsApp, SMS, Phone).",
+      "Mobile CRM optimisé pour équipes terrain.",
+      "Solutions verticales pré-configurées par industrie.",
+      "API ouverte et LAPPS developer platform pour custom.",
+      "Sécurité de niveau bancaire.",
+      "Pricing à partir de 40 $/utilisateur/mois."
+    ],
+    "cons": [
+      "Pas de plan gratuit.",
+      "Marketing automation moins riche qu'un HubSpot.",
+      "Interface peut être complexe pour débutants.",
+      "Support peut être variable selon la région."
+    ],
+    "use_cases": [
+      "Équipes commerciales avec besoins multi-canal (appels, SMS, WhatsApp).",
+      "Field sales management pour agents terrain.",
+      "Lead scoring et nurturing automatisé.",
+      "Solutions verticales dans fintech, edtech, real estate."
+    ],
+    "relevant_for": ["Équipes commerciales B2B", "Agences de vente", "Entreprises multi-canal", "Secteurs spécialisés (fintech, edtech)"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage a sales team with multi-channel needs (calls, SMS, WhatsApp).",
+        "You need mobile CRM for field agents.",
+        "You work in a specialized sector (fintech, edtech, real estate)."
+      ],
+      "avoidIf": [
+        "You want a simple CRM for light SMB use.",
+        "Your budget is extremely tight.",
+        "You need advanced marketing automation (prefer HubSpot)."
+      ],
+      "threshold": "LeadSquared excels for sales teams with multi-channel communication and complex field sales; for simple SMBs or marketing automation, other tools work better."
+    },
+    "pros": [
+      "Multi-channel communication natively integrated (Email, Chat, WhatsApp, SMS, Phone).",
+      "Mobile CRM optimized for field teams.",
+      "Vertical-specific solutions pre-configured by industry.",
+      "Open API and LAPPS developer platform for custom work.",
+      "Bank-level security.",
+      "Pricing starting at USD 40/user/month."
+    ],
+    "cons": [
+      "No free plan.",
+      "Marketing automation less rich than HubSpot.",
+      "Interface can be complex for beginners.",
+      "Support quality varies by region."
+    ],
+    "use_cases": [
+      "Sales teams with multi-channel needs (calls, SMS, WhatsApp).",
+      "Field sales management for agents.",
+      "Automated lead scoring and nurturing.",
+      "Vertical solutions in fintech, edtech, real estate."
+    ]
+  }
+}

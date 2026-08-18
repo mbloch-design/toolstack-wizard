@@ -1,0 +1,93 @@
+{
+  "slug": "twitch-studio",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Twitch Studio — Logiciel de streaming (site officiel)", "url": "https://www.twitch.tv/broadcast/studio" }
+  ],
+  "facts": {
+    "what": "Logiciel de streaming gratuit créé par Twitch pour les débutants : interface simple, onboarding guidé, intégration Twitch native (chat, alertes, scènes), idéal pour débuter sans complexité.",
+    "what_en": "Free streaming software created by Twitch for beginners: simple interface, guided onboarding, native Twitch integration (chat, alerts, scenes), ideal for starting without complexity.",
+    "pricing_model": "Entièrement gratuit.",
+    "free_tier": { "exists": true, "detail": "Logiciel complet et gratuit, aucun abonnement ou limite." },
+    "plans": [],
+    "key_features": [
+      "Interface simple et intuitive",
+      "Onboarding guidé pour configurer audio, caméra, overlays",
+      "Intégration native Twitch (chat, alertes, gestion du stream)",
+      "Gestion des scènes et transitions",
+      "Overlays de base inclus",
+      "Streaming 1080p / 60 fps",
+      "Peu d'options avancées (volontairement)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous débutez en streaming et vous voulez une solution simple sans courbe d'apprentissage.",
+        "Vous streamez uniquement sur Twitch et vous voulez une intégration native.",
+        "Vous trouvez OBS trop complexe ou intimidant."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'options avancées (multicam, filtres poussés, etc.).",
+        "Vous faites du multistreaming (YouTube, TikTok, etc.).",
+        "Vous voulez un contrôle granulaire sur chaque paramètre."
+      ],
+      "threshold": "Twitch Studio est parfait pour débuter ; dès que vous voulez plus de contrôle, basculez vers OBS (gratuit et beaucoup plus puissant)."
+    },
+    "pros": [
+      "Complètement gratuit sans limites.",
+      "Onboarding guidé très convivial pour les débutants.",
+      "Intégration Twitch native (chat en direct dans le logiciel, alertes, etc.).",
+      "Interface claire et peu intimidante.",
+      "Configuration rapide (minutes, pas heures)."
+    ],
+    "cons": [
+      "Très limité en options avancées (volontairement).",
+      "Pas de multistreaming.",
+      "Peu de personnalisation d'overlays.",
+      "Concurrence directe avec OBS qui est gratuit, open source et beaucoup plus puissant."
+    ],
+    "use_cases": [
+      "Débuter en streaming sans barrière technique.",
+      "Streamer du gaming casual sur Twitch.",
+      "Faire une première expérience avec chat en direct.",
+      "Éviter la complexité d'OBS pour un setup très simple."
+    ],
+    "relevant_for": ["Nouveaux streamers", "Gamers casuals", "Débutants en live streaming"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're starting streaming and want a simple solution without a learning curve.",
+        "You stream only to Twitch and want native integration.",
+        "You find OBS too complex or intimidating."
+      ],
+      "avoidIf": [
+        "You need advanced options (multicam, advanced filters, etc.).",
+        "You multistream (YouTube, TikTok, etc.).",
+        "You want granular control over every parameter."
+      ],
+      "threshold": "Twitch Studio is perfect to get started; once you want more control, switch to OBS (free and much more powerful)."
+    },
+    "pros": [
+      "Completely free with no limits.",
+      "Very beginner-friendly guided onboarding.",
+      "Native Twitch integration (live chat in the software, alerts, etc.).",
+      "Clear, non-intimidating interface.",
+      "Quick setup (minutes, not hours)."
+    ],
+    "cons": [
+      "Very limited in advanced options (intentionally).",
+      "No multistreaming.",
+      "Little overlay customization.",
+      "Direct competition from OBS which is free, open source, and much more powerful."
+    ],
+    "use_cases": [
+      "Start streaming without technical barriers.",
+      "Stream casual gaming to Twitch.",
+      "Get a first taste of live chat.",
+      "Avoid OBS complexity for a very simple setup."
+    ]
+  }
+}

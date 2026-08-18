@@ -1,0 +1,99 @@
+{
+  "slug": "cossistant",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Cossistant Pricing (site officiel)", "url": "https://cossistant.com/pricing" }
+  ],
+  "facts": {
+    "what": "Framework open source pour le support client qui allie assistance humaine et IA dans une React app, avec capacités d'intégration d'outils tiers (Linear, Stripe, Cal.com) et gestion des actions personnalisées.",
+    "what_en": "Open-source customer support framework combining human and AI help in a React app, with third-party tool integration (Linear, Stripe, Cal.com) and custom actions.",
+    "pricing_model": "Plans gratuits et payants. Plan gratuit permanent à 0$/mois. Plans payants à partir de 20$/mois (actuellement en promotion réduite de 33% à 56%).",
+    "free_tier": { "exists": true, "detail": "Plan gratuit : 20 conversations, 200 messages, 25 contacts sur 30 jours glissants, 50 crédits IA/mois, notifications email et partage de fichiers." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (20 conversations, 200 messages, 25 contacts)" },
+      { "name": "Hobby", "price": "20 $/mois (normalement 30 $, actuellement 33% de remise) — conversations et messages illimités, 2 000 contacts, 2 membres" },
+      { "name": "Pro", "price": "40 $/mois (normalement 90 $, actuellement 56% de remise) — conversations/messages illimités, 6 000 contacts, 4 sièges" }
+    ],
+    "key_features": [
+      "Framework open source pour intégration directe en React",
+      "Support IA et humain combinés dans une interface unique",
+      "Intégrations natives : Linear, Stripe, Cal.com",
+      "Actions personnalisées via APIs",
+      "Métrisation des usages IA (par modèle, outils, volume)",
+      "Gestion d'équipe et permissions",
+      "Auto-build FAQs à partir de docs et conversations"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez un support client open source à intégrer dans votre React app.",
+        "Vous voulez combiner efficacité IA et toucher humain pour le support.",
+        "L'intégration d'outils (Linear, Stripe, etc.) enrichit votre flux de travail."
+      ],
+      "avoidIf": [
+        "Vous préférez une solution entièrement hébergée et SaaS prête à l'emploi.",
+        "Vous n'avez pas de compétences techniques pour l'intégration en React.",
+        "Votre équipe support ne demande pas d'automatisation IA."
+      ],
+      "threshold": "Cossistant excelle pour les équipes techniques cherchant un support hybrid open source ; pour un setup sans code ou complètement externalisé, un SaaS traditionnel convient."
+    },
+    "pros": [
+      "Open source : contrôle total du code et des données.",
+      "Plan gratuit permanent avec fonctionnalités réelles.",
+      "Combinaison IA + humain réduisant les coûts d'opération.",
+      "Intégrations tiers natives pour un workflow riche.",
+      "Auto-construction de FAQs depuis docs et conversations.",
+      "Pricing actuellement très avantageux (promo limitée)."
+    ],
+    "cons": [
+      "Requiert une équipe technique pour l'intégration en React.",
+      "Moins de templates pré-construits qu'un Intercom traditionnel.",
+      "Support limité comparé à des SaaS établis.",
+      "Auto-construction FAQ peut être imprécise sans formation."
+    ],
+    "use_cases": [
+      "Intégrer un assistant support dans une app React.",
+      "Automatiser les FAQs tout en gardant l'interaction humaine.",
+      "Connecter le support client à un CRM ou système de facturation (Stripe).",
+      "Réduire coûts d'opération support avec IA sans compromis humain."
+    ],
+    "relevant_for": ["Startups tech avec compétences React", "Équipes support dépendant de nombreux outils", "Entreprises cherchant open source + IA"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want an open-source customer support framework for your React app.",
+        "Combining AI efficiency and human touch matters for support.",
+        "Tool integrations (Linear, Stripe) enrich your workflow."
+      ],
+      "avoidIf": [
+        "You prefer a fully hosted, out-of-the-box SaaS.",
+        "You lack technical skills for React integration.",
+        "Your support team doesn't need AI automation."
+      ],
+      "threshold": "Cossistant excels for technical teams wanting open-source hybrid support; for no-code or fully outsourced, a traditional SaaS works better."
+    },
+    "pros": [
+      "Open source: full control over code and data.",
+      "Free plan permanently available with real features.",
+      "AI + human combo reducing operation costs.",
+      "Native third-party integrations for rich workflow.",
+      "Auto-builds FAQs from docs and conversations.",
+      "Pricing currently very attractive (limited promo)."
+    ],
+    "cons": [
+      "Requires technical team for React integration.",
+      "Fewer pre-built templates than traditional Intercom.",
+      "Limited support vs. established SaaS.",
+      "FAQ auto-building can be imprecise without training."
+    ],
+    "use_cases": [
+      "Embed a support assistant in a React app.",
+      "Automate FAQs while keeping human interaction.",
+      "Connect customer support to a CRM or billing system (Stripe).",
+      "Reduce support costs with AI without human compromise."
+    ]
+  }
+}

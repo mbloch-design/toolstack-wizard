@@ -1,0 +1,100 @@
+{
+  "slug": "eventbrite",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Eventbrite Pricing (site officiel)", "url": "https://www.eventbrite.com/organizer/pricing/" }
+  ],
+  "facts": {
+    "what": "Plateforme de création et gestion d'événements (conférences, concerts, webinaires) avec outils de billetterie, promotion et analytics intégrés pour les organisateurs de toutes tailles.",
+    "what_en": "Event creation and management platform (conferences, concerts, webinars) with integrated ticketing, promotion, and analytics tools for organizers of all sizes.",
+    "pricing_model": "Gratuit pour les événements avec billets gratuits. Pour les événements payants, frais de plateforme (service fee + payment processing fee) à ~3.7% + 1.79$ par billet, payés par les participants ou absorbés par l'organisateur.",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit : créer, promouvoir et vendre des billets pour événements gratuits ou payants. Pas de frais de plateforme sur les événements gratuits." },
+    "plans": [
+      { "name": "Free (Basic)", "price": "Gratuit pour tous les événements" },
+      { "name": "Eventbrite Pro", "price": "À partir de 15 $/mois (email marketing, jusqu'à 10 000 emails/jour)" },
+      { "name": "Eventbrite Plus", "price": "Tarifs personnalisés pour les organisations pro"  }
+    ],
+    "key_features": [
+      "Création d'événements avec formulaires personnalisés",
+      "Billetterie avec types de billets multiples (early bird, tiered, reserved seating)",
+      "Promotion sur la marketplace Eventbrite (90 millions de personnes)",
+      "Campagnes email marketing intégrées",
+      "Intégration publicités Google/Meta/TikTok",
+      "Check-in mobile et gestion des participants",
+      "Analytics et rapports d'événements",
+      "Codes promo et waitlists"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous organisez des événements et cherchez une solution de billetterie tout-en-un.",
+        "Vous voulez accéder à une audience prête à l'emploi via la marketplace Eventbrite.",
+        "Vos événements sont principalement basés sur les billets payants avec promotion."
+      ],
+      "avoidIf": [
+        "Vous avez un besoin très spécialisé (vente d'accès physique à fort volume, logistics complexe).",
+        "Vous refusez les frais de plateforme, non négociables.",
+        "Votre budget promotion dépend d'une API ouverte intégrable (Eventbrite est cloisonné)."
+      ],
+      "threshold": "Eventbrite excelle pour les organisateurs cherchant une plateforme tout-en-un avec audience intégrée ; pour les événements très spécialisés ou les besoins logistiques poussés, une solution métier s'impose."
+    },
+    "pros": [
+      "Entièrement gratuit pour tester et créer des événements.",
+      "Marketplace Eventbrite fournit une audience de 90 millions.",
+      "Email marketing inclus avec Eventbrite Pro.",
+      "Intégration publicités Meta/Google/TikTok pour promouvoir.",
+      "Check-in mobile native pour accueil fluide.",
+      "Frais transparents et calculables d'avance."
+    ],
+    "cons": [
+      "Frais de plateforme obligatoires sur les billets payants.",
+      "L'offre Eventbrite Pro s'ajoute en coût supplémentaire.",
+      "Moins de flexibilité sur la logistique ou les workflows custom.",
+      "La marketplace peut surcharger les événements boutique."
+    ],
+    "use_cases": [
+      "Organiser une conférence professionnelle avec billetterie tiered.",
+      "Lancer une série de webinaires avec inscription gratuite mais segmentée.",
+      "Créer un événement communautaire et promouvoir via marketplace.",
+      "Gérer les entrées et check-in sur un événement grand public."
+    ],
+    "relevant_for": ["Organisateurs d'événements", "PME/agences événementielles", "Conférenciers et formateurs", "Associations et communautés"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You organize events and want an all-in-one ticketing solution.",
+        "Access to Eventbrite's ready-made audience (90M people) matters.",
+        "Your events are primarily ticket-based with paid attendance."
+      ],
+      "avoidIf": [
+        "You have a very specialized need (high-volume physical access, complex logistics).",
+        "You refuse platform fees, which are non-negotiable.",
+        "Your promotion budget depends on an open API (Eventbrite is closed)."
+      ],
+      "threshold": "Eventbrite excels for organizers wanting an all-in-one platform with integrated audience; for highly specialized events or complex logistics, a vertical solution works better."
+    },
+    "pros": [
+      "Completely free to test and create events.",
+      "Eventbrite marketplace provides audience of 90 million.",
+      "Email marketing included with Eventbrite Pro.",
+      "Built-in Meta/Google/TikTok ad integration for promotion.",
+      "Native mobile check-in for smooth entry.",
+      "Transparent and calculable fees."
+    ],
+    "cons": [
+      "Platform fees are mandatory on paid tickets.",
+      "Eventbrite Pro adds a separate subscription cost.",
+      "Less flexibility for logistics or custom workflows.",
+      "Marketplace can overwhelm boutique events."
+    ],
+    "use_cases": [
+      "Organize a professional conference with tiered ticketing.",
+      "Launch a webinar series with free but segmented signup.",
+      "Create a community event and promote via marketplace.",
+      "Manage entry and check-in at a large public event."
+    ]
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "slug": "crisp",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Crisp Pricing (site officiel)", "url": "https://crisp.chat/en/pricing/" }
+  ],
+  "facts": {
+    "what": "Plateforme de communication client et support unifiée combinant live chat, email, CRM, chatbot IA et intégrations omnicanal (WhatsApp, Instagram, SMS, Messenger) pour les PME.",
+    "what_en": "Unified customer communication and support platform combining live chat, email, CRM, AI chatbot, and omnichannel integrations (WhatsApp, Instagram, SMS, Messenger) for SMBs.",
+    "pricing_model": "Tarification forfaitaire par espace de travail (workspace), indépendante du volume de conversations. Plans gratuit et payants, plus agents supplémentaires à 10€/mois.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit permanent : 2 sièges, live chat web, shared inbox, applications mobiles, sans limite de conversations." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (2 sièges, live chat web, shared inbox, apps mobiles)" },
+      { "name": "Mini", "price": "45 €/mois par workspace (4 sièges inclus, email inbox, environ 5 € en crédits IA/mois)" },
+      { "name": "Essentials", "price": "95 €/mois par workspace (10 sièges, omnicanal WhatsApp/Instagram/SMS, environ 25 € crédits IA/mois)" },
+      { "name": "Plus", "price": "295 €/mois par workspace (20+ sièges, environ 75 € crédits IA/mois, white label, 100+ intégrations)" },
+      { "name": "Enterprise", "price": "Tarif personnalisé (onboarding dédié, SLA personnalisée, features sur demande)" }
+    ],
+    "key_features": [
+      "Live chat widget pour web, Windows, macOS, Android, iOS",
+      "Shared inbox pour email, Messenger, WhatsApp, Instagram",
+      "Chatbot IA avec entraînement personnalisé",
+      "CRM intégré avec historique client",
+      "Knowledge base et base de connaissances",
+      "Automations et workflows",
+      "Tarification à siège inclus (pas de surprises volume)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin d'un live chat + email + CRM unifié.",
+        "L'omnicanal (WhatsApp, Instagram, SMS) vous est utile.",
+        "Vous cherchez une solution avec bot IA mais sans coûts de conversation élevés.",
+        "Vous êtes une PME cherchant un setup complet et simple."
+      ],
+      "avoidIf": [
+        "Vous avez des besoins très complexes (ticketing, SLA stricts pour grandes équipes).",
+        "Votre volume est énorme et vous exigez une tarification usage-based.",
+        "Vous ne voulez que le live chat, sans email ni CRM."
+      ],
+      "threshold": "Crisp excelle pour les PME cherchant un support unifié omnicanal à prix prévisible ; pour les grandes équipes ou les besoins ultra-spécialisés, une solution plus modulaire s'impose."
+    },
+    "pros": [
+      "Plan gratuit permanent et très utilisable.",
+      "Tarification forfaitaire prévisible (pas de surprise avec le volume).",
+      "Omnicanal complet (WhatsApp, Instagram, SMS, Messenger) inclus.",
+      "Chatbot IA intelligent inclus sur tous les plans.",
+      "Setup très simple, interface intuitive.",
+      "Essai 14 jours gratuit de toutes les features."
+    ],
+    "cons": [
+      "Pour les très grandes équipes, un plan custom peut être plus cher.",
+      "Moins de personnalisation poussée qu'Intercom.",
+      "Les agents additionnels aux plans mini/essentials sont limités.",
+      "Knowledge base moins riche que certains concurrents."
+    ],
+    "use_cases": [
+      "Lancer un support client multi-canal (chat + email + WhatsApp) sans infrastructure.",
+      "Automatiser les réponses aux FAQs avec le chatbot IA.",
+      "Centraliser toutes les conversations client en un seul endroit.",
+      "Gérer les réseaux sociaux (Instagram DMs) depuis un seul dashboard."
+    ],
+    "relevant_for": ["PME SaaS", "E-commerce avec support omnicanal", "Agences client", "Startups cherchant une solution all-in-one"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need unified live chat + email + CRM.",
+        "Omnichannel (WhatsApp, Instagram, SMS) is useful.",
+        "You want an AI bot without high conversation costs.",
+        "You're an SMB seeking a complete, simple setup."
+      ],
+      "avoidIf": [
+        "You have complex needs (ticketing, strict SLAs for big teams).",
+        "Your volume is huge and you need usage-based pricing.",
+        "You only want live chat without email or CRM."
+      ],
+      "threshold": "Crisp excels for SMBs wanting unified omnichannel support at predictable cost; for large teams or specialized needs, a more modular solution works better."
+    },
+    "pros": [
+      "Free plan permanent and highly usable.",
+      "Predictable flat pricing (no volume surprises).",
+      "Complete omnichannel (WhatsApp, Instagram, SMS, Messenger).",
+      "Intelligent AI chatbot included in all plans.",
+      "Very simple setup, intuitive interface.",
+      "14-day free trial of all features."
+    ],
+    "cons": [
+      "For very large teams, custom plan can be pricier.",
+      "Less deep customization than Intercom.",
+      "Additional agents on mini/essentials plans are limited.",
+      "Knowledge base less rich than some competitors."
+    ],
+    "use_cases": [
+      "Launch multi-channel support (chat + email + WhatsApp) without infrastructure.",
+      "Auto-reply FAQs with AI chatbot.",
+      "Centralize all customer conversations in one place.",
+      "Manage social media (Instagram DMs) from a single dashboard."
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "slug": "insightly",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Insightly Pricing (site officiel)", "url": "https://www.insightly.com/pricing-plans/" }
+  ],
+  "facts": {
+    "what": "Plateforme CRM modulaire et scalable pour les petites et moyennes entreprises, combinant gestion de contacts, opportunités, projets, ticketing et marketing automation dans une interface unifiée.",
+    "what_en": "Modular and scalable CRM platform for SMBs combining contact management, opportunities, projects, ticketing, and marketing automation in a unified interface.",
+    "pricing_model": "Plans payants par utilisateur/mois (facturation annuelle). Produits modulables : CRM, Marketing Automation, Support & Ticketing, AppConnect. Essai gratuit 14 jours.",
+    "free_tier": { "exists": false, "detail": "Pas de plan gratuit permanent. Essai gratuit 14 jours pour tous les plans." },
+    "plans": [
+      { "name": "Plus", "price": "29 $/utilisateur/mois (CRM); 99 $/mois (Marketing) — facturation annuelle" },
+      { "name": "Professional", "price": "49 $/utilisateur/mois (CRM); 499 $/mois (Marketing) — recommandé" },
+      { "name": "Enterprise", "price": "99 $/utilisateur/mois (CRM); 999 $/mois (Marketing) — support personnalisé" }
+    ],
+    "key_features": [
+      "Gestion de contacts et organisations",
+      "Pipelines de vente et gestion d'opportunités",
+      "Service tickets et support client",
+      "Automation marketing (leads, emails, campagnes)",
+      "Gestion de projets et tâches collaboratives",
+      "AI Copilot (nettoyage données, assistance)",
+      "AppConnect pour workflows automatisés",
+      "Intégrations Salesforce, HubSpot, Zapier"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez simultanément ventes, projets et support client.",
+        "Vous préférez une plateforme unifiée plutôt que de jongler entre outils.",
+        "Vous cherchez un CRM Salesforce-like à prix PME."
+      ],
+      "avoidIf": [
+        "Vous cherchez un plan gratuit ou très bon marché.",
+        "Vous n'avez besoin que du CRM simple de ventes.",
+        "Votre équipe est très importante (100+ ; Insightly n'est pas conçu pour ça)."
+      ],
+      "threshold": "Insightly excelle pour les PME cherchant un CRM tout-en-un avec marketing automation et support ; pour les grandes organisations, Salesforce s'impose."
+    },
+    "pros": [
+      "Plateforme unifiée : ventes, projets, support, marketing en un seul lieu.",
+      "AI Copilot pour automatiser les tâches répétitives.",
+      "AppConnect permet de créer des workflows sans code.",
+      "Essai 14 jours gratuit pour tous les plans.",
+      "Tarification transparente et adaptée aux PME.",
+      "Intégrations natives avec Salesforce, HubSpot, Zapier."
+    ],
+    "cons": [
+      "Pas de plan gratuit (Essai limité à 14 jours).",
+      "Tarification peut monter vite avec de nombreux utilisateurs.",
+      "Moins de maturité qu'un Salesforce pour personnalisations extrêmes.",
+      "Documentations et tutoriels moins riches qu'un Salesforce."
+    ],
+    "use_cases": [
+      "Gérer un pipeline commercial + support client dans un seul outil.",
+      "Automatiser le nurturing de leads avec marketing automation intégrée.",
+      "Centraliser les projets client avec suivi de billable hours.",
+      "Enrichir les données contacts automatiquement avec AI Copilot."
+    ],
+    "relevant_for": ["PME SaaS", "Agences de services", "Entreprises de consulting", "Sociétés en croissance"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage sales, projects, and customer support simultaneously.",
+        "You prefer one unified platform over juggling tools.",
+        "You want a Salesforce-like CRM at SMB pricing."
+      ],
+      "avoidIf": [
+        "You want a free or very cheap plan.",
+        "You only need simple sales CRM.",
+        "Your team is very large (100+; Insightly isn't designed for that)."
+      ],
+      "threshold": "Insightly excels for SMBs wanting an all-in-one CRM with marketing automation and support; for large orgs, Salesforce is better."
+    },
+    "pros": [
+      "Unified platform: sales, projects, support, marketing in one place.",
+      "AI Copilot automates repetitive tasks.",
+      "AppConnect lets you create workflows without code.",
+      "14-day free trial for all plans.",
+      "Transparent pricing tailored for SMBs.",
+      "Native integrations with Salesforce, HubSpot, Zapier."
+    ],
+    "cons": [
+      "No free plan (trial limited to 14 days).",
+      "Pricing can escalate with many users.",
+      "Less mature than Salesforce for extreme customization.",
+      "Docs and tutorials less rich than Salesforce."
+    ],
+    "use_cases": [
+      "Manage sales pipeline + customer support in one tool.",
+      "Automate lead nurturing with integrated marketing automation.",
+      "Centralize client projects with billable hours tracking.",
+      "Auto-enrich contact data with AI Copilot."
+    ]
+  }
+}

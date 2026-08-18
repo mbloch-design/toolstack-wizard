@@ -1,0 +1,96 @@
+{
+  "slug": "superhuman",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Superhuman — Tarification (site officiel)", "url": "https://help.superhuman.com/hc/en-us/articles/46005733349517-Pricing-Plans" }
+  ],
+  "facts": {
+    "what": "Client email premium pour gérer rapidement sa boîte : recherche ultra-rapide, AI pour le tri et les brouillons, intégrations CRM (HubSpot, Salesforce), réunions et commentaires en équipe.",
+    "what_en": "Premium email client to manage your inbox fast: ultra-fast search, AI for sorting and drafts, CRM integrations (HubSpot, Salesforce), team meetings and comments.",
+    "pricing_model": "Abonnement par utilisateur, facturation mensuelle ou annuelle. Pas de plan gratuit.",
+    "free_tier": { "exists": false, "detail": "Essai gratuit de 30 jours. Pas de version gratuite permanente." },
+    "plans": [
+      { "name": "Starter", "price": "30 $ par mois (300 $/an)" },
+      { "name": "Business", "price": "40 $ par mois (396 $/an)" },
+      { "name": "Enterprise", "price": "Contacter sdr-team@superhuman.com" }
+    ],
+    "key_features": [
+      "Recherche ultra-rapide et AI search",
+      "AI pour trier et prioriser les emails",
+      "Auto-répondant et brouillons AI (Business+)",
+      "Intégrations HubSpot et Salesforce (Business+)",
+      "Commentaires et partage en équipe",
+      "Disponibilité et calendrier partagés",
+      "Conversations partagées",
+      "Webinaires Superhuman inclus"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous passez votre journée sur email et vous voulez gagner 1-2h par semaine.",
+        "Vous utilisez déjà HubSpot ou Salesforce et vous voulez une synergie directe.",
+        "Vous vendez ou fermez des deals régulièrement et l'email est un goulot."
+      ],
+      "avoidIf": [
+        "Vous avez peu d'emails ou vous gérez avec les solutions standard (Gmail, Outlook).",
+        "Vous cherchez une solution gratuite ou bas budget.",
+        "Vous faites peu d'outreach ou vous n'avez pas d'urgence temps."
+      ],
+      "threshold": "Superhuman se justifie pour les commerciaux et founders hyper-actifs ; pour une utilisation standard, Gmail suffit."
+    },
+    "pros": [
+      "Gain de temps réel grâce à la recherche et au tri AI.",
+      "Intégrations CRM natives et profondes.",
+      "Expérience utilisateur très polie et pensée (ex : keybindings optimisés).",
+      "Équipe supportive avec une culture forte."
+    ],
+    "cons": [
+      "Coûts non négligeables pour un seul produit email.",
+      "Pas d'intégration calendrier poussée comme Outlook.",
+      "Moins puissant sur la part collaboration de groupe que Teams ou Slack.",
+      "Dépendance à la connexion internet (web + Electron)."
+    ],
+    "use_cases": [
+      "Gérer un volume élevé d'emails entrants (100+/jour).",
+      "Préparer des propositions de vente avec contexte CRM instant.",
+      "Collaborer en temps réel sur des échanges clients.",
+      "Réduire le temps de traitement des emails manuels."
+    ],
+    "relevant_for": ["Sales engineers", "Founders", "Managers", "Customer success"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You spend your day on email and want to save 1-2 hours per week.",
+        "You already use HubSpot or Salesforce and want direct synergy.",
+        "You sell or close deals regularly and email is a bottleneck."
+      ],
+      "avoidIf": [
+        "You have few emails or manage with standard solutions (Gmail, Outlook).",
+        "You're looking for a free or low-cost solution.",
+        "You do little outreach or don't have time urgency."
+      ],
+      "threshold": "Superhuman is justified for hyper-active salespeople and founders; for standard use, Gmail is enough."
+    },
+    "pros": [
+      "Real time savings from AI search and sorting.",
+      "Native and deep CRM integrations.",
+      "Polish and thought-through UX (e.g., optimized keybindings).",
+      "Supportive team with strong culture."
+    ],
+    "cons": [
+      "Non-trivial costs for a single email product.",
+      "No push calendar integration like Outlook.",
+      "Less powerful on group collaboration than Teams or Slack.",
+      "Depends on internet connection (web + Electron)."
+    ],
+    "use_cases": [
+      "Manage high email volume (100+/day).",
+      "Prepare sales proposals with instant CRM context.",
+      "Collaborate in real time on customer exchanges.",
+      "Reduce manual email processing time."
+    ]
+  }
+}

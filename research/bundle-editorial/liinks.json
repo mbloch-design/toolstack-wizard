@@ -1,0 +1,101 @@
+{
+  "slug": "liinks",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Liinks Plans & Pricing (site officiel)", "url": "https://www.liinks.co/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme de création de pages de liens (linktree-like) pour créateurs et influenceurs, permettant de consolider tous les liens importants (réseaux sociaux, e-commerce, calendrier) sur une seule page personnalisable.",
+    "what_en": "Link page creation platform (linktree-like) for creators and influencers, consolidating all important links (social media, e-commerce, calendar) on a single customizable page.",
+    "pricing_model": "Plans mensuels simples à bas coût. Plan Starter gratuit avec fonctionnalités de base. Plans Pro commençant à 12 $/mois (par pack de 5 profils).",
+    "free_tier": { "exists": true, "detail": "Plan gratuit permanent : images dans les liens, media embeds, integrations Mailchimp/Instagram, styling avancé, analytics, organisation du contenu." },
+    "plans": [
+      { "name": "Starter", "price": "Gratuit avec fonctionnalités complètes" },
+      { "name": "Pro", "price": "12 $/mois (ou 120 $/an) — par pack de 5 profils — domaines personnalisés, multiples profils" }
+    ],
+    "key_features": [
+      "Page de liens personnalisable avec styling CSS",
+      "Multiples profils gérés depuis un compte Pro",
+      "Images intégrées dans les liens",
+      "Media embeds (YouTube, Spotify, etc.)",
+      "Intégrations Mailchimp et Instagram",
+      "Analytics détaillés de clics par lien",
+      "Domaines personnalisés (Pro)",
+      "QR codes",
+      "Programmation de contenu",
+      "API publique"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes créateur et avez une présence multiplateforme (Instagram, TikTok, etc.).",
+        "Vous cherchez une alternative simple et gratuite à Linktree.",
+        "Vous voulez monétiser vos links avec des intégrations e-commerce."
+      ],
+      "avoidIf": [
+        "Vous ne crées pas de contenu ou n'avez qu'une plateforme unique.",
+        "Vous demandez des features de marketing automation poussées.",
+        "Votre besoin ne justifie pas une plateforme dédiée (une page web suffit)."
+      ],
+      "threshold": "Liinks excelle pour les créateurs avec présence multi-plateforme cherchant une page centralisée simple ; pour marketing automation poussée, d'autres outils s'imposent."
+    },
+    "pros": [
+      "Plan gratuit complet et très utilisable.",
+      "Tarification très accessible (5 $/mois pour plus).",
+      "Intégrations Mailchimp et Instagram.",
+      "Analytics détaillés de clics par lien.",
+      "Domaines personnalisés en plan Pro.",
+      "API publique pour développeurs."
+    ],
+    "cons": [
+      "Fonctionnalités de base seulement sur plan gratuit.",
+      "Plan Pro demande un pack de 5 profils minimum (12 $/mois).",
+      "Moins de features marketing qu'un Beacons ou Later.",
+      "Support limité comparé aux plus grands players."
+    ],
+    "use_cases": [
+      "Créateur TikTok/Instagram centralisant tous les liens sur une page.",
+      "Influenceur monétisant via Liinks + intégrations e-commerce.",
+      "Gestion de multiples profils (personnel, professionnel, marque).",
+      "Agence créant des pages linktree pour plusieurs clients."
+    ],
+    "relevant_for": ["Créateurs de contenu", "Influenceurs", "Streamers", "Petits entrepreneurs/solopreneurs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a creator with multi-platform presence (Instagram, TikTok, etc.).",
+        "You want a simple, free Linktree alternative.",
+        "You want to monetize links with e-commerce integrations."
+      ],
+      "avoidIf": [
+        "You don't create content or have only one platform.",
+        "You need advanced marketing automation features.",
+        "Your need doesn't justify a dedicated platform (a web page suffices)."
+      ],
+      "threshold": "Liinks excels for creators with multi-platform presence seeking one simple centralized page; for advanced marketing automation, other tools work better."
+    },
+    "pros": [
+      "Complete and highly usable free plan.",
+      "Very affordable pricing (USD 5/month for more).",
+      "Mailchimp and Instagram integrations.",
+      "Detailed click analytics per link.",
+      "Custom domains on Pro plan.",
+      "Public API for developers."
+    ],
+    "cons": [
+      "Basic features only on free plan.",
+      "Pro plan requires minimum pack of 5 profiles (USD 12/month).",
+      "Fewer marketing features than Beacons or Later.",
+      "Support limited vs. larger players."
+    ],
+    "use_cases": [
+      "TikTok/Instagram creator centralizing all links on one page.",
+      "Influencer monetizing via Liinks + e-commerce integrations.",
+      "Managing multiple profiles (personal, pro, brand).",
+      "Agency creating linktree pages for multiple clients."
+    ]
+  }
+}

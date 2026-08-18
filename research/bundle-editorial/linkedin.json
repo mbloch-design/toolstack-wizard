@@ -1,0 +1,105 @@
+{
+  "slug": "linkedin",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "LinkedIn Premium Plans & Pricing (site officiel)", "url": "https://premium.linkedin.com/" }
+  ],
+  "facts": {
+    "what": "Réseau professionnel mondial avec plateforme gratuite pour se connecter à des professionnels, et plans Premium optionnels pour recruter, prospecter, ou développer une présence professionnelle avec outils avancés.",
+    "what_en": "Global professional network with free platform to connect with professionals, and optional Premium plans to recruit, prospect, or build professional presence with advanced tools.",
+    "pricing_model": "Plateforme gratuite de base. Plans Premium payants par licences (per-user) avec réductions annuelles. Tarification variée selon les plans (Career, Business, Sales Navigator).",
+    "free_tier": { "exists": true, "detail": "Accès gratuit permanent : profil, connexions, messages limités, job search basique, entreprises et publications." },
+    "plans": [
+      { "name": "LinkedIn Free", "price": "Gratuit (profil, connexions, job search basique)" },
+      { "name": "Premium Career", "price": "39,99 $/mois (ou 239,88 $/an — 50% réduction) — InMail, profile views, AI drafting" },
+      { "name": "Premium Business", "price": "69,99 $/mois (ou 539,88 $/an — 36% réduction) — team visibility, advanced search" },
+      { "name": "Premium Company Page", "price": "99,99 $/mois (ou 839,88 $/an — 30% réduction) — auto-invites, testimonials" },
+      { "name": "Sales Navigator Core", "price": "119,99 $/mois (ou 1 079,88 $/an — 25% réduction)" },
+      { "name": "Sales Navigator Advanced", "price": "159,99 $/mois (ou 1 799,88 $/an — 6% réduction)"  }
+    ],
+    "key_features": [
+      "Réseau professionnel mondial avec 1 milliard+ d'utilisateurs",
+      "Profil professionnel personnalisable",
+      "Messagerie (InMail sur plans payants)",
+      "Notifications de profil views (plans payants)",
+      "Advanced search avec filtres (payants)",
+      "Job marketplace intégré",
+      "Learning courses (LinkedIn Learning)",
+      "Publishing platform pour articles",
+      "Sales Navigator pour prospection B2B",
+      "Recruitment tools pour recruteurs"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez à développer un réseau professionnel B2B.",
+        "Vous prospectez ou recrutez (Sales Navigator, Recruteur).",
+        "Vous publiez du contenu professionnel et cherchez visibilité."
+      ],
+      "avoidIf": [
+        "Vous ne travaillez qu'en B2C ou marketing consumer.",
+        "Votre budget ne justifie pas 40-160 $/mois par licence.",
+        "Vous cherchez un CRM dédié plutôt qu'une plateforme sociale."
+      ],
+      "threshold": "LinkedIn excelle pour prospection B2B, recrutement et développement professionnel ; pour B2C ou un CRM spécialisé, d'autres solutions s'imposent."
+    },
+    "pros": [
+      "Plateforme gratuite avec beaucoup de valeur.",
+      "Réseau professionnel le plus grand et pertinent au monde.",
+      "Plans Premium accessibles avec réduction annuelle (25-50% off).",
+      "Sales Navigator pour prospection B2B sophistiquée.",
+      "Learning courses intégrés (LinkedIn Learning).",
+      "Publishing platform native pour pensées leader."
+    ],
+    "cons": [
+      "Plans Premium peuvent être chers (40-160 $/mois/license).",
+      "Algorithme d'engagement peut être imprévisible.",
+      "Fonctionnalités CRM-like moins développées qu'un Salesforce.",
+      "Limites de messages gratuits (InMail sur payant)."
+    ],
+    "use_cases": [
+      "Prospection B2B et lead generation via Sales Navigator.",
+      "Recrutement de talents et sourcing de candidats.",
+      "Développement de personal branding et visibilité professionnelle.",
+      "Networking et connexion avec experts dans son domaine."
+    ],
+    "relevant_for": ["Équipes commerciales B2B", "Recruteurs", "Professionnels independants", "Entreprises B2B en croissance"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want to build a B2B professional network.",
+        "You prospect or recruit (Sales Navigator, Recruiter).",
+        "You publish professional content and seek visibility."
+      ],
+      "avoidIf": [
+        "You only work in B2C or consumer marketing.",
+        "Your budget can't justify USD 40-160/month per license.",
+        "You want a dedicated CRM rather than a social platform."
+      ],
+      "threshold": "LinkedIn excels for B2B prospecting, recruitment, and professional development; for B2C or specialized CRM, other solutions work better."
+    },
+    "pros": [
+      "Free platform with significant value.",
+      "Largest and most relevant professional network worldwide.",
+      "Affordable Premium plans with annual discount (25-50% off).",
+      "Sales Navigator for sophisticated B2B prospecting.",
+      "Built-in Learning courses (LinkedIn Learning).",
+      "Native publishing platform for thought leadership."
+    ],
+    "cons": [
+      "Premium plans can be pricey (USD 40-160/month/license).",
+      "Engagement algorithm can be unpredictable.",
+      "CRM-like features less developed than Salesforce.",
+      "Free messaging limits (InMail on paid)."
+    ],
+    "use_cases": [
+      "B2B prospecting and lead generation via Sales Navigator.",
+      "Talent recruitment and candidate sourcing.",
+      "Personal branding and professional visibility.",
+      "Networking and connecting with domain experts."
+    ]
+  }
+}

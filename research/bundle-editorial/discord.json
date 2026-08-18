@@ -1,0 +1,102 @@
+{
+  "slug": "discord",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Discord Nitro Pricing (site officiel)", "url": "https://discord.com/nitro" }
+  ],
+  "facts": {
+    "what": "Plateforme de communication et communauté en temps réel originellement créée pour le gaming, utilisée par les équipes, créateurs de contenu et communautés pour les conversations, les appels et la gestion collaborative.",
+    "what_en": "Real-time communication and community platform originally built for gaming, used by teams, content creators, and communities for conversations, calls, and collaborative management.",
+    "pricing_model": "Application gratuite de base ; plans payants Nitro pour personnes individuelles ; server subscriptions optionnelles pour les créateurs. Tarification localisée selon la région.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit permanent : serveurs illimités, messages illimités, appels audio/vidéo, intégrations de base, sans limitations de membres." },
+    "plans": [
+      { "name": "Discord Free", "price": "Gratuit (serveurs illimités, messages illimités, appels audio/vidéo)" },
+      { "name": "Nitro Basic", "price": "2,99 $/mois (emoji personnalisées, uploads 50MB, app icons personnalisés)" },
+      { "name": "Nitro", "price": "9,99 $/mois (Nitro Basic + Xbox Game Pass Starter, uploads 500MB, HD streaming)" },
+      { "name": "Server Subscriptions", "price": "Tarification variable — créateurs définissent les prix pour des rôles/perks uniques" }
+    ],
+    "key_features": [
+      "Serveurs et channels avec permissions granulaires",
+      "Appels audio et vidéo en direct",
+      "Partage d'écran et streaming",
+      "Intégrations bots et webhooks",
+      "Nitro Rewards (réductions gaming, perks d'Xbox)",
+      "Server Subscriptions pour monétisation créateurs",
+      "Modération automatique et rôles"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez une communauté ou une équipe cherchant une communication décentralisée.",
+        "Vous utilisez déjà Discord et appréciez l'écosystème.",
+        "L'adoption rapide et l'absence d'infrastructure interne est un atout.",
+        "Vous êtes un créateur et cherchez à monétiser via server subscriptions."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'un support client réactif avec ticketing traditionnel.",
+        "Votre entreprise exige une sécurité extrême et des logs audits détaillés.",
+        "Vous n'êtes pas à l'aise avec une plateforme dominée par le gaming."
+      ],
+      "threshold": "Discord excelle pour les communautés, équipes remotees et créateurs cherchant une communication décentralisée gratuite ou bon marché ; pour un support client formel, un CRM/helpdesk s'impose."
+    },
+    "pros": [
+      "Entièrement gratuit avec fonctionnalités robustes.",
+      "Forte adoption parmi les communautés et équipes.",
+      "Écosystème riche de bots et intégrations.",
+      "Server subscriptions permettent aux créateurs de monétiser.",
+      "Appels audio/vidéo inclus nativement.",
+      "Interface intuitive et adoption rapide."
+    ],
+    "cons": [
+      "Pas conçu pour le support client formel (pas ticketing natif).",
+      "Modération et compliance demandent des bots personnalisés.",
+      "Limites de sécurité pour données sensibles.",
+      "Pas de SLA ou support prioritaire sans abonnement."
+    ],
+    "use_cases": [
+      "Créer une communauté privée pour un produit ou service.",
+      "Lancer une équipe distribuée avec communication instantanée.",
+      "Monétiser via server subscriptions (créateurs, streamers).",
+      "Remplacer une mailing-list ou forum par un lieu d'échange vivant."
+    ],
+    "relevant_for": ["Créateurs de contenu", "Equipes remotees", "Communautés et fandoms", "Startups cherchant une commu gratuite"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage a community or remote team needing decentralized communication.",
+        "You already use Discord and like the ecosystem.",
+        "Fast adoption and no internal infrastructure are assets.",
+        "You're a creator wanting to monetize via server subscriptions."
+      ],
+      "avoidIf": [
+        "You need reactive customer support with traditional ticketing.",
+        "Your company requires extreme security and detailed audit logs.",
+        "You're uncomfortable with a gaming-dominant platform."
+      ],
+      "threshold": "Discord excels for communities, remote teams, and creators wanting free or cheap decentralized communication; for formal customer support, a CRM/helpdesk is better."
+    },
+    "pros": [
+      "Completely free with robust features.",
+      "Strong adoption in communities and teams.",
+      "Rich ecosystem of bots and integrations.",
+      "Server subscriptions let creators monetize.",
+      "Audio/video calls natively included.",
+      "Intuitive interface and rapid adoption."
+    ],
+    "cons": [
+      "Not designed for formal customer support (no ticketing).",
+      "Moderation and compliance need custom bots.",
+      "Security limits for sensitive data.",
+      "No SLA or priority support without subscription."
+    ],
+    "use_cases": [
+      "Build a private community for a product or service.",
+      "Launch a distributed team with instant communication.",
+      "Monetize via server subscriptions (creators, streamers).",
+      "Replace a mailing list or forum with a live discussion space."
+    ]
+  }
+}

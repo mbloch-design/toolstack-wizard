@@ -1,0 +1,93 @@
+{
+  "slug": "zcal",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "zcal — Scheduling software (site officiel)", "url": "https://zcal.co" }
+  ],
+  "facts": {
+    "what": "Plateforme de scheduling des appels et réunions : calendrier de disponibilité partagé, sondages de dates, intégrations vidéo, lien unique de réservation, modèle freemium très généreux.",
+    "what_en": "Call and meeting scheduling platform: shared availability calendar, date polls, video integrations, unique booking link, very generous freemium model.",
+    "pricing_model": "Freemium : version gratuite très complète, plans payants pour features avancées.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit illimité : liens de réservation illimités, sondages d'événements, intégrations vidéo, pas de limite de participants." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (illimité)" },
+      { "name": "Paid plans", "price": "À partir de 7 $ par mois" }
+    ],
+    "key_features": [
+      "Calendrier de disponibilité partagé",
+      "Sondages de dates et voting",
+      "Lien unique de réservation/Scheduling",
+      "Intégrations Google Meet, Zoom, Teams",
+      "Questions personnalisées lors de la réservation",
+      "Rappels automatiques par email",
+      "Deadline et voting",
+      "API et webhooks (gratuit)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez un outil simple et gratuit pour coordonner des réunions.",
+        "Vous avez peu de besoins (sondage de dates, lien de réservation simple).",
+        "Vous intégrez avec Zoom, Google Meet ou Teams."
+      ],
+      "avoidIf": [
+        "Vous avez besoin de gestion complexe de calendrier ou de ressources partagées.",
+        "Vous voulez une solution CRM avec suivi ou reporting avancé."
+      ],
+      "threshold": "zcal est imbattable pour le freemium de scheduling ; pour la plupart des petites équipes, le gratuit suffit."
+    },
+    "pros": [
+      "Plan gratuit vraiment complet et illimité.",
+      "Sondages de dates ultra simples.",
+      "Intégrations vidéo directes (Zoom, Google Meet, Teams).",
+      "API gratuite et webhooks pour automatisations.",
+      "Interface très épurée et sans distraction."
+    ],
+    "cons": [
+      "Moins de features que Calendly (pas de team scheduling avancé).",
+      "Pas de CRM ou suivi de leads intégré.",
+      "Moins de templates ou de personnalisation que les concurrents payants."
+    ],
+    "use_cases": [
+      "Partager votre disponibilité sans avoir à envoyer emails.",
+      "Créer un sondage pour trouver un créneau de réunion de groupe.",
+      "Intégrer un lien de booking sur votre website ou profile.",
+      "Automatiser l'envoi de rappels de réunion."
+    ],
+    "relevant_for": ["Freelancers", "Consultants", "Petites équipes", "Équipes distribuées"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want a simple, free tool to coordinate meetings.",
+        "You have basic needs (date polls, simple booking link).",
+        "You integrate with Zoom, Google Meet, or Teams."
+      ],
+      "avoidIf": [
+        "You need complex calendar management or shared resource management.",
+        "You want a CRM with tracking or advanced reporting."
+      ],
+      "threshold": "zcal is unbeatable for freemium scheduling; for most small teams, free is enough."
+    },
+    "pros": [
+      "Truly complete and unlimited free plan.",
+      "Ultra-simple date polls.",
+      "Direct video integrations (Zoom, Google Meet, Teams).",
+      "Free API and webhooks for automation.",
+      "Very clean, distraction-free interface."
+    ],
+    "cons": [
+      "Fewer features than Calendly (no advanced team scheduling).",
+      "No built-in CRM or lead tracking.",
+      "Fewer templates or customization than paid competitors."
+    ],
+    "use_cases": [
+      "Share your availability without email back-and-forth.",
+      "Create a poll to find a group meeting slot.",
+      "Embed a booking link on your website or profile.",
+      "Automate sending meeting reminders."
+    ]
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "slug": "snov-io",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Snov.io — Tarification (site officiel)", "url": "https://snov.io/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme de prospection par email : recherche d'adresses email, vérification de validité et outreach campagnes avec warmup pour améliorer la délivrabilité.",
+    "what_en": "Email prospecting platform: find email addresses, verify validity, and run outreach campaigns with warmup to improve deliverability.",
+    "pricing_model": "Système de crédits avec plans abonnement mensuel ou annuel. Plans personnalisés à partir du premier palier.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit avec 50 crédits et jusqu'à 100 recherches/mois." },
+    "plans": [
+      { "name": "Starter", "price": "39 $ par mois (1 000 crédits, 5 000 destinataires email)" },
+      { "name": "Pro S", "price": "79 $ par mois (5 000 crédits)" },
+      { "name": "Pro M", "price": "199 $ par mois (25 000 crédits)" },
+      { "name": "Pro L", "price": "399 $ par mois (50 000 crédits)" },
+      { "name": "Pro XL", "price": "554 $ par mois (100 000 crédits)" }
+    ],
+    "key_features": [
+      "Recherche d'adresses email par nom/entreprise",
+      "Vérification de validité des emails",
+      "Vérification en masse (API)",
+      "Mailbox warm-up automatique",
+      "Intégrations CRM (Salesforce, Pipedrive, etc.)",
+      "Analytics de campagne",
+      "Listes de prospects"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous prospectez par email et avez besoin de trouver des adresses ciblées.",
+        "Vous lancez des campagnes outreach et vous voulez améliorer votre taux de délivrabilité.",
+        "Vous intégrez avec un CRM existant et vous voulez enrichir les contacts."
+      ],
+      "avoidIf": [
+        "Vous n'avez que des listes complètes et vous n'avez pas besoin de chercher des emails.",
+        "Vous avez très peu de campagnes ou vous utilisez des templates génériques.",
+        "Vous cherchez un outil de cold calling plutôt que d'email."
+      ],
+      "threshold": "Snov.io vaut le coup pour les équipes qui prospectent par email régulièrement ; pour une utilisation très occasionnelle, le plan gratuit suffira."
+    },
+    "pros": [
+      "Plan gratuit suffisant pour débuter sans risque.",
+      "Système de crédits flexible et transparent (réduction progressif par crédit).",
+      "Warmup de mailbox automatique pour améliorer la délivrabilité.",
+      "Listes pré-qualifiées et intégrations CRM complètes."
+    ],
+    "cons": [
+      "Les prix montent rapidement pour une équipe avec usage élevé.",
+      "Risque de spam si la warmup ou les messages ne sont pas optimisés.",
+      "Support basé sur l'anglais principalement."
+    ],
+    "use_cases": [
+      "Enrichir une liste de leads avec adresses email.",
+      "Lancer des campagnes de prospection multi-canal.",
+      "Vérifier la validité d'une base de contacts avant une campagne.",
+      "Trouver des contacts décisionnaires dans une entreprise cible."
+    ],
+    "relevant_for": ["Prospecteurs B2B", "Équipes commerciales", "Agences de growth"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You prospect via email and need to find targeted addresses.",
+        "You run outreach campaigns and want to improve deliverability.",
+        "You integrate with an existing CRM and want to enrich contacts."
+      ],
+      "avoidIf": [
+        "You only have complete lists and don't need to find emails.",
+        "You have very occasional campaigns or use generic templates.",
+        "You're looking for a cold calling tool rather than email."
+      ],
+      "threshold": "Snov.io makes sense for teams prospecting by email regularly; for very occasional use, the free plan suffices."
+    },
+    "pros": [
+      "Free plan sufficient to get started without risk.",
+      "Flexible credit system and transparent pricing (per-credit cost decreases).",
+      "Automatic mailbox warmup to improve deliverability.",
+      "Pre-qualified lists and complete CRM integrations."
+    ],
+    "cons": [
+      "Prices scale quickly for high-volume teams.",
+      "Risk of spam if warmup or messages aren't optimized.",
+      "Support primarily in English."
+    ],
+    "use_cases": [
+      "Enrich a lead list with email addresses.",
+      "Launch multi-channel prospecting campaigns.",
+      "Verify contact validity before a campaign.",
+      "Find decision-maker contacts in a target company."
+    ]
+  }
+}

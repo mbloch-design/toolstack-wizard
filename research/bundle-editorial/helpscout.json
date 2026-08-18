@@ -1,0 +1,101 @@
+{
+  "slug": "helpscout",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Help Scout Pricing (site officiel)", "url": "https://www.helpscout.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Plateforme de support client combinant inbox partagée, live chat, SMS, WhatsApp et IA pour automatiser les réponses, avec gestion des tickets et base de connaissances intégrée.",
+    "what_en": "Customer support platform combining shared inbox, live chat, SMS, WhatsApp, and AI to automate responses, with integrated ticket management and knowledge base.",
+    "pricing_model": "Plans payants par utilisateur/mois. Plan gratuit limité à 5 utilisateurs. Essai 15 jours sans carte de crédit pour les plans Standard et Plus.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit : 5 utilisateurs, 1 inbox, 1 site Docs (knowledge base). Fonctionnalités basiques de support." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (5 utilisateurs, 1 inbox, 1 Docs site)" },
+      { "name": "Standard", "price": "25 $/utilisateur/mois (multiples inboxes, live chat, SMS, WhatsApp/Instagram/Messenger)" },
+      { "name": "Plus", "price": "45 $/utilisateur/mois — le plus populaire (workflows avancés, integrations Salesforce/Jira/HubSpot)" },
+      { "name": "Pro", "price": "75 $/utilisateur/mois (workflows illimités, SLA policies illimités, HIPAA compliance, SSO/SAML)"  }
+    ],
+    "key_features": [
+      "Inbox partagée pour emails, live chat, SMS, WhatsApp, Instagram, Messenger",
+      "AI Drafts pour rédaction assistée de réponses (Plus et Pro)",
+      "AI Answers chatbot autonome (essai 3 mois gratuit)",
+      "Base de connaissances (Docs) avec optimisation SEO",
+      "Workflows d'automation et SLA policies",
+      "Intégrations CRM/helpdesk (Salesforce, Jira, HubSpot, Zendesk)",
+      "Rapports et analytics détaillés",
+      "Programme Help Scout for Good pour nonprofits"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez une équipe de support et cherchez un inbox partagé simple et efficace.",
+        "L'IA pour draft de réponses (Plus) ou chatbot autonome (All Answers) vous intéresse.",
+        "Vous utilisez déjà Salesforce, Jira ou HubSpot (intégrations natives)."
+      ],
+      "avoidIf": [
+        "Vous n'avez besoin que du live chat sans inbox email complexe.",
+        "Votre budget est très limité et vous refusez les plans payants.",
+        "Vous demandez une personnalisation extrême sur les workflows."
+      ],
+      "threshold": "Help Scout excelle pour les équipes de support cherchant un inbox partagé multicanal avec IA légère ; pour les besoins simples de live chat, une solution plus basique suffit."
+    },
+    "pros": [
+      "Plan gratuit utilisable pour petites équipes.",
+      "Multicanal (email, chat, SMS, WhatsApp, Instagram) natif.",
+      "AI Drafts et AI Answers réduisent le temps de réponse.",
+      "Intégrations CRM natives (Salesforce, Jira, HubSpot).",
+      "Essai 15 jours sans CB pour tester avant d'acheter.",
+      "Support pour les nonprofits (Help Scout for Good)."
+    ],
+    "cons": [
+      "Tarification par utilisateur peut coûter cher (5+ users = 125+ $/mois en Standard).",
+      "Plan gratuit très limité (1 inbox, 1 Docs site).",
+      "Moins de personnalisation poussée qu'un Zendesk.",
+      "AI Answers demande de créer des FAQ riches pour fonction optimale."
+    ],
+    "use_cases": [
+      "Centraliser les emails support et les live chats dans une interface unique.",
+      "Automatiser les réponses aux FAQs avec le chatbot AI Answers.",
+      "Rédiger des réponses plus vite avec AI Drafts (Plus/Pro).",
+      "Gérer le support multi-canaux (email + SMS + WhatsApp) d'une équipe."
+    ],
+    "relevant_for": ["PME SaaS", "E-commerce avec support", "Agences client", "Équipes support en croissance"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You have a support team and want a simple, effective shared inbox.",
+        "AI draft responses (Plus) or autonomous chatbot (All Answers) interests you.",
+        "You already use Salesforce, Jira, or HubSpot (native integrations)."
+      ],
+      "avoidIf": [
+        "You only need live chat without complex email inbox.",
+        "Your budget is tight and you refuse paid plans.",
+        "You demand extreme workflow customization."
+      ],
+      "threshold": "Help Scout excels for support teams wanting omnichannel shared inbox with light AI; for simple live chat needs, a more basic solution works."
+    },
+    "pros": [
+      "Free plan usable for small teams.",
+      "Omnichannel (email, chat, SMS, WhatsApp, Instagram) native.",
+      "AI Drafts and AI Answers reduce response time.",
+      "Native CRM integrations (Salesforce, Jira, HubSpot).",
+      "15-day trial without CC to test before buying.",
+      "Support for nonprofits (Help Scout for Good)."
+    ],
+    "cons": [
+      "Per-user pricing adds up quickly as the team grows.",
+      "Free plan very limited (1 inbox, 1 Docs site).",
+      "Less deep customization than Zendesk.",
+      "AI Answers needs rich FAQs to be effective."
+    ],
+    "use_cases": [
+      "Centralize support emails and live chats in one interface.",
+      "Auto-reply FAQs with AI chatbot AI Answers.",
+      "Write responses faster with AI Drafts (Plus/Pro).",
+      "Manage multi-channel support (email + SMS + WhatsApp) for a team."
+    ]
+  }
+}

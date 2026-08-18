@@ -1,0 +1,98 @@
+{
+  "slug": "vcita",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "vcita — Tarification (site officiel)", "url": "https://www.vcita.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme CRM et gestion commerciale pour services (coaches, avocats, consultants, formateurs) : calendrier en ligne, formulaires de contact, SMS, paiements, rapports clients.",
+    "what_en": "CRM and business management platform for services (coaches, lawyers, consultants, trainers): online scheduling, contact forms, SMS, payments, client reports.",
+    "pricing_model": "Plans par utilisateur, facturation mensuelle ou annuelle. Essai gratuit 14 jours inclus.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit 14 jours sans carte de crédit. Pas de version gratuite permanente." },
+    "plans": [
+      { "name": "Kickstart", "price": "35 $ par utilisateur/mois" },
+      { "name": "Business", "price": "65 $ par utilisateur/mois" },
+      { "name": "Platinum", "price": "110 $ par utilisateur/mois" }
+    ],
+    "key_features": [
+      "Calendrier en ligne et gestion des rendez-vous",
+      "Formulaires de contact personnalisés",
+      "SMS et email automatisés",
+      "Intégration de paiements (Stripe, etc.)",
+      "CRM pour suivi des clients",
+      "Rapports et analytics clients",
+      "Intégrations Zapier et tierces",
+      "Page de réservation et acceptation de paiements"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous offrez des services (coaching, consulting, legal, etc.) et vous facturez par consultation.",
+        "Vous voulez une réservation et paiement en ligne automatisés.",
+        "Vous cherchez une solution all-in-one (CRM + calendrier + paiement)."
+      ],
+      "avoidIf": [
+        "Vous vendez des produits ou du SaaS (pas un service de consultation).",
+        "Vous avez un budget très limité pour une startup solo.",
+        "Vous trouvez les tarifs par utilisateur prohibitifs pour une équipe."
+      ],
+      "threshold": "vcita brille pour les professionnels de services indépendants ou petites équipes ; pour une PME avec beaucoup de staffing, les coûts par utilisateur peuvent monter vite."
+    },
+    "pros": [
+      "Solution complète : calendrier + paiement + CRM + SMS.",
+      "Intégrations paiements directes (Stripe, etc.).",
+      "Formulaires et pages de réservation personnalisables.",
+      "Essai gratuit 14 jours sans risque.",
+      "SMS automatisés pour rappels et suivi."
+    ],
+    "cons": [
+      "Coût par utilisateur élevé pour un indépendant.",
+      "Interface can feel dated comparée aux concurrents modernes.",
+      "Support limité (email + FAQ).",
+      "Fonction reporting limité pour analytics avancées."
+    ],
+    "use_cases": [
+      "Coach offrant des consultations payantes.",
+      "Avocat, dentiste, thérapeute gérant un calendrier de rendez-vous.",
+      "Consultant B2B recevant des paiements d'acompte.",
+      "Équipe de formateurs avec prise de réservation en ligne."
+    ],
+    "relevant_for": ["Coaches", "Consultants", "Professionnels de services", "Travailleurs indépendants"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You offer services (coaching, consulting, legal, etc.) and charge per consultation.",
+        "You want automated online booking and payments.",
+        "You want an all-in-one solution (CRM + calendar + payments)."
+      ],
+      "avoidIf": [
+        "You sell products or SaaS (not consulting services).",
+        "You have a very tight budget for a solo startup.",
+        "You find per-user pricing prohibitive for a team."
+      ],
+      "threshold": "vcita shines for independent service professionals or small teams; for an SMB with lots of staffing, per-user costs can add up fast."
+    },
+    "pros": [
+      "Complete solution: calendar + payments + CRM + SMS.",
+      "Direct payment integrations (Stripe, etc.).",
+      "Customizable booking forms and pages.",
+      "14-day free trial with no risk.",
+      "Automated SMS for reminders and follow-up."
+    ],
+    "cons": [
+      "Per-user cost is high for a solo operator.",
+      "Interface can feel dated compared to modern competitors.",
+      "Limited support (email + FAQ).",
+      "Limited reporting function for advanced analytics."
+    ],
+    "use_cases": [
+      "Coach offering paid consultations.",
+      "Lawyer, dentist, therapist managing an appointment calendar.",
+      "B2B consultant receiving deposit payments.",
+      "Team of trainers with online booking intake."
+    ]
+  }
+}
