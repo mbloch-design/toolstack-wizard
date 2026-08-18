@@ -1,5 +1,14 @@
 # ToolTrim — AI Changelog
 
+## 2026-08-18 · Recherche globale, couvertures et seuils de lisibilité
+
+- Les articles utilisent leur image de couverture avec un pictogramme de repli lorsqu'aucun visuel n'est disponible.
+- Les métadonnées passent à un corps minimal de 13 px et les libellés de navigation à 15 px.
+- Les titres gagnent un niveau de corps sans alourdir la composition.
+- Les gris secondaires utilisent une opacité renforcée du texte principal afin de préserver le contraste dans les deux thèmes.
+
+---
+
 ## 2026-08-18 · Fil d’Ariane JSON-LD dédupliqué
 
 - Les fiches outils, comparatifs et guides ne publient plus un second `BreadcrumbList` depuis leur composant visuel.
@@ -3904,3 +3913,23 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Remplacement des couleurs locales des illustrations Stories, familles de stacks et tutoriels vidéo par des tokens sémantiques nommés.
 - Alignement des quinze rayons littéraux ajoutés récemment sur l’échelle canonique `--radius-*`.
 - La dette CSS mesurée redescend de 64 à 52 couleurs en dur et reste à zéro rayon littéral, sans relever la tolérance du CI.
+## 2026-08-18 - Recherche globale exploratoire
+
+- Transformation de la palette de recherche en hub d'exploration plein écran.
+- Ajout des vues Tendances, Catégories, Plateformes, Fonctionne avec, Collections et Articles.
+- Conservation de la recherche transversale outils, catégories et guides avec navigation clavier.
+- Ajout d'une adaptation mobile avec navigation horizontale et grilles responsives.
+- Recalibrage du panneau desktop à 1040 x 680 px maximum, avec recherche, navigation, cartes, logos et espacements plus fins.
+- Allègement des bordures et des effets afin de rapprocher la densité visuelle d'un outil de navigation compact.
+- Validation par le build production complet.
+- **Recherche globale compacte** : le panneau desktop est désormais plafonné à environ un quart de la surface de la fenêtre, avec une colonne de navigation et des grilles recalibrées pour ce format.
+- **Recherche globale sans défilement** : le panneau desktop retrouve une surface intermédiaire de `920 × 660 px` afin d'afficher les grilles d'exploration sans scroll interne.
+# 2026-08-18 - Recherche globale, finition typographique
+
+- Réduction de l'échelle typographique de la fenêtre de recherche pour retrouver une lecture plus utilitaire et plus fine.
+- Graisses, interlettrage, hauteurs de ligne et niveaux de gris harmonisés entre navigation, titres, tuiles, collections et résultats.
+## 2026-08-18 · Recherche globale, couvertures éditoriales
+
+- Remplacement du pictogramme générique des articles par leur image de couverture dans la recherche globale.
+- Conservation d'un repli iconographique lorsque la couverture est absente.
+- Recomposition des cartes avec une hiérarchie média, titre, puis métadonnées cohérente avec l'accueil.
