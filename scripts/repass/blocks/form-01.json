@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "articulate",
+    "name": "Articulate 360",
+    "url": "https://www.articulate.com/360/"
+  },
+  {
+    "slug": "circle",
+    "name": "Circle",
+    "url": "https://circle.so"
+  },
+  {
+    "slug": "genially",
+    "name": "Genially",
+    "url": "https://genially.com"
+  },
+  {
+    "slug": "kajabi",
+    "name": "Kajabi",
+    "url": "https://kajabi.com"
+  },
+  {
+    "slug": "moodle",
+    "name": "Moodle",
+    "url": "https://moodle.org"
+  },
+  {
+    "slug": "podia",
+    "name": "Podia",
+    "url": "https://podia.com"
+  },
+  {
+    "slug": "thinkific",
+    "name": "Thinkific",
+    "url": "https://thinkific.com"
+  },
+  {
+    "slug": "trainual",
+    "name": "Trainual",
+    "url": "https://trainual.com"
+  },
+  {
+    "slug": "zotero",
+    "name": "Zotero",
+    "url": "https://zotero.com"
+  }
+]

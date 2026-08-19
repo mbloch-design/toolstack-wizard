@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "activepieces",
+    "name": "Activepieces",
+    "url": ""
+  },
+  {
+    "slug": "albato",
+    "name": "Albato",
+    "url": "https://albato.com"
+  },
+  {
+    "slug": "base44",
+    "name": "Base44",
+    "url": "https://base44.pxf.io/c/6936943/2049275/25619?trafcat=base"
+  },
+  {
+    "slug": "draftbit",
+    "name": "Draftbit",
+    "url": "https://draftbit.com"
+  },
+  {
+    "slug": "easydmarc",
+    "name": "EasyDMARC",
+    "url": "https://easydmarc.com"
+  },
+  {
+    "slug": "firecrawl",
+    "name": "Firecrawl",
+    "url": "https://firecrawl.dev"
+  },
+  {
+    "slug": "glide",
+    "name": "Glide",
+    "url": "https://glideapps.com"
+  },
+  {
+    "slug": "gumloop",
+    "name": "Gumloop",
+    "url": "https://www.gumloop.com"
+  },
+  {
+    "slug": "hyperbrowser",
+    "name": "Hyperbrowser",
+    "url": "https://www.hyperbrowser.ai"
+  }
+]

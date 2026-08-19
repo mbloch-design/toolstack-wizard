@@ -1,0 +1,12 @@
+[
+  {
+    "slug": "pgvector",
+    "name": "pgvector",
+    "url": "https://github.com/pgvector/pgvector"
+  },
+  {
+    "slug": "vercel-ai-sdk",
+    "name": "Vercel AI SDK",
+    "url": "https://sdk.vercel.ai"
+  }
+]

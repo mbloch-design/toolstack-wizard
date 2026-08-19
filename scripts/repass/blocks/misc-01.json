@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "affinity-designer",
+    "name": "Affinity Designer",
+    "url": "https://affinity.serif.com/designer/"
+  },
+  {
+    "slug": "affinity-publisher",
+    "name": "Affinity Publisher",
+    "url": "https://affinity.serif.com/publisher/"
+  },
+  {
+    "slug": "alpinejs",
+    "name": "Alpine.js",
+    "url": "https://alpinejs.dev"
+  },
+  {
+    "slug": "angular-universal",
+    "name": "Angular Universal",
+    "url": "https://angular.io/guide/universal"
+  },
+  {
+    "slug": "apexcharts",
+    "name": "ApexCharts",
+    "url": "https://apexcharts.com"
+  },
+  {
+    "slug": "avocode",
+    "name": "Avocode",
+    "url": "https://avocode.com"
+  },
+  {
+    "slug": "balsamiq",
+    "name": "Balsamiq",
+    "url": "https://balsamiq.com"
+  },
+  {
+    "slug": "chartjs",
+    "name": "Chart.js",
+    "url": "https://www.chartjs.org"
+  },
+  {
+    "slug": "chromatic",
+    "name": "Chromatic",
+    "url": "https://www.chromatic.com"
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "greenly",
+    "name": "Greenly",
+    "url": "https://greenly.earth"
+  },
+  {
+    "slug": "gumroad",
+    "name": "Gumroad",
+    "url": "https://gumroad.com"
+  },
+  {
+    "slug": "gusto",
+    "name": "Gusto",
+    "url": "https://gusto.com"
+  },
+  {
+    "slug": "ignition",
+    "name": "Ignition",
+    "url": "https://get.practiceignition.com/e261f8d417a0"
+  },
+  {
+    "slug": "impact",
+    "name": "Impact",
+    "url": "https://impact.com"
+  },
+  {
+    "slug": "indy",
+    "name": "Indy",
+    "url": "https://indy.fr"
+  },
+  {
+    "slug": "invoicely",
+    "name": "Invoicely",
+    "url": "https://invoicely.com"
+  },
+  {
+    "slug": "kelio",
+    "name": "Kelio",
+    "url": ""
+  },
+  {
+    "slug": "lemon-squeezy",
+    "name": "Lemon Squeezy",
+    "url": "https://www.lemonsqueezy.com"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "slug": "spendesk",
+    "name": "Spendesk",
+    "url": "https://spendesk.com"
+  },
+  {
+    "slug": "stan-store",
+    "name": "Stan Store",
+    "url": "https://stan.store"
+  },
+  {
+    "slug": "stripe",
+    "name": "Stripe",
+    "url": "https://stripe.com"
+  },
+  {
+    "slug": "sweep",
+    "name": "Sweep",
+    "url": "https://sweep.net"
+  },
+  {
+    "slug": "wave",
+    "name": "Wave",
+    "url": "https://waveapps.com"
+  },
+  {
+    "slug": "workday",
+    "name": "Workday",
+    "url": ""
+  },
+  {
+    "slug": "xero",
+    "name": "Xero",
+    "url": "https://xero.com"
+  }
+]

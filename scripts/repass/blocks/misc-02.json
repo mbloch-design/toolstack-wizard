@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "cision",
+    "name": "Cision",
+    "url": "https://cision.com"
+  },
+  {
+    "slug": "clip-studio-paint",
+    "name": "Clip Studio Paint",
+    "url": "https://www.clipstudio.net/"
+  },
+  {
+    "slug": "coreldraw",
+    "name": "CorelDRAW",
+    "url": "https://www.coreldraw.com/"
+  },
+  {
+    "slug": "create-react-app",
+    "name": "Create React App",
+    "url": "https://create-react-app.dev"
+  },
+  {
+    "slug": "d3js",
+    "name": "D3.js",
+    "url": "https://d3js.org"
+  },
+  {
+    "slug": "darktable",
+    "name": "darktable",
+    "url": "https://www.darktable.org/"
+  },
+  {
+    "slug": "dxo-photolab",
+    "name": "DxO PhotoLab",
+    "url": "https://www.dxo.com/dxo-photolab/"
+  },
+  {
+    "slug": "emotion",
+    "name": "Emotion",
+    "url": "https://emotion.sh"
+  },
+  {
+    "slug": "formik",
+    "name": "Formik",
+    "url": "https://formik.org"
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "rydoo",
+    "name": "Rydoo",
+    "url": ""
+  },
+  {
+    "slug": "sage-paie",
+    "name": "Sage Paie",
+    "url": ""
+  },
+  {
+    "slug": "samcart",
+    "name": "SamCart",
+    "url": "https://www.samcart.com"
+  },
+  {
+    "slug": "sami",
+    "name": "Sami",
+    "url": "https://sami.eco"
+  },
+  {
+    "slug": "sellersfi",
+    "name": "SellersFi",
+    "url": "https://sellersfi.com"
+  },
+  {
+    "slug": "sellsy",
+    "name": "Sellsy",
+    "url": "https://go.sellsy.com"
+  },
+  {
+    "slug": "shine",
+    "name": "Shine",
+    "url": "https://www.shine.fr"
+  },
+  {
+    "slug": "shopify-payments",
+    "name": "Shopify Payments",
+    "url": "https://www.shopify.com/payments"
+  },
+  {
+    "slug": "soldo",
+    "name": "Soldo",
+    "url": ""
+  }
+]

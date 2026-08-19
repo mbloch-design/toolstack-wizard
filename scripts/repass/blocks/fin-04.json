@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "payhawk",
+    "name": "Payhawk",
+    "url": ""
+  },
+  {
+    "slug": "paypal",
+    "name": "PayPal",
+    "url": "https://paypal.com"
+  },
+  {
+    "slug": "pennylane",
+    "name": "Pennylane",
+    "url": "https://pennylane.com"
+  },
+  {
+    "slug": "quadient",
+    "name": "Quadient",
+    "url": "https://quadient.com"
+  },
+  {
+    "slug": "quickbooks",
+    "name": "QuickBooks",
+    "url": "https://quickbooks.intuit.com"
+  },
+  {
+    "slug": "quickbooks-online",
+    "name": "QuickBooks Online",
+    "url": "https://quickbooks.intuit.com"
+  },
+  {
+    "slug": "razorpay",
+    "name": "Razorpay",
+    "url": "https://razorpay.com"
+  },
+  {
+    "slug": "revenuecat",
+    "name": "RevenueCat",
+    "url": "https://www.revenuecat.com"
+  },
+  {
+    "slug": "rewardful",
+    "name": "Rewardful",
+    "url": "https://rewardful.com"
+  }
+]

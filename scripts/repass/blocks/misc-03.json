@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "framer-motion",
+    "name": "Framer Motion",
+    "url": "https://www.framer.com/motion/"
+  },
+  {
+    "slug": "greensock",
+    "name": "GreenSock (GSAP)",
+    "url": "https://gsap.com"
+  },
+  {
+    "slug": "headless-ui",
+    "name": "Headless UI",
+    "url": "https://headlessui.com"
+  },
+  {
+    "slug": "highcharts",
+    "name": "Highcharts",
+    "url": "https://www.highcharts.com"
+  },
+  {
+    "slug": "jquery",
+    "name": "jQuery",
+    "url": "https://jquery.com"
+  },
+  {
+    "slug": "klaviyo",
+    "name": "Klaviyo",
+    "url": "https://www.klaviyo.com/"
+  },
+  {
+    "slug": "knockout",
+    "name": "Knockout",
+    "url": "https://knockoutjs.com"
+  },
+  {
+    "slug": "krita",
+    "name": "Krita",
+    "url": "https://krita.org/"
+  },
+  {
+    "slug": "lottie",
+    "name": "Lottie",
+    "url": "https://lottiefiles.com"
+  }
+]

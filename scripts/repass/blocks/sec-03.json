@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "okta",
+    "name": "Okta",
+    "url": "https://www.okta.com"
+  },
+  {
+    "slug": "onelogin",
+    "name": "OneLogin",
+    "url": "https://www.onelogin.com"
+  },
+  {
+    "slug": "owasp-zap",
+    "name": "OWASP ZAP",
+    "url": "https://www.zaproxy.org"
+  },
+  {
+    "slug": "semgrep",
+    "name": "Semgrep",
+    "url": "https://semgrep.dev"
+  },
+  {
+    "slug": "snyk",
+    "name": "Snyk",
+    "url": "https://snyk.io"
+  },
+  {
+    "slug": "vanta",
+    "name": "Vanta",
+    "url": "https://www.vanta.com"
+  },
+  {
+    "slug": "vault",
+    "name": "HashiCorp Vault",
+    "url": ""
+  },
+  {
+    "slug": "voiceover",
+    "name": "VoiceOver",
+    "url": "https://support.apple.com/guide/voiceover/welcome/mac"
+  },
+  {
+    "slug": "wordfence",
+    "name": "Wordfence",
+    "url": "https://www.wordfence.com"
+  }
+]

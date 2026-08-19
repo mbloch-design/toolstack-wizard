@@ -1,0 +1,12 @@
+[
+  {
+    "slug": "microsoft-teams",
+    "name": "Microsoft Teams",
+    "url": "https://www.microsoft.com/teams"
+  },
+  {
+    "slug": "slack",
+    "name": "Slack",
+    "url": "https://slack.com"
+  }
+]

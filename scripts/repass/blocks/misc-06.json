@@ -1,0 +1,42 @@
+[
+  {
+    "slug": "styled-components",
+    "name": "styled-components",
+    "url": "https://styled-components.com"
+  },
+  {
+    "slug": "svelte",
+    "name": "Svelte",
+    "url": "https://svelte.dev"
+  },
+  {
+    "slug": "tailwind-css",
+    "name": "Tailwind CSS",
+    "url": "https://tailwindcss.com"
+  },
+  {
+    "slug": "tanstack-router",
+    "name": "TanStack Router",
+    "url": "https://tanstack.com/router"
+  },
+  {
+    "slug": "tremor",
+    "name": "Tremor",
+    "url": "https://www.tremor.so"
+  },
+  {
+    "slug": "visily",
+    "name": "Visily",
+    "url": "https://www.visily.ai"
+  },
+  {
+    "slug": "vue-cli",
+    "name": "Vue CLI",
+    "url": "https://cli.vuejs.org"
+  },
+  {
+    "slug": "vue-router",
+    "name": "Vue Router",
+    "url": "https://router.vuejs.org"
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "adp-workforce",
+    "name": "ADP Workforce",
+    "url": "https://www.adp.com"
+  },
+  {
+    "slug": "allstate",
+    "name": "Allstate",
+    "url": "https://allstate.com"
+  },
+  {
+    "slug": "bamboohr",
+    "name": "BambooHR",
+    "url": "https://bamboohr.com"
+  },
+  {
+    "slug": "deel",
+    "name": "Deel",
+    "url": "https://www.deel.com"
+  },
+  {
+    "slug": "factorial",
+    "name": "Factorial",
+    "url": "https://factorialhr.com"
+  },
+  {
+    "slug": "greenhouse",
+    "name": "Greenhouse",
+    "url": "https://greenhouse.com"
+  },
+  {
+    "slug": "justworks",
+    "name": "Justworks",
+    "url": "https://www.justworks.com"
+  },
+  {
+    "slug": "lano",
+    "name": "Lano",
+    "url": "https://lano.io"
+  },
+  {
+    "slug": "linkedin-recruiter",
+    "name": "Linkedin Recruiter",
+    "url": "https://business.linkedin.com/talent-solutions/recruiter"
+  }
+]

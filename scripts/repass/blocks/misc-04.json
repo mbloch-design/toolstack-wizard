@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "mantine",
+    "name": "Mantine",
+    "url": "https://mantine.dev"
+  },
+  {
+    "slug": "material-swift",
+    "name": "Material (Swift)",
+    "url": "https://github.com/material-components/material-components-ios"
+  },
+  {
+    "slug": "meltwater",
+    "name": "Meltwater",
+    "url": "https://meltwater.com"
+  },
+  {
+    "slug": "origami",
+    "name": "Origami",
+    "url": "https://origami.design"
+  },
+  {
+    "slug": "percy",
+    "name": "Percy",
+    "url": "https://percy.io"
+  },
+  {
+    "slug": "photopea",
+    "name": "Photopea",
+    "url": "https://www.photopea.com/"
+  },
+  {
+    "slug": "pixelmator-pro",
+    "name": "Pixelmator Pro",
+    "url": "https://www.pixelmator.com/pro/"
+  },
+  {
+    "slug": "preact",
+    "name": "Preact",
+    "url": "https://preactjs.com"
+  },
+  {
+    "slug": "prowly",
+    "name": "Prowly",
+    "url": "https://prowly.com"
+  }
+]

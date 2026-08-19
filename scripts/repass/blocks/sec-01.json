@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "1password",
+    "name": "1Password",
+    "url": "https://1password.com"
+  },
+  {
+    "slug": "auth-js",
+    "name": "Auth.js",
+    "url": "https://authjs.dev"
+  },
+  {
+    "slug": "axe-devtools",
+    "name": "Axe DevTools",
+    "url": "https://www.deque.com/axe/devtools/"
+  },
+  {
+    "slug": "bitwarden",
+    "name": "Bitwarden",
+    "url": "https://bitwarden.com"
+  },
+  {
+    "slug": "burp-suite",
+    "name": "Burp Suite",
+    "url": "https://portswigger.net/burp"
+  },
+  {
+    "slug": "cloudflare",
+    "name": "Cloudflare",
+    "url": "https://www.cloudflare.com"
+  },
+  {
+    "slug": "crowdstrike",
+    "name": "Crowdstrike",
+    "url": "https://crowdstrike.com"
+  },
+  {
+    "slug": "dependabot",
+    "name": "Dependabot",
+    "url": "https://github.com/dependabot"
+  },
+  {
+    "slug": "desktopready",
+    "name": "DesktopReady",
+    "url": "https://desktopready.com"
+  }
+]

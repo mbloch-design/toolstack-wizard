@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "bynder",
+    "name": "Bynder",
+    "url": "https://www.bynder.com"
+  },
+  {
+    "slug": "cloudinary",
+    "name": "Cloudinary",
+    "url": "https://cloudinary.com"
+  },
+  {
+    "slug": "namecheap",
+    "name": "Namecheap",
+    "url": "https://www.namecheap.com"
+  },
+  {
+    "slug": "onedrive",
+    "name": "OneDrive",
+    "url": "https://onedrive.com"
+  },
+  {
+    "slug": "pics-io",
+    "name": "Pics.io",
+    "url": "https://pics.io"
+  },
+  {
+    "slug": "sharepoint",
+    "name": "SharePoint",
+    "url": "https://www.microsoft.com/microsoft-365/sharepoint/collaboration"
+  }
+]

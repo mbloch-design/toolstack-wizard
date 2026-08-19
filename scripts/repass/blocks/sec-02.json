@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "doppler",
+    "name": "Doppler",
+    "url": ""
+  },
+  {
+    "slug": "dotenv-vault",
+    "name": "Dotenv Vault",
+    "url": ""
+  },
+  {
+    "slug": "drata",
+    "name": "Drata",
+    "url": "https://drata.com"
+  },
+  {
+    "slug": "github-advanced-security",
+    "name": "GitHub Advanced Security",
+    "url": "https://github.com/security/advanced-security"
+  },
+  {
+    "slug": "infisical",
+    "name": "Infisical",
+    "url": ""
+  },
+  {
+    "slug": "lastpass",
+    "name": "LastPass",
+    "url": "https://lastpass.com"
+  },
+  {
+    "slug": "maced-ai",
+    "name": "Maced AI",
+    "url": "https://maced.ai"
+  },
+  {
+    "slug": "microsoft-defender",
+    "name": "Microsoft Defender",
+    "url": "https://microsoft.com/security/business/microsoft-defender"
+  },
+  {
+    "slug": "nvda",
+    "name": "NVDA",
+    "url": "https://www.nvaccess.org"
+  }
+]

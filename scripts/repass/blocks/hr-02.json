@@ -1,0 +1,27 @@
+[
+  {
+    "slug": "netchex",
+    "name": "Netchex",
+    "url": "https://netchex.com"
+  },
+  {
+    "slug": "oyster",
+    "name": "Oyster®",
+    "url": "https://oysterhr.com"
+  },
+  {
+    "slug": "payfit",
+    "name": "Payfit",
+    "url": "https://payfit.com"
+  },
+  {
+    "slug": "personio",
+    "name": "Personio",
+    "url": "https://personio.com"
+  },
+  {
+    "slug": "rippling",
+    "name": "Rippling",
+    "url": "https://rippling.com"
+  }
+]

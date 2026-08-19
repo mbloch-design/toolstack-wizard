@@ -1,0 +1,17 @@
+[
+  {
+    "slug": "apollo",
+    "name": "Apollo",
+    "url": "https://apollo.com"
+  },
+  {
+    "slug": "clockify",
+    "name": "Clockify",
+    "url": "https://clockify.com"
+  },
+  {
+    "slug": "condeco",
+    "name": "Condeco",
+    "url": "https://condecosoftware.com"
+  }
+]

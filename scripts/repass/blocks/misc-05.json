@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "pterocos",
+    "name": "Pterocos",
+    "url": "https://pterocos.com"
+  },
+  {
+    "slug": "radix-primitives",
+    "name": "Radix Primitives",
+    "url": "https://www.radix-ui.com/primitives"
+  },
+  {
+    "slug": "radix-ui",
+    "name": "Radix UI",
+    "url": "https://www.radix-ui.com"
+  },
+  {
+    "slug": "react",
+    "name": "React",
+    "url": "https://react.dev"
+  },
+  {
+    "slug": "react-hook-form",
+    "name": "React Hook Form",
+    "url": "https://react-hook-form.com"
+  },
+  {
+    "slug": "react-query",
+    "name": "React Query",
+    "url": "https://tanstack.com/query"
+  },
+  {
+    "slug": "react-router",
+    "name": "React Router",
+    "url": "https://reactrouter.com"
+  },
+  {
+    "slug": "relay",
+    "name": "Relay",
+    "url": "https://relay.dev"
+  },
+  {
+    "slug": "solid-js",
+    "name": "Solid.js",
+    "url": "https://www.solidjs.com"
+  }
+]
