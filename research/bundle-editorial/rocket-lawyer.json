@@ -1,0 +1,88 @@
+{
+  "slug": "rocket-lawyer",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Rocket Lawyer — abonnements et tarifs (site officiel)", "url": "https://www.rocketlawyer.com/checkout-plans.rl" }
+  ],
+  "facts": {
+    "what": "Plateforme juridique par abonnement (marché américain et britannique) : centaines de modèles de documents personnalisables via un questionnaire guidé, création d'entreprise, agent enregistré et consultations d'avocats incluses dans l'adhésion.",
+    "what_en": "Subscription legal platform (US and UK markets): hundreds of customisable document templates via a guided questionnaire, company formation, registered agent and attorney consultations included in the membership.",
+    "pricing_model": "Adhésion mensuelle ou annuelle, sans engagement. Services additionnels (agent enregistré, formalités) facturés à part, à tarif réduit pour les membres.",
+    "free_tier": { "exists": false, "detail": "Essai possible ; l'accès aux documents et aux consultations passe par une adhésion payante." },
+    "plans": [
+      { "name": "Adhésion mensuelle", "price": "environ 40 $/mois, résiliable à tout moment" },
+      { "name": "Adhésion annuelle (Rocket Legal+)", "price": "environ 240 $/an, avec remises sur les services additionnels" },
+      { "name": "Agent enregistré", "price": "service additionnel, tarif réduit pour les membres" }
+    ],
+    "key_features": [
+      "Bibliothèque de modèles juridiques personnalisables",
+      "Création d'entreprise et formalités",
+      "Consultations avec des avocats",
+      "Service d'agent enregistré (option)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous exercez aux États-Unis ou au Royaume-Uni.",
+        "Vous avez des besoins juridiques récurrents (contrats, NDA, baux).",
+        "Vous voulez un accès à des avocats compris dans l'abonnement."
+      ],
+      "avoidIf": [
+        "Vous exercez en France ou en Europe continentale (droit non couvert).",
+        "Vous n'avez qu'une formalité ponctuelle à accomplir.",
+        "Vous préférez payer à l'acte plutôt qu'un abonnement."
+      ],
+      "threshold": "Rocket Lawyer s'impose pour un entrepreneur anglo-saxon avec des besoins juridiques réguliers ; pour une formalité unique ou hors de ces marchés, une legaltech locale convient mieux."
+    },
+    "pros": [
+      "Modèles juridiques nombreux et guidés.",
+      "Consultations d'avocats incluses.",
+      "Création d'entreprise et agent enregistré au même endroit.",
+      "Résiliable à tout moment."
+    ],
+    "cons": [
+      "Couvre le droit américain et britannique, pas le droit français.",
+      "Abonnement peu rentable pour un besoin ponctuel.",
+      "Services additionnels facturés en supplément."
+    ],
+    "use_cases": [
+      "Rédiger des contrats et NDA récurrents.",
+      "Créer une société aux États-Unis ou au Royaume-Uni.",
+      "Consulter un avocat sur une question courante."
+    ],
+    "relevant_for": ["Entrepreneurs US/UK", "Petites entreprises anglo-saxonnes", "Freelances internationaux"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You operate in the US or UK.",
+        "You have recurring legal needs (contracts, NDAs, leases).",
+        "You want attorney access included in the subscription."
+      ],
+      "avoidIf": [
+        "You operate in France or continental Europe (law not covered).",
+        "You only have a one-off filing to complete.",
+        "You prefer paying per task over a subscription."
+      ],
+      "threshold": "Rocket Lawyer makes sense for a US/UK entrepreneur with recurring legal needs; for a one-off filing or outside those markets, a local legaltech fits better."
+    },
+    "pros": [
+      "Large, guided library of legal templates.",
+      "Attorney consultations included.",
+      "Company formation and registered agent in one place.",
+      "Cancel anytime."
+    ],
+    "cons": [
+      "Covers US and UK law, not French law.",
+      "Subscription poor value for a one-off need.",
+      "Add-on services billed separately."
+    ],
+    "use_cases": [
+      "Draft recurring contracts and NDAs.",
+      "Incorporate a company in the US or UK.",
+      "Consult an attorney on an everyday question."
+    ]
+  }
+}

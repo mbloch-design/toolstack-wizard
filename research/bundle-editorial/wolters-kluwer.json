@@ -1,0 +1,86 @@
+{
+  "slug": "wolters-kluwer",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Wolters Kluwer — solutions juridiques et réglementaires (site officiel)", "url": "https://www.wolterskluwer.com/en/solutions/legal-regulatory" }
+  ],
+  "facts": {
+    "what": "Éditeur mondial de solutions juridiques et de conformité pour directions juridiques, cabinets d'avocats et professionnels de la conformité : bases documentaires, gestion des dépenses juridiques, gestion de cabinet et outils IA (VitalLaw, Legisway, Kleos, ELM Solutions, Brightflag, Libra).",
+    "what_en": "Global publisher of legal and compliance solutions for in-house legal teams, law firms and compliance professionals: research databases, legal spend management, practice management and AI tools (VitalLaw, Legisway, Kleos, ELM Solutions, Brightflag, Libra).",
+    "pricing_model": "Tarification entreprise sur devis, variable selon la solution du portefeuille, le nombre d'utilisateurs et le périmètre. Pas de grille publique.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite ; démonstration commerciale et devis selon la solution retenue." },
+    "plans": [
+      { "name": "Solutions du portefeuille (VitalLaw, Legisway, Kleos, ELM, Brightflag…)", "price": "sur devis" }
+    ],
+    "key_features": [
+      "Bases documentaires juridiques et réglementaires",
+      "Gestion des dépenses juridiques (ELM Solutions, Brightflag)",
+      "Gestion de cabinet et de contrats (Kleos, Legisway)",
+      "Outils IA dédiés aux professionnels du droit (Libra)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous dirigez un service juridique ou un cabinet structuré.",
+        "Vous devez piloter des dépenses juridiques et de la conformité.",
+        "Vous avez besoin de bases documentaires juridiques fiables."
+      ],
+      "avoidIf": [
+        "Vous êtes indépendant ou TPE avec des besoins juridiques simples.",
+        "Vous voulez une tarification transparente et immédiate.",
+        "Une legaltech en ligne couvre déjà vos formalités courantes."
+      ],
+      "threshold": "Wolters Kluwer s'impose pour une direction juridique ou un cabinet qui industrialise sa pratique ; pour des besoins ponctuels, une legaltech en libre-service suffit largement."
+    },
+    "pros": [
+      "Portefeuille très complet pour les professionnels du droit.",
+      "Bases documentaires juridiques de référence.",
+      "Pilotage des dépenses et de la conformité.",
+      "Acteur mondial installé de longue date."
+    ],
+    "cons": [
+      "Tarification non publique, sur devis uniquement.",
+      "Surdimensionné hors structure juridique constituée.",
+      "Portefeuille éclaté en de nombreux produits distincts."
+    ],
+    "use_cases": [
+      "Équiper une direction juridique en recherche documentaire.",
+      "Piloter et contrôler les dépenses juridiques externes.",
+      "Gérer contrats et dossiers d'un cabinet."
+    ],
+    "relevant_for": ["Directions juridiques", "Cabinets d'avocats", "Responsables conformité"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You run an in-house legal team or an established firm.",
+        "You need to manage legal spend and compliance.",
+        "You need reliable legal research databases."
+      ],
+      "avoidIf": [
+        "You're a freelancer or micro-business with simple legal needs.",
+        "You want transparent, immediate pricing.",
+        "An online legaltech already covers your everyday filings."
+      ],
+      "threshold": "Wolters Kluwer makes sense for a legal department or firm industrialising its practice; for occasional needs, a self-service legaltech is plenty."
+    },
+    "pros": [
+      "Very complete portfolio for legal professionals.",
+      "Reference-grade legal research databases.",
+      "Legal spend and compliance management.",
+      "Long-established global player."
+    ],
+    "cons": [
+      "Non-public, quote-only pricing.",
+      "Oversized outside an established legal function.",
+      "Portfolio split across many separate products."
+    ],
+    "use_cases": [
+      "Equip a legal department with research tools.",
+      "Track and control outside legal spend.",
+      "Manage a firm's contracts and matters."
+    ]
+  }
+}

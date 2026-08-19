@@ -1,0 +1,89 @@
+{
+  "slug": "pandadoc",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "PandaDoc — tarifs (site officiel)", "url": "https://www.pandadoc.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Plateforme d'automatisation documentaire et de signature électronique : création de propositions et devis à la marque, gestion des contrats, circuits d'approbation et suivi de l'engagement sur les documents envoyés.",
+    "what_en": "Document automation and e-signature platform: branded proposals and quotes, contract management, approval workflows and engagement tracking on sent documents.",
+    "pricing_model": "Palier gratuit limité (signature seule) puis abonnements par utilisateur (mensuel/annuel, annuel moins cher), avec une offre Enterprise sur devis.",
+    "free_tier": { "exists": true, "detail": "Offre gratuite de signature électronique, plafonnée à quelques documents envoyés par mois." },
+    "plans": [
+      { "name": "Free eSign", "price": "0 $ (nombre de documents plafonné par mois)" },
+      { "name": "Essentials / Starter", "price": "environ 19 $/utilisateur/mois (annuel), 29 $ en mensuel" },
+      { "name": "Business", "price": "environ 49 $/utilisateur/mois (annuel), 65 $ en mensuel" },
+      { "name": "Enterprise", "price": "sur devis" }
+    ],
+    "key_features": [
+      "Propositions et devis à la marque",
+      "Signature électronique illimitée sur les plans payants",
+      "Modèles, bibliothèque de contenu et circuits d'approbation",
+      "Intégrations CRM (Salesforce, HubSpot) et suivi d'engagement"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous envoyez régulièrement des propositions commerciales.",
+        "Vous voulez lier documents, signature et CRM.",
+        "Vous suivez l'engagement des prospects sur vos devis."
+      ],
+      "avoidIf": [
+        "Vous avez seulement besoin de faire signer, sans création de documents.",
+        "Votre équipe est grande et la facturation par siège devient lourde.",
+        "Le plafond du palier gratuit vous suffit."
+      ],
+      "threshold": "PandaDoc s'impose pour une équipe commerciale qui produit et fait signer des propositions ; pour de la signature seule, un outil d'e-signature simple revient moins cher."
+    },
+    "pros": [
+      "Création de propositions et devis soignés.",
+      "Signature électronique intégrée.",
+      "Intégrations CRM natives.",
+      "Suivi de l'engagement sur les documents."
+    ],
+    "cons": [
+      "Facturation par siège qui pèse en équipe.",
+      "Palier gratuit limité au nombre de documents.",
+      "Surdimensionné pour de la signature simple."
+    ],
+    "use_cases": [
+      "Produire et envoyer des propositions commerciales.",
+      "Faire signer des contrats clients.",
+      "Suivre qui ouvre et lit un devis."
+    ],
+    "relevant_for": ["Équipes commerciales", "Agences", "PME"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You regularly send sales proposals.",
+        "You want documents, signing and CRM connected.",
+        "You track prospect engagement on your quotes."
+      ],
+      "avoidIf": [
+        "You only need signing, without document creation.",
+        "Your team is large and per-seat billing gets heavy.",
+        "The free tier's cap is enough for you."
+      ],
+      "threshold": "PandaDoc makes sense for a sales team producing and signing proposals; for signing alone, a simple e-signature tool costs less."
+    },
+    "pros": [
+      "Polished proposals and quotes.",
+      "Built-in e-signature.",
+      "Native CRM integrations.",
+      "Document engagement tracking."
+    ],
+    "cons": [
+      "Per-seat billing weighs on a team.",
+      "Free tier capped by document count.",
+      "Oversized for simple signing."
+    ],
+    "use_cases": [
+      "Produce and send sales proposals.",
+      "Get client contracts signed.",
+      "See who opens and reads a quote."
+    ]
+  }
+}

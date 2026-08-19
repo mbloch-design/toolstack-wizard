@@ -1,0 +1,89 @@
+{
+  "slug": "yousign",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Yousign — tarifs (site officiel)", "url": "https://yousign.com/fr-fr/tarifs" }
+  ],
+  "facts": {
+    "what": "Solution européenne de signature électronique, créée en France en 2013 : signature conforme eIDAS et RGPD, archivage des documents, vérification d'identité, workflows configurables, sceau électronique et API. Hébergement en France, certification ANSSI.",
+    "what_en": "European e-signature solution, founded in France in 2013: eIDAS- and GDPR-compliant signing, document archiving, identity verification, configurable workflows, electronic seal and an API. Hosted in France, ANSSI-certified.",
+    "pricing_model": "Abonnement mensuel par utilisateur, avec une offre API facturée au volume de signatures. Conformité eIDAS avancée incluse dès le palier d'entrée.",
+    "free_tier": { "exists": false, "detail": "Essai gratuit disponible ; abonnement requis pour un usage courant." },
+    "plans": [
+      { "name": "Starter", "price": "à partir de 9 €/mois" },
+      { "name": "Business", "price": "à partir de 25 €/mois" },
+      { "name": "API", "price": "à partir de 75 €/mois selon le volume annuel de signatures" },
+      { "name": "Enterprise", "price": "sur devis" }
+    ],
+    "key_features": [
+      "Signature électronique conforme eIDAS",
+      "Archivage des documents à long terme",
+      "Vérification d'identité et sceau électronique",
+      "API et workflows configurables"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous faites signer des contrats régulièrement.",
+        "La conformité européenne (eIDAS, RGPD) et l'hébergement en France comptent.",
+        "Vous voulez intégrer la signature à vos outils via une API."
+      ],
+      "avoidIf": [
+        "Vous ne faites signer qu'un document de temps en temps.",
+        "Vous êtes hors Europe et la conformité eIDAS ne vous concerne pas.",
+        "Vous voulez une solution entièrement gratuite."
+      ],
+      "threshold": "Yousign s'impose pour une entreprise européenne qui fait signer régulièrement avec une exigence de conformité ; pour une signature ponctuelle, un outil gratuit suffit."
+    },
+    "pros": [
+      "Conformité eIDAS incluse dès l'entrée de gamme.",
+      "Hébergement en France et certification ANSSI.",
+      "API solide pour intégrer la signature.",
+      "Interface simple, pensée pour les PME."
+    ],
+    "cons": [
+      "Pas de palier gratuit permanent.",
+      "Tarification par utilisateur qui monte avec l'équipe.",
+      "Offre API facturée séparément au volume."
+    ],
+    "use_cases": [
+      "Faire signer devis et contrats clients.",
+      "Automatiser un circuit de signature interne.",
+      "Intégrer la signature dans son produit via l'API."
+    ],
+    "relevant_for": ["PME françaises", "Indépendants", "Équipes commerciales et RH"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You have contracts signed regularly.",
+        "European compliance (eIDAS, GDPR) and French hosting matter to you.",
+        "You want to embed signing into your tools via an API."
+      ],
+      "avoidIf": [
+        "You only need a document signed occasionally.",
+        "You're outside Europe and eIDAS compliance doesn't apply.",
+        "You want a fully free solution."
+      ],
+      "threshold": "Yousign makes sense for a European company signing regularly with compliance requirements; for occasional signing, a free tool suffices."
+    },
+    "pros": [
+      "eIDAS compliance included from the entry tier.",
+      "French hosting and ANSSI certification.",
+      "Solid API for embedding signatures.",
+      "Simple interface, built for SMBs."
+    ],
+    "cons": [
+      "No permanent free tier.",
+      "Per-user pricing rises with team size.",
+      "The API offering is billed separately by volume."
+    ],
+    "use_cases": [
+      "Get quotes and client contracts signed.",
+      "Automate an internal signing workflow.",
+      "Embed signing into your product via the API."
+    ]
+  }
+}
