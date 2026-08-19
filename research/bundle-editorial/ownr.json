@@ -1,0 +1,86 @@
+{
+  "slug": "ownr",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Ownr — Canadian business formation platform (site officiel)", "url": "https://ownr.co" }
+  ],
+  "facts": {
+    "what": "Plateforme canadienne de formation et gestion d'entreprise pour entrepreneurs. Aide à création, incorporation, compliance, et croissance. Services spécialisés pour contexte réglementaire canadien. Outils de gestion complète pour petites entreprises.",
+    "what_en": "Canadian business formation and management platform for entrepreneurs. Helps with formation, incorporation, compliance, and growth. Specialized for Canadian regulatory context. Complete management tools for small businesses.",
+    "pricing_model": "Tarification non détaillée publiquement ; devis basé sur services choisis et complexité.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite ; pricing sur devis." },
+    "plans": [
+      { "name": "Plan personnalisé", "price": "Tarification sur devis selon services" }
+    ],
+    "key_features": [
+      "Incorporation et enregistrement entreprise",
+      "Guidance professionnelle complète",
+      "Outils de gestion d'entreprise",
+      "Support conformité réglementaire canadienne",
+      "Assistance ongoing pour croissance",
+      "Accès à ressources et networking"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes entrepreneur canadien et vous voulez incorporer rapidement.",
+        "Vous avez besoin d'une plateforme de gestion d'entreprise canadienne.",
+        "Vous préférez un service avec guidance professionnelle."
+      ],
+      "avoidIf": [
+        "Vous êtes un indépendant sans intention d'incorporation.",
+        "Vous êtes hors du Canada.",
+        "Vous cherchez une solution entièrement gratuite."
+      ],
+      "threshold": "Ownr est pour entrepreneurs canadiens cherchant incorporation et gestion d'entreprise. Pour freelances sans corps légal, ou hors-Canada, non applicable."
+    },
+    "pros": [
+      "Spécialisé pour Canada : conformité réglementaire.",
+      "Services complets : incorporation + gestion ongoing.",
+      "Guidance professionnelle incluse."
+    ],
+    "cons": [
+      "Pas de tarification transparente ; devis obligatoire.",
+      "Peut être plus cher que solutions DIY.",
+      "Limité à Canada."
+    ],
+    "use_cases": [
+      "Incorporer une entreprise au Canada rapidement.",
+      "Gérer compliance et obligations réglementaires.",
+      "Accéder à ressources et support pour croissance."
+    ],
+    "relevant_for": ["Entrepreneurs canadiens", "Startups Canada", "PME Canada"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a Canadian entrepreneur wanting fast incorporation.",
+        "You need a Canadian-specific business management platform.",
+        "You prefer professional guidance included."
+      ],
+      "avoidIf": [
+        "You're a freelancer with no incorporation plans.",
+        "You're outside Canada.",
+        "You want a completely free solution."
+      ],
+      "threshold": "Ownr is for Canadian entrepreneurs seeking incorporation and ongoing management. For freelancers without legal entity or outside Canada, not applicable."
+    },
+    "pros": [
+      "Canadian-specialized: regulatory compliance.",
+      "Complete services: incorporation + ongoing management.",
+      "Professional guidance included."
+    ],
+    "cons": [
+      "No transparent pricing; custom quote required.",
+      "May be pricier than DIY solutions.",
+      "Limited to Canada."
+    ],
+    "use_cases": [
+      "Incorporate a company in Canada quickly.",
+      "Manage compliance and regulatory obligations.",
+      "Access resources and support for growth."
+    ]
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "slug": "docyt",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Docyt — AI-powered accounting platform (site officiel)", "url": "https://docyt.com" }
+  ],
+  "facts": {
+    "what": "Plateforme comptable basée sur l'IA qui automatise les tâches comptables (catégorisation, reconciliation, clôture mensuelle, reporting). Offre des couches d'intelligence (bookkeeping, HpAI analytics, copilot pour cabinets). Intégrations extensives (15 000+ banques, 20+ POS, 300+ paie).",
+    "what_en": "AI-powered accounting platform automating core tasks (categorization, reconciliation, month-end close, reporting). Provides layered intelligence (AI bookkeeping, HpAI analytics, accountant copilot). Extensive integrations (15K+ banks, 20+ POS, 300+ payroll).",
+    "pricing_model": "Tarification modulaire par secteur d'activité (hôtellerie, cabinets comptables, petites entreprises). Essai gratuit disponible ; devis personnalisés pour tarification complète.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit 7 jours pour ProfitBooks (produit self-serve)" },
+    "plans": [
+      { "name": "Essai gratuit", "price": "7 jours pour tester ProfitBooks" },
+      { "name": "Plan hôtellerie", "price": "À partir de 299 $/mois pour hôtels (200 transactions)" },
+      { "name": "Plan personnalisé", "price": "Devis sur demande pour cabinets et autres secteurs" }
+    ],
+    "key_features": [
+      "Bookkeeping automation avec 99% de précision",
+      "Intelligence comptable HpAI sur 128B+ données",
+      "Copilot pour cabinets comptables",
+      "Intégrations 15 000+ banques, 300+ paie, 20+ POS",
+      "Détection d'anomalies et rapports intelligents",
+      "Support pour multi-client (cabinets)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes un petit business ou cabaret comptable cherchant automation de la clôture mensuelle.",
+        "Vous avez besoin de multi-client support et rapports sophistiqués.",
+        "Vous voulez réduire le temps de clôture et les erreurs manuelles."
+      ],
+      "avoidIf": [
+        "Vous êtes une micro-entreprise avec très peu de transactions.",
+        "Vous avez besoin de la prise en charge très spécialisée dans un secteur non couverts.",
+        "Vous cherchez un outil entièrement gratuit."
+      ],
+      "threshold": "Docyt s'impose pour les cabinets et PME avec volume de transactions important. Pour un freelancer simple, des outils plus légers conviennent mieux."
+    },
+    "pros": [
+      "Automation IA très puissante de la comptabilité.",
+      "Intégrations extensives (15k+ banques).",
+      "Intelligence reporting avancée basée sur 128B+ données.",
+      "Support multi-client pour cabinets comptables."
+    ],
+    "cons": [
+      "Pas de tarification publique transparente.",
+      "Peut nécessiter onboarding et configuration.",
+      "Essai gratuit limité à 7 jours."
+    ],
+    "use_cases": [
+      "Automatiser la clôture mensuelle d'un cabinet comptable.",
+      "Reconcilier et catégoriser automatiquement les transactions.",
+      "Générer des rapports comptables détaillés et anomalies."
+    ],
+    "relevant_for": ["Cabinets comptables", "PME avec haute volumétrie", "Directeurs financiers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're an accounting firm or mid-sized business seeking month-end automation.",
+        "You need multi-client support and sophisticated reporting.",
+        "You want to reduce close time and manual errors."
+      ],
+      "avoidIf": [
+        "You're a solo freelancer with minimal transactions.",
+        "You need support for a very specialized, uncovered sector.",
+        "You want a completely free tool."
+      ],
+      "threshold": "Docyt is for firms and mid-sized businesses with high transaction volume. For a simple freelancer, lighter tools work better."
+    },
+    "pros": [
+      "Powerful AI automation of accounting tasks.",
+      "Extensive integrations (15K+ banks).",
+      "Advanced reporting intelligence from 128B+ data points.",
+      "Multi-client support for accounting firms."
+    ],
+    "cons": [
+      "No transparent public pricing.",
+      "May require onboarding and setup.",
+      "Free trial limited to 7 days."
+    ],
+    "use_cases": [
+      "Automate month-end close for an accounting firm.",
+      "Auto-reconcile and categorize transactions.",
+      "Generate detailed accounting reports and anomalies."
+    ]
+  }
+}

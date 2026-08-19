@@ -1,0 +1,88 @@
+{
+  "slug": "boast",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Boast — R&D tax credit automation (site officiel)", "url": "https://boast.ai" }
+  ],
+  "facts": {
+    "what": "Plateforme IA de réclamation R&D automatisée combinant intelligence machine et expertise fiscale humaine. Agrège données de systèmes financiers, project management, engineering. Depuis 2011, a aidé 2000+ entreprises à récupérer 675M$ de crédits.",
+    "what_en": "AI-powered R&D tax credit platform combining machine learning and human tax expertise. Aggregates data from financial, project management, and engineering systems. Since 2011, has helped 2,000+ companies claim $675M in credits.",
+    "pricing_model": "Modèle basé sur le succès : commission sur le montant du crédit réclamé (estimée 15-25% du crédit obtenu). Pas de frais upfront ; paiement si succès.",
+    "free_tier": { "exists": false, "detail": "Pas d'essai gratuit ; modèle contingence basé sur le résultat." },
+    "plans": [
+      { "name": "Plan contingence", "price": "Commission 15-25% du crédit réclamé (prix exact sur devis)" }
+    ],
+    "key_features": [
+      "Collecte automatisée de données R&D des systèmes existants",
+      "Analyse IA sur impact R&D et dépenses éligibles",
+      "Réduction du temps de préparation de 60h+ à ~5h",
+      "Taux d'acceptation IRS 98%+",
+      "Support fédéral et étatique complet",
+      "Expertise humaine + automation"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Votre entreprise investit en R&D et n'a jamais réclamé les crédits R&D fédéraux/étatiques.",
+        "Vous avez dépensé significativement en salaires d'ingénieurs, logiciels, tests.",
+        "Vous voulez un processus simplifié sans frais upfront."
+      ],
+      "avoidIf": [
+        "Votre entreprise n'a aucune R&D ou innovation technologique.",
+        "Vous avez déjà réclamé tous les crédits disponibles.",
+        "Vous voulez une solution gratuite."
+      ],
+      "threshold": "Boast convient aux startups tech et entreprises innovantes qui n'ont jamais exploité les crédits R&D. Pour une PME sans R&D, non applicable."
+    },
+    "pros": [
+      "Modèle contingence : zéro frais si pas de succès.",
+      "Automation puissante réduit préparation de 60h+ à ~5h.",
+      "Taux d'acceptation des dossiers très élevé.",
+      "Expertise fiscale combinée avec IA."
+    ],
+    "cons": [
+      "Commission prélevée sur le crédit obtenu, ce qui peut être significatif.",
+      "Pas d'essai gratuit ou prévisualisation.",
+      "Nécessite données financières/engineering précises."
+    ],
+    "use_cases": [
+      "Réclamer des crédits R&D fédéraux et étatiques pour une startup tech.",
+      "Automatiser la préparation et maximiser les crédits R&D.",
+      "Lever des fonds en récupérant de l'equity grâce aux crédits R&D."
+    ],
+    "relevant_for": ["Startups tech", "Entreprises d'ingénierie", "Éditeurs de logiciels"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "Your company invests in R&D and has never claimed federal/state R&D credits.",
+        "You've spent significantly on engineer salaries, software, testing.",
+        "You want a streamlined process with no upfront fees."
+      ],
+      "avoidIf": [
+        "Your company has no R&D or tech innovation.",
+        "You've already claimed all available credits.",
+        "You want a free solution."
+      ],
+      "threshold": "Boast is for tech startups and innovative companies that haven't tapped R&D credits yet. For a non-R&D SMB, not applicable."
+    },
+    "pros": [
+      "Contingency model: zero fees if no success.",
+      "Powerful automation cuts prep from 60h+ to ~5h.",
+      "Very high IRS acceptance rate.",
+      "Tax expertise combined with AI."
+    ],
+    "cons": [
+      "A commission is taken on credits claimed, which can be substantial.",
+      "No free trial or preview.",
+      "Requires accurate financial and engineering data."
+    ],
+    "use_cases": [
+      "Claim federal and state R&D credits for a tech startup.",
+      "Automate R&D credit preparation and maximize claims.",
+      "Raise capital by recovering equity via R&D credits."
+    ]
+  }
+}

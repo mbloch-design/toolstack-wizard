@@ -1,0 +1,90 @@
+{
+  "slug": "pennylane",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Pennylane — Logiciel de gestion comptable (site officiel)", "url": "https://pennylane.com" }
+  ],
+  "facts": {
+    "what": "Logiciel français de gestion comptable tout-en-un combinant facturation, comptabilité, trésorerie, gestion des achats et rapports automatisés, conçu pour les TPE, PME et cabinets comptables en France.",
+    "what_en": "All-in-one French accounting software combining invoicing, bookkeeping, cash flow management, purchase orders, and automated reporting, designed for SMEs and accounting firms in France.",
+    "pricing_model": "Abonnement mensuel par plan, tarifé en fonction du nombre d'utilisateurs et des modules. Tarification progressive pour TPE, PME et cabinets comptables.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite permanente ; essai gratuit possible, puis abonnement payant." },
+    "plans": [
+      { "name": "Basique (Freelancers/TPE)", "price": "À partir de 14 € HT/mois" },
+      { "name": "SME Starter", "price": "Tarification sur demande selon modules" },
+      { "name": "SME Advanced", "price": "Tarification sur demande selon modules" },
+      { "name": "Cabinet comptable", "price": "Tarification sur demande selon modules" }
+    ],
+    "key_features": [
+      "Éditeur de factures avec Factur-X (conformité France 2026)",
+      "Gestion de la comptabilité d'exercice",
+      "Prévisions de trésorerie et monitoring temps réel",
+      "Gestion des achats et des demandes d'approvisionnement",
+      "Automatisation comptable et intégrations (Qonto, Payfit, Stripe, etc.)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes freelanceur ou petite entreprise basée en France.",
+        "Vous voulez un logiciel français conforme à la réglementation (Factur-X 2026).",
+        "Vous cherchez une suite complète (facturation + comptabilité + trésorerie)."
+      ],
+      "avoidIf": [
+        "Vous êtes basé en dehors de la France (Pennylane est France-only).",
+        "Vous avez des besoins comptables très avancés (consolidation multi-entités).",
+        "Vous préférez la gratuité totale."
+      ],
+      "threshold": "Pennylane s'impose pour les PME françaises cherchant une suite unifiée conforme à la loi ; pour un freelanceur très petit budget, Wave (gratuit) ou un tableur peuvent suffire."
+    },
+    "pros": [
+      "Logiciel français, comprenant les réglementations locales (Factur-X, DGFIP).",
+      "Suite complète (facturation + comptabilité + trésorerie) en une plateforme.",
+      "Intégrations natives avec outils français populaires (Qonto, Payfit).",
+      "Plus de 350 000 entreprises utilisateurs en France."
+    ],
+    "cons": [
+      "Pas disponible en dehors de la France.",
+      "Tarification escalade rapidement avec le nombre d'utilisateurs.",
+      "Interface moins intuitivequ'une solution spécialisée simple."
+    ],
+    "use_cases": [
+      "Gérer la comptabilité d'une TPE/PME française.",
+      "Automatiser le traitement des factures et des achats.",
+      "Préparer les déclarations fiscales (TCF, BRN, DGFIP)."
+    ],
+    "relevant_for": ["Freelanceurs français", "TPE/PME en France", "Cabinets comptables"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You are a freelancer or small business based in France.",
+        "You need a French-compliant solution (Factur-X 2026 mandate).",
+        "You want a complete suite (invoicing + accounting + cash flow)."
+      ],
+      "avoidIf": [
+        "You are based outside France (Pennylane is France-only).",
+        "You need very advanced accounting (multi-entity consolidation).",
+        "You prefer completely free software."
+      ],
+      "threshold": "Pennylane is essential for French SMEs seeking a unified, compliant suite; for a tiny-budget freelancer, Wave (free) or a spreadsheet may suffice."
+    },
+    "pros": [
+      "French software, understands local regulations (Factur-X, DGFIP).",
+      "Complete suite (invoicing + accounting + cash flow) in one platform.",
+      "Native integrations with popular French tools (Qonto, Payfit).",
+      "Trusted by 350,000+ companies in France."
+    ],
+    "cons": [
+      "Not available outside France.",
+      "Pricing escalates quickly with additional users.",
+      "Interface less intuitive than a simple specialized solution."
+    ],
+    "use_cases": [
+      "Manage accounting for a French SME.",
+      "Automate invoice and purchase processing.",
+      "Prepare tax filings (TCF, BRN, DGFIP)."
+    ]
+  }
+}

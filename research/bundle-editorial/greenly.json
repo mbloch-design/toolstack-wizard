@@ -1,0 +1,89 @@
+{
+  "slug": "greenly",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Greenly — Carbon & ESG management platform (site officiel)", "url": "https://greenly.earth" }
+  ],
+  "facts": {
+    "what": "Plateforme de gestion du carbone et ESG pour entreprises. Aide mesurer empreinte carbone (Bilan Carbone®, LCA), planifier décarbonization, gérer compliance ESG (CSRD, SBTi, TCFD/IFRS). AI-powered « EcoPilot ». Serves 3500+ clients, manage 291M+ tCO2e.",
+    "what_en": "Carbon footprint and ESG management platform for businesses. Helps measure carbon (Bilan Carbone®, LCA), plan decarbonization, manage compliance (CSRD, SBTi, TCFD/IFRS). AI-powered EcoPilot. Serves 3.5K+ clients, manages 291M+ tCO2e.",
+    "pricing_model": "Tarification non détaillée publiquement ; pricing sur devis selon scope et volume. Pricing page accessible mais détails sur demande.",
+    "free_tier": { "exists": false, "detail": "Pas d'essai gratuit public ; démo et pricing sur demande." },
+    "plans": [
+      { "name": "Plan personnalisé", "price": "Quote selon scope ESG et volume (pricing page sur site)" }
+    ],
+    "key_features": [
+      "Calcul empreinte carbone (Bilan Carbone®)",
+      "Life Cycle Analysis (LCA)",
+      "Gestion compliance ESG (CSRD, SBTi, TCFD)",
+      "EcoPilot AI assistant",
+      "Engagement fournisseurs",
+      "Réduction temps reporting 80%",
+      "Team efficiency 5x via AI"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Votre entreprise doit se conformer à CSRD ou autres réglementations ESG.",
+        "Vous êtes B2B avec clients exigeant transparency carbone.",
+        "Vous voulez mesurer et réduire votre empreinte carbone."
+      ],
+      "avoidIf": [
+        "Vous êtes une micro-entreprise sans obligations ESG.",
+        "Vous cherchez une solution de comptabilité financière classique.",
+        "Vous voulez une solution entièrement gratuite."
+      ],
+      "threshold": "Greenly s'adresse aux entreprises avec obligations ESG ou clients exigeants. Pour entreprises sans compliance ESG, non pertinent."
+    },
+    "pros": [
+      "Conforme réglementations ESG (CSRD, SBTi).",
+      "Réduction importante du temps passé au reporting.",
+      "AI-powered EcoPilot pour efficiency.",
+      "Large client base : 3.5k+ clients."
+    ],
+    "cons": [
+      "Pas de tarification transparente ; devis obligatoire.",
+      "Orienté compliance et durabilité, pas finance classique.",
+      "Peut être complexe pour petites entreprises sans obligations."
+    ],
+    "use_cases": [
+      "Mesurer empreinte carbone et compliance ESG.",
+      "Préparer rapports de durabilité CSRD.",
+      "Engager fournisseurs dans stratégie décarbonization."
+    ],
+    "relevant_for": ["Directeurs ESG", "Responsables durabilité", "Enterprise B2B"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "Your company must comply with CSRD or other ESG regulations.",
+        "You're B2B with clients demanding carbon transparency.",
+        "You want to measure and reduce your carbon footprint."
+      ],
+      "avoidIf": [
+        "You're a small business without ESG obligations.",
+        "You're looking for classic financial accounting.",
+        "You want a completely free solution."
+      ],
+      "threshold": "Greenly is for companies with ESG compliance needs or demanding clients. For businesses without ESG obligations, not relevant."
+    },
+    "pros": [
+      "Compliant with ESG regulations (CSRD, SBTi).",
+      "Substantially reduces reporting time.",
+      "AI-powered EcoPilot for efficiency.",
+      "Large user base: 3.5K+ clients."
+    ],
+    "cons": [
+      "No transparent pricing; custom quote required.",
+      "Focused on compliance and sustainability, not classic finance.",
+      "Complex for small businesses without obligations."
+    ],
+    "use_cases": [
+      "Measure carbon footprint and ESG compliance.",
+      "Prepare CSRD sustainability reports.",
+      "Engage suppliers in decarbonization strategy."
+    ]
+  }
+}

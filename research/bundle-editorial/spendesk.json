@@ -1,0 +1,90 @@
+{
+  "slug": "spendesk",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Spendesk — Spend Management Platform (site officiel)", "url": "https://spendesk.com" }
+  ],
+  "facts": {
+    "what": "Plateforme européenne de gestion complète des dépenses (procure-to-pay) combinant approvisionnement, cartes d'entreprise, comptabilité fournisseurs et gestion des frais. Pour PME/ETI.",
+    "what_en": "European complete spend management platform (procure-to-pay) combining procurement, corporate cards, accounts payable, and expense management for SMEs/mid-market.",
+    "pricing_model": "Tarification par plan scalable (Starter, Standard, Advanced, Enterprise) adaptée à la taille et complexité. Modèle custom pour entreprises. Tarification sur devis.",
+    "free_tier": { "exists": false, "detail": "Essai gratuit sur demande. Tarification flexible selon modules et volume." },
+    "plans": [
+      { "name": "Starter", "price": "Pour entrepreneurs ; tarification sur demande" },
+      { "name": "Standard", "price": "Pour PME ; tarification sur demande" },
+      { "name": "Advanced", "price": "Pour ETI ; tarification sur demande" },
+      { "name": "Enterprise", "price": "Custom pricing avec support dédié" }
+    ],
+    "key_features": [
+      "Approvisionnement centralisé avec workflow validations.",
+      "Cartes d'entreprise avec contrôles granulaires.",
+      "Comptabilité fournisseurs et facturation automatisée.",
+      "Gestion des frais et remboursements.",
+      "Rapports financiers temps réel."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez suite complète procure-to-pay (achat + carte + AP).",
+        "Vous travaillez en Europe (plateforme EU).",
+        "Vous cherchez automatisation complète des dépenses."
+      ],
+      "avoidIf": [
+        "Vous avez seulement besoin de cartes (pas de procurement).",
+        "Vous cherchez tarifs publics transparents.",
+        "Vous êtes très petite structure (< 5 pers)."
+      ],
+      "threshold": "Spendesk convient aux PME/ETI européennes cherchant suite intégrée spend management ; pour besoin simple, Soldo ou Payhawk plus léger."
+    },
+    "pros": [
+      "Suite complète procure-to-pay intégrée (rare).",
+      "Plateforme conçue pour Europe (compliance local).",
+      "Contrôles budgétaires et cartes robustes.",
+      "ROI rapide pour moyen volume."
+    ],
+    "cons": [
+      "Tarification opaque (devis requis).",
+      "Complexité initiale : besoin formation équipe.",
+      "Moins simple pour très petites structures."
+    ],
+    "use_cases": [
+      "Centraliser procure-to-pay (achat + carte + factures).",
+      "Automatiser validation des commandes.",
+      "Consolidation dépenses multi-entités Europe."
+    ],
+    "relevant_for": ["PME/ETI européennes", "Directeurs financiers", "Directeurs opérationnels"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want complete procure-to-pay suite (procurement + cards + AP).",
+        "You operate in Europe (EU platform).",
+        "You need complete spend automation."
+      ],
+      "avoidIf": [
+        "You only need cards (no procurement).",
+        "You want transparent public pricing.",
+        "You're very small (< 5 people)."
+      ],
+      "threshold": "Spendesk suits European SMEs seeking integrated spend management suite; for simple needs, Soldo or Payhawk lighter."
+    },
+    "pros": [
+      "Complete integrated procure-to-pay suite (rare).",
+      "Platform designed for Europe (local compliance).",
+      "Robust budget controls and cards.",
+      "Fast ROI for medium volume."
+    ],
+    "cons": [
+      "Opaque pricing (requires quote).",
+      "Initial complexity: team training needed.",
+      "Less simple for very small structures."
+    ],
+    "use_cases": [
+      "Centralize procure-to-pay (procurement + cards + invoices).",
+      "Automate purchase order validation.",
+      "Multi-entity spend consolidation in Europe."
+    ]
+  }
+}

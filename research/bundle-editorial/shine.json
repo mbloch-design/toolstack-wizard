@@ -1,0 +1,92 @@
+{
+  "slug": "shine",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Shine — Compte Pro en Ligne (site officiel)", "url": "https://www.shine.fr" }
+  ],
+  "facts": {
+    "what": "Compte bancaire professionnel en ligne français (digital banking) avec carte bancaire incluse, transferts SEPA, dépôts de chèques numériques et outils de gestion financière. Dédié aux freelancers et TPE/PME.",
+    "what_en": "French online professional bank account (digital banking) with included debit card, SEPA transfers, digital check deposits, and financial management tools. For freelancers and SMEs.",
+    "pricing_model": "Abonnement mensuel avec plan gratuit basique et plans payants escaladants (Start, Plus, Business). Premier mois gratuit à l'ouverture.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit disponible : Mastercard Basic, 5 virements SEPA/mois gratuits, 3 factures/mois, pas de frais cachés." },
+    "plans": [
+      { "name": "Gratuit (Shine Free)", "price": "0 € / mois" },
+      { "name": "Start", "price": "9 € HT / mois (le plus populaire)" },
+      { "name": "Plus", "price": "20 € HT / mois" },
+      { "name": "Business", "price": "60 € HT / mois (SMEs/équipes)"  }
+    ],
+    "key_features": [
+      "Compte IBAN français dédié professionnel.",
+      "Carte Mastercard incluse (Basic ou Premium selon plan).",
+      "Virements SEPA illimités (selon plan) et dépôts chèques numériques.",
+      "Facturation intégrée et suivi de trésorerie.",
+      "Intégrations comptables (Pennylane, Sage, etc.)."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes freelanceur/TPE français cherchant compte pro simple.",
+        "Vous voulez un compte entièrement en ligne, sans déplacement.",
+        "Vous cherchez tarif compétitif avec essai gratuit."
+      ],
+      "avoidIf": [
+        "Vous avez besoin de services banquiers avancés (crédits, etc.).",
+        "Vous êtes hors France (Shine France-only).",
+        "Vous cherchez une vraie banque avec conseiller dédié."
+      ],
+      "threshold": "Shine convient à tout freelanceur/TPE français ; pour besoins bancaires avancés, banque traditionnelle. Pour gratuit seul, c'est ok chez Shine aussi."
+    },
+    "pros": [
+      "Plan gratuit complet (Mastercard + 5 virements SEPA/mois).",
+      "IBAN français professionnel dédié.",
+      "Ouverture entièrement en ligne, en quelques minutes.",
+      "Facturation et suivi trésorerie intégrés.",
+      "Premier mois gratuit + offres startup."
+    ],
+    "cons": [
+      "Limites sur plan gratuit (5 virements/mois).",
+      "France-only (pas disponible ailleurs).",
+      "Fonctionnalités bancaires limitées vs banques classiques."
+    ],
+    "use_cases": [
+      "Ouvrir rapidement un compte pro en ligne (5 min).",
+      "Séparer finances persos/pro (IBAN dédié).",
+      "Gérer freelance/TPE sans déplacement à la banque."
+    ],
+    "relevant_for": ["Freelanceurs français", "TPE/PME", "Auto-entrepreneurs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a French freelancer/SME seeking simple pro account.",
+        "You want a fully online account, no branch visits.",
+        "You prefer competitive pricing with free trial."
+      ],
+      "avoidIf": [
+        "You need advanced banking services (loans, credit lines).",
+        "You're outside France (Shine France-only).",
+        "You want a traditional bank with dedicated advisor."
+      ],
+      "threshold": "Shine suits any French freelancer/SME; for advanced banking, traditional bank. For free-only, Shine's free plan is solid."
+    },
+    "pros": [
+      "Complete free plan (Mastercard + 5 SEPA transfers/mo).",
+      "Dedicated French professional IBAN.",
+      "Fully online account opening, in minutes.",
+      "Built-in invoicing and cash flow tracking.",
+      "First month free + startup offers."
+    ],
+    "cons": [
+      "Limits on free plan (5 transfers/mo).",
+      "France-only (not available elsewhere).",
+      "Limited banking features vs. traditional banks."
+    ],
+    "use_cases": [
+      "Open professional account quickly online (5 min).",
+      "Separate personal/business finances (dedicated IBAN).",
+      "Manage freelance/SME without bank branch visits."
+    ]
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "slug": "lendio",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Lendio — Small business lending marketplace (site officiel)", "url": "https://lendio.com" }
+  ],
+  "facts": {
+    "what": "Plateforme marketplace de financement pour petites entreprises connectant emprunteurs avec 75+ prêteurs. Depuis 2011 : 400k+ prêts facilités pour total 16B$. Application en ~15 min vs. 25h en approche traditionnelle. Gratuit jusqu'à funding.",
+    "what_en": "Marketplace lending platform connecting small business borrowers with 75+ lenders. Since 2011: 400K+ loans facilitated totaling $16B. Application in ~15 min vs. 25 hours traditional. Free until funded.",
+    "pricing_model": "Gratuit pour emprunter. Lendio génère revenus des lenders affiliés ; aucun frais de candidature ou hidden fees emprunteurs.",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit pour les emprunteurs ; aucun frais jusqu'à funding." },
+    "plans": [
+      { "name": "Gratuitement pour emprunteurs", "price": "Zéro frais ; revenus du marketplace de lenders" }
+    ],
+    "key_features": [
+      "Application marketplace simple ~15 min",
+      "Accès 75+ lenders en une candidature",
+      "Aucun frais ou hidden costs emprunteurs",
+      "Support 401+ business loan types",
+      "Embedded Marketplace pour platforms tierces",
+      "Software pour lenders (automation)",
+      "Transparence full pour rates/terms"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin de capital pour démarrer ou développer une petite entreprise.",
+        "Vous voulez comparer offres de 75+ lenders en une seule candidature.",
+        "Vous préférez un processus simple et gratuit pour candidater."
+      ],
+      "avoidIf": [
+        "Vous n'avez pas besoin de financement externe.",
+        "Vous cherchez equity financing plutôt qu'un prêt.",
+        "Vous avez un profil très risqué ou pas d'antériorité."
+      ],
+      "threshold": "Lendio convient aux petites entreprises cherchant prêts traditionnels. Pour equity ou financement sans prêt, chercher d'autres solutions."
+    },
+    "pros": [
+      "Accès 75+ lenders en une candidature.",
+      "Process ultra-simple : ~15 min vs. 25h traditionnel.",
+      "Entièrement gratuit jusqu'à funding.",
+      "Track record solide : 400k+ prêts depuis 2011."
+    ],
+    "cons": [
+      "Pas d'equity financing ; prêts uniquement.",
+      "Acceptation dépend lenders individuels (non garantie).",
+      "Critères crédit peuvent être stricts pour risqués."
+    ],
+    "use_cases": [
+      "Obtenir rapidement capital pour inventaire ou expansion.",
+      "Comparer rates de multiples lenders sans candidatures séparées.",
+      "Financer acquisition d'équipement ou working capital."
+    ],
+    "relevant_for": ["PME", "Startups nécessitant capital", "Propriétaires d'entreprise"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need capital to start or grow a small business.",
+        "You want to compare offers from 75+ lenders in one application.",
+        "You prefer a simple, free application process."
+      ],
+      "avoidIf": [
+        "You don't need external funding.",
+        "You're seeking equity financing rather than loans.",
+        "You have a very risky profile or no track record."
+      ],
+      "threshold": "Lendio is for small businesses seeking traditional loans. For equity or no-debt financing, look elsewhere."
+    },
+    "pros": [
+      "Access 75+ lenders in one application.",
+      "Ultra-simple process: ~15 min vs. 25 hours traditional.",
+      "Completely free until funded.",
+      "Solid track record: 400K+ loans since 2011."
+    ],
+    "cons": [
+      "No equity financing; loans only.",
+      "Acceptance depends on individual lenders (not guaranteed).",
+      "Credit criteria can be strict for risky profiles."
+    ],
+    "use_cases": [
+      "Get capital quickly for inventory or expansion.",
+      "Compare rates from multiple lenders without separate applications.",
+      "Finance equipment acquisition or working capital."
+    ]
+  }
+}

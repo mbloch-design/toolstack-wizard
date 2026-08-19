@@ -1,0 +1,92 @@
+{
+  "slug": "freshbooks",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "FreshBooks — Cloud accounting & invoicing (site officiel)", "url": "https://freshbooks.com" }
+  ],
+  "facts": {
+    "what": "Plateforme SaaS de comptabilité et facturation pour freelances et petites entreprises. Inclut : facturation, suivi des dépenses, time tracking, gestion de paie, rapports financiers. Pensée pour les prestataires de services (consultants, agences, freelances).",
+    "what_en": "Cloud accounting and invoicing SaaS for freelancers and small businesses. Includes invoicing, expense tracking, time tracking, payroll, financial reporting. Designed for service providers (consultants, agencies, freelancers).",
+    "pricing_model": "Quatre plans mensuels (Lite, Plus, Premium, Select) avec facturation mensuelle ou annuelle (économies de 10-15%). Essai gratuit 30 jours. Promo limitée : 90% off pendant 3 mois.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit 30 jours ; pas de version gratuite permanente après essai." },
+    "plans": [
+      { "name": "Lite", "price": "19 $/mois (15 $ annuel), jusqu'à 5 clients" },
+      { "name": "Plus", "price": "38 $/mois (30 $ annuel), jusqu'à 50 clients" },
+      { "name": "Premium", "price": "65 $/mois (54 $ annuel), clients illimités" },
+      { "name": "Select", "price": "Tarification personnalisée" }
+    ],
+    "key_features": [
+      "Facturation professionnelle et récurrente",
+      "Suivi du temps et gestion de projets",
+      "Gestion des dépenses avec scan de reçus",
+      "Rapports financiers et P&L",
+      "Intégrations 100+ apps via AppStore",
+      "Portail client et collaborations",
+      "Support client 4.8/5"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes freelance, consultant ou agence avec clients à facturer.",
+        "Vous avez besoin de suivi du temps et gestion de projets intégrée.",
+        "Vous voulez une plateforme simple et intuitive, pas compliquée."
+      ],
+      "avoidIf": [
+        "Vous cherchez un outil comptable complet pour une PME complexe.",
+        "Vous avez besoin d'automation comptable IA poussée.",
+        "Vous préférez un outil entièrement gratuit."
+      ],
+      "threshold": "FreshBooks excelle pour freelances et petites agences. Pour une PME complexe, des outils comme Docyt ou Agicap sont meilleurs."
+    },
+    "pros": [
+      "Interface très intuitive et facile à apprendre.",
+      "Excellent pour time tracking et facturation.",
+      "Support client excellent (4.8/5).",
+      "100+ intégrations natives disponibles."
+    ],
+    "cons": [
+      "Pas d'outil d'automation comptable IA avancée.",
+      "Tarification peut monter avec plusieurs clients.",
+      "Essai gratuit limité à 30 jours."
+    ],
+    "use_cases": [
+      "Facturer des clients et suivre le temps travaillé.",
+      "Gérer dépenses professionnelles et rapports financiers.",
+      "Collaborer avec des clients via portails sécurisés."
+    ],
+    "relevant_for": ["Freelances", "Consultants", "Petites agences"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a freelancer, consultant, or agency invoicing clients.",
+        "You need integrated time tracking and project management.",
+        "You want a simple, intuitive platform, not complex."
+      ],
+      "avoidIf": [
+        "You need comprehensive accounting for a complex mid-sized business.",
+        "You require advanced AI accounting automation.",
+        "You prefer a completely free tool."
+      ],
+      "threshold": "FreshBooks excels for freelancers and small agencies. For a complex SMB, tools like Docyt or Agicap are better."
+    },
+    "pros": [
+      "Very intuitive and easy-to-learn interface.",
+      "Excellent for time tracking and invoicing.",
+      "Top-notch customer support (4.8/5).",
+      "100+ native integrations available."
+    ],
+    "cons": [
+      "No advanced AI accounting automation.",
+      "Pricing can climb with multiple clients.",
+      "Free trial limited to 30 days."
+    ],
+    "use_cases": [
+      "Invoice clients and track billable hours.",
+      "Manage business expenses and financial reports.",
+      "Collaborate with clients via secure portals."
+    ]
+  }
+}

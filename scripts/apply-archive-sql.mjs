@@ -39,6 +39,7 @@ const files = [
   "scripts/sql/archive-repass-flags-9.sql",
   "scripts/sql/archive-repass-flags-10.sql",
   "scripts/sql/archive-repass-flags-11.sql",
+  "scripts/sql/archive-repass-flags-12.sql",
 ];
 
 let totalArchived = 0;

@@ -1,0 +1,90 @@
+{
+  "slug": "onramp-funds",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Onramp Funds — eCommerce lending (site officiel)", "url": "https://onrampfunds.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de financement spécialisée pour vendeurs eCommerce. Offre prêts à court terme (1-12 mois) avec remboursement flexible synchronisé aux cycles de ventes. Accès rapide (< 24h), pas de vérification crédit perso requise. Intégrations Amazon, Shopify, Walmart, WooCommerce, BigCommerce.",
+    "what_en": "Lending platform specialized for eCommerce sellers. Offers short-term loans (1-12 months) with flexible repayment synced to sales cycles. Fast access (< 24h), no personal credit check. Integrations with Amazon, Shopify, Walmart, WooCommerce, BigCommerce.",
+    "pricing_model": "Revenue-based et fixed options, avec frais fixes transparents (pas de taux d'intérêt cachés). Remboursement flexible basé sur ventes ou paiements fixes au choix.",
+    "free_tier": { "exists": false, "detail": "Pas d'essai gratuit ; financement sur demande avec frais appliqués." },
+    "plans": [
+      { "name": "Variable (revenue-based)", "price": "Remboursement 1-12 mois flexible avec ventes" },
+      { "name": "Fixed (prédictable)", "price": "Paiements fixes 1-12 mois pour scale predictable" },
+      { "name": "Rolling Cash Line", "price": "Ligne de crédit revolving selon growth" }
+    ],
+    "key_features": [
+      "Financement en < 24h",
+      "Pas de vérification crédit personnel",
+      "Options remboursement flexible ou fixed",
+      "Intégrations directes (Amazon, Shopify, Walmart, etc.)",
+      "Pour inventory, marketing, logistics, ou toute growth",
+      "Eligibilité : 6+ mois selling, 10k$/mois min"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous vendez sur Amazon, Shopify ou autre plateforme eCommerce.",
+        "Vous avez 6+ mois d'antériorité et 10k$ chiffre d'affaires mensuel minimum.",
+        "Vous voulez capital rapide pour inventory, marketing, ou logistics."
+      ],
+      "avoidIf": [
+        "Vous avez moins de 6 mois d'antériorité ou revenu < 10k$/mois.",
+        "Vous vendez hors les plateformes supportées (direct B2B, etc.).",
+        "Vous préférez un prêt bancaire classique."
+      ],
+      "threshold": "Onramp Funds est idéal pour vendeurs eCommerce établis cherchant capital rapide. Pour débutants ou hors-plateforme, non applicable."
+    },
+    "pros": [
+      "Financement ultra-rapide (< 24h).",
+      "Pas de vérification crédit personnel.",
+      "Remboursement flexible synchronisé aux ventes.",
+      "Intégrations directes avec plateformes."
+    ],
+    "cons": [
+      "Critères d'éligibilité stricts (6 mois, 10k$/mois).",
+      "Limité aux plateforme supportées.",
+      "Frais peuvent être élevés selon termes."
+    ],
+    "use_cases": [
+      "Financer inventaire supplémentaire avant peak season.",
+      "Accélérer croissance avec capital marketing.",
+      "Supporter logistics et fulfillment d'une expansion."
+    ],
+    "relevant_for": ["Vendeurs Amazon FBA", "Marchands Shopify", "Vendeurs eCommerce établis"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You sell on Amazon, Shopify, or other eCommerce platform.",
+        "You have an established selling history above the minimum revenue threshold.",
+        "You want fast capital for inventory, marketing, or logistics."
+      ],
+      "avoidIf": [
+        "You're a young business below the revenue threshold.",
+        "You sell outside supported platforms (direct B2B, etc.).",
+        "You prefer traditional bank loans."
+      ],
+      "threshold": "Onramp Funds is ideal for established eCommerce sellers seeking fast capital. For beginners or off-platform, not applicable."
+    },
+    "pros": [
+      "Ultra-fast funding (< 24h).",
+      "No personal credit check.",
+      "Flexible repayment synced to sales.",
+      "Direct platform integrations."
+    ],
+    "cons": [
+      "Strict eligibility on trading history and revenue.",
+      "Limited to supported platforms.",
+      "Fees can be high depending on terms."
+    ],
+    "use_cases": [
+      "Finance extra inventory before peak season.",
+      "Accelerate growth with marketing capital.",
+      "Support logistics and fulfillment expansion."
+    ]
+  }
+}

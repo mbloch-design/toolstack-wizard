@@ -1,0 +1,89 @@
+{
+  "slug": "rewardful",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Rewardful — Affiliate Management (site officiel)", "url": "https://rewardful.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de gestion des programmes d'affiliation (affiliate marketing) pour SaaS et e-commerce. Automatise commission, suivi des clics, gestion des affiliés et reportage. Tarification basée sur le revenu d'affiliation généré.",
+    "what_en": "Affiliate program management platform for SaaS and e-commerce, automating commissions, click tracking, affiliate management, and reporting. Pricing based on affiliate-generated revenue.",
+    "pricing_model": "Abonnement mensuel tiré par le revenu d'affiliation généré (affiliate-attributed revenue). Trois niveaux : Starter (jusqu'à 7 500 $/mois), Growth, Enterprise (15 000 $/mois+).",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite ; essai 14 jours gratuit, puis abonnement payant." },
+    "plans": [
+      { "name": "Starter", "price": "49 $ / mois (jusqu'à 7 500 $ revenu d'affiliation/mois)" },
+      { "name": "Growth", "price": "99 $ / mois (7 500 $ à 15 000 $ revenu)" },
+      { "name": "Enterprise", "price": "149 $ / mois (au-delà de 15 000 $ revenu)" }
+    ],
+    "key_features": [
+      "Suivi automatique des clics et conversions d'affiliation.",
+      "Gestion des commissions (pourcentage ou montant fixe).",
+      "Tableaux de bord affiliés et portails libre-service.",
+      "Ajustement automatique des commissions (downgrade, refund, cancellation).",
+      "Intégrations (Stripe, Chargebee, Gumroad, etc.)."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous lancez un programme d'affiliation pour votre SaaS/produit.",
+        "Vous voulez automatiser le calcul et versement des commissions.",
+        "Vous cherchez une solution clé-en-main sans développement."
+      ],
+      "avoidIf": [
+        "Vous avez peu ou pas d'affiliés (< 5).",
+        "Vous gérez un programme très simple (1-2 affiliés).",
+        "Vous préférez développer votre propre système."
+      ],
+      "threshold": "Rewardful convient aux SaaS/produits ayant un portefeuille d'affiliés actifs ; pour une ou deux affiliés, un simple spreadsheet suffit."
+    },
+    "pros": [
+      "Automatisation complète du calcul et versement des commissions.",
+      "Portail affilié auto-service (pas de support manuel).",
+      "Ajustement auto des commissions (refund, downgrade, cancellation).",
+      "Intégrations avec les outils SaaS/paiement populaires."
+    ],
+    "cons": [
+      "Prix dépend du revenu généré : facture peut monter rapidement.",
+      "Nécessite volume d'affiliés pour être rentable.",
+      "Moins de flexibilité qu'une solution custom."
+    ],
+    "use_cases": [
+      "Lancer un programme d'affiliation pour un SaaS.",
+      "Automatiser versement des commissions mensuels.",
+      "Offrir un portail affilié self-service."
+    ],
+    "relevant_for": ["Fondateurs SaaS", "Éditeurs de produits numériques", "Agences marketing"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're launching an affiliate program for your SaaS/product.",
+        "You want to automate commission calculation and payouts.",
+        "You prefer a no-code, turnkey solution."
+      ],
+      "avoidIf": [
+        "You have few or no affiliates (< 5).",
+        "You manage a very simple program (1–2 affiliates).",
+        "You prefer building your own system."
+      ],
+      "threshold": "Rewardful suits SaaS/products with an active affiliate roster; for one or two affiliates, a simple spreadsheet suffices."
+    },
+    "pros": [
+      "Complete automation of commission calculation and payouts.",
+      "Self-service affiliate portal (no manual support).",
+      "Automatic adjustment for refunds, downgrades, cancellations.",
+      "Integrations with popular SaaS/payment tools."
+    ],
+    "cons": [
+      "Pricing depends on revenue generated: bill can climb fast.",
+      "Requires affiliate volume to be worthwhile.",
+      "Less flexibility than a custom solution."
+    ],
+    "use_cases": [
+      "Launch an affiliate program for a SaaS.",
+      "Automate monthly commission payouts.",
+      "Offer a self-service affiliate portal."
+    ]
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "slug": "paddle",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Paddle — Merchant of Record for SaaS (site officiel)", "url": "https://www.paddle.com" }
+  ],
+  "facts": {
+    "what": "Plateforme « Merchant of Record » conçue pour SaaS, app devs, et éditeurs numériques. Gère paiements, tax, compliance, billing dans 300+ marchés. Inclut ProfitWell Metrics, recover failed payments, pricing optimization. Processes 190M+ transactions annuelles pour 10k+ customers.",
+    "what_en": "Merchant of Record platform for SaaS, app devs, and digital publishers. Handles payments, tax, compliance, billing across 300+ markets. Includes ProfitWell Metrics, failed payment recovery, pricing optimization. Processes 190M+ transactions annually for 10K+ customers.",
+    "pricing_model": "Tarification inclusive standard ou custom quote. Pas de détails publics complets ; montants varient selon usage et fonctionnalités.",
+    "free_tier": { "exists": false, "detail": "Pas d'essai gratuit public ; tarification standard ou custom quote." },
+    "plans": [
+      { "name": "Plan standard", "price": "Tarification inclusive (montants sur demande)" },
+      { "name": "Custom", "price": "Quote personnalisé pour usage élevé" }
+    ],
+    "key_features": [
+      "Merchant of Record : gestion tax/compliance globale",
+      "Billing et subscription management",
+      "ProfitWell Metrics pour analytics",
+      "Récupération paiements échoués",
+      "Checkout haute-performance",
+      "Support multi-devise et 300+ marchés",
+      "Fraud prevention intégré"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes éditeur SaaS ou app devs vendant mondialement.",
+        "Vous voulez éviter complexité tax/compliance dans 300+ marchés.",
+        "Vous avez besoin de billing et subscription management robuste."
+      ],
+      "avoidIf": [
+        "Vous vendez produits physiques.",
+        "Vous avez besoin de solution entièrement gratuite.",
+        "Vous avez marges très fines ; la commission peut être trop élevée."
+      ],
+      "threshold": "Paddle s'adresse aux SaaS/app devs vendant mondialement. Pour physique ou très low-margin, ne convient pas."
+    },
+    "pros": [
+      "Merchant of Record : zéro tracas tax/compliance.",
+      "Support complet 300+ marchés.",
+      "Analytics puissantes via ProfitWell.",
+      "Récupération auto paiements échoués."
+    ],
+    "cons": [
+      "Pas de tarification transparente ; devis obligatoire.",
+      "Commission peut être élevée pour low-margin.",
+      "Pas adapté au physique."
+    ],
+    "use_cases": [
+      "Vendre SaaS ou apps avec billing/subscriptions mondialement.",
+      "Optimiser revenue avec ProfitWell pricing analytics.",
+      "Assurer tax/compliance compliance sans tracas."
+    ],
+    "relevant_for": ["SaaS founders", "App devs", "Éditeurs numériques"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a SaaS founder or app dev selling globally.",
+        "You want to avoid tax/compliance complexity across 300+ markets.",
+        "You need robust billing and subscription management."
+      ],
+      "avoidIf": [
+        "You sell physical products.",
+        "You need a completely free solution.",
+        "You have very thin margins; commission too high."
+      ],
+      "threshold": "Paddle is for SaaS/app devs selling globally. For physical goods or very low-margin, not suitable."
+    },
+    "pros": [
+      "Merchant of Record: zero tax/compliance headaches.",
+      "Full support across 300+ markets.",
+      "Powerful analytics via ProfitWell.",
+      "Automatic failed payment recovery."
+    ],
+    "cons": [
+      "No transparent pricing; custom quote required.",
+      "Commission can be high for low-margin.",
+      "Not suitable for physical goods."
+    ],
+    "use_cases": [
+      "Sell SaaS or apps with billing/subscriptions globally.",
+      "Optimize revenue with ProfitWell pricing analytics.",
+      "Handle tax and compliance without hassle."
+    ]
+  }
+}

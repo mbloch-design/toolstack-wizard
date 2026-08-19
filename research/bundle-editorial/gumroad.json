@@ -1,0 +1,88 @@
+{
+  "slug": "gumroad",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Gumroad — Digital products marketplace (site officiel)", "url": "https://gumroad.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de vente de produits numériques et services directs au consommateur. Permet aux créateurs de vendre : leçons vidéo, abonnements, brushes Procreate, modèles 3D, musique, et contenu digital divers. Modèle simple : uploader, fixer un prix, vendre. Paiements globaux en devises locales.",
+    "what_en": "Digital products and direct-to-consumer sales platform. Enables creators to sell video lessons, subscriptions, Procreate brushes, 3D models, music, and digital content. Simple model: upload, price, sell. Global payments in local currencies.",
+    "pricing_model": "Freemium avec commission sur les ventes (pourcentage exact sur la page tarifaire). Paiements flexibles : one-time, recurring, ou fixed-length. Devises multiples supportées.",
+    "free_tier": { "exists": true, "detail": "Gratuitement pour créer un storefront et vendre ; commission appliquée sur chaque vente." },
+    "plans": [
+      { "name": "Gratuit", "price": "Storefronts gratuits ; commission sur les ventes (montants sur la page tarifaire)" }
+    ],
+    "key_features": [
+      "Upload de produits numériques simples",
+      "Paiements flexibles (one-time, recurring, fixed-length)",
+      "Storefronts personnalisés ou intégration site tiers",
+      "Support multi-devise avec paiements locaux",
+      "Gestion d'abonnements",
+      "Analytics et tracking des ventes"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes créateur/artisan (vidéo, art digital, musique) et voulez vendre du contenu digital.",
+        "Vous préférez une plateforme simple sans prise de tête technique.",
+        "Vous avez une audience et voulez monetiser rapidement."
+      ],
+      "avoidIf": [
+        "Vous avez un commerce physique ou services complexes.",
+        "Vous cherchez une plateforme avec features e-commerce avancées.",
+        "Vous préférez une solution entièrement gratuite."
+      ],
+      "threshold": "Gumroad est idéale pour créateurs/artisans vendant du contenu digital. Pour un commerce physique ou SaaS, utiliser Shopify ou autres solutions."
+    },
+    "pros": [
+      "Plateforme très simple : upload, price, vendre.",
+      "Freemium : gratuitement avec commission flexible.",
+      "Support multi-devise et paiements globaux.",
+      "Communauté active de creators."
+    ],
+    "cons": [
+      "Commission appliquée sur chaque vente (pourcentage exact à vérifier).",
+      "Pas adapté aux produits physiques ou services complexes.",
+      "Analytics basiques comparés à Shopify."
+    ],
+    "use_cases": [
+      "Vendre des leçons vidéo ou tutoriels.",
+      "Proposer des brushes Procreate ou templates design.",
+      "Monétiser une audience avec contenu exclusif."
+    ],
+    "relevant_for": ["Créateurs", "Artistes digitaux", "Éducateurs", "Musiciens"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a creator/artist selling digital content and want simplicity.",
+        "You have an audience and want to monetize quickly.",
+        "You prefer a straightforward platform without technical hassle."
+      ],
+      "avoidIf": [
+        "You have a physical commerce or complex services.",
+        "You need advanced e-commerce features.",
+        "You want a completely free solution."
+      ],
+      "threshold": "Gumroad is ideal for creators selling digital content. For physical goods or SaaS, use Shopify or similar."
+    },
+    "pros": [
+      "Very simple platform: upload, price, sell.",
+      "Freemium with flexible commission.",
+      "Multi-currency and global payments.",
+      "Active creator community."
+    ],
+    "cons": [
+      "Commission applied on each sale (exact % varies).",
+      "Not suited for physical products or complex services.",
+      "Basic analytics vs. Shopify."
+    ],
+    "use_cases": [
+      "Sell video lessons or tutorials.",
+      "Offer Procreate brushes or design templates.",
+      "Monetize an audience with exclusive content."
+    ]
+  }
+}

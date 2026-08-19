@@ -1,0 +1,91 @@
+{
+  "slug": "navan",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Navan — Travel and expense management (site officiel)", "url": "https://navan.com" }
+  ],
+  "facts": {
+    "what": "Plateforme complète de gestion des voyages d'affaires et dépenses pour entreprises. Inclut : booking centralisé (vols, hôtels), gestion des dépenses automatisée, cartes d'entreprise, conformité policies, AI assistant (Navan Edge). Serves 9000+ companies.",
+    "what_en": "Comprehensive business travel and expense management platform. Includes centralized booking (flights, hotels), automated expense tracking, corporate cards, policy compliance, AI assistant (Navan Edge). Serves 9K+ companies.",
+    "pricing_model": "Tarification non publique détaillée ; modèle freemium ou quote-based. Contactez pour pricing selon volume utilisateurs et fonctionnalités.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite publique ; pricing sur demande." },
+    "plans": [
+      { "name": "Plan personnalisé", "price": "Montants sur demande selon utilisation" }
+    ],
+    "key_features": [
+      "Booking centralisé (vols, hôtels, restaurants)",
+      "AI booking assistant (Navan Edge)",
+      "Gestion des dépenses automatisée",
+      "Cartes d'entreprise Navan Connect (Visa/MC/Amex)",
+      "Conformité policies et spending limits",
+      "Support 24/7",
+      "Rewards program pour voyages perso"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez une équipe avec voyages d'affaires fréquents.",
+        "Vous voulez centraliser booking, dépenses, conformité en une plateforme.",
+        "Vous cherchez à optimiser vos coûts de déplacement."
+      ],
+      "avoidIf": [
+        "Vous avez peu ou pas de voyages d'affaires.",
+        "Vous préférez gérér booking et dépenses séparément.",
+        "Vous cherchez une solution entièrement gratuite."
+      ],
+      "threshold": "Navan s'adresse aux entreprises avec politique voyage active. Pour une équipe sans voyages importants, non pertinent."
+    },
+    "pros": [
+      "Plateforme complète : booking + dépenses + cartes.",
+      "AI assistant pour booking (Navan Edge).",
+      "Conformité policies intégrée.",
+      "Support 24/7 en chat.",
+      "Économies significatives rapportées par les clients."
+    ],
+    "cons": [
+      "Pas de tarification transparente ; devis obligatoire.",
+      "Peut être surdimensionné pour petites équipes.",
+      "Implémentation et setup potentiellement longs."
+    ],
+    "use_cases": [
+      "Gérer voyages d'affaires et dépenses d'une équipe distribuée.",
+      "Automatiser rapprochement des dépenses travel.",
+      "Assurer conformité policies et spending limits."
+    ],
+    "relevant_for": ["Entreprises avec voyages", "Travel managers", "Finance teams", "Execs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "Your team has frequent business travel.",
+        "You want centralized booking, expenses, compliance in one platform.",
+        "You're seeking travel cost optimisation."
+      ],
+      "avoidIf": [
+        "You have little or no business travel.",
+        "You prefer managing booking and expenses separately.",
+        "You want a completely free solution."
+      ],
+      "threshold": "Navan is for companies with active travel policies. For teams without significant travel, not relevant."
+    },
+    "pros": [
+      "Complete platform: booking + expenses + cards.",
+      "AI assistant for booking (Navan Edge).",
+      "Policy compliance built-in.",
+      "24/7 chat support.",
+      "Significant cost savings reported by customers."
+    ],
+    "cons": [
+      "No transparent pricing; custom quote required.",
+      "May be oversized for small teams.",
+      "Implementation and setup potentially lengthy."
+    ],
+    "use_cases": [
+      "Manage business travel and expenses for a distributed team.",
+      "Automate reconciliation of travel spend.",
+      "Ensure policy compliance and spending limits."
+    ]
+  }
+}

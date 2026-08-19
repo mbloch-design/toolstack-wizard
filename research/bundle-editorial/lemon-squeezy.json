@@ -1,0 +1,92 @@
+{
+  "slug": "lemon-squeezy",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Lemon Squeezy — Merchant of Record platform (site officiel)", "url": "https://www.lemonsqueezy.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de paiement « Merchant of Record » pour créateurs et vendeurs de produits numériques. Gère paiements globaux, TVA UE, tax US, conformité compliance. Tarification simple : 5% + 0.50$ par transaction (montants supplémentaires pour PayPal, intl, subscriptions).",
+    "what_en": "Merchant of Record payment platform for digital product creators and sellers. Handles global payments, EU VAT, US tax, compliance. Simple pricing: 5% + $0.50/transaction (extra for PayPal, intl, subscriptions).",
+    "pricing_model": "Commission par transaction : 5% + $0.50 base ; ajouts pour PayPal (1.5%), intl (1.5%), subscriptions (0.5%), abandoned cart (5%), affiliate (3%). Pas de frais mensuels. Plans volume custom disponibles.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite ; commission appliquée sur chaque transaction." },
+    "plans": [
+      { "name": "Standard", "price": "5% + 0.50$ par transaction + frais varient selon le type" },
+      { "name": "Volume custom", "price": "Plans personnalisés pour vendeurs de haut volume" }
+    ],
+    "key_features": [
+      "Traitement paiements global",
+      "Gestion TVA UE automatique",
+      "Conformité tax US (sales tax remittance)",
+      "Merchant of Record : pas de tax registration per-country",
+      "Support subscriptions et paiements récurrents",
+      "Récupération de paniers abandonnés",
+      "Rapports et analytics"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous vendez du contenu numériques/SaaS à l'international.",
+        "Vous voulez éviter la gestion TVA/tax compliance complexe.",
+        "Vous acceptez une commission par transaction en échange de la simplicité."
+      ],
+      "avoidIf": [
+        "Vous avez très haut volume avec marges faibles (commission peut être trop élevée).",
+        "Vous vendez du physique (pas de support).",
+        "Vous cherchez une solution entièrement gratuite."
+      ],
+      "threshold": "Lemon Squeezy est idéale pour vendeurs digital voulant simplicité globale. Pour haut volume, Stripe ou Paddle peuvent être meilleur marché."
+    },
+    "pros": [
+      "Merchant of Record : gestion TVA/tax automatique.",
+      "Commission simple et transparente, annoncée sans surprise.",
+      "Support complet paiements internationaux.",
+      "Pas de frais mensuels, uniquement commission.",
+      "Excellent pour creators et SaaS."
+    ],
+    "cons": [
+      "Commission qui pèse sur les gros volumes.",
+      "Frais additionnels pour PayPal, subscriptions, etc.",
+      "Pas adapté aux produits physiques."
+    ],
+    "use_cases": [
+      "Vendre SaaS ou digital products à l'international.",
+      "Éviter gestion complexe TVA UE et tax compliance.",
+      "Proposer subscriptions/memberships sans tracas."
+    ],
+    "relevant_for": ["Creators SaaS", "Éditeurs digital", "Vendeurs de contenu"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You sell digital content/SaaS internationally.",
+        "You want to avoid complex VAT/tax compliance.",
+        "You accept a per-transaction commission in exchange for simplicity."
+      ],
+      "avoidIf": [
+        "You have high volume with thin margins (commission too high).",
+        "You sell physical goods (unsupported).",
+        "You want a completely free solution."
+      ],
+      "threshold": "Lemon Squeezy is ideal for digital sellers wanting global simplicity. For high volume, Stripe or Paddle may be cheaper."
+    },
+    "pros": [
+      "Merchant of Record: automatic VAT/tax handling.",
+      "Simple, transparent commission with no surprises.",
+      "Full international payment support.",
+      "No monthly fees, only commission.",
+      "Perfect for creators and SaaS."
+    ],
+    "cons": [
+      "The commission weighs on high volumes.",
+      "Extra fees for PayPal, subscriptions, etc.",
+      "Not suitable for physical products."
+    ],
+    "use_cases": [
+      "Sell SaaS or digital products internationally.",
+      "Avoid complex EU VAT and tax compliance.",
+      "Offer subscriptions/memberships hassle-free."
+    ]
+  }
+}

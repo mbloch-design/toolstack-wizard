@@ -1,0 +1,91 @@
+{
+  "slug": "doola",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "doola — Business formation & back-office (site officiel)", "url": "https://doola.com" }
+  ],
+  "facts": {
+    "what": "Plateforme all-in-one de constitution d'entreprise et services back-office pour entrepreneurs. Inclut : formation LLC, obtention EIN, services agent enregistré, comptabilité, déclarations fiscales, et analytics e-commerce. Permet aux non-citoyens US de créer une LLC américaine.",
+    "what_en": "All-in-one business formation and back-office platform for entrepreneurs. Includes LLC formation, EIN, registered agent, bookkeeping, tax filing, and e-commerce analytics. Allows non-US citizens to form a US LLC.",
+    "pricing_model": "Trois plans par année : Starter (formation/EIN), Tax and Compliance (taxes + comptabilité), Business-in-a-Box (comptable dédié). Frais d'État variables selon l'État.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite ; plans payants uniquement." },
+    "plans": [
+      { "name": "Starter", "price": "297 $/an (formation, EIN, agent enregistré)" },
+      { "name": "Tax and Compliance", "price": "1999 $/an (ajoute déclarations fiscales, comptabilité)" },
+      { "name": "Business-in-a-Box", "price": "2999 $/an (inclut comptable dédié et états mensuels)" }
+    ],
+    "key_features": [
+      "Formation LLC et dépôt auprès de l'État",
+      "Obtention du numéro EIN",
+      "Services agent enregistré inclus",
+      "Comptabilité et tracking transactions",
+      "Déclarations fiscales fédérales et étatiques",
+      "Analytics e-commerce intégrées",
+      "Accès pour 175+ pays"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes entrepreneur (même non-citoyen US) et voulez créer une LLC américaine rapidement.",
+        "Vous avez besoin d'une solution complète d'incorporation + back-office + comptabilité.",
+        "Vous gérez une activité e-commerce et voulez des analytics intégrées."
+      ],
+      "avoidIf": [
+        "Vous avez déjà une LLC en place et cherchez juste comptabilité.",
+        "Vous préférez un comptable traditionnel sur rendez-vous.",
+        "Votre entreprise est déjà établie depuis longtemps."
+      ],
+      "threshold": "doola convient aux nouveaux entrepreneurs ou non-citoyens US cherchant une incorporation rapide. Pour une entreprise existante, un outil comptable seul suffira."
+    },
+    "pros": [
+      "Processus d'incorporation très simplifié et rapide.",
+      "Accessible aux entrepreneurs étrangers (175+ pays).",
+      "Bundle complet : formation + comptabilité + taxes.",
+      "Fondée par Y Combinator avec backing solide."
+    ],
+    "cons": [
+      "Pas d'essai gratuit ; plans payants uniquement.",
+      "Frais d'État non inclus et variables.",
+      "Moins utile une fois l'entreprise établie."
+    ],
+    "use_cases": [
+      "Créer rapidement une LLC américaine en tant qu'étranger.",
+      "Passer du statut d'indépendant à LLC avec comptabilité intégrée.",
+      "Gérer comptabilité et taxes fédérales/étatiques en même temps."
+    ],
+    "relevant_for": ["Entrepreneurs nomades", "Créateurs e-commerce", "Non-citoyens US"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're an entrepreneur (even a non-US citizen) and want a US LLC quickly.",
+        "You need an all-in-one formation + back-office + bookkeeping solution.",
+        "You run e-commerce and want integrated analytics."
+      ],
+      "avoidIf": [
+        "Your LLC is already formed; you just need bookkeeping.",
+        "You prefer a traditional CPA on retainer.",
+        "Your business is already long-established."
+      ],
+      "threshold": "doola is for first-time founders or non-US citizens seeking fast incorporation. For established companies, a bookkeeping tool alone suffices."
+    },
+    "pros": [
+      "Extremely streamlined and fast incorporation process.",
+      "Open to foreign entrepreneurs (175+ countries).",
+      "Complete bundle: formation + bookkeeping + taxes.",
+      "Founded by Y Combinator with strong backing."
+    ],
+    "cons": [
+      "No free trial; paid plans only.",
+      "State filing fees separate and variable.",
+      "Less useful after company is established."
+    ],
+    "use_cases": [
+      "Quickly form a US LLC as a foreigner.",
+      "Move from solo freelancer to LLC with integrated bookkeeping.",
+      "Manage federal and state taxes alongside accounting."
+    ]
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "slug": "revenuecat",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "RevenueCat — Mobile App Monetization (site officiel)", "url": "https://www.revenuecat.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de monétisation pour applications mobiles gérant les abonnements, achats intégrés et analytiques. Abstrait les complexités des store iOS/Android et facilite les tests A/B, les promo et les insights de rétention.",
+    "what_en": "Mobile app monetization platform managing subscriptions, in-app purchases, and analytics. Abstracts iOS/Android store complexity, enabling A/B testing, promotions, and retention insights.",
+    "pricing_model": "Freemium : gratuit jusqu'à 2 500 $/mois de revenu suivi (MTR). Au-delà : plan Pro à 1% du revenu suivi. Enterprise sur devis.",
+    "free_tier": { "exists": true, "detail": "Gratuit jusqu'à 2 500 $/mois de revenu suivi (MTR). Le MTR = revenu brut des stores avant commission Apple/Google." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit jusqu'à 2 500 $/mois MTR" },
+      { "name": "Pro", "price": "1% du revenu suivi (MTR) au-delà de 2 500 $/mois" },
+      { "name": "Enterprise", "price": "Tarification custom, sans minimum ni sièges" }
+    ],
+    "key_features": [
+      "Gestion centralisée des abonnements iOS/Android",
+      "Tests A/B et optimisation de prix.",
+      "Analytiques de rétention et LTV client.",
+      "Gestion des promotions et codes de réduction.",
+      "Webhooks et API pour intégrations custom."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez une app mobile avec abonnement ou achats intégrés.",
+        "Vous voulez simplifier la gestion multi-store (iOS + Android).",
+        "La rétention et les insights analytiques sont importants."
+      ],
+      "avoidIf": [
+        "Votre app n'a pas d'abonnements ou achats intégrés.",
+        "Vous avez zéro revenu pour le moment.",
+        "Vous préférez gérer directement les stores Apple/Google."
+      ],
+      "threshold": "RevenueCat s'impose pour toute app monétisée par abonnement ; sa commission est largement compensée par les gains d'optimisation et de rétention."
+    },
+    "pros": [
+      "Gratuit jusqu'à un seuil de revenu suivi.",
+      "Coût raisonnable et prévisible, indexé sur le revenu.",
+      "Simplifie gestion multi-store iOS/Android.",
+      "Analytiques complètes (rétention, LTV, cohortes).",
+      "Tests A/B intégrés pour optimiser les prix."
+    ],
+    "cons": [
+      "Commission supplémentaire prélevée sur la monétisation.",
+      "Nécessite temps d'intégration API.",
+      "Version gratuite plafonnée en revenu suivi."
+    ],
+    "use_cases": [
+      "Gérer les abonnements d'une app iOS/Android.",
+      "Analyser la rétention et LTV de ses utilisateurs.",
+      "Tester différents prix et durées d'abonnement (A/B)."
+    ],
+    "relevant_for": ["Développeurs d'apps mobiles", "Éditeurs de jeux", "Entreprises SaaS mobile"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You have a mobile app with subscriptions or in-app purchases.",
+        "You want to simplify multi-store management (iOS + Android).",
+        "Retention insights and analytics are important."
+      ],
+      "avoidIf": [
+        "Your app has no subscriptions or in-app purchases.",
+        "You have zero revenue now.",
+        "You prefer managing stores directly with Apple/Google."
+      ],
+      "threshold": "RevenueCat is essential for any subscription-monetized app; its commission is well offset by optimisation and retention gains."
+    },
+    "pros": [
+      "Free up to a tracked-revenue threshold.",
+      "Reasonable, predictable cost indexed on revenue.",
+      "Simplifies iOS/Android multi-store management.",
+      "Complete analytics (retention, LTV, cohorts).",
+      "Built-in A/B testing for pricing optimization."
+    ],
+    "cons": [
+      "An additional commission is taken on monetisation.",
+      "Requires API integration time.",
+      "Free tier capped by tracked revenue."
+    ],
+    "use_cases": [
+      "Manage iOS/Android app subscriptions.",
+      "Analyze user retention and LTV.",
+      "Test different pricing and subscription durations (A/B)."
+    ]
+  }
+}

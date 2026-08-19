@@ -1,0 +1,89 @@
+{
+  "slug": "partnerstack",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "PartnerStack — Partner Relationship Management (site officiel)", "url": "https://partnerstack.com" }
+  ],
+  "facts": {
+    "what": "Plateforme PRM (Partner Relationship Management) IA-native pour B2B SaaS. Permet recruter, activer, tracker, commissionner, et optimiser partenaires. Supports multiples types : affiliates, co-sell, influencers, referrals, Answer Engine Optimization. 600+ B2B SaaS companies. Classée #1 partner ecosystem G2.",
+    "what_en": "AI-native Partner Relationship Management (PRM) platform for B2B SaaS. Recruit, activate, track, commission, and optimize partners. Supports multiple types: affiliates, co-sell, influencers, referrals, Answer Engine Optimization. 600+ B2B SaaS companies. #1 rated on G2.",
+    "pricing_model": "Tarification non détaillée publiquement ; modèle SaaS standard avec quote basé sur usage/partners.",
+    "free_tier": { "exists": false, "detail": "Pas d'essai gratuit public ; pricing sur devis." },
+    "plans": [
+      { "name": "Plan personnalisé", "price": "Quote selon nombre de partners et use case" }
+    ],
+    "key_features": [
+      "Recrutement de partenaires (115k+ réseau)",
+      "Onboarding et activation de partners",
+      "Tracking des leads et conversions partner-sourced",
+      "Commission automatique et payouts",
+      "Reporting et analytics détaillés",
+      "Support multiples modèles (affiliates, co-sell, referrals, etc.)",
+      "IA-native pour prédiction et optimisation"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes B2B SaaS cherchant à scaler via partenaires/affiliates.",
+        "Vous voulez gérer multiples types de partenaires centralisé.",
+        "Vous avez besoin d'automation des commissions et reporting."
+      ],
+      "avoidIf": [
+        "Vous n'avez pas de stratégie partner/affiliate.",
+        "Vous êtes D2C ou B2C classique (pas B2B SaaS).",
+        "Vous cherchez une solution entièrement gratuite."
+      ],
+      "threshold": "PartnerStack s'adresse aux B2B SaaS avec stratégie partenariat active. Pour entreprises sans partner strategy, non pertinent."
+    },
+    "pros": [
+      "IA-native : prédiction et optimisation smart.",
+      "Support multiples types partenaires.",
+      "Commission auto et payouts simplifiés.",
+      "Classée #1 partner ecosystem G2."
+    ],
+    "cons": [
+      "Pas de tarification transparente ; devis obligatoire.",
+      "Peut être surdimensionné pour partner strategy simple.",
+      "Implémentation requiert structure partenaires."
+    ],
+    "use_cases": [
+      "Recruiter et gérer réseau affiliates pour B2B SaaS.",
+      "Automatiser commission et payouts partners.",
+      "Tracker performance et optimize partner sourcing."
+    ],
+    "relevant_for": ["B2B SaaS founders", "Partnership managers", "Directeurs marketing"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a B2B SaaS company looking to scale via partners/affiliates.",
+        "You want to manage multiple partner types centralized.",
+        "You need commission automation and detailed reporting."
+      ],
+      "avoidIf": [
+        "You don't have a partner/affiliate strategy.",
+        "You're D2C or traditional B2C (not B2B SaaS).",
+        "You want a completely free solution."
+      ],
+      "threshold": "PartnerStack is for B2B SaaS with active partnership strategy. For companies without partner strategy, not relevant."
+    },
+    "pros": [
+      "AI-native: smart prediction and optimization.",
+      "Support for multiple partner types.",
+      "Auto commission and simplified payouts.",
+      "Rated #1 in partner ecosystem on G2."
+    ],
+    "cons": [
+      "No transparent pricing; custom quote required.",
+      "May be oversized for simple partner strategy.",
+      "Implementation requires partner infrastructure."
+    ],
+    "use_cases": [
+      "Recruit and manage affiliate network for B2B SaaS.",
+      "Automate partner commission and payouts.",
+      "Track performance and optimize partner sourcing."
+    ]
+  }
+}

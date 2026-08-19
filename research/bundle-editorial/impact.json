@@ -1,0 +1,88 @@
+{
+  "slug": "impact",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Impact — Partner Relationship Management platform (site officiel)", "url": "https://impact.com" }
+  ],
+  "facts": {
+    "what": "Plateforme IA de gestion des partenariats pour découvrir, manager, mesurer, et optimiser partenaires multi-canaux. Gère affiliate marketing, creator/influencer partnerships, et programes referral/advocates. Powers 100B$ en commerce partenaire globalement.",
+    "what_en": "AI-powered partner management platform to discover, manage, measure, and optimize multi-channel partnerships. Handles affiliate marketing, creator/influencer partnerships, and referral/advocate programs. Powers $100B+ in global partnership commerce.",
+    "pricing_model": "Tarification non détaillée publiquement ; modèle SaaS standard avec quote basé sur volume transactions et nombre de partners.",
+    "free_tier": { "exists": false, "detail": "Pas d'essai gratuit public ; pricing sur devis." },
+    "plans": [
+      { "name": "Plan personnalisé", "price": "Quote selon volume commerce partenaire et complexity" }
+    ],
+    "key_features": [
+      "Découverte et recrutement de partenaires mondiaux",
+      "Contrats et paiements alignés aux résultats",
+      "Tracking cross-device des conversions",
+      "Workflows automatisés et 40+ rapports",
+      "Détection fraude et compliance monitoring",
+      "Support multiples canaux (affiliate, creator, referral)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez une stratégie affiliate/partner marketing active.",
+        "Vous gérez multiples types de partenaires (affiliates, creators, referrals).",
+        "Vous avez besoin de tracking précis et automatisation de commissions."
+      ],
+      "avoidIf": [
+        "Vous n'avez pas de partenaires ou de stratégie affiliate.",
+        "Vous cherchez une plateforme e-commerce simple.",
+        "Vous voulez une solution entièrement gratuite."
+      ],
+      "threshold": "Impact s'adresse aux entreprises avec stratégie partenaire sophistiquée. Pour une approche simple, des outils plus légers suffisent."
+    },
+    "pros": [
+      "Support multiples types de partenaires.",
+      "Tracking et attribution cross-device précis.",
+      "Automation de commissions et payouts.",
+      "Détection fraude et compliance intégrée."
+    ],
+    "cons": [
+      "Pas de tarification transparente ; devis obligatoire.",
+      "Peut être complexe pour stratégie simple.",
+      "Implémentation requiert infrastructure partenaires."
+    ],
+    "use_cases": [
+      "Gérer réseau affiliate et creator partnerships.",
+      "Tracker attribution et ROI des partenaires.",
+      "Automatiser commission et compliance."
+    ],
+    "relevant_for": ["Directeurs marketing", "Partnership managers", "CMO"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You have an active affiliate/partner marketing strategy.",
+        "You manage multiple partner types (affiliates, creators, referrals).",
+        "You need precise tracking and commission automation."
+      ],
+      "avoidIf": [
+        "You don't have partners or affiliate strategy.",
+        "You want a simple e-commerce platform.",
+        "You want a completely free solution."
+      ],
+      "threshold": "Impact is for companies with sophisticated partner strategies. For simple approaches, lighter tools suffice."
+    },
+    "pros": [
+      "Support for multiple partner types.",
+      "Precise cross-device tracking and attribution.",
+      "Commission and payout automation.",
+      "Fraud detection and compliance built-in."
+    ],
+    "cons": [
+      "No transparent pricing; custom quote required.",
+      "Can be complex for simple strategy.",
+      "Implementation requires partner infrastructure."
+    ],
+    "use_cases": [
+      "Manage affiliate and creator partnership networks.",
+      "Track attribution and partner ROI.",
+      "Automate commission and compliance."
+    ]
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "slug": "soldo",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Soldo — Spend Management Platform (site officiel)", "url": "https://www.soldo.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de gestion des dépenses d'entreprise (spend management) combinant cartes de crédit rechargeables, cartes virtuelles, contrôles budgétaires, tracking des reçus et intégrations comptables. Pour PME/ETI.",
+    "what_en": "Corporate spend management platform combining reloadable prepaid cards, virtual cards, budget controls, receipt tracking, and accounting integrations for SMEs/mid-market.",
+    "pricing_model": "Tarification par plan escaladant (Standard, Plus, Enterprise) sans frais d'installation. Frais financiers parmi les plus bas du marché selon Soldo.",
+    "free_tier": { "exists": false, "detail": "Pas d'essai gratuit permanent. Trial 30 jours sur demande pour Plus/Standard. Abonnement payant après." },
+    "plans": [
+      { "name": "Standard", "price": "Tarification sur demande ; frais faibles selon Soldo" },
+      { "name": "Plus", "price": "Tarification sur demande" },
+      { "name": "Enterprise", "price": "Tarification custom avec support dédié" }
+    ],
+    "key_features": [
+      "Cartes prépayées rechargeables et cartes virtuelles.",
+      "Budgets et limites par utilisateur/département.",
+      "Suivi des reçus et réclamations de dépenses automatisées.",
+      "Rapprochement bancaire et intégrations comptables.",
+      "Dashboard temps réel et reporting."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez les dépenses d'une équipe distribuée.",
+        "Vous cherchez des contrôles budgétaires granulaires par utilisateur.",
+        "Vous voulez frais financiers bas (vendeur Soldo)."
+      ],
+      "avoidIf": [
+        "Vous avez très petite équipe (<5 pers).",
+        "Vous cherchez une solution gratuite.",
+        "La tarification opaqu vous dérange (besoin devis)."
+      ],
+      "threshold": "Soldo convient aux PME/ETI avec besoin de spend control distribué ; pour petite équipe, Wave + gestion manuelle suffit."
+    },
+    "pros": [
+      "Cartes rechargeables + virtuelles (flexibilité).",
+      "Contrôles budgétaires fins par utilisateur.",
+      "Frais financiers parmi les plus bas.",
+      "Support multi-devise et multi-pays."
+    ],
+    "cons": [
+      "Tarification opaque : nécessite devis.",
+      "Pas d'essai gratuit sans 30-jours commitment.",
+      "Interface moins intuitive que Spendesk."
+    ],
+    "use_cases": [
+      "Distribuer cartes budget à chaque équipe.",
+      "Automatiser tracking reçus (OCR).",
+      "Contrôler dépenses par département/projet."
+    ],
+    "relevant_for": ["PME/ETI", "Directeurs opérationnels", "Gestionnaires de dépenses"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage spending for a distributed team.",
+        "You need granular budget controls per user.",
+        "You want low financial fees (Soldo's claim)."
+      ],
+      "avoidIf": [
+        "You have very small team (<5 people).",
+        "You're looking for a free solution.",
+        "Opaque pricing bothers you (requires quote)."
+      ],
+      "threshold": "Soldo suits SMEs with distributed spend control needs; for small teams, Wave + manual management suffices."
+    },
+    "pros": [
+      "Reloadable + virtual cards (flexibility).",
+      "Fine-grained budget controls per user.",
+      "Financial fees among the lowest.",
+      "Multi-currency and multi-country support."
+    ],
+    "cons": [
+      "Opaque pricing: requires quote.",
+      "No free trial without 30-day commitment.",
+      "Interface less intuitive than Spendesk."
+    ],
+    "use_cases": [
+      "Distribute budget cards to each team.",
+      "Automate receipt tracking (OCR).",
+      "Control spending by department/project."
+    ]
+  }
+}

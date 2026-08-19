@@ -1,0 +1,89 @@
+{
+  "slug": "sami",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Sami — Carbon & ESG Reporting Software (site officiel)", "url": "https://sami.eco" }
+  ],
+  "facts": {
+    "what": "Plateforme française (Paris) de gestion du carbone et rapports ESG combinant collecte de données, calcul d'empreinte carbone, conformité CSRD/ISSB et automation rapports. Utilisée par 1500+ entreprises en France.",
+    "what_en": "French carbon and ESG reporting platform combining data collection, carbon footprint calculation, CSRD/ISSB compliance, and reporting automation. Used by 1,500+ companies in France.",
+    "pricing_model": "Tarification modulable par taille d'entreprise et modules choisis (Carbon Hub, ESG Hub). Modèle custom selon besoins. Contact commercial obligatoire pour devis.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Tarification modèle custom par demande auprès de l'équipe commerciale." },
+    "plans": [
+      { "name": "Starter Package", "price": "Montants sur demande selon modules" },
+      { "name": "SME Package", "price": "Tarification custom" },
+      { "name": "Enterprise Package", "price": "Tarification custom avec support dédié" }
+    ],
+    "key_features": [
+      "Collecte collaborative de données carbone.",
+      "Calcul d'empreinte carbone (scope 1/2/3).",
+      "Conformité CSRD et ISSB automatisée.",
+      "Hub ESG pour rapports non-financiers.",
+      "API et intégrations data pour ERPs."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes une PME/ETI avec obligation CSRD (200-750 emp.).",
+        "Vous cherchez une solution française pour ESG.",
+        "Vous avez besoin d'automatiser rapports carbone/ESG."
+      ],
+      "avoidIf": [
+        "Vous êtes très petite entreprise (<50 emp.) sans obligation CSRD.",
+        "Vous avez budget très limité.",
+        "Vous préférez une solution à calculer seul (spreadsheet)."
+      ],
+      "threshold": "Sami convient aux PME/ETI sous CSRD cherchant compliance ; pour petite entreprise volontariste, un spreadsheet GHG Protocol suffira."
+    },
+    "pros": [
+      "Solution française, réputée (#1 en France).",
+      "Conformité CSRD/ISSB automatisée.",
+      "Collecte collaborative de données simple.",
+      "Support par SGS (acquériteur depuis Nov 2025)."
+    ],
+    "cons": [
+      "Tarification opaque : nécessite demande commercial.",
+      "Peut être surdimensionné pour très petites entreprises.",
+      "Support français peut être limité par intégration SGS."
+    ],
+    "use_cases": [
+      "Produire rapports carbone/ESG pour audit CSRD.",
+      "Collecter et calculer empreinte carbone de l'entreprise.",
+      "Automatiser rapports de durabilité (ESG)."
+    ],
+    "relevant_for": ["PME/ETI", "Directeurs RSE/durabilité", "Cabinets conseils"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a SME/mid-market with CSRD obligations (200–750 emp).",
+        "You want a French solution for ESG.",
+        "You need to automate carbon/ESG reporting."
+      ],
+      "avoidIf": [
+        "You're very small (<50 emp) with no CSRD requirement.",
+        "You have a very limited budget.",
+        "You prefer to calculate alone (spreadsheet)."
+      ],
+      "threshold": "Sami suits SMEs under CSRD seeking compliance; for very small voluntaries, a GHG Protocol spreadsheet suffices."
+    },
+    "pros": [
+      "French solution, #1 in France.",
+      "CSRD/ISSB compliance automated.",
+      "Simple collaborative data collection.",
+      "Support by SGS (acquirer since Nov 2025)."
+    ],
+    "cons": [
+      "Pricing opaque: requires sales inquiry.",
+      "May be oversized for very small enterprises.",
+      "French support may be limited by SGS integration."
+    ],
+    "use_cases": [
+      "Produce carbon/ESG reports for CSRD audit.",
+      "Collect and calculate company carbon footprint.",
+      "Automate sustainability reporting (ESG)."
+    ]
+  }
+}

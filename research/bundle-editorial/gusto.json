@@ -1,0 +1,92 @@
+{
+  "slug": "gusto",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Gusto — Payroll and HR platform (site officiel)", "url": "https://gusto.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de paie et RH cloud pour petites et moyennes entreprises. Inclut processing de paie, dépôts directs, filings fiscaux, gestion des avantages (santé, retraite), time tracking, et outils RH. Support pour 650+ intégrations.",
+    "what_en": "Cloud payroll and HR platform for small to mid-sized businesses. Includes payroll processing, direct deposit, tax filings, benefits admin (health, 401k), time tracking, and HR tools. Supports 650+ integrations.",
+    "pricing_model": "Quatre plans : Simple (49 $/mois + 6 $/personne), Plus (80 + 12 $/personne), Premium (180 + 22 $/personne), Contractor-Only (35 + 6 $/contractor). Pas de contrats ; tarification transparente.",
+    "free_tier": { "exists": false, "detail": "Pas d'essai gratuit gratuit ; plans payants à partir de 49 $/mois." },
+    "plans": [
+      { "name": "Simple", "price": "49 $/mois + 6 $/personne (paie basique)" },
+      { "name": "Plus", "price": "80 $/mois + 12 $/personne (paie + outils RH)" },
+      { "name": "Premium", "price": "180 $/mois + 22 $/personne (paie + HR avancé + benefits)" },
+      { "name": "Contractor-Only", "price": "35 $/mois + 6 $/contractor" }
+    ],
+    "key_features": [
+      "Processing de paie automatisé",
+      "Dépôts directs et remboursements rapides (next-day)",
+      "Filings taxes automatiques fédéraux et étatiques",
+      "Gestion des avantages (santé, dental, vision, 401k native)",
+      "Time tracking et gestion des congés",
+      "Onboarding numérique",
+      "650+ intégrations natives"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes une PME avec 5-500 employés et avez besoin de paie simplifiée.",
+        "Vous voulez automatiser les filings fiscaux et gestion des avantages.",
+        "Vous préférez une solution cloud et facile à utiliser."
+      ],
+      "avoidIf": [
+        "Vous avez moins de 5 employés ; les coûts fixes sont trop élevés.",
+        "Vous êtes une grande entreprise avec paie très complexe.",
+        "Vous cherchez un outil entièrement gratuit."
+      ],
+      "threshold": "Gusto convient aux PME de 5-500 employés cherchant une paie simple et fiable. Pour une très petite équipe, les coûts fixes peuvent ne pas justifier. Pour l'enterprise, solutions plus complexes requises."
+    },
+    "pros": [
+      "Interface très intuitive et facile d'utilisation.",
+      "Tarification complètement transparente, sans contrats.",
+      "Avantages complets (santé, retraite) inclus.",
+      "Filings taxes automatiques et precis."
+    ],
+    "cons": [
+      "Plan Simple limité : pas de time tracking, performance reviews, etc.",
+      "Coût fixe de base élevé pour de très petites équipes.",
+      "Pas d'essai gratuit."
+    ],
+    "use_cases": [
+      "Automatiser la paie mensuelle et filings taxes d'une PME.",
+      "Gérer les avantages et inscription santé/retraite des employés.",
+      "Intégrer time tracking et gestion des congés."
+    ],
+    "relevant_for": ["Petites PME", "Directeurs RH", "Directeurs financiers", "Startups avec employés"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a 5-500 employee company needing simple payroll.",
+        "You want automated tax filings and benefits management.",
+        "You prefer a cloud-based, easy-to-use solution."
+      ],
+      "avoidIf": [
+        "You have fewer than 5 employees; fixed costs are too high.",
+        "You're a large enterprise with complex payroll.",
+        "You want a completely free tool."
+      ],
+      "threshold": "Gusto is for 5-500 employee companies seeking simple, reliable payroll. For very small teams, fixed costs may not justify. For enterprise, more complex solutions needed."
+    },
+    "pros": [
+      "Very intuitive and easy-to-use interface.",
+      "Completely transparent pricing, no contracts.",
+      "Full benefits (health, retirement) included.",
+      "Automated and accurate tax filings."
+    ],
+    "cons": [
+      "Simple plan is limited: no time tracking, performance reviews, etc.",
+      "High fixed base cost for very small teams.",
+      "No free trial."
+    ],
+    "use_cases": [
+      "Automate monthly payroll and tax filings for a mid-sized company.",
+      "Manage employee benefits and health/retirement enrollment.",
+      "Integrate time tracking and leave management."
+    ]
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "slug": "paypal",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "PayPal Merchant Fees (site officiel)", "url": "https://www.paypal.com/us/business/paypal-business-fees" }
+  ],
+  "facts": {
+    "what": "Plateforme de paiement en ligne permettant aux particuliers et entreprises de recevoir des paiements par carte bancaire, PayPal, et autres moyens de paiement internationaux.",
+    "what_en": "Online payment platform enabling individuals and businesses to accept card payments, PayPal transfers, and international payment methods.",
+    "pricing_model": "Commission par transaction pour chaque paiement reçu. Tarifs variables selon le type de paiement (carte de crédit, débit, UPI, virement bancaire). Pas de frais mensuels ni d'inscription.",
+    "free_tier": { "exists": true, "detail": "Aucun frais d'inscription ; vous ne payez que lorsque vous recevez un paiement." },
+    "plans": [
+      { "name": "PayPal Checkout (standard)", "price": "3,49% + 0,49 $ par transaction" },
+      { "name": "Cartes crédit/débit standards", "price": "2,99% + 0,49 $ par transaction" },
+      { "name": "Virements bancaires (Pay by Bank)", "price": "1,50% par transaction" },
+      { "name": "Transactions en personne (Zettle)", "price": "2,29% + 0,09 $ par transaction" }
+    ],
+    "key_features": [
+      "Acceptation de plusieurs moyens de paiement (cartes, PayPal, portefeuilles numériques)",
+      "Protection du vendeur et de l'acheteur intégrée",
+      "Facturation récurrente et abonnements",
+      "Rapports de transaction détaillés",
+      "Intégrations avec plateformes d'e-commerce et point de vente"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous vendez en ligne ou en personne et cherchez une solution de paiement établie.",
+        "Vous avez une clientèle internationale ou multi-devises.",
+        "Vous voulez une protection vendeur et acheteur intégrée."
+      ],
+      "avoidIf": [
+        "Les frais de transaction vous semblent élevés (comparer avec Stripe, Razorpay).",
+        "Vous avez un volume très élevé et pouvez négocier des tarifs customs.",
+        "Vous cherchez uniquement des virements bancaires à bas coût."
+      ],
+      "threshold": "PayPal convient à la plupart des vendeurs en ligne ; pour un volume très élevé ou des besoins spécialisés, négocier des tarifs customs ou explorer Stripe peut réduire les frais."
+    },
+    "pros": [
+      "Reconnu mondialement, accepté par les clients partout.",
+      "Protection intégrée vendeur/acheteur.",
+      "Multi-devises et transactions internationales facilitées.",
+      "Intégration large avec les plateformes e-commerce (Shopify, WooCommerce, etc.)."
+    ],
+    "cons": [
+      "Frais de transaction parmi les plus élevés du marché.",
+      "Frais de litige et de contrepassation élevés.",
+      "Interface parfois complexe pour les débutants.",
+      "Service client difficile à joindre selon les avis."
+    ],
+    "use_cases": [
+      "Accepter des paiements en ligne sur un site e-commerce.",
+      "Recevoir des virements internationaux de clients.",
+      "Vendre des services numériques avec facturation récurrente."
+    ],
+    "relevant_for": ["Vendeurs e-commerce", "Prestataires de services", "Entreprises B2C internationales"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You sell online or in-person and need an established payment solution.",
+        "You have international customers or multi-currency needs.",
+        "Integrated buyer and seller protection matters to you."
+      ],
+      "avoidIf": [
+        "Transaction fees feel too high (compare with Stripe, Razorpay).",
+        "You have very high volume and can negotiate custom rates.",
+        "You need low-cost bank transfers only."
+      ],
+      "threshold": "PayPal suits most online sellers; for very high volume or specialized needs, negotiating custom rates or exploring Stripe may reduce fees."
+    },
+    "pros": [
+      "Globally recognized and accepted everywhere.",
+      "Built-in buyer and seller protection.",
+      "Multi-currency and international transactions simplified.",
+      "Wide integration with e-commerce platforms (Shopify, WooCommerce, etc.)."
+    ],
+    "cons": [
+      "Transaction fees among the highest on the market.",
+      "High dispute and chargeback fees.",
+      "Interface sometimes complex for beginners.",
+      "Customer support difficult to reach per user reviews."
+    ],
+    "use_cases": [
+      "Accept online payments on an e-commerce site.",
+      "Receive international transfers from customers.",
+      "Sell digital services with recurring billing."
+    ]
+  }
+}

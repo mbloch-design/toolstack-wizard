@@ -1,0 +1,91 @@
+{
+  "slug": "quickbooks",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "QuickBooks Desktop — Accounting Software (site officiel)", "url": "https://quickbooks.intuit.com" }
+  ],
+  "facts": {
+    "what": "Logiciel de comptabilité professionnel pour bureau (Desktop) permettant la gestion de la facturation, des dépenses, des comptes clients/fournisseurs et des rapports financiers. Licence perpétuelle par utilisateur.",
+    "what_en": "Professional desktop accounting software for managing invoicing, expenses, receivables/payables, and financial reporting. Perpetual license per user.",
+    "pricing_model": "Licence perpétuelle à l'achat (pas d'abonnement). Tarification par édition (Pro, Plus) et par nombre d'utilisateurs. Les prix augmentent annuellement.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite ; achat de licence obligatoire." },
+    "plans": [
+      { "name": "QuickBooks Desktop Pro Plus", "price": "1 149 $ (licence à l'usage personnel, maj. 2026)" },
+      { "name": "QuickBooks Desktop Pro Plus — Multi-utilisateur", "price": "230 $ par siège supplémentaire (maj. 2026)" },
+      { "name": "QuickBooks Desktop Premier", "price": "Tarification sur demande" }
+    ],
+    "key_features": [
+      "Facturation et suivi des paiements clients",
+      "Gestion des comptes fournisseurs et achats",
+      "Rapports financiers détaillés et personalizes",
+      "Rapprochement bancaire automatisé",
+      "Multi-utilisateur (avec licences additionnelles)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous préférez un logiciel de bureau (sans cloud/abonnement).",
+        "Vous avez une comptabilité simple à modérée.",
+        "Vous voulez une solution reconnue et stable."
+      ],
+      "avoidIf": [
+        "Vous préférez un abonnement cloud (essayer QuickBooks Online).",
+        "Vous avez besoin d'accès mobile omniprésent.",
+        "Vous cherchez une solution moins chère (Wave, Xero)."
+      ],
+      "threshold": "QuickBooks Desktop convient aux petites entreprises établies cherchant une solution mature ; pour plus de flexibilité et d'accès mobile, QuickBooks Online ou Xero est préférable."
+    },
+    "pros": [
+      "Licence perpétuelle : pas d'augmentation tarifaire inévitable.",
+      "Solution mature et reconnue par les experts-comptables français.",
+      "Fonctionne hors ligne si nécessaire.",
+      "Rapports financiers robustes."
+    ],
+    "cons": [
+      "Pas d'accès cloud natif (requiert synchronisation).",
+      "Interface datée comparée aux solutions cloud modernes.",
+      "Augmentation de prix annuelle sur les nouvelles versions.",
+      "Support technique limité."
+    ],
+    "use_cases": [
+      "Gérer la comptabilité d'une petite entreprise (< 50 salariés).",
+      "Produire des rapports financiers pour un expert-comptable.",
+      "Archiver localement les données comptables."
+    ],
+    "relevant_for": ["Petites entreprises établies", "Artisans", "Commerçants"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You prefer desktop software (no cloud/subscription).",
+        "You have simple to moderate accounting needs.",
+        "You want a recognized, stable solution."
+      ],
+      "avoidIf": [
+        "You prefer a cloud subscription (try QuickBooks Online).",
+        "You need ubiquitous mobile access.",
+        "You're looking for a cheaper option (Wave, Xero)."
+      ],
+      "threshold": "QuickBooks Desktop suits established small businesses seeking a mature solution; for more flexibility and mobile access, QuickBooks Online or Xero is preferable."
+    },
+    "pros": [
+      "Perpetual license: no inevitable pricing increases.",
+      "Mature, recognized solution by accountants.",
+      "Works offline if needed.",
+      "Robust financial reporting."
+    ],
+    "cons": [
+      "No native cloud access (requires syncing).",
+      "Dated interface vs. modern cloud solutions.",
+      "Annual price increases with new versions.",
+      "Limited technical support."
+    ],
+    "use_cases": [
+      "Manage accounting for a small business (< 50 employees).",
+      "Generate financial reports for an accountant.",
+      "Archive accounting data locally."
+    ]
+  }
+}

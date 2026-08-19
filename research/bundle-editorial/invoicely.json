@@ -1,0 +1,90 @@
+{
+  "slug": "invoicely",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Invoicely — Cloud invoicing platform (site officiel)", "url": "https://invoicely.com" }
+  ],
+  "facts": {
+    "what": "Plateforme SaaS de facturation cloud pour petites entreprises offrant facturation gratuite et illimitée. Inclut : création factures, devis, acceptation paiements online, suivi temps/dépenses, rapports financiers, mobile apps. 250k+ PME utilisateurs.",
+    "what_en": "Cloud invoicing SaaS for small businesses offering free unlimited invoicing. Includes invoice creation, estimates, online payment acceptance, time/expense tracking, financial reporting, mobile apps. 250K+ SMB users.",
+    "pricing_model": "Freemium : facturation de base totalement gratuite avec accès illimité. Plans payants premium pour features avancées (options optionnelles).",
+    "free_tier": { "exists": true, "detail": "Freemium complet : facturation, devis, paiements online, time tracking, reports tous gratuits en plan de base." },
+    "plans": [
+      { "name": "Gratuit", "price": "Facturation illimitée et gratuite avec features core" },
+      { "name": "Premium", "price": "Plans payants optionnels pour features avancées (prix sur demande)" }
+    ],
+    "key_features": [
+      "Création de factures illimitée et gratuite",
+      "Devis et estimations",
+      "Paiements online multi-gateway",
+      "Suivi du temps et gestion des dépenses",
+      "Rapports financiers et dashboards",
+      "Mobile apps (iOS, Android)",
+      "Branding personnalisé"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes une petite entreprise/freelance et voulez facturer gratuitement.",
+        "Vous avez besoin de suivi temps et expenses intégrés.",
+        "Vous préférez une solution simple sans frais mensuels."
+      ],
+      "avoidIf": [
+        "Vous êtes une entreprise complexe avec besoins comptables avancés.",
+        "Vous avez besoin d'automation comptable IA.",
+        "Vous voulez des features très avancées (subscription management complexe)."
+      ],
+      "threshold": "Invoicely est idéale pour freelances et petites entreprises voulant facturer gratuitement. Pour une PME complexe, des outils comme Docyt ou FreshBooks conviennent mieux."
+    },
+    "pros": [
+      "Facturation illimitée et entièrement gratuite.",
+      "Interface simple et intuitive.",
+      "Suivi temps et dépenses inclus.",
+      "250k+ petites entreprises l'utilisent déjà."
+    ],
+    "cons": [
+      "Pas d'automation comptable IA.",
+      "Features avancées requièrent plan payant.",
+      "Moins de features que FreshBooks ou autres."
+    ],
+    "use_cases": [
+      "Facturer clients sans frais mensuels.",
+      "Accepter paiements online directement via factures.",
+      "Suivre temps et dépenses de projets."
+    ],
+    "relevant_for": ["Freelances", "Petites entreprises", "Consultants indépendants"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a freelancer or small business wanting to invoice for free.",
+        "You need integrated time and expense tracking.",
+        "You prefer a simple solution without monthly fees."
+      ],
+      "avoidIf": [
+        "You're a complex SMB with advanced accounting needs.",
+        "You need AI accounting automation.",
+        "You want very advanced features (complex subscription management)."
+      ],
+      "threshold": "Invoicely is ideal for freelancers and small businesses wanting free invoicing. For complex SMB, tools like Docyt or FreshBooks work better."
+    },
+    "pros": [
+      "Unlimited invoicing and completely free.",
+      "Simple and intuitive interface.",
+      "Time and expense tracking included.",
+      "250K+ small businesses already use it."
+    ],
+    "cons": [
+      "No AI accounting automation.",
+      "Advanced features require paid plans.",
+      "Fewer features than FreshBooks or others."
+    ],
+    "use_cases": [
+      "Invoice clients without monthly fees.",
+      "Accept online payments directly via invoices.",
+      "Track project time and expenses."
+    ]
+  }
+}

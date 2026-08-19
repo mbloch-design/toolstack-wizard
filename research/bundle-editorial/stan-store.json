@@ -1,0 +1,89 @@
+{
+  "slug": "stan-store",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Stan Store — Link-in-Bio Storefront (site officiel)", "url": "https://stan.store" }
+  ],
+  "facts": {
+    "what": "Plateforme de vente de produits numériques et formations (link-in-bio storefront) pour créateurs. Gestionnaire de boutique simplifié, email marketing intégré, affiliation et course builder natif. Sans frais de plateforme sur paiements Stripe.",
+    "what_en": "Digital product and course sales platform (link-in-bio storefront) for creators. Simplified store manager, integrated email marketing, affiliate management, and native course builder. Zero platform fees on Stripe payments.",
+    "pricing_model": "Abonnement par plan (Creator, Pro) sans frais de plateforme. Paiements Stripe standards appliqués. Essai 14 jours gratuit.",
+    "free_tier": { "exists": false, "detail": "Essai 14 jours gratuit. Abonnement payant à partir de 29 $/mois." },
+    "plans": [
+      { "name": "Creator", "price": "29 $ / mois (ou 25 $ annuel)" },
+      { "name": "Creator Pro", "price": "99 $ / mois (ou 79 $ annuel)" }
+    ],
+    "key_features": [
+      "Link-in-bio storefront pour produits numériques/formations.",
+      "Course builder natif pour héberger formations.",
+      "Email marketing et automatisations intégrés.",
+      "Affiliate center pour programs partenaires.",
+      "Zéro frais de plateforme (Stripe uniquement).",
+      "Support pour upsells et order bumps (Pro)."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous vendez formations, ebooks ou produits numériques.",
+        "Vous venez de TikTok/Instagram (link-in-bio).",
+        "Vous cherchez une plateforme sans aucun frais additionnel."
+      ],
+      "avoidIf": [
+        "Vous vendez produits physiques.",
+        "Vous avez besoin de design très custom.",
+        "Vous avez un très petit budget."
+      ],
+      "threshold": "Stan Store convient aux créateurs vendent produits numériques sans frais plateforme ; pour produits physiques, Shopify meilleur."
+    },
+    "pros": [
+      "Aucun frais de plateforme : seuls les frais Stripe s'appliquent.",
+      "Link-in-bio natif pour créateurs (TikTok/Instagram).",
+      "Course builder intégré sans coût extra.",
+      "Email marketing et affiliation natifs (Pro)."
+    ],
+    "cons": [
+      "Moins de contrôle branding vs Shopify.",
+      "Stan badge sur store (Creator plan seulement).",
+      "Écosystème plus petit que Shopify."
+    ],
+    "use_cases": [
+      "Vendre formations/ebooks depuis TikTok/Instagram.",
+      "Link-in-bio storefront pour créateurs.",
+      "Gestion email + affiliation intégrée."
+    ],
+    "relevant_for": ["Créateurs de formations", "Content creators", "Éditeurs produits numériques"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You sell courses, ebooks, or digital products.",
+        "You come from TikTok/Instagram (link-in-bio).",
+        "You want zero additional platform fees."
+      ],
+      "avoidIf": [
+        "You sell physical products.",
+        "You need highly custom design.",
+        "You have a very small budget."
+      ],
+      "threshold": "Stan Store suits digital product creators with zero platform fees; for physical products, Shopify better."
+    },
+    "pros": [
+      "No platform fees: only Stripe's fees apply.",
+      "Native link-in-bio for creators (TikTok/Instagram).",
+      "Built-in course builder no extra cost.",
+      "Email marketing + affiliation native (Pro)."
+    ],
+    "cons": [
+      "Less branding control vs Shopify.",
+      "Stan badge on store (Creator plan only).",
+      "Smaller ecosystem than Shopify."
+    ],
+    "use_cases": [
+      "Sell courses/ebooks from TikTok/Instagram.",
+      "Link-in-bio storefront for creators.",
+      "Integrated email + affiliate management."
+    ]
+  }
+}

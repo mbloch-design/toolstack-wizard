@@ -1,0 +1,92 @@
+{
+  "slug": "shopify-payments",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Shopify Payments — Payment Processing (site officiel)", "url": "https://www.shopify.com/payments" }
+  ],
+  "facts": {
+    "what": "Service de traitement de paiements intégré Shopify permettant accepter cartes de crédit, portefeuilles numériques et virements bancaires. Pas de frais intermédiaires supplémentaires avec Shopify.",
+    "what_en": "Shopify-integrated payment processing service accepting credit cards, digital wallets, and bank transfers. No additional intermediary fees when using Shopify.",
+    "pricing_model": "Commission par transaction escaladante selon plan Shopify (Basic, Growing, Advanced). Tarifs : 2,9% + 30¢ (Basic) à 2,5% + 30¢ (Advanced) pour cartes online.",
+    "free_tier": { "exists": false, "detail": "Pas de paiements gratuits. Frais par transaction selon plan Shopify choisi." },
+    "plans": [
+      { "name": "Shopify Basic Plan", "price": "2,9% + 30¢ par transaction card (online)" },
+      { "name": "Shopify Growing Plan", "price": "2,7% + 30¢ par transaction card (online)" },
+      { "name": "Shopify Advanced Plan", "price": "2,5% + 30¢ par transaction card (online)" },
+      { "name": "Shopify Plus (Enterprise)", "price": "2,15% + 30¢ negotiated" }
+    ],
+    "key_features": [
+      "Intégration native Shopify (zéro setup).",
+      "Support cartes de crédit, Shop Pay, portefeuilles (Apple Pay, Google Pay).",
+      "Paiements internationaux avec support multi-devises.",
+      "Frais réduits avec Shop Pay.",
+      "Payout direct au compte bancaire (2-3 jours)."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez Shopify et cherchez solution paiement simple.",
+        "Vous préférez une solution intégrée sans tiers (vs PayPal).",
+        "Vous avez volume de ventes justifiant les frais."
+      ],
+      "avoidIf": [
+        "Vous utilisez une plateforme non-Shopify (BigCommerce, Magento).",
+        "Vous cherchez les frais les plus bas (Stripe, Razorpay moins chers).",
+        "Vous n'avez pas encore de store Shopify."
+      ],
+      "threshold": "Shopify Payments convient à tout commerce Shopify ; frais compétitifs pour plan Advanced. Pour autre plateforme, Stripe meilleur."
+    },
+    "pros": [
+      "Intégration entièrement native à Shopify, sans configuration.",
+      "Frais dégressifs à mesure que le plan Shopify monte.",
+      "Shop Pay bonus (frais réd pour Shop Pay).",
+      "Support international et multi-devises.",
+      "Payout rapide (2-3 jours)."
+    ],
+    "cons": [
+      "Frais supérieurs à Stripe/Razorpay pour volume élevé.",
+      "Frais supplémentaires sur les cartes internationales.",
+      "Frais de litige et de contrepassation standards du marché."
+    ],
+    "use_cases": [
+      "Vendre sur Shopify et accepter cartes de crédit.",
+      "Paiements internationaux multi-devises.",
+      "Intégration paiement 0-config (vs tiers)."
+    ],
+    "relevant_for": ["Boutiques Shopify", "E-commerce", "Vendeurs omnicanal"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You use Shopify and want simple payment solution.",
+        "You prefer integrated solution without third party (vs PayPal).",
+        "You have sales volume justifying the fees."
+      ],
+      "avoidIf": [
+        "You use non-Shopify platform (BigCommerce, Magento).",
+        "You're looking for lowest fees (Stripe, Razorpay cheaper).",
+        "You don't yet have a Shopify store."
+      ],
+      "threshold": "Shopify Payments suits any Shopify commerce; fees competitive at Advanced plan. For other platforms, Stripe better."
+    },
+    "pros": [
+      "Fully native Shopify integration, no setup.",
+      "Fees taper as the Shopify plan grows.",
+      "Shop Pay bonus (reduced fees for Shop Pay).",
+      "International support and multi-currency.",
+      "Fast payout (2–3 days)."
+    ],
+    "cons": [
+      "Higher fees than Stripe/Razorpay for high volume.",
+      "Additional fee on international cards.",
+      "Standard dispute and chargeback fees."
+    ],
+    "use_cases": [
+      "Sell on Shopify and accept credit cards.",
+      "International multi-currency payments.",
+      "Zero-config payment integration (vs third party)."
+    ]
+  }
+}

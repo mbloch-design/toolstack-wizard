@@ -1,0 +1,89 @@
+{
+  "slug": "quadient",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Quadient — Mailroom & Automation Solutions (site officiel)", "url": "https://quadient.com" }
+  ],
+  "facts": {
+    "what": "Plateforme d'automatisation des courriers et factures combinant traitement du courrier physique, automatisation comptable (AP), gestion du courrier numérique et intégrations ERP. Designed pour PME à grandes entreprises.",
+    "what_en": "Mailroom and invoicing automation platform combining physical mail processing, accounts payable automation, digital mail management, and ERP integrations, designed for SMEs to enterprises.",
+    "pricing_model": "Modèle tarifé selon le volume de factures/courriers traités et l'envergure du déploiement (logiciel seul vs. logiciel + matériel). Tarification modulable par fonctionnalités.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite ; essai et devis personnalisé sur demande." },
+    "plans": [
+      { "name": "Déploiement logiciel seul (petite/moyenne taille)", "price": "Entre 8 000 $ et 20 000 $/an selon le volume" },
+      { "name": "Déploiement logiciel + matériel (taille moyenne)", "price": "Entre 15 000 $ et 50 000 $/an selon la complexité" },
+      { "name": "Déploiement enterprise (multiple sites)", "price": "100 000 $ et plus ; tarification negotiée par contrat pluri-annuel" }
+    ],
+    "key_features": [
+      "Capture et traitement automatisé du courrier physique",
+      "Automatisation des factures fournisseurs (AP automation)",
+      "Gestion du courrier numérique et archivage",
+      "Intégrations ERP (SAP, Oracle, NetSuite, etc.)",
+      "Conformité et audit trail complets"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous traitez un volume élevé de factures fournisseurs (100+/mois).",
+        "Vous voulez automatiser le courrier physique et numérique.",
+        "Vous avez besoin d'une solution intégrée ERP."
+      ],
+      "avoidIf": [
+        "Votre volume de factures est faible.",
+        "Vous cherchez une solution au coût initial très bas.",
+        "Vous n'avez besoin que d'une seule fonctionnalité (ex. courrier seul)."
+      ],
+      "threshold": "Quadient convient aux PME/ETI avec volume élevé cherchant automatisation complète ; pour un volume faible ou un besoin simple, une solution legère (ex. OCR + AP automation) suffit."
+    },
+    "pros": [
+      "Automatisation complète courrier physique + digital + AP.",
+      "Intégrations robustes avec les plus grands ERP.",
+      "Solution mature, utilisée par les grandes entreprises.",
+      "ROI rapide pour volumes élevés."
+    ],
+    "cons": [
+      "Coûts initiaux et d'implémentation élevés.",
+      "Nécessite une expertise interne pour configurer.",
+      "Non adapté aux très petits volumes."
+    ],
+    "use_cases": [
+      "Automatiser le traitement de 200+factures fournisseurs par mois.",
+      "Centraliser courrier physique et numérique dans un seul système.",
+      "Intégrer la gestion du courrier à un ERP existant (SAP, Oracle)."
+    ],
+    "relevant_for": ["PME/ETI", "Services financiers", "Directeurs opérationnels"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You process a high volume of supplier invoices (100+/month).",
+        "You want to automate physical and digital mail.",
+        "You need ERP integration."
+      ],
+      "avoidIf": [
+        "Your invoice volume is low (<50/month).",
+        "You're looking for a very low initial cost.",
+        "You need only one function (e.g., mail processing alone)."
+      ],
+      "threshold": "Quadient suits SMEs with high volume seeking full automation; for low volume or simple needs, a lightweight solution (e.g., OCR + AP automation) suffices."
+    },
+    "pros": [
+      "Complete automation of physical mail + digital mail + AP.",
+      "Robust integrations with major ERPs.",
+      "Mature solution trusted by large enterprises.",
+      "Fast ROI for high volumes."
+    ],
+    "cons": [
+      "High initial and implementation costs.",
+      "Requires internal expertise to configure.",
+      "Not suited for very low volumes."
+    ],
+    "use_cases": [
+      "Automate processing of 200+ supplier invoices per month.",
+      "Centralize physical and digital mail in one system.",
+      "Integrate mail management with existing ERP (SAP, Oracle)."
+    ]
+  }
+}

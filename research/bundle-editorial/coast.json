@@ -1,0 +1,89 @@
+{
+  "slug": "coast",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Coast — Fleet and field expense management (site officiel)", "url": "https://coastpay.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de gestion des dépenses pour flottes et opérations terrain, basée sur des cartes spécialisées (carburant, dépenses de chantier, achats bureau). Includes expense management, bill pay, et intégrations telematics.",
+    "what_en": "Expense management platform for fleets and field operations using specialized corporate cards (fuel, field, office). Includes expense tracking, bill pay, and telematics integrations.",
+    "pricing_model": "Abonnement à 4 $ par utilisateur actif par mois (utilisateur ayant effectué au moins une transaction complète par mois). Accès complet à la plateforme inclus dans tous les plans.",
+    "free_tier": { "exists": false, "detail": "Pas d'essai gratuit permanent ; 4 $ par utilisateur actif mensuel." },
+    "plans": [
+      { "name": "Forfait standard", "price": "4 $ par utilisateur actif/mois" }
+    ],
+    "key_features": [
+      "Cartes essence avec prévention de fraude",
+      "Cartes d'entreprise pour achats divers",
+      "Cartes terrain pour dépenses de chantier",
+      "Gestion des dépenses avec capture de reçus",
+      "Intégrations QuickBooks, NetSuite, Samsara, Geotab",
+      "Contrôles avancés et limites de dépenses",
+      "Garantie de fraude de 25 000 $"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez une flotte de véhicules ou des opérations terrain avec dépenses importantes.",
+        "Vous avez besoin de contrôle des dépenses et de réconciliation automatique.",
+        "Vous utilisez déjà QuickBooks ou NetSuite."
+      ],
+      "avoidIf": [
+        "Votre équipe est peu nombreuse et les dépenses sont minimes.",
+        "Vous n'avez pas d'opérations terrain ou de véhicules.",
+        "Vous cherchez une solution d'expense uniquement sans cartes d'entreprise."
+      ],
+      "threshold": "Coast convient aux entreprises avec opérations terrain et flotte. Pour une petite équipe sans dépenses majeures, un outil plus simple suffit."
+    },
+    "pros": [
+      "Modèle de tarification très transparent et prévisible.",
+      "Cartes spécialisées par type de dépense.",
+      "Intégrations comptables robustes.",
+      "Prévention de la fraude et garantie contractuelle."
+    ],
+    "cons": [
+      "Orienté flotte/terrain : peut être surdimensionné pour bureaux classiques.",
+      "Prix par utilisateur actif peut monter rapidement pour grandes équipes.",
+      "Pas de version gratuite ou d'essai sans engagement."
+    ],
+    "use_cases": [
+      "Gérer les dépenses essence et carburant d'une flotte.",
+      "Assurer la conformité des dépenses terrain et chaîne de montage.",
+      "Automatiser le rapprochement comptable des dépenses."
+    ],
+    "relevant_for": ["Gestionnaires de flotte", "Entreprises de construction", "Équipes terrain"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage a vehicle fleet or field operations with significant expenses.",
+        "You need expense control and automated reconciliation.",
+        "You already use QuickBooks or NetSuite."
+      ],
+      "avoidIf": [
+        "Your team is small and expenses are minimal.",
+        "You have no field or vehicle operations.",
+        "You want expense tracking alone without corporate cards."
+      ],
+      "threshold": "Coast is for businesses with field ops and fleet. For small teams with minimal spend, a simpler tool suffices."
+    },
+    "pros": [
+      "Very transparent and predictable pricing.",
+      "Specialized cards for different expense types.",
+      "Strong accounting integrations.",
+      "Fraud prevention and a contractual guarantee."
+    ],
+    "cons": [
+      "Fleet/field-focused; may be oversized for typical offices.",
+      "Per-active-user pricing can add up for large teams.",
+      "No free tier or trial without commitment."
+    ],
+    "use_cases": [
+      "Manage fleet fuel and vehicle expenses.",
+      "Ensure compliance for field and job-site spending.",
+      "Automate accounting reconciliation of expenses."
+    ]
+  }
+}

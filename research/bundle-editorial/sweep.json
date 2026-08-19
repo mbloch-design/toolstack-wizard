@@ -1,0 +1,89 @@
+{
+  "slug": "sweep",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Sweep — Financial Automation Platform (site officiel)", "url": "https://sweep.net" }
+  ],
+  "facts": {
+    "what": "Plateforme d'automatisation financière (payment & expense management) pour PME/ETI. Centralise paiements fournisseurs, gestion des dépenses et trésorerie en une interface cloud.",
+    "what_en": "Financial automation platform for SMEs combining supplier payments, expense management, and cash flow. Centralizes financial workflows in cloud interface.",
+    "pricing_model": "Tarification par plan escaladant (3 plans). Déploiement SaaS. Essai gratuit disponible.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit disponible. Abonnement payant à partir de 254 $/mois." },
+    "plans": [
+      { "name": "Starter", "price": "254 $ / mois" },
+      { "name": "Growth", "price": "Tarification sur demande" },
+      { "name": "Enterprise", "price": "Tarification custom" }
+    ],
+    "key_features": [
+      "Centralisation paiements fournisseurs et gestion dépenses.",
+      "Automatisation workflows de trésorerie.",
+      "Dashboards temps réel et visibilité cash.",
+      "Intégrations comptables (QuickBooks, Xero, etc.).",
+      "Support multi-devise."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez automatisation complète paiements + dépenses.",
+        "Vous avez volume paiements/dépenses régulier.",
+        "Vous voulez centraliser cash management."
+      ],
+      "avoidIf": [
+        "Vous avez structure très simple (< 5 pers).",
+        "Vous cherchez la solution la moins chère.",
+        "Votre volume paiements est très faible."
+      ],
+      "threshold": "Sweep convient aux PME cherchant automatisation paiements + trésorerie ; pour petite équipe, Excel ou Wave suffisent."
+    },
+    "pros": [
+      "Suite paiements + dépenses intégrée.",
+      "Automatisation complète workflow trésorerie.",
+      "Dashboard temps réel (cash visibility).",
+      "Intégrations comptables robustes."
+    ],
+    "cons": [
+      "Tarif de base élevé pour de petites structures.",
+      "Moins flexible que solution à la carte.",
+      "Documentation utilisateur limitée."
+    ],
+    "use_cases": [
+      "Automatiser paiements fournisseurs réguliers.",
+      "Centraliser gestion dépenses et cash.",
+      "Réduire temps traitement paiements."
+    ],
+    "relevant_for": ["PME/ETI", "Directeurs financiers", "CFOs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need complete payment + expense automation.",
+        "You have regular payment/expense volume.",
+        "You want to centralize cash management."
+      ],
+      "avoidIf": [
+        "You have very simple structure (< 5 people).",
+        "You're looking for cheapest option.",
+        "Your payment volume is very low."
+      ],
+      "threshold": "Sweep suits SMEs seeking payment + cash automation; for small teams, Excel or Wave sufficient."
+    },
+    "pros": [
+      "Integrated payments + expense suite.",
+      "Complete cash workflow automation.",
+      "Real-time dashboard (cash visibility).",
+      "Robust accounting integrations."
+    ],
+    "cons": [
+      "High base cost for small organisations.",
+      "Less flexible than à la carte solutions.",
+      "Limited user documentation."
+    ],
+    "use_cases": [
+      "Automate regular supplier payments.",
+      "Centralize expense and cash management.",
+      "Reduce payment processing time."
+    ]
+  }
+}

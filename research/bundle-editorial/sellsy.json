@@ -1,0 +1,91 @@
+{
+  "slug": "sellsy",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Sellsy — CRM & Invoicing Platform (site officiel)", "url": "https://go.sellsy.com" }
+  ],
+  "facts": {
+    "what": "Plateforme française (Paris) tout-en-un combinant CRM, facturation/invoicing, gestion de projets et automatisations. Dédiée aux PME, agences et prestataires de services.",
+    "what_en": "French all-in-one platform combining CRM, invoicing, project management, and automation for SMEs, agencies, and service providers.",
+    "pricing_model": "Abonnement par utilisateur/mois avec options par module (Suite CRM seul, Invoicing seul, ou combined). Tarification progressive selon plan.",
+    "free_tier": { "exists": false, "detail": "Essai gratuit sur demande. Abonnement payant à partir de 35 € HT/utilisateur/mois." },
+    "plans": [
+      { "name": "Suite CRM — Standard", "price": "35 € HT / utilisateur / mois" },
+      { "name": "Suite CRM — Evolution", "price": "59 € HT / utilisateur / mois (Popular)" },
+      { "name": "Suite CRM — Elite", "price": "95 € HT / utilisateur / mois" },
+      { "name": "Invoicing & Management — Essentials", "price": "39 € HT / utilisateur / mois" },
+      { "name": "Invoicing — Advanced", "price": "59 € HT / utilisateur / mois" }
+    ],
+    "key_features": [
+      "CRM complet avec pipeline de ventes et contacts.",
+      "Facturation avec relance automatique.",
+      "Gestion de projets et timesheets.",
+      "Automatisations workflow (triggers, actions).",
+      "Intégrations comptables et outils tiers."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes agence/prestataire de services avec équipe.",
+        "Vous cherchez une suite complète (CRM + facture + projets).",
+        "Vous préférez une solution française."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'un CRM très avancé (meilleur Salesforce/HubSpot).",
+        "Vous êtes solo (coût par utilisateur élevé).",
+        "Vous préférez une solution ultra simple (facturation seule)."
+      ],
+      "threshold": "Sellsy convient aux agences/PME cherchant suite française intégrée ; pour CRM très avancé, Salesforce. Pour solo, Wave (gratuit)."
+    },
+    "pros": [
+      "Suite française entièrement intégrée (CRM + facturation + projets).",
+      "Automatisations puissantes (workflows).",
+      "Tarification à la carte par module.",
+      "Support français réactif."
+    ],
+    "cons": [
+      "Tarification par utilisateur élevée pour petites équipes.",
+      "CRM moins puissant que Salesforce/HubSpot.",
+      "Interface parfois complexe pour débutants."
+    ],
+    "use_cases": [
+      "Gérer pipeline commercial et contacts pour agence.",
+      "Facturation et relance automatique clients.",
+      "Gestion de projets avec timesheets par consultant."
+    ],
+    "relevant_for": ["Agences web/marketing", "Cabinets de conseil", "Prestataires de services"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're an agency or service provider with a team.",
+        "You want an integrated suite (CRM + invoicing + projects).",
+        "You prefer a French solution."
+      ],
+      "avoidIf": [
+        "You need very advanced CRM (better: Salesforce/HubSpot).",
+        "You're solo (per-user cost high).",
+        "You prefer ultra-simple solutions (invoicing alone)."
+      ],
+      "threshold": "Sellsy suits agencies/SMEs seeking integrated French suite; for advanced CRM, Salesforce. For solo, Wave (free)."
+    },
+    "pros": [
+      "Fully integrated French suite (CRM + invoicing + projects).",
+      "Powerful automation (workflows).",
+      "À la carte pricing per module.",
+      "Responsive French support."
+    ],
+    "cons": [
+      "Per-user pricing high for small teams.",
+      "CRM less powerful than Salesforce/HubSpot.",
+      "Interface sometimes complex for beginners."
+    ],
+    "use_cases": [
+      "Manage sales pipeline and contacts for an agency.",
+      "Automated invoicing and collection.",
+      "Project management with consultant timesheets."
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "slug": "agicap",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Agicap — Treasury management platform (site officiel)", "url": "https://agicap.com" }
+  ],
+  "facts": {
+    "what": "Plateforme SaaS française de gestion de trésorerie et cash flow. Agrège les flux bancaires et comptables, offrant une visibilité en temps réel, des prévisions multi-horizon, et automation des paiements. Conforme aux normes e-invoicing européennes.",
+    "what_en": "French treasury management SaaS platform. Aggregates bank and accounting data for real-time cash flow visibility, multi-horizon forecasting, and automated payment execution. Compliant with EU e-invoicing standards.",
+    "pricing_model": "Modèle personnalisé par devis selon le nombre de comptes bancaires, le chiffre d'affaires, et les modules sélectionnés (paiements, recouvrement, etc.).",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite ; tous les plans sont sur devis." },
+    "plans": [
+      { "name": "Plan personnalisé", "price": "Montants sur la page officielle selon les besoins" }
+    ],
+    "key_features": [
+      "Agrégation temps réel des flux bancaires",
+      "Prévisions de trésorerie multi-horizon",
+      "Automatisation des comptes payables et recouvrements",
+      "Exécution de paiements sécurisée multi-devise",
+      "Intégrations bancaires et ERP directes",
+      "Conformité e-invoicing européenne"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez une PME ou ETI avec flux de trésorerie complexes.",
+        "Vous avez besoin de prévisions fiables et d'une visibilité bancaire centralisée.",
+        "Vous opérez en Europe et devez respecter la conformité e-invoicing."
+      ],
+      "avoidIf": [
+        "Vous cherchez un outil gratuit ou très bon marché.",
+        "Votre activité est simple avec peu de flux bancaires.",
+        "Vous êtes une micro-entreprise sans besoins de trésorerie avancés."
+      ],
+      "threshold": "Agicap s'adresse aux PME/ETI qui ont besoin d'une visibilité fiable et d'automation de la trésorerie. Pour une startup simple ou freelancer, un outil plus léger suffit."
+    },
+    "pros": [
+      "Agrégation temps réel de tous les flux bancaires.",
+      "Prévisions sophistiquées basées sur les données historiques.",
+      "Support multi-devise et intégrations ERP/comptabilité.",
+      "Conformité réglementaire européenne garantie."
+    ],
+    "cons": [
+      "Pas de version gratuite ; devis obligatoire.",
+      "Peut être surdimensionné pour les petits indépendants.",
+      "Implémentation et onboarding potentiellement longs."
+    ],
+    "use_cases": [
+      "Prévoir et piloter la trésorerie d'une PME.",
+      "Automatiser le recouvrement et les paiements fournisseurs.",
+      "Auditer et reconcilier les flux bancaires mensuels."
+    ],
+    "relevant_for": ["PME/ETI", "Directeurs financiers", "Trésoriers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage a mid-sized business with complex cash flow.",
+        "You need reliable forecasting and centralized bank visibility.",
+        "You operate in Europe and must comply with e-invoicing rules."
+      ],
+      "avoidIf": [
+        "You're looking for a free or very cheap tool.",
+        "Your cash flow is simple with few bank accounts.",
+        "You're a solo freelancer without advanced treasury needs."
+      ],
+      "threshold": "Agicap is for mid-sized companies needing robust treasury visibility and automation. For a simple startup or freelancer, a lighter tool works better."
+    },
+    "pros": [
+      "Real-time aggregation of all bank flows.",
+      "Sophisticated forecasting based on historical data.",
+      "Multi-currency support and ERP/accounting integrations.",
+      "EU regulatory compliance built-in."
+    ],
+    "cons": [
+      "No free tier; quote-based pricing only.",
+      "May be oversized for solo freelancers.",
+      "Implementation and onboarding can be lengthy."
+    ],
+    "use_cases": [
+      "Forecast and manage cash for a mid-sized business.",
+      "Automate receivables and vendor payouts.",
+      "Audit and reconcile monthly bank transactions."
+    ]
+  }
+}

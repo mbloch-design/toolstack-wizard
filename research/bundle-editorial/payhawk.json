@@ -1,0 +1,89 @@
+{
+  "slug": "payhawk",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Payhawk — Spend Management Platform (site officiel)", "url": "https://payhawk.com" }
+  ],
+  "facts": {
+    "what": "Plateforme unifiée de gestion des dépenses d'entreprise combinant cartes de crédit, remboursement de frais, gestion des voyages, comptabilité fournisseurs et approvisionnement, avec assistance IA pour optimiser les économies.",
+    "what_en": "Unified corporate spend management platform combining corporate cards, expense reporting, business travel, accounts payable, and procurement, with AI assistance to optimize spending savings.",
+    "pricing_model": "Abonnement par utilisateur ou par volume de dépenses ; tarification en éditions multiples avec réductions en fonction du volume ; cashback de 1% sur les achats par carte.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite ; essai sur demande auprès de l'équipe commerciale." },
+    "plans": [
+      { "name": "Payhawk Cards & Expenses", "price": "À partir de 599 $ par mois (selon configuration)" },
+      { "name": "Payhawk Bill Payments", "price": "À partir de 599 $ par mois (selon configuration)" },
+      { "name": "Payhawk Procure to Pay", "price": "À partir de 899 $ par mois (selon configuration)" }
+    ],
+    "key_features": [
+      "Cartes de crédit d'entreprise avec contrôles granulaires",
+      "Gestion des frais et rapports de dépenses automatisés",
+      "Réservation et suivi des voyages d'affaires",
+      "Traitement des factures fournisseurs et approvisionnement",
+      "Assistance IA pour optimisation des dépenses"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez les dépenses d'une équipe moyenne à grande.",
+        "Vous voulez centraliser cartes, frais, voyages et achats en une seule plateforme.",
+        "La visibilité temps réel et le contrôle des dépenses sont prioritaires."
+      ],
+      "avoidIf": [
+        "Vous cherchez une solution gratuite.",
+        "Votre équipe est très petite (moins de 5 personnes).",
+        "Vous n'avez besoin que d'un seul élément (cartes OU frais), pas d'une suite intégrée."
+      ],
+      "threshold": "Payhawk s'impose pour les PME/ETI cherchant à centraliser toute la chaîne des dépenses et réduire les frictions ; pour une petite équipe ou un besoin ponctuel, une solution spécialisée suffit."
+    },
+    "pros": [
+      "Suite complète intégrant cartes, frais, voyages et approvisionnement.",
+      "Assistance IA pour optimisation des dépenses et économies d'échelle.",
+      "Cashback sur tous les achats par carte.",
+      "Contrôles granulaires et conformité aux politiques d'entreprise."
+    ],
+    "cons": [
+      "Tarification complexe, nécessite un devis personnalisé.",
+      "Non adapté aux très petites équipes ou freelances.",
+      "Intégration initiale plus longue qu'une solution spécialisée."
+    ],
+    "use_cases": [
+      "Gérer les cartes, frais et voyages d'une équipe de 20+ personnes.",
+      "Automatiser le traitement des factures fournisseurs.",
+      "Centraliser la visibilité sur toutes les dépenses d'entreprise."
+    ],
+    "relevant_for": ["PME/ETI", "Directeurs financiers", "Gestionnaires de dépenses"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage spending across a medium-to-large team.",
+        "You want to centralize cards, expenses, travel, and procurement in one platform.",
+        "Real-time visibility and spend control are priorities."
+      ],
+      "avoidIf": [
+        "You need a free solution.",
+        "Your team is very small (under 5 people).",
+        "You only need one element (cards or expenses), not a full suite."
+      ],
+      "threshold": "Payhawk is essential for SMEs seeking to centralize the entire expense chain and reduce friction; for a small team or single-purpose need, a specialized solution suffices."
+    },
+    "pros": [
+      "Comprehensive suite integrating cards, expenses, travel, and procurement.",
+      "AI-driven spend optimization and economies of scale.",
+      "Cashback on all card purchases.",
+      "Granular controls and policy compliance."
+    ],
+    "cons": [
+      "Complex pricing requiring custom quotes.",
+      "Not suitable for very small teams or freelancers.",
+      "Longer onboarding than specialized solutions."
+    ],
+    "use_cases": [
+      "Manage cards, expenses, and travel for a 20+ person team.",
+      "Automate vendor invoice processing.",
+      "Centralize visibility across all corporate spending."
+    ]
+  }
+}

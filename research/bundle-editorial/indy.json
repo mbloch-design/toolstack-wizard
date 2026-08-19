@@ -1,0 +1,90 @@
+{
+  "slug": "indy",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Indy — Accounting for French freelancers (site officiel)", "url": "https://indy.fr" }
+  ],
+  "facts": {
+    "what": "Plateforme de comptabilité française pour indépendants et micro-entrepreneurs. Automatise entrées comptables, catégorisation, facturation électronique, déclarations fiscales (TVA, bilan, URSSAF). Conforme normes tax françaises. 450 000+ indépendants utilisateurs.",
+    "what_en": "French accounting platform for freelancers and micro-entrepreneurs. Automates journal entries, categorization, e-invoicing, tax declarations (VAT, balance sheet, URSSAF). Complies with French tax standards. 450K+ users.",
+    "pricing_model": "Freemium : tier essentiel gratuit avec features core (entrées, catégorisation, facturation, suivi). Plans payants pour features avancées et support comptable à mesure que scale.",
+    "free_tier": { "exists": true, "detail": "Tier essentiel gratuit : entrées automatisées, catégorisation intelligente, suivi real-time, expense management, facturation." },
+    "plans": [
+      { "name": "Essentiel (gratuit)", "price": "Gratuit avec features core" },
+      { "name": "Plans payants", "price": "À partir d'un certain usage (pricing progressive selon la taille)" }
+    ],
+    "key_features": [
+      "Comptabilité automatisée avec sync bancaire",
+      "Catégorisation intelligente des transactions",
+      "Facturation électronique conforme France",
+      "Déclarations fiscales (TVA, bilan, URSSAF)",
+      "Gestion des dépenses professionnelles",
+      "Support multi-statuts (SASU, EURL, EI, SARL, etc.)",
+      "Portfolio mobile native"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes indépendant ou micro-entrepreneur français.",
+        "Vous voulez une comptabilité simple et conforme aux normes françaises.",
+        "Vous avez une audience forte : 450k+ indépendants l'utilisent déjà."
+      ],
+      "avoidIf": [
+        "Vous ne résidez pas en France ou n'avez pas besoin de conformité fiscale française.",
+        "Vous êtes une PME complexe avec besoins accounting avancés.",
+        "Vous préférez une solution internationale."
+      ],
+      "threshold": "Indy est l'outil comptable de référence en France pour indépendants. Pour un freelancer international ou PME complexe, chercher autre chose."
+    },
+    "pros": [
+      "Gratuit pour features essentielles : excellente valeur.",
+      "Entièrement conforme aux normes fiscales françaises.",
+      "Très populaire : 450k+ indépendants français l'utilisent.",
+      "Notation élevée (4.8 Trustpilot, 4.9 App Store)."
+    ],
+    "cons": [
+      "Limité à France et normes françaises.",
+      "Plans payants nécessaires pour features avancées.",
+      "Pas adapté aux entreprises complexes."
+    ],
+    "use_cases": [
+      "Gérer comptabilité simple d'un freelance français.",
+      "Générer factures et déclarations fiscales conformes.",
+      "Automatiser suivi des dépenses et revenues."
+    ],
+    "relevant_for": ["Freelances français", "Micro-entrepreneurs", "Indépendants français"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a French freelancer or micro-entrepreneur.",
+        "You want simple accounting compliant with French tax standards.",
+        "You appreciate that 450K+ French freelancers already use it."
+      ],
+      "avoidIf": [
+        "You don't reside in France or don't need French tax compliance.",
+        "You're a complex SMB with advanced accounting needs.",
+        "You prefer an international solution."
+      ],
+      "threshold": "Indy is the reference accounting tool in France for freelancers. For international freelancers or complex SMB, look elsewhere."
+    },
+    "pros": [
+      "Free core features: excellent value.",
+      "Fully compliant with French tax standards.",
+      "Extremely popular: 450K+ French freelancers use it.",
+      "High ratings (4.8 Trustpilot, 4.9 App Store)."
+    ],
+    "cons": [
+      "Limited to France and French standards.",
+      "Paid plans needed for advanced features.",
+      "Not suited for complex businesses."
+    ],
+    "use_cases": [
+      "Manage simple accounting for a French freelancer.",
+      "Generate compliant invoices and tax filings.",
+      "Automate expense and revenue tracking."
+    ]
+  }
+}

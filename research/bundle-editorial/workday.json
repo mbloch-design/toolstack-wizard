@@ -1,0 +1,91 @@
+{
+  "slug": "workday",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Workday — HCM & ERP Cloud (site officiel)", "url": "https://www.workday.com" }
+  ],
+  "facts": {
+    "what": "Suite cloud d'ERP et gestion de ressources humaines (HCM) pour grandes entreprises. Gère paie, talents, planification, finance intégrée. Enterprise-only, tarification complexe à l'usage et taille.",
+    "what_en": "Cloud ERP and human capital management (HCM) suite for large enterprises. Manages payroll, talent, planning, integrated finance. Enterprise-only, complex usage and size-based pricing.",
+    "pricing_model": "Tarification par nombre d'employés (PEPM) annuel avec coûts d'implémentation élevés. Négociable selon multi-année commitment. Pas de pricing public.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite ni trial. Implémentation prend 6-12 mois avec coûts d'implémentation = 100% des frais logiciel annuels." },
+    "plans": [
+      { "name": "HCM Standard", "price": "34-42 $ PEPM / mois (1000+ employés)" },
+      { "name": "HCM + Finance", "price": "60-150 $ PEPM / mois pour large enterprise" },
+      { "name": "Enterprise Suite", "price": "Tarification custom, 200K-500K+ annuel typique" }
+    ],
+    "key_features": [
+      "Paie et gestion des talents intégrées.",
+      "Planification et budgeting financier.",
+      "Gestion de la conformité et sécurité (GDPR, etc.).",
+      "Analytics et insights RH/financiers.",
+      "Intégrations ERP et écosystème cloud."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes grande entreprise (1000+ employés).",
+        "Vous cherchez suite HCM/ERP unifiée et cloud.",
+        "Vous avez budget IT/RH important."
+      ],
+      "avoidIf": [
+        "Vous êtes PME/ETI (oversize et trop cher).",
+        "Vous avez budget serré (frais implémentation énormes).",
+        "Vous cherchez solution rapide à déployer (6-12 mois min)."
+      ],
+      "threshold": "Workday convient aux grands groupes ; pour PME/ETI, Sage 100 ou NetSuite meilleur. Temps implémentation et coûts cache énorme."
+    },
+    "pros": [
+      "Suite HCM/ERP unifiée cloud (rare).",
+      "Conforme réglementations mondiales (GDPR, etc.).",
+      "Analytics et insights IA intégrés.",
+      "Scalabilité pour très grandes structures."
+    ],
+    "cons": [
+      "Tarification opaque et très élevée.",
+      "Coûts implémentation énormes (= frais logiciel/an).",
+      "Temps déploiement très long (6-12 mois+).",
+      "Non adapté aux PME/ETI."
+    ],
+    "use_cases": [
+      "Unifier HCM et finance pour groupe multinational.",
+      "Gestion de paie 10000+ employés worldwide.",
+      "Analytics et insights RH à échelle enterprise."
+    ],
+    "relevant_for": ["Grands groupes (1000+ emp.)", "Multinationales", "Directeurs CHRO/CFO"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a large enterprise (1000+ employees).",
+        "You want unified cloud HCM/ERP suite.",
+        "You have substantial IT/HR budget."
+      ],
+      "avoidIf": [
+        "You're a SME/mid-market (oversized, too expensive).",
+        "You have tight budget (implementation costs huge).",
+        "You need quick deployment (6–12 months minimum)."
+      ],
+      "threshold": "Workday suits large groups; for SMEs/mid-market, Sage 100 or NetSuite better. Implementation time and hidden costs massive."
+    },
+    "pros": [
+      "Unified cloud HCM/ERP suite (rare).",
+      "Compliant with global regulations (GDPR, etc.).",
+      "Integrated AI analytics and insights.",
+      "Scalable for very large structures."
+    ],
+    "cons": [
+      "Opaque and very high pricing.",
+      "Huge implementation costs (= annual software fees).",
+      "Very long deployment (6–12 months+).",
+      "Not suitable for SMEs/mid-market."
+    ],
+    "use_cases": [
+      "Unify HCM and finance for multinational group.",
+      "Manage payroll for 10,000+ employees worldwide.",
+      "HR analytics and insights at enterprise scale."
+    ]
+  }
+}

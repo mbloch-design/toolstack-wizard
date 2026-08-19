@@ -1,0 +1,95 @@
+{
+  "slug": "wave",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Wave — Free Accounting Software (site officiel)", "url": "https://waveapps.com" }
+  ],
+  "facts": {
+    "what": "Logiciel de comptabilité gratuit (plan Starter) avec facturation, tracking des dépenses, rapports financiers. Plans payants (Wave Pro, Wave Payroll) pour réconciliation bancaire et paie. Ideal freelancers et TPE.",
+    "what_en": "Free accounting software (Starter plan) with invoicing, expense tracking, financial reports. Paid tiers (Wave Pro, Wave Payroll) for bank reconciliation and payroll. Ideal for freelancers and SMEs.",
+    "pricing_model": "Plan gratuit complet (Starter). Plan payant Pro pour réconciliation bancaire. Paie séparée. Modèle freemium.",
+    "free_tier": { "exists": true, "detail": "Plan Starter totalement gratuit : facturation, dépenses, rapports basiques. Zéro frais cachés sur plan gratuit." },
+    "plans": [
+      { "name": "Starter (Gratuit)", "price": "0 $ / mois" },
+      { "name": "Wave Pro", "price": "16 $ / mois (réconciliation bancaire + features)" },
+      { "name": "Wave Payroll", "price": "40 $ / mois (gestion de paie)" },
+      { "name": "Bookkeeping Assistance", "price": "149 $ / mois (expert comptable sur-demande)" }
+    ],
+    "key_features": [
+      "Facturation illimitée et suivi clients.",
+      "Tracking dépenses et reçus (OCR basique).",
+      "Rapports financiers (P&L, balance sheet).",
+      "Réconciliation bancaire (Pro plan).",
+      "Paie intégrée (séparé, payant).",
+      "Intégrations comptables (Stripe, Shopify, etc.)."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes freelanceur ou TPE avec budget limité.",
+        "Vous cherchez comptabilité simple sans coût.",
+        "Vous n'avez pas besoin de réconciliation bancaire avancée."
+      ],
+      "avoidIf": [
+        "Vous cherchez suite complète (multi-devise, multi-entités).",
+        "Vous avez besoins comptables très avancés.",
+        "Vous préférez support français (Wave : support EN)."
+      ],
+      "threshold": "Wave s'impose pour tout freelanceur/TPE français cherchant gratuit ; pour besoin comptable avancé, Pennylane ou QuickBooks Online meilleur."
+    },
+    "pros": [
+      "Palier Starter entièrement gratuit, sans limite fonctionnelle.",
+      "Facturation illimitée et sans limite.",
+      "Simple et intuitif pour débutants.",
+      "Pas de frais cachés sur plan gratuit.",
+      "Support multi-devise intégré."
+    ],
+    "cons": [
+      "La réconciliation bancaire nécessite un plan payant.",
+      "Support client en anglais uniquement.",
+      "Moins de fonctionnalités avancées vs Xero/QB Online.",
+      "Interface moins polish que concurrents payants."
+    ],
+    "use_cases": [
+      "Gérer comptabilité simple d'un freelance.",
+      "Facturation clients et suivi paiements.",
+      "Rapports financiers basiques pour expert-comptable."
+    ],
+    "relevant_for": ["Freelanceurs français", "TPE/auto-entrepreneurs", "Petits prestataires"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a freelancer or small business with limited budget.",
+        "You want simple accounting at no cost.",
+        "You don't need advanced bank reconciliation."
+      ],
+      "avoidIf": [
+        "You seek full suite (multi-currency, multi-entity).",
+        "You have very advanced accounting needs.",
+        "You prefer French-speaking support."
+      ],
+      "threshold": "Wave is essential for any freelancer/SME seeking free accounting; for advanced needs, Pennylane or QuickBooks Online better."
+    },
+    "pros": [
+      "Fully free Starter tier, with no functional limits.",
+      "Unlimited invoicing without caps.",
+      "Simple and intuitive for beginners.",
+      "No hidden fees on free plan.",
+      "Built-in multi-currency support."
+    ],
+    "cons": [
+      "Bank reconciliation requires a paid plan.",
+      "Customer support English-only.",
+      "Fewer advanced features vs Xero/QB Online.",
+      "Interface less polished than paid competitors."
+    ],
+    "use_cases": [
+      "Manage simple accounting for a freelancer.",
+      "Invoice clients and track payments.",
+      "Basic financial reports for accountant."
+    ]
+  }
+}

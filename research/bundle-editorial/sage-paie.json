@@ -1,0 +1,90 @@
+{
+  "slug": "sage-paie",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Sage Paie — Logiciel de Paie Français (site officiel)", "url": "https://www.sage.com/fr" }
+  ],
+  "facts": {
+    "what": "Logiciel français de gestion de paie automatisant le calcul des salaires, cotisations, déclarations sociales (DSN) et autres obligations légales. Compatible réglementations URSSAF, retraite, taxation.",
+    "what_en": "French payroll software automating salary calculations, social contributions, legal declarations (DSN), and compliance. Sage Payroll handles URSSAF, pension, and tax obligations.",
+    "pricing_model": "Abonnement mensuel par nombre d'employés ou par version (Basic, Advanced, Enterprise). Tarification escaladante : 10 € HT pour 1-3 employés.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite ; essai limité sur demande. Tarification minimum à partir de 10 € HT/mois." },
+    "plans": [
+      { "name": "Sage Business Cloud Paie (1-3 emp.)", "price": "À partir de 10 € HT / mois" },
+      { "name": "Sage Payroll (Small)", "price": "Tarification sur demande selon effectif" },
+      { "name": "Sage 50 Paie", "price": "Environ 35-90 € HT / mois avec options" },
+      { "name": "Sage 100 Paie", "price": "Tarification enterprise sur devis" }
+    ],
+    "key_features": [
+      "Calcul automatique des salaires et cotisations.",
+      "Génération DSN (Déclaration Sociale Nominative) pour URSSAF.",
+      "Gestion des cong és, absences et variables de paie.",
+      "Intégrations comptables (Sage Comptabilité, ERP).",
+      "Conformité légale française automatique."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez une équipe en France (1+ salariés).",
+        "Vous cherchez une solution française conforme légalement.",
+        "Vous préférez l'abonnement SaaS (cloud) au logiciel de bureau."
+      ],
+      "avoidIf": [
+        "Vous avez zéro salariés (travailleur indépendant seul).",
+        "Vous cherchez la solution la moins chère.",
+        "Vous êtes en dehors de la France (Sage Paie est France-specific)."
+      ],
+      "threshold": "Sage Paie convient à toute PME française ayant salariés ; pour freelancer solo, une déclaration manuelle ou un expert-comptable suffit."
+    },
+    "pros": [
+      "Solution entièrement conforme à la réglementation française (DSN, URSSAF, retraite).",
+      "Automatisation complète des salaires et cotisations.",
+      "Intégrations natives avec Sage Comptabilité.",
+      "Support technique français réactif."
+    ],
+    "cons": [
+      "Ticket d'entrée minimum, sensible pour de très petites équipes.",
+      "Moins flexible que PAIE unique ou Silae pour besoins custom.",
+      "Interface moins moderne que solutions nativement cloud."
+    ],
+    "use_cases": [
+      "Gérer paie d'une PME française (5-50 salariés).",
+      "Générer automatiquement la DSN URSSAF chaque mois.",
+      "Intégrer paie à la comptabilité Sage existante."
+    ],
+    "relevant_for": ["PME françaises avec salariés", "Directeurs RH", "Cabinets comptables"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You have employees in France (1+).",
+        "You want a French-compliant solution.",
+        "You prefer SaaS cloud over desktop software."
+      ],
+      "avoidIf": [
+        "You have no salaried employees (freelancer only).",
+        "You're looking for the cheapest option.",
+        "You're based outside France (Sage Paie is France-specific)."
+      ],
+      "threshold": "Sage Paie suits any French SME with employees; for solo freelancers, manual filing or an accountant suffices."
+    },
+    "pros": [
+      "Fully compliant with French regulations (DSN, URSSAF).",
+      "Complete payroll and contribution automation.",
+      "Native integration with Sage Accounting.",
+      "Responsive French technical support."
+    ],
+    "cons": [
+      "Minimum entry cost, noticeable for very small teams.",
+      "Less flexible than PAIE unique or Silae for custom needs.",
+      "Interface less modern than natively cloud solutions."
+    ],
+    "use_cases": [
+      "Manage payroll for a French SME (5–50 employees).",
+      "Auto-generate DSN URSSAF monthly.",
+      "Integrate payroll with existing Sage Accounting."
+    ]
+  }
+}

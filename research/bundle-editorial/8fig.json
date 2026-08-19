@@ -1,0 +1,87 @@
+{
+  "slug": "8fig",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "8fig — Funding for Amazon & Shopify sellers (site officiel)", "url": "https://8fig.co/" }
+  ],
+  "facts": {
+    "what": "Plateforme de financement pour vendeurs Amazon et Shopify, offrant du capital pour l'inventaire et les besoins de la chaîne d'approvisionnement. Modèle sans équité basé sur le chiffre d'affaires, avec approbation rapide et aucune vérification de crédit personnel.",
+    "what_en": "Funding platform for Amazon and Shopify sellers, providing capital for inventory and supply chain needs. Equity-free revenue-based model with fast approval and no personal credit check.",
+    "pricing_model": "Modèle basé sur le chiffre d'affaires (revenue-based financing), sans équité ni garantie requise. Taux commissionné selon le profil commercial.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite ; financement sur demande uniquement." },
+    "plans": [
+      { "name": "Financement personnalisé", "price": "Taux commissionné selon le profil ; montants sur demande" }
+    ],
+    "key_features": [
+      "Offres de financement personnalisées en ~24h",
+      "Pas d'équité ni de collatéral",
+      "Pas de vérification de crédit personnel",
+      "Support client dédié",
+      "Intégration Amazon et Shopify"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous vendez sur Amazon ou Shopify et avez besoin de capital d'inventaire.",
+        "Vous avez au moins 6 mois d'activité avec un chiffre d'affaires régulier.",
+        "Vous préférez éviter les prêts traditionnels ou les vérifications de crédit."
+      ],
+      "avoidIf": [
+        "Vous avez moins de 6 mois d'antériorité ou moins de 12 k$ de chiffre d'affaires mensuel.",
+        "Vous ne vendez pas sur les plateformes soutenues (Amazon, Shopify).",
+        "Vous préférez un taux fixe plutôt qu'un modèle basé sur le chiffre d'affaires."
+      ],
+      "threshold": "8fig s'impose pour les vendeurs e-commerce établis cherchant du capital rapide sans équité. Pour les débutants ou les vendeurs multi-canal, explorer d'autres solutions."
+    },
+    "pros": [
+      "Financement rapide (offre en ~24h).",
+      "Pas d'équité ni de collatéral requis.",
+      "Pas de vérification de crédit personnel.",
+      "Remboursement flexible synchronisé avec les ventes."
+    ],
+    "cons": [
+      "Critères d'éligibilité stricts (6 mois minimum, 12 k$ chiffre d'affaires).",
+      "Limité à Amazon et Shopify principalement.",
+      "Taux basé sur le chiffre d'affaires peut être élevé."
+    ],
+    "use_cases": [
+      "Augmenter rapidement l'inventaire avant une période haute.",
+      "Financer une expansion de gamme produit.",
+      "Supporter la croissance saisonnière sans prêt bancaire."
+    ],
+    "relevant_for": ["Vendeurs Amazon FBA", "Marchands Shopify", "Startups e-commerce"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You sell on Amazon or Shopify and need inventory capital.",
+        "You have 6+ months in business with consistent monthly revenue.",
+        "You prefer to avoid traditional loans and credit checks."
+      ],
+      "avoidIf": [
+        "You're a young business below the minimum revenue threshold.",
+        "You don't sell on supported platforms.",
+        "You prefer fixed rates over revenue-based models."
+      ],
+      "threshold": "8fig is ideal for established e-commerce sellers seeking fast, equity-free capital. For beginners or multi-channel sellers, explore alternatives."
+    },
+    "pros": [
+      "Fast funding (offer in ~24h).",
+      "No equity or collateral required.",
+      "No personal credit check.",
+      "Flexible repayment tied to sales."
+    ],
+    "cons": [
+      "Strict eligibility criteria on trading history and revenue.",
+      "Limited to Amazon and Shopify mainly.",
+      "Revenue-based rates can add up quickly."
+    ],
+    "use_cases": [
+      "Quickly increase inventory before peak season.",
+      "Finance a product line expansion.",
+      "Support seasonal growth without a bank loan."
+    ]
+  }
+}

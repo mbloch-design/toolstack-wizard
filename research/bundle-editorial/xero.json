@@ -1,0 +1,95 @@
+{
+  "slug": "xero",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Xero — Cloud Accounting Software (site officiel)", "url": "https://xero.com" }
+  ],
+  "facts": {
+    "what": "Logiciel de comptabilité cloud pour PME offrant facturation, gestion des dépenses, rapports financiers, et réconciliation bancaire. Unlimited users par plan. Support multi-devise et multi-pays.",
+    "what_en": "Cloud accounting software for SMEs providing invoicing, expense management, financial reporting, and bank reconciliation. Unlimited users per plan. Multi-currency and multi-country support.",
+    "pricing_model": "Abonnement par plan escaladant (Early, Growing, Established) avec unlimited users. Pas d'augmentation par utilisateur supplémentaire (contrairement QB Online).",
+    "free_tier": { "exists": false, "detail": "Essai 30 jours gratuit. Pas de version gratuite permanente. Fréquentes promotions : 90% réduction 6 mois." },
+    "plans": [
+      { "name": "Early", "price": "25 $ / mois (max 20 factures, 5 bills)" },
+      { "name": "Growing", "price": "55 $ / mois (unlimited factures/bills)" },
+      { "name": "Established", "price": "90 $ / mois (+ analytics, projet, expense)" }
+    ],
+    "key_features": [
+      "Facturation illimitée et suivi clients.",
+      "Réconciliation bancaire automatisée.",
+      "Rapports financiers complets et personnalisés.",
+      "Unlimited users (tous les plans).",
+      "Multi-devise et multi-pays.",
+      "Intégrations e-commerce (Shopify, etc.).",
+      "JAX (AI assistant, lancé juin 2026)."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes PME/TPE cherchant comptabilité cloud.",
+        "Unlimited users important pour vous.",
+        "Vous faites e-commerce (intégrations Shopify)."
+      ],
+      "avoidIf": [
+        "Vous avez très petite structure et budget ultra serré (Wave gratuit).",
+        "Vous cherchez les tarifs absolument plus bas (Wave vs Xero).",
+        "Vous avez besoins comptables avancés (multi-entités)."
+      ],
+      "threshold": "Xero convient à la plupart des PME cherchant cloud lean ; pour plus simple/gratuit, Wave. Pour avancé, Sage 100 ou Pennylane (France)."
+    },
+    "pros": [
+      "Unlimited users sur tous les plans (vs QB Online).",
+      "Tarif plus bas que QuickBooks Online similaire.",
+      "Multi-devise et multi-pays natif.",
+      "Intégrations e-commerce robustes.",
+      "Promotions fréquentes, avec de fortes remises."
+    ],
+    "cons": [
+      "Plan Early limité (20 factures/mois).",
+      "Moins de fonctionnalités avancées que Sage.",
+      "Support moins réactif que QuickBooks/Pennylane.",
+      "Paie non intégrée (paiement séparé)."
+    ],
+    "use_cases": [
+      "Gérer comptabilité de PME e-commerce.",
+      "Facturation avec unlimited users.",
+      "Intégrer Shopify/WooCommerce directement."
+    ],
+    "relevant_for": ["PME/TPE", "E-commerces", "Prestataires de services"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a SME seeking cloud accounting.",
+        "Unlimited users matter to you.",
+        "You do e-commerce (Shopify integrations)."
+      ],
+      "avoidIf": [
+        "You have very small structure and ultra-tight budget (Wave free).",
+        "You're looking for absolutely lowest pricing (Wave vs Xero).",
+        "You have advanced accounting needs (multi-entity)."
+      ],
+      "threshold": "Xero suits most SMEs seeking lean cloud; for simpler/free, Wave. For advanced, Sage 100 or Pennylane (France)."
+    },
+    "pros": [
+      "Unlimited users on all plans (vs QB Online).",
+      "Lower pricing than similar QuickBooks Online.",
+      "Native multi-currency and multi-country.",
+      "Robust e-commerce integrations.",
+      "Frequent promotions with steep discounts."
+    ],
+    "cons": [
+      "Early plan limited (20 invoices/month).",
+      "Fewer advanced features than Sage.",
+      "Support less responsive than QB/Pennylane.",
+      "Payroll not integrated (separate fee)."
+    ],
+    "use_cases": [
+      "Manage SME e-commerce accounting.",
+      "Invoicing with unlimited users.",
+      "Integrate Shopify/WooCommerce directly."
+    ]
+  }
+}

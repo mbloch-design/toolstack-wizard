@@ -1,0 +1,89 @@
+{
+  "slug": "samcart",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "SamCart — Sales Funnel Platform (site officiel)", "url": "https://www.samcart.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de vente en ligne et funnel d'acquisition dédiée aux créateurs vendant des formations, produits numériques et services. Checkout optimisé, upsells, checkout abandonné recovery, support affilié.",
+    "what_en": "Sales funnel and e-commerce platform for creators selling courses, digital products, and services. Optimized checkout, upsells, cart abandonment recovery, affiliate support.",
+    "pricing_model": "Abonnement par plan mensuel (Core, Pro) avec augmentation possible si le volume de transactions monte. SamPay natif sans frais de plateforme (2026).",
+    "free_tier": { "exists": false, "detail": "Essai 14 jours gratuit. Pas de plan gratuit permanent ; abonnement payant obligatoire." },
+    "plans": [
+      { "name": "Core", "price": "79 $ / mois (ou 59 $ en annuel)" },
+      { "name": "Pro", "price": "199 $ / mois (ou 149 $ en annuel)" },
+      { "name": "Enterprise", "price": "Tarification custom" }
+    ],
+    "key_features": [
+      "Checkout haute-conversion (one-page, upsells, order bumps).",
+      "Gestion de formations (Courses App intégrée).",
+      "A/B testing et optimisation de funnel.",
+      "SamPay intégré (zéro frais de plateforme en 2026).",
+      "Affiliate center et support partenaire."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous vendez des formations, ebooks, ou produits numériques.",
+        "Vous cherchez un checkout haute-conversion.",
+        "Vous voulez upsells et order bumps automatisés."
+      ],
+      "avoidIf": [
+        "Vous vendez des produits physiques (meilleur avec Shopify).",
+        "Vous avez un budget très serré.",
+        "Vous préférez une solution open-source."
+      ],
+      "threshold": "SamCart convient aux créateurs de formations/produits numériques ; pour produits physiques, Shopify meilleur. Pour budget très serré, Gumroad."
+    },
+    "pros": [
+      "Checkout ultra-optimisé pour conversion (1-page, upsells, bumps).",
+      "SamPay sans frais plateforme (contrairement à 2025).",
+      "Courses App pour héberger formations intégrées.",
+      "Support affilié natif et performant."
+    ],
+    "cons": [
+      "Tarification Pro nécessaire pour upsells/A-B testing.",
+      "Moins de contrôle sur branding que Shopify.",
+      "Écosystème plus petit que Shopify/Gumroad."
+    ],
+    "use_cases": [
+      "Vendre une formation en ligne avec high-ticket upsell.",
+      "Gérer funnel de vente complet (landing page + checkout).",
+      "Lancer un programme d'affiliation pour formations."
+    ],
+    "relevant_for": ["Créateurs de formations", "Éditeurs de produits numériques", "Coaches/consultants"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You sell courses, ebooks, or digital products.",
+        "You want a high-conversion checkout.",
+        "You need automated upsells and order bumps."
+      ],
+      "avoidIf": [
+        "You sell physical products (better with Shopify).",
+        "You have a very tight budget.",
+        "You prefer open-source solutions."
+      ],
+      "threshold": "SamCart suits course and digital product creators; for physical products, Shopify is better. For tight budgets, Gumroad."
+    },
+    "pros": [
+      "Ultra-optimized checkout for conversion (1-page, upsells, bumps).",
+      "SamPay with zero platform fees (unlike 2025).",
+      "Courses App to host integrated training.",
+      "Native, performant affiliate support."
+    ],
+    "cons": [
+      "Pro plan needed for upsells/A-B testing.",
+      "Less branding control than Shopify.",
+      "Smaller ecosystem than Shopify/Gumroad."
+    ],
+    "use_cases": [
+      "Sell an online course with high-ticket upsell.",
+      "Manage complete sales funnel (landing + checkout).",
+      "Launch affiliate program for courses."
+    ]
+  }
+}

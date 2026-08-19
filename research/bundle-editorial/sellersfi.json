@@ -1,0 +1,90 @@
+{
+  "slug": "sellersfi",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "SellersFi — E-Commerce Working Capital (site officiel)", "url": "https://sellersfi.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de financement basée sur le revenu (revenue-based financing) pour vendeurs e-commerce (Amazon, Shopify, etc.). Fournit du capital de travail remboursable via un pourcentage des ventes futures plutôt que des traites fixes.",
+    "what_en": "Revenue-based financing platform for e-commerce sellers (Amazon, Shopify, etc.), providing working capital repayable through a percentage of future sales rather than fixed installments.",
+    "pricing_model": "Revenue-based financing : remboursement par pourcentage du revenu hebdomadaire (scalable avec ventes). Pas de taux d'intérêt fixe. Paiements plafonné et flexible (bas les semaines faibles).",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Financement sur demande d'application (approval 24-48h typiquement)." },
+    "plans": [
+      { "name": "Working Capital (petits montants)", "price": "5 000 $ - 100 000 $ d'avance ; remboursement par % du revenu" },
+      { "name": "CommercePay", "price": "Gestion de paiements pour vendeurs" },
+      { "name": "Inventory Solutions", "price": "Financement spécifique aux stocks" },
+      { "name": "Partenariat Amazon Lending", "price": "Crédits jusqu'à 10 M$ via programme co-branded" }
+    ],
+    "key_features": [
+      "Financement sans collateral, basé sur historique de ventes.",
+      "Paiements de remboursement flexibles (scalent avec revenu).",
+      "Déploiement rapide (48h typique).",
+      "Montants: 5 000 $ à 10 M$ selon program.",
+      "Intégration directe Amazon, Shopify, DSP, MWS."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous vendez sur Amazon ou Shopify et besoin capital de travail.",
+        "Vous préférez remboursement flexible (% des ventes).",
+        "Vous avez volume de ventes prouvé (historique de 6+ mois)."
+      ],
+      "avoidIf": [
+        "Vous n'avez pas d'historique de ventes (< 3 mois).",
+        "Vous cherchez un prêt traditionnel meilleur marché.",
+        "Vous n'êtes pas vendeur e-commerce (Amazon/Shopify)."
+      ],
+      "threshold": "SellersFi convient aux vendeurs e-commerce établis avec volume prouvé ; pour nouveaux vendeurs, banques traditionnelles ou Stripe Capital."
+    },
+    "pros": [
+      "Financement sans collateral ni garantie personnelle.",
+      "Remboursement flexible (scalé sur revenu).",
+      "Approbation très rapide (24-48h).",
+      "Montants jusqu'à 10 M$ via Amazon partnership."
+    ],
+    "cons": [
+      "Remboursement en % du revenu peut coûter cher si ventes explosent.",
+      "Nécessite 6+ mois d'historique de ventes.",
+      "Taux de remboursement non transparent à l'avance."
+    ],
+    "use_cases": [
+      "Financer stocks supplémentaires pour saison haute.",
+      "Fonds de roulement pour expansion Amazon/Shopify.",
+      "Lancer campagne marketing massivement rapidement."
+    ],
+    "relevant_for": ["Vendeurs Amazon/Shopify", "E-commerce entrepreneurs", "Agences d'e-commerce"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You sell on Amazon or Shopify and need working capital.",
+        "You prefer flexible repayment (% of sales).",
+        "You have proven sales volume (6+ months history)."
+      ],
+      "avoidIf": [
+        "You have no sales history (< 3 months).",
+        "You're seeking cheaper traditional lending.",
+        "You're not an e-commerce seller (Amazon/Shopify)."
+      ],
+      "threshold": "SellersFi suits established e-commerce sellers with proven volume; for new sellers, traditional banks or Stripe Capital."
+    },
+    "pros": [
+      "Collateral-free and guarantee-free financing.",
+      "Flexible repayment (scaled to revenue).",
+      "Very fast approval (24–48h).",
+      "Large financing ceiling via the Amazon partnership."
+    ],
+    "cons": [
+      "Repayment % of revenue can become expensive if sales explode.",
+      "Requires 6+ months sales history.",
+      "Repayment rate not transparent upfront."
+    ],
+    "use_cases": [
+      "Fund additional inventory for peak season.",
+      "Working capital for Amazon/Shopify expansion.",
+      "Launch massive marketing campaign quickly."
+    ]
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "slug": "rydoo",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Rydoo — Expense Management Platform (site officiel)", "url": "https://rydoo.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de gestion des frais professionnels (expense management) permettant la capture de reçus, le remboursement automatisé des frais et l'intégration comptable. Support multi-devises et multi-entreprises.",
+    "what_en": "Expense management platform enabling receipt capture, automated reimbursement, and accounting integration. Multi-currency and multi-company support.",
+    "pricing_model": "Abonnement par utilisateur/mois (modèle par personne). Plans escaladant en fonction des fonctionnalités (Go, Grow, Enterprise).",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite ; essai sur demande. Modèle par utilisateur : seuls les utilisateurs actifs facturés." },
+    "plans": [
+      { "name": "Essentials", "price": "10 € HT/utilisateur/mois (annuel : 8 € HT)" },
+      { "name": "Pro", "price": "12 € HT/utilisateur/mois (annuel : 10 € HT)" },
+      { "name": "Grow", "price": "Environ 12 $ / utilisateur / mois (fonctions avancées)" },
+      { "name": "Enterprise", "price": "Tarification custom, support dédié" }
+    ],
+    "key_features": [
+      "Capture OCR des reçus papier et numériques.",
+      "Remboursement automatisé et workflows d'approbation.",
+      "Intégrations comptables (SAP Concur, Expensify, etc.).",
+      "Rapports de dépenses et conformité budgétaire.",
+      "Suivi multi-devises et multi-entreprises."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vos collaborateurs soumettent régulièrement des frais.",
+        "Vous cherchez à automatiser le remboursement et la saisie comptable.",
+        "Vous avez une équipe distribuée ou internationale."
+      ],
+      "avoidIf": [
+        "Vous n'avez pratiquement pas de frais à rembourser.",
+        "Vous cherchez une solution gratuite.",
+        "Votre volume de frais est trop faible pour justifier le coût."
+      ],
+      "threshold": "Rydoo convient aux PME/ETI avec volume régulier de frais ; pour équipe très petite, un spreadsheet ou solution légère suffit."
+    },
+    "pros": [
+      "Capture OCR complète des reçus, sans ressaisie manuelle.",
+      "Remboursement entièrement automatisé.",
+      "Support multi-devises et multi-entreprises.",
+      "Workflows d'approbation flexibles."
+    ],
+    "cons": [
+      "Tarification par utilisateur : augmente avec croissance équipe.",
+      "Configuration initiale nécessaire.",
+      "Moins de fonctionnalités avancées que Expensify."
+    ],
+    "use_cases": [
+      "Automatiser remboursement de frais professionnels.",
+      "Capturer et traiter 100+ reçus par mois.",
+      "Intégrer frais directement à la comptabilité."
+    ],
+    "relevant_for": ["PME/ETI", "Directeurs opérationnels", "Gestionnaires de dépenses"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "Your employees regularly submit expenses.",
+        "You want to automate reimbursement and accounting entry.",
+        "You have a distributed or international team."
+      ],
+      "avoidIf": [
+        "You have almost no expenses to reimburse.",
+        "You want a free solution.",
+        "Your expense volume is too low to justify the cost."
+      ],
+      "threshold": "Rydoo suits SMEs with regular expense volume; for very small teams, a spreadsheet or lightweight solution suffices."
+    },
+    "pros": [
+      "Complete OCR receipt capture, no manual re-entry.",
+      "Fully automated reimbursement.",
+      "Multi-currency and multi-company support.",
+      "Flexible approval workflows."
+    ],
+    "cons": [
+      "Per-user pricing: scales with team growth.",
+      "Initial configuration needed.",
+      "Fewer advanced features than Expensify."
+    ],
+    "use_cases": [
+      "Automate professional expense reimbursement.",
+      "Capture and process 100+ receipts per month.",
+      "Feed expenses directly to accounting."
+    ]
+  }
+}

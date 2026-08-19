@@ -1,0 +1,89 @@
+{
+  "slug": "coupa",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Coupa — Spend management platform (site officiel)", "url": "https://coupa.com" }
+  ],
+  "facts": {
+    "what": "Plateforme modulaire de gestion des dépenses d'entreprise (spend management) combinant sourcing, contrats, procurement, invoicing, et expense management. IA-driven workflows pour achats on-contract et negotiation support. Cible moyennes et grandes entreprises.",
+    "what_en": "Modular enterprise spend management platform combining sourcing, contracts, procurement, invoicing, and expense management. AI-driven workflows for on-contract purchasing and negotiation support. Targets mid-market and enterprise.",
+    "pricing_model": "Tarification modulaire et personnalisée selon les modules licensés, volume de transactions, nombre d'utilisateurs, et complexité. Pas de tarification publique uniforme.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite ; tarification par devis uniquement." },
+    "plans": [
+      { "name": "Plan personnalisé", "price": "À partir de 499 $/an (prix d'entrée estimé) ; tarification complète sur devis" }
+    ],
+    "key_features": [
+      "Analyse des dépenses (spend analysis)",
+      "Sourcing et contract management",
+      "Procurement automatisé",
+      "Invoicing et expense management",
+      "AI-driven workflows pour negotiation",
+      "Visibility et control sur les dépenses",
+      "Réductions des spend via on-contract purchases"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes une PME ou entreprise moyenne avec procurement complexe.",
+        "Vous avez besoin de visibilité sur vos dépenses et de réductions de coûts.",
+        "Vous voulez automation des achats on-contract et negotiation support."
+      ],
+      "avoidIf": [
+        "Vous êtes une micro-entreprise ou freelance sans procurement complexe.",
+        "Vous cherchez un outil simple et bon marché.",
+        "Votre volume d'achats est très faible."
+      ],
+      "threshold": "Coupa s'adresse aux entreprises avec procurement sophistiqué et besoin de contrôle spend. Pour un freelance ou petite équipe, un outil plus léger suffit."
+    },
+    "pros": [
+      "Plateforme complète couvrant tout le procurement.",
+      "Automation IA pour achats on-contract.",
+      "Visibilité globale et contrôle des dépenses.",
+      "Support de negotiation et cost reduction."
+    ],
+    "cons": [
+      "Pas de tarification transparente ; devis obligatoire.",
+      "Peut être surdimensionné pour petites équipes.",
+      "Implémentation et onboarding potentiellement longs."
+    ],
+    "use_cases": [
+      "Centraliser et optimiser tous les achats d'une PME.",
+      "Automatiser les réquisitions et approbations procurement.",
+      "Négocier de meilleurs tarifs avec les fournisseurs via data analysis."
+    ],
+    "relevant_for": ["PME/ETI", "Directeurs achats", "Directeurs financiers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a mid-market or enterprise company with complex procurement.",
+        "You need spend visibility and cost-reduction opportunities.",
+        "You want AI automation for on-contract purchasing and negotiation."
+      ],
+      "avoidIf": [
+        "You're a solo freelancer or small team with simple buying.",
+        "You want a simple, cheap tool.",
+        "Your procurement volume is very low."
+      ],
+      "threshold": "Coupa is for companies with sophisticated procurement and spend control needs. For a freelancer or small team, a lighter tool works."
+    },
+    "pros": [
+      "Complete platform spanning entire procurement.",
+      "AI automation for on-contract purchases.",
+      "Global visibility and spend control.",
+      "Negotiation support and cost reduction."
+    ],
+    "cons": [
+      "No transparent pricing; custom quote required.",
+      "May be oversized for small teams.",
+      "Implementation and onboarding can be lengthy."
+    ],
+    "use_cases": [
+      "Centralize and optimize all procurement for a mid-market company.",
+      "Automate requisitions and procurement approvals.",
+      "Negotiate better rates with suppliers via data analysis."
+    ]
+  }
+}

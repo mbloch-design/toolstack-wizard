@@ -1,0 +1,90 @@
+{
+  "slug": "razorpay",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Razorpay — Payment Gateway (site officiel)", "url": "https://razorpay.com" }
+  ],
+  "facts": {
+    "what": "Passerelle de paiement indienne permettant aux commerçants d'accepter les paiements par cartes bancaires, UPI, virements, portefeuilles numériques et autres moyens de paiement. Support multi-devises.",
+    "what_en": "Indian payment gateway enabling merchants to accept card payments, UPI, bank transfers, digital wallets, and multiple payment methods. Multi-currency support.",
+    "pricing_model": "Commission par transaction (percentage-based) sans frais d'inscription ni frais annuels. Tarifs régressifs selon volume. Paiement uniquement lors de transactions réussies.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit disponible : zéro frais de configuration, frais de transaction uniquement sur transactions réussies." },
+    "plans": [
+      { "name": "Paiements domestiques (standard)", "price": "2% + TVA 18% (soit ~2,36% effectif)" },
+      { "name": "Paiements internationaux", "price": "3% + TVA 18%" },
+      { "name": "Paiements premium (EMI, Amex, Diners)", "price": "3% + TVA 18%" },
+      { "name": "Plan UPI/Netbanking (volume)", "price": "Tarifs régressifs, montants sur devis" }
+    ],
+    "key_features": [
+      "Support 100+ moyens de paiement (cartes, UPI, wallets, virement).",
+      "Multi-devises et paiements internationaux.",
+      "Dashboard temps réel avec rapports détaillés.",
+      "Intégrations avec Shopify, WooCommerce, Magento, etc.",
+      "Gestion des factures et récurrence de paiements."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous opérez en Inde ou acceptez des paiements indiens.",
+        "Vous cherchez des frais de transaction bas.",
+        "Vous voulez zéro frais d'inscription."
+      ],
+      "avoidIf": [
+        "Vous êtes basé en Europe (disponibilité limitée).",
+        "Vous cherchez support client en français.",
+        "Vous avez volume très élevé : négocier avec Stripe/PayPal."
+      ],
+      "threshold": "Razorpay convient aux e-commerces indiens ou acceptant paiements indiens ; pour Europe, Stripe/PayPal. Pour volume très élevé, tarifs customs avec tout fournisseur."
+    },
+    "pros": [
+      "Frais de transaction parmi les plus bas du marché.",
+      "Zéro frais d'inscription ni frais annuels.",
+      "Support riche de moyens de paiement (100+).",
+      "Intégrations e-commerce complètes."
+    ],
+    "cons": [
+      "Disponibilité limitée hors Inde et marchés spécifiques.",
+      "Support client limité en dehors de l'anglais/hindi.",
+      "Documentati technique moins riche que Stripe."
+    ],
+    "use_cases": [
+      "Accepter paiements en Inde (cartes, UPI, etc.).",
+      "Réduire les frais de paiement face aux concurrents.",
+      "Facturation récurrente et abonnements."
+    ],
+    "relevant_for": ["E-commerces indiens", "Fournisseurs de services SaaS", "Startups en Inde"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You operate in India or accept Indian payments.",
+        "You want low transaction fees.",
+        "Zero signup fees matter to you."
+      ],
+      "avoidIf": [
+        "You are based in Europe (limited availability).",
+        "You need French customer support.",
+        "You have very high volume: negotiate with Stripe/PayPal."
+      ],
+      "threshold": "Razorpay suits Indian e-commerce or India-accepting merchants; for Europe, Stripe/PayPal. For very high volume, negotiate custom rates with any provider."
+    },
+    "pros": [
+      "Among the lowest transaction fees on the market.",
+      "Zero signup or annual fees.",
+      "Rich payment method support (100+).",
+      "Complete e-commerce integrations."
+    ],
+    "cons": [
+      "Limited availability outside India.",
+      "Customer support limited outside English/Hindi.",
+      "Technical documentation less rich than Stripe."
+    ],
+    "use_cases": [
+      "Accept payments in India (cards, UPI, etc.).",
+      "Reduce payment fees versus competitors.",
+      "Recurring billing and subscriptions."
+    ]
+  }
+}

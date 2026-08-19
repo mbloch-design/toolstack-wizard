@@ -1,0 +1,93 @@
+{
+  "slug": "stripe",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Stripe — Payment Processing (site officiel)", "url": "https://stripe.com" }
+  ],
+  "facts": {
+    "what": "Passerelle de paiement moderne pour accepter cartes bancaires, portefeuilles numériques et virements. API-first, très intégrable. Support 135+ pays et 135+ devises.",
+    "what_en": "Modern payment gateway for accepting cards, digital wallets, and bank transfers. API-first, highly integrable. Support 135+ countries and 135+ currencies.",
+    "pricing_model": "Commission par transaction (pourcentage + montant fixe). Pas de frais de setup, ni frais mensuels. Tarifs dégressifs pour très volume élevé. Zéro frais d'inscription.",
+    "free_tier": { "exists": true, "detail": "Zéro frais jusqu'à premier paiement reçu. Vous ne payez que quand transactions réussies." },
+    "plans": [
+      { "name": "Paiements en ligne (cartes)", "price": "2,9% + 0,30 $ par transaction" },
+      { "name": "Paiements en personne", "price": "2,7% + 0,05 $ par transaction" },
+      { "name": "Virements ACH", "price": "0,8% (max 5 $) par transaction" },
+      { "name": "Cartes internationales", "price": "2,9% + 1,5% (devise) + 0,30 $" }
+    ],
+    "key_features": [
+      "API robuste et documentation complète.",
+      "Support 135+ pays et 135+ devises.",
+      "Suivi des fraudes intégré (radar).",
+      "Webhook pour intégrations custom.",
+      "Dashboard temps réel et rapports.",
+      "Tarifs dégressifs volume très élevé."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez une app/site web et besoin paiement intégré.",
+        "Vous cherchez API robuste et flexible.",
+        "Vous préférez un processeur avec docs excellentes."
+      ],
+      "avoidIf": [
+        "Vous voulez les frais absolument les plus bas (Razorpay moins cher).",
+        "Vous êtes sur Shopify (Shopify Payments plus simple).",
+        "Vous avez très volume très élevé (négocier tarifs custom)."
+      ],
+      "threshold": "Stripe convient à la plupart des développeurs/apps ; pour ecommerce Shopify, utiliser Shopify Payments. Pour très volume, négocier tarifs."
+    },
+    "pros": [
+      "API la plus flexible et robuste du marché.",
+      "Support 135+ pays et 135+ devises.",
+      "Documentation et support développeur excellents.",
+      "Zéro frais jusqu'au premier paiement.",
+      "Intégrations massives (ecosystème riche)."
+    ],
+    "cons": [
+      "Frais légèrement plus hauts que alternatives (Razorpay, Adyen).",
+      "Cartes internationales : frais supplémentaires.",
+      "Pas de solution \"clé-en-main\" (besoin intégration)."
+    ],
+    "use_cases": [
+      "Intégrer paiement à app web/mobile personnalisé.",
+      "Traiter paiements internationaux multi-devises.",
+      "SaaS avec billing récurrence."
+    ],
+    "relevant_for": ["Développeurs web/mobile", "Startups SaaS", "Marketplaces"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You have a web/mobile app needing payment integration.",
+        "You want robust, flexible API.",
+        "You prefer a processor with excellent docs."
+      ],
+      "avoidIf": [
+        "You want absolutely lowest fees (Razorpay cheaper).",
+        "You're on Shopify (Shopify Payments simpler).",
+        "You have very high volume (negotiate custom rates)."
+      ],
+      "threshold": "Stripe suits most developers/apps; for Shopify ecommerce, use Shopify Payments. For very high volume, negotiate rates."
+    },
+    "pros": [
+      "Most flexible and robust API on market.",
+      "Support 135+ countries and 135+ currencies.",
+      "Excellent developer documentation and support.",
+      "Zero fees until first payment.",
+      "Massive integrations (rich ecosystem)."
+    ],
+    "cons": [
+      "Fees slightly higher than alternatives (Razorpay, Adyen).",
+      "International cards: additional fees.",
+      "No 'turnkey' solution (requires integration)."
+    ],
+    "use_cases": [
+      "Integrate payments into custom web/mobile app.",
+      "Process international multi-currency payments.",
+      "SaaS with recurring billing."
+    ]
+  }
+}
