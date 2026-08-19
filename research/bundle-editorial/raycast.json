@@ -1,0 +1,94 @@
+{
+  "slug": "raycast",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Raycast — Launcher de Productivité (site officiel)", "url": "https://raycast.com" }
+  ],
+  "facts": {
+    "what": "Launcher de productivité pour Mac et Windows qui centralise l'accès aux applications, outils et services. Conçu à l'architecture native pour performance maximale (temps de réponse en millisecondes), avec IA intégrée et 1000+ extensions.",
+    "what_en": "Productivity launcher for Mac and Windows that centralizes access to apps, tools, and services. Built on native architecture for maximum performance (millisecond response times), with integrated AI and 1000+ extensions.",
+    "pricing_model": "Freemium avec version gratuite complète et Pro optionnel.",
+    "free_tier": { "exists": true, "detail": "Téléchargement et utilisation gratuit de Raycast. Pro subscription optionnel pour fonctionnalités avancées." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit" },
+      { "name": "Pro", "price": "Montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Launcher ultra-rapide avec milliseconde de réponse",
+      "Assistant IA pour chat et automation",
+      "Prise de notes intégrée",
+      "Gestion de fenêtres",
+      "Historique presse-papiers",
+      "1000+ extensions (Notion, Slack, Spotify, Jira, etc.)",
+      "Taux de fiabilité 99.8%"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez Mac ou Windows et aimez la productivité au clavier.",
+        "Vous travaillez avec plusieurs outils (Slack, Notion, Jira).",
+        "Vous cherchez une alternative moderne à Alfred ou Spotlight."
+      ],
+      "avoidIf": [
+        "Vous utilisez exclusivement Linux.",
+        "Vous préférez la souris pour navigation.",
+        "Vous ne travaillez que dans un navigateur."
+      ],
+      "threshold": "Raycast s'impose pour professionals multitâches au clavier ; pour usage ponctuel, Spotlight ou Cmd-Tab suffisent."
+    },
+    "pros": [
+      "Ultra-rapide et performant (architecture native).",
+      "Gratuit complet, sans limitation.",
+      "1000+ extensions officielles.",
+      "Assistant IA intégré.",
+      "Interface épurée et intuitive."
+    ],
+    "cons": [
+      "Limité à Mac et Windows.",
+      "Courbe d'apprentissage (clavier d'abord).",
+      "Pro nécessaire pour certaines fonctionnalités avancées."
+    ],
+    "use_cases": [
+      "Lancer rapidement une app ou commande.",
+      "Chercher une note ou lien sans quitter le clavier.",
+      "Accéder à Slack, Notion, Jira en un raccourci.",
+      "Automatiser des tâches répétitives."
+    ],
+    "relevant_for": ["Développeurs", "Power users Mac/Windows", "Managers multitâches"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You use Mac or Windows and love keyboard-driven productivity.",
+        "You work with multiple tools (Slack, Notion, Jira).",
+        "You want a modern alternative to Alfred or Spotlight."
+      ],
+      "avoidIf": [
+        "You use Linux exclusively.",
+        "You prefer mouse-driven navigation.",
+        "You work only in a browser."
+      ],
+      "threshold": "Raycast is essential for keyboard-driven professionals; for light use, Spotlight or Cmd-Tab suffice."
+    },
+    "pros": [
+      "Ultra-fast, native architecture.",
+      "Fully free, no limits.",
+      "1000+ official extensions.",
+      "Built-in AI assistant.",
+      "Clean, intuitive interface."
+    ],
+    "cons": [
+      "Limited to Mac and Windows.",
+      "Learning curve (keyboard-first).",
+      "Pro needed for advanced features."
+    ],
+    "use_cases": [
+      "Quickly launch an app or command.",
+      "Search a note or link without leaving keyboard.",
+      "Access Slack, Notion, Jira in one shortcut.",
+      "Automate repetitive tasks."
+    ]
+  }
+}

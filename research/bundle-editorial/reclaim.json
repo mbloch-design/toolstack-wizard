@@ -1,0 +1,96 @@
+{
+  "slug": "reclaim",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Reclaim.ai — AI Calendar Assistant (site officiel)", "url": "https://reclaim.ai" }
+  ],
+  "facts": {
+    "what": "Assistant calendrier IA qui optimise l'emploi du temps en ordonnançant automatiquement focus time, réunions, tâches et habitudes. Fonctionne avec Google Calendar et Outlook, offre analytics de productivité, et ne s'entraîne pas sur vos données.",
+    "what_en": "AI calendar assistant that optimizes time management by automatically scheduling focus time, meetings, tasks, and habits. Works with Google Calendar and Outlook, offers productivity analytics, and does not train on your data.",
+    "pricing_model": "Freemium avec version Lite gratuite et plans payants (Starter, Business, Enterprise).",
+    "free_tier": { "exists": true, "detail": "Plan Lite 100% gratuit, sans carte bancaire. Incluant fonctionnalités essentielles." },
+    "plans": [
+      { "name": "Lite (Free)", "price": "Gratuit" },
+      { "name": "Starter", "price": "Actuellement 30% de réduction" },
+      { "name": "Business", "price": "Actuellement 30% de réduction" },
+      { "name": "Enterprise", "price": "Tarification personnalisée" }
+    ],
+    "key_features": [
+      "AI Focus Time automatique",
+      "AI Smart Meetings pour trouver créneaux optimaux",
+      "AI Tasks & Habits pour ordonnancer flexiblement",
+      "AI Buffer Time pour pauses automatiques",
+      "Sync multi-calendriers (Google, Outlook)",
+      "Analytics productivité et impact réunions",
+      "Intégrations Slack, Zoom, Asana, ClickUp, Todoist, Jira, Linear"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes surchargé de réunions et manquez de focus time.",
+        "Vous utilisez Google Calendar ou Outlook.",
+        "Vous voulez une solution IA gratuite ou bon marché."
+      ],
+      "avoidIf": [
+        "Vous travaillez hors ligne sans calendar numérique.",
+        "Vous avez déjà un calendrier manuel bien structuré.",
+        "Vous voulez des contrôles ultra-détaillés sur chaque créneau."
+      ],
+      "threshold": "Reclaim s'impose pour professionals surchargés ; pour structure calendaire simple, gestion manuelle suffira."
+    },
+    "pros": [
+      "Plan gratuit complet et utilisable.",
+      "IA d'ordonnancement fiable (+7.6h focus/semaine rapporté).",
+      "Ne s'entraîne pas sur vos données.",
+      "Multiples intégrations productivité.",
+      "Analytics détaillés sur utilisation du temps.",
+      "Essai Business plan 14 jours gratuit."
+    ],
+    "cons": [
+      "Dépendant d'un calendar Google/Outlook.",
+      "Certaines fonctionnalités limitées sur Lite.",
+      "Payant pour toutes les options avancées."
+    ],
+    "use_cases": [
+      "Protéger du focus time contre vague de réunions.",
+      "Trouver créneau réunion sans allers-retours emails.",
+      "Analyser combien de temps vous perdez en réunions."
+    ],
+    "relevant_for": ["Managers", "Développeurs", "Consultants surmenés"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're drowning in meetings and lack focus time.",
+        "You use Google Calendar or Outlook.",
+        "You want a free or affordable AI solution."
+      ],
+      "avoidIf": [
+        "You work offline without a digital calendar.",
+        "Your calendar is already well-structured manually.",
+        "You need ultra-granular control over every time slot."
+      ],
+      "threshold": "Reclaim is essential for meeting-overloaded professionals; for simple calendar structure, manual management suffices."
+    },
+    "pros": [
+      "Complete, usable free tier.",
+      "Reliable scheduling AI (+7.6h focus/week reported).",
+      "Does not train on your data.",
+      "Multiple productivity integrations.",
+      "Detailed analytics on time usage.",
+      "14-day free trial of Business plan."
+    ],
+    "cons": [
+      "Dependent on Google/Outlook calendar.",
+      "Some features limited on Lite.",
+      "Paywall for advanced options."
+    ],
+    "use_cases": [
+      "Protect focus time against meeting waves.",
+      "Find meeting slots without email back-and-forth.",
+      "Analyze how much time you lose to meetings."
+    ]
+  }
+}

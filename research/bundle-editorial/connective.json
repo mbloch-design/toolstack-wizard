@@ -1,0 +1,89 @@
+{
+  "slug": "connective",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Connective eSignatures — Nitro (site officiel)", "url": "https://gonitro.com/esignatures/" }
+  ],
+  "facts": {
+    "what": "Plateforme belge et française de signature électronique cloud offrant la première intégration FranceConnect pour authentification. Conforme eIDAS et certifiée ANSSI, avec support du scellé électronique et vérification d'identité.",
+    "what_en": "Belgian and French cloud-based electronic signature platform with FranceConnect integration for authentication. eIDAS-compliant, ANSSI-certified, supporting electronic seals and identity verification.",
+    "pricing_model": "Abonnement SaaS. Plans par utilisateur ou API. Tarifs à partir de 9€ HT/mois pour l'application, 106€ HT/mois pour l'API.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite permanente. Essai disponible." },
+    "plans": [
+      { "name": "Plan Application", "price": "À partir de 9€ HT/mois par utilisateur" },
+      { "name": "Plan API", "price": "À partir de 106€ HT/mois" }
+    ],
+    "key_features": [
+      "Intégration FranceConnect pour authentification citoyens français",
+      "Signature électronique conforme eIDAS",
+      "Scellé électronique pour authenticité documents",
+      "Vérification d'identité automatique",
+      "Workflows combinant signature, vérification et documents",
+      "Hébergement en France, conforme RGPD"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vos clients sont en France ou Belgique et utilisent FranceConnect.",
+        "Vous avez besoin de signature électronique eIDAS-conforme.",
+        "Vous cherchez hébergement en France avec RGPD natif."
+      ],
+      "avoidIf": [
+        "Votre clientèle est exclusivement hors d'Europe.",
+        "Vous préférez une solution sans authentification FranceConnect.",
+        "Vous avez besoin d'une signature très simpliste et gratuite."
+      ],
+      "threshold": "Connective s'impose pour les entreprises françaises/belges gérant des flux de signature eIDAS-compliant ; DocuSign ou Yousign pour audience internationales."
+    },
+    "pros": [
+      "Seule solution avec intégration FranceConnect pour signature.",
+      "Conforme eIDAS et certifié ANSSI (tiers de confiance).",
+      "Hébergement en France, avantage de souveraineté data.",
+      "Support du scellé électronique pour authenticité documents."
+    ],
+    "cons": [
+      "Tarification peu compétitive face à DocuSign/Pandadoc.",
+      "Audience géographique limitée (France/Belgique surtout).",
+      "Moins de templates ou intégrations que concurrents."
+    ],
+    "use_cases": [
+      "Faire signer des contrats à des citoyens français via FranceConnect.",
+      "Implémenter signature eIDAS dans processus métier gouvernemental.",
+      "Archiver documents signés avec garantie de tiers de confiance."
+    ],
+    "relevant_for": ["PME françaises", "Collectivités", "Administrateurs de données", "Professionnels du droit"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "Your clients are in France or Belgium and use FranceConnect.",
+        "You need eIDAS-compliant electronic signatures.",
+        "You require France-hosted infrastructure with native GDPR compliance."
+      ],
+      "avoidIf": [
+        "Your clientele is exclusively outside Europe.",
+        "You prefer a solution without FranceConnect authentication.",
+        "You need a very simple and free signing solution."
+      ],
+      "threshold": "Connective is essential for French/Belgian companies managing eIDAS-compliant workflows; use DocuSign or Yousign for international audiences."
+    },
+    "pros": [
+      "Only solution with FranceConnect integration for signing.",
+      "eIDAS-compliant and ANSSI-certified (trusted third party).",
+      "France-hosted infrastructure, data sovereignty advantage.",
+      "Supports electronic sealing for document authenticity."
+    ],
+    "cons": [
+      "Pricing less competitive than DocuSign/Pandadoc.",
+      "Geographic reach limited (mainly France/Belgium).",
+      "Fewer templates or integrations than competitors."
+    ],
+    "use_cases": [
+      "Get contracts signed by French citizens via FranceConnect.",
+      "Implement eIDAS signatures in government workflows.",
+      "Archive signed documents with trusted third-party guarantee."
+    ]
+  }
+}

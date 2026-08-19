@@ -1,0 +1,88 @@
+{
+  "slug": "didomi",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Didomi — Consent & Preference Management (site officiel)", "url": "https://didomi.io" }
+  ],
+  "facts": {
+    "what": "Plateforme cloud de gestion du consentement et des préférences utilisateur (CMP + PMP) pour capturer, stocker et manager le consentement RGPD/CCPA multi-canal. Support web, mobile, CTV, email avec préférence center unifié.",
+    "what_en": "Cloud-based consent and preference management platform (CMP + PMP) for capturing, storing, and managing GDPR/CCPA consent across web, mobile, CTV, and email with unified preference center.",
+    "pricing_model": "Abonnement SaaS. Tarifs personnalisés selon volume contrats, utilisateurs, features. Pas de tarification publique.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Essai et démo disponibles. Contact commercial pour pricing." },
+    "plans": [
+      { "name": "Plans personnalisés", "price": "Sur demande selon volume et features" }
+    ],
+    "key_features": [
+      "CMP (Consent Management Platform) multi-canal web/mobile/CTV/email",
+      "PMP (Preference Management Platform) pour données first-party",
+      "Audit trails et conformité reporting",
+      "Server-side tagging pour contourner blockers navigateur",
+      "IAB TCF v2.0 certification",
+      "Support GDPR, CCPA, LGPD, DPA, ePrivacy"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous devez manager le consentement sur plusieurs canaux (web, mobile, email, CTV).",
+        "Vous avez besoin d'une solution réglementée mondialement (GDPR, CCPA, LGPD).",
+        "Votre audience est internationale et demande préférence center unique."
+      ],
+      "avoidIf": [
+        "Vous n'avez que du tracking web simple sans multi-canal.",
+        "Votre audience est exclusivement France et RGPD seul.",
+        "Vous recherchez une solution très bon marché."
+      ],
+      "threshold": "Didomi s'impose pour les marques mondiales avec consentement multi-canal ; Axeptio/Yousign pour PME françaises simple."
+    },
+    "pros": [
+      "Support multi-canal complet (web, mobile, CTV, email).",
+      "Préférence center unifié pour expérience utilisateur cohérente.",
+      "Server-side tagging contourne bloqueurs navigateur.",
+      "IAB TCF v2.0 certifié et +2000 clients globaux."
+    ],
+    "cons": [
+      "Tarification très opaque, contact commercial obligatoire.",
+      "Complexité accrue pour PME ou sites simples.",
+      "Pas de version gratuite, même limitée."
+    ],
+    "use_cases": [
+      "Manager consentement cohérent pour app mobile + site web + email.",
+      "Capturer données first-party avec tracking serveur-side.",
+      "Mettre en conformité entreprise mondiale (GDPR + CCPA + LGPD)."
+    ],
+    "relevant_for": ["Grands groupes", "Entreprises multi-pays", "Éditeurs multi-plateforme"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage consent across multiple channels (web, mobile, email, CTV).",
+        "You need global regulatory support (GDPR, CCPA, LGPD).",
+        "Your audience is international and requires a unified preference center."
+      ],
+      "avoidIf": [
+        "You only have simple web tracking without multi-channel.",
+        "Your audience is exclusively France with GDPR only.",
+        "You're looking for a very budget-friendly solution."
+      ],
+      "threshold": "Didomi is essential for global brands with multi-channel consent; use Axeptio/Yousign for simple French SMBs."
+    },
+    "pros": [
+      "Full multi-channel support (web, mobile, CTV, email).",
+      "Unified preference center for cohesive user experience.",
+      "Server-side tagging bypasses browser blockers.",
+      "IAB TCF v2.0 certified with 2000+ global clients."
+    ],
+    "cons": [
+      "Pricing very opaque, sales contact required.",
+      "Increased complexity for SMBs or simple sites.",
+      "No free tier, even limited."
+    ],
+    "use_cases": [
+      "Manage cohesive consent across mobile app, website, and email.",
+      "Capture first-party data with server-side tracking.",
+      "Ensure compliance for global company (GDPR + CCPA + LGPD)."
+    ]
+  }
+}

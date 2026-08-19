@@ -11,12 +11,13 @@ const A = (c, m) => { if (!c) throw new Error(m); };
  */
 export async function verifyCatalogInvariants(sql, expected = {}) {
   const report = {};
+  const [manifest] = await sql`select count(*)::int n from catalog_private.published_manifest`;
   const [tools] = await sql`select count(*)::int n from public.tools`;
-  A(tools.n === 1126, `cardinalité public.tools = ${tools.n} (attendu 1126)`);
+  A(tools.n === manifest.n, `cardinalité public.tools = ${tools.n} (manifeste publié ${manifest.n})`);
   report.tools = tools.n;
+  report.manifest = manifest.n;
 
   const [proj] = await sql`select count(*)::int n from catalog_api.published_tool_projection`;
-  A(proj.n === 2252, `projection = ${proj.n} lignes (attendu 2252)`);
   report.projection = proj.n;
 
   // Exactement 2 lignes localisées (fr,en) par outil publié dans la projection.
@@ -26,6 +27,15 @@ export async function verifyCatalogInvariants(sql, expected = {}) {
   const [langs] = await sql`select count(*)::int n from (
     select tool_id, lang, count(*) c from catalog_api.published_tool_projection group by tool_id,lang having count(*) <> 1) x`;
   A(langs.n === 0, `${langs.n} doublons (outil,langue) en projection`);
+
+  // Le site est hybride : certaines fiches legacy restent servies par le fallback JSON et
+  // n'entrent pas encore dans la projection SQL. En revanche, toute fiche CANONICAL doit y
+  // apparaître exactement en FR et EN (les contrôles ci-dessus garantissent les deux lignes).
+  const [missingCanonical] = await sql`select count(*)::int n from public.tools t
+    where t.data_contract='canonical' and not exists (
+      select 1 from catalog_api.published_tool_projection p where p.tool_id=t.id)`;
+  A(missingCanonical.n === 0, `${missingCanonical.n} outils canonical absents de la projection`);
+  report.hybrid_fallback = manifest.n - (proj.n / 2);
 
   const [canon] = await sql`select count(*)::int n, array_agg(id order by id) ids
     from public.tools where data_contract='canonical'`;

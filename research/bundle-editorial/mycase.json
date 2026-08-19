@@ -1,0 +1,91 @@
+{
+  "slug": "mycase",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "MyCase — Practice Management for Law Firms (site officiel)", "url": "https://mycase.com" }
+  ],
+  "facts": {
+    "what": "Plateforme cloud de gestion des dossiers juridiques conçue pour cabinets d'avocats. Centralise dossiers clients, temps facturable, facturation, portail client sécurisé, et assistance IA intégrée.",
+    "what_en": "Cloud-based practice management platform for law firms centralizing case management, time tracking, billing, secure client portal, and integrated AI assistance.",
+    "pricing_model": "Abonnement SaaS par utilisateur. Tarification à partir de 39$/user/mois. Facturation mensuelle ou annuelle avec réduction annuelle.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Essai gratuit disponible." },
+    "plans": [
+      { "name": "Tarification par utilisateur", "price": "À partir de 39€/user/mois (estimé, tarif US en $)" }
+    ],
+    "key_features": [
+      "Gestion de dossiers avec calendrier centralisé",
+      "Portail client sécurisé avec accès 24/7 documents",
+      "Time tracking automatisé avec rappels facturables",
+      "Facturation automatique et paiements (cartes, eChèques, LawPay)",
+      "AI Assistant : extraction faits, résumés documents, OCR, chronologies",
+      "Formulaires d'admission en ligne et suivi prospects",
+      "Intégrations Salesforce, Slack, Microsoft Teams"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez un cabinet d'avocats avec gestion temps/facturation critique.",
+        "Vous cherchez plateforme tout-en-un : dossiers, facturation, client portal.",
+        "Vous avez besoin d'IA pour résumés documents et extraction données."
+      ],
+      "avoidIf": [
+        "Vous êtes freelance/consultant et n'avez pas de clients confidentiels.",
+        "Vous cherchez simple suivi de tâches sans gestion facturation.",
+        "Votre budget par utilisateur est très limité."
+      ],
+      "threshold": "MyCase s'impose pour cabinets multi-avocats avec facturation ; solo practitioners peuvent utiliser outils plus légers."
+    },
+    "pros": [
+      "Plateforme tout-en-un : dossiers, temps, facturation, client portal.",
+      "AI Assistant automatise résumés, extraction faits, chronologies.",
+      "Portail client réduit emails/calls support.",
+      "Paiements intégrés : cartes, eChèques, LawPay."
+    ],
+    "cons": [
+      "Tarification par utilisateur peut devenir coûteux sur cabinet multi-avocats.",
+      "Courbe d'apprentissage pour nouvelles équipes.",
+      "Moins puissant que solutions CLM pour contrats complexes.",
+      "Support comptabilité/fiscalité France limité."
+    ],
+    "use_cases": [
+      "Manager cabinet litigation avec suivi temps/facturation strict.",
+      "Centraliser dossier clients et portail client unique.",
+      "Automatiser résumés documents avec AI pour dossiers volumineux."
+    ],
+    "relevant_for": ["Cabinets d'avocats", "Professionnels du droit", "Consultants juridiques"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You run a law firm with critical time/billing management.",
+        "You need an all-in-one platform: cases, billing, client portal.",
+        "You need AI for document summaries and fact extraction."
+      ],
+      "avoidIf": [
+        "You're a freelancer/consultant without confidential clients.",
+        "You need simple task tracking without billing features.",
+        "Your per-user budget is very limited."
+      ],
+      "threshold": "MyCase is essential for multi-lawyer practices with billing; solo practitioners can use lighter tools."
+    },
+    "pros": [
+      "All-in-one platform: cases, time, billing, client portal.",
+      "AI Assistant automates summaries, fact extraction, timelines.",
+      "Client portal reduces support emails/calls.",
+      "Integrated payments: cards, eChecks, LawPay."
+    ],
+    "cons": [
+      "Per-user pricing can be expensive for large firms.",
+      "Learning curve for new teams.",
+      "Less powerful than CLM solutions for complex contracts.",
+      "Limited French accounting/tax support."
+    ],
+    "use_cases": [
+      "Manage litigation practice with strict time/billing tracking.",
+      "Centralize client cases and unified client portal.",
+      "Automate document summaries with AI for large case files."
+    ]
+  }
+}

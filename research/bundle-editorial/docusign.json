@@ -1,0 +1,93 @@
+{
+  "slug": "docusign",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "DocuSign — Electronic Signature (site officiel)", "url": "https://www.docusign.com" }
+  ],
+  "facts": {
+    "what": "Plateforme leader de signature électronique et gestion des contrats offrant eSignature, Intelligent Agreement Management (IAM), et Contract Lifecycle Management (CLM). Support workflows, API, intégrations Salesforce/Workday.",
+    "what_en": "Leading platform for electronic signatures and contract management offering eSignature, Intelligent Agreement Management (IAM), and Contract Lifecycle Management (CLM). Supports workflows, APIs, and Salesforce/Workday integrations.",
+    "pricing_model": "Abonnement SaaS par plan ou usage. eSignature de 10€/mois (personnel) à 65€/user/mois (pro). Plans IAM et CLM sur devis.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit ; pas de version gratuite permanente. Accès free trial 30 jours." },
+    "plans": [
+      { "name": "Personal", "price": "À partir de 10€/mois annualisé (15€ mensuel) - 5 enveloppes/mois" },
+      { "name": "Standard", "price": "25€/user/mois annualisé (45€ mensuel) - 100 enveloppes/an" },
+      { "name": "Business Pro", "price": "40€/user/mois annualisé (65€ mensuel) - 100 enveloppes/an + bulk send" },
+      { "name": "Enterprise", "price": "Prix personnalisé - tous les features avancés"  }
+    ],
+    "key_features": [
+      "eSignature conforme ESIGN Act et eIDAS",
+      "Intelligent Agreement Management avec AI-powered analysis",
+      "Contract Lifecycle Management (CLM) Maestro workflows",
+      "Intégrations Salesforce, Workday, Microsoft Word, Slack",
+      "Notarization, payment collection, conditional routing",
+      "API access pour intégration custom"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin d'une solution de signature électronique mature et éprouvée.",
+        "Vous utilisez Salesforce ou Workday et voulez intégration native.",
+        "Vous traitez des volumes importants de contrats signés par année."
+      ],
+      "avoidIf": [
+        "Vous cherchez une solution très bon marché avec peu de documents.",
+        "Vous n'avez besoin que d'une simple signature électronique sans workflows.",
+        "Votre audience est exclusivement France (Yousign peut suffire)."
+      ],
+      "threshold": "DocuSign s'impose pour grandes entreprises et volumineux (CLM) ; PME avec peu de signatures préfèrent Yousign/Pandadoc."
+    },
+    "pros": [
+      "Leader du marché, le plus matures et reconnu.",
+      "Nombreuses intégrations (Salesforce, Workday, APIs).",
+      "Support des workflows complexes et CLM end-to-end.",
+      "Conforme ESIGN et eIDAS, utilisable mondialement."
+    ],
+    "cons": [
+      "Tarification élevée en comparaison concurrents.",
+      "Restrictions d'enveloppes par plan (100/an sur Standard).",
+      "Frais supplémentaires pour fonctions avancées (notarisation).",
+      "Complexité peut être excessive pour besoin simple."
+    ],
+    "use_cases": [
+      "Déployer signature électronique dans CRM Salesforce entreprise.",
+      "Manager cycle de vie complet de contrats grands comptes.",
+      "Automatiser workflows de signature B2B à volume élevé."
+    ],
+    "relevant_for": ["Grandes entreprises", "Cabinets juridiques", "Organisations avec CRM Salesforce"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need a mature, proven electronic signature solution.",
+        "You use Salesforce or Workday and want native integration.",
+        "You handle large document volumes yearly."
+      ],
+      "avoidIf": [
+        "You're looking for a budget solution with minimal documents.",
+        "You only need simple esignatures without complex workflows.",
+        "Your audience is exclusively France (Yousign may suffice)."
+      ],
+      "threshold": "DocuSign is essential for large enterprises and high-volume CLM; SMBs with light signing prefer Yousign/Pandadoc."
+    },
+    "pros": [
+      "Market leader, most mature and recognized.",
+      "Extensive integrations (Salesforce, Workday, APIs).",
+      "Complex workflows and end-to-end CLM support.",
+      "ESIGN and eIDAS compliant, globally usable."
+    ],
+    "cons": [
+      "Higher pricing compared to competitors.",
+      "Envelope restrictions per plan (100/year on Standard).",
+      "Additional fees for advanced features (notarization).",
+      "Complexity may exceed simple needs."
+    ],
+    "use_cases": [
+      "Deploy esignature in enterprise Salesforce CRM.",
+      "Manage complete contract lifecycle for large accounts.",
+      "Automate B2B signing workflows at scale."
+    ]
+  }
+}

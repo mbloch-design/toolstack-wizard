@@ -1,0 +1,91 @@
+{
+  "slug": "warp",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Warp — Agentic Development Environment (site officiel)", "url": "https://www.warp.dev/" }
+  ],
+  "facts": {
+    "what": "Terminal réinventé avec IA et outils collaboratifs pour productivité maximale. Combinaison d'émulateur terminal moderne haute-performance (Rust) et agents IA pour construire, tester, déployer et déboguer. Open-source depuis avril 2026 (MIT et AGPL).",
+    "what_en": "Terminal reimagined with AI and collaborative tools for maximum productivity. Combines a modern, high-performance terminal emulator (Rust) with AI agents for building, testing, deploying, and debugging. Open-source since April 2026 (MIT and AGPL).",
+    "pricing_model": "Freemium open-source avec version gratuite complète.",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit et open-source. Pas de limitation fonctionnelle. Téléchargements disponibles pour Mac, Linux, Windows." },
+    "plans": [
+      { "name": "Warp Free", "price": "Gratuit et open-source" }
+    ],
+    "key_features": [
+      "Émulateur terminal haute-performance (Rust)",
+      "Plateau Oz pour orchestration agents cloud",
+      "Autocomplétion et suggestions IA",
+      "Historique commandes partageable",
+      "Intégrations Git native",
+      "Support terminal complet (shell bash, zsh, fish)",
+      "Open-source MIT et AGPL"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes développeur cherchant terminal moderne.",
+        "Vous aimez les outils open-source.",
+        "Vous utilisez CLI régulièrement."
+      ],
+      "avoidIf": [
+        "Vous ne touchez jamais à ligne de commande.",
+        "Vous avez peur d'expérimenter jeune produit.",
+        "Vous ne codez que sur Windows (support nouveau)."
+      ],
+      "threshold": "Warp s'impose pour développeurs modernes ; pour usage GUI seul, terminal classique suffit."
+    },
+    "pros": [
+      "Entièrement gratuit et open-source.",
+      "Ultra-moderne et rapide (Rust).",
+      "IA intégrée pour auto-complétion.",
+      "Orchestration agents cloud native.",
+      "Communauté active sur GitHub."
+    ],
+    "cons": [
+      "Jeune produit (2026).",
+      "Écosystème de shell moins mature que bash seul.",
+      "Peut avoir bugs non trouvés."
+    ],
+    "use_cases": [
+      "Développer en CLI moderne et rapide.",
+      "Exécuter agents IA pour déboguer.",
+      "Partager historique commandes avec équipe."
+    ],
+    "relevant_for": ["Développeurs", "DevOps engineers", "SRE"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a developer seeking a modern terminal.",
+        "You love open-source tools.",
+        "You use CLI regularly."
+      ],
+      "avoidIf": [
+        "You never touch the command line.",
+        "You're afraid to experiment with young products.",
+        "You code only on Windows (new support)."
+      ],
+      "threshold": "Warp is ideal for modern developers; for GUI-only use, standard terminal suffices."
+    },
+    "pros": [
+      "Completely free and open-source.",
+      "Ultra-modern and fast (Rust).",
+      "Built-in AI for autocomplete.",
+      "Native cloud agent orchestration.",
+      "Active GitHub community."
+    ],
+    "cons": [
+      "Young product (2026).",
+      "Shell ecosystem less mature than bash alone.",
+      "May have undiscovered bugs."
+    ],
+    "use_cases": [
+      "Develop in modern, fast CLI.",
+      "Run AI agents for debugging.",
+      "Share command history with team."
+    ]
+  }
+}

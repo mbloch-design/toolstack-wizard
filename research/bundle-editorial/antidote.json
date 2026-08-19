@@ -1,0 +1,89 @@
+{
+  "slug": "antidote",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Antidote — Correcteur d'orthographe et grammaire (site officiel)", "url": "https://www.antidote.info" }
+  ],
+  "facts": {
+    "what": "Logiciel d'aide à l'écriture intelligent qui corrige les erreurs de grammaire, d'orthographe et de style en français et en anglais. Propose des dictionnaires complets et des guides linguistiques pour améliorer la qualité du texte.",
+    "what_en": "Intelligent writing assistant software that corrects grammar, spelling, and style errors in French and English. Provides comprehensive dictionaries and language guides to improve text quality.",
+    "pricing_model": "Achat perpétuel ou abonnement (Antidote+) donnant accès à trois versions.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Essai gratuit disponible avant achat." },
+    "plans": [
+      { "name": "Antidote 12 (Desktop)", "price": "Prix sur la page officielle" },
+      { "name": "Antidote Web (Browser-based)", "price": "Prix sur la page officielle" },
+      { "name": "Antidote+ (All-in-one)", "price": "Abonnement, montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Correcteur contextuel pour grammaire, orthographe et style",
+      "Dictionnaires multilingues (2,8+ millions entrées)",
+      "Guides linguistiques complets",
+      "Intégration avec applications populaires (Word, Chrome, etc.)",
+      "Support du français et de l'anglais"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous écrivez régulièrement en français et en anglais.",
+        "Vous cherchez une aide dépassant le simple correcteur orthographique.",
+        "Vous utilisez Word, Google Docs, ou un navigateur pour écrire."
+      ],
+      "avoidIf": [
+        "Vous voulez une solution gratuite.",
+        "Vous écrivez exclusivement dans une seule langue.",
+        "Vous ne travaillez que sur des documents textes bruts."
+      ],
+      "threshold": "Antidote s'impose pour les rédacteurs bilingues et les professionnels exigeants ; pour un usage ponctuel ou gratuit, des alternatives libres suffisent."
+    },
+    "pros": [
+      "Corrections contextuelles très précises.",
+      "Accès à des dictionnaires et guides linguistiques détaillés.",
+      "Support bilingue français-anglais intégré.",
+      "Intégrations web et desktop."
+    ],
+    "cons": [
+      "Pas de version gratuite.",
+      "Abonnement requis pour accès complet.",
+      "Licence perpétuelle coûteuse en premier achat."
+    ],
+    "use_cases": [
+      "Corriger un article ou un rapport professionnel.",
+      "Préparer un texte en français avant publication.",
+      "Vérifier la cohérence linguistique d'un document bilingue."
+    ],
+    "relevant_for": ["Rédacteurs", "Traducteurs", "Professionnels bilingues"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You write regularly in French and English.",
+        "You need advanced correction beyond basic spell-checking.",
+        "You use Word, Google Docs, or browser-based editors for writing."
+      ],
+      "avoidIf": [
+        "You want a free solution.",
+        "You write in only one language.",
+        "You work exclusively with plain text documents."
+      ],
+      "threshold": "Antidote is essential for bilingual writers and demanding professionals; for occasional or free use, open-source alternatives will do."
+    },
+    "pros": [
+      "Highly contextual and accurate corrections.",
+      "Access to detailed dictionaries and language guides.",
+      "Built-in French-English bilingual support.",
+      "Web and desktop integrations."
+    ],
+    "cons": [
+      "No free version.",
+      "Subscription required for full access.",
+      "Perpetual licenses are costly upfront."
+    ],
+    "use_cases": [
+      "Polish a professional article or report.",
+      "Prepare French text before publication.",
+      "Check linguistic consistency in a bilingual document."
+    ]
+  }
+}

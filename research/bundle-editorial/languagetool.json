@@ -1,0 +1,91 @@
+{
+  "slug": "languagetool",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "LanguageTool — AI-powered Writing Assistant (site officiel)", "url": "https://languagetool.org" }
+  ],
+  "facts": {
+    "what": "Assistant d'écriture basé sur l'IA qui détecte les erreurs de grammaire, orthographe, ponctuation et style dans plus de 30 langues. Offre des suggestions de reformulation, des statistiques d'écriture et fonctionne sur navigateur, desktop et plugins office.",
+    "what_en": "AI-powered writing assistant that detects grammar, spelling, punctuation, and style errors in 30+ languages. Offers rephrasing suggestions, writing statistics, and works on browser, desktop, and office plugins.",
+    "pricing_model": "Freemium avec version gratuite de base et Premium optionnel.",
+    "free_tier": { "exists": true, "detail": "Version gratuite offrant corrections d'orthographe et ponctuation basique. Premium déverrouille détection complète et suggestions avancées." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit" },
+      { "name": "Premium", "price": "Actuellement offert à 20% de réduction" }
+    ],
+    "key_features": [
+      "Détection de grammaire et orthographe en 30+ langues",
+      "Suggestions de reformulation (formel, fluide, simple, concis)",
+      "Vérification de ponctuation et casse",
+      "Statistiques de productivité et amélioration",
+      "Extensions navigateur et plugins Office",
+      "Mode Picky pour analyse de style avancée"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous écrivez en plusieurs langues.",
+        "Vous voulez une correction gratuite de base.",
+        "Vous aimez les suggestions de reformulation."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'une correction très nuancée en français seulement.",
+        "Vous préférez une correction sans cloud.",
+        "Vous écrivez exclusivement en français de haut niveau professionnel."
+      ],
+      "threshold": "LanguageTool convient pour multilingues et rédacteurs occasionnels ; pour une aide française professionnelle avancée, Antidote est plus approprié."
+    },
+    "pros": [
+      "Version gratuite généreuse.",
+      "Support de 30+ langues.",
+      "Suggestions de reformulation créative.",
+      "Disponible partout (navigateur, mobile, plugins).",
+      "Facile à utiliser et sans friction."
+    ],
+    "cons": [
+      "Moins précis qu'Antidote pour français professionnel.",
+      "Premium nécessaire pour détection complète.",
+      "Correction contextuelle moins sophistiquée."
+    ],
+    "use_cases": [
+      "Corriger un email en anglais et français.",
+      "Polir un post LinkedIn multilingue.",
+      "Vérifier la grammaire avant envoi de message."
+    ],
+    "relevant_for": ["Rédacteurs multilingues", "Étudiants", "Freelancers écrivant"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You write in multiple languages.",
+        "You want basic correction for free.",
+        "You like rephrasing suggestions."
+      ],
+      "avoidIf": [
+        "You need nuanced French correction only.",
+        "You prefer offline, cloud-free correction.",
+        "You write advanced professional French exclusively."
+      ],
+      "threshold": "LanguageTool works for multilinguals and occasional writers; for advanced professional French, Antidote is more appropriate."
+    },
+    "pros": [
+      "Generous free version.",
+      "Support for 30+ languages.",
+      "Creative rephrasing suggestions.",
+      "Available everywhere (browser, mobile, plugins).",
+      "Easy to use, frictionless."
+    ],
+    "cons": [
+      "Less precise than Antidote for professional French.",
+      "Premium needed for full detection.",
+      "Contextual correction less sophisticated."
+    ],
+    "use_cases": [
+      "Correct an email in English and French.",
+      "Polish a multilingual LinkedIn post.",
+      "Check grammar before sending a message."
+    ]
+  }
+}

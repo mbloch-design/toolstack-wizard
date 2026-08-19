@@ -3,6 +3,27 @@
  * une page fournisseur. Étendre ce registre fiche par fiche après revue.
  */
 export const STAGING_PROFILES = Object.freeze({
+  audionotes: Object.freeze({
+    planOrder: Object.freeze(["free", "pro"]),
+    comparePlanKey: "pro",
+    freePlanKey: "free",
+    locale: "fr-FR",
+    editorialSource: "research",
+  }),
+  visualcv: Object.freeze({
+    planOrder: Object.freeze(["free", "pro"]),
+    comparePlanKey: "pro",
+    freePlanKey: "free",
+    locale: "fr-FR",
+    editorialSource: "research",
+  }),
+  jenni: Object.freeze({
+    planOrder: Object.freeze(["free", "plus", "pro"]),
+    comparePlanKey: "plus",
+    freePlanKey: "free",
+    locale: "fr-FR",
+    editorialSource: "research",
+  }),
   wix: Object.freeze({
     planOrder: Object.freeze(["free", "light", "core", "business", "business_elite"]),
     comparePlanKey: "light",

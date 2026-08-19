@@ -1,0 +1,89 @@
+{
+  "slug": "axeptio",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Axeptio — Plateforme de gestion du consentement (site officiel)", "url": "https://www.axept.io/" }
+  ],
+  "facts": {
+    "what": "Plateforme de gestion du consentement (CMP) permettant de gérer les cookies, données personnelles et marketing en conformité RGPD. Offre des banneau personnalisables, scan de trackers et support de multiples réglementations (GDPR, CCPA, ePrivacy).",
+    "what_en": "Consent Management Platform (CMP) for managing cookies, personal data, and marketing in GDPR compliance. Offers customizable consent banners, tracker scanning, and support for multiple regulations (GDPR, CCPA, ePrivacy).",
+    "pricing_model": "Abonnement SaaS. Inscription gratuite pour débuter ; tarifs sur demande selon volume.",
+    "free_tier": { "exists": true, "detail": "Inscription gratuite disponible pour tester la plateforme." },
+    "plans": [
+      { "name": "Starter", "price": "Gratuit (inscription)" },
+      { "name": "Plans payants", "price": "Tarifs sur demande selon volume de sites et consentements" }
+    ],
+    "key_features": [
+      "Banneau cookies personnalisable no-code",
+      "Scanner de cookies et trackers",
+      "Tests A/B intégrés",
+      "Support 25+ langues avec géociblage",
+      "Conforme GDPR, CCPA, ePrivacy, Google Consent Mode v2",
+      "Certifié Google Gold CMP Partner"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Votre site collect des données via cookies ou trackers et doit être RGPD-conforme.",
+        "Vous cherchez une solution de banneau customisable sans code.",
+        "Vous avez besoin de gérer le consentement multi-canal (web, mobile)."
+      ],
+      "avoidIf": [
+        "Votre site n'utilise aucun tracker ou cookie tiers.",
+        "Vous préférez une solution très minimaliste sans features avancées.",
+        "Vous n'avez pas de besoin de conformité multi-régulation."
+      ],
+      "threshold": "Axeptio s'impose pour les sites collectant des données et devant respecter RGPD/CCPA ; moins nécessaire si zéro tracking tiers."
+    },
+    "pros": [
+      "Banneau entièrement personnalisable et no-code.",
+      "Scanner automatique des cookies et trackers sur votre site.",
+      "Certifié Google Gold et conforme eIDAS.",
+      "Support 25+ langues avec géociblage automatique."
+    ],
+    "cons": [
+      "Tarification opaque, nécessite contact commercial.",
+      "Interface peut être complexe pour configurations avancées.",
+      "Pas de version gratuite permanente pour tous les cas d'usage."
+    ],
+    "use_cases": [
+      "Mettre en conformité un site marchand avec cookies de suivi.",
+      "Gérer le consentement marketing multi-canal.",
+      "Scanner et auditer les trackers tiers sur son domaine."
+    ],
+    "relevant_for": ["E-commerce", "Agences digitales", "Éditeurs de contenu", "Startups SaaS"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "Your site collects data via cookies or trackers and must be GDPR-compliant.",
+        "You need a customizable, no-code banner solution.",
+        "You need multi-channel consent management (web, mobile, email)."
+      ],
+      "avoidIf": [
+        "Your site has no third-party trackers or cookies.",
+        "You prefer a very lightweight solution with minimal features.",
+        "You don't need multi-region regulatory compliance."
+      ],
+      "threshold": "Axeptio is essential for sites collecting data and requiring GDPR/CCPA compliance; less critical if zero third-party tracking."
+    },
+    "pros": [
+      "Fully customizable, no-code consent banner.",
+      "Automatic cookie and tracker scanning.",
+      "Google Gold certified and eIDAS compliant.",
+      "Support for 25+ languages with auto-geolocation."
+    ],
+    "cons": [
+      "Opaque pricing, requires sales contact.",
+      "Interface can be complex for advanced configurations.",
+      "No permanent free tier for all use cases."
+    ],
+    "use_cases": [
+      "Ensure compliance on an e-commerce site with tracking cookies.",
+      "Manage multi-channel marketing consent.",
+      "Audit and scan third-party trackers on your domain."
+    ]
+  }
+}

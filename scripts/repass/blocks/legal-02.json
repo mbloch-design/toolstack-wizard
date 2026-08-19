@@ -1,0 +1,27 @@
+[
+  {
+    "slug": "mycase",
+    "name": "MyCase",
+    "url": "https://mycase.com"
+  },
+  {
+    "slug": "pandadoc",
+    "name": "Pandadoc",
+    "url": "https://pandadoc.com"
+  },
+  {
+    "slug": "rocket-lawyer",
+    "name": "Rocket Lawyer",
+    "url": "https://www.rocketlawyer.com"
+  },
+  {
+    "slug": "wolters-kluwer",
+    "name": "Wolters Kluwer",
+    "url": ""
+  },
+  {
+    "slug": "yousign",
+    "name": "Yousign",
+    "url": "https://yousign.com"
+  }
+]

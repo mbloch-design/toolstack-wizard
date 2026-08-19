@@ -1,0 +1,37 @@
+[
+  {
+    "slug": "raycast",
+    "name": "Raycast",
+    "url": "https://raycast.com"
+  },
+  {
+    "slug": "reclaim",
+    "name": "Reclaim.ai",
+    "url": "https://reclaim.ai"
+  },
+  {
+    "slug": "reclaim-ai",
+    "name": "Reclaim AI",
+    "url": "https://reclaim.ai"
+  },
+  {
+    "slug": "superwhisper",
+    "name": "Superwhisper",
+    "url": "https://superwhisper.com"
+  },
+  {
+    "slug": "toggl",
+    "name": "Toggl Track",
+    "url": "https://toggl.com"
+  },
+  {
+    "slug": "warp",
+    "name": "Warp",
+    "url": ""
+  },
+  {
+    "slug": "zed",
+    "name": "Zed",
+    "url": ""
+  }
+]

@@ -1,0 +1,88 @@
+{
+  "slug": "perforce",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Perforce — DevOps Platform (site officiel)", "url": "https://www.perforce.com" }
+  ],
+  "facts": {
+    "what": "Suite DevOps d'entreprise couvrant contrôle de version (P4), tests de qualité (Perfecto, BlazeMeter), automatisation d'infrastructure (Puppet), et gestion de données (Delphix). Sert 20 000+ clients, dont 75% des Global 500.",
+    "what_en": "Enterprise DevOps suite covering version control (P4), quality testing (Perfecto, BlazeMeter), infrastructure automation (Puppet), and data management (Delphix). Serves 20,000+ customers, including 75% of Global 500.",
+    "pricing_model": "Solutions d'entreprise avec tarification personnalisée selon besoins.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Solutions d'entreprise uniquement. Contact commercial requis pour tarification." },
+    "plans": [
+      { "name": "Enterprise Solutions", "price": "Montants sur demande" }
+    ],
+    "key_features": [
+      "P4 Version Control Platform pour projets à grande échelle",
+      "Perfecto pour tests IA mobiles/web",
+      "BlazeMeter pour tests de charge et performance",
+      "Puppet pour automatisation infrastructure",
+      "Delphix pour virtualisation et masquage données",
+      "IP Lifecycle Management (IPLM) pour semi-conducteurs"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes une grande entreprise avec projets complexes.",
+        "Vous avez besoin de contrôle de version à très grande échelle.",
+        "Vous opérez dans l'automobile ou les semi-conducteurs."
+      ],
+      "avoidIf": [
+        "Vous êtes une startup ou PME.",
+        "Vous cherchez une solution gratuite ou légère.",
+        "Git ou GitHub suffisent pour vos besoins de version control."
+      ],
+      "threshold": "Perforce s'impose pour les Global 500 gérant des projets massifs ; pour équipes petites/moyennes, Git et GitHub suffisent."
+    },
+    "pros": [
+      "Contrôle de version aux capacités industrielles.",
+      "Suite DevOps complète (tests, infra, données).",
+      "Support de 9/10 constructeurs automobiles.",
+      "Particulièrement fort en semi-conducteurs."
+    ],
+    "cons": [
+      "Très cher, réservé aux entreprises.",
+      "Courbe d'apprentissage élevée.",
+      "Pas adapté aux startups ou solo developers."
+    ],
+    "use_cases": [
+      "Gérer repository de 1 milliard+ fichiers pour constructeur auto.",
+      "Tests de performance et charge pour infrastructure massive.",
+      "Masquage de données sensibles (RGPD) à l'échelle."
+    ],
+    "relevant_for": ["Grandes entreprises", "Éditeurs logiciels", "Constructeurs automobiles"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're an enterprise managing complex projects.",
+        "You need version control at massive scale.",
+        "You operate in automotive or semiconductors."
+      ],
+      "avoidIf": [
+        "You're a startup or SMB.",
+        "You want a free or lightweight solution.",
+        "Git and GitHub suffice for your version control needs."
+      ],
+      "threshold": "Perforce is essential for Global 500 companies managing massive projects; for small/mid teams, Git and GitHub suffice."
+    },
+    "pros": [
+      "Industrial-scale version control.",
+      "Complete DevOps suite (testing, infra, data).",
+      "Trusted by 9/10 automotive OEMs.",
+      "Particularly strong in semiconductors."
+    ],
+    "cons": [
+      "Very expensive, reserved for enterprises.",
+      "High learning curve.",
+      "Not suitable for startups or solo developers."
+    ],
+    "use_cases": [
+      "Manage repository of 1B+ files for auto manufacturer.",
+      "Performance and load testing for massive infrastructure.",
+      "GDPR-scale data masking and anonymization."
+    ]
+  }
+}

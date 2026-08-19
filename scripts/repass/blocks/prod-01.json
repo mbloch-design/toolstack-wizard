@@ -1,0 +1,42 @@
+[
+  {
+    "slug": "antidote",
+    "name": "Antidote",
+    "url": "https://www.antidote.info"
+  },
+  {
+    "slug": "arc-browser",
+    "name": "Arc Browser",
+    "url": ""
+  },
+  {
+    "slug": "buddy-punch",
+    "name": "Buddy Punch",
+    "url": "https://buddypunch.com"
+  },
+  {
+    "slug": "fig-terminal",
+    "name": "Fig",
+    "url": ""
+  },
+  {
+    "slug": "harvest",
+    "name": "Harvest",
+    "url": "https://www.getharvest.com"
+  },
+  {
+    "slug": "languagetool",
+    "name": "LanguageTool",
+    "url": "https://languagetool.org"
+  },
+  {
+    "slug": "microsoft-365",
+    "name": "Microsoft 365",
+    "url": "https://www.microsoft.com/microsoft-365"
+  },
+  {
+    "slug": "perforce",
+    "name": "Perforce",
+    "url": "https://www.perforce.com"
+  }
+]

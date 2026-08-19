@@ -1,0 +1,91 @@
+{
+  "slug": "harvest",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Harvest — Time Tracking, Invoicing & Profitability (site officiel)", "url": "https://www.getharvest.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de suivi du temps et de facturation pour équipes professionnelles. Intègre minuteurs temps réel, génération de factures automatiques, suivi des dépenses, et rapports de rentabilité pour 70 000+ entreprises.",
+    "what_en": "Time tracking and invoicing platform for professional teams. Integrates real-time timers, automatic invoice generation, expense tracking, and profitability reports for 70,000+ businesses.",
+    "pricing_model": "Abonnement SaaS avec essai gratuit de 30 jours.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit 30 jours sans carte bancaire. Pas de version gratuite permanente." },
+    "plans": [
+      { "name": "Essai 30 jours", "price": "Gratuit" },
+      { "name": "Forfaits Premium", "price": "Montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Minuteurs temps réel et timesheet hebdomadaires",
+      "Génération de factures automatiques",
+      "Suivi des dépenses avec reçus",
+      "Rapports de rentabilité par projet",
+      "Outils de budgétisation et d'alerte",
+      "40+ intégrations (Jira, Salesforce, Asana, etc.)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous facturez des clients à l'heure.",
+        "Vous avez besoin d'une facération automatisée liée au temps.",
+        "Vous voulez mesurer la rentabilité par projet."
+      ],
+      "avoidIf": [
+        "Vous cherchez une solution gratuite.",
+        "Vous travaillez uniquement en forfait fixe.",
+        "Vous avez besoin d'un suivi du temps très simple sans facturation."
+      ],
+      "threshold": "Harvest s'impose pour les agences et consultants qui facturent au temps ; pour un suivi temps simple ou forfait fixe, un outil plus léger suffit."
+    },
+    "pros": [
+      "Facturation automatisée depuis le temps suivi.",
+      "Rapports de rentabilité détaillés par projet.",
+      "Suivi des dépenses intégré.",
+      "Nombreuses intégrations professionnelles.",
+      "Interface intuitive et fiable (70 000+ clients)."
+    ],
+    "cons": [
+      "Abonnement requis, pas de version gratuite.",
+      "Tarification complexe selon la taille d'équipe.",
+      "Peut être surutilisé pour petit consultant solo."
+    ],
+    "use_cases": [
+      "Facturer des heures consultants à des clients.",
+      "Mesurer la rentabilité d'une agence de design.",
+      "Suivre les dépenses et les facturer en retour."
+    ],
+    "relevant_for": ["Agences de services", "Consultants indépendants", "Cabinets conseil"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You bill clients hourly.",
+        "You need automated invoicing linked to time tracked.",
+        "You want to measure project profitability."
+      ],
+      "avoidIf": [
+        "You're looking for a free solution.",
+        "You work only on fixed-price projects.",
+        "You need simple time tracking without invoicing."
+      ],
+      "threshold": "Harvest is essential for agencies and consultants billing hourly; for simple time tracking or fixed-price work, a lighter tool works."
+    },
+    "pros": [
+      "Automated invoicing from tracked time.",
+      "Detailed project profitability reports.",
+      "Integrated expense tracking.",
+      "Many professional integrations.",
+      "Intuitive interface, trusted by 70,000+ clients."
+    ],
+    "cons": [
+      "Subscription required, no free version.",
+      "Complex pricing based on team size.",
+      "May be overkill for solo consultants."
+    ],
+    "use_cases": [
+      "Invoice consultant hours to clients.",
+      "Measure profitability of a design agency.",
+      "Track expenses and bill them back."
+    ]
+  }
+}

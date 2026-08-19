@@ -1,0 +1,94 @@
+{
+  "slug": "microsoft-365",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Microsoft 365 — Abonnement productivité cloud (site officiel)", "url": "https://www.microsoft.com/microsoft-365" }
+  ],
+  "facts": {
+    "what": "Suite d'applications cloud de productivité incluant Word, Excel, PowerPoint, Outlook, OneNote, Teams, stockage OneDrive, et Copilot IA. Conçue pour professionnels et équipes travaillant en ligne.",
+    "what_en": "Cloud-based productivity suite including Word, Excel, PowerPoint, Outlook, OneNote, Teams, OneDrive storage, and AI Copilot. Designed for professionals and teams working online.",
+    "pricing_model": "Abonnement annuel avec facturation mensuelle optionnelle à prix plus élevé.",
+    "free_tier": { "exists": true, "detail": "Version gratuite limitée (5 Go OneDrive, sans Copilot). Plans payants débutent à partir de 20 EUR/an." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (5 Go stockage)" },
+      { "name": "Basic", "price": "20 EUR/an (100 Go)" },
+      { "name": "Personal", "price": "99 EUR/an (1 To + Copilot)" },
+      { "name": "Family", "price": "129 EUR/an (6 To partagés, jusqu'à 6 utilisateurs)" },
+      { "name": "Premium", "price": "219 EUR/an (1 To + Copilot avancé)" }
+    ],
+    "key_features": [
+      "Suite complète Office (Word, Excel, PowerPoint, Outlook, OneNote)",
+      "Teams pour collaboration et réunions",
+      "OneDrive stockage cloud (capacité selon plan)",
+      "Copilot IA intégré dans les applications",
+      "Microsoft Defender pour sécurité",
+      "Partage et édition collaborative en temps réel"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez déjà l'écosystème Microsoft (Outlook, Excel).",
+        "Vous avez besoin de collaboration en temps réel.",
+        "Vous travaillez en équipe sur des documents."
+      ],
+      "avoidIf": [
+        "Vous cherchez une suite gratuite complète.",
+        "Vous préférez des outils indépendants et libres.",
+        "Vous utilisez une seule application Office occasionnellement."
+      ],
+      "threshold": "Microsoft 365 s'impose pour équipes déjà intégrées à l'écosystème Microsoft ; pour usage léger ou gratuit, Google Workspace ou LibreOffice suffisent."
+    },
+    "pros": [
+      "Suite complète et professionnelle.",
+      "Collaboration en temps réel fiable.",
+      "Copilot IA disponible sur plans payants.",
+      "Intégration profonde Teams.",
+      "Stockage cloud adapté à la taille équipe."
+    ],
+    "cons": [
+      "Coûteux pour petits utilisateurs.",
+      "Dépendance envers écosystème Microsoft.",
+      "Copilot limité à plans premium."
+    ],
+    "use_cases": [
+      "Travailler en équipe sur feuille budgétaire Excel.",
+      "Préparer slides PowerPoint avec Copilot.",
+      "Réunions vidéo Teams + partage documents."
+    ],
+    "relevant_for": ["Équipes professionnelles", "Entreprises", "PME"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You already use the Microsoft ecosystem (Outlook, Excel).",
+        "You need real-time collaboration.",
+        "You work in a team on shared documents."
+      ],
+      "avoidIf": [
+        "You want a complete free suite.",
+        "You prefer independent and open-source tools.",
+        "You use Office applications only occasionally."
+      ],
+      "threshold": "Microsoft 365 is essential for teams already integrated in the Microsoft ecosystem; for light or free use, Google Workspace or LibreOffice will suffice."
+    },
+    "pros": [
+      "Complete, professional suite.",
+      "Reliable real-time collaboration.",
+      "AI Copilot available on paid plans.",
+      "Deep Teams integration.",
+      "Cloud storage scaled to team size."
+    ],
+    "cons": [
+      "Expensive for light users.",
+      "Lock-in to Microsoft ecosystem.",
+      "Copilot limited to premium plans."
+    ],
+    "use_cases": [
+      "Work in a team on shared Excel budget.",
+      "Prepare PowerPoint slides with Copilot.",
+      "Teams video meetings + document sharing."
+    ]
+  }
+}

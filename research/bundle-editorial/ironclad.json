@@ -1,0 +1,92 @@
+{
+  "slug": "ironclad",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Ironclad — Contract Lifecycle Management (site officiel)", "url": "https://ironcladapp.com" }
+  ],
+  "facts": {
+    "what": "Plateforme SaaS de gestion du cycle de vie des contrats (CLM) alimentée par l'IA, permettant automatisation de la création, révision, signature, stockage et analyse des contrats. Inclut Jurist AI pour examen automatisé.",
+    "what_en": "AI-powered Contract Lifecycle Management (CLM) platform for automating creation, review, signature, storage, and analysis. Includes Jurist AI for automated contract review.",
+    "pricing_model": "Abonnement SaaS avec tarification personnalisée. Nécessite contact commercial. Estimé 50k-120k$/an pour mid-market, 200k+$ pour enterprise.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Démo et essai disponibles via contact sales." },
+    "plans": [
+      { "name": "Mid-market", "price": "Estimé 50 000-120 000€/an selon volume contrats" },
+      { "name": "Enterprise", "price": "200 000€+/an pour déploiements complexes" }
+    ],
+    "key_features": [
+      "Creation : génération de contrats assistée par IA",
+      "Review : Jurist AI pour examen automatisé de clauses",
+      "Sign : eSignature native intégrée",
+      "Store : archivage centralisé avec versioning",
+      "Analyze : extraction d'insights commerciaux et obligations",
+      "Execute : suivi conformité et deadlines obligations",
+      "Intégrations Salesforce, Slack, Microsoft Word"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous signiez 100+ contrats par an et voulez centraliser le lifecycle.",
+        "Votre équipe juridique veut automatiser examen clauses répétitives.",
+        "Vous avez besoin de reporting d'obligations et conformité."
+      ],
+      "avoidIf": [
+        "Vous n'avez que quelques contrats par an à signer.",
+        "Votre besoin principal est juste la signature électronique.",
+        "Votre budget est limité à moins de 10k€/an."
+      ],
+      "threshold": "Ironclad s'impose pour grandes entreprises gérant portfolio contrats complexe ; PME avec peu de contrats devraient DocuSign."
+    },
+    "pros": [
+      "Jurist AI automatise examen clauses contractuelles complexes.",
+      "Centralise pipeline complet : création à exécution.",
+      "Intégrations Salesforce et Slack pour workflows natifs.",
+      "Dashboard reporting obligations et conformité contrats."
+    ],
+    "cons": [
+      "Tarification très élevée, inaccessible pour PME.",
+      "Contact commercial obligatoire, sans tarif public.",
+      "Courbe d'apprentissage importante pour équipe.",
+      "Overkill pour petits volumes contrats."
+    ],
+    "use_cases": [
+      "Centraliser pipeline contrats B2B grands comptes.",
+      "Automatiser examen clauses standard de contrats fournisseur.",
+      "Tracker obligations et deadlines contrats en portefeuille."
+    ],
+    "relevant_for": ["Grandes entreprises", "Équipes juridiques", "Éditeurs SaaS B2B"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You sign 100+ contracts yearly and want to centralize lifecycle.",
+        "Your legal team wants to automate repetitive clause review.",
+        "You need contract obligations and compliance reporting."
+      ],
+      "avoidIf": [
+        "You only handle a few contracts yearly.",
+        "Your primary need is just electronic signatures.",
+        "Your annual budget is limited."
+      ],
+      "threshold": "Ironclad is essential for large enterprises managing complex contract portfolios; SMBs with light volume should use DocuSign."
+    },
+    "pros": [
+      "Jurist AI automates complex contract clause review.",
+      "Centralizes entire pipeline from creation to execution.",
+      "Salesforce and Slack integrations for native workflows.",
+      "Reporting dashboard for contract obligations and compliance."
+    ],
+    "cons": [
+      "Very high pricing, inaccessible for SMBs.",
+      "Sales contact required, no public pricing.",
+      "Significant learning curve for teams.",
+      "Overkill for small contract volumes."
+    ],
+    "use_cases": [
+      "Centralize B2B contract pipeline for large accounts.",
+      "Automate review of standard vendor contract clauses.",
+      "Track contract obligations and compliance deadlines."
+    ]
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "slug": "legalstart",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Legalstart — Création d'entreprise en ligne (site officiel)", "url": "https://www.legalstart.fr" }
+  ],
+  "facts": {
+    "what": "Plateforme legaltech française permettant la création et gestion d'entreprise 100% en ligne. Couvre formation, modifications juridiques (siège, dirigeants), fermeture. Support comptabilité et enregistrement marque.",
+    "what_en": "French legaltech platform for 100% online business creation and management. Covers formation, legal modifications (headquarters, directors), closure. Accounting and trademark registration support.",
+    "pricing_model": "Abonnement à la formule + frais administratifs obligatoires. Formule Starter gratuite (0€) ; Standard 99€ HT ; Premium 199€ HT + frais légaux ~250€.",
+    "free_tier": { "exists": true, "detail": "Formule Starter entièrement gratuite (0€) pour création simples ; frais légaux obligatoires non inclus." },
+    "plans": [
+      { "name": "Starter", "price": "Gratuit (0€) + frais légaux obligatoires (~250€)" },
+      { "name": "Standard", "price": "99€ HT + frais légaux obligatoires (~250€)" },
+      { "name": "Premium", "price": "199€ HT + frais légaux obligatoires (~250€), dossier envoyé Greffe en 24h" }
+    ],
+    "key_features": [
+      "Création d'entreprise : SASU, SAS, SARL, EURL, SCI, association",
+      "Vérification dossier et transmission au Greffe en 24h (Premium)",
+      "Modifications : siège, capital, dirigeants, adresse",
+      "Comptabilité : service comptable via LS Compta (partenaire)",
+      "Enregistrement marque et propriété intellectuelle",
+      "Support téléphone et chat avec juristes formalistes France"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez une entreprise en France (SASU, SAS, SARL, etc).",
+        "Vous voulez un processus entièrement en ligne et transparent.",
+        "Vous avez un budget serré et un palier d'entrée gratuit vous suffit."
+      ],
+      "avoidIf": [
+        "Vous créez l'entreprise en dehors France.",
+        "Vous avez besoin de conseil juridique stratégique au-delà formalités.",
+        "Vous préférez un cabinet traditionnel pour accompagnement personnalisé."
+      ],
+      "threshold": "Legalstart s'impose pour freelances/TPE françaises créant en ligne ; professions réglementées ou structures complexes préfèrent cabinet tradionnel."
+    },
+    "pros": [
+      "Seule plateforme avec formule entièrement gratuite en France.",
+      "Processus entièrement en ligne, sans déplacement.",
+      "Juristes formalistes français vérifient dossier avant Greffe.",
+      "Support complet : comptabilité, marque, modifications ultérieures."
+    ],
+    "cons": [
+      "Frais légaux obligatoires non inclus dans le tarif affiché.",
+      "Tarif Standard/Premium reste supérieur à pure plateforme DIY.",
+      "Pas de conseil juridique stratégique, juste formalités.",
+      "Support comptabilité via partenaire externe (coût additionnel)."
+    ],
+    "use_cases": [
+      "Créer une SASU/SAS en ligne sans quitter son domicile.",
+      "Modifier le siège ou capital sans passer par cabinet.",
+      "Enregistrer marque + créer structure en même plateforme."
+    ],
+    "relevant_for": ["Freelances", "Startup solo", "Petites entreprises", "Dirigeants gestionnaires"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're creating a business in France (SASU, SAS, SARL, etc).",
+        "You want a fully online, transparent process.",
+        "You have a tight budget (free Starter exists)."
+      ],
+      "avoidIf": [
+        "You're creating outside France.",
+        "You need strategic legal advice beyond filings.",
+        "You prefer a traditional law firm for personalized guidance."
+      ],
+      "threshold": "Legalstart is ideal for French freelancers/SMEs creating online; regulated professions or complex structures prefer traditional law firms."
+    },
+    "pros": [
+      "Only platform with fully free tier in France.",
+      "Completely online process, no commute.",
+      "French legal specialists verify filing before registry.",
+      "Full support: accounting, trademark, future modifications."
+    ],
+    "cons": [
+      "Mandatory legal fees are not included in the listed price.",
+      "Standard/Premium pricing still above DIY platforms.",
+      "No strategic legal advice, just filings.",
+      "Accounting support via external partner (additional cost)."
+    ],
+    "use_cases": [
+      "Create a SASU/SAS online from home.",
+      "Modify headquarters or capital without hiring law firm.",
+      "Register trademark and create entity on same platform."
+    ]
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "slug": "toggl",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Toggl Track — Time Tracking & Analytics (site officiel)", "url": "https://toggl.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de suivi du temps pour équipes permettant enregistrement manuel, tracking automatique, rapports productivité personnalisés, et intégrations (Jira, Salesforce, Asana). Offre plan gratuit généreux, essai 30 jours, et options Enterprise.",
+    "what_en": "Time tracking platform for teams enabling manual logging, automatic tracking, customizable productivity reports, and integrations (Jira, Salesforce, Asana). Offers generous free plan, 30-day trial, and Enterprise options.",
+    "pricing_model": "Freemium avec plan gratuit complet et plans payants Premium/Enterprise.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit sans carte bancaire. Fonctionnalités complètes pour solo et petites équipes (jusqu'à 5 personnes)." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (illimité)" },
+      { "name": "Premium", "price": "Essai 30 jours gratuit, puis abonnement" },
+      { "name": "Enterprise", "price": "Tarification personnalisée (20+ personnes)" }
+    ],
+    "key_features": [
+      "Enregistrement manuel temps via web et app desktop",
+      "Tracking automatique app et website",
+      "Extension navigateur pour accès rapide",
+      "Rapports productivité et rentabilité personnalisés",
+      "Gestion workload et approbation timesheet",
+      "100+ intégrations (Jira, Salesforce, Asana, etc.)",
+      "Sécurité ISO 27001 et SOC 2 Type II (Enterprise)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin de suivi temps simple gratuit.",
+        "Votre équipe est petite (moins de 5).",
+        "Vous voulez rapports productivité sans payer."
+      ],
+      "avoidIf": [
+        "Vous facturez des heures clients (Harvest plus approprié).",
+        "Vous avez équipe de 20+ personnes.",
+        "Vous avez besoin d'intégration payroll complexe."
+      ],
+      "threshold": "Toggl convient pour suivi temps gratuit léger ; pour facturation clients ou équipes grandes, Harvest ou solutions d'entreprise conviennent mieux."
+    },
+    "pros": [
+      "Plan gratuit très généreux et sans limitation.",
+      "Gratuit pour équipes jusqu'à 5 personnes.",
+      "Rapports détaillés inclus.",
+      "100+ intégrations.",
+      "Pas de carte bancaire requise.",
+      "Essai Premium 30 jours."
+    ],
+    "cons": [
+      "Moins de fonctionnalités facturation qu'Harvest.",
+      "Premium nécessaire pour certain rapports avancés.",
+      "Intégration payroll moins riche."
+    ],
+    "use_cases": [
+      "Tracker le temps des freelancers sans frais.",
+      "Analyser productivité d'une petite équipe.",
+      "Mesurer temps passé par projet/client."
+    ],
+    "relevant_for": ["Petites équipes", "Freelancers", "Startups bootstrap"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need simple, free time tracking.",
+        "Your team is small (under 5 people).",
+        "You want productivity reports without paying."
+      ],
+      "avoidIf": [
+        "You bill clients for hours (Harvest more appropriate).",
+        "You have a team of 20+ people.",
+        "You need complex payroll integration."
+      ],
+      "threshold": "Toggl works for lightweight free time tracking; for client billing or large teams, Harvest or enterprise solutions are better."
+    },
+    "pros": [
+      "Very generous free tier, no limits.",
+      "Free for teams up to 5 people.",
+      "Detailed reports included.",
+      "100+ integrations.",
+      "No credit card required.",
+      "30-day Premium trial."
+    ],
+    "cons": [
+      "Fewer invoicing features than Harvest.",
+      "Premium needed for advanced reporting.",
+      "Less rich payroll integration."
+    ],
+    "use_cases": [
+      "Track freelancer time at no cost.",
+      "Analyze small team productivity.",
+      "Measure time spent per project/client."
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "slug": "arc-browser",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Arc — The Browser from The Browser Company (site officiel)", "url": "https://arc.net/" }
+  ],
+  "facts": {
+    "what": "Navigateur web moderne basé sur Chromium pour macOS, Windows, iOS et Android. Conçu pour la productivité avec des fonctionnalités comme Spaces, Profiles et Split View. L'équipe développe également Dia, une évolution basée sur l'IA.",
+    "what_en": "Modern Chromium-based web browser for macOS, Windows, iOS, and Android. Designed for productivity with features like Spaces, Profiles, and Split View. The team is developing Dia, an AI-powered evolution.",
+    "pricing_model": "Gratuiciel avec options premium.",
+    "free_tier": { "exists": true, "detail": "Arc est entièrement gratuit à l'usage, avec mises à jour de sécurité hebdomadaires et certification SOC 2." },
+    "plans": [
+      { "name": "Arc Free", "price": "Gratuit" }
+    ],
+    "key_features": [
+      "Spaces pour organiser les onglets par contexte",
+      "Profiles pour gérer plusieurs identités de navigation",
+      "Split View pour consulter deux sites côte à côte",
+      "Mises à jour de sécurité hebdomadaires",
+      "Disponible sur macOS, Windows, iOS, Android"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous naviguez entre plusieurs contextes de travail.",
+        "Vous voulez organiser vos onglets par projet ou profil.",
+        "Vous aimez les navigateurs innovants et axés sur la productivité."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'une solution sans dépendance envers une jeune startup.",
+        "Vous utilisez exclusivement un seul profil de navigation.",
+        "Vous avez besoin de l'écosystème mature de Chrome ou Firefox."
+      ],
+      "threshold": "Arc convient pour les professionnels multitâches en quête d'une ergonomie nouvelle ; Chrome ou Firefox suffisent pour un usage classique."
+    },
+    "pros": [
+      "Totalement gratuit, aucune limite.",
+      "Interface novante avec Spaces et Profiles.",
+      "Mises à jour de sécurité fréquentes.",
+      "Split View pour productivité multi-onglets."
+    ],
+    "cons": [
+      "Équipe jeune, avenir incertain.",
+      "Moins d'extensions que Chrome.",
+      "Écosystème moins mature que Firefox ou Chrome."
+    ],
+    "use_cases": [
+      "Organiser ses onglets par projet ou client.",
+      "Gérer plusieurs identités web simultanément.",
+      "Naviguer entre plusieurs tâches sans confusion."
+    ],
+    "relevant_for": ["Travailleurs en freelance", "Développeurs", "Gestionnaires de projet"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You navigate between multiple work contexts.",
+        "You want to organize tabs by project or profile.",
+        "You appreciate innovative productivity-focused browsers."
+      ],
+      "avoidIf": [
+        "You need stability from an established company.",
+        "You use only a single browsing profile.",
+        "You rely on the mature ecosystem of Chrome or Firefox."
+      ],
+      "threshold": "Arc works for multitasking professionals seeking novel interface design; Chrome or Firefox are sufficient for basic browsing."
+    },
+    "pros": [
+      "Completely free, no limitations.",
+      "Innovative interface with Spaces and Profiles.",
+      "Frequent security updates.",
+      "Split View for multi-tab productivity."
+    ],
+    "cons": [
+      "Young team, uncertain future.",
+      "Fewer extensions than Chrome.",
+      "Less mature ecosystem than Firefox or Chrome."
+    ],
+    "use_cases": [
+      "Organize tabs by project or client.",
+      "Manage multiple web identities simultaneously.",
+      "Navigate between tasks without confusion."
+    ]
+  }
+}

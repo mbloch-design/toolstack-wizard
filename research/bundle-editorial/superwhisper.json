@@ -1,0 +1,93 @@
+{
+  "slug": "superwhisper",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Superwhisper — AI Transcription & Voice-to-Text (site officiel)", "url": "https://superwhisper.com" }
+  ],
+  "facts": {
+    "what": "Application IA de transcription vocale fonctionnant hors ligne pour macOS, Windows et iOS. Convertit voix en texte formaté et l'intègre dans Slack, Gmail, outils de code. Support 100+ langues, modes tonalité adaptative (formel, casual, légal), et transcription réunions.",
+    "what_en": "AI voice transcription app working offline on macOS, Windows, and iOS. Converts speech to formatted text and integrates into Slack, Gmail, coding tools. Supports 100+ languages, adaptive tone modes (formal, casual, legal), and meeting transcription.",
+    "pricing_model": "Freemium avec plan gratuit limité et Pro payant.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit offrant 15 minutes d'enregistrement. Accès au modèle IA de base. Pas d'activité cloud." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (15 minutes d'essai)" },
+      { "name": "Pro", "price": "8,49 EUR/mois ou tarif réduit annuel" },
+      { "name": "Enterprise", "price": "Tarification personnalisée" }
+    ],
+    "key_features": [
+      "Transcription hors ligne (Whisper API OpenAI)",
+      "Support 100+ langues avec traduction anglais",
+      "Vocabulaire personnalisé (noms, abréviations)",
+      "Modes tonalité adaptative (formel, casual, légal, chat)",
+      "Transcription réunions automatique",
+      "Transcription fichiers audio/vidéo",
+      "Garantie remboursement 30 jours"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous dictez beaucoup (Slack, Gmail, code).",
+        "Vous voulez transcription hors ligne.",
+        "Vous travaillez multilingue."
+      ],
+      "avoidIf": [
+        "Vous cherchez solution gratuite illimitée.",
+        "Vous ne dictez jamais.",
+        "Vous préférez taper plutôt que parler."
+      ],
+      "threshold": "Superwhisper s'impose pour dictateurs productifs ; pour usage textuel classique, clavier suffit."
+    },
+    "pros": [
+      "Fonctionne hors ligne, pas de cloud.",
+      "Support 100+ langues.",
+      "Modes tonalité intelligents.",
+      "Intégration Slack, Gmail, éditeurs.",
+      "Remboursement facile 30 jours."
+    ],
+    "cons": [
+      "Plan gratuit très limité (15 min).",
+      "Pro payant pour usage illimité.",
+      "Pas idéal pour très courts memos."
+    ],
+    "use_cases": [
+      "Dicter un message Slack sans taper.",
+      "Transcrire réunion Zoom rapidement.",
+      "Prendre notes vocales en réunion client."
+    ],
+    "relevant_for": ["Consultants", "Managers", "Développeurs multilingues"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You dictate a lot (Slack, Gmail, code).",
+        "You want offline transcription.",
+        "You work multilingually."
+      ],
+      "avoidIf": [
+        "You want unlimited free solution.",
+        "You never dictate.",
+        "You prefer typing over speaking."
+      ],
+      "threshold": "Superwhisper is ideal for productive dictators; for standard text use, keyboard suffices."
+    },
+    "pros": [
+      "Works offline, no cloud needed.",
+      "Supports 100+ languages.",
+      "Smart tone-aware modes.",
+      "Integration with Slack, Gmail, editors.",
+      "Easy 30-day refund."
+    ],
+    "cons": [
+      "Free tier very limited (15 min).",
+      "Pro required for unlimited use.",
+      "Not ideal for very short memos."
+    ],
+    "use_cases": [
+      "Dictate a Slack message without typing.",
+      "Quickly transcribe a Zoom meeting.",
+      "Take voice notes in a client meeting."
+    ]
+  }
+}

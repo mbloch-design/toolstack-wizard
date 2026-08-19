@@ -30,12 +30,6 @@
     "total": 28
   },
   {
-    "category": "project-management",
-    "done": 12,
-    "todo": 18,
-    "total": 30
-  },
-  {
     "category": "hris-payroll",
     "done": 10,
     "todo": 15,
@@ -84,22 +78,10 @@
     "total": 3
   },
   {
-    "category": "erp",
-    "done": 12,
-    "todo": 2,
-    "total": 14
-  },
-  {
     "category": "design-tools",
     "done": 117,
     "todo": 1,
     "total": 118
-  },
-  {
-    "category": "vendor-risk-data",
-    "done": 4,
-    "todo": 1,
-    "total": 5
   },
   {
     "category": "analytics",
@@ -126,9 +108,27 @@
     "total": 169
   },
   {
+    "category": "erp",
+    "done": 14,
+    "todo": 0,
+    "total": 14
+  },
+  {
     "category": "nocode-web",
     "done": 130,
     "todo": 0,
     "total": 130
+  },
+  {
+    "category": "project-management",
+    "done": 29,
+    "todo": 0,
+    "total": 29
+  },
+  {
+    "category": "vendor-risk-data",
+    "done": 5,
+    "todo": 0,
+    "total": 5
   }
 ]

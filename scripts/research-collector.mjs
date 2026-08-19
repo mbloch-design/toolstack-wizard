@@ -39,6 +39,7 @@ import { extractNotion } from "./research-adapters/notion.mjs";
 import { extractLoom } from "./research-adapters/loom.mjs";
 import { extractGoogleWorkspace } from "./research-adapters/google-workspace.mjs";
 import { extractGeneric } from "./research-adapters/generic.mjs";
+import { extractAudionotes, extractVisualcv, extractJenni } from "./research-adapters/recent-tools-pilot.mjs";
 import {
   sourceIdOf, captureIdOf, observedPlanKey, canonicalPlanKey, businessKeyOf,
   valueFingerprintOf, observationIdOf, upsertSource, appendCapture, findCapture,
@@ -50,6 +51,9 @@ import {
 /** Table d'adaptateurs dédiés (hors moteur générique). Import statique : pas d'import()
  *  dynamique à template littéral (illisible pour l'analyse statique des bundlers). */
 const ADAPTERS = {
+  audionotes: extractAudionotes,
+  visualcv: extractVisualcv,
+  jenni: extractJenni,
   wix: extractWix,
   webflow: extractWebflow,
   framer: extractFramer,

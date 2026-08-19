@@ -1,0 +1,91 @@
+{
+  "slug": "buddy-punch",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Buddy Punch — Employee Time Tracking & Scheduling (site officiel)", "url": "https://buddypunch.com" }
+  ],
+  "facts": {
+    "what": "Logiciel de suivi du temps et d'ordonnancement pour équipes horaires en Amérique du Nord. Propose GPS, géofencing, vérification photo, et gestion des pauses conformes aux lois locales.",
+    "what_en": "Time tracking and scheduling software for hourly teams in North America. Offers GPS, geofencing, photo verification, and break management compliant with local labor laws.",
+    "pricing_model": "Abonnement SaaS avec tarification à l'utilisateur.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit offert. Pas de version gratuite permanente ; tarification commencée sur demande." },
+    "plans": [
+      { "name": "Essai gratuit", "price": "Gratuit" },
+      { "name": "Forfait Standard", "price": "Montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Suivi du temps par GPS et géofencing",
+      "Vérification photo pour prévenir les fraudes",
+      "Gestion des pauses conforme à la loi",
+      "Ordonnancement par glisser-déposer",
+      "Intégration QuickBooks, Gusto, ADP",
+      "Notations 4.8/5 (1 600+ avis)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez une équipe horaire avec travailleurs sur le terrain.",
+        "Vous avez besoin de prévention de fraude et de géofencing.",
+        "Vous utilisez QuickBooks ou Gusto pour la paie."
+      ],
+      "avoidIf": [
+        "Vous employez exclusivement du personnel salarié.",
+        "Vous opérez en dehors de l'Amérique du Nord.",
+        "Vous cherchez une solution gratuite ou ultra-légère."
+      ],
+      "threshold": "Buddy Punch s'impose pour les entreprises avec travailleurs horaires mobiles ; pour du personnel salarié classique, un outil plus simple suffira."
+    },
+    "pros": [
+      "Géofencing et GPS pour suivi précis.",
+      "Vérification photo intégrée.",
+      "Gestion des pauses automatisée et légale.",
+      "Excellente intégration payroll (QuickBooks, Gusto).",
+      "Très bien noté (4.8/5)."
+    ],
+    "cons": [
+      "Tarifé par utilisateur, coûteux pour grandes équipes.",
+      "Limité à l'Amérique du Nord.",
+      "Pas de version gratuite permanente."
+    ],
+    "use_cases": [
+      "Suivre la présence d'une équipe de maintenance.",
+      "Gérer l'ordonnancement de serveurs en restaurant.",
+      "Prévenir la fraude temps sur chantier."
+    ],
+    "relevant_for": ["Managers RH", "Entreprises de construction", "Restaurants et services"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage an hourly workforce with field workers.",
+        "You need fraud prevention and geofencing.",
+        "You use QuickBooks or Gusto for payroll."
+      ],
+      "avoidIf": [
+        "You employ only salaried staff.",
+        "You operate outside North America.",
+        "You need a free or ultra-lightweight solution."
+      ],
+      "threshold": "Buddy Punch is essential for businesses with mobile hourly workers; for traditional salaried staff, a simpler tool will suffice."
+    },
+    "pros": [
+      "Geofencing and GPS for precise tracking.",
+      "Photo verification built-in.",
+      "Automated and legally compliant break management.",
+      "Strong payroll integration (QuickBooks, Gusto).",
+      "Excellent ratings (4.8/5)."
+    ],
+    "cons": [
+      "Per-user pricing, costly for large teams.",
+      "Limited to North America.",
+      "No permanent free version."
+    ],
+    "use_cases": [
+      "Track attendance on a maintenance team.",
+      "Manage scheduling for restaurant servers.",
+      "Prevent time fraud on construction sites."
+    ]
+  }
+}

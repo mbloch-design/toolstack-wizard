@@ -1,0 +1,94 @@
+{
+  "slug": "zed",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Zed — High-Performance Code Editor (site officiel)", "url": "https://zed.dev/" }
+  ],
+  "facts": {
+    "what": "Éditeur de code moderne open-source écrit en Rust pour Linux, macOS et Windows. Créé par Nathan Sobo, co-créateur d'Atom. Conçu pour performance maximale avec collaboration en temps réel et fonctionnalités IA.",
+    "what_en": "Modern open-source code editor written in Rust for Linux, macOS, and Windows. Created by Nathan Sobo, co-creator of Atom. Designed for maximum performance with real-time collaboration and AI features.",
+    "pricing_model": "Logiciel libre et open-source, entièrement gratuit.",
+    "free_tier": { "exists": true, "detail": "Complètement gratuit et open-source. Pas de limitation fonctionnelle. Développé par Zed Industries." },
+    "plans": [
+      { "name": "Zed Free", "price": "Gratuit et open-source" }
+    ],
+    "key_features": [
+      "Éditeur ultra-performant en Rust",
+      "Collaboration temps réel (pair programming)",
+      "LSP intégré pour intellisense multilingue",
+      "Terminal intégré",
+      "Thèmes personnalisables",
+      "Support de 50+ langages de programmation",
+      "Extensibilité via plugins",
+      "Open-source sur GitHub"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes développeur cherchant éditeur performant.",
+        "Vous aimez les outils modernes et rustiques.",
+        "Vous voulez collaboration temps réel intégrée."
+      ],
+      "avoidIf": [
+        "Vous êtes IDE-dépendant (Visual Studio, IntelliJ).",
+        "Vous n'avez jamais quitté VS Code.",
+        "Vous avez peur d'expérimenter nouvel éditeur."
+      ],
+      "threshold": "Zed s'impose pour développeurs Rust et modernes ; pour projet complexe, VS Code ou IDE reste sûr."
+    },
+    "pros": [
+      "Entièrement gratuit et open-source.",
+      "Ultra-rapide (architecture Rust).",
+      "Collaboration temps réel native.",
+      "LSP multilingue intégré.",
+      "Terminal intégré.",
+      "Créé par expert (Atom co-créateur)."
+    ],
+    "cons": [
+      "Écosystème plugins moins riche que VS Code.",
+      "Jeune produit (2023-2026).",
+      "Migration depuis VS Code exige adaptation."
+    ],
+    "use_cases": [
+      "Pair programming temps réel sans plugin.",
+      "Développer en Rust performant.",
+      "Édition légère et ultra-rapide."
+    ],
+    "relevant_for": ["Développeurs Rust", "Startups tech", "Paires programmation"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a developer seeking high-performance editor.",
+        "You love modern Rust-based tools.",
+        "You want integrated real-time collaboration."
+      ],
+      "avoidIf": [
+        "You're IDE-dependent (Visual Studio, IntelliJ).",
+        "You've never left VS Code.",
+        "You're afraid to experiment with new editors."
+      ],
+      "threshold": "Zed is ideal for Rust and modern developers; for complex projects, VS Code or IDEs remain safe."
+    },
+    "pros": [
+      "Completely free and open-source.",
+      "Ultra-fast (Rust architecture).",
+      "Native real-time collaboration.",
+      "Integrated multilingual LSP.",
+      "Built-in terminal.",
+      "Created by expert (Atom co-creator)."
+    ],
+    "cons": [
+      "Plugin ecosystem less rich than VS Code.",
+      "Young product (2023-2026).",
+      "Migration from VS Code requires adaptation."
+    ],
+    "use_cases": [
+      "Real-time pair programming without plugins.",
+      "Develop in performant Rust.",
+      "Lightning-fast and lightweight editing."
+    ]
+  }
+}
