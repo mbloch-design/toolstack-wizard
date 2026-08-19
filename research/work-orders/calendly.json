@@ -1,0 +1,75 @@
+{
+  "captures": [
+    {
+      "capture_id": "cap:62d63a0d85cb3b7d792b090ada2e79eed68db599802faa570290d0135121ae9d",
+      "content_hash": "sha256:b2f921ca2a9f5529a4a92eeb85886e025470898dc50bc4658b3a06a9e534e636",
+      "source_url": "https://calendly.com/pricing"
+    },
+    {
+      "capture_id": "cap:e5c34443b5e92c359f29f518add2f4fc74c3dd3c9b018243bf4120d538300996",
+      "content_hash": "sha256:4bc82f85a687d6c66790e6962805f8251fb0f6ad0b4af5c806f6d40635ac216f",
+      "source_url": "https://calendly.com/pricing"
+    }
+  ],
+  "claims": [],
+  "conflicts": [],
+  "human_decisions": [
+    "unknown: Free: porté par le claim pricing.free_plan_exists, jamais par une observation 0 USD",
+    "unknown: Enterprise: plancher « Starting at $15,000/year » sur devis (contact sales) — non observable (éditorial)",
+    "unknown: tax_inclusion inconnu: la grille n'établit ni HT ni TTC"
+  ],
+  "observations": [
+    {
+      "billing_commitment": "annual_prepaid",
+      "content_hash": "sha256:b2f921ca2a9f5529a4a92eeb85886e025470898dc50bc4658b3a06a9e534e636",
+      "market_context": "global_usd_fallback",
+      "native_amount": 10,
+      "native_currency": "USD",
+      "plan_key": "standard",
+      "pricing_unit": "seat",
+      "status": "observed"
+    },
+    {
+      "billing_commitment": "annual_prepaid",
+      "content_hash": "sha256:b2f921ca2a9f5529a4a92eeb85886e025470898dc50bc4658b3a06a9e534e636",
+      "market_context": "global_usd_fallback",
+      "native_amount": 16,
+      "native_currency": "USD",
+      "plan_key": "teams",
+      "pricing_unit": "seat",
+      "status": "observed"
+    }
+  ],
+  "profile": {
+    "adapter": "calendly",
+    "comparePlanKey": "standard",
+    "freePlanKey": "free",
+    "locale": "fr-FR",
+    "marketContext": "global_usd_fallback",
+    "openSource": false,
+    "planOrder": [
+      "free",
+      "standard",
+      "teams"
+    ],
+    "pricing_url": "https://calendly.com/pricing"
+  },
+  "relations_candidates": [
+    "scheduling",
+    "meetings",
+    "productivity",
+    "sales",
+    "recruiting",
+    "consulting",
+    "support"
+  ],
+  "slug": "calendly",
+  "source": {
+    "is_official": true,
+    "source_id": "src:71fe4a44c927a3e49c5f57f0f0e659bd1405c2edd2c2ef430e2ad679f008526c",
+    "tier": 1,
+    "url": "https://calendly.com/pricing"
+  },
+  "tool_id": "calendly",
+  "validator_failures": []
+}

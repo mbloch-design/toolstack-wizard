@@ -1,0 +1,238 @@
+{
+  "editorial_drafts": {
+    "author": "Claude Code",
+    "content_version": 1,
+    "status": "draft",
+    "generated_on": "2026-07-22",
+    "pricing_facts_policy": "Aucun montant, devise, engagement ou quota tarifaire dans la rédaction : les faits de prix restent exclusivement dans collector.observations. pricing_guidance ne porte que de la présentation (modèle, unité, cautions), sans fait tarifaire faisant autorité.",
+    "facts_basis": [],
+    "fr": {
+      "ai_angle": {
+        "aiTools": [
+          "openai"
+        ],
+        "augmentFr": "L'IA de Loom augmente l'enregistrement en le rendant exploitable : transcription automatique, résumés, titres et chapitres générés, découpage des silences. La vidéo asynchrone devient un document consultable et partageable, pas seulement un fichier à regarder de bout en bout.",
+        "idealForFr": "Équipes qui produisent beaucoup de vidéos courtes (démos, revues, onboarding) et veulent en tirer des résumés et des transcriptions sans montage manuel.",
+        "replaceFr": "L'IA ne remplace pas Loom : l'outil reste la couche de capture d'écran et de caméra, de partage et de commentaires. L'IA se greffe dessus pour transformer l'enregistrement brut en contenu structuré et cherchable.",
+        "stance": "augmente"
+      },
+      "cons": [
+        "Modèle par siège : le coût croît avec le nombre de personnes qui créent des vidéos, pas avec l'usage réel.",
+        "Le plan gratuit plafonne le nombre de vidéos et la durée d'enregistrement, ce qui limite vite un usage professionnel régulier.",
+        "Les fonctions d'IA les plus abouties relèvent d'une offre distincte, en supplément des plans payants standards.",
+        "Outil centré sur la vidéo asynchrone : peu pertinent pour qui a besoin de visioconférence temps réel ou d'édition vidéo poussée."
+      ],
+      "covers": [
+        "async-video",
+        "screen-recording",
+        "team-communication"
+      ],
+      "functional_needs": [
+        "screen-recording",
+        "async-communication",
+        "video-messaging"
+      ],
+      "long_description": "Loom est un outil d'enregistrement vidéo asynchrone : il capture votre écran, votre caméra et votre voix, puis génère un lien partageable immédiatement, sans montage ni téléchargement de fichier. L'usage type est de remplacer une réunion, un long e-mail ou une explication écrite par une vidéo courte que le destinataire regarde quand il veut.\n\nSon terrain de jeu est la communication d'équipe et le travail à distance : démonstrations produit, revues de code ou de design, retours clients, onboarding, tutoriels internes. Les destinataires n'ont pas besoin de compte pour regarder, et peuvent réagir par commentaires horodatés ou emojis directement sur la vidéo, ce qui garde l'échange attaché au contenu.\n\nLoom se distingue moins par la captation — beaucoup d'outils enregistrent un écran — que par la chaîne complète : capture en un clic, hébergement, partage, suivi des vues et couche d'IA (transcription, résumés, chapitres) qui rend la vidéo consultable comme un document. C'est un outil grand public dans sa prise en main, mais pensé pour un usage d'équipe : administration, espaces partagés et contrôle des accès apparaissent sur les offres supérieures.",
+      "personas": [
+        "remote-team-lead",
+        "product-manager",
+        "customer-success"
+      ],
+      "pricing_guidance": {
+        "cautions": [
+          "Grille affichée en dollars sans localisation observée : contexte marché soumis à revue humaine (repli USD mondial déclaré).",
+          "Un essai gratuit n'est pas un plan gratuit : le plan gratuit est durable mais plafonné, l'essai concerne l'offre enrichie d'IA.",
+          "Tarification par siège : projeter le coût en fonction du nombre de créateurs de vidéos, pas du volume regardé."
+        ],
+        "deployment_note": "Service SaaS hébergé (application de bureau, extension navigateur et mobile) ; pas d'auto-hébergement. Les fonctions d'administration, d'espaces partagés et de contrôle des accès se débloquent sur les offres payantes et Enterprise.",
+        "free_plan_card": "Plan gratuit durable, mais plafonné en nombre de vidéos et en durée d'enregistrement — suffisant pour tester ou un usage ponctuel, pas pour une production régulière.",
+        "location_sensitive": true,
+        "plan_details": {
+          "free": {
+            "deployment": "SaaS hébergé (bureau, extension, mobile)",
+            "note": "Plan gratuit durable avec quotas réduits sur le nombre de vidéos et la durée d'enregistrement.",
+            "quota": "Nombre de vidéos et durée d'enregistrement plafonnés"
+          },
+          "business": {
+            "deployment": "SaaS hébergé, facturé par siège",
+            "quota": "Vidéos et durée d'enregistrement sans plafond ; administration et espaces d'équipe",
+            "summary": "Pour équipes en usage régulier : levée des plafonds, gestion des membres et des accès."
+          },
+          "business_ai": {
+            "deployment": "SaaS hébergé, facturé par siège",
+            "quota": "Base Business + couche d'IA (transcription, résumés, chapitres automatiques)",
+            "summary": "Offre Business enrichie des fonctions d'IA ; expose un essai gratuit limité dans le temps.",
+            "trial_not_free_plan": true
+          },
+          "enterprise": {
+            "deployment": "SaaS hébergé, facturé par siège",
+            "quota": "Membres et vidéos étendus ; sécurité et gouvernance avancées",
+            "summary": "Pour grandes organisations : sécurité, conformité et contrôle avancés. Tarif sur devis."
+          }
+        },
+        "price_reliability": "official_verified",
+        "pricing_model": "Tarification par utilisateur/siège (seat) sur les plans payants, avec engagement mensuel ou annuel (l'annuel affiche une économie). Un plan gratuit durable mais plafonné existe ; les fonctions d'IA relèvent d'une offre distincte. Enterprise sur devis.",
+        "usage_sensitive": false
+      },
+      "pros": [
+        "Capture écran + caméra + voix en un clic, avec un lien partageable immédiat, sans montage ni fichier à envoyer.",
+        "Les destinataires regardent sans compte et réagissent par commentaires horodatés : l'échange reste collé à la vidéo.",
+        "Couche d'IA qui transforme l'enregistrement en document consultable (transcription, résumés, chapitres).",
+        "Prise en main immédiate, y compris pour des profils non techniques, tout en offrant une administration d'équipe."
+      ],
+      "relevant_for": [
+        "product",
+        "engineering",
+        "customer-success",
+        "marketing"
+      ],
+      "seo": {
+        "aiAngle": {
+          "stance": "augmente"
+        },
+        "metaDescription": "Loom : fiche ToolTrim. Enregistrement vidéo asynchrone (écran, caméra, voix) pour équipes distribuées — plan gratuit plafonné, tarification par siège et couche d'IA de transcription."
+      },
+      "short_description": "Outil d'enregistrement vidéo asynchrone (écran, caméra, voix) qui génère un lien partageable instantané, pensé pour la communication d'équipe et le travail à distance.",
+      "solo_relevance": "low",
+      "team_relevance": "high",
+      "use_cases": [
+        "Remplacer une réunion ou un long e-mail par une vidéo courte que chacun regarde à son rythme.",
+        "Enregistrer démonstrations produit, revues de design ou de code avec retours horodatés.",
+        "Standardiser onboarding et tutoriels internes sous forme de bibliothèque vidéo consultable.",
+        "Adresser des retours clients ou du support visuel sans planifier d'appel."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous cherchez de la visioconférence temps réel : Loom est asynchrone, pas un outil de réunion en direct.",
+          "Vous travaillez seul et n'avez qu'un besoin ponctuel : un enregistreur d'écran gratuit peut suffire.",
+          "Vous avez besoin d'édition vidéo avancée ou de contrôle total de l'hébergement (pas d'auto-hébergement)."
+        ],
+        "keepIf": [
+          "Votre équipe est distribuée ou asynchrone et gagne à remplacer réunions et longs messages par de la vidéo courte.",
+          "Vous produisez régulièrement démos, tutoriels ou revues et voulez transcription, résumés et suivi des vues.",
+          "Vous voulez que les destinataires regardent sans compte et commentent directement sur la vidéo."
+        ],
+        "threshold": "Loom devient pertinent quand le volume de vidéos courtes partagées en équipe justifie une chaîne intégrée (capture, hébergement, partage, IA) et un coût par siège ; pour un besoin isolé et gratuit, un simple enregistreur d'écran reste préférable."
+      },
+      "verticals": [
+        "remote-work",
+        "saas",
+        "team-collaboration"
+      ]
+    },
+    "en": {
+      "ai_angle": {
+        "aiTools": [
+          "openai"
+        ],
+        "augmentEn": "Loom's AI augments recording by making it usable: automatic transcription, summaries, generated titles and chapters, silence trimming. Async video becomes a searchable, shareable document rather than a file you must watch end to end.",
+        "idealForEn": "Teams that produce many short videos (demos, reviews, onboarding) and want summaries and transcripts out of them without manual editing.",
+        "replaceEn": "AI does not replace Loom: the tool remains the capture layer for screen and camera, plus sharing and comments. AI layers on top to turn raw recordings into structured, searchable content.",
+        "stance": "augmente"
+      },
+      "cons": [
+        "Per-seat model: cost grows with the number of people creating videos, not with actual usage.",
+        "The free plan caps the number of videos and the recording length, which quickly limits steady professional use.",
+        "The most complete AI features belong to a separate offering, on top of the standard paid plans.",
+        "Focused on async video: little use for real-time video conferencing or heavy video editing."
+      ],
+      "covers": [
+        "async-video",
+        "screen-recording",
+        "team-communication"
+      ],
+      "functional_needs": [
+        "screen-recording",
+        "async-communication",
+        "video-messaging"
+      ],
+      "long_description": "Loom is an asynchronous video recording tool: it captures your screen, camera and voice, then produces a shareable link instantly, with no editing or file to download. The typical use is to replace a meeting, a long email or a written explanation with a short video the recipient watches whenever they want.\n\nIts home turf is team communication and remote work: product demos, code or design reviews, customer feedback, onboarding, internal tutorials. Recipients don't need an account to watch, and can respond with timestamped comments or emoji reactions directly on the video, keeping the exchange attached to the content.\n\nLoom stands out less for the capture itself — many tools record a screen — than for the full chain: one-click capture, hosting, sharing, view tracking and an AI layer (transcription, summaries, chapters) that makes video browsable like a document. It is consumer-grade to pick up, but built for team use: administration, shared spaces and access control appear on the higher tiers.",
+      "personas": [
+        "remote-team-lead",
+        "product-manager",
+        "customer-success"
+      ],
+      "pricing_guidance": {
+        "cautions": [
+          "Pricing shown in dollars with no observed localization: market context pending human review (global USD fallback declared).",
+          "A free trial is not a free plan: the free plan is durable but capped, while the trial concerns the AI-enriched offering.",
+          "Per-seat pricing: project cost from the number of video creators, not from the volume watched."
+        ],
+        "deployment_note": "Hosted SaaS (desktop app, browser extension and mobile); no self-hosting. Administration, shared spaces and access control unlock on the paid and Enterprise tiers.",
+        "free_plan_card": "Durable free plan, but capped on number of videos and recording length — enough to try it out or for occasional use, not for steady production.",
+        "location_sensitive": true,
+        "plan_details": {
+          "free": {
+            "deployment": "Hosted SaaS (desktop, extension, mobile)",
+            "note": "Durable free plan with reduced quotas on number of videos and recording length.",
+            "quota": "Capped number of videos and recording length"
+          },
+          "business": {
+            "deployment": "Hosted SaaS, billed per seat",
+            "quota": "Uncapped videos and recording length; administration and team spaces",
+            "summary": "For teams in regular use: caps lifted, member and access management."
+          },
+          "business_ai": {
+            "deployment": "Hosted SaaS, billed per seat",
+            "quota": "Business base plus an AI layer (transcription, summaries, automatic chapters)",
+            "summary": "The Business offering enriched with AI features; exposes a time-limited free trial.",
+            "trial_not_free_plan": true
+          },
+          "enterprise": {
+            "deployment": "Hosted SaaS, billed per seat",
+            "quota": "Extended members and videos; advanced security and governance",
+            "summary": "For large organizations: advanced security, compliance and control. Quote-based pricing."
+          }
+        },
+        "price_reliability": "official_verified",
+        "pricing_model": "Per-user/seat pricing on the paid plans, with monthly or annual commitment (annual shows a saving). A durable but capped free plan exists; AI features belong to a separate offering. Enterprise is quote-based.",
+        "usage_sensitive": false
+      },
+      "pros": [
+        "One-click screen + camera + voice capture, with an instantly shareable link, no editing or file to send.",
+        "Recipients watch without an account and react with timestamped comments: the exchange stays glued to the video.",
+        "AI layer that turns a recording into a browsable document (transcription, summaries, chapters).",
+        "Immediate to pick up, including for non-technical users, while still offering team administration."
+      ],
+      "relevant_for": [
+        "product",
+        "engineering",
+        "customer-success",
+        "marketing"
+      ],
+      "seo": {
+        "aiAngle": {
+          "stance": "augmente"
+        },
+        "metaDescription": "Loom: ToolTrim profile. Asynchronous video recording (screen, camera, voice) for distributed teams — capped free plan, per-seat pricing and an AI transcription layer."
+      },
+      "short_description": "Asynchronous video recording tool (screen, camera, voice) that generates an instant shareable link, built for team communication and remote work.",
+      "solo_relevance": "low",
+      "team_relevance": "high",
+      "use_cases": [
+        "Replace a meeting or a long email with a short video everyone watches at their own pace.",
+        "Record product demos, design or code reviews with timestamped feedback.",
+        "Standardize onboarding and internal tutorials as a browsable video library.",
+        "Send customer feedback or visual support without scheduling a call."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You want real-time video conferencing: Loom is asynchronous, not a live meeting tool.",
+          "You work solo with only occasional needs: a free screen recorder may be enough.",
+          "You need advanced video editing or full hosting control (no self-hosting)."
+        ],
+        "keepIf": [
+          "Your team is distributed or async and benefits from replacing meetings and long messages with short video.",
+          "You regularly produce demos, tutorials or reviews and want transcription, summaries and view tracking.",
+          "You want recipients to watch without an account and comment directly on the video."
+        ],
+        "threshold": "Loom becomes worthwhile when the volume of short videos shared across a team justifies an integrated chain (capture, hosting, sharing, AI) and a per-seat cost; for an isolated, free need, a plain screen recorder is preferable."
+      },
+      "verticals": [
+        "remote-work",
+        "saas",
+        "team-collaboration"
+      ]
+    }
+  }
+}

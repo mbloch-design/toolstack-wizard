@@ -1,0 +1,642 @@
+{
+  "claims": [],
+  "collector": {
+    "attestation_readiness": [
+      {
+        "missing": [],
+        "plan_key": "plus",
+        "ready": true
+      },
+      {
+        "missing": [],
+        "plan_key": "pro",
+        "ready": true
+      }
+    ],
+    "claims": [
+      {
+        "capture_id": "cap:11efb540378eb56f9248fcef71216708786841f02d77efb3e0c4020d1c541192",
+        "claim_id": "clm:d3dc8dbb767e8917ce3b3e0f592824665449f2b513d0fdcdc44d3341fc26529f",
+        "confidence": "high",
+        "evidence": "dit card required, cancel anytime ✨ Save 60% Monthly Annual Free $0 /month Start for free 10 AI Autocompletes/ day 10 PDF uploads 3 AI Edits 5 AI Chat messages 3 Reviews 10,000+ citation styles Unlimited citations Editor",
+        "evidence_captures": [
+          "cap:11efb540378eb56f9248fcef71216708786841f02d77efb3e0c4020d1c541192"
+        ],
+        "first_observed_on": "2026-08-18",
+        "key": "pricing.free_plan_exists",
+        "last_confirmed_on": "2026-08-18",
+        "note": "Fait établi par une source officielle DISTINCTE de la page tarifaire ; rien n'est inféré.",
+        "observed_on": "2026-08-18",
+        "proof_pattern": "Free[\\s\\S]{0,80}\\$0|Compare Free, Plus, and Pro plans",
+        "sourceTier": 1,
+        "source_id": "src:0ae4d0c1f13f509abc2f708c9b72a8019543c5858c7ca9efc9979c8a105dc7ff",
+        "source_url": "https://jenni.ai/pricing",
+        "status": "observed",
+        "value_native": true,
+        "volatility": "low"
+      },
+      {
+        "capture_id": "cap:85ca7789cdc9a90c205989a2d2cc88a5b1643980edd4ed0622d5bae9ed2fe38e",
+        "claim_id": "clm:ef7939f2a2c3ccf7cd06d791d1f5b1778bf63702984809b4f56730052f38dd32",
+        "confidence": "high",
+        "evidence": "ns and Billing Compare Free, Plus, and Pro plans and manage your subscription. FAQ ↓ Jenni offers three plans (Free, Plus, and Pro), each with different usage limits and feature access. You can view your current plan, up",
+        "evidence_captures": [
+          "cap:85ca7789cdc9a90c205989a2d2cc88a5b1643980edd4ed0622d5bae9ed2fe38e"
+        ],
+        "first_observed_on": "2026-08-18",
+        "key": "pricing.unit",
+        "last_confirmed_on": "2026-08-18",
+        "note": "Fait établi par une source officielle DISTINCTE de la page tarifaire ; rien n'est inféré.",
+        "observed_on": "2026-08-18",
+        "proof_pattern": "Viewing Your Current Plan|Open your profile menu|your subscription",
+        "sourceTier": 1,
+        "source_id": "src:d928c17f4b38ed7f1f3508fb19b941292e3e34a2d6b067d7a1496bdd14f9bbcb",
+        "source_url": "https://docs.jenni.ai/docs/account/plans-and-billing/",
+        "status": "observed",
+        "value_native": "account",
+        "volatility": "low"
+      },
+      {
+        "capture_id": "cap:11efb540378eb56f9248fcef71216708786841f02d77efb3e0c4020d1c541192",
+        "claim_id": "clm:afcab5c42bb7b306a163a4e95cd0c9a8aadbfb00f9bcef53984e94a84c143318",
+        "confidence": "high",
+        "evidence": "pricing No credit card required, cancel anytime ✨ Save 60% Monthly Annual Free $0 /month Start for free 10 AI Autocompletes/ day 10 PDF uploads 3 AI Edits 5 AI Chat messages 3 Reviews 10,000+ citation styles Unlimited c",
+        "evidence_captures": [
+          "cap:11efb540378eb56f9248fcef71216708786841f02d77efb3e0c4020d1c541192"
+        ],
+        "first_observed_on": "2026-08-18",
+        "key": "pricing.billing_commitment",
+        "last_confirmed_on": "2026-08-18",
+        "note": "Fait établi par une source officielle DISTINCTE de la page tarifaire ; rien n'est inféré.",
+        "observed_on": "2026-08-18",
+        "proof_pattern": "Monthly[\\s\\S]{0,80}Annual|/month",
+        "sourceTier": 1,
+        "source_id": "src:0ae4d0c1f13f509abc2f708c9b72a8019543c5858c7ca9efc9979c8a105dc7ff",
+        "source_url": "https://jenni.ai/pricing",
+        "status": "observed",
+        "value_native": "monthly",
+        "volatility": "low"
+      }
+    ],
+    "conflicts": [],
+    "context_attestations": [
+      {
+        "accessed_at": "2026-08-18T13:58:23.293Z",
+        "attestation_id": "sha256:ff83303f242e5161eb9a2784f4dfdd714146352e572c70f47f5c3db74ada0f95",
+        "content_hash": "sha256:c522be7e3ae0bdf87559789f1dab324ca571dccf895e5f4fd9cfb7888232cdfc",
+        "content_language": null,
+        "currency_symbols_seen": [],
+        "egress_country": null,
+        "egress_measured_from": null,
+        "egress_source": null,
+        "final_url": "https://jenni.ai/pricing",
+        "html_lang": null,
+        "http_status": 200,
+        "locale_requested": null,
+        "navigator_language": null,
+        "rendered_by": "static",
+        "resolved_locale": null,
+        "run_id": "2233fba4-9a7a-4c6a-b4c8-e1613b003fb6",
+        "schema": "context_attestation/1",
+        "slug": "jenni",
+        "source_url": "https://jenni.ai/pricing",
+        "timezone": null,
+        "visible_markers": []
+      }
+    ],
+    "extraction_unknowns": [
+      "Free est porté par le claim pricing.free_plan_exists, sans observation de prix",
+      "tax_inclusion inconnu",
+      "tarification locale disponible uniquement dans l'application"
+    ],
+    "last_checked_at": "2026-08-18T13:58:23.293Z",
+    "last_context_evidence": {
+      "adapter": "jenni",
+      "adapter_version": "1.0.0",
+      "at": "2026-08-18T13:58:23.293Z",
+      "browser_context": null,
+      "market_context": "global_usd_fallback",
+      "market_context_candidate": null,
+      "market_context_source": "declared_in_registry",
+      "rendered_by": "static",
+      "run_id": "2233fba4-9a7a-4c6a-b4c8-e1613b003fb6"
+    },
+    "locale_requested": "fr-FR",
+    "market_requested": "FR",
+    "mode": "RESEARCH_ONLY",
+    "notes": [
+      "Collecteur RESEARCH_ONLY v0.4.0 : aucune valeur `approved` ne peut être produite ici.",
+      "Sources unifiées (pricing + documentaires) dans collector.sources[] ; captures append-only.",
+      "Observations append-only : aucun écrasement ; valeur différente => conflit + superseded_candidate.",
+      "Le HTML/texte rendu vit uniquement dans .cache/tooltrim/research/ (git-ignored)."
+    ],
+    "observations": [
+      {
+        "billing_commitment": "monthly",
+        "billing_commitment_evidence": {
+          "capture_id": "cap:11efb540378eb56f9248fcef71216708786841f02d77efb3e0c4020d1c541192",
+          "claim_key": "pricing.billing_commitment",
+          "content_hash": "sha256:4d5ba71ad0a8f3f9e2cb01518ece31f53a35c506eb49c477df2ca2ba91d13d8b",
+          "excerpt": "pricing No credit card required, cancel anytime ✨ Save 60% Monthly Annual Free $0 /month Start for free 10 AI Autocompletes/ day 10 PDF uploads 3 AI Edits 5 AI Chat messages 3 Reviews 10,000+ citation styles Unlimited c",
+          "source_url": "https://jenni.ai/pricing"
+        },
+        "billing_period": "monthly",
+        "business_key": "jenni|plus|·|global_usd_fallback|monthly",
+        "capture_ref": "cap:b3170f5047d30c303da2ca04ee93c39b2ad3a658d125a09dc2197e4c0e21588d",
+        "confidence": "medium",
+        "content_hash": "sha256:c522be7e3ae0bdf87559789f1dab324ca571dccf895e5f4fd9cfb7888232cdfc",
+        "context_key": "global_usd_fallback",
+        "evidence": [
+          {
+            "capture_id": "cap:b3170f5047d30c303da2ca04ee93c39b2ad3a658d125a09dc2197e4c0e21588d",
+            "observed_on": "2026-08-18",
+            "run_id": "2233fba4-9a7a-4c6a-b4c8-e1613b003fb6"
+          }
+        ],
+        "evidence_excerpt": "Plus $12 /month",
+        "evidence_selector": "pricing-card:Plus",
+        "feature_highlights": [],
+        "first_observed_on": "2026-08-18",
+        "key_schema": 2,
+        "last_confirmed_on": "2026-08-18",
+        "market_context": "global_usd_fallback",
+        "market_context_candidate": null,
+        "market_context_source": "declared_in_registry",
+        "market_evidence": {
+          "html_lang_attr": "en",
+          "registry_justification": "La grille officielle précise que les prix publics sont en USD et que la devise locale n'est disponible que dans l'application. Décision humaine : contexte mondial USD pour la grille publique."
+        },
+        "native_amount": 12,
+        "native_currency": "USD",
+        "observation_id": "obs:1e2b08d9656183562f7a23652201c9b2571f0c7a3c220ff9167517d1f4f8696e",
+        "observed_locale": null,
+        "observed_market": null,
+        "observed_on": "2026-08-18",
+        "observed_plan_key": "plus",
+        "plan_key": "plus",
+        "plan_key_source": "registry.plan_key_mapping",
+        "plan_name_localized": "Plus",
+        "plan_summary": null,
+        "pricing_unit": "account",
+        "pricing_unit_evidence": {
+          "capture_id": "cap:85ca7789cdc9a90c205989a2d2cc88a5b1643980edd4ed0622d5bae9ed2fe38e",
+          "claim_key": "pricing.unit",
+          "content_hash": "sha256:5afe7070a339400d03d57c4543806ba44536fbda6bd4a7b0e15f611497a2e71b",
+          "excerpt": "ns and Billing Compare Free, Plus, and Pro plans and manage your subscription. FAQ ↓ Jenni offers three plans (Free, Plus, and Pro), each with different usage limits and feature access. You can view your current plan, up",
+          "source_url": "https://docs.jenni.ai/docs/account/plans-and-billing/"
+        },
+        "seat_type": null,
+        "source_url": "https://jenni.ai/pricing",
+        "status": "observed",
+        "tax_evidence": null,
+        "tax_inclusion": null,
+        "tool": "jenni",
+        "value_fingerprint": "12|USD|monthly|account|·"
+      },
+      {
+        "billing_commitment": "monthly",
+        "billing_commitment_evidence": {
+          "capture_id": "cap:11efb540378eb56f9248fcef71216708786841f02d77efb3e0c4020d1c541192",
+          "claim_key": "pricing.billing_commitment",
+          "content_hash": "sha256:4d5ba71ad0a8f3f9e2cb01518ece31f53a35c506eb49c477df2ca2ba91d13d8b",
+          "excerpt": "pricing No credit card required, cancel anytime ✨ Save 60% Monthly Annual Free $0 /month Start for free 10 AI Autocompletes/ day 10 PDF uploads 3 AI Edits 5 AI Chat messages 3 Reviews 10,000+ citation styles Unlimited c",
+          "source_url": "https://jenni.ai/pricing"
+        },
+        "billing_period": "monthly",
+        "business_key": "jenni|pro|·|global_usd_fallback|monthly",
+        "capture_ref": "cap:b3170f5047d30c303da2ca04ee93c39b2ad3a658d125a09dc2197e4c0e21588d",
+        "confidence": "medium",
+        "content_hash": "sha256:c522be7e3ae0bdf87559789f1dab324ca571dccf895e5f4fd9cfb7888232cdfc",
+        "context_key": "global_usd_fallback",
+        "evidence": [
+          {
+            "capture_id": "cap:b3170f5047d30c303da2ca04ee93c39b2ad3a658d125a09dc2197e4c0e21588d",
+            "observed_on": "2026-08-18",
+            "run_id": "2233fba4-9a7a-4c6a-b4c8-e1613b003fb6"
+          }
+        ],
+        "evidence_excerpt": "Pro $29 /month",
+        "evidence_selector": "pricing-card:Pro",
+        "feature_highlights": [],
+        "first_observed_on": "2026-08-18",
+        "key_schema": 2,
+        "last_confirmed_on": "2026-08-18",
+        "market_context": "global_usd_fallback",
+        "market_context_candidate": null,
+        "market_context_source": "declared_in_registry",
+        "market_evidence": {
+          "html_lang_attr": "en",
+          "registry_justification": "La grille officielle précise que les prix publics sont en USD et que la devise locale n'est disponible que dans l'application. Décision humaine : contexte mondial USD pour la grille publique."
+        },
+        "native_amount": 29,
+        "native_currency": "USD",
+        "observation_id": "obs:4c14279d009e706ff34dbbe913ec7b55d25ed9b86c11baf19dfbdfdd152c494d",
+        "observed_locale": null,
+        "observed_market": null,
+        "observed_on": "2026-08-18",
+        "observed_plan_key": "pro",
+        "plan_key": "pro",
+        "plan_key_source": "registry.plan_key_mapping",
+        "plan_name_localized": "Pro",
+        "plan_summary": null,
+        "pricing_unit": "account",
+        "pricing_unit_evidence": {
+          "capture_id": "cap:85ca7789cdc9a90c205989a2d2cc88a5b1643980edd4ed0622d5bae9ed2fe38e",
+          "claim_key": "pricing.unit",
+          "content_hash": "sha256:5afe7070a339400d03d57c4543806ba44536fbda6bd4a7b0e15f611497a2e71b",
+          "excerpt": "ns and Billing Compare Free, Plus, and Pro plans and manage your subscription. FAQ ↓ Jenni offers three plans (Free, Plus, and Pro), each with different usage limits and feature access. You can view your current plan, up",
+          "source_url": "https://docs.jenni.ai/docs/account/plans-and-billing/"
+        },
+        "seat_type": null,
+        "source_url": "https://jenni.ai/pricing",
+        "status": "observed",
+        "tax_evidence": null,
+        "tax_inclusion": null,
+        "tool": "jenni",
+        "value_fingerprint": "29|USD|monthly|account|·"
+      }
+    ],
+    "page_signals": {
+      "adapter_page_proof": {
+        "free_found": true,
+        "plus_found": true,
+        "pro_found": true
+      },
+      "billing_commitment": null,
+      "commitment_ambiguous": false,
+      "pricing_unit": null,
+      "seat_type": null,
+      "signals_found": {
+        "annual_billed_weak": false,
+        "annual_prepaid_proof": false,
+        "monthly": false
+      },
+      "tax_inclusion": "unknown"
+    },
+    "pre_eligibility": [
+      {
+        "applied_attestation_id": null,
+        "blockers": [],
+        "effective_market_context": "global_usd_fallback",
+        "effective_observed_locale": null,
+        "effective_observed_market": null,
+        "eligible": true,
+        "plan_key": "plus",
+        "plan_name_localized": "Plus",
+        "resolution": "proven_or_declared"
+      },
+      {
+        "applied_attestation_id": null,
+        "blockers": [],
+        "effective_market_context": "global_usd_fallback",
+        "effective_observed_locale": null,
+        "effective_observed_market": null,
+        "eligible": true,
+        "plan_key": "pro",
+        "plan_name_localized": "Pro",
+        "resolution": "proven_or_declared"
+      }
+    ],
+    "review_status": "needs_review",
+    "runs": [
+      {
+        "at": "2026-08-18T13:54:47.898Z",
+        "metrics": {
+          "attestations_created": 0,
+          "claims_confirmed": 0,
+          "claims_created": 0,
+          "claims_extracted": 0,
+          "claims_unchanged": 0,
+          "conflicts_opened": 0,
+          "doc_claims_confirmed": 0,
+          "doc_claims_created": 0,
+          "doc_claims_extracted": 0,
+          "doc_claims_unchanged": 0,
+          "versions_created": 0
+        },
+        "network_checked": true,
+        "run_id": "7a5b20e2-e5ca-4172-8fa6-dbc05624b7e8"
+      },
+      {
+        "at": "2026-08-18T13:55:31.187Z",
+        "metrics": {
+          "attestations_created": 1,
+          "claims_confirmed": 0,
+          "claims_created": 0,
+          "claims_extracted": 0,
+          "claims_unchanged": 0,
+          "conflicts_opened": 0,
+          "doc_claims_confirmed": 0,
+          "doc_claims_created": 3,
+          "doc_claims_extracted": 3,
+          "doc_claims_unchanged": 0,
+          "versions_created": 3
+        },
+        "network_checked": true,
+        "run_id": "64bbde45-e5fd-48a9-9c66-05a63b12d52d"
+      },
+      {
+        "at": "2026-08-18T13:57:47.211Z",
+        "metrics": {
+          "attestations_created": 0,
+          "claims_confirmed": 0,
+          "claims_created": 0,
+          "claims_extracted": 0,
+          "claims_unchanged": 0,
+          "conflicts_opened": 0,
+          "doc_claims_confirmed": 0,
+          "doc_claims_created": 0,
+          "doc_claims_extracted": 0,
+          "doc_claims_unchanged": 0,
+          "versions_created": 0
+        },
+        "network_checked": false,
+        "run_id": "c855d1e9-4e2b-4d6a-b8fa-9dcf561a85cb"
+      },
+      {
+        "at": "2026-08-18T13:58:23.293Z",
+        "metrics": {
+          "attestations_created": 1,
+          "claims_confirmed": 0,
+          "claims_created": 2,
+          "claims_extracted": 2,
+          "claims_unchanged": 0,
+          "conflicts_opened": 0,
+          "doc_claims_confirmed": 0,
+          "doc_claims_created": 3,
+          "doc_claims_extracted": 3,
+          "doc_claims_unchanged": 0,
+          "versions_created": 3
+        },
+        "network_checked": true,
+        "run_id": "2233fba4-9a7a-4c6a-b4c8-e1613b003fb6"
+      }
+    ],
+    "sources": [
+      {
+        "captures": [
+          {
+            "accessed_at": "2026-08-18T13:58:23.293Z",
+            "adapter": "jenni",
+            "adapter_version": "1.0.0",
+            "browser_context": null,
+            "capture_id": "cap:b3170f5047d30c303da2ca04ee93c39b2ad3a658d125a09dc2197e4c0e21588d",
+            "content_hash": "sha256:c522be7e3ae0bdf87559789f1dab324ca571dccf895e5f4fd9cfb7888232cdfc",
+            "content_hash_scope": "adapter_semantic_facts",
+            "http_status": 200,
+            "is_accessible": true,
+            "locale_evidence": {
+              "html_lang_attr": "en"
+            },
+            "locale_proven": false,
+            "market_context": "global_usd_fallback",
+            "market_context_candidate": null,
+            "market_context_source": "declared_in_registry",
+            "observed_locale": null,
+            "observed_market": null,
+            "rendered_by": "static",
+            "text_len": 12792,
+            "version": 1
+          },
+          {
+            "accessed_at": "2026-08-18T13:58:25.358Z",
+            "capture_id": "cap:11efb540378eb56f9248fcef71216708786841f02d77efb3e0c4020d1c541192",
+            "content_hash": "sha256:4d5ba71ad0a8f3f9e2cb01518ece31f53a35c506eb49c477df2ca2ba91d13d8b",
+            "http_status": 200,
+            "is_accessible": true,
+            "rendered_by": "static",
+            "text_len": 12792,
+            "version": 2
+          }
+        ],
+        "domain": "jenni.ai",
+        "is_accessible": true,
+        "is_official": true,
+        "last_checked_at": "2026-08-18T13:58:36.427Z",
+        "purpose": "billing_commitment",
+        "robots": {
+          "allowed": true,
+          "checked_at": "2026-08-18T13:58:23.293Z",
+          "reason": "allow: /"
+        },
+        "source_id": "src:0ae4d0c1f13f509abc2f708c9b72a8019543c5858c7ca9efc9979c8a105dc7ff",
+        "source_tier": 1,
+        "source_type": "pricing",
+        "url": "https://jenni.ai/pricing"
+      },
+      {
+        "captures": [
+          {
+            "accessed_at": "2026-08-18T13:58:27.359Z",
+            "capture_id": "cap:85ca7789cdc9a90c205989a2d2cc88a5b1643980edd4ed0622d5bae9ed2fe38e",
+            "content_hash": "sha256:5afe7070a339400d03d57c4543806ba44536fbda6bd4a7b0e15f611497a2e71b",
+            "http_status": 200,
+            "is_accessible": true,
+            "rendered_by": "browser",
+            "text_len": 9366,
+            "version": 1
+          }
+        ],
+        "domain": "docs.jenni.ai",
+        "is_accessible": true,
+        "is_official": true,
+        "last_checked_at": "2026-08-18T13:58:27.359Z",
+        "purpose": "pricing_unit",
+        "source_id": "src:d928c17f4b38ed7f1f3508fb19b941292e3e34a2d6b067d7a1496bdd14f9bbcb",
+        "source_tier": 1,
+        "source_type": "docs",
+        "url": "https://docs.jenni.ai/docs/account/plans-and-billing/"
+      }
+    ],
+    "version": "0.4.0"
+  },
+  "conflicts_summary": [],
+  "identity": {
+    "officialName": "jenni",
+    "pricingUrl": "https://jenni.ai/pricing",
+    "sourceTier": 1
+  },
+  "mode": "RESEARCH_ONLY",
+  "researchedOn": "2026-08-18",
+  "researcher": "research-collector",
+  "schemaVersion": 1,
+  "slug": "jenni",
+  "status": "needs_review",
+  "unknowns": [],
+  "editorial_drafts": {
+    "author": "Codex",
+    "content_version": 1,
+    "en": {
+      "short_description": "Academic writing assistant with autocomplete, citations, a source library and review tools.",
+      "long_description": "Jenni AI combines autocomplete, rewriting, document chat and citation management in one editor. It mainly targets students and researchers working from a source library who want to accelerate early drafts.\n\nThe free plan lets users evaluate the workflow with limits. Plus fits regular use; Pro targets heavier volume. The tool should not be used to fabricate sources, conceal authorship or replace citation checks and the writer’s reasoning.",
+      "verdict": {
+        "keepIf": [
+          "You regularly write from a source library",
+          "You want citations and assistance in one editor"
+        ],
+        "avoidIf": [
+          "You cannot verify every source and citation",
+          "You want to outsource reasoning or conceal AI use"
+        ],
+        "threshold": "Useful when preparing and reviewing sourced writing becomes recurring work."
+      },
+      "pros": [
+        "Editor focused on sources and citations",
+        "Autocomplete, review and chat in one place",
+        "Document imports and many citation styles"
+      ],
+      "cons": [
+        "Outputs and citations still require checking",
+        "Free-plan limits are reached quickly",
+        "Risk of over-reliance for wording and reasoning"
+      ],
+      "use_cases": [
+        "Structure an initial academic draft",
+        "Rewrite a passage from source material",
+        "Manage citations and a library in one editor"
+      ],
+      "covers": [
+        "academic-writing",
+        "citations",
+        "writing-assistant"
+      ],
+      "relevant_for": [
+        "etudiant",
+        "chercheur",
+        "redacteur"
+      ],
+      "personas": [
+        "etudiant",
+        "chercheur",
+        "redacteur"
+      ],
+      "functional_needs": [
+        "writing-assistance",
+        "citation-management",
+        "document-review"
+      ],
+      "verticals": [
+        "consultant-b2b",
+        "createur-contenu"
+      ],
+      "solo_relevance": "high",
+      "team_relevance": "low",
+      "ai_angle": {
+        "augmentEn": "AI accelerates drafting, rewriting and exploration of supplied documents.",
+        "replaceEn": "It does not replace source verification, argumentation or author accountability.",
+        "idealForEn": "Useful when preparing and reviewing sourced writing becomes recurring work.",
+        "stance": "native",
+        "aiTools": []
+      },
+      "seo": {
+        "metaDescription": "Jenni AI : assistant de rédaction académique, citations, limites et différences entre les plans pour un usage responsable.",
+        "aiAngle": {
+          "stance": "native"
+        }
+      },
+      "pricing_guidance": {
+        "pricing_model": "Individual subscription with a permanent free plan and two paid levels based on usage volume.",
+        "deployment_note": "Hosted web editor with a source library and document imports.",
+        "cautions": [
+          "Generated citations and references require verification.",
+          "In-app pricing may vary by region."
+        ],
+        "free_plan_card": "Permanent free plan with usage limits.",
+        "price_reliability": "official_verified",
+        "usage_sensitive": false,
+        "location_sensitive": true,
+        "plan_details": {}
+      }
+    },
+    "facts_basis": [
+      "cap:b3170f5047d30c303da2ca04ee93c39b2ad3a658d125a09dc2197e4c0e21588d",
+      "cap:11efb540378eb56f9248fcef71216708786841f02d77efb3e0c4020d1c541192",
+      "cap:85ca7789cdc9a90c205989a2d2cc88a5b1643980edd4ed0622d5bae9ed2fe38e"
+    ],
+    "fr": {
+      "short_description": "Assistant de rédaction académique avec autocomplétion, citations, bibliothèque et révision.",
+      "long_description": "Jenni AI concentre dans un éditeur l’autocomplétion, la reformulation, le dialogue avec des documents et la gestion des citations. Il vise surtout les étudiants et chercheurs qui travaillent à partir d’une bibliothèque de sources et veulent accélérer les premières formulations.\n\nLe plan gratuit permet d’évaluer le flux de travail avec des limites. Plus convient à un usage régulier ; Pro vise un volume plus soutenu. L’outil ne doit pas être utilisé pour fabriquer des sources, masquer l’origine d’un texte ou remplacer la vérification des citations et le raisonnement de l’auteur.",
+      "verdict": {
+        "keepIf": [
+          "Tu écris régulièrement à partir d’une bibliothèque de sources",
+          "Tu veux citations et assistance dans le même éditeur"
+        ],
+        "avoidIf": [
+          "Tu ne peux pas vérifier chaque source et citation",
+          "Tu cherches à déléguer le raisonnement ou masquer l’usage de l’IA"
+        ],
+        "threshold": "Utile lorsque la préparation et la révision de textes sourcés deviennent récurrentes."
+      },
+      "pros": [
+        "Éditeur centré sur les sources et citations",
+        "Autocomplétion, révision et chat réunis",
+        "Import de documents et nombreux styles bibliographiques"
+      ],
+      "cons": [
+        "Les sorties et citations doivent être vérifiées",
+        "Les limites du plan gratuit arrivent vite",
+        "Risque de dépendance pour la formulation et le raisonnement"
+      ],
+      "use_cases": [
+        "Structurer un premier brouillon académique",
+        "Reformuler un passage à partir de sources",
+        "Gérer citations et bibliothèque dans le même éditeur"
+      ],
+      "covers": [
+        "academic-writing",
+        "citations",
+        "writing-assistant"
+      ],
+      "relevant_for": [
+        "etudiant",
+        "chercheur",
+        "redacteur"
+      ],
+      "personas": [
+        "etudiant",
+        "chercheur",
+        "redacteur"
+      ],
+      "functional_needs": [
+        "writing-assistance",
+        "citation-management",
+        "document-review"
+      ],
+      "verticals": [
+        "consultant-b2b",
+        "createur-contenu"
+      ],
+      "solo_relevance": "high",
+      "team_relevance": "low",
+      "ai_angle": {
+        "augmentFr": "L’IA accélère le brouillon, la reformulation et l’exploration de documents fournis.",
+        "replaceFr": "Elle ne remplace ni la vérification des sources, ni l’argumentation, ni la responsabilité de l’auteur.",
+        "idealForFr": "Utile lorsque la préparation et la révision de textes sourcés deviennent récurrentes.",
+        "stance": "native",
+        "aiTools": []
+      },
+      "seo": {
+        "metaDescription": "Jenni AI : assistant de rédaction académique, citations, limites et différences entre les plans pour un usage responsable.",
+        "aiAngle": {
+          "stance": "native"
+        }
+      },
+      "pricing_guidance": {
+        "pricing_model": "Abonnement individuel avec plan gratuit durable et deux niveaux payants selon le volume d'usage.",
+        "deployment_note": "Éditeur Web hébergé, avec bibliothèque de sources et import de documents.",
+        "cautions": [
+          "Les citations et références générées doivent être vérifiées.",
+          "La tarification peut être adaptée dans l'application selon la région."
+        ],
+        "free_plan_card": "Plan gratuit durable avec limites d'usage.",
+        "price_reliability": "official_verified",
+        "usage_sensitive": false,
+        "location_sensitive": true,
+        "plan_details": {}
+      }
+    },
+    "generated_on": "2026-08-18",
+    "pricing_facts_policy": "Aucun montant, devise, engagement ou quota tarifaire dans la rédaction : les faits de prix restent exclusivement dans collector.observations.",
+    "status": "draft"
+  }
+}

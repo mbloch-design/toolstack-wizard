@@ -1,0 +1,447 @@
+{
+  "claims": [],
+  "collector": {
+    "attestation_readiness": [],
+    "claims": [
+      {
+        "capture_id": "cap:75b014a890c25a089fba93ecf01af54e67733aa3e27e0c6d3cedd3e8e9fda972",
+        "claim_id": "clm:d3dc8dbb767e8917ce3b3e0f592824665449f2b513d0fdcdc44d3341fc26529f",
+        "confidence": "high",
+        "evidence": "fessional resume templates to help you land your dream job. Free Account $0 Always free, no hidden fees. Test Drive All Resume Templates Create Your 1st Resume Preview your Resume’s Formatting Career Journal Trial Access",
+        "evidence_captures": [
+          "cap:75b014a890c25a089fba93ecf01af54e67733aa3e27e0c6d3cedd3e8e9fda972"
+        ],
+        "first_observed_on": "2026-08-18",
+        "key": "pricing.free_plan_exists",
+        "last_confirmed_on": "2026-08-18",
+        "note": "Fait établi par une source officielle DISTINCTE de la page tarifaire ; rien n'est inféré.",
+        "observed_on": "2026-08-18",
+        "proof_pattern": "Free Account[\\s\\S]{0,80}\\$0|Always free, no hidden fees",
+        "sourceTier": 1,
+        "source_id": "src:d4ce7d35dc36ce2ccfe0cf729b16773055f17ae43badc089fd53a21be89902aa",
+        "source_url": "https://www.visualcv.com/pricing/",
+        "status": "observed",
+        "value_native": true,
+        "volatility": "low"
+      },
+      {
+        "capture_id": "cap:75b014a890c25a089fba93ecf01af54e67733aa3e27e0c6d3cedd3e8e9fda972",
+        "claim_id": "clm:ef7939f2a2c3ccf7cd06d791d1f5b1778bf63702984809b4f56730052f38dd32",
+        "confidence": "high",
+        "evidence": "es Resume Guide CV Photo Knowledge Center Blog Pro Services VisualCV Pro Pricing Explore all features + pricing for VisualCV Pro subscriptions. Resume Writing Services Professionally written resumes + CVs by our expert t",
+        "evidence_captures": [
+          "cap:75b014a890c25a089fba93ecf01af54e67733aa3e27e0c6d3cedd3e8e9fda972"
+        ],
+        "first_observed_on": "2026-08-18",
+        "key": "pricing.unit",
+        "last_confirmed_on": "2026-08-18",
+        "note": "Fait établi par une source officielle DISTINCTE de la page tarifaire ; rien n'est inféré.",
+        "observed_on": "2026-08-18",
+        "proof_pattern": "Free Account|Pro membership|VisualCV Pro",
+        "sourceTier": 1,
+        "source_id": "src:d4ce7d35dc36ce2ccfe0cf729b16773055f17ae43badc089fd53a21be89902aa",
+        "source_url": "https://www.visualcv.com/pricing/",
+        "status": "observed",
+        "value_native": "account",
+        "volatility": "low"
+      },
+      {
+        "capture_id": "cap:75b014a890c25a089fba93ecf01af54e67733aa3e27e0c6d3cedd3e8e9fda972",
+        "claim_id": "clm:afcab5c42bb7b306a163a4e95cd0c9a8aadbfb00f9bcef53984e94a84c143318",
+        "confidence": "high",
+        "evidence": "esume’s Formatting Career Journal Trial Access Sign Up Free Monthly Quarterly - 36 % Pro Quarterly $ 16 USD Per Month (Billed quarterly ) 30+ Professional Resume Templates Create Unlimited Resumes Download Unlimited PDFs",
+        "evidence_captures": [
+          "cap:75b014a890c25a089fba93ecf01af54e67733aa3e27e0c6d3cedd3e8e9fda972"
+        ],
+        "first_observed_on": "2026-08-18",
+        "key": "pricing.billing_commitment",
+        "last_confirmed_on": "2026-08-18",
+        "note": "Fait établi par une source officielle DISTINCTE de la page tarifaire ; rien n'est inféré.",
+        "observed_on": "2026-08-18",
+        "proof_pattern": "Monthly[\\s\\S]{0,80}Quarterly|cancel your VisualCV account at any time",
+        "sourceTier": 1,
+        "source_id": "src:d4ce7d35dc36ce2ccfe0cf729b16773055f17ae43badc089fd53a21be89902aa",
+        "source_url": "https://www.visualcv.com/pricing/",
+        "status": "observed",
+        "value_native": "monthly",
+        "volatility": "low"
+      }
+    ],
+    "conflicts": [],
+    "context_attestations": [
+      {
+        "accessed_at": "2026-08-18T13:58:15.193Z",
+        "attestation_id": "sha256:7ff941101045186112a664d58792cc706303dd84d705cf2c1400ccf1770afbca",
+        "content_hash": "sha256:e32db6e3dc7c35511add045e349674cd2cb1240ae4f909b4e01b7f51ac8a4c85",
+        "content_language": null,
+        "currency_symbols_seen": [],
+        "egress_country": null,
+        "egress_measured_from": null,
+        "egress_source": null,
+        "final_url": "https://www.visualcv.com/pricing/",
+        "html_lang": null,
+        "http_status": 200,
+        "locale_requested": null,
+        "navigator_language": null,
+        "rendered_by": "static",
+        "resolved_locale": null,
+        "run_id": "2233fba4-9a7a-4c6a-b4c8-e1613b003fb6",
+        "schema": "context_attestation/1",
+        "slug": "visualcv",
+        "source_url": "https://www.visualcv.com/pricing/",
+        "timezone": null,
+        "visible_markers": []
+      }
+    ],
+    "extraction_unknowns": [
+      "Pro trimestriel conservé en ambiguïté, aucun prix fabriqué",
+      "tax_inclusion inconnu"
+    ],
+    "last_checked_at": "2026-08-18T13:58:15.193Z",
+    "last_context_evidence": {
+      "adapter": "visualcv",
+      "adapter_version": "1.0.0",
+      "at": "2026-08-18T13:58:15.193Z",
+      "browser_context": null,
+      "market_context": "global_usd_fallback",
+      "market_context_candidate": null,
+      "market_context_source": "declared_in_registry",
+      "rendered_by": "static",
+      "run_id": "2233fba4-9a7a-4c6a-b4c8-e1613b003fb6"
+    },
+    "locale_requested": "fr-FR",
+    "market_requested": "FR",
+    "mode": "RESEARCH_ONLY",
+    "notes": [
+      "Collecteur RESEARCH_ONLY v0.4.0 : aucune valeur `approved` ne peut être produite ici.",
+      "Sources unifiées (pricing + documentaires) dans collector.sources[] ; captures append-only.",
+      "Observations append-only : aucun écrasement ; valeur différente => conflit + superseded_candidate.",
+      "Le HTML/texte rendu vit uniquement dans .cache/tooltrim/research/ (git-ignored)."
+    ],
+    "observations": [],
+    "page_signals": {
+      "adapter_page_proof": {
+        "free_found": true,
+        "quarterly_offer_found": true
+      },
+      "billing_commitment": null,
+      "commitment_ambiguous": false,
+      "pricing_unit": null,
+      "seat_type": null,
+      "signals_found": {
+        "annual_billed_weak": false,
+        "annual_prepaid_proof": false,
+        "monthly": false
+      },
+      "tax_inclusion": "unknown"
+    },
+    "pre_eligibility": [],
+    "review_status": "needs_review",
+    "runs": [
+      {
+        "at": "2026-08-18T13:54:39.886Z",
+        "metrics": {
+          "attestations_created": 0,
+          "claims_confirmed": 0,
+          "claims_created": 0,
+          "claims_extracted": 0,
+          "claims_unchanged": 0,
+          "conflicts_opened": 0,
+          "doc_claims_confirmed": 0,
+          "doc_claims_created": 0,
+          "doc_claims_extracted": 0,
+          "doc_claims_unchanged": 0,
+          "versions_created": 0
+        },
+        "network_checked": true,
+        "run_id": "7a5b20e2-e5ca-4172-8fa6-dbc05624b7e8"
+      },
+      {
+        "at": "2026-08-18T13:55:23.088Z",
+        "metrics": {
+          "attestations_created": 1,
+          "claims_confirmed": 0,
+          "claims_created": 0,
+          "claims_extracted": 0,
+          "claims_unchanged": 0,
+          "conflicts_opened": 0,
+          "doc_claims_confirmed": 0,
+          "doc_claims_created": 3,
+          "doc_claims_extracted": 3,
+          "doc_claims_unchanged": 0,
+          "versions_created": 2
+        },
+        "network_checked": true,
+        "run_id": "64bbde45-e5fd-48a9-9c66-05a63b12d52d"
+      },
+      {
+        "at": "2026-08-18T13:57:47.206Z",
+        "metrics": {
+          "attestations_created": 0,
+          "claims_confirmed": 0,
+          "claims_created": 0,
+          "claims_extracted": 0,
+          "claims_unchanged": 0,
+          "conflicts_opened": 0,
+          "doc_claims_confirmed": 0,
+          "doc_claims_created": 0,
+          "doc_claims_extracted": 0,
+          "doc_claims_unchanged": 0,
+          "versions_created": 0
+        },
+        "network_checked": false,
+        "run_id": "c855d1e9-4e2b-4d6a-b8fa-9dcf561a85cb"
+      },
+      {
+        "at": "2026-08-18T13:58:15.193Z",
+        "metrics": {
+          "attestations_created": 1,
+          "claims_confirmed": 0,
+          "claims_created": 0,
+          "claims_extracted": 0,
+          "claims_unchanged": 0,
+          "conflicts_opened": 0,
+          "doc_claims_confirmed": 0,
+          "doc_claims_created": 3,
+          "doc_claims_extracted": 3,
+          "doc_claims_unchanged": 0,
+          "versions_created": 2
+        },
+        "network_checked": true,
+        "run_id": "2233fba4-9a7a-4c6a-b4c8-e1613b003fb6"
+      }
+    ],
+    "sources": [
+      {
+        "captures": [
+          {
+            "accessed_at": "2026-08-18T13:58:15.193Z",
+            "adapter": "visualcv",
+            "adapter_version": "1.0.0",
+            "browser_context": null,
+            "capture_id": "cap:304915e4d4691f69dd7b3b64ef29a749d5aadb70c982f6f7d52665f167313b4c",
+            "content_hash": "sha256:e32db6e3dc7c35511add045e349674cd2cb1240ae4f909b4e01b7f51ac8a4c85",
+            "content_hash_scope": "adapter_semantic_facts",
+            "http_status": 200,
+            "is_accessible": true,
+            "locale_evidence": {
+              "html_lang_attr": "en"
+            },
+            "locale_proven": false,
+            "market_context": "global_usd_fallback",
+            "market_context_candidate": null,
+            "market_context_source": "declared_in_registry",
+            "observed_locale": null,
+            "observed_market": null,
+            "rendered_by": "static",
+            "text_len": 5091,
+            "version": 1
+          },
+          {
+            "accessed_at": "2026-08-18T13:58:17.283Z",
+            "capture_id": "cap:75b014a890c25a089fba93ecf01af54e67733aa3e27e0c6d3cedd3e8e9fda972",
+            "content_hash": "sha256:15b739310aec2c62b1e006fb120b657a1e81b6ab3b508cd16e7720b9a9bb87be",
+            "http_status": 200,
+            "is_accessible": true,
+            "rendered_by": "static",
+            "text_len": 5091,
+            "version": 2
+          }
+        ],
+        "domain": "www.visualcv.com",
+        "is_accessible": true,
+        "is_official": true,
+        "last_checked_at": "2026-08-18T13:58:21.287Z",
+        "purpose": "billing_commitment",
+        "robots": {
+          "allowed": true,
+          "checked_at": "2026-08-18T13:58:15.193Z",
+          "reason": "robots.txt illisible — aucune interdiction explicite"
+        },
+        "source_id": "src:d4ce7d35dc36ce2ccfe0cf729b16773055f17ae43badc089fd53a21be89902aa",
+        "source_tier": 1,
+        "source_type": "pricing",
+        "url": "https://www.visualcv.com/pricing/"
+      }
+    ],
+    "version": "0.4.0"
+  },
+  "conflicts_summary": [],
+  "identity": {
+    "officialName": "visualcv",
+    "pricingUrl": "https://www.visualcv.com/pricing/",
+    "sourceTier": 1
+  },
+  "mode": "RESEARCH_ONLY",
+  "researchedOn": "2026-08-18",
+  "researcher": "research-collector",
+  "schemaVersion": 1,
+  "slug": "visualcv",
+  "status": "needs_review",
+  "unknowns": [],
+  "editorial_drafts": {
+    "author": "Codex",
+    "content_version": 1,
+    "en": {
+      "short_description": "Creates, adapts and shares resumes with templates, PDF exports and view analytics.",
+      "long_description": "VisualCV helps create targeted resume versions, export them as PDFs and share them through a link. It adds templates, cover-letter tooling, a simple professional website and view analytics.\n\nThe free account is enough to test the structure and prepare a first resume. Pro is useful for multiple targeted applications and advanced exports or templates. It does not replace the substantive work of positioning experience and adapting evidence to a role.",
+      "verdict": {
+        "keepIf": [
+          "You maintain several targeted resumes",
+          "You want clean exports without managing layout"
+        ],
+        "avoidIf": [
+          "You already master a layout tool",
+          "You expect the tool to define your positioning"
+        ],
+        "threshold": "Pro mainly makes sense during an active period of targeted applications."
+      },
+      "pros": [
+        "Several resume versions in one account",
+        "PDF exports and shareable links",
+        "Templates and view analytics"
+      ],
+      "cons": [
+        "Advanced features require Pro",
+        "A template cannot fix unclear positioning",
+        "Less flexible than a general layout tool"
+      ],
+      "use_cases": [
+        "Create a resume targeted to each role type",
+        "Share a resume with a tracked link",
+        "Maintain several versions without duplicating files"
+      ],
+      "covers": [
+        "resume-builder",
+        "cover-letter",
+        "job-search"
+      ],
+      "relevant_for": [
+        "all"
+      ],
+      "personas": [
+        "all"
+      ],
+      "functional_needs": [
+        "resume-building",
+        "job-application"
+      ],
+      "verticals": [
+        "consultant-b2b",
+        "createur-contenu"
+      ],
+      "solo_relevance": "high",
+      "team_relevance": "low",
+      "ai_angle": {
+        "augmentEn": "Assistance features speed up wording, while experience selection remains human.",
+        "replaceEn": "VisualCV mainly replaces repetitive layout work, not career advice or evidence of skills.",
+        "idealForEn": "Pro mainly makes sense during an active period of targeted applications.",
+        "stance": "augment",
+        "aiTools": []
+      },
+      "seo": {
+        "metaDescription": "VisualCV : création de CV, modèles, exports et limites. Découvrez quand le compte Pro est réellement utile.",
+        "aiAngle": {
+          "stance": "augment"
+        }
+      },
+      "pricing_guidance": {
+        "pricing_model": "Free account and individual membership; the displayed quarterly cycle must remain distinct from a firm monthly price.",
+        "deployment_note": "Hosted web service with document exports and shareable links.",
+        "cautions": [
+          "A monthly-looking amount may be billed quarterly.",
+          "Human resume-writing services are separate add-ons."
+        ],
+        "free_plan_card": "Permanent free account for creating and previewing a first resume.",
+        "price_reliability": "official_verified",
+        "usage_sensitive": false,
+        "location_sensitive": false,
+        "plan_details": {}
+      }
+    },
+    "facts_basis": [
+      "cap:304915e4d4691f69dd7b3b64ef29a749d5aadb70c982f6f7d52665f167313b4c",
+      "cap:75b014a890c25a089fba93ecf01af54e67733aa3e27e0c6d3cedd3e8e9fda972"
+    ],
+    "fr": {
+      "short_description": "Crée, adapte et partage des CV avec modèles, exports PDF et suivi des consultations.",
+      "long_description": "VisualCV aide à produire plusieurs versions ciblées d’un CV, les exporter en PDF et les partager via un lien. L’outil ajoute des modèles, une lettre de motivation, un site professionnel simple et des statistiques de consultation.\n\nLe compte gratuit suffit pour tester la structure et préparer un premier CV. Pro devient utile pour multiplier les candidatures ciblées et débloquer les exports et modèles avancés. Il ne remplace pas le travail de fond sur le positionnement, les preuves d’expérience et l’adaptation au poste.",
+      "verdict": {
+        "keepIf": [
+          "Tu maintiens plusieurs CV ciblés",
+          "Tu veux un export propre sans gérer la mise en page"
+        ],
+        "avoidIf": [
+          "Tu maîtrises déjà un outil de mise en page",
+          "Tu attends que l’outil définisse ton positionnement à ta place"
+        ],
+        "threshold": "Pro se justifie surtout pendant une période de candidatures actives et ciblées."
+      },
+      "pros": [
+        "Plusieurs versions de CV dans un même compte",
+        "Exports PDF et liens partageables",
+        "Modèles et suivi des consultations"
+      ],
+      "cons": [
+        "Les fonctions avancées nécessitent Pro",
+        "Un modèle ne corrige pas un positionnement flou",
+        "Moins flexible qu’un outil de mise en page généraliste"
+      ],
+      "use_cases": [
+        "Créer un CV ciblé par type de poste",
+        "Partager un CV avec un lien suivi",
+        "Maintenir plusieurs versions sans dupliquer des fichiers"
+      ],
+      "covers": [
+        "resume-builder",
+        "cover-letter",
+        "job-search"
+      ],
+      "relevant_for": [
+        "all"
+      ],
+      "personas": [
+        "all"
+      ],
+      "functional_needs": [
+        "resume-building",
+        "job-application"
+      ],
+      "verticals": [
+        "consultant-b2b",
+        "createur-contenu"
+      ],
+      "solo_relevance": "high",
+      "team_relevance": "low",
+      "ai_angle": {
+        "augmentFr": "Les fonctions d’assistance accélèrent la formulation, mais la sélection des expériences reste humaine.",
+        "replaceFr": "VisualCV remplace surtout la mise en page répétitive, pas le conseil de carrière ni la preuve des compétences.",
+        "idealForFr": "Pro se justifie surtout pendant une période de candidatures actives et ciblées.",
+        "stance": "augment",
+        "aiTools": []
+      },
+      "seo": {
+        "metaDescription": "VisualCV : création de CV, modèles, exports et limites. Découvrez quand le compte Pro est réellement utile.",
+        "aiAngle": {
+          "stance": "augment"
+        }
+      },
+      "pricing_guidance": {
+        "pricing_model": "Compte gratuit et abonnement individuel ; le cycle trimestriel affiché doit rester distinct d'un prix mensuel ferme.",
+        "deployment_note": "Service Web hébergé avec export de documents et liens partageables.",
+        "cautions": [
+          "L'affichage par mois peut correspondre à une facturation trimestrielle.",
+          "Les prestations humaines de rédaction sont des services séparés."
+        ],
+        "free_plan_card": "Compte gratuit durable pour créer et prévisualiser un premier CV.",
+        "price_reliability": "official_verified",
+        "usage_sensitive": false,
+        "location_sensitive": false,
+        "plan_details": {}
+      }
+    },
+    "generated_on": "2026-08-18",
+    "pricing_facts_policy": "Aucun montant, devise, engagement ou quota tarifaire dans la rédaction : les faits de prix restent exclusivement dans collector.observations.",
+    "status": "draft"
+  }
+}

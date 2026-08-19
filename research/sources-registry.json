@@ -12,6 +12,184 @@
   ],
   "schemaVersion": 1,
   "sources": {
+    "audionotes": {
+      "adapter": "audionotes",
+      "pricing_url": "https://www.audionotes.app/pricing",
+      "renderer_hint": "auto",
+      "source_tier": 1,
+      "source_type": "pricing",
+      "is_official": true,
+      "verified_http_status": 200,
+      "verified_on": "2026-08-18",
+      "market_context_declared": "global_usd_fallback",
+      "market_context_justification": "La grille officielle publique affiche ses offres en USD et ne fournit aucun signal de marché ou de locale FR. Décision humaine : traiter cette grille comme contexte mondial USD, marché et locale nuls.",
+      "plan_key_mapping": {
+        "Free": "free",
+        "Pro": "pro",
+        "Enterprise": "enterprise"
+      },
+      "plan_key_mapping_note": "Free est un palier gratuit durable, Pro l'offre individuelle payante et Enterprise une offre sur devis hors planOrder.",
+      "additional_sources": [
+        {
+          "establishes": { "claim_key": "pricing.free_plan_exists", "value": true },
+          "is_official": true,
+          "notes": "La grille décrit explicitement Free comme gratuit durable, sans carte bancaire.",
+          "proof_pattern": "Free[\\s\\S]{0,80}\\$0 forever|unlimited notes, no credit card required",
+          "purpose": "free_plan",
+          "renderer_hint": "auto",
+          "source_tier": 1,
+          "source_type": "pricing",
+          "url": "https://www.audionotes.app/pricing",
+          "verified_http_status": 200,
+          "verified_on": "2026-08-18"
+        },
+        {
+          "establishes": { "claim_key": "pricing.unit", "value": "account" },
+          "is_official": true,
+          "notes": "L'offre Pro est présentée comme un abonnement individuel ; l'offre équipe commence séparément à cinq utilisateurs.",
+          "proof_pattern": "teams of 5 or more users|For teams of 5\\+",
+          "purpose": "pricing_unit",
+          "renderer_hint": "auto",
+          "source_tier": 1,
+          "source_type": "pricing",
+          "url": "https://www.audionotes.app/pricing",
+          "verified_http_status": 200,
+          "verified_on": "2026-08-18"
+        },
+        {
+          "establishes": { "claim_key": "pricing.billing_commitment", "value": "annual_prepaid" },
+          "is_official": true,
+          "notes": "Le prix Pro affiché par défaut est facturé pour une année complète.",
+          "proof_pattern": "Pro[\\s\\S]{0,100}\\$129\\.99/year|Annual Upto 35% off",
+          "purpose": "billing_commitment",
+          "renderer_hint": "auto",
+          "source_tier": 1,
+          "source_type": "pricing",
+          "url": "https://www.audionotes.app/pricing",
+          "verified_http_status": 200,
+          "verified_on": "2026-08-18"
+        }
+      ]
+    },
+    "visualcv": {
+      "adapter": "visualcv",
+      "pricing_url": "https://www.visualcv.com/pricing/",
+      "renderer_hint": "auto",
+      "source_tier": 1,
+      "source_type": "pricing",
+      "is_official": true,
+      "verified_http_status": 200,
+      "verified_on": "2026-08-18",
+      "market_context_declared": "global_usd_fallback",
+      "market_context_justification": "La grille officielle est en anglais et affiche explicitement ses montants en USD, sans signal de marché ou de locale FR. Décision humaine : contexte mondial USD.",
+      "plan_key_mapping": {
+        "Free Account": "free",
+        "Free": "free",
+        "Pro Quarterly": "pro",
+        "Pro": "pro"
+      },
+      "plan_key_mapping_note": "Le compte Free est durable. Pro est l'unique abonnement payant principal ; les prestations de rédaction séparées ne sont pas des plans du produit.",
+      "additional_sources": [
+        {
+          "establishes": { "claim_key": "pricing.free_plan_exists", "value": true },
+          "is_official": true,
+          "notes": "La grille présente Free Account comme toujours gratuit.",
+          "proof_pattern": "Free Account[\\s\\S]{0,80}\\$0|Always free, no hidden fees",
+          "purpose": "free_plan",
+          "renderer_hint": "auto",
+          "source_tier": 1,
+          "source_type": "pricing",
+          "url": "https://www.visualcv.com/pricing/",
+          "verified_http_status": 200,
+          "verified_on": "2026-08-18"
+        },
+        {
+          "establishes": { "claim_key": "pricing.unit", "value": "account" },
+          "is_official": true,
+          "notes": "La grille distingue un compte gratuit et l'adhésion Pro ; l'unité est le compte individuel.",
+          "proof_pattern": "Free Account|Pro membership|VisualCV Pro",
+          "purpose": "pricing_unit",
+          "renderer_hint": "auto",
+          "source_tier": 1,
+          "source_type": "pricing",
+          "url": "https://www.visualcv.com/pricing/",
+          "verified_http_status": 200,
+          "verified_on": "2026-08-18"
+        },
+        {
+          "establishes": { "claim_key": "pricing.billing_commitment", "value": "monthly" },
+          "is_official": true,
+          "notes": "La page propose une option mensuelle résiliable ; l'affichage trimestriel sera conservé comme ambiguïté et ne sera pas promu comme engagement mensuel.",
+          "proof_pattern": "Monthly[\\s\\S]{0,80}Quarterly|cancel your VisualCV account at any time",
+          "purpose": "billing_commitment",
+          "renderer_hint": "auto",
+          "source_tier": 1,
+          "source_type": "pricing",
+          "url": "https://www.visualcv.com/pricing/",
+          "verified_http_status": 200,
+          "verified_on": "2026-08-18"
+        }
+      ]
+    },
+    "jenni": {
+      "adapter": "jenni",
+      "pricing_url": "https://jenni.ai/pricing",
+      "renderer_hint": "auto",
+      "source_tier": 1,
+      "source_type": "pricing",
+      "is_official": true,
+      "verified_http_status": 200,
+      "verified_on": "2026-08-18",
+      "market_context_declared": "global_usd_fallback",
+      "market_context_justification": "La grille officielle précise que les prix publics sont en USD et que la devise locale n'est disponible que dans l'application. Décision humaine : contexte mondial USD pour la grille publique.",
+      "plan_key_mapping": {
+        "Free": "free",
+        "Plus": "plus",
+        "Pro": "pro"
+      },
+      "plan_key_mapping_note": "Trois offres publiques : Free, Plus et Pro. Le palier Free durable reste distinct de l'essai temporaire de fonctions premium documenté séparément.",
+      "additional_sources": [
+        {
+          "establishes": { "claim_key": "pricing.free_plan_exists", "value": true },
+          "is_official": true,
+          "notes": "Free est un plan permanent avec des limites propres, distinct de l'essai premium.",
+          "proof_pattern": "Free[\\s\\S]{0,80}\\$0|Compare Free, Plus, and Pro plans",
+          "purpose": "free_plan",
+          "renderer_hint": "auto",
+          "source_tier": 1,
+          "source_type": "pricing",
+          "url": "https://jenni.ai/pricing",
+          "verified_http_status": 200,
+          "verified_on": "2026-08-18"
+        },
+        {
+          "establishes": { "claim_key": "pricing.unit", "value": "account" },
+          "is_official": true,
+          "notes": "La documentation rattache le plan et la facturation au compte utilisateur.",
+          "proof_pattern": "Viewing Your Current Plan|Open your profile menu|your subscription",
+          "purpose": "pricing_unit",
+          "renderer_hint": "auto",
+          "source_tier": 1,
+          "source_type": "docs",
+          "url": "https://docs.jenni.ai/docs/account/plans-and-billing/",
+          "verified_http_status": 200,
+          "verified_on": "2026-08-18"
+        },
+        {
+          "establishes": { "claim_key": "pricing.billing_commitment", "value": "monthly" },
+          "is_official": true,
+          "notes": "La grille affiche un cycle mensuel explicite ; le cycle annuel existe également mais n'est pas retenu par défaut ici.",
+          "proof_pattern": "Monthly[\\s\\S]{0,80}Annual|/month",
+          "purpose": "billing_commitment",
+          "renderer_hint": "auto",
+          "source_tier": 1,
+          "source_type": "pricing",
+          "url": "https://jenni.ai/pricing",
+          "verified_http_status": 200,
+          "verified_on": "2026-08-18"
+        }
+      ]
+    },
     "carrd": {
       "is_official": true,
       "market_context_declared": null,

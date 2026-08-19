@@ -1,0 +1,165 @@
+{
+  "batch_id": "recent-tools-2026-08-18-pilot-v2",
+  "schema_version": 1,
+  "slugs": [
+    "audionotes",
+    "visualcv",
+    "jenni"
+  ],
+  "market": "FR",
+  "locale": "fr-FR",
+  "created_by": "Claude Code",
+  "created_at": "2026-08-18T13:59:34.017Z",
+  "updated_at": "2026-08-18T14:02:51.321Z",
+  "status": "attention",
+  "tools": {
+    "audionotes": {
+      "state": "canonical",
+      "errors": [],
+      "blockers": [],
+      "attempts": 0,
+      "proposal_hash": "sha256:a3aa62e44a13d9bed2651445f9a4e760955db90d6e5bb676a710b847e4ff0572",
+      "run_id": null,
+      "history": [
+        {
+          "to": "queued",
+          "at": "2026-08-18T13:59:34.016Z"
+        },
+        {
+          "from": "queued",
+          "to": "collected",
+          "at": "2026-08-18T13:59:34.017Z",
+          "reason": "dossier existant (reprise)",
+          "run_id": null
+        },
+        {
+          "from": "collected",
+          "to": "editorial_draft",
+          "at": "2026-08-18T13:59:34.089Z",
+          "reason": null,
+          "run_id": null
+        },
+        {
+          "from": "editorial_draft",
+          "to": "staged",
+          "at": "2026-08-18T13:59:34.089Z",
+          "reason": null,
+          "run_id": null
+        },
+        {
+          "from": "staged",
+          "to": "eligible",
+          "at": "2026-08-18T13:59:34.090Z",
+          "reason": null,
+          "run_id": null
+        },
+        {
+          "from": "eligible",
+          "to": "approved",
+          "at": "2026-08-18T14:02:49.838Z",
+          "reason": null,
+          "run_id": null
+        },
+        {
+          "from": "approved",
+          "to": "canonical",
+          "at": "2026-08-18T14:02:49.843Z",
+          "reason": "engine apply",
+          "run_id": null
+        }
+      ],
+      "updated_at": "2026-08-18T14:02:49.843Z"
+    },
+    "visualcv": {
+      "state": "failed",
+      "errors": [
+        {
+          "at": "2026-08-18T13:59:34.134Z",
+          "message": "staging: exactement un plan comparatif requis"
+        }
+      ],
+      "blockers": [],
+      "attempts": 0,
+      "proposal_hash": null,
+      "run_id": null,
+      "history": [
+        {
+          "to": "queued",
+          "at": "2026-08-18T13:59:34.017Z"
+        },
+        {
+          "from": "queued",
+          "to": "collected",
+          "at": "2026-08-18T13:59:34.018Z",
+          "reason": "dossier existant (reprise)",
+          "run_id": null
+        },
+        {
+          "from": "collected",
+          "to": "failed",
+          "at": "2026-08-18T13:59:34.134Z",
+          "reason": null,
+          "run_id": null
+        }
+      ],
+      "updated_at": "2026-08-18T13:59:34.134Z"
+    },
+    "jenni": {
+      "state": "canonical",
+      "errors": [],
+      "blockers": [],
+      "attempts": 0,
+      "proposal_hash": "sha256:2c0e76741ee6e127f0ee77fba1c9c5194e937e96eacdf026035647655cd81f0f",
+      "run_id": null,
+      "history": [
+        {
+          "to": "queued",
+          "at": "2026-08-18T13:59:34.017Z"
+        },
+        {
+          "from": "queued",
+          "to": "collected",
+          "at": "2026-08-18T13:59:34.018Z",
+          "reason": "dossier existant (reprise)",
+          "run_id": null
+        },
+        {
+          "from": "collected",
+          "to": "editorial_draft",
+          "at": "2026-08-18T13:59:34.197Z",
+          "reason": null,
+          "run_id": null
+        },
+        {
+          "from": "editorial_draft",
+          "to": "staged",
+          "at": "2026-08-18T13:59:34.198Z",
+          "reason": null,
+          "run_id": null
+        },
+        {
+          "from": "staged",
+          "to": "eligible",
+          "at": "2026-08-18T13:59:34.198Z",
+          "reason": null,
+          "run_id": null
+        },
+        {
+          "from": "eligible",
+          "to": "approved",
+          "at": "2026-08-18T14:02:51.320Z",
+          "reason": null,
+          "run_id": null
+        },
+        {
+          "from": "approved",
+          "to": "canonical",
+          "at": "2026-08-18T14:02:51.321Z",
+          "reason": "engine apply",
+          "run_id": null
+        }
+      ],
+      "updated_at": "2026-08-18T14:02:51.321Z"
+    }
+  }
+}

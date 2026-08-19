@@ -1,0 +1,140 @@
+{
+  "agent": "research-collector",
+  "attestations": [],
+  "checks": [],
+  "claims_created": 0,
+  "collector_version": "0.4.0",
+  "conflicts": [],
+  "diff_summary": "claims_extracted=0 claims_created=0 claims_unchanged=0 claims_confirmed=0 conflicts_opened=0 versions_created=0 attestations_created=0 approved=0 | doc_claims: extracted=0 created=0 unchanged=0",
+  "errors": [
+    {
+      "code": "network_or_tool_limit",
+      "detail": "fetch failed",
+      "slug": "audionotes",
+      "url": "https://www.audionotes.app/pricing"
+    },
+    {
+      "code": "network_or_tool_limit",
+      "detail": "fetch failed",
+      "slug": "visualcv",
+      "url": "https://www.visualcv.com/pricing/"
+    },
+    {
+      "code": "network_or_tool_limit",
+      "detail": "fetch failed",
+      "slug": "jenni",
+      "url": "https://jenni.ai/pricing"
+    }
+  ],
+  "finished_at": "2026-08-18T13:54:55.914Z",
+  "manifest": {
+    "commit": "5402e95512c5e59cb756d9319da1bbe688d2e919",
+    "slug_set_sha256": "f64049dee528e845517bfab0e38e1a365abc712ef0b0c0d512269154a329af83"
+  },
+  "metrics": {
+    "attestations_created": 0,
+    "claims_confirmed": 0,
+    "claims_created": 0,
+    "claims_extracted": 0,
+    "claims_unchanged": 0,
+    "conflicts_opened": 0,
+    "doc_claims_confirmed": 0,
+    "doc_claims_created": 0,
+    "doc_claims_extracted": 0,
+    "doc_claims_unchanged": 0,
+    "versions_created": 0
+  },
+  "mode": "RESEARCH_ONLY",
+  "params": {
+    "cache_ttl_s": 86400,
+    "concurrency_per_domain": 1,
+    "delay_ms": 2000,
+    "force_recheck": false,
+    "locale": "fr-FR",
+    "market": "FR",
+    "renderer": "auto",
+    "slugs": [
+      "audionotes",
+      "visualcv",
+      "jenni"
+    ]
+  },
+  "results": [
+    {
+      "accessible": false,
+      "conflicts_open": 0,
+      "created": true,
+      "hash": null,
+      "metrics": {
+        "attestations_created": 0,
+        "claims_confirmed": 0,
+        "claims_created": 0,
+        "claims_extracted": 0,
+        "claims_unchanged": 0,
+        "conflicts_opened": 0,
+        "doc_claims_confirmed": 0,
+        "doc_claims_created": 0,
+        "doc_claims_extracted": 0,
+        "doc_claims_unchanged": 0,
+        "versions_created": 0
+      },
+      "networkChecked": true,
+      "observations": 0,
+      "slug": "audionotes",
+      "url": "https://www.audionotes.app/pricing",
+      "versionsCreated": 0
+    },
+    {
+      "accessible": false,
+      "conflicts_open": 0,
+      "created": true,
+      "hash": null,
+      "metrics": {
+        "attestations_created": 0,
+        "claims_confirmed": 0,
+        "claims_created": 0,
+        "claims_extracted": 0,
+        "claims_unchanged": 0,
+        "conflicts_opened": 0,
+        "doc_claims_confirmed": 0,
+        "doc_claims_created": 0,
+        "doc_claims_extracted": 0,
+        "doc_claims_unchanged": 0,
+        "versions_created": 0
+      },
+      "networkChecked": true,
+      "observations": 0,
+      "slug": "visualcv",
+      "url": "https://www.visualcv.com/pricing/",
+      "versionsCreated": 0
+    },
+    {
+      "accessible": false,
+      "conflicts_open": 0,
+      "created": true,
+      "hash": null,
+      "metrics": {
+        "attestations_created": 0,
+        "claims_confirmed": 0,
+        "claims_created": 0,
+        "claims_extracted": 0,
+        "claims_unchanged": 0,
+        "conflicts_opened": 0,
+        "doc_claims_confirmed": 0,
+        "doc_claims_created": 0,
+        "doc_claims_extracted": 0,
+        "doc_claims_unchanged": 0,
+        "versions_created": 0
+      },
+      "networkChecked": true,
+      "observations": 0,
+      "slug": "jenni",
+      "url": "https://jenni.ai/pricing",
+      "versionsCreated": 0
+    }
+  ],
+  "review_status": "open",
+  "run_id": "7a5b20e2-e5ca-4172-8fa6-dbc05624b7e8",
+  "started_at": "2026-08-18T13:54:31.866Z",
+  "valid": true
+}

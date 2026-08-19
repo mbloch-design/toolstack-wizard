@@ -1,0 +1,238 @@
+{
+  "editorial_drafts": {
+    "author": "Claude Code",
+    "content_version": 1,
+    "status": "draft",
+    "generated_on": "2026-07-21",
+    "pricing_facts_policy": "Aucun montant, devise, quota, pourcentage ni durée tarifaire dans la prose ni dans pricing_guidance. Les faits de prix restent exclusivement dans collector.observations. La prose se limite au modèle de tarification (par membre/siège, plan gratuit durable, essai IA distinct, add-on à l'usage) sans jamais chiffrer.",
+    "facts_basis": [],
+    "fr": {
+      "short_description": "Espace de travail connecté qui réunit notes, documents, wikis, bases de données et gestion de projets, avec une couche d'IA intégrée.",
+      "long_description": "Notion est un espace de travail « tout-en-un » qui rassemble dans un même outil la prise de notes, la documentation, les wikis d'équipe, des bases de données et le suivi de projets. Sa force tient à sa modularité : tout est fait de blocs et de pages imbriquées que l'on assemble librement, ce qui permet de construire aussi bien un carnet personnel qu'un intranet d'équipe ou un CRM léger, sans changer d'application.\n\nContrairement à un outil de notes classique, Notion mêle contenu rédactionnel et données structurées : une même page peut être un document, une table filtrable, un tableau kanban ou un calendrier selon la vue choisie. Cette souplesse a une contrepartie — la page blanche peut décourager, et une équipe gagne à définir des conventions (modèles, structure d'espaces, permissions) pour éviter la dispersion.\n\nL'outil s'adresse à un large public : un indépendant peut l'utiliser gratuitement pour organiser ses projets, tandis que les équipes montent en gamme pour la collaboration, le partage de permissions et, plus haut, les contrôles de sécurité et d'administration. Notion AI est intégré à l'espace de travail pour rédiger, résumer et interroger le contenu ; une offre d'add-on facturée à l'usage vient compléter les capacités d'agents.",
+      "verdict": {
+        "keepIf": [
+          "Vous voulez centraliser notes, docs, wikis et bases de données dans un seul outil modulable.",
+          "Votre équipe a besoin d'un espace collaboratif où contenu rédactionnel et données structurées cohabitent.",
+          "Vous appréciez de construire vos propres structures (modèles, vues, relations) plutôt que d'être contraint par un outil rigide."
+        ],
+        "avoidIf": [
+          "Vous cherchez un outil de prise de notes ultra-simple, immédiatement prêt à l'emploi sans configuration.",
+          "Vous avez besoin d'une gestion de projet lourde avec dépendances avancées et reporting spécialisé.",
+          "Votre organisation exige un travail hors-ligne robuste et permanent comme critère central."
+        ],
+        "threshold": "Notion devient le bon choix quand le besoin de relier documentation, connaissances et données structurées dans un même espace l'emporte sur la simplicité d'un outil mono-usage ; en deçà, une application de notes ou un gestionnaire de tâches dédié reste plus direct."
+      },
+      "pros": [
+        "Modularité rare : blocs, pages imbriquées et bases de données permettent de modeler l'outil à son usage.",
+        "Un seul espace pour notes, docs, wikis et suivi de projets, ce qui réduit la dispersion entre applications.",
+        "Bases de données à vues multiples (table, kanban, calendrier, galerie) sur les mêmes données.",
+        "IA intégrée à l'espace de travail pour rédiger, résumer et interroger le contenu existant."
+      ],
+      "cons": [
+        "Courbe de prise en main : la liberté de structure peut désorienter sans conventions d'équipe.",
+        "La tarification par membre fait grimper le coût à mesure que l'équipe s'agrandit.",
+        "Fonctions d'administration et de sécurité avancées réservées aux offres supérieures.",
+        "Le travail hors-ligne et certaines performances sur très gros espaces restent des points de vigilance."
+      ],
+      "use_cases": [
+        "Centraliser la base de connaissances et la documentation interne d'une équipe.",
+        "Gérer projets et tâches avec des vues adaptées à chaque profil (table, kanban, calendrier).",
+        "Construire un wiki, un CRM léger ou un suivi éditorial sur des bases de données personnalisées.",
+        "Rédiger, résumer et retrouver de l'information avec l'IA directement dans l'espace de travail."
+      ],
+      "covers": [
+        "notes",
+        "documentation",
+        "project-management"
+      ],
+      "relevant_for": [
+        "product",
+        "operations",
+        "marketing",
+        "founders"
+      ],
+      "personas": [
+        "solo-freelancer",
+        "small-team-lead",
+        "knowledge-manager"
+      ],
+      "functional_needs": [
+        "knowledge-base",
+        "docs-collaboration",
+        "task-tracking"
+      ],
+      "verticals": [
+        "startups",
+        "agencies",
+        "product-teams"
+      ],
+      "solo_relevance": "high",
+      "team_relevance": "high",
+      "ai_angle": {
+        "augmentFr": "Notion AI vit à l'intérieur de l'espace de travail : il rédige, reformule, résume et interroge des pages et des bases existantes. L'IA agit sur un contexte déjà structuré par l'utilisateur, ce qui la rend utile sans se substituer à l'organisation du contenu.",
+        "replaceFr": "Remplacer Notion par une IA ? Non : l'IA a besoin d'un espace où vivent les documents, les connaissances et les données. Notion fournit ce socle structuré ; l'IA l'augmente en accélérant la rédaction et la recherche, pas en remplaçant le lieu où l'information est stockée et reliée.",
+        "idealForFr": "Équipes et indépendants qui veulent une assistance IA branchée directement sur leur documentation et leurs bases, sans exporter le contexte ailleurs.",
+        "stance": "augmente",
+        "aiTools": [
+          "notion-ai",
+          "openai",
+          "anthropic"
+        ]
+      },
+      "seo": {
+        "metaDescription": "Notion : fiche ToolTrim. Espace de travail connecté (notes, docs, wikis, bases de données, projets) avec IA intégrée — pour qui, quand l'éviter, modèle de tarification par membre.",
+        "aiAngle": {
+          "stance": "augmente"
+        }
+      },
+      "pricing_guidance": {
+        "free_plan_card": "Plan gratuit durable pour un usage individuel — coût de licence nul, mais quotas et fonctions collaboratives limités par rapport aux offres payantes",
+        "pricing_model": "Tarification par membre (siège) sur les offres payantes : le coût dépend du nombre de membres de l'espace, avec un engagement mensuel ou annuel (l'annuel affiche une économie). Un plan gratuit durable existe pour l'usage individuel. Notion AI est inclus en accès d'essai limité sur les offres courantes et complet sur l'offre supérieure ; un add-on d'agents est facturé à l'usage, en sus des sièges.",
+        "deployment_note": "Service en mode SaaS géré (cloud), sans auto-hébergement. Les contrôles d'administration, de sécurité et de conformité s'étoffent sur les offres supérieures, jusqu'à une offre entreprise sur devis.",
+        "price_reliability": "official_verified",
+        "usage_sensitive": true,
+        "cautions": [
+          "Un essai gratuit (Notion AI) n'est pas un plan gratuit : le plan gratuit durable est distinct et vise l'usage individuel.",
+          "La tarification par membre implique que le coût total croît avec la taille de l'équipe.",
+          "L'add-on d'agents est facturé à l'usage : le coût réel dépend de la consommation, en plus des sièges."
+        ],
+        "plan_details": {
+          "free": {
+            "deployment": "Cloud (SaaS géré)",
+            "summary": "Usage individuel : organiser notes, documents et projets personnels. Plan gratuit durable, quotas et collaboration limités.",
+            "quota": "Fonctions collaboratives et limites réduites par rapport aux offres payantes"
+          },
+          "plus": {
+            "deployment": "Cloud (SaaS géré)",
+            "summary": "Petites équipes et professionnels : collaboration, partage et permissions étendues par rapport au plan gratuit.",
+            "quota": "Facturation par membre ; engagement mensuel ou annuel"
+          },
+          "business": {
+            "deployment": "Cloud (SaaS géré)",
+            "summary": "Entreprises en croissance : contrôles d'équipe, sécurité et administration renforcés.",
+            "quota": "Facturation par membre ; engagement mensuel ou annuel"
+          },
+          "enterprise": {
+            "deployment": "Cloud (SaaS géré)",
+            "summary": "Organisations : gouvernance, sécurité et administration avancées, accès complet à Notion AI. Sur devis.",
+            "quota": "Tarification personnalisée (contact commercial)"
+          }
+        }
+      }
+    },
+    "en": {
+      "short_description": "Connected workspace bringing together notes, docs, wikis, databases and project management, with a built-in AI layer.",
+      "long_description": "Notion is an all-in-one workspace that gathers note-taking, documentation, team wikis, databases and project tracking into a single tool. Its strength is modularity: everything is made of blocks and nested pages you assemble freely, so you can build a personal notebook, a team intranet or a lightweight CRM without switching apps.\n\nUnlike a classic notes tool, Notion blends editorial content with structured data: the same page can be a document, a filterable table, a kanban board or a calendar depending on the view. That flexibility has a flip side — the blank page can be intimidating, and a team benefits from setting conventions (templates, workspace structure, permissions) to avoid sprawl.\n\nThe tool suits a wide audience: a freelancer can use it for free to organise personal projects, while teams move up for collaboration, shared permissions and, higher up, security and administration controls. Notion AI is embedded in the workspace to draft, summarise and query content; a usage-based add-on extends its agent capabilities.",
+      "verdict": {
+        "keepIf": [
+          "You want to centralise notes, docs, wikis and databases in a single modular tool.",
+          "Your team needs a collaborative space where editorial content and structured data coexist.",
+          "You enjoy building your own structures (templates, views, relations) rather than being boxed in by a rigid tool."
+        ],
+        "avoidIf": [
+          "You want a dead-simple notes tool that works instantly with no setup.",
+          "You need heavy project management with advanced dependencies and specialised reporting.",
+          "Your organisation requires robust, always-on offline work as a core criterion."
+        ],
+        "threshold": "Notion becomes the right choice when the need to link documentation, knowledge and structured data in one space outweighs the simplicity of a single-purpose tool; below that, a dedicated notes app or task manager stays more direct."
+      },
+      "pros": [
+        "Rare modularity: blocks, nested pages and databases let you shape the tool to your use.",
+        "One space for notes, docs, wikis and project tracking, cutting down app sprawl.",
+        "Multi-view databases (table, kanban, calendar, gallery) over the same data.",
+        "AI embedded in the workspace to draft, summarise and query existing content."
+      ],
+      "cons": [
+        "Learning curve: structural freedom can disorient without team conventions.",
+        "Per-member pricing pushes cost up as the team grows.",
+        "Advanced administration and security features are reserved for higher plans.",
+        "Offline work and performance on very large workspaces remain points to watch."
+      ],
+      "use_cases": [
+        "Centralise a team's knowledge base and internal documentation.",
+        "Manage projects and tasks with views tailored to each profile (table, kanban, calendar).",
+        "Build a wiki, a lightweight CRM or an editorial tracker on custom databases.",
+        "Draft, summarise and retrieve information with AI directly inside the workspace."
+      ],
+      "covers": [
+        "notes",
+        "documentation",
+        "project-management"
+      ],
+      "relevant_for": [
+        "product",
+        "operations",
+        "marketing",
+        "founders"
+      ],
+      "personas": [
+        "solo-freelancer",
+        "small-team-lead",
+        "knowledge-manager"
+      ],
+      "functional_needs": [
+        "knowledge-base",
+        "docs-collaboration",
+        "task-tracking"
+      ],
+      "verticals": [
+        "startups",
+        "agencies",
+        "product-teams"
+      ],
+      "solo_relevance": "high",
+      "team_relevance": "high",
+      "ai_angle": {
+        "augmentEn": "Notion AI lives inside the workspace: it drafts, rewrites, summarises and queries existing pages and databases. The AI acts on context the user has already structured, which makes it useful without replacing the work of organising content.",
+        "replaceEn": "Replace Notion with an AI? No: AI needs a place where documents, knowledge and data live. Notion provides that structured foundation; AI augments it by speeding up writing and search, not by replacing where information is stored and linked.",
+        "idealForEn": "Teams and freelancers who want AI assistance wired directly into their documentation and databases, without exporting context elsewhere.",
+        "stance": "augmente",
+        "aiTools": [
+          "notion-ai",
+          "openai",
+          "anthropic"
+        ]
+      },
+      "seo": {
+        "metaDescription": "Notion: ToolTrim review. Connected workspace (notes, docs, wikis, databases, projects) with built-in AI — who it's for, when to avoid it, and its per-member pricing model.",
+        "aiAngle": {
+          "stance": "augmente"
+        }
+      },
+      "pricing_guidance": {
+        "free_plan_card": "Durable free plan for individual use — no licence cost, but limited quotas and collaboration features compared with paid plans",
+        "pricing_model": "Per-member (seat) pricing on paid plans: cost depends on the number of workspace members, with a monthly or annual commitment (annual shows a saving). A durable free plan exists for individual use. Notion AI is included as limited trial access on the mainstream plans and in full on the top plan; an agent add-on is billed by usage, on top of seats.",
+        "deployment_note": "Delivered as a managed SaaS (cloud), with no self-hosting. Administration, security and compliance controls grow on higher plans, up to a quote-based enterprise offer.",
+        "price_reliability": "official_verified",
+        "usage_sensitive": true,
+        "cautions": [
+          "A free trial (Notion AI) is not a free plan: the durable free plan is separate and aimed at individual use.",
+          "Per-member pricing means total cost grows with team size.",
+          "The agent add-on is billed by usage: real cost depends on consumption, on top of seats."
+        ],
+        "plan_details": {
+          "free": {
+            "deployment": "Cloud (managed SaaS)",
+            "summary": "Individual use: organise personal notes, docs and projects. Durable free plan, limited quotas and collaboration.",
+            "quota": "Collaboration features and limits reduced versus paid plans"
+          },
+          "plus": {
+            "deployment": "Cloud (managed SaaS)",
+            "summary": "Small teams and professionals: collaboration, sharing and permissions beyond the free plan.",
+            "quota": "Billed per member; monthly or annual commitment"
+          },
+          "business": {
+            "deployment": "Cloud (managed SaaS)",
+            "summary": "Growing businesses: stronger team controls, security and administration.",
+            "quota": "Billed per member; monthly or annual commitment"
+          },
+          "enterprise": {
+            "deployment": "Cloud (managed SaaS)",
+            "summary": "Organisations: advanced governance, security and administration, full Notion AI access. Custom quote.",
+            "quota": "Custom pricing (contact sales)"
+          }
+        }
+      }
+    }
+  }
+}

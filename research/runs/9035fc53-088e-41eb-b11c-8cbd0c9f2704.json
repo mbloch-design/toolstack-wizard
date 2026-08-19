@@ -1,0 +1,160 @@
+{
+  "agent": "research-collector",
+  "attestations": [
+    {
+      "accessed_at": "2026-07-23T08:48:42.935Z",
+      "attestation_id": "sha256:7b6f18024b6b43c3fb7bb733da79697594226cc48f8699099fc382a750610cc8",
+      "content_hash": "sha256:1fef22cfbff5f978e0e9734f6e72186515682357bd596ab90e74ba6eafa1450a",
+      "content_language": null,
+      "currency_symbols_seen": [
+        "$"
+      ],
+      "egress_country": "FR",
+      "egress_measured_from": "playwright_context",
+      "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+      "final_url": "https://www.loom.com/pricing",
+      "html_lang": "en",
+      "http_status": 200,
+      "locale_requested": null,
+      "navigator_language": "en-US",
+      "rendered_by": "browser",
+      "resolved_locale": "en-US",
+      "run_id": "9035fc53-088e-41eb-b11c-8cbd0c9f2704",
+      "schema": "context_attestation/1",
+      "slug": "loom",
+      "source_url": "https://www.loom.com/pricing",
+      "timezone": "Europe/Paris",
+      "visible_markers": []
+    }
+  ],
+  "checks": [
+    {
+      "adapter": "loom",
+      "adapter_version": "1.0.0",
+      "attempts": 1,
+      "browser_context": {
+        "content_language_header": null,
+        "currency_symbols_seen": [
+          "$"
+        ],
+        "egress_country": "FR",
+        "egress_error": null,
+        "egress_measured_from": "playwright_context",
+        "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+        "final_url": "https://www.loom.com/pricing",
+        "html_lang_attr": "en",
+        "locale_requested": null,
+        "navigator_language": "en-US",
+        "navigator_languages": [
+          "en-US"
+        ],
+        "redirected": false,
+        "resolved_locale": "en-US",
+        "timezone": "Europe/Paris",
+        "visible_markers": []
+      },
+      "content_hash": "sha256:1fef22cfbff5f978e0e9734f6e72186515682357bd596ab90e74ba6eafa1450a",
+      "http_status": 200,
+      "market_context": "global_usd_fallback",
+      "market_context_candidate": null,
+      "market_context_source": "declared_in_registry",
+      "mode": "network_forced",
+      "rendered_by": "browser",
+      "slug": "loom",
+      "url": "https://www.loom.com/pricing"
+    },
+    {
+      "content_hash": "sha256:888fdff8422e5160ea686a074afb374277547b4f2ad4def679c38060047eeb62",
+      "http_status": 200,
+      "mode": "network",
+      "purpose": "free_plan",
+      "rendered_by": "browser",
+      "slug": "loom",
+      "url": "https://www.loom.com/pricing"
+    },
+    {
+      "content_hash": "sha256:888fdff8422e5160ea686a074afb374277547b4f2ad4def679c38060047eeb62",
+      "http_status": 200,
+      "mode": "network",
+      "purpose": "pricing_unit",
+      "rendered_by": "browser",
+      "slug": "loom",
+      "url": "https://www.loom.com/pricing"
+    },
+    {
+      "content_hash": "sha256:888fdff8422e5160ea686a074afb374277547b4f2ad4def679c38060047eeb62",
+      "http_status": 200,
+      "mode": "network",
+      "purpose": "billing_commitment",
+      "rendered_by": "browser",
+      "slug": "loom",
+      "url": "https://www.loom.com/pricing"
+    }
+  ],
+  "claims_created": 3,
+  "collector_version": "0.4.0",
+  "conflicts": [],
+  "diff_summary": "claims_extracted=2 claims_created=2 claims_unchanged=0 claims_confirmed=0 conflicts_opened=0 versions_created=2 attestations_created=1 approved=0 | doc_claims: extracted=3 created=3 unchanged=0",
+  "errors": [],
+  "finished_at": "2026-07-23T08:49:10.192Z",
+  "manifest": {
+    "commit": "dbea365209aa0458d9bc5bdadeefa72a30b4bc7b",
+    "slug_set_sha256": "9d0e3f599e290e80257fc07e024c120d99087a46101ab70c31024445574ce458"
+  },
+  "metrics": {
+    "attestations_created": 1,
+    "claims_confirmed": 0,
+    "claims_created": 2,
+    "claims_extracted": 2,
+    "claims_unchanged": 0,
+    "conflicts_opened": 0,
+    "doc_claims_confirmed": 0,
+    "doc_claims_created": 3,
+    "doc_claims_extracted": 3,
+    "doc_claims_unchanged": 0,
+    "versions_created": 2
+  },
+  "mode": "RESEARCH_ONLY",
+  "params": {
+    "cache_ttl_s": 86400,
+    "concurrency_per_domain": 1,
+    "delay_ms": 2000,
+    "force_recheck": true,
+    "locale": null,
+    "market": null,
+    "renderer": "browser",
+    "slugs": [
+      "loom"
+    ]
+  },
+  "results": [
+    {
+      "accessible": true,
+      "conflicts_open": 0,
+      "created": true,
+      "hash": "sha256:1fef22cfbff5f978e0e9734f6e72186515682357bd596ab90e74ba6eafa1450a",
+      "metrics": {
+        "attestations_created": 1,
+        "claims_confirmed": 0,
+        "claims_created": 2,
+        "claims_extracted": 2,
+        "claims_unchanged": 0,
+        "conflicts_opened": 0,
+        "doc_claims_confirmed": 0,
+        "doc_claims_created": 3,
+        "doc_claims_extracted": 3,
+        "doc_claims_unchanged": 0,
+        "versions_created": 2
+      },
+      "networkChecked": true,
+      "observations": 2,
+      "slug": "loom",
+      "url": "https://www.loom.com/pricing",
+      "versionsCreated": 2
+    }
+  ],
+  "review_status": "open",
+  "run_id": "9035fc53-088e-41eb-b11c-8cbd0c9f2704",
+  "started_at": "2026-07-23T08:48:42.934Z",
+  "valid": true
+}

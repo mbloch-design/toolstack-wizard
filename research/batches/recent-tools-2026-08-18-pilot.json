@@ -1,0 +1,141 @@
+{
+  "batch_id": "recent-tools-2026-08-18-pilot",
+  "schema_version": 1,
+  "slugs": [
+    "audionotes",
+    "visualcv",
+    "jenni"
+  ],
+  "market": "FR",
+  "locale": "fr-FR",
+  "created_by": "Claude Code",
+  "created_at": "2026-08-18T13:59:21.309Z",
+  "updated_at": "2026-08-18T13:59:21.560Z",
+  "status": "attention",
+  "tools": {
+    "audionotes": {
+      "state": "needs_review",
+      "errors": [],
+      "blockers": [
+        "éditorial non conforme: fr.personas manquant/vide; en.personas manquant/vide"
+      ],
+      "attempts": 0,
+      "proposal_hash": "sha256:a3aa62e44a13d9bed2651445f9a4e760955db90d6e5bb676a710b847e4ff0572",
+      "run_id": null,
+      "history": [
+        {
+          "to": "queued",
+          "at": "2026-08-18T13:59:21.308Z"
+        },
+        {
+          "from": "queued",
+          "to": "collected",
+          "at": "2026-08-18T13:59:21.310Z",
+          "reason": "dossier existant (reprise)",
+          "run_id": null
+        },
+        {
+          "from": "collected",
+          "to": "editorial_draft",
+          "at": "2026-08-18T13:59:21.407Z",
+          "reason": null,
+          "run_id": null
+        },
+        {
+          "from": "editorial_draft",
+          "to": "staged",
+          "at": "2026-08-18T13:59:21.408Z",
+          "reason": null,
+          "run_id": null
+        },
+        {
+          "from": "staged",
+          "to": "needs_review",
+          "at": "2026-08-18T13:59:21.409Z",
+          "reason": null,
+          "run_id": null
+        }
+      ],
+      "updated_at": "2026-08-18T13:59:21.409Z"
+    },
+    "visualcv": {
+      "state": "failed",
+      "errors": [
+        {
+          "at": "2026-08-18T13:59:21.465Z",
+          "message": "staging: exactement un plan comparatif requis"
+        }
+      ],
+      "blockers": [],
+      "attempts": 0,
+      "proposal_hash": null,
+      "run_id": null,
+      "history": [
+        {
+          "to": "queued",
+          "at": "2026-08-18T13:59:21.309Z"
+        },
+        {
+          "from": "queued",
+          "to": "collected",
+          "at": "2026-08-18T13:59:21.311Z",
+          "reason": "dossier existant (reprise)",
+          "run_id": null
+        },
+        {
+          "from": "collected",
+          "to": "failed",
+          "at": "2026-08-18T13:59:21.465Z",
+          "reason": null,
+          "run_id": null
+        }
+      ],
+      "updated_at": "2026-08-18T13:59:21.465Z"
+    },
+    "jenni": {
+      "state": "needs_review",
+      "errors": [],
+      "blockers": [
+        "éditorial non conforme: fr.personas manquant/vide; en.personas manquant/vide"
+      ],
+      "attempts": 0,
+      "proposal_hash": "sha256:2c0e76741ee6e127f0ee77fba1c9c5194e937e96eacdf026035647655cd81f0f",
+      "run_id": null,
+      "history": [
+        {
+          "to": "queued",
+          "at": "2026-08-18T13:59:21.309Z"
+        },
+        {
+          "from": "queued",
+          "to": "collected",
+          "at": "2026-08-18T13:59:21.312Z",
+          "reason": "dossier existant (reprise)",
+          "run_id": null
+        },
+        {
+          "from": "collected",
+          "to": "editorial_draft",
+          "at": "2026-08-18T13:59:21.559Z",
+          "reason": null,
+          "run_id": null
+        },
+        {
+          "from": "editorial_draft",
+          "to": "staged",
+          "at": "2026-08-18T13:59:21.560Z",
+          "reason": null,
+          "run_id": null
+        },
+        {
+          "from": "staged",
+          "to": "needs_review",
+          "at": "2026-08-18T13:59:21.560Z",
+          "reason": null,
+          "run_id": null
+        }
+      ],
+      "updated_at": "2026-08-18T13:59:21.560Z"
+    }
+  }
+}

@@ -1,0 +1,538 @@
+{
+  "claims": [],
+  "collector": {
+    "attestation_readiness": [
+      {
+        "missing": [],
+        "plan_key": "pro",
+        "ready": true
+      }
+    ],
+    "claims": [
+      {
+        "capture_id": "cap:c1ae83a017f30c334fd951f8ce3fe90b7151908bd24368bf14b65086a63bf40d",
+        "claim_id": "clm:d3dc8dbb767e8917ce3b3e0f592824665449f2b513d0fdcdc44d3341fc26529f",
+        "confidence": "high",
+        "evidence": "hing included — no hidden fees. Monthly Annual Upto 35% off Free $0 forever Get started with core features — unlimited notes, no credit card required. Try Now What&#x27;s Included Unlimited Voice Notes (1 min/note) Unlim",
+        "evidence_captures": [
+          "cap:c1ae83a017f30c334fd951f8ce3fe90b7151908bd24368bf14b65086a63bf40d"
+        ],
+        "first_observed_on": "2026-08-18",
+        "key": "pricing.free_plan_exists",
+        "last_confirmed_on": "2026-08-18",
+        "note": "Fait établi par une source officielle DISTINCTE de la page tarifaire ; rien n'est inféré.",
+        "observed_on": "2026-08-18",
+        "proof_pattern": "Free[\\s\\S]{0,80}\\$0 forever|unlimited notes, no credit card required",
+        "sourceTier": 1,
+        "source_id": "src:776101ee3c04009fdf0f8683e45b6d5cb0f554d9297a77b88d21cedb7f010bab",
+        "source_url": "https://www.audionotes.app/pricing",
+        "status": "observed",
+        "value_native": true,
+        "volatility": "low"
+      },
+      {
+        "capture_id": "cap:c1ae83a017f30c334fd951f8ce3fe90b7151908bd24368bf14b65086a63bf40d",
+        "claim_id": "clm:ef7939f2a2c3ccf7cd06d791d1f5b1778bf63702984809b4f56730052f38dd32",
+        "confidence": "high",
+        "evidence": "Custom Prompts Notion, Zapier & Webhooks Enterprise Custom For teams of 5+ who need dedicated support, custom integrations, and volume pricing. Contact Us What&#x27;s Included Everything in Pro Centralized Billing Prior",
+        "evidence_captures": [
+          "cap:c1ae83a017f30c334fd951f8ce3fe90b7151908bd24368bf14b65086a63bf40d"
+        ],
+        "first_observed_on": "2026-08-18",
+        "key": "pricing.unit",
+        "last_confirmed_on": "2026-08-18",
+        "note": "Fait établi par une source officielle DISTINCTE de la page tarifaire ; rien n'est inféré.",
+        "observed_on": "2026-08-18",
+        "proof_pattern": "teams of 5 or more users|For teams of 5\\+",
+        "sourceTier": 1,
+        "source_id": "src:776101ee3c04009fdf0f8683e45b6d5cb0f554d9297a77b88d21cedb7f010bab",
+        "source_url": "https://www.audionotes.app/pricing",
+        "status": "observed",
+        "value_native": "account",
+        "volatility": "low"
+      },
+      {
+        "capture_id": "cap:c1ae83a017f30c334fd951f8ce3fe90b7151908bd24368bf14b65086a63bf40d",
+        "claim_id": "clm:e6020c64194c6580223613bf2df7738260040ef7c5c255d972b31ecd7bde510f",
+        "confidence": "high",
+        "evidence": "One Pro plan, everything included — no hidden fees. Monthly Annual Upto 35% off Free $0 forever Get started with core features — unlimited notes, no credit card required. Try Now What&#x27;s Included Unlimited Voice Note",
+        "evidence_captures": [
+          "cap:c1ae83a017f30c334fd951f8ce3fe90b7151908bd24368bf14b65086a63bf40d"
+        ],
+        "first_observed_on": "2026-08-18",
+        "key": "pricing.billing_commitment",
+        "last_confirmed_on": "2026-08-18",
+        "note": "Fait établi par une source officielle DISTINCTE de la page tarifaire ; rien n'est inféré.",
+        "observed_on": "2026-08-18",
+        "proof_pattern": "Pro[\\s\\S]{0,100}\\$129\\.99/year|Annual Upto 35% off",
+        "sourceTier": 1,
+        "source_id": "src:776101ee3c04009fdf0f8683e45b6d5cb0f554d9297a77b88d21cedb7f010bab",
+        "source_url": "https://www.audionotes.app/pricing",
+        "status": "observed",
+        "value_native": "annual_prepaid",
+        "volatility": "low"
+      }
+    ],
+    "conflicts": [],
+    "context_attestations": [
+      {
+        "accessed_at": "2026-08-18T13:58:07.063Z",
+        "attestation_id": "sha256:c8eac97baa022b159f1c9d82350362b84d41e9465a0f8ed28907f3178b2b18ef",
+        "content_hash": "sha256:cb29481c6281e24b91ff9c9e3f504a4d3266c09aa7404233c456ade8a1ec1763",
+        "content_language": null,
+        "currency_symbols_seen": [],
+        "egress_country": null,
+        "egress_measured_from": null,
+        "egress_source": null,
+        "final_url": "https://www.audionotes.app/pricing",
+        "html_lang": null,
+        "http_status": 200,
+        "locale_requested": null,
+        "navigator_language": null,
+        "rendered_by": "static",
+        "resolved_locale": null,
+        "run_id": "2233fba4-9a7a-4c6a-b4c8-e1613b003fb6",
+        "schema": "context_attestation/1",
+        "slug": "audionotes",
+        "source_url": "https://www.audionotes.app/pricing",
+        "timezone": null,
+        "visible_markers": []
+      }
+    ],
+    "extraction_unknowns": [
+      "Free est porté par le claim pricing.free_plan_exists, sans observation de prix",
+      "tax_inclusion inconnu"
+    ],
+    "last_checked_at": "2026-08-18T13:58:07.063Z",
+    "last_context_evidence": {
+      "adapter": "audionotes",
+      "adapter_version": "1.0.0",
+      "at": "2026-08-18T13:58:07.063Z",
+      "browser_context": null,
+      "market_context": "global_usd_fallback",
+      "market_context_candidate": null,
+      "market_context_source": "declared_in_registry",
+      "rendered_by": "static",
+      "run_id": "2233fba4-9a7a-4c6a-b4c8-e1613b003fb6"
+    },
+    "locale_requested": "fr-FR",
+    "market_requested": "FR",
+    "mode": "RESEARCH_ONLY",
+    "notes": [
+      "Collecteur RESEARCH_ONLY v0.4.0 : aucune valeur `approved` ne peut être produite ici.",
+      "Sources unifiées (pricing + documentaires) dans collector.sources[] ; captures append-only.",
+      "Observations append-only : aucun écrasement ; valeur différente => conflit + superseded_candidate.",
+      "Le HTML/texte rendu vit uniquement dans .cache/tooltrim/research/ (git-ignored)."
+    ],
+    "observations": [
+      {
+        "billing_commitment": "annual_prepaid",
+        "billing_commitment_evidence": {
+          "capture_id": "cap:c1ae83a017f30c334fd951f8ce3fe90b7151908bd24368bf14b65086a63bf40d",
+          "claim_key": "pricing.billing_commitment",
+          "content_hash": "sha256:1ada9f38a80fb1634956127b13d32d55d07e0fbc1008815d6920050429ef5723",
+          "excerpt": "One Pro plan, everything included — no hidden fees. Monthly Annual Upto 35% off Free $0 forever Get started with core features — unlimited notes, no credit card required. Try Now What&#x27;s Included Unlimited Voice Note",
+          "source_url": "https://www.audionotes.app/pricing"
+        },
+        "billing_period": "annual",
+        "business_key": "audionotes|pro|·|global_usd_fallback|annual_prepaid",
+        "capture_ref": "cap:2c972164d3af6940c9fddb9dbe8644eede9379cc4921c34a0d79cf3e493e887a",
+        "confidence": "medium",
+        "content_hash": "sha256:cb29481c6281e24b91ff9c9e3f504a4d3266c09aa7404233c456ade8a1ec1763",
+        "context_key": "global_usd_fallback",
+        "evidence": [
+          {
+            "capture_id": "cap:2c972164d3af6940c9fddb9dbe8644eede9379cc4921c34a0d79cf3e493e887a",
+            "observed_on": "2026-08-18",
+            "run_id": "2233fba4-9a7a-4c6a-b4c8-e1613b003fb6"
+          }
+        ],
+        "evidence_excerpt": "Pro Most Popular $129.99 /year",
+        "evidence_selector": "pricing-card:Pro",
+        "feature_highlights": [],
+        "first_observed_on": "2026-08-18",
+        "key_schema": 2,
+        "last_confirmed_on": "2026-08-18",
+        "market_context": "global_usd_fallback",
+        "market_context_candidate": null,
+        "market_context_source": "declared_in_registry",
+        "market_evidence": {
+          "html_lang_attr": "en",
+          "registry_justification": "La grille officielle publique affiche ses offres en USD et ne fournit aucun signal de marché ou de locale FR. Décision humaine : traiter cette grille comme contexte mondial USD, marché et locale nuls."
+        },
+        "native_amount": 129.99,
+        "native_currency": "USD",
+        "observation_id": "obs:53aae5e439a42af2988fda93b7dfd7bad15363cf7a531f8471afce156a65b385",
+        "observed_locale": null,
+        "observed_market": null,
+        "observed_on": "2026-08-18",
+        "observed_plan_key": "pro",
+        "plan_key": "pro",
+        "plan_key_source": "registry.plan_key_mapping",
+        "plan_name_localized": "Pro",
+        "plan_summary": null,
+        "pricing_unit": "account",
+        "pricing_unit_evidence": {
+          "capture_id": "cap:c1ae83a017f30c334fd951f8ce3fe90b7151908bd24368bf14b65086a63bf40d",
+          "claim_key": "pricing.unit",
+          "content_hash": "sha256:1ada9f38a80fb1634956127b13d32d55d07e0fbc1008815d6920050429ef5723",
+          "excerpt": "Custom Prompts Notion, Zapier & Webhooks Enterprise Custom For teams of 5+ who need dedicated support, custom integrations, and volume pricing. Contact Us What&#x27;s Included Everything in Pro Centralized Billing Prior",
+          "source_url": "https://www.audionotes.app/pricing"
+        },
+        "seat_type": null,
+        "source_url": "https://www.audionotes.app/pricing",
+        "status": "observed",
+        "tax_evidence": null,
+        "tax_inclusion": null,
+        "tool": "audionotes",
+        "value_fingerprint": "129.99|USD|annual|account|·"
+      }
+    ],
+    "page_signals": {
+      "adapter_page_proof": {
+        "free_found": true,
+        "pro_found": true
+      },
+      "billing_commitment": null,
+      "commitment_ambiguous": false,
+      "pricing_unit": null,
+      "seat_type": null,
+      "signals_found": {
+        "annual_billed_weak": false,
+        "annual_prepaid_proof": false,
+        "monthly": false
+      },
+      "tax_inclusion": "unknown"
+    },
+    "pre_eligibility": [
+      {
+        "applied_attestation_id": null,
+        "blockers": [],
+        "effective_market_context": "global_usd_fallback",
+        "effective_observed_locale": null,
+        "effective_observed_market": null,
+        "eligible": true,
+        "plan_key": "pro",
+        "plan_name_localized": "Pro",
+        "resolution": "proven_or_declared"
+      }
+    ],
+    "review_status": "needs_review",
+    "runs": [
+      {
+        "at": "2026-08-18T13:54:31.868Z",
+        "metrics": {
+          "attestations_created": 0,
+          "claims_confirmed": 0,
+          "claims_created": 0,
+          "claims_extracted": 0,
+          "claims_unchanged": 0,
+          "conflicts_opened": 0,
+          "doc_claims_confirmed": 0,
+          "doc_claims_created": 0,
+          "doc_claims_extracted": 0,
+          "doc_claims_unchanged": 0,
+          "versions_created": 0
+        },
+        "network_checked": true,
+        "run_id": "7a5b20e2-e5ca-4172-8fa6-dbc05624b7e8"
+      },
+      {
+        "at": "2026-08-18T13:55:14.967Z",
+        "metrics": {
+          "attestations_created": 1,
+          "claims_confirmed": 0,
+          "claims_created": 0,
+          "claims_extracted": 0,
+          "claims_unchanged": 0,
+          "conflicts_opened": 0,
+          "doc_claims_confirmed": 0,
+          "doc_claims_created": 3,
+          "doc_claims_extracted": 3,
+          "doc_claims_unchanged": 0,
+          "versions_created": 2
+        },
+        "network_checked": true,
+        "run_id": "64bbde45-e5fd-48a9-9c66-05a63b12d52d"
+      },
+      {
+        "at": "2026-08-18T13:57:47.123Z",
+        "metrics": {
+          "attestations_created": 0,
+          "claims_confirmed": 0,
+          "claims_created": 0,
+          "claims_extracted": 0,
+          "claims_unchanged": 0,
+          "conflicts_opened": 0,
+          "doc_claims_confirmed": 0,
+          "doc_claims_created": 0,
+          "doc_claims_extracted": 0,
+          "doc_claims_unchanged": 0,
+          "versions_created": 0
+        },
+        "network_checked": false,
+        "run_id": "c855d1e9-4e2b-4d6a-b8fa-9dcf561a85cb"
+      },
+      {
+        "at": "2026-08-18T13:58:07.063Z",
+        "metrics": {
+          "attestations_created": 1,
+          "claims_confirmed": 0,
+          "claims_created": 1,
+          "claims_extracted": 1,
+          "claims_unchanged": 0,
+          "conflicts_opened": 0,
+          "doc_claims_confirmed": 0,
+          "doc_claims_created": 3,
+          "doc_claims_extracted": 3,
+          "doc_claims_unchanged": 0,
+          "versions_created": 2
+        },
+        "network_checked": true,
+        "run_id": "2233fba4-9a7a-4c6a-b4c8-e1613b003fb6"
+      }
+    ],
+    "sources": [
+      {
+        "captures": [
+          {
+            "accessed_at": "2026-08-18T13:58:07.063Z",
+            "adapter": "audionotes",
+            "adapter_version": "1.0.0",
+            "browser_context": null,
+            "capture_id": "cap:2c972164d3af6940c9fddb9dbe8644eede9379cc4921c34a0d79cf3e493e887a",
+            "content_hash": "sha256:cb29481c6281e24b91ff9c9e3f504a4d3266c09aa7404233c456ade8a1ec1763",
+            "content_hash_scope": "adapter_semantic_facts",
+            "http_status": 200,
+            "is_accessible": true,
+            "locale_evidence": {
+              "html_lang_attr": "en"
+            },
+            "locale_proven": false,
+            "market_context": "global_usd_fallback",
+            "market_context_candidate": null,
+            "market_context_source": "declared_in_registry",
+            "observed_locale": null,
+            "observed_market": null,
+            "rendered_by": "static",
+            "text_len": 9828,
+            "version": 1
+          },
+          {
+            "accessed_at": "2026-08-18T13:58:09.219Z",
+            "capture_id": "cap:c1ae83a017f30c334fd951f8ce3fe90b7151908bd24368bf14b65086a63bf40d",
+            "content_hash": "sha256:1ada9f38a80fb1634956127b13d32d55d07e0fbc1008815d6920050429ef5723",
+            "http_status": 200,
+            "is_accessible": true,
+            "rendered_by": "static",
+            "text_len": 9828,
+            "version": 2
+          }
+        ],
+        "domain": "www.audionotes.app",
+        "is_accessible": true,
+        "is_official": true,
+        "last_checked_at": "2026-08-18T13:58:13.187Z",
+        "purpose": "billing_commitment",
+        "robots": {
+          "allowed": true,
+          "checked_at": "2026-08-18T13:58:07.063Z",
+          "reason": "allow: /"
+        },
+        "source_id": "src:776101ee3c04009fdf0f8683e45b6d5cb0f554d9297a77b88d21cedb7f010bab",
+        "source_tier": 1,
+        "source_type": "pricing",
+        "url": "https://www.audionotes.app/pricing"
+      }
+    ],
+    "version": "0.4.0"
+  },
+  "conflicts_summary": [],
+  "identity": {
+    "officialName": "audionotes",
+    "pricingUrl": "https://www.audionotes.app/pricing",
+    "sourceTier": 1
+  },
+  "mode": "RESEARCH_ONLY",
+  "researchedOn": "2026-08-18",
+  "researcher": "research-collector",
+  "schemaVersion": 1,
+  "slug": "audionotes",
+  "status": "needs_review",
+  "unknowns": [],
+  "editorial_drafts": {
+    "author": "Codex",
+    "content_version": 1,
+    "en": {
+      "short_description": "Turns voice notes, files and videos into structured, searchable notes.",
+      "long_description": "Audionotes centralizes voice capture and turns recordings, files, images or videos into transcripts, summaries and structured notes. It suits independent workers, students and creators who collect spoken ideas and need to search or refine them later.\n\nThe free plan is useful for testing short captures. Pro becomes relevant when longer files, imports and AI processing are part of the regular workflow. A dedicated meeting-intelligence platform is a better fit for multi-speaker meetings and advanced team administration.",
+      "verdict": {
+        "keepIf": [
+          "You often capture ideas by voice",
+          "You want to search and refine several formats in one workspace"
+        ],
+        "avoidIf": [
+          "Your main need is team meeting minutes",
+          "You require a fully offline workflow"
+        ],
+        "threshold": "Useful once manually processing voice notes becomes recurring work."
+      },
+      "pros": [
+        "Fast voice capture across several platforms",
+        "Transcription, summaries and search in one place",
+        "Imports several content formats"
+      ],
+      "cons": [
+        "The free plan tightly limits recording length",
+        "Less team-governance focused than a meeting tool",
+        "Quality depends on audio and speech conditions"
+      ],
+      "use_cases": [
+        "Capture and structure dictated ideas",
+        "Summarize an audio file or video",
+        "Retrieve information from voice notes"
+      ],
+      "covers": [
+        "note-taking",
+        "transcription",
+        "voice-notes"
+      ],
+      "relevant_for": [
+        "consultant",
+        "createur-contenu",
+        "etudiant"
+      ],
+      "personas": [
+        "consultant",
+        "createur-contenu",
+        "etudiant"
+      ],
+      "functional_needs": [
+        "note-taking",
+        "transcription",
+        "knowledge-management"
+      ],
+      "verticals": [
+        "consultant-b2b",
+        "createur-contenu"
+      ],
+      "solo_relevance": "high",
+      "team_relevance": "medium",
+      "ai_angle": {
+        "augmentEn": "AI handles transcription, summarization and restructuring of captures.",
+        "replaceEn": "The tool reduces manual note processing without replacing human selection or decisions.",
+        "idealForEn": "Useful once manually processing voice notes becomes recurring work.",
+        "stance": "native",
+        "aiTools": []
+      },
+      "seo": {
+        "metaDescription": "Audionotes : transcription et structuration de notes vocales, usages, limites et choix du plan pour les indépendants.",
+        "aiAngle": {
+          "stance": "native"
+        }
+      },
+      "pricing_guidance": {
+        "pricing_model": "Per-account subscription with a permanent free tier, an individual offer and a quoted team offer.",
+        "deployment_note": "Hosted service available on the web and through mobile and desktop apps.",
+        "cautions": [
+          "The free tier limits capture length.",
+          "File limits and fair-use rules may apply."
+        ],
+        "free_plan_card": "Permanent free tier for testing short captures.",
+        "price_reliability": "official_verified",
+        "usage_sensitive": false,
+        "location_sensitive": false,
+        "plan_details": {}
+      }
+    },
+    "facts_basis": [
+      "cap:2c972164d3af6940c9fddb9dbe8644eede9379cc4921c34a0d79cf3e493e887a",
+      "cap:c1ae83a017f30c334fd951f8ce3fe90b7151908bd24368bf14b65086a63bf40d"
+    ],
+    "fr": {
+      "short_description": "Transforme notes vocales, fichiers et vidéos en notes structurées et interrogeables.",
+      "long_description": "Audionotes centralise la capture vocale et transforme les enregistrements, fichiers, images ou vidéos en transcriptions, résumés et notes structurées. Il convient aux indépendants, étudiants et créateurs qui accumulent des idées orales et veulent ensuite les rechercher ou les retravailler.\n\nLe plan gratuit sert à tester la capture courte. L’abonnement Pro devient pertinent lorsque les fichiers longs, les imports et les traitements IA font partie du travail courant. Pour des réunions multi-intervenants avec administration d’équipe avancée, un outil spécialisé dans les comptes rendus de réunion sera plus adapté.",
+      "verdict": {
+        "keepIf": [
+          "Tu captures souvent tes idées à l’oral",
+          "Tu veux rechercher et retravailler plusieurs formats dans un même espace"
+        ],
+        "avoidIf": [
+          "Tu cherches surtout des comptes rendus de réunions d’équipe",
+          "Tu as besoin d’un fonctionnement entièrement hors ligne"
+        ],
+        "threshold": "Pertinent lorsque la reprise manuelle des notes vocales devient une tâche récurrente."
+      },
+      "pros": [
+        "Capture vocale rapide sur plusieurs plateformes",
+        "Transcription, résumé et recherche réunis",
+        "Import de plusieurs formats de contenu"
+      ],
+      "cons": [
+        "Le plan gratuit limite fortement la durée des enregistrements",
+        "Moins orienté gouvernance d’équipe qu’un outil de réunion",
+        "La qualité dépend du son et du contexte de parole"
+      ],
+      "use_cases": [
+        "Capturer et structurer des idées dictées",
+        "Résumer un fichier audio ou une vidéo",
+        "Retrouver une information dans des notes vocales"
+      ],
+      "covers": [
+        "note-taking",
+        "transcription",
+        "voice-notes"
+      ],
+      "relevant_for": [
+        "consultant",
+        "createur-contenu",
+        "etudiant"
+      ],
+      "personas": [
+        "consultant",
+        "createur-contenu",
+        "etudiant"
+      ],
+      "functional_needs": [
+        "note-taking",
+        "transcription",
+        "knowledge-management"
+      ],
+      "verticals": [
+        "consultant-b2b",
+        "createur-contenu"
+      ],
+      "solo_relevance": "high",
+      "team_relevance": "medium",
+      "ai_angle": {
+        "augmentFr": "L’IA assure la transcription, le résumé et la restructuration des captures.",
+        "replaceFr": "L’outil réduit la reprise manuelle des notes, sans remplacer le tri ni la décision humaine.",
+        "idealForFr": "Pertinent lorsque la reprise manuelle des notes vocales devient une tâche récurrente.",
+        "stance": "native",
+        "aiTools": []
+      },
+      "seo": {
+        "metaDescription": "Audionotes : transcription et structuration de notes vocales, usages, limites et choix du plan pour les indépendants.",
+        "aiAngle": {
+          "stance": "native"
+        }
+      },
+      "pricing_guidance": {
+        "pricing_model": "Abonnement par compte, avec un palier gratuit durable, une offre individuelle et une offre équipe sur devis.",
+        "deployment_note": "Service hébergé disponible sur le Web et via applications mobiles et desktop.",
+        "cautions": [
+          "Le palier gratuit limite la longueur des captures.",
+          "Les limites de fichiers et l'usage raisonnable peuvent s'appliquer."
+        ],
+        "free_plan_card": "Palier gratuit durable pour tester les captures courtes.",
+        "price_reliability": "official_verified",
+        "usage_sensitive": false,
+        "location_sensitive": false,
+        "plan_details": {}
+      }
+    },
+    "generated_on": "2026-08-18",
+    "pricing_facts_policy": "Aucun montant, devise, engagement ou quota tarifaire dans la rédaction : les faits de prix restent exclusivement dans collector.observations.",
+    "status": "draft"
+  }
+}

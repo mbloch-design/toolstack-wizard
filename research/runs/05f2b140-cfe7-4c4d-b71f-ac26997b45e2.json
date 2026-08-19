@@ -1,0 +1,67 @@
+{
+  "agent": "research-collector",
+  "attestations": [],
+  "checks": [],
+  "claims_created": 0,
+  "collector_version": "0.4.0",
+  "conflicts": [],
+  "diff_summary": "claims_extracted=0 claims_created=0 claims_unchanged=0 claims_confirmed=0 conflicts_opened=0 versions_created=0 attestations_created=0 approved=0 | doc_claims: extracted=0 created=0 unchanged=0",
+  "errors": [
+    {
+      "code": "slug_not_in_manifest",
+      "detail": "absent de manifest-1126 (dbea365209)",
+      "slug": "audionotes"
+    },
+    {
+      "code": "slug_not_in_manifest",
+      "detail": "absent de manifest-1126 (dbea365209)",
+      "slug": "visualcv"
+    },
+    {
+      "code": "slug_not_in_manifest",
+      "detail": "absent de manifest-1126 (dbea365209)",
+      "slug": "jenni"
+    }
+  ],
+  "finished_at": "2026-08-18T13:52:21.178Z",
+  "manifest": {
+    "commit": "dbea365209aa0458d9bc5bdadeefa72a30b4bc7b",
+    "slug_set_sha256": "9d0e3f599e290e80257fc07e024c120d99087a46101ab70c31024445574ce458"
+  },
+  "mode": "RESEARCH_ONLY",
+  "params": {
+    "cache_ttl_s": 86400,
+    "concurrency_per_domain": 1,
+    "delay_ms": 2000,
+    "force_recheck": false,
+    "locale": "fr-FR",
+    "market": "FR",
+    "renderer": "auto",
+    "slugs": [
+      "audionotes",
+      "visualcv",
+      "jenni"
+    ]
+  },
+  "results": [
+    {
+      "reason": "slug_not_in_manifest",
+      "skipped": true,
+      "slug": "audionotes"
+    },
+    {
+      "reason": "slug_not_in_manifest",
+      "skipped": true,
+      "slug": "visualcv"
+    },
+    {
+      "reason": "slug_not_in_manifest",
+      "skipped": true,
+      "slug": "jenni"
+    }
+  ],
+  "review_status": "open",
+  "run_id": "05f2b140-cfe7-4c4d-b71f-ac26997b45e2",
+  "started_at": "2026-08-18T13:52:21.177Z",
+  "valid": true
+}

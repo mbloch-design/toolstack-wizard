@@ -1,0 +1,239 @@
+{
+  "editorial_drafts": {
+    "author": "Claude Code",
+    "content_version": 1,
+    "generated_on": "2026-07-22",
+    "status": "draft",
+    "pricing_facts_policy": "Aucun montant, devise, engagement ou quota tarifaire dans la rédaction : les faits de prix restent exclusivement dans collector.observations. pricing_guidance ne porte que de la présentation (modèle par utilisateur, engagement, cautions), sans fait tarifaire faisant autorité.",
+    "facts_basis": [],
+    "fr": {
+      "short_description": "Outil de gestion de projet et de suivi d'issues taillé pour les équipes produit et d'ingénierie, misant sur la rapidité et une méthode d'exécution opinionée.",
+      "long_description": "Linear est un outil de gestion de projet et de suivi d'issues pensé pour les équipes produit et d'ingénierie logicielle. Là où beaucoup d'outils cherchent la polyvalence maximale, Linear assume une approche opinionée : un modèle de travail organisé autour des issues, des cycles (sprints), des projets et des roadmaps, avec des raccourcis clavier omniprésents et une interface volontairement rapide.\n\nLe produit s'adresse d'abord aux équipes qui construisent un logiciel de façon itérative : ingénieurs, product managers, designers qui veulent planifier, suivre l'avancement et relier le travail au cycle de développement. Les intégrations avec les dépôts de code, les outils de communication et de design font partie de l'usage attendu. Un profil non technique peut l'utiliser, mais la logique d'issues, de cycles et de statuts suppose d'adopter la méthode de Linear plutôt que de la plier à un fonctionnement arbitraire.\n\nLinear se distribue en SaaS, avec un plan gratuit destiné aux petites équipes et aux essais, et des plans payants facturés par utilisateur qui débloquent des limites étendues et des fonctions de collaboration et d'administration. L'édition Enterprise couvre les besoins de gouvernance, de conformité et de contractualisation des grandes organisations. Il n'y a pas d'édition auto-hébergée : les données vivent sur l'infrastructure gérée par Linear."
+      ,
+      "verdict": {
+        "keepIf": [
+          "Votre équipe construit un produit logiciel de façon itérative et veut un suivi d'issues rapide et structuré.",
+          "Vous préférez une méthode opinionée (issues, cycles, projets) prête à l'emploi plutôt qu'un outil à tout configurer.",
+          "La vitesse d'usage au clavier et une interface épurée sont des critères importants pour l'adoption."
+        ],
+        "avoidIf": [
+          "Vous cherchez un outil de gestion de projet généraliste très personnalisable pour des équipes non techniques.",
+          "Vous avez besoin d'un déploiement auto-hébergé ou d'un contrôle complet de l'infrastructure de données.",
+          "Votre besoin se limite à une simple liste de tâches partagée, sans notion de cycles ni de roadmap."
+        ],
+        "threshold": "Linear devient le bon choix quand une équipe produit/ingénierie veut cadrer son exécution avec une méthode claire et rapide ; pour un usage généraliste, hors développement logiciel, ou totalement sur mesure, un outil plus flexible reste préférable."
+      },
+      "pros": [
+        "Interface très rapide, pilotable au clavier, pensée pour un usage quotidien intensif.",
+        "Méthode d'exécution opinionée (issues, cycles, projets, roadmaps) prête à l'emploi.",
+        "Bonne intégration au cycle de développement logiciel (code, communication, design).",
+        "Plan gratuit permettant de démarrer en petite équipe avant de passer à un plan payant."
+      ],
+      "cons": [
+        "Approche opinionée : il faut adopter la méthode de Linear, peu adaptée à un usage totalement sur mesure.",
+        "Orientation produit/ingénierie : moins naturel pour des équipes non techniques ou des projets non logiciels.",
+        "Pas d'auto-hébergement : les données reposent sur l'infrastructure gérée par Linear.",
+        "Facturation par utilisateur : le coût suit la taille de l'équipe, à anticiper lors de la montée en charge."
+      ],
+      "use_cases": [
+        "Suivre les issues et bugs d'une équipe d'ingénierie tout au long des cycles.",
+        "Planifier des sprints et une roadmap produit avec des projets reliés au travail réel.",
+        "Coordonner produit, design et ingénierie autour d'un référentiel de tâches unique.",
+        "Relier le suivi des tâches au cycle de développement via les intégrations de code."
+      ],
+      "covers": [
+        "project-management",
+        "issue-tracking",
+        "product-roadmap"
+      ],
+      "relevant_for": [
+        "engineering",
+        "product",
+        "design",
+        "ops"
+      ],
+      "personas": [
+        "product-manager",
+        "engineering-lead",
+        "software-team"
+      ],
+      "functional_needs": [
+        "issue-tracking",
+        "sprint-planning",
+        "roadmapping"
+      ],
+      "verticals": [
+        "software-development",
+        "product-teams",
+        "tech-startups"
+      ],
+      "solo_relevance": "low",
+      "team_relevance": "high",
+      "ai_angle": {
+        "stance": "augmente",
+        "augmentFr": "Linear intègre l'IA comme aide à l'exécution : formulation et enrichissement d'issues, résumés et recherche, suggestions au fil du suivi. L'IA accélère la mise en forme et la circulation de l'information dans le flux de travail, sans se substituer aux décisions de l'équipe.",
+        "replaceFr": "Remplacer Linear par une IA ? Non : le suivi structuré des issues, des cycles et des roadmaps reste le socle de coordination d'une équipe. L'IA vient assister ce cadre, pas gérer le projet à la place des personnes.",
+        "idealForFr": "Équipes produit/ingénierie qui veulent réduire les frictions de saisie et de recherche sans renoncer à une méthode d'exécution structurée.",
+        "aiTools": [
+          "openai",
+          "anthropic"
+        ]
+      },
+      "seo": {
+        "metaDescription": "Linear : fiche ToolTrim. Gestion de projet et suivi d'issues rapide et opinioné pour équipes produit et ingénierie — méthode, plan gratuit, facturation par utilisateur et positionnement.",
+        "aiAngle": {
+          "stance": "augmente"
+        }
+      },
+      "pricing_guidance": {
+        "pricing_model": "Tarification SaaS par utilisateur : un plan gratuit pour démarrer, des plans payants facturés au nombre d'utilisateurs qui étendent les limites et les fonctions d'équipe, et une édition Enterprise sur devis. Pas d'édition auto-hébergée.",
+        "deployment_note": "SaaS uniquement, hébergé et exploité par Linear : pas d'auto-hébergement. Les données reposent sur l'infrastructure gérée par l'éditeur.",
+        "free_plan_card": "Plan gratuit — destiné aux petites équipes et aux essais, avec des limites d'usage ; le passage à un plan payant se fait à la taille et aux besoins de l'équipe",
+        "price_reliability": "official_verified",
+        "usage_sensitive": false,
+        "cautions": [
+          "Un plan gratuit existe et n'est pas un essai limité dans le temps ; il reste borné par des limites d'usage.",
+          "La facturation est par utilisateur : le coût total suit le nombre de membres de l'équipe.",
+          "Prix affichés en USD ; contexte marché déclaré comme grille mondiale USD, soumis à revue humaine.",
+          "L'édition Enterprise est sur devis : aucun tarif public à considérer comme acquis."
+        ],
+        "plan_details": {
+          "free": {
+            "deployment": "SaaS (hébergé par Linear)",
+            "quota": "Plan gratuit borné par des limites d'usage ; destiné aux petites équipes et aux essais",
+            "summary": "Pour démarrer en petite équipe ou évaluer Linear sans engagement."
+          },
+          "basic": {
+            "deployment": "SaaS (hébergé par Linear)",
+            "quota": "Limites étendues par rapport au plan gratuit ; facturé par utilisateur",
+            "summary": "Premier palier payant pour une équipe qui dépasse les limites du plan gratuit."
+          },
+          "business": {
+            "deployment": "SaaS (hébergé par Linear)",
+            "quota": "Fonctions de collaboration et d'administration avancées ; facturé par utilisateur",
+            "summary": "Pour des équipes établies ayant besoin de plus de contrôle et de collaboration."
+          },
+          "enterprise": {
+            "deployment": "SaaS (hébergé par Linear)",
+            "quota": "Gouvernance, conformité et contractualisation ; tarif sur devis",
+            "summary": "Pour grandes organisations avec exigences de sécurité, conformité et contractuelles."
+          }
+        }
+      }
+    },
+    "en": {
+      "short_description": "Project management and issue tracking built for product and engineering teams, betting on speed and an opinionated execution method.",
+      "long_description": "Linear is a project management and issue-tracking tool designed for product and software-engineering teams. Where many tools chase maximum versatility, Linear takes an opinionated stance: a work model organised around issues, cycles (sprints), projects and roadmaps, with keyboard shortcuts everywhere and a deliberately fast interface.\n\nThe product targets teams that build software iteratively: engineers, product managers and designers who want to plan, track progress and tie work to the development cycle. Integrations with code repositories, communication tools and design tools are part of the expected use. A non-technical person can use it, but the logic of issues, cycles and statuses assumes you adopt Linear's method rather than bending it to an arbitrary workflow.\n\nLinear ships as SaaS, with a free plan aimed at small teams and trials, and paid plans billed per user that unlock expanded limits and collaboration and administration features. The Enterprise edition covers the governance, compliance and contracting needs of larger organisations. There is no self-hosted edition: data lives on Linear's managed infrastructure.",
+      "verdict": {
+        "keepIf": [
+          "Your team builds a software product iteratively and wants fast, structured issue tracking.",
+          "You prefer an opinionated method (issues, cycles, projects) out of the box over a tool you must configure entirely.",
+          "Keyboard-driven speed and a clean interface matter for adoption."
+        ],
+        "avoidIf": [
+          "You want a general-purpose, highly customisable project tool for non-technical teams.",
+          "You need a self-hosted deployment or full control of the data infrastructure.",
+          "Your need is limited to a simple shared task list, with no notion of cycles or roadmap."
+        ],
+        "threshold": "Linear becomes the right choice when a product/engineering team wants to frame its execution with a clear, fast method; for general-purpose, non-software or fully bespoke use, a more flexible tool is preferable."
+      },
+      "pros": [
+        "Very fast, keyboard-driven interface built for intensive daily use.",
+        "Opinionated execution method (issues, cycles, projects, roadmaps) ready out of the box.",
+        "Solid integration with the software development cycle (code, communication, design).",
+        "A free plan to get started as a small team before moving to a paid plan."
+      ],
+      "cons": [
+        "Opinionated approach: you must adopt Linear's method, ill-suited to a fully bespoke workflow.",
+        "Product/engineering focus: less natural for non-technical teams or non-software projects.",
+        "No self-hosting: data sits on Linear's managed infrastructure.",
+        "Per-user billing: cost tracks team size, to anticipate as you scale."
+      ],
+      "use_cases": [
+        "Track an engineering team's issues and bugs across cycles.",
+        "Plan sprints and a product roadmap with projects tied to real work.",
+        "Coordinate product, design and engineering around a single task repository.",
+        "Connect task tracking to the development cycle through code integrations."
+      ],
+      "covers": [
+        "project-management",
+        "issue-tracking",
+        "product-roadmap"
+      ],
+      "relevant_for": [
+        "engineering",
+        "product",
+        "design",
+        "ops"
+      ],
+      "personas": [
+        "product-manager",
+        "engineering-lead",
+        "software-team"
+      ],
+      "functional_needs": [
+        "issue-tracking",
+        "sprint-planning",
+        "roadmapping"
+      ],
+      "verticals": [
+        "software-development",
+        "product-teams",
+        "tech-startups"
+      ],
+      "solo_relevance": "low",
+      "team_relevance": "high",
+      "ai_angle": {
+        "stance": "augmente",
+        "augmentEn": "Linear folds AI in as execution support: drafting and enriching issues, summaries and search, suggestions along the tracking flow. AI speeds up shaping and moving information through the workflow without replacing the team's decisions.",
+        "replaceEn": "Replace Linear with an AI? No: structured tracking of issues, cycles and roadmaps remains a team's coordination backbone. AI assists that frame; it doesn't run the project in people's place.",
+        "idealForEn": "Product/engineering teams that want to cut input and search friction without giving up a structured execution method.",
+        "aiTools": [
+          "openai",
+          "anthropic"
+        ]
+      },
+      "seo": {
+        "metaDescription": "Linear: ToolTrim review. Fast, opinionated project management and issue tracking for product and engineering teams — method, free plan, per-user billing and positioning.",
+        "aiAngle": {
+          "stance": "augmente"
+        }
+      },
+      "pricing_guidance": {
+        "pricing_model": "Per-user SaaS pricing: a free plan to start, paid plans billed by number of users that expand limits and team features, and an Enterprise edition on quote. No self-hosted edition.",
+        "deployment_note": "SaaS only, hosted and operated by Linear: no self-hosting. Data sits on the vendor's managed infrastructure.",
+        "free_plan_card": "Free plan — aimed at small teams and trials, with usage limits; moving to a paid plan follows team size and needs",
+        "price_reliability": "official_verified",
+        "usage_sensitive": false,
+        "cautions": [
+          "A free plan exists and is not a time-limited trial; it remains bounded by usage limits.",
+          "Billing is per user: total cost tracks the number of team members.",
+          "Prices shown in USD; market context declared as a global USD grid, pending human review.",
+          "The Enterprise edition is quote-based: no public price should be taken as given."
+        ],
+        "plan_details": {
+          "free": {
+            "deployment": "SaaS (hosted by Linear)",
+            "quota": "Free plan bounded by usage limits; aimed at small teams and trials",
+            "summary": "To get started as a small team or evaluate Linear with no commitment."
+          },
+          "basic": {
+            "deployment": "SaaS (hosted by Linear)",
+            "quota": "Expanded limits over the free plan; billed per user",
+            "summary": "First paid tier for a team outgrowing the free plan's limits."
+          },
+          "business": {
+            "deployment": "SaaS (hosted by Linear)",
+            "quota": "Advanced collaboration and administration features; billed per user",
+            "summary": "For established teams needing more control and collaboration."
+          },
+          "enterprise": {
+            "deployment": "SaaS (hosted by Linear)",
+            "quota": "Governance, compliance and contracting; quote-based",
+            "summary": "For large organisations with security, compliance and contractual requirements."
+          }
+        }
+      }
+    }
+  }
+}

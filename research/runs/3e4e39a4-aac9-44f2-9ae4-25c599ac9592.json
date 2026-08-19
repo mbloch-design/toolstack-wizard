@@ -1,0 +1,166 @@
+{
+  "agent": "research-collector",
+  "attestations": [
+    {
+      "accessed_at": "2026-07-23T08:48:20.651Z",
+      "attestation_id": "sha256:fe1b04beb9ffa00999cddac89d99b9768bc3ebda290b774da9632be5a802aaec",
+      "content_hash": "sha256:4a649cfc70eb9fd0f0b71cdc93909ce2c7e650c11222401ef355fcca09a0c2d5",
+      "content_language": "en-US",
+      "currency_symbols_seen": [
+        "€",
+        "$"
+      ],
+      "egress_country": "FR",
+      "egress_measured_from": "playwright_context",
+      "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+      "final_url": "https://www.notion.com/pricing",
+      "html_lang": "en-us",
+      "http_status": 200,
+      "locale_requested": "fr-FR",
+      "navigator_language": "fr-FR",
+      "rendered_by": "browser",
+      "resolved_locale": "fr-FR",
+      "run_id": "3e4e39a4-aac9-44f2-9ae4-25c599ac9592",
+      "schema": "context_attestation/1",
+      "slug": "notion",
+      "source_url": "https://www.notion.com/pricing",
+      "timezone": "Europe/Paris",
+      "visible_markers": [
+        "€"
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "adapter": "notion",
+      "adapter_version": "1.0.0",
+      "attempts": 1,
+      "browser_context": {
+        "content_language_header": "en-US",
+        "currency_symbols_seen": [
+          "€",
+          "$"
+        ],
+        "egress_country": "FR",
+        "egress_error": null,
+        "egress_measured_from": "playwright_context",
+        "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+        "final_url": "https://www.notion.com/pricing",
+        "html_lang_attr": "en-us",
+        "locale_requested": "fr-FR",
+        "navigator_language": "fr-FR",
+        "navigator_languages": [
+          "fr-FR"
+        ],
+        "redirected": false,
+        "resolved_locale": "fr-FR",
+        "timezone": "Europe/Paris",
+        "visible_markers": [
+          "€"
+        ]
+      },
+      "content_hash": "sha256:4a649cfc70eb9fd0f0b71cdc93909ce2c7e650c11222401ef355fcca09a0c2d5",
+      "http_status": 200,
+      "market_context": null,
+      "market_context_candidate": "reference_fr",
+      "market_context_source": "currency_egress_candidate_review_required",
+      "mode": "network_forced",
+      "rendered_by": "browser",
+      "slug": "notion",
+      "url": "https://www.notion.com/pricing"
+    },
+    {
+      "content_hash": "sha256:9ad1ab01b47d528953381d0d9be7796c0ddf8a1ef0c6cf577c601f199fffb98f",
+      "http_status": 200,
+      "mode": "network",
+      "purpose": "free_plan",
+      "rendered_by": "browser",
+      "slug": "notion",
+      "url": "https://www.notion.com/pricing"
+    },
+    {
+      "content_hash": "sha256:9ad1ab01b47d528953381d0d9be7796c0ddf8a1ef0c6cf577c601f199fffb98f",
+      "http_status": 200,
+      "mode": "network",
+      "purpose": "pricing_unit",
+      "rendered_by": "browser",
+      "slug": "notion",
+      "url": "https://www.notion.com/pricing"
+    },
+    {
+      "content_hash": "sha256:9ad1ab01b47d528953381d0d9be7796c0ddf8a1ef0c6cf577c601f199fffb98f",
+      "http_status": 200,
+      "mode": "network",
+      "purpose": "billing_commitment",
+      "rendered_by": "browser",
+      "slug": "notion",
+      "url": "https://www.notion.com/pricing"
+    }
+  ],
+  "claims_created": 3,
+  "collector_version": "0.4.0",
+  "conflicts": [],
+  "diff_summary": "claims_extracted=2 claims_created=2 claims_unchanged=0 claims_confirmed=0 conflicts_opened=0 versions_created=2 attestations_created=1 approved=0 | doc_claims: extracted=3 created=3 unchanged=0",
+  "errors": [],
+  "finished_at": "2026-07-23T08:48:42.464Z",
+  "manifest": {
+    "commit": "dbea365209aa0458d9bc5bdadeefa72a30b4bc7b",
+    "slug_set_sha256": "9d0e3f599e290e80257fc07e024c120d99087a46101ab70c31024445574ce458"
+  },
+  "metrics": {
+    "attestations_created": 1,
+    "claims_confirmed": 0,
+    "claims_created": 2,
+    "claims_extracted": 2,
+    "claims_unchanged": 0,
+    "conflicts_opened": 0,
+    "doc_claims_confirmed": 0,
+    "doc_claims_created": 3,
+    "doc_claims_extracted": 3,
+    "doc_claims_unchanged": 0,
+    "versions_created": 2
+  },
+  "mode": "RESEARCH_ONLY",
+  "params": {
+    "cache_ttl_s": 86400,
+    "concurrency_per_domain": 1,
+    "delay_ms": 2000,
+    "force_recheck": true,
+    "locale": "fr-FR",
+    "market": "FR",
+    "renderer": "browser",
+    "slugs": [
+      "notion"
+    ]
+  },
+  "results": [
+    {
+      "accessible": true,
+      "conflicts_open": 0,
+      "created": true,
+      "hash": "sha256:4a649cfc70eb9fd0f0b71cdc93909ce2c7e650c11222401ef355fcca09a0c2d5",
+      "metrics": {
+        "attestations_created": 1,
+        "claims_confirmed": 0,
+        "claims_created": 2,
+        "claims_extracted": 2,
+        "claims_unchanged": 0,
+        "conflicts_opened": 0,
+        "doc_claims_confirmed": 0,
+        "doc_claims_created": 3,
+        "doc_claims_extracted": 3,
+        "doc_claims_unchanged": 0,
+        "versions_created": 2
+      },
+      "networkChecked": true,
+      "observations": 2,
+      "slug": "notion",
+      "url": "https://www.notion.com/pricing",
+      "versionsCreated": 2
+    }
+  ],
+  "review_status": "open",
+  "run_id": "3e4e39a4-aac9-44f2-9ae4-25c599ac9592",
+  "started_at": "2026-07-23T08:48:20.650Z",
+  "valid": true
+}

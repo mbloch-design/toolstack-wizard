@@ -1,0 +1,143 @@
+{
+  "agent": "research-collector",
+  "attestations": [],
+  "checks": [
+    {
+      "content_hash": "sha256:1ada9f38a80fb1634956127b13d32d55d07e0fbc1008815d6920050429ef5723",
+      "mode": "cache_hit",
+      "slug": "audionotes",
+      "ttl_remaining_s": 86256,
+      "url": "https://www.audionotes.app/pricing"
+    },
+    {
+      "content_hash": "sha256:15b739310aec2c62b1e006fb120b657a1e81b6ab3b508cd16e7720b9a9bb87be",
+      "mode": "cache_hit",
+      "slug": "visualcv",
+      "ttl_remaining_s": 86264,
+      "url": "https://www.visualcv.com/pricing/"
+    },
+    {
+      "content_hash": "sha256:4d5ba71ad0a8f3f9e2cb01518ece31f53a35c506eb49c477df2ca2ba91d13d8b",
+      "mode": "cache_hit",
+      "slug": "jenni",
+      "ttl_remaining_s": 86302,
+      "url": "https://jenni.ai/pricing"
+    }
+  ],
+  "claims_created": 0,
+  "collector_version": "0.4.0",
+  "conflicts": [],
+  "diff_summary": "claims_extracted=0 claims_created=0 claims_unchanged=0 claims_confirmed=0 conflicts_opened=0 versions_created=0 attestations_created=0 approved=0 | doc_claims: extracted=0 created=0 unchanged=0",
+  "errors": [],
+  "finished_at": "2026-08-18T13:57:47.217Z",
+  "manifest": {
+    "commit": "5402e95512c5e59cb756d9319da1bbe688d2e919",
+    "slug_set_sha256": "f64049dee528e845517bfab0e38e1a365abc712ef0b0c0d512269154a329af83"
+  },
+  "metrics": {
+    "attestations_created": 0,
+    "claims_confirmed": 0,
+    "claims_created": 0,
+    "claims_extracted": 0,
+    "claims_unchanged": 0,
+    "conflicts_opened": 0,
+    "doc_claims_confirmed": 0,
+    "doc_claims_created": 0,
+    "doc_claims_extracted": 0,
+    "doc_claims_unchanged": 0,
+    "versions_created": 0
+  },
+  "mode": "RESEARCH_ONLY",
+  "params": {
+    "cache_ttl_s": 86400,
+    "concurrency_per_domain": 1,
+    "delay_ms": 2000,
+    "force_recheck": false,
+    "locale": "fr-FR",
+    "market": "FR",
+    "renderer": "auto",
+    "slugs": [
+      "audionotes",
+      "visualcv",
+      "jenni"
+    ]
+  },
+  "results": [
+    {
+      "accessible": true,
+      "conflicts_open": 0,
+      "created": false,
+      "hash": "sha256:1ada9f38a80fb1634956127b13d32d55d07e0fbc1008815d6920050429ef5723",
+      "metrics": {
+        "attestations_created": 0,
+        "claims_confirmed": 0,
+        "claims_created": 0,
+        "claims_extracted": 0,
+        "claims_unchanged": 0,
+        "conflicts_opened": 0,
+        "doc_claims_confirmed": 0,
+        "doc_claims_created": 0,
+        "doc_claims_extracted": 0,
+        "doc_claims_unchanged": 0,
+        "versions_created": 0
+      },
+      "networkChecked": false,
+      "observations": 0,
+      "slug": "audionotes",
+      "url": "https://www.audionotes.app/pricing",
+      "versionsCreated": 0
+    },
+    {
+      "accessible": true,
+      "conflicts_open": 0,
+      "created": false,
+      "hash": "sha256:15b739310aec2c62b1e006fb120b657a1e81b6ab3b508cd16e7720b9a9bb87be",
+      "metrics": {
+        "attestations_created": 0,
+        "claims_confirmed": 0,
+        "claims_created": 0,
+        "claims_extracted": 0,
+        "claims_unchanged": 0,
+        "conflicts_opened": 0,
+        "doc_claims_confirmed": 0,
+        "doc_claims_created": 0,
+        "doc_claims_extracted": 0,
+        "doc_claims_unchanged": 0,
+        "versions_created": 0
+      },
+      "networkChecked": false,
+      "observations": 0,
+      "slug": "visualcv",
+      "url": "https://www.visualcv.com/pricing/",
+      "versionsCreated": 0
+    },
+    {
+      "accessible": true,
+      "conflicts_open": 0,
+      "created": false,
+      "hash": "sha256:4d5ba71ad0a8f3f9e2cb01518ece31f53a35c506eb49c477df2ca2ba91d13d8b",
+      "metrics": {
+        "attestations_created": 0,
+        "claims_confirmed": 0,
+        "claims_created": 0,
+        "claims_extracted": 0,
+        "claims_unchanged": 0,
+        "conflicts_opened": 0,
+        "doc_claims_confirmed": 0,
+        "doc_claims_created": 0,
+        "doc_claims_extracted": 0,
+        "doc_claims_unchanged": 0,
+        "versions_created": 0
+      },
+      "networkChecked": false,
+      "observations": 0,
+      "slug": "jenni",
+      "url": "https://jenni.ai/pricing",
+      "versionsCreated": 0
+    }
+  ],
+  "review_status": "open",
+  "run_id": "c855d1e9-4e2b-4d6a-b8fa-9dcf561a85cb",
+  "started_at": "2026-08-18T13:57:47.122Z",
+  "valid": true
+}

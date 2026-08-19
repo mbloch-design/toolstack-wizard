@@ -1,0 +1,71 @@
+{
+  "notion": {
+    "adapter": "generic",
+    "pricing_url": "https://www.notion.com/pricing",
+    "renderer_hint": "auto",
+    "source_type": "pricing",
+    "source_tier": 1,
+    "is_official": true,
+    "verified_http_status": 200,
+    "verified_on": "2026-07-22",
+    "market_context_declared": null,
+    "market_context_justification": "Page tarifaire officielle en anglais (sélecteur affiche 'English (US)'), montants servis en EUR par géolocalisation mais aucun signal de locale FR (html/lang, contenu FR) prouvé. Grille ni USD-mondiale claire ni FR prouvée : conformément à v0.3, un marché non prouvé reste null tant qu'une capture ne l'établit pas.",
+    "plan_key_mapping": {
+      "Free": "free",
+      "Plus": "plus",
+      "Business": "business",
+      "Enterprise": "enterprise"
+    },
+    "plan_key_mapping_note": "Quatre plans observés sur la page tarifaire officielle. 'Free' est un plan gratuit durable (0, quotas réduits, 'For individuals'), pas un essai. 'Plus' et 'Business' sont facturés par membre/mois (seat), engagement mensuel ou annuel (annuel = économie affichée 'Save up to 20% with yearly'). Notion AI est inclus en accès d'essai limité sur Free/Plus/Business et complet sur Enterprise ; un add-on 'Custom Agents' facturé au crédit existe (usage-sensitive) mais reste hors mapping de plan. 'Enterprise' est sur devis (custom), non public.",
+    "additional_sources": [
+      {
+        "establishes": {
+          "claim_key": "pricing.free_plan_exists",
+          "value": true
+        },
+        "is_official": true,
+        "notes": "Plan 'Free' à 0 observé sur la page tarifaire officielle ('For individuals to organize personal projects and life'), avec quotas réduits. Tier gratuit durable, distinct de l'essai limité de Notion AI.",
+        "proof_pattern": "Free[\\s\\S]*€0|For individuals to organize personal projects",
+        "purpose": "free_plan",
+        "renderer_hint": "auto",
+        "source_tier": 1,
+        "source_type": "pricing",
+        "url": "https://www.notion.com/pricing",
+        "verified_http_status": 200,
+        "verified_on": "2026-07-22"
+      },
+      {
+        "establishes": {
+          "claim_key": "pricing.unit",
+          "value": "seat"
+        },
+        "is_official": true,
+        "notes": "Plans payants (Plus, Business) facturés 'per member / month' : l'unité de tarification est le siège (membre/utilisateur), pas l'usage ni le document.",
+        "proof_pattern": "per member / month|per member",
+        "purpose": "pricing_unit",
+        "renderer_hint": "auto",
+        "source_tier": 1,
+        "source_type": "pricing",
+        "url": "https://www.notion.com/pricing",
+        "verified_http_status": 200,
+        "verified_on": "2026-07-22"
+      },
+      {
+        "establishes": {
+          "claim_key": "pricing.billing_commitment",
+          "value": "monthly_or_annual"
+        },
+        "is_official": true,
+        "notes": "Bascule de facturation observée sur la page ('Pay monthly' / 'Pay yearly'), le paiement annuel affichant une économie par rapport au mensuel.",
+        "proof_pattern": "Pay monthly|Pay yearly|Save up to 20% with yearly",
+        "purpose": "billing_commitment",
+        "renderer_hint": "auto",
+        "source_tier": 1,
+        "source_type": "pricing",
+        "url": "https://www.notion.com/pricing",
+        "verified_http_status": 200,
+        "verified_on": "2026-07-22"
+      }
+    ]
+  }
+}

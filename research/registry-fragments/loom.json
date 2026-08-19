@@ -1,0 +1,71 @@
+{
+  "loom": {
+    "adapter": "generic",
+    "pricing_url": "https://www.loom.com/pricing",
+    "renderer_hint": "dynamic",
+    "source_type": "pricing",
+    "source_tier": 1,
+    "is_official": true,
+    "verified_http_status": 200,
+    "verified_on": "2026-07-22",
+    "market_context_declared": "global_usd_fallback",
+    "market_context_justification": "Grille tarifaire officielle affichée en USD ($) sans sélecteur de pays observé ; montants par utilisateur/mois en dollars, sans devise locale (EUR) exposée. On déclare donc un repli USD mondial en attendant une éventuelle localisation confirmée par capture.",
+    "plan_key_mapping": {
+      "Starter": "free",
+      "Business": "business",
+      "Business + AI": "business_ai",
+      "Enterprise": "enterprise"
+    },
+    "plan_key_mapping_note": "Quatre plans observés sur la page tarifaire officielle. 'Starter' est un plan gratuit durable (0 $, quotas réduits), pas un essai. 'Business' et 'Business + AI' sont facturés par utilisateur/mois (seat), engagement mensuel ou annuel (annuel = économie affichée). 'Business + AI' expose un essai gratuit limité dans le temps (≠ plan gratuit). 'Enterprise' est sur devis (custom), non public.",
+    "additional_sources": [
+      {
+        "establishes": {
+          "claim_key": "pricing.free_plan_exists",
+          "value": true
+        },
+        "is_official": true,
+        "notes": "Plan 'Starter' à 0 $ observé sur la page tarifaire officielle, avec quotas réduits (nombre de vidéos et durée d'enregistrement plafonnés). Tier gratuit durable, distinct de l'essai gratuit du plan Business + AI.",
+        "proof_pattern": "Starter|\\$0|Free",
+        "purpose": "free_plan",
+        "renderer_hint": "dynamic",
+        "source_tier": 1,
+        "source_type": "pricing",
+        "url": "https://www.loom.com/pricing",
+        "verified_http_status": 200,
+        "verified_on": "2026-07-22"
+      },
+      {
+        "establishes": {
+          "claim_key": "pricing.unit",
+          "value": "seat"
+        },
+        "is_official": true,
+        "notes": "Plans payants (Business, Business + AI) facturés 'per user/month' : l'unité de tarification est le siège (seat/créateur), pas l'usage ni la vidéo.",
+        "proof_pattern": "per user|/user|per creator|seat",
+        "purpose": "pricing_unit",
+        "renderer_hint": "dynamic",
+        "source_tier": 1,
+        "source_type": "pricing",
+        "url": "https://www.loom.com/pricing",
+        "verified_http_status": 200,
+        "verified_on": "2026-07-22"
+      },
+      {
+        "establishes": {
+          "claim_key": "pricing.billing_commitment",
+          "value": "monthly_or_annual"
+        },
+        "is_official": true,
+        "notes": "Engagement mensuel ou annuel proposé sur les plans payants ; le paiement annuel affiche une économie par rapport au mensuel (bascule de facturation observée sur la page).",
+        "proof_pattern": "billed annually|save|/mo|per month|annual",
+        "purpose": "billing_commitment",
+        "renderer_hint": "dynamic",
+        "source_tier": 1,
+        "source_type": "pricing",
+        "url": "https://www.loom.com/pricing",
+        "verified_http_status": 200,
+        "verified_on": "2026-07-22"
+      }
+    ]
+  }
+}

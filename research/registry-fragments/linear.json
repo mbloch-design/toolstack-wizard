@@ -1,0 +1,71 @@
+{
+  "linear": {
+    "adapter": "generic",
+    "pricing_url": "https://linear.app/pricing",
+    "renderer_hint": "auto",
+    "source_type": "pricing",
+    "source_tier": 1,
+    "is_official": true,
+    "verified_http_status": 200,
+    "verified_on": "2026-07-22",
+    "market_context_declared": "global_usd_fallback",
+    "market_context_justification": "Grille servie en USD ($), contenu en anglais, aucun signal de locale/marché FR malgré une navigation depuis la France (constaté 2026-07-22). Décision humaine : traiter comme grille mondiale USD, marché/locale nuls.",
+    "plan_key_mapping": {
+      "Free": "free",
+      "Basic": "basic",
+      "Business": "business",
+      "Enterprise": "enterprise"
+    },
+    "plan_key_mapping_note": "Quatre plans exposés sur la grille officielle (Free / Basic / Business / Enterprise). Enterprise = tarif sur devis (custom), exclu des observations de prix. Association par titre : la grille présente des cartes de plan titrées, adaptée au moteur générique.",
+    "additional_sources": [
+      {
+        "establishes": {
+          "claim_key": "pricing.free_plan_exists",
+          "value": true
+        },
+        "is_official": true,
+        "notes": "Le plan Free ($0, « Free for everyone ») est un plan gratuit durable et non un essai. Aucune observation 0 USD n'est fabriquée : le fait est porté par ce claim.",
+        "proof_pattern": "Free for everyone|\\$0",
+        "purpose": "free_plan",
+        "renderer_hint": "auto",
+        "source_tier": 1,
+        "source_type": "pricing",
+        "url": "https://linear.app/pricing",
+        "verified_http_status": 200,
+        "verified_on": "2026-07-22"
+      },
+      {
+        "establishes": {
+          "claim_key": "pricing.unit",
+          "value": "per_seat"
+        },
+        "is_official": true,
+        "notes": "Tarification par utilisateur (siège/seat) : les plans Basic et Business sont libellés « per user/month ». Facturation au nombre d'utilisateurs, pas à l'usage.",
+        "proof_pattern": "per user/month",
+        "purpose": "pricing_unit",
+        "renderer_hint": "auto",
+        "source_tier": 1,
+        "source_type": "pricing",
+        "url": "https://linear.app/pricing",
+        "verified_http_status": 200,
+        "verified_on": "2026-07-22"
+      },
+      {
+        "establishes": {
+          "claim_key": "pricing.billing_commitment",
+          "value": "annual_prepaid"
+        },
+        "is_official": true,
+        "notes": "Les prix par utilisateur des plans payants sont affichés avec la mention « Billed yearly » ; Enterprise est facturé annuellement également.",
+        "proof_pattern": "Billed yearly",
+        "purpose": "billing_commitment",
+        "renderer_hint": "auto",
+        "source_tier": 1,
+        "source_type": "pricing",
+        "url": "https://linear.app/pricing",
+        "verified_http_status": 200,
+        "verified_on": "2026-07-22"
+      }
+    ]
+  }
+}
