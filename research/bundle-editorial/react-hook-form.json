@@ -1,0 +1,89 @@
+{
+  "slug": "react-hook-form",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "React Hook Form — site officiel", "url": "https://react-hook-form.com/" },
+    { "label": "React Hook Form — GitHub", "url": "https://github.com/react-hook-form/react-hook-form" }
+  ],
+  "facts": {
+    "what": "Bibliothèque légère (3 kB) pour gérer les formulaires React via des hooks. Intègre la validation native HTML et supporte Yup, Zod, AJV et autres schemas validators.",
+    "what_en": "Lightweight library (3 kB) for managing React forms using hooks. Integrates native HTML validation and supports Yup, Zod, AJV and other schema validators.",
+    "pricing_model": "Open source, gratuit (licence MIT)",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit et open source, zéro restrictions d'usage" },
+    "plans": [
+      { "name": "Open source", "price": "gratuit" }
+    ],
+    "key_features": [
+      "Très léger : ~3 kB minifié et gzippé",
+      "Zéro dépendance externe",
+      "Support TypeScript complet",
+      "Intégration avec UI libraries (Material-UI, Chakra, etc.)",
+      "Validation flexible via schémas (Yup, Zod, AJV)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez une gestion de formulaires minimaliste sans dépendances externes.",
+        "Vous gérez des formulaires complexes avec de la validation adaptée.",
+        "Vous cherchez une solution légère pour réduire la taille du bundle."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'une UI formulaires pré-construite (préférez Formik + Material-UI).",
+        "Vous travaillez avec un framework non-React (Vue, Svelte).",
+        "Vous n'utilisez pas React ou n'aimez pas les hooks."
+      ],
+      "threshold": "React Hook Form brille pour la gestion d'état de formulaires légère et type-safe ; préférez-le si la taille du bundle et la validation personnalisée importent."
+    },
+    "pros": [
+      "Très léger (~3 kB) et sans dépendance externe.",
+      "Excelente performance même avec des formulaires complexes.",
+      "Support TypeScript et validation par schémas (Yup, Zod).",
+      "Intégration simple avec UI libraries populaires."
+    ],
+    "cons": [
+      "Nécessite de construire l'UI du formulaire soi-même (pas de composants pré-stylisés).",
+      "Courbe d'apprentissage pour débuter avec les concepts de hooks et registre.",
+      "Moins de documentation que Formik pour les cas avancés."
+    ],
+    "use_cases": [
+      "Gérer des formulaires de connexion et inscription minimalistes.",
+      "Valider et soumettre des formulaires de configuration complexes.",
+      "Réduire le poids du bundle pour une PWA."
+    ],
+    "relevant_for": ["Développeurs React", "Startups conscientes du performance", "Applications PWA"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want lightweight form management without external dependencies.",
+        "You're handling complex forms with sophisticated validation.",
+        "You need to minimize bundle size."
+      ],
+      "avoidIf": [
+        "You need pre-built form UI components (prefer Formik + Material-UI).",
+        "You're working with non-React frameworks (Vue, Svelte).",
+        "You don't use React or dislike the hooks pattern."
+      ],
+      "threshold": "React Hook Form shines for lightweight and type-safe form state management; choose it when bundle size and custom validation matter."
+    },
+    "pros": [
+      "Very lightweight (~3 kB) with zero external dependencies.",
+      "Excellent performance even with complex forms.",
+      "TypeScript support and schema-based validation (Yup, Zod).",
+      "Simple integration with popular UI libraries."
+    ],
+    "cons": [
+      "Requires building form UI yourself (no pre-styled components).",
+      "Learning curve for hooks and register concepts.",
+      "Less documentation than Formik for advanced use cases."
+    ],
+    "use_cases": [
+      "Manage minimal login and signup forms.",
+      "Validate and submit complex configuration forms.",
+      "Reduce bundle weight for PWAs."
+    ],
+    "relevant_for": ["React developers", "Performance-conscious startups", "PWA applications"]
+  }
+}

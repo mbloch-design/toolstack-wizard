@@ -1,0 +1,96 @@
+{
+  "slug": "tanstack-router",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "TanStack Router — site officiel", "url": "https://tanstack.com/router/latest" },
+    { "label": "TanStack Router — GitHub", "url": "https://github.com/TanStack/router" }
+  ],
+  "facts": {
+    "what": "Routeur moderne et type-safe pour React et Solid avec inférence de type end-to-end. Alternative à React Router avec meilleur support TypeScript.",
+    "what_en": "Modern and type-safe router for React and Solid with end-to-end type inference. Alternative to React Router with better TypeScript support.",
+    "pricing_model": "Open source, gratuit (licence MIT)",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit et open source, aucune restriction" },
+    "plans": [
+      { "name": "Open source", "price": "gratuit" }
+    ],
+    "key_features": [
+      "Type-safe routing avec inférence de type complète.",
+      "File-based et code-based routing configuration.",
+      "Nested layouts et data loading à chaque niveau de route.",
+      "Search params type-safe et validés.",
+      "Preloading de routes et données automatique.",
+      "333.9M total downloads, 14,963 GitHub stars."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez un routeur type-safe avec inférence de type complète.",
+        "Vous travaillez avec TypeScript et valorisez la sécurité de type.",
+        "Vous construisez une application complexe avec nested routes et data loading."
+      ],
+      "avoidIf": [
+        "Vous avez une base de code importante avec React Router déjà en place.",
+        "Vous travaillez avec une équipe sans expérience TypeScript.",
+        "Vous cherchez le standard de facto (React Router)."
+      ],
+      "threshold": "TanStack Router brille pour la sécurité de type ; préférez-le si TypeScript et type inference importent."
+    },
+    "pros": [
+      "Type-safe routing avec end-to-end type inference.",
+      "Search parameters validés et type-safe.",
+      "File-based routing pour approche simple.",
+      "Excellent support pour nested layouts et data loading.",
+      "Preloading automatique des routes et données pour performance.",
+      "Sponsorisé par Cloudflare, Netlify, Railway."
+    ],
+    "cons": [
+      "Plus nouveau que React Router, moins de ressources éducatives.",
+      "Écosystème plus petit avec moins de middlewares et intégrations.",
+      "Migration depuis React Router nécessite du refactoring.",
+      "Courbe d'apprentissage pour les concepts type-safe."
+    ],
+    "use_cases": [
+      "Construire une application type-safe avec TypeScript et inférence de type.",
+      "Créer une application avec nested layouts et data loading complexe.",
+      "Développer une SPA avec URL as state management."
+    ],
+    "relevant_for": ["Équipes TypeScript", "Startups", "Applications complexes", "DX-first"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want a type-safe router with full type inference.",
+        "You work with TypeScript and value type safety.",
+        "You're building a complex application with nested routes and data loading."
+      ],
+      "avoidIf": [
+        "You have a large codebase with React Router already in place.",
+        "You work with a team without TypeScript experience.",
+        "You're looking for the de facto standard (React Router)."
+      ],
+      "threshold": "TanStack Router shines for type safety; choose it if TypeScript and type inference matter."
+    },
+    "pros": [
+      "Type-safe routing with end-to-end type inference.",
+      "Validated and type-safe search parameters.",
+      "File-based routing for simple approach.",
+      "Excellent support for nested layouts and data loading.",
+      "Automatic preloading of routes and data for performance.",
+      "Sponsored by Cloudflare, Netlify, Railway."
+    ],
+    "cons": [
+      "Newer than React Router, fewer educational resources.",
+      "Smaller ecosystem with fewer middlewares and integrations.",
+      "Migration from React Router requires refactoring.",
+      "Learning curve for type-safe concepts."
+    ],
+    "use_cases": [
+      "Build a type-safe application with TypeScript and type inference.",
+      "Create an application with complex nested layouts and data loading.",
+      "Develop an SPA with URL as state management."
+    ],
+    "relevant_for": ["TypeScript teams", "Startups", "Complex applications", "DX-first"]
+  }
+}

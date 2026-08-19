@@ -1,0 +1,117 @@
+{
+  "slug": "svelte",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "Svelte — site officiel",
+      "url": "https://svelte.dev/"
+    },
+    {
+      "label": "Svelte — GitHub",
+      "url": "https://github.com/sveltejs/svelte"
+    }
+  ],
+  "facts": {
+    "what": "Framework JavaScript compilé qui transforme les composants en code JavaScript pur sans Virtual DOM. Syntaxe HTML, CSS et JavaScript réunis dans un composant.",
+    "what_en": "Compiled JavaScript framework that transforms components into pure JavaScript code without Virtual DOM. HTML, CSS and JavaScript syntax combined in one component.",
+    "pricing_model": "Open source, gratuit (licence MIT)",
+    "free_tier": {
+      "exists": true,
+      "detail": "Entièrement gratuit et open source, aucune restriction"
+    },
+    "plans": [
+      {
+        "name": "Open source",
+        "price": "gratuit"
+      }
+    ],
+    "key_features": [
+      "Compilation pré-execution — zero runtime overhead.",
+      "Syntaxe HTML native avec CSS et JS couplés.",
+      "Réactivité déclarative via le signe d'égalité $.",
+      "Transitions et animations built-in.",
+      "Meta-framework SvelteKit pour SSR et file-based routing."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez un framework compilé pour performance optimale.",
+        "Vous aimez la syntaxe HTML, CSS, et JavaScript dans un même fichier.",
+        "Vous prioritize une bonne developer experience et courbe d'apprentissage douce."
+      ],
+      "avoidIf": [
+        "Votre équipe dépend fortement de l'écosystème React.",
+        "Vous cherchez la plus grande communauté d'utilisateurs.",
+        "Vous avez beaucoup de dépendances dans l'écosystème React."
+      ],
+      "threshold": "Svelte brille pour la DX et la performance compilée ; choisissez-le si vous aimez une approche novatrice et légère."
+    },
+    "pros": [
+      "Approche compilée — aucun runtime Virtual DOM, performances exceptionnelles.",
+      "Syntaxe naturelle et intuitive (HTML, CSS, JS ensemble).",
+      "Réactivité simple via le signe d'égalité $.",
+      "Transitions et animations built-in.",
+      "Developer satisfaction la plus élevée (classé #1 dans State of JS).",
+      "Meta-framework SvelteKit pour applications complètes."
+    ],
+    "cons": [
+      "Écosystème plus petit que React.",
+      "Communauté moins grande, moins de ressources éducatives.",
+      "Moins de bibliothèques tierces disponibles.",
+      "Adoption en entreprise moins répandue que React."
+    ],
+    "use_cases": [
+      "Construire une application web performante et légère.",
+      "Créer une Single Page Application avec bonne DX.",
+      "Prototyper rapidement une idée avec SvelteKit."
+    ],
+    "relevant_for": [
+      "Développeurs cherchant l'innovation",
+      "Freelancers",
+      "Petites équipes",
+      "Performance-first"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want a compiled framework for optimal performance.",
+        "You like HTML, CSS, and JavaScript in the same file.",
+        "You prioritize good developer experience and shallow learning curve."
+      ],
+      "avoidIf": [
+        "Your team heavily depends on the React ecosystem.",
+        "You're looking for the largest community of users.",
+        "You have many dependencies in the React ecosystem."
+      ],
+      "threshold": "Svelte shines for DX and compiled performance; choose it if you like an innovative and lightweight approach."
+    },
+    "pros": [
+      "Compiled approach — no runtime Virtual DOM, exceptional performance.",
+      "Natural and intuitive syntax (HTML, CSS, JS together).",
+      "Simple reactivity via the $ sign.",
+      "Built-in transitions and animations.",
+      "Highest developer satisfaction (ranked #1 in State of JS).",
+      "Meta-framework SvelteKit for complete applications."
+    ],
+    "cons": [
+      "Smaller ecosystem than React.",
+      "Smaller community, fewer educational resources.",
+      "Fewer third-party libraries available.",
+      "Less enterprise adoption than React."
+    ],
+    "use_cases": [
+      "Build a performant and lightweight web application.",
+      "Create a Single Page Application with good DX.",
+      "Prototype an idea quickly with SvelteKit."
+    ],
+    "relevant_for": [
+      "Innovation-seeking developers",
+      "Freelancers",
+      "Small teams",
+      "Performance-first"
+    ]
+  }
+}

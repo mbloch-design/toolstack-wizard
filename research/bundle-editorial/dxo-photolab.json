@@ -1,0 +1,90 @@
+{
+  "slug": "dxo-photolab",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "DxO PhotoLab — site officiel", "url": "https://www.dxo.com/dxo-photolab/" }
+  ],
+  "facts": {
+    "what": "Logiciel de retouche et d'édition RAW spécialisé dans la correction optique et le traitement RAW. Réputé pour sa gestion des aberrations optiques et de la distorsion grâce à sa base de données de lentilles.",
+    "what_en": "RAW editing and retouching software specializing in optical correction and RAW processing. Renowned for handling optical aberrations and distortion correction via its lens database.",
+    "pricing_model": "Achat unique perpétuel par version",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Essai gratuit limité disponible. Version Essential disponible avec certains appareils." },
+    "plans": [
+      { "name": "DxO PhotoLab Elite", "price": "289,99 $" },
+      { "name": "DxO PureRAW", "price": "139,99 $" },
+      { "name": "DxO FilmPack", "price": "139 $" }
+    ],
+    "key_features": [
+      "Correction optique automatique basée sur la lentille utilisée",
+      "Traitement RAW puissant et intuitif",
+      "Reduction du bruit AI-powered",
+      "Profiles optiques pour des centaines de lentilles"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous photographiez avec des lentilles et avez besoin de correction optique.",
+        "Vous recherchez l'une des meilleures corrections de distorsion automatique.",
+        "Vous préférez un achat unique plutôt qu'un abonnement."
+      ],
+      "avoidIf": [
+        "Vous faites surtout de la retouche cosmétique simple.",
+        "Vous ne shootez qu'au smartphone ou capteurs mobiles.",
+        "Vous avez un budget très serré."
+      ],
+      "threshold": "DxO PhotoLab excelle pour la correction optique professionnelle ; pour une retouche générale RAW, darktable gratuit ou Lightroom suffisent."
+    },
+    "pros": [
+      "Meilleure correction optique automatique du marché",
+      "Reduction de bruit AI excellente",
+      "Achat unique sans abonnement récurrent",
+      "Interface intuitive et efficace"
+    ],
+    "cons": [
+      "Prix élevé pour un logiciel seul",
+      "Moins de flexibilité que Lightroom pour certaines tâches",
+      "Communauté plus petite",
+      "Pas d'intégration cloud"
+    ],
+    "use_cases": [
+      "Corriger automatiquement la distorsion optique des lentilles",
+      "Réduire le bruit numérique des photos ISO élevé",
+      "Traiter efficacement des fichiers RAW de haute qualité"
+    ],
+    "relevant_for": ["Photographes exigeants", "Photographes optique", "Professionnels photo"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You photograph with lenses and need optical correction.",
+        "You want best-in-class automatic distortion correction.",
+        "You prefer one-time purchase over subscription."
+      ],
+      "avoidIf": [
+        "You mainly do simple cosmetic retouching.",
+        "You only shoot with smartphone or mobile sensors.",
+        "You have a very tight budget."
+      ],
+      "threshold": "DxO PhotoLab excels for professional optical correction; for general RAW retouching, free darktable or Lightroom suffice."
+    },
+    "pros": [
+      "Best automatic optical correction on market",
+      "Excellent AI-powered noise reduction",
+      "One-time purchase without recurring subscription",
+      "Intuitive and efficient interface"
+    ],
+    "cons": [
+      "High price for a standalone tool",
+      "Less flexibility than Lightroom for some tasks",
+      "Smaller community",
+      "No cloud integration"
+    ],
+    "use_cases": [
+      "Automatically correct lens distortion",
+      "Reduce digital noise in high-ISO photos",
+      "Efficiently process high-quality RAW files"
+    ]
+  }
+}

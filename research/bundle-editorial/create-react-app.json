@@ -1,0 +1,84 @@
+{
+  "slug": "create-react-app",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Create React App — documentation officielle", "url": "https://create-react-app.dev" }
+  ],
+  "facts": {
+    "what": "Outil CLI officiel pour démarrer rapidement une application React sans configuration. Fournit une structure de projet prête à l'emploi avec Webpack, Babel et ESLint pré-configurés.",
+    "what_en": "Official CLI tool for quickly starting a React application without configuration. Provides ready-to-use project structure with Webpack, Babel, and ESLint pre-configured.",
+    "pricing_model": "Entièrement gratuit et open source",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit. Pas de versions payantes ou limitations fonctionnelles." },
+    "plans": [],
+    "key_features": [
+      "Scaffolding rapide avec structure pré-définie",
+      "Hot reload et live editing en développement",
+      "Build production optimisé pour la performance",
+      "Jest et React Testing Library intégrés"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous commencez votre apprentissage de React.",
+        "Vous voulez une configuration prête-à-l'emploi sans webpack personnalisé.",
+        "Vous prototypez rapidement une application React simple."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'une configuration très spécifique ou avancée.",
+        "Vous construisez une application à très grande échelle.",
+        "Vous préférez contrôler chaque détail du build (webpack, babel)."
+      ],
+      "threshold": "Create React App est parfait pour débuter ou prototyper rapidement ; pour des besoins avancés, migrez vers Vite ou Next.js."
+    },
+    "pros": [
+      "Zéro configuration pour commencer",
+      "Structure de projet bien pensée et cohérente",
+      "Outils de test et linting intégrés",
+      "Documentation excellente et support actif"
+    ],
+    "cons": [
+      "Configuration webpack cachée — difficile à customiser",
+      "Temps de build et hot reload plus lents que Vite",
+      "Capacités d'eject complexes si customisation nécessaire"
+    ],
+    "use_cases": [
+      "Apprendre React et JavaScript moderne",
+      "Prototyper rapidement une interface utilisateur",
+      "Démarrer une application React simple"
+    ],
+    "relevant_for": ["Développeurs React débutants", "Prototypeurs", "Étudiants"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're learning React.",
+        "You want a ready-to-use configuration without custom webpack.",
+        "You're rapidly prototyping a simple React app."
+      ],
+      "avoidIf": [
+        "You need very specific or advanced configuration.",
+        "You're building a very large-scale application.",
+        "You prefer controlling every build detail (webpack, babel)."
+      ],
+      "threshold": "Create React App is perfect for getting started or rapid prototyping; for advanced needs, migrate to Vite or Next.js."
+    },
+    "pros": [
+      "Zero configuration to start",
+      "Well-thought and cohesive project structure",
+      "Built-in testing and linting tools",
+      "Excellent documentation and active support"
+    ],
+    "cons": [
+      "Hidden webpack config — difficult to customize",
+      "Build and hot reload slower than Vite",
+      "Complex eject capabilities if customization needed"
+    ],
+    "use_cases": [
+      "Learn React and modern JavaScript",
+      "Rapidly prototype a user interface",
+      "Start a simple React application"
+    ]
+  }
+}

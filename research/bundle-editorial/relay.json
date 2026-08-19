@@ -1,0 +1,113 @@
+{
+  "slug": "relay",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "Relay — site officiel",
+      "url": "https://relay.dev/"
+    },
+    {
+      "label": "Relay — GitHub",
+      "url": "https://github.com/facebook/relay"
+    }
+  ],
+  "facts": {
+    "what": "Framework GraphQL client pour React construit par Meta. Gère les requêtes GraphQL, le cache et la synchronisation des données avec des fragments déclaratifs.",
+    "what_en": "GraphQL client framework for React built by Meta. Handles GraphQL queries, caching and data synchronization with declarative fragments.",
+    "pricing_model": "Open source, gratuit (licence BSD)",
+    "free_tier": {
+      "exists": true,
+      "detail": "Entièrement gratuit et open source, aucune restriction d'usage"
+    },
+    "plans": [
+      {
+        "name": "Open source",
+        "price": "gratuit"
+      }
+    ],
+    "key_features": [
+      "Déclaration des besoins en données via fragments GraphQL.",
+      "Compilation des requêtes pour optimisation automatique.",
+      "Cache automatique et synchronisation des données.",
+      "Support des mutations optimistes avec gestion d'erreurs.",
+      "Type-safe via génération de types TypeScript/Flow."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous construisez une application React avec une API GraphQL comme backend.",
+        "Vous avez besoin de gestion de cache sophistiquée et de synchronisation de données.",
+        "Vous travaillez dans une équipe importante où la scalabilité du data fetching importe."
+      ],
+      "avoidIf": [
+        "Vous utilisez une API REST (préférez React Query / TanStack Query).",
+        "Vous débutez avec GraphQL.",
+        "Vous cherchez une solution légère et simple pour GraphQL (préférez Apollo Client)."
+      ],
+      "threshold": "Relay brille pour les applications React massives avec GraphQL ; préférez-le pour la scalabilité et les performances."
+    },
+    "pros": [
+      "Framework GraphQL complètement optimisé pour React et les fragments déclaratifs.",
+      "Compilation pré-runtime pour une meilleure performance.",
+      "Cache automatique et très efficace avec synchronisation de données.",
+      "Mutations optimistes avec rollback automatique en cas d'erreur.",
+      "Type-safe avec génération de types TypeScript et Flow."
+    ],
+    "cons": [
+      "Courbe d'apprentissage abrupte, concepts complexes à maîtriser.",
+      "Require une étape de compilation (relay-compiler).",
+      "Moins de ressources éducatives que Apollo Client.",
+      "Overkill pour les applications simples avec peu de mutations."
+    ],
+    "use_cases": [
+      "Construire une application SaaS complexe avec GraphQL et cache sophistiqué.",
+      "Gérer une application avec beaucoup de mutations et synchronisation temps réel.",
+      "Scalabilité du data fetching pour une équipe grande et croissante."
+    ],
+    "relevant_for": [
+      "Équipes React expertes",
+      "Applications GraphQL complexes",
+      "Grandes entreprises"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're building a React application with GraphQL as the backend.",
+        "You need sophisticated caching and data-synchronization management.",
+        "You work in a large team where data-fetching scalability matters."
+      ],
+      "avoidIf": [
+        "You use a REST API (prefer React Query / TanStack Query).",
+        "You're just starting with GraphQL.",
+        "You want a lightweight and simple GraphQL solution (prefer Apollo Client)."
+      ],
+      "threshold": "Relay shines for massive React applications with GraphQL; choose it for scalability and performance."
+    },
+    "pros": [
+      "GraphQL framework fully optimized for React and declarative fragments.",
+      "Compile-time pre-compilation for better performance.",
+      "Automatic and very efficient cache with data synchronization.",
+      "Optimistic mutations with automatic rollback on error.",
+      "Type-safe with TypeScript and Flow type generation."
+    ],
+    "cons": [
+      "Steep learning curve, complex concepts to master.",
+      "Requires a compilation step (relay-compiler).",
+      "Fewer educational resources than Apollo Client.",
+      "Overkill for simple applications with few mutations."
+    ],
+    "use_cases": [
+      "Build a complex SaaS application with GraphQL and sophisticated caching.",
+      "Manage an application with lots of mutations and real-time synchronization.",
+      "Scale data fetching for a large and growing team."
+    ],
+    "relevant_for": [
+      "Expert React teams",
+      "Complex GraphQL applications",
+      "Large enterprises"
+    ]
+  }
+}

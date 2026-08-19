@@ -1,0 +1,113 @@
+{
+  "slug": "react-query",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "TanStack Query (React Query) — site officiel",
+      "url": "https://tanstack.com/query/latest/docs/framework/react/overview"
+    },
+    {
+      "label": "TanStack Query — GitHub",
+      "url": "https://github.com/TanStack/query"
+    }
+  ],
+  "facts": {
+    "what": "Bibliothèque pour gérer le cache et la synchronisation des données serveur (state management asynchrone). Anciennement nommée React Query, maintenant TanStack Query.",
+    "what_en": "Library for managing server-state caching and synchronization (asynchronous state management). Formerly React Query, now called TanStack Query.",
+    "pricing_model": "Open source, gratuit (licence MIT)",
+    "free_tier": {
+      "exists": true,
+      "detail": "Entièrement gratuit et open source, zéro restrictions"
+    },
+    "plans": [
+      {
+        "name": "Open source",
+        "price": "gratuit"
+      }
+    ],
+    "key_features": [
+      "Gestion automatique du cache et de la synchronisation des données.",
+      "Hooks comme useQuery et useMutation pour récupérer et modifier les données.",
+      "Deduplication automatique des requêtes.",
+      "DevTools intégré pour déboguer les requêtes.",
+      "Support pour REST, GraphQL, et autres protocoles."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin de gérer beaucoup de requêtes asynchrones et du cache côté client.",
+        "Vous voulez une solution prête à l'emploi pour le server state (pas Redux).",
+        "Vous travaillez avec des APIs REST ou GraphQL et avez besoin de refetch automatique."
+      ],
+      "avoidIf": [
+        "Vous gérez principalement du state client (useContext suffit).",
+        "Vous préférez Redux ou une autre solution de state management.",
+        "Vous construisez une app très simple sans appels API complexes."
+      ],
+      "threshold": "React Query résout les problèmes réels du server state ; adoptez-le si vous avez beaucoup d'appels API ou du cache complexe."
+    },
+    "pros": [
+      "Élimine le besoin de gérer manuellement le cache et le loading state.",
+      "Deduplication automatique des requêtes identiques.",
+      "Refetch automatique au focus ou au reconnect.",
+      "DevTools puissant pour déboguer les queries.",
+      "Over 2.4 million weekly npm downloads — très adopté."
+    ],
+    "cons": [
+      "Courbe d'apprentissage pour comprendre les concepts de cache et stale time.",
+      "Peut être overkill pour des applications très simples.",
+      "Nécessite de combiner avec Redux ou Zustand pour le state client."
+    ],
+    "use_cases": [
+      "Gérer le cache et la synchronisation d'un dashboard SaaS avec beaucoup d'appels API.",
+      "Implementer un infinite scroll feed avec pagination et deduplication.",
+      "Refetch automatique des données critiques au focus de la fenêtre."
+    ],
+    "relevant_for": [
+      "Développeurs React",
+      "Applications SaaS",
+      "Dashboards complexes",
+      "Équipes"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need to manage many asynchronous requests and client-side cache.",
+        "You want a ready-to-use solution for server state (not Redux).",
+        "You work with REST or GraphQL APIs and need automatic refetching."
+      ],
+      "avoidIf": [
+        "You're mainly managing client-side state (useContext is enough).",
+        "You prefer Redux or another state management solution.",
+        "You're building a very simple app without complex API calls."
+      ],
+      "threshold": "React Query solves real server-state problems; adopt it if you have many API calls or complex caching."
+    },
+    "pros": [
+      "Eliminates manual cache and loading-state management.",
+      "Automatic deduplication of identical requests.",
+      "Automatic refetching on window focus or reconnect.",
+      "Powerful DevTools for debugging queries.",
+      "Over 2.4 million weekly npm downloads — widely adopted."
+    ],
+    "cons": [
+      "Learning curve to understand cache and stale-time concepts.",
+      "Can be overkill for very simple applications.",
+      "Requires combining with Redux or Zustand for client-side state."
+    ],
+    "use_cases": [
+      "Manage cache and sync of a SaaS dashboard with many API calls.",
+      "Implement an infinite-scroll feed with pagination and deduplication.",
+      "Auto-refetch critical data when the window regains focus."
+    ],
+    "relevant_for": [
+      "React developers",
+      "SaaS applications",
+      "Complex dashboards",
+      "Teams"
+    ]
+  }
+}

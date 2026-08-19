@@ -1,0 +1,113 @@
+{
+  "slug": "radix-ui",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "Radix UI — site officiel",
+      "url": "https://www.radix-ui.com/"
+    },
+    {
+      "label": "Radix UI — GitHub",
+      "url": "https://github.com/radix-ui/primitives"
+    }
+  ],
+  "facts": {
+    "what": "Bibliothèque de composants React pré-stylisés, accessibles et sans dépendances externes. Construite sur Radix Primitives avec thèmes et système de design inclus.",
+    "what_en": "Library of pre-styled, accessible React components with no external dependencies. Built on Radix Primitives with themes and design system included.",
+    "pricing_model": "Open source, gratuit (licence MIT)",
+    "free_tier": {
+      "exists": true,
+      "detail": "Entièrement gratuit et open source, zéro restrictions"
+    },
+    "plans": [
+      {
+        "name": "Open source",
+        "price": "gratuit"
+      }
+    ],
+    "key_features": [
+      "Composants pré-stylisés et prêts à l'emploi.",
+      "Entièrement accessible (WAI-ARIA compliant).",
+      "Système de thèmes intégré.",
+      "Zéro dépendances externes.",
+      "130M+ downloads mensuels, 13K+ GitHub stars."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez des composants UI pré-stylisés et prêts à l'emploi.",
+        "L'accessibilité est une priorité pour votre application.",
+        "Vous voulez une alternative complète à Material-UI ou Chakra plus légère."
+      ],
+      "avoidIf": [
+        "Vous avez besoin de composants très spécialisés (data grids, charts).",
+        "Vous préférez une approche sans styles (unstyled) comme Radix Primitives.",
+        "Vous travaillez avec un framework non-React."
+      ],
+      "threshold": "Radix UI est un choix excellent pour les applications nécessitant accessibilité et design-system prédéfini."
+    },
+    "pros": [
+      "Composants pré-stylisés avec très bon design par défaut.",
+      "Entièrement accessible et WAI-ARIA compliant.",
+      "Zéro dépendances externes, bundle size léger.",
+      "Système de design complet avec thèmes intégrés.",
+      "130M+ monthly downloads — très fiable et adopté."
+    ],
+    "cons": [
+      "Customization personnalisée peut nécessiter plus d'effort que Chakra.",
+      "Moins de composants spécialisés que Material-UI.",
+      "Courbe d'apprentissage pour utiliser les thèmes efficacement."
+    ],
+    "use_cases": [
+      "Construire un SaaS avec design-system pré-défini et prêt à l'emploi.",
+      "Développer une application accessible (WCAG 2.1 AA ou plus).",
+      "Créer une admin dashboard avec composants UI consistants."
+    ],
+    "relevant_for": [
+      "Équipes accessibilité-first",
+      "SaaS",
+      "Dashboards",
+      "Startups"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want pre-styled, ready-to-use UI components.",
+        "Accessibility is a priority for your application.",
+        "You want a lighter alternative to Material-UI or Chakra."
+      ],
+      "avoidIf": [
+        "You need highly specialized components (data grids, charts).",
+        "You prefer an unstyled approach like Radix Primitives.",
+        "You work with non-React frameworks."
+      ],
+      "threshold": "Radix UI is an excellent choice for applications requiring accessibility and a predefined design system."
+    },
+    "pros": [
+      "Pre-styled components with excellent default design.",
+      "Fully accessible and WAI-ARIA compliant.",
+      "Zero external dependencies, lightweight bundle size.",
+      "Complete design system with integrated themes.",
+      "130M+ monthly downloads — very reliable and adopted."
+    ],
+    "cons": [
+      "Custom customization may require more effort than Chakra.",
+      "Fewer specialized components than Material-UI.",
+      "Learning curve for using themes effectively."
+    ],
+    "use_cases": [
+      "Build a SaaS with predefined design-system and ready-to-use components.",
+      "Develop an accessible application (WCAG 2.1 AA or higher).",
+      "Create an admin dashboard with consistent UI components."
+    ],
+    "relevant_for": [
+      "Accessibility-first teams",
+      "SaaS",
+      "Dashboards",
+      "Startups"
+    ]
+  }
+}

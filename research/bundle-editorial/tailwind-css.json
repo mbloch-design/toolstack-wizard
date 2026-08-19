@@ -1,0 +1,121 @@
+{
+  "slug": "tailwind-css",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "Tailwind CSS — site officiel",
+      "url": "https://tailwindcss.com/"
+    },
+    {
+      "label": "Tailwind CSS — GitHub",
+      "url": "https://github.com/tailwindlabs/tailwindcss"
+    }
+  ],
+  "facts": {
+    "what": "Framework CSS utility-first qui fournit des classes CSS pré-construites (flex, pt-4, text-center) pour composer n'importe quel design directement dans le HTML.",
+    "what_en": "Utility-first CSS framework that provides pre-built CSS classes (flex, pt-4, text-center) to compose any design directly in HTML.",
+    "pricing_model": "Open source gratuit (core), avec Tailwind Plus payant en option",
+    "free_tier": {
+      "exists": true,
+      "detail": "Framework core entièrement gratuit et open source"
+    },
+    "plans": [
+      {
+        "name": "Framework core",
+        "price": "gratuit"
+      },
+      {
+        "name": "Tailwind Plus (optionnel)",
+        "price": "500+ UI components et templates, offre payante"
+      }
+    ],
+    "key_features": [
+      "Classes CSS utilitaires pré-construites pour tous les aspects du design.",
+      "Responsive design avec préfixes breakpoint (sm:, md:, lg:, xl:).",
+      "Dark mode via préfixe dark: ou classe toggle.",
+      "Customization via fichier tailwind.config.js.",
+      "Purge CSS automatique en production (généralement < 10kB)."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez construire des designs rapidement directement dans le HTML.",
+        "Vous préférez une approche utility-first à l'écriture de CSS custom.",
+        "Vous travaillez dans une équipe qui valorise la vitesse de développement."
+      ],
+      "avoidIf": [
+        "Vous préférez écrire du CSS traditionnel et componente CSS séparés.",
+        "Vous avez une très grande base de code CSS existante.",
+        "Vous cherchez une approche 'component-first' plutôt que utility-first."
+      ],
+      "threshold": "Tailwind CSS domine le marché des frameworks CSS modernes ; choisissez-le pour la rapidité et la scalabilité."
+    },
+    "pros": [
+      "Développement très rapide — construisez des designs directement dans le HTML.",
+      "Consistent design via système de tokens pré-défini.",
+      "Responsive design facile avec breakpoints built-in.",
+      "Dark mode simple avec classe ou variable CSS.",
+      "Bundle size minimal en production (généralement < 10kB).",
+      "Utilisé par OpenAI, Shopify, GitHub, NASA, etc."
+    ],
+    "cons": [
+      "HTML peut devenir très verbose avec beaucoup de classes.",
+      "Courbe d'apprentissage pour mémoriser les classe names.",
+      "Moins flexible que CSS custom pour designs très spécifiques.",
+      "Require une étape de build pour purger le CSS inutilisé."
+    ],
+    "use_cases": [
+      "Construire un landing page ou blog rapidement.",
+      "Développer un SaaS avec design system consistent.",
+      "Créer une documentation avec bonne apparence visuelle."
+    ],
+    "relevant_for": [
+      "Startups",
+      "Freelancers",
+      "Agences web",
+      "Équipes performantes"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want to build designs quickly directly in HTML.",
+        "You prefer a utility-first approach to writing custom CSS.",
+        "You work in a team that values development speed."
+      ],
+      "avoidIf": [
+        "You prefer traditional CSS and separate component CSS files.",
+        "You have a very large existing CSS codebase.",
+        "You prefer a 'component-first' approach over utility-first."
+      ],
+      "threshold": "Tailwind CSS dominates the modern CSS framework market; choose it for speed and scalability."
+    },
+    "pros": [
+      "Very fast development — build designs directly in HTML.",
+      "Consistent design via pre-defined token system.",
+      "Easy responsive design with built-in breakpoints.",
+      "Simple dark mode with class or CSS variable.",
+      "Minimal bundle size in production (usually < 10kB).",
+      "Used by OpenAI, Shopify, GitHub, NASA, etc."
+    ],
+    "cons": [
+      "HTML can become very verbose with many classes.",
+      "Learning curve to memorize class names.",
+      "Less flexible than custom CSS for very specific designs.",
+      "Requires a build step to purge unused CSS."
+    ],
+    "use_cases": [
+      "Build a landing page or blog quickly.",
+      "Develop a SaaS with consistent design system.",
+      "Create documentation with good visual appearance."
+    ],
+    "relevant_for": [
+      "Startups",
+      "Freelancers",
+      "Web agencies",
+      "High-performing teams"
+    ]
+  }
+}

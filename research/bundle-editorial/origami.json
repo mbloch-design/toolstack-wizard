@@ -1,0 +1,91 @@
+{
+  "slug": "origami",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Origami Studio — Design et prototypage (site officiel)", "url": "https://origami.design/" }
+  ],
+  "facts": {
+    "what": "Outil de design, animation et prototypage tout-en-un par Meta/Facebook. Combine canvas visuel avec patch editor pour interactifs avancés, intégration hardware native (GPS, accéléromètre, photo) et export vidéo.",
+    "what_en": "All-in-one design, animation, and prototyping tool by Meta/Facebook. Combines visual canvas with patch editor for advanced interactions, native hardware access (GPS, accelerometer, photos), and video export.",
+    "pricing_model": "Entièrement gratuit (open-source/Meta product). Aucun coût ou limitation.",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit. Pas de limite d'usage, pas d'engagement. Téléchargement et utilisation libre." },
+    "plans": [
+      { "name": "Gratuit", "price": "0€ (illimité)" }
+    ],
+    "key_features": [
+      "Canvas editor avec outils de dessin vectoriel freeform",
+      "Patch Editor pour interactions complexes",
+      "Intégration hardware : GPS, accéléromètre, photo, haptic",
+      "Plugin Figma pour copier/coller formes vecteur et texte",
+      "Export vidéo des prototypes",
+      "Origami Live pour partage prototypes inter-device",
+      "Perf 4.5x faster Patch Editor et 2x faster Viewer"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous prototypez apps mobiles avec interactions complexes.",
+        "Vous avez besoin d'accès hardware (GPS, accéléro, haptic).",
+        "Vous cherchez outil gratuit et puissant sans compromise."
+      ],
+      "avoidIf": [
+        "Vous cherchez primarily outil de wireframing simple.",
+        "Vous avez besoin collaboration équipe temps-réel (limitation Origami).",
+        "Votre équipe est habituée à Figma/Adobe."
+      ],
+      "threshold": "Origami s'impose pour prototypeurs cherchant outil gratuit pour interactions avancées et hardware ; pour wireframe simple, Figma/Penpot convient mieux."
+    },
+    "pros": [
+      "Entièrement gratuit et puissant (par Meta).",
+      "Interactions avancées via Patch Editor.",
+      "Accès native aux APIs hardware (GPS, accéléro, haptic).",
+      "Export vidéo intégré pour démo prototypes.",
+      "Intégration Figma fluide."
+    ],
+    "cons": [
+      "Collaboration temps-réel moins fluide qu'outils cloud modernes.",
+      "Courbe apprentissage notable (Patch Editor complexe).",
+      "Communauté et ressources moins grande que Figma."
+    ],
+    "use_cases": [
+      "Prototyper app mobile avec interactions avancées.",
+      "Tester intégrations hardware (localisation, capteurs).",
+      "Créer démos vidéo de prototypes pour stakeholders."
+    ],
+    "relevant_for": ["Designers interactions", "Prototypeurs apps mobiles", "Startups budget limité"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You prototype mobile apps with complex interactions.",
+        "You need hardware access (GPS, accelerometer, haptic).",
+        "You seek powerful, free tool without compromise."
+      ],
+      "avoidIf": [
+        "You're primarily looking for simple wireframing.",
+        "You need real-time team collaboration (Origami limitation).",
+        "Your team is already Figma/Adobe trained."
+      ],
+      "threshold": "Origami works for interaction prototypers seeking free tool for advanced interactions and hardware; for simple wireframes, Figma/Penpot fits better."
+    },
+    "pros": [
+      "Completely free and powerful (by Meta).",
+      "Advanced interactions via Patch Editor.",
+      "Native hardware API access (GPS, accelerometer, haptic).",
+      "Built-in video export for prototype demos.",
+      "Smooth Figma integration."
+    ],
+    "cons": [
+      "Real-time collaboration less smooth than modern cloud tools.",
+      "Notable learning curve (Patch Editor is complex).",
+      "Smaller community and resources than Figma."
+    ],
+    "use_cases": [
+      "Prototype mobile app with advanced interactions.",
+      "Test hardware integrations (location, sensors).",
+      "Create video demos of prototypes for stakeholders."
+    ]
+  }
+}

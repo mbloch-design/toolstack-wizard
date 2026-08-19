@@ -1,0 +1,96 @@
+{
+  "slug": "mantine",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Mantine — site officiel", "url": "https://mantine.dev/" },
+    { "label": "Mantine — GitHub", "url": "https://github.com/mantinedev/mantine" }
+  ],
+  "facts": {
+    "what": "Bibliothèque complète de composants React (120+) et 70+ hooks pour construire des applications. Style complet et thèmes intégrés, built on Emotion CSS-in-JS.",
+    "what_en": "Complete React component library (120+) and 70+ hooks for building applications. Full styling and integrated themes, built on Emotion CSS-in-JS.",
+    "pricing_model": "Open source, gratuit (licence MIT)",
+    "free_tier": { "exists": true, "detail": "Bibliothèque core entièrement gratuite et open source" },
+    "plans": [
+      { "name": "Open source core", "price": "gratuit" },
+      { "name": "Mantine Plus (optionnel)", "price": "Thèmes et templates premium, offre payante" }
+    ],
+    "key_features": [
+      "120+ composants pré-construits et stylisés.",
+      "70+ hooks React pour fonctionnalités communes.",
+      "Système de thèmes complètement customizable.",
+      "Dark mode support natif.",
+      "TypeScript support complet et excellente documentation."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin d'une grande bibliothèque de composants pré-stylisés.",
+        "Vous voulez un système de thèmes sophistiqué et customizable.",
+        "Vous cherchez une alternative complète à Material-UI mais plus légère."
+      ],
+      "avoidIf": [
+        "Vous préférez des composants unstyled (Radix Primitives).",
+        "Vous utilise Tailwind CSS comme approche utility-first.",
+        "Vous cherchez une solution plus minimaliste (Radix UI)."
+      ],
+      "threshold": "Mantine brille pour les équipes cherchant une bibliothèque complète avec thèmes sophistiqués."
+    },
+    "pros": [
+      "120+ composants pré-construits et stylisés couvrant presque tous les besoins.",
+      "70+ hooks utiles pour les patterns React courants.",
+      "Système de thèmes très sophistiqué et customizable.",
+      "Dark mode natif et simple à implémenter.",
+      "Excelente documentation et communauté active.",
+      "500+ contributors, très stable et maintenu."
+    ],
+    "cons": [
+      "Bundle size plus grand que certaines alternatives (Radix).",
+      "Courbe d'apprentissage pour maîtriser tous les composants.",
+      "Moins de déploiements en entreprise grandes que Material-UI.",
+      "Opinions de design peuvent ne pas convenir à tous."
+    ],
+    "use_cases": [
+      "Construire un SaaS complet avec design system cohérent.",
+      "Créer une admin panel richement équipée rapidement.",
+      "Développer une application interne avec thème corporatif."
+    ],
+    "relevant_for": ["SaaS", "Admin panels", "Startups", "Design-conscious teams"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need a large library of pre-styled components.",
+        "You want a sophisticated and customizable theme system.",
+        "You're looking for a complete alternative to Material-UI but lighter."
+      ],
+      "avoidIf": [
+        "You prefer unstyled components (Radix Primitives).",
+        "You use Tailwind CSS as a utility-first approach.",
+        "You're looking for a more minimal solution (Radix UI)."
+      ],
+      "threshold": "Mantine shines for teams seeking a complete library with sophisticated themes."
+    },
+    "pros": [
+      "120+ pre-built and styled components covering almost all needs.",
+      "70+ useful hooks for common React patterns.",
+      "Highly sophisticated and customizable theme system.",
+      "Native dark mode, simple to implement.",
+      "Excellent documentation and active community.",
+      "500+ contributors, very stable and maintained."
+    ],
+    "cons": [
+      "Larger bundle size than some alternatives (Radix).",
+      "Learning curve to master all components.",
+      "Less adoption in large enterprises than Material-UI.",
+      "Design opinions may not suit everyone."
+    ],
+    "use_cases": [
+      "Build a complete SaaS with coherent design system.",
+      "Quickly create a richly equipped admin panel.",
+      "Develop an internal application with corporate theme."
+    ],
+    "relevant_for": ["SaaS", "Admin panels", "Startups", "Design-conscious teams"]
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "slug": "styled-components",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "Styled Components — site officiel",
+      "url": "https://styled-components.com/"
+    },
+    {
+      "label": "Styled Components — GitHub",
+      "url": "https://github.com/styled-components/styled-components"
+    }
+  ],
+  "facts": {
+    "what": "Bibliothèque CSS-in-JS pour React permettant d'écrire du CSS directement dans le JavaScript via template literals. Support complet des fonctionnalités CSS.",
+    "what_en": "CSS-in-JS library for React allowing writing CSS directly in JavaScript via template literals. Full CSS features support.",
+    "pricing_model": "Open source, gratuit (licence MIT)",
+    "free_tier": {
+      "exists": true,
+      "detail": "Entièrement gratuit et open source, aucune restriction"
+    },
+    "plans": [
+      {
+        "name": "Open source",
+        "price": "gratuit"
+      }
+    ],
+    "key_features": [
+      "Écrire CSS directement en JavaScript via template literals.",
+      "Support complet des media queries et pseudo-sélecteurs.",
+      "Interpolation des props React pour le styling dynamique.",
+      "Critical CSS automatique pour SSR.",
+      "Support React Server Components et React Native."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous préférez écrire CSS couplé aux composants React.",
+        "Vous voulez du CSS dynamique basé sur les props React.",
+        "Vous avez besoin de styles encapsulés et isolés par composant."
+      ],
+      "avoidIf": [
+        "Vous préférez CSS files séparées et approche traditionnelle.",
+        "Vous utilisez Tailwind CSS pour l'utilité-first.",
+        "Vous avez des besoins de performance critiques (styled-components ajoute du runtime)."
+      ],
+      "threshold": "Styled Components brille pour le CSS dynamique couplé aux composants ; choisissez-le si le couplage et la flexibilité importent."
+    },
+    "pros": [
+      "CSS écrit directement en JS, couplé aux composants.",
+      "Styling dynamique facile via interpolation de props React.",
+      "Styles encapsulés, évite les conflits de class names.",
+      "Support SSR avec critical CSS automatique.",
+      "Utilisé par Giphy, Target, Warner Bros, Spotify, etc."
+    ],
+    "cons": [
+      "Ajoute du runtime overhead — plus lent que CSS pur.",
+      "Bundle size plus grand que CSS files séparées.",
+      "Moins performant que Tailwind pour du rendering statique.",
+      "Environnement d'exécution JavaScript requis pour le styling."
+    ],
+    "use_cases": [
+      "Construire des composants React avec styling dynamique personnalisé.",
+      "Gérer du theme switching (dark mode) avec état React.",
+      "Créer une bibliothèque de composants avec styles encapsulés."
+    ],
+    "relevant_for": [
+      "Équipes React",
+      "Applications dynamiques",
+      "Composant libraries"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You prefer writing CSS coupled to React components.",
+        "You want dynamic CSS based on React props.",
+        "You need scoped and isolated styles per component."
+      ],
+      "avoidIf": [
+        "You prefer separate CSS files and traditional approach.",
+        "You use Tailwind CSS for utility-first styling.",
+        "You have critical performance needs (styled-components adds runtime)."
+      ],
+      "threshold": "Styled Components shines for dynamic CSS coupled to components; choose it when coupling and flexibility matter."
+    },
+    "pros": [
+      "CSS written directly in JS, coupled to components.",
+      "Dynamic styling easy via React props interpolation.",
+      "Encapsulated styles, avoids class name conflicts.",
+      "SSR support with automatic critical CSS.",
+      "Used by Giphy, Target, Warner Bros, Spotify, etc."
+    ],
+    "cons": [
+      "Adds runtime overhead — slower than pure CSS.",
+      "Larger bundle size than separate CSS files.",
+      "Less performant than Tailwind for static rendering.",
+      "JavaScript runtime required for styling."
+    ],
+    "use_cases": [
+      "Build React components with custom dynamic styling.",
+      "Manage theme switching (dark mode) with React state.",
+      "Create a component library with encapsulated styles."
+    ],
+    "relevant_for": [
+      "React teams",
+      "Dynamic applications",
+      "Component libraries"
+    ]
+  }
+}

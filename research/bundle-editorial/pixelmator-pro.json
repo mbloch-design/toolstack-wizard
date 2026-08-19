@@ -1,0 +1,92 @@
+{
+  "slug": "pixelmator-pro",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Pixelmator Pro — Éditeur d'images macOS (site officiel)", "url": "https://www.pixelmator.com/pro/" }
+  ],
+  "facts": {
+    "what": "Éditeur d'images natif macOS pour retouche photo, graphisme et peinture digitale. Design léger exploitant technologies Apple (Metal, Core ML) avec suppression de fond IA et ajustements non-destructifs.",
+    "what_en": "Native macOS image editor for photo retouching, graphic design, and digital painting. Lightweight design leveraging Apple tech (Metal, Core ML) with AI background removal and non-destructive adjustments.",
+    "pricing_model": "Licence perpétuelle macOS — achat unique 49.99€. Plans Apple Creator Studio à partir de 12.99€/mois (ou 2.99€ pour étudiants).",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite, mais version d'essai possible. Achat unique de 49.99€ ou abonnement Apple Creator Studio." },
+    "plans": [
+      { "name": "Licence perpétuelle", "price": "49.99€ paiement unique" },
+      { "name": "Apple Creator Studio", "price": "12.99€/mois ou 2.99€/mois (étudiants)" }
+    ],
+    "key_features": [
+      "Outils de retouche photo avancés (clonage, guérison)",
+      "Suppression et remplissage de fond alimentés par IA",
+      "Ajustements couleur non-destructifs",
+      "Support RAW et formats vectoriels",
+      "Peinture digitale et illustration",
+      "Perf optimisée pour Apple Silicon (M1/M2/M3)",
+      "Intégration native macOS (système de fichiers, iCloud)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez macOS et cherchez éditeur image performant.",
+        "Vous faites retouche photo, graphisme ou peinture digitale.",
+        "Vous préférez logiciel léger ne consommant pas trop ressources."
+      ],
+      "avoidIf": [
+        "Vous travaillez sur Windows/Linux.",
+        "Vous avez besoin features vidéo, 3D ou animation avancée.",
+        "Vous cherchez une solution entièrement gratuite."
+      ],
+      "threshold": "Pixelmator Pro s'impose pour creativs macOS cherchant alternative légère à Photoshop ; pour budget très limité, Photopea gratuit suffit."
+    },
+    "pros": [
+      "Licence perpétuelle : achat unique, sans abonnement.",
+      "Perfs excellentes sur Apple Silicon (très fluide).",
+      "Suppression de fond et remplissage IA intégrés.",
+      "Interface macOS native et intuitive.",
+      "Alternative légère et plus abordable que Photoshop."
+    ],
+    "cons": [
+      "Exclusif macOS (pas Windows/Linux).",
+      "Moins de plugins et extensions que Photoshop.",
+      "Pas de features vidéo ou animation."
+    ],
+    "use_cases": [
+      "Retoucher photos pour portfolio ou réseaux sociaux.",
+      "Créer graphiques et designs pour web/print.",
+      "Peinture digitale et illustrations légers."
+    ],
+    "relevant_for": ["Designers macOS", "Photographes freelance", "Illustrateurs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You use macOS and want a performant image editor.",
+        "You do photo retouching, graphic design, or digital painting.",
+        "You prefer lightweight software that doesn't hog resources."
+      ],
+      "avoidIf": [
+        "You work on Windows/Linux.",
+        "You need video, 3D, or advanced animation features.",
+        "You're looking for a completely free solution."
+      ],
+      "threshold": "Pixelmator Pro works for macOS creatives seeking a light alternative to Photoshop; for tight budget, free Photopea is enough."
+    },
+    "pros": [
+      "Perpetual license: one-time purchase, no subscription.",
+      "Excellent performance on Apple Silicon (very smooth).",
+      "Built-in AI background removal and fill.",
+      "Native macOS interface and intuitive.",
+      "Lighter and more affordable alternative to Photoshop."
+    ],
+    "cons": [
+      "macOS-only (no Windows/Linux).",
+      "Fewer plugins and extensions than Photoshop.",
+      "No video or animation features."
+    ],
+    "use_cases": [
+      "Retouch photos for portfolio or social media.",
+      "Create graphics and designs for web/print.",
+      "Light digital painting and illustrations."
+    ]
+  }
+}

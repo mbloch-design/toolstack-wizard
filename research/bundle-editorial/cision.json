@@ -1,0 +1,88 @@
+{
+  "slug": "cision",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Cision — plateforme officielle", "url": "https://cision.com" }
+  ],
+  "facts": {
+    "what": "Plateforme B2B de relations médias et de relations publiques. Offre accès à des bases de données de journalistes, outils de monitoring de couverture média et distribution de communiqués de presse.",
+    "what_en": "B2B platform for media relations and public relations. Provides access to journalist databases, media coverage monitoring tools, and press release distribution.",
+    "pricing_model": "Tarification d'entreprise sur devis personnalisé",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Contrats annuels obligatoires avec devis sur demande." },
+    "plans": [
+      { "name": "Petites équipes (1-3)", "price": "montants sur la page officielle" },
+      { "name": "CisionOne Base", "price": "montants sur la page officielle" },
+      { "name": "Plans Enterprise", "price": "montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Base de données de contacts journalistes et média",
+      "Monitoring de couverture média en temps réel",
+      "Distribution de communiqués de presse",
+      "Analytics et rapports de campagne"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez les relations médias à l'échelle pour une entreprise ou agence.",
+        "Vous avez besoin d'accès à une base de contacts journalistes à jour.",
+        "Vous monitorer la couverture médias de votre secteur."
+      ],
+      "avoidIf": [
+        "Vous êtes une PME ou startup avec budget communication limité.",
+        "Vous recherchez une solution gratuite ou très low-cost.",
+        "Votre stratégie est entièrement centrée sur les réseaux sociaux."
+      ],
+      "threshold": "Cision est essentiel pour les équipes PR et communication d'entreprises établies ; pour les startups et PME, envisagez des alternatives plus légères."
+    },
+    "pros": [
+      "Base de données de journalistes la plus complète de l'industrie",
+      "Monitoring de couverture intégré et précis",
+      "Suite complète de outils PR en une plateforme",
+      "Support dédié pour les plans enterprise"
+    ],
+    "cons": [
+      "Tarification élevée et contrats minimums obligatoires",
+      "Courbe d'apprentissage importante pour l'interface",
+      "Pas adapté aux PME ou startups"
+    ],
+    "use_cases": [
+      "Gérer des campagnes de relations médias d'envergure",
+      "Monitorer la couverture de presse de votre marque",
+      "Distribuer des communiqués à une audience large"
+    ],
+    "relevant_for": ["PR Managers", "Communication Directors", "Agences relations médias"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage media relations at enterprise scale.",
+        "You need access to an up-to-date journalist contact database.",
+        "You monitor media coverage in your sector."
+      ],
+      "avoidIf": [
+        "You're an SME or startup with limited communication budget.",
+        "You're seeking a free or very low-cost solution.",
+        "Your strategy is entirely social-media-focused."
+      ],
+      "threshold": "Cision is essential for established company PR and communications teams; for startups and SMEs, consider lighter alternatives."
+    },
+    "pros": [
+      "Most comprehensive journalist database in the industry",
+      "Integrated and accurate media coverage monitoring",
+      "Complete PR toolset in one platform",
+      "Dedicated support for enterprise plans"
+    ],
+    "cons": [
+      "High pricing and mandatory minimum contracts",
+      "Steep learning curve for interface",
+      "Not suited for SMEs or startups"
+    ],
+    "use_cases": [
+      "Manage large-scale media relations campaigns",
+      "Monitor your brand's press coverage",
+      "Distribute press releases to a wide audience"
+    ]
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "slug": "vue-router",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "Vue Router — site officiel",
+      "url": "https://router.vuejs.org/"
+    },
+    {
+      "label": "Vue Router — GitHub",
+      "url": "https://github.com/vuejs/router"
+    }
+  ],
+  "facts": {
+    "what": "Routeur officiel pour Vue.js pour gérer la navigation et les URLs. Support des nested routes, route params, lazy loading et transitions.",
+    "what_en": "Official router for Vue.js for managing navigation and URLs. Support for nested routes, route params, lazy loading and transitions.",
+    "pricing_model": "Open source, gratuit (licence MIT)",
+    "free_tier": {
+      "exists": true,
+      "detail": "Entièrement gratuit et open source, aucune restriction"
+    },
+    "plans": [
+      {
+        "name": "Open source",
+        "price": "gratuit"
+      }
+    ],
+    "key_features": [
+      "Routage déclaratif et expressif.",
+      "Routes imbriquées avec nested views.",
+      "Paramètres dynamiques d'URL.",
+      "Lazy loading des composants de route.",
+      "Support de transitions de vue.",
+      "Guards de navigation pour authentification."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous construisez une Single Page Application (SPA) Vue.js.",
+        "Vous avez besoin de gestion d'URL et navigation déclarative.",
+        "Vous travaillez avec Vue.js et voulez le routeur officiel."
+      ],
+      "avoidIf": [
+        "Vous utilisez Nuxt.js (Nuxt gère le routage).",
+        "Vous construisez une app très simple avec peu de routes.",
+        "Vous cherchez un routeur framework-agnostic."
+      ],
+      "threshold": "Vue Router est le standard officiel et fiable pour le routage Vue.js."
+    },
+    "pros": [
+      "Routeur officiel avec support complet de l'équipe Vue.",
+      "Excellente documentation et examples.",
+      "Routes imbriquées et lazy loading natifs.",
+      "Guards de navigation pour authentification simple.",
+      "Transitions de vue built-in.",
+      "MIT licensed et entièrement open source."
+    ],
+    "cons": [
+      "Limité aux applications Vue (pas framework-agnostic).",
+      "Moins type-safe que des routeurs modernes comme TanStack Router.",
+      "Configuration peut être verbeux pour des routes très complexes.",
+      "Moins de features que Nuxt pour full-stack."
+    ],
+    "use_cases": [
+      "Construire une SPA Vue.js avec plusieurs pages et navigation.",
+      "Gérer les paramètres dynamiques d'URL.",
+      "Implémenter des protected routes avec guards."
+    ],
+    "relevant_for": [
+      "Développeurs Vue",
+      "Applications SPA",
+      "Startups Vue"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're building a Single Page Application (SPA) with Vue.js.",
+        "You need declarative URL management and navigation.",
+        "You work with Vue.js and want the official router."
+      ],
+      "avoidIf": [
+        "You use Nuxt.js (Nuxt handles routing).",
+        "You're building a very simple app with few routes.",
+        "You're looking for a framework-agnostic router."
+      ],
+      "threshold": "Vue Router is the official and reliable standard for Vue.js routing."
+    },
+    "pros": [
+      "Official router with full Vue team support.",
+      "Excellent documentation and examples.",
+      "Nested routes and lazy loading native.",
+      "Navigation guards for simple authentication.",
+      "Built-in view transitions.",
+      "MIT licensed and fully open source."
+    ],
+    "cons": [
+      "Limited to Vue applications (not framework-agnostic).",
+      "Less type-safe than modern routers like TanStack Router.",
+      "Configuration can be verbose for very complex routes.",
+      "Fewer features than Nuxt for full-stack."
+    ],
+    "use_cases": [
+      "Build a Vue.js SPA with multiple pages and navigation.",
+      "Manage dynamic URL parameters.",
+      "Implement protected routes with guards."
+    ],
+    "relevant_for": [
+      "Vue developers",
+      "SPA applications",
+      "Vue startups"
+    ]
+  }
+}

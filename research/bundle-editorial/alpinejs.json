@@ -1,0 +1,84 @@
+{
+  "slug": "alpinejs",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Alpine.js — documentation officielle", "url": "https://alpinejs.dev" }
+  ],
+  "facts": {
+    "what": "Framework JavaScript minimal et léger pour ajouter du comportement réactif directement dans le balisage HTML. Pensé pour les développeurs qui souhaitent la puissance de Vue ou React sans complexité de build.",
+    "what_en": "Minimal and lightweight JavaScript framework to add reactive behavior directly in HTML markup. Designed for developers wanting Vue or React power without build complexity.",
+    "pricing_model": "Entièrement gratuit et open source",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit. Pas de versions payantes, pas de limitations fonctionnelles." },
+    "plans": [],
+    "key_features": [
+      "Seulement 15 directives et 6 propriétés à apprendre",
+      "Environ 6 kB de taille minifiée",
+      "Pas de build step ou compilation requise",
+      "Réactivité déclarative et binding syntaxe simple"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez ajouter de l'interactivité sans infrastructure de build.",
+        "Vous préférez des frameworks minimalistes sans surcharge de configuration.",
+        "Votre projet est petit ou de la complexité faible."
+      ],
+      "avoidIf": [
+        "Vous construisez une application web complexe et grande.",
+        "Vous avez besoin d'un écosystème mature avec beaucoup d'extensions.",
+        "Vous travaillez dans une équipe habitituée aux frameworks structurés."
+      ],
+      "threshold": "Alpine.js excelle pour les petits projets, les widgets et les pages côté serveur enrichies ; pour les applications web complètes, préférez Vue ou React."
+    },
+    "pros": [
+      "Très léger — ne charge que 6 kB en minifié",
+      "Aucun build step ou configuration webpack requise",
+      "Syntaxe declarative proche du balisage HTML",
+      "Parfait pour les projets petits et modulaires"
+    ],
+    "cons": [
+      "Écosystème moins mature que Vue ou React",
+      "Moins de ressources communautaires disponibles",
+      "Non adapté aux très grandes applications web"
+    ],
+    "use_cases": [
+      "Enrichir des pages côté serveur avec du comportement réactif",
+      "Ajouter des widgets interactifs légèrement",
+      "Créer des composants HTML avec state local"
+    ],
+    "relevant_for": ["Développeurs backend", "Développeurs minimalistes", "Prototypeurs rapides"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want to add interactivity without build infrastructure.",
+        "You prefer minimalist frameworks without config overhead.",
+        "Your project is small or has low complexity."
+      ],
+      "avoidIf": [
+        "You're building a large, complex web application.",
+        "You need a mature ecosystem with many extensions.",
+        "You work in a team used to structured frameworks."
+      ],
+      "threshold": "Alpine.js excels for small projects, widgets, and server-side enhanced pages; for full web apps, prefer Vue or React."
+    },
+    "pros": [
+      "Very lightweight — only 6 kB minified",
+      "No build step or webpack config required",
+      "Declarative syntax close to HTML markup",
+      "Perfect for small and modular projects"
+    ],
+    "cons": [
+      "Less mature ecosystem than Vue or React",
+      "Fewer community resources available",
+      "Not suitable for very large web applications"
+    ],
+    "use_cases": [
+      "Enrich server-side pages with reactive behavior",
+      "Add lightweight interactive widgets",
+      "Create HTML components with local state"
+    ]
+  }
+}

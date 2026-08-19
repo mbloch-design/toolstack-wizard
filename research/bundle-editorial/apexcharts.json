@@ -1,0 +1,84 @@
+{
+  "slug": "apexcharts",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "ApexCharts — documentation officielle", "url": "https://apexcharts.com" }
+  ],
+  "facts": {
+    "what": "Bibliothèque JavaScript open source pour créer des graphiques interactifs et responsifs. Supporte plus de 20 types de graphiques avec animations fluides et une API simple et déclarative.",
+    "what_en": "Open source JavaScript charting library for creating interactive and responsive charts. Supports 20+ chart types with smooth animations and a simple, declarative API.",
+    "pricing_model": "Entièrement gratuit et open source",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit. Pas de versions payantes, pas de limitation fonctionnelle." },
+    "plans": [],
+    "key_features": [
+      "Plus de 20 types de graphiques (ligne, barre, aire, pie, heatmap, etc.)",
+      "Animations fluides et zoom interactif",
+      "Support des frameworks React, Vue, Angular",
+      "Responsive par défaut et télécharges SVG"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous construisez des tableaux de bord et dashboards web.",
+        "Vous avez besoin d'une visualisation de données moderne et interactive.",
+        "Vous voulez une librairie sans coût ni frais."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'une personnalisation extrêmement avancée.",
+        "Vous travaillez avec des données en temps réel ultra-haute fréquence.",
+        "Vous demandez des diagrammes spécialisés hors du scope standard."
+      ],
+      "threshold": "ApexCharts excelle pour les dashboards et applications web modernes ; pour les besoins spécialisés complexes, envisagez D3.js ou Highcharts."
+    },
+    "pros": [
+      "Gratuit et sans limitations fonctionnelles",
+      "API simple et déclarative facile à utiliser",
+      "Animations et interactions fluides",
+      "Support natif React, Vue, Angular"
+    ],
+    "cons": [
+      "Moins de personnalisation en profondeur qu'une librairie bas-niveau",
+      "Communauté plus petite qu'une librairie propriétaire",
+      "Documentation en anglais seulement"
+    ],
+    "use_cases": [
+      "Créer des tableaux de bord analytiques",
+      "Afficher des métriques de performance en temps quasi-réel",
+      "Visualiser les résultats de sondages ou statistiques"
+    ],
+    "relevant_for": ["Développeurs frontend", "Data visualizers", "Équipes produit"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're building dashboards and web analytics interfaces.",
+        "You need modern, interactive data visualization.",
+        "You want a library without cost or licensing fees."
+      ],
+      "avoidIf": [
+        "You need extremely advanced customization.",
+        "You're working with ultra-high-frequency real-time data.",
+        "You need specialized diagrams outside standard scope."
+      ],
+      "threshold": "ApexCharts excels for dashboards and modern web apps; for complex specialized needs, consider D3.js or Highcharts."
+    },
+    "pros": [
+      "Free with no functional limitations",
+      "Simple, declarative API easy to learn",
+      "Smooth animations and interactions",
+      "Native support for React, Vue, Angular"
+    ],
+    "cons": [
+      "Less deep customization than low-level libraries",
+      "Smaller community than proprietary charting libraries",
+      "Documentation in English only"
+    ],
+    "use_cases": [
+      "Build analytical dashboards",
+      "Display performance metrics in near-real-time",
+      "Visualize survey or statistical results"
+    ]
+  }
+}

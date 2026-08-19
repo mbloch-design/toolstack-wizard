@@ -1,0 +1,84 @@
+{
+  "slug": "lottie",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Lottie — documentation officielle", "url": "https://lottie.github.io/" }
+  ],
+  "facts": {
+    "what": "Format d'animation JSON léger et performant permettant d'exporter des animations After Effects pour le web et mobile. Stockage et rendu des animations de façon efficace sans dépendre de vidéos ou gifs.",
+    "what_en": "Lightweight, performant animation JSON format allowing After Effects animations export for web and mobile. Efficient animation storage and rendering without relying on videos or GIFs.",
+    "pricing_model": "Entièrement gratuit et open source",
+    "free_tier": { "exists": true, "detail": "Format et librairies entièrement gratuits. LottieFiles offre aussi un service gratuit avec 800k+ animations." },
+    "plans": [],
+    "key_features": [
+      "Format JSON compact pour animations",
+      "Exporte depuis Adobe After Effects via Bodymovin",
+      "Rendu natif sur web, iOS, Android, Windows",
+      "Support dotLottie format (superset plus léger)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez des animations After Effects pour le web/mobile.",
+        "Vous avez besoin de fichiers d'animation ultra-légers.",
+        "Vous utilisez LottieFiles comme hub d'animation."
+      ],
+      "avoidIf": [
+        "Vous créez des animations programmatiquement (préférez GSAP).",
+        "Vous n'avez pas accès à After Effects ou équivalent.",
+        "Vous préférez les animations CSS ou JavaScript pures."
+      ],
+      "threshold": "Lottie est essentiel pour exporter les animations After Effects ; pour les animations purement code, GSAP est plus approprié."
+    },
+    "pros": [
+      "Fichiers animation très légers (JSON)",
+      "Rendu natif et performant sur toutes plateformes",
+      "Intégration After Effects fluide via Bodymovin",
+      "LottieFiles offre 800k+ animations prêtes"
+    ],
+    "cons": [
+      "Requiert After Effects ou créateur compatible",
+      "Moins flexible que les animations programmatiques",
+      "Animation complexe peut rendre les fichiers lourds"
+    ],
+    "use_cases": [
+      "Exporter des animations After Effects vers le web",
+      "Ajouter des animations légères sans vidéos",
+      "Utiliser les animations LottieFiles prêtes"
+    ],
+    "relevant_for": ["Motion designers", "Animateurs", "Frontend developers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You create After Effects animations for web/mobile.",
+        "You need ultra-lightweight animation files.",
+        "You use LottieFiles as your animation hub."
+      ],
+      "avoidIf": [
+        "You create animations programmatically (prefer GSAP).",
+        "You don't have access to After Effects or equivalent.",
+        "You prefer pure CSS or JavaScript animations."
+      ],
+      "threshold": "Lottie is essential for exporting After Effects animations; for purely code animations, GSAP is more appropriate."
+    },
+    "pros": [
+      "Very lightweight animation files (JSON)",
+      "Native performant rendering on all platforms",
+      "Smooth After Effects integration via Bodymovin",
+      "LottieFiles offers 800k+ ready-made animations"
+    ],
+    "cons": [
+      "Requires After Effects or compatible creator",
+      "Less flexible than programmatic animations",
+      "Complex animations can make files heavy"
+    ],
+    "use_cases": [
+      "Export After Effects animations to web",
+      "Add lightweight animations without videos",
+      "Use ready-made LottieFiles animations"
+    ]
+  }
+}

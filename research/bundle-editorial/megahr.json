@@ -1,0 +1,91 @@
+{
+  "slug": "megahr",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Mega HR — Plateforme RH avec IA (site officiel)", "url": "https://megahr.com/" }
+  ],
+  "facts": {
+    "what": "Plateforme RH alimentée par l'IA qui automatise le recrutement avec présélection automatique des CV, entretiens vidéo 24/7, résumés structurés et gestion des candidatures. Intègre les principaux ATS et réduit le ghosting.",
+    "what_en": "AI-powered HR platform that automates recruitment with automatic resume screening, 24/7 video interviews, structured summaries, and candidate management. Integrates with major ATS systems and reduces candidate ghosting.",
+    "pricing_model": "Abonnement SaaS — tarification sur demande. Basée à Dublin, serve startups à enterprises.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Demande de démo pour tarification personnalisée." },
+    "plans": [
+      { "name": "Plans personnalisés", "price": "Montants sur la page officielle — demander une démo" }
+    ],
+    "key_features": [
+      "Présélection automatique des CV avec critères intelligents",
+      "Entretiens vidéo IA 24/7 avec transcription complète",
+      "Résumés décisionnels et détection de biais (Warden AI)",
+      "Megan : Gestionnaire IA pour scheduling, relance, entretien des profils",
+      "Intégration Slack pour collaboration",
+      "Sync bidirectionnel avec ATS en temps réel",
+      "Compatibilité : Breezy, Greenhouse, Ashby, Lever"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous recrutez beaucoup et avez des équipes RH réduites.",
+        "Vous cherchez à automatiser et accélérer le pipeline de recrutement.",
+        "Vous utilisez un ATS comme Greenhouse, Ashby ou Lever."
+      ],
+      "avoidIf": [
+        "Vous faites des recrutements très ponctuels (< 5/an).",
+        "Vous voulez une solution entièrement gratuite.",
+        "Votre ATS n'est pas compatible (non listés)."
+      ],
+      "threshold": "Mega HR s'impose pour les PME/startups croissantes avec recrutement régulier ; pour rare recrutement, un ATS seul suffit."
+    },
+    "pros": [
+      "Automatisation complète du pipeline : CV → entretien → décision.",
+      "Entretiens IA 24/7 sans limites d'horaires.",
+      "Détection de biais et insights de qualité d'entretien.",
+      "Reduce drastiquement le ghosting candidat.",
+      "Automatise une part importante des tâches RH répétitives."
+    ],
+    "cons": [
+      "Tarification opaque (devis sur demande).",
+      "Dépend de la qualité du réseau ATS intégré.",
+      "Peut être overkill pour petit volume de recrutement."
+    ],
+    "use_cases": [
+      "Accélérer le screening de 100+ candidatures/mois.",
+      "Automatiser entretiens pour réduire charge RH.",
+      "Standardiser évaluation candidats avec IA."
+    ],
+    "relevant_for": ["Startups", "PME en croissance", "Équipes RH réduites"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You recruit frequently with lean HR teams.",
+        "You want to automate and speed up your recruitment pipeline.",
+        "You use an ATS like Greenhouse, Ashby, or Lever."
+      ],
+      "avoidIf": [
+        "You hire very infrequently (< 5/year).",
+        "You need a completely free solution.",
+        "Your ATS is not compatible (not listed)."
+      ],
+      "threshold": "Mega HR works for growing SMEs/startups with regular hiring; for rare recruitment, an ATS alone is enough."
+    },
+    "pros": [
+      "End-to-end pipeline automation: CV → interview → decision.",
+      "24/7 AI interviews with unlimited availability.",
+      "Bias detection and interview quality insights.",
+      "Drastically reduces candidate ghosting.",
+      "Automates a large share of repetitive HR tasks."
+    ],
+    "cons": [
+      "Pricing is opaque (custom quotes only).",
+      "Depends on ATS integration network quality.",
+      "May be overkill for small hiring volume."
+    ],
+    "use_cases": [
+      "Speed up screening for 100+ applications/month.",
+      "Automate interviews to reduce HR load.",
+      "Standardize candidate evaluation with AI."
+    ]
+  }
+}

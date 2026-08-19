@@ -1,0 +1,113 @@
+{
+  "slug": "solid-js",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "Solid.js — site officiel",
+      "url": "https://www.solidjs.com/"
+    },
+    {
+      "label": "Solid.js — GitHub",
+      "url": "https://github.com/solidjs/solid"
+    }
+  ],
+  "facts": {
+    "what": "Framework JavaScript réactif et performant avec réactivité fine (fine-grained reactivity). Compile le code en opérations DOM directes sans Virtual DOM.",
+    "what_en": "Reactive and performant JavaScript framework with fine-grained reactivity. Compiles code to direct DOM operations without Virtual DOM.",
+    "pricing_model": "Open source, gratuit (licence MIT)",
+    "free_tier": {
+      "exists": true,
+      "detail": "Entièrement gratuit et open source, zéro restrictions"
+    },
+    "plans": [
+      {
+        "name": "Open source",
+        "price": "gratuit"
+      }
+    ],
+    "key_features": [
+      "Réactivité fine (fine-grained reactivity) — met à jour seulement le DOM nécessaire.",
+      "Aucun Virtual DOM — compilation directe en opérations DOM.",
+      "Runtime léger (~7-7.6 kB).",
+      "JSX et pattern de composants similaires à React.",
+      "Meta-framework SolidStart pour SSR et routage."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez un framework réactif avec performance optimale et petit bundle.",
+        "Vous êtes prêt à quitter l'écosystème React pour explorer une approche novatrice.",
+        "Vous construisez une application intensive en interactions avec état complexe."
+      ],
+      "avoidIf": [
+        "Vous dépendez fortement de l'écosystème React.",
+        "Votre équipe n'est pas expérimentée avec les patterns réactifs.",
+        "Vous cherchez la plus grande communauté et ressources éducatives."
+      ],
+      "threshold": "Solid.js brille pour la performance et la réactivité ; choisissez-le si vous êtes prêt à explorer au-delà de React."
+    },
+    "pros": [
+      "Réactivité fine — met à jour seulement le DOM strictement nécessaire.",
+      "Aucun Virtual DOM, seulement des opérations DOM directes.",
+      "Performance exceptionnelle et bundle très léger.",
+      "Très bien noté par les développeurs dans les enquêtes annuelles.",
+      "Syntax JSX familier pour les devs React."
+    ],
+    "cons": [
+      "Écosystème bien plus petit que React.",
+      "Communauté moins grande, moins de ressources éducatives.",
+      "Concepts de réactivité différents de React, courbe d'apprentissage différente.",
+      "Moins de bibliothèques tierces disponibles."
+    ],
+    "use_cases": [
+      "Construire une application frontend performante avec état réactif complexe.",
+      "Développer une application avec interactions intensives et animations fluides.",
+      "Créer une SPA lightweight avec performance critique."
+    ],
+    "relevant_for": [
+      "Développeurs performance-first",
+      "Entreprises",
+      "Applications réactives complexes"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want a reactive framework with optimal performance and small bundle.",
+        "You're ready to leave the React ecosystem and explore an innovative approach.",
+        "You're building an interaction-heavy application with complex state."
+      ],
+      "avoidIf": [
+        "You heavily depend on the React ecosystem.",
+        "Your team is not experienced with reactive patterns.",
+        "You're looking for the largest community and educational resources."
+      ],
+      "threshold": "Solid.js shines for performance and reactivity; choose it if you're ready to explore beyond React."
+    },
+    "pros": [
+      "Fine-grained reactivity — updates only strictly necessary DOM.",
+      "No Virtual DOM, only direct DOM operations.",
+      "Exceptional performance and very lightweight bundle.",
+      "Rated highly by developers in annual surveys.",
+      "Familiar JSX syntax for React developers."
+    ],
+    "cons": [
+      "Ecosystem much smaller than React.",
+      "Smaller community, fewer educational resources.",
+      "Reactivity concepts differ from React, different learning curve.",
+      "Fewer third-party libraries available."
+    ],
+    "use_cases": [
+      "Build a performant frontend application with complex reactive state.",
+      "Develop an application with intensive interactions and smooth animations.",
+      "Create a lightweight SPA with critical performance requirements."
+    ],
+    "relevant_for": [
+      "Performance-first developers",
+      "Enterprises",
+      "Complex reactive applications"
+    ]
+  }
+}

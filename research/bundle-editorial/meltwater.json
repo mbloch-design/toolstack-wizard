@@ -1,0 +1,93 @@
+{
+  "slug": "meltwater",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Meltwater — Monitoring médias et réseaux sociaux (site officiel)", "url": "https://meltwater.com" }
+  ],
+  "facts": {
+    "what": "Plateforme SaaS de monitoring médias et réseaux sociaux pour les équipes de communication. Aggrège mentions de marque, analyse sentiment, gère médias relations et influenceurs avec base de 1M+ contacts.",
+    "what_en": "SaaS platform for media monitoring and social listening for comms teams. Aggregates brand mentions, analyzes sentiment, manages media relations and influencers with 1M+ contact database.",
+    "pricing_model": "Abonnement SaaS sur mesure — tarification par tiers (Starter, Pro, Enterprise) en fonction utilisateurs, sources, modules et volume.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Devis personnalisé selon configuration." },
+    "plans": [
+      { "name": "Starter", "price": "De 6 000 à 15 000€/an" },
+      { "name": "Pro", "price": "De 15 000 à 40 000€/an (modules supplémentaires possibles)" },
+      { "name": "Enterprise", "price": "À partir de 40 000€/an et plus selon besoin" }
+    ],
+    "key_features": [
+      "Monitoring de 150M+ sources médias et réseaux mondiaux",
+      "Analyse de sentiment et thèmes émergents",
+      "Base de données de 1M+ contacts médias/influenceurs",
+      "Gestion des relations médias (outreach, pitching)",
+      "Modules : social listening, influencer marketing, brand tracking",
+      "Tableaux de bord et rapports d'impact média",
+      "APIs et intégrations custom"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gère la communication/RP pour une marque ou agence.",
+        "Vous avez besoin de suivre mentions de marque 24/7 dans les médias.",
+        "Vous travaillez avec influenceurs ou gérez relations presse."
+      ],
+      "avoidIf": [
+        "Vous cherchez une solution gratuite ou très bon marché.",
+        "Votre volume de mentions médias est très faible.",
+        "Vous n'avez que du monitoring interne limité."
+      ],
+      "threshold": "Meltwater s'impose pour agences de RP/comms et marques moyennes-fortes ; pour startup débutante, Google Alerts + spreadsheet suffit."
+    },
+    "pros": [
+      "Couverture mondiale : 150M+ sources médias et réseaux.",
+      "Analyse sentiment précise et détection de crises.",
+      "Base contacts médias/influencers très riche.",
+      "Modules flexibles : adapte à besoins comms ou influencer.",
+      "Tarifs négociables selon le périmètre retenu."
+    ],
+    "cons": [
+      "Tarification opaque et sur devis, positionnée haut de marché.",
+      "Courbe apprentissage notable pour maximaliser l'outil.",
+      "Meilleur ROI pour équipes avec volume fort."
+    ],
+    "use_cases": [
+      "Surveiller mentions de marque et gérer crises médias en temps réel.",
+      "Construire base de données contacts pour outreach RP.",
+      "Mesurer impact de campagnes PR et media coverage."
+    ],
+    "relevant_for": ["Agences RP", "Agences marketing", "Équipes communications", "Marques/éditeurs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage comms/PR for a brand or agency.",
+        "You need to track brand mentions 24/7 across media.",
+        "You work with influencers or manage press relations."
+      ],
+      "avoidIf": [
+        "You're looking for a free or very cheap solution.",
+        "Your media mention volume is very low.",
+        "You only need light internal monitoring."
+      ],
+      "threshold": "Meltwater works for PR/comms agencies and mid-to-large brands; for early-stage startups, Google Alerts + spreadsheet is enough."
+    },
+    "pros": [
+      "Global coverage: 150M+ media and social sources.",
+      "Accurate sentiment analysis and crisis detection.",
+      "Rich media/influencer contact database.",
+      "Flexible modules: fit comms or influencer needs.",
+      "Pricing is negotiable depending on the scope agreed."
+    ],
+    "cons": [
+      "Opaque, quote-only pricing positioned at the high end.",
+      "Notable learning curve to maximize the tool.",
+      "Best ROI for teams with high mention volume."
+    ],
+    "use_cases": [
+      "Monitor brand mentions and manage media crises in real time.",
+      "Build contact database for PR outreach.",
+      "Measure PR campaign impact and media coverage."
+    ]
+  }
+}

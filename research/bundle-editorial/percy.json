@@ -1,0 +1,93 @@
+{
+  "slug": "percy",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Percy — Visual testing platform (site officiel)", "url": "https://percy.io" }
+  ],
+  "facts": {
+    "what": "Plateforme de visual testing pour détecter bugs visuels avant mise en production. Capture screenshots et les compare à baseline pour identifier changements UI across browsers/devices via CI/CD.",
+    "what_en": "Visual testing platform to catch UI bugs before shipping. Captures screenshots and compares against baseline to spot visual changes across browsers and devices via CI/CD pipeline.",
+    "pricing_model": "Freemium SaaS — plan gratuit avec 5 000 screenshots/mois, plans payants pour plus de snapshots/collaborateurs.",
+    "free_tier": { "exists": true, "detail": "Gratuit : 5 000 screenshots/mois. Plans payants pour volumes plus élevés et collaborateurs." },
+    "plans": [
+      { "name": "Gratuit", "price": "0€ (5 000 screenshots/mois)" },
+      { "name": "Starter+", "price": "Montants sur la page officielle pour screenshots additionnels" },
+      { "name": "Scale+", "price": "Montants sur la page officielle pour collaboration équipe" }
+    ],
+    "key_features": [
+      "Capture et comparaison screenshots automatique",
+      "Détection visual regression pixel-by-pixel",
+      "Support responsive : multiples viewports/devices",
+      "Intégration CI/CD : GitHub, GitLab, CircleCI, etc.",
+      "Technologie snapshot equilibration pour réduire faux positifs",
+      "Dashboards de comparaison interactifs",
+      "Teams roles et collaboration"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez web ou app avec changements UI réguliers.",
+        "Vous avez besoin de détecter regressions visuelles automatiquement.",
+        "Vous travaillez en équipe avec CI/CD pipeline."
+      ],
+      "avoidIf": [
+        "Vous faites uniquement test manuel et peu d'itérations UI.",
+        "Vous cherchez solution sans infrastructure CI/CD.",
+        "Votre volume est inférieur 5 000 screenshots/mois."
+      ],
+      "threshold": "Percy s'impose pour équipes dev/QA avec pipelines CI et itérations UI fréquentes ; pour petit projet statique, tests manuels suffisent."
+    },
+    "pros": [
+      "Gratuit jusqu'à 5 000 screenshots/mois (très accessible).",
+      "Automatise entièrement détection visual regressions.",
+      "Support multidevice et responsive testing.",
+      "Intégrations CI/CD simples et rapides.",
+      "Réduction faux positifs via snapshot equilibration."
+    ],
+    "cons": [
+      "Pixel-by-pixel comparison prone aux faux positifs sur contenu dynamique.",
+      "Meilleur pour UI statique que dynamique/animée.",
+      "Tarification peut monter avec gros volumes screenshots."
+    ],
+    "use_cases": [
+      "Tester regressions UI automatiquement à chaque commit.",
+      "Valider design sur multiples breakpoints/devices.",
+      "Détecter changements visuels inattendus avant deploy."
+    ],
+    "relevant_for": ["Équipes dev", "Agences web", "Product managers", "QA engineers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You build web/app with regular UI changes.",
+        "You need to automatically catch visual regressions.",
+        "You work in a team with CI/CD pipeline."
+      ],
+      "avoidIf": [
+        "You do only manual testing with infrequent UI changes.",
+        "You seek solution without CI/CD infrastructure.",
+        "Your volume is below 5000 screenshots/month."
+      ],
+      "threshold": "Percy works for dev/QA teams with CI pipelines and frequent UI iterations; for small static projects, manual testing is enough."
+    },
+    "pros": [
+      "Free up to 5000 screenshots/month (very accessible).",
+      "Fully automates visual regression detection.",
+      "Multi-device and responsive testing support.",
+      "Easy, fast CI/CD integrations.",
+      "Reduced false positives via snapshot equilibration."
+    ],
+    "cons": [
+      "Pixel-by-pixel comparison prone to false positives on dynamic content.",
+      "Better for static UI than dynamic/animated.",
+      "Pricing can climb with large screenshot volumes."
+    ],
+    "use_cases": [
+      "Test UI regressions automatically on each commit.",
+      "Validate design across multiple breakpoints/devices.",
+      "Catch unexpected visual changes before deploy."
+    ]
+  }
+}

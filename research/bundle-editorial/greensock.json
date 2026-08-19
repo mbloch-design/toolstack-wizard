@@ -1,0 +1,84 @@
+{
+  "slug": "greensock",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "GSAP — documentation officielle", "url": "https://gsap.com" }
+  ],
+  "facts": {
+    "what": "GSAP (GreenSock Animation Platform) est une librairie JavaScript puissante pour les animations de haute performance. Entièrement gratuit depuis 2024 (acquis par Webflow) et supporte CSS, DOM, SVG, canvas et objets génériques.",
+    "what_en": "GSAP (GreenSock Animation Platform) is a powerful JavaScript library for high-performance animations. Completely free since 2024 (acquired by Webflow) and supports CSS, DOM, SVG, canvas, and generic objects.",
+    "pricing_model": "Entièrement gratuit et open source (depuis 2024)",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit depuis l'acquisition par Webflow en 2024. Pas de limitations fonctionnelles." },
+    "plans": [],
+    "key_features": [
+      "Animations hautement performantes (20x plus rapide que jQuery)",
+      "Timeline control et sequencing",
+      "Plugins: ScrollTrigger, ScrollSmoother, Draggable",
+      "GPU acceleration automatique des transforms"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez des animations web haute-performance.",
+        "Vous avez besoin d'un contrôle timeline avancé.",
+        "Vous travaillez avec des animations complexes en production."
+      ],
+      "avoidIf": [
+        "Vous avez seulement besoin de transitions CSS simples.",
+        "Vous travaillez exclusivement dans React (Motion suffit).",
+        "Vous cherchez une solution pour les animations SVG uniquement."
+      ],
+      "threshold": "GSAP est l'outil d'animation web le plus robuste pour les cas complexes ; pour React, Motion est plus approprié."
+    },
+    "pros": [
+      "Performance exceptionnelle (recommandé par Google)",
+      "Contrôle timeline et sequencing avancé",
+      "Plugins riches (ScrollTrigger, Draggable, etc.)",
+      "Entièrement gratuit depuis 2024"
+    ],
+    "cons": [
+      "Courbe d'apprentissage modérée",
+      "API plus verbeux que Motion pour les cas simples",
+      "Moins populaire que Motion dans l'écosystème React"
+    ],
+    "use_cases": [
+      "Créer des animations complexes et haute-performance",
+      "Construire des scroll-triggered animations sophistiquées",
+      "Animer des dashboards et visualisations dynamiques"
+    ],
+    "relevant_for": ["Frontend engineers", "Motion designers", "Développeurs animateurs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You create high-performance web animations.",
+        "You need advanced timeline control.",
+        "You work with complex production animations."
+      ],
+      "avoidIf": [
+        "You only need simple CSS transitions.",
+        "You work exclusively in React (Motion suffices).",
+        "You seek a solution for SVG animations only."
+      ],
+      "threshold": "GSAP is the most robust web animation tool for complex cases; for React, Motion is more appropriate."
+    },
+    "pros": [
+      "Exceptional performance (recommended by Google)",
+      "Advanced timeline and sequencing control",
+      "Rich plugins (ScrollTrigger, Draggable, etc.)",
+      "Completely free since 2024"
+    ],
+    "cons": [
+      "Moderate learning curve",
+      "More verbose API than Motion for simple cases",
+      "Less popular than Motion in React ecosystem"
+    ],
+    "use_cases": [
+      "Create complex, high-performance animations",
+      "Build sophisticated scroll-triggered animations",
+      "Animate dashboards and dynamic visualizations"
+    ]
+  }
+}

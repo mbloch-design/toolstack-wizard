@@ -1,0 +1,84 @@
+{
+  "slug": "headless-ui",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Headless UI — documentation officielle", "url": "https://headlessui.com" }
+  ],
+  "facts": {
+    "what": "Bibliothèque de composants React et Vue sans style (headless) offrant une logique d'accessibilité complète. Conçue pour s'intégrer parfaitement avec Tailwind CSS tout en restant framework-agnostic.",
+    "what_en": "Unstyled React and Vue component library providing complete accessibility logic. Designed to integrate perfectly with Tailwind CSS while remaining framework-agnostic.",
+    "pricing_model": "Entièrement gratuit et open source",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit. Pas de versions payantes ou limitations fonctionnelles." },
+    "plans": [],
+    "key_features": [
+      "Composants entièrement accessibles (ARIA, keyboard nav)",
+      "Zéro styling — applique votre propre CSS/Tailwind",
+      "Composants: Dialog, Disclosure, Listbox, Menu, Popover, etc.",
+      "TypeScript first-class support"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous construisez un design system personnalisé sans constraints styling.",
+        "Vous utilisez Tailwind CSS ou CSS custom.",
+        "Vous avez besoin d'accessibilité garantie (WCAG)."
+      ],
+      "avoidIf": [
+        "Vous recherchez des composants avec styling prédéfini.",
+        "Vous n'avez pas de familiarité avec CSS/Tailwind.",
+        "Vous avez besoin de 30+ composants pre-styled."
+      ],
+      "threshold": "Headless UI est parfait pour construire des design systems personnalisés ; pour les UI pré-stylisées, préférez Material-UI ou Chakra."
+    },
+    "pros": [
+      "Logique d'accessibilité complète et testée",
+      "Zéro styling imposé — totale liberté de design",
+      "Intégration transparente avec Tailwind CSS",
+      "Documentation claire et exemples abondants"
+    ],
+    "cons": [
+      "Requiert une maîtrise de CSS/Tailwind",
+      "Composants limités comparés aux librairies full-featured",
+      "Responsabilité de styler chaque composant"
+    ],
+    "use_cases": [
+      "Construire des design systems couleur/typographie personnalisés",
+      "Créer des composants UI accessibles sans contrainte styling",
+      "Prototyper rapidement des interfaces avec Tailwind"
+    ],
+    "relevant_for": ["Développeurs React", "Frontend engineers", "Design systems leads"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You build custom design systems without styling constraints.",
+        "You use Tailwind CSS or custom CSS.",
+        "You need guaranteed accessibility (WCAG)."
+      ],
+      "avoidIf": [
+        "You seek pre-styled components.",
+        "You lack CSS/Tailwind familiarity.",
+        "You need 30+ pre-styled components."
+      ],
+      "threshold": "Headless UI is perfect for building custom design systems; for pre-styled UIs, prefer Material-UI or Chakra."
+    },
+    "pros": [
+      "Complete, tested accessibility logic",
+      "Zero imposed styling — total design freedom",
+      "Seamless Tailwind CSS integration",
+      "Clear documentation and abundant examples"
+    ],
+    "cons": [
+      "Requires CSS/Tailwind mastery",
+      "Limited components vs full-featured libraries",
+      "Responsibility to style each component"
+    ],
+    "use_cases": [
+      "Build custom color/typography design systems",
+      "Create accessible UI components without styling constraints",
+      "Rapidly prototype interfaces with Tailwind"
+    ]
+  }
+}

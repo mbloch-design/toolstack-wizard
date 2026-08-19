@@ -1,0 +1,88 @@
+{
+  "slug": "chromatic",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Chromatic — plateforme officielle", "url": "https://www.chromatic.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de publication et de testing visuel pour les design systems et composants Storybook. Offre la capture automatique d'images, la comparaison visuelle et la collaboration sur les composants.",
+    "what_en": "Publishing and visual testing platform for Storybook design systems and components. Offers automatic screenshot capture, visual comparison, and component collaboration.",
+    "pricing_model": "Plan gratuit limité + plans payants à usage variable",
+    "free_tier": { "exists": true, "detail": "Plan gratuit pour petits projets. Plans payants basés sur le nombre de snapshots testés mensuellement." },
+    "plans": [
+      { "name": "Starter (gratuit)", "price": "Gratuit pour petits projets" },
+      { "name": "Plans payants", "price": "Tarification sur usage de snapshots" }
+    ],
+    "key_features": [
+      "Capture automatique d'images de composants",
+      "Comparaison visuelle avant/après",
+      "Intégration Storybook native",
+      "Collaboration et commentaires sur snapshots",
+      "Documentation de composants automatique"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous maintenez un design system documenté avec Storybook.",
+        "Vous avez besoin de détecter les régressions visuelles.",
+        "Votre équipe collabore sur les composants UI."
+      ],
+      "avoidIf": [
+        "Vous ne utilisez pas Storybook.",
+        "Vous travaillez sur une petite application sans design system.",
+        "Vous préférez des outils in-house pour le testing visuel."
+      ],
+      "threshold": "Chromatic est essentiel pour les équipes maintenant des design systems Storybook à l'échelle ; pour des besoins simples, Storybook seul suffit."
+    },
+    "pros": [
+      "Intégration transparente avec Storybook",
+      "Détection automatique de régressions visuelles",
+      "Collaboration en temps réel sur les composants",
+      "Plan gratuit utile pour petits projets"
+    ],
+    "cons": [
+      "Requiert Storybook — pas utilisable seul",
+      "Coûts escalade rapide avec le nombre de snapshots",
+      "Dépendance envers une plateforme externe"
+    ],
+    "use_cases": [
+      "Tester automatiquement les régressions visuelles des composants",
+      "Documenter et explorer les états de composants",
+      "Collaborer sur la validation UI entre designers et développeurs"
+    ],
+    "relevant_for": ["Frontend Developers", "Design systems leads", "QA teams"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You maintain a Storybook-documented design system.",
+        "You need to detect visual regressions.",
+        "Your team collaborates on UI components."
+      ],
+      "avoidIf": [
+        "You don't use Storybook.",
+        "You work on a small app without a design system.",
+        "You prefer in-house tools for visual testing."
+      ],
+      "threshold": "Chromatic is essential for teams maintaining scale Storybook design systems; for simple needs, Storybook alone suffices."
+    },
+    "pros": [
+      "Seamless Storybook integration",
+      "Automatic visual regression detection",
+      "Real-time collaboration on components",
+      "Free plan useful for small projects"
+    ],
+    "cons": [
+      "Requires Storybook — not usable standalone",
+      "Costs escalate quickly with snapshot count",
+      "Dependency on external platform"
+    ],
+    "use_cases": [
+      "Automatically test component visual regressions",
+      "Document and explore component states",
+      "Collaborate on UI validation between designers and developers"
+    ]
+  }
+}

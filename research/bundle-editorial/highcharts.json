@@ -1,0 +1,88 @@
+{
+  "slug": "highcharts",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Highcharts — site officiel", "url": "https://www.highcharts.com" }
+  ],
+  "facts": {
+    "what": "Bibliothèque de graphiques JavaScript commerciale offrant 40+ types de graphiques interactifs et responsifs. Fournie avec licence commerciale obligatoire pour usage professionnel, gratuit pour non-commercial.",
+    "what_en": "Commercial JavaScript charting library offering 40+ types of interactive, responsive charts. Requires commercial license for business use, free for non-commercial.",
+    "pricing_model": "Licence commerciale requise pour usage professionnel / Gratuit pour non-commercial",
+    "free_tier": { "exists": true, "detail": "Gratuit pour les projets non-commerciaux. Licence commerciale requise pour les applications professionnelles ou SaaS." },
+    "plans": [
+      { "name": "Single Developer", "price": "535 $" },
+      { "name": "5 Developers", "price": "2 675 $" },
+      { "name": "10 Developers", "price": "5 350 $" }
+    ],
+    "key_features": [
+      "40+ types de graphiques variés",
+      "Données temps réel et animation fluide",
+      "Responsive et mobile-first",
+      "Produits complémentaires: Stock, Maps, Gantt"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin de 40+ types de graphiques sophistiqués.",
+        "Vous construisez une application SaaS ou B2B avec dashboards.",
+        "Vous avez un budget pour une licence commerciale."
+      ],
+      "avoidIf": [
+        "Vous faites un projet non-commercial ou personnel.",
+        "Vous avez besoin seulement de 8-10 types de graphiques simples.",
+        "Vous cherchez une solution gratuite sans limitation d'usage."
+      ],
+      "threshold": "Highcharts est excellent pour les dashboards professionnels complets ; pour les besoins simples ou non-commerciaux, ApexCharts ou Chart.js suffisent."
+    },
+    "pros": [
+      "Large variété de 40+ types de graphiques",
+      "Qualité professionnelle et haute performance",
+      "Support des données temps réel",
+      "Gratuit pour projets non-commerciaux"
+    ],
+    "cons": [
+      "Licence commerciale obligatoire et coûteuse",
+      "Plus lourd que des alternatives open source",
+      "Overkill pour besoins simples de graphiques"
+    ],
+    "use_cases": [
+      "Créer des dashboards analytiques professionnels",
+      "Visualiser des données financières ou temps réel",
+      "Intégrer plusieurs types de graphiques dans une app SaaS"
+    ],
+    "relevant_for": ["Développeurs SaaS", "Data visualizers", "Entreprises B2B"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need 40+ types of sophisticated charts.",
+        "You build a SaaS or B2B application with dashboards.",
+        "You have budget for commercial licensing."
+      ],
+      "avoidIf": [
+        "You're working on a non-commercial or personal project.",
+        "You only need 8-10 simple chart types.",
+        "You're seeking a free solution without usage restrictions."
+      ],
+      "threshold": "Highcharts is excellent for complete professional dashboards; for simple needs or non-commercial use, ApexCharts or Chart.js suffice."
+    },
+    "pros": [
+      "Wide variety of 40+ chart types",
+      "Professional quality and high performance",
+      "Real-time data support",
+      "Free for non-commercial projects"
+    ],
+    "cons": [
+      "Commercial license mandatory and costly",
+      "Heavier than open source alternatives",
+      "Overkill for simple charting needs"
+    ],
+    "use_cases": [
+      "Build professional analytics dashboards",
+      "Visualize financial or real-time data",
+      "Integrate multiple chart types in a SaaS app"
+    ]
+  }
+}

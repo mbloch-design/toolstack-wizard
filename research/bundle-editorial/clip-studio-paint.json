@@ -1,0 +1,89 @@
+{
+  "slug": "clip-studio-paint",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Clip Studio Paint — tarification officielle", "url": "https://www.clipstudio.net/en/purchase/" }
+  ],
+  "facts": {
+    "what": "Logiciel de peinture numérique et de creation de comics/mangas. Offre des outils professionnels pour l'illustration, l'animation 2D et la bande dessinée avec plusieurs modèles de licence (one-time ou subscription).",
+    "what_en": "Digital painting and comic/manga creation software. Offers professional illustration tools, 2D animation, and comic book features with flexible licensing (one-time or subscription).",
+    "pricing_model": "Achat unique OU abonnement mensuel/annuel au choix",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite permanente. Essai gratuit sans limite de durée complète disponible." },
+    "plans": [
+      { "name": "Clip Studio Paint Pro (one-time)", "price": "49,99 $" },
+      { "name": "Clip Studio Paint EX (one-time)", "price": "219,00 $" },
+      { "name": "Subscription mensuel", "price": "4,49 $ par mois" },
+      { "name": "Subscription annuel", "price": "24,00 $ par an" }
+    ],
+    "key_features": [
+      "Outils d'illustration et de peinture numérique avancés",
+      "Support natif de la 3D comme référence",
+      "Animations 2D et timelines",
+      "Templates spécialisés pour comics/mangas"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez de la BD, du manga ou de l'illustration digitale.",
+        "Vous préférez un modèle de licence flexible (achat ou abonnement).",
+        "Vous avez besoin d'outils spécialisés pour le comic/manga."
+      ],
+      "avoidIf": [
+        "Vous faites surtout de la retouche photo non créative.",
+        "Vous préférez une solution gratuite open source.",
+        "Vous n'avez besoin que de peinture simple sans animation."
+      ],
+      "threshold": "Clip Studio Paint est optimal pour les illustrateurs, comiciens et mangakistes ; pour la retouche photo pure, Photoshop ou Affinity Photo convient mieux."
+    },
+    "pros": [
+      "Outils spécialisés pour le manga et la bande dessinée",
+      "Modèle de licence flexible (achat unique OU abonnement)",
+      "Support 3D natif pour références",
+      "Prix compétitif comparé à Photoshop"
+    ],
+    "cons": [
+      "Moins de fonctionnalités de retouche photo que Photoshop",
+      "Communauté plus petite qu'Adobe",
+      "Moins d'intégrations et plugins tierces"
+    ],
+    "use_cases": [
+      "Créer des illustrations digitales et art concepts",
+      "Scénariser et dessiner des bandes dessinées",
+      "Produire des mangas et comics"
+    ],
+    "relevant_for": ["Illustrateurs", "Comiciens", "Animateurs 2D"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You create comics, manga, or digital illustration.",
+        "You prefer flexible licensing (one-time or subscription).",
+        "You need specialized tools for comic/manga work."
+      ],
+      "avoidIf": [
+        "You primarily do non-creative photo retouching.",
+        "You prefer a free open source solution.",
+        "You only need basic painting without animation."
+      ],
+      "threshold": "Clip Studio Paint is optimal for illustrators, comic artists, and manga creators; for pure photo retouching, Photoshop or Affinity Photo fits better."
+    },
+    "pros": [
+      "Specialized tools for manga and comics",
+      "Flexible licensing model (one-time or subscription)",
+      "Native 3D support for references",
+      "Competitive pricing vs Photoshop"
+    ],
+    "cons": [
+      "Fewer photo retouching features than Photoshop",
+      "Smaller community than Adobe",
+      "Fewer integrations and third-party plugins"
+    ],
+    "use_cases": [
+      "Create digital illustrations and concept art",
+      "Script and draw comics",
+      "Produce manga and comics"
+    ]
+  }
+}

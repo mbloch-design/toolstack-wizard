@@ -1,0 +1,91 @@
+{
+  "slug": "ignition",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Ignition — Plateforme de facturation et paiements (site officiel)", "url": "https://www.ignitionapp.com/" }
+  ],
+  "facts": {
+    "what": "Plateforme intégrée de gestion commerciale pour les cabinets de services (comptabilité, conseil, agences). Automatise les propositions, contrats, facturation, paiements et workflows métier avec IA de pricing.",
+    "what_en": "Integrated business management platform for service-based firms (accounting, consulting, agencies). Automates proposals, contracts, invoicing, payments, and workflows with AI-powered pricing insights.",
+    "pricing_model": "Abonnement SaaS — tarification sur demande. Essai gratuit sans carte bancaire pendant 14 jours.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit 14 jours sans engagement ni carte bancaire requise." },
+    "plans": [
+      { "name": "Plans personnalisés", "price": "Montants sur la page officielle — contact ventes" }
+    ],
+    "key_features": [
+      "Gestion des propositions et lettres de mission en ligne",
+      "Facturation et paiement automatisés",
+      "Workflows templates et traitement par batch",
+      "AI Pricing Insights pour optimiser les tarifs",
+      "Tableaux de bord et reporting analytique",
+      "Conformité AML (anti-blanchiment)",
+      "Integrations : Xero, QuickBooks, Slack, Zapier, Karbon"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous dirigez un cabinet de services (comptabilité, conseil, agences).",
+        "Vous facturez régulièrement des clients et devez améliorer la trésorerie.",
+        "Vous avez plusieurs contrats/projets à gérer en parallèle."
+      ],
+      "avoidIf": [
+        "Vous cherchez un logiciel entièrement gratuit.",
+        "Vous avez surtout des factures simples et peu de workflows.",
+        "Vous êtes déjà satisfait de votre ERPodule de gestion existant."
+      ],
+      "threshold": "Ignition convient pour les cabinets de services croissants qui veulent automatiser proposal-to-paid ; pour solo freelance avec peu de clients, un modèle plus léger suffit."
+    },
+    "pros": [
+      "Flux complet du prospect au paiement en une seule plateforme.",
+      "Automatisation des workflows métier et des approvals.",
+      "IA pour l'optimisation des tarifs et les insights revenue.",
+      "Integrations riches avec ERP et outils métier.",
+      "Essai gratuit de 14 jours sans engagement."
+    ],
+    "cons": [
+      "Tarification opaque (sur demande).",
+      "Meilleure adaptée aux cabinets de services ; moins pertinent pour retail/SaaS.",
+      "Nécessite formation initiale pour maximaliser la valeur."
+    ],
+    "use_cases": [
+      "Automatiser les propositions et contrats pour un cabinet comptable.",
+      "Améliorer la trésorerie en accélérant les paiements.",
+      "Centraliser la facturation multi-projets pour une agence."
+    ],
+    "relevant_for": ["Cabinets comptables", "Agences conseil", "Agences digitales/marketing", "Consulting"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You run a service-based firm (accounting, consulting, agencies).",
+        "You invoice clients regularly and want to improve cash flow.",
+        "You manage multiple contracts or projects in parallel."
+      ],
+      "avoidIf": [
+        "You need a completely free solution.",
+        "You have mostly simple invoices and light workflows.",
+        "You're already satisfied with your existing ERP."
+      ],
+      "threshold": "Ignition works for growing service firms automating prospect-to-paid pipelines; for solo freelancers with few clients, lighter software is enough."
+    },
+    "pros": [
+      "Complete prospect-to-paid pipeline in one platform.",
+      "Workflow automation and approval orchestration.",
+      "AI for pricing optimization and revenue insights.",
+      "Rich integrations with ERP and business tools.",
+      "Free 14-day trial with no commitment."
+    ],
+    "cons": [
+      "Pricing is opaque (custom quotes only).",
+      "Best suited for service firms; less relevant for retail/SaaS.",
+      "Requires initial training to maximize value."
+    ],
+    "use_cases": [
+      "Automate proposals and contracts for an accounting firm.",
+      "Improve cash flow by accelerating payments.",
+      "Centralize multi-project billing for an agency."
+    ]
+  }
+}

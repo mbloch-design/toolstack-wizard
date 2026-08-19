@@ -1,0 +1,84 @@
+{
+  "slug": "jquery",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "jQuery — site officiel", "url": "https://jquery.com" }
+  ],
+  "facts": {
+    "what": "Bibliothèque JavaScript pionnière et légère pour simplifier la manipulation du DOM, les événements et les requêtes AJAX. Actuellement en mode maintenance après être devenue moins critique avec les frameworks modernes.",
+    "what_en": "Pioneer lightweight JavaScript library for simplifying DOM manipulation, events, and AJAX requests. Currently in maintenance mode as modern frameworks reduced its criticality.",
+    "pricing_model": "Entièrement gratuit et open source",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit. Pas de versions payantes ou limitations fonctionnelles." },
+    "plans": [],
+    "key_features": [
+      "Sélecteurs CSS simples et puissants",
+      "Manipulation DOM facilitée",
+      "Gestion d'événements simplifiée",
+      "Requêtes AJAX et JSONP support"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous maintenez du code legacy utilisant jQuery.",
+        "Vous construisez une application simple sans framework moderne.",
+        "Vous avez besoin de compatibilité maximale avec navigateurs anciens."
+      ],
+      "avoidIf": [
+        "Vous démarrez un nouveau projet web moderne.",
+        "Vous construisez une SPA (Single Page Application).",
+        "Vous préférez les approches réactives modernes (React, Vue)."
+      ],
+      "threshold": "jQuery reste utile pour la maintenance de code legacy et les petits projets ; pour les nouvelles applications, préférez React, Vue ou Angular."
+    },
+    "pros": [
+      "Syntaxe simple et intuitive pour la manipulation DOM",
+      "Énorme base installée et ressources disponibles",
+      "Petit et léger pour les petits projets",
+      "Excellente compatibilité navigateurs anciens"
+    ],
+    "cons": [
+      "Mode maintenance — pas de nouvelles fonctionnalités",
+      "Pas adapté aux applications complexes",
+      "Approche déclarative du DOM moins moderne"
+    ],
+    "use_cases": [
+      "Maintenir des applications web legacy jQuery",
+      "Ajouter de l'interactivité simple aux pages HTML",
+      "Faire des requêtes AJAX basiques sans framework"
+    ],
+    "relevant_for": ["Développeurs legacy", "Petits projets", "Compatibilité rétro"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You maintain legacy code using jQuery.",
+        "You build a simple app without modern frameworks.",
+        "You need maximum compatibility with older browsers."
+      ],
+      "avoidIf": [
+        "You're starting a new modern web project.",
+        "You're building a SPA (Single Page Application).",
+        "You prefer modern reactive approaches (React, Vue)."
+      ],
+      "threshold": "jQuery remains useful for legacy maintenance and small projects; for new apps, prefer React, Vue, or Angular."
+    },
+    "pros": [
+      "Simple, intuitive syntax for DOM manipulation",
+      "Huge installed base and available resources",
+      "Small and lightweight for small projects",
+      "Excellent old browser compatibility"
+    ],
+    "cons": [
+      "Maintenance mode — no new features",
+      "Not suited for complex applications",
+      "Declarative DOM approach less modern"
+    ],
+    "use_cases": [
+      "Maintain legacy jQuery web applications",
+      "Add simple interactivity to HTML pages",
+      "Make basic AJAX requests without a framework"
+    ]
+  }
+}

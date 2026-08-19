@@ -1,0 +1,113 @@
+{
+  "slug": "radix-primitives",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "Radix Primitives — site officiel",
+      "url": "https://www.radix-ui.com/primitives"
+    },
+    {
+      "label": "Radix Primitives — GitHub",
+      "url": "https://github.com/radix-ui/primitives"
+    }
+  ],
+  "facts": {
+    "what": "Bibliothèque de composants React unstyled, accessibles et composables pour construire des design systems. Base technique de Radix UI et shadcn/ui.",
+    "what_en": "Library of unstyled, accessible, composable React components for building design systems. Technical foundation of Radix UI and shadcn/ui.",
+    "pricing_model": "Open source, gratuit (licence MIT)",
+    "free_tier": {
+      "exists": true,
+      "detail": "Entièrement gratuit et open source, aucune limitation"
+    },
+    "plans": [
+      {
+        "name": "Open source",
+        "price": "gratuit"
+      }
+    ],
+    "key_features": [
+      "Composants sans styles par défaut, contrôle total du design.",
+      "Entièrement accessible et WAI-ARIA compliant.",
+      "50+ composants (Dialog, Dropdown, Slider, etc.).",
+      "Composable et modulaire, adoption incrémentale.",
+      "Base de shadcn/ui, 130M+ monthly downloads."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous construisez un design system personnalisé.",
+        "Vous voulez un contrôle total sur le style et l'apparence.",
+        "Vous préférez composer vos propres composants plutôt que d'utiliser des pré-stylisés."
+      ],
+      "avoidIf": [
+        "Vous voulez des composants immédiatement utilisables et stylisés.",
+        "Vous préférez une approche plus haut niveau (Material-UI, Chakra).",
+        "Vous avez peu de temps pour construire des composants custom."
+      ],
+      "threshold": "Radix Primitives est le choix pour les équipes construisant des design systems sophistiqués avec contrôle total."
+    },
+    "pros": [
+      "Contrôle total sur le styling et l'apparence.",
+      "Entièrement accessible et WAI-ARIA compliant.",
+      "Adoption modulaire — utilisez seulement ce dont vous avez besoin.",
+      "Base de shadcn/ui, utilisé par des milliers de design systems.",
+      "Zéro styles imposés, flexibilité maximale."
+    ],
+    "cons": [
+      "Require building your own styling et composants composites.",
+      "Aucun design par défaut — plus de travail initial.",
+      "Courbe d'apprentissage pour comprendre la composition des primitives.",
+      "Moins adapté pour les équipes petites ou sans designer."
+    ],
+    "use_cases": [
+      "Construire un design system propriétaire pour une grande entreprise.",
+      "Créer une bibliothèque de composants personnalisée et réutilisable.",
+      "Développer une application avec des besoins de design très spécifiques."
+    ],
+    "relevant_for": [
+      "Design systems",
+      "Grandes entreprises",
+      "Design-focused teams"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're building a custom design system.",
+        "You want total control over styling and appearance.",
+        "You prefer composing your own components rather than using pre-styled ones."
+      ],
+      "avoidIf": [
+        "You want immediately usable and styled components.",
+        "You prefer a higher-level approach (Material-UI, Chakra).",
+        "You have limited time to build custom components."
+      ],
+      "threshold": "Radix Primitives is the choice for teams building sophisticated design systems with total control."
+    },
+    "pros": [
+      "Total control over styling and appearance.",
+      "Fully accessible and WAI-ARIA compliant.",
+      "Modular adoption — use only what you need.",
+      "Foundation of shadcn/ui, used by thousands of design systems.",
+      "Zero imposed styles, maximum flexibility."
+    ],
+    "cons": [
+      "Requires building your own styling and composite components.",
+      "No default design — more initial work.",
+      "Learning curve to master component composition.",
+      "Less suitable for small teams or without a designer."
+    ],
+    "use_cases": [
+      "Build a proprietary design system for a large enterprise.",
+      "Create a custom, reusable component library.",
+      "Develop an application with very specific design requirements."
+    ],
+    "relevant_for": [
+      "Design systems",
+      "Large enterprises",
+      "Design-focused teams"
+    ]
+  }
+}

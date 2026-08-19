@@ -1,0 +1,89 @@
+{
+  "slug": "coreldraw",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "CorelDRAW — site officiel", "url": "https://www.coreldraw.com" }
+  ],
+  "facts": {
+    "what": "Suite de conception graphique professionnelle offrant des outils vectoriels, de mise en page et de retouche photo. Disponible en abonnement annuel ou achat perpétuel avec mise à jour payante.",
+    "what_en": "Professional graphic design suite offering vector, layout, and photo retouching tools. Available as annual subscription or perpetual purchase with paid updates.",
+    "pricing_model": "Abonnement annuel OU achat perpétuel avec mises à jour payantes",
+    "free_tier": { "exists": true, "detail": "Essai gratuit 15 jours sans carte bancaire requise." },
+    "plans": [
+      { "name": "Abonnement annuel (1ère année)", "price": "305 $ pour première année" },
+      { "name": "Abonnement annuel (renew)", "price": "269 $ par an" },
+      { "name": "Achat perpétuel", "price": "549 $" },
+      { "name": "Maintenance plan annuel", "price": "169 $ par an" }
+    ],
+    "key_features": [
+      "Outils vectoriels et raster intégrés",
+      "Mise en page pour multipage documents",
+      "Galerie de fonts et d'objets 3D",
+      "Web et cloud storage inclus en abonnement"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez des designs polyvalents (logos, mise en page, retouche).",
+        "Vous préférez un modèle d'achat perpétuel ou abonnement flexible.",
+        "Vous avez besoin d'outils vectoriels professionnels complets."
+      ],
+      "avoidIf": [
+        "Vous travaillez principalement dans l'écosystème Adobe.",
+        "Vous avez besoin d'une intégration profonde avec d'autres outils.",
+        "Vous recherchez une solution entièrement gratuite."
+      ],
+      "threshold": "CorelDRAW excelle pour les designers polyvalents cherchant une alternative à Adobe ; pour l'industrie print professionnelle, Adobe reste dominant."
+    },
+    "pros": [
+      "Outils vectoriels et raster puissants et intégrés",
+      "Modèle de licence flexible (abonnement ou achat perpétuel)",
+      "Prix compétitif comparé à Adobe Creative Cloud",
+      "Excellente mise en page et typo pour print"
+    ],
+    "cons": [
+      "Moins d'intégrations tierces qu'Adobe",
+      "Communauté plus petite que Adobe",
+      "Interface moins moderna et moins intuitive"
+    ],
+    "use_cases": [
+      "Créer des logos et identités visuelles complètes",
+      "Concevoir des supports print (brochures, affiches)",
+      "Faire de l'illustration vectorielle professionnelle"
+    ],
+    "relevant_for": ["Designers graphiques", "Illustrateurs", "Agences créatives"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You create versatile designs (logos, layout, retouching).",
+        "You prefer perpetual ownership or flexible subscription.",
+        "You need complete professional vector tools."
+      ],
+      "avoidIf": [
+        "You work primarily in the Adobe ecosystem.",
+        "You need deep integration with other tools.",
+        "You're seeking an entirely free solution."
+      ],
+      "threshold": "CorelDRAW excels for versatile designers seeking an Adobe alternative; for professional print industry, Adobe remains dominant."
+    },
+    "pros": [
+      "Powerful integrated vector and raster tools",
+      "Flexible licensing (subscription or perpetual purchase)",
+      "Competitive pricing vs Adobe Creative Cloud",
+      "Excellent layout and typography for print"
+    ],
+    "cons": [
+      "Fewer third-party integrations than Adobe",
+      "Smaller community than Adobe",
+      "Less modern and intuitive interface"
+    ],
+    "use_cases": [
+      "Create complete logos and visual identities",
+      "Design print materials (brochures, posters)",
+      "Professional vector illustration"
+    ]
+  }
+}

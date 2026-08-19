@@ -1,0 +1,93 @@
+{
+  "slug": "visily",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Visily — AI Design tool (site officiel)", "url": "https://www.visily.ai" }
+  ],
+  "facts": {
+    "what": "Outil de design IA pour créer wireframes, maquettes et prototypes rapidement sans expertise design. Génère UI à partir descriptions texte et offre 3x plus d'AI credits que Figma Pro au même prix.",
+    "what_en": "AI design tool for rapid wireframes, mockups, and prototypes without design expertise. Generates UI from text descriptions and offers 3x more AI credits than Figma Pro at same price.",
+    "pricing_model": "Freemium SaaS — plan gratuit limité, Pro à partir 11€/mois avec crédits IA. Moins cher que Figma Pro (16€/mois).",
+    "free_tier": { "exists": true, "detail": "Gratuit : 2 tableaux éditables, exports watermarkés, 24h version history, crédits IA limités." },
+    "plans": [
+      { "name": "Starter", "price": "0€ (limité)" },
+      { "name": "Pro", "price": "11€/mois avec 3 000 crédits IA/mois (promo : 6 000 actuellement)" },
+      { "name": "Business", "price": "Sur devis avec 10 000 crédits IA" }
+    ],
+    "key_features": [
+      "Génération UI par IA à partir prompt texte",
+      "Wireframes, maquettes et prototypes interactifs",
+      "Conversion mockup → composants réutilisables",
+      "Export Figma natif",
+      "3 000 crédits IA/mois pour génération (promo 6 000)",
+      "Boards illimitées sur plan Pro",
+      "Collaboration équipe et commentaires"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous prototypez rapidement sans expertise design UX approfondie.",
+        "Vous cherchez outil IA pour accélérer design itératif.",
+        "Vous cherchez alternative moins chère à Figma."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'outils design très avancés et précis.",
+        "Vous travaillez sur design complexe/custom très différencié.",
+        "Votre équipe est déjà pleinement investie dans Figma."
+      ],
+      "threshold": "Visily s'impose pour PMs, devs et non-designers cherchant créer maquettes vite ; pour design haute-fidélité/brand, Figma ou Adobe Design convient mieux."
+    },
+    "pros": [
+      "IA génère UI et wireframes très rapidement.",
+      "Positionné moins cher que Figma Pro (montants sur la page officielle).",
+      "3x plus de crédits IA que Figma à même prix (promo 6x).",
+      "Accessible pour non-designers grâce IA.",
+      "Export Figma fluide pour collaboration."
+    ],
+    "cons": [
+      "IA peut être incohérente ou nécessiter refinement.",
+      "Moins de tools avancés pour design haute-fidélité.",
+      "Meilleur pour wireframes/MVP que design polish final."
+    ],
+    "use_cases": [
+      "Créer maquettes et wireframes 10x plus rapidement.",
+      "Transformer descriptions texte en UI fonctionnelle.",
+      "MVP et prototypes rapides pour startups."
+    ],
+    "relevant_for": ["Product managers", "Developers/founders", "Startups bootstrap", "Non-designers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You prototype quickly without deep UX design expertise.",
+        "You seek AI tool to speed iterative design.",
+        "You seek cheaper Figma alternative."
+      ],
+      "avoidIf": [
+        "You need very advanced, precise design tools.",
+        "You work on complex/custom design very differentiated.",
+        "Your team is already fully invested in Figma."
+      ],
+      "threshold": "Visily works for PMs, devs, and non-designers wanting to mock up fast; for high-fidelity/brand design, Figma or Adobe Design is better."
+    },
+    "pros": [
+      "AI generates UI and wireframes very rapidly.",
+      "Priced below Figma Pro (amounts on the official page).",
+      "3x more AI credits than Figma at same price (promo 6x).",
+      "Accessible for non-designers thanks to AI.",
+      "Smooth Figma export for collaboration."
+    ],
+    "cons": [
+      "AI can be inconsistent and needs refinement.",
+      "Fewer advanced tools for high-fidelity design.",
+      "Better for wireframes/MVPs than polished final design."
+    ],
+    "use_cases": [
+      "Create mockups and wireframes 10x faster.",
+      "Transform text descriptions into functional UI.",
+      "Quick MVPs and prototypes for startups."
+    ]
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "slug": "affinity-publisher",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Affinity Publisher (site officiel)", "url": "https://www.affinity.studio/page-layout-software" }
+  ],
+  "facts": {
+    "what": "Logiciel de mise en page et d'édition destiné aux éditeurs, designers et créatifs. Alternative compacte à Adobe InDesign, offrant une licence perpétuelle sans abonnement récurrent.",
+    "what_en": "Page layout and publishing software for editors, designers, and creatives. A compact alternative to Adobe InDesign with a perpetual license and no recurring subscription.",
+    "pricing_model": "Licence perpetuelle — achat unique, sans abonnement récurrent",
+    "free_tier": { "exists": false, "detail": "Aucune version gratuite. Essai 14 jours gratuit sans carte bancaire requise." },
+    "plans": [
+      { "name": "Affinity Publisher (licence perpétuelle)", "price": "69,99 $" }
+    ],
+    "key_features": [
+      "Mise en page multipage avec maître et gabarits",
+      "Intégration images vectorielles et raster",
+      "Exports PDF, EPUB et formats imprimerie",
+      "Styles de paragraphes et styles de caractères"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez des livres, magazines ou brochures sans abonnement.",
+        "Vous recherchez une alternative légère à Adobe InDesign.",
+        "Vous gérez des documents multipage complexes."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'une intégration profonde avec Creative Cloud.",
+        "Vous travaillez dans un environnement d'équipe très collaboratif.",
+        "Vous préférez les mises à jour automatiques via abonnement."
+      ],
+      "threshold": "Affinity Publisher est optimal pour les créatifs indépendants et PME gérant de l'édition sans frais de licence récurrents."
+    },
+    "pros": [
+      "Achat unique — pas d'abonnement perpétuel",
+      "Gestion multipage fluide et intuitive",
+      "Exports de qualité professionnelle (PDF, EPUB, imprimerie)",
+      "Temps de chargement rapide et interface réactive"
+    ],
+    "cons": [
+      "Moins de templates préconfigurés qu'InDesign",
+      "Communauté et ressources plus restreintes",
+      "Intégrations tierces limitées comparées à Adobe"
+    ],
+    "use_cases": [
+      "Concevoir des livres auto-édités ou éditoriaux",
+      "Créer des magazines et brochures multipage",
+      "Préparer des documents pour l'imprimerie"
+    ],
+    "relevant_for": ["Éditeurs", "Designers graphiques", "Créatifs indépendants"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You create books, magazines, or brochures without a subscription.",
+        "You're seeking a lightweight alternative to Adobe InDesign.",
+        "You manage complex multi-page documents."
+      ],
+      "avoidIf": [
+        "You need deep Creative Cloud integration.",
+        "You work in a highly collaborative team environment.",
+        "You prefer automatic updates via subscription."
+      ],
+      "threshold": "Affinity Publisher is optimal for independent creatives and SMEs managing publishing without recurring license fees."
+    },
+    "pros": [
+      "One-time purchase — no perpetual subscription",
+      "Fluid and intuitive multi-page management",
+      "Professional exports (PDF, EPUB, print-ready)",
+      "Fast load times and responsive interface"
+    ],
+    "cons": [
+      "Fewer preconfigured templates than InDesign",
+      "Smaller community and fewer resources",
+      "Limited third-party integrations compared to Adobe"
+    ],
+    "use_cases": [
+      "Design self-published or editorial books",
+      "Create multi-page magazines and brochures",
+      "Prepare documents for print"
+    ]
+  }
+}

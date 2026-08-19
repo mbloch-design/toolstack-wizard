@@ -1,0 +1,88 @@
+{
+  "slug": "balsamiq",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Balsamiq — tarification officielle", "url": "https://balsamiq.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Outil de wireframing web collaboratif qui permet de créer rapidement des maquettes et prototypes. Interface intentionnellement élémentaire pour se concentrer sur la structure sans polissage des détails.",
+    "what_en": "Collaborative web wireframing tool for quickly creating mockups and prototypes. Intentionally minimal interface to focus on structure without design polish.",
+    "pricing_model": "Abonnement cloud mensuels ou annuels, ou licence desktop unique",
+    "free_tier": { "exists": true, "detail": "Version gratuite limitée en ligne. Essai gratuit 14 jours en cloud, pas de carte bancaire requise." },
+    "plans": [
+      { "name": "Cloud Starter", "price": "16 $ par éditeur/mois" },
+      { "name": "Cloud Teams", "price": "49 $ par éditeur/mois" },
+      { "name": "Desktop (1-4 users)", "price": "129 $ par utilisateur" }
+    ],
+    "key_features": [
+      "Création rapide de wireframes et maquettes",
+      "Collaboration en temps réel (plan Teams)",
+      "Bibliothèques de composants réutilisables",
+      "Export PDF et images"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous découvrez les besoins UX à travers des wireframes rapides.",
+        "Votre équipe a besoin de collaborer sur les maquettes.",
+        "Vous préférez un outil simple sans surcharge de design."
+      ],
+      "avoidIf": [
+        "Vous créez des prototypes haute fidélité ou des maquettes visuelles.",
+        "Vous travaillez en isolation sans besoin de collaboration.",
+        "Vous cherchez une solution gratuite sans limitations."
+      ],
+      "threshold": "Balsamiq est idéal pour l'exploration rapide et l'alignement d'équipe sur la structure ; pour du design détaillé, préférez Figma ou Adobe XD."
+    },
+    "pros": [
+      "Interface élémentaire qui force la concentration sur la structure",
+      "Création très rapide de wireframes",
+      "Collaboratif en temps réel (plan Teams)",
+      "Export facile en PDF et images"
+    ],
+    "cons": [
+      "Ne convient pas pour les maquettes visuelles détaillées",
+      "Moins de composants et d'intégrations qu'une DAP complète",
+      "Plan gratuit très limité"
+    ],
+    "use_cases": [
+      "Esquisser rapidement les flux utilisateur et la structure",
+      "Aligner l'équipe produit sur la mise en page",
+      "Documenter les spécifications fonctionnelles"
+    ],
+    "relevant_for": ["Product Managers", "UX Designers", "Équipes produit"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You explore UX through rapid wireframes.",
+        "Your team needs to collaborate on mockups.",
+        "You prefer a simple tool without design overhead."
+      ],
+      "avoidIf": [
+        "You're creating high-fidelity prototypes or visual mockups.",
+        "You work in isolation without collaboration needs.",
+        "You're seeking a free solution without limitations."
+      ],
+      "threshold": "Balsamiq is ideal for rapid exploration and team structure alignment; for detailed design, prefer Figma or Adobe XD."
+    },
+    "pros": [
+      "Minimal interface forces focus on structure",
+      "Very fast wireframe creation",
+      "Real-time collaboration (Teams plan)",
+      "Easy export to PDF and images"
+    ],
+    "cons": [
+      "Not suited for detailed visual mockups",
+      "Fewer components and integrations than a full DAP",
+      "Free plan very limited"
+    ],
+    "use_cases": [
+      "Quickly sketch user flows and structure",
+      "Align product team on layout",
+      "Document functional specifications"
+    ]
+  }
+}

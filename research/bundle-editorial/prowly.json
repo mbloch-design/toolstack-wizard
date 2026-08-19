@@ -1,0 +1,93 @@
+{
+  "slug": "prowly",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Prowly — Logiciel de RP/communications (site officiel)", "url": "https://prowly.com" }
+  ],
+  "facts": {
+    "what": "Plateforme SaaS de gestion RP et communications pour pitch médias, distribution press release et suivi couverture presse. Inclut IA pour écriture, base 1M+ contacts médias et analytics impact.",
+    "what_en": "SaaS platform for PR and communications management: media pitching, press release distribution, press coverage tracking. Includes AI writing, 1M+ media contact database, and impact analytics.",
+    "pricing_model": "Abonnement SaaS — trois tiers : Basic, Pro, Enterprise avec facturation annuelle (20% moins cher qu'annuel).",
+    "free_tier": { "exists": true, "detail": "Essai gratuit 7 jours du plan Basic. Pas de version gratuite permanente." },
+    "plans": [
+      { "name": "Basic", "price": "258€/mois billed annuellement (3 096€/an)" },
+      { "name": "Pro", "price": "369€/mois billed annuellement (4 428€/an)" },
+      { "name": "Enterprise", "price": "À partir de 6 000€/an avec features custom" }
+    ],
+    "key_features": [
+      "Distribution illimitée de press releases",
+      "IA pour rédaction et optimisation contenu (Semrush stack)",
+      "Base de données 1M+ contacts médias/journalistes",
+      "Outils de pitching et suivi campagnes",
+      "Page presse hébergée avec archivage press releases",
+      "Analytics et suivi couverture presse",
+      "Intégrations CRM, email, outils marketing"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez RP/communications pour PME ou agence.",
+        "Vous distribuez régulièrement communiqués presse.",
+        "Vous avez besoin de suivi couverture médias et analytics."
+      ],
+      "avoidIf": [
+        "Vous publiez très rarement des communiqués de presse.",
+        "Vous cherchez une solution entièrement gratuite.",
+        "Votre budget relations presse est très serré."
+      ],
+      "threshold": "Prowly s'impose pour équipes RP structurées ; pour startup débutante, distribution email + tracking manual suffit."
+    },
+    "pros": [
+      "Distribution et tracking press releases en une plateforme.",
+      "IA pour optimiser et rédiger communiqués automatiquement.",
+      "Base contacts médias riche et à jour.",
+      "Analytics détaillés sur impact et couverture.",
+      "Essai gratuit 7 jours sans carte bancaire."
+    ],
+    "cons": [
+      "Tarification élevée dès l'entrée de gamme.",
+      "Meilleur ROI pour équipes avec volume RP régulier.",
+      "Interface peut sembler complexe au démarrage."
+    ],
+    "use_cases": [
+      "Distribuer et suivre press releases auprès 1M+ journalistes.",
+      "Générer communiqués IA pour accélérer production.",
+      "Mesurer impact RP et classer journalistes par couverture."
+    ],
+    "relevant_for": ["PME", "Agences RP/marketing", "Équipes communications", "Édition/médias"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage PR/communications for SME or agency.",
+        "You distribute press releases regularly.",
+        "You need press coverage tracking and analytics."
+      ],
+      "avoidIf": [
+        "You send very few press releases (< 1/month).",
+        "You need a completely free solution.",
+        "Your press relations budget is very tight."
+      ],
+      "threshold": "Prowly works for structured PR teams; for early-stage startups, email distribution + manual tracking is enough."
+    },
+    "pros": [
+      "Press release distribution and tracking in one platform.",
+      "AI to automatically optimize and write releases.",
+      "Rich, up-to-date media contact database.",
+      "Detailed analytics on impact and coverage.",
+      "Free 7-day trial without credit card."
+    ],
+    "cons": [
+      "Pricing is high even at entry level.",
+      "Best ROI for teams with regular PR volume.",
+      "Interface may feel complex at first."
+    ],
+    "use_cases": [
+      "Distribute and track press releases to 1M+ journalists.",
+      "Generate AI press releases to speed up production.",
+      "Measure PR impact and rank journalists by coverage."
+    ]
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "slug": "react-router",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "React Router — site officiel",
+      "url": "https://reactrouter.com/"
+    },
+    {
+      "label": "React Router — GitHub",
+      "url": "https://github.com/remix-run/react-router"
+    }
+  ],
+  "facts": {
+    "what": "Routeur déclaratif pour React pour gérer la navigation et les URLs. Standard de facto pour le routage en React Single Page Applications.",
+    "what_en": "Declarative router for React for managing navigation and URLs. De facto standard for routing in React Single Page Applications.",
+    "pricing_model": "Open source, gratuit (licence MIT)",
+    "free_tier": {
+      "exists": true,
+      "detail": "Entièrement gratuit et open source, zéro restrictions"
+    },
+    "plans": [
+      {
+        "name": "Open source",
+        "price": "gratuit"
+      }
+    ],
+    "key_features": [
+      "Routage déclaratif avec composants Route.",
+      "Gestion dynamique des paramètres d'URL et de la query string.",
+      "Nested routes pour les layouts imbriqués.",
+      "Lazy loading des composants de route.",
+      "Hooks pour accéder aux params et naviguer programmatiquement."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous construisez une Single Page Application (SPA) React.",
+        "Vous avez besoin de gestion d'URL et de navigation déclarative.",
+        "Vous voulez le standard de facto du routage React avec massive adoption."
+      ],
+      "avoidIf": [
+        "Vous construisez une application Next.js (Next.js gère le routage).",
+        "Vous construisez une app très simple avec peu de routes.",
+        "Vous préférez TanStack Router pour son approche type-safe (beta)."
+      ],
+      "threshold": "React Router est le standard de facto du routage React avec 4.3B+ téléchargements npm ; l'utiliser est le choix sûr."
+    },
+    "pros": [
+      "Standard de facto du routage React avec massive adoption et communauté.",
+      "Très bonne documentation et support.",
+      "Routage déclaratif et cohérent.",
+      "Supports nested routes et lazy loading.",
+      "4.3B+ npm downloads — extrêmement fiable et stable."
+    ],
+    "cons": [
+      "Courbe d'apprentissage pour débuter avec la syntaxe déclarative.",
+      "Moins type-safe que TanStack Router (pas d'inférence de type end-to-end).",
+      "Configuration peut être verbeux pour des routes complexes."
+    ],
+    "use_cases": [
+      "Construire une SPA React avec plusieurs pages et navigation complexe.",
+      "Gérer les paramètres dynamiques d'URL (/users/:id).",
+      "Implémenter des protected routes avec authentification."
+    ],
+    "relevant_for": [
+      "Développeurs React",
+      "Applications SPA",
+      "Startups",
+      "Entreprises"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're building a React Single Page Application (SPA).",
+        "You need declarative URL management and navigation.",
+        "You want the de facto React routing standard with massive adoption."
+      ],
+      "avoidIf": [
+        "You're building a Next.js application (Next.js handles routing).",
+        "You're building a simple app with few routes.",
+        "You prefer TanStack Router for its type-safe approach (beta)."
+      ],
+      "threshold": "React Router is the de facto React routing standard with 4.3B+ npm downloads; using it is the safe choice."
+    },
+    "pros": [
+      "De facto standard for React routing with massive adoption and community.",
+      "Excellent documentation and support.",
+      "Declarative and consistent routing.",
+      "Supports nested routes and lazy loading.",
+      "4.3B+ npm downloads — extremely reliable and stable."
+    ],
+    "cons": [
+      "Learning curve to master declarative routing syntax.",
+      "Less type-safe than TanStack Router (no end-to-end type inference).",
+      "Configuration can be verbose for complex routes."
+    ],
+    "use_cases": [
+      "Build a React SPA with multiple pages and complex navigation.",
+      "Manage dynamic URL parameters (/users/:id).",
+      "Implement protected routes with authentication."
+    ],
+    "relevant_for": [
+      "React developers",
+      "SPA applications",
+      "Startups",
+      "Enterprises"
+    ]
+  }
+}

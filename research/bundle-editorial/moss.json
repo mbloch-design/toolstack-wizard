@@ -1,0 +1,91 @@
+{
+  "slug": "moss",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Moss — Gestion de dépenses d'entreprise (site officiel)", "url": "https://www.getmoss.com/" }
+  ],
+  "facts": {
+    "what": "Plateforme fintech de gestion des dépenses d'entreprise : cartes physiques et virtuelles, AP automatisé, remboursements digitalisés, avec IA pour codification comptable et sync ERP.",
+    "what_en": "Fintech spend management platform: physical and virtual corporate cards, automated AP, digitalized reimbursements, with AI for expense coding and ERP synchronization.",
+    "pricing_model": "Abonnement SaaS — tarification sur demande selon volume de dépenses et modules.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Création de compte ou consultation commerciale pour tarification." },
+    "plans": [
+      { "name": "Plans personnalisés", "price": "Montants sur la page officielle — demander consultation" }
+    ],
+    "key_features": [
+      "Cartes d'entreprise physiques et virtuelles illimitées",
+      "Limites de dépenses par utilisateur/groupe configurables",
+      "Capture automatique de reçus et IA de classification",
+      "Traitement des factures fournisseurs (AP automatisé)",
+      "Remboursements digitalisés sans paperasse",
+      "Intégration comptable directe (ERP/systèmes de paie)",
+      "Dashboard de dépenses consolidées et insights"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez des équipes avec nombreuses petites dépenses (trajets, repas, fournitures).",
+        "Vous cherchez à digitaaliser et accélérer le traitement des frais.",
+        "Vous voulez visibilité temps réel sur les dépenses d'entreprise."
+      ],
+      "avoidIf": [
+        "Vous n'avez que quelques transactions mensuelles.",
+        "Vous cherchez une solution entièrement gratuite.",
+        "Une gestion paie classique avec remboursements manuels vous satisfait."
+      ],
+      "threshold": "Moss s'impose pour PME/ETI avec flux de dépenses fréquent ; pour très peu de frais, spreadsheet ou logiciel paie suffisent."
+    },
+    "pros": [
+      "Cartes virtuelles illimitées pour chaque employé et budget.",
+      "Automatisation complète : capture reçus → codif → sync paie.",
+      "Traitement 4x plus rapide des dépenses et clôtures.",
+      "Visibilité temps réel sur l'ensemble des dépenses d'entreprise.",
+      "7 000+ entreprises, 4.7/5 G2, reconnu pour support et UX."
+    ],
+    "cons": [
+      "Tarification opaque (sur demande).",
+      "Meilleur ROI pour équipes avec dépenses fréquentes.",
+      "Pas de version gratuite pour tester l'outil."
+    ],
+    "use_cases": [
+      "Gérer les frais de déplacement des sales/consultants.",
+      "Automatiser la saisie des factures fournisseurs.",
+      "Centraliser et valider tous les remboursements mensuels."
+    ],
+    "relevant_for": ["PME", "ETI", "Équipes nomades/mobiles", "Startups croissantes"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "Your team has frequent small expenses (travel, meals, supplies).",
+        "You want to digitalize and speed up expense processing.",
+        "You want real-time visibility into company spending."
+      ],
+      "avoidIf": [
+        "You only have a few transactions per month.",
+        "You need a completely free solution.",
+        "Manual expense reimbursement via payroll works fine for you."
+      ],
+      "threshold": "Moss works for SMEs/mid-market with frequent expense flows; for very few costs, spreadsheet or payroll software is enough."
+    },
+    "pros": [
+      "Unlimited virtual cards for each employee and budget.",
+      "Complete automation: receipt capture → coding → payroll sync.",
+      "4x faster expense processing and month-end close.",
+      "Real-time visibility into all company spending.",
+      "7,000+ companies, 4.7/5 G2, recognized for support and UX."
+    ],
+    "cons": [
+      "Pricing is opaque (requires quote).",
+      "Best ROI for teams with frequent expenses.",
+      "No free version to test the tool."
+    ],
+    "use_cases": [
+      "Manage travel expenses for salespeople and consultants.",
+      "Automate supplier invoice processing.",
+      "Centralize and validate all monthly reimbursements."
+    ]
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "slug": "knockout",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Knockout — documentation officielle", "url": "https://knockoutjs.com" }
+  ],
+  "facts": {
+    "what": "Framework JavaScript MVVM (Model-View-ViewModel) conçu pour créer des interfaces utilisateur riches et réactives. Utilise l'observation automatique pour synchroniser automatiquement l'UI avec les données.",
+    "what_en": "JavaScript MVVM (Model-View-ViewModel) framework designed to create rich, reactive user interfaces. Uses automatic observation to automatically sync UI with data.",
+    "pricing_model": "Entièrement gratuit et open source",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit. Pas de versions payantes ou limitations fonctionnelles." },
+    "plans": [],
+    "key_features": [
+      "Observables et data-binding automatique",
+      "MVVM architecture pattern",
+      "Composants et templates réutilisables",
+      "Dépendances computées (computed observables)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous maintenez une application Knockout.js existante.",
+        "Vous avez besoin d'une approche MVVM déclarative.",
+        "Vous construisez une application complexe avec beaucoup de state."
+      ],
+      "avoidIf": [
+        "Vous démarrez un nouveau projet web en 2026.",
+        "Vous préférez une approche composante moderne (React, Vue).",
+        "Vous cherchez une librairie activement maintenue avec grosse communauté."
+      ],
+      "threshold": "Knockout reste utile pour la maintenance d'applications legacy ; pour les nouveaux projets, React ou Vue sont meilleurs choix."
+    },
+    "pros": [
+      "Approche MVVM simple et claire",
+      "Data-binding automatique et observables",
+      "Très bon pour les applications avec beaucoup de state",
+      "Communauté mature avec ressources historiques"
+    ],
+    "cons": [
+      "Moins activement maintenu que React/Vue",
+      "Approche moins moderne que les composants actuels",
+      "Communauté plus petite et ressources diminuantes"
+    ],
+    "use_cases": [
+      "Maintenir des applications Knockout legacy",
+      "Construire des interfaces complexes avec beaucoup d'interactions",
+      "Gérer des data bindings déclaratives sans React"
+    ],
+    "relevant_for": ["Développeurs legacy", "Applications complexes", "Équipes MVVM"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You maintain an existing Knockout.js application.",
+        "You need a declarative MVVM approach.",
+        "You're building a complex app with lots of state."
+      ],
+      "avoidIf": [
+        "You're starting a new web project in 2026.",
+        "You prefer modern component approach (React, Vue).",
+        "You seek an actively maintained library with large community."
+      ],
+      "threshold": "Knockout remains useful for legacy application maintenance; for new projects, React or Vue are better choices."
+    },
+    "pros": [
+      "Simple and clear MVVM approach",
+      "Automatic data-binding and observables",
+      "Very good for apps with lots of state",
+      "Mature community with historical resources"
+    ],
+    "cons": [
+      "Less actively maintained than React/Vue",
+      "Less modern approach than current components",
+      "Smaller community and diminishing resources"
+    ],
+    "use_cases": [
+      "Maintain legacy Knockout applications",
+      "Build complex interfaces with lots of interactions",
+      "Manage declarative data bindings without React"
+    ]
+  }
+}

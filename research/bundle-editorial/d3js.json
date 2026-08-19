@@ -1,0 +1,84 @@
+{
+  "slug": "d3js",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "D3.js — documentation officielle", "url": "https://d3js.org" }
+  ],
+  "facts": {
+    "what": "Bibliothèque JavaScript bas-niveau pour créer des visualisations de données personnalisées et interactives. Offre un contrôle granulaire sur chaque aspect du rendu en combinant HTML, SVG et CSS.",
+    "what_en": "Low-level JavaScript library for creating custom, interactive data visualizations. Offers granular control over every rendering aspect by combining HTML, SVG, and CSS.",
+    "pricing_model": "Entièrement gratuit et open source",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit. Pas de limitations, pas de versions payantes." },
+    "plans": [],
+    "key_features": [
+      "Contrôle total sur chaque élément graphique",
+      "Suite de 30 modules discrètes (ou librairies)",
+      "Transitions et animations fluides et sophistiquées",
+      "Liaison de données (data binding) puissante"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin de visualisations hautement personnalisées.",
+        "Vous travaillez sur des données complexes et non-standard.",
+        "Vous êtes confortable avec une courbe d'apprentissage raide."
+      ],
+      "avoidIf": [
+        "Vous voulez des graphiques simples rapidement.",
+        "Vous n'avez pas de compétences JavaScript avancées.",
+        "Vous cherchez une solution prête-à-l'emploi sans customisation."
+      ],
+      "threshold": "D3.js est essentiel pour les visualisations de données complexes et innovantes ; pour des graphiques standard, Chart.js ou ApexCharts suffisent."
+    },
+    "pros": [
+      "Flexibilité extrême dans la création de visualisations",
+      "Contrôle total sur le comportement et l'apparence",
+      "Communauté grande et ressources abondantes",
+      "Fondement de nombreuses librairies charting modernes"
+    ],
+    "cons": [
+      "Courbe d'apprentissage très raide",
+      "Code verbeux et fastidieux pour les cas simples",
+      "Performance requiert une optimisation manuelle"
+    ],
+    "use_cases": [
+      "Créer des visualisations de données innovantes et unique",
+      "Développer des dashboards de données complexes",
+      "Générer des graphiques interactifs exploratoires"
+    ],
+    "relevant_for": ["Data scientists", "Journalistes de données", "Développeurs avancés"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need highly customized visualizations.",
+        "You work with complex, non-standard data.",
+        "You're comfortable with a steep learning curve."
+      ],
+      "avoidIf": [
+        "You want simple charts quickly.",
+        "You lack advanced JavaScript skills.",
+        "You're seeking a ready-to-use solution without customization."
+      ],
+      "threshold": "D3.js is essential for complex and innovative data visualization; for standard charts, Chart.js or ApexCharts suffice."
+    },
+    "pros": [
+      "Extreme flexibility in visualization creation",
+      "Complete control over behavior and appearance",
+      "Large community and abundant resources",
+      "Foundation of many modern charting libraries"
+    ],
+    "cons": [
+      "Very steep learning curve",
+      "Verbose and tedious code for simple cases",
+      "Performance requires manual optimization"
+    ],
+    "use_cases": [
+      "Create innovative and unique data visualizations",
+      "Develop complex data dashboards",
+      "Generate interactive exploratory charts"
+    ]
+  }
+}

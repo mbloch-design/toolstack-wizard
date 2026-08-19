@@ -1,0 +1,113 @@
+{
+  "slug": "vue-cli",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "Vue CLI — site officiel",
+      "url": "https://cli.vuejs.org/"
+    },
+    {
+      "label": "Vue CLI — GitHub",
+      "url": "https://github.com/vuejs/vue-cli"
+    }
+  ],
+  "facts": {
+    "what": "Outil officiel de scaffold et de gestion pour projets Vue.js. Crée des projets webpack-based avec support TypeScript, Router, Vuex et autres plugins.",
+    "what_en": "Official scaffolding and management tool for Vue.js projects. Creates webpack-based projects with TypeScript, Router, Vuex and other plugins support.",
+    "pricing_model": "Open source, gratuit (licence MIT)",
+    "free_tier": {
+      "exists": true,
+      "detail": "Entièrement gratuit et open source, aucune restriction"
+    },
+    "plans": [
+      {
+        "name": "Open source",
+        "price": "gratuit"
+      }
+    ],
+    "key_features": [
+      "Scaffold rapide de projets Vue avec vue create.",
+      "Support TypeScript, Vue Router, Vuex, ESLint.",
+      "Interface interactive (vue ui) pour configuration.",
+      "Plugin extensible pour ajouter fonctionnalités.",
+      "Note: maintenant en maintenance mode, créer-vue recommandé pour nouveaux projets."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous maintenez une base de code Vue 2 ou Vue 3 existante.",
+        "Vous avez des projets webpack-based avec Vue CLI en place.",
+        "Vous construisez sur un setup Vue CLI établi."
+      ],
+      "avoidIf": [
+        "Vous démarrez un nouveau projet Vue (préférez create-vue avec Vite).",
+        "Vous cherchez une solution moderne et performante pour le scaffolding.",
+        "Vous valorisez les outils modernes comme Vite plutôt que webpack."
+      ],
+      "threshold": "Vue CLI est en maintenance mode; pour nouveaux projets, préférez create-vue avec Vite pour des performances meilleures."
+    },
+    "pros": [
+      "Outil officiel et fiable pour projects Vue existants.",
+      "Support de plugins variés (TypeScript, Router, Vuex, ESLint).",
+      "Interface interactive pour configuration.",
+      "Très adopté dans les applications Vue établies.",
+      "Bonne documentation officielle."
+    ],
+    "cons": [
+      "En maintenance mode — pas de nouveau développement.",
+      "Webpack peut être plus lent que Vite pour le dev server.",
+      "Pour nouveaux projets, create-vue + Vite est recommandé.",
+      "Configuration peut être verboise pour des setups complexes."
+    ],
+    "use_cases": [
+      "Maintenir des projets Vue CLI existants.",
+      "Migrer progressivement de Vue CLI vers Vite.",
+      "Travailler dans des équipes avec infrastructure webpack établie."
+    ],
+    "relevant_for": [
+      "Projets Vue existants",
+      "Équipes établies",
+      "Migration progressive"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You maintain an existing Vue 2 or Vue 3 codebase.",
+        "You have webpack-based projects with Vue CLI in place.",
+        "You're building on an established Vue CLI setup."
+      ],
+      "avoidIf": [
+        "You're starting a new Vue project (prefer create-vue with Vite).",
+        "You're looking for a modern and performant scaffolding solution.",
+        "You value modern tools like Vite over webpack."
+      ],
+      "threshold": "Vue CLI is in maintenance mode; for new projects, prefer create-vue with Vite for better performance."
+    },
+    "pros": [
+      "Official and reliable tool for existing Vue projects.",
+      "Support for various plugins (TypeScript, Router, Vuex, ESLint).",
+      "Interactive interface for configuration.",
+      "Widely adopted in established Vue applications.",
+      "Good official documentation."
+    ],
+    "cons": [
+      "In maintenance mode — no new development.",
+      "Webpack can be slower than Vite for dev server.",
+      "For new projects, create-vue + Vite is recommended.",
+      "Configuration can be verbose for complex setups."
+    ],
+    "use_cases": [
+      "Maintain existing Vue CLI projects.",
+      "Progressively migrate from Vue CLI to Vite.",
+      "Work in teams with established webpack infrastructure."
+    ],
+    "relevant_for": [
+      "Existing Vue projects",
+      "Established teams",
+      "Progressive migration"
+    ]
+  }
+}

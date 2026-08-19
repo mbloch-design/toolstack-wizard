@@ -1,0 +1,87 @@
+{
+  "slug": "darktable",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "darktable — site officiel", "url": "https://www.darktable.org" }
+  ],
+  "facts": {
+    "what": "Logiciel open source gratuit pour le traitement et l'édition non-destructive de fichiers RAW. Fonctionne comme une chambre noire virtuelle (darkroom) avec gestion complète des workflows photo professionnels.",
+    "what_en": "Free open source software for non-destructive processing and editing of RAW files. Functions as a virtual darkroom with complete management of professional photo workflows.",
+    "pricing_model": "Entièrement gratuit et open source (GPLv3)",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit, sans limitations. Logiciel libre sous licence GNU General Public License v3." },
+    "plans": [],
+    "key_features": [
+      "Support RAW de centaines de modèles d'appareils",
+      "Gestion de la couleur précise et HDR",
+      "Interface lighttable et darkroom",
+      "Traitement non-destructive avec historique complet",
+      "GPU acceleration pour performance"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous photographiez en RAW et avez besoin d'un éditeur puissant.",
+        "Vous recherchez une solution sans frais mensuels.",
+        "Vous travaillez sur Linux, macOS ou Windows."
+      ],
+      "avoidIf": [
+        "Vous préférez une interface très simple et intuitive.",
+        "Vous faites surtout de la retouche photo cosmétique.",
+        "Vous avez besoin d'une intégration cloud pour collaboration."
+      ],
+      "threshold": "darktable est le meilleur choix gratuit pour les photographes pro shootant en RAW ; pour les amateurs, Lightroom ou On1 Photo RAW peuvent convenir."
+    },
+    "pros": [
+      "Entièrement gratuit sans limitations fonctionnelles",
+      "Professionnel-grade RAW processing",
+      "Workflow lightroom/darkroom complet",
+      "Maîtrise totale de la couleur et de l'exposition"
+    ],
+    "cons": [
+      "Interface intimidante pour les débutants",
+      "Pas d'intégration cloud ou collaboration",
+      "Communauté plus petite que Lightroom",
+      "Pas de versions mobiles (iOS/Android)"
+    ],
+    "use_cases": [
+      "Traiter et organiser une photothèque RAW importante",
+      "Faire du post-traitement photo professionnel complet",
+      "Apprendre le RAW processing sans dépendre d'Adobe"
+    ],
+    "relevant_for": ["Photographes professionnels", "Photographes RAW", "Enthusiastes open source"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You photograph in RAW and need a powerful editor.",
+        "You're seeking a solution without monthly fees.",
+        "You work on Linux, macOS, or Windows."
+      ],
+      "avoidIf": [
+        "You prefer a very simple and intuitive interface.",
+        "You mainly do cosmetic photo retouching.",
+        "You need cloud integration for collaboration."
+      ],
+      "threshold": "darktable is the best free choice for pro photographers shooting RAW; for amateurs, Lightroom or On1 Photo RAW may suffice."
+    },
+    "pros": [
+      "Completely free with no functional limitations",
+      "Professional-grade RAW processing",
+      "Complete lighttable/darkroom workflow",
+      "Total control over color and exposure"
+    ],
+    "cons": [
+      "Intimidating interface for beginners",
+      "No cloud integration or collaboration",
+      "Smaller community than Lightroom",
+      "No mobile versions (iOS/Android)"
+    ],
+    "use_cases": [
+      "Process and organize a large RAW photo library",
+      "Complete professional photo post-processing",
+      "Learn RAW processing without depending on Adobe"
+    ]
+  }
+}

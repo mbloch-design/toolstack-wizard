@@ -1,0 +1,88 @@
+{
+  "slug": "react",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "React — site officiel", "url": "https://react.dev/" },
+    { "label": "React — dépôt GitHub", "url": "https://github.com/facebook/react" }
+  ],
+  "facts": {
+    "what": "Bibliothèque JavaScript pour la construction d'interfaces utilisateur via une approche déclarative et composants réutilisables. Maintenue par Meta et la communauté.",
+    "what_en": "JavaScript library for building user interfaces using a declarative approach and reusable components. Maintained by Meta and the community.",
+    "pricing_model": "Open source, gratuit (licence MIT)",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit et open source, aucune restriction d'usage" },
+    "plans": [
+      { "name": "Open source", "price": "gratuit" }
+    ],
+    "key_features": [
+      "Approche déclarative avec rendu automatique des changements d'état",
+      "Composants réutilisables et composables",
+      "Virtual DOM pour performances optimisées",
+      "Écosystème riche : routeurs, gestion d'état, outils de développement"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous construisez une application web interactive de moyenne à grande complexité.",
+        "Vous voulez un écosystème mature avec mille outils et bibliothèques compatibles.",
+        "Votre équipe connaît déjà React ou vous avez besoin de recruter des développeurs React."
+      ],
+      "avoidIf": [
+        "Vous cherchez une solution légère pour une simple page statique ou un widget.",
+        "Vous préférez une approche compilée (Svelte) plutôt qu'un runtime Virtual DOM.",
+        "Vous voulez une courbe d'apprentissage très douce pour des débutants."
+      ],
+      "threshold": "React domine le marché et offre l'écosystème le plus riche ; choisissez-le pour des projets complexes où la flexibilité et la communauté importent."
+    },
+    "pros": [
+      "Écosystème massive et mature avec des milliers de bibliothèques compatibles.",
+      "Très bonne documentation et énorme communauté, facile de trouver du support.",
+      "Approche déclarative qui rend le code lisible et maintenable.",
+      "Excellent pour les applications complexes et à grande échelle."
+    ],
+    "cons": [
+      "Courbe d'apprentissage plus pentue que Svelte ou Preact pour les débutants.",
+      "Virtual DOM ajoute une couche d'abstraction et du poids au bundle.",
+      "Configuration initiale peut être complexe sans outils comme Create React App ou Vite."
+    ],
+    "use_cases": [
+      "Construire un tableau de bord SaaS complexe avec beaucoup d'état.",
+      "Développer une application web progressive (PWA) complète.",
+      "Créer une application mono-page riche en interactions."
+    ],
+    "relevant_for": ["Startups tech", "Agences web", "Équipes à grande échelle", "Entreprises"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're building a medium to large interactive web application.",
+        "You want a mature ecosystem with thousands of compatible tools and libraries.",
+        "Your team already knows React or you need to hire developers with React skills."
+      ],
+      "avoidIf": [
+        "You're building a simple static page or lightweight widget.",
+        "You prefer a compiled approach (Svelte) over runtime Virtual DOM.",
+        "You need the shallowest possible learning curve for beginners."
+      ],
+      "threshold": "React dominates the market and offers the richest ecosystem; choose it for complex projects where flexibility and community matter."
+    },
+    "pros": [
+      "Massive and mature ecosystem with thousands of compatible libraries.",
+      "Excellent documentation and huge community, easy to find support.",
+      "Declarative approach makes code readable and maintainable.",
+      "Excellent for complex applications and large-scale projects."
+    ],
+    "cons": [
+      "Steeper learning curve than Svelte or Preact for beginners.",
+      "Virtual DOM adds an abstraction layer and weight to the bundle.",
+      "Initial setup can be complex without tools like Create React App or Vite."
+    ],
+    "use_cases": [
+      "Build a complex SaaS dashboard with heavy state management.",
+      "Develop a complete progressive web app (PWA).",
+      "Create a rich single-page application with lots of interactions."
+    ],
+    "relevant_for": ["Tech startups", "Web agencies", "Large teams", "Enterprises"]
+  }
+}

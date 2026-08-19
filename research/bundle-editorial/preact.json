@@ -1,0 +1,109 @@
+{
+  "slug": "preact",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "Preact — site officiel",
+      "url": "https://preactjs.com/"
+    },
+    {
+      "label": "Preact — GitHub",
+      "url": "https://github.com/preactjs/preact"
+    }
+  ],
+  "facts": {
+    "what": "Alternative légère à React de seulement 3 kB avec la même API moderne. Utilise Virtual DOM et supporte JSX pour construire des interfaces interactives.",
+    "what_en": "Lightweight alternative to React at just 3 kB with the same modern API. Uses Virtual DOM and supports JSX for building interactive interfaces.",
+    "pricing_model": "Open source, gratuit (licence MIT)",
+    "free_tier": {
+      "exists": true,
+      "detail": "Entièrement gratuit et open source, aucune restriction"
+    },
+    "plans": [
+      {
+        "name": "Open source",
+        "price": "gratuit"
+      }
+    ],
+    "key_features": [
+      "Très petit bundle : 3 kB minifié et gzippé",
+      "API similaire à React (JSX, hooks, context).",
+      "Compatibilité React via preact/compat alias.",
+      "Virtual DOM performant avec update batching automatique.",
+      "Parfait pour PWA et applications embarquées."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous construisez une Progressive Web App (PWA) ou une application embarquée.",
+        "Vous voulez React mais avec une taille de bundle minimale.",
+        "Vous avez besoin de performances optimales pour des réseaux lents."
+      ],
+      "avoidIf": [
+        "Vous avez besoin de beaucoup de bibliothèques React-specific.",
+        "Vous travaillez dans une grande équipe habituée à React et ses patterns.",
+        "Le poids du bundle n'est pas une préoccupation."
+      ],
+      "threshold": "Preact brille pour les PWA et les apps légères ; choisissez-le si la taille du bundle et les performances critiques importent."
+    },
+    "pros": [
+      "Extrêmement léger : 3 kB seulement (vs 45 kB pour React).",
+      "API quasi-identique à React, facile pour les devs React.",
+      "Excellente performance même sur réseaux lents.",
+      "Compatible React via preact/compat, permet de réutiliser des composants React."
+    ],
+    "cons": [
+      "Écosystème plus petit que React.",
+      "Moins de bibliothèques et d'outils spécifiques à Preact.",
+      "La communauté est moins grande, moins de réponses aux questions."
+    ],
+    "use_cases": [
+      "Construire une Progressive Web App (PWA) légère et rapide.",
+      "Créer un widget embarquable à intégrer sur d'autres sites.",
+      "Développer pour des marchés avec connexions internet lentes."
+    ],
+    "relevant_for": [
+      "Développeurs performant-first",
+      "Applications PWA",
+      "Widgets embarqués"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're building a Progressive Web App (PWA) or embedded application.",
+        "You want React but with minimal bundle size.",
+        "You need optimal performance for slow networks."
+      ],
+      "avoidIf": [
+        "You need many React-specific libraries.",
+        "You work in a large team accustomed to React and its patterns.",
+        "Bundle size is not a concern."
+      ],
+      "threshold": "Preact shines for PWAs and lightweight apps; choose it when bundle size and critical performance matter."
+    },
+    "pros": [
+      "Extremely lightweight: 3 kB only (vs 45 kB for React).",
+      "Nearly identical API to React, easy for React developers.",
+      "Excellent performance even on slow networks.",
+      "React-compatible via preact/compat, allows reusing React components."
+    ],
+    "cons": [
+      "Smaller ecosystem than React.",
+      "Fewer Preact-specific libraries and tools.",
+      "Smaller community, fewer answers to questions."
+    ],
+    "use_cases": [
+      "Build a lightweight and fast Progressive Web App (PWA).",
+      "Create an embeddable widget to integrate into other sites.",
+      "Develop for markets with slow internet connections."
+    ],
+    "relevant_for": [
+      "Performance-first developers",
+      "PWA applications",
+      "Embedded widgets"
+    ]
+  }
+}

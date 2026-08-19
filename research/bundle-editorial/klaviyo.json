@@ -1,0 +1,88 @@
+{
+  "slug": "klaviyo",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Klaviyo — tarification officielle", "url": "https://www.klaviyo.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme SaaS de marketing automation et email spécialisée pour l'e-commerce. Offre segmentation fine, automations d'emails, SMS et intégration Shopify/WooCommerce.",
+    "what_en": "SaaS marketing automation and email platform specializing in e-commerce. Offers fine segmentation, email automations, SMS, and Shopify/WooCommerce integration.",
+    "pricing_model": "Plan gratuit limité + plans payants basés sur le nombre de contacts actifs",
+    "free_tier": { "exists": true, "detail": "Plan gratuit pour ≤250 contacts actifs et ≤500 emails/mois. Plans payants à partir de 20 $ par mois pour 500 contacts." },
+    "plans": [
+      { "name": "Gratuit (≤250 contacts)", "price": "Gratuit" },
+      { "name": "Starter (500 contacts)", "price": "20 $ par mois" },
+      { "name": "Growth", "price": "montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Segmentation clients fine basée sur le comportement",
+      "Email automations et drip campaigns",
+      "SMS marketing intégré",
+      "Intégrations e-commerce (Shopify, WooCommerce)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous dirigez une boutique e-commerce et envoyez des emails marketing.",
+        "Vous avez besoin de segmentation client sophistiquée.",
+        "Vous utilisez Shopify ou WooCommerce."
+      ],
+      "avoidIf": [
+        "Vous n'avez pas de contact list ou très peu de clients.",
+        "Vous recherchez un outil de simple mailing gratuit.",
+        "Vous avez besoin d'un CRM complet, pas seulement du marketing."
+      ],
+      "threshold": "Klaviyo est essentiel pour les e-commerces B2C sérieux ; pour les startups sans liste de clients, Mailchimp gratuit suffit."
+    },
+    "pros": [
+      "Segmentation et automations très sophistiquées",
+      "Intégrations e-commerce natives et complètes",
+      "SMS marketing intégré au même plan",
+      "Plan gratuit utile pour petites listes"
+    ],
+    "cons": [
+      "Tarification escalade rapide avec le nombre de contacts",
+      "Surcharge obligatoire Klaviyo One à partir de 10k/mois",
+      "Plus coûteux que Mailchimp pour petites listes"
+    ],
+    "use_cases": [
+      "Envoyer des emails marketing automatisés aux clients e-commerce",
+      "Segmenter les clients par comportement d'achat",
+      "Créer des drip campaigns de rétention client"
+    ],
+    "relevant_for": ["E-commerce managers", "Marketing teams", "Shopify stores"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You run an e-commerce store and send marketing emails.",
+        "You need sophisticated customer segmentation.",
+        "You use Shopify or WooCommerce."
+      ],
+      "avoidIf": [
+        "You have no contact list or very few customers.",
+        "You seek simple free mailing tool.",
+        "You need a complete CRM, not just marketing."
+      ],
+      "threshold": "Klaviyo is essential for serious B2C e-commerce; for startups without customer lists, free Mailchimp suffices."
+    },
+    "pros": [
+      "Sophisticated segmentation and automations",
+      "Native and complete e-commerce integrations",
+      "SMS marketing integrated in same plan",
+      "Free plan useful for small lists"
+    ],
+    "cons": [
+      "Pricing escalates quickly with contact count",
+      "Mandatory Klaviyo One surcharge above 10k/month",
+      "More expensive than Mailchimp for small lists"
+    ],
+    "use_cases": [
+      "Send automated marketing emails to e-commerce customers",
+      "Segment customers by purchase behavior",
+      "Create customer retention drip campaigns"
+    ]
+  }
+}

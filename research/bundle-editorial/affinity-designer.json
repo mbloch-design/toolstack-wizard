@@ -1,0 +1,86 @@
+{
+  "slug": "affinity-designer",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Affinity Designer (site officiel)", "url": "https://www.affinity.studio/graphic-design-software" }
+  ],
+  "facts": {
+    "what": "Logiciel de conception graphique vectorielle et raster, destiné aux illustrateurs, designers et créatifs. Offre une alternative compacte à Adobe Illustrator et Photoshop, sans abonnement.",
+    "what_en": "Vector and raster graphic design software for illustrators, designers, and creatives. Offers a compact alternative to Adobe Illustrator and Photoshop without requiring a subscription.",
+    "pricing_model": "Licence perpetuelle — achat unique, sans abonnement récurrent",
+    "free_tier": { "exists": false, "detail": "Aucune version gratuite. Essai 14 jours gratuit sans carte bancaire requise." },
+    "plans": [
+      { "name": "Affinity Designer (licence perpétuelle)", "price": "69,99 $" }
+    ],
+    "key_features": [
+      "Outils vectoriels et raster combinés",
+      "Interface non-destructive avec symboles et composants",
+      "Support des formats SVG, PDF, TIFF, JPEG",
+      "Pas de frais d'abonnement ou upsells"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous recherchez un logiciel de design sans abonnement mensuel.",
+        "Vous aimez travailler en vecteur et raster dans une seule application.",
+        "Vous voulez une alternative légère à Adobe Illustrator."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'une intégration complète avec Adobe Suite.",
+        "Vous travaillez uniquement en vecteur sans besoin de retouche photo.",
+        "Vous préférez un abonnement pour les mises à jour automatiques."
+      ],
+      "threshold": "Affinity Designer convient parfaitement aux freelances et petits studios cherchant une DAP puissante sans frais récurrents."
+    },
+    "pros": [
+      "Achat unique — pas d'abonnement perpétuel",
+      "Interface intuitive et peu de courbe d'apprentissage",
+      "Excellente gestion des symboles et composants réutilisables",
+      "Exporte vers les formats de l'industrie (SVG, PDF, TIFF, JPEG)"
+    ],
+    "cons": [
+      "Moins d'extensions tierces qu'Adobe Illustrator",
+      "Mises à jour ultérieures peuvent nécessiter un achat supplémentaire",
+      "Moins de ressources communautaires que les outils Adobe"
+    ],
+    "use_cases": [
+      "Créer des logos et identités visuelles",
+      "Concevoir des illustratives ou du graphisme éditorial",
+      "Retoucher et exporter des actifs de design"
+    ],
+    "relevant_for": ["Designers graphiques", "Illustrateurs", "Créatifs indépendants"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want design software without recurring subscription costs.",
+        "You need vector and raster tools in a single app.",
+        "You're seeking a lightweight alternative to Adobe Illustrator."
+      ],
+      "avoidIf": [
+        "You rely heavily on Adobe Suite integrations.",
+        "You work exclusively in vector without photo retouching.",
+        "You prefer subscriptions for automatic updates."
+      ],
+      "threshold": "Affinity Designer is ideal for freelancers and small studios seeking a powerful DAM without recurring costs."
+    },
+    "pros": [
+      "One-time purchase — no perpetual subscription",
+      "Intuitive interface with gentle learning curve",
+      "Excellent symbol and reusable component management",
+      "Exports to industry formats (SVG, PDF, TIFF, JPEG)"
+    ],
+    "cons": [
+      "Fewer third-party plugins than Adobe Illustrator",
+      "Future updates may require separate purchase",
+      "Smaller community resources than Adobe tools"
+    ],
+    "use_cases": [
+      "Create logos and visual identities",
+      "Design illustrations or editorial graphics",
+      "Retouch and export design assets"
+    ]
+  }
+}

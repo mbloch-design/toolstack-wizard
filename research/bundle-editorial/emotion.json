@@ -1,0 +1,84 @@
+{
+  "slug": "emotion",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Emotion — documentation officielle", "url": "https://emotion.sh" }
+  ],
+  "facts": {
+    "what": "Bibliothèque CSS-in-JS légère et performante pour composer les styles dynamiquement en JavaScript. Supporte à la fois les styles chaine et objet avec une composition prévisible et une source map.",
+    "what_en": "Lightweight and performant CSS-in-JS library for composing styles dynamically in JavaScript. Supports both string and object styles with predictable composition and source maps.",
+    "pricing_model": "Entièrement gratuit et open source",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit. Pas de versions payantes ou limitations fonctionnelles." },
+    "plans": [],
+    "key_features": [
+      "Support des deux syntaxes : chaine et objet",
+      "Composition CSS prévisible et sans spécificité issues",
+      "Framework-agnostic (React, Vue, etc.)",
+      "Source maps et labels pour debugging"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous construisez des applications React avec styles dynamiques.",
+        "Vous avez besoin d'une composition CSS prévisible.",
+        "Vous préférez une librairie CSS-in-JS performante sans dépendances lourdes."
+      ],
+      "avoidIf": [
+        "Vous utilisez déjà une autre solution CSS-in-JS établie.",
+        "Vous avez besoin d'une base utilisateur très grande.",
+        "Vous travaillez sans JavaScript (CSS pur)."
+      ],
+      "threshold": "Emotion est excellent pour les apps React modernes ; pour les besoins simples, Tailwind CSS suffit ; pour la composition complexe, envisagez Styled Components."
+    },
+    "pros": [
+      "Très léger avec performance optimisée",
+      "Composition CSS prévisible sans problème de spécificité",
+      "Support framework-agnostic (React, Vue, etc.)",
+      "Documentation complète et exemples abondants"
+    ],
+    "cons": [
+      "Courbe d'apprentissage pour CSS-in-JS",
+      "Nécessite un bundler (webpack, vite, etc.)",
+      "Moins de ressources communautaires que Styled Components"
+    ],
+    "use_cases": [
+      "Créer des styles dynamiques basés sur l'état React",
+      "Construire un design system avec styles composables",
+      "Styler des composants avec scope limité"
+    ],
+    "relevant_for": ["Développeurs React", "Frontend engineers", "Concepteurs de design systems"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You build React apps with dynamic styles.",
+        "You need predictable CSS composition.",
+        "You prefer a performant CSS-in-JS library without heavy dependencies."
+      ],
+      "avoidIf": [
+        "You already use another established CSS-in-JS solution.",
+        "You need a very large user base.",
+        "You work without JavaScript (pure CSS)."
+      ],
+      "threshold": "Emotion is excellent for modern React apps; for simple needs, Tailwind CSS suffices; for complex composition, consider Styled Components."
+    },
+    "pros": [
+      "Very lightweight with optimized performance",
+      "Predictable CSS composition without specificity issues",
+      "Framework-agnostic support (React, Vue, etc.)",
+      "Complete documentation and abundant examples"
+    ],
+    "cons": [
+      "Learning curve for CSS-in-JS",
+      "Requires a bundler (webpack, vite, etc.)",
+      "Fewer community resources than Styled Components"
+    ],
+    "use_cases": [
+      "Create dynamic styles based on React state",
+      "Build a design system with composable styles",
+      "Style components with limited scope"
+    ]
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "slug": "photopea",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Photopea — Éditeur photo en ligne (site officiel)", "url": "https://www.photopea.com/" }
+  ],
+  "facts": {
+    "what": "Éditeur photo web gratuit et puissant qui simule Photoshop : couches, masques, retouche, support PSD et outils avancés dans le navigateur, sans installation logicielle.",
+    "what_en": "Powerful free web-based photo editor that mirrors Photoshop: layers, masks, retouching, PSD support, and advanced tools in browser without software installation.",
+    "pricing_model": "Gratuit avec publicités. Premium optionnel : 5€/mois ou 50€/an pour supprimer pubs et ajouter extras.",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit avec annonces. Couvre 80-90% des tâches courantes de retouche." },
+    "plans": [
+      { "name": "Gratuit", "price": "0€ (avec publicités)" },
+      { "name": "Premium", "price": "5€/mois ou 50€/an (sans pubs + stockage + génération)" }
+    ],
+    "key_features": [
+      "Interface Photoshop-like en navigateur web",
+      "Support des fichiers PSD, PNG, JPG, SVG, etc.",
+      "Couches, masques et groupes de calques",
+      "Outils de retouche et sélection avancés",
+      "Stockage cloud Peadrive (50GB gratuit)",
+      "Genimage fill (Premium) pour suppression/remplissage IA",
+      "Pas d'installation, accès direct depuis navigateur"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous faites de la retouche photo occasionnelle ou légère.",
+        "Vous aimez travailler en ligne sans installer logiciel.",
+        "Vous ouvrez/modifiez des fichiers Photoshop (PSD).",
+        "Vous cherchez une alternative gratuite à Photoshop."
+      ],
+      "avoidIf": [
+        "Vous faites de la retouche très avancée ou professionnelle.",
+        "Vous préférez un logiciel desktop performant installé localement.",
+        "Vous avez besoin de features vidéo/animation (hors scope Photopea)."
+      ],
+      "threshold": "Photopea s'impose pour retouche photo légère ou occasionnelle, ou pour ouvrir PSD sans coût logiciel ; pour workflows photo pro, Photoshop ou Affinity Photo conviennent mieux."
+    },
+    "pros": [
+      "Entièrement gratuit pour retouche basique et moyenne.",
+      "Ouvre et enregistre fichiers PSD natifs.",
+      "Interface très familière pour utilisateurs Photoshop.",
+      "Pas d'installation, pas de limite de stockage local.",
+      "Offre payante peu coûteuse et peu restrictive (montants sur la page officielle)."
+    ],
+    "cons": [
+      "Performance moins fluide que Photoshop desktop sur gros fichiers.",
+      "Pas de features vidéo, animation ou 3D.",
+      "Dépend de connexion internet et navigateur."
+    ],
+    "use_cases": [
+      "Retoucher photos pour réseaux sociaux ou web.",
+      "Ouvrir et modifier brièvement fichiers Photoshop en route.",
+      "Créer graphiques simples et logos sans coût logiciel."
+    ],
+    "relevant_for": ["Freelancers créatifs", "Petites agences", "Utilisateurs occasionnels Photoshop"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You do light or occasional photo retouching.",
+        "You prefer working online without installing software.",
+        "You open and edit Photoshop files (PSD).",
+        "You seek a free Photoshop alternative."
+      ],
+      "avoidIf": [
+        "You do advanced or professional retouching.",
+        "You prefer a performant desktop app installed locally.",
+        "You need video, animation, or 3D features (out of scope)."
+      ],
+      "threshold": "Photopea works for light retouching or occasional editing, or opening PSD without software cost; for pro photo workflows, Photoshop or Affinity Photo are better."
+    },
+    "pros": [
+      "Completely free for basic and medium retouching.",
+      "Opens and saves native PSD files.",
+      "Very familiar interface for Photoshop users.",
+      "No installation, no local storage limits.",
+      "Inexpensive, lightly restricted paid tier (amounts on the official page)."
+    ],
+    "cons": [
+      "Less responsive than Photoshop desktop on large files.",
+      "No video, animation, or 3D features.",
+      "Depends on internet connection and browser."
+    ],
+    "use_cases": [
+      "Retouch photos for social media or web.",
+      "Open and briefly edit Photoshop files on the go.",
+      "Create simple graphics and logos at no cost."
+    ]
+  }
+}

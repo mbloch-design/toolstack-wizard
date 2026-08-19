@@ -1,0 +1,84 @@
+{
+  "slug": "chartjs",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Chart.js — documentation officielle", "url": "https://www.chartjs.org" }
+  ],
+  "facts": {
+    "what": "Bibliothèque JavaScript open source pour créer des graphiques simples et animés utilisant l'élément HTML5 Canvas. Offre 8 types de graphiques avec une API facile à apprendre et peu de dépendances.",
+    "what_en": "Open source JavaScript library for creating simple, animated charts using HTML5 Canvas. Offers 8 chart types with an easy-to-learn API and minimal dependencies.",
+    "pricing_model": "Entièrement gratuit et open source",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit. Pas de versions payantes, pas de limitation fonctionnelle." },
+    "plans": [],
+    "key_features": [
+      "8 types de graphiques animés (ligne, barre, aire, pie, donut, radar, polar, bulle)",
+      "Rendering Canvas natif performant",
+      "API simple et documentation complète",
+      "Responsive par défaut"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin de graphiques simples et performants.",
+        "Vous recherchez une librairie légère sans dépendances externes.",
+        "Vous travaillez sur des visualisations de données non-spécialisées."
+      ],
+      "avoidIf": [
+        "Vous avez besoin de 20+ types de graphiques différents.",
+        "Vous cherchez une personnalisation en profondeur.",
+        "Vous travaillez avec des données complexes ou temps réel ultra-haute fréquence."
+      ],
+      "threshold": "Chart.js excelle pour les dashboards simples et les graphiques standard ; pour des besoins avancés, considérez ApexCharts ou D3.js."
+    },
+    "pros": [
+      "Gratuit et sans limitations",
+      "Très léger et performant sur Canvas",
+      "API simple et bien documentée",
+      "Pas de dépendances externes"
+    ],
+    "cons": [
+      "Seulement 8 types de graphiques",
+      "Moins flexible qu'une librairie bas-niveau comme D3.js",
+      "Personnalisation avancée plus limitée"
+    ],
+    "use_cases": [
+      "Afficher des statistiques et KPIs simples",
+      "Créer des graphiques dans des rapports web",
+      "Visualiser des résultats d'enquêtes ou tests"
+    ],
+    "relevant_for": ["Développeurs frontend", "Analystes", "Data enthusiasts"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need simple, performant charts.",
+        "You want a lightweight library without external dependencies.",
+        "You're working on non-specialized data visualizations."
+      ],
+      "avoidIf": [
+        "You need 20+ different chart types.",
+        "You're seeking deep customization.",
+        "You work with complex or ultra-high-frequency real-time data."
+      ],
+      "threshold": "Chart.js excels for simple dashboards and standard charts; for advanced needs, consider ApexCharts or D3.js."
+    },
+    "pros": [
+      "Free with no limitations",
+      "Very lightweight and performant on Canvas",
+      "Simple, well-documented API",
+      "No external dependencies"
+    ],
+    "cons": [
+      "Only 8 chart types",
+      "Less flexible than low-level libraries like D3.js",
+      "Limited advanced customization"
+    ],
+    "use_cases": [
+      "Display simple statistics and KPIs",
+      "Create charts in web reports",
+      "Visualize survey or test results"
+    ]
+  }
+}

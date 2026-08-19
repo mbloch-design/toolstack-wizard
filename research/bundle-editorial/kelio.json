@@ -1,0 +1,91 @@
+{
+  "slug": "kelio",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Kelio — Gestion RH et temps présence (site officiel)", "url": "https://www.kelio.com/" }
+  ],
+  "facts": {
+    "what": "Logiciel HRIS tout-en-un pour la gestion des ressources humaines, du temps et de la présence. Centralise pointages, absences, congés, planification, gestion du télétravail et contrôle d'accès avec intégration paie.",
+    "what_en": "All-in-one HRIS software for human resources, time tracking, and attendance management. Centralizes timeclocking, absences, leave, scheduling, remote work management, and access control with payroll integration.",
+    "pricing_model": "Abonnement SaaS — tarification sur demande selon la taille et modules sélectionnés.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Démo gratuite pour explorer ; tarification personnalisée." },
+    "plans": [
+      { "name": "Plans personnalisés", "price": "Montants sur la page officielle — demander démonstration gratuite" }
+    ],
+    "key_features": [
+      "Pointage et suivi temps (web, apps iOS/Android)",
+      "Gestion des absences, congés, vacances",
+      "Planification et scheduling des équipes",
+      "Support télétravail et vue d'ensemble temps réel",
+      "Contrôle d'accès et gestion visiteurs",
+      "Signature électronique et gestion documentaire",
+      "Intégration paie, API connectors ERP/HR"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez une équipe de 50+ salariés avec présence sur site.",
+        "Vous avez besoin de suivi temps précis pour facturation ou conformité.",
+        "Vous souhaitez centraliser RH et paie en une plateforme."
+      ],
+      "avoidIf": [
+        "Votre équipe est entièrement en télétravail et ne suit pas ses temps.",
+        "Vous cherchez une solution gratuite.",
+        "Vous avez une équipe très réduite (< 10 personnes)."
+      ],
+      "threshold": "Kelio s'impose pour PME/ETI avec équipes présentes ou mixtes ; pour freelance solo ou très petite équipe, un calcul paie simple suffit."
+    },
+    "pros": [
+      "Plateforme complète : temps, RH, accès, paie en une solution.",
+      "Pointage flexibles (web, mobile, terminaux).",
+      "Gestion fine des congés et absences.",
+      "Support télétravail avec traçabilité.",
+      "Plus de 20 000 clients et 4.9/5 étoiles."
+    ],
+    "cons": [
+      "Tarification opaque et modulaire (demande de devis).",
+      "Interface peut sembler complexe pour petite équipe.",
+      "Nécessite formation pour mise en place."
+    ],
+    "use_cases": [
+      "Piloter les heures de travail pour facturation client.",
+      "Gérer congés et absences pour une équipe distribuée.",
+      "Centraliser paye et données RH pour petit groupe."
+    ],
+    "relevant_for": ["PME", "ETI", "Équipes présentes ou mixtes", "Secteur service/manufacturing"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage 50+ employees with on-site presence.",
+        "You need precise time tracking for billing or compliance.",
+        "You want to centralize HR and payroll in one platform."
+      ],
+      "avoidIf": [
+        "Your team is fully remote and does not track time.",
+        "You need a completely free solution.",
+        "You have a very small team (< 10 people)."
+      ],
+      "threshold": "Kelio works for SMEs/mid-market with on-site or hybrid teams; for freelancers or very small groups, simple payroll calculation is enough."
+    },
+    "pros": [
+      "Complete platform: time, HR, access, payroll in one.",
+      "Flexible clocking options (web, mobile, terminals).",
+      "Fine-grained leave and absence management.",
+      "Remote work support with auditability.",
+      "20,000+ clients and 4.9/5 star rating."
+    ],
+    "cons": [
+      "Pricing is opaque and modular (requires quote).",
+      "Interface may feel complex for small teams.",
+      "Requires training for implementation."
+    ],
+    "use_cases": [
+      "Track work hours for client billing.",
+      "Manage leave and absences for distributed team.",
+      "Centralize payroll and HR data for small group."
+    ]
+  }
+}

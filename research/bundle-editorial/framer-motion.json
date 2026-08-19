@@ -1,0 +1,84 @@
+{
+  "slug": "framer-motion",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Motion for React — documentation officielle", "url": "https://motion.dev/docs/react" }
+  ],
+  "facts": {
+    "what": "Bibliothèque d'animation React (anciennement Framer Motion, renommée Motion en 2025). Permet créer des animations fluides et réactives directement en React avec une syntaxe déclarative simple.",
+    "what_en": "React animation library (formerly Framer Motion, renamed Motion in 2025). Creates smooth, reactive animations directly in React with simple declarative syntax.",
+    "pricing_model": "Entièrement gratuit et open source",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit. Pas de versions payantes ou limitations fonctionnelles." },
+    "plans": [],
+    "key_features": [
+      "Animations déclaratives avec props motion",
+      "Animations layout intelligentes",
+      "Gestures et scroll triggers",
+      "Physics-based spring animations"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez des interfaces React avec animations fluides.",
+        "Vous avez besoin d'une syntaxe simple et déclarative pour animer.",
+        "Vous travaillez déjà dans l'écosystème React."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'animations très complexes et scientifiques.",
+        "Vous travaillez en vanilla JavaScript sans React.",
+        "Vous cherchez une librairie pour animations canvas/WebGL."
+      ],
+      "threshold": "Motion est essentiel pour les apps React modernes nécessitant des animations de qualité production ; pour la vanilla JS, préférez GSAP."
+    },
+    "pros": [
+      "Syntaxe simple et déclarative",
+      "Animations layout automatiques et intelligentes",
+      "Gestes et interactions fluides",
+      "Performance optimisée avec GPU acceleration"
+    ],
+    "cons": [
+      "Limité à l'écosystème React",
+      "Nécessite une compréhension de React hooks",
+      "Moins flexible que GSAP pour les animations très customisées"
+    ],
+    "use_cases": [
+      "Animer les transitions entre états React",
+      "Créer des micro-interactions fluides et polies",
+      "Construire des layouts animés et responsifs"
+    ],
+    "relevant_for": ["Développeurs React", "Frontend engineers", "Concepteurs d'interactions"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You create React interfaces with smooth animations.",
+        "You need simple, declarative syntax for animations.",
+        "You already work in the React ecosystem."
+      ],
+      "avoidIf": [
+        "You need very complex, scientific animations.",
+        "You work in vanilla JavaScript without React.",
+        "You seek a library for canvas/WebGL animations."
+      ],
+      "threshold": "Motion is essential for modern React apps needing production-quality animations; for vanilla JS, prefer GSAP."
+    },
+    "pros": [
+      "Simple, declarative syntax",
+      "Automatic and intelligent layout animations",
+      "Fluid gestures and interactions",
+      "Performance optimized with GPU acceleration"
+    ],
+    "cons": [
+      "Limited to React ecosystem",
+      "Requires understanding of React hooks",
+      "Less flexible than GSAP for highly custom animations"
+    ],
+    "use_cases": [
+      "Animate transitions between React states",
+      "Create fluid and polished micro-interactions",
+      "Build animated and responsive layouts"
+    ]
+  }
+}

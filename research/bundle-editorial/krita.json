@@ -1,0 +1,84 @@
+{
+  "slug": "krita",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Krita — site officiel", "url": "https://krita.org" }
+  ],
+  "facts": {
+    "what": "Logiciel open source gratuit de peinture numérique et création d'art professionnel. Conçu par et pour les artistes avec des milliers de brosses, gestion des calques avancée et outils d'animation 2D.",
+    "what_en": "Free open source digital painting and professional art creation software. Designed by and for artists with thousands of brushes, advanced layer management, and 2D animation tools.",
+    "pricing_model": "Entièrement gratuit et open source (GPLv3)",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit, sans limitations. Logiciel libre sous licence GNU General Public License v3." },
+    "plans": [],
+    "key_features": [
+      "Plus de 100 brosses prédéfinies et customisables",
+      "Gestion des calques et masques avancée",
+      "Outils d'animation 2D et timeline",
+      "Support des tableaux graphiques Wacom et compatibles"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous faites de la peinture numérique sans budget.",
+        "Vous cherchez une alternative open source à Photoshop.",
+        "Vous avez besoin d'outils d'animation 2D."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'une intégration complète Adobe Suite.",
+        "Vous faites principalement de la retouche photo professionnelle.",
+        "Vous préférez du support commercial sur une logiciel propriétaire."
+      ],
+      "threshold": "Krita est le meilleur choix gratuit pour les artistes numériques ; pour la retouche photo pro, Photoshop ou Affinity Photo conviennent mieux."
+    },
+    "pros": [
+      "Entièrement gratuit sans limitations",
+      "Outils de peinture très complets et professionnels",
+      "Animation 2D native avec timeline",
+      "Communauté grande et ressources abondantes"
+    ],
+    "cons": [
+      "Interface moins moderne que Photoshop",
+      "Moins de plugins et intégrations tierces",
+      "Moins optimisé pour la retouche photo que pour la peinture"
+    ],
+    "use_cases": [
+      "Créer de l'art digital et illustrations",
+      "Produire des animations 2D et concept art",
+      "Faire de la peinture numérique sans frais de licence"
+    ],
+    "relevant_for": ["Digital artists", "Illustrators", "Animators 2D"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You do digital painting with no budget.",
+        "You seek an open source Photoshop alternative.",
+        "You need 2D animation tools."
+      ],
+      "avoidIf": [
+        "You need complete Adobe Suite integration.",
+        "You mainly do professional photo retouching.",
+        "You prefer commercial support for proprietary software."
+      ],
+      "threshold": "Krita is the best free choice for digital artists; for pro photo retouching, Photoshop or Affinity Photo fit better."
+    },
+    "pros": [
+      "Completely free with no limitations",
+      "Very complete and professional painting tools",
+      "Native 2D animation with timeline",
+      "Large community and abundant resources"
+    ],
+    "cons": [
+      "Less modern interface than Photoshop",
+      "Fewer plugins and third-party integrations",
+      "Less optimized for photo retouching than painting"
+    ],
+    "use_cases": [
+      "Create digital art and illustrations",
+      "Produce 2D animations and concept art",
+      "Do digital painting without license fees"
+    ]
+  }
+}

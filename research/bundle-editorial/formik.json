@@ -1,0 +1,84 @@
+{
+  "slug": "formik",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Formik — documentation officielle", "url": "https://formik.org" }
+  ],
+  "facts": {
+    "what": "Bibliothèque React open source pour gérer les formulaires, la validation et la soumission. Réduit la verbosité du code en gérant l'état de formulaire, les erreurs et les événements tactiles.",
+    "what_en": "Open source React library for managing forms, validation, and submission. Reduces code verbosity by handling form state, errors, and touched events.",
+    "pricing_model": "Entièrement gratuit et open source",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit. Pas de versions payantes ou limitations fonctionnelles." },
+    "plans": [],
+    "key_features": [
+      "Gestion d'état de formulaire simplifiée",
+      "Validation intégrée (compatible Yup)",
+      "Gestion des événements tactiles (touched)",
+      "Support des tableaux de champs dynamiques"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous construisez des formulaires React complexes avec validation.",
+        "Vous cherchez à réduire le boilerplate de gestion de state.",
+        "Vous avez besoin de validation facile (Yup, Zod, etc.)."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'une gestion d'état ultra-minimale.",
+        "Vous utilisez déjà React Hook Form ou autre solution établie.",
+        "Vos formulaires sont très simples (1-2 champs)."
+      ],
+      "threshold": "Formik est excellent pour les formulaires React complexes ; pour les formulaires ultra-simples, React Hook Form peut être plus léger."
+    },
+    "pros": [
+      "Gestion d'état de formulaire très simplifie",
+      "Validation puissante avec Yup ou Zod",
+      "Excellente documentation et exemples",
+      "Grande communauté et utilisée par les grandes entreprises"
+    ],
+    "cons": [
+      "Package plus lourd que React Hook Form",
+      "Peut être overkill pour les formulaires très simples",
+      "Syntaxe moins intuitive pour certains développeurs"
+    ],
+    "use_cases": [
+      "Créer des formulaires d'authentification complexes",
+      "Valider et soumettre des données utilisateur",
+      "Gérer des tableaux et champs dynamiques"
+    ],
+    "relevant_for": ["Développeurs React", "Frontend engineers", "Formulaires applicatifs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You build complex React forms with validation.",
+        "You want to reduce form state management boilerplate.",
+        "You need easy validation (Yup, Zod, etc.)."
+      ],
+      "avoidIf": [
+        "You need ultra-minimal form state handling.",
+        "You already use React Hook Form or another established solution.",
+        "Your forms are very simple (1-2 fields)."
+      ],
+      "threshold": "Formik is excellent for complex React forms; for ultra-simple forms, React Hook Form may be lighter."
+    },
+    "pros": [
+      "Greatly simplified form state management",
+      "Powerful validation with Yup or Zod",
+      "Excellent documentation and examples",
+      "Large community and used by major companies"
+    ],
+    "cons": [
+      "Package heavier than React Hook Form",
+      "Can be overkill for very simple forms",
+      "Less intuitive syntax for some developers"
+    ],
+    "use_cases": [
+      "Create complex authentication forms",
+      "Validate and submit user data",
+      "Manage dynamic arrays and fields"
+    ]
+  }
+}

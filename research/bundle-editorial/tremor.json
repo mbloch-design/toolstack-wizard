@@ -1,0 +1,96 @@
+{
+  "slug": "tremor",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Tremor — site officiel", "url": "https://www.tremor.so/" },
+    { "label": "Tremor — GitHub", "url": "https://github.com/tremorlabs/tremor" }
+  ],
+  "facts": {
+    "what": "Bibliothèque React pour construire rapidement des dashboards et des charts. 35+ composants accessibles construits sur Tailwind CSS et Recharts.",
+    "what_en": "React library for quickly building dashboards and charts. 35+ accessible components built on Tailwind CSS and Recharts.",
+    "pricing_model": "Open source, gratuit (licence MIT)",
+    "free_tier": { "exists": true, "detail": "Framework open source entièrement gratuit" },
+    "plans": [
+      { "name": "Open source", "price": "gratuit" },
+      { "name": "Tremor Pro (optionnel)", "price": "Composants pré-construits payants, offre premium" }
+    ],
+    "key_features": [
+      "35+ composants de charts et dashboards (Line, Bar, Area, Donut, Sparklines).",
+      "KPI cards et data tables pré-stylisées.",
+      "Composants de layout pour construire des dashboards complets.",
+      "Construit sur Tailwind CSS pour customization facile.",
+      "Accessible (WCAG 2.1 AA) et responsive."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous construisez des dashboards et applications data-heavy.",
+        "Vous voulez des charts sophistiqués sans réinventer la roue.",
+        "Vous valorisez l'accessibilité et le design responsive."
+      ],
+      "avoidIf": [
+        "Vous avez besoin de très grande flexibilité pour des charts custom avancés.",
+        "Vous construisez des visualisations de données très spécialisées.",
+        "Vous préférez Recharts ou Victory Charts pour plus de contrôle."
+      ],
+      "threshold": "Tremor brille pour les dashboards standards et data-heavy ; choisissez-le pour développement rapide et accessible."
+    },
+    "pros": [
+      "35+ composants pré-construits et prêts à l'emploi.",
+      "Développement très rapide de dashboards.",
+      "Accessible et responsive sans travail supplémentaire.",
+      "Construit sur Tailwind CSS pour customization cohérente.",
+      "Acquis par Vercel, signe de stabilité.",
+      "Charts professionnels avec très peu de code."
+    ],
+    "cons": [
+      "Moins flexible que Recharts brut pour des besoins très custom.",
+      "Composants plus basiques, ne couvre pas tous les types de charts.",
+      "Performance peut être compromise avec beaucoup de données (100k+).",
+      "Dépendance sur Tailwind CSS pour le theming."
+    ],
+    "use_cases": [
+      "Construire un SaaS dashboard avec charts et KPIs.",
+      "Créer une admin panel avec data visualization.",
+      "Prototyper rapidement une application data-heavy."
+    ],
+    "relevant_for": ["SaaS", "Admin panels", "Dashboards", "Startups"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're building dashboards and data-heavy applications.",
+        "You want sophisticated charts without reinventing the wheel.",
+        "You value accessibility and responsive design."
+      ],
+      "avoidIf": [
+        "You need very high flexibility for advanced custom charts.",
+        "You're building highly specialized data visualizations.",
+        "You prefer Recharts or Victory Charts for more control."
+      ],
+      "threshold": "Tremor shines for standard and data-heavy dashboards; choose it for rapid and accessible development."
+    },
+    "pros": [
+      "35+ pre-built and ready-to-use components.",
+      "Very fast dashboard development.",
+      "Accessible and responsive without extra work.",
+      "Built on Tailwind CSS for consistent customization.",
+      "Acquired by Vercel, sign of stability.",
+      "Professional charts with minimal code."
+    ],
+    "cons": [
+      "Less flexible than raw Recharts for very custom needs.",
+      "More basic components, doesn't cover all chart types.",
+      "Performance may be compromised with lots of data (100k+).",
+      "Dependency on Tailwind CSS for theming."
+    ],
+    "use_cases": [
+      "Build a SaaS dashboard with charts and KPIs.",
+      "Create an admin panel with data visualization.",
+      "Rapidly prototype a data-heavy application."
+    ],
+    "relevant_for": ["SaaS", "Admin panels", "Dashboards", "Startups"]
+  }
+}

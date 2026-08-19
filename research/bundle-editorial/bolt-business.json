@@ -1,0 +1,90 @@
+{
+  "slug": "bolt-business",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Bolt for Business — Gestion des déplacements (site officiel)", "url": "https://bolt.eu/en/business/" }
+  ],
+  "facts": {
+    "what": "Plateforme de gestion des déplacements professionnels qui centralise les trajets, les dépenses et les paiements pour les équipes. Offre des options de mobilité variées (VTC, voitures de location, trottinettes, vélos) avec reporting automatisé et intégrations comptables.",
+    "what_en": "Corporate ride-hailing and mobility management platform that centralizes travel, expenses, and payments for teams. Offers multiple transportation options (rideshare, car rental, scooters, bikes) with automated reporting and accounting integrations.",
+    "pricing_model": "Abonnement personnalisé — tarification sur demande selon la taille de l'équipe et le volume de trajets.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Pas de frais d'activation ni d'engagement minimum." },
+    "plans": [
+      { "name": "Business (sur demande)", "price": "Montants sur la page officielle — contact équipe commerciale" }
+    ],
+    "key_features": [
+      "Centralisation des trajets et des dépenses (VTC, location auto, scooters, vélos, repas)",
+      "Limite de dépenses par employé/groupe",
+      "Facturation consolidée avec paiement unique",
+      "Reporting automatisé et intégrations (Concur, Expensify, Rydoo, Zoho)",
+      "Supervision en temps réel (traçage, activités, budgets)",
+      "Trajets carboneNeutre avec compensation d'émissions"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Votre équipe a des déplacements fréquents (clients, réunions, aéroport).",
+        "Vous souhaitez simplifier la gestion des notes de frais et centraliser les dépenses.",
+        "Vous opérez dans les 600+ villes où Bolt est présent."
+      ],
+      "avoidIf": [
+        "Votre région ne dispose pas de couverture Bolt.",
+        "Vous n'avez que des trajets ponctuels et limitës.",
+        "Vous cherchez une solution entièrement gratuite."
+      ],
+      "threshold": "Bolt Business s'impose pour les petites équipes et PME ayant des déplacements réguliers ; pour usage très occasionnel, une simple carte de frais classique suffit."
+    },
+    "pros": [
+      "Plateforme tout-en-un : trajets, rentals, scooters, repas.",
+      "Centralisation totale des dépenses et des budgets.",
+      "Intégrations natives avec les logiciels comptables majeurs.",
+      "Supervision en temps réel des trajets et des dépenses.",
+      "Trajets carboneNeutre."
+    ],
+    "cons": [
+      "Tarification opaque (sur demande uniquement).",
+      "Disponibilité limitée à 600+ villes (pas global).",
+      "Dépendance à l'écosystème Bolt pour les trajets."
+    ],
+    "use_cases": [
+      "Gérer les déplacements professionnels des vendeurs, consultants ou représentants.",
+      "Centraliser et approuver les notes de frais en mobilité.",
+      "Simplifier les rapports de dépenses pour la comptabilité."
+    ],
+    "relevant_for": ["Petites équipes", "PME", "Entreprises nomades/mobiles"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "Your team travels frequently for clients, meetings, or airports.",
+        "You want to streamline expense reporting and centralize mobility costs.",
+        "You operate in Bolt's 600+ covered cities."
+      ],
+      "avoidIf": [
+        "Your region lacks Bolt coverage.",
+        "You have only occasional, infrequent trips.",
+        "You're looking for a completely free solution."
+      ],
+      "threshold": "Bolt Business makes sense for small teams and SMEs with regular travel; for very occasional trips, a basic expense card works fine."
+    },
+    "pros": [
+      "All-in-one platform: rides, rentals, scooters, meals.",
+      "Full centralization of expenses and budgets.",
+      "Native integrations with major accounting software.",
+      "Real-time visibility into trips and spending.",
+      "CarbonNeutral rides with offset programs."
+    ],
+    "cons": [
+      "Pricing is opaque (custom quotes only).",
+      "Coverage limited to 600+ cities (not global).",
+      "Depends on Bolt's ride ecosystem for trips."
+    ],
+    "use_cases": [
+      "Manage travel for salespeople, consultants, or representatives.",
+      "Centralize and approve mobile expenses.",
+      "Simplify expense reports for accounting."
+    ]
+  }
+}

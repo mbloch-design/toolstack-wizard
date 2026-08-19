@@ -1,0 +1,84 @@
+{
+  "slug": "angular-universal",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Angular Universal — documentation officielle", "url": "https://angular.io/guide/universal" }
+  ],
+  "facts": {
+    "what": "Module Angular pour le rendu côté serveur (SSR) et la pré-génération statique d'applications Angular. Améliore le SEO et les performances d'affichage initial en générant du HTML côté serveur.",
+    "what_en": "Angular module for server-side rendering (SSR) and static prerendering of Angular applications. Improves SEO and initial load performance by generating HTML on the server.",
+    "pricing_model": "Entièrement gratuit et open source (inclus dans Angular)",
+    "free_tier": { "exists": true, "detail": "Entièrement gratuit. Fonctionnalité intégrée dans le framework Angular. Pas de limitation." },
+    "plans": [],
+    "key_features": [
+      "Rendu côté serveur pour améliorer SEO",
+      "Pré-rendu statique de routes",
+      "Amélioration des métriques Core Web Vitals",
+      "Intégration native avec Angular"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez Angular et vous avez besoin d'améliorer votre SEO.",
+        "Vous servez du contenu qui doit être accessible aux crawlers des moteurs de recherche.",
+        "Vous recherchez à améliorer les performances du chargement initial."
+      ],
+      "avoidIf": [
+        "Vous utilisez une autre framework que Angular.",
+        "Votre site est entièrement dynamique et côté client.",
+        "Vous n'avez pas de contrainte SEO importante."
+      ],
+      "threshold": "Angular Universal est essentiel pour les sites Angular orientés contenu ou SEO ; pour les applications purement côté client, d'autres solutions suffisent."
+    },
+    "pros": [
+      "Intégré natif dans Angular — pas de dépendance externe",
+      "Améliorations SEO immédiates et mesurables",
+      "Meilleure vitesse d'affichage initial pour les utilisateurs",
+      "Support officiel et documentation complète"
+    ],
+    "cons": [
+      "Ajoute complexité au déploiement et à la maintenance",
+      "Nécessite une infrastructure côté serveur",
+      "Limite à l'écosystème Angular"
+    ],
+    "use_cases": [
+      "Améliorer le classement SEO d'un site Angular",
+      "Servir du contenu social media preview-friendly",
+      "Optimiser le First Contentful Paint (FCP)"
+    ],
+    "relevant_for": ["Développeurs Angular", "Équipes SEO", "Éditeurs de contenu"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You use Angular and need to improve your SEO.",
+        "You serve content that must be accessible to search engine crawlers.",
+        "You need to improve initial load performance."
+      ],
+      "avoidIf": [
+        "You use a framework other than Angular.",
+        "Your site is entirely dynamic and client-side.",
+        "You have no significant SEO constraints."
+      ],
+      "threshold": "Angular Universal is essential for content-focused or SEO-critical Angular sites; for purely client-side apps, other solutions suffice."
+    },
+    "pros": [
+      "Natively integrated into Angular — no external dependencies",
+      "Immediate and measurable SEO improvements",
+      "Better initial display speed for users",
+      "Official support and comprehensive documentation"
+    ],
+    "cons": [
+      "Adds complexity to deployment and maintenance",
+      "Requires server-side infrastructure",
+      "Limited to the Angular ecosystem"
+    ],
+    "use_cases": [
+      "Improve SEO ranking of an Angular site",
+      "Serve social media preview-friendly content",
+      "Optimize First Contentful Paint (FCP)"
+    ]
+  }
+}
