@@ -1,0 +1,87 @@
+{
+  "slug": "leadflow",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Leadflow — logiciel immobilier (site officiel)", "url": "https://leadflow.com/" }
+  ],
+  "facts": {
+    "what": "Logiciel de génération de leads immobiliers pour agents, investisseurs et marchands de biens : identification des biens susceptibles d'être vendus grâce à un score prédictif (Sellability Score), filtres IA sur des bases de vendeurs, acheteurs et prêteurs, et campagnes marketing intégrées (courrier, SMS).",
+    "what_en": "Real estate lead generation software for agents, investors and dealers: identifies properties likely to sell via a predictive Sellability Score, AI filters over seller, buyer and lender datasets, and built-in marketing campaigns (direct mail, SMS).",
+    "pricing_model": "Abonnement mensuel par utilisateur, avec remise sur l'engagement annuel. Essai gratuit disponible.",
+    "free_tier": { "exists": false, "detail": "Essai gratuit proposé ; abonnement requis ensuite." },
+    "plans": [
+      { "name": "Individuel", "price": "à partir d'environ 49 $/mois, remise en annuel" },
+      { "name": "Équipe / supérieur", "price": "montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Score prédictif de probabilité de vente",
+      "Filtres IA sur données propriétaires",
+      "Campagnes courrier et SMS intégrées",
+      "Analyse de biens pour l'investissement"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous prospectez des biens immobiliers de façon systématique.",
+        "Vous voulez prioriser les propriétaires les plus susceptibles de vendre.",
+        "Vous menez des campagnes courrier ou SMS sur des listes ciblées."
+      ],
+      "avoidIf": [
+        "Vous n'exercez pas dans l'immobilier.",
+        "Vous travaillez hors du marché américain (données centrées sur les États-Unis).",
+        "Vous traitez trop peu de dossiers pour amortir l'abonnement."
+      ],
+      "threshold": "Leadflow s'impose pour un professionnel de l'immobilier qui prospecte en volume sur le marché américain ; hors de ce cadre, l'outil est sans objet."
+    },
+    "pros": [
+      "Score prédictif pour prioriser la prospection.",
+      "Bases de données propriétaires étendues.",
+      "Campagnes marketing intégrées à l'outil.",
+      "Essai gratuit pour évaluer."
+    ],
+    "cons": [
+      "Données centrées sur le marché américain.",
+      "Sans objet hors secteur immobilier.",
+      "Abonnement difficile à amortir sur peu de dossiers."
+    ],
+    "use_cases": [
+      "Identifier des propriétaires susceptibles de vendre.",
+      "Bâtir des listes de prospection ciblées.",
+      "Lancer des campagnes courrier ou SMS sur ces listes."
+    ],
+    "relevant_for": ["Agents immobiliers", "Investisseurs immobiliers", "Marchands de biens"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You prospect real estate systematically.",
+        "You want to prioritise owners most likely to sell.",
+        "You run direct mail or SMS campaigns on targeted lists."
+      ],
+      "avoidIf": [
+        "You're not in real estate.",
+        "You work outside the US market (data is US-centric).",
+        "You handle too few deals to justify the subscription."
+      ],
+      "threshold": "Leadflow makes sense for a real estate professional prospecting at volume in the US market; outside that, the tool is not relevant."
+    },
+    "pros": [
+      "Predictive score to prioritise prospecting.",
+      "Extensive owner datasets.",
+      "Marketing campaigns built into the tool.",
+      "Free trial to evaluate."
+    ],
+    "cons": [
+      "Data centred on the US market.",
+      "Not relevant outside real estate.",
+      "Subscription hard to justify on few deals."
+    ],
+    "use_cases": [
+      "Identify owners likely to sell.",
+      "Build targeted prospecting lists.",
+      "Launch direct mail or SMS campaigns on those lists."
+    ]
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "slug": "elfsight",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Elfsight — widgets pour sites web (site officiel)", "url": "https://elfsight.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Plateforme de widgets no-code pour sites web : plus de quatre-vingt-dix widgets (flux sociaux, avis, formulaires, chat, e-commerce, fonctions IA) à intégrer sans coder, compatibles avec la plupart des CMS et constructeurs de sites.",
+    "what_en": "No-code website widget platform: over ninety widgets (social feeds, reviews, forms, chat, e-commerce, AI features) embeddable without coding, compatible with most CMSs and site builders.",
+    "pricing_model": "Palier gratuit limité puis abonnements par nombre de widgets et de vues mensuelles (mensuel ou annuel). Offres agence et entreprise pour les volumes élevés.",
+    "free_tier": { "exists": true, "detail": "Gratuit : sites illimités mais un seul widget et un quota de vues très limité, avec le logo Elfsight affiché." },
+    "plans": [
+      { "name": "Free", "price": "0 $ (1 widget, quota de vues limité, logo affiché)" },
+      { "name": "Basic", "price": "environ 6 $/mois ou 60 $/an" },
+      { "name": "Pro", "price": "environ 12 $/mois ou 120 $/an" },
+      { "name": "Premium Pack", "price": "environ 72 $/mois ou 720 $/an (accès à tout le catalogue)" }
+    ],
+    "key_features": [
+      "Plus de quatre-vingt-dix widgets no-code",
+      "Flux sociaux, avis clients et formulaires",
+      "Chat et widgets e-commerce",
+      "Compatible avec la plupart des CMS et constructeurs"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous voulez enrichir un site sans développer.",
+        "Vous avez besoin d'afficher avis, flux sociaux ou formulaires.",
+        "Vous gérez plusieurs sites clients (offres agence)."
+      ],
+      "avoidIf": [
+        "Votre CMS propose déjà nativement ces briques.",
+        "Vous avez un développeur capable de les intégrer sur mesure.",
+        "Le quota de vues du gratuit ne suffit pas et le budget est nul."
+      ],
+      "threshold": "Elfsight s'impose pour ajouter vite des briques fonctionnelles à un site sans coder ; si votre CMS ou votre équipe couvre déjà le besoin, l'abonnement fait doublon."
+    },
+    "pros": [
+      "Très large catalogue de widgets prêts à l'emploi.",
+      "Aucune compétence technique requise.",
+      "Compatible avec la plupart des plateformes.",
+      "Palier gratuit pour tester."
+    ],
+    "cons": [
+      "Gratuit très limité, avec logo imposé.",
+      "Facturation liée au nombre de widgets et de vues.",
+      "Widgets tiers chargés sur votre site (performance à surveiller)."
+    ],
+    "use_cases": [
+      "Afficher des avis clients sur une page produit.",
+      "Intégrer un flux Instagram ou un formulaire de contact.",
+      "Ajouter un chat ou une FAQ sans développement."
+    ],
+    "relevant_for": ["Petites entreprises", "Agences web", "Créateurs de sites no-code"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want to enrich a site without development.",
+        "You need to display reviews, social feeds or forms.",
+        "You manage several client sites (agency plans)."
+      ],
+      "avoidIf": [
+        "Your CMS already offers these blocks natively.",
+        "You have a developer who can build them custom.",
+        "The free view quota isn't enough and there's no budget."
+      ],
+      "threshold": "Elfsight makes sense to quickly add functional blocks to a site without coding; if your CMS or team already covers the need, the subscription is redundant."
+    },
+    "pros": [
+      "Very large catalogue of ready-made widgets.",
+      "No technical skills required.",
+      "Compatible with most platforms.",
+      "Free tier to test."
+    ],
+    "cons": [
+      "Very limited free tier, with a forced logo.",
+      "Billing tied to widget count and views.",
+      "Third-party widgets loaded on your site (watch performance)."
+    ],
+    "use_cases": [
+      "Display customer reviews on a product page.",
+      "Embed an Instagram feed or contact form.",
+      "Add chat or an FAQ without development."
+    ]
+  }
+}
