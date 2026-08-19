@@ -1,0 +1,94 @@
+{
+  "slug": "surveysparrow",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "SurveySparrow — Experience Management Platform (site officiel)", "url": "https://surveysparrow.com/" }
+  ],
+  "facts": {
+    "what": "Plateforme omnicanale de gestion de l'expérience client combinant sondages, NPS, enquêtes d'engagement employé et feedback client avec analytics avancés.",
+    "what_en": "Omnichannel experience management platform combining surveys, NPS, employee engagement, and customer feedback with advanced analytics.",
+    "pricing_model": "Modèle freemium avec plan gratuit et essai. Plans payants à partir de 19 $/mois ; tiers supérieurs nécessitent devis commercial.",
+    "free_tier": { "exists": true, "detail": "Version gratuite disponible. Essai gratuit inclus." },
+    "plans": [
+      { "name": "Free", "price": "0 $ / mois, fonctionnalités basiques" },
+      { "name": "Basic", "price": "19 $ / mois" },
+      { "name": "Starter", "price": "39 $ / mois" },
+      { "name": "Business/Professional/Enterprise", "price": "Tarifs sur demande commercial" }
+    ],
+    "key_features": [
+      "Sondages omnicanal (email, SMS, web, push)",
+      "NPS et suivi du sentiment client",
+      "Enquêtes d'engagement employé",
+      "Analytics et rapports",
+      "Logique conditionnelle"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez une plateforme pour mesurer la satisfaction client (NPS).",
+        "Vous avez besoin de sondages omnicanal.",
+        "Vous voulez une solution avec plan gratuit pour débuter.",
+        "Vous gérez aussi l'engagement employé."
+      ],
+      "avoidIf": [
+        "Vous ne faites que quelques sondages ponctuels.",
+        "Vous cherchez un outil de sondage très simple et gratuit.",
+        "Vous avez des besoins d'analytics très avancés."
+      ],
+      "threshold": "SurveySparrow convient aux entreprises mesurant la satisfaction ; pour des sondages simples ou à gros budget, Typeform est peut-être plus adaptée."
+    },
+    "pros": [
+      "Plan gratuit avec sondages illimités.",
+      "Omnicanal (email, SMS, web, push).",
+      "NPS intégré pour mesurer la fidélité.",
+      "Support des enquêtes employé."
+    ],
+    "cons": [
+      "Plans payants pas toujours transparents (devis pour tiers supérieurs).",
+      "Interface peut être complexe pour débutants.",
+      "Moins convivial que Typeform pour les non-techniques."
+    ],
+    "use_cases": [
+      "Mesurer la satisfaction client avec des sondages NPS.",
+      "Collecter du feedback après chaque interaction cliente.",
+      "Mesurer l'engagement employé.",
+      "Analyser les tendances de satisfaction au fil du temps."
+    ],
+    "relevant_for": ["Équipes customer experience", "RH", "Entreprises SaaS"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need to measure customer satisfaction and NPS.",
+        "You want surveys across multiple channels (email, SMS, web).",
+        "You like starting with a free plan.",
+        "You also measure employee engagement."
+      ],
+      "avoidIf": [
+        "You need just a few one-off surveys.",
+        "You want the simplest, most free survey tool.",
+        "You need enterprise-grade analytics only."
+      ],
+      "threshold": "SurveySparrow works for CX teams; for simple surveys or tight budgets, Typeform may be more fitting."
+    },
+    "pros": [
+      "Free plan with unlimited surveys.",
+      "True omnichannel (email, SMS, web, push).",
+      "Built-in NPS for loyalty measurement.",
+      "Employee engagement surveys included."
+    ],
+    "cons": [
+      "Paid tiers require sales contact; not transparent.",
+      "Steeper learning curve than Typeform.",
+      "Interface can feel overwhelming for beginners."
+    ],
+    "use_cases": [
+      "Send NPS surveys to measure customer loyalty.",
+      "Collect post-purchase feedback.",
+      "Track employee satisfaction and engagement.",
+      "Monitor satisfaction trends over time."
+    ]
+  }
+}

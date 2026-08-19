@@ -1,0 +1,99 @@
+{
+  "slug": "simpletexting",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "SimpleTexting — SMS Platform (site officiel)", "url": "https://simpletexting.com/" }
+  ],
+  "facts": {
+    "what": "Plateforme SMS pour entreprises, permettant d'envoyer des messages texte automatisés avec templating, API et fonctionnalités de shortcode pour le marketing et le support.",
+    "what_en": "SMS platform for businesses to send automated text messages with templating, API access, and shortcode capabilities for marketing and support.",
+    "pricing_model": "Tarification basée sur des crédits ; les plans vont de 500 à 50 000 crédits par mois. Réductions de 20 % pour paiement annuel.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit disponible. Trial de 30 jours." },
+    "plans": [
+      { "name": "500 Credits", "price": "39 $ / mois (environs 0,078 $ par SMS)" },
+      { "name": "1 000 Credits", "price": "59 $ / mois" },
+      { "name": "2 000 Credits", "price": "89 $ / mois" },
+      { "name": "3 000 Credits", "price": "119 $ / mois" },
+      { "name": "7 500 Credits", "price": "239 $ / mois" },
+      { "name": "15 000 Credits", "price": "409 $ / mois" },
+      { "name": "25 000 Credits", "price": "559 $ / mois" },
+      { "name": "50 000 Credits", "price": "909 $ / mois (environ 0,018 $ par SMS)" },
+      { "name": "10DLC Fee", "price": "4 $ (one-time carrier registration)" }
+    ],
+    "key_features": [
+      "Envoi et réception de SMS",
+      "Automatisation et déclencheurs",
+      "API pour intégrations",
+      "Analytics et rapports",
+      "Support shortcode 10DLC"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez une équipe support qui répond par SMS.",
+        "Vous faites du marketing SMS ou des promotions.",
+        "Vous avez besoin d'un volume modéré de SMS mensuels.",
+        "Vous cherchez une plateforme SMS simple sans contrat."
+      ],
+      "avoidIf": [
+        "Vous n'envoyez que quelques SMS par mois.",
+        "Vous cherchez un outil SMS avec advanced automation (look for Twilio).",
+        "Vous avez des besoins très high-volume (millions de SMS)."
+      ],
+      "threshold": "SimpleTexting convient aux entreprises avec SMS modéré ; pour l'automation SMS complexe ou très haut volume, Twilio est mieux adapté."
+    },
+    "pros": [
+      "Tarification transparente basée sur crédits.",
+      "Tous les plans inclus les mêmes fonctionnalités.",
+      "Interface simple et intuitive.",
+      "Support 24/7."
+    ],
+    "cons": [
+      "Les coûts escaladent rapidement pour gros volumes.",
+      "Moins d'automation avancée que les concurrents.",
+      "Interface peut sembler basique pour développeurs."
+    ],
+    "use_cases": [
+      "Envoyer des confirmations d'appels ou d'événements.",
+      "Automatiser les rappels pour rendez-vous.",
+      "Gérer des conversations support par SMS.",
+      "Lancer des campagnes promotionnelles SMS."
+    ],
+    "relevant_for": ["Petites/moyennes entreprises", "Cliniques et cabinets", "E-commerce avec support SMS"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need to send appointment reminders or confirmations via SMS.",
+        "You handle customer support over text messages.",
+        "You run SMS marketing campaigns.",
+        "You want a simple, straightforward SMS platform."
+      ],
+      "avoidIf": [
+        "You send only a handful of SMS per month.",
+        "You need complex SMS automation (use Twilio instead).",
+        "You send millions of SMS monthly (enterprise SMS needed)."
+      ],
+      "threshold": "SimpleTexting works for small-to-mid volume SMS needs; for complex automation or massive scale, Twilio is better."
+    },
+    "pros": [
+      "Clear, simple credit-based pricing.",
+      "All plans include the same features.",
+      "Easy-to-use dashboard.",
+      "24/7 customer support."
+    ],
+    "cons": [
+      "Costs scale quickly for high volumes.",
+      "Limited advanced automation compared to competitors.",
+      "Basic interface may not suit power users."
+    ],
+    "use_cases": [
+      "Send appointment reminders and confirmations.",
+      "Automate SMS follow-ups for customer support.",
+      "Run SMS marketing campaigns.",
+      "Notify employees or customers of urgent updates."
+    ]
+  }
+}

@@ -36,18 +36,6 @@
     "total": 25
   },
   {
-    "category": "productivity-tracking",
-    "done": 1,
-    "todo": 15,
-    "total": 16
-  },
-  {
-    "category": "legal-contracts",
-    "done": 7,
-    "todo": 13,
-    "total": 20
-  },
-  {
     "category": "formation-education",
     "done": 1,
     "todo": 9,
@@ -114,10 +102,22 @@
     "total": 14
   },
   {
+    "category": "legal-contracts",
+    "done": 18,
+    "todo": 0,
+    "total": 18
+  },
+  {
     "category": "nocode-web",
     "done": 130,
     "todo": 0,
     "total": 130
+  },
+  {
+    "category": "productivity-tracking",
+    "done": 14,
+    "todo": 0,
+    "total": 14
   },
   {
     "category": "project-management",

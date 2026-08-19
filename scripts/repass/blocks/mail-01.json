@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "activecampaign",
+    "name": "ActiveCampaign",
+    "url": "https://www.activecampaign.com"
+  },
+  {
+    "slug": "amplemarket",
+    "name": "Amplemarket",
+    "url": "https://www.amplemarket.com"
+  },
+  {
+    "slug": "arounddeal",
+    "name": "AroundDeal",
+    "url": "https://arounddeal.com"
+  },
+  {
+    "slug": "autonix",
+    "name": "Autonix",
+    "url": "https://autonix.io"
+  },
+  {
+    "slug": "aweber",
+    "name": "AWeber",
+    "url": "https://aweber.com"
+  },
+  {
+    "slug": "beehiiv",
+    "name": "Beehiiv",
+    "url": "https://beehiiv.com"
+  },
+  {
+    "slug": "brevo",
+    "name": "Brevo",
+    "url": "https://www.brevo.com"
+  },
+  {
+    "slug": "campaigner",
+    "name": "Campaigner",
+    "url": "https://campaigner.com"
+  },
+  {
+    "slug": "clay",
+    "name": "Clay",
+    "url": "https://clay.com"
+  }
+]

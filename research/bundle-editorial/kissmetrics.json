@@ -1,0 +1,107 @@
+{
+  "slug": "kissmetrics",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Kissmetrics (site officiel)", "url": "https://kissmetrics.io" }
+  ],
+  "facts": {
+    "what": "Plateforme d'analytics e-commerce et email trackant revenue par campaign et attributing purchases à email touchpoints, avec event-based automation.",
+    "what_en": "E-commerce and email analytics platform tracking revenue per campaign and attributing purchases to email touchpoints, with event-based automation.",
+    "pricing_model": "Usage-based par events et contacts tracked ; modèle flexible",
+    "free_tier": { "exists": true, "detail": "Plan gratuit avec data limitée ; plans payants pour scale" },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (donnees limités)" },
+      { "name": "Starter", "price": "Montants sur la page officielle" },
+      { "name": "Growth", "price": "Montants sur la page officielle" },
+      { "name": "Enterprise", "price": "Montants sur demande" }
+    ],
+    "key_features": [
+      "Email campaign revenue attribution et ROI tracking.",
+      "Multi-device tracking et cross-device journey.",
+      "Event-based automation triggers sur user actions.",
+      "Segment audienciens by behavior et purchase history.",
+      "Direct Segment ou JavaScript snippet integration.",
+      "Insights 48h après implementation."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes e-commerce ou SaaS trackant email-to-revenue attribution.",
+        "Vous besoin analytics comportemental multi-device.",
+        "Vous cherchez automation déclenchée par events utilisateur."
+      ],
+      "avoidIf": [
+        "Vous n'avez pas besoin tracking revenue (content only).",
+        "Vous cherchez ESL complète (Mailchimp/Brevo mieux).",
+        "Vous avez budget très limité."
+      ],
+      "threshold": "Kissmetrics excelle pour ecommerce tracking revenue email ; pour contenu pur, analytics Google suffisent."
+    },
+    "pros": [
+      "Revenue attribution email-to-purchase (unique focus).",
+      "Multi-device tracking et journey mapping.",
+      "Event-based automation delicat.",
+      "Intégration Segment ou JS snippet simple.",
+      "Plan gratuit accessible.",
+      "Insights rapides (48h)."
+    ],
+    "cons": [
+      "Pas un outil email (analytics seulement).",
+      "Interface moins moderne.",
+      "Setup peut être complexe pour debut.",
+      "Données bruitées si tracking mal configuré.",
+      "Pas de vraie automation email (triggers seulement)."
+    ],
+    "use_cases": [
+      "E-commerce tracking revenue per email campaign.",
+      "Attribution multi-touch email-to-purchase.",
+      "Segmentation by purchase behavior.",
+      "Event automation sur user actions.",
+      "Analytics ROI email campaigns detaillée."
+    ],
+    "relevant_for": [
+      "E-commerce et retail",
+      "SaaS product-driven",
+      "Équipes analytics marketing"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're e-commerce or SaaS tracking email-to-revenue attribution.",
+        "You need behavioral analytics across devices.",
+        "You want automation triggered by user events."
+      ],
+      "avoidIf": [
+        "You don't need revenue tracking (content only).",
+        "You want a complete ESL (Mailchimp/Brevo better).",
+        "You have a very tight budget."
+      ],
+      "threshold": "Kissmetrics excels for ecommerce revenue-tracking; for content-only, Google Analytics suffices."
+    },
+    "pros": [
+      "Revenue attribution from email to purchase (unique focus).",
+      "Multi-device tracking and journey mapping.",
+      "Event-based automation triggers.",
+      "Simple Segment or JS snippet integration.",
+      "Free plan accessible.",
+      "Fast insights (48h)."
+    ],
+    "cons": [
+      "Not an email tool (analytics only).",
+      "Less modern interface.",
+      "Setup can be complex for beginners.",
+      "Data noisy if tracking misconfigured.",
+      "No true email automation (triggers only)."
+    ],
+    "use_cases": [
+      "E-commerce tracking revenue per email campaign.",
+      "Multi-touch attribution email-to-purchase.",
+      "Segmentation by purchase behavior.",
+      "Event automation on user actions.",
+      "Detailed email campaign ROI analytics."
+    ]
+  }
+}

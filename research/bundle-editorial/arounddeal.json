@@ -1,0 +1,100 @@
+{
+  "slug": "arounddeal",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "AroundDeal (site officiel)", "url": "https://arounddeal.com" }
+  ],
+  "facts": {
+    "what": "Plateforme B2B de données et d'intelligence commerciale offrant une base de contacts vérifiés, enrichissement de données, et APIs pour prospection et automation.",
+    "what_en": "B2B data and sales intelligence platform providing verified contact database, data enrichment, and APIs for prospecting and workflow automation.",
+    "pricing_model": "Plan gratuit + abonnements par crédits de contact ; modèle flexible par volume de recherche",
+    "free_tier": { "exists": true, "detail": "Plan gratuit avec 250 emails par jour, 1 utilisateur ; accès limité aux données" },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (250 emails/jour)" },
+      { "name": "Basic", "price": "À partir de montants sur la page officielle (50 crédits de contact)" },
+      { "name": "Premium", "price": "Montants sur la page officielle (150 crédits de contact)" },
+      { "name": "Enterprise", "price": "Montants sur demande (API + accès avancé)" }
+    ],
+    "key_features": [
+      "Base de contacts B2B vérifiés (mondiale avec force en APAC)",
+      "Enrichissement de données (emails, phones, signaux d'intent)",
+      "Extension Chrome pour extraire infos de LinkedIn",
+      "APIs et intégrations CRM pour automation",
+      "Légère fonctionnalité de séquençage pour prospection"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez une base de données B2B abordable à l'entrée.",
+        "Vous prospecter en APAC ou avez besoin de données géographiques couvrant plusieurs régions.",
+        "Vous êtes prêt à gérer des crédits plutôt qu'une facturation au contact."
+      ],
+      "avoidIf": [
+        "Vous cherchez un outil de prospection tout-en-un avec automation avancée.",
+        "Vous avez besoin d'une base de données avec données de deep-dive enrichies.",
+        "Vous préférez une facturation simple par utilisateur ou contact."
+      ],
+      "threshold": "AroundDeal convient aux prospecteurs cherchant une base abordable avec force APAC ; pour l'automation avancée, d'autres outils spécialisés sont meilleurs."
+    },
+    "pros": [
+      "Entrée gratuite généreuse (250 emails/jour).",
+      "Base APAC forte et données vérifiées.",
+      "Modèle de crédits flexible selon la prospection.",
+      "Extension Chrome pratique pour LinkedIn.",
+      "API scalable pour l'automation."
+    ],
+    "cons": [
+      "Pas de vrai plan gratuit à grande échelle.",
+      "Sequencing léger, pas une plateforme d'automation complète.",
+      "Interface moins intuitive qu'autres alternatives.",
+      "Données moins enrichies que Clay ou Lusha."
+    ],
+    "use_cases": [
+      "Trouver des contacts B2B vérifiés à bas coût.",
+      "Prospecter en APAC avec données locales.",
+      "Enrichir listes existantes via API.",
+      "Prospection simple sans automation complexe."
+    ],
+    "relevant_for": [
+      "Freelances et solopreneurs",
+      "Petites équipes commerciales",
+      "Prospecteurs APAC"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want an affordable entry-level B2B contact database.",
+        "You're prospecting in APAC or need geographically diverse data.",
+        "You prefer credit-based pricing over per-contact billing."
+      ],
+      "avoidIf": [
+        "You need an all-in-one prospecting platform with advanced automation.",
+        "You require deeply enriched data with multiple touchpoints.",
+        "You prefer straightforward per-user or per-contact pricing."
+      ],
+      "threshold": "AroundDeal works for prospectors seeking affordable databases with APAC strength; for advanced automation, specialized platforms are better."
+    },
+    "pros": [
+      "Generous free tier (250 emails/day).",
+      "Strong APAC database with verified contacts.",
+      "Flexible credit-based pricing by search volume.",
+      "Useful Chrome extension for LinkedIn.",
+      "Scalable API for workflow automation."
+    ],
+    "cons": [
+      "Limited free tier at scale.",
+      "Light sequencing, not a full automation platform.",
+      "Less intuitive interface than some alternatives.",
+      "Data enrichment less comprehensive than Clay or Lusha."
+    ],
+    "use_cases": [
+      "Find verified B2B contacts affordably.",
+      "Prospect in APAC with local data.",
+      "Enrich existing lists via API.",
+      "Simple prospecting without complex automation."
+    ]
+  }
+}

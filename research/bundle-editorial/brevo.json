@@ -1,0 +1,101 @@
+{
+  "slug": "brevo",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Brevo (site officiel)", "url": "https://www.brevo.com" }
+  ],
+  "facts": {
+    "what": "Plateforme all-in-one email, SMS, CRM et automation (rebaptisée Brevo en 2023, anciennement Sendinblue), facturation par emails envoyés plutôt que contacts stockés.",
+    "what_en": "All-in-one email, SMS, CRM and automation platform (rebranded as Brevo in 2023, formerly Sendinblue), billing based on emails sent rather than stored contacts.",
+    "pricing_model": "Freemium avec abonnements par volume d'emails ; unique : facturation par envois non par contacts",
+    "free_tier": { "exists": true, "detail": "Plan gratuit durable : 300 emails/jour, 2 utilisateurs, CRM limité" },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (300 emails/jour)" },
+      { "name": "Starter", "price": "Montants sur la page officielle (selon volume emails)" },
+      { "name": "Business", "price": "Montants sur la page officielle" },
+      { "name": "Enterprise", "price": "Montants sur demande" }
+    ],
+    "key_features": [
+      "Email marketing avec templates et automation.",
+      "SMS marketing intégré.",
+      "CRM léger et gestion des contacts.",
+      "Multi-canal : email, SMS, live chat.",
+      "Facturation innovante par emails envoyés (vs contacts).",
+      "500k+ businesses utilisateurs."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez une large base de contacts mais une fréquence d'envoi modérée.",
+        "Vous besoin email + SMS + CRM dans un seul outil.",
+        "Vous cherchez une alternative abordable à ActiveCampaign."
+      ],
+      "avoidIf": [
+        "Vous n'envoyez que peu d'emails (plan gratuit Mailchimp/AWeber meilleur).",
+        "Vous avez besoin d'automation très avancée.",
+        "Vous requérez support premium 24/7."
+      ],
+      "threshold": "Brevo excelle pour SMB avec large base de contacts et multi-canal ; pour pure email gratuit, AWeber/Mailchimp suffisent."
+    },
+    "pros": [
+      "Facturation par emails (non contacts) = avantage base large/envois rares.",
+      "All-in-one email + SMS + CRM.",
+      "Plan gratuit généreux et durable.",
+      "500k+ clients = stabilité proven.",
+      "Multi-canal intégré."
+    ],
+    "cons": [
+      "Interface moins moderne que concurrents.",
+      "Automation moins avancée qu'ActiveCampaign.",
+      "Courbe d'apprentissage sur le modèle de facturation.",
+      "Support moins réactif que beehiiv/Mailchimp."
+    ],
+    "use_cases": [
+      "Email + SMS pour SMB avec base large de contacts.",
+      "Gestion client simple avec CRM intégré.",
+      "Newsletter infrequente mais volumeuse.",
+      "Prospection SME avec multi-canal."
+    ],
+    "relevant_for": [
+      "PME/TPE",
+      "E-commerce",
+      "Agences marketing"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You have a large contact base but moderate send frequency.",
+        "You need email + SMS + CRM in one tool.",
+        "You want an affordable alternative to ActiveCampaign."
+      ],
+      "avoidIf": [
+        "You send very few emails (free Mailchimp/AWeber better).",
+        "You need very advanced automation.",
+        "You require 24/7 premium support."
+      ],
+      "threshold": "Brevo excels for SMBs with large contact bases and multi-channel needs; for email-only free options, AWeber/Mailchimp suffice."
+    },
+    "pros": [
+      "Pay-per-email billing (not per contact) = advantage for large, infrequent lists.",
+      "All-in-one: email + SMS + CRM.",
+      "Generous, permanent free tier.",
+      "500k+ customers = proven stability.",
+      "Integrated multi-channel."
+    ],
+    "cons": [
+      "Less modern interface than competitors.",
+      "Automation less advanced than ActiveCampaign.",
+      "Learning curve on billing model.",
+      "Support less responsive than beehiiv/Mailchimp."
+    ],
+    "use_cases": [
+      "Email + SMS for SMBs with large contact bases.",
+      "Simple customer management with integrated CRM.",
+      "Infrequent but high-volume newsletters.",
+      "Multi-channel SME prospecting."
+    ]
+  }
+}

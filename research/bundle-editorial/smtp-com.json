@@ -1,0 +1,93 @@
+{
+  "slug": "smtp-com",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "SMTP.com — Email Delivery Service (site officiel)", "url": "https://smtp.com/" }
+  ],
+  "facts": {
+    "what": "Fournisseur d'infrastructure email (SMTP relay) pour la délivrance fiable d'emails transactionnels et marketing avec gestion de réputation et validation d'adresses.",
+    "what_en": "Email infrastructure provider (SMTP relay service) for reliable transactional and marketing email delivery with reputation management and email validation.",
+    "pricing_model": "Abonnement par volume d'emails ; plan gratuit inclus. IP partagé ou dédié disponible.",
+    "free_tier": { "exists": true, "detail": "Trial gratuit 30 jours avec 50 000 emails inclus. Pas de plan gratuit permanent." },
+    "plans": [
+      { "name": "Starter (50k/mois, shared IP)", "price": "25 $ / mois" },
+      { "name": "Scale plans", "price": "Échelle jusqu'à 250 millions emails/mois" },
+      { "name": "Dedicated IP", "price": "80 $ / mois (add-on)" },
+      { "name": "Reputation Defender", "price": "Add-on (automatise nettoyage de listes)" },
+      { "name": "Insight Engine", "price": "Add-on (profils de données enrichis)" }
+    ],
+    "key_features": [
+      "Taux de délivrabilité 98 %+",
+      "Validation d'adresses email",
+      "API REST et SMTP relay",
+      "Webhooks pour bounce et complaint tracking",
+      "Support 16h/jour weekdays, 12h/jour weekends"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous envoyez du volume significatif d'emails transactionnels.",
+        "Vous avez besoin de taux de délivrabilité très élevés.",
+        "Vous cherchez une alternative à Mailgun ou SendGrid.",
+        "Vous gérez l'infrastructure email pour une plateforme SaaS."
+      ],
+      "avoidIf": [
+        "Vous n'envoyez que quelques centaines d'emails par mois.",
+        "Vous cherchez une plateforme marketing avec templates.",
+        "Vous n'avez pas d'expertise email (infrastructure)."
+      ],
+      "threshold": "SMTP.com convient aux équipes techniques gérando des volumes d'emails ; pour des besoins simples ou marketing, Mailgun ou Moosend suffisent."
+    },
+    "pros": [
+      "Excellente délivrabilité rapportée.",
+      "Tarification compétitive avec volumes importants.",
+      "Support technique 16h/jour.",
+      "Scalabilité jusqu'à 250M emails/mois."
+    ],
+    "cons": [
+      "Infrastructure technique ; nécessite une expertise email.",
+      "Pas d'interface de templates ou de builders.",
+      "Support limité en heures (pas 24/7)."
+    ],
+    "use_cases": [
+      "Envoyer des emails transactionnels pour une application SaaS.",
+      "Gérer l'infrastructure email pour une plateforme.",
+      "Augmenter les taux de délivrabilité pour campagnes marketing."
+    ],
+    "relevant_for": ["Développeurs", "Équipes DevOps", "Plateformes SaaS"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You send significant volumes of transactional emails.",
+        "You need best-in-class deliverability rates.",
+        "You're looking for an alternative to Mailgun or SendGrid.",
+        "You manage email infrastructure for a SaaS platform."
+      ],
+      "avoidIf": [
+        "You send only hundreds of emails per month.",
+        "You need a marketing platform with templates and workflows.",
+        "You're not comfortable with technical email infrastructure."
+      ],
+      "threshold": "SMTP.com is for technical teams handling large email volumes; smaller projects or non-technical users should choose Mailgun or Moosend."
+    },
+    "pros": [
+      "Exceptional reported deliverability.",
+      "Competitive pricing at scale.",
+      "Technical support 16 hours/day.",
+      "Scales to 250M+ emails per month."
+    ],
+    "cons": [
+      "Infrastructure-level tool; requires email expertise.",
+      "No visual template builder.",
+      "Limited support hours (not 24/7)."
+    ],
+    "use_cases": [
+      "Deliver transactional emails from SaaS applications.",
+      "Manage email infrastructure for platforms.",
+      "Maintain sender reputation at large scale."
+    ]
+  }
+}

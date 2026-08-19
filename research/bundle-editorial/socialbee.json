@@ -1,0 +1,91 @@
+{
+  "slug": "socialbee",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "SocialBee — Social Media Management (site officiel)", "url": "https://socialbee.com/" }
+  ],
+  "facts": {
+    "what": "Outil de gestion des réseaux sociaux avec planification, recyclage automatique de contenu, optimisations IA et intégrations Canva pour simplifier la publication et l'engagement.",
+    "what_en": "Social media management tool for scheduling, automatic content recycling, AI-powered optimization, and Canva integration for simplified publishing.",
+    "pricing_model": "Plans à partir de 29 $/mois ; pas de plan gratuit mais trial 14 jours inclus.",
+    "free_tier": { "exists": false, "detail": "Pas de plan gratuit. Trial gratuit 14 jours sans carte de crédit." },
+    "plans": [
+      { "name": "Starter/Pro/Agency", "price": "À partir de 29 $ / mois" }
+    ],
+    "key_features": [
+      "Planification et programmation de posts",
+      "Recyclage automatique du contenu",
+      "Optimisations basées sur l'IA",
+      "Intégrations Canva et Copilot IA",
+      "Performance analytics"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez plusieurs comptes sociaux et voulez une interface simple.",
+        "Vous cherchez du recyclage automatique de contenu.",
+        "Vous cherchez une solution avec Canva intégré.",
+        "Vous avez un petit à moyen nombre de comptes (moins de 10)."
+      ],
+      "avoidIf": [
+        "Vous gérez des dizaines de comptes pour une grande agence.",
+        "Vous avez un budget très serré (pas de payant).",
+        "Vous cherchez le monitoring social avancé."
+      ],
+      "threshold": "SocialBee convient aux créateurs et petites agences ; pour les grandes agences, Sendible ou Hootsuite offrent plus de scalabilité."
+    },
+    "pros": [
+      "Recyclage automatique du contenu (réutiliser les meilleures publications).",
+      "Intégration Canva pour créer directement.",
+      "AI Copilot pour suggestions de posts.",
+      "Interface moderne et intuitive."
+    ],
+    "cons": [
+      "Pas de plan gratuit, l'entrée de gamme est payante.",
+      "Moins de fonctionnalités pour grandes agences.",
+      "Monitoring social limité comparé aux alternatives."
+    ],
+    "use_cases": [
+      "Gérer 3-5 comptes sociaux pour une petite entreprise.",
+      "Recycler automatiquement les meilleurs contenus.",
+      "Créer des posts directement depuis Canva.",
+      "Obtenir des recommandations IA pour le timing et le contenu."
+    ],
+    "relevant_for": ["Créateurs de contenu", "Petits entrepreneurs", "Consultants freelance"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage a few social accounts and want a simple interface.",
+        "You want automatic content recycling to maximize post lifespan.",
+        "You like Canva integration for quick design.",
+        "You're a solo creator or small agency."
+      ],
+      "avoidIf": [
+        "You manage dozens of accounts for a large agency.",
+        "You need a completely free tool.",
+        "You require advanced social listening features."
+      ],
+      "threshold": "SocialBee is great for content creators and small teams; larger agencies need Sendible or Hootsuite for more scale."
+    },
+    "pros": [
+      "Automatic content recycling to extend content life.",
+      "Direct Canva integration for easy design.",
+      "AI Copilot for post suggestions and timing.",
+      "Clean, modern interface."
+    ],
+    "cons": [
+      "No free plan; the entry tier is paid.",
+      "Limited features for large multi-account agencies.",
+      "Social listening is not a strength."
+    ],
+    "use_cases": [
+      "Manage 3–5 social accounts for a small business.",
+      "Automatically recycle and republish top-performing content.",
+      "Design posts in Canva without leaving SocialBee.",
+      "Get AI recommendations for post timing and content mix."
+    ]
+  }
+}

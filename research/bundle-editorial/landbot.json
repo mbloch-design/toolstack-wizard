@@ -1,0 +1,107 @@
+{
+  "slug": "landbot",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Landbot (site officiel)", "url": "https://landbot.io" }
+  ],
+  "facts": {
+    "what": "Plateforme no-code de chatbots IA pour lead generation sur sites et WhatsApp Business, avec visual flow builder et intégrations CRM/email pour qualification leads.",
+    "what_en": "No-code AI chatbot platform for lead generation on websites and WhatsApp Business, with visual flow builder and CRM/email integrations for lead qualification.",
+    "pricing_model": "Plan gratuit + abonnements par fonctionnalités et conversations",
+    "free_tier": { "exists": true, "detail": "Plan gratuit disponible ; fonctionnalités payantes pour advanced flows et WhatsApp" },
+    "plans": [
+      { "name": "Free", "price": "Gratuit" },
+      { "name": "Starter", "price": "À partir de 45 $/mois" },
+      { "name": "Growth", "price": "Montants sur la page officiel" }
+    ],
+    "key_features": [
+      "Visual no-code flow builder (pas coding requis).",
+      "Chatbots for website, WhatsApp Business, Messenger.",
+      "Qualifications leads et routing vers CRM/email.",
+      "Hybrid : structured rules + AI flexibility.",
+      "Lead scoring et segmentation.",
+      "Intégrations CRM (HubSpot, Salesforce, etc).",
+      "Official WhatsApp Business API (not third-party)."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez lead capture sans coding sur site/WhatsApp.",
+        "Vous préférez visual builder structured plutôt que libre NLP.",
+        "Vous intégrez chatbot dans workflow CRM/email."
+      ],
+      "avoidIf": [
+        "Vous besoin NLP très avancé (off-script handling).",
+        "Vous prioritisez conversation fluidité.",
+        "Vous avez très petit budget."
+      ],
+      "threshold": "Landbot excelle pour structured lead capture ; pour NLP avancé/conversationnel, AI natives (Intercom) meilleur."
+    },
+    "pros": [
+      "Visual builder très accessible (no-code).",
+      "Lead capture simplifié sur site et WhatsApp.",
+      "Hybrid structured + AI flexible.",
+      "Intégrations CRM natives (HubSpot, Salesforce).",
+      "Official WhatsApp Business API.",
+      "Plan gratuit généreux."
+    ],
+    "cons": [
+      "NLP limité (conversations off-script difficiles).",
+      "Pas main email marketing tool.",
+      "Interface moins moderne que concurrents.",
+      "Automation email simple (post-lead seulement).",
+      "Moins de cas d'usage hors lead capture."
+    ],
+    "use_cases": [
+      "Lead capture et qualification via chatbot site.",
+      "WhatsApp lead gen avec qualification.",
+      "Scoring leads avant CRM/email handoff.",
+      "Appointment scheduling via chatbot.",
+      "Support initial/FAQ automation."
+    ],
+    "relevant_for": [
+      "E-commerce et retail",
+      "Agences lead generation",
+      "Équipes sales"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want lead capture without coding on site/WhatsApp.",
+        "You prefer visual builder structured flows over free NLP.",
+        "You integrate chatbot in CRM/email workflows."
+      ],
+      "avoidIf": [
+        "You need very advanced NLP (off-script handling).",
+        "You prioritize conversation fluidity.",
+        "You have a very tight budget."
+      ],
+      "threshold": "Landbot excels for structured lead capture; for advanced NLP/conversational, AI natives (Intercom) better."
+    },
+    "pros": [
+      "Very accessible visual builder (no-code).",
+      "Simplified lead capture on site and WhatsApp.",
+      "Hybrid structured + AI flexible.",
+      "Native CRM integrations (HubSpot, Salesforce).",
+      "Official WhatsApp Business API.",
+      "Generous free plan."
+    ],
+    "cons": [
+      "Limited NLP (off-script conversations difficult).",
+      "Not main email marketing tool.",
+      "Less modern interface than competitors.",
+      "Simple email automation (post-lead only).",
+      "Fewer use cases beyond lead capture."
+    ],
+    "use_cases": [
+      "Lead capture and qualification via site chatbot.",
+      "WhatsApp lead gen with qualification.",
+      "Lead scoring before CRM/email handoff.",
+      "Appointment scheduling via chatbot.",
+      "Initial support/FAQ automation."
+    ]
+  }
+}

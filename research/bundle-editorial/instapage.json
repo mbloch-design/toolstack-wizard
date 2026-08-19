@@ -1,0 +1,108 @@
+{
+  "slug": "instapage",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Instapage (site officiel)", "url": "https://instapage.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de conversion complète pour landing pages, websites, email automation et lead management, orientée optimisation ROI des campagnes payantes.",
+    "what_en": "Complete conversion platform for landing pages, websites, email automation and lead management, focused on optimizing ROI of paid campaigns.",
+    "pricing_model": "Abonnements par fonctionnalités et volume ; modèle entreprise-focused",
+    "free_tier": { "exists": false, "detail": "Pas de plan gratuit ; pricing commence 99$/mois" },
+    "plans": [
+      { "name": "Core", "price": "À partir de 99 $/mois (79 $/mois annuel)" },
+      { "name": "Advanced", "price": "Montants sur la page officielle" },
+      { "name": "Enterprise", "price": "499 $-999+ /mois ou sur demande" }
+    ],
+    "key_features": [
+      "Landing page builder avancé et conversion-focused.",
+      "A/B testing et personalization engine.",
+      "Progressive profiling pour collecte data.",
+      "Email marketing intégré.",
+      "120+ intégrations (CRM, analytics, ecommerce).",
+      "Advanced analytics et attribution models."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez campagnes payantes (Google Ads, FB Ads) et optimisez ROI.",
+        "Vous need landing pages conversion-optimized multi-variantes.",
+        "Vous avez budget mid-market pour conversion optimization."
+      ],
+      "avoidIf": [
+        "Vous cherchez outil landing page simple et gratuit.",
+        "Vous avez budget très limité.",
+        "Vous ne faites pas de campagnes payantes (overkill)."
+      ],
+      "threshold": "Instapage convient aux teams conversion/paid ads optimisant ROI ; pour landing pages simples, Unbounce/Leadpages meilleur rapport."
+    },
+    "pros": [
+      "Landing pages haute-conversion et personalization.",
+      "A/B testing avancé et analytics détaillées.",
+      "120+ intégrations (CRM, ecommerce, analytics).",
+      "Progressive profiling pour data collection.",
+      "Email automation intégrée.",
+      "Attribution models avancés."
+    ],
+    "cons": [
+      "Pas de plan gratuit ; ticket d'entrée élevé.",
+      "Pricing escalade vite pour Enterprise.",
+      "Interface dense pour débutants.",
+      "Courbe apprentissage élevée.",
+      "Overkill pour usage simple."
+    ],
+    "use_cases": [
+      "Landing pages multi-variantes pour paid ads.",
+      "A/B testing et optimization conversion rate.",
+      "Progressive profiling pour lead qualification.",
+      "Email automation post-landing page.",
+      "Analytics ROI sur campagnes payantes.",
+      "Personalization content par segment."
+    ],
+    "relevant_for": [
+      "Agences performance marketing",
+      "Équipes conversion/growth",
+      "E-commerce mid-market"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage paid campaigns (Google Ads, FB Ads) and optimize ROI.",
+        "You need conversion-optimized multi-variant landing pages.",
+        "You have mid-market budget for conversion optimization."
+      ],
+      "avoidIf": [
+        "You want a simple, free landing page tool.",
+        "You have a very tight budget.",
+        "You don't run paid campaigns (overkill)."
+      ],
+      "threshold": "Instapage fits conversion/paid ads teams optimizing ROI; for simple landing pages, Unbounce/Leadpages better value."
+    },
+    "pros": [
+      "High-conversion landing pages with personalization.",
+      "Advanced A/B testing and detailed analytics.",
+      "120+ integrations (CRM, ecommerce, analytics).",
+      "Progressive profiling for data collection.",
+      "Integrated email automation.",
+      "Advanced attribution models."
+    ],
+    "cons": [
+      "No free plan; high entry ticket.",
+      "Pricing escalates quickly for Enterprise.",
+      "Dense interface for beginners.",
+      "Steep learning curve.",
+      "Overkill for simple use cases."
+    ],
+    "use_cases": [
+      "Multi-variant landing pages for paid ads.",
+      "A/B testing and conversion rate optimization.",
+      "Progressive profiling for lead qualification.",
+      "Post-landing page email automation.",
+      "ROI analytics on paid campaigns.",
+      "Personalized content by segment."
+    ]
+  }
+}

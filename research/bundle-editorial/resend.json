@@ -1,0 +1,92 @@
+{
+  "slug": "resend",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Resend — Email API (site officiel)", "url": "https://resend.com/pricing" }
+  ],
+  "facts": {
+    "what": "API email pour développeurs, optimisée pour les emails transactionnels et marketing avec SDKs modernes et intégration React Email pour une expérience développeur fluide.",
+    "what_en": "Developer-first email API for transactional and marketing emails with modern SDKs, React Email integration, and clean REST API design.",
+    "pricing_model": "Freemium avec plan gratuit limité (3 000 emails/mois). Plans Pro à partir de 20 $/mois pour emails transactionnels.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit : 3 000 emails/mois avec limite 100 emails/jour." },
+    "plans": [
+      { "name": "Free", "price": "0 $ / mois, 3 000 emails/mois, max 100/jour" },
+      { "name": "Pro (transactional)", "price": "20 $ / mois, 50 000 emails" },
+      { "name": "Pro (transactional)", "price": "35 $ / mois, 100 000 emails" },
+      { "name": "Scale (transactional)", "price": "90-1 150 $ / mois selon volume" },
+      { "name": "Pro Marketing", "price": "40-650 $ / mois selon contacts" }
+    ],
+    "key_features": [
+      "REST API minimaliste et bien documentée",
+      "React Email pour créer des emails en composants React",
+      "SDKs pour Node, Python, Go, Ruby, PHP, Java, .NET, Rust",
+      "Webhooks pour tracking des ouvertures et clics"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes développeur envoyant principalement des emails transactionnels.",
+        "Vous aimez les APIs modernes et bien documentées.",
+        "Vous travaillez avec React/Next.js et voulez React Email.",
+        "Vous préférez un UX développeur avant tout."
+      ],
+      "avoidIf": [
+        "Vous ne savez pas coder (pas d'interface drag-and-drop).",
+        "Vous cherchez une plateforme marketing complète.",
+        "Vous n'avez besoin que d'emails marketing (hors transactionnel)."
+      ],
+      "threshold": "Resend excelle pour les développeurs ; pour les marketers non-techniques ou le marketing email classique, Mailgun ou Moosend sont plus adaptés."
+    },
+    "pros": [
+      "Excellente expérience développeur (API claire, SDKs modernes).",
+      "React Email pour créer des emails en composants React.",
+      "Plan gratuit généreux pour débuter.",
+      "Tarif agressif au volume d'e-mails envoyés."
+    ],
+    "cons": [
+      "Aucune interface visuelle pour créer des templates.",
+      "Nécessite des connaissances en programmation.",
+      "Moins mature que Mailgun (2023 launch)."
+    ],
+    "use_cases": [
+      "Envoyer les emails de confirmation et de réinitialisation d'une app SaaS.",
+      "Construire des templates email en React.",
+      "Intégrer l'email dans une application Next.js."
+    ],
+    "relevant_for": ["Développeurs", "Startups techniques", "Développeurs React/Next.js"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a developer building transactional email features.",
+        "You prefer modern, well-documented APIs.",
+        "You work with React/Next.js and want component-driven email.",
+        "Developer experience is your top priority."
+      ],
+      "avoidIf": [
+        "You're non-technical and need a visual builder.",
+        "You focus on marketing campaigns, not transactional email.",
+        "You require a full CMS for email templates."
+      ],
+      "threshold": "Resend is best for developers who want API elegance; non-technical teams should use a marketing-first platform like Brevo or Moosend."
+    },
+    "pros": [
+      "Excellent developer experience with modern API design.",
+      "React Email for building emails as React components.",
+      "Competitive pricing and generous free plan.",
+      "Top-notch documentation and SDK support."
+    ],
+    "cons": [
+      "No visual email builder.",
+      "Requires code to use effectively.",
+      "Newer player compared to Mailgun or SendGrid."
+    ],
+    "use_cases": [
+      "Send SaaS app transactional emails (verification, password reset).",
+      "Build email templates with React components.",
+      "Integrate email into a Next.js application."
+    ]
+  }
+}

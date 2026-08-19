@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "kit",
+    "name": "Kit",
+    "url": "https://kit.com"
+  },
+  {
+    "slug": "landbot",
+    "name": "Landbot",
+    "url": "https://landbot.io"
+  },
+  {
+    "slug": "later",
+    "name": "Later",
+    "url": "https://later.com"
+  },
+  {
+    "slug": "leadflow",
+    "name": "Leadflow",
+    "url": "https://leadflow.com"
+  },
+  {
+    "slug": "lemlist",
+    "name": "Lemlist",
+    "url": "https://www.lemlist.com"
+  },
+  {
+    "slug": "loops",
+    "name": "Loops",
+    "url": "https://loops.so"
+  },
+  {
+    "slug": "lusha",
+    "name": "Lusha",
+    "url": "https://www.lusha.com"
+  },
+  {
+    "slug": "mailchimp",
+    "name": "Mailchimp",
+    "url": "https://mailchimp.com"
+  },
+  {
+    "slug": "mailerlite",
+    "name": "Mailerlite",
+    "url": "https://mailerlite.com"
+  }
+]

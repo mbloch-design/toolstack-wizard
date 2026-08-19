@@ -1,0 +1,90 @@
+{
+  "slug": "pushowl-web-push-notifications",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "PushOwl — Web Push Notifications (site officiel)", "url": "https://www.pushowl.com/" }
+  ],
+  "facts": {
+    "what": "Application Shopify pour envoyer des notifications push web aux clients, permettant des campagnes de remarketing, des alertes de stock et des promotions sans email.",
+    "what_en": "Shopify app for sending web push notifications to customers, enabling remarketing campaigns, stock alerts, and promotions without email.",
+    "pricing_model": "Freemium avec plan gratuit illimité, plans payants à partir de 19 $/mois pour plus de contacts.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit illimité : jusqu'à 500 abonnés et messages illimités." },
+    "plans": [
+      { "name": "Free", "price": "0 $ / mois, 500 abonnés, messages illimités" },
+      { "name": "Pro", "price": "19 $ / mois, 2 500 abonnés, messages illimités" },
+      { "name": "Enterprise", "price": "Tarification sur demande, gestion de compte dédiée" }
+    ],
+    "key_features": [
+      "Notifications push web",
+      "Automatisation de l'abandon de panier",
+      "Alertes de disponibilité des stocks",
+      "Analytics et segmentation"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez un site Shopify et voulez des notifs push.",
+        "Vous cherchez à récupérer les paniers abandonnés.",
+        "Vous avez besoin d'alertes de stock sans surcharger l'email.",
+        "Vous cherchez une solution abordable et simple."
+      ],
+      "avoidIf": [
+        "Vous ne ciblez pas les clients Shopify.",
+        "Vous avez déjà une solution complète de marketing automation.",
+        "Les notifications push ne correspondent pas à votre stratégie marketing."
+      ],
+      "threshold": "PushOwl excelle pour les boutiques Shopify cherchant une solution push simple et bon marché ; pour un besoin multi-canal plus large, considérez un outil comme Brevo."
+    },
+    "pros": [
+      "Plan gratuit très généreux (500 abonnés, messages illimités).",
+      "Interface simple et setup rapide.",
+      "Possibilité de récupérer les paniers abandonnés.",
+      "Tarif très abordable pour le plan payant."
+    ],
+    "cons": [
+      "Limité à Shopify (pas d'autre plateforme e-commerce support).",
+      "Les notifs push web ont des taux d'engagement plus bas que l'email.",
+      "Peu de fonctionnalités avancées d'automatisation."
+    ],
+    "use_cases": [
+      "Relancer les clients qui ont abandonné leur panier.",
+      "Notifier les clients de la disponibilité d'un produit.",
+      "Promouvoir une vente flash ou un nouveau produit."
+    ],
+    "relevant_for": ["Boutiques Shopify", "Dropshippers", "E-commerce solopreneurs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You run a Shopify store and want push notifications.",
+        "You want to recover abandoned carts without email overload.",
+        "You need an affordable, straightforward push solution.",
+        "You want stock alerts for popular items."
+      ],
+      "avoidIf": [
+        "Your store isn't on Shopify.",
+        "You need comprehensive marketing automation (SMS, email, push all together).",
+        "Web push notifications are outside your marketing strategy."
+      ],
+      "threshold": "PushOwl is perfect for Shopify stores wanting simple, low-cost push notifications; for broader omnichannel marketing, look at Brevo or similar platforms."
+    },
+    "pros": [
+      "Extremely generous free plan with unlimited messages.",
+      "Quick setup and intuitive dashboard.",
+      "Proven to recover abandoned carts.",
+      "Very affordable Pro plan."
+    ],
+    "cons": [
+      "Shopify-only; doesn't work with WooCommerce or other platforms.",
+      "Push notifications have lower engagement than email.",
+      "Limited automation depth compared to full platforms."
+    ],
+    "use_cases": [
+      "Send abandoned cart reminders without email.",
+      "Alert customers when out-of-stock items are back.",
+      "Promote flash sales to engaged visitors."
+    ]
+  }
+}

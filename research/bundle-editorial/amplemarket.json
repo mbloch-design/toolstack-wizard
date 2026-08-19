@@ -1,0 +1,92 @@
+{
+  "slug": "amplemarket",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Amplemarket (site officiel)", "url": "https://www.amplemarket.com" }
+  ],
+  "facts": {
+    "what": "Plateforme d'engagement multi-canal (email, LinkedIn, phone, SMS, WhatsApp, iMessage, voix IA) pour la prospection B2B, avec IA pour la recherche de leads et l'enrichissement de données.",
+    "what_en": "Multi-channel sales engagement platform (email, LinkedIn, phone, SMS, WhatsApp, iMessage, AI voice) for B2B prospecting with AI-powered lead research and data enrichment.",
+    "pricing_model": "Abonnement annuel uniquement, tarification sur demande avec contrats à l'année",
+    "free_tier": { "exists": false, "detail": "Pas de plan gratuit ; essai disponible sur demande" },
+    "plans": [
+      { "name": "Forfait unique", "price": "À partir de montants sur la page officielle (contrats annuels)" }
+    ],
+    "key_features": [
+      "7 canaux de prospection (email, phone, LinkedIn, SMS, WhatsApp, iMessage, voix IA)",
+      "Duo Copilot : IA analysant millions de signaux pour identifier opportunités",
+      "Base de 200M+ contacts vérifiés avec enrichissement de données",
+      "Séquences adaptatives déclenchées par signaux (job change, competitive intelligence)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous faites de la prospection B2B intensive et besoin d'une multi-canal.",
+        "Vous avez des listes de leads volumineuses à qualifier et enrichir.",
+        "Vous acceptez un contrat annuel et un budget marketing conséquent."
+      ],
+      "avoidIf": [
+        "Vous cherchez un outil de prospection simple et gratuit.",
+        "Vous préférez une facturation mensuelle flexible.",
+        "Vous débutez avec la prospection B2B."
+      ],
+      "threshold": "Amplemarket convient aux équipes scaling la prospection multi-canal ; pour débuter ou avec budget limité, d'autres outils gratuits/freemium suffisent."
+    },
+    "pros": [
+      "Multi-canal robuste et intégré (7 canaux).",
+      "IA copilot pour rechercher et qualifier les leads.",
+      "Base de contacts vérifiés mondiale (200M+).",
+      "Automatisation des séquences déclenchées par signaux."
+    ],
+    "cons": [
+      "Pas de plan gratuit.",
+      "Contrat annuel obligatoire (pas de mois à mois).",
+      "Prix élevé pour les petites équipes.",
+      "Courbe d'apprentissage pour exploiter la multi-canal."
+    ],
+    "use_cases": [
+      "Générer et qualifier des leads B2B à grande échelle.",
+      "Coordonner prospection email + LinkedIn + phone.",
+      "Automatiser des séquences déclenchées par changements détectés."
+    ],
+    "relevant_for": [
+      "Équipes commerciales B2B",
+      "Agences de prospection",
+      "Scale-ups en croissance"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're doing intensive B2B prospecting and need multi-channel outreach.",
+        "You have large lead lists to qualify and enrich.",
+        "You're committed to annual contracts and have a marketing budget."
+      ],
+      "avoidIf": [
+        "You want a simple, free prospecting tool.",
+        "You prefer flexible month-to-month billing.",
+        "You're new to B2B prospecting."
+      ],
+      "threshold": "Amplemarket fits teams scaling multi-channel prospecting; for beginners or tight budgets, free/freemium alternatives are sufficient."
+    },
+    "pros": [
+      "Robust, integrated multi-channel (7 channels).",
+      "AI copilot for lead research and qualification.",
+      "Verified global contact database (200M+).",
+      "Automated sequences triggered by behavioral signals."
+    ],
+    "cons": [
+      "No free plan.",
+      "Annual contracts required (no monthly options).",
+      "Expensive for small teams.",
+      "Learning curve to maximize multi-channel capabilities."
+    ],
+    "use_cases": [
+      "Generate and qualify B2B leads at scale.",
+      "Coordinate email + LinkedIn + phone prospecting.",
+      "Automate sequences triggered by job changes and market signals."
+    ]
+  }
+}

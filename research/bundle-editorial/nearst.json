@@ -1,0 +1,86 @@
+{
+  "slug": "nearst",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "NearSt — Plateforme d'inventaire (site officiel)", "url": "https://near.st/" }
+  ],
+  "facts": {
+    "what": "Solution de technologie retail qui connecte l'inventaire en magasin à Google, Meta et d'autres plateformes de recherche locale, envoyant les clients en ligne vers les boutiques physiques.",
+    "what_en": "Retail tech platform that surfaces in-store inventory on Google, Meta, and other local search platforms to drive online shoppers into physical stores.",
+    "pricing_model": "Modèle commercial basé sur les partenariats et les intégrations ; tarification disponible sur demande auprès de l'équipe commerciale.",
+    "free_tier": { "exists": false, "detail": "Pas de plan gratuit. Intégration sur devis." },
+    "plans": [
+      { "name": "Plans", "price": "Montants sur demande auprès de NearSt" }
+    ],
+    "key_features": [
+      "Synchronisation automatique de l'inventaire en magasin",
+      "Intégration Google Shopping et Meta Catalog",
+      "Suivi des performances en magasin",
+      "Support pour toutes les chaînes POS"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes un retailer avec une présence physique importante.",
+        "Vous voulez diriger du trafic en ligne vers vos magasins.",
+        "Vous cherchez à augmenter vos ventes en magasin par la visibilité locale en ligne."
+      ],
+      "avoidIf": [
+        "Vous êtes purement e-commerce (sans boutiques physiques).",
+        "Vous avez un petit nombre de points de vente (1-2 boutiques).",
+        "Votre inventaire change peu ou n'est pas numérisé."
+      ],
+      "threshold": "NearSt convient aux chaînes retail multi-locales cherchant à optimiser le trafic en magasin ; pour un nombre limité de points de vente, le ROI peut ne pas justifier l'investissement."
+    },
+    "pros": [
+      "Résout un problème majeur pour les retailers : diriger le trafic en ligne vers les boutiques.",
+      "Intégrations simples avec la plupart des systèmes POS.",
+      "Vue en temps réel de l'inventaire en magasin.",
+      "Soutenu par des investisseurs majeurs (Google, Grosvenor)."
+    ],
+    "cons": [
+      "Pas de tarification publique ; processus commercial long.",
+      "Dépend de la synchronisation POS (peut être complexe).",
+      "Pertinent surtout pour les chaînes multi-locales."
+    ],
+    "use_cases": [
+      "Afficher la disponibilité des produits en magasin sur Google Shopping.",
+      "Augmenter le trafic en magasin via des résultats de recherche locale.",
+      "Gérer l'inventaire cross-channel (en ligne et en magasin)."
+    ],
+    "relevant_for": ["Chaînes de retail", "Franchise", "Commerce à plusieurs points de vente"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You operate multiple physical retail locations.",
+        "You want to capture online searchers and convert them to in-store visits.",
+        "You have digitized point-of-sale and inventory systems."
+      ],
+      "avoidIf": [
+        "You're purely e-commerce with no physical stores.",
+        "You operate only one or two locations.",
+        "Your inventory is not regularly updated."
+      ],
+      "threshold": "NearSt is ideal for multi-location retailers seeking to drive foot traffic; smaller chains may find the investment hard to justify."
+    },
+    "pros": [
+      "Directly addresses the retail challenge of online-to-offline conversion.",
+      "Seamless integration with major search platforms.",
+      "Real-time inventory visibility to shoppers.",
+      "Backed by credible investors."
+    ],
+    "cons": [
+      "No public pricing; custom sales process required.",
+      "Success depends on POS system quality and sync.",
+      "Primarily suited for established retail chains."
+    ],
+    "use_cases": [
+      "Show store-specific product availability on Google.",
+      "Convert local search traffic into store visits.",
+      "Manage omnichannel inventory (online and offline)."
+    ]
+  }
+}

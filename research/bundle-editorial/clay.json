@@ -1,0 +1,103 @@
+{
+  "slug": "clay",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Clay (site officiel)", "url": "https://clay.com" }
+  ],
+  "facts": {
+    "what": "Plateforme d'orchestration de données (non-database) connectant 150+ providers d'enrichissement (emails, phones, intent data) pour la prospection B2B, via approche \"waterfall\".",
+    "what_en": "Data orchestration platform (not a database) connecting 150+ enrichment providers (emails, phones, intent data) for B2B prospecting via waterfall approach.",
+    "pricing_model": "Abonnements par volume d'appels API ; modèle usage-based",
+    "free_tier": { "exists": true, "detail": "Plan gratuit avec crédits limités pour tester ; accès réduit aux 150+ providers" },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (crédits limités)" },
+      { "name": "Starter", "price": "Montants sur la page officielle" },
+      { "name": "Growth", "price": "Montants sur la page officielle" },
+      { "name": "Enterprise", "price": "Montants sur demande" }
+    ],
+    "key_features": [
+      "150+ intégrations enrichissement (Apollo, Clearbit, Hunter, Lusha, etc.).",
+      "Approche \"waterfall\" pour découverte email (80%+ accuracy si bien configuré).",
+      "Orchestration via workflows table-based.",
+      "Intégrations CRM et API pour automation.",
+      "Pas un outil d'envoi ; orchestration uniquement.",
+      "Curbe d'apprentissage élevée."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez une grande liste de leads à enrichir multi-sources.",
+        "Vous acceptez une courbe d'apprentissage et configuration manuelle.",
+        "Vous avez besoin d'un enrichissement d'e-mails très fiable via waterfall."
+      ],
+      "avoidIf": [
+        "Vous cherchez un outil plug-and-play simple.",
+        "Vous voulez un seul provider d'enrichissement.",
+        "Vous avez budget très limité."
+      ],
+      "threshold": "Clay gagne pour multi-source enrichment versus single-provider ; pour besoin simple, Hunter/Apollo seuls suffisent."
+    },
+    "pros": [
+      "150+ providers d'enrichissement en un endroit.",
+      "Waterfall approach = meilleure accuracy emails.",
+      "Workflows flexibles via table interface.",
+      "Intégrations CRM et API.",
+      "Plan gratuit accessible pour tester."
+    ],
+    "cons": [
+      "Courbe d'apprentissage très élevée.",
+      "Pas un outil d'envoi (orchestration seulement).",
+      "Coûteux (API calls pricing escalade).",
+      "Exactitude dépend configuration, pas \"magie\".",
+      "Maintenance workflow requise."
+    ],
+    "use_cases": [
+      "Enrichir liste leads via multiple sources.",
+      "Recherche d'e-mails en waterfall, à forte fiabilité.",
+      "Data cleaning et normalisation workflow.",
+      "Prospection complexe multi-signal."
+    ],
+    "relevant_for": [
+      "Équipes sales avancées",
+      "Agences prospection",
+      "Teams RevOps"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You have large lead lists needing multi-source enrichment.",
+        "You're willing to accept a learning curve and manual configuration.",
+        "You need highly reliable waterfall email enrichment."
+      ],
+      "avoidIf": [
+        "You want a simple plug-and-play tool.",
+        "You prefer a single enrichment provider.",
+        "Your budget is very tight."
+      ],
+      "threshold": "Clay wins for multi-source enrichment vs single-provider; for simple needs, Hunter/Apollo alone suffice."
+    },
+    "pros": [
+      "150+ enrichment providers in one place.",
+      "Waterfall approach for better email accuracy.",
+      "Flexible workflows via table interface.",
+      "CRM integrations and API.",
+      "Free tier to test."
+    ],
+    "cons": [
+      "Very steep learning curve.",
+      "Not a sending tool (orchestration only).",
+      "Expensive (API call pricing escalates).",
+      "Accuracy depends on configuration, not magic.",
+      "Workflow maintenance required."
+    ],
+    "use_cases": [
+      "Enrich lead lists via multiple sources.",
+      "Recherche d'e-mails en waterfall, à forte fiabilité.",
+      "Data cleaning and normalization workflows.",
+      "Complex multi-signal prospecting."
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "slug": "rocketlink",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "RocketLink — Link Retargeting Platform (site officiel)", "url": "https://rocketlink.io/" }
+  ],
+  "facts": {
+    "what": "Plateforme de gestion et de retargeting de liens, permettant de raccourcir les URLs, ajouter du branding personnalisé et des pixels de retargeting pour capturer et reconnecter l'audience.",
+    "what_en": "Link management and retargeting platform to shorten URLs, add custom branding, and deploy retargeting pixels to capture and reconnect audiences.",
+    "pricing_model": "Tarification sur demande. Plan gratuit limité disponible.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit avec fonctionnalités limitées ; plans payants sur demande." },
+    "plans": [
+      { "name": "Free", "price": "0 $ / mois, fonctionnalités de base" },
+      { "name": "Pro/Business", "price": "Montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Raccourcissement d'URLs avec domaines personnalisés",
+      "Pixels de retargeting",
+      "Overlays d'appel à l'action",
+      "Analytics et suivi des clics"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous partagez beaucoup de liens LinkedIn, Twitter ou d'autres réseaux.",
+        "Vous voulez capturer l'audience via des pixels de retargeting.",
+        "Vous cherchez à raccourcir les URLs tout en gardant du contrôle sur le branding."
+      ],
+      "avoidIf": [
+        "Vous n'utilisez pas la publicité display ou de retargeting.",
+        "Vous êtes satisfait des raccourcisseurs d'URL gratuits simples.",
+        "Vos liens ne méritent pas de retargeting."
+      ],
+      "threshold": "RocketLink convient aux marketeurs faisant beaucoup de retargeting ; pour partager simplement des liens, des outils gratuits comme Bitly suffisent."
+    },
+    "pros": [
+      "Domaines personnalisés pour garder le branding.",
+      "Pixels de retargeting intégrés.",
+      "Overlays d'appel à l'action.",
+      "Plan gratuit pour débuter."
+    ],
+    "cons": [
+      "Tarification payante opaque (sur demande).",
+      "Cas d'usage limité à ceux ayant une stratégie de retargeting.",
+      "Moins connu que les alternatives."
+    ],
+    "use_cases": [
+      "Raccourcir des liens LinkedIn tout en trackant les clics.",
+      "Ajouter des overlays CTA sur les contenus externes.",
+      "Créer des audiences de retargeting basées sur les clics de liens."
+    ],
+    "relevant_for": ["Marketeurs", "Growth hackers", "Créateurs de contenu"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You share links frequently on social media and need retargeting.",
+        "You want branded links with tracking and pixel integration.",
+        "You have a display/retargeting budget for reconnecting audiences."
+      ],
+      "avoidIf": [
+        "You don't use display ads or retargeting campaigns.",
+        "A free URL shortener like Bitly is enough for your needs.",
+        "Link analytics aren't critical to your strategy."
+      ],
+      "threshold": "RocketLink is for marketers investing in retargeting campaigns; for simple link sharing, Bitly or native platform shorteners work fine."
+    },
+    "pros": [
+      "Custom branded domains for link trust.",
+      "Built-in retargeting pixel integration.",
+      "CTA overlays on external links.",
+      "Free plan to test."
+    ],
+    "cons": [
+      "Pricing not transparent; requires contact.",
+      "Use case is fairly niche (retargeting-focused).",
+      "Less market awareness than Bitly."
+    ],
+    "use_cases": [
+      "Shorten LinkedIn links while tracking clicks and audience.",
+      "Add CTAs to external content links.",
+      "Build retargeting audiences from link clicks."
+    ]
+  }
+}

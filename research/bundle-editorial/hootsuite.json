@@ -1,0 +1,104 @@
+{
+  "slug": "hootsuite",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Hootsuite (site officiel)", "url": "https://hootsuite.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de gestion des réseaux sociaux enterprise pour scheduling, social listening, team management et engagement, avec intégrations Mailchimp pour email.",
+    "what_en": "Enterprise social media management platform for scheduling, social listening, team management and engagement, with Mailchimp integrations for email.",
+    "pricing_model": "Abonnements par nombre d'utilisateurs et fonctionnalités ; modèle enterprise-first",
+    "free_tier": { "exists": false, "detail": "Pas de plan gratuit ; entreprises/agences seulement" },
+    "plans": [
+      { "name": "Team", "price": "Montants sur la page officielle" },
+      { "name": "Business", "price": "Montants sur la page officielle" },
+      { "name": "Enterprise", "price": "Montants sur demande" }
+    ],
+    "key_features": [
+      "Scheduling posts multi-plateforme (Twitter, Facebook, LinkedIn, Instagram, etc).",
+      "Social listening et monitoring real-time.",
+      "Hootsuite Inbox : messages centralisés de tous réseaux.",
+      "Team management et role-based access.",
+      "Intégration Mailchimp pour email marketing.",
+      "Analytics dashboard enterprise."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes une agence/enterprise gérant plusieurs clients sociaux.",
+        "Vous besoin social listening et monitoring avancés.",
+        "Vous combinez réseaux sociaux + email (Mailchimp)."
+      ],
+      "avoidIf": [
+        "Vous êtes freelance/petite team (overkill et prix élevé).",
+        "Vous cherchez un outil email principal (utiliser Mailchimp/Brevo direct).",
+        "Vous avez très petit budget."
+      ],
+      "threshold": "Hootsuite convient aux agences/enterprise ; pour PME, Later/Buffer meilleur rapport qualité-prix."
+    },
+    "pros": [
+      "Social listening robuste et monitoring mentions.",
+      "Team management et collaboration avancée.",
+      "Inbox centralisé pour tous réseaux.",
+      "Intégration Mailchimp native.",
+      "Enterprise-grade security et support."
+    ],
+    "cons": [
+      "Pas de plan gratuit (overkill pour solopreneurs).",
+      "Prix élevé pour petites équipes.",
+      "Interface dense et courbe apprentissage.",
+      "Pas principal pour email (Mailchimp seulement).",
+      "Moins innovant que Later/Buffer."
+    ],
+    "use_cases": [
+      "Agence gérant réseaux sociaux de clients.",
+      "Enterprise social listening et brand monitoring.",
+      "Team collaboration sur réseaux sociaux.",
+      "Coordination réseaux + email (Mailchimp).",
+      "Analytics et reporting executives."
+    ],
+    "relevant_for": [
+      "Agences marketing",
+      "Entreprises multi-équipes",
+      "Grandes marques avec presence sociale"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're an agency/enterprise managing multiple social clients.",
+        "You need advanced social listening and monitoring.",
+        "You combine social + email (Mailchimp)."
+      ],
+      "avoidIf": [
+        "You're a freelancer/small team (overkill and expensive).",
+        "You want email as primary focus (use Mailchimp/Brevo directly).",
+        "You have a very tight budget."
+      ],
+      "threshold": "Hootsuite fits agencies/enterprises; for SMBs, Later/Buffer better value."
+    },
+    "pros": [
+      "Robust social listening and mention monitoring.",
+      "Advanced team management and collaboration.",
+      "Centralized inbox for all networks.",
+      "Native Mailchimp integration.",
+      "Enterprise-grade security and support."
+    ],
+    "cons": [
+      "No free plan (overkill for solopreneurs).",
+      "Expensive for small teams.",
+      "Dense interface and steep learning curve.",
+      "Not primary for email (Mailchimp only).",
+      "Less innovative than Later/Buffer."
+    ],
+    "use_cases": [
+      "Manage social networks for multiple clients.",
+      "Enterprise social listening and brand monitoring.",
+      "Team collaboration on social networks.",
+      "Coordinate social + email (Mailchimp).",
+      "Executive analytics and reporting."
+    ]
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "slug": "moosend",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Moosend Pricing (site officiel)", "url": "https://moosend.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Plateforme de marketing par email tout-en-un offrant l'automatisation, des landing pages et des formulaires d'inscription, avec des tarifs très compétitifs dès le départ.",
+    "what_en": "All-in-one email marketing platform with automation, landing pages, and signup forms at highly competitive starting prices.",
+    "pricing_model": "Abonnement par nombre de contacts, débutant à partir d'une version gratuite. Plans Pro et Moosend+. Tarification pro : à partir de 9 $/mois pour 500 contacts.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit 30 jours avec 1 000 contacts inclus et envois illimités. Pas de plan gratuit permanent." },
+    "plans": [
+      { "name": "Pro (500 contacts)", "price": "9 $ / mois" },
+      { "name": "Pro (5 000 contacts)", "price": "35 $ / mois" },
+      { "name": "Pro (50 000 contacts)", "price": "315 $ / mois" },
+      { "name": "Pro (1 M contacts)", "price": "5 840 $ / mois" },
+      { "name": "Réduction annuelle", "price": "15 % avec contrat annuel ; 20 % si paiement annuel d'avance" }
+    ],
+    "key_features": [
+      "Automatisation email illimitée",
+      "Landing pages et formulaires",
+      "Tests A/B",
+      "Segmentation avancée"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez une solution email marketing simple et abordable.",
+        "Vous avez besoin d'automatisation et de landing pages.",
+        "Vous gérez plusieurs milliers de contacts."
+      ],
+      "avoidIf": [
+        "Vous avez des besoins SMS ou multichannel avancés.",
+        "Vous ne voulez que des emails transactionnels simples.",
+        "Vous n'avez que quelques centaines de contacts."
+      ],
+      "threshold": "Moosend excelle pour les petites entreprises et agences ; pour les grands volumes ou les besoins multi-canal, Brevo offre plus de fonctionnalités."
+    },
+    "pros": [
+      "Tarif très compétitif dès le départ.",
+      "Automatisation email puissante incluse.",
+      "Landing pages et formulaires intégrés.",
+      "Essai gratuit généreux."
+    ],
+    "cons": [
+      "Pas de plan gratuit permanent.",
+      "Moins de templates préconstruits que les concurrents.",
+      "Support client limité aux heures de bureau selon certains avis."
+    ],
+    "use_cases": [
+      "Gérer une newsletter pour une petite entreprise.",
+      "Créer une séquence d'automatisation pour les leads.",
+      "Lancer une campagne email pour un lancement de produit."
+    ],
+    "relevant_for": ["Petites entreprises", "Freelances", "Agences marketing"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want affordable email marketing with strong automation.",
+        "You need landing pages and forms alongside email.",
+        "You're managing hundreds to tens of thousands of contacts."
+      ],
+      "avoidIf": [
+        "You need multi-channel (SMS, push) in one platform.",
+        "You have very simple, low-volume transactional needs.",
+        "You require advanced CRM features."
+      ],
+      "threshold": "Moosend is excellent for small businesses and agencies on a budget; for enterprise scale or complex workflows, consider Brevo or HubSpot."
+    },
+    "pros": [
+      "Excellent value proposition from day one.",
+      "Unlimited email sends included.",
+      "Integrated landing pages and forms.",
+      "Powerful automation without complexity."
+    ],
+    "cons": [
+      "No permanent free tier.",
+      "Smaller template library compared to competitors.",
+      "Limited advanced segmentation options in base plans."
+    ],
+    "use_cases": [
+      "Launch your first email campaign as a solopreneur.",
+      "Build automated nurture sequences for leads.",
+      "Grow an email list with integrated signup forms."
+    ]
+  }
+}

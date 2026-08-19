@@ -1,0 +1,110 @@
+{
+  "slug": "mailchimp",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Mailchimp (site officiel)", "url": "https://mailchimp.com" }
+  ],
+  "facts": {
+    "what": "Plateforme email marketing et CRM pour SMB (Intuit-owned), avec automations \"Flows\", AI subject line generator, et rebranding 2025 vers marketing platform complète.",
+    "what_en": "Email marketing and CRM platform for SMBs (Intuit-owned) with visual \"Flows\" automation, AI subject line generator, and 2025 rebrand toward complete marketing platform.",
+    "pricing_model": "Plan gratuit limité + abonnements par nombre de contacts",
+    "free_tier": { "exists": true, "detail": "Plan gratuit réduit (2024-2025) : contacts et envois limités ; upgrade pour features avancées" },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (contacts/sends limités)" },
+      { "name": "Essentials", "price": "Montants sur la page officielle" },
+      { "name": "Standard", "price": "Montants sur la page officielle" },
+      { "name": "Premium", "price": "Montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Email marketing avec AI subject line generator.",
+      "Automations \"Flows\" visuelles (welcome, cart abandon, re-engagement).",
+      "CRM léger intégré.",
+      "SMS marketing (2026 update).",
+      "E-commerce automations et abandoned cart.",
+      "AI predictive analytics et segmentation.",
+      "Planning automation par 11+ millions users."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous débutez email marketing et cherchez outil gratuit/affordable.",
+        "Vous êtes SMB/e-commerce avec setup simple priorité.",
+        "Vous cherchez alternative abordable à ActiveCampaign."
+      ],
+      "avoidIf": [
+        "Vous cherchez automation très avancée (ActiveCampaign mieux).",
+        "Vous n'envoyez que très peu d'emails (Brevo better model).",
+        "Vous avez besoin CRM complet (HubSpot mieux)."
+      ],
+      "threshold": "Mailchimp wins pour SMB/ecommerce gratuit ; pour automation avancée, ActiveCampaign/GetResponse meilleur."
+    },
+    "pros": [
+      "Plan gratuit durable (bien que réduit en 2024-25).",
+      "Interface simple et intuitive.",
+      "AI subject line generator et predictive segmentation.",
+      "Automations \"Flows\" visuelles faciles.",
+      "SMS intégré (2026 update).",
+      "11M+ users = confiance/stabilité."
+    ],
+    "cons": [
+      "Plan gratuit réduit (contacts/sends limités).",
+      "Automation moins flexible qu'ActiveCampaign.",
+      "CRM très léger.",
+      "Interface moins moderne que concurrents.",
+      "Deliverability moins robuste que Brevo/Campaigner.",
+      "Pricing escalade rapidement."
+    ],
+    "use_cases": [
+      "E-commerce avec emails abandonment et promotions.",
+      "Newsletter simple pour SMB.",
+      "Automations welcome + onboarding.",
+      "Segmentation basic et analytics.",
+      "SMS + email coordonnés (2026)."
+    ],
+    "relevant_for": [
+      "PME et e-commerce",
+      "Débutants email marketing",
+      "Budget-conscious teams"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're starting email marketing and want a free/affordable tool.",
+        "You're an SMB/e-commerce prioritizing simplicity.",
+        "You want an affordable ActiveCampaign alternative."
+      ],
+      "avoidIf": [
+        "You need very advanced automation (ActiveCampaign better).",
+        "You send very infrequent email (Brevo better model).",
+        "You need a complete CRM (HubSpot better)."
+      ],
+      "threshold": "Mailchimp wins for SMB/ecommerce free tier; for advanced automation, ActiveCampaign/GetResponse better."
+    },
+    "pros": [
+      "Permanent free tier (though reduced in 2024-25).",
+      "Simple and intuitive interface.",
+      "AI subject line generator and predictive segmentation.",
+      "Easy visual \"Flows\" automations.",
+      "SMS integrated (2026 update).",
+      "11M+ users = trust/stability."
+    ],
+    "cons": [
+      "Reduced free tier (limited contacts/sends).",
+      "Automation less flexible than ActiveCampaign.",
+      "Very light CRM.",
+      "Less modern interface than competitors.",
+      "Deliverability less robust than Brevo/Campaigner.",
+      "Pricing escalates quickly."
+    ],
+    "use_cases": [
+      "E-commerce with abandonment and promotional emails.",
+      "Simple newsletter for SMBs.",
+      "Welcome + onboarding automations.",
+      "Basic segmentation and analytics.",
+      "Coordinated SMS + email (2026)."
+    ]
+  }
+}

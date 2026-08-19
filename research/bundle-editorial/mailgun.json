@@ -1,0 +1,91 @@
+{
+  "slug": "mailgun",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Mailgun Pricing (site officiel)", "url": "https://mailgun.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme d'API email pour développeurs, permettant d'envoyer, recevoir et tracker des emails transactionnels et marketing à grande échelle.",
+    "what_en": "Email API platform for developers to send, receive, and track transactional and marketing emails at scale.",
+    "pricing_model": "Abonnement par volume d'emails mensuels, avec un plan gratuit limité et paliers à 15, 35, 90 euros/mois.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit : 100 emails/jour." },
+    "plans": [
+      { "name": "Free", "price": "0 $ / mois, 100 emails/jour" },
+      { "name": "Basic", "price": "15 $ / mois, 10 000 emails/mois" },
+      { "name": "Foundation", "price": "35 $ / mois, 50 000 emails/mois" },
+      { "name": "Scale", "price": "90 $ / mois, 100 000 emails/mois" },
+      { "name": "Overage", "price": "1,10 à 1,80 $ par 1 000 emails supplémentaires" },
+      { "name": "IP dédié", "price": "59 $ / mois (add-on)" }
+    ],
+    "key_features": [
+      "API REST et SMTP relay",
+      "Tracking des ouvertures, clics, bounces",
+      "Webhooks pour intégrations",
+      "Support multilingue"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez une application web et avez besoin d'envoyer des emails transactionnels.",
+        "Vous gérez des campagnes marketing à fort volume.",
+        "Vous avez besoin de webhook et d'une API robuste."
+      ],
+      "avoidIf": [
+        "Vous cherchez une plateforme all-in-one sans expertise technique.",
+        "Vous ne voulez que quelques centaines d'emails par mois.",
+        "Vous avez besoin de templates de newsletter préconstruits."
+      ],
+      "threshold": "Mailgun convient aux développeurs et aux équipes techniques ; pour les utilisateurs non-techniques, une plateforme SaaS généraliste (Brevo, Moosend) sera plus accessible."
+    },
+    "pros": [
+      "API flexible et bien documentée.",
+      "Excellent rapport qualité-prix jusqu'à 100 000 emails/mois.",
+      "Webhooks puissants et features de tracking.",
+      "Plan gratuit généreux pour débuter."
+    ],
+    "cons": [
+      "Nécessite des connaissances techniques pour l'intégration.",
+      "IP partagé inclus ; IP dédié coûteux.",
+      "Pas de templates drag-and-drop."
+    ],
+    "use_cases": [
+      "Envoyer des emails de confirmation d'inscription.",
+      "Notifier les utilisateurs via email dans une application SaaS.",
+      "Gérer les campagnes transactionnelles avec tracking détaillé."
+    ],
+    "relevant_for": ["Développeurs", "Startups techniques", "Équipes DevOps"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a developer building an email feature into an app.",
+        "You need reliable transactional email delivery at scale.",
+        "You want fine-grained control via API and webhooks."
+      ],
+      "avoidIf": [
+        "You need a visual campaign builder.",
+        "Your use case is very low volume (under 1,000 emails/month).",
+        "You prefer hosted email marketing without coding."
+      ],
+      "threshold": "Mailgun is ideal for developers; for non-technical marketing teams, Brevo or Moosend offer a more user-friendly interface."
+    },
+    "pros": [
+      "Powerful, well-documented REST API.",
+      "Strong deliverability and reputation management.",
+      "Excellent value at scale.",
+      "Flexible webhooks and logging."
+    ],
+    "cons": [
+      "Requires development work to integrate.",
+      "Limited marketing features compared to all-in-one platforms.",
+      "Shared IP on base plans."
+    ],
+    "use_cases": [
+      "Send transactional emails from SaaS apps.",
+      "Build triggered email workflows via API.",
+      "Handle bounce and complaint management at scale."
+    ]
+  }
+}

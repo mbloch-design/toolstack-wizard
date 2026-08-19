@@ -1,0 +1,90 @@
+{
+  "slug": "replyio",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Reply.io — Sales Engagement Platform (site officiel)", "url": "https://reply.io/pricing/" }
+  ],
+  "facts": {
+    "what": "Plateforme d'engagement commercial (SDR virtuel) automatisant les séquences d'email, SMS et LinkedIn pour les équipes commerciales à la prospection B2B.",
+    "what_en": "Sales engagement platform automating email, SMS, and LinkedIn sequences for B2B prospecting teams with AI-powered SDR capabilities.",
+    "pricing_model": "Tarification par utilisateur et par mois. Plans de base à partir d'environ 49 $/mois ; tarif étudiant avec add-ons (LinkedIn, SMS).",
+    "free_tier": { "exists": false, "detail": "Pas de plan gratuit. Trial gratuit disponible sur demande." },
+    "plans": [
+      { "name": "Email Volume (annual)", "price": "49 $ / utilisateur / mois (1 000 contacts actifs)" },
+      { "name": "Multichannel (annual)", "price": "59-99 $ / utilisateur / mois (email + SMS + appels + LinkedIn)" },
+      { "name": "LinkedIn Add-on", "price": "69 $ / compte supplémentaire" },
+      { "name": "SMS & Calls Add-on", "price": "29 $ / compte supplémentaire" },
+      { "name": "AI SDR", "price": "800 $ / mois (automatisation complète)" }
+    ],
+    "key_features": [
+      "Automatisation de séquences email",
+      "Intégration LinkedIn et SMS",
+      "Email warmup pour délivrabilité",
+      "AI SDR pour prospection automatisée"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes une équipe de ventes B2B avec prospection email intensive.",
+        "Vous cherchez à automatiser les séquences de prospection.",
+        "Vous avez besoin de multichannel (email + LinkedIn + SMS)."
+      ],
+      "avoidIf": [
+        "Vous ne faites que du marketing par email (hors prospection commerciale).",
+        "Vous êtes un solo entrepreneur sans équipe commerciale.",
+        "Vous cherchez un CRM complet plutôt qu'une plateforme de prospection."
+      ],
+      "threshold": "Reply.io convient aux équipes commerciales B2B actives ; pour un besoin CRM plus large, HubSpot ou Pipedrive peuvent être mieux adaptés."
+    },
+    "pros": [
+      "Multichannel (email, SMS, LinkedIn, appels).",
+      "Email warmup inclus pour améliorer la délivrabilité.",
+      "Automatisation sophistiquée des séquences.",
+      "Option AI SDR pour prospection entièrement automatisée."
+    ],
+    "cons": [
+      "Coût par utilisateur peut être élevé pour les petites équipes.",
+      "Courbe d'apprentissage modérée.",
+      "Pas de plan gratuit (essai seulement)."
+    ],
+    "use_cases": [
+      "Envoyer des séquences de prospection email en masse.",
+      "Automatiser le suivi LinkedIn de prospects.",
+      "Gérer la prospection multichannel (email + SMS + appels)."
+    ],
+    "relevant_for": ["Équipes commerciales B2B", "Agences sales development", "Entreprises SaaS"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a B2B sales team doing high-volume prospecting.",
+        "You need to automate email and LinkedIn outreach.",
+        "You want multichannel sequences from one platform."
+      ],
+      "avoidIf": [
+        "You're doing only marketing (not sales) email campaigns.",
+        "You're a solo founder without a sales team.",
+        "You need a full CRM, not just a prospecting tool."
+      ],
+      "threshold": "Reply.io is ideal for active B2B sales teams; for broader CRM needs, HubSpot or Pipedrive offer more."
+    },
+    "pros": [
+      "True multichannel (email, SMS, LinkedIn, calls).",
+      "Built-in email warmup for better deliverability.",
+      "Sophisticated automation with conditional logic.",
+      "AI SDR for fully automated prospecting."
+    ],
+    "cons": [
+      "Per-user pricing adds up for large teams.",
+      "Steep learning curve for advanced features.",
+      "No free plan; trial only."
+    ],
+    "use_cases": [
+      "Run large-scale B2B email prospecting campaigns.",
+      "Automate LinkedIn outreach and follow-ups.",
+      "Manage sales sequences across email, SMS, and calls."
+    ]
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "slug": "mailerlite",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "MailerLite (site officiel)", "url": "https://mailerlite.com" }
+  ],
+  "facts": {
+    "what": "Plateforme email et landing pages pour SMB et creators, avec plan gratuit, interface simple, et 0% commission stack (pas frais plateforme).",
+    "what_en": "Email and landing pages platform for SMBs and creators, with free tier, simple interface, and 0% commission stack (no platform fees).",
+    "pricing_model": "Plan gratuit + abonnements Comfort/Power par nombre d'abonnés ; tarification escalade douce",
+    "free_tier": { "exists": true, "detail": "Plan gratuit durable : 250 abonnés, 2500 monthly emails, 2 user seats, core features" },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (250 abonnés)" },
+      { "name": "Comfort", "price": "À partir de 12 $/mois" },
+      { "name": "Power", "price": "À partir de 25 $/mois" },
+      { "name": "Enterprise", "price": "Montants sur demande" }
+    ],
+    "key_features": [
+      "Email marketing avec drag-and-drop editor.",
+      "Landing pages intégrées pour lead capture.",
+      "Automations simples et workflows.",
+      "Segmentation et personalization basiques.",
+      "Analytics opens/clicks/conversions.",
+      "Aucune commission ni frais de plateforme sur vos revenus.",
+      "Support excellent et accessible."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous débutez email + landing pages et cherchez plan gratuit bon marché.",
+        "Vous prioritisez support et ease-of-use sur features avancées.",
+        "Vous êtes creator cherchant alternative zéro-commission."
+      ],
+      "avoidIf": [
+        "Vous avez besoin automation très avancée.",
+        "Vous gérez base massive de contacts (>50k).",
+        "Vous cherchez multi-canal (SMS, etc)."
+      ],
+      "threshold": "MailerLite gagne pour débutants/creators gratuit ; pour automation avancée, ActiveCampaign/GetResponse meilleur."
+    },
+    "pros": [
+      "Plan gratuit très généreux (250 abonnés).",
+      "Interface simple et intuitive (meilleure UX).",
+      "Landing pages intégrées sans add-on.",
+      "Aucune commission ni frais de plateforme sur vos revenus.",
+      "Support excellent et humain.",
+      "Pricing gentle escalade.",
+      "2 user seats even on free tier."
+    ],
+    "cons": [
+      "Automation limitée (pas flows avancés).",
+      "CRM minimal (overkill pour contenu).",
+      "Pas multi-canal (email + landing pages seulement).",
+      "Pas d'AI tools (subject line generator, etc).",
+      "Analytics basiques."
+    ],
+    "use_cases": [
+      "Newsletter gratuite pour creators.",
+      "Lead capture via landing pages simples.",
+      "Email automation de base (welcome, promotion).",
+      "Segmentation et personnalisation simple.",
+      "Analytics performance newsletter."
+    ],
+    "relevant_for": [
+      "Creators et writers",
+      "Petits business et freelances",
+      "Débutants email marketing"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're starting email + landing pages and want a free, cheap option.",
+        "You prioritize support and ease-of-use over advanced features.",
+        "You're a creator seeking zero-commission alternative."
+      ],
+      "avoidIf": [
+        "You need very advanced automation.",
+        "You manage large contact bases (>50k).",
+        "You want multi-channel (SMS, etc)."
+      ],
+      "threshold": "MailerLite wins for free/cheap creator start; for advanced automation, ActiveCampaign/GetResponse better."
+    },
+    "pros": [
+      "Very generous free tier (250 subscribers).",
+      "Simple and intuitive interface (best UX).",
+      "Integrated landing pages no add-on.",
+      "No commission or platform fees on your revenue.",
+      "Excellent and human support.",
+      "Gentle pricing escalation.",
+      "2 user seats even on free tier."
+    ],
+    "cons": [
+      "Limited automation (no advanced flows).",
+      "Minimal CRM (overkill for content).",
+      "No multi-channel (email + landing pages only).",
+      "No AI tools (subject line generator, etc).",
+      "Basic analytics."
+    ],
+    "use_cases": [
+      "Free newsletter for creators.",
+      "Lead capture via simple landing pages.",
+      "Basic email automation (welcome, promotions).",
+      "Simple segmentation and personalization.",
+      "Newsletter performance analytics."
+    ]
+  }
+}

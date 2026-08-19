@@ -1,0 +1,87 @@
+{
+  "slug": "quartile",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Quartile — Retail Media Platform (site officiel)", "url": "https://www.quartile.com/" }
+  ],
+  "facts": {
+    "what": "Plateforme de gestion des dépenses publicitaires e-commerce, optimisant les campagnes Amazon, Google, Walmart, Instacart et réseaux sociaux pour les marques et vendeurs.",
+    "what_en": "E-commerce advertising automation platform managing spend across Amazon, Google, Walmart, Instacart, and social channels with AI-driven optimization.",
+    "pricing_model": "Modèle de service complet avec gestion d'account dédiée. Tarification sur demande ; généralement une commission ou une base managée.",
+    "free_tier": { "exists": false, "detail": "Pas de plan gratuit. Accès sur démonstration et accord commercial." },
+    "plans": [
+      { "name": "Starter/Pro", "price": "Montants sur demande auprès de l'équipe commerciale" },
+      { "name": "Enterprise", "price": "Plans personnalisés pour grands budgets publicitaires" }
+    ],
+    "key_features": [
+      "Optimisation IA au niveau ASIN",
+      "Gestion multi-canal (Amazon, Google, Walmart, etc.)",
+      "Bid automatique et dynamique",
+      "Account management dédié"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez un budget publicitaire e-commerce important.",
+        "Vous vendez sur Amazon, Walmart, Google Shopping.",
+        "Vous cherchez une optimisation IA pour maximiser les ventes."
+      ],
+      "avoidIf": [
+        "Vous êtes nouveau vendeur sur Amazon avec petit budget.",
+        "Vous ne vendez que sur une seule plateforme.",
+        "Vous gérez manuellement un petit budget publicitaire."
+      ],
+      "threshold": "Quartile convient aux marques avec volumes publicitaires importants ; pour les petits vendeurs, les outils natifs (Amazon Ads) ou des alternatives moins chères suffisent."
+    },
+    "pros": [
+      "Gestion multi-canal en un seul endroit.",
+      "Optimisation par IA au niveau des produits (ASIN).",
+      "Account management dédié inclus.",
+      "Suivi du portefeuille publicitaire de plus de 2 milliards $ annuels."
+    ],
+    "cons": [
+      "Pas de pricing public ; processus de vente long.",
+      "Coût d'entrée potentiellement élevé.",
+      "Moins transparent que les outils self-service."
+    ],
+    "use_cases": [
+      "Gérer les dépenses publicitaires Amazon pour une marque établie.",
+      "Optimiser la performance aux différents paliers de vente.",
+      "Orchestrer des campagnes multi-canal (Amazon + Google + Walmart)."
+    ],
+    "relevant_for": ["Marques e-commerce", "Vendeurs Amazon FBA pro", "Grosses boutiques en ligne"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage substantial e-commerce ad spend (6+ figures annually).",
+        "You sell across multiple platforms (Amazon, Walmart, Google).",
+        "You want AI-driven optimization across channels."
+      ],
+      "avoidIf": [
+        "You're a new Amazon seller with a modest budget.",
+        "You only sell on one platform.",
+        "You prefer self-service tools over agency-style management."
+      ],
+      "threshold": "Quartile is for serious e-commerce brands with multi-channel ad budgets; smaller sellers should start with native ad tools."
+    },
+    "pros": [
+      "Unified management across all major e-commerce platforms.",
+      "Patented AI optimization at the product level (ASIN).",
+      "Dedicated account managers included.",
+      "Manages 5,300+ brands and 2 billion in annual ad spend."
+    ],
+    "cons": [
+      "Pricing not transparent; requires sales conversation.",
+      "High barrier to entry.",
+      "Requires significant ad spend to justify ROI."
+    ],
+    "use_cases": [
+      "Manage Amazon advertising spend for established brands.",
+      "Optimize across tiered selling volumes.",
+      "Consolidate e-commerce ad management into one platform."
+    ]
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "slug": "sendible",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Sendible — Social Media Management (site officiel)", "url": "https://www.sendible.com/" }
+  ],
+  "facts": {
+    "what": "Plateforme de gestion des réseaux sociaux permettant de publier, programmer, engager et rapporter sur plusieurs canaux sociaux avec un nombre illimité d'utilisateurs par plan.",
+    "what_en": "Social media management platform for publishing, scheduling, engagement, and reporting across multiple social networks with unlimited users per plan.",
+    "pricing_model": "Abonnement par tiers avec nombre de workspaces et profils illimités. Plans à partir de 35 $/mois.",
+    "free_tier": { "exists": false, "detail": "Pas de plan gratuit. Trial gratuit 14 jours sans carte de crédit requise." },
+    "plans": [
+      { "name": "Core", "price": "35 $ / mois, 1 workspace, 6 profils, utilisateurs illimités" },
+      { "name": "Plus", "price": "89 $ / mois, 3 workspaces, 18 profils, utilisateurs illimités" },
+      { "name": "Premium", "price": "169 $ / mois, 7 workspaces, 42 profils, utilisateurs illimités" },
+      { "name": "Elite", "price": "339 $ / mois, 15 workspaces, 90 profils, utilisateurs illimités" },
+      { "name": "Enterprise", "price": "999 $ / mois, 50 workspaces, 300 profils, features custom" },
+      { "name": "Annual Discount", "price": "15 % avec engagement annuel" }
+    ],
+    "key_features": [
+      "Publication programmée sur tous les réseaux majeurs",
+      "Monitoring des mentions et mots-clés",
+      "Rapports prédéfinis par réseau social",
+      "Collaboration illimitée (tous les plans)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez les réseaux sociaux pour une ou plusieurs marques.",
+        "Vous cherchez une plateforme avec utilisateurs illimités.",
+        "Vous voulez un outil simple pour programmer et analyser.",
+        "Vous avez une équipe et ne voulez pas de coûts de licence par siège."
+      ],
+      "avoidIf": [
+        "Vous gérez juste un seul compte personnel ou très simple.",
+        "Vous cherchez une solution entièrement gratuite.",
+        "Vous avez besoin d'IA pour générer du contenu."
+      ],
+      "threshold": "Sendible convient aux agences sociales et entreprises gérant plusieurs comptes ; pour les solopreneurs, Buffer ou Later sont plus accessibles."
+    },
+    "pros": [
+      "Utilisateurs illimités sur tous les plans.",
+      "Tarification simple et prévisible (par workspace, pas par siège).",
+      "Monitoring et rapports complets.",
+      "Trial gratuit 14 jours."
+    ],
+    "cons": [
+      "Pas de palier gratuit, l'entrée de gamme est payante.",
+      "Moins de fonctionnalités IA pour génération de contenu.",
+      "Interface peut être complexe pour les débutants."
+    ],
+    "use_cases": [
+      "Gérer les réseaux sociaux pour une agence multi-clients.",
+      "Programmer et centraliser la publication sur tous les réseaux.",
+      "Analyser les performances par réseau et par campagne.",
+      "Collaborer en équipe sur la gestion sociale sans limites de siège."
+    ],
+    "relevant_for": ["Agences digitales", "Gestionnaires réseaux sociaux", "Équipes marketing"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage social media for multiple brands or clients.",
+        "You want unlimited team members without per-seat costs.",
+        "You need a straightforward scheduling and analytics tool.",
+        "You prefer workspaces over per-user licensing."
+      ],
+      "avoidIf": [
+        "You manage only one personal social account.",
+        "You need a free social media tool.",
+        "You need advanced AI content generation."
+      ],
+      "threshold": "Sendible is ideal for agencies and multi-brand teams; solo creators should consider Buffer or Later instead."
+    },
+    "pros": [
+      "Unlimited users on every plan — great for teams.",
+      "Straightforward pricing by workspace, not by seat.",
+      "Comprehensive monitoring and reporting.",
+      "14-day free trial, no credit card required."
+    ],
+    "cons": [
+      "No free plan; the entry tier is paid.",
+      "Limited AI content generation compared to newer tools.",
+      "Steeper learning curve than simpler platforms."
+    ],
+    "use_cases": [
+      "Manage social media for a multi-client agency.",
+      "Schedule posts across all major social networks from one dashboard.",
+      "Monitor brand mentions and competitor activity.",
+      "Collaborate with unlimited team members on social strategy."
+    ]
+  }
+}

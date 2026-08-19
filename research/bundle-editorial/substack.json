@@ -1,0 +1,94 @@
+{
+  "slug": "substack",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Substack — Newsletter Platform (site officiel)", "url": "https://substack.com/" }
+  ],
+  "facts": {
+    "what": "Plateforme de newsletter et de blogging permettant aux créateurs de publier, monétiser et gérer une audience d'abonnés avec un modèle freemium simple.",
+    "what_en": "Newsletter and blogging platform enabling creators to publish, monetize, and build subscriber audiences with a simple freemium model.",
+    "pricing_model": "Plateforme gratuite pour les créateurs ; Substack prend une commission sur les abonnements payants. Pas d'abonnement Substack requis pour publier.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit illimité pour publier. Substack prend 10 % des revenus d'abonnement payant + 2,9 % + 0,30 $ par paiement (Stripe)." },
+    "plans": [
+      { "name": "Free", "price": "0 $ pour publier ; Substack 10 % + Stripe fees sur revenus" },
+      { "name": "Paid Subscriber Tier", "price": "Moyenne 5-15 $/mois par abonné ; creator garde ~67-80 %" }
+    ],
+    "key_features": [
+      "Publication illimitée",
+      "Newsletter email intégrée",
+      "Abonnements payants intégrés",
+      "Analytics basiques",
+      "Sans frais initiaux"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes un créateur ou journaliste voulant démarrer une newsletter.",
+        "Vous cherchez une solution gratuite avec possibilité de monétisation.",
+        "Vous n'avez pas besoin d'outils marketing ou d'automation avancés.",
+        "Vous voulez simplement publier et vendre des abonnements."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'automatisation email complexe.",
+        "Vous faites du marketing pour une entreprise (cherchez Mailchimp).",
+        "Vous cherchez une solution all-in-one avec landing pages et CRM."
+      ],
+      "threshold": "Substack convient aux créateurs indépendants et journalistes ; pour des besoins marketing d'entreprise, des outils comme Mailchimp ou Brevo sont plus adaptés."
+    },
+    "pros": [
+      "Entièrement gratuit pour publier et démarrer.",
+      "Monétisation native avec abonnements intégrés.",
+      "Pas de frais initiaux ou de forfait de base.",
+      "Audience peut être construite sans coût."
+    ],
+    "cons": [
+      "Commission prélevée par Substack, à laquelle s'ajoutent les frais Stripe.",
+      "Pas d'outils marketing avancés ou d'automation email.",
+      "Analytics basiques comparées aux plateformes spécialisées.",
+      "Moins de contrôle sur la monétisation."
+    ],
+    "use_cases": [
+      "Publier une newsletter indépendante et la monétiser.",
+      "Démarrer un blog avec possibilité de contenu payant.",
+      "Construire une audience de fans/abonnés.",
+      "Publier des articles avec une audience."
+    ],
+    "relevant_for": ["Créateurs indépendants", "Journalistes freelance", "Consultants"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a creator or journalist starting a newsletter.",
+        "You want free publishing with built-in paid subscriptions.",
+        "You don't need complex marketing automation.",
+        "You want to focus on content, not infrastructure."
+      ],
+      "avoidIf": [
+        "You need advanced email marketing and automation.",
+        "You're doing B2B marketing for a company.",
+        "You want omnichannel marketing (SMS, ads, social)."
+      ],
+      "threshold": "Substack is ideal for independent creators; businesses seeking advanced marketing should look at Mailchimp or Brevo."
+    },
+    "pros": [
+      "Completely free to start publishing.",
+      "Native monetization with subscriber paywalls.",
+      "No monthly fee or minimum spend.",
+      "Audience can grow without upfront cost."
+    ],
+    "cons": [
+      "Substack takes a cut of subscription revenue, on top of Stripe fees.",
+      "No advanced email automation or segmentation.",
+      "Basic analytics compared to marketing platforms.",
+      "Less control over pricing and billing."
+    ],
+    "use_cases": [
+      "Publish an independent newsletter and monetize it.",
+      "Start a blog with optional paid premium content.",
+      "Build a subscriber base for your ideas or expertise.",
+      "Publish articles and grow a direct audience."
+    ]
+  }
+}

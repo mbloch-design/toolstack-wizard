@@ -1,0 +1,105 @@
+{
+  "slug": "getresponse",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "GetResponse (site officiel)", "url": "https://www.getresponse.com" }
+  ],
+  "facts": {
+    "what": "Plateforme all-in-one email, automation, webinars, landing pages et funnels, avec AI 2026 pour génération emails et subject lines optimisées.",
+    "what_en": "All-in-one platform for email, automation, webinars, landing pages and sales funnels, with 2026 AI tools for email generation and optimized subject lines.",
+    "pricing_model": "Abonnements par volume de contacts ; modèle dégressive par tranche de subscribers",
+    "free_tier": { "exists": false, "detail": "Pas de plan gratuit ; essai 30 jours possible" },
+    "plans": [
+      { "name": "Standard", "price": "À partir de 19 $/mois (1000 subscribers)" },
+      { "name": "Plus", "price": "Montants sur la page officielle" },
+      { "name": "Professional", "price": "Montants sur la page officielle" },
+      { "name": "Max", "price": "Montants sur demande" }
+    ],
+    "key_features": [
+      "Email marketing avec AI subject line et email generator.",
+      "Automation avancée et sales funnels.",
+      "Webinars hosting intégré (unique feature).",
+      "Landing pages builder drag-and-drop.",
+      "SMS + email marketing.",
+      "Analytics et ROI tracking."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez webinars comme outil marketing principal.",
+        "Vous besoin all-in-one (email + landing pages + funnels).",
+        "Vous cherchez alternative à ActiveCampaign moins chère."
+      ],
+      "avoidIf": [
+        "Vous voulez plan gratuit ou très bon marché.",
+        "Vous avez besoin de CRM avancé.",
+        "Vous débutez et interface simple est priorité."
+      ],
+      "threshold": "GetResponse gagne pour webinars intégrés ; sans webinars, Mailchimp/MailerLite meilleur rapport qualité-prix."
+    },
+    "pros": [
+      "Webinars hosting intégré (avantage unique).",
+      "All-in-one : email + landing pages + funnels.",
+      "AI subject line generator et email creator.",
+      "Délivrabilité solide, bon taux de placement en boîte de réception.",
+      "Bon rapport features/prix."
+    ],
+    "cons": [
+      "Pas de plan gratuit.",
+      "Interface moins intuitive que beehiiv/MailerLite.",
+      "CRM léger comparé à ActiveCampaign.",
+      "Automation moins flexible que Campaigner.",
+      "Support moins réactif."
+    ],
+    "use_cases": [
+      "Webinars + email marketing coordonnés.",
+      "Funnels de vente avec landing pages intégrées.",
+      "Email automation avec AI subject optimization.",
+      "SMS + email multi-channel.",
+      "Analytics ROI sur campaigns complètes."
+    ],
+    "relevant_for": [
+      "Entrepreneurs et coaches",
+      "E-commerce",
+      "Agences marketing"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You use webinars as a primary marketing tool.",
+        "You need all-in-one (email + landing pages + funnels).",
+        "You want a cheaper ActiveCampaign alternative."
+      ],
+      "avoidIf": [
+        "You want a free or very affordable plan.",
+        "You need advanced CRM features.",
+        "You're starting out and want simplicity."
+      ],
+      "threshold": "GetResponse wins for integrated webinars; without webinars, Mailchimp/MailerLite better value."
+    },
+    "pros": [
+      "Integrated webinar hosting (unique advantage).",
+      "All-in-one: email + landing pages + funnels.",
+      "AI subject line and email generator.",
+      "Strong deliverability and inbox placement.",
+      "Good features-to-price ratio."
+    ],
+    "cons": [
+      "No free plan.",
+      "Less intuitive interface than beehiiv/MailerLite.",
+      "Light CRM vs ActiveCampaign.",
+      "Less flexible automation than Campaigner.",
+      "Slower support response."
+    ],
+    "use_cases": [
+      "Coordinated webinars + email marketing.",
+      "Sales funnels with integrated landing pages.",
+      "Email automation with AI subject optimization.",
+      "Multi-channel SMS + email.",
+      "Complete campaign ROI analytics."
+    ]
+  }
+}

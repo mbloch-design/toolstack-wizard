@@ -1,0 +1,107 @@
+{
+  "slug": "loops",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Loops (site officiel)", "url": "https://loops.so" }
+  ],
+  "facts": {
+    "what": "Plateforme email moderne pour SaaS envoyant marketing, lifecycle et transactional emails d'un seul produit, avec API developer-friendly et workflows automatisés.",
+    "what_en": "Modern email platform for SaaS sending marketing, lifecycle and transactional email from one product, with developer-friendly API and automated workflows.",
+    "pricing_model": "Tarification contact-based sans charge par envoi ; plans transparents",
+    "free_tier": { "exists": false, "detail": "Pas de plan gratuit ; pricing transparent par contacts" },
+    "plans": [
+      { "name": "Starter", "price": "À partir de 49 $/mois (jusqu'à 5k contacts)" },
+      { "name": "Growth", "price": "Montants sur la page officielle" },
+      { "name": "Enterprise", "price": "Montants sur demande" }
+    ],
+    "key_features": [
+      "Email marketing + lifecycle + transactional dans un seul produit.",
+      "Developer-friendly API et SDKs (Node, Next.js, Ruby, PHP, Nuxt, Laravel).",
+      "Visual workflow builder pour automation.",
+      "Pricing transparent : contact-based, pas per-send.",
+      "Transactional email inclus dans tous les plans.",
+      "Usage analytics et performance tracking.",
+      "No per-seat fees."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes SaaS envoyant marketing + lifecycle + transactional.",
+        "Vous cherchez email infrastructure developer-friendly.",
+        "Vous préférez pricing contact-based transparent."
+      ],
+      "avoidIf": [
+        "Vous faites email marketing basique (Mailchimp mieux).",
+        "Vous n'avez pas ressources développeur.",
+        "Vous avez besoin multi-canal (SMS, etc)."
+      ],
+      "threshold": "Loops excelle pour SaaS moderne ; pour email marketing basique, Mailchimp meilleur rapport."
+    },
+    "pros": [
+      "All-in-one : marketing + lifecycle + transactional.",
+      "API developer-friendly avec multiples SDKs.",
+      "Visual automation workflows simples.",
+      "Pricing transparent et contact-based.",
+      "Transactional inclus (pas add-on).",
+      "Pas per-seat fees."
+    ],
+    "cons": [
+      "Pas de plan gratuit.",
+      "Pas multi-canal (email seulement).",
+      "Orienté SaaS/developers (overkill pour basique).",
+      "Moins de templates que Mailchimp.",
+      "Audience plus petit que concurrents."
+    ],
+    "use_cases": [
+      "SaaS infrastructure email complète.",
+      "Automation onboarding via API.",
+      "Transactional emails + marketing coordonnés.",
+      "Product-triggered emails (lifecycle).",
+      "Developer-first email setup."
+    ],
+    "relevant_for": [
+      "SaaS et tech products",
+      "Équipes avec developers",
+      "Product-led growth companies"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a SaaS sending marketing + lifecycle + transactional.",
+        "You want developer-friendly email infrastructure.",
+        "You prefer transparent contact-based pricing."
+      ],
+      "avoidIf": [
+        "You do basic email marketing (Mailchimp better).",
+        "You don't have developer resources.",
+        "You need multi-channel (SMS, etc)."
+      ],
+      "threshold": "Loops excels for modern SaaS; for basic email marketing, Mailchimp better value."
+    },
+    "pros": [
+      "All-in-one: marketing + lifecycle + transactional.",
+      "Developer-friendly API with multiple SDKs.",
+      "Simple visual automation workflows.",
+      "Transparent, contact-based pricing.",
+      "Transactional included (not add-on).",
+      "No per-seat fees."
+    ],
+    "cons": [
+      "No free plan.",
+      "No multi-channel (email only).",
+      "SaaS/developer-focused (overkill for basics).",
+      "Fewer templates than Mailchimp.",
+      "Smaller audience than competitors."
+    ],
+    "use_cases": [
+      "Complete SaaS email infrastructure.",
+      "Onboarding automation via API.",
+      "Coordinated transactional + marketing emails.",
+      "Product-triggered emails (lifecycle).",
+      "Developer-first email setup."
+    ]
+  }
+}

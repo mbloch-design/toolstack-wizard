@@ -1,0 +1,107 @@
+{
+  "slug": "lemlist",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Lemlist (site officiel)", "url": "https://www.lemlist.com" }
+  ],
+  "facts": {
+    "what": "Plateforme multi-canal de cold outreach (email, LinkedIn, WhatsApp, calls) avec IA pour personnalisation dynamique, images personalisées, et warm-up lemwarm inclus.",
+    "what_en": "Multi-channel cold outreach platform (email, LinkedIn, WhatsApp, calls) with AI for dynamic personalization, personalized images, and included lemwarm warm-up.",
+    "pricing_model": "Abonnements par nombre de leads gérés ; warm-up lemwarm inclus dans tous les plans",
+    "free_tier": { "exists": false, "detail": "Pas de plan gratuit ; essai possible sur demande" },
+    "plans": [
+      { "name": "Starter", "price": "Montants sur la page officielle" },
+      { "name": "Growth", "price": "Montants sur la page officielle" },
+      { "name": "Enterprise", "price": "Montants sur demande" }
+    ],
+    "key_features": [
+      "Multi-canal cold outreach : email, LinkedIn, WhatsApp, calls.",
+      "Personnalisation dynamique via IA (icebreakers, variables).",
+      "Images personalisées dynamiques (nom, logo, photo sur email).",
+      "Lemwarm warm-up inclus (pas add-on).",
+      "AI segmentation par industrie, location, position.",
+      "Intégration Claap (conversation intelligence, Oct 2025).",
+      "Lead scoring et sequencing automation."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous faites cold outreach B2B intensive multi-canal.",
+        "Vous cherchez personnalisation IA à l'échelle.",
+        "Vous voulez warm-up inclus (pas add-on)."
+      ],
+      "avoidIf": [
+        "Vous faites email marketing simple (non cold).",
+        "Vous avez budget très limité (pas gratuit).",
+        "Vous n'aimez pas automation cold email."
+      ],
+      "threshold": "Lemlist excelle pour cold outreach B2B ; pour email marketing normal, Mailchimp/Brevo meilleur."
+    },
+    "pros": [
+      "Multi-canal cold outreach intégré (7 channels).",
+      "IA personnalisation dynamique à l'échelle.",
+      "Images personalisées uniques (competitive advantage).",
+      "Lemwarm inclus (vs autres add-ons payants).",
+      "Claap integration pour conversation intelligence.",
+      "Lead scoring et segmentation IA."
+    ],
+    "cons": [
+      "Pas de plan gratuit.",
+      "Orienté cold outreach (pas email marketing normal).",
+      "Contrats annuels possibles.",
+      "Interface complex pour débutants.",
+      "Coûteux pour small teams."
+    ],
+    "use_cases": [
+      "Cold email multi-canal à grande échelle.",
+      "Personnalisation dynamique icebreakers et variables.",
+      "Sequencing automation multi-channel.",
+      "Lead scoring et segmentation IA.",
+      "Warm-up domaines automatisé (lemwarm)."
+    ],
+    "relevant_for": [
+      "Équipes sales B2B",
+      "Agences prospection",
+      "SaaS avec sales outreach"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You do intensive B2B cold outreach multi-channel.",
+        "You want AI-powered personalization at scale.",
+        "You want warm-up included (not add-on)."
+      ],
+      "avoidIf": [
+        "You do simple email marketing (non-cold).",
+        "You have a very tight budget (no free plan).",
+        "You're not comfortable with cold email automation."
+      ],
+      "threshold": "Lemlist excels for B2B cold outreach; for normal email marketing, Mailchimp/Brevo better."
+    },
+    "pros": [
+      "Integrated multi-channel cold outreach (7 channels).",
+      "AI dynamic personalization at scale.",
+      "Unique personalized images (competitive advantage).",
+      "Lemwarm included (vs other paid add-ons).",
+      "Claap integration for conversation intelligence.",
+      "AI lead scoring and segmentation."
+    ],
+    "cons": [
+      "No free plan.",
+      "Cold outreach focused (not normal email marketing).",
+      "Possible annual contracts.",
+      "Complex interface for beginners.",
+      "Expensive for small teams."
+    ],
+    "use_cases": [
+      "Multi-channel cold email at scale.",
+      "Dynamic personalization icebreakers and variables.",
+      "Multi-channel sequencing automation.",
+      "AI lead scoring and segmentation.",
+      "Automated domain warm-up (lemwarm)."
+    ]
+  }
+}

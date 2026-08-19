@@ -1,0 +1,100 @@
+{
+  "slug": "aweber",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "AWeber (site officiel)", "url": "https://aweber.com" }
+  ],
+  "facts": {
+    "what": "Plateforme email marketing avec plan gratuit durable et abonnements payants, offrant automation simple, templates et intégrations pour petites équipes.",
+    "what_en": "Email marketing platform with a permanent free tier and paid plans, offering simple automation, templates, and integrations for small teams.",
+    "pricing_model": "Plan gratuit sans limite de temps + abonnements par tranche d'abonnés",
+    "free_tier": { "exists": true, "detail": "Plan gratuit durable : jusqu'à 500 abonnés, 3000 emails par mois, fonctionnalités core" },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (500 abonnés max)" },
+      { "name": "Lite", "price": "À partir de 15 $/mois (500 abonnés)" },
+      { "name": "Plus", "price": "À partir de 20 $/mois (500 abonnés, facturation annuelle)" },
+      { "name": "Done For You", "price": "À partir de 30 $/mois + frais de setup uniques" }
+    ],
+    "key_features": [
+      "Plan gratuit durable sans expiration.",
+      "Automation simple et workflows d'autorépondeurs.",
+      "Templates drag-and-drop.",
+      "Segmentation des abonnés et analytics basiques.",
+      "Intégrations e-commerce et CRM."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous débutez en email marketing et cherchez un plan gratuit durable.",
+        "Vous avez moins de 1000 abonnés.",
+        "Vous besoin de simple automation sans complexité."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'automation avancée et multi-canal.",
+        "Vous gérez des listes volumineuses (>10k abonnés).",
+        "Vous cherchez des analytics détaillées et AI."
+      ],
+      "threshold": "AWeber excelle pour débuter gratuitement et scaler simplement ; pour automation avancée, ActiveCampaign ou GetResponse sont meilleurs."
+    },
+    "pros": [
+      "Plan gratuit durable et généreux.",
+      "Interface simple et intuitive.",
+      "Bon rapport qualité-prix aux petites échelles.",
+      "Automation de base robuste.",
+      "14 jours d'essai sur plans payants."
+    ],
+    "cons": [
+      "Fonctionnalités limitées sur free tier.",
+      "Pas de multi-canal (email uniquement).",
+      "Analytics moins avancées que concurrents.",
+      "Pas d'IA pour optimisation automatique."
+    ],
+    "use_cases": [
+      "Débuter en email marketing gratuitement.",
+      "Gérer une newsletter simple d'abonnés.",
+      "Automation de séquences de bienvenue et relance.",
+      "E-commerce simple avec abandon de panier."
+    ],
+    "relevant_for": [
+      "Freelances et petits business",
+      "Débutants email marketing",
+      "E-commerce simple"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're starting with email marketing and want a permanent free plan.",
+        "You have under 1000 subscribers.",
+        "You need simple automation without complexity."
+      ],
+      "avoidIf": [
+        "You need advanced automation and multi-channel features.",
+        "You manage large lists (>10k subscribers).",
+        "You want detailed analytics and AI optimization."
+      ],
+      "threshold": "AWeber excels for free start and simple scaling; for advanced automation, ActiveCampaign or GetResponse are better."
+    },
+    "pros": [
+      "Permanent, generous free plan.",
+      "Simple and intuitive interface.",
+      "Great value at small scales.",
+      "Solid basic automation.",
+      "14-day trial on paid plans."
+    ],
+    "cons": [
+      "Limited features on free tier.",
+      "No multi-channel (email only).",
+      "Less advanced analytics than competitors.",
+      "No AI-driven optimization."
+    ],
+    "use_cases": [
+      "Start email marketing for free.",
+      "Manage a simple subscriber newsletter.",
+      "Welcome sequences and re-engagement automation.",
+      "Simple e-commerce cart abandonment."
+    ]
+  }
+}

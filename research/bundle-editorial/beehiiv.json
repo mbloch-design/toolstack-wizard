@@ -1,0 +1,99 @@
+{
+  "slug": "beehiiv",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Beehiiv (site officiel)", "url": "https://beehiiv.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de newsletter orientée croissance et monétisation, avec outils de recommandation croisée, analytics avancées, et marketplace de découverte pour les creators.",
+    "what_en": "Newsletter platform focused on growth and monetization, featuring cross-recommendation tools, advanced analytics, and discovery marketplace for creators.",
+    "pricing_model": "Plan gratuit + abonnements ; commissions uniques (0%) contrairement à Substack (10%)",
+    "free_tier": { "exists": true, "detail": "Plan gratuit avec fonctionnalités core pour newsletters petites" },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (montants limités)" },
+      { "name": "Paid tiers", "price": "Montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Recommandations croisées entre newsletters dans l'écosystème.",
+      "Marketplace de découverte pour croissance audience.",
+      "Monétisation avec commissions 0% (vs Substack 10%).",
+      "Polls, surveys, et engagement communautaire.",
+      "Advanced segmentation et analytics détaillées.",
+      "Système de referrals pour croissance organique."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes un creator monétisant une newsletter et cherchez alternative à Substack.",
+        "Vous visiez croissance audience via recommandations croisées.",
+        "Vous préférez une plateforme orientée growth plutôt que writing-first."
+      ],
+      "avoidIf": [
+        "Vous cherchez une simple plateforme email marketing B2B.",
+        "Vous voulez un CMS de blog intégré.",
+        "Vous débutez avec une newsletter sans monétisation."
+      ],
+      "threshold": "Beehiiv gagne contre Substack dès 100 abonnés payants ; pour newsletter corporate ou B2B, Mailchimp/MailerLite sont plus adaptés."
+    },
+    "pros": [
+      "Aucune commission sur les revenus, contrairement à Substack.",
+      "Croissance via recommandations et marketplace.",
+      "Analytics très détaillées et dashboards.",
+      "Polls, surveys, engagement communautaire.",
+      "Interface moderne et creator-friendly."
+    ],
+    "cons": [
+      "Orienté creators ; moins complet pour B2B marketing.",
+      "Pas de vraie automation avancée.",
+      "Moins intégrations que Mailchimp/ActiveCampaign.",
+      "Plan gratuit limité."
+    ],
+    "use_cases": [
+      "Monétiser une newsletter via subscriptions payantes.",
+      "Croître audience via découverte et recommandations.",
+      "Builder une communauté autour d'une newsletter.",
+      "Creator souhaitant contrôler leur audience."
+    ],
+    "relevant_for": [
+      "Creators de contenu",
+      "Writers indépendants",
+      "Thought leaders"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're monetizing a newsletter and want a Substack alternative.",
+        "You want audience growth via cross-recommendations.",
+        "You prefer a growth-first platform over writing-first."
+      ],
+      "avoidIf": [
+        "You're looking for a straightforward B2B email marketing platform.",
+        "You want an integrated blog CMS.",
+        "You're just starting a newsletter without monetization."
+      ],
+      "threshold": "Beehiiv beats Substack from 100 paying subscribers onward; for corporate or B2B newsletters, Mailchimp/MailerLite are better."
+    },
+    "pros": [
+      "No cut of your revenue, unlike Substack.",
+      "Audience growth via cross-recommendations and marketplace.",
+      "Very detailed analytics and dashboards.",
+      "Polls, surveys, community engagement.",
+      "Modern, creator-friendly interface."
+    ],
+    "cons": [
+      "Oriented toward creators; less complete for B2B marketing.",
+      "No advanced automation.",
+      "Fewer integrations than Mailchimp/ActiveCampaign.",
+      "Limited free tier."
+    ],
+    "use_cases": [
+      "Monetize a newsletter via paid subscriptions.",
+      "Grow audience via discovery and recommendations.",
+      "Build community around your newsletter.",
+      "Creator wanting full audience control."
+    ]
+  }
+}

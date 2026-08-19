@@ -1,0 +1,86 @@
+{
+  "slug": "sanebox",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "SaneBox — Email Management (site officiel)", "url": "https://www.sanebox.com/" }
+  ],
+  "facts": {
+    "what": "Service d'IA pour la gestion des emails, filtrant automatiquement les emails peu importants et nettoyant la boîte de réception pour atteindre l'inbox zéro.",
+    "what_en": "AI-powered email management service that auto-sorts incoming emails and cleans up your inbox to achieve inbox zero.",
+    "pricing_model": "Abonnement mensuel à partir d'un plan freemium. Plan payant à partir de 7 $/mois.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit 14 jours avec toutes les fonctionnalités, sans carte de crédit requise." },
+    "plans": [
+      { "name": "Premium", "price": "7 $ / mois et au-delà" }
+    ],
+    "key_features": [
+      "Filtrage IA des emails peu importants (SaneLater)",
+      "Suppression automatique des spams non désirés (SaneBlackHole)",
+      "Rappels pour les emails sans réponse (SaneReminders)",
+      "Snooze et archivage automatique"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes submergé par les emails et voulez atteindre l'inbox zéro.",
+        "Vous cherchez une solution simple pour filtrer les emails non-essentiels.",
+        "Vous utilisez Gmail, Outlook, Yahoo ou un serveur IMAP/Exchange."
+      ],
+      "avoidIf": [
+        "Vous ne reçevez que quelques emails par jour.",
+        "Vous cherchez à envoyer des emails ou faire du marketing.",
+        "Vous avez besoin d'une solution CRM ou d'automation complète."
+      ],
+      "threshold": "SaneBox convient aux professionnels gérant beaucoup d'emails ; pour un usage léger, les filtres natifs Gmail ou Outlook suffisent."
+    },
+    "pros": [
+      "IA simple et efficace pour trier les emails.",
+      "Compatible avec tous les fournisseurs email majeurs.",
+      "Essai gratuit 14 jours sans carte de crédit.",
+      "Très abordable dès le palier d'entrée."
+    ],
+    "cons": [
+      "Fonction limitée : gestion des emails uniquement (pas d'envoi).",
+      "Nécessite un apprentissage pour bien régler les filtres.",
+      "Moins intégrations que d'autres outils email."
+    ],
+    "use_cases": [
+      "Réduire le temps passé à nettoyer la boîte de réception.",
+      "Filtrer les emails marketing et notifications non-essentiels.",
+      "Atteindre et maintenir l'inbox zéro."
+    ],
+    "relevant_for": ["Professionnels chargés", "Consultants", "Dirigeants"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're overwhelmed by email and want to reach inbox zero.",
+        "You like the idea of AI auto-sorting without complex rules.",
+        "You use Gmail, Outlook, Yahoo, or any IMAP/Exchange service."
+      ],
+      "avoidIf": [
+        "You receive only a few emails daily.",
+        "You need email marketing or sending capabilities.",
+        "You want a full CRM or business automation platform."
+      ],
+      "threshold": "SaneBox is perfect for busy professionals drowning in email; light email users should rely on native filters."
+    },
+    "pros": [
+      "AI-driven sorting is simple and effective.",
+      "Works with every major email provider.",
+      "14-day free trial, no credit card required.",
+      "Very affordable from the entry tier."
+    ],
+    "cons": [
+      "Limited to email management; no sending or marketing.",
+      "Learning curve to fine-tune filters for your workflow.",
+      "Fewer integrations than mainstream email tools."
+    ],
+    "use_cases": [
+      "Save 3–4 hours per week on email management.",
+      "Filter out marketing emails and notifications automatically.",
+      "Achieve and maintain inbox zero."
+    ]
+  }
+}

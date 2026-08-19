@@ -1,0 +1,94 @@
+{
+  "slug": "trustpilot",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Trustpilot — Review Management (site officiel)", "url": "https://www.trustpilot.com/" }
+  ],
+  "facts": {
+    "what": "Plateforme de gestion des avis client permettant aux entreprises de collecter, afficher et répondre aux avis clients avec automatisation et analytics de réputation.",
+    "what_en": "Customer review management platform for collecting, displaying, and responding to reviews with automated workflows and reputation analytics.",
+    "pricing_model": "Freemium avec plateforme gratuite pour tous. Plans payants optionnels pour outils d'automation avancés et analytics supplémentaires.",
+    "free_tier": { "exists": true, "detail": "Plateforme gratuite pour lire, écrire et signaler les avis. Outils avancés (automation, analytics) disponibles en plans payants." },
+    "plans": [
+      { "name": "Free", "price": "0 $ pour les consommateurs et base pour les entreprises" },
+      { "name": "Business (payant)", "price": "Tarifs sur demande pour features avancées" }
+    ],
+    "key_features": [
+      "Collecte automatisée des avis",
+      "Plateforme unifiée des avis",
+      "Réponses à tous les avis",
+      "Analytics de réputation et sentiment",
+      "Webhooks et intégrations"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes une entreprise cherchant à gérer et améliorer vos avis.",
+        "Vous voulez une plateforme neutre pour collecter des avis honnêtes.",
+        "Vous cherchez une solution gratuite pour débuter.",
+        "Vous avez besoin de répondre aux avis des clients."
+      ],
+      "avoidIf": [
+        "Vous ne voulez que des avis positifs (Trustpilot inclut les critiques).",
+        "Vous cherchez une plateforme de notation fermée/propriétaire.",
+        "Vous avez un très petit nombre d'avis (moins de 10)."
+      ],
+      "threshold": "Trustpilot convient aux entreprises sérieuses sur la gestion de réputation ; pour les avis fermés, d'autres outils propriétaires conviennent mieux."
+    },
+    "pros": [
+      "Plateforme gratuite accessible (avis vérifiés).",
+      "Collecte automatisée des avis via email.",
+      "Répond aux critiques de manière transparente.",
+      "Données d'avis vérifiées et équitables."
+    ],
+    "cons": [
+      "Inclut les critiques négatives (pas de sélection d'avis).",
+      "Features avancées (automation) nécessitent plan payant.",
+      "Moins de personnalisation que les solutions propriétaires.",
+      "Analytics basiques en gratuit."
+    ],
+    "use_cases": [
+      "Collecter automatiquement les avis clients après achat.",
+      "Afficher les avis (bons et mauvais) pour crédibilité.",
+      "Répondre aux critiques et montrer votre engagement.",
+      "Suivre la réputation et le sentiment au fil du temps."
+    ],
+    "relevant_for": ["E-commerce", "Entreprises de services", "Marques cherchant la transparence"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want a neutral platform to collect genuine customer reviews.",
+        "You're serious about responding to both praise and criticism.",
+        "You need a free option to start managing reviews.",
+        "You value transparent, verified customer feedback."
+      ],
+      "avoidIf": [
+        "You only want positive reviews displayed.",
+        "You prefer a proprietary, closed review system.",
+        "You have only a handful of reviews to manage."
+      ],
+      "threshold": "Trustpilot is for companies committed to transparency and reputation management; closed review platforms suit different goals."
+    },
+    "pros": [
+      "Free, transparent review platform.",
+      "Automated review collection via email.",
+      "Publicly respond to reviews (shows engagement).",
+      "Verified, authentic customer feedback."
+    ],
+    "cons": [
+      "Includes negative reviews (no cherry-picking).",
+      "Advanced features (automation, deeper analytics) are paid.",
+      "Less customization than proprietary platforms.",
+      "Basic analytics in free plan."
+    ],
+    "use_cases": [
+      "Automatically request reviews after customer transactions.",
+      "Build consumer trust by displaying honest reviews.",
+      "Respond to critics publicly and show accountability.",
+      "Track brand sentiment and reputation changes."
+    ]
+  }
+}

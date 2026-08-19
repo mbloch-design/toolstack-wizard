@@ -1,0 +1,95 @@
+{
+  "slug": "semrush",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "SEMrush — Marketing Platform (site officiel)", "url": "https://www.g2.com/products/semrush/pricing" }
+  ],
+  "facts": {
+    "what": "Suite d'outils marketing tout-en-un couvrant le SEO, la gestion des publicités, les insights concurrents et l'analyse de contenu pour optimiser la visibilité digitale.",
+    "what_en": "All-in-one marketing platform for SEO, competitive analysis, content optimization, and ad management across search and social channels.",
+    "pricing_model": "Abonnement par tiers selon les fonctionnalités (SEO Classic ou Semrush One). Tarification annuelle ou mensuelle avec réductions pour paiement annuel.",
+    "free_tier": { "exists": false, "detail": "Pas de plan gratuit. Trial gratuit disponible." },
+    "plans": [
+      { "name": "Pro (annuel)", "price": "117 $ / mois, 139 $ / mois (mensuel)" },
+      { "name": "Guru (annuel)", "price": "208 $ / mois, 249 $ / mois (mensuel)" },
+      { "name": "Business (annuel)", "price": "417 $ / mois, 499 $ / mois (mensuel)" },
+      { "name": "Semrush One", "price": "199 $ / mois (combine SEO + AI Visibility)" },
+      { "name": "Add-ons", "price": "Local SEO 30 $/mo, Social 20 $/mo, Content 60 $/mo, Ads 99 $/mo" }
+    ],
+    "key_features": [
+      "SEO research et keyword tracking",
+      "Analyse des backlinks",
+      "Audit de site",
+      "Insights concurrents",
+      "Gestion des publicités"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez une stratégie SEO importante avec plusieurs mots-clés.",
+        "Vous voulez des insights concurrents et une analyse de backlinks.",
+        "Vous avez un budget marketing mensuel significatif.",
+        "Vous cherchez une solution tout-en-un plutôt que plusieurs outils."
+      ],
+      "avoidIf": [
+        "Vous êtes nouveau en SEO et cherchez un outil simple.",
+        "Vous n'avez qu'un site et peu de mots-clés à tracker.",
+        "Vous cherchez un outil gratuit pour débuter."
+      ],
+      "threshold": "SEMrush convient aux agences et grandes entreprises ; pour les petites entreprises, Ahrefs ou des outils gratuits comme Ubersuggest peuvent suffire."
+    },
+    "pros": [
+      "Suite complète couvrant SEO, ads, insights concurrents.",
+      "Données de backlinks très complètes.",
+      "Outils de contenu et d'optimisation.",
+      "Interface professionnelle."
+    ],
+    "cons": [
+      "Tarif élevé dès le plan d'entrée.",
+      "Courbe d'apprentissage importante.",
+      "Peut être complexe pour les débutants."
+    ],
+    "use_cases": [
+      "Tracker des mots-clés et améliorer les rankings organiques.",
+      "Analyser les stratégies SEO des concurrents.",
+      "Auditer un site pour identifier les problèmes SEO.",
+      "Gérer les campagnes publicitaires PPC."
+    ],
+    "relevant_for": ["Agences marketing", "Entreprises e-commerce", "Consultants SEO"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage an enterprise SEO strategy across multiple keywords.",
+        "You need competitive intelligence and backlink analysis.",
+        "You have a meaningful marketing budget.",
+        "You prefer one platform over multiple point tools."
+      ],
+      "avoidIf": [
+        "You're new to SEO and need something simple to start.",
+        "You manage only one or two websites.",
+        "You're looking for a free SEO tool."
+      ],
+      "threshold": "SEMrush is for agencies and established companies; smaller businesses should start with Ahrefs or free alternatives."
+    },
+    "pros": [
+      "Comprehensive suite: SEO, ads, competitive insights.",
+      "Extensive backlink and competitor databases.",
+      "Content optimization and gap analysis.",
+      "Professional interface for enterprise teams."
+    ],
+    "cons": [
+      "High price even at the entry tier.",
+      "Steep learning curve for new users.",
+      "Can feel overwhelming for solo SEO practitioners."
+    ],
+    "use_cases": [
+      "Track keyword rankings and improve organic visibility.",
+      "Spy on competitor SEO and advertising strategies.",
+      "Conduct site audits to find and fix SEO issues.",
+      "Manage PPC and paid search campaigns."
+    ]
+  }
+}

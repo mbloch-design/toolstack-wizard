@@ -1,0 +1,87 @@
+{
+  "slug": "omniconvert-explore",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Omniconvert Explore — CRO Platform (site officiel)", "url": "https://www.omniconvert.com/explore/" }
+  ],
+  "facts": {
+    "what": "Plateforme d'optimisation du taux de conversion (CRO) spécialisée dans les tests A/B, la personnalisation, les overlays et les sondages pour augmenter les conversions e-commerce.",
+    "what_en": "Conversion rate optimization (CRO) platform specializing in A/B testing, personalization, overlays, and surveys to boost e-commerce conversion rates.",
+    "pricing_model": "Tarification basée sur le nombre de visiteurs testés mensuels. Plan gratuit pour 50 000 visiteurs ; plans payants sur demande.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit pour 50 000 visiteurs/mois sans carte de crédit requise." },
+    "plans": [
+      { "name": "Free", "price": "0 $ / mois, 50 000 visiteurs" },
+      { "name": "Pro/Business", "price": "Montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Tests A/B, A/B/n illimités",
+      "Personnalisation par plus de 40 critères de ciblage",
+      "Overlays et sondages",
+      "Analytics avancée (taux de conversion, RPV, CLV)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez un site e-commerce et voulez augmenter les conversions.",
+        "Vous avez du trafic qualifié mais un taux de conversion faible.",
+        "Vous cherchez une plateforme CRO avec un plan gratuit pour débuter."
+      ],
+      "avoidIf": [
+        "Vous n'avez pas assez de trafic pour obtenir des résultats statistiques (moins de 10 000 visiteurs/mois).",
+        "Vous cherchez une solution SMS ou email (hors scope de Omniconvert).",
+        "Vous êtes entièrement nouveau en e-commerce."
+      ],
+      "threshold": "Omniconvert convient aux sites e-commerce avec trafic modéré ; pour les très petits sites ou les grandes enterprises, d'autres outils peuvent être mieux adaptés."
+    },
+    "pros": [
+      "Plan gratuit généreux pour débuter.",
+      "Interface intuitive pour créer des tests sans développeur.",
+      "Nombreuses options de ciblage et de segmentation.",
+      "Support 24/7."
+    ],
+    "cons": [
+      "Les plans payants restent chers pour les petits sites.",
+      "Courbe d'apprentissage modérée pour maximiser les résultats.",
+      "Moins d'intégrations que les plateformes génériques."
+    ],
+    "use_cases": [
+      "Tester différentes variantes de boutons d'appel à l'action.",
+      "Personnaliser l'expérience selon le segment de client.",
+      "Optimiser les pages de produit pour augmenter les ventes."
+    ],
+    "relevant_for": ["E-commerce managers", "Growth hackers", "Conversion specialists"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You run an e-commerce site and want to improve conversion rates.",
+        "You have traffic but struggle to convert visitors into customers.",
+        "You need a CRO tool with a generous free tier."
+      ],
+      "avoidIf": [
+        "You have very low traffic (under 10k monthly visitors).",
+        "You need omnichannel marketing (email, SMS, social).",
+        "You're looking for advanced audience segmentation only."
+      ],
+      "threshold": "Omniconvert is ideal for mid-traffic e-commerce sites focused on conversion; very small sites or enterprise teams may have better alternatives."
+    },
+    "pros": [
+      "Powerful free plan to get started.",
+      "No coding required to launch A/B tests.",
+      "Comprehensive targeting and personalization options.",
+      "24/7 customer support."
+    ],
+    "cons": [
+      "Paid tiers scale quickly in price.",
+      "Requires consistent traffic to show meaningful results.",
+      "Limited integration ecosystem compared to general tools."
+    ],
+    "use_cases": [
+      "Run A/B tests on landing page designs.",
+      "Personalize product recommendations by visitor segment.",
+      "Test different checkout flows to reduce cart abandonment."
+    ]
+  }
+}

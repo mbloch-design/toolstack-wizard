@@ -1,0 +1,108 @@
+{
+  "slug": "icontact",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "iContact (site officiel)", "url": "https://icontact.com" }
+  ],
+  "facts": {
+    "what": "Plateforme email marketing pour SMB prioritisant deliverability et support, avec templates, automation de base et A/B testing.",
+    "what_en": "Email marketing platform for SMBs prioritizing deliverability and support, featuring templates, basic automation and A/B testing.",
+    "pricing_model": "Abonnements par nombre d'abonnés ; modèle pay-per-subscriber standard",
+    "free_tier": { "exists": true, "detail": "Essai gratuit 30 jours (jusqu'à 100 contacts, accès core features)" },
+    "plans": [
+      { "name": "Starter", "price": "Montants sur la page officielle" },
+      { "name": "Pro", "price": "Montants sur la page officielle" },
+      { "name": "Enterprise", "price": "Montants sur demande" }
+    ],
+    "key_features": [
+      "Templates email personnalisables et drag-and-drop.",
+      "Segmentation de listes et automation simple.",
+      "A/B testing de subject lines et contenus.",
+      "Analytics reporting et tracking opens/clicks.",
+      "Intégrations CRM et e-commerce.",
+      "Support délivré en priorité."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes SMB cherchant deliverability robuste.",
+        "Vous prioritizez support humain sur features complexes.",
+        "Vous avez base de contacts modérée (<100k)."
+      ],
+      "avoidIf": [
+        "Vous cherchez automation très avancée.",
+        "Vous avez besoin multi-canal (SMS, SMS, etc).",
+        "Vous préférez interface moderne et intuitive."
+      ],
+      "threshold": "iContact convient aux SMB cherchant support/deliverability ; pour automation/modern UX, Mailchimp/MailerLite meilleur."
+    },
+    "pros": [
+      "Support dédié et réactif.",
+      "Deliverability réputée solide.",
+      "Automation simple mais fonctionnelle.",
+      "A/B testing inclus.",
+      "Essai gratuit 30 jours.",
+      "Interface accessible pour débutants."
+    ],
+    "cons": [
+      "Interface datée et moins moderne.",
+      "Automation moins flexible que concurrents.",
+      "Pas de multi-canal (email seulement).",
+      "Plan gratuit très limité.",
+      "Moins d'intégrations que Mailchimp/Brevo.",
+      "Prix peut escalader vite avec abonnés."
+    ],
+    "use_cases": [
+      "Newsletter simple pour SMB.",
+      "Campaigns email avec segmentation basique.",
+      "A/B testing de subject lines et contenus.",
+      "Automation de bienvenue et relance.",
+      "Analytics opens/clicks simple."
+    ],
+    "relevant_for": [
+      "PME et PMI",
+      "Small e-commerce",
+      "Équipes marketing simples"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're an SMB seeking robust deliverability.",
+        "You prioritize human support over complex features.",
+        "You have moderate contact base (<100k)."
+      ],
+      "avoidIf": [
+        "You need very advanced automation.",
+        "You want multi-channel (SMS, SMS, etc).",
+        "You prefer modern, intuitive interface."
+      ],
+      "threshold": "iContact fits SMBs seeking support/deliverability; for automation/modern UX, Mailchimp/MailerLite better."
+    },
+    "pros": [
+      "Dedicated and responsive support.",
+      "Solid deliverability reputation.",
+      "Simple but functional automation.",
+      "A/B testing included.",
+      "30-day free trial.",
+      "Accessible interface for beginners."
+    ],
+    "cons": [
+      "Dated and less modern interface.",
+      "Less flexible automation than competitors.",
+      "No multi-channel (email only).",
+      "Very limited free plan.",
+      "Fewer integrations than Mailchimp/Brevo.",
+      "Pricing can escalate quickly with subscribers."
+    ],
+    "use_cases": [
+      "Simple newsletter for SMBs.",
+      "Email campaigns with basic segmentation.",
+      "A/B testing subject lines and content.",
+      "Welcome and re-engagement automation.",
+      "Simple opens/clicks analytics."
+    ]
+  }
+}

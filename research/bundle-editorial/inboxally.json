@@ -1,0 +1,102 @@
+{
+  "slug": "inboxally",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "InboxAlly (site officiel)", "url": "https://inboxally.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de warm-up et d'optimisation de la délivrabilité utilisant seed accounts simulant engagement authentique pour améliorer réputation sender.",
+    "what_en": "Email warm-up and deliverability optimization platform using seed accounts simulating authentic engagement to improve sender reputation.",
+    "pricing_model": "Abonnements par nombre de mailboxes et domaines à réchauffer",
+    "free_tier": { "exists": false, "detail": "Pas de plan gratuit ; essai possible sur demande" },
+    "plans": [
+      { "name": "Plans payants", "price": "Montants sur la page officielle (par mailbox/domaine)" }
+    ],
+    "key_features": [
+      "Seed accounts simulant ouvertures, scrolls, clicks, replies.",
+      "Réchauffement de domaines (warm-up) progressif.",
+      "Monitoring réputation sender et santé domaine.",
+      "Tests inbox placement et detection problèmes.",
+      "Dashboard analytics engagement et délivrabilité.",
+      "AI-powered predictions pour éviter spam."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous envoyez du cold email et avez besoin warm-up domaine.",
+        "Votre délivrabilité decline et seed accounts vous intéressent.",
+        "Vous cherchez optimiser inbox placement au-delà des basics."
+      ],
+      "avoidIf": [
+        "Vous utilisez déjà un ESL avec warm-up built-in (Lemlist, Amplemarket).",
+        "Vous n'envoyez pas de volume email significatif.",
+        "Vous avez budget très limité."
+      ],
+      "threshold": "InboxAlly utile si délivrabilité problématique et outils-dedans insuffisants ; sinon warm-up built-in dans ESL suffit."
+    },
+    "pros": [
+      "Warm-up spécialisé avec seed accounts authentiques.",
+      "Monitoring proactif délivrabilité et health.",
+      "AI predictions pour éviter problèmes.",
+      "Intégrations SMTP/inbox tools.",
+      "Support focus délivrabilité."
+    ],
+    "cons": [
+      "Pas de plan gratuit.",
+      "Pas un outil complet (warm-up seulement).",
+      "Coûteux si plusieurs domaines.",
+      "Nécessite integration SMTP.",
+      "Pas de capacité d'envoi soi-même (orchestration externe)."
+    ],
+    "use_cases": [
+      "Warm-up domaine avant campagne cold email.",
+      "Récupération réputation sender endommagée.",
+      "Monitoring continu délivrabilité et inbox placement.",
+      "Testing contenu et structure avant envoi masse.",
+      "Optimisation progressive rate envoi."
+    ],
+    "relevant_for": [
+      "Équipes cold email pro",
+      "Agences prospection",
+      "SaaS avec forte reliance email"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You send cold email and need domain warm-up.",
+        "Your deliverability is declining and seed accounts interest you.",
+        "You want to optimize inbox placement beyond basics."
+      ],
+      "avoidIf": [
+        "You already use an ESL with built-in warm-up (Lemlist, Amplemarket).",
+        "You don't send significant email volume.",
+        "Your budget is very tight."
+      ],
+      "threshold": "InboxAlly useful if deliverability is problematic and built-in tools insufficient; otherwise warm-up in ESL is enough."
+    },
+    "pros": [
+      "Specialized warm-up with authentic seed accounts.",
+      "Proactive deliverability monitoring.",
+      "AI predictions to avoid issues.",
+      "SMTP integrations and inbox tools.",
+      "Deliverability-focused support."
+    ],
+    "cons": [
+      "No free plan.",
+      "Not a complete tool (warm-up only).",
+      "Expensive with multiple domains.",
+      "Requires SMTP integration.",
+      "No sending capability itself (external orchestration)."
+    ],
+    "use_cases": [
+      "Warm-up domain before cold email campaign.",
+      "Recovery of damaged sender reputation.",
+      "Continuous deliverability and inbox placement monitoring.",
+      "Test content and structure before bulk sends.",
+      "Progressive send rate optimization."
+    ]
+  }
+}

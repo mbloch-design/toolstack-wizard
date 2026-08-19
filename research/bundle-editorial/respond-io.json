@@ -1,0 +1,89 @@
+{
+  "slug": "respond-io",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "respond.io — Omnichannel Messaging Platform (site officiel)", "url": "https://respond.io/" }
+  ],
+  "facts": {
+    "what": "Plateforme de conversation omnicanale centralisée unissant WhatsApp, Instagram, Facebook Messenger, Telegram, email et live chat en une seule boîte de réception avec AI Agents pour automatisation.",
+    "what_en": "Omnichannel conversation platform unifying WhatsApp, Instagram, Facebook Messenger, Telegram, email, and live chat with AI-powered agents for sales and support.",
+    "pricing_model": "Abonnement freemium avec plan gratuit limité. Plans payants sur demande ou consultation de la page tarifs officielle.",
+    "free_tier": { "exists": false, "detail": "Plan freemium disponible ; détails complets sur page tarifs officielle." },
+    "plans": [
+      { "name": "Plans", "price": "Montants sur la page officielle et sur demande" }
+    ],
+    "key_features": [
+      "Inbox omnicanal unifié",
+      "Support WhatsApp, Instagram, Messenger, Telegram, email",
+      "Appels vocaux intégrés",
+      "AI Agents pour accueil, ventes et support",
+      "Profiles client unifiés"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez une équipe support/ventes avec clients sur plusieurs canaux.",
+        "Vous cherchez à centraliser les conversations WhatsApp, Instagram, Messenger.",
+        "Vous avez besoin d'AI Agents pour qualifier les leads.",
+        "Vous visez les clients B2C avec conversations diversifiées."
+      ],
+      "avoidIf": [
+        "Vous n'utilisez qu'un ou deux canaux (email + chat suffisent).",
+        "Vous êtes entièrement sur le chat en direct classique.",
+        "Vous n'avez pas de besoins WhatsApp Business."
+      ],
+      "threshold": "respond.io convient aux équipes B2C cherchant une inbox omnicanale ; pour les équipes mail-only ou chat simple, Intercom suffira."
+    },
+    "pros": [
+      "Vrai omnicanal : WhatsApp, Instagram, Messenger, Telegram, email, live chat.",
+      "AI Agents automatisant l'accueil et la qualification.",
+      "Profiles client unifiés à travers tous les canaux.",
+      "Support voix intégré."
+    ],
+    "cons": [
+      "Tarification non publique ; nécessite un appel commercial.",
+      "Courbe d'apprentissage pour exploiter tous les canaux.",
+      "Moins connu que Intercom ou Zendesk."
+    ],
+    "use_cases": [
+      "Centraliser WhatsApp, Instagram et Messenger pour une équipe support.",
+      "Qualifier les leads via AI Agents sur WhatsApp Business.",
+      "Gérer les conversations support multichannel depuis une seule interface."
+    ],
+    "relevant_for": ["Équipes support B2C", "E-commerce avec WhatsApp", "Agences digitales"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You support customers across WhatsApp, Instagram, Messenger, and more.",
+        "You want to unify conversations into a single inbox.",
+        "You need AI agents to automate first-line support.",
+        "You're B2C with customers on multiple messaging platforms."
+      ],
+      "avoidIf": [
+        "You only use email and basic live chat.",
+        "Messaging platforms like WhatsApp aren't part of your strategy.",
+        "You need only ticket-based support."
+      ],
+      "threshold": "respond.io is best for B2C teams with diverse messaging channels; smaller teams with email-only needs should consider Intercom or Zendesk."
+    },
+    "pros": [
+      "True omnichannel: WhatsApp, Instagram, Messenger, Telegram, email, live chat.",
+      "AI agents handle first-line inquiries 24/7.",
+      "Unified customer profiles across all channels.",
+      "Integrated voice calling."
+    ],
+    "cons": [
+      "Pricing not public; requires sales contact.",
+      "Complex interface when using all channels.",
+      "Less market awareness than Intercom."
+    ],
+    "use_cases": [
+      "Unify support across WhatsApp, Instagram, and Messenger.",
+      "Use AI agents to qualify leads on WhatsApp Business.",
+      "Manage B2C customer conversations from one platform."
+    ]
+  }
+}

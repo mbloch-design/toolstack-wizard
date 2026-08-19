@@ -1,0 +1,99 @@
+{
+  "slug": "autonix",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Autonix (site officiel)", "url": "https://autonix.io" }
+  ],
+  "facts": {
+    "what": "Plateforme de gestion des visiteurs et d'analytics portfolio, transformant les codes QR dynamiques en renseignements commerciaux et suivi d'engagement multilocations.",
+    "what_en": "Visitor management and portfolio analytics platform transforming dynamic QR code scans into business intelligence and multi-location engagement tracking.",
+    "pricing_model": "Plan gratuit + abonnements payants ; tarification sur demande pour Enterprise",
+    "free_tier": { "exists": true, "detail": "Plan gratuit disponible ; fonctionnalités payantes pour cas d'usage avancés" },
+    "plans": [
+      { "name": "Free", "price": "Gratuit" },
+      { "name": "Paid plans", "price": "Montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Codes QR dynamiques (modifiables sans réimpression)",
+      "Analytics portfolio par région, département, événement",
+      "Collecte de données avec formulaires conditionnels et capture photo",
+      "Géolocalisation et cartes interactives des check-ins",
+      "Contrôles d'accès, audit trails, conformité",
+      "Intégration Zapier avec 1000+ apps tierces"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez plusieurs lieux physiques et suivi de présence.",
+        "Vous besoin de codes QR dynamiques pour événements ou campaigns.",
+        "Vous cherchez une alternative légère aux systèmes de visite complexes."
+      ],
+      "avoidIf": [
+        "Vous cherchez un outil email ou marketing direct.",
+        "Vous avez besoin d'automation de communication (séquences).",
+        "Votre cas d'usage est entièrement digital, sans composante physique."
+      ],
+      "threshold": "Autonix s'impose pour le suivi physique (check-ins, événements) et l'analytics de présence ; ce n'est pas un outil email/marketing automation."
+    },
+    "pros": [
+      "Codes QR dynamiques très flexibles.",
+      "Formulaires avancés avec conditionnels et signatures.",
+      "Analytics portfolio-wide avec drill-down régional.",
+      "Plan gratuit généreux.",
+      "Intégrations Zapier multiples."
+    ],
+    "cons": [
+      "Pas un outil email ou automation marketing.",
+      "Valeur surtout pour multi-locations avec présence physique.",
+      "Pas de cas d'usage pour digital-only.",
+      "Niche market (événements, retail, santé)."
+    ],
+    "use_cases": [
+      "Suivi de présence aux événements avec analytics.",
+      "Analytics footfall multilocations (retail, hôpitaux).",
+      "Audit trail de visites avec timestamps et GPS.",
+      "Collecte de feedback sur site avec formulaires QR."
+    ],
+    "relevant_for": [
+      "Organisateurs d'événements",
+      "Chaînes retail multilocations",
+      "Institutions gouvernementales / santé"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage multiple physical locations and visitor tracking.",
+        "You need dynamic QR codes for events or campaigns.",
+        "You're looking for a lightweight alternative to complex visitor systems."
+      ],
+      "avoidIf": [
+        "You're looking for an email or direct marketing tool.",
+        "You need communication automation (sequences).",
+        "Your use case is purely digital without physical touchpoints."
+      ],
+      "threshold": "Autonix is for physical presence tracking (check-ins, events) and location analytics; it is not an email or marketing automation tool."
+    },
+    "pros": [
+      "Highly flexible dynamic QR codes.",
+      "Advanced forms with conditionals and signatures.",
+      "Portfolio-wide analytics with location drill-down.",
+      "Generous free tier.",
+      "Multiple Zapier integrations."
+    ],
+    "cons": [
+      "Not an email or marketing automation tool.",
+      "Value mainly for multi-location businesses with physical presence.",
+      "No use case for digital-only operations.",
+      "Niche market (events, retail, healthcare)."
+    ],
+    "use_cases": [
+      "Event attendance tracking with analytics.",
+      "Multi-location footfall analytics (retail, hospitals).",
+      "Timestamped and GPS-tagged visit audit trails.",
+      "On-site feedback collection via QR forms."
+    ]
+  }
+}

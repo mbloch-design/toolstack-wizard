@@ -1,0 +1,97 @@
+{
+  "slug": "typeform",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Typeform — Form Builder Platform (site officiel)", "url": "https://typeform.com/" }
+  ],
+  "facts": {
+    "what": "Constructeur de formulaires et sondages conversationnels permettant de créer des formulaires élégants, sondages et questionnaires sans code avec une expérience utilisateur fluide.",
+    "what_en": "Conversational form and survey builder enabling creation of elegant, engaging forms and surveys without coding, with smooth UX.",
+    "pricing_model": "Freemium avec plan gratuit limité (10 réponses/mois). Plans payants à partir de 39 $/mois avec plus de réponses.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit : 10 réponses par mois, 1 utilisateur, 10 questions par formulaire, logique basique." },
+    "plans": [
+      { "name": "Free", "price": "0 $ / mois, 10 réponses/mois" },
+      { "name": "Basic", "price": "39 $ / mois (39 $/mo annual), 100 réponses/mois" },
+      { "name": "Plus", "price": "79 $ / mois (56 $/mo annual), 1 000 réponses/mois" },
+      { "name": "Business", "price": "129 $ / mois (91 $/mo annual), réponses illimitées" },
+      { "name": "Enterprise", "price": "Tarification personnalisée" }
+    ],
+    "key_features": [
+      "Créateur de formulaires sans code (drag-and-drop)",
+      "Design attrayant et conversationnel",
+      "Logique conditionnelle et sauts de questions",
+      "Intégrations (Zapier, Slack, etc.)",
+      "Analytics et rapports de réponses"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez à créer des formulaires ou sondages sans programmer.",
+        "Vous voulez une plateforme avec design élégant et UX fluide.",
+        "Vous avez un budget modéré et n'avez pas besoin de réponses illimitées.",
+        "Vous appréciez les intégrations (Zapier, Slack, etc.)."
+      ],
+      "avoidIf": [
+        "Vous cherchez un outil entièrement gratuit avec réponses illimitées.",
+        "Vous avez besoin d'automation complexe ou NPS avancé.",
+        "Vous gérez des formulaires massifs (100k+ réponses/mois)."
+      ],
+      "threshold": "Typeform excelle pour les petites enquêtes et sondages élégants ; pour les besoins d'expérience client à grande échelle, SurveySparrow peut être plus adaptée."
+    },
+    "pros": [
+      "Interface ultra-intuitive et élégante.",
+      "Pas de code requis pour créer des formulaires.",
+      "Logique conditionnelle facile à configurer.",
+      "Plan gratuit généreux pour tester."
+    ],
+    "cons": [
+      "Le plan gratuit est très limité (10 réponses/mois).",
+      "Les prix montent vite pour réponses plus nombreuses.",
+      "Moins de fonctionnalités avancées en marketing (NPS, feedback).",
+      "Limite de 10 questions sur plan gratuit."
+    ],
+    "use_cases": [
+      "Créer un formulaire de contact sans développeur.",
+      "Lancer un sondage de satisfaction client.",
+      "Faire un quiz ou un test interactif.",
+      "Collecter des inscriptions ou du feedback utilisateur."
+    ],
+    "relevant_for": ["Petites entreprises", "Freelances", "Créateurs de contenu"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want beautiful, easy-to-make forms without coding.",
+        "You value conversational, engaging form experiences.",
+        "You have moderate form response needs (under 1k/month).",
+        "You like Zapier and Slack integrations."
+      ],
+      "avoidIf": [
+        "You need completely free with unlimited responses.",
+        "You need advanced NPS or loyalty measurement tools.",
+        "You handle massive form response volumes."
+      ],
+      "threshold": "Typeform is ideal for elegant, low-to-mid volume surveys; for enterprise experience management, SurveySparrow is better."
+    },
+    "pros": [
+      "Stunning, conversational form design.",
+      "No coding required.",
+      "Conditional logic made easy.",
+      "Generous free tier to get started."
+    ],
+    "cons": [
+      "Free plan is very limited (10 responses/month).",
+      "Paid plans get expensive for high volumes.",
+      "Fewer advanced marketing features (NPS, sentiment).",
+      "10-question limit on free plan."
+    ],
+    "use_cases": [
+      "Create a contact or feedback form without hiring a developer.",
+      "Run a customer satisfaction survey.",
+      "Build an interactive quiz or assessment.",
+      "Collect signups and early user feedback."
+    ]
+  }
+}

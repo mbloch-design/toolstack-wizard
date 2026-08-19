@@ -1,0 +1,89 @@
+{
+  "slug": "seamless-ai",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Seamless.AI — B2B Sales Intelligence (site officiel)", "url": "https://seamless.ai/" }
+  ],
+  "facts": {
+    "what": "Plateforme d'intelligence commerciale B2B fournissant une base de données de 1,7 milliards de contacts vérifiés avec noms, emails, téléphones directs et renseignements sur les changements de poste.",
+    "what_en": "B2B sales intelligence platform with 1.7B+ verified contacts, including emails, direct dials, and job change tracking for prospecting.",
+    "pricing_model": "Tarification sur demande. Modèle basé sur les crédits ou par commission.",
+    "free_tier": { "exists": false, "detail": "Pas de plan gratuit. Trial disponible sur demande." },
+    "plans": [
+      { "name": "Plans", "price": "Tarification sur demande" }
+    ],
+    "key_features": [
+      "Base de 1,7 milliards de contacts vérifiés",
+      "Noms, emails, téléphones directs",
+      "Suivi des changements de poste",
+      "Extension Chrome pour capturer depuis LinkedIn",
+      "API et intégrations CRM"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous faites de la prospection B2B et avez besoin de contacts vérifiés.",
+        "Vous cherchez des emails et numéros directs de décideurs.",
+        "Vous gérez une équipe commerciale qui a besoin d'enrichissement de données.",
+        "Vous cherchez des alertes de changement de poste."
+      ],
+      "avoidIf": [
+        "Vous ne faites que du marketing (hors prospection commerciale).",
+        "Vous avez un petit pipeline et peu de prospects.",
+        "Vous cherchez une solution CRM complète avec émulation."
+      ],
+      "threshold": "Seamless.AI convient aux équipes commerciales B2B actives ; pour les petites équipes ou le marketing, les listes d'emails gratuits suffisent."
+    },
+    "pros": [
+      "Base de données massive (1,7 milliards de contacts).",
+      "Données mises à jour mensuellement.",
+      "Extension Chrome pratique.",
+      "Noms, emails, téléphones directs vérifiés."
+    ],
+    "cons": [
+      "Tarification opaque ; nécessite un appel commercial.",
+      "Coûteux pour les petites équipes.",
+      "Moins connu que LinkedIn Sales Navigator."
+    ],
+    "use_cases": [
+      "Chercher des emails et numéros de décideurs pour la prospection.",
+      "Enrichir une liste de prospects avec emails et téléphones.",
+      "Traquer les changements de poste pour relancer des prospects."
+    ],
+    "relevant_for": ["Équipes commerciales B2B", "Account executives", "Business development reps"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need verified contact info for B2B prospecting.",
+        "You want direct emails and phone numbers of decision makers.",
+        "You track job changes to identify re-engagement opportunities.",
+        "Your sales team is actively cold-calling and emailing."
+      ],
+      "avoidIf": [
+        "You only do inbound marketing (not outbound prospecting).",
+        "You have a small sales pipeline.",
+        "You prefer LinkedIn Sales Navigator or similar."
+      ],
+      "threshold": "Seamless.AI is for active B2B sales teams; small teams or marketing-only orgs should explore free or cheaper alternatives."
+    },
+    "pros": [
+      "Massive database with 1.7B+ verified contacts.",
+      "Data updated every 30 days.",
+      "Chrome extension for quick LinkedIn lookups.",
+      "Verified emails, direct dials, and job titles."
+    ],
+    "cons": [
+      "Pricing not transparent; requires sales call.",
+      "Expensive for small teams.",
+      "Less brand awareness than LinkedIn Sales Navigator."
+    ],
+    "use_cases": [
+      "Find emails and direct numbers for cold outreach.",
+      "Enrich prospect lists with verified contact info.",
+      "Identify buying signals via job change tracking."
+    ]
+  }
+}

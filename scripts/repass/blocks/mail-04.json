@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "mailgun",
+    "name": "Mailgun",
+    "url": "https://mailgun.com"
+  },
+  {
+    "slug": "moosend",
+    "name": "Moosend",
+    "url": "https://moosend.com"
+  },
+  {
+    "slug": "nearst",
+    "name": "NearSt",
+    "url": "https://near.st"
+  },
+  {
+    "slug": "omniconvert-explore",
+    "name": "Omniconvert Explore",
+    "url": "https://omniconvert.com"
+  },
+  {
+    "slug": "pushowl-web-push-notifications",
+    "name": "PushOwl Web Push Notifications",
+    "url": "https://pushowl.com"
+  },
+  {
+    "slug": "quartile",
+    "name": "Quartile",
+    "url": "https://quartile.com"
+  },
+  {
+    "slug": "replyio",
+    "name": "Reply.io",
+    "url": "https://get.reply.io/nnswatq9mgm4-p7peoq"
+  },
+  {
+    "slug": "resend",
+    "name": "Resend",
+    "url": "https://resend.com"
+  },
+  {
+    "slug": "respond-io",
+    "name": "respond.io",
+    "url": "https://respond.io"
+  }
+]

@@ -1,0 +1,93 @@
+{
+  "slug": "activecampaign",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "ActiveCampaign (site officiel)", "url": "https://www.activecampaign.com" }
+  ],
+  "facts": {
+    "what": "Plateforme d'automatisation marketing autonome pour email, SMS, WhatsApp et autres canaux, avec des agents IA pilotant les campagnes et des analyses avancées.",
+    "what_en": "Autonomous marketing automation platform for email, SMS, WhatsApp and multichannel engagement, with AI agents managing campaigns and advanced analytics.",
+    "pricing_model": "Abonnement par nombre de contacts et fonctionnalités ; essai gratuit 14 jours",
+    "free_tier": { "exists": true, "detail": "Essai gratuit de 14 jours sans carte bancaire ; pas de plan gratuit permanent" },
+    "plans": [
+      { "name": "Starter", "price": "À partir de montants sur la page officielle selon le nombre de contacts" },
+      { "name": "Plus", "price": "Montants sur la page officielle" },
+      { "name": "Pro", "price": "Montants sur la page officielle" },
+      { "name": "Enterprise", "price": "Montants sur demande" }
+    ],
+    "key_features": [
+      "Agents IA autonomes (Active Intelligence 2.8) adaptés à votre brand",
+      "Multi-canal : email, SMS, WhatsApp, 1000+ intégrations",
+      "Automatisation des journées clients et lead scoring",
+      "Analyses IA et synthèse de campagnes"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez plusieurs canaux (email, SMS, WhatsApp) et besoin d'une automation avancée.",
+        "Vous voulez des agents IA gérant vos campagnes automatiquement.",
+        "Vous avez une base de contacts volumineuse à segmenter."
+      ],
+      "avoidIf": [
+        "Vous cherchez un outil gratuit sans limitation.",
+        "Vous vous concentrez uniquement sur l'email sans multi-canal.",
+        "Votre budget est très limité et vous débutez."
+      ],
+      "threshold": "ActiveCampaign s'impose pour des entreprises consolidant plusieurs canaux sous un seul outil IA ; pour un usage email simple, une alternative gratuite suffit."
+    },
+    "pros": [
+      "Agents IA robustes pour l'automatisation multichannel.",
+      "Intégrations très nombreuses (1000+).",
+      "Analytics et insights avancés pour optimiser les résultats.",
+      "Essai gratuit 14 jours sans engagement."
+    ],
+    "cons": [
+      "Pas de plan gratuit permanent.",
+      "Prix élevé à grande échelle de contacts.",
+      "Interface dense pour les débutants."
+    ],
+    "use_cases": [
+      "Construire une stratégie multi-canal (email + SMS + WhatsApp).",
+      "Automatiser des séquences de vente complexes.",
+      "Analyser en profondeur la performance des campagnes."
+    ],
+    "relevant_for": [
+      "Agences marketing",
+      "Équipes de vente B2B",
+      "E-commerce et retail"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage multiple marketing channels (email, SMS, WhatsApp) and need advanced automation.",
+        "You want AI agents managing your campaigns autonomously.",
+        "You have a large contact database requiring complex segmentation."
+      ],
+      "avoidIf": [
+        "You're looking for a free tool without limitations.",
+        "You focus purely on email marketing without multi-channel needs.",
+        "Your budget is tight and you're just starting out."
+      ],
+      "threshold": "ActiveCampaign makes sense for consolidating multiple channels under one AI platform; for simple email-only needs, a free alternative is sufficient."
+    },
+    "pros": [
+      "Powerful AI agents for multichannel automation.",
+      "Extensive integrations (1000+).",
+      "Advanced analytics and insights for optimization.",
+      "14-day free trial with no strings attached."
+    ],
+    "cons": [
+      "No permanent free plan.",
+      "Pricing climbs steeply with contact volume.",
+      "Dense interface for beginners."
+    ],
+    "use_cases": [
+      "Build a multi-channel strategy (email + SMS + WhatsApp).",
+      "Automate complex sales sequences.",
+      "Deep-dive campaign performance analysis."
+    ]
+  }
+}

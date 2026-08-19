@@ -115,6 +115,8 @@
     { "source": "/:lang(fr|en)/tool/monday/:path*", "destination": "/:lang/tool/monday-com/:path*", "permanent": true },
     { "source": "/:lang(fr|en)/tool/reclaim-ai", "destination": "/:lang/tool/reclaim", "permanent": true },
     { "source": "/:lang(fr|en)/tool/reclaim-ai/:path*", "destination": "/:lang/tool/reclaim/:path*", "permanent": true },
+    { "source": "/:lang(fr|en)/tool/sendinblue", "destination": "/:lang/tool/brevo", "permanent": true },
+    { "source": "/:lang(fr|en)/tool/sendinblue/:path*", "destination": "/:lang/tool/brevo/:path*", "permanent": true },
     { "source": "/:lang(fr|en)/tool/ga4", "destination": "/:lang/tool/google-analytics", "permanent": true },
     { "source": "/:lang(fr|en)/tool/ga4/:path*", "destination": "/:lang/tool/google-analytics/:path*", "permanent": true },
     { "source": "/en/guide/loom-prix-alternatives", "destination": "/en/guide/loom-pricing-alternatives", "permanent": true },

@@ -1,0 +1,102 @@
+{
+  "slug": "crowdfire-inc",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Crowdfire Inc (site officiel)", "url": "https://crowdfireapp.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de gestion des réseaux sociaux pour scheduling, analytics et engagement, avec support email pour contacts et documentation.",
+    "what_en": "Social media management platform for scheduling, analytics and engagement, with email support for customer inquiries and documentation.",
+    "pricing_model": "Plan gratuit + abonnements par fonctionnalités ; facturation mensuelle ou annuelle",
+    "free_tier": { "exists": true, "detail": "Plan gratuit limité ; fonctionnalités payantes pour scheduling avancé et analytics" },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (fonctionnalités limités)" },
+      { "name": "Plus", "price": "9,99 $/mois" },
+      { "name": "Premium", "price": "49,99 $/mois" },
+      { "name": "VIP", "price": "99,99 $/mois" }
+    ],
+    "key_features": [
+      "Scheduling multi-plateforme (Instagram, Facebook, Twitter, LinkedIn, TikTok, Pinterest).",
+      "Bulk scheduling pour uploads massifs.",
+      "Analytics sur performance posts et followers.",
+      "Curation de contenu et monitoring mentions.",
+      "Support email et help center complet."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez plusieurs réseaux sociaux (Instagram, TikTok, LinkedIn).",
+        "Vous avez besoin de scheduling et analytics simplifié.",
+        "Vous cherchez alternative à Later à budget modéré."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'email marketing (ce n'est pas la spécialité).",
+        "Vous voulez engagement avancé et réponse automatisée.",
+        "Vous cherchez une plateforme all-in-one email+social."
+      ],
+      "threshold": "Crowdfire excelle pour social simple ; pour email/marketing/automation, utiliser Brevo/Mailchimp plutôt."
+    },
+    "pros": [
+      "Plan gratuit disponible.",
+      "Scheduling bulk simple et efficace.",
+      "Analytics solides sur performance posts.",
+      "Multi-plateforme (Instagram, TikTok, LinkedIn, etc).",
+      "Support email réactif."
+    ],
+    "cons": [
+      "Pas un outil email marketing.",
+      "Interface moins moderne que Later/Buffer.",
+      "Automation engagement limitée.",
+      "Plan gratuit très limité.",
+      "Moins d'intégrations que concurrents."
+    ],
+    "use_cases": [
+      "Planifier et organiser posts sur multi-réseaux.",
+      "Analytics de performance et audience trends.",
+      "Curation de contenu et monitoring brand mentions.",
+      "Scheduling bulk pour campagnes coordonnées."
+    ],
+    "relevant_for": [
+      "Content creators",
+      "Petites agences social",
+      "Teams marketing multi-réseaux"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage multiple social networks (Instagram, TikTok, LinkedIn).",
+        "You need simple scheduling and analytics.",
+        "You want a Later alternative at moderate budget."
+      ],
+      "avoidIf": [
+        "You need email marketing (not this platform's focus).",
+        "You want advanced engagement and auto-response.",
+        "You need an all-in-one email+social platform."
+      ],
+      "threshold": "Crowdfire excels for simple social; for email/marketing/automation, use Brevo/Mailchimp instead."
+    },
+    "pros": [
+      "Free plan available.",
+      "Simple, efficient bulk scheduling.",
+      "Solid analytics on post performance.",
+      "Multi-platform (Instagram, TikTok, LinkedIn, etc).",
+      "Responsive email support."
+    ],
+    "cons": [
+      "Not an email marketing tool.",
+      "Less modern interface than Later/Buffer.",
+      "Limited engagement automation.",
+      "Very limited free plan.",
+      "Fewer integrations than competitors."
+    ],
+    "use_cases": [
+      "Plan and organize posts across networks.",
+      "Performance analytics and audience trends.",
+      "Content curation and brand mention monitoring.",
+      "Bulk scheduling for coordinated campaigns."
+    ]
+  }
+}

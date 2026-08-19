@@ -1,0 +1,107 @@
+{
+  "slug": "later",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Later (site officiel)", "url": "https://later.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de gestion et scheduling des réseaux sociaux (8 platforms) avec smart scheduling IA, analytics et Canva integration, orientée visual-first creators.",
+    "what_en": "Social media management and scheduling platform (8 platforms) with AI-powered smart scheduling, analytics and Canva integration, focused on visual-first creators.",
+    "pricing_model": "Abonnements mensuels ou annuels (discount annuel) ; pas de plan gratuit",
+    "free_tier": { "exists": false, "detail": "Pas de plan gratuit ; essai possible" },
+    "plans": [
+      { "name": "Lite", "price": "À partir de 18,75 $/mois (facturation annuelle)" },
+      { "name": "Unlimited", "price": "Montants sur la page officielle" },
+      { "name": "Business", "price": "Montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Visual calendar drag-and-drop (post grid preview).",
+      "8-platform scheduling (Instagram, TikTok, LinkedIn, Facebook, X, Pinterest, YouTube, Threads).",
+      "Smart Scheduling IA (optimal posting times).",
+      "Canva integration native.",
+      "Analytics dashboard multi-plateforme.",
+      "Future Trends feature (trend monitoring).",
+      "Social inbox centralisé."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez réseaux sociaux visuels (Instagram, TikTok, Pinterest).",
+        "Vous cherchez visual calendar drag-and-drop.",
+        "Vous utilisez déjà Canva et veux intégration native."
+      ],
+      "avoidIf": [
+        "Vous avez besoin email marketing (ce n'est pas Later).",
+        "Vous avez budget très limité (pas de gratuit).",
+        "Vous voulez social listening avancé (Hootsuite mieux)."
+      ],
+      "threshold": "Later gagne pour social visual management ; pour email/multi-canal, Hootsuite/Mailchimp meilleur."
+    },
+    "pros": [
+      "Visual calendar drag-and-drop très intuitif.",
+      "Smart Scheduling IA pour optimal timing.",
+      "Canva integration native.",
+      "8 platforms et inbox centralisé.",
+      "Analytics simples et dashboards.",
+      "Interface moderne et creator-friendly."
+    ],
+    "cons": [
+      "Pas de plan gratuit.",
+      "Pas email marketing (social seulement).",
+      "Social listening moins avancé que Hootsuite.",
+      "Automation engagement limitée.",
+      "Moins d'intégrations que Hootsuite."
+    ],
+    "use_cases": [
+      "Planifier posts Instagram/TikTok avec visual preview.",
+      "Smart Scheduling AI pour optimal engagement.",
+      "Analytics multi-plateforme simples.",
+      "Content calendar management visuels.",
+      "Trending content discovery."
+    ],
+    "relevant_for": [
+      "Influencers et content creators",
+      "E-commerce social media",
+      "Small marketing teams"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage visual social networks (Instagram, TikTok, Pinterest).",
+        "You want a visual calendar drag-and-drop.",
+        "You already use Canva and want native integration."
+      ],
+      "avoidIf": [
+        "You need email marketing (not Later's focus).",
+        "You have a very tight budget (no free plan).",
+        "You want advanced social listening (Hootsuite better)."
+      ],
+      "threshold": "Later wins for visual social management; for email/multi-channel, Hootsuite/Mailchimp better."
+    },
+    "pros": [
+      "Very intuitive visual calendar drag-and-drop.",
+      "AI-powered smart scheduling for optimal timing.",
+      "Native Canva integration.",
+      "8 platforms and centralized inbox.",
+      "Simple analytics and dashboards.",
+      "Modern, creator-friendly interface."
+    ],
+    "cons": [
+      "No free plan.",
+      "No email marketing (social only).",
+      "Social listening less advanced than Hootsuite.",
+      "Limited engagement automation.",
+      "Fewer integrations than Hootsuite."
+    ],
+    "use_cases": [
+      "Plan Instagram/TikTok posts with visual preview.",
+      "AI smart scheduling for optimal engagement.",
+      "Simple multi-platform analytics.",
+      "Visual content calendar management.",
+      "Trending content discovery."
+    ]
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "slug": "kit",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Kit (site officiel)", "url": "https://kit.com" }
+  ],
+  "facts": {
+    "what": "Plateforme email pour creators vendant newsletters, courses et digital products, avec automation visuelle, templates et intégration native MCP Claude pour management depuis chat.",
+    "what_en": "Email platform for creators selling newsletters, courses and digital products, with visual automation, templates and native Claude MCP integration for chat-based management.",
+    "pricing_model": "Plan gratuit + abonnements par nombre d'abonnés ; 0% commission contrairement à competitors",
+    "free_tier": { "exists": true, "detail": "Plan Newsletter gratuit : jusqu'à 10,000 abonnés avec 1 sequence automation" },
+    "plans": [
+      { "name": "Newsletter", "price": "Gratuit (10k abonnés)" },
+      { "name": "Creator", "price": "39 $/mois (1000 abonnés, ou 33 $/mois annuel)" },
+      { "name": "Advanced", "price": "Montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Visual automation builder flowchart-based.",
+      "Newsletter + course + digital product sales intégrés.",
+      "Templates drag-and-drop et customization facile.",
+      "Audience segmentation et analytics.",
+      "Intégration MCP Claude native (May 2026 launch).",
+      "0% commission vs competitors."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes creator monétisant newsletter + courses + digital products.",
+        "Vous cherchez alternative à ConvertKit sans commissions.",
+        "Vous utilisez Claude/IA et veux gérer business depuis chat."
+      ],
+      "avoidIf": [
+        "Vous faites email marketing B2B pure (Mailchimp mieux).",
+        "Vous avez besoin multi-canal (SMS, etc).",
+        "Vous débutez et cherchez outils simple gratuit."
+      ],
+      "threshold": "Kit gagne pour creators monétisant ; pour B2B email ou features avancées, Mailchimp/ActiveCampaign meilleur."
+    },
+    "pros": [
+      "Plan gratuit généreux (10k abonnés).",
+      "Aucune commission prélevée sur vos revenus.",
+      "Everything-in-one : newsletter + courses + products.",
+      "Visual automation builder accessible.",
+      "MCP Claude integration pour management via chat.",
+      "Templates modernes et pro."
+    ],
+    "cons": [
+      "Orienté creators (pas B2B).",
+      "Automation moins avancée que ActiveCampaign.",
+      "Pas de SMS/multi-canal.",
+      "Audience plus petite que Mailchimp.",
+      "Courbe apprentissage sur MCP si nouveau."
+    ],
+    "use_cases": [
+      "Monétiser newsletter via subscriptions payantes.",
+      "Vendre courses et digital products intégrés.",
+      "Automation bienvenue et upsell sequences.",
+      "Gestion newsletter depuis Claude chat.",
+      "Analytics audience et performance newsletter."
+    ],
+    "relevant_for": [
+      "Creators et writers indépendants",
+      "Online course instructors",
+      "Content creators avec monetization"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a creator monetizing newsletter + courses + digital products.",
+        "You want a ConvertKit alternative without commissions.",
+        "You use Claude/AI and want to manage business from chat."
+      ],
+      "avoidIf": [
+        "You're doing pure B2B email marketing (Mailchimp better).",
+        "You need multi-channel (SMS, etc).",
+        "You're starting and want simple free tools."
+      ],
+      "threshold": "Kit wins for monetizing creators; for B2B email or advanced features, Mailchimp/ActiveCampaign better."
+    },
+    "pros": [
+      "Generous free tier (10k subscribers).",
+      "Aucune commission prélevée sur vos revenus.",
+      "Everything-in-one: newsletter + courses + products.",
+      "Visual automation builder accessible.",
+      "MCP Claude integration for chat-based management.",
+      "Modern, professional templates."
+    ],
+    "cons": [
+      "Creator-focused (not B2B).",
+      "Automation less advanced than ActiveCampaign.",
+      "No SMS/multi-channel.",
+      "Smaller audience than Mailchimp.",
+      "Learning curve with MCP if new."
+    ],
+    "use_cases": [
+      "Monetize newsletter via paid subscriptions.",
+      "Sell integrated courses and digital products.",
+      "Welcome and upsell sequence automation.",
+      "Manage newsletter from Claude chat.",
+      "Audience analytics and newsletter performance."
+    ]
+  }
+}

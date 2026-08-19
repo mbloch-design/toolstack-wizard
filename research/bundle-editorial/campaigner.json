@@ -1,0 +1,102 @@
+{
+  "slug": "campaigner",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Campaigner (site officiel)", "url": "https://campaigner.com" }
+  ],
+  "facts": {
+    "what": "Plateforme email et SMS marketing orientée automation avancée et segmentation multi-variée, avec outils IA 2026 et workflows de journées client.",
+    "what_en": "Email and SMS marketing platform focused on advanced automation and multi-variate segmentation, with 2026 AI tools and customer journey workflows.",
+    "pricing_model": "Abonnements par volume de contacts ; tarification escalade avec nombre de subscribers",
+    "free_tier": { "exists": false, "detail": "Pas de plan gratuit ; essai payant possible" },
+    "plans": [
+      { "name": "Essentials", "price": "À partir de 14 $/mois (1000 contacts)" },
+      { "name": "Advanced", "price": "À partir de 35 $/mois (1000 contacts)" },
+      { "name": "Custom", "price": "Montants sur demande" }
+    ],
+    "key_features": [
+      "Automation avancée avec AI et guided flows 2026.",
+      "Segmentation multi-variée et A/B testing.",
+      "Email + SMS marketing intégré.",
+      "Templates drag-and-drop et éditeur avancé.",
+      "Analytics temps-réel et tracking ROI.",
+      "Automations pour onboarding, cart abandon, réengagement."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin d'automation avancée et multi-variate testing.",
+        "Vous gérez une base de contacts SMB/mid-market.",
+        "Vous cherchez alternative à Klaviyo mais pour email+SMS."
+      ],
+      "avoidIf": [
+        "Vous cherchez un plan gratuit ou très bon marché.",
+        "Vous avez besoin de deliverability premium payante.",
+        "Vous débutez en email et interface simple est priorité."
+      ],
+      "threshold": "Campaigner convient aux teams email avancées cherchant automation ; pour débutants ou gratuit, AWeber/MailerLite meilleur."
+    },
+    "pros": [
+      "Automation avancée avec AI et guided flows.",
+      "Multi-variate testing et segmentation.",
+      "Email + SMS intégré à même prix.",
+      "Templates professionnels drag-and-drop.",
+      "ROI tracking et analytics temps-réel."
+    ],
+    "cons": [
+      "Pas de plan gratuit.",
+      "Interface datée (interface critique récurrente).",
+      "Deliverability add-on payant.",
+      "Prix escalade rapidement avec contacts.",
+      "Support non inclus dans tous les plans."
+    ],
+    "use_cases": [
+      "Automation d'emails + SMS coordonnés.",
+      "Multi-variate testing et segmentation avancée.",
+      "Journées clients personnalisées (onboarding, relance).",
+      "Analytics ROI détaillée par campagne."
+    ],
+    "relevant_for": [
+      "Agences email",
+      "E-commerce mid-market",
+      "Équipes marketing avancées"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need advanced automation and multi-variate testing.",
+        "You manage SMB/mid-market contact volumes.",
+        "You want a Klaviyo alternative but for email+SMS."
+      ],
+      "avoidIf": [
+        "You want a free or very cheap plan.",
+        "You need premium deliverability included.",
+        "You're just starting email and need simplicity."
+      ],
+      "threshold": "Campaigner suits advanced email teams seeking automation; for beginners or budget-conscious, AWeber/MailerLite better."
+    },
+    "pros": [
+      "Advanced automation with AI and guided flows.",
+      "Multi-variate testing and segmentation.",
+      "Email + SMS integrated at same price.",
+      "Professional drag-and-drop templates.",
+      "ROI tracking and real-time analytics."
+    ],
+    "cons": [
+      "No free plan.",
+      "Dated interface (recurring criticism).",
+      "Deliverability add-on cost.",
+      "Pricing escalates quickly with contacts.",
+      "Support not included in all plans."
+    ],
+    "use_cases": [
+      "Coordinated email + SMS automation.",
+      "Multi-variate testing and advanced segmentation.",
+      "Personalized customer journeys (onboarding, re-engagement).",
+      "Detailed ROI analytics per campaign."
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+[
+  {
+    "slug": "substack",
+    "name": "Substack",
+    "url": "https://substack.com"
+  },
+  {
+    "slug": "surveysparrow",
+    "name": "SurveySparrow",
+    "url": "https://surveysparrow.com"
+  },
+  {
+    "slug": "trustpilot",
+    "name": "Trustpilot",
+    "url": "https://trustpilot.com"
+  },
+  {
+    "slug": "typeform",
+    "name": "Typeform",
+    "url": "https://typeform.com"
+  }
+]

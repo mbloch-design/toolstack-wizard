@@ -1,0 +1,107 @@
+{
+  "slug": "lusha",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Lusha (site officiel)", "url": "https://www.lusha.com" }
+  ],
+  "facts": {
+    "what": "Plateforme B2B de données et contact enrichissement avec 290M+ contacts vérifiés, Chrome extension pour LinkedIn, et APIs pour prospection et automation.",
+    "what_en": "B2B data and contact enrichment platform with 290M+ verified contacts, Chrome extension for LinkedIn, and APIs for prospecting and workflow automation.",
+    "pricing_model": "Plan gratuit + abonnements ; modèle freemium avec 5 crédits gratuits/mois",
+    "free_tier": { "exists": true, "detail": "Plan gratuit avec 5 crédits/mois ; fonctionnalités core premium" },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (5 crédits/mois)" },
+      { "name": "Starter", "price": "À partir de 36 $/mois" },
+      { "name": "Professional", "price": "Montants sur la page officielle" },
+      { "name": "Enterprise", "price": "Montants sur demande" }
+    ],
+    "key_features": [
+      "290M+ contacts vérifiés et 26M+ companies (77 fields).",
+      "Email accuracy 98% et phone accuracy 86%.",
+      "Chrome extension pour extract infos de LinkedIn.",
+      "Bulk prospecting par job title, company, geography.",
+      "APIs et intégrations CRM.",
+      "GDPR/CCPA compliant et SOC 2 Type II certified."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin de données B2B fiables, avec une forte précision sur les e-mails.",
+        "Vous prospectez LinkedIn et besoin extract data facile.",
+        "Vous gérez compliance GDPR/CCPA stricte."
+      ],
+      "avoidIf": [
+        "Vous faites email marketing pur (pas data provider).",
+        "Vous avez besoin multi-channel outreach (Clay/Lemlist mieux).",
+        "Vous avez budget très limité."
+      ],
+      "threshold": "Lusha excelle pour data quality B2B ; pour prospection multi-canal, Clay/Lemlist meilleur."
+    },
+    "pros": [
+      "290M+ contacts vérifiés (base très grande).",
+      "Précision des e-mails parmi les meilleures du marché.",
+      "Chrome extension pratique pour LinkedIn.",
+      "API scalable pour automation.",
+      "GDPR/CCPA compliant + SOC 2 + ISO 27701.",
+      "Plan gratuit accessible (5 crédits/mois)."
+    ],
+    "cons": [
+      "Pas un outil prospection complet (data seulement).",
+      "Pas multi-canal (data enrichment seulement).",
+      "Prix escalade vite avec volume.",
+      "Interface moins moderne que concurrents.",
+      "Pas d'automation email intégrée."
+    ],
+    "use_cases": [
+      "Enrichir listes leads avec emails/phones vérifiés.",
+      "Extract data de profils LinkedIn via extension.",
+      "Prospection bulk par critères (titre, industrie, géo).",
+      "Data verification avant email outreach.",
+      "Compliance-first B2B prospecting."
+    ],
+    "relevant_for": [
+      "Équipes sales B2B",
+      "Agences prospection",
+      "Compliance-conscious teams"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need reliable B2B data with strong email accuracy.",
+        "You prospect on LinkedIn and need easy data extraction.",
+        "You manage strict GDPR/CCPA compliance."
+      ],
+      "avoidIf": [
+        "You do pure email marketing (not a data provider).",
+        "You need multi-channel outreach (Clay/Lemlist better).",
+        "You have a very tight budget."
+      ],
+      "threshold": "Lusha excels for B2B data quality; for multi-channel prospecting, Clay/Lemlist better."
+    },
+    "pros": [
+      "290M+ verified contacts (very large base).",
+      "Email accuracy among the best on the market.",
+      "Convenient Chrome extension for LinkedIn.",
+      "Scalable API for automation.",
+      "GDPR/CCPA compliant + SOC 2 + ISO 27701.",
+      "Free tier accessible (5 credits/month)."
+    ],
+    "cons": [
+      "Not a complete prospecting tool (data only).",
+      "No multi-channel (data enrichment only).",
+      "Pricing escalates quickly with volume.",
+      "Less modern interface than competitors.",
+      "No integrated email automation."
+    ],
+    "use_cases": [
+      "Enrich lead lists with verified emails/phones.",
+      "Extract data from LinkedIn profiles via extension.",
+      "Bulk prospecting by criteria (title, industry, geo).",
+      "Data verification before email outreach.",
+      "Compliance-first B2B prospecting."
+    ]
+  }
+}
