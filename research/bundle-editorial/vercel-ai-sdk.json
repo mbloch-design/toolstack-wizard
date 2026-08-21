@@ -1,0 +1,86 @@
+{
+  "slug": "vercel-ai-sdk",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Vercel AI SDK (official documentation)", "url": "https://ai-sdk.dev/" }
+  ],
+  "facts": {
+    "what": "SDK TypeScript open-source unifié pour construire des applications IA avec support multi-fournisseur (OpenAI, Anthropic, Google, etc.). Inclut streaming en temps réel, fallbacks, et appels d'outils intégrés.",
+    "what_en": "Unified open-source TypeScript SDK for building AI applications with multi-provider support (OpenAI, Anthropic, Google, etc.). Includes real-time streaming, built-in fallbacks, and integrated tool calling.",
+    "pricing_model": "SDK entièrement gratuit et open-source. Les coûts ne proviennent que des fournisseurs d'IA utilisés (OpenAI, Anthropic, etc.).",
+    "free_tier": { "exists": true, "detail": "SDK open-source sans coûts. Utilisez avec modèles gratuits ou open-source. Intégration avec Vercel AI Gateway incluse pour gérer plusieurs clés API." },
+    "plans": [],
+    "key_features": [
+      "Support multi-fournisseur (100+ modèles LLM sur 16+ fournisseurs)",
+      "Streaming en temps réel sans parsing personnalisé",
+      "Fallbacks intégrés et comportement production fiable",
+      "Framework-agnostique (React, Next.js, Vue, Svelte, Node.js)",
+      "Appels d'outils et génération d'images/speech/vidéo intégrés",
+      "18.5M téléchargements par semaine, 26.3K stars GitHub, 697+ contributeurs"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez une application web/Node.js en TypeScript avec IA.",
+        "Vous voulez basculer facilement entre fournisseurs LLM sans refactoring majeur.",
+        "Vous préférez un SDK open-source sans coûts de plateforme."
+      ],
+      "avoidIf": [
+        "Vous développez en langage autre que TypeScript/JavaScript.",
+        "Vous avez besoin d'un support commercial dédié pour la production.",
+        "Vous préférez une solution propriétaire avec SLA garanti."
+      ],
+      "threshold": "Vercel AI SDK convient aux équipes TypeScript modernes cherchant flexibilité multi-fournisseur ; pour du support entreprise ou d'autres langages, explorez LangChain ou des solutions propriétaires."
+    },
+    "pros": [
+      "Entièrement gratuit et open-source, aucun coût SDK.",
+      "Support multi-fournisseur natif (basculer entre OpenAI, Anthropic, Google, etc.).",
+      "Streaming temps réel intégré sans parsing personnalisé.",
+      "Intégration AI Gateway pour centraliser gestion de clés API."
+    ],
+    "cons": [
+      "Limité à TypeScript/JavaScript (pas de support Python natif à jour).",
+      "Pas de support commercial ; dépend de communauté GitHub.",
+      "Coûts d'API fournisseur non inclus (ajoutent frais additionnels)."
+    ],
+    "use_cases": [
+      "Application Next.js avec chatbot ou assistant IA intégré.",
+      "Pipeline de génération d'images multi-modèles avec basculement automatique.",
+      "Fonction Node.js serverless appelant dynamiquement différents LLM selon contexte."
+    ],
+    "relevant_for": ["Développeurs TypeScript", "Startups IA", "Équipes Next.js"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You are building a TypeScript/JavaScript web or Node.js application with AI features.",
+        "You want to easily switch between LLM providers without major refactoring.",
+        "You prefer an open-source SDK with no platform costs."
+      ],
+      "avoidIf": [
+        "You develop in languages other than TypeScript/JavaScript.",
+        "You need dedicated commercial support for production systems.",
+        "You prefer a proprietary solution with guaranteed SLAs."
+      ],
+      "threshold": "Vercel AI SDK suits modern TypeScript teams seeking multi-provider flexibility; for enterprise support or non-JS languages, explore LangChain or proprietary solutions."
+    },
+    "pros": [
+      "Completely free and open-source with no SDK costs.",
+      "Native multi-provider support (switch between OpenAI, Anthropic, Google, etc.).",
+      "Built-in real-time streaming without custom parsing.",
+      "AI Gateway integration to centralize API key management."
+    ],
+    "cons": [
+      "Limited to TypeScript/JavaScript (no current native Python support).",
+      "No commercial support; relies on GitHub community.",
+      "Provider API costs not included (add additional expenses)."
+    ],
+    "use_cases": [
+      "Building a Next.js application with integrated chatbot or AI assistant.",
+      "Multi-model image generation pipeline with automatic provider failover.",
+      "Serverless Node.js function dynamically calling different LLMs based on context."
+    ]
+  }
+}

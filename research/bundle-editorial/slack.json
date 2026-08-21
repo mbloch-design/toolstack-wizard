@@ -1,0 +1,91 @@
+{
+  "slug": "slack",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Slack — Tarification (site officiel)", "url": "https://slack.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme de communication d'équipe pour chat, appels et collaboration asynchrone. Historique messages searchable, intégrations 1000+, workflows automatisés, et IA Slack intégrée pour résumés/analyses.",
+    "what_en": "Team communication platform for chat, calls, and asynchronous collaboration. Searchable message history, 1000+ integrations, automated workflows, and integrated Slack AI for summaries and analysis.",
+    "pricing_model": "Gratuit (limité) ou abonnement par utilisateur actif (Pro, Business+, Enterprise+).",
+    "free_tier": { "exists": true, "detail": "Version gratuite incluant chat illimité, 90 jours d'historique, 10 intégrations max, appels 1:1 vidéo, 5GB stockage total. Pas d'IA." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit" },
+      { "name": "Pro", "price": "8,25 EUR/utilisateur/mois (8,70 USD/mois) facturation annuelle" },
+      { "name": "Business+", "price": "18 EUR/utilisateur/mois (18 USD/mois) facturation annuelle" },
+      { "name": "Enterprise+", "price": "Devis sur demande" }
+    ],
+    "key_features": [
+      "Historique messages illimité et recherche textuelle complète",
+      "Intégrations 1000+ (Salesforce, GitHub, Zapier, etc.)",
+      "Workflows automatisés personnalisés sans code",
+      "Slack AI avec résumés, analyse, recherche sémantique",
+      "Appels groupe et huddles pour discussions rapides",
+      "SCIM provisioning et contrôles accès granulaires (Enterprise+)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Votre équipe privilégie communication asynchrone et searchable.",
+        "Vous avez besoin de 1000+ intégrations avec outils existants.",
+        "Vous cherchez IA d'équipe pour résumés conversations et insights."
+      ],
+      "avoidIf": [
+        "Vous voulez priorité visioconférence haute-fidélité (considérez Teams/Zoom).",
+        "Budget limité incite à préférer chat gratuit (Discord, Mattermost).",
+        "Besoin d'autohébergement ou infrastructure privée."
+      ],
+      "threshold": "Slack s'impose pour équipes tech prioritarisant chat asynchrone et intégrations ; pour besoins visioconférence ou budget serré, Microsoft Teams ou Discord conviennent mieux."
+    },
+    "pros": [
+      "Historique messages searchable illimité (tous plans payants).",
+      "1000+ intégrations natives ou via Zapier/webhooks.",
+      "Workflows et automatisations sans code.",
+      "Slack AI pour résumés et analyse conversations."
+    ],
+    "cons": [
+      "Plan gratuit limité (90 jours seulement, 10 intégrations).",
+      "Coût par utilisateur actif rapidement important pour grandes équipes.",
+      "Pas d'IA sur plans gratuit/Pro (Business+ minimum)."
+    ],
+    "use_cases": [
+      "Chat d'équipe avec historique searchable et intégrations CRM/GitHub.",
+      "Workflows automatisés notifiant bugs GitHub ou mises à jour Salesforce.",
+      "Analyse IA résumant discussions async pour alignement équipe rapide."
+    ],
+    "relevant_for": ["Équipes tech/startup", "Équipes distribuées", "Organisations asynchrone-first"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "Your team prioritizes asynchronous communication and searchable history.",
+        "You need 1000+ integrations with existing tools.",
+        "You want team AI for conversation summaries and business insights."
+      ],
+      "avoidIf": [
+        "You prioritize high-fidelity video conferencing (consider Teams/Zoom).",
+        "Limited budget favors free chat alternatives (Discord, Mattermost).",
+        "You need self-hosted or private infrastructure."
+      ],
+      "threshold": "Slack suits tech teams prioritizing asynchronous chat and integrations; for video conferencing focus or tight budget, Microsoft Teams or Discord fit better."
+    },
+    "pros": [
+      "Unlimited searchable message history (all paid plans).",
+      "1000+ native integrations or via Zapier/webhooks.",
+      "No-code workflows and automations.",
+      "Slack AI for conversation summaries and analysis."
+    ],
+    "cons": [
+      "Free plan limited (90-day history, 10 integrations max).",
+      "Per-active-user cost becomes substantial for large teams.",
+      "No AI on Free/Pro plans (Business+ minimum required)."
+    ],
+    "use_cases": [
+      "Team chat with searchable history and CRM/GitHub integrations.",
+      "Automated workflows notifying on GitHub bugs or Salesforce updates.",
+      "AI analysis summarizing async discussions for quick team alignment."
+    ]
+  }
+}

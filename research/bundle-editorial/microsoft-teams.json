@@ -1,0 +1,92 @@
+{
+  "slug": "microsoft-teams",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Microsoft Teams — Plans d'affaires (site officiel)", "url": "https://www.microsoft.com/en-us/microsoft-teams/compare-microsoft-teams-business-options" }
+  ],
+  "facts": {
+    "what": "Plateforme collaborative Microsoft pour communication unifiée : chat, vidéoconférence, partage de fichiers et intégration avec suite Microsoft 365. Support jusqu'à 300 participants par réunion avec transcription.",
+    "what_en": "Microsoft's unified collaboration platform combining chat, video conferencing, file sharing, and Microsoft 365 integration. Supports up to 300 participants per meeting with transcription.",
+    "pricing_model": "Gratuit (limité) ou abonnement annuel/mensuel via Microsoft 365. Plans autonomes ou bundles productivité.",
+    "free_tier": { "exists": true, "detail": "Version gratuite avec chat, appels 1:1 vidéo, partage écran, stockage limité (5GB). Historique messages limité à 90 jours." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (limité)" },
+      { "name": "Microsoft Teams Essentials", "price": "4 USD/utilisateur/mois (facturation annuelle)" },
+      { "name": "Microsoft 365 Business Basic", "price": "7 USD/utilisateur/mois (facturation annuelle)" },
+      { "name": "Microsoft 365 Business Standard", "price": "14 USD/utilisateur/mois (facturation annuelle)" },
+      { "name": "Teams Premium (add-on)", "price": "10 USD/utilisateur/mois" }
+    ],
+    "key_features": [
+      "Visioconférence jusqu'à 300 participants avec durée jusqu'à 30 heures",
+      "Enregistrement et transcription avec sous-titres en 30+ langues",
+      "Partage écran temps réel et collaboration fichiers",
+      "Intégration Microsoft 365 (Word, Excel, PowerPoint, Outlook)",
+      "Chiffrement bout-en-bout pour communications sécurisées",
+      "Appels téléphoniques (Teams Phone, options 10–34 USD/utilisateur/mois)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Votre organisation utilise déjà Microsoft 365 (Office, Outlook).",
+        "Vous avez besoin d'intégration profonde avec écosystème Microsoft.",
+        "Vous recherchez communication unifiée avec transcription automatique et sous-titres multilingues."
+      ],
+      "avoidIf": [
+        "Vous voulez éviter les écosystèmes propriétaires fermés.",
+        "Votre budget ne supporte pas abonnement Microsoft 365.",
+        "Vous préférez une alternative open-source ou moins coûteuse."
+      ],
+      "threshold": "Microsoft Teams s'impose pour organisations Microsoft 365 ; pour équipes légères ou réticentes aux écosystèmes propriétaires, Slack ou Rocket.Chat conviennent mieux."
+    },
+    "pros": [
+      "Intégration native complète Microsoft 365 (Office, Outlook, OneDrive).",
+      "Transcription automatique et sous-titres en 30+ langues.",
+      "Support jusqu'à 300 participants par réunion.",
+      "Essentials plan offre alternative abordable sans Microsoft 365 complet."
+    ],
+    "cons": [
+      "Plan gratuit limité (90 jours historique, pas d'appels de groupe).",
+      "Abonnement Microsoft 365 coûteux pour PME.",
+      "Moins flexible que solutions open-source ou agiles."
+    ],
+    "use_cases": [
+      "Remplacer email/appels par plateforme unifiée dans organisation Microsoft.",
+      "Visioconférence avec transcription automatique pour conformité/archives.",
+      "Collaboration équipe avec partage fichiers OneDrive/SharePoint natif."
+    ],
+    "relevant_for": ["Entreprises Microsoft", "Organisations conformité-lourde", "Teams IT d'entreprise"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "Your organization already uses Microsoft 365 (Office, Outlook).",
+        "You need deep integration with Microsoft ecosystem.",
+        "You want unified communication with automatic transcription and multilingual captions."
+      ],
+      "avoidIf": [
+        "You want to avoid closed proprietary ecosystems.",
+        "Your budget does not support Microsoft 365 subscription.",
+        "You prefer open-source or lower-cost alternatives."
+      ],
+      "threshold": "Microsoft Teams fits organizations using Microsoft 365; for lightweight teams or those skeptical of proprietary ecosystems, Slack or Rocket.Chat may be better."
+    },
+    "pros": [
+      "Complete native Microsoft 365 integration (Office, Outlook, OneDrive).",
+      "Automatic transcription and captions in 30+ languages.",
+      "Support for up to 300 participants per meeting.",
+      "Essentials plan offers affordable alternative without full Microsoft 365."
+    ],
+    "cons": [
+      "Free plan limited (90-day message history, no group calls).",
+      "Microsoft 365 subscription expensive for SMBs.",
+      "Less flexible than open-source or agile alternatives."
+    ],
+    "use_cases": [
+      "Replace email/calls with unified platform in Microsoft-native organization.",
+      "Video conferencing with automatic transcription for compliance/archives.",
+      "Team collaboration with native OneDrive/SharePoint file sharing."
+    ]
+  }
+}

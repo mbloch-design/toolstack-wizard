@@ -1,0 +1,92 @@
+{
+  "slug": "apollo",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Apollo.io — Prospection et ventes (site officiel)", "url": "https://apollo.io" }
+  ],
+  "facts": {
+    "what": "Plateforme de prospection commerciale complète combinant recherche de leads, outreach automation, enrichissement données, et deal management. Base de données 240M+ contacts et 30M+ entreprises vérifiées.",
+    "what_en": "Comprehensive sales prospecting platform combining lead research, outreach automation, data enrichment, and deal management. Database of 240M+ verified contacts and 30M+ companies.",
+    "pricing_model": "Gratuit (limité) ou abonnement par utilisateur avec modèle crédit pour données premium (appels, emails, enrichissement).",
+    "free_tier": { "exists": true, "detail": "Accès gratuit recherche leads, extensions Chrome, alertes. Crédit limité ; enrichissement données consomme crédits supplémentaires." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit avec crédit limité" },
+      { "name": "Basic", "price": "49 USD/utilisateur/mois (facturation annuelle)" },
+      { "name": "Professional", "price": "79 USD/utilisateur/mois (facturation annuelle)" },
+      { "name": "Organization", "price": "119 USD/utilisateur/mois minimum 3 utilisateurs (facturation annuelle)" }
+    ],
+    "key_features": [
+      "Base de données 240M+ contacts et 30M+ entreprises vérifiées",
+      "Recherche B2B et segmentation avancée par secteur/role/géo",
+      "Campagnes outreach multi-canal (email, LinkedIn, appel, SMS)",
+      "Dialer intégré avec enregistrement appels et transcription IA",
+      "Enrichissement données (emails vérifiés, numéros téléphone)",
+      "Workflows automation et séquences multi-touches",
+      "Intégration CRM (Salesforce, HubSpot, Pipedrive)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous faites prospection B2B et avez besoin base de données contact qualifiée.",
+        "Vous lancez outreach automation multi-canal et suivi sequences.",
+        "Vous intégrez CRM existant (Salesforce, HubSpot) pour pipeline management."
+      ],
+      "avoidIf": [
+        "Votre budget est serré et vous préférez outils prospection gratuits simples.",
+        "Vous faites prospection B2C ou retail (focus Apollo est B2B).",
+        "Vous ne voulez pas fonctionnalité appels/dialer."
+      ],
+      "threshold": "Apollo s'impose pour équipes commercial B2B cherchant prospection unifiée et automation outreach ; pour prospection légère ou budget limité, outils gratuits ou Clay conviennent mieux."
+    },
+    "pros": [
+      "Base de données 240M+ contacts vérifiés (plus complète du marché).",
+      "Outreach automation multi-canal et dialer intégré.",
+      "Enrichissement données (emails, numéros) inclus dans crédit plan.",
+      "Intégration CRM native (Salesforce, HubSpot, etc.)."
+    ],
+    "cons": [
+      "Modèle crédit complexe : numéros téléphone vérifiés ou emails consomment crédits additionnels.",
+      "Plan gratuit très limité (crédit bas, fonctions basiques seulement).",
+      "Coût total par utilisateur peut grimper rapidement avec consommation crédit."
+    ],
+    "use_cases": [
+      "Prospecter 500+ leads qualifiées par jour dans industrie cible avec enrichissement.",
+      "Lancer campagne email multi-touches automatisée via sequences workflow.",
+      "Gérer pipeline ventes avec appels enregistrés, notes IA, et suivi CRM."
+    ],
+    "relevant_for": ["Équipes commercial B2B", "Sales Development Representatives", "Business development managers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You do B2B sales prospecting and need qualified verified contact database.",
+        "You want multi-channel outreach automation and sequence follow-up.",
+        "You integrate with existing CRM (Salesforce, HubSpot) for pipeline management."
+      ],
+      "avoidIf": [
+        "Your budget is tight and you prefer simple free prospecting tools.",
+        "You focus on B2C or retail sales (Apollo's focus is B2B).",
+        "You don't need built-in calling/dialer functionality."
+      ],
+      "threshold": "Apollo suits B2B sales teams seeking unified prospecting and outreach automation; for light prospecting or tight budgets, free tools or Clay work better."
+    },
+    "pros": [
+      "Database of 240M+ verified contacts (most comprehensive on market).",
+      "Multi-channel outreach automation and integrated dialer.",
+      "Data enrichment (emails, phone numbers) included in plan credits.",
+      "Native CRM integrations (Salesforce, HubSpot, Pipedrive)."
+    ],
+    "cons": [
+      "Complex credit model: verified phone numbers or emails consume additional credits.",
+      "Free plan very limited (low credits, basic features only).",
+      "Total cost per user can grow quickly with credit consumption."
+    ],
+    "use_cases": [
+      "Prospect 500+ qualified leads per day in target industry with enrichment.",
+      "Launch multi-touch automated email campaign via workflow sequences.",
+      "Manage sales pipeline with recorded calls, AI notes, and CRM follow-up."
+    ]
+  }
+}

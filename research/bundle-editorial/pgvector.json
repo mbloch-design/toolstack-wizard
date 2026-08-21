@@ -1,0 +1,86 @@
+{
+  "slug": "pgvector",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "pgvector GitHub (official repository)", "url": "https://github.com/pgvector/pgvector" }
+  ],
+  "facts": {
+    "what": "Extension PostgreSQL open-source pour la recherche par similarité vectorielle. Permet de stocker et requêter des embeddings directement dans PostgreSQL aux côtés des données relationnelles traditionnelles.",
+    "what_en": "Open-source PostgreSQL extension for vector similarity search. Enables storing and querying vector embeddings directly within PostgreSQL databases alongside traditional relational data.",
+    "pricing_model": "Entièrement gratuit et open-source. Aucun coût de licence.",
+    "free_tier": { "exists": true, "detail": "Logiciel open-source sans restrictions d'utilisation. Installation gratuite via multiples gestionnaires de paquets (Homebrew, APT, Yum, Docker, conda-forge)." },
+    "plans": [],
+    "key_features": [
+      "Support de multiples types de vecteurs (simple précision, demi-précision, binaires, sparse)",
+      "Distance metrics multiples (L2, produit scalaire, cosinus, L1, Hamming, Jaccard)",
+      "Recherche exacte et recherche du plus proche voisin approximative (approximate nearest neighbor)",
+      "Index HNSW et IVFFlat pour optimisation des performances",
+      "Quantification binaire et techniques de scaling pour grandes bases de données",
+      "Intégration ACID complète avec PostgreSQL (JOINs, recovery, transactions)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous construisez une application IA nécessitant recherche sémantique ou similarité vectorielle.",
+        "Vous préférez une solution open-source sans coûts de licence.",
+        "Vous avez une infrastructure PostgreSQL existante et voulez l'étendre."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'une base de données vectorielle spécialisée avec support commercial.",
+        "Votre équipe manque d'expertise PostgreSQL pour gérer l'extension.",
+        "Vous recherchez une solution entièrement managée sans maintenance d'infrastructure."
+      ],
+      "threshold": "pgvector s'impose pour les équipes PostgreSQL cherchant une recherche vectorielle nativement intégrée ; pour un service managé ou un support commercial complet, considérez Pinecone ou Weaviate."
+    },
+    "pros": [
+      "Entièrement gratuit et open-source, aucun coût de licence.",
+      "Intégration native dans PostgreSQL (JOINs, transactions ACID, point-in-time recovery).",
+      "Support de multiples types de vecteurs et distance metrics.",
+      "Installation simple via multiples canaux (Docker, Homebrew, gestionnaires de paquets)."
+    ],
+    "cons": [
+      "Nécessite expertise PostgreSQL pour maintenance et optimisation.",
+      "Pas de support commercial natif (communauté assurant la maintenance).",
+      "Performances limitées à l'infrastructure PostgreSQL (pas de scaling distribué natif)."
+    ],
+    "use_cases": [
+      "Moteur de recommandation produit utilisant embeddings de similarité.",
+      "Recherche sémantique textuelle dans une base de données relationnelle.",
+      "Système RAG (retrieval-augmented generation) avec PostgreSQL comme base de connaissances."
+    ],
+    "relevant_for": ["Startups AI", "Équipes data", "Ingénieurs backend PostgreSQL"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You are building an AI application requiring semantic search or vector similarity.",
+        "You prefer an open-source solution with no licensing costs.",
+        "Your infrastructure already uses PostgreSQL and you want native vector capabilities."
+      ],
+      "avoidIf": [
+        "You need a specialized vector database with commercial support.",
+        "Your team lacks PostgreSQL expertise for extension management.",
+        "You prefer a fully managed solution without infrastructure overhead."
+      ],
+      "threshold": "pgvector makes sense for PostgreSQL-native teams seeking integrated vector search; for a managed service or comprehensive commercial support, consider Pinecone or Weaviate."
+    },
+    "pros": [
+      "Completely free and open-source with no licensing costs.",
+      "Native PostgreSQL integration (JOINs, ACID transactions, point-in-time recovery).",
+      "Support for multiple vector types and distance metrics.",
+      "Easy installation across multiple platforms (Docker, Homebrew, package managers)."
+    ],
+    "cons": [
+      "Requires PostgreSQL expertise for maintenance and tuning.",
+      "No native commercial support (community-maintained).",
+      "Performance limited to single PostgreSQL instance (no native distributed scaling)."
+    ],
+    "use_cases": [
+      "Building a product recommendation engine using embedding similarity.",
+      "Implementing semantic search across relational database content.",
+      "Creating a RAG system with PostgreSQL as knowledge base."
+    ]
+  }
+}

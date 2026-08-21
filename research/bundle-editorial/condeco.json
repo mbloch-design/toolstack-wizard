@@ -1,0 +1,92 @@
+{
+  "slug": "condeco",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Eptura Engage — Gestion espaces de travail (site officiel)", "url": "https://eptura.com" }
+  ],
+  "facts": {
+    "what": "Plateforme enterprise (groupe Eptura) pour réservation d'espaces et gestion workplace moderne. Réservation bureaux/salles, coordination équipes, insights utilisation espaces, intégration Outlook/Microsoft 365.",
+    "what_en": "Enterprise workplace management platform (Eptura group) for desk and space booking with team coordination, space utilization insights, and Outlook/Microsoft 365 integration.",
+    "pricing_model": "Tarification sur devis custom pour organisations. Aucun tarif public affiché ; modèle enterprise selon taille organisation et nombre d'espaces.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Solution enterprise pour organisations 2000+. Contacter équipe ventes pour devis personnalisé." },
+    "plans": [
+      { "name": "Custom Enterprise", "price": "Montants sur demande (devis personnalisé)" }
+    ],
+    "key_features": [
+      "Réservation bureaux/salles par employé mobile ou web.",
+      "Intégration Outlook et calendrier Microsoft 365.",
+      "Coordination d'équipe : scheduling in-office synchronisé.",
+      "Insights utilisation espaces et pattern-based reservations.",
+      "Gestion visiteurs intégrée (check-in sans contact).",
+      "Planification étages et floor maps interactives.",
+      "Support multi-sites et gestion workspace distribuée.",
+      "Conformité sécurité et contrôles accès granulaires."
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes grande organisation (500+ employés) avec espaces multiples.",
+        "Vous pilotez transformation workplace hybrid/flexible et optimisation espaces.",
+        "Vous avez écosystème Microsoft 365 (Outlook, calendrier, Teams)."
+      ],
+      "avoidIf": [
+        "Vous êtes PME/startup avec budget limité.",
+        "Vous cherchez solution simple légère pour quelques bureaux seulement.",
+        "Vous avez besoin de solution open-source ou auto-hébergée."
+      ],
+      "threshold": "Condeco s'impose pour organisations enterprise cherchant optimisation workspace hybrid complète ; pour PME ou usage léger, solutions SaaS légères (Officeflex, Yarooms, Robin) conviennent mieux."
+    },
+    "pros": [
+      "Intégration complète Outlook et Microsoft 365 (aucune sync manuelle).",
+      "Coordination d'équipe synchronisée pour in-office schedules.",
+      "Insights détaillés sur utilisation espaces et patterns de travail.",
+      "Gestion visiteurs et sécurité check-in intégrées."
+    ],
+    "cons": [
+      "Aucun tarif public ; devis custom long à obtenir.",
+      "Coût total potentiellement très élevé pour petites organisations.",
+      "Pas de version freemium ou light pour test.",
+      "Complexité implémentation importante pour intégration Microsoft."
+    ],
+    "use_cases": [
+      "Organisation 1000+ employés optimisant espaces work et presence taux hybrid.",
+      "Coordination équipes multi-sites pour culture collaborative present/remote.",
+      "Insight workplace analytics pour justifier réduction espaces ou optimisation."
+    ],
+    "relevant_for": ["Grandes organisations", "Facilities managers", "Head of workplace", "Directeurs opérations"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You are a large organization (500+ employees) with multiple locations.",
+        "You drive hybrid workplace transformation and space optimization.",
+        "You have Microsoft 365 ecosystem (Outlook, calendar, Teams)."
+      ],
+      "avoidIf": [
+        "You are an SMB or startup with limited budget.",
+        "You need simple lightweight solution for a few offices only.",
+        "You require open-source or self-hosted solution."
+      ],
+      "threshold": "Condeco suits enterprise organizations seeking comprehensive hybrid workspace optimization; for SMBs or light use, lighter SaaS solutions (Officeflex, Yarooms, Robin) fit better."
+    },
+    "pros": [
+      "Complete Outlook and Microsoft 365 integration (no manual sync).",
+      "Team coordination synchronized for in-office schedules.",
+      "Detailed insights on space utilization and work patterns.",
+      "Integrated visitor management and secure check-in."
+    ],
+    "cons": [
+      "No public pricing; custom quote process lengthy.",
+      "Total cost potentially very high for smaller organizations.",
+      "No freemium or trial version available.",
+      "Complex implementation for Microsoft integration."
+    ],
+    "use_cases": [
+      "1000+ employee organization optimizing space utilization and hybrid presence.",
+      "Multi-site teams coordinating for collaborative culture with flexible attendance.",
+      "Workplace analytics insights to justify space reduction or optimization."
+    ]
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "slug": "clockify",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Clockify — Tarification (site officiel)", "url": "https://clockify.me/pricing" }
+  ],
+  "facts": {
+    "what": "Application de suivi du temps (timesheet) simple avec timer, entrées manuelles, rapports détaillés, et intégrations 100+. Support équipes illimitées en version gratuite ; fonctionnalités avancées sur plans payants.",
+    "what_en": "Simple time tracking application with timer, manual entries, detailed reports, and 100+ integrations. Unlimited teams on free plan; advanced features on paid plans.",
+    "pricing_model": "Gratuit pour équipes jusqu'à 5 utilisateurs ou plan payant par siège/mois avec tarif réduit annuel.",
+    "free_tier": { "exists": true, "detail": "Version gratuite complète : timer illimité, entrées manuelles, calendar, rapports, dashboard activité équipe, intégrations 100+. Limite 5 utilisateurs payants." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (jusqu'à 5 utilisateurs)" },
+      { "name": "Basic", "price": "3,99 USD/siège/mois (facturation annuelle) ou 4,99 USD/mois" },
+      { "name": "Standard", "price": "5,49 USD/siège/mois (facturation annuelle) ou 6,99 USD/mois" },
+      { "name": "Pro", "price": "7,99 USD/siège/mois (facturation annuelle) ou 9,99 USD/mois" },
+      { "name": "Enterprise", "price": "11,99 USD/siège/mois (facturation annuelle) ou 14,99 USD/mois" }
+    ],
+    "key_features": [
+      "Timer, entrées manuelles, et timesheet par projet/client",
+      "Rapports filtrés par projet, client, utilisateur avec heures facturables",
+      "Facturation et génération factures automatisées",
+      "Intégrations 100+ (Slack, GitHub, Asana, Jira, QuickBooks, etc.)",
+      "Traçage GPS et suivi productivité (Pro+)",
+      "Approvals timesheet et gestion congés (Standard+)",
+      "SSO, provisioning SCIM, et audit logs (Enterprise)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin suivi temps simple et intégrations 100+.",
+        "Votre budget limité privilégie solution freemium robuste.",
+        "Vous cherchez timesheet facile pour équipes distantes ou freelances."
+      ],
+      "avoidIf": [
+        "Vous avez besoin suivi temps très avancé avec analytics prédictif.",
+        "Vous cherchez plateforme RH/paie intégrée complète.",
+        "Vous préférez solution open-source auto-hébergée."
+      ],
+      "threshold": "Clockify s'impose pour équipes petit budget cherchant timesheet robuste et intégrations nombreuses ; pour suivi avancé ou RH intégrée, Toggl Track ou Harvest conviennent mieux."
+    },
+    "pros": [
+      "Version gratuite complète et robuste pour petites équipes (jusqu'à 5 users).",
+      "100+ intégrations natives (Slack, GitHub, Asana, Jira, QuickBooks).",
+      "Tarification abordable sur facturation annuelle, bien moins cher qu'alternatives enterprise.",
+      "Interface simple et intuitive sans courbe d'apprentissage."
+    ],
+    "cons": [
+      "Moins de fonctionnalités advanced que Toggl Track (pas d'analytics prédictif).",
+      "Plan gratuit limité à 5 utilisateurs.",
+      "Rapports basiques comparés à solutions enterprise."
+    ],
+    "use_cases": [
+      "Équipe freelance/agence suivant temps par client et projet.",
+      "Startups tracking heures pour facturation client par tarif horaire.",
+      "Équipe distante manager timesheet et approvals via Clockify + Slack."
+    ],
+    "relevant_for": ["Freelances", "Petites agences", "Équipes distantes", "Startup lean"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need simple time tracking with 100+ integrations.",
+        "Your budget is tight and you value robust freemium solution.",
+        "You want easy timesheet for remote teams or freelancers."
+      ],
+      "avoidIf": [
+        "You need advanced time tracking with predictive analytics.",
+        "You seek integrated HR/payroll platform.",
+        "You prefer open-source self-hosted solution."
+      ],
+      "threshold": "Clockify suits budget-conscious teams seeking robust timesheets and many integrations; for advanced analytics or HR integration, Toggl Track or Harvest fit better."
+    },
+    "pros": [
+      "Complete free version for small teams (up to 5 users).",
+      "100+ native integrations (Slack, GitHub, Asana, Jira, QuickBooks).",
+      "Very affordable entry pricing on annual billing.",
+      "Simple, intuitive interface with no learning curve."
+    ],
+    "cons": [
+      "Fewer advanced features than Toggl Track (no predictive analytics).",
+      "Free plan limited to 5 users.",
+      "Basic reporting compared to enterprise solutions."
+    ],
+    "use_cases": [
+      "Freelance/agency team tracking time per client and project.",
+      "Startup tracking hours for client billing on hourly rate.",
+      "Remote team managing timesheet and approvals via Clockify + Slack."
+    ]
+  }
+}
