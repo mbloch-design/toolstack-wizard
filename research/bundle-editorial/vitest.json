@@ -3,13 +3,19 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Vitest — Site officiel", "url": "https://vitest.dev" }
+    {
+      "label": "Vitest — Site officiel",
+      "url": "https://vitest.dev"
+    }
   ],
   "facts": {
     "what": "Framework de test unitaire open source et gratuit, construit sur Vite, compatible avec la syntaxe Jest. Offre watch mode instantané (style HMR), support ESM natif, et coverage TypeScript intégré.",
     "what_en": "Free, open-source unit testing framework built on Vite, Jest-compatible syntax. Offers instant watch mode (HMR-style), native ESM support, and built-in TypeScript coverage.",
     "pricing_model": "Libre et open source (MIT). Aucun coût, sponsoring optionnel.",
-    "free_tier": { "exists": true, "detail": "Gratuit à 100%. Logiciel open source sans restrictions d'usage ni limitations commerciales." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Gratuit à 100%. Logiciel open source sans restrictions d'usage ni limitations commerciales."
+    },
     "plans": [],
     "key_features": [
       "Configuration Vite réutilisée (consistency dev/test)",
@@ -28,7 +34,8 @@
       ],
       "avoidIf": [
         "Vous testez un legacy non-ESM ou un monorepo très complexe.",
-        "Vous avez besoin d'un écosystème de plugins massif (Vitest est plus jeune)."
+        "Vous avez besoin d'un écosystème de plugins massif (Vitest est plus jeune).",
+        "Vous ne travaillez pas avec Vue ou React."
       ],
       "threshold": "Vitest s'impose pour les projets Vite modernes ; Jest reste pertinent si vous avez un écosystème lourd ou des besoins legacy."
     },
@@ -48,7 +55,10 @@
       "Tester du code Node.js ESM moderne.",
       "Passer de Jest à un outil plus performant pour Vite."
     ],
-    "relevant_for": ["Développeurs Vite", "Équipes modernes JavaScript/TypeScript"]
+    "relevant_for": [
+      "Développeurs Vite",
+      "Équipes modernes JavaScript/TypeScript"
+    ]
   },
   "en": {
     "verdict": {
@@ -59,7 +69,8 @@
       ],
       "avoidIf": [
         "You're testing legacy non-ESM code or a very complex monorepo.",
-        "You need a massive plugin ecosystem (Vitest is newer)."
+        "You need a massive plugin ecosystem (Vitest is newer).",
+        "You don't work with Vue or React."
       ],
       "threshold": "Vitest is the go-to for modern Vite projects; Jest remains relevant for heavy ecosystems or legacy needs."
     },

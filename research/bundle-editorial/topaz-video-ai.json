@@ -3,15 +3,28 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Page produit officielle Topaz Video AI", "url": "https://www.topazlabs.com/topaz-video-ai" }
+    {
+      "label": "Page produit officielle Topaz Video AI",
+      "url": "https://www.topazlabs.com/topaz-video-ai"
+    }
   ],
   "facts": {
     "what": "Logiciel de bureau (Mac/Windows) d'amélioration vidéo par IA : upscaling, débruitage, interpolation et stabilisation.",
+    "what_en": "Desktop software (Mac/Windows) for AI video enhancement: upscaling, denoising, interpolation, and stabilization.",
     "pricing_model": "Abonnement (mensuel ou annuel). Plans Personal et Pro ; inclus dans Topaz Studio. Aucune licence perpétuelle affichée.",
-    "free_tier": { "exists": false, "detail": "Essai possible selon l'éditeur ; traitement en local sur la machine." },
+    "free_tier": {
+      "exists": false,
+      "detail": "Essai possible selon l'éditeur ; traitement en local sur la machine."
+    },
     "plans": [
-      { "name": "Personal", "price": "25 $/mois (annuel) ou 39 $/mois (mensuel)" },
-      { "name": "Pro", "price": "58 $/mois (annuel) ou 74 $/mois (mensuel)" }
+      {
+        "name": "Personal",
+        "price": "25 $/mois (annuel) ou 39 $/mois (mensuel)"
+      },
+      {
+        "name": "Pro",
+        "price": "58 $/mois (annuel) ou 74 $/mois (mensuel)"
+      }
     ],
     "key_features": [
       "Upscaling vidéo (montée en résolution jusqu'à 4K+)",
@@ -50,7 +63,11 @@
       "Créer un ralenti fluide à partir d'une séquence standard.",
       "Débruiter et stabiliser des rushes tournés en basse lumière."
     ],
-    "relevant_for": ["Vidéastes", "Monteurs", "Studios de post-production"]
+    "relevant_for": [
+      "Vidéastes",
+      "Monteurs",
+      "Studios de post-production"
+    ]
   },
   "en": {
     "verdict": {

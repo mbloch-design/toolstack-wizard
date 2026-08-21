@@ -3,16 +3,28 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Streamlabs — Tarification (site officiel)", "url": "https://streamlabs.com" }
+    {
+      "label": "Streamlabs — Tarification (site officiel)",
+      "url": "https://streamlabs.com"
+    }
   ],
   "facts": {
     "what": "Suite de streaming tout-en-un gratuite (Desktop) + formule Ultra payante : multistreaming cloud, thèmes premium, Talk Studio Pro, Video Editor Pro, et intégration multi-plateforme (Twitch, YouTube, TikTok, Kick, Facebook).",
     "what_en": "All-in-one streaming suite: free Desktop software + paid Ultra plan with cloud multistreaming, premium themes, Talk Studio Pro, Video Editor Pro, and multi-platform integration (Twitch, YouTube, TikTok, Kick, Facebook).",
     "pricing_model": "Freemium : logiciel Desktop gratuit, Ultra bundle à abonnement mensuel ou annuel.",
-    "free_tier": { "exists": true, "detail": "Desktop logiciel gratuit avec thèmes limités, Cloudbot basique, 1 Collab Cam, alertes et widgets standards, page de tips basique." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Desktop logiciel gratuit avec thèmes limités, Cloudbot basique, 1 Collab Cam, alertes et widgets standards, page de tips basique."
+    },
     "plans": [
-      { "name": "Starter (Free Desktop)", "price": "Gratuit" },
-      { "name": "Ultra", "price": "27 $ par mois, ou 179-189 $ par an" }
+      {
+        "name": "Starter (Free Desktop)",
+        "price": "Gratuit"
+      },
+      {
+        "name": "Ultra",
+        "price": "27 $ par mois, ou 179-189 $ par an"
+      }
     ],
     "key_features": [
       "Desktop software gratuit pour capture et streaming",
@@ -35,7 +47,8 @@
       ],
       "avoidIf": [
         "Vous avez déjà un workflow complexe et vous n'avez pas envie de migrer.",
-        "Vous cherchez une solution très légère (OBS est peut-être plus direct)."
+        "Vous cherchez une solution très légère (OBS est peut-être plus direct).",
+        "Vous n'avez pas besoin d'outils de monétisation."
       ],
       "threshold": "Streamlabs brille pour les créateurs tout-en-un ; pour une seule plateforme et budget zéro, le Desktop gratuit suffit."
     },
@@ -57,7 +70,12 @@
       "Faire des entretiens ou podcasts en live (Talk Studio).",
       "Passer du Desktop Desktop à cloud pour plus de flexibilité."
     ],
-    "relevant_for": ["Streamers multi-plateforme", "Content creators", "Podcasters", "Esports teams"]
+    "relevant_for": [
+      "Streamers multi-plateforme",
+      "Content creators",
+      "Podcasters",
+      "Esports teams"
+    ]
   },
   "en": {
     "verdict": {
@@ -68,7 +86,8 @@
       ],
       "avoidIf": [
         "You already have a complex workflow and don't want to migrate.",
-        "You're looking for a very lightweight solution (OBS might be more direct)."
+        "You're looking for a very lightweight solution (OBS might be more direct).",
+        "You don't need monetization tools."
       ],
       "threshold": "Streamlabs shines for all-in-one creators; for single-platform streaming and zero budget, free Desktop is enough."
     },

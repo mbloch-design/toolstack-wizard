@@ -33,7 +33,8 @@
       ],
       "avoidIf": [
         "Vous n'avez que quelques réunions/mois.",
-        "Vous utilisez un CRM non supporté."
+        "Vous utilisez un CRM non supporté.",
+        "Vous avez moins de 5 réunions par mois."
       ],
       "threshold": "Fathom s'impose pour équipes sales/support ; pour usage ponctuel, Granola gratuit suffit."
     },
@@ -64,7 +65,8 @@
       ],
       "avoidIf": [
         "You have only a few meetings per month.",
-        "You use an unsupported CRM."
+        "You use an unsupported CRM.",
+        "You have fewer than 5 meetings per month."
       ],
       "threshold": "Fathom is standard for sales/support teams; for light use, free Granola suffices."
     },

@@ -3,17 +3,36 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Moobot — chatbot Twitch (site officiel)", "url": "https://moo.bot/" }
+    {
+      "label": "Moobot — chatbot Twitch (site officiel)",
+      "url": "https://moo.bot/"
+    }
   ],
   "facts": {
     "what": "Chatbot cloud pour Twitch : automatise la modération du chat, les messages programmés, les commandes personnalisées, sondages, giveaways et demandes de musique. Sans téléchargement.",
+    "what_en": "Cloud chatbot for Twitch: automates chat moderation, scheduled messages, custom commands, polls, giveaways, and song requests. No download required.",
     "pricing_model": "Gratuit avec fonctions de base ; abonnements payants pour plus de fonctions et de personnalisation.",
-    "free_tier": { "exists": true, "detail": "Gratuit avec les fonctions de base ; plans payants pour débloquer plus." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Gratuit avec les fonctions de base ; plans payants pour débloquer plus."
+    },
     "plans": [
-      { "name": "Gratuit", "price": "0 $ (fonctions de base)" },
-      { "name": "Affiliate", "price": "4,99 $/mois" },
-      { "name": "Partner", "price": "14,99 $/mois" },
-      { "name": "Business", "price": "24,99 $/mois" }
+      {
+        "name": "Gratuit",
+        "price": "0 $ (fonctions de base)"
+      },
+      {
+        "name": "Affiliate",
+        "price": "4,99 $/mois"
+      },
+      {
+        "name": "Partner",
+        "price": "14,99 $/mois"
+      },
+      {
+        "name": "Business",
+        "price": "24,99 $/mois"
+      }
     ],
     "key_features": [
       "Modération automatique du chat (anti-spam)",
@@ -52,7 +71,11 @@
       "Programmer des messages récurrents (liens, sponsors).",
       "Lancer sondages et giveaways en direct."
     ],
-    "relevant_for": ["Streamers Twitch", "Créateurs live", "Modérateurs de communauté"]
+    "relevant_for": [
+      "Streamers Twitch",
+      "Créateurs live",
+      "Modérateurs de communauté"
+    ]
   },
   "en": {
     "verdict": {

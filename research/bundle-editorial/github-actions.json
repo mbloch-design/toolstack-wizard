@@ -32,7 +32,8 @@
       ],
       "avoidIf": [
         "Vous utilisez une autre plateforme Git (GitLab, Gitea).",
-        "Vous avez une infrastructure CI/CD complexe et mature."
+        "Vous avez une infrastructure CI/CD complexe et mature.",
+        "Vous avez une infrastructure CI/CD complexe établie depuis longtemps."
       ],
       "threshold": "GitHub Actions s'impose pour les équipes GitHub ; les utilisateurs d'autres forges Git choisiront leurs outils natifs."
     },
@@ -63,7 +64,8 @@
       ],
       "avoidIf": [
         "You use another Git platform (GitLab, Gitea).",
-        "You have a complex, mature CI/CD infrastructure."
+        "You have a complex, mature CI/CD infrastructure.",
+        "You have an established, complex CI/CD infrastructure."
       ],
       "threshold": "GitHub Actions is ideal for GitHub teams; users of other Git forges will choose their native tools."
     },

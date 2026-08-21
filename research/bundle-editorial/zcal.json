@@ -3,16 +3,28 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "zcal — Scheduling software (site officiel)", "url": "https://zcal.co" }
+    {
+      "label": "zcal — Scheduling software (site officiel)",
+      "url": "https://zcal.co"
+    }
   ],
   "facts": {
     "what": "Plateforme de scheduling des appels et réunions : calendrier de disponibilité partagé, sondages de dates, intégrations vidéo, lien unique de réservation, modèle freemium très généreux.",
     "what_en": "Call and meeting scheduling platform: shared availability calendar, date polls, video integrations, unique booking link, very generous freemium model.",
     "pricing_model": "Freemium : version gratuite très complète, plans payants pour features avancées.",
-    "free_tier": { "exists": true, "detail": "Plan gratuit illimité : liens de réservation illimités, sondages d'événements, intégrations vidéo, pas de limite de participants." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Plan gratuit illimité : liens de réservation illimités, sondages d'événements, intégrations vidéo, pas de limite de participants."
+    },
     "plans": [
-      { "name": "Free", "price": "Gratuit (illimité)" },
-      { "name": "Paid plans", "price": "À partir de 7 $ par mois" }
+      {
+        "name": "Free",
+        "price": "Gratuit (illimité)"
+      },
+      {
+        "name": "Paid plans",
+        "price": "À partir de 7 $ par mois"
+      }
     ],
     "key_features": [
       "Calendrier de disponibilité partagé",
@@ -34,7 +46,8 @@
       ],
       "avoidIf": [
         "Vous avez besoin de gestion complexe de calendrier ou de ressources partagées.",
-        "Vous voulez une solution CRM avec suivi ou reporting avancé."
+        "Vous voulez une solution CRM avec suivi ou reporting avancé.",
+        "Vous utilisez déjà un autre outil de planification."
       ],
       "threshold": "zcal est imbattable pour le freemium de scheduling ; pour la plupart des petites équipes, le gratuit suffit."
     },
@@ -56,7 +69,12 @@
       "Intégrer un lien de booking sur votre website ou profile.",
       "Automatiser l'envoi de rappels de réunion."
     ],
-    "relevant_for": ["Freelancers", "Consultants", "Petites équipes", "Équipes distribuées"]
+    "relevant_for": [
+      "Freelancers",
+      "Consultants",
+      "Petites équipes",
+      "Équipes distribuées"
+    ]
   },
   "en": {
     "verdict": {
@@ -67,7 +85,8 @@
       ],
       "avoidIf": [
         "You need complex calendar management or shared resource management.",
-        "You want a CRM with tracking or advanced reporting."
+        "You want a CRM with tracking or advanced reporting.",
+        "You already use another scheduling tool."
       ],
       "threshold": "zcal is unbeatable for freemium scheduling; for most small teams, free is enough."
     },

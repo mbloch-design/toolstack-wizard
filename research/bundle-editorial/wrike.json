@@ -3,17 +3,36 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Page tarifaire officielle Wrike", "url": "https://www.wrike.com/price/" }
+    {
+      "label": "Page tarifaire officielle Wrike",
+      "url": "https://www.wrike.com/price/"
+    }
   ],
   "facts": {
     "what": "Logiciel de gestion de projet et de travail collaboratif pour équipes et entreprises : tâches, vues multiples (Kanban, Gantt, tableaux), automatisations et reporting.",
+    "what_en": "Project and collaborative work management software for teams and businesses: tasks, multiple views (Kanban, Gantt, boards), automation, and reporting.",
     "pricing_model": "Palier gratuit puis abonnements par utilisateur (annuel moins cher). Gamme restructurée en janvier 2026 (fin d'Enterprise pour les nouveaux clients, ajout du palier Apex).",
-    "free_tier": { "exists": true, "detail": "Gratuit : gestion de tâches et de projets de base, vues tableau (Kanban) et table." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Gratuit : gestion de tâches et de projets de base, vues tableau (Kanban) et table."
+    },
     "plans": [
-      { "name": "Free", "price": "0 $ (jusqu'à 5 utilisateurs environ)" },
-      { "name": "Team", "price": "10 $/utilisateur/mois (annuel), jusqu'à 25 utilisateurs" },
-      { "name": "Business", "price": "25 $/utilisateur/mois (annuel), min. 5 sièges" },
-      { "name": "Pinnacle / Apex", "price": "sur devis (paliers hauts)" }
+      {
+        "name": "Free",
+        "price": "0 $ (jusqu'à 5 utilisateurs environ)"
+      },
+      {
+        "name": "Team",
+        "price": "10 $/utilisateur/mois (annuel), jusqu'à 25 utilisateurs"
+      },
+      {
+        "name": "Business",
+        "price": "25 $/utilisateur/mois (annuel), min. 5 sièges"
+      },
+      {
+        "name": "Pinnacle / Apex",
+        "price": "sur devis (paliers hauts)"
+      }
     ],
     "key_features": [
       "Vues multiples (Kanban, Gantt, tableaux)",
@@ -52,7 +71,11 @@
       "Automatiser des workflows récurrents.",
       "Suivre l'avancement via reporting et tableaux de bord."
     ],
-    "relevant_for": ["Équipes projet", "Équipes marketing", "PME et ETI"]
+    "relevant_for": [
+      "Équipes projet",
+      "Équipes marketing",
+      "PME et ETI"
+    ]
   },
   "en": {
     "verdict": {

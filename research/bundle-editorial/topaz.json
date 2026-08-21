@@ -3,17 +3,36 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Topaz Labs — logiciels d'amélioration IA (site officiel)", "url": "https://www.topazlabs.com/" }
+    {
+      "label": "Topaz Labs — logiciels d'amélioration IA (site officiel)",
+      "url": "https://www.topazlabs.com/"
+    }
   ],
   "facts": {
     "what": "Éditeur des logiciels d'amélioration par IA de Topaz Labs : Photo AI (débruitage, netteté), Video AI (amélioration vidéo), Gigapixel (agrandissement jusqu'à 6×, en local sur le GPU), plus Studio/Astra.",
+    "what_en": "Suite of Topaz Labs AI enhancement software: Photo AI (denoising, sharpness), Video AI (video enhancement), Gigapixel (enlargement up to 6×, locally on GPU), plus Studio/Astra.",
     "pricing_model": "Abonnement uniquement depuis fin 2025 (fin des licences perpétuelles). Plans par produit ou bundle (annuel ou mensuel).",
-    "free_tier": { "exists": false, "detail": "Pas de plan gratuit ; essai possible. Licences perpétuelles supprimées en septembre 2025." },
+    "free_tier": {
+      "exists": false,
+      "detail": "Pas de plan gratuit ; essai possible. Licences perpétuelles supprimées en septembre 2025."
+    },
     "plans": [
-      { "name": "Photo AI", "price": "199 $/an" },
-      { "name": "Video AI", "price": "299 $/an" },
-      { "name": "Gigapixel", "price": "99 $/an" },
-      { "name": "Topaz Studio (suite)", "price": "399 $/an (45 $/mois en annuel, 69 $/mois sans engagement) ; Pro 799 $/an" }
+      {
+        "name": "Photo AI",
+        "price": "199 $/an"
+      },
+      {
+        "name": "Video AI",
+        "price": "299 $/an"
+      },
+      {
+        "name": "Gigapixel",
+        "price": "99 $/an"
+      },
+      {
+        "name": "Topaz Studio (suite)",
+        "price": "399 $/an (45 $/mois en annuel, 69 $/mois sans engagement) ; Pro 799 $/an"
+      }
     ],
     "key_features": [
       "Photo AI : débruitage, netteté, détail",
@@ -52,7 +71,11 @@
       "Upscaler et restaurer des vidéos.",
       "Agrandir une image en préservant le détail."
     ],
-    "relevant_for": ["Photographes", "Vidéastes", "Studios visuels"]
+    "relevant_for": [
+      "Photographes",
+      "Vidéastes",
+      "Studios visuels"
+    ]
   },
   "en": {
     "verdict": {

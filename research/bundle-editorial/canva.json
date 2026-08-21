@@ -3,15 +3,29 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Page tarifaire officielle Canva", "url": "https://www.canva.com/en/pricing/" }
+    {
+      "label": "Page tarifaire officielle Canva",
+      "url": "https://www.canva.com/en/pricing/"
+    }
   ],
   "facts": {
     "what": "Plateforme de design graphique tout-en-un, à base de modèles, pour créer des visuels sans expertise design.",
+    "what_en": "All-in-one graphic design platform based on templates for creating visuals without design expertise.",
     "pricing_model": "Plan gratuit, Canva Pro (individuel), Canva Business (équipes). Le plan Teams n'est plus proposé aux nouveaux comptes.",
-    "free_tier": { "exists": true, "detail": "Plan gratuit avec les outils et modèles de base." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Plan gratuit avec les outils et modèles de base."
+    },
     "plans": [
-      { "name": "Canva Pro", "detail": "individuel, outils premium et IA (prix sur la page officielle)" },
-      { "name": "Canva Business", "price": "20 $/personne/mois", "detail": "sans minimum de sièges, collaboration et outils d'équipe" }
+      {
+        "name": "Canva Pro",
+        "detail": "individuel, outils premium et IA (prix sur la page officielle)"
+      },
+      {
+        "name": "Canva Business",
+        "price": "20 $/personne/mois",
+        "detail": "sans minimum de sièges, collaboration et outils d'équipe"
+      }
     ],
     "key_features": [
       "Immense bibliothèque de modèles et d'assets",
@@ -50,7 +64,11 @@
       "Créer présentations et supports marketing à partir de modèles.",
       "Maintenir une identité visuelle d'équipe via un kit de marque."
     ],
-    "relevant_for": ["Freelances", "Petites équipes marketing", "Créateurs de contenu"]
+    "relevant_for": [
+      "Freelances",
+      "Petites équipes marketing",
+      "Créateurs de contenu"
+    ]
   },
   "en": {
     "verdict": {

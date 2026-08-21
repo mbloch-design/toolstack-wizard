@@ -3,13 +3,23 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Aperçu des frais créateur — centre d'aide Patreon", "url": "https://support.patreon.com/hc/en-us/articles/11111747095181-Creator-fees-overview" },
-    { "label": "Frais standard pour les nouveaux créateurs (depuis août 2025)", "url": "https://support.patreon.com/hc/en-us/articles/36426991446797-A-standard-platform-fee-for-new-creators-effective-after-August-4-2025" }
+    {
+      "label": "Aperçu des frais créateur — centre d'aide Patreon",
+      "url": "https://support.patreon.com/hc/en-us/articles/11111747095181-Creator-fees-overview"
+    },
+    {
+      "label": "Frais standard pour les nouveaux créateurs (depuis août 2025)",
+      "url": "https://support.patreon.com/hc/en-us/articles/36426991446797-A-standard-platform-fee-for-new-creators-effective-after-August-4-2025"
+    }
   ],
   "facts": {
     "what": "Plateforme d'abonnement/membership permettant aux créateurs de monétiser leur audience via des paliers récurrents et des avantages.",
+    "what_en": "Subscription/membership platform enabling creators to monetize their audience through recurring tiers and perks.",
     "pricing_model": "Gratuit à démarrer. Frais de plateforme prélevés sur les revenus + frais de traitement des paiements + taxes applicables.",
-    "free_tier": { "exists": true, "detail": "Création de page gratuite ; les frais s'appliquent uniquement sur les revenus perçus." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Création de page gratuite ; les frais s'appliquent uniquement sur les revenus perçus."
+    },
     "fees": {
       "standard_new_creators": "10 % (nouveaux créateurs, depuis le 4 août 2025)",
       "legacy": "anciens plans à 5 %, 8 % ou 11 % ; Pro (8 %) et Premium (12 %) fusionnés dans le standard 10 %"
@@ -51,7 +61,11 @@
       "Offrir du contenu et des avantages exclusifs à ses membres par palier.",
       "Fédérer une communauté payante autour d'un créateur ou d'un projet."
     ],
-    "relevant_for": ["Créateurs de contenu", "Artistes et indépendants", "Communautés"]
+    "relevant_for": [
+      "Créateurs de contenu",
+      "Artistes et indépendants",
+      "Communautés"
+    ]
   },
   "en": {
     "verdict": {

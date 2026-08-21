@@ -3,16 +3,28 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Saleor — Plateforme e-commerce open source (site officiel)", "url": "https://saleor.io" }
+    {
+      "label": "Saleor — Plateforme e-commerce open source (site officiel)",
+      "url": "https://saleor.io"
+    }
   ],
   "facts": {
     "what": "Plateforme de commerce électronique composable, open source et headless, avec API GraphQL native et tableau de bord extensible pour construire des expériences e-commerce modernes et omnicanal.",
     "what_en": "Composable, open-source, headless e-commerce platform with native GraphQL API and extensible dashboard to build modern, omnichannel commerce experiences.",
     "pricing_model": "Open source gratuit (auto-hébergement) ou Saleor Cloud (SaaS managé payant)",
-    "free_tier": { "exists": true, "detail": "Version open source entièrement gratuite sur GitHub (23.2k stars) avec contrôle total. Saleor Cloud est un service SaaS payant optionnel." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Version open source entièrement gratuite sur GitHub (23.2k stars) avec contrôle total. Saleor Cloud est un service SaaS payant optionnel."
+    },
     "plans": [
-      { "name": "Open Source", "price": "Gratuit" },
-      { "name": "Saleor Cloud", "price": "Montants sur la page officielle de tarification" }
+      {
+        "name": "Open Source",
+        "price": "Gratuit"
+      },
+      {
+        "name": "Saleor Cloud",
+        "price": "Montants sur la page officielle de tarification"
+      }
     ],
     "key_features": [
       "API GraphQL native pour intégrations sans restrictions",
@@ -34,7 +46,8 @@
       ],
       "avoidIf": [
         "Vous préférez une solution sans infrastructure technique.",
-        "Vous cherchez une plateforme clé en main hautement opérationnelle."
+        "Vous cherchez une plateforme clé en main hautement opérationnelle.",
+        "Vous n'avez pas d'expertise GraphQL : la courbe d'apprentissage pour GraphQL et extensibilité est importante."
       ],
       "threshold": "Saleor s'impose pour les équipes techniques cherchant du contrôle et de la flexibilité ; pour une approche clé en main, explorez des alternatives plus opérationnelles."
     },
@@ -55,7 +68,11 @@
       "Intégrer des systèmes tiers via une API GraphQL puissante.",
       "Implémenter une stratégie omnichannel avec agents IA."
     ],
-    "relevant_for": ["Équipes e-commerce techniques", "Agences développement", "Entreprises avec besoins e-commerce avancés"]
+    "relevant_for": [
+      "Équipes e-commerce techniques",
+      "Agences développement",
+      "Entreprises avec besoins e-commerce avancés"
+    ]
   },
   "en": {
     "verdict": {
@@ -66,7 +83,8 @@
       ],
       "avoidIf": [
         "You prefer a solution without technical infrastructure.",
-        "You seek a fully managed, out-of-the-box platform."
+        "You seek a fully managed, out-of-the-box platform.",
+        "You don't have GraphQL expertise: the learning curve for GraphQL and extensibility is steep."
       ],
       "threshold": "Saleor is ideal for technical teams seeking control and flexibility; for a turnkey approach, explore more operational alternatives."
     },

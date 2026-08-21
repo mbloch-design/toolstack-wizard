@@ -3,15 +3,28 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Page tarifaire officielle Qonto", "url": "https://qonto.com/en/pricing" }
+    {
+      "label": "Page tarifaire officielle Qonto",
+      "url": "https://qonto.com/en/pricing"
+    }
   ],
   "facts": {
     "what": "Établissement de paiement pour entreprises : compte pro, moyens de paiement et gestion financière (pas une banque).",
+    "what_en": "Payment institution for businesses: professional account, payment methods, and financial management (not a bank).",
     "pricing_model": "Abonnement par palier, facturation annuelle (mensuelle possible). Aucun plan gratuit ; essai 1 mois.",
-    "free_tier": { "exists": false, "detail": "Aucun plan gratuit ; chaque palier inclut un essai d'un mois." },
+    "free_tier": {
+      "exists": false,
+      "detail": "Aucun plan gratuit ; chaque palier inclut un essai d'un mois."
+    },
     "plans": [
-      { "name": "Indépendants — Basic / Smart / Premium", "price": "9 € / 19 € / 39 € par mois" },
-      { "name": "Équipes — Essential / Business / Enterprise", "price": "49 € / 99 € / 199 € par mois" }
+      {
+        "name": "Indépendants — Basic / Smart / Premium",
+        "price": "9 € / 19 € / 39 € par mois"
+      },
+      {
+        "name": "Équipes — Essential / Business / Enterprise",
+        "price": "49 € / 99 € / 199 € par mois"
+      }
     ],
     "key_features": [
       "IBAN local et virements SEPA instantanés",
@@ -50,7 +63,11 @@
       "Suivre et valider les dépenses d'équipe avec reçus rattachés.",
       "Émettre devis et factures électroniques depuis le même outil."
     ],
-    "relevant_for": ["Indépendants", "PME", "Startups"]
+    "relevant_for": [
+      "Indépendants",
+      "PME",
+      "Startups"
+    ]
   },
   "en": {
     "verdict": {

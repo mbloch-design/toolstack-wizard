@@ -4,10 +4,14 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Google Meet — description et fonctions (Wikipédia)", "url": "https://en.wikipedia.org/wiki/Google_Meet" }
+    {
+      "label": "Google Meet — description et fonctions (Wikipédia)",
+      "url": "https://en.wikipedia.org/wiki/Google_Meet"
+    }
   ],
   "facts": {
     "what": "Service de visioconférence de Google, dans le navigateur et via apps mobiles.",
+    "what_en": "Google's video conferencing service, in the browser and via mobile apps.",
     "pricing_note": "Modèle freemium ; fonctions avancées (enregistrement, sous-titres, arrière-plans) via Google Workspace (voir la fiche de la suite).",
     "key_features": [
       "Réunions vidéo jusqu'à 100 participants (gratuit), 250 en Workspace Enterprise",
@@ -46,7 +50,11 @@
       "Passer d'un e-mail ou d'un chat à une visio en un clic.",
       "Enregistrer une réunion pour les absents (Workspace)."
     ],
-    "relevant_for": ["Petites équipes", "PME sur Google Workspace", "Équipes distribuées"]
+    "relevant_for": [
+      "Petites équipes",
+      "PME sur Google Workspace",
+      "Équipes distribuées"
+    ]
   },
   "en": {
     "verdict": {

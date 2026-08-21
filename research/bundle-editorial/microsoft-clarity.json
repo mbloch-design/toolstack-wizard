@@ -3,13 +3,19 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Microsoft Clarity — web analytics (site officiel)", "url": "https://clarity.microsoft.com" }
+    {
+      "label": "Microsoft Clarity — web analytics (site officiel)",
+      "url": "https://clarity.microsoft.com"
+    }
   ],
   "facts": {
     "what": "Plateforme web analytics gratuite qui combine heatmaps, session recordings et IA pour comprendre le comportement utilisateur. Fourni par Microsoft avec IA Copilot intégrée.",
     "what_en": "Free web analytics platform combining heatmaps, session recordings, and AI to understand user behavior. Provided by Microsoft with built-in Copilot AI.",
     "pricing_model": "Entièrement gratuit avec aucune limite de trafic, aucun plafond de sessions.",
-    "free_tier": { "exists": true, "detail": "Gratuit à jamais. Pas de version payante. Zéro limite de trafic, sessions illimitées, utilisateurs illimités." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Gratuit à jamais. Pas de version payante. Zéro limite de trafic, sessions illimitées, utilisateurs illimités."
+    },
     "plans": [],
     "key_features": [
       "Session recordings illimitées",
@@ -28,7 +34,8 @@
       ],
       "avoidIf": [
         "Vous avez besoin d'événements traçables personnalisés (limité en Clarity).",
-        "Vous voulez des cohorts et segmentation avancée."
+        "Vous voulez des cohorts et segmentation avancée.",
+        "Vous pilotez les conversions par tracking événementiel profond : Clarity se limite aux heatmaps et sessions."
       ],
       "threshold": "Clarity s'impose pour la web analytics gratuite et l'observation utilisateur ; moins idéal si vous avez besoin de tracking événementiel profond."
     },
@@ -48,7 +55,11 @@
       "Identifier les points de friction avec heatmaps.",
       "Analyser le comportement mobile avec Copilot."
     ],
-    "relevant_for": ["Startups", "PME", "Petites équipes produit"]
+    "relevant_for": [
+      "Startups",
+      "PME",
+      "Petites équipes produit"
+    ]
   },
   "en": {
     "verdict": {
@@ -59,7 +70,8 @@
       ],
       "avoidIf": [
         "You need custom event tracking (Clarity is limited).",
-        "You want advanced cohorts and segmentation."
+        "You want advanced cohorts and segmentation.",
+        "You drive conversions through deep event tracking: Clarity limits itself to heatmaps and sessions."
       ],
       "threshold": "Clarity wins for free web analytics and user observation; less ideal if you need deep event tracking."
     },

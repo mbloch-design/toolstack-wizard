@@ -3,16 +3,32 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Limites des plans — support WeTransfer", "url": "https://wetransfer.com/help-center/subscriptions/plan-limits" },
-    { "label": "Page tarifaire officielle", "url": "https://wetransfer.com/pricing" }
+    {
+      "label": "Limites des plans — support WeTransfer",
+      "url": "https://wetransfer.com/help-center/subscriptions/plan-limits"
+    },
+    {
+      "label": "Page tarifaire officielle",
+      "url": "https://wetransfer.com/pricing"
+    }
   ],
   "facts": {
     "what": "Service d'envoi et de partage de gros fichiers, simple et sans compte pour l'envoi de base.",
+    "what_en": "Large file transfer and sharing service, simple and account-free for basic sending.",
     "pricing_model": "Palier gratuit limité, puis abonnements payants (montants exacts sur la page officielle — non revérifiés ici).",
-    "free_tier": { "exists": true, "detail": "Gratuit : jusqu'à 10 transferts ou 3 Go au total sur une fenêtre glissante de 30 jours." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Gratuit : jusqu'à 10 transferts ou 3 Go au total sur une fenêtre glissante de 30 jours."
+    },
     "plans": [
-      { "name": "Starter", "detail": "jusqu'à 10 transferts ou 300 Go / 30 jours" },
-      { "name": "Ultimate", "detail": "transferts illimités jusqu'à 1 To/transfert, expiration personnalisée, protection par mot de passe, pages de marque, contrôle d'accès" }
+      {
+        "name": "Starter",
+        "detail": "jusqu'à 10 transferts ou 300 Go / 30 jours"
+      },
+      {
+        "name": "Ultimate",
+        "detail": "transferts illimités jusqu'à 1 To/transfert, expiration personnalisée, protection par mot de passe, pages de marque, contrôle d'accès"
+      }
     ],
     "key_features": [
       "Envoi de gros fichiers via un lien, sans compte pour l'usage de base",
@@ -51,7 +67,11 @@
       "Protéger un envoi sensible par mot de passe et date d'expiration.",
       "Partager des fichiers volumineux sans obliger le destinataire à créer un compte."
     ],
-    "relevant_for": ["Créatifs", "Freelances", "Petites équipes"]
+    "relevant_for": [
+      "Créatifs",
+      "Freelances",
+      "Petites équipes"
+    ]
   },
   "en": {
     "verdict": {

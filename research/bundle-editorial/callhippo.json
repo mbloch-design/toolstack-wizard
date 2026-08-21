@@ -33,7 +33,8 @@
       ],
       "avoidIf": [
         "Vous avez un budget très restreint.",
-        "Vous ne gérez que quelques appels par jour."
+        "Vous ne gérez que quelques appels par jour.",
+        "Vous gérez très peu d'appels sans besoin d'automation avancée."
       ],
       "threshold": "CallHippo convient aux centres de contact modernes avec exigences IA ; pour appels simples ponctuels, solutions légères suffisent."
     },
@@ -65,7 +66,8 @@
       ],
       "avoidIf": [
         "You have a tight budget.",
-        "You handle only a few calls per day."
+        "You handle only a few calls per day.",
+        "You handle very few calls without advanced automation needs."
       ],
       "threshold": "CallHippo suits modern contact centers with AI requirements; for simple occasional calls, lighter solutions work."
     },

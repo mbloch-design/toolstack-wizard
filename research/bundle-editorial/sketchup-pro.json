@@ -3,16 +3,32 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Plans et tarifs officiels SketchUp (Trimble)", "url": "https://sketchup.trimble.com/en/plans-and-pricing" }
+    {
+      "label": "Plans et tarifs officiels SketchUp (Trimble)",
+      "url": "https://sketchup.trimble.com/en/plans-and-pricing"
+    }
   ],
   "facts": {
     "what": "Logiciel de modélisation 3D (Trimble) pour l'architecture, l'aménagement et le design produit, sur bureau, web et mobile.",
+    "what_en": "3D modeling software (Trimble) for architecture, interior design, and product design, on desktop, web, and mobile.",
     "pricing_model": "Abonnement annuel par palier (Go, Pro, Studio). Pas de palier gratuit grand public (version gratuite réservée à l'éducation).",
-    "free_tier": { "exists": false, "detail": "SketchUp for Schools gratuit avec un compte éducation Google/Microsoft ; pas de plan gratuit grand public." },
+    "free_tier": {
+      "exists": false,
+      "detail": "SketchUp for Schools gratuit avec un compte éducation Google/Microsoft ; pas de plan gratuit grand public."
+    },
     "plans": [
-      { "name": "Go", "price": "10,75 $/mois (annuel)" },
-      { "name": "Pro", "price": "33,25 $/mois (annuel)" },
-      { "name": "Studio", "price": "68,25 $/mois (annuel)" }
+      {
+        "name": "Go",
+        "price": "10,75 $/mois (annuel)"
+      },
+      {
+        "name": "Pro",
+        "price": "33,25 $/mois (annuel)"
+      },
+      {
+        "name": "Studio",
+        "price": "68,25 $/mois (annuel)"
+      }
     ],
     "key_features": [
       "Modélisation 3D multi-plateforme (bureau, iPad, web)",
@@ -51,7 +67,11 @@
       "Concevoir un objet ou un mobilier en 3D.",
       "Produire des visualisations photoréalistes d'un projet."
     ],
-    "relevant_for": ["Architectes", "Designers d'espace/produit", "Bureaux d'études"]
+    "relevant_for": [
+      "Architectes",
+      "Designers d'espace/produit",
+      "Bureaux d'études"
+    ]
   },
   "en": {
     "verdict": {

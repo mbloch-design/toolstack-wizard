@@ -34,7 +34,8 @@
       ],
       "avoidIf": [
         "Vous préférez Anthropic ou OpenAI.",
-        "Vous avez besoin de très long contexte en prod."
+        "Vous avez besoin de très long contexte en prod.",
+        "Vous ne travaillez pas dans l'écosystème Google."
       ],
       "threshold": "Gemini vaut pour équipes Google ; pour autres stacks, Anthropic/OpenAI sont plus standards."
     },
@@ -65,7 +66,8 @@
       ],
       "avoidIf": [
         "You prefer Anthropic or OpenAI.",
-        "You need very long context in production."
+        "You need very long context in production.",
+        "You don't work in the Google ecosystem."
       ],
       "threshold": "Gemini is worth it for Google-native teams; for other stacks, Anthropic/OpenAI are more standard."
     },

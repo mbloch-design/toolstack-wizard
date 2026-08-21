@@ -3,17 +3,32 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Printify — Pricing (site officiel)", "url": "https://printify.com/pricing/" }
+    {
+      "label": "Printify — Pricing (site officiel)",
+      "url": "https://printify.com/pricing/"
+    }
   ],
   "facts": {
     "what": "Plateforme d'impression à la demande (print-on-demand) connectée à plusieurs fournisseurs de production, permettant de vendre des produits personnalisés directement via Shopify, Etsy, eBay.",
     "what_en": "Print-on-demand platform connected to multiple production vendors, enabling direct sales of personalized products via Shopify, Etsy, and eBay.",
     "pricing_model": "Free plan avec montants sur page officielle pour Premium. Revenu via marges de fabrication, pas de frais initiaux. Tiering par features (nombre de boutiques, réductions).",
-    "free_tier": { "exists": true, "detail": "Free : $0/mois avec 5 boutiques, designs illimités, pas de réductions produit ; montants sur la page officielle pour Premium." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Free : $0/mois avec 5 boutiques, designs illimités, pas de réductions produit ; montants sur la page officielle pour Premium."
+    },
     "plans": [
-      { "name": "Free", "price": "$0/month (5 stores, no discounts)" },
-      { "name": "Premium", "price": "$24.99/month annual ($39/month monthly) — up to 33% product discounts" },
-      { "name": "Enterprise", "price": "Custom pricing (unlimited stores, larger discounts)" }
+      {
+        "name": "Free",
+        "price": "$0/month (5 stores, no discounts)"
+      },
+      {
+        "name": "Premium",
+        "price": "$24.99/month annual ($39/month monthly) — up to 33% product discounts"
+      },
+      {
+        "name": "Enterprise",
+        "price": "Custom pricing (unlimited stores, larger discounts)"
+      }
     ],
     "key_features": [
       "Intégration avec Shopify, Etsy, eBay, TikTok Shop",
@@ -34,7 +49,8 @@
       ],
       "avoidIf": [
         "Vous vendez peu de produits et un tier gratuit suffit.",
-        "Vous avez besoin de marges très élevées (POD limite naturellement les marges)."
+        "Vous avez besoin de marges très élevées (POD limite naturellement les marges).",
+        "Vous avez une production interne établie : Printify réduit les marges comparé à la production interne."
       ],
       "threshold": "Printify s'impose pour les vendeurs multi-canaux cherchant la scalabilité POD ; Free tier testé puis Premium pour croissance."
     },
@@ -57,7 +73,11 @@
       "Tester un design sur un petit volume avant production.",
       "Business accessoires : mugs, posters, hoodies."
     ],
-    "relevant_for": ["E-entrepreneurs", "Créateurs de contenu", "Petites marques de mode"]
+    "relevant_for": [
+      "E-entrepreneurs",
+      "Créateurs de contenu",
+      "Petites marques de mode"
+    ]
   },
   "en": {
     "verdict": {
@@ -68,7 +88,8 @@
       ],
       "avoidIf": [
         "You sell few products and free tier is enough.",
-        "You need very high margins (POD naturally limits them)."
+        "You need very high margins (POD naturally limits them).",
+        "You have established in-house production: Printify reduces margins compared to in-house."
       ],
       "threshold": "Printify works for multi-channel sellers seeking POD scalability; test free tier then upgrade to Premium for growth."
     },

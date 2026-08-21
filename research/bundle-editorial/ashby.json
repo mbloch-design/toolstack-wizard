@@ -3,15 +3,28 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Ashby — plateforme de recrutement (site officiel)", "url": "https://www.ashbyhq.com/" }
+    {
+      "label": "Ashby — plateforme de recrutement (site officiel)",
+      "url": "https://www.ashbyhq.com/"
+    }
   ],
   "facts": {
     "what": "ATS (logiciel de suivi des candidatures) moderne pour startups et scale-ups, orienté analytics, entretiens structurés et reporting approfondi.",
+    "what_en": "Modern ATS (applicant tracking software) for startups and scale-ups, focused on analytics, structured interviews, and in-depth reporting.",
     "pricing_model": "Sur devis, basé sur l'effectif (par employé/headcount), avec un modèle de « sièges élevés » pour les managers/admins. Pas de tarif public transparent.",
-    "free_tier": { "exists": false, "detail": "Pas de palier gratuit ; tarification entreprise sur devis, à partir d'un ticket d'entrée élevé." },
+    "free_tier": {
+      "exists": false,
+      "detail": "Pas de palier gratuit ; tarification entreprise sur devis, à partir d'un ticket d'entrée élevé."
+    },
     "plans": [
-      { "name": "Foundations", "price": "à partir de ~400 $/mois (jusqu'à ~100 employés)" },
-      { "name": "Plus / Enterprise", "price": "sur devis (scale selon l'effectif)" }
+      {
+        "name": "Foundations",
+        "price": "à partir de ~400 $/mois (jusqu'à ~100 employés)"
+      },
+      {
+        "name": "Plus / Enterprise",
+        "price": "sur devis (scale selon l'effectif)"
+      }
     ],
     "key_features": [
       "Suivi des candidatures (ATS)",
@@ -50,7 +63,11 @@
       "Analyser la performance des sources et des étapes.",
       "Standardiser les entretiens dans l'équipe."
     ],
-    "relevant_for": ["Startups", "Scale-ups", "Équipes recrutement"]
+    "relevant_for": [
+      "Startups",
+      "Scale-ups",
+      "Équipes recrutement"
+    ]
   },
   "en": {
     "verdict": {

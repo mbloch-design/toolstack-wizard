@@ -3,16 +3,32 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Auphonic — post-production audio automatisée (site officiel)", "url": "https://auphonic.com/" }
+    {
+      "label": "Auphonic — post-production audio automatisée (site officiel)",
+      "url": "https://auphonic.com/"
+    }
   ],
   "facts": {
     "what": "Service web de post-production audio automatisée : nivellement intelligent, réduction de bruit et de réverbération, normalisation du loudness et encodage, pour podcasts, audiobooks et enregistrements.",
+    "what_en": "Automated audio post-production web service: intelligent leveling, noise and reverb reduction, loudness normalization, and encoding for podcasts, audiobooks, and recordings.",
     "pricing_model": "Palier gratuit mensuel puis abonnements ou packs d'heures.",
-    "free_tier": { "exists": true, "detail": "Gratuit : 2 heures de traitement par mois." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Gratuit : 2 heures de traitement par mois."
+    },
     "plans": [
-      { "name": "Gratuit", "price": "0 $ (2 h/mois)" },
-      { "name": "S Recurring", "price": "11 $/mois (9 h)" },
-      { "name": "XL Recurring", "price": "99 $/mois (100 h)" }
+      {
+        "name": "Gratuit",
+        "price": "0 $ (2 h/mois)"
+      },
+      {
+        "name": "S Recurring",
+        "price": "11 $/mois (9 h)"
+      },
+      {
+        "name": "XL Recurring",
+        "price": "99 $/mois (100 h)"
+      }
     ],
     "key_features": [
       "Nivellement et normalisation du loudness",
@@ -51,7 +67,11 @@
       "Automatiser la finition d'audiobooks.",
       "Uniformiser le loudness d'une série d'enregistrements."
     ],
-    "relevant_for": ["Podcasteurs", "Créateurs audio", "Producteurs d'audiobooks"]
+    "relevant_for": [
+      "Podcasteurs",
+      "Créateurs audio",
+      "Producteurs d'audiobooks"
+    ]
   },
   "en": {
     "verdict": {

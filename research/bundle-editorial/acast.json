@@ -3,15 +3,28 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Acast — hébergement et monétisation de podcasts (site officiel)", "url": "https://www.acast.com/" }
+    {
+      "label": "Acast — hébergement et monétisation de podcasts (site officiel)",
+      "url": "https://www.acast.com/"
+    }
   ],
   "facts": {
     "what": "Plateforme mondiale d'hébergement et de monétisation de podcasts : distribution, insertion publicitaire dynamique, mise en relation avec des annonceurs et analytics.",
+    "what_en": "Global podcast hosting and monetization platform: distribution, dynamic ad insertion, connecting with advertisers, and analytics.",
     "pricing_model": "Palier gratuit puis abonnements ; marketplace publicitaire en partage de revenus.",
-    "free_tier": { "exists": true, "detail": "Gratuit limité (ex. quelques épisodes) sauf activation de la monétisation. Partage de revenus sur la pub (Acast prélève une part)." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Gratuit limité (ex. quelques épisodes) sauf activation de la monétisation. Partage de revenus sur la pub (Acast prélève une part)."
+    },
     "plans": [
-      { "name": "Gratuit", "price": "0 $ (limité)" },
-      { "name": "Payant", "price": "~15–30 $/mois selon les fonctions (montants sur le site officiel)" }
+      {
+        "name": "Gratuit",
+        "price": "0 $ (limité)"
+      },
+      {
+        "name": "Payant",
+        "price": "~15–30 $/mois selon les fonctions (montants sur le site officiel)"
+      }
     ],
     "key_features": [
       "Hébergement et distribution multi-plateformes",
@@ -50,7 +63,11 @@
       "Monétiser via la pub dynamique.",
       "Accéder à des annonceurs via la marketplace."
     ],
-    "relevant_for": ["Podcasteurs", "Studios audio", "Créateurs cherchant la monétisation"]
+    "relevant_for": [
+      "Podcasteurs",
+      "Studios audio",
+      "Créateurs cherchant la monétisation"
+    ]
   },
   "en": {
     "verdict": {

@@ -3,14 +3,25 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Tarifs et services — documentation Cargo", "url": "https://docs.cargo.site/rates-services" }
+    {
+      "label": "Tarifs et services — documentation Cargo",
+      "url": "https://docs.cargo.site/rates-services"
+    }
   ],
   "facts": {
     "what": "Créateur de sites/portfolios pour créatifs (designers, artistes, photographes, architectes) misant sur la présentation visuelle.",
+    "what_en": "Website and portfolio creator for creatives (designers, artists, photographers, architects) emphasizing visual presentation.",
     "pricing_model": "Tarif unique pour tous les comptes (pas de paliers), plus un plan gratuit brandé.",
-    "free_tier": { "exists": true, "detail": "Plan gratuit permettant de construire et publier un site, avec marque Cargo et fonctions limitées." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Plan gratuit permettant de construire et publier un site, avec marque Cargo et fonctions limitées."
+    },
     "plans": [
-      { "name": "Payant (tarif unique)", "price": "14 $/mois (annuel) ou 19 $/mois (mensuel)", "detail": "1 domaine personnalisé inclus" }
+      {
+        "name": "Payant (tarif unique)",
+        "price": "14 $/mois (annuel) ou 19 $/mois (mensuel)",
+        "detail": "1 domaine personnalisé inclus"
+      }
     ],
     "key_features": [
       "Modèles et mise en page orientés portfolio visuel",
@@ -49,7 +60,11 @@
       "Mettre en ligne un site vitrine créatif rapidement.",
       "Démarrer gratuitement puis passer au tarif unique avec domaine."
     ],
-    "relevant_for": ["Designers", "Photographes", "Artistes et studios créatifs"]
+    "relevant_for": [
+      "Designers",
+      "Photographes",
+      "Artistes et studios créatifs"
+    ]
   },
   "en": {
     "verdict": {

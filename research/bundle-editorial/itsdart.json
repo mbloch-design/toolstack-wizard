@@ -32,7 +32,8 @@
       ],
       "avoidIf": [
         "Vous cherchez une solution complète avec financials et marketing.",
-        "Votre équipe préfère une interface ultra-simple sans IA."
+        "Votre équipe préfère une interface ultra-simple sans IA.",
+        "Vous cherchez une suite complète avec finances et marketing."
       ],
       "threshold": "Dart brille pour les équipes cherchant l'orchestration humain-IA ; les équipes métier classiques choisiront des outils plus génériques."
     },
@@ -63,7 +64,8 @@
       ],
       "avoidIf": [
         "You're looking for a complete suite with financials and marketing.",
-        "Your team prefers an ultra-simple interface without AI."
+        "Your team prefers an ultra-simple interface without AI.",
+        "You want a complete suite with finances and marketing."
       ],
       "threshold": "Dart excels for teams seeking human-AI orchestration; mainstream teams will choose more generic tools."
     },

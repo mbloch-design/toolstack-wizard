@@ -3,17 +3,36 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Page tarifaire officielle Lindy", "url": "https://www.lindy.ai/pricing" }
+    {
+      "label": "Page tarifaire officielle Lindy",
+      "url": "https://www.lindy.ai/pricing"
+    }
   ],
   "facts": {
     "what": "Plateforme no-code d'agents IA : automatise email, réunions et workflows via 100+ intégrations (tri d'emails, prise de notes en réunion, mise à jour CRM, workflows multi-étapes).",
+    "what_en": "No-code AI agent platform: automates email, meetings, and workflows via 100+ integrations (email sorting, meeting notes, CRM updates, multi-step workflows).",
     "pricing_model": "Abonnement à paliers fonctionnant aux crédits ; la facture réelle varie selon l'usage (tâches IA plus coûteuses en crédits).",
-    "free_tier": { "exists": false, "detail": "Paliers payants à crédits ; l'usage réel fait varier la facture. Offre Enterprise sur devis." },
+    "free_tier": {
+      "exists": false,
+      "detail": "Paliers payants à crédits ; l'usage réel fait varier la facture. Offre Enterprise sur devis."
+    },
     "plans": [
-      { "name": "Plus", "price": "49,99 $/mois — jusqu'à 2 boîtes" },
-      { "name": "Pro", "price": "99,99 $/mois — 3× l'usage, automatisation navigateur" },
-      { "name": "Max", "price": "199,99 $/mois — 7× l'usage, jusqu'à 5 boîtes" },
-      { "name": "Enterprise", "price": "sur devis" }
+      {
+        "name": "Plus",
+        "price": "49,99 $/mois — jusqu'à 2 boîtes"
+      },
+      {
+        "name": "Pro",
+        "price": "99,99 $/mois — 3× l'usage, automatisation navigateur"
+      },
+      {
+        "name": "Max",
+        "price": "199,99 $/mois — 7× l'usage, jusqu'à 5 boîtes"
+      },
+      {
+        "name": "Enterprise",
+        "price": "sur devis"
+      }
     ],
     "key_features": [
       "Agents IA no-code",
@@ -52,7 +71,11 @@
       "Prendre des notes en réunion et extraire les actions.",
       "Automatiser un workflow multi-apps."
     ],
-    "relevant_for": ["Solos et petites équipes", "Ops", "Équipes commerciales"]
+    "relevant_for": [
+      "Solos et petites équipes",
+      "Ops",
+      "Équipes commerciales"
+    ]
   },
   "en": {
     "verdict": {

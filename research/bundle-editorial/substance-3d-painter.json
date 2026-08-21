@@ -4,10 +4,14 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Adobe Substance 3D Painter — page produit officielle", "url": "https://www.adobe.com/products/substance3d/apps/painter.html" }
+    {
+      "label": "Adobe Substance 3D Painter — page produit officielle",
+      "url": "https://www.adobe.com/products/substance3d/apps/painter.html"
+    }
   ],
   "facts": {
     "what": "Application de peinture de textures directement sur des modèles 3D (texturing PBR), au sein de la suite Substance 3D.",
+    "what_en": "Texture painting application for painting directly on 3D models (PBR texturing), within the Substance 3D suite.",
     "pricing_note": "Via l'abonnement Substance 3D ou Creative Cloud (voir la fiche de la suite).",
     "key_features": [
       "Peinture de textures en temps réel sur le modèle 3D",
@@ -46,7 +50,11 @@
       "Appliquer des smart materials sur un modèle 3D.",
       "Exporter des textures vers un moteur 3D."
     ],
-    "relevant_for": ["Artistes 3D", "Studios jeu/film", "Texture artists"]
+    "relevant_for": [
+      "Artistes 3D",
+      "Studios jeu/film",
+      "Texture artists"
+    ]
   },
   "en": {
     "verdict": {

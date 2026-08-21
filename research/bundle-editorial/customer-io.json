@@ -3,15 +3,28 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Page tarifaire officielle Customer.io", "url": "https://customer.io/pricing" }
+    {
+      "label": "Page tarifaire officielle Customer.io",
+      "url": "https://customer.io/pricing"
+    }
   ],
   "facts": {
     "what": "Plateforme d'automatisation marketing multicanal (email, push, in-app, SMS, webhooks) pilotée par les données first-party, avec segmentation et éditeur de workflows visuel.",
+    "what_en": "Multi-channel marketing automation platform (email, push, in-app, SMS, webhooks) driven by first-party data, with segmentation and visual workflow editor.",
     "pricing_model": "Abonnement structuré selon le nombre de profils (contacts) et le volume de messages envoyés.",
-    "free_tier": { "exists": false, "detail": "Pas de palier gratuit permanent (essai possible) ; tarification à partir du plan Essentials." },
+    "free_tier": {
+      "exists": false,
+      "detail": "Pas de palier gratuit permanent (essai possible) ; tarification à partir du plan Essentials."
+    },
     "plans": [
-      { "name": "Essentials", "price": "à partir de 100 $/mois (5 000 profils, ~1 M emails/mois)" },
-      { "name": "Premium", "price": "à partir de 1 000 $/mois (délivrabilité gérée, IP dédiées, HIPAA, support premium)" }
+      {
+        "name": "Essentials",
+        "price": "à partir de 100 $/mois (5 000 profils, ~1 M emails/mois)"
+      },
+      {
+        "name": "Premium",
+        "price": "à partir de 1 000 $/mois (délivrabilité gérée, IP dédiées, HIPAA, support premium)"
+      }
     ],
     "key_features": [
       "Automatisation multicanal (email, push, in-app, SMS)",
@@ -50,7 +63,11 @@
       "Segmenter et cibler sur le comportement produit.",
       "Orchestrer email, push et SMS depuis un seul outil."
     ],
-    "relevant_for": ["Équipes growth", "Produits SaaS", "Équipes CRM/lifecycle"]
+    "relevant_for": [
+      "Équipes growth",
+      "Produits SaaS",
+      "Équipes CRM/lifecycle"
+    ]
   },
   "en": {
     "verdict": {

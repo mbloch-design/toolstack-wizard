@@ -3,13 +3,19 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-08-17",
   "sources": [
-    { "label": "Ruby — site officiel", "url": "https://ruby.com" }
+    {
+      "label": "Ruby — site officiel",
+      "url": "https://ruby.com"
+    }
   ],
   "facts": {
     "what": "Plateforme de réceptionniste virtuelle 24/7 offrant prise d'appels en direct, prise de rendez-vous, et chat en ligne. Automatise les interactions client entrantes et livre les informations à votre CRM.",
     "what_en": "24/7 virtual receptionist platform offering live call answering, appointment scheduling, and live website chat. Automates inbound customer interactions and delivers information to your CRM.",
     "pricing_model": "Abonnement mensuel avec variation selon le nombre de minutes de réceptionniste allouées.",
-    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Garantie de remboursement 21 jours." },
+    "free_tier": {
+      "exists": false,
+      "detail": "Pas de version gratuite. Garantie de remboursement 21 jours."
+    },
     "plans": [],
     "key_features": [
       "Réceptionnistes virtuelles avec prise d'appels en direct",
@@ -29,7 +35,8 @@
       ],
       "avoidIf": [
         "Vous avez très peu d'appels entrants.",
-        "Vous préférez un chatbot bot purement automatisé."
+        "Vous préférez un chatbot bot purement automatisé.",
+        "Vous avez un très gros volume d'appels : le coût par minutes de réceptionniste devient prohibitif à volume élevé."
       ],
       "threshold": "Ruby convient aux petites entreprises de services (avocat, cabinet médical, consulting) avec beaucoup d'appels ; pour un solopreneur léger, elle peut être disproportionnée."
     },
@@ -49,7 +56,11 @@
       "Accueillir les clients après les heures de bureau.",
       "Centraliser prises de rendez-vous et communications client."
     ],
-    "relevant_for": ["Cabinets professionnels", "Petites entreprises de services", "Agences"]
+    "relevant_for": [
+      "Cabinets professionnels",
+      "Petites entreprises de services",
+      "Agences"
+    ]
   },
   "en": {
     "verdict": {
@@ -60,7 +71,8 @@
       ],
       "avoidIf": [
         "You have very few inbound calls.",
-        "You prefer a purely automated chatbot."
+        "You prefer a purely automated chatbot.",
+        "You have very high call volume: Ruby's per-minute receptionist cost becomes prohibitive."
       ],
       "threshold": "Ruby suits small service businesses (law, medical, consulting) with high call volume; for a lean solo user, it may be disproportionate."
     },

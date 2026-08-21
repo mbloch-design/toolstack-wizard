@@ -3,15 +3,24 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-08-17",
   "sources": [
-    { "label": "ResponseTap — site officiel", "url": "https://responsetap.com" }
+    {
+      "label": "ResponseTap — site officiel",
+      "url": "https://responsetap.com"
+    }
   ],
   "facts": {
     "what": "Logiciel de suivi des appels et analytics qui relie les interactions numériques (publicités, pages d'accueil, clics) aux conversions hors ligne (appels téléphoniques), permettant de mesurer le ROI des campagnes marketing.",
     "what_en": "Call tracking and analytics software that links digital interactions (ads, landing pages, clicks) to offline conversions (phone calls), enabling ROI measurement of marketing campaigns.",
     "pricing_model": "Abonnement mensuel pour petites entreprises ou plans personnalisés pour grandes entreprises.",
-    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Essai ou démo disponible sur demande." },
+    "free_tier": {
+      "exists": false,
+      "detail": "Pas de version gratuite. Essai ou démo disponible sur demande."
+    },
     "plans": [
-      { "name": "Small Business", "price": "199 £/mois ou montants personnalisés" }
+      {
+        "name": "Small Business",
+        "price": "199 £/mois ou montants personnalisés"
+      }
     ],
     "key_features": [
       "Numéro de téléphone unique par session visiteur pour traçabilité précise",
@@ -30,7 +39,8 @@
       ],
       "avoidIf": [
         "Vous avez peu d'appels entrants.",
-        "Votre activité est purement en ligne (pas de composante téléphonique)."
+        "Votre activité est purement en ligne (pas de composante téléphonique).",
+        "Vous avez un budget marketing limité : ResponseTap ajoute des frais de mise en œuvre importants au tarif mensuel."
       ],
       "threshold": "ResponseTap convient aux entreprises B2B/B2C avec appels entrants forts ; pour les activités purement numériques, il n'apporte pas de valeur."
     },
@@ -51,7 +61,11 @@
       "Optimiser les mots-clés et pages selon les appels réels convertis.",
       "Former les équipes d'appels avec des enregistrements."
     ],
-    "relevant_for": ["Agences marketing", "B2B SaaS avec ventes téléphoniques", "E-commerce avec support appels"]
+    "relevant_for": [
+      "Agences marketing",
+      "B2B SaaS avec ventes téléphoniques",
+      "E-commerce avec support appels"
+    ]
   },
   "en": {
     "verdict": {
@@ -62,7 +76,8 @@
       ],
       "avoidIf": [
         "You have few inbound calls.",
-        "Your business is purely online (no phone component)."
+        "Your business is purely online (no phone component).",
+        "You have a limited marketing budget: ResponseTap adds significant implementation fees on top of subscription."
       ],
       "threshold": "ResponseTap suits B2B/B2C companies with strong inbound call volume; for purely digital businesses, it adds no value."
     },

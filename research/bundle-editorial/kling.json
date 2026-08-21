@@ -3,16 +3,32 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Kling AI — plans d'abonnement (site officiel)", "url": "https://klingai.com/" }
+    {
+      "label": "Kling AI — plans d'abonnement (site officiel)",
+      "url": "https://klingai.com/"
+    }
   ],
   "facts": {
     "what": "Générateur de vidéo par IA (texte-vers-vidéo et image-vers-vidéo) développé par Kuaishou : clips courts très dynamiques, simulation physique, cohérence des personnages, 4K natif, contrôle de caméra, audio natif et API.",
+    "what_en": "AI video generator (text-to-video and image-to-video) by Kuaishou: highly dynamic short clips, physics simulation, character consistency, native 4K, camera control, native audio, and API.",
     "pricing_model": "Palier gratuit à crédits quotidiens puis abonnements à crédits (les crédits se consomment à la seconde de vidéo générée). Annuel moins cher sur la plupart des plans.",
-    "free_tier": { "exists": true, "detail": "Gratuit : 66 crédits/jour (≈ 6 clips standard/jour), remis à zéro toutes les 24 h, sans report." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Gratuit : 66 crédits/jour (≈ 6 clips standard/jour), remis à zéro toutes les 24 h, sans report."
+    },
     "plans": [
-      { "name": "Free", "price": "0 $ (66 crédits/jour)" },
-      { "name": "Standard / Pro / Premier", "price": "de ~10 $ à ~100 $/mois selon le plan (annuel moins cher)" },
-      { "name": "Ultra", "price": "128 $/mois (volume de crédits nettement supérieur)" }
+      {
+        "name": "Free",
+        "price": "0 $ (66 crédits/jour)"
+      },
+      {
+        "name": "Standard / Pro / Premier",
+        "price": "de ~10 $ à ~100 $/mois selon le plan (annuel moins cher)"
+      },
+      {
+        "name": "Ultra",
+        "price": "128 $/mois (volume de crédits nettement supérieur)"
+      }
     ],
     "key_features": [
       "Texte-vers-vidéo et image-vers-vidéo",
@@ -51,7 +67,11 @@
       "Animer une image fixe en vidéo.",
       "Explorer des rendus par prompt."
     ],
-    "relevant_for": ["Créateurs de contenu", "Équipes marketing", "Motion designers"]
+    "relevant_for": [
+      "Créateurs de contenu",
+      "Équipes marketing",
+      "Motion designers"
+    ]
   },
   "en": {
     "verdict": {

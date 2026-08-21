@@ -51,7 +51,8 @@
       ],
       "avoidIf": [
         "Vous faites surtout du design graphique web.",
-        "Vous cherchez une solution uniquement de gestion de projets."
+        "Vous cherchez une solution uniquement de gestion de projets.",
+        "Vous cherchez une solution pour gestion de projets uniquement."
       ],
       "threshold": "Houzz Pro convient aux professionnels du bâtiment/design cherchant une suite intégrée ; pour d'autres métiers, des outils génériques suffisent."
     },
@@ -86,7 +87,8 @@
       ],
       "avoidIf": [
         "You mainly do web graphic design.",
-        "You're looking for project management only."
+        "You're looking for project management only.",
+        "You want project management as the sole focus."
       ],
       "threshold": "Houzz Pro is ideal for construction/design professionals seeking an integrated suite; other professions can use generic tools."
     },

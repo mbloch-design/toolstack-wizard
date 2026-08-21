@@ -3,14 +3,24 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Page tarifaire officielle Weezevent", "url": "https://weezevent.com/fr/nos-tarifs/" }
+    {
+      "label": "Page tarifaire officielle Weezevent",
+      "url": "https://weezevent.com/fr/nos-tarifs/"
+    }
   ],
   "facts": {
     "what": "Plateforme de billetterie et solutions événementielles : billetterie en ligne, cashless, contrôle d'accès, accréditation du personnel et CRM, pour salons, concerts, festivals, conférences et événements sportifs.",
+    "what_en": "Ticketing and event solutions platform: online ticketing, cashless payments, access control, staff accreditation, and CRM for trade shows, concerts, festivals, conferences, and sporting events.",
     "pricing_model": "Sans abonnement : commission par billet vendu, gratuit pour les événements gratuits.",
-    "free_tier": { "exists": true, "detail": "Gratuit pour les événements gratuits ; sinon commission par billet vendu, sans abonnement ni frais cachés." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Gratuit pour les événements gratuits ; sinon commission par billet vendu, sans abonnement ni frais cachés."
+    },
     "plans": [
-      { "name": "À la billetterie", "price": "~0,99 £ + 2,50 % TTC par billet vendu (gratuit pour les événements gratuits)" }
+      {
+        "name": "À la billetterie",
+        "price": "~0,99 £ + 2,50 % TTC par billet vendu (gratuit pour les événements gratuits)"
+      }
     ],
     "key_features": [
       "Billetterie en ligne",
@@ -49,7 +59,11 @@
       "Gérer le cashless et le contrôle d'accès sur place.",
       "Centraliser les données participants."
     ],
-    "relevant_for": ["Organisateurs d'événements", "Festivals et concerts", "Salons et conférences"]
+    "relevant_for": [
+      "Organisateurs d'événements",
+      "Festivals et concerts",
+      "Salons et conférences"
+    ]
   },
   "en": {
     "verdict": {

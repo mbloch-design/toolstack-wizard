@@ -4,10 +4,14 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Adobe Lightroom — description et fonctions (Wikipédia)", "url": "https://en.wikipedia.org/wiki/Adobe_Lightroom" }
+    {
+      "label": "Adobe Lightroom — description et fonctions (Wikipédia)",
+      "url": "https://en.wikipedia.org/wiki/Adobe_Lightroom"
+    }
   ],
   "facts": {
     "what": "Application d'organisation et de retouche photo d'Adobe, pensée pour gérer et éditer de gros volumes d'images.",
+    "what_en": "Adobe's photo organization and editing application, designed to manage and batch-edit thousands of photos.",
     "pricing_note": "Inclus dans l'abonnement Adobe Creative Cloud / offre Photo (voir la fiche de la suite).",
     "key_features": [
       "Retouche non destructive (édits enregistrés séparément de l'original)",
@@ -47,7 +51,11 @@
       "Synchroniser ses édits entre ordinateur et mobile.",
       "Appliquer des préréglages en lot à une série de photos."
     ],
-    "relevant_for": ["Photographes", "Créatifs visuels", "Studios photo"]
+    "relevant_for": [
+      "Photographes",
+      "Créatifs visuels",
+      "Studios photo"
+    ]
   },
   "en": {
     "verdict": {

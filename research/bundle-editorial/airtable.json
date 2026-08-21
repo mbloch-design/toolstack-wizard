@@ -32,7 +32,8 @@
       ],
       "avoidIf": [
         "Vous cherchez une solution strictement gratuite.",
-        "Votre équipe préfère l'approche classique tableur."
+        "Votre équipe préfère l'approche classique tableur.",
+        "Vos données exigent une infrastructure entièrement locale pour conformité."
       ],
       "threshold": "Airtable convient aux équipes recherchant une base de données visuelle et collaborative ; pour un tableur classique, une alternative gratuite suffira."
     },
@@ -63,7 +64,8 @@
       ],
       "avoidIf": [
         "You're looking for a strictly free solution.",
-        "Your team prefers traditional spreadsheet approaches."
+        "Your team prefers traditional spreadsheet approaches.",
+        "Your data requires entirely local infrastructure for compliance reasons."
       ],
       "threshold": "Airtable is ideal for teams seeking a visual, collaborative database; for classic spreadsheets, a free alternative will suffice."
     },

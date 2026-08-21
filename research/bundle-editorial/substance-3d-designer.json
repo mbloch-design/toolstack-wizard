@@ -4,10 +4,14 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Adobe Substance 3D Designer — page produit officielle", "url": "https://www.adobe.com/products/substance3d/apps/designer.html" }
+    {
+      "label": "Adobe Substance 3D Designer — page produit officielle",
+      "url": "https://www.adobe.com/products/substance3d/apps/designer.html"
+    }
   ],
   "facts": {
     "what": "Application de création de matériaux 3D procéduraux (node-based) et de motifs/textures, au sein de la suite Substance 3D.",
+    "what_en": "Application for creating procedural 3D materials (node-based) and patterns/textures, within the Substance 3D suite.",
     "pricing_note": "Via l'abonnement Substance 3D ou Creative Cloud (voir la fiche de la suite).",
     "key_features": [
       "Création de matériaux procéduraux node-based",
@@ -46,7 +50,11 @@
       "Générer des textures paramétriques non destructives.",
       "Alimenter Substance Painter et les moteurs 3D."
     ],
-    "relevant_for": ["Artistes 3D", "Studios jeu/film", "Material artists"]
+    "relevant_for": [
+      "Artistes 3D",
+      "Studios jeu/film",
+      "Material artists"
+    ]
   },
   "en": {
     "verdict": {

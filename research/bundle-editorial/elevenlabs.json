@@ -3,16 +3,32 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Page tarifaire officielle ElevenLabs", "url": "https://elevenlabs.io/pricing" }
+    {
+      "label": "Page tarifaire officielle ElevenLabs",
+      "url": "https://elevenlabs.io/pricing"
+    }
   ],
   "facts": {
     "what": "Plateforme d'audio par IA : synthèse vocale (text-to-speech), clonage de voix et doublage.",
+    "what_en": "AI-powered audio platform: text-to-speech synthesis, voice cloning, and voice dubbing.",
     "pricing_model": "Palier gratuit puis paliers payants à crédits mensuels.",
-    "free_tier": { "exists": true, "detail": "Gratuit : 10 000 crédits/mois, TTS et STT de base." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Gratuit : 10 000 crédits/mois, TTS et STT de base."
+    },
     "plans": [
-      { "name": "Starter", "price": "6 $/mois" },
-      { "name": "Creator", "price": "11 $/mois" },
-      { "name": "Pro", "price": "99 $/mois" }
+      {
+        "name": "Starter",
+        "price": "6 $/mois"
+      },
+      {
+        "name": "Creator",
+        "price": "11 $/mois"
+      },
+      {
+        "name": "Pro",
+        "price": "99 $/mois"
+      }
     ],
     "key_features": [
       "Synthèse vocale (TTS) de haute qualité",
@@ -51,7 +67,11 @@
       "Cloner une voix pour un usage récurrent.",
       "Doubler une vidéo dans d'autres langues."
     ],
-    "relevant_for": ["Créateurs de contenu", "Podcasteurs", "Studios de localisation"]
+    "relevant_for": [
+      "Créateurs de contenu",
+      "Podcasteurs",
+      "Studios de localisation"
+    ]
   },
   "en": {
     "verdict": {

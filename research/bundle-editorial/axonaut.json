@@ -3,14 +3,24 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Page tarifaire officielle Axonaut", "url": "https://axonaut.com/content/prix" }
+    {
+      "label": "Page tarifaire officielle Axonaut",
+      "url": "https://axonaut.com/content/prix"
+    }
   ],
   "facts": {
     "what": "ERP français tout-en-un pour TPE/PME : CRM, facturation (conforme facturation électronique), comptabilité, trésorerie, gestion de projet, notes de frais et stock dans une seule plateforme.",
+    "what_en": "All-in-one French ERP for small and medium businesses: CRM, invoicing (compliant with e-invoicing), accounting, cash flow, project management, expense tracking, and inventory in one platform.",
     "pricing_model": "Abonnement par entreprise (pas par utilisateur), tarif dégressif selon l'engagement. Essai gratuit 15 jours.",
-    "free_tier": { "exists": false, "detail": "Essai gratuit de 15 jours ; abonnement requis ensuite." },
+    "free_tier": {
+      "exists": false,
+      "detail": "Essai gratuit de 15 jours ; abonnement requis ensuite."
+    },
     "plans": [
-      { "name": "Abonnement (tout inclus)", "price": "à partir de ~34,99 € HT/mois (annuel), jusqu'à ~69,99 € HT/mois sans engagement — par entreprise, options en plus" }
+      {
+        "name": "Abonnement (tout inclus)",
+        "price": "à partir de ~34,99 € HT/mois (annuel), jusqu'à ~69,99 € HT/mois sans engagement — par entreprise, options en plus"
+      }
     ],
     "key_features": [
       "CRM + facturation conforme (facturation électronique)",
@@ -49,7 +59,11 @@
       "Centraliser CRM et comptabilité d'une TPE.",
       "Suivre projets et notes de frais au même endroit."
     ],
-    "relevant_for": ["TPE françaises", "PME françaises", "Indépendants avec activité structurée"]
+    "relevant_for": [
+      "TPE françaises",
+      "PME françaises",
+      "Indépendants avec activité structurée"
+    ]
   },
   "en": {
     "verdict": {

@@ -32,7 +32,8 @@
       ],
       "avoidIf": [
         "Vous ne voulez pas de fournisseur chinois.",
-        "Vous avez besoin d'une relation directe support."
+        "Vous avez besoin d'une relation directe support.",
+        "Vous avez besoin de garanties strictes de conformité de données."
       ],
       "threshold": "DeepSeek offre le meilleur pricing du marché pour développeurs budgétés ; pour priorité support/entreprise, préférez Anthropic."
     },
@@ -63,7 +64,8 @@
       ],
       "avoidIf": [
         "You don't want a Chinese provider.",
-        "You need direct enterprise support."
+        "You need direct enterprise support.",
+        "You need strict data compliance guarantees."
       ],
       "threshold": "DeepSeek offers the best pricing on the market for budget-conscious developers; for priority support/enterprise, choose Anthropic."
     },

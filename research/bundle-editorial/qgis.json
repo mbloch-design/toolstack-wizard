@@ -3,13 +3,19 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "QGIS — système SIG (site officiel)", "url": "https://qgis.org" }
+    {
+      "label": "QGIS — système SIG (site officiel)",
+      "url": "https://qgis.org"
+    }
   ],
   "facts": {
     "what": "Système d'information géographique (SIG) gratuit et open source. Permet créer, éditer, visualiser, analyser et partager des données géospatiales sur Windows, Mac et Linux.",
     "what_en": "Free and open-source geographic information system (GIS). Enables creating, editing, visualizing, analyzing, and sharing geospatial data on Windows, Mac, and Linux.",
     "pricing_model": "Open source gratuit sous licence GNU GPLv2+. Aucun frais d'utilisation.",
-    "free_tier": { "exists": true, "detail": "Entièrement gratuit et open source. Téléchargement et utilisation sans restrictions." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Entièrement gratuit et open source. Téléchargement et utilisation sans restrictions."
+    },
     "plans": [],
     "key_features": [
       "Création et édition de cartes (points, lignes, polygones, mailles)",
@@ -29,7 +35,8 @@
       ],
       "avoidIf": [
         "Vous cherchez une solution SaaS cloud entièrement managée.",
-        "Vous avez peu d'expertise technique pour déploiement/scripts."
+        "Vous avez peu d'expertise technique pour déploiement/scripts.",
+        "Vous avez besoin d'un support premium 24/7."
       ],
       "threshold": "QGIS s'impose pour les professionnels géospatial avec budget zéro ; pour SaaS cloud, ArcGIS Online ou Mapbox conviennent mieux."
     },
@@ -51,7 +58,12 @@
       "Visualiser et exporter des cartes pour rapports ou pubs.",
       "Intégrer des données SIG dans workflows métier."
     ],
-    "relevant_for": ["Professionnels géospatial", "Chercheurs", "Orga gouvernementales", "Cartographes"]
+    "relevant_for": [
+      "Professionnels géospatial",
+      "Chercheurs",
+      "Orga gouvernementales",
+      "Cartographes"
+    ]
   },
   "en": {
     "verdict": {
@@ -62,7 +74,8 @@
       ],
       "avoidIf": [
         "You seek a fully managed cloud SaaS solution.",
-        "You have limited technical expertise for deployment/scripting."
+        "You have limited technical expertise for deployment/scripting.",
+        "You need 24/7 premium support."
       ],
       "threshold": "QGIS fits geospatial pros with zero budget; for cloud SaaS, ArcGIS Online or Mapbox suit better."
     },

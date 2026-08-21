@@ -3,15 +3,24 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "ShopHero — Plateforme de vente au détail (site officiel)", "url": "https://about.shophero.com/" }
+    {
+      "label": "ShopHero — Plateforme de vente au détail (site officiel)",
+      "url": "https://about.shophero.com/"
+    }
   ],
   "facts": {
     "what": "Plateforme de vente au détail complète pour épiceries indépendantes et restaurants, offrant boutique en ligne omnichannel, outils de marketing (email, réseaux sociaux, digital), et solutions de fulfillment (livraison, endless-aisle) avec support client intégré.",
     "what_en": "Complete retail platform for independent grocery stores and restaurants, offering omnichannel online store, marketing tools (email, social, digital), and fulfillment solutions (delivery, endless-aisle) with integrated customer support.",
     "pricing_model": "Modèle SaaS B2B avec tarification personnalisée selon les besoins du retailer",
-    "free_tier": { "exists": false, "detail": "Pas de version gratuite ; tarification personnalisée sur demande pour les retailers." },
+    "free_tier": {
+      "exists": false,
+      "detail": "Pas de version gratuite ; tarification personnalisée sur demande pour les retailers."
+    },
     "plans": [
-      { "name": "Plans personnalisés", "price": "Tarification sur devis selon les besoins du retailer" }
+      {
+        "name": "Plans personnalisés",
+        "price": "Tarification sur devis selon les besoins du retailer"
+      }
     ],
     "key_features": [
       "Boutique en ligne omnichannel avec application mobile",
@@ -33,7 +42,8 @@
       ],
       "avoidIf": [
         "Vous êtes une petite boutique avec budget très limité.",
-        "Vous cherchez une solution e-commerce généraliste."
+        "Vous cherchez une solution e-commerce généraliste.",
+        "Vous ne vendez pas d'alimentation : ShopHero est spécialisé épiceries/restaurants, sans généralisme."
       ],
       "threshold": "ShopHero s'impose pour les épiceries et restaurants indépendants cherchant une solution omnichannel intégrée ; pour e-commerce générique, explorez des alternatives plus accessibles."
     },
@@ -58,7 +68,12 @@
       "Automatiser le marketing client pour retailer alimentaire.",
       "Gérer le fulfillment (livraison, retrait)."
     ],
-    "relevant_for": ["Épiceries indépendantes", "Restaurateurs", "Retailers alimentaires", "Petites chaînes de magasins"]
+    "relevant_for": [
+      "Épiceries indépendantes",
+      "Restaurateurs",
+      "Retailers alimentaires",
+      "Petites chaînes de magasins"
+    ]
   },
   "en": {
     "verdict": {
@@ -69,7 +84,8 @@
       ],
       "avoidIf": [
         "You are a small shop with a very tight budget.",
-        "You seek a generalist e-commerce solution."
+        "You seek a generalist e-commerce solution.",
+        "You don't sell food: ShopHero is specialized for groceries/restaurants, not generalist."
       ],
       "threshold": "ShopHero is ideal for independent groceries and restaurants seeking an integrated omnichannel solution; for generic e-commerce, explore more accessible alternatives."
     },

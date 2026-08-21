@@ -3,17 +3,32 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-08-17",
   "sources": [
-    { "label": "Salesflare — site officiel", "url": "https://salesflare.com" }
+    {
+      "label": "Salesflare — site officiel",
+      "url": "https://salesflare.com"
+    }
   ],
   "facts": {
     "what": "CRM automatisé et intuitif conçu pour les équipes de vente, qui récupère automatiquement les données client depuis email, calendrier, téléphone et réseaux sociaux pour construire des historiques complets sans saisie manuelle.",
     "what_en": "Automated and intuitive CRM designed for sales teams, automatically gathering customer data from email, calendar, phone, and social media to build complete histories without manual entry.",
     "pricing_model": "Abonnement par utilisateur (trois niveaux), avec essai gratuit de 30 jours.",
-    "free_tier": { "exists": false, "detail": "Pas de version gratuite permanente, mais essai gratuit de 30 jours inclus." },
+    "free_tier": {
+      "exists": false,
+      "detail": "Pas de version gratuite permanente, mais essai gratuit de 30 jours inclus."
+    },
     "plans": [
-      { "name": "Growth", "price": "29 $/mois par utilisateur (facturation annuelle)" },
-      { "name": "Pro", "price": "49 $/mois par utilisateur (facturation annuelle)" },
-      { "name": "Enterprise", "price": "99 $/mois par utilisateur (facturation annuelle, minimum 5 utilisateurs)" }
+      {
+        "name": "Growth",
+        "price": "29 $/mois par utilisateur (facturation annuelle)"
+      },
+      {
+        "name": "Pro",
+        "price": "49 $/mois par utilisateur (facturation annuelle)"
+      },
+      {
+        "name": "Enterprise",
+        "price": "99 $/mois par utilisateur (facturation annuelle, minimum 5 utilisateurs)"
+      }
     ],
     "key_features": [
       "Intégration automatique avec email, calendrier, réseaux sociaux et sources publiques",
@@ -32,7 +47,8 @@
       ],
       "avoidIf": [
         "Vous cherchez un CRM très bon marché ou gratuit.",
-        "Vous gérez des données très complexes nécessitant beaucoup de customisation."
+        "Vous gérez des données très complexes nécessitant beaucoup de customisation.",
+        "Vous avez des workflows très personnalisés : Salesflare est moins flexible pour la customisation avancée."
       ],
       "threshold": "Salesflare convient aux équipes de vente cherchant automation et réduction de saisie manuelle ; pour un solopreneur ou processus très custom, un CRM plus configurable sera mieux."
     },
@@ -52,7 +68,11 @@
       "Créer des timelines client automatiques avec tout l'historique.",
       "Automatiser les séquences d'emails de suivi personnalisées."
     ],
-    "relevant_for": ["Équipes de vente", "Agences", "Services professionnels"]
+    "relevant_for": [
+      "Équipes de vente",
+      "Agences",
+      "Services professionnels"
+    ]
   },
   "en": {
     "verdict": {
@@ -63,7 +83,8 @@
       ],
       "avoidIf": [
         "You're looking for a very budget or free CRM.",
-        "You manage very complex data requiring extensive customization."
+        "You manage very complex data requiring extensive customization.",
+        "You have highly custom workflows: Salesflare is less flexible for advanced customization."
       ],
       "threshold": "Salesflare suits sales teams seeking automation and manual data entry reduction; for solo users or highly custom workflows, a more configurable CRM is better."
     },

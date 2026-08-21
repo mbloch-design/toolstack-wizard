@@ -33,7 +33,8 @@
       ],
       "avoidIf": [
         "Vous cherchez une IA de raisonnement profond.",
-        "Vous avez besoin de support entreprise."
+        "Vous avez besoin de support entreprise.",
+        "Vous recherchez une IA pour du raisonnement profond et logique complexe."
       ],
       "threshold": "Grok shines pour analyse X/social; pour logique complexe, Claude/Gemini sont mieux."
     },
@@ -64,7 +65,8 @@
       ],
       "avoidIf": [
         "You seek deep reasoning AI.",
-        "You need enterprise support."
+        "You need enterprise support.",
+        "You're looking for AI focused on deep reasoning and complex logic."
       ],
       "threshold": "Grok shines for X/social analysis; for complex logic, Claude/Gemini are better."
     },

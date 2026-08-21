@@ -33,7 +33,8 @@
       ],
       "avoidIf": [
         "Vous prototypez en local (Developer suffisant).",
-        "Votre app LLM est stateless simple."
+        "Votre app LLM est stateless simple.",
+        "Vous prototypez localement et n'avez besoin que du palier Developer."
       ],
       "threshold": "LangSmith se rentabilise dès que l'observabilité réduit sensiblement les coûts d'API ; pour du prototypage, le palier Developer gratuit suffit."
     },
@@ -64,7 +65,8 @@
       ],
       "avoidIf": [
         "You prototype locally (free Developer ok).",
-        "Your LLM app is stateless simple."
+        "Your LLM app is stateless simple.",
+        "You prototype locally and only need the free Developer tier."
       ],
       "threshold": "LangSmith pays for itself once observability meaningfully cuts API costs; for prototyping, the free Developer tier suffices."
     },

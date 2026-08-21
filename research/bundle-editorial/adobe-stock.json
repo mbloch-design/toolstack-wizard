@@ -4,10 +4,14 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Adobe Stock — description et modèle (Wikipédia)", "url": "https://en.wikipedia.org/wiki/Adobe_Stock" }
+    {
+      "label": "Adobe Stock — description et modèle (Wikipédia)",
+      "url": "https://en.wikipedia.org/wiki/Adobe_Stock"
+    }
   ],
   "facts": {
     "what": "Banque d'assets sous licence (photos, vidéos, vecteurs, modèles) intégrée aux applications Creative Cloud.",
+    "what_en": "Licensed asset library (photos, videos, vectors, templates) integrated into Adobe Creative Cloud applications.",
     "pricing_note": "Vendu par abonnement ou à crédits ; offre « Toutes les apps + Adobe Stock » ou accès autonome (voir la fiche de la suite).",
     "key_features": [
       "Photos, vidéos, vecteurs et modèles sous licence",
@@ -46,7 +50,11 @@
       "Insérer un asset directement depuis Photoshop ou Illustrator.",
       "Constituer une bibliothèque d'assets sous licence."
     ],
-    "relevant_for": ["Designers", "Studios et agences", "Créateurs de contenu"]
+    "relevant_for": [
+      "Designers",
+      "Studios et agences",
+      "Créateurs de contenu"
+    ]
   },
   "en": {
     "verdict": {

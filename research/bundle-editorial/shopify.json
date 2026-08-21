@@ -3,16 +3,28 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Shopify — Plateforme e-commerce tout-en-un (site officiel)", "url": "https://shopify.com" }
+    {
+      "label": "Shopify — Plateforme e-commerce tout-en-un (site officiel)",
+      "url": "https://shopify.com"
+    }
   ],
   "facts": {
     "what": "Plateforme de commerce tout-en-un pour vendre en ligne et en personne, avec générateur de site web, checkout optimisé, outils omnichannel (web, réseaux sociaux, POS) et écosystème d'applications (21 000+).",
     "what_en": "All-in-one commerce platform to sell online and in person, with website builder, optimized checkout, omnichannel tools (web, social, POS), and application ecosystem (21,000+).",
     "pricing_model": "Abonnement par paliers tarifaires, plus services complémentaires (paiements, capital, expédition)",
-    "free_tier": { "exists": true, "detail": "Démarrage gratuit avec essai possible. Plans payants échelonnés selon les besoins." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Démarrage gratuit avec essai possible. Plans payants échelonnés selon les besoins."
+    },
     "plans": [
-      { "name": "Plan gratuit", "price": "Gratuit pour démarrer" },
-      { "name": "Plans payants", "price": "Montants sur la page officielle de tarification" }
+      {
+        "name": "Plan gratuit",
+        "price": "Gratuit pour démarrer"
+      },
+      {
+        "name": "Plans payants",
+        "price": "Montants sur la page officielle de tarification"
+      }
     ],
     "key_features": [
       "Générateur de site web avec thèmes personnalisables",
@@ -34,7 +46,8 @@
       ],
       "avoidIf": [
         "Vous cherchez une solution entièrement gratuite.",
-        "Vous avez besoin d'une flexibilité technique maximale."
+        "Vous avez besoin d'une flexibilité technique maximale.",
+        "Vous avez besoin de personnalisation technique poussée : Shopify est un SaaS managé, moins flexible pour custom."
       ],
       "threshold": "Shopify s'impose pour les commerçants cherchant une plateforme complète et fiable ; pour des besoins techniques très spécifiques ou budget limité, explorez d'autres options."
     },
@@ -59,7 +72,12 @@
       "Bénéficier d'un écosystème d'applications riche.",
       "Accéder à un financement (Shopify Capital)."
     ],
-    "relevant_for": ["E-commerçants de tous niveaux", "PME e-commerce", "Marchands omnichannel", "Entrepreneurs en phase de lancement"]
+    "relevant_for": [
+      "E-commerçants de tous niveaux",
+      "PME e-commerce",
+      "Marchands omnichannel",
+      "Entrepreneurs en phase de lancement"
+    ]
   },
   "en": {
     "verdict": {
@@ -70,7 +88,8 @@
       ],
       "avoidIf": [
         "You seek a completely free solution.",
-        "You need maximum technical flexibility."
+        "You need maximum technical flexibility.",
+        "You need deep technical customization: Shopify is a managed SaaS, less flexible for custom work."
       ],
       "threshold": "Shopify is ideal for merchants seeking a complete and reliable platform; for highly specific technical needs or tight budgets, explore other options."
     },

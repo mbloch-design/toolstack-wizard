@@ -3,15 +3,30 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Page tarifaire officielle MongoDB", "url": "https://www.mongodb.com/pricing" }
+    {
+      "label": "Page tarifaire officielle MongoDB",
+      "url": "https://www.mongodb.com/pricing"
+    }
   ],
   "facts": {
     "what": "Plateforme de base de données MongoDB entièrement gérée, multi-cloud (AWS, Azure, Google Cloud).",
+    "what_en": "Fully managed MongoDB database platform, multi-cloud (AWS, Azure, Google Cloud).",
     "pricing_model": "À l'usage (par heure). Palier gratuit M0, palier Flex (dev/test), paliers Dedicated (production).",
-    "free_tier": { "exists": true, "detail": "M0 : 512 Mo de stockage, RAM/vCPU partagés, gratuit à vie, sans carte bancaire." },
+    "free_tier": {
+      "exists": true,
+      "detail": "M0 : 512 Mo de stockage, RAM/vCPU partagés, gratuit à vie, sans carte bancaire."
+    },
     "plans": [
-      { "name": "Flex", "price": "0,011 $/h, plafonné ~30 $/mois", "for": "développement et test" },
-      { "name": "Dedicated", "price": "à partir de 56,94 $/mois (0,08 $/h)", "for": "production" }
+      {
+        "name": "Flex",
+        "price": "0,011 $/h, plafonné ~30 $/mois",
+        "for": "développement et test"
+      },
+      {
+        "name": "Dedicated",
+        "price": "à partir de 56,94 $/mois (0,08 $/h)",
+        "for": "production"
+      }
     ],
     "key_features": [
       "Déploiement multi-cloud (AWS, Azure, Google Cloud)",
@@ -50,7 +65,11 @@
       "Exploiter une base MongoDB de production sans gérer serveurs, sauvegardes ni mises à l'échelle.",
       "Ajouter de la recherche plein texte ou sémantique (IA) directement dans la base."
     ],
-    "relevant_for": ["Développeurs", "Startups", "Équipes produit"]
+    "relevant_for": [
+      "Développeurs",
+      "Startups",
+      "Équipes produit"
+    ]
   },
   "en": {
     "verdict": {

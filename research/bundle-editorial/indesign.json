@@ -4,10 +4,14 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Adobe InDesign — description et fonctions (Wikipédia)", "url": "https://en.wikipedia.org/wiki/Adobe_InDesign" }
+    {
+      "label": "Adobe InDesign — description et fonctions (Wikipédia)",
+      "url": "https://en.wikipedia.org/wiki/Adobe_InDesign"
+    }
   ],
   "facts": {
     "what": "Logiciel de PAO et de mise en page d'Adobe (depuis 1999), pour l'édition print et numérique.",
+    "what_en": "Adobe's desktop publishing and layout software (since 1999) for print and digital publishing.",
     "pricing_note": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite).",
     "key_features": [
       "Mise en page multi-pages professionnelle",
@@ -47,7 +51,11 @@
       "Préparer un document print prêt à l'impression (PDF).",
       "Produire un ebook au format EPUB."
     ],
-    "relevant_for": ["Designers éditoriaux", "Studios et agences", "Éditeurs"]
+    "relevant_for": [
+      "Designers éditoriaux",
+      "Studios et agences",
+      "Éditeurs"
+    ]
   },
   "en": {
     "verdict": {

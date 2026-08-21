@@ -3,15 +3,28 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Storyluxe: Templates & Filters (App Store — Apple)", "url": "https://apps.apple.com/us/app/storyluxe-templates-filters/id1324447436" }
+    {
+      "label": "Storyluxe: Templates & Filters (App Store — Apple)",
+      "url": "https://apps.apple.com/us/app/storyluxe-templates-filters/id1324447436"
+    }
   ],
   "facts": {
     "what": "App mobile de création de stories sociales : 700+ modèles photo/vidéo (film, papier, collage, néon…), filtres au rendu vintage, polices designer et textures de fond, exportables vers Instagram, TikTok, Snapchat…",
+    "what_en": "Mobile app for creating social stories: 700+ photo/video templates (film, paper, collage, neon, etc.), vintage-style filters, designer fonts, and background textures, exportable to Instagram, TikTok, Snapchat, etc.",
     "pricing_model": "App gratuite avec une partie des modèles/filtres accessibles ; abonnement Storyluxe (mensuel ou annuel) pour l'accès premium illimité.",
-    "free_tier": { "exists": true, "detail": "Nombreux modèles, filtres et fonds gratuits ; abonnement pour l'accès premium illimité." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Nombreux modèles, filtres et fonds gratuits ; abonnement pour l'accès premium illimité."
+    },
     "plans": [
-      { "name": "Gratuit", "price": "0 $ (modèles et filtres de base)" },
-      { "name": "Abonnement premium", "price": "mensuel ou annuel (montants sur l'App Store)" }
+      {
+        "name": "Gratuit",
+        "price": "0 $ (modèles et filtres de base)"
+      },
+      {
+        "name": "Abonnement premium",
+        "price": "mensuel ou annuel (montants sur l'App Store)"
+      }
     ],
     "key_features": [
       "700+ modèles de stories photo/vidéo",
@@ -50,7 +63,11 @@
       "Appliquer un filtre film à ses visuels.",
       "Habiller un feed avec un style cohérent."
     ],
-    "relevant_for": ["Créateurs de contenu", "Influenceurs", "Community managers"]
+    "relevant_for": [
+      "Créateurs de contenu",
+      "Influenceurs",
+      "Community managers"
+    ]
   },
   "en": {
     "verdict": {

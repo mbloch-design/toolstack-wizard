@@ -4,10 +4,14 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Google Sheets — description et fonctions (Wikipédia)", "url": "https://en.wikipedia.org/wiki/Google_Sheets" }
+    {
+      "label": "Google Sheets — description et fonctions (Wikipédia)",
+      "url": "https://en.wikipedia.org/wiki/Google_Sheets"
+    }
   ],
   "facts": {
     "what": "Tableur en ligne, membre de la suite gratuite Google Docs Editors.",
+    "what_en": "Online spreadsheet, part of the free Google Docs Editors suite.",
     "pricing_note": "Gratuit pour les particuliers ; version pro incluse dans Google Workspace (voir la fiche de la suite).",
     "key_features": [
       "Collaboration temps réel avec historique des versions",
@@ -46,7 +50,11 @@
       "Collecter et analyser des données d'équipe en temps réel.",
       "Partager un tableau de bord relié à Drive."
     ],
-    "relevant_for": ["Petites équipes", "PME sur Google Workspace", "Équipes ops"]
+    "relevant_for": [
+      "Petites équipes",
+      "PME sur Google Workspace",
+      "Équipes ops"
+    ]
   },
   "en": {
     "verdict": {

@@ -4,10 +4,14 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Adobe Firefly — description et fonctions (Wikipédia)", "url": "https://en.wikipedia.org/wiki/Adobe_Firefly" }
+    {
+      "label": "Adobe Firefly — description et fonctions (Wikipédia)",
+      "url": "https://en.wikipedia.org/wiki/Adobe_Firefly"
+    }
   ],
   "facts": {
     "what": "Web app et famille de modèles d'IA générative d'Adobe pour la production créative (image, vidéo, audio).",
+    "what_en": "Adobe's web app and generative AI model family for creative production (image, video, audio).",
     "pricing_note": "Fonctionne aux crédits mensuels ; alimente aussi des fonctions dans Photoshop, Premiere Pro, InDesign (voir la fiche de la suite).",
     "key_features": [
       "Génération texte-vers-image et texte-vers-vidéo",
@@ -47,7 +51,11 @@
       "Utiliser le Remplissage génératif dans Photoshop.",
       "Créer des éléments vidéo ou audio par IA."
     ],
-    "relevant_for": ["Créatifs", "Designers", "Équipes production"]
+    "relevant_for": [
+      "Créatifs",
+      "Designers",
+      "Équipes production"
+    ]
   },
   "en": {
     "verdict": {

@@ -4,10 +4,14 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Google Slides — description et fonctions (Wikipédia)", "url": "https://en.wikipedia.org/wiki/Google_Slides" }
+    {
+      "label": "Google Slides — description et fonctions (Wikipédia)",
+      "url": "https://en.wikipedia.org/wiki/Google_Slides"
+    }
   ],
   "facts": {
     "what": "Outil de présentation en ligne, membre de la suite gratuite Google Docs Editors.",
+    "what_en": "Online presentation tool, part of the free Google Docs Editors suite.",
     "pricing_note": "Gratuit pour les particuliers ; version pro incluse dans Google Workspace (voir la fiche de la suite).",
     "key_features": [
       "Collaboration temps réel avec historique des versions",
@@ -46,7 +50,11 @@
       "Partager un support relié à Drive.",
       "Présenter en visioconférence via Meet."
     ],
-    "relevant_for": ["Petites équipes", "PME sur Google Workspace", "Équipes marketing"]
+    "relevant_for": [
+      "Petites équipes",
+      "PME sur Google Workspace",
+      "Équipes marketing"
+    ]
   },
   "en": {
     "verdict": {

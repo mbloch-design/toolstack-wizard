@@ -3,16 +3,32 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Page tarifaire officielle Float", "url": "https://www.float.com/pricing" }
+    {
+      "label": "Page tarifaire officielle Float",
+      "url": "https://www.float.com/pricing"
+    }
   ],
   "facts": {
     "what": "Logiciel de gestion des ressources (resource management) pour équipes de prestation : planifie qui travaille sur quoi, la capacité, les disponibilités et le suivi du temps.",
+    "what_en": "Resource management software for service teams: plans who works on what, capacity, availability, and time tracking.",
     "pricing_model": "Abonnement par utilisateur (mensuel ou annuel), paliers Starter / Pro, plus une offre Enterprise sur devis.",
-    "free_tier": { "exists": false, "detail": "Essai gratuit disponible ; pas de palier gratuit permanent. Tarif par utilisateur." },
+    "free_tier": {
+      "exists": false,
+      "detail": "Essai gratuit disponible ; pas de palier gratuit permanent. Tarif par utilisateur."
+    },
     "plans": [
-      { "name": "Starter", "price": "7,50 $/utilisateur/mois" },
-      { "name": "Pro", "price": "12,50 $/utilisateur/mois" },
-      { "name": "Enterprise", "price": "sur devis (CSM dédié, SLA, support prioritaire)" }
+      {
+        "name": "Starter",
+        "price": "7,50 $/utilisateur/mois"
+      },
+      {
+        "name": "Pro",
+        "price": "12,50 $/utilisateur/mois"
+      },
+      {
+        "name": "Enterprise",
+        "price": "sur devis (CSM dédié, SLA, support prioritaire)"
+      }
     ],
     "key_features": [
       "Planification des ressources et de la capacité",
@@ -51,7 +67,11 @@
       "Repérer les surcharges et les creux.",
       "Suivre le temps passé vs estimé."
     ],
-    "relevant_for": ["Agences", "Équipes de prestation", "Ops et delivery"]
+    "relevant_for": [
+      "Agences",
+      "Équipes de prestation",
+      "Ops et delivery"
+    ]
   },
   "en": {
     "verdict": {

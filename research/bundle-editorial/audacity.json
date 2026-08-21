@@ -3,12 +3,19 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Audacity — description et licence (Wikipédia)", "url": "https://en.wikipedia.org/wiki/Audacity_(audio_editor)" }
+    {
+      "label": "Audacity — description et licence (Wikipédia)",
+      "url": "https://en.wikipedia.org/wiki/Audacity_(audio_editor)"
+    }
   ],
   "facts": {
     "what": "Éditeur audio et enregistreur libre et open source (licence GPL-2.0+).",
+    "what_en": "Free and open-source audio editor and recorder (GPL-2.0+ license).",
     "pricing_model": "Gratuit et open source.",
-    "free_tier": { "exists": true, "detail": "Entièrement gratuit ; code open source (GPL)." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Entièrement gratuit ; code open source (GPL)."
+    },
     "key_features": [
       "Enregistrement multipiste (sources simultanées)",
       "Édition et effets (normalisation, coupe, fondus)",
@@ -46,7 +53,11 @@
       "Nettoyer, couper ou normaliser un audio.",
       "Convertir un fichier audio d'un format à un autre."
     ],
-    "relevant_for": ["Podcasteurs débutants", "Créateurs de contenu", "Usages ponctuels"]
+    "relevant_for": [
+      "Podcasteurs débutants",
+      "Créateurs de contenu",
+      "Usages ponctuels"
+    ]
   },
   "en": {
     "verdict": {

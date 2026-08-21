@@ -34,7 +34,8 @@
       ],
       "avoidIf": [
         "Vous êtes designer professionnel (pas de control pixel parfait).",
-        "Vous avez besoin d'outils IA avancés et séparés (Photoshop, etc.)."
+        "Vous avez besoin d'outils IA avancés et séparés (Photoshop, etc.).",
+        "Vous avez besoin de contrôle pixel-parfait sur vos designs."
       ],
       "threshold": "Canva AI est idéal pour PME, freelances et créateurs de contenu Social ; pour designers pro cherchant contrôle élevé, les suites complètes (Photoshop, Affinity) offrent plus."
     },
@@ -68,7 +69,8 @@
       ],
       "avoidIf": [
         "You're a professional designer (lacks pixel-perfect control).",
-        "You need advanced, separate AI tools (Photoshop, etc.)."
+        "You need advanced, separate AI tools (Photoshop, etc.).",
+        "You need pixel-perfect control over your designs."
       ],
       "threshold": "Canva AI is ideal for SMBs, freelancers, and content creators; for pro designers wanting fine-grained control, full suites (Photoshop, Affinity) offer more."
     },

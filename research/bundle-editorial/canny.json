@@ -46,7 +46,8 @@
       ],
       "avoidIf": [
         "Vous êtes en phase très précoce sans feedback existant.",
-        "Vous cherchez une solution strictement gratuite et illimitée."
+        "Vous cherchez une solution strictement gratuite et illimitée.",
+        "Vous collectez très peu de retours clients actuellement."
       ],
       "threshold": "Canny s'impose pour les équipes produit sérieuses ; pour un usage ponctuel, les retours directs peuvent suffire."
     },
@@ -81,7 +82,8 @@
       ],
       "avoidIf": [
         "You're very early stage with minimal feedback.",
-        "You're looking for a strictly free, unlimited solution."
+        "You're looking for a strictly free, unlimited solution.",
+        "You currently collect very little customer feedback."
       ],
       "threshold": "Canny is essential for serious product teams; for occasional use, direct feedback gathering may suffice."
     },

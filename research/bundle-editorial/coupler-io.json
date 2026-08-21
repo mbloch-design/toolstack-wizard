@@ -3,17 +3,36 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Page tarifaire officielle Coupler.io", "url": "https://www.coupler.io/pricing" }
+    {
+      "label": "Page tarifaire officielle Coupler.io",
+      "url": "https://www.coupler.io/pricing"
+    }
   ],
   "facts": {
     "what": "Plateforme no-code d'intégration de données : automatise les flux depuis 400+ apps vers tableurs, BI, entrepôts et outils IA (ETL, transformation, synchronisation).",
+    "what_en": "No-code data integration platform: automates workflows from 400+ apps to spreadsheets, BI, data warehouses, and AI tools (ETL, transformation, sync).",
     "pricing_model": "Abonnement basé sur le nombre de comptes de sources connectés (pas par utilisateur ni par flux). Palier gratuit et essai disponibles.",
-    "free_tier": { "exists": true, "detail": "Version gratuite disponible ; tarif selon le nombre de comptes de sources connectés." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Version gratuite disponible ; tarif selon le nombre de comptes de sources connectés."
+    },
     "plans": [
-      { "name": "Personal", "price": "24 $/mois (3 comptes)" },
-      { "name": "Professional", "price": "99 $/mois (~15 comptes)" },
-      { "name": "Team", "price": "199 $/mois" },
-      { "name": "Business", "price": "449 $/mois" }
+      {
+        "name": "Personal",
+        "price": "24 $/mois (3 comptes)"
+      },
+      {
+        "name": "Professional",
+        "price": "99 $/mois (~15 comptes)"
+      },
+      {
+        "name": "Team",
+        "price": "199 $/mois"
+      },
+      {
+        "name": "Business",
+        "price": "449 $/mois"
+      }
     ],
     "key_features": [
       "400+ connecteurs de données",
@@ -52,7 +71,11 @@
       "Alimenter un dashboard BI ou un entrepôt.",
       "Consolider des données cross-canal."
     ],
-    "relevant_for": ["Équipes data", "Analystes", "Agences"]
+    "relevant_for": [
+      "Équipes data",
+      "Analystes",
+      "Agences"
+    ]
   },
   "en": {
     "verdict": {

@@ -3,16 +3,32 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Page tarifaire officielle Supermetrics", "url": "https://supermetrics.com/pricing" }
+    {
+      "label": "Page tarifaire officielle Supermetrics",
+      "url": "https://supermetrics.com/pricing"
+    }
   ],
   "facts": {
     "what": "Plateforme d'intégration de données marketing : extrait et transfère automatiquement les données de 150+ canaux (Google Ads, Meta, Shopify…) vers Google Sheets, Excel, Looker Studio ou un entrepôt de données.",
+    "what_en": "Marketing data integration platform: automatically extracts and transfers data from 150+ channels (Google Ads, Meta, Shopify, etc.) to Google Sheets, Excel, Looker Studio, or a data warehouse.",
     "pricing_model": "Abonnement par paliers (essai gratuit 14 jours), selon le nombre de sources, d'utilisateurs, la fréquence de rafraîchissement et la destination. Annuel ~20 % moins cher.",
-    "free_tier": { "exists": false, "detail": "Essai gratuit de 14 jours ; abonnement requis ensuite." },
+    "free_tier": {
+      "exists": false,
+      "detail": "Essai gratuit de 14 jours ; abonnement requis ensuite."
+    },
     "plans": [
-      { "name": "Essential / connecteur unique", "price": "à partir de 29 $/mois" },
-      { "name": "Core", "price": "à partir de ~159 $/mois" },
-      { "name": "Paliers supérieurs", "price": "coûts croissants avec les sources, sièges et destinations" }
+      {
+        "name": "Essential / connecteur unique",
+        "price": "à partir de 29 $/mois"
+      },
+      {
+        "name": "Core",
+        "price": "à partir de ~159 $/mois"
+      },
+      {
+        "name": "Paliers supérieurs",
+        "price": "coûts croissants avec les sources, sièges et destinations"
+      }
     ],
     "key_features": [
       "150+ connecteurs de données marketing et vente",
@@ -51,7 +67,11 @@
       "Alimenter un dashboard Looker Studio.",
       "Centraliser les données dans un entrepôt."
     ],
-    "relevant_for": ["Équipes marketing", "Agences", "Analystes data"]
+    "relevant_for": [
+      "Équipes marketing",
+      "Agences",
+      "Analystes data"
+    ]
   },
   "en": {
     "verdict": {

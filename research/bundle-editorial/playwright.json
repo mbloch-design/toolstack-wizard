@@ -31,7 +31,9 @@
         "Vous besoin de tests cross-navigateur automatisés."
       ],
       "avoidIf": [
-        "Vous avez des besoins de test très légers."
+        "Vous avez des besoins de test très légers.",
+        "Vous préférez une approche de test manuelle ou semi-automatisée.",
+        "Vous testez exclusivement une seule plateforme (pas besoin cross-navigateur)."
       ],
       "threshold": "Playwright s'impose pour les équipes de QA modernes cherchant un framework complet et gratuit ; aucune friction pour adopter."
     },
@@ -62,7 +64,9 @@
         "You need cross-browser automated tests."
       ],
       "avoidIf": [
-        "You have very light testing needs."
+        "You have very light testing needs.",
+        "You prefer manual or semi-automated testing.",
+        "You test exclusively on a single platform (no cross-browser need)."
       ],
       "threshold": "Playwright is the go-to for modern QA teams seeking a complete, free framework; no adoption friction."
     },

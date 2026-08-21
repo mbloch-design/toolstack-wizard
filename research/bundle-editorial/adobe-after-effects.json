@@ -4,10 +4,14 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Adobe After Effects — description et fonctions (Wikipédia)", "url": "https://en.wikipedia.org/wiki/Adobe_After_Effects" }
+    {
+      "label": "Adobe After Effects — description et fonctions (Wikipédia)",
+      "url": "https://en.wikipedia.org/wiki/Adobe_After_Effects"
+    }
   ],
   "facts": {
     "what": "Application d'effets visuels, de motion graphics et de compositing d'Adobe (Windows, macOS).",
+    "what_en": "Adobe's visual effects, motion graphics, and compositing application (Windows/macOS).",
     "pricing_note": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite).",
     "key_features": [
       "Motion graphics et animation",
@@ -47,7 +51,11 @@
       "Composer des effets visuels sur une séquence.",
       "Incruster (keying) et suivre (tracking) des plans."
     ],
-    "relevant_for": ["Motion designers", "Monteurs VFX", "Studios film/vidéo"]
+    "relevant_for": [
+      "Motion designers",
+      "Monteurs VFX",
+      "Studios film/vidéo"
+    ]
   },
   "en": {
     "verdict": {

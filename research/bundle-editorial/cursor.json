@@ -33,7 +33,8 @@
       ],
       "avoidIf": [
         "Vous utilisez vim ou Neovim (pas natif).",
-        "Vous voulez une solution IA gratuite."
+        "Vous voulez une solution IA gratuite.",
+        "Vous préférez utiliser des extensions au lieu d'un éditeur spécialisé."
       ],
       "threshold": "Cursor s'impose pour développeurs VS Code qui veulent une IA intégrée ; pour un usage ponctuel, les extensions VS Code IA suffisent."
     },
@@ -64,7 +65,8 @@
       ],
       "avoidIf": [
         "You use vim or Neovim.",
-        "You want a fully free solution."
+        "You want a fully free solution.",
+        "You prefer using extensions instead of a specialized editor."
       ],
       "threshold": "Cursor is the standard for VS Code developers who want integrated AI; for occasional use, VS Code AI extensions suffice."
     },

@@ -33,7 +33,8 @@
       ],
       "avoidIf": [
         "Votre équipe est grande (coûts escaladent).",
-        "Vous avez besoin d'intégration CRM."
+        "Vous avez besoin d'intégration CRM.",
+        "Votre équipe a plus de 10 personnes et les coûts deviennent prohibitifs."
       ],
       "threshold": "Fellow s'impose pour petites équipes produit/dev ; pour équipes sales, Fathom (CRM) est mieux."
     },
@@ -64,7 +65,8 @@
       ],
       "avoidIf": [
         "Your team is large (costs escalate fast).",
-        "You need CRM integration."
+        "You need CRM integration.",
+        "Your team exceeds 10 people and costs become prohibitive."
       ],
       "threshold": "Fellow is best for small product/dev teams; for sales teams, Fathom (CRM) is better."
     },

@@ -3,16 +3,32 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Plans et tarifs officiels Dext", "url": "https://dext.com/us/business/pricing" },
-    { "label": "Plans Dext pour cabinets — centre d'aide", "url": "https://help.dext.com/en/articles/273220-dext-plans-for-accountants-and-bookkeepers" }
+    {
+      "label": "Plans et tarifs officiels Dext",
+      "url": "https://dext.com/us/business/pricing"
+    },
+    {
+      "label": "Plans Dext pour cabinets — centre d'aide",
+      "url": "https://help.dext.com/en/articles/273220-dext-plans-for-accountants-and-bookkeepers"
+    }
   ],
   "facts": {
     "what": "Plateforme d'automatisation comptable : capture de reçus/factures, extraction de données et alimentation du logiciel comptable.",
+    "what_en": "Accounting automation platform: captures receipts/invoices, extracts data, and feeds accounting software.",
     "pricing_model": "Cabinets : Practice Essentials / Practice Advanced (au client). Entreprises : Dext Business (selon utilisateurs et volume de documents). Essai 14 jours sans CB.",
-    "free_tier": { "exists": false, "detail": "Pas de plan gratuit ; essai gratuit de 14 jours avec accès complet aux fonctions de base." },
+    "free_tier": {
+      "exists": false,
+      "detail": "Pas de plan gratuit ; essai gratuit de 14 jours avec accès complet aux fonctions de base."
+    },
     "plans": [
-      { "name": "Practice Essentials / Advanced", "detail": "pour cabinets, au client ; Advanced ajoute gestion d'équipe et suivi des workflows" },
-      { "name": "Dext Business", "detail": "un plan, tarifé selon utilisateurs et volume de documents" }
+      {
+        "name": "Practice Essentials / Advanced",
+        "detail": "pour cabinets, au client ; Advanced ajoute gestion d'équipe et suivi des workflows"
+      },
+      {
+        "name": "Dext Business",
+        "detail": "un plan, tarifé selon utilisateurs et volume de documents"
+      }
     ],
     "key_features": [
       "Capture de reçus et factures (photo, e-mail, upload)",
@@ -51,7 +67,11 @@
       "Alimenter automatiquement un logiciel de comptabilité.",
       "Gérer la comptabilité de plusieurs clients dans un cabinet."
     ],
-    "relevant_for": ["Cabinets comptables", "PME", "Indépendants avec volume"]
+    "relevant_for": [
+      "Cabinets comptables",
+      "PME",
+      "Indépendants avec volume"
+    ]
   },
   "en": {
     "verdict": {

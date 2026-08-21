@@ -3,13 +3,19 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "TikTok Studio — Dashboard pour créateurs (site officiel)", "url": "https://www.tiktok.com/studio" }
+    {
+      "label": "TikTok Studio — Dashboard pour créateurs (site officiel)",
+      "url": "https://www.tiktok.com/studio"
+    }
   ],
   "facts": {
     "what": "Dashboard web et app officiel de TikTok pour gérer sa chaîne : upload vidéos, analytics détaillées, gestion des commentaires, tendances, Creator Assistant avec tips et insights de performance.",
     "what_en": "Official TikTok web and app dashboard to manage your channel: upload videos, detailed analytics, comment management, trends, Creator Assistant with tips and performance insights.",
     "pricing_model": "Entièrement gratuit pour tous les créateurs TikTok.",
-    "free_tier": { "exists": true, "detail": "Tous les outils sont gratuits et inclus pour les comptes de créateur TikTok." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Tous les outils sont gratuits et inclus pour les comptes de créateur TikTok."
+    },
     "plans": [],
     "key_features": [
       "Upload et gestion de vidéos",
@@ -30,7 +36,9 @@
         "Vous faites du live streaming et vous voulez des outils natifs TikTok."
       ],
       "avoidIf": [
-        "Vous êtes un créateur très occasionnel et vous postez via l'app mobile seulement."
+        "Vous êtes un créateur très occasionnel et vous postez via l'app mobile seulement.",
+        "Vous ne postez pas sur TikTok régulièrement.",
+        "Vous avez besoin d'outils de montage vidéo professionnel avancé."
       ],
       "threshold": "TikTok Studio est indispensable pour tout créateur TikTok sérieux ; c'est l'équivalent du studio YouTube/YouTube."
     },
@@ -52,7 +60,11 @@
       "Découvrir les sons et les trends qui intéressent l'audience.",
       "Streamer en live avec LIVE Studio depuis le bureau."
     ],
-    "relevant_for": ["Créateurs de contenu TikTok", "Influenceurs", "Producteurs vidéo"]
+    "relevant_for": [
+      "Créateurs de contenu TikTok",
+      "Influenceurs",
+      "Producteurs vidéo"
+    ]
   },
   "en": {
     "verdict": {
@@ -62,7 +74,9 @@
         "You live stream and want native TikTok tools."
       ],
       "avoidIf": [
-        "You're an occasional creator and only post via mobile app."
+        "You're an occasional creator and only post via mobile app.",
+        "You don't post to TikTok regularly.",
+        "You need advanced professional video editing tools."
       ],
       "threshold": "TikTok Studio is essential for any serious TikTok creator; it's the equivalent of YouTube Studio."
     },

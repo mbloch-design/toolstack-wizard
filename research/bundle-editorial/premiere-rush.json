@@ -4,10 +4,14 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Adobe Premiere Rush — page produit officielle", "url": "https://www.adobe.com/products/premiere-rush.html" }
+    {
+      "label": "Adobe Premiere Rush — page produit officielle",
+      "url": "https://www.adobe.com/products/premiere-rush.html"
+    }
   ],
   "facts": {
     "what": "Éditeur vidéo simplifié et multi-appareils d'Adobe (bureau et mobile), pensé pour publier vite sur les réseaux sociaux.",
+    "what_en": "Adobe's simplified, multi-device video editor (desktop and mobile), designed for quick social media publishing.",
     "pricing_note": "Inclus dans l'écosystème Creative Cloud (voir la fiche de la suite).",
     "key_features": [
       "Montage vidéo simple sur mobile et bureau",
@@ -46,7 +50,11 @@
       "Reprendre un projet d'un appareil à l'autre.",
       "Ajouter titres et transitions simples rapidement."
     ],
-    "relevant_for": ["Créateurs de contenu", "Community managers", "Débutants vidéo"]
+    "relevant_for": [
+      "Créateurs de contenu",
+      "Community managers",
+      "Débutants vidéo"
+    ]
   },
   "en": {
     "verdict": {

@@ -4,10 +4,14 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Adobe Acrobat Sign — page produit officielle", "url": "https://www.adobe.com/sign.html" }
+    {
+      "label": "Adobe Acrobat Sign — page produit officielle",
+      "url": "https://www.adobe.com/sign.html"
+    }
   ],
   "facts": {
     "what": "Solution de signature électronique d'Adobe, intégrée à l'écosystème Acrobat/Document Cloud.",
+    "what_en": "Adobe's electronic signature solution, integrated into the Acrobat/Documents ecosystem.",
     "pricing_note": "Offres dédiées Acrobat Sign / Document Cloud (voir la fiche de la suite).",
     "key_features": [
       "Signature électronique conforme et sécurisée",
@@ -46,7 +50,11 @@
       "Mettre en place un flux d'approbation de documents.",
       "Envoyer des formulaires à remplir et signer."
     ],
-    "relevant_for": ["Équipes commerciales/RH", "PME", "Professionnels du juridique"]
+    "relevant_for": [
+      "Équipes commerciales/RH",
+      "PME",
+      "Professionnels du juridique"
+    ]
   },
   "en": {
     "verdict": {

@@ -4,16 +4,32 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Forfaits de stockage Google One (officiel)", "url": "https://one.google.com/about/plans" }
+    {
+      "label": "Forfaits de stockage Google One (officiel)",
+      "url": "https://one.google.com/about/plans"
+    }
   ],
   "facts": {
     "what": "Stockage cloud de Google, partagé entre Drive, Gmail et Google Photos, avec édition collaborative intégrée.",
+    "what_en": "Google's cloud storage, shared across Drive, Gmail, and Google Photos, with integrated collaborative editing.",
     "pricing_note": "15 Go gratuits avec tout compte Google ; stockage supplémentaire via Google One ou inclus dans Google Workspace (voir la fiche de la suite).",
-    "free_tier": { "exists": true, "detail": "15 Go inclus, partagés entre Drive, Gmail et Photos." },
+    "free_tier": {
+      "exists": true,
+      "detail": "15 Go inclus, partagés entre Drive, Gmail et Photos."
+    },
     "plans": [
-      { "name": "Google One 100 Go", "price": "1,99 €/mois" },
-      { "name": "Google One 200 Go", "price": "2,99 €/mois" },
-      { "name": "Google One 2 To (AI Plus)", "price": "9,99 €/mois" }
+      {
+        "name": "Google One 100 Go",
+        "price": "1,99 €/mois"
+      },
+      {
+        "name": "Google One 200 Go",
+        "price": "2,99 €/mois"
+      },
+      {
+        "name": "Google One 2 To (AI Plus)",
+        "price": "9,99 €/mois"
+      }
     ],
     "key_features": [
       "Stockage cloud accessible partout, multi-appareils",
@@ -52,7 +68,11 @@
       "Partager de l'espace de stockage en famille ou en équipe.",
       "Retrouver un fichier via la recherche, même dans son contenu."
     ],
-    "relevant_for": ["Particuliers", "Petites équipes", "Utilisateurs de Google Workspace"]
+    "relevant_for": [
+      "Particuliers",
+      "Petites équipes",
+      "Utilisateurs de Google Workspace"
+    ]
   },
   "en": {
     "verdict": {

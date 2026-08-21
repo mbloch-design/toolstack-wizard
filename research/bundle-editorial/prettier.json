@@ -3,15 +3,24 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Prettier — Documentation officielle", "url": "https://prettier.io" }
+    {
+      "label": "Prettier — Documentation officielle",
+      "url": "https://prettier.io"
+    }
   ],
   "facts": {
     "what": "Formateur de code opinionné qui applique un style cohérent en parsant le code et le ré-imprimant selon ses propres règles. Supporte JavaScript, TypeScript, JSON, CSS, HTML, Markdown et plus via plugins.",
     "what_en": "Opinionated code formatter that enforces consistent style by parsing code and reprinting it with its own rules. Supports JavaScript, TypeScript, JSON, CSS, HTML, Markdown, and more via plugins.",
     "pricing_model": "Entièrement gratuit et open source. Aucun coût, aucun abonnement.",
-    "free_tier": { "exists": true, "detail": "Entièrement gratuit. Outil open source sans limitation de fonctionnalités ni tier payant." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Entièrement gratuit. Outil open source sans limitation de fonctionnalités ni tier payant."
+    },
     "plans": [
-      { "name": "Open source (gratuit)", "price": "Gratuit — pas de limitation" }
+      {
+        "name": "Open source (gratuit)",
+        "price": "Gratuit — pas de limitation"
+      }
     ],
     "key_features": [
       "Formatage opinionné pour cohérence uniformisée",
@@ -31,7 +40,8 @@
       ],
       "avoidIf": [
         "Vous préférez personnaliser entièrement votre style (utilisez ESLint).",
-        "Vous n'avez pas besoin d'automatisation du formatage."
+        "Vous n'avez pas besoin d'automatisation du formatage.",
+        "Votre équipe a des conventions de style très établies : Prettier est opinionné et reformatera votre code complètement."
       ],
       "threshold": "Prettier élimine les débats de formatage ; adopter Prettier est la décision la plus efficace pour une équipe moderne."
     },
@@ -52,7 +62,11 @@
       "Automatiser le formatage en pre-commit.",
       "Formatter du JSON, CSS, Markdown en équipe."
     ],
-    "relevant_for": ["Équipes de développement", "Développeurs full-stack", "Projets open source"]
+    "relevant_for": [
+      "Équipes de développement",
+      "Développeurs full-stack",
+      "Projets open source"
+    ]
   },
   "en": {
     "verdict": {
@@ -63,7 +77,8 @@
       ],
       "avoidIf": [
         "You prefer to fully customize your style (use ESLint).",
-        "You don't need formatting automation."
+        "You don't need formatting automation.",
+        "Your team has strong style conventions: Prettier is opinionated and will reformat your code completely."
       ],
       "threshold": "Prettier eliminates formatting debates; adopting Prettier is the most effective decision for a modern team."
     },

@@ -3,17 +3,32 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Notionlytics — analytics pour Notion (site officiel)", "url": "https://notionlytics.com" }
+    {
+      "label": "Notionlytics — analytics pour Notion (site officiel)",
+      "url": "https://notionlytics.com"
+    }
   ],
   "facts": {
     "what": "Outil d'analytique avancée pour les pages Notion partagées. Propose des widgets à intégrer pour suivre les vues, sessions, localisation et recueillir des retours anonymes.",
     "what_en": "Advanced analytics tool for shared Notion pages. Provides embeddable widgets to track views, sessions, location, and collect anonymous feedback.",
     "pricing_model": "Abonnement mensuel avec trois plans : Pro, Team, Business. Basé sur le nombre de pages et membres.",
-    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Essai présumé via inscription (détails non spécifiés sur le site)." },
+    "free_tier": {
+      "exists": false,
+      "detail": "Pas de version gratuite. Essai présumé via inscription (détails non spécifiés sur le site)."
+    },
     "plans": [
-      { "name": "Pro", "price": "montants sur la page officielle (jusqu'à 100 pages)" },
-      { "name": "Team", "price": "montants sur la page officielle (pages illimitées, 5 membres)" },
-      { "name": "Business", "price": "montants sur la page officielle (pages illimitées, 100 membres, support prioritaire)" }
+      {
+        "name": "Pro",
+        "price": "montants sur la page officielle (jusqu'à 100 pages)"
+      },
+      {
+        "name": "Team",
+        "price": "montants sur la page officielle (pages illimitées, 5 membres)"
+      },
+      {
+        "name": "Business",
+        "price": "montants sur la page officielle (pages illimitées, 100 membres, support prioritaire)"
+      }
     ],
     "key_features": [
       "Widgets d'analytique en temps réel sans code",
@@ -32,7 +47,8 @@
       ],
       "avoidIf": [
         "Vous cherchez une solution entièrement gratuite.",
-        "Vous n'utilisez pas Notion ou avez peu de pages à suivre."
+        "Vous n'utilisez pas Notion ou avez peu de pages à suivre.",
+        "Vous avez besoin de tracker votre site web classique : Notionlytics est limité à Notion, sans analytique web générale."
       ],
       "threshold": "Notionlytics s'impose pour ceux qui monétisent ou partagent largement du contenu Notion ; moins pertinent pour les petits wikis privés."
     },
@@ -53,7 +69,11 @@
       "Recueillir des retours des lecteurs sur vos documents.",
       "Optimiser la structure du contenu Notion basé sur les vues."
     ],
-    "relevant_for": ["Créateurs de contenu", "Équipes avec documentation Notion", "Startups avec wikis"]
+    "relevant_for": [
+      "Créateurs de contenu",
+      "Équipes avec documentation Notion",
+      "Startups avec wikis"
+    ]
   },
   "en": {
     "verdict": {
@@ -64,7 +84,8 @@
       ],
       "avoidIf": [
         "You need a free solution.",
-        "You don't use Notion or have few pages to track."
+        "You don't use Notion or have few pages to track.",
+        "You need to track your regular website: Notionlytics is limited to Notion, with no general web analytics."
       ],
       "threshold": "Notionlytics fits those monetizing or widely sharing Notion content; less relevant for small private wikis."
     },

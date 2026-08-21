@@ -3,16 +3,28 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "PostgreSQL — Site officiel", "url": "https://www.postgresql.org" }
+    {
+      "label": "PostgreSQL — Site officiel",
+      "url": "https://www.postgresql.org"
+    }
   ],
   "facts": {
     "what": "Base de données relationnelle open source avancée avec 35+ ans de développement, offrant conformité SQL, extensibilité, support JSON/JSONB et performance en production.",
     "what_en": "Advanced open-source relational database with 35+ years of active development, featuring SQL compliance, extensibility, JSON support, and proven production performance.",
     "pricing_model": "Entièrement gratuit et open source. Aucun frais de licence. Coûts optionnels pour hébergement cloud (AWS, Heroku, Aiven, etc.).",
-    "free_tier": { "exists": true, "detail": "Le moteur PostgreSQL est gratuit. Hébergement : options gratuites disponibles (Aiven 1 GB free, Render 1 GB free)." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Le moteur PostgreSQL est gratuit. Hébergement : options gratuites disponibles (Aiven 1 GB free, Render 1 GB free)."
+    },
     "plans": [
-      { "name": "PostgreSQL (gratuit)", "price": "Gratuit — logiciel open source" },
-      { "name": "Hébergement cloud (optionnel)", "price": "Montants sur la page officielle du provider" }
+      {
+        "name": "PostgreSQL (gratuit)",
+        "price": "Gratuit — logiciel open source"
+      },
+      {
+        "name": "Hébergement cloud (optionnel)",
+        "price": "Montants sur la page officielle du provider"
+      }
     ],
     "key_features": [
       "Conformité ACID complète",
@@ -33,7 +45,8 @@
       ],
       "avoidIf": [
         "Vous cherchez une base de données très simple (SQLite suffit).",
-        "Vous avez besoin de propriétaire commercial pour support officiel."
+        "Vous avez besoin de propriétaire commercial pour support officiel.",
+        "Vous n'avez pas de ressources ops/infra : l'auto-hébergement de PostgreSQL demande maintenance continue."
       ],
       "threshold": "PostgreSQL s'impose pour toute application sérieuse nécessitant une BD relationnelle ; standard industrie reconnu."
     },
@@ -55,7 +68,11 @@
       "Entreposage de données structurées et semi-structurées.",
       "Systèmes avec exigences élevées de conformité ACID."
     ],
-    "relevant_for": ["Développeurs full-stack", "Architectes données", "Startups SaaS"]
+    "relevant_for": [
+      "Développeurs full-stack",
+      "Architectes données",
+      "Startups SaaS"
+    ]
   },
   "en": {
     "verdict": {
@@ -66,7 +83,8 @@
       ],
       "avoidIf": [
         "You're building something very simple (SQLite is enough).",
-        "You need a commercial vendor for official support."
+        "You need a commercial vendor for official support.",
+        "You have no ops/infra resources: self-hosting PostgreSQL requires ongoing maintenance."
       ],
       "threshold": "PostgreSQL is the standard for any serious application needing a relational database; proven industry standard."
     },

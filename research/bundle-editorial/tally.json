@@ -3,17 +3,32 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Tally — Tarification (site officiel)", "url": "https://tally.so/pricing" }
+    {
+      "label": "Tally — Tarification (site officiel)",
+      "url": "https://tally.so/pricing"
+    }
   ],
   "facts": {
     "what": "Constructeur de formulaires gratuit et généreux : formulaires illimités, soumissions illimités, logique conditionnelle, paiements, uploads fichiers, signatures, webhooks, intégrations Notion/Airtable/Sheets.",
     "what_en": "Generous free form builder: unlimited forms, unlimited submissions, conditional logic, payments, file uploads, signatures, webhooks, Notion/Airtable/Sheets integrations.",
     "pricing_model": "Freemium : plan gratuit très complet, options Pro et Business optionnelles.",
-    "free_tier": { "exists": true, "detail": "Formulaires illimités, soumissions illimités, 99% des features incluses. Pas de limites sauf conditions équitables d'usage." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Formulaires illimités, soumissions illimités, 99% des features incluses. Pas de limites sauf conditions équitables d'usage."
+    },
     "plans": [
-      { "name": "Free", "price": "Gratuit (illimité)" },
-      { "name": "Pro", "price": "29 $ par mois" },
-      { "name": "Business", "price": "89 $ par mois" }
+      {
+        "name": "Free",
+        "price": "Gratuit (illimité)"
+      },
+      {
+        "name": "Pro",
+        "price": "29 $ par mois"
+      },
+      {
+        "name": "Business",
+        "price": "89 $ par mois"
+      }
     ],
     "key_features": [
       "Formulaires illimités et soumissions illimités",
@@ -36,7 +51,8 @@
       ],
       "avoidIf": [
         "Vous avez besoin d'une solution entièrement branding custom (Pro minimum).",
-        "Vous créez des formulaires d'inscription critique avec énorme volume."
+        "Vous créez des formulaires d'inscription critique avec énorme volume.",
+        "Vous avez besoin d'une solution plus sophistiquée."
       ],
       "threshold": "Tally est imbattable en freemium ; la plupart des cas d'usage ne justifient jamais la mise à niveau vers Pro."
     },
@@ -58,7 +74,12 @@
       "Automatiser l'envoi de réponses vers Notion/Airtable.",
       "Faire des sondages ou questionnaires sans limite de participants."
     ],
-    "relevant_for": ["Freelancers", "Petites équipes", "Nonprofits", "Creators"]
+    "relevant_for": [
+      "Freelancers",
+      "Petites équipes",
+      "Nonprofits",
+      "Creators"
+    ]
   },
   "en": {
     "verdict": {
@@ -69,7 +90,8 @@
       ],
       "avoidIf": [
         "You need fully custom branding (Pro minimum).",
-        "You build critical signup forms with massive volume."
+        "You build critical signup forms with massive volume.",
+        "You need a more sophisticated solution."
       ],
       "threshold": "Tally is unbeatable in freemium; most use cases never justify upgrading to Pro."
     },

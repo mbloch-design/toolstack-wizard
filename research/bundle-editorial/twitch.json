@@ -3,13 +3,19 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Twitch — Plateforme de streaming (site officiel)", "url": "https://www.twitch.tv" }
+    {
+      "label": "Twitch — Plateforme de streaming (site officiel)",
+      "url": "https://www.twitch.tv"
+    }
   ],
   "facts": {
     "what": "Plateforme de streaming en direct leader pour jeux vidéo, mais aussi IRL, esports, musique et créateurs : jeu, chat interactif, monétisation (Bits, abonnements, partenaires).",
     "what_en": "Leading live streaming platform for video games, but also IRL, esports, music, and creators: gameplay, interactive chat, monetization (Bits, subscriptions, partners).",
     "pricing_model": "Plateforme gratuite pour les spectateurs et streamers. Monétisation optionnelle pour les streamers (Bits, abonnements, publicités pour les partenaires).",
-    "free_tier": { "exists": true, "detail": "Créer un compte et streamer est complètement gratuit. Monétisation optionnelle via Bits, abonnements (partenaires), publicités." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Créer un compte et streamer est complètement gratuit. Monétisation optionnelle via Bits, abonnements (partenaires), publicités."
+    },
     "plans": [],
     "key_features": [
       "Streaming en direct multi-bitrate",
@@ -31,7 +37,8 @@
       ],
       "avoidIf": [
         "Vous ne faites que de la production vidéo pré-enregistrée (YouTube plutôt).",
-        "Vous streamez du contenu confidentiel ou corporate."
+        "Vous streamez du contenu confidentiel ou corporate.",
+        "Vous n'êtes pas streamer ou n'avez pas d'audience."
       ],
       "threshold": "Twitch est la plateforme incontournable pour le streaming gaming et live ; YouTube Live et autres sont des alternatives mais Twitch domine."
     },
@@ -54,7 +61,12 @@
       "Faire de l'IRL streaming (travel, créatif, etc.).",
       "Monétiser sa communauté via Bits et abonnements."
     ],
-    "relevant_for": ["Gamers", "Esports teams", "Content creators", "Streamers"]
+    "relevant_for": [
+      "Gamers",
+      "Esports teams",
+      "Content creators",
+      "Streamers"
+    ]
   },
   "en": {
     "verdict": {
@@ -65,7 +77,8 @@
       ],
       "avoidIf": [
         "You only produce pre-recorded video content (YouTube instead).",
-        "You stream confidential or corporate content."
+        "You stream confidential or corporate content.",
+        "You're not a streamer or don't have an audience."
       ],
       "threshold": "Twitch is the go-to platform for gaming and live streaming; YouTube Live and others are alternatives but Twitch dominates."
     },

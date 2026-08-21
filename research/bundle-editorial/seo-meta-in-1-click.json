@@ -3,13 +3,19 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "SEO META in 1 CLICK — Chrome Web Store (site officiel)", "url": "https://chromewebstore.google.com/detail/seo-meta-in-1-click/bjogjfinolnhfhkbipphpdlldadpnmhc" }
+    {
+      "label": "SEO META in 1 CLICK — Chrome Web Store (site officiel)",
+      "url": "https://chromewebstore.google.com/detail/seo-meta-in-1-click/bjogjfinolnhfhkbipphpdlldadpnmhc"
+    }
   ],
   "facts": {
     "what": "Extension Chrome/Firefox gratuite qui affiche en un clic toutes les métadonnées SEO et données structurées d'une page (titres, descriptions, headers H1-H6, images, liens, Open Graph, robots directives, sitemaps).",
     "what_en": "Free Chrome/Firefox extension that displays all SEO metadata and structured data for any page in one click (titles, descriptions, headers H1-H6, images, links, Open Graph, robots directives, sitemaps).",
     "pricing_model": "Gratuit",
-    "free_tier": { "exists": true, "detail": "Extension entièrement gratuite, aucune limite, aucune version payante, pas d'inscription requise." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Extension entièrement gratuite, aucune limite, aucune version payante, pas d'inscription requise."
+    },
     "plans": [],
     "key_features": [
       "Affichage immédiat de tous les meta tags",
@@ -31,7 +37,8 @@
       ],
       "avoidIf": [
         "Vous avez besoin d'un audit complet avec suivi de classements, backlinks, etc.",
-        "Vous auditez de façon systématique et massive (l'outil est manuellement déclenché)."
+        "Vous auditez de façon systématique et massive (l'outil est manuellement déclenché).",
+        "Vous auditez beaucoup de pages : l'outil est déclenché manuellement, sans automation ou export batch."
       ],
       "threshold": "SEO Meta in 1 Click est l'outil parfait pour un audit rapide on-page gratuit. Pour une analyse complète, à associer avec Screaming Frog ou Semrush."
     },
@@ -54,7 +61,12 @@
       "Analyser les images et leurs attributs ALT.",
       "Checker la validité d'un robots.txt ou sitemap."
     ],
-    "relevant_for": ["SEO specialists", "Rédacteurs web", "Webmasters", "Développeurs front-end"]
+    "relevant_for": [
+      "SEO specialists",
+      "Rédacteurs web",
+      "Webmasters",
+      "Développeurs front-end"
+    ]
   },
   "en": {
     "verdict": {
@@ -65,7 +77,8 @@
       ],
       "avoidIf": [
         "You need a comprehensive audit with rankings, backlinks, etc.",
-        "You do systematic, large-scale audits (tool is manually triggered)."
+        "You do systematic, large-scale audits (tool is manually triggered).",
+        "You audit many pages: the tool is manually triggered, with no automation or batch export."
       ],
       "threshold": "SEO Meta in 1 Click is perfect for quick, free on-page audits. Pair it with Screaming Frog or Semrush for deeper analysis."
     },

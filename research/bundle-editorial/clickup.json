@@ -32,7 +32,8 @@
       ],
       "avoidIf": [
         "Vous préférez une solution minimaliste et légère.",
-        "Votre équipe est déjà fortement investie dans d'autres outils."
+        "Votre équipe est déjà fortement investie dans d'autres outils.",
+        "Vous avez une petite équipe (2-3 personnes) avec besoins simples."
       ],
       "threshold": "ClickUp convient aux équipes recherchant une plateforme centrale ; pour des besoins ponctuels, une solution mono-tâche sera plus légère."
     },
@@ -63,7 +64,8 @@
       ],
       "avoidIf": [
         "You prefer a minimal, lightweight solution.",
-        "Your team is already heavily invested in other tools."
+        "Your team is already heavily invested in other tools.",
+        "You have a small team (2-3 people) with simple needs."
       ],
       "threshold": "ClickUp suits teams seeking a central platform; for specific needs, a single-purpose tool will be lighter."
     },

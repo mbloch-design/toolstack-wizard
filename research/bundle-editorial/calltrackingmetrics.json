@@ -30,7 +30,8 @@
       ],
       "avoidIf": [
         "Vous n'avez besoin que d'un système téléphonique simple.",
-        "Votre volume d'appels est très faible."
+        "Votre volume d'appels est très faible.",
+        "Vous n'avez pas besoin d'attribution des appels aux campagnes."
       ],
       "threshold": "CTM excelle pour marketing d'attribution d'appels ; pour gestion d'appels simple, des solutions légères suffisent."
     },
@@ -61,7 +62,8 @@
       ],
       "avoidIf": [
         "You only need basic phone systems.",
-        "Your call volume is very low."
+        "Your call volume is very low.",
+        "You don't need call-to-campaign attribution."
       ],
       "threshold": "CTM excels for call attribution marketing; for simple call management, lighter solutions work."
     },

@@ -34,7 +34,8 @@
       ],
       "avoidIf": [
         "Vous cherchez un outil complet d'audit SEO (Redirect Path fait une seule chose).",
-        "Vous n'utilisez pas Chrome ou Edge."
+        "Vous n'utilisez pas Chrome ou Edge.",
+        "Vous avez besoin d'un support premium 24/7."
       ],
       "threshold": "Redirect Path est indispensable pour tout SEO qui vérifie les redirects ; c'est gratuit, léger et ciblé. Pour un audit complet, l'associer à d'autres outils."
     },
@@ -71,7 +72,8 @@
       ],
       "avoidIf": [
         "You're looking for a comprehensive SEO audit tool (Redirect Path does one thing).",
-        "You don't use Chrome or Edge."
+        "You don't use Chrome or Edge.",
+        "You need 24/7 premium support."
       ],
       "threshold": "Redirect Path is essential for any SEO checking redirects; it's free, lightweight, and focused. Pair it with other tools for full audits."
     },

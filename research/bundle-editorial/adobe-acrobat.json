@@ -4,12 +4,19 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Adobe Acrobat — description et fonctions (Wikipédia)", "url": "https://en.wikipedia.org/wiki/Adobe_Acrobat" }
+    {
+      "label": "Adobe Acrobat — description et fonctions (Wikipédia)",
+      "url": "https://en.wikipedia.org/wiki/Adobe_Acrobat"
+    }
   ],
   "facts": {
     "what": "Famille d'applications et de services Adobe pour visualiser, créer, éditer, signer et gérer des fichiers PDF.",
+    "what_en": "Family of Adobe applications and services for viewing, creating, editing, signing, and managing PDFs.",
     "pricing_note": "Acrobat Reader gratuit (lecture/annotation) ; Acrobat (création/édition complète) via licence payante / Creative Cloud.",
-    "free_tier": { "exists": true, "detail": "Acrobat Reader gratuit pour visualiser, imprimer et annoter des PDF." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Acrobat Reader gratuit pour visualiser, imprimer et annoter des PDF."
+    },
     "key_features": [
       "Créer, éditer et convertir des PDF",
       "Signer électroniquement et chiffrer des documents",
@@ -48,7 +55,11 @@
       "Faire signer électroniquement un document.",
       "Reconnaître le texte (OCR) d'un PDF scanné."
     ],
-    "relevant_for": ["Professionnels", "Équipes administratives", "Indépendants"]
+    "relevant_for": [
+      "Professionnels",
+      "Équipes administratives",
+      "Indépendants"
+    ]
   },
   "en": {
     "verdict": {

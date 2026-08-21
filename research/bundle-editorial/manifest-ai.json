@@ -3,17 +3,32 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Manifest AI — document intelligence platform (site officiel)", "url": "https://manifestai.io" }
+    {
+      "label": "Manifest AI — document intelligence platform (site officiel)",
+      "url": "https://manifestai.io"
+    }
   ],
   "facts": {
     "what": "Platform document intelligence : automatise extraction factures/emballages freight en données structurées. OCR+IA, quality control, intégration ERP (Sage, TMS). Processing pages avec crédit system.",
     "what_en": "Document intelligence platform: automates freight invoice/packing list extraction to structured data. OCR+AI, quality control, ERP integration (Sage, TMS). Page-based credits.",
     "pricing_model": "Subscription crédit : 1 crédit = 1 page traitée. Plans à partir de 299 $/mois (1K pages). Free trial : 1 doc (20 pages max).",
-    "free_tier": { "exists": true, "detail": "Trial gratuit : 1 document jusqu'à 20 pages sans CB avant committing à plan payant." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Trial gratuit : 1 document jusqu'à 20 pages sans CB avant committing à plan payant."
+    },
     "plans": [
-      { "name": "Free Trial", "price": "0 $ (1 doc, 20 pages max)" },
-      { "name": "Starter", "price": "299 $/mois (1K pages/mois)" },
-      { "name": "Scale", "price": "Montants sur page officielle (higher volumes)" }
+      {
+        "name": "Free Trial",
+        "price": "0 $ (1 doc, 20 pages max)"
+      },
+      {
+        "name": "Starter",
+        "price": "299 $/mois (1K pages/mois)"
+      },
+      {
+        "name": "Scale",
+        "price": "Montants sur page officielle (higher volumes)"
+      }
     ],
     "key_features": [
       "OCR + IA extraction invoices/packing lists",
@@ -32,7 +47,8 @@
       ],
       "avoidIf": [
         "Vous traitez peu de documents.",
-        "Vos documents ne sont pas factures/packing lists."
+        "Vos documents ne sont pas factures/packing lists.",
+        "Vos documents arrivent sporadiquement : le crédit minimum mensuel (1K pages) n'est pas rentable pour usage léger."
       ],
       "threshold": "Manifest AI justifié pour logistics/forwarding ; pour usage léger, coûts dépassent bénéfices."
     },
@@ -52,7 +68,11 @@
       "Réduire erreur data entry manual.",
       "Accélérer accounting reconciliation."
     ],
-    "relevant_for": ["Freight forwarders", "Customs brokers", "Finance teams"]
+    "relevant_for": [
+      "Freight forwarders",
+      "Customs brokers",
+      "Finance teams"
+    ]
   },
   "en": {
     "verdict": {
@@ -63,7 +83,8 @@
       ],
       "avoidIf": [
         "You have few documents (<100/month).",
-        "Your documents aren't invoices/packing lists."
+        "Your documents aren't invoices/packing lists.",
+        "Your documents arrive sporadically: the minimum monthly credit (1K pages) is not cost-effective for light use."
       ],
       "threshold": "Manifest AI justified for logistics/forwarding; for light use, costs outweigh benefits."
     },

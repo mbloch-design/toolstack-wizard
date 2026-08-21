@@ -4,10 +4,14 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Adobe Premiere Pro — description et fonctions (Wikipédia)", "url": "https://en.wikipedia.org/wiki/Adobe_Premiere_Pro" }
+    {
+      "label": "Adobe Premiere Pro — description et fonctions (Wikipédia)",
+      "url": "https://en.wikipedia.org/wiki/Adobe_Premiere_Pro"
+    }
   ],
   "facts": {
     "what": "Application de montage vidéo professionnelle d'Adobe, distribuée dans Creative Cloud.",
+    "what_en": "Adobe's professional video editing application, distributed through Creative Cloud.",
     "pricing_note": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite).",
     "key_features": [
       "Montage sur timeline avec imbrication profonde des séquences",
@@ -47,7 +51,11 @@
       "Enchaîner avec After Effects sans re-rendu (Dynamic Link).",
       "Produire une vidéo haute résolution destinée à la diffusion."
     ],
-    "relevant_for": ["Monteurs vidéo", "Créateurs de contenu", "Studios film/vidéo"]
+    "relevant_for": [
+      "Monteurs vidéo",
+      "Créateurs de contenu",
+      "Studios film/vidéo"
+    ]
   },
   "en": {
     "verdict": {

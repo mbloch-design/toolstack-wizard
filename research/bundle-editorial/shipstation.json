@@ -3,16 +3,28 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "ShipStation — Plateforme de gestion des expéditions (site officiel)", "url": "https://www.shipstation.com" }
+    {
+      "label": "ShipStation — Plateforme de gestion des expéditions (site officiel)",
+      "url": "https://www.shipstation.com"
+    }
   ],
   "facts": {
     "what": "Plateforme SaaS complète de gestion des expéditions et de l'accomplissement des commandes pour l'e-commerce, avec comparaison de tarifs de transporteurs, impression d'étiquettes remisées, automatisation et intégrations avec 400+ plateformes.",
     "what_en": "Complete SaaS shipping and order fulfillment platform for e-commerce, with carrier rate comparison, discounted label printing, automation, and integrations with 400+ platforms.",
     "pricing_model": "Abonnement SaaS par volume d'expéditions, sans frais de configuration, essai gratuit 30 jours",
-    "free_tier": { "exists": true, "detail": "Essai gratuit 30 jours sans carte de crédit. Plans payants échelonnés selon le volume d'expéditions." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Essai gratuit 30 jours sans carte de crédit. Plans payants échelonnés selon le volume d'expéditions."
+    },
     "plans": [
-      { "name": "Plans échelonnés par volume", "price": "Montants sur la page officielle de tarification" },
-      { "name": "Essai gratuit", "price": "30 jours sans engagement" }
+      {
+        "name": "Plans échelonnés par volume",
+        "price": "Montants sur la page officielle de tarification"
+      },
+      {
+        "name": "Essai gratuit",
+        "price": "30 jours sans engagement"
+      }
     ],
     "key_features": [
       "Comparaison automatique de tarifs auprès de 200+ transporteurs",
@@ -33,7 +45,8 @@
       ],
       "avoidIf": [
         "Vous n'expédiez que rarement ou très peu.",
-        "Vous cherchez une solution uniquement pour une plateforme."
+        "Vous cherchez une solution uniquement pour une plateforme.",
+        "Vous avez peu de volume d'expéditions : l'abonnement mensuel + coûts d'impressions ne se justifient que pour volume régulier."
       ],
       "threshold": "ShipStation s'impose pour les e-commerçants omnichannel cherchant optimisation et automatisation d'expéditions ; pour des usages occasionnels, explorez des alternatives plus simples."
     },
@@ -56,7 +69,12 @@
       "Optimiser les coûts de transport.",
       "Gérer les retours et processus reverse logistics."
     ],
-    "relevant_for": ["E-commerçants omnichannel", "Petites à moyennes entreprises", "Vendeurs Amazon/eBay", "Agences fulfillment"]
+    "relevant_for": [
+      "E-commerçants omnichannel",
+      "Petites à moyennes entreprises",
+      "Vendeurs Amazon/eBay",
+      "Agences fulfillment"
+    ]
   },
   "en": {
     "verdict": {
@@ -67,7 +85,8 @@
       ],
       "avoidIf": [
         "You rarely or infrequently ship orders.",
-        "You only need a solution for a single platform."
+        "You only need a solution for a single platform.",
+        "You have low shipping volume: monthly subscription + printing costs are justified only for regular volume."
       ],
       "threshold": "ShipStation is ideal for omnichannel e-commerce businesses seeking shipping optimization and automation; for occasional use, explore simpler alternatives."
     },

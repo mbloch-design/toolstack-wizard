@@ -1,68 +1,96 @@
 {
   "slug": "google-chat",
-  "bundle_parent": "google-workspace",
   "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Google Chat — Features & Integrations (site officiel)", "url": "https://workspace.google.com/products/chat/" },
+    { "label": "Google Workspace — Tarification (site officiel)", "url": "https://workspace.google.com/pricing" }
+  ],
+  "facts": {
+    "what": "Plateforme de communication d'équipe incluse dans Google Workspace pour chat en temps réel, espaces collaboration jusqu'à 500 000 membres, et intégrations tiers (Asana, Jira, Slack, Salesforce). Assistée par Gemini pour résumés, traduction et composition de messages.",
+    "what_en": "Team communication platform included with Google Workspace for real-time chat, collaboration spaces supporting up to 500,000 members, and third-party integrations (Asana, Jira, Slack, Salesforce). Powered by Gemini for summaries, translation, and message composition.",
+    "pricing_model": "Inclus sans coût supplémentaire dans tous les plans Google Workspace (abonnement par utilisateur mensuel).",
+    "free_tier": { "exists": false, "detail": "Google Chat n'est pas disponible en version gratuite autonome ; inclus uniquement avec les plans payants Google Workspace." },
+    "plans": [
+      { "name": "Starter", "price": "À partir de €3,40/utilisateur/mois (montants USD et autres devises sur la page officielle)" },
+      { "name": "Standard", "price": "À partir de €6,80/utilisateur/mois" },
+      { "name": "Plus", "price": "À partir de €10,55/utilisateur/mois" },
+      { "name": "Enterprise", "price": "Tarification personnalisée (devis)" }
+    ],
+    "key_features": [
+      "Espaces collaboration permanents et privés jusqu'à 500 000 membres",
+      "Huddles pour conversations rapides synchrones (drop-in collaboration)",
+      "Intégrations tiers : Asana, GitHub, HubSpot, Jira, Salesforce, ServiceNow, Trello, Zapier et 1000+ via APIs",
+      "Gemini AI : résumés conversations, traduction temps réel, brouillons messages, sidebar chat",
+      "Intégration native Gmail, Google Calendar, Drive, Meet, et Groups",
+      "Threads et conversations structurées avec réactions, GIF, emojis personnalisés"
+    ]
+  },
   "fr": {
     "verdict": {
       "keepIf": [
-        "Votre équipe travaille déjà dans Google Workspace (Gmail, Meet, Drive, Docs) au quotidien.",
-        "Vous voulez une messagerie d'équipe simple, avec espaces et fils, sans ajouter un outil séparé.",
-        "Vous appréciez de discuter directement à côté des documents et des visios plutôt que dans un silo à part."
+        "Votre équipe utilise intensément Gmail, Calendar et Google Drive et souhaite unifier communication.",
+        "Vous avez besoin d'espaces collaboration massive (jusqu'à 500 000 membres) pour communautés ou clients.",
+        "Vous privilégiez intégrations tiers (Jira, Asana, Salesforce) avec IA Gemini pour automatisations."
       ],
       "avoidIf": [
-        "Vous cherchez une messagerie riche en intégrations tierces et en automatisations avancées, façon Slack.",
-        "Votre équipe n'est pas sur Google Workspace : Chat seul a peu d'intérêt hors de l'écosystème.",
-        "Vous avez besoin de fonctions de communauté ou de canaux publics à grande échelle."
+        "Vous prioritisez visioconférence haute-fidélité ou screen-sharing avancé (préférez Zoom ou Teams).",
+        "Budget serré pour petit collectif (less than 5 people) : coût par utilisateur peu justifié.",
+        "Vous avez besoin self-hosted ou infrastructure privée (Google n'offre pas cette option)."
       ],
-      "threshold": "Google Chat s'impose quand vous êtes déjà dans Google Workspace et voulez centraliser les échanges d'équipe sans outil supplémentaire ; en dehors de cet écosystème, une messagerie dédiée comme Slack ou Teams reste plus pertinente."
+      "threshold": "Google Chat excelle pour équipes moyennes-grandes intégrées Google Workspace cherchant communication asynchrone + IA ; inadapté pour petites équipes freelance ou organisations self-hosted."
     },
     "pros": [
-      "Intégration native avec Gmail, Meet, Drive et Docs : on discute à côté du travail réel.",
-      "Espaces et fils de discussion pour organiser les sujets et les équipes sans se perdre.",
-      "Inclus dans Google Workspace : aucun abonnement supplémentaire à gérer.",
-      "Interface légère et rapide, faible courbe d'apprentissage pour qui connaît déjà Google."
+      "Intégration native complète Gmail, Calendar, Drive, Meet (workflow unifié).",
+      "Espaces collaboration jusqu'à 500 000 membres avec threads et reactions.",
+      "Gemini AI pour résumés conversations async, traduction, brouillons messages.",
+      "Intégrations 1000+ tiers (Jira, Asana, Salesforce, Zapier, GitHub, Trello).",
+      "Coût inclus dans tous les plans Workspace (aucun surcoût messaging)."
     ],
     "cons": [
-      "Écosystème d'intégrations tierces plus limité que Slack.",
-      "Peu d'intérêt en dehors de Google Workspace : dépendance forte à la suite.",
-      "Fonctions d'automatisation et de personnalisation plus modestes que les messageries spécialisées."
+      "Pas disponible gratuitement ; requiert abonnement Workspace minimal.",
+      "Moins de features avancées que Slack/Microsoft Teams (huddles plus basiques).",
+      "Coût par utilisateur s'accumule rapidement pour équipes très larges.",
+      "Gemini IA disponible seulement sur plans Standard et Plus."
     ],
     "use_cases": [
-      "Coordonner une équipe déjà sur Google Workspace sans ajouter d'outil de messagerie séparé.",
-      "Créer des espaces par projet ou par équipe, reliés aux documents Drive et aux réunions Meet.",
-      "Passer d'un fil de discussion à une visioconférence Meet en un clic."
+      "Équipe intégrée Gmail/Google Docs communiquant async avec threads et résumés IA.",
+      "Espaces collaboration client/communauté jusqu'à 500k membres avec workflows Zapier.",
+      "Automatisations Jira/GitHub notifiant équipe directement dans Chat via intégrations tiers."
     ],
-    "relevant_for": ["Petites équipes", "PME sur Google Workspace", "Équipes opérationnelles"]
+    "relevant_for": ["Équipes Google Workspace", "Organisations asynchrone-first", "Équipes distribuées avec intégrations tiers lourdes"]
   },
   "en": {
     "verdict": {
       "keepIf": [
-        "Your team already works in Google Workspace (Gmail, Meet, Drive, Docs) every day.",
-        "You want simple team messaging with spaces and threads, without adding a separate tool.",
-        "You like chatting right next to your documents and meetings rather than in a separate silo."
+        "Your team heavily uses Gmail, Calendar, and Google Drive and wants unified communication.",
+        "You need massive collaboration spaces (up to 500,000 members) for communities or clients.",
+        "You prioritize third-party integrations (Jira, Asana, Salesforce) with Gemini AI for automations."
       ],
       "avoidIf": [
-        "You want a messaging app rich in third-party integrations and advanced automation, Slack-style.",
-        "Your team isn't on Google Workspace: Chat alone has little value outside the ecosystem.",
-        "You need large-scale community features or public channels."
+        "You prioritize high-fidelity video conferencing or advanced screen-sharing (prefer Zoom or Teams).",
+        "Tight budget for small team (under 5 people): per-user cost poorly justified.",
+        "You require self-hosted or private infrastructure (Google does not offer this option)."
       ],
-      "threshold": "Google Chat makes sense when you're already in Google Workspace and want to centralise team conversations without an extra tool; outside that ecosystem, a dedicated messenger like Slack or Teams remains more relevant."
+      "threshold": "Google Chat excels for medium-large teams integrated into Google Workspace seeking asynchronous communication + AI; unsuitable for small freelance teams or self-hosted organizations."
     },
     "pros": [
-      "Native integration with Gmail, Meet, Drive and Docs: you chat next to the actual work.",
-      "Spaces and threads to organise topics and teams without getting lost.",
-      "Included in Google Workspace: no extra subscription to manage.",
-      "Light, fast interface with a gentle learning curve for anyone already using Google."
+      "Deep native integration with Gmail, Calendar, Drive, Meet (unified workflow).",
+      "Collaboration spaces up to 500,000 members with threads and reactions.",
+      "Gemini AI for conversation summaries, real-time translation, message drafting.",
+      "1000+ third-party integrations (Jira, Asana, Salesforce, Zapier, GitHub, Trello).",
+      "Cost included in all Workspace plans (no messaging surcharge)."
     ],
     "cons": [
-      "Smaller third-party integration ecosystem than Slack.",
-      "Little value outside Google Workspace: strong dependency on the suite.",
-      "More modest automation and customisation than specialised messengers."
+      "No free standalone tier; requires minimal Workspace subscription.",
+      "Fewer advanced features than Slack/Microsoft Teams (more basic huddles).",
+      "Per-user cost accumulates quickly for very large teams.",
+      "Gemini AI only available on Standard and Plus plans."
     ],
     "use_cases": [
-      "Coordinate a team already on Google Workspace without adding a separate messaging tool.",
-      "Create per-project or per-team spaces linked to Drive documents and Meet meetings.",
-      "Jump from a chat thread to a Meet video call in one click."
+      "Gmail/Google Docs–integrated team communicating asynchronously with AI-powered summaries.",
+      "Client/community collaboration spaces up to 500k members with Zapier-driven workflows.",
+      "Jira/GitHub automations notifying team directly in Chat via third-party integrations."
     ]
   }
 }

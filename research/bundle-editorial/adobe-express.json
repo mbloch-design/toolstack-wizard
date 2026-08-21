@@ -4,10 +4,14 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Adobe Express — description et fonctions (Wikipédia)", "url": "https://en.wikipedia.org/wiki/Adobe_Express" }
+    {
+      "label": "Adobe Express — description et fonctions (Wikipédia)",
+      "url": "https://en.wikipedia.org/wiki/Adobe_Express"
+    }
   ],
   "facts": {
     "what": "Plateforme de design cloud d'Adobe, orientée grand public, pour créer rapidement visuels, vidéos, PDF et pages web à partir de modèles.",
+    "what_en": "Adobe's cloud design platform, geared toward everyday users, for quickly creating visuals (cards, videos, graphics).",
     "pricing_note": "Palier gratuit + premium ; inclus dans l'écosystème Creative Cloud (voir la fiche de la suite).",
     "key_features": [
       "Création multi-formats (visuels, vidéos, PDF, pages web)",
@@ -46,7 +50,11 @@
       "Générer des éléments par IA (Firefly) dans un design.",
       "Produire une courte vidéo ou une page web simple."
     ],
-    "relevant_for": ["Créateurs de contenu", "Petites équipes marketing", "Non-designers"]
+    "relevant_for": [
+      "Créateurs de contenu",
+      "Petites équipes marketing",
+      "Non-designers"
+    ]
   },
   "en": {
     "verdict": {

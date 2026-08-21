@@ -3,16 +3,28 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Noun Project — Bibliothèque d'icônes et photos (site officiel)", "url": "https://thenounproject.com/" }
+    {
+      "label": "Noun Project — Bibliothèque d'icônes et photos (site officiel)",
+      "url": "https://thenounproject.com/"
+    }
   ],
   "facts": {
     "what": "Bibliothèque numérique de près de 10 millions d'icônes vecteur et photos haute résolution, accessibles gratuitement avec licences royalty-free.",
     "what_en": "Digital library of nearly 10 million free vector icons and high-resolution photos, accessible with royalty-free licenses.",
     "pricing_model": "Freemium. Tous les assets téléchargeables gratuitement. Support des artistes et achat premium optionnels pour financer la plateforme.",
-    "free_tier": { "exists": true, "detail": "Accès complet et gratuit à la collection entière. Téléchargement illimité en SVG et PNG avec licences royalty-free, usage personnel et commercial autorisé." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Accès complet et gratuit à la collection entière. Téléchargement illimité en SVG et PNG avec licences royalty-free, usage personnel et commercial autorisé."
+    },
     "plans": [
-      { "name": "Accès gratuit", "price": "Entièrement gratuit — tous les assets téléchargeables" },
-      { "name": "Soutien artiste (optionnel)", "price": "Montants sur la page officielle pour financer les créateurs" }
+      {
+        "name": "Accès gratuit",
+        "price": "Entièrement gratuit — tous les assets téléchargeables"
+      },
+      {
+        "name": "Soutien artiste (optionnel)",
+        "price": "Montants sur la page officielle pour financer les créateurs"
+      }
     ],
     "key_features": [
       "Près de 10 millions d'icônes et photos vecteur",
@@ -34,7 +46,8 @@
       ],
       "avoidIf": [
         "Vous avez besoin de photos d'actualité très fraîches (collection moins actualisée que Reuters/Getty).",
-        "Vous cherchez des illustrations 3D (hors scope, préférer Pikkovia ou Pacdora)."
+        "Vous cherchez des illustrations 3D (hors scope, préférer Pikkovia ou Pacdora).",
+        "Vous avez une grande équipe et besoin de workspaces collaboratifs : Noun Project n'a pas de gestion native des équipes."
       ],
       "threshold": "Noun Project excelle comme source unique d'icônes et photos de qualité, gratuit sans piège : licence claire, usage illimité, communauté active."
     },
@@ -59,7 +72,13 @@
       "Illustrer articles de blog ou content marketing.",
       "Construire une library d'assets pour équipe (via API)."
     ],
-    "relevant_for": ["Designers UX/UI", "Créateurs de contenu", "Développeurs web", "Agences créatives", "Entrepreneurs sans budget"]
+    "relevant_for": [
+      "Designers UX/UI",
+      "Créateurs de contenu",
+      "Développeurs web",
+      "Agences créatives",
+      "Entrepreneurs sans budget"
+    ]
   },
   "en": {
     "verdict": {
@@ -70,7 +89,8 @@
       ],
       "avoidIf": [
         "You need cutting-edge news photography (less current than Reuters/Getty).",
-        "You're seeking 3D illustrations (use Pikkovia or Pacdora instead)."
+        "You're seeking 3D illustrations (use Pikkovia or Pacdora instead).",
+        "You have a large team needing collaborative workspaces: Noun Project has no native team management."
       ],
       "threshold": "Noun Project excels as a single source for quality icons and photos—free, no strings attached, clear licensing, unlimited use."
     },

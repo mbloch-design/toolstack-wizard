@@ -3,18 +3,36 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Lovable — AI app builder et pricing (site officiel)", "url": "https://lovable.dev" }
+    {
+      "label": "Lovable — AI app builder et pricing (site officiel)",
+      "url": "https://lovable.dev"
+    }
   ],
   "facts": {
     "what": "AI web app builder : chat naturel → code React/Supabase generé en temps réel. Preview live, GitHub sync, one-click deployment. Crédits system (message complexity). Students : -50 % first year.",
     "what_en": "AI web app builder: natural chat → real-time generated React/Supabase code. Live preview, GitHub sync, one-click deployment. Credits system (message complexity). Students: -50% first year.",
     "pricing_model": "Free (5 msgs/jour), Pro (25 $/mois, 100 credits), Business (50 $/mois). Crédits varient par complexité (0.5-2 credits/msg). Students -50 % (Pro = 12.50 $/mois first year).",
-    "free_tier": { "exists": true, "detail": "Gratuit : 5 messages/jour (≈ 30/mois), projects illimités publics, GitHub sync, one-click deploy." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Gratuit : 5 messages/jour (≈ 30/mois), projects illimités publics, GitHub sync, one-click deploy."
+    },
     "plans": [
-      { "name": "Free", "price": "0 $ (5 msgs/jour)" },
-      { "name": "Pro", "price": "25 $/mois (100 msgs/mois avec credit variation)" },
-      { "name": "Business", "price": "50 $/mois (illimité msgs)" },
-      { "name": "Student", "price": "12,50 $/mois (first year Pro, -50 %)" }
+      {
+        "name": "Free",
+        "price": "0 $ (5 msgs/jour)"
+      },
+      {
+        "name": "Pro",
+        "price": "25 $/mois (100 msgs/mois avec credit variation)"
+      },
+      {
+        "name": "Business",
+        "price": "50 $/mois (illimité msgs)"
+      },
+      {
+        "name": "Student",
+        "price": "12,50 $/mois (first year Pro, -50 %)"
+      }
     ],
     "key_features": [
       "Chat naturel → code React",
@@ -33,7 +51,8 @@
       ],
       "avoidIf": [
         "Vous construisez une app métier complexe.",
-        "Vous avez besoin de contrôle détail code."
+        "Vous avez besoin de contrôle détail code.",
+        "Vous avez besoin d'une architecture backend spécifique : Lovable génère Supabase automatiquement, sans flexibilité personnalisée."
       ],
       "threshold": "Lovable shines pour prototypage fast et solopreneur ; pour apps complexes, écrivez code directement."
     },
@@ -53,7 +72,12 @@
       "MVP freelance deliverable.",
       "Démo client quick turnaround."
     ],
-    "relevant_for": ["Solopreneurs", "Étudiants", "Freelances dev", "Makers non-tech"]
+    "relevant_for": [
+      "Solopreneurs",
+      "Étudiants",
+      "Freelances dev",
+      "Makers non-tech"
+    ]
   },
   "en": {
     "verdict": {
@@ -64,7 +88,8 @@
       ],
       "avoidIf": [
         "You're building a complex business app.",
-        "You need fine code control."
+        "You need fine code control.",
+        "You need a specific backend architecture: Lovable auto-generates Supabase without custom flexibility."
       ],
       "threshold": "Lovable shines for fast prototyping and solopreneurs; for complex apps, code directly."
     },

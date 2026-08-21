@@ -3,15 +3,28 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Page tarifaire officielle Buzzsprout", "url": "https://www.buzzsprout.com/pricing" }
+    {
+      "label": "Page tarifaire officielle Buzzsprout",
+      "url": "https://www.buzzsprout.com/pricing"
+    }
   ],
   "facts": {
     "what": "Plateforme d'hébergement de podcasts orientée débutants : publication, génération du flux RSS et distribution vers Apple Podcasts, Spotify et les grands annuaires, sans configuration technique.",
+    "what_en": "Beginner-oriented podcast hosting platform: publishing, RSS feed generation, and distribution to Apple Podcasts, Spotify, and major directories, with no technical setup.",
     "pricing_model": "Palier gratuit (limité et éphémère) puis abonnements selon les heures d'upload mensuelles (mensuel/annuel).",
-    "free_tier": { "exists": true, "detail": "Gratuit : 2 h d'upload/mois, mais les épisodes sont supprimés après 90 jours (pour tester, pas pour publier durablement)." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Gratuit : 2 h d'upload/mois, mais les épisodes sont supprimés après 90 jours (pour tester, pas pour publier durablement)."
+    },
     "plans": [
-      { "name": "Gratuit", "price": "0 $ (2 h/mois, épisodes supprimés à 90 j)" },
-      { "name": "Payant", "price": "à partir de ~19 $/mois (4 h) jusqu'à 79 $/mois (35 h), stockage illimité" }
+      {
+        "name": "Gratuit",
+        "price": "0 $ (2 h/mois, épisodes supprimés à 90 j)"
+      },
+      {
+        "name": "Payant",
+        "price": "à partir de ~19 $/mois (4 h) jusqu'à 79 $/mois (35 h), stockage illimité"
+      }
     ],
     "key_features": [
       "Hébergement et flux RSS automatique",
@@ -50,7 +63,11 @@
       "Obtenir un site de podcast prêt à l'emploi.",
       "Suivre l'audience de ses épisodes."
     ],
-    "relevant_for": ["Podcasteurs débutants", "Créateurs de contenu", "Petites équipes"]
+    "relevant_for": [
+      "Podcasteurs débutants",
+      "Créateurs de contenu",
+      "Petites équipes"
+    ]
   },
   "en": {
     "verdict": {

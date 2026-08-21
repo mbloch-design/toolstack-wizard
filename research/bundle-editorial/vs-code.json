@@ -3,13 +3,19 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Visual Studio Code — Site officiel", "url": "https://code.visualstudio.com" }
+    {
+      "label": "Visual Studio Code — Site officiel",
+      "url": "https://code.visualstudio.com"
+    }
   ],
   "facts": {
     "what": "Éditeur de code open source gratuit, créé par Microsoft. Support complet de JavaScript, TypeScript, Python, etc. avec IntelliSense, debugging intégré, contrôle Git et 80K+ extensions.",
     "what_en": "Free, open-source code editor by Microsoft. Full JavaScript, TypeScript, Python support with IntelliSense, integrated debugging, Git control, and 80K+ extensions.",
     "pricing_model": "Gratuit et open source (MIT). Aucun coût, financement par Microsoft.",
-    "free_tier": { "exists": true, "detail": "Gratuit à 100%. Logiciel open source sans restrictions d'usage commerciaux ni limitations." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Gratuit à 100%. Logiciel open source sans restrictions d'usage commerciaux ni limitations."
+    },
     "plans": [],
     "key_features": [
       "IntelliSense (auto-complétion intelligent)",
@@ -29,7 +35,8 @@
       ],
       "avoidIf": [
         "Vous avez besoin d'un IDE complet avec refactoring avancé (considérez IntelliJ).",
-        "Vous ciblez un legacy très spécialisé (ex: Cobol, Fortran)."
+        "Vous ciblez un legacy très spécialisé (ex: Cobol, Fortran).",
+        "Vous préférez un IDE différent."
       ],
       "threshold": "VS Code s'impose pour la très grande majorité des développeurs modernes ; les IDEs lourds (IntelliJ, Visual Studio Enterprise) conviennent mieux pour les projets très complexes ou legacy."
     },
@@ -50,7 +57,11 @@
       "Gérer du code multilingue avec une seule interface.",
       "Travailler en remote avec Dev Containers ou SSH."
     ],
-    "relevant_for": ["Freelances développeurs", "Startups", "Équipes polyglotes"]
+    "relevant_for": [
+      "Freelances développeurs",
+      "Startups",
+      "Équipes polyglotes"
+    ]
   },
   "en": {
     "verdict": {
@@ -61,7 +72,8 @@
       ],
       "avoidIf": [
         "You need a full IDE with advanced refactoring (consider IntelliJ).",
-        "You're targeting very specialized legacy (e.g., Cobol, Fortran)."
+        "You're targeting very specialized legacy (e.g., Cobol, Fortran).",
+        "You prefer a different IDE."
       ],
       "threshold": "VS Code is the go-to for the vast majority of modern developers; heavy IDEs (IntelliJ, Visual Studio Enterprise) suit very complex or legacy projects better."
     },

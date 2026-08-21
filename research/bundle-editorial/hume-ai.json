@@ -34,7 +34,8 @@
       ],
       "avoidIf": [
         "Vous besoin de TTS simple (utilisez autre).",
-        "Votre budget est très limité."
+        "Votre budget est très limité.",
+        "Vous avez besoin de TTS simple sans détection d'émotion."
       ],
       "threshold": "Hume excels pour applications empathie vocale ; pour TTS standard, utilisez une solution plus simple/moins chère."
     },
@@ -65,7 +66,8 @@
       ],
       "avoidIf": [
         "You just need simple TTS.",
-        "Your budget is very limited."
+        "Your budget is very limited.",
+        "You need simple TTS without emotion detection."
       ],
       "threshold": "Hume excels for empathic voice apps; for standard TTS, use a simpler/cheaper solution."
     },

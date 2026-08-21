@@ -3,13 +3,19 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-08-17",
   "sources": [
-    { "label": "Product Hunt — site officiel", "url": "https://producthunt.com" }
+    {
+      "label": "Product Hunt — site officiel",
+      "url": "https://producthunt.com"
+    }
   ],
   "facts": {
     "what": "Plateforme communautaire de découverte et de lancement de produits tech, permettant aux entrepreneurs de présenter leurs innovations et aux utilisateurs de voter pour leurs préférées et partager des avis.",
     "what_en": "Community platform for discovering and launching tech products, enabling entrepreneurs to showcase innovations and users to upvote favorites and share feedback.",
     "pricing_model": "Gratuit (plateforme d'accès public).",
-    "free_tier": { "exists": true, "detail": "Entièrement gratuit ; aucune limite d'accès à la plateforme de base." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Entièrement gratuit ; aucune limite d'accès à la plateforme de base."
+    },
     "plans": [],
     "key_features": [
       "Système de vote et classement des produits par popularité",
@@ -28,7 +34,8 @@
       ],
       "avoidIf": [
         "Votre produit n'a rien de nouveau ou d'innovant.",
-        "Vous cherchez une plateforme de distribution classique."
+        "Vous cherchez une plateforme de distribution classique.",
+        "Votre produit est établi : Product Hunt est trop compétitif pour les produits non-nouveaux, les gains commerciaux minimes."
       ],
       "threshold": "Product Hunt est essentiel pour les startups tech lançant un nouveau produit ; pour une entreprise établie ou un produit non-tech, les bénéfices sont limités."
     },
@@ -48,7 +55,11 @@
       "Collecter des avis et du feedback utilisateur.",
       "Générer du buzz et de la crédibilité auprès d'investisseurs."
     ],
-    "relevant_for": ["Startups tech", "Entrepreneurs", "Créateurs de produits"]
+    "relevant_for": [
+      "Startups tech",
+      "Entrepreneurs",
+      "Créateurs de produits"
+    ]
   },
   "en": {
     "verdict": {
@@ -59,7 +70,8 @@
       ],
       "avoidIf": [
         "Your product isn't novel or innovative.",
-        "You're looking for a traditional distribution platform."
+        "You're looking for a traditional distribution platform.",
+        "Your product is established: Product Hunt is too competitive for non-novel products, minimal commercial gains."
       ],
       "threshold": "Product Hunt is essential for tech startups launching a new product; for an established company or non-tech product, benefits are limited."
     },

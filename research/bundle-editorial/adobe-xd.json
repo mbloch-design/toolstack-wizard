@@ -4,10 +4,14 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Adobe XD — description et statut (Wikipédia)", "url": "https://en.wikipedia.org/wiki/Adobe_XD" }
+    {
+      "label": "Adobe XD — description et statut (Wikipédia)",
+      "url": "https://en.wikipedia.org/wiki/Adobe_XD"
+    }
   ],
   "facts": {
     "what": "Outil de design vectoriel pour interfaces web et mobiles (wireframing, prototypage) d'Adobe.",
+    "what_en": "Adobe's vector design tool for web and mobile interfaces (wireframing, prototyping).",
     "status": "Développement ARRÊTÉ : retiré des produits achetables en juin 2023 ; Adobe a annoncé ne plus investir dans la plateforme (après l'échec du rachat de Figma).",
     "pricing_note": "Historiquement inclus dans Creative Cloud (voir la fiche de la suite).",
     "key_features": [
@@ -47,7 +51,11 @@
       "Convertir des fichiers XD vers un outil actif.",
       "Prototyper ponctuellement dans l'écosystème Adobe existant."
     ],
-    "relevant_for": ["Designers UI (existant)", "Studios avec projets XD", "Maintenance"]
+    "relevant_for": [
+      "Designers UI (existant)",
+      "Studios avec projets XD",
+      "Maintenance"
+    ]
   },
   "en": {
     "verdict": {

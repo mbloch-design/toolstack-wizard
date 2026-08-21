@@ -4,10 +4,14 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Google Docs — description et fonctions (Wikipédia)", "url": "https://en.wikipedia.org/wiki/Google_Docs" }
+    {
+      "label": "Google Docs — description et fonctions (Wikipédia)",
+      "url": "https://en.wikipedia.org/wiki/Google_Docs"
+    }
   ],
   "facts": {
     "what": "Traitement de texte en ligne, membre de la suite gratuite Google Docs Editors (Docs, Sheets, Slides).",
+    "what_en": "Online word processor, part of the free Google Docs Editors suite (Docs, Sheets, Slides).",
     "pricing_note": "Gratuit pour les particuliers ; version pro incluse dans Google Workspace (voir la fiche de la suite).",
     "key_features": [
       "Collaboration temps réel (édition simultanée, visible caractère par caractère)",
@@ -46,7 +50,11 @@
       "Partager des notes et comptes rendus reliés à Drive.",
       "Collecter des retours via commentaires et suggestions."
     ],
-    "relevant_for": ["Petites équipes", "PME sur Google Workspace", "Équipes rédactionnelles"]
+    "relevant_for": [
+      "Petites équipes",
+      "PME sur Google Workspace",
+      "Équipes rédactionnelles"
+    ]
   },
   "en": {
     "verdict": {

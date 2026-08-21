@@ -3,15 +3,24 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Shopify CLI — Outil de développement open source (documentation officielle)", "url": "https://shopify.dev/docs/api/shopify-cli" }
+    {
+      "label": "Shopify CLI — Outil de développement open source (documentation officielle)",
+      "url": "https://shopify.dev/docs/api/shopify-cli"
+    }
   ],
   "facts": {
     "what": "Outil en ligne de commande open source pour générer et gérer les applications Shopify, les thèmes et les vitrines personnalisées, avec automatisation des tâches de développement et support multi-plateforme.",
     "what_en": "Open-source command-line tool for generating and managing Shopify applications, themes, and custom storefronts, with development automation and cross-platform support.",
     "pricing_model": "Entièrement gratuit et open source",
-    "free_tier": { "exists": true, "detail": "Aucune version payante. Entièrement gratuit et open source." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Aucune version payante. Entièrement gratuit et open source."
+    },
     "plans": [
-      { "name": "Unique plan", "price": "Gratuit" }
+      {
+        "name": "Unique plan",
+        "price": "Gratuit"
+      }
     ],
     "key_features": [
       "Génération et gestion d'applications Shopify",
@@ -34,7 +43,8 @@
       ],
       "avoidIf": [
         "Vous développez pour une autre plateforme e-commerce.",
-        "Vous avez besoin d'une interface graphique pour développer."
+        "Vous avez besoin d'une interface graphique pour développer.",
+        "Vous n'êtes pas à l'aise en ligne de commande : Shopify CLI est un outil CLI, sans interface graphique."
       ],
       "threshold": "Shopify CLI s'impose pour les développeurs Shopify cherchant un outil gratuit et puissant ; pour d'autres plateformes, explorez des alternatives équivalentes."
     },
@@ -57,7 +67,12 @@
       "Créer des vitrines personnalisées (headless).",
       "Automatiser le cycle de développement Shopify."
     ],
-    "relevant_for": ["Développeurs Shopify", "Agences Shopify", "Développeurs web spécialisés", "Architectes de solutions Shopify"]
+    "relevant_for": [
+      "Développeurs Shopify",
+      "Agences Shopify",
+      "Développeurs web spécialisés",
+      "Architectes de solutions Shopify"
+    ]
   },
   "en": {
     "verdict": {
@@ -68,7 +83,8 @@
       ],
       "avoidIf": [
         "You develop for another e-commerce platform.",
-        "You need a graphical interface for development."
+        "You need a graphical interface for development.",
+        "You're not comfortable with the command line: Shopify CLI is a CLI tool with no graphical interface."
       ],
       "threshold": "Shopify CLI is ideal for Shopify developers seeking a free and powerful tool; for other platforms, explore equivalent alternatives."
     },

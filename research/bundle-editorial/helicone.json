@@ -33,7 +33,8 @@
       ],
       "avoidIf": [
         "Vous n'avez pas d'app LLM deployée.",
-        "Le projet Helicone est en maintenance (depuis mars 2026)."
+        "Le projet Helicone est en maintenance (depuis mars 2026).",
+        "Vous n'avez pas d'application LLM deployée en production."
       ],
       "threshold": "Helicone était standard pour observabilité LLM ; depuis acquisition par Mintlify (mars 2026), préférez alternatives actives."
     },
@@ -64,7 +65,8 @@
       ],
       "avoidIf": [
         "You don't have an LLM app deployed.",
-        "The Helicone project is in maintenance (since March 2026)."
+        "The Helicone project is in maintenance (since March 2026).",
+        "You don't have a production LLM application deployed."
       ],
       "threshold": "Helicone was standard for LLM observability; since Mintlify acquisition (March 2026), prefer active alternatives."
     },

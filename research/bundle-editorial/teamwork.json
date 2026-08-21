@@ -3,18 +3,40 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Page tarifaire officielle Teamwork.com", "url": "https://www.teamwork.com/pricing/" }
+    {
+      "label": "Page tarifaire officielle Teamwork.com",
+      "url": "https://www.teamwork.com/pricing/"
+    }
   ],
   "facts": {
     "what": "Logiciel de gestion de projet orienté agences et équipes de service client : suivi du temps, facturation, rentabilité par projet et vues multiples (listes, tableaux, Gantt).",
+    "what_en": "Project management software geared toward agencies and customer service teams: time tracking, billing, project profitability, and multiple views (lists, boards, Gantt).",
     "pricing_model": "Palier gratuit puis abonnements par utilisateur (mensuel ou annuel, annuel moins cher).",
-    "free_tier": { "exists": true, "detail": "Gratuit : jusqu'à 5 utilisateurs et 5 projets, avec suivi du temps, facturation et vues de projet." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Gratuit : jusqu'à 5 utilisateurs et 5 projets, avec suivi du temps, facturation et vues de projet."
+    },
     "plans": [
-      { "name": "Free", "price": "0 $ (5 utilisateurs, 5 projets)" },
-      { "name": "Deliver", "price": "10,99 $/utilisateur/mois (annuel)" },
-      { "name": "Grow", "price": "19,99 $/utilisateur/mois (annuel)" },
-      { "name": "Scale", "price": "54,99 $/utilisateur/mois (annuel)" },
-      { "name": "Enterprise", "price": "sur devis" }
+      {
+        "name": "Free",
+        "price": "0 $ (5 utilisateurs, 5 projets)"
+      },
+      {
+        "name": "Deliver",
+        "price": "10,99 $/utilisateur/mois (annuel)"
+      },
+      {
+        "name": "Grow",
+        "price": "19,99 $/utilisateur/mois (annuel)"
+      },
+      {
+        "name": "Scale",
+        "price": "54,99 $/utilisateur/mois (annuel)"
+      },
+      {
+        "name": "Enterprise",
+        "price": "sur devis"
+      }
     ],
     "key_features": [
       "Gestion de projet multi-vues (listes, tableaux, Gantt)",
@@ -53,7 +75,11 @@
       "Suivre le temps passé et la rentabilité.",
       "Coordonner une équipe d'agence sur plusieurs projets."
     ],
-    "relevant_for": ["Agences", "Prestataires de services", "Équipes projet"]
+    "relevant_for": [
+      "Agences",
+      "Prestataires de services",
+      "Équipes projet"
+    ]
   },
   "en": {
     "verdict": {

@@ -3,17 +3,32 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-08-17",
   "sources": [
-    { "label": "Quo (formerly OpenPhone) — site officiel", "url": "https://quo.com" }
+    {
+      "label": "Quo (formerly OpenPhone) — site officiel",
+      "url": "https://quo.com"
+    }
   ],
   "facts": {
     "what": "Système téléphonique d'entreprise alimenté par l'IA, qui consolide appels, SMS, messages vocaux et contacts dans un espace de travail partagé. Les équipes collaborent sur les communications client et peuvent déléguer les appels à des agents IA.",
     "what_en": "AI-powered business phone system that consolidates calls, texts, voicemails, and contacts into a single shared workspace. Teams collaborate on customer communications and can delegate calls to AI agents.",
     "pricing_model": "Abonnement par utilisateur, avec essai gratuit.",
-    "free_tier": { "exists": true, "detail": "Essai gratuit disponible (durée à vérifier sur la page officielle)." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Essai gratuit disponible (durée à vérifier sur la page officielle)."
+    },
     "plans": [
-      { "name": "Starter", "price": "15 $/mois par utilisateur (facturation annuelle)" },
-      { "name": "Business", "price": "23 $/mois par utilisateur (facturation annuelle)" },
-      { "name": "Scale", "price": "35 $/mois par utilisateur (facturation annuelle)" }
+      {
+        "name": "Starter",
+        "price": "15 $/mois par utilisateur (facturation annuelle)"
+      },
+      {
+        "name": "Business",
+        "price": "23 $/mois par utilisateur (facturation annuelle)"
+      },
+      {
+        "name": "Scale",
+        "price": "35 $/mois par utilisateur (facturation annuelle)"
+      }
     ],
     "key_features": [
       "Numéro de téléphone partagé par équipe avec appels et SMS illimités",
@@ -32,7 +47,8 @@
       ],
       "avoidIf": [
         "Vous n'avez pas besoin de collaboration d'équipe sur les appels.",
-        "Vous préférez une solution tout gratuit."
+        "Vous préférez une solution tout gratuit.",
+        "Vous êtes un solopreneur avec peu d'appels : la solution est pensée pour les équipes collaboratives, pas pour l'usage solo."
       ],
       "threshold": "Quo convient aux petites équipes de vente et de support qui veulent une solution téléphonique centralisée et collaborative ; pour les solopreneurs avec peu d'appels, elle peut être surdimensionnée."
     },
@@ -52,7 +68,11 @@
       "Automatiser les réponses aux appels fréquentes avec Sona AI.",
       "Harmoniser CRM et communications téléphoniques."
     ],
-    "relevant_for": ["Petites équipes commerciales", "Support client", "Agences"]
+    "relevant_for": [
+      "Petites équipes commerciales",
+      "Support client",
+      "Agences"
+    ]
   },
   "en": {
     "verdict": {
@@ -63,7 +83,8 @@
       ],
       "avoidIf": [
         "You don't need team collaboration on calls.",
-        "You prefer a fully free solution."
+        "You prefer a fully free solution.",
+        "You're a solo founder with few monthly calls: the solution is designed for collaborative teams, not solo use."
       ],
       "threshold": "Quo is for small sales and support teams wanting a centralized, collaborative phone solution; for solo users with few calls, it may be oversized."
     },

@@ -3,15 +3,24 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Rork — Site officiel", "url": "https://rork.com" }
+    {
+      "label": "Rork — Site officiel",
+      "url": "https://rork.com"
+    }
   ],
   "facts": {
     "what": "Plateforme no-code alimentée par l'IA pour créer des applications mobiles et web par conversation, publier sur l'App Store et générer des revenus sans compétences en programmation.",
     "what_en": "AI-powered no-code platform to build mobile and web applications through conversation, publish to the App Store, and generate revenue without coding skills.",
     "pricing_model": "Abonnement par paliers tarifaires, avec stockage de fichiers limité selon le plan",
-    "free_tier": { "exists": false, "detail": "Pas de version gratuite ; abonnement payant requis." },
+    "free_tier": {
+      "exists": false,
+      "detail": "Pas de version gratuite ; abonnement payant requis."
+    },
     "plans": [
-      { "name": "Plans échelonnés", "price": "Montants sur la page officielle de tarification" }
+      {
+        "name": "Plans échelonnés",
+        "price": "Montants sur la page officielle de tarification"
+      }
     ],
     "key_features": [
       "Construction d'applications par conversation IA",
@@ -31,7 +40,8 @@
       ],
       "avoidIf": [
         "Vous avez besoin d'une application hautement personnalisée.",
-        "Vous recherchez une solution gratuite."
+        "Vous recherchez une solution gratuite.",
+        "Votre application nécessite du stockage important : Rork restreint le stockage (10MB à 5GB selon plan)."
       ],
       "threshold": "Rork convient pour prototyper et lancer rapidement des applications simples avec l'IA ; pour des besoins complexes, explorez des solutions de développement plus flexibles."
     },
@@ -52,7 +62,11 @@
       "Créer des jeux mobiles simples.",
       "Publier une application MVP sur l'App Store."
     ],
-    "relevant_for": ["Entrepreneurs non-technique", "Créateurs d'applications mobiles", "Développeurs no-code"]
+    "relevant_for": [
+      "Entrepreneurs non-technique",
+      "Créateurs d'applications mobiles",
+      "Développeurs no-code"
+    ]
   },
   "en": {
     "verdict": {
@@ -63,7 +77,8 @@
       ],
       "avoidIf": [
         "You need a highly customized application.",
-        "You seek a free solution."
+        "You seek a free solution.",
+        "Your app needs significant storage: Rork restricts file storage (10MB to 5GB per plan)."
       ],
       "threshold": "Rork is ideal for prototyping and quickly launching simple AI-assisted applications; for complex needs, explore more flexible development solutions."
     },

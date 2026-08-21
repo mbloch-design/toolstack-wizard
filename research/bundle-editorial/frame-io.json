@@ -4,10 +4,14 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Frame.io — description et rachat Adobe (Wikipédia)", "url": "https://en.wikipedia.org/wiki/Frame.io" }
+    {
+      "label": "Frame.io — description et rachat Adobe (Wikipédia)",
+      "url": "https://en.wikipedia.org/wiki/Frame.io"
+    }
   ],
   "facts": {
     "what": "Plateforme de revue et de collaboration vidéo, rachetée par Adobe (2021).",
+    "what_en": "Video review and collaboration platform, acquired by Adobe (2021).",
     "pricing_note": "Adobe : disponible en offres dédiées et via Creative Cloud (voir la fiche de la suite).",
     "key_features": [
       "Revue de contenus vidéo à distance",
@@ -46,7 +50,11 @@
       "Centraliser les retours client sur une vidéo.",
       "Relier tournage et post-production (Camera to Cloud)."
     ],
-    "relevant_for": ["Monteurs vidéo", "Studios de production", "Équipes créatives"]
+    "relevant_for": [
+      "Monteurs vidéo",
+      "Studios de production",
+      "Équipes créatives"
+    ]
   },
   "en": {
     "verdict": {

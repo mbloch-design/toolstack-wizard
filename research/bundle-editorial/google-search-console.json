@@ -31,7 +31,8 @@
       ],
       "avoidIf": [
         "Vous avez besoin de fonctionnalités SEO avancées (analyse de backlinks détaillée, recommandations IA poussées).",
-        "Vous privilégiez un seul outil tout-en-un au-delà de la search."
+        "Vous privilégiez un seul outil tout-en-un au-delà de la search.",
+        "Vous avez besoin d'analyses SEO avancées au-delà de Google Search."
       ],
       "threshold": "Google Search Console est indispensable pour tout propriétaire de site ; gratuit et officiel, c'est un passage obligé pour le SEO basique et la communication avec Google."
     },
@@ -65,7 +66,8 @@
       ],
       "avoidIf": [
         "You need advanced SEO features (detailed backlink analysis, strong AI recommendations).",
-        "You prefer a single all-in-one tool beyond search."
+        "You prefer a single all-in-one tool beyond search.",
+        "You need advanced SEO analytics beyond Google Search."
       ],
       "threshold": "Google Search Console is mandatory for any site owner; free and official, it's essential for basic SEO and communicating with Google."
     },

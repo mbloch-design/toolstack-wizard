@@ -3,16 +3,32 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Tezza: Aesthetic Photo Editor (App Store — Apple)", "url": "https://apps.apple.com/us/app/tezza-aesthetic-photo-editor/id1393061654" }
+    {
+      "label": "Tezza: Aesthetic Photo Editor (App Store — Apple)",
+      "url": "https://apps.apple.com/us/app/tezza-aesthetic-photo-editor/id1393061654"
+    }
   ],
   "facts": {
     "what": "App d'édition photo et vidéo (iOS/Android) pour créateurs, axée sur l'esthétique film : presets photo, effets vidéo, modèles de stories, collages, feed planner et édition par lot.",
+    "what_en": "Photo and video editing app (iOS/Android) for creators, focused on film aesthetics: photo presets, video effects, story templates, collages, feed planner, and batch editing.",
     "pricing_model": "Palier gratuit limité ; abonnements photo ou photo+vidéo (mensuel ou annuel).",
-    "free_tier": { "exists": true, "detail": "Gratuit avec fonctions limitées ; abonnement pour débloquer presets et fonctions." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Gratuit avec fonctions limitées ; abonnement pour débloquer presets et fonctions."
+    },
     "plans": [
-      { "name": "Gratuit", "price": "0 $ (fonctions limitées)" },
-      { "name": "Photo", "price": "1,99 $/mois ou 19,99 $/an" },
-      { "name": "Photo + Vidéo", "price": "3,99 $/mois ou 39,99 $/an" }
+      {
+        "name": "Gratuit",
+        "price": "0 $ (fonctions limitées)"
+      },
+      {
+        "name": "Photo",
+        "price": "1,99 $/mois ou 19,99 $/an"
+      },
+      {
+        "name": "Photo + Vidéo",
+        "price": "3,99 $/mois ou 39,99 $/an"
+      }
     ],
     "key_features": [
       "40+ presets photo au rendu film",
@@ -51,7 +67,11 @@
       "Planifier un feed cohérent.",
       "Éditer des visuels par lot pour les réseaux."
     ],
-    "relevant_for": ["Créateurs de contenu", "Influenceurs", "Community managers"]
+    "relevant_for": [
+      "Créateurs de contenu",
+      "Influenceurs",
+      "Community managers"
+    ]
   },
   "en": {
     "verdict": {

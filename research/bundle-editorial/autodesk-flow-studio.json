@@ -33,7 +33,8 @@
       ],
       "avoidIf": [
         "Vous n'avez besoin que d'outils traditionnels.",
-        "Votre budget VFX est très serré."
+        "Votre budget VFX est très serré.",
+        "Vous n'avez pas d'expérience en compositing ou animation."
       ],
       "threshold": "Flow Studio accélère la post-production VFX pour studios et creators ; pour des projets simples, les outils traditionnels suffisent."
     },
@@ -64,7 +65,8 @@
       ],
       "avoidIf": [
         "You only use traditional editing tools.",
-        "Your VFX budget is minimal."
+        "Your VFX budget is minimal.",
+        "You lack experience with compositing or animation."
       ],
       "threshold": "Flow Studio speeds up VFX post-production for studios and creators; for simple projects, traditional tools suffice."
     },

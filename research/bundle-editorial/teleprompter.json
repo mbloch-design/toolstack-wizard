@@ -3,16 +3,32 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Page tarifaire officielle Teleprompter.com", "url": "https://www.teleprompter.com/pricing" }
+    {
+      "label": "Page tarifaire officielle Teleprompter.com",
+      "url": "https://www.teleprompter.com/pricing"
+    }
   ],
   "facts": {
     "what": "Application de téléprompteur (iPhone, iPad, macOS) : lit scripts, discours et paroles avec défilement automatique ou piloté par la voix, miroir, réglage de vitesse et enregistrement vidéo intégré.",
+    "what_en": "Teleprompter app (iPhone, iPad, macOS): reads scripts, speeches, and lyrics with automatic or voice-controlled scrolling, mirroring, speed adjustment, and integrated video recording.",
     "pricing_model": "Palier gratuit (avec filigrane) puis Pro (mensuel ou annuel, annuel moins cher), plus des offres Max et Team.",
-    "free_tier": { "exists": true, "detail": "Plan Starter gratuit, avec un léger filigrane sur la vidéo finale." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Plan Starter gratuit, avec un léger filigrane sur la vidéo finale."
+    },
     "plans": [
-      { "name": "Starter", "price": "0 $ (filigrane)" },
-      { "name": "Pro", "price": "7,50 $/mois (annuel), 19,99 $ en mensuel — 4K, défilement auto, sous-titres" },
-      { "name": "Max / Team", "price": "paliers supérieurs (voir site officiel)" }
+      {
+        "name": "Starter",
+        "price": "0 $ (filigrane)"
+      },
+      {
+        "name": "Pro",
+        "price": "7,50 $/mois (annuel), 19,99 $ en mensuel — 4K, défilement auto, sous-titres"
+      },
+      {
+        "name": "Max / Team",
+        "price": "paliers supérieurs (voir site officiel)"
+      }
     ],
     "key_features": [
       "Défilement automatique et piloté par la voix",
@@ -51,7 +67,11 @@
       "Enregistrer une vidéo avec prompteur intégré.",
       "Piloter le défilement à la voix."
     ],
-    "relevant_for": ["Créateurs de contenu", "Présentateurs", "Formateurs vidéo"]
+    "relevant_for": [
+      "Créateurs de contenu",
+      "Présentateurs",
+      "Formateurs vidéo"
+    ]
   },
   "en": {
     "verdict": {

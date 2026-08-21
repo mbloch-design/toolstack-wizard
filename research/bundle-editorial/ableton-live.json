@@ -3,16 +3,32 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Ableton — éditions et tarifs (site officiel)", "url": "https://www.ableton.com/en/shop/live/" }
+    {
+      "label": "Ableton — éditions et tarifs (site officiel)",
+      "url": "https://www.ableton.com/en/shop/live/"
+    }
   ],
   "facts": {
     "what": "Station de travail audio numérique (DAW) réputée pour la production électronique et le live, avec sa Session View non linéaire (clips/scènes) en plus de l'Arrangement View classique.",
+    "what_en": "Digital audio workstation (DAW) renowned for electronic production and live performance, with its non-linear Session View (clips/scenes) in addition to the classic Arrangement View.",
     "pricing_model": "Licence perpétuelle par édition (achat unique), option rent-to-own sur l'édition haute. Trois éditions : Intro, Standard, Suite.",
-    "free_tier": { "exists": false, "detail": "Essai gratuit ; pas de version gratuite permanente. Achat de licence par édition." },
+    "free_tier": {
+      "exists": false,
+      "detail": "Essai gratuit ; pas de version gratuite permanente. Achat de licence par édition."
+    },
     "plans": [
-      { "name": "Intro", "price": "99 $ (16 pistes/scènes, pour débuter)" },
-      { "name": "Standard", "price": "349 $ (sans limites, plus d'outils)" },
-      { "name": "Suite", "price": "749 $ (tout inclus + Max for Live)" }
+      {
+        "name": "Intro",
+        "price": "99 $ (16 pistes/scènes, pour débuter)"
+      },
+      {
+        "name": "Standard",
+        "price": "349 $ (sans limites, plus d'outils)"
+      },
+      {
+        "name": "Suite",
+        "price": "749 $ (tout inclus + Max for Live)"
+      }
     ],
     "key_features": [
       "Session View non linéaire (clips, scènes) pour le live",
@@ -51,7 +67,11 @@
       "Préparer et jouer un set en live.",
       "Concevoir des sons avec Max for Live."
     ],
-    "relevant_for": ["Producteurs de musique", "DJ / live performers", "Sound designers"]
+    "relevant_for": [
+      "Producteurs de musique",
+      "DJ / live performers",
+      "Sound designers"
+    ]
   },
   "en": {
     "verdict": {

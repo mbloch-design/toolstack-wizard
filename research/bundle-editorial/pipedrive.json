@@ -3,18 +3,36 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-08-17",
   "sources": [
-    { "label": "Pipedrive — site officiel", "url": "https://pipedrive.com" }
+    {
+      "label": "Pipedrive — site officiel",
+      "url": "https://pipedrive.com"
+    }
   ],
   "facts": {
     "what": "Plateforme CRM spécialisée pour les équipes de vente, avec pipeline visuel, suivi des activités, automatisation et intégrations pour optimiser le processus de vente de bout en bout.",
     "what_en": "CRM platform specialized for sales teams, featuring visual pipeline, activity tracking, automation, and integrations to optimize the entire sales process.",
     "pricing_model": "Abonnement par utilisateur (quatre niveaux), avec essai gratuit de 14 jours.",
-    "free_tier": { "exists": false, "detail": "Pas de version gratuite permanente, mais essai gratuit de 14 jours disponible." },
+    "free_tier": {
+      "exists": false,
+      "detail": "Pas de version gratuite permanente, mais essai gratuit de 14 jours disponible."
+    },
     "plans": [
-      { "name": "Lite", "price": "14 $/mois par utilisateur (facturation annuelle)" },
-      { "name": "Growth", "price": "39 $/mois par utilisateur (facturation annuelle)" },
-      { "name": "Premium", "price": "59 $/mois par utilisateur (facturation annuelle)" },
-      { "name": "Ultimate", "price": "79 $/mois par utilisateur (facturation annuelle)" }
+      {
+        "name": "Lite",
+        "price": "14 $/mois par utilisateur (facturation annuelle)"
+      },
+      {
+        "name": "Growth",
+        "price": "39 $/mois par utilisateur (facturation annuelle)"
+      },
+      {
+        "name": "Premium",
+        "price": "59 $/mois par utilisateur (facturation annuelle)"
+      },
+      {
+        "name": "Ultimate",
+        "price": "79 $/mois par utilisateur (facturation annuelle)"
+      }
     ],
     "key_features": [
       "Pipeline visuel avec gestion des étapes de vente",
@@ -33,7 +51,8 @@
       ],
       "avoidIf": [
         "Vous cherchez un CRM gratuit.",
-        "Votre processus de vente ne rentre pas dans un modèle d'entonnoir."
+        "Votre processus de vente ne rentre pas dans un modèle d'entonnoir.",
+        "Vous avez un processus de vente non-linéaire : Pipedrive optimise les entonnoirs classiques, pas les cycles complexes ou matrix."
       ],
       "threshold": "Pipedrive s'impose pour les équipes de vente cherchant une vue visuelle et structurée de leur pipeline ; pour un solopreneur sans besoin d'automatisation, une solution plus légère suffit."
     },
@@ -53,7 +72,11 @@
       "Automatiser les tâches répétitives de suivi.",
       "Intégrer email et CRM dans un flux unifié."
     ],
-    "relevant_for": ["Équipes de vente", "Directeurs commerciaux", "Agences"]
+    "relevant_for": [
+      "Équipes de vente",
+      "Directeurs commerciaux",
+      "Agences"
+    ]
   },
   "en": {
     "verdict": {
@@ -64,7 +87,8 @@
       ],
       "avoidIf": [
         "You're looking for a free CRM.",
-        "Your sales process doesn't fit a funnel model."
+        "Your sales process doesn't fit a funnel model.",
+        "You have a non-linear sales process: Pipedrive optimizes classic funnels, not complex or matrix-based cycles."
       ],
       "threshold": "Pipedrive is ideal for sales teams seeking a visual and structured pipeline view; for solo users without automation needs, a lighter solution suffices."
     },

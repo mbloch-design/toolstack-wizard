@@ -3,13 +3,19 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "StreamElements — Overlays et Widgets (site officiel)", "url": "https://streamelements.com/features/overlays" }
+    {
+      "label": "StreamElements — Overlays et Widgets (site officiel)",
+      "url": "https://streamelements.com/features/overlays"
+    }
   ],
   "facts": {
     "what": "Plateforme gratuite de widgets et overlays pour le streaming en direct sur Twitch, YouTube et Facebook : alertes, super themes, générateur d'overlay.",
     "what_en": "Free streaming widget and overlay platform for live streaming on Twitch, YouTube, and Facebook: alerts, super themes, overlay builder.",
     "pricing_model": "Entièrement gratuit. Monétisation via marketplace de sponsoring et commissions sur les donations.",
-    "free_tier": { "exists": true, "detail": "Tous les outils sont gratuits et illimités, sans version payante." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Tous les outils sont gratuits et illimités, sans version payante."
+    },
     "plans": [],
     "key_features": [
       "Générateur d'overlays personnalisables",
@@ -30,7 +36,8 @@
       ],
       "avoidIf": [
         "Vous avez besoin d'une suite plus large (enregistrement, édition, multistream).",
-        "Vous cherchez une solution avec support pro ou contrats de service."
+        "Vous cherchez une solution avec support pro ou contrats de service.",
+        "Vous n'utilisez pas de plateforme de streaming."
       ],
       "threshold": "StreamElements est le choix évident pour les overlays gratuits ; presque tous les streamers l'utilisent, peu importe le niveau."
     },
@@ -52,7 +59,11 @@
       "Utiliser des écrans entre les streams (BRB, Ending).",
       "Intégrer des widgets de chat ou de tips en live."
     ],
-    "relevant_for": ["Streamers Twitch/YouTube", "Content creators", "Esports teams"]
+    "relevant_for": [
+      "Streamers Twitch/YouTube",
+      "Content creators",
+      "Esports teams"
+    ]
   },
   "en": {
     "verdict": {
@@ -63,7 +74,8 @@
       ],
       "avoidIf": [
         "You need a broader suite (recording, editing, multistream).",
-        "You're looking for professional support or service contracts."
+        "You're looking for professional support or service contracts.",
+        "You don't use a streaming platform."
       ],
       "threshold": "StreamElements is the obvious choice for free overlays; nearly all streamers use it, regardless of level."
     },

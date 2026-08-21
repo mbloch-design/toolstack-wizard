@@ -3,17 +3,32 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Sanity — Plateforme CMS headless (site officiel)", "url": "https://www.sanity.io" }
+    {
+      "label": "Sanity — Plateforme CMS headless (site officiel)",
+      "url": "https://www.sanity.io"
+    }
   ],
   "facts": {
     "what": "Plateforme CMS headless (backend de contenu) conçue pour les opérations de contenu alimentées par l'IA, avec studio d'édition personnalisable, automatisation par agents IA et support omnichannel.",
     "what_en": "Headless CMS platform designed for AI-powered content operations, featuring customizable editing studio, AI agent automation, and omnichannel support.",
     "pricing_model": "SaaS par abonnement avec plans gratuit, Growth et Entreprise, plus crédits IA supplémentaires optionnels",
-    "free_tier": { "exists": true, "detail": "Plan gratuit disponible pour débuter. Plans payants Growth et Entreprise avec fonctionnalités avancées." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Plan gratuit disponible pour débuter. Plans payants Growth et Entreprise avec fonctionnalités avancées."
+    },
     "plans": [
-      { "name": "Free", "price": "Gratuit" },
-      { "name": "Growth", "price": "Essai gratuit available, prix montants sur le site officiel" },
-      { "name": "Enterprise", "price": "Montants sur la page officielle de tarification" }
+      {
+        "name": "Free",
+        "price": "Gratuit"
+      },
+      {
+        "name": "Growth",
+        "price": "Essai gratuit available, prix montants sur le site officiel"
+      },
+      {
+        "name": "Enterprise",
+        "price": "Montants sur la page officielle de tarification"
+      }
     ],
     "key_features": [
       "Sanity Studio — Interface d'édition de contenu personnalisable",
@@ -35,7 +50,8 @@
       ],
       "avoidIf": [
         "Vous préférez une solution tout-en-un avec hosting intégré.",
-        "Vous avez un budget très serré (bien qu'un plan gratuit existe)."
+        "Vous avez un budget très serré (bien qu'un plan gratuit existe).",
+        "Vous êtes nouveau à la gestion de contenu : Sanity a une courbe d'apprentissage modérée pour les novices."
       ],
       "threshold": "Sanity s'impose pour les équipes de contenu modernes cherchant une automatisation par l'IA ; pour une gestion simple et ponctuelle, explorez des alternatives plus légères."
     },
@@ -56,7 +72,12 @@
       "Automatiser la création de contenu avec des agents IA.",
       "Distribuer du contenu structuré à plusieurs canaux."
     ],
-    "relevant_for": ["Équipes de contenu", "Agences digitales", "Entreprises média", "Startups SaaS"]
+    "relevant_for": [
+      "Équipes de contenu",
+      "Agences digitales",
+      "Entreprises média",
+      "Startups SaaS"
+    ]
   },
   "en": {
     "verdict": {
@@ -67,7 +88,8 @@
       ],
       "avoidIf": [
         "You prefer an all-in-one solution with integrated hosting.",
-        "You have a very tight budget (though a free plan exists)."
+        "You have a very tight budget (though a free plan exists).",
+        "You're new to content management: Sanity has a moderate learning curve for beginners."
       ],
       "threshold": "Sanity is ideal for modern content teams seeking AI-driven automation; for simple and occasional use, explore lighter alternatives."
     },

@@ -3,18 +3,36 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Motion Bro — Plugin & Marketplace (site officiel)", "url": "https://motionbro.com/" }
+    {
+      "label": "Motion Bro — Plugin & Marketplace (site officiel)",
+      "url": "https://motionbro.com/"
+    }
   ],
   "facts": {
     "what": "Plugin et marché d'assets pour After Effects et Premiere Pro, fournissant accès à un panel de transitions, presets, lower thirds et effets sonores directement intégrés à la timeline.",
     "what_en": "Plugin and asset marketplace for After Effects and Premiere Pro, providing access to a library of transitions, presets, lower thirds, and sound effects directly within the timeline.",
     "pricing_model": "Plugin gratuit avec 1 400 assets inclus ; bundles thématiques vendus à l'unité (non-abonnement).",
-    "free_tier": { "exists": true, "detail": "Plugin gratuit pour tous + 1 400 assets. Accès illimité à la bibliothèque de transitions, presets et effets." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Plugin gratuit pour tous + 1 400 assets. Accès illimité à la bibliothèque de transitions, presets et effets."
+    },
     "plans": [
-      { "name": "Essential Transitions Bundle (After Effects) — Personal", "price": "$55 (one-time purchase)" },
-      { "name": "Essential Transitions Bundle (After Effects) — Commercial", "price": "$110 (one-time purchase)" },
-      { "name": "Essential Transitions Bundle (Premiere Pro) — Personal", "price": "$68 (one-time purchase)" },
-      { "name": "Essential Transitions Bundle (Premiere Pro) — Commercial", "price": "$136 (one-time purchase)" }
+      {
+        "name": "Essential Transitions Bundle (After Effects) — Personal",
+        "price": "$55 (one-time purchase)"
+      },
+      {
+        "name": "Essential Transitions Bundle (After Effects) — Commercial",
+        "price": "$110 (one-time purchase)"
+      },
+      {
+        "name": "Essential Transitions Bundle (Premiere Pro) — Personal",
+        "price": "$68 (one-time purchase)"
+      },
+      {
+        "name": "Essential Transitions Bundle (Premiere Pro) — Commercial",
+        "price": "$136 (one-time purchase)"
+      }
     ],
     "key_features": [
       "5 000+ transitions, presets, lower thirds et boucles audio",
@@ -33,7 +51,8 @@
       ],
       "avoidIf": [
         "Vous avez besoin d'un DAW ou suite complète (Motion Bro est un complément, pas un logiciel autonome).",
-        "Vous refusez tout achat, même ponctuel."
+        "Vous refusez tout achat, même ponctuel.",
+        "Vos projets demandent plusieurs types de transitions : la bibliothèque est fragmentée en bundles payants distincts."
       ],
       "threshold": "Motion Bro excelle pour enrichir vos montages sans engagement d'abonnement ; idéal si vous maîtrisez déjà After Effects ou Premiere."
     },
@@ -54,7 +73,11 @@
       "Enrichir une production YouTube ou TikTok avec des transitions polies.",
       "Concevoir rapidement des lower thirds pour chaîne de diffusion."
     ],
-    "relevant_for": ["Monteurs vidéo", "Producteurs de contenu", "Agences créatives"]
+    "relevant_for": [
+      "Monteurs vidéo",
+      "Producteurs de contenu",
+      "Agences créatives"
+    ]
   },
   "en": {
     "verdict": {
@@ -65,7 +88,8 @@
       ],
       "avoidIf": [
         "You need a standalone DAW or editing suite (Motion Bro is an add-on).",
-        "You avoid any purchases, even one-time."
+        "You avoid any purchases, even one-time.",
+        "Your projects need multiple transition types: the library is split across separate paid bundles."
       ],
       "threshold": "Motion Bro shines for enhancing edits without subscription commitment; perfect if you're already in After Effects or Premiere."
     },

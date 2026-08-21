@@ -3,15 +3,30 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Page tarifaire officielle Basecamp", "url": "https://basecamp.com/pricing" }
+    {
+      "label": "Page tarifaire officielle Basecamp",
+      "url": "https://basecamp.com/pricing"
+    }
   ],
   "facts": {
     "what": "Outil de gestion de projet et de collaboration d'équipe qui centralise communication, tâches et fichiers.",
+    "what_en": "Project management and team collaboration tool that centralizes communication, tasks, and files.",
     "pricing_model": "Palier gratuit limité, plan Pro par utilisateur, plan Pro Unlimited à tarif forfaitaire.",
-    "free_tier": { "exists": true, "detail": "Gratuit : 1 projet, 1 Go de stockage, jusqu'à 20 utilisateurs." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Gratuit : 1 projet, 1 Go de stockage, jusqu'à 20 utilisateurs."
+    },
     "plans": [
-      { "name": "Pro", "price": "15 $/utilisateur/mois", "detail": "projets illimités, 500 Go, essai 30 jours" },
-      { "name": "Pro Unlimited", "price": "299 $/mois (annuel)", "detail": "utilisateurs et projets illimités, 5 To, essai 60 jours" }
+      {
+        "name": "Pro",
+        "price": "15 $/utilisateur/mois",
+        "detail": "projets illimités, 500 Go, essai 30 jours"
+      },
+      {
+        "name": "Pro Unlimited",
+        "price": "299 $/mois (annuel)",
+        "detail": "utilisateurs et projets illimités, 5 To, essai 60 jours"
+      }
     ],
     "key_features": [
       "Message boards (annonces) et Docs & Files",
@@ -50,7 +65,11 @@
       "Suivre l'avancement de projets simples sans surcharge d'outil.",
       "Regrouper une grande équipe sous un tarif forfaitaire à utilisateurs illimités."
     ],
-    "relevant_for": ["Petites équipes", "PME", "Agences"]
+    "relevant_for": [
+      "Petites équipes",
+      "PME",
+      "Agences"
+    ]
   },
   "en": {
     "verdict": {

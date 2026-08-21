@@ -32,7 +32,8 @@
       ],
       "avoidIf": [
         "Vous avez besoin d'historique illimité gratuitement.",
-        "Vous utilisiez Fathom (CRM deep)."
+        "Vous utilisiez Fathom (CRM deep).",
+        "Vous avez besoin d'historique illimité sans frais supplémentaires."
       ],
       "threshold": "Granola excelle pour équipes Notion ; pour Salesforce/équipes sales, Fathom est mieux."
     },
@@ -63,7 +64,8 @@
       ],
       "avoidIf": [
         "You need unlimited history for free.",
-        "You used Fathom (CRM-deep)."
+        "You used Fathom (CRM-deep).",
+        "You need unlimited history without extra costs."
       ],
       "threshold": "Granola excels for Notion teams; for Salesforce/sales teams, Fathom is better."
     },

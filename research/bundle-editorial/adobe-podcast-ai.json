@@ -4,10 +4,14 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Adobe Podcast — page officielle", "url": "https://podcast.adobe.com/" }
+    {
+      "label": "Adobe Podcast — page officielle",
+      "url": "https://podcast.adobe.com/"
+    }
   ],
   "facts": {
     "what": "Suite d'outils audio par IA d'Adobe pour enregistrer, éditer et améliorer la voix (podcasts, voix-off).",
+    "what_en": "Adobe's suite of AI-powered audio tools for recording, editing, and enhancing voice and sound quality.",
     "pricing_note": "Outils web (dont un niveau gratuit) et fonctions liées à l'écosystème Adobe (voir la fiche de la suite).",
     "key_features": [
       "Amélioration de la voix par IA (Enhance Speech)",
@@ -46,7 +50,11 @@
       "Enregistrer et éditer une voix-off dans le navigateur.",
       "Obtenir un rendu voix « qualité studio » rapidement."
     ],
-    "relevant_for": ["Podcasteurs", "Créateurs de contenu", "Voix-off"]
+    "relevant_for": [
+      "Podcasteurs",
+      "Créateurs de contenu",
+      "Voix-off"
+    ]
   },
   "en": {
     "verdict": {

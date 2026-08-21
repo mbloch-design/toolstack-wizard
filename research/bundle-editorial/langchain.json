@@ -33,7 +33,8 @@
       ],
       "avoidIf": [
         "Vous ne codez pas (utilisez UI builder).",
-        "Votre stack est très spécialiste (pas besoin abstraction)."
+        "Votre stack est très spécialiste (pas besoin abstraction).",
+        "Vous préférez une UI/builder plutôt que de coder."
       ],
       "threshold": "LangChain s'impose pour dev LLM ; pour UI/no-code, essayez des builders."
     },
@@ -64,7 +65,8 @@
       ],
       "avoidIf": [
         "You don't code (use UI builder).",
-        "Your stack is very specialist (no abstraction needed)."
+        "Your stack is very specialist (no abstraction needed).",
+        "You prefer a UI/builder rather than coding."
       ],
       "threshold": "LangChain is standard for LLM dev; for UI/no-code, try builders."
     },

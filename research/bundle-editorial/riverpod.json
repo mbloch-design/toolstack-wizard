@@ -3,15 +3,24 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Riverpod — Documentation officielle (site officiel)", "url": "https://riverpod.dev" }
+    {
+      "label": "Riverpod — Documentation officielle (site officiel)",
+      "url": "https://riverpod.dev"
+    }
   ],
   "facts": {
     "what": "Framework de gestion d'état réactive pour les applications Dart et Flutter, offrant une gestion automatique du cache, la programmation déclarative et une sécurité de compilation.",
     "what_en": "Reactive state management framework for Dart and Flutter applications, providing automatic cache management, declarative programming, and compile-time safety.",
     "pricing_model": "Entièrement gratuit, financé par la communauté et les sponsors",
-    "free_tier": { "exists": true, "detail": "Aucune version payante. Logiciel libre avec code source public." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Aucune version payante. Logiciel libre avec code source public."
+    },
     "plans": [
-      { "name": "Unique plan", "price": "Gratuit" }
+      {
+        "name": "Unique plan",
+        "price": "Gratuit"
+      }
     ],
     "key_features": [
       "Programmation déclarative pour la logique métier",
@@ -32,7 +41,8 @@
       ],
       "avoidIf": [
         "Vous développez pour d'autres langages ou frameworks.",
-        "Vous cherchez une solution payante avec support dédié premium."
+        "Vous cherchez une solution payante avec support dédié premium.",
+        "Votre équipe est moins expérimentée : Riverpod a une courbe d'apprentissage modérée et une communauté plus petite pour l'aide."
       ],
       "threshold": "Riverpod s'impose pour la gestion d'état réactive en Flutter/Dart ; pour d'autres écosystèmes, explorez des alternatives spécialisées."
     },
@@ -52,7 +62,11 @@
       "Automatiser la gestion du cache et des requêtes réseau.",
       "Concevoir une architecture testable et maintenable."
     ],
-    "relevant_for": ["Développeurs Flutter", "Développeurs Dart", "Architectes d'applications mobiles"]
+    "relevant_for": [
+      "Développeurs Flutter",
+      "Développeurs Dart",
+      "Architectes d'applications mobiles"
+    ]
   },
   "en": {
     "verdict": {
@@ -63,7 +77,8 @@
       ],
       "avoidIf": [
         "You develop for other languages or frameworks.",
-        "You seek a paid solution with premium dedicated support."
+        "You seek a paid solution with premium dedicated support.",
+        "Your team is less experienced: Riverpod has a moderate learning curve and smaller community for support."
       ],
       "threshold": "Riverpod is ideal for reactive state management in Flutter/Dart; for other ecosystems, explore specialized alternatives."
     },

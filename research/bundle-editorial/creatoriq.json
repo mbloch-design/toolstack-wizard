@@ -3,14 +3,24 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "CreatorIQ — plateforme de creator marketing (site officiel)", "url": "https://www.creatoriq.com/" }
+    {
+      "label": "CreatorIQ — plateforme de creator marketing (site officiel)",
+      "url": "https://www.creatoriq.com/"
+    }
   ],
   "facts": {
     "what": "Plateforme entreprise de creator/influence marketing : découverte de créateurs sur une base indexée, gestion de campagnes, workflows relationnels, analytics et reporting, avec de l'IA sur la découverte et la mesure.",
+    "what_en": "Enterprise creator/influencer marketing platform: creator discovery on an indexed database, campaign management, relationship workflows, analytics and reporting, with AI for discovery and measurement.",
     "pricing_model": "Sur devis, contrat annuel, non public. Positionnée entreprise (grands comptes).",
-    "free_tier": { "exists": false, "detail": "Pas de plan mensuel ni de tarif public ; contrat annuel entreprise, ticket d'entrée élevé." },
+    "free_tier": {
+      "exists": false,
+      "detail": "Pas de plan mensuel ni de tarif public ; contrat annuel entreprise, ticket d'entrée élevé."
+    },
     "plans": [
-      { "name": "Entreprise", "price": "sur devis, contrat annuel (ticket d'entrée de l'ordre de plusieurs dizaines de milliers de dollars/an)" }
+      {
+        "name": "Entreprise",
+        "price": "sur devis, contrat annuel (ticket d'entrée de l'ordre de plusieurs dizaines de milliers de dollars/an)"
+      }
     ],
     "key_features": [
       "Découverte de créateurs (grande base indexée)",
@@ -49,7 +59,11 @@
       "Découvrir et qualifier des créateurs.",
       "Mesurer la performance des campagnes."
     ],
-    "relevant_for": ["Grandes marques", "Agences d'influence", "Équipes marketing entreprise"]
+    "relevant_for": [
+      "Grandes marques",
+      "Agences d'influence",
+      "Équipes marketing entreprise"
+    ]
   },
   "en": {
     "verdict": {

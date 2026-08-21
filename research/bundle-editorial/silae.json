@@ -3,12 +3,19 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Analyse tarifaire Silae Paie (Apogea, partenaire/intégrateur)", "url": "https://www.apogea.fr/tarif-logiciel-silae-paie/" }
+    {
+      "label": "Analyse tarifaire Silae Paie (Apogea, partenaire/intégrateur)",
+      "url": "https://www.apogea.fr/tarif-logiciel-silae-paie/"
+    }
   ],
   "facts": {
     "what": "Logiciel de paie SaaS très répandu dans les cabinets d'expertise comptable français, à modèle de distribution indirect.",
+    "what_en": "Widely-used SaaS payroll software in French accounting firms, with an indirect distribution model.",
     "pricing_model": "Sur devis, principalement au bulletin. Vendu via un réseau de cabinets partenaires, pas directement aux entreprises.",
-    "free_tier": { "exists": false, "detail": "Aucun palier gratuit ; tarif au bulletin (dégressif selon le volume), monté des dossiers inclus, uniquement sur devis." },
+    "free_tier": {
+      "exists": false,
+      "detail": "Aucun palier gratuit ; tarif au bulletin (dégressif selon le volume), monté des dossiers inclus, uniquement sur devis."
+    },
     "distribution": "Modèle indirect : ~5 500 cabinets partenaires saisissent les variables de paie ; l'entreprise reçoit ses bulletins.",
     "key_features": [
       "Moteur de paie automatisé conforme (droit français)",
@@ -47,7 +54,11 @@
       "Automatiser la génération et la diffusion des bulletins.",
       "Recevoir ses bulletins via un cabinet partenaire Silae."
     ],
-    "relevant_for": ["Cabinets d'expertise comptable", "Services paie", "PME via partenaire"]
+    "relevant_for": [
+      "Cabinets d'expertise comptable",
+      "Services paie",
+      "PME via partenaire"
+    ]
   },
   "en": {
     "verdict": {

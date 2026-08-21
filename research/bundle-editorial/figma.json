@@ -3,16 +3,32 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Page tarifaire officielle Figma", "url": "https://www.figma.com/pricing/" }
+    {
+      "label": "Page tarifaire officielle Figma",
+      "url": "https://www.figma.com/pricing/"
+    }
   ],
   "facts": {
     "what": "Plateforme de design d'interface et de collaboration en temps réel, dans le navigateur.",
+    "what_en": "Interface design and real-time collaboration platform in the browser.",
     "pricing_model": "Palier Starter gratuit, puis Professional, Organization et Enterprise (par éditeur/siège).",
-    "free_tier": { "exists": true, "detail": "Starter gratuit : brouillons illimités, accès aux UI kits/templates, 150 crédits IA/jour (max 500/mois)." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Starter gratuit : brouillons illimités, accès aux UI kits/templates, 150 crédits IA/jour (max 500/mois)."
+    },
     "plans": [
-      { "name": "Professional", "price": "16 $/mois par siège" },
-      { "name": "Organization", "price": "55 $/mois par siège (annuel)" },
-      { "name": "Enterprise", "price": "90 $/mois par siège (annuel)" }
+      {
+        "name": "Professional",
+        "price": "16 $/mois par siège"
+      },
+      {
+        "name": "Organization",
+        "price": "55 $/mois par siège (annuel)"
+      },
+      {
+        "name": "Enterprise",
+        "price": "90 $/mois par siège (annuel)"
+      }
     ],
     "key_features": [
       "Design d'interface (composants, auto layout, édition vectorielle)",
@@ -51,7 +67,11 @@
       "Préparer le handoff développeur via Dev Mode.",
       "Animer un atelier ou un diagramme d'équipe avec FigJam."
     ],
-    "relevant_for": ["Designers produit/UI", "Équipes produit", "Studios et agences"]
+    "relevant_for": [
+      "Designers produit/UI",
+      "Équipes produit",
+      "Studios et agences"
+    ]
   },
   "en": {
     "verdict": {

@@ -3,16 +3,32 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Page tarifaire officielle Similarweb (sur devis)", "url": "https://www.similarweb.com/corp/pricing/" },
-    { "label": "Analyse tarifaire tierce (Vendr marketplace)", "url": "https://www.vendr.com/marketplace/similarweb" }
+    {
+      "label": "Page tarifaire officielle Similarweb (sur devis)",
+      "url": "https://www.similarweb.com/corp/pricing/"
+    },
+    {
+      "label": "Analyse tarifaire tierce (Vendr marketplace)",
+      "url": "https://www.vendr.com/marketplace/similarweb"
+    }
   ],
   "facts": {
     "what": "Plateforme de web/market intelligence : estimation de trafic, analyse concurrentielle et parts de marché.",
+    "what_en": "Web and market intelligence platform: traffic estimation, competitive analysis, and market share.",
     "pricing_model": "Pas de plan gratuit permanent (essai 7 jours avec carte). Palier Starter, puis paliers business sur devis.",
-    "free_tier": { "exists": false, "detail": "Essai 7 jours (accès limité, ~15 actions/jour, CB requise) + outils web gratuits sans compte (traffic lookup, SERP checker, extension)." },
+    "free_tier": {
+      "exists": false,
+      "detail": "Essai 7 jours (accès limité, ~15 actions/jour, CB requise) + outils web gratuits sans compte (traffic lookup, SERP checker, extension)."
+    },
     "plans": [
-      { "name": "Web Intelligence Starter", "price": "199 $/mois ou 1 500 $/an" },
-      { "name": "Team / Professional / Enterprise", "price": "sur devis (contrats annuels souvent élevés)" }
+      {
+        "name": "Web Intelligence Starter",
+        "price": "199 $/mois ou 1 500 $/an"
+      },
+      {
+        "name": "Team / Professional / Enterprise",
+        "price": "sur devis (contrats annuels souvent élevés)"
+      }
     ],
     "key_features": [
       "Estimation de trafic et de sources de trafic par domaine",
@@ -51,7 +67,11 @@
       "Évaluer une part de marché ou un secteur avant une décision.",
       "Faire un aperçu rapide de trafic via les outils web gratuits."
     ],
-    "relevant_for": ["Équipes marketing", "SEO / growth", "Analystes de marché"]
+    "relevant_for": [
+      "Équipes marketing",
+      "SEO / growth",
+      "Analystes de marché"
+    ]
   },
   "en": {
     "verdict": {

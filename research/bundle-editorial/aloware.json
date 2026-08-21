@@ -34,7 +34,8 @@
       ],
       "avoidIf": [
         "Vous cherchez un outil de support réactif léger.",
-        "Vous n'avez pas besoin de prospection multicanal."
+        "Vous n'avez pas besoin de prospection multicanal.",
+        "Vous recherchez une solution sans agents vocaux IA."
       ],
       "threshold": "Aloware excelle en prospection de vitesse multicanal ; pour du support réactif simple, d'autres outils conviennent."
     },
@@ -65,7 +66,8 @@
       ],
       "avoidIf": [
         "You need lightweight reactive support.",
-        "You don't require multi-channel outreach."
+        "You don't require multi-channel outreach.",
+        "You want a solution without AI voice agents."
       ],
       "threshold": "Aloware shines in multi-channel speed-to-lead; for simple reactive support, other tools fit better."
     },

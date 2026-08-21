@@ -3,15 +3,28 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Artlist — musique et assets sous licence (site officiel)", "url": "https://artlist.io/" }
+    {
+      "label": "Artlist — musique et assets sous licence (site officiel)",
+      "url": "https://artlist.io/"
+    }
   ],
   "facts": {
     "what": "Bibliothèque par abonnement de musique et d'effets sonores sous licence (et, sur les plans supérieurs, stock vidéo, templates et plugins), avec licence commerciale et perpétuelle.",
+    "what_en": "Subscription library of licensed music and sound effects (plus, on higher plans, stock video, templates, and plugins), with commercial and perpetual license.",
     "pricing_model": "Abonnement annuel (mensuel possible avec surcoût). Licence perpétuelle : les morceaux téléchargés restent licenciés à vie, même après résiliation.",
-    "free_tier": { "exists": false, "detail": "Pas de plan gratuit permanent ; abonnement (essai possible). Licence commerciale incluse sur tous les plans." },
+    "free_tier": {
+      "exists": false,
+      "detail": "Pas de plan gratuit permanent ; abonnement (essai possible). Licence commerciale incluse sur tous les plans."
+    },
     "plans": [
-      { "name": "Music & SFX Unlimited", "price": "~16,60 $/mois (annuel)" },
-      { "name": "Max (avec stock vidéo, templates, IA)", "price": "~33,25 $/mois (annuel)" }
+      {
+        "name": "Music & SFX Unlimited",
+        "price": "~16,60 $/mois (annuel)"
+      },
+      {
+        "name": "Max (avec stock vidéo, templates, IA)",
+        "price": "~33,25 $/mois (annuel)"
+      }
     ],
     "key_features": [
       "Musique et SFX sous licence commerciale",
@@ -50,7 +63,11 @@
       "Accéder à du stock vidéo et des templates.",
       "Sécuriser la licence commerciale de ses contenus."
     ],
-    "relevant_for": ["Créateurs vidéo", "Monteurs", "Agences de contenu"]
+    "relevant_for": [
+      "Créateurs vidéo",
+      "Monteurs",
+      "Agences de contenu"
+    ]
   },
   "en": {
     "verdict": {

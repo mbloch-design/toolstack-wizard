@@ -3,16 +3,28 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Shogun — Plateforme d'optimisation e-commerce (site officiel)", "url": "https://getshogun.com" }
+    {
+      "label": "Shogun — Plateforme d'optimisation e-commerce (site officiel)",
+      "url": "https://getshogun.com"
+    }
   ],
   "facts": {
     "what": "Plateforme SaaS d'optimisation et de personnalisation pour l'e-commerce Shopify, offrant un page builder visuel, tests A/B et personnalisation du contenu par segment d'audience.",
     "what_en": "SaaS optimization and personalization platform for Shopify e-commerce, offering visual page builder, A/B testing, and content personalization by audience segment.",
     "pricing_model": "Abonnement SaaS intégré à Shopify, avec essai gratuit disponible",
-    "free_tier": { "exists": true, "detail": "Essai gratuit via l'app Shopify. Plans payants avec montants sur la page officielle de tarification." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Essai gratuit via l'app Shopify. Plans payants avec montants sur la page officielle de tarification."
+    },
     "plans": [
-      { "name": "Essai gratuit", "price": "Gratuit" },
-      { "name": "Plans payants", "price": "Montants sur la page officielle de tarification" }
+      {
+        "name": "Essai gratuit",
+        "price": "Gratuit"
+      },
+      {
+        "name": "Plans payants",
+        "price": "Montants sur la page officielle de tarification"
+      }
     ],
     "key_features": [
       "Page Builder visuel sans code",
@@ -33,7 +45,8 @@
       ],
       "avoidIf": [
         "Vous n'utilisez pas Shopify comme plateforme.",
-        "Vous avez besoin d'une flexibilité technique avancée."
+        "Vous avez besoin d'une flexibilité technique avancée.",
+        "Vous utilisez une autre plateforme e-commerce : Shogun est limité à Shopify, sans multi-plateforme."
       ],
       "threshold": "Shogun s'impose pour les marchands Shopify cherchant optimisation et personnalisation ; pour d'autres plateformes e-commerce, explorez des alternatives."
     },
@@ -57,7 +70,12 @@
       "Personnaliser le contenu par type de client.",
       "Lancer rapidement des pages promotionnelles."
     ],
-    "relevant_for": ["Commerçants Shopify", "Équipes marketing e-commerce", "Entrepreneurs sans codage", "Agences Shopify"]
+    "relevant_for": [
+      "Commerçants Shopify",
+      "Équipes marketing e-commerce",
+      "Entrepreneurs sans codage",
+      "Agences Shopify"
+    ]
   },
   "en": {
     "verdict": {
@@ -68,7 +86,8 @@
       ],
       "avoidIf": [
         "You don't use Shopify as your platform.",
-        "You need advanced technical flexibility."
+        "You need advanced technical flexibility.",
+        "You use another e-commerce platform: Shogun is limited to Shopify, no multi-platform support."
       ],
       "threshold": "Shogun is ideal for Shopify merchants seeking optimization and personalization; for other e-commerce platforms, explore alternatives."
     },

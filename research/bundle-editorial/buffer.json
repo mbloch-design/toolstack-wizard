@@ -3,16 +3,32 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Page tarifaire officielle Buffer", "url": "https://buffer.com/pricing" }
+    {
+      "label": "Page tarifaire officielle Buffer",
+      "url": "https://buffer.com/pricing"
+    }
   ],
   "facts": {
     "what": "Outil simple de planification et de gestion des réseaux sociaux : programmation de posts, analytics et collaboration, facturé par canal (pas par utilisateur).",
+    "what_en": "Simple social media planning and management tool: post scheduling, analytics, and collaboration, priced per channel (not per user).",
     "pricing_model": "Palier gratuit puis abonnements par canal social (mensuel/annuel), avec dégressivité selon le nombre de canaux.",
-    "free_tier": { "exists": true, "detail": "Gratuit : jusqu'à 3 canaux, 10 posts programmés par canal, assistant IA, analytics de base." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Gratuit : jusqu'à 3 canaux, 10 posts programmés par canal, assistant IA, analytics de base."
+    },
     "plans": [
-      { "name": "Free", "price": "0 $ (3 canaux)" },
-      { "name": "Essentials", "price": "6 $/canal/mois (dégressif au volume)" },
-      { "name": "Team", "price": "12 $/canal/mois (dégressif au volume)" }
+      {
+        "name": "Free",
+        "price": "0 $ (3 canaux)"
+      },
+      {
+        "name": "Essentials",
+        "price": "6 $/canal/mois (dégressif au volume)"
+      },
+      {
+        "name": "Team",
+        "price": "12 $/canal/mois (dégressif au volume)"
+      }
     ],
     "key_features": [
       "Programmation de posts multi-réseaux",
@@ -51,7 +67,11 @@
       "Gérer plusieurs comptes clients.",
       "Suivre la performance de base des publications."
     ],
-    "relevant_for": ["Créateurs de contenu", "Community managers", "Petites entreprises"]
+    "relevant_for": [
+      "Créateurs de contenu",
+      "Community managers",
+      "Petites entreprises"
+    ]
   },
   "en": {
     "verdict": {

@@ -33,7 +33,8 @@
       ],
       "avoidIf": [
         "Vous avez un budget très limité.",
-        "Vous n'avez besoin que de communication basique sans IA."
+        "Vous n'avez besoin que de communication basique sans IA.",
+        "Vous avez une infrastructure téléphonique privée que vous ne voulez pas remplacer."
       ],
       "threshold": "Aircall convient aux équipes modernes cherchant une solution téléphonique avec IA ; pour des besoins simples, des alternatives plus légères suffisent."
     },
@@ -64,7 +65,8 @@
       ],
       "avoidIf": [
         "You have a tight budget.",
-        "You only need basic phone features without AI."
+        "You only need basic phone features without AI.",
+        "You have existing private phone infrastructure you don't want to replace."
       ],
       "threshold": "Aircall suits modern teams seeking smart telephony with AI; for simple needs, lighter tools work."
     },

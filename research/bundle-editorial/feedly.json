@@ -3,18 +3,40 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Page tarifaire officielle Feedly", "url": "https://feedly.com/i/pricing" },
-    { "label": "Feedly — différences entre les plans (documentation officielle)", "url": "https://docs.feedly.com/article/140-what-is-the-difference-between-feedly-basic-pro-and-teams" }
+    {
+      "label": "Page tarifaire officielle Feedly",
+      "url": "https://feedly.com/i/pricing"
+    },
+    {
+      "label": "Feedly — différences entre les plans (documentation officielle)",
+      "url": "https://docs.feedly.com/article/140-what-is-the-difference-between-feedly-basic-pro-and-teams"
+    }
   ],
   "facts": {
     "what": "Lecteur de flux RSS et outil de veille : agrège sources, blogs et actualités en un seul endroit, avec des « AI Feeds » pour filtrer et prioriser l'information.",
+    "what_en": "RSS feed reader and monitoring tool: aggregates sources, blogs, and news in one place, with AI Feeds to filter and prioritize information.",
     "pricing_model": "Palier gratuit puis abonnements Pro / Pro+ (mensuel ou annuel), et offres entreprise (Market Intelligence) sur devis.",
-    "free_tier": { "exists": true, "detail": "Gratuit : limité à 100 sources et 3 feeds, sans fonctions IA." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Gratuit : limité à 100 sources et 3 feeds, sans fonctions IA."
+    },
     "plans": [
-      { "name": "Free", "price": "0 $ (100 sources, 3 feeds, sans IA)" },
-      { "name": "Pro", "price": "~6 $/mois en annuel (72 $/an)" },
-      { "name": "Pro+", "price": "~8,25 $/mois en annuel (99 $/an), fonctions IA" },
-      { "name": "Enterprise / Market Intelligence", "price": "sur devis" }
+      {
+        "name": "Free",
+        "price": "0 $ (100 sources, 3 feeds, sans IA)"
+      },
+      {
+        "name": "Pro",
+        "price": "~6 $/mois en annuel (72 $/an)"
+      },
+      {
+        "name": "Pro+",
+        "price": "~8,25 $/mois en annuel (99 $/an), fonctions IA"
+      },
+      {
+        "name": "Enterprise / Market Intelligence",
+        "price": "sur devis"
+      }
     ],
     "key_features": [
       "Agrégation de flux RSS et de sources d'actualité",
@@ -53,7 +75,11 @@
       "Filtrer le bruit d'actualité avec l'IA.",
       "Suivre concurrents et tendances marché."
     ],
-    "relevant_for": ["Veilleurs et analystes", "Équipes marketing", "Consultants"]
+    "relevant_for": [
+      "Veilleurs et analystes",
+      "Équipes marketing",
+      "Consultants"
+    ]
   },
   "en": {
     "verdict": {

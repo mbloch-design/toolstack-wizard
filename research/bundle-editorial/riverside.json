@@ -3,18 +3,36 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-08-17",
   "sources": [
-    { "label": "Riverside.fm — site officiel", "url": "https://riverside.fm" }
+    {
+      "label": "Riverside.fm — site officiel",
+      "url": "https://riverside.fm"
+    }
   ],
   "facts": {
     "what": "Plateforme d'enregistrement de podcasts et de vidéos en ligne avec enregistrement lossless local, édition IA automatique, et distribution multi-plateforme. Permet de créer des contenus vidéo et audio de haute qualité.",
     "what_en": "Online podcast and video recording platform with local lossless recording, automatic AI editing, and multi-platform distribution. Enables high-quality audio and video content creation.",
     "pricing_model": "Freemium avec plans payants ; tarification par abonnement mensuel.",
-    "free_tier": { "exists": true, "detail": "Plan gratuit limité : 2 heures d'enregistrement, contenu watermarké, vidéo jusqu'à 720p." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Plan gratuit limité : 2 heures d'enregistrement, contenu watermarké, vidéo jusqu'à 720p."
+    },
     "plans": [
-      { "name": "Free", "price": "Gratuit (2 heures)" },
-      { "name": "Standard", "price": "19 $/mois (facturation annuelle) — enregistrement illimité, 1080p" },
-      { "name": "Pro", "price": "29 $/mois (facturation annuelle) — vidéo 4K, 15 heures de transcription/mois" },
-      { "name": "Teams", "price": "24 $/utilisateur/mois (facturation annuelle) — espaces de travail partagés" }
+      {
+        "name": "Free",
+        "price": "Gratuit (2 heures)"
+      },
+      {
+        "name": "Standard",
+        "price": "19 $/mois (facturation annuelle) — enregistrement illimité, 1080p"
+      },
+      {
+        "name": "Pro",
+        "price": "29 $/mois (facturation annuelle) — vidéo 4K, 15 heures de transcription/mois"
+      },
+      {
+        "name": "Teams",
+        "price": "24 $/utilisateur/mois (facturation annuelle) — espaces de travail partagés"
+      }
     ],
     "key_features": [
       "Enregistrement lossless local sur chaque participant",
@@ -33,7 +51,8 @@
       ],
       "avoidIf": [
         "Vous enregistrez uniquement vous-même (webcam).",
-        "Vous cherchez une solution très bon marché."
+        "Vous cherchez une solution très bon marché.",
+        "Vous enregistrez en solo : Riverside est optimisé pour interviews/collaboratif, overkill pour un podcast solo."
       ],
       "threshold": "Riverside convient aux créateurs podcast/vidéo collaboratif cherchant qualité pro et édition IA ; pour des enregistrements solo simples, une webcam suffit."
     },
@@ -53,7 +72,11 @@
       "Créer une série vidéo YouTube avec plusieurs invités.",
       "Générer rapidement des Shorts/Reels à partir de longs contenus."
     ],
-    "relevant_for": ["Producteurs de podcasts", "YouTubers", "Créateurs de contenu"]
+    "relevant_for": [
+      "Producteurs de podcasts",
+      "YouTubers",
+      "Créateurs de contenu"
+    ]
   },
   "en": {
     "verdict": {
@@ -64,7 +87,8 @@
       ],
       "avoidIf": [
         "You're only recording yourself (webcam).",
-        "You're looking for a very budget solution."
+        "You're looking for a very budget solution.",
+        "You record solo: Riverside is optimized for interviews/collaborative, overkill for a solo podcast."
       ],
       "threshold": "Riverside suits collaborative podcast/video creators seeking pro quality and AI editing; for simple solo recordings, a webcam suffices."
     },

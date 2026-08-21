@@ -34,7 +34,8 @@
       ],
       "avoidIf": [
         "Vous faites surtout du portrait/photo réaliste.",
-        "Vous avez un budget api serré."
+        "Vous avez un budget api serré.",
+        "Vous faites surtout du portrait ou photo réaliste."
       ],
       "threshold": "Ideogram s'impose pour designs texte ; pour portraiture, utilisez Midjourney ou Leonardo."
     },
@@ -65,7 +66,8 @@
       ],
       "avoidIf": [
         "You mostly do realistic portraiture.",
-        "You have a tight API budget."
+        "You have a tight API budget.",
+        "You mostly do portraiture or realistic photos."
       ],
       "threshold": "Ideogram is standard for text designs; for portraiture, use Midjourney or Leonardo."
     },

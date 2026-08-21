@@ -3,17 +3,36 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Page tarifaire officielle Attio", "url": "https://attio.com/pricing" }
+    {
+      "label": "Page tarifaire officielle Attio",
+      "url": "https://attio.com/pricing"
+    }
   ],
   "facts": {
     "what": "CRM moderne, orienté données : modèle de données flexible, synchronisation d'emails/agenda et automatisations, pensé pour les équipes go-to-market.",
+    "what_en": "Modern, data-focused CRM: flexible data model, email/calendar sync and automation, designed for go-to-market teams.",
     "pricing_model": "Par siège, avec palier gratuit et facturation mensuelle ou annuelle (annuel ~20 % moins cher).",
-    "free_tier": { "exists": true, "detail": "Gratuit jusqu'à 3 sièges, avec automatisations et types d'objets limités." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Gratuit jusqu'à 3 sièges, avec automatisations et types d'objets limités."
+    },
     "plans": [
-      { "name": "Free", "price": "0 €" },
-      { "name": "Plus", "price": "31 €/siège/mois (annuel), 39 € en mensuel" },
-      { "name": "Pro", "price": "74 €/siège/mois (annuel), 93 € en mensuel" },
-      { "name": "Enterprise", "price": "sur devis, facturé annuellement" }
+      {
+        "name": "Free",
+        "price": "0 €"
+      },
+      {
+        "name": "Plus",
+        "price": "31 €/siège/mois (annuel), 39 € en mensuel"
+      },
+      {
+        "name": "Pro",
+        "price": "74 €/siège/mois (annuel), 93 € en mensuel"
+      },
+      {
+        "name": "Enterprise",
+        "price": "sur devis, facturé annuellement"
+      }
     ],
     "key_features": [
       "Modèle de données personnalisable (objets, attributs)",
@@ -52,7 +71,11 @@
       "Synchroniser emails et contacts automatiquement.",
       "Automatiser le suivi des deals d'une équipe GTM."
     ],
-    "relevant_for": ["Startups", "Équipes go-to-market", "Petites équipes commerciales"]
+    "relevant_for": [
+      "Startups",
+      "Équipes go-to-market",
+      "Petites équipes commerciales"
+    ]
   },
   "en": {
     "verdict": {

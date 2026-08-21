@@ -3,17 +3,32 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Optimizely — experimentation et CMS (site officiel)", "url": "https://optimizely.com" }
+    {
+      "label": "Optimizely — experimentation et CMS (site officiel)",
+      "url": "https://optimizely.com"
+    }
   ],
   "facts": {
     "what": "Plateforme d'IA pour créer et optimiser chaque expérience numérique. Combine un CMS (Agentic CMS), experimentation/personnalisation et un agent platform pour automatiser les tâches.",
     "what_en": "AI platform for creating and optimizing every digital experience. Combines a CMS (Agentic CMS), experimentation/personalization, and an agent platform to automate tasks.",
     "pricing_model": "Tarification basée sur les utilisateurs tracés mensuels (MTU) ou sessions. Modèle de devis custom, pas de tarification publique transparente.",
-    "free_tier": { "exists": false, "detail": "Pas de tier gratuit. Accès via essai demo ou devis custom." },
+    "free_tier": {
+      "exists": false,
+      "detail": "Pas de tier gratuit. Accès via essai demo ou devis custom."
+    },
     "plans": [
-      { "name": "Web Experimentation", "price": "montants sur la page officielle (starting ~36K-40K €/an selon sources)" },
-      { "name": "Mid-Market", "price": "montants sur la page officielle (50K-80K €/an pour 5M MTU)" },
-      { "name": "Enterprise", "price": "montants sur la page officielle (200K+/an avec custom SLA)" }
+      {
+        "name": "Web Experimentation",
+        "price": "montants sur la page officielle (starting ~36K-40K €/an selon sources)"
+      },
+      {
+        "name": "Mid-Market",
+        "price": "montants sur la page officielle (50K-80K €/an pour 5M MTU)"
+      },
+      {
+        "name": "Enterprise",
+        "price": "montants sur la page officielle (200K+/an avec custom SLA)"
+      }
     ],
     "key_features": [
       "Agentic CMS pour publication rapide et autonome",
@@ -32,7 +47,8 @@
       ],
       "avoidIf": [
         "Vous cherchez une solution gratuite ou petit budget.",
-        "Vous avez besoin de tarification transparente et prédictible."
+        "Vous avez besoin de tarification transparente et prédictible.",
+        "Vous cherchez une flexibilité maximale : Optimizely a un fort verrouillage vendor, difficile à remplacer une fois implanté."
       ],
       "threshold": "Optimizely s'impose pour les grandes orga et d'experimentation intensive ; moins idéal pour startups sans budget experimentation."
     },
@@ -54,7 +70,11 @@
       "Gérer et publier du contenu à l'échelle avec automation.",
       "Orchestrer des campagnes omnicanal avec agents IA."
     ],
-    "relevant_for": ["Grandes entreprises", "Startups bien financées", "Équipes experimentation"]
+    "relevant_for": [
+      "Grandes entreprises",
+      "Startups bien financées",
+      "Équipes experimentation"
+    ]
   },
   "en": {
     "verdict": {
@@ -65,7 +85,8 @@
       ],
       "avoidIf": [
         "You need a free or tight-budget solution.",
-        "You need transparent, predictable pricing."
+        "You need transparent, predictable pricing.",
+        "You need maximum flexibility: Optimizely has high vendor lock-in, difficult to replace once deployed."
       ],
       "threshold": "Optimizely fits large orgs with intensive experimentation; less ideal for startups without experimentation budget."
     },

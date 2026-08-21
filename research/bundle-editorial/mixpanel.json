@@ -3,17 +3,31 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Mixpanel — product intelligence (site officiel)", "url": "https://mixpanel.com" }
+    {
+      "label": "Mixpanel — product intelligence (site officiel)",
+      "url": "https://mixpanel.com"
+    }
   ],
   "facts": {
     "what": "Plateforme d'intelligence produit qui combine analytique événementielle, session replay, expérimentation et feature flags. Powered par l'IA Mixpanel pour proposer des insights automatiques.",
     "what_en": "Product intelligence platform combining event analytics, session replay, experimentation, and feature flags. Powered by Mixpanel AI for automatic insights.",
     "pricing_model": "Freemium : tier gratuit jusqu'à 1M événements/mois, puis tarification à l'usage par millier d'événements. Add-ons payants (Data Pipelines, Group Analytics).",
-    "free_tier": { "exists": true, "detail": "Gratuit jusqu'à 1M événements/mois. Inclut 5 rapports sauvegardés, 10K session replays/mois, sièges illimités." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Gratuit jusqu'à 1M événements/mois. Inclut 5 rapports sauvegardés, 10K session replays/mois, sièges illimités."
+    },
     "plans": [
-      { "name": "Free", "price": "0 € jusqu'à 1M événements/mois" },
-      { "name": "Growth", "price": "montants sur la page officielle (par événement au-delà de 1M)" },
-      { "name": "Enterprise", "price": "montants sur la page officielle (custom)"
+      {
+        "name": "Free",
+        "price": "0 € jusqu'à 1M événements/mois"
+      },
+      {
+        "name": "Growth",
+        "price": "montants sur la page officielle (par événement au-delà de 1M)"
+      },
+      {
+        "name": "Enterprise",
+        "price": "montants sur la page officielle (custom)"
       }
     ],
     "key_features": [
@@ -33,7 +47,8 @@
       ],
       "avoidIf": [
         "Votre trafic excède 50M événements/mois (coût très élevé).",
-        "Vous cherchez une alternative totalement gratuite et sans limites."
+        "Vous cherchez une alternative totalement gratuite et sans limites.",
+        "Vous construisez des pipelines de données complexes : les add-ons comme Data Pipelines deviennent rapidement coûteux."
       ],
       "threshold": "Mixpanel s'impose pour l'analytics événementiel et l'experimentation ; attention au coût d'échelle au-delà de 10M événements."
     },
@@ -54,7 +69,11 @@
       "Tester des variations produit et déployer progressif.",
       "Analyser la rétention et le churn."
     ],
-    "relevant_for": ["Produits numériques", "Startups produit", "Équipes croissance"]
+    "relevant_for": [
+      "Produits numériques",
+      "Startups produit",
+      "Équipes croissance"
+    ]
   },
   "en": {
     "verdict": {
@@ -65,7 +84,8 @@
       ],
       "avoidIf": [
         "Your traffic exceeds 50M events/month (very expensive).",
-        "You need a completely free and unlimited alternative."
+        "You need a completely free and unlimited alternative.",
+        "You build complex data pipelines: add-ons like Data Pipelines quickly become expensive."
       ],
       "threshold": "Mixpanel wins for event analytics and experimentation; watch costs beyond 10M events."
     },

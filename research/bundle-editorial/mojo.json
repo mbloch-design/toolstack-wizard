@@ -3,15 +3,28 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Page tarifaire officielle Mojo", "url": "https://mojo-app.com/pricing/" }
+    {
+      "label": "Page tarifaire officielle Mojo",
+      "url": "https://mojo-app.com/pricing/"
+    }
   ],
   "facts": {
     "what": "Application mobile de création de stories et de reels animés pour les réseaux (Instagram, TikTok, YouTube Shorts, Facebook) : modèles animés, styles de texte, stickers et effets vidéo.",
+    "what_en": "Mobile app for creating animated stories and reels for social media (Instagram, TikTok, YouTube Shorts, Facebook): animated templates, text styles, stickers, and video effects.",
     "pricing_model": "App gratuite au téléchargement (iOS/Android) ; fonctions avancées via l'abonnement Mojo Pro (mensuel ou annuel).",
-    "free_tier": { "exists": true, "detail": "Gratuit au téléchargement avec fonctions de base ; Mojo Pro (essai 7 jours) pour tout débloquer." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Gratuit au téléchargement avec fonctions de base ; Mojo Pro (essai 7 jours) pour tout débloquer."
+    },
     "plans": [
-      { "name": "Gratuit", "price": "0 $ (fonctions de base)" },
-      { "name": "Mojo Pro", "price": "9,99 $/mois ou 49,99 $/an" }
+      {
+        "name": "Gratuit",
+        "price": "0 $ (fonctions de base)"
+      },
+      {
+        "name": "Mojo Pro",
+        "price": "9,99 $/mois ou 49,99 $/an"
+      }
     ],
     "key_features": [
       "Modèles de stories et reels animés",
@@ -50,7 +63,11 @@
       "Produire des reels sur sa marque.",
       "Ajouter des sous-titres automatiques à une vidéo."
     ],
-    "relevant_for": ["Créateurs de contenu", "Community managers", "Petites entreprises"]
+    "relevant_for": [
+      "Créateurs de contenu",
+      "Community managers",
+      "Petites entreprises"
+    ]
   },
   "en": {
     "verdict": {

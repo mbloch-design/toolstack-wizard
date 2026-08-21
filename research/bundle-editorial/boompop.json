@@ -30,7 +30,8 @@
       ],
       "avoidIf": [
         "Vous organisez des événements très simples ponctuels.",
-        "Vous préférez gérer les fournisseurs manuellement."
+        "Vous préférez gérer les fournisseurs manuellement.",
+        "Vous organisez rarement des événements avec peu de fournisseurs impliqués."
       ],
       "threshold": "BoomPop excelle pour événements d'entreprise complexes ; pour des événements simples, les outils classiques suffisent."
     },
@@ -61,7 +62,8 @@
       ],
       "avoidIf": [
         "You organize simple one-off events.",
-        "You prefer managing vendors manually."
+        "You prefer managing vendors manually.",
+        "You rarely organize events with few vendors involved."
       ],
       "threshold": "BoomPop excels for complex corporate events; for simple events, traditional tools suffice."
     },

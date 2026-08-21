@@ -34,7 +34,8 @@
       ],
       "avoidIf": [
         "Vous utilisez exclusivement Firefox ou Safari (utilisez les DevTools natifs).",
-        "Vous cherchez des outils externes spécialisés (Lighthouse, WebPageTest)."
+        "Vous cherchez des outils externes spécialisés (Lighthouse, WebPageTest).",
+        "Vous développez exclusivement avec Firefox ou Safari."
       ],
       "threshold": "Chrome DevTools s'impose comme outil quotidien pour tout développeur web modernes ; c'est le standard du marché."
     },
@@ -69,7 +70,8 @@
       ],
       "avoidIf": [
         "You exclusively use Firefox or Safari (use native DevTools instead).",
-        "You're looking for external specialized tools (Lighthouse, WebPageTest)."
+        "You're looking for external specialized tools (Lighthouse, WebPageTest).",
+        "You develop exclusively with Firefox or Safari."
       ],
       "threshold": "Chrome DevTools is the standard daily tool for modern web developers; it's the industry baseline."
     },

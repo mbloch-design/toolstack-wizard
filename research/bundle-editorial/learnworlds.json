@@ -3,17 +3,36 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Page tarifaire officielle LearnWorlds", "url": "https://www.learnworlds.com/pricing/" }
+    {
+      "label": "Page tarifaire officielle LearnWorlds",
+      "url": "https://www.learnworlds.com/pricing/"
+    }
   ],
   "facts": {
     "what": "Plateforme pour créer, héberger et vendre des cours en ligne : école de formation en marque blanche, pages de vente, interactivité vidéo et certifications.",
+    "what_en": "Platform to create, host, and sell online courses: white-label training school, sales pages, video interactivity, and certifications.",
     "pricing_model": "Abonnement (essai gratuit 30 jours, pas de palier gratuit permanent), mensuel ou annuel (annuel jusqu'à ~20 % moins cher). Frais par inscription sur l'entrée de gamme.",
-    "free_tier": { "exists": false, "detail": "Essai gratuit de 30 jours ; abonnement requis ensuite." },
+    "free_tier": {
+      "exists": false,
+      "detail": "Essai gratuit de 30 jours ; abonnement requis ensuite."
+    },
     "plans": [
-      { "name": "Starter", "price": "24 $/mois (annuel), 29 $ en mensuel — 5 $ de frais par inscription à un cours" },
-      { "name": "Pro Trainer", "price": "79 $/mois (annuel), 99 $ en mensuel — sans frais par inscription" },
-      { "name": "Learning Center", "price": "249 $/mois (annuel), 299 $ en mensuel" },
-      { "name": "High Volume & Corporate", "price": "sur devis" }
+      {
+        "name": "Starter",
+        "price": "24 $/mois (annuel), 29 $ en mensuel — 5 $ de frais par inscription à un cours"
+      },
+      {
+        "name": "Pro Trainer",
+        "price": "79 $/mois (annuel), 99 $ en mensuel — sans frais par inscription"
+      },
+      {
+        "name": "Learning Center",
+        "price": "249 $/mois (annuel), 299 $ en mensuel"
+      },
+      {
+        "name": "High Volume & Corporate",
+        "price": "sur devis"
+      }
     ],
     "key_features": [
       "Création de cours et école en marque blanche",
@@ -52,7 +71,11 @@
       "Créer une académie de marque pour ses clients.",
       "Certifier des apprenants à la fin d'un parcours."
     ],
-    "relevant_for": ["Formateurs indépendants", "Créateurs de contenu", "Organismes de formation"]
+    "relevant_for": [
+      "Formateurs indépendants",
+      "Créateurs de contenu",
+      "Organismes de formation"
+    ]
   },
   "en": {
     "verdict": {

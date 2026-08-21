@@ -33,7 +33,8 @@
       ],
       "avoidIf": [
         "Vous voulez absolument l'interface la plus polish.",
-        "Vous privilégiez le support réactif premium."
+        "Vous privilégiez le support réactif premium.",
+        "Vous avez besoin d'une assistance 24/7 dédiée ou de contrats SLA d'entreprise."
       ],
       "threshold": "Cal.com rivalise avec Calendly sur fonctionnalités à coût inférieur ; pour des besoins complexes d'équipe, les plans payants restent compétitifs."
     },
@@ -65,7 +66,8 @@
       ],
       "avoidIf": [
         "You want the most polished UI.",
-        "You prioritize premium reactive support."
+        "You prioritize premium reactive support.",
+        "You need dedicated 24/7 support or enterprise SLA contracts."
       ],
       "threshold": "Cal.com matches Calendly in features at lower cost; for complex team needs, paid tiers remain competitive."
     },

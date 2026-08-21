@@ -3,16 +3,32 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Options d'abonnement ZBrush — Maxon", "url": "https://www.maxon.net/en/zbrush-plan-options" },
-    { "label": "Plans et tarifs Maxon", "url": "https://www.maxon.net/en/buy" }
+    {
+      "label": "Options d'abonnement ZBrush — Maxon",
+      "url": "https://www.maxon.net/en/zbrush-plan-options"
+    },
+    {
+      "label": "Plans et tarifs Maxon",
+      "url": "https://www.maxon.net/en/buy"
+    }
   ],
   "facts": {
     "what": "Logiciel de sculpture numérique 3D de référence (Maxon), pour modeler des personnages, créatures et assets détaillés.",
+    "what_en": "Flagship 3D digital sculpting software (Maxon) for modeling detailed characters, creatures, and assets.",
     "pricing_model": "Abonnement uniquement (licences perpétuelles arrêtées en décembre 2023). Mensuel ou annuel, via un abonnement ZBrush ou Maxon One ; inclut ZBrush pour iPad. Montants exacts sur la page Maxon.",
-    "free_tier": { "exists": false, "detail": "Pas de palier gratuit (essai possible selon Maxon)." },
+    "free_tier": {
+      "exists": false,
+      "detail": "Pas de palier gratuit (essai possible selon Maxon)."
+    },
     "plans": [
-      { "name": "ZBrush", "detail": "abonnement mensuel ou annuel" },
-      { "name": "Maxon One", "detail": "abonnement groupé incluant ZBrush et d'autres apps Maxon" }
+      {
+        "name": "ZBrush",
+        "detail": "abonnement mensuel ou annuel"
+      },
+      {
+        "name": "Maxon One",
+        "detail": "abonnement groupé incluant ZBrush et d'autres apps Maxon"
+      }
     ],
     "key_features": [
       "Sculpture numérique haute résolution (millions de polygones)",
@@ -51,7 +67,11 @@
       "Détailler un asset avant retopologie et export vers un moteur 3D.",
       "Préparer un modèle destiné à l'impression 3D."
     ],
-    "relevant_for": ["Artistes 3D", "Studios jeu/film", "Freelances 3D"]
+    "relevant_for": [
+      "Artistes 3D",
+      "Studios jeu/film",
+      "Freelances 3D"
+    ]
   },
   "en": {
     "verdict": {

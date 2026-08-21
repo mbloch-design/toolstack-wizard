@@ -3,14 +3,24 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Causal — plateforme FP&A / modélisation financière (site officiel)", "url": "https://www.causal.app/" }
+    {
+      "label": "Causal — plateforme FP&A / modélisation financière (site officiel)",
+      "url": "https://www.causal.app/"
+    }
   ],
   "facts": {
     "what": "Plateforme de FP&A et modélisation financière : construit des modèles, se connecte aux données (compta, CRM…) et partage tableaux de bord et rapports interactifs, en alternative structurée au tableur.",
+    "what_en": "Financial planning and modeling platform: builds models, connects to data (accounting, CRM, etc.) and shares interactive dashboards and reports, a structured alternative to spreadsheets.",
     "pricing_model": "Abonnement basé sur les « members » (utilisateurs qui construisent/éditent les modèles) ; les viewers sont illimités. Essai gratuit, pas de plan gratuit permanent.",
-    "free_tier": { "exists": false, "detail": "Essai gratuit ; pas de palier gratuit permanent. Tarif selon le nombre de members." },
+    "free_tier": {
+      "exists": false,
+      "detail": "Essai gratuit ; pas de palier gratuit permanent. Tarif selon le nombre de members."
+    },
     "plans": [
-      { "name": "Membre (builder/éditeur)", "price": "tarif par member, viewers illimités — montants sur la page officielle" }
+      {
+        "name": "Membre (builder/éditeur)",
+        "price": "tarif par member, viewers illimités — montants sur la page officielle"
+      }
     ],
     "key_features": [
       "Modélisation financière (scénarios, prévisions)",
@@ -49,7 +59,11 @@
       "Faire du scénario (best/worst case).",
       "Partager des dashboards financiers à l'équipe."
     ],
-    "relevant_for": ["Équipes finance", "Startups", "Directions financières"]
+    "relevant_for": [
+      "Équipes finance",
+      "Startups",
+      "Directions financières"
+    ]
   },
   "en": {
     "verdict": {

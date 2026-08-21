@@ -32,7 +32,8 @@
       ],
       "avoidIf": [
         "Vous cherchez une solution purement de gestion de documents.",
-        "Votre équipe est exclusivement non-technique."
+        "Votre équipe est exclusivement non-technique.",
+        "Votre équipe utilise une autre forge Git."
       ],
       "threshold": "GitHub s'impose pour les équipes de développement ; les équipes non-tech préféreront une plateforme plus généraliste."
     },
@@ -63,7 +64,8 @@
       ],
       "avoidIf": [
         "You're looking for purely document management.",
-        "Your team is exclusively non-technical."
+        "Your team is exclusively non-technical.",
+        "Your team uses another Git forge."
       ],
       "threshold": "GitHub is essential for development teams; non-technical teams will prefer a more generalist platform."
     },

@@ -30,7 +30,8 @@
       ],
       "avoidIf": [
         "Vous avez besoin de rendus ultra-rapides (comparé à des engines GPU commerciaux).",
-        "Vous préférez une interface dédiée hors Blender."
+        "Vous préférez une interface dédiée hors Blender.",
+        "Vous avez besoin de rendus ultra-rapides pour des délais serrés."
       ],
       "threshold": "Cycles s'impose dès que vous maîtrisez Blender et cherchez la qualité réaliste sans budget rendu ; pour du rendu ultrarapide ou sur hardware limité, envisagez d'autres engines."
     },
@@ -62,7 +63,8 @@
       ],
       "avoidIf": [
         "You need ultra-fast render times compared to commercial GPU engines.",
-        "You prefer a standalone renderer outside Blender."
+        "You prefer a standalone renderer outside Blender.",
+        "You need ultra-fast renders for tight deadlines."
       ],
       "threshold": "Cycles is the obvious choice once you're comfortable in Blender and need photorealistic output at no cost; for faster turnaround or limited hardware, explore commercial alternatives."
     },

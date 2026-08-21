@@ -33,7 +33,8 @@
       ],
       "avoidIf": [
         "Vous voulez un workflow stable (un outil).",
-        "Votre budget API est très serré."
+        "Votre budget API est très serré.",
+        "Vous voulez un workflow stable et prévisible avec un seul outil."
       ],
       "threshold": "Krea shines pour explorateurs ; pour production, choisissez un modèle et utilisez directement."
     },
@@ -64,7 +65,8 @@
       ],
       "avoidIf": [
         "You want stable workflow (one tool).",
-        "Your API budget is very tight."
+        "Your API budget is very tight.",
+        "You want a stable, predictable workflow with one tool."
       ],
       "threshold": "Krea shines for explorers; for production, choose one model and use it directly."
     },

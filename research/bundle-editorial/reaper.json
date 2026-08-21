@@ -3,16 +3,28 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "REAPER official website", "url": "https://www.reaper.fm/" }
+    {
+      "label": "REAPER official website",
+      "url": "https://www.reaper.fm/"
+    }
   ],
   "facts": {
     "what": "Station de travail audio numérique (DAW) légère et très personnalisable pour l'enregistrement, l'édition, le mixage et le mastering audio avec support de pistes illimitées.",
     "what_en": "Lightweight and highly customizable digital audio workstation (DAW) for recording, editing, mixing, and mastering audio with unlimited tracks and plugin ecosystem support.",
     "pricing_model": "Licence perpétuelle unique, paiement unique sans abonnement. Essai complet de 60 jours gratuit.",
-    "free_tier": { "exists": false, "detail": "Pas de version gratuite permanente, mais essai complet de 60 jours sans limitation ni watermark." },
+    "free_tier": {
+      "exists": false,
+      "detail": "Pas de version gratuite permanente, mais essai complet de 60 jours sans limitation ni watermark."
+    },
     "plans": [
-      { "name": "Licence personnelle (usage personnel ou petites structures < 20k€/an)", "price": "60 $ (paiement unique perpétuel)" },
-      { "name": "Licence commerciale", "price": "225 $ (paiement unique perpétuel)" }
+      {
+        "name": "Licence personnelle (usage personnel ou petites structures < 20k€/an)",
+        "price": "60 $ (paiement unique perpétuel)"
+      },
+      {
+        "name": "Licence commerciale",
+        "price": "225 $ (paiement unique perpétuel)"
+      }
     ],
     "key_features": [
       "Pistes audio et MIDI illimitées",
@@ -33,7 +45,8 @@
       ],
       "avoidIf": [
         "Vous avez besoin d'une large communauté et de nombreux templates tout-faits.",
-        "Vous préférez une interface graphique très moderne et intuitive."
+        "Vous préférez une interface graphique très moderne et intuitive.",
+        "Vous êtes débutant en production audio : la courbe d'apprentissage de REAPER est importante."
       ],
       "threshold": "REAPER excelle pour les pros du son exigeants et petits budgets ; pour débutants cherchant de l'aide rapide, les DAW plus populaires offrent meilleur onboarding."
     },
@@ -57,7 +70,11 @@
       "Édition et mastering audio post-production.",
       "Workflows personnalisés avec scripts et automation."
     ],
-    "relevant_for": ["Producteurs audio indépendants", "Studios de post-production", "Musiciens / compositeurs"]
+    "relevant_for": [
+      "Producteurs audio indépendants",
+      "Studios de post-production",
+      "Musiciens / compositeurs"
+    ]
   },
   "en": {
     "verdict": {
@@ -68,7 +85,8 @@
       ],
       "avoidIf": [
         "You need a large community and ready-made templates.",
-        "You prefer a modern, intuitive visual interface out of the box."
+        "You prefer a modern, intuitive visual interface out of the box.",
+        "You're a beginner in audio production: REAPER's learning curve is steep."
       ],
       "threshold": "REAPER excels for demanding audio pros on tight budgets; for beginners seeking quick help, mainstream DAWs offer gentler onboarding."
     },

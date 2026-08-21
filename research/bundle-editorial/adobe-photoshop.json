@@ -4,10 +4,14 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Adobe Photoshop — description et fonctions (Wikipédia)", "url": "https://en.wikipedia.org/wiki/Adobe_Photoshop" }
+    {
+      "label": "Adobe Photoshop — description et fonctions (Wikipédia)",
+      "url": "https://en.wikipedia.org/wiki/Adobe_Photoshop"
+    }
   ],
   "facts": {
     "what": "Éditeur d'images matricielles (raster) de référence d'Adobe, pour Windows, macOS et iPad.",
+    "what_en": "Adobe's flagship raster image editor for Windows, macOS, and iPad.",
     "pricing_note": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite).",
     "key_features": [
       "Édition multi-calques avec masques et compositing",
@@ -47,7 +51,11 @@
       "Composer une image multi-calques (montage, affiche).",
       "Étendre ou compléter une image par IA générative."
     ],
-    "relevant_for": ["Designers", "Photographes", "Studios et agences"]
+    "relevant_for": [
+      "Designers",
+      "Photographes",
+      "Studios et agences"
+    ]
   },
   "en": {
     "verdict": {

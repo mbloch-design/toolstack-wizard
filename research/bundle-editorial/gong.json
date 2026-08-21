@@ -3,12 +3,19 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Gong — plateforme de revenue intelligence (site officiel)", "url": "https://www.gong.io/" }
+    {
+      "label": "Gong — plateforme de revenue intelligence (site officiel)",
+      "url": "https://www.gong.io/"
+    }
   ],
   "facts": {
     "what": "Plateforme de revenue intelligence : enregistre, transcrit et analyse par IA les appels et réunions commerciales pour dégager des insights (risque de deal, coaching, mentions concurrents, santé du pipeline).",
+    "what_en": "Revenue intelligence platform: records, transcribes, and AI-analyzes sales calls and meetings for insights (deal risk, coaching, competitor mentions, pipeline health).",
     "pricing_model": "Sur devis, non public. Modèle en trois parties : frais de plateforme annuels, licence par utilisateur, et services d'onboarding/implémentation.",
-    "free_tier": { "exists": false, "detail": "Pas de palier gratuit ; tarification entreprise sur devis." },
+    "free_tier": {
+      "exists": false,
+      "detail": "Pas de palier gratuit ; tarification entreprise sur devis."
+    },
     "key_features": [
       "Enregistrement et transcription des appels commerciaux",
       "Analyse IA des conversations (insights, risques de deal)",
@@ -46,7 +53,11 @@
       "Coacher les commerciaux sur des cas réels.",
       "Suivre la santé du pipeline et le risque de deal."
     ],
-    "relevant_for": ["Équipes commerciales", "Directions des ventes", "Scale-ups B2B"]
+    "relevant_for": [
+      "Équipes commerciales",
+      "Directions des ventes",
+      "Scale-ups B2B"
+    ]
   },
   "en": {
     "verdict": {

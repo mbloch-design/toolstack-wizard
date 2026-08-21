@@ -3,16 +3,32 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Page tarifaire officielle Productive", "url": "https://productive.io/pricing/" }
+    {
+      "label": "Page tarifaire officielle Productive",
+      "url": "https://productive.io/pricing/"
+    }
   ],
   "facts": {
     "what": "Outil tout-en-un de gestion d'agence : gestion de projet, planification des ressources, budgets, facturation et reporting dans une seule plateforme, avec fonctions IA et intégrations (Jira, QuickBooks…).",
+    "what_en": "All-in-one agency management tool: project management, resource planning, budgets, billing, and reporting in one platform, with AI features and integrations (Jira, QuickBooks, etc.).",
     "pricing_model": "Abonnement par utilisateur (mensuel ou annuel, annuel moins cher). Essai gratuit 14 jours.",
-    "free_tier": { "exists": false, "detail": "Essai gratuit de 14 jours ; abonnement par utilisateur ensuite." },
+    "free_tier": {
+      "exists": false,
+      "detail": "Essai gratuit de 14 jours ; abonnement par utilisateur ensuite."
+    },
     "plans": [
-      { "name": "Essential", "price": "9 $/utilisateur/mois (annuel), 11 $ en mensuel" },
-      { "name": "Professional", "price": "24 $/utilisateur/mois (annuel), 28 $ en mensuel" },
-      { "name": "Enterprise / paliers supérieurs", "price": "sur devis" }
+      {
+        "name": "Essential",
+        "price": "9 $/utilisateur/mois (annuel), 11 $ en mensuel"
+      },
+      {
+        "name": "Professional",
+        "price": "24 $/utilisateur/mois (annuel), 28 $ en mensuel"
+      },
+      {
+        "name": "Enterprise / paliers supérieurs",
+        "price": "sur devis"
+      }
     ],
     "key_features": [
       "Gestion de projet et planification des ressources",
@@ -51,7 +67,11 @@
       "Suivre budgets et rentabilité par client.",
       "Facturer et reporter depuis un seul outil."
     ],
-    "relevant_for": ["Agences", "Cabinets de conseil", "Équipes de prestation"]
+    "relevant_for": [
+      "Agences",
+      "Cabinets de conseil",
+      "Équipes de prestation"
+    ]
   },
   "en": {
     "verdict": {

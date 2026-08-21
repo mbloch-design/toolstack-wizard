@@ -52,7 +52,8 @@
       ],
       "avoidIf": [
         "Vous cherchez une UI conversationnelle simple (préférez claude.com/chat).",
-        "Vous ne voulez pas de frais API."
+        "Vous ne voulez pas de frais API.",
+        "Vous ne voulez pas dépendre d'une API tierce pour vos besoins IA."
       ],
       "threshold": "Anthropic API s'adresse aux développeurs intégrant Claude en production ; pour discuter simplement avec Claude, utilisez l'interface web gratuite."
     },
@@ -87,7 +88,8 @@
       ],
       "avoidIf": [
         "You just want to chat with an AI (use claude.com/chat).",
-        "You need free API access."
+        "You need free API access.",
+        "You don't want to rely on a third-party API for AI needs."
       ],
       "threshold": "Anthropic API is for developers shipping Claude to production; for casual chat, use the free web interface."
     },

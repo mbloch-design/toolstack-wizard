@@ -3,17 +3,32 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Sellfy — Plateforme e-commerce no-code (site officiel)", "url": "https://sellfy.com" }
+    {
+      "label": "Sellfy — Plateforme e-commerce no-code (site officiel)",
+      "url": "https://sellfy.com"
+    }
   ],
   "facts": {
     "what": "Plateforme e-commerce no-code pour créer une boutique en ligne sans codage, avec vente de produits numériques, physiques, d'abonnements et d'articles imprimés à la demande, plus marketing et paiements intégrés.",
     "what_en": "No-code e-commerce platform to create an online store without coding, supporting digital products, physical goods, subscriptions, and print-on-demand items, with integrated marketing and payments.",
     "pricing_model": "Abonnement mensuel ou annuel sans frais de transaction, réductions appliquées aux abonnements annuels",
-    "free_tier": { "exists": false, "detail": "Pas de version gratuite ; abonnement payant requis. Essai gratuit possible selon les conditions." },
+    "free_tier": {
+      "exists": false,
+      "detail": "Pas de version gratuite ; abonnement payant requis. Essai gratuit possible selon les conditions."
+    },
     "plans": [
-      { "name": "Starter", "price": "29 $ / mois (39 $ facturé mensuellement, 25% de réduction annuel)" },
-      { "name": "Business", "price": "Montants sur la page officielle de tarification" },
-      { "name": "Premium", "price": "Montants sur la page officielle de tarification (20GB par fichier numérique)" }
+      {
+        "name": "Starter",
+        "price": "29 $ / mois (39 $ facturé mensuellement, 25% de réduction annuel)"
+      },
+      {
+        "name": "Business",
+        "price": "Montants sur la page officielle de tarification"
+      },
+      {
+        "name": "Premium",
+        "price": "Montants sur la page officielle de tarification (20GB par fichier numérique)"
+      }
     ],
     "key_features": [
       "Générateur drag-and-drop sans codage",
@@ -34,7 +49,8 @@
       ],
       "avoidIf": [
         "Vous avez besoin d'une flexibilité technique avancée.",
-        "Vous recherchez une solution gratuite."
+        "Vous recherchez une solution gratuite.",
+        "Vous avez besoin de contrôle technique total : Sellfy est une solution simple, pas flexible pour la personnalisation."
       ],
       "threshold": "Sellfy convient pour les créateurs et petits commerçants cherchant une boutique en ligne simple et sans frais de transaction ; pour des besoins complexes, explorez des plateformes plus flexibles."
     },
@@ -57,7 +73,12 @@
       "Créer une plateforme d'abonnements.",
       "Mettre en place un système d'affiliation."
     ],
-    "relevant_for": ["Créateurs de contenu", "Petits commerçants", "Entrepreneurs sans codage", "Vendeurs de produits numériques"]
+    "relevant_for": [
+      "Créateurs de contenu",
+      "Petits commerçants",
+      "Entrepreneurs sans codage",
+      "Vendeurs de produits numériques"
+    ]
   },
   "en": {
     "verdict": {
@@ -68,7 +89,8 @@
       ],
       "avoidIf": [
         "You need advanced technical flexibility.",
-        "You seek a free solution."
+        "You seek a free solution.",
+        "You need complete technical control: Sellfy is a simple solution, not flexible for customization."
       ],
       "threshold": "Sellfy is ideal for creators and small merchants seeking a simple online store without transaction fees; for complex needs, explore more flexible platforms."
     },

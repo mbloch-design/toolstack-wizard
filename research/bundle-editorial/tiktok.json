@@ -3,12 +3,19 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "TikTok — plateforme de vidéo courte (site officiel)", "url": "https://www.tiktok.com/" }
+    {
+      "label": "TikTok — plateforme de vidéo courte (site officiel)",
+      "url": "https://www.tiktok.com/"
+    }
   ],
   "facts": {
     "what": "Plateforme de vidéos courtes portée par un algorithme de découverte : création, montage in-app (sons, effets, sous-titres) et diffusion, avec un fort potentiel de portée organique. Volet pro via TikTok for Business / TikTok Ads.",
+    "what_en": "Short-form video platform powered by a discovery algorithm: in-app creation, editing (sounds, effects, captions), and distribution, with strong organic reach potential. Professional side via TikTok for Business/TikTok Ads.",
     "pricing_model": "Gratuit pour créer et publier. La publicité (TikTok Ads) est en libre-service, aux enchères selon le budget et le ciblage.",
-    "free_tier": { "exists": true, "detail": "Application et publication gratuites ; monétisation et publicité via des programmes dédiés." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Application et publication gratuites ; monétisation et publicité via des programmes dédiés."
+    },
     "key_features": [
       "Création et montage vidéo in-app (sons, effets, sous-titres)",
       "Algorithme de découverte à forte portée organique",
@@ -46,7 +53,11 @@
       "Tester des formats et des tendances rapidement.",
       "Lancer des campagnes publicitaires ciblées."
     ],
-    "relevant_for": ["Créateurs de contenu", "Marques et community managers", "Équipes marketing"]
+    "relevant_for": [
+      "Créateurs de contenu",
+      "Marques et community managers",
+      "Équipes marketing"
+    ]
   },
   "en": {
     "verdict": {

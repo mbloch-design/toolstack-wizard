@@ -3,17 +3,36 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Page tarifaire officielle Relevance AI", "url": "https://relevanceai.com/pricing" }
+    {
+      "label": "Page tarifaire officielle Relevance AI",
+      "url": "https://relevanceai.com/pricing"
+    }
   ],
   "facts": {
     "what": "Plateforme no-code pour construire et orchestrer des équipes d'agents IA (« AI Workforce ») : automatise recherche, outbound, enrichissement de données et tâches back-office, pour les équipes go-to-market et ops.",
+    "what_en": "No-code platform to build and orchestrate AI agent teams (AI Workforce): automates research, outbound, data enrichment, and back-office tasks for go-to-market and ops teams.",
     "pricing_model": "Double compteur : « Actions » (exécutions d'agents) et « Vendor Credits » (crédits prépayés pour le compute IA). Agents illimités sur tous les plans. Palier gratuit disponible.",
-    "free_tier": { "exists": true, "detail": "Gratuit : 200 Actions/mois + 1 000 Vendor Credits one-time — pour explorer et tester, pas pour la production." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Gratuit : 200 Actions/mois + 1 000 Vendor Credits one-time — pour explorer et tester, pas pour la production."
+    },
     "plans": [
-      { "name": "Free", "price": "0 $ (200 Actions/mois, 1 000 crédits one-time)" },
-      { "name": "Pro", "price": "19 $/mois (annuel)" },
-      { "name": "Team", "price": "234 $/mois (annuel), ~349 $ en mensuel" },
-      { "name": "Enterprise", "price": "sur devis" }
+      {
+        "name": "Free",
+        "price": "0 $ (200 Actions/mois, 1 000 crédits one-time)"
+      },
+      {
+        "name": "Pro",
+        "price": "19 $/mois (annuel)"
+      },
+      {
+        "name": "Team",
+        "price": "234 $/mois (annuel), ~349 $ en mensuel"
+      },
+      {
+        "name": "Enterprise",
+        "price": "sur devis"
+      }
     ],
     "key_features": [
       "Construction d'agents IA no-code",
@@ -52,7 +71,11 @@
       "Construire des agents d'outbound.",
       "Déléguer des tâches back-office à des agents IA."
     ],
-    "relevant_for": ["Équipes go-to-market", "Ops", "Startups"]
+    "relevant_for": [
+      "Équipes go-to-market",
+      "Ops",
+      "Startups"
+    ]
   },
   "en": {
     "verdict": {

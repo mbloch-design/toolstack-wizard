@@ -3,16 +3,32 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Page tarifaire officielle Jira (Atlassian)", "url": "https://www.atlassian.com/software/jira/pricing" }
+    {
+      "label": "Page tarifaire officielle Jira (Atlassian)",
+      "url": "https://www.atlassian.com/software/jira/pricing"
+    }
   ],
   "facts": {
     "what": "Outil de gestion de projet et de suivi des tickets (issues) pour les équipes, très utilisé en développement logiciel agile.",
+    "what_en": "Project management and issue tracking tool for teams, widely used in agile software development.",
     "pricing_model": "Palier gratuit jusqu'à 10 utilisateurs, puis Standard, Premium et Enterprise (par utilisateur).",
-    "free_tier": { "exists": true, "detail": "Gratuit jusqu'à 10 utilisateurs, avec l'essentiel des fonctions et l'accès aux 1 000+ apps et intégrations." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Gratuit jusqu'à 10 utilisateurs, avec l'essentiel des fonctions et l'accès aux 1 000+ apps et intégrations."
+    },
     "plans": [
-      { "name": "Standard", "detail": "au-delà de 10 utilisateurs, plus de stockage, support en heures ouvrées (prix par utilisateur sur la page officielle)" },
-      { "name": "Premium", "detail": "SLA 99,9 %, support 24/7, fonctions avancées de mise à l'échelle" },
-      { "name": "Enterprise", "detail": "sur devis, gouvernance multi-instances" }
+      {
+        "name": "Standard",
+        "detail": "au-delà de 10 utilisateurs, plus de stockage, support en heures ouvrées (prix par utilisateur sur la page officielle)"
+      },
+      {
+        "name": "Premium",
+        "detail": "SLA 99,9 %, support 24/7, fonctions avancées de mise à l'échelle"
+      },
+      {
+        "name": "Enterprise",
+        "detail": "sur devis, gouvernance multi-instances"
+      }
     ],
     "key_features": [
       "Tableaux agiles (Scrum, Kanban) et suivi des sprints",
@@ -51,7 +67,11 @@
       "Organiser le travail en tableaux Scrum ou Kanban.",
       "Automatiser des workflows d'issues et suivre l'avancement via des rapports."
     ],
-    "relevant_for": ["Équipes de développement", "Product/agile", "Grandes organisations"]
+    "relevant_for": [
+      "Équipes de développement",
+      "Product/agile",
+      "Grandes organisations"
+    ]
   },
   "en": {
     "verdict": {

@@ -3,14 +3,24 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Tarifs officiels Zoom Workplace", "url": "https://zoom.us/pricing" }
+    {
+      "label": "Tarifs officiels Zoom Workplace",
+      "url": "https://zoom.us/pricing"
+    }
   ],
   "facts": {
     "what": "Plateforme de visioconférence : réunions vidéo, webinaires et outils de collaboration.",
+    "what_en": "Video conferencing platform: video meetings, webinars, and collaboration tools.",
     "pricing_model": "Palier gratuit (Basic) puis paliers payants par utilisateur (Pro, Business, Enterprise).",
-    "free_tier": { "exists": true, "detail": "Basic gratuit : réunions jusqu'à 40 minutes, jusqu'à 100 participants." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Basic gratuit : réunions jusqu'à 40 minutes, jusqu'à 100 participants."
+    },
     "plans": [
-      { "name": "Pro / Business / Enterprise", "detail": "suppriment la limite de 40 min, AI Companion inclus selon l'éligibilité (montants sur la page officielle)" }
+      {
+        "name": "Pro / Business / Enterprise",
+        "detail": "suppriment la limite de 40 min, AI Companion inclus selon l'éligibilité (montants sur la page officielle)"
+      }
     ],
     "key_features": [
       "Réunions vidéo HD jusqu'à 100 participants (plus sur plans payants)",
@@ -49,7 +59,11 @@
       "Organiser un webinaire ou une grande réunion.",
       "Enregistrer et résumer automatiquement des réunions."
     ],
-    "relevant_for": ["Équipes distribuées", "PME", "Formateurs et organisateurs de webinaires"]
+    "relevant_for": [
+      "Équipes distribuées",
+      "PME",
+      "Formateurs et organisateurs de webinaires"
+    ]
   },
   "en": {
     "verdict": {

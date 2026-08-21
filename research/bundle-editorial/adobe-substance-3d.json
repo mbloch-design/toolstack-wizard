@@ -4,16 +4,32 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Adobe Substance 3D — page produit officielle", "url": "https://www.adobe.com/products/substance3d.html" }
+    {
+      "label": "Adobe Substance 3D — page produit officielle",
+      "url": "https://www.adobe.com/products/substance3d.html"
+    }
   ],
   "facts": {
     "what": "Suite d'outils 3D d'Adobe pour la création de matériaux et de textures : Painter, Designer, Sampler et Stager.",
+    "what_en": "Adobe's suite of 3D tools for creating materials and textures: Painter, Designer, Sampler, and Stager.",
     "pricing_note": "Disponible en abonnement Substance 3D dédié ou via Creative Cloud (voir la fiche de la suite).",
     "apps": [
-      { "name": "Painter", "role": "peinture de textures directement sur des modèles 3D" },
-      { "name": "Designer", "role": "création de matériaux procéduraux (node-based)" },
-      { "name": "Sampler", "role": "capture de matériaux à partir de photos" },
-      { "name": "Stager", "role": "mise en scène et rendu de scènes 3D" }
+      {
+        "name": "Painter",
+        "role": "peinture de textures directement sur des modèles 3D"
+      },
+      {
+        "name": "Designer",
+        "role": "création de matériaux procéduraux (node-based)"
+      },
+      {
+        "name": "Sampler",
+        "role": "capture de matériaux à partir de photos"
+      },
+      {
+        "name": "Stager",
+        "role": "mise en scène et rendu de scènes 3D"
+      }
     ],
     "key_features": [
       "Texturing 3D (PBR) et matériaux réutilisables",
@@ -52,7 +68,11 @@
       "Créer des matériaux procéduraux réutilisables.",
       "Mettre en scène et rendre un produit en 3D."
     ],
-    "relevant_for": ["Artistes 3D", "Studios jeu/film", "Design produit"]
+    "relevant_for": [
+      "Artistes 3D",
+      "Studios jeu/film",
+      "Design produit"
+    ]
   },
   "en": {
     "verdict": {

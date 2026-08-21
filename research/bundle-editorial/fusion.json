@@ -31,7 +31,8 @@
       ],
       "avoidIf": [
         "Vous débutez en compositing (la courbe d'apprentissage est raide).",
-        "Vous préférez une interface layer-stack classique."
+        "Vous préférez une interface layer-stack classique.",
+        "Vous êtes novice en compositing et cherchez une interface intuitive."
       ],
       "threshold": "Fusion est le choix studio pour les VFX pros et compositors expérimentés ; sa version gratuite suffit pour débuter, Fusion Studio pour productions commerciales exigeantes."
     },
@@ -63,7 +64,8 @@
       ],
       "avoidIf": [
         "You're new to compositing (steep learning curve).",
-        "You prefer traditional layer-stack interfaces."
+        "You prefer traditional layer-stack interfaces.",
+        "You're new to compositing and want an intuitive interface."
       ],
       "threshold": "Fusion is the studio standard for professional VFX and experienced compositors; the free version is solid for learning, Fusion Studio for demanding commercial work."
     },

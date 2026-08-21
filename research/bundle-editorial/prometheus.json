@@ -3,13 +3,19 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Prometheus — système de monitoring (site officiel)", "url": "https://prometheus.io" }
+    {
+      "label": "Prometheus — système de monitoring (site officiel)",
+      "url": "https://prometheus.io"
+    }
   ],
   "facts": {
     "what": "Système de monitoring open source conçu pour l'écosystème cloud natif. Scrape les métriques des services, les stocke en time-series, et propose un langage de requête puissant (PromQL) pour alertes et visualisations.",
     "what_en": "Open-source monitoring system designed for cloud-native ecosystems. Scrapes metrics from services, stores them as time-series, and provides a powerful query language (PromQL) for alerts and visualization.",
     "pricing_model": "Open source gratuit sous licence Apache 2.0. Aucun frais d'utilisation.",
-    "free_tier": { "exists": true, "detail": "Entièrement gratuit et open source. Déploiement auto-hébergé sur ses propres serveurs ou Kubernetes." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Entièrement gratuit et open source. Déploiement auto-hébergé sur ses propres serveurs ou Kubernetes."
+    },
     "plans": [],
     "key_features": [
       "Modèle de données dimensionnel (métriques + labels)",
@@ -29,7 +35,8 @@
       ],
       "avoidIf": [
         "Vous cherchez une solution SaaS entièrement managée.",
-        "Vous n'avez pas l'expertise DevOps pour déployer Prometheus."
+        "Vous n'avez pas l'expertise DevOps pour déployer Prometheus.",
+        "Vous n'avez pas de DevOps en équipe : Prometheus nécessite expertise pour production, sans interface SaaS."
       ],
       "threshold": "Prometheus s'impose pour les orga cloud native avec équipes DevOps ; pour autres, Datadog ou New Relic conviennent mieux."
     },
@@ -51,7 +58,11 @@
       "Déclencher des alertes sur seuils de performance.",
       "Analyser les trends historiques de performance."
     ],
-    "relevant_for": ["Équipes DevOps", "Orga cloud native", "Startups sans budget monitoring"]
+    "relevant_for": [
+      "Équipes DevOps",
+      "Orga cloud native",
+      "Startups sans budget monitoring"
+    ]
   },
   "en": {
     "verdict": {
@@ -62,7 +73,8 @@
       ],
       "avoidIf": [
         "You seek a fully managed SaaS solution.",
-        "You lack DevOps expertise to deploy Prometheus."
+        "You lack DevOps expertise to deploy Prometheus.",
+        "You don't have DevOps on your team: Prometheus requires expertise for production, no SaaS interface."
       ],
       "threshold": "Prometheus fits cloud-native orgs with DevOps teams; for others, Datadog or New Relic suit better."
     },

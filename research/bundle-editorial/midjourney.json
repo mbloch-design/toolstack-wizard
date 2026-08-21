@@ -3,14 +3,24 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Comparaison des plans Midjourney (docs officielles)", "url": "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans" }
+    {
+      "label": "Comparaison des plans Midjourney (docs officielles)",
+      "url": "https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans"
+    }
   ],
   "facts": {
     "what": "Outil d'IA générative d'images à partir de descriptions textuelles (prompts), réputé pour la qualité et le style.",
+    "what_en": "Generative AI tool for creating images from text descriptions (prompts), renowned for quality and style.",
     "pricing_model": "Abonnement uniquement (pas de palier gratuit). Paliers Basic, Standard, Pro et Mega ; modes de vitesse GPU (Fast, Relax, Turbo).",
-    "free_tier": { "exists": false, "detail": "Pas de palier gratuit ; accès par abonnement (montants sur la page officielle)." },
+    "free_tier": {
+      "exists": false,
+      "detail": "Pas de palier gratuit ; accès par abonnement (montants sur la page officielle)."
+    },
     "plans": [
-      { "name": "Basic / Standard / Pro / Mega", "detail": "paliers croissants (temps GPU, usages), prix sur la page officielle" }
+      {
+        "name": "Basic / Standard / Pro / Mega",
+        "detail": "paliers croissants (temps GPU, usages), prix sur la page officielle"
+      }
     ],
     "key_features": [
       "Génération d'images par prompt de haute qualité",
@@ -49,7 +59,11 @@
       "Explorer des styles visuels par prompts.",
       "Créer des visuels marketing originaux."
     ],
-    "relevant_for": ["Créatifs", "Illustrateurs", "Équipes marketing"]
+    "relevant_for": [
+      "Créatifs",
+      "Illustrateurs",
+      "Équipes marketing"
+    ]
   },
   "en": {
     "verdict": {

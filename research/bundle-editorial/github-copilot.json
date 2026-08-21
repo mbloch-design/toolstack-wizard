@@ -34,7 +34,8 @@
       ],
       "avoidIf": [
         "Vous préférez Cursor ou autres éditeurs.",
-        "Vous voulez une solution IA standalone."
+        "Vous voulez une solution IA standalone.",
+        "Vous utilisez un éditeur autre que GitHub ou VS Code."
       ],
       "threshold": "GitHub Copilot s'impose pour équipes GitHub ; solo, Cursor offre plus de puissance IA."
     },
@@ -65,7 +66,8 @@
       ],
       "avoidIf": [
         "You prefer Cursor or other editors.",
-        "You want a standalone AI solution."
+        "You want a standalone AI solution.",
+        "You use an editor other than GitHub or VS Code."
       ],
       "threshold": "GitHub Copilot is standard for GitHub teams; solo, Cursor packs more AI power."
     },

@@ -30,8 +30,9 @@
         "Vous voulez créer une app sans terminal local."
       ],
       "avoidIf": [
-        "Vous construisez une app complexe ou architekturée.",
-        "Vous avez besoin de contrôle fin du code."
+        "Vous construisez une app complexe ou très architecturée.",
+        "Vous avez besoin de contrôle fin du code.",
+        "Vous avez besoin d'une architecture personnalisée ou d'une base de données spécialisée."
       ],
       "threshold": "Bolt.new excelle pour les prototypes et MVPs ; pour des apps métier complexes, écrivez le code directement."
     },
@@ -62,7 +63,8 @@
       ],
       "avoidIf": [
         "You're building a complex production app.",
-        "You need fine-grained control over code."
+        "You need fine-grained control over code.",
+        "You need custom architecture or specialized databases."
       ],
       "threshold": "Bolt.new is best for prototypes and MVPs; for complex business apps, code manually."
     },

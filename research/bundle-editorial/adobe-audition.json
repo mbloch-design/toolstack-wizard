@@ -4,10 +4,14 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Adobe Audition — description et fonctions (Wikipédia)", "url": "https://en.wikipedia.org/wiki/Adobe_Audition" }
+    {
+      "label": "Adobe Audition — description et fonctions (Wikipédia)",
+      "url": "https://en.wikipedia.org/wiki/Adobe_Audition"
+    }
   ],
   "facts": {
     "what": "Station de travail audionumérique (DAW) d'Adobe : environnement multipiste non destructif et éditeur de forme d'onde.",
+    "what_en": "Adobe's digital audio workstation (DAW): non-destructive multitrack environment for audio recording, editing, and mixing.",
     "pricing_note": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite).",
     "key_features": [
       "Enregistrement et mixage multipiste",
@@ -47,7 +51,11 @@
       "Restaurer un audio bruité par édition spectrale.",
       "Préparer la bande-son d'une vidéo montée dans Premiere Pro."
     ],
-    "relevant_for": ["Podcasteurs", "Monteurs son", "Studios audio/vidéo"]
+    "relevant_for": [
+      "Podcasteurs",
+      "Monteurs son",
+      "Studios audio/vidéo"
+    ]
   },
   "en": {
     "verdict": {

@@ -4,10 +4,14 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Gmail — description et fonctions (Wikipédia)", "url": "https://en.wikipedia.org/wiki/Gmail" }
+    {
+      "label": "Gmail — description et fonctions (Wikipédia)",
+      "url": "https://en.wikipedia.org/wiki/Gmail"
+    }
   ],
   "facts": {
     "what": "Service de messagerie web de Google ; version pro (domaine, administration) via Google Workspace.",
+    "what_en": "Google's web email service; professional version (domain, administration) via Google Workspace.",
     "pricing_note": "Gmail gratuit (15 Go partagés Drive/Photos) ; version professionnelle incluse dans Google Workspace (voir la fiche de la suite).",
     "key_features": [
       "15 Go de stockage gratuit partagés avec Drive et Photos",
@@ -46,7 +50,11 @@
       "Centraliser e-mails, agenda et visioconférence au même endroit.",
       "Gérer la sécurité et les accès mail depuis une console d'admin."
     ],
-    "relevant_for": ["Petites équipes", "PME sur Google Workspace", "Indépendants"]
+    "relevant_for": [
+      "Petites équipes",
+      "PME sur Google Workspace",
+      "Indépendants"
+    ]
   },
   "en": {
     "verdict": {

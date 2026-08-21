@@ -3,17 +3,36 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Page tarifaire officielle Teachable", "url": "https://teachable.com/pricing" }
+    {
+      "label": "Page tarifaire officielle Teachable",
+      "url": "https://teachable.com/pricing"
+    }
   ],
   "facts": {
     "what": "Plateforme pour créer et vendre des cours en ligne, des coachings et des produits digitaux, avec pages de vente et paiements intégrés.",
+    "what_en": "Platform to create and sell online courses, coaching programs, and digital products, with integrated sales pages and payments.",
     "pricing_model": "Abonnement (essai gratuit 7 jours, plus de palier gratuit permanent), mensuel ou annuel (annuel ~22–26 % moins cher). Frais de transaction sur l'entrée de gamme.",
-    "free_tier": { "exists": false, "detail": "Plus de plan gratuit ; essai de 7 jours puis abonnement requis." },
+    "free_tier": {
+      "exists": false,
+      "detail": "Plus de plan gratuit ; essai de 7 jours puis abonnement requis."
+    },
     "plans": [
-      { "name": "Starter", "price": "29 $/mois (annuel), 39 $ en mensuel — 7,5 % de frais de transaction" },
-      { "name": "Builder", "price": "69 $/mois (annuel) — 0 % de frais de transaction plateforme" },
-      { "name": "Growth", "price": "139 $/mois (annuel)" },
-      { "name": "Advanced", "price": "309 $/mois (annuel)" }
+      {
+        "name": "Starter",
+        "price": "29 $/mois (annuel), 39 $ en mensuel — 7,5 % de frais de transaction"
+      },
+      {
+        "name": "Builder",
+        "price": "69 $/mois (annuel) — 0 % de frais de transaction plateforme"
+      },
+      {
+        "name": "Growth",
+        "price": "139 $/mois (annuel)"
+      },
+      {
+        "name": "Advanced",
+        "price": "309 $/mois (annuel)"
+      }
     ],
     "key_features": [
       "Création et vente de cours en ligne",
@@ -52,7 +71,11 @@
       "Vendre du coaching et des produits digitaux.",
       "Encaisser les paiements sans outillage externe."
     ],
-    "relevant_for": ["Créateurs de contenu", "Coachs", "Formateurs indépendants"]
+    "relevant_for": [
+      "Créateurs de contenu",
+      "Coachs",
+      "Formateurs indépendants"
+    ]
   },
   "en": {
     "verdict": {

@@ -31,7 +31,8 @@
       ],
       "avoidIf": [
         "Vous produisez des videos haute qualité polies.",
-        "Vous avez besoin de montage fin."
+        "Vous avez besoin de montage fin.",
+        "Vous produisez des vidéos de haute qualité et polies."
       ],
       "threshold": "Guideless rapproche la production doc video de l'automatisation ; pour cinéma/pro, utilisez Premiere/DaVinci."
     },
@@ -62,7 +63,8 @@
       ],
       "avoidIf": [
         "You produce polished, high-quality videos.",
-        "You need fine editing control."
+        "You need fine editing control.",
+        "You produce high-quality polished videos."
       ],
       "threshold": "Guideless brings video doc production closer to automation; for cinema/pro, use Premiere/DaVinci."
     },

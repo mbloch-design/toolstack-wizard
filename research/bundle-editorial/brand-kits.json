@@ -3,12 +3,19 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Stylebase — plateforme de brand guidelines (site officiel)", "url": "https://stylebase.ai/" }
+    {
+      "label": "Stylebase — plateforme de brand guidelines (site officiel)",
+      "url": "https://stylebase.ai/"
+    }
   ],
   "facts": {
     "what": "Plateforme de gestion d'identité de marque (Stylebase) : définir, faire évoluer et partager ses brand guidelines et design systems, via un écosystème d'outils (Brandy pour la marque, UI Vault pour les design systems).",
+    "what_en": "Brand identity management platform (Stylebase): define, evolve, and share brand guidelines and design systems via an ecosystem of tools (Brandy for brand, UI Vault for design systems).",
     "pricing_model": "Propose des outils gratuits ; offres et tarifs détaillés sur le site officiel.",
-    "free_tier": { "exists": true, "detail": "Outils gratuits proposés ; détails et paliers sur le site officiel." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Outils gratuits proposés ; détails et paliers sur le site officiel."
+    },
     "key_features": [
       "Création et partage de brand guidelines",
       "Gestion d'identité de marque (Brandy)",
@@ -46,7 +53,11 @@
       "Documenter un design system.",
       "Maintenir une identité cohérente dans le temps."
     ],
-    "relevant_for": ["Équipes design", "Marques", "Agences"]
+    "relevant_for": [
+      "Équipes design",
+      "Marques",
+      "Agences"
+    ]
   },
   "en": {
     "verdict": {

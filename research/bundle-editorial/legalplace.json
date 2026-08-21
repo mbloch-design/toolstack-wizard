@@ -3,16 +3,32 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "LegalPlace — services juridiques en ligne (site officiel)", "url": "https://www.legalplace.fr/" }
+    {
+      "label": "LegalPlace — services juridiques en ligne (site officiel)",
+      "url": "https://www.legalplace.fr/"
+    }
   ],
   "facts": {
     "what": "Legaltech française spécialisée dans la création d'entreprise en ligne et les démarches juridiques : statuts, modifications, dissolution, domiciliation, comptabilité et documents juridiques du quotidien.",
+    "what_en": "French legal tech specialized in online business creation and legal procedures: bylaws, modifications, dissolution, domiciliation, accounting, and everyday legal documents.",
     "pricing_model": "Prestations à l'acte (création) + services par abonnement (domiciliation, abonnement juridique). Frais légaux/administratifs en plus.",
-    "free_tier": { "exists": false, "detail": "Service payant ; prestations à l'acte ou par abonnement." },
+    "free_tier": {
+      "exists": false,
+      "detail": "Service payant ; prestations à l'acte ou par abonnement."
+    },
     "plans": [
-      { "name": "Création d'entreprise", "price": "à partir de 99 € HT (statuts + formalités RCS, hors frais légaux ~50–200 €)" },
-      { "name": "Domiciliation", "price": "à partir de 19 €/mois" },
-      { "name": "Abonnement juridique", "price": "à partir de 49 €/mois" }
+      {
+        "name": "Création d'entreprise",
+        "price": "à partir de 99 € HT (statuts + formalités RCS, hors frais légaux ~50–200 €)"
+      },
+      {
+        "name": "Domiciliation",
+        "price": "à partir de 19 €/mois"
+      },
+      {
+        "name": "Abonnement juridique",
+        "price": "à partir de 49 €/mois"
+      }
     ],
     "key_features": [
       "Création d'entreprise en ligne (SAS, SARL, SCI…)",
@@ -51,7 +67,11 @@
       "Domicilier son entreprise.",
       "Générer ses documents juridiques courants."
     ],
-    "relevant_for": ["Créateurs d'entreprise", "Micro-entrepreneurs", "TPE françaises"]
+    "relevant_for": [
+      "Créateurs d'entreprise",
+      "Micro-entrepreneurs",
+      "TPE françaises"
+    ]
   },
   "en": {
     "verdict": {

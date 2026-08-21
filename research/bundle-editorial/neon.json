@@ -3,15 +3,28 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Page tarifaire officielle Neon", "url": "https://neon.com/pricing" }
+    {
+      "label": "Page tarifaire officielle Neon",
+      "url": "https://neon.com/pricing"
+    }
   ],
   "facts": {
     "what": "Postgres serverless : base PostgreSQL gérée, à l'usage, avec branching et mise à l'échelle automatique.",
+    "what_en": "Serverless Postgres: managed PostgreSQL database, pay-as-you-go, with branching and auto-scaling.",
     "pricing_model": "À l'usage (compute facturé au CU-heure). Palier gratuit, puis Launch et Scale.",
-    "free_tier": { "exists": true, "detail": "Gratuit : 0,5 Go de stockage/projet, 100 CU-h de compute/projet, jusqu'à 100 projets, 5 Go d'egress inclus." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Gratuit : 0,5 Go de stockage/projet, 100 CU-h de compute/projet, jusqu'à 100 projets, 5 Go d'egress inclus."
+    },
     "plans": [
-      { "name": "Launch", "price": "à l'usage, 0,106 $/CU-h" },
-      { "name": "Scale", "price": "à l'usage, 0,222 $/CU-h" }
+      {
+        "name": "Launch",
+        "price": "à l'usage, 0,106 $/CU-h"
+      },
+      {
+        "name": "Scale",
+        "price": "à l'usage, 0,222 $/CU-h"
+      }
     ],
     "key_features": [
       "Branching de base de données (branches façon Git pour dev/CI)",
@@ -50,7 +63,11 @@
       "Héberger une application à charge variable sans payer le compute à l'arrêt.",
       "Démarrer un projet Postgres sur le palier gratuit puis monter à l'usage."
     ],
-    "relevant_for": ["Développeurs", "Startups", "Équipes produit"]
+    "relevant_for": [
+      "Développeurs",
+      "Startups",
+      "Équipes produit"
+    ]
   },
   "en": {
     "verdict": {

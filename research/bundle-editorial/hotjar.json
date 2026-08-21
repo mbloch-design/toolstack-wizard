@@ -3,16 +3,30 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Tarifs officiels (Hotjar désormais partie de Contentsquare)", "url": "https://contentsquare.com/pricing/" }
+    {
+      "label": "Tarifs officiels (Hotjar désormais partie de Contentsquare)",
+      "url": "https://contentsquare.com/pricing/"
+    }
   ],
   "facts": {
     "what": "Outil d'analyse comportementale web : cartes de chaleur (heatmaps), enregistrements de session et sondages sur site.",
+    "what_en": "Web behavior analytics tool: heatmaps, session recordings, and on-site surveys.",
     "note": "Hotjar fait désormais partie de Contentsquare (les tarifs sont servis sur contentsquare.com).",
     "pricing_model": "Par volume de sessions. Palier gratuit, puis paliers payants.",
-    "free_tier": { "exists": true, "detail": "Gratuit : jusqu'à 200 000 sessions/mois, 1 projet, replays/heatmaps/funnels de base, 100 sondages/mois." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Gratuit : jusqu'à 200 000 sessions/mois, 1 projet, replays/heatmaps/funnels de base, 100 sondages/mois."
+    },
     "plans": [
-      { "name": "Growth", "price": "49 $/mois", "for": "équipes en croissance" },
-      { "name": "Pro / Enterprise", "price": "sur devis" }
+      {
+        "name": "Growth",
+        "price": "49 $/mois",
+        "for": "équipes en croissance"
+      },
+      {
+        "name": "Pro / Enterprise",
+        "price": "sur devis"
+      }
     ],
     "key_features": [
       "Enregistrements de session (session replay)",
@@ -51,7 +65,11 @@
       "Recueillir l'avis des visiteurs via des sondages ciblés sur le site.",
       "Prioriser des améliorations UX à partir de comportements réels observés."
     ],
-    "relevant_for": ["Petites équipes", "Product/UX", "E-commerce et sites de conversion"]
+    "relevant_for": [
+      "Petites équipes",
+      "Product/UX",
+      "E-commerce et sites de conversion"
+    ]
   },
   "en": {
     "verdict": {

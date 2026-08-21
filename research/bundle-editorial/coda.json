@@ -50,7 +50,8 @@
       ],
       "avoidIf": [
         "Vous avez besoin d'une solution ultra-minimaliste.",
-        "Votre flux de travail repose sur l'export/import fréquent."
+        "Votre flux de travail repose sur l'export/import fréquent.",
+        "Vous n'avez besoin que d'un document simple ou d'un tableur basique."
       ],
       "threshold": "Coda brille pour les équipes cherchant à centraliser documentation et données ; une approche classique docs+sheets conviendra autrement."
     },
@@ -85,7 +86,8 @@
       ],
       "avoidIf": [
         "You need an ultra-minimal solution.",
-        "Your workflow relies on frequent export/import."
+        "Your workflow relies on frequent export/import.",
+        "You only need a simple document or basic spreadsheet."
       ],
       "threshold": "Coda shines for teams seeking to centralize documentation and data; a classic docs+sheets approach works otherwise."
     },

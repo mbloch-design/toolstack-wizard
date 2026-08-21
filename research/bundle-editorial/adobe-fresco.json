@@ -4,10 +4,14 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Adobe Fresco — description et fonctions (Wikipédia)", "url": "https://en.wikipedia.org/wiki/Adobe_Fresco" }
+    {
+      "label": "Adobe Fresco — description et fonctions (Wikipédia)",
+      "url": "https://en.wikipedia.org/wiki/Adobe_Fresco"
+    }
   ],
   "facts": {
     "what": "Éditeur de dessin numérique (vectoriel et matriciel) d'Adobe, orienté peinture, pour iPad, iPhone et Windows.",
+    "what_en": "Adobe's digital drawing editor (vector and raster), focused on painting, with realistic brushes.",
     "pricing_note": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite).",
     "key_features": [
       "Live Brushes et pinceaux vectoriels",
@@ -47,7 +51,11 @@
       "Combiner pinceaux vectoriels et matriciels dans un même dessin.",
       "Importer des pinceaux Photoshop pour dessiner sur iPad."
     ],
-    "relevant_for": ["Illustrateurs", "Artistes numériques", "Designers"]
+    "relevant_for": [
+      "Illustrateurs",
+      "Artistes numériques",
+      "Designers"
+    ]
   },
   "en": {
     "verdict": {

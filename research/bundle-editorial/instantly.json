@@ -3,15 +3,28 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Page tarifaire officielle Instantly", "url": "https://instantly.ai/pricing" }
+    {
+      "label": "Page tarifaire officielle Instantly",
+      "url": "https://instantly.ai/pricing"
+    }
   ],
   "facts": {
     "what": "Logiciel de cold email B2B : envoi à froid à volume avec comptes multiples, warmup (chauffe des boîtes), campagnes et suivi de délivrabilité.",
+    "what_en": "B2B cold email software: high-volume sending with multiple accounts, account warm-up, campaign management, and deliverability tracking.",
     "pricing_model": "Abonnement par paliers (mensuel ou annuel, annuel ~20 % moins cher) ; nombre de comptes d'envoi souvent illimité, facturation liée au volume d'emails/contacts.",
-    "free_tier": { "exists": false, "detail": "Pas de palier gratuit permanent ; abonnement selon volume d'emails et de contacts." },
+    "free_tier": {
+      "exists": false,
+      "detail": "Pas de palier gratuit permanent ; abonnement selon volume d'emails et de contacts."
+    },
     "plans": [
-      { "name": "Growth", "price": "47 $/mois (37,60 $ en annuel) — 5 000 emails/mois, 1 000 contacts" },
-      { "name": "Hypergrowth", "price": "97 $/mois (77,60 $ en annuel) — 100 000 emails/mois, 25 000 contacts, comptes illimités" }
+      {
+        "name": "Growth",
+        "price": "47 $/mois (37,60 $ en annuel) — 5 000 emails/mois, 1 000 contacts"
+      },
+      {
+        "name": "Hypergrowth",
+        "price": "97 $/mois (77,60 $ en annuel) — 100 000 emails/mois, 25 000 contacts, comptes illimités"
+      }
     ],
     "key_features": [
       "Envoi cold email multi-comptes",
@@ -50,7 +63,11 @@
       "Chauffer plusieurs boîtes d'envoi.",
       "Scaler l'outbound d'une équipe commerciale."
     ],
-    "relevant_for": ["Équipes commerciales", "Growth/outbound", "Agences de prospection"]
+    "relevant_for": [
+      "Équipes commerciales",
+      "Growth/outbound",
+      "Agences de prospection"
+    ]
   },
   "en": {
     "verdict": {

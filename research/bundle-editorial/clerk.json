@@ -3,15 +3,29 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Page tarifaire officielle Clerk", "url": "https://clerk.com/pricing" }
+    {
+      "label": "Page tarifaire officielle Clerk",
+      "url": "https://clerk.com/pricing"
+    }
   ],
   "facts": {
     "what": "Plateforme d'authentification et de gestion des utilisateurs pour applications (inscription, connexion, profils, organisations).",
+    "what_en": "Authentication and user management platform for applications (sign-up, login, profiles, organizations).",
     "pricing_model": "Palier gratuit Hobby, puis Pro/Business à l'usage (utilisateurs actifs mensuels), add-ons B2B/admin/billing.",
-    "free_tier": { "exists": true, "detail": "Hobby gratuit : jusqu'à 50 000 utilisateurs actifs mensuels (MAU) par application, jusqu'à 3 sièges dashboard, applications illimitées." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Hobby gratuit : jusqu'à 50 000 utilisateurs actifs mensuels (MAU) par application, jusqu'à 3 sièges dashboard, applications illimitées."
+    },
     "plans": [
-      { "name": "Pro", "price": "25 $/mois (20 $ en annuel)", "detail": "50 000 MAU inclus puis 0,02 $/MAU" },
-      { "name": "Business", "price": "300 $/mois (250 $ en annuel)" }
+      {
+        "name": "Pro",
+        "price": "25 $/mois (20 $ en annuel)",
+        "detail": "50 000 MAU inclus puis 0,02 $/MAU"
+      },
+      {
+        "name": "Business",
+        "price": "300 $/mois (250 $ en annuel)"
+      }
     ],
     "key_features": [
       "Composants d'auth prêts à l'emploi (sign-up/in, profils)",
@@ -50,7 +64,11 @@
       "Mettre en place MFA, passkeys et SSO sans tout coder.",
       "Gérer des organisations et des rôles pour une application B2B."
     ],
-    "relevant_for": ["Développeurs", "Startups", "Équipes produit"]
+    "relevant_for": [
+      "Développeurs",
+      "Startups",
+      "Équipes produit"
+    ]
   },
   "en": {
     "verdict": {

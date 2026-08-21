@@ -3,18 +3,36 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Power BI — analytics Microsoft (site officiel)", "url": "https://powerbi.microsoft.com" }
+    {
+      "label": "Power BI — analytics Microsoft (site officiel)",
+      "url": "https://powerbi.microsoft.com"
+    }
   ],
   "facts": {
     "what": "Plateforme d'analytics et BI de Microsoft. Combine dashboards interactifs, rapports, et capacité premium pour partage sécurisé. S'intègre nativement à l'écosystème Microsoft 365.",
     "what_en": "Microsoft analytics and BI platform. Combines interactive dashboards, reports, and premium capacity for secure sharing. Natively integrates with Microsoft 365 ecosystem.",
     "pricing_model": "Freemium : Power BI Desktop gratuit, puis licences par utilisateur (Pro) ou capacité (Premium/Fabric). Licences par mois.",
-    "free_tier": { "exists": true, "detail": "Power BI Desktop gratuit pour création locale. Accès au cloud via essai ou licence Pro." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Power BI Desktop gratuit pour création locale. Accès au cloud via essai ou licence Pro."
+    },
     "plans": [
-      { "name": "Power BI Desktop", "price": "Gratuit (creation locale)" },
-      { "name": "Pro", "price": "montants sur la page officielle (par utilisateur/mois)" },
-      { "name": "Premium Per User (PPU)", "price": "montants sur la page officielle (par utilisateur/mois, plus cher que Pro)" },
-      { "name": "Fabric", "price": "montants sur la page officielle (capacity-based, partir ~262 €/mois)" }
+      {
+        "name": "Power BI Desktop",
+        "price": "Gratuit (creation locale)"
+      },
+      {
+        "name": "Pro",
+        "price": "montants sur la page officielle (par utilisateur/mois)"
+      },
+      {
+        "name": "Premium Per User (PPU)",
+        "price": "montants sur la page officielle (par utilisateur/mois, plus cher que Pro)"
+      },
+      {
+        "name": "Fabric",
+        "price": "montants sur la page officielle (capacity-based, partir ~262 €/mois)"
+      }
     ],
     "key_features": [
       "Desktop local sans coût pour création de rapports",
@@ -34,7 +52,8 @@
       ],
       "avoidIf": [
         "Vous refusez le vendor lock-in Microsoft.",
-        "Votre équipe est petite et budget très serré."
+        "Votre équipe est petite et budget très serré.",
+        "Votre data stack n'est pas Microsoft : Power BI est moins flexible hors écosystème, avec connecteurs limités."
       ],
       "threshold": "Power BI s'impose pour les orga Microsoft 365 ; pour autres, Tableau ou Looker peuvent être alternatives."
     },
@@ -55,7 +74,11 @@
       "Analyser données stockées dans SQL Server, Azure.",
       "Intégrer BI dans applications custom avec Embedded."
     ],
-    "relevant_for": ["Entreprises Microsoft", "Équipes finance/ventes", "Organisations Azure"]
+    "relevant_for": [
+      "Entreprises Microsoft",
+      "Équipes finance/ventes",
+      "Organisations Azure"
+    ]
   },
   "en": {
     "verdict": {
@@ -66,7 +89,8 @@
       ],
       "avoidIf": [
         "You reject Microsoft vendor lock-in.",
-        "Your team is small and budget is tight."
+        "Your team is small and budget is tight.",
+        "Your data stack is non-Microsoft: Power BI is less flexible outside Microsoft ecosystem, with limited third-party connectors."
       ],
       "threshold": "Power BI fits Microsoft 365 orgs; for others, Tableau or Looker may be alternatives."
     },

@@ -31,7 +31,8 @@
       ],
       "avoidIf": [
         "Vous n'avez besoin que d'un outil CRM réactif.",
-        "Vous préférez des outils spécialisés légers."
+        "Vous préférez des outils spécialisés légers.",
+        "Votre liste de prospects provient d'une source de données propriétaire interne."
       ],
       "threshold": "Apollo.io remplace cinq outils distincts pour la prospection ; pour une utilisation CRM simple, d'autres solutions suffisent."
     },
@@ -62,7 +63,8 @@
       ],
       "avoidIf": [
         "You only need reactive CRM features.",
-        "You prefer lightweight specialized tools."
+        "You prefer lightweight specialized tools.",
+        "Your prospect list comes from proprietary internal data sources."
       ],
       "threshold": "Apollo.io consolidates five tools for outbound; for simple CRM use, other solutions suffice."
     },

@@ -3,19 +3,40 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Leonardo AI — image generation et pricing (site officiel)", "url": "https://leonardo.ai" }
+    {
+      "label": "Leonardo AI — image generation et pricing (site officiel)",
+      "url": "https://leonardo.ai"
+    }
   ],
   "facts": {
     "what": "Générateur d'images IA avec modèles propriétaires (Leonardo) et tiers : haute qualité, édition, upscaling, photo-to-painting. Crédits system ; usage commercial dès Free.",
     "what_en": "AI image generator with proprietary and third-party models: high quality, editing, upscaling, photo-to-painting. Credit system; commercial use from Free tier.",
     "pricing_model": "Free (150 tokens/jour, usage non-commercial), Apprentice (12 $/mois, 8.5K crédits), Artisan (30 $/mois, 25K crédits), Ultimate (60 $/mois, 60K crédits). Remise sur l'engagement annuel.",
-    "free_tier": { "exists": true, "detail": "Gratuit : 150 tokens/jour (~30-50 images) avec watermark ; usage non-commercial uniquement." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Gratuit : 150 tokens/jour (~30-50 images) avec watermark ; usage non-commercial uniquement."
+    },
     "plans": [
-      { "name": "Free", "price": "0 $ (150 tokens/jour, non-commercial)" },
-      { "name": "Apprentice", "price": "12 $/mois (8.5K crédits, commercial ok)" },
-      { "name": "Artisan", "price": "30 $/mois (25K crédits)" },
-      { "name": "Ultimate", "price": "60 $/mois (60K crédits)" },
-      { "name": "Enterprise", "price": "2.5K crédits à 89 $/mois" }
+      {
+        "name": "Free",
+        "price": "0 $ (150 tokens/jour, non-commercial)"
+      },
+      {
+        "name": "Apprentice",
+        "price": "12 $/mois (8.5K crédits, commercial ok)"
+      },
+      {
+        "name": "Artisan",
+        "price": "30 $/mois (25K crédits)"
+      },
+      {
+        "name": "Ultimate",
+        "price": "60 $/mois (60K crédits)"
+      },
+      {
+        "name": "Enterprise",
+        "price": "2.5K crédits à 89 $/mois"
+      }
     ],
     "key_features": [
       "Modèles propriétaires high quality",
@@ -34,7 +55,8 @@
       ],
       "avoidIf": [
         "Vous faites surtout du texte-en-image (try Ideogram).",
-        "Vous voulez totalement gratuit sans limite."
+        "Vous voulez totalement gratuit sans limite.",
+        "Vous avez besoin de générer à volume élevé : le coût par crédit devient prohibitif."
       ],
       "threshold": "Leonardo excels pour qualité + commercial dès entrée ; pour designs texte, Ideogram meilleur."
     },
@@ -55,7 +77,11 @@
       "Upscale images existing.",
       "Créer assets commercial vite."
     ],
-    "relevant_for": ["Photographes IA", "Designers", "Content creators comerciales"]
+    "relevant_for": [
+      "Photographes IA",
+      "Designers",
+      "Content creators comerciales"
+    ]
   },
   "en": {
     "verdict": {
@@ -66,7 +92,8 @@
       ],
       "avoidIf": [
         "You mostly do text-in-image (try Ideogram).",
-        "You want completely free unlimited."
+        "You want completely free unlimited.",
+        "You need to generate at high volumes: per-credit cost becomes prohibitive."
       ],
       "threshold": "Leonardo excels for quality + commercial from entry; for text designs, Ideogram better."
     },

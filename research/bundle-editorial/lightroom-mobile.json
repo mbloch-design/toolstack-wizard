@@ -4,10 +4,14 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Adobe Lightroom (versions mobile et web) — Wikipédia", "url": "https://en.wikipedia.org/wiki/Adobe_Lightroom" }
+    {
+      "label": "Adobe Lightroom (versions mobile et web) — Wikipédia",
+      "url": "https://en.wikipedia.org/wiki/Adobe_Lightroom"
+    }
   ],
   "facts": {
     "what": "Version mobile d'Adobe Lightroom : retouche photo non destructive sur smartphone/tablette, synchronisée au cloud.",
+    "what_en": "Mobile version of Adobe Lightroom: non-destructive photo editing on smartphone/tablet, cloud-synced.",
     "pricing_note": "Liée à l'abonnement Lightroom / Creative Cloud Photo (voir la fiche de la suite).",
     "key_features": [
       "Retouche non destructive sur mobile",
@@ -46,7 +50,11 @@
       "Synchroniser ses édits entre mobile et ordinateur.",
       "Appliquer un préréglage en déplacement."
     ],
-    "relevant_for": ["Photographes mobiles", "Créateurs de contenu", "Voyageurs"]
+    "relevant_for": [
+      "Photographes mobiles",
+      "Créateurs de contenu",
+      "Voyageurs"
+    ]
   },
   "en": {
     "verdict": {

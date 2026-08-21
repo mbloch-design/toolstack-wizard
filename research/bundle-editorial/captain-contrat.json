@@ -3,16 +3,32 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Captain Contrat — services juridiques en ligne (site officiel)", "url": "https://www.captaincontrat.com/" }
+    {
+      "label": "Captain Contrat — services juridiques en ligne (site officiel)",
+      "url": "https://www.captaincontrat.com/"
+    }
   ],
   "facts": {
     "what": "Legaltech française d'accompagnement juridique : création d'entreprise, rédaction de contrats et assistance juridique, sur un modèle hybride (technologie + avocats/juristes).",
+    "what_en": "French legal tech for legal support: business setup, contract drafting, and legal assistance, on a hybrid model (technology + lawyers/legal experts).",
     "pricing_model": "Prestations de création d'entreprise à l'acte + abonnement juridique mensuel. Frais administratifs (immatriculation, modification…) en plus.",
-    "free_tier": { "exists": false, "detail": "Service payant ; abonnement juridique ou prestations à l'acte." },
+    "free_tier": {
+      "exists": false,
+      "detail": "Service payant ; abonnement juridique ou prestations à l'acte."
+    },
     "plans": [
-      { "name": "Abonnement Essential", "price": "29,90 € HT/mois" },
-      { "name": "Abonnement Premium", "price": "249 € HT/mois" },
-      { "name": "Création d'entreprise", "price": "à l'acte + frais administratifs" }
+      {
+        "name": "Abonnement Essential",
+        "price": "29,90 € HT/mois"
+      },
+      {
+        "name": "Abonnement Premium",
+        "price": "249 € HT/mois"
+      },
+      {
+        "name": "Création d'entreprise",
+        "price": "à l'acte + frais administratifs"
+      }
     ],
     "key_features": [
       "Création d'entreprise en ligne (SAS, SARL…)",
@@ -51,7 +67,11 @@
       "Faire rédiger ou vérifier un contrat.",
       "Accéder à un juriste pour ses questions courantes."
     ],
-    "relevant_for": ["Créateurs d'entreprise", "TPE françaises", "Indépendants"]
+    "relevant_for": [
+      "Créateurs d'entreprise",
+      "TPE françaises",
+      "Indépendants"
+    ]
   },
   "en": {
     "verdict": {

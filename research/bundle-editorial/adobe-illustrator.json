@@ -4,10 +4,14 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Adobe Illustrator — description et fonctions (Wikipédia)", "url": "https://en.wikipedia.org/wiki/Adobe_Illustrator" }
+    {
+      "label": "Adobe Illustrator — description et fonctions (Wikipédia)",
+      "url": "https://en.wikipedia.org/wiki/Adobe_Illustrator"
+    }
   ],
   "facts": {
     "what": "Éditeur de graphismes vectoriels de référence d'Adobe, pour créer des visuels redimensionnables à l'infini.",
+    "what_en": "Adobe's flagship vector graphics editor for creating visuals that scale across all formats.",
     "pricing_note": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite).",
     "key_features": [
       "Dessin vectoriel (courbes de Bézier) redimensionnable à l'infini",
@@ -47,7 +51,11 @@
       "Créer des illustrations et icônes redimensionnables.",
       "Réaliser des compositions typographiques soignées."
     ],
-    "relevant_for": ["Designers graphiques", "Illustrateurs", "Studios et agences"]
+    "relevant_for": [
+      "Designers graphiques",
+      "Illustrateurs",
+      "Studios et agences"
+    ]
   },
   "en": {
     "verdict": {

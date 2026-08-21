@@ -3,15 +3,28 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Power-user — add-in Office (site officiel)", "url": "https://www.power-user.com/" }
+    {
+      "label": "Power-user — add-in Office (site officiel)",
+      "url": "https://www.power-user.com/"
+    }
   ],
   "facts": {
     "what": "Add-in de productivité pour PowerPoint, Excel et Word : des milliers de modèles, icônes vectorielles, cartes éditables, diagrammes (Gantt, Mekko, waterfall) et images HD pour accélérer la création de slides et de documents.",
+    "what_en": "Productivity add-in for PowerPoint, Excel, and Word: thousands of templates, vector icons, editable maps, diagrams (Gantt, Mekko, waterfall), and HD images to speed up slide and document creation.",
     "pricing_model": "Licence annuelle par utilisateur ; offres équipe/entreprise sur devis.",
-    "free_tier": { "exists": false, "detail": "Version d'essai possible ; usage régulier via une licence annuelle." },
+    "free_tier": {
+      "exists": false,
+      "detail": "Version d'essai possible ; usage régulier via une licence annuelle."
+    },
     "plans": [
-      { "name": "Licence individuelle", "price": "à partir de ~240 $/an" },
-      { "name": "Équipe / Entreprise", "price": "sur devis" }
+      {
+        "name": "Licence individuelle",
+        "price": "à partir de ~240 $/an"
+      },
+      {
+        "name": "Équipe / Entreprise",
+        "price": "sur devis"
+      }
     ],
     "key_features": [
       "Milliers de modèles de slides",
@@ -50,7 +63,11 @@
       "Insérer diagrammes et cartes éditables.",
       "Standardiser la mise en forme des documents."
     ],
-    "relevant_for": ["Consultants", "Analystes", "Équipes qui vivent dans Office"]
+    "relevant_for": [
+      "Consultants",
+      "Analystes",
+      "Équipes qui vivent dans Office"
+    ]
   },
   "en": {
     "verdict": {

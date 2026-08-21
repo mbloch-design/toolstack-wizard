@@ -3,15 +3,24 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Pytest — Documentation (site officiel)", "url": "https://docs.pytest.org" }
+    {
+      "label": "Pytest — Documentation (site officiel)",
+      "url": "https://docs.pytest.org"
+    }
   ],
   "facts": {
     "what": "Framework de test Python simplifié avec auto-découverte de tests, fixtures modulaires et plus de 850 plugins de communauté. Supporte tests unitaires, intégration et fonctionnels.",
     "what_en": "Simplified Python testing framework with auto-discovery, modular fixtures, and 850+ community plugins. Supports unit, integration, and functional testing.",
     "pricing_model": "Entièrement gratuit et open source. Aucun coût, aucun abonnement.",
-    "free_tier": { "exists": true, "detail": "Entièrement gratuit sous licence MIT. Outil open source sans limitation de fonctionnalités." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Entièrement gratuit sous licence MIT. Outil open source sans limitation de fonctionnalités."
+    },
     "plans": [
-      { "name": "Open source (gratuit)", "price": "Gratuit — pas de limitation" }
+      {
+        "name": "Open source (gratuit)",
+        "price": "Gratuit — pas de limitation"
+      }
     ],
     "key_features": [
       "Auto-découverte de modules et fonctions de test",
@@ -31,7 +40,9 @@
         "Votre équipe collabore sur des tests."
       ],
       "avoidIf": [
-        "Vous utilisez unittest de la stdlib (pytest compatible, mais migration optionnelle)."
+        "Vous utilisez unittest de la stdlib (pytest compatible, mais migration optionnelle).",
+        "Vous êtes nouveau à Python et tests : la courbe d'apprentissage des fixtures peut être intimidante.",
+        "L'écosystème plugin fragmenté vous surcharge."
       ],
       "threshold": "Pytest s'impose comme le standard pour les tests Python modernes ; adoption quasi-universelle."
     },
@@ -54,7 +65,11 @@
       "Tests de données pour data science projects.",
       "Integration et tests de bout en bout."
     ],
-    "relevant_for": ["Développeurs Python", "Data scientists", "Équipes QA"]
+    "relevant_for": [
+      "Développeurs Python",
+      "Data scientists",
+      "Équipes QA"
+    ]
   },
   "en": {
     "verdict": {
@@ -64,7 +79,9 @@
         "Your team collaborates on tests."
       ],
       "avoidIf": [
-        "You're using unittest from stdlib (pytest compatible, but migration optional)."
+        "You're using unittest from stdlib (pytest compatible, but migration optional).",
+        "You're new to Python and testing: the fixtures learning curve can be steep for beginners.",
+        "The fragmented plugin ecosystem is overwhelming."
       ],
       "threshold": "Pytest is the standard for modern Python testing; near-universal adoption."
     },

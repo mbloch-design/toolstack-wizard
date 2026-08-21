@@ -3,13 +3,23 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-23",
   "sources": [
-    { "label": "Facturation Gemini API / AI Studio — Google", "url": "https://ai.google.dev/gemini-api/docs/billing" },
-    { "label": "Tarifs Gemini Developer API — Google", "url": "https://ai.google.dev/gemini-api/docs/pricing" }
+    {
+      "label": "Facturation Gemini API / AI Studio — Google",
+      "url": "https://ai.google.dev/gemini-api/docs/billing"
+    },
+    {
+      "label": "Tarifs Gemini Developer API — Google",
+      "url": "https://ai.google.dev/gemini-api/docs/pricing"
+    }
   ],
   "facts": {
     "what": "Interface web de Google pour prototyper avec les modèles Gemini : rédiger des prompts, tester, régler puis exporter vers l'API.",
+    "what_en": "Google's web interface for prototyping with Gemini models: write prompts, test, configure, then export to the API.",
     "pricing_model": "AI Studio est gratuit à utiliser. L'usage de l'API Gemini est facturé séparément (palier gratuit puis payant).",
-    "free_tier": { "exists": true, "detail": "Utilisation d'AI Studio gratuite dans toutes les régions ; l'API dispose d'un palier gratuit avant passage au payant." },
+    "free_tier": {
+      "exists": true,
+      "detail": "Utilisation d'AI Studio gratuite dans toutes les régions ; l'API dispose d'un palier gratuit avant passage au payant."
+    },
     "billing_note": "À partir du 23 mars 2026, plans Prepay/Postpay pour l'API ; les crédits Google Cloud Free Trial excluent l'usage Gemini API/AI Studio pour les comptes récents.",
     "key_features": [
       "Accès direct aux derniers modèles Gemini",
@@ -48,7 +58,11 @@
       "Prototyper une fonctionnalité IA multimodale.",
       "Exporter un prompt validé vers l'API pour son application."
     ],
-    "relevant_for": ["Développeurs", "Équipes produit IA", "Prototypage"]
+    "relevant_for": [
+      "Développeurs",
+      "Équipes produit IA",
+      "Prototypage"
+    ]
   },
   "en": {
     "verdict": {
