@@ -1,0 +1,98 @@
+{
+  "slug": "visualcv",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "VisualCV Pricing (site officiel)", "url": "https://www.visualcv.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Plateforme de création de CV et portfolio en ligne. Permet de concevoir, partager et tracker l'engagement sur des résumés professionnels via des templates ATS-optimisés, avec portfolio intégré et analytics unique d'ouverture/engagement.",
+    "what_en": "Online resume and portfolio builder platform. Create, share, and track resume engagement through ATS-optimized templates, integrated portfolio, and unique open/engagement analytics.",
+    "pricing_model": "Modèle freemium. Plan Free durable avec features essentielles. Plan Pro en facturation mensuelle ($16/mois) ou trimestrielle ($48 pour 3 mois).",
+    "free_tier": { "exists": true, "detail": "Free durable : créer 1 CV, 30+ templates, exports PDF illimités, site professionnel, analytics, cover letter builder. Limité à 1 seul CV à la fois." },
+    "plans": [
+      { "name": "Free", "price": "$0/mois" },
+      { "name": "Pro (monthly)", "price": "$16/mois" },
+      { "name": "Pro (quarterly)", "price": "$48 par trimestre" }
+    ],
+    "key_features": [
+      "30+ templates ATS-optimisés et professionnels",
+      "Portfolio en ligne intégré avec embeds média",
+      "Analytics unique : tracking ouverture, durée de lecture, timestamp",
+      "AI Resume Builder (génération contenu assistée)",
+      "Cover letter builder",
+      "Version control et cloning de CV",
+      "Import depuis LinkedIn, PDF, Word",
+      "Liens résumé partagés et trackables",
+      "Garantie remboursement 30 jours",
+      "Support 9am-5pm PDT"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin de tracker qui ouvre votre CV et reste combien de temps.",
+        "Vous créez plusieurs variantes de CV (freelance, job search, projects divers).",
+        "Vous montrez votre travail : portfolio + CV dans une même plateforme Web."
+      ],
+      "avoidIf": [
+        "Vous travaillez en équipe et cherchez collaboration/partage interne.",
+        "Vous avez besoin de plan annuel avec réduction tarifaire.",
+        "Vous préférez CV ultra-basique sans analytics ni portfolio."
+      ],
+      "threshold": "VisualCV cible freelances, remote workers et job seekers cherchant CV + portfolio avec tracking d'engagement employeur, pas des équipes internes."
+    },
+    "pros": [
+      "Plan Free durable avec 30+ templates, exports illimités et site professionnel.",
+      "Analytics uniques : voir qui ouvre, durée de lecture, timestamp (absent chez concurrents).",
+      "Portfolio + CV intégrés pour creatives (designers, writers, photographers).",
+      "Templates ATS-optimisés et design professionnel haut de gamme.",
+      "AI Resume Builder pour générer contenu automatiquement."
+    ],
+    "cons": [
+      "Plan Free limité à 1 seul CV (obligation d'upgrade pour créer variantes).",
+      "Pas de plan annuel affiché (que mensuel ou trimestriel).",
+      "Analytics moins détaillées que outils analytics dédiés.",
+      "Support US-centric (heures 9am-5pm PDT, peu de contenu non-anglophone)."
+    ],
+    "use_cases": [
+      "Freelances variant CV par client et trackant leur engagement.",
+      "Job seekers testant gratuitement avant d'acheter Pro.",
+      "Creatives (designers, photographes) montrant portfolio + CV en une page."
+    ],
+    "relevant_for": ["Freelances", "Remote workers", "Job seekers", "Creatives"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need to track who opens your resume and how long they spend reading it.",
+        "You create multiple resume variants (freelance, job search, project-specific).",
+        "You showcase your work: portfolio + resume in one Web platform."
+      ],
+      "avoidIf": [
+        "You work in a team and need internal collaboration/sharing features.",
+        "You need an annual plan with volume discount.",
+        "You prefer ultra-basic resume without analytics or portfolio."
+      ],
+      "threshold": "VisualCV targets freelances, remote workers, and job seekers seeking resume + portfolio with employer engagement tracking, not internal team workflows."
+    },
+    "pros": [
+      "Durable Free plan with 30+ templates, unlimited exports, and professional site.",
+      "Unique analytics: see who opens, read duration, timestamps (absent in competitors).",
+      "Integrated portfolio + resume for creatives (designers, writers, photographers).",
+      "ATS-optimized templates and premium professional design.",
+      "AI Resume Builder for automated content generation."
+    ],
+    "cons": [
+      "Free plan limited to 1 resume (must upgrade to create variants).",
+      "No annual plan displayed (only monthly or quarterly).",
+      "Analytics less detailed than dedicated analytics tools.",
+      "US-centric support (9am-5pm PDT hours, limited non-English content)."
+    ],
+    "use_cases": [
+      "Freelances varying resume by client and tracking engagement.",
+      "Job seekers testing free plan before purchasing Pro.",
+      "Creatives (designers, photographers) showcasing portfolio + resume in one page."
+    ]
+  }
+}
