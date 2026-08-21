@@ -1,0 +1,105 @@
+{
+  "slug": "trainual",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "Trainual — Training & Operations Platform (site officiel)",
+      "url": "https://trainual.com"
+    }
+  ],
+  "facts": {
+    "what": "Plateforme de formation et opérations pour standardiser comment le travail s'effectue, combinant documentation SOP, onboarding, tracking, goals/scorecard, meetings management avec IA assistant Q&A.",
+    "what_en": "Training and operations platform to standardize how work gets done, combining SOP documentation, onboarding, tracking, goals/scorecards, meeting management with AI Q&A assistant.",
+    "pricing_model": "Tarification personnalisée sur demande. Pas de tarifs publics affichés. Démo/consultation requise.",
+    "free_tier": {
+      "exists": false,
+      "detail": "Pas de plan gratuit. Tarification sur devis uniquement (contact commercial/démo)."
+    },
+    "plans": [
+      {
+        "name": "Plans Personnalisés",
+        "price": "Tarification sur demande (contact commercial)"
+      }
+    ],
+    "key_features": [
+      "Training Suite : documentation SOP, onboarding paths",
+      "AI Q&A pour réponses instant sur processus",
+      "Operations Suite : meeting management, decision tracking",
+      "Performance Suite : feedback, reviews (coming soon)",
+      "Role-based training paths et org chart",
+      "Goal planning et KPI scorecards",
+      "Team updates et action item tracking",
+      "1 000+ intégrations (Slack, Google, etc)",
+      "E-signature pour completion tracking",
+      "Video, flowcharts, step-by-step guides"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous standardisez processus et operations équipe.",
+        "Vous avez besoin SOP documentation centralisée.",
+        "AI Q&A pour FAQ processus importent."
+      ],
+      "avoidIf": [
+        "Vous cherchez solution entièrement gratuite.",
+        "Vous êtes micro-équipe sans processus formels.",
+        "Vous préférez outils spécialisés séparés."
+      ],
+      "threshold": "Trainual convient équipes moyennes standardisant processus ; pour solo, documentation Notion/Wiki suffisent."
+    },
+    "pros": [
+      "IA Q&A pour réponses instant processus.",
+      "Plateforme intégrée training + operations.",
+      "Documentation multimédias (video, flowcharts).",
+      "Intégrations 1 000+ incluses."
+    ],
+    "cons": [
+      "Tarification personnalisée (pas transparence).",
+      "Pas de plan gratuit.",
+      "Performance Suite encore en development."
+    ],
+    "use_cases": [
+      "Créer SOP documentation centralisée équipe.",
+      "Standardiser onboarding nouveaux employés.",
+      "Autorépondre FAQ processus via IA."
+    ],
+    "relevant_for": [
+      "Directeurs opérations",
+      "Responsables RH",
+      "Équipes managers"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You standardize team processes and operations.",
+        "You need centralized SOP documentation.",
+        "AI Q&A for process FAQs matters."
+      ],
+      "avoidIf": [
+        "You're looking for entirely free solution.",
+        "You're micro-team without formal processes.",
+        "You prefer separate specialized tools."
+      ],
+      "threshold": "Trainual fits mid-size teams standardizing processes; for solo, Notion/Wiki documentation suffices."
+    },
+    "pros": [
+      "AI Q&A for instant process answers.",
+      "Integrated training + operations platform.",
+      "Multimedia documentation (video, flowcharts).",
+      "1,000+ integrations included."
+    ],
+    "cons": [
+      "Custom pricing (no transparency).",
+      "No free plan.",
+      "Performance Suite still in development."
+    ],
+    "use_cases": [
+      "Create centralized SOP documentation.",
+      "Standardize new employee onboarding.",
+      "Auto-answer process FAQs via AI."
+    ]
+  }
+}

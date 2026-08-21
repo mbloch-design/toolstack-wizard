@@ -1,0 +1,90 @@
+{
+  "slug": "draftbit",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Draftbit — Visual App Development Platform (site officiel)", "url": "https://draftbit.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de développement d'applications cross-platform (web, iOS, Android) combisant un éditeur visuel drag-and-drop, des agents IA intégrés et l'accès complet au code. Permet de créer et publier des apps en production rapidement.",
+    "what_en": "Cross-platform app development platform (web, iOS, Android) combining visual drag-and-drop editing, integrated AI agents, and full code access. Enables rapid prototyping and production deployment.",
+    "pricing_model": "Modèle freemium. Tier gratuit pour commencer, montants exacts des plans payants à consulter sur le site.",
+    "free_tier": { "exists": true, "detail": "Tier gratuit pour débuter avec accès à la plate-forme. Support humain d'experts disponible." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit pour débuter" },
+      { "name": "Paid Plans", "price": "Montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Éditeur visuel drag-and-drop avec aperçu en temps réel",
+      "Agents IA (Claude et OpenAI intégrés)",
+      "Full code access et import/export",
+      "100+ intégrations et MCP (Model Context Protocols)",
+      "Compatibilité flexible avec les backends",
+      "Publication d'un clic vers web et app stores",
+      "Support d'experts humains (à la demande)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez un équilibre entre visuel et code pour développer rapidement.",
+        "Vous avez besoin de déployer sur web ET mobile (iOS/Android).",
+        "Vous voulez intégrer des agents IA dans vos apps."
+      ],
+      "avoidIf": [
+        "Vous préférez un full no-code sans accès au code.",
+        "Vous avez des contraintes très strictes d'infrastructure ou de données.",
+        "Vous développez des applications très complexes avec architecture custom."
+      ],
+      "threshold": "Draftbit convient aux développeurs et aux product managers cherchant à construire des apps cross-platform avec une approche visuelle + IA, sans renoncer au contrôle du code."
+    },
+    "pros": [
+      "Interface visuelle puissante combinée avec accès au code complet.",
+      "Support des agents IA natifs (Claude, OpenAI).",
+      "Déploiement cross-platform (web, iOS, Android).",
+      "Support d'experts humains available."
+    ],
+    "cons": [
+      "Courbe d'apprentissage plus raide que les platforms purement no-code.",
+      "Pricing des plans payants non affiché publiquement.",
+      "Moins de templates pré-construits que les concurrents."
+    ],
+    "use_cases": [
+      "Construire une app mobile + web avec une seule code base.",
+      "Prototyper rapidement avec l'IA puis affiner le code.",
+      "Créer des outils internes cross-platform."
+    ],
+    "relevant_for": ["Développeurs", "Product Managers avec skills tech", "Startups lean"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want a balance between visual builder and code access.",
+        "You need to deploy on both web and mobile (iOS/Android).",
+        "You want to integrate AI agents into your apps."
+      ],
+      "avoidIf": [
+        "You prefer pure no-code without code access.",
+        "You have strict infrastructure or data constraints.",
+        "You are building very complex apps with custom architecture."
+      ],
+      "threshold": "Draftbit suits developers and product managers building cross-platform apps with a visual + AI approach, without sacrificing code control."
+    },
+    "pros": [
+      "Powerful visual interface combined with full code access.",
+      "Native AI agent support (Claude, OpenAI).",
+      "Cross-platform deployment (web, iOS, Android).",
+      "Human expert support available."
+    ],
+    "cons": [
+      "Steeper learning curve than pure no-code platforms.",
+      "Paid plans pricing not publicly displayed.",
+      "Fewer pre-built templates than competitors."
+    ],
+    "use_cases": [
+      "Build a mobile + web app with a single codebase.",
+      "Prototype quickly with AI then refine the code.",
+      "Create cross-platform internal tools."
+    ]
+  }
+}

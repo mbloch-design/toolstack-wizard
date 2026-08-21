@@ -1,0 +1,108 @@
+{
+  "slug": "pics-io",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "Pics.io — Asset Management Layer (site officiel)",
+      "url": "https://pics.io"
+    }
+  ],
+  "facts": {
+    "what": "Couche de gestion des assets par-dessus stockages existants (Google Drive, S3) avec recherche IA, collaboration, versioning, rights management et partage sécurisé, promo 20% août 2026.",
+    "what_en": "Asset management layer over existing storage (Google Drive, S3) with AI search, collaboration, versioning, rights management, and secure sharing, 20% discount August 2026.",
+    "pricing_model": "Abonnement transparent avec options flexibles. AI credits pricing tiered. Promo 20% août 2026. Essai gratuit 7 jours.",
+    "free_tier": {
+      "exists": true,
+      "detail": "Essai gratuit 7 jours sans CB requise. Plans payants avec pricing transparent affichée sur site (tiers non spécifiés ici)."
+    },
+    "plans": [
+      {
+        "name": "Essai Gratuit",
+        "price": "7 jours sans carte crédit"
+      },
+      {
+        "name": "Plans Payants",
+        "price": "Tarification transparent sur le site (avec promo 20% jusqu'au 31 août 2026)"
+      }
+    ],
+    "key_features": [
+      "Couche DAM sur Google Drive, Amazon S3",
+      "Recherche IA (natural language, face, OCR, speech-to-text)",
+      "Version control (comparaisons, approval locking)",
+      "Collaboration in-asset comments et workflows",
+      "Rights management (usage windows, expiration)",
+      "Partage portails branded avec auto-conversion",
+      "Intégrations Figma, Slack, Adobe, Zapier",
+      "Audit trails pour compliance",
+      "Flexible ou fixed AI credits pricing"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez Google Drive ou S3 avec assets volume.",
+        "Vous cherchez DAM couche sans migration.",
+        "Recherche IA et collaboration importent."
+      ],
+      "avoidIf": [
+        "Vous cherchez solution DAM standalone native.",
+        "Vous n'avez Google Drive ou S3 existant.",
+        "Vous préférez solution tout-en-un integré."
+      ],
+      "threshold": "Pics.io convient organisations Google/S3 cherchant DAM couche ; pour standalone, Bynder ou Cloudinary conviennent mieux."
+    },
+    "pros": [
+      "Essai gratuit 7 jours sans CB.",
+      "Couche DAM sur infrastructure existante (pas migration).",
+      "Recherche IA puissante (face, OCR, speech).",
+      "Remise disponible sur l'engagement annuel."
+    ],
+    "cons": [
+      "Dépend Google Drive/S3 (pas standalone).",
+      "Pricing transparent non affichée en détail ici.",
+      "moins de features que Bynder enterprise."
+    ],
+    "use_cases": [
+      "Ajouter DAM sur Google Drive existant.",
+      "Chercher assets visuels via IA.",
+      "Collaborer avec portails branded sécurisés."
+    ],
+    "relevant_for": [
+      "Équipes Google Workspace",
+      "Organisations S3",
+      "Agences créatives"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You have Google Drive or S3 with asset volume.",
+        "You want DAM layer without migration.",
+        "AI search and collaboration matter."
+      ],
+      "avoidIf": [
+        "You want standalone native DAM solution.",
+        "You don't have Google Drive or S3 existing.",
+        "You prefer all-in-one integrated solution."
+      ],
+      "threshold": "Pics.io fits Google/S3 organizations seeking DAM layer; for standalone, Bynder or Cloudinary suit better."
+    },
+    "pros": [
+      "Free 7-day trial without credit card.",
+      "DAM layer over existing infrastructure (no migration).",
+      "Powerful AI search (face, OCR, speech).",
+      "Discount available on annual commitment."
+    ],
+    "cons": [
+      "Depends on Google Drive/S3 (not standalone).",
+      "Transparent pricing not detailed here.",
+      "Fewer features than Bynder enterprise."
+    ],
+    "use_cases": [
+      "Add DAM layer to existing Google Drive.",
+      "Search visual assets via AI.",
+      "Collaborate with secure branded portals."
+    ]
+  }
+}

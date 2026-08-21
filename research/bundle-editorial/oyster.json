@@ -1,0 +1,95 @@
+{
+  "slug": "oyster",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Oyster — Global Payroll and EOR Platform (site officiel)", "url": "https://oysterhr.com" }
+  ],
+  "facts": {
+    "what": "Plateforme mondiale de paie et d'EOR (Employer of Record) permettant aux entreprises d'embaucher, payer et gérer des employés et contractors dans 180+ pays sans établir d'entités locales.",
+    "what_en": "Global payroll and EOR (Employer of Record) platform enabling organizations to hire, pay, and manage employees and contractors across 180+ countries without establishing local entities.",
+    "pricing_model": "Modèle par employé/contractor. EOR full-time à $699/mois par personne. Contractors globaux à $29/mois.",
+    "free_tier": { "exists": false, "detail": "Pas de tier gratuit. Modèle consultative pour solutions custom." },
+    "plans": [
+      { "name": "EOR (Full-time employees)", "price": "$699/mois par employé" },
+      { "name": "Global Contractors", "price": "$29/mois par contractor" },
+      { "name": "People Partner Services", "price": "$300/heure pour advisory white-glove" }
+    ],
+    "key_features": [
+      "Onboarding compliant en 48h",
+      "Paie automatisée multi-juridictions",
+      "Gestion contrats et avantages",
+      "Support visa et talent mobility",
+      "HR expert dédié par client",
+      "Solutions customisées au-delà du standard",
+      "Intégrations HRIS (Xero, Slack, HiBob, Greenhouse)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous embauchez des employés dans 5+ pays sans entité locale.",
+        "Vous cherchez onboarding rapide (48h) en compliance.",
+        "Vous avez besoin d'une relation HR expert personnalisée."
+      ],
+      "avoidIf": [
+        "Vous n'opérez qu'en un seul pays.",
+        "Vous cherchez une solution low-cost.",
+        "Vous préférez un self-service simple."
+      ],
+      "threshold": "Oyster cible les organisations globales cherchant EOR avec onboarding rapide et support HR expert dedié pour 180+ pays."
+    },
+    "pros": [
+      "EOR rapide (onboarding 48h).",
+      "Support dans 180+ pays.",
+      "HR expert dédié par client (relation personnalisée).",
+      "Pricing transparent par employé/contractor.",
+      "Salary insights et cost calculators inclus."
+    ],
+    "cons": [
+      "Pas de tier gratuit.",
+      "Coût mensuel élevé par salarié en portage.",
+      "Tarif attractif par prestataire, mais les modèles mixtes reviennent cher.",
+      "Pas de paie interne (EOR uniquement)."
+    ],
+    "use_cases": [
+      "Embaucher premier employé dans un nouveau pays (via EOR).",
+      "Gérer distributed team (5+ pays) avec paie centralisée.",
+      "Déléguer compliance d'emploi à expert global."
+    ],
+    "relevant_for": ["Startups globales", "Entreprises distribuées", "Remote-first companies"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You hire employees in 5+ countries without local entities.",
+        "You need fast (48h), compliant onboarding.",
+        "You want a personalized HR expert relationship."
+      ],
+      "avoidIf": [
+        "You operate in only one country.",
+        "You seek a low-cost solution.",
+        "You prefer simple self-service."
+      ],
+      "threshold": "Oyster targets global organizations seeking fast EOR with dedicated HR expert support across 180+ countries."
+    },
+    "pros": [
+      "Fast EOR (48h onboarding).",
+      "Support in 180+ countries.",
+      "Dedicated HR expert per client (personalized relationship).",
+      "Transparent per-employee/contractor pricing.",
+      "Salary insights and cost calculators included."
+    ],
+    "cons": [
+      "No free tier.",
+      "High monthly cost per EOR employee.",
+      "Attractive per-contractor pricing, but mixed setups get costly.",
+      "No internal payroll (EOR only)."
+    ],
+    "use_cases": [
+      "Hire first employee in a new country (via EOR).",
+      "Manage distributed team (5+ countries) with centralized payroll.",
+      "Delegate employment compliance to global expert."
+    ]
+  }
+}

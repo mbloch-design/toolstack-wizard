@@ -1,0 +1,90 @@
+{
+  "slug": "quick-base",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Quick Base — Low-Code Application Platform (site officiel)", "url": "https://quickbase.com" }
+  ],
+  "facts": {
+    "what": "Plateforme low-code permettant de construire des applications métier personnalisées. Cible quatre domaines clés : gestion de projets, gestion de ressources, gestion de workflows et opérations terrain.",
+    "what_en": "Low-code platform for building custom business applications. Targets four key areas: project management, resource management, workflow management, and field operations.",
+    "pricing_model": "Modèle d'abonnement pour entreprises. Offre essai gratuit. Tarification basée sur les besoins organisationnels.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit disponible, montants des plans payants sur la page officielle." },
+    "plans": [
+      { "name": "Free Trial", "price": "Essai gratuit" },
+      { "name": "Paid Plans", "price": "Montants sur la page officielle (selon organisation)" }
+    ],
+    "key_features": [
+      "Construction low-code/no-code d'applications",
+      "Intégration système (APIs et connecteurs)",
+      "Applications mobiles (iOS et Android)",
+      "AI Intelligence Pack pour insights",
+      "Pave : applications pré-construites prêtes à l'emploi",
+      "Automation tools intégrés",
+      "Utilisé par Amazon, Procter & Gamble, Skanska"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez des projets complexes ou du terrain et avez besoin d'une app custom.",
+        "Vous cherchez une plateforme low-code avec apps mobiles.",
+        "Vous êtes une entreprise (not individual)."
+      ],
+      "avoidIf": [
+        "Vous avez un très petit budget ou cherchez une solution startup.",
+        "Vous avez besoin d'une solution ultra-simple no-code.",
+        "Vous avez des besoins très pointus de branding custom."
+      ],
+      "threshold": "Quick Base s'adresse aux entreprises cherchant une plateforme low-code robuste pour construire des apps métier personnalisées avec mobilité."
+    },
+    "pros": [
+      "Plateforme low-code mature avec intégrations robustes.",
+      "Apps mobiles natives (iOS et Android).",
+      "Intelligence Pack (AI insights).",
+      "Applications pré-construites (Pave) pour démarrage rapide."
+    ],
+    "cons": [
+      "Pricing non transparent publiquement.",
+      "Plus complexe que solutions purement no-code.",
+      "Courbe d'apprentissage pour débutants."
+    ],
+    "use_cases": [
+      "Construire une app CRM interne custom pour entreprise.",
+      "Créer une app de gestion de ressources pour terrain.",
+      "Automatiser des workflows complexes cross-teams."
+    ],
+    "relevant_for": ["Grandes organisations", "Entreprises", "IT departments"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage complex projects or field ops and need custom app.",
+        "You seek a low-code platform with mobile apps.",
+        "You are an enterprise (not individual/startup)."
+      ],
+      "avoidIf": [
+        "You have a very tight budget or seek a startup solution.",
+        "You need an ultra-simple no-code solution.",
+        "You have very specific custom branding needs."
+      ],
+      "threshold": "Quick Base targets enterprises seeking a robust low-code platform for building custom business apps with mobility."
+    },
+    "pros": [
+      "Mature low-code platform with robust integrations.",
+      "Native mobile apps (iOS and Android).",
+      "Intelligence Pack (AI insights).",
+      "Pre-built applications (Pave) for quick start."
+    ],
+    "cons": [
+      "Pricing not transparent publicly.",
+      "More complex than pure no-code solutions.",
+      "Learning curve for beginners."
+    ],
+    "use_cases": [
+      "Build a custom internal CRM app for enterprise.",
+      "Create a resource management app for field teams.",
+      "Automate complex cross-team workflows."
+    ]
+  }
+}

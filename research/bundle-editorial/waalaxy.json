@@ -1,0 +1,93 @@
+{
+  "slug": "waalaxy",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Waalaxy — LinkedIn Automation Tool (site officiel)", "url": "https://www.waalaxy.com" }
+  ],
+  "facts": {
+    "what": "Outil d'automatisation LinkedIn pour les équipes sales. Automatise les invitations, messages et visites de profil LinkedIn tout en maintenant la sécurité du compte. Offre intégration email et synchronisation avec 2000+ apps.",
+    "what_en": "LinkedIn automation tool for sales teams. Automates LinkedIn invitations, messages, and profile visits while keeping accounts safe. Offers email integration and 2,000+ app sync.",
+    "pricing_model": "Modèle freemium. Plan gratuit avec limitations, plans payants pour fonctionnalités avancées. Essai gratuit 7 jours.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit : 80 invitations LinkedIn par mois ($0/mois). Essai gratuit 7 jours pour plans payants." },
+    "plans": [
+      { "name": "Free", "price": "$0/mois (80 invitations mensuels)" },
+      { "name": "Advanced", "price": "120 € par mois" },
+      { "name": "Business", "price": "160 € par mois" }
+    ],
+    "key_features": [
+      "Automatisation invitations, messages et visites LinkedIn",
+      "Email finding et syncing pour suivi",
+      "99 templates de campagne pré-built",
+      "Intégration HubSpot, Pipedrive et 2000+ apps (Make, Zapier, n8n)",
+      "Collaboration d'équipe (partage templates et vues collaboratives)",
+      "Notation d'engagement et analytics",
+      "Contrôle de sécurité (Stealth mode)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous faites de la prospection LinkedIn et voulez l'automatiser simplement.",
+        "Vous avez un budget faible ou vous testez (tier gratuit disponible).",
+        "Vous voulez intégration email + CRM dans un seul outil."
+      ],
+      "avoidIf": [
+        "Vous avez besoin de beaucoup plus que LinkedIn (utilisez Make/Zapier).",
+        "Vous cherchez une plateforme avec 100+ sources de leads.",
+        "Vous avez des besoins très avancés d'orchestration."
+      ],
+      "threshold": "Waalaxy s'adresse aux sales reps, BDRs et petites équipes cherchant l'automatisation simple de prospection LinkedIn avec email et CRM."
+    },
+    "pros": [
+      "Plan gratuit avec 80 invitations (pas de carte requise).",
+      "Interface intuitive pour non-techniciens.",
+      "Intégration email et 2000+ apps natives.",
+      "Templates de campagne pré-built (99+).",
+      "Excellent support client et feedback utilisateurs."
+    ],
+    "cons": [
+      "Limité à LinkedIn (pas de Twitter, Instagram).",
+      "Plans payants plus chers que concurrents pour baseline similaire.",
+      "Moins d'options avancées que Phantombuster."
+    ],
+    "use_cases": [
+      "Automatiser la prospection LinkedIn pour une équipe sales.",
+      "Scaler l'outreach with sequences multic hanals (LinkedIn + Email).",
+      "Créer et déployer des campagnes LinkedIn templates rapidement."
+    ],
+    "relevant_for": ["Sales reps", "BDRs", "Petites équipes sales"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You do LinkedIn prospecting and want to automate it simply.",
+        "You have a tight budget or are testing (free tier available).",
+        "You want email + CRM integration in one tool."
+      ],
+      "avoidIf": [
+        "You need much more than LinkedIn (use Make/Zapier).",
+        "You seek a platform with 100+ lead sources.",
+        "You have very advanced orchestration needs."
+      ],
+      "threshold": "Waalaxy targets sales reps, BDRs, and small teams seeking simple LinkedIn prospecting automation with email and CRM."
+    },
+    "pros": [
+      "Free plan with 80 invitations (no card required).",
+      "Intuitive interface for non-technical users.",
+      "Email and 2,000+ app integrations.",
+      "99+ pre-built campaign templates.",
+      "Excellent customer support and user feedback."
+    ],
+    "cons": [
+      "Limited to LinkedIn (no Twitter, Instagram).",
+      "Paid plans pricier than competitors for similar baseline.",
+      "Fewer advanced options than PhantomBuster."
+    ],
+    "use_cases": [
+      "Automate LinkedIn prospecting for sales teams.",
+      "Scale outreach with multichannel sequences (LinkedIn + Email).",
+      "Create and deploy LinkedIn template campaigns quickly."
+    ]
+  }
+}

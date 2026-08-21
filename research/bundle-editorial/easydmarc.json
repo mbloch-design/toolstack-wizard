@@ -1,0 +1,89 @@
+{
+  "slug": "easydmarc",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "EasyDMARC — Email Security & DMARC Management (site officiel)", "url": "https://easydmarc.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de sécurité email et d'authentification de domaines simplifiant la mise en œuvre DMARC (Domain-based Message Authentication, Reporting and Conformance). Aide les organisations à protéger contre l'usurpation d'email et le phishing tout en assurant la conformité.",
+    "what_en": "Email security and domain authentication platform simplifying DMARC implementation. Protects organizations from email spoofing and phishing while ensuring regulatory compliance.",
+    "pricing_model": "Modèle d'abonnement avec essai gratuit. Offre des outils gratuits et des cours d'académie. Tiers payants pour la gestion complète.",
+    "free_tier": { "exists": true, "detail": "Outils gratuits (DMARC, SPF, DKIM checkers), analyse de sécurité de domaine gratuite, cours d'académie professionnels gratuits avec certifications." },
+    "plans": [
+      { "name": "Free Tools", "price": "Gratuit (outils limités)" },
+      { "name": "Paid Plans", "price": "Montants sur https://easydmarc.com/pricing/" }
+    ],
+    "key_features": [
+      "Gestion DMARC, SPF, DKIM et BIMI automatisée",
+      "Monitoring de réputation contre les blacklists",
+      "Analyse des rapports DMARC XML et visualisation GeoMaps",
+      "Support 24/7 et white-glove support",
+      "Vérification d'email et test de délivrabilité",
+      "Sécurise 175,000+ domaines dans 130 pays"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez des domaines email et avez des problèmes de délivrabilité.",
+        "Vous devez mettre en œuvre DMARC pour la conformité ou la sécurité.",
+        "Vous voulez une approche clés-en-main sans gérer les détails techniques."
+      ],
+      "avoidIf": [
+        "Vous faites de la configuration minimale et cherchez des outils gratuits uniquement.",
+        "Vous êtes un expert technique DMARC gérant cela directement.",
+        "Vous n'avez qu'un ou deux domaines sans enjeux critiques."
+      ],
+      "threshold": "EasyDMARC s'adresse aux entreprises et gestionnaires email voulant sécuriser leurs domaines et améliorer la délivrabilité avec une gestion DMARC managée."
+    },
+    "pros": [
+      "Outils gratuits (DMARC, SPF, DKIM checkers) sans inscription.",
+      "Gestion DMARC complète automatisée.",
+      "Support 24/7 et experts dedédiés.",
+      "Conformité GDPR, DORA, NIS 2, PCI DSS, HIPAA intégrée."
+    ],
+    "cons": [
+      "Tier gratuit très limité (outils seulement, pas de gestion).",
+      "Modèle tarifé non transparent publiquement.",
+      "Davantage orienté entreprises que petites organisations."
+    ],
+    "use_cases": [
+      "Mettre en place DMARC sur un domaine d'entreprise.",
+      "Améliorer la délivrabilité des emails transactionnels.",
+      "Auditer et corriger les problèmes d'authentification DKIM/SPF."
+    ],
+    "relevant_for": ["Responsables email/compliance", "Équipes IT", "Entreprises avec domaines multiples"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage email domains and have deliverability issues.",
+        "You need to implement DMARC for compliance or security.",
+        "You want a managed, hands-off approach."
+      ],
+      "avoidIf": [
+        "You prefer free tools only and minimal configuration.",
+        "You are a technical DMARC expert handling this directly.",
+        "You have only 1-2 domains without critical stakes."
+      ],
+      "threshold": "EasyDMARC suits enterprises and email managers wanting to secure domains and improve deliverability with managed DMARC."
+    },
+    "pros": [
+      "Free tools (DMARC, SPF, DKIM checkers) without sign-up.",
+      "Fully automated DMARC management.",
+      "24/7 support and dedicated experts.",
+      "GDPR, DORA, NIS 2, PCI DSS, HIPAA compliance built-in."
+    ],
+    "cons": [
+      "Free tier is very limited (tools only, no management).",
+      "Pricing model not transparent publicly.",
+      "Geared more toward enterprises than small organizations."
+    ],
+    "use_cases": [
+      "Implement DMARC on a corporate domain.",
+      "Improve email deliverability for transactional emails.",
+      "Audit and fix DKIM/SPF authentication issues."
+    ]
+  }
+}

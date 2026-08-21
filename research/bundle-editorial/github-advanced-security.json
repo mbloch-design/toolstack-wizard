@@ -1,0 +1,110 @@
+{
+  "slug": "github-advanced-security",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "GitHub Advanced Security (site officiel)",
+      "url": "https://github.com/security/advanced-security"
+    }
+  ],
+  "facts": {
+    "what": "Module de sécurité d'application intégré nativement dans GitHub combinant Secret Protection (scannage de secrets) et Code Security (analyse statique SAST) pour détecter vulnérabilités avant production.",
+    "what_en": "Application security module natively integrated into GitHub combining Secret Protection (secret scanning) and Code Security (SAST static analysis) to detect vulnerabilities before production.",
+    "pricing_model": "Tarification par committer actif, par module. Secret Protection 19 $/mois par committer, Code Security 30 $/mois par committer, ou combiné.",
+    "free_tier": {
+      "exists": false,
+      "detail": "Pas de tier gratuit, modèle payant uniquement. Secret Protection : 19 $/mois/committer. Code Security : 30 $/mois/committer."
+    },
+    "plans": [
+      {
+        "name": "Secret Protection",
+        "price": "19 $ USD/mois par committer actif"
+      },
+      {
+        "name": "Code Security",
+        "price": "30 $ USD/mois par committer actif"
+      },
+      {
+        "name": "Combiné",
+        "price": "49 $ USD/mois par committer actif (Secret + Code)"
+      }
+    ],
+    "key_features": [
+      "Secret scanning avec détection secrets exposées",
+      "Static application security testing (SAST) natif GitHub",
+      "AI-powered Copilot Autofix pour corrections automatiques",
+      "Analyse composition logicielle (SCA)",
+      "Intégration native workflows GitHub (zero friction)",
+      "Rapports de vulnérabilités prioritaires",
+      "API et webhooks pour automation"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez GitHub pour tous vos repos.",
+        "La sécurité du code et détection secrets est prioritaire.",
+        "Vous voulez des tests de sécurité natifs sans outils externes."
+      ],
+      "avoidIf": [
+        "Vous utilisez GitLab ou Gitea.",
+        "Vous cherchez solution gratuite.",
+        "Vous avez besoin tests de pénétration avancés."
+      ],
+      "threshold": "GitHub Advanced Security convient équipes GitHub, cherchant sécurité code native et secrets ; pour autres platforms ou free, outils tiers conviennent mieux."
+    },
+    "pros": [
+      "Intégration native GitHub, zéro friction developer.",
+      "Secret scanning automatique avant que secrets arrivent prod.",
+      "IA Copilot Autofix pour corrections rapides.",
+      "Pas d'outils tiers à gérer séparément."
+    ],
+    "cons": [
+      "Coûteux avec nombreux committers actifs.",
+      "Seulement pour repos GitHub (pas GitLab, Gitea, Gitness).",
+      "Plus adapté dev velocity que pentesting avancé."
+    ],
+    "use_cases": [
+      "Détecter automatiquement secrets commités accidentellement.",
+      "Scanner le code avant merge en pull request.",
+      "Appliquer fixes auto Copilot sur vulnérabilités détectées."
+    ],
+    "relevant_for": [
+      "Équipes GitHub",
+      "Développeurs DevSecOps",
+      "Leads techniques"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You use GitHub for all your repos.",
+        "Code security and secret detection are priorities.",
+        "You want native security tests without external tools."
+      ],
+      "avoidIf": [
+        "You use GitLab or Gitea.",
+        "You're looking for free solutions.",
+        "You need advanced penetration testing."
+      ],
+      "threshold": "GitHub Advanced Security fits GitHub teams seeking native code security and secrets; for other platforms or free, third-party tools suit better."
+    },
+    "pros": [
+      "Native GitHub integration, zero developer friction.",
+      "Automatic secret scanning before production.",
+      "AI Copilot Autofix for quick remediation.",
+      "No separate third-party tools to manage."
+    ],
+    "cons": [
+      "Expensive with many active committers.",
+      "GitHub repos only (not GitLab, Gitea, Gitness).",
+      "Better for dev velocity than advanced pentesting."
+    ],
+    "use_cases": [
+      "Auto-detect secrets accidentally committed.",
+      "Scan code before PR merge.",
+      "Apply Copilot auto-fixes to detected vulnerabilities."
+    ]
+  }
+}

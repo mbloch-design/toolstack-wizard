@@ -1,0 +1,93 @@
+{
+  "slug": "whalesync",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Whalesync — Two-Way Data Synchronization Platform (site officiel)", "url": "https://www.whalesync.com" }
+  ],
+  "facts": {
+    "what": "Plateforme d'intégration de données permettant une synchronisation bidirectionnelle profonde entre applications. Contrairement aux outils d'automatisation, Whalesync maintient les données synchronisées en temps réel entre systèmes connectés.",
+    "what_en": "Data integration platform enabling deep two-way synchronization between applications. Unlike automation tools, Whalesync maintains real-time data sync across connected systems.",
+    "pricing_model": "Modèle d'abonnement avec tier gratuit. Plans payants pour cas d'usage d'entreprise.",
+    "free_tier": { "exists": true, "detail": "Tier gratuit pour débuter sans charge. Plans payants et Enterprise avec support dédié." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit pour débuter" },
+      { "name": "Paid Plans", "price": "Montants sur la page officielle" },
+      { "name": "Enterprise", "price": "Support dédié et solutions custom" }
+    ],
+    "key_features": [
+      "Synchronisation bidirectionnelle (2-way sync)",
+      "Support enregistrements liés, images, texte riche",
+      "Monitoring temps-réel et logs d'activité",
+      "Gestion d'erreurs intelligente (AI-résumées)",
+      "Filtrage avancé pour précision du flow",
+      "Connecteurs 10+ (Airtable, Notion, Sheets, Salesforce, HubSpot, Webflow, Wix, WordPress)",
+      "Conformité SOC 2 Type II et GDPR"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin de synchronisation temps-réel bidirectionnelle entre apps.",
+        "Vous gérez de nombreuses données qui doivent rester cohérentes.",
+        "Vous cherchez une alternative aux automations point-to-point simples."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'automations simples unidirectionnelles (utilisez Zapier).",
+        "Vous n'avez que 1-2 sources de données.",
+        "Vous cherchez une solution gratuite ou ultra-low-cost."
+      ],
+      "threshold": "Whalesync s'adresse aux organisations cherchant la synchronisation profonde bidirectionnelle de données complexes à travers multiples apps, au-delà des automations simples."
+    },
+    "pros": [
+      "Synchronisation bidirectionnelle profonde (champs liés, images, texte).",
+      "Temps-réel et monitoring avec AI-error-summary.",
+      "Connecteurs 10+ apps (Airtable, Notion, Salesforce, Webflow, WordPress).",
+      "Conformité SOC 2 et GDPR."
+    ],
+    "cons": [
+      "Plus cher que Zapier pour automations simples.",
+      "Pricing non transparent publiquement.",
+      "Communauté plus petite que Zapier."
+    ],
+    "use_cases": [
+      "Synchroniser Airtable ↔ Webflow pour données produits dynamiques.",
+      "Maintenir Notion ↔ Salesforce synchronisées pour teams.",
+      "Créer un panneau d'administration avec Notion synchronisée à une DB.",
+      "Implémenter SEO programmatique avec données synchronisées."
+    ],
+    "relevant_for": ["Product teams", "Marketers", "Dev teams"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need real-time bidirectional sync across multiple apps.",
+        "You manage many data points that must stay consistent.",
+        "You seek an alternative to simple point-to-point automations."
+      ],
+      "avoidIf": [
+        "You need simple one-way automations (use Zapier).",
+        "You only have 1-2 data sources.",
+        "You seek a free or ultra-low-cost solution."
+      ],
+      "threshold": "Whalesync targets organizations seeking deep bidirectional data synchronization across multiple apps, beyond simple automations."
+    },
+    "pros": [
+      "Deep bidirectional sync (linked fields, images, rich text).",
+      "Real-time monitoring with AI-error-summary.",
+      "10+ app connectors (Airtable, Notion, Salesforce, Webflow, WordPress).",
+      "SOC 2 and GDPR compliance."
+    ],
+    "cons": [
+      "Pricier than Zapier for simple automations.",
+      "Pricing not transparent publicly.",
+      "Smaller community than Zapier."
+    ],
+    "use_cases": [
+      "Sync Airtable ↔ Webflow for dynamic product data.",
+      "Keep Notion ↔ Salesforce in sync for teams.",
+      "Create an admin panel with Notion synced to a database.",
+      "Implement programmatic SEO with synchronized data."
+    ]
+  }
+}

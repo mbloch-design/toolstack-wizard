@@ -1,0 +1,117 @@
+{
+  "slug": "thinkific",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "Thinkific — Learning Commerce Platform (site officiel)",
+      "url": "https://thinkific.com"
+    }
+  ],
+  "facts": {
+    "what": "Plateforme e-learning tout-en-one pour créateurs avec courses illimités, students illimités, community, memberships et 0% frais transaction en marchés principaux depuis 2026.",
+    "what_en": "All-in-one e-learning platform for creators with unlimited courses, unlimited students, community, memberships, and 0% transaction fees in primary markets since 2026.",
+    "pricing_model": "Plans mensuels annualisés. Start 74$/mois (annu), Grow 149$/mois, Expand 374$/mois. 0% transaction fees tous plans (marchés principaux). Essai gratuit inclus.",
+    "free_tier": {
+      "exists": false,
+      "detail": "Pas de plan gratuit permanent depuis mars 2026. Essai gratuit inclus sur tous plans payants."
+    },
+    "plans": [
+      {
+        "name": "Start",
+        "price": "74 $/mois annuel (99 $/mois mensuel)"
+      },
+      {
+        "name": "Grow",
+        "price": "149 $/mois annuel (199 $/mois mensuel)"
+      },
+      {
+        "name": "Expand",
+        "price": "374 $/mois annuel (499 $/mois mensuel)"
+      },
+      {
+        "name": "Plus",
+        "price": "Tarification personnalisée (enterprise + AI assistant)"
+      }
+    ],
+    "key_features": [
+      "Unlimited courses, students, bandwidth tous plans",
+      "Drag-drop course builder avec video/audio/assessments",
+      "Community spaces (messaging, discussions, profiles)",
+      "Memberships avec recurring revenue",
+      "Live cohorts, self-paced, blended learning",
+      "Mobile apps branded (iOS/Android)",
+      "AI Teaching Assistant (Thinker AI) tous plans",
+      "Email marketing et automations",
+      "0% transaction fees (marchés principaux)",
+      "SCORM compliance (Plus tier)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez courses e-learning et community.",
+        "L'absence de frais de transaction est déterminante pour vous.",
+        "Vous voulez AI assistant teaching inclus."
+      ],
+      "avoidIf": [
+        "Vous cherchez solution entièrement gratuite.",
+        "Vous êtes solo budget très serré.",
+        "Vous avez besoins coaching 1:1 simples."
+      ],
+      "threshold": "Thinkific convient aux créateurs de cours qui veulent éviter les frais de transaction et disposer d'un assistant IA ; pour du coaching simple, d'autres outils conviennent mieux."
+    },
+    "pros": [
+      "Aucun frais de transaction sur l'ensemble des plans.",
+      "Unlimited students/courses tous plans (excellent).",
+      "AI Teaching Assistant inclus.",
+      "Essai gratuit sur tous plans."
+    ],
+    "cons": [
+      "Pas de plan gratuit permanent (depuis mars 2026).",
+      "Abonnement mensuel au tarif intermédiaire.",
+      "Moins features simples que Circle."
+    ],
+    "use_cases": [
+      "Créer courses e-learning à grande échelle.",
+      "Lancer membership community learners.",
+      "Utiliser AI assistant pour Q&A students."
+    ],
+    "relevant_for": [
+      "Créateurs de courses",
+      "Éducateurs",
+      "Entrepreneurs e-learning"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You create e-learning courses and community.",
+        "Zero transaction fees matter (vs Kajabi).",
+        "You want AI teaching assistant included."
+      ],
+      "avoidIf": [
+        "You're looking for entirely free solution.",
+        "You're solo with tight budget.",
+        "You have simple 1:1 coaching needs."
+      ],
+      "threshold": "Thinkific fits course creators seeking zero transaction fees and AI assistant; for simple coaching, alternatives suit better."
+    },
+    "pros": [
+      "Zero transaction fees all plans (primary market).",
+      "Unlimited students/courses all plans (excellent).",
+      "AI Teaching Assistant included.",
+      "Free trial on all plans."
+    ],
+    "cons": [
+      "No free plan permanent (since March 2026).",
+      "Mid-range monthly subscription.",
+      "Fewer simple features than Circle."
+    ],
+    "use_cases": [
+      "Create large-scale e-learning courses.",
+      "Launch membership community for learners.",
+      "Use AI assistant for student Q&A."
+    ]
+  }
+}

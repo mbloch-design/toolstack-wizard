@@ -1,0 +1,93 @@
+{
+  "slug": "justworks",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Justworks — HR and Payroll Platform (site officiel)", "url": "https://www.justworks.com" }
+  ],
+  "facts": {
+    "what": "Plateforme PEO et paie pour PME permet d'automatiser la paie, les avantages sociaux et la gestion RH. Offre trois plans d'abonnement (Payroll, PEO Basic, PEO Plus) avec prise en charge des employés US et contractors.",
+    "what_en": "PEO and payroll platform for SMBs to automate payroll, benefits, and HR management. Offers three subscription plans (Payroll, PEO Basic, PEO Plus) with support for US employees and contractors.",
+    "pricing_model": "Modèle par employé + frais de base. Trois plans principaux avec add-ons disponibles.",
+    "free_tier": { "exists": false, "detail": "Pas de tier gratuit. Montants fixes par employé + frais mensuels de base." },
+    "plans": [
+      { "name": "Payroll Plan", "price": "8 € par employé + 50 € base/mois" },
+      { "name": "PEO Basic", "price": "59 € par employé par mois" },
+      { "name": "PEO Plus", "price": "109 € par employé par mois" }
+    ],
+    "key_features": [
+      "Automatisation de la paie",
+      "Avantages sociaux (santé, 401K, assurance)",
+      "Gestion des congés et absences",
+      "Support HR dédié ($30/employé en add-on)",
+      "Contractors US ($8/mois par contractor)",
+      "International hiring ($599/mois par employé hors-US)",
+      "Audit et conformité FLSA"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes une PME US cherchant PEO/paie.",
+        "Vous avez 10-100 employés.",
+        "Vous voulez une solution simple tout-en-un pour paie et avantages."
+      ],
+      "avoidIf": [
+        "Vous n'opérez qu'en France ou en Europe.",
+        "Vous avez une équipe internationale.",
+        "Vous cherchez une solution très low-cost."
+      ],
+      "threshold": "Justworks s'adresse aux PME US cherchant une solution PEO simple et rapide pour paie, avantages et RH."
+    },
+    "pros": [
+      "Solution PEO complète (paie + avantages + RH).",
+      "Très simple à mettre en place.",
+      "Support HR dédié disponible en add-on.",
+      "Tarification par employé (transparente)."
+    ],
+    "cons": [
+      "Pas de tier gratuit.",
+      "Coûts potentiels élevés pour grandes équipes.",
+      "Focus US uniquement (contractors internationaux très chers).",
+      "Moins d'options avancées que concurrents."
+    ],
+    "use_cases": [
+      "Automatiser la paie pour PME US (10-100 employés).",
+      "Offrir des avantages compétitifs rapidement.",
+      "Déléguer conformité payroll à PEO."
+    ],
+    "relevant_for": ["PME US", "Startups avec équipes US"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You are a US SMB seeking PEO/payroll.",
+        "You have 10-100 employees.",
+        "You want a simple all-in-one payroll + benefits solution."
+      ],
+      "avoidIf": [
+        "You only operate in France or Europe.",
+        "You have an international team.",
+        "You seek a very low-cost solution."
+      ],
+      "threshold": "Justworks targets US SMBs seeking a simple, fast PEO solution for payroll, benefits, and HR."
+    },
+    "pros": [
+      "Complete PEO solution (payroll + benefits + HR).",
+      "Very simple to set up.",
+      "Dedicated HR support available as add-on.",
+      "Per-employee transparent pricing."
+    ],
+    "cons": [
+      "No free tier.",
+      "Potential high costs for large teams.",
+      "US-only focus (international contractors very expensive).",
+      "Fewer advanced options than competitors."
+    ],
+    "use_cases": [
+      "Automate payroll for US SMB (10-100 employees).",
+      "Offer competitive benefits quickly.",
+      "Delegate payroll compliance to PEO."
+    ]
+  }
+}

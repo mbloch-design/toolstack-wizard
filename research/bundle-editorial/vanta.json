@@ -1,0 +1,103 @@
+{
+  "slug": "vanta",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "Vanta — Compliance & Trust Management (site officiel)",
+      "url": "https://www.vanta.com"
+    }
+  ],
+  "facts": {
+    "what": "Plateforme de gestion de conformité continu (GRC) automatisant surveillance de 35+ frameworks (SOC 2, ISO 27001, HIPAA, FedRAMP, etc.) avec agents IA et portail de confiance client.",
+    "what_en": "Continuous compliance management platform (GRC) automating monitoring across 35+ frameworks (SOC 2, ISO 27001, HIPAA, FedRAMP, etc.) with AI agents and client trust portal.",
+    "pricing_model": "Tarification personnalisée (contact commercial requis). Pas de tarifs publics affichés. Adapté startups à entreprises.",
+    "free_tier": {
+      "exists": false,
+      "detail": "Pas d'offre gratuite. Démo et contact commercial requis pour tarification."
+    },
+    "plans": [
+      {
+        "name": "Plan Personnalisé",
+        "price": "Tarification sur devis (contact commercial)"
+      }
+    ],
+    "key_features": [
+      "Monitoring continu 35+ frameworks (SOC 2, ISO 27001, HIPAA, FedRAMP, ISO 42001, NIST AI)",
+      "GRC (Governance, Risk, Compliance) unifié",
+      "Gestion des risques fournisseurs tiers (vendor risk)",
+      "Vanta Agent IA pour automations questionnaires sécurité",
+      "Trust Center pour présenter compliance clients",
+      "Dashboards risques et audit tracking",
+      "Gestion personnel et contrôles accès",
+      "Audit rapide (prep audit simplifié)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez exigences conformité SOC 2, ISO 27001, HIPAA.",
+        "Audit continu et monitoring frameworks est nécessaire.",
+        "Vous avez équipe compliance et budget allocation."
+      ],
+      "avoidIf": [
+        "Vous êtes startup sans exigences réglementaires.",
+        "Vous cherchez solution entièrement gratuite.",
+        "Vous avez besoins compliance très basique unique."
+      ],
+      "threshold": "Vanta convient entreprises avec exigences conformité structurées ; pour startups sans régulations, solution plus légère convient mieux."
+    },
+    "pros": [
+      "Plateforme complète 35+ frameworks compliance.",
+      "Vanta Agent IA automatise questionnaires.",
+      "Trust Center pour transparence clients.",
+      "Audit continu vs ponctuel (gain temps énorme)."
+    ],
+    "cons": [
+      "Tarification personnalisée (pas transparence prix).",
+      "Probablement solution chère pour PME.",
+      "Nécessite engagement commercial et démo."
+    ],
+    "use_cases": [
+      "Préparer et maintenir certification SOC 2.",
+      "Automatiser audit compliance multi-frameworks.",
+      "Montrer posture sécurité clients (Trust Center)."
+    ],
+    "relevant_for": [
+      "Directeurs compliance",
+      "RSSI",
+      "Startups B2B avec clients exigeants"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You have SOC 2, ISO 27001, HIPAA compliance requirements.",
+        "Continuous audit and framework monitoring is necessary.",
+        "You have compliance team and budget allocation."
+      ],
+      "avoidIf": [
+        "You're a startup with no regulatory requirements.",
+        "You're looking for entirely free solution.",
+        "You have very basic, one-time compliance needs."
+      ],
+      "threshold": "Vanta fits enterprises with structured compliance requirements; for startups without regulations, lighter solution suits better."
+    },
+    "pros": [
+      "Complete platform covering 35+ compliance frameworks.",
+      "Vanta Agent AI automates questionnaires.",
+      "Trust Center for client transparency.",
+      "Continuous audit vs one-time (huge time savings)."
+    ],
+    "cons": [
+      "Custom pricing (no price transparency).",
+      "Likely expensive for SMBs.",
+      "Requires sales engagement and demo."
+    ],
+    "use_cases": [
+      "Prepare and maintain SOC 2 certification.",
+      "Automate multi-framework compliance audits.",
+      "Show security posture to clients (Trust Center)."
+    ]
+  }
+}

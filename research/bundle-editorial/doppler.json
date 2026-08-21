@@ -1,0 +1,112 @@
+{
+  "slug": "doppler",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "Doppler — Secrets Management Platform (site officiel)",
+      "url": "https://www.doppler.com/pricing"
+    }
+  ],
+  "facts": {
+    "what": "Plateforme de gestion centralisée des secrets pour développeurs, soutenant le contrôle d'accès par rôle, la rotation automatique des secrets et les intégrations CI/CD sans frais supplémentaires pour agents IA.",
+    "what_en": "Centralized secrets management platform for developers supporting role-based access control, automatic secret rotation, and CI/CD integrations with no agent fees.",
+    "pricing_model": "Freemium : plan gratuit pour jusqu'à 3 utilisateurs, puis abonnement par utilisateur ($21/mois équipe, $8 dev additionnel, custom entreprise).",
+    "free_tier": {
+      "exists": true,
+      "detail": "Plan Developer gratuit pour 3 utilisateurs, puis $8/mois par utilisateur supplémentaire. 14 jours essai Team Plan. Agents IA inclus gratuit dans tous les plans."
+    },
+    "plans": [
+      {
+        "name": "Developer (Free)",
+        "price": "Gratuit pour 3 utilisateurs, puis 8 $/mois par utilisateur additionnel"
+      },
+      {
+        "name": "Team",
+        "price": "21 $/mois par utilisateur (essai 14 jours inclus)"
+      },
+      {
+        "name": "Enterprise",
+        "price": "Tarification personnalisée (contact commercial)"
+      }
+    ],
+    "key_features": [
+      "CLI Doppler pour développement local",
+      "Tokens de service et API/webhook access",
+      "Alertes email et rappels",
+      "Contrôle d'accès par rôle (RBAC)",
+      "Rotation automatique des secrets",
+      "SSO SAML et authentification",
+      "Logs d'activité (3-90 jours selon plan)",
+      "Référencement des secrets",
+      "Cloud et on-prem deployment (enterprise)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez avec plusieurs équipiers ou en équipe DevOps.",
+        "Vous avez besoin de gestion centralisée des secrets et variables.",
+        "La rotation automatique des secrets est requise pour conformité."
+      ],
+      "avoidIf": [
+        "Vous êtes solo avec peu de secrets à gérer.",
+        "Vous cherchez une solution entièrement gratuite.",
+        "Votre infrastructure n'a pas d'API REST moderne."
+      ],
+      "threshold": "Doppler convient aux équipes et entreprises cherchant gestion secrets centralisée flexible ; pour solo, HashiCorp Vault open-source convient mieux."
+    },
+    "pros": [
+      "Plan gratuit généreux (3 users illimité).",
+      "Agents IA inclus gratuitement dans tous les plans.",
+      "Interface CLI simple et intuitive.",
+      "Tarification transparente par utilisateur."
+    ],
+    "cons": [
+      "Plan Team peut devenir cher avec nombreux utilisateurs.",
+      "Documentation moins riche que HashiCorp.",
+      "Nécessite une API moderne, moins compatible legacy."
+    ],
+    "use_cases": [
+      "Centraliser variables et secrets .env pour équipe.",
+      "Automatiser la rotation des secrets de base de données.",
+      "Intégrer secrets à CI/CD (GitHub Actions, GitLab CI, etc.)."
+    ],
+    "relevant_for": [
+      "Équipes DevOps",
+      "Développeurs full-stack",
+      "Startups tech"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're developing with multiple teammates or DevOps teams.",
+        "You need centralized secrets and environment variables management.",
+        "Automatic secret rotation is required for compliance."
+      ],
+      "avoidIf": [
+        "You're solo with few secrets to manage.",
+        "You're looking for entirely free solutions.",
+        "Your infrastructure lacks modern REST APIs."
+      ],
+      "threshold": "Doppler fits teams and enterprises seeking flexible centralized secrets; for solo, HashiCorp Vault open-source fits better."
+    },
+    "pros": [
+      "Generous free plan (3 users unlimited).",
+      "AI agents included free in all plans.",
+      "Simple and intuitive CLI interface.",
+      "Transparent per-user pricing."
+    ],
+    "cons": [
+      "Team plan can get expensive with many users.",
+      "Documentation less rich than HashiCorp.",
+      "Requires modern API, less legacy-compatible."
+    ],
+    "use_cases": [
+      "Centralize .env variables and secrets for team.",
+      "Automate database secret rotation.",
+      "Integrate secrets with CI/CD (GitHub Actions, GitLab CI, etc.)."
+    ]
+  }
+}

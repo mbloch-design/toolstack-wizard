@@ -1,0 +1,101 @@
+{
+  "slug": "auth-js",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "Auth.js Documentation (site officiel)",
+      "url": "https://authjs.dev"
+    }
+  ],
+  "facts": {
+    "what": "Framework d'authentification open-source et agnostique pour le Web, intégrant OAuth et fournisseurs SSO multiples (GitHub, Discord, etc.) avec support multi-framework (Next.js, SvelteKit, Express, Qwik).",
+    "what_en": "Open-source, framework-agnostic web authentication library integrating OAuth and multiple SSO providers (GitHub, Discord, etc.) with multi-framework support (Next.js, SvelteKit, Express, Qwik).",
+    "pricing_model": "Entièrement gratuit et open-source.",
+    "free_tier": {
+      "exists": true,
+      "detail": "Produit entièrement gratuit, sans limites, sans tier payant."
+    },
+    "plans": [
+      {
+        "name": "Open Source",
+        "price": "Gratuit"
+      }
+    ],
+    "key_features": [
+      "Intégration OAuth avec multiples fournisseurs",
+      "Support framework-agnostique (Next.js, SvelteKit, Express, Qwik)",
+      "Configuration minimale requise",
+      "Pages de connexion personnalisables",
+      "Maintenu par la communauté Better Auth",
+      "22 200+ étoiles sur GitHub"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez une application web moderne avec framework populaire.",
+        "Vous voulez OAuth sans payer pour une solution SaaS d'authentification.",
+        "Vous préférez un projet open-source maintenu par la communauté."
+      ],
+      "avoidIf": [
+        "Vous avez besoin de support commercial et SLA garantis.",
+        "Vous ne maîtrisez pas bien Node.js ou React.",
+        "Vous cherchez une plateforme tout-en-un avec admin UI."
+      ],
+      "threshold": "Auth.js convient aux développeurs cherchant une authentification OAuth gratuite et flexible ; pour des besoins entièrement gérés, des SaaS comme Auth0 conviennent mieux."
+    },
+    "pros": [
+      "Entièrement gratuit, aucun coût caché.",
+      "Très flexible et framework-agnostique.",
+      "Large écosystème de fournisseurs OAuth intégrés.",
+      "Projet open-source mature et bien maintenu."
+    ],
+    "cons": [
+      "Configuration initiale requiert des connaissances en développement.",
+      "Pas de support commercial officiel inclus.",
+      "Pas de dashboard UI pour l'administration simplifiée."
+    ],
+    "use_cases": [
+      "Implémenter OAuth dans une app Next.js en quelques minutes.",
+      "Ajouter login social (GitHub, Discord) à un projet.",
+      "Réduire la charge serveur d'authentification en production."
+    ],
+    "relevant_for": [
+      "Développeurs full-stack",
+      "Startups bootstrappées",
+      "Équipes open-source"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're building a modern web app with popular frameworks.",
+        "You want OAuth without paying for a SaaS auth solution.",
+        "You prefer an open-source project maintained by community."
+      ],
+      "avoidIf": [
+        "You need commercial support and guaranteed SLAs.",
+        "You're not comfortable with Node.js or React.",
+        "You're looking for an all-in-one platform with admin UI."
+      ],
+      "threshold": "Auth.js fits developers seeking free, flexible OAuth; for fully managed needs, SaaS like Auth0 fits better."
+    },
+    "pros": [
+      "Entirely free, no hidden costs.",
+      "Highly flexible and framework-agnostic.",
+      "Large ecosystem of integrated OAuth providers.",
+      "Mature, well-maintained open-source project."
+    ],
+    "cons": [
+      "Initial configuration requires development knowledge.",
+      "No official commercial support included.",
+      "No admin UI dashboard for simplified administration."
+    ],
+    "use_cases": [
+      "Implement OAuth in Next.js app in minutes.",
+      "Add social login (GitHub, Discord) to a project.",
+      "Reduce server load for authentication in production."
+    ]
+  }
+}

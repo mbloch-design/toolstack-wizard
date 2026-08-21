@@ -1,0 +1,111 @@
+{
+  "slug": "vault",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "HashiCorp Vault — Secrets Management (site officiel)",
+      "url": "https://developer.hashicorp.com/vault"
+    }
+  ],
+  "facts": {
+    "what": "Plateforme open-source de gestion des secrets (Key/Value, Database, Transit, Transform engines) avec options cloud gérée (HCP Vault Dedicated) et self-hosted, modèle pricing par client.",
+    "what_en": "Open-source secrets management platform (Key/Value, Database, Transit, Transform engines) with managed cloud (HCP Vault Dedicated) and self-hosted options, per-client pricing model.",
+    "pricing_model": "Freemium : Community Edition gratuit self-hosted, HCP Vault Dedicated (cloud) à partir 1 152$/mois + clients, Enterprise custom.",
+    "free_tier": {
+      "exists": true,
+      "detail": "Community Edition gratuit (open-source self-hosted). HCP Vault Dedicated essai gratuit disponible."
+    },
+    "plans": [
+      {
+        "name": "Community Edition",
+        "price": "Gratuit (self-hosted, open-source)"
+      },
+      {
+        "name": "HCP Vault Dedicated",
+        "price": "1 152 $/mois (Essentials cluster) + 72,92 $/client/mois"
+      },
+      {
+        "name": "Enterprise (Self-Managed)",
+        "price": "Tarification personnalisée (license annuelle, custom)"
+      }
+    ],
+    "key_features": [
+      "Key/Value Secrets Engine pour stockage secrets",
+      "Database Secrets Engine pour credentials dynamiques",
+      "Transit Secrets Engine pour encryption service",
+      "Transform Secrets Engine (Enterprise) pour tokenization",
+      "Authentification multi-méthode (approvals)",
+      "Audit logging complet",
+      "API et CLI pour intégration",
+      "High availability et disaster recovery"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez expertise Kubernetes/DevOps pour self-hosting.",
+        "Vous voulez solution open-source sans limites.",
+        "Gestion secrets multi-environnements est critique."
+      ],
+      "avoidIf": [
+        "Vous êtes équipe sans infra Kubernetes.",
+        "Vous cherchez solution SaaS entièrement gérée simple.",
+        "Vous avez budget très serré pour infrastructure."
+      ],
+      "threshold": "Vault convient équipes DevOps/infra cherchant open-source secrets ; pour non-tech, solutions SaaS gérées (Doppler) conviennent mieux."
+    },
+    "pros": [
+      "Community Edition entièrement gratuit, open-source, self-hosted.",
+      "Solution éprouvée HashiCorp très respectée.",
+      "Engines polyvalents (secrets, encryption, database creds).",
+      "Tarification HCP : pas par secret/call, mais cluster + clients."
+    ],
+    "cons": [
+      "Self-hosting nécessite expertise Kubernetes infra.",
+      "HCP Vault coûteux pour petites équipes.",
+      "Documentation très technique (pas pour débutants)."
+    ],
+    "use_cases": [
+      "Self-hosted secrets manager en Kubernetes privé.",
+      "Générer dynamiquement credentials base données.",
+      "Chiffrer données en transit (Transit Engine)."
+    ],
+    "relevant_for": [
+      "Équipes DevOps",
+      "Architectes sécurité",
+      "Ingénieurs infrastructure"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You have Kubernetes/DevOps expertise for self-hosting.",
+        "You want open-source solution without limits.",
+        "Multi-environment secrets management is critical."
+      ],
+      "avoidIf": [
+        "You're a team without Kubernetes infrastructure.",
+        "You want simple, fully managed SaaS solution.",
+        "You have tight budget for infrastructure."
+      ],
+      "threshold": "Vault fits DevOps/infra teams seeking open-source secrets; for non-tech, managed SaaS solutions (Doppler) suit better."
+    },
+    "pros": [
+      "Community Edition entirely free, open-source, self-hosted.",
+      "Battle-tested HashiCorp highly respected solution.",
+      "Versatile engines (secrets, encryption, database creds).",
+      "HCP pricing: not per secret/call, but cluster + clients."
+    ],
+    "cons": [
+      "Self-hosting requires Kubernetes infrastructure expertise.",
+      "HCP Vault expensive for small teams.",
+      "Documentation very technical (not for beginners)."
+    ],
+    "use_cases": [
+      "Self-hosted secrets manager on private Kubernetes.",
+      "Dynamically generate database credentials.",
+      "Encrypt data in transit (Transit Engine)."
+    ]
+  }
+}

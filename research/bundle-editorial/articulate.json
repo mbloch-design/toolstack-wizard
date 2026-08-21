@@ -1,0 +1,115 @@
+{
+  "slug": "articulate",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "Articulate 360 — AI Workplace Training (site officiel)",
+      "url": "https://www.articulate.com/360/"
+    }
+  ],
+  "facts": {
+    "what": "Suite complète de création de formation avec IA (Articulate 360) incluant outils auteur (Storyline, Rise), révision, localisation en 80+ langues, librairie 13M+ images/templates et LMS intégré ou export.",
+    "what_en": "Complete training creation suite with AI (Articulate 360) including authoring tools (Storyline, Rise), review, localization in 80+ languages, 13M+ image/template library, and built-in or exported LMS.",
+    "pricing_model": "Abonnement annuel par utilisateur. Standard Personal 1 199$/an, Standard Teams 1 499$/an, AI Personal 1 449$/an, AI Teams 1 749$/an.",
+    "free_tier": {
+      "exists": true,
+      "detail": "Essai gratuit 30 jours sans engagement. Pas de plan gratuit permanent."
+    },
+    "plans": [
+      {
+        "name": "Standard Personal",
+        "price": "1 199 $/an par utilisateur"
+      },
+      {
+        "name": "Standard Teams",
+        "price": "1 499 $/an par utilisateur"
+      },
+      {
+        "name": "AI Personal",
+        "price": "1 449 $/an par utilisateur (AI features)"
+      },
+      {
+        "name": "AI Teams",
+        "price": "1 749 $/an par utilisateur (AI features)"
+      }
+    ],
+    "key_features": [
+      "Storyline 360 pour cours interactifs complexes",
+      "Rise 360 pour cours web-based drag-drop",
+      "Articulate AI pour création contenu et assessments",
+      "Librairie 13M+ images, templates, courses",
+      "Localisation en 80+ langues automatique",
+      "Révision collaborative in-app",
+      "Reach LMS intégré ou export standard",
+      "Accessibilité WCAG 2.1 AA native"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez formations professionnelles à grande échelle.",
+        "Vous avez besoin d'outils auteur puissants (Storyline).",
+        "L'accessibilité WCAG et localisation multilingues importent."
+      ],
+      "avoidIf": [
+        "Vous êtes solo ou startup budget très serré.",
+        "Vous cherchez solution gratuite.",
+        "Vous créez formations très simples (Google Slides suffisant)."
+      ],
+      "threshold": "Articulate convient équipes L&D professionnelles créant formations d'entreprise ; pour besoins simples, outils allégés conviennent mieux."
+    },
+    "pros": [
+      "Outil auteur Storyline leader industrie.",
+      "IA intégrée pour création et assessments rapides.",
+      "Librairie assets massive (13M+ ressources).",
+      "Localisation automatique 80+ langues."
+    ],
+    "cons": [
+      "Tarifs annuels par utilisateur élevés.",
+      "Pas de plan gratuit, essai 30 jours seulement.",
+      "Courbe d'apprentissage Storyline importante."
+    ],
+    "use_cases": [
+      "Créer cours elearning interactifs pour employés.",
+      "Localiser formation pour marchés globaux.",
+      "Générer assessments via Articulate AI."
+    ],
+    "relevant_for": [
+      "Responsables L&D",
+      "Instructional designers",
+      "Équipes formation"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You create professional training at scale.",
+        "You need powerful authoring tools (Storyline).",
+        "WCAG accessibility and multilingual support matter."
+      ],
+      "avoidIf": [
+        "You're solo or tight-budget startup.",
+        "You're looking for free solution.",
+        "You're creating very simple courses (Google Slides enough)."
+      ],
+      "threshold": "Articulate fits professional L&D teams creating enterprise training; for simple needs, lighter tools suit better."
+    },
+    "pros": [
+      "Industry-leading Storyline authoring tool.",
+      "Built-in AI for rapid creation and assessments.",
+      "Massive asset library (13M+ resources).",
+      "Automatic localization to 80+ languages."
+    ],
+    "cons": [
+      "High annual per-user pricing.",
+      "No free plan, 30-day trial only.",
+      "Steep learning curve for Storyline."
+    ],
+    "use_cases": [
+      "Create interactive elearning courses for employees.",
+      "Localize training for global markets.",
+      "Generate assessments via Articulate AI."
+    ]
+  }
+}

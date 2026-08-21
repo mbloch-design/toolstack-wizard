@@ -1,0 +1,88 @@
+{
+  "slug": "albato",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Albato — Embedded iPaaS Platform (site officiel)", "url": "https://albato.com" }
+  ],
+  "facts": {
+    "what": "Plateforme iPaaS (Integration Platform-as-a-Service) intégrée permettant aux entreprises SaaS d'embarquer des intégrations blanches et des agents d'IA directement dans leurs produits. Supporte plus de 1000 applications natives.",
+    "what_en": "Embedded iPaaS platform enabling SaaS companies and AI agents to white-label integrations and AI assistants within their products. Supports 1,000+ native integrations.",
+    "pricing_model": "Modèle d'abonnement SaaS basé sur les fonctionnalités, sans engagement à long terme. Plans personnalisés selon les besoins.",
+    "free_tier": { "exists": false, "detail": "Pas de tier gratuit. Plateforme orientée entreprise avec vente consultative (démos et onboarding personnalisé)." },
+    "plans": [
+      { "name": "Abonnement standard", "price": "À partir de $5,000/mois (montants exacts sur la page officielle)" }
+    ],
+    "key_features": [
+      "1000+ intégrations natives (CRM, marketing, HR, finance)",
+      "Copilot embarqué avec MCP (Model Context Protocol)",
+      "Embedding blanc-label via iFrame, API, ou MCP",
+      "Conformité multi-tenant (SOC 2 Type II, GDPR)",
+      "20,000+ actions métier",
+      "Support dédié (PM, CSM, ingénieur API)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes une entreprise SaaS B2B voulant embarquer des intégrations natives.",
+        "Vous avez besoin de sécurité multi-tenant et de conformité GDPR/SOC 2.",
+        "Vous servez des clients entreprise exigeant des agents d'IA personnalisés."
+      ],
+      "avoidIf": [
+        "Vous cherchez une plateforme d'automatisation directe pour votre usage interne.",
+        "Vous avez un budget limité ou pas d'équipe d'intégration.",
+        "Vous avez besoin d'une solution plug-and-play sans onboarding."
+      ],
+      "threshold": "Albato cible les entreprises SaaS B2B voulant offrir des intégrations et des agents embarqués à leurs clients, avec support d'entreprise et infrastructure à grande échelle."
+    },
+    "pros": [
+      "1000+ intégrations natives pré-construites.",
+      "Embedding blanc-label complet (iFrame, API, MCP).",
+      "Agents d'IA avec support MCP nativement.",
+      "Conformité et sécurité multi-tenant robustes."
+    ],
+    "cons": [
+      "Tarif plancher élevé sur les offres hautes.",
+      "Pas de tier gratuit ou de trial libre.",
+      "Requiert vente consultative et onboarding."
+    ],
+    "use_cases": [
+      "Ajouter des intégrations à un produit SaaS client.",
+      "Proposer des agents d'IA embarqués à des clients.",
+      "Centraliser l'intégration pour des clients en self-service."
+    ],
+    "relevant_for": ["Entreprises SaaS B2B", "Plates-formes CRM/Marketing", "Éditeurs de logiciels"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You are a SaaS company wanting to embed native integrations into your product.",
+        "You need multi-tenant security and GDPR/SOC 2 compliance.",
+        "Your customers are enterprise clients demanding AI agents."
+      ],
+      "avoidIf": [
+        "You need direct automation for internal use.",
+        "You have budget constraints or limited integration resources.",
+        "You need plug-and-play without enterprise onboarding."
+      ],
+      "threshold": "Albato targets B2B SaaS companies wanting to offer embedded integrations and AI agents to customers, with enterprise support and large-scale infrastructure."
+    },
+    "pros": [
+      "1,000+ pre-built native integrations.",
+      "Full white-label embedding (iFrame, API, MCP).",
+      "Native AI agents with MCP support.",
+      "Robust multi-tenant compliance and security."
+    ],
+    "cons": [
+      "High pricing floor on upper tiers.",
+      "No free tier or free trial.",
+      "Requires consultative sales and onboarding."
+    ],
+    "use_cases": [
+      "Add integrations to a SaaS product for customers.",
+      "Offer white-label AI agents embedded in products.",
+      "Centralize integration management for self-service."
+    ]
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "slug": "glide",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Glide — No-Code AI App Builder (site officiel)", "url": "https://glideapps.com" }
+  ],
+  "facts": {
+    "what": "Plateforme no-code transformant les feuilles de calcul (Google Sheets, Excel, Airtable) en applications métier polies. Offre un assistant IA ('Ask Glide'), des outils collaboratifs et déploiement multi-appareils.",
+    "what_en": "No-code platform transforming spreadsheets (Google Sheets, Excel, Airtable) into polished business apps. Features AI assistant ('Ask Glide'), collaboration tools, and multi-device deployment.",
+    "pricing_model": "Modèle freemium. Plans payants pour fonctionnalités avancées et utilisateurs illimités. Montants sur la page tarifaire.",
+    "free_tier": { "exists": true, "detail": "Tier gratuit pour débuter avec fonctionnalités de base. Plans payants pour utilisateurs illimités et features avancées." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit avec utilisateurs limités" },
+      { "name": "Paid Plans", "price": "Montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Conversion tableur → app automatique",
+      "Synchronisation temps-réel avec Sheets/Excel/Airtable",
+      "Assistant IA 'Ask Glide' pour requêter les données",
+      "Vues multi-utilisateurs avec permissions granulaires",
+      "Mobile & desktop responsifs",
+      "Marketplace de templates pré-construits"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez déjà un Airtable/Google Sheets avec vos données.",
+        "Vous voulez transformer cela en app professionnelle rapidement.",
+        "Vous cherchez une solution sans code ni maintenance backend."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'une architecture backend custom complexe.",
+        "Vos données ne sont pas dans un tableur ou un outil Glide-connecté.",
+        "Vous avez des besoins très spécifiques de branding ou UI custom."
+      ],
+      "threshold": "Glide s'adresse aux gestionnaires et aux équipes métier voulant créer des apps de travail rapidement à partir de spreadsheets, sans équipe dev."
+    },
+    "pros": [
+      "Conversion automatique tableur → app très rapide.",
+      "Synchronisation temps-réel avec données sources.",
+      "Assistant IA intégré pour les requêtes.",
+      "Zéro code requis, interface très intuitive."
+    ],
+    "cons": [
+      "Limité aux données dans des outils Glide-connectés.",
+      "Moins flexible pour architectures très custom.",
+      "Pricing des plans payants non transparent."
+    ],
+    "use_cases": [
+      "Créer une app CRM interne depuis un Airtable.",
+      "Transformer un registre Google Sheets en app opérationnelle.",
+      "Déployer une app de suivi de projets pour une équipe."
+    ],
+    "relevant_for": ["Gestionnaires métier", "Équipes sans dev", "PME"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You already have data in Airtable/Google Sheets/Excel.",
+        "You want to turn that into a polished business app fast.",
+        "You seek code-free, no-backend-maintenance solution."
+      ],
+      "avoidIf": [
+        "You need complex custom backend architecture.",
+        "Your data isn't in a spreadsheet or Glide-connected tool.",
+        "You have specific branding or custom UI needs."
+      ],
+      "threshold": "Glide targets business teams and managers creating work apps quickly from spreadsheets, without needing developers."
+    },
+    "pros": [
+      "Automatic spreadsheet-to-app conversion.",
+      "Real-time sync with data sources.",
+      "Integrated AI assistant for queries.",
+      "Zero code required, very intuitive."
+    ],
+    "cons": [
+      "Limited to data in Glide-connected tools.",
+      "Less flexible for custom architectures.",
+      "Paid plan pricing not transparent."
+    ],
+    "use_cases": [
+      "Build an internal CRM app from Airtable.",
+      "Turn a Google Sheets register into an operational app.",
+      "Deploy a project tracking app for a team."
+    ]
+  }
+}

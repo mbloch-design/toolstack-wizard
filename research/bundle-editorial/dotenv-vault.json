@@ -1,0 +1,107 @@
+{
+  "slug": "dotenv-vault",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "Dotenv Vault — Secrets Management (site officiel)",
+      "url": "https://www.dotenv.org/vault/"
+    }
+  ],
+  "facts": {
+    "what": "Gestionnaire de secrets pour développeurs créé par l'auteur de dotenv, synchronisant les fichiers .env chiffrés avec support multi-environnement, Slack, historique de version et audit logging.",
+    "what_en": "Developer-focused secrets manager from dotenv's creator, syncing encrypted .env files with multi-environment support, Slack notifications, version history, and audit logging.",
+    "pricing_model": "Abonnement par utilisateur sans tier gratuit permanent. Solo 8$/mois, Team 12$/mois (illimité teammates).",
+    "free_tier": {
+      "exists": false,
+      "detail": "Pas de plan gratuit permanent. Plans payants uniquement : Solo (8$/mois) et Team (12$/mois)."
+    },
+    "plans": [
+      {
+        "name": "Solo",
+        "price": "8 $/mois par utilisateur (support 2 users)"
+      },
+      {
+        "name": "Team",
+        "price": "12 $/mois par utilisateur (teammates illimités)"
+      }
+    ],
+    "key_features": [
+      "Synchronisation .env chiffrée en bout à bout",
+      "Support multi-environnements (dev, staging, prod)",
+      "Notifications Slack intégrées",
+      "Historique de version complet",
+      "Partage d'accès sécurisé externe",
+      "Audit logging pour conformité",
+      "Disponibilité élevée incluse",
+      "CLI & Dashboard & VS Code extension"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez dotenv et avez aimé l'expérience.",
+        "Vous avez besoin de synchronisation .env simple et chiffrée.",
+        "L'audit logging et version history sont importants."
+      ],
+      "avoidIf": [
+        "Vous cherchez une solution gratuite.",
+        "Vous avez besoin de gestion de secrets complexe (rotation, etc.).",
+        "Votre équipe préfère solutions open-source self-hosted."
+      ],
+      "threshold": "Dotenv Vault convient à équipes adorant dotenv cherchant gestion .env simple ; pour besoins complexes, Doppler convient mieux."
+    },
+    "pros": [
+      "Créé par l'auteur de dotenv, expérience native.",
+      "Interface extrêmement simple et intuitive.",
+      "Tarification affichée transparente.",
+      "Support multi-environnement inclus même plan basique."
+    ],
+    "cons": [
+      "Aucun plan gratuit permanent.",
+      "Moins de fonctionnalités que Doppler.",
+      "Pas de support commercial (équipe lean)."
+    ],
+    "use_cases": [
+      "Synchroniser .env entre développeurs d'une équipe.",
+      "Audit l'historique des changements de secrets.",
+      "Notifier Slack quand secret change."
+    ],
+    "relevant_for": [
+      "Équipes Node.js/JS",
+      "Développeurs simples besoins",
+      "Fans de dotenv"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You use dotenv and loved the experience.",
+        "You need simple encrypted .env synchronization.",
+        "Audit logging and version history matter."
+      ],
+      "avoidIf": [
+        "You're looking for free solutions.",
+        "You need complex secrets management (rotation, etc.).",
+        "Your team prefers open-source self-hosted solutions."
+      ],
+      "threshold": "Dotenv Vault fits teams loving dotenv seeking simple .env management; for complex needs, Doppler suits better."
+    },
+    "pros": [
+      "Created by dotenv author, native experience.",
+      "Extremely simple and intuitive interface.",
+      "Transparent displayed pricing.",
+      "Multi-environment support even basic plan."
+    ],
+    "cons": [
+      "No permanent free plan.",
+      "Fewer features than Doppler.",
+      "No commercial support (lean team)."
+    ],
+    "use_cases": [
+      "Synchronize .env across team developers.",
+      "Audit history of secret changes.",
+      "Notify Slack when secret changes."
+    ]
+  }
+}

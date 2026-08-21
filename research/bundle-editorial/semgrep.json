@@ -1,0 +1,111 @@
+{
+  "slug": "semgrep",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "Semgrep — AI-Assisted Code Security (site officiel)",
+      "url": "https://semgrep.dev/pricing/"
+    }
+  ],
+  "facts": {
+    "what": "Plateforme de sécurité du code assistée par IA unifiant SAST, SCA et détection de secrets avec 3 000+ règles, 30+ langages, et réduction faux positifs jusqu'à 98%.",
+    "what_en": "AI-assisted code security platform unifying SAST, SCA, and secrets detection with 3,000+ rules, 30+ languages, and up to 98% false positive reduction.",
+    "pricing_model": "Freemium : Community gratuit illimité, Team 35$/contributor/mois (gratuit jusqu'à 10 contributors), Enterprise custom.",
+    "free_tier": {
+      "exists": true,
+      "detail": "Community Edition gratuit : scans illimités, règles 3 000+, 30+ langages, CI/CD intégré. Team gratuit jusqu'à 10 contributeurs + 10 repos privés."
+    },
+    "plans": [
+      {
+        "name": "Community (Open Source)",
+        "price": "Gratuit — scans illimités, but single-file only"
+      },
+      {
+        "name": "Team",
+        "price": "35 $/contributor/mois (gratuit ≤10 contributors + 10 repos privés)"
+      },
+      {
+        "name": "Enterprise",
+        "price": "Tarification personnalisée (on-prem SCM inclus)"
+      }
+    ],
+    "key_features": [
+      "Semgrep Code (SAST) avec multimodal AI",
+      "Semgrep Supply Chain (SCA) avec reachability analysis",
+      "Semgrep Secrets pour détection hardcoded credentials",
+      "AI-Powered Triage réduisant faux positifs 98%",
+      "AppSec Platform centralisée avec dashboards",
+      "Intégrations GitHub, GitLab, Bitbucket, Azure",
+      "Support MCP pour outils IA (Claude Code, Cursor)",
+      "3 000+ règles communautaires, 30+ langages"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez SAST + SCA + secrets dans une plateforme.",
+        "Community Edition open-source convient déjà.",
+        "Vous avez équipe < 10 contributeurs (Team gratuit)."
+      ],
+      "avoidIf": [
+        "Vous avez budget très serré pour outils sécurité.",
+        "Vous cherchez SAST simple sans SCA/secrets.",
+        "Vous avez besoin support commercial SLA strict."
+      ],
+      "threshold": "Semgrep convient équipes cherchant SAST + SCA unifiées ; Community Edition gratuit déjà puissant pour startups/open-source."
+    },
+    "pros": [
+      "Community Edition gratuit puissant (3 000+ règles).",
+      "Team gratuit pour ≤10 contributors (excellent value).",
+      "Le tri assisté par IA réduit fortement les faux positifs.",
+      "Intégrations CI/CD complètes."
+    ],
+    "cons": [
+      "Community : single-file analysis uniquement (pas cross-file dataflow).",
+      "Le plan Team devient coûteux au-delà d'une dizaine de contributeurs.",
+      "Documentation moins complète que solutions payantes."
+    ],
+    "use_cases": [
+      "Scanner le code avant chaque merge/CI/CD.",
+      "Détecter hardcoded secrets et credentials.",
+      "Analyser dépendances avec reachability (SCA)."
+    ],
+    "relevant_for": [
+      "Équipes DevSecOps",
+      "Startups",
+      "Développeurs sécurité"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want SAST + SCA + secrets in one platform.",
+        "Community Edition open-source already fits.",
+        "You have team <10 contributors (free Team)."
+      ],
+      "avoidIf": [
+        "You have tight security tools budget.",
+        "You want simple SAST without SCA/secrets.",
+        "You need strict commercial SLA support."
+      ],
+      "threshold": "Semgrep fits teams seeking unified SAST + SCA; free Community Edition already powerful for startups/open-source."
+    },
+    "pros": [
+      "Powerful free Community Edition (3,000+ rules).",
+      "Free Team for ≤10 contributors (excellent value).",
+      "AI-assisted triage sharply reduces false positives.",
+      "Complete CI/CD integrations."
+    ],
+    "cons": [
+      "Community: single-file analysis only (no cross-file dataflow).",
+      "The Team plan gets expensive past a dozen contributors.",
+      "Documentation less complete than paid solutions."
+    ],
+    "use_cases": [
+      "Scan code before each merge/CI/CD.",
+      "Detect hardcoded secrets and credentials.",
+      "Analyze dependencies with reachability (SCA)."
+    ]
+  }
+}

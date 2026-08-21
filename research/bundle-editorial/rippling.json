@@ -1,0 +1,94 @@
+{
+  "slug": "rippling",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Rippling — Workforce Management Platform (site officiel)", "url": "https://rippling.com" }
+  ],
+  "facts": {
+    "what": "Plateforme intégrée de gestion des ressources humaines (HR, IT, Finance, Payroll) sur un seul système unifié. Offre automation pilotée par IA et un App Studio pour workflows custom.",
+    "what_en": "Integrated workforce management system (HR, IT, Finance, Payroll) on a unified platform. Features AI-driven automation and App Studio for custom workflows.",
+    "pricing_model": "Modèle par modules avec tarification personnalisée. Offre special : 6 mois gratuits pour startups venture-backed.",
+    "free_tier": { "exists": true, "detail": "Offre spéciale : 6 mois gratuits pour startups venture-backed (Payroll, HR, IT, Finance)." },
+    "plans": [
+      { "name": "Venture-Backed Offer", "price": "6 mois gratuits (tous modules)" },
+      { "name": "Paid Plans", "price": "Montants sur la page tarification" }
+    ],
+    "key_features": [
+      "HR/HCM intégrée (recrutement, onboarding, benefits, performance, learning)",
+      "IT : gestion identité, devices, inventory, compliance",
+      "Finance : corporate cards, expenses, bill pay, travel",
+      "Paie : processus global pour employés et contractors",
+      "AI Assistant : business intelligence sur données unifiées",
+      "App Studio : no-code pour workflows custom",
+      "5x plus rapide pour changements (cas Barry)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes une startup venture-backed (6 mois gratuits!).",
+        "Vous cherchez une plateforme tout-en-un intégrée.",
+        "Vous voulez unifier HR, IT, Finance, Payroll."
+      ],
+      "avoidIf": [
+        "Vous n'êtes pas venture-backed (pas de free offer).",
+        "Vous cherchez une solution simple ou low-cost.",
+        "Vous préférez un best-of-breed par domaine."
+      ],
+      "threshold": "Rippling cible les startups venture-backed et les organisations cherchant une plateforme complète intégrée (HR + IT + Finance + Payroll)."
+    },
+    "pros": [
+      "Suite intégrée complète (HR + IT + Finance + Payroll).",
+      "6 mois gratuits pour startups venture-backed.",
+      "AI-driven automation sur données unifiées.",
+      "App Studio pour workflows custom.",
+      "5x plus rapide pour changements employés."
+    ],
+    "cons": [
+      "Offre gratuite limitée aux startups venture-backed.",
+      "Tarification potentiellement élevée pour non-VB.",
+      "Complexité implémentation élevée.",
+      "Moins flexible que best-of-breed."
+    ],
+    "use_cases": [
+      "Centraliser HR, IT, Finance, Payroll pour startup.",
+      "Automatiser changements employés rapidement (5x).",
+      "Créer workflows custom via App Studio."
+    ],
+    "relevant_for": ["Startups venture-backed", "Organisations", "Tech companies"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You are a venture-backed startup (6 months free!).",
+        "You seek a complete integrated platform.",
+        "You want to unify HR, IT, Finance, Payroll."
+      ],
+      "avoidIf": [
+        "You are not venture-backed (no free offer).",
+        "You seek a simple or low-cost solution.",
+        "You prefer best-of-breed by domain."
+      ],
+      "threshold": "Rippling targets venture-backed startups and organizations seeking a complete integrated platform (HR + IT + Finance + Payroll)."
+    },
+    "pros": [
+      "Complete integrated suite (HR + IT + Finance + Payroll).",
+      "6 months free for venture-backed startups.",
+      "AI-driven automation on unified data.",
+      "App Studio for custom workflows.",
+      "5x faster for employee changes."
+    ],
+    "cons": [
+      "Free offer limited to venture-backed startups.",
+      "Potential high pricing for non-VB.",
+      "High implementation complexity.",
+      "Less flexible than best-of-breed."
+    ],
+    "use_cases": [
+      "Centralize HR, IT, Finance, Payroll for startup.",
+      "Automate employee changes fast (5x).",
+      "Create custom workflows via App Studio."
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "slug": "turbotic",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Turbotic — AI-Powered Automation Orchestration (site officiel)", "url": "https://turbotic.com" }
+  ],
+  "facts": {
+    "what": "Plateforme d'orchestration d'automatisation et d'IA permettant de construire, tester et déployer des automations complexes via langage naturel. Intègre les principaux outils d'entreprise et gère des AI agents autonomes.",
+    "what_en": "Automation orchestration and AI platform enabling building, testing, and deploying complex automations via natural language. Integrates major enterprise tools and manages autonomous AI agents.",
+    "pricing_model": "Modèle d'abonnement avec tarification par organisation. Tarification sur consultation.",
+    "free_tier": { "exists": false, "detail": "Pas de tier gratuit annoncé. Modèle d'entreprise orienté consultation et déploiement custom." },
+    "plans": [
+      { "name": "Enterprise", "price": "Tarification sur consultation" }
+    ],
+    "key_features": [
+      "Construction d'automations via prompts naturels (pas de code)",
+      "Intégration 50+ outils d'entreprise (Outlook, Teams, SharePoint, HubSpot, Stripe, Jira, ServiceNow)",
+      "Orchestration multi-vendor et self-healing execution",
+      "Détection d'anomalies et optimization IA",
+      "Classification d'erreurs automatique et actions remédiatrices",
+      "Lifecycle visibility et monitoring complet"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin d'orchestration d'automations complexes cross-tools.",
+        "Vous cherchez à lancer des automations RPA/AI sans développement.",
+        "Vous gérez une infrastructure multi-vendor (UiPath, etc.)."
+      ],
+      "avoidIf": [
+        "Vous cherchez une solution gratuite ou low-cost.",
+        "Vous avez des besoins d'automation simples (2-3 apps).",
+        "Vous préférez une plateforme open-source ou légère."
+      ],
+      "threshold": "Turbotic s'adresse aux grandes organisations cherchant l'orchestration d'automations et d'AI agents complexes avec self-healing et optimisation autonome."
+    },
+    "pros": [
+      "Construction d'automations via langage naturel (pas de code).",
+      "Orchestration multi-vendor (UiPath, etc.).",
+      "Self-healing execution et optimisation IA automatique.",
+      "Détection d'anomalies et actions remédiatrices intégrées."
+    ],
+    "cons": [
+      "Pas de tier gratuit.",
+      "Tarification non transparente (consultation requise).",
+      "Orienté grandes organisations (complexité élevée)."
+    ],
+    "use_cases": [
+      "Orchestrer des automations RPA complexes entre multiples outils.",
+      "Déployer des AI agents autonomes pour opérations.",
+      "Monitorer et optimiser des workflows de traitement de données massives."
+    ],
+    "relevant_for": ["Grandes organisations", "IT ops teams", "Équipes RPA"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need orchestration of complex cross-tool automations.",
+        "You want to launch RPA/AI automations without development.",
+        "You manage multi-vendor infrastructure (UiPath, etc.)."
+      ],
+      "avoidIf": [
+        "You seek a free or low-cost solution.",
+        "You have simple 2-3 app automation needs.",
+        "You prefer open-source or lightweight platforms."
+      ],
+      "threshold": "Turbotic targets large organizations seeking orchestration of complex automations and AI agents with self-healing and autonomous optimization."
+    },
+    "pros": [
+      "Build automations via natural language (no code).",
+      "Multi-vendor orchestration (UiPath, etc.).",
+      "Self-healing execution and automatic AI optimization.",
+      "Integrated anomaly detection and remediation."
+    ],
+    "cons": [
+      "No free tier.",
+      "Pricing not transparent (consultation required).",
+      "Geared toward large organizations (high complexity)."
+    ],
+    "use_cases": [
+      "Orchestrate complex RPA automations across multiple tools.",
+      "Deploy autonomous AI agents for operations.",
+      "Monitor and optimize massive data processing workflows."
+    ]
+  }
+}

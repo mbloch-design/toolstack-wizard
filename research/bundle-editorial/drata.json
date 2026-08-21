@@ -1,0 +1,102 @@
+{
+  "slug": "drata",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "Drata — GRC Platform (site officiel)",
+      "url": "https://drata.com"
+    }
+  ],
+  "facts": {
+    "what": "Plateforme agentive de gestion de la conformité et des risques (GRC) utilisant agents IA autonomes pour automatiser la collecte de preuves, la surveillance des contrôles et la documentation de sécurité auprès de 8 500+ clients.",
+    "what_en": "Agentic GRC platform using autonomous AI agents to automate evidence collection, control monitoring, and security documentation serving 8,500+ customers.",
+    "pricing_model": "Tarification personnalisée par contact commercial (devis). Pas de tarifs publics affichés.",
+    "free_tier": {
+      "exists": false,
+      "detail": "Pas d'offre gratuite. Démo et contact commercial requis pour tarification."
+    },
+    "plans": [
+      {
+        "name": "Plan Personnalisé",
+        "price": "Tarification sur devis (contact commercial requis)"
+      }
+    ],
+    "key_features": [
+      "GRC Enterprise unifié multi-cadres (SOC 2, ISO 27001, etc.)",
+      "Automatisation de conformité continue et monitoring de contrôles",
+      "Trust Center : portail sécurisé partage documentation",
+      "Assistants IA pour questionnaires (réponses automatiques)",
+      "Gestion des risques tiers (vendor assessment)",
+      "Discovery et policy enforcement pour agents IA",
+      "Rapport prêt audit (4.8/5 G2 rating)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin de conformité SOC 2, ISO 27001 ou autre framework.",
+        "La gestion des risques tiers (vendeurs) est critique.",
+        "Vous avez une équipe compliance et besoin d'automatisation."
+      ],
+      "avoidIf": [
+        "Vous êtes startup toute seule avec budget zéro.",
+        "Vous cherchez une solution uniquement pour audit simple.",
+        "Vous n'avez pas d'exigences réglementaires."
+      ],
+      "threshold": "Drata convient aux entreprises avec exigences compliance structurées ; pour startups sans exigences, solution plus légère convient mieux."
+    },
+    "pros": [
+      "Plateforme agentive IA pour automatisation complète.",
+      "Couvre compliantly multi-frameworks (SOC 2, ISO 27001, etc.).",
+      "Trust Center pour partage client sécurisé.",
+      "8 500+ clients, réputation établie (4.8/5 G2)."
+    ],
+    "cons": [
+      "Tarification personnalisée (pas transparence prix).",
+      "Probablement solution coûteuse pour PME.",
+      "Nécessite engagement commercial et démo."
+    ],
+    "use_cases": [
+      "Automatiser collecte preuves conformité SOC 2.",
+      "Evaluer et monitorer risques des fournisseurs.",
+      "Centraliser documentation sécurité pour clients."
+    ],
+    "relevant_for": [
+      "Directeurs compliance",
+      "RSSI",
+      "Responsables audit"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need SOC 2, ISO 27001, or other framework compliance.",
+        "Third-party risk management (vendors) is critical.",
+        "You have a compliance team and need automation."
+      ],
+      "avoidIf": [
+        "You're a solo startup with zero budget.",
+        "You're looking for simple audit-only solution.",
+        "You have no regulatory requirements."
+      ],
+      "threshold": "Drata fits enterprises with structured compliance needs; for startups without requirements, lighter solution suits better."
+    },
+    "pros": [
+      "Agentic AI platform for complete automation.",
+      "Covers multi-frameworks compliantly (SOC 2, ISO 27001, etc.).",
+      "Trust Center for secure client documentation sharing.",
+      "8,500+ customers, established reputation (4.8/5 G2)."
+    ],
+    "cons": [
+      "Custom pricing (no price transparency).",
+      "Likely expensive for SMBs.",
+      "Requires sales engagement and demo."
+    ],
+    "use_cases": [
+      "Automate SOC 2 compliance evidence collection.",
+      "Evaluate and monitor vendor risks.",
+      "Centralize security documentation for clients."
+    ]
+  }
+}

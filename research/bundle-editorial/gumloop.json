@@ -1,0 +1,89 @@
+{
+  "slug": "gumloop",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Gumloop — AI Agent Platform for Automation (site officiel)", "url": "https://www.gumloop.com" }
+  ],
+  "facts": {
+    "what": "Plateforme d'infrastructure IA permettant de construire, déployer et gérer des agents IA pour automatiser les tâches métier. Offre 300+ connecteurs, gestion centralisée du contexte ('Company Brain') et agents auto-améliorants.",
+    "what_en": "AI infrastructure platform to build, deploy, and manage AI agents for business automation. Features 300+ connectors, centralized 'Company Brain' knowledge base, and self-improving agents.",
+    "pricing_model": "Modèle usage-based (pay-per-execution). Détails de tarification sur le site officiel.",
+    "free_tier": { "exists": false, "detail": "Pas de tier gratuit annoncé. Modèle d'entreprise orienté API usage-based." },
+    "plans": [
+      { "name": "Usage-Based Pricing", "price": "Montants sur la page officielle (paiement à l'usage)" }
+    ],
+    "key_features": [
+      "300+ connecteurs (Salesforce, HubSpot, Slack, Gmail)",
+      "Company Brain : base de connaissance centralisée",
+      "Agents auto-améliorants via évaluation autonome",
+      "Contrôles d'entreprise (monitoring usage, budget controls)",
+      "Audit logging et SAML SSO",
+      "VPC deployment pour confidentialité des données",
+      "SOC 2 Type II et GDPR compliant"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez à automatiser des processus complexes multi-outils avec IA.",
+        "Vous avez une 'Company Brain' (documentation, SKUs, procédures) à centraliser.",
+        "Vous avez besoin de gouvernance d'entreprise et de conformité."
+      ],
+      "avoidIf": [
+        "Vous cherchez une solution entièrement gratuite ou low-cost.",
+        "Vous avez juste un ou deux processus simples à automatiser.",
+        "Vous n'avez pas accès à des APIs ou une expertise technique."
+      ],
+      "threshold": "Gumloop s'adresse aux entreprises cherchant à déployer des agents IA autonomes et auto-améliorants pour automatiser des workflows complexes cross-tools."
+    },
+    "pros": [
+      "300+ connecteurs pré-construits aux outils métier clés.",
+      "Company Brain centralisé pour contexte unifié.",
+      "Agents auto-améliorants via évaluation autonome.",
+      "Gouvernance d'entreprise robuste (SAML, audit, budget)."
+    ],
+    "cons": [
+      "Pas de tier gratuit.",
+      "Tarification à l'usage peut être imprévisible à grande échelle.",
+      "Requiert expertise technique pour configuration initiale."
+    ],
+    "use_cases": [
+      "Automatiser la gestion de deals dans une équipe sales.",
+      "Créer des agents de support client autonomes.",
+      "Automatiser l'analyse et la research de prospects."
+    ],
+    "relevant_for": ["Entreprises", "Équipes sales/support", "Départements ops"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want to automate complex multi-tool workflows with AI.",
+        "You have a 'Company Brain' (docs, SKUs, procedures) to centralize.",
+        "You need enterprise governance and compliance."
+      ],
+      "avoidIf": [
+        "You seek a free or low-cost solution.",
+        "You have just 1-2 simple processes to automate.",
+        "You lack API access or technical expertise."
+      ],
+      "threshold": "Gumloop targets enterprises deploying autonomous, self-improving AI agents to automate complex cross-tool workflows."
+    },
+    "pros": [
+      "300+ pre-built connectors to key business tools.",
+      "Centralized Company Brain for unified context.",
+      "Self-improving agents via autonomous evaluation.",
+      "Robust enterprise governance (SAML, audit, budget)."
+    ],
+    "cons": [
+      "No free tier.",
+      "Usage-based pricing can be unpredictable at scale.",
+      "Requires technical expertise for initial setup."
+    ],
+    "use_cases": [
+      "Automate deal management in sales teams.",
+      "Create autonomous customer support agents.",
+      "Automate prospect analysis and research."
+    ]
+  }
+}

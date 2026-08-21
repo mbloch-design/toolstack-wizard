@@ -1,0 +1,88 @@
+{
+  "slug": "activepieces",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Activepieces — Open-source automation platform (site officiel)", "url": "https://www.activepieces.com" }
+  ],
+  "facts": {
+    "what": "Plateforme d'automatisation open-source (MIT) avec plus de 700 intégrations, permettant de construire des workflows d'IA et des agents sans code. Offre un mode cloud géré et des options d'auto-hébergement gratuites.",
+    "what_en": "Open-source automation platform (MIT license) with 700+ integrations for building AI workflows and agents without code. Offers managed cloud and free self-hosted options.",
+    "pricing_model": "Modèle pay-per-execution avec tier gratuit sans limite de temps. Versions cloud et auto-hébergée disponibles.",
+    "free_tier": { "exists": true, "detail": "Tier gratuit sans carte de crédit requise, fonctionnalités illimitées dans le modèle pay-per-execution. Auto-hébergement gratuit sous licence MIT." },
+    "plans": [
+      { "name": "Cloud Free", "price": "Pay-per-execution (gratuit pour débuter)" },
+      { "name": "Cloud Paid", "price": "À partir de $5 par flux actif par mois" }
+    ],
+    "key_features": [
+      "700+ intégrations natives (Gmail, OpenAI, Slack, Notion, HubSpot)",
+      "Agents d'IA avec contrôle précis",
+      "Mode auto-hébergé gratuit",
+      "Gouvernance d'entreprise (SAML, SCIM, accès granulaire)",
+      "Conforme SOC 2 Type II et GDPR (cloud géré)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez une plateforme open-source que vous pouvez auto-héberger.",
+        "Vous avez peu de workflows et voulez un modèle pay-per-execution transparent.",
+        "Vous avez besoin d'IA native et d'agents d'automatisation avancés."
+      ],
+      "avoidIf": [
+        "Vous préférez un SaaS entièrement managé sans responsabilité technique.",
+        "Vous voulez une interface drag-and-drop très visuelle.",
+        "Vous aviez besoin d'un support premium immédiat."
+      ],
+      "threshold": "Activepieces convient aux équipes techniques cherchant une alternative open-source à Zapier/Make, ou aux organisations ayant des exigences de déploiement interne."
+    },
+    "pros": [
+      "Entièrement open-source et auto-hébergeable.",
+      "Modèle pay-per-execution : transparence et scalabilité.",
+      "700+ intégrations et agents d'IA natifs.",
+      "Governance d'entreprise avancée (SAML, SCIM)."
+    ],
+    "cons": [
+      "Tier gratuit cloud moins complet que les concurrents.",
+      "Nécessite expertise technique pour auto-hébergement.",
+      "Communauté plus petite que Zapier ou Make."
+    ],
+    "use_cases": [
+      "Construire une plateforme d'automatisation interne personnalisée.",
+      "Automatiser des workflows internes avec des agents d'IA.",
+      "Intégrer des outils SaaS sans dépendre d'un tiers."
+    ],
+    "relevant_for": ["Équipes techniques", "Startups avec équipe dev", "Organisations cherchant l'auto-hébergement"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want an open-source automation platform you can self-host.",
+        "You have light to moderate workflow needs and prefer pay-per-execution pricing.",
+        "You need native AI agents and advanced orchestration."
+      ],
+      "avoidIf": [
+        "You prefer fully managed SaaS with no DevOps overhead.",
+        "You need extensive visual drag-and-drop simplicity.",
+        "You require immediate enterprise support."
+      ],
+      "threshold": "Activepieces suits technical teams seeking an open-source Zapier/Make alternative, or organizations with internal deployment requirements."
+    },
+    "pros": [
+      "Fully open-source and self-hostable.",
+      "Pay-per-execution model ensures cost predictability.",
+      "700+ integrations and native AI agents.",
+      "Advanced enterprise governance (SAML, SCIM)."
+    ],
+    "cons": [
+      "Cloud free tier has fewer features than competitors.",
+      "Self-hosting requires technical expertise.",
+      "Smaller community compared to Zapier/Make."
+    ],
+    "use_cases": [
+      "Build a customized internal automation platform.",
+      "Automate workflows with AI agents.",
+      "Integrate SaaS tools without relying on third parties."
+    ]
+  }
+}

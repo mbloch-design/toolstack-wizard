@@ -1,0 +1,103 @@
+{
+  "slug": "voiceover",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "VoiceOver — macOS Screen Reader (site officiel Apple)",
+      "url": "https://support.apple.com/guide/voiceover/welcome/mac"
+    }
+  ],
+  "facts": {
+    "what": "Lecteur d'écran intégré nativement à macOS permettant utilisateurs malvoyants/aveugles de contrôler ordinateur via commandes clavier et gestes, avec support braille et personnalisations étendues.",
+    "what_en": "Native macOS screen reader enabling blind and visually impaired users to control computer via keyboard commands and gestures, with braille support and extensive customization.",
+    "pricing_model": "Entièrement gratuit, inclus dans macOS. Aucun coût supplémentaire.",
+    "free_tier": {
+      "exists": true,
+      "detail": "Fonctionnalité gratuite incluse dans macOS pour tous les utilisateurs. Aucun tier payant."
+    },
+    "plans": [
+      {
+        "name": "Inclus dans macOS",
+        "price": "Gratuit"
+      }
+    ],
+    "key_features": [
+      "Interface audio (parlée descriptions contenu écran)",
+      "Commandes clavier complètes pour navigation",
+      "Gestes trackpad (iOS/iPadOS-style)",
+      "Support affichages braille (Braille Access)",
+      "Clavier braille input (macOS Tahoe)",
+      "Customization extensive (VoiceOver Utility)",
+      "Navigation web (rotor, landmarks)",
+      "Tutoriel interactif inclus",
+      "Screen sharing amélioré avec VoiceOver"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes utilisateur Mac malvoyant/aveugle.",
+        "Vous cherchez lecteur d'écran gratuit intégré.",
+        "Support braille et customization sont importants."
+      ],
+      "avoidIf": [
+        "Vous avez écran non-Apple (Windows, Linux).",
+        "Vous cherchez solution cross-platform.",
+        "Vous n'avez pas de besoin accessibilité."
+      ],
+      "threshold": "VoiceOver est le lecteur d'écran standard gratuit pour utilisateurs Mac malvoyants ; tous les users Mac aveugles devraient l'utiliser."
+    },
+    "pros": [
+      "Entièrement gratuit, inclus dans macOS.",
+      "Profondément intégré système, performant.",
+      "Support braille complet et Braille Access.",
+      "Commandes clavier flexibles et gestes trackpad."
+    ],
+    "cons": [
+      "Macintosh uniquement (pas Windows/Linux).",
+      "Courbe d'apprentissage importante.",
+      "Support principalement par Apple (moins communauté que NVDA)."
+    ],
+    "use_cases": [
+      "Accéder Mac et web si malvoyant/aveugle.",
+      "Lire documents et emails sur Mac.",
+      "Naviguer applications macOS accessibles."
+    ],
+    "relevant_for": [
+      "Utilisateurs Mac malvoyants/aveugles",
+      "Organisations accessibilité macOS"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a blind/visually impaired Mac user.",
+        "You want free integrated screen reader.",
+        "Braille support and customization matter."
+      ],
+      "avoidIf": [
+        "You use non-Apple screen (Windows, Linux).",
+        "You need cross-platform solution.",
+        "You have no accessibility needs."
+      ],
+      "threshold": "VoiceOver is the free standard screen reader for blind Mac users; all blind Mac users should use it."
+    },
+    "pros": [
+      "Entirely free, included in macOS.",
+      "Deeply integrated, performant system.",
+      "Full braille support and Braille Access.",
+      "Flexible keyboard commands and trackpad gestures."
+    ],
+    "cons": [
+      "Macintosh only (no Windows/Linux).",
+      "Steep learning curve.",
+      "Support mainly by Apple (less community than NVDA)."
+    ],
+    "use_cases": [
+      "Access Mac and web if blind/visually impaired.",
+      "Read documents and emails on Mac.",
+      "Navigate accessible macOS applications."
+    ]
+  }
+}

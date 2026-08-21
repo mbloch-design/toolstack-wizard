@@ -1,0 +1,92 @@
+{
+  "slug": "phantombuster",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "PhantomBuster — Lead Generation Automation (site officiel)", "url": "https://phantombuster.com" }
+  ],
+  "facts": {
+    "what": "Plateforme no-code d'automatisation de lead generation et prospection. Offre 100+ outils pré-construits (Phantoms) et workflows (Flows) pour extraire des données et automatiser l'outreach sur LinkedIn, Instagram, Twitter, etc.",
+    "what_en": "No-code lead generation and prospecting automation platform. Features 100+ pre-built automation tools (Phantoms) and workflows (Flows) for data extraction and outreach across LinkedIn, Instagram, Twitter, etc.",
+    "pricing_model": "Modèle par abonnement avec essai gratuit 14 jours (sans carte de crédit). Plans payants avec accès à tous les Phantoms.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit 14 jours sans carte de crédit. Pas de tier gratuit permanent annoncé." },
+    "plans": [
+      { "name": "Free Trial", "price": "14 jours gratuit (sans carte)" },
+      { "name": "Starter", "price": "À partir de 59 € par mois" },
+      { "name": "Pro", "price": "À partir de 139 € par mois" }
+    ],
+    "key_features": [
+      "100+ Phantoms (automation templates) pré-construites",
+      "Extraction de données (LinkedIn, Instagram, Facebook, Twitter, YouTube, GitHub, Maps)",
+      "Enrichissement de leads avec emails et détails job",
+      "Workflows (Flows) pour automations multi-étapes",
+      "Intégration CRM (Salesforce, HubSpot, Pipedrive)",
+      "Confiance de 100,000+ utilisateurs"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin d'extraire des leads de LinkedIn, Instagram ou Twitter.",
+        "Vous voulez automatiser l'outreach et la prospection sans code.",
+        "Vous cherchez un outil spécialisé lead generation plutôt qu'une automation générale."
+      ],
+      "avoidIf": [
+        "Vous cherchez une solution gratuite permanente.",
+        "Vous avez besoin d'une automation générale (utilisez Zapier/Make).",
+        "Vous n'avez besoin que de 1-2 données (API sera moins cher)."
+      ],
+      "threshold": "PhantomBuster s'adresse aux équipes sales, BDRs et marketers cherchant l'automation spécialisée de lead generation et prospection sur réseaux sociaux."
+    },
+    "pros": [
+      "100+ Phantoms pré-construites et prêtes à l'emploi.",
+      "Extraction de données de sources multiples (LinkedIn, Instagram, Twitter).",
+      "Workflows (Flows) pour automations complexes multi-étapes.",
+      "Enrichissement automatique de données de leads."
+    ],
+    "cons": [
+      "Pas de tier gratuit permanent (14 jours seulement).",
+      "Les plans payants démarrent à un tarif mensuel notable.",
+      "Moins adapté pour automations générales non-sales."
+    ],
+    "use_cases": [
+      "Extraire des listes de prospects de LinkedIn automatiquement.",
+      "Automatiser des messages personnalisés sur Instagram/Twitter.",
+      "Enrichir une base de données de contacts avec emails et détails.",
+      "Créer un workflow de prospection multi-étapes."
+    ],
+    "relevant_for": ["Équipes sales", "BDRs", "Growth managers", "Marketers B2B"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need to extract leads from LinkedIn, Instagram, or Twitter.",
+        "You want to automate outreach and prospecting without code.",
+        "You seek a specialized lead gen tool rather than generic automation."
+      ],
+      "avoidIf": [
+        "You seek a free permanent solution.",
+        "You need generic automation (use Zapier/Make).",
+        "You only need 1-2 data points (API will be cheaper)."
+      ],
+      "threshold": "PhantomBuster targets sales teams, BDRs, and marketers seeking specialized lead generation and social prospecting automation."
+    },
+    "pros": [
+      "100+ pre-built and ready-to-use Phantoms.",
+      "Data extraction from multiple sources (LinkedIn, Instagram, Twitter).",
+      "Workflows (Flows) for complex multi-step automations.",
+      "Automatic lead data enrichment."
+    ],
+    "cons": [
+      "No permanent free tier (14 days only).",
+      "Paid plans start at a notable monthly rate.",
+      "Less suited for non-sales general automations."
+    ],
+    "use_cases": [
+      "Extract prospect lists from LinkedIn automatically.",
+      "Automate personalized messages on Instagram/Twitter.",
+      "Enrich a contact database with emails and details.",
+      "Create a multi-step prospecting workflow."
+    ]
+  }
+}

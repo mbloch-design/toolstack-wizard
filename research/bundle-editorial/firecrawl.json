@@ -1,0 +1,90 @@
+{
+  "slug": "firecrawl",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Firecrawl — Context API for Web Scraping (site officiel)", "url": "https://firecrawl.dev" }
+  ],
+  "facts": {
+    "what": "API de scraping web haute performance transformant les sites web en données structurées lisibles par les LLM. Supporte la recherche, le scraping, et l'interaction avec les pages web à grande échelle.",
+    "what_en": "High-performance web scraping API transforming websites into LLM-ready structured data. Supports web search, page scraping, and site interaction at scale.",
+    "pricing_model": "Modèle par crédits avec tier gratuit mensuel. Crédits utilisés pour chaque action (scrape, search, interact).",
+    "free_tier": { "exists": true, "detail": "Tier gratuit avec 1,000 crédits mensuels (environ 1,000 pages scrappées). Crédits ne se reportent pas sur les plans self-serve." },
+    "plans": [
+      { "name": "Free", "price": "1,000 crédits/mois" },
+      { "name": "Hobby & Standard", "price": "Montants sur la page officielle" },
+      { "name": "Growth, Scale, Enterprise", "price": "Plans avec reportage des crédits et tarifs négociés" }
+    ],
+    "key_features": [
+      "Scraping LLM-optimisé (93% moins de tokens que HTML brut)",
+      "Couverture 96% du web avec gestion JavaScript automatique",
+      "Vitesse P95 de 3.4 secondes",
+      "SDKs multiples (Python, Node.js, Go, Rust, Java, Elixir)",
+      "Parsing documents (PDF, DOCX) et extraction structurée JSON",
+      "Open source (170K+ stars GitHub)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin de scraper des données web pour les LLM.",
+        "Vous devez couvrir une très large variété de sites.",
+        "Vous cherchez une API simple avec bonne documentation et SDKs multiples."
+      ],
+      "avoidIf": [
+        "Vous scrappez juste 1-2 domaines spécifiques (des solutions plus simples existent).",
+        "Vous n'avez pas d'expertise technique ou API.",
+        "Vous avez des besoins de scraping ultra-haute-fréquence (les crédits deviendraient coûteux)."
+      ],
+      "threshold": "Firecrawl s'adresse aux développeurs et aux équipes IA voulant convertir des contenus web en données exploitables par les LLM, avec une solution robuste et scalable."
+    },
+    "pros": [
+      "Sortie optimisée pour les LLM, très économe en tokens.",
+      "Très large couverture du web, JavaScript inclus.",
+      "Crédits transparents et pay-as-you-go.",
+      "Open source avec grande communauté."
+    ],
+    "cons": [
+      "Tier gratuit limité (1,000 crédits seulement).",
+      "Coûts potentiels élevés à très haute fréquence.",
+      "Complexité accrue pour cas d'usage très spécifiques."
+    ],
+    "use_cases": [
+      "Indexer des sites web pour des agents IA.",
+      "Scraper le contenu pour un RAG (Retrieval-Augmented Generation).",
+      "Automatiser la collecte de données concurrentes à grande échelle."
+    ],
+    "relevant_for": ["Équipes IA", "Développeurs Python/Node.js", "Startups ML"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need to scrape web data for LLM applications.",
+        "You need to cover a very wide variety of sites.",
+        "You want a simple API with excellent docs and multi-SDK support."
+      ],
+      "avoidIf": [
+        "You're scraping just 1-2 specific domains (simpler solutions exist).",
+        "You lack technical/API expertise.",
+        "You have ultra-high-frequency scraping needs (credits become expensive)."
+      ],
+      "threshold": "Firecrawl suits developers and AI teams converting web content into LLM-usable data, with a robust, scalable solution."
+    },
+    "pros": [
+      "LLM-optimised output, very token-efficient.",
+      "Very broad web coverage, JavaScript included.",
+      "Transparent pay-per-credit model.",
+      "Open source with active community."
+    ],
+    "cons": [
+      "Limited free tier (1,000 credits only).",
+      "Potential high costs at very high frequency.",
+      "Increased complexity for niche use cases."
+    ],
+    "use_cases": [
+      "Index websites for AI agents.",
+      "Scrape content for RAG (Retrieval-Augmented Generation).",
+      "Automate competitive intelligence data collection at scale."
+    ]
+  }
+}

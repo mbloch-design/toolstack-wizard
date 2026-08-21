@@ -1,0 +1,95 @@
+{
+  "slug": "payfit",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "PayFit — UK Payroll Software (site officiel)", "url": "https://payfit.com" }
+  ],
+  "facts": {
+    "what": "Logiciel de paie cloud britannique automatisant 90%+ des tâches manuelles. Offre gestion de paie, conformité HMRC, absences et outils de gestion des performances pour PME UK.",
+    "what_en": "UK cloud payroll software automating 90%+ of manual payroll tasks. Offers payroll management, HMRC compliance, absence tracking, and performance management for UK SMBs.",
+    "pricing_model": "Modèle par segments (< 25 employés, 25+). Tarification sur consultation pour plans payants.",
+    "free_tier": { "exists": false, "detail": "Pas de tier gratuit. Options disponibles pour < 25 et 25+ employés. Consultez pour devis." },
+    "plans": [
+      { "name": "Under 25", "price": "Pour petites équipes" },
+      { "name": "25+ Employees", "price": "Pour plus grandes équipes" }
+    ],
+    "key_features": [
+      "Automatisation 90%+ des tâches payroll",
+      "Soumissions RTI et conformité HMRC automatiques",
+      "Gestion des congés et absences",
+      "Auto-enrolement pensions",
+      "Gestion des performances et évaluations",
+      "Gestion des dépenses (scanning reçus)",
+      "PayFit AI : assistant 24/7 payroll/HR",
+      "Portail employé self-service"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes une PME UK cherchant automation paie.",
+        "Vous avez besoin de conformité HMRC automatisée.",
+        "Vous voulez réduire fortement le temps consacré à la paie."
+      ],
+      "avoidIf": [
+        "Vous opérez hors UK.",
+        "Vous cherchez une solution très low-cost.",
+        "Vous avez besoin d'une suite HR complète (PayFit est paie-first)."
+      ],
+      "threshold": "PayFit cible les PME UK cherchant l'automatisation payroll complète avec conformité HMRC."
+    },
+    "pros": [
+      "Automatisation de la très grande majorité des tâches de paie.",
+      "Conformité HMRC automatisée (RTI, SSP, etc).",
+      "Assistant IA PayFit (24/7 payroll/HR).",
+      "Réduction sensible du temps de paie mensuel.",
+      "Utilisé par 22,000+ SMBs UK."
+    ],
+    "cons": [
+      "Pas de tier gratuit.",
+      "Tarification non transparente publiquement.",
+      "Limité à UK (pas d'international).",
+      "Paie-first (pas d'HR complète)."
+    ],
+    "use_cases": [
+      "Automatiser payroll pour PME UK (10-100).",
+      "Assurer conformité HMRC sans expertise.",
+      "Réduire fortement le temps administratif de paie."
+    ],
+    "relevant_for": ["PME UK", "Startups UK"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You are a UK SMB seeking payroll automation.",
+        "You need automated HMRC compliance.",
+        "You want to sharply cut time spent on payroll."
+      ],
+      "avoidIf": [
+        "You operate outside UK.",
+        "You seek a very low-cost solution.",
+        "You need a complete HR suite (PayFit is payroll-first)."
+      ],
+      "threshold": "PayFit targets UK SMBs seeking complete payroll automation with HMRC compliance."
+    },
+    "pros": [
+      "Automates the vast majority of payroll tasks.",
+      "Automated HMRC compliance (RTI, SSP, etc).",
+      "PayFit AI assistant (24/7 payroll/HR).",
+      "Noticeably cuts monthly payroll time.",
+      "Used by 22,000+ UK SMBs."
+    ],
+    "cons": [
+      "No free tier.",
+      "Pricing not transparent publicly.",
+      "Limited to UK (no international).",
+      "Payroll-first (no complete HR)."
+    ],
+    "use_cases": [
+      "Automate payroll for UK SMB (10-100).",
+      "Ensure HMRC compliance without expertise.",
+      "Sharply reduce payroll admin time."
+    ]
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "slug": "wordfence",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "Wordfence — WordPress Security Plugin (site officiel)",
+      "url": "https://www.wordfence.com/products/pricing/"
+    }
+  ],
+  "facts": {
+    "what": "Plugin WordPress de sécurité couvrant web application firewall, scanner malware et gestion login, avec version gratuite fonctionnelle et plan Premium 149$/an pour mises à jour temps réel.",
+    "what_en": "WordPress security plugin covering web application firewall, malware scanner, and login security, with functional free version and Premium plan 149$/year for real-time updates.",
+    "pricing_model": "Freemium : version gratuite complète avec limites, Premium 149$/an par site avec scaling multi-sites.",
+    "free_tier": {
+      "exists": true,
+      "detail": "Version Free complète : firewall, scanner malware, login security, file integrity monitoring. Premium 149$/an/site pour mises à jour temps réel (scanner, firewall rules)."
+    },
+    "plans": [
+      {
+        "name": "Free",
+        "price": "Gratuit (firewall, scanner, login security)"
+      },
+      {
+        "name": "Premium",
+        "price": "149 $/an par site (real-time updates inclus)"
+      }
+    ],
+    "key_features": [
+      "Web Application Firewall (WAF) WordPress natif",
+      "Scanner malware comparant fichiers versions saines",
+      "Login security : 2FA, rate limiting, monitoring",
+      "File Integrity Monitoring (core, plugins, themes)",
+      "Live Traffic Viewer (voir requêtes réelles)",
+      "Blocage pays et blocage manuel avancé (Premium)",
+      "Wordfence Central dashboard multi-sites",
+      "Mises à jour temps réel firewall/scanner (Premium)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez un site WordPress.",
+        "Vous voulez sécurité complète firewall + malware.",
+        "La version Free convient pour petit budget."
+      ],
+      "avoidIf": [
+        "Vous n'utilisez pas WordPress.",
+        "Vous avez Drupal, Joomla, ou autre CMS.",
+        "Vous cherchez solution n'étant pas plugin."
+      ],
+      "threshold": "Wordfence est solution sécurité WordPress de reference ; tous les sites WordPress devraient utiliser Free au minimum."
+    },
+    "pros": [
+      "Version Free très fonctionnelle (firewall, scanner, 2FA).",
+      "Plugin WordPress natif, facile installation.",
+      "Offre Premium au tarif raisonnable par site.",
+      "Gestion multi-sites avec Central dashboard."
+    ],
+    "cons": [
+      "Seulement WordPress (pas autres CMS).",
+      "Premium mises à jour temps réel surcoûtent.",
+      "Peut ralentir sites WordPress surchargés."
+    ],
+    "use_cases": [
+      "Sécuriser site WordPress avec firewall.",
+      "Scanner malware régulièrement.",
+      "Monitorer tentatives login suspectes."
+    ],
+    "relevant_for": [
+      "Propriétaires sites WordPress",
+      "Freelances WordPress",
+      "Agences web"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You have a WordPress site.",
+        "You want complete security firewall + malware.",
+        "Free version fits tight budget."
+      ],
+      "avoidIf": [
+        "You don't use WordPress.",
+        "You have Drupal, Joomla, or other CMS.",
+        "You want solution outside plugin model."
+      ],
+      "threshold": "Wordfence is the reference WordPress security solution; all WordPress sites should use Free at minimum."
+    },
+    "pros": [
+      "Very functional Free version (firewall, scanner, 2FA).",
+      "Native WordPress plugin, easy install.",
+      "Reasonably priced Premium tier, per site.",
+      "Multi-site management with Central dashboard."
+    ],
+    "cons": [
+      "WordPress only (no other CMS).",
+      "Premium real-time updates add cost.",
+      "May slow heavily loaded WordPress sites."
+    ],
+    "use_cases": [
+      "Secure WordPress site with firewall.",
+      "Scan malware regularly.",
+      "Monitor suspicious login attempts."
+    ]
+  }
+}

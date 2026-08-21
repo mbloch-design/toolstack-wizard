@@ -1,0 +1,89 @@
+{
+  "slug": "hyperbrowser",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Hyperbrowser — Web Infrastructure for AI Agents (site officiel)", "url": "https://www.hyperbrowser.ai" }
+  ],
+  "facts": {
+    "what": "Infrastructure de navigateurs headless haute performance pour l'automatisation web à grande échelle. Permet de lancer 1,000+ instances de navigateur isolées concurrence avec support pour l'IA, le web scraping et l'automatisation RPA.",
+    "what_en": "High-performance headless browser infrastructure for web automation at scale. Enables 1,000+ concurrent isolated browser instances with AI, web scraping, and RPA automation support.",
+    "pricing_model": "Modèle par crédits avec tier gratuit. Crédits séparés : compute du navigateur ($0.10/hr) et utilisation de proxy ($10/GB).",
+    "free_tier": { "exists": true, "detail": "Tier gratuit avec allocation initiale de crédits, un navigateur concurrent, sans carte de crédit requise." },
+    "plans": [
+      { "name": "Free", "price": "Crédits initiaux gratuits, 1 concurrent browser" },
+      { "name": "Paid Plans", "price": "$0.10/hr compute + $10/GB proxy data" }
+    ],
+    "key_features": [
+      "Lancement navigateur < 500ms, instances ultra-parallèles",
+      "Mode Stealth et Ultra Stealth pour éviter détection",
+      "Compatible Playwright/Puppeteer (lift-and-shift migration)",
+      "MCP server officiel pour LLMs (Claude Desktop, Cursor, Windsurf)",
+      "HyperAgent : framework open source pour automation IA",
+      "Gestion robuste des proxies et du contrôle de session"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous devez lancer des milliers de sessions navigateur concurrentes.",
+        "Vous utilisez déjà Playwright/Puppeteer (migration directe).",
+        "Vous avez besoin d'un MCP server pour connecter des LLMs directement."
+      ],
+      "avoidIf": [
+        "Vous avez juste un ou deux scraping scripts ponctuels.",
+        "Vous ne connaissez pas Playwright/Puppeteer.",
+        "Vous n'avez pas besoin de parallélisation massive."
+      ],
+      "threshold": "Hyperbrowser s'adresse aux équipes d'automatisation, scrapers et entreprises de données voulant lancer du web scraping/RPA à très grande échelle avec support IA intégré."
+    },
+    "pros": [
+      "Parallélisation massive (1,000+ instances concurrentes).",
+      "Migration directe depuis Playwright/Puppeteer.",
+      "Stealth modes robustes pour éviter blocages.",
+      "MCP server officiel pour LLM intégration directe."
+    ],
+    "cons": [
+      "Tier gratuit minimal (1 navigateur seulement).",
+      "Coûts potentiels élevés à très haute fréquence (compute + proxy).",
+      "Requiert expertise technique (Playwright/Puppeteer)."
+    ],
+    "use_cases": [
+      "Scraper 1M+ pages web en parallèle pour indexation.",
+      "Automatiser des tests E2E multi-navigateur.",
+      "Déployer des agents RPA pour tâches web répétitives."
+    ],
+    "relevant_for": ["Équipes de données", "QA automation engineers", "Startups web scraping"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need to launch thousands of concurrent browser sessions.",
+        "You already use Playwright/Puppeteer (direct migration).",
+        "You need an MCP server to connect LLMs directly."
+      ],
+      "avoidIf": [
+        "You have just 1-2 occasional scraping scripts.",
+        "You're unfamiliar with Playwright/Puppeteer.",
+        "You don't need massive parallelization."
+      ],
+      "threshold": "Hyperbrowser targets automation teams, web scrapers, and data companies launching web scraping/RPA at massive scale with integrated AI support."
+    },
+    "pros": [
+      "Massive parallelization (1,000+ concurrent instances).",
+      "Direct migration from Playwright/Puppeteer.",
+      "Robust stealth modes to avoid blocking.",
+      "Official MCP server for direct LLM integration."
+    ],
+    "cons": [
+      "Minimal free tier (1 browser only).",
+      "Potential high costs at high frequency (compute + proxy).",
+      "Requires technical expertise (Playwright/Puppeteer)."
+    ],
+    "use_cases": [
+      "Scrape 1M+ web pages in parallel for indexing.",
+      "Automate multi-browser E2E testing.",
+      "Deploy RPA agents for repetitive web tasks."
+    ]
+  }
+}

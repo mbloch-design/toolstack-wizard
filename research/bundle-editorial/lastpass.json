@@ -1,0 +1,123 @@
+{
+  "slug": "lastpass",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "LastPass — Password Manager (site officiel)",
+      "url": "https://lastpass.com"
+    }
+  ],
+  "facts": {
+    "what": "Gestionnaire de mots de passe cloud avec chiffrement « zero-knowledge » (LastPass ne voit pas les mots de passe), supportant partage sécurisé, monitoring dark web et intégration multi-appareils.",
+    "what_en": "Cloud password manager with 'zero-knowledge' encryption (LastPass can't see passwords), supporting secure sharing, dark web monitoring, and multi-device integration.",
+    "pricing_model": "Freemium : plan gratuit limité (une seule catégorie appareils), plans payants personal/family/business avec abonnement.",
+    "free_tier": {
+      "exists": true,
+      "detail": "Plan Free : stockage illimité passwords, autofill, monitoring dark web, partage basique, mais sync limité (mobile OU desktop, pas les deux)."
+    },
+    "plans": [
+      {
+        "name": "Gratuit",
+        "price": "Gratuit (stockage passwords illimité, sync 1 type device)"
+      },
+      {
+        "name": "Premium",
+        "price": "Tarification sur le site (reduction 30% en promotion)"
+      },
+      {
+        "name": "Families",
+        "price": "Tarification sur le site (6 utilisateurs)"
+      },
+      {
+        "name": "Teams",
+        "price": "Tarification sur le site (petit équipe)"
+      },
+      {
+        "name": "Business",
+        "price": "Tarification sur le site (100+ policies)"
+      },
+      {
+        "name": "Business Max",
+        "price": "Tarification sur le site (SaaS monitoring inclus)"
+      }
+    ],
+    "key_features": [
+      "Chiffrement zero-knowledge (LastPass ne voit rien)",
+      "Génération sécurisée des passwords",
+      "Autofill multi-navigateur et appareils",
+      "Partage sécurisé avec permissions",
+      "Monitoring dark web pour credentials exposées",
+      "Authentification multi-facteur",
+      "Monitoring SaaS (Business Max)",
+      "Accès d'urgence provisoire"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin gestionnaire passwords cloud simple.",
+        "Vous préférez zero-knowledge encryption garantie.",
+        "Vous voulez partage sécurisé avec contrôles."
+      ],
+      "avoidIf": [
+        "Vous cherchez solution open-source self-hosted.",
+        "Vous avez besoin sync mobile ET desktop simultanément en gratuit.",
+        "Vous préférez service européen pour data residency."
+      ],
+      "threshold": "LastPass convient utilisateurs cherchant gestionnaire cloud simple et de confiance ; pour open-source ou self-hosted, Bitwarden convient mieux."
+    },
+    "pros": [
+      "Plan Free très généreux (passwords illimité, monitoring dark web).",
+      "Zero-knowledge encryption transparent.",
+      "Autofill excellent sur tous navigateurs.",
+      "Support partage sécurisé avec gestion accès granulaire."
+    ],
+    "cons": [
+      "Free plan : sync limité à 1 type device (pas mobile ET desktop).",
+      "Prix plans payants non affichés en avant (promotion en cours).",
+      "Historique sécurité past (breaches 2015, 2022)."
+    ],
+    "use_cases": [
+      "Stocker et autofill passwords simplement.",
+      "Partager passwords avec proches de confiance.",
+      "Monitorer si vos credentials sur dark web."
+    ],
+    "relevant_for": [
+      "Utilisateurs individuels",
+      "Petites équipes",
+      "Familles partageant access"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need simple cloud password manager.",
+        "You prefer guaranteed zero-knowledge encryption.",
+        "You want secure sharing with controls."
+      ],
+      "avoidIf": [
+        "You want open-source self-hosted solution.",
+        "You need mobile AND desktop sync simultaneously free.",
+        "You prefer European service for data residency."
+      ],
+      "threshold": "LastPass fits users seeking simple, trustworthy cloud manager; for open-source or self-hosted, Bitwarden suits better."
+    },
+    "pros": [
+      "Generous free plan (unlimited passwords, dark web monitoring).",
+      "Transparent zero-knowledge encryption.",
+      "Excellent autofill across all browsers.",
+      "Secure sharing with granular access management."
+    ],
+    "cons": [
+      "Free plan: sync limited to 1 device type (not mobile AND desktop).",
+      "Paid plans prices not displayed upfront (promotion ongoing).",
+      "Security history (2015, 2022 breaches)."
+    ],
+    "use_cases": [
+      "Store and autofill passwords simply.",
+      "Share passwords with trusted people.",
+      "Monitor if your credentials on dark web."
+    ]
+  }
+}

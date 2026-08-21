@@ -1,0 +1,104 @@
+{
+  "slug": "dependabot",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "Dependabot — Automated Dependency Updates (site officiel GitHub)",
+      "url": "https://github.com/dependabot"
+    }
+  ],
+  "facts": {
+    "what": "Outil d'automatisation des dépendances intégré à GitHub créant automatiquement des pull requests pour mettre à jour les dépendances du projet, réduisant la dette technique et les risques de sécurité.",
+    "what_en": "Automated dependency management tool built into GitHub automatically creating pull requests to keep project dependencies current, reducing technical debt and security risks.",
+    "pricing_model": "Gratuit, inclus dans GitHub. Intégré nativement dans tous les plans GitHub.",
+    "free_tier": {
+      "exists": true,
+      "detail": "Entièrement gratuit, inclus dans tous les plans GitHub (y compris plan gratuit GitHub)."
+    },
+    "plans": [
+      {
+        "name": "GitHub Included",
+        "price": "Gratuit (inclus GitHub)"
+      }
+    ],
+    "key_features": [
+      "Créations automatiques de PR pour mises à jour dépendances",
+      "Support multi-gestionnaires de paquets (npm, pip, cargo, etc.)",
+      "Extraction intelligente des informations de dépendances",
+      "Auto-hébergement possible (CLI Go)",
+      "Exemples de self-hosting disponibles",
+      "CLI pour exécution indépendante",
+      "Intégration native GitHub Actions"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez GitHub pour vos projets.",
+        "Vous voulez automatiser les mises à jour de dépendances.",
+        "La sécurité des dépendances est une priorité."
+      ],
+      "avoidIf": [
+        "Vous utilisez GitLab ou Gitea sans plan GitHub.",
+        "Vous préférez les mises à jour manuelles programmées.",
+        "Vous avez des dépendances non standards."
+      ],
+      "threshold": "Dependabot convient à tous les développeurs GitHub cherchant à automatiser la maintenance ; c'est inclus gratuitement, aucune raison de ne pas l'utiliser."
+    },
+    "pros": [
+      "Entièrement gratuit, inclus dans GitHub.",
+      "Automatisation complète des mise à jour dépendances.",
+      "Réduction importante de la dette technique.",
+      "Amélioration de la sécurité des dépendances.",
+      "Intégration native seamless."
+    ],
+    "cons": [
+      "Seulement pour projets sur GitHub.",
+      "Pas de support commercial dedié.",
+      "PR peuvent devenir nombreuses sur gros projets."
+    ],
+    "use_cases": [
+      "Maintenir automatiquement un projet npm/Python/Ruby.",
+      "Réduire la charge de révision de dépendances.",
+      "Améliorer la posture de sécurité par patchs rapides."
+    ],
+    "relevant_for": [
+      "Tous développeurs GitHub",
+      "Équipes DevOps",
+      "Mainteneurs open-source"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You use GitHub for your projects.",
+        "You want to automate dependency updates.",
+        "Dependency security is a priority."
+      ],
+      "avoidIf": [
+        "You use GitLab or Gitea without GitHub plan.",
+        "You prefer manual scheduled updates.",
+        "You have non-standard dependencies."
+      ],
+      "threshold": "Dependabot fits all GitHub developers seeking automation; it's free and built-in, no reason not to use it."
+    },
+    "pros": [
+      "Entirely free, included in GitHub.",
+      "Complete automation of dependency updates.",
+      "Significant reduction in technical debt.",
+      "Improved dependency security.",
+      "Seamless native integration."
+    ],
+    "cons": [
+      "GitHub projects only.",
+      "No dedicated commercial support.",
+      "PRs can become numerous on large projects."
+    ],
+    "use_cases": [
+      "Automatically maintain npm/Python/Ruby project.",
+      "Reduce dependency review burden.",
+      "Improve security posture with quick patches."
+    ]
+  }
+}

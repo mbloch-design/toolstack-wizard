@@ -1,0 +1,125 @@
+{
+  "slug": "genially",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "Genially — Interactive Content Creation (site officiel)",
+      "url": "https://genially.com"
+    }
+  ],
+  "facts": {
+    "what": "Plateforme no-code de création contenu interactif et animé (présentations, quizzes, jeux, courses) avec IA, collaboration temps réel et 1 000+ templates, sans watermark sur plans payants.",
+    "what_en": "No-code interactive and animated content creation platform (presentations, quizzes, games, courses) with AI, real-time collaboration, and 1,000+ templates, watermark-free on paid plans.",
+    "pricing_model": "Freemium : plan gratuit (avec watermark), plans payants Genius (12,50$/mois) à Edu 360 (25$/mois) et custom.",
+    "free_tier": {
+      "exists": true,
+      "detail": "Plan Free : création interactive, mais watermark Genially sur contenu. Pas d'export offline, SCORM, ou brand custom avancée."
+    },
+    "plans": [
+      {
+        "name": "Free",
+        "price": "Gratuit (watermark inclus)"
+      },
+      {
+        "name": "Genius",
+        "price": "12,50 $/user/mois"
+      },
+      {
+        "name": "Pro",
+        "price": "15 $/user/mois"
+      },
+      {
+        "name": "Master",
+        "price": "25 $/user/mois"
+      },
+      {
+        "name": "Author",
+        "price": "50 $/user/mois"
+      },
+      {
+        "name": "Edu 360",
+        "price": "25 $/user/mois (éducation)"
+      }
+    ],
+    "key_features": [
+      "Éditeur drag-drop avec 1 000+ templates",
+      "Animations et interactivité natives",
+      "IA pour générer images, quizzes, contenu",
+      "Text-to-speech et traduction automatique",
+      "Collaboration temps réel",
+      "Brand Kit pour identité visuelle unifiée",
+      "Live presentation mode avec polls/Q&A",
+      "Analytics (visits, responses, interactions)",
+      "Export SCORM (plans payants)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez présentations, quizzes, formations interactives.",
+        "Vous voulez drag-drop sans code.",
+        "Animation et interactivité natives importent."
+      ],
+      "avoidIf": [
+        "Vous avez besoins très complexes customization.",
+        "Vous cherchez uniquement créer courses avancés.",
+        "Vous hésitez à payer pour enlever watermark."
+      ],
+      "threshold": "Genially convient éducateurs, formateurs, marketeurs créant contenu interactif engageant ; pour besoins très simples, Google Slides suffit."
+    },
+    "pros": [
+      "Plan gratuit fonctionnel (juste watermark).",
+      "IA intégrée pour génération rapide.",
+      "Éditeur intuitif drag-drop très accessible.",
+      "Collaboration temps réel incluse tous plans."
+    ],
+    "cons": [
+      "Watermark Free plan peut être gênant.",
+      "Export SCORM et offline seulement plans payants.",
+      "Brand customization avancée sur tier élevé."
+    ],
+    "use_cases": [
+      "Créer présentation interactive pour formation.",
+      "Concevoir quiz engageant pour apprentissage.",
+      "Générer infographiques interactives avec IA."
+    ],
+    "relevant_for": [
+      "Formateurs",
+      "Éducateurs",
+      "Équipes L&D",
+      "Marketeurs"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You create interactive presentations, quizzes, training.",
+        "You want drag-drop without code.",
+        "Native animation and interactivity matter."
+      ],
+      "avoidIf": [
+        "You have very complex customization needs.",
+        "You're looking only to create advanced courses.",
+        "You're hesitant to pay to remove watermark."
+      ],
+      "threshold": "Genially fits educators, trainers, marketers creating engaging interactive content; for very simple needs, Google Slides suffices."
+    },
+    "pros": [
+      "Functional free plan (watermark only).",
+      "Built-in AI for rapid generation.",
+      "Intuitive drag-drop editor, very accessible.",
+      "Real-time collaboration included all plans."
+    ],
+    "cons": [
+      "Free plan watermark may be annoying.",
+      "SCORM export and offline only paid plans.",
+      "Advanced brand customization on high tier."
+    ],
+    "use_cases": [
+      "Create interactive presentation for training.",
+      "Design engaging quiz for learning.",
+      "Generate interactive infographics with AI."
+    ]
+  }
+}

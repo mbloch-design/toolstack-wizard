@@ -1,0 +1,89 @@
+{
+  "slug": "integrately",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Integrately — No-Code Automation Platform (site officiel)", "url": "https://integrately.com" }
+  ],
+  "facts": {
+    "what": "Plateforme d'automatisation no-code conçue pour les non-techniciens, connectant plus de 1500 applications. Offre 20 millions d'automatisations pré-construites et un builder d'automation intuitif.",
+    "what_en": "No-code automation platform designed for non-technical users, connecting 1,500+ apps. Features 20 million pre-made automations and intuitive automation builder.",
+    "pricing_model": "Modèle d'abonnement avec tier gratuit. Offre promotionnelle spéciale : plans premium pour $5 le premier mois, puis tarifs réguliers.",
+    "free_tier": { "exists": true, "detail": "Tier gratuit disponible avec limitations d'automatisations. Promotion : $5/mois le premier mois pour les plans premium." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit avec limitations" },
+      { "name": "Premium Plans", "price": "À partir de $5/mois (1er mois), tarifs réguliers après" }
+    ],
+    "key_features": [
+      "20 millions d'automatisations pré-construites",
+      "1500+ intégrations (Salesforce, HubSpot, Google Sheets, Slack, Trello)",
+      "SmartConnect : connecte apps automatiquement",
+      "Processus simple 3 étapes (select, connect, activate)",
+      "Support client gratuit pour créations custom",
+      "Utilisé par 42,000+ clients (Walmart, Adobe, Cisco)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous n'avez pas d'expertise technique et voulez une interface simple.",
+        "Vous cherchez une solution 3x-10x moins chère que Zapier.",
+        "Vous avez une automatisation basique entre 2-3 apps."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'automations complexes multi-étapes.",
+        "Vous voulez un contrôle très granulaire sur la logique.",
+        "Vous préférez une plateforme open-source ou auto-hébergeable."
+      ],
+      "threshold": "Integrately s'adresse aux PME et aux petites équipes cherchant une alternative low-cost et facile à Zapier, sans expertise technique."
+    },
+    "pros": [
+      "20 millions d'automatisations pré-construites prêtes à l'emploi.",
+      "Interface très simple pour non-techniciens.",
+      "Tarifé 3-10x moins cher que Zapier.",
+      "Support gratuit pour créations custom d'automatisations."
+    ],
+    "cons": [
+      "Tier gratuit très limité (automatisations peu nombreuses).",
+      "Moins d'options avancées pour cas d'usage complexes.",
+      "Communauté plus petite que Zapier/Make."
+    ],
+    "use_cases": [
+      "Automatiser des emails simples vers Slack.",
+      "Syncer des contacts Salesforce vers Google Sheets.",
+      "Créer des notifications sur actions métier."
+    ],
+    "relevant_for": ["PME", "Non-techniciens", "Petites équipes"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You lack technical skills and want a simple interface.",
+        "You seek a solution 3x-10x cheaper than Zapier.",
+        "You have basic 2-3 app automations."
+      ],
+      "avoidIf": [
+        "You need complex multi-step automations.",
+        "You want very granular control over logic.",
+        "You prefer open-source or self-hosted options."
+      ],
+      "threshold": "Integrately targets SMBs and small teams seeking a low-cost, user-friendly Zapier alternative without technical expertise."
+    },
+    "pros": [
+      "20 million pre-built automations ready to use.",
+      "Very simple interface for non-technical users.",
+      "Priced 3-10x cheaper than Zapier.",
+      "Free support for custom automations."
+    ],
+    "cons": [
+      "Very limited free tier (few automations).",
+      "Fewer advanced options for complex workflows.",
+      "Smaller community than Zapier/Make."
+    ],
+    "use_cases": [
+      "Automate simple emails to Slack.",
+      "Sync Salesforce contacts to Google Sheets.",
+      "Create alerts on business actions."
+    ]
+  }
+}

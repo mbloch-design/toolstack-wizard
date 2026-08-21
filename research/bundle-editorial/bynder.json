@@ -1,0 +1,105 @@
+{
+  "slug": "bynder",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "Bynder — Digital Asset Management (site officiel)",
+      "url": "https://www.bynder.com"
+    }
+  ],
+  "facts": {
+    "what": "Plateforme DAM (Digital Asset Management) d'entreprise avec recherche IA, création contenu (Studio), omnichannel delivery et 155+ intégrations MarTech, pour 4 000+ clients (Spotify, Target, Lacoste, Mazda).",
+    "what_en": "Enterprise Digital Asset Management (DAM) platform with AI search, content creation (Studio), omnichannel delivery, and 155+ MarTech integrations serving 4,000+ customers (Spotify, Target, Lacoste, Mazda).",
+    "pricing_model": "Tarification personnalisée (enterprise). Pas de tarifs publics affichés. Démo et contact commercial requis.",
+    "free_tier": {
+      "exists": false,
+      "detail": "Pas de plan gratuit ou essai mentionné. Plateforme enterprise uniquement, tarification sur devis."
+    },
+    "plans": [
+      {
+        "name": "Plans Personnalisés",
+        "price": "Tarification sur demande (enterprise solutions)"
+      }
+    ],
+    "key_features": [
+      "DAM centralisé pour 175M+ assets gérés",
+      "Recherche IA (face recognition, OCR text-in-image)",
+      "Duplicate detection et détection automatique",
+      "Studio de création (images, videos, GIFs)",
+      "Delivery omnichannel avec rendu auto",
+      "Workflows approval (content + assets)",
+      "Intégrations 155+ MarTech ecosystem",
+      "Analytics dashboards (usage, ROI)",
+      "Gestion accès et permissions granulaires",
+      "Leader Gartner Magic Quadrant"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez millions d'assets marketing/création.",
+        "Vous avez équipe création et marketing distribuée.",
+        "Omnichannel delivery aux teams partenaires critique."
+      ],
+      "avoidIf": [
+        "Vous êtes startup ou petite équipe.",
+        "Vous cherchez solution gratuite.",
+        "Vous avez peu d'assets à gérer (<10k)."
+      ],
+      "threshold": "Bynder convient grandes entreprises avec besoins DAM complexes ; pour PME, alternatives légères conviennent mieux."
+    },
+    "pros": [
+      "Leader reconnu Gartner Magic Quadrant DAM.",
+      "Recherche IA puissante (face recognition, OCR).",
+      "Omnichannel delivery centralisé.",
+      "175M+ assets gérés par plateforme (scalable)."
+    ],
+    "cons": [
+      "Tarification personnalisée entreprise (opaque).",
+      "Coûteux pour PME/startup.",
+      "Pas de plan gratuit visible."
+    ],
+    "use_cases": [
+      "Centraliser assets marketing pour équipes globales.",
+      "Livrer images/videos omnichannel optimisées.",
+      "Chercher assets visuels via IA (face, text-in-image)."
+    ],
+    "relevant_for": [
+      "Directeurs marketing",
+      "Équipes création",
+      "Responsables DAM"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage millions of marketing/creative assets.",
+        "You have distributed creative and marketing teams.",
+        "Omnichannel delivery to partners critical."
+      ],
+      "avoidIf": [
+        "You're startup or small team.",
+        "You're looking for free solution.",
+        "You have few assets to manage (<10k)."
+      ],
+      "threshold": "Bynder fits large enterprises with complex DAM needs; for SMBs, lighter alternatives suit better."
+    },
+    "pros": [
+      "Recognized leader Gartner Magic Quadrant DAM.",
+      "Powerful AI search (face recognition, OCR).",
+      "Centralized omnichannel delivery.",
+      "175M+ assets managed by platform (scalable)."
+    ],
+    "cons": [
+      "Custom enterprise pricing (opaque).",
+      "Expensive for SMBs/startups.",
+      "No visible free plan."
+    ],
+    "use_cases": [
+      "Centralize marketing assets for global teams.",
+      "Deliver images/videos omnichannel optimized.",
+      "Search visual assets via AI (face, text-in-image)."
+    ]
+  }
+}

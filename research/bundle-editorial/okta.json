@@ -1,0 +1,111 @@
+{
+  "slug": "okta",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "Okta — Identity & Access Management (site officiel)",
+      "url": "https://www.okta.com/pricing/"
+    }
+  ],
+  "facts": {
+    "what": "Plateforme de gestion des identités et accès (IAM) sécurisant les identités des employés, clients, partenaires et agents IA avec authentification adaptative, gouvernance et conformité.",
+    "what_en": "Identity and Access Management (IAM) platform securing identities of employees, customers, partners, and AI agents with adaptive authentication, governance, and compliance.",
+    "pricing_model": "Abonnement par utilisateur par mois. Plans Starter (6$/user/mois), Essentials (17$/user/mois), Enterprise (tarif personnalisé). 30 jours essai gratuit.",
+    "free_tier": {
+      "exists": true,
+      "detail": "Essai gratuit 30 jours, Starter plan (10 users max). Minimum contrat annuel 1 500 $ pour Workforce Identity."
+    },
+    "plans": [
+      {
+        "name": "Starter",
+        "price": "6 $/user/mois (essai gratuit 30 jours inclus)"
+      },
+      {
+        "name": "Essentials",
+        "price": "17 $/user/mois (réaliste mid-market)"
+      },
+      {
+        "name": "Enterprise",
+        "price": "Tarification personnalisée (contact commercial, min 1 500 $/an)"
+      }
+    ],
+    "key_features": [
+      "Authentification multi-facteur adaptative (Adaptive MFA)",
+      "Single sign-on (SSO) multi-plateforme",
+      "Gestion du cycle de vie des identités",
+      "Gouvernance et conformité intégrées",
+      "Gestion de l'accès aux API",
+      "Détection et réaction aux menaces",
+      "Support agents IA pour identités",
+      "Visibilité end-to-end et remédiation proactive"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin IAM d'entreprise pour nombreux utilisateurs.",
+        "Conformité et gouvernance identités sont prioritaires.",
+        "Vous gérez accès hybride (employés, clients, partenaires)."
+      ],
+      "avoidIf": [
+        "Vous êtes startup solo ou PME très serrée budget.",
+        "Vous préférez solution open-source self-hosted.",
+        "Vous avez besoins simples SSO seul."
+      ],
+      "threshold": "Okta convient entreprises cherchant IAM complet d'entreprise ; pour besoins simples SSO, solutions légères conviennent mieux."
+    },
+    "pros": [
+      "Plateforme IAM leader, reconnaissance industrie.",
+      "Adaptative MFA et sécurité d'entreprise robuste.",
+      "Conformité et gouvernance intégrées.",
+      "Essai gratuit 30 jours sans engagement."
+    ],
+    "cons": [
+      "Tarification opaque (négocia variable).",
+      "Un engagement contractuel minimum est exigé.",
+      "Courbe d'apprentissage importante pour déploiement."
+    ],
+    "use_cases": [
+      "Centraliser SSO et authentification équipe entreprise.",
+      "Implémenter gouvernance identités complète.",
+      "Contrôler accès APIs et services internes."
+    ],
+    "relevant_for": [
+      "Directeurs IT",
+      "RSSI",
+      "Responsables identités"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need enterprise IAM for many users.",
+        "Identity compliance and governance are priorities.",
+        "You manage hybrid access (employees, customers, partners)."
+      ],
+      "avoidIf": [
+        "You're solo startup or tight-budget SMB.",
+        "You prefer open-source self-hosted solution.",
+        "You have simple SSO-only needs."
+      ],
+      "threshold": "Okta fits enterprises seeking comprehensive enterprise IAM; for simple SSO needs, lightweight solutions suit better."
+    },
+    "pros": [
+      "Leading IAM platform, industry recognition.",
+      "Adaptive MFA and robust enterprise security.",
+      "Compliance and governance built-in.",
+      "Free 30-day trial without commitment."
+    ],
+    "cons": [
+      "Opaque pricing (negotiable per contract).",
+      "A minimum contractual commitment is required.",
+      "Steep learning curve for deployment."
+    ],
+    "use_cases": [
+      "Centralize team SSO and authentication.",
+      "Implement complete identity governance.",
+      "Control access to internal APIs and services."
+    ]
+  }
+}

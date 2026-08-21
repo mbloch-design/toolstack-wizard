@@ -1,0 +1,95 @@
+{
+  "slug": "netchex",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Netchex — All-in-One Payroll & HCM Platform (site officiel)", "url": "https://netchex.com" }
+  ],
+  "facts": {
+    "what": "Plateforme HCM intégrée pour entreprises avec travailleurs horaires ou sur le terrain. Offre 9 modules : recrutement, onboarding, temps & présence, paie, avantages sociaux, performance, learning, engagement et HR.",
+    "what_en": "Integrated HCM platform for organizations with hourly or field-based workers. Features 9 modules: hiring, onboarding, time & attendance, payroll, benefits, performance, learning, engagement, and HR.",
+    "pricing_model": "Modèle d'entreprise sans tarification transparente. Consultation vente requise.",
+    "free_tier": { "exists": false, "detail": "Pas de tier gratuit. Modèle consultative (demo request ou call)." },
+    "plans": [
+      { "name": "Enterprise", "price": "Tarification custom (call 985-220-1410)" }
+    ],
+    "key_features": [
+      "Recrutement (intégration Indeed)",
+      "Onboarding (hire-to-clock-in en 1 jour)",
+      "Temps & présence mobile (geofenced clock-ins)",
+      "Paie et services fiscaux",
+      "Avantages (santé, 401K, EWA)",
+      "Gestion performance et coaching (AI-assisted)",
+      "Learning (2000+ cours compliance)",
+      "Engagement (reconnaissance, surveys)",
+      "Mesh : AI HR specialists (Penny, Atlas, Nova, Sentinel, Milo)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez une workforce horaire ou sur le terrain.",
+        "Vous cherchez une solution tout-en-un intégrée.",
+        "Vous voulez réduire les heures admin (16h/semaine rapportées)."
+      ],
+      "avoidIf": [
+        "Vous avez surtout du personnel de bureau.",
+        "Vous cherchez une solution légère ou low-cost.",
+        "Vous préférez un best-of-breed par domaine."
+      ],
+      "threshold": "Netchex s'adresse aux entreprises avec workforces horaires ou terrain cherchant une suite HCM tout-en-un optimisée pour ce public."
+    },
+    "pros": [
+      "Suite HCM complète optimisée pour horaires/terrain.",
+      "Mobile-first avec geofencing pour clock-in.",
+      "Mesh : AI HR specialists intégrés.",
+      "Support US de classe mondiale (< 1 min response).",
+      "Compliance automation (FLSA, ACA, I-9, OSHA)."
+    ],
+    "cons": [
+      "Pas de tier gratuit.",
+      "Tarification non transparente (consultation requise).",
+      "Focus US (moins adapté international).",
+      "Complexité implémentation élevée."
+    ],
+    "use_cases": [
+      "Gérer paie et HR pour 500+ hourly workers.",
+      "Automatiser compliance pour restaurants/retail.",
+      "Déployer mobile time tracking sur terrain."
+    ],
+    "relevant_for": ["Retail, Hospitality", "Manufacturing", "Large hourly workforces"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You have an hourly or field-based workforce.",
+        "You seek a fully integrated all-in-one solution.",
+        "You want to reduce admin hours (16/week reported)."
+      ],
+      "avoidIf": [
+        "You are mostly office-based.",
+        "You seek a lightweight or low-cost solution.",
+        "You prefer best-of-breed by domain."
+      ],
+      "threshold": "Netchex targets organizations with hourly or field workforces seeking an all-in-one HCM suite optimized for this audience."
+    },
+    "pros": [
+      "Complete HCM suite optimized for hourly/field.",
+      "Mobile-first with geofencing for clock-in.",
+      "Mesh: integrated AI HR specialists.",
+      "World-class US support (<1 min response).",
+      "Compliance automation (FLSA, ACA, I-9, OSHA)."
+    ],
+    "cons": [
+      "No free tier.",
+      "Pricing not transparent (consultation required).",
+      "US-focused (less suitable internationally).",
+      "High implementation complexity."
+    ],
+    "use_cases": [
+      "Manage payroll and HR for 500+ hourly workers.",
+      "Automate compliance for retail/restaurants.",
+      "Deploy mobile time tracking for field teams."
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "slug": "wordpress-com",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "WordPress.com — Managed Website Platform (site officiel)", "url": "https://wordpress.com" }
+  ],
+  "facts": {
+    "what": "Plateforme WordPress managée permettant de créer et de lancer des sites web, des blogs et des boutiques e-commerce. Offre hébergement intégré, SSL, et domaine custom (après 1er an gratuit).",
+    "what_en": "Managed WordPress platform for creating and launching websites, blogs, and e-commerce stores. Features integrated hosting, SSL, and custom domain (free first year).",
+    "pricing_model": "Modèle freemium. Tier gratuit avec limitations, plans payants pour domaine custom, plugins, e-commerce.",
+    "free_tier": { "exists": true, "detail": "Tier gratuit : subdomaine wordpress.com, pas de domaine custom, pas de plugins, branding WordPress.com visible, pas de publicités." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit avec limitations" },
+      { "name": "Personal", "price": "4 € par an (facturation annuelle) ou 9 € par mois" },
+      { "name": "Premium", "price": "8 € par an ou 18 € par mois" },
+      { "name": "Business", "price": "25 € par an ou 40 € par mois" },
+      { "name": "Commerce", "price": "45 € par an ou 70 € par mois" }
+    ],
+    "key_features": [
+      "Tier gratuit permanent (6GB stockage, subdomaine)",
+      "Domaine custom (1er an gratuit sur Personal+)",
+      "6-350GB stockage selon plan",
+      "Thèmes gratuits et premium",
+      "50,000+ plugins disponibles (Business+)",
+      "Monétisation et paiements intégrés",
+      "Hébergement managé et support 24/7 (Business+)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez un site WordPress simple sans complexité d'hébergement.",
+        "Vous avez un très petit budget au départ.",
+        "Vous ne voulez pas gérer les mises à jour ou la sécurité."
+      ],
+      "avoidIf": [
+        "Vous avez besoin de 50,000+ plugins (Personal/Premium trop limités).",
+        "Vous préférez l'auto-hébergement ou une solution open-source.",
+        "Vous avez des besoins très customisés d'architecture."
+      ],
+      "threshold": "WordPress.com convient aux bloggers, PME et petites boutiques cherchant un site WordPress simple et maintenu, sans expertise technique."
+    },
+    "pros": [
+      "Tier gratuit permanent (aucune limite de temps).",
+      "Hébergement managé (mises à jour, sécurité).",
+      "Domaine custom 1 an gratuit (Personal+).",
+      "50,000+ plugins (Business+).",
+      "SSL et certificats inclus."
+    ],
+    "cons": [
+      "Branding WordPress.com sur tier gratuit.",
+      "Plugins très limités sur Personal/Premium.",
+      "Moins flexible qu'auto-hébergement WordPress.org.",
+      "Coûts annuels cachés (renouvellement domaine après 1 an)."
+    ],
+    "use_cases": [
+      "Créer un blog personnel ou professionnel simple.",
+      "Lancer une petite boutique e-commerce.",
+      "Construire un site vitrine pour freelancer/PME."
+    ],
+    "relevant_for": ["Bloggers", "Freelancers", "PME", "Boutiques simples"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want a simple WordPress site without hosting complexity.",
+        "You have a very tight budget initially.",
+        "You don't want to manage updates or security."
+      ],
+      "avoidIf": [
+        "You need 50,000+ plugins (Personal/Premium too limited).",
+        "You prefer self-hosting or open-source.",
+        "You have very custom architecture needs."
+      ],
+      "threshold": "WordPress.com suits bloggers, SMBs, and small shops seeking a simple, managed WordPress site without technical expertise."
+    },
+    "pros": [
+      "Permanent free tier (no time limit).",
+      "Managed hosting (updates, security).",
+      "Free custom domain 1 year (Personal+).",
+      "50,000+ plugins (Business+).",
+      "SSL and certificates included."
+    ],
+    "cons": [
+      "WordPress.com branding on free tier.",
+      "Very limited plugins on Personal/Premium.",
+      "Less flexible than self-hosted WordPress.org.",
+      "Hidden annual costs (domain renewal after 1 year)."
+    ],
+    "use_cases": [
+      "Create a simple personal or professional blog.",
+      "Launch a small e-commerce store.",
+      "Build a portfolio site for freelancer/SMB."
+    ]
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "slug": "zapier",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Zapier — Automation Platform (site officiel)", "url": "https://zapier.com" }
+  ],
+  "facts": {
+    "what": "Plateforme d'automatisation leader reliant 9000+ applications. Permet de créer des workflows automatisés ('Zaps') entre outils métier sans code, avec support des agents IA et gouvernance avancée.",
+    "what_en": "Leading automation platform connecting 9,000+ apps. Create automated workflows ('Zaps') between business tools without code, with AI agent and advanced governance support.",
+    "pricing_model": "Modèle par tâches (tasks). Tier gratuit limité à 100 tâches/mois et 2-step Zaps maximum. Plans payants pour volumes plus élevés.",
+    "free_tier": { "exists": true, "detail": "Tier gratuit : 100 tâches/mois, Zaps illimités mais max 2-steps, accès Zapier Tables et Forms. Pas de limite de temps." },
+    "plans": [
+      { "name": "Free", "price": "100 tâches/mois, max 2-step Zaps" },
+      { "name": "Professional", "price": "À partir de 19.99 € par mois (750 tâches/mois)" },
+      { "name": "Team", "price": "À partir de 103.50 € par mois" },
+      { "name": "Enterprise", "price": "Tarification custom"
+}
+    ],
+    "key_features": [
+      "9000+ pré-intégrations (Slack, HubSpot, Salesforce, Google, etc.)",
+      "Automation par Zaps (trigger + action)",
+      "Agents IA qui exécutent autonomement des tâches",
+      "Zapier Tables pour données structurées",
+      "Zapier Forms pour collecte de données",
+      "SOC 2 Type II, SOC 3, GDPR, CCPA compliance",
+      "Audit logging et visibility en temps-réel"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin de 9000+ intégrations sans limites.",
+        "Vous cherchez la plateforme la plus mature et documentée.",
+        "Vous gérez une organisation avec governance et compliance strictes."
+      ],
+      "avoidIf": [
+        "Vous cherchez la solution la moins chère (Pabbly/Integrately moins cher).",
+        "Vous avez un usage très léger (tier gratuit peut suffire mais limité).",
+        "Vous cherchez une plateforme open-source ou auto-hébergeable."
+      ],
+      "threshold": "Zapier s'adresse aux organisations de toutes tailles cherchant la plateforme d'automation la plus complète et mature, avec 9000+ intégrations, compliance et support expert."
+    },
+    "pros": [
+      "9000+ intégrations (plus complète du marché).",
+      "Tier gratuit permanent (100 tâches/mois).",
+      "Agents IA autonomes pour automations avancées.",
+      "Compliance robuste (SOC 2, GDPR, CCPA).",
+      "Support expert et communauté massive."
+    ],
+    "cons": [
+      "Tarification par tâches peut coûter très cher à l'échelle.",
+      "Tier gratuit très limité (100 tâches, max 2-step).",
+      "Plus cher que alternatives (Pabbly, Integrately).",
+      "Interface dense pour débutants."
+    ],
+    "use_cases": [
+      "Automatiser une pipeline CRM complexe avec 20+ apps.",
+      "Créer des agents IA autonomes pour support client.",
+      "Centraliser l'automatisation pour une organisation multi-équipes."
+    ],
+    "relevant_for": ["Organisations", "Entreprises", "Consultants"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need 9,000+ integrations without limits.",
+        "You seek the most mature and documented platform.",
+        "You manage an organization with strict governance and compliance."
+      ],
+      "avoidIf": [
+        "You seek the cheapest solution (Pabbly/Integrately cheaper).",
+        "You have very light usage (free tier may suffice but limited).",
+        "You seek open-source or self-hosted."
+      ],
+      "threshold": "Zapier targets organizations of all sizes seeking the most complete automation platform, with 9,000+ integrations, compliance, and expert support."
+    },
+    "pros": [
+      "9,000+ integrations (most comprehensive on market).",
+      "Permanent free tier (100 tasks/month).",
+      "Autonomous AI agents for advanced automations.",
+      "Robust compliance (SOC 2, GDPR, CCPA).",
+      "Expert support and massive community."
+    ],
+    "cons": [
+      "Per-task pricing can get very expensive at scale.",
+      "Free tier very limited (100 tasks, max 2-step).",
+      "More expensive than alternatives (Pabbly, Integrately).",
+      "Dense interface for beginners."
+    ],
+    "use_cases": [
+      "Automate a complex CRM pipeline with 20+ apps.",
+      "Create autonomous AI agents for customer support.",
+      "Centralize automation for a multi-team organization."
+    ]
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "slug": "moodle",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "Moodle — Open Source LMS (site officiel)",
+      "url": "https://moodle.org"
+    }
+  ],
+  "facts": {
+    "what": "Système de gestion de l'apprentissage (LMS) open-source gratuit sous licence GNU, supportant 30+ langues, courses, quizzes, badges et gestion d'utilisateurs pour éducation et formation entreprise.",
+    "what_en": "Free, open-source learning management system (LMS) under GNU license, supporting 30+ languages, courses, quizzes, badges, and user management for education and enterprise training.",
+    "pricing_model": "Entièrement gratuit (open-source). Coûts optionnels : MoodleCloud hosting (130-1 770$/an) ou certified partners support.",
+    "free_tier": {
+      "exists": true,
+      "detail": "Logiciel complètement gratuit à télécharger/self-host. MoodleCloud managed hosting optionnelle (130-1 770$/an selon usage)."
+    },
+    "plans": [
+      {
+        "name": "Self-Hosted",
+        "price": "Gratuit (logiciel, hosting/support à charge)"
+      },
+      {
+        "name": "MoodleCloud",
+        "price": "130-1 770 $/an (managed hosting, scale-based)"
+      }
+    ],
+    "key_features": [
+      "Gestion courses et modules auto-paced",
+      "Quizzes, assessments, tracking progression",
+      "Gamification badges et certificats",
+      "Discussion forums et activities collaboratives",
+      "Support 30+ langues",
+      "Plugins ecosystem riche (customizations)",
+      "Gradebook et reporting progressional",
+      "Intégrations LTI avec autres outils",
+      "Accessible WCAG compliant"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez expertise infrastructure hosting.",
+        "Vous créez formation académique/entreprise à grande échelle.",
+        "Budget infrastructure est limité (gratuit appétent)."
+      ],
+      "avoidIf": [
+        "Vous n'avez pas expertise technique deployment.",
+        "Vous cherchez une solution entièrement infogérée.",
+        "Vous êtes créateur solo préférant SaaS simple."
+      ],
+      "threshold": "Moodle convient institutions académiques et entreprises avec support IT ; pour créateurs solo, Thinkific ou Kajabi conviennent mieux."
+    },
+    "pros": [
+      "Entièrement gratuit et open-source.",
+      "Scalable pour milliers d'étudiants.",
+      "Ecosystem plugins riche pour customization.",
+      "Support académique et gouvernemental établi."
+    ],
+    "cons": [
+      "Self-hosting requiert expertise technique.",
+      "Interface peut sembler datée vs solutions modernes.",
+      "Support communautaire uniquement (sans SLA)."
+    ],
+    "use_cases": [
+      "Héberger LMS académique université.",
+      "Créer plateforme formation entreprise scalable.",
+      "Intégrer avec infrastructure existante via LTI."
+    ],
+    "relevant_for": [
+      "Universités",
+      "Organisations académiques",
+      "Grandes entreprises IT"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You have infrastructure hosting expertise.",
+        "You create academic/enterprise training at scale.",
+        "Infrastructure budget is limited (free-friendly)."
+      ],
+      "avoidIf": [
+        "You lack technical deployment expertise.",
+        "You want fully managed solution (too complex).",
+        "You're solo creator preferring simple SaaS."
+      ],
+      "threshold": "Moodle fits academic institutions and enterprises with IT support; for solo creators, Thinkific or Kajabi suit better."
+    },
+    "pros": [
+      "Entirely free and open-source.",
+      "Scalable for thousands of students.",
+      "Rich plugin ecosystem for customization.",
+      "Established academic and government support."
+    ],
+    "cons": [
+      "Self-hosting requires technical expertise.",
+      "Interface may feel dated vs modern solutions.",
+      "Community support only (no SLA)."
+    ],
+    "use_cases": [
+      "Host university academic LMS.",
+      "Create scalable enterprise training platform.",
+      "Integrate with existing infrastructure via LTI."
+    ]
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "slug": "cloudinary",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "Cloudinary — Visual Media Platform (site officiel)",
+      "url": "https://cloudinary.com"
+    }
+  ],
+  "facts": {
+    "what": "Plateforme IA-native pour gestion complète du cycle vie des médias visuels (images, vidéos) avec API, DAM, transformations auto, CDN, workflows (MediaFlows) et 70+ intégrations, gérant 80M+ assets.",
+    "what_en": "AI-native platform for complete visual media lifecycle management (images, videos) with APIs, DAM, automatic transformations, CDN, workflows (MediaFlows), and 70+ integrations managing 80M+ assets.",
+    "pricing_model": "Freemium : plan gratuit disponible, plans payants sur scaling usage. Tarification transparente par usage.",
+    "free_tier": {
+      "exists": true,
+      "detail": "Plan gratuit disponible pour signup/experimentation. Transformation, storage, bandwidth selon usage tier."
+    },
+    "plans": [
+      {
+        "name": "Free",
+        "price": "Gratuit (limites usage)"
+      },
+      {
+        "name": "Paid Plans",
+        "price": "Tarification transparente sur la page (usage-based)"
+      }
+    ],
+    "key_features": [
+      "APIs image et video pour transformations auto",
+      "DAM IA avec organisation et recherche",
+      "Optimisation auto format/device delivery",
+      "MediaFlows workflows bas code image/video",
+      "Editing génératif (AI content-aware)",
+      "Agents IA pour automations moderation/workflows",
+      "CDN global pour delivery optimale",
+      "Intégrations 70+ (WordPress, Shopify, Figma, AWS, Claude)",
+      "Compliance security et data residency",
+      "4M developers, 80M+ assets managed"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous gérez images/vidéos à grande échelle.",
+        "Vous avez besoin transformations auto par device.",
+        "Médias optimisation globale CDN importent."
+      ],
+      "avoidIf": [
+        "Vous avez très peu images (Cloudinary peut être complexe).",
+        "Vous cherchez simple image gallery.",
+        "Vous préférez solution self-hosted."
+      ],
+      "threshold": "Cloudinary convient développeurs/marketing gérant visuels à grande échelle ; pour portfolios simples, solutions légères conviennent mieux."
+    },
+    "pros": [
+      "Plan gratuit disponible pour commencer.",
+      "Transformations auto très puissantes (device-specific).",
+      "IA intégrée pour editing génératif.",
+      "CDN global + 70+ intégrations."
+    ],
+    "cons": [
+      "Pricing usage-based (peut être complexe prévoir).",
+      "Plateforme riche mais courbe apprentissage.",
+      "Pas aussi visuel DAM que Bynder."
+    ],
+    "use_cases": [
+      "Transformer images automatiquement par device.",
+      "Livrer vidéos optimisées CDN global.",
+      "Automatiser workflows editing IA (MediaFlows)."
+    ],
+    "relevant_for": [
+      "Développeurs",
+      "Équipes marketing",
+      "Agences web"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You manage images/videos at scale.",
+        "You need automatic transformations per device.",
+        "Global media optimization CDN matters."
+      ],
+      "avoidIf": [
+        "You have very few images (Cloudinary may be complex).",
+        "You want simple image gallery.",
+        "You prefer self-hosted solution."
+      ],
+      "threshold": "Cloudinary fits developers/marketers managing visuals at scale; for simple portfolios, lighter solutions suit better."
+    },
+    "pros": [
+      "Free plan available to start.",
+      "Powerful automatic transformations (device-specific).",
+      "Built-in AI for generative editing.",
+      "Global CDN + 70+ integrations."
+    ],
+    "cons": [
+      "Usage-based pricing (can be complex to predict).",
+      "Rich platform but learning curve.",
+      "Not as visual DAM as Bynder."
+    ],
+    "use_cases": [
+      "Automatically transform images per device.",
+      "Deliver optimized videos via global CDN.",
+      "Automate AI editing workflows (MediaFlows)."
+    ]
+  }
+}

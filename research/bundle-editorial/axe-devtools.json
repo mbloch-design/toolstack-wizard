@@ -1,0 +1,109 @@
+{
+  "slug": "axe-devtools",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "Axe DevTools by Deque (site officiel)",
+      "url": "https://www.deque.com/axe/devtools/"
+    }
+  ],
+  "facts": {
+    "what": "Suite de tests d'accessibilité automatisés avec IA (Intelligent Guided Tests) pour identifier et corriger les problèmes WCAG dans les applications web et mobile avant publication, sans faux positifs.",
+    "what_en": "Automated accessibility testing suite with AI-powered Intelligent Guided Tests to identify and fix WCAG issues in web and mobile applications before launch, with zero false positives.",
+    "pricing_model": "Freemium : extension gratuite avec essai 14 jours, plateforme premium sur abonnement.",
+    "free_tier": {
+      "exists": true,
+      "detail": "Essai gratuit 14 jours sur extension Chrome avec accès complet. axe-core est open-source et gratuit à vie (5+ milliards de téléchargements)."
+    },
+    "plans": [
+      {
+        "name": "Extension Browser (essai)",
+        "price": "Gratuit 14 jours"
+      },
+      {
+        "name": "Axe DevTools Linter",
+        "price": "Tarification sur demande"
+      },
+      {
+        "name": "Plateforme Entreprise",
+        "price": "Tarification sur demande (contact commercial)"
+      }
+    ],
+    "key_features": [
+      "Tests d'accessibilité WCAG 2.1 AA automatisés (70+ tests)",
+      "Intelligent Guided Tests (IGT) alimentés par IA",
+      "Support multi-plateformes (Cypress, Selenium, Jest, Puppeteer, Appium, XCUITest)",
+      "Zéro faux positifs garantis",
+      "Intégration VS Code (Axe MCP Server)",
+      "Linter d'accessibilité pour analyse statique"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "L'accessibilité WCAG est une exigence légale pour votre produit.",
+        "Vous voulez détecter les problèmes avant qu'ils n'atteignent les utilisateurs.",
+        "Vous avez une équipe QA ou devlopment pratiquant l'automatisation."
+      ],
+      "avoidIf": [
+        "Vous cherchez une solution entièrement manuelle et gratuite.",
+        "L'accessibilité n'est pas une priorité pour votre produit.",
+        "Vous n'avez pas de infrastructure de test automatisée."
+      ],
+      "threshold": "Axe DevTools convient aux équipes prioritarisant l'accessibilité et ayant des processus de test ; pour l'audit manuel unique, d'autres outils suffisent."
+    },
+    "pros": [
+      "Tests automatisés WCAG complets et fiables (zéro faux positifs).",
+      "IA intelligente pour détecter des problèmes subtils.",
+      "axe-core open-source et gratuit à vie.",
+      "Intégration facile dans pipeline CI/CD."
+    ],
+    "cons": [
+      "Tarification pour plateforme premium non transparente.",
+      "Courbe d'apprentissage pour configuration optimale.",
+      "Essai gratuit limité à 14 jours pour extension browser."
+    ],
+    "use_cases": [
+      "Automatiser les tests d'accessibilité dans CI/CD.",
+      "Auditer une application web pour conformité WCAG.",
+      "Former une équipe aux règles d'accessibilité."
+    ],
+    "relevant_for": [
+      "Testeurs QA",
+      "Développeurs frontend",
+      "Responsables conformité"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "WCAG accessibility is a legal requirement for your product.",
+        "You want to catch issues before they reach users.",
+        "You have QA or dev teams practicing test automation."
+      ],
+      "avoidIf": [
+        "You're looking for entirely manual, free auditing.",
+        "Accessibility isn't a priority for your product.",
+        "You don't have automated testing infrastructure."
+      ],
+      "threshold": "Axe DevTools fits teams prioritizing accessibility with test processes; for one-time manual audit, simpler tools suffice."
+    },
+    "pros": [
+      "Comprehensive, reliable WCAG automated tests (zero false positives).",
+      "Intelligent AI detects subtle issues.",
+      "axe-core open-source and free forever.",
+      "Easy CI/CD pipeline integration."
+    ],
+    "cons": [
+      "Premium platform pricing not transparent.",
+      "Learning curve for optimal configuration.",
+      "Free browser extension trial limited to 14 days."
+    ],
+    "use_cases": [
+      "Automate accessibility testing in CI/CD.",
+      "Audit web application for WCAG compliance.",
+      "Train team on accessibility rules."
+    ]
+  }
+}

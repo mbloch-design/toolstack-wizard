@@ -1,0 +1,90 @@
+{
+  "slug": "la-growth-machine",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "La Growth Machine — Multichannel Sales Automation (site officiel)", "url": "https://lagrowthmachine.com" }
+  ],
+  "facts": {
+    "what": "Plateforme d'automatisation sales multichannel permettant l'outreach personnalisé sur LinkedIn, Email, Calls, Voice et X. Offre un Sequence Builder drag-and-drop et l'enrichissement de données de prospects avec vérification de contacts.",
+    "what_en": "Multichannel sales automation platform for personalized outreach on LinkedIn, Email, Calls, Voice, and X. Features drag-and-drop Sequence Builder and waterfall prospect data enrichment.",
+    "pricing_model": "Modèle par identité (par utilisateur/prospect). Trois plans tarifés par identité avec essai gratuit 14 jours.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit 14 jours pour les trois premiers plans, sans carte de crédit requise." },
+    "plans": [
+      { "name": "Basic", "price": "70 € par mois/identité" },
+      { "name": "Pro", "price": "135 € par mois/identité" },
+      { "name": "Ultimate", "price": "195 € par mois/identité" }
+    ],
+    "key_features": [
+      "Sequence Builder drag-and-drop multicanal (LinkedIn, Email, Twitter, Voice)",
+      "Enrichissement en cascade (waterfall) pour combler les lacunes de données",
+      "Intégration CRM (HubSpot, Salesforce, Pipedrive)",
+      "Automatisation suivi et analytics avancées",
+      "Notation d'engagement pour prioriser leads",
+      "Utilisé par Clay, Spotify, Intercom (4.9/5 Capterra)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous faites de la prospection LinkedIn/Email et voulez l'automatiser.",
+        "Vous avez besoin d'une approche multichannel (LinkedIn, Email, Phone).",
+        "Vous gérez plusieurs équipes de sales ou BDRs."
+      ],
+      "avoidIf": [
+        "Vous cherchez une solution gratuite pour prospection.",
+        "Vous traitez un volume de prospects très faible.",
+        "Vous préférez un SaaS plus généraliste (Zapier, Make)."
+      ],
+      "threshold": "La Growth Machine s'adresse aux équipes sales et BDRs cherchant l'automatisation avancée de la prospection LinkedIn et Email avec scoring et multi-canal."
+    },
+    "pros": [
+      "Sequence Builder puissant et multichannel (5 canaux).",
+      "Enrichissement en cascade pour données enrichies.",
+      "Intégration CRM native (HubSpot, Salesforce, Pipedrive).",
+      "Notation d'engagement pour prioriser les leads."
+    ],
+    "cons": [
+      "Tarification par identité peut coûter cher pour grandes équipes.",
+      "Essai gratuit limité à 14 jours.",
+      "Interface peut être complexe pour débutants."
+    ],
+    "use_cases": [
+      "Automatiser des séquences prospection LinkedIn + Email.",
+      "Scorer et prioriser leads avant SalesCall.",
+      "Gérer une stratégie BDR multichannel à l'échelle."
+    ],
+    "relevant_for": ["Équipes sales", "BDRs", "Growth managers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You do LinkedIn/Email prospecting and want automation.",
+        "You need a multichannel approach (LinkedIn, Email, Phone).",
+        "You manage multiple sales or BDR teams."
+      ],
+      "avoidIf": [
+        "You seek a free prospecting solution.",
+        "You handle a very small prospect volume.",
+        "You prefer a generalist SaaS (Zapier, Make)."
+      ],
+      "threshold": "La Growth Machine targets sales and BDR teams seeking advanced LinkedIn/Email prospecting automation with scoring and multichannel outreach."
+    },
+    "pros": [
+      "Powerful multichannel Sequence Builder (5 channels).",
+      "Waterfall enrichment for enriched data.",
+      "Native CRM integration (HubSpot, Salesforce, Pipedrive).",
+      "Engagement scoring to prioritize leads."
+    ],
+    "cons": [
+      "Per-identity pricing can be expensive for large teams.",
+      "Free trial limited to 14 days.",
+      "Interface can be complex for beginners."
+    ],
+    "use_cases": [
+      "Automate LinkedIn + Email prospecting sequences.",
+      "Score and prioritize leads before sales calls.",
+      "Manage a multichannel BDR strategy at scale."
+    ]
+  }
+}

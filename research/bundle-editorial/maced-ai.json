@@ -1,0 +1,107 @@
+{
+  "slug": "maced-ai",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "Maced AI — Autonomous Pentesting (site officiel)",
+      "url": "https://maced.ai"
+    }
+  ],
+  "facts": {
+    "what": "Plateforme de pentesting autonome utilisant agents IA pour scanner le code, APIs et infrastructure en boîte noire (black-box) et blanche (white-box) avec rapports prêts audit et proof-of-concept.",
+    "what_en": "Autonomous pentesting platform using AI agents to scan code, APIs, and infrastructure in black-box and white-box modes with audit-ready reports and proof-of-concept.",
+    "pricing_model": "Freemium : scan gratuit 5 minutes sans carte de crédit, puis abonnement. Tarification complète sur demande.",
+    "free_tier": {
+      "exists": true,
+      "detail": "Essai gratuit 5 minutes (scan) sans carte de crédit requis. SOC 2 & ISO 27001 ready rapports."
+    },
+    "plans": [
+      {
+        "name": "Scan Gratuit",
+        "price": "Gratuit 5 minutes (no credit card)"
+      },
+      {
+        "name": "Plans Payants",
+        "price": "Tarification sur demande (contact commercial)"
+      }
+    ],
+    "key_features": [
+      "AI agents pour pentesting autonome 24/7",
+      "Testing boîte noire (external) et blanche (source code review)",
+      "Coverage complète : apps web, APIs, repositories, cloud infra",
+      "Découverte automatique vulnérabilités et validation proof-of-concept",
+      "Merge-ready pull requests avec fixes",
+      "Rapports deduplicated, priorités, zéro bruit",
+      "Conformité SOC 2 & ISO 27001",
+      "Tests CVEs nouveaux en 24h"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin de pentesting continu et automatisé.",
+        "Vous voulez découvrir vulnerabilités avant utilisateurs.",
+        "Vous avez équipe dev souhaitant fix-ready PRs."
+      ],
+      "avoidIf": [
+        "Vous cherchez unique audit pentesting manuel annuel.",
+        "Vous avez budget très limité pour sécurité.",
+        "Vous trouvez IA pentesting trop expérimentale."
+      ],
+      "threshold": "Maced AI convient équipes cherchant pentesting autonome continu et PR fix-ready ; pour audit manuel unique, pentester freelance convient mieux."
+    },
+    "pros": [
+      "Essai gratuit 5 min sans CB (zero friction start).",
+      "Agents IA continuent testing 24/7.",
+      "Rapports audit-ready (SOC 2 & ISO 27001).",
+      "PR fix-ready merge — économise dev time."
+    ],
+    "cons": [
+      "IA pentesting plus nouvelle technologie, moins proven.",
+      "Tarification complète cachée (devis commercial).",
+      "Peut générer faux positifs selon configuration."
+    ],
+    "use_cases": [
+      "Scanner continuellement app web/APIs pour vulnerabilités.",
+      "Tester automatiquement nouvelles CVEs après disclosure.",
+      "Générer rapports audit-ready pour clients/conformité."
+    ],
+    "relevant_for": [
+      "Équipes sécurité DevOps",
+      "Startups B2B",
+      "CISOs cherchant automation"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need continuous, automated pentesting.",
+        "You want to discover vulnerabilities before users.",
+        "Your dev team wants fix-ready PRs."
+      ],
+      "avoidIf": [
+        "You're looking for one-time manual audit.",
+        "You have very tight security budget.",
+        "You find AI pentesting too experimental."
+      ],
+      "threshold": "Maced AI fits teams seeking continuous autonomous pentesting and fix-ready PRs; for one-time manual audit, freelance pentester suits better."
+    },
+    "pros": [
+      "Free 5-min trial without credit card (zero friction).",
+      "AI agents continue testing 24/7.",
+      "Audit-ready reports (SOC 2 & ISO 27001).",
+      "Fix-ready PRs merge — saves dev time."
+    ],
+    "cons": [
+      "AI pentesting is newer technology, less proven.",
+      "Full pricing hidden (sales quote required).",
+      "May generate false positives per configuration."
+    ],
+    "use_cases": [
+      "Continuously scan web app/APIs for vulnerabilities.",
+      "Auto-test new CVEs after disclosure.",
+      "Generate audit-ready reports for customers/compliance."
+    ]
+  }
+}

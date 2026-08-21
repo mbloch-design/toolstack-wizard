@@ -1,0 +1,107 @@
+{
+  "slug": "nvda",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "NVDA — Screen Reader Open Source (site officiel)",
+      "url": "https://www.nvaccess.org"
+    }
+  ],
+  "facts": {
+    "what": "Lecteur d'écran (screen reader) gratuit et open-source conçu pour utilisateurs malvoyants et aveugles, traduction visuelle en voix permettant accès ordinateur sans logiciels propriétaires coûteux.",
+    "what_en": "Free, open-source screen reader designed for blind and visually impaired users, translating visual content to voice for computer access without expensive proprietary software.",
+    "pricing_model": "Entièrement gratuit et open-source. Produits payants optionnels (formation, certification).",
+    "free_tier": {
+      "exists": true,
+      "detail": "Logiciel entièrement gratuit à télécharger et utiliser. Formations optionnelles payantes (AUD $32 ebooks, certification)."
+    },
+    "plans": [
+      {
+        "name": "NVDA Lecteur d'écran",
+        "price": "Gratuit — open-source à vie"
+      },
+      {
+        "name": "Formations & Certification",
+        "price": "À partir de AUD $32 (ebooks optionnels)"
+      }
+    ],
+    "key_features": [
+      "Lecteur d'écran gratuit pour cécité/malvoyance",
+      "Traduction contenu visuel en voix claire",
+      "Support multi-langues et régions",
+      "Développé par utilisateurs aveugles pour aveugles",
+      "Code open-source transparent",
+      "Communauté active (email, Discord, réseaux sociaux)",
+      "Supporté par tech majeurs (Google, Microsoft, Adobe, Salesforce)",
+      "A aidé 250 000+ personnes accès éducation/emploi"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes utilisateur malvoyant ou aveugle.",
+        "Vous cherchez accessibilité ordinateur gratuite et fiable.",
+        "Vous préférez solution open-source transparente."
+      ],
+      "avoidIf": [
+        "Vous n'avez pas de besoin d'accessibilité.",
+        "Vous cherchez lecteur d'écran pour usage non-accessibilité.",
+        "Vous avez accès à logiciel propriétaire de votre employeur."
+      ],
+      "threshold": "NVDA est la solution de reference gratuite pour accessibilité cécité/malvoyance ; tous utilisateurs aveugles devraient le connaître et l'utiliser."
+    },
+    "pros": [
+      "Entièrement gratuit, aucun coût accès.",
+      "Open-source et transparent.",
+      "Supporté majeurs tech (Google, Microsoft, Adobe).",
+      "Communauté active mondiale."
+    ],
+    "cons": [
+      "Courbe d'apprentissage importante (nécessite formation).",
+      "Formations optionnelles payantes.",
+      "Support principalement communautaire (pas professionnel)."
+    ],
+    "use_cases": [
+      "Accéder ordinateur et web si malvoyant/aveugle.",
+      "Lire documents numériques et emails.",
+      "Naviguer sites web accessibles."
+    ],
+    "relevant_for": [
+      "Utilisateurs malvoyants/aveugles",
+      "Organisations accessibilité",
+      "Développeurs a11y"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're blind or visually impaired user.",
+        "You need free, reliable computer accessibility.",
+        "You prefer open-source transparent solution."
+      ],
+      "avoidIf": [
+        "You have no accessibility needs.",
+        "You're looking for screen reader for non-accessibility use.",
+        "You have access to proprietary screen reader from employer."
+      ],
+      "threshold": "NVDA is the reference free solution for blind/visually impaired accessibility; all blind users should know and use it."
+    },
+    "pros": [
+      "Entirely free, no access cost.",
+      "Open-source and transparent.",
+      "Backed by major tech (Google, Microsoft, Adobe).",
+      "Active global community."
+    ],
+    "cons": [
+      "Steep learning curve (requires training).",
+      "Optional trainings are paid.",
+      "Support mainly community-driven (not professional)."
+    ],
+    "use_cases": [
+      "Access computer and web if blind/visually impaired.",
+      "Read digital documents and emails.",
+      "Navigate accessible websites."
+    ]
+  }
+}

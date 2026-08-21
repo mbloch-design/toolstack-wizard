@@ -1,0 +1,90 @@
+{
+  "slug": "base44",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Base44 — AI Platform for App & Website Building (site officiel)", "url": "https://base44.com" }
+  ],
+  "facts": {
+    "what": "Plateforme no-code alimentée par l'IA permettant de construire des applications, des sites web et des agents d'IA entièrement fonctionnels en décrivant simplement vos idées en langage naturel. L'IA génère automatiquement le code, le design et la logique.",
+    "what_en": "AI-powered no-code platform to build fully functional apps, websites, and AI agents by describing ideas in plain language. The AI automatically generates code, design, and business logic.",
+    "pricing_model": "Modèle freemium avec crédits d'IA inclusos. Version gratuite avec toutes les fonctionnalités de base. Plans payants à partir de $16/mois (facturation annuelle).",
+    "free_tier": { "exists": true, "detail": "Tier gratuit avec toutes les fonctionnalités de base, crédits mensuels d'IA inclusion, intégrations natives, base de données et authentification." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit avec crédits mensuels d'IA limités" },
+      { "name": "Starter", "price": "À partir de $16/mois (facturation annuelle)" },
+      { "name": "Professional", "price": "Montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Génération full-stack automatique (backend, base de données, authentification)",
+      "Vibe Coding : conversation itérative avec l'IA",
+      "Hosting intégré (apps go-live instantanément)",
+      "Outils de design avec génération IA",
+      "Superagents : assistants IA autonomes",
+      "Intégrations (Google Calendar, Slack, HubSpot, Salesforce)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez une idée produit et voulez la prototyper rapidement.",
+        "Vous n'avez pas d'expertise en développement backend.",
+        "Vous cherchez un hosting intégré et un déploiement zero-config."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'une architecture custom complexe.",
+        "Vous préférez écrire du code natif plutôt que de collaborer avec l'IA.",
+        "Vous avez des contraintes de sécurité ou de données très strictes."
+      ],
+      "threshold": "Base44 s'adresse aux entrepreneurs et aux makers cherchant à construire une MVP rapidement avec une IA, sans nécessiter de back-end developers."
+    },
+    "pros": [
+      "Génération full-stack automatique via IA.",
+      "Hosting intégré et déploiement instantané.",
+      "Tier gratuit complet avec toutes les fonctionnalités.",
+      "Conversation itérative (Vibe Coding) avec l'IA."
+    ],
+    "cons": [
+      "Crédits IA limités sur le tier gratuit.",
+      "Moins de contrôle granulaire sur l'architecture.",
+      "Écosystème de plugins moins mature que Bubble/Webflow."
+    ],
+    "use_cases": [
+      "Construire une MVP de SaaS en quelques jours.",
+      "Créer des applications métier internes rapidement.",
+      "Prototyper une idée produit avec des agents IA intégrés."
+    ],
+    "relevant_for": ["Entrepreneurs", "Product Managers", "Non-developers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You have a product idea and want to prototype it fast.",
+        "You lack backend development expertise.",
+        "You want integrated hosting and zero-config deployment."
+      ],
+      "avoidIf": [
+        "You need complex custom architecture.",
+        "You prefer writing native code over AI collaboration.",
+        "You have strict data security or compliance constraints."
+      ],
+      "threshold": "Base44 targets entrepreneurs and makers building MVPs quickly with AI, without needing backend developers."
+    },
+    "pros": [
+      "Automatic full-stack generation via AI.",
+      "Integrated hosting and instant deployment.",
+      "Complete free tier with all core features.",
+      "Iterative Vibe Coding conversation with AI."
+    ],
+    "cons": [
+      "Limited AI credits on free tier.",
+      "Less granular control over architecture.",
+      "Smaller ecosystem compared to Bubble/Webflow."
+    ],
+    "use_cases": [
+      "Build an MVP SaaS in days.",
+      "Create internal business apps quickly.",
+      "Prototype a product idea with integrated AI agents."
+    ]
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "slug": "factorial",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Factorial — Business Management Software (site officiel)", "url": "https://factorialhr.com" }
+  ],
+  "facts": {
+    "what": "Système intégré de gestion métier (BMS) unifiant HR, paie, gestion du temps, talent management, finance et IT. Combine automatisation avec IA pour rationaliser les processus administratifs.",
+    "what_en": "Integrated Business Management System (BMS) unifying HR, payroll, time management, talent management, finance, and IT. Combines automation with AI to streamline admin processes.",
+    "pricing_model": "Modèle par modular/scalable avec tarification personalisée. Plans basés sur fonctionnalités et rôles.",
+    "free_tier": { "exists": false, "detail": "Pas de tier gratuit. Accès démo prioritaire pour travaux email professionnels." },
+    "plans": [
+      { "name": "Modular Plans", "price": "Tarification personnalisée (consultation requise)" }
+    ],
+    "key_features": [
+      "Gestion du temps et planning des shifts",
+      "Talent management (recrutement, onboarding, formation, goals)",
+      "Paie et RH automatisées",
+      "Gestion des dépenses et des cartes corporate",
+      "Gestion IT (MDM, inventaire, SaaS)",
+      "Agent IA 'One' (rapports, automation, insights)",
+      "Utilisé par 16,000+ entreprises"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin d'une solution tout-en-un (HR + paie + IT).",
+        "Vous cherchez à automatiser une large part des tâches administratives.",
+        "Vous gérez une équipe multi-fonctions complexe."
+      ],
+      "avoidIf": [
+        "Vous cherchez une solution simple ou gratuite.",
+        "Vous avez des besoins très pointus (préférez best-of-breed).",
+        "Vous n'avez qu'une équipe très petite (<10)."
+      ],
+      "threshold": "Factorial s'adresse aux organisations cherchant une plateforme intégrée tout-en-un pour unifier HR, paie, talent et IT avec IA."
+    },
+    "pros": [
+      "Suite intégrée HR + paie + temps + finance + IT.",
+      "Agent IA 'One' pour automation et insights.",
+      "Tarification modulaire (start small, scale).",
+      "Gains de temps notables sur l'administratif."
+    ],
+    "cons": [
+      "Pas de tier gratuit.",
+      "Tarification personnalisée (pas transparente).",
+      "Moins flexible que best-of-breed pour cas pointus."
+    ],
+    "use_cases": [
+      "Consolider HR, paie et temps dans une plateforme.",
+      "Automatiser une large part des tâches administratives.",
+      "Créer des rapports et insights cross-fonctions."
+    ],
+    "relevant_for": ["PME", "Organisations", "Departments multi-fonctions"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need an all-in-one solution (HR + payroll + IT).",
+        "You want to automate a large share of admin tasks.",
+        "You manage a complex multi-functional team."
+      ],
+      "avoidIf": [
+        "You seek a simple or free solution.",
+        "You have very specific needs (prefer best-of-breed).",
+        "You only have a very small team (<10)."
+      ],
+      "threshold": "Factorial targets organizations seeking an integrated all-in-one platform unifying HR, payroll, talent, and IT with AI."
+    },
+    "pros": [
+      "Integrated suite: HR + payroll + time + finance + IT.",
+      "AI agent 'One' for automation and insights.",
+      "Modular pricing (start small, scale).",
+      "Notable time savings on admin work."
+    ],
+    "cons": [
+      "No free tier.",
+      "Custom pricing (not transparent).",
+      "Less flexible than best-of-breed for niche needs."
+    ],
+    "use_cases": [
+      "Consolidate HR, payroll, and time in one platform.",
+      "Automate a large share of admin tasks.",
+      "Create cross-functional reports and insights."
+    ]
+  }
+}

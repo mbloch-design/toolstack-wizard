@@ -1,0 +1,112 @@
+{
+  "slug": "namecheap",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "Namecheap — Domain Registrar & Hosting (site officiel)",
+      "url": "https://www.namecheap.com"
+    }
+  ],
+  "facts": {
+    "what": "Registraire de domaines et hébergement web proposant domaines dès 0,99$/an, hosting partagé dès 1,88$/mois, SSL gratuit, WhoisGuard gratuit, et website builder IA avec drag-drop.",
+    "what_en": "Domain registrar and web hosting offering domains from 0.99$/year, shared hosting from 1.88$/month, free SSL, free WhoisGuard, and AI website builder with drag-drop.",
+    "pricing_model": "Tarification à l'usage. Domaines taux intro (0,99-6,79$) + renouvellement standard. Hosting partagé 1,88-4,88$/mois. SSL gratuit, WhoisGuard gratuit.",
+    "free_tier": {
+      "exists": false,
+      "detail": "Pas de tier gratuit. Domaines intro taux bas (0,99$), renouvellement plus cher. Hosting et SSL gratuit inclus plans."
+    },
+    "plans": [
+      {
+        "name": "Domaines",
+        "price": "À partir 0,99 $ première année (.com), renouvellement standard"
+      },
+      {
+        "name": "Shared Hosting",
+        "price": "À partir 1,88 $/mois (intro), 4,88 $/mois mensuel"
+      },
+      {
+        "name": "WordPress Hosting",
+        "price": "À partir 2,29 $/mois (intro)"
+      }
+    ],
+    "key_features": [
+      "Domaines compétitifs tarifs intro",
+      "Renouvellement transparent (pas piègeau)",
+      "WhoisGuard privacy gratuit à vie",
+      "Hébergement partagé illimité bandwidth",
+      "SSL certificates gratuit auto-installation",
+      "cPanel control panel convivial",
+      "Website builder IA + drag-drop",
+      "Email hébergement professionnel (payant)",
+      "Registraire 20 ans, millions customers"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez domaines à bas tarif (intro).",
+        "Vous avez site simple sans besoins complexes.",
+        "Tarifs transparents et frais minimes importent."
+      ],
+      "avoidIf": [
+        "Vous cherchez hosting très performant (managed).",
+        "Vous avez app web complexe (API, etc).",
+        "Vous préférez support premium 24/7."
+      ],
+      "threshold": "Namecheap convient débutants cherchant domaine + hosting simple ; pour apps complexes ou performance critique, hébergeurs spécialisés conviennent mieux."
+    },
+    "pros": [
+      "Tarifs d'appel très compétitifs sur les domaines.",
+      "Hébergement mutualisé à bas coût.",
+      "SSL et WhoisGuard gratuit à vie.",
+      "Website builder IA inclus plans."
+    ],
+    "cons": [
+      "Renouvellement domaines plus cher que tarif intro.",
+      "Support pas réputé comme excellent.",
+      "Hosting partagé limité pour apps complexes."
+    ],
+    "use_cases": [
+      "Enregistrer domaine premier budget.",
+      "Héberger site statique simple.",
+      "Créer site drag-drop avec builder IA."
+    ],
+    "relevant_for": [
+      "Débutants",
+      "Micro-entrepreneurs",
+      "Freelances"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want cheap intro domain pricing.",
+        "You have simple site without complex needs.",
+        "Transparent pricing and minimal fees matter."
+      ],
+      "avoidIf": [
+        "You want very high-performance hosting (managed).",
+        "You have complex web app (API, etc).",
+        "You prefer premium 24/7 support."
+      ],
+      "threshold": "Namecheap fits beginners seeking simple domain + hosting; for complex apps or critical performance, specialized hosts suit better."
+    },
+    "pros": [
+      "Very competitive introductory domain pricing.",
+      "Low-cost shared hosting.",
+      "Free SSL and WhoisGuard forever.",
+      "AI website builder included plans."
+    ],
+    "cons": [
+      "Domain renewal more expensive than intro rate.",
+      "Support not known as excellent.",
+      "Shared hosting limited for complex apps."
+    ],
+    "use_cases": [
+      "Register domain on tight budget.",
+      "Host simple static site.",
+      "Create drag-drop site with AI builder."
+    ]
+  }
+}

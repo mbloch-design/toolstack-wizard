@@ -1,0 +1,89 @@
+{
+  "slug": "make",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Make — AI Workflow Automation Platform (site officiel)", "url": "https://make.com" }
+  ],
+  "facts": {
+    "what": "Plateforme d'automatisation visuelle IA permettant de connecter n'importe quelle app, source de données ou modèle IA pour construire des automations et des agents IA. Offre 3000+ intégrations pré-construites et déploiement multi-format.",
+    "what_en": "Visual AI automation platform connecting any app, data source, or AI model to build automations and AI agents. Features 3,000+ pre-built integrations and multi-format deployment.",
+    "pricing_model": "Modèle par tâches (tasks/opérations). Tier gratuit sans limite de temps. Plans payants pour volumes plus élevés.",
+    "free_tier": { "exists": true, "detail": "Tier gratuit sans limite de temps, sans carte de crédit requise. Plans payants pour consommation de tasks élevée." },
+    "plans": [
+      { "name": "Free", "price": "Sans limite de temps, sans carte requise" },
+      { "name": "Paid Plans", "price": "Montants sur la page officielle (tarification par tasks)" }
+    ],
+    "key_features": [
+      "Interface first pour construire via drag-and-drop, code ou prompts naturels",
+      "3000+ intégrations pré-construites (OpenAI, HubSpot, Salesforce, Slack)",
+      "Make Grid : centralisation et visibilité des automations",
+      "Maia by Make : construction conversationnelle d'agents IA",
+      "Make MCP Server pour intégration business actions sécurisée",
+      "400,000+ organisations dans 200+ pays"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez un équilibre entre visuel, code et prompts naturels.",
+        "Vous avez besoin de 3000+ intégrations sans limite.",
+        "Vous gérez des automations complexes pour une équipe."
+      ],
+      "avoidIf": [
+        "Vous cherchez une solution ultra-simple pour non-techniciens.",
+        "Vous avez un usage très léger (peu de workflows).",
+        "Vous n'avez besoin que de 2-3 intégrations basiques."
+      ],
+      "threshold": "Make s'adresse aux équipes d'automatisation, aux entreprises et aux développeurs cherchant une plateforme flexible pour construire des automations et des agents IA à grande échelle."
+    },
+    "pros": [
+      "3000+ intégrations pré-construites.",
+      "Interface visuelle puissante + code + prompts naturels.",
+      "Agents IA transparents et orchestrés.",
+      "Tier gratuit sans limite de temps."
+    ],
+    "cons": [
+      "Tarification par tasks peut devenir chère à l'échelle.",
+      "Courbe d'apprentissage pour maîtriser tous les formats.",
+      "Interface visuelle dense pour débutants."
+    ],
+    "use_cases": [
+      "Construire une pipeline CRM automatique avec 10+ outils.",
+      "Créer des agents IA pour support client ou prospection.",
+      "Orchestrer des workflows complexes cross-outils."
+    ],
+    "relevant_for": ["Équipes d'automatisation", "Entreprises", "Consultants integrations"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want a balance between visual, code, and natural language.",
+        "You need 3,000+ integrations without limits.",
+        "You manage complex automations for a team."
+      ],
+      "avoidIf": [
+        "You seek an ultra-simple solution for non-technical users.",
+        "You have very light usage (few workflows).",
+        "You only need 2-3 basic integrations."
+      ],
+      "threshold": "Make targets automation teams, enterprises, and developers seeking a flexible platform to build automations and AI agents at scale."
+    },
+    "pros": [
+      "3,000+ pre-built integrations.",
+      "Powerful visual interface + code + natural language prompts.",
+      "Transparent and orchestrated AI agents.",
+      "Free tier without time limit."
+    ],
+    "cons": [
+      "Per-task pricing can get expensive at scale.",
+      "Learning curve to master all formats.",
+      "Dense visual interface for beginners."
+    ],
+    "use_cases": [
+      "Build an automated CRM pipeline with 10+ tools.",
+      "Create AI agents for customer support or prospecting.",
+      "Orchestrate complex cross-tool workflows."
+    ]
+  }
+}

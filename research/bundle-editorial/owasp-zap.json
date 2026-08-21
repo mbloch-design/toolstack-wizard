@@ -1,0 +1,104 @@
+{
+  "slug": "owasp-zap",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "OWASP ZAP — Web Application Security Scanner (site officiel)",
+      "url": "https://www.zaproxy.org"
+    }
+  ],
+  "facts": {
+    "what": "Scanner de sécurité web gratuit et open-source, outil n°1 mondial d'analyse, détectant vulnérabilités par test dynamique (DAST) avec marketplace d'extensions communautaires.",
+    "what_en": "Free, open-source web application security scanner, world's most widely used tool for vulnerability detection via dynamic testing (DAST) with community add-ons marketplace.",
+    "pricing_model": "Entièrement gratuit et open-source. Pas de versions payantes ou tiers.",
+    "free_tier": {
+      "exists": true,
+      "detail": "Produit entièrement gratuit et open-source. Pas de limitations, aucun tier payant."
+    },
+    "plans": [
+      {
+        "name": "Open Source OWASP ZAP",
+        "price": "Gratuit à jamais (open-source)"
+      }
+    ],
+    "key_features": [
+      "Scanning dynamique DAST pour vulnérabilités web",
+      "Tests manuels intuitifs et accessibles débutants",
+      "Marketplace extensions communautaires (add-ons)",
+      "Automatisation CI/CD (documentation complète)",
+      "Extensibilité complète (GitHub top 1000 project)",
+      "Maintenance active par Checkmarx",
+      "Support communautaire et documentation"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez applications web et testez sécurité.",
+        "Vous cherchez solution gratuite audit sans limite.",
+        "Vous préférez open-source transparent."
+      ],
+      "avoidIf": [
+        "Vous avez besoin support commercial SLA.",
+        "Vous cherchez scanning statique (SAST) seul.",
+        "Vous préférez interface graphique guidée étape-par-étape."
+      ],
+      "threshold": "OWASP ZAP est le standard gratuit pour DAST web ; tous les devs test sécurité devraient le connaître et l'utiliser."
+    },
+    "pros": [
+      "Entièrement gratuit, open-source transparent.",
+      "Outil de scanning #1 mondial reconnu.",
+      "Marketplace extensions communautaires riches.",
+      "Intégration CI/CD simple et documentée."
+    ],
+    "cons": [
+      "Pas de support commercial, communautaire uniquement.",
+      "Interface peut sembler complexe débutants.",
+      "Seulement DAST (pas SAST, analyse statique)."
+    ],
+    "use_cases": [
+      "Scanner une app web avant production.",
+      "Intégrer test sécurité dans CI/CD pipeline.",
+      "Audit sécurité API REST.",
+      "Tester vulnérabilités OWASP Top 10."
+    ],
+    "relevant_for": [
+      "Développeurs",
+      "Testeurs sécurité QA",
+      "DevSecOps ingénieurs"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You develop web applications and test security.",
+        "You want unlimited free audit solution.",
+        "You prefer transparent open-source."
+      ],
+      "avoidIf": [
+        "You need commercial SLA support.",
+        "You're looking for static analysis (SAST) only.",
+        "You prefer step-by-step guided UI."
+      ],
+      "threshold": "OWASP ZAP is the free standard for web DAST; all security-testing devs should know and use it."
+    },
+    "pros": [
+      "Entirely free, transparent open-source.",
+      "World #1 scanning tool recognized.",
+      "Rich community add-ons marketplace.",
+      "Simple CI/CD integration and documentation."
+    ],
+    "cons": [
+      "No commercial support, community-only.",
+      "Interface may seem complex for beginners.",
+      "DAST only (no SAST, static analysis)."
+    ],
+    "use_cases": [
+      "Scan web app before production.",
+      "Integrate security testing into CI/CD.",
+      "Audit REST API security.",
+      "Test OWASP Top 10 vulnerabilities."
+    ]
+  }
+}

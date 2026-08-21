@@ -1,0 +1,91 @@
+{
+  "slug": "deel",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Deel — Global Payroll and HR Platform (site officiel)", "url": "https://www.deel.com" }
+  ],
+  "facts": {
+    "what": "Plateforme de gestion globale des salaires et RH permettant aux entreprises d'embaucher, gérer, payer et équiper n'importe qui dans 150+ pays. Consolidée paie locale/globale, conformité, visa et gestion IT.",
+    "what_en": "Global payroll and HR platform enabling organizations to hire, manage, pay, and equip anyone across 150+ countries. Consolidates local/global payroll, compliance, visa, and IT management.",
+    "pricing_model": "Modèle d'abonnement en SaaS. Tarification non transparente, consultation de vente requise.",
+    "free_tier": { "exists": false, "detail": "Pas de tier gratuit. Modèle consultatif (book a demo pour discussion tarifaire)." },
+    "plans": [
+      { "name": "Enterprise", "price": "Tarification custom (demo requise)" }
+    ],
+    "key_features": [
+      "Paie dans 150+ pays et 150+ devises",
+      "Gestion RH centralisée (tous types d'employés)",
+      "Visa et mobilité gérée en interne",
+      "Gestion IT (provisioning, appareils)",
+      "Avantages sociaux et enrolement",
+      "Workflows pilotés par IA",
+      "SOC 2 Type II, GDPR compliant"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous opérez dans 5+ pays et avez besoin de paie centralisée.",
+        "Vous embauchez de freelances ou contractors globalement.",
+        "Vous cherchez une solution tout-en-un (paie, HR, visa, IT)."
+      ],
+      "avoidIf": [
+        "Vous n'opérez qu'en un seul pays.",
+        "Vous avez un budget serré (coûts d'entreprise).",
+        "Vous cherchez une solution simple sans complexité multi-pays."
+      ],
+      "threshold": "Deel s'adresse aux entreprises globales cherchant une solution centralisée pour paie multi-pays, conformité locale et gestion d'équipes distribuées."
+    },
+    "pros": [
+      "Paie dans 150+ pays avec compliance locale automatique.",
+      "Solution tout-en-un (paie, HR, visa, IT).",
+      "Gestion visa et mobilité intégrée.",
+      "Conformité SOC 2 et GDPR robuste.",
+      "Support d'experts locaux dans 150+ pays."
+    ],
+    "cons": [
+      "Pas de tier gratuit (consultation vente requise).",
+      "Coûts potentiellement élevés pour grandes équipes.",
+      "Complexité de mise en œuvre."
+    ],
+    "use_cases": [
+      "Centraliser paie pour équipe distribuée (5+ pays).",
+      "Gérer contractors et freelancers mondialement.",
+      "Automatiser conformité de paie multi-juridictions."
+    ],
+    "relevant_for": ["Entreprises globales", "Startups distributes"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You operate in 5+ countries and need centralized payroll.",
+        "You hire freelancers or contractors globally.",
+        "You seek an all-in-one solution (payroll, HR, visa, IT)."
+      ],
+      "avoidIf": [
+        "You operate in only one country.",
+        "You have a tight budget (enterprise costs).",
+        "You seek a simple single-country solution."
+      ],
+      "threshold": "Deel targets global enterprises seeking a centralized solution for multi-country payroll, local compliance, and distributed team management."
+    },
+    "pros": [
+      "Payroll in 150+ countries with automated local compliance.",
+      "All-in-one solution (payroll, HR, visa, IT).",
+      "Integrated visa and mobility management.",
+      "Robust SOC 2 and GDPR compliance.",
+      "Local expert support across 150+ countries."
+    ],
+    "cons": [
+      "No free tier (sales consultation required).",
+      "Potential high costs for large teams.",
+      "Implementation complexity."
+    ],
+    "use_cases": [
+      "Centralize payroll for distributed team (5+ countries).",
+      "Manage contractors and freelancers globally.",
+      "Automate multi-jurisdiction payroll compliance."
+    ]
+  }
+}

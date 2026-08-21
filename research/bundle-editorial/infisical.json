@@ -1,0 +1,119 @@
+{
+  "slug": "infisical",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "Infisical — Open Source Secrets Management (site officiel)",
+      "url": "https://infisical.com/pricing"
+    }
+  ],
+  "facts": {
+    "what": "Plateforme open-source (MIT) de gestion des secrets et certificats supportant identités humaines et machines, avec options de déploiement cloud et self-hosted, modèle pricing par identité.",
+    "what_en": "Open-source (MIT) secrets and certificate management platform supporting human and machine identities with cloud and self-hosted deployment options, per-identity pricing model.",
+    "pricing_model": "Freemium par identité (5 gratuit), puis abonnement Pro/Advanced/Enterprise. Self-hosted gratuit (MIT license open-source).",
+    "free_tier": {
+      "exists": true,
+      "detail": "Plan Free : 5 identités, 3 projets, 3 environnements, 10 intégrations gratuitement. Self-hosted MIT : entièrement gratuit."
+    },
+    "plans": [
+      {
+        "name": "Free Cloud",
+        "price": "Gratuit (5 identités, 3 projets, 3 environnements)"
+      },
+      {
+        "name": "Pro",
+        "price": "20 $/identité/an ou 23 $/mois"
+      },
+      {
+        "name": "Advanced",
+        "price": "40 $/identité/an ou 46 $/mois"
+      },
+      {
+        "name": "Enterprise",
+        "price": "Tarification personnalisée (annuel)"
+      },
+      {
+        "name": "Self-Hosted (MIT)",
+        "price": "Gratuit — open-source MIT"
+      }
+    ],
+    "key_features": [
+      "Gestion des secrets multi-environnements",
+      "Identity-based pricing (humains + machines)",
+      "Certificate management (PKI) gratuit limite",
+      "Privileged Access Management (PAM)",
+      "Dynamic secrets et proxy rotation",
+      "SAML SSO et authentification",
+      "Audit logging et version history",
+      "Self-hosting complet via MIT license"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez solution open-source pour secrets et certs.",
+        "L'auto-hébergement ou cloud sont tous deux viables.",
+        "Vous avez équipe composée humains et machines (CI/CD, etc.)."
+      ],
+      "avoidIf": [
+        "Vous ne maîtrisez pas Kubernetes ou Docker.",
+        "Vous avez un support commercial SLA critique.",
+        "Vous cherchez solution entièrement gratuite sans limites."
+      ],
+      "threshold": "Infisical convient équipes tech cherchant gestion secrets flexible, open-source ou cloud ; pour non-tech, solutions SaaS gérées (Doppler) conviennent mieux."
+    },
+    "pros": [
+      "Open-source MIT, self-hosting gratuit et complet.",
+      "Model identité-based (humans + machines) simple.",
+      "Plan Free cloud généreux (5 identités).",
+      "Certificate management (PKI) inclus gratuit limite."
+    ],
+    "cons": [
+      "Self-hosting nécessite infra Kubernetes.",
+      "Documentation moins complète que HashiCorp.",
+      "Produit plus jeune, moins de proven track record."
+    ],
+    "use_cases": [
+      "Self-hosted secrets manager en Kubernetes privé.",
+      "Gérer secrets pour équipe mix humains/machines (CI/CD).",
+      "Certificats PKI centralisés avec auto-renewal."
+    ],
+    "relevant_for": [
+      "Équipes DevOps",
+      "Architectes sécurité",
+      "Développeurs cloud"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want open-source secrets and certificate solution.",
+        "Both self-hosting and cloud are viable options.",
+        "Your team has humans and machines (CI/CD, etc.)."
+      ],
+      "avoidIf": [
+        "You don't know Kubernetes or Docker.",
+        "You have critical commercial SLA support needs.",
+        "You're looking for entirely free unlimited solutions."
+      ],
+      "threshold": "Infisical fits tech teams seeking flexible, open-source or cloud secrets management; for non-tech, managed SaaS (Doppler) suits better."
+    },
+    "pros": [
+      "Open-source MIT, full self-hosting free.",
+      "Identity-based model (humans + machines) simple.",
+      "Generous free cloud plan (5 identities).",
+      "Certificate management (PKI) included free limits."
+    ],
+    "cons": [
+      "Self-hosting requires Kubernetes infrastructure.",
+      "Documentation less complete than HashiCorp.",
+      "Younger product, less proven track record."
+    ],
+    "use_cases": [
+      "Self-hosted secrets manager on private Kubernetes.",
+      "Manage secrets for mixed human/machine teams (CI/CD).",
+      "Centralized PKI certificates with auto-renewal."
+    ]
+  }
+}

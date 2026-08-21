@@ -1,0 +1,110 @@
+{
+  "slug": "cloudflare",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "Cloudflare — Plateforme serverless global (site officiel)",
+      "url": "https://www.cloudflare.com"
+    }
+  ],
+  "facts": {
+    "what": "Plateforme serverless mondiale permettant de déployer du code sur 330+ centres de données sans démarrage à froid (zero cold starts), supportant JavaScript, TypeScript, Python, Rust et WebAssembly.",
+    "what_en": "Global serverless platform enabling code deployment across 330+ data centers with zero cold starts, supporting JavaScript, TypeScript, Python, Rust, and WebAssembly.",
+    "pricing_model": "Pay-as-you-go basé sur le temps CPU (pas de facturation par durée mur-à-mur). Plan gratuit disponible.",
+    "free_tier": {
+      "exists": true,
+      "detail": "Plan gratuit avec limites d'utilisation. Paiement à l'usage ensuite basé sur temps CPU d'exécution réel."
+    },
+    "plans": [
+      {
+        "name": "Free",
+        "price": "Gratuit avec limites"
+      },
+      {
+        "name": "Pro",
+        "price": "Montants sur la page officielle"
+      },
+      {
+        "name": "Business",
+        "price": "Montants sur la page officielle"
+      }
+    ],
+    "key_features": [
+      "Déploiement global en 330+ villes sans cold starts",
+      "Support multi-langages (JS, TS, Python, Rust, WASM)",
+      "Stockage et AI intégrés",
+      "Facturation à l'usage (CPU time only)",
+      "CLI Wrangler pour déploiement simple",
+      "Isolates V8 pour exécution immédiate",
+      "Outils de networking et sécurité"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous développez des applications web modernes avec code JavaScript/TypeScript.",
+        "La latence globale (zero cold starts) est critique pour votre service.",
+        "Vous cherchez une plateforme serverless pay-as-you-go simple."
+      ],
+      "avoidIf": [
+        "Vous avez un workload traditionnel nécessitant containers.",
+        "Vous cherchez une solution entièrement gratuite sans limites.",
+        "Vous avez besoin de support commercial SLA stricte."
+      ],
+      "threshold": "Cloudflare convient aux développeurs cherchant déploiement global rapide et performant ; pour des charges traditionnelles, AWS Lambda convient mieux."
+    },
+    "pros": [
+      "Zéro cold start — code exécuté immédiatement globalement.",
+      "Facturation juste (temps CPU uniquement, pas durée mur-à-mur).",
+      "Déploiement facile avec CLI Wrangler.",
+      "Plan gratuit généreux pour débuter."
+    ],
+    "cons": [
+      "Écosystème moins riche qu'AWS Lambda.",
+      "Limites de plan gratuit importants.",
+      "Moins de documentation communautaire que AWS."
+    ],
+    "use_cases": [
+      "Déployer une API serverless avec latence très basse.",
+      "Construire un site statique avec logique backend serverless.",
+      "Faire un bot Discord ou Telegram globalement distributé."
+    ],
+    "relevant_for": [
+      "Développeurs full-stack",
+      "Startups cherchant scale",
+      "Freelances DevOps"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're building modern web apps with JavaScript/TypeScript.",
+        "Global latency (zero cold starts) is critical for your service.",
+        "You want a simple serverless pay-as-you-go platform."
+      ],
+      "avoidIf": [
+        "You have traditional workloads needing containers.",
+        "You're looking for free solutions with no limits.",
+        "You need strict commercial SLA support."
+      ],
+      "threshold": "Cloudflare fits developers seeking fast, performant global deployment; for traditional workloads, AWS Lambda fits better."
+    },
+    "pros": [
+      "Zero cold start — code executes immediately globally.",
+      "Fair billing (CPU time only, not wall-clock duration).",
+      "Easy deployment with Wrangler CLI.",
+      "Generous free plan to start."
+    ],
+    "cons": [
+      "Ecosystem less rich than AWS Lambda.",
+      "Free plan has significant limitations.",
+      "Less community documentation than AWS."
+    ],
+    "use_cases": [
+      "Deploy serverless API with very low latency.",
+      "Build static site with serverless backend logic.",
+      "Make Discord or Telegram bot globally distributed."
+    ]
+  }
+}

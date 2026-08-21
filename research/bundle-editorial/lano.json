@@ -1,0 +1,92 @@
+{
+  "slug": "lano",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Lano — Global Payroll and Employment Platform (site officiel)", "url": "https://lano.io" }
+  ],
+  "facts": {
+    "what": "Plateforme de gestion des paies mondiales et des emplois consolidant les données de paie multiples fournisseurs en un seul système. Offre services EOR (Employer of Record) pour embauches globales dans 170+ pays.",
+    "what_en": "Global payroll and employment platform consolidating payroll data from multiple providers into one system. Offers EOR (Employer of Record) services for global hiring across 170+ countries.",
+    "pricing_model": "Modèle scalable par géographie. Tarification plus favorable pour footprint géographique plus large.",
+    "free_tier": { "exists": false, "detail": "Pas de tier gratuit. Tarification scalable sans frais cachés (pas de frais de paiement supplémentaires)." },
+    "plans": [
+      { "name": "Scalable Payroll", "price": "Plus le footprint est large, meilleur est le tarif" },
+      { "name": "Global Payments", "price": "Paiements gratuits en devises locales (28 pays), montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Consolidation paie de multiples fournisseurs",
+      "Paiements globaux en 170+ devises (gratuits en 28 pays locaux)",
+      "Services EOR (embauche globale sans entité locale)",
+      "Gestion de contractors et contrats",
+      "Conformité locale assistée",
+      "Rapports temps-réel et management des coûts",
+      "Intégration HRIS (HiBob, Workday, Personio)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous opérez dans 5+ pays et avez besoin de consolidation paie.",
+        "Vous voulez les paiements gratuits en devises locales.",
+        "Vous gérez contractors à l'international."
+      ],
+      "avoidIf": [
+        "Vous n'opérez qu'en un seul pays.",
+        "Vous cherchez une solution HR complète (Lano est paie-first).",
+        "Vous avez un budget très serré."
+      ],
+      "threshold": "Lano s'adresse aux entreprises multi-pays cherchant à consolider la paie et à gérer les paiements mondiaux avec EOR optionnel."
+    },
+    "pros": [
+      "Consolidation paie multi-fournisseurs en un seul système.",
+      "Paiements gratuits en 28 devises locales.",
+      "Services EOR pour embauches globales.",
+      "Conformité locale automatisée.",
+      "Tarification scalable (meilleure au fur et à mesure de la croissance)."
+    ],
+    "cons": [
+      "Pas de tier gratuit.",
+      "Pas d'HR complète (paie uniquement).",
+      "Tarification non transparente publiquement."
+    ],
+    "use_cases": [
+      "Consolider paie de 5+ pays en un seul tableau de bord.",
+      "Gérer paiements globaux avec paiements gratuits locaux.",
+      "Embaucher contractors ou employés globalement via EOR."
+    ],
+    "relevant_for": ["Entreprises multi-pays", "Startups distribuées", "Departements Ops"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You operate in 5+ countries and need payroll consolidation.",
+        "You want free payments in local currencies.",
+        "You manage contractors internationally."
+      ],
+      "avoidIf": [
+        "You operate in only one country.",
+        "You seek a complete HR solution (Lano is payroll-first).",
+        "You have a very tight budget."
+      ],
+      "threshold": "Lano targets multi-country enterprises seeking to consolidate payroll and manage global payments with optional EOR."
+    },
+    "pros": [
+      "Consolidate multi-vendor payroll in one system.",
+      "Free payments in 28 local currencies.",
+      "EOR services for global hiring.",
+      "Automated local compliance.",
+      "Scalable pricing (better as you grow)."
+    ],
+    "cons": [
+      "No free tier.",
+      "No complete HR (payroll only).",
+      "Pricing not transparent publicly."
+    ],
+    "use_cases": [
+      "Consolidate payroll for 5+ countries in one dashboard.",
+      "Manage global payments with free local payouts.",
+      "Hire contractors or employees globally via EOR."
+    ]
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "slug": "sharepoint",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "SharePoint — Collaboration & Document Management (site officiel)",
+      "url": "https://www.microsoft.com/microsoft-365/sharepoint/collaboration"
+    }
+  ],
+  "facts": {
+    "what": "Plateforme collaboration web Microsoft stockant, organisant et partageant informations de manière sécurisée, intégrée Teams, Word, Excel, Copilot pour boost productivité avec AI et gouvernance.",
+    "what_en": "Microsoft web collaboration platform storing, organizing, and securely sharing information, integrated with Teams, Word, Excel, Copilot for productivity boost with AI and governance.",
+    "pricing_model": "Abonnement par utilisateur via Microsoft 365 plans. Business Basic 6,07€/mois, Standard 20,36€/mois, Premium 27,73€/mois (tarifs annuels).",
+    "free_tier": {
+      "exists": false,
+      "detail": "Pas de plan gratuit standalone. SharePoint inclus Microsoft 365 plans payants. Essai gratuit disponible."
+    },
+    "plans": [
+      {
+        "name": "Business Basic",
+        "price": "6,07 €/user/mois (web/mobile apps, 1 TB)"
+      },
+      {
+        "name": "Business Standard + Copilot",
+        "price": "20,36 €/user/mois (desktop/web/mobile, Copilot)"
+      },
+      {
+        "name": "Business Premium + Copilot",
+        "price": "27,73 €/user/mois (advanced device mgmt, security)"
+      }
+    ],
+    "key_features": [
+      "Collaboration temps réel avec Office apps",
+      "Gestion documents centralisée et sécurisée",
+      "Gouvernance contenu et rétention",
+      "Agents IA pour partage connaissance",
+      "Conception pages intelligentes avec Copilot",
+      "Search IA et contenu discovery",
+      "Intégration Teams, OneDrive, Copilot",
+      "Conformité données et audit trails",
+      "Modèles sites et builders drag-drop",
+      "Distribution multi-canaux contenu"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez écosystème Microsoft (Teams, Office).",
+        "Collaboration contenu d'équipe est centrale.",
+        "Gouvernance et sécurité données critiques."
+      ],
+      "avoidIf": [
+        "Vous préférez services non-Microsoft.",
+        "Vous cherchez solution gratuite.",
+        "Vous avez très petite équipe (overkill)."
+      ],
+      "threshold": "SharePoint convient organisations Microsoft 365 cherchant collaboration enterprise ; pour petites équipes, alternatives simples (Google Drive, Notion) conviennent."
+    },
+    "pros": [
+      "Intégration profonde Microsoft 365 Teams/Office.",
+      "Copilot IA pour design/search pages.",
+      "Gouvernance enterprise robuste incluse.",
+      "Support compliance données mature."
+    ],
+    "cons": [
+      "Tarification par utilisateur (peut coûter equipe).",
+      "Pas de plan gratuit.",
+      "Interface complexe pour petites équipes."
+    ],
+    "use_cases": [
+      "Héberger collaboration équipe documents.",
+      "Centraliser gouvernance contenu enterprise.",
+      "Découvrir contenu via Copilot IA."
+    ],
+    "relevant_for": [
+      "Organisations Microsoft",
+      "Équipes enterprise",
+      "Directeurs IT"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You use Microsoft ecosystem (Teams, Office).",
+        "Team content collaboration is central.",
+        "Data governance and security critical."
+      ],
+      "avoidIf": [
+        "You prefer non-Microsoft services.",
+        "You're looking for free solution.",
+        "You have very small team (overkill)."
+      ],
+      "threshold": "SharePoint fits Microsoft 365 organizations seeking enterprise collaboration; for small teams, simpler alternatives (Google Drive, Notion) suit better."
+    },
+    "pros": [
+      "Deep Microsoft 365 Teams/Office integration.",
+      "Copilot AI for page design/search.",
+      "Robust enterprise governance included.",
+      "Mature data compliance support."
+    ],
+    "cons": [
+      "Per-user pricing (can cost for teams).",
+      "No free plan.",
+      "Complex interface for small teams."
+    ],
+    "use_cases": [
+      "Host team document collaboration.",
+      "Centralize enterprise content governance.",
+      "Discover content via Copilot AI."
+    ]
+  }
+}

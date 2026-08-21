@@ -1,0 +1,111 @@
+{
+  "slug": "onelogin",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "OneLogin — Identity & Access Management (site officiel)",
+      "url": "https://www.onelogin.com/product/pricing"
+    }
+  ],
+  "facts": {
+    "what": "Plateforme IAM cloud fournissant SSO, authentification multi-facteur, gestion du cycle de vie des identités et hooks intelligents pour automatisation personnalisée des identités.",
+    "what_en": "Cloud IAM platform providing SSO, multi-factor authentication, identity lifecycle management, and Smart Hooks for custom identity automation.",
+    "pricing_model": "Abonnement par utilisateur/mois. Plans Basic (3$/user/mois), Business (10$/user/mois), Unlimited (8-12$/user/mois). Essai gratuit disponible.",
+    "free_tier": {
+      "exists": false,
+      "detail": "Pas de plan gratuit permanent. Essai gratuit disponible. Plans payants : Basic (3$/user/mois), Business (10$/user/mois), Unlimited (variable)."
+    },
+    "plans": [
+      {
+        "name": "Basic",
+        "price": "3 $/user/mois (SSO, MFA, 5 apps basique)"
+      },
+      {
+        "name": "Business",
+        "price": "10 $/user/mois (Smart Hooks, automation avancée)"
+      },
+      {
+        "name": "Unlimited",
+        "price": "8-12 $/user/mois (features complètes, tarif négocié)"
+      }
+    ],
+    "key_features": [
+      "Single sign-on (SSO) multi-applications",
+      "Authentification multi-facteur (MFA)",
+      "Smart Hooks pour automations personnalisées",
+      "Gestion du cycle de vie identités",
+      "Directory avancé (Advanced Directory)",
+      "Desktop management (Desktop Basic)",
+      "Support 5+ applications même plan basique",
+      "Tableau de bord central multi-sites"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez équipe 5-100+ utilisateurs avec SSO requis.",
+        "Automations personnalisées (Smart Hooks) sont intéressantes.",
+        "Vous préférez solution cloud sans self-hosting."
+      ],
+      "avoidIf": [
+        "Vous êtes startup solo ou 2-3 personnes.",
+        "Vous cherchez solution entièrement gratuite.",
+        "Vous avez besoins très simples, 1-2 apps."
+      ],
+      "threshold": "OneLogin convient PME/équipes cherchant SSO et automations ; pour très petit budget ou besoins simples, alternatives gratuites existent."
+    },
+    "pros": [
+      "Tarification transparente et prévisible par user.",
+      "Smart Hooks pour automations sans code.",
+      "Support 5 apps même plan Basic.",
+      "Essai gratuit disponible."
+    ],
+    "cons": [
+      "Coûts augmentent rapidement avec nombre users.",
+      "Le plan Business est nettement plus cher.",
+      "Moins riche feature-set qu'Okta."
+    ],
+    "use_cases": [
+      "Mettre SSO pour équipe PME/startup croissance.",
+      "Automatiser provisioning users via Smart Hooks.",
+      "Centraliser authentification multi-apps."
+    ],
+    "relevant_for": [
+      "PME en croissance",
+      "Startups",
+      "Administrateurs IT"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You have team of 5-100+ users needing SSO.",
+        "Custom automations (Smart Hooks) are interesting.",
+        "You prefer cloud solution without self-hosting."
+      ],
+      "avoidIf": [
+        "You're solo startup or 2-3 person team.",
+        "You're looking for entirely free solution.",
+        "You have very simple needs, 1-2 apps."
+      ],
+      "threshold": "OneLogin fits SMEs/teams seeking SSO and automations; for tight budgets or simple needs, free alternatives exist."
+    },
+    "pros": [
+      "Transparent, predictable per-user pricing.",
+      "Smart Hooks for no-code automations.",
+      "Supports 5+ apps even on Basic plan.",
+      "Free trial available."
+    ],
+    "cons": [
+      "Costs grow quickly with user count.",
+      "The Business plan is markedly more expensive.",
+      "Less feature-rich than Okta."
+    ],
+    "use_cases": [
+      "Deploy SSO for growing SME/startup team.",
+      "Automate user provisioning via Smart Hooks.",
+      "Centralize multi-app authentication."
+    ]
+  }
+}

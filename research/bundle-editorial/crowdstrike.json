@@ -1,0 +1,130 @@
+{
+  "slug": "crowdstrike",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "CrowdStrike Falcon Platform (site officiel)",
+      "url": "https://crowdstrike.com"
+    }
+  ],
+  "facts": {
+    "what": "Plateforme cybersécurité basée sur l'IA (Falcon Platform) fournissant protection endpoint, détection des menaces, sécurité cloud et gestion des identités avec tarification par appareil.",
+    "what_en": "AI-native cybersecurity platform (Falcon Platform) providing endpoint protection, threat detection, cloud security, and identity management with per-device pricing.",
+    "pricing_model": "Tarification par appareil, facturable mensuellement ou annuellement. Essai gratuit 15 jours disponible.",
+    "free_tier": {
+      "exists": true,
+      "detail": "Essai gratuit 15 jours sans carte de crédit requise."
+    },
+    "plans": [
+      {
+        "name": "Falcon Go (Mensuel)",
+        "price": "7,99 $/appareil/mois (max 100 appareils)"
+      },
+      {
+        "name": "Falcon Pro (Mensuel)",
+        "price": "14,99 $/appareil/mois"
+      },
+      {
+        "name": "Falcon Enterprise (Mensuel)",
+        "price": "19,99 $/appareil/mois"
+      },
+      {
+        "name": "Falcon Go (Annuel)",
+        "price": "59,99 $/appareil/an"
+      },
+      {
+        "name": "Falcon Pro (Annuel)",
+        "price": "99,99 $/appareil/an"
+      },
+      {
+        "name": "Falcon Enterprise (Annuel)",
+        "price": "184,99 $/appareil/an"
+      },
+      {
+        "name": "Falcon Complete Next-Gen MDR",
+        "price": "Tarification personnalisée (contact commercial)"
+      }
+    ],
+    "key_features": [
+      "Antivirus nouvelle génération (next-gen antivirus)",
+      "Détection et réponse aux menaces (EDR)",
+      "Contrôle des appareils",
+      "Protection mobile",
+      "Gestion du firewall",
+      "Intelligence des menaces avec chasse experte",
+      "Protection des identités et hygiène IT",
+      "SIEM capabilities",
+      "Service détection managée 24/7 (MDR)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin de protection endpoint d'entreprise.",
+        "L'IA et la détection des menaces sont des priorités.",
+        "Vous gérez plusieurs appareils et besoin de suivi centralisé."
+      ],
+      "avoidIf": [
+        "Vous avez un budget très limité pour sécurité.",
+        "Vous avez moins de 10 appareils à protéger.",
+        "Vous cherchez une solution gratuite permanente."
+      ],
+      "threshold": "CrowdStrike convient aux entreprises et équipes cherchant une protection endpoint de classe mondiale ; pour budget limité ou peu d'appareils, des alternatives moins chères existent."
+    },
+    "pros": [
+      "Plateforme IA-native pour détection avancée.",
+      "Tarification transparente par appareil.",
+      "Essai gratuit 15 jours sans CB.",
+      "Réduction significative avec facturation annuelle.",
+      "Support 24/7 disponible sur plans supérieurs."
+    ],
+    "cons": [
+      "Coût peut augmenter rapidement avec nombre d'appareils.",
+      "Falcon Go limité à 100 appareils maximum.",
+      "MDR requiert contact commercial (tarif élevé probable)."
+    ],
+    "use_cases": [
+      "Protéger une flotte d'appareils entreprise.",
+      "Mettre en place détection des menaces centralisée.",
+      "Assurer conformité réglementaire avec audit security."
+    ],
+    "relevant_for": [
+      "Directeurs IT",
+      "Responsables sécurité",
+      "Administrateurs réseau"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need enterprise endpoint protection.",
+        "AI-powered threat detection is a priority.",
+        "You manage multiple devices needing centralized tracking."
+      ],
+      "avoidIf": [
+        "You have a very tight security budget.",
+        "You have fewer than 10 devices to protect.",
+        "You're looking for permanent free solution."
+      ],
+      "threshold": "CrowdStrike fits enterprises seeking world-class endpoint protection; for tight budgets or few devices, cheaper alternatives exist."
+    },
+    "pros": [
+      "AI-native platform for advanced detection.",
+      "Transparent per-device pricing.",
+      "Free 15-day trial without credit card.",
+      "Significant discount with annual billing.",
+      "24/7 support available on higher tiers."
+    ],
+    "cons": [
+      "Cost can grow quickly with device count.",
+      "Falcon Go limited to 100 devices max.",
+      "MDR requires sales contact (likely high price)."
+    ],
+    "use_cases": [
+      "Protect enterprise device fleet.",
+      "Deploy centralized threat detection.",
+      "Ensure regulatory compliance with security audit."
+    ]
+  }
+}

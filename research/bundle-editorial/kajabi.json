@@ -1,0 +1,114 @@
+{
+  "slug": "kajabi",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "Kajabi — All-in-One Platform for Experts (site officiel)",
+      "url": "https://kajabi.com"
+    }
+  ],
+  "facts": {
+    "what": "Plateforme tout-en-un pour experts et créateurs combinant courses, coaching, memberships, newsletters, podcasts, marketing et paiements sans frais transaction, avec réduction 50% promotion.",
+    "what_en": "All-in-one platform for experts and creators combining courses, coaching, memberships, newsletters, podcasts, marketing, and payments with no transaction fees, 50% launch promotion.",
+    "pricing_model": "Plans mensuels annualisés. Basic 143$/mois (annu), Growth 199$/mois, Pro 399$/mois. Promo 50% \"getting started\". Essai gratuit 14 jours.",
+    "free_tier": {
+      "exists": true,
+      "detail": "Essai gratuit 14 jours inclus. Pas de plan gratuit permanent. Promo 50% de réduction courante."
+    },
+    "plans": [
+      {
+        "name": "Basic",
+        "price": "143 $/mois annuel (ou 179 $/mois mensuel), 1 website, 5 produits"
+      },
+      {
+        "name": "Growth",
+        "price": "199 $/mois annuel, 25 000 contacts, 50 produits (plus populaire)"
+      },
+      {
+        "name": "Pro",
+        "price": "399 $/mois annuel, unlimited produits, 100 000 contacts, 3 websites"
+      }
+    ],
+    "key_features": [
+      "Cours avec sections, quizzes, certificates",
+      "Coaching 1:1 et group programs",
+      "Communities private ou paid membership",
+      "Memberships avec recurring revenue",
+      "Email marketing avec automations unlimited",
+      "Landing pages et funnels conversion-focused",
+      "Podcasting avec audience integration",
+      "0% transaction fees tous plans",
+      "AI Kajabi pour content generation",
+      "Mobile apps pour students"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes expert créateur proposant courses/coaching.",
+        "Vous voulez plateforme complète tout-en-un.",
+        "L'absence de frais de transaction est déterminante pour vous."
+      ],
+      "avoidIf": [
+        "Vous êtes solo avec très petit budget.",
+        "Vous créez courses très complexes techniques.",
+        "Vous préférez solutions open-source self-hosted."
+      ],
+      "threshold": "Kajabi convient experts établis cherchant plateforme complète tout-en-un ; pour débutants budget serré, alternatives allégées conviennent mieux."
+    },
+    "pros": [
+      "Aucun frais de transaction sur l'ensemble des plans.",
+      "Plans include email unlimited, landing pages, podcasting.",
+      "Promotions fréquentes sur l'abonnement.",
+      "Essai gratuit 14 jours pour tester."
+    ],
+    "cons": [
+      "Abonnement mensuel positionné haut.",
+      "Basic plan limité (5 produits, 1 website).",
+      "Pas plan gratuit permanent."
+    ],
+    "use_cases": [
+      "Lancer plateforme courses + community.",
+      "Vendre coaching 1:1 avec intégration.",
+      "Créer membership recurring revenue."
+    ],
+    "relevant_for": [
+      "Experts créateurs",
+      "Coaches digitaux",
+      "Formateurs",
+      "Entrepreneurs cours"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're expert creator offering courses/coaching.",
+        "You want complete all-in-one platform.",
+        "Zero transaction fees matter (vs Thinkific)."
+      ],
+      "avoidIf": [
+        "You're solo with tiny budget.",
+        "You create very complex technical courses.",
+        "You prefer open-source self-hosted solutions."
+      ],
+      "threshold": "Kajabi fits established experts seeking complete all-in-one platform; for tight-budget beginners, lighter alternatives suit better."
+    },
+    "pros": [
+      "Zero transaction fees on all plans (vs Thinkific).",
+      "Plans include unlimited email, landing pages, podcasting.",
+      "Frequent promotions on the subscription.",
+      "Free 14-day trial to test."
+    ],
+    "cons": [
+      "Monthly subscription positioned at the high end.",
+      "Basic plan limited (5 products, 1 website).",
+      "No permanent free plan."
+    ],
+    "use_cases": [
+      "Launch courses + community platform.",
+      "Sell 1:1 coaching with integration.",
+      "Create recurring-revenue membership."
+    ]
+  }
+}

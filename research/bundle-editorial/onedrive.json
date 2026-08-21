@@ -1,0 +1,117 @@
+{
+  "slug": "onedrive",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "OneDrive — Microsoft Cloud Storage (site officiel)",
+      "url": "https://www.microsoft.com/microsoft-365/onedrive/online-cloud-storage"
+    }
+  ],
+  "facts": {
+    "what": "Service cloud de stockage Microsoft intégrant synchronisation fichiers multi-appareils, Personal Vault sécurisé, ransomware detection, collaboration temps réel Office 365 et backup automatique.",
+    "what_en": "Microsoft cloud storage service integrating multi-device file sync, Personal Vault security, ransomware detection, real-time Office 365 collaboration, and automatic backup.",
+    "pricing_model": "Freemium : 5 GB gratuit. Plans payants : Basic 100 GB (20€/an), Personnel 1 TB (99€/an), Famille 6 TB (129€/an). Microsoft 365 Business plans include storage.",
+    "free_tier": {
+      "exists": true,
+      "detail": "5 GB gratuit + 15 GB mailbox storage. Plans payants : Basic (100 GB), Personnel (1 TB), Famille (6 TB, 6 users)."
+    },
+    "plans": [
+      {
+        "name": "Free",
+        "price": "Gratuit (5 GB storage + 15 GB mailbox)"
+      },
+      {
+        "name": "Basic",
+        "price": "20 €/an (100 GB storage)"
+      },
+      {
+        "name": "Personnel",
+        "price": "99 €/an (1 TB + Office apps + Copilot)"
+      },
+      {
+        "name": "Famille",
+        "price": "129 €/an (6 TB total, up to 6 users)"
+      }
+    ],
+    "key_features": [
+      "Synchronisation multi-appareils (Windows, macOS, iOS, Android)",
+      "Personal Vault (double authentification requise)",
+      "Ransomware detection et file recovery",
+      "Chiffrement end-to-end optionnel",
+      "Collaboration temps réel docs Office",
+      "Copilot integration (plans personnels)",
+      "Scanning documents via mobile app",
+      "Accès offline à fichiers",
+      "Partage sécurisé avec permissions",
+      "Intégration Teams, Outlook, SharePoint"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez écosystème Microsoft (Office, Teams).",
+        "Vous voulez cloud storage intégré simple.",
+        "Collaboration Office temps réel importe."
+      ],
+      "avoidIf": [
+        "Vous préférez service non-Microsoft (Google Drive, Dropbox).",
+        "Vous cherchez solution entièrement gratuite (5 GB limité).",
+        "Vous avez besoin DAM ou media management avancée."
+      ],
+      "threshold": "OneDrive convient utilisateurs Microsoft 365 ; pour non-Microsoft, Google Drive ou Dropbox conviennent mieux."
+    },
+    "pros": [
+      "Plan gratuit 5 GB (+ 15 GB email) utile.",
+      "Intégration profonde Microsoft 365 Office.",
+      "Personal Vault sécurisé inclus.",
+      "Ransomware detection native."
+    ],
+    "cons": [
+      "5 GB gratuit limité pour usage intensif.",
+      "Plans payants plus chers que Dropbox/Google.",
+      "Moins d'intégrations tiers que alternatives."
+    ],
+    "use_cases": [
+      "Stocker et synchroniser documents Office.",
+      "Collaborer temps réel sur feuille Excel/Word.",
+      "Backup automatique photos mobiles."
+    ],
+    "relevant_for": [
+      "Utilisateurs Microsoft 365",
+      "Équipes Office",
+      "Professionnels"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You use Microsoft ecosystem (Office, Teams).",
+        "You want integrated simple cloud storage.",
+        "Real-time Office collaboration matters."
+      ],
+      "avoidIf": [
+        "You prefer non-Microsoft service (Google Drive, Dropbox).",
+        "You're looking for entirely free solution (5 GB limited).",
+        "You need advanced DAM or media management."
+      ],
+      "threshold": "OneDrive fits Microsoft 365 users; for non-Microsoft, Google Drive or Dropbox suit better."
+    },
+    "pros": [
+      "Free plan 5 GB (+ 15 GB email) useful.",
+      "Deep Microsoft 365 Office integration.",
+      "Secure Personal Vault included.",
+      "Native ransomware detection."
+    ],
+    "cons": [
+      "Free 5 GB limited for heavy use.",
+      "Paid plans pricier than Dropbox/Google.",
+      "Fewer third-party integrations than alternatives."
+    ],
+    "use_cases": [
+      "Store and sync Office documents.",
+      "Real-time collaborate on Excel/Word.",
+      "Auto-backup photos from mobile."
+    ]
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "slug": "personio",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Personio — All-in-One HR Platform (site officiel)", "url": "https://personio.com" }
+  ],
+  "facts": {
+    "what": "Plateforme RH tout-en-un pour organisations de 50-2000 employés. Offre base de données centralisée, recrutement, paie intégrée, suivi du temps, gestion des performances et self-service employés.",
+    "what_en": "All-in-one HR platform for organizations with 50-2,000 employees. Features centralized employee database, recruiting, integrated payroll, time tracking, performance management, and employee self-service.",
+    "pricing_model": "Modèle par employé par mois avec tiers modulaires. Plans Essential, Professional, Enterprise avec add-ons pour recrutement et paie.",
+    "free_tier": { "exists": false, "detail": "Pas de tier gratuit. Tarification par employé à partir de 7,60 € (estimé). Consultation pour devis précis." },
+    "plans": [
+      { "name": "Essential", "price": "À partir de 7,60 € par employé/mois (estimé)" },
+      { "name": "Professional", "price": "Montants estimés sur la page officielle" },
+      { "name": "Enterprise", "price": "Tarification custom" }
+    ],
+    "key_features": [
+      "Base de données centralisée (contrats, documents, qualifications)",
+      "Recrutement (postages, candidatures, évaluations)",
+      "Paie intégrée (calculs salaires, taxes, cotisations)",
+      "Suivi du temps et absences",
+      "Gestion performances et évaluations",
+      "Employee self-service portal",
+      "Conformité GDPR et audit logs",
+      "Idéal pour 50-2000 employés"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes une organisation européenne de 50-2000 employés.",
+        "Vous cherchez une solution tout-en-un (HR + paie).",
+        "Vous voulez une seule plateforme plutôt que best-of-breed."
+      ],
+      "avoidIf": [
+        "Vous êtes une startup < 50 employés.",
+        "Vous opérez hors Europe (moins adapté).",
+        "Vous cherchez une solution très low-cost ou gratuite."
+      ],
+      "threshold": "Personio s'adresse aux organisations européennes de 50-2000 employés cherchant une plateforme RH tout-en-un complète."
+    },
+    "pros": [
+      "Plateforme tout-en-un (HR + paie + temps + performance).",
+      "Paie intégrée (automatise calculs).",
+      "Conforme GDPR et données sécurisées.",
+      "Focus fort sur marché européen.",
+      "Recrutement intégré dans la plateforme."
+    ],
+    "cons": [
+      "Pas de tier gratuit.",
+      "Tarifé par employé (peut devenir cher pour grandes équipes).",
+      "Moins fonctionnalités que some concurrents.",
+      "Moins adapté pour outside Europe."
+    ],
+    "use_cases": [
+      "Centraliser HR + paie pour organisation européenne.",
+      "Gérer recrutement et onboarding dans une plateforme.",
+      "Automatiser temps & absences pour équipes multi-bureaux."
+    ],
+    "relevant_for": ["Organisations européennes", "PME/Mid-market", "Tech/Manufacturing/Retail"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You are a European organization with 50-2,000 employees.",
+        "You seek an all-in-one solution (HR + payroll).",
+        "You prefer one platform over best-of-breed."
+      ],
+      "avoidIf": [
+        "You are a startup < 50 employees.",
+        "You operate outside Europe (less suitable).",
+        "You seek a very low-cost or free solution."
+      ],
+      "threshold": "Personio targets European organizations with 50-2,000 employees seeking a complete all-in-one HR platform."
+    },
+    "pros": [
+      "All-in-one platform (HR + payroll + time + performance).",
+      "Integrated payroll (automates calculations).",
+      "GDPR compliant and secure data.",
+      "Strong focus on European market.",
+      "Recruiting integrated in platform."
+    ],
+    "cons": [
+      "No free tier.",
+      "Per-employee pricing (can get expensive for large teams).",
+      "Fewer features than some competitors.",
+      "Less suitable for outside Europe."
+    ],
+    "use_cases": [
+      "Centralize HR + payroll for European organization.",
+      "Manage recruiting and onboarding in one platform.",
+      "Automate time & absence tracking for multi-office teams."
+    ]
+  }
+}

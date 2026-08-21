@@ -1,0 +1,113 @@
+{
+  "slug": "podia",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "Podia — Courses, Community & Events (site officiel)",
+      "url": "https://podia.com"
+    }
+  ],
+  "facts": {
+    "what": "Plateforme pour créateurs hébergeant courses, produits digitaux, coaching et communauté avec paiements intégrés, 15 000+ créateurs ayant généré 900M$ total sur plateforme.",
+    "what_en": "Creator platform hosting courses, digital products, coaching, and community with integrated payments, 15,000+ creators earning combined $900M+ on platform.",
+    "pricing_model": "Plans mensuels avec frais transaction. Mover 49$/mois + 5% fees, Shaker 99$/mois + 0%, Earthquaker 179$/mois + 0%.",
+    "free_tier": {
+      "exists": true,
+      "detail": "Essai gratuit 30 jours sans carte crédit. Pas de plan gratuit permanent."
+    },
+    "plans": [
+      {
+        "name": "Mover",
+        "price": "49 $/mois (42 $/mois annu) + 5% transaction"
+      },
+      {
+        "name": "Shaker",
+        "price": "99 $/mois (84 $/mois annu) + 0% transaction"
+      },
+      {
+        "name": "Earthquaker",
+        "price": "179 $/mois (150 $/mois annu) + 0% transaction"
+      }
+    ],
+    "key_features": [
+      "Cours avec drip-feed de contenu",
+      "Digital products (ebooks, templates, audio)",
+      "Coaching 1:1 et group sessions",
+      "Community spaces segmentés par plan/produit",
+      "Email marketing avec automations",
+      "Website builder customizable",
+      "Events, webinars, workshops hosting",
+      "Paiements one-time, subscriptions, plans",
+      "Affiliate management inclus",
+      "Chat et direct messages"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes créateur vendant courses, produits, coaching.",
+        "Vous voulez tout-en-un intégré (éviter jongler).",
+        "L'absence de frais de transaction sur les plans supérieurs vous convient."
+      ],
+      "avoidIf": [
+        "Vous cherchez solution entièrement gratuite.",
+        "Vous avez besoins entreprise complexes.",
+        "Vous préférez séparation d'outils spécialisés."
+      ],
+      "threshold": "Podia convient créateurs établis hébergeant courses + produits ; pour débutants, essai gratuit teste d'abord."
+    },
+    "pros": [
+      "Essai gratuit 30 jours sans CB.",
+      "Aucun frais de transaction sur les plans supérieurs.",
+      "Plateforme bien intégrée tout-en-un.",
+      "15 000+ créateurs ayant gagné 900M$ total."
+    ],
+    "cons": [
+      "Le plan d'entrée applique des frais de transaction.",
+      "Tarifs mensuels plus chers qu'Articulate/Circle.",
+      "Pas plan gratuit permanent."
+    ],
+    "use_cases": [
+      "Vendre cours online et produits digitaux.",
+      "Héberger coaching 1:1 avec scheduling.",
+      "Créer community autour produits."
+    ],
+    "relevant_for": [
+      "Créateurs de cours",
+      "Coaches",
+      "Entrepreneurs digitaux"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're creator selling courses, products, coaching.",
+        "You want integrated all-in-one (avoid tool juggling).",
+        "Zero transaction fees on Shaker/Earthquaker suit."
+      ],
+      "avoidIf": [
+        "You're looking for entirely free solution.",
+        "You have complex enterprise needs.",
+        "You prefer separation of specialized tools."
+      ],
+      "threshold": "Podia fits established creators hosting courses + products; for beginners, free trial tests first."
+    },
+    "pros": [
+      "Free 30-day trial without credit card.",
+      "Zero transaction fees Shaker/Earthquaker.",
+      "Well-integrated all-in-one platform.",
+      "A large community of creators using the platform."
+    ],
+    "cons": [
+      "The entry plan charges transaction fees.",
+      "Monthly pricing steeper than Articulate/Circle.",
+      "No permanent free plan."
+    ],
+    "use_cases": [
+      "Sell online courses and digital products.",
+      "Host 1:1 coaching with scheduling.",
+      "Create community around products."
+    ]
+  }
+}

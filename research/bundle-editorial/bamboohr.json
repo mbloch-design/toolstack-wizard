@@ -1,0 +1,94 @@
+{
+  "slug": "bamboohr",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "BambooHR — Human Capital Management Software (site officiel)", "url": "https://bamboohr.com" }
+  ],
+  "facts": {
+    "what": "Logiciel de gestion des ressources humaines (HCM) conçu pour les PME et petites équipes. Offre des modules pour la gestion des employés, les congés, la paie simplifiée et les rapports RH.",
+    "what_en": "Human Capital Management (HCM) software designed for SMBs and small teams. Offers employee management, time-off tracking, simplified payroll, and HR reporting.",
+    "pricing_model": "Modèle par employé. Montants sur la page officielle. Essai gratuit 7 jours sans carte.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit 7 jours sans carte de crédit requise." },
+    "plans": [
+      { "name": "Free Trial", "price": "7 jours gratuit (pas de carte)" },
+      { "name": "Paid Plans", "price": "Montants sur la page officielle (par employé)" }
+    ],
+    "key_features": [
+      "Annuaire des employés (profils, contacts, documents)",
+      "Gestion des congés et absences",
+      "Rapports RH personnalisés et en temps-réel",
+      "Intégrations Payroll (Gusto, ADP)",
+      "Performance management et objectifs",
+      "Onboarding et offboarding automatisés",
+      "Conformité légale assistée"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez une petite équipe (5-100 employés).",
+        "Vous cherchez une solution RH simple sans complexité payroll.",
+        "Vous préférez un outil intuitif pour non-HR."
+      ],
+      "avoidIf": [
+        "Vous avez une équipe de plus de 500 employés.",
+        "Vous avez besoin d'une paie avancée intégrée.",
+        "Vous opérez à l'international (BambooHR est US-centric)."
+      ],
+      "threshold": "BambooHR convient aux PME cherchant une solution RH simple et intuitive, sans ambition de gestion de paie complète."
+    },
+    "pros": [
+      "Interface très intuitive pour non-HR.",
+      "Gestion des congés et rapports flexibles.",
+      "Intégration Payroll (Gusto, ADP).",
+      "Essai gratuit 7 jours.",
+      "Excellent pour petites équipes."
+    ],
+    "cons": [
+      "Paie non intégrée (intégration seulement).",
+      "Moins de fonctionnalités que solutions complètes.",
+      "Tarifé par employé (peut devenir cher).",
+      "Focus US (moins adapté international)."
+    ],
+    "use_cases": [
+      "Gérer un annuaire d'employés simple pour startup.",
+      "Automatiser gestion des congés pour équipe.",
+      "Créer des rapports RH personnalisés."
+    ],
+    "relevant_for": ["PME", "Startups", "Équipes 5-100 personnes"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You have a small team (5-100 employees).",
+        "You seek a simple HR solution without complex payroll.",
+        "You prefer an intuitive tool for non-HR professionals."
+      ],
+      "avoidIf": [
+        "You have a team over 500 employees.",
+        "You need advanced integrated payroll.",
+        "You operate internationally (BambooHR is US-centric)."
+      ],
+      "threshold": "BambooHR suits SMBs seeking a simple, intuitive HR solution without complex payroll management."
+    },
+    "pros": [
+      "Very intuitive interface for non-HR users.",
+      "Flexible time-off and reporting.",
+      "Payroll integration (Gusto, ADP).",
+      "7-day free trial.",
+      "Excellent for small teams."
+    ],
+    "cons": [
+      "Payroll not built-in (integration only).",
+      "Fewer features than complete solutions.",
+      "Per-employee pricing (can get expensive).",
+      "US-focused (less suitable internationally)."
+    ],
+    "use_cases": [
+      "Manage a simple employee directory for startup.",
+      "Automate time-off management for team.",
+      "Create custom HR reports."
+    ]
+  }
+}

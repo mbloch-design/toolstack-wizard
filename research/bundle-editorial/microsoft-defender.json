@@ -1,0 +1,115 @@
+{
+  "slug": "microsoft-defender",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "Microsoft Defender — Cybersecurity Suite (site officiel)",
+      "url": "https://microsoft.com/security/business/microsoft-defender"
+    }
+  ],
+  "facts": {
+    "what": "Suite de cybersécurité intégrée protégeant appareils, identités, applications, email, données, workloads et cloud avec détection/réponse étendue (XDR) et sécurité multi-cloud.",
+    "what_en": "Integrated cybersecurity suite protecting devices, identities, applications, email, data, workloads, and cloud with extended detection and response (XDR) and multi-cloud security.",
+    "pricing_model": "Essai gratuit disponible, plans variés par segment (entreprise, PME, consumer). Tarification détaillée sur devis commercial.",
+    "free_tier": {
+      "exists": true,
+      "detail": "Essai gratuit disponible (durée variable par plan). Essais sans contact commercial possible."
+    },
+    "plans": [
+      {
+        "name": "Essai Gratuit",
+        "price": "Gratuit (durée à confirmer)"
+      },
+      {
+        "name": "Plan Entreprise",
+        "price": "Tarification sur devis"
+      },
+      {
+        "name": "Plan PME",
+        "price": "Tarification sur devis"
+      },
+      {
+        "name": "Plan Consumer",
+        "price": "Tarification sur devis"
+      }
+    ],
+    "key_features": [
+      "Protection endpoint (antivirus, EDR, XDR)",
+      "Threat prevention, detection, response",
+      "Cloud security et hybrid infrastructure",
+      "Identity protection et device compliance",
+      "AI-powered security operations",
+      "Extended Detection and Response (XDR)",
+      "Email security et data protection",
+      "Multi-cloud et multi-platform support"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez infrastructure Microsoft (Windows, Office 365).",
+        "La sécurité multi-cloud XDR est requise.",
+        "Vous voulez intégration Microsoft native."
+      ],
+      "avoidIf": [
+        "Vous avez écosystème non-Microsoft (Linux, Mac dominant).",
+        "Vous cherchez solution entièrement gratuite.",
+        "Vous préférez point-solutions légères."
+      ],
+      "threshold": "Microsoft Defender convient organisations Microsoft-centric cherchant XDR intégré ; pour non-Microsoft, solutions like CrowdStrike conviennent mieux."
+    },
+    "pros": [
+      "Intégration native profonde avec écosystème Microsoft.",
+      "XDR unifié pour détection menaces avancée.",
+      "Essai gratuit pour tester avant engagement.",
+      "Support et documentation complète Microsoft."
+    ],
+    "cons": [
+      "Tarification détaillée cachée (contact commercial).",
+      "Optimisé pour écosystème Microsoft.",
+      "Moins adapté pour infra cross-platform hétérogène."
+    ],
+    "use_cases": [
+      "Sécuriser flotte Windows + Office 365 d'entreprise.",
+      "Détecter menaces avancées multi-vecteur (XDR).",
+      "Conformité cloud et hybrid en environnement Microsoft."
+    ],
+    "relevant_for": [
+      "Organisations Microsoft-centric",
+      "Directeurs IT",
+      "RSSI"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You have Microsoft infrastructure (Windows, Office 365).",
+        "Multi-cloud XDR security is required.",
+        "You want native Microsoft integration."
+      ],
+      "avoidIf": [
+        "You have non-Microsoft ecosystem (Linux, Mac dominant).",
+        "You're looking for entirely free solution.",
+        "You prefer lightweight point-solutions."
+      ],
+      "threshold": "Microsoft Defender fits Microsoft-centric organizations seeking integrated XDR; for non-Microsoft, solutions like CrowdStrike suit better."
+    },
+    "pros": [
+      "Deep native integration with Microsoft ecosystem.",
+      "Unified XDR for advanced threat detection.",
+      "Free trial to test before commitment.",
+      "Full Microsoft support and documentation."
+    ],
+    "cons": [
+      "Detailed pricing hidden (sales contact required).",
+      "Optimized for Microsoft ecosystem.",
+      "Less suited for heterogeneous cross-platform infra."
+    ],
+    "use_cases": [
+      "Secure enterprise Windows + Office 365 fleet.",
+      "Detect advanced multi-vector threats (XDR).",
+      "Cloud and hybrid compliance in Microsoft environment."
+    ]
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "slug": "pabbly-connect",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Pabbly Connect — Workflow Automation Software (site officiel)", "url": "https://www.pabbly.com" }
+  ],
+  "facts": {
+    "what": "Plateforme d'automatisation workflow conçue pour être 20% moins chère que Zapier. Offre des plans mensuels et des deals lifetime, avec support des 2-step et multi-step workflows.",
+    "what_en": "Workflow automation platform 20% cheaper than Zapier. Offers monthly plans and lifetime deals, supporting 2-step and multi-step workflows.",
+    "pricing_model": "Modèle hybride : plans mensuels classiques ET offres lifetime. Tier gratuit sans expiration.",
+    "free_tier": { "exists": true, "detail": "Tier gratuit sans expiration (test gratuit permanent). Plans payants accessibles mensuellement ou via deals lifetime." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit sans expiration" },
+      { "name": "Monthly Plans", "price": "À partir de $16/mois" },
+      { "name": "Lifetime Deals", "price": "$249 (Standard), $499 (Pro), $699 (Ultimate) - paiement unique" }
+    ],
+    "key_features": [
+      "Support 2-step et multi-step workflows",
+      "Plans mensuels compétitifs (3000-10000 tasks/mois)",
+      "Offers lifetime deals (paiement unique, pas d'abonnement)",
+      "Workflows illimités sur les plans paid",
+      "Interface intuitive pour non-techniciens",
+      "Tarification 20% moins chère que Zapier"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez une alternative à Zapier moins chère.",
+        "Vous avez besoin d'un outil no-code simple pour workflows basiques.",
+        "Vous préférez un paiement unique (lifetime) plutôt que l'abonnement."
+      ],
+      "avoidIf": [
+        "Vous avez besoin de 3000+ intégrations (Pabbly en a moins).",
+        "Vous cherchez une plateforme open-source ou auto-hébergeable.",
+        "Vous avez besoin d'agents IA ou d'orchestration très avancée."
+      ],
+      "threshold": "Pabbly Connect s'adresse aux PME et aux startups cherchant une alternative Zapier abordable, avec option lifetime pour réduire les coûts récurrents."
+    },
+    "pros": [
+      "Positionné moins cher que Zapier.",
+      "Option lifetime deals (paiement unique).",
+      "Tier gratuit permanent (pas d'expiration).",
+      "Support multi-step workflows sur tous les plans."
+    ],
+    "cons": [
+      "Moins d'intégrations que Zapier/Make (mais toutes les principales).",
+      "Communauté plus petite.",
+      "Moins d'options avancées pour automation complexe."
+    ],
+    "use_cases": [
+      "Remplacer Zapier pour réduire les coûts d'automatisation.",
+      "Créer des workflows simples multi-step à bas coût.",
+      "Automatiser des tâches métier critiques sans abonnement (lifetime)."
+    ],
+    "relevant_for": ["Startups", "PME avec budget limité", "Équipes cherchant lifetime deals"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want a cheaper alternative to Zapier.",
+        "You need a simple no-code tool for basic workflows.",
+        "You prefer one-time payment (lifetime) over subscriptions."
+      ],
+      "avoidIf": [
+        "You need 3,000+ integrations (Pabbly has fewer).",
+        "You seek an open-source or self-hosted platform.",
+        "You need AI agents or very advanced orchestration."
+      ],
+      "threshold": "Pabbly Connect targets SMBs and startups seeking an affordable Zapier alternative, with lifetime deals to reduce recurring costs."
+    },
+    "pros": [
+      "Priced below Zapier.",
+      "Lifetime deal option (one-time payment).",
+      "Permanent free tier (no expiration).",
+      "Multi-step workflow support on all plans."
+    ],
+    "cons": [
+      "Fewer integrations than Zapier/Make (but all key ones).",
+      "Smaller community.",
+      "Fewer advanced options for complex automation."
+    ],
+    "use_cases": [
+      "Replace Zapier to reduce automation costs.",
+      "Create simple multi-step workflows at low cost.",
+      "Automate critical business tasks without subscription (lifetime)."
+    ]
+  }
+}

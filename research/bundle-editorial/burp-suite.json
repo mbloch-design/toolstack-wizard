@@ -1,0 +1,116 @@
+{
+  "slug": "burp-suite",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "Burp Suite — Web Penetration Testing Toolkit (site officiel)",
+      "url": "https://portswigger.net/burp"
+    }
+  ],
+  "facts": {
+    "what": "Plateforme de test de sécurité web réputée pour l'identification et l'exploitation des vulnérabilités, avec éditions gratuite (Community), pro (Professional), et entreprise (DAST, Agentive AI).",
+    "what_en": "Web security testing platform renowned for identifying and exploiting vulnerabilities, with free (Community), pro (Professional), and enterprise (DAST, Agentive AI) editions.",
+    "pricing_model": "Freemium : édition Community gratuite, Professional par abonnement, éditions entreprise sur devis.",
+    "free_tier": {
+      "exists": true,
+      "detail": "Burp Suite Community Edition gratuite avec outils manuels essentiels de test de pénétration."
+    },
+    "plans": [
+      {
+        "name": "Community Edition",
+        "price": "Gratuit"
+      },
+      {
+        "name": "Professional Edition",
+        "price": "Montants sur la page officielle"
+      },
+      {
+        "name": "Burp Suite DAST",
+        "price": "Montants sur la page officielle (entreprise)"
+      },
+      {
+        "name": "Burp AT (Agentive AI)",
+        "price": "Montants sur la page officielle (entreprise)"
+      }
+    ],
+    "key_features": [
+      "Outils de test de pénétration manuels (Community et versions supérieures)",
+      "Scanner de vulnérabilités web automatisé",
+      "Intégration pipeline CI/CD",
+      "Détection des attaques et surface d'attaque",
+      "Support flux DevSecOps",
+      "IA agentive pour pentesting avancé (Burp AT)",
+      "Conformité et monitoring"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous faites du test de pénétration web ou de la sécurité applicative.",
+        "Vous voulez automatiser les scans de vulnérabilités en CI/CD.",
+        "Vous avez besoin d'outils professionnels reconnus dans l'industrie."
+      ],
+      "avoidIf": [
+        "Vous êtes débutant complet en sécurité applicative.",
+        "Vous cherchez une solution gratuite sans limitations fortes.",
+        "Vous avez un budget très serré pour outils de sécurité."
+      ],
+      "threshold": "Burp Suite convient aux professionnels de la sécurité et équipes DevSecOps ; pour l'apprentissage basique, la Community Edition suffit."
+    },
+    "pros": [
+      "Édition Community gratuite et puissante pour débuter.",
+      "Outil n°1 reconnu pour test de pénétration web.",
+      "Scanner automatisé et outils manuels complémentaires.",
+      "Intégrations CI/CD pour automation sécurité.",
+      "IA agentive pour pentesting (Burp AT)."
+    ],
+    "cons": [
+      "Community Edition a des limites (pas de scanner auto complet).",
+      "Professional et éditions entreprise sont payantes.",
+      "Courbe d'apprentissage importante pour maîtriser tous les outils."
+    ],
+    "use_cases": [
+      "Tester manuellement une API web pour vulnérabilités.",
+      "Scanner automatiquement une application avant production.",
+      "Intégrer le scan de sécurité dans pipeline DevOps."
+    ],
+    "relevant_for": [
+      "Testeurs de sécurité",
+      "Équipes AppSec",
+      "DevOps ingénieurs"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You do web penetration testing or application security.",
+        "You want to automate vulnerability scans in CI/CD.",
+        "You need industry-recognized professional security tools."
+      ],
+      "avoidIf": [
+        "You're a complete security beginner.",
+        "You're looking for free tools without strong limitations.",
+        "You have a very tight security tools budget."
+      ],
+      "threshold": "Burp Suite fits security professionals and DevSecOps teams; for basic learning, Community Edition suffices."
+    },
+    "pros": [
+      "Powerful free Community Edition to start.",
+      "Number 1 recognized tool for web penetration testing.",
+      "Automated scanner and complementary manual tools.",
+      "CI/CD integrations for security automation.",
+      "Agentive AI for pentesting (Burp AT)."
+    ],
+    "cons": [
+      "Community Edition has limitations (no full auto scanner).",
+      "Professional and enterprise editions are paid.",
+      "Steep learning curve to master all tools."
+    ],
+    "use_cases": [
+      "Manually test web API for vulnerabilities.",
+      "Automatically scan application before production.",
+      "Integrate security scanning into DevOps pipeline."
+    ]
+  }
+}

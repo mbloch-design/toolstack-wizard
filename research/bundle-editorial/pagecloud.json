@@ -1,0 +1,90 @@
+{
+  "slug": "pagecloud",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Pagecloud — Website & Popup Builder (site officiel)", "url": "https://pagecloud.com" }
+  ],
+  "facts": {
+    "what": "Constructeur de sites web et de popups no-code permettant de créer et lancer des sites web, des popups et des bandeaux pour engager les utilisateurs. Offre éditeur drag-and-drop, e-commerce natif et outils marketing intégrés.",
+    "what_en": "No-code website and popup builder for creating and launching websites, popups, and banners. Features drag-and-drop editor, native e-commerce, and integrated marketing tools.",
+    "pricing_model": "Modèle freemium. Tier gratuit pour concevoir, plans payants pour publier et accéder à des fonctionnalités avancées.",
+    "free_tier": { "exists": true, "detail": "Tier gratuit pour concevoir et créer, mais publication requiert un plan payant. Montants des plans payants sur la page officielle." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit pour concevoir (pas de publication)" },
+      { "name": "Paid Plans", "price": "Montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Éditeur drag-and-drop complet",
+      "E-commerce natif (storefront et inventory management)",
+      "Popup et banner builder pour conversion",
+      "Analytics dashboard (visits, clicks, form submissions)",
+      "AI-powered writing tools pour contenu",
+      "Link-in-bio pages pour intégration social media",
+      "Collaboration d'équipe et domaine custom"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin d'un site web simple à beau rapidement.",
+        "Vous cherchez un outil avec popups et analytics natifs.",
+        "Vous êtes un freelancer ou une petite boutique."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'une architecture très custom ou d'un blog complexe.",
+        "Vous préférez WordPress ou une plateforme plus flexible.",
+        "Vous avez un budget très limité (pas de tier gratuit de publication)."
+      ],
+      "threshold": "Pagecloud s'adresse aux petites entreprises, freelancers et e-commerce cherchant un site web simple avec popups de conversion intégrés."
+    },
+    "pros": [
+      "Éditeur drag-and-drop très intuitif.",
+      "E-commerce natif avec inventory management.",
+      "Popups et bandeaux intégrés pour conversion.",
+      "Analytics complets (visits, clicks, form submissions)."
+    ],
+    "cons": [
+      "Tier gratuit ne permet pas de publier.",
+      "Tarification des plans payants non transparente.",
+      "Moins flexible que WordPress pour sites complexes."
+    ],
+    "use_cases": [
+      "Créer une boutique e-commerce simple et rapide.",
+      "Lancer une landing page avec popup de capture d'email.",
+      "Construire un site vitrine pour freelancer/agence."
+    ],
+    "relevant_for": ["Petites boutiques", "Freelancers", "Agencies"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need a simple, beautiful website fast.",
+        "You want built-in popups and analytics.",
+        "You are a freelancer or small shop."
+      ],
+      "avoidIf": [
+        "You need very custom architecture or complex blog.",
+        "You prefer WordPress or a more flexible platform.",
+        "You have a very tight budget (no free publishing tier)."
+      ],
+      "threshold": "Pagecloud targets small businesses, freelancers, and e-commerce seeking simple websites with built-in conversion popups."
+    },
+    "pros": [
+      "Very intuitive drag-and-drop editor.",
+      "Native e-commerce with inventory management.",
+      "Built-in popups and banners for conversion.",
+      "Complete analytics (visits, clicks, form submissions)."
+    ],
+    "cons": [
+      "Free tier doesn't allow publishing.",
+      "Paid plan pricing not transparent.",
+      "Less flexible than WordPress for complex sites."
+    ],
+    "use_cases": [
+      "Create a simple e-commerce store fast.",
+      "Launch a landing page with email capture popup.",
+      "Build a portfolio site for freelancer/agency."
+    ]
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "slug": "bitwarden",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "Bitwarden — Gestionnaire de mots de passe open-source (site officiel)",
+      "url": "https://bitwarden.com"
+    }
+  ],
+  "facts": {
+    "what": "Gestionnaire de mots de passe open-source et chiffré bout à bout, sécurisant les identifiants pour les individus, équipes et agents IA avec options d'auto-hébergement et partage contrôlé.",
+    "what_en": "Open-source, end-to-end encrypted password manager securing credentials for individuals, teams, and AI agents with self-hosting options and controlled sharing.",
+    "pricing_model": "Freemium pour particuliers, abonnement par utilisateur pour équipes et entreprises.",
+    "free_tier": {
+      "exists": true,
+      "detail": "Plan gratuit illimité pour usage personnel avec fonctionnalités essentielles."
+    },
+    "plans": [
+      {
+        "name": "Gratuit (Personnel)",
+        "price": "Gratuit — illimité"
+      },
+      {
+        "name": "Plan Équipe",
+        "price": "Montants sur la page officielle"
+      },
+      {
+        "name": "Plan Entreprise",
+        "price": "Montants sur la page officielle"
+      }
+    ],
+    "key_features": [
+      "Chiffrement bout à bout open-source",
+      "Auto-hébergement (cloud privé ou infrastructure propre)",
+      "Partage sécurisé par utilisateur avec moins de privilèges",
+      "Gestion du cycle de vie des identifiants",
+      "Secrets Manager pour développeurs",
+      "Authentification SSO pour entreprises",
+      "Support multi-appareils"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez un gestionnaire de mots de passe open-source et de confiance.",
+        "L'auto-hébergement ou le contrôle des données est crucial pour vous.",
+        "Vous avez besoin d'un partage sécurisé avec votre équipe."
+      ],
+      "avoidIf": [
+        "Vous avez besoin du support commercial premium inclus.",
+        "Vous préférez une interface web entièrement gérée.",
+        "Vous cherchez uniquement une solution entièrement gratuite sans limites."
+      ],
+      "threshold": "Bitwarden convient aux équipes et entreprises valorisant l'open-source et le contrôle des données ; pour un usage très basique gratuit, des alternatives plus simples existent."
+    },
+    "pros": [
+      "Entièrement open-source et transparent sur le chiffrement.",
+      "Plan gratuit complet et illimité pour particuliers.",
+      "Options d'auto-hébergement complètes.",
+      "Partage sécurisé avec gestion granulaire des accès.",
+      "Secrets Manager intégré pour devops."
+    ],
+    "cons": [
+      "Configuration de l'auto-hébergement requiert expertise technique.",
+      "Support commercial moins développé que 1Password.",
+      "Interface peut sembler complexe pour débutants."
+    ],
+    "use_cases": [
+      "Remplacer 1Password ou LastPass par une solution open-source.",
+      "Auto-héberger son gestionnaire de secrets en infrastructure privée.",
+      "Partager des identifiants sécurisés au sein d'une équipe DevOps."
+    ],
+    "relevant_for": [
+      "Développeurs",
+      "Équipes IT",
+      "Organisations sensibles aux données"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You want an open-source, trustworthy password manager.",
+        "Self-hosting or data control is crucial for you.",
+        "You need secure credential sharing with your team."
+      ],
+      "avoidIf": [
+        "You need premium commercial support included.",
+        "You prefer a fully managed web interface.",
+        "You're looking only for free, unlimited solutions."
+      ],
+      "threshold": "Bitwarden fits teams and enterprises valuing open-source and data control; for very basic free use, simpler alternatives exist."
+    },
+    "pros": [
+      "Fully open-source and transparent about encryption.",
+      "Complete, unlimited free plan for individuals.",
+      "Full self-hosting options.",
+      "Secure sharing with granular access controls.",
+      "Integrated Secrets Manager for devops."
+    ],
+    "cons": [
+      "Self-hosting setup requires technical expertise.",
+      "Commercial support less developed than 1Password.",
+      "Interface may seem complex for beginners."
+    ],
+    "use_cases": [
+      "Replace 1Password or LastPass with open-source solution.",
+      "Self-host secrets manager on private infrastructure.",
+      "Securely share credentials within DevOps team."
+    ]
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "slug": "linkedin-recruiter",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "LinkedIn Recruiter — Talent Acquisition Platform (site officiel)", "url": "https://business.linkedin.com/talent-solutions/recruiter" }
+  ],
+  "facts": {
+    "what": "Plateforme de recrutement LinkedIn offrant accès au réseau de 1 milliard+ de professionnels. Combine recherche avancée avec AI (Hiring Assistant) et messaging pour sourcing et évaluation de candidats.",
+    "what_en": "LinkedIn recruiting platform with access to 1 billion+ professionals. Combines advanced search with AI (Hiring Assistant) and messaging for candidate sourcing and evaluation.",
+    "pricing_model": "Modèle par siège de recruteur. Tarification basée sur org et nombre de sièges.",
+    "free_tier": { "exists": false, "detail": "Pas de tier gratuit. Consultation vente requise pour devis personnalisé." },
+    "plans": [
+      { "name": "LinkedIn Recruiter", "price": "Tarification custom (par siège recruiter)" },
+      { "name": "Recruiter Lite", "price": "Pour hirers occasionnels (entité distincte)" }
+    ],
+    "key_features": [
+      "Accès 1B+ professionnels LinkedIn",
+      "Recherche avancée (40+ filtres)",
+      "Hiring Assistant (AI pour review et shortlisting)",
+      "100-150 InMails par mois avec AI-assist",
+      "Collaboration d'équipe et project management",
+      "Custom hiring funnel analytics",
+      "Intégrations ATS (top systems)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous recrutez activement (>50 postes/an).",
+        "Vous cherchez un accès direct au réseau LinkedIn.",
+        "Vous voulez AI-assisted screening (Hiring Assistant)."
+      ],
+      "avoidIf": [
+        "Vous recrutez occasionnellement (< 10 postes/an).",
+        "Vous cherchez une solution low-cost.",
+        "Vous avez une ATS stand-alone suffisante."
+      ],
+      "threshold": "LinkedIn Recruiter cible les équipes de recrutement actives cherchant accès direct au réseau LinkedIn avec AI-powered screening et sourcing."
+    },
+    "pros": [
+      "Accès 1B+ professionnels (le plus large réseau).",
+      "AI Hiring Assistant pour review et shortlisting.",
+      "Messaging direct (InMails) avec AI-assist.",
+      "Intégrations ATS natives (top systems)."
+    ],
+    "cons": [
+      "Pas de tier gratuit (consultation vente requise).",
+      "Tarification élevée (par siège recruiter).",
+      "Locked-in à LinkedIn (moins de flexibilité).",
+      "Recruiter Lite moins fonctionnel pour scaling."
+    ],
+    "use_cases": [
+      "Sourcer activement via réseau LinkedIn (1B+ profiles).",
+      "Utiliser AI Hiring Assistant pour screening automatique.",
+      "Gérer pipeline recrutement end-to-end sur LinkedIn."
+    ],
+    "relevant_for": ["Équipes recruiting actives", "HR teams", "Organisations recrutant"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You recruit actively (>50 roles/year).",
+        "You want direct access to LinkedIn network.",
+        "You want AI-assisted screening (Hiring Assistant)."
+      ],
+      "avoidIf": [
+        "You recruit occasionally (<10 roles/year).",
+        "You seek a low-cost solution.",
+        "You have a sufficient standalone ATS."
+      ],
+      "threshold": "LinkedIn Recruiter targets active recruiting teams seeking direct LinkedIn network access with AI-powered screening and sourcing."
+    },
+    "pros": [
+      "Access to 1B+ professionals (largest network).",
+      "AI Hiring Assistant for review and shortlisting.",
+      "Direct messaging (InMails) with AI-assist.",
+      "Native ATS integrations (top systems)."
+    ],
+    "cons": [
+      "No free tier (sales consultation required).",
+      "High pricing (per recruiter seat).",
+      "Locked into LinkedIn (less flexibility).",
+      "Recruiter Lite less powerful for scaling."
+    ],
+    "use_cases": [
+      "Actively source via LinkedIn network (1B+ profiles).",
+      "Use AI Hiring Assistant for automated screening.",
+      "Manage end-to-end recruiting pipeline on LinkedIn."
+    ]
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "slug": "adp-workforce",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "ADP Workforce Now — Payroll and HR Software (site officiel)", "url": "https://www.adp.com" }
+  ],
+  "facts": {
+    "what": "Logiciel de paie et RH d'ADP pour organisations mid-market (50-1000+ employés). Offre une solution intégrée pour gestion payroll, HR et conformité.",
+    "what_en": "ADP payroll and HR software for mid-market organizations (50-1,000+ employees). Offers integrated payroll, HR management, and compliance solution.",
+    "pricing_model": "Modèle d'entreprise avec tarification personnalisée. Basé sur taille organisation et modules sélectionnés.",
+    "free_tier": { "exists": false, "detail": "Pas de tier gratuit. Modèle consultative (contact sales)." },
+    "plans": [
+      { "name": "Enterprise", "price": "Tarification custom (contact 800-225-5237)" }
+    ],
+    "key_features": [
+      "Gestion paie automatisée",
+      "Gestion du temps et des congés",
+      "Talent management (recrutement, onboarding)",
+      "Gestion des avantages sociaux",
+      "Conformité et rapports réglementaires",
+      "Intégrations HR complémentaires",
+      "Support d'experts ADP"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes une mid-market organization (50-1000+).",
+        "Vous cherchez une solution paie + HR intégrée de confiance.",
+        "Vous avez déjà une relation avec ADP."
+      ],
+      "avoidIf": [
+        "Vous êtes une startup (trop cher).",
+        "Vous cherchez une solution simple pour petite équipe.",
+        "Vous préférez des solutions plus modernes/IA."
+      ],
+      "threshold": "ADP Workforce convient aux mid-market organizations cherchant une solution paie + HR intégrée et fiable."
+    },
+    "pros": [
+      "Solution paie + HR de confiance (leader marché).",
+      "Large gamme de modules complémentaires.",
+      "Support d'experts ADP dedié.",
+      "Conformité réglementaire robuste."
+    ],
+    "cons": [
+      "Pas de tier gratuit.",
+      "Tarification potentiellement élevée.",
+      "Interface/UX moins moderne que concurrents.",
+      "Vente consultative (no self-serve)."
+    ],
+    "use_cases": [
+      "Gérer paie et HR pour mid-market (50-1000+).",
+      "Assurer conformité réglementaire complexe.",
+      "Centraliser data HR dans une plateforme établie."
+    ],
+    "relevant_for": ["Mid-market organizations", "Grandes équipes", "Conformité stricte"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You are a mid-market organization (50-1,000+).",
+        "You seek an integrated, trusted payroll + HR solution.",
+        "You already have an ADP relationship."
+      ],
+      "avoidIf": [
+        "You are a startup (too expensive).",
+        "You seek a simple solution for small team.",
+        "You prefer more modern/AI-first solutions."
+      ],
+      "threshold": "ADP Workforce suits mid-market organizations seeking an integrated, trusted payroll + HR solution."
+    },
+    "pros": [
+      "Trusted payroll + HR solution (market leader).",
+      "Broad range of add-on modules.",
+      "Dedicated ADP expert support.",
+      "Robust regulatory compliance."
+    ],
+    "cons": [
+      "No free tier.",
+      "Potentially high pricing.",
+      "Less modern interface/UX than competitors.",
+      "Consultative sales (no self-serve)."
+    ],
+    "use_cases": [
+      "Manage payroll and HR for mid-market (50-1,000+).",
+      "Ensure complex regulatory compliance.",
+      "Centralize HR data in an established platform."
+    ]
+  }
+}

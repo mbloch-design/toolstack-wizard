@@ -1,0 +1,116 @@
+{
+  "slug": "zotero",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "Zotero — Reference Management (site officiel)",
+      "url": "https://www.zotero.org/"
+    }
+  ],
+  "facts": {
+    "what": "Logiciel gratuit et open-source de gestion de références (citations, bibliographies) supportant 9 000+ styles, développé par nonprofit sans intérêt financier sur vos données, avec stockage cloud optionnel payant.",
+    "what_en": "Free, open-source reference management software (citations, bibliographies) supporting 9,000+ styles, developed by nonprofit with no financial interest in your data, with optional paid cloud storage.",
+    "pricing_model": "Entièrement gratuit (logiciel). Cloud storage optionnel payant : 2 GB (20$/an) ou Expanded Academic (120$/an).",
+    "free_tier": {
+      "exists": true,
+      "detail": "Logiciel complètement gratuit à jamais. Cloud storage gratuit par défaut limité, puis 20$/an (2 GB) ou 120$/an (unlimited)."
+    },
+    "plans": [
+      {
+        "name": "Zotero (Desktop + Cloud Free)",
+        "price": "Gratuit à jamais"
+      },
+      {
+        "name": "Cloud Storage 2 GB",
+        "price": "20 $/an"
+      },
+      {
+        "name": "Cloud Storage Expanded Academic",
+        "price": "120 $/an (unlimited)"
+      }
+    ],
+    "key_features": [
+      "Gestion références avec 9 000+ citation styles",
+      "Support pour livres, articles, sites web, etc",
+      "Collections et sous-collections organisées",
+      "Collaboration via Zotero Groups",
+      "Intégrations Word, LibreOffice, Google Docs",
+      "Annotations et note-taking PDF",
+      "Export citations en 100+ formats",
+      "Synchronisation cloud optionnelle",
+      "Open-source et transparent (nonprofit)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous écrivez thèses, articles, publications.",
+        "Vous cherchez gestion références gratuite fiable.",
+        "Open-source et nonprofit importent.",
+        "Support 9 000+ styles bibliographiques critiques."
+      ],
+      "avoidIf": [
+        "Vous avez besoin outils collaboratifs avancés.",
+        "Vous cherchez alternative très simple (Notion).",
+        "Vous préférez propriétaire commercial."
+      ],
+      "threshold": "Zotero est la reference gratuite pour chercheurs ; tous les étudiants/chercheurs devraient l'utiliser plutôt que EndNote propriétaire."
+    },
+    "pros": [
+      "Entièrement gratuit (9 000+ styles inclus).",
+      "Open-source transparent (nonprofit).",
+      "Support collaboratif via Groups.",
+      "Intégrations Word/LibreOffice/Google Docs."
+    ],
+    "cons": [
+      "Cloud storage optionnel payant.",
+      "Interface peut sembler complexe au départ.",
+      "Support principalement communautaire."
+    ],
+    "use_cases": [
+      "Gérer bibliographies thèse/article scientifique.",
+      "Collaborer avec collègues sur références.",
+      "Exporter citations auto-formatées.",
+      "Annoter et résumérer PDFs research."
+    ],
+    "relevant_for": [
+      "Étudiants chercheurs",
+      "Universitaires",
+      "Auteurs académiques"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You write theses, articles, publications.",
+        "You want reliable free reference management.",
+        "Open-source and nonprofit matter.",
+        "Support for 9,000+ bibliography styles critical."
+      ],
+      "avoidIf": [
+        "You need advanced collaborative tools.",
+        "You want very simple alternative (Notion).",
+        "You prefer commercial proprietary."
+      ],
+      "threshold": "Zotero is the free reference standard for researchers; all students/scholars should use it over proprietary EndNote."
+    },
+    "pros": [
+      "Entirely free (9,000+ styles included).",
+      "Open-source transparent (nonprofit).",
+      "Collaborative support via Groups.",
+      "Word/LibreOffice/Google Docs integrations."
+    ],
+    "cons": [
+      "Cloud storage optional paid.",
+      "Interface can seem complex at start.",
+      "Support mainly community-driven."
+    ],
+    "use_cases": [
+      "Manage thesis/article bibliography.",
+      "Collaborate with colleagues on references.",
+      "Auto-format and export citations.",
+      "Annotate and summarize research PDFs."
+    ]
+  }
+}

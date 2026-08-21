@@ -1,0 +1,91 @@
+{
+  "slug": "simvoly",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Simvoly — White-Label SaaS Platform (site officiel)", "url": "https://simvoly.com" }
+  ],
+  "facts": {
+    "what": "Plateforme blanche-label permettant aux agences de lancer leur propre activité SaaS. Offre un constructeur de sites, funnel builder, e-commerce, email marketing, CRM, video hosting et autres outils pour revendre à des clients.",
+    "what_en": "White-label SaaS platform enabling agencies to launch their own branded SaaS business. Offers website builder, funnel builder, e-commerce, email marketing, CRM, video hosting, and resale capabilities.",
+    "pricing_model": "Modèle revendeur. Les agences facturent leurs clients (frais récurrents), Simvoly gère l'infra. Essai gratuit sans carte de crédit.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit sans carte de crédit. Tarification tarifée à base de features et nombre de clients. Montants sur la page officielle." },
+    "plans": [
+      { "name": "Free Trial", "price": "Essai gratuit, pas de carte requise" },
+      { "name": "Paid Plans", "price": "Montants sur https://simvoly.com/pricing" }
+    ],
+    "key_features": [
+      "Website Builder avec éditeur drag-and-drop rapide",
+      "Funnel Builder avec A/B testing, upsells, downsells",
+      "E-Commerce (ventes produits et subscriptions récurrentes)",
+      "Email Marketing avec automation SMS et WhatsApp",
+      "Community & Courses (forums, LMS)",
+      "CRM intégré avec segmentation",
+      "Video Hosting avec lecteurs et analytics custom",
+      "Quizzes & Surveys pour lead generation"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes une agence cherchant à lancer une plateforme SaaS blanche-label.",
+        "Vous voulez offrir une suite complète (sites, funnels, email, CRM) à vos clients.",
+        "Vous cherchez un modèle revendeur où vous facturez les clients."
+      ],
+      "avoidIf": [
+        "Vous êtes une petite entreprise cherchant un constructeur de site simple.",
+        "Vous avez des besoins très spécifiques de customisation.",
+        "Vous préférez une plateforme open-source."
+      ],
+      "threshold": "Simvoly s'adresse aux agences cherchant à émettre leur propre plateforme SaaS blanche-label avec une suite complète de business tools."
+    },
+    "pros": [
+      "Suite complète d'outils SaaS blanche-label.",
+      "Modèle revendeur (agences facturent clients).",
+      "Essai gratuit sans carte de crédit.",
+      "Infrastructure managée par Simvoly (zéro ops)."
+    ],
+    "cons": [
+      "Orientée agences/revendeurs (not direct users).",
+      "Tarification des plans payants non transparente.",
+      "Moins flexible que solutions open-source."
+    ],
+    "use_cases": [
+      "Lancer une plateforme de création de sites blanche-label pour agences.",
+      "Offrir une suite CRM + email + funnel à vos clients.",
+      "Créer une LMS blanche-label pour formation ou courses."
+    ],
+    "relevant_for": ["Agences web", "Revendeurs SaaS", "Consultants"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You are an agency launching a white-label SaaS platform.",
+        "You want to offer a complete suite (sites, funnels, email, CRM) to clients.",
+        "You seek a reseller model where you bill clients."
+      ],
+      "avoidIf": [
+        "You are a small business seeking a simple website builder.",
+        "You have very specific customization needs.",
+        "You prefer open-source solutions."
+      ],
+      "threshold": "Simvoly targets agencies launching their own white-label SaaS platform with a complete suite of business tools."
+    },
+    "pros": [
+      "Complete white-label SaaS tool suite.",
+      "Reseller model (agencies bill clients).",
+      "Free trial without credit card.",
+      "Infrastructure managed by Simvoly (zero ops)."
+    ],
+    "cons": [
+      "Geared toward agencies/resellers (not direct end-users).",
+      "Paid plan pricing not transparent.",
+      "Less flexible than open-source solutions."
+    ],
+    "use_cases": [
+      "Launch a white-label website builder platform for agencies.",
+      "Offer a complete CRM + email + funnel suite to clients.",
+      "Create a white-label LMS for training or courses."
+    ]
+  }
+}

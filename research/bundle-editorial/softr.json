@@ -1,0 +1,95 @@
+{
+  "slug": "softr",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Softr — No-Code App Builder (site officiel)", "url": "https://softr.io" }
+  ],
+  "facts": {
+    "what": "Plateforme no-code pour construire des apps métier personnalisées : portails internes, dashboards, outils opérationnels. Offre un AI Co-Builder, base de données native et automation de workflows.",
+    "what_en": "No-code platform for building custom business apps: internal portals, dashboards, operational software. Features AI Co-Builder, native database, and workflow automation.",
+    "pricing_model": "Modèle par utilisateurs d'apps (pas par siège). Tier gratuit complet avec toutes les fonctionnalités. Plans payants pour apps illimitées et user groups.",
+    "free_tier": { "exists": true, "detail": "Tier gratuit complet : apps illimitées, databases illimitées, workflows illimités, pas de carte de crédit requise." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit avec toutes les features" },
+      { "name": "Basic", "price": "19 € par mois (facturation annuelle)" },
+      { "name": "Pro", "price": "99 € par mois" },
+      { "name": "Business", "price": "329 € par mois" },
+      { "name": "Enterprise", "price": "Tarification custom (SAML SSO, compliance avancée)" }
+    ],
+    "key_features": [
+      "AI Co-Builder : décrivez votre app, l'IA génère la structure",
+      "Base de données native (pas de dépendance externe)",
+      "Automation de workflows intégrée",
+      "Formulaires et collecte de données",
+      "Apps mobiles (convertir web app en mobile)",
+      "Permissions granulaires par user group",
+      "Utilisé par Netflix, Google, Stripe, UPS"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin d'une app interne rapidement sans dev.",
+        "Vous cherchez un tier gratuit complet avec toutes les features.",
+        "Vous gérez une équipe et avez besoin de permissions granulaires."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'une architecture externe très complexe.",
+        "Vous n'avez qu'une app simple (utiliser Notion/Airtable).",
+        "Vous avez des contraintes réglementaires très strictes (pas de data EU)."
+      ],
+      "threshold": "Softr s'adresse aux équipes métier et aux opérations cherchant à construire des apps internes rapidement sans développeurs, avec un tier gratuit complet."
+    },
+    "pros": [
+      "Tier gratuit avec TOUTES les features (apps, databases, workflows illimitées).",
+      "AI Co-Builder : construction conversationnelle d'apps.",
+      "Base de données native (pas de dépendance).",
+      "Permissions granulaires par user group.",
+      "Pricing par utilisateurs (pas par siège)."
+    ],
+    "cons": [
+      "Moins flexible que low-code pour besoins très custom.",
+      "Écosystème de plugins/extensions plus petit.",
+      "Tarification enterprise non transparent."
+    ],
+    "use_cases": [
+      "Construire une app CRM interne en quelques jours.",
+      "Créer un dashboard opérationnel pour équipe support.",
+      "Développer un portail client self-service."
+    ],
+    "relevant_for": ["Équipes opérations", "Support teams", "Product managers"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need an internal app fast without developers.",
+        "You want a free tier with complete features.",
+        "You manage a team and need granular permissions."
+      ],
+      "avoidIf": [
+        "You need very complex external architecture.",
+        "You only have a simple app (use Notion/Airtable).",
+        "You have strict regulatory constraints (no EU data)."
+      ],
+      "threshold": "Softr targets business teams and operations building internal apps quickly without developers, with a full-featured free tier."
+    },
+    "pros": [
+      "Free tier with ALL features (unlimited apps, databases, workflows).",
+      "AI Co-Builder: conversational app building.",
+      "Native database (no external dependency).",
+      "Granular permissions by user group.",
+      "Per-user pricing (not per-seat)."
+    ],
+    "cons": [
+      "Less flexible than low-code for very custom needs.",
+      "Smaller plugin/extension ecosystem.",
+      "Enterprise pricing not transparent."
+    ],
+    "use_cases": [
+      "Build an internal CRM app in days.",
+      "Create an operational dashboard for support team.",
+      "Develop a customer self-service portal."
+    ]
+  }
+}

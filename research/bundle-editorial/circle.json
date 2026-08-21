@@ -1,0 +1,112 @@
+{
+  "slug": "circle",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    {
+      "label": "Circle — Community, Courses & Events Platform (site officiel)",
+      "url": "https://circle.so"
+    }
+  ],
+  "facts": {
+    "what": "Plateforme tout-en-un pour créateurs combinant communauté, cours, événements, email marketing et paiements sous marque propre, utilisée par 17 000+ créateurs (Pat Flynn, Tim Ferriss, Ali Abdaal).",
+    "what_en": "All-in-one creator platform combining community, courses, events, email marketing, and payments under own brand, used by 17,000+ creators (Pat Flynn, Tim Ferriss, Ali Abdaal).",
+    "pricing_model": "Plans mensuels avec frais de transaction. Professional 89$/mois (2% frais), Business 199$/mois (1% frais), Plus custom (0.5% frais).",
+    "free_tier": {
+      "exists": true,
+      "detail": "Essai gratuit 14 jours sans carte crédit requise. Pas de plan gratuit permanent."
+    },
+    "plans": [
+      {
+        "name": "Professional",
+        "price": "89 $/mois + 2% transaction fee"
+      },
+      {
+        "name": "Business",
+        "price": "199 $/mois + 1% transaction fee"
+      },
+      {
+        "name": "Circle Plus",
+        "price": "Tarification personnalisée + 0.5% transaction fee"
+      }
+    ],
+    "key_features": [
+      "Communauté branded avec discussions, messaging, live events",
+      "Hébergement de cours (drip-feed, quizzes, certificates)",
+      "Événements live, webinaires, streaming",
+      "Email marketing avec automations et segmentation",
+      "Applications mobiles branded (iOS/Android)",
+      "Paiements intégrés (one-time, subscriptions, memberships)",
+      "AI agents et workflows automatisés",
+      "Affiliate management inclus",
+      "API et options headless (developers)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes créateur cherchant plateforme tout-en-un branded.",
+        "Vous avez communauté + cours + événements besoin.",
+        "Vous voulez éviter jongler multiples outils."
+      ],
+      "avoidIf": [
+        "Vous êtes solo préférant outils simples légers.",
+        "Vous cherchez solution entièrement gratuite.",
+        "Vous avez exigences de customization très avancées."
+      ],
+      "threshold": "Circle convient créateurs établis cherchant écosystème branded complet ; pour débutants solo, solutions allégées conviennent mieux."
+    },
+    "pros": [
+      "Plateforme tout-en-un bien intégrée.",
+      "Applications mobiles branded incluses.",
+      "Essai gratuit 14 jours sans CB.",
+      "Utilisée par créateurs reconnus (Pat Flynn, etc.)."
+    ],
+    "cons": [
+      "Tarifs mensuels + frais transaction peuvent coûter.",
+      "Plus plan requiert devis (pricing opaque).",
+      "Pas plan gratuit, trial 14 jours seulement."
+    ],
+    "use_cases": [
+      "Lancer communauté branded autour de cours.",
+      "Héberger webinaires + enregistrements.",
+      "Automatiser email marketing pour members."
+    ],
+    "relevant_for": [
+      "Créateurs établis",
+      "Coaches digitaux",
+      "Éducateurs en ligne"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're creator seeking all-in-one branded platform.",
+        "You have community + courses + events needs.",
+        "You want to avoid juggling multiple tools."
+      ],
+      "avoidIf": [
+        "You're solo preferring simple, lightweight tools.",
+        "You're looking for entirely free solution.",
+        "You have very advanced customization requirements."
+      ],
+      "threshold": "Circle fits established creators seeking complete branded ecosystem; for solo beginners, lighter solutions suit better."
+    },
+    "pros": [
+      "Well-integrated all-in-one platform.",
+      "Branded mobile apps included.",
+      "Free 14-day trial without credit card.",
+      "Used by recognized creators (Pat Flynn, etc.)."
+    ],
+    "cons": [
+      "Monthly pricing + transaction fees can add up.",
+      "Plus plan requires quote (opaque pricing).",
+      "No free plan, 14-day trial only."
+    ],
+    "use_cases": [
+      "Launch branded community around courses.",
+      "Host webinars + recordings.",
+      "Automate email marketing for members."
+    ]
+  }
+}

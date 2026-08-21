@@ -1,0 +1,93 @@
+{
+  "slug": "greenhouse",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Greenhouse — Applicant Tracking and Hiring Platform (site officiel)", "url": "https://greenhouse.com" }
+  ],
+  "facts": {
+    "what": "Plateforme d'ATS (Applicant Tracking System) et de recrutement permettant de rationaliser les processus de recrutement. Offre recherche de candidats, screening, entretien et outils de prise de décision.",
+    "what_en": "Applicant Tracking System (ATS) and hiring platform to streamline recruitment processes. Features candidate sourcing, screening, interviewing, and decision-making tools.",
+    "pricing_model": "Modèle d'abonnement pour organisations. Tarification basée sur la taille et le nombre de postes.",
+    "free_tier": { "exists": false, "detail": "Pas de tier gratuit. Modèle consultatif (demo required)." },
+    "plans": [
+      { "name": "Early-Stage", "price": "Pour entreprises débutantes" },
+      { "name": "Scaling", "price": "Pour entreprises en croissance" },
+      { "name": "Enterprise", "price": "Pour grands organismes" }
+    ],
+    "key_features": [
+      "Plateforme ATS end-to-end (postage, sourcing, screening, décision)",
+      "Voice AI : entretiens basés sur voix remplaçant CV",
+      "Real Talent : vérification de fraude et identité",
+      "MyGreenhouse : portail candidats avec alertes job",
+      "Matching et sourcing alimentés par IA",
+      "Évaluation et scoring d'entretiens",
+      "100+ intégrations pre-built"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez une équipe de recrutement structurée.",
+        "Vous cherchez une solution ATS mature et éprouvée.",
+        "Vous recrutez en continu (>50 postes/an)."
+      ],
+      "avoidIf": [
+        "Vous êtes en early-stage avec budget minimal.",
+        "Vous cherchez une solution simple pour occasional hirings.",
+        "Vous n'avez pas de team recruiting dédiquée."
+      ],
+      "threshold": "Greenhouse s'adresse aux organisations avec équipes de recrutement structurées cherchant une plateforme ATS mature et complète."
+    },
+    "pros": [
+      "Plateforme ATS la plus mature du marché.",
+      "Voice AI pour entretiens (améliore inclusivité).",
+      "Real Talent pour vérification fraude.",
+      "Matching et sourcing par IA.",
+      "100+ intégrations pré-construites."
+    ],
+    "cons": [
+      "Pas de tier gratuit (consultation vente requise).",
+      "Tarifation potentiellement élevée pour petites organisations.",
+      "Complexité implémentation (nécessite consulting)."
+    ],
+    "use_cases": [
+      "Centraliser le recrutement pour grande organisation.",
+      "Utiliser Voice AI pour sourcing et screening à l'échelle.",
+      "Automatiser workflows de recrutement complexes."
+    ],
+    "relevant_for": ["Organisations", "HR teams", "Entreprises recrutant actives"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You have a structured recruiting team.",
+        "You seek a mature, proven ATS solution.",
+        "You recruit continuously (>50 roles/year)."
+      ],
+      "avoidIf": [
+        "You are early-stage with minimal budget.",
+        "You seek a simple solution for occasional hiring.",
+        "You don't have a dedicated recruiting team."
+      ],
+      "threshold": "Greenhouse targets organizations with structured recruiting teams seeking a mature, comprehensive ATS platform."
+    },
+    "pros": [
+      "Most mature ATS platform on market.",
+      "Voice AI for interviews (improves inclusivity).",
+      "Real Talent for fraud verification.",
+      "AI matching and sourcing.",
+      "100+ pre-built integrations."
+    ],
+    "cons": [
+      "No free tier (sales consultation required).",
+      "Potential high pricing for small organizations.",
+      "Implementation complexity (requires consulting)."
+    ],
+    "use_cases": [
+      "Centralize recruiting for large organization.",
+      "Use Voice AI for sourcing/screening at scale.",
+      "Automate complex recruiting workflows."
+    ]
+  }
+}
