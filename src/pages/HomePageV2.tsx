@@ -19,6 +19,7 @@ import HOME_POSTS from "@/data/home-posts-index.json";
 
 const PAGE_SIZE = 8;      // 2 rows × 4 cols — featured carousel
 const NEW_PAGE_SIZE = 12; // 3 rows × 4 cols — new tools carousel
+const NEW_MAX_PAGES = 2;  // plafond du carrousel Nouveautés (24 fiches max)
 const STACK_PAGE_SIZE = 5; // 1 row × 5 cols — curated collections carousel
 const STACK_MAX_PAGES = 4; // cap carousel depth to 4 screens
 const POST_PAGE_SIZE = 3; // 1 row × 3 cols — guides carousel
@@ -397,10 +398,19 @@ export default function HomePageV2() {
   const prevPage = useCallback(() => setFeaturedPage((p) => Math.max(0, p - 1)), []);
   const nextPage = useCallback(() => setFeaturedPage((p) => Math.min(totalPages - 1, p + 1)), [totalPages]);
 
-  /* ── New tools (static curated list, no date column in DB) ── */
+  /* ── Nouveautés : les plus récemment publiés, d'après published_at ──
+     Alimenté par la base, plus par une liste figée : la section se met à jour
+     seule à chaque mise en ligne. Les fiches sans date (bundle statique servi
+     avant hydratation) passent en fin de tri au lieu de remonter au hasard. */
   const latestTools = useMemo(() => {
-    const bySlug = new Map(tools.map((t) => [t.slug, t]));
-    return NEW_SLUGS.flatMap((slug) => { const t = bySlug.get(slug); return t ? [t] : []; });
+    const dated = tools.filter((t) => t.publishedAt);
+    const source = dated.length > 0 ? dated : NEW_SLUGS.flatMap((slug) => {
+      const t = tools.find((x) => x.slug === slug);
+      return t ? [t] : [];
+    });
+    return [...source]
+      .sort((a, b) => String(b.publishedAt ?? "").localeCompare(String(a.publishedAt ?? "")))
+      .slice(0, NEW_PAGE_SIZE * NEW_MAX_PAGES);
   }, [tools]);
 
   const newTotalPages = Math.ceil(latestTools.length / NEW_PAGE_SIZE);

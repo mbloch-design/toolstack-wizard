@@ -1,6 +1,21 @@
 {
   "fr": [
     {
+      "slug": "andrew-huberman-kit-systeme-audience",
+      "title": "Comment Huberman Lab a construit une audience de plus d’un million d’abonnés avec Kit",
+      "date": "2026-08-18",
+      "tags": [
+        "Kit",
+        "ConvertKit",
+        "newsletter",
+        "email marketing",
+        "créateurs",
+        "audience",
+        "automatisation"
+      ],
+      "thumbnail": "/editorial/guides/kit-huberman-systeme-audience/hero.jpg"
+    },
+    {
       "slug": "atelier-hors-champ-scenographie-espace-raconte",
       "title": "Dessiner ce que le visiteur ressent avant ce qu’il regarde",
       "date": "2026-08-17",
@@ -170,21 +185,6 @@
         "fathom",
         "proton mail",
         "minimaliste",
-        "2026"
-      ],
-      "thumbnail": null
-    },
-    {
-      "slug": "zapier-vs-make-vs-n8n-2026-automatiser-stack",
-      "title": "Zapier vs Make vs n8n — lequel choisir pour automatiser ta stack en 2026 ?",
-      "date": "2026-04-22",
-      "tags": [
-        "zapier",
-        "make",
-        "n8n",
-        "automatisation",
-        "comparatif",
-        "freelance",
         "2026"
       ],
       "thumbnail": null

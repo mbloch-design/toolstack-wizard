@@ -139,7 +139,12 @@ export type ToolSummary = Pick<
   | "freeAlternative"
   | "substitutable"
   | "betterAlternative"
->;
+> & {
+  // Date de publication, utilisée pour trier la section Nouveautés de l'accueil.
+  // Absente des fiches statiques du bundle : optionnelle, les fiches sans date
+  // sont reléguées en fin de tri plutôt que remontées par hasard.
+  publishedAt?: string | null;
+};
 
 // Fiches doublons consolidées (301 → canonique dans vercel.json). On les retire
 // des listings/cartes pour ne pas afficher plusieurs fiches du même produit.
@@ -385,7 +390,7 @@ export function useToolSummaries() {
     (async () => {
       const { data, error } = await supabase
         .from("tools")
-        .select("id, slug, name, category, short_description, short_description_en, pricing, default_monthly_price, affiliate_link, website_url, og_image_url, logo, covers, pros, pros_en, tool_type, host_app, bundle_parent, substitution_cluster_v2, functional_needs, verticals, prescription_quality, relevant_for, free_alternative, substitutable, better_alternative")
+        .select("id, slug, name, category, short_description, short_description_en, pricing, default_monthly_price, affiliate_link, website_url, og_image_url, logo, covers, pros, pros_en, tool_type, host_app, bundle_parent, substitution_cluster_v2, functional_needs, verticals, prescription_quality, relevant_for, free_alternative, substitutable, better_alternative, published_at")
         .limit(5000);
 
       if (!error && data && data.length > 0) {
@@ -416,6 +421,7 @@ export function useToolSummaries() {
           freeAlternative: t.free_alternative || null,
           substitutable: t.substitutable ?? true,
           betterAlternative: t.better_alternative || null,
+          publishedAt: t.published_at || null,
         }));
         const merged = mergeById(staticToolSummaries, remoteTools)
           .filter((t) => !DEPRECATED_TOOL_SLUGS.has(t.slug));

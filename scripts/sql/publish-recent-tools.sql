@@ -9,3 +9,13 @@ WHERE slug IN ('essaytone','rezi','hejour','uncovr','cudekai','grokipedia','craf
   AND verdict IS NOT NULL
   AND short_description IS NOT NULL
   AND short_description <> '';
+
+-- Rattrapage : la publication initiale a laissé published_at à NULL sur ces
+-- fiches. Sans cette date elles sont invisibles à tout tri par récence, donc
+-- absentes de la section Nouveautés de la page d'accueil.
+UPDATE public.tools
+SET published_at = COALESCE(updated_at, now())
+WHERE slug IN ('essaytone','rezi','hejour','uncovr','cudekai','grokipedia','craft',
+               'octarine','wispr-flow','quillbot','bear','lunatask','outrank','notebook-lm')
+  AND content_status = 'published'
+  AND published_at IS NULL;
