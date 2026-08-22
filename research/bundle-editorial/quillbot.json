@@ -1,0 +1,95 @@
+{
+  "slug": "quillbot",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "QuillBot — Paraphrase & Writing Tool (site officiel)", "url": "https://quillbot.com" }
+  ],
+  "facts": {
+    "what": "Outil de paraphrase, de grammaire, de résumé et de traduction IA pour les étudiants et les écrivains. Modes de réécriture multiples, vérificateur de plagiat, détecteur IA et générateur de citations. Freemium avec plans Premium, Student et Teams.",
+    "what_en": "AI paraphrasing, grammar, summarizer, and translation tool for students and writers. Multiple rewriting modes, plagiarism checker, AI detector, citation generator. Freemium with Premium, Student, Teams plans.",
+    "pricing_model": "Freemium avec plans payants mensuels et annuels; plan Student avec discount .edu; plan Teams collaboration.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit permanent sans carte crédit : paraphrase jusqu'à 125 mots par run, 2 modes, grammaire, résumé, détecteur IA, générateur citations, traducteur." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit illimité (125 mots/run max)" },
+      { "name": "Premium", "price": "Montants sur la page officielle (accès illimité mots, modes avancés)" },
+      { "name": "Student", "price": "Montants sur la page officielle (.edu verification discount)" },
+      { "name": "Teams", "price": "Montants sur la page officielle (collaboration, billing centralisé)" }
+    ],
+    "key_features": [
+      "Paraphrase avec 6+ modes réécriture (Standard, Fluency, Creative, Shorten, Expand, Formal)",
+      "Vérificateur grammaire et ponctuation",
+      "Outil résumé texte",
+      "Traducteur multilingue",
+      "Détecteur contenu IA",
+      "Vérificateur plagiat",
+      "Générateur citations (APA, MLA, Chicago, Harvard)",
+      "Garantie remboursement 3 jours"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous reparaphrasez le texte fréquemment avec des modes de réécriture variés.",
+        "Vous cherchez un outil unique combinant grammaire, résumé et paraphrase.",
+        "Vous êtes étudiant ou dans une équipe bénéficiant de tarifs réduits."
+      ],
+      "avoidIf": [
+        "Vous cherchez une rédaction originale complète plutôt que de la réécriture.",
+        "Le plan gratuit avec 125 mots par passage est insuffisant pour le contenu long.",
+        "Un budget minimal vous pousse à préférer des outils gratuits uniquement."
+      ],
+      "threshold": "QuillBot convient aux rédacteurs reparaphrasant le contenu fréquemment ; inadéquat pour la rédaction originale ou le contenu très long en version gratuite uniquement."
+    },
+    "pros": [
+      "6+ modes de réécriture (Standard, Fluency, Creative, Shorten, Expand, Formal) offrent de la flexibilité.",
+      "Suite complète regroupant grammaire, résumé, paraphrase et plagiat dans un outil unique.",
+      "Le plan Student avec vérification .edu rend le premium accessible aux étudiants.",
+      "La garantie de remboursement de 3 jours réduit le risque d'essayer le plan Premium."
+    ],
+    "cons": [
+      "Plan gratuit limité (125 mots par passage maximum).",
+      "La paraphrase mécanique ne remplace pas la rédaction créative originale.",
+      "Le détecteur de plagiat est limité : un vérificateur externe est meilleur pour le contrôle.",
+      "Les plans Premium deviennent rapidement coûteux pour une utilisation fréquente par les étudiants."
+    ],
+    "use_cases": [
+      "Étudiant paraphrasant les sources avec la réduction Student et la grammaire intégrée.",
+      "Écrivain reparaphrasant les brouillons pour la clarté et la fluidité avec plusieurs modes.",
+      "Équipe collaborative utilisant Teams avec facturation centralisée et accès partagé."
+    ],
+    "relevant_for": ["Étudiants", "Écrivains", "Équipes collaboration"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You paraphrase text frequently with varied rewriting modes.",
+        "You seek grammar + summarizer + paraphrase single tool.",
+        "You are student or team with available discount pricing."
+      ],
+      "avoidIf": [
+        "You seek complete original writing rather than rewriting.",
+        "Free plan 125 words/run insufficient for long content.",
+        "Minimal budget preferring free-only tool alternatives."
+      ],
+      "threshold": "QuillBot suits writers paraphrasing content frequently; unfit for original writing or long content free-only."
+    },
+    "pros": [
+      "6+ rewriting modes (Standard, Fluency, Creative, Shorten, Expand, Formal) offer flexibility.",
+      "Complete suite grammar + summarizer + paraphrase + plagiarism in single tool.",
+      "Student plan discount with .edu verification makes premium accessible students.",
+      "3-day money-back guarantee reduces Premium trial risk."
+    ],
+    "cons": [
+      "Free plan limited (125 words/run max only).",
+      "Mechanical paraphrase does not replace original creative writing.",
+      "Plagiarism detector limited; external checker better for control.",
+      "Premium plans costly quickly for frequent student usage."
+    ],
+    "use_cases": [
+      "Student paraphrasing sources with Student discount + integrated grammar.",
+      "Writer paraphrasing drafts for clarity and fluency across multiple modes.",
+      "Collaborative team using Teams centralized billing and shared access."
+    ]
+  }
+}

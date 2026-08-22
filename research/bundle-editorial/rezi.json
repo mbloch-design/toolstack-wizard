@@ -1,0 +1,92 @@
+{
+  "slug": "rezi",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Rezi — Constructeur de CV IA (site officiel)", "url": "https://rezi.ai" }
+  ],
+  "facts": {
+    "what": "Plateforme de création et d'optimisation de CV basée sur l'IA, conçue pour les candidats optimisant la compatibilité ATS (Applicant Tracking System) et l'alignement avec le poste. Inclut un générateur de bullet points IA, un vérificateur ATS et un scanner de mots-clés.",
+    "what_en": "AI-powered resume building and optimization platform designed for job seekers optimizing ATS (Applicant Tracking System) compatibility and job fit. Includes AI bullet point generator, ATS checker, keyword scanner.",
+    "pricing_model": "Freemium avec plans payants mensuels et lifetime.",
+    "free_tier": { "exists": true, "detail": "1 CV, 1 entretien IA simulé, 3 téléchargements PDF, modèles standards, fonctionnalités IA basiques." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit" },
+      { "name": "Pro", "price": "$29/mois ou équivalent annuel" },
+      { "name": "Lifetime", "price": "$149 achat unique"  }
+    ],
+    "key_features": [
+      "Constructeur de CV IA avec formatage temps réel",
+      "Vérificateur ATS mesurant compatibilité systèmes de suivi (Ashby, Greenhouse, Workday, etc.)",
+      "Scanner de mots-clés identifiant termes manquants d'offre d'emploi",
+      "Générateur de bullet points IA améliorant contenu",
+      "20+ modèles de CV compatibles ATS",
+      "Entraînement entretien IA avec feedback performance"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous optimisez votre candidature pour les systèmes ATS et les pools de talents automatisés.",
+        "Vous générez des CV et avez besoin de valider rapidement leur compatibilité avec les filtres automatiques.",
+        "Vous candidatez en masse et optimisez le temps de préparation de chaque CV."
+      ],
+      "avoidIf": [
+        "Votre industrie valorise les relations personnelles plutôt que le screening automatisé.",
+        "Vous cherchez un outil de rédaction créative de CV (Rezi privilégie la conformité ATS).",
+        "Un budget serré vous incite à utiliser un CV gratuit et des documents Word."
+      ],
+      "threshold": "Rezi excelle pour les candidats affrontant les filtres ATS automatisés ; moins critique pour les postes sélectionnés par des humains ou dans les industries non-tech."
+    },
+    "pros": [
+      "Rezi Score et analyse ATS validant la compatibilité avec les systèmes de suivi avant envoi.",
+      "Le générateur de bullet points IA personnalisé accélère la création de contenu pertinent.",
+      "Plus de 20 modèles conformes ATS réduisant le risque de rejet automatique du formatage.",
+      "Le plan Pro inclut un examen de CV expert mensuel ; le plan Lifetime offre un accès permanent sans abonnement."
+    ],
+    "cons": [
+      "Plan gratuit très limité (1 CV, 3 PDF seulement).",
+      "Pro est coûteux pour un candidat individuel ; Lifetime nécessite un engagement financier important.",
+      "Pas d'entretien IA sur le plan gratuit ; la valeur maximale requiert une version payante.",
+      "L'optimisation ATS n'égale pas un recruteur humain : c'est un outil complémentaire seulement."
+    ],
+    "use_cases": [
+      "Cadre tech candidatant à des startups ou des grandes entreprises technologiques filtrant via ATS automatisé.",
+      "Candidat en transition changeant d'industrie et réécrivant les bullet points pour chaque poste.",
+      "Chercheur d'emploi actif ayant plus de 50 candidatures ; utilisant Rezi pour la productivité."
+    ],
+    "relevant_for": ["Chercheurs d'emploi", "Cadres tech", "Candidats confrontés à l'ATS"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You optimize applications for automated ATS systems and talent pools.",
+        "You generate CVs and need rapid validation of compatibility with automatic filters.",
+        "You apply in bulk and optimize time preparing each resume."
+      ],
+      "avoidIf": [
+        "Your industry values personal relationships over automated screening.",
+        "You seek creative resume writing tool (Rezi prioritizes ATS compliance).",
+        "Tight budget favors free CV tools plus Word documents."
+      ],
+      "threshold": "Rezi excels for job seekers facing automated ATS filters; less critical for roles selected by humans or non-tech industries."
+    },
+    "pros": [
+      "Rezi Score and ATS analysis validate compatibility with tracking systems before sending.",
+      "AI bullet point generator personalized accelerates relevant content creation.",
+      "20+ ATS-compliant templates reduce risk of automatic format rejection.",
+      "Pro plan includes monthly expert resume review; Lifetime grants permanent access without subscription."
+    ],
+    "cons": [
+      "Free plan highly limited (1 resume, 3 PDFs only).",
+      "Pro costly for individual job seeker; Lifetime requires significant financial commitment.",
+      "No AI interview on free plan; maximum value requires paid tier.",
+      "ATS optimization does not equal human recruiter — complementary only."
+    ],
+    "use_cases": [
+      "Tech professional applying to startups/big tech filtering via automated ATS.",
+      "Career changer rewriting bullet points per job posting.",
+      "Intensive job seeker with 50+ applications using Rezi for productivity."
+    ]
+  }
+}

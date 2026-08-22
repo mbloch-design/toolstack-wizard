@@ -1,0 +1,92 @@
+{
+  "slug": "cudekai",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Cudekai — Plateforme Écriture IA (site officiel)", "url": "https://cudekai.com" }
+  ],
+  "facts": {
+    "what": "Suite d'outils IA pour la rédaction et l'humanisation du contenu généré par IA. Inclut un humaniseur de contenu IA, un détecteur IA, un vérificateur de plagiat, un outil de paraphrase et un générateur d'essai IA. Supporte plus de 100 langues.",
+    "what_en": "Suite of AI writing and humanization tools for AI-generated content. Includes AI humanizer, AI detector, plagiarism checker, paraphrasing tool, AI essay writer. Supports 100+ languages.",
+    "pricing_model": "Freemium avec promotion offrant 60% réduction et 7 mois gratuits sur plans annuels.",
+    "free_tier": { "exists": true, "detail": "Accès gratuit 100% sans signup requise pour certains outils ; autres fonctionnalités premium avec inscription payante." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit sans signup" },
+      { "name": "Premium", "price": "Montants sur la page officielle (promo: 60% off, 7 mois gratuits annuel)" }
+    ],
+    "key_features": [
+      "Humaniseur IA convertissant contenu IA en prose naturelle (contourne Turnitin, GPTZero, Copyleak, ZeroGPT)",
+      "Détecteur IA analysant contenu 100+ langues",
+      "Vérificateur plagiat scanant miliards documents",
+      "Outil paraphrase restructurant texte avec variation syntaxe/tone",
+      "Générateur essai IA produisant contenu académique",
+      "Générateur citation et vérificateur grammaire",
+      "Entraînement modèle personnalisé style écriture utilisateur"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous générez des essais ou du contenu IA et avez besoin de les humaniser pour une soumission académique.",
+        "Vous cherchez une détection IA pour vérifier le travail d'un étudiant ou d'un candidat.",
+        "Vous écrivez dans plusieurs langues et avez besoin d'une humanisation supportant plus de 100 langues."
+      ],
+      "avoidIf": [
+        "Votre institution interdit explicitement le contournement des détecteurs IA.",
+        "Vous cherchez une rédaction originale plutôt que l'humanisation du contenu IA.",
+        "Vous avez besoin de collaboration d'équipe ou d'une intégration API avancée."
+      ],
+      "threshold": "Cudekai convient aux académiques et aux écrivains humanisant les brouillons IA ; risqué si la politique interdit le contournement des détecteurs."
+    },
+    "pros": [
+      "Suite complète incluant humaniseur, détecteur et vérificateur de plagiat consolidant plusieurs outils.",
+      "Support pour plus de 100 langues avec préservation du contexte natif.",
+      "Technologie de contournement multi-détecteur (Turnitin, GPTZero, Copyleak, ZeroGPT).",
+      "Remises régulières sur l'engagement annuel."
+    ],
+    "cons": [
+      "Risque académique ou professionnel si l'institution découvre l'utilisation.",
+      "L'efficacité du contournement des détecteurs décline avec l'évolution des modèles de détection.",
+      "Plan gratuit très limité : la majorité de la valeur requiert un abonnement.",
+      "L'entraînement du modèle personnalisé requiert des données suffisantes de l'utilisateur."
+    ],
+    "use_cases": [
+      "Étudiant générant du contenu IA et l'humanisant pour la compatibilité avec les vérificateurs de plagiat.",
+      "Professeur détectant les essais IA avec le détecteur intégré de Cudekai.",
+      "Rédacteur freelance paraphrasant le contenu IA pour un client multilingue."
+    ],
+    "relevant_for": ["Étudiants", "Professeurs", "Rédacteurs multilingues"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You generate AI essays/content and need to humanize for academic submission.",
+        "You seek AI detection to verify student or candidate work.",
+        "You write multilingually and need humanization supporting 100+ languages."
+      ],
+      "avoidIf": [
+        "Your institution explicitly forbids AI detector bypass.",
+        "You seek original writing rather than humanization of AI content.",
+        "You need team collaboration or advanced API integration."
+      ],
+      "threshold": "Cudekai suits academics/writers humanizing AI drafts; risky if policy forbids detector bypass."
+    },
+    "pros": [
+      "Complete suite humanizer, detector, plagiarism consolidates multiple tools.",
+      "100+ language support with native context preservation.",
+      "Multi-detector bypass technology (Turnitin, GPTZero, Copyleak, ZeroGPT).",
+      "Regular discounts on annual commitment."
+    ],
+    "cons": [
+      "Academic/professional risk if institution discovers usage.",
+      "Bypass effectiveness declines as detection models evolve.",
+      "Free plan highly limited; majority value requires subscription.",
+      "Custom model training requires sufficient user data."
+    ],
+    "use_cases": [
+      "Student generating AI content and humanizing for plagiarism-check compatibility.",
+      "Teacher detecting AI essays with integrated Cudekai detector.",
+      "Freelance writer paraphrasing AI content for multilingual client."
+    ]
+  }
+}

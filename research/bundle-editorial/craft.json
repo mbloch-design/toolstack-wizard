@@ -1,0 +1,93 @@
+{
+  "slug": "craft",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Craft — Documents & Collaboration (site officiel)", "url": "https://craft.do" }
+  ],
+  "facts": {
+    "what": "Plateforme documents et collaboration multifonctionnelle incluant l'écriture, les tâches intégrées, le calendrier, les tableaux blancs, les notes quotidiennes et l'intégration de l'IA (Claude, ChatGPT). Synchronisation cross-device sur iPhone, iPad, Mac et web.",
+    "what_en": "Multifunctional document and collaboration platform including writing, embedded tasks, calendar, whiteboards, daily notes, and AI integration (Claude, ChatGPT). Cross-device sync iPhone, iPad, Mac, web.",
+    "pricing_model": "Plan gratuit disponible ; détails pricing complets sur page dédiée (site officiel ne spécifie pas sur landing page).",
+    "free_tier": { "exists": true, "detail": "Version gratuite disponible (limitations spécifiques non détaillées sur landing page; consulter pricing page)." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (à confirmer page tarification officielle)" },
+      { "name": "Paid plans", "price": "Montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Écriture documents avec publication capabilities",
+      "Tâches intégrées directement dans documents",
+      "Calendrier et planification timing",
+      "Tableaux blancs collaboration visuelle",
+      "Notes quotidiennes capture rapide",
+      "Intégration IA (Claude, ChatGPT, VS Code, Raycast, Apple Shortcuts)",
+      "Templates documents pré-construits",
+      "Sync cross-device seamless"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez des documents, des tâches et de l'IA intégrés dans une plateforme.",
+        "Vous privilégiez les intégrations Claude/ChatGPT pour la rédaction assistée.",
+        "Vous utilisez des appareils Apple et cherchez une synchronisation cross-device native."
+      ],
+      "avoidIf": [
+        "Vous exigez des informations de tarification claires avant de vous inscrire (le site ne les spécifie pas).",
+        "Vous collaborez en équipe importante : Craft semble orienté vers l'individuel ou les petites équipes.",
+        "Vous avez besoin de fonctionnalités très spécialisées de documents (aucune mention de fonctionnalités avancées)."
+      ],
+      "threshold": "Craft convient aux écrivains Apple utilisant l'IA assistée et les tâches intégrées ; une tarification peu claire limite l'évaluation avant engagement."
+    },
+    "pros": [
+      "La consolidation des documents, des tâches, du calendrier et des tableaux blancs élimine le changement d'outil.",
+      "Les intégrations IA natives (Claude, ChatGPT) facilitent la rédaction assistée directe.",
+      "La synchronisation cross-device sur iPhone/iPad/Mac/web fluidifie le flux de travail Apple.",
+      "Design élégant — App Store Mac of Year, Apple Design Awards finalist."
+    ],
+    "cons": [
+      "Tarification peu lisible sur la page d'accueil : il faut ouvrir la page dédiée.",
+      "Les détails de l'offre gratuite ne sont pas spécifiés sur le site principal.",
+      "Pas d'indication des limites de stockage ou des fonctionnalités premium par rapport à la version gratuite.",
+      "Focus sur les appareils Apple : l'intégration Android ou Windows n'est pas claire."
+    ],
+    "use_cases": [
+      "Écrivain Mac utilisant Claude/ChatGPT pour la rédaction assistée et structurant les tâches.",
+      "Petite équipe consolidant les documents, les tâches et le calendrier dans un seul outil Craft.",
+      "Utilisateur iPad capturant les notes quotidiennes synchronisées cross-device."
+    ],
+    "relevant_for": ["Écrivains Apple", "Petites équipes", "Utilisateurs IA-first"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You seek documents + tasks + AI integrated in one platform.",
+        "You prioritize Claude/ChatGPT integrations for assisted writing.",
+        "You use Apple devices and seek native cross-device sync."
+      ],
+      "avoidIf": [
+        "You require clear pricing information before signup (site unspecified).",
+        "You collaborate heavy team; Craft seems individual/small-team oriented.",
+        "You need highly specialized document features (none mentioned advanced)."
+      ],
+      "threshold": "Craft suits Apple writers using assisted AI and embedded tasks; unclear pricing limits pre-commit evaluation."
+    },
+    "pros": [
+      "Consolidation documents, tasks, calendar, whiteboards eliminates tool-switching.",
+      "Native AI integrations (Claude, ChatGPT) facilitate direct assisted writing.",
+      "Cross-device sync iPhone/iPad/Mac/web streamlines Apple workflow.",
+      "Elegant design — App Store Mac of Year, Apple Design Awards finalist."
+    ],
+    "cons": [
+      "Pricing opaque on landing page; requires pricing page visit for clarity.",
+      "Free tier details unspecified on main site.",
+      "No indication storage limits or premium vs free features.",
+      "Apple device focus; Android or Windows integration unclear."
+    ],
+    "use_cases": [
+      "Mac writer using Claude/ChatGPT for assisted writing and structuring tasks.",
+      "Small team consolidating documents, tasks, calendar into single Craft.",
+      "iPad user capturing daily notes synced cross-device."
+    ]
+  }
+}

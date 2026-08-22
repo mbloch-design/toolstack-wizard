@@ -1,0 +1,95 @@
+{
+  "slug": "lunatask",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Lunatask — Gestion Tâches & Habitudes (site officiel)", "url": "https://lunatask.app" }
+  ],
+  "facts": {
+    "what": "Application chiffrée tout-en-un regroupant la gestion des tâches (Kanban, Eisenhower Matrix), le suivi des habitudes, la journalisation, le suivi de la vie (humeurs, énergie, stress), la gestion des relations (CRM personnel) et les notes. Intégrations avec l'email, une extension navigateur, Zapier et une API publique.",
+    "what_en": "All-in-one encrypted app combining task management (Kanban, Eisenhower Matrix), habit tracking, journaling, life tracking (moods, energy, stress), relationship management (personal CRM), and notes. Email, browser extension, Zapier, public API integrations.",
+    "pricing_model": "Trois tiers : gratuit, Premium abonnement mensuel/annuel, Lifetime achat unique.",
+    "free_tier": { "exists": true, "detail": "Sans carte crédit requise : 2 domaines vie, 7 habitudes quotidiennes, 30 relations, avec priorité, time blocking, task timers, notes, mood tracking, intégrations." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit illimité" },
+      { "name": "Premium", "price": "Montants sur la page officielle ($6/mois annuel ou $8/mois)" },
+      { "name": "Lifetime", "price": "Montants sur la page officielle ($300 achat unique)" }
+    ],
+    "key_features": [
+      "Gestion tâches Kanban et Eisenhower Matrix",
+      "Philosophie Must/Should/Want priorisation",
+      "Time blocking avec intégration calendrier Google, Outlook, iCloud",
+      "Intégration Zoom/Meet/Teams appels dans calendrier",
+      "Suivi habitudes quotidien/hebdo avec streaks et progrès visuels",
+      "Wellness monitoring humeurs, émotions, énergie, stress",
+      "Notes & journalisation Markdown chiffrées avec PIN",
+      "Gestion relations CRM-style avec rappels reconnexion",
+      "Email, extension navigateur, Zapier (5000+ apps), API public"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez un outil unique consolidant les tâches, les habitudes, la journalisation et le suivi de la vie.",
+        "Vous favorisez la priorisation Must/Should/Want et la matrice Eisenhower.",
+        "Vous suivez les habitudes, les humeurs et les relations personnelles en parallèle avec les tâches."
+      ],
+      "avoidIf": [
+        "Vous cherchez un outil de tâches seul sans habitudes ni journalisation.",
+        "Vous avez une équipe collaborant ; Lunatask est personnel (pas de collaboration).",
+        "Vous exigez une application open-source ; Lunatask est propriétaire."
+      ],
+      "threshold": "Lunatask excelle pour les utilisateurs intégrant les tâches, les habitudes, la journalisation et le suivi de la vie ; inadéquat pour la collaboration d'équipe ou un outil de tâches seul."
+    },
+    "pros": [
+      "La consolidation des tâches, des habitudes, de la journalisation et du suivi de la vie élimine le changement d'application.",
+      "La priorisation Must/Should/Want accessible plus la matrice Eisenhower avancée.",
+      "Plan gratuit généreux (2 domaines, 7 habitudes, 30 relations, priorisation et minuteurs).",
+      "Licence à vie en achat unique, sans abonnement récurrent."
+    ],
+    "cons": [
+      "Pas de collaboration : Lunatask est personnel, pas pour les équipes.",
+      "De nombreuses fonctionnalités requièrent Premium (domaines illimités, habitudes hebdomadaires, suivi de l'énergie et du stress).",
+      "L'intégration Zapier requiert une configuration manuelle : moins d'intégration native.",
+      "L'app gratuite et la version Mac App Store excluent Lifetime : achat unique sur le Web seulement."
+    ],
+    "use_cases": [
+      "Utilisateur solo consolidant les tâches, les habitudes et les humeurs dans un outil unique.",
+      "Coach ou thérapeute auto-suivi via le CRM de relations de Lunatask.",
+      "Utilisateur intensif optant pour la licence à vie."
+    ],
+    "relevant_for": ["Utilisateurs solo intensifs", "Adeptes habits tracking", "Managers vie personnelle"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You seek single tool consolidating tasks, habits, journaling, life tracking.",
+        "You favor Must/Should/Want prioritization and Eisenhower Matrix.",
+        "You track habits, moods, and personal relationships alongside tasks."
+      ],
+      "avoidIf": [
+        "You seek task-only tool without habits/journaling.",
+        "You collaborate team; Lunatask personal (not collaboration).",
+        "You require open-source app; Lunatask proprietary."
+      ],
+      "threshold": "Lunatask excels users integrating tasks, habits, journaling, life tracking; unsuited for team collaboration or task-only tool."
+    },
+    "pros": [
+      "Consolidation tasks, habits, journaling, life tracking eliminates app-switching.",
+      "Must/Should/Want prioritization accessible plus advanced Eisenhower Matrix.",
+      "Generous free plan (2 areas, 7 habits, 30 relationships, prioritization, timers).",
+      "Lifetime licence as a one-time purchase, no recurring subscription."
+    ],
+    "cons": [
+      "No collaboration; Lunatask personal, not team.",
+      "Many features require Premium (unlimited areas, weekly habits, energy/stress tracking).",
+      "Zapier integration requires manual setup; less native integration.",
+      "Free/Mac App Store excludes Lifetime; one-time purchase Web only."
+    ],
+    "use_cases": [
+      "Solo user consolidating tasks, habits, moods in single tool.",
+      "Coach/therapist self-tracking via Lunatask personal CRM relationships.",
+      "Power user opting for the lifetime licence."
+    ]
+  }
+}

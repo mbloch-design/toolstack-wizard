@@ -1,0 +1,93 @@
+{
+  "slug": "essaytone",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "EssayTone (site officiel)", "url": "https://www.essaytone.com/en" }
+  ],
+  "facts": {
+    "what": "Outil d'IA de réécriture textuelle qui transforme le contenu généré par IA en prose naturelle et académique. Optimise la fluidité, la personnalité et la crédibilité tout en contournant les détecteurs de contenu IA.",
+    "what_en": "AI text rewriting tool transforming AI-generated content into natural and academic prose. Optimizes flow, personality, and credibility while bypassing AI content detectors.",
+    "pricing_model": "Freemium avec plans payants mensuels, annuels, et lifetime.",
+    "free_tier": { "exists": true, "detail": "Accès basique sans compte requis ; fonctionnalités complètes avec inscription." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (basique)" },
+      { "name": "Basic", "price": "Montants sur la page officielle" },
+      { "name": "Pro", "price": "Montants sur la page officielle" },
+      { "name": "Ultra", "price": "Montants sur la page officielle" },
+      { "name": "Lifetime", "price": "Montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Réécriture textuelle avec maintien des références et structure",
+      "Support multilingue (anglais, français, allemand, italien, espagnol)",
+      "Édition instantanée sur appareil utilisateur",
+      "Ajustement de style (formel, persuasif, analytique, descriptif)",
+      "Contournement des détecteurs d'IA majeurs"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous générez du contenu IA et devez le rendre académiquement acceptable.",
+        "Vous avez besoin de transformer la prose robotique en texte naturel et crédible.",
+        "Vous soumettez à des institutions qui contrôlent la détection d'IA."
+      ],
+      "avoidIf": [
+        "Votre institution interdit activement l'utilisation d'outils de contournement de détecteur.",
+        "Vous cherchez un outil de rédaction originale plutôt que de réécriture.",
+        "Vous avez besoin de collaboration ou de gestion de versions sur les documents."
+      ],
+      "threshold": "EssayTone convient aux rédacteurs générant des brouillons IA nécessitant une humanisation académique ; risqué si la politique institutionnelle interdit le contournement des détecteurs."
+    },
+    "pros": [
+      "Transformation efficace du contenu IA en prose naturelle et lisible.",
+      "L'édition sur appareil garantit la confidentialité des données textuelles.",
+      "Les styles personnalisables (formel/persuasif/analytique) adaptent le ton au contexte.",
+      "Support multilingue pour les contenus académiques multilingues."
+    ],
+    "cons": [
+      "L'efficacité du contournement des détecteurs décline à mesure que les modèles de détection progressent.",
+      "Risque académique ou professionnel significatif si l'utilisation est détectée ou interdite par l'institution.",
+      "Plan gratuit très limité : la plupart des fonctionnalités requièrent un abonnement.",
+      "Ne résout pas l'originalité argumentative : c'est un outil cosmétique seulement."
+    ],
+    "use_cases": [
+      "Étudiant générant un brouillon IA rapide et affinant la lisibilité avant la remise.",
+      "Rédacteur freelance transformant la structure IA en prose stylisée pour le client.",
+      "Chercheur générant des résumés IA et les humanisant pour la publication interne."
+    ],
+    "relevant_for": ["Étudiants", "Rédacteurs", "Chercheurs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You generate AI content and need to make it academically acceptable.",
+        "You need to transform robotic prose into natural and credible text.",
+        "You submit to institutions checking AI detection."
+      ],
+      "avoidIf": [
+        "Your institution actively forbids AI detector bypass tools.",
+        "You seek original writing tool rather than rewriting.",
+        "You need collaboration or version control on documents."
+      ],
+      "threshold": "EssayTone suits writers generating AI drafts requiring academic humanization; risky if institutional policy forbids detector bypass."
+    },
+    "pros": [
+      "Effective transformation of AI content into natural and readable prose.",
+      "On-device editing ensures text data privacy.",
+      "Customizable styles (formal/persuasive/analytical) adapting tone to context.",
+      "Multilingual support for multilingual academic content."
+    ],
+    "cons": [
+      "Bypass effectiveness declines as detection models evolve.",
+      "Significant academic/professional risk if usage detected or forbidden by institution.",
+      "Free plan highly limited; most features require subscription.",
+      "Does not solve argumentative originality — cosmetic tool only."
+    ],
+    "use_cases": [
+      "Student generating rapid AI draft and refining readability before submission.",
+      "Freelance writer transforming AI structure into stylized prose for client.",
+      "Researcher generating AI summaries and humanizing for internal publication."
+    ]
+  }
+}

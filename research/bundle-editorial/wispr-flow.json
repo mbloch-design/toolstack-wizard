@@ -1,0 +1,95 @@
+{
+  "slug": "wispr-flow",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Wispr Flow — Dictée Vocale IA (site officiel)", "url": "https://wisprflow.ai" }
+  ],
+  "facts": {
+    "what": "Outil de dictée voix-à-texte IA convertissant la parole en contenu écrit poli partout où l'on peut taper. Pas de plugins requis. Support pour plus de 100 langues avec détection automatique. Apprentissage du vocabulaire de l'utilisateur et adaptation du style au contexte applicatif.",
+    "what_en": "Voice-to-text AI dictation tool converting speech into polished written content anywhere you can type. No plugins required. 100+ languages auto-detection. Learns user vocabulary and adapts style to app context.",
+    "pricing_model": "Freemium avec plans payants illimités (Pro individuel, Pro équipes, Enterprise).",
+    "free_tier": { "exists": true, "detail": "2000 mots par semaine sans trial période ni carte crédit requise." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (2000 mots/semaine)" },
+      { "name": "Flow Pro", "price": "Montants sur la page officielle (dictée illimitée)" },
+      { "name": "Flow Pro for Teams", "price": "Montants sur la page officielle (billing centralisé, admin portal)" },
+      { "name": "Flow Enterprise", "price": "Montants sur la page officielle (SSO, data retention, audit logs, bulk pricing)" }
+    ],
+    "key_features": [
+      "Dictée voix-à-texte IA convertissant speech en contenu poli",
+      "Fonctionne n'importe où texte tapé (aucun plugin)",
+      "Support cross-platform : Mac, Windows, iPhone, Android",
+      "100+ langues avec détection automatique",
+      "Apprentissage vocabulaire personnel et terminologie",
+      "Création snippets texte phrases fréquentes",
+      "Adaptation style contexte applicatif (messages, emails, chats travail)",
+      "Performance affichée 4x plus rapide que clavier"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous tapez beaucoup et cherchez la productivité de la dictée mains-libres.",
+        "Vous parlez plusieurs langues ou naviguez avec des accents variés.",
+        "Vous travaillez sur plusieurs appareils nécessitant une synchronisation cross-platform."
+      ],
+      "avoidIf": [
+        "Vous cherchez une transcription de réunions (Wispr Flow = texte temps réel individuel).",
+        "L'environnement est très bruyant où la reconnaissance vocale souffre.",
+        "Vous avez un budget minimal et préférez la dictée native (Siri, Google Voice)."
+      ],
+      "threshold": "Wispr Flow est idéale pour la productivité de la dictée personnelle ; moins critique pour la transcription de réunion ou l'environnement très bruyant."
+    },
+    "pros": [
+      "Dictée nettement plus rapide que la frappe, avec prise en compte du contexte applicatif.",
+      "Support pour plus de 100 langues avec détection automatique éliminant le changement manuel de langue.",
+      "L'apprentissage du vocabulaire personnalisé améliore la reconnaissance de la terminologie métier.",
+      "Cross-platform sur Mac/Windows/iOS/Android fonctionne n'importe où."
+    ],
+    "cons": [
+      "Plan gratuit limité (2000 mots par semaine seulement, soit environ 280 mots par jour).",
+      "La performance souffre modérément dans un environnement bruyant.",
+      "Pas d'adaptation du contexte pour les réunions ou discussions de groupe : c'est un outil individuel.",
+      "Nécessite l'adoption d'une habitude de dictée ; la transition depuis le clavier peut créer des frictions."
+    ],
+    "use_cases": [
+      "Écrivain productif utilisant la dictée plutôt que le clavier pour la rédaction de brouillons.",
+      "Agent du support client répondant aux tickets via la dictée mains-libres.",
+      "Polyglotte alternant les langues avec détection automatique sans configuration."
+    ],
+    "relevant_for": ["Rédacteurs productifs", "Support multilingue", "Utilisateurs multi-device"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You type frequently and seek hands-free dictation productivity.",
+        "You speak multilingually or navigate varied accents.",
+        "You work across multiple devices requiring cross-platform sync."
+      ],
+      "avoidIf": [
+        "You seek meeting transcription (Wispr Flow = individual real-time text).",
+        "Environment very noisy where speech recognition suffers.",
+        "You have minimal budget preferring native dictation (Siri, Google Voice)."
+      ],
+      "threshold": "Wispr Flow ideal for personal dictation productivity; less critical for meeting transcription or very noisy environment."
+    },
+    "pros": [
+      "Dictation markedly faster than typing, with built-in app context.",
+      "100+ languages auto-detection eliminates manual language switching.",
+      "Custom vocabulary learning improves domain terminology recognition.",
+      "Cross-platform Mac/Windows/iOS/Android works anywhere."
+    ],
+    "cons": [
+      "Free plan limited (2000 words/week only = ~280 words/day).",
+      "Performance suffers moderately noisy environment.",
+      "No meeting/group discussion context adaptation — personal tool.",
+      "Requires dictation habit adoption; keyboard transition may friction."
+    ],
+    "use_cases": [
+      "Productive writer using dictation over keyboard for draft writing.",
+      "Customer support agent answering tickets via hands-free dictation.",
+      "Polyglot switching languages with auto-detection no setup."
+    ]
+  }
+}

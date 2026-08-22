@@ -1,0 +1,98 @@
+{
+  "slug": "notebook-lm",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Gemini Notebook (ex-NotebookLM) — Outil Recherche IA (site officiel)", "url": "https://notebook.google" }
+  ],
+  "facts": {
+    "what": "Outil de recherche et partenaire IA Google (anciennement NotebookLM, renommé Gemini Notebook en juillet 2026). Upload jusqu'à 600 sources par notebook pour générer des résumés, des matériels d'étude et des analyses de données. La signature : Audio Overviews convertissant les documents en discussions de podcast IA.",
+    "what_en": "Google AI research tool and thinking partner (formerly NotebookLM, rebranded Gemini Notebook July 2026). Upload up to 600 sources/notebook to generate summaries, study materials, data analysis. Signature: Audio Overviews converting documents into AI podcast discussions.",
+    "pricing_model": "Gratuit avec Google compte; plans payants intégrés Google AI (Plus, Pro, Ultra).",
+    "free_tier": { "exists": true, "detail": "Gratuit illimité : 100 notebooks, 50 sources/notebook, 50 questions chat/jour, limite temps aucune." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (100 notebooks, 50 sources, 50 questions/jour)" },
+      { "name": "Plus", "price": "Montants sur la page officielle ($4.99/mois)" },
+      { "name": "Pro", "price": "Montants sur la page officielle ($19.99/mois)" },
+      { "name": "Ultra", "price": "Montants sur la page officielle ($99.99/mois+)" }
+    ],
+    "key_features": [
+      "Upload 600 sources/notebook (500 Pro, 300 sources gratuit) pour recherche hyper-focalisée",
+      "Audio Overviews : documents convertis discussions podcast IA entre deux hosts",
+      "Video Overviews cinématographiques contenu uploadé",
+      "Exécution code natif via cloud computer sécurisé",
+      "Study Notebooks interactifs pour apprentissage",
+      "Refusal hallucinations via grounding strict documents uploadés",
+      "50+ questions chat/jour (gratuit), 500 Pro illimitées",
+      "20 Audio + 20 Video Overviews/jour (Pro)",
+      "100 reports/jour, 20 Deep Research reports/jour (Pro)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous compilez plusieurs sources (articles, PDF, vidéos) pour un résumé IA hyper-focalisé.",
+        "Vous apprécierez les Audio Overviews de style podcast simplifiant la recherche.",
+        "Vous cherchez un outil RAG ancrant l'IA aux documents personnels sans hallucinations web."
+      ],
+      "avoidIf": [
+        "Vous avez plus de 600 sources : Notebook est limité par notebook.",
+        "Vous exigez des exports de modèles d'étude avancés (Notebook est un générateur, pas un éditeur).",
+        "Vous privilégiez un chat général sans sources spécifiques."
+      ],
+      "threshold": "Notebook est idéale pour les chercheurs compilant des sources hyper-focalisées vers une IA ancrée ; inadéquate pour la recherche web ouverte ou plus de 600 sources par projet."
+    },
+    "pros": [
+      "Les Audio Overviews signature convertissent les documents en podcasts IA : l'apprentissage est transformé.",
+      "L'ancrage RAG refuse les hallucinations : l'IA reste liée aux documents uploadés.",
+      "Plan gratuit permissif avec 100 notebooks, 50 sources et 50 questions par jour.",
+      "Les intégrations de compte Google réduisent la friction de connexion et d'inscription.",
+      "L'exécution de code native via cloudcomputer et les Video Overviews cinématographiques sont avancés."
+    ],
+    "cons": [
+      "La limite de 600 sources par notebook est restrictive pour la recherche très large.",
+      "Pas d'éditeur pour les matériels d'étude : Notebook génère seulement, pas refactor.",
+      "Le plan Pro payant est requis pour lever les limites des notebooks.",
+      "Les Audio Overviews ont deux hôtes fixes : pas de personnalisation de la voix ou du format."
+    ],
+    "use_cases": [
+      "Chercheur compilant 50 articles ou PDF dans Notebook générant un résumé et un Audio Overview.",
+      "Étudiant générant des Study Notebooks interactifs à partir des syllabi de cours.",
+      "Analyste de données uploadant les rapports clients pour les insights de Deep Research."
+    ],
+    "relevant_for": ["Chercheurs", "Étudiants", "Analystes données"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You compile multiple sources (articles, PDFs, videos) for hyper-focused AI summary.",
+        "You appreciate podcast-style Audio Overviews simplifying research.",
+        "You seek RAG tool grounding AI to personal documents without web hallucinations."
+      ],
+      "avoidIf": [
+        "You have 600+ sources; Notebook limited per notebook.",
+        "You require advanced study material exports (Notebook generator, not editor).",
+        "You prioritize open general chat without specific sources."
+      ],
+      "threshold": "Notebook ideal for researchers compiling hyper-focused sources into grounded AI; unsuited for open web search or 600+ sources/project."
+    },
+    "pros": [
+      "Signature Audio Overviews convert documents into AI podcasts — learning transformed.",
+      "RAG grounding refuses hallucinations; AI stays bound to uploaded documents.",
+      "Generous free plan 100 notebooks, 50 sources, 50 questions/day.",
+      "Google account integrations reduce login/signup friction.",
+      "Native code execution cloudcomputer and cinematic Video Overviews advanced."
+    ],
+    "cons": [
+      "600 sources/notebook limit restrictive for very broad research.",
+      "No study material editor; Notebook generates only, not refactor.",
+      "The paid Pro plan is required to lift notebook limits.",
+      "Audio Overviews fixed two hosts; no voice or format customization."
+    ],
+    "use_cases": [
+      "Researcher compiling 50 articles/PDFs into Notebook generating summary + Audio Overview.",
+      "Student generating interactive Study Notebooks from course syllabi.",
+      "Data analyst uploading client reports for Deep Research insights."
+    ]
+  }
+}

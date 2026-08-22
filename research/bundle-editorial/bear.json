@@ -1,0 +1,95 @@
+{
+  "slug": "bear",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Bear — Application Notes Markdown (site officiel)", "url": "https://bear.app" }
+  ],
+  "facts": {
+    "what": "Application de prise de notes Markdown pour les appareils Apple (Mac, iPhone, iPad) mettant l'accent sur la simplicité et le design élégant. Supporte l'édition Markdown, l'organisation flexible des tags, le scan de documents et les exports multiples (TXT, PDF, HTML, DOCX, etc.).",
+    "what_en": "Markdown note-taking app for Apple devices (Mac, iPhone, iPad) emphasizing simplicity and elegant design. Markdown editing, flexible tag organization, document scanning, multiple exports (TXT, PDF, HTML, DOCX, etc.).",
+    "pricing_model": "Freemium avec plan payant pro mensuels et annuels.",
+    "free_tier": { "exists": true, "detail": "Accès notes local, exports basiques, 3 thèmes, 1 icône app, scan documents sans iCloud sync." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (local, 3 thèmes)" },
+      { "name": "Bear Pro Monthly", "price": "Montants sur la page officielle" },
+      { "name": "Bear Pro Yearly", "price": "Montants sur la page officielle (approximativement 15% discount vs monthly)" }
+    ],
+    "key_features": [
+      "Édition Markdown complète avec support photos, tables, todo lists",
+      "Organisation flexible tags hiérarchiques",
+      "Scan documents avec Apple Pencil support dessin",
+      "Exports multiples (TXT, Markdown, PDF, HTML, DOCX, ePub, JPG, RTF)",
+      "Redimensionnement et crop images",
+      "iCloud sync cross-device (Pro)",
+      "Recherche OCR PDFs et images (Pro)",
+      "28+ thèmes customisables (Pro) vs 3 gratuit",
+      "15 icônes app optionnelles (Pro)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous prenez des notes Markdown sur les appareils Apple et cherchez un design élégant.",
+        "Vous appréciez l'organisation par tags et les exports multiples.",
+        "Vous avez besoin d'une synchronisation iCloud cross-device simplifiée."
+      ],
+      "avoidIf": [
+        "Vous exigez Android ou un client Windows ; Bear est exclusif à Apple.",
+        "Vous collaborez sur les notes en équipe (Bear est personnel, pas pour la collaboration).",
+        "Vous préférez une interface web ou un accès navigateur."
+      ],
+      "threshold": "Bear est idéale pour les utilisateurs Apple privilégiant le design élégant Markdown ; inadéquate pour la collaboration d'équipe ou le multi-OS."
+    },
+    "pros": [
+      "Design élégant et interface intuitive qui réduisent la friction à la prise de notes.",
+      "La synchronisation iCloud cross-device gratuite avec Pro simplifie l'utilisation multi-device.",
+      "Les exports multiples en différents formats offrent de la flexibilité pour la portabilité des notes.",
+      "Les plus de 28 thèmes personnalisables (Pro) comparés aux 3 gratuits rendent Pro attrayant pour les amateurs de design."
+    ],
+    "cons": [
+      "Exclusif à Apple : pas de client natif Windows ou Android.",
+      "Pas de collaboration : chaque utilisateur a ses notes personnelles Bear.",
+      "Pas d'interface web : dépendance complète aux clients desktop et mobile d'Apple.",
+      "Le plan Pro est requis pour la synchronisation iCloud : beaucoup de fonctionnalités sont réservées à la version payante."
+    ],
+    "use_cases": [
+      "Utilisateur Mac/iPad prenant des notes Markdown avec synchronisation iCloud cross-device.",
+      "Étudiant scannant les documents de cours avec la recherche OCR (Pro).",
+      "Designer appréciant les plus de 28 thèmes personnalisables de Bear Pro pour les workflows créatifs."
+    ],
+    "relevant_for": ["Utilisateurs Apple", "Preneurs notes Markdown", "Adeptes design"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You take Markdown notes on Apple devices and seek elegant design.",
+        "You appreciate tag organization and multiple exports.",
+        "You need simplified iCloud sync across devices."
+      ],
+      "avoidIf": [
+        "You require Android or Windows client; Bear Apple-exclusive.",
+        "You collaborate on team notes (Bear personal, not collaboration).",
+        "You prefer web interface or browser access."
+      ],
+      "threshold": "Bear ideal for Apple users prioritizing elegant Markdown design; unsuited for team collaboration or multi-OS."
+    },
+    "pros": [
+      "Elegant design and intuitive interface reduce note-taking friction.",
+      "Free iCloud sync across devices for Pro simplifies multi-device usage.",
+      "Multiple format exports offer flexibility for note portability.",
+      "28+ customizable themes (Pro) vs 3 free makes Pro attractive design-lovers."
+    ],
+    "cons": [
+      "Apple-exclusive; no native Windows or Android client.",
+      "No collaboration; each user personal Bear notes.",
+      "No web interface; complete dependence on Apple desktop/mobile clients.",
+      "Pro plan required for iCloud sync; many features Pro-only."
+    ],
+    "use_cases": [
+      "Mac/iPad user taking Markdown notes with iCloud sync across devices.",
+      "Student scanning course documents with OCR search (Pro).",
+      "Designer appreciating 28+ customizable themes Bear Pro for creative workflows."
+    ]
+  }
+}

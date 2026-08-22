@@ -1,0 +1,91 @@
+{
+  "slug": "hejour",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Hejour — Application Notes Quotidiennes (site officiel)", "url": "https://hejour.com" }
+  ],
+  "facts": {
+    "what": "Application de prise de notes quotidienne pour Mac et iPhone où chaque jour est une page. Intègre un calendrier, une gestion de tâches et une synchronisation iCloud avec un design centré sur la confidentialité. Stocke les notes sous forme de fichiers Markdown locaux.",
+    "what_en": "Daily note-taking app for Mac and iPhone where each day is a page. Integrates calendar, task management, and iCloud sync with privacy-focused design. Stores notes as local Markdown files.",
+    "pricing_model": "Freemium avec option achat unique pour Pro (pas d'abonnement).",
+    "free_tier": { "exists": true, "detail": "Illimité notes quotidiennes, todos, bullets, headings, recherche, sync iPhone/Mac, capture rapide. Limité à 3 jours liés et 2 snippets." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit illimité" },
+      { "name": "Pro", "price": "$19 achat unique, actif sur Mac et iPhone avec mises à jour lifetime" }
+    ],
+    "key_features": [
+      "Structure jour-par-jour : chaque jour = une page, jours peuvent se passer notes",
+      "Sync iCloud sans serveur Hejour (confidentialité maximale)",
+      "Intégration événements calendrier et todos récurrents",
+      "Nombre jours liés et snippets illimitées (Pro)",
+      "Support Vim mode et personnalisation clavier",
+      "Imports depuis 7 apps concurrentes (Bear, Obsidian, Apple Notes, etc.)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous journalisez quotidiennement avec tâches et notes entrelacées.",
+        "Vous privilégiez la confidentialité totale et la propriété des fichiers Markdown.",
+        "Vous utilisez Mac/iPhone et cherchez une intégration calendrier native."
+      ],
+      "avoidIf": [
+        "Vous exigez Android ou client Windows natif.",
+        "Vous souhaitez partager ou collaborer sur les notes (Hejour est personnelle, pas pour les équipes).",
+        "Vous préférez une interface web ou un accès via navigateur."
+      ],
+      "threshold": "Hejour est idéale pour les journaliers sur Mac/iPhone privilégiant la confidentialité et la structure jour-par-jour ; inadéquate pour la collaboration d'équipe ou le multi-OS."
+    },
+    "pros": [
+      "Structure jour-par-jour intuitive pour la journalisation quotidienne et la rétrospective.",
+      "La synchronisation iCloud sans serveur tiers garantit la confidentialité totale et la propriété des données.",
+      "Achat unique sans abonnement récurrent ; les mises à jour à vie sont incluses.",
+      "L'intégration calendrier native et les todos récurrents fluidifient la planification quotidienne."
+    ],
+    "cons": [
+      "Exclusif à Mac/iPhone : pas de client natif Windows ou Android.",
+      "Pas de collaboration ou de partage de notes en équipe : chaque utilisateur a une application personnelle.",
+      "Pas d'interface web : dépendance complète aux clients desktop et mobile d'Apple.",
+      "Écosystème Apple limité : moins d'intégration avec les outils non-Apple."
+    ],
+    "use_cases": [
+      "Utilisateur Mac journalisant quotidiennement avec un calendrier et des tâches intégrées.",
+      "Personne cherchant des notes personnelles privilégiant la confidentialité et la propriété des données plutôt que le stockage sur serveur.",
+      "Migrant depuis Bear/Obsidian cherchant une structure plus simple centrée sur la journée."
+    ],
+    "relevant_for": ["Utilisateurs Mac", "Journaliers", "Adeptes confidentialité"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You journal daily with intertwined tasks and notes.",
+        "You prioritize complete privacy and Markdown file ownership.",
+        "You use Mac/iPhone and seek native calendar integration."
+      ],
+      "avoidIf": [
+        "You require Android or native Windows client.",
+        "You share collaborative notes (Hejour is personal, not team).",
+        "You prefer web interface or browser access."
+      ],
+      "threshold": "Hejour ideal for daily journalers on Mac/iPhone prioritizing privacy and day-by-day structure; unsuited for team collaboration or multi-OS."
+    },
+    "pros": [
+      "Intuitive day-by-day structure for daily journaling and retrospection.",
+      "iCloud sync without third-party server ensures complete privacy and data ownership.",
+      "One-time purchase eliminates recurring subscription; lifetime updates included.",
+      "Native calendar integration and recurring todos streamline daily planning."
+    ],
+    "cons": [
+      "Mac/iPhone exclusive; no native Windows or Android client.",
+      "No collaboration or team note sharing; each user has personal app.",
+      "No web interface; complete dependence on Apple desktop/mobile clients.",
+      "Apple ecosystem limited; less integration with non-Apple tools."
+    ],
+    "use_cases": [
+      "Mac user journaling daily with integrated calendar and tasks.",
+      "Personal note-taker prioritizing privacy and owning data versus server.",
+      "Migrant from Bear/Obsidian seeking simpler day-by-day-centered structure."
+    ]
+  }
+}

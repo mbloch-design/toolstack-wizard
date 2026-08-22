@@ -1,0 +1,182 @@
+[
+  {
+    "slug": "essaytone",
+    "name": "EssayTone",
+    "website_url": "https://www.essaytone.com/en",
+    "http_status": 403,
+    "status": "confirmed",
+    "what": "AI text humanizer built by ex-Stanford researchers that transforms AI-generated content into natural, scholarly writing while bypassing AI detection tools.",
+    "category_suggestion": "ai-writing",
+    "evidence": "Website confirmed through search (essaytone.com has anti-bot protection). Product by ex-Stanford researchers with 70+ countries user base, pricing $9.99-$59.99/month, trusted by students and researchers for essay writing."
+  },
+  {
+    "slug": "rezi",
+    "name": "Rezi",
+    "website_url": "https://rezi.ai",
+    "http_status": 200,
+    "status": "confirmed",
+    "what": "AI-powered resume builder that optimizes CVs for ATS (Applicant Tracking Systems) compatibility to improve job application success.",
+    "category_suggestion": "ai-career",
+    "evidence": "Active service with 4.5M+ total users, multiple pricing tiers (Free, Pro $29/month, Lifetime $149), recent product launches (Chrome Extension, AI Resume Agent), SOC 2 certified."
+  },
+  {
+    "slug": "hejour",
+    "name": "Hejour",
+    "website_url": "https://hejour.com",
+    "http_status": 200,
+    "status": "confirmed",
+    "what": "A macOS and iOS notebook app based on daily pages where notes can reference each other, with iCloud sync.",
+    "category_suggestion": "note-taking",
+    "evidence": "Active daily updates, recent version 2.8, available on App Store and GitHub, 1000+ daily active users, 10000+ downloads, active developer (Enes Genç) maintaining the project, Discord community."
+  },
+  {
+    "slug": "uncovr",
+    "name": "uncovr",
+    "website_url": "https://uncovr.com",
+    "http_status": 200,
+    "status": "confirmed",
+    "what": "Austrian news monitoring and aggregation platform for media professionals and journalists to access original sources and track news.",
+    "category_suggestion": "analytics-news",
+    "evidence": "Active service by WUNDERWERK ONLINE GmbH (Vienna), functional features (newsletter, newsroom, indexation services), actively accepting new user registrations."
+  },
+  {
+    "slug": "cudekai",
+    "name": "Cudekai",
+    "website_url": "https://cudekai.com",
+    "http_status": 200,
+    "status": "confirmed",
+    "what": "Suite of AI tools that humanizes AI-generated text, detects AI content, and provides plagiarism checking for academic and professional writing.",
+    "category_suggestion": "ai-writing",
+    "evidence": "Active web platform with text humanizer, AI detector, and plagiarism detection integrated into single interface."
+  },
+  {
+    "slug": "macaw",
+    "name": "Macaw",
+    "website_url": "https://macaw.app",
+    "http_status": 200,
+    "status": "ambiguous",
+    "what": "Platform for intelligent digital receipts (pré-lancement/early access) transforming static receipts into customer engagement and monetization tools for retailers.",
+    "category_suggestion": "retail-technology",
+    "evidence": "Site at macaw.app shows early access signup with 'Get notified when we launch' message. Original URL macaw-hq.com has dead DNS. Product not yet publicly available but team actively collecting pre-launch registrations (contact joseph@macaw.app)."
+  },
+  {
+    "slug": "grokipedia",
+    "name": "Grokipedia",
+    "website_url": "https://grokipedia.com",
+    "http_status": 403,
+    "status": "confirmed",
+    "what": "AI-powered encyclopedia by xAI (Elon Musk's company) launched October 2025 as alternative to Wikipedia, currently at 5.6M articles with Grok 3 model.",
+    "category_suggestion": "ai-knowledge",
+    "evidence": "Confirmed through search results. Active service with 5.6M articles as of early 2026, powered by Grok 3 model with X DataStream API integration (500M+ daily posts). Currently in public v0.1 with rapid expansion nearing Wikipedia's English corpus size."
+  },
+  {
+    "slug": "craft",
+    "name": "Craft",
+    "website_url": "https://craft.do",
+    "http_status": 200,
+    "status": "confirmed",
+    "what": "Cross-platform note-taking and document management app combining notes, task management, and content publishing in unified interface.",
+    "category_suggestion": "note-taking",
+    "evidence": "Active development with recent App Store awards (2024), Apple Design Awards recipient, MCP and Claude Code integrations in progress, 200+ builders in community, no discontinuation signals."
+  },
+  {
+    "slug": "octarine",
+    "name": "Octarine",
+    "website_url": "https://octarine.app",
+    "http_status": 200,
+    "status": "confirmed",
+    "what": "Private, local Markdown note-taking application designed for focused writing and personal knowledge management.",
+    "category_suggestion": "note-taking",
+    "evidence": "Active service with recent revision (2026-08-17), public documentation and RSS feed available, iOS beta in development, regular feature updates."
+  },
+  {
+    "slug": "wispr-flow",
+    "name": "Wispr Flow",
+    "website_url": "https://wisprflow.ai",
+    "http_status": 200,
+    "status": "confirmed",
+    "what": "Real-time voice-to-text AI application that transcribes speech and automatically cleans up output (removes filler words, adds punctuation) across all apps.",
+    "category_suggestion": "ai-audio",
+    "evidence": "Active product with recent funding announcement (Wispr raises $81M), new product launches (Notetaker), no discontinuation signals detected."
+  },
+  {
+    "slug": "notable",
+    "name": "Notable (Unknown)",
+    "website_url": "https://notable.so",
+    "http_status": 404,
+    "status": "dead",
+    "what": "Unknown - domain expired/parked.",
+    "category_suggestion": "unknown",
+    "evidence": "Domain notable.so showing Namecheap expiration notice: 'Domain registration has expired'. No active service or product accessible."
+  },
+  {
+    "slug": "quillbot",
+    "name": "QuillBot",
+    "website_url": "https://quillbot.com",
+    "http_status": 403,
+    "status": "confirmed",
+    "what": "AI writing assistant with paraphrasing, grammar checking, summarization, translation and citation generation for writers of all levels.",
+    "category_suggestion": "ai-writing",
+    "evidence": "Confirmed through search. 35M+ users globally. Paraphraser with 9 preset modes, premium pricing ~$19.95/month, student tier ~$6.25/month. Active development and maintenance in 2026."
+  },
+  {
+    "slug": "mykeep",
+    "name": "MyKeep (Abandoned)",
+    "website_url": "https://mykeep.com",
+    "http_status": 200,
+    "status": "dead",
+    "what": "Abandoned project from early 2000s, purpose unclear.",
+    "category_suggestion": "unknown",
+    "evidence": "Site shows perpetual 'Under Construction' placeholder page with 9/11 memorial content, appears abandoned for 20+ years. No product documentation or active development evidence."
+  },
+  {
+    "slug": "bear",
+    "name": "Bear",
+    "website_url": "https://bear.app",
+    "http_status": 200,
+    "status": "confirmed",
+    "what": "Native Markdown note-taking app for macOS, iPhone and iPad by Shiny Frog with iCloud sync, export options and customizable themes.",
+    "category_suggestion": "note-taking",
+    "evidence": "Active service with regular updates (Bear 2 recent), free and paid tiers (Bear Pro €2.99/month or €29.99/year), no discontinuation signals, committed to future development."
+  },
+  {
+    "slug": "trendhopper",
+    "name": "TrendHopper",
+    "website_url": "https://trendhopper.com",
+    "http_status": 301,
+    "status": "confirmed",
+    "what": "AI-powered blogging and SEO automation platform combining topic ideation, content generation, scheduling and SEO optimization for content creators.",
+    "category_suggestion": "content-seo",
+    "evidence": "Confirmed through search results. Unfunded startup founded 2024 by Seth King (Boston). All-in-one platform with Reddit/SERP data integration, automated scheduling, built-in SEO tools. Note: .com redirects to .nl (furniture retailer site), but AI tool is confirmed as real product."
+  },
+  {
+    "slug": "lunatask",
+    "name": "Lunatask",
+    "website_url": "https://lunatask.app",
+    "http_status": 200,
+    "status": "confirmed",
+    "what": "All-in-one encrypted app combining task management, habit tracking, journaling and note-taking with cross-device sync and mental wellness features.",
+    "category_suggestion": "productivity",
+    "evidence": "Active service with Lunatask 3.0 in development, no discontinuation signals, integrated wellness and well-being tracking features."
+  },
+  {
+    "slug": "outrank",
+    "name": "Outrank",
+    "website_url": "https://outrank.so",
+    "http_status": 200,
+    "status": "confirmed",
+    "what": "SaaS SEO automation platform that generates and publishes optimized articles daily to build domain authority and organic traffic.",
+    "category_suggestion": "content-seo",
+    "evidence": "Active service with functional pricing tiers, FAQ section, maintained integrations, active signup calls-to-action, no service discontinuation indicators."
+  },
+  {
+    "slug": "notebook-lm",
+    "name": "Gemini Notebook (formerly NotebookLM)",
+    "website_url": "https://notebook.google.com",
+    "http_status": 302,
+    "status": "confirmed",
+    "what": "Google's AI research assistant powered by Gemini using RAG (Retrieval Augmented Generation) for source-grounded document analysis and note-taking.",
+    "category_suggestion": "ai-research",
+    "evidence": "Confirmed through search results. Hit 30M+ users and 600000+ organizations before rebranding to Gemini Notebook (July 16, 2026). Features: Audio Overviews (podcast-like summaries), code cloud computer, chart/spreadsheet/slide generation, up to 1M token context window."
+  }
+]

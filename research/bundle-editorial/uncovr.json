@@ -1,0 +1,90 @@
+{
+  "slug": "uncovr",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "uncovr — Service de Sources Originales (site officiel)", "url": "https://uncovr.com" }
+  ],
+  "facts": {
+    "what": "Service de sources originales pour les médias et les journalistes fournissant un accès en continu aux actualités en temps réel, des analyses et des outils de salles de presse. Couvre l'Autriche, l'Allemagne et les domaines internationaux.",
+    "what_en": "Original source service for media and journalists providing real-time news stream access, analytics, and newsroom tools. Covers Austria, Germany, international domains.",
+    "pricing_model": "Modèle abonnement basé accès membre (détails tarification sur page officielle).",
+    "free_tier": { "exists": false, "detail": "Accès sur authentification membres uniquement ; pas de tier gratuit public disponible." },
+    "plans": [
+      { "name": "Membership", "price": "Montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Stream texte original en temps réel (Originaltext Stream)",
+      "Analytics et monitoring contenu",
+      "Service email subscription (Mailabo)",
+      "Gestion salle de presse (PResstige)",
+      "Indexing service contenu éditorial",
+      "Filtrage régional (Autriche, Allemagne, International)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes journaliste ou média couvrant l'Autriche, l'Allemagne ou les domaines internationaux.",
+        "Vous privilégiez les sources officielles brutes plutôt que les actualités secondaires agrégées.",
+        "Vous avez besoin d'un suivi continu des actualités avec des alertes régionales."
+      ],
+      "avoidIf": [
+        "Vous cherchez un outil gratuit ou une version d'essai publique ; uncovr est réservé aux membres.",
+        "Vous avez besoin d'une couverture de pays au-delà de l'Autriche, de l'Allemagne ou des domaines internationaux.",
+        "Vous êtes blogueur ou petit média avec un budget limité."
+      ],
+      "threshold": "uncovr convient aux médias professionnels couvrant les régions DACH cherchant des sources brutes ; inadéquat pour le public gratuit ou une couverture géographique différente."
+    },
+    "pros": [
+      "L'accès en continu aux textes originaux en temps réel limite la rediffusion secondaire.",
+      "Les outils de salle de presse (PResstige) centralisent la gestion du contenu éditorial.",
+      "Le filtrage régional granulaire réduit le bruit de la couverture hors-zone.",
+      "Les analyses de suivi aident à identifier rapidement les tendances de couverture."
+    ],
+    "cons": [
+      "Accès réservé aux membres : pas d'essai gratuit ni de tier public.",
+      "Couverture géographique limitée (Autriche, Allemagne, domaines internationaux).",
+      "Tarification peu lisible sur le site : il faut prendre contact directement pour un devis.",
+      "Pas d'information publique sur les fonctionnalités complètes ni sur la tarification : accès restreint."
+    ],
+    "use_cases": [
+      "Média d'Autriche ou d'Allemagne surveillant les sources officielles régionales en direct.",
+      "Correspondant international cherchant un agrégateur de sources centré sur les régions DACH.",
+      "Salle de presse gérant la distribution multicanale avec les analyses de PResstige."
+    ],
+    "relevant_for": ["Médias professionnels", "Journalistes", "Correspondants régionaux"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You are journalist or media covering Austria, Germany, international domains.",
+        "You prioritize raw official sources over secondary aggregated news.",
+        "You need continuous news monitoring with regional alerts."
+      ],
+      "avoidIf": [
+        "You seek free tool or public trial; uncovr member-only.",
+        "You need coverage beyond Austria/Germany/International.",
+        "You are blogger or small media with limited budget."
+      ],
+      "threshold": "uncovr suits professional media covering DACH regions seeking raw sources; unfit for free public or different geographic coverage."
+    },
+    "pros": [
+      "Real-time originaltext stream access limits secondary rediffusion.",
+      "Newsroom tools (PResstige) centralize editorial content management.",
+      "Granular regional filtering reduces noise outside-zone coverage.",
+      "Analytics monitoring help identify coverage trends fast."
+    ],
+    "cons": [
+      "Member-only access; no free trial or public tier.",
+      "Geographic coverage limited (Austria, Germany, International).",
+      "Opaque pricing on site; requires direct contact for quote.",
+      "No public information on full features or pricing — restricted access."
+    ],
+    "use_cases": [
+      "Austria/Germany media monitoring regional official sources live.",
+      "International correspondent seeking DACH-focused source aggregator.",
+      "Newsroom managing multi-channel distribution with PResstige analytics."
+    ]
+  }
+}

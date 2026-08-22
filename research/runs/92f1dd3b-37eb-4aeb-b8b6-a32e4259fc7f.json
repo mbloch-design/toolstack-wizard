@@ -1,0 +1,160 @@
+{
+  "agent": "research-collector",
+  "attestations": [
+    {
+      "accessed_at": "2026-08-19T14:31:51.093Z",
+      "attestation_id": "sha256:5750a6024bb7799b660ad2c56d2b91252961517848c34e08e82c52774449f7ff",
+      "content_hash": "sha256:e32db6e3dc7c35511add045e349674cd2cb1240ae4f909b4e01b7f51ac8a4c85",
+      "content_language": null,
+      "currency_symbols_seen": [
+        "$"
+      ],
+      "egress_country": "FR",
+      "egress_measured_from": "playwright_context",
+      "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+      "final_url": "https://www.visualcv.com/pricing/",
+      "html_lang": "en",
+      "http_status": 200,
+      "locale_requested": "fr-FR",
+      "navigator_language": "fr-FR",
+      "rendered_by": "browser",
+      "resolved_locale": "fr-FR",
+      "run_id": "92f1dd3b-37eb-4aeb-b8b6-a32e4259fc7f",
+      "schema": "context_attestation/1",
+      "slug": "visualcv",
+      "source_url": "https://www.visualcv.com/pricing/",
+      "timezone": "Europe/Paris",
+      "visible_markers": []
+    }
+  ],
+  "checks": [
+    {
+      "adapter": "visualcv",
+      "adapter_version": "1.0.0",
+      "attempts": 1,
+      "browser_context": {
+        "content_language_header": null,
+        "currency_symbols_seen": [
+          "$"
+        ],
+        "egress_country": "FR",
+        "egress_error": null,
+        "egress_measured_from": "playwright_context",
+        "egress_source": "https://www.cloudflare.com/cdn-cgi/trace",
+        "final_url": "https://www.visualcv.com/pricing/",
+        "html_lang_attr": "en",
+        "locale_requested": "fr-FR",
+        "navigator_language": "fr-FR",
+        "navigator_languages": [
+          "fr-FR"
+        ],
+        "redirected": false,
+        "resolved_locale": "fr-FR",
+        "timezone": "Europe/Paris",
+        "visible_markers": []
+      },
+      "content_hash": "sha256:e32db6e3dc7c35511add045e349674cd2cb1240ae4f909b4e01b7f51ac8a4c85",
+      "http_status": 200,
+      "market_context": "global_usd_fallback",
+      "market_context_candidate": null,
+      "market_context_source": "declared_in_registry",
+      "mode": "network_ttl",
+      "rendered_by": "browser",
+      "slug": "visualcv",
+      "url": "https://www.visualcv.com/pricing/"
+    },
+    {
+      "content_hash": "sha256:15b739310aec2c62b1e006fb120b657a1e81b6ab3b508cd16e7720b9a9bb87be",
+      "http_status": 200,
+      "mode": "network",
+      "purpose": "free_plan",
+      "rendered_by": "static",
+      "slug": "visualcv",
+      "url": "https://www.visualcv.com/pricing/"
+    },
+    {
+      "content_hash": "sha256:15b739310aec2c62b1e006fb120b657a1e81b6ab3b508cd16e7720b9a9bb87be",
+      "http_status": 200,
+      "mode": "network",
+      "purpose": "pricing_unit",
+      "rendered_by": "static",
+      "slug": "visualcv",
+      "url": "https://www.visualcv.com/pricing/"
+    },
+    {
+      "content_hash": "sha256:15b739310aec2c62b1e006fb120b657a1e81b6ab3b508cd16e7720b9a9bb87be",
+      "http_status": 200,
+      "mode": "network",
+      "purpose": "billing_commitment",
+      "rendered_by": "static",
+      "slug": "visualcv",
+      "url": "https://www.visualcv.com/pricing/"
+    }
+  ],
+  "claims_created": 1,
+  "collector_version": "0.4.0",
+  "conflicts": [],
+  "diff_summary": "claims_extracted=0 claims_created=0 claims_unchanged=0 claims_confirmed=0 conflicts_opened=0 versions_created=2 attestations_created=1 approved=0 | doc_claims: extracted=3 created=3 unchanged=0",
+  "errors": [],
+  "finished_at": "2026-08-19T14:32:01.293Z",
+  "manifest": {
+    "commit": "5402e95512c5e59cb756d9319da1bbe688d2e919",
+    "slug_set_sha256": "f64049dee528e845517bfab0e38e1a365abc712ef0b0c0d512269154a329af83"
+  },
+  "metrics": {
+    "attestations_created": 1,
+    "claims_confirmed": 0,
+    "claims_created": 0,
+    "claims_extracted": 0,
+    "claims_unchanged": 0,
+    "conflicts_opened": 0,
+    "doc_claims_confirmed": 0,
+    "doc_claims_created": 3,
+    "doc_claims_extracted": 3,
+    "doc_claims_unchanged": 0,
+    "versions_created": 2
+  },
+  "mode": "RESEARCH_ONLY",
+  "params": {
+    "cache_ttl_s": 86400,
+    "concurrency_per_domain": 1,
+    "delay_ms": 2000,
+    "force_recheck": false,
+    "locale": "fr-FR",
+    "market": "FR",
+    "renderer": "browser",
+    "slugs": [
+      "visualcv"
+    ]
+  },
+  "results": [
+    {
+      "accessible": true,
+      "conflicts_open": 0,
+      "created": false,
+      "hash": "sha256:e32db6e3dc7c35511add045e349674cd2cb1240ae4f909b4e01b7f51ac8a4c85",
+      "metrics": {
+        "attestations_created": 1,
+        "claims_confirmed": 0,
+        "claims_created": 0,
+        "claims_extracted": 0,
+        "claims_unchanged": 0,
+        "conflicts_opened": 0,
+        "doc_claims_confirmed": 0,
+        "doc_claims_created": 3,
+        "doc_claims_extracted": 3,
+        "doc_claims_unchanged": 0,
+        "versions_created": 2
+      },
+      "networkChecked": true,
+      "observations": 0,
+      "slug": "visualcv",
+      "url": "https://www.visualcv.com/pricing/",
+      "versionsCreated": 2
+    }
+  ],
+  "review_status": "open",
+  "run_id": "92f1dd3b-37eb-4aeb-b8b6-a32e4259fc7f",
+  "started_at": "2026-08-19T14:31:51.091Z",
+  "valid": true
+}

@@ -1,0 +1,94 @@
+{
+  "slug": "outrank",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Outrank — Plateforme SEO Contenu (site officiel)", "url": "https://outrank.so" }
+  ],
+  "facts": {
+    "what": "Plateforme IA générant et publiant automatiquement les articles SEO-optimisés. Inclut la recherche IA de mots-clés, l'optimisation SEO, la génération d'images adaptées à la marque et la création de backlinks via un réseau. Supporte plus de 150 langues, avec des intégrations WordPress, Webflow, Shopify, Framer, Wix, Notion et Ghost.",
+    "what_en": "AI platform automatically generating and publishing SEO-optimized articles. Includes AI keyword research, SEO optimization, on-brand image generation, backlink building via network. Supports 150+ languages, integrations WordPress, Webflow, Shopify, Framer, Wix, Notion, Ghost.",
+    "pricing_model": "Plan unique « All in One » avec discount volumes multi-sites.",
+    "free_tier": { "exists": true, "detail": "Trial gratuit disponible avec contenu watermarké ; pas détail durée spécifié." },
+    "plans": [
+      { "name": "Free Trial", "price": "Gratuit (watermarké)" },
+      { "name": "All in One", "price": "Montants sur la page officielle ($99/mois réduction initiale de $200 régulier)" }
+    ],
+    "key_features": [
+      "Génération 30 articles/mois automatique et publication auto-pilot",
+      "Recherche mots-clés IA identifiant high-traffic, low-competition keywords",
+      "Optimisation SEO titres, meta descriptions, linking stratégique",
+      "Génération images IA on-brand multiples styles",
+      "Construction backlinks automatique via réseau Outrank",
+      "Intégrations multi-platform (WordPress, Webflow, Shopify, Framer, Wix, Notion, Ghost, webhook)",
+      "Support 150+ langues contenu multilingual",
+      "Collaboration équipe illimitée utilisateurs par organisation",
+      "Préview et édition articles jusqu'à 7 jours avant publication"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez une croissance du trafic organique automatisée via du contenu SEO.",
+        "Vous avez un site WordPress/Webflow/Shopify et avez besoin d'un contenu continu.",
+        "Vous acceptez le contenu généré par l'IA et l'automatisation de la publication."
+      ],
+      "avoidIf": [
+        "Vous exigez un contenu original créatif et personnalisé par un expert humain.",
+        "Vous avez un budget minimal : Outrank est coûteux pour une startup ou un petit site.",
+        "Vous avez besoin d'un contenu vertical très spécialisé pour une niche unique."
+      ],
+      "threshold": "Outrank convient aux éditeurs et agences cherchant une croissance SEO automatisée ; inadéquat pour le contenu expert personnalisé ou un budget restreint."
+    },
+    "pros": [
+      "L'automatisation de la génération et de la publication de 30 articles par mois réduit la charge de travail éditoriale.",
+      "La recherche IA de mots-clés identifie automatiquement les mots-clés à fort trafic et faible concurrence.",
+      "Les images adaptées à la marque générées par l'IA plus la création de backlinks incluse réduisent les frais externes.",
+      "Le support pour plus de 150 langues et les intégrations multi-platform flexibilisent le déploiement global."
+    ],
+    "cons": [
+      "Contenu généré par l'IA : qualité variable comparée à une rédaction humaine experte.",
+      "Abonnement mensuel important pour une startup ou un petit site.",
+      "Customisation limitée du contenu verticalisé : risque de contenu générique.",
+      "Dépendance à l'infrastructure d'Outrank : si le service ferme, le contenu est à risque."
+    ],
+    "use_cases": [
+      "Agence SaaS générant automatiquement des articles de blog sur les sites clients.",
+      "Éditeur ecommerce créant du contenu produit SEO à l'échelle de plus de 150 langues.",
+      "Startup bootstrappée privilégiant la croissance automatisée par rapport au contenu expert."
+    ],
+    "relevant_for": ["Éditeurs", "Agences SaaS", "Sites ecommerce"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You seek automated organic traffic growth via SEO content.",
+        "You have WordPress/Webflow/Shopify site and need continuous content.",
+        "You accept AI-generated content and publishing automation."
+      ],
+      "avoidIf": [
+        "You require original creative personalized content by human expert.",
+        "You have minimal budget; Outrank costly for startup/small site.",
+        "You need highly specialized niche vertical content."
+      ],
+      "threshold": "Outrank suits publishers/agencies seeking automated SEO growth; unsuited for personalized expert content or restricted budget."
+    },
+    "pros": [
+      "Automation generating + publishing 30 articles/month reduces editorial workload.",
+      "AI keyword research identifies high-traffic, low-competition keywords auto.",
+      "On-brand images generated + backlink building included reduce external fees.",
+      "150+ language support and multi-platform integrations enable global deployment."
+    ],
+    "cons": [
+      "AI-generated content; quality variable versus human expert writing.",
+      "Monthly subscription is steep for a startup or small site.",
+      "Limited customization for vertical niches; risk generic content.",
+      "Outrank infrastructure dependence; if service closes, content at risk."
+    ],
+    "use_cases": [
+      "SaaS agency generating automated blog articles across client sites.",
+      "Ecommerce editor creating SEO product content at scale 150+ languages.",
+      "Bootstrapped startup prioritizing automated growth over expert content."
+    ]
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "slug": "octarine",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Octarine — Note-taking Local-First (site officiel)", "url": "https://octarine.app" }
+  ],
+  "facts": {
+    "what": "Application de prise de notes Markdown privée, locale-d'abord, pour la rédaction focalisée et la gestion des connaissances personnelles. Les notes sont stockées sous forme de fichiers Markdown locaux de l'utilisateur. Intégration IA optionnelle permettant à l'utilisateur de configurer un fournisseur personnel.",
+    "what_en": "Private, local-first Markdown note-taking app for focused writing and personal knowledge management. Notes stored as local Markdown files. Optional AI integration configuring personal provider.",
+    "pricing_model": "Modèle freemium avec licence activée (details pricing sur page dédiée).",
+    "free_tier": { "exists": true, "detail": "Accès core note-taking local sans paiement; intégration IA optionnelle, détails gratuit/payant sur pricing page." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit (core note-taking)" },
+      { "name": "License", "price": "Montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Note-taking offline-first : cœur fonctionne sans internet",
+      "Stockage local fichiers Markdown dossier utilisateur choisir",
+      "Intégration IA optionnelle : utilisateur configure provider ou modèles locaux",
+      "Traitement sur-appareil : retrieval et indexing workspace localement",
+      "Partage contenu initié utilisateur capability",
+      "Support macOS 13+, Windows 10/11, Linux desktop",
+      "Beta iOS via TestFlight (pas App Store public)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous privilégiez la confidentialité totale et la propriété des fichiers locaux.",
+        "Vous écrivez sans dépendre des serveurs cloud tiers.",
+        "Vous cherchez une intégration IA optionnelle permettant de configurer un fournisseur personnel."
+      ],
+      "avoidIf": [
+        "Vous exigez une synchronisation cloud automatique entre les appareils.",
+        "Vous collaborez en équipe ou partagez les notes continuellement.",
+        "Vous préférez iOS natif (actuellement en version bêta TestFlight seulement)."
+      ],
+      "threshold": "Octarine excelle pour les écrivains priorisant la confidentialité locale-d'abord ; inadéquat pour la synchronisation cloud automatique ou la collaboration d'équipe."
+    },
+    "pros": [
+      "Offline-first garantit le fonctionnement sans connexion internet continue.",
+      "Les fichiers Markdown locaux assurent la propriété complète et la portabilité des données.",
+      "Intégration IA optionnelle : l'utilisateur choisit le fournisseur ou les modèles locaux.",
+      "L'indexation du workspace local préserve la confidentialité de la recherche."
+    ],
+    "cons": [
+      "Synchronisation cloud absente : la synchronisation entre les appareils requiert une configuration manuelle.",
+      "Pas de collaboration native : chaque utilisateur a ses notes personnelles.",
+      "iOS en version bêta TestFlight seulement : pas de sortie App Store publique actuellement.",
+      "La page de tarification existe mais le contenu n'est pas détaillé sur la page d'accueil."
+    ],
+    "use_cases": [
+      "Écrivain privé-d'abord prenant des notes sans synchronisation cloud tiers.",
+      "Développeur intégrant l'IA locale ou un fournisseur personnel dans Octarine.",
+      "Utilisateur Windows/Linux cherchant une application de prise de notes Markdown locale de type open-source."
+    ],
+    "relevant_for": ["Adeptes confidentialité", "Écrivains offline", "Utilisateurs multi-OS"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You prioritize complete privacy and local file ownership.",
+        "You write without depending on third-party cloud servers.",
+        "You seek optional AI integration configuring personal provider."
+      ],
+      "avoidIf": [
+        "You require automatic cloud sync across devices.",
+        "You collaborate team or share notes continuously.",
+        "You prefer native iOS (TestFlight beta only currently)."
+      ],
+      "threshold": "Octarine excels privacy-first writers using local-first approach; unfit for auto cloud sync or team collaboration."
+    },
+    "pros": [
+      "Offline-first ensures function without continuous internet connection.",
+      "Local Markdown files ensure complete data ownership and portability.",
+      "Optional AI integration — user chooses provider or local models.",
+      "Local workspace indexing preserves retrieval privacy."
+    ],
+    "cons": [
+      "Cloud sync absent; multi-device synchronization requires manual setup.",
+      "No native collaboration — each user personal notes.",
+      "iOS TestFlight beta only; no public App Store currently.",
+      "Pricing page exists but landing lacks detailed tier information."
+    ],
+    "use_cases": [
+      "Privacy-first writer taking notes without third-party cloud sync.",
+      "Developer integrating local AI or personal provider with Octarine.",
+      "Windows/Linux user seeking local Markdown note-taking like open-source."
+    ]
+  }
+}
