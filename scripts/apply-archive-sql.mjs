@@ -24,6 +24,7 @@ const files = [
   // Publication conditionnelle des outils créés en draft : passe en published
   // uniquement ce qui a déjà un verdict et une description en base.
   "scripts/sql/publish-recent-tools.sql",
+  "scripts/sql/og-images-recent-tools.sql",
   "scripts/sql/archive-adobe-duplicates.sql",
   "scripts/sql/archive-feature-aliases.sql",
   "scripts/sql/archive-placeholder-recategorization.sql",
