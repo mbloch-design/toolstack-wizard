@@ -41,9 +41,34 @@ export function relExterne(nature: NatureLien = "autre"): string {
 }
 
 /**
+ * Détection d'un lien rémunéré à la FORME de l'URL, indépendamment du champ
+ * qui la porte.
+ *
+ * Deux motifs, parce qu'un seul ne suffit pas :
+ *  - le paramètre de requête (`?via=`, `?ref=`, `?fpr=`…), le cas courant ;
+ *  - le domaine de plateforme d'affiliation, où le tracking est dans le
+ *    sous-domaine ou le chemin. C'est ainsi que le lien PartnerStack de Lusha
+ *    (`partnerstack.lusha.com/sghwggbyjyc2-omvn4r`) échappait à une recherche
+ *    par paramètre.
+ *
+ * Sert de filet : si une URL de ce type se retrouve dans `website_url` au lieu
+ * de `affiliate_link`, elle sera quand même marquée `sponsored`. Un lien payé
+ * non déclaré est une infraction aux consignes Google, quel que soit le champ
+ * de la base où il a atterri.
+ */
+const PARAM_TRACKING = /[?&](via|ref|referral|aff|affiliate|fpr|partner|sponsor|rfsn|tap_a|tap_s|lmref|irclickid|deal|promo)=/i;
+const PLATEFORMES_AFFILIATION = /(^|\.)(partnerstack|impact|shareasale|cj|awin|refersion|tapfiliate|firstpromoter|affilae|lemonsqueezy|gumroad)\.(com|net|io)|partnerstack\.[a-z0-9-]+\.com/i;
+
+export function estLienRemunere(url: string | null | undefined): boolean {
+  const u = (url || "").trim();
+  if (!u) return false;
+  return PARAM_TRACKING.test(u) || PLATEFORMES_AFFILIATION.test(u);
+}
+
+/**
  * Cas des fiches outil : le CTA émet `affiliate_link` quand il existe, sinon
- * l'URL officielle. Le lien n'est rémunéré que dans le premier cas, donc
- * uniquement quand l'URL émise diffère de l'URL officielle.
+ * l'URL officielle. Le lien est rémunéré si l'URL émise est le lien affilié
+ * déclaré, OU si sa forme trahit un tracking quel que soit le champ d'origine.
  */
 export function relPourLienOutil(
   hrefEmis: string | null | undefined,
@@ -53,8 +78,8 @@ export function relPourLienOutil(
   const href = (hrefEmis || "").trim();
   const affilie = (affiliateLink || "").trim();
   const officiel = (websiteUrl || "").trim();
-  const estAffilie = !!href && !!affilie && href === affilie && affilie !== officiel;
-  return relExterne(estAffilie ? "affilie" : "source");
+  const declareAffilie = !!href && !!affilie && href === affilie && affilie !== officiel;
+  return relExterne(declareAffilie || estLienRemunere(href) ? "affilie" : "source");
 }
 
 /** Valeur brute pour les cas non-React (conversion markdown côté serveur). */
