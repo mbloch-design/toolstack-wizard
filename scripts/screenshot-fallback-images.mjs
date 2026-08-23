@@ -26,8 +26,13 @@ const SITE_BASE = "https://tooltrim.com";
 
 /* ── args ── */
 const APPLY  = process.argv.includes("--apply");
-const LIMIT  = parseInt(process.argv.find((a) => a.startsWith("--limit="))?.split("=")[1] ?? "9999");
-const SINGLE = process.argv.find((a) => a.startsWith("--slug="))?.split("=")[1];
+const argValue = (name) => {
+  const prefix = `--${name}=`;
+  const arg = process.argv.find((value) => value.startsWith(prefix));
+  return arg?.slice(prefix.length);
+};
+const LIMIT  = parseInt(argValue("limit") ?? "9999");
+const SINGLE = argValue("slug");
 const CACHE  = "scripts/og-images-cache.json";
 const OUT_DIR = "public/og-screenshots";
 
@@ -51,7 +56,7 @@ if (SINGLE) targets = targets.filter((t) => (t.slug || t.id) === SINGLE);
 // Outils absents de tools_v4.json (créés directement en base, cf. les fiches
 // « Recently Added ») : le filtre ci-dessus ne peut pas les voir et le script
 // répondait « 0 outil à traiter ». --url= permet de les cibler explicitement.
-const EXPLICIT_URL = process.argv.find((a) => a.startsWith("--url="))?.split("=")[1];
+const EXPLICIT_URL = argValue("url");
 if (SINGLE && EXPLICIT_URL && targets.length === 0) {
   targets = [{ slug: SINGLE, websiteUrl: EXPLICIT_URL }];
 }
@@ -90,8 +95,11 @@ async function captureOne(tool) {
     // son poids normal, passe le contrôle de taille ci-dessus, et on publie une
     // page « Performing security verification » comme visuel de la fiche (vu
     // sur quillbot.com). On la refuse en relisant le HTML de la page capturée.
+    const probeController = new AbortController();
+    const probeTimer = setTimeout(() => probeController.abort(), 10000);
     try {
       const probe = await fetch(url, {
+        signal: probeController.signal,
         headers: { "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36" },
       });
       const head = (await probe.text()).slice(0, 4000);
@@ -101,22 +109,24 @@ async function captureOne(tool) {
     } catch (probeError) {
       if (/challenge anti-bot/.test(probeError.message)) throw probeError;
       // Une sonde qui échoue pour une autre raison ne doit pas bloquer la capture.
+    } finally {
+      clearTimeout(probeTimer);
     }
 
     const filePath = `${OUT_DIR}/${slug}.png`;
     writeFileSync(filePath, buf);
     const publicUrl = `${SITE_BASE}/og-screenshots/${slug}.png`;
-    cache[slug] = publicUrl;
-    console.log(`OK     ${slug}`);
-    ok++;
-
     if (supabase) {
       const { error } = await supabase
         .from("tools")
         .update({ og_image_url: publicUrl })
         .eq("slug", slug);
-      if (error) console.error(`       ERR Supabase: ${error.message}`);
+      if (error) throw new Error(`Supabase: ${error.message}`);
     }
+
+    cache[slug] = publicUrl;
+    console.log(`OK     ${slug}`);
+    ok++;
   } catch (e) {
     console.log(`FAIL   ${slug}  (${e.message})`);
     fail++;
@@ -136,3 +146,4 @@ console.log(`OK:   ${ok}`);
 console.log(`Fail: ${fail}`);
 console.log(`Cache sauvegardé dans ${CACHE}`);
 console.log(`Images dans ${OUT_DIR}/`);
+if (fail > 0) process.exitCode = 1;

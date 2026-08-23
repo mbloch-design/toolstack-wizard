@@ -30,3 +30,13 @@ supabase/.temp/
 *.njsproj
 *.sln
 *.sw?
+
+# Artefacts locaux des lots catalogue et des validations
+/.go*-apply.sh
+/.go*-sync-main.sh
+/.go*-staging/
+/.go*-work/
+/.git-corrupt-*/
+/.vercel/
+/reports/
+/test-results/
