@@ -68,3 +68,17 @@ Une fiche rattachée à un logiciel hôte (`host_app` renseigné) ne se rédige 
 
 ## Sortie (ton message final)
 Rends un récap : `filled: [slugs remplis]`, `flagged: [{slug, raison}]`. Rien d'autre.
+
+## Pages hôtes — quand elles existent, quand elles n'existent pas
+
+Une page `/plugins/<hôte>` ou `/libraries/<hôte>` **n'est créée que si elle a de quoi la remplir**. Seuil de référence : 3 outils rattachés. En dessous, pas de page, pas d'entrée de sitemap, pas d'option dans le filtre « Fonctionne avec ».
+
+Trois règles qui découlent de ce principe :
+
+1. **Les options du filtre se dérivent des données**, jamais d'une liste écrite en dur. Un hôte n'apparaît dans le filtre que s'il a au moins un outil rattaché. Sinon l'utilisateur sélectionne une option qui ne renvoie rien — le défaut visible sur la référence Toolfolio, dont la page `/integrations/figma` affiche « 0 tools ».
+
+2. **Le bloc « Plugins pour cet outil » d'une fiche disparaît s'il est vide.** Pas de section vide, pas de « Aucun plugin pour le moment ».
+
+3. **Sous le seuil, le contenu reste accessible** par la fiche de chaque outil et par la recherche. On ne perd rien : on n'ouvre simplement pas une page dédiée qui serait mince.
+
+`node scripts/hosts-eligibles.mjs` liste les hôtes au-dessus et en dessous du seuil. À brancher sur la génération du sitemap et sur les options du filtre.
