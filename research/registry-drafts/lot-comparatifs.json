@@ -1,0 +1,208 @@
+{
+  "note": "BROUILLONS pour research/sources-registry.json — NE PAS fusionner tel quel. Chaque entrée porte des champs TODO_* qui doivent être remplis à la main après consultation de la page officielle. Le registre interdit toute URL devinée : aucun pricing_url n'est pré-rempli ici, volontairement.",
+  "procedure": [
+    "1. Ouvrir la page tarifaire officielle de l'outil (la vraie grille, pas la homepage ni un comparateur).",
+    "2. Renseigner pricing_url, puis verified_http_status et verified_on (date du jour de la vérification).",
+    "3. Relever les NOMS DE PLANS EXACTEMENT tels qu'affichés et corriger plan_key_mapping : les noms proposés ici sont des candidats de départ, pas des faits vérifiés.",
+    "4. Vérifier que chaque proof_pattern matche réellement le contenu de la page. S'il ne matche pas, le fait n'est pas établi — corriger le motif ou retirer la source.",
+    "5. Trancher market_context_declared : ne déclarer global_usd_fallback QUE si la grille affiche des montants sans signal de marché ou de locale, et écrire la justification.",
+    "6. Copier l'entrée dans research/sources-registry.json sous sources.<slug>, puis retirer tous les champs TODO_*."
+  ],
+  "drafts": {
+    "asana": {
+      "TODO_pricing_url": "à saisir — page tarifaire officielle",
+      "TODO_verification": "renseigner verified_http_status et verified_on après consultation",
+      "adapter": "asana",
+      "renderer_hint": "auto",
+      "source_tier": 1,
+      "source_type": "pricing",
+      "is_official": true,
+      "TODO_market_context": "grille souvent affichée en devise locale selon la géolocalisation — ne déclarer global_usd_fallback que si ce n'est pas le cas",
+      "TODO_plan_key_mapping_candidats": {
+        "commentaire": "noms à confirmer sur la page, ils changent régulièrement",
+        "mapping_propose": { "Personal": "free", "Starter": "starter", "Advanced": "advanced", "Enterprise": "enterprise" }
+      },
+      "plan_key_mapping_note": "Palier gratuit durable limité en sièges. Les offres Enterprise sont sur devis : ne pas leur fabriquer de montant.",
+      "additional_sources": [
+        {
+          "purpose": "free_plan",
+          "establishes": { "claim_key": "pricing.free_plan_exists", "value": true },
+          "TODO_url": "même page tarifaire, à confirmer",
+          "TODO_proof_pattern": "motif à valider contre le contenu réel de la page",
+          "is_official": true,
+          "renderer_hint": "auto",
+          "source_tier": 1,
+          "source_type": "pricing"
+        },
+        {
+          "purpose": "pricing_unit",
+          "establishes": { "claim_key": "pricing.unit", "value": "seat" },
+          "TODO_url": "à confirmer",
+          "TODO_proof_pattern": "doit prouver la facturation par utilisateur/siège",
+          "is_official": true,
+          "renderer_hint": "auto",
+          "source_tier": 1,
+          "source_type": "pricing"
+        },
+        {
+          "purpose": "billing_commitment",
+          "establishes": { "claim_key": "pricing.billing_commitment", "value": "TODO_monthly_ou_annual" },
+          "TODO_url": "à confirmer",
+          "TODO_proof_pattern": "doit prouver l'existence des deux cadences et laquelle est affichée par défaut",
+          "is_official": true,
+          "renderer_hint": "auto",
+          "source_tier": 1,
+          "source_type": "pricing"
+        }
+      ]
+    },
+    "pipedrive": {
+      "TODO_pricing_url": "à saisir — page tarifaire officielle",
+      "TODO_verification": "renseigner verified_http_status et verified_on",
+      "adapter": "pipedrive",
+      "renderer_hint": "auto",
+      "source_tier": 1,
+      "source_type": "pricing",
+      "is_official": true,
+      "TODO_market_context": "grille disponible en EUR et USD selon le pays — trancher explicitement",
+      "TODO_plan_key_mapping_candidats": {
+        "commentaire": "noms à confirmer, la gamme a été remaniée plusieurs fois",
+        "mapping_propose": { "Essential": "essential", "Advanced": "advanced", "Professional": "professional", "Power": "power", "Enterprise": "enterprise" }
+      },
+      "plan_key_mapping_note": "Pas de palier gratuit durable, seulement un essai. Attention aux remises annuelles affichées par défaut, qui masquent le tarif mensuel réel.",
+      "additional_sources": [
+        {
+          "purpose": "free_plan",
+          "establishes": { "claim_key": "pricing.free_plan_exists", "value": false },
+          "TODO_url": "à confirmer",
+          "TODO_proof_pattern": "doit prouver l'absence de palier gratuit durable (essai seulement)",
+          "is_official": true,
+          "renderer_hint": "auto",
+          "source_tier": 1,
+          "source_type": "pricing"
+        },
+        {
+          "purpose": "pricing_unit",
+          "establishes": { "claim_key": "pricing.unit", "value": "seat" },
+          "TODO_url": "à confirmer",
+          "TODO_proof_pattern": "doit prouver la facturation par siège",
+          "is_official": true,
+          "renderer_hint": "auto",
+          "source_tier": 1,
+          "source_type": "pricing"
+        }
+      ]
+    },
+    "trello": {
+      "TODO_pricing_url": "à saisir — page tarifaire officielle",
+      "TODO_verification": "renseigner verified_http_status et verified_on",
+      "adapter": "trello",
+      "renderer_hint": "auto",
+      "source_tier": 1,
+      "source_type": "pricing",
+      "is_official": true,
+      "TODO_market_context": "à trancher",
+      "TODO_plan_key_mapping_candidats": {
+        "commentaire": "noms à confirmer sur la page",
+        "mapping_propose": { "Free": "free", "Standard": "standard", "Premium": "premium", "Enterprise": "enterprise" }
+      },
+      "plan_key_mapping_note": "Palier gratuit durable. Le tarif Enterprise varie selon le nombre de sièges via un curseur : ne retenir un montant que s'il est affiché explicitement.",
+      "additional_sources": [
+        {
+          "purpose": "free_plan",
+          "establishes": { "claim_key": "pricing.free_plan_exists", "value": true },
+          "TODO_url": "à confirmer",
+          "TODO_proof_pattern": "à valider",
+          "is_official": true,
+          "renderer_hint": "auto",
+          "source_tier": 1,
+          "source_type": "pricing"
+        },
+        {
+          "purpose": "pricing_unit",
+          "establishes": { "claim_key": "pricing.unit", "value": "seat" },
+          "TODO_url": "à confirmer",
+          "TODO_proof_pattern": "à valider",
+          "is_official": true,
+          "renderer_hint": "auto",
+          "source_tier": 1,
+          "source_type": "pricing"
+        }
+      ]
+    },
+    "clickup": {
+      "TODO_pricing_url": "à saisir — page tarifaire officielle",
+      "TODO_verification": "renseigner verified_http_status et verified_on",
+      "adapter": "clickup",
+      "renderer_hint": "auto",
+      "source_tier": 1,
+      "source_type": "pricing",
+      "is_official": true,
+      "TODO_market_context": "à trancher",
+      "TODO_plan_key_mapping_candidats": {
+        "commentaire": "gamme repositionnée souvent — confirmer impérativement",
+        "mapping_propose": { "Free Forever": "free", "Unlimited": "unlimited", "Business": "business", "Enterprise": "enterprise" }
+      },
+      "plan_key_mapping_note": "Les modules IA sont facturés en supplément par siège : ce sont des options, pas des plans. Ne pas les faire entrer dans le comparatif principal.",
+      "additional_sources": [
+        {
+          "purpose": "free_plan",
+          "establishes": { "claim_key": "pricing.free_plan_exists", "value": true },
+          "TODO_url": "à confirmer",
+          "TODO_proof_pattern": "à valider",
+          "is_official": true,
+          "renderer_hint": "auto",
+          "source_tier": 1,
+          "source_type": "pricing"
+        },
+        {
+          "purpose": "pricing_unit",
+          "establishes": { "claim_key": "pricing.unit", "value": "seat" },
+          "TODO_url": "à confirmer",
+          "TODO_proof_pattern": "à valider",
+          "is_official": true,
+          "renderer_hint": "auto",
+          "source_tier": 1,
+          "source_type": "pricing"
+        }
+      ]
+    },
+    "mailchimp": {
+      "TODO_pricing_url": "à saisir — page tarifaire officielle",
+      "TODO_verification": "renseigner verified_http_status et verified_on",
+      "adapter": "mailchimp",
+      "renderer_hint": "auto",
+      "source_tier": 1,
+      "source_type": "pricing",
+      "is_official": true,
+      "TODO_market_context": "à trancher",
+      "TODO_plan_key_mapping_candidats": {
+        "commentaire": "noms à confirmer",
+        "mapping_propose": { "Free": "free", "Essentials": "essentials", "Standard": "standard", "Premium": "premium" }
+      },
+      "plan_key_mapping_note": "CAS PARTICULIER — le tarif dépend du nombre de contacts, via un sélecteur. Une seule valeur de prix n'a donc aucun sens hors de son palier de contacts. Il faut soit déclarer le palier de référence retenu, soit conserver l'ambiguïté plutôt que de figer un montant trompeur.",
+      "additional_sources": [
+        {
+          "purpose": "free_plan",
+          "establishes": { "claim_key": "pricing.free_plan_exists", "value": true },
+          "TODO_url": "à confirmer",
+          "TODO_proof_pattern": "à valider",
+          "is_official": true,
+          "renderer_hint": "auto",
+          "source_tier": 1,
+          "source_type": "pricing"
+        },
+        {
+          "purpose": "pricing_unit",
+          "establishes": { "claim_key": "pricing.unit", "value": "contact" },
+          "TODO_url": "à confirmer",
+          "TODO_proof_pattern": "doit prouver que la facturation dépend du volume de contacts",
+          "is_official": true,
+          "renderer_hint": "auto",
+          "source_tier": 1,
+          "source_type": "pricing"
+        }
+      ]
+    }
+  }
+}
