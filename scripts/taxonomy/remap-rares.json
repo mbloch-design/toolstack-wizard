@@ -1,0 +1,658 @@
+[
+ {
+  "rare": "ab-testing",
+  "cible": "analytics"
+ },
+ {
+  "rare": "academic-writing",
+  "cible": "redaction"
+ },
+ {
+  "rare": "ad-creative",
+  "cible": "creative-assets"
+ },
+ {
+  "rare": "agrandissement-photo",
+  "cible": "upscaling"
+ },
+ {
+  "rare": "ai-agents",
+  "cible": "ai-general"
+ },
+ {
+  "rare": "ai-builder",
+  "cible": "app-builder"
+ },
+ {
+  "rare": "ai-chatbot",
+  "cible": "chatbot"
+ },
+ {
+  "rare": "ai-coding",
+  "cible": "code-generation"
+ },
+ {
+  "rare": "ai-content",
+  "cible": "content-generation"
+ },
+ {
+  "rare": "ai-development",
+  "cible": "coding"
+ },
+ {
+  "rare": "ai-notes",
+  "cible": "notes"
+ },
+ {
+  "rare": "ai-planning",
+  "cible": "planning"
+ },
+ {
+  "rare": "ai-productivity",
+  "cible": "assistant-generaliste"
+ },
+ {
+  "rare": "ai-scheduling",
+  "cible": "calendar"
+ },
+ {
+  "rare": "ai-tools",
+  "cible": "ai-general"
+ },
+ {
+  "rare": "ai-video",
+  "cible": "video-creation"
+ },
+ {
+  "rare": "ai-voice",
+  "cible": "generation-audio"
+ },
+ {
+  "rare": "ai-writing",
+  "cible": "writing-assistant"
+ },
+ {
+  "rare": "animation-lignes",
+  "cible": "animation"
+ },
+ {
+  "rare": "api-integration",
+  "cible": null
+ },
+ {
+  "rare": "appointment-booking",
+  "cible": "prise-rendez-vous"
+ },
+ {
+  "rare": "audit",
+  "cible": null
+ },
+ {
+  "rare": "auth",
+  "cible": "security"
+ },
+ {
+  "rare": "autocompletion",
+  "cible": "code-generation"
+ },
+ {
+  "rare": "avatar-ia",
+  "cible": "generation-image"
+ },
+ {
+  "rare": "background-removal",
+  "cible": "detourage"
+ },
+ {
+  "rare": "backlink-analysis",
+  "cible": "seo"
+ },
+ {
+  "rare": "baking-3d",
+  "cible": "texturing-3d"
+ },
+ {
+  "rare": "bases-de-donnees",
+  "cible": "base-de-donnees"
+ },
+ {
+  "rare": "browser-automation",
+  "cible": "automatisation"
+ },
+ {
+  "rare": "cartes-paiement",
+  "cible": "paiements"
+ },
+ {
+  "rare": "chrome-extension",
+  "cible": "developer-tools"
+ },
+ {
+  "rare": "churn-analysis",
+  "cible": "analytics-produit"
+ },
+ {
+  "rare": "citation-management",
+  "cible": "knowledge-base"
+ },
+ {
+  "rare": "citations",
+  "cible": null
+ },
+ {
+  "rare": "code-editor",
+  "cible": "developer-tools"
+ },
+ {
+  "rare": "collaboration-equipe",
+  "cible": "collaboration"
+ },
+ {
+  "rare": "collaboration-projet",
+  "cible": "collaboration"
+ },
+ {
+  "rare": "competitive-intel",
+  "cible": "veille"
+ },
+ {
+  "rare": "content-automation",
+  "cible": "automatisation"
+ },
+ {
+  "rare": "content-creation",
+  "cible": "creation"
+ },
+ {
+  "rare": "contracts",
+  "cible": "legal-contracts"
+ },
+ {
+  "rare": "cover-letter",
+  "cible": null
+ },
+ {
+  "rare": "crawling",
+  "cible": "web-scraping"
+ },
+ {
+  "rare": "creation-visuels",
+  "cible": "design-tools"
+ },
+ {
+  "rare": "creative-brief",
+  "cible": "brief"
+ },
+ {
+  "rare": "data-warehouse",
+  "cible": "base-de-donnees"
+ },
+ {
+  "rare": "demo-creation",
+  "cible": "video-creation"
+ },
+ {
+  "rare": "design",
+  "cible": "design-tools"
+ },
+ {
+  "rare": "design-to-code",
+  "cible": "handoff-dev"
+ },
+ {
+  "rare": "direction-artistique",
+  "cible": "branding"
+ },
+ {
+  "rare": "discovery",
+  "cible": null
+ },
+ {
+  "rare": "document-analysis",
+  "cible": "analyse"
+ },
+ {
+  "rare": "document-automation",
+  "cible": "workflows"
+ },
+ {
+  "rare": "document-review",
+  "cible": "validation"
+ },
+ {
+  "rare": "domain-registration",
+  "cible": "hosting"
+ },
+ {
+  "rare": "ecommerce-retention",
+  "cible": "ecommerce"
+ },
+ {
+  "rare": "effets-photo",
+  "cible": null
+ },
+ {
+  "rare": "email-triage",
+  "cible": "email"
+ },
+ {
+  "rare": "emailing",
+  "cible": "email-marketing"
+ },
+ {
+  "rare": "enregistrement-simple",
+  "cible": "screen-recording"
+ },
+ {
+  "rare": "etl",
+  "cible": "data-fetching"
+ },
+ {
+  "rare": "export-lottie",
+  "cible": "animation"
+ },
+ {
+  "rare": "feature-flags",
+  "cible": "developer-tools"
+ },
+ {
+  "rare": "file-storage",
+  "cible": "cloud-storage"
+ },
+ {
+  "rare": "fine-tuning",
+  "cible": "ai-general"
+ },
+ {
+  "rare": "flowcharts",
+  "cible": "diagramming"
+ },
+ {
+  "rare": "focus",
+  "cible": null
+ },
+ {
+  "rare": "focus-time",
+  "cible": null
+ },
+ {
+  "rare": "freelance-finance",
+  "cible": "finance"
+ },
+ {
+  "rare": "gestion-communaute",
+  "cible": "communaute"
+ },
+ {
+  "rare": "gestion-equipe",
+  "cible": "team-collaboration"
+ },
+ {
+  "rare": "habits",
+  "cible": "planning"
+ },
+ {
+  "rare": "heatmaps",
+  "cible": "analytics-ux"
+ },
+ {
+  "rare": "icones",
+  "cible": "icons"
+ },
+ {
+  "rare": "image-enhancement",
+  "cible": "photo-enhancement"
+ },
+ {
+  "rare": "inbox-zero",
+  "cible": null
+ },
+ {
+  "rare": "information-architecture",
+  "cible": "wireframing"
+ },
+ {
+  "rare": "intent-signals",
+  "cible": "analytics"
+ },
+ {
+  "rare": "interior-design",
+  "cible": null
+ },
+ {
+  "rare": "issue-tracking",
+  "cible": "bug-tracking"
+ },
+ {
+  "rare": "jingles",
+  "cible": "generation-audio"
+ },
+ {
+  "rare": "job-application",
+  "cible": "ats"
+ },
+ {
+  "rare": "job-search",
+  "cible": "sourcing"
+ },
+ {
+  "rare": "keyword-research",
+  "cible": "seo"
+ },
+ {
+  "rare": "link-management",
+  "cible": "website-builder"
+ },
+ {
+  "rare": "linkedin-outreach",
+  "cible": "prospection"
+ },
+ {
+  "rare": "localization",
+  "cible": null
+ },
+ {
+  "rare": "logo-design",
+  "cible": null
+ },
+ {
+  "rare": "logs",
+  "cible": "observabilite"
+ },
+ {
+  "rare": "meeting-management",
+  "cible": "calendar"
+ },
+ {
+  "rare": "meeting-summary",
+  "cible": "notes-reunion"
+ },
+ {
+  "rare": "mobile-app-builder",
+  "cible": null
+ },
+ {
+  "rare": "noir-blanc",
+  "cible": null
+ },
+ {
+  "rare": "optimisation-youtube",
+  "cible": "seo-video"
+ },
+ {
+  "rare": "paiement-abonnements",
+  "cible": "paiements"
+ },
+ {
+  "rare": "payment-processing",
+  "cible": "paiements"
+ },
+ {
+  "rare": "performance-app",
+  "cible": "performance"
+ },
+ {
+  "rare": "personal-productivity",
+  "cible": "assistant-generaliste"
+ },
+ {
+  "rare": "photo-manipulation",
+  "cible": "retouche-photo"
+ },
+ {
+  "rare": "portrait-ia",
+  "cible": "generation-image"
+ },
+ {
+  "rare": "presets-animation",
+  "cible": "animation"
+ },
+ {
+  "rare": "productivity-docs",
+  "cible": "documentation"
+ },
+ {
+  "rare": "real-time-search",
+  "cible": "recherche"
+ },
+ {
+  "rare": "recherche-notes",
+  "cible": "knowledge-management"
+ },
+ {
+  "rare": "references-visuelles",
+  "cible": "references"
+ },
+ {
+  "rare": "remplacement-ciel",
+  "cible": "retouche-photo"
+ },
+ {
+  "rare": "replays-sessions",
+  "cible": null
+ },
+ {
+  "rare": "research",
+  "cible": null
+ },
+ {
+  "rare": "resume-builder",
+  "cible": null
+ },
+ {
+  "rare": "resume-building",
+  "cible": null
+ },
+ {
+  "rare": "retention",
+  "cible": null
+ },
+ {
+  "rare": "retouche-portrait",
+  "cible": "retouche-photo"
+ },
+ {
+  "rare": "revue-code",
+  "cible": "code-review"
+ },
+ {
+  "rare": "rigging-personnages",
+  "cible": "animation-2d-3d"
+ },
+ {
+  "rare": "rigging-simple",
+  "cible": "animation-2d-3d"
+ },
+ {
+  "rare": "saas-development",
+  "cible": "coding"
+ },
+ {
+  "rare": "scenography",
+  "cible": "3d"
+ },
+ {
+  "rare": "segmentation",
+  "cible": "analytics-produit"
+ },
+ {
+  "rare": "simulation-physique",
+  "cible": "simulation"
+ },
+ {
+  "rare": "site-audit",
+  "cible": "seo"
+ },
+ {
+  "rare": "social-listening",
+  "cible": "veille"
+ },
+ {
+  "rare": "social-media-video",
+  "cible": "social-media"
+ },
+ {
+  "rare": "social-monitoring",
+  "cible": "veille"
+ },
+ {
+  "rare": "sop",
+  "cible": "documentation"
+ },
+ {
+  "rare": "speech-to-text",
+  "cible": "transcription"
+ },
+ {
+  "rare": "sql",
+  "cible": "base-de-donnees"
+ },
+ {
+  "rare": "ssl",
+  "cible": "security"
+ },
+ {
+  "rare": "storyboard",
+  "cible": null
+ },
+ {
+  "rare": "subscription-management",
+  "cible": "paiements"
+ },
+ {
+  "rare": "tax-compliance",
+  "cible": "finance"
+ },
+ {
+  "rare": "team-communication",
+  "cible": "team-collaboration"
+ },
+ {
+  "rare": "terrain-3d",
+  "cible": "generation-3d"
+ },
+ {
+  "rare": "threat-detection",
+  "cible": "security"
+ },
+ {
+  "rare": "ticket-management",
+  "cible": "helpdesk"
+ },
+ {
+  "rare": "tokens",
+  "cible": null
+ },
+ {
+  "rare": "traduction",
+  "cible": null
+ },
+ {
+  "rare": "traduction-video",
+  "cible": "video-editing"
+ },
+ {
+  "rare": "transfert-vectoriel",
+  "cible": "illustration-vectorielle"
+ },
+ {
+  "rare": "tutorial-creation",
+  "cible": "creation-cours"
+ },
+ {
+  "rare": "ui-generation",
+  "cible": null
+ },
+ {
+  "rare": "ui-icons",
+  "cible": "icons"
+ },
+ {
+  "rare": "unsubscribe",
+  "cible": null
+ },
+ {
+  "rare": "url-shortening",
+  "cible": null
+ },
+ {
+  "rare": "ux-design",
+  "cible": "ui-design"
+ },
+ {
+  "rare": "ux-ui",
+  "cible": "ui-design"
+ },
+ {
+  "rare": "vector-design",
+  "cible": "illustration-vectorielle"
+ },
+ {
+  "rare": "veille-concurrentielle",
+  "cible": "veille"
+ },
+ {
+  "rare": "vente-directe",
+  "cible": null
+ },
+ {
+  "rare": "video-narration",
+  "cible": "video-creation"
+ },
+ {
+  "rare": "video-repurposing",
+  "cible": "content-repurposing"
+ },
+ {
+  "rare": "video-tutorial",
+  "cible": "video-creation"
+ },
+ {
+  "rare": "virements-sepa",
+  "cible": "paiements"
+ },
+ {
+  "rare": "visual-identity",
+  "cible": "branding"
+ },
+ {
+  "rare": "visual-organization",
+  "cible": "organization"
+ },
+ {
+  "rare": "visualisation-architecturale",
+  "cible": "3d"
+ },
+ {
+  "rare": "voice-notes",
+  "cible": "notes"
+ },
+ {
+  "rare": "voice-over",
+  "cible": "generation-audio"
+ },
+ {
+  "rare": "voice-to-text",
+  "cible": "transcription"
+ },
+ {
+  "rare": "voix-chantee",
+  "cible": "generation-audio"
+ },
+ {
+  "rare": "vr-architecture",
+  "cible": "3d"
+ },
+ {
+  "rare": "watermark",
+  "cible": null
+ },
+ {
+  "rare": "whiteboard",
+  "cible": "brainstorming"
+ },
+ {
+  "rare": "workflow-builder",
+  "cible": null
+ }
+]
