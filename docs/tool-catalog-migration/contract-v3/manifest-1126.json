@@ -1,16 +1,16 @@
 {
   "schemaVersion": 1,
-  "generatedOn": "2026-07-16",
-  "gitCommit": "dbea365209aa0458d9bc5bdadeefa72a30b4bc7b",
+  "generatedOn": "2026-08-18",
+  "gitCommit": "5402e95512c5e59cb756d9319da1bbe688d2e919",
   "gitBranch": "codex/go25-preprod-hardening",
   "source": {
     "path": "src/data/tools_v4.json",
-    "sha256": "d92d47b5a7fa9614a19f72b6fc4368a89f856a7d64fd414b9f60a21c4bed4f9c",
-    "recordCount": 1126,
+    "sha256": "c47542a16a1beb9c7f2f5cad042980f1b3561a834d7da0156f07ae9c70c651a2",
+    "recordCount": 1129,
     "supabaseAddsAtAudit": 0
   },
-  "slugCount": 1126,
-  "slugListSha256": "9d0e3f599e290e80257fc07e024c120d99087a46101ab70c31024445574ce458",
+  "slugCount": 1129,
+  "slugListSha256": "f64049dee528e845517bfab0e38e1a365abc712ef0b0c0d512269154a329af83",
   "legacyJsonOnly": {
     "inventoryPath": "docs/tool-catalog-migration/inventory-json-only.csv",
     "inventorySha256": "bd1ea817e13ba80ab2ad64a471bcda0bc122b9ffc12aa6b51c0963dfa4a40094",
@@ -18,10 +18,10 @@
   },
   "legacyIsFreeReference": {
     "implementation": "src/lib/pricing.ts::hasGenuineFreeTier",
-    "trueCount": 589,
+    "trueCount": 592,
     "falseCount": 537
   },
-  "note": "Liste de publication exacte des routes tool/ existantes. Aucun slug implicite.",
+  "note": "Liste explicite des routes tool/ publiées, étendue par lots contrôlés. Aucun slug implicite.",
   "slugs": [
     "1001bit-tools",
     "17hats",
@@ -111,6 +111,7 @@
     "astute-graphics",
     "attio",
     "audacity",
+    "audionotes",
     "auphonic",
     "ausha",
     "auth-js",
@@ -487,6 +488,7 @@
     "itch-io",
     "itsdart",
     "jasper",
+    "jenni",
     "jest",
     "jira",
     "jobber",
@@ -1088,6 +1090,7 @@
     "vimeo",
     "visily",
     "visme",
+    "visualcv",
     "vitest",
     "vmake",
     "voiceover",

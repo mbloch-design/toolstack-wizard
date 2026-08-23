@@ -1,5 +1,17 @@
 # ToolTrim — AI Changelog
 
+## 2026-08-18 · Pilote d’extension du catalogue canonique
+
+- Trois nouvelles identités explicites ont été préparées : Audionotes, Jenni AI et VisualCV ; les index locaux et le manifeste passent de 1 126 à 1 129 outils.
+- Les sources tarifaires officielles ont été collectées avec des adaptateurs dédiés et un éditorial complet FR/EN sans montants dans la prose canonique.
+- Audionotes et Jenni passent les gates éditoriaux et tarifaires ainsi que le dry-run transactionnel avec rollback stable.
+- VisualCV reste bloqué : son prix présenté par mois est facturé trimestriellement, engagement que le contrat canonique actuel ne représente pas sans ambiguïté.
+- Les trois identités publiques et leur présence dans le manifeste matérialisé ont été créées dans Supabase.
+- Après autorisation explicite, Audionotes et Jenni ont été publiés en canonical avec leurs contenus FR/EN et leurs observations tarifaires approuvées ; VisualCV reste volontairement en fallback legacy.
+- Le contrôle global reflète désormais l’architecture hybride réelle : parité entre identités et manifeste, deux localisations pour chaque outil projeté, aucune fiche canonical absente de la projection et suivi explicite des fallbacks legacy.
+
+---
+
 ## 2026-08-18 · Recherche globale, couvertures et seuils de lisibilité
 
 - Les articles utilisent leur image de couverture avec un pictogramme de repli lorsqu'aucun visuel n'est disponible.
