@@ -1,10 +1,9 @@
 import { useParams, Link, useLocation, useNavigate } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
-import { useToolBySlug, useToolSummaries, useCategories, usePosts, SsrRelatedPostsContext } from "@/hooks/useSupabaseData";
-import { useContext, useEffect } from "react";
-import { ArrowRight, Check, CirclePlus, CircleMinus } from "lucide-react";
+import { useToolBySlug, useToolSummaries, useCategories } from "@/hooks/useSupabaseData";
+import { useEffect, useRef, useState } from "react";
+import { ArrowRight, Check, CirclePlus, CircleMinus, ExternalLink } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
-import PinToolButton from "@/components/PinToolButton";
 import Breadcrumb from "@/components/Breadcrumb";
 import { setSeoTags, setMeta, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { getCategoryIcon } from "@/lib/categoryIcons";
@@ -32,6 +31,7 @@ import { findSimilarTools } from "@/lib/alternativesSimilarity";
 import ToolFAQSection from "@/components/tool/ToolFAQSection";
 import ToolJsonLd from "@/components/tool/ToolJsonLd";
 import StickyDecisionCard from "@/components/tool/StickyDecisionCard";
+import PinToolButton from "@/components/PinToolButton";
 
 /* ─────────────────────────────────────────────────────────────────────────────
    ToolDetailPage — editorial redesign
@@ -64,13 +64,8 @@ const ToolDetailPage = () => {
   const { tool, loading } = useToolBySlug(slug);
   const { tools } = useToolSummaries();
   const { categories } = useCategories();
-  const { posts } = usePosts(lang);
-  // Hooks must run unconditionally on every render — this was previously
-  // called after the `if (!tool) return null` guard below, so it was
-  // skipped during the loading render but called once `tool` resolved,
-  // changing the hook count between renders (React error #310, "Rendered
-  // more hooks than during the previous render").
-  const ssrRelatedPosts = useContext(SsrRelatedPostsContext);
+  const heroEndRef = useRef<HTMLDivElement | null>(null);
+  const [showCompactHeader, setShowCompactHeader] = useState(false);
 
   // Normalize trailing slashes so prerendered URLs and client-side routing
   // resolve to the same intent page (`/prix` and `/prix/`, for example).
@@ -212,6 +207,33 @@ const ToolDetailPage = () => {
     }
   }, [loading, tool, navigate, prefix]);
 
+  useEffect(() => {
+    const marker = heroEndRef.current;
+    if (!marker || !tool) return;
+
+    const scrollRoot = marker.closest(".asv2-content");
+    if (!(scrollRoot instanceof HTMLElement)) return;
+
+    let frame = 0;
+    const updateCompactHeader = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const rootTop = scrollRoot.getBoundingClientRect().top;
+        setShowCompactHeader(marker.getBoundingClientRect().top <= rootTop);
+      });
+    };
+
+    updateCompactHeader();
+    scrollRoot.addEventListener("scroll", updateCompactHeader, { passive: true });
+    window.addEventListener("resize", updateCompactHeader);
+
+    return () => {
+      cancelAnimationFrame(frame);
+      scrollRoot.removeEventListener("scroll", updateCompactHeader);
+      window.removeEventListener("resize", updateCompactHeader);
+    };
+  }, [tool, subPage]);
+
   /* ── Loading / not found ── */
   if (loading) {
     return (
@@ -271,12 +293,6 @@ const ToolDetailPage = () => {
       ? findSimilarTools(tool, tools.filter((ct: any) => ct.substitution_cluster_v2 === (tool as any).substitution_cluster_v2 && ct.id !== tool.id)).length > 0
       : false)
     || FEATURED_COMPARISONS.some((c: any) => c.toolA === (tool.slug || tool.id) || c.toolB === (tool.slug || tool.id));
-  const relatedPosts = ssrRelatedPosts !== undefined
-    ? ssrRelatedPosts
-    : posts
-        .filter((p: any) => `${p.title ?? ""} ${p.excerpt ?? ""} ${p.content ?? ""}`.toLowerCase().includes((tool.name ?? "").toLowerCase()))
-        .slice(0, 3);
-
   const displayPrice  = resolveMonthlyPrice(tool);
   const verifiedOn    = tool.pricing_v5?.verified_on || "2026-03-29";
   const sourceDomain  = tool.pricing_v5?.source_domain;
@@ -284,6 +300,11 @@ const ToolDetailPage = () => {
   const primaryCtaUrl = tool.affiliateLink || tool.websiteUrl || "#";
   const hasAffiliateOffer = Boolean(tool.affiliateLink);
   const isFree        = displayPrice === 0 && !tool.pricing?.paid;
+  const primaryCtaLabel = hasAffiliateOffer
+    ? t("Voir l’offre", "View offer")
+    : isFree
+    ? t("Essayer gratuitement", "Try for free")
+    : t("Visiter le site", "Visit website");
   const hasFreeplan   = hasGenuineFreeTier(tool.pricing?.free);
   // Was `!!(tool.pricing?.free && tool.pricing?.paid)` — pure truthiness,
   // so a free field describing the ABSENCE of a free plan ("Pas de plan
@@ -294,22 +315,10 @@ const ToolDetailPage = () => {
   const catName       = stripLeadingEmoji(category?.name, category?.id || "");
   const catNameEn     = stripLeadingEmoji(category?.nameEn, catName);
 
-  const priceLabel = isFree
-    ? t("Gratuit", "Free")
-    : isFreemium
-    ? "Freemium"
-    : displayPrice > 0
-    ? formatPriceLabel(tool, displayPrice, t)
-    : t("Sur devis", "On request");
-
   const toolType = (tool as any).tool_type as string;
 
   /* Shared card props */
-  const cardProps = {
-    tool, displayPrice, verifiedOn, isFree, isFreemium, hasFreeplan,
-    prefix, lang, t, primaryCtaUrl, hasAffiliateOffer,
-    catName, catNameEn,
-  };
+  const cardProps = { tool, prefix, t, alternatives };
   const editorialLongDesc = lang === "en"
     ? ((tool as any).longDescriptionEn || (tool as any).longDescription || "")
     : ((tool as any).longDescription || "");
@@ -366,6 +375,45 @@ const ToolDetailPage = () => {
           subPage === "faq" ? "/faq" : ""
         }`}
       />
+
+      <div
+        className={`td-tool-compact-anchor${showCompactHeader ? " is-visible" : ""}`}
+        aria-hidden={!showCompactHeader}
+      >
+        <div className="td-tool-compact-surface">
+          <div className="td-container">
+            <div className="td-tool-compact-bar">
+              <div className="td-tool-compact-main">
+                <div className="td-tool-compact-identity">
+                  <span className="td-tool-compact-logo">
+                    <ToolLogo tool={tool as any} size={30} />
+                  </span>
+                  <strong>{tool.name}</strong>
+                </div>
+                <a
+                  href={primaryCtaUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="td-tool-compact-cta"
+                  tabIndex={showCompactHeader ? 0 : -1}
+                >
+                  <span>{primaryCtaLabel}</span>
+                  <ExternalLink aria-hidden />
+                </a>
+              </div>
+              <div className="td-tool-compact-rail">
+                <PinToolButton
+                  slug={tool.slug || tool.id}
+                  label={tool.name}
+                  t={t}
+                  compact
+                  labelMode="full"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* ══════════════════════════════════════════════════════════
           HERO — tool identity & positioning
@@ -430,13 +478,10 @@ const ToolDetailPage = () => {
                             {t(catName, catNameEn)}
                           </Link>
                         )}
-                        <PinToolButton
-                          slug={tool.slug || tool.id}
-                          label={tool.name}
-                          t={t}
-                          inline
-                          labelMode="full"
-                        />
+                        <a href={primaryCtaUrl} target="_blank" rel="noopener noreferrer" className="td-hero-site-link">
+                          {primaryCtaLabel}
+                          <ExternalLink aria-hidden />
+                        </a>
                       </div>
 
                       {/* Single H1: name + intent subtitle nested in the same tag
@@ -457,6 +502,8 @@ const ToolDetailPage = () => {
                       {priceContext && <p className="td-hero-context">{priceContext}</p>}
                     </div>
                   </div>
+
+                  <div ref={heroEndRef} className="td-hero-end-marker" aria-hidden="true" />
 
                   {/* Remaining screenshots (if any) below the hero card */}
                   {isPresentation && rest.length > 0 && <ToolGallery images={rest} toolName={tool.name} />}
@@ -892,34 +939,7 @@ const ToolDetailPage = () => {
 
           {/* ── RIGHT SIDEBAR — StickyDecisionCard ── */}
           <aside className="td-sidebar-desktop">
-              <StickyDecisionCard {...cardProps} />
-
-              {/* Related posts */}
-              {relatedPosts.length > 0 && (
-                <div className="td-related-guides">
-                  <p className="td-eyebrow td-eyebrow--tight">
-                    {t("Guides liés", "Related guides")}
-                  </p>
-                  <div className="td-related-guides-list">
-                    {relatedPosts.map((post: any) => (
-                      <Link
-                        key={post.slug}
-                        to={`${prefix}/guide/${post.slug}`}
-                        className="td-guide-link"
-                      >
-                        <p className="td-guide-link-title">
-                          {post.title}
-                        </p>
-                        {post.readTime && (
-                          <p className="td-caption">
-                            {post.readTime}
-                          </p>
-                        )}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              )}
+              <StickyDecisionCard {...cardProps} compactHeaderActive={showCompactHeader} />
           </aside>
 
         </div>

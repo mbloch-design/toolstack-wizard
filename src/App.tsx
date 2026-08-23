@@ -30,6 +30,7 @@ const SelectorPage = lazy(() => import("@/pages/SelectorPage"));
 const ResultsPage = lazy(() => import("@/pages/ResultsPage"));
 const ToolsPage = lazy(() => import("@/pages/ToolsPage"));
 const CategoryPage = lazy(() => import("@/pages/CategoryPage"));
+const HostPage = lazy(() => import("@/pages/HostPage"));
 const CategoriesIndexPage = lazy(() => import("@/pages/CategoriesIndexPage"));
 const GuidesPage = lazy(() => import("@/pages/GuidesPage"));
 const StacksPage = lazy(() => import("@/pages/StacksPage"));
@@ -209,6 +210,11 @@ export const AppRoutes = () => (
       <Route path="outils/:slug" element={<RedirectOutils />} />
       <Route path="category" element={<CategoriesIndexPage />} />
       <Route path="category/:slug" element={<CategoryPage />} />
+      {/* Pages hôtes : une seule mécanique, le préfixe dit la famille.
+          La page se replie sur la fiche de l'hôte sous le seuil de contenu. */}
+      <Route path="plugins/:slug" element={<HostPage famille="plugins" />} />
+      <Route path="libraries/:slug" element={<HostPage famille="libraries" />} />
+      <Route path="mcp/:slug" element={<HostPage famille="mcp" />} />
       <Route path="guides" element={<GuidesPage />} />
       <Route path="stories" element={<RedirectStoriesToGuides />} />
       <Route path="ma-stack" element={<CartPage />} />

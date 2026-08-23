@@ -7965,8 +7965,8 @@
   /* Two-column body grid: content | sidebar */
   .td-body-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 360px;
-    gap: 48px;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 36px;
     align-items: start;
     padding-top: 0;
     padding-bottom: 80px;
@@ -7975,6 +7975,136 @@
     padding-top: 40px;
     margin-bottom: 20px;
   }
+
+  /* Product header, second state. The strip spans the complete product frame
+     while its controls remain aligned with the editorial column. It is a
+     structural continuation of the page, not a floating card. */
+  .td-tool-compact-anchor {
+    position: static;
+    width: 100%;
+    height: 0;
+    pointer-events: none;
+  }
+  .td-tool-compact-surface {
+    position: fixed;
+    top: calc(7px + var(--navbar-h));
+    right: 7px;
+    left: calc(7px + 76px + 7px);
+    z-index: 45;
+    width: auto;
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-surface);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-3px);
+    transform-origin: top center;
+    transition:
+      opacity 160ms ease-out,
+      transform 180ms cubic-bezier(0.2, 0.7, 0.2, 1),
+      visibility 0s linear 200ms;
+  }
+  .asv2-root--sidebar-expanded .td-tool-compact-surface {
+    left: calc(7px + 236px + 7px);
+  }
+  .td-tool-compact-bar {
+    min-height: 60px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    column-gap: 36px;
+    align-items: center;
+  }
+  .td-tool-compact-main {
+    min-width: 0;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+  }
+  .td-tool-compact-rail {
+    min-width: 0;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    padding-left: 24px;
+    border-left: 1px solid var(--color-border-soft);
+  }
+  .td-tool-compact-rail .pin-tool-button {
+    position: static;
+    inset: auto;
+    min-height: 38px;
+    padding: 0 12px;
+    border: 0;
+    border-radius: var(--radius-sm);
+    background: transparent;
+    color: var(--color-text);
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 550;
+    line-height: 1;
+    box-shadow: none;
+  }
+  .td-tool-compact-rail .pin-tool-button:hover {
+    transform: none;
+    background: var(--color-surface-soft);
+  }
+  .td-tool-compact-anchor.is-visible { pointer-events: auto; }
+  .td-tool-compact-anchor.is-visible .td-tool-compact-surface {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition-delay: 0s;
+  }
+  .td-tool-compact-identity {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .td-tool-compact-logo {
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-border-soft);
+    border-radius: var(--radius-sm);
+    background: var(--color-surface);
+  }
+  .td-tool-compact-identity strong {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: var(--font-brand);
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    color: var(--color-text);
+  }
+  .td-tool-compact-cta {
+    min-height: 38px;
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 0 14px;
+    border-radius: var(--radius-pill);
+    background: var(--color-text);
+    color: var(--color-surface);
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1;
+    text-decoration: none;
+    transition: opacity 140ms ease-out;
+  }
+  .td-tool-compact-cta:hover { opacity: 0.84; }
+  .td-tool-compact-cta svg { width: 14px; height: 14px; }
+  .td-hero-end-marker { width: 100%; height: 1px; }
+
   .td-main {
     --td-chapter-gap: clamp(52px, 6vw, 72px);
     --td-block-gap: clamp(32px, 4vw, 44px);
@@ -7982,10 +8112,15 @@
     display: flow-root;
   }
   @media (max-width: 1100px) {
+    .td-tool-compact-anchor { display: none; }
     .td-body-grid {
       grid-template-columns: minmax(0, 1fr);
       gap: 40px;
     }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .td-tool-compact-surface { transition: none; }
   }
 
   /* Sticky sidebar — sticky must live on the GRID ITEM itself */
@@ -8056,9 +8191,30 @@
   .td-hero-eyebrow-row {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 12px;
     flex-wrap: wrap;
   }
+  .td-hero-site-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 38px;
+    padding: 0 14px;
+    border: 1px solid var(--color-text);
+    border-radius: var(--radius-pill);
+    background: var(--color-text);
+    color: var(--color-surface);
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1;
+    text-decoration: none;
+    transition: opacity 140ms ease-out;
+  }
+  .td-hero-site-link:hover { opacity: 0.84; }
+  .td-hero-site-link svg { width: 14px; height: 14px; }
   .td-hero-cat {
     display: inline-flex;
     align-items: center;
@@ -9168,115 +9324,104 @@
     color: var(--color-text);
   }
 
-  /* ── Sticky decision card ───────────────────────────────────────────────
-     The whole sidebar is a reusable UI surface, so its visual rules live in
-     the td-* system rather than in a large JSX style object. */
+  /* Compact utility rail. Product identity and purchasing facts stay in the
+     main column; this rail only exposes actions and nearby alternatives. */
   .td-decision-card {
     display: grid;
-    gap: 18px;
-    padding: 22px;
-    background: var(--color-surface-soft);
-    border: 0;
-    border-radius: var(--tt-surface-radius-panel);
+    gap: 28px;
+    padding: 4px 0 0 24px;
+    border-left: 1px solid var(--color-border-soft);
   }
-  .td-decision-identity {
-    display: flex;
+  .td-decision-utility-actions { display: grid; gap: 2px; }
+  .td-decision-utility-actions .pin-tool-button,
+  .td-decision-utility-actions > button,
+  .td-decision-utility-actions > a {
+    position: static;
+    inset: auto;
+    display: grid;
+    grid-template-columns: 17px 1fr;
     align-items: center;
+    justify-content: stretch;
     gap: 10px;
+    width: 100%;
+    min-height: 40px;
+    padding: 0 9px;
+    border: 0;
+    border-radius: var(--radius-sm);
+    background: transparent;
+    color: var(--color-muted);
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.2;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 140ms ease-out, color 140ms ease-out;
   }
-  .td-decision-logo {
-    width: 38px;
-    height: 38px;
-    flex: 0 0 38px;
+  .td-decision-utility-actions .pin-tool-button { color: var(--color-text); }
+  .td-decision-utility-actions .pin-tool-button:hover,
+  .td-decision-utility-actions > button:hover,
+  .td-decision-utility-actions > a:hover {
+    transform: none;
+    background: var(--color-surface-soft);
+    color: var(--color-text);
+  }
+  .td-decision-utility-actions svg { width: 16px; height: 16px; }
+  .td-decision-similar { display: grid; gap: 10px; }
+  .td-decision-similar-head {
     display: flex;
     align-items: center;
-    justify-content: center;
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius);
+    justify-content: space-between;
+    gap: 12px;
+    padding: 0 8px;
   }
-  .td-decision-name {
-    min-width: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    font-family: var(--font-brand);
-    font-size: var(--tt-size-card-title);
+  .td-decision-similar-head h2 {
+    margin: 0;
+    font-family: var(--font-ui);
+    font-size: 13px;
     font-weight: 600;
-    letter-spacing: -0.02em;
     line-height: 1.2;
     color: var(--color-text);
   }
-  .td-decision-kicker {
-    display: block;
-    margin-bottom: 12px;
-    font-family: var(--font-ui);
-    font-size: var(--tt-size-kicker);
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+  .td-decision-similar-head > a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
     color: var(--color-muted);
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 500;
+    text-decoration: none;
   }
-  .td-decision-score-row {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 12px;
-  }
-  .td-decision-score { display: flex; align-items: baseline; gap: 3px; }
-  .td-decision-score-value {
-    font-family: var(--font-brand);
-    font-size: 52px;
-    font-weight: 600;
-    line-height: 0.9;
-    letter-spacing: -0.06em;
+  .td-decision-similar-head > a:hover { color: var(--color-text); }
+  .td-decision-similar-head svg { width: 12px; height: 12px; }
+  .td-decision-tool-list { display: grid; gap: 4px; }
+  .td-decision-tool-list > a {
+    display: grid;
+    grid-template-columns: 28px 1fr 13px;
+    align-items: center;
+    gap: 9px;
+    min-height: 39px;
+    padding: 3px 8px;
+    border-radius: var(--radius-sm);
     color: var(--color-text);
-  }
-  .td-decision-score-max {
-    padding-bottom: 5px;
     font-family: var(--font-ui);
-    font-size: 17px;
-    color: var(--color-muted-light);
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
   }
-  .td-decision-score-label {
-    font-family: var(--font-ui);
-    font-size: 16px;
-    font-weight: 600;
-    text-align: right;
-    color: var(--color-text-strong);
-  }
-  .td-decision-copy {
-    margin-top: 12px;
-    font-family: var(--font-ui);
-    font-size: var(--tt-size-card-body);
-    line-height: 1.5;
-    color: var(--color-text);
-  }
-  .td-decision-actions { display: grid; gap: 8px; }
-  .td-decision-primary {
+  .td-decision-tool-list > a:hover { background: var(--color-surface-soft); }
+  .td-decision-tool-list > a > svg { width: 12px; height: 12px; color: var(--color-muted); }
+  .td-decision-tool-logo {
+    width: 26px;
+    height: 26px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    font-family: var(--font-ui);
-    font-weight: 500;
-    text-decoration: none;
-    border-radius: var(--radius);
-    transition: opacity 140ms ease-out, border-color 140ms ease-out;
-  }
-  .td-decision-primary {
-    height: 46px;
-    background: var(--color-text);
-    color: var(--color-surface);
-    font-size: 15px;
-  }
-  .td-decision-primary svg { width: 14px; height: 14px; }
-  .td-decision-primary:hover { opacity: 0.82; }
-  .td-decision-verified {
-    font-family: var(--font-ui);
-    font-size: 11px;
-    text-align: center;
-    color: var(--color-muted-light);
+    border: 1px solid var(--color-border-soft);
+    border-radius: var(--radius-sm);
+    background: var(--color-surface);
   }
 
   @media (max-width: 640px) {
@@ -9294,7 +9439,11 @@
     }
     .td-tool-subnav::-webkit-scrollbar { display: none; }
     .td-tool-subnav a { flex: 0 0 auto; }
-    .td-decision-card { padding: 20px; }
+    .td-decision-card {
+      padding: 18px 0 0;
+      border-top: 1px solid var(--color-border-soft);
+      border-left: 0;
+    }
     .td-review-rationale { grid-template-columns: 1fr; gap: 14px; }
   }
 

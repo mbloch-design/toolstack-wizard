@@ -1,119 +1,71 @@
-import { Link, useLocation } from "react-router-dom";
-import { Compass, ExternalLink } from "lucide-react";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight, Flag, Share2 } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
-import { computeToolTrimScore } from "@/lib/toolTrimScore";
-import { resolveVerdict } from "@/lib/toolUtils";
+import PinToolButton from "@/components/PinToolButton";
 import type { Tool } from "@/data/types";
-import { getExplorerHref } from "@/lib/toolExploration";
-
-/* ─────────────────────────────────────────────────────────────────────────────
-   StickyDecisionCard
-   Right sidebar: editorial score + verdict sentence + CTAs + key facts + alt
-   Order: header → score → decision sentence → CTAs → key facts → alternative
-   No stars. No gradients. No colored badges.
-───────────────────────────────────────────────────────────────────────────── */
 
 interface Props {
   tool: Tool;
-  verifiedOn: string;
-  isFree: boolean;
-  hasFreeplan: boolean;
   prefix: string;
-  lang: string;
   t: (fr: string, en: string) => string;
-  primaryCtaUrl: string;
-  hasAffiliateOffer: boolean;
+  alternatives: Tool[];
+  compactHeaderActive?: boolean;
 }
 
-export default function StickyDecisionCard({
-  tool, verifiedOn, isFree, hasFreeplan, prefix, lang, t,
-  primaryCtaUrl, hasAffiliateOffer,
-}: Props) {
-  const location = useLocation();
+export default function StickyDecisionCard({ tool, prefix, t, alternatives, compactHeaderActive = false }: Props) {
+  const [shared, setShared] = useState(false);
+  const slug = tool.slug || tool.id;
+  const similar = alternatives.slice(0, 4);
 
-  const ts = computeToolTrimScore(tool);
-
-  /* ── Verdict sentence ── */
-  const { keepItems, avoidItems, threshold } = resolveVerdict(tool, lang);
-
-  const verdictText = (() => {
-    // Short synthesis only — the main content area already shows the full
-    // threshold verbatim in "Décision rapide", so repeating all of it here
-    // duplicates the same paragraph twice on the page. First sentence is
-    // enough for an at-a-glance sidebar card.
-    if (threshold && threshold.length > 0) {
-      const firstSentence = threshold.split(/(?<=[.!?])\s+/)[0];
-      return firstSentence || threshold;
+  const sharePage = async () => {
+    const url = window.location.href;
+    try {
+      if (navigator.share) await navigator.share({ title: tool.name, url });
+      else await navigator.clipboard.writeText(url);
+      setShared(true);
+      window.setTimeout(() => setShared(false), 1800);
+    } catch {
+      // Closing the native share sheet needs no visible error.
     }
-    if (keepItems.length && avoidItems.length) {
-      const k = keepItems[0];
-      const a = avoidItems[0];
-      return lang === "fr"
-        ? `Bon choix si ${k.charAt(0).toLowerCase() + k.slice(1)}. Moins adapté si ${a.charAt(0).toLowerCase() + a.slice(1)}.`
-        : `Good fit if ${k.charAt(0).toLowerCase() + k.slice(1)}. Less suited if ${a.charAt(0).toLowerCase() + a.slice(1)}.`;
-    }
-    if (keepItems.length) {
-      const k = keepItems[0];
-      return lang === "fr"
-        ? `Pertinent si ${k.charAt(0).toLowerCase() + k.slice(1)}.`
-        : `Relevant if ${k.charAt(0).toLowerCase() + k.slice(1)}.`;
-    }
-    return "";
-  })();
-
-  void hasFreeplan;
+  };
 
   return (
-    <div className="td-decision-card">
-
-      {/* ── Identity: logo + name (the logo lives nowhere else on the page) ── */}
-      <div className="td-decision-identity">
-        <div className="td-decision-logo">
-          <ToolLogo tool={tool as any} size={24} />
-        </div>
-        <p className="td-decision-name">{tool.name}</p>
-      </div>
-
-      {/* ── Score + verdict at a glance ── */}
-      <div className="td-decision-verdict">
-        <span className="td-decision-kicker">
-          {t("Verdict ToolTrim", "ToolTrim Verdict")}
-        </span>
-        <div className="td-decision-score-row">
-          <div className="td-decision-score">
-            <span className="td-decision-score-value">{ts.score.toFixed(1)}</span>
-            <span className="td-decision-score-max">/5</span>
-          </div>
-          <span className="td-decision-score-label">{t(ts.labelFr, ts.labelEn)}</span>
-        </div>
-        {verdictText && (
-          <p className="td-decision-copy">{verdictText}</p>
+    <div className="td-decision-card td-decision-card--utility">
+      <nav className="td-decision-utility-actions" aria-label={t("Actions sur l’outil", "Tool actions")}>
+        {!compactHeaderActive && (
+          <PinToolButton slug={slug} label={tool.name} t={t} labelMode="full" />
         )}
-      </div>
-
-      {/* ── Actions ── */}
-      <div className="td-decision-actions">
-        <a
-          href={primaryCtaUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="td-decision-primary"
-        >
-          {hasAffiliateOffer ? t("Voir l'offre", "View offer") : isFree ? t("Essayer gratuitement", "Try for free") : t("Visiter le site", "Visit website")}
-          <ExternalLink aria-hidden />
+        <button type="button" onClick={sharePage}>
+          <Share2 aria-hidden />
+          <span>{shared ? t("Lien copié", "Link copied") : t("Partager", "Share")}</span>
+        </button>
+        <a href={`mailto:contact@tooltrim.com?subject=${encodeURIComponent(t(`Information à corriger sur ${tool.name}`, `Information to correct on ${tool.name}`))}`}>
+          <Flag aria-hidden />
+          <span>{t("Signaler un problème", "Report a problem")}</span>
         </a>
-        <Link
-          to={getExplorerHref(prefix, { type: "outil", slug: tool.slug || tool.id })}
-          state={{ explorerCanGoBack: true, explorerReturnTo: `${location.pathname}${location.search}`, previousSourceLabel: tool.name }}
-          className="td-explore-action"
-        >
-          <Compass size={16} aria-hidden />
-          {t(`Explorer autour de ${tool.name}`, `Explore around ${tool.name}`)}
-        </Link>
-      </div>
-      <p className="td-decision-verified">
-        {t("Tarifs vérifiés le", "Pricing verified on")} <time dateTime={verifiedOn}>{verifiedOn}</time>
-      </p>
+      </nav>
+
+      {similar.length > 0 && (
+        <section className="td-decision-similar">
+          <div className="td-decision-similar-head">
+            <h2>{t("Outils similaires", "Similar tools")}</h2>
+            <Link to={`${prefix}/tool/${slug}/alternatives`}>
+              <span>{t("Voir tout", "View all")}</span>
+              <ArrowRight aria-hidden />
+            </Link>
+          </div>
+          <div className="td-decision-tool-list">
+            {similar.map((item) => (
+              <Link key={item.id} to={`${prefix}/tool/${item.slug || item.id}`}>
+                <span className="td-decision-tool-logo"><ToolLogo tool={item as any} size={19} /></span>
+                <span>{item.name}</span>
+                <ArrowRight aria-hidden />
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
     </div>
   );
 }
