@@ -3,7 +3,7 @@
  */
 
 export const SEO_BASE = "https://tooltrim.com";
-export const OG_IMAGE = "https://tooltrim.com/og-image.png";
+export const OG_IMAGE = "https://tooltrim.com/og-image-v2.png";
 
 const GUIDE_SLUG_ALTERNATES: Record<string, string> = {
   "loom-prix-alternatives": "loom-pricing-alternatives",
