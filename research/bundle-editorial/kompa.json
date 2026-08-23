@@ -1,0 +1,88 @@
+{
+  "slug": "kompa",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Kompa — UI kit et design system Framer (site officiel)", "url": "https://www.kompa.design/" },
+    { "label": "Kompa sur le Marketplace Framer (page éditeur)", "url": "https://www.framer.com/marketplace/plugins/kompa/" }
+  ],
+  "facts": {
+    "what": "Plugin Framer réunissant plus de mille sections et quatre cents composants d'interface prêts à poser, accessibles depuis le menu d'actions rapides de Framer. Destiné aux freelances et aux équipes qui produisent des sites en série.",
+    "what_en": "Framer plugin bundling over a thousand ready-made sections and four hundred interface components, reachable from Framer's quick-action menu. Aimed at freelancers and teams shipping sites in volume.",
+    "pricing_model": "Achat unique, sans abonnement ni renouvellement. Les mises à jour ultérieures sont incluses. Une version gratuite allégée donne accès aux outils de couleur et de texte et à des composants de base.",
+    "free_tier": { "exists": true, "detail": "Version gratuite limitée : outils de couleur et de texte, composants de base. Fonctionne avec tous les plans Framer, y compris le plan gratuit." },
+    "plans": [
+      { "name": "Gratuit", "price": "0" },
+      { "name": "Accès à vie", "price": "achat unique, montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Plus de mille sections prêtes à poser",
+      "Plus de quatre cents composants d'interface",
+      "Accès depuis le menu d'actions rapides de Framer",
+      "Mises à jour incluses sans surcoût"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous travaillez déjà dans Framer et livrez des sites régulièrement.",
+        "Vous voulez éviter de reconstruire les mêmes sections à chaque projet.",
+        "Vous préférez un achat unique à un abonnement de plus."
+      ],
+      "avoidIf": [
+        "Vous n'utilisez pas Framer : le plugin ne s'utilise pas seul.",
+        "Vous concevez chaque site sur mesure et n'avez pas d'usage d'une bibliothèque générique.",
+        "Vous ne livrez qu'un site par an, la version gratuite suffira."
+      ],
+      "threshold": "Kompa se justifie dès que vous enchaînez les projets Framer : le temps épargné sur les sections répétitives dépasse vite l'achat unique. Pour un site isolé, la version gratuite couvre le besoin."
+    },
+    "pros": [
+      "Bibliothèque très fournie, couvrant la plupart des sections courantes.",
+      "Achat unique, sans abonnement récurrent.",
+      "Mises à jour incluses, la bibliothèque s'étoffe dans le temps.",
+      "Version gratuite permettant d'évaluer avant d'acheter."
+    ],
+    "cons": [
+      "Suppose un usage actif de Framer, sans lequel le plugin n'a aucun objet.",
+      "Bibliothèque générique : le rendu demande un travail de personnalisation pour ne pas ressembler aux autres sites qui l'utilisent.",
+      "Le volume de composants peut être difficile à parcourir au début."
+    ],
+    "use_cases": [
+      "Monter rapidement la structure d'un site client dans Framer.",
+      "Réutiliser des sections éprouvées d'un projet à l'autre.",
+      "Prototyper une page complète sans repartir d'une page blanche."
+    ],
+    "relevant_for": ["Freelances Framer", "Studios de design web", "Équipes produit"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You already work in Framer and ship sites regularly.",
+        "You want to stop rebuilding the same sections on every project.",
+        "You prefer a one-time purchase over yet another subscription."
+      ],
+      "avoidIf": [
+        "You don't use Framer — the plugin has no standalone use.",
+        "You design every site bespoke and have no use for a generic library.",
+        "You ship one site a year; the free version will cover it."
+      ],
+      "threshold": "Kompa pays off as soon as you string Framer projects together: the time saved on repetitive sections quickly exceeds the one-time cost. For a single site, the free version is enough."
+    },
+    "pros": [
+      "Very deep library covering most common sections.",
+      "One-time purchase, no recurring subscription.",
+      "Updates included, so the library keeps growing.",
+      "Free version to evaluate before buying."
+    ],
+    "cons": [
+      "Assumes active Framer use, without which the plugin is pointless.",
+      "Generic library: output needs customisation to avoid looking like other sites using it.",
+      "The sheer number of components is hard to navigate at first."
+    ],
+    "use_cases": [
+      "Stand up a client site structure quickly in Framer.",
+      "Reuse proven sections from one project to the next.",
+      "Prototype a full page without starting from blank."
+    ]
+  }
+}

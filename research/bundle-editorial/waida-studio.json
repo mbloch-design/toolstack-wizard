@@ -1,0 +1,89 @@
+{
+  "slug": "waida-studio",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Waida Studio — templates Webflow, Framer et Figma (site officiel)", "url": "https://waidastudio.com/" },
+    { "label": "Waida Studio — offre Figma (site officiel)", "url": "https://figma.waidastudio.com/" }
+  ],
+  "facts": {
+    "what": "Catalogue de templates de sites prêts à la production, déclinés pour Webflow, Framer et Figma, avec des exports HTML, Next.js et Astro selon les modèles. Chaque template existe sur plusieurs plateformes, ce qui permet de choisir son outil de production.",
+    "what_en": "Catalogue of production-ready website templates available for Webflow, Framer and Figma, with HTML, Next.js and Astro exports on some models. Each template exists across several platforms, letting you pick your build tool.",
+    "pricing_model": "Achat unique par lot, sans abonnement ni renouvellement. L'accès aux produits inclus dans un lot est permanent. Plusieurs templates sont proposés gratuitement.",
+    "free_tier": { "exists": true, "detail": "Plusieurs templates sont accessibles gratuitement ; les lots complets sont payants." },
+    "plans": [
+      { "name": "Templates gratuits", "price": "0" },
+      { "name": "Figma Bundle", "price": "49 $, achat unique — tous les fichiers Figma" },
+      { "name": "All Access", "price": "125 $, achat unique — tous les templates Webflow, Framer et Figma" }
+    ],
+    "key_features": [
+      "Templates déclinés pour Webflow, Framer et Figma",
+      "Exports HTML, Next.js et Astro sur certains modèles",
+      "Accès permanent aux lots achetés",
+      "Usage illimité sur des projets personnels ou clients"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous livrez des sites clients et cherchez à raccourcir la phase de conception.",
+        "Vous travaillez sur plusieurs plateformes et voulez un même modèle décliné.",
+        "Vous préférez acheter une fois plutôt que payer un abonnement de templates."
+      ],
+      "avoidIf": [
+        "Votre positionnement repose sur des maquettes entièrement sur mesure.",
+        "Vous n'utilisez ni Webflow, ni Framer, ni Figma.",
+        "Vous n'avez besoin que d'un seul template : l'achat à l'unité ailleurs sera moins cher que le lot."
+      ],
+      "threshold": "Waida Studio se justifie pour un studio ou un freelance qui enchaîne les livraisons sur ces trois plateformes. Pour un projet unique ou une identité totalement sur mesure, le lot est surdimensionné."
+    },
+    "pros": [
+      "Un même modèle disponible sur trois plateformes, sans refaire le travail.",
+      "Achat unique et accès permanent, sans renouvellement.",
+      "Usage autorisé sur un nombre illimité de projets clients.",
+      "Templates gratuits pour évaluer la qualité avant d'acheter."
+    ],
+    "cons": [
+      "Templates partagés par tous les acheteurs : le résultat demande un travail de différenciation.",
+      "Sans usage de Webflow, Framer ou Figma, le catalogue est inexploitable.",
+      "Le lot complet est difficile à amortir sur un projet isolé."
+    ],
+    "use_cases": [
+      "Démarrer un site client sur une base structurée plutôt qu'une page blanche.",
+      "Proposer plusieurs directions à un client à partir de modèles existants.",
+      "Passer une maquette Figma en site Webflow ou Framer sans refaire l'intégration."
+    ],
+    "relevant_for": ["Freelances web", "Studios de design", "Agences"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You deliver client sites and want to shorten the design phase.",
+        "You work across several platforms and want one model available on each.",
+        "You'd rather buy once than pay a template subscription."
+      ],
+      "avoidIf": [
+        "Your positioning rests on fully bespoke design work.",
+        "You use none of Webflow, Framer or Figma.",
+        "You only need one template — buying it individually elsewhere will cost less than the bundle."
+      ],
+      "threshold": "Waida Studio pays off for a studio or freelancer shipping repeatedly on these three platforms. For a one-off project or a fully bespoke identity, the bundle is oversized."
+    },
+    "pros": [
+      "The same model available on three platforms, without redoing the work.",
+      "One-time purchase with permanent access, no renewal.",
+      "Licensed for use across unlimited client projects.",
+      "Free templates to judge quality before buying."
+    ],
+    "cons": [
+      "Templates shared by every buyer: output needs differentiation work.",
+      "Without Webflow, Framer or Figma, the catalogue is unusable.",
+      "The full bundle is hard to justify on a single project."
+    ],
+    "use_cases": [
+      "Start a client site from a structured base rather than a blank page.",
+      "Offer a client several directions from existing models.",
+      "Take a Figma mockup into Webflow or Framer without redoing the build."
+    ]
+  }
+}

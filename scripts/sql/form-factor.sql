@@ -17,6 +17,9 @@
 --   library  s'importe dans du code
 --   mcp      expose un service a un client IA
 --   suite    regroupement commercial de plusieurs produits
+--   asset    contenu pret a l'emploi depose dans un hote : template,
+--            kit UI, bibliotheque de composants, presets. Ne s'execute pas,
+--            ne s'importe pas dans du code — on l'insere dans un projet.
 --
 -- La valeur stockee n'est PAS destinee a l'affichage. Le libelle est localise
 -- cote front, comme pour la taxonomie covers (« Comptabilite » / « Accounting »
@@ -26,6 +29,7 @@
 --                                        en francais c'est un magasin de livres,
 --                                        et les fiches disent deja « Bibliotheque »)
 --   mcp -> Serveur MCP / MCP server  suite -> Suite / Suite
+--   asset -> Ressource / Asset
 --
 -- Etendre = ajouter une valeur ici ET dans guard-plugins.mjs. Jamais de
 -- valeur libre : c'est ce qui a produit les 590 termes de taxonomie nettoyes

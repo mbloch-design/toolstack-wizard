@@ -1,0 +1,88 @@
+{
+  "slug": "the-design-futurist",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "THE DESIGN FUTURIST — composants Framer (site officiel)", "url": "https://thedesignfuturist.zip/framer-components" },
+    { "label": "THE DESIGN FUTURIST — page créateur sur le Marketplace Framer", "url": "https://www.framer.com/@thedesignfuturist/" }
+  ],
+  "facts": {
+    "what": "Collection de composants Framer axés sur l'animation et la 3D, construits avec WebGL, GSAP et Three.js : galeries interactives, effets de défilement, animations typographiques, arrière-plans animés. On les insère dans un projet Framer existant.",
+    "what_en": "Collection of Framer components focused on animation and 3D, built with WebGL, GSAP and Three.js: interactive galleries, scroll effects, typographic animations, animated backgrounds. They are dropped into an existing Framer project.",
+    "pricing_model": "Composants gratuits et composants premium coexistent. Les montants ne sont pas affichés sur la page de présentation.",
+    "free_tier": { "exists": true, "detail": "Une section de composants gratuits est proposée en accès libre ; les composants premium sont payants." },
+    "plans": [
+      { "name": "Composants gratuits", "price": "0" },
+      { "name": "Composants premium / accès illimité", "price": "montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Composants 3D construits avec Three.js et WebGL",
+      "Animations de défilement et micro-interactions GSAP",
+      "Composants typographiques animés",
+      "Catégories couvrant navigation, cartes, arrière-plans et CMS"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous construisez un site Framer qui doit se démarquer visuellement.",
+        "Vous voulez de la 3D ou des animations poussées sans écrire de WebGL.",
+        "Vous cherchez un effet précis pour une page d'accueil ou un portfolio."
+      ],
+      "avoidIf": [
+        "Vous n'utilisez pas Framer : ces composants ne s'utilisent pas ailleurs.",
+        "Votre site vise avant tout la sobriété et la vitesse de chargement.",
+        "Vous avez les compétences pour développer ces effets vous-même."
+      ],
+      "threshold": "Ces composants se justifient sur un site vitrine ou un portfolio où l'effet visuel porte la proposition. Sur un site où le contenu prime, ils alourdissent la page sans contrepartie."
+    },
+    "pros": [
+      "Effets 3D et animations difficiles à reproduire sans compétences techniques.",
+      "Composants gratuits permettant d'évaluer la qualité.",
+      "Couverture large : navigation, arrière-plans, typographie, cartes.",
+      "S'insèrent dans un projet Framer existant sans reconstruction."
+    ],
+    "cons": [
+      "Suppose un abonnement Framer actif, sans lequel rien n'est utilisable.",
+      "Les effets WebGL et Three.js pèsent sur les performances et l'accessibilité.",
+      "Tarification peu lisible : les montants ne figurent pas sur la page de présentation."
+    ],
+    "use_cases": [
+      "Ajouter une galerie 3D interactive à un portfolio Framer.",
+      "Animer une section d'accueil avec des effets de défilement.",
+      "Donner du relief à une page produit sans développement sur mesure."
+    ],
+    "relevant_for": ["Designers Framer", "Portfolios créatifs", "Studios web"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're building a Framer site that has to stand out visually.",
+        "You want 3D or advanced animation without writing WebGL.",
+        "You're after a specific effect for a homepage or portfolio."
+      ],
+      "avoidIf": [
+        "You don't use Framer — these components work nowhere else.",
+        "Your site prioritises restraint and load speed above all.",
+        "You have the skills to build these effects yourself."
+      ],
+      "threshold": "These components make sense on a showcase site or portfolio where visual impact carries the pitch. On a content-first site they weigh the page down for nothing."
+    },
+    "pros": [
+      "3D effects and animations hard to reproduce without technical skills.",
+      "Free components to judge quality first.",
+      "Broad coverage: navigation, backgrounds, typography, cards.",
+      "Drop into an existing Framer project without rebuilding."
+    ],
+    "cons": [
+      "Assumes an active Framer subscription, without which nothing is usable.",
+      "WebGL and Three.js effects weigh on performance and accessibility.",
+      "Opaque pricing: amounts are not shown on the overview page."
+    ],
+    "use_cases": [
+      "Add an interactive 3D gallery to a Framer portfolio.",
+      "Animate a homepage section with scroll-driven effects.",
+      "Give a product page depth without custom development."
+    ]
+  }
+}
