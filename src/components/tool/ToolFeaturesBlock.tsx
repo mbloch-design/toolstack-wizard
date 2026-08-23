@@ -17,6 +17,33 @@ function slugToLabel(slug: string): string {
 
 // Override map for slugs that auto-label poorly
 const LABEL_OVERRIDES: Record<string, { fr: string; en: string }> = {
+  // Acronymes : la normalisation du vocabulaire a mis tous les termes en
+  // minuscules (« CRM » → « crm »), et slugToLabel ne capitalise que la
+  // première lettre — sans ces libellés, la fiche afficherait « Crm », « Ats »
+  // ou « Ci cd ».
+  "crm":                 { fr: "CRM",                   en: "CRM"                 },
+  "crm-calls":           { fr: "Appels CRM",            en: "CRM calls"           },
+  "crm-enrichment":      { fr: "Enrichissement CRM",    en: "CRM enrichment"      },
+  "crm-social":          { fr: "CRM social",            en: "Social CRM"          },
+  "ats":                 { fr: "ATS (recrutement)",     en: "ATS (recruiting)"    },
+  "lms":                 { fr: "LMS (formation)",       en: "LMS (training)"      },
+  "sirh":                { fr: "SIRH",                  en: "HRIS"                },
+  "cms":                 { fr: "CMS",                   en: "CMS"                 },
+  "dam":                 { fr: "DAM (médiathèque)",     en: "DAM (asset library)" },
+  "voip":                { fr: "VoIP",                  en: "VoIP"                },
+  "ci-cd":               { fr: "CI/CD",                 en: "CI/CD"               },
+  "erp-sync":            { fr: "Synchronisation ERP",   en: "ERP sync"            },
+  "kpi-tracking":        { fr: "Suivi des KPI",         en: "KPI tracking"        },
+  "ui-design":           { fr: "Design UI",             en: "UI design"           },
+  "ui-testing":          { fr: "Tests UI",              en: "UI testing"          },
+  "ui-generation":       { fr: "Génération d'UI",       en: "UI generation"       },
+  "ui-icons":            { fr: "Icônes UI",             en: "UI icons"            },
+  "ux-design":           { fr: "Design UX",             en: "UX design"           },
+  "ux-ui":               { fr: "UX/UI",                 en: "UX/UI"               },
+  "seo-video":           { fr: "SEO vidéo",             en: "Video SEO"           },
+  "sfx":                 { fr: "Effets sonores",        en: "Sound effects"       },
+  "raw":                 { fr: "Fichiers RAW",          en: "RAW files"           },
+  "3d":                  { fr: "3D",                    en: "3D"                  },
   "crm-marketing":       { fr: "CRM marketing",        en: "Marketing CRM"       },
   "email-marketing":     { fr: "Email marketing",       en: "Email marketing"     },
   "ui-components":       { fr: "Composants UI",         en: "UI components"       },
