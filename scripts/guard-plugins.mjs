@@ -61,7 +61,35 @@ try {
     where content_status = 'published' and form_factor in ('plugin', 'library', 'mcp')
       and host_app is null order by slug`;
 
+  // INVARIANT : works_with contient toujours host_app. Le filtre « Works with »
+  // n'interroge que works_with ; si un plugin y manquait, il serait absent du
+  // filtre de son propre hote sans que rien ne le signale.
+  const incoherents = await sql`
+    select slug, host_app from public.tools
+    where host_app is not null
+      and not (coalesce(works_with, '[]'::jsonb) ? host_app)
+    order by slug`;
+
+  // Une compatibilite declaree vers un slug inexistant ne remontera jamais
+  // dans le filtre : meme classe de defaut que les 19 host_app morts.
+  const compatMortes = await sql`
+    select t.slug, v as cible from public.tools t,
+      jsonb_array_elements_text(coalesce(t.works_with, '[]'::jsonb)) v
+    where not exists (select 1 from public.tools h where h.slug = v)
+    order by t.slug`;
+
   let ko = false;
+  if (incoherents.length) {
+    ko = true;
+    console.log(`⚠️  ${incoherents.length} fiche(s) dont works_with ne contient pas son host_app :`);
+    for (const r of incoherents.slice(0, 20)) console.log(`   ${r.slug} → ${r.host_app}`);
+    if (incoherents.length > 20) console.log(`   … +${incoherents.length - 20}`);
+  }
+  if (compatMortes.length) {
+    ko = true;
+    console.log(`\n⚠️  ${compatMortes.length} compatibilité(s) works_with vers un slug inexistant :`);
+    for (const r of compatMortes.slice(0, 20)) console.log(`   ${r.slug} → ${r.cible}`);
+  }
   if (formatsInconnus.length) {
     ko = true;
     console.log(`⚠️  form_factor hors vocabulaire (${FORM_FACTORS.join(", ")}) :`);
