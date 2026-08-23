@@ -47,6 +47,14 @@ let targets = tools.filter((t) => {
   return !!url && cache[slug] === "";
 });
 if (SINGLE) targets = targets.filter((t) => (t.slug || t.id) === SINGLE);
+
+// Outils absents de tools_v4.json (créés directement en base, cf. les fiches
+// « Recently Added ») : le filtre ci-dessus ne peut pas les voir et le script
+// répondait « 0 outil à traiter ». --url= permet de les cibler explicitement.
+const EXPLICIT_URL = process.argv.find((a) => a.startsWith("--url="))?.split("=")[1];
+if (SINGLE && EXPLICIT_URL && targets.length === 0) {
+  targets = [{ slug: SINGLE, websiteUrl: EXPLICIT_URL }];
+}
 targets = targets.slice(0, LIMIT);
 
 console.log(`\nMode : ${APPLY ? "APPLY (capture + écriture)" : "DRY-RUN"}`);
@@ -77,6 +85,23 @@ async function captureOne(tool) {
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const buf = Buffer.from(await res.arrayBuffer());
     if (buf.length < 2000) throw new Error("image trop petite, probablement une page d'erreur");
+
+    // Un site protégé renvoie une page de challenge anti-bot : la capture pèse
+    // son poids normal, passe le contrôle de taille ci-dessus, et on publie une
+    // page « Performing security verification » comme visuel de la fiche (vu
+    // sur quillbot.com). On la refuse en relisant le HTML de la page capturée.
+    try {
+      const probe = await fetch(url, {
+        headers: { "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Safari/537.36" },
+      });
+      const head = (await probe.text()).slice(0, 4000);
+      if (/Just a moment|Performing security verification|Checking your browser|cf-browser-verification|Enable JavaScript and cookies to continue/i.test(head)) {
+        throw new Error("page de challenge anti-bot, capture inutilisable");
+      }
+    } catch (probeError) {
+      if (/challenge anti-bot/.test(probeError.message)) throw probeError;
+      // Une sonde qui échoue pour une autre raison ne doit pas bloquer la capture.
+    }
 
     const filePath = `${OUT_DIR}/${slug}.png`;
     writeFileSync(filePath, buf);
