@@ -10,12 +10,23 @@
 -- diagnostic (scoring.ts, DiagStepStackScan) et dans une union typee.
 -- Le renommer aurait change le comportement du scoring en silence.
 --
--- VOCABULAIRE FERME, volontairement court :
---   app       produit autonome, s'utilise seul                (defaut)
---   plugin    s'execute a l'interieur d'un logiciel hote
---   librairie s'importe dans du code
---   mcp       expose un service a un client IA
---   suite     regroupement commercial de plusieurs produits
+-- VOCABULAIRE FERME, volontairement court et ENTIEREMENT EN ANGLAIS pour
+-- rester coherent (plugin et mcp s'ecrivent pareil dans les deux langues) :
+--   app      produit autonome, s'utilise seul                 (defaut)
+--   plugin   s'execute a l'interieur d'un logiciel hote
+--   library  s'importe dans du code
+--   mcp      expose un service a un client IA
+--   suite    regroupement commercial de plusieurs produits
+--
+-- La valeur stockee n'est PAS destinee a l'affichage. Le libelle est localise
+-- cote front, comme pour la taxonomie covers (« Comptabilite » / « Accounting »
+-- via LABEL_OVERRIDES) :
+--   app -> Application / App        plugin  -> Plugin / Plugin
+--   library -> Bibliotheque / Library   (« librairie » est un faux ami :
+--                                        en francais c'est un magasin de livres,
+--                                        et les fiches disent deja « Bibliotheque »)
+--   mcp -> Serveur MCP / MCP server  suite -> Suite / Suite
+--
 -- Etendre = ajouter une valeur ici ET dans guard-plugins.mjs. Jamais de
 -- valeur libre : c'est ce qui a produit les 590 termes de taxonomie nettoyes
 -- precedemment.
@@ -29,7 +40,7 @@ UPDATE public.tools SET form_factor = 'plugin'
 WHERE tool_type = 'plugin' OR host_app IS NOT NULL;
 
 -- Librairies : rattachees a un framework, on les importe dans du code.
-UPDATE public.tools SET form_factor = 'librairie'
+UPDATE public.tools SET form_factor = 'library'
 WHERE host_app IN ('react', 'vue-cli');
 
 -- Suites commerciales.

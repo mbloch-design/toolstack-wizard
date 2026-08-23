@@ -46,7 +46,7 @@ try {
   // ICI et dans scripts/sql/form-factor.sql, jamais ecrire une valeur libre en
   // base. C'est cette gouvernance qui evite de refaire le nettoyage de
   // taxonomie : covers avait derive a 590 termes faute de liste fermee.
-  const FORM_FACTORS = ["app", "plugin", "librairie", "mcp", "suite"];
+  const FORM_FACTORS = ["app", "plugin", "library", "mcp", "suite"];
 
   const formatsInconnus = await sql`
     select coalesce(form_factor, '(null)') v, count(*)::int n from public.tools
@@ -58,7 +58,7 @@ try {
   // signale un typage oublie.
   const pluginsSansHote = await sql`
     select slug from public.tools
-    where content_status = 'published' and form_factor in ('plugin', 'librairie', 'mcp')
+    where content_status = 'published' and form_factor in ('plugin', 'library', 'mcp')
       and host_app is null order by slug`;
 
   let ko = false;
