@@ -6,7 +6,7 @@ WITH normalized AS (
     t.covers,
     t.functional_needs,
     (
-      SELECT jsonb_agg(DISTINCT n)
+      SELECT jsonb_agg(DISTINCT n ORDER BY n)
       FROM (
         SELECT trim(BOTH '-' FROM regexp_replace(regexp_replace(lower(v), '[\s_]+', '-', 'g'), '-+', '-', 'g')) AS n
         FROM jsonb_array_elements_text(t.covers) AS v
@@ -14,7 +14,7 @@ WITH normalized AS (
       WHERE n <> ''
     ) AS covers_normalized,
     (
-      SELECT jsonb_agg(DISTINCT n)
+      SELECT jsonb_agg(DISTINCT n ORDER BY n)
       FROM (
         SELECT trim(BOTH '-' FROM regexp_replace(regexp_replace(lower(v), '[\s_]+', '-', 'g'), '-+', '-', 'g')) AS n
         FROM jsonb_array_elements_text(t.functional_needs) AS v

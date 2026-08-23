@@ -35,20 +35,36 @@ SELECT '2026-08-23-form-v1', slug, covers, functional_needs
 FROM public.tools
 ON CONFLICT (migration_id, slug) DO NOTHING;
 
-UPDATE public.tools SET covers = (
-  SELECT jsonb_agg(DISTINCT n) FROM (
-    SELECT trim(BOTH '-' FROM regexp_replace(regexp_replace(lower(v), '[\s_]+', '-', 'g'), '-+', '-', 'g')) AS n
-    FROM jsonb_array_elements_text(covers) v
-  ) s WHERE n <> ''
+WITH normalized AS (
+  SELECT t.slug, (
+    SELECT jsonb_agg(DISTINCT n ORDER BY n) FROM (
+      SELECT trim(BOTH '-' FROM regexp_replace(regexp_replace(lower(v), '[\s_]+', '-', 'g'), '-+', '-', 'g')) AS n
+      FROM jsonb_array_elements_text(t.covers) v
+    ) s WHERE n <> ''
+  ) AS value
+  FROM public.tools AS t
+  WHERE t.covers IS NOT NULL AND jsonb_array_length(t.covers) > 0
 )
-WHERE covers IS NOT NULL AND jsonb_array_length(covers) > 0;
+UPDATE public.tools AS t
+SET covers = n.value
+FROM normalized AS n
+WHERE t.slug = n.slug
+  AND t.covers IS DISTINCT FROM n.value;
 
-UPDATE public.tools SET functional_needs = (
-  SELECT jsonb_agg(DISTINCT n) FROM (
-    SELECT trim(BOTH '-' FROM regexp_replace(regexp_replace(lower(v), '[\s_]+', '-', 'g'), '-+', '-', 'g')) AS n
-    FROM jsonb_array_elements_text(functional_needs) v
-  ) s WHERE n <> ''
+WITH normalized AS (
+  SELECT t.slug, (
+    SELECT jsonb_agg(DISTINCT n ORDER BY n) FROM (
+      SELECT trim(BOTH '-' FROM regexp_replace(regexp_replace(lower(v), '[\s_]+', '-', 'g'), '-+', '-', 'g')) AS n
+      FROM jsonb_array_elements_text(t.functional_needs) v
+    ) s WHERE n <> ''
+  ) AS value
+  FROM public.tools AS t
+  WHERE t.functional_needs IS NOT NULL AND jsonb_array_length(t.functional_needs) > 0
 )
-WHERE functional_needs IS NOT NULL AND jsonb_array_length(functional_needs) > 0;
+UPDATE public.tools AS t
+SET functional_needs = n.value
+FROM normalized AS n
+WHERE t.slug = n.slug
+  AND t.functional_needs IS DISTINCT FROM n.value;
 
 COMMIT;
