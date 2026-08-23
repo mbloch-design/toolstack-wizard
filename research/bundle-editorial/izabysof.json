@@ -1,0 +1,89 @@
+{
+  "slug": "izabysof",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Izabysof — Templates Framer premium (site officiel)", "url": "https://www.izabysof.com/" }
+  ],
+  "facts": {
+    "what": "Catalogue de templates Framer prêts à convertir, conçus pour être faciles à personnaliser et être parfaits sur tous les appareils. Chaque template est livré avec des instructions détaillées et des mises à jour permanentes.",
+    "what_en": "Catalogue of conversion-ready Framer templates designed for easy customization and responsive perfection across devices. Each template includes detailed instructions and lifetime updates.",
+    "pricing_model": "Vente de templates individuels ou accès illimité via un plan all-access permanent.",
+    "free_tier": { "exists": false, "detail": "Pas d'offre gratuite ; tous les templates sont payants." },
+    "plans": [
+      { "name": "Template individuel", "price": "99 USD" },
+      { "name": "All-Access (10 templates + futurs)", "price": "299 USD" }
+    ],
+    "key_features": [
+      "Templates optimisés pour la conversion",
+      "Design responsive sur tous les appareils",
+      "Personnalisation simple avec instructions étape par étape",
+      "Mises à jour permanentes incluses",
+      "Support email 24h/24",
+      "Accès illimité aux futurs templates avec le plan all-access"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous travaillez dans Framer et livrez régulièrement des sites clients.",
+        "Vous avez un budget de template suffisant pour justifier l'accès illimité.",
+        "Vous appréciez les designs pensés pour conversion et cherchez à éviter les chantiers de personnalisation trop importants."
+      ],
+      "avoidIf": [
+        "Vous n'avez besoin que d'un seul template : l'achat individuel ailleurs sera plus économique.",
+        "Vous ne travaillez pas dans Framer ou vous n'utilisez pas Framer pour la production.",
+        "Vous créez exclusivement des designs de A à Z sans fondation de template."
+      ],
+      "threshold": "L'accès complet se justifie rapidement si vous livrez au moins trois à quatre sites variés par an. Pour un usage occasionnel, l'achat à l'unité reste plus prudent."
+    },
+    "pros": [
+      "Templates très bien pensés pour la conversion et l'expérience utilisateur.",
+      "Accès permanent aux mises à jour et amélioration des templates.",
+      "Offre d'accès complet intéressante si vous livrez plusieurs sites par an.",
+      "Support 24h/24 en français possible et instructions très détaillées."
+    ],
+    "cons": [
+      "Coût initial par template plus élevé que certains concurrents.",
+      "Tous les templates partagés par les acheteurs : nécessite du travail de différenciation.",
+      "Sans plusieurs projets Framer par an, l'accès complet ne se rentabilise pas assez vite."
+    ],
+    "use_cases": [
+      "Livrer rapidement un site client conversion-ready depuis une base structurée.",
+      "Proposer plusieurs templates à un client et en finaliser un ensemble.",
+      "Mettre en ligne rapidement une page d'atterrissage sans sacrifier l'expérience utilisateur."
+    ],
+    "relevant_for": ["Freelances Framer", "Agences web", "Designers spécialisés Framer"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You work in Framer and deliver client sites regularly.",
+        "You have budget to justify unlimited template access.",
+        "You value conversion-focused design and want to avoid heavy customization work."
+      ],
+      "avoidIf": [
+        "You only need one template: buying individually elsewhere will be more economical.",
+        "You don't work in Framer or don't use it for production.",
+        "You create exclusively bespoke designs from scratch without template foundations."
+      ],
+      "threshold": "The all-access plan breaks even quickly if you ship three to four varied sites per year. For occasional use, buying individual templates as needed is safer."
+    },
+    "pros": [
+      "Templates expertly designed for conversion and user experience.",
+      "Permanent access to updates and template improvements.",
+      "All-access plan is attractive if you ship multiple sites per year.",
+      "Round-the-clock support and detailed implementation instructions included."
+    ],
+    "cons": [
+      "Higher per-template cost than some competitors.",
+      "All templates shared by buyers: requires differentiation work.",
+      "Without several Framer projects per year, all-access doesn't pay off fast enough."
+    ],
+    "use_cases": [
+      "Ship a conversion-ready client site from a structured base quickly.",
+      "Show a client multiple template options and finalize one together.",
+      "Speed up a landing page launch without compromising UX quality."
+    ]
+  }
+}

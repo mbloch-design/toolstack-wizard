@@ -1,0 +1,90 @@
+{
+  "slug": "elements-library",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Elements Library — Composants et templates Framer (site officiel)", "url": "https://elements-library.com/" }
+  ],
+  "facts": {
+    "what": "Bibliothèque de composants et de templates Framer prêts à copier-coller, conçus pour des sites SaaS, des portfolios et des pages d'atterrissage. Tous les éléments sont responsifs et optimisés pour le web moderne.",
+    "what_en": "Library of 500+ copy-paste-ready Framer components and templates designed for SaaS, portfolios and landing pages. All elements are responsive and optimized for modern web standards.",
+    "pricing_model": "Freebies gratuits plus accès payant aux composants et templates premium avec accès permanent par paiement unique.",
+    "free_tier": { "exists": true, "detail": "Plusieurs composants et templates gratuits disponibles pour tester ; accès premium débloque le catalogue complet." },
+    "plans": [
+      { "name": "Freebies", "price": "0" },
+      { "name": "Templates et composants premium (individuels)", "price": "montants sur la page officielle" },
+      { "name": "All-Access lifetime", "price": "montants sur la page officielle" }
+    ],
+    "key_features": [
+      "500+ composants et templates Framer",
+      "Tous les éléments copy-paste ready",
+      "Design responsive optimisé",
+      "Freebies disponibles pour essayer",
+      "Accès illimité pour projets personnels et clients",
+      "Tous les futurs composants inclus dans l'all-access"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous travaillez fréquemment dans Framer et construisez de nombreux projets différents.",
+        "Vous appréciez avoir une grande librairie de composants réutilisables pour accélérer la conception.",
+        "Vous voulez éviter de recréer des patterns courants à chaque nouveau projet."
+      ],
+      "avoidIf": [
+        "Vous n'utilisez Framer que de façon très ponctuelle avec peu de projets.",
+        "Vous créez surtout des interfaces uniques sans réutilisation de composants.",
+        "Vous préférez une approche à templates complets plutôt qu'une librairie de composants."
+      ],
+      "threshold": "Elements Library se justifie pour un designer ou une agence Framer qui travaille sur beaucoup de projets variés. Pour un travail occasionnel, les freebies suffisent souvent."
+    },
+    "pros": [
+      "Catalogue très riche de 500+ composants et templates prêts à l'emploi.",
+      "Tous les éléments sont copy-paste ready, ce qui réduit drastiquement le temps d'intégration.",
+      "Freebies permettent d'évaluer la qualité sans engagement.",
+      "Accès commercial autorisé pour projets personnels et clients."
+    ],
+    "cons": [
+      "La quantité de choix peut sembler écrasante au premier abord.",
+      "Tous les composants partagés : risque que deux clients aient une interface similaire.",
+      "Le tarif de l'accès complet n'est pas clairement affiché : doit être vérifié directement."
+    ],
+    "use_cases": [
+      "Accélérer la conception d'une SaaS en réutilisant des composants de formulaire, modal, table préconçus.",
+      "Créer un portfolio en quelques heures en combinant templates et composants disponibles.",
+      "Standardiser les UI entre plusieurs projets clients grâce à une librairie commune."
+    ],
+    "relevant_for": ["Designers Framer", "Agences web", "Freelances produit"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You work frequently in Framer and ship many different projects.",
+        "You value having a large library of reusable components to speed up design.",
+        "You want to avoid rebuilding common patterns on every new project."
+      ],
+      "avoidIf": [
+        "You use Framer only sporadically with few projects.",
+        "You create mostly unique interfaces without component reuse.",
+        "You prefer complete templates over a component library approach."
+      ],
+      "threshold": "Elements Library pays for itself for a designer or Framer agency working on many varied projects. For occasional work, free components often suffice."
+    },
+    "pros": [
+      "Rich catalogue of 500+ components and templates ready to use.",
+      "All elements are copy-paste ready, drastically reducing integration time.",
+      "Free components let you evaluate quality without commitment.",
+      "Commercial use permitted for personal and client projects."
+    ],
+    "cons": [
+      "The volume of choices can feel overwhelming at first.",
+      "All components are shared: risk that two clients end up with similar interfaces.",
+      "Full access pricing isn't clearly displayed: must be verified on the site directly."
+    ],
+    "use_cases": [
+      "Speed up SaaS design by reusing pre-built form, modal, and table components.",
+      "Build a portfolio in hours by combining available templates and components.",
+      "Standardize UI across multiple client projects with a shared component library."
+    ]
+  }
+}

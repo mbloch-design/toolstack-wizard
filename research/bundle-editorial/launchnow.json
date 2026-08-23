@@ -1,0 +1,91 @@
+{
+  "slug": "launchnow",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "LaunchNow — Premium Framer templates (site officiel)", "url": "https://launchnow.design/" }
+  ],
+  "facts": {
+    "what": "Catalogue de templates Framer premium conçus pour convertir les visiteurs en clients, adaptés aux designers indépendants et aux petites agences qui cherchent à accélérer leur production sans compromettre la qualité.",
+    "what_en": "Catalogue of premium Framer templates designed to convert visitors into customers, ideal for freelance designers and small agencies who want to accelerate production without compromising quality.",
+    "pricing_model": "Vente de templates individuels ou accès illimité via un plan all-access permanent sans abonnement.",
+    "free_tier": { "exists": false, "detail": "Pas d'offre gratuite ; tous les templates et l'accès sont payants." },
+    "plans": [
+      { "name": "Templates individuels", "price": "99 USD à 129 USD" },
+      { "name": "All Access Pass (tous les templates + futurs)", "price": "montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Templates premium optimisés pour conversion",
+      "Usage commercial illimité",
+      "Paiement unique, pas d'abonnement",
+      "Mises à jour à vie incluses",
+      "Support prioritaire par email 24h/24",
+      "All Access Pass : accès à tous les templates actuels et futurs"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous livrez régulièrement des sites et voulez accélérer la phase de conception sans sacrifier la conversion.",
+        "Vous cherchez une collection de 10+ templates de qualité couvrant plusieurs segments (SaaS, portfolio, agences).",
+        "Vous tenez à recevoir les templates à venir sans repayer, via l'offre d'accès complet."
+      ],
+      "avoidIf": [
+        "Vous n'avez besoin que d'un seul template : l'achat individuel ailleurs peut être moins cher.",
+        "Vous ne travaillez pas dans Framer ou n'utilisez pas Framer pour la production.",
+        "Vous créez exclusivement des designs uniques sans base template."
+      ],
+      "threshold": "L'All Access Pass se justifie rapidement pour une agence ou freelance qui livre plusieurs sites par an. Pour un usage occasionnel, choisir des templates individuels est plus économique."
+    },
+    "pros": [
+      "Des templates pensés pour la conversion, et pas seulement pour l'esthétique.",
+      "Tarification claire et affichée à l'unité, sans abonnement.",
+      "All Access Pass donne accès à tous les futurs templates inclus gratuitement.",
+      "Support prioritaire 24h/24 inclus avec tous les accès payants.",
+      "Paiement unique, aucun abonnement, accès permanent."
+    ],
+    "cons": [
+      "Tous les templates partagés par les acheteurs : demande du travail de différenciation importante.",
+      "Le tarif exact du All Access Pass n'est pas visible en avant-vente.",
+      "Catalogue moins volumineux que certains concurrents massifs."
+    ],
+    "use_cases": [
+      "Livrer rapidement un site de SaaS conversion-optimized depuis une base de template éprouvée.",
+      "Créer un portfolio professionnel pour agency ou freelancer en quelques heures.",
+      "Proposer plusieurs directions design à un client à partir de modèles déjà conçus."
+    ],
+    "relevant_for": ["Freelances designers web", "Agences Framer", "Consultants produit"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You ship sites regularly and want to speed up design without sacrificing conversion.",
+        "You want a collection of 10+ quality templates covering multiple segments (SaaS, portfolio, agencies).",
+        "You value having all future templates included via the all-access pass."
+      ],
+      "avoidIf": [
+        "You only need one template: buying individually elsewhere may be cheaper.",
+        "You don't work in Framer or don't use it for production.",
+        "You create exclusively unique designs without template foundations."
+      ],
+      "threshold": "The All Access Pass pays off quickly for an agency or freelancer shipping multiple sites per year. For occasional use, buying individual templates is more economical."
+    },
+    "pros": [
+      "Templates specifically designed for conversion, not just aesthetics.",
+      "Clear per-template pricing, published upfront, with no subscription.",
+      "All Access Pass includes all future templates at no extra cost.",
+      "Round-the-clock priority support included with all paid access levels.",
+      "One-time payment, no subscription, permanent access."
+    ],
+    "cons": [
+      "All templates are shared by buyers: requires significant differentiation work.",
+      "Exact All Access Pass pricing isn't visible upfront.",
+      "Catalogue smaller than some massive competitors."
+    ],
+    "use_cases": [
+      "Ship a conversion-optimized SaaS site quickly from a proven template base.",
+      "Build a professional portfolio for an agency or freelancer in hours.",
+      "Show a client multiple design directions from pre-designed models."
+    ]
+  }
+}

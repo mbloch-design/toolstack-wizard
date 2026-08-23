@@ -1,0 +1,89 @@
+{
+  "slug": "flowcub",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Flowcub — Templates pour Framer, Webflow et Figma (site officiel)", "url": "https://flowcub.com/" }
+  ],
+  "facts": {
+    "what": "Catalogue de templates conçus pour Framer, Webflow et Figma, couvrant SaaS, agences, portfolios, ecommerce, santé et immobilier. Chaque template est pensé pour conversion et facile à adapter.",
+    "what_en": "Catalogue of templates designed for Framer, Webflow and Figma, covering SaaS, agencies, portfolios, ecommerce, healthcare and real estate. Each template is built for conversion and easy to adapt.",
+    "pricing_model": "Vente de templates individuels à différents prix selon la complexité. Pas d'abonnement ; accès permanent à l'achat.",
+    "free_tier": { "exists": true, "detail": "Plusieurs templates gratuits disponibles pour tester la qualité avant d'acheter des versions premium." },
+    "plans": [
+      { "name": "Templates gratuits", "price": "0" },
+      { "name": "Templates premium individuels", "price": "29 USD à 129 USD" }
+    ],
+    "key_features": [
+      "Templates disponibles pour Framer, Webflow et Figma",
+      "Couverture de multiples cas d'usage (SaaS, agences, ecommerce, etc.)",
+      "Design pensé pour conversion",
+      "Facilement personnalisable",
+      "Mises à jour gratuites à vie",
+      "Usage commercial illimité"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez Framer et aimeriez un accès à des templates variés sur plusieurs segments (SaaS, portfolio, ecommerce).",
+        "Vous appréciez les templates de gamme de prix accessible pour tester sans investissement massif.",
+        "Vous travaillez aussi sur Webflow ou Figma et voulez le même modèle cross-plateforme."
+      ],
+      "avoidIf": [
+        "Vous voulez un accès illimité à tout le catalogue : Flowcub ne propose que l'achat à l'unité.",
+        "Vous ne travaillez que dans Framer et cherchez spécifiquement un fournisseur Framer-only.",
+        "Vous créez exclusivement des designs uniques sans base de template."
+      ],
+      "threshold": "Flowcub se justifie pour une agence ou un freelance qui travaille cross-plateforme (Framer + Webflow/Figma) et aime choisir ses templates à l'unité selon le budget projet."
+    },
+    "pros": [
+      "Tarification flexible : le prix d'un template varie selon sa complexité.",
+      "Disponible sur trois plateformes (Framer, Webflow, Figma) pour une couverture complète.",
+      "Mises à jour permanentes à titre gratuit après achat.",
+      "Large gamme de cas d'usage couverts (SaaS, agences, ecommerce, santé, immobilier)."
+    ],
+    "cons": [
+      "Pas d'offre groupée : chaque template s'achète à l'unité.",
+      "La somme peut augmenter rapidement si vous travaillez sur plusieurs projets variés.",
+      "Tous les templates partagés par les clients : demande du travail de différenciation."
+    ],
+    "use_cases": [
+      "Lancer rapidement une SaaS avec un template Framer optimisé pour conversion.",
+      "Créer un portfolio d'agence en quelques jours avec un design professionnel préconçu.",
+      "Passer un design Figma en site Webflow ou Framer sans recréer l'intégration."
+    ],
+    "relevant_for": ["Freelances web cross-plateforme", "Agences Framer/Webflow", "Designers ecommerce"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You work in Framer and want access to varied templates across multiple segments (SaaS, portfolio, ecommerce).",
+        "You like accessible template pricing to test without massive investment.",
+        "You also work in Webflow or Figma and want the same cross-platform model."
+      ],
+      "avoidIf": [
+        "You need unlimited access to all templates: Flowcub doesn't offer an all-access bundle.",
+        "You only work in Framer and want a Framer-only provider specifically.",
+        "You create exclusively unique designs without template foundations."
+      ],
+      "threshold": "Flowcub makes sense for an agency or freelancer working cross-platform (Framer + Webflow/Figma) who likes to pick templates individually by project budget."
+    },
+    "pros": [
+      "Flexible pricing: individual template cost varies with complexity.",
+      "Available on three platforms (Framer, Webflow, Figma) for complete coverage.",
+      "Permanent free updates after purchase.",
+      "Wide range of use cases covered (SaaS, agencies, ecommerce, healthcare, real estate)."
+    ],
+    "cons": [
+      "No bundle or all-access: each template must be purchased individually.",
+      "Costs add up quickly if working on multiple varied projects.",
+      "All templates are shared by clients: requires differentiation work."
+    ],
+    "use_cases": [
+      "Launch a SaaS quickly with a Framer template optimized for conversion.",
+      "Build an agency portfolio in days with a professional pre-designed template.",
+      "Move a Figma design into a Webflow or Framer site without rebuilding the integration."
+    ]
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "slug": "cosmaha",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Cosmaha — Templates Framer pour founders (site officiel)", "url": "https://cosmaha.com/" }
+  ],
+  "facts": {
+    "what": "Collection de templates Framer sélectionnés et conçus par un créateur et quelques contributeurs de confiance, destinés aux founders et entrepreneurs qui privilégient le design. Le concept est simple : choisir un template, adapter le contenu, et lancer.",
+    "what_en": "Curated collection of Framer templates designed by a creator and trusted contributors for founders and entrepreneurs who value design. The concept is simple: pick a template, swap your content, and launch.",
+    "pricing_model": "Vente de templates individuels. Accès permanent à chaque template acheté.",
+    "free_tier": { "exists": false, "detail": "Pas d'offre gratuite ; tous les templates sont payants." },
+    "plans": [
+      { "name": "Templates individuels", "price": "montants sur la page officielle" }
+    ],
+    "key_features": [
+      "Templates sélectionnés et pensés pour founders",
+      "Design de haute qualité",
+      "Facile à adapter et mettre en production",
+      "Support de la communauté",
+      "Mise à jour et amélioration des templates"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous êtes un founder ou entrepreneur qui lance un produit et avez besoin d'un site de qualité rapidement.",
+        "Vous appréciez les designs curatés avec une approche qualité plutôt qu'une grande quantité de modèles.",
+        "Vous travaillez dans Framer et cherchez un template pensé spécifiquement pour les startups."
+      ],
+      "avoidIf": [
+        "Vous voulez une offre groupée : Cosmaha ne propose que l'achat à l'unité.",
+        "Vous ne travaillez pas dans Framer ou n'utilisez pas Framer pour votre production.",
+        "Vous créez exclusivement des designs sur mesure sans base de template."
+      ],
+      "threshold": "Cosmaha se justifie pour un fondateur qui veut un site professionnel rapidement, avec une sélection resserrée et soignée. L'approche privilégie la qualité au volume, ce qui parle aux entrepreneurs soucieux de leur image."
+    },
+    "pros": [
+      "Collection resserrée plutôt que pléthorique : chaque template est sélectionné avec soin.",
+      "Design de très haute qualité pensé pour founders et entreprises qui valorisent l'esthétique.",
+      "Choix raisonnable de modèles permet de trouver sans être submergé.",
+      "Support par une communauté active de founders."
+    ],
+    "cons": [
+      "Catalogue plus réduit que les concurrents massifs : moins de variété de cas d'usage.",
+      "Les tarifs individuels ne sont pas transparents en avant-vente : doit vérifier directement.",
+      "Pas d'offre groupée : chaque template s'achète à l'unité."
+    ],
+    "use_cases": [
+      "Lancer rapidement un site professionnel pour une startup avec un design de quality.",
+      "Créer en quelques jours une page produit convaincante.",
+      "Passer de zéro site à une présence web professionnelle sans investir dans du custom."
+    ],
+    "relevant_for": ["Founders et entrepreneurs", "Startups en early stage", "Freelances designer"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You're a founder or entrepreneur launching a product and need a quality website fast.",
+        "You value curated designs with a quality-first approach over template quantity.",
+        "You work in Framer and want a template designed specifically for startups."
+      ],
+      "avoidIf": [
+        "You need a bundle or all-access: Cosmaha only offers individual purchases.",
+        "You don't work in Framer or don't use it for production.",
+        "You create exclusively bespoke designs without template foundations."
+      ],
+      "threshold": "Cosmaha makes sense for a founder seeking a quick, professional website with curated design quality. The minimalist, quality-over-quantity approach appeals to entrepreneurs who care about image."
+    },
+    "pros": [
+      "Curated collection rather than massive catalogue: each template is carefully selected.",
+      "High-quality design built for founders and companies who value aesthetics.",
+      "Reasonable number of templates: find what you need without being overwhelmed.",
+      "Support from an active community of founders."
+    ],
+    "cons": [
+      "Smaller catalogue than massive competitors: less variety in use cases.",
+      "Individual template pricing isn't transparent upfront: must check the site directly.",
+      "No bundle access: each template must be purchased individually."
+    ],
+    "use_cases": [
+      "Launch a professional website for a startup with quality design quickly.",
+      "Create a compelling product landing page in days.",
+      "Go from no website to professional web presence without custom investment."
+    ]
+  }
+}

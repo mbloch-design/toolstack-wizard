@@ -3,85 +3,87 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Pixco (site officiel)", "url": "https://pixco.io/" }
+    { "label": "Pixco — Templates Framer et ressources (site officiel)", "url": "https://pixcodrops.com/" },
+    { "label": "Pixco — Communauté Framer", "url": "https://www.framer.com/@pixco/" }
   ],
   "facts": {
-    "what": "Éditeur photo en ligne assisté par IA pour la retouche, la suppression d'arrière-plan, l'amélioration de qualité et la création de visuels produit sans passer par Photoshop.",
-    "what_en": "AI-powered online photo editor for retouching, background removal, quality enhancement and creating product visuals without Photoshop.",
-    "pricing_model": "Abonnement, avec palier d'essai gratuit.",
-    "free_tier": { "exists": true, "detail": "Version gratuite pour tester avant de payer ; montants sur la page officielle." },
+    "what": "Catalogue de templates Framer de qualité production, conçus pour des sites d'agences, des portfolios et des pages d'atterrissage. Les templates de Pixco sont personnalisables et livrés avec des guides d'utilisation détaillés.",
+    "what_en": "Catalogue of production-ready Framer templates designed for agency websites, portfolios and landing pages. Pixco's templates are fully customizable and come with detailed implementation guides.",
+    "pricing_model": "Achat unique par template, sans abonnement. Accès permanent aux templates achetés.",
+    "free_tier": { "exists": true, "detail": "Plusieurs templates gratuits disponibles sur le Framer Marketplace pour évaluer la qualité." },
     "plans": [
-      { "name": "Gratuit", "price": "0 € (essai)" },
-      { "name": "Payant", "price": "montants sur la page officielle" }
+      { "name": "Templates gratuits", "price": "0" },
+      { "name": "Templates individuels", "price": "montants sur la page officielle" }
     ],
     "key_features": [
-      "Suppression automatique d'arrière-plan",
-      "Retouche et amélioration de qualité par IA",
-      "Création de visuels produit",
-      "Édition en ligne sans logiciel lourd"
+      "Templates production-ready pour Framer",
+      "Personnalisation complète possible",
+      "Guides d'implémentation détaillés",
+      "Usage commercial autorisé",
+      "Templates gratuits pour tester la qualité"
     ]
   },
   "fr": {
     "verdict": {
       "keepIf": [
-        "Vous produisez beaucoup de visuels produit et voulez gagner du temps.",
-        "Vous n'êtes pas à l'aise avec Photoshop.",
-        "Vous voulez des retouches rapides directement en ligne."
+        "Vous travaillez dans Framer et cherchez à accélérer la conception de sites clients.",
+        "Vous livrez régulièrement des sites et préférez acheter ponctuellement plutôt que d'investir dans un accès complet.",
+        "Vous appréciez les templates pensés pour conversion et expérience utilisateur."
       ],
       "avoidIf": [
-        "Vous avez besoin d'un contrôle pixel fin professionnel.",
-        "Vous travaillez déjà avec une suite de retouche avancée.",
-        "Votre volume d'images est très faible."
+        "Vous avez besoin d'un accès illimité à de nombreux templates et préférez un modèle d'abonnement.",
+        "Vous n'utilisez pas Framer comme outil de production.",
+        "Vous créez exclusivement des designs sur mesure sans templates."
       ],
-      "threshold": "Pixco convient à qui veut retoucher vite des visuels produit sans Photoshop ; pour un contrôle expert, un éditeur professionnel reste préférable."
+      "threshold": "Pixco se justifie pour un freelance ou une agence Framer qui cherche à accélérer la phase initiale sans s'engager dans un plan annuel. Chaque achat est ciblé sur le projet en cours."
     },
     "pros": [
-      "Prise en main simple, sans logiciel installé.",
-      "Suppression d'arrière-plan et retouche automatisées.",
-      "Adapté aux visuels e-commerce.",
-      "Palier gratuit pour évaluer."
+      "Templates de haute qualité pensés pour la conversion et l'expérience utilisateur.",
+      "Achat à l'unité, sans engagement long terme ni abonnement.",
+      "Guides complets fournis avec chaque template.",
+      "Accès aux templates gratuits avant d'investir."
     ],
     "cons": [
-      "Moins de contrôle qu'un éditeur professionnel.",
-      "Dépendance à une connexion en ligne.",
-      "Résultats IA parfois à retoucher manuellement."
+      "La somme s'élève rapidement si vous travaillez sur plusieurs projets variés.",
+      "Chaque template partagé par d'autres acheteurs : demande du travail de différenciation.",
+      "Tarification éclatée : le prix varie selon le template, sans offre d'accès global."
     ],
     "use_cases": [
-      "Détourer des photos produit en lot.",
-      "Améliorer la qualité d'images pour une fiche produit.",
-      "Créer des visuels marketing rapidement."
+      "Lancer rapidement un site client depuis une base structurée plutôt que zéro.",
+      "Proposer plusieurs directions de design à un client en quelques heures.",
+      "Accélérer la mise en ligne d'une page dédiée à une campagne."
     ],
-    "relevant_for": ["E-commerçants", "Freelances", "Community managers"]
+    "relevant_for": ["Freelances web", "Agences Framer", "Studios de design"]
   },
   "en": {
     "verdict": {
       "keepIf": [
-        "You produce lots of product visuals and want to save time.",
-        "You're not comfortable with Photoshop.",
-        "You want quick edits directly online."
+        "You work in Framer and want to speed up client website design.",
+        "You deliver sites regularly and prefer to buy templates as needed rather than commit to an all-access plan.",
+        "You value templates built with conversion and user experience in mind."
       ],
       "avoidIf": [
-        "You need fine, professional pixel control.",
-        "You already use an advanced editing suite.",
-        "Your image volume is very low."
+        "You need unlimited access to many templates and prefer a subscription model.",
+        "You don't use Framer as your production tool.",
+        "You create exclusively bespoke designs without templates."
       ],
-      "threshold": "Pixco suits those who want to edit product visuals fast without Photoshop; for expert control, a professional editor is still better."
+      "threshold": "Pixco makes sense for a freelancer or Framer agency looking to speed up the initial phase without a long-term commitment. Each purchase targets the current project."
     },
     "pros": [
-      "Simple to use, no installed software.",
-      "Automated background removal and retouching.",
-      "Suited to e-commerce visuals.",
-      "Free tier to evaluate."
+      "High-quality templates built with conversion and UX in mind.",
+      "Buy individual templates without subscription or long-term commitment.",
+      "Complete implementation guides included with each template.",
+      "Free templates available to test quality before investing."
     ],
     "cons": [
-      "Less control than a professional editor.",
-      "Depends on an online connection.",
-      "AI results sometimes need manual touch-ups."
+      "Costs add up quickly if working on multiple varied projects.",
+      "Each template is shared by other buyers: requires differentiation work.",
+      "Pricing not centralized: costs vary by template with no global access bundle."
     ],
     "use_cases": [
-      "Cut out product photos in bulk.",
-      "Improve image quality for a product listing.",
-      "Create marketing visuals quickly."
+      "Launch a client site quickly from a structured base rather than starting from scratch.",
+      "Propose multiple design directions to a client within hours.",
+      "Speed up a landing page launch for a campaign."
     ]
   }
 }
