@@ -47,5 +47,24 @@ Ton bloc = un fichier JSON `scripts/repass/blocks/<nom>.json` : liste de `{slug,
 - Ne rien inventer : si un prix est incertain, écris « montants sur la page officielle » plutôt qu'un chiffre inventé.
 - **N'écris QUE** des fichiers `research/bundle-editorial/<slug>.json`. Ne touche à AUCUN autre fichier (surtout pas `research/what-en.json`, ni git). Ne commit/push pas.
 
+## CAS PARTICULIER — plugins, librairies et serveurs MCP
+
+Une fiche rattachée à un logiciel hôte (`host_app` renseigné) ne se rédige pas comme une fiche d'outil autonome. Un plugin After Effects à 40 € n'a aucun sens sans les ~300 €/an d'After Effects derrière : le lecteur ne choisit pas entre ce plugin et un autre outil, il choisit de l'ajouter ou non à un logiciel qu'il possède déjà.
+
+**Le verdict répond à « faut-il l'ajouter à X ? », jamais à « est-ce un bon outil ? »**
+- `keepIf` : « Vous utilisez déjà After Effects et vous animez des logos chaque semaine. »
+- `avoidIf` : « Vous n'avez pas After Effects — le plugin ne s'utilise pas seul. »
+- `threshold` : formule l'arbitrage par rapport à l'hôte, pas par rapport au marché.
+
+**Ne jamais reprendre la tarification de l'hôte** dans `facts.plans`. On y met le prix du plugin seul. Le coût de l'hôte se mentionne en prose, sans chiffre : « suppose une licence After Effects active ».
+
+**Nommer l'hôte explicitement** dans `facts.what` et `facts.what_en`. Une fiche plugin qui ne dit pas dans quoi elle s'exécute est inutilisable.
+
+**Ne pas comparer un plugin à un logiciel autonome** dans les `cons`. Reprocher à Bodymovin de ne pas faire de montage vidéo n'a pas de sens.
+
+**Règle du produit autonome** : si l'outil s'utilise SEUL et sait *aussi* se brancher dans un logiciel (Luminar Neo, Nik Collection, Topaz Gigapixel), ce n'est **pas** un plugin. Il se rédige comme un outil normal, et la compatibilité se mentionne en prose. Signale-le en `flagged` plutôt que de le traiter en plugin.
+
+**Librairies et serveurs MCP** suivent la même logique : le verdict porte sur l'ajout à une base de code ou à un assistant existant, pas sur une valeur absolue.
+
 ## Sortie (ton message final)
 Rends un récap : `filled: [slugs remplis]`, `flagged: [{slug, raison}]`. Rien d'autre.
