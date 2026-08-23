@@ -42,7 +42,37 @@ try {
       and not exists (select 1 from public.tools h where h.slug = t.bundle_parent)
     order by t.slug`;
 
+  // Vocabulaire ferme de form_factor. Etendre le modele = ajouter une valeur
+  // ICI et dans scripts/sql/form-factor.sql, jamais ecrire une valeur libre en
+  // base. C'est cette gouvernance qui evite de refaire le nettoyage de
+  // taxonomie : covers avait derive a 590 termes faute de liste fermee.
+  const FORM_FACTORS = ["app", "plugin", "librairie", "mcp", "suite"];
+
+  const formatsInconnus = await sql`
+    select coalesce(form_factor, '(null)') v, count(*)::int n from public.tools
+    where content_status = 'published' and (form_factor is null or form_factor <> all(${FORM_FACTORS}))
+    group by 1 order by n desc`;
+
+  // Un plugin sans hote n'est rattachable a rien : il ne remontera sur aucune
+  // page /plugins/<hote>. Symetriquement, un hote declare sans forme adaptee
+  // signale un typage oublie.
+  const pluginsSansHote = await sql`
+    select slug from public.tools
+    where content_status = 'published' and form_factor in ('plugin', 'librairie', 'mcp')
+      and host_app is null order by slug`;
+
   let ko = false;
+  if (formatsInconnus.length) {
+    ko = true;
+    console.log(`⚠️  form_factor hors vocabulaire (${FORM_FACTORS.join(", ")}) :`);
+    for (const r of formatsInconnus) console.log(`   ${r.v} — ${r.n} fiche(s)`);
+  }
+  if (pluginsSansHote.length) {
+    ko = true;
+    console.log(`\n⚠️  ${pluginsSansHote.length} fiche(s) de forme rattachable mais sans host_app :`);
+    for (const r of pluginsSansHote.slice(0, 20)) console.log(`   ${r.slug}`);
+    if (pluginsSansHote.length > 20) console.log(`   … +${pluginsSansHote.length - 20}`);
+  }
   if (morts.length) {
     ko = true;
     console.log(`⚠️  ${morts.length} lien(s) host_app vers un slug inexistant :`);
@@ -58,7 +88,7 @@ try {
     console.log(`\n⚠️  ${bundlesMorts.length} lien(s) bundle_parent vers un slug inexistant :`);
     for (const r of bundlesMorts) console.log(`   ${r.slug} → ${r.bundle_parent}`);
   }
-  if (!ko) console.log("✅ Tous les liens host_app et bundle_parent résolvent vers une fiche publiée.");
+  if (!ko) console.log("✅ Liens host_app et bundle_parent résolus, form_factor conforme au vocabulaire.");
   process.exitCode = ko ? 1 : 0;
 } finally {
   await sql.end({ timeout: 5 });
