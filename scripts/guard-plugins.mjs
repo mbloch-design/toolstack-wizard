@@ -53,13 +53,18 @@ try {
     where content_status = 'published' and (form_factor is null or form_factor <> all(${FORM_FACTORS}))
     group by 1 order by n desc`;
 
-  // Un plugin sans hote n'est rattachable a rien : il ne remontera sur aucune
-  // page /plugins/<hote>. Symetriquement, un hote declare sans forme adaptee
-  // signale un typage oublie.
-  const pluginsSansHote = await sql`
-    select slug from public.tools
+  // Un plugin, une bibliotheque ou un serveur MCP doit etre rattache a quelque
+  // chose, sinon il ne remonte sur aucune page ni dans aucun filtre.
+  //
+  // Le controle porte sur works_with et NON sur host_app : un plugin peut viser
+  // plusieurs hotes (Typescale s'installe dans Figma, Adobe XD et Penpot), et
+  // host_app, mono-value, ne sait pas l'exprimer. Dans ce cas host_app reste
+  // nul et works_with porte les trois — le rattachement existe bien.
+  const sansRattachement = await sql`
+    select slug, form_factor from public.tools
     where content_status = 'published' and form_factor in ('plugin', 'library', 'mcp')
-      and host_app is null order by slug`;
+      and jsonb_array_length(coalesce(works_with, '[]'::jsonb)) = 0
+    order by slug`;
 
   // INVARIANT : works_with contient toujours host_app. Le filtre « Works with »
   // n'interroge que works_with ; si un plugin y manquait, il serait absent du
@@ -95,11 +100,11 @@ try {
     console.log(`⚠️  form_factor hors vocabulaire (${FORM_FACTORS.join(", ")}) :`);
     for (const r of formatsInconnus) console.log(`   ${r.v} — ${r.n} fiche(s)`);
   }
-  if (pluginsSansHote.length) {
+  if (sansRattachement.length) {
     ko = true;
-    console.log(`\n⚠️  ${pluginsSansHote.length} fiche(s) de forme rattachable mais sans host_app :`);
-    for (const r of pluginsSansHote.slice(0, 20)) console.log(`   ${r.slug}`);
-    if (pluginsSansHote.length > 20) console.log(`   … +${pluginsSansHote.length - 20}`);
+    console.log(`\n⚠️  ${sansRattachement.length} fiche(s) rattachable(s) sans aucun works_with :`);
+    for (const r of sansRattachement.slice(0, 20)) console.log(`   ${r.slug} (${r.form_factor})`);
+    if (sansRattachement.length > 20) console.log(`   … +${sansRattachement.length - 20}`);
   }
   if (morts.length) {
     ko = true;

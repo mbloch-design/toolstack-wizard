@@ -1,0 +1,101 @@
+{
+  "slug": "mockuuups-studio",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Mockuuups Studio — page d'accueil (site officiel)", "url": "https://mockuuups.studio/" },
+    { "label": "Mockuuups Studio — tarification (site officiel)", "url": "https://mockuuups.studio/pricing/" }
+  ],
+  "facts": {
+    "what": "Générateur de mockups en ligne proposant une vaste bibliothèque de mockups de produits en contexte réel (appareils, supports imprimés, environnements). Disponible directement en ligne, et via plugins pour Figma et Adobe Express.",
+    "what_en": "Online mockup generator offering a large library of product mockups in real-world contexts (devices, print materials, environments). Available via web browser, plus plugins for Figma and Adobe Express.",
+    "pricing_model": "Abonnement mensuel ou annuel avec palier gratuit avec attribution obligatoire.",
+    "free_tier": { "exists": true, "detail": "Accès limité aux mockups avec obligation d'attribuer Mockuuups Studio ; export sans licence commerciale." },
+    "plans": [
+      { "name": "Gratuit", "price": "0" },
+      { "name": "Professional (mensuel)", "price": "21 EUR/mois" },
+      { "name": "Professional (annuel)", "price": "13 EUR/mois, 150,53 EUR/an" },
+      { "name": "Team (mensuel)", "price": "31 EUR/utilisateur/mois" },
+      { "name": "Team (annuel)", "price": "19 EUR/utilisateur/mois, 225,79 EUR/utilisateur/an" }
+    ],
+    "key_features": [
+      "Bibliothèque de 5 300+ mockups mise à jour régulièrement",
+      "Export illimité en haute qualité 4K",
+      "Licence commerciale sur les plans payants",
+      "Éditeur avancé avec mains, arrière-plans et personnalisation",
+      "Plugin Figma et complément Adobe Express",
+      "Liens de prévisualisation partageables"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous produisez des visuels commerciaux (pages d'atterrissage, réseaux sociaux, portfolios) et souhaitez montrer vos créations en contexte réel sans frais de photographie.",
+        "Vous livrez des mockups régulièrement à des clients et amortissez l'abonnement sur plusieurs projets.",
+        "Vous utilisez Figma ou Adobe Express et préférez un flux de travail intégré aux outils que vous possédez déjà."
+      ],
+      "avoidIf": [
+        "Vous ne produisez que des mockups occasionnels : le coût de l'abonnement sera mal amorti.",
+        "Votre identité visuelle repose sur des dispositifs ou contextes non disponibles dans la bibliothèque.",
+        "Vous êtes prêt à investir massivement dans une solution autonome et préférez éviter la dépendance à un service.",
+        "Vous travaillez exclusivement sur des outils de design autres que Figma ou Adobe Express."
+      ],
+      "threshold": "Mockuuups Studio se justifie pour un designer ou une agence qui enchaîne les livraisons commerciales. Pour un mockup unique ou une utilisation personnelle, la version gratuite suffit ; au-delà, l'abonnement Professional offre le meilleur rapport qualité-prix."
+    },
+    "pros": [
+      "Bibliothèque très fournie régulièrement mise à jour, couvrant mains, appareils, supports imprimés et environnements.",
+      "Export illimité en 4K sur les plans payants, sans rationnement.",
+      "Intégration seamless via plugin Figma et Adobe Express pour gagner du temps de copier-coller.",
+      "Licence commerciale incluse : vous pouvez utiliser les mockups sur un nombre illimité de projets clients.",
+      "Interface intuitive, pas de courbe d'apprentissage."
+    ],
+    "cons": [
+      "Mockups partagés : vous et vos concurrents pouvez utiliser les mêmes mains ou contextes, nécessitant une différenciation au montage.",
+      "Abonnement : coût récurrent, sans fin de vie claire si vous arrêtez le design.",
+      "Attribution obligatoire sur le palier gratuit, limitation pour les clients exigeants.",
+      "Manque de flexibilité pour des contextes très spécifiques ou des dispositifs non listés dans la bibliothèque."
+    ],
+    "use_cases": [
+      "Créer des visuels de réseaux sociaux mettant en avant une application mobile ou un site web dans un contexte réaliste.",
+      "Préparer des mockups pour une présentation client montrant l'interface dans des mains, sur un bureau, en environnement urbain.",
+      "Générer rapidement des visuels de couverture pour une application ou un site avant les tests utilisateur.",
+      "Alimenter un portfolio ou une page de présentation avec des contextes professionnels et diversifiés."
+    ],
+    "relevant_for": ["Freelances en design web", "Agences de création", "Designers de produits", "Spécialistes du marketing visuel"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You produce commercial visuals (landing pages, social media, portfolios) and want to showcase your work in realistic contexts without hiring photographers.",
+        "You deliver mockups regularly to clients and can spread subscription costs across multiple projects.",
+        "You work in Figma or Adobe Express and prefer a workflow that's built into tools you already own."
+      ],
+      "avoidIf": [
+        "You only need mockups occasionally: subscription fees won't pay for themselves.",
+        "Your visual identity relies on devices or contexts not in the library.",
+        "You're willing to invest heavily in a standalone tool and want to avoid service dependency.",
+        "You work exclusively in design tools other than Figma or Adobe Express."
+      ],
+      "threshold": "Mockuuups Studio pays off for a designer or agency shipping commercial work regularly. For a one-off mockup or personal use, the free tier suffices; beyond that, Professional is the best value."
+    },
+    "pros": [
+      "Extensive, regularly-updated library covering hands, devices, print materials and environments.",
+      "Unlimited 4K exports on paid plans — no rationing.",
+      "Seamless integration via Figma plugin and Adobe Express add-on, saving copy-paste time.",
+      "Commercial license included: use mockups across unlimited client projects.",
+      "Intuitive interface, minimal learning curve."
+    ],
+    "cons": [
+      "Shared mockups: you and competitors can use the same hands or settings, requiring differentiation at assembly.",
+      "Subscription model: recurring cost with no clear end-of-life if you stop designing.",
+      "Attribution required on free tier—limiting for demanding clients.",
+      "No flexibility for highly specific contexts or devices not in the library."
+    ],
+    "use_cases": [
+      "Create social-media visuals showcasing a mobile app or website in a realistic, hand-held context.",
+      "Prepare client-presentation mockups showing interfaces in hands, at desks, or in urban environments.",
+      "Quickly generate cover visuals for an app or website before user testing.",
+      "Stock a portfolio or landing page with professional, diverse contexts."
+    ]
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "slug": "typescale",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Typescale — page d'accueil (site officiel)", "url": "https://typescale.io/" }
+  ],
+  "facts": {
+    "what": "Plugin gratuit pour Figma, Adobe XD et Penpot qui génère des échelles typographiques modulaires à partir d'une taille de base et d'un ratio. Suppose une licence active de l'outil de design choisi.",
+    "what_en": "Free plugin for Figma, Adobe XD and Penpot that generates modular typographic scales from a base size and a ratio. Requires an active license of the chosen design tool.",
+    "pricing_model": "Gratuit, sans abonnement ni restrictions d'usage.",
+    "free_tier": { "exists": true, "detail": "Accès complet et gratuit au plugin sans limitations d'utilisation." },
+    "plans": [
+      { "name": "Complet", "price": "0" }
+    ],
+    "key_features": [
+      "Génération automatique d'échelles typographiques modulaires",
+      "Paramétrage du ratio d'échelle (1.125, 1.25, 1.5, etc.)",
+      "Choix du nombre de tailles requises (au-dessus et au-dessous de la base)",
+      "Option de contenu prédéfini pour tester immédiatement",
+      "Support multi-plateforme : Figma, Adobe XD, Penpot",
+      "Licence créée par Sam Smith (designer établi)"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez Figma, Adobe XD ou Penpot et devez établir rapidement une échelle typographique cohérente et modulaire.",
+        "Votre équipe design souhaite respecter des principes de composition harmonieux (ratios d'or, ratios mineurs) sans calculs manuels.",
+        "Vous créez un système de design ou une bibliothèque de composants et avez besoin de fondations typographiques documentées.",
+        "Vous préférez un flux direct dans votre outil de design plutôt que de passer par un calculateur web externe."
+      ],
+      "avoidIf": [
+        "Vous n'utilisez ni Figma, ni Adobe XD, ni Penpot (le plugin n'existe pas pour d'autres outils).",
+        "Votre équipe ne possède pas de licence Figma, Adobe XD ou Penpot : le plugin sans hôte n'a aucune valeur.",
+        "Votre échelle typographique est entièrement spécifique et ne suit pas de ratio modulaire (nécessite du custom)."
+      ],
+      "threshold": "Typescale se justifie uniquement si vous travaillez dans l'un des trois outils de design supportés et que vous établissez des échelles typographiques régulièrement. C'est un gain immédiat pour la vélocité et la cohérence. Sans Figma, Adobe XD ou Penpot, le plugin n'a aucun usage."
+    },
+    "pros": [
+      "Entièrement gratuit : aucun coût, aucune barrière à l'installation ou l'utilisation.",
+      "Calcul instantané : génère une échelle complète en secondes, versus minutes en calcul manuel ou recherche de tableau.",
+      "Intégration native : pas de copier-coller depuis un site externe, manipulation directe des couches de texte.",
+      "Multi-plateforme : fonctionne dans Figma, Adobe XD et Penpot, couvre la majorité des designers modernes.",
+      "Léger et discret : pas d'interface intrusive, design épuré.",
+      "Créé et maintenu par un designer reconnu (Sam Smith), gage de qualité et de pérennité."
+    ],
+    "cons": [
+      "Dépendant d'une licence d'outil de design : sans Figma, Adobe XD ou Penpot, inutilisable. Le coût réel inclut l'abonnement de l'hôte.",
+      "Approche unidimensionnelle : génère uniquement des tailles, pas des poids, des hauteurs de ligne ou d'autres dimensions typographiques.",
+      "Pas de gestion d'équipe : le plugin se base sur l'application locale, pas de synchronisation cloud ou de partage de presets à la team.",
+      "Customisation manuelle requise : le plugin crée la grille, mais régler les détails fins (kerning, line-height, etc.) reste manuel.",
+      "Documentation minimale : interface intuitive mais peu de tutoriels ou de ressources pédagogiques."
+    ],
+    "use_cases": [
+      "Établir rapidement une hiérarchie typographique pour un projet client, d'un brief au design en quelques minutes.",
+      "Initialiser un système de design ou une bibliothèque de composants Figma avec des fondations typographiques cohérentes.",
+      "Tester plusieurs ratios d'échelle (1.125, 1.25, 1.5) pour trouver celui qui convient le mieux au ton visuel du projet.",
+      "Documenter et communiquer une échelle typographique à une équipe dev, en exportant directement les tailles de l'outil.",
+      "Vérifier la cohérence typographique sur plusieurs écrans ou produits au sein d'une organisation."
+    ],
+    "relevant_for": ["Designers UX/UI", "Systèmes de design", "Agences de création", "Équipes produit", "Design ops"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You use Figma, Adobe XD or Penpot and need to establish a coherent, modular typographic scale quickly.",
+        "Your design team wants to respect harmonic composition principles (golden ratio, minor ratios) without manual math.",
+        "You're building a design system or component library and need documented typographic foundations.",
+        "You prefer a direct workflow in your design tool over pinging an external web calculator."
+      ],
+      "avoidIf": [
+        "You use neither Figma, Adobe XD nor Penpot (plugin doesn't exist for other tools).",
+        "Your team lacks active licenses in one of those three tools: the plugin alone has no value.",
+        "Your typographic scale is fully custom and doesn't follow a modular ratio (requires handcrafted work)."
+      ],
+      "threshold": "Typescale justifies itself only if you work in one of the three supported design tools and build typographic scales regularly. Instant win for speed and consistency. Without Figma, Adobe XD or Penpot, the plugin is pointless."
+    },
+    "pros": [
+      "Completely free: zero cost, no friction to install or use.",
+      "Instant calculation: generates a full scale in seconds versus minutes of manual math or spreadsheet hunting.",
+      "Native integration: no copy-paste from external sites, direct text-layer manipulation.",
+      "Multi-platform: works in Figma, Adobe XD and Penpot, covers most modern designers.",
+      "Lightweight, unobtrusive: clean interface, no bloat.",
+      "Authored and maintained by a recognized designer (Sam Smith), sign of quality and longevity."
+    ],
+    "cons": [
+      "Hostage to a design-tool license: without Figma, Adobe XD or Penpot, it's unusable. True cost includes the host subscription.",
+      "One-dimensional: generates sizes only, not weights, line heights or other typographic dimensions.",
+      "No team management: plugin runs locally, no cloud sync or preset sharing with team.",
+      "Manual refinement still required: plugin builds the grid, but fine-tuning (kerning, line-height, etc.) stays hands-on.",
+      "Sparse documentation: intuitive interface but few tutorials or learning resources."
+    ],
+    "use_cases": [
+      "Establish a typographic hierarchy quickly for a client project, from brief to design in minutes.",
+      "Initialize a design system or Figma component library with coherent typographic foundations.",
+      "Test multiple scale ratios (1.125, 1.25, 1.5) to find the right fit for the project's visual tone.",
+      "Document and communicate a typographic scale to a dev team, exporting sizes directly from the tool.",
+      "Verify typographic consistency across multiple screens or products within an organization."
+    ]
+  }
+}

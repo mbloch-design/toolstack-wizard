@@ -1,0 +1,106 @@
+{
+  "slug": "avaaatars",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Avaaatars — page d'accueil (site officiel)", "url": "https://www.avaaatars.com/" }
+  ],
+  "facts": {
+    "what": "Bibliothèque d'avatars personnalisables, gratuits et utilisables commercialement sans limitation. Disponible en téléchargement PNG, en fichier Figma, Sketch et Adobe XD, ainsi que via plugin Figma.",
+    "what_en": "Library of over 600 customizable avatars, free and available for commercial use without restriction. Available as PNG downloads, Figma files, Sketch and Adobe XD files, and via Figma plugin.",
+    "pricing_model": "Gratuit, sans palier payant ni limitation d'utilisation commerciale.",
+    "free_tier": { "exists": true, "detail": "Accès complet et gratuit à l'intégralité de la bibliothèque, tous les formats et tous les usages commerciaux inclus." },
+    "plans": [
+      { "name": "Complet", "price": "0" }
+    ],
+    "key_features": [
+      "Plus de 600 avatars personnalisables et variés",
+      "Licence commerciale d'usage illimitée",
+      "Disponible en PNG avec transparence",
+      "Fichier Figma complet avec variantes",
+      "Exports pour Sketch et Adobe XD",
+      "Plugin Figma pour insertion directe en conception",
+      "Formes disponibles : cercle, carré, arrondi",
+      "Palette de couleurs modulable"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous avez besoin d'avatars divers pour une application, un site, ou un système de design, et vous refusez de payer pour une bibliothèque commerciale.",
+        "Vous travaillez en Figma, Sketch ou Adobe XD et préférez une solution intégrée dans votre flux de conception.",
+        "Votre projet ou produit autorise l'usage d'avatars génériques stylisés, sans besoin de caractères très spécifiques ou réalistes.",
+        "Vous testez rapidement un prototype ou un MVP et cherchez une ressource zéro-coût."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'avatars ultra-réalistes, photographiques ou avec styles très spécifiques (illustrations maison requises).",
+        "Votre marque exige des avatars intégralement sur mesure pour différenciation compétitive.",
+        "Vous cherchez une variété d'expressions faciales complexes (Avaaatars propose principalement des styles stylisés)."
+      ],
+      "threshold": "Avaaatars s'impose pour toute équipe ou freelance ayant besoin d'avatars génériques sans budget. C'est un gain immédiat pour prototype, MVP ou produit consumer standard. Pour des avatars de marque très différenciés, il faut compléter ou commander du custom."
+    },
+    "pros": [
+      "Entièrement gratuit sans conditions : aucun coût, aucune surprise de licence, aucune attribution forcée.",
+      "Licence commerciale d'usage illimité : libre sur tous les projets clients et internes.",
+      "Bibliothèque fournie : 600+ variantes couvrent la plupart des besoins en avatars génériques.",
+      "Accès sur plusieurs formats : PNG directement, ou fichiers éditables Figma, Sketch, XD.",
+      "Plugin Figma récent : insertion directe sans manipulation externe.",
+      "Style cohérent et moderne : avatars stylisés élégants qui vieillissent bien.",
+      "Transparent et minimaliste : pas de traçage, pas de données collectées."
+    ],
+    "cons": [
+      "Style unique et partagé : tout le monde utilisant Avaaatars aura des avatars visuellement similaires, pas de différenciation de marque.",
+      "Variété limitée en expressions : peu ou pas de variation d'émotions ou de poses (posture statique).",
+      "Pas de mises à jour fréquentes : la bibliothèque évolue lentement, pas de nouveaux styles réguliers.",
+      "Absence de customisation avancée : personnalisation basique de formes et couleurs, pas de branching sur des traits très spécifiques.",
+      "Format PNG limité : les fichiers sources Figma/Sketch ne sont pas ultra-flexibles pour des ajustements profonds."
+    ],
+    "use_cases": [
+      "Remplir un système de design ou une page de profil utilisateur avec des avatars génériques pour prototype ou MVP.",
+      "Ajouter de la variété visuelle et de l'inclusivité à une interface utilisateur avec des avatars stylisés et divers.",
+      "Créer rapidement des illustrations pour une page d'atterrissage ou une présentation produit sans frais graphiques.",
+      "Servir de base pour une customisation ultérieure : exporter et retoucher si nécessaire, en gagnant du temps sur la création initiale.",
+      "Documentation produit et cas d'usage : montrer des personas fictifs avec avatars cohérents."
+    ],
+    "relevant_for": ["Startups et MVP", "Designers UX/UI", "Équipes produit", "Freelances budget-conscious", "Agences de création"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need avatars for an app, website or design system and want to avoid paying for a commercial library.",
+        "You work in Figma, Sketch or Adobe XD and prefer a tool integrated into your design workflow.",
+        "Your project allows for generic, stylized avatars without needing highly specific or photorealistic characters.",
+        "You're testing a prototype or MVP quickly and want zero-cost resources."
+      ],
+      "avoidIf": [
+        "You need ultra-realistic, photographic or highly specific-style avatars (custom illustration required).",
+        "Your brand demands bespoke avatars for competitive differentiation.",
+        "You need complex facial expressions (Avaaatars is mainly stylized, static)."
+      ],
+      "threshold": "Avaaatars is a no-brainer for any team or freelancer needing generic avatars on no budget. Instant win for prototypes, MVPs or standard consumer products. For brand-specific avatars, supplement with or commission custom work."
+    },
+    "pros": [
+      "Completely free, no strings: zero cost, no surprises, no forced attribution.",
+      "Commercial-use license unlimited: clear for all client and internal projects.",
+      "Comprehensive library: 600+ variants cover most generic-avatar needs.",
+      "Multi-format access: PNG downloads or editable Figma, Sketch, XD files.",
+      "New Figma plugin: insert directly without external hassle.",
+      "Cohesive, modern style: stylized avatars that age well.",
+      "Transparent, minimal: no tracking, no data collected."
+    ],
+    "cons": [
+      "Unified style, shared by all users: avatars look visually similar across projects, no brand differentiation.",
+      "Limited expression variety: little-to-no emotional or pose variation (static posture).",
+      "Slow update cadence: library evolves gradually, no frequent style additions.",
+      "Limited advanced customization: basic shape and color tweaking only, not branching on specific traits.",
+      "PNG-focused: source Figma/Sketch files aren't ultra-flexible for deep adjustments."
+    ],
+    "use_cases": [
+      "Stock a design system or user-profile section with generic avatars for a prototype or MVP.",
+      "Add visual variety and inclusivity to user interfaces with diverse, stylized avatars.",
+      "Quickly build illustrations for a landing page or product presentation without design costs.",
+      "Serve as a base for later customization: export and refine if needed, saving time on initial creation.",
+      "Product documentation and personas: show fictional characters with cohesive avatars."
+    ]
+  }
+}

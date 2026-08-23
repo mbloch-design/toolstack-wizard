@@ -1,0 +1,115 @@
+{
+  "slug": "rotato",
+  "author": "ToolTrim — Mike",
+  "verified_on": "2026-07-24",
+  "sources": [
+    { "label": "Rotato — page d'accueil (site officiel)", "url": "https://rotato.app/" },
+    { "label": "Rotato — tarification (site officiel)", "url": "https://rotato.app/pricing" }
+  ],
+  "facts": {
+    "what": "Générateur de mockups 3D d'appareils (téléphones, tablettes, ordinateurs portables, montres) avec capacités d'animation vidéo. Application macOS avec version web en bêta public. Import natif depuis Figma, Sketch et Adobe XD.",
+    "what_en": "3D device mockup generator (phones, tablets, laptops, watches) with video animation capabilities. macOS application with public beta web version. Native import from Figma, Sketch and Adobe XD.",
+    "pricing_model": "Achat unique sans abonnement. Douze mois de mises à jour et nouveaux appareils inclus dans tous les plans.",
+    "free_tier": { "exists": true, "detail": "Essai gratuit illimité sans limitation de fonctionnalités, sans carte bancaire requise. Accès complet à tous les appareils et fonctions, export sans restriction." },
+    "plans": [
+      { "name": "Essai gratuit", "price": "0" },
+      { "name": "Basic", "price": "79 EUR" },
+      { "name": "Standard", "price": "89 EUR" },
+      { "name": "Premium", "price": "199 EUR" }
+    ],
+    "key_features": [
+      "30+ mockups d'appareils (téléphones, tablettes, ordinateurs portables, montres, téléviseurs)",
+      "Animation de la chronologie avec présets prédéfinis",
+      "Export vidéo en 8K (Premium), 4K et formats mineurs",
+      "Support des formats d'export : H.264, ProRes 4444, HEVC/H.265",
+      "Plugin Figma pour importer directement les designs",
+      "Mode Clay avec personnalisation des ombres et réflexions",
+      "Contrôle virtuel d'objectif de caméra de niveau DSLR",
+      "Export pour l'App Store avec modèles prédéfinis",
+      "Mirroring iPhone direct via USB-C"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous créez des présentations visuelles ou des vidéos mettant en scène des interfaces, et vous trouvez After Effects trop complexe ou trop coûteux.",
+        "Vous avez besoin de mockups animés en 3D pour vos portfolios, pitchs clients ou réseaux sociaux.",
+        "Vous travaillez régulièrement avec Figma et cherchez à accélérer le pipeline de la maquette au mockup.",
+        "Vous produisez des visuels pour l'App Store et souhaitez des présentations professionnelles sans freelancer 3D."
+      ],
+      "avoidIf": [
+        "Vous n'avez besoin que de mockups statiques et 2D : des outils web gratuits suffisent.",
+        "Vous refusez la dépendance à une application macOS non-web.",
+        "Votre priorité est de minimiser les coûts, même au détriment de la vitesse de création.",
+        "Vous avez besoin de contextes ou d'appareils hautement personnalisés en-dehors du catalogue offert."
+      ],
+      "threshold": "Rotato s'impose pour tout professionnel produisant des mockups régulièrement. Le plan Basic suffit pour débuter ; le Premium justifie son prix si vous exportez en vidéo 8K ou animez plusieurs appareils. L'essai gratuit vous permet de valider sans risque."
+    },
+    "pros": [
+      "Spécialité reconnue : pas de faux pas de généraliste, tout est pensé pour les mockups d'appareils et les vidéos.",
+      "Interface minimaliste et learning curve court : quelques clics suffisent, contrairement à After Effects ou Cinema 4D.",
+      "Accès libre à l'essai sans limites ni carte bancaire : vous testez réellement avant d'acheter.",
+      "Achat unique : pas d'abonnement récurrent ; vous gardez votre licence indéfiniment.",
+      "Douze mois de mises à jour incluses ; nouveaux appareils ajoutés régulièrement.",
+      "Export vidéo hautement optimisé : plus rapide qu'After Effects, selon les tests publiés.",
+      "Plugin Figma qui économise des allers-retours et simplifie le pipeline de conception.",
+      "Communauté et ressources pédagogiques actives (tutoriels, études de cas)."
+    ],
+    "cons": [
+      "Application macOS avant tout : dépendance à l'écosystème Apple pour l'expérience complète (la version web est en bêta et moins mature).",
+      "Mockups limitées au catalogue d'appareils fournis : impossible de modéliser un appareil sur mesure ou inédit sans passer par un outil 3D externe.",
+      "Les paliers Basic et Standard sont très proches ; le palier supérieur se justifie surtout pour l'export en très haute définition.",
+      "Absence de gestion d'équipe ou de collaboration temps réel (chaque licence est solo).",
+      "Éditeur de petite taille : moins de garantie de pérennité qu'un acteur établi."
+    ],
+    "use_cases": [
+      "Produire des vidéos de présentation d'application mobile en 3D pour un pitch client ou un réseau social.",
+      "Générer des images d'App Store hautement professionnelles montrant l'interface dans des appareils réalistes.",
+      "Créer des mockups animés pour un portfolio personnel ou un site portfolio d'agence.",
+      "Illustrer des tutoriels ou des démos de produit avec mockups réalistes et dynamiques, sans investir en photographie.",
+      "Exporter des ressources 4K ou 8K pour des campagnes marketing haut de gamme."
+    ],
+    "relevant_for": ["Designers UX/UI", "Freelances spécialisés en mockups", "Agences de design", "Startups en lancement", "Producteurs vidéo créatifs"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You produce visual presentations or videos showcasing interfaces, and you find After Effects too complex or too expensive.",
+        "You need animated 3D mockups for portfolios, client pitches or social media.",
+        "You work regularly with Figma and want to speed up the mockup pipeline.",
+        "You produce App Store visuals and want professional presentations without hiring a 3D freelancer."
+      ],
+      "avoidIf": [
+        "You only need static, 2D mockups: free web tools are enough.",
+        "You refuse dependency on a macOS-first application.",
+        "Your priority is minimizing costs, even if it means slower creation.",
+        "You need highly custom contexts or devices outside the provided catalogue."
+      ],
+      "threshold": "Rotato is essential for anyone producing mockups regularly. Basic suffices to start; Premium pays for itself if you export 8K video or animate multiple devices. The free trial lets you validate risk-free."
+    },
+    "pros": [
+      "Specialist focus: no trade-offs of a generalist tool—everything is purpose-built for device mockups and video.",
+      "Minimal interface, short learning curve: a few clicks versus hours in After Effects or Cinema 4D.",
+      "Free trial with no limits or credit card: you test genuinely before committing.",
+      "One-time purchase: no recurring subscription; you keep your license forever.",
+      "Twelve months of updates included; new devices added regularly.",
+      "Video export highly optimized: faster than After Effects per published benchmarks.",
+      "Figma plugin eliminates back-and-forth and streamlines the design-to-mockup flow.",
+      "Active community and learning resources (tutorials, case studies)."
+    ],
+    "cons": [
+      "macOS-first application: ecosystem lock-in for the full experience (web version is beta and less mature).",
+      "Mockups limited to the provided device catalogue: no way to model a bespoke or unreleased device without external 3D work.",
+      "Basic and Standard sit very close together; the top tier mainly earns its keep for very high-resolution export.",
+      "No team management or real-time collaboration (each license is solo).",
+      "Small vendor: less assurance of longevity than an established player."
+    ],
+    "use_cases": [
+      "Produce 3D mobile-app presentation videos for client pitches or social media.",
+      "Generate highly professional App Store images showcasing interfaces in realistic devices.",
+      "Create animated mockups for personal or agency portfolio websites.",
+      "Illustrate tutorials or product demos with dynamic, realistic mockups without investing in photography.",
+      "Export 4K or 8K assets for premium marketing campaigns."
+    ]
+  }
+}
