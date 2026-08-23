@@ -21,6 +21,24 @@ const LABEL_OVERRIDES: Record<string, { fr: string; en: string }> = {
   // minuscules (« CRM » → « crm »), et slugToLabel ne capitalise que la
   // première lettre — sans ces libellés, la fiche afficherait « Crm », « Ats »
   // ou « Ci cd ».
+  // Termes français conservés par la fusion des synonymes : la variante FR
+  // était majoritaire dans le catalogue (« facturation » sur 12 fiches contre
+  // 1 à « invoicing »). Sans ces libellés, le site anglais afficherait
+  // « Facturation » ou « Comptabilite ».
+  "comptabilite":        { fr: "Comptabilité",          en: "Accounting"          },
+  "paiements":           { fr: "Paiements",             en: "Payments"            },
+  "automatisation":      { fr: "Automatisation",        en: "Automation"          },
+  "facturation":         { fr: "Facturation",           en: "Invoicing"           },
+  "planification":       { fr: "Planification",         en: "Scheduling"          },
+  "base-de-donnees":     { fr: "Base de données",       en: "Database"            },
+  "veille":              { fr: "Veille",                en: "Media monitoring"    },
+  "redaction":           { fr: "Rédaction",             en: "Copywriting"         },
+  "deploiement":         { fr: "Déploiement",           en: "Deployment"          },
+  "publication":         { fr: "Publication",           en: "Publishing"          },
+  "partage":             { fr: "Partage",               en: "Sharing"             },
+  "synthese":            { fr: "Synthèse",              en: "Summarisation"       },
+  "recherche":           { fr: "Recherche",             en: "Search"              },
+  "validation":          { fr: "Validation",            en: "Approval"            },
   "crm":                 { fr: "CRM",                   en: "CRM"                 },
   "crm-calls":           { fr: "Appels CRM",            en: "CRM calls"           },
   "crm-enrichment":      { fr: "Enrichissement CRM",    en: "CRM enrichment"      },

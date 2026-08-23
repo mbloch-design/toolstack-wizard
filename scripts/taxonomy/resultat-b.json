@@ -1,0 +1,976 @@
+[
+  {
+    "slug": "adobe-xd",
+    "covers": [
+      "prototyping",
+      "design-tools",
+      "ui-components"
+    ]
+  },
+  {
+    "slug": "affinity-photo",
+    "covers": [
+      "retouche-photo",
+      "photo-enhancement",
+      "design-tools"
+    ]
+  },
+  {
+    "slug": "astute-graphics",
+    "covers": [
+      "illustration-vectorielle",
+      "design-tools"
+    ]
+  },
+  {
+    "slug": "brandcrowd",
+    "covers": [
+      "logos",
+      "branding",
+      "design-tools"
+    ]
+  },
+  {
+    "slug": "esko-studio",
+    "covers": [
+      "3d",
+      "design-tools",
+      "print"
+    ]
+  },
+  {
+    "slug": "excalidraw",
+    "covers": [
+      "collaboration",
+      "brainstorming"
+    ]
+  },
+  {
+    "slug": "figjam",
+    "covers": [
+      "collaboration",
+      "brainstorming"
+    ]
+  },
+  {
+    "slug": "flowmapp",
+    "covers": [
+      "prototyping",
+      "planning",
+      "navigation"
+    ]
+  },
+  {
+    "slug": "fusion-360",
+    "covers": [
+      "modelisation-3d",
+      "prototyping",
+      "design-tools"
+    ]
+  },
+  {
+    "slug": "grabcad",
+    "covers": [
+      "collaboration",
+      "modelisation-3d",
+      "design-tools"
+    ]
+  },
+  {
+    "slug": "hugeicons",
+    "covers": [
+      "ui-components",
+      "design-tools",
+      "illustration"
+    ]
+  },
+  {
+    "slug": "indesign",
+    "covers": [
+      "print",
+      "design-tools",
+      "design-visuel"
+    ]
+  },
+  {
+    "slug": "magic-patterns",
+    "covers": [
+      "generation-image",
+      "ui-components",
+      "ai-general"
+    ]
+  },
+  {
+    "slug": "milanote",
+    "covers": [
+      "brainstorming",
+      "collaboration",
+      "notes"
+    ]
+  },
+  {
+    "slug": "miro",
+    "covers": [
+      "collaboration",
+      "brainstorming",
+      "prototyping"
+    ]
+  },
+  {
+    "slug": "open-cut-list",
+    "covers": [
+      "plugin-sketchup",
+      "design-tools"
+    ]
+  },
+  {
+    "slug": "pacdora",
+    "covers": [
+      "3d",
+      "design-tools",
+      "print"
+    ]
+  },
+  {
+    "slug": "penpot",
+    "covers": [
+      "design-tools",
+      "prototyping",
+      "ui-components"
+    ]
+  },
+  {
+    "slug": "plasticity",
+    "covers": [
+      "modelisation-3d",
+      "3d",
+      "design-tools"
+    ]
+  },
+  {
+    "slug": "pure-ref",
+    "covers": [
+      "illustration",
+      "concept-art",
+      "digital-painting"
+    ]
+  },
+  {
+    "slug": "sketch",
+    "covers": [
+      "design-tools",
+      "prototyping",
+      "ui-components"
+    ]
+  },
+  {
+    "slug": "snapseed",
+    "covers": [
+      "retouche-photo",
+      "photo-enhancement"
+    ]
+  },
+  {
+    "slug": "solidworks",
+    "covers": [
+      "modelisation-3d",
+      "3d",
+      "design-tools"
+    ]
+  },
+  {
+    "slug": "v0-vercel",
+    "covers": [
+      "ui-components",
+      "app-builder",
+      "no-code-ia"
+    ]
+  },
+  {
+    "slug": "vectorworks",
+    "covers": [
+      "3d",
+      "modelisation-3d",
+      "design-tools"
+    ]
+  },
+  {
+    "slug": "whimsical",
+    "covers": [
+      "prototyping",
+      "documentation",
+      "navigation"
+    ]
+  },
+  {
+    "slug": "cargo-site",
+    "covers": [
+      "website-builder",
+      "design-tools",
+      "nocode-web"
+    ]
+  },
+  {
+    "slug": "digitalocean",
+    "covers": [
+      "devops",
+      "deploiement",
+      "nocode-web"
+    ]
+  },
+  {
+    "slug": "dub",
+    "covers": [
+      "analytics",
+      "web-analytics",
+      "nocode-web"
+    ]
+  },
+  {
+    "slug": "emergent",
+    "covers": [
+      "app-builder",
+      "no-code-ia",
+      "nocode-web"
+    ]
+  },
+  {
+    "slug": "fillout",
+    "covers": [
+      "app-builder",
+      "nocode-web"
+    ]
+  },
+  {
+    "slug": "firebase",
+    "covers": [
+      "nocode-web",
+      "app-builder",
+      "deploiement"
+    ]
+  },
+  {
+    "slug": "fly-io",
+    "covers": [
+      "deploiement",
+      "devops",
+      "nocode-web"
+    ]
+  },
+  {
+    "slug": "ghost",
+    "covers": [
+      "website-builder",
+      "email-marketing",
+      "nocode-web"
+    ]
+  },
+  {
+    "slug": "gsap",
+    "covers": [
+      "animation-web",
+      "frontend-framework",
+      "nocode-web"
+    ]
+  },
+  {
+    "slug": "heroku",
+    "covers": [
+      "deploiement",
+      "devops",
+      "nocode-web"
+    ]
+  },
+  {
+    "slug": "jotform",
+    "covers": [
+      "app-builder",
+      "nocode-web",
+      "automatisation"
+    ]
+  },
+  {
+    "slug": "memberstack",
+    "covers": [
+      "app-builder",
+      "nocode-web"
+    ]
+  },
+  {
+    "slug": "mongodb-atlas",
+    "covers": [
+      "app-builder",
+      "nocode-web",
+      "devops"
+    ]
+  },
+  {
+    "slug": "neon",
+    "covers": [
+      "app-builder",
+      "nocode-web",
+      "devops"
+    ]
+  },
+  {
+    "slug": "netlify",
+    "covers": [
+      "deploiement",
+      "devops",
+      "nocode-web"
+    ]
+  },
+  {
+    "slug": "planetscale",
+    "covers": [
+      "app-builder",
+      "nocode-web",
+      "devops"
+    ]
+  },
+  {
+    "slug": "railway",
+    "covers": [
+      "deploiement",
+      "devops",
+      "nocode-web"
+    ]
+  },
+  {
+    "slug": "readymag",
+    "covers": [
+      "design-tools",
+      "animation-web",
+      "website-builder"
+    ]
+  },
+  {
+    "slug": "relume",
+    "covers": [
+      "prototyping",
+      "templates",
+      "nocode-web"
+    ]
+  },
+  {
+    "slug": "render",
+    "covers": [
+      "deploiement",
+      "devops",
+      "nocode-web"
+    ]
+  },
+  {
+    "slug": "rork",
+    "covers": [
+      "app-builder",
+      "no-code-ia",
+      "nocode-web"
+    ]
+  },
+  {
+    "slug": "supabase",
+    "covers": [
+      "app-builder",
+      "nocode-web",
+      "devops"
+    ]
+  },
+  {
+    "slug": "arcgis",
+    "covers": [
+      "analytics",
+      "data-visualization"
+    ]
+  },
+  {
+    "slug": "beehiiv-analytics",
+    "covers": [
+      "analytics",
+      "analytics-produit"
+    ]
+  },
+  {
+    "slug": "convertkit-analytics",
+    "covers": [
+      "analytics",
+      "analytics-produit"
+    ]
+  },
+  {
+    "slug": "datawrapper",
+    "covers": [
+      "charting",
+      "data-visualization",
+      "analytics"
+    ]
+  },
+  {
+    "slug": "dovetail",
+    "covers": [
+      "analytics",
+      "tests-utilisateurs"
+    ]
+  },
+  {
+    "slug": "excel",
+    "covers": [
+      "analytics",
+      "charting",
+      "data-visualization"
+    ]
+  },
+  {
+    "slug": "flourish",
+    "covers": [
+      "data-visualization",
+      "charting",
+      "analytics"
+    ]
+  },
+  {
+    "slug": "frase",
+    "covers": [
+      "seo",
+      "analytics",
+      "redaction"
+    ]
+  },
+  {
+    "slug": "google-analytics",
+    "covers": [
+      "web-analytics",
+      "analytics",
+      "analytics-produit"
+    ]
+  },
+  {
+    "slug": "google-search-console",
+    "covers": [
+      "seo",
+      "web-analytics",
+      "analytics"
+    ]
+  },
+  {
+    "slug": "lookback",
+    "covers": [
+      "tests-utilisateurs",
+      "analytics"
+    ]
+  },
+  {
+    "slug": "mapbox",
+    "covers": [
+      "analytics",
+      "data-visualization"
+    ]
+  },
+  {
+    "slug": "metricool",
+    "covers": [
+      "analytics-reseaux",
+      "analytics",
+      "social-media-management"
+    ]
+  },
+  {
+    "slug": "notionlytics",
+    "covers": [
+      "analytics",
+      "web-analytics"
+    ]
+  },
+  {
+    "slug": "power-bi",
+    "covers": [
+      "data-visualization",
+      "dashboards",
+      "analytics"
+    ]
+  },
+  {
+    "slug": "publer",
+    "covers": [
+      "analytics-reseaux",
+      "planification-posts",
+      "social-media-management"
+    ]
+  },
+  {
+    "slug": "qgis",
+    "covers": [
+      "analytics",
+      "data-visualization"
+    ]
+  },
+  {
+    "slug": "surferseo",
+    "covers": [
+      "seo",
+      "analytics",
+      "redaction"
+    ]
+  },
+  {
+    "slug": "tableau",
+    "covers": [
+      "data-visualization",
+      "dashboards",
+      "analytics"
+    ]
+  },
+  {
+    "slug": "adp-workforce",
+    "covers": [
+      "paie",
+      "project-management",
+      "crm"
+    ]
+  },
+  {
+    "slug": "bamboohr",
+    "covers": [
+      "paie",
+      "project-management",
+      "crm"
+    ]
+  },
+  {
+    "slug": "dayforce",
+    "covers": [
+      "paie",
+      "project-management",
+      "crm"
+    ]
+  },
+  {
+    "slug": "factorial",
+    "covers": [
+      "paie",
+      "project-management",
+      "crm"
+    ]
+  },
+  {
+    "slug": "google-workspace",
+    "covers": [
+      "collaboration",
+      "project-management"
+    ]
+  },
+  {
+    "slug": "hibob",
+    "covers": [
+      "paie",
+      "project-management",
+      "crm"
+    ]
+  },
+  {
+    "slug": "humaans",
+    "covers": [
+      "paie",
+      "project-management",
+      "crm"
+    ]
+  },
+  {
+    "slug": "justworks",
+    "covers": [
+      "paie",
+      "project-management",
+      "crm"
+    ]
+  },
+  {
+    "slug": "lucca",
+    "covers": [
+      "paie",
+      "project-management",
+      "crm"
+    ]
+  },
+  {
+    "slug": "namely",
+    "covers": [
+      "paie",
+      "project-management",
+      "crm"
+    ]
+  },
+  {
+    "slug": "payfit",
+    "covers": [
+      "paie",
+      "project-management",
+      "crm"
+    ]
+  },
+  {
+    "slug": "rippling",
+    "covers": [
+      "paie",
+      "project-management",
+      "crm"
+    ]
+  },
+  {
+    "slug": "sap-successfactors",
+    "covers": [
+      "paie",
+      "project-management",
+      "crm"
+    ]
+  },
+  {
+    "slug": "ukg-pro",
+    "covers": [
+      "paie",
+      "project-management",
+      "crm"
+    ]
+  },
+  {
+    "slug": "workday-hr",
+    "covers": [
+      "paie",
+      "project-management",
+      "crm"
+    ]
+  },
+  {
+    "slug": "zelt",
+    "covers": [
+      "paie",
+      "project-management",
+      "crm"
+    ]
+  },
+  {
+    "slug": "activepieces",
+    "covers": [
+      "automatisation",
+      "workflows",
+      "no-code"
+    ]
+  },
+  {
+    "slug": "firecrawl",
+    "covers": [
+      "automatisation",
+      "web-analytics"
+    ]
+  },
+  {
+    "slug": "gumloop",
+    "covers": [
+      "automatisation",
+      "workflows",
+      "no-code-ia"
+    ]
+  },
+  {
+    "slug": "hyperbrowser",
+    "covers": [
+      "automatisation",
+      "ai-general",
+      "devops"
+    ]
+  },
+  {
+    "slug": "integrately",
+    "covers": [
+      "automatisation",
+      "workflows",
+      "no-code"
+    ]
+  },
+  {
+    "slug": "la-growth-machine",
+    "covers": [
+      "automatisation",
+      "prospection",
+      "email-marketing"
+    ]
+  },
+  {
+    "slug": "n8n",
+    "covers": [
+      "automatisation",
+      "workflows",
+      "no-code"
+    ]
+  },
+  {
+    "slug": "pabbly-connect",
+    "covers": [
+      "automatisation",
+      "workflows",
+      "no-code"
+    ]
+  },
+  {
+    "slug": "phantombuster",
+    "covers": [
+      "automatisation",
+      "prospection",
+      "analytics"
+    ]
+  },
+  {
+    "slug": "waalaxy",
+    "covers": [
+      "automatisation",
+      "prospection",
+      "lead-generation"
+    ]
+  },
+  {
+    "slug": "whalesync",
+    "covers": [
+      "automatisation",
+      "workflows",
+      "no-code"
+    ]
+  },
+  {
+    "slug": "canva-ai",
+    "covers": [
+      "generation-image",
+      "ai-general",
+      "design-tools"
+    ]
+  },
+  {
+    "slug": "fathom",
+    "covers": [
+      "ai-general",
+      "transcription",
+      "notes"
+    ]
+  },
+  {
+    "slug": "fellow",
+    "covers": [
+      "ai-general",
+      "notes",
+      "project-management"
+    ]
+  },
+  {
+    "slug": "google-ai-studio",
+    "covers": [
+      "ai-general",
+      "coding"
+    ]
+  },
+  {
+    "slug": "granola",
+    "covers": [
+      "ai-general",
+      "transcription",
+      "notes"
+    ]
+  },
+  {
+    "slug": "grok",
+    "covers": [
+      "ai-general",
+      "assistant-generaliste"
+    ]
+  },
+  {
+    "slug": "jasper",
+    "covers": [
+      "ai-general",
+      "redaction",
+      "email-marketing"
+    ]
+  },
+  {
+    "slug": "typotab",
+    "covers": [
+      "ai-general",
+      "redaction",
+      "assistant-generaliste"
+    ]
+  },
+  {
+    "slug": "windsurf",
+    "covers": [
+      "ai-general",
+      "coding"
+    ]
+  },
+  {
+    "slug": "zoom-ai-companion",
+    "covers": [
+      "ai-general",
+      "transcription",
+      "assistant-generaliste"
+    ]
+  },
+  {
+    "slug": "antidote",
+    "covers": [
+      "redaction",
+      "assistant-generaliste"
+    ]
+  },
+  {
+    "slug": "arc-browser",
+    "covers": [
+      "notes",
+      "documentation"
+    ]
+  },
+  {
+    "slug": "harvest",
+    "covers": [
+      "time-tracking",
+      "facturation",
+      "project-management"
+    ]
+  },
+  {
+    "slug": "languagetool",
+    "covers": [
+      "redaction",
+      "assistant-generaliste"
+    ]
+  },
+  {
+    "slug": "microsoft-365",
+    "covers": [
+      "documentation",
+      "collaboration"
+    ]
+  },
+  {
+    "slug": "perforce",
+    "covers": [
+      "devops",
+      "collaboration-dev",
+      "coding"
+    ]
+  },
+  {
+    "slug": "reclaim",
+    "covers": [
+      "time-tracking",
+      "planning",
+      "ai-general"
+    ]
+  },
+  {
+    "slug": "superwhisper",
+    "covers": [
+      "transcription",
+      "ai-general"
+    ]
+  },
+  {
+    "slug": "warp",
+    "covers": [
+      "coding",
+      "devops"
+    ]
+  },
+  {
+    "slug": "zed",
+    "covers": [
+      "coding",
+      "collaboration-dev"
+    ]
+  },
+  {
+    "slug": "bynder",
+    "covers": [
+      "collaboration",
+      "branding",
+      "design-tools"
+    ]
+  },
+  {
+    "slug": "namecheap",
+    "covers": [
+      "deploiement",
+      "website-builder"
+    ]
+  },
+  {
+    "slug": "onedrive",
+    "covers": [
+      "collaboration",
+      "knowledge-management"
+    ]
+  },
+  {
+    "slug": "sharepoint",
+    "covers": [
+      "collaboration",
+      "knowledge-management"
+    ]
+  },
+  {
+    "slug": "wetransfer",
+    "covers": [
+      "collaboration"
+    ]
+  },
+  {
+    "slug": "creditsafe",
+    "covers": [
+      "analytics",
+      "finance",
+      "security"
+    ]
+  },
+  {
+    "slug": "dun-bradstreet",
+    "covers": [
+      "analytics",
+      "finance",
+      "security"
+    ]
+  },
+  {
+    "slug": "ecovadis",
+    "covers": [
+      "analytics",
+      "finance",
+      "security"
+    ]
+  },
+  {
+    "slug": "securityscorecard",
+    "covers": [
+      "analytics",
+      "security"
+    ]
+  },
+  {
+    "slug": "articulate",
+    "covers": [
+      "lms",
+      "creation-cours"
+    ]
+  },
+  {
+    "slug": "genially",
+    "covers": [
+      "creation-cours",
+      "presentation-client",
+      "charting"
+    ]
+  },
+  {
+    "slug": "moodle",
+    "covers": [
+      "lms",
+      "creation-cours",
+      "knowledge-management"
+    ]
+  }
+]

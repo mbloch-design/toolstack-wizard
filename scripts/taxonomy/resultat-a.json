@@ -1,0 +1,921 @@
+[
+  {
+    "slug": "ableton-live",
+    "covers": [
+      "creation",
+      "montage-audio",
+      "enregistrement-multipistes"
+    ]
+  },
+  {
+    "slug": "adobe-audition",
+    "covers": [
+      "montage-audio",
+      "creation",
+      "redaction"
+    ]
+  },
+  {
+    "slug": "adobe-substance-3d",
+    "covers": [
+      "3d",
+      "texturing-3d",
+      "modelisation-3d",
+      "rendu-3d"
+    ]
+  },
+  {
+    "slug": "artstation",
+    "covers": [
+      "concept-art",
+      "illustration",
+      "branding"
+    ]
+  },
+  {
+    "slug": "ausha",
+    "covers": [
+      "distribution-podcast",
+      "hebergement-audio",
+      "creation"
+    ]
+  },
+  {
+    "slug": "beautiful-ai",
+    "covers": [
+      "presentation-client",
+      "creation",
+      "templates"
+    ]
+  },
+  {
+    "slug": "browzwear",
+    "covers": [
+      "3d",
+      "modelisation-3d",
+      "simulation"
+    ]
+  },
+  {
+    "slug": "canva-pro",
+    "covers": [
+      "design-visuel",
+      "creation",
+      "templates",
+      "generation-image"
+    ]
+  },
+  {
+    "slug": "cavalry",
+    "covers": [
+      "animation-2d-3d",
+      "motion-design",
+      "creation"
+    ]
+  },
+  {
+    "slug": "cleanvoice",
+    "covers": [
+      "transcription",
+      "montage-audio",
+      "creation"
+    ]
+  },
+  {
+    "slug": "clo-3d",
+    "covers": [
+      "3d",
+      "modelisation-3d",
+      "simulation"
+    ]
+  },
+  {
+    "slug": "crayo-ai",
+    "covers": [
+      "generation-video",
+      "montage-video",
+      "creation"
+    ]
+  },
+  {
+    "slug": "final-cut-pro",
+    "covers": [
+      "montage-video",
+      "creation",
+      "color-grading"
+    ]
+  },
+  {
+    "slug": "gamma",
+    "covers": [
+      "presentation-client",
+      "website-builder",
+      "creation"
+    ]
+  },
+  {
+    "slug": "google-earth-studio",
+    "covers": [
+      "animation",
+      "generation-video",
+      "motion-design"
+    ]
+  },
+  {
+    "slug": "google-slides",
+    "covers": [
+      "presentation-client",
+      "templates",
+      "collaboration"
+    ]
+  },
+  {
+    "slug": "keynote",
+    "covers": [
+      "presentation-client",
+      "templates",
+      "creation"
+    ]
+  },
+  {
+    "slug": "logic-pro",
+    "covers": [
+      "creation",
+      "montage-audio",
+      "enregistrement-multipistes"
+    ]
+  },
+  {
+    "slug": "madmapper",
+    "covers": [
+      "effets-visuels",
+      "animation",
+      "temps-reel"
+    ]
+  },
+  {
+    "slug": "murf",
+    "covers": [
+      "generation-video",
+      "montage-video",
+      "transcription"
+    ]
+  },
+  {
+    "slug": "notch",
+    "covers": [
+      "motion-design",
+      "effets-visuels",
+      "temps-reel",
+      "animation"
+    ]
+  },
+  {
+    "slug": "opus-clip",
+    "covers": [
+      "generation-video",
+      "montage-video",
+      "creation"
+    ]
+  },
+  {
+    "slug": "podcastle",
+    "covers": [
+      "creation",
+      "transcription",
+      "montage-audio"
+    ]
+  },
+  {
+    "slug": "postsyncer",
+    "covers": [
+      "social-media-management",
+      "generation-video",
+      "planification-posts"
+    ]
+  },
+  {
+    "slug": "powerpoint",
+    "covers": [
+      "presentation-client",
+      "templates",
+      "collaboration"
+    ]
+  },
+  {
+    "slug": "pro-tools",
+    "covers": [
+      "creation",
+      "montage-audio",
+      "enregistrement-multipistes"
+    ]
+  },
+  {
+    "slug": "remove-bg",
+    "covers": [
+      "retouche-photo",
+      "generation-image",
+      "design-visuel"
+    ]
+  },
+  {
+    "slug": "resolume",
+    "covers": [
+      "animation",
+      "effets-visuels",
+      "temps-reel"
+    ]
+  },
+  {
+    "slug": "screen-studio",
+    "covers": [
+      "creation",
+      "montage-video",
+      "generation-video"
+    ]
+  },
+  {
+    "slug": "shotdeck",
+    "covers": [
+      "concept-art",
+      "branding",
+      "creation"
+    ]
+  },
+  {
+    "slug": "spotify-for-podcasters",
+    "covers": [
+      "distribution-podcast",
+      "hebergement-audio"
+    ]
+  },
+  {
+    "slug": "touchdesigner",
+    "covers": [
+      "animation",
+      "temps-reel",
+      "effets-visuels"
+    ]
+  },
+  {
+    "slug": "unity",
+    "covers": [
+      "creation",
+      "3d",
+      "animation"
+    ]
+  },
+  {
+    "slug": "17hats",
+    "covers": [
+      "crm",
+      "project-management"
+    ]
+  },
+  {
+    "slug": "better-proposals",
+    "covers": [
+      "crm",
+      "presentation-client"
+    ]
+  },
+  {
+    "slug": "bloom-crm",
+    "covers": [
+      "crm",
+      "project-management"
+    ]
+  },
+  {
+    "slug": "folk",
+    "covers": [
+      "crm",
+      "prospection",
+      "collaboration"
+    ]
+  },
+  {
+    "slug": "google-sheets",
+    "covers": [
+      "collaboration",
+      "data-visualization",
+      "analyse"
+    ]
+  },
+  {
+    "slug": "heptabase",
+    "covers": [
+      "knowledge-management",
+      "collaboration",
+      "brainstorming"
+    ]
+  },
+  {
+    "slug": "hubspot",
+    "covers": [
+      "crm",
+      "analytics-produit",
+      "lead-generation"
+    ]
+  },
+  {
+    "slug": "logseq",
+    "covers": [
+      "knowledge-management",
+      "notes",
+      "collaboration"
+    ]
+  },
+  {
+    "slug": "loopio",
+    "covers": [
+      "crm",
+      "documentation"
+    ]
+  },
+  {
+    "slug": "motion-app",
+    "covers": [
+      "planning",
+      "gestion-taches",
+      "task-management"
+    ]
+  },
+  {
+    "slug": "nusii",
+    "covers": [
+      "crm",
+      "presentation-client"
+    ]
+  },
+  {
+    "slug": "proposify",
+    "covers": [
+      "crm",
+      "presentation-client"
+    ]
+  },
+  {
+    "slug": "reflect-notes",
+    "covers": [
+      "notes",
+      "knowledge-management",
+      "ai-general"
+    ]
+  },
+  {
+    "slug": "roam-research",
+    "covers": [
+      "knowledge-management",
+      "notes",
+      "collaboration"
+    ]
+  },
+  {
+    "slug": "scribe",
+    "covers": [
+      "documentation",
+      "knowledge-management",
+      "creation"
+    ]
+  },
+  {
+    "slug": "signrequest",
+    "covers": [
+      "collaboration"
+    ]
+  },
+  {
+    "slug": "skribble",
+    "covers": [
+      "collaboration"
+    ]
+  },
+  {
+    "slug": "suitedash",
+    "covers": [
+      "crm",
+      "project-management",
+      "collaboration"
+    ]
+  },
+  {
+    "slug": "superlist",
+    "covers": [
+      "gestion-taches",
+      "task-management",
+      "collaboration"
+    ]
+  },
+  {
+    "slug": "tave",
+    "covers": [
+      "crm",
+      "project-management"
+    ]
+  },
+  {
+    "slug": "gumroad",
+    "covers": [
+      "ecommerce",
+      "finance"
+    ]
+  },
+  {
+    "slug": "gusto",
+    "covers": [
+      "paie",
+      "finance"
+    ]
+  },
+  {
+    "slug": "invoicely",
+    "covers": [
+      "facturation",
+      "finance"
+    ]
+  },
+  {
+    "slug": "kelio",
+    "covers": [
+      "time-tracking",
+      "planning",
+      "paie"
+    ]
+  },
+  {
+    "slug": "moss",
+    "covers": [
+      "finance",
+      "gestion-taches"
+    ]
+  },
+  {
+    "slug": "paddle",
+    "covers": [
+      "paiements",
+      "ecommerce"
+    ]
+  },
+  {
+    "slug": "payhawk",
+    "covers": [
+      "paiements",
+      "finance",
+      "gestion-taches"
+    ]
+  },
+  {
+    "slug": "paypal",
+    "covers": [
+      "paiements"
+    ]
+  },
+  {
+    "slug": "pennylane",
+    "covers": [
+      "finance",
+      "comptabilite"
+    ]
+  },
+  {
+    "slug": "rydoo",
+    "covers": [
+      "finance",
+      "automatisation"
+    ]
+  },
+  {
+    "slug": "sage-paie",
+    "covers": [
+      "paie",
+      "finance"
+    ]
+  },
+  {
+    "slug": "silae",
+    "covers": [
+      "paie",
+      "finance"
+    ]
+  },
+  {
+    "slug": "soldo",
+    "covers": [
+      "paiements",
+      "finance"
+    ]
+  },
+  {
+    "slug": "tiime",
+    "covers": [
+      "comptabilite",
+      "finance"
+    ]
+  },
+  {
+    "slug": "wave",
+    "covers": [
+      "comptabilite",
+      "facturation"
+    ]
+  },
+  {
+    "slug": "workday",
+    "covers": [
+      "paie",
+      "finance",
+      "crm"
+    ]
+  },
+  {
+    "slug": "xero",
+    "covers": [
+      "comptabilite",
+      "finance"
+    ]
+  },
+  {
+    "slug": "datev",
+    "covers": [
+      "finance",
+      "comptabilite"
+    ]
+  },
+  {
+    "slug": "microsoft-dynamics-365-finance-operations",
+    "covers": [
+      "finance",
+      "comptabilite"
+    ]
+  },
+  {
+    "slug": "microsoft-dynamics-business-central",
+    "covers": [
+      "finance",
+      "comptabilite"
+    ]
+  },
+  {
+    "slug": "netsuite",
+    "covers": [
+      "finance",
+      "ecommerce",
+      "operations-workflow"
+    ]
+  },
+  {
+    "slug": "oracle-fusion-cloud",
+    "covers": [
+      "finance",
+      "comptabilite"
+    ]
+  },
+  {
+    "slug": "priority",
+    "covers": [
+      "finance",
+      "operations-workflow"
+    ]
+  },
+  {
+    "slug": "sage",
+    "covers": [
+      "finance",
+      "comptabilite"
+    ]
+  },
+  {
+    "slug": "sage-intacct",
+    "covers": [
+      "finance",
+      "comptabilite"
+    ]
+  },
+  {
+    "slug": "sap-business-bydesign",
+    "covers": [
+      "finance",
+      "operations-workflow"
+    ]
+  },
+  {
+    "slug": "sap-business-one",
+    "covers": [
+      "finance",
+      "operations-workflow"
+    ]
+  },
+  {
+    "slug": "sap-s4hana",
+    "covers": [
+      "finance",
+      "operations-workflow"
+    ]
+  },
+  {
+    "slug": "unit4",
+    "covers": [
+      "finance",
+      "comptabilite"
+    ]
+  },
+  {
+    "slug": "workday-financial-management",
+    "covers": [
+      "finance",
+      "comptabilite"
+    ]
+  },
+  {
+    "slug": "bitwarden",
+    "covers": [
+      "security"
+    ]
+  },
+  {
+    "slug": "dashlane",
+    "covers": [
+      "security"
+    ]
+  },
+  {
+    "slug": "doppler",
+    "covers": [
+      "security",
+      "devops"
+    ]
+  },
+  {
+    "slug": "dotenv-vault",
+    "covers": [
+      "security",
+      "devops"
+    ]
+  },
+  {
+    "slug": "infisical",
+    "covers": [
+      "security",
+      "devops"
+    ]
+  },
+  {
+    "slug": "lastpass",
+    "covers": [
+      "security"
+    ]
+  },
+  {
+    "slug": "microsoft-entra-id",
+    "covers": [
+      "security"
+    ]
+  },
+  {
+    "slug": "nordpass",
+    "covers": [
+      "security"
+    ]
+  },
+  {
+    "slug": "okta",
+    "covers": [
+      "security"
+    ]
+  },
+  {
+    "slug": "onelogin",
+    "covers": [
+      "security"
+    ]
+  },
+  {
+    "slug": "onetrust",
+    "covers": [
+      "security"
+    ]
+  },
+  {
+    "slug": "vanta",
+    "covers": [
+      "security"
+    ]
+  },
+  {
+    "slug": "vault",
+    "covers": [
+      "security",
+      "devops"
+    ]
+  },
+  {
+    "slug": "adobe-acrobat-sign",
+    "covers": [
+      "collaboration"
+    ]
+  },
+  {
+    "slug": "conga",
+    "covers": [
+      "crm"
+    ]
+  },
+  {
+    "slug": "connective",
+    "covers": [
+      "collaboration"
+    ]
+  },
+  {
+    "slug": "docusign",
+    "covers": [
+      "collaboration"
+    ]
+  },
+  {
+    "slug": "google-docs",
+    "covers": [
+      "collaboration",
+      "documentation"
+    ]
+  },
+  {
+    "slug": "ironclad",
+    "covers": [
+      "collaboration"
+    ]
+  },
+  {
+    "slug": "juro",
+    "covers": [
+      "collaboration"
+    ]
+  },
+  {
+    "slug": "legalstart",
+    "covers": [
+      "documentation"
+    ]
+  },
+  {
+    "slug": "tomorro",
+    "covers": [
+      "collaboration"
+    ]
+  },
+  {
+    "slug": "wolters-kluwer",
+    "covers": [
+      "documentation"
+    ]
+  },
+  {
+    "slug": "chatbase",
+    "covers": [
+      "chatbot",
+      "ai-general"
+    ]
+  },
+  {
+    "slug": "discord",
+    "covers": [
+      "collaboration",
+      "social-media"
+    ]
+  },
+  {
+    "slug": "eventbrite",
+    "covers": [
+      "project-management"
+    ]
+  },
+  {
+    "slug": "instagram",
+    "covers": [
+      "social-media"
+    ]
+  },
+  {
+    "slug": "slido",
+    "covers": [
+      "brainstorming",
+      "tests-utilisateurs"
+    ]
+  },
+  {
+    "slug": "zcal",
+    "covers": [
+      "planning"
+    ]
+  },
+  {
+    "slug": "zoom",
+    "covers": [
+      "collaboration"
+    ]
+  },
+  {
+    "slug": "zoom-pro",
+    "covers": [
+      "collaboration"
+    ]
+  },
+  {
+    "slug": "coda",
+    "covers": [
+      "collaboration",
+      "knowledge-management"
+    ]
+  },
+  {
+    "slug": "contra",
+    "covers": [
+      "crm",
+      "social-media"
+    ]
+  },
+  {
+    "slug": "microsoft-project",
+    "covers": [
+      "project-management",
+      "planning"
+    ]
+  },
+  {
+    "slug": "monday-com",
+    "covers": [
+      "project-management",
+      "gestion-taches"
+    ]
+  },
+  {
+    "slug": "plane",
+    "covers": [
+      "project-management",
+      "bug-tracking"
+    ]
+  },
+  {
+    "slug": "taskade",
+    "covers": [
+      "project-management",
+      "collaboration",
+      "ai-general"
+    ]
+  },
+  {
+    "slug": "techpacker",
+    "covers": [
+      "project-management",
+      "documentation"
+    ]
+  },
+  {
+    "slug": "amplemarket",
+    "covers": [
+      "prospection",
+      "lead-generation"
+    ]
+  },
+  {
+    "slug": "lusha",
+    "covers": [
+      "prospection",
+      "lead-generation"
+    ]
+  },
+  {
+    "slug": "seamless-ai",
+    "covers": [
+      "prospection",
+      "lead-generation"
+    ]
+  },
+  {
+    "slug": "anaplan",
+    "covers": [
+      "analytics-produit",
+      "planning"
+    ]
+  },
+  {
+    "slug": "pigment",
+    "covers": [
+      "analytics-produit",
+      "planning"
+    ]
+  },
+  {
+    "slug": "google-chat",
+    "covers": [
+      "collaboration"
+    ]
+  },
+  {
+    "slug": "microsoft-teams",
+    "covers": [
+      "collaboration"
+    ]
+  }
+]

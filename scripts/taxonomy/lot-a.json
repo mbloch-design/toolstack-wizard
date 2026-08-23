@@ -1,0 +1,770 @@
+[
+ {
+  "slug": "ableton-live",
+  "name": "Ableton Live",
+  "category": "creation",
+  "short_description": "Production musicale, live performance et sound design."
+ },
+ {
+  "slug": "adobe-audition",
+  "name": "Adobe Audition",
+  "category": "creation",
+  "short_description": "Nettoyage audio, mixage, voix off et postproduction sonore dans l’écosystème Adobe."
+ },
+ {
+  "slug": "adobe-substance-3d",
+  "name": "Adobe Substance 3D",
+  "category": "creation",
+  "short_description": "Suite 3D Adobe pour matériaux, textures, staging et visualisation produit."
+ },
+ {
+  "slug": "artstation",
+  "name": "ArtStation",
+  "category": "creation",
+  "short_description": "Portfolio et plateforme de visibilité pour artistes concept, 3D et game art."
+ },
+ {
+  "slug": "ausha",
+  "name": "Ausha",
+  "category": "creation",
+  "short_description": "Hébergement, distribution et promotion de podcasts."
+ },
+ {
+  "slug": "beautiful-ai",
+  "name": "Beautiful.ai",
+  "category": "creation",
+  "short_description": "Création de présentations assistée par IA avec templates structurés."
+ },
+ {
+  "slug": "browzwear",
+  "name": "Browzwear",
+  "category": "creation",
+  "short_description": "Solution 3D mode pour prototypage vêtement et production textile."
+ },
+ {
+  "slug": "canva-pro",
+  "name": "Canva Pro",
+  "category": "creation",
+  "short_description": "Offre payante de Canva, l'outil de design en ligne grand public : accès complet aux fonctions IA (Magic Studio), kits de marque, suppression d'arrière-plan, redimensionnement automatique et bibliothèque premium d'assets."
+ },
+ {
+  "slug": "cavalry",
+  "name": "Cavalry",
+  "category": "creation",
+  "short_description": "Animation 2D procédurale et motion design rapide, utile pour systèmes graphiques animés."
+ },
+ {
+  "slug": "cleanvoice",
+  "name": "Cleanvoice",
+  "category": "creation",
+  "short_description": "Nettoyage audio automatique par IA."
+ },
+ {
+  "slug": "clo-3d",
+  "name": "CLO 3D",
+  "category": "creation",
+  "short_description": "Simulation vêtement 3D pour mode, textile et prototypage collection."
+ },
+ {
+  "slug": "crayo-ai",
+  "name": "Crayo AI",
+  "category": "creation",
+  "short_description": "Créateur de vidéos virales courtes avec IA — clips, sous-titres et branding en secondes."
+ },
+ {
+  "slug": "final-cut-pro",
+  "name": "Final Cut Pro",
+  "category": "creation",
+  "short_description": "Montage vidéo professionnel Apple (achat unique)"
+ },
+ {
+  "slug": "gamma",
+  "name": "Gamma",
+  "category": "creation",
+  "short_description": "Génération IA de présentations, docs et sites web en quelques secondes."
+ },
+ {
+  "slug": "google-earth-studio",
+  "name": "Google Earth Studio",
+  "category": "creation",
+  "short_description": "Animation de cartes et vues satellite pour vidéos et cartographie narrative."
+ },
+ {
+  "slug": "google-slides",
+  "name": "Google Slides",
+  "category": "creation",
+  "short_description": "Présentations collaboratives Google"
+ },
+ {
+  "slug": "keynote",
+  "name": "Keynote",
+  "category": "creation",
+  "short_description": "Outil Apple pour présentations visuelles, pitchs créatifs et dossiers clients."
+ },
+ {
+  "slug": "logic-pro",
+  "name": "Logic Pro",
+  "category": "creation",
+  "short_description": "Station audio Apple pour composition, mixage et postproduction."
+ },
+ {
+  "slug": "madmapper",
+  "name": "MadMapper",
+  "category": "creation",
+  "short_description": "Mapping vidéo, projection, LED et installations visuelles."
+ },
+ {
+  "slug": "murf",
+  "name": "Murf",
+  "category": "creation",
+  "short_description": "Générateur de voix-off IA pour vidéos, podcasts, formations — 200+ voix en 20 langues."
+ },
+ {
+  "slug": "notch",
+  "name": "Notch",
+  "category": "creation",
+  "short_description": "Outil temps réel pour motion graphics, VFX live et expériences immersives."
+ },
+ {
+  "slug": "opus-clip",
+  "name": "Opus Clip",
+  "category": "creation",
+  "short_description": "Transforme tes longues vidéos en clips viraux courts avec l'IA."
+ },
+ {
+  "slug": "podcastle",
+  "name": "Podcastle",
+  "category": "creation",
+  "short_description": "Enregistrement, édition et transcription de podcasts."
+ },
+ {
+  "slug": "postsyncer",
+  "name": "PostSyncer",
+  "category": "creation",
+  "short_description": "Planificateur de réseaux sociaux avec IA et vidéos IA pour créateurs et agences."
+ },
+ {
+  "slug": "powerpoint",
+  "name": "Microsoft PowerPoint",
+  "category": "creation",
+  "short_description": "Standard des présentations business, commerciales et institutionnelles."
+ },
+ {
+  "slug": "pro-tools",
+  "name": "Pro Tools",
+  "category": "creation",
+  "short_description": "DAW standard studio pour audio professionnel, mixage et postproduction."
+ },
+ {
+  "slug": "remove-bg",
+  "name": "Remove.bg",
+  "category": "creation",
+  "short_description": "Outil en ligne qui détoure automatiquement l'arrière-plan d'une image en quelques secondes, sans intervention manuelle. Disponible via le web, une appli de bureau, des plugins et une API."
+ },
+ {
+  "slug": "resolume",
+  "name": "Resolume",
+  "category": "creation",
+  "short_description": "VJing, vidéo live, mapping et performance audiovisuelle."
+ },
+ {
+  "slug": "screen-studio",
+  "name": "Screen Studio",
+  "category": "creation",
+  "short_description": "Enregistreur d'écran Mac avec effets cinématiques automatiques — pour des démos pro."
+ },
+ {
+  "slug": "shotdeck",
+  "name": "ShotDeck",
+  "category": "creation",
+  "short_description": "Base de références cinématographiques pour moodboards, cadrages, lumière et direction image."
+ },
+ {
+  "slug": "spotify-for-podcasters",
+  "name": "Spotify for Podcasters",
+  "category": "creation",
+  "short_description": "Hébergement et distribution podcast gratuits par Spotify."
+ },
+ {
+  "slug": "touchdesigner",
+  "name": "TouchDesigner",
+  "category": "creation",
+  "short_description": "Environnement node-based pour installations interactives, temps réel et projection."
+ },
+ {
+  "slug": "unity",
+  "name": "Unity",
+  "category": "creation",
+  "short_description": "Moteur temps réel pour jeux, applications interactives et expériences 3D."
+ },
+ {
+  "slug": "17hats",
+  "name": "17hats",
+  "category": "organization",
+  "short_description": "CRM all-in-one pour freelances créatifs."
+ },
+ {
+  "slug": "better-proposals",
+  "name": "Better Proposals",
+  "category": "organization",
+  "short_description": "Propositions commerciales avec suivi et signatures."
+ },
+ {
+  "slug": "bloom-crm",
+  "name": "Bloom",
+  "category": "organization",
+  "short_description": "CRM et portail client pour créatifs et photographes."
+ },
+ {
+  "slug": "folk",
+  "name": "Folk",
+  "category": "organization",
+  "short_description": "CRM léger et collaboratif pour relations (recrutement, ventes, partenariats), avec enrichissement de contacts intégré."
+ },
+ {
+  "slug": "google-sheets",
+  "name": "Google Sheets",
+  "category": "organization",
+  "short_description": "Le tableur collaboratif de Google, gratuit et accessible partout."
+ },
+ {
+  "slug": "heptabase",
+  "name": "Heptabase",
+  "category": "organization",
+  "short_description": "Tableau blanc visuel pour la gestion des connaissances."
+ },
+ {
+  "slug": "hubspot",
+  "name": "HubSpot",
+  "category": "organization",
+  "short_description": "CRM tout-en-un avec marketing, vente et service client, plan gratuit généreux pour démarrer."
+ },
+ {
+  "slug": "logseq",
+  "name": "Logseq",
+  "category": "organization",
+  "short_description": "PKM open-source avec graphe de connaissances."
+ },
+ {
+  "slug": "loopio",
+  "name": "Loopio",
+  "category": "organization",
+  "short_description": "Automatisation des réponses RFP et appels d'offres."
+ },
+ {
+  "slug": "motion-app",
+  "name": "Motion",
+  "category": "organization",
+  "short_description": "Calendrier IA qui planifie automatiquement tes tâches et réunions."
+ },
+ {
+  "slug": "nusii",
+  "name": "Nusii",
+  "category": "organization",
+  "short_description": "Logiciel de propositions commerciales pour agences."
+ },
+ {
+  "slug": "proposify",
+  "name": "Proposify",
+  "category": "organization",
+  "short_description": "Création de propositions commerciales professionnelles."
+ },
+ {
+  "slug": "reflect-notes",
+  "name": "Reflect",
+  "category": "organization",
+  "short_description": "Notes networked avec IA intégrée et backlinks."
+ },
+ {
+  "slug": "roam-research",
+  "name": "Roam Research",
+  "category": "organization",
+  "short_description": "Prise de notes en réseau avec liens bidirectionnels."
+ },
+ {
+  "slug": "scribe",
+  "name": "Scribe",
+  "category": "organization",
+  "short_description": "Génère automatiquement des guides étape par étape depuis ton écran."
+ },
+ {
+  "slug": "signrequest",
+  "name": "SignRequest",
+  "category": "organization",
+  "short_description": "Signature électronique simple et rapide."
+ },
+ {
+  "slug": "skribble",
+  "name": "Skribble",
+  "category": "organization",
+  "short_description": "Signature électronique qualifiée européenne."
+ },
+ {
+  "slug": "suitedash",
+  "name": "SuiteDash",
+  "category": "organization",
+  "short_description": "Portail client tout-en-un pour agences et freelances."
+ },
+ {
+  "slug": "superlist",
+  "name": "Superlist",
+  "category": "organization",
+  "short_description": "Application de tâches personnelles et d'équipe avec IA — gratuite."
+ },
+ {
+  "slug": "tave",
+  "name": "Táve",
+  "category": "organization",
+  "short_description": "Studio manager pour photographes et vidéastes, racheté par VSCO en 2025 et renommé VSCO Workspace."
+ },
+ {
+  "slug": "gumroad",
+  "name": "Gumroad",
+  "category": "finance",
+  "short_description": "Vente de produits numériques"
+ },
+ {
+  "slug": "gusto",
+  "name": "Gusto",
+  "category": "finance",
+  "short_description": "Paie et avantages sociaux"
+ },
+ {
+  "slug": "invoicely",
+  "name": "Invoicely",
+  "category": "finance",
+  "short_description": "Outil de facturation simple et gratuit pour freelances et petites entreprises."
+ },
+ {
+  "slug": "kelio",
+  "name": "Kelio",
+  "category": "finance",
+  "short_description": "Gestion des temps et planification RH."
+ },
+ {
+  "slug": "moss",
+  "name": "Moss",
+  "category": "finance",
+  "short_description": "Gestion des dépenses et cartes d'entreprise."
+ },
+ {
+  "slug": "paddle",
+  "name": "Paddle",
+  "category": "finance",
+  "short_description": "Infrastructure de paiement SaaS avec gestion fiscale mondiale intégrée — modèle à commission."
+ },
+ {
+  "slug": "payhawk",
+  "name": "Payhawk",
+  "category": "finance",
+  "short_description": "Plateforme tout-en-un dépenses, cartes et factures."
+ },
+ {
+  "slug": "paypal",
+  "name": "PayPal",
+  "category": "finance",
+  "short_description": "Paiements en ligne et transferts"
+ },
+ {
+  "slug": "pennylane",
+  "name": "Pennylane",
+  "category": "finance",
+  "short_description": "Comptabilité collaborative en temps réel"
+ },
+ {
+  "slug": "rydoo",
+  "name": "Rydoo",
+  "category": "finance",
+  "short_description": "Notes de frais automatisées avec OCR."
+ },
+ {
+  "slug": "sage-paie",
+  "name": "Sage Paie",
+  "category": "finance",
+  "short_description": "Solution de paie complète pour PME."
+ },
+ {
+  "slug": "silae",
+  "name": "Silae",
+  "category": "finance",
+  "short_description": "Logiciel de paie et gestion sociale française."
+ },
+ {
+  "slug": "soldo",
+  "name": "Soldo",
+  "category": "finance",
+  "short_description": "Cartes prépayées et gestion des frais professionnels."
+ },
+ {
+  "slug": "tiime",
+  "name": "Tiime",
+  "category": "finance",
+  "short_description": "Comptabilité automatisée pour indépendants"
+ },
+ {
+  "slug": "wave",
+  "name": "Wave",
+  "category": "finance",
+  "short_description": "Comptabilité et facturation gratuites pour freelances et très petites entreprises."
+ },
+ {
+  "slug": "workday",
+  "name": "Workday",
+  "category": "finance",
+  "short_description": "HCM et finance cloud pour grandes entreprises."
+ },
+ {
+  "slug": "xero",
+  "name": "Xero",
+  "category": "finance",
+  "short_description": "Logiciel de comptabilité cloud"
+ },
+ {
+  "slug": "datev",
+  "name": "Datev",
+  "category": "erp",
+  "short_description": "Datev est un système ERP ou finance à connecter prudemment au reste de la stack."
+ },
+ {
+  "slug": "microsoft-dynamics-365-finance-operations",
+  "name": "Microsoft Dynamics 365 Finance and Operations",
+  "category": "erp",
+  "short_description": "Microsoft Dynamics 365 Finance and Operations est un système ERP ou finance à connecter prudemment au reste de la stack."
+ },
+ {
+  "slug": "microsoft-dynamics-business-central",
+  "name": "Microsoft Dynamics Business Central",
+  "category": "erp",
+  "short_description": "Microsoft Dynamics Business Central est un système ERP ou finance à connecter prudemment au reste de la stack."
+ },
+ {
+  "slug": "netsuite",
+  "name": "NetSuite",
+  "category": "erp",
+  "short_description": "L'ERP cloud d'Oracle pour centraliser finance, stocks et opérations à l'échelle."
+ },
+ {
+  "slug": "oracle-fusion-cloud",
+  "name": "Oracle Fusion Cloud",
+  "category": "erp",
+  "short_description": "Oracle Fusion Cloud est un système ERP ou finance à connecter prudemment au reste de la stack."
+ },
+ {
+  "slug": "priority",
+  "name": "Priority",
+  "category": "erp",
+  "short_description": "Priority est un système ERP ou finance à connecter prudemment au reste de la stack."
+ },
+ {
+  "slug": "sage",
+  "name": "Sage",
+  "category": "erp",
+  "short_description": "Sage est un système ERP ou finance à connecter prudemment au reste de la stack."
+ },
+ {
+  "slug": "sage-intacct",
+  "name": "Sage Intacct",
+  "category": "erp",
+  "short_description": "Sage Intacct est un système ERP ou finance à connecter prudemment au reste de la stack."
+ },
+ {
+  "slug": "sap-business-bydesign",
+  "name": "SAP Business ByDesign",
+  "category": "erp",
+  "short_description": "SAP Business ByDesign est un système ERP ou finance à connecter prudemment au reste de la stack."
+ },
+ {
+  "slug": "sap-business-one",
+  "name": "SAP Business One",
+  "category": "erp",
+  "short_description": "SAP Business One est un système ERP ou finance à connecter prudemment au reste de la stack."
+ },
+ {
+  "slug": "sap-s4hana",
+  "name": "SAP S/4HANA",
+  "category": "erp",
+  "short_description": "SAP S/4HANA est un système ERP ou finance à connecter prudemment au reste de la stack."
+ },
+ {
+  "slug": "unit4",
+  "name": "Unit4",
+  "category": "erp",
+  "short_description": "Unit4 est un système ERP ou finance à connecter prudemment au reste de la stack."
+ },
+ {
+  "slug": "workday-financial-management",
+  "name": "Workday Financial Management",
+  "category": "erp",
+  "short_description": "Workday Financial Management est un système ERP ou finance à connecter prudemment au reste de la stack."
+ },
+ {
+  "slug": "bitwarden",
+  "name": "Bitwarden",
+  "category": "security",
+  "short_description": "Gestionnaire de mots de passe open source, gratuit et multiplateforme."
+ },
+ {
+  "slug": "dashlane",
+  "name": "Dashlane",
+  "category": "security",
+  "short_description": "Gestionnaire de mots de passe et VPN"
+ },
+ {
+  "slug": "doppler",
+  "name": "Doppler",
+  "category": "security",
+  "short_description": "Gestion centralisée des secrets et variables d'environnement."
+ },
+ {
+  "slug": "dotenv-vault",
+  "name": "Dotenv Vault",
+  "category": "security",
+  "short_description": "Sync et chiffrement de fichiers .env entre environnements."
+ },
+ {
+  "slug": "infisical",
+  "name": "Infisical",
+  "category": "security",
+  "short_description": "Gestion de secrets open-source pour équipes dev."
+ },
+ {
+  "slug": "lastpass",
+  "name": "LastPass",
+  "category": "security",
+  "short_description": "Gestionnaire de mots de passe grand public, avec une version gratuite limitée."
+ },
+ {
+  "slug": "microsoft-entra-id",
+  "name": "Microsoft Entra ID",
+  "category": "security",
+  "short_description": "Microsoft Entra ID aide à gérer accès, conformité ou sécurité dans une stack d’entreprise."
+ },
+ {
+  "slug": "nordpass",
+  "name": "NordPass",
+  "category": "security",
+  "short_description": "Gestionnaire de mots de passe par NordVPN"
+ },
+ {
+  "slug": "okta",
+  "name": "Okta",
+  "category": "security",
+  "short_description": "La référence en gestion d'identité et SSO pour entreprises."
+ },
+ {
+  "slug": "onelogin",
+  "name": "OneLogin",
+  "category": "security",
+  "short_description": "OneLogin aide à gérer accès, conformité ou sécurité dans une stack d’entreprise."
+ },
+ {
+  "slug": "onetrust",
+  "name": "OneTrust",
+  "category": "security",
+  "short_description": "OneTrust aide à gérer accès, conformité ou sécurité dans une stack d’entreprise."
+ },
+ {
+  "slug": "vanta",
+  "name": "Vanta",
+  "category": "security",
+  "short_description": "Vanta aide à gérer accès, conformité ou sécurité dans une stack d’entreprise."
+ },
+ {
+  "slug": "vault",
+  "name": "HashiCorp Vault",
+  "category": "security",
+  "short_description": "Gestion de secrets et chiffrement enterprise."
+ },
+ {
+  "slug": "adobe-acrobat-sign",
+  "name": "Adobe Acrobat Sign",
+  "category": "legal-contracts",
+  "short_description": "Adobe Acrobat Sign aide à gérer signatures, contrats ou documents juridiques."
+ },
+ {
+  "slug": "conga",
+  "name": "Conga",
+  "category": "legal-contracts",
+  "short_description": "Conga aide à gérer signatures, contrats ou documents juridiques."
+ },
+ {
+  "slug": "connective",
+  "name": "Connective",
+  "category": "legal-contracts",
+  "short_description": "Signatures électroniques et identité numérique."
+ },
+ {
+  "slug": "docusign",
+  "name": "DocuSign",
+  "category": "legal-contracts",
+  "short_description": "DocuSign aide à gérer signatures, contrats ou documents juridiques."
+ },
+ {
+  "slug": "google-docs",
+  "name": "Google Docs",
+  "category": "legal-contracts",
+  "short_description": "Le traitement de texte collaboratif de Google, gratuit et en temps réel."
+ },
+ {
+  "slug": "ironclad",
+  "name": "Ironclad",
+  "category": "legal-contracts",
+  "short_description": "Ironclad aide à gérer signatures, contrats ou documents juridiques."
+ },
+ {
+  "slug": "juro",
+  "name": "Juro",
+  "category": "legal-contracts",
+  "short_description": "Juro aide à gérer signatures, contrats ou documents juridiques."
+ },
+ {
+  "slug": "legalstart",
+  "name": "Legalstart",
+  "category": "legal-contracts",
+  "short_description": "Création et gestion juridique d'entreprise en ligne."
+ },
+ {
+  "slug": "tomorro",
+  "name": "Tomorro",
+  "category": "legal-contracts",
+  "short_description": "Tomorro aide à gérer signatures, contrats ou documents juridiques."
+ },
+ {
+  "slug": "wolters-kluwer",
+  "name": "Wolters Kluwer",
+  "category": "legal-contracts",
+  "short_description": "Solutions de conformité et veille juridique."
+ },
+ {
+  "slug": "chatbase",
+  "name": "Chatbase",
+  "category": "communication",
+  "short_description": "Crée un chatbot IA entraîné sur tes données — site, docs, PDF — en quelques minutes."
+ },
+ {
+  "slug": "discord",
+  "name": "Discord",
+  "category": "communication",
+  "short_description": "Messagerie vocale et textuelle par serveurs, gratuite, avec Nitro en option (9,99$/mois)."
+ },
+ {
+  "slug": "eventbrite",
+  "name": "Eventbrite",
+  "category": "communication",
+  "short_description": "Billetterie et gestion d'événements : événements gratuits illimités, 3,7% + 1,79$ par billet payant."
+ },
+ {
+  "slug": "instagram",
+  "name": "Instagram",
+  "category": "communication",
+  "short_description": "Réseau social visuel gratuit ; les coûts réels viennent de la pub et des outils tiers, pas de la plateforme."
+ },
+ {
+  "slug": "slido",
+  "name": "Slido",
+  "category": "communication",
+  "short_description": "Sondages et Q&A en direct pour réunions et événements, gratuit jusqu'à 100 participants."
+ },
+ {
+  "slug": "zcal",
+  "name": "zcal",
+  "category": "communication",
+  "short_description": "Alternative gratuite à Calendly — prise de rendez-vous avec pages élégantes."
+ },
+ {
+  "slug": "zoom",
+  "name": "Zoom",
+  "category": "communication",
+  "short_description": "Visioconférence et réunions en ligne"
+ },
+ {
+  "slug": "zoom-pro",
+  "name": "Zoom Pro",
+  "category": "communication",
+  "short_description": "Plan payant de Zoom : réunions sans limite de 40 minutes, enregistrement cloud et IA."
+ },
+ {
+  "slug": "coda",
+  "name": "Coda",
+  "category": "project-management",
+  "short_description": "Doc collaboratif qui fonctionne comme une app."
+ },
+ {
+  "slug": "contra",
+  "name": "Contra",
+  "category": "project-management",
+  "short_description": "Plateforme sans commission pour freelances créatifs : portfolio, découverte de clients et encaissement, avec une offre gratuite durable et un abonnement Pro optionnel."
+ },
+ {
+  "slug": "microsoft-project",
+  "name": "Microsoft Project",
+  "category": "project-management",
+  "short_description": "Gestion de projet avancée Microsoft."
+ },
+ {
+  "slug": "monday-com",
+  "name": "Monday.com",
+  "category": "project-management",
+  "short_description": "Gestion de projets et workflows visuels"
+ },
+ {
+  "slug": "plane",
+  "name": "Plane",
+  "category": "project-management",
+  "short_description": "Alternative open-source à Linear — gestion de projets et issues pour équipes dev."
+ },
+ {
+  "slug": "taskade",
+  "name": "Taskade",
+  "category": "project-management",
+  "short_description": "Espace de travail IA tout-en-un : tâches, agents, docs et automatisations."
+ },
+ {
+  "slug": "techpacker",
+  "name": "Techpacker",
+  "category": "project-management",
+  "short_description": "Fiches techniques mode, spécifications produit et suivi production."
+ },
+ {
+  "slug": "amplemarket",
+  "name": "Amplemarket",
+  "category": "email-productivity",
+  "short_description": "Plateforme IA de prospection multicanal : data, séquences, deliverability, intent signals."
+ },
+ {
+  "slug": "lusha",
+  "name": "Lusha",
+  "category": "email-productivity",
+  "short_description": "Base de contacts B2B (emails, téléphones) à crédits, dès 37,45$/mois."
+ },
+ {
+  "slug": "seamless-ai",
+  "name": "Seamless.AI",
+  "category": "email-productivity",
+  "short_description": "Moteur de recherche IA temps réel pour emails et téléphones B2B."
+ },
+ {
+  "slug": "anaplan",
+  "name": "Anaplan",
+  "category": "budgeting-fpa",
+  "short_description": "Anaplan aide les équipes finance à piloter budget, prévisionnel et reporting."
+ },
+ {
+  "slug": "pigment",
+  "name": "Pigment",
+  "category": "budgeting-fpa",
+  "short_description": "Pigment aide les équipes finance à piloter budget, prévisionnel et reporting."
+ },
+ {
+  "slug": "google-chat",
+  "name": "Google Chat",
+  "category": "communication-team",
+  "short_description": "Google Chat permet aux équipes de recevoir et traiter des notifications dans leur outil de communication."
+ },
+ {
+  "slug": "microsoft-teams",
+  "name": "Microsoft Teams",
+  "category": "communication-team",
+  "short_description": "Microsoft Teams permet aux équipes de recevoir et traiter des notifications dans leur outil de communication."
+ }
+]

@@ -1,0 +1,758 @@
+[
+ {
+  "slug": "adobe-xd",
+  "name": "Adobe XD",
+  "category": "design-tools",
+  "short_description": "Prototypage et design UI (abandonné)"
+ },
+ {
+  "slug": "affinity-photo",
+  "name": "Affinity Photo",
+  "category": "design-tools",
+  "short_description": "Retouche photo professionnelle, gratuite depuis 2024."
+ },
+ {
+  "slug": "astute-graphics",
+  "name": "Astute Graphics",
+  "category": "design-tools",
+  "short_description": "Plugins Illustrator pour vectoriel avancé, lettrage, formes, nettoyage et productivité."
+ },
+ {
+  "slug": "brandcrowd",
+  "name": "BrandCrowd",
+  "category": "design-tools",
+  "short_description": "Créateur de logos, cartes de visite et identités visuelles pour freelances et PME."
+ },
+ {
+  "slug": "esko-studio",
+  "name": "Esko Studio",
+  "category": "design-tools",
+  "short_description": "Suite packaging pour mockups, prévisualisation 3D et prépresse."
+ },
+ {
+  "slug": "excalidraw",
+  "name": "Excalidraw",
+  "category": "design-tools",
+  "short_description": "Tableau blanc collaboratif open-source avec un style dessin à la main."
+ },
+ {
+  "slug": "figjam",
+  "name": "FigJam",
+  "category": "design-tools",
+  "short_description": "Whiteboard collaboratif pour ateliers, parcours, cadrage UX et idéation."
+ },
+ {
+  "slug": "flowmapp",
+  "name": "FlowMapp",
+  "category": "design-tools",
+  "short_description": "Outil de planification UX : sitemaps, user flows et wireframes collaboratifs."
+ },
+ {
+  "slug": "fusion-360",
+  "name": "Fusion 360",
+  "category": "design-tools",
+  "short_description": "CAO/FAO Autodesk pour conception produit, prototypage et fabrication."
+ },
+ {
+  "slug": "grabcad",
+  "name": "GrabCAD",
+  "category": "design-tools",
+  "short_description": "Bibliothèque et plateforme collaborative autour des fichiers CAO."
+ },
+ {
+  "slug": "hugeicons",
+  "name": "Hugeicons",
+  "category": "design-tools",
+  "short_description": "Bibliothèque de 51 000+ icônes UI professionnelles pour designers et développeurs."
+ },
+ {
+  "slug": "indesign",
+  "name": "Adobe InDesign",
+  "category": "design-tools",
+  "short_description": "Mise en page et PAO professionnelle : magazines, brochures, livres et documents print."
+ },
+ {
+  "slug": "magic-patterns",
+  "name": "Magic Patterns",
+  "category": "design-tools",
+  "short_description": "Générateur IA de composants UI et prototypes à partir d'un prompt."
+ },
+ {
+  "slug": "milanote",
+  "name": "Milanote",
+  "category": "design-tools",
+  "short_description": "Tableau de notes visuelles pour les créatifs — moodboards, briefs et idées organisées."
+ },
+ {
+  "slug": "miro",
+  "name": "Miro",
+  "category": "design-tools",
+  "short_description": "Tableau blanc collaboratif en ligne"
+ },
+ {
+  "slug": "open-cut-list",
+  "name": "OpenCutList",
+  "category": "design-tools",
+  "short_description": "Plugin SketchUp pour débits, listes de coupe, panneaux et préparation fabrication."
+ },
+ {
+  "slug": "pacdora",
+  "name": "Pacdora",
+  "category": "design-tools",
+  "short_description": "Plateforme packaging 3D pour dielines, mockups et rendus produits."
+ },
+ {
+  "slug": "penpot",
+  "name": "Penpot",
+  "category": "design-tools",
+  "short_description": "Alternative open-source et gratuite à Figma — design et prototypage collaboratif."
+ },
+ {
+  "slug": "plasticity",
+  "name": "Plasticity",
+  "category": "design-tools",
+  "short_description": "Modeleur 3D CAD rapide pour concepts produit, hard surface et formes précises."
+ },
+ {
+  "slug": "pure-ref",
+  "name": "PureRef",
+  "category": "design-tools",
+  "short_description": "Planche de références ultra légère pour artistes, illustrateurs et 3D."
+ },
+ {
+  "slug": "sketch",
+  "name": "Sketch",
+  "category": "design-tools",
+  "short_description": "Design UI/UX pour macOS"
+ },
+ {
+  "slug": "snapseed",
+  "name": "Snapseed",
+  "category": "design-tools",
+  "short_description": "Retouche photo mobile gratuite et complète, signée Google."
+ },
+ {
+  "slug": "solidworks",
+  "name": "SolidWorks",
+  "category": "design-tools",
+  "short_description": "CAO industrielle paramétrique pour conception produit et mécanique."
+ },
+ {
+  "slug": "v0-vercel",
+  "name": "v0 by Vercel",
+  "category": "design-tools",
+  "short_description": "Génère des composants UI React/Tailwind à partir d'une description texte."
+ },
+ {
+  "slug": "vectorworks",
+  "name": "Vectorworks",
+  "category": "design-tools",
+  "short_description": "CAO/BIM et conception 2D/3D très utilisée en architecture, scénographie et événementiel."
+ },
+ {
+  "slug": "whimsical",
+  "name": "Whimsical",
+  "category": "design-tools",
+  "short_description": "Wireframes, flowcharts, mind maps et docs sur canvas infini avec IA."
+ },
+ {
+  "slug": "cargo-site",
+  "name": "Cargo Site",
+  "category": "nocode-web",
+  "short_description": "Créateur de portfolios créatifs au design expérimental, pour artistes et designers."
+ },
+ {
+  "slug": "digitalocean",
+  "name": "DigitalOcean",
+  "category": "nocode-web",
+  "short_description": "Alternative simple et prévisible à AWS pour héberger une app ou un site sans se noyer dans la complexité."
+ },
+ {
+  "slug": "dub",
+  "name": "Dub",
+  "category": "nocode-web",
+  "short_description": "Raccourcisseur de liens open-source avec analytics avancés et domaine personnalisé."
+ },
+ {
+  "slug": "emergent",
+  "name": "Emergent",
+  "category": "nocode-web",
+  "short_description": "Construis des apps web et mobiles avec l'IA — MVP en heures, pas en semaines."
+ },
+ {
+  "slug": "fillout",
+  "name": "Fillout",
+  "category": "nocode-web",
+  "short_description": "Formulaires intelligents avec logique conditionnelle, paiements et IA."
+ },
+ {
+  "slug": "firebase",
+  "name": "Firebase",
+  "category": "nocode-web",
+  "short_description": "Plateforme backend Google (auth, DB, hosting)"
+ },
+ {
+  "slug": "fly-io",
+  "name": "Fly.io",
+  "category": "nocode-web",
+  "short_description": "Déploiement d'applications conteneurisées au plus proche des utilisateurs, dans le monde entier."
+ },
+ {
+  "slug": "ghost",
+  "name": "Ghost",
+  "category": "nocode-web",
+  "short_description": "Plateforme de publication et newsletter"
+ },
+ {
+  "slug": "gsap",
+  "name": "GSAP",
+  "category": "nocode-web",
+  "short_description": "Bibliothèque d’animation web avancée pour interactions, micro-animations et expériences immersives."
+ },
+ {
+  "slug": "heroku",
+  "name": "Heroku",
+  "category": "nocode-web",
+  "short_description": "Plateforme de déploiement (PaaS) qui met une app en ligne en quelques commandes, sans gérer de serveur."
+ },
+ {
+  "slug": "jotform",
+  "name": "Jotform",
+  "category": "nocode-web",
+  "short_description": "Créateur de formulaires puissant avec 10 000+ templates, paiements et automatisations."
+ },
+ {
+  "slug": "memberstack",
+  "name": "Memberstack",
+  "category": "nocode-web",
+  "short_description": "Membership et authentification no-code pour sites Webflow et produits légers."
+ },
+ {
+  "slug": "mongodb-atlas",
+  "name": "MongoDB Atlas",
+  "category": "nocode-web",
+  "short_description": "Base de données NoSQL managée dans le cloud, avec une offre gratuite pour démarrer."
+ },
+ {
+  "slug": "neon",
+  "name": "Neon",
+  "category": "nocode-web",
+  "short_description": "Postgres serverless avec branching de base de données et scale-to-zero."
+ },
+ {
+  "slug": "netlify",
+  "name": "Netlify",
+  "category": "nocode-web",
+  "short_description": "Hébergement et déploiement JAMstack"
+ },
+ {
+  "slug": "planetscale",
+  "name": "PlanetScale",
+  "category": "nocode-web",
+  "short_description": "Base de données MySQL serverless avec branching de schéma, pensée pour les équipes de développement."
+ },
+ {
+  "slug": "railway",
+  "name": "Railway",
+  "category": "nocode-web",
+  "short_description": "Plateforme de déploiement (PaaS) moderne, simple à utiliser pour héberger une app ou une base de données."
+ },
+ {
+  "slug": "readymag",
+  "name": "Readymag",
+  "category": "nocode-web",
+  "short_description": "Design éditorial web avec animations avancées."
+ },
+ {
+  "slug": "relume",
+  "name": "Relume",
+  "category": "nocode-web",
+  "short_description": "Sitemap, wireframes et librairie de sections pour accélérer les sites Webflow et Figma."
+ },
+ {
+  "slug": "render",
+  "name": "Render",
+  "category": "nocode-web",
+  "short_description": "Cloud moderne pour apps, APIs et sites"
+ },
+ {
+  "slug": "rork",
+  "name": "Rork",
+  "category": "nocode-web",
+  "short_description": "Construis des apps mobiles iOS et Android avec l'IA en quelques minutes."
+ },
+ {
+  "slug": "supabase",
+  "name": "Supabase",
+  "category": "nocode-web",
+  "short_description": "Backend tout-en-un open source (Postgres, auth, stockage, API) : l'alternative à Firebase."
+ },
+ {
+  "slug": "arcgis",
+  "name": "ArcGIS",
+  "category": "analytics",
+  "short_description": "Suite SIG professionnelle pour cartographie et analyse géospatiale."
+ },
+ {
+  "slug": "beehiiv-analytics",
+  "name": "Beehiiv Analytics",
+  "category": "analytics",
+  "short_description": "Métriques avancées pour newsletters Beehiiv."
+ },
+ {
+  "slug": "convertkit-analytics",
+  "name": "ConvertKit Analytics",
+  "category": "analytics",
+  "short_description": "Suivi de performance intégré ConvertKit."
+ },
+ {
+  "slug": "datawrapper",
+  "name": "Datawrapper",
+  "category": "analytics",
+  "short_description": "Création rapide de graphiques, cartes et tables éditoriales."
+ },
+ {
+  "slug": "dovetail",
+  "name": "Dovetail",
+  "category": "analytics",
+  "short_description": "Recherche utilisateur, analyse d’interviews, tags, insights et repository research."
+ },
+ {
+  "slug": "excel",
+  "name": "Microsoft Excel",
+  "category": "analytics",
+  "short_description": "Tableur de référence pour données, budgets, modèles et analyses."
+ },
+ {
+  "slug": "flourish",
+  "name": "Flourish",
+  "category": "analytics",
+  "short_description": "Dataviz éditoriale interactive, graphiques, cartes et stories data."
+ },
+ {
+  "slug": "frase",
+  "name": "Frase",
+  "category": "analytics",
+  "short_description": "Briefs SEO, recherche SERP et optimisation de contenu."
+ },
+ {
+  "slug": "google-analytics",
+  "name": "Google Analytics",
+  "category": "analytics",
+  "short_description": "Analytics web gratuit par Google"
+ },
+ {
+  "slug": "google-search-console",
+  "name": "Google Search Console",
+  "category": "analytics",
+  "short_description": "Suivi SEO gratuit : indexation, requêtes, pages, erreurs et performance de recherche."
+ },
+ {
+  "slug": "lookback",
+  "name": "Lookback",
+  "category": "analytics",
+  "short_description": "Tests utilisateurs et interviews vidéo pour observer les parcours en direct ou asynchrone."
+ },
+ {
+  "slug": "mapbox",
+  "name": "Mapbox",
+  "category": "analytics",
+  "short_description": "Cartographie web, styles de cartes, données géographiques et APIs."
+ },
+ {
+  "slug": "metricool",
+  "name": "Metricool",
+  "category": "analytics",
+  "short_description": "Analytics et planification réseaux sociaux"
+ },
+ {
+  "slug": "notionlytics",
+  "name": "Notionlytics",
+  "category": "analytics",
+  "short_description": "Analytics pour pages Notion partagées."
+ },
+ {
+  "slug": "power-bi",
+  "name": "Power BI",
+  "category": "analytics",
+  "short_description": "Solution Microsoft BI pour dashboards, rapports et analyses business."
+ },
+ {
+  "slug": "publer",
+  "name": "Publer",
+  "category": "analytics",
+  "short_description": "Planification et analytics réseaux sociaux"
+ },
+ {
+  "slug": "qgis",
+  "name": "QGIS",
+  "category": "analytics",
+  "short_description": "SIG open source pour cartographie, analyse spatiale et données géographiques."
+ },
+ {
+  "slug": "surferseo",
+  "name": "Surfer SEO",
+  "category": "analytics",
+  "short_description": "Optimisation SEO de contenus, briefs et scoring sémantique."
+ },
+ {
+  "slug": "tableau",
+  "name": "Tableau",
+  "category": "analytics",
+  "short_description": "Plateforme BI et dataviz pour dashboards et analyses avancées."
+ },
+ {
+  "slug": "adp-workforce",
+  "name": "ADP Workforce",
+  "category": "hris-payroll",
+  "short_description": "ADP Workforce structure les données collaborateurs, RH ou paie dans une stack d'entreprise."
+ },
+ {
+  "slug": "bamboohr",
+  "name": "BambooHR",
+  "category": "hris-payroll",
+  "short_description": "Logiciel RH et gestion des talents"
+ },
+ {
+  "slug": "dayforce",
+  "name": "Dayforce",
+  "category": "hris-payroll",
+  "short_description": "Dayforce structure les données collaborateurs, RH ou paie dans une stack d'entreprise."
+ },
+ {
+  "slug": "factorial",
+  "name": "Factorial",
+  "category": "hris-payroll",
+  "short_description": "Factorial structure les données collaborateurs, RH ou paie dans une stack d'entreprise."
+ },
+ {
+  "slug": "google-workspace",
+  "name": "Google Workspace",
+  "category": "hris-payroll",
+  "short_description": "Google Workspace structure les données collaborateurs, RH ou paie dans une stack d'entreprise."
+ },
+ {
+  "slug": "hibob",
+  "name": "HiBob",
+  "category": "hris-payroll",
+  "short_description": "HiBob structure les données collaborateurs, RH ou paie dans une stack d'entreprise."
+ },
+ {
+  "slug": "humaans",
+  "name": "Humaans",
+  "category": "hris-payroll",
+  "short_description": "Humaans structure les données collaborateurs, RH ou paie dans une stack d'entreprise."
+ },
+ {
+  "slug": "justworks",
+  "name": "Justworks",
+  "category": "hris-payroll",
+  "short_description": "Justworks structure les données collaborateurs, RH ou paie dans une stack d'entreprise."
+ },
+ {
+  "slug": "lucca",
+  "name": "Lucca",
+  "category": "hris-payroll",
+  "short_description": "Lucca structure les données collaborateurs, RH ou paie dans une stack d'entreprise."
+ },
+ {
+  "slug": "namely",
+  "name": "Namely",
+  "category": "hris-payroll",
+  "short_description": "Namely structure les données collaborateurs, RH ou paie dans une stack d'entreprise."
+ },
+ {
+  "slug": "payfit",
+  "name": "Payfit",
+  "category": "hris-payroll",
+  "short_description": "Payfit structure les données collaborateurs, RH ou paie dans une stack d'entreprise."
+ },
+ {
+  "slug": "rippling",
+  "name": "Rippling",
+  "category": "hris-payroll",
+  "short_description": "RH, paie et gestion IT unifiée"
+ },
+ {
+  "slug": "sap-successfactors",
+  "name": "SAP SuccessFactors",
+  "category": "hris-payroll",
+  "short_description": "SAP SuccessFactors structure les données collaborateurs, RH ou paie dans une stack d'entreprise."
+ },
+ {
+  "slug": "ukg-pro",
+  "name": "UKG Pro",
+  "category": "hris-payroll",
+  "short_description": "UKG Pro structure les données collaborateurs, RH ou paie dans une stack d'entreprise."
+ },
+ {
+  "slug": "workday-hr",
+  "name": "Workday HR",
+  "category": "hris-payroll",
+  "short_description": "Workday HR structure les données collaborateurs, RH ou paie dans une stack d'entreprise."
+ },
+ {
+  "slug": "zelt",
+  "name": "Zelt",
+  "category": "hris-payroll",
+  "short_description": "Zelt structure les données collaborateurs, RH ou paie dans une stack d'entreprise."
+ },
+ {
+  "slug": "activepieces",
+  "name": "Activepieces",
+  "category": "automation",
+  "short_description": "Automatisation open-source alternative à Zapier."
+ },
+ {
+  "slug": "firecrawl",
+  "name": "Firecrawl",
+  "category": "automation",
+  "short_description": "API de scraping web propre : transforme n'importe quel site en données structurées."
+ },
+ {
+  "slug": "gumloop",
+  "name": "Gumloop",
+  "category": "automation",
+  "short_description": "Automatisation no-code IA — construit des workflows intelligents par glisser-déposer."
+ },
+ {
+  "slug": "hyperbrowser",
+  "name": "Hyperbrowser",
+  "category": "automation",
+  "short_description": "Infrastructure de navigateurs cloud pour agents IA et scraping à grande échelle."
+ },
+ {
+  "slug": "integrately",
+  "name": "Integrately",
+  "category": "automation",
+  "short_description": "Automatisations en 1 clic entre 1000+ apps."
+ },
+ {
+  "slug": "la-growth-machine",
+  "name": "La Growth Machine",
+  "category": "automation",
+  "short_description": "Automatisation multi-canal LinkedIn + Email."
+ },
+ {
+  "slug": "n8n",
+  "name": "n8n",
+  "category": "automation",
+  "short_description": "Automatisation de workflows open source"
+ },
+ {
+  "slug": "pabbly-connect",
+  "name": "Pabbly Connect",
+  "category": "automation",
+  "short_description": "Automatisation sans code à prix fixe illimité."
+ },
+ {
+  "slug": "phantombuster",
+  "name": "PhantomBuster",
+  "category": "automation",
+  "short_description": "Extraction de données et automatisation LinkedIn."
+ },
+ {
+  "slug": "waalaxy",
+  "name": "Waalaxy",
+  "category": "automation",
+  "short_description": "Prospection LinkedIn automatisée."
+ },
+ {
+  "slug": "whalesync",
+  "name": "Whalesync",
+  "category": "automation",
+  "short_description": "Synchronisation no-code entre Webflow, Airtable, Notion et bases de données."
+ },
+ {
+  "slug": "canva-ai",
+  "name": "Canva AI",
+  "category": "ai-general",
+  "short_description": "Suite d'outils IA (Magic Studio) intégrée dans Canva pour la génération d'images, suppression d'arrière-plan, gestion d'objets et suggestions de layout assistées par IA, accessible via les plans payants."
+ },
+ {
+  "slug": "fathom",
+  "name": "Fathom",
+  "category": "ai-general",
+  "short_description": "Assistant IA de prise de notes pour tes réunions Zoom, Meet et Teams."
+ },
+ {
+  "slug": "fellow",
+  "name": "Fellow",
+  "category": "ai-general",
+  "short_description": "App de réunions IA : agendas collaboratifs, notes et suivi des actions."
+ },
+ {
+  "slug": "google-ai-studio",
+  "name": "Google AI Studio",
+  "category": "ai-general",
+  "short_description": "Playground gratuit pour tester et intégrer les modèles Gemini de Google."
+ },
+ {
+  "slug": "granola",
+  "name": "Granola",
+  "category": "ai-general",
+  "short_description": "Bloc-notes IA pour tes réunions — prend des notes pendant que tu écoutes."
+ },
+ {
+  "slug": "grok",
+  "name": "Grok",
+  "category": "ai-general",
+  "short_description": "L'assistant IA d'xAI (Elon Musk) avec accès temps réel à X/Twitter."
+ },
+ {
+  "slug": "jasper",
+  "name": "Jasper",
+  "category": "ai-general",
+  "short_description": "Assistant IA pour le marketing et la rédaction"
+ },
+ {
+  "slug": "typotab",
+  "name": "TypoTab",
+  "category": "ai-general",
+  "short_description": "Extension Chrome : assistant IA de rédaction dans chaque onglet."
+ },
+ {
+  "slug": "windsurf",
+  "name": "Windsurf",
+  "category": "ai-general",
+  "short_description": "Éditeur de code IA agentique — l'alternative à Cursor avec Cascade AI."
+ },
+ {
+  "slug": "zoom-ai-companion",
+  "name": "Zoom AI Companion",
+  "category": "ai-general",
+  "short_description": "Assistant IA agentic pour Zoom Meetings rebaptisé ZoomMate (juin 2026) qui capture le contexte des réunions, génère des résumés, extraits des actions, et exécute des suivis automatisés dans les systèmes connectés (Salesforce, Jira, Slack, etc.)."
+ },
+ {
+  "slug": "antidote",
+  "name": "Antidote",
+  "category": "productivity-tracking",
+  "short_description": "Suite avancée de correction et dictionnaires pour rédaction française."
+ },
+ {
+  "slug": "arc-browser",
+  "name": "Arc Browser",
+  "category": "productivity-tracking",
+  "short_description": "Navigateur repensé pour la productivité."
+ },
+ {
+  "slug": "harvest",
+  "name": "Harvest",
+  "category": "productivity-tracking",
+  "short_description": "Suivi du temps, budgets projets et facturation pour équipes et studios."
+ },
+ {
+  "slug": "languagetool",
+  "name": "LanguageTool",
+  "category": "productivity-tracking",
+  "short_description": "Correction grammaticale, style et orthographe multilingue."
+ },
+ {
+  "slug": "microsoft-365",
+  "name": "Microsoft 365",
+  "category": "productivity-tracking",
+  "short_description": "Microsoft 365 aide à gérer signatures, contrats ou documents juridiques."
+ },
+ {
+  "slug": "perforce",
+  "name": "Perforce",
+  "category": "productivity-tracking",
+  "short_description": "Versioning robuste pour gros fichiers, jeux vidéo et pipelines créatifs."
+ },
+ {
+  "slug": "reclaim",
+  "name": "Reclaim.ai",
+  "category": "productivity-tracking",
+  "short_description": "Calendrier IA qui auto-planifie tâches, habitudes et focus dans les trous de ton agenda."
+ },
+ {
+  "slug": "superwhisper",
+  "name": "Superwhisper",
+  "category": "productivity-tracking",
+  "short_description": "Dictée vocale IA dans toutes tes apps — macOS uniquement."
+ },
+ {
+  "slug": "warp",
+  "name": "Warp",
+  "category": "productivity-tracking",
+  "short_description": "Terminal moderne avec IA intégrée pour développeurs."
+ },
+ {
+  "slug": "zed",
+  "name": "Zed",
+  "category": "productivity-tracking",
+  "short_description": "Éditeur de code haute performance avec collaboration."
+ },
+ {
+  "slug": "bynder",
+  "name": "Bynder",
+  "category": "storage",
+  "short_description": "DAM professionnel pour assets de marque, campagnes et équipes créatives."
+ },
+ {
+  "slug": "namecheap",
+  "name": "Namecheap",
+  "category": "storage",
+  "short_description": "Registrar de domaines abordable avec hébergement, SSL et emails inclus."
+ },
+ {
+  "slug": "onedrive",
+  "name": "OneDrive",
+  "category": "storage",
+  "short_description": "Stockage cloud Microsoft"
+ },
+ {
+  "slug": "sharepoint",
+  "name": "SharePoint",
+  "category": "storage",
+  "short_description": "SharePoint sert à stocker, partager ou synchroniser des fichiers dans l’organisation."
+ },
+ {
+  "slug": "wetransfer",
+  "name": "WeTransfer",
+  "category": "storage",
+  "short_description": "Envoi de fichiers volumineux par lien, sans compte. Offre gratuite plafonnée depuis 2024."
+ },
+ {
+  "slug": "creditsafe",
+  "name": "Creditsafe",
+  "category": "vendor-risk-data",
+  "short_description": "Creditsafe fournit des données de risque ou de conformité sur les fournisseurs."
+ },
+ {
+  "slug": "dun-bradstreet",
+  "name": "Dun & Bradstreet",
+  "category": "vendor-risk-data",
+  "short_description": "Dun & Bradstreet fournit des données de risque ou de conformité sur les fournisseurs."
+ },
+ {
+  "slug": "ecovadis",
+  "name": "EcoVadis",
+  "category": "vendor-risk-data",
+  "short_description": "EcoVadis fournit des données de risque ou de conformité sur les fournisseurs."
+ },
+ {
+  "slug": "securityscorecard",
+  "name": "SecurityScorecard",
+  "category": "vendor-risk-data",
+  "short_description": "SecurityScorecard fournit des données de risque ou de conformité sur les fournisseurs."
+ },
+ {
+  "slug": "articulate",
+  "name": "Articulate 360",
+  "category": "formation-education",
+  "short_description": "Suite e-learning pour modules interactifs, quiz et formation professionnelle."
+ },
+ {
+  "slug": "genially",
+  "name": "Genially",
+  "category": "formation-education",
+  "short_description": "Contenus interactifs, présentations, modules pédagogiques et infographies."
+ },
+ {
+  "slug": "moodle",
+  "name": "Moodle",
+  "category": "formation-education",
+  "short_description": "LMS open source pour formations, parcours et suivi apprenants."
+ }
+]
