@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ExternalLink, Play } from "lucide-react";
 import type { ToolTutorial } from "@/data/toolTutorials";
+import { relExterne } from "@/lib/externalLink";
 
 interface Props {
   tutorials: ToolTutorial[];
@@ -69,7 +70,7 @@ export default function ToolTutorialsSection({ tutorials, toolName, lang, t }: P
                   <h3>{title}</h3>
                   <p>{tutorial.author} · YouTube</p>
                 </div>
-                <a href={tutorial.sourceUrl} target="_blank" rel="noopener noreferrer">
+                <a href={tutorial.sourceUrl} target="_blank" rel={relExterne("source")}>
                   {t("Voir sur YouTube", "View on YouTube")}
                   <ExternalLink aria-hidden="true" />
                 </a>

@@ -21,6 +21,7 @@ import {
   Tooltip, TooltipContent, TooltipProvider, TooltipTrigger,
 } from "@/components/ui/tooltip";
 import ToolLogo from "@/components/ToolLogo";
+import { relExterne } from "@/lib/externalLink";
 
 /* ═══════════ Helpers ═══════════ */
 
@@ -1180,7 +1181,7 @@ function RecCard({ s, prefix, t, isTjmZero, form, userTools }: {
 
       <div className="mt-auto">
         {s.tool.affiliateLink ? (
-          <a href={s.tool.affiliateLink} target="_blank" rel="noopener noreferrer" className="flex w-full items-center justify-center gap-2 rounded-xl bg-primary/5 border border-primary/20 px-4 py-2.5 text-sm font-medium text-primary transition-colors hover:bg-primary/10">
+          <a href={s.tool.affiliateLink} target="_blank" rel={relExterne("affilie")} className="flex w-full items-center justify-center gap-2 rounded-xl bg-primary/5 border border-primary/20 px-4 py-2.5 text-sm font-medium text-primary transition-colors hover:bg-primary/10">
             {t("Essayer", "Try it")} <ExternalLink className="h-3.5 w-3.5" />
           </a>
         ) : (

@@ -1,6 +1,7 @@
 import type { Tool } from "@/data/types";
 import { CreditCard, Sparkles, Package } from "lucide-react";
 import { hasGenuineFreeTier } from "@/lib/pricing";
+import { relExterne } from "@/lib/externalLink";
 
 // Slug de bundle -> nom lisible (ex. "adobe-creative-cloud" -> "Adobe Creative Cloud").
 const humanizeSlug = (s: string) =>
@@ -92,7 +93,7 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t }: Prop
                     ].filter(Boolean).join(" · ")}
               </p>
               {plan.detailsSourceUrl && (
-                <a className="td-pricing-plan-source" href={plan.detailsSourceUrl} target="_blank" rel="noopener noreferrer">
+                <a className="td-pricing-plan-source" href={plan.detailsSourceUrl} target="_blank" rel={relExterne("source")}>
                   {t("Détail officiel de l’offre", "Official plan details")}
                 </a>
               )}
@@ -139,7 +140,7 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t }: Prop
       {(verifiedOn || officialUrl) && (
         <p className="td-pricing-evidence">
           {officialUrl ? (
-            <a href={officialUrl} target="_blank" rel="noopener noreferrer">
+            <a href={officialUrl} target="_blank" rel={relExterne("source")}>
               {t("Source tarifaire officielle", "Official pricing source")}
             </a>
           ) : t("Tarif vérifié par ToolTrim", "Pricing verified by ToolTrim")}

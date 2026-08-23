@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import ToolCardImage from "@/components/tool/ToolCardImage";
 import { useToolBySlug, type ToolSummary } from "@/hooks/useSupabaseData";
 import { resolveToolOverview } from "@/lib/toolUtils";
+import { relExterne } from "@/lib/externalLink";
 
 interface StackToolInspectorProps {
   tool: ToolSummary;
@@ -134,7 +135,7 @@ export default function StackToolInspector({
             <Compass size={15} aria-hidden />{t("Explorer autour de cet outil", "Explore around this tool")}
           </button>
           {externalHref ? (
-            <a href={externalHref} target="_blank" rel="noopener noreferrer">
+            <a href={externalHref} target="_blank" rel={relExterne("source")}>
               {t("Ouvrir l’outil", "Open tool")}<ExternalLink size={14} aria-hidden />
             </a>
           ) : (

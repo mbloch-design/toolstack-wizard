@@ -542,7 +542,7 @@ function markdownToHtml(
       )
       .replace(/^\[\[\/story-gallery\]\]$/gm, "</div>");
   }
-  html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+  html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="nofollow noopener noreferrer">$1</a>');
   html = html.replace(/^(\|.+\|)\n(\|[-| :]+\|)\n((?:\|.+\|\n?)+)/gm, (_m, header, _s, body) => {
     const hs = header.split("|").filter((c: string) => c.trim());
     const rows = body.trim().split("\n").map((r: string) => r.split("|").filter((c: string) => c.trim()));

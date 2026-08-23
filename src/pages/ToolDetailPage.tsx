@@ -32,6 +32,7 @@ import ToolFAQSection from "@/components/tool/ToolFAQSection";
 import ToolJsonLd from "@/components/tool/ToolJsonLd";
 import StickyDecisionCard from "@/components/tool/StickyDecisionCard";
 import PinToolButton from "@/components/PinToolButton";
+import { relPourLienOutil } from "@/lib/externalLink";
 
 /* ─────────────────────────────────────────────────────────────────────────────
    ToolDetailPage — editorial redesign
@@ -393,7 +394,7 @@ const ToolDetailPage = () => {
                 <a
                   href={primaryCtaUrl}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl)}
                   className="td-tool-compact-cta"
                   tabIndex={showCompactHeader ? 0 : -1}
                 >
@@ -478,7 +479,7 @@ const ToolDetailPage = () => {
                             {t(catName, catNameEn)}
                           </Link>
                         )}
-                        <a href={primaryCtaUrl} target="_blank" rel="noopener noreferrer" className="td-hero-site-link">
+                        <a href={primaryCtaUrl} target="_blank" rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl)} className="td-hero-site-link">
                           {primaryCtaLabel}
                           <ExternalLink aria-hidden />
                         </a>
