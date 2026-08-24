@@ -204,8 +204,8 @@ export const AppRoutes = () => (
       <Route path="tool/:slug/prix" element={<LocalizedToolSubpage subpage="prix" />} />
       <Route path="tool/:slug/pricing" element={<LocalizedToolSubpage subpage="pricing" />} />
       <Route path="tool/:slug/alternatives" element={<ToolDetailPage />} />
-      <Route path="tool/:slug/avis" element={<ToolDetailPage />} />
-      <Route path="tool/:slug/reviews" element={<ToolDetailPage />} />
+      <Route path="tool/:slug/avis" element={<LocalizedToolSubpage subpage="avis" />} />
+      <Route path="tool/:slug/reviews" element={<LocalizedToolSubpage subpage="reviews" />} />
       <Route path="tool/:slug/faq" element={<ToolDetailPage />} />
       <Route path="outils/:slug" element={<RedirectOutils />} />
       <Route path="category" element={<CategoriesIndexPage />} />
@@ -243,7 +243,7 @@ export const AppRoutes = () => (
       <Route path="comparatif/:slugPair" element={<ComparePage />} />
       <Route path="about" element={<AboutPage />} />
       <Route path="methodology" element={<MethodologyPage />} />
-      <Route path="methodologie" element={<MethodologyPage />} />
+      <Route path="methodologie" element={<RedirectToTransparency />} />
       <Route path="transparency" element={<TransparencyPage />} />
       <Route path="contact" element={<ContactPage />} />
       <Route path="legal-notice" element={<LegalNoticePage />} />
@@ -292,13 +292,25 @@ function RedirectOutils() {
 }
 
 /** Keep localized tool sub-pages canonical: FR=/prix, EN=/pricing */
-function LocalizedToolSubpage({ subpage }: { subpage: "prix" | "pricing" }) {
+/** /:lang/methodologie is a legacy duplicate — vercel.json 301s it to /transparency */
+function RedirectToTransparency() {
+  const { lang } = useParams();
+  return <Navigate to={`/${lang || "fr"}/transparency`} replace />;
+}
+
+const TOOL_SUBPAGE_ALIASES = {
+  prix: { fr: "prix", en: "pricing" },
+  pricing: { fr: "prix", en: "pricing" },
+  avis: { fr: "avis", en: "reviews" },
+  reviews: { fr: "avis", en: "reviews" },
+} as const;
+
+function LocalizedToolSubpage({ subpage }: { subpage: keyof typeof TOOL_SUBPAGE_ALIASES }) {
   const { slug, lang } = useParams();
-  if (lang === "en" && subpage === "prix") {
-    return <Navigate to={`/en/tool/${slug}/pricing`} replace />;
-  }
-  if (lang !== "en" && subpage === "pricing") {
-    return <Navigate to={`/${lang || "fr"}/tool/${slug}/prix`} replace />;
+  const localized = TOOL_SUBPAGE_ALIASES[subpage];
+  const expected = lang === "en" ? localized.en : localized.fr;
+  if (subpage !== expected) {
+    return <Navigate to={`/${lang || "fr"}/tool/${slug}/${expected}`} replace />;
   }
   return <ToolDetailPage />;
 }
