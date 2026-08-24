@@ -3965,3 +3965,4 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Taux de référence BCE daté du 21 août 2026, présenté comme conversion indicative dans la section tarifaire ; les données structurées SEO restent en EUR.
 - Correction de la hiérarchie tarifaire : un prix natif USD collecté est désormais affiché tel quel ; le prix EUR normalisé n’est reconverti que lorsqu’aucune observation USD fiable n’est disponible.
 - Priorité aux plans canoniques, puis au registre `pricing_truth`, puis au montant explicitement libellé dans le contenu tarifaire ; le marqueur `≈` et la note BCE n’apparaissent que pour un montant réellement converti.
+- Le hero compact sticky masque directement le contenu défilant avec un fondu alpha progressif sur 64 px : aucune couleur blanche n’est peinte et textes, icônes et surfaces s’éteignent ensemble, sans chevauchement, surbrillance, filet ni aplat visible.

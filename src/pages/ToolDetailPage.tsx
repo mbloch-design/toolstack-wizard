@@ -67,6 +67,7 @@ const ToolDetailPage = () => {
   const { tools } = useToolSummaries();
   const { categories } = useCategories();
   const heroRef = useRef<HTMLDivElement | null>(null);
+  const scrollBodyRef = useRef<HTMLDivElement | null>(null);
   const [showCompactHeader, setShowCompactHeader] = useState(false);
 
   // Normalize trailing slashes so prerendered URLs and client-side routing
@@ -227,6 +228,13 @@ const ToolDetailPage = () => {
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(() => {
         setShowCompactHeader(scrollRoot.scrollTop >= compactAt);
+        const scrollBody = scrollBodyRef.current;
+        const heroCard = hero.querySelector<HTMLElement>(".td-hero-card");
+        if (scrollBody && heroCard) {
+          const fadeStart = Math.max(0, heroCard.getBoundingClientRect().bottom - scrollBody.getBoundingClientRect().top);
+          scrollBody.style.setProperty("--td-scroll-fade-start", `${fadeStart}px`);
+          scrollBody.style.setProperty("--td-scroll-fade-end", `${fadeStart + 64}px`);
+        }
       });
     };
     const handleResize = () => {
@@ -489,6 +497,8 @@ const ToolDetailPage = () => {
 
             </div>
             {/* end hero identity */}
+
+            <div ref={scrollBodyRef} className="td-scroll-body">
 
             <nav className="td-tool-subnav" aria-label={t(`Explorer la fiche ${tool.name}`, `Explore the ${tool.name} review`)}>
               {subpageLinks.map((item) => (
@@ -946,6 +956,8 @@ const ToolDetailPage = () => {
                 </div>
               </div>
             )}
+
+            </div>
 
           </main>
           {/* end main content */}
