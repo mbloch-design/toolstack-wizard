@@ -31,7 +31,6 @@ import { findSimilarTools } from "@/lib/alternativesSimilarity";
 import ToolFAQSection from "@/components/tool/ToolFAQSection";
 import ToolJsonLd from "@/components/tool/ToolJsonLd";
 import StickyDecisionCard from "@/components/tool/StickyDecisionCard";
-import PinToolButton from "@/components/PinToolButton";
 import { relPourLienOutil } from "@/lib/externalLink";
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -401,15 +400,6 @@ const ToolDetailPage = () => {
                   <span>{primaryCtaLabel}</span>
                   <ExternalLink aria-hidden />
                 </a>
-              </div>
-              <div className="td-tool-compact-rail">
-                <PinToolButton
-                  slug={tool.slug || tool.id}
-                  label={tool.name}
-                  t={t}
-                  compact
-                  labelMode="full"
-                />
               </div>
             </div>
           </div>
@@ -940,7 +930,7 @@ const ToolDetailPage = () => {
 
           {/* ── RIGHT SIDEBAR — StickyDecisionCard ── */}
           <aside className="td-sidebar-desktop">
-              <StickyDecisionCard {...cardProps} compactHeaderActive={showCompactHeader} />
+              <StickyDecisionCard {...cardProps} />
           </aside>
 
         </div>

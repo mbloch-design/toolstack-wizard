@@ -8021,33 +8021,6 @@
     justify-content: space-between;
     gap: 18px;
   }
-  .td-tool-compact-rail {
-    min-width: 0;
-    min-height: 60px;
-    display: flex;
-    align-items: center;
-    padding-left: 24px;
-    border-left: 1px solid var(--color-border-soft);
-  }
-  .td-tool-compact-rail .pin-tool-button {
-    position: static;
-    inset: auto;
-    min-height: 38px;
-    padding: 0 12px;
-    border: 0;
-    border-radius: var(--radius-sm);
-    background: transparent;
-    color: var(--color-text);
-    font-family: var(--font-ui);
-    font-size: 13px;
-    font-weight: 550;
-    line-height: 1;
-    box-shadow: none;
-  }
-  .td-tool-compact-rail .pin-tool-button:hover {
-    transform: none;
-    background: var(--color-surface-soft);
-  }
   .td-tool-compact-anchor.is-visible { pointer-events: auto; }
   .td-tool-compact-anchor.is-visible .td-tool-compact-surface {
     opacity: 1;
@@ -9324,15 +9297,67 @@
     color: var(--color-text);
   }
 
-  /* Compact utility rail. Product identity and purchasing facts stay in the
-     main column; this rail only exposes actions and nearby alternatives. */
+  /* Compact decision rail: editorial proof first, primary product action
+     second, then quiet utilities and nearby alternatives. */
   .td-decision-card {
     display: grid;
-    gap: 28px;
+    gap: 24px;
     padding: 4px 0 0 24px;
     border-left: 1px solid var(--color-border-soft);
   }
-  .td-decision-utility-actions { display: grid; gap: 2px; }
+  .td-decision-verdict {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4px 12px;
+    padding: 18px;
+    border: 1px solid var(--color-border-soft);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface-soft);
+    color: var(--color-text);
+    text-decoration: none;
+    transition: border-color 140ms ease-out, background-color 140ms ease-out;
+  }
+  .td-decision-verdict:hover {
+    border-color: var(--color-border);
+    background: var(--color-surface);
+  }
+  .td-decision-verdict-label {
+    grid-column: 1 / -1;
+    font-family: var(--font-ui);
+    font-size: var(--tt-size-kicker);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+  .td-decision-verdict-score {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    font-family: var(--font-ui);
+  }
+  .td-decision-verdict-score strong {
+    font-size: var(--tt-size-metric);
+    line-height: 1;
+    letter-spacing: -0.05em;
+  }
+  .td-decision-verdict-score span,
+  .td-decision-verdict-copy {
+    font-family: var(--font-ui);
+    font-size: var(--tt-size-card-body);
+    color: var(--color-muted);
+  }
+  .td-decision-verdict-copy { align-self: end; text-align: right; }
+  .td-decision-verdict > svg {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    width: 14px;
+    height: 14px;
+    color: var(--color-muted);
+  }
+  .td-decision-utility-actions { display: grid; gap: 4px; }
   .td-decision-utility-actions .pin-tool-button,
   .td-decision-utility-actions > button,
   .td-decision-utility-actions > a {
@@ -9360,6 +9385,19 @@
     transition: background-color 140ms ease-out, color 140ms ease-out;
   }
   .td-decision-utility-actions .pin-tool-button { color: var(--color-text); }
+  .td-decision-utility-actions .pin-tool-button {
+    min-height: 46px;
+    padding-inline: 14px;
+    border: 1px solid var(--color-text);
+    background: var(--color-text);
+    color: var(--color-surface);
+    font-weight: 650;
+  }
+  .td-decision-utility-actions .pin-tool-button.pin-tool-button--active {
+    border-color: var(--color-border);
+    background: var(--color-surface-soft);
+    color: var(--color-text);
+  }
   .td-decision-utility-actions .pin-tool-button:hover,
   .td-decision-utility-actions > button:hover,
   .td-decision-utility-actions > a:hover {
@@ -9367,7 +9405,59 @@
     background: var(--color-surface-soft);
     color: var(--color-text);
   }
+  .td-decision-utility-actions .pin-tool-button:not(.pin-tool-button--active):hover {
+    background: color-mix(in srgb, var(--color-text) 88%, var(--color-surface));
+    color: var(--color-surface);
+  }
+  .td-decision-utility-actions .td-decision-share { margin-top: 4px; }
   .td-decision-utility-actions svg { width: 16px; height: 16px; }
+  .td-share-menu {
+    z-index: 80;
+    width: 224px;
+    padding: 8px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    box-shadow: 0 12px 32px color-mix(in srgb, var(--color-text) 12%, transparent);
+  }
+  .td-share-menu-title {
+    margin: 0;
+    padding: 7px 9px 9px;
+    font-family: var(--font-ui);
+    font-size: var(--tt-size-kicker);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+  .td-share-menu-actions { display: grid; gap: 2px; }
+  .td-share-menu-actions button,
+  .td-share-menu-actions a {
+    display: grid;
+    grid-template-columns: 18px 1fr;
+    align-items: center;
+    gap: 10px;
+    min-height: 38px;
+    padding: 0 9px;
+    border: 0;
+    border-radius: var(--radius-sm);
+    background: transparent;
+    color: var(--color-text);
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 500;
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .td-share-menu-actions button:hover,
+  .td-share-menu-actions a:hover,
+  .td-share-menu-actions button:focus-visible,
+  .td-share-menu-actions a:focus-visible {
+    outline: none;
+    background: var(--color-surface-soft);
+  }
+  .td-share-menu-actions svg { width: 16px; height: 16px; color: var(--color-muted); }
   .td-decision-similar { display: grid; gap: 10px; }
   .td-decision-similar-head {
     display: flex;
