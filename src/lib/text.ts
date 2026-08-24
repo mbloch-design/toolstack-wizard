@@ -11,6 +11,27 @@ export function asText(value: unknown, fallback = ""): string {
   return fallback;
 }
 
+/**
+ * Removes the decorative emoji prefix carried by catalogue category names
+ * ("✂️ Organisation" -> "Organisation").
+ *
+ * The pattern has to cover more than the pictograph itself, because most of
+ * these emoji are multi-code-point sequences. "✂️" is U+2702 followed by U+FE0F
+ * (variation selector); a pattern matching a single code point stripped only
+ * U+2702 and left the selector plus its trailing space behind, which rendered
+ * as a stray leading space. Variation selectors, skin-tone modifiers and the
+ * zero-width joiner are all included for that reason.
+ */
+const LEADING_EMOJI = new RegExp(
+  "^[" +
+    "\\p{Emoji_Presentation}\\p{Extended_Pictographic}\\p{Emoji_Modifier}" +
+    "\\uFE0E\\uFE0F" + // variation selectors (text / emoji presentation)
+    "\\u200D" + // zero-width joiner
+    "\\s" +
+    "]+",
+  "u",
+);
+
 export function stripLeadingEmoji(value: unknown, fallback = ""): string {
-  return asText(value, fallback).replace(/^[\p{Emoji_Presentation}\p{Extended_Pictographic}]\s*/u, "");
+  return asText(value, fallback).replace(LEADING_EMOJI, "").trim();
 }

@@ -1,13 +1,18 @@
+import { stripLeadingEmoji } from "@/lib/text";
+
 /**
  * Category names in the catalogue carry a decorative emoji prefix
  * ("⏱️ Suivi du Temps"). The UI strips it before display; structured data must
  * too, otherwise the emoji ends up in Google's breadcrumb trail.
  *
+ * Delegates to `stripLeadingEmoji` so there is a single implementation — that
+ * one handles multi-code-point emoji sequences (variation selectors, ZWJ).
+ *
  * Note: `CartPage.tsx` and `ExplorerPage.tsx` each still carry their own copy of
  * this helper — they predate this module and should be pointed here.
  */
 export function cleanCategoryLabel(label?: string) {
-  return (label || "").replace(/^[^\p{L}\p{N}]+/u, "").trim();
+  return stripLeadingEmoji(label, "");
 }
 
 /**
