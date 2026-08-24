@@ -27030,3 +27030,24 @@ section[id] {
     line-height: 1.08;
   }
 }
+
+/* ─────────────────────────────────────────────────────────────────────────
+   Stack detail — carte de la stack : garder les outils dans leur colonne
+   ─────────────────────────────────────────────────────────────────────────
+   Entre 900px (repli de .sd-page-grid) et ~1130px, la colonne droite de
+   .sd-stack-map-family passe en minmax(0, 1.2fr) et tombe à ~100px, alors que
+   .sd-tool-grid impose un plancher de 210px. Les outils débordaient alors sous
+   la carte de décision sticky.                                              */
+
+.sd-tool-grid {
+  /* Le plancher ne peut plus dépasser la largeur disponible. */
+  grid-template-columns: repeat(auto-fit, minmax(min(210px, 100%), 1fr));
+}
+
+@media (min-width: 901px) and (max-width: 1130px) {
+  .sd-stack-map-family {
+    /* Sous ce seuil la colonne droite est trop étroite pour un outil :
+       on empile plutôt que de comprimer. */
+    grid-template-columns: 1fr;
+  }
+}
