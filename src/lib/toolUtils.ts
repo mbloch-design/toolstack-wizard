@@ -2,6 +2,10 @@
  * Shared tool utility functions — single source of truth.
  * Previously duplicated in ToolDetailPage, CategoryPage, GuidesPage, HomePage, HeroSection.
  */
+import type { Tool } from "@/data/types";
+import type { Currency } from "@/hooks/useCurrency";
+import { formatCurrencyAmount } from "@/lib/currency";
+import { resolveDisplayPrice } from "@/lib/nativePricing";
 
 /** True if the tool's paid pricing is a one-time/perpetual license, not a subscription. */
 export function isOneTimePrice(tool: { pricing?: { paid?: string } }): boolean {
@@ -10,16 +14,16 @@ export function isOneTimePrice(tool: { pricing?: { paid?: string } }): boolean {
 
 /** Format a displayable price label ("16,80€" or "16,80€/mois"), without hiding observed decimals. */
 export function formatPriceLabel(
-  tool: { pricing?: { paid?: string } },
+  tool: Tool,
   price: number,
-  t: (fr: string, en: string) => string
+  t: (fr: string, en: string) => string,
+  currency: Currency = "EUR",
+  lang: string = "fr",
 ): string {
   if (price === 0) return t("Gratuit", "Free");
-  const amount = t(
-    price.toLocaleString("fr-FR", { maximumFractionDigits: 2 }),
-    price.toLocaleString("en-US", { maximumFractionDigits: 2 }),
-  );
-  return isOneTimePrice(tool) ? `${amount}€` : `${amount}€/${t("mois", "mo")}`;
+  const resolved = resolveDisplayPrice(tool, price, currency);
+  const amount = `${resolved.converted ? "≈ " : ""}${formatCurrencyAmount(resolved.amount, currency, lang)}`;
+  return isOneTimePrice(tool) ? amount : `${amount}/${t("mois", "mo")}`;
 }
 
 interface VerdictLike {

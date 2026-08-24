@@ -14,8 +14,10 @@ import {
   PanelLeftOpen,
   Settings2,
   Sun,
+  CircleDollarSign,
 } from "lucide-react";
 import { useLang } from "@/hooks/useLang";
+import { useCurrency } from "@/hooks/useCurrency";
 import { useTheme } from "@/hooks/useTheme";
 import { useStackPins } from "@/hooks/useStackPins";
 import logoToolTrim from "@/assets/logo-tooltrim.svg";
@@ -43,6 +45,7 @@ const NAV_ITEMS: NavItem[] = [
 
 export default function AppShellV2({ children }: { children: ReactNode }) {
   const { t, prefix, lang } = useLang();
+  const { currency, toggleCurrency } = useCurrency();
   const { theme, toggle: toggleTheme } = useTheme();
   const location = useLocation();
   const [searchOpen, setSearchOpen] = useState(false);
@@ -132,6 +135,20 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
 
           <button
             type="button"
+            className="asv2-utility-item asv2-currency-toggle"
+            onClick={toggleCurrency}
+            aria-label={currency === "EUR"
+              ? t("Afficher les prix en dollars", "Show prices in US dollars")
+              : t("Afficher les prix en euros", "Show prices in euros")}
+            title={!sidebarExpanded ? t("Changer de devise", "Change currency") : undefined}
+          >
+            <CircleDollarSign />
+            <span className="asv2-utility-text">{t("Devise", "Currency")}</span>
+            <span className="asv2-utility-value">{currency}</span>
+          </button>
+
+          <button
+            type="button"
             className="asv2-utility-item asv2-theme-toggle"
             onClick={toggleTheme}
             aria-pressed={theme === "dark"}
@@ -183,6 +200,17 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
           </button>
 
           <div className="asv2-topbar-right">
+            <button
+              type="button"
+              className="asv2-topbar-currency"
+              onClick={toggleCurrency}
+              aria-label={currency === "EUR"
+                ? t("Afficher les prix en dollars", "Show prices in US dollars")
+                : t("Afficher les prix en euros", "Show prices in euros")}
+            >
+              <span aria-hidden>{currency === "EUR" ? "€" : "$"}</span>
+              <span>{currency}</span>
+            </button>
             <Link to={`${prefix}/ma-stack`} className="asv2-topbar-cta" aria-label={cartLabel}>
               <Bookmark style={{ width: 15, height: 15 }} aria-hidden />
               <span>{cartLabel}</span>

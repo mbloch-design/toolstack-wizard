@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import type { Tool, Category } from "@/data/types";
 import { stripLeadingEmoji } from "@/lib/text";
 import { formatPriceLabel } from "@/lib/toolUtils";
+import { useCurrency } from "@/hooks/useCurrency";
 
 // Cache-bust marker (2026-06-24): forcing this module's content hash to
 // change after a build showed seo.idealForFr correct in the embedded
@@ -24,6 +25,7 @@ interface Props {
  * Designed for LLM extraction, RAG retrieval, and SEO snippet generation.
  */
 export default function ToolSummaryBlock({ tool, category, alternatives, displayPrice, lang, prefix, t }: Props) {
+  const { currency } = useCurrency();
   const categoryLabel = category
     ? t(
         stripLeadingEmoji(category.name, category.id).toLowerCase(),
@@ -85,7 +87,7 @@ export default function ToolSummaryBlock({ tool, category, alternatives, display
         <div className="td-synth-row">
           <dt className="td-synth-dt">{t("Prix à partir de", "Price from")}</dt>
           <dd className="td-synth-dd">
-            {formatPriceLabel(tool, displayPrice, t)}
+            {formatPriceLabel(tool, displayPrice, t, currency, lang)}
             {tool.pricing_v5?.compare_plan_name && ` (${tool.pricing_v5.compare_plan_name})`}.
           </dd>
         </div>

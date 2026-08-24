@@ -3956,3 +3956,12 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Transition progressive de l’image, de la hauteur et des contenus vers l’état compact, sans déplacement de la sidebar.
 - État compact complété par la catégorie et le prix, rayons harmonisés sur les panneaux ToolTrim et CTA renommé « Visiter le site » pour refléter sa destination réelle.
 - Bandeau compact allégé à 62 px, avec visuel, typographie, CTA, rayon et ombre recalibrés pour accompagner la lecture sans recouvrir visuellement le contenu.
+
+## 2026-08-24 · Préférence de devise EUR / USD
+
+- Ajout d’une préférence de devise indépendante de la langue : un passage FR/EN ne modifie jamais silencieusement les prix.
+- Sélecteur EUR/USD disponible dans les préférences de la navigation et dans la barre mobile, avec mémorisation locale pour les visites suivantes.
+- Conversion des prix normalisés des fiches outils, des faits clés et des plans tarifaires EUR/USD ; conservation de la devise native lorsqu’elle n’est pas convertible de façon fiable.
+- Taux de référence BCE daté du 21 août 2026, présenté comme conversion indicative dans la section tarifaire ; les données structurées SEO restent en EUR.
+- Correction de la hiérarchie tarifaire : un prix natif USD collecté est désormais affiché tel quel ; le prix EUR normalisé n’est reconverti que lorsqu’aucune observation USD fiable n’est disponible.
+- Priorité aux plans canoniques, puis au registre `pricing_truth`, puis au montant explicitement libellé dans le contenu tarifaire ; le marqueur `≈` et la note BCE n’apparaissent que pour un montant réellement converti.

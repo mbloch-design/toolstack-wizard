@@ -1,6 +1,9 @@
 import type { Tool } from "@/data/types";
 import { resolveMonthlyPrice } from "@/lib/pricing";
 import { CheckCircle2, CircleAlert } from "lucide-react";
+import { useCurrency } from "@/hooks/useCurrency";
+import { formatCurrencyAmount } from "@/lib/currency";
+import { resolveDisplayPrice } from "@/lib/nativePricing";
 
 interface Props {
   tool: Tool;
@@ -25,11 +28,14 @@ interface Props {
  * returns null only for free tools with nothing to compare against.
  */
 export default function ToolProfitabilityBlock({ tool, lang, t, keepText, challengeText }: Props) {
+  const { currency } = useCurrency();
   const verdict = lang === "en" && tool.verdictEn ? tool.verdictEn : tool.verdict;
   const curatedProfitable = verdict?.profitableIf;
   const curatedTooExpensive = verdict?.tooExpensiveIf;
 
   const price = resolveMonthlyPrice(tool);
+  const resolvedPrice = resolveDisplayPrice(tool, price, currency);
+  const displayPrice = `${resolvedPrice.converted ? "≈ " : ""}${formatCurrencyAmount(resolvedPrice.amount, currency, lang)}`;
   const ba = (tool as any).betterAlternative;
   const altReason = lang === "en"
     ? (ba?.performanceGainEn || ba?.reasonEn || ba?.performanceGain || ba?.reason)
@@ -41,7 +47,10 @@ export default function ToolProfitabilityBlock({ tool, lang, t, keepText, challe
     : price > 0
     ? [
         t("Tu l'utilises au moins une fois par semaine", "You use it at least once a week"),
-        t(`Le coût mensuel (${Math.round(price)}€) reste minime comparé au temps que ça te fait gagner`, `The monthly cost (€${Math.round(price)}) is small next to the time it saves you`),
+        t(
+          `Le coût mensuel (${displayPrice}) reste minime comparé au temps que ça te fait gagner`,
+          `The monthly cost (${displayPrice}) is small next to the time it saves you`,
+        ),
       ]
     : undefined;
 

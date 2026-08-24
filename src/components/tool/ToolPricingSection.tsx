@@ -2,6 +2,9 @@ import type { Tool } from "@/data/types";
 import { CreditCard, Sparkles, Package } from "lucide-react";
 import { hasGenuineFreeTier } from "@/lib/pricing";
 import { relExterne } from "@/lib/externalLink";
+import { CURRENCY_RATE_DATE, EUR_TO_USD, useCurrency, type Currency } from "@/hooks/useCurrency";
+import { convertCurrencyAmount, formatCurrencyAmount } from "@/lib/currency";
+import { resolveDisplayPrice } from "@/lib/nativePricing";
 
 // Slug de bundle -> nom lisible (ex. "adobe-creative-cloud" -> "Adobe Creative Cloud").
 const humanizeSlug = (s: string) =>
@@ -15,6 +18,7 @@ interface Props {
 }
 
 export default function ToolPricingSection({ tool, displayPrice, lang, t }: Props) {
+  const { currency } = useCurrency();
   const pricing = lang === "en" && tool.pricingEn ? tool.pricingEn : tool.pricing;
   // Variante de prix dans la langue de la page (résumés/plans localisés) ; repli sûr sur pricing_v5.
   const pv5 = lang === "en" && tool.pricing_v5En ? tool.pricing_v5En : tool.pricing_v5;
@@ -25,11 +29,20 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t }: Prop
   const hasPaid = pricing?.paid && !pricing.paid.toLowerCase().includes("non public");
   const verifiedOn = pv5?.verified_on;
   const officialUrl = pv5?.official_source_url;
+  const displayPaidPrice = resolveDisplayPrice(tool, displayPrice, currency);
+  const hasConvertedPrice = currency === "USD" && (
+    (canonicalPlans.length === 0 && displayPrice > 0 && displayPaidPrice.converted)
+    || canonicalPlans.some((plan) => !plan.isFree && plan.nativeAmount != null && plan.nativeCurrency === "EUR")
+  );
 
-  const formatNativeAmount = (amount: number, currency: string | null) => new Intl.NumberFormat(
-    lang === "en" ? "en-US" : "fr-FR",
-    { style: "currency", currency: currency || "EUR", maximumFractionDigits: 2 },
-  ).format(amount);
+  const formatNativeAmount = (amount: number, nativeCurrency: string | null) => {
+    const source = nativeCurrency === "USD" || nativeCurrency === "EUR" ? nativeCurrency : null;
+    if (!source) return new Intl.NumberFormat(lang === "en" ? "en-US" : "fr-FR", {
+      style: "currency", currency: nativeCurrency || "EUR", maximumFractionDigits: 2,
+    }).format(amount);
+    const converted = convertCurrencyAmount(amount, source as Currency, currency);
+    return `${source === currency ? "" : "≈ "}${formatCurrencyAmount(converted, currency, lang || "fr")}`;
+  };
 
   const bundleParent = tool.bundle_parent;
   const parentLang = lang === "en" ? "en" : "fr";
@@ -63,7 +76,7 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t }: Prop
                 </span>
                 {(plan.isFree || plan.nativeAmount != null) && (
                   <strong className="td-pricing-price">
-                    {plan.isFree ? "0 €" : formatNativeAmount(plan.nativeAmount!, plan.nativeCurrency)}
+                    {plan.isFree ? formatCurrencyAmount(0, currency, lang || "fr") : formatNativeAmount(plan.nativeAmount!, plan.nativeCurrency)}
                     {plan.isFree && plan.pricingUnit === "open_source" && <small>{t(" licence", " license")}</small>}
                     {!plan.isFree && plan.billingPeriod === "monthly" && <small>/{t("mois", "mo")}</small>}
                   </strong>
@@ -111,7 +124,7 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t }: Prop
                 <Sparkles aria-hidden />
                 {t("Gratuit", "Free")}
               </span>
-              <strong className="td-pricing-price">0 €</strong>
+              <strong className="td-pricing-price">{formatCurrencyAmount(0, currency, lang || "fr")}</strong>
             </div>
             <p className="td-pricing-copy">{pricing?.free}</p>
           </article>
@@ -127,7 +140,7 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t }: Prop
               </span>
               {displayPrice > 0 && (
                 <strong className="td-pricing-price">
-                  {displayPrice}€<small>/{t("mois", "mo")}</small>
+                  {displayPaidPrice.converted ? "≈ " : ""}{formatCurrencyAmount(displayPaidPrice.amount, currency, lang || "fr")}<small>/{t("mois", "mo")}</small>
                 </strong>
               )}
             </div>
@@ -150,6 +163,15 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t }: Prop
               {t("vérifié le", "verified on")} <time dateTime={verifiedOn}>{verifiedOn}</time>
             </>
           )}
+        </p>
+      )}
+
+      {hasConvertedPrice && (
+        <p className="td-pricing-evidence td-pricing-conversion-note">
+          {t("Conversion indicative", "Indicative conversion")} · 1 EUR = {EUR_TO_USD} USD ·
+          <a href="https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html" target="_blank" rel={relExterne("source")}>
+            {t(` taux BCE du ${CURRENCY_RATE_DATE}`, ` ECB rate from ${CURRENCY_RATE_DATE}`)}
+          </a>
         </p>
       )}
 

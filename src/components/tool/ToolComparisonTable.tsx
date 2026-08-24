@@ -6,6 +6,9 @@ import { ArrowRight, Check } from "lucide-react";
 import { CarouselControls, CarouselPagination } from "@/components/CarouselControls";
 import { computeToolTrimScore, starFill } from "@/lib/toolTrimScore";
 import { hasGenuineFreeTier } from "@/lib/pricing";
+import { useCurrency } from "@/hooks/useCurrency";
+import { formatCurrencyAmount } from "@/lib/currency";
+import { resolveDisplayPrice } from "@/lib/nativePricing";
 
 interface Props {
   tool: Tool;
@@ -33,6 +36,7 @@ function Stars({ score }: { score: number }) {
 }
 
 export default function ToolComparisonTable({ tool, alternatives, prefix, lang, t, includeCurrent = true }: Props) {
+  const { currency } = useCurrency();
   // Product pages compare the current tool with alternatives. Editorial
   // comparisons reuse the same module but only display the alternatives.
   const rows = includeCurrent ? [tool, ...alternatives.slice(0, 4)] : alternatives.slice(0, 4);
@@ -156,7 +160,10 @@ export default function ToolComparisonTable({ tool, alternatives, prefix, lang, 
                   <dl className="td-compare-facts">
                     <div>
                       <dt>{t("Prix mensuel", "Monthly price")}</dt>
-                      <dd>{price === 0 ? t("Gratuit", "Free") : `${Math.round(price)}€`}</dd>
+                      <dd>{price === 0 ? t("Gratuit", "Free") : (() => {
+                        const resolved = resolveDisplayPrice(row as Tool, price, currency);
+                        return `${resolved.converted ? "≈ " : ""}${formatCurrencyAmount(resolved.amount, currency, lang)}`;
+                      })()}</dd>
                     </div>
                     <div>
                       <dt>{t("Plan gratuit", "Free plan")}</dt>

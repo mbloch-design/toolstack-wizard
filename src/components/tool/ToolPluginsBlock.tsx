@@ -2,6 +2,9 @@ import { Link } from "react-router-dom";
 import type { Tool } from "@/data/types";
 import ToolLogo from "@/components/ToolLogo";
 import { Puzzle, Package, ArrowRight, Layers } from "lucide-react";
+import { useCurrency } from "@/hooks/useCurrency";
+import { formatCurrencyAmount } from "@/lib/currency";
+import { resolveDisplayPrice } from "@/lib/nativePricing";
 
 interface Props {
   tool: Tool;
@@ -12,6 +15,7 @@ interface Props {
 }
 
 export default function ToolPluginsBlock({ tool, allTools, prefix, lang, t }: Props) {
+  const { currency } = useCurrency();
   const toolId = (tool as any).slug || tool.id;
   const toolType = (tool as any).tool_type as string;
   const hostAppSlug = (tool as any).host_app as string | undefined;
@@ -99,7 +103,7 @@ export default function ToolPluginsBlock({ tool, allTools, prefix, lang, t }: Pr
                     </span>
                   ) : (m as any).defaultMonthlyPrice > 0 ? (
                     <span style={{ marginTop: 6, display: "inline-block", fontFamily: "var(--font-mono, ui-monospace)", fontSize: 11, color: "var(--color-muted)" }}>
-                      {Math.round((m as any).defaultMonthlyPrice)}€/{t("mois", "mo")}
+                      {(() => { const price = resolveDisplayPrice(m, (m as any).defaultMonthlyPrice, currency); return `${price.converted ? "≈ " : ""}${formatCurrencyAmount(price.amount, currency, lang)}`; })()}/{t("mois", "mo")}
                     </span>
                   ) : null}
                 </div>
@@ -206,7 +210,7 @@ export default function ToolPluginsBlock({ tool, allTools, prefix, lang, t }: Pr
                     </span>
                   ) : (p as any).defaultMonthlyPrice > 0 ? (
                     <span style={{ marginTop: 6, display: "inline-block", fontFamily: "var(--font-mono, ui-monospace)", fontSize: 11, color: "var(--color-muted)" }}>
-                      {Math.round((p as any).defaultMonthlyPrice)}€/{t("mois", "mo")}
+                      {(() => { const price = resolveDisplayPrice(p, (p as any).defaultMonthlyPrice, currency); return `${price.converted ? "≈ " : ""}${formatCurrencyAmount(price.amount, currency, lang)}`; })()}/{t("mois", "mo")}
                     </span>
                   ) : null}
                 </div>

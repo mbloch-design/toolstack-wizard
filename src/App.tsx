@@ -5,6 +5,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { LangContext } from "@/hooks/useLang";
+import { CurrencyProvider } from "@/hooks/useCurrency";
 import { Lang } from "@/data/types";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -137,6 +138,7 @@ const LangLayout = () => {
   );
 
   return (
+    <CurrencyProvider>
     <LangContext.Provider
       value={{
         lang: effectiveLang,
@@ -173,6 +175,7 @@ const LangLayout = () => {
         </>
       )}
     </LangContext.Provider>
+    </CurrencyProvider>
   );
 };
 

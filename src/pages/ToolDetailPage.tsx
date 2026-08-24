@@ -1,5 +1,6 @@
 import { useParams, Link, useLocation, useNavigate } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
+import { useCurrency } from "@/hooks/useCurrency";
 import { useToolBySlug, useToolSummaries, useCategories } from "@/hooks/useSupabaseData";
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Check, CirclePlus, CircleMinus, ExternalLink } from "lucide-react";
@@ -58,6 +59,7 @@ function splitUseCase(value: string): { title: string; detail?: string } {
 
 const ToolDetailPage = () => {
   const { lang, t, prefix } = useLang();
+  const { currency } = useCurrency();
   const { slug } = useParams();
   const location = useLocation();
   const navigate = useNavigate();
@@ -421,7 +423,7 @@ const ToolDetailPage = () => {
                 return isFree
                   ? t("Gratuit.", "Free.")
                   : displayPrice > 0
-                  ? `${t("À partir de", "From")} ${formatPriceLabel(tool, displayPrice, t)}.`
+                  ? `${t("À partir de", "From")} ${formatPriceLabel(tool, displayPrice, t, currency, lang)}.`
                   : null;
               })();
 
@@ -583,7 +585,7 @@ const ToolDetailPage = () => {
                       <dd>{displayPrice === 0
                         ? t("Gratuit", "Free")
                         : displayPrice != null && displayPrice > 0
-                          ? formatPriceLabel(tool, displayPrice, t)
+                          ? formatPriceLabel(tool, displayPrice, t, currency, lang)
                           : t("Sur devis", "Contact sales")}</dd>
                     </div>
                     {catName && (

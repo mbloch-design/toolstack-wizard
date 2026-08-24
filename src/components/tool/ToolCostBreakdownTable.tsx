@@ -1,4 +1,7 @@
 import type { Tool } from "@/data/types";
+import { useCurrency, type Currency } from "@/hooks/useCurrency";
+import { convertCurrencyAmount, formatCurrencyAmount } from "@/lib/currency";
+import { resolveDisplayPrice } from "@/lib/nativePricing";
 
 interface Props {
   tool: Tool;
@@ -30,6 +33,7 @@ function verdictForMonthly(monthlyEur: number): { fr: string; en: string } {
  * tools, where multiplying by headcount wouldn't mean anything).
  */
 export default function ToolCostBreakdownTable({ tool, lang, t }: Props) {
+  const { currency } = useCurrency();
   const pv5 = (tool as any).pricing_v5;
   const curatedRows = pv5?.costTable as CostRow[] | undefined;
 
@@ -48,15 +52,17 @@ export default function ToolCostBreakdownTable({ tool, lang, t }: Props) {
         // price would contradict a billing trap saying the plan can't
         // actually be bought below N seats.
         const billedSeats = minSeats ? Math.max(n, minSeats) : n;
-        const monthly = pv5.compare_price_monthly_eur * billedSeats;
+        const monthlyEur = pv5.compare_price_monthly_eur * billedSeats;
+        const unit = resolveDisplayPrice(tool, pv5.compare_price_monthly_eur, currency);
+        const monthly = unit.amount * billedSeats;
         const annual = monthly * 12;
-        const v = verdictForMonthly(monthly);
+        const v = verdictForMonthly(monthlyEur);
         const seatNote = minSeats && billedSeats > n ? ` (${minSeats} min.)` : "";
         return {
           team: (n === 1 ? t("Solo", "Solo") : t(`${n} personnes`, `${n} people`)) + seatNote,
           plan: pv5.compare_plan_name || t("Standard", "Standard"),
-          monthlyUsd: `~${Math.round(monthly)} €`,
-          annualUsd: `~${Math.round(annual)} €`,
+          monthlyUsd: `${unit.converted ? "~" : ""}${formatCurrencyAmount(monthly, currency, lang)}`,
+          annualUsd: `${unit.converted ? "~" : ""}${formatCurrencyAmount(annual, currency, lang)}`,
           verdictFr: v.fr,
           verdictEn: v.en,
         };
@@ -64,6 +70,14 @@ export default function ToolCostBreakdownTable({ tool, lang, t }: Props) {
     : undefined;
 
   if (!rows?.length) return null;
+  const formatCuratedCost = (value: string) => {
+    if (currency === "EUR" || !curatedRows?.length) return value;
+    const numeric = Number(value.replace(/[^0-9.,]/g, "").replace(",", "."));
+    if (!Number.isFinite(numeric)) return value;
+    const source: Currency = value.includes("$") ? "USD" : "EUR";
+    const converted = convertCurrencyAmount(numeric, source, currency);
+    return `${value.trim().startsWith("~") || source !== currency ? "~" : ""}${formatCurrencyAmount(converted, currency, lang)}`;
+  };
   const note = curatedRows?.length
     ? (lang === "en" ? pv5?.costTableNoteEn : pv5?.costTableNoteFr)
     : t(
@@ -93,8 +107,8 @@ export default function ToolCostBreakdownTable({ tool, lang, t }: Props) {
               <tr key={i} className="last:border-0" style={{ borderBottom: "1px solid var(--color-border-soft)" }}>
                 <td className="py-3 px-4" style={{ fontWeight: 500, color: "var(--color-text)" }}>{lang === "en" ? (row.teamEn || row.team) : row.team}</td>
                 <td className="py-3 px-4" style={{ color: "var(--color-muted)" }}>{lang === "en" ? (row.planEn || row.plan) : row.plan}</td>
-                <td className="py-3 px-4 text-right tabular-nums" style={{ color: "var(--color-text)" }}>{row.monthlyUsd}</td>
-                <td className="py-3 px-4 text-right tabular-nums" style={{ fontWeight: 600, color: "var(--color-text-strong)" }}>{row.annualUsd}</td>
+                <td className="py-3 px-4 text-right tabular-nums" style={{ color: "var(--color-text)" }}>{formatCuratedCost(row.monthlyUsd)}</td>
+                <td className="py-3 px-4 text-right tabular-nums" style={{ fontWeight: 600, color: "var(--color-text-strong)" }}>{formatCuratedCost(row.annualUsd)}</td>
                 <td className="py-3 px-4" style={{ color: "var(--color-muted)" }}>{lang === "en" ? row.verdictEn : row.verdictFr}</td>
               </tr>
             ))}
