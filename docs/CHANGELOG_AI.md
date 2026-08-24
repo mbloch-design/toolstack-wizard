@@ -3945,3 +3945,14 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Remplacement du pictogramme générique des articles par leur image de couverture dans la recherche globale.
 - Conservation d'un repli iconographique lorsque la couverture est absente.
 - Recomposition des cartes avec une hiérarchie média, titre, puis métadonnées cohérente avec l'accueil.
+
+## 2026-08-24 · Fiche outil, lecture et barre de décision
+
+- Recomposition du bloc éditorial en deux colonnes internes : analyse et usages à gauche, audience et faits vérifiés à droite.
+- Suppression du bandeau de contexte redondant afin de conserver une seule source visuelle pour « Pour qui » et les fonctionnalités.
+- Suppression du header compact dupliqué : le hero visuel devient lui-même compact et sticky après son passage à l’écran.
+- Conservation dans cet état réduit de l’image, du nom et de l’accès au site ou à l’offre, sans masquer ni déplacer la sidebar de décision.
+- Maintien de la colonne de décision à droite, alignée en haut et indépendante du hero qui reste strictement dans le contenu éditorial gauche.
+- Transition progressive de l’image, de la hauteur et des contenus vers l’état compact, sans déplacement de la sidebar.
+- État compact complété par la catégorie et le prix, rayons harmonisés sur les panneaux ToolTrim et CTA renommé « Visiter le site » pour refléter sa destination réelle.
+- Bandeau compact allégé à 62 px, avec visuel, typographie, CTA, rayon et ombre recalibrés pour accompagner la lecture sans recouvrir visuellement le contenu.

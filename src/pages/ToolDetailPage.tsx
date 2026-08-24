@@ -64,7 +64,7 @@ const ToolDetailPage = () => {
   const { tool, loading } = useToolBySlug(slug);
   const { tools } = useToolSummaries();
   const { categories } = useCategories();
-  const heroEndRef = useRef<HTMLDivElement | null>(null);
+  const heroRef = useRef<HTMLDivElement | null>(null);
   const [showCompactHeader, setShowCompactHeader] = useState(false);
 
   // Normalize trailing slashes so prerendered URLs and client-side routing
@@ -208,29 +208,39 @@ const ToolDetailPage = () => {
   }, [loading, tool, navigate, prefix]);
 
   useEffect(() => {
-    const marker = heroEndRef.current;
-    if (!marker || !tool) return;
+    const hero = heroRef.current;
+    if (!hero || !tool) return;
 
-    const scrollRoot = marker.closest(".asv2-content");
+    const scrollRoot = hero.closest(".asv2-content");
     if (!(scrollRoot instanceof HTMLElement)) return;
 
     let frame = 0;
+    let compactAt = 0;
+    const measure = () => {
+      const rootTop = scrollRoot.getBoundingClientRect().top;
+      compactAt = scrollRoot.scrollTop + hero.getBoundingClientRect().bottom - rootTop;
+      hero.closest<HTMLElement>(".td-page-grid")?.style.setProperty("--td-hero-expanded-h", `${hero.offsetHeight}px`);
+    };
     const updateCompactHeader = () => {
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(() => {
-        const rootTop = scrollRoot.getBoundingClientRect().top;
-        setShowCompactHeader(marker.getBoundingClientRect().top <= rootTop);
+        setShowCompactHeader(scrollRoot.scrollTop >= compactAt);
       });
     };
+    const handleResize = () => {
+      if (!hero.classList.contains("is-compact")) measure();
+      updateCompactHeader();
+    };
 
+    measure();
     updateCompactHeader();
     scrollRoot.addEventListener("scroll", updateCompactHeader, { passive: true });
-    window.addEventListener("resize", updateCompactHeader);
+    window.addEventListener("resize", handleResize);
 
     return () => {
       cancelAnimationFrame(frame);
       scrollRoot.removeEventListener("scroll", updateCompactHeader);
-      window.removeEventListener("resize", updateCompactHeader);
+      window.removeEventListener("resize", handleResize);
     };
   }, [tool, subPage]);
 
@@ -298,13 +308,8 @@ const ToolDetailPage = () => {
   const sourceDomain  = tool.pricing_v5?.source_domain;
   const domain        = getDomainFromUrl(tool.websiteUrl) || getToolDomain(tool);
   const primaryCtaUrl = tool.affiliateLink || tool.websiteUrl || "#";
-  const hasAffiliateOffer = Boolean(tool.affiliateLink);
   const isFree        = displayPrice === 0 && !tool.pricing?.paid;
-  const primaryCtaLabel = hasAffiliateOffer
-    ? t("Voir l’offre", "View offer")
-    : isFree
-    ? t("Essayer gratuitement", "Try for free")
-    : t("Visiter le site", "Visit website");
+  const primaryCtaLabel = t("Visiter le site", "Visit website");
   const hasFreeplan   = hasGenuineFreeTier(tool.pricing?.free);
   // Was `!!(tool.pricing?.free && tool.pricing?.paid)` — pure truthiness,
   // so a free field describing the ABSENCE of a free plan ("Pas de plan
@@ -314,6 +319,8 @@ const ToolDetailPage = () => {
   const isFreemium    = hasFreeplan && !!tool.pricing?.paid;
   const catName       = stripLeadingEmoji(category?.name, category?.id || "");
   const catNameEn     = stripLeadingEmoji(category?.nameEn, catName);
+  const compactCatName = catName.replace(/^[\uFE0E\uFE0F\s]+/u, "");
+  const compactCatNameEn = catNameEn.replace(/^[\uFE0E\uFE0F\s]+/u, "");
 
   const toolType = (tool as any).tool_type as string;
 
@@ -363,7 +370,7 @@ const ToolDetailPage = () => {
     : null;
 
   return (
-    <article className="min-h-screen" itemScope itemType="https://schema.org/WebPage">
+    <article className={`min-h-screen td-tool-page${showCompactHeader ? " td-tool-page--compact" : ""}`} itemScope itemType="https://schema.org/WebPage">
       <ToolJsonLd
         tool={tool} category={category} displayPrice={displayPrice}
         verifiedOn={verifiedOn} alternatives={alternatives} lang={lang}
@@ -375,36 +382,6 @@ const ToolDetailPage = () => {
           subPage === "faq" ? "/faq" : ""
         }`}
       />
-
-      <div
-        className={`td-tool-compact-anchor${showCompactHeader ? " is-visible" : ""}`}
-        aria-hidden={!showCompactHeader}
-      >
-        <div className="td-tool-compact-surface">
-          <div className="td-container">
-            <div className="td-tool-compact-bar">
-              <div className="td-tool-compact-main">
-                <div className="td-tool-compact-identity">
-                  <span className="td-tool-compact-logo">
-                    <ToolLogo tool={tool as any} size={30} />
-                  </span>
-                  <strong>{tool.name}</strong>
-                </div>
-                <a
-                  href={primaryCtaUrl}
-                  target="_blank"
-                  rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl)}
-                  className="td-tool-compact-cta"
-                  tabIndex={showCompactHeader ? 0 : -1}
-                >
-                  <span>{primaryCtaLabel}</span>
-                  <ExternalLink aria-hidden />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
       {/* ══════════════════════════════════════════════════════════
           HERO — tool identity & positioning
@@ -430,7 +407,7 @@ const ToolDetailPage = () => {
 
             {/* Hero identity — Ma-stack inspector gabarit: bordered card, cover
                 image on top, heading (category eyebrow, H1, description) below. */}
-            <div className="td-hero">
+            <div ref={heroRef} className={`td-hero${showCompactHeader ? " is-compact" : ""}`}>
             {(() => {
               const ogImg = (tool.ogImageUrl ?? (tool as any).og_image_url) as string | null;
               const extra = ((tool as any).gallery_images as string[] | null) ?? [];
@@ -485,6 +462,12 @@ const ToolDetailPage = () => {
                         </span>
                       </h1>
 
+                      <p className="td-hero-compact-meta" aria-hidden={!showCompactHeader}>
+                        {category && <span>{t(compactCatName, compactCatNameEn)}</span>}
+                        {category && priceContext && <span aria-hidden="true">·</span>}
+                        {priceContext && <span>{priceContext.replace(/\.$/, "")}</span>}
+                      </p>
+
                       {tool.shortDescription && (
                         <p className="td-hero-desc">
                           {t(tool.shortDescription, (tool as any).shortDescriptionEn || tool.shortDescription)}
@@ -494,7 +477,7 @@ const ToolDetailPage = () => {
                     </div>
                   </div>
 
-                  <div ref={heroEndRef} className="td-hero-end-marker" aria-hidden="true" />
+                  <div className="td-hero-end-marker" aria-hidden="true" />
 
                   {/* Remaining screenshots (if any) below the hero card */}
                   {isPresentation && rest.length > 0 && <ToolGallery images={rest} toolName={tool.name} />}
@@ -513,36 +496,6 @@ const ToolDetailPage = () => {
               ))}
             </nav>
 
-            {/* Immediate orientation: answer what the tool does and who it is
-                for before asking the reader to interpret a verdict. */}
-            {isPresentation && ((tool as any).relevantFor?.length > 0 || (tool as any).covers?.length > 0 || (tool as any).functional_needs?.length > 0) && (
-              <section className="td-quick-context" aria-label={t(`À quoi sert ${tool.name}`, `What ${tool.name} is for`)}>
-                {(tool as any).relevantFor?.length > 0 && (
-                  <div className="td-quick-context-group">
-                    <span className="td-quick-context-label">{t("Pour qui", "Best for")}</span>
-                    <ToolAudienceBlock
-                      relevantFor={(tool as any).relevantFor || []}
-                      soloRelevance={tool.soloRelevance}
-                      teamRelevance={tool.teamRelevance}
-                      toolName={tool.name}
-                      t={t}
-                    />
-                  </div>
-                )}
-                {((tool as any).covers?.length > 0 || (tool as any).functional_needs?.length > 0) && (
-                  <div className="td-quick-context-group">
-                    <span className="td-quick-context-label">{t("Ce que fait l'outil", "What it does")}</span>
-                    <ToolFeaturesBlock
-                      covers={(tool as any).covers || []}
-                      functionalNeeds={(tool as any).functional_needs || []}
-                      toolName={tool.name}
-                      t={t}
-                    />
-                  </div>
-                )}
-              </section>
-            )}
-
             {isPresentation && (
               <ToolTutorialsSection
                 tutorials={tutorials}
@@ -557,13 +510,14 @@ const ToolDetailPage = () => {
               <StickyDecisionCard {...cardProps} />
             </div>
 
-            {/* Editorial introduction — this frames the whole fiche, so it
-                belongs directly after the factual opening rather than in the
-                late-stage Details chapter. */}
+            {/* Editorial overview: the reference layout is reproduced inside
+                the content itself — analysis on the left, factual rail on the
+                right. The global sticky decision card remains action-only. */}
             {showAnalysis && hasEditorialIntro && (
-                <section className="td-editorial-intro">
+              <section className="td-editorial-overview">
+                <div className="td-editorial-intro">
                   <header className="td-editorial-intro-head">
-                    <span className="td-eyebrow">{t("Notre lecture", "Our take")}</span>
+                    <span className="td-eyebrow">{t("À propos", "About")}</span>
                     <h2 className="td-editorial-intro-title">
                       {t(`Comprendre ${tool.name}.`, `Understanding ${tool.name}.`)}
                     </h2>
@@ -593,8 +547,74 @@ const ToolDetailPage = () => {
                         </div>
                       </section>
                     )}
+                    {((tool as any).covers?.length > 0 || (tool as any).functional_needs?.length > 0) && (
+                      <section className="td-editorial-intro-features">
+                        <h3 className="td-eyebrow">{t("Fonctionnalités et usages", "Features & use cases")}</h3>
+                        <ToolFeaturesBlock
+                          covers={(tool as any).covers || []}
+                          functionalNeeds={(tool as any).functional_needs || []}
+                          toolName={tool.name}
+                          t={t}
+                        />
+                      </section>
+                    )}
                   </div>
-                </section>
+                </div>
+
+                <aside className="td-editorial-facts" aria-label={t(`Informations sur ${tool.name}`, `${tool.name} facts`)}>
+                  <section className="td-editorial-fact-group">
+                    <h3>{t("Pour qui", "Best for")}</h3>
+                    <ToolAudienceBlock
+                      relevantFor={(tool as any).relevantFor?.length > 0
+                        ? (tool as any).relevantFor
+                        : (tool as any).verticals?.length > 0
+                          ? (tool as any).verticals
+                          : ((tool as any).functional_needs || [])}
+                      soloRelevance={tool.soloRelevance}
+                      teamRelevance={tool.teamRelevance}
+                      toolName={tool.name}
+                      t={t}
+                    />
+                  </section>
+
+                  <dl className="td-editorial-fact-list">
+                    <div>
+                      <dt>{t("Prix", "Pricing")}</dt>
+                      <dd>{displayPrice === 0
+                        ? t("Gratuit", "Free")
+                        : displayPrice != null && displayPrice > 0
+                          ? formatPriceLabel(tool, displayPrice, t)
+                          : t("Sur devis", "Contact sales")}</dd>
+                    </div>
+                    {catName && (
+                      <div>
+                        <dt>{t("Catégorie", "Category")}</dt>
+                        <dd>{t(catName, catNameEn)}</dd>
+                      </div>
+                    )}
+                    {(tool as any).host_app && (
+                      <div>
+                        <dt>{t("Plateforme", "Platform")}</dt>
+                        <dd>{(tool as any).host_app}</dd>
+                      </div>
+                    )}
+                    <div>
+                      <dt>{t("Dernière vérification", "Last verified")}</dt>
+                      <dd>{new Intl.DateTimeFormat(lang, { day: "numeric", month: "long", year: "numeric" }).format(new Date(`${verifiedOn}T00:00:00`))}</dd>
+                    </div>
+                  </dl>
+
+                  {tool.websiteUrl && (
+                    <section className="td-editorial-fact-group">
+                      <h3>{t("Lien", "Link")}</h3>
+                      <a className="td-editorial-official-link" href={tool.websiteUrl} target="_blank" rel="noopener noreferrer">
+                        <span>{t("Site officiel", "Official website")}</span>
+                        <ExternalLink aria-hidden />
+                      </a>
+                    </section>
+                  )}
+                </aside>
+              </section>
             )}
 
             {/* ════════════════════════════════
