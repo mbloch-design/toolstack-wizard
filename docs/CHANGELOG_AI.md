@@ -7,6 +7,11 @@
 - L’accès global « Ma stack » conserve son rôle de navigation dans la topbar avec un traitement utilitaire discret sur les fiches outils.
 - Le verdict ToolTrim est désormais présenté comme une information statique : le lien, la flèche directionnelle et les états de survol ont été retirés.
 - La compaction du hero se déclenche dès qu’il atteint sa position sticky, et non après le passage de toute sa hauteur développée, ce qui synchronise la transition avec le contenu quelle que soit la longueur de la fiche.
+- Le hero abandonne la composition publicitaire en deux colonnes : l’identité éditoriale passe en premier avec le logo associé au nom, tandis que l’image OG devient un support visuel pleine largeur placé sous les informations et disparaît dans l’état sticky compact.
+- Le support visuel devient un viewer média unique pouvant combiner image OG, captures supplémentaires et vidéos officielles ; les miniatures permettent de changer de média sans allonger le hero et le lecteur vidéo n’est chargé qu’après une action explicite.
+- Deel sert de premier cas complet avec son image OG et une démo de plateforme issue de sa chaîne YouTube officielle, vérifiée via oEmbed.
+- Le hero ne répète plus la formule SEO « Avis, prix et alternatives » ni le prix : ces informations restent dans leurs sections dédiées, tandis que l’ouverture se concentre sur le nom, la catégorie et la promesse de l’outil.
+- La galerie du hero adopte une grille de deux médias côte à côte inspirée de la référence ; au-delà de deux éléments, le slider avance par paire, tandis que le mobile conserve une carte principale et un aperçu horizontal de la suivante.
 
 ## 2026-08-18 · Pilote d’extension du catalogue canonique
 
@@ -3974,3 +3979,7 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Correction de la hiérarchie tarifaire : un prix natif USD collecté est désormais affiché tel quel ; le prix EUR normalisé n’est reconverti que lorsqu’aucune observation USD fiable n’est disponible.
 - Priorité aux plans canoniques, puis au registre `pricing_truth`, puis au montant explicitement libellé dans le contenu tarifaire ; le marqueur `≈` et la note BCE n’apparaissent que pour un montant réellement converti.
 - Le hero compact sticky masque directement le contenu défilant avec un fondu alpha progressif sur 64 px : aucune couleur blanche n’est peinte et textes, icônes et surfaces s’éteignent ensemble, sans chevauchement, surbrillance, filet ni aplat visible.
+- 2026-08-24 — Page outil : le grand titre et son état sticky partagent désormais la même grille d’identité (logo, nom/catégorie, CTA), afin de conserver les axes et la hiérarchie pendant la transition.
+- 2026-08-24 — Galerie hero : les médias sortent de la carte d’identité et adoptent le ratio OG 1200:630 sans fond ni cadre englobant, pour supprimer l’effet de boîte imbriquée.
+- 2026-08-24 — Sticky hero : suppression du spacer qui conservait artificiellement la hauteur de la galerie ; sa hauteur et sa marge se replient ensemble, tandis qu’un décalage égal à la barre compacte synchronise l’arrivée du contenu juste sous le sticky.
+- 2026-08-24 — Identité hero : le bloc nom/catégorie prend exactement la hauteur du logo, avec justification verticale haut/bas et titre recalibré pour conserver des proportions cohérentes dans les états large et sticky.

@@ -1,67 +1,136 @@
 import { useState, useCallback } from "react";
+import { Play } from "lucide-react";
+import type { ToolTutorial } from "@/data/toolTutorials";
 
 interface Props {
   images: string[];
+  videos?: ToolTutorial[];
   toolName: string;
+  variant?: "default" | "hero";
 }
 
-export default function ToolGallery({ images, toolName }: Props) {
+type GalleryItem =
+  | { type: "image"; key: string; src: string }
+  | { type: "video"; key: string; video: ToolTutorial };
+
+export default function ToolGallery({ images, videos = [], toolName, variant = "default" }: Props) {
   const [active, setActive] = useState(0);
-  const [failed, setFailed] = useState<Set<number>>(new Set());
+  const [failed, setFailed] = useState<Set<string>>(new Set());
+  const [playingVideoId, setPlayingVideoId] = useState<string | null>(null);
 
-  const visible = images.filter((_, i) => !failed.has(i));
+  const items: GalleryItem[] = [
+    ...images.map((src) => ({ type: "image" as const, key: `image:${src}`, src })),
+    ...videos.map((video) => ({ type: "video" as const, key: `video:${video.videoId}`, video })),
+  ];
+  const visible = items.filter((item) => item.type === "video" || !failed.has(item.key));
 
-  const prev = useCallback(() => setActive((i) => (i - 1 + visible.length) % visible.length), [visible.length]);
-  const next = useCallback(() => setActive((i) => (i + 1) % visible.length), [visible.length]);
+  const select = useCallback((index: number) => {
+    setPlayingVideoId(null);
+    setActive(index);
+  }, []);
+  const prev = useCallback(() => select((active - 1 + visible.length) % visible.length), [active, select, visible.length]);
+  const next = useCallback(() => select((active + 1) % visible.length), [active, select, visible.length]);
 
   if (!visible.length) return null;
 
-  const src = visible[active];
+  const safeActive = Math.min(active, visible.length - 1);
+  const item = visible[safeActive];
+  const heroPageStart = Math.floor(safeActive / 2) * 2;
+  const heroItems = visible.slice(heroPageStart, heroPageStart + 2);
+  const heroPageCount = Math.ceil(visible.length / 2);
+  const heroPage = Math.floor(heroPageStart / 2) + 1;
+
+  const renderMedia = (media: GalleryItem, index: number) => media.type === "image" ? (
+    <img
+      key={media.key}
+      src={media.src}
+      alt={`${toolName}, aperçu ${index + 1}`}
+      className="tg-main-img"
+      loading={index === 0 ? "eager" : "lazy"}
+      fetchpriority={index === 0 ? "high" : "auto"}
+      onError={() => {
+        setFailed((current) => new Set([...current, media.key]));
+        setActive(0);
+      }}
+    />
+  ) : playingVideoId === media.video.videoId ? (
+    <iframe
+      key={media.key}
+      className="tg-main-video"
+      src={`https://www.youtube-nocookie.com/embed/${media.video.videoId}?autoplay=1&rel=0`}
+      title={media.video.titleFr}
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+    />
+  ) : (
+    <button
+      key={media.key}
+      type="button"
+      className="tg-video-poster"
+      onClick={() => setPlayingVideoId(media.video.videoId)}
+      aria-label={`Lire la vidéo : ${media.video.titleFr}`}
+    >
+      <img src={`https://i.ytimg.com/vi/${media.video.videoId}/hqdefault.jpg`} alt="" />
+      <span className="tg-video-play"><Play aria-hidden fill="currentColor" /></span>
+      <span className="tg-video-caption"><strong>{media.video.titleFr}</strong><small>{media.video.duration}</small></span>
+    </button>
+  );
+
+  if (variant === "hero") {
+    const previousPage = () => select(heroPageStart > 0 ? heroPageStart - 2 : Math.max(0, (heroPageCount - 1) * 2));
+    const nextPage = () => select(heroPageStart + 2 < visible.length ? heroPageStart + 2 : 0);
+
+    return (
+      <div className="tg-viewer tg-viewer--hero">
+        <div className={`tg-hero-grid${heroItems.length === 1 ? " tg-hero-grid--single" : ""}`}>
+          {heroItems.map((media, index) => (
+            <div className="tg-hero-cell" key={media.key}>
+              {renderMedia(media, heroPageStart + index)}
+            </div>
+          ))}
+        </div>
+        {heroPageCount > 1 && (
+          <>
+            <button type="button" className="tg-nav tg-nav-prev" onClick={previousPage} aria-label="Médias précédents" />
+            <button type="button" className="tg-nav tg-nav-next" onClick={nextPage} aria-label="Médias suivants" />
+            <span className="tg-counter">{heroPage} / {heroPageCount}</span>
+          </>
+        )}
+      </div>
+    );
+  }
 
   return (
-    <div className="tg-viewer" style={{ marginTop: 28 }}>
+    <div className="tg-viewer">
 
-      {/* Full-width image */}
       <div className="tg-main">
-        {/* The first frame is the fiche's hero image and a likely LCP
-            element — load it eagerly with high priority instead of lazy,
-            which was deferring the fetch until after layout. Later frames
-            are user-triggered, so lazy is fine for them. */}
-        <img
-          key={src}
-          src={src}
-          alt={`${toolName}, aperçu ${active + 1}`}
-          className="tg-main-img"
-          loading={active === 0 ? "eager" : "lazy"}
-          // Lowercase fetchpriority: this React version doesn't recognize
-          // fetchPriority as a known DOM prop and warns/drops it otherwise.
-          fetchpriority={active === 0 ? "high" : "auto"}
-          onError={() => {
-            setFailed((s) => new Set([...s, images.indexOf(src)]));
-            if (active >= visible.length - 1) setActive(0);
-          }}
-        />
+        {renderMedia(item, safeActive)}
         {visible.length > 1 && (
           <>
-            <button className="tg-nav tg-nav-prev" onClick={prev} aria-label="Précédent" />
-            <button className="tg-nav tg-nav-next" onClick={next} aria-label="Suivant" />
-            <span className="tg-counter">{active + 1} / {visible.length}</span>
+            <button type="button" className="tg-nav tg-nav-prev" onClick={prev} aria-label="Précédent" />
+            <button type="button" className="tg-nav tg-nav-next" onClick={next} aria-label="Suivant" />
+            <span className="tg-counter">{safeActive + 1} / {visible.length}</span>
           </>
         )}
       </div>
 
-      {/* Thumbnails */}
       {visible.length > 1 && (
         <div className="tg-thumbs">
-          {visible.map((thumbSrc, i) => (
+          {visible.map((thumb, i) => (
             <button
-              key={thumbSrc}
-              className={`tg-dot-thumb${i === active ? " tg-dot-thumb--active" : ""}`}
-              onClick={() => setActive(i)}
+              type="button"
+              key={thumb.key}
+              className={`tg-dot-thumb${i === safeActive ? " tg-dot-thumb--active" : ""}`}
+              onClick={() => select(i)}
               aria-label={`Aperçu ${i + 1}`}
-              aria-current={i === active}
+              aria-current={i === safeActive}
             >
-              <img src={thumbSrc} alt="" className="tg-dot-img" />
+              <img
+                src={thumb.type === "image" ? thumb.src : `https://i.ytimg.com/vi/${thumb.video.videoId}/mqdefault.jpg`}
+                alt=""
+                className="tg-dot-img"
+              />
+              {thumb.type === "video" && <Play className="tg-dot-play" aria-hidden fill="currentColor" />}
             </button>
           ))}
         </div>

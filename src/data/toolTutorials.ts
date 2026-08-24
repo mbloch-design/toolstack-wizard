@@ -6,7 +6,7 @@ export interface ToolTutorial {
   author: string;
   duration: string;
   sourceUrl: string;
-  publishedOn: string;
+  publishedOn?: string;
   verifiedOn: string;
 }
 
@@ -15,6 +15,13 @@ export interface ToolTutorial {
  * Every entry must be checked against the provider's oEmbed endpoint.
  */
 export const TOOL_TUTORIALS: Record<string, ToolTutorial[]> = {
+  deel: [{
+    provider: "youtube", videoId: "9vuekfsaYoo",
+    titleFr: "Démo complète de la plateforme Deel", titleEn: "Deel end-to-end platform demo",
+    author: "Deel", duration: "4:00",
+    sourceUrl: "https://www.youtube.com/watch?v=9vuekfsaYoo",
+    verifiedOn: "2026-08-24",
+  }],
   notion: [{
     provider: "youtube", videoId: "aA7si7AmPkY",
     titleFr: "Formation Notion : les bases", titleEn: "Notion training: the basics",

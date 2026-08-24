@@ -25,7 +25,6 @@ import ToolCostBreakdownTable from "@/components/tool/ToolCostBreakdownTable";
 import ToolBillingTrapsBlock from "@/components/tool/ToolBillingTrapsBlock";
 import ToolAiBlock from "@/components/tool/ToolAiBlock";
 import ToolGallery from "@/components/tool/ToolGallery";
-import ToolTutorialsSection from "@/components/tool/ToolTutorialsSection";
 import { getToolTutorials } from "@/data/toolTutorials";
 import { computeToolTrimScore } from "@/lib/toolTrimScore";
 import { findSimilarTools } from "@/lib/alternativesSimilarity";
@@ -225,7 +224,8 @@ const ToolDetailPage = () => {
       // bottom delayed the state change by the full expanded height, allowing
       // following content to slide underneath a still-expanded card.
       compactAt = scrollRoot.scrollTop + hero.getBoundingClientRect().top - rootTop;
-      hero.closest<HTMLElement>(".td-page-grid")?.style.setProperty("--td-hero-expanded-h", `${hero.offsetHeight}px`);
+      const heroMedia = hero.querySelector<HTMLElement>(".td-hero-media");
+      if (heroMedia) hero.style.setProperty("--td-hero-media-h", `${heroMedia.scrollHeight}px`);
     };
     const updateCompactHeader = () => {
       cancelAnimationFrame(frame);
@@ -332,8 +332,6 @@ const ToolDetailPage = () => {
   const isFreemium    = hasFreeplan && !!tool.pricing?.paid;
   const catName       = stripLeadingEmoji(category?.name, category?.id || "");
   const catNameEn     = stripLeadingEmoji(category?.nameEn, catName);
-  const compactCatName = catName.replace(/^[\uFE0E\uFE0F\s]+/u, "");
-  const compactCatNameEn = catNameEn.replace(/^[\uFE0E\uFE0F\s]+/u, "");
 
   const toolType = (tool as any).tool_type as string;
 
@@ -354,16 +352,6 @@ const ToolDetailPage = () => {
   const showDeepDive = isPresentation;
   const showReview = isPresentation || subPage === "avis";
   const showFaq = isPresentation || subPage === "faq";
-  const year = new Date().getFullYear();
-  const heroIntent = subPage === "prix"
-    ? t(`Prix et tarifs ${year}`, `Pricing and plans ${year}`)
-    : subPage === "alternatives"
-    ? t(`Meilleures alternatives ${year}`, `Best alternatives ${year}`)
-    : subPage === "avis"
-    ? t(`Avis et verdict ${year}`, `Review and verdict ${year}`)
-    : subPage === "faq"
-    ? t(`Questions fréquentes ${year}`, `Frequently asked questions ${year}`)
-    : t(`Avis, prix et alternatives ${year}`, `Reviews, pricing and alternatives ${year}`);
   const baseToolPath = `${prefix}/tool/${tool.slug || tool.id}`;
   const subpageLinks = [
     { key: "presentation", label: t("Vue d’ensemble", "Overview"), to: baseToolPath },
@@ -418,82 +406,56 @@ const ToolDetailPage = () => {
           {/* ── MAIN COLUMN (left): hero identity + sections ── */}
           <main className="td-main">
 
-            {/* Hero identity — Ma-stack inspector gabarit: bordered card, cover
-                image on top, heading (category eyebrow, H1, description) below. */}
+            {/* Hero identity — editorial identity first, supporting OG visual
+                below. The product logo remains associated with its name in
+                both the expanded and compact sticky states. */}
             <div ref={heroRef} className={`td-hero${showCompactHeader ? " is-compact" : ""}`}>
             {(() => {
               const ogImg = (tool.ogImageUrl ?? (tool as any).og_image_url) as string | null;
               const extra = ((tool as any).gallery_images as string[] | null) ?? [];
               const imgs = [ogImg, ...extra].filter((u): u is string => !!u);
-              const cover = imgs[0] ?? null;
-              const rest = imgs.slice(1);
+              const hasHeroMedia = imgs.length > 0 || tutorials.length > 0;
               // Keep the hero factual. The verdict belongs to the decision
               // card and to the analysis below, so repeating it here made the
               // first screen say the same thing three times.
-              const priceContext = (() => {
-                return isFree
-                  ? t("Gratuit.", "Free.")
-                  : displayPrice > 0
-                  ? `${t("À partir de", "From")} ${formatPriceLabel(tool, displayPrice, t, currency, lang)}.`
-                  : null;
-              })();
-
               return (
                 <>
-                  <div className={`td-hero-card${cover ? " td-hero-card--with-cover" : ""}`}>
-                    {cover && (
-                      <img
-                        className="td-hero-cover"
-                        src={cover}
-                        alt={t(`Aperçu de ${tool.name}`, `${tool.name} preview`) as string}
-                        loading="lazy"
-                        width={1200}
-                        height={630}
-                      />
-                    )}
+                  <div className="td-hero-card">
                     <div className="td-hero-heading">
-                      <div className="td-hero-eyebrow-row">
+                      <div className="td-hero-identity-grid">
+                        <span className="td-hero-logo" aria-hidden="true">
+                          <ToolLogo tool={tool} size={64} className="td-hero-logo-image" />
+                        </span>
+
+                        <div className="td-hero-name-block">
+                          <h1 className="td-hero-h1">{tool.name}</h1>
                         {category && (
                           <Link className="td-hero-cat" to={`${prefix}/category/${category.slug}`}>
                             {CategoryIcon && <CategoryIcon className="td-icon-xs" />}
                             {t(catName, catNameEn)}
                           </Link>
                         )}
+                        </div>
+
                         <a href={primaryCtaUrl} target="_blank" rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl)} className="td-hero-site-link">
                           {primaryCtaLabel}
                           <ExternalLink aria-hidden />
                         </a>
                       </div>
 
-                      {/* Single H1: name + intent subtitle nested in the same tag
-                          so Google reads "Notion — Avis, prix et alternatives".
-                          The space keeps the raw text from running together. */}
-                      <h1 className="td-hero-h1">
-                        {tool.name}{" "}
-                        <span className="td-hero-h1-sub">
-                          {heroIntent}
-                        </span>
-                      </h1>
-
-                      <p className="td-hero-compact-meta" aria-hidden={!showCompactHeader}>
-                        {category && <span>{t(compactCatName, compactCatNameEn)}</span>}
-                        {category && priceContext && <span aria-hidden="true">·</span>}
-                        {priceContext && <span>{priceContext.replace(/\.$/, "")}</span>}
-                      </p>
-
                       {tool.shortDescription && (
                         <p className="td-hero-desc">
                           {t(tool.shortDescription, (tool as any).shortDescriptionEn || tool.shortDescription)}
                         </p>
                       )}
-                      {priceContext && <p className="td-hero-context">{priceContext}</p>}
                     </div>
                   </div>
+                  {hasHeroMedia && (
+                    <div className="td-hero-media">
+                      <ToolGallery images={imgs} videos={tutorials} toolName={tool.name} variant="hero" />
+                    </div>
+                  )}
 
-                  <div className="td-hero-end-marker" aria-hidden="true" />
-
-                  {/* Remaining screenshots (if any) below the hero card */}
-                  {isPresentation && rest.length > 0 && <ToolGallery images={rest} toolName={tool.name} />}
                 </>
               );
             })()}
@@ -510,15 +472,6 @@ const ToolDetailPage = () => {
                 </Link>
               ))}
             </nav>
-
-            {isPresentation && (
-              <ToolTutorialsSection
-                tutorials={tutorials}
-                toolName={tool.name}
-                lang={lang}
-                t={t}
-              />
-            )}
 
             {/* Mobile completes the opening fiche with its decision card. */}
             <div className="td-sidebar-mobile">
