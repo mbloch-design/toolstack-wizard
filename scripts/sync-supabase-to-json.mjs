@@ -122,12 +122,34 @@ const tools = remoteTools
   .map((row) => mapTool(row, localById.get(row.id) || {}))
   .sort((a, b) => a.name.localeCompare(b.name, "fr"));
 
-const categories = remoteCategories
-  .map((row) => ({
+const remoteCategoryIds = new Set(remoteCategories.map((row) => row.id));
+
+// Certaines categories n'existent que dans le JSON local (jamais creees dans
+// Supabase) et portent pourtant des outils. Les reconstruire depuis le distant
+// seul les supprimerait en silence, et les outils rattaches perdraient leur
+// categorie. On les conserve et on le signale.
+const localOnlyCategories = localCategories.filter((category) => !remoteCategoryIds.has(category.id));
+
+if (localOnlyCategories.length) {
+  console.warn(
+    `⚠️  ${localOnlyCategories.length} categorie(s) absente(s) de Supabase, conservee(s) depuis le JSON local :`,
+  );
+  for (const category of localOnlyCategories) {
+    const attached = tools.filter((tool) => tool.category === category.id).length;
+    console.warn(`     ${category.id} (${attached} outil(s) rattache(s)) — a creer dans Supabase`);
+  }
+}
+
+const categories = [
+  ...remoteCategories.map((row) => ({
     ...localCategoryById.get(row.id),
     ...mapCategory(row, tools),
-  }))
-  .sort((a, b) => a.name.localeCompare(b.name, "fr"));
+  })),
+  ...localOnlyCategories.map((category) => ({
+    ...category,
+    tools: tools.filter((tool) => tool.category === category.id).map((tool) => tool.id),
+  })),
+].sort((a, b) => a.name.localeCompare(b.name, "fr"));
 
 const toolSummaries = tools.map((tool) => ({
   id: tool.id,

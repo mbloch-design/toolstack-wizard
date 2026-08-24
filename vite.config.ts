@@ -53,24 +53,10 @@ const SEO_LANDING_PAGE_PAIRS: { fr: string; en: string; priority: string }[] = [
   { fr: "/fr/audit-saas-gratuit", en: "/en/free-saas-audit", priority: "0.9" },
 ];
 
-const CATEGORY_EN: Record<string, { name: string; description: string }> = {
-  "ia-generaliste":       { name: "AI & Generative Tools",  description: "AI tools for writing, research and brainstorming for freelancers." },
-  "organisation":         { name: "Organisation",           description: "Keep your work organized without spending hours on setup." },
-  "communication":        { name: "Communication",          description: "Manage clients and meetings without losing your mind." },
-  "creation-design":      { name: "Content Creation",       description: "Create professional visuals and copy without being a designer." },
-  "finance-facturation":  { name: "Finance & Invoicing",    description: "Get paid fast and stay compliant with invoicing tools." },
-  "stockage":             { name: "Storage",                description: "Keep your files safe and accessible anywhere." },
-  "automatisation":       { name: "Automation",             description: "Let the robots do the work for you." },
-  "gestion-projet":       { name: "Project Management",     description: "Organize tasks and collaborate efficiently." },
-  "email-marketing":      { name: "Email & Marketing",      description: "Master your inbox and automate marketing." },
-  "communication-equipe": { name: "Team Communication",     description: "Collaborate and communicate with clients and partners." },
-  "design-prototypage":   { name: "Design & Prototyping",   description: "Create professional interfaces and mockups." },
-  "securite":             { name: "Security",               description: "Protect your data and manage passwords securely." },
-  "suivi-temps":          { name: "Time Tracking",          description: "Track your time to bill at the right rate." },
-  "nocode-web":           { name: "No-Code & Web",          description: "Build websites and products without writing code." },
-  "analytics":            { name: "Analytics",              description: "Analyze your site traffic while respecting privacy." },
-  "formation-education":  { name: "Education & Training",   description: "Create and sell online courses or train your clients." },
-};
+/* CATEGORY_EN a ete supprimee : ces 16 traductions vivent desormais dans
+   src/data/categories_index.json (nameEn / descriptionEn), aux cotes des 7
+   autres categories qui n'y figuraient pas et retombaient en francais sur les
+   pages /en. Une seule source, lue a la fois par le prerendu et par l'app. */
 
 const PERSONA_PILLAR_PAIRS: { fr: string; en: string; priority: string }[] = [
   { fr: "/fr/guide/meilleurs-outils-developpeur-freelance",    en: "/en/guide/best-tools-freelance-developer",      priority: "0.8" },
@@ -1481,7 +1467,11 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           const slug = cat.slug;
           const frName = ((cat.name || slug).replace(/[\u{1F300}-\u{1FFFF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]+/gu, "").replace(/\s+/g, " ").trim()) || cat.name;
           const frDesc = cat.description || "";
-          const enData = CATEGORY_EN[slug] || { name: frName, description: frDesc };
+          // categories_index.json est la source unique de l'anglais : la table
+          // CATEGORY_EN codee en dur ici ne couvrait que 16 des 23 categories,
+          // les 7 autres retombant en francais sur les pages /en.
+          const enName = ((cat.nameEn || "").replace(/[\u{1F300}-\u{1FFFF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]+/gu, "").replace(/\s+/g, " ").trim()) || frName;
+          const enData = { name: enName, description: cat.descriptionEn || frDesc };
 
           for (const lang of LANGS) {
             const isFr = lang === "fr";
