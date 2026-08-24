@@ -4,6 +4,7 @@ import { setJsonLd, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { buildToolFaqs } from "@/lib/toolFaq";
 import { computeToolTrimScore } from "@/lib/toolTrimScore";
 import { hasGenuineFreeTier } from "@/lib/pricing";
+import { getCategoryLabel } from "@/lib/categoryLabel";
 import { getToolTutorials } from "@/data/toolTutorials";
 
 interface Props {
@@ -161,14 +162,17 @@ export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, a
       breadcrumbItems.push({
         "@type": "ListItem",
         position: 3,
-        name: lang === "fr" ? (category.name || category.id) : (category.nameEn || category.name || category.id),
+        name: getCategoryLabel(category, lang),
         item: `${SEO_BASE}/${lang}/category/${category.slug || category.id}`,
       });
     }
     breadcrumbItems.push({
       "@type": "ListItem",
       position: breadcrumbItems.length + 1,
-      name: tool.name,
+      // Never let this fall through to undefined: JSON.stringify drops undefined
+      // keys, producing a ListItem with no `name` — which Search Console rejects
+      // with "Vous devez indiquer name ou item.name".
+      name: tool.name || tool.slug || tool.id,
       item: canonicalUrl !== toolUrl ? toolUrl : canonicalUrl,
     });
     // If we're on a sub-page, add it as the last crumb
