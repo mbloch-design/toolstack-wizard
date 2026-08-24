@@ -221,7 +221,10 @@ const ToolDetailPage = () => {
     let compactAt = 0;
     const measure = () => {
       const rootTop = scrollRoot.getBoundingClientRect().top;
-      compactAt = scrollRoot.scrollTop + hero.getBoundingClientRect().bottom - rootTop;
+      // Compact exactly when the hero reaches its sticky position. Using its
+      // bottom delayed the state change by the full expanded height, allowing
+      // following content to slide underneath a still-expanded card.
+      compactAt = scrollRoot.scrollTop + hero.getBoundingClientRect().top - rootTop;
       hero.closest<HTMLElement>(".td-page-grid")?.style.setProperty("--td-hero-expanded-h", `${hero.offsetHeight}px`);
     };
     const updateCompactHeader = () => {

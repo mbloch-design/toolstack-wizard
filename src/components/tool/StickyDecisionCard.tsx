@@ -89,15 +89,14 @@ export default function StickyDecisionCard({ tool, prefix, t, alternatives }: Pr
 
   return (
     <div className="td-decision-card td-decision-card--utility">
-      <Link className="td-decision-verdict" to={`${prefix}/tool/${slug}/avis`}>
+      <div className="td-decision-verdict">
         <span className="td-decision-verdict-label">{t("L’avis ToolTrim", "ToolTrim verdict")}</span>
         <span className="td-decision-verdict-score">
           <strong>{toolTrimScore.score.toFixed(1)}</strong>
           <span>/ 5</span>
         </span>
         <span className="td-decision-verdict-copy">{t(toolTrimScore.labelFr, toolTrimScore.labelEn)}</span>
-        <ArrowRight aria-hidden />
-      </Link>
+      </div>
 
       <nav className="td-decision-utility-actions" aria-label={t("Actions sur l’outil", "Tool actions")}>
         <PinToolButton slug={slug} label={tool.name} t={t} labelMode="full" />

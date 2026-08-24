@@ -8224,18 +8224,21 @@
     gap: 7px;
     min-height: 38px;
     padding: 0 14px;
-    border: 1px solid var(--color-text);
+    border: 1px solid color-mix(in srgb, hsl(var(--primary)) 24%, var(--color-border));
     border-radius: var(--radius-pill);
-    background: var(--color-text);
-    color: var(--color-surface);
+    background: var(--color-surface);
+    color: hsl(var(--primary));
     font-family: var(--font-ui);
     font-size: 13px;
     font-weight: 600;
     line-height: 1;
     text-decoration: none;
-    transition: opacity 140ms ease-out;
+    transition: border-color 140ms ease-out, background-color 140ms ease-out;
   }
-  .td-hero-site-link:hover { opacity: 0.84; }
+  .td-hero-site-link:hover {
+    border-color: color-mix(in srgb, hsl(var(--primary)) 48%, var(--color-border));
+    background: color-mix(in srgb, hsl(var(--primary)) 6%, var(--color-surface));
+  }
   .td-hero-site-link svg { width: 14px; height: 14px; }
   .td-hero-cat {
     display: inline-flex;
@@ -9427,12 +9430,6 @@
     border-radius: var(--radius-lg);
     background: var(--color-surface-soft);
     color: var(--color-text);
-    text-decoration: none;
-    transition: border-color 140ms ease-out, background-color 140ms ease-out;
-  }
-  .td-decision-verdict:hover {
-    border-color: var(--color-border);
-    background: var(--color-surface);
   }
   .td-decision-verdict-label {
     grid-column: 1 / -1;
@@ -9461,14 +9458,6 @@
     color: var(--color-muted);
   }
   .td-decision-verdict-copy { align-self: end; text-align: right; }
-  .td-decision-verdict > svg {
-    position: absolute;
-    top: 18px;
-    right: 18px;
-    width: 14px;
-    height: 14px;
-    color: var(--color-muted);
-  }
   .td-decision-utility-actions { display: grid; gap: 4px; }
   .td-decision-utility-actions .pin-tool-button,
   .td-decision-utility-actions > button,
@@ -23274,6 +23263,21 @@ section[id] {
   transition: opacity 120ms ease-out;
 }
 .asv2-topbar-cta:hover { opacity: 0.85; }
+
+/* Sur une fiche outil, Ma stack est une destination de navigation et non le
+   CTA de conversion de la page. Le bouton plein est réservé à l'ajout dans la
+   sidebar ; l'accès global reprend donc le niveau visuel des utilitaires. */
+.asv2-workspace:has(.td-tool-page) > .asv2-topbar .asv2-topbar-cta {
+  border: 1px solid var(--color-border-soft);
+  background: var(--color-surface);
+  color: var(--color-text);
+  transition: border-color 140ms ease-out, background-color 140ms ease-out;
+}
+.asv2-workspace:has(.td-tool-page) > .asv2-topbar .asv2-topbar-cta:hover {
+  border-color: var(--color-muted);
+  background: var(--color-surface-soft);
+  opacity: 1;
+}
 
 .asv2-sidebar {
   display: flex;

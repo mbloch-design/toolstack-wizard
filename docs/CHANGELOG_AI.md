@@ -1,5 +1,13 @@
 # ToolTrim — AI Changelog
 
+## 2026-08-24 · Hiérarchie des actions sur les fiches outils
+
+- « Ajouter à ma stack » reste le seul CTA principal plein dans le contenu de la fiche.
+- « Visiter le site » devient une action externe secondaire, claire et bordée, dont le texte et l’icône utilisent l’accent ToolTrim pour rester repérables sans concurrencer le CTA principal.
+- L’accès global « Ma stack » conserve son rôle de navigation dans la topbar avec un traitement utilitaire discret sur les fiches outils.
+- Le verdict ToolTrim est désormais présenté comme une information statique : le lien, la flèche directionnelle et les états de survol ont été retirés.
+- La compaction du hero se déclenche dès qu’il atteint sa position sticky, et non après le passage de toute sa hauteur développée, ce qui synchronise la transition avec le contenu quelle que soit la longueur de la fiche.
+
 ## 2026-08-18 · Pilote d’extension du catalogue canonique
 
 - Trois nouvelles identités explicites ont été préparées : Audionotes, Jenni AI et VisualCV ; les index locaux et le manifeste passent de 1 126 à 1 129 outils.
