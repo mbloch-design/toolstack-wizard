@@ -8,6 +8,7 @@ import { useLang } from "@/hooks/useLang";
 import { useStackPins } from "@/hooks/useStackPins";
 import { classifyToolForStack } from "@/lib/stackAutoClassification";
 import { scrollToTop } from "@/lib/scroll";
+import { setSeoTags, setNoindex, removeNoindex, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import {
   buildExplorationCandidates,
   getExplorerHref,
@@ -184,6 +185,31 @@ export default function ExplorerPage() {
   const [addingSlug, setAddingSlug] = useState<string | null>(null);
   const [isLoadingMore, setIsLoadingMore] = useState(false);
   const source = useMemo(() => parseExplorationSource(searchParams), [searchParams]);
+
+  /* The explorer is driven by query params (type, source, destination, angle,
+     theme), so every filter combination is a distinct URL. Google was indexing
+     them as canonical-less duplicates. Only the bare /explorer is indexable;
+     every parameterised variant canonicalises to it and is noindexed. */
+  const hasFilterParams = searchParams.toString().length > 0;
+  useEffect(() => {
+    setSeoTags({
+      title: lang === "en"
+        ? "Explore SaaS tools by need | ToolTrim"
+        : "Explorer les outils SaaS par besoin | ToolTrim",
+      description: lang === "en"
+        ? "Browse ToolTrim's SaaS catalogue by objective, category or workflow, and build a stack that fits how you actually work."
+        : "Parcourez le catalogue SaaS de ToolTrim par objectif, catégorie ou workflow, et composez une stack adaptée à votre façon de travailler.",
+      url: `${SEO_BASE}/${lang}/explorer`,
+      locale: lang === "en" ? "en_US" : "fr_FR",
+    });
+    if (hasFilterParams) setNoindex();
+    else removeNoindex();
+    return () => {
+      removeNoindex();
+      cleanupSeo([]);
+    };
+  }, [lang, hasFilterParams]);
+
   const explorerHistoryKey = `${location.key}:${location.pathname}${location.search}`;
   const requestedDestinationId = searchParams.get("destination");
   const destination = state.needs.find((need) => need.id === requestedDestinationId) || null;

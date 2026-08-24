@@ -53,10 +53,25 @@ export default function DynamicCanonical() {
   );
 }
 
-function getCanonicalPath(pathname: string) {
-  const toolPricingAlias = pathname.match(/^\/(fr|en)\/tool\/([^/]+)\/(prix|pricing)$/);
-  if (!toolPricingAlias) return pathname;
+/**
+ * FR and EN each own one spelling of a tool sub-page; the other spelling is an
+ * alias that must not self-canonicalise. Mirrors EN_SUB_PATH in vite.config.ts
+ * and the 301s in vercel.json — keep the three in sync.
+ */
+const TOOL_SUBPAGE_ALIASES: Record<string, { fr: string; en: string }> = {
+  prix: { fr: "prix", en: "pricing" },
+  pricing: { fr: "prix", en: "pricing" },
+  avis: { fr: "avis", en: "reviews" },
+  reviews: { fr: "avis", en: "reviews" },
+};
 
-  const [, lang, slug] = toolPricingAlias;
-  return `/${lang}/tool/${slug}/${lang === "fr" ? "prix" : "pricing"}`;
+function getCanonicalPath(pathname: string) {
+  const subPageAlias = pathname.match(/^\/(fr|en)\/tool\/([^/]+)\/([^/]+)$/);
+  if (!subPageAlias) return pathname;
+
+  const [, lang, slug, subPage] = subPageAlias;
+  const localized = TOOL_SUBPAGE_ALIASES[subPage];
+  if (!localized) return pathname;
+
+  return `/${lang}/tool/${slug}/${lang === "fr" ? localized.fr : localized.en}`;
 }

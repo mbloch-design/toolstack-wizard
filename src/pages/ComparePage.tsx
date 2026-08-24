@@ -7,7 +7,7 @@ import ToolLogo from "@/components/ToolLogo";
 import ToolComparisonTable from "@/components/tool/ToolComparisonTable";
 import FaqBlock from "@/components/FaqBlock";
 import Breadcrumb from "@/components/Breadcrumb";
-import { setSeoTags, setMeta, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
+import { setSeoTags, setMeta, setJsonLd, setHreflang, cleanupSeo, setNoindex, removeNoindex, SEO_BASE } from "@/lib/seo";
 import type { Tool } from "@/data/types";
 import { FEATURED_COMPARISONS as COMPARISONS } from "@/data/comparisons";
 import { BATTLE_COMPARISON_DATA, type BattleComparisonSlug } from "@/data/comparisonBattles";
@@ -1990,6 +1990,14 @@ const ComparePage = () => {
     return null;
   }, [slugPair]);
 
+  /* Any a-vs-b pair renders, but only featured ones are prerendered and listed
+     in the sitemap. Leaving the rest indexable turns every tool combination
+     into a canonical-less duplicate, so they render but stay out of the index. */
+  const isFeaturedPair = useMemo(
+    () => Boolean(slugPair && COMPARISONS.some((c) => c.slugPair === slugPair)),
+    [slugPair],
+  );
+
   const { toolA, toolB, loading } = useToolPair(parsedPair?.idA, parsedPair?.idB);
   // Lightweight summaries for alternative tools lookup (slug/name/logo only).
   // Already statically loaded — no extra network or chunk cost.
@@ -2027,6 +2035,8 @@ const ComparePage = () => {
 
     const url = `${SEO_BASE}/${lang}/comparatif/${slugPair}`;
     setSeoTags({ title, description: desc, url, locale: lang === "fr" ? "fr_FR" : "en_US" });
+    if (isFeaturedPair) removeNoindex();
+    else setNoindex();
     setHreflang(`/${lang}/comparatif/${slugPair}`);
 
     // Per-page AI summary for GEO/generative engines.
@@ -2084,9 +2094,21 @@ const ComparePage = () => {
       ],
     });
     return () => {
+      removeNoindex();
       cleanupSeo(["compare-jsonld", "compare-faq-jsonld"]);
     };
-  }, [toolA, toolB, lang, slugPair, battleDataForSeo]);
+  }, [toolA, toolB, lang, slugPair, battleDataForSeo, isFeaturedPair]);
+
+  /* When a slug doesn't resolve to a real tool the page renders a "not found"
+     state, and the effect above bails out before setting any tag — which left
+     these URLs indexable with no canonical at all. That is the case Search
+     Console reported for /comparatif/canva-vs-photoshop-elements. */
+  const pairNotFound = !loading && (!parsedPair || !toolA || !toolB);
+  useEffect(() => {
+    if (!pairNotFound) return;
+    setNoindex();
+    return () => removeNoindex();
+  }, [pairNotFound]);
 
   if (loading && staleLoading) {
     return (

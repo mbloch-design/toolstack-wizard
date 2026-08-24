@@ -1383,6 +1383,8 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           { path: "/en/contact",    lang: "en", title: "Contact ToolTrim | Questions and suggestions",            description: "Have a question about ToolTrim or a tool suggestion? Contact us, we reply to every message." },
           { path: "/fr/transparency",lang:"fr", title: "Transparence et méthodologie | ToolTrim",                 description: "Comment ToolTrim évalue les outils SaaS : critères de sélection, fréquence de mise à jour et politique d'indépendance éditoriale." },
           { path: "/en/transparency",lang:"en", title: "Transparency and methodology | ToolTrim",                 description: "How ToolTrim evaluates SaaS tools: selection criteria, update frequency and editorial independence policy." },
+          { path: "/fr/explorer",   lang: "fr", title: "Explorer les outils SaaS par besoin | ToolTrim",          description: "Parcourez le catalogue SaaS de ToolTrim par objectif, catégorie ou workflow, et composez une stack adaptée à votre façon de travailler." },
+          { path: "/en/explorer",   lang: "en", title: "Explore SaaS tools by need | ToolTrim",                   description: "Browse ToolTrim's SaaS catalogue by objective, category or workflow, and build a stack that fits how you actually work." },
         ];
 
         for (const sp of SECTION_PAGES) {
