@@ -16316,15 +16316,7 @@
   padding-top: 0;
   background-image: none;
 }
-.sd-stack-map-family {
-  display: grid;
-  grid-template-columns: minmax(240px, 0.52fr) minmax(480px, 1fr);
-  gap: 48px;
-  align-items: start;
-  padding: 36px 40px;
-  border-radius: var(--radius-2xl);
-  background: var(--color-surface-soft);
-}
+/* .sd-stack-map-family — consolidee en fin de fichier */
 .sd-stack-map-copy h3 {
   margin: 0;
   font-family: var(--font-ui);
@@ -16379,11 +16371,6 @@
   align-items: center;
 }
 @media (max-width: 1180px) {
-  .sd-stack-map-family {
-    grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.2fr);
-    gap: 32px;
-    padding: 32px;
-  }
   .sd-stack-map-tools {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px 24px;
@@ -16394,21 +16381,12 @@
     margin-top: 40px;
     gap: 18px;
   }
-  .sd-stack-map-family {
-    grid-template-columns: 1fr;
-    gap: 26px;
-    padding: 26px 22px;
-    border-radius: var(--radius-xl);
-  }
   .sd-stack-map-tools {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
   }
 }
 @media (max-width: 430px) {
-  .sd-stack-map-family {
-    padding: 24px 18px;
-  }
   .sd-stack-map-tools {
     grid-template-columns: 1fr;
   }
@@ -17404,12 +17382,8 @@ section[id] {
   display: none;
 }
 
-/* Flex row of pills */
-.sd-tool-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
+/* .sd-tool-grid — consolidee en fin de fichier (cette regle flex etait morte,
+   annulee par le display:grid qui la suivait) */
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
@@ -17542,35 +17516,13 @@ section[id] {
   -webkit-box-orient: vertical;
 }
 
-/* ── Tool grid: auto-fit, minmax 210px */
-.sd-tool-grid {
-  display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 18px 28px;
-  margin-top: 14px;
-}
-
 /* ── Space between tool groups */
 .sd-tool-group + .sd-tool-group {
   margin-top: 28px;
 }
 
-/* ── Card container: lighter, no border */
-.sd-stack-map-family {
-  border: none !important;
-  background: var(--color-surface-soft);
-  border-radius: var(--radius-2xl);
-  padding: 36px 40px;
-  gap: 44px;
-}
-
 /* ── Mobile */
 @media (max-width: 768px) {
-  .sd-stack-map-family {
-    flex-direction: column;
-    padding: 28px 24px;
-    gap: 28px;
-  }
   .sd-stack-card-role,
   .sd-stack-card-decision {
     max-width: 100%;
@@ -17591,10 +17543,6 @@ section[id] {
   .sd-tool-name {
     font-size: 15px;
     max-width: 150px;
-  }
-  .sd-tool-grid {
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 14px 20px;
   }
 }
 
@@ -26472,15 +26420,6 @@ section[id] {
   gap: 18px;
 }
 
-.sd-stack-map-family {
-  flex-direction: column;
-  padding: 32px 36px;
-  gap: 28px;
-  background: var(--color-surface);
-  border: 1px solid var(--color-border) !important;
-  border-radius: var(--radius-xl);
-}
-
 .sd-page-main .sd-stack-card-left,
 .sd-page-main .sd-stack-card-right {
   width: 100%;
@@ -26901,10 +26840,6 @@ section[id] {
     margin-bottom: 32px;
   }
 
-  .sd-stack-map-family {
-    padding: 24px 20px;
-  }
-
   .sd-budget-threshold {
     min-height: auto;
   }
@@ -27031,23 +26966,73 @@ section[id] {
   }
 }
 
-/* ─────────────────────────────────────────────────────────────────────────
-   Stack detail — carte de la stack : garder les outils dans leur colonne
-   ─────────────────────────────────────────────────────────────────────────
-   Entre 900px (repli de .sd-page-grid) et ~1130px, la colonne droite de
-   .sd-stack-map-family passe en minmax(0, 1.2fr) et tombe à ~100px, alors que
-   .sd-tool-grid impose un plancher de 210px. Les outils débordaient alors sous
-   la carte de décision sticky.                                              */
+/* ═════════════════════════════════════════════════════════════════════════
+   Stack detail — carte de la stack : definition unique
+   ═════════════════════════════════════════════════════════════════════════
+   Ces deux selecteurs etaient definis 4 et 2 fois, dispersés dans le fichier.
+   Les regles globales tardives ecrasaient silencieusement des media queries
+   ecrites plus haut : gap 48/44/32/26 tous morts au profit de 28, padding
+   26px 22px mort au profit de 32px 36px, .sd-tool-grid en display:flex
+   entierement annulee par un display:grid !important.
+
+   Les valeurs ci-dessous sont celles reellement calculees par le navigateur
+   avant consolidation, relevees a 1440 / 1024 / 768 / 375.
+
+   Placees en fin de fichier : c'est la position qui reproduit la cascade
+   d'origine, ou les regles gagnantes etaient les dernieres.                */
 
 .sd-tool-grid {
-  /* Le plancher ne peut plus dépasser la largeur disponible. */
+  display: grid;
+  /* min() : le plancher ne peut pas depasser la largeur disponible, sinon la
+     grille deborde de sa colonne (outils glissant sous la carte de decision). */
   grid-template-columns: repeat(auto-fit, minmax(min(210px, 100%), 1fr));
+  gap: 18px 28px;
+  margin-top: 14px;
 }
 
+.sd-stack-map-family {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.52fr) minmax(480px, 1fr);
+  gap: 28px;
+  align-items: start;
+  padding: 32px 36px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+}
+
+@media (max-width: 1180px) {
+  .sd-stack-map-family {
+    grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.2fr);
+  }
+}
+
+/* Sous ce seuil la colonne droite devient trop etroite pour un outil : on
+   empile plutot que de comprimer. Borne basse a 901px pour reproduire le
+   comportement d'origine — voir la note en fin de bloc. */
 @media (min-width: 901px) and (max-width: 1130px) {
   .sd-stack-map-family {
-    /* Sous ce seuil la colonne droite est trop étroite pour un outil :
-       on empile plutôt que de comprimer. */
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 768px) {
+  .sd-stack-map-family {
+    grid-template-columns: 1fr;
+  }
+  .sd-tool-grid {
+    grid-template-columns: repeat(auto-fit, minmax(min(160px, 100%), 1fr));
+    gap: 14px 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .sd-stack-map-family {
+    padding: 24px 20px;
+  }
+}
+
+/* Note : entre 769 et 900px la carte repasse en deux colonnes, alors qu'elle
+   est empilee au-dessus comme en dessous. Incoherence heritee, reproduite ici
+   telle quelle pour que cette consolidation ne change aucun rendu. A trancher
+   separement. */
