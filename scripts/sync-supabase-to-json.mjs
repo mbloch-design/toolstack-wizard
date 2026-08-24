@@ -43,7 +43,10 @@ function mapTool(row, local = {}) {
     id: row.id,
     slug: row.slug || row.id,
     name: row.name,
-    category: row.category || "",
+    // Comme tous les champs ci-dessous : si le distant est vide, on garde le
+    // local. Sans ce pick(), un outil non categorise dans Supabase perdait sa
+    // categorie locale a chaque synchro — 61 outils vides d'un coup.
+    category: pick(row.category, local.category),
     shortDescription: pick(row.short_description, local.shortDescription),
     shortDescriptionEn: pick(row.short_description_en, local.shortDescriptionEn),
     description: pick(row.long_description, local.description),
