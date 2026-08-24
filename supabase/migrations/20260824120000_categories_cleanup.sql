@@ -53,7 +53,15 @@ UPDATE public.categories SET name = 'Sécurité'              WHERE id = 'securi
 UPDATE public.tools SET category = 'design-tools'
  WHERE category IN ('design', 'photo', 'illustration', 'publishing', 'assets', 'video', '3d', 'audio');
 
--- marketing -> Email & Marketing (4 tools: Cision, Klaviyo, Meltwater, Prowly)
--- Note: Cision, Meltwater and Prowly are PR / media-monitoring tools rather
--- than email tools. This is the closest existing category, not a perfect fit.
-UPDATE public.tools SET category = 'email-productivity' WHERE category = 'marketing';
+-- marketing -> split by what the tools actually do.
+-- Klaviyo is email marketing; Cision, Meltwater and Prowly are PR / media
+-- monitoring, which follows Brand24 — already filed under Analytics.
+UPDATE public.tools SET category = 'email-productivity' WHERE id = 'klaviyo';
+UPDATE public.tools SET category = 'analytics' WHERE category = 'marketing';
+
+-- 5) Office suites filed under the wrong category.
+--    Google Docs came back from Supabase in legal-contracts, and Microsoft 365
+--    sits in productivity-tracking — an office suite in the time-tracking
+--    aisle, the same error Adobe Acrobat had. Google Sheets and Notion are
+--    both in `organization`; these two follow.
+UPDATE public.tools SET category = 'organization' WHERE id IN ('google-docs', 'microsoft-365');
