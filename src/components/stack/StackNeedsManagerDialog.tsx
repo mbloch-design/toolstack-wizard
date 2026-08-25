@@ -115,7 +115,7 @@ export function StackNeedsManagerDialog({
         <div className="stack-needs-manager-head">
           <div>
             <span>{t("Ma stack", "My stack")}</span>
-            <h2 id="stack-needs-manager-title">{t("Gérer les besoins", "Manage needs")}</h2>
+            <h2 id="stack-needs-manager-title">{t("Organiser mes collections", "Organize my collections")}</h2>
           </div>
           <button type="button" onClick={onClose} aria-label={t("Fermer", "Close")}>
             <X size={18} aria-hidden />
@@ -124,13 +124,13 @@ export function StackNeedsManagerDialog({
 
         <p className="stack-needs-manager-intro">
           {t(
-            "Les besoins définissent les lots de votre vue d'ensemble. Les besoins suggérés restent disponibles ; vous pouvez ajouter les vôtres.",
-            "Needs define the groups in your overview. Suggested needs stay available, and you can add your own.",
+            "Créez et ordonnez vos collections pour retrouver chaque outil au bon endroit. Les collections ToolTrim restent disponibles ; vous pouvez ajouter les vôtres.",
+            "Create and order collections so every tool stays easy to find. ToolTrim collections remain available, and you can add your own.",
           )}
         </p>
 
         <form className="stack-needs-create" onSubmit={handleCreate}>
-          <label htmlFor="stack-new-need">{t("Nouveau besoin", "New need")}</label>
+          <label htmlFor="stack-new-need">{t("Nouvelle collection", "New collection")}</label>
           <div>
             <input
               ref={createInputRef}
@@ -203,7 +203,7 @@ export function StackNeedsManagerDialog({
                       <button type="button" onClick={() => beginRename(need)} aria-label={t(`Renommer ${label}`, `Rename ${label}`)}>
                         <Pencil size={14} aria-hidden />
                       </button>
-                      <button type="button" className="is-danger" onClick={() => handleDelete(need.id)} aria-label={t(`Supprimer le besoin ${label}`, `Delete need ${label}`)}>
+                      <button type="button" className="is-danger" onClick={() => handleDelete(need.id)} aria-label={t(`Supprimer la collection ${label}`, `Delete collection ${label}`)}>
                         <Trash2 size={14} aria-hidden />
                       </button>
                     </>

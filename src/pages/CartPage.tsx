@@ -1,11 +1,12 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { flushSync } from "react-dom";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
-import { ArrowLeft, Compass, GripVertical, Heart, MoreHorizontal, Pencil, Plus, Search, Trash2, UserRound, X } from "lucide-react";
+import { ArrowLeft, Compass, GripVertical, Heart, MoreHorizontal, Pencil, Plus, Search, SlidersHorizontal, Trash2, UserRound, X } from "lucide-react";
 import { toast } from "sonner";
 import { ToolCardEditorial } from "@/components/ToolCardEditorial";
 import ToolLogo from "@/components/ToolLogo";
 import StackToolInspector from "@/components/stack/StackToolInspector";
+import StackNeedsManagerDialog from "@/components/stack/StackNeedsManagerDialog";
 import { useLang } from "@/hooks/useLang";
 import { useStackPins } from "@/hooks/useStackPins";
 import { useCategories, useToolSummaries, type ToolSummary } from "@/hooks/useSupabaseData";
@@ -1745,6 +1746,7 @@ const CartPage = () => {
     saveToolSelection,
     unpinTool,
     assignToolNeeds,
+    createNeed,
     renameNeed,
     deleteNeed,
     moveNeed,
@@ -1769,6 +1771,7 @@ const CartPage = () => {
   const [renamingBoardId, setRenamingBoardId] = useState<string | null>(null);
   const [renamingBoardName, setRenamingBoardName] = useState("");
   const [pendingDeleteBoardId, setPendingDeleteBoardId] = useState<string | null>(null);
+  const [isCollectionManagerOpen, setIsCollectionManagerOpen] = useState(false);
   const [editingBoardId, setEditingBoardId] = useState<string | null>(null);
   const [draggedToolSlug, setDraggedToolSlug] = useState<string | null>(null);
   const [dragOverSubdomainId, setDragOverSubdomainId] = useState<string | null>(null);
@@ -2642,6 +2645,15 @@ const CartPage = () => {
               <span>{t("Mes envies", "Wishlist")}</span>
               <small>{wishlistToolSlugs.length}</small>
             </button>
+            <button
+              type="button"
+              className="stack-library-tabs-organize"
+              onClick={() => setIsCollectionManagerOpen(true)}
+              aria-label={t("Organiser mes collections", "Organize my collections") as string}
+            >
+              <SlidersHorizontal size={16} aria-hidden />
+              <span>{t("Organiser", "Organize")}</span>
+            </button>
           </div>
         </nav>
       )}
@@ -2921,6 +2933,18 @@ const CartPage = () => {
           </section>
         </div>
       )}
+
+      <StackNeedsManagerDialog
+        isOpen={isCollectionManagerOpen}
+        lang={lang}
+        needs={state.needs}
+        onClose={() => setIsCollectionManagerOpen(false)}
+        onCreate={createNeed}
+        onDelete={deleteNeed}
+        onMove={moveNeed}
+        onRename={renameNeed}
+        t={(fr, en) => t(fr, en) as string}
+      />
 
       {pickerBoardId && (
         <main ref={pickerDialogRef} className={`stack-tool-add-page${pickerBoardToneClass}`} aria-labelledby="stack-tool-picker-title">
