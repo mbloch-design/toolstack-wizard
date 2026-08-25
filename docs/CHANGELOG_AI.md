@@ -9,6 +9,7 @@
 - Le panneau « Organiser » n’affiche plus que les collections réellement utilisées et se limite au tri, au renommage et à la suppression, sans taxonomie vide ni création décontextualisée.
 - La modale adopte des marges éditoriales plus généreuses ; l’édition apparaît au survol ou au focus sur chaque collection active, y compris les collections ToolTrim, dont le nouveau nom est désormais persistant.
 - Le menu contextuel « … » des onglets est supprimé : l’accès « Organiser » devient l’unique endroit où modifier une collection.
+- Depuis la vue globale, « Explorer les outils » ouvre désormais le catalogue au lieu d’imbriquer une seconde page d’ajout dans Ma Stack ; le sélecteur interne reste réservé aux collections dont la destination est explicite.
 - Le vocabulaire est unifié autour des collections et le compteur de Ma Stack ne change qu’après confirmation explicite.
 - Validation : TypeScript PASS, 55 tests Ma Stack PASS, build production PASS et parcours Ma Stack / Explorer vérifiés dans le navigateur local.
 

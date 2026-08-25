@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { flushSync } from "react-dom";
-import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { ArrowLeft, Compass, GripVertical, Heart, MoreHorizontal, Pencil, Plus, Search, SlidersHorizontal, Trash2, UserRound, X } from "lucide-react";
 import { toast } from "sonner";
 import { ToolCardEditorial } from "@/components/ToolCardEditorial";
@@ -2566,10 +2566,10 @@ const CartPage = () => {
               </div>
             </div>
             <div className="stack-profile-actions">
-              <button type="button" className="stack-page-toolbar-icon stack-page-toolbar-icon--primary" onClick={() => openToolPicker()} aria-label={t("Explorer les outils", "Explore tools") as string}>
+              <Link className="stack-page-toolbar-icon stack-page-toolbar-icon--primary" to={`${prefix}/tools`} aria-label={t("Explorer les outils", "Explore tools") as string}>
                 <Compass size={18} aria-hidden />
                 <span>{t("Explorer les outils", "Explore tools")}</span>
-              </button>
+              </Link>
             </div>
           </div>
         </section>
@@ -2782,7 +2782,11 @@ const CartPage = () => {
                     ? t("Ajoutez un outil à cette collection pour le retrouver directement ici.", "Add a tool to this collection to find it directly here.")
                     : t("Ajoutez les outils que vous utilisez réellement, puis organisez-les dans vos collections.", "Add the tools you actually use, then organize them into collections.")}
               </p>
-              <button type="button" className="cart-primary-link" onClick={() => openToolPicker(libraryActiveBoard?.id)}>{t("Ajouter un outil", "Add a tool")}</button>
+              {libraryActiveBoard ? (
+                <button type="button" className="cart-primary-link" onClick={() => openToolPicker(libraryActiveBoard.id)}>{t("Ajouter un outil", "Add a tool")}</button>
+              ) : (
+                <Link className="cart-primary-link" to={`${prefix}/tools`}>{t("Explorer les outils", "Explore tools")}</Link>
+              )}
             </section>
           )}
           {libraryTools.length > 0 && (
