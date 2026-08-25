@@ -1773,9 +1773,6 @@ const CartPage = () => {
   const [needDialogToolSlug, setNeedDialogToolSlug] = useState<string | null>(null);
   const [draftNeedIds, setDraftNeedIds] = useState<string[]>([]);
   const [needDialogMode, setNeedDialogMode] = useState<"add" | "edit">("edit");
-  const [renamingBoardId, setRenamingBoardId] = useState<string | null>(null);
-  const [renamingBoardName, setRenamingBoardName] = useState("");
-  const [pendingDeleteBoardId, setPendingDeleteBoardId] = useState<string | null>(null);
   const [isCollectionManagerOpen, setIsCollectionManagerOpen] = useState(false);
   const [editingBoardId, setEditingBoardId] = useState<string | null>(null);
   const [draggedToolSlug, setDraggedToolSlug] = useState<string | null>(null);
@@ -2472,25 +2469,6 @@ const CartPage = () => {
     });
   }
 
-  function removeCustomBoard(board: StackObjective) {
-    deleteNeed(board.id);
-    toast.success(t(`Collection ${board.labelFr} supprimée. Ses outils restent dans Ma stack.`, `${board.labelEn} collection removed. Its tools remain in My stack.`) as string);
-  }
-
-  function startRenamingBoard(board: StackObjective) {
-    setRenamingBoardId(board.id);
-    setRenamingBoardName(getBoardDisplayLabel(board, lang));
-  }
-
-  function saveRenamedBoard(board: StackObjective) {
-    const label = renamingBoardName.trim();
-    if (!label) return;
-    renameNeed(board.id, label);
-    setRenamingBoardId(null);
-    setRenamingBoardName("");
-    toast.success(t(`Collection renommée « ${label} ».`, `Collection renamed “${label}”.`) as string);
-  }
-
   function renderEstimatedProfile(additionalClass = "") {
     return (
       <div
@@ -2620,32 +2598,6 @@ const CartPage = () => {
                   <span>{getBoardDisplayLabel(board, lang)}</span>
                   <small>{board.tools.length}</small>
                 </button>
-                {board.source === "custom" && (
-                  <details className="stack-library-tab-menu">
-                    <summary aria-label={t(`Gérer la collection ${board.labelFr}`, `Manage the ${board.labelEn} collection`) as string}>
-                      <MoreHorizontal size={16} aria-hidden />
-                    </summary>
-                    <div>
-                      <button type="button" onClick={() => startRenamingBoard(board)}><Pencil size={14} aria-hidden />{t("Renommer", "Rename")}</button>
-                      <button type="button" disabled={state.needs.findIndex((need) => need.id === board.id) <= 0} onClick={() => moveNeed(board.id, -1)}><ArrowLeft size={14} aria-hidden />{t("Déplacer à gauche", "Move left")}</button>
-                      <button type="button" className="is-danger" onClick={() => setPendingDeleteBoardId(board.id)}><Trash2 size={14} aria-hidden />{t("Supprimer", "Delete")}</button>
-                    </div>
-                  </details>
-                )}
-                {renamingBoardId === board.id && (
-                  <form className="stack-library-tab-popover" onSubmit={(event) => { event.preventDefault(); saveRenamedBoard(board); }}>
-                    <label htmlFor={`tab-rename-${board.id}`}>{t("Nom de la collection", "Collection name")}</label>
-                    <input id={`tab-rename-${board.id}`} autoFocus value={renamingBoardName} onChange={(event) => setRenamingBoardName(event.target.value)} maxLength={60} />
-                    <div><button type="button" onClick={() => setRenamingBoardId(null)}>{t("Annuler", "Cancel")}</button><button type="submit" disabled={!renamingBoardName.trim()}>{t("Enregistrer", "Save")}</button></div>
-                  </form>
-                )}
-                {pendingDeleteBoardId === board.id && (
-                  <div className="stack-library-tab-popover" role="alertdialog" aria-labelledby={`tab-delete-${board.id}`}>
-                    <strong id={`tab-delete-${board.id}`}>{t("Supprimer cette collection ?", "Delete this collection?")}</strong>
-                    <p>{t("Ses outils resteront dans leurs autres collections.", "Its tools will remain in their other collections.")}</p>
-                    <div><button type="button" onClick={() => setPendingDeleteBoardId(null)}>{t("Annuler", "Cancel")}</button><button type="button" className="is-danger" onClick={() => { setPendingDeleteBoardId(null); removeCustomBoard(board); }}>{t("Supprimer", "Delete")}</button></div>
-                  </div>
-                )}
               </span>
             ))}
             <span className="stack-library-tabs-divider" aria-hidden />
