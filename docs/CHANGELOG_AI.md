@@ -6,6 +6,7 @@
 - Le bouton de confirmation reste désactivé tant qu’aucune collection n’est sélectionnée ; une suggestion peut être présélectionnée, mais l’internaute garde le choix.
 - L’ancien écran secondaire « Organiser mes outils » et l’état « À organiser » sont retirés : les actions renommer, déplacer et supprimer vivent directement dans le menu de chaque collection personnelle.
 - Un accès global « Organiser » est conservé à droite de la barre des collections ; il ouvre un panneau compact pour créer, réordonner, renommer ou supprimer les collections sans réintroduire l’ancien écran.
+- Le panneau « Organiser » n’affiche plus que les collections réellement utilisées et se limite au tri, au renommage et à la suppression, sans taxonomie vide ni création décontextualisée.
 - Le vocabulaire est unifié autour des collections et le compteur de Ma Stack ne change qu’après confirmation explicite.
 - Validation : TypeScript PASS, 55 tests Ma Stack PASS, build production PASS et parcours Ma Stack / Explorer vérifiés dans le navigateur local.
 

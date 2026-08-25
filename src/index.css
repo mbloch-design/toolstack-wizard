@@ -1589,7 +1589,7 @@
     box-shadow: 0 24px 70px rgba(18, 18, 16, 0.18);
     display: flex;
     flex-direction: column;
-    max-width: 620px;
+    max-width: 520px;
     min-width: min(560px, calc(100vw - 36px));
     overflow: hidden;
     width: 40vw;
@@ -1637,7 +1637,6 @@
     outline: none;
   }
   .stack-tool-picker-controls {
-    border-bottom: 1px solid var(--color-border);
     display: grid;
     gap: 10px;
     padding: 0 24px 12px;
@@ -2112,7 +2111,7 @@
     display: grid;
     gap: 12px;
     grid-template-columns: auto minmax(0, 1fr) auto;
-    padding: 20px 22px;
+    padding: 18px 20px 12px;
   }
   .stack-need-dialog-logo {
     border-radius: var(--radius) !important;
@@ -2374,7 +2373,7 @@
   .stack-needs-manager-head h2 {
     color: var(--color-text);
     font-family: var(--font-ui);
-    font-size: 1.45rem;
+    font-size: 1.2rem;
     font-weight: 850;
     letter-spacing: -0.035em;
     line-height: 1.08;
@@ -2463,11 +2462,10 @@
     opacity: 0.38;
   }
   .stack-needs-manager-list {
-    border-top: 1px solid var(--color-border);
     display: grid;
-    gap: 8px;
+    gap: 6px;
     overflow: auto;
-    padding: 14px;
+    padding: 0 12px 12px;
   }
   .stack-needs-manager-row {
     align-items: center;
@@ -2477,8 +2475,8 @@
     display: grid;
     gap: 12px;
     grid-template-columns: auto minmax(0, 1fr) auto;
-    min-height: 58px;
-    padding: 8px 10px;
+    min-height: 52px;
+    padding: 6px 8px;
   }
   .stack-needs-order-actions,
   .stack-needs-manager-row-actions {
@@ -9494,6 +9492,14 @@
     transition: background-color 140ms ease-out, color 140ms ease-out;
   }
   .td-decision-utility-actions .pin-tool-button { color: var(--color-text); }
+  .td-decision-utility-actions > .td-decision-explore {
+    min-height: 46px;
+    padding-inline: 14px;
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+    color: var(--color-text);
+    font-weight: 650;
+  }
   .td-decision-utility-actions .pin-tool-button {
     min-height: 46px;
     padding-inline: 14px;

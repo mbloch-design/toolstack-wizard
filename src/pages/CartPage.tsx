@@ -1851,6 +1851,15 @@ const CartPage = () => {
     });
   }, [categoryById, lang, selectedTools, stackEntryBySlug, state.needs]);
   const activeBoards = boards.filter((board) => board.tools.length > 0 || board.source === "custom") as StackObjective[];
+  const populatedBoards = boards.filter((board) => board.tools.length > 0) as StackObjective[];
+  const populatedNeeds = populatedBoards.flatMap((board) => {
+    const need = state.needs.find((candidate) => candidate.id === board.id);
+    return need ? [{
+      ...need,
+      labelFr: getBoardDisplayLabel(board, "fr"),
+      labelEn: getBoardDisplayLabel(board, "en"),
+    }] : [];
+  });
   const stackNavigationBoards = useMemo(() => {
     if (collectionView === "stack") return activeBoards;
 
@@ -2937,9 +2946,8 @@ const CartPage = () => {
       <StackNeedsManagerDialog
         isOpen={isCollectionManagerOpen}
         lang={lang}
-        needs={state.needs}
+        needs={populatedNeeds}
         onClose={() => setIsCollectionManagerOpen(false)}
-        onCreate={createNeed}
         onDelete={deleteNeed}
         onMove={moveNeed}
         onRename={renameNeed}
