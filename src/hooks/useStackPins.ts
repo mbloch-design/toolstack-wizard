@@ -13,14 +13,16 @@ import {
   moveNeedInState,
   renameCustomNeedInState,
   reorderToolsInState,
+  saveToolSelectionInState,
   saveToolCartStateWithStatus,
   unpinToolInState,
   type StackPersistenceStatus,
+  type StackToolIntent,
   type ToolCartState,
 } from "@/lib/stackState";
 
 export const STACK_PINS_STORAGE_KEY = STACK_STATE_STORAGE_KEY;
-export type { StackNeed, StackPersistenceStatus, StackToolEntry, ToolCartState } from "@/lib/stackState";
+export type { StackNeed, StackPersistenceStatus, StackToolEntry, StackToolIntent, ToolCartState } from "@/lib/stackState";
 
 function readToolCartState(): { state: ToolCartState; status: StackPersistenceStatus } {
   if (typeof window === "undefined") {
@@ -118,6 +120,10 @@ export function useStackPins() {
     updateToolCartState((current) => unpinToolInState(current, slug));
   }, []);
 
+  const saveToolSelection = useCallback((slug: string, needIds: string[], intent: StackToolIntent) => {
+    updateToolCartState((current) => saveToolSelectionInState(current, slug, needIds, intent));
+  }, []);
+
   const assignToolNeeds = useCallback((slug: string, needIds: string[]) => {
     updateToolCartState((current) => assignToolNeedsInState(current, slug, needIds));
   }, []);
@@ -181,6 +187,7 @@ export function useStackPins() {
     pinTool,
     pinToolAutomatically,
     unpinTool,
+    saveToolSelection,
     assignToolNeeds,
     assignToolNeedsBatch,
     assignToolNeedsAutomatically,

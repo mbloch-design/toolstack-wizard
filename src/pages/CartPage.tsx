@@ -1742,6 +1742,7 @@ const CartPage = () => {
     state,
     persistenceStatus,
     pinTool,
+    saveToolSelection,
     unpinTool,
     assignToolNeeds,
     assignToolNeedsAutomatically,
@@ -1758,6 +1759,7 @@ const CartPage = () => {
     ? Math.max(0, location.state.stackToolPickerDepth)
     : 0;
   const [pickerQuery, setPickerQuery] = useState("");
+  const [collectionView, setCollectionView] = useState<"stack" | "wishlist">("stack");
   const [pickerFilter, setPickerFilter] = useState<PickerFilterId>("recommended");
   const [pickerResultLimit, setPickerResultLimit] = useState(PICKER_RESULT_BATCH);
   const [pickerAddedToolSlugs, setPickerAddedToolSlugs] = useState<string[]>([]);
@@ -1796,9 +1798,18 @@ const CartPage = () => {
     () => new Map(state.toolEntries.map((entry) => [entry.toolSlug, entry])),
     [state.toolEntries],
   );
+  const stackToolSlugs = useMemo(
+    () => state.toolEntries.filter((entry) => entry.intent === "stack").map((entry) => entry.toolSlug),
+    [state.toolEntries],
+  );
+  const wishlistToolSlugs = useMemo(
+    () => state.toolEntries.filter((entry) => entry.intent === "wishlist").map((entry) => entry.toolSlug),
+    [state.toolEntries],
+  );
+  const visibleToolSlugs = collectionView === "stack" ? stackToolSlugs : wishlistToolSlugs;
   const selectedTools = useMemo(
-    () => state.pinnedToolSlugs.map((slug) => toolBySlug.get(slug)).filter(Boolean) as ToolSummary[],
-    [state.pinnedToolSlugs, toolBySlug],
+    () => visibleToolSlugs.map((slug) => toolBySlug.get(slug)).filter(Boolean) as ToolSummary[],
+    [visibleToolSlugs, toolBySlug],
   );
   const stackPricing = useMemo(() => computeStackPricing(selectedTools, tools), [selectedTools, tools]);
   const unassignedTools = selectedTools.filter((tool) => {
@@ -2235,7 +2246,11 @@ const CartPage = () => {
       return;
     }
     const commitAddition = () => {
-      pinTool(toolSlug, pickerBoard ? [pickerBoard.id] : []);
+      if (collectionView === "wishlist") {
+        saveToolSelection(toolSlug, pickerBoard ? [pickerBoard.id] : [], "wishlist");
+      } else {
+        pinTool(toolSlug, pickerBoard ? [pickerBoard.id] : []);
+      }
       setPickerAddedToolSlugs((current) => [...current, toolSlug]);
     };
     if (sourceCard && animateToolIntoPickerBoard(sourceCard, commitAddition)) return;
@@ -2637,8 +2652,16 @@ const CartPage = () => {
         <section className="stack-page-toolbar stack-page-toolbar--overview">
           <div className="stack-page-toolbar-inner">
             <div className="stack-page-toolbar-copy">
-              <h1>{t("Ma stack", "My stack")}</h1>
-              <p>{selectedTools.length} {t("outils", "tools")} · {activeBoards.length} {t("objectifs", "objectives")}</p>
+              <h1>{collectionView === "stack" ? t("Ma stack", "My stack") : t("Ma wishlist", "My wishlist")}</h1>
+              <p>{selectedTools.length} {t("outils", "tools")} · {activeBoards.length} {t("tableaux", "boards")}</p>
+              <nav className="stack-collection-switcher" aria-label={t("Type de sélection", "Saved tool type") as string}>
+                <button type="button" className={collectionView === "stack" ? "is-active" : ""} aria-pressed={collectionView === "stack"} onClick={() => setCollectionView("stack")}>
+                  {t("Dans ma stack", "In my stack")} <span>{stackToolSlugs.length}</span>
+                </button>
+                <button type="button" className={collectionView === "wishlist" ? "is-active" : ""} aria-pressed={collectionView === "wishlist"} onClick={() => setCollectionView("wishlist")}>
+                  {t("À étudier", "Wishlist")} <span>{wishlistToolSlugs.length}</span>
+                </button>
+              </nav>
             </div>
             <div className="stack-page-toolbar-actions">
               {unassignedTools.length > 0 && (
@@ -2827,15 +2850,14 @@ const CartPage = () => {
         <main className={`stack-board-grid${isOrganizingBoards ? " stack-board-grid--organizing" : ""}`} aria-label={t("Vue d'ensemble de ma stack", "My stack overview") as string}>
           {selectedTools.length === 0 && (
             <section className="stack-empty-overview">
-              <span>{t("Aucun outil sélectionné", "No selected tools")}</span>
-              <h2>{t("Votre vue d'ensemble est vide", "Your overview is empty")}</h2>
+              <span>{collectionView === "stack" ? t("Aucun outil utilisé", "No tools in use") : t("Aucun outil à étudier", "No saved tools to review")}</span>
+              <h2>{collectionView === "stack" ? t("Votre stack est vide", "Your stack is empty") : t("Votre wishlist est vide", "Your wishlist is empty")}</h2>
               <p>
-                {t(
-                  "Ajoutez un premier outil. Tooltrim le rangera automatiquement ici, sans vous faire quitter Ma stack.",
-                  "Add a first tool. Tooltrim will organize it here automatically, without leaving My stack.",
-                )}
+                {collectionView === "stack"
+                  ? t("Ajoutez les outils que vous utilisez réellement, puis classez-les dans vos tableaux.", "Add the tools you actually use, then organize them into boards.")
+                  : t("Gardez ici les outils que vous souhaitez comparer ou tester plus tard.", "Keep tools here that you want to compare or try later.")}
               </p>
-              <button type="button" className="cart-primary-link" onClick={() => openToolPicker()}>{t("Ajouter un premier outil", "Add a first tool")}</button>
+              <button type="button" className="cart-primary-link" onClick={() => openToolPicker()}>{t("Ajouter un outil", "Add a tool")}</button>
             </section>
           )}
           {activeBoards.map((board) => {

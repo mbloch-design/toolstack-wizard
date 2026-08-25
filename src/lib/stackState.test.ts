@@ -19,6 +19,7 @@ import {
   reorderToolsInState,
   renameCustomNeedInState,
   saveToolCartState,
+  saveToolSelectionInState,
   saveToolCartStateWithStatus,
   unpinToolInState,
   type StackStorage,
@@ -57,9 +58,9 @@ describe("stackState", () => {
 
     expect(state.pinnedToolSlugs).toEqual(["notion", "figma", "chatgpt"]);
     expect(state.toolEntries).toEqual([
-      { toolSlug: "notion", needIds: [], addedAt: "1970-01-01T00:00:00.000Z", assignmentMode: "pending" },
-      { toolSlug: "figma", needIds: [], addedAt: "1970-01-01T00:00:00.000Z", assignmentMode: "pending" },
-      { toolSlug: "chatgpt", needIds: [], addedAt: "1970-01-01T00:00:00.000Z", assignmentMode: "pending" },
+      { toolSlug: "notion", needIds: [], addedAt: "1970-01-01T00:00:00.000Z", assignmentMode: "pending", intent: "stack" },
+      { toolSlug: "figma", needIds: [], addedAt: "1970-01-01T00:00:00.000Z", assignmentMode: "pending", intent: "stack" },
+      { toolSlug: "chatgpt", needIds: [], addedAt: "1970-01-01T00:00:00.000Z", assignmentMode: "pending", intent: "stack" },
     ]);
   });
 
@@ -175,7 +176,17 @@ describe("stackState", () => {
       needIds: [],
       addedAt: "2026-07-10T10:00:00.000Z",
       assignmentMode: "pending",
+      intent: "stack",
     });
+  });
+
+  it("saves a wishlist tool and replaces its board selection when edited", () => {
+    const first = saveToolSelectionInState(createDefaultToolCartState(), "rive", ["design"], "wishlist", "2026-08-25T10:00:00.000Z");
+    const updated = saveToolSelectionInState(first, "rive", ["ia", "design"], "stack");
+
+    expect(first.toolEntries[0]).toMatchObject({ intent: "wishlist", needIds: ["design"] });
+    expect(updated.toolEntries[0]).toMatchObject({ intent: "stack", needIds: ["ia", "design"], addedAt: "2026-08-25T10:00:00.000Z" });
+    expect(updated.toolEntries).toHaveLength(1);
   });
 
   it("keeps one tool entry while assigning it to several needs", () => {

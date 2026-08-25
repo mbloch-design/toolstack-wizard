@@ -1,5 +1,14 @@
 # ToolTrim — AI Changelog
 
+## 2026-08-25 · Ajout à Ma Stack et wishlist
+
+- L’ajout d’un outil ouvre désormais une popin de classement inspirée des collections : statut `Je l’utilise` ou `À étudier`, sélection de plusieurs tableaux, suggestion contextuelle et création d’un tableau personnel sans quitter le parcours.
+- Un outil déjà enregistré ouvre la même popin pour modifier son statut ou ses tableaux ; le retrait devient une action explicite et ne se déclenche plus au premier clic.
+- L’état local passe en version 3 et migre les anciennes sélections vers `Dans ma stack` sans perte d’ordre ni d’affectation.
+- Ma Stack sépare les outils réellement utilisés de la wishlist au moyen de deux vues et de compteurs distincts.
+- L’architecture de compte retient Supabase Auth, avec une approche local-first puis synchronisation volontaire, Google et email au premier niveau et LinkedIn OIDC comme option professionnelle.
+- Validation : build production PASS, 23 tests de persistance PASS, parcours fiche → wishlist → Ma Stack vérifié dans le navigateur, y compris à 390 × 844 px.
+
 ## 2026-08-25 · Harmonisation typographique des fiches outils
 
 - Le fil d’Ariane des fiches outils adopte Inter Variable pour mieux appartenir à l’interface produit, sans modifier le traitement éditorial des autres familles de pages.

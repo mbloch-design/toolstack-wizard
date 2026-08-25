@@ -1,8 +1,10 @@
-export const STACK_STATE_VERSION = 2 as const;
-export const STACK_STATE_STORAGE_KEY = "tooltrim-ma-stack-mvp-v2";
+export const STACK_STATE_VERSION = 3 as const;
+export const STACK_STATE_STORAGE_KEY = "tooltrim-ma-stack-mvp-v3";
 export const STACK_STATE_BACKUP_STORAGE_KEY = `${STACK_STATE_STORAGE_KEY}-backup`;
 
 export const LEGACY_STACK_STATE_STORAGE_KEYS = [
+  "tooltrim-ma-stack-mvp-v2",
+  "tooltrim-ma-stack-mvp-v2-backup",
   "tooltrim-tool-cart-mvp-v1",
   "tooltrim-tool-cart-v1",
   "tooltrim-stack-builder-preprod",
@@ -12,6 +14,7 @@ export const LEGACY_STACK_STATE_STORAGE_KEYS = [
 ] as const;
 
 export type StackNeedSource = "suggested" | "custom";
+export type StackToolIntent = "stack" | "wishlist";
 
 export interface StackNeed {
   id: string;
@@ -26,6 +29,7 @@ export interface StackToolEntry {
   needIds: string[];
   addedAt: string;
   assignmentMode: "pending" | "auto" | "manual";
+  intent: StackToolIntent;
 }
 
 export interface ToolCartState {
@@ -130,6 +134,7 @@ function normalizeEntry(value: unknown): StackToolEntry | null {
         : addedAt === LEGACY_STACK_ENTRY_ADDED_AT || needIds.length === 0
           ? "pending"
           : "manual",
+    intent: record.intent === "wishlist" ? "wishlist" : "stack",
   };
 }
 
@@ -157,7 +162,7 @@ export function normalizeToolCartState(value: unknown): ToolCartState {
   });
   legacySlugs.forEach((toolSlug) => {
     if (!entryBySlug.has(toolSlug)) {
-      entryBySlug.set(toolSlug, { toolSlug, needIds: [], addedAt: LEGACY_STACK_ENTRY_ADDED_AT, assignmentMode: "pending" });
+      entryBySlug.set(toolSlug, { toolSlug, needIds: [], addedAt: LEGACY_STACK_ENTRY_ADDED_AT, assignmentMode: "pending", intent: "stack" });
     }
   });
 
@@ -194,7 +199,7 @@ function errorMessage(error: unknown) {
   return error instanceof Error ? error.message : String(error);
 }
 
-function isStoredV2State(value: unknown): value is Record<string, unknown> {
+function isStoredCurrentState(value: unknown): value is Record<string, unknown> {
   const record = asRecord(value);
   if (!record || record.version !== STACK_STATE_VERSION) return false;
   if (!Array.isArray(record.needs) || !Array.isArray(record.toolEntries) || !Array.isArray(record.pinnedToolSlugs)) return false;
@@ -217,7 +222,7 @@ export function parseToolCartStateSnapshot(raw: string | null): ToolCartState | 
   if (!raw) return null;
   try {
     const parsed = JSON.parse(raw);
-    return isStoredV2State(parsed) ? normalizeToolCartState(parsed) : null;
+    return isStoredCurrentState(parsed) ? normalizeToolCartState(parsed) : null;
   } catch {
     return null;
   }
@@ -292,7 +297,7 @@ export function loadToolCartStateWithStatus(storage: StackStorage): StackStateLo
         try {
           storage.removeItem(key);
         } catch {
-          // The migrated v2 state is already durable; stale legacy data is harmless.
+          // The migrated current state is already durable; stale legacy data is harmless.
         }
       });
     }
@@ -381,6 +386,7 @@ export function pinToolInState(
   needIds: string[] = [],
   addedAt = new Date().toISOString(),
   assignmentMode: StackToolEntry["assignmentMode"] = needIds.length > 0 ? "manual" : "pending",
+  intent: StackToolIntent = "stack",
 ): ToolCartState {
   const normalized = normalizeToolCartState(state);
   const slug = toolSlug.trim();
@@ -395,11 +401,46 @@ export function pinToolInState(
         ...entry,
         needIds: Array.from(new Set([...entry.needIds, ...validNeedIds])),
         assignmentMode: validNeedIds.length > 0 ? assignmentMode : entry.assignmentMode,
+        intent,
       }
       : entry)
-    : [...normalized.toolEntries, { toolSlug: slug, needIds: validNeedIds, addedAt, assignmentMode }];
+    : [...normalized.toolEntries, { toolSlug: slug, needIds: validNeedIds, addedAt, assignmentMode, intent }];
 
   return normalizeToolCartState({ ...normalized, toolEntries, pinnedToolSlugs: toolEntries.map((entry) => entry.toolSlug) });
+}
+
+export function saveToolSelectionInState(
+  state: ToolCartState,
+  toolSlug: string,
+  needIds: string[],
+  intent: StackToolIntent,
+  addedAt = new Date().toISOString(),
+): ToolCartState {
+  const normalized = normalizeToolCartState(state);
+  const slug = toolSlug.trim();
+  if (!slug) return normalized;
+
+  const knownNeedIds = new Set(normalized.needs.map((need) => need.id));
+  const validNeedIds = Array.from(new Set(needIds.filter((needId) => knownNeedIds.has(needId))));
+  const existing = normalized.toolEntries.find((entry) => entry.toolSlug === slug);
+  const nextEntry: StackToolEntry = {
+    toolSlug: slug,
+    needIds: validNeedIds,
+    addedAt: existing?.addedAt || addedAt,
+    assignmentMode: "manual",
+    intent,
+  };
+  const toolEntries = existing
+    ? normalized.toolEntries.map((entry) => entry.toolSlug === slug ? nextEntry : entry)
+    : [...normalized.toolEntries, nextEntry];
+
+  return normalizeToolCartState({ ...normalized, toolEntries, pinnedToolSlugs: toolEntries.map((entry) => entry.toolSlug) });
+}
+
+export function getToolSlugsByIntent(state: ToolCartState, intent: StackToolIntent): string[] {
+  return normalizeToolCartState(state).toolEntries
+    .filter((entry) => entry.intent === intent)
+    .map((entry) => entry.toolSlug);
 }
 
 export function unpinToolInState(state: ToolCartState, toolSlug: string): ToolCartState {
