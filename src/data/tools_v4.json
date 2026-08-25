@@ -40303,8 +40303,8 @@
     "category": "design-tools",
     "shortDescription": "Le plugin de rigging de personnages de référence pour After Effects. Gratuit.",
     "longDescription": "Duik (Ángela), c'est l'outil de référence, gratuit et open source, pour rigger et animer des personnages dans After Effects. Le rigging, c'est l'art de poser un 'squelette' sur une illustration pour pouvoir l'animer comme une marionnette : bras, jambes, contraintes, cinématique inverse. Pour un motion designer ou un illustrateur qui fait de l'animation de personnages 2D, c'est un passage quasi obligé, et il ne coûte rien.\n\nMaintenu par RxLaboratory et financé par des dons, Duik est complet et professionnel malgré sa gratuité. La contrepartie, c'est une courbe d'apprentissage réelle : le rigging est une discipline en soi.\n\nÀ qui ça s'adresse : uniquement à ceux qui font de l'animation de personnages dans After Effects. Si tes projets n'en contiennent pas, Duik ne te servira à rien. Mais dès que tu animes une illustration articulée, c'est l'outil de référence, et le fait qu'il soit gratuit le rend incontournable.",
-    "affiliateLink": "https://rxlaboratoire.com/duik",
-    "websiteUrl": "https://rxlaboratoire.com/duik",
+    "affiliateLink": "https://rxlaboratorio.org/rx-tool/duik/",
+    "websiteUrl": "https://rxlaboratorio.org/rx-tool/duik/",
     "defaultMonthlyPrice": 0,
     "pricing": {
       "free": "Entièrement gratuit et open source",
@@ -40355,7 +40355,11 @@
       "Artistes VFX",
       "Studios d'animation"
     ],
-    "alternatives": [],
+    "alternatives": [
+      "ae-rubberhose",
+      "ae-bao-boa",
+      "ae-overlord"
+    ],
     "seo": {
       "metaDescription": "Duik Ángela en 2026 : le plugin gratuit de rigging de personnages pour After Effects. À qui ça sert vraiment. Le verdict ToolTrim."
     },
@@ -40397,7 +40401,7 @@
     "substitution_cluster_v2": "plugin-after-effects",
     "pricing_v5": {
       "cautions": [],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-08-25",
       "source_domain": "rxlaboratorio.org",
       "usage_sensitive": false,
       "compare_plan_kind": "individual",
@@ -40455,7 +40459,11 @@
       "paid": ""
     },
     "force_silence": false,
-    "description": "Duik (Ángela), c'est l'outil de référence, gratuit et open source, pour rigger et animer des personnages dans After Effects. Le rigging, c'est l'art de poser un 'squelette' sur une illustration pour pouvoir l'animer comme une marionnette : bras, jambes, contraintes, cinématique inverse. Pour un motion designer ou un illustrateur qui fait de l'animation de personnages 2D, c'est un passage quasi obligé, et il ne coûte rien.\n\nMaintenu par RxLaboratory et financé par des dons, Duik est complet et professionnel malgré sa gratuité. La contrepartie, c'est une courbe d'apprentissage réelle : le rigging est une discipline en soi.\n\nÀ qui ça s'adresse : uniquement à ceux qui font de l'animation de personnages dans After Effects. Si tes projets n'en contiennent pas, Duik ne te servira à rien. Mais dès que tu animes une illustration articulée, c'est l'outil de référence, et le fait qu'il soit gratuit le rend incontournable."
+    "description": "Duik (Ángela), c'est l'outil de référence, gratuit et open source, pour rigger et animer des personnages dans After Effects. Le rigging, c'est l'art de poser un 'squelette' sur une illustration pour pouvoir l'animer comme une marionnette : bras, jambes, contraintes, cinématique inverse. Pour un motion designer ou un illustrateur qui fait de l'animation de personnages 2D, c'est un passage quasi obligé, et il ne coûte rien.\n\nMaintenu par RxLaboratory et financé par des dons, Duik est complet et professionnel malgré sa gratuité. La contrepartie, c'est une courbe d'apprentissage réelle : le rigging est une discipline en soi.\n\nÀ qui ça s'adresse : uniquement à ceux qui font de l'animation de personnages dans After Effects. Si tes projets n'en contiennent pas, Duik ne te servira à rien. Mais dès que tu animes une illustration articulée, c'est l'outil de référence, et le fait qu'il soit gratuit le rend incontournable.",
+    "ogImageUrl": "https://rxlaboratorio.org/wp-content/uploads/duik_angela.jpg",
+    "galleryImages": [
+      "https://rxlaboratory.org/wp-content/uploads/angela.jpeg"
+    ]
   },
   {
     "id": "dun-bradstreet",
@@ -79390,14 +79398,17 @@
   {
     "id": "logseq",
     "slug": "logseq",
-    "ogImageUrl": "https://opengraph.githubassets.com/tooltrim/logseq/logseq",
+    "ogImageUrl": "https://user-images.githubusercontent.com/25513724/221387376-4dc419c2-0d0a-460c-a920-2d211e78b456.gif",
+    "galleryImages": [
+      "https://opengraph.githubassets.com/tooltrim/logseq/logseq"
+    ],
     "name": "Logseq",
     "category": "organization",
     "shortDescription": "PKM open-source avec graphe de connaissances.",
     "shortDescriptionEn": "Open-source PKM with knowledge graph.",
-    "description": "Logseq, c'est pKM open-source avec graphe de connaissances. Gratuit pour commencer, payant pour aller plus loin.\n\nGratuit et open-source. stockage local en Markdown, liens bidirectionnels et graphe. Plugins communautaires riches. Concrètement : construire un second cerveau local. Ou encore : prendre des notes de réunion liées entre elles.\n\nÀ garder si : besoin de notes en réseau sans abonnement ou souveraineté des données importante. À éviter si : besoin de collaboration d'équipe ou préférence pour le cloud natif. Limite principale : performance parfois lente sur les gros graphes. Gratuit — à essayer si Roam Research vous intéresse mais pas son prix.",
-    "longDescription": "Logseq, c'est pKM open-source avec graphe de connaissances. Gratuit pour commencer, payant pour aller plus loin.\n\nGratuit et open-source. stockage local en Markdown, liens bidirectionnels et graphe. Plugins communautaires riches. Concrètement : construire un second cerveau local. Ou encore : prendre des notes de réunion liées entre elles.\n\nÀ garder si : besoin de notes en réseau sans abonnement ou souveraineté des données importante. À éviter si : besoin de collaboration d'équipe ou préférence pour le cloud natif. Limite principale : performance parfois lente sur les gros graphes. Gratuit — à essayer si Roam Research vous intéresse mais pas son prix.",
-    "longDescriptionEn": "Logseq is open-source PKM with knowledge graph. Free to start, paid plans for more.",
+    "description": "Logseq est une base de connaissances open source et local-first. Les notes sont organisées en blocs reliés par des liens bidirectionnels, des références et un graphe, avec prise en charge de Markdown et Org-mode. L'application combine journal quotidien, gestion de tâches, annotation de PDF et extensions communautaires.\n\nLe cœur du produit est gratuit et stocke les données sous votre contrôle. Une synchronisation officielle optionnelle facilite l'usage sur plusieurs appareils, tandis que les applications desktop et mobiles permettent de consulter et modifier son graphe hors du navigateur.\n\nLogseq convient surtout aux chercheurs, auteurs et profils techniques qui pensent par connexions plutôt que par dossiers. Pour des notes rapides ou une collaboration d'équipe immédiate, Notion ou une application de notes classique demandent moins de configuration.",
+    "longDescription": "Logseq est une base de connaissances open source et local-first. Les notes sont organisées en blocs reliés par des liens bidirectionnels, des références et un graphe, avec prise en charge de Markdown et Org-mode. L'application combine journal quotidien, gestion de tâches, annotation de PDF et extensions communautaires.\n\nLe cœur du produit est gratuit et stocke les données sous votre contrôle. Une synchronisation officielle optionnelle facilite l'usage sur plusieurs appareils, tandis que les applications desktop et mobiles permettent de consulter et modifier son graphe hors du navigateur.\n\nLogseq convient surtout aux chercheurs, auteurs et profils techniques qui pensent par connexions plutôt que par dossiers. Pour des notes rapides ou une collaboration d'équipe immédiate, Notion ou une application de notes classique demandent moins de configuration.",
+    "longDescriptionEn": "Logseq is an open-source, local-first knowledge base. Notes are organized as blocks connected through backlinks, references, and a visual graph, with support for Markdown and Org-mode. It combines a daily journal, task management, PDF annotation, and a growing ecosystem of community plugins.\n\nThe core product is free and keeps data under your control. Optional official sync makes multi-device use easier, while desktop and mobile apps let you access and edit your graph beyond the browser.\n\nLogseq is best suited to researchers, writers, and technical users who think through connections rather than folders. For quick notes or immediate team collaboration, Notion or a conventional notes app requires less setup.",
     "pricing": {
       "free": "Entièrement gratuit et open-source pour l'usage local, sans limite ni essai — c'est le produit complet.",
       "paid": "Sync cloud optionnel à 5$/mois (4,17$/mois annuel) ; palier Sponsor à 15$/mois (accès anticipé aux fonctionnalités expérimentales)."
@@ -79427,8 +79438,8 @@
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 5
     },
-    "affiliateLink": "",
-    "websiteUrl": "",
+    "affiliateLink": "https://logseq.com/",
+    "websiteUrl": "https://logseq.com/",
     "logo": "",
     "seo": {
       "aiAngle": {
@@ -79457,7 +79468,11 @@
       "Écrivains",
       "Passionnés privacy"
     ],
-    "alternatives": [],
+    "alternatives": [
+      "obsidian",
+      "roam-research",
+      "notion"
+    ],
     "verdict": {
       "keepIf": [
         "Vous gerez beaucoup de notes interconnectées.",
@@ -79499,13 +79514,13 @@
       "Excellent for knowledge management."
     ],
     "cons": [
-      "Pas de mobile app native (web only).",
+      "Les versions mobile et base de données peuvent évoluer à des rythmes différents.",
       "Pas de collaboration temps réel.",
       "Courbe d'apprentissage : bloc-lien pas intuitif.",
       "Synchronisation multi-appareils payante."
     ],
     "consEn": [
-      "No native mobile app (web only).",
+      "Mobile and database versions may evolve at different speeds.",
       "No real-time collaboration.",
       "Learning curve: block-linking not intuitive.",
       "Multi-device sync is a paid add-on."
