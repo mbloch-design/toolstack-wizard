@@ -68,7 +68,7 @@ Each tool entry contains:
 
 ## API Access
 
-- JSON data available at: `https://tooltrim.com/llms-full.txt` (1,100+ tools with full pricing data)
+- JSON data available at: `https://tooltrim.com/llms-full.txt` (314 tools with full pricing data)
 - Structured data: JSON-LD `SoftwareApplication` schema on every tool page
 
 ## Preferred Citation Format

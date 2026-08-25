@@ -150,6 +150,16 @@ function buildToolMetaDesc(tool: any, lang: string): string {
   const avail = 160 - tail.length - 1;
   if (base.length > avail) {
     base = base.substring(0, Math.max(40, avail)).replace(/\s+\S*$/, "");
+    // Le mot entier restant en fin de chaîne peut être une préposition/article
+    // isolé (ex: "…gestion de", "…partenariats), avec") qui donne l'impression
+    // d'une phrase coupée. On retire ces mots creux tant qu'ils traînent en bout.
+    const trailingStopWord = isFr
+      ? /(?:^|\s)(de|du|des|un|une|la|le|les|et|à|en|sur|pour|avec|au|aux|par|ou|qui|que|dont|sans|dans|ni)$/i
+      : /(?:^|\s)(of|the|a|an|and|or|to|for|with|on|in|at|by|from|as|that|which|but)$/i;
+    let match: RegExpMatchArray | null;
+    while ((match = base.match(trailingStopWord))) {
+      base = base.slice(0, base.length - match[0].length).trimEnd();
+    }
   }
   base = base.replace(/[\s.,;:!?–—-]+$/, "").trim();
   if (base) base += ".";

@@ -4,6 +4,32 @@
 
 ---
 
+## ⚠️ Mise à jour 2026-08-25 — vérification live
+
+Ce rapport date de 4 mois. Une repasse sur le site en production montre que **6 des 9 problèmes "critiques restants" sont déjà résolus**, et qu'**une des recommandations restantes est fausse et ne doit pas être appliquée**. Détail :
+
+| # | Point | Statut réel (vérifié en prod le 2026-08-25) |
+|---|---|---|
+| 1 | Meta descriptions outils courtes | ✅ Déployé — ~156 caractères en prod |
+| 2 | og:image + JSON-LD Organisation en non-www | ⛔ **Recommandation invalide, ne pas appliquer** — voir note ci-dessous |
+| 3 | `SoftwareApplication.url` = URL ToolTrim | ✅ Déployé — pointe sur le produit (ex. `https://notion.so`) |
+| 4 | BreadcrumbList absent | ✅ Déployé — présent en JSON-LD |
+| 5 | noscript body absent | ✅ Déployé — 3 blocs présents sur page outil |
+| 6 | llms-full.txt à 50 outils | ✅ Corrigé — 314 outils réels, header aligné le 2026-08-25 |
+| 7 | Performance (bundle 1,7 Mo, LCP/TBT) | ❓ Non revérifié dans cette passe — à auditer |
+| 8 | Content-Security-Policy absent | ✅ Déployé — header présent |
+| 9 | Pas de cache edge HTML | ✅ Déployé — `s-maxage=86400, stale-while-revalidate=604800` sur pages outils/catégories/comparatifs |
+
+### ⛔ Le point 2 est une régression à ne pas déployer
+
+Le host canonique du site est l'apex `tooltrim.com` — `www.tooltrim.com` fait un 301 vers `tooltrim.com` ([vercel.json](vercel.json), règle `has: host = www.tooltrim.com`). En prod, canonical, `og:url`, `og:image`, `Organization.url` et `logo` pointent tous cohéremment sur l'apex. Basculer ces métadonnées vers `www.tooltrim.com` comme recommandé ci-dessous ferait pointer og:image et le JSON-LD Organisation vers un host qui redirige — perte de signal SEO, pas un gain. Toute référence à ce fix plus bas dans ce document (sections On-Page, Schema, Images, Plan d'action) est **obsolète et ne doit pas être suivie**.
+
+### Nouveau problème détecté hors scope de cet audit
+
+`www.tooltrim.io` (variante `.io` du domaine) a des enregistrements DNS A contradictoires (IP Vercel + IP Cloudflare) et échoue en handshake TLS — des pages sont pourtant indexées sur ce host. Mis de côté pour l'instant à la demande de l'utilisateur ; à traiter côté DNS/Vercel, hors de ce repo.
+
+---
+
 ## Score SEO Global : 58 / 100
 
 > **Note importante :** 10 commits ont été préparés dans cette session mais ne sont PAS encore déployés.
@@ -241,20 +267,20 @@
 
 ### 🔴 Critique — Déployer maintenant (commits prêts)
 
-Les 10 commits de cette session sont prêts dans le repo local. **Un simple `git push` + build Vercel** débloque tous ces gains (+6 pts estimés) :
+> **Statut au 2026-08-25** : tous les items ci-dessous sont ✅ déployés et vérifiés en prod, **sauf** la ligne "www.tooltrim.com dans og:image + JSON-LD" qui est ⛔ **invalide** — voir la note en tête de document. Ne pas appliquer ce fix : il ferait pointer og:image/Organisation vers un host qui redirige (www → apex).
 
-| Fix | Commit | Impact |
-|-----|--------|--------|
-| Meta descriptions outils 130+ chars | 0c63771 | On-Page +8 |
-| BreadcrumbList sur 692 pages | 5099c98 | Schema +10 |
-| SoftwareApplication.url → URL produit | 1956932 | Schema +5 |
-| noscript body sur outils/catégories/comparatifs | e687bcf | On-Page +3 |
-| www.tooltrim.com dans og:image + JSON-LD | 56249f0 | Schema +3, Images +5 |
-| llms-full.txt 314 outils | f66b1df | AI Search +8 |
-| HSTS includeSubDomains + preload | 65c8371 | Technical +3 |
-| robots.txt (déjà déployé) | 05cddf9 | ✅ |
-| 301 redirect /→/fr (déjà déployé) | b36bcb8 | ✅ |
-| "IA Généraliste" fix titre | ebe60ee | On-Page +2 |
+| Fix | Commit | Impact | Statut live |
+|-----|--------|--------|-------------|
+| Meta descriptions outils 130+ chars | 0c63771 | On-Page +8 | ✅ |
+| BreadcrumbList sur 692 pages | 5099c98 | Schema +10 | ✅ |
+| SoftwareApplication.url → URL produit | 1956932 | Schema +5 | ✅ |
+| noscript body sur outils/catégories/comparatifs | e687bcf | On-Page +3 | ✅ |
+| ~~www.tooltrim.com dans og:image + JSON-LD~~ | 56249f0 | ~~Schema +3, Images +5~~ | ⛔ à ne pas appliquer — apex reste canonique |
+| llms-full.txt 314 outils | f66b1df | AI Search +8 | ✅ (compteur d'en-tête corrigé le 2026-08-25) |
+| HSTS includeSubDomains + preload | 65c8371 | Technical +3 | ✅ |
+| robots.txt (déjà déployé) | 05cddf9 | ✅ | ✅ |
+| 301 redirect /→/fr (déjà déployé) | b36bcb8 | ✅ | ✅ |
+| "IA Généraliste" fix titre | ebe60ee | On-Page +2 | ❓ non revérifié |
 
 ### 🟠 High — Dans la semaine
 
