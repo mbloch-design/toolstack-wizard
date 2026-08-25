@@ -4220,7 +4220,11 @@
     },
     "force_silence": false,
     "description": "Adobe Podcast (Enhance Speech), c'est un nettoyeur de voix par IA. Tu déposes un enregistrement avec de l'écho, du bruit de fond ou un micro moyen, et l'outil te renvoie une voix nette, comme enregistrée en studio. Le résultat est bluffant sur des conditions difficiles (chambre qui résonne, bruit de clim, micro d'ordinateur portable), au point d'être devenu un réflexe pour beaucoup de podcasteurs et de créateurs vidéo.\n\nLe gros argument, c'est que la version de base est gratuite, sans abonnement Adobe : tu peux traiter jusqu'à une heure d'audio par jour, par fichiers de 30 minutes. Pour aller plus loin (fichiers de 2 heures, traitement vidéo, traitement par lots, curseur d'intensité), il y a une formule Premium autour de 10$/mois.\n\nÀ qui ça sert vraiment : si tu enregistres des voix-off, des interviews ou des podcasts dans des conditions non maîtrisées, c'est un filet de sécurité gratuit qui sauve des prises. Si tu utilises déjà Descript ou une suite de montage complète, le débruitage y est souvent intégré, et Adobe Podcast fait alors double emploi. Mais comme point d'entrée gratuit, difficile de faire mieux.",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/adobe-podcast-ai.png"
+    "ogImageUrl": "https://podcast.adobe.com/ES_1_3128967a32.webp",
+    "galleryImages": [
+      "https://podcast.adobe.com/tiny_Enhance_Speech_1_english_1_1ae989fa4f.png",
+      "https://podcast.adobe.com/ES_sliders_1_82f3e8010b.webp"
+    ]
   },
   {
     "id": "adobe-premiere-pro",
@@ -72319,6 +72323,9 @@
       "auto_downgrade_allowed": false
     },
     "ogImageUrl": "https://tooltrim.com/og-screenshots/knockout.png",
+    "galleryImages": [
+      "https://opengraph.githubassets.com/tooltrim/knockout/knockout"
+    ],
     "force_silence": false
   },
   {
@@ -79383,6 +79390,7 @@
   {
     "id": "logseq",
     "slug": "logseq",
+    "ogImageUrl": "https://opengraph.githubassets.com/tooltrim/logseq/logseq",
     "name": "Logseq",
     "category": "organization",
     "shortDescription": "PKM open-source avec graphe de connaissances.",
@@ -82825,7 +82833,8 @@
     "substitution_cluster_v2": "plugin-after-effects",
     "description": "Magic Bullet, c'est la suite d'étalonnage et de look cinéma de Red Giant, pensée pour rester dans le flux Adobe. Son produit star, Looks, permet d'appliquer des étalonnages cinéma complets en quelques clics. La suite ajoute Colorista (correction colorimétrique fine), Denoiser (débruitage) et Cosmo (lissage de peau). Pour un monteur qui veut un rendu pro sans plonger dans un étalonnage manuel, c'est efficace et rapide.\n\nComme le reste de Red Giant, Magic Bullet n'est plus vendu seul : il passe par l'abonnement Red Giant Complete (~50$/mois) ou Maxon One. Le vrai arbitrage, c'est DaVinci Resolve : gratuit, c'est aujourd'hui l'outil d'étalonnage le plus complet du marché. Magic Bullet garde du sens surtout pour rester dans After Effects/Premiere sans changer de logiciel. Si tu acceptes d'étalonner dans Resolve, tu peux t'en passer entièrement.",
     "decision_policy_v3": null,
-    "force_silence": false
+    "force_silence": false,
+    "ogImageUrl": "https://i.ytimg.com/vi/jxqSpbc8Z1A/maxresdefault.jpg"
   },
   {
     "id": "magic-patterns",
@@ -92810,7 +92819,11 @@
     },
     "force_silence": false,
     "description": "Motion Bro, c'est une extension pour After Effects qui sert à organiser, parcourir et appliquer des packs de presets (transitions, effets, animations de texte) depuis une interface visuelle, au lieu de fouiller dans des dossiers. C'est un concurrent direct d'Animation Composer, avec la même promesse : gagner du temps quand on réutilise beaucoup de presets.\n\nLe modèle : l'extension de base est gratuite, et tu achètes ensuite des packs de presets (souvent en achat unique), certains gratuits. Tu ne paies donc que ce que tu utilises vraiment.\n\nÀ qui ça s'adresse : aux motion designers qui accumulent beaucoup de packs et veulent les gérer proprement. Si tu as peu de presets, un simple dossier local fait l'affaire. Et si tu utilises déjà Animation Composer, Motion Bro fait double emploi : choisis l'un ou l'autre selon les packs qui t'intéressent.",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/motion-bro.png"
+    "ogImageUrl": "https://motionbro.com/wp-content/uploads/2022/12/free-motion-bro-pack-cover.jpg.webp",
+    "galleryImages": [
+      "https://motionbro.com/wp-content/uploads/2023/10/Simple-Slide.jpg.webp",
+      "https://motionbro.com/wp-content/uploads/2022/03/simple-slide-cover.jpg.webp"
+    ]
   },
   {
     "id": "move-ai",
@@ -119023,6 +119036,9 @@
       "auto_downgrade_allowed": false
     },
     "ogImageUrl": "https://tooltrim.com/og-screenshots/react-router.png",
+    "galleryImages": [
+      "https://opengraph.githubassets.com/tooltrim/remix-run/react-router"
+    ],
     "force_silence": false
   },
   {
@@ -137900,7 +137916,11 @@
     ],
     "articles": [],
     "alternatives": [],
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/solid-inspector2.png",
+    "ogImageUrl": "https://i0.wp.com/www.thomthom.net/thoughts/wp-content/uploads/2014/12/UI-Example.png?resize=976%2C564",
+    "galleryImages": [
+      "https://www.thomthom.net/thoughts/wp-content/uploads/2014/12/InternalFaces.png",
+      "https://www.thomthom.net/thoughts/wp-content/uploads/2014/12/FixedErrors.png"
+    ],
     "pricingEn": null,
     "seo": null,
     "freeAlternative": null,
@@ -138747,7 +138767,10 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://a.storyblok.com/f/146026/2400x1260/7f4c022aeb/en-seo-image.png"
+    "ogImageUrl": "https://a.storyblok.com/f/146026/2400x1260/7f4c022aeb/en-seo-image.png",
+    "galleryImages": [
+      "https://a.storyblok.com/f/146026/1200x628/8ac028b808/seo_image_-_en.png"
+    ]
   },
   {
     "id": "spline",
@@ -151239,7 +151262,10 @@
     },
     "force_silence": false,
     "description": "Topaz Video AI, c'est l'outil spécialisé dans l'amélioration de vidéo par IA : upscaling (passer une vidéo en 4K), débruitage, stabilisation, ralenti fluide, restauration de vieilles images. Là où un logiciel de montage classique se contente de couper, Topaz reconstruit les détails image par image avec ses modèles IA. Pour un monteur ou un vidéaste qui doit récupérer des rushes de mauvaise qualité ou livrer en haute définition, c'est redoutablement efficace.\n\nLe modèle de prix a longtemps été un achat unique autour de 299$ (avec un an de mises à jour, puis 99$/an pour continuer à les recevoir), ce qui en faisait une rareté appréciée dans un monde d'abonnements. Depuis fin 2025, Topaz est passé à un modèle par abonnement pour les nouveaux utilisateurs, vérifie l'offre en cours sur leur site.\n\nÀ qui ça s'adresse : aux vidéastes et monteurs qui font régulièrement de l'upscaling ou de la restauration. C'est gourmand en puissance machine (GPU). Pour un besoin ponctuel, des outils en ligne ou les fonctions intégrées de ton logiciel de montage peuvent suffire. Mais pour de la qualité d'upscaling sérieuse en local, Topaz reste la référence.",
-    "ogImageUrl": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/68ca910577540672ae401448_opengraph-topaz-video.webp"
+    "ogImageUrl": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/68ca910577540672ae401448_opengraph-topaz-video.webp",
+    "galleryImages": [
+      "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/662078e248e0b92f5ad6bc2a_opengraph-video-1.jpg"
+    ]
   },
   {
     "id": "touchdesigner",
