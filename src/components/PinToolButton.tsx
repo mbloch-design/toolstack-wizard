@@ -45,7 +45,7 @@ export function PinToolButton({ slug, label, t, compact = false, inline = false,
   const mode = labelMode ?? (compact ? "icon" : "full");
   const buttonLabel = pinned
     ? entry.intent === "wishlist"
-      ? mode === "full" ? t("Dans ma wishlist", "In my wishlist") : t("À étudier", "Saved")
+      ? mode === "full" ? t("Dans Mes envies", "On my wishlist") : t("Mes envies", "Wishlist")
       : mode === "full" ? t("Dans ma stack", "In my stack") : t("Dans la stack", "In stack")
     : mode === "full" ? t("Ajouter à ma stack", "Add to my stack") : t("Ajouter", "Add");
 
@@ -88,7 +88,7 @@ export function PinToolButton({ slug, label, t, compact = false, inline = false,
           closeDialog();
           toast.success(intent === "stack"
             ? t(`${label} a été ajouté à votre stack.`, `${label} was added to your stack.`)
-            : t(`${label} a été ajouté à votre wishlist.`, `${label} was added to your wishlist.`));
+            : t(`${label} a été ajouté à Mes envies.`, `${label} was added to your wishlist.`));
         }}
         t={t}
       />

@@ -24302,6 +24302,77 @@ section[id] {
   padding: 0 5px;
 }
 .stack-collection-switcher button:not(.is-active) span { background: var(--color-surface); color: var(--color-muted); }
+.stack-library-tabs {
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+.stack-library-tabs-inner {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  margin: 0 auto;
+  max-width: calc(var(--layout-content, 1280px) + var(--layout-gutter, 48px) + var(--layout-gutter, 48px));
+  min-width: 0;
+  overflow-x: auto;
+  padding: 0 var(--layout-gutter, 48px) 18px var(--stack-leading-gutter, 80px);
+  scrollbar-width: none;
+}
+.stack-library-tabs-inner::-webkit-scrollbar { display: none; }
+.stack-library-tabs button {
+  align-items: center;
+  appearance: none;
+  background: transparent;
+  border: 0;
+  border-radius: 10px;
+  color: var(--color-muted);
+  cursor: pointer;
+  display: inline-flex;
+  flex: 0 0 auto;
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  font-weight: 620;
+  gap: 7px;
+  min-height: 38px;
+  padding: 0 12px;
+  transition: background 140ms ease, color 140ms ease;
+  white-space: nowrap;
+}
+.stack-library-tabs button:hover {
+  background: var(--color-surface-soft);
+  color: var(--color-text);
+}
+.stack-library-tabs button.is-active {
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+.stack-library-tabs button:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: 2px;
+}
+.stack-library-tabs button small {
+  align-items: center;
+  background: color-mix(in srgb, var(--color-border) 58%, transparent);
+  border-radius: var(--radius-pill);
+  color: inherit;
+  display: inline-flex;
+  font-size: 0.66rem;
+  font-weight: 720;
+  height: 20px;
+  justify-content: center;
+  min-width: 20px;
+  padding: 0 5px;
+}
+.stack-library-tabs-divider {
+  align-self: stretch;
+  background: var(--color-border);
+  flex: 0 0 1px;
+  margin: 5px 4px;
+  width: 1px;
+}
+.stack-library-tabs-wishlist svg { color: currentColor; }
+.stack-library-tabs-wishlist.is-active {
+  background: #f1ede4;
+}
 .stack-page-toolbar-actions {
   align-items: center;
   display: flex;
@@ -24753,6 +24824,15 @@ section[id] {
   }
   .stack-page-toolbar-copy p {
     font-size: 0.7rem;
+  }
+  .stack-library-tabs-inner {
+    gap: 4px;
+    padding-bottom: 12px;
+  }
+  .stack-library-tabs button {
+    font-size: 0.76rem;
+    min-height: 36px;
+    padding: 0 10px;
   }
   .stack-page-toolbar-actions {
     gap: 6px;

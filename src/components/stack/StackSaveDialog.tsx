@@ -133,7 +133,7 @@ export function StackSaveDialog({
           </button>
           <button type="button" role="radio" aria-checked={intent === "wishlist"} className={intent === "wishlist" ? "is-selected" : ""} onClick={() => setIntent("wishlist")}>
             <span className="stack-save-intent-icon"><Bookmark size={18} aria-hidden /></span>
-            <span><strong>{t("À étudier", "Save for later")}</strong><small>{t("Je le garde dans ma wishlist", "Keep it in my wishlist")}</small></span>
+            <span><strong>{t("Ça me tente", "On my wishlist")}</strong><small>{t("Je le garde dans Mes envies", "Keep it on my wishlist")}</small></span>
           </button>
         </div>
 
