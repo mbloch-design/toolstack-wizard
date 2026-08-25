@@ -2031,6 +2031,19 @@ export default defineConfig(({ mode, isSsrBuild }) => {
     !isSsrBuild && staticPrerenderPlugin(useCatalogProjectionForFiche),
   ].filter(Boolean),
   build: {
+    // Every prerendered page shares one index.html/entry graph, so Vite's
+    // default modulePreload can't tell "home" from "tool page" apart — it
+    // preloads every data-*.json chunk below on every route, including ones
+    // only reachable via a dynamic import() inside ToolDetailPage/GuideDetailPage
+    // (kept eager for SSR, see App.tsx). Those pages are fully SSR'd already,
+    // so the chunk is only needed at hydration time, not for first paint.
+    // Excluding data-* chunks from the preload hint removes that dead-weight
+    // fetch on every other route without changing when/whether they load.
+    modulePreload: isSsrBuild
+      ? undefined
+      : {
+          resolveDependencies: (_filename, deps) => deps.filter((dep) => !/\/data-[\w-]+-[\w-]+\.js$/.test(dep)),
+        },
     rollupOptions: {
       output: isSsrBuild ? undefined : {
         manualChunks(id) {
