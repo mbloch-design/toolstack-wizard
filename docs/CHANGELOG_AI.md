@@ -4036,3 +4036,11 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Recomposition des filtres comme une navigation soulignée, sans capsules concurrentes ni bordure de séparation sous le menu.
 - Déplacement de l’accès à l’organisation à droite de la navigation, sous le libellé explicite « Organiser mes outils » avec pictogramme de réglage.
 - Transformation du bouton rond ambigu en CTA « Explorer les outils », avec une affordance et une destination compréhensibles sans infobulle.
+
+## 2026-08-25 · Compte facultatif et synchronisation Ma Stack
+
+- Ajout d’un CTA secondaire « Synchroniser » dans Ma Stack, sans mur de connexion pendant l’exploration.
+- Ajout d’une modale de compte avec Google OAuth, magic link email, état synchronisé, déconnexion et parcours de suppression confirmé en deux étapes.
+- Mise en place d’un snapshot personnel versionné : fusion initiale du local et du distant, conservation du cache navigateur et sauvegarde automatique après modification.
+- Ajout des tables Supabase `profiles` et `stack_snapshots`, de leurs droits authentifiés et de politiques RLS par propriétaire.
+- Ajout des tests de fusion et réouverture automatique de la modale au retour de l’authentification.

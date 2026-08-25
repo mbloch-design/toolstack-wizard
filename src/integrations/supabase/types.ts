@@ -14,6 +14,57 @@ export type Database = {
   }
   public: {
     Tables: {
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          display_name: string | null
+          id: string
+          locale: string
+          updated_at: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          display_name?: string | null
+          id: string
+          locale?: string
+          updated_at?: string
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          display_name?: string | null
+          id?: string
+          locale?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      stack_snapshots: {
+        Row: {
+          owner_id: string
+          revision: number
+          state: Json
+          state_version: number
+          updated_at: string
+        }
+        Insert: {
+          owner_id: string
+          revision?: number
+          state: Json
+          state_version?: number
+          updated_at?: string
+        }
+        Update: {
+          owner_id?: string
+          revision?: number
+          state?: Json
+          state_version?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
       categories: {
         Row: {
           description: string | null

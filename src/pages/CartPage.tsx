@@ -1,14 +1,16 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { flushSync } from "react-dom";
 import { Link, useLocation, useNavigate, useSearchParams } from "react-router-dom";
-import { ArrowLeft, Compass, GripVertical, Heart, MoreHorizontal, Pencil, Plus, Search, SlidersHorizontal, Trash2, UserRound, X } from "lucide-react";
+import { ArrowLeft, Cloud, Compass, GripVertical, Heart, MoreHorizontal, Pencil, Plus, Search, SlidersHorizontal, Trash2, UserRound, X } from "lucide-react";
 import { toast } from "sonner";
 import { ToolCardEditorial } from "@/components/ToolCardEditorial";
 import ToolLogo from "@/components/ToolLogo";
 import StackToolInspector from "@/components/stack/StackToolInspector";
 import StackNeedsManagerDialog from "@/components/stack/StackNeedsManagerDialog";
+import StackAccountDialog from "@/components/stack/StackAccountDialog";
 import { useLang } from "@/hooks/useLang";
 import { useStackPins } from "@/hooks/useStackPins";
+import { useStackAccount } from "@/hooks/useStackAccount";
 import { useCategories, useToolSummaries, type ToolSummary } from "@/hooks/useSupabaseData";
 import { scrollToTop } from "@/lib/scroll";
 import { classifyToolForStack } from "@/lib/stackAutoClassification";
@@ -1755,7 +1757,9 @@ const CartPage = () => {
     renameNeed,
     deleteNeed,
     moveNeed,
+    replaceState,
   } = useStackPins();
+  const stackAccount = useStackAccount({ lang, state, replaceState });
   const [searchParams, setSearchParams] = useSearchParams();
   const pickerBoardId = searchParams.get("ajouter");
   const inspectorNavigationDepth = typeof location.state?.stackToolInspectorDepth === "number"
@@ -1774,6 +1778,16 @@ const CartPage = () => {
   const [draftNeedIds, setDraftNeedIds] = useState<string[]>([]);
   const [needDialogMode, setNeedDialogMode] = useState<"add" | "edit">("edit");
   const [isCollectionManagerOpen, setIsCollectionManagerOpen] = useState(false);
+  const [isAccountDialogOpen, setIsAccountDialogOpen] = useState(false);
+
+  useEffect(() => {
+    if (searchParams.get("compte") === "retour") {
+      setIsAccountDialogOpen(true);
+      const nextParams = new URLSearchParams(searchParams);
+      nextParams.delete("compte");
+      setSearchParams(nextParams, { replace: true });
+    }
+  }, [searchParams, setSearchParams]);
   const [editingBoardId, setEditingBoardId] = useState<string | null>(null);
   const [draggedToolSlug, setDraggedToolSlug] = useState<string | null>(null);
   const [dragOverSubdomainId, setDragOverSubdomainId] = useState<string | null>(null);
@@ -2566,6 +2580,17 @@ const CartPage = () => {
               </div>
             </div>
             <div className="stack-profile-actions">
+              <button
+                type="button"
+                className={`stack-profile-sync${stackAccount.user ? " is-connected" : ""}`}
+                onClick={() => setIsAccountDialogOpen(true)}
+                aria-label={stackAccount.user
+                  ? t("Gérer la synchronisation de Ma stack", "Manage My stack sync") as string
+                  : t("Synchroniser Ma stack", "Sync My stack") as string}
+              >
+                <Cloud size={18} aria-hidden />
+                <span>{stackAccount.user ? t("Synchronisée", "Synced") : t("Synchroniser", "Sync")}</span>
+              </button>
               <Link className="stack-page-toolbar-icon stack-page-toolbar-icon--primary" to={getExplorerHref(prefix, { type: "stack" })} aria-label={t("Explorer autour de Ma stack", "Explore around My stack") as string}>
                 <Compass size={18} aria-hidden />
                 <span>{t("Explorer autour de ma stack", "Explore around my stack")}</span>
@@ -3033,6 +3058,20 @@ const CartPage = () => {
           </footer>
         </main>
       )}
+
+      <StackAccountDialog
+        isOpen={isAccountDialogOpen}
+        user={stackAccount.user}
+        status={stackAccount.status}
+        error={stackAccount.error}
+        magicLinkSentTo={stackAccount.magicLinkSentTo}
+        onClose={() => setIsAccountDialogOpen(false)}
+        onGoogle={stackAccount.signInWithGoogle}
+        onMagicLink={stackAccount.sendMagicLink}
+        onSignOut={stackAccount.signOut}
+        onDeleteAccount={stackAccount.deleteAccount}
+        t={t}
+      />
     </div>
   );
 };

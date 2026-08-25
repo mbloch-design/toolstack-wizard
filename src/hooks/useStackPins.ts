@@ -181,6 +181,10 @@ export function useStackPins() {
     updateToolCartState((current) => normalizeToolCartState({ ...current, toolEntries: [], pinnedToolSlugs: [] }));
   }, []);
 
+  const replaceState = useCallback((nextState: ToolCartState) => {
+    commitToolCartState(nextState);
+  }, []);
+
   return {
     state,
     persistenceStatus,
@@ -198,5 +202,6 @@ export function useStackPins() {
     moveTool,
     setToolOrder,
     clearTools,
+    replaceState,
   };
 }

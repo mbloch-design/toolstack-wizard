@@ -12,12 +12,12 @@ Le compte intervient au moment où sa valeur est évidente, via un CTA comme **�
 
 Utiliser **Supabase Auth**, déjà cohérent avec la stack technique et le client Supabase du projet.
 
-Ordre de lancement recommandé :
+Ordre de lancement :
 
 1. Google OAuth, principal raccourci de connexion ;
 2. email par magic link ou OTP, solution universelle sans mot de passe ;
-3. LinkedIn OIDC, secondaire et pertinent pour l’audience professionnelle ;
-4. Apple uniquement si les données montrent un besoin significatif sur iOS/macOS.
+3. LinkedIn OIDC reste une évolution secondaire ;
+4. Apple ne sera ajouté que si les données montrent un besoin significatif sur iOS/macOS.
 
 Ne pas afficher six fournisseurs au premier écran. Google + email doivent rester visibles ; LinkedIn peut être proposé dans « Plus d’options ». Supabase relie automatiquement les identités OAuth partageant une adresse vérifiée, ce qui évite de créer plusieurs comptes pour une même personne.
 
@@ -50,7 +50,9 @@ Références officielles :
 
 Créer un utilisateur Supabase anonyme dès la première visite n’est pas recommandé pour la première version : cela ajoute des comptes fantômes et une gestion de conflits avant que le besoin de synchronisation soit validé. La conversion anonyme reste une évolution possible si ToolTrim a besoin d’écrire côté serveur avant le consentement au compte.
 
-## Modèle de données cible
+## Modèle de données livré
+
+La première version utilise un **snapshot personnel versionné**, volontairement plus simple qu’un modèle relationnel prématuré. Le navigateur reste la source locale immédiate ; après connexion, le snapshot distant est fusionné puis sauvegardé automatiquement.
 
 ```text
 profiles
@@ -60,39 +62,33 @@ profiles
   locale text
   created_at timestamptz
 
-stack_boards
-  id uuid
+stack_snapshots
   owner_id uuid
-  stable_key text
-  label text
-  source suggested | custom
-  sort_order integer
-
-stack_items
-  id uuid
-  owner_id uuid
-  tool_slug text
-  intent stack | wishlist
-  added_at timestamptz
+  state jsonb
+  state_version integer
+  revision bigint
   updated_at timestamptz
-  unique(owner_id, tool_slug)
-
-stack_item_boards
-  item_id uuid
-  board_id uuid
-  primary key(item_id, board_id)
 ```
 
-Toutes les tables personnelles doivent activer RLS avec `owner_id = auth.uid()`. Les suppressions de compte doivent supprimer les données personnelles associées. Les slugs outils et les `stable_key` de tableaux servent à fusionner le local et le serveur de manière idempotente.
+Les deux tables activent RLS avec une politique par opération et une propriété vérifiée par `(select auth.uid())`. Les clés étrangères vers `auth.users` utilisent `on delete cascade`. Une future normalisation en tables `stack_items` et `stack_boards` ne sera justifiée que par un besoin réel de partage, collaboration ou requêtes serveur fines.
 
 ## Règles de fusion
 
 - Un outil n’existe qu’une fois par compte.
-- Le statut le plus récemment modifié gagne (`stack` ou `wishlist`).
-- Les tableaux sont fusionnés par identifiant stable ; les tableaux personnalisés utilisent un UUID.
+- À la première connexion, les outils et collections présents localement ou à distance sont réunis.
+- À l’issue de cette hydratation, chaque modification locale met à jour le snapshot distant avec un délai court.
+- Les collections sont fusionnées par identifiant stable ; les collections personnalisées utilisent un UUID.
 - Les affectations multi-tableaux sont réunies, sans doublon.
 - Une suppression explicite et datée doit être conservée comme tombstone pendant la fenêtre de synchronisation, afin d’éviter la résurrection depuis un autre appareil.
 
-## Limites de la tranche actuelle
+## État au 25 août 2026
 
-Le modèle local v3, la popin, les deux intentions et les tableaux sont implémentables immédiatement et ne dépendent pas de l’authentification. La synchronisation distante nécessite ensuite : migrations SQL, politiques RLS, configuration OAuth, écran de connexion et tests de fusion multi-appareils.
+- [x] Migration `profiles` + `stack_snapshots` appliquée sur Supabase.
+- [x] RLS et droits limités aux utilisateurs authentifiés.
+- [x] CTA facultatif « Synchroniser » dans Ma Stack.
+- [x] Connexion Google et email magic link intégrées dans une modale dédiée.
+- [x] Fusion initiale, cache local et sauvegarde distante automatique.
+- [x] Retour de connexion réouvert directement sur l’état du compte.
+- [ ] Configurer les identifiants Google et les URL de redirection autorisées dans Supabase.
+- [ ] Déployer la fonction de suppression de compte après validation explicite de cette action irréversible.
+- [ ] Tester un vrai parcours multi-appareils avec un compte de recette.

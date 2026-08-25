@@ -24320,6 +24320,126 @@ section[id] {
   flex: 0 0 auto;
   gap: 10px;
 }
+.stack-profile-sync {
+  align-items: center;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  color: var(--color-text);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: var(--font-ui);
+  font-size: .78rem;
+  font-weight: 720;
+  gap: 8px;
+  min-height: 48px;
+  padding: 0 17px;
+}
+.stack-profile-sync:hover { background: var(--color-surface-soft); }
+.stack-profile-sync.is-connected { color: #315f42; }
+.stack-profile-sync:focus-visible { outline: 3px solid color-mix(in srgb, var(--color-text) 22%, transparent); outline-offset: 2px; }
+
+.stack-account-backdrop {
+  align-items: center;
+  background: rgb(24 24 22 / .58);
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  padding: 24px;
+  position: fixed;
+  z-index: 180;
+}
+.stack-account-dialog {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  box-shadow: 0 24px 80px rgb(20 20 18 / .24);
+  color: var(--color-text);
+  font-family: var(--font-ui);
+  max-height: min(720px, calc(100vh - 48px));
+  max-width: 620px;
+  overflow: auto;
+  padding: 44px;
+  position: relative;
+  width: 100%;
+}
+.stack-account-close {
+  align-items: center;
+  background: var(--color-surface-soft);
+  border: 0;
+  border-radius: var(--radius-pill);
+  color: var(--color-text);
+  cursor: pointer;
+  display: inline-flex;
+  height: 38px;
+  justify-content: center;
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  width: 38px;
+}
+.stack-account-head { align-items: flex-start; display: flex; gap: 16px; padding-right: 30px; }
+.stack-account-icon {
+  align-items: center;
+  background: var(--color-text);
+  border-radius: 10px;
+  color: var(--color-bg);
+  display: inline-flex;
+  flex: 0 0 auto;
+  height: 48px;
+  justify-content: center;
+  width: 48px;
+}
+.stack-account-head > div { display: grid; gap: 7px; }
+.stack-account-head span:not(.stack-account-icon) { color: var(--color-muted); font-size: .68rem; font-weight: 760; letter-spacing: .07em; text-transform: uppercase; }
+.stack-account-head h2 { font-size: clamp(1.75rem, 4vw, 2.4rem); font-weight: 760; letter-spacing: -.045em; line-height: 1.03; margin: 0; }
+.stack-account-head p { color: var(--color-muted); font-size: .86rem; line-height: 1.5; margin: 0; }
+.stack-account-benefits { display: grid; gap: 10px; list-style: none; margin: 28px 0; padding: 0; }
+.stack-account-benefits li { align-items: center; display: flex; font-size: .82rem; gap: 10px; }
+.stack-account-benefits svg { color: var(--color-muted); flex: 0 0 auto; }
+.stack-account-google {
+  align-items: center;
+  background: var(--color-text);
+  border: 0;
+  border-radius: 10px;
+  color: var(--color-bg);
+  cursor: pointer;
+  display: flex;
+  font: 720 .84rem/1 var(--font-ui);
+  gap: 11px;
+  justify-content: center;
+  min-height: 50px;
+  width: 100%;
+}
+.stack-account-google > span { align-items: center; background: var(--color-bg); border-radius: 50%; color: var(--color-text); display: inline-flex; font-weight: 820; height: 24px; justify-content: center; width: 24px; }
+.stack-account-separator { align-items: center; color: var(--color-muted); display: flex; font-size: .7rem; gap: 12px; margin: 22px 0; }
+.stack-account-separator::before, .stack-account-separator::after { background: var(--color-border); content: ""; flex: 1; height: 1px; }
+.stack-account-email { display: grid; gap: 8px; }
+.stack-account-email > label { font-size: .72rem; font-weight: 720; }
+.stack-account-email > div { align-items: center; border: 1px solid var(--color-border); border-radius: 10px; display: flex; min-height: 52px; padding-left: 15px; }
+.stack-account-email input { background: transparent; border: 0; color: var(--color-text); flex: 1; font: 500 .82rem/1 var(--font-ui); min-width: 0; outline: 0; padding: 0 12px; }
+.stack-account-email button { align-self: stretch; background: var(--color-surface-soft); border: 0; border-left: 1px solid var(--color-border); border-radius: 0 9px 9px 0; color: var(--color-text); cursor: pointer; font: 720 .74rem/1 var(--font-ui); min-width: 128px; padding: 0 14px; }
+.stack-account-email button:disabled, .stack-account-google:disabled { cursor: wait; opacity: .62; }
+.stack-account-privacy { color: var(--color-muted); font-size: .68rem; line-height: 1.45; margin: 16px 0 0; text-align: center; }
+.stack-account-success, .stack-account-error, .stack-account-sync-state { align-items: center; border-radius: 10px; display: flex; font-size: .76rem; gap: 9px; line-height: 1.4; margin: 18px 0 0; padding: 12px 14px; }
+.stack-account-success, .stack-account-sync-state { background: #eef4ee; color: #315f42; }
+.stack-account-error { background: #f8ece9; color: #8b352d; }
+.stack-account-session-actions { border-top: 1px solid var(--color-border); display: flex; flex-wrap: wrap; gap: 8px; justify-content: space-between; margin-top: 28px; padding-top: 20px; }
+.stack-account-session-actions > button, .stack-account-delete-confirm button { align-items: center; background: var(--color-surface-soft); border: 0; border-radius: 10px; color: var(--color-text); cursor: pointer; display: inline-flex; font: 690 .74rem/1 var(--font-ui); gap: 8px; min-height: 40px; padding: 0 13px; }
+.stack-account-session-actions button.is-danger { color: #9a382e; }
+.stack-account-delete-confirm { background: var(--color-surface-soft); border-radius: 10px; display: flex; flex: 1 0 100%; flex-wrap: wrap; gap: 8px; padding: 14px; }
+.stack-account-delete-confirm p { color: var(--color-muted); flex: 1 0 100%; font-size: .74rem; line-height: 1.45; margin: 0; }
+.is-spinning { animation: stack-account-spin .8s linear infinite; }
+@keyframes stack-account-spin { to { transform: rotate(360deg); } }
+@media (max-width: 600px) {
+  .stack-account-backdrop { align-items: flex-end; padding: 10px; }
+  .stack-account-dialog { border-radius: 10px; max-height: calc(100vh - 20px); padding: 34px 22px 24px; }
+  .stack-account-head { gap: 12px; padding-right: 20px; }
+  .stack-account-icon { height: 42px; width: 42px; }
+  .stack-account-email > div { align-items: stretch; display: grid; grid-template-columns: auto minmax(0, 1fr); padding-top: 13px; }
+  .stack-account-email > div > svg { margin-left: 14px; }
+  .stack-account-email button { border-left: 0; border-radius: 0 0 9px 9px; border-top: 1px solid var(--color-border); grid-column: 1 / -1; margin-top: 12px; min-height: 44px; width: 100%; }
+}
 .stack-page-toolbar-inner {
   align-items: center;
   display: grid;
@@ -24669,6 +24789,8 @@ section[id] {
     width: 64px;
   }
   .stack-library-tool-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stack-profile-actions { align-items: stretch; flex-direction: column-reverse; }
+  .stack-profile-sync, .stack-page-toolbar-icon--primary { justify-content: center; min-height: 44px; }
 }
 .stack-page-toolbar-actions {
   align-items: center;

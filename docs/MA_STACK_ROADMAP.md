@@ -200,7 +200,7 @@ Décision : ne pas masquer ni abaisser le seuil GO14 dans ce chantier. Cet éche
 
 - Recommandation personnalisée ou promesse de « meilleur outil pour votre profil ».
 - Matching avancé fondé sur un volume de données encore insuffisant.
-- Compte, synchronisation cloud et collaboration multi-utilisateur.
+- Collaboration multi-utilisateur. Le compte facultatif et la synchronisation personnelle sont désormais implémentés ; leur configuration OAuth et leur recette multi-appareils restent à terminer.
 - Conseiller IA autonome.
 - Calcul financier précis lorsque les prix restent incomplets.
 - Nouveaux filtres ou fonctionnalités qui ne servent pas directement la boucle stack-exploration-ajout.
