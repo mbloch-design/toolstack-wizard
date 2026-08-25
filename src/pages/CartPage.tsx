@@ -1,7 +1,7 @@
-import { useCallback, useEffect, useMemo, useRef, useState, type FormEvent } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { flushSync } from "react-dom";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
-import { ArrowLeft, Compass, GripVertical, Heart, MoreHorizontal, Pencil, Plus, Search, SlidersHorizontal, Trash2, UserRound, X } from "lucide-react";
+import { ArrowLeft, Compass, GripVertical, Heart, MoreHorizontal, Pencil, Plus, Search, Trash2, UserRound, X } from "lucide-react";
 import { toast } from "sonner";
 import { ToolCardEditorial } from "@/components/ToolCardEditorial";
 import ToolLogo from "@/components/ToolLogo";
@@ -1258,7 +1258,7 @@ function getSubdomainForTool(tool: ToolSummary, categoryLabel: string): StackSub
     id: `category-${slugify(fallbackLabel)}`,
     labelFr: fallbackLabel,
     labelEn: fallbackLabel,
-    descriptionFr: "Outils utiles à cet objectif, regroupés depuis leur catégorie catalogue.",
+    descriptionFr: "Outils de cette collection, regroupés depuis leur catégorie catalogue.",
     descriptionEn: "Useful tools for this goal, grouped from their catalog category.",
     order: 900,
   };
@@ -1387,8 +1387,8 @@ function getBoardOverviewCopy(board: StackBoard, lang: string) {
 
   if (copy[board.id]) return lang === "en" ? copy[board.id].en : copy[board.id].fr;
   return lang === "en"
-    ? "A custom group built around one of your real objectives."
-    : "Un lot personnalisé construit autour de l'un de vos objectifs réels.";
+    ? "A custom collection for tools connected to the same need."
+    : "Une collection personnalisée pour regrouper les outils liés à un même besoin.";
 }
 
 function getBoardDisplayLabel(board: StackBoard, lang: string) {
@@ -1745,8 +1745,7 @@ const CartPage = () => {
     saveToolSelection,
     unpinTool,
     assignToolNeeds,
-    assignToolNeedsAutomatically,
-    createNeed,
+    renameNeed,
     deleteNeed,
     moveNeed,
   } = useStackPins();
@@ -1766,12 +1765,10 @@ const CartPage = () => {
   const [pickerAddedToolSlugs, setPickerAddedToolSlugs] = useState<string[]>([]);
   const [needDialogToolSlug, setNeedDialogToolSlug] = useState<string | null>(null);
   const [draftNeedIds, setDraftNeedIds] = useState<string[]>([]);
-  const [isOrganizingBoards, setIsOrganizingBoards] = useState(false);
-  const [isBoardManagementOpen, setIsBoardManagementOpen] = useState(false);
-  const [draggedBoardId, setDraggedBoardId] = useState<string | null>(null);
-  const [dragOverBoardId, setDragOverBoardId] = useState<string | null>(null);
-  const [isCreatingBoard, setIsCreatingBoard] = useState(false);
-  const [newBoardName, setNewBoardName] = useState("");
+  const [needDialogMode, setNeedDialogMode] = useState<"add" | "edit">("edit");
+  const [renamingBoardId, setRenamingBoardId] = useState<string | null>(null);
+  const [renamingBoardName, setRenamingBoardName] = useState("");
+  const [pendingDeleteBoardId, setPendingDeleteBoardId] = useState<string | null>(null);
   const [editingBoardId, setEditingBoardId] = useState<string | null>(null);
   const [draggedToolSlug, setDraggedToolSlug] = useState<string | null>(null);
   const [dragOverSubdomainId, setDragOverSubdomainId] = useState<string | null>(null);
@@ -1783,7 +1780,6 @@ const CartPage = () => {
   const pickerDialogRef = useRef<HTMLElement | null>(null);
   const pickerSearchRef = useRef<HTMLInputElement | null>(null);
   const pickerPreviousFocusRef = useRef<HTMLElement | null>(null);
-  const boardManagementRef = useRef<HTMLDetailsElement | null>(null);
   const persistenceNoticeRef = useRef("");
 
   useEffect(() => {
@@ -1815,10 +1811,6 @@ const CartPage = () => {
     [visibleToolSlugs, toolBySlug],
   );
   const stackPricing = useMemo(() => computeStackPricing(selectedTools, tools), [selectedTools, tools]);
-  const unassignedTools = selectedTools.filter((tool) => {
-    const entry = stackEntryBySlug.get(getToolKey(tool));
-    return !!entry && entry.needIds.length === 0 && entry.assignmentMode !== "pending";
-  });
   const needDialogTool = needDialogToolSlug ? toolBySlug.get(needDialogToolSlug) || null : null;
 
   const boards = useMemo(() => {
@@ -1971,37 +1963,6 @@ const CartPage = () => {
         : "My stack could not be read safely. No uncertain data was displayed.",
     ) as string, { duration: 9000 });
   }, [persistenceStatus, t]);
-
-  useEffect(() => {
-    const assignments: Record<string, string[]> = {};
-
-    state.toolEntries.forEach((entry) => {
-      if (entry.needIds.length > 0 || entry.assignmentMode !== "pending") return;
-      const tool = toolBySlug.get(entry.toolSlug);
-      if (!tool) return;
-      const classification = classifyToolForStack(tool);
-      assignments[entry.toolSlug] = classification.confidence === "low" ? [] : classification.needIds;
-      const addedAt = Date.parse(entry.addedAt);
-      const addedRecently = Number.isFinite(addedAt) && Date.now() - addedAt < 60_000;
-      if (addedRecently && !pickerAddedToolSlugSet.has(entry.toolSlug)) {
-        const classifiedNeedIds = new Set<string>(classification.confidence === "low" ? [] : classification.needIds);
-        const needLabels = state.needs
-          .filter((need) => classifiedNeedIds.has(need.id))
-          .map((need) => t(need.labelFr, need.labelEn));
-        toast.success(classifiedNeedIds.size > 0
-          ? t(
-            `${tool.name} rangé provisoirement dans ${needLabels.join(" et ")} · modifiable à tout moment.`,
-            `${tool.name} provisionally organized under ${needLabels.join(" and ")} · editable at any time.`,
-          ) as string
-          : t(
-            `${tool.name} ajouté à Ma stack · objectif à confirmer dans À ranger.`,
-            `${tool.name} added to My stack · confirm its objective under To organize.`,
-          ) as string);
-      }
-    });
-
-    if (Object.keys(assignments).length > 0) assignToolNeedsAutomatically(assignments);
-  }, [assignToolNeedsAutomatically, pickerAddedToolSlugSet, state.needs, state.toolEntries, t, toolBySlug]);
 
   const zoomedSubdomains = useMemo(() => {
     if (!zoomedBoard) return [] as StackSubdomainGroup[];
@@ -2183,9 +2144,6 @@ const CartPage = () => {
   }, [needDialogToolSlug]);
 
   function openToolPicker(boardId = GLOBAL_STACK_PICKER_ID) {
-    setIsOrganizingBoards(false);
-    setDraggedBoardId(null);
-    setDragOverBoardId(null);
     pickerPreviousFocusRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
     const nextParams = new URLSearchParams(searchParams);
     nextParams.delete("outil");
@@ -2215,131 +2173,58 @@ const CartPage = () => {
     });
   }
 
-  function animateToolIntoDestination(sourceCard: HTMLElement, destinations: HTMLElement[], onArrive: () => void) {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return false;
-    const destination = destinations.find((element) => {
-      const rect = element.getBoundingClientRect();
-      return rect.bottom > 0 && rect.top < window.innerHeight;
-    });
-    const sourceLogo = sourceCard.querySelector<HTMLElement>(".stack-tool-picker-logo");
-    if (!destination || !sourceLogo) return false;
-
-    const sourceRect = sourceLogo.getBoundingClientRect();
-    const destinationRect = destination.getBoundingClientRect();
-    const flyingTool = sourceLogo.cloneNode(true) as HTMLElement;
-    flyingTool.removeAttribute("id");
-    flyingTool.classList.add("stack-tool-add-flying-tool");
-    flyingTool.setAttribute("aria-hidden", "true");
-    Object.assign(flyingTool.style, {
-      height: `${sourceRect.height}px`,
-      left: `${sourceRect.left}px`,
-      top: `${sourceRect.top}px`,
-      width: `${sourceRect.width}px`,
-    });
-    document.body.appendChild(flyingTool);
-    sourceCard.classList.add("is-adding");
-    if (sourceCard instanceof HTMLButtonElement) sourceCard.disabled = true;
-
-    const translateX = destinationRect.left + destinationRect.width / 2 - (sourceRect.left + sourceRect.width / 2);
-    const translateY = destinationRect.top + destinationRect.height / 2 - (sourceRect.top + sourceRect.height / 2);
-    const flight = flyingTool.animate([
-      { opacity: 1, transform: "translate3d(0, 0, 0) scale(1)" },
-      { offset: 0.72, opacity: 1, transform: `translate3d(${translateX * 0.82}px, ${translateY * 0.82}px, 0) scale(0.72)` },
-      { opacity: 0.18, transform: `translate3d(${translateX}px, ${translateY}px, 0) scale(0.48)` },
-    ], {
-      duration: 220,
-      easing: "cubic-bezier(0.2, 0.8, 0.2, 1)",
-    });
-
-    let settled = false;
-    const settleFlight = (showArrival: boolean) => {
-      if (settled) return;
-      settled = true;
-      flyingTool.remove();
-      sourceCard.classList.remove("is-adding");
-      if (sourceCard instanceof HTMLButtonElement) sourceCard.disabled = false;
-      onArrive();
-      if (showArrival) {
-        destination.animate([
-          { transform: "scale(1)" },
-          { transform: "scale(1.025)" },
-          { transform: "scale(1)" },
-        ], { duration: 180, easing: "ease-out" });
-      }
-    };
-    flight.addEventListener("finish", () => settleFlight(true), { once: true });
-    flight.addEventListener("cancel", () => settleFlight(false), { once: true });
-    return true;
-  }
-
-  function animateToolIntoPickerBoard(sourceCard: HTMLElement, onArrive: () => void) {
-    if (!pickerBoard) return false;
-    const destinations = Array.from(
-      pickerDialogRef.current?.querySelectorAll<HTMLElement>(
-        ".stack-tool-add-destination-card, .stack-tool-add-sticky-destination",
-      ) || [],
-    );
-    return animateToolIntoDestination(sourceCard, destinations, onArrive);
-  }
-
-  function addToolFromPicker(tool: ToolSummary, sourceCard?: HTMLElement) {
+  function addToolFromPicker(tool: ToolSummary) {
     const toolSlug = getToolKey(tool);
     if (pickerAddedToolSlugSet.has(toolSlug)) {
       unpinTool(toolSlug);
       setPickerAddedToolSlugs((current) => current.filter((slug) => slug !== toolSlug));
       return;
     }
-    const commitAddition = () => {
-      if (collectionView === "wishlist") {
-        saveToolSelection(toolSlug, pickerBoard ? [pickerBoard.id] : [], "wishlist");
-      } else {
-        pinTool(toolSlug, pickerBoard ? [pickerBoard.id] : []);
-      }
-      setPickerAddedToolSlugs((current) => [...current, toolSlug]);
-    };
-    if (sourceCard && animateToolIntoPickerBoard(sourceCard, commitAddition)) return;
-    commitAddition();
+    const classification = classifyToolForStack(tool);
+    const suggestedNeedId = pickerBoard?.id
+      || (classification.confidence === "low" ? undefined : classification.needIds.find((needId) => state.needs.some((need) => need.id === needId)));
+    setNeedDialogMode("add");
+    setDraftNeedIds(suggestedNeedId ? [suggestedNeedId] : []);
+    setNeedDialogToolSlug(toolSlug);
   }
 
   function getPickerNeedSuggestion(tool: ToolSummary) {
     if (pickerBoard) {
-      return t(`Sera rangé dans ${pickerBoard.labelFr}`, `Will be organized under ${pickerBoard.labelEn}`) as string;
+      return t(`Sera ajouté à ${pickerBoard.labelFr}`, `Will be added to ${pickerBoard.labelEn}`) as string;
     }
     const classification = classifyToolForStack(tool);
     if (classification.confidence === "low" || classification.needIds.length === 0) {
-      return t("Objectif à confirmer · À ranger", "Objective to confirm · To organize") as string;
+      return t("Choisir une collection", "Choose a collection") as string;
     }
     const need = state.needs.find((candidate) => candidate.id === classification.needIds[0]);
     return need
-      ? t(`Proposé · ${need.labelFr}`, `Suggested · ${need.labelEn}`) as string
-      : t("Objectif à confirmer · À ranger", "Objective to confirm · To organize") as string;
+      ? t(`Collection suggérée · ${need.labelFr}`, `Suggested collection · ${need.labelEn}`) as string
+      : t("Choisir une collection", "Choose a collection") as string;
   }
 
   function getPickerAddedSummary(tool: ToolSummary) {
     if (pickerBoard) {
       return t(`Ajouté dans ${pickerBoard.labelFr}`, `Added to ${pickerBoard.labelEn}`) as string;
     }
-    const classification = classifyToolForStack(tool);
-    const need = state.needs.find((candidate) => candidate.id === classification.needIds[0]);
-    if (classification.confidence === "low" || !need) {
-      return t("À confirmer · À ranger", "To confirm · To organize") as string;
-    }
-    return t(
-      `Rangé provisoirement · ${need.labelFr}`,
-      `Provisionally organized · ${need.labelEn}`,
-    ) as string;
+    const entry = stackEntryBySlug.get(getToolKey(tool));
+    const labels = state.needs
+      .filter((need) => entry?.needIds.includes(need.id))
+      .map((need) => t(need.labelFr, need.labelEn));
+    return labels.length > 0
+      ? t(`Ajouté à ${labels.join(" et ")}`, `Added to ${labels.join(" and ")}`) as string
+      : t("Ajout confirmé", "Added") as string;
   }
 
   function getPickerSessionSummary() {
     if (pickerAddedStats.total === 0) {
       return pickerBoard
         ? t(
-          `Sélectionnez les outils à ranger dans ${pickerBoard.labelFr}.`,
-          `Select the tools to organize under ${pickerBoard.labelEn}.`,
+          `Sélectionnez les outils à ajouter à ${pickerBoard.labelFr}.`,
+          `Select the tools to add to ${pickerBoard.labelEn}.`,
         ) as string
         : t(
-          "Sélectionnez plusieurs outils : Tooltrim les rangera automatiquement.",
-          "Select several tools: Tooltrim will organize them automatically.",
+          "Sélectionnez un outil, puis confirmez sa collection avant de l’ajouter.",
+          "Select a tool, then confirm its collection before adding it.",
         ) as string;
     }
     if (pickerAddedStats.pending > 0) {
@@ -2352,7 +2237,7 @@ const CartPage = () => {
     const frenchParts = [
       `${formatToolCount(pickerAddedStats.total, lang)} ajouté${pickerAddedStats.total > 1 ? "s" : ""}`,
       pickerAddedStats.organized > 0
-        ? `${pickerAddedStats.organized} rangé${pickerAddedStats.organized > 1 ? "s" : ""}`
+        ? `${pickerAddedStats.organized} classé${pickerAddedStats.organized > 1 ? "s" : ""}`
         : "",
       pickerAddedStats.toConfirm > 0 ? `${pickerAddedStats.toConfirm} à confirmer` : "",
     ].filter(Boolean);
@@ -2365,7 +2250,7 @@ const CartPage = () => {
   }
 
   function openNeedDialog(toolSlug: string) {
-    needDialogPreviousFocusRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    setNeedDialogMode("edit");
     setDraftNeedIds(stackEntryBySlug.get(toolSlug)?.needIds || []);
     setNeedDialogToolSlug(toolSlug);
   }
@@ -2380,46 +2265,30 @@ const CartPage = () => {
       : [...current, needId]);
   }
 
-  function saveNeedAssignments() {
+  function saveNeedAssignments(needIds: string[], intent: "stack" | "wishlist") {
     if (!needDialogToolSlug) return;
     const toolSlug = needDialogToolSlug;
     const previousNeedIds = stackEntryBySlug.get(toolSlug)?.needIds || [];
     const toolName = needDialogTool?.name || needDialogToolSlug;
     const selectedNeedLabels = state.needs
-      .filter((need) => draftNeedIds.includes(need.id))
+      .filter((need) => needIds.includes(need.id))
       .map((need) => t(need.labelFr, need.labelEn));
-    assignToolNeeds(toolSlug, draftNeedIds);
+    if (needDialogMode === "add") {
+      saveToolSelection(toolSlug, needIds, intent);
+      setPickerAddedToolSlugs((current) => Array.from(new Set([...current, toolSlug])));
+    } else {
+      saveToolSelection(toolSlug, needIds, intent);
+    }
     closeNeedDialog();
-    toast.success(selectedNeedLabels.length > 0
-      ? t(
-        `${toolName} rangé dans ${selectedNeedLabels.join(" et ")} · compté une seule fois.`,
-        `${toolName} organized under ${selectedNeedLabels.join(" and ")} · counted only once.`,
-      ) as string
+    toast.success(intent === "wishlist"
+      ? t(`${toolName} ajouté à Mes envies.`, `${toolName} added to Wishlist.`) as string
       : t(
-        `${toolName} reste dans Ma stack, dans À ranger.`,
-        `${toolName} remains in My stack, under To organize.`,
+        `${toolName} ajouté à ${selectedNeedLabels.join(" et ")}.`,
+        `${toolName} added to ${selectedNeedLabels.join(" and ")}.`,
       ) as string, {
       action: {
         label: t("Annuler", "Undo") as string,
-        onClick: () => assignToolNeeds(toolSlug, previousNeedIds),
-      },
-    });
-  }
-
-  function leaveToolUnassigned() {
-    if (!needDialogToolSlug) return;
-    const toolSlug = needDialogToolSlug;
-    const previousNeedIds = stackEntryBySlug.get(toolSlug)?.needIds || [];
-    const toolName = needDialogTool?.name || needDialogToolSlug;
-    assignToolNeeds(toolSlug, []);
-    closeNeedDialog();
-    toast.success(t(
-      `${toolName} reste dans Ma stack, dans À ranger.`,
-      `${toolName} remains in My stack, under To organize.`,
-    ) as string, {
-      action: {
-        label: t("Annuler", "Undo") as string,
-        onClick: () => assignToolNeeds(toolSlug, previousNeedIds),
+        onClick: () => needDialogMode === "add" ? unpinTool(toolSlug) : assignToolNeeds(toolSlug, previousNeedIds),
       },
     });
   }
@@ -2430,7 +2299,7 @@ const CartPage = () => {
     const toolName = needDialogTool?.name || toolSlug;
     const previousNeedIds = stackEntryBySlug.get(toolSlug)?.needIds || [];
     const confirmed = window.confirm(t(
-      `Supprimer ${toolName} de Ma stack ?`,
+      `Retirer ${toolName} de Ma stack ?`,
       `Remove ${toolName} from My stack?`,
     ) as string);
     if (!confirmed) return;
@@ -2439,7 +2308,7 @@ const CartPage = () => {
     closeNeedDialog();
     if (shouldCloseObjective) closeObjective();
     toast.success(t(
-      `${toolName} supprimé de Ma stack.`,
+      `${toolName} retiré de Ma stack.`,
       `${toolName} removed from My stack.`,
     ) as string, {
       action: {
@@ -2450,9 +2319,6 @@ const CartPage = () => {
   }
 
   function openObjective(boardId: string) {
-    setIsOrganizingBoards(false);
-    setDraggedBoardId(null);
-    setDragOverBoardId(null);
     setEditingBoardId(null);
     setDraggedToolSlug(null);
     setDragOverSubdomainId(null);
@@ -2589,46 +2455,23 @@ const CartPage = () => {
     });
   }
 
-  function moveBoardToBoard(boardId: string, targetBoardId: string) {
-    if (boardId === targetBoardId) {
-      setDraggedBoardId(null);
-      setDragOverBoardId(null);
-      return;
-    }
-    const currentIndex = state.needs.findIndex((need) => need.id === boardId);
-    const targetIndex = state.needs.findIndex((need) => need.id === targetBoardId);
-    if (currentIndex < 0 || targetIndex < 0) return;
-    const direction: -1 | 1 = currentIndex < targetIndex ? 1 : -1;
-    const steps = Math.abs(targetIndex - currentIndex);
-    for (let index = 0; index < steps; index += 1) moveNeed(boardId, direction);
-    setDraggedBoardId(null);
-    setDragOverBoardId(null);
-  }
-
-  function selectOrMoveBoard(boardId: string) {
-    if (draggedBoardId && draggedBoardId !== boardId) {
-      moveBoardToBoard(draggedBoardId, boardId);
-      return;
-    }
-    setDraggedBoardId((current) => current === boardId ? null : boardId);
-  }
-
-  function createBoardFromOverview(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    const label = newBoardName.trim();
-    if (!label) return;
-    const needId = createNeed(label);
-    if (!needId) return;
-    setNewBoardName("");
-    setIsCreatingBoard(false);
-    toast.success(t(`Section ${label} créée.`, `${label} section created.`) as string);
-  }
-
   function removeCustomBoard(board: StackObjective) {
     deleteNeed(board.id);
-    setDraggedBoardId(null);
-    setDragOverBoardId(null);
-    toast.success(t(`Section ${board.labelFr} supprimée.`, `${board.labelEn} section removed.`) as string);
+    toast.success(t(`Collection ${board.labelFr} supprimée. Ses outils restent dans Ma stack.`, `${board.labelEn} collection removed. Its tools remain in My stack.`) as string);
+  }
+
+  function startRenamingBoard(board: StackObjective) {
+    setRenamingBoardId(board.id);
+    setRenamingBoardName(getBoardDisplayLabel(board, lang));
+  }
+
+  function saveRenamedBoard(board: StackObjective) {
+    const label = renamingBoardName.trim();
+    if (!label) return;
+    renameNeed(board.id, label);
+    setRenamingBoardId(null);
+    setRenamingBoardName("");
+    toast.success(t(`Collection renommée « ${label} ».`, `Collection renamed “${label}”.`) as string);
   }
 
   function renderEstimatedProfile(additionalClass = "") {
@@ -2654,7 +2497,7 @@ const CartPage = () => {
   }
 
   return (
-    <div className={`stack-boards-page${zoomedBoard ? " stack-boards-page--zoomed" : ""}${pickerBoardId ? " stack-boards-page--adding" : ""}${isOrganizingBoards ? " stack-boards-page--organizing" : ""}${stackMotion !== "idle" ? ` stack-boards-page--motion-${stackMotion}` : ""}`}>
+    <div className={`stack-boards-page${zoomedBoard ? " stack-boards-page--zoomed" : ""}${pickerBoardId ? " stack-boards-page--adding" : ""}${stackMotion !== "idle" ? ` stack-boards-page--motion-${stackMotion}` : ""}`}>
       {zoomedBoard ? (
         quickTool ? null : <section className="stack-objective-hero" aria-labelledby="stack-objective-title">
           <div className="stack-objective-hero-inner">
@@ -2665,11 +2508,11 @@ const CartPage = () => {
             <div className="stack-objective-hero-copy">
               <h1 id="stack-objective-title">{t(zoomedBoard.labelFr, zoomedBoard.labelEn)}</h1>
               <p>
-                <span>{t("Objectif", "Objective")}</span>
+                <span>{t("Collection", "Collection")}</span>
                 <span aria-hidden>·</span>
                 {formatToolCount(zoomedBoard.tools.length, lang)}
                 <span aria-hidden>·</span>
-                {zoomedSubdomains.length} {t(zoomedSubdomains.length > 1 ? "sous-sections" : "sous-section", zoomedSubdomains.length > 1 ? "sections" : "section")}
+                {zoomedSubdomains.length} {t(zoomedSubdomains.length > 1 ? "catégories" : "catégorie", zoomedSubdomains.length > 1 ? "categories" : "category")}
               </p>
             </div>
 
@@ -2696,10 +2539,10 @@ const CartPage = () => {
                   type="button"
                   className="stack-objective-hero-explore"
                   onClick={() => openDedicatedExplorer("objectif")}
-                  aria-label={t(`Explorer l’objectif ${zoomedBoard.labelFr}`, `Explore the ${zoomedBoard.labelEn} objective`) as string}
+                  aria-label={t(`Explorer la collection ${zoomedBoard.labelFr}`, `Explore the ${zoomedBoard.labelEn} collection`) as string}
                 >
                   <Compass size={17} aria-hidden />
-                  <span>{t("Explorer cet objectif", "Explore this objective")}</span>
+                  <span>{t("Explorer cette collection", "Explore this collection")}</span>
                 </button>
               )}
 
@@ -2728,20 +2571,6 @@ const CartPage = () => {
               </div>
             </div>
             <div className="stack-profile-actions">
-              {unassignedTools.length > 0 && (
-                <button
-                  type="button"
-                  className="stack-page-toolbar-unassigned"
-                  onClick={() => openNeedDialog(getToolKey(unassignedTools[0]))}
-                  aria-label={`${unassignedTools.length} ${t(
-                    unassignedTools.length > 1 ? "outils à ranger" : "outil à ranger",
-                    unassignedTools.length > 1 ? "tools to organize" : "tool to organize",
-                  )}`}
-                >
-                  <span aria-hidden>{unassignedTools.length}</span>
-                  <strong>{t("à ranger", "to organize")}</strong>
-                </button>
-              )}
               <button type="button" className="stack-page-toolbar-icon stack-page-toolbar-icon--primary" onClick={() => openToolPicker()} aria-label={t("Explorer les outils", "Explore tools") as string}>
                 <Compass size={18} aria-hidden />
                 <span>{t("Explorer les outils", "Explore tools")}</span>
@@ -2764,16 +2593,43 @@ const CartPage = () => {
               <small>{stackToolSlugs.length}</small>
             </button>
             {stackNavigationBoards.map((board) => (
-              <button
-                key={board.id}
-                type="button"
-                className={collectionView === "stack" && libraryBoardId === board.id ? "is-active" : ""}
-                aria-current={collectionView === "stack" && libraryBoardId === board.id ? "page" : undefined}
-                onClick={() => openStackBoard(board.id)}
-              >
-                <span>{getBoardDisplayLabel(board, lang)}</span>
-                <small>{board.tools.length}</small>
-              </button>
+              <span key={board.id} className="stack-library-tab-item">
+                <button
+                  type="button"
+                  className={collectionView === "stack" && libraryBoardId === board.id ? "is-active" : ""}
+                  aria-current={collectionView === "stack" && libraryBoardId === board.id ? "page" : undefined}
+                  onClick={() => openStackBoard(board.id)}
+                >
+                  <span>{getBoardDisplayLabel(board, lang)}</span>
+                  <small>{board.tools.length}</small>
+                </button>
+                {board.source === "custom" && (
+                  <details className="stack-library-tab-menu">
+                    <summary aria-label={t(`Gérer la collection ${board.labelFr}`, `Manage the ${board.labelEn} collection`) as string}>
+                      <MoreHorizontal size={16} aria-hidden />
+                    </summary>
+                    <div>
+                      <button type="button" onClick={() => startRenamingBoard(board)}><Pencil size={14} aria-hidden />{t("Renommer", "Rename")}</button>
+                      <button type="button" disabled={state.needs.findIndex((need) => need.id === board.id) <= 0} onClick={() => moveNeed(board.id, -1)}><ArrowLeft size={14} aria-hidden />{t("Déplacer à gauche", "Move left")}</button>
+                      <button type="button" className="is-danger" onClick={() => setPendingDeleteBoardId(board.id)}><Trash2 size={14} aria-hidden />{t("Supprimer", "Delete")}</button>
+                    </div>
+                  </details>
+                )}
+                {renamingBoardId === board.id && (
+                  <form className="stack-library-tab-popover" onSubmit={(event) => { event.preventDefault(); saveRenamedBoard(board); }}>
+                    <label htmlFor={`tab-rename-${board.id}`}>{t("Nom de la collection", "Collection name")}</label>
+                    <input id={`tab-rename-${board.id}`} autoFocus value={renamingBoardName} onChange={(event) => setRenamingBoardName(event.target.value)} maxLength={60} />
+                    <div><button type="button" onClick={() => setRenamingBoardId(null)}>{t("Annuler", "Cancel")}</button><button type="submit" disabled={!renamingBoardName.trim()}>{t("Enregistrer", "Save")}</button></div>
+                  </form>
+                )}
+                {pendingDeleteBoardId === board.id && (
+                  <div className="stack-library-tab-popover" role="alertdialog" aria-labelledby={`tab-delete-${board.id}`}>
+                    <strong id={`tab-delete-${board.id}`}>{t("Supprimer cette collection ?", "Delete this collection?")}</strong>
+                    <p>{t("Ses outils resteront dans leurs autres collections.", "Its tools will remain in their other collections.")}</p>
+                    <div><button type="button" onClick={() => setPendingDeleteBoardId(null)}>{t("Annuler", "Cancel")}</button><button type="button" className="is-danger" onClick={() => { setPendingDeleteBoardId(null); removeCustomBoard(board); }}>{t("Supprimer", "Delete")}</button></div>
+                  </div>
+                )}
+              </span>
             ))}
             <span className="stack-library-tabs-divider" aria-hidden />
             <button
@@ -2785,21 +2641,6 @@ const CartPage = () => {
               <Heart size={15} aria-hidden />
               <span>{t("Mes envies", "Wishlist")}</span>
               <small>{wishlistToolSlugs.length}</small>
-            </button>
-            <button
-              type="button"
-              className="stack-library-tabs-organize"
-              aria-expanded={isBoardManagementOpen}
-              aria-controls="stack-board-management-panel"
-              onClick={() => {
-                if (!boardManagementRef.current) return;
-                const nextOpen = !boardManagementRef.current.open;
-                boardManagementRef.current.open = nextOpen;
-                setIsBoardManagementOpen(nextOpen);
-              }}
-            >
-              <span>{t("Organiser mes outils", "Organize my tools")}</span>
-              <SlidersHorizontal size={16} aria-hidden />
             </button>
           </div>
         </nav>
@@ -2910,7 +2751,7 @@ const CartPage = () => {
                               removeToolFromCurrentNeed(toolSlug);
                             }}
                             aria-label={t(`Retirer ${tool.name} de ${zoomedBoard.labelFr}`, `Remove ${tool.name} from ${zoomedBoard.labelEn}`) as string}
-                            title={t("Retirer du tableau", "Remove from board") as string}
+                            title={t("Retirer de la collection", "Remove from collection") as string}
                           >
                             <Trash2 size={17} aria-hidden />
                           </button></>
@@ -2929,7 +2770,7 @@ const CartPage = () => {
               <StackToolInspector
                 tool={quickTool}
                 needLabel={t(zoomedBoard.labelFr, zoomedBoard.labelEn)}
-                sectionLabel={quickToolGroup ? t(quickToolGroup.labelFr, quickToolGroup.labelEn) : t("Outils de l’objectif", "Objective tools")}
+                sectionLabel={quickToolGroup ? t(quickToolGroup.labelFr, quickToolGroup.labelEn) : t("Outils de la collection", "Collection tools")}
                 categoryLabel={getCategoryLabel(quickTool)}
                 typeLabel={getToolTypeLabel(quickTool, lang)}
                 priceLabel={formatStackToolPrice(quickTool, lang)}
@@ -2954,14 +2795,14 @@ const CartPage = () => {
         <main className="stack-library-content" aria-label={t("Outils enregistrés", "Saved tools") as string}>
           {libraryTools.length === 0 && (
             <section className="stack-empty-overview">
-              <span>{collectionView === "wishlist" ? t("Aucune envie enregistrée", "Nothing on your wishlist yet") : libraryActiveBoard ? t("Tableau vide", "Empty board") : t("Aucun outil utilisé", "No tools in use")}</span>
+              <span>{collectionView === "wishlist" ? t("Aucune envie enregistrée", "Nothing on your wishlist yet") : libraryActiveBoard ? t("Collection vide", "Empty collection") : t("Aucun outil utilisé", "No tools in use")}</span>
               <h2>{collectionView === "wishlist" ? t("Gardez ici ce qui vous inspire", "Keep inspiring tools here") : libraryActiveBoard ? t(`Aucun outil dans ${getBoardDisplayLabel(libraryActiveBoard, lang)}`, `No tools in ${getBoardDisplayLabel(libraryActiveBoard, lang)}`) : t("Votre stack est vide", "Your stack is empty")}</h2>
               <p>
                 {collectionView === "wishlist"
                   ? t("Une sélection libre d’outils qui vous donnent envie, sans rien avoir à décider maintenant.", "A free selection of tools that spark your interest, with nothing to decide right now.")
                   : libraryActiveBoard
-                    ? t("Ajoutez un outil à ce tableau pour le retrouver directement ici.", "Add a tool to this board to find it directly here.")
-                    : t("Ajoutez les outils que vous utilisez réellement, puis classez-les dans vos tableaux.", "Add the tools you actually use, then organize them into boards.")}
+                    ? t("Ajoutez un outil à cette collection pour le retrouver directement ici.", "Add a tool to this collection to find it directly here.")
+                    : t("Ajoutez les outils que vous utilisez réellement, puis organisez-les dans vos collections.", "Add the tools you actually use, then organize them into collections.")}
               </p>
               <button type="button" className="cart-primary-link" onClick={() => openToolPicker(libraryActiveBoard?.id)}>{t("Ajouter un outil", "Add a tool")}</button>
             </section>
@@ -2978,224 +2819,17 @@ const CartPage = () => {
                       t={t}
                       lang={lang}
                       categoryLabel={getCategoryLabel(tool)}
-                      showPin
+                      showPin={false}
                       showPrice
                       to={`${prefix}/tool/${toolSlug}`}
                       exploreHref={getExplorerHref(prefix, { type: "outil", slug: toolSlug }, { destination: libraryActiveBoard?.id })}
+                      onOrganize={() => openNeedDialog(toolSlug)}
                     />
                   </article>
                 );
               })}
             </div>
           )}
-          <details
-            ref={boardManagementRef}
-            id="stack-board-management-panel"
-            className="stack-board-management"
-            onToggle={(event) => setIsBoardManagementOpen(event.currentTarget.open)}
-          >
-            <summary>{t("Organiser mes outils", "Organize my tools")}</summary>
-            <div className={`stack-board-grid${isOrganizingBoards ? " stack-board-grid--organizing" : ""}`}>
-          {activeBoards.map((board) => {
-            const visibleToolCount = 3;
-            const visibleTools = board.tools.slice(0, visibleToolCount);
-            const overflowCount = Math.max(0, board.tools.length - visibleTools.length);
-            return (
-              <section
-                key={board.id}
-                className={`stack-board-card stack-board-card--${board.id}${board.source === "custom" ? " stack-board-card--custom" : ""}${draggedBoardId === board.id ? " is-dragging" : ""}${dragOverBoardId === board.id ? " is-drop-target" : ""}`}
-                aria-label={isOrganizingBoards ? t(`Déplacer ${board.labelFr}`, `Move ${board.labelEn}`) as string : t(board.labelFr, board.labelEn) as string}
-                tabIndex={isOrganizingBoards ? 0 : undefined}
-                draggable={isOrganizingBoards}
-                onClick={() => isOrganizingBoards && selectOrMoveBoard(board.id)}
-                onKeyDown={(event) => {
-                  if (!isOrganizingBoards || (event.key !== "Enter" && event.key !== " ")) return;
-                  event.preventDefault();
-                  selectOrMoveBoard(board.id);
-                }}
-                onDragStart={(event) => {
-                  event.dataTransfer.effectAllowed = "move";
-                  event.dataTransfer.setData("text/plain", board.id);
-                  setDraggedBoardId(board.id);
-                }}
-                onDragOver={(event) => {
-                  if (!isOrganizingBoards || !draggedBoardId || draggedBoardId === board.id) return;
-                  event.preventDefault();
-                  event.dataTransfer.dropEffect = "move";
-                  setDragOverBoardId(board.id);
-                }}
-                onDrop={(event) => {
-                  if (!isOrganizingBoards) return;
-                  event.preventDefault();
-                  const sourceBoardId = event.dataTransfer.getData("text/plain") || draggedBoardId;
-                  if (sourceBoardId) moveBoardToBoard(sourceBoardId, board.id);
-                }}
-                onDragEnd={() => {
-                  setDraggedBoardId(null);
-                  setDragOverBoardId(null);
-                }}
-              >
-                <button
-                  type="button"
-                  className="stack-board-card-open"
-                  onClick={() => openObjective(board.id)}
-                  aria-label={t(`Ouvrir ${board.labelFr}`, `Open ${board.labelEn}`) as string}
-                  disabled={isOrganizingBoards}
-                />
-                {isOrganizingBoards && <span className="stack-board-drag-handle" aria-hidden><GripVertical size={18} /></span>}
-                {isOrganizingBoards && board.source === "custom" && (
-                  <button
-                    type="button"
-                    className="stack-board-delete"
-                    onClick={(event) => {
-                      event.stopPropagation();
-                      removeCustomBoard(board);
-                    }}
-                    aria-label={t(`Supprimer ${board.labelFr}`, `Delete ${board.labelEn}`) as string}
-                  >
-                    <Trash2 size={17} aria-hidden />
-                  </button>
-                )}
-                <div className="stack-board-preview stack-board-editorial-cover">
-                  <span className="stack-board-preview-copy">
-                    <span className="stack-board-editorial-heading">
-                      <span className="stack-board-editorial-title">{getBoardDisplayLabel(board, lang)}</span>
-                      <span className="stack-board-title-count">{formatToolCount(board.tools.length, lang)}</span>
-                    </span>
-                    <span className="stack-board-editorial-description">{getBoardOverviewCopy(board, lang)}</span>
-                  </span>
-                  <div className="stack-board-editorial-logos" role="group" aria-label={t(`Outils ${board.labelFr}`, `${board.labelEn} tools`) as string}>
-                    {visibleTools.map((tool) => (
-                      <span key={getToolKey(tool)} className="stack-board-editorial-logo" role="listitem">
-                        <ToolLogo tool={tool} size={54} className="stack-board-editorial-logo-mark" />
-                      </span>
-                    ))}
-                    {visibleTools.length === 0 && <span className="stack-board-editorial-empty"><Plus size={22} aria-hidden /></span>}
-                    {overflowCount > 0 && (
-                      <details className="stack-board-logo-more">
-                        <summary role="button" className="stack-board-overflow" tabIndex={isOrganizingBoards ? -1 : undefined} aria-label={t(`Afficher ${overflowCount} outils supplémentaires`, `Show ${overflowCount} more tools`) as string}>
-                          +{overflowCount}
-                        </summary>
-                        <span className="stack-board-logo-popover" role="list">
-                          {board.tools.slice(visibleToolCount).map((tool) => (
-                            <span key={getToolKey(tool)} className="stack-board-logo-popover-item" role="listitem" title={tool.name}>
-                              <ToolLogo tool={tool} size={42} className="stack-board-editorial-logo-mark" />
-                            </span>
-                          ))}
-                        </span>
-                      </details>
-                    )}
-                  </div>
-                </div>
-
-                <div className="stack-board-footer">
-                  <button type="button" className="stack-board-explore" onClick={() => openObjective(board.id)} disabled={isOrganizingBoards}>
-                    {t("Explorer", "Explore")}
-                  </button>
-                  <button
-                    type="button"
-                    className="stack-board-add-link"
-                    onClick={() => openToolPicker(board.id)}
-                    disabled={isOrganizingBoards}
-                    aria-label={getObjectiveToolsCta(board, lang)}
-                    title={getObjectiveToolsCta(board, lang)}
-                  >
-                    <Plus size={15} aria-hidden />
-                    <span>{t("Ajouter", "Add")}</span>
-                  </button>
-                </div>
-              </section>
-            );
-          })}
-          {unassignedTools.length > 0 && (
-            <section id="stack-unassigned-title" className="stack-board-card stack-board-card--unassigned" aria-label={t("À ranger", "To organize") as string}>
-              <button
-                type="button"
-                className="stack-board-card-open"
-                onClick={() => openNeedDialog(getToolKey(unassignedTools[0]))}
-                aria-label={t("Examiner les outils à ranger", "Review tools to organize") as string}
-              />
-              <div className="stack-board-preview stack-board-editorial-cover">
-                <span className="stack-board-preview-copy">
-                  <span className="stack-board-editorial-heading">
-                    <span className="stack-board-editorial-title">{t("À ranger", "To organize")}</span>
-                    <span className="stack-board-title-count">{formatToolCount(unassignedTools.length, lang)}</span>
-                  </span>
-                  <span className="stack-board-editorial-description">
-                    {t(
-                      "Quelques outils demandent simplement votre confirmation.",
-                      "A few tools simply need your confirmation.",
-                    )}
-                  </span>
-                </span>
-                <div className="stack-board-editorial-logos" role="group" aria-label={t("Outils à confirmer", "Tools to confirm") as string}>
-                  {unassignedTools.slice(0, 3).map((tool) => (
-                    <span key={getToolKey(tool)} className="stack-board-editorial-logo">
-                      <ToolLogo tool={tool} size={54} className="stack-board-editorial-logo-mark" />
-                    </span>
-                  ))}
-                  {unassignedTools.length > 3 && (
-                    <details className="stack-board-logo-more">
-                      <summary role="button" className="stack-board-overflow" aria-label={t(`Afficher ${unassignedTools.length - 3} outils supplémentaires`, `Show ${unassignedTools.length - 3} more tools`) as string}>
-                        +{unassignedTools.length - 3}
-                      </summary>
-                      <span className="stack-board-logo-popover" role="list">
-                        {unassignedTools.slice(3).map((tool) => (
-                          <span key={getToolKey(tool)} className="stack-board-logo-popover-item" role="listitem" title={tool.name}>
-                            <ToolLogo tool={tool} size={42} className="stack-board-editorial-logo-mark" />
-                          </span>
-                        ))}
-                      </span>
-                    </details>
-                  )}
-                </div>
-              </div>
-              <div className="stack-board-footer">
-                <button type="button" className="stack-board-explore" onClick={() => openNeedDialog(getToolKey(unassignedTools[0]))}>
-                  {t("Ranger", "Organize")}
-                </button>
-                <span>{t("À confirmer", "To confirm")}</span>
-              </div>
-            </section>
-          )}
-          <section className="stack-board-card stack-board-card--create" aria-label={t("Ajouter une section", "Add a section") as string}>
-            {isCreatingBoard ? (
-              <form className="stack-board-create-form" onSubmit={createBoardFromOverview}>
-                <label htmlFor="stack-board-create-name">{t("Nom de la section", "Section name")}</label>
-                <input
-                  autoFocus
-                  id="stack-board-create-name"
-                  value={newBoardName}
-                  onChange={(event) => setNewBoardName(event.target.value)}
-                  onKeyDown={(event) => {
-                    if (event.key !== "Escape") return;
-                    setNewBoardName("");
-                    setIsCreatingBoard(false);
-                  }}
-                  placeholder={t("Ex. Suivi client", "e.g. Client follow-up") as string}
-                  maxLength={60}
-                />
-                <div>
-                  <button type="button" onClick={() => { setNewBoardName(""); setIsCreatingBoard(false); }}>
-                    {t("Annuler", "Cancel")}
-                  </button>
-                  <button type="submit" disabled={!newBoardName.trim()}>
-                    {t("Créer", "Create")}
-                  </button>
-                </div>
-              </form>
-            ) : (
-              <button type="button" className="stack-board-create-preview" onClick={() => setIsCreatingBoard(true)}>
-                <span className="stack-board-create-tile stack-board-create-tile--main" />
-                <span className="stack-board-create-tile" />
-                <span className="stack-board-create-tile" />
-                <span className="stack-board-create-button"><Plus size={19} aria-hidden />{t("Ajouter une section", "Add a section")}</span>
-              </button>
-            )}
-            <div className="stack-board-footer"><span>{t("Nouvelle section", "New section")}</span></div>
-          </section>
-            </div>
-          </details>
         </main>
       )}
 
@@ -3213,21 +2847,21 @@ const CartPage = () => {
             <div className="stack-need-dialog-head">
               <ToolLogo tool={needDialogTool} size={42} className="stack-need-dialog-logo" />
               <div>
-                <span>{t("Ranger l'outil", "Organize tool")}</span>
+                <span>{needDialogMode === "add" ? t("Ajouter l’outil", "Add tool") : t("Organiser cet outil", "Organize this tool")}</span>
                 <h2 id="stack-need-dialog-title">{needDialogTool.name}</h2>
               </div>
               <div className="stack-need-dialog-head-actions">
-                <details className="stack-need-dialog-menu">
+                {needDialogMode === "edit" && <details className="stack-need-dialog-menu">
                   <summary aria-label={t("Plus d’options", "More options") as string} title={t("Plus d’options", "More options") as string}>
                     <MoreHorizontal size={18} aria-hidden />
                   </summary>
                   <div>
                     <button type="button" onClick={deleteToolFromStack}>
                       <Trash2 size={14} aria-hidden />
-                      {t("Supprimer de Ma stack", "Remove from My stack")}
+                      {t("Retirer de Ma stack", "Remove from My stack")}
                     </button>
                   </div>
-                </details>
+                </details>}
                 <button
                   ref={needDialogCloseRef}
                   type="button"
@@ -3242,19 +2876,19 @@ const CartPage = () => {
 
             <p className="stack-need-dialog-intro">
               {t(
-                `À quoi vous sert ${needDialogTool.name} ? Sélectionnez un ou plusieurs usages.`,
-                `What do you use ${needDialogTool.name} for? Select one or more uses.`,
+                `Dans quelles collections voulez-vous classer ${needDialogTool.name} ?`,
+                `Which collections should ${needDialogTool.name} belong to?`,
               )}
             </p>
             <p className="stack-need-dialog-cost-note">
               {t(
-                "Plusieurs usages possibles · coût compté une seule fois.",
-                "Multiple uses are possible · cost is counted only once.",
+                "Plusieurs collections possibles · coût compté une seule fois.",
+                "Multiple collections are possible · cost is counted only once.",
               )}
             </p>
 
             <fieldset className="stack-need-options">
-              <legend className="sr-only">{t("Objectifs", "Objectives")}</legend>
+              <legend className="sr-only">{t("Collections", "Collections")}</legend>
               {state.needs.map((need) => {
                 const checked = draftNeedIds.includes(need.id);
                 return (
@@ -3272,18 +2906,16 @@ const CartPage = () => {
             </fieldset>
 
             <div className="stack-need-dialog-foot">
-              <button type="button" className="stack-need-dialog-later" onClick={leaveToolUnassigned}>
-                {t("Mettre à ranger", "Move to organize")}
-              </button>
+              <span />
               <button
                 type="button"
                 className="stack-need-dialog-save"
-                onClick={saveNeedAssignments}
+                onClick={() => saveNeedAssignments(draftNeedIds, "stack")}
                 disabled={draftNeedIds.length === 0}
               >
                 {draftNeedIds.length > 0
-                  ? t("Enregistrer le rangement", "Save organization")
-                  : t("Choisir un objectif", "Choose an objective")}
+                  ? needDialogMode === "add" ? t("Ajouter à Ma stack", "Add to My stack") : t("Enregistrer les collections", "Save collections")
+                  : t("Choisir une collection", "Choose a collection")}
               </button>
             </div>
           </section>
@@ -3314,7 +2946,7 @@ const CartPage = () => {
             )}
             <div className="stack-tool-add-heading">
               <h1 id="stack-tool-picker-title">{pickerPageTitle}</h1>
-              {!pickerBoard && <p><strong>{t("Tooltrim proposera automatiquement l’objectif le plus pertinent.", "Tooltrim will automatically suggest the most relevant objective.")}</strong></p>}
+              {!pickerBoard && <p><strong>{t("ToolTrim suggère une collection, vous gardez le choix avant l’ajout.", "ToolTrim suggests a collection; you choose before adding.")}</strong></p>}
             </div>
             {renderEstimatedProfile("stack-tool-add-profile")}
             <button type="button" className="stack-tool-add-done" onClick={closeToolPicker}>
@@ -3364,7 +2996,7 @@ const CartPage = () => {
                       key={toolSlug}
                       type="button"
                       className={`stack-tool-add-card${wasAdded ? " is-added" : ""}`}
-                      onClick={(event) => addToolFromPicker(tool, event.currentTarget)}
+                      onClick={() => addToolFromPicker(tool)}
                       aria-pressed={wasAdded}
                       aria-label={wasAdded
                         ? t(`Retirer ${tool.name} de cette sélection`, `Remove ${tool.name} from this selection`) as string

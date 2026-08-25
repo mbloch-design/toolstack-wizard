@@ -138,13 +138,13 @@ export function StackSaveDialog({
         </div>
 
         <div className="stack-save-destination-head">
-          <div><strong>{t("Choisir un ou plusieurs tableaux", "Choose one or more boards")}</strong><span>{t("Vous pourrez modifier ce classement plus tard.", "You can change this later.")}</span></div>
+          <div><strong>{t("Choisir une ou plusieurs collections", "Choose one or more collections")}</strong><span>{t("L’outil ne sera ajouté qu’après votre confirmation.", "The tool is only added after you confirm.")}</span></div>
           <span>{selectedNeedIds.length} {t("sélectionné(s)", "selected")}</span>
         </div>
 
         <label className="stack-save-search">
           <Search size={17} aria-hidden />
-          <input ref={searchRef} value={query} onChange={(event) => setQuery(event.target.value)} placeholder={t("Filtrer les tableaux…", "Filter boards…")} />
+          <input ref={searchRef} value={query} onChange={(event) => setQuery(event.target.value)} placeholder={t("Filtrer les collections…", "Filter collections…")} />
         </label>
 
         <div className="stack-save-board-list" role="list">
@@ -155,21 +155,21 @@ export function StackSaveDialog({
             return (
               <button key={need.id} type="button" role="checkbox" aria-checked={selected} className={selected ? "is-selected" : ""} onClick={() => toggleNeed(need.id)}>
                 <span className="stack-save-board-mark">{selected ? <Check size={16} aria-hidden /> : null}</span>
-                <span className="stack-save-board-copy"><strong>{needLabel}</strong><small>{need.source === "custom" ? t("Tableau personnel", "Custom board") : t("Tableau ToolTrim", "ToolTrim board")}</small></span>
+                <span className="stack-save-board-copy"><strong>{needLabel}</strong><small>{need.source === "custom" ? t("Collection personnelle", "Custom collection") : t("Collection ToolTrim", "ToolTrim collection")}</small></span>
                 {suggested && <span className="stack-save-suggestion"><Sparkles size={13} aria-hidden />{t("Suggéré", "Suggested")}</span>}
               </button>
             );
           })}
-          {visibleNeeds.length === 0 && <p className="stack-save-no-result">{t("Aucun tableau ne correspond.", "No matching board.")}</p>}
+          {visibleNeeds.length === 0 && <p className="stack-save-no-result">{t("Aucune collection ne correspond.", "No matching collection.")}</p>}
         </div>
 
         {isCreating ? (
           <form className="stack-save-create" onSubmit={createBoard}>
-            <label htmlFor="stack-save-new-board">{t("Nom du nouveau tableau", "New board name")}</label>
+            <label htmlFor="stack-save-new-board">{t("Nom de la nouvelle collection", "New collection name")}</label>
             <div><input id="stack-save-new-board" autoFocus maxLength={60} value={newBoardName} onChange={(event) => setNewBoardName(event.target.value)} placeholder={t("Ex. Outils client", "e.g. Client tools")} /><button type="submit" disabled={!newBoardName.trim()}>{t("Créer", "Create")}</button></div>
           </form>
         ) : (
-          <button type="button" className="stack-save-create-trigger" onClick={() => setIsCreating(true)}><FolderPlus size={18} aria-hidden />{t("Créer un nouveau tableau", "Create a new board")}<Plus size={16} aria-hidden /></button>
+          <button type="button" className="stack-save-create-trigger" onClick={() => setIsCreating(true)}><FolderPlus size={18} aria-hidden />{t("Créer une nouvelle collection", "Create a new collection")}<Plus size={16} aria-hidden /></button>
         )}
 
         <footer className="stack-save-footer">

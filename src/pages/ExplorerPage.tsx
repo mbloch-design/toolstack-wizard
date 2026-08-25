@@ -1,8 +1,9 @@
-import { useCallback, useEffect, useMemo, useRef, useState, type KeyboardEvent, type MouseEvent } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type KeyboardEvent } from "react";
 import { ArrowLeft, Check, ChevronLeft, ChevronRight, Compass, Plus } from "lucide-react";
 import { Link, useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import { toast } from "sonner";
 import ToolLogo from "@/components/ToolLogo";
+import StackSaveDialog from "@/components/stack/StackSaveDialog";
 import { useCategories, useToolSummaries, type ToolSummary } from "@/hooks/useSupabaseData";
 import { useLang } from "@/hooks/useLang";
 import { useStackPins } from "@/hooks/useStackPins";
@@ -180,9 +181,10 @@ export default function ExplorerPage() {
   const [searchParams, setSearchParams] = useSearchParams();
   const { tools } = useToolSummaries();
   const { categories } = useCategories();
-  const { state, pinTool, pinToolAutomatically } = useStackPins();
+  const { state, createNeed, saveToolSelection } = useStackPins();
   const [resultLimit, setResultLimit] = useState(INITIAL_RESULT_COUNT);
   const [addingSlug, setAddingSlug] = useState<string | null>(null);
+  const [pendingTool, setPendingTool] = useState<ToolSummary | null>(null);
   const [isLoadingMore, setIsLoadingMore] = useState(false);
   const source = useMemo(() => parseExplorationSource(searchParams), [searchParams]);
 
@@ -363,60 +365,11 @@ export default function ExplorerPage() {
     });
   }
 
-  function animateAddition(sourceCard: HTMLElement, commit: () => void) {
-    const destinationElement = document.querySelector<HTMLElement>(".ex-destination");
-    const sourceLogo = sourceCard.querySelector<HTMLElement>(".ex-card-logo");
-    if (!destinationElement || !sourceLogo || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      commit();
-      return;
-    }
-    const sourceRect = sourceLogo.getBoundingClientRect();
-    const destinationRect = destinationElement.getBoundingClientRect();
-    const clone = sourceLogo.cloneNode(true) as HTMLElement;
-    clone.classList.add("ex-flying-tool");
-    clone.setAttribute("aria-hidden", "true");
-    Object.assign(clone.style, { height: `${sourceRect.height}px`, left: `${sourceRect.left}px`, top: `${sourceRect.top}px`, width: `${sourceRect.width}px` });
-    document.body.appendChild(clone);
-    const translateX = destinationRect.left + destinationRect.width / 2 - (sourceRect.left + sourceRect.width / 2);
-    const translateY = destinationRect.top + destinationRect.height / 2 - (sourceRect.top + sourceRect.height / 2);
-    const animation = clone.animate([
-      { opacity: 1, transform: "translate3d(0,0,0) scale(1)" },
-      { opacity: 0.2, transform: `translate3d(${translateX}px,${translateY}px,0) scale(.48)` },
-    ], { duration: 220, easing: "cubic-bezier(.2,.8,.2,1)" });
-    let committed = false;
-    const settle = () => {
-      if (committed) return;
-      committed = true;
-      clone.remove();
-      commit();
-      destinationElement.animate([{ transform: "scale(1)" }, { transform: "scale(1.025)" }, { transform: "scale(1)" }], { duration: 180, easing: "ease-out" });
-    };
-    animation.addEventListener("finish", settle, { once: true });
-    animation.addEventListener("cancel", settle, { once: true });
-  }
-
-  function addTool(tool: ToolSummary, event: MouseEvent<HTMLButtonElement>) {
+  function addTool(tool: ToolSummary) {
     const slug = getExplorationToolKey(tool);
     if (addingSlug === slug) return;
     setAddingSlug(slug);
-    const commit = () => {
-      if (destination) {
-        pinTool(slug, [destination.id]);
-        toast.success(t(`${tool.name} ajouté à ${destination.labelFr}.`, `${tool.name} added to ${destination.labelEn}.`) as string);
-      } else {
-        const classification = classifyToolForStack(tool);
-        const needIds = classification.confidence === "low" ? [] : classification.needIds;
-        pinToolAutomatically(slug, needIds);
-        const labels = state.needs.filter((need) => needIds.includes(need.id)).map((need) => t(need.labelFr, need.labelEn));
-        toast.success(labels.length > 0
-          ? t(`${tool.name} rangé dans ${labels.join(" et ")}.`, `${tool.name} organized under ${labels.join(" and ")}.`) as string
-          : t(`${tool.name} ajouté dans À ranger.`, `${tool.name} added under To organize.`) as string);
-      }
-      setAddingSlug(null);
-    };
-    const card = event.currentTarget.closest<HTMLElement>(".ex-card, .ex-tool-focus");
-    if (card) animateAddition(card, commit);
-    else commit();
+    setPendingTool(tool);
   }
 
   if (!source || sourceTools.length === 0) {
@@ -492,7 +445,7 @@ export default function ExplorerPage() {
           <span id={`explore-card-${slug}-description`} className="ex-card-description">{description}</span>
         </button>
         <div className="ex-card-actions">
-          <button type="button" onClick={(event) => addTool(candidate.tool, event)} disabled={inDestination || inStackWithoutDestination || isAdding} aria-label={inDestination
+          <button type="button" onClick={() => addTool(candidate.tool)} disabled={inDestination || inStackWithoutDestination || isAdding} aria-label={inDestination
             ? t(`${candidate.tool.name} déjà dans ${destination?.labelFr}`, `${candidate.tool.name} already in ${destination?.labelEn}`) as string
             : inStackWithoutDestination
               ? t(`${candidate.tool.name} déjà dans Ma stack`, `${candidate.tool.name} already in My stack`) as string
@@ -507,7 +460,18 @@ export default function ExplorerPage() {
     );
   };
 
+  const pendingToolSlug = pendingTool ? getExplorationToolKey(pendingTool) : "";
+  const pendingEntry = state.toolEntries.find((entry) => entry.toolSlug === pendingToolSlug);
+  const pendingClassification = pendingTool ? classifyToolForStack(pendingTool) : null;
+  const suggestedNeedId = destination?.id
+    || pendingClassification?.needIds.find((needId) => state.needs.some((need) => need.id === needId));
+  const initialNeedIds = Array.from(new Set([
+    ...(pendingEntry?.needIds || []),
+    ...(destination ? [destination.id] : []),
+  ]));
+
   return (
+    <>
     <main className={`ex-page${isObjectiveSource ? "" : " ex-page--tool"}`} aria-labelledby="explorer-title">
       {!isObjectiveSource && tagFilters}
       {isObjectiveSource ? (
@@ -533,7 +497,7 @@ export default function ExplorerPage() {
               type="button"
               className={`ex-destination ex-tool-focus-add${sourceAlreadyAdded ? " is-added" : ""}`}
               disabled={sourceAlreadyAdded || sourceIsAdding}
-              onClick={(event) => addTool(sourceTool, event)}
+              onClick={() => addTool(sourceTool)}
               aria-label={destination
                 ? sourceAlreadyAdded
                   ? t(`${sourceLabel} déjà dans ${destination.labelFr}`, `${sourceLabel} already in ${destination.labelEn}`) as string
@@ -626,5 +590,31 @@ export default function ExplorerPage() {
         </section>
       )}
     </main>
+    <StackSaveDialog
+      isOpen={Boolean(pendingTool)}
+      label={pendingTool?.name || ""}
+      lang={lang}
+      needs={state.needs}
+      initialIntent={pendingEntry?.intent || "stack"}
+      initialNeedIds={initialNeedIds}
+      suggestedNeedId={suggestedNeedId}
+      onClose={() => { setPendingTool(null); setAddingSlug(null); }}
+      onCreateNeed={createNeed}
+      onSave={(needIds, intent) => {
+        if (!pendingTool) return;
+        saveToolSelection(pendingToolSlug, needIds, intent);
+        const labels = state.needs
+          .filter((need) => needIds.includes(need.id))
+          .map((need) => t(need.labelFr, need.labelEn));
+        toast.success(t(
+          `${pendingTool.name} ajouté à ${labels.join(" et ")}.`,
+          `${pendingTool.name} added to ${labels.join(" and ")}.`,
+        ) as string);
+        setPendingTool(null);
+        setAddingSlug(null);
+      }}
+      t={(fr, en) => t(fr, en) as string}
+    />
+    </>
   );
 }

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { Compass, MoreVertical } from "lucide-react";
+import { Compass, MoreVertical, Pencil } from "lucide-react";
 import PinToolButton from "@/components/PinToolButton";
 import ToolCardImage from "@/components/tool/ToolCardImage";
 import ToolLogo from "@/components/ToolLogo";
@@ -50,6 +50,7 @@ interface ToolCardEditorialProps {
   contextLabel?: string;
   exploreHref?: string;
   exploreState?: unknown;
+  onOrganize?: () => void;
 }
 
 interface CardActionMenuProps {
@@ -58,9 +59,10 @@ interface CardActionMenuProps {
   exploreHref?: string;
   exploreState?: unknown;
   showPin: boolean;
+  onOrganize?: () => void;
 }
 
-function CardActionMenu({ tool, t, exploreHref, exploreState, showPin }: CardActionMenuProps) {
+function CardActionMenu({ tool, t, exploreHref, exploreState, showPin, onOrganize }: CardActionMenuProps) {
   const [open, setOpen] = useState(false);
   const menuRef = useRef<HTMLDetailsElement>(null);
 
@@ -113,6 +115,12 @@ function CardActionMenu({ tool, t, exploreHref, exploreState, showPin }: CardAct
             <span>{t("Explorer autour", "Explore around")}</span>
           </Link>
         )}
+        {onOrganize && (
+          <button type="button" className="tce-action-item" onClick={onOrganize}>
+            <Pencil size={16} aria-hidden />
+            <span>{t("Modifier l’organisation", "Edit organization")}</span>
+          </button>
+        )}
         {showPin && (
           <PinToolButton
             slug={tool.slug ?? tool.id}
@@ -147,6 +155,7 @@ export function ToolCardEditorial({
   contextLabel,
   exploreHref,
   exploreState,
+  onOrganize,
 }: ToolCardEditorialProps) {
   const presentation = getToolPresentation(tool, lang);
   const plan = presentation.planLabel;
@@ -223,13 +232,14 @@ export function ToolCardEditorial({
                 {(typeLabel || categoryLabel) && <span className="tce-category">{typeLabel || categoryLabel}</span>}
               </div>
             </div>
-            {(exploreHref || showPin) && (
+            {(exploreHref || showPin || onOrganize) && (
               <CardActionMenu
                 tool={tool}
                 t={t}
                 exploreHref={exploreHref}
                 exploreState={exploreState}
                 showPin={showPin}
+                onOrganize={onOrganize}
               />
             )}
           </div>

@@ -1,5 +1,13 @@
 # ToolTrim — AI Changelog
 
+## 2026-08-25 · Collections obligatoires à l’ajout
+
+- Chaque ajout depuis Ma Stack ou Explorer ouvre désormais le choix de collection avant toute écriture dans la stack.
+- Le bouton de confirmation reste désactivé tant qu’aucune collection n’est sélectionnée ; une suggestion peut être présélectionnée, mais l’internaute garde le choix.
+- L’ancien écran secondaire « Organiser mes outils » et l’état « À organiser » sont retirés : les actions renommer, déplacer et supprimer vivent directement dans le menu de chaque collection personnelle.
+- Le vocabulaire est unifié autour des collections et le compteur de Ma Stack ne change qu’après confirmation explicite.
+- Validation : TypeScript PASS, 55 tests Ma Stack PASS, build production PASS et parcours Ma Stack / Explorer vérifiés dans le navigateur local.
+
 ## 2026-08-25 · Ajout à Ma Stack et collection Mes envies
 
 - L’ajout d’un outil ouvre désormais une popin de classement inspirée des collections : statut `Je l’utilise` ou `Ça me tente`, sélection de plusieurs tableaux, suggestion contextuelle et création d’un tableau personnel sans quitter le parcours.
