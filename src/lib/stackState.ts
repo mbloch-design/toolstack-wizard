@@ -95,15 +95,10 @@ function normalizeNeed(value: unknown): StackNeed | null {
   if (!record || typeof record.id !== "string" || !record.id.trim()) return null;
 
   const fallback = DEFAULT_STACK_NEEDS.find((need) => need.id === record.id);
-  const useSuggestedLabel = fallback && record.source !== "custom";
-  const labelFr = useSuggestedLabel
-    ? fallback.labelFr
-    : typeof record.labelFr === "string" && record.labelFr.trim()
+  const labelFr = typeof record.labelFr === "string" && record.labelFr.trim()
     ? record.labelFr.trim()
     : fallback?.labelFr || record.id;
-  const labelEn = useSuggestedLabel
-    ? fallback.labelEn
-    : typeof record.labelEn === "string" && record.labelEn.trim()
+  const labelEn = typeof record.labelEn === "string" && record.labelEn.trim()
     ? record.labelEn.trim()
     : fallback?.labelEn || labelFr;
   const order = Number.isFinite(Number(record.order)) ? Number(record.order) : fallback?.order || 999;
@@ -551,7 +546,7 @@ export function renameCustomNeedInState(state: ToolCartState, needId: string, la
   const cleanLabel = normalizeCustomNeedLabel(label);
   if (!cleanLabel) return normalized;
 
-  const needs = normalized.needs.map((need) => need.id === needId && need.source === "custom"
+  const needs = normalized.needs.map((need) => need.id === needId
     ? { ...need, labelFr: cleanLabel, labelEn: cleanLabel }
     : need);
   return normalizeToolCartState({ ...normalized, needs });

@@ -2346,17 +2346,16 @@
     display: flex;
     flex-direction: column;
     max-height: calc(100vh - 40px);
-    max-width: 620px;
+    max-width: 680px;
     overflow: hidden;
     width: 100%;
   }
   .stack-needs-manager-head {
     align-items: center;
-    border-bottom: 1px solid var(--color-border);
     display: grid;
     gap: 16px;
     grid-template-columns: minmax(0, 1fr) auto;
-    padding: 20px 22px;
+    padding: 42px 46px 28px;
   }
   .stack-needs-manager-head > div {
     display: grid;
@@ -2373,7 +2372,7 @@
   .stack-needs-manager-head h2 {
     color: var(--color-text);
     font-family: var(--font-ui);
-    font-size: 1.2rem;
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
     font-weight: 850;
     letter-spacing: -0.035em;
     line-height: 1.08;
@@ -2465,7 +2464,7 @@
     display: grid;
     gap: 6px;
     overflow: auto;
-    padding: 0 12px 12px;
+    padding: 0 46px 42px;
   }
   .stack-needs-manager-row {
     align-items: center;
@@ -2475,14 +2474,24 @@
     display: grid;
     gap: 12px;
     grid-template-columns: auto minmax(0, 1fr) auto;
-    min-height: 52px;
-    padding: 6px 8px;
+    min-height: 64px;
+    padding: 10px 12px;
   }
   .stack-needs-order-actions,
   .stack-needs-manager-row-actions {
     align-items: center;
     display: flex;
     gap: 4px;
+  }
+  .stack-needs-manager-row-actions {
+    opacity: 0;
+    transform: translateX(4px);
+    transition: opacity 140ms ease-out, transform 140ms ease-out;
+  }
+  .stack-needs-manager-row:hover .stack-needs-manager-row-actions,
+  .stack-needs-manager-row:focus-within .stack-needs-manager-row-actions {
+    opacity: 1;
+    transform: translateX(0);
   }
   .stack-needs-order-actions button,
   .stack-needs-manager-row-actions button {
@@ -2604,8 +2613,12 @@
       padding-left: 18px;
       padding-right: 18px;
     }
+    .stack-needs-manager-head {
+      padding-bottom: 22px;
+      padding-top: 28px;
+    }
     .stack-needs-manager-list {
-      padding: 10px;
+      padding: 0 18px 24px;
     }
     .stack-needs-manager-row {
       gap: 8px;
@@ -2615,6 +2628,13 @@
     .stack-needs-order-actions {
       display: grid;
       grid-template-columns: 1fr;
+    }
+  }
+
+  @media (hover: none) {
+    .stack-needs-manager-row-actions {
+      opacity: 1;
+      transform: none;
     }
   }
 

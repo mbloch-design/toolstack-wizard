@@ -263,13 +263,13 @@ describe("stackState", () => {
     expect(second.state.needs.filter((need) => need.source === "custom")).toHaveLength(2);
   });
 
-  it("renames only custom needs", () => {
+  it("renames custom and suggested needs", () => {
     const created = createCustomNeedInState(createDefaultToolCartState(), "Relation client");
     const renamed = renameCustomNeedInState(created.state, created.needId as string, "Suivi client");
     const suggestedAttempt = renameCustomNeedInState(renamed, "design", "Création");
 
     expect(renamed.needs.find((need) => need.id === created.needId)?.labelFr).toBe("Suivi client");
-    expect(suggestedAttempt.needs.find((need) => need.id === "design")?.labelFr).toBe("Créer des visuels");
+    expect(suggestedAttempt.needs.find((need) => need.id === "design")?.labelFr).toBe("Création");
   });
 
   it("deletes a custom need and sends orphaned tools back to unassigned", () => {

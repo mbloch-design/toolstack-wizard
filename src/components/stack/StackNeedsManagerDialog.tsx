@@ -157,16 +157,18 @@ export function StackNeedsManagerDialog({
                     <button type="button" className="is-primary" onClick={() => commitRename(need.id)}>
                       {t("Valider", "Save")}
                     </button>
-                  ) : need.source === "custom" ? (
+                  ) : (
                     <>
                       <button type="button" onClick={() => beginRename(need)} aria-label={t(`Renommer ${label}`, `Rename ${label}`)}>
                         <Pencil size={14} aria-hidden />
                       </button>
-                      <button type="button" className="is-danger" onClick={() => handleDelete(need.id)} aria-label={t(`Supprimer la collection ${label}`, `Delete collection ${label}`)}>
-                        <Trash2 size={14} aria-hidden />
-                      </button>
+                      {need.source === "custom" && (
+                        <button type="button" className="is-danger" onClick={() => handleDelete(need.id)} aria-label={t(`Supprimer la collection ${label}`, `Delete collection ${label}`)}>
+                          <Trash2 size={14} aria-hidden />
+                        </button>
+                      )}
                     </>
-                  ) : null}
+                  )}
                 </div>
               </article>
             );

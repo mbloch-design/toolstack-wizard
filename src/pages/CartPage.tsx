@@ -13,6 +13,7 @@ import { useCategories, useToolSummaries, type ToolSummary } from "@/hooks/useSu
 import { scrollToTop } from "@/lib/scroll";
 import { classifyToolForStack } from "@/lib/stackAutoClassification";
 import { computeStackPricing, formatStackToolPrice } from "@/lib/stackPricing";
+import { DEFAULT_STACK_NEEDS } from "@/lib/stackState";
 import { getExplorerHref } from "@/lib/toolExploration";
 
 type StackBoard = {
@@ -1403,6 +1404,10 @@ function getBoardDisplayLabel(board: StackBoard, lang: string) {
     finance: { fr: "Finance", en: "Finance" },
     dev: { fr: "Développement", en: "Development" },
   };
+  const defaultNeed = DEFAULT_STACK_NEEDS.find((need) => need.id === board.id);
+  if (defaultNeed && (board.labelFr !== defaultNeed.labelFr || board.labelEn !== defaultNeed.labelEn)) {
+    return lang === "en" ? board.labelEn : board.labelFr;
+  }
   const label = labels[board.id];
   if (label) return lang === "en" ? label.en : label.fr;
   return lang === "en" ? board.labelEn : board.labelFr;
