@@ -8620,22 +8620,39 @@
     "slug": "anthropic",
     "name": "Anthropic API",
     "category": "ai-general",
-    "shortDescription": "API Claude pour raisonnement, analyse longue, code et agents.",
-    "shortDescriptionEn": "Claude API for reasoning, long analysis, coding, and agents.",
-    "description": "API Claude pour raisonnement, analyse longue, code et agents.",
-    "longDescription": "API Claude pour raisonnement, analyse longue, code et agents.",
-    "longDescriptionEn": "Claude API for reasoning, long analysis, coding, and agents.",
+    "shortDescription": "Intégrez les modèles Claude dans vos applications, agents et workflows métier.",
+    "shortDescriptionEn": "Integrate Claude models into applications, agents and business workflows.",
+    "description": "L’API Anthropic donne accès aux modèles Claude et à leurs outils pour construire des produits IA en production.",
+    "longDescription": "L’API Anthropic permet d’intégrer les modèles Claude dans une application, un agent ou un workflow interne via la Messages API et les SDK officiels. Elle accepte du texte et des images, gère de grands contextes et propose des fonctions adaptées à la production : tool use, sorties structurées, traitement par lots et prompt caching.\n\nPour les agents, Anthropic fournit notamment la recherche web avec citations, l’exécution de code, une Files API et un connecteur MCP distant. La Console permet de tester les prompts dans le Workbench, suivre les coûts et organiser les accès par workspace.\n\nLa facturation est entièrement à l’usage, par million de tokens et selon le modèle. L’abonnement Claude Pro ou Max ne comprend aucun crédit API : la Console Anthropic possède sa propre facturation.",
+    "longDescriptionEn": "The Anthropic API brings Claude models into applications, agents and internal workflows through the Messages API and official SDKs. It accepts text and images, handles large contexts and provides production features including tool use, structured outputs, batch processing and prompt caching.\n\nFor agents, Anthropic also provides web search with citations, code execution, a Files API and a remote MCP connector. The Console lets teams test prompts in Workbench, monitor costs and organize access by workspace.\n\nBilling is fully usage-based, per million tokens and model. Claude Pro or Max subscriptions do not include API credits: Anthropic Console has separate billing.",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "",
+      "paid": "Haiku dès 1/5 $US par MTok entrée/sortie · Sonnet 2/10 $US · Opus 5/25 $US"
     },
     "pricingEn": {
-      "free": "Free or open source depending on usage",
-      "paid": "Paid options may apply depending on hosting, team, or volume"
+      "free": "",
+      "paid": "Haiku from US$1/$5 per MTok input/output · Sonnet $2/$10 · Opus $5/$25"
     },
-    "defaultMonthlyPrice": 0,
-    "pricing_v5": null,
-    "affiliateLink": "",
+    "defaultMonthlyPrice": 1,
+    "pricing_v5": {
+      "cautions": [
+        "Des crédits d’essai peuvent être proposés selon le compte, sans forfait gratuit permanent.",
+        "Le prix dépend du modèle, des tokens d’entrée et de sortie et des outils utilisés.",
+        "La recherche web, l’exécution de code et certains outils entraînent des frais supplémentaires.",
+        "L’abonnement Claude Pro ou Max ne comprend pas l’usage API."
+      ],
+      "verified_on": "2026-08-25",
+      "source_domain": "claude.com",
+      "usage_sensitive": true,
+      "compare_plan_kind": "usage",
+      "compare_plan_name": "Haiku 4.5",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://claude.com/pricing#api",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 1
+    },
+    "affiliateLink": "https://platform.claude.com/",
     "websiteUrl": "https://www.anthropic.com/api",
     "logo": "",
     "seo": {
@@ -8650,63 +8667,90 @@
       "metaDescription": "Anthropic API sur ToolTrim : rôle, limites et place dans une stack freelance."
     },
     "pros": [
-      "Rôle clair dans une stack métier",
-      "Écosystème reconnu",
-      "Pertinent pour livrer plus proprement"
+      "Modèles performants pour le code, le raisonnement et l’analyse de documents.",
+      "Tool use, sorties structurées et outils agentiques intégrés.",
+      "Prompt caching et Batch API pour réduire les coûts.",
+      "SDK officiels et compatibilité avec les principaux clouds."
     ],
     "prosEn": [
-      "Clear role in a professional stack",
-      "Recognized ecosystem",
-      "Useful for cleaner delivery"
+      "Strong models for coding, reasoning and document analysis.",
+      "Built-in tool use, structured outputs and agent capabilities.",
+      "Prompt caching and Batch API reduce costs.",
+      "Official SDKs and availability through major clouds."
     ],
     "cons": [
-      "Peut devenir inutile si le besoin est ponctuel",
-      "À éviter sans usage récurrent",
-      "Prix ou complexité à vérifier selon contexte"
+      "Aucun forfait mensuel prévisible : le coût suit le volume.",
+      "Les sorties longues des modèles avancés deviennent vite coûteuses.",
+      "L’orchestration, les garde-fous et l’observabilité restent à construire.",
+      "Facturation séparée de l’abonnement Claude."
     ],
     "consEn": [
-      "Can be unnecessary for occasional use",
-      "Avoid without recurring usage",
-      "Pricing or complexity depends on context"
+      "No predictable flat monthly plan: cost follows usage.",
+      "Long outputs from advanced models become expensive quickly.",
+      "Orchestration, guardrails and observability still need engineering.",
+      "Billed separately from Claude subscriptions."
     ],
     "useCases": [
-      "Stack développeur freelance",
-      "Production client",
-      "Maintenance et documentation"
+      "Ajouter un assistant IA à un SaaS ou un outil interne.",
+      "Construire un agent connecté à des outils via MCP.",
+      "Extraire et analyser des documents à grande échelle.",
+      "Automatiser du support, de la recherche ou de la génération de code."
     ],
     "useCasesEn": [
-      "Freelance developer stack",
-      "Client delivery",
-      "Maintenance and documentation"
+      "Add an AI assistant to a SaaS product or internal tool.",
+      "Build an agent connected to tools through MCP.",
+      "Extract and analyze documents at scale.",
+      "Automate support, research or code generation."
     ],
     "covers": [
-      "ai-general"
+      "ai-api",
+      "agents",
+      "document-processing"
     ],
     "relevantFor": [
-      "dev-freelance"
+      "Développeurs",
+      "Équipes produit",
+      "AI engineers",
+      "Startups SaaS"
     ],
     "personas": [
       "THEO"
     ],
-    "alternatives": [],
+    "alternatives": [
+      "openai-api",
+      "google-ai-studio"
+    ],
     "verdict": {
       "keepIf": [
-        "Usage récurrent",
-        "Impact direct sur le livrable",
-        "Rôle documenté dans la stack"
+        "Vous intégrez Claude dans un produit ou un workflow en production.",
+        "Vous avez besoin de raisonnement, de code ou d’analyse documentaire avancée.",
+        "Vous pouvez suivre précisément les tokens, les erreurs et les coûts."
       ],
       "avoidIf": [
-        "Usage ponctuel",
-        "Double emploi avec un outil déjà en place"
+        "Un abonnement Claude suffit à votre usage humain.",
+        "Vous cherchez un coût mensuel fixe et parfaitement prévisible.",
+        "Vous n’avez pas les ressources pour sécuriser et superviser une intégration IA."
       ],
-      "threshold": "À garder si l’outil réduit un risque, accélère une livraison ou clarifie la maintenance."
+      "threshold": "Choisissez l’API lorsque Claude doit agir dans votre produit ou traiter automatiquement un volume récurrent ; pour un usage individuel, la fiche Claude est la bonne référence."
     },
-    "verdictEn": null,
+    "verdictEn": {
+      "keepIf": [
+        "You are integrating Claude into a product or production workflow.",
+        "You need advanced reasoning, coding or document analysis.",
+        "You can monitor tokens, errors and costs closely."
+      ],
+      "avoidIf": [
+        "A Claude subscription already covers your human usage.",
+        "You need a fixed and fully predictable monthly cost.",
+        "You lack the resources to secure and observe an AI integration."
+      ],
+      "threshold": "Use the API when Claude needs to operate inside your product or process recurring volume automatically; for individual use, the Claude app page is the right reference."
+    },
     "articles": [],
     "timeGainedHoursPerMonth": null,
-    "freeAlternative": null,
-    "soloRelevance": "pertinent si le rôle est clair dans la mission",
-    "teamRelevance": "à structurer avec conventions et droits",
+    "freeAlternative": "google-ai-studio",
+    "soloRelevance": "medium",
+    "teamRelevance": "high",
     "tool_type": "ia",
     "substitutable": false,
     "host_app": null,
@@ -8715,9 +8759,16 @@
       "dev-freelance"
     ],
     "functional_needs": [
-      "ai-general"
+      "ai-api",
+      "agents",
+      "document-processing"
     ],
-    "ia_use_case": null,
+    "ia_use_case": [
+      "agents",
+      "analyse-documents",
+      "code",
+      "generation-texte"
+    ],
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
@@ -26717,25 +26768,25 @@
     "id": "claude",
     "name": "Claude",
     "category": "ai-general",
-    "shortDescription": "L'assistant IA d'Anthropic orienté rédaction, analyse et raisonnement.",
+    "shortDescription": "L’assistant IA d’Anthropic pour écrire, analyser, rechercher, coder et créer des livrables.",
     "verdict": {
       "keepIf": [
-        "Vous développez des agents ou applications IA autonomes.",
-        "Vous voulez une API hautement fiable pour la production.",
-        "Votre cas nécessite un très long contexte (RAG, archives)."
+        "Vous travaillez régulièrement sur des documents longs, du code ou des analyses complexes.",
+        "Vous voulez organiser vos conversations et vos sources dans des Projects.",
+        "Vous utilisez les Artifacts pour produire et améliorer des documents, prototypes ou visualisations."
       ],
       "avoidIf": [
-        "Vous cherchez une UI conversationnelle simple (préférez claude.com/chat).",
-        "Vous ne voulez pas de frais API.",
-        "Vous ne voulez pas dépendre d'une API tierce pour vos besoins IA."
+        "Vous avez surtout besoin de génération d’images native.",
+        "Votre usage est occasionnel et les limites du plan gratuit vous suffisent.",
+        "Vous cherchez une suite bureautique complète plutôt qu’un partenaire de réflexion."
       ],
-      "threshold": "Anthropic API s'adresse aux développeurs intégrant Claude en production ; pour discuter simplement avec Claude, utilisez l'interface web gratuite."
+      "threshold": "Le plan Pro devient pertinent si les limites gratuites interrompent votre travail ou si Projects, Research et Claude Code font partie de votre routine."
     },
     "pricing": {
       "free": "Plan gratuit disponible",
-      "paid": "20$/mois (Pro)"
+      "paid": "Pro : 20 $US/mois ou 200 $US/an · Max à partir de 100 $US/mois"
     },
-    "affiliateLink": "https://anthropic.com",
+    "affiliateLink": "https://claude.com/",
     "seo": {
       "aiAngle": {
         "stance": "augmente",
@@ -26756,7 +26807,7 @@
       "code",
       "generation-texte"
     ],
-    "freeAlternative": "claude",
+    "freeAlternative": "chatgpt",
     "soloRelevance": "high",
     "teamRelevance": "medium",
     "bestFor": [
@@ -26764,33 +26815,41 @@
       "consultant",
       "tech"
     ],
-    "defaultMonthlyPrice": 17.52,
+    "defaultMonthlyPrice": 17,
     "pricingTiers": {
-      "free": "Claude 3.5 Sonnet (limité)",
-      "paid": "20$/mois (Pro) pour usage illimité et modèles Opus"
+      "free": "Claude gratuit avec limites d’usage",
+      "paid": "Pro à 17 $US/mois en annuel ou 20 $US en mensuel ; Max dès 100 $US/mois"
     },
     "relevantFor": [
+      "Consultants et analystes",
+      "Rédacteurs et chercheurs",
       "Développeurs",
-      "Startups AI",
-      "Équipes ML/Data"
+      "Équipes produit et knowledge workers"
     ],
-    "alternatives": [],
-    "longDescription": "Claude, c'est l'assistant IA d'Anthropic orienté rédaction, analyse et raisonnement. À partir de 14.43€/mois. Pensé pour les consultants B2B et les auteurs et newslettistes.\n\nAnalyse de très longs documents (jusqu'à 75 000 mots). raisonnement complexe et logique solide, moins d'hallucinations que ChatGPT. Excellent pour la génération de code. Concrètement : analyse de contrats : résumer et extraire les points clés de longs contrats. Ou encore : synthèse de recherche : analyser plusieurs articles/rapports et produire une synthèse. Gain de temps estimé : 7h/mois.\n\nÀ garder si : besoin de rédaction nuancée ou traitement de longs documents. À éviter si : besoin de génération d'images ou besoin de recherche web en temps réel. Limite principale : moins connu que ChatGPT, moins de ressources communautaires. Dès que vous passez plus de temps à réécrire les réponses de ChatGPT qu'à les utiliser.",
+    "alternatives": [
+      "chatgpt",
+      "gemini",
+      "perplexity"
+    ],
+    "longDescription": "Claude est l’assistant IA d’Anthropic pour réfléchir, écrire, analyser des documents, rechercher sur le web et produire du code. L’application est disponible sur le web, mobile et ordinateur, avec une fenêtre de contexte de 200 000 tokens sur les offres individuelles.\n\nSa vraie force est le travail suivi : Projects rassemble conversations, documents et instructions dans un même espace ; Artifacts affiche à côté du chat les documents, visualisations, prototypes ou extraits de code que vous pouvez faire évoluer avec Claude. Le plan Pro ajoute davantage d’usage, Research, Claude Code et un accès élargi aux modèles.\n\nLe plan gratuit est déjà solide pour un usage ponctuel. Pro se justifie surtout si Claude devient un outil quotidien ou si vous avez besoin de sessions plus longues. L’abonnement à Claude n’inclut pas l’usage de l’API Anthropic, facturé séparément.",
     "pros": [
-      "Modèles très performants et précis.",
-      "Support d'un très long contexte (1M tokens).",
-      "Traitement par lots pour réduire fortement les coûts.",
-      "Prompt caching (économie majeure sur contexte répétitif)."
+      "Très à l’aise avec les documents longs, la rédaction et l’analyse structurée.",
+      "Projects pour regrouper sources, instructions et conversations.",
+      "Artifacts pour créer et itérer sur du code, des documents et des visualisations.",
+      "Recherche web avec citations et connexions à des outils externes.",
+      "Claude Code inclus dans le plan Pro."
     ],
     "cons": [
-      "Pas d'offre gratuite pour les développeurs.",
-      "Coûts élevés sur gros volumes.",
-      "Courbe d'apprentissage API (vs interface web)."
+      "Les limites d’usage peuvent interrompre les longues sessions.",
+      "Le plan Max démarre à 100 $US/mois.",
+      "L’abonnement Claude et l’API Anthropic sont facturés séparément.",
+      "Pas de génération d’images native comparable aux outils spécialisés."
     ],
     "useCases": [
-      "Déployer un chatbot en production.",
-      "Analyser de grandes archives (milliers de documents).",
-      "Orchestrer des agents autonomes complexes."
+      "Analyser un contrat, un rapport ou un corpus de recherche.",
+      "Rédiger et réviser une note, une proposition ou un article.",
+      "Construire un prototype ou une visualisation dans Artifacts.",
+      "Explorer un codebase et déléguer des tâches avec Claude Code."
     ],
     "tool_type": "ia",
     "substitutable": true,
@@ -26817,56 +26876,63 @@
     "bundle_parent": null,
     "host_app": null,
     "slug": "claude",
-    "shortDescriptionEn": "Anthropic's AI assistant focused on writing, analysis, and reasoning.",
-    "description": "Claude, c'est l'assistant IA d'Anthropic orienté rédaction, analyse et raisonnement. À partir de 14.43€/mois. Pensé pour les consultants B2B et les auteurs et newslettistes.\n\nAnalyse de très longs documents (jusqu'à 75 000 mots). raisonnement complexe et logique solide, moins d'hallucinations que ChatGPT. Excellent pour la génération de code. Concrètement : analyse de contrats : résumer et extraire les points clés de longs contrats. Ou encore : synthèse de recherche : analyser plusieurs articles/rapports et produire une synthèse. Gain de temps estimé : 7h/mois.\n\nÀ garder si : besoin de rédaction nuancée ou traitement de longs documents. À éviter si : besoin de génération d'images ou besoin de recherche web en temps réel. Limite principale : moins connu que ChatGPT, moins de ressources communautaires. Dès que vous passez plus de temps à réécrire les réponses de ChatGPT qu'à les utiliser.",
-    "longDescriptionEn": "Claude is anthropic's AI assistant focused on writing, analysis, and reasoning. Starting at €14.43/month. Built for B2B consultants and writers and newsletter creators.\n\nAnalysis of very long documents (up to 75,000 words). complex reasoning and solid logic, fewer hallucinations than ChatGPT. Excellent for code generation. In practice: contract analysis: summarizing and extracting key points from long contracts. Also: research synthesis: analyzing multiple articles/reports and producing a synthesis. Estimated time saving: 7h/month.\n\nKeep it if: need for nuanced writing or processing long documents. Skip it if: need for image generation or need for real-time web search. Main limit: less known than ChatGPT, fewer community resources. As soon as you start spending more time rewriting ChatGPT's responses than using them.",
+    "shortDescriptionEn": "Anthropic’s AI assistant for writing, analysis, research, coding and creating deliverables.",
+    "description": "Claude est l’assistant IA d’Anthropic pour écrire, analyser, rechercher, coder et créer des livrables dans un espace de travail continu.",
+    "longDescriptionEn": "Claude is Anthropic’s AI assistant for thinking, writing, document analysis, web research and coding. The app is available on web, mobile and desktop, with a 200K-token context window on individual plans.\n\nIts main strength is sustained work: Projects brings conversations, documents and instructions into one workspace, while Artifacts displays documents, visualizations, prototypes or code beside the chat so you can iterate with Claude. Pro adds more usage, Research, Claude Code and broader model access.\n\nThe free plan is strong enough for occasional use. Pro makes the most sense when Claude becomes a daily tool or you need longer sessions. A Claude subscription does not include Anthropic API usage, which is billed separately.",
     "pricingEn": {
       "free": "Free plan available",
-      "paid": "$20 USD/month (Pro)"
+      "paid": "Pro: US$20/month or US$200/year · Max from US$100/month"
     },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
-      "source_domain": "anthropic.com",
-      "usage_sensitive": false,
+      "cautions": [
+        "Usage limits apply and reset on rolling windows.",
+        "Claude API usage is billed separately from consumer subscriptions.",
+        "Local prices and taxes may vary."
+      ],
+      "verified_on": "2026-08-25",
+      "source_domain": "claude.com",
+      "usage_sensitive": true,
       "compare_plan_kind": "individual",
       "compare_plan_name": "Pro",
       "price_reliability": "high",
-      "location_sensitive": false,
-      "official_source_url": "https://www.anthropic.com/news/claude-pro",
+      "location_sensitive": true,
+      "official_source_url": "https://claude.com/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 14.43
+      "compare_price_monthly_eur": 17
     },
-    "websiteUrl": "https://anthropic.com",
+    "websiteUrl": "https://claude.com/",
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "You're building autonomous AI agents or production apps.",
-        "You need high reliability and long context windows.",
-        "You're willing to pay for top-tier model quality."
+        "You regularly work with long documents, code or complex analysis.",
+        "You want to organize chats and sources in Projects.",
+        "You use Artifacts to build and iterate on documents, prototypes or visualizations."
       ],
       "avoidIf": [
-        "You just want to chat with an AI (use claude.com/chat).",
-        "You need free API access.",
-        "You don't want to rely on a third-party API for AI needs."
+        "You mainly need native image generation.",
+        "Your usage is occasional and the free limits are sufficient.",
+        "You want a full office suite rather than a thinking partner."
       ],
-      "threshold": "Anthropic API is for developers shipping Claude to production; for casual chat, use the free web interface."
+      "threshold": "Pro makes sense when free limits interrupt your work or Projects, Research and Claude Code are part of your routine."
     },
     "prosEn": [
-      "Best-in-class model quality and reasoning.",
-      "Up to 1M token context window.",
-      "Batch processing sharply cuts costs.",
-      "Prompt caching for repeated-context scenarios."
+      "Strong with long documents, writing and structured analysis.",
+      "Projects bring sources, instructions and conversations together.",
+      "Artifacts support iterative work on code, documents and visualizations.",
+      "Web research with citations and external connectors.",
+      "Claude Code is included with Pro."
     ],
     "consEn": [
-      "No free tier for developers.",
-      "High costs at scale.",
-      "API integration required (not web-based)."
+      "Usage limits can interrupt long sessions.",
+      "Max starts at US$100/month.",
+      "Claude subscriptions and Anthropic API usage are billed separately.",
+      "No native image generation comparable to specialist tools."
     ],
     "useCasesEn": [
-      "Deploy a production chatbot.",
-      "Process thousands of archived documents.",
-      "Run complex autonomous agents."
+      "Analyze a contract, report or research corpus.",
+      "Draft and revise a memo, proposal or article.",
+      "Build a prototype or visualization in Artifacts.",
+      "Explore a codebase and delegate tasks with Claude Code."
     ],
     "personas": [],
     "timeGainedHoursPerMonth": 7,
@@ -26892,7 +26958,11 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://cdn.prod.website-files.com/67ce28cfec624e2b733f8a52/68309ab48369f7ad9b4a40e1_open-graph.jpg"
+    "ogImageUrl": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d23594abeb9ab6ee48_70ed020ecf8fa028b9bc95fa819720b6_og_claude-generic.jpg",
+    "galleryImages": [
+      "https://cdn.sanity.io/images/4zrzovbb/website/9aabd215e1104ea914218eaf759b3deefc02a956-1920x1080.png",
+      "https://cdn.sanity.io/images/4zrzovbb/website/c5823949d9350145ce2fda51acbc7076f2139cd0-1920x1080.png"
+    ]
   },
   {
     "id": "clay",

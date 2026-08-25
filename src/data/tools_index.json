@@ -997,7 +997,7 @@
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://podcast.adobe.com",
     "websiteUrl": "https://podcast.adobe.com",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/adobe-podcast-ai.png",
+    "ogImageUrl": "https://podcast.adobe.com/ES_1_3128967a32.webp",
     "logo": "",
     "tool_type": "ia",
     "host_app": null,
@@ -2118,14 +2118,14 @@
     "slug": "anthropic",
     "name": "Anthropic API",
     "categoryId": "ai-general",
-    "shortDescription": "API Claude pour raisonnement, analyse longue, code et agents.",
-    "shortDescriptionEn": "Claude API for reasoning, long analysis, coding, and agents.",
+    "shortDescription": "Intégrez les modèles Claude dans vos applications, agents et workflows métier.",
+    "shortDescriptionEn": "Integrate Claude models into applications, agents and business workflows.",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "",
+      "paid": "Haiku dès 1/5 $US par MTok entrée/sortie · Sonnet 2/10 $US · Opus 5/25 $US"
     },
-    "defaultMonthlyPrice": 0,
-    "affiliateLink": "",
+    "defaultMonthlyPrice": 1,
+    "affiliateLink": "https://platform.claude.com/",
     "websiteUrl": "https://www.anthropic.com/api",
     "ogImageUrl": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d18f61fb5c21c81781_og-claude-api.jpg",
     "logo": "",
@@ -2134,15 +2134,20 @@
     "bundle_parent": null,
     "substitution_cluster_v2": "ai-general",
     "functional_needs": [
-      "ai-general"
+      "ai-api",
+      "agents",
+      "document-processing"
     ],
     "verticals": [
       "dev-freelance"
     ],
     "relevantFor": [
-      "dev-freelance"
+      "Développeurs",
+      "Équipes produit",
+      "AI engineers",
+      "Startups SaaS"
     ],
-    "freeAlternative": null,
+    "freeAlternative": "google-ai-studio",
     "substitutable": false,
     "betterAlternative": null
   },
@@ -6668,16 +6673,16 @@
     "slug": "claude",
     "name": "Claude",
     "categoryId": "ai-general",
-    "shortDescription": "L'assistant IA d'Anthropic orienté rédaction, analyse et raisonnement.",
-    "shortDescriptionEn": "Anthropic's AI assistant focused on writing, analysis, and reasoning.",
+    "shortDescription": "L’assistant IA d’Anthropic pour écrire, analyser, rechercher, coder et créer des livrables.",
+    "shortDescriptionEn": "Anthropic’s AI assistant for writing, analysis, research, coding and creating deliverables.",
     "pricing": {
       "free": "Plan gratuit disponible",
-      "paid": "20$/mois (Pro)"
+      "paid": "Pro : 20 $US/mois ou 200 $US/an · Max à partir de 100 $US/mois"
     },
-    "defaultMonthlyPrice": 17.52,
-    "affiliateLink": "https://anthropic.com",
-    "websiteUrl": "https://anthropic.com",
-    "ogImageUrl": "https://cdn.prod.website-files.com/67ce28cfec624e2b733f8a52/68309ab48369f7ad9b4a40e1_open-graph.jpg",
+    "defaultMonthlyPrice": 17,
+    "affiliateLink": "https://claude.com/",
+    "websiteUrl": "https://claude.com/",
+    "ogImageUrl": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d23594abeb9ab6ee48_70ed020ecf8fa028b9bc95fa819720b6_og_claude-generic.jpg",
     "logo": "",
     "tool_type": "ia",
     "host_app": null,
@@ -6696,11 +6701,12 @@
       "ai-builder"
     ],
     "relevantFor": [
+      "Consultants et analystes",
+      "Rédacteurs et chercheurs",
       "Développeurs",
-      "Startups AI",
-      "Équipes ML/Data"
+      "Équipes produit et knowledge workers"
     ],
-    "freeAlternative": "claude",
+    "freeAlternative": "chatgpt",
     "substitutable": true,
     "betterAlternative": null
   },
@@ -10014,9 +10020,9 @@
       "paid": ""
     },
     "defaultMonthlyPrice": 0,
-    "affiliateLink": "https://rxlaboratoire.com/duik",
-    "websiteUrl": "https://rxlaboratoire.com/duik",
-    "ogImageUrl": "",
+    "affiliateLink": "https://rxlaboratorio.org/rx-tool/duik/",
+    "websiteUrl": "https://rxlaboratorio.org/rx-tool/duik/",
+    "ogImageUrl": "https://rxlaboratorio.org/wp-content/uploads/duik_angela.jpg",
     "logo": "",
     "tool_type": "plugin",
     "host_app": "adobe-after-effects",
@@ -19735,9 +19741,9 @@
       "paid": "Sync cloud optionnel à 5$/mois (4,17$/mois annuel) ; palier Sponsor à 15$/mois (accès anticipé aux fonctionnalités expérimentales)."
     },
     "defaultMonthlyPrice": 0,
-    "affiliateLink": "",
-    "websiteUrl": "",
-    "ogImageUrl": "",
+    "affiliateLink": "https://logseq.com/",
+    "websiteUrl": "https://logseq.com/",
+    "ogImageUrl": "https://user-images.githubusercontent.com/25513724/221387376-4dc419c2-0d0a-460c-a920-2d211e78b456.gif",
     "logo": "",
     "tool_type": "satellite",
     "host_app": null,
@@ -20540,7 +20546,7 @@
     "defaultMonthlyPrice": 50,
     "affiliateLink": "https://www.maxon.net/red-giant/magic-bullet",
     "websiteUrl": "https://www.maxon.net/red-giant/magic-bullet",
-    "ogImageUrl": "",
+    "ogImageUrl": "https://i.ytimg.com/vi/jxqSpbc8Z1A/maxresdefault.jpg",
     "logo": "",
     "tool_type": "plugin",
     "host_app": "adobe-after-effects",
@@ -23039,7 +23045,7 @@
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://motionbro.net",
     "websiteUrl": "https://motionbro.net",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/motion-bro.png",
+    "ogImageUrl": "https://motionbro.com/wp-content/uploads/2022/12/free-motion-bro-pack-cover.jpg.webp",
     "logo": "",
     "tool_type": "plugin",
     "host_app": "adobe-after-effects",
@@ -23782,7 +23788,7 @@
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://nikcollection.dxo.com",
     "websiteUrl": "https://nikcollection.dxo.com",
-    "ogImageUrl": "https://prod-nik-cdn.dxo.com/wp-content/uploads/2024/05/color-efex-extended-hsl-1.jpg",
+    "ogImageUrl": "https://pub-27e14545e036427f828cd9cf06f1395f.r2.dev/web/dxo.com/nikcollection/learn/nik9-learn-screen-7.webp",
     "logo": "",
     "tool_type": "plugin",
     "host_app": "photoshop",
@@ -34170,7 +34176,7 @@
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://extensions.sketchup.com",
     "websiteUrl": "https://extensions.sketchup.com",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/solid-inspector2.png",
+    "ogImageUrl": "https://i0.wp.com/www.thomthom.net/thoughts/wp-content/uploads/2014/12/UI-Example.png?resize=976%2C564",
     "logo": "",
     "tool_type": "metier",
     "host_app": null,
@@ -35759,6 +35765,46 @@
       "Entreprises SaaS"
     ],
     "freeAlternative": null,
+    "substitutable": true,
+    "betterAlternative": null
+  },
+  {
+    "id": "surveymonkey",
+    "slug": "surveymonkey",
+    "name": "SurveyMonkey",
+    "categoryId": "communication",
+    "shortDescription": "Créez des sondages, formulaires et quiz, puis analysez les réponses au même endroit.",
+    "shortDescriptionEn": "Create surveys, forms and quizzes, then analyze responses in one place.",
+    "pricing": {
+      "free": "Basic gratuit : sondages illimités, 10 questions par sondage et réponses limitées",
+      "paid": "Standard Monthly : 99 $US/mois · Advantage Annual : 468 $US/an"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://get.surveymonkey.com/w7tw91375vc5",
+    "websiteUrl": "https://www.surveymonkey.com/",
+    "ogImageUrl": "https://prod.smassets.net/assets/content/sm/resources-build-your-first-survey-homepage.webp",
+    "logo": "",
+    "tool_type": "satellite",
+    "host_app": null,
+    "bundle_parent": null,
+    "substitution_cluster_v2": "form-builder",
+    "functional_needs": [
+      "surveys",
+      "formulaires",
+      "feedback-client"
+    ],
+    "verticals": [
+      "consultant-b2b",
+      "fondateur-saas",
+      "ecommercant"
+    ],
+    "relevantFor": [
+      "Équipes marketing",
+      "Customer experience",
+      "RH",
+      "Product managers et chercheurs UX"
+    ],
+    "freeAlternative": "tally",
     "substitutable": true,
     "betterAlternative": null
   },

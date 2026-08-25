@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowDown, ArrowRight, ArrowUp, Check, Copy, Flag, Linkedin, Mail, MessageCircle, Minus, Share2 } from "lucide-react";
+import { ArrowDown, ArrowRight, ArrowUp, Check, Compass, Copy, Flag, Linkedin, Mail, MessageCircle, Minus, Share2 } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
 import PinToolButton from "@/components/PinToolButton";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import type { Tool } from "@/data/types";
+import { getExplorerHref } from "@/lib/toolExploration";
 import { computeToolTrimScore } from "@/lib/toolTrimScore";
 
 interface Props {
@@ -104,6 +105,13 @@ export default function StickyDecisionCard({ tool, prefix, t, alternatives }: Pr
       </div>
 
       <nav className="td-decision-utility-actions" aria-label={t("Actions sur l’outil", "Tool actions")}>
+        <Link
+          to={getExplorerHref(prefix, { type: "outil", slug })}
+          className="td-decision-explore"
+        >
+          <Compass aria-hidden />
+          <span>{t("Explorer autour de cet outil", "Explore around this tool")}</span>
+        </Link>
         <PinToolButton slug={slug} label={tool.name} t={t} labelMode="full" />
         <Popover open={shareOpen} onOpenChange={setShareOpen}>
           <PopoverTrigger asChild>
