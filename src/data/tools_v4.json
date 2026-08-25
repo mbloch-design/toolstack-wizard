@@ -95873,7 +95873,11 @@
     },
     "force_silence": false,
     "description": "Nik Collection, c'est une suite de plugins de retouche créative pour la photo, éditée par DxO. Elle regroupe des modules cultes : Color Efex (effets et looks couleur), Silver Efex (la référence du noir et blanc), Analog Efex (rendus argentiques), Viveza, Dfine, HDR Efex... Tu travailles ta photo dans Lightroom ou Photoshop, tu envoies vers Nik, tu appliques un look, et tu reviens. Pour un photographe qui veut une signature visuelle, c'est un terrain de jeu énorme.\n\nC'est un achat unique (~149€), avec des mises à jour payantes pour les nouvelles versions. Pas d'abonnement obligatoire.\n\nÀ qui ça s'adresse : aux photographes qui veulent des looks créatifs au-delà des réglages de base de Lightroom ou Capture One. Si tu te contentes des outils intégrés, Nik fait double emploi. Mais pour du noir et blanc soigné ou des rendus créatifs, c'est l'une des suites les plus appréciées, et le modèle à achat unique reste rare et appréciable.",
-    "ogImageUrl": "https://prod-nik-cdn.dxo.com/wp-content/uploads/2024/05/color-efex-extended-hsl-1.jpg"
+    "ogImageUrl": "https://pub-27e14545e036427f828cd9cf06f1395f.r2.dev/web/dxo.com/nikcollection/learn/nik9-learn-screen-7.webp",
+    "galleryImages": [
+      "https://pub-27e14545e036427f828cd9cf06f1395f.r2.dev/web/dxo.com/nikcollection/learn/nik9-learn-screen-2.webp",
+      "https://pub-27e14545e036427f828cd9cf06f1395f.r2.dev/web/dxo.com/nikcollection/learn/nik9-learn-screen-3.webp"
+    ]
   },
   {
     "id": "node-js",
