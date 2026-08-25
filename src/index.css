@@ -25233,20 +25233,16 @@ section[id] {
 .ex-page { margin: 0 auto; max-width: 1440px; min-width: 0; padding: 24px var(--layout-gutter, 48px) 96px; }
 .ex-page--tool { display: block; }
 .ex-tool-stage {
-  align-items: stretch;
   display: grid;
-  gap: 16px;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
   margin-bottom: 16px;
 }
 .ex-tool-stage > .ex-tool-focus { margin: 0; width: 100%; }
 .ex-tool-stage-grid {
-  align-self: stretch;
-  display: grid;
-  gap: 16px;
-  grid-auto-rows: minmax(0, 1fr);
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  columns: 3 240px;
+  column-gap: 16px;
+  margin-top: 16px;
 }
+.ex-tool-stage-grid .ex-card { break-inside: avoid; margin: 0 0 16px; width: 100%; }
 .ex-tool-stage-grid .ex-card-main { min-height: 0; }
 .ex-page--tool > .ex-grid { margin-top: 0; }
 .ex-page--tool > .ex-empty { margin: 48px auto; }
@@ -25269,6 +25265,7 @@ section[id] {
 }
 .ex-source-banner--objective > .ex-back { justify-self: start; }
 .ex-objective-heading { min-width: 0; max-width: min(760px, 100%); text-align: center; }
+.ex-objective-heading > span { color: var(--color-muted); display: block; font-family: var(--font-ui); font-size: .7rem; font-weight: 760; margin-bottom: 6px; text-transform: uppercase; }
 .ex-objective-heading h1 {
   color: var(--color-text);
   font-family: var(--font-ui);
@@ -25365,7 +25362,7 @@ section[id] {
   margin: 0 auto 28px;
   overflow: hidden;
   transform-origin: 50% 20%;
-  width: min(50%, 680px);
+  width: 100%;
 }
 .ex-tool-focus-top {
   align-items: center;
@@ -25375,8 +25372,8 @@ section[id] {
 }
 .ex-tool-focus-main {
   display: grid;
-  gap: 0;
-  grid-template-columns: minmax(0, 1fr);
+  gap: 22px;
+  grid-template-columns: minmax(260px, 38%) minmax(0, 1fr);
   padding: 0 18px 18px;
 }
 .ex-tool-focus-visual {
@@ -25384,7 +25381,7 @@ section[id] {
   aspect-ratio: 1200 / 630;
   background: var(--color-surface-soft);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  border-radius: var(--radius-lg);
   display: flex;
   justify-content: center;
   min-height: 0;
@@ -25399,12 +25396,9 @@ section[id] {
 }
 .ex-tool-focus-content {
   align-content: start;
-  border: 1px solid var(--color-border);
-  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
-  border-top: 0;
   display: grid;
   gap: 15px;
-  padding: 24px;
+  padding: 12px 18px 12px 0;
 }
 .ex-tool-focus-eyebrow {
   color: var(--color-muted);
@@ -25491,19 +25485,25 @@ section[id] {
 .ex-directions button:hover, .ex-directions button:focus-visible, .ex-directions button.is-active { background: var(--color-text); border-color: var(--color-text); color: var(--color-bg); outline: none; }
 .ex-directions button.is-active small { background: color-mix(in srgb, var(--color-bg) 18%, transparent); }
 .ex-directions button:disabled { cursor: default; opacity: .42; }
-.ex-grid { align-items: start; animation: stack-depth-enter 190ms cubic-bezier(.22,1,.36,1) both; display: grid; gap: 16px; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.ex-grid { animation: stack-depth-enter 190ms cubic-bezier(.22,1,.36,1) both; }
+.ex-grid--masonry { columns: 4 230px; column-gap: 16px; }
+.ex-grid--masonry > .ex-card { break-inside: avoid; display: inline-grid; margin: 0 0 16px; width: 100%; }
 .ex-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-lg); box-shadow: 0 2px 9px rgba(18,18,16,.045); display: grid; grid-template-rows: 1fr auto; min-width: 0; overflow: hidden; transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease; }
 .ex-card:hover, .ex-card:focus-within { border-color: var(--color-border-strong); box-shadow: 0 8px 24px rgba(18,18,16,.09); transform: translateY(-2px); }
 .ex-card.is-adding { opacity: .72; }
 .ex-card.is-present { border-color: color-mix(in srgb, #5f7f68 62%, var(--color-border)); }
-.ex-card-main { align-content: start; appearance: none; background: transparent; border: 0; color: var(--color-text); cursor: pointer; display: grid; gap: 16px; min-height: 170px; padding: 18px; text-align: left; width: 100%; }
+.ex-card-main { align-content: start; appearance: none; background: transparent; border: 0; color: var(--color-text); cursor: pointer; display: grid; gap: 14px; min-height: 170px; padding: 10px; text-align: left; width: 100%; }
+.ex-card-media { align-items: center; aspect-ratio: 4 / 3; background: var(--color-surface-soft); border-radius: calc(var(--radius-lg) - 6px); display: flex; justify-content: center; overflow: hidden; width: 100%; }
+.ex-card-media.has-preview { aspect-ratio: auto; min-height: 130px; }
+.ex-card-media img { display: block; height: auto; max-height: 360px; object-fit: cover; width: 100%; }
+.ex-card-header, .ex-card-description { margin-inline: 8px; }
 .ex-card-main:focus-visible { outline: 3px solid color-mix(in srgb, var(--color-text) 18%, transparent); outline-offset: -3px; }
 .ex-card-header { align-items: center; display: flex; gap: 13px; min-width: 0; }
 .ex-card-identity { display: grid; gap: 3px; min-width: 0; }
 .ex-card-identity strong { font-family: var(--font-ui); font-size: 1.02rem; font-weight: 850; letter-spacing: -.025em; line-height: 1.1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .ex-card-identity small { color: var(--color-muted); font-family: var(--font-ui); font-size: .68rem; font-weight: 650; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .ex-card-description { color: var(--color-text); display: -webkit-box; font-family: var(--font-ui); font-size: .78rem; font-weight: 540; line-height: 1.42; min-height: 3.4em; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
-.ex-card-actions { align-items: center; border-top: 1px solid var(--color-border); display: flex; gap: 8px; justify-content: flex-end; min-height: 52px; padding: 8px 12px; }
+.ex-card-actions { align-items: center; display: flex; gap: 8px; justify-content: flex-end; min-height: 48px; padding: 6px 12px 10px; }
 .ex-card-actions button { align-items: center; appearance: none; background: var(--color-text); border: 0; border-radius: var(--radius-pill); color: var(--color-bg); cursor: pointer; display: inline-flex; font-family: var(--font-ui); font-size: .68rem; font-weight: 800; gap: 5px; min-height: 34px; padding: 0 12px; }
 .ex-card-actions button:disabled { background: color-mix(in srgb, #5f7f68 82%, var(--color-text)); cursor: default; }
 @keyframes ex-skeleton-pulse {
@@ -25531,15 +25531,15 @@ section[id] {
 .ex-empty button, .ex-page--empty a { background: var(--color-text); border: 0; border-radius: var(--radius-pill); color: var(--color-bg); cursor: pointer; font-family: var(--font-ui); font-size: .72rem; font-weight: 800; min-height: 40px; padding: 11px 16px; text-decoration: none; }
 .ex-flying-tool { background: var(--color-surface); border-radius: var(--radius-md); box-shadow: 0 10px 30px rgba(18,18,16,.2); pointer-events: none; position: fixed; z-index: 100; }
 @media (max-width: 1050px) {
-  .ex-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .ex-grid--masonry { columns: 3 220px; }
   .ex-tool-focus { width: min(100%, 680px); }
   .ex-tool-stage { grid-template-columns: minmax(0, 1fr); }
-  .ex-tool-stage-grid { grid-auto-rows: auto; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .ex-tool-stage-grid { columns: 2 220px; }
 }
 @media (max-width: 760px) {
   .ex-page { padding: 16px 18px 72px; }
-  .ex-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .ex-tool-stage-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ex-grid--masonry { columns: 2 210px; }
+  .ex-tool-stage-grid { columns: 2 210px; }
   .ex-source-banner { grid-template-columns: auto minmax(0, 1fr); top: 8px; }
   .ex-source-banner--objective { grid-template-columns: 44px minmax(0, 1fr) 44px; top: auto; }
   .ex-destination { grid-column: 1 / -1; justify-content: center; }
@@ -25553,8 +25553,7 @@ section[id] {
   .ex-tool-focus > .ex-directions { padding: 12px; }
 }
 @media (max-width: 520px) {
-  .ex-grid { grid-template-columns: minmax(0, 1fr); }
-  .ex-tool-stage-grid { grid-template-columns: minmax(0, 1fr); }
+  .ex-grid--masonry, .ex-tool-stage-grid { columns: 1; }
   .ex-card-main { min-height: 170px; }
   .ex-directions { gap: 5px; }
   .ex-directions--themes { grid-template-columns: repeat(2, minmax(0, 1fr)); }

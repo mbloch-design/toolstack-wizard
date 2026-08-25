@@ -5,7 +5,8 @@ export type ExplorationDirection = "all" | "alternatives" | "extensions" | "adja
 
 export type ExplorationSource =
   | { type: "objectif"; id: string }
-  | { type: "outil"; slug: string };
+  | { type: "outil"; slug: string }
+  | { type: "stack" };
 
 export type ExplorationStackState = "new" | "in-stack" | "in-destination";
 
@@ -270,6 +271,7 @@ export function parseExplorationSource(params: URLSearchParams): ExplorationSour
   if (!source) return null;
   if (type === "objectif") return { type: "objectif", id: source };
   if (type === "outil") return { type: "outil", slug: source };
+  if (type === "stack") return { type: "stack" };
   return null;
 }
 
@@ -280,7 +282,7 @@ export function getExplorerHref(
 ) {
   const params = new URLSearchParams();
   params.set("type", source.type);
-  params.set("source", source.type === "objectif" ? source.id : source.slug);
+  params.set("source", source.type === "objectif" ? source.id : source.type === "outil" ? source.slug : "ma-stack");
   if (options.destination) params.set("destination", options.destination);
   if (options.angle && options.angle !== "all") params.set("angle", options.angle);
   return `${prefix}/explorer?${params.toString()}`;

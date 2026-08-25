@@ -10,6 +10,7 @@
 - La modale adopte des marges éditoriales plus généreuses ; l’édition apparaît au survol ou au focus sur chaque collection active, y compris les collections ToolTrim, dont le nouveau nom est désormais persistant.
 - Le menu contextuel « … » des onglets est supprimé : l’accès « Organiser » devient l’unique endroit où modifier une collection.
 - Depuis la vue globale, « Explorer les outils » ouvre désormais le catalogue au lieu d’imbriquer une seconde page d’ajout dans Ma Stack ; le sélecteur interne reste réservé aux collections dont la destination est explicite.
+- Explorer devient un flux de découverte visuel inspiré des boards : Ma Stack peut servir de source, les cartes utilisent leurs médias dans une grille masonry, et le recentrage sur un outil reste dans le même parcours.
 - Le vocabulaire est unifié autour des collections et le compteur de Ma Stack ne change qu’après confirmation explicite.
 - Validation : TypeScript PASS, 55 tests Ma Stack PASS, build production PASS et parcours Ma Stack / Explorer vérifiés dans le navigateur local.
 

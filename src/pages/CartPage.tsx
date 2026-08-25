@@ -2566,9 +2566,9 @@ const CartPage = () => {
               </div>
             </div>
             <div className="stack-profile-actions">
-              <Link className="stack-page-toolbar-icon stack-page-toolbar-icon--primary" to={`${prefix}/tools`} aria-label={t("Explorer les outils", "Explore tools") as string}>
+              <Link className="stack-page-toolbar-icon stack-page-toolbar-icon--primary" to={getExplorerHref(prefix, { type: "stack" })} aria-label={t("Explorer autour de Ma stack", "Explore around My stack") as string}>
                 <Compass size={18} aria-hidden />
-                <span>{t("Explorer les outils", "Explore tools")}</span>
+                <span>{t("Explorer autour de ma stack", "Explore around my stack")}</span>
               </Link>
             </div>
           </div>

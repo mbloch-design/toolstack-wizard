@@ -47,6 +47,8 @@ describe("toolExploration", () => {
 
     expect(href).toBe("/fr/explorer?type=outil&source=figma&destination=design&angle=extensions");
     expect(parseExplorationSource(params)).toEqual({ type: "outil", slug: "figma" });
+    expect(getExplorerHref("/fr", { type: "stack" })).toBe("/fr/explorer?type=stack&source=ma-stack");
+    expect(parseExplorationSource(new URLSearchParams("type=stack&source=ma-stack"))).toEqual({ type: "stack" });
   });
 
   it("transforme un objectif en thématiques plutôt qu’en types de relation", () => {

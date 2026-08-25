@@ -224,6 +224,7 @@ export default function ExplorerPage() {
   }, [categoryById, lang]);
   const sourceNeed = source?.type === "objectif" ? state.needs.find((need) => need.id === source.id) || null : null;
   const sourceTool = source?.type === "outil" ? toolBySlug.get(source.slug) || null : null;
+  const isStackSource = source?.type === "stack";
   const objectiveSourceSnapshot = useRef<{ id: string; slugs: string[] } | null>(null);
   const loadMoreRef = useRef<HTMLDivElement>(null);
   const loadingMoreRef = useRef(false);
@@ -239,12 +240,20 @@ export default function ExplorerPage() {
       const tool = toolBySlug.get(source.slug);
       return tool ? [tool] : [];
     }
+    if (source.type === "stack") {
+      return state.toolEntries
+        .filter((entry) => entry.intent === "stack")
+        .map((entry) => toolBySlug.get(entry.toolSlug))
+        .filter(Boolean) as ToolSummary[];
+    }
     const slugs = objectiveSourceSnapshot.current?.id === source.id
       ? objectiveSourceSnapshot.current.slugs
       : state.toolEntries.filter((entry) => entry.needIds.includes(source.id)).map((entry) => entry.toolSlug);
     return slugs.map((slug) => toolBySlug.get(slug)).filter(Boolean) as ToolSummary[];
   }, [source, state.toolEntries, toolBySlug]);
-  const sourceLabel = sourceTool?.name || (sourceNeed ? t(sourceNeed.labelFr, sourceNeed.labelEn) as string : t("Source inconnue", "Unknown source") as string);
+  const sourceLabel = isStackSource
+    ? t("Ma stack", "My stack") as string
+    : sourceTool?.name || (sourceNeed ? t(sourceNeed.labelFr, sourceNeed.labelEn) as string : t("Source inconnue", "Unknown source") as string);
   const isObjectiveSource = source?.type === "objectif";
   const angleParam = searchParams.get("angle");
   const angle: ExplorationDirection = angleParam === "alternatives" || angleParam === "extensions" || angleParam === "adjacent" ? angleParam : "all";
@@ -265,7 +274,7 @@ export default function ExplorerPage() {
     : angle === "all" ? candidates : candidates.filter((candidate) => candidate.direction === angle);
   const visibleCandidates = filteredCandidates.slice(0, resultLimit);
   const hasMoreCandidates = visibleCandidates.length < filteredCandidates.length;
-  const sourceKey = source?.type === "objectif" ? `objectif:${source.id}` : source ? `outil:${source.slug}` : "unknown";
+  const sourceKey = source?.type === "objectif" ? `objectif:${source.id}` : source?.type === "outil" ? `outil:${source.slug}` : source?.type === "stack" ? "stack:ma-stack" : "unknown";
 
   useEffect(() => {
     setResultLimit(INITIAL_RESULT_COUNT);
@@ -312,7 +321,9 @@ export default function ExplorerPage() {
     document.title = `${t("Explorer les outils", "Explore tools")} · ToolTrim`;
   }, [t]);
 
-  const fallbackHref = source?.type === "objectif"
+  const fallbackHref = source?.type === "stack"
+    ? `${prefix}/ma-stack`
+    : source?.type === "objectif"
     ? `${prefix}/ma-stack?objectif=${encodeURIComponent(source.id)}`
     : source?.type === "outil"
       ? `${prefix}/tool/${encodeURIComponent(source.slug)}`
@@ -400,8 +411,8 @@ export default function ExplorerPage() {
     ? Boolean(sourceStackEntry?.needIds.includes(destination.id))
     : Boolean(sourceStackEntry);
   const sourceIsAdding = Boolean(sourceToolSlug && addingSlug === sourceToolSlug);
-  const stageCandidates = isObjectiveSource ? [] : visibleCandidates.slice(0, 6);
-  const gridCandidates = isObjectiveSource ? visibleCandidates : visibleCandidates.slice(stageCandidates.length);
+  const stageCandidates = sourceTool ? visibleCandidates.slice(0, 6) : [];
+  const gridCandidates = sourceTool ? visibleCandidates.slice(stageCandidates.length) : visibleCandidates;
   const tagFilters = (
     <ExplorerTagFilterNav
       activeId={isObjectiveSource ? activeThemeId || "all" : angle}
@@ -425,6 +436,8 @@ export default function ExplorerPage() {
       candidate.tool.shortDescription,
       candidate.tool.shortDescriptionEn || candidate.tool.shortDescription,
     ) as string;
+    const previewUrl = candidate.tool.ogImageUrl
+      || (Array.isArray(candidate.tool.covers) && typeof candidate.tool.covers[0] === "string" ? candidate.tool.covers[0] : "");
 
     return (
       <article key={slug} data-tool-slug={slug} className={`ex-card${inDestination || inStackWithoutDestination ? " is-present" : ""}${isAdding ? " is-adding" : ""}`}>
@@ -435,6 +448,13 @@ export default function ExplorerPage() {
           aria-label={t(`Explorer autour de ${candidate.tool.name}`, `Explore around ${candidate.tool.name}`) as string}
           aria-describedby={`explore-card-${slug}-description`}
         >
+          <span className={`ex-card-media${previewUrl ? " has-preview" : ""}`}>
+            {previewUrl ? (
+              <img src={previewUrl} alt="" loading="lazy" />
+            ) : (
+              <ToolLogo tool={candidate.tool} size={72} />
+            )}
+          </span>
           <span className="ex-card-header">
             <ToolLogo tool={candidate.tool} size={52} className="ex-card-logo" />
             <span className="ex-card-identity">
@@ -474,7 +494,17 @@ export default function ExplorerPage() {
     <>
     <main className={`ex-page${isObjectiveSource ? "" : " ex-page--tool"}`} aria-labelledby="explorer-title">
       {!isObjectiveSource && tagFilters}
-      {isObjectiveSource ? (
+      {isStackSource ? (
+        <header className="ex-source-banner ex-source-banner--objective">
+          <button type="button" className="ex-back" onClick={handleBack} aria-label={t("Retour à Ma stack", "Back to My stack") as string}>
+            <ArrowLeft size={19} aria-hidden />
+          </button>
+          <div className="ex-objective-heading">
+            <span>{t("Exploration continue", "Continuous exploration")}</span>
+            <h1 id="explorer-title">{t("Des pistes à partir de votre stack", "Ideas from your stack")}</h1>
+          </div>
+        </header>
+      ) : isObjectiveSource ? (
         <header className="ex-source-banner ex-source-banner--objective">
           <button type="button" className="ex-back" onClick={handleBack} aria-label={t(`Retour à ${previousLabel}`, `Back to ${previousLabel}`) as string}>
             <ArrowLeft size={19} aria-hidden />
@@ -553,7 +583,7 @@ export default function ExplorerPage() {
       {isObjectiveSource && tagFilters}
 
       {visibleCandidates.length > 0 ? (
-        gridCandidates.length > 0 && <section className="ex-grid" aria-label={t("Outils associés", "Related tools") as string}>
+        gridCandidates.length > 0 && <section className="ex-grid ex-grid--masonry" aria-label={t("Outils associés", "Related tools") as string}>
           {gridCandidates.map(renderCandidateCard)}
           {hasMoreCandidates && (
             <>
