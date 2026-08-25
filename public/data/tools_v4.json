@@ -20251,7 +20251,12 @@
       "free": "Entièrement gratuit"
     },
     "longDescription": "Export d'animations After Effects en JSON Lottie pour le web et mobile.",
-    "alternatives": []
+    "alternatives": [],
+    "gallery_images": [
+      "/tool-media/ae-bodymovin/select-composition.jpg",
+      "/tool-media/ae-bodymovin/render.jpg",
+      "/tool-media/ae-bodymovin/get-player.jpg"
+    ]
   },
   {
     "id": "ae-rubberhose",

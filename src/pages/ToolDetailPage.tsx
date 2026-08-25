@@ -7,7 +7,6 @@ import { ArrowRight, Check, CirclePlus, CircleMinus, ExternalLink } from "lucide
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
 import { setSeoTags, setMeta, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
-import { getCategoryIcon } from "@/lib/categoryIcons";
 import { FEATURED_COMPARISONS } from "@/data/comparisons";
 import { getToolDomain, getDomainFromUrl, formatPriceLabel, resolveVerdict, resolveToolOverview } from "@/lib/toolUtils";
 import { stripLeadingEmoji } from "@/lib/text";
@@ -271,7 +270,6 @@ const ToolDetailPage = () => {
   /* ── Derived values ── */
   const category   = categories.find((c: any) => c.id === tool.categoryId);
   const tutorials = getToolTutorials(tool.slug || tool.id);
-  const CategoryIcon = category ? getCategoryIcon(category.id) : null;
   const sameCategoryAlts = tools
     .filter((tt: any) => tt.categoryId === tool.categoryId && tt.id !== tool.id);
   const toolCovers = new Set((tool as any).covers || []);
@@ -412,7 +410,7 @@ const ToolDetailPage = () => {
             <div ref={heroRef} className={`td-hero${showCompactHeader ? " is-compact" : ""}`}>
             {(() => {
               const ogImg = (tool.ogImageUrl ?? (tool as any).og_image_url) as string | null;
-              const extra = ((tool as any).gallery_images as string[] | null) ?? [];
+              const extra = tool.galleryImages ?? ((tool as any).gallery_images as string[] | null) ?? [];
               const imgs = [ogImg, ...extra].filter((u): u is string => !!u);
               const hasHeroMedia = imgs.length > 0 || tutorials.length > 0;
               // Keep the hero factual. The verdict belongs to the decision
@@ -424,17 +422,16 @@ const ToolDetailPage = () => {
                     <div className="td-hero-heading">
                       <div className="td-hero-identity-grid">
                         <span className="td-hero-logo" aria-hidden="true">
-                          <ToolLogo tool={tool} size={64} className="td-hero-logo-image" />
+                          <ToolLogo tool={tool} size={56} className="td-hero-logo-image" />
                         </span>
 
                         <div className="td-hero-name-block">
                           <h1 className="td-hero-h1">{tool.name}</h1>
-                        {category && (
-                          <Link className="td-hero-cat" to={`${prefix}/category/${category.slug}`}>
-                            {CategoryIcon && <CategoryIcon className="td-icon-xs" />}
-                            {t(catName, catNameEn)}
-                          </Link>
-                        )}
+                          {tool.shortDescription && (
+                            <p className="td-hero-desc">
+                              {t(tool.shortDescription, (tool as any).shortDescriptionEn || tool.shortDescription)}
+                            </p>
+                          )}
                         </div>
 
                         <a href={primaryCtaUrl} target="_blank" rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl)} className="td-hero-site-link">
@@ -443,11 +440,6 @@ const ToolDetailPage = () => {
                         </a>
                       </div>
 
-                      {tool.shortDescription && (
-                        <p className="td-hero-desc">
-                          {t(tool.shortDescription, (tool as any).shortDescriptionEn || tool.shortDescription)}
-                        </p>
-                      )}
                     </div>
                   </div>
                   {hasHeroMedia && (
@@ -557,7 +549,11 @@ const ToolDetailPage = () => {
                     {catName && (
                       <div>
                         <dt>{t("Catégorie", "Category")}</dt>
-                        <dd>{t(catName, catNameEn)}</dd>
+                        <dd>
+                          <Link className="td-editorial-fact-link" to={`${prefix}/category/${category.slug}`}>
+                            {t(catName, catNameEn)}
+                          </Link>
+                        </dd>
                       </div>
                     )}
                     {(tool as any).host_app && (
@@ -626,7 +622,7 @@ const ToolDetailPage = () => {
                             <h2 className="td-overview-title">
                               {t("Avantages et inconvénients", "Pros and cons")}
                             </h2>
-                            <p>{t(`Ce que ${tool.name} fait particulièrement bien — et les limites à anticiper.`, `What ${tool.name} does especially well — and the limits to anticipate.`)}</p>
+                            <p>{t(`Ce que ${tool.name} fait particulièrement bien et les limites à anticiper.`, `What ${tool.name} does especially well and the limits to anticipate.`)}</p>
                           </header>
                           <div className="td-overview-grid">
                             {ov.pros.length > 0 && (

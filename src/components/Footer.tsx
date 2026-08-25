@@ -61,7 +61,7 @@ const Footer = () => {
                 width={1362}
                 height={300}
               />
-              <p>{t("Sélection éditoriale indépendante.", "Independent editorial selection.")}</p>
+              <p>{t("Les bons outils, sans les abonnements inutiles.", "The right tools, without unnecessary subscriptions.")}</p>
             </div>
 
             <nav aria-label={t("Décider", "Decide")} className="tt-footer-col">

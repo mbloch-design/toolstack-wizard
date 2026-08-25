@@ -8026,8 +8026,8 @@
     background: var(--color-surface);
   }
   @media (min-width: 1101px) {
+    .td-page-grid { --td-hero-compact-h: 80px; }
     .td-page-grid .td-hero {
-      --td-hero-compact-h: 62px;
       position: sticky;
       top: 0;
       z-index: 40;
@@ -8041,7 +8041,7 @@
       transition: padding-top 260ms cubic-bezier(0.22, 1, 0.36, 1);
     }
     .td-hero.is-compact + .td-scroll-body {
-      padding-top: 70px;
+      padding-top: calc(var(--td-hero-compact-h) + 8px);
     }
     .td-tool-page--compact .td-scroll-body {
       -webkit-mask-image: linear-gradient(
@@ -8107,50 +8107,48 @@
     }
     .td-hero.is-compact .td-hero-heading {
       min-width: 0;
-      padding: 8px 12px 8px 16px;
+      padding: 12px 20px;
     }
     .td-hero.is-compact .td-hero-identity-grid {
-      grid-template-columns: 34px minmax(0, 1fr) auto;
-      gap: 10px;
+      grid-template-columns: 56px minmax(0, 1fr) auto;
+      gap: 16px;
     }
-    .td-hero.is-compact .td-hero-name-block { height: 34px; }
+    .td-hero.is-compact .td-hero-name-block { height: 56px; }
     .td-hero.is-compact .td-hero-cat {
-      font-size: 10.5px;
+      font-size: 16px;
       font-weight: 500;
       letter-spacing: 0;
       text-transform: none;
     }
     .td-hero.is-compact .td-hero-cat svg { display: none; }
     .td-hero.is-compact .td-hero-desc {
-      max-height: 0;
       margin: 0;
-      opacity: 0;
       overflow: hidden;
-      pointer-events: none;
-      transform: translateY(-4px);
+      opacity: 1;
+      transform: none;
     }
     .td-hero.is-compact .td-hero-h1 {
       overflow: hidden;
-      font-size: 1.1rem;
-      line-height: 1.1;
+      font-size: 30px;
+      line-height: 1;
       text-overflow: ellipsis;
       white-space: nowrap;
     }
     .td-hero.is-compact .td-hero-logo {
-      width: 34px;
-      height: 34px;
-      border-radius: var(--radius-sm);
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-md);
     }
     .td-hero.is-compact .td-hero-logo-image {
-      width: 34px !important;
-      height: 34px !important;
-      min-width: 34px !important;
-      min-height: 34px !important;
+      width: 56px !important;
+      height: 56px !important;
+      min-width: 56px !important;
+      min-height: 56px !important;
     }
     .td-hero.is-compact .td-hero-site-link {
-      min-height: 34px;
-      padding-inline: 12px;
-      font-size: 12px;
+      min-height: 40px;
+      padding-inline: 16px;
+      font-size: 14px;
     }
   }
   .td-hero-media {
@@ -8170,8 +8168,8 @@
   .td-hero-heading {
     display: grid;
     align-content: center;
-    gap: 22px;
-    padding: 32px;
+    padding: 20px;
+    border-radius: 10px;
   }
   @media (max-width: 640px) {
     .td-hero-heading { padding: 24px 22px 26px; }
@@ -8182,25 +8180,23 @@
   }
   .td-hero-identity-grid {
     display: grid;
-    grid-template-columns: 64px minmax(0, 1fr) auto;
+    grid-template-columns: 56px minmax(0, 1fr) auto;
     align-items: center;
-    gap: 20px;
+    gap: 16px;
     min-width: 0;
   }
   .td-hero-name-block {
     display: grid;
-    grid-template-rows: auto auto;
+    grid-template-rows: 36px 20px;
     align-self: center;
-    align-content: space-between;
-    gap: 4px;
-    height: 64px;
+    height: 56px;
     min-width: 0;
   }
   .td-hero-logo {
     display: grid;
     place-items: center;
-    width: 64px;
-    height: 64px;
+    width: 56px;
+    height: 56px;
     flex: 0 0 auto;
     overflow: hidden;
     border-radius: var(--radius-md);
@@ -8211,16 +8207,17 @@
     align-items: center;
     justify-content: center;
     gap: 7px;
-    min-height: 38px;
-    padding: 0 14px;
+    min-height: 40px;
+    padding: 0 16px;
     border: 1px solid color-mix(in srgb, hsl(var(--primary)) 24%, var(--color-border));
     border-radius: var(--radius-pill);
     background: var(--color-surface);
     color: hsl(var(--primary));
-    font-family: var(--font-ui);
-    font-size: 13px;
-    font-weight: 600;
-    line-height: 1;
+    font-family: Inter, system-ui, arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: normal;
     text-decoration: none;
     transition: border-color 140ms ease-out, background-color 140ms ease-out;
   }
@@ -8234,10 +8231,10 @@
     align-items: center;
     gap: 6px;
     font-family: var(--font-ui);
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: none;
     color: var(--color-muted);
     text-decoration: none;
   }
@@ -8245,7 +8242,7 @@
   .td-hero-cat svg { display: none; }
   .td-hero-h1 {
     font-family: var(--font-ui);
-    font-size: clamp(2rem, 2.8vw, 2.35rem);
+    font-size: 30px;
     font-weight: 820;
     letter-spacing: -0.05em;
     line-height: 1;
@@ -8259,7 +8256,10 @@
       gap: 14px;
     }
     .td-hero-logo { width: 52px; height: 52px; }
-    .td-hero-name-block { height: 52px; }
+    .td-hero-name-block {
+      grid-template-rows: 34px 18px;
+      height: 52px;
+    }
     .td-hero-logo-image {
       width: 52px !important;
       height: 52px !important;
@@ -8748,7 +8748,7 @@
   .td-overview-group--uses li > span { display: grid; gap: 3px; }
   .td-overview-group--uses li strong {
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1.3;
     color: var(--color-text);
   }
@@ -9027,7 +9027,7 @@
     border: 1px solid var(--color-border);
     background: var(--color-surface);
     font-family: var(--font-ui);
-    font-size: 13px;
+    font-size: 14px;
     color: var(--color-text);
     line-height: 1.3;
   }
@@ -9369,7 +9369,7 @@
   }
   .td-analysis-paragraph {
     margin-top: 1em;
-    color: var(--color-muted);
+    color: #212121;
   }
 
   .td-review-rationale {
@@ -9414,7 +9414,7 @@
   .td-decision-verdict {
     position: relative;
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 34px minmax(0, 1fr) auto;
     gap: 4px 12px;
     padding: 18px;
     border: 1px solid var(--color-border-soft);
@@ -9431,9 +9431,26 @@
     text-transform: uppercase;
     color: var(--color-muted);
   }
+  .td-decision-verdict-indicator {
+    display: grid;
+    width: 34px;
+    height: 34px;
+    place-items: center;
+    align-self: center;
+    border: 1px solid var(--color-border-soft);
+    border-radius: 50%;
+    background: var(--color-surface);
+    color: var(--color-text);
+  }
+  .td-decision-verdict-indicator svg {
+    width: 17px;
+    height: 17px;
+    stroke-width: 1.8;
+  }
   .td-decision-verdict-score {
     display: flex;
     align-items: baseline;
+    align-self: center;
     gap: 4px;
     font-family: var(--font-ui);
   }
@@ -9448,7 +9465,7 @@
     font-size: var(--tt-size-card-body);
     color: var(--color-muted);
   }
-  .td-decision-verdict-copy { align-self: end; text-align: right; }
+  .td-decision-verdict-copy { align-self: center; text-align: right; }
   .td-decision-utility-actions { display: grid; gap: 4px; }
   .td-decision-utility-actions .pin-tool-button,
   .td-decision-utility-actions > button,
@@ -23144,7 +23161,7 @@ section[id] {
   min-height: 0;
   flex-direction: column;
   overflow: hidden;
-  border-radius: var(--radius-xl);
+  border-radius: 10px;
   background: var(--color-surface);
   box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-border-soft) 58%, transparent);
 }
@@ -23190,6 +23207,7 @@ section[id] {
   height: 68px;
   flex-shrink: 0;
   padding: 0 20px;
+  border-radius: 10px;
   background: var(--color-surface);
 }
 
@@ -23375,7 +23393,7 @@ section[id] {
   overflow: hidden;
   padding: 12px 10px 14px;
   background: color-mix(in srgb, var(--color-surface) 96%, var(--color-surface-soft));
-  border-radius: var(--radius-xl);
+  border-radius: 10px;
   box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-border-soft) 58%, transparent);
   transition: width 220ms cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -27162,6 +27180,55 @@ section[id] {
   letter-spacing: -0.035em;
 }
 
+/* Tool pages use a calmer editorial hierarchy than stack and comparison
+   pages: section headings guide the scan without competing with the tool. */
+.td-title,
+.td-editorial-intro-title,
+.td-overview-title {
+  font-weight: 500;
+}
+
+.td-analysis-lead {
+  font-weight: 400;
+}
+
+/* The tool breadcrumb belongs to the product UI, not to the publication-like
+   monospace treatment used by the other editorial page families. */
+.td-page-breadcrumb .cp-breadcrumb a {
+  font-family: "Inter Variable", Arial, sans-serif;
+}
+
+.td-editorial-fact-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--color-border-strong);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 160ms ease, text-decoration-color 160ms ease;
+}
+
+.td-editorial-fact-link:hover {
+  color: var(--color-text-strong);
+  text-decoration-color: currentColor;
+}
+
+/* Tool detail surfaces share one rectangular radius. Pills, circular controls
+   and brand marks keep their own geometry. */
+.td-tool-page .td-hero-card,
+.td-tool-page .td-overview-group,
+.td-tool-page .td-decision-verdict,
+.td-tool-page .td-review-rationale,
+.td-tool-page .td-compare-card,
+.td-tool-page .td-pricing-plans,
+.td-tool-page .td-profit-card,
+.td-tool-page .td-tile,
+.td-tool-page .tg-hero-cell,
+.td-tool-page .td-tutorials,
+.td-tool-page .td-tutorial-card,
+.td-tool-page .td-tool-faq .rounded-xl {
+  border-radius: 10px;
+}
+
 .td-overview-group-title,
 .sd-stack-card-title,
 .sd-alt-title,
@@ -27208,6 +27275,47 @@ section[id] {
   .cp-title {
     font-size: var(--tt-size-section-h);
     line-height: 1.08;
+  }
+}
+
+/* Tool identity uses a fixed measured gabarit. This deliberately comes after
+   the canonical editorial typography block: a product identity is not an
+   article page title and must keep the same proportions across every slug. */
+.td-hero-h1 {
+  font-family: Inter, system-ui, arial, sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 36px;
+  letter-spacing: -0.75px;
+}
+.td-hero-desc {
+  max-width: 100%;
+  margin: 0;
+  overflow: hidden;
+  font-family: Inter, system-ui, arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: -0.01em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.td-hero-cat {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.15;
+  letter-spacing: 0;
+  text-transform: none;
+}
+@media (max-width: 640px) {
+  .td-hero-h1 {
+    font-size: 28px;
+    line-height: 34px;
+  }
+  .td-hero-cat { font-size: 14px; }
+  .td-hero-desc {
+    font-size: 13px;
+    line-height: 18px;
   }
 }
 

@@ -205,6 +205,7 @@ export interface Tool {
   affiliateLink: string;
   logo?: string;
   ogImageUrl?: string | null;
+  galleryImages?: string[];
   soloRelevance?: string;
   teamRelevance?: string;
   alternatives?: string[];

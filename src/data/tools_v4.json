@@ -17629,7 +17629,12 @@
     },
     "force_silence": false,
     "description": "Bodymovin, c'est le plugin gratuit (open source) qui a popularisé le format Lottie. Il fait une chose précise : exporter une animation créée dans After Effects en un fichier JSON léger (Lottie), qui se lit ensuite nativement sur le web, iOS, Android ou React Native. Résultat : des animations vectorielles nettes, fluides et bien plus légères qu'un GIF ou une vidéo. C'est devenu le pont standard entre les motion designers et les développeurs.\n\nLe principe : le designer anime dans After Effects, exporte avec Bodymovin, et le développeur intègre le fichier Lottie. Tout le monde y gagne, et c'est gratuit.\n\nLa limite à connaître : Bodymovin n'exporte pas tout (certains effets After Effects ne passent pas), et le résultat reste une animation qui joue en boucle, sans interactivité. Si tu as besoin d'animations qui réagissent aux actions de l'utilisateur, c'est Rive qu'il faut regarder. Mais pour de l'animation web légère depuis After Effects, Bodymovin reste le réflexe.",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/ae-bodymovin.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/ae-bodymovin.png",
+    "gallery_images": [
+      "/tool-media/ae-bodymovin/select-composition.jpg",
+      "/tool-media/ae-bodymovin/render.jpg",
+      "/tool-media/ae-bodymovin/get-player.jpg"
+    ]
   },
   {
     "id": "bolt-business",

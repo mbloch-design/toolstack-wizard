@@ -214,6 +214,12 @@ const SIMPLE_ICON_COLORS: Record<string, string> = {
   github: "181717",
 };
 
+// Official brand assets used when a catalogue summary is too compact to carry
+// its website domain and Simple Icons has no dependable entry for the brand.
+const OFFICIAL_LOGO_URLS: Record<string, string> = {
+  rive: "https://framerusercontent.com/images/jMyKrhKKXqpc15qYqC3A0pZELw.png",
+};
+
 const PRODUCT_BADGES: Record<string, { label: string; bg: string; fg: string; border: string }> = {
   "adobe-acrobat-sign": { label: "Ac", bg: "FFF1F1", fg: "E41E26", border: "E41E26" },
   "adobe-after-effects": { label: "Ae", bg: "1F1148", fg: "D8B5FF", border: "9A6DFF" },
@@ -307,6 +313,9 @@ export function getToolLogoSources(tool: LogoCandidateTool, size: 32 | 64 | 128 
 
   const key = normalizeKey(tool.slug || tool.id || tool.name);
   const domain = getVerifiedDomain(tool);
+
+  const officialLogo = OFFICIAL_LOGO_URLS[key];
+  if (officialLogo) sources.push(officialLogo);
 
   // 2. Adobe product badges (SVG data-URI)
   const badge = PRODUCT_BADGES[key];

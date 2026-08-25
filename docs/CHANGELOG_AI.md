@@ -1,5 +1,18 @@
 # ToolTrim — AI Changelog
 
+## 2026-08-25 · Harmonisation typographique des fiches outils
+
+- Le fil d’Ariane des fiches outils adopte Inter Variable pour mieux appartenir à l’interface produit, sans modifier le traitement éditorial des autres familles de pages.
+- Le nom de l’outil passe en graisse 400, les introductions en 400 et les titres de section en 500 afin de restaurer une hiérarchie plus calme et cohérente sur toute la fiche.
+- Les libellés de fonctionnalités passent à 14 px, la ponctuation du résumé avantages/inconvénients est simplifiée et le footer exprime désormais la promesse produit : choisir les bons outils sans abonnements inutiles.
+- Les catégories de la colonne d’information ouvrent désormais leur page catalogue et le logo officiel Rive remplace l’initiale de secours, y compris lorsque la carte utilise un résumé catalogue incomplet.
+- La description courte du hero adopte un interlettrage légèrement resserré pour mieux s’accorder au titre dans les états développé et sticky.
+- Le shell des fiches harmonise à 10 px les rayons de la barre latérale, de la topbar et de la surface d’identité du hero.
+- Les usages concrets adoptent une graisse 500 et les paragraphes d’analyse retrouvent la couleur principale afin de maintenir une hiérarchie éditoriale lisible.
+- La grande surface de travail du shell passe elle aussi à un rayon de 10 px, désormais cohérent avec la sidebar, la topbar et le hero.
+- Toutes les surfaces rectangulaires d’une fiche outil utilisent désormais un rayon de 10 px ; seules les actions en pilule, icônes circulaires et marques conservent leur géométrie propre.
+- Le verdict associe désormais la note à un indicateur directionnel haut, neutre ou bas, placé au centre vertical avant le score pour accélérer sa lecture sans créer un nouveau CTA.
+
 ## 2026-08-24 · Hiérarchie des actions sur les fiches outils
 
 - « Ajouter à ma stack » reste le seul CTA principal plein dans le contenu de la fiche.
@@ -3983,3 +3996,9 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - 2026-08-24 — Galerie hero : les médias sortent de la carte d’identité et adoptent le ratio OG 1200:630 sans fond ni cadre englobant, pour supprimer l’effet de boîte imbriquée.
 - 2026-08-24 — Sticky hero : suppression du spacer qui conservait artificiellement la hauteur de la galerie ; sa hauteur et sa marge se replient ensemble, tandis qu’un décalage égal à la barre compacte synchronise l’arrivée du contenu juste sous le sticky.
 - 2026-08-24 — Identité hero : le bloc nom/catégorie prend exactement la hauteur du logo, avec justification verticale haut/bas et titre recalibré pour conserver des proportions cohérentes dans les états large et sticky.
+- 2026-08-25 — Hero outil : alignement du gabarit d’identité sur les mesures Toolfolio (logo 56 px, titre 30 px, catégorie 16 px, CTA 40 px, retrait 20 px), conservées à l’identique dans le sticky au lieu d’une miniaturisation.
+- 2026-08-25 — Hero outil : suppression de la catégorie sous le nom ; titre et CTA reprennent les métriques typographiques Toolfolio (Inter 30/36 en 300, interlettrage -0,75 px ; CTA Inter 14/20 en 400).
+- 2026-08-25 — Hero outil : la description est alignée sur l’axe du titre (décalage logo + gouttière de 72 px) et ramenée à Inter 16/24 pour rester secondaire.
+- 2026-08-25 — Hero outil : réduction de l’espace vertical entre l’identité et la description de 24 à 12 px.
+- 2026-08-25 — Hero outil : nom et description sont réunis dans le même bloc de 56 px, sur deux lignes contiguës 36/20, alignées sur la hauteur du logo et conservées dans le sticky.
+- 2026-08-25 — Galerie Bodymovin : ajout de trois captures fonctionnelles officielles aescripts (sélection de composition, rendu et récupération du player), enregistrées localement pour garantir leur disponibilité et éviter le hotlinking.

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Check, Copy, Flag, Linkedin, Mail, MessageCircle, Share2 } from "lucide-react";
+import { ArrowDown, ArrowRight, ArrowUp, Check, Copy, Flag, Linkedin, Mail, MessageCircle, Minus, Share2 } from "lucide-react";
 import ToolLogo from "@/components/ToolLogo";
 import PinToolButton from "@/components/PinToolButton";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
@@ -20,6 +20,8 @@ export default function StickyDecisionCard({ tool, prefix, t, alternatives }: Pr
   const slug = tool.slug || tool.id;
   const similar = alternatives.slice(0, 4);
   const toolTrimScore = computeToolTrimScore(tool);
+  const verdictLevel = toolTrimScore.score >= 4 ? "high" : toolTrimScore.score >= 3.5 ? "mid" : "low";
+  const VerdictIcon = verdictLevel === "high" ? ArrowUp : verdictLevel === "mid" ? Minus : ArrowDown;
 
   const copyUrl = async (url: string) => {
     if (navigator.clipboard?.writeText) {
@@ -91,6 +93,9 @@ export default function StickyDecisionCard({ tool, prefix, t, alternatives }: Pr
     <div className="td-decision-card td-decision-card--utility">
       <div className="td-decision-verdict">
         <span className="td-decision-verdict-label">{t("L’avis ToolTrim", "ToolTrim verdict")}</span>
+        <span className={`td-decision-verdict-indicator td-decision-verdict-indicator--${verdictLevel}`} aria-hidden="true">
+          <VerdictIcon />
+        </span>
         <span className="td-decision-verdict-score">
           <strong>{toolTrimScore.score.toFixed(1)}</strong>
           <span>/ 5</span>

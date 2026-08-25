@@ -22,7 +22,7 @@ export default function ToolFAQSection({ tool, displayPrice, verifiedOn, alterna
   const faqs = buildToolFaqs(tool, lang, displayPrice, verifiedOn, alternatives);
 
   return (
-    <section>
+    <section className="td-tool-faq">
       <FaqBlock
         size="compact"
         eyebrow={t("FAQ outil", "Tool FAQ")}
