@@ -24373,7 +24373,6 @@ section[id] {
 .stack-collection-switcher button:not(.is-active) span { background: var(--color-surface); color: var(--color-muted); }
 .stack-library-tabs {
   background: var(--color-bg);
-  border-bottom: 1px solid var(--color-border);
 }
 .stack-library-tabs-inner {
   align-items: center;
@@ -24392,7 +24391,7 @@ section[id] {
   appearance: none;
   background: transparent;
   border: 0;
-  border-radius: 10px;
+  border-radius: 0;
   color: var(--color-muted);
   cursor: pointer;
   display: inline-flex;
@@ -24401,20 +24400,28 @@ section[id] {
   font-size: 0.82rem;
   font-weight: 620;
   gap: 7px;
-  min-height: 38px;
-  padding: 0 12px;
-  transition: background 140ms ease, color 140ms ease;
+  min-height: 42px;
+  padding: 0 10px;
+  position: relative;
+  transition: color 140ms ease;
   white-space: nowrap;
 }
 .stack-library-tabs button:hover {
-  background: var(--color-surface-soft);
   color: var(--color-text);
 }
 .stack-library-tabs button.is-active {
-  background: var(--color-bg);
-  box-shadow: 0 4px 14px rgb(34 34 34 / 0.07), inset 0 0 0 1px var(--color-border);
   color: var(--color-text);
   font-weight: 760;
+}
+.stack-library-tabs button.is-active::after {
+  background: var(--color-text);
+  border-radius: var(--radius-pill);
+  bottom: 0;
+  content: "";
+  height: 2px;
+  left: 10px;
+  position: absolute;
+  right: 10px;
 }
 .stack-library-tabs button:focus-visible {
   outline: 2px solid var(--color-text);
@@ -24434,15 +24441,18 @@ section[id] {
   padding: 0 5px;
 }
 .stack-library-tabs-divider {
-  align-self: stretch;
-  background: var(--color-border);
-  flex: 0 0 1px;
-  margin: 5px 4px;
-  width: 1px;
+  display: none;
 }
 .stack-library-tabs-wishlist svg { color: currentColor; }
 .stack-library-tabs-wishlist.is-active {
-  background: #f1ede4;
+  background: transparent;
+}
+.stack-library-tabs .stack-library-tabs-organize {
+  gap: 8px;
+  margin-left: auto;
+}
+.stack-library-tabs-organize svg {
+  flex: 0 0 auto;
 }
 .stack-library-content {
   margin: 0 auto;
@@ -24464,20 +24474,10 @@ section[id] {
   height: 100%;
 }
 .stack-board-management {
-  border-top: 1px solid var(--color-border);
   margin-top: 64px;
-  padding-top: 18px;
 }
 .stack-board-management > summary {
-  align-items: center;
-  color: var(--color-muted);
-  cursor: pointer;
-  display: inline-flex;
-  font-family: var(--font-ui);
-  font-size: 0.78rem;
-  font-weight: 650;
-  list-style: none;
-  min-height: 36px;
+  display: none;
 }
 .stack-board-management > summary::-webkit-details-marker { display: none; }
 .stack-board-management > summary::after {
@@ -24573,7 +24573,7 @@ section[id] {
   padding: 0;
   text-decoration: none;
   transition: background 140ms ease, transform 140ms ease;
-  width: 48px;
+  width: auto;
 }
 .stack-page-toolbar-icon::-webkit-details-marker {
   display: none;
@@ -24591,6 +24591,14 @@ section[id] {
   background: var(--color-text);
   color: var(--color-bg);
   margin-left: auto;
+  gap: 9px;
+  padding: 0 18px;
+}
+.stack-page-toolbar-icon--primary span {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  font-weight: 720;
+  white-space: nowrap;
 }
 .stack-page-toolbar-icon--primary:hover {
   background: var(--color-text);
@@ -24993,6 +25001,10 @@ section[id] {
   .stack-page-toolbar-icon {
     height: 42px;
     width: 42px;
+  }
+  .stack-page-toolbar-icon--primary {
+    padding: 0 14px;
+    width: auto;
   }
   .stack-page-toolbar-organize {
     height: 42px;

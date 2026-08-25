@@ -4015,3 +4015,10 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - 2026-08-25 — Hero outil : réduction de l’espace vertical entre l’identité et la description de 24 à 12 px.
 - 2026-08-25 — Hero outil : nom et description sont réunis dans le même bloc de 56 px, sur deux lignes contiguës 36/20, alignées sur la hauteur du logo et conservées dans le sticky.
 - 2026-08-25 — Galerie Bodymovin : ajout de trois captures fonctionnelles officielles aescripts (sélection de composition, rendu et récupération du player), enregistrées localement pour garantir leur disponibilité et éviter le hotlinking.
+
+## 2026-08-25 · Ma stack, navigation de bibliothèque
+
+- Remplacement du vocabulaire « tableaux » par « collections » dans le résumé de la stack.
+- Recomposition des filtres comme une navigation soulignée, sans capsules concurrentes ni bordure de séparation sous le menu.
+- Déplacement de l’accès à l’organisation à droite de la navigation, sous le libellé explicite « Organiser mes outils » avec pictogramme de réglage.
+- Transformation du bouton rond ambigu en CTA « Explorer les outils », avec une affordance et une destination compréhensibles sans infobulle.

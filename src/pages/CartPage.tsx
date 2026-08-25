@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type FormEvent } from "react";
 import { flushSync } from "react-dom";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
-import { ArrowLeft, Compass, GripVertical, Heart, MoreHorizontal, Pencil, Plus, Search, Trash2, UserRound, X } from "lucide-react";
+import { ArrowLeft, Compass, GripVertical, Heart, MoreHorizontal, Pencil, Plus, Search, SlidersHorizontal, Trash2, UserRound, X } from "lucide-react";
 import { toast } from "sonner";
 import { ToolCardEditorial } from "@/components/ToolCardEditorial";
 import ToolLogo from "@/components/ToolLogo";
@@ -1767,6 +1767,7 @@ const CartPage = () => {
   const [needDialogToolSlug, setNeedDialogToolSlug] = useState<string | null>(null);
   const [draftNeedIds, setDraftNeedIds] = useState<string[]>([]);
   const [isOrganizingBoards, setIsOrganizingBoards] = useState(false);
+  const [isBoardManagementOpen, setIsBoardManagementOpen] = useState(false);
   const [draggedBoardId, setDraggedBoardId] = useState<string | null>(null);
   const [dragOverBoardId, setDragOverBoardId] = useState<string | null>(null);
   const [isCreatingBoard, setIsCreatingBoard] = useState(false);
@@ -1782,6 +1783,7 @@ const CartPage = () => {
   const pickerDialogRef = useRef<HTMLElement | null>(null);
   const pickerSearchRef = useRef<HTMLInputElement | null>(null);
   const pickerPreviousFocusRef = useRef<HTMLElement | null>(null);
+  const boardManagementRef = useRef<HTMLDetailsElement | null>(null);
   const persistenceNoticeRef = useRef("");
 
   useEffect(() => {
@@ -2721,7 +2723,7 @@ const CartPage = () => {
                   <span aria-hidden>·</span>
                   {formatToolCount(stackToolSlugs.length, lang)}
                   <span aria-hidden>·</span>
-                  {stackNavigationBoards.length} {t(stackNavigationBoards.length > 1 ? "tableaux" : "tableau", stackNavigationBoards.length > 1 ? "boards" : "board")}
+                  {stackNavigationBoards.length} {t(stackNavigationBoards.length > 1 ? "collections" : "collection", stackNavigationBoards.length > 1 ? "collections" : "collection")}
                 </p>
               </div>
             </div>
@@ -2740,8 +2742,9 @@ const CartPage = () => {
                   <strong>{t("à ranger", "to organize")}</strong>
                 </button>
               )}
-              <button type="button" className="stack-page-toolbar-icon stack-page-toolbar-icon--primary" onClick={() => openToolPicker()} aria-label={t("Ajouter un outil", "Add a tool") as string} title={t("Ajouter un outil", "Add a tool") as string}>
-                <Plus size={19} aria-hidden />
+              <button type="button" className="stack-page-toolbar-icon stack-page-toolbar-icon--primary" onClick={() => openToolPicker()} aria-label={t("Explorer les outils", "Explore tools") as string}>
+                <Compass size={18} aria-hidden />
+                <span>{t("Explorer les outils", "Explore tools")}</span>
               </button>
             </div>
           </div>
@@ -2782,6 +2785,21 @@ const CartPage = () => {
               <Heart size={15} aria-hidden />
               <span>{t("Mes envies", "Wishlist")}</span>
               <small>{wishlistToolSlugs.length}</small>
+            </button>
+            <button
+              type="button"
+              className="stack-library-tabs-organize"
+              aria-expanded={isBoardManagementOpen}
+              aria-controls="stack-board-management-panel"
+              onClick={() => {
+                if (!boardManagementRef.current) return;
+                const nextOpen = !boardManagementRef.current.open;
+                boardManagementRef.current.open = nextOpen;
+                setIsBoardManagementOpen(nextOpen);
+              }}
+            >
+              <span>{t("Organiser mes outils", "Organize my tools")}</span>
+              <SlidersHorizontal size={16} aria-hidden />
             </button>
           </div>
         </nav>
@@ -2970,8 +2988,13 @@ const CartPage = () => {
               })}
             </div>
           )}
-          <details className="stack-board-management">
-            <summary>{t("Gérer mes tableaux", "Manage my boards")}</summary>
+          <details
+            ref={boardManagementRef}
+            id="stack-board-management-panel"
+            className="stack-board-management"
+            onToggle={(event) => setIsBoardManagementOpen(event.currentTarget.open)}
+          >
+            <summary>{t("Organiser mes outils", "Organize my tools")}</summary>
             <div className={`stack-board-grid${isOrganizingBoards ? " stack-board-grid--organizing" : ""}`}>
           {activeBoards.map((board) => {
             const visibleToolCount = 3;
