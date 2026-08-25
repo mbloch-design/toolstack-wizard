@@ -7,6 +7,9 @@
 - L’état local passe en version 3 et migre les anciennes sélections vers `Dans ma stack` sans perte d’ordre ni d’affectation.
 - Ma Stack adopte une navigation horizontale de bibliothèque : `Tous les outils`, chaque tableau actif, puis `Mes envies` après une séparation discrète.
 - La wishlist devient `Mes envies` dans toute l’interface. Son vocabulaire valorise l’inspiration et retire l’idée d’une tâche à accomplir plus tard.
+- Les onglets filtrent désormais directement une grille de cartes outils ; les cartes-tableaux quittent la vue principale et restent accessibles dans un panneau secondaire `Gérer mes tableaux` fermé par défaut.
+- Le haut de page adopte une structure de profil anticipant la future création de compte : avatar neutre, identité `Ma stack`, profil déduit et métriques, sans inventer de données personnelles.
+- L’onglet actif reçoit un traitement de surface et de contraste persistant ; `Mes envies` utilise désormais un cœur plutôt qu’un marque-page.
 - L’architecture de compte retient Supabase Auth, avec une approche local-first puis synchronisation volontaire, Google et email au premier niveau et LinkedIn OIDC comme option professionnelle.
 - Validation : build production PASS, 55 tests Ma Stack PASS, navigation Tous les outils → tableaux → Mes envies et états vides vérifiés dans le navigateur local.
 

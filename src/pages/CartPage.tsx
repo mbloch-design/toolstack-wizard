@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type FormEvent } from "react";
 import { flushSync } from "react-dom";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
-import { ArrowLeft, Bookmark, Compass, GripVertical, MoreHorizontal, Pencil, Plus, Search, Trash2, UserRound, X } from "lucide-react";
+import { ArrowLeft, Compass, GripVertical, Heart, MoreHorizontal, Pencil, Plus, Search, Trash2, UserRound, X } from "lucide-react";
 import { toast } from "sonner";
 import { ToolCardEditorial } from "@/components/ToolCardEditorial";
 import ToolLogo from "@/components/ToolLogo";
@@ -1760,6 +1760,7 @@ const CartPage = () => {
     : 0;
   const [pickerQuery, setPickerQuery] = useState("");
   const [collectionView, setCollectionView] = useState<"stack" | "wishlist">("stack");
+  const [libraryBoardId, setLibraryBoardId] = useState<string | null>(null);
   const [pickerFilter, setPickerFilter] = useState<PickerFilterId>("recommended");
   const [pickerResultLimit, setPickerResultLimit] = useState(PICKER_RESULT_BATCH);
   const [pickerAddedToolSlugs, setPickerAddedToolSlugs] = useState<string[]>([]);
@@ -1888,7 +1889,13 @@ const CartPage = () => {
       } satisfies StackObjective];
     });
   }, [activeBoards, categoryById, collectionView, lang, stackEntryBySlug, stackToolSlugs, state.needs, toolBySlug]);
-  const stackProfileLabel = getStackProfileLabel(activeBoards, lang);
+  const stackProfileLabel = getStackProfileLabel(stackNavigationBoards, lang);
+  const libraryActiveBoard = collectionView === "stack"
+    ? stackNavigationBoards.find((board) => board.id === libraryBoardId) || null
+    : null;
+  const libraryTools = collectionView === "wishlist"
+    ? selectedTools
+    : libraryActiveBoard?.tools || selectedTools;
   const zoomObjectiveId = searchParams.get("objectif");
   const zoomedBoard = activeBoards.find((board) => board.id === zoomObjectiveId) || null;
   const quickToolSlug = searchParams.get("outil");
@@ -2458,16 +2465,19 @@ const CartPage = () => {
 
   function openStackBoard(boardId: string) {
     setCollectionView("stack");
-    openObjective(boardId);
+    setLibraryBoardId(boardId);
+    if (zoomedBoard) closeObjective();
   }
 
   function showStackOverview() {
     setCollectionView("stack");
+    setLibraryBoardId(null);
     if (zoomedBoard) closeObjective();
   }
 
   function showWishlist() {
     setCollectionView("wishlist");
+    setLibraryBoardId(null);
     if (zoomedBoard) closeObjective();
   }
 
@@ -2699,13 +2709,23 @@ const CartPage = () => {
           </div>
         </section>
       ) : (
-        <section className="stack-page-toolbar stack-page-toolbar--overview">
-          <div className="stack-page-toolbar-inner">
-            <div className="stack-page-toolbar-copy">
-              <h1>{collectionView === "stack" ? t("Ma stack", "My stack") : t("Mes envies", "Wishlist")}</h1>
-              <p>{selectedTools.length} {t("outils", "tools")} · {activeBoards.length} {t("tableaux", "boards")}</p>
+        <section className="stack-page-toolbar stack-page-toolbar--overview" aria-labelledby="stack-profile-title">
+          <div className="stack-profile-header">
+            <div className="stack-profile-identity">
+              <span className="stack-profile-avatar" aria-hidden><UserRound size={30} /></span>
+              <div className="stack-profile-copy">
+                <span>{t("Votre espace ToolTrim", "Your ToolTrim space")}</span>
+                <h1 id="stack-profile-title">{t("Ma stack", "My stack")}</h1>
+                <p>
+                  <strong>{stackProfileLabel}</strong>
+                  <span aria-hidden>·</span>
+                  {formatToolCount(stackToolSlugs.length, lang)}
+                  <span aria-hidden>·</span>
+                  {stackNavigationBoards.length} {t(stackNavigationBoards.length > 1 ? "tableaux" : "tableau", stackNavigationBoards.length > 1 ? "boards" : "board")}
+                </p>
+              </div>
             </div>
-            <div className="stack-page-toolbar-actions">
+            <div className="stack-profile-actions">
               {unassignedTools.length > 0 && (
                 <button
                   type="button"
@@ -2720,25 +2740,10 @@ const CartPage = () => {
                   <strong>{t("à ranger", "to organize")}</strong>
                 </button>
               )}
-              <button
-                type="button"
-                className={`stack-page-toolbar-organize${isOrganizingBoards ? " is-active" : ""}`}
-                onClick={() => {
-                  setIsOrganizingBoards((current) => !current);
-                  setDraggedBoardId(null);
-                  setDragOverBoardId(null);
-                }}
-                aria-pressed={isOrganizingBoards}
-                aria-label={isOrganizingBoards ? t("Terminer", "Done") as string : t("Organiser", "Organize") as string}
-                title={isOrganizingBoards ? t("Terminer", "Done") as string : t("Organiser", "Organize") as string}
-              >
-                {isOrganizingBoards ? <X size={18} aria-hidden /> : <Pencil size={17} aria-hidden />}
-              </button>
               <button type="button" className="stack-page-toolbar-icon stack-page-toolbar-icon--primary" onClick={() => openToolPicker()} aria-label={t("Ajouter un outil", "Add a tool") as string} title={t("Ajouter un outil", "Add a tool") as string}>
                 <Plus size={19} aria-hidden />
               </button>
             </div>
-            {renderEstimatedProfile()}
           </div>
         </section>
       )}
@@ -2748,8 +2753,8 @@ const CartPage = () => {
           <div className="stack-library-tabs-inner">
             <button
               type="button"
-              className={collectionView === "stack" && !zoomedBoard ? "is-active" : ""}
-              aria-current={collectionView === "stack" && !zoomedBoard ? "page" : undefined}
+              className={collectionView === "stack" && !libraryBoardId && !zoomedBoard ? "is-active" : ""}
+              aria-current={collectionView === "stack" && !libraryBoardId && !zoomedBoard ? "page" : undefined}
               onClick={showStackOverview}
             >
               <span>{t("Tous les outils", "All tools")}</span>
@@ -2759,8 +2764,8 @@ const CartPage = () => {
               <button
                 key={board.id}
                 type="button"
-                className={collectionView === "stack" && zoomedBoard?.id === board.id ? "is-active" : ""}
-                aria-current={collectionView === "stack" && zoomedBoard?.id === board.id ? "page" : undefined}
+                className={collectionView === "stack" && libraryBoardId === board.id ? "is-active" : ""}
+                aria-current={collectionView === "stack" && libraryBoardId === board.id ? "page" : undefined}
                 onClick={() => openStackBoard(board.id)}
               >
                 <span>{getBoardDisplayLabel(board, lang)}</span>
@@ -2774,7 +2779,7 @@ const CartPage = () => {
               aria-current={collectionView === "wishlist" ? "page" : undefined}
               onClick={showWishlist}
             >
-              <Bookmark size={15} aria-hidden />
+              <Heart size={15} aria-hidden />
               <span>{t("Mes envies", "Wishlist")}</span>
               <small>{wishlistToolSlugs.length}</small>
             </button>
@@ -2928,19 +2933,46 @@ const CartPage = () => {
           )}
         </main>
       ) : (
-        <main className={`stack-board-grid${isOrganizingBoards ? " stack-board-grid--organizing" : ""}`} aria-label={t("Vue d'ensemble de ma stack", "My stack overview") as string}>
-          {selectedTools.length === 0 && (
+        <main className="stack-library-content" aria-label={t("Outils enregistrés", "Saved tools") as string}>
+          {libraryTools.length === 0 && (
             <section className="stack-empty-overview">
-              <span>{collectionView === "stack" ? t("Aucun outil utilisé", "No tools in use") : t("Aucune envie enregistrée", "Nothing on your wishlist yet")}</span>
-              <h2>{collectionView === "stack" ? t("Votre stack est vide", "Your stack is empty") : t("Gardez ici ce qui vous inspire", "Keep inspiring tools here")}</h2>
+              <span>{collectionView === "wishlist" ? t("Aucune envie enregistrée", "Nothing on your wishlist yet") : libraryActiveBoard ? t("Tableau vide", "Empty board") : t("Aucun outil utilisé", "No tools in use")}</span>
+              <h2>{collectionView === "wishlist" ? t("Gardez ici ce qui vous inspire", "Keep inspiring tools here") : libraryActiveBoard ? t(`Aucun outil dans ${getBoardDisplayLabel(libraryActiveBoard, lang)}`, `No tools in ${getBoardDisplayLabel(libraryActiveBoard, lang)}`) : t("Votre stack est vide", "Your stack is empty")}</h2>
               <p>
-                {collectionView === "stack"
-                  ? t("Ajoutez les outils que vous utilisez réellement, puis classez-les dans vos tableaux.", "Add the tools you actually use, then organize them into boards.")
-                  : t("Une sélection libre d’outils qui vous donnent envie, sans rien avoir à décider maintenant.", "A free selection of tools that spark your interest, with nothing to decide right now.")}
+                {collectionView === "wishlist"
+                  ? t("Une sélection libre d’outils qui vous donnent envie, sans rien avoir à décider maintenant.", "A free selection of tools that spark your interest, with nothing to decide right now.")
+                  : libraryActiveBoard
+                    ? t("Ajoutez un outil à ce tableau pour le retrouver directement ici.", "Add a tool to this board to find it directly here.")
+                    : t("Ajoutez les outils que vous utilisez réellement, puis classez-les dans vos tableaux.", "Add the tools you actually use, then organize them into boards.")}
               </p>
-              <button type="button" className="cart-primary-link" onClick={() => openToolPicker()}>{t("Ajouter un outil", "Add a tool")}</button>
+              <button type="button" className="cart-primary-link" onClick={() => openToolPicker(libraryActiveBoard?.id)}>{t("Ajouter un outil", "Add a tool")}</button>
             </section>
           )}
+          {libraryTools.length > 0 && (
+            <div className="stack-library-tool-grid" role="list">
+              {libraryTools.map((tool) => {
+                const toolSlug = getToolKey(tool);
+                return (
+                  <article key={toolSlug} className="stack-library-tool-card" role="listitem">
+                    <ToolCardEditorial
+                      tool={tool}
+                      prefix={prefix}
+                      t={t}
+                      lang={lang}
+                      categoryLabel={getCategoryLabel(tool)}
+                      showPin
+                      showPrice
+                      to={`${prefix}/tool/${toolSlug}`}
+                      exploreHref={getExplorerHref(prefix, { type: "outil", slug: toolSlug }, { destination: libraryActiveBoard?.id })}
+                    />
+                  </article>
+                );
+              })}
+            </div>
+          )}
+          <details className="stack-board-management">
+            <summary>{t("Gérer mes tableaux", "Manage my boards")}</summary>
+            <div className={`stack-board-grid${isOrganizingBoards ? " stack-board-grid--organizing" : ""}`}>
           {activeBoards.map((board) => {
             const visibleToolCount = 3;
             const visibleTools = board.tools.slice(0, visibleToolCount);
@@ -3139,6 +3171,8 @@ const CartPage = () => {
             )}
             <div className="stack-board-footer"><span>{t("Nouvelle section", "New section")}</span></div>
           </section>
+            </div>
+          </details>
         </main>
       )}
 
