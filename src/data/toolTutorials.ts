@@ -15,6 +15,13 @@ export interface ToolTutorial {
  * Every entry must be checked against the provider's oEmbed endpoint.
  */
 export const TOOL_TUTORIALS: Record<string, ToolTutorial[]> = {
+  surveymonkey: [{
+    provider: "youtube", videoId: "sdcDK5NT5FM",
+    titleFr: "Créer un sondage avec SurveyMonkey", titleEn: "How to create a survey in SurveyMonkey",
+    author: "SurveyMonkey", duration: "Tutoriel officiel",
+    sourceUrl: "https://www.youtube.com/watch?v=sdcDK5NT5FM",
+    publishedOn: "2025-09-29", verifiedOn: "2026-08-25",
+  }],
   "react-router": [{
     provider: "youtube", videoId: "oTIJunBa6MA",
     titleFr: "Comprendre React Router", titleEn: "React Router complete tutorial",

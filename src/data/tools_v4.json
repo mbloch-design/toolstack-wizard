@@ -144372,6 +144372,186 @@
     "ogImageUrl": "https://static.surveysparrow.com/site/assets/common/Surveysparrow.png"
   },
   {
+    "id": "surveymonkey",
+    "slug": "surveymonkey",
+    "name": "SurveyMonkey",
+    "category": "communication",
+    "websiteUrl": "https://www.surveymonkey.com/",
+    "website": "https://www.surveymonkey.com/",
+    "affiliateLink": "https://get.surveymonkey.com/w7tw91375vc5",
+    "shortDescription": "Créez des sondages, formulaires et quiz, puis analysez les réponses au même endroit.",
+    "shortDescriptionEn": "Create surveys, forms and quizzes, then analyze responses in one place.",
+    "description": "SurveyMonkey est une plateforme de sondages en ligne conçue pour recueillir des avis, mesurer la satisfaction et transformer les réponses en décisions.",
+    "longDescription": "SurveyMonkey permet de créer des sondages, formulaires et quiz à partir de modèles ou avec l'aide de l'IA, de les diffuser sur plusieurs canaux et d'analyser les résultats dans des tableaux de bord. Son catalogue de plus de 500 modèles et ses nombreuses intégrations en font une solution robuste pour les études clients, le NPS, les RH et la recherche utilisateur.\n\nLe plan Basic permet de tester gratuitement le produit, mais limite chaque sondage à 10 questions et restreint le nombre de réponses consultables. Les offres payantes deviennent pertinentes lorsque le volume, la logique conditionnelle, les exports et la collaboration sont essentiels.",
+    "longDescriptionEn": "SurveyMonkey lets teams create surveys, forms and quizzes from templates or with AI, distribute them across channels, and analyze results in dashboards. Its library of 500+ templates and broad integration catalog make it a robust choice for customer research, NPS, HR and user research.\n\nThe Basic plan is useful for testing the product, but limits each survey to 10 questions and restricts viewable responses. Paid plans make more sense when volume, conditional logic, exports and collaboration are essential.",
+    "pricing": {
+      "free": "Basic gratuit : sondages illimités, 10 questions par sondage et réponses limitées",
+      "paid": "Standard Monthly : 99 $US/mois · Advantage Annual : 468 $US/an"
+    },
+    "pricingEn": {
+      "free": "Free Basic plan: unlimited surveys, 10 questions per survey and limited responses",
+      "paid": "Standard Monthly: US$99/month · Advantage Annual: US$468/year"
+    },
+    "pricingTiers": {
+      "free": "Basic",
+      "paid": "Standard Monthly, Advantage Annual et Premier Annual"
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "cautions": [
+        "Le nombre de réponses consultables dépend du plan.",
+        "Des frais de dépassement peuvent s'appliquer au-delà du quota de réponses.",
+        "Les tarifs et la devise peuvent varier selon le pays."
+      ],
+      "verified_on": "2026-08-25",
+      "source_domain": "surveymonkey.com",
+      "usage_sensitive": true,
+      "compare_plan_kind": "workspace",
+      "compare_plan_name": "Basic",
+      "price_reliability": "high",
+      "location_sensitive": true,
+      "official_source_url": "https://www.surveymonkey.com/pricing/individual/details/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 0
+    },
+    "pros": [
+      "Plus de 500 modèles pour démarrer rapidement.",
+      "Création assistée par IA et banque de questions.",
+      "Analyses, filtres et tableaux de bord intégrés.",
+      "Plus de 200 intégrations pour connecter les réponses aux outils de travail."
+    ],
+    "prosEn": [
+      "More than 500 templates to get started quickly.",
+      "AI-assisted creation and question bank.",
+      "Built-in analysis, filters and dashboards.",
+      "More than 200 integrations to connect responses with work tools."
+    ],
+    "cons": [
+      "Le plan gratuit limite les sondages à 10 questions.",
+      "Le coût augmente vite avec le volume de réponses et les fonctions d'équipe.",
+      "Les fonctions avancées et les exports sont réservés aux offres payantes."
+    ],
+    "consEn": [
+      "The free plan limits surveys to 10 questions.",
+      "Costs rise quickly with response volume and team features.",
+      "Advanced features and exports require a paid plan."
+    ],
+    "bestFor": [
+      "Études de satisfaction client",
+      "Sondages RH et engagement employé",
+      "Recherche utilisateur",
+      "Questionnaires et formulaires structurés"
+    ],
+    "relevantFor": [
+      "Équipes marketing",
+      "Customer experience",
+      "RH",
+      "Product managers et chercheurs UX"
+    ],
+    "useCases": [
+      "Mesurer la satisfaction client avec un CSAT ou un NPS.",
+      "Valider une idée auprès d'un panel de clients.",
+      "Recueillir le feedback des employés.",
+      "Créer un formulaire d'inscription ou un quiz."
+    ],
+    "useCasesEn": [
+      "Measure customer satisfaction with CSAT or NPS.",
+      "Validate an idea with a customer panel.",
+      "Collect employee feedback.",
+      "Create a registration form or quiz."
+    ],
+    "verdict": {
+      "keepIf": [
+        "Vous menez régulièrement des études et avez besoin d'analyses solides.",
+        "Vous voulez centraliser sondages clients, RH et recherche utilisateur.",
+        "Vous avez besoin de modèles, de logique avancée et d'intégrations."
+      ],
+      "avoidIf": [
+        "Vous créez seulement quelques formulaires simples.",
+        "Vous avez besoin de réponses illimitées avec un budget nul.",
+        "Vous voulez une expérience très visuelle et conversationnelle."
+      ],
+      "threshold": "SurveyMonkey vaut surtout son prix pour des enquêtes récurrentes dont les résultats doivent être analysés et partagés ; pour un simple formulaire, Tally sera souvent plus économique."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You run research regularly and need solid analysis tools.",
+        "You want to centralize customer, HR and user research surveys.",
+        "You need templates, advanced logic and integrations."
+      ],
+      "avoidIf": [
+        "You only create a few simple forms.",
+        "You need unlimited responses on a zero budget.",
+        "You want a highly visual, conversational experience."
+      ],
+      "threshold": "SurveyMonkey is most valuable for recurring research whose results need to be analyzed and shared; for a simple form, Tally is often more economical."
+    },
+    "alternatives": [
+      "tally",
+      "typeform",
+      "jotform",
+      "surveysparrow"
+    ],
+    "freeAlternative": "tally",
+    "covers": [
+      "surveys",
+      "formulaires",
+      "feedback-client"
+    ],
+    "functional_needs": [
+      "surveys",
+      "formulaires",
+      "feedback-client"
+    ],
+    "soloRelevance": "medium",
+    "teamRelevance": "high",
+    "tool_type": "satellite",
+    "substitutable": true,
+    "verticals": [
+      "consultant-b2b",
+      "fondateur-saas",
+      "ecommercant"
+    ],
+    "seo": {
+      "metaDescription": "SurveyMonkey : avis, prix, fonctionnalités et alternatives pour créer des sondages et analyser les réponses."
+    },
+    "articles": [],
+    "personas": [],
+    "logo": "",
+    "host_app": null,
+    "bundle_parent": null,
+    "ia_use_case": "Générer un questionnaire et suggérer des questions avec l'IA.",
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": "Basic",
+    "timeGainedHoursPerMonth": 3,
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [
+      "volume-de-réponses-à-confirmer",
+      "prix-variable-selon-pays"
+    ],
+    "prescription_context_questions": [
+      "monthly_responses",
+      "advanced_logic_needed",
+      "team_collaboration_needed"
+    ],
+    "substitution_cluster_v2": "form-builder",
+    "decision_policy_v3": {
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": false,
+      "default_decision_lane": "review_then_prescribe",
+      "auto_downgrade_allowed": true,
+      "never_auto_cancel_reason": "Le bon plan dépend du volume de réponses et des besoins d'analyse.",
+      "requires_context_questions": true
+    },
+    "force_silence": false,
+    "ogImageUrl": "https://prod.smassets.net/assets/content/sm/resources-build-your-first-survey-homepage.webp",
+    "galleryImages": [
+      "https://prod.smassets.net/assets/content/sm/resources-let-the-feedback-flow.webp"
+    ]
+  },
+  {
     "id": "svelte",
     "slug": "svelte",
     "name": "Svelte",
