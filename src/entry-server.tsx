@@ -125,6 +125,34 @@ export async function renderComparePage(path: string, toolA: Tool, toolB: Tool):
   );
 }
 
+// Same idea as renderGuidePage, for the homepage (/fr, /en). HomePageV2 is
+// already an eager import in App.tsx, so no route-eagerness change is
+// needed — it just wasn't wired into a render* function before, and shipped
+// with an empty <div id="root"> plus a noscript fallback paragraph instead.
+export async function renderHomePage(path: string): Promise<string> {
+  const queryClient = new QueryClient();
+
+  return renderToString(
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <StaticRouter location={path}>
+            <ScrollToTop />
+            <DynamicCanonical />
+            <ErrorBoundary>
+              <Suspense fallback={null}>
+                <AppRoutes />
+              </Suspense>
+            </ErrorBoundary>
+          </StaticRouter>
+        </TooltipProvider>
+      </QueryClientProvider>
+    </HelmetProvider>,
+  );
+}
+
 // Stack detail stays a lazy client route so the rich 1.6 MB stack catalogue
 // is not pulled into /stacks. For prerendering, render the detail component
 // directly inside the matching route: SSR remains complete without making

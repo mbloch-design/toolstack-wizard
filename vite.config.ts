@@ -681,6 +681,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
         let renderComparePage: ((path: string, toolA: any, toolB: any) => Promise<string>) | null = null;
         let renderGuidePage: ((path: string, post: any) => Promise<string>) | null = null;
         let renderStackPage: ((path: string) => Promise<string>) | null = null;
+        let renderHomePage: ((path: string) => Promise<string>) | null = null;
         const ssrEntryPath = path.resolve(__dirname, "dist-ssr/entry-server.js");
         if (fs.existsSync(ssrEntryPath)) {
           try {
@@ -689,6 +690,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             renderComparePage = ssrModule.renderComparePage;
             renderGuidePage = ssrModule.renderGuidePage;
             renderStackPage = ssrModule.renderStackPage;
+            renderHomePage = ssrModule.renderHomePage;
           } catch (e) {
             console.warn("⚠️ SSR entry failed to load, falling back to meta-only prerender:", e);
           }
@@ -1203,6 +1205,20 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           html = html.replace(/<meta\s+name="description"[^>]*\/?>/, "");
           html = html.replace("</head>", `    ${metaTags}\n  </head>`);
           html = html.replace("</body>", `    ${staticParagraph}\n  </body>`);
+
+          // Fills <div id="root"> with real server-rendered markup (H1,
+          // headings, images, internal links) instead of shipping it empty —
+          // AI crawlers (GPTBot, ClaudeBot, PerplexityBot) don't execute JS,
+          // so an empty root meant the homepage had zero indexable content
+          // for them, only this file's <head> tags and the noscript fallback.
+          if (renderHomePage) {
+            try {
+              const markup = await renderHomePage(`/${lp.lang}`);
+              html = html.replace('<div id="root"></div>', `<div id="root">${markup}</div>`);
+            } catch (e) {
+              console.warn(`⚠️ Home SSR failed for ${lp.file}, falling back to empty root + noscript:`, e);
+            }
+          }
 
           const outPath = path.resolve(distDir, lp.file);
           fs.mkdirSync(path.dirname(outPath), { recursive: true });
