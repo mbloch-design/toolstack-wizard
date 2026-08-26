@@ -8,6 +8,7 @@ import { mergeToolCartStates, stackStateFingerprint } from "@/lib/stackSync";
 export type StackSyncStatus = "local" | "connecting" | "syncing" | "synced" | "error";
 
 interface UseStackAccountOptions {
+  enabled?: boolean;
   lang: "fr" | "en";
   state: ToolCartState;
   replaceState: (state: ToolCartState) => void;
@@ -18,7 +19,7 @@ function getReturnUrl(lang: "fr" | "en") {
   return `${window.location.origin}/${lang}/ma-stack?compte=retour`;
 }
 
-export function useStackAccount({ lang, state, replaceState }: UseStackAccountOptions) {
+export function useStackAccount({ enabled = true, lang, state, replaceState }: UseStackAccountOptions) {
   const [session, setSession] = useState<Session | null>(null);
   const [status, setStatus] = useState<StackSyncStatus>("local");
   const [error, setError] = useState<string | null>(null);
@@ -29,6 +30,7 @@ export function useStackAccount({ lang, state, replaceState }: UseStackAccountOp
   stateRef.current = state;
 
   useEffect(() => {
+    if (!enabled) return;
     let mounted = true;
     void supabase.auth.getSession().then(({ data, error: sessionError }) => {
       if (!mounted) return;
@@ -53,9 +55,10 @@ export function useStackAccount({ lang, state, replaceState }: UseStackAccountOp
       mounted = false;
       listener.subscription.unsubscribe();
     };
-  }, []);
+  }, [enabled]);
 
   useEffect(() => {
+    if (!enabled) return;
     const user = session?.user;
     if (!user || hydratedUserRef.current === user.id) return;
     let cancelled = false;
@@ -107,9 +110,10 @@ export function useStackAccount({ lang, state, replaceState }: UseStackAccountOp
       setStatus("error");
     });
     return () => { cancelled = true; };
-  }, [lang, replaceState, session?.user]);
+  }, [enabled, lang, replaceState, session?.user]);
 
   useEffect(() => {
+    if (!enabled) return;
     const user = session?.user;
     if (!user || hydratedUserRef.current !== user.id) return;
     const fingerprint = stackStateFingerprint(state);
@@ -133,9 +137,10 @@ export function useStackAccount({ lang, state, replaceState }: UseStackAccountOp
       });
     }, 650);
     return () => window.clearTimeout(timer);
-  }, [session?.user, state]);
+  }, [enabled, session?.user, state]);
 
   const signInWithGoogle = useCallback(async () => {
+    if (!enabled) return;
     setStatus("connecting");
     setError(null);
     const { error: signInError } = await supabase.auth.signInWithOAuth({
@@ -146,9 +151,10 @@ export function useStackAccount({ lang, state, replaceState }: UseStackAccountOp
       setError(signInError.message);
       setStatus("error");
     }
-  }, [lang]);
+  }, [enabled, lang]);
 
   const sendMagicLink = useCallback(async (email: string) => {
+    if (!enabled) return false;
     setStatus("connecting");
     setError(null);
     setMagicLinkSentTo(null);
@@ -165,17 +171,19 @@ export function useStackAccount({ lang, state, replaceState }: UseStackAccountOp
     setMagicLinkSentTo(normalizedEmail);
     setStatus("local");
     return true;
-  }, [lang]);
+  }, [enabled, lang]);
 
   const signOut = useCallback(async () => {
+    if (!enabled) return;
     const { error: signOutError } = await supabase.auth.signOut();
     if (signOutError) {
       setError(signOutError.message);
       setStatus("error");
     }
-  }, []);
+  }, [enabled]);
 
   const deleteAccount = useCallback(async () => {
+    if (!enabled) return false;
     setStatus("syncing");
     const { error: deleteError } = await supabase.functions.invoke("delete-account", {
       method: "DELETE",
@@ -189,7 +197,7 @@ export function useStackAccount({ lang, state, replaceState }: UseStackAccountOp
     setSession(null);
     setStatus("local");
     return true;
-  }, []);
+  }, [enabled]);
 
   return {
     user: session?.user || null,

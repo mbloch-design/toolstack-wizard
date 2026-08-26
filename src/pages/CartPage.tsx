@@ -8,6 +8,7 @@ import ToolLogo from "@/components/ToolLogo";
 import StackToolInspector from "@/components/stack/StackToolInspector";
 import StackNeedsManagerDialog from "@/components/stack/StackNeedsManagerDialog";
 import StackAccountDialog from "@/components/stack/StackAccountDialog";
+import { STACK_ACCOUNT_ENABLED } from "@/config/features";
 import { useLang } from "@/hooks/useLang";
 import { useStackPins } from "@/hooks/useStackPins";
 import { useStackAccount } from "@/hooks/useStackAccount";
@@ -1759,7 +1760,7 @@ const CartPage = () => {
     moveNeed,
     replaceState,
   } = useStackPins();
-  const stackAccount = useStackAccount({ lang, state, replaceState });
+  const stackAccount = useStackAccount({ enabled: STACK_ACCOUNT_ENABLED, lang, state, replaceState });
   const [searchParams, setSearchParams] = useSearchParams();
   const pickerBoardId = searchParams.get("ajouter");
   const inspectorNavigationDepth = typeof location.state?.stackToolInspectorDepth === "number"
@@ -1782,7 +1783,7 @@ const CartPage = () => {
 
   useEffect(() => {
     if (searchParams.get("compte") === "retour") {
-      setIsAccountDialogOpen(true);
+      if (STACK_ACCOUNT_ENABLED) setIsAccountDialogOpen(true);
       const nextParams = new URLSearchParams(searchParams);
       nextParams.delete("compte");
       setSearchParams(nextParams, { replace: true });
@@ -2580,7 +2581,7 @@ const CartPage = () => {
               </div>
             </div>
             <div className="stack-profile-actions">
-              <button
+              {STACK_ACCOUNT_ENABLED && <button
                 type="button"
                 className={`stack-profile-sync${stackAccount.user ? " is-connected" : ""}`}
                 onClick={() => setIsAccountDialogOpen(true)}
@@ -2590,7 +2591,7 @@ const CartPage = () => {
               >
                 <Cloud size={18} aria-hidden />
                 <span>{stackAccount.user ? t("Synchronisée", "Synced") : t("Synchroniser", "Sync")}</span>
-              </button>
+              </button>}
               <Link className="stack-page-toolbar-icon stack-page-toolbar-icon--primary" to={getExplorerHref(prefix, { type: "stack" })} aria-label={t("Explorer autour de Ma stack", "Explore around My stack") as string}>
                 <Compass size={18} aria-hidden />
                 <span>{t("Explorer autour de ma stack", "Explore around my stack")}</span>
@@ -3059,7 +3060,7 @@ const CartPage = () => {
         </main>
       )}
 
-      <StackAccountDialog
+      {STACK_ACCOUNT_ENABLED && <StackAccountDialog
         isOpen={isAccountDialogOpen}
         user={stackAccount.user}
         status={stackAccount.status}
@@ -3071,7 +3072,7 @@ const CartPage = () => {
         onSignOut={stackAccount.signOut}
         onDeleteAccount={stackAccount.deleteAccount}
         t={t}
-      />
+      />}
     </div>
   );
 };
