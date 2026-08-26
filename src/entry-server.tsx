@@ -15,6 +15,9 @@ import { SsrToolContext, SsrRelatedPostsContext, SsrComparePairContext, SsrPostC
 import type { Post } from "@/hooks/useSupabaseData";
 import type { Tool } from "@/data/types";
 import StackDetailPage from "@/pages/StackDetailPage";
+import CategoryPage from "@/pages/CategoryPage";
+import ToolsPage from "@/pages/ToolsPage";
+import StacksPage from "@/pages/StacksPage";
 
 export interface RenderedToolPage {
   html: string;
@@ -173,6 +176,92 @@ export async function renderStackPage(path: string): Promise<string> {
               <Suspense fallback={null}>
                 <Routes>
                   <Route path="/:lang/stacks/:slug" element={<StackDetailPage />} />
+                </Routes>
+              </Suspense>
+            </ErrorBoundary>
+          </StaticRouter>
+        </TooltipProvider>
+      </QueryClientProvider>
+    </HelmetProvider>,
+  );
+}
+
+// Same idea as renderStackPage: CategoryPage, ToolsPage and StacksPage are
+// all lazy client routes (kept out of the eager bundle deliberately), so
+// they render directly inside their matching route rather than through
+// AppRoutes, which can't resolve a lazy() chunk. An external audit found all
+// three shipped with an empty <div id="root"> — /fr/tools and /fr/stacks
+// didn't even have a noscript fallback — so AI crawlers (no JS execution)
+// saw literally nothing on the catalogue index, the stacks hub, or any of
+// the 46 category pages.
+export async function renderCategoryPage(path: string): Promise<string> {
+  const queryClient = new QueryClient();
+
+  return renderToString(
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <StaticRouter location={path}>
+            <ScrollToTop />
+            <DynamicCanonical />
+            <ErrorBoundary>
+              <Suspense fallback={null}>
+                <Routes>
+                  <Route path="/:lang/category/:slug" element={<CategoryPage />} />
+                </Routes>
+              </Suspense>
+            </ErrorBoundary>
+          </StaticRouter>
+        </TooltipProvider>
+      </QueryClientProvider>
+    </HelmetProvider>,
+  );
+}
+
+export async function renderToolsPage(path: string): Promise<string> {
+  const queryClient = new QueryClient();
+
+  return renderToString(
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <StaticRouter location={path}>
+            <ScrollToTop />
+            <DynamicCanonical />
+            <ErrorBoundary>
+              <Suspense fallback={null}>
+                <Routes>
+                  <Route path="/:lang/tools" element={<ToolsPage />} />
+                </Routes>
+              </Suspense>
+            </ErrorBoundary>
+          </StaticRouter>
+        </TooltipProvider>
+      </QueryClientProvider>
+    </HelmetProvider>,
+  );
+}
+
+export async function renderStacksHubPage(path: string): Promise<string> {
+  const queryClient = new QueryClient();
+
+  return renderToString(
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <StaticRouter location={path}>
+            <ScrollToTop />
+            <DynamicCanonical />
+            <ErrorBoundary>
+              <Suspense fallback={null}>
+                <Routes>
+                  <Route path="/:lang/stacks" element={<StacksPage />} />
                 </Routes>
               </Suspense>
             </ErrorBoundary>

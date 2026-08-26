@@ -682,6 +682,9 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
         let renderGuidePage: ((path: string, post: any) => Promise<string>) | null = null;
         let renderStackPage: ((path: string) => Promise<string>) | null = null;
         let renderHomePage: ((path: string) => Promise<string>) | null = null;
+        let renderCategoryPage: ((path: string) => Promise<string>) | null = null;
+        let renderToolsPage: ((path: string) => Promise<string>) | null = null;
+        let renderStacksHubPage: ((path: string) => Promise<string>) | null = null;
         const ssrEntryPath = path.resolve(__dirname, "dist-ssr/entry-server.js");
         if (fs.existsSync(ssrEntryPath)) {
           try {
@@ -691,6 +694,9 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             renderGuidePage = ssrModule.renderGuidePage;
             renderStackPage = ssrModule.renderStackPage;
             renderHomePage = ssrModule.renderHomePage;
+            renderCategoryPage = ssrModule.renderCategoryPage;
+            renderToolsPage = ssrModule.renderToolsPage;
+            renderStacksHubPage = ssrModule.renderStacksHubPage;
           } catch (e) {
             console.warn("⚠️ SSR entry failed to load, falling back to meta-only prerender:", e);
           }
@@ -1430,6 +1436,24 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           html = html.replace(/<meta\s+name="description"[^>]*\/?>/, "");
           html = html.replace("</head>", `    ${metaTags}\n  </head>`);
 
+          // /tools and /stacks shipped a fully empty <div id="root"> — not
+          // even the noscript fallback every other SECTION_PAGES entry gets
+          // implicitly via baseHtml — so a non-JS crawler saw nothing at all
+          // on the catalogue index or the stacks hub. Both are lazy client
+          // routes (kept out of the eager bundle on purpose), so they render
+          // directly via their own route rather than through AppRoutes.
+          const sectionRenderer = sp.path.endsWith("/tools") ? renderToolsPage
+            : sp.path.endsWith("/stacks") ? renderStacksHubPage
+            : null;
+          if (sectionRenderer) {
+            try {
+              const markup = await sectionRenderer(sp.path);
+              html = html.replace('<div id="root"></div>', `<div id="root">${markup}</div>`);
+            } catch (e) {
+              console.warn(`⚠️ Section SSR failed for ${sp.path}, falling back to meta-only prerender:`, e);
+            }
+          }
+
           const outDir = path.resolve(distDir, sp.path.replace(/^\//, ""));
           fs.mkdirSync(outDir, { recursive: true });
           fs.writeFileSync(path.resolve(outDir, "index.html"), html, "utf-8");
@@ -1615,6 +1639,15 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             html = html.replace(/<meta\s+name="description"[^>]*\/?>/, "");
             html = html.replace("</head>", `    ${metaTags}\n  </head>`);
             html = html.replace("</body>", `    <noscript><p>${description.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</p></noscript>\n  </body>`);
+
+            if (renderCategoryPage) {
+              try {
+                const markup = await renderCategoryPage(`/${lang}/category/${slug}`);
+                html = html.replace('<div id="root"></div>', `<div id="root">${markup}</div>`);
+              } catch (e) {
+                console.warn(`⚠️ Category SSR failed for ${slug}/${lang}, falling back to ItemList + noscript only:`, e);
+              }
+            }
 
             const outDir = path.resolve(distDir, lang, "category", slug);
             fs.mkdirSync(outDir, { recursive: true });
