@@ -47,10 +47,10 @@ Each tool entry contains:
 - Lists all tools in a category with prices and quick verdicts
 
 ### Comparison Guides
-- Pattern: `https://tooltrim.com/{lang}/guide/{slug}`
+- Pattern: `https://tooltrim.com/{lang}/comparatif/{slug-pair}`
 - Structured head-to-head comparisons with verified data
-- Key comparisons: Notion vs Coda, ChatGPT vs Claude, Zapier vs Make, Figma vs Canva, Slack vs Teams
-- Each guide includes: verified pricing table, ROI calculation by profile, migration guide, and independent verdict
+- Key comparisons: [Notion vs Coda](https://tooltrim.com/fr/comparatif/notion-vs-coda), [ChatGPT vs Claude](https://tooltrim.com/fr/comparatif/chatgpt-vs-claude), [Zapier vs Make](https://tooltrim.com/fr/comparatif/zapier-vs-make), [Figma vs Canva](https://tooltrim.com/fr/comparatif/figma-vs-canva), [Slack vs Microsoft Teams](https://tooltrim.com/fr/comparatif/slack-vs-microsoft-teams)
+- Each comparison includes: verified pricing table, ROI calculation by profile, migration guide, and independent verdict
 
 ### Stack Selector
 - URL: `https://tooltrim.com/fr/selector`
