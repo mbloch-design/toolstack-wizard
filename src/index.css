@@ -7105,6 +7105,78 @@
   }
   .tce-cover { position: relative; }
 
+  /* Contextual actions live on the media surface. They stay out of the
+     browsing hierarchy until the card is hovered or focused, while coarse
+     pointers keep them permanently available. */
+  .tce-hover-actions {
+    position: absolute;
+    z-index: 7;
+    right: 14px;
+    bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(8px);
+    transition: opacity 160ms ease-out, transform 180ms cubic-bezier(.22,1,.36,1);
+  }
+  .tce-card--media:hover .tce-hover-actions,
+  .tce-card--media:focus-within .tce-hover-actions {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+  .tce-cover::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    border-radius: var(--tt-surface-radius-media);
+    background: linear-gradient(180deg, transparent 48%, rgba(18, 18, 16, .5) 100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 160ms ease-out;
+  }
+  .tce-card--media:hover .tce-cover::after,
+  .tce-card--media:focus-within .tce-cover::after { opacity: 1; }
+  .tce-hover-action,
+  .tce-hover-actions .pin-tool-button {
+    position: relative;
+    inset: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    min-width: 46px;
+    height: 46px;
+    min-height: 46px;
+    padding: 0;
+    border: 1px solid rgba(255,255,255,.72);
+    border-radius: var(--radius-circle);
+    background: rgba(255,255,255,.94);
+    color: #222;
+    box-shadow: 0 7px 22px rgba(18,18,16,.18);
+    text-decoration: none;
+    transform: none;
+    backdrop-filter: blur(10px);
+  }
+  .tce-hover-action:hover,
+  .tce-hover-action:focus-visible,
+  .tce-hover-actions .pin-tool-button:hover,
+  .tce-hover-actions .pin-tool-button:focus-visible,
+  .tce-hover-actions .pin-tool-button--active {
+    background: #fff;
+    color: #111;
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+    transform: translateY(-2px);
+  }
+  .tce-hover-actions .pin-tool-button--active {
+    background: #f3d7ff;
+    border-color: #f3d7ff;
+  }
+
   .dark .tce-card {
     background: hsl(var(--card));
     border-color: hsl(var(--border));
@@ -7367,6 +7439,19 @@
   }
 
   @media (pointer: coarse) {
+    .tce-hover-actions {
+      opacity: 1;
+      pointer-events: auto;
+      transform: none;
+    }
+    .tce-cover::after { opacity: .72; }
+    .tce-hover-action,
+    .tce-hover-actions .pin-tool-button {
+      width: 42px;
+      min-width: 42px;
+      height: 42px;
+      min-height: 42px;
+    }
     .tce-action-trigger {
       width: 44px;
       min-width: 44px;

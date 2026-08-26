@@ -1,6 +1,5 @@
-import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { Compass, MoreVertical, Pencil } from "lucide-react";
+import { Compass, Pencil } from "lucide-react";
 import PinToolButton from "@/components/PinToolButton";
 import ToolCardImage from "@/components/tool/ToolCardImage";
 import ToolLogo from "@/components/ToolLogo";
@@ -53,7 +52,7 @@ interface ToolCardEditorialProps {
   onOrganize?: () => void;
 }
 
-interface CardActionMenuProps {
+interface CardHoverActionsProps {
   tool: ToolCardEditorialTool;
   t: ToolCardEditorialProps["t"];
   exploreHref?: string;
@@ -62,77 +61,42 @@ interface CardActionMenuProps {
   onOrganize?: () => void;
 }
 
-function CardActionMenu({ tool, t, exploreHref, exploreState, showPin, onOrganize }: CardActionMenuProps) {
-  const [open, setOpen] = useState(false);
-  const menuRef = useRef<HTMLDetailsElement>(null);
-
-  useEffect(() => {
-    if (!open) return;
-
-    const closeOnPointerDown = (event: PointerEvent) => {
-      if (!menuRef.current?.contains(event.target as Node)) setOpen(false);
-    };
-    const closeOnEscape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setOpen(false);
-        menuRef.current?.querySelector<HTMLElement>("summary")?.focus();
-      }
-    };
-
-    document.addEventListener("pointerdown", closeOnPointerDown);
-    document.addEventListener("keydown", closeOnEscape);
-    return () => {
-      document.removeEventListener("pointerdown", closeOnPointerDown);
-      document.removeEventListener("keydown", closeOnEscape);
-    };
-  }, [open]);
-
+function CardHoverActions({ tool, t, exploreHref, exploreState, showPin, onOrganize }: CardHoverActionsProps) {
   return (
-    <details
-      ref={menuRef}
-      className="tce-action-menu"
-      open={open}
-      onToggle={(event) => setOpen(event.currentTarget.open)}
-      onKeyDown={(event) => {
-        if (event.key === "Escape") {
-          event.preventDefault();
-          setOpen(false);
-          menuRef.current?.querySelector<HTMLElement>("summary")?.focus();
-        }
-      }}
-    >
-      <summary
-        className="tce-action-trigger"
-        aria-label={t(`Actions pour ${tool.name}`, `Actions for ${tool.name}`)}
-        title={t("Plus d’actions", "More actions")}
-      >
-        <MoreVertical size={17} aria-hidden />
-      </summary>
-      <div className="tce-action-popover" onClick={() => setOpen(false)}>
-        {exploreHref && (
-          <Link to={exploreHref} state={exploreState} className="tce-action-item">
-            <Compass size={16} aria-hidden />
-            <span>{t("Explorer autour", "Explore around")}</span>
-          </Link>
-        )}
-        {onOrganize && (
-          <button type="button" className="tce-action-item" onClick={onOrganize}>
-            <Pencil size={16} aria-hidden />
-            <span>{t("Modifier l’organisation", "Edit organization")}</span>
-          </button>
-        )}
-        {showPin && (
-          <PinToolButton
-            slug={tool.slug ?? tool.id}
-            label={tool.name}
-            t={t}
-            compact
-            inline
-            labelMode="short"
-          />
-        )}
-      </div>
-    </details>
+    <div className="tce-hover-actions" aria-label={t(`Actions pour ${tool.name}`, `Actions for ${tool.name}`)}>
+      {exploreHref && (
+        <Link
+          to={exploreHref}
+          state={exploreState}
+          className="tce-hover-action"
+          aria-label={t(`Explorer autour de ${tool.name}`, `Explore around ${tool.name}`)}
+          title={t("Explorer autour", "Explore around")}
+        >
+          <Compass size={20} aria-hidden />
+        </Link>
+      )}
+      {onOrganize && (
+        <button
+          type="button"
+          className="tce-hover-action"
+          onClick={onOrganize}
+          aria-label={t(`Modifier l’organisation de ${tool.name}`, `Edit ${tool.name} organization`)}
+          title={t("Modifier l’organisation", "Edit organization")}
+        >
+          <Pencil size={19} aria-hidden />
+        </button>
+      )}
+      {showPin && (
+        <PinToolButton
+          slug={tool.slug ?? tool.id}
+          label={tool.name}
+          t={t}
+          compact
+          inline
+          labelMode="icon"
+        />
+      )}
+    </div>
   );
 }
 
@@ -221,6 +185,16 @@ export function ToolCardEditorial({
               </div>
             )}
           />
+          {(exploreHref || showPin || onOrganize) && (
+            <CardHoverActions
+              tool={tool}
+              t={t}
+              exploreHref={exploreHref}
+              exploreState={exploreState}
+              showPin={showPin}
+              onOrganize={onOrganize}
+            />
+          )}
         </div>
 
         <div className="tce-body">
@@ -232,16 +206,6 @@ export function ToolCardEditorial({
                 {(typeLabel || categoryLabel) && <span className="tce-category">{typeLabel || categoryLabel}</span>}
               </div>
             </div>
-            {(exploreHref || showPin || onOrganize) && (
-              <CardActionMenu
-                tool={tool}
-                t={t}
-                exploreHref={exploreHref}
-                exploreState={exploreState}
-                showPin={showPin}
-                onOrganize={onOrganize}
-              />
-            )}
           </div>
         </div>
       </article>
