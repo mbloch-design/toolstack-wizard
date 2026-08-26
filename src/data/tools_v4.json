@@ -54951,6 +54951,182 @@
     "ogImageUrl": "https://www.glideapps.com/opengraph-image-1udkml.jpg?opengraph-image.17dzzryfiu_y8.jpg"
   },
   {
+    "id": "glyphe",
+    "slug": "glyphe",
+    "name": "Glyphe",
+    "category": "finance",
+    "shortDescription": "Conformité documentaire automatisée pour les conseillers en gestion de patrimoine français.",
+    "shortDescriptionEn": "Automated compliance documents for French wealth management advisers.",
+    "description": "Glyphe automatise la collecte de pièces, le KYC, la génération des documents réglementaires et leur signature électronique pour les conseillers en gestion de patrimoine. Le produit adapte les dossiers aux référentiels ANACOFI, CNCGP et CNCEF, avec Magic Link mobile, OCR, marque blanche et suivi des documents qui expirent.\n\nLe tarif public est de 79 € HT par utilisateur et par mois, sans engagement. Le premier client est offert sans carte bancaire. Glyphe est surtout pertinent pour un cabinet français qui perd du temps à assembler manuellement ses dossiers clients ; il ne remplace pas un logiciel patrimonial complet comme Harvest et son intérêt diminue si votre association professionnelle n'est pas encore prise en charge.",
+    "longDescription": "Glyphe automatise la collecte de pièces, le KYC, la génération des documents réglementaires et leur signature électronique pour les conseillers en gestion de patrimoine. Le produit adapte les dossiers aux référentiels ANACOFI, CNCGP et CNCEF, avec Magic Link mobile, OCR, marque blanche et suivi des documents qui expirent.\n\nLe tarif public est de 79 € HT par utilisateur et par mois, sans engagement. Le premier client est offert sans carte bancaire. Glyphe est surtout pertinent pour un cabinet français qui perd du temps à assembler manuellement ses dossiers clients ; il ne remplace pas un logiciel patrimonial complet comme Harvest et son intérêt diminue si votre association professionnelle n'est pas encore prise en charge.",
+    "longDescriptionEn": "Glyphe automates document collection, KYC, regulatory document generation and electronic signatures for French wealth management advisers. It aligns files with ANACOFI, CNCGP and CNCEF requirements and includes mobile magic links, OCR, white labelling and document-expiry tracking.\n\nThe public price is €79 excluding VAT per user per month with no commitment. The first client is free without a credit card. Glyphe is most relevant for French firms spending significant time assembling compliant client files manually; it does not replace a complete wealth management platform and is less relevant when the firm's professional association is not supported.",
+    "pricing": {
+      "free": "Premier client offert, sans carte bancaire",
+      "paid": "79 €/mois HT par utilisateur, sans engagement"
+    },
+    "pricingEn": {
+      "free": "First client free, no credit card required",
+      "paid": "€79/month excl. VAT per user, no commitment"
+    },
+    "defaultMonthlyPrice": 79,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 79,
+      "compare_plan_name": "Tout inclus",
+      "compare_plan_kind": "seat",
+      "showCostTable": false,
+      "price_reliability": "official_explicit",
+      "usage_sensitive": false,
+      "location_sensitive": true,
+      "verified_on": "2026-08-26",
+      "source_domain": "glyphe.eu",
+      "official_source_url": "https://glyphe.eu/#tarif",
+      "verification_status": "official_explicit",
+      "cautions": [
+        "Tarif affiché hors taxes et par utilisateur.",
+        "Vérifier que l'association professionnelle du cabinet est prise en charge."
+      ]
+    },
+    "affiliateLink": "https://glyphe.eu/",
+    "websiteUrl": "https://glyphe.eu/",
+    "logo": "/logos/glyphe.svg",
+    "ogImageUrl": "/og-screenshots/glyphe.jpg",
+    "seo": {
+      "metaDescription": "Glyphe automatise KYC, documents conformes ANACOFI, CNCGP et CNCEF, signature électronique et suivi client. Avis, prix et limites.",
+      "metaDescriptionEn": "Glyphe automates KYC, ANACOFI, CNCGP and CNCEF compliance documents, e-signatures and client follow-up. Review, pricing and limits."
+    },
+    "articles": [],
+    "covers": [
+      "conformite",
+      "kyc",
+      "documents-clients",
+      "signature-electronique"
+    ],
+    "functional_needs": [
+      "conformite",
+      "gestion-documentaire",
+      "kyc",
+      "signature-electronique"
+    ],
+    "verticals": [
+      "finance",
+      "conseil",
+      "gestion-patrimoine"
+    ],
+    "relevantFor": [
+      "Conseillers en gestion de patrimoine",
+      "Cabinets CIF français",
+      "Membres ANACOFI, CNCGP ou CNCEF"
+    ],
+    "personas": [
+      "consultant",
+      "cabinet"
+    ],
+    "bestFor": [
+      "cgp",
+      "cif",
+      "cabinet-financier"
+    ],
+    "alternatives": [
+      "harvest"
+    ],
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "soloRelevance": "high",
+    "teamRelevance": "high",
+    "tool_type": "metier",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "ia_use_case": [
+      "generation-documentaire",
+      "extraction-ocr"
+    ],
+    "migrationGuide": null,
+    "downgradePlan": {
+      "freeTier": "Premier client offert",
+      "available": false
+    },
+    "verdict": {
+      "keepIf": [
+        "Vous gérez des dossiers clients conformes à l'ANACOFI, la CNCGP ou la CNCEF.",
+        "La collecte de pièces, la rédaction et les signatures vous prennent plusieurs heures par dossier.",
+        "Vous voulez conserver votre logiciel patrimonial tout en automatisant le parcours documentaire."
+      ],
+      "avoidIf": [
+        "Votre association professionnelle n'est pas encore supportée.",
+        "Vous cherchez un logiciel patrimonial complet ou un CRM généraliste.",
+        "Vous exercez hors du cadre réglementaire français des CIF."
+      ],
+      "threshold": "Testez Glyphe avec le premier client offert si la préparation manuelle d'un dossier conforme vous prend régulièrement plus d'une heure."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You manage client files under ANACOFI, CNCGP or CNCEF requirements.",
+        "Document collection, drafting and signatures take hours per client.",
+        "You want to retain your wealth platform while automating compliance documents."
+      ],
+      "avoidIf": [
+        "Your professional association is not yet supported.",
+        "You need a full wealth management platform or general-purpose CRM.",
+        "You operate outside the French financial-adviser regulatory framework."
+      ],
+      "threshold": "Use the free first client to test Glyphe when preparing a compliant file manually regularly takes more than an hour."
+    },
+    "pros": [
+      "Documents adaptés aux référentiels ANACOFI, CNCGP et CNCEF.",
+      "Collecte mobile sans compte client via Magic Link.",
+      "OCR, génération documentaire et signature électronique intégrés.",
+      "Marque blanche et hébergement annoncé en France."
+    ],
+    "prosEn": [
+      "Documents aligned with ANACOFI, CNCGP and CNCEF requirements.",
+      "Account-free mobile collection through magic links.",
+      "Built-in OCR, document generation and electronic signatures.",
+      "White labelling and stated hosting in France."
+    ],
+    "cons": [
+      "Périmètre limité aux associations professionnelles prises en charge.",
+      "Tarif de 79 € HT par utilisateur à partir du deuxième client.",
+      "Ne remplace pas un logiciel de gestion patrimoniale complet."
+    ],
+    "consEn": [
+      "Limited to supported professional associations.",
+      "€79 excluding VAT per user from the second client onward.",
+      "Does not replace a complete wealth management platform."
+    ],
+    "useCases": [
+      "Collecter les pièces KYC d'un nouveau client depuis son téléphone.",
+      "Générer une lettre de mission et une déclaration d'adéquation conformes.",
+      "Faire signer et archiver un dossier client sans papier.",
+      "Suivre automatiquement les documents expirants et les relevés annuels."
+    ],
+    "useCasesEn": [
+      "Collect a new client's KYC documents from their phone.",
+      "Generate compliant engagement and suitability documents.",
+      "Sign and archive a client file without paper.",
+      "Track expiring documents and annual statements automatically."
+    ],
+    "timeGainedHoursPerMonth": 8,
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [
+      "Quelle est votre association professionnelle ?",
+      "Combien de nouveaux dossiers clients préparez-vous par mois ?",
+      "Quel logiciel patrimonial utilisez-vous déjà ?"
+    ],
+    "substitution_cluster_v2": "finance-cgp-compliance",
+    "decision_policy_v3": {
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": false,
+      "default_decision_lane": "review",
+      "auto_downgrade_allowed": false,
+      "never_auto_cancel_reason": "La conformité documentaire dépend du statut, de l'association professionnelle et du processus réglementaire du cabinet.",
+      "requires_context_questions": true
+    },
+    "force_silence": false
+  },
+  {
     "id": "gmail",
     "slug": "gmail",
     "name": "Gmail",
@@ -166931,23 +167107,41 @@
     "id": "zed",
     "slug": "zed",
     "name": "Zed",
-    "category": "productivity-tracking",
-    "shortDescription": "Éditeur de code haute performance avec collaboration.",
-    "shortDescriptionEn": "High-performance code editor with collaboration.",
-    "description": "Zed, c'est éditeur de code haute performance avec collaboration. Gratuit pour commencer, payant pour aller plus loin.\n\nPerformance exceptionnelle (Rust). démarrage quasi-instantané, collaboration en temps réel native. Interface épurée et moderne. Concrètement : éditer du code sur de gros projets sans lag. Ou encore : pair-programmer en temps réel.\n\nÀ garder si : vS Code trop lent sur vos projets ou besoin de collaboration en temps réel. À éviter si : dépendance à des extensions VS Code spécifiques ou windows (pour l'instant). Limite principale : écosystème d'extensions naissant. Gratuit — à tester si VS Code ralentit sur vos projets.",
-    "longDescription": "Zed, c'est éditeur de code haute performance avec collaboration. Gratuit pour commencer, payant pour aller plus loin.\n\nPerformance exceptionnelle (Rust). démarrage quasi-instantané, collaboration en temps réel native. Interface épurée et moderne. Concrètement : éditer du code sur de gros projets sans lag. Ou encore : pair-programmer en temps réel.\n\nÀ garder si : vS Code trop lent sur vos projets ou besoin de collaboration en temps réel. À éviter si : dépendance à des extensions VS Code spécifiques ou windows (pour l'instant). Limite principale : écosystème d'extensions naissant. Gratuit — à tester si VS Code ralentit sur vos projets.",
-    "longDescriptionEn": "Zed is high-performance code editor with collaboration. Free to start, paid plans for more.",
+    "category": "ai-general",
+    "shortDescription": "Éditeur de code natif, rapide, collaboratif et compatible avec les agents IA.",
+    "shortDescriptionEn": "A fast native code editor with multiplayer collaboration and AI agents.",
+    "description": "Zed est un éditeur de code natif conçu pour rester rapide sur de gros projets. Sa collaboration multijoueur permet de partager un projet et de modifier les mêmes fichiers en temps réel, avec curseurs partagés et appels privés.\n\nLe plan Personal est gratuit et l'éditeur fonctionne sans abonnement. Il inclut 2 000 prédictions de modification acceptées et permet d'utiliser ses propres clés API ou des agents externes sans limite imposée par Zed. Le plan Pro coûte 10 $/mois et ajoute les prédictions illimitées ainsi que 5 $ de crédits de tokens hébergés.\n\nZed est disponible sur macOS, Linux et Windows. Son principal compromis reste un écosystème d'extensions moins vaste que celui de VS Code ou des IDE JetBrains.",
+    "longDescription": "Zed est un éditeur de code natif conçu pour rester rapide sur de gros projets. Sa collaboration multijoueur permet de partager un projet et de modifier les mêmes fichiers en temps réel, avec curseurs partagés et appels privés.\n\nLe plan Personal est gratuit et l'éditeur fonctionne sans abonnement. Il inclut 2 000 prédictions de modification acceptées et permet d'utiliser ses propres clés API ou des agents externes sans limite imposée par Zed. Le plan Pro coûte 10 $/mois et ajoute les prédictions illimitées ainsi que 5 $ de crédits de tokens hébergés.\n\nZed est disponible sur macOS, Linux et Windows. Son principal compromis reste un écosystème d'extensions moins vaste que celui de VS Code ou des IDE JetBrains.",
+    "longDescriptionEn": "Zed is a native code editor designed to stay fast on large projects. Its built-in multiplayer collaboration lets people share a project and edit the same files in real time, with shared cursors and private calls.\n\nThe Personal plan is free and the editor works without a subscription. It includes 2,000 accepted edit predictions and unlimited use with your own API keys or external agents. Pro costs $10/month and adds unlimited edit predictions plus $5 in hosted token credits.\n\nZed is available on macOS, Linux, and Windows. Its main trade-off is a smaller extension ecosystem than VS Code or JetBrains IDEs.",
     "pricing": {
       "free": "Gratuit et open-source",
-      "paid": "N/A"
+      "paid": "Pro à 10 $/mois · Business à 30 $/utilisateur/mois"
     },
-    "pricingEn": null,
+    "pricingEn": {
+      "free": "Personal plan: $0 forever",
+      "paid": "Pro $10/month · Business $30/user/month"
+    },
     "defaultMonthlyPrice": 0,
-    "pricing_v5": null,
-    "affiliateLink": "",
-    "websiteUrl": "",
-    "logo": "",
-    "seo": null,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "compare_plan_name": "Personal",
+      "compare_plan_kind": "individual",
+      "price_reliability": "official_explicit",
+      "usage_sensitive": false,
+      "location_sensitive": false,
+      "verified_on": "2026-08-26",
+      "source_domain": "zed.dev",
+      "official_source_url": "https://zed.dev/pricing",
+      "verification_status": "official_explicit"
+    },
+    "affiliateLink": "https://zed.dev/",
+    "websiteUrl": "https://zed.dev/",
+    "logo": "/logos/zed.svg",
+    "ogImageUrl": "/og-screenshots/zed.webp",
+    "seo": {
+      "metaDescription": "Zed en 2026 : éditeur de code natif rapide, collaboration multijoueur, agents IA, plan gratuit et Pro à 10 $/mois. Verdict ToolTrim.",
+      "metaDescriptionEn": "Zed in 2026: fast native code editor, multiplayer collaboration, AI agents, free plan and $10/month Pro tier. ToolTrim verdict."
+    },
     "articles": [],
     "covers": [
       "coding",
@@ -166961,7 +167155,10 @@
       "Startups tech",
       "Paires programmation"
     ],
-    "alternatives": [],
+    "alternatives": [
+      "cursor",
+      "windsurf"
+    ],
     "verdict": {
       "keepIf": [
         "Vous êtes développeur cherchant éditeur performant.",
@@ -166977,16 +167174,15 @@
     },
     "verdictEn": {
       "keepIf": [
-        "You're a developer seeking high-performance editor.",
-        "You love modern Rust-based tools.",
-        "You want integrated real-time collaboration."
+        "Your current editor slows down on large projects",
+        "You pair-program or share code live",
+        "You want AI agents without being locked into a hosted model"
       ],
       "avoidIf": [
-        "You're IDE-dependent (Visual Studio, IntelliJ).",
-        "You've never left VS Code.",
-        "You're afraid to experiment with new editors."
+        "You rely on niche VS Code extensions",
+        "Your workflow depends heavily on a JetBrains IDE"
       ],
-      "threshold": "Zed is ideal for Rust and modern developers; for complex projects, VS Code or IDEs remain safe."
+      "threshold": "Start with the free Personal plan; pay for Pro only when unlimited edit predictions or hosted AI credits matter."
     },
     "pros": [
       "Entièrement gratuit et open-source.",
@@ -166997,12 +167193,10 @@
       "Créé par expert (Atom co-créateur)."
     ],
     "prosEn": [
-      "Completely free and open-source.",
-      "Ultra-fast (Rust architecture).",
-      "Native real-time collaboration.",
-      "Integrated multilingual LSP.",
-      "Built-in terminal.",
-      "Created by expert (Atom co-creator)."
+      "Fast native editor",
+      "Built-in real-time multiplayer collaboration",
+      "Works with your own API keys and external agents",
+      "Available on macOS, Linux, and Windows"
     ],
     "cons": [
       "Écosystème plugins moins riche que VS Code.",
@@ -167010,9 +167204,9 @@
       "Migration depuis VS Code exige adaptation."
     ],
     "consEn": [
-      "Plugin ecosystem less rich than VS Code.",
-      "Young product (2023-2026).",
-      "Migration from VS Code requires adaptation."
+      "Smaller extension ecosystem than VS Code",
+      "No web version",
+      "Product and ecosystem are still evolving quickly"
     ],
     "useCases": [
       "Pair programming temps réel sans plugin.",
@@ -167020,9 +167214,9 @@
       "Édition légère et ultra-rapide."
     ],
     "useCasesEn": [
-      "Real-time pair programming without plugins.",
-      "Develop in performant Rust.",
-      "Lightning-fast and lightweight editing."
+      "Edit large codebases in a responsive native editor",
+      "Pair-program with shared cursors and edits",
+      "Use AI agents with hosted models or your own API keys"
     ],
     "personas": [
       "THEO"
@@ -167031,12 +167225,21 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "verticals": [],
+    "verticals": [
+      "developpeur-solo",
+      "ai-builder",
+      "cto-lead-tech"
+    ],
     "functional_needs": [
       "coding",
-      "collaboration-dev"
+      "collaboration-dev",
+      "developer-tools",
+      "integration-llm"
     ],
-    "ia_use_case": null,
+    "ia_use_case": [
+      "coding",
+      "agentic-development"
+    ],
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,

@@ -116,6 +116,9 @@ export interface PricingV5 {
   costTable?: ToolCostRow[];
   costTableNoteFr?: string;
   costTableNoteEn?: string;
+  /** Disable the automatic team-size projection when multiplying the public
+   * seat price would be editorially misleading for this tool. */
+  showCostTable?: boolean;
   // Optional worked TCO example (config time + monthly admin overhead
   // converted to an hourly rate). Absent on most tools.
   tcoExampleFr?: string;

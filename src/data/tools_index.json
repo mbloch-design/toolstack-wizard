@@ -13663,6 +13663,46 @@
     "betterAlternative": null
   },
   {
+    "id": "glyphe",
+    "slug": "glyphe",
+    "name": "Glyphe",
+    "categoryId": "finance",
+    "shortDescription": "Conformité documentaire automatisée pour les conseillers en gestion de patrimoine français.",
+    "shortDescriptionEn": "Automated compliance documents for French wealth management advisers.",
+    "pricing": {
+      "free": "Premier client offert, sans carte bancaire",
+      "paid": "79 €/mois HT par utilisateur, sans engagement"
+    },
+    "defaultMonthlyPrice": 79,
+    "affiliateLink": "https://glyphe.eu/",
+    "websiteUrl": "https://glyphe.eu/",
+    "ogImageUrl": "/og-screenshots/glyphe.jpg",
+    "logo": "/logos/glyphe.svg",
+    "tool_type": "metier",
+    "host_app": null,
+    "bundle_parent": null,
+    "substitution_cluster_v2": "finance-cgp-compliance",
+    "functional_needs": [
+      "conformite",
+      "gestion-documentaire",
+      "kyc",
+      "signature-electronique"
+    ],
+    "verticals": [
+      "finance",
+      "conseil",
+      "gestion-patrimoine"
+    ],
+    "relevantFor": [
+      "Conseillers en gestion de patrimoine",
+      "Cabinets CIF français",
+      "Membres ANACOFI, CNCGP ou CNCEF"
+    ],
+    "freeAlternative": null,
+    "substitutable": true,
+    "betterAlternative": null
+  },
+  {
     "id": "gmail",
     "slug": "gmail",
     "name": "Gmail",
@@ -41343,27 +41383,33 @@
     "id": "zed",
     "slug": "zed",
     "name": "Zed",
-    "categoryId": "productivity-tracking",
-    "shortDescription": "Éditeur de code haute performance avec collaboration.",
-    "shortDescriptionEn": "High-performance code editor with collaboration.",
+    "categoryId": "ai-general",
+    "shortDescription": "Éditeur de code natif, rapide, collaboratif et compatible avec les agents IA.",
+    "shortDescriptionEn": "A fast native code editor with multiplayer collaboration and AI agents.",
     "pricing": {
       "free": "Gratuit et open-source",
-      "paid": "N/A"
+      "paid": "Pro à 10 $/mois · Business à 30 $/utilisateur/mois"
     },
     "defaultMonthlyPrice": 0,
-    "affiliateLink": "",
-    "websiteUrl": "",
-    "ogImageUrl": "",
-    "logo": "",
+    "affiliateLink": "https://zed.dev/",
+    "websiteUrl": "https://zed.dev/",
+    "ogImageUrl": "/og-screenshots/zed.webp",
+    "logo": "/logos/zed.svg",
     "tool_type": "core",
     "host_app": null,
     "bundle_parent": null,
     "substitution_cluster_v2": null,
     "functional_needs": [
       "coding",
-      "collaboration-dev"
+      "collaboration-dev",
+      "developer-tools",
+      "integration-llm"
     ],
-    "verticals": [],
+    "verticals": [
+      "developpeur-solo",
+      "ai-builder",
+      "cto-lead-tech"
+    ],
     "relevantFor": [
       "Développeurs Rust",
       "Startups tech",

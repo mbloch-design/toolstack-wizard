@@ -35,6 +35,7 @@ function verdictForMonthly(monthlyEur: number): { fr: string; en: string } {
 export default function ToolCostBreakdownTable({ tool, lang, t }: Props) {
   const { currency } = useCurrency();
   const pv5 = (tool as any).pricing_v5;
+  if (pv5?.showCostTable === false) return null;
   const curatedRows = pv5?.costTable as CostRow[] | undefined;
 
   const minSeats = typeof pv5?.minSeats === "number" && pv5.minSeats > 1 ? pv5.minSeats : undefined;
