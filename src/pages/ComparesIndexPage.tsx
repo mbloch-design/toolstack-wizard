@@ -2,19 +2,18 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { ArrowUpDown, ArrowUpRight, Search, X } from "lucide-react";
 import { useLang } from "@/hooks/useLang";
-import { useTools } from "@/hooks/useSupabaseData";
+import { useToolSummaries, type ToolSummary } from "@/hooks/useSupabaseData";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import ToolLogo from "@/components/ToolLogo";
-import type { Tool } from "@/data/types";
 import { FEATURED_COMPARISONS } from "@/data/comparisons";
 import { useCatalogStickyToolbar } from "@/hooks/useCatalogStickyToolbar";
 
 /* ─── Helpers ────────────────────────────────────────────────────────────── */
-function findTool(tools: Tool[], idOrSlug: string): Tool | undefined {
+function findTool(tools: ToolSummary[], idOrSlug: string): ToolSummary | undefined {
   return tools.find(t => t.id === idOrSlug || t.slug === idOrSlug);
 }
 
-function compactToolPositioning(tool: Tool, lang: "fr" | "en"): string {
+function compactToolPositioning(tool: ToolSummary, lang: "fr" | "en"): string {
   const raw = (lang === "fr" ? tool.shortDescription : tool.shortDescriptionEn)
     || tool.shortDescription
     || tool.name;
@@ -26,8 +25,8 @@ function compactToolPositioning(tool: Tool, lang: "fr" | "en"): string {
 
 function getComparisonSummary(
   comparison: (typeof FEATURED_COMPARISONS)[number],
-  a: Tool,
-  b: Tool,
+  a: ToolSummary,
+  b: ToolSummary,
   lang: "fr" | "en",
 ): string {
   const authored = lang === "fr"
@@ -78,7 +77,7 @@ const COMPARE_CATEGORY_FILTERS: { id: CompareCategoryId; label: string; labelEn:
 /* ─── Main component ─────────────────────────────────────────────────────── */
 const ComparesIndexPage = () => {
   const { lang, t, prefix } = useLang();
-  const { tools, loading } = useTools();
+  const { tools, loading } = useToolSummaries();
 
   /* Single search query + category filter — also accept ?q= and ?cat= URL params
      so deep-links from the navbar (e.g. "Alternative à Notion") pre-fill the field. */
@@ -183,7 +182,13 @@ const ComparesIndexPage = () => {
     return () => cleanupSeo(["compares-index-jsonld"]);
   }, [lang, t]);
 
-  if (loading) {
+  {/* useToolSummaries() seeds `tools` synchronously from the bundled JSON
+      fallback (see staticToolSummaries), so real data is already there even
+      while `loading` is still true — only block on it when there's nothing
+      to show yet. Gating on `loading` alone left this page stuck on the
+      spinner forever during SSR, where the effect that flips it false never
+      runs. */}
+  if (loading && tools.length === 0) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div style={{ width: 32, height: 32, borderRadius: "var(--radius-circle)", border: "3px solid var(--color-border)", borderTopColor: "var(--color-text)", animation: "spin 0.8s linear infinite" }} />
