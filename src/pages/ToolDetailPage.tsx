@@ -7,6 +7,7 @@ import { ArrowRight, Check, CirclePlus, CircleMinus, ExternalLink } from "lucide
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
 import { setSeoTags, setMeta, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
+import { trackEvent } from "@/lib/analytics";
 import { FEATURED_COMPARISONS } from "@/data/comparisons";
 import { getToolDomain, getDomainFromUrl, formatPriceLabel, resolveVerdict, resolveToolOverview } from "@/lib/toolUtils";
 import { stripLeadingEmoji } from "@/lib/text";
@@ -434,7 +435,13 @@ const ToolDetailPage = () => {
                           )}
                         </div>
 
-                        <a href={primaryCtaUrl} target="_blank" rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl)} className="td-hero-site-link">
+                        <a
+                          href={primaryCtaUrl}
+                          target="_blank"
+                          rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl)}
+                          className="td-hero-site-link"
+                          onClick={() => trackEvent("outbound_tool_click", { tool_slug: tool.slug || tool.id })}
+                        >
                           {primaryCtaLabel}
                           <ExternalLink aria-hidden />
                         </a>

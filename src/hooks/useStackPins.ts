@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
+import { trackEvent } from "@/lib/analytics";
 import {
   STACK_STATE_STORAGE_KEY,
   assignToolNeedsBatchInState,
@@ -109,6 +110,9 @@ export function useStackPins() {
   }, []);
 
   const pinTool = useCallback((slug: string, needIds: string[] = []) => {
+    // Deliberate "Ajouter à Ma Stack" click — the closest thing this site has
+    // to a conversion event, and previously invisible in Analytics entirely.
+    trackEvent("add_to_stack", { tool_slug: slug });
     updateToolCartState((current) => pinToolInState(current, slug, needIds));
   }, []);
 
@@ -121,6 +125,10 @@ export function useStackPins() {
   }, []);
 
   const saveToolSelection = useCallback((slug: string, needIds: string[], intent: StackToolIntent) => {
+    // The confirm step of the "Enregistrer l'outil" dialog — the actual path
+    // the main "Ajouter [Tool]" button on a tool page goes through, distinct
+    // from the simpler one-click pinTool() used elsewhere (e.g. tool cards).
+    trackEvent("add_to_stack", { tool_slug: slug, intent });
     updateToolCartState((current) => saveToolSelectionInState(current, slug, needIds, intent));
   }, []);
 

@@ -12,6 +12,7 @@ import Footer from "@/components/Footer";
 import AppShellV2 from "@/components/v2shell/AppShellV2";
 import ScrollToTop from "@/components/ScrollToTop";
 import DynamicCanonical from "@/components/DynamicCanonical";
+import AnalyticsPageView from "@/components/AnalyticsPageView";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { Analytics } from "@vercel/analytics/react";
 
@@ -272,6 +273,7 @@ const App = () => (
       <BrowserRouter>
         <ScrollToTop />
         <DynamicCanonical />
+        <AnalyticsPageView />
         <Analytics />
         <ErrorBoundary>
         <Suspense fallback={<LazyFallback />}>
