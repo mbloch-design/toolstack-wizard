@@ -13,7 +13,7 @@ import { catalogProjectionRowsToTool, type CatalogProjectionRow } from "./src/li
 const BASE = "https://tooltrim.com";
 const LANGS = ["fr", "en"];
 // /selector excluded from sitemap (noindex tunnel)
-const STATIC_PAGES = ["", "tools", "category", "guides", "stacks", "about", "methodology", "transparency", "contact"];
+const STATIC_PAGES = ["", "tools", "category", "guides", "stacks", "about", "methodology", "transparency", "contact", "explorer"];
 const EXCLUDE_SITEMAP_PATTERNS = ["/selector/results", "/methodology"];
 // Fiches doublons consolidées : ces slugs redirigent (301) vers leur canonique
 // dans vercel.json. On ne les prérend pas et on ne les liste pas au sitemap
@@ -515,6 +515,9 @@ function sitemapPlugin(): Plugin {
           addPair(`${BASE}/fr/tool/${slug}/alternatives`, `${BASE}/en/tool/${slug}/alternatives`, "monthly", "0.7");
           addPair(`${BASE}/fr/tool/${slug}/avis`,         `${BASE}/en/tool/${slug}/reviews`,      "monthly", "0.6");
           addPair(`${BASE}/fr/tool/${slug}/faq`,          `${BASE}/en/tool/${slug}/faq`,          "monthly", "0.6");
+          // Mirrors staticPrerenderPlugin's explorer/around loop — one
+          // prerendered, indexable page per tool, same slug set.
+          addPair(`${BASE}/fr/explorer/around/${slug}`,   `${BASE}/en/explorer/around/${slug}`,   "monthly", "0.5");
         }
 
         // ── Category pages ────────────────────────────────────────────────────
