@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useMemo, useState, useCallback, useRef, type ReactNode, type TouchEvent } from "react";
-import { ArrowRight, Code2, Layers3, MessagesSquare, WandSparkles } from "lucide-react";
+import { ArrowRight, ChevronDown, Code2, Layers3, MessagesSquare, WandSparkles } from "lucide-react";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories } from "@/hooks/useSupabaseData";
 import { setSeoTags, setHreflang, setJsonLd, cleanupSeo, SEO_BASE } from "@/lib/seo";
@@ -340,6 +340,8 @@ export default function HomePageV2() {
   const [stackPage, setStackPage] = useState(0);
   const [aiPage, setAiPage] = useState(0);
   const [postPage, setPostPage] = useState(0);
+  const [selectedHost, setSelectedHost] = useState("adobe-creative-cloud");
+  const [workWithPage, setWorkWithPage] = useState(0);
 
   useEffect(() => {
     const title = lang === "fr"
@@ -455,6 +457,49 @@ export default function HomePageV2() {
     }
     return map;
   }, [tools]);
+
+  /* “Travailler avec” is driven by the catalogue relationship model rather
+     than a hand-authored list of recommendations. A host is only presented
+     when it has at least one visible compatible tool. */
+  const workWithHosts = useMemo(() => {
+    const preferred = ["figma", "adobe-after-effects", "adobe-creative-cloud", "google-workspace", "blender"];
+    const counts = new Map<string, number>();
+    for (const tool of tools) {
+      for (const host of tool.worksWith || []) counts.set(host, (counts.get(host) || 0) + 1);
+      for (const host of [tool.host_app, tool.bundle_parent]) {
+        if (host) counts.set(host, (counts.get(host) || 0) + 1);
+      }
+    }
+    return preferred
+      .filter((slug) => counts.has(slug) && tools.some((tool) => tool.slug === slug))
+      .map((slug) => ({ tool: tools.find((tool) => tool.slug === slug)!, count: counts.get(slug)! }))
+      .slice(0, 5);
+  }, [tools]);
+
+  useEffect(() => {
+    if (workWithHosts.length > 0 && !workWithHosts.some(({ tool }) => tool.slug === selectedHost)) {
+      setSelectedHost(workWithHosts[0].tool.slug);
+    }
+  }, [selectedHost, workWithHosts]);
+
+  const allCompatibleTools = useMemo(
+    () => tools.filter((tool) =>
+      (tool.worksWith || []).includes(selectedHost)
+      || tool.host_app === selectedHost
+      || tool.bundle_parent === selectedHost
+    ),
+    [selectedHost, tools],
+  );
+  const workWithTotalPages = Math.max(1, Math.ceil(allCompatibleTools.length / AI_PAGE_SIZE));
+  const compatibleTools = allCompatibleTools.slice(workWithPage * AI_PAGE_SIZE, (workWithPage + 1) * AI_PAGE_SIZE);
+  const prevWorkWithPage = useCallback(() => setWorkWithPage((page) => Math.max(0, page - 1)), []);
+  const nextWorkWithPage = useCallback(
+    () => setWorkWithPage((page) => Math.min(workWithTotalPages - 1, page + 1)),
+    [workWithTotalPages],
+  );
+  const selectedHostTool = workWithHosts.find(({ tool }) => tool.slug === selectedHost)?.tool;
+
+  useEffect(() => setWorkWithPage(0), [selectedHost]);
 
   return (
     <div className="home-v2">
@@ -616,6 +661,82 @@ export default function HomePageV2() {
               })}
             </div>
           </section>
+
+          {/* ══ Travailler avec — same catalogue rhythm as the AI shelf ══ */}
+          {workWithHosts.length > 0 && compatibleTools.length > 0 && (
+            <section className="v2-catalog-section v2-workwith-section">
+              <div className="v2-section-head v2-workwith-head">
+                <div className="v2-section-heading-copy">
+                  <h2 className="v2-section-title v2-workwith-title">
+                    <span>{t("Travailler avec", "Works with")}</span>
+                    <details
+                      className="v2-workwith-select-wrap"
+                      onBlur={(event) => {
+                        if (!event.currentTarget.contains(event.relatedTarget)) event.currentTarget.removeAttribute("open");
+                      }}
+                    >
+                      <summary aria-label={t("Choisir un logiciel", "Choose software") as string}>
+                        <span className="v2-workwith-selected">{selectedHostTool?.name}</span>
+                        <ChevronDown aria-hidden="true" />
+                      </summary>
+                      <div className="v2-workwith-menu" role="menu">
+                        {workWithHosts.map(({ tool }) => (
+                          <button
+                            key={tool.slug}
+                            type="button"
+                            role="menuitemradio"
+                            aria-checked={selectedHost === tool.slug}
+                            className={selectedHost === tool.slug ? "is-active" : ""}
+                            onClick={(event) => {
+                              setSelectedHost(tool.slug);
+                              event.currentTarget.closest("details")?.removeAttribute("open");
+                            }}
+                          >
+                            <ToolLogo tool={tool as any} size={24} />
+                            <span>{tool.name}</span>
+                          </button>
+                        ))}
+                      </div>
+                    </details>
+                  </h2>
+                  <p className="v2-section-description">
+                    {t("Les extensions et services qui s’intègrent à votre outil de travail.", "Extensions and services that integrate with your work tool.")}
+                  </p>
+                </div>
+                <div className="v2-featured-nav">
+                  <CarouselControls
+                    onPrevious={prevWorkWithPage}
+                    onNext={nextWorkWithPage}
+                    previousDisabled={workWithPage === 0}
+                    nextDisabled={workWithPage >= workWithTotalPages - 1}
+                    previousLabel={t("Page précédente", "Previous page") as string}
+                    nextLabel={t("Page suivante", "Next page") as string}
+                  />
+                  <Link to={`${prefix}/explorer?type=outil&source=${selectedHost}`} className="tt-section-action v2-section-link">
+                    {t("Voir tous les outils", "View all tools")} <ArrowRight aria-hidden />
+                  </Link>
+                </div>
+              </div>
+              <SwipePager className="tc-grid v2-workwith-grid" onPrevious={prevWorkWithPage} onNext={nextWorkWithPage}>
+                {compatibleTools.map((tool) => {
+                  const catName = stripLeadingEmoji(
+                    lang === "en"
+                      ? (categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.nameEn
+                        || categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.name)
+                      : categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.name
+                  );
+                  return <ToolCardEditorial key={tool.id} tool={withHomeAssets(tool) as any} prefix={prefix} t={t} categoryLabel={catName} lang={lang} mediaClassName="tc-image--workwith" />;
+                })}
+              </SwipePager>
+              <CarouselPagination
+                current={workWithPage}
+                total={workWithTotalPages}
+                onChange={setWorkWithPage}
+                label={t("Choisir une page d’outils compatibles", "Choose a compatible tools page") as string}
+                pageLabel={(index) => t(`Page ${index + 1}`, `Page ${index + 1}`) as string}
+              />
+            </section>
+          )}
 
           {/* ══ 5. Curated stack collections — visual rail 1×5 ══ */}
           <section className="v2-catalog-section">

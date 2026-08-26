@@ -50,6 +50,7 @@ interface ToolCardEditorialProps {
   exploreHref?: string;
   exploreState?: unknown;
   onOrganize?: () => void;
+  mediaClassName?: string;
 }
 
 interface CardHoverActionsProps {
@@ -120,6 +121,7 @@ export function ToolCardEditorial({
   exploreHref,
   exploreState,
   onOrganize,
+  mediaClassName = "",
 }: ToolCardEditorialProps) {
   const presentation = getToolPresentation(tool, lang);
   const plan = presentation.planLabel;
@@ -178,6 +180,7 @@ export function ToolCardEditorial({
           <ToolCardImage
             tool={tool}
             logoSize={44}
+            className={mediaClassName}
             overlayMode="static"
             overlay={(
               <div className="tce-cover-meta">

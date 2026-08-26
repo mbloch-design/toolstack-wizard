@@ -6232,6 +6232,7 @@
     opacity: 1;
     transition: opacity 180ms ease-out;
   }
+  .tc-image.tc-image--workwith { aspect-ratio: 16 / 9; }
   .tc-image.is-loading img {
     opacity: 0;
   }
@@ -22222,6 +22223,101 @@ section[id] {
 
 .v2-catalog-section + .v2-catalog-section {
   margin-top: var(--v2-section-gap);
+}
+
+/* “Travailler avec” follows the exact same header/grid system as the other
+   catalogue shelves. Only its title contains an editable source product. */
+.v2-workwith-title {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: .28em;
+}
+.v2-workwith-select-wrap {
+  position: relative;
+  display: inline-block;
+  min-width: 0;
+}
+.v2-workwith-select-wrap summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border: 0;
+  list-style: none;
+  cursor: pointer;
+}
+.v2-workwith-select-wrap summary::-webkit-details-marker { display: none; }
+.v2-workwith-selected {
+  color: #5d55e8;
+  background: linear-gradient(90deg, #2457d6 0%, #7154d9 52%, #a94f92 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, #7154d9 38%, transparent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
+}
+.v2-workwith-select-wrap summary svg {
+  color: #7154d9;
+  width: 16px;
+  height: 16px;
+  stroke-width: 1.7;
+  transition: transform 160ms ease;
+}
+.v2-workwith-select-wrap[open] summary svg { transform: rotate(180deg); }
+.v2-workwith-select-wrap summary:focus-visible {
+  outline: 1px solid color-mix(in srgb, #7154d9 55%, transparent);
+  outline-offset: 6px;
+  border-radius: 3px;
+}
+.v2-workwith-menu {
+  position: absolute;
+  z-index: 30;
+  top: calc(100% + 14px);
+  left: 0;
+  width: max-content;
+  min-width: 260px;
+  max-width: min(360px, calc(100vw - 40px));
+  padding: 8px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: var(--color-surface);
+  box-shadow: 0 18px 48px rgba(25, 25, 22, .12);
+}
+.v2-workwith-menu button {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--color-text);
+  font: 400 15px/1.35 var(--font-ui);
+  text-align: left;
+  cursor: pointer;
+}
+.v2-workwith-menu button + button { margin-top: 2px; }
+.v2-workwith-menu button:hover,
+.v2-workwith-menu button:focus-visible {
+  outline: none;
+  background: var(--color-bg);
+}
+.v2-workwith-menu button.is-active {
+  background: color-mix(in srgb, #7154d9 8%, var(--color-surface));
+  color: #5c45bd;
+  font-weight: 500;
+}
+
+@media (max-width: 639px) {
+  .v2-workwith-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Search bar */
