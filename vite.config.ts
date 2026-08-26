@@ -153,8 +153,13 @@ function buildToolMetaDesc(tool: any, lang: string): string {
     // Le mot entier restant en fin de chaîne peut être une préposition/article
     // isolé (ex: "…gestion de", "…partenariats), avec") qui donne l'impression
     // d'une phrase coupée. On retire ces mots creux tant qu'ils traînent en bout.
+    // Le préfixe autorise aussi une élision ("d'une", "qu'un") : ces mots ne
+    // sont jamais précédés d'un espace, seulement de l'apostrophe. Une fois
+    // le mot élidé retiré, la consonne élidée qui reste seule ("d'", "l'"…
+    // devenu juste "d", "l"…) est tout aussi creuse et doit partir aussi —
+    // d'où sa présence dans la même liste.
     const trailingStopWord = isFr
-      ? /(?:^|\s)(de|du|des|un|une|la|le|les|et|à|en|sur|pour|avec|au|aux|par|ou|qui|que|dont|sans|dans|ni)$/i
+      ? /(?:^|\s|['’])(de|du|des|un|une|la|le|les|et|à|en|sur|pour|avec|au|aux|par|ou|qui|que|dont|sans|dans|ni|d|l|j|n|s|c|m|t|qu)$/i
       : /(?:^|\s)(of|the|a|an|and|or|to|for|with|on|in|at|by|from|as|that|which|but)$/i;
     let match: RegExpMatchArray | null;
     while ((match = base.match(trailingStopWord))) {
