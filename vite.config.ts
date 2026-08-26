@@ -1176,24 +1176,29 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             file: "index.html",
             lang: "fr",
             canonical: `${BASE}/fr`,
-            title: "ToolTrim : optimisez votre stack SaaS | Avis, prix et alternatives",
-            description: "ToolTrim analyse vos outils SaaS et vous aide à réduire vos coûts. Comparez les prix, découvrez des alternatives gratuites et optimisez votre stack en quelques clics.",
+            // Kept in sync with HomePageV2's own setSeoTags() call — the two
+            // had drifted (different title/description text server vs
+            // client), so GA4's page_title and the actual indexed <title>
+            // disagreed the moment JS took over. HomePageV2's copy wins as
+            // the source of truth since it's what the live component owns.
+            title: "ToolTrim — Auditer sa stack SaaS freelance",
+            description: "ToolTrim analyse ta stack SaaS selon ton profil, ton budget, ton TJM et tes usages réels pour repérer les doublons, challenger les abonnements inutiles et recommander les outils vraiment adaptés.",
             bodyText: "ToolTrim est le comparateur indépendant d'outils SaaS pour freelances, startups et équipes tech. Analysez votre stack actuelle, identifiez les abonnements inutiles et découvrez des alternatives plus économiques. Chaque outil est testé manuellement pendant 2 à 4 semaines. Nos recommandations sont neutres, vérifiées et conçues pour vous faire gagner du temps et de l'argent.",
           },
           {
             file: "fr/index.html",
             lang: "fr",
             canonical: `${BASE}/fr`,
-            title: "ToolTrim : optimisez votre stack SaaS | Avis, prix et alternatives",
-            description: "ToolTrim analyse vos outils SaaS et vous aide à réduire vos coûts. Comparez les prix, découvrez des alternatives gratuites et optimisez votre stack en quelques clics.",
+            title: "ToolTrim — Auditer sa stack SaaS freelance",
+            description: "ToolTrim analyse ta stack SaaS selon ton profil, ton budget, ton TJM et tes usages réels pour repérer les doublons, challenger les abonnements inutiles et recommander les outils vraiment adaptés.",
             bodyText: "ToolTrim est le comparateur indépendant d'outils SaaS pour freelances, startups et équipes tech. Analysez votre stack actuelle, identifiez les abonnements inutiles et découvrez des alternatives plus économiques. Chaque outil est testé manuellement pendant 2 à 4 semaines. Nos recommandations sont neutres, vérifiées et conçues pour vous faire gagner du temps et de l'argent.",
           },
           {
             file: "en/index.html",
             lang: "en",
             canonical: `${BASE}/en`,
-            title: "ToolTrim : optimize your SaaS stack | Reviews, pricing & alternatives",
-            description: "ToolTrim analyzes your SaaS tools and helps you cut costs. Compare pricing, find free alternatives and optimize your stack in just a few clicks.",
+            title: "ToolTrim — Audit your freelance SaaS stack",
+            description: "ToolTrim analyzes your SaaS stack based on your profile, budget, day rate and real usage to spot duplicates, challenge unnecessary subscriptions and recommend tools that actually fit.",
             bodyText: "ToolTrim is the independent SaaS tool comparison platform for freelancers, startups and tech teams. Audit your current stack, spot unnecessary subscriptions and discover cheaper alternatives. Every tool is manually tested for 2 to 4 weeks. Our recommendations are unbiased, verified and designed to save you time and money.",
           },
         ];
