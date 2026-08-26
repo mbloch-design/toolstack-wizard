@@ -685,6 +685,13 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
         let renderCategoryPage: ((path: string) => Promise<string>) | null = null;
         let renderToolsPage: ((path: string) => Promise<string>) | null = null;
         let renderStacksHubPage: ((path: string) => Promise<string>) | null = null;
+        let renderCategoriesIndexPage: ((path: string) => Promise<string>) | null = null;
+        let renderGuidesIndexPage: ((path: string) => Promise<string>) | null = null;
+        let renderComparatifsIndexPage: ((path: string) => Promise<string>) | null = null;
+        let renderAboutPage: ((path: string) => Promise<string>) | null = null;
+        let renderTransparencyPage: ((path: string) => Promise<string>) | null = null;
+        let renderContactPage: ((path: string) => Promise<string>) | null = null;
+        let renderExplorerLandingPage: ((path: string) => Promise<string>) | null = null;
         const ssrEntryPath = path.resolve(__dirname, "dist-ssr/entry-server.js");
         if (fs.existsSync(ssrEntryPath)) {
           try {
@@ -697,6 +704,13 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             renderCategoryPage = ssrModule.renderCategoryPage;
             renderToolsPage = ssrModule.renderToolsPage;
             renderStacksHubPage = ssrModule.renderStacksHubPage;
+            renderCategoriesIndexPage = ssrModule.renderCategoriesIndexPage;
+            renderGuidesIndexPage = ssrModule.renderGuidesIndexPage;
+            renderComparatifsIndexPage = ssrModule.renderComparatifsIndexPage;
+            renderAboutPage = ssrModule.renderAboutPage;
+            renderTransparencyPage = ssrModule.renderTransparencyPage;
+            renderContactPage = ssrModule.renderContactPage;
+            renderExplorerLandingPage = ssrModule.renderExplorerLandingPage;
           } catch (e) {
             console.warn("⚠️ SSR entry failed to load, falling back to meta-only prerender:", e);
           }
@@ -1397,6 +1411,12 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
         const SECTION_PAGES: { path: string; lang: string; title: string; description: string }[] = [
           { path: "/fr/tools",      lang: "fr", title: "Tous les outils SaaS pour freelances | ToolTrim",         description: "Comparez 200+ outils SaaS : avis honnêtes, prix vérifiés et alternatives moins chères. Filtrez par catégorie et trouvez la meilleure stack pour votre activité." },
           { path: "/en/tools",      lang: "en", title: "All SaaS tools for freelancers | ToolTrim",               description: "Compare 200+ SaaS tools: honest reviews, verified pricing and cheaper alternatives. Filter by category and find the best stack for your business." },
+          // No dedicated file existed for the bare index at all (only
+          // /category/:slug detail pages were prerendered) — it had no
+          // canonical/title of its own and fell back to whatever static
+          // file the SPA rewrite happened to serve for an unmatched path.
+          { path: "/fr/category",   lang: "fr", title: "Catégories d'outils SaaS pour freelances | ToolTrim",     description: "Explorez le catalogue ToolTrim par catégorie : CRM, facturation, design, IA, gestion de projet... Trouvez les meilleurs outils pour chaque besoin." },
+          { path: "/en/category",   lang: "en", title: "SaaS tool categories for freelancers | ToolTrim",         description: "Browse ToolTrim's catalogue by category: CRM, invoicing, design, AI, project management... Find the best tools for every need." },
           { path: "/fr/guides",     lang: "fr", title: "Guides et comparatifs SaaS pour freelances | ToolTrim",   description: "Nos guides pratiques pour choisir les meilleurs outils SaaS : comparatifs, analyses de prix et recommandations par profil freelance." },
           { path: "/en/guides",     lang: "en", title: "SaaS guides and comparisons for freelancers | ToolTrim",  description: "Practical guides to choose the best SaaS tools: comparisons, pricing analyses and recommendations by freelance profile." },
           { path: "/fr/stacks",     lang: "fr", title: "Stacks SaaS types pour freelances | ToolTrim",             description: "Stacks SaaS sobres par profil freelance, budget et niveau de maturité. Des combinaisons d'outils pensées pour vendre, livrer et payer moins." },
@@ -1444,6 +1464,13 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           // directly via their own route rather than through AppRoutes.
           const sectionRenderer = sp.path.endsWith("/tools") ? renderToolsPage
             : sp.path.endsWith("/stacks") ? renderStacksHubPage
+            : sp.path.endsWith("/category") ? renderCategoriesIndexPage
+            : sp.path.endsWith("/guides") ? renderGuidesIndexPage
+            : sp.path.endsWith("/comparatifs") ? renderComparatifsIndexPage
+            : sp.path.endsWith("/about") ? renderAboutPage
+            : sp.path.endsWith("/transparency") ? renderTransparencyPage
+            : sp.path.endsWith("/contact") ? renderContactPage
+            : sp.path.endsWith("/explorer") ? renderExplorerLandingPage
             : null;
           if (sectionRenderer) {
             try {

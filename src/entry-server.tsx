@@ -18,6 +18,13 @@ import StackDetailPage from "@/pages/StackDetailPage";
 import CategoryPage from "@/pages/CategoryPage";
 import ToolsPage from "@/pages/ToolsPage";
 import StacksPage from "@/pages/StacksPage";
+import CategoriesIndexPage from "@/pages/CategoriesIndexPage";
+import GuidesPage from "@/pages/GuidesPage";
+import ComparesIndexPage from "@/pages/ComparesIndexPage";
+import AboutPage from "@/pages/AboutPage";
+import TransparencyPage from "@/pages/TransparencyPage";
+import ContactPage from "@/pages/ContactPage";
+import ExplorerPage from "@/pages/ExplorerPage";
 
 export interface RenderedToolPage {
   html: string;
@@ -262,6 +269,196 @@ export async function renderStacksHubPage(path: string): Promise<string> {
               <Suspense fallback={null}>
                 <Routes>
                   <Route path="/:lang/stacks" element={<StacksPage />} />
+                </Routes>
+              </Suspense>
+            </ErrorBoundary>
+          </StaticRouter>
+        </TooltipProvider>
+      </QueryClientProvider>
+    </HelmetProvider>,
+  );
+}
+
+// Second wave of the same fix: six more lazy client routes shipped an empty
+// <div id="root"> (categories index, guides index, comparatifs index, about,
+// transparency, contact) — same rationale as renderToolsPage/renderStacksHubPage
+// above. /fr/category (bare, no slug) had no dedicated static file at all,
+// so it was silently falling back to whatever the SPA catch-all served.
+export async function renderCategoriesIndexPage(path: string): Promise<string> {
+  const queryClient = new QueryClient();
+
+  return renderToString(
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <StaticRouter location={path}>
+            <ScrollToTop />
+            <DynamicCanonical />
+            <ErrorBoundary>
+              <Suspense fallback={null}>
+                <Routes>
+                  <Route path="/:lang/category" element={<CategoriesIndexPage />} />
+                </Routes>
+              </Suspense>
+            </ErrorBoundary>
+          </StaticRouter>
+        </TooltipProvider>
+      </QueryClientProvider>
+    </HelmetProvider>,
+  );
+}
+
+export async function renderGuidesIndexPage(path: string): Promise<string> {
+  const queryClient = new QueryClient();
+
+  return renderToString(
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <StaticRouter location={path}>
+            <ScrollToTop />
+            <DynamicCanonical />
+            <ErrorBoundary>
+              <Suspense fallback={null}>
+                <Routes>
+                  <Route path="/:lang/guides" element={<GuidesPage />} />
+                </Routes>
+              </Suspense>
+            </ErrorBoundary>
+          </StaticRouter>
+        </TooltipProvider>
+      </QueryClientProvider>
+    </HelmetProvider>,
+  );
+}
+
+export async function renderComparatifsIndexPage(path: string): Promise<string> {
+  const queryClient = new QueryClient();
+
+  return renderToString(
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <StaticRouter location={path}>
+            <ScrollToTop />
+            <DynamicCanonical />
+            <ErrorBoundary>
+              <Suspense fallback={null}>
+                <Routes>
+                  <Route path="/:lang/comparatifs" element={<ComparesIndexPage />} />
+                </Routes>
+              </Suspense>
+            </ErrorBoundary>
+          </StaticRouter>
+        </TooltipProvider>
+      </QueryClientProvider>
+    </HelmetProvider>,
+  );
+}
+
+export async function renderAboutPage(path: string): Promise<string> {
+  const queryClient = new QueryClient();
+
+  return renderToString(
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <StaticRouter location={path}>
+            <ScrollToTop />
+            <DynamicCanonical />
+            <ErrorBoundary>
+              <Suspense fallback={null}>
+                <Routes>
+                  <Route path="/:lang/about" element={<AboutPage />} />
+                </Routes>
+              </Suspense>
+            </ErrorBoundary>
+          </StaticRouter>
+        </TooltipProvider>
+      </QueryClientProvider>
+    </HelmetProvider>,
+  );
+}
+
+export async function renderTransparencyPage(path: string): Promise<string> {
+  const queryClient = new QueryClient();
+
+  return renderToString(
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <StaticRouter location={path}>
+            <ScrollToTop />
+            <DynamicCanonical />
+            <ErrorBoundary>
+              <Suspense fallback={null}>
+                <Routes>
+                  <Route path="/:lang/transparency" element={<TransparencyPage />} />
+                </Routes>
+              </Suspense>
+            </ErrorBoundary>
+          </StaticRouter>
+        </TooltipProvider>
+      </QueryClientProvider>
+    </HelmetProvider>,
+  );
+}
+
+export async function renderContactPage(path: string): Promise<string> {
+  const queryClient = new QueryClient();
+
+  return renderToString(
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <StaticRouter location={path}>
+            <ScrollToTop />
+            <DynamicCanonical />
+            <ErrorBoundary>
+              <Suspense fallback={null}>
+                <Routes>
+                  <Route path="/:lang/contact" element={<ContactPage />} />
+                </Routes>
+              </Suspense>
+            </ErrorBoundary>
+          </StaticRouter>
+        </TooltipProvider>
+      </QueryClientProvider>
+    </HelmetProvider>,
+  );
+}
+
+// Bare /explorer (no source) — same fix, lower priority (it's a tool, not
+// content), but the objective and stack-based exploration entry points
+// deserve the same non-JS baseline as everything else.
+export async function renderExplorerLandingPage(path: string): Promise<string> {
+  const queryClient = new QueryClient();
+
+  return renderToString(
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <StaticRouter location={path}>
+            <ScrollToTop />
+            <DynamicCanonical />
+            <ErrorBoundary>
+              <Suspense fallback={null}>
+                <Routes>
+                  <Route path="/:lang/explorer" element={<ExplorerPage />} />
                 </Routes>
               </Suspense>
             </ErrorBoundary>
