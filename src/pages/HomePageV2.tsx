@@ -47,6 +47,13 @@ const AI_SLUGS = [
   "heygen","jasper","lovable","notion-ai","replit","stable-diffusion","suno","grok","windsurf",
 ];
 const AI_PAGE_SIZE = 4; // 1 row × 4 cols — AI tools carousel
+const LARGE_SHELF_PAGE_SIZE = 8; // 2 rows × 4 cols — major thematic shelves
+const LARGE_SHELF_MAX_PAGES = 3;
+const FREE_TOOL_SLUGS = [
+  "figma", "notion", "canva", "chatgpt", "claude", "perplexity", "trello", "slack",
+  "blender", "audacity", "obs-studio", "davinci-resolve", "n8n", "airtable", "miro", "loom",
+  "calendly", "tally", "brevo", "mailchimp", "github", "visual-studio-code", "gimp", "inkscape",
+];
 
 const HOME_TOOL_ASSETS: Record<string, { cover: string | null; logo?: string }> = {
   "affinity-photo": { cover: "/home-cards/affinity-photo.webp", logo: "/home-logos/affinity-photo.webp" },
@@ -342,6 +349,8 @@ export default function HomePageV2() {
   const [postPage, setPostPage] = useState(0);
   const [selectedHost, setSelectedHost] = useState("adobe-creative-cloud");
   const [workWithPage, setWorkWithPage] = useState(0);
+  const [freeToolsPage, setFreeToolsPage] = useState(0);
+  const [automationPage, setAutomationPage] = useState(0);
 
   useEffect(() => {
     const title = lang === "fr"
@@ -430,6 +439,34 @@ export default function HomePageV2() {
   const visibleAi = aiTools.slice(aiPage * AI_PAGE_SIZE, (aiPage + 1) * AI_PAGE_SIZE);
   const prevAiPage = useCallback(() => setAiPage((p) => Math.max(0, p - 1)), []);
   const nextAiPage = useCallback(() => setAiPage((p) => Math.min(aiTotalPages - 1, p + 1)), [aiTotalPages]);
+
+  /* ── Large thematic shelves ── */
+  const rankShelfTools = useCallback((items: typeof tools) => [...items].sort((a, b) => {
+    const recommendationDelta = Number(b.prescription_quality === "ferme") - Number(a.prescription_quality === "ferme");
+    if (recommendationDelta) return recommendationDelta;
+    const mediaDelta = Number(Boolean(b.ogImageUrl)) - Number(Boolean(a.ogImageUrl));
+    if (mediaDelta) return mediaDelta;
+    return a.name.localeCompare(b.name);
+  }), []);
+
+  const freeTools = useMemo(() => {
+    const bySlug = new Map(tools.map((tool) => [tool.slug, tool]));
+    return FREE_TOOL_SLUGS.flatMap((slug) => {
+      const tool = bySlug.get(slug);
+      return tool ? [tool] : [];
+    }).slice(0, LARGE_SHELF_PAGE_SIZE * LARGE_SHELF_MAX_PAGES);
+  }, [tools]);
+  const freeToolsTotalPages = Math.max(1, Math.ceil(freeTools.length / LARGE_SHELF_PAGE_SIZE));
+  const visibleFreeTools = freeTools.slice(freeToolsPage * LARGE_SHELF_PAGE_SIZE, (freeToolsPage + 1) * LARGE_SHELF_PAGE_SIZE);
+  const prevFreeToolsPage = useCallback(() => setFreeToolsPage((page) => Math.max(0, page - 1)), []);
+  const nextFreeToolsPage = useCallback(() => setFreeToolsPage((page) => Math.min(freeToolsTotalPages - 1, page + 1)), [freeToolsTotalPages]);
+
+  const automationTools = useMemo(() => rankShelfTools(tools.filter((tool) => tool.categoryId === "automation"))
+    .slice(0, LARGE_SHELF_PAGE_SIZE * LARGE_SHELF_MAX_PAGES), [rankShelfTools, tools]);
+  const automationTotalPages = Math.max(1, Math.ceil(automationTools.length / LARGE_SHELF_PAGE_SIZE));
+  const visibleAutomationTools = automationTools.slice(automationPage * LARGE_SHELF_PAGE_SIZE, (automationPage + 1) * LARGE_SHELF_PAGE_SIZE);
+  const prevAutomationPage = useCallback(() => setAutomationPage((page) => Math.max(0, page - 1)), []);
+  const nextAutomationPage = useCallback(() => setAutomationPage((page) => Math.min(automationTotalPages - 1, page + 1)), [automationTotalPages]);
 
   /* ── Stacks pagination (capped to STACK_MAX_PAGES screens) ── */
   const bySlug = useMemo(() => new Map(tools.map((t) => [t.slug, t])), [tools]);
@@ -591,6 +628,42 @@ export default function HomePageV2() {
             </section>
           )}
 
+          {/* ══ Outils gratuits — major 2×4 shelf ══ */}
+          {freeTools.length > 0 && (
+            <section className="v2-catalog-section">
+              <FeaturedHead
+                label={t("Outils gratuits", "Free tools")}
+                description={t("Des logiciels réellement utilisables sans abonnement pour lancer ou alléger votre stack.", "Software you can genuinely use without a subscription to start or lighten your stack.") as string}
+                to={`${prefix}/tools?pricing=free`}
+                linkLabel={t("Tous les outils gratuits", "All free tools")}
+                page={freeToolsPage}
+                total={freeToolsTotalPages}
+                onPrev={prevFreeToolsPage}
+                onNext={nextFreeToolsPage}
+                previousLabel={t("Page précédente", "Previous page") as string}
+                nextLabel={t("Page suivante", "Next page") as string}
+              />
+              <SwipePager className="tc-grid" onPrevious={prevFreeToolsPage} onNext={nextFreeToolsPage}>
+                {visibleFreeTools.map((tool) => {
+                  const catName = stripLeadingEmoji(
+                    lang === "en"
+                      ? (categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.nameEn
+                        || categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.name)
+                      : categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.name
+                  );
+                  return <ToolCardEditorial key={tool.id} tool={withHomeAssets(tool) as any} prefix={prefix} t={t} categoryLabel={catName} lang={lang} />;
+                })}
+              </SwipePager>
+              <CarouselPagination
+                current={freeToolsPage}
+                total={freeToolsTotalPages}
+                onChange={setFreeToolsPage}
+                label={t("Choisir une page d’outils gratuits", "Choose a free tools page") as string}
+                pageLabel={(index) => t(`Page ${index + 1}`, `Page ${index + 1}`) as string}
+              />
+            </section>
+          )}
+
           {/* ══ 3. Nouveautés — logo list 3×4 ══ */}
           {latestTools.length > 0 && (
             <section className="v2-catalog-section">
@@ -725,7 +798,7 @@ export default function HomePageV2() {
                         || categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.name)
                       : categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.name
                   );
-                  return <ToolCardEditorial key={tool.id} tool={withHomeAssets(tool) as any} prefix={prefix} t={t} categoryLabel={catName} lang={lang} mediaClassName="tc-image--workwith" />;
+                  return <ToolCardEditorial key={tool.id} tool={withHomeAssets(tool) as any} prefix={prefix} t={t} categoryLabel={catName} lang={lang} />;
                 })}
               </SwipePager>
               <CarouselPagination
@@ -733,6 +806,42 @@ export default function HomePageV2() {
                 total={workWithTotalPages}
                 onChange={setWorkWithPage}
                 label={t("Choisir une page d’outils compatibles", "Choose a compatible tools page") as string}
+                pageLabel={(index) => t(`Page ${index + 1}`, `Page ${index + 1}`) as string}
+              />
+            </section>
+          )}
+
+          {/* ══ Automatiser son travail — major 2×4 shelf ══ */}
+          {automationTools.length > 0 && (
+            <section className="v2-catalog-section">
+              <FeaturedHead
+                label={t("Automatiser son travail", "Automate your work")}
+                description={t("Connectez vos outils, éliminez les tâches répétitives et construisez des workflows plus fluides.", "Connect your tools, remove repetitive tasks and build smoother workflows.") as string}
+                to={`${prefix}/category/automation`}
+                linkLabel={t("Tous les outils d’automatisation", "All automation tools")}
+                page={automationPage}
+                total={automationTotalPages}
+                onPrev={prevAutomationPage}
+                onNext={nextAutomationPage}
+                previousLabel={t("Page précédente", "Previous page") as string}
+                nextLabel={t("Page suivante", "Next page") as string}
+              />
+              <SwipePager className="tc-grid" onPrevious={prevAutomationPage} onNext={nextAutomationPage}>
+                {visibleAutomationTools.map((tool) => {
+                  const catName = stripLeadingEmoji(
+                    lang === "en"
+                      ? (categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.nameEn
+                        || categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.name)
+                      : categories.find((c) => c.id === tool.categoryId || c.slug === tool.categoryId)?.name
+                  );
+                  return <ToolCardEditorial key={tool.id} tool={withHomeAssets(tool) as any} prefix={prefix} t={t} categoryLabel={catName} lang={lang} />;
+                })}
+              </SwipePager>
+              <CarouselPagination
+                current={automationPage}
+                total={automationTotalPages}
+                onChange={setAutomationPage}
+                label={t("Choisir une page d’outils d’automatisation", "Choose an automation tools page") as string}
                 pageLabel={(index) => t(`Page ${index + 1}`, `Page ${index + 1}`) as string}
               />
             </section>

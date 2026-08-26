@@ -6215,7 +6215,7 @@
      Bleeds out of the card's own 24px padding via negative margin. */
   .tc-image {
     position: relative;
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 40 / 21;
     margin: -24px -24px 20px -24px;
     border-radius: var(--radius) var(--radius) 0 0;
     overflow: hidden;
@@ -6232,7 +6232,6 @@
     opacity: 1;
     transition: opacity 180ms ease-out;
   }
-  .tc-image.tc-image--workwith { aspect-ratio: 16 / 9; }
   .tc-image.is-loading img {
     opacity: 0;
   }
@@ -6264,7 +6263,7 @@
     box-shadow: 0 0 0 8px var(--color-surface);
   }
   .tc-image.stack-detail-tool-image {
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 40 / 21;
     border: 0;
     border-bottom: 1px solid var(--color-border-soft);
     border-radius: var(--radius) var(--radius) 0 0;

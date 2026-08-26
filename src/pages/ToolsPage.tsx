@@ -120,12 +120,13 @@ const ToolsPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const urlSearch = searchParams.get("q") || "";
   const selectedVertical = searchParams.get("vertical") || "";
+  const urlPrice = searchParams.get("pricing");
   const [search, setSearch] = useState(urlSearch);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [browsedCategoryId, setBrowsedCategoryId] = useState("");
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [sort, setSort] = useState<SortKey>("popular");
-  const [priceFilter, setPriceFilter] = useState<PriceFilter>("all");
+  const [priceFilter, setPriceFilter] = useState<PriceFilter>(urlPrice === "free" || urlPrice === "paid" ? urlPrice : "all");
   const [visibleCount, setVisibleCount] = useState(TOOLS_PER_PAGE);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [canScrollTopicsLeft, setCanScrollTopicsLeft] = useState(false);
@@ -433,7 +434,14 @@ const ToolsPage = () => {
                     { id: "paid", label: t("Payant seulement", "Paid only") as string },
                   ]}
                   value={priceFilter}
-                  onChange={(id) => setPriceFilter(id as PriceFilter)}
+                  onChange={(id) => {
+                    const nextPrice = id as PriceFilter;
+                    setPriceFilter(nextPrice);
+                    const nextParams = new URLSearchParams(searchParams);
+                    if (nextPrice === "all") nextParams.delete("pricing");
+                    else nextParams.set("pricing", nextPrice);
+                    setSearchParams(nextParams, { replace: true });
+                  }}
                 />
               </div>
             </details>
