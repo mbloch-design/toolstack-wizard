@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import { useLocation } from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
 import { SEO_BASE, OG_IMAGE, getAlternateLinks } from "@/lib/seo";
 
 /**
@@ -15,9 +15,20 @@ import { SEO_BASE, OG_IMAGE, getAlternateLinks } from "@/lib/seo";
  */
 export default function DynamicCanonical() {
   const { pathname } = useLocation();
+  const [searchParams] = useSearchParams();
   const clean = pathname.replace(/\/+$/, "") || "";
   const canonicalPath = getCanonicalPath(clean);
-  const canonical = `${SEO_BASE}${canonicalPath}`;
+  // Every other query-string variant of a page collapses to its bare path
+  // (that's the point of a canonical tag). Explorer's "outil" source is the
+  // one deliberate exception: /explorer?type=outil&source=X is a distinct,
+  // indexable page per tool (see ExplorerPage's noindex logic), so it must
+  // self-canonicalise with those two params rather than defer to the bare
+  // /explorer landing page. Any other Explorer params (angle, theme,
+  // destination) still collapse into this canonical form.
+  const isExplorerOutilSource = /\/explorer$/.test(clean) && searchParams.get("type") === "outil" && !!searchParams.get("source");
+  const canonical = isExplorerOutilSource
+    ? `${SEO_BASE}${canonicalPath}?type=outil&source=${encodeURIComponent(searchParams.get("source")!)}`
+    : `${SEO_BASE}${canonicalPath}`;
 
   const localizedMatch = clean.match(/^\/(fr|en)(\/.*)?$/);
   const alternates = localizedMatch ? getAlternateLinks(clean) : [];

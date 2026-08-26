@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type KeyboardEvent } from "react";
 import { ArrowLeft, Check, ChevronLeft, ChevronRight, Compass, Plus } from "lucide-react";
-import { Link, useLocation, useNavigate, useSearchParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { toast } from "sonner";
 import ToolLogo from "@/components/ToolLogo";
 import StackSaveDialog from "@/components/stack/StackSaveDialog";
@@ -179,6 +179,7 @@ export default function ExplorerPage() {
   const location = useLocation();
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
+  const { slug: routeSlug } = useParams<{ slug?: string }>();
   const { tools } = useToolSummaries();
   const { categories } = useCategories();
   const { state, createNeed, saveToolSelection } = useStackPins();
@@ -186,31 +187,24 @@ export default function ExplorerPage() {
   const [addingSlug, setAddingSlug] = useState<string | null>(null);
   const [pendingTool, setPendingTool] = useState<ToolSummary | null>(null);
   const [isLoadingMore, setIsLoadingMore] = useState(false);
-  const source = useMemo(() => parseExplorationSource(searchParams), [searchParams]);
+  // /explorer/around/:slug (indexable, one static page per tool) takes
+  // priority over the legacy ?type=outil&source=X query form, which is
+  // redirected below for anyone still hitting it.
+  const source = useMemo(
+    () => (routeSlug ? { type: "outil" as const, slug: routeSlug } : parseExplorationSource(searchParams)),
+    [routeSlug, searchParams],
+  );
 
-  /* The explorer is driven by query params (type, source, destination, angle,
-     theme), so every filter combination is a distinct URL. Google was indexing
-     them as canonical-less duplicates. Only the bare /explorer is indexable;
-     every parameterised variant canonicalises to it and is noindexed. */
-  const hasFilterParams = searchParams.toString().length > 0;
   useEffect(() => {
-    setSeoTags({
-      title: lang === "en"
-        ? "Explore SaaS tools by need | ToolTrim"
-        : "Explorer les outils SaaS par besoin | ToolTrim",
-      description: lang === "en"
-        ? "Browse ToolTrim's SaaS catalogue by objective, category or workflow, and build a stack that fits how you actually work."
-        : "Parcourez le catalogue SaaS de ToolTrim par objectif, catégorie ou workflow, et composez une stack adaptée à votre façon de travailler.",
-      url: `${SEO_BASE}/${lang}/explorer`,
-      locale: lang === "en" ? "en_US" : "fr_FR",
-    });
-    if (hasFilterParams) setNoindex();
-    else removeNoindex();
-    return () => {
-      removeNoindex();
-      cleanupSeo([]);
-    };
-  }, [lang, hasFilterParams]);
+    if (routeSlug || searchParams.get("type") !== "outil") return;
+    const legacySlug = searchParams.get("source");
+    if (!legacySlug) return;
+    const rest = new URLSearchParams(searchParams);
+    rest.delete("type");
+    rest.delete("source");
+    const query = rest.toString();
+    navigate(`${prefix}/explorer/around/${encodeURIComponent(legacySlug)}${query ? `?${query}` : ""}`, { replace: true });
+  }, [navigate, prefix, routeSlug, searchParams]);
 
   const explorerHistoryKey = `${location.key}:${location.pathname}${location.search}`;
   const requestedDestinationId = searchParams.get("destination");
@@ -317,9 +311,46 @@ export default function ExplorerPage() {
     rememberExplorerResultLimit(explorerHistoryKey, resultLimit);
   }, [explorerHistoryKey, resultLimit]);
 
+  /* The explorer is driven by query params (type, source, destination, angle,
+     theme), so every filter combination is technically a distinct URL. Only
+     two shapes are worth indexing on their own: the bare /explorer landing
+     page, and a "type=outil" source ("explore around Notion") — that one has
+     genuine standalone long-tail value (alternatives to a specific tool) and
+     gets its own title/description/canonical below. The "objectif" and
+     "stack" sources are derived from a user's own picks and don't carry
+     unique enough content to index; they stay noindexed and fall back to the
+     generic explorer copy. */
   useEffect(() => {
-    document.title = `${t("Explorer les outils", "Explore tools")} · ToolTrim`;
-  }, [t]);
+    if (source?.type === "outil" && sourceTool) {
+      setSeoTags({
+        title: lang === "en"
+          ? `Alternatives to ${sourceLabel}: similar tools | ToolTrim`
+          : `Alternatives à ${sourceLabel} : outils similaires | ToolTrim`,
+        description: lang === "en"
+          ? `Discover tools comparable to ${sourceLabel}, with manually verified pricing and independent verdicts on ToolTrim.`
+          : `Découvrez des outils comparables à ${sourceLabel}, avec prix vérifiés à la main et verdicts indépendants sur ToolTrim.`,
+        url: `${SEO_BASE}/${lang}/explorer/around/${encodeURIComponent(source.slug)}`,
+        locale: lang === "en" ? "en_US" : "fr_FR",
+      });
+    } else {
+      setSeoTags({
+        title: lang === "en"
+          ? "Explore SaaS tools by need | ToolTrim"
+          : "Explorer les outils SaaS par besoin | ToolTrim",
+        description: lang === "en"
+          ? "Browse ToolTrim's SaaS catalogue by objective, category or workflow, and build a stack that fits how you actually work."
+          : "Parcourez le catalogue SaaS de ToolTrim par objectif, catégorie ou workflow, et composez une stack adaptée à votre façon de travailler.",
+        url: `${SEO_BASE}/${lang}/explorer`,
+        locale: lang === "en" ? "en_US" : "fr_FR",
+      });
+    }
+    if (source?.type === "objectif" || source?.type === "stack") setNoindex();
+    else removeNoindex();
+    return () => {
+      removeNoindex();
+      cleanupSeo([]);
+    };
+  }, [lang, sourceKey, sourceLabel, source, sourceTool]);
 
   const fallbackHref = source?.type === "stack"
     ? `${prefix}/ma-stack`

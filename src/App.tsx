@@ -222,6 +222,7 @@ export const AppRoutes = () => (
       <Route path="stories" element={<RedirectStoriesToGuides />} />
       <Route path="ma-stack" element={<CartPage />} />
       <Route path="explorer" element={<ExplorerPage />} />
+      <Route path="explorer/around/:slug" element={<ExplorerPage />} />
       <Route path="my-stack" element={<CartPage />} />
       <Route path="panier" element={<CartPage />} />
       <Route path="cart" element={<CartPage />} />

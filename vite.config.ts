@@ -1416,6 +1416,54 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           fs.writeFileSync(path.resolve(outDir, "index.html"), html, "utf-8");
         }
 
+        // --- Prerender "explore around X" pages (one per tool) ---
+        // Query-string exploration (/explorer?type=outil&source=X) can't get
+        // its own static file — a static host serves the same index.html
+        // regardless of query string, so the canonical/title baked in here
+        // would always collapse back to the generic /explorer page. A real
+        // path segment per tool is the only way to give each of these a
+        // distinct, indexable static shell, matching how /tool/:slug works.
+        let explorerAroundRendered = 0;
+        for (const tool of ficheTools) {
+          const slug = tool.slug || tool.id;
+          if (DEPRECATED_TOOL_SLUGS.has(slug)) continue;
+          const name = tool.name || slug;
+          for (const lang of ["fr", "en"] as const) {
+            const sourcePath = `/${lang}/explorer/around/${slug}`;
+            const url = `${BASE}${sourcePath}`;
+            const title = lang === "fr"
+              ? `Alternatives à ${name} : outils similaires | ToolTrim`
+              : `Alternatives to ${name}: similar tools | ToolTrim`;
+            const description = lang === "fr"
+              ? `Découvrez des outils comparables à ${name}, avec prix vérifiés à la main et verdicts indépendants sur ToolTrim.`
+              : `Discover tools comparable to ${name}, with manually verified pricing and independent verdicts on ToolTrim.`;
+            const altLang = lang === "fr" ? "en" : "fr";
+            const metaTags = [
+              `<link rel="canonical" href="${url}" />`,
+              `<link rel="alternate" hreflang="${lang}" href="${url}" />`,
+              `<link rel="alternate" hreflang="${altLang}" href="${BASE}/${altLang}/explorer/around/${slug}" />`,
+              `<link rel="alternate" hreflang="x-default" href="${BASE}/fr/explorer/around/${slug}" />`,
+              `<title>${title}</title>`,
+              `<meta name="description" content="${description.replace(/"/g, "&quot;")}" />`,
+              `<meta property="og:title" content="${title.replace(/"/g, "&quot;")}" />`,
+              `<meta property="og:description" content="${description.replace(/"/g, "&quot;")}" />`,
+              `<meta property="og:url" content="${url}" />`,
+            ].join("\n    ");
+
+            let html = baseHtml;
+            html = html.replace(/(<html[^>]*)lang="[^"]*"/, `$1lang="${lang}"`);
+            html = html.replace(/<link\s+rel="canonical"[^>]*\/?>/, "");
+            html = html.replace(/<title>[^<]*<\/title>/, "");
+            html = html.replace(/<meta\s+name="description"[^>]*\/?>/, "");
+            html = html.replace("</head>", `    ${metaTags}\n  </head>`);
+
+            const outDir = path.resolve(distDir, sourcePath.replace(/^\//, ""));
+            fs.mkdirSync(outDir, { recursive: true });
+            fs.writeFileSync(path.resolve(outDir, "index.html"), html, "utf-8");
+            explorerAroundRendered++;
+          }
+        }
+
         // --- Prerender stack detail pages ---
         let stacksRendered = 0;
         for (const stack of STACKS) {
@@ -1777,7 +1825,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
 
         const subPageCount = tools.length * 2 * 4; // 4 sub-pages (prix, alternatives, faq, avis) × 2 langs
         const guidesCount = allPostsData.length;
-        console.log(`✅ Prerender : ${count} tool pages + ${subPageCount} tool sub-pages (${subPagesSsrd} SSR'd) + ${STACKS.length * 2} stack pages (${stacksRendered} SSR'd) + 3 landings + ${SEO_PAGES.length} SEO/pillar pages + ${SECTION_PAGES.length} section pages + ${categories.length * 2} category pages (ItemList) + ${FEATURED_COMPARISONS.length * 2} comparisons (${comparisonsRendered} SSR'd) + ${guidesCount} guide pages (${guidesSsrd} SSR'd, Article + FAQPage) + 404.html`);
+        console.log(`✅ Prerender : ${count} tool pages + ${subPageCount} tool sub-pages (${subPagesSsrd} SSR'd) + ${STACKS.length * 2} stack pages (${stacksRendered} SSR'd) + 3 landings + ${SEO_PAGES.length} SEO/pillar pages + ${SECTION_PAGES.length} section pages + ${categories.length * 2} category pages (ItemList) + ${FEATURED_COMPARISONS.length * 2} comparisons (${comparisonsRendered} SSR'd) + ${guidesCount} guide pages (${guidesSsrd} SSR'd, Article + FAQPage) + ${explorerAroundRendered} explorer/around pages + 404.html`);
       } catch (e) {
         console.warn("⚠️ Prerender failed:", e);
       }

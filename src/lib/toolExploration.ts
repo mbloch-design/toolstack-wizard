@@ -281,9 +281,19 @@ export function getExplorerHref(
   options: { angle?: ExplorationDirection; destination?: string | null } = {},
 ) {
   const params = new URLSearchParams();
-  params.set("type", source.type);
-  params.set("source", source.type === "objectif" ? source.id : source.type === "outil" ? source.slug : "ma-stack");
   if (options.destination) params.set("destination", options.destination);
   if (options.angle && options.angle !== "all") params.set("angle", options.angle);
+  const query = params.toString();
+  // "outil" sources ("explore around Notion") get a real path segment so
+  // they can each have their own prerendered, indexable static page — a
+  // query-string identity can't do that, since a static host serves the
+  // same file regardless of the query string. "objectif"/"stack" sources
+  // stay query-string based: they're derived from a user's own picks, not
+  // evergreen content worth a standalone URL, and remain noindexed.
+  if (source.type === "outil") {
+    return `${prefix}/explorer/around/${encodeURIComponent(source.slug)}${query ? `?${query}` : ""}`;
+  }
+  params.set("type", source.type);
+  params.set("source", source.type === "objectif" ? source.id : "ma-stack");
   return `${prefix}/explorer?${params.toString()}`;
 }
