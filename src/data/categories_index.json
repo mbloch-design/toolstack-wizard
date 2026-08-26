@@ -1,5 +1,29 @@
 [
   {
+    "id": "crm",
+    "slug": "crm",
+    "name": "CRM",
+    "nameEn": "CRM",
+    "description": "Gérer ses prospects, ses clients et son pipeline commercial sans jongler entre dix outils.",
+    "descriptionEn": "Manage prospects, clients and the sales pipeline without juggling ten different tools.",
+    "tools": [
+      "activecampaign",
+      "apollo",
+      "attio",
+      "bloom-crm",
+      "capsule",
+      "close",
+      "dubsado",
+      "folk",
+      "hubspot",
+      "insightly",
+      "pipedrive",
+      "salesflare",
+      "salesforce",
+      "sellsy"
+    ]
+  },
+  {
     "id": "analytics",
     "slug": "analytics",
     "name": "Analytics",

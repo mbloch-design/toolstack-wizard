@@ -1034,7 +1034,7 @@
     "id": "activecampaign",
     "slug": "activecampaign",
     "name": "ActiveCampaign",
-    "category": "email-productivity",
+    "category": "crm",
     "shortDescription": "Email marketing, automation et CRM marketing pour PME orientées conversion.",
     "shortDescriptionEn": "Email marketing, automation and marketing CRM for conversion-focused SMBs.",
     "longDescription": "ActiveCampaign est un outil d’automation marketing plus avancé qu’une simple newsletter. ToolTrim le recommande seulement si tu as déjà des segments, scénarios ou cycles de vente à automatiser. Sinon, Brevo, Kit ou Mailchimp peuvent être plus simples et moins lourds.",
@@ -9041,7 +9041,7 @@
     "id": "apollo",
     "slug": "apollo",
     "name": "Apollo",
-    "category": "organization",
+    "category": "crm",
     "shortDescription": "Prospection commerciale B2B : sourcing de leads, séquences d'e-mails et CRM léger.",
     "shortDescriptionEn": "B2B sales prospecting: lead sourcing, email sequences, and a light CRM.",
     "description": "Apollo combine une base de contacts B2B, des séquences d'e-mails automatisées et un CRM léger dans un seul outil, pensé pour une activité de prospection commerciale régulière qui veut éviter de payer pour plusieurs abonnements séparés (base de données, outil d'envoi, CRM).\n\nLe plan gratuit inclut des crédits e-mail illimités (usage raisonnable, environ 250/jour), mais seulement 5 crédits mobile et 10 crédits export par mois, et se limite à 2 séquences actives en parallèle. Les plans payants démarrent à environ 49$/mois/utilisateur (Basic) et montent à 119$ (Organization).\n\nLe revers : les crédits ne se reportent pas d'un mois à l'autre, et pour une prospection intensive (cold calling, gros volumes), le coût réel peut grimper à 2-3 fois le tarif affiché une fois les dépassements et add-ons comptés.",
@@ -11669,7 +11669,7 @@
     "id": "attio",
     "slug": "attio",
     "name": "Attio",
-    "category": "project-management",
+    "category": "crm",
     "shortDescription": "CRM moderne, orienté données : modèle de données flexible, synchronisation d'emails/agenda et automatisations, pensé pour les équipes go-to-market.",
     "shortDescriptionEn": "Modern, data-oriented CRM with a flexible data model, email/calendar sync and automations, built for go-to-market teams.",
     "description": "CRM moderne, orienté données : modèle de données flexible, synchronisation d'emails/agenda et automatisations, pensé pour les équipes go-to-market.",
@@ -17048,7 +17048,7 @@
     "id": "bloom-crm",
     "slug": "bloom-crm",
     "name": "Bloom",
-    "category": "organization",
+    "category": "crm",
     "shortDescription": "CRM et portail client pour créatifs et photographes.",
     "shortDescriptionEn": "CRM and client portal for creatives and photographers.",
     "description": "Bloom est un CRM et portail client conçu pour les créatifs et photographes, à partir de 7$/mois en annuel sur le palier d'entrée. Les noms de palier ont été récemment renommés (Side Jobs/Solo Business/Small Teams vs Starter/Standard/Plus selon la source) — vérifie le nom actuel sur la page officielle avant de comparer un devis.",
@@ -23427,7 +23427,7 @@
     "name": "Capsule",
     "shortDescription": "CRM simple pour petites entreprises, avec plan gratuit jusqu'à 250 contacts.",
     "description": "Capsule organise contacts, pipeline de vente et projets dans une interface volontairement simple, sans la complexité d'un CRM enterprise, avec un plan gratuit qui couvre déjà 250 contacts et 2 utilisateurs.\n\nSon vrai point faible : aucune synchronisation email bidirectionnelle sur aucun plan, même le plus cher à 72$/mois — il faut mettre une adresse en copie cachée pour faire remonter les emails dans le CRM, alors que la plupart des concurrents à ce prix gèrent ça nativement.",
-    "category": "communication",
+    "category": "crm",
     "pricing": "Gratuit jusqu'à 250 contacts (2 utilisateurs) ; Starter à 18$/utilisateur/mois ; Growth et Ultimate (jusqu'à 72$/mois) au-delà.",
     "website": "https://capsulecrm.com",
     "affiliateLink": "https://capsulecrm.com",
@@ -28820,7 +28820,7 @@
     "name": "Close",
     "shortDescription": "CRM commercial avec appels, SMS et email intégrés — sans outils externes.",
     "description": "Close intègre les appels, emails et SMS directement dans le CRM, avec un Power Dialer qui permet d'enchaîner les appels 3-4 fois plus vite qu'en composant manuellement, et un coaching en temps réel pour les managers (écoute discrète, prise de relais sur un appel).\n\nC'est un outil purement commercial (peu de fonctionnalités marketing), avec des coûts cachés réels : une fois le dialer, les lignes téléphoniques premium et les minutes d'appel comptées, le budget réel grimpe à 150-250$/utilisateur/mois selon le volume.",
-    "category": "communication",
+    "category": "crm",
     "pricing": "Solo à 9$/mois ; Essentials à 35$/mois (appels, SMS et email illimités) ; Growth à 99$/mois (automatisation, Power Dialer, IA). Budgéter 150-250$/utilisateur avec les add-ons d'appel.",
     "website": "https://close.com",
     "affiliateLink": "https://close.com",
@@ -40203,7 +40203,7 @@
     "name": "Dubsado",
     "shortDescription": "CRM et automatisation administrative pour freelances avec workflows conditionnels poussés.",
     "description": "Dubsado automatise contrats, factures et prise de rendez-vous pour les entreprises de service, avec le système de workflows conditionnels (logique \"si... alors\", champs dynamiques) le plus poussé de sa catégorie sur le plan Premier.\n\nLe vrai coût n'est pas le prix de l'abonnement mais le temps de configuration : compte 15 à 25 heures pour bien paramétrer l'outil, à tel point que des prestataires se spécialisent dans la configuration Dubsado. Le plan Starter à 35$/mois est jugé décevant par beaucoup car il ne débloque pas les workflows, la fonctionnalité phare.",
-    "category": "organization",
+    "category": "crm",
     "pricing": {
       "free": "Essai gratuit illimité dans le temps, limité à 3 clients (fonctionnalités Premier complètes)",
       "paid": "Starter à 20$/mois (sans les workflows automatisés) ; Premier à 40$/mois (avec workflows). 3 membres d'équipe inclus, puis paliers : 4-10 à +25$/mois, 11-20 à +45$/mois, 21-30 à +60$/mois."
@@ -49723,7 +49723,7 @@
     "id": "folk",
     "slug": "folk",
     "name": "Folk",
-    "category": "organization",
+    "category": "crm",
     "shortDescription": "CRM léger et collaboratif pour relations (recrutement, ventes, partenariats), avec enrichissement de contacts intégré.",
     "shortDescriptionEn": "Lightweight, collaborative CRM for relationships (recruiting, sales, partnerships), with built-in contact enrichment.",
     "description": "Folk, c'est un CRM léger et collaboratif. Sans plan gratuit permanent (essai de 14 jours sur les fonctionnalités Premium), il facture par utilisateur/mois avec des crédits d'enrichissement et de messages mutualisés au niveau de l'espace de travail, pas par siège individuel : une petite équipe peut épuiser son quota mensuel plus vite que prévu si plusieurs personnes enrichissent des contacts en parallèle.",
@@ -63786,7 +63786,7 @@
     "id": "hubspot",
     "slug": "hubspot",
     "name": "HubSpot",
-    "category": "organization",
+    "category": "crm",
     "shortDescription": "CRM tout-en-un avec marketing, vente et service client, plan gratuit généreux pour démarrer.",
     "shortDescriptionEn": "All-in-one CRM with marketing, sales, and customer service, generous free plan to start.",
     "description": "HubSpot combine CRM, marketing automation, vente et support client dans une seule plateforme, avec un plan gratuit qui couvre déjà les besoins de base d'une petite équipe.\n\nSon principal atout est une prise en main rapide comparée à des CRM plus complexes comme Salesforce, avec un alignement marketing-vente fluide quand les deux équipes utilisent l'outil. Le compromis : la montée en gamme vers Professional est abrupte (jusqu'à 5x le prix) et s'accompagne souvent de frais d'onboarding obligatoires.",
@@ -66727,7 +66727,7 @@
     "name": "Insightly",
     "shortDescription": "CRM avec gestion de projet native intégrée — les opportunités gagnées deviennent des projets.",
     "description": "Insightly se différencie en intégrant la gestion de projet directement dans le CRM : une opportunité gagnée se transforme automatiquement en projet suivi avec Kanban et Gantt, sans transfert vers un outil séparé. Les certifications SOC 2, RGPD et HIPAA en font un choix pertinent pour la santé, la finance ou le conseil.\n\nLe vrai point faible : aucun séquençage d'email sur aucun plan — il faut un outil séparé (Outreach, Salesloft) pour la prospection outbound, et le support est noté seulement 2,1/5 sur Trustpilot. Le prix réel grimpe souvent à 2-3x le tarif affiché une fois les fonctionnalités nécessaires ajoutées.",
-    "category": "communication",
+    "category": "crm",
     "pricing": "Plus à 29$/utilisateur/mois (facturation annuelle obligatoire) ; Professional à 49$ ; Enterprise à 99$. Coût réel souvent 2-3x plus élevé avec les fonctionnalités additionnelles.",
     "website": "https://insightly.com",
     "affiliateLink": "https://insightly.com",
@@ -107716,7 +107716,7 @@
     "name": "Pipedrive",
     "shortDescription": "CRM simple d’utilisation pour les ventes.",
     "description": "Pipedrive, c'est cRM simple d’utilisation pour les ventes. À partir de 15€/mois. Pensé pour les fondateurs SaaS et les consultants B2B.\n\nSpécialisé en CRM, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
-    "category": "communication",
+    "category": "crm",
     "pricing": {
       "free": "Fonctionnalités de base",
       "paid": "15€/mois pour version Pro"
@@ -127861,7 +127861,7 @@
     "name": "Salesflare",
     "shortDescription": "CRM pour PME vendant en B2B.",
     "description": "Salesflare, c'est cRM pour PME vendant en B2B. À partir de 20€/mois. Pensé pour les fondateurs SaaS et les consultants B2B.\n\nSpécialisé en CRM, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 20€/mois.",
-    "category": "communication",
+    "category": "crm",
     "pricing": {
       "free": "Fonctionnalités de base",
       "paid": "20€/mois pour version Pro"
@@ -128018,7 +128018,7 @@
     "name": "Salesforce",
     "shortDescription": "Logiciel de gestion de la relation client et solutions cloud.",
     "description": "Salesforce, c'est logiciel de gestion de la relation client et solutions cloud. À partir de 15€/mois. Pensé pour les managers et DSI et les fondateurs SaaS.\n\nSpécialisé en CRM, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
-    "category": "communication",
+    "category": "crm",
     "pricing": {
       "free": "Fonctionnalités de base",
       "paid": "15€/mois pour version Pro"
@@ -131200,7 +131200,7 @@
   {
     "id": "sellsy",
     "name": "Sellsy",
-    "category": "finance",
+    "category": "crm",
     "shortDescription": "La suite CRM + Facturation française tout-en-un.",
     "verdict": {
       "keepIf": [

@@ -263,7 +263,7 @@
     "id": "activecampaign",
     "slug": "activecampaign",
     "name": "ActiveCampaign",
-    "categoryId": "email-productivity",
+    "categoryId": "crm",
     "shortDescription": "Email marketing, automation et CRM marketing pour PME orientées conversion.",
     "shortDescriptionEn": "Email marketing, automation and marketing CRM for conversion-focused SMBs.",
     "pricing": {
@@ -2224,7 +2224,7 @@
     "id": "apollo",
     "slug": "apollo",
     "name": "Apollo",
-    "categoryId": "organization",
+    "categoryId": "crm",
     "shortDescription": "Prospection commerciale B2B : sourcing de leads, séquences d'e-mails et CRM léger.",
     "shortDescriptionEn": "B2B sales prospecting: lead sourcing, email sequences, and a light CRM.",
     "pricing": {
@@ -2913,7 +2913,7 @@
     "id": "attio",
     "slug": "attio",
     "name": "Attio",
-    "categoryId": "project-management",
+    "categoryId": "crm",
     "shortDescription": "CRM moderne, orienté données : modèle de données flexible, synchronisation d'emails/agenda et automatisations, pensé pour les équipes go-to-market.",
     "shortDescriptionEn": "Modern, data-oriented CRM with a flexible data model, email/calendar sync and automations, built for go-to-market teams.",
     "pricing": {
@@ -4287,7 +4287,7 @@
     "id": "bloom-crm",
     "slug": "bloom-crm",
     "name": "Bloom",
-    "categoryId": "organization",
+    "categoryId": "crm",
     "shortDescription": "CRM et portail client pour créatifs et photographes.",
     "shortDescriptionEn": "CRM and client portal for creatives and photographers.",
     "pricing": {
@@ -5829,7 +5829,7 @@
     "id": "capsule",
     "slug": "capsule",
     "name": "Capsule",
-    "categoryId": "communication",
+    "categoryId": "crm",
     "shortDescription": "CRM simple pour petites entreprises, avec plan gratuit jusqu'à 250 contacts.",
     "shortDescriptionEn": "Simple CRM for small businesses, with a free plan up to 250 contacts.",
     "pricing": "Gratuit jusqu'à 250 contacts (2 utilisateurs) ; Starter à 18$/utilisateur/mois ; Growth et Ultimate (jusqu'à 72$/mois) au-delà.",
@@ -7177,7 +7177,7 @@
     "id": "close",
     "slug": "close",
     "name": "Close",
-    "categoryId": "communication",
+    "categoryId": "crm",
     "shortDescription": "CRM commercial avec appels, SMS et email intégrés — sans outils externes.",
     "shortDescriptionEn": "Sales CRM with built-in calling, SMS, and email — no external tools.",
     "pricing": "Solo à 9$/mois ; Essentials à 35$/mois (appels, SMS et email illimités) ; Growth à 99$/mois (automatisation, Power Dialer, IA). Budgéter 150-250$/utilisateur avec les add-ons d'appel.",
@@ -9975,7 +9975,7 @@
     "id": "dubsado",
     "slug": "dubsado",
     "name": "Dubsado",
-    "categoryId": "organization",
+    "categoryId": "crm",
     "shortDescription": "CRM et automatisation administrative pour freelances avec workflows conditionnels poussés.",
     "shortDescriptionEn": "CRM and administrative automation for freelancers with advanced conditional workflows.",
     "pricing": {
@@ -12355,7 +12355,7 @@
     "id": "folk",
     "slug": "folk",
     "name": "Folk",
-    "categoryId": "organization",
+    "categoryId": "crm",
     "shortDescription": "CRM léger et collaboratif pour relations (recrutement, ventes, partenariats), avec enrichissement de contacts intégré.",
     "shortDescriptionEn": "Lightweight, collaborative CRM for relationships (recruiting, sales, partnerships), with built-in contact enrichment.",
     "pricing": {
@@ -15847,7 +15847,7 @@
     "id": "hubspot",
     "slug": "hubspot",
     "name": "HubSpot",
-    "categoryId": "organization",
+    "categoryId": "crm",
     "shortDescription": "CRM tout-en-un avec marketing, vente et service client, plan gratuit généreux pour démarrer.",
     "shortDescriptionEn": "All-in-one CRM with marketing, sales, and customer service, generous free plan to start.",
     "pricing": {
@@ -16543,7 +16543,7 @@
     "id": "insightly",
     "slug": "insightly",
     "name": "Insightly",
-    "categoryId": "communication",
+    "categoryId": "crm",
     "shortDescription": "CRM avec gestion de projet native intégrée — les opportunités gagnées deviennent des projets.",
     "shortDescriptionEn": "CRM with native project management built in — won opportunities turn into projects.",
     "pricing": "Plus à 29$/utilisateur/mois (facturation annuelle obligatoire) ; Professional à 49$ ; Enterprise à 99$. Coût réel souvent 2-3x plus élevé avec les fonctionnalités additionnelles.",
@@ -26713,7 +26713,7 @@
     "id": "pipedrive",
     "slug": "pipedrive",
     "name": "Pipedrive",
-    "categoryId": "communication",
+    "categoryId": "crm",
     "shortDescription": "CRM simple d’utilisation pour les ventes.",
     "shortDescriptionEn": "Easy-to-use CRM for sales.",
     "pricing": {
@@ -31740,7 +31740,7 @@
     "id": "salesflare",
     "slug": "salesflare",
     "name": "Salesflare",
-    "categoryId": "communication",
+    "categoryId": "crm",
     "shortDescription": "CRM pour PME vendant en B2B.",
     "shortDescriptionEn": "CRM for SMEs selling in B2B.",
     "pricing": {
@@ -31776,7 +31776,7 @@
     "id": "salesforce",
     "slug": "salesforce",
     "name": "Salesforce",
-    "categoryId": "communication",
+    "categoryId": "crm",
     "shortDescription": "Logiciel de gestion de la relation client et solutions cloud.",
     "shortDescriptionEn": "Customer relationship management software and cloud solutions.",
     "pricing": {
@@ -32535,7 +32535,7 @@
     "id": "sellsy",
     "slug": "sellsy",
     "name": "Sellsy",
-    "categoryId": "finance",
+    "categoryId": "crm",
     "shortDescription": "La suite CRM + Facturation française tout-en-un.",
     "shortDescriptionEn": "The French all-in-one CRM + Invoicing suite.",
     "pricing": {
