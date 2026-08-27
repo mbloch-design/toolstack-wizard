@@ -166,6 +166,19 @@ const Footer = () => {
                   loading="lazy"
                 />
               </a>
+              <a
+                href="https://backlinklog.com/listing/tooltrim.com?utm_source=backlinklog&utm_medium=badge"
+                target="_blank"
+                rel="noopener"
+                className="tt-footer-badge"
+                aria-label="Listed on BacklinkLog"
+              >
+                <img
+                  src="https://backlinklog.com/badge/tooltrim.com.svg"
+                  alt="Listed on BacklinkLog"
+                  loading="lazy"
+                />
+              </a>
             </div>
           </div>
         </div>
