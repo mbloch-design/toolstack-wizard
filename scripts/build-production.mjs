@@ -1,10 +1,11 @@
 #!/usr/bin/env node
-import { existsSync, mkdirSync, renameSync } from "node:fs";
+import { existsSync, mkdirSync, readdirSync, renameSync } from "node:fs";
 import { resolve } from "node:path";
-import { spawnSync } from "node:child_process";
+import { spawn, spawnSync } from "node:child_process";
 
 const generatedDirs = ["dist", "dist-ssr"];
 const trashRoot = ".build-trash";
+const archivesConservees = 1;
 
 function archiveGeneratedDirs() {
   const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
@@ -31,6 +32,52 @@ function archiveGeneratedDirs() {
       process.exit(1);
     }
   }
+}
+
+/**
+ * `archiveGeneratedDirs` empile un dossier par build sans jamais rien reprendre :
+ * cinq builds suffisaient à immobiliser plusieurs gigaoctets. Seule la dernière
+ * archive est conservée, comme point de comparaison si un build casse quelque chose.
+ */
+function purgeOldArchives() {
+  const root = resolve(trashRoot);
+
+  if (!existsSync(root)) {
+    return;
+  }
+
+  const entries = readdirSync(root);
+  const obsoletes = [];
+
+  for (const dir of generatedDirs) {
+    // `dist-ssr-…` commence lui aussi par `dist-` : l'horodatage est capturé
+    // strictement pour ne pas confondre les deux familles.
+    const motif = new RegExp(`^${dir}-\\d{4}-\\d{2}-\\d{2}T[\\d-]+Z-\\d+$`);
+    const archives = entries.filter((entry) => motif.test(entry)).sort().reverse();
+    obsoletes.push(...archives.slice(archivesConservees));
+  }
+
+  if (obsoletes.length === 0) {
+    return;
+  }
+
+  // Suppression détachée : elle dure plusieurs minutes sur un gros `dist`, et le
+  // build n'a aucune raison de l'attendre — ni d'échouer si elle n'aboutit pas.
+  // C'est la même raison qui a fait préférer `renameSync` à une suppression directe.
+  // Une purge interrompue (fin de session, CI qui coupe) ne laisse pas de trace :
+  // les archives survivantes gardent leur nom et sont reprises au build suivant.
+  const purge = spawn(
+    process.execPath,
+    [
+      "-e",
+      "for (const cible of process.argv.slice(1)) { try { require('node:fs').rmSync(cible, { recursive: true, force: true }); } catch {} }",
+      ...obsoletes.map((entry) => resolve(root, entry)),
+    ],
+    { detached: true, stdio: "ignore" },
+  );
+
+  purge.unref();
+  console.log(`  purge en arrière-plan : ${obsoletes.length} archive(s) obsolète(s)`);
 }
 
 function run(label, command, args) {
@@ -63,6 +110,7 @@ run(
 run("Index léger des guides d’accueil", "node", ["scripts/gen-home-posts-index.mjs"]);
 console.log("Mise à l'écart des anciens dossiers générés : dist, dist-ssr");
 archiveGeneratedDirs();
+purgeOldArchives();
 
 run("Build SSR", "vite", [
   "build",
