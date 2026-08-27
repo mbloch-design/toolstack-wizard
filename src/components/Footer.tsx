@@ -219,6 +219,26 @@ const Footer = () => {
                   loading="lazy"
                 />
               </a>
+              <a
+                href="https://dailypings.com/p/tooltrim"
+                target="_blank"
+                rel="noopener"
+                className="tt-footer-badge"
+                aria-label="Featured on DailyPings"
+              >
+                <img
+                  className="tt-footer-badge-light"
+                  src="https://dailypings.com/badge.svg"
+                  alt="Featured on DailyPings"
+                  loading="lazy"
+                />
+                <img
+                  className="tt-footer-badge-dark"
+                  src="https://dailypings.com/badge-light.svg"
+                  alt="Featured on DailyPings"
+                  loading="lazy"
+                />
+              </a>
             </div>
           </div>
         </div>
