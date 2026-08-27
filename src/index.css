@@ -5689,7 +5689,7 @@
     gap: 10px;
     width: clamp(260px, 30vw, 560px);
     height: 48px;
-    padding: 0 18px;
+    padding: 0 6px 0 20px;
     background: color-mix(in srgb, var(--color-surface) 64%, var(--color-border));
     border: 1px solid transparent;
     border-radius: var(--radius-pill);
@@ -5718,16 +5718,30 @@
     box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-text) 14%, transparent);
   }
 
-  .nav-search-bar-icon {
-    width: 18px;
-    height: 18px;
+  /* Trailing action circle — the pill's actual "submit search" affordance,
+     filling most of the pill's height instead of a plain leading icon. */
+  .nav-search-bar-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
     flex-shrink: 0;
-    color: var(--color-text);
-    stroke-width: 1.6;
+    border-radius: var(--radius-circle);
+    background: var(--color-text);
+    transition: background 160ms ease-out;
   }
 
-  .dark .nav-search-bar-icon {
-    color: hsl(var(--muted-foreground));
+  .nav-search-bar:hover .nav-search-bar-action {
+    background: color-mix(in srgb, var(--color-text) 88%, var(--color-bg));
+  }
+
+  .nav-search-bar-icon {
+    width: 17px;
+    height: 17px;
+    flex-shrink: 0;
+    color: var(--color-bg);
+    stroke-width: 1.8;
   }
 
   .nav-search-placeholder {
@@ -23485,7 +23499,7 @@ section[id] {
   height: 48px;
   min-width: 180px;
   max-width: 920px;
-  padding: 0 18px;
+  padding: 0 6px 0 18px;
   border-radius: var(--radius-pill);
   border: 1px solid transparent;
   background: color-mix(in srgb, var(--color-surface) 64%, var(--color-border));
@@ -23504,6 +23518,22 @@ section[id] {
   box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-text) 14%, transparent);
 }
 .asv2-search span { flex: 1; text-align: left; }
+/* Trailing action circle — the pill's actual "submit search" affordance. */
+.asv2-search span.asv2-search-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-circle);
+  background: var(--color-text);
+  color: var(--color-bg);
+  transition: background 140ms ease-out;
+}
+.asv2-search:hover .asv2-search-action {
+  background: color-mix(in srgb, var(--color-text) 88%, var(--color-bg));
+}
 
 .asv2-kbd {
   font-family: var(--font-ui);
@@ -23561,6 +23591,7 @@ section[id] {
 .asv2-topbar-cta {
   display: inline-flex;
   align-items: center;
+  flex-shrink: 0;
   gap: 8px;
   padding: 9px 18px;
   border-radius: var(--radius-pill);
@@ -23571,6 +23602,7 @@ section[id] {
   font-weight: 600;
   text-decoration: none;
   transition: opacity 120ms ease-out;
+  white-space: nowrap;
 }
 .asv2-topbar-cta:hover { opacity: 0.85; }
 
@@ -23854,7 +23886,7 @@ section[id] {
 
   .asv2-topbar { position: sticky; top: 0; padding: 0 16px; height: 56px; gap: 12px; }
   .asv2-mobile-logo { display: flex; padding-right: 4px; }
-  .asv2-search { width: auto; flex: 1; min-width: 0; height: 42px; padding: 0 14px; }
+  .asv2-search { width: auto; flex: 1; min-width: 0; height: 42px; padding: 0 4px 0 14px; }
   .asv2-kbd { display: none; }
   .asv2-topbar-cta { padding: 8px 14px; font-size: 12px; }
   .asv2-topbar-currency {
@@ -23869,7 +23901,7 @@ section[id] {
 }
 
 @media (max-width: 440px) {
-  .asv2-search span { display: none; }
+  .asv2-search > span:not(.asv2-search-action) { display: none; }
 }
 
 /* ══════════════════════════════════════════════════════════════════════

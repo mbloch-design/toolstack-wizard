@@ -197,9 +197,11 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
             onClick={() => setSearchOpen(true)}
             aria-label={t("Rechercher un outil", "Search for a tool")}
           >
-            <Search style={{ width: 15, height: 15 }} aria-hidden />
             <span>{t("Rechercher un outil...", "Search a tool...")}</span>
             <kbd className="asv2-kbd">⌘K</kbd>
+            <span className="asv2-search-action" aria-hidden>
+              <Search style={{ width: 15, height: 15 }} aria-hidden />
+            </span>
           </button>
 
           <div className="asv2-topbar-right">

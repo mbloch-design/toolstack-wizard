@@ -456,11 +456,13 @@ const Navbar = () => {
               className="nav-search-bar"
               aria-label={t("Rechercher", "Search")}
             >
-              <Search className="nav-search-bar-icon" aria-hidden />
               <span className="nav-search-placeholder">
                 {t("Rechercher…", "Search…")}
               </span>
               <kbd className="nav-kbd">{shortcutLabel}</kbd>
+              <span className="nav-search-bar-action" aria-hidden>
+                <Search className="nav-search-bar-icon" aria-hidden />
+              </span>
             </button>
 
             {/* Language toggle */}
