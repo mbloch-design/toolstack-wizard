@@ -109,7 +109,16 @@ const Footer = () => {
                 aria-label="Verified on DANG!"
               >
                 <img
+                  className="tt-footer-badge-light"
                   src="https://assets.dang.ai/badges/dang-verified-dark.png"
+                  alt="Verified on DANG!"
+                  width={260}
+                  height={94}
+                  loading="lazy"
+                />
+                <img
+                  className="tt-footer-badge-dark"
+                  src="https://assets.dang.ai/badges/dang-verified-light.png"
                   alt="Verified on DANG!"
                   width={260}
                   height={94}
