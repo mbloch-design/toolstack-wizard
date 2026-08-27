@@ -147,6 +147,30 @@ const Footer = () => {
                   loading="lazy"
                 />
               </a>
+              <a
+                href="https://nicklaunches.com/products/tooltrim/?utm_source=tooltrim.com&utm_medium=badge&utm_campaign=featured"
+                target="_blank"
+                rel="noopener"
+                className="tt-footer-badge"
+                aria-label="ToolTrim on Nick Launches"
+              >
+                <img
+                  className="tt-footer-badge-light"
+                  src="https://nicklaunches.com/badges/featured.png"
+                  alt="ToolTrim on Nick Launches"
+                  width={244}
+                  height={56}
+                  loading="lazy"
+                />
+                <img
+                  className="tt-footer-badge-dark"
+                  src="https://nicklaunches.com/badges/featured-dark.png"
+                  alt="ToolTrim on Nick Launches"
+                  width={244}
+                  height={56}
+                  loading="lazy"
+                />
+              </a>
             </div>
           </div>
         </div>
