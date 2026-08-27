@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import type { Tool } from "@/data/types";
 import ToolLogo from "@/components/ToolLogo";
-import { Sparkles, ArrowUpRight, Swords } from "lucide-react";
+import { Sparkles, ArrowUpRight, Swords } from "@/lib/icons";
 
 interface Props {
   tool: Tool;

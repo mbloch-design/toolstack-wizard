@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useLang } from "@/hooks/useLang";
 import { Link } from "react-router-dom";
-import { Laptop2, Rocket, Bot, Calculator } from "lucide-react";
+import { Laptop2, Rocket, Bot, Calculator } from "@/lib/icons";
 
 interface Persona {
   Icon: React.ComponentType<{ className?: string }>;

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import type { ReactNode } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight } from "@/lib/icons";
 
 /* ─────────────────────────────────────────────────────────────────────────────
    EditorialSection — universal content section wrapper for ToolTrim

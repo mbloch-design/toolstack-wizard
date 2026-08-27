@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { SessionState, Persona } from "@/types/diagnostic";
-import { BriefcaseBusiness, Code2, Compass, Gauge, Palette, PenLine, Scissors, Sparkles, Workflow } from "lucide-react";
+import { BriefcaseBusiness, Code2, Compass, Gauge, Palette, PenLine, Scissors, Sparkles, Workflow } from "@/lib/icons";
 
 interface Props {
   session: SessionState;

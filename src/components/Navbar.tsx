@@ -11,7 +11,7 @@ import {
   User,
   Wrench,
   X,
-} from "lucide-react";
+} from "@/lib/icons";
 import { useLang } from "@/hooks/useLang";
 import { useStackPins } from "@/hooks/useStackPins";
 import logoToolTrim from "@/assets/logo-tooltrim.svg";

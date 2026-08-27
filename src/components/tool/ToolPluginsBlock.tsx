@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import type { Tool } from "@/data/types";
 import ToolLogo from "@/components/ToolLogo";
-import { Puzzle, Package, ArrowRight, Layers } from "lucide-react";
+import { Puzzle, Package, ArrowRight, Layers } from "@/lib/icons";
 import { useCurrency } from "@/hooks/useCurrency";
 import { formatCurrencyAmount } from "@/lib/currency";
 import { resolveDisplayPrice } from "@/lib/nativePricing";

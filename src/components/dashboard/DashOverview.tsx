@@ -14,7 +14,7 @@ import {
   ShieldAlert,
   Sparkles,
   Target,
-} from "lucide-react";
+} from "@/lib/icons";
 import DashPdfExport from "./DashPdfExport";
 import ToolLogo from "@/components/ToolLogo";
 import { classifyCreativeWorkflowTools } from "@/lib/creativeAdaptiveEngine";

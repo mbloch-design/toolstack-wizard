@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
-import { ArrowRight, AlertTriangle } from "lucide-react";
+import { ArrowRight, AlertTriangle } from "@/lib/icons";
 
 interface PersonaProfile {
   id: string;

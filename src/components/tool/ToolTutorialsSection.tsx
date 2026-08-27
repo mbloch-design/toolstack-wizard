@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ExternalLink, Play } from "lucide-react";
+import { ExternalLink, Play } from "@/lib/icons";
 import type { ToolTutorial } from "@/data/toolTutorials";
 import { relExterne } from "@/lib/externalLink";
 

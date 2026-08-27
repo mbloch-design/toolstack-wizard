@@ -38,7 +38,7 @@ import {
   TrendingDown,
   Users,
   X,
-} from "lucide-react";
+} from "@/lib/icons";
 
 const LEGACY_SESSION_STORAGE_KEY = "tooltrim.backoffice.admin_session";
 const LEGACY_STORAGE_KEY = "tooltrim.backoffice.admin_key";

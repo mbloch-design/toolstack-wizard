@@ -1,6 +1,6 @@
 import { useState } from "react";
 import type { DiagnosticResult } from "@/types/diagnostic";
-import { X, Copy, Check, Linkedin, Twitter, Mail } from "lucide-react";
+import { X, Copy, Check, Linkedin, Twitter, Mail } from "@/lib/icons";
 
 interface Props {
   result: DiagnosticResult;

@@ -2,7 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useToolPair, useToolSummaries } from "@/hooks/useSupabaseData";
 import { useEffect, useMemo, useState, useRef, type MouseEvent } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight } from "@/lib/icons";
 import ToolLogo from "@/components/ToolLogo";
 import ToolComparisonTable from "@/components/tool/ToolComparisonTable";
 import FaqBlock from "@/components/FaqBlock";

@@ -3,7 +3,7 @@ import { useLang } from "@/hooks/useLang";
 import { useCurrency } from "@/hooks/useCurrency";
 import { useToolBySlug, useToolSummaries, useCategories } from "@/hooks/useSupabaseData";
 import { useEffect, useRef, useState } from "react";
-import { ArrowRight, Check, CirclePlus, CircleMinus, ExternalLink } from "lucide-react";
+import { ArrowRight, Check, CirclePlus, CircleMinus, ExternalLink } from "@/lib/icons";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
 import { setSeoTags, setMeta, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";

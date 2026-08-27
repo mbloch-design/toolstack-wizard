@@ -1,7 +1,7 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import { createPortal } from "react-dom";
 import { Link, useSearchParams } from "react-router-dom";
-import { ArrowLeft, ArrowUpDown, Search, X, SlidersHorizontal } from "lucide-react";
+import { ArrowLeft, ArrowUpDown, Search, X, SlidersHorizontal } from "@/lib/icons";
 import ToolLogoPile from "@/components/ToolLogoPile";
 import ToolCardImage from "@/components/tool/ToolCardImage";
 import { useLang } from "@/hooks/useLang";

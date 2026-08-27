@@ -4044,3 +4044,10 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Mise en place d’un snapshot personnel versionné : fusion initiale du local et du distant, conservation du cache navigateur et sauvegarde automatique après modification.
 - Ajout des tables Supabase `profiles` et `stack_snapshots`, de leurs droits authentifiés et de politiques RLS par propriétaire.
 - Ajout des tests de fusion et réouverture automatique de la modale au retour de l’authentification.
+
+## 2026-08-27 · Système d’icônes Iconoir
+
+- Remplacement transversal de `lucide-react` par `iconoir-react` sur le shell V2, Explorer, Ma Stack, les fiches outils et les composants partagés.
+- Ajout d’une couche centralisée `src/lib/icons.tsx` qui conserve les tailles, refs, attributs ARIA et contrats existants tout en définissant les équivalents Iconoir choisis par ToolTrim.
+- Suppression de Lucide des dépendances et synchronisation des lockfiles npm et Bun.
+- Validation TypeScript, contrôle des imports résiduels, `git diff --check` et build production complet avec fallback JSON pendant la restriction de quota Supabase.

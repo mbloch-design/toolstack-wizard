@@ -2,7 +2,7 @@ import { useLocation, useParams, Link } from "react-router-dom";
 import { useState, useEffect, useMemo, useRef, type CSSProperties } from "react";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories, usePosts } from "@/hooks/useSupabaseData";
-import { ArrowUpDown, Search, ChevronDown, SlidersHorizontal, X } from "lucide-react";
+import { ArrowUpDown, Search, ChevronDown, SlidersHorizontal, X } from "@/lib/icons";
 import FilterDropdown from "@/components/filters/FilterDropdown";
 import { setSeoTags, setJsonLd, setHreflang, setNoindex, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { stripLeadingEmoji } from "@/lib/text";

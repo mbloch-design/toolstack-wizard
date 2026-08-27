@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { createPortal } from "react-dom";
 import type { User } from "@supabase/supabase-js";
-import { Check, Cloud, LoaderCircle, LogOut, Mail, ShieldCheck, Trash2, X } from "lucide-react";
+import { Check, Cloud, LoaderCircle, LogOut, Mail, ShieldCheck, Trash2, X } from "@/lib/icons";
 import { getStackAccountLabel, type StackSyncStatus } from "@/hooks/useStackAccount";
 
 interface StackAccountDialogProps {

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo, useRef } from "react";
 import { useLocation, useSearchParams } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories, type ToolSummary } from "@/hooks/useSupabaseData";
-import { ArrowDown, ArrowLeft, ArrowUpDown, ChevronLeft, ChevronRight, Search, SlidersHorizontal, X } from "lucide-react";
+import { ArrowDown, ArrowLeft, ArrowUpDown, ChevronLeft, ChevronRight, Search, SlidersHorizontal, X } from "@/lib/icons";
 import ToolLogo from "@/components/ToolLogo";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo } from "@/lib/seo";
 import { stripLeadingEmoji } from "@/lib/text";

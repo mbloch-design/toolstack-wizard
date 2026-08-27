@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories } from "@/hooks/useSupabaseData";
 import { useEffect, useMemo, lazy, Suspense, useRef, useState } from "react";
-import { ArrowRight, ChevronLeft, ChevronRight, Clock3, Database, Euro, ShieldCheck, Sparkles } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight, Clock3, Database, Euro, ShieldCheck, Sparkles } from "@/lib/icons";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
 // STACKS no longer imported here — HomePage only needed each stack's monthlyBudget;
 // inlined into BUSINESS_OBJECTIVES below. Saves ~190KB gz on the home bundle.

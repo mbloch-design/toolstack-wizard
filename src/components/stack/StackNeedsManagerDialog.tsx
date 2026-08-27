@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { ChevronDown, ChevronUp, Pencil, Trash2, X } from "lucide-react";
+import { ChevronDown, ChevronUp, Pencil, Trash2, X } from "@/lib/icons";
 import type { StackNeed } from "@/lib/stackState";
 
 interface StackNeedsManagerDialogProps {

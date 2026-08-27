@@ -15,7 +15,7 @@ import {
   Settings2,
   Sun,
   CircleDollarSign,
-} from "lucide-react";
+} from "@/lib/icons";
 import { useLang } from "@/hooks/useLang";
 import { useCurrency } from "@/hooks/useCurrency";
 import { useTheme } from "@/hooks/useTheme";
@@ -37,7 +37,7 @@ type NavItem = {
 
 const NAV_ITEMS: NavItem[] = [
   { id: "home",       labelFr: "Accueil",     labelEn: "Home",       Icon: Home,     to: "",             match: [""] },
-  { id: "tools",      labelFr: "Outils",      labelEn: "Tools",      Icon: Wrench,   to: "/tools",       match: ["/tools", "/tool/"] },
+  { id: "tools",      labelFr: "Outils",      labelEn: "Tools",      Icon: Wrench,   to: "/tools",       match: ["/tools", "/tool/", "/explorer"] },
   { id: "stacks",     labelFr: "Stacks",      labelEn: "Stacks",     Icon: Layers,   to: "/stacks",      match: ["/stacks"] },
   { id: "compare",    labelFr: "Comparatifs", labelEn: "Compare",    Icon: Scale,    to: "/comparatifs", match: ["/comparatifs", "/comparatif/"] },
   { id: "guides",     labelFr: "Guides",      labelEn: "Guides",     Icon: BookOpen, to: "/guides",      match: ["/guides", "/guide/"] },
@@ -49,7 +49,9 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
   const { theme, toggle: toggleTheme } = useTheme();
   const location = useLocation();
   const [searchOpen, setSearchOpen] = useState(false);
-  const [sidebarExpanded, setSidebarExpanded] = useState(false);
+  // The labelled navigation is the canonical desktop state. The compact rail
+  // remains available as a deliberate choice and is remembered per browser.
+  const [sidebarExpanded, setSidebarExpanded] = useState(true);
   const contentRef = useRef<HTMLElement>(null);
   const { state: cartState } = useStackPins();
   const cartCount = cartState.pinnedToolSlugs.length;
@@ -73,7 +75,8 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
   }, [location.pathname, location.search]);
 
   useEffect(() => {
-    setSidebarExpanded(localStorage.getItem("tooltrim:sidebar-expanded") === "true");
+    const storedPreference = localStorage.getItem("tooltrim:sidebar-expanded");
+    setSidebarExpanded(storedPreference === null ? true : storedPreference === "true");
   }, []);
 
   const toggleSidebar = () => {

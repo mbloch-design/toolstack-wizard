@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
-import { X } from "lucide-react";
+import { X } from "@/lib/icons";
 import type { SessionState } from "@/types/diagnostic";
 import {
   formatMonthlyTotal,

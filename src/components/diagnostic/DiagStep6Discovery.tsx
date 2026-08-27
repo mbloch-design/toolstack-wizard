@@ -1,5 +1,5 @@
 import { useEffect, useState, useMemo, useRef } from "react";
-import { Check, ChevronLeft, ChevronRight, HelpCircle } from "lucide-react";
+import { Check, ChevronLeft, ChevronRight, HelpCircle } from "@/lib/icons";
 import type { SessionState, DiscoveryQuestion, Tool } from "@/types/diagnostic";
 import { contractCoveredProductIds } from "@/lib/commercialAccess";
 

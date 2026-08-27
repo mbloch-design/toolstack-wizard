@@ -52,7 +52,7 @@ Préfixes : `td-*` (tool detail), `gi-*` (guides index), `ga-*` (guide article),
 - Pas de bouton bleu sur les pages outils
 - Pas de gradient background
 - Pas de grands logos décoratifs
-- Pas d'emojis comme icônes (utiliser Lucide)
+- Pas d'emojis comme icônes (utiliser le système Iconoir centralisé dans `src/lib/icons.tsx`)
 - Pas de métadonnées répétées (hero ET sidebar)
 - Dark mode : non prioritaire, documenter la dette dans ROADMAP.md
 

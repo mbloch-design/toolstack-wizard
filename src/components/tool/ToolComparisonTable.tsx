@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import type { Tool } from "@/data/types";
 import ToolLogo from "@/components/ToolLogo";
-import { ArrowRight, Check } from "lucide-react";
+import { ArrowRight, Check } from "@/lib/icons";
 import { CarouselControls, CarouselPagination } from "@/components/CarouselControls";
 import { computeToolTrimScore, starFill } from "@/lib/toolTrimScore";
 import { hasGenuineFreeTier } from "@/lib/pricing";

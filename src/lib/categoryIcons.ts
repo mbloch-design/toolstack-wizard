@@ -16,7 +16,7 @@ import {
   BarChart3,
   GraduationCap,
   type LucideIcon,
-} from "lucide-react";
+} from "@/lib/icons";
 
 const categoryIconMap: Record<string, LucideIcon> = {
   "ai-general": Bot,

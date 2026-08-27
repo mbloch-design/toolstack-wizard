@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowRight, CheckCircle2, Layers3, Mail, MessageSquare, Palette, RotateCcw, Share2, ShieldAlert, Sparkles, TrendingDown } from "lucide-react";
+import { ArrowRight, CheckCircle2, Layers3, Mail, MessageSquare, Palette, RotateCcw, Share2, ShieldAlert, Sparkles, TrendingDown } from "@/lib/icons";
 import type { DiagnosticResult, SessionState } from "@/types/diagnostic";
 import { formatMonthlyTotal, getPricingCaptureSummary } from "@/utils/diagnosticPricing";
 import { classifyCreativeWorkflowTools } from "@/lib/creativeAdaptiveEngine";

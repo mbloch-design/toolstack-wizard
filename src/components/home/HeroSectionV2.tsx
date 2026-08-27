@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Bookmark } from "lucide-react";
+import { Bookmark } from "@/lib/icons";
 import { useLang } from "@/hooks/useLang";
 import { useStackPins } from "@/hooks/useStackPins";
 

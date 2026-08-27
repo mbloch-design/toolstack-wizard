@@ -1,5 +1,5 @@
 import type { Tool } from "@/data/types";
-import { CreditCard, Sparkles, Package } from "lucide-react";
+import { CreditCard, Sparkles, Package } from "@/lib/icons";
 import { hasGenuineFreeTier } from "@/lib/pricing";
 import { relExterne } from "@/lib/externalLink";
 import { CURRENCY_RATE_DATE, EUR_TO_USD, useCurrency, type Currency } from "@/hooks/useCurrency";

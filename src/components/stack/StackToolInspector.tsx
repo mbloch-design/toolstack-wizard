@@ -1,4 +1,4 @@
-import { ArrowLeft, ArrowRight, Check, Compass, ExternalLink, Pencil } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, Compass, ExternalLink, Pencil } from "@/lib/icons";
 import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import ToolCardImage from "@/components/tool/ToolCardImage";

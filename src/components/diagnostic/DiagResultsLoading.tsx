@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { CheckCircle2, Layers3, ShieldCheck, Sparkles } from "lucide-react";
+import { CheckCircle2, Layers3, ShieldCheck, Sparkles } from "@/lib/icons";
 
 interface Props {
   toolCount: number;

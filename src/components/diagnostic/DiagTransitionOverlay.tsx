@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Search } from "lucide-react";
+import { Search } from "@/lib/icons";
 
 interface Props {
   message: string;

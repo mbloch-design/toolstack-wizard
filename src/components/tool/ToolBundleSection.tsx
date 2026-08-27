@@ -1,5 +1,5 @@
 import type { Tool, ToolSummary } from "@/data/types";
-import { Package } from "lucide-react";
+import { Package } from "@/lib/icons";
 import { useEffect, useState } from "react";
 import ToolLogo from "@/components/ToolLogo";
 

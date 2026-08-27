@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type KeyboardEvent, type ReactNode } from "react";
-import { ArrowLeft, Check, ChevronLeft, ChevronRight, Compass, Plus } from "lucide-react";
+import { ArrowLeft, Check, ChevronLeft, ChevronRight, Compass, Plus } from "@/lib/icons";
 import { Link, useLocation, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { toast } from "sonner";
 import ToolLogo from "@/components/ToolLogo";
@@ -577,7 +577,7 @@ export default function ExplorerPage() {
           aria-label={t(`Explorer autour de ${candidate.tool.name}`, `Explore around ${candidate.tool.name}`) as string}
           aria-describedby={`explore-card-${slug}-description`}
         >
-          <span className={`ex-card-media${previewUrl ? " has-preview" : ""}`}>
+          <span className="ex-card-media">
             {previewUrl ? (
               <img src={previewUrl} alt="" loading="lazy" />
             ) : (

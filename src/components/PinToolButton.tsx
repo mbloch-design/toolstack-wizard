@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useState } from "react";
-import { Bookmark, BookmarkCheck } from "lucide-react";
+import { Bookmark, BookmarkCheck } from "@/lib/icons";
 import { toast } from "sonner";
 import { useStackPins } from "@/hooks/useStackPins";
 import { useLang } from "@/hooks/useLang";

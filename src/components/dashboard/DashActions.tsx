@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import type { DiagnosticResult, Prescription, Tool } from "@/types/diagnostic";
 import { updateDiagnosticSession } from "@/lib/diagnosticPersistence";
-import { Check, CheckCircle2, ChevronRight, ExternalLink, Target } from "lucide-react";
+import { Check, CheckCircle2, ChevronRight, ExternalLink, Target } from "@/lib/icons";
 import DashPdfExport from "./DashPdfExport";
 import ToolLogo from "@/components/ToolLogo";
 import { formatMoney, getPricingAudit } from "@/utils/diagnosticPricing";

@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
 import type { DiagnosticResult, Tool } from "@/types/diagnostic";
 import type { ToolScore } from "@/utils/scoring";
-import { ChevronDown, ChevronUp, ExternalLink } from "lucide-react";
+import { ChevronDown, ChevronUp, ExternalLink } from "@/lib/icons";
 import ToolLogo from "@/components/ToolLogo";
 import { formatMoney, formatMonthlyTotal, formatToolMonthlyPrice } from "@/utils/diagnosticPricing";
 

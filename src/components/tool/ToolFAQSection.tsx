@@ -1,6 +1,6 @@
 import FaqBlock from "@/components/FaqBlock";
 import type { Tool } from "@/data/types";
-import { DollarSign, GitCompare, Lightbulb, ShieldCheck, Users } from "lucide-react";
+import { DollarSign, GitCompare, Lightbulb, ShieldCheck, Users } from "@/lib/icons";
 import { buildToolFaqs } from "@/lib/toolFaq";
 
 interface Props {

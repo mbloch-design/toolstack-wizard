@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { flushSync } from "react-dom";
 import { Link, useLocation, useNavigate, useSearchParams } from "react-router-dom";
-import { ArrowLeft, Cloud, Compass, GripVertical, Heart, MoreHorizontal, Pencil, Plus, Search, SlidersHorizontal, Trash2, UserRound, X } from "lucide-react";
+import { ArrowLeft, Cloud, Compass, GripVertical, Heart, MoreHorizontal, Pencil, Plus, Search, SlidersHorizontal, Trash2, UserRound, X } from "@/lib/icons";
 import { toast } from "sonner";
 import { ToolCardEditorial } from "@/components/ToolCardEditorial";
 import ToolLogo from "@/components/ToolLogo";

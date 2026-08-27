@@ -1,6 +1,6 @@
 import { useMemo, useState, useEffect, useRef } from "react";
 import { useSearchParams, useNavigate, Link } from "react-router-dom";
-import { Search, Hash, BookOpen, Wrench, ArrowRight, X } from "lucide-react";
+import { Search, Hash, BookOpen, Wrench, ArrowRight, X } from "@/lib/icons";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories, usePosts } from "@/hooks/useSupabaseData";
 import ToolCardCompact from "@/components/tool/ToolCardCompact";

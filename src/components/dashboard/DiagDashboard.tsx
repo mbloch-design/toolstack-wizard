@@ -9,7 +9,7 @@ import DashShareModal from "./DashShareModal";
 import { insertDiagnosticStepEvent } from "@/lib/diagnosticPersistence";
 import { formatMonthlyTotal } from "@/utils/diagnosticPricing";
 import { translateHealthLabel } from "@/utils/diagnosticLabels";
-import { ArrowLeft, BookOpenText, CheckCircle, ChevronRight, Flame, ListChecks, Menu, RefreshCcw, Rocket, Search, X } from "lucide-react";
+import { ArrowLeft, BookOpenText, CheckCircle, ChevronRight, Flame, ListChecks, Menu, RefreshCcw, Rocket, Search, X } from "@/lib/icons";
 
 type Tab = "overview" | "gaspillage" | "stack" | "optimiser" | "actions";
 

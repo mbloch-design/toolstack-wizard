@@ -1399,7 +1399,7 @@ Tente dans l'ordre :
 - ❌ Bouton bleu sur les pages outils
 - ❌ Gradient background
 - ❌ Card avec `border-radius > 10px` sur les sections éditoriales
-- ❌ Emojis comme icônes (utiliser Lucide)
+- ❌ Emojis comme icônes (utiliser le système Iconoir centralisé dans `src/lib/icons.tsx`)
 - ❌ `position: sticky` sur un enfant d'un grid item (casse le sticky)
 - ❌ `overflow: hidden` sur les parents d'éléments sticky
 - ❌ Métadonnées répétées (hero ET sidebar)

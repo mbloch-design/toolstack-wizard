@@ -15,7 +15,7 @@ import {
   Wallet, Layers, TrendingDown, Zap,
   ArrowDownCircle, RefreshCw, ChevronDown, ChevronUp, Sparkles,
   BadgeCheck, Clock, Info, HelpCircle,
-} from "lucide-react";
+} from "@/lib/icons";
 import { setNoindex } from "@/lib/seo";
 import {
   Tooltip, TooltipContent, TooltipProvider, TooltipTrigger,

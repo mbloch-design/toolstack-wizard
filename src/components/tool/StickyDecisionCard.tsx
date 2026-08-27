@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowDown, ArrowRight, ArrowUp, Check, Compass, Copy, Flag, Linkedin, Mail, MessageCircle, Minus, Share2 } from "lucide-react";
+import { ArrowDown, ArrowRight, ArrowUp, Check, Compass, Copy, Flag, Linkedin, Mail, MessageCircle, Minus, Share2 } from "@/lib/icons";
 import ToolLogo from "@/components/ToolLogo";
 import PinToolButton from "@/components/PinToolButton";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";

@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { ArrowRight, BriefcaseBusiness, Check, Code2, Compass, Gauge, Palette, PenLine, Plus, Scissors, Sparkles, Workflow } from "lucide-react";
+import { ArrowRight, BriefcaseBusiness, Check, Code2, Compass, Gauge, Palette, PenLine, Plus, Scissors, Sparkles, Workflow } from "@/lib/icons";
 import type { Persona, SessionState, Tool } from "@/types/diagnostic";
 import {
   buildCreativeQuestions,

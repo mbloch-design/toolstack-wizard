@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet-async";
 import { useLang } from "@/hooks/useLang";
 import Breadcrumb from "@/components/Breadcrumb";
 import { setSeoTags, SEO_BASE } from "@/lib/seo";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles } from "@/lib/icons";
 
 const content = {
   fr: {

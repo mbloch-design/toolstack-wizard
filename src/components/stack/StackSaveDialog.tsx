@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState, type FormEvent } from "react";
 import { createPortal } from "react-dom";
-import { Bookmark, Check, FolderPlus, Trash2, X } from "lucide-react";
+import { Bookmark, Check, FolderPlus, Trash2, X } from "@/lib/icons";
 import ToolLogo from "@/components/ToolLogo";
 import { getNeedIcon } from "@/lib/needIcons";
 import { useToolSummaries, type ToolSummary } from "@/hooks/useSupabaseData";

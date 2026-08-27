@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { usePosts, useToolSummaries, type Post, type ToolSummary } from "@/hooks/useSupabaseData";
 import { useState, useMemo, useEffect, useRef, type CSSProperties } from "react";
-import { ArrowUpDown, Search, X } from "lucide-react";
+import { ArrowUpDown, Search, X } from "@/lib/icons";
 import { useArticleTools } from "@/hooks/useArticleTools";
 import { setSeoTags, cleanupSeo } from "@/lib/seo";
 import ToolCardImage from "@/components/tool/ToolCardImage";

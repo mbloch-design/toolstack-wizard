@@ -23350,16 +23350,14 @@ section[id] {
 }
 
 /* ══════════════════════════════════════════════════════════════════════
-   V2 App Shell — two independent surfaces on a quiet shell background:
-   a navigation box on the left and a workspace box on the right.
+   V2 App Shell — one continuous product surface. The sidebar structures
+   navigation without enclosing the workspace in a second rounded box.
    ══════════════════════════════════════════════════════════════════════ */
 .asv2-root {
   display: flex;
-  gap: 7px;
   height: 100vh;
   overflow: hidden;
-  padding: 7px;
-  background: color-mix(in srgb, var(--color-surface-soft) 82%, var(--color-border));
+  background: var(--color-surface);
 }
 
 .asv2-workspace {
@@ -23370,9 +23368,7 @@ section[id] {
   min-height: 0;
   flex-direction: column;
   overflow: hidden;
-  border-radius: 10px;
-  background: var(--color-surface);
-  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-border-soft) 58%, transparent);
+  background: var(--color-bg);
 }
 
 .asv2-logo {
@@ -23416,8 +23412,8 @@ section[id] {
   height: 68px;
   flex-shrink: 0;
   padding: 0 20px;
-  border-radius: 10px;
   background: var(--color-surface);
+  border-bottom: 1px solid color-mix(in srgb, var(--color-border-soft) 72%, transparent);
 }
 
 /* Sur les catalogues, le sticky remplace la recherche globale, mais conserve
@@ -23600,23 +23596,22 @@ section[id] {
   width: 76px;
   flex-shrink: 0;
   overflow: hidden;
-  padding: 12px 10px 14px;
-  background: color-mix(in srgb, var(--color-surface) 96%, var(--color-surface-soft));
-  border-radius: 10px;
-  box-shadow: 0 0 0 1px color-mix(in srgb, var(--color-border-soft) 58%, transparent);
+  padding: 12px 12px 14px;
+  background: var(--color-surface);
+  border-right: 1px solid color-mix(in srgb, var(--color-border-soft) 78%, transparent);
   transition: width 220ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .asv2-root--sidebar-expanded .asv2-sidebar {
-  width: 236px;
+  width: 228px;
 }
 
 .asv2-nav {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: 4px;
-  padding: 4px 0;
+  gap: 6px;
+  padding: 8px 0;
 }
 
 .asv2-nav-item {
@@ -23625,12 +23620,12 @@ section[id] {
   align-items: center;
   gap: 10px;
   width: 100%;
-  min-height: 44px;
-  padding: 2px 5px;
-  border-radius: var(--radius-md);
+  min-height: 48px;
+  padding: 3px 5px;
+  border-radius: 12px;
   color: color-mix(in srgb, var(--color-text) 78%, var(--color-muted));
   text-decoration: none;
-  transition: background 140ms ease-out;
+  transition: background 140ms ease-out, color 140ms ease-out, transform 140ms ease-out;
 }
 
 .asv2-nav-icon {
@@ -23638,7 +23633,7 @@ section[id] {
   align-items: center;
   justify-content: center;
   width: 44px;
-  height: 40px;
+  height: 42px;
   flex: 0 0 44px;
   border-radius: var(--radius-md);
   color: var(--color-muted);
@@ -23663,8 +23658,8 @@ section[id] {
   opacity: 0;
   white-space: nowrap;
   font-family: var(--font-ui);
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 15px;
+  font-weight: 520;
   color: color-mix(in srgb, var(--color-text) 82%, var(--color-muted));
   line-height: 1.2;
   text-align: left;
@@ -23677,7 +23672,11 @@ section[id] {
 
 .asv2-root--sidebar-expanded .asv2-nav-item:hover,
 .asv2-root--sidebar-expanded .asv2-nav-item--active {
-  background: color-mix(in srgb, var(--color-surface-soft) 78%, var(--color-surface));
+  background: color-mix(in srgb, var(--color-surface-soft) 88%, var(--color-surface));
+}
+.asv2-root--sidebar-expanded .asv2-nav-item:not(.asv2-nav-item--active):hover {
+  background: color-mix(in srgb, var(--color-surface-soft) 56%, var(--color-surface));
+  transform: translateX(2px);
 }
 .asv2-root--sidebar-expanded .asv2-nav-item .asv2-nav-icon {
   background: transparent;
@@ -23693,7 +23692,7 @@ section[id] {
   gap: 4px;
   margin-top: auto;
   padding-top: 12px;
-  border-top: 1px solid var(--color-border-soft);
+  border-top: 1px solid color-mix(in srgb, var(--color-border-soft) 78%, transparent);
 }
 .asv2-utility-heading {
   display: none;
@@ -23818,6 +23817,20 @@ section[id] {
   scrollbar-gutter: stable;
   -webkit-overflow-scrolling: touch;
   background: var(--color-bg);
+}
+
+/* Preserve content width on compact laptop layouts. The control still keeps
+   the user's preference, which becomes visible again at the next breakpoint. */
+@media (min-width: 641px) and (max-width: 900px) {
+  .asv2-root--sidebar-expanded .asv2-sidebar { width: 76px; }
+  .asv2-root--sidebar-expanded .asv2-logo { justify-content: center; padding-inline: 0; }
+  .asv2-root--sidebar-expanded .asv2-logo-mark { display: block; }
+  .asv2-root--sidebar-expanded .asv2-logo-full { display: none !important; }
+  .asv2-root--sidebar-expanded .asv2-nav-label,
+  .asv2-root--sidebar-expanded .asv2-utility-text,
+  .asv2-root--sidebar-expanded .asv2-utility-value,
+  .asv2-root--sidebar-expanded .asv2-utility-heading { display: none; }
+  .asv2-root--sidebar-expanded .asv2-utility-item { padding-right: 5px; }
 }
 
 @media (max-width: 640px) {

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Clock } from "lucide-react";
+import { ArrowRight, Clock } from "@/lib/icons";
 import type { Post } from "@/hooks/useSupabaseData";
 
 /* ─────────────────────────────────────────────────────────────────────────────

@@ -1,5 +1,5 @@
 import { useState, useCallback } from "react";
-import { Play } from "lucide-react";
+import { Play } from "@/lib/icons";
 import type { ToolTutorial } from "@/data/toolTutorials";
 
 interface Props {

@@ -1,6 +1,6 @@
 import { useState, useMemo, useRef, useEffect } from "react";
 import type { DiagnosticResult, Tool, Prescription } from "@/types/diagnostic";
-import { AlertTriangle, CheckCircle2, ChevronRight, CircleDollarSign, CircleDot, LayoutGrid, List, X } from "lucide-react";
+import { AlertTriangle, CheckCircle2, ChevronRight, CircleDollarSign, CircleDot, LayoutGrid, List, X } from "@/lib/icons";
 import ToolLogo from "@/components/ToolLogo";
 import { formatMoney, formatToolMonthlyPrice } from "@/utils/diagnosticPricing";
 

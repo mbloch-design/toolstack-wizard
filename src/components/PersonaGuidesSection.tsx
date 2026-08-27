@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight } from "@/lib/icons";
 
 interface Props {
   lang: "fr" | "en";

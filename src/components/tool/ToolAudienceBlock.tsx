@@ -1,4 +1,4 @@
-import { Users, User, Code2, Pen, BarChart2, Briefcase, ShoppingCart, Building2, Palette, Megaphone, BookOpen, Cpu, Globe } from "lucide-react";
+import { Users, User, Code2, Pen, BarChart2, Briefcase, ShoppingCart, Building2, Palette, Megaphone, BookOpen, Cpu, Globe } from "@/lib/icons";
 
 interface Props {
   relevantFor: string[];

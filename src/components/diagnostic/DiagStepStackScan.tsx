@@ -18,7 +18,7 @@ import {
   Video,
   Workflow,
   X,
-} from "lucide-react";
+} from "@/lib/icons";
 import ToolLogo from "@/components/ToolLogo";
 import CommercialAccessReview from "@/components/diagnostic/CommercialAccessReview";
 import type {

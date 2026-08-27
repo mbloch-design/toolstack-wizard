@@ -17,7 +17,7 @@ import {
   RefreshCw,
   Sparkles,
   Workflow,
-} from "lucide-react";
+} from "@/lib/icons";
 import { STACKS } from "@/data/stacks";
 
 const PRIORITY_CATEGORY_IDS = [

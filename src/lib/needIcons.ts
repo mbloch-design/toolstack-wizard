@@ -9,7 +9,7 @@ import {
   Palette,
   Workflow,
   type LucideIcon,
-} from "lucide-react";
+} from "@/lib/icons";
 
 const needIconMap: Record<string, LucideIcon> = {
   ia: Bot,

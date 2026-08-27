@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Compass, Pencil } from "lucide-react";
+import { Compass, Pencil } from "@/lib/icons";
 import PinToolButton from "@/components/PinToolButton";
 import ToolCardImage from "@/components/tool/ToolCardImage";
 import ToolLogo from "@/components/ToolLogo";

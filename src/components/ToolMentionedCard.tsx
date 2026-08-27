@@ -1,6 +1,6 @@
 import ToolLogo from "@/components/ToolLogo";
 import type { Tool } from "@/data/types";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink } from "@/lib/icons";
 import { Link } from "react-router-dom";
 
 interface ToolMentionedCardProps {

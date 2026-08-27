@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useMemo, useState, useCallback, useRef, type ReactNode, type TouchEvent } from "react";
-import { ArrowRight, ChevronDown, Code2, Layers3, MessagesSquare, WandSparkles } from "lucide-react";
+import { ArrowRight, ChevronDown, Code2, Layers3, MessagesSquare, WandSparkles } from "@/lib/icons";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories } from "@/hooks/useSupabaseData";
 import { setSeoTags, setHreflang, setJsonLd, cleanupSeo, SEO_BASE } from "@/lib/seo";

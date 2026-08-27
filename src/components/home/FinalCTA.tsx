@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight } from "@/lib/icons";
 
 /* ─────────────────────────────────────────────────────────────────────────────
    FinalCTA — editorial CTA band

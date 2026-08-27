@@ -1,6 +1,6 @@
 import type { Tool } from "@/data/types";
 import { resolveMonthlyPrice } from "@/lib/pricing";
-import { CheckCircle2, CircleAlert } from "lucide-react";
+import { CheckCircle2, CircleAlert } from "@/lib/icons";
 import { useCurrency } from "@/hooks/useCurrency";
 import { formatCurrencyAmount } from "@/lib/currency";
 import { resolveDisplayPrice } from "@/lib/nativePricing";

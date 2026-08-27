@@ -1,4 +1,4 @@
-import { ArrowRight, Compass } from "lucide-react";
+import { ArrowRight, Compass } from "@/lib/icons";
 import { Link } from "react-router-dom";
 import ToolLogo from "@/components/ToolLogo";
 import { getToolPresentation } from "@/lib/toolPresentation";

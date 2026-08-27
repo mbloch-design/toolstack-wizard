@@ -22,7 +22,7 @@ import {
   TrendingUp,
   Users,
   X,
-} from "lucide-react";
+} from "@/lib/icons";
 import { useLang } from "@/hooks/useLang";
 import { useCategories, usePosts, useToolSummaries, type Post, type ToolSummary } from "@/hooks/useSupabaseData";
 import ToolLogo from "@/components/ToolLogo";

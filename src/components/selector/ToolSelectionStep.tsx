@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { Search, Check, X } from "lucide-react";
+import { Search, Check, X } from "@/lib/icons";
 import { Tool, SelectedTool } from "@/data/types";
 import ToolLogo from "@/components/ToolLogo";
 import { useLang } from "@/hooks/useLang";

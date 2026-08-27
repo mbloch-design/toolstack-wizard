@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight } from "@/lib/icons";
 import { useLang } from "@/hooks/useLang";
 import logoToolTrim from "@/assets/logo-tooltrim.svg";
 

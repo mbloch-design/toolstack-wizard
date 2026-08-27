@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronUp, ChevronDown, Pencil, RotateCcw } from "lucide-react";
+import { ChevronUp, ChevronDown, Pencil, RotateCcw } from "@/lib/icons";
 import {
   SelectorFormData, TJM_OPTIONS, PHASE_OPTIONS, MATURITY_OPTIONS,
   VERTICAL_FAMILIES, TIME_WEIGHT_OPTIONS,

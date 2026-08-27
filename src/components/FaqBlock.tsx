@@ -1,5 +1,5 @@
-import { ChevronDown } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
+import { ChevronDown } from "@/lib/icons";
+import type { LucideIcon } from "@/lib/icons";
 
 export type FaqItem = {
   question: string;

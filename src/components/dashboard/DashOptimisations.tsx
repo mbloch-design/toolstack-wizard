@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import type { DiagnosticResult, Tool } from "@/types/diagnostic";
 import { computeScoreFinal } from "@/utils/scoring";
-import { ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
+import { ArrowRight, ChevronDown, ChevronUp } from "@/lib/icons";
 import ToolLogo from "@/components/ToolLogo";
 import { formatMoney, formatToolMonthlyPrice } from "@/utils/diagnosticPricing";
 import { getProvenRecommendations } from "@/utils/diagnosticDecisionPlan";

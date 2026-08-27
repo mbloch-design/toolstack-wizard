@@ -1,5 +1,5 @@
 import { useState, useCallback } from "react";
-import { Download, Loader2 } from "lucide-react";
+import { Download, Loader2 } from "@/lib/icons";
 import { supabase } from "@/integrations/supabase/client";
 import type { DiagnosticResult } from "@/types/diagnostic";
 import { translateHealthLabel } from "@/utils/diagnosticLabels";

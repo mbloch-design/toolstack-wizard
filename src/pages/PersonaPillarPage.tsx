@@ -6,7 +6,7 @@ import FaqBlock from "@/components/FaqBlock";
 import ToolLogo from "@/components/ToolLogo";
 import { useTools } from "@/hooks/useSupabaseData";
 import { setSeoTags, SEO_BASE } from "@/lib/seo";
-import { ArrowRight, Sparkles, AlertTriangle, HelpCircle, Layers, ShieldCheck } from "lucide-react";
+import { ArrowRight, Sparkles, AlertTriangle, HelpCircle, Layers, ShieldCheck } from "@/lib/icons";
 
 type Persona = "THEO" | "SOFIA" | "MARC" | "ALIX" | "CLAIRE";
 type Lang = "fr" | "en";

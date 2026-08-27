@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown } from "@/lib/icons";
 import ToolLogo from "@/components/ToolLogo";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, type ToolSummary } from "@/hooks/useSupabaseData";
