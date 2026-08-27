@@ -5,14 +5,14 @@
       "name": "tooltrim",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev"],
-      "cwd": "/Users/mike/Documents/New project",
+      "cwd": "/Users/mike/Documents/toolstack-wizard-clean",
       "autoPort": true
     },
     {
       "name": "tooltrim-preview",
       "runtimeExecutable": "npx",
       "runtimeArgs": ["vite", "preview"],
-      "cwd": "/Users/mike/Documents/New project",
+      "cwd": "/Users/mike/Documents/toolstack-wizard-clean",
       "autoPort": true
     }
   ]

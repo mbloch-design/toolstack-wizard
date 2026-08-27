@@ -7127,6 +7127,9 @@
     pointer-events: auto;
     transform: translateY(0);
   }
+  @media (hover: none), (pointer: coarse) {
+    .tce-hover-actions { opacity: 1; pointer-events: auto; transform: none; }
+  }
   .tce-cover::after {
     content: "";
     position: absolute;
