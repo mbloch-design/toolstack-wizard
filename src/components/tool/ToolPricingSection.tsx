@@ -29,6 +29,7 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t }: Prop
   const hasPaid = pricing?.paid && !pricing.paid.toLowerCase().includes("non public");
   const verifiedOn = pv5?.verified_on;
   const officialUrl = pv5?.official_source_url;
+  const isOneTime = pv5?.compare_plan_kind === "one_time";
   const displayPaidPrice = resolveDisplayPrice(tool, displayPrice, currency);
   const hasConvertedPrice = currency === "USD" && (
     (canonicalPlans.length === 0 && displayPrice > 0 && displayPaidPrice.converted)
@@ -140,7 +141,8 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t }: Prop
               </span>
               {displayPrice > 0 && (
                 <strong className="td-pricing-price">
-                  {displayPaidPrice.converted ? "≈ " : ""}{formatCurrencyAmount(displayPaidPrice.amount, currency, lang || "fr")}<small>/{t("mois", "mo")}</small>
+                  {displayPaidPrice.converted ? "≈ " : ""}{formatCurrencyAmount(displayPaidPrice.amount, currency, lang || "fr")}
+                  <small>{isOneTime ? ` · ${t("achat unique", "one-time")}` : `/${t("mois", "mo")}`}</small>
                 </strong>
               )}
             </div>

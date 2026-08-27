@@ -1,4 +1,4 @@
-import type { Tool } from "@/data/types";
+import type { Tool, ToolSummary } from "@/data/types";
 import { Package } from "lucide-react";
 import { useEffect, useState } from "react";
 import ToolLogo from "@/components/ToolLogo";
@@ -9,6 +9,7 @@ const humanizeSlug = (s: string) =>
 
 interface Props {
   tool: Tool;
+  tools?: ToolSummary[];
   lang?: string;
   t: (fr: string, en: string) => string;
 }
@@ -20,14 +21,22 @@ type Member = { slug: string; name: string; logo?: string | null; websiteUrl?: s
  * parente elle-même, liste tous les outils liés sous forme de tags (pills) avec logo + nom.
  * Membres lus dans la projection catalog_api. Rend `null` si aucun bundle.
  */
-export default function ToolBundleSection({ tool, lang, t }: Props) {
+export default function ToolBundleSection({ tool, tools = [], lang, t }: Props) {
   const L = lang === "en" ? "en" : "fr";
   const selfKey = tool.slug || tool.id;
   // Clé de bundle : le parent de l'outil (s'il est membre), sinon l'outil lui-même (s'il est parent).
   const bundleKey = tool.bundle_parent || selfKey;
 
-  const [members, setMembers] = useState<Member[] | null>(null);
-  const [parent, setParent] = useState<Member | null>(null);
+  const localMembers = tools
+    .filter((candidate) => candidate.bundle_parent === bundleKey && candidate.slug !== bundleKey)
+    .map((candidate) => ({ slug: candidate.slug, name: candidate.name, logo: candidate.logo, websiteUrl: candidate.websiteUrl }))
+    .sort((a, b) => a.name.localeCompare(b.name));
+  const localParentTool = tools.find((candidate) => candidate.slug === bundleKey || candidate.id === bundleKey);
+  const localParent = localParentTool
+    ? { slug: localParentTool.slug, name: localParentTool.name, logo: localParentTool.logo, websiteUrl: localParentTool.websiteUrl }
+    : null;
+  const [members, setMembers] = useState<Member[]>(localMembers);
+  const [parent, setParent] = useState<Member | null>(localParent);
 
   useEffect(() => {
     let cancelled = false;
@@ -50,13 +59,14 @@ export default function ToolBundleSection({ tool, lang, t }: Props) {
           list.push({ slug, name: r.name || humanizeSlug(slug), logo: r.logo, websiteUrl: r.website_url });
         }
         list.sort((a, b) => a.name.localeCompare(b.name));
-        setMembers(list);
+        if (list.length > 0) setMembers(list);
         const { data: p } = await catalog
           .from("published_tool_projection")
           .select("slug, name, logo, website_url").eq("tool_id", bundleKey).eq("lang", L).limit(1);
         if (!cancelled && p?.[0]) setParent({ slug: p[0].slug || bundleKey, name: p[0].name || humanizeSlug(bundleKey), logo: p[0].logo, websiteUrl: p[0].website_url });
       } catch {
-        if (!cancelled) setMembers([]);
+        // Keep the local catalogue fallback. It also makes the ecosystem
+        // visible in prerendered pages when the remote projection is offline.
       }
     })();
     return () => { cancelled = true; };

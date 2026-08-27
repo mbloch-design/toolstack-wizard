@@ -7,7 +7,10 @@ export type ToolPresentationInput = {
   shortDescription?: string;
   shortDescriptionEn?: string;
   pricing?: { free?: string; paid?: string } | null;
-  pricing_v5?: { compare_price_monthly_eur?: number | null } | null;
+  pricing_v5?: {
+    compare_price_monthly_eur?: number | null;
+    compare_plan_kind?: string | null;
+  } | null;
   defaultMonthlyPrice?: number | null;
   substitutable?: boolean | null;
 };
@@ -30,10 +33,13 @@ export function getToolPresentation(tool: ToolPresentationInput, lang: "fr" | "e
     : Number.isFinite(fallbackPrice) && fallbackPrice >= 0 ? fallbackPrice : 0;
   const freeTier = hasGenuineFreeTier(tool.pricing?.free);
   const freemium = isFreemiumPricing(tool.pricing);
+  const oneTime = tool.pricing_v5?.compare_plan_kind === "one_time";
   const planLabel = freemium
     ? "Freemium"
     : freeTier
       ? (lang === "fr" ? "Gratuit" : "Free")
+      : oneTime && monthlyPrice > 0
+        ? (lang === "fr" ? "Achat unique" : "One-time purchase")
       : monthlyPrice > 0
         ? (lang === "fr" ? `${monthlyPrice} €/mois` : `€${monthlyPrice}/mo`)
         : "N/A";

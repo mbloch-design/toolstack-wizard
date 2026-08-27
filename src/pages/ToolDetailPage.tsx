@@ -713,7 +713,7 @@ const ToolDetailPage = () => {
                   <ToolCostBreakdownTable tool={tool} lang={lang} t={t} />
                   <ToolBillingTrapsBlock tool={tool} lang={lang} t={t} />
                 </div>
-                <ToolBundleSection tool={tool} lang={lang} t={t} />
+                <ToolBundleSection tool={tool} tools={tools} lang={lang} t={t} />
               </div>
             )}
 

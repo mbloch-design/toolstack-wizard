@@ -17,7 +17,7 @@
     "logo": "",
     "tool_type": "metier",
     "host_app": null,
-    "bundle_parent": null,
+    "bundle_parent": "figma",
     "substitution_cluster_v2": null,
     "functional_needs": [
       "plugin-sketchup"
@@ -3177,16 +3177,16 @@
     "slug": "auto-rig-pro",
     "name": "Auto-Rig Pro",
     "categoryId": "design-tools",
-    "shortDescription": "Add-on Blender pour rigger des personnages et retargeter des animations.",
-    "shortDescriptionEn": "Blender add-on to rig characters and retarget animations.",
+    "shortDescription": "Add-on Blender pour créer des rigs, retargeter des animations et exporter vers les moteurs de jeu.",
+    "shortDescriptionEn": "Blender add-on for character rigging, animation retargeting, and game-engine export.",
     "pricing": {
       "free": "",
-      "paid": "40$ en licence perpétuelle (achat unique sur Superhive, ex-Blender Market)."
+      "paid": "50 $ pour la version complète ou 25 $ pour Auto-Rig Pro Core, en achat unique sur Superhive."
     },
-    "defaultMonthlyPrice": 40,
+    "defaultMonthlyPrice": 50,
     "affiliateLink": "https://superhivemarket.com/products/auto-rig-pro",
     "websiteUrl": "https://superhivemarket.com/products/auto-rig-pro",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/auto-rig-pro.png",
+    "ogImageUrl": "https://assets.superhivemarket.com/store/product/126738/image/xlarge-8c2f231da5b8fcd134fee5a937fc0824.jpg",
     "logo": "",
     "tool_type": "plugin",
     "host_app": "blender",
@@ -4221,7 +4221,7 @@
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://blender.org",
     "websiteUrl": "https://blender.org",
-    "ogImageUrl": "https://www.blender.org/wp-content/uploads/2026/05/thumb_youtube5-480x270.jpg",
+    "ogImageUrl": "https://www.blender.org/wp-content/uploads/2026/07/blender_52_panthera_joanna_kobierska-480x270.jpg",
     "logo": "",
     "tool_type": "metier",
     "host_app": null,
@@ -5550,16 +5550,16 @@
     "slug": "canva",
     "name": "Canva",
     "categoryId": "creation",
-    "shortDescription": "Design en ligne pour non-designers : visuels sociaux, présentations et templates.",
-    "shortDescriptionEn": "Design for non-designers.",
+    "shortDescription": "Suite de création visuelle assistée par IA : réseaux sociaux, présentations, vidéo et identité de marque.",
+    "shortDescriptionEn": "AI-assisted visual creation suite for social content, presentations, video, and brand assets.",
     "pricing": {
-      "free": "Gratuit avec accès limité aux templates premium",
-      "paid": "Pro à 15$/mois (tout illimité, outils IA), Teams au-delà"
+      "free": "Gratuit : plus de 1,6 million de modèles, 5 Go de stockage et quota IA limité.",
+      "paid": "Pro à 110 €/an pour une personne ; Pro+ à 170 €/an par personne. Pass IA disponible en option."
     },
-    "defaultMonthlyPrice": 13.8,
+    "defaultMonthlyPrice": 9.17,
     "affiliateLink": "https://canva.com",
     "websiteUrl": "https://canva.com",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/canva.png",
+    "ogImageUrl": "https://content-management-files.canva.com/c37135f6-6d9a-4920-b659-4f5e12698b8d/og-image-global-1200x630.jpg",
     "logo": "",
     "tool_type": "metier",
     "host_app": null,
@@ -8505,8 +8505,8 @@
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://www.blender.org/",
-    "websiteUrl": "https://www.blender.org/",
-    "ogImageUrl": "https://www.blender.org/wp-content/uploads/2026/05/thumb_youtube5-480x270.jpg",
+    "websiteUrl": "https://www.blender.org/features/rendering/",
+    "ogImageUrl": "https://www.blender.org/wp-content/uploads/2017/11/ghost_driver_lukas_walzer-480x270.jpg",
     "logo": "",
     "tool_type": "satellite",
     "host_app": "blender",
@@ -11422,7 +11422,7 @@
     "logo": "",
     "tool_type": "satellite",
     "host_app": null,
-    "bundle_parent": null,
+    "bundle_parent": "figma",
     "substitution_cluster_v2": null,
     "functional_needs": [
       "brief",
@@ -11450,16 +11450,16 @@
     "slug": "figma",
     "name": "Figma",
     "categoryId": "design-tools",
-    "shortDescription": "Outil de design d'interfaces (UI/UX) collaboratif : maquettes, prototypes et design systems.",
-    "shortDescriptionEn": "The interface design tool for creating mockups and prototypes.",
+    "shortDescription": "Canvas collaboratif pour concevoir, prototyper, coder, publier et décliner des produits numériques.",
+    "shortDescriptionEn": "Collaborative canvas for designing, prototyping, coding, publishing, and scaling digital products.",
     "pricing": {
-      "free": "Forfait gratuit (1 utilisateur, 3 projets)",
-      "paid": "Siège Full ~16$/mois, Dev ~12$, Collab 3$ (par utilisateur)"
+      "free": "Starter gratuit — accès limité à la suite, jusqu'à 500 crédits IA/mois",
+      "paid": "Professional : Full 16 $/mois · Dev 12 $/mois · Collab 3 $/mois"
     },
     "defaultMonthlyPrice": 16,
     "affiliateLink": "https://figma.com",
     "websiteUrl": "https://figma.com",
-    "ogImageUrl": "https://cdn.sanity.io/images/599r6htc/regionalized/b08d37520f7d5ad8d6562975b5932dd2d9a862bb-1200x630.gif?w=1200&amp;q=70&amp;fit=max&amp;auto=format",
+    "ogImageUrl": "https://cdn.sanity.io/images/599r6htc/regionalized/b08d37520f7d5ad8d6562975b5932dd2d9a862bb-1200x630.gif?w=1200&q=70&fit=max&auto=format",
     "logo": "",
     "tool_type": "metier",
     "host_app": null,
@@ -11487,6 +11487,237 @@
     "betterAlternative": null
   },
   {
+    "id": "figma-make",
+    "slug": "figma-make",
+    "name": "Figma Make",
+    "categoryId": "ai-code",
+    "shortDescription": "Prompt-to-app collaboratif pour transformer une idée ou une maquette Figma en prototype fonctionnel.",
+    "shortDescriptionEn": "Collaborative prompt-to-app tool for turning an idea or Figma design into a functional prototype.",
+    "pricing": {
+      "free": "Accès limité avec Starter",
+      "paid": "Inclus avec un siège Full éligible"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://www.figma.com/make/",
+    "websiteUrl": "https://www.figma.com/make/",
+    "ogImageUrl": "https://cdn.sanity.io/images/599r6htc/regionalized/7e39b983c6ad865e0a7a5243d914020e69a23f70-542x305.png",
+    "logo": "",
+    "tool_type": "ia",
+    "host_app": "figma",
+    "bundle_parent": "figma",
+    "substitution_cluster_v2": null,
+    "functional_needs": [
+      "prototyping",
+      "generation-code",
+      "ui-design"
+    ],
+    "verticals": [
+      "ux-ui",
+      "product-manager",
+      "developpeur-solo"
+    ],
+    "relevantFor": [
+      "Designers produit",
+      "Product managers",
+      "Prototypers"
+    ],
+    "freeAlternative": null,
+    "substitutable": true,
+    "betterAlternative": null
+  },
+  {
+    "id": "figma-sites",
+    "slug": "figma-sites",
+    "name": "Figma Sites",
+    "categoryId": "website-builders",
+    "shortDescription": "Création et publication de sites responsives sans quitter l'environnement Figma.",
+    "shortDescriptionEn": "Build and publish responsive websites without leaving the Figma environment.",
+    "pricing": {
+      "free": "Accès limité selon le plan",
+      "paid": "Inclus avec un siège Full éligible"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://www.figma.com/sites/",
+    "websiteUrl": "https://www.figma.com/sites/",
+    "ogImageUrl": "https://cdn.sanity.io/images/599r6htc/regionalized/4b9ade839f38291c91b76608d22e7c7a9ad525fd-542x305.png",
+    "logo": "",
+    "tool_type": "metier",
+    "host_app": "figma",
+    "bundle_parent": "figma",
+    "substitution_cluster_v2": null,
+    "functional_needs": [
+      "website-builder",
+      "ui-design",
+      "publication-web"
+    ],
+    "verticals": [
+      "ux-ui",
+      "graphiste-da",
+      "developpeur-solo"
+    ],
+    "relevantFor": [
+      "Designers web",
+      "Studios",
+      "Freelances"
+    ],
+    "freeAlternative": null,
+    "substitutable": true,
+    "betterAlternative": null
+  },
+  {
+    "id": "figma-buzz",
+    "slug": "figma-buzz",
+    "name": "Figma Buzz",
+    "categoryId": "design-tools",
+    "shortDescription": "Production à grande échelle de contenus de marque à partir de modèles contrôlés.",
+    "shortDescriptionEn": "Scale on-brand content production from controlled templates.",
+    "pricing": {
+      "free": "Accès limité selon le plan",
+      "paid": "Inclus selon le plan et le siège"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://www.figma.com/buzz/",
+    "websiteUrl": "https://www.figma.com/buzz/",
+    "ogImageUrl": "",
+    "logo": "",
+    "tool_type": "metier",
+    "host_app": "figma",
+    "bundle_parent": "figma",
+    "substitution_cluster_v2": null,
+    "functional_needs": [
+      "brand-assets",
+      "content-production",
+      "templates"
+    ],
+    "verticals": [
+      "graphiste-da",
+      "marketing",
+      "createur-contenu"
+    ],
+    "relevantFor": [
+      "Brand designers",
+      "Marketing teams",
+      "Content teams"
+    ],
+    "freeAlternative": null,
+    "substitutable": true,
+    "betterAlternative": null
+  },
+  {
+    "id": "figma-dev-mode",
+    "slug": "figma-dev-mode",
+    "name": "Figma Dev Mode",
+    "categoryId": "developer-tools",
+    "shortDescription": "Handoff développeur avec inspection, variables, assets, code et contexte du design system.",
+    "shortDescriptionEn": "Developer handoff with inspection, variables, assets, code, and design-system context.",
+    "pricing": {
+      "free": "Inspection de base pour les viewers",
+      "paid": "Professional Dev 12 $/mois ou siège Full 16 $/mois"
+    },
+    "defaultMonthlyPrice": 12,
+    "affiliateLink": "https://www.figma.com/dev-mode/",
+    "websiteUrl": "https://www.figma.com/dev-mode/",
+    "ogImageUrl": "",
+    "logo": "",
+    "tool_type": "metier",
+    "host_app": "figma",
+    "bundle_parent": "figma",
+    "substitution_cluster_v2": null,
+    "functional_needs": [
+      "design-handoff",
+      "inspection-code",
+      "design-system"
+    ],
+    "verticals": [
+      "developpeur-solo",
+      "ux-ui"
+    ],
+    "relevantFor": [
+      "Développeurs",
+      "Designers produit",
+      "Design systems teams"
+    ],
+    "freeAlternative": null,
+    "substitutable": false,
+    "betterAlternative": null
+  },
+  {
+    "id": "figma-draw",
+    "slug": "figma-draw",
+    "name": "Figma Draw",
+    "categoryId": "design-tools",
+    "shortDescription": "Outils vectoriels expressifs intégrés à Figma pour illustration, textures et tracés avancés.",
+    "shortDescriptionEn": "Expressive vector tools inside Figma for illustration, textures, and advanced paths.",
+    "pricing": {
+      "free": "Accès limité selon le plan",
+      "paid": "Inclus avec un siège Full"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://www.figma.com/draw/",
+    "websiteUrl": "https://www.figma.com/draw/",
+    "ogImageUrl": "",
+    "logo": "",
+    "tool_type": "metier",
+    "host_app": "figma",
+    "bundle_parent": "figma",
+    "substitution_cluster_v2": null,
+    "functional_needs": [
+      "illustration",
+      "vector-design",
+      "ui-design"
+    ],
+    "verticals": [
+      "graphiste-da",
+      "ux-ui"
+    ],
+    "relevantFor": [
+      "Illustrateurs",
+      "Brand designers",
+      "Product designers"
+    ],
+    "freeAlternative": null,
+    "substitutable": true,
+    "betterAlternative": null
+  },
+  {
+    "id": "figma-motion",
+    "slug": "figma-motion",
+    "name": "Figma Motion",
+    "categoryId": "motion-design",
+    "shortDescription": "Animation et motion design directement dans l'environnement Figma.",
+    "shortDescriptionEn": "Animation and motion design directly inside the Figma environment.",
+    "pricing": {
+      "free": "Non inclus dans Starter",
+      "paid": "Bêta disponible avec les sièges Full"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://www.figma.com/motion/",
+    "websiteUrl": "https://www.figma.com/motion/",
+    "ogImageUrl": "",
+    "logo": "",
+    "tool_type": "metier",
+    "host_app": "figma",
+    "bundle_parent": "figma",
+    "substitution_cluster_v2": null,
+    "functional_needs": [
+      "animation",
+      "motion-design",
+      "prototyping"
+    ],
+    "verticals": [
+      "motion-video",
+      "ux-ui"
+    ],
+    "relevantFor": [
+      "Motion designers",
+      "Product designers",
+      "Brand teams"
+    ],
+    "freeAlternative": null,
+    "substitutable": true,
+    "betterAlternative": null
+  },
+  {
     "id": "figma-slides",
     "slug": "figma-slides",
     "name": "Figma Slides",
@@ -11504,7 +11735,7 @@
     "logo": "",
     "tool_type": "metier",
     "host_app": null,
-    "bundle_parent": null,
+    "bundle_parent": "figma",
     "substitution_cluster_v2": null,
     "functional_needs": [
       "design-tools"
@@ -11610,7 +11841,7 @@
     "logo": "",
     "tool_type": "ia",
     "host_app": null,
-    "bundle_parent": null,
+    "bundle_parent": "figma",
     "substitution_cluster_v2": "ai-image-generation",
     "functional_needs": [
       "generation-image",
@@ -15104,7 +15335,7 @@
     "defaultMonthlyPrice": 38,
     "affiliateLink": "https://superhivemarket.com/products/hard-ops--boxcutter-ultimate-bundle",
     "websiteUrl": "https://superhivemarket.com/products/hard-ops--boxcutter-ultimate-bundle",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/hard-ops-boxcutter.png",
+    "ogImageUrl": "https://assets.superhivemarket.com/store/product/152952/image/xlarge-6cfdfa50a4bf06c30dcb85560a376edd.png",
     "logo": "",
     "tool_type": "plugin",
     "host_app": "blender",
@@ -26267,16 +26498,16 @@
     "slug": "perplexity",
     "name": "Perplexity",
     "categoryId": "ai-general",
-    "shortDescription": "Moteur de recherche IA avec citations en temps réel — la recherche réinventée.",
-    "shortDescriptionEn": "AI search engine with real-time citations — search reinvented.",
+    "shortDescription": "Recherche et assistant IA avec citations, Deep Research et exécution de tâches via Computer.",
+    "shortDescriptionEn": "AI search and assistant with citations, Deep Research, and task execution through Computer.",
     "pricing": {
-      "free": "Gratuit avec 5 recherches Pro/jour",
-      "paid": "Pro 20$/mois (ou 200$/an) · Max 200$/mois"
+      "free": "Gratuit pour la recherche essentielle, avec accès avancé limité.",
+      "paid": "Pro à 20 $/mois ou 200 $/an ; Max à 200 $/mois ou 2 000 $/an."
     },
-    "defaultMonthlyPrice": 17.52,
+    "defaultMonthlyPrice": 17,
     "affiliateLink": "https://perplexity.ai",
     "websiteUrl": "https://perplexity.ai",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/perplexity.png",
+    "ogImageUrl": "https://ppl-ai-public.s3.amazonaws.com/static/img/pplx-default-preview.png",
     "logo": "",
     "tool_type": "ia",
     "host_app": null,

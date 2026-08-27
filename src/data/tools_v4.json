@@ -115,7 +115,7 @@
     ],
     "personas": [],
     "host_app": null,
-    "bundle_parent": null,
+    "bundle_parent": "figma",
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -12629,22 +12629,22 @@
     "slug": "auto-rig-pro",
     "name": "Auto-Rig Pro",
     "category": "design-tools",
-    "shortDescription": "Add-on Blender pour rigger des personnages et retargeter des animations.",
-    "shortDescriptionEn": "Blender add-on to rig characters and retarget animations.",
+    "shortDescription": "Add-on Blender pour créer des rigs, retargeter des animations et exporter vers les moteurs de jeu.",
+    "shortDescriptionEn": "Blender add-on for character rigging, animation retargeting, and game-engine export.",
     "pricing": {
       "free": "",
-      "paid": "40$ en licence perpétuelle (achat unique sur Superhive, ex-Blender Market)."
+      "paid": "50 $ pour la version complète ou 25 $ pour Auto-Rig Pro Core, en achat unique sur Superhive."
     },
     "pricingEn": {
       "free": "",
-      "paid": "$40 perpetual license (one-time purchase on Superhive, formerly Blender Market)."
+      "paid": "$50 for the full version or $25 for Auto-Rig Pro Core, as a one-time purchase on Superhive."
     },
-    "defaultMonthlyPrice": 40,
+    "defaultMonthlyPrice": 50,
     "affiliateLink": "https://superhivemarket.com/products/auto-rig-pro",
     "websiteUrl": "https://superhivemarket.com/products/auto-rig-pro",
     "logo": "",
-    "longDescription": "Auto-Rig Pro automatise ce qui prend normalement des heures dans Blender : créer un squelette de personnage propre, le skinner et exporter le tout en FBX ou glTF avec des réglages prêts pour Unity, Unreal ou Godot. Il ajoute aussi un retargeting d'animations, pour réutiliser un mocap ou une animation existante sur un personnage différent.\n\nÀ 40$ en achat unique, c'est l'un des meilleurs rapports qualité-prix de l'écosystème Blender : un seul paiement, pas d'abonnement, et l'add-on est mis à jour régulièrement pour suivre les nouvelles versions de Blender. La communauté le signale parfois comme exigeant à prendre en main au début (beaucoup d'options), mais une fois maîtrisé, il fait gagner un temps considérable face à un rig manuel, surtout pour qui exporte vers un moteur de jeu.",
-    "longDescriptionEn": "Auto-Rig Pro automates what normally takes hours in Blender: creating a clean character skeleton, skinning it and exporting the whole thing as FBX or glTF with settings ready for Unity, Unreal or Godot. It also adds animation retargeting, to reuse mocap or an existing animation on a different character.\n\nAt $40 as a one-time purchase, it's one of the best value-for-money deals in the Blender ecosystem: a single payment, no subscription, and the add-on gets updated regularly to follow new Blender versions. The community sometimes flags it as demanding to learn at first (lots of options), but once mastered, it saves considerable time versus manual rigging, especially for anyone exporting to a game engine.",
+    "longDescription": "Auto-Rig Pro accélère le rigging de personnages dans Blender, le retargeting d'animations et l'export FBX ou glTF vers Unity, Unreal Engine et Godot. Le rig reste éditable et le système couvre aussi des créatures non humanoïdes, même si le placement automatique Smart vise d'abord les bipèdes.\n\nLa version complète coûte 50 $ en achat unique et inclut le cœur du rig, Smart, l'export jeu et le remapping ; la version Core à 25 $ convient si ces fonctions avancées ne sont pas nécessaires. Le gain est réel sur une production régulière, mais il faut toujours maîtriser le skinning et le weight painting pour corriger les géométries complexes.",
+    "longDescriptionEn": "Auto-Rig Pro speeds up character rigging in Blender, animation retargeting, and FBX or glTF export to Unity, Unreal Engine, and Godot. Rigs remain editable, and the system also supports non-humanoid creatures, although the automatic Smart placement tool primarily targets bipeds.\n\nThe full version is a $50 one-time purchase and includes the core rigging tools, Smart, game export, and remapping; the $25 Core edition is enough when those advanced features are not required. It can save substantial time in recurring production, but artists still need skinning and weight-painting skills to correct complex geometry.",
     "verdict": {
       "keepIf": [
         "Vous riggez régulièrement des personnages humanoïdes dans Blender.",
@@ -12722,7 +12722,7 @@
     "soloRelevance": "high",
     "teamRelevance": "medium",
     "seo": {
-      "metaDescription": "Auto-Rig Pro 2026 : l'add-on Blender pour rigger et exporter des personnages (40$, achat unique). Le verdict ToolTrim et les alternatives."
+      "metaDescription": "Auto-Rig Pro 2026 : rigging, retargeting et export Blender. Version complète à 50 $, achat unique. Prix, limites et alternatives."
     },
     "alternatives": [
       "blender",
@@ -12750,20 +12750,24 @@
     "prescription_context_questions": [],
     "pricing_v5": {
       "cautions": [],
-      "verified_on": "2026-06-20",
+      "verified_on": "2026-08-26",
       "source_domain": "superhivemarket.com",
       "usage_sensitive": false,
       "compare_plan_kind": "one_time",
       "compare_plan_name": "Licence perpétuelle",
-      "price_reliability": "medium",
+      "price_reliability": "high",
       "location_sensitive": false,
       "official_source_url": "https://superhivemarket.com/products/auto-rig-pro",
-      "verification_status": "third_party_observed",
-      "compare_price_monthly_eur": 40
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 50
     },
     "substitution_cluster_v2": "plugin-blender",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/auto-rig-pro.png",
-    "description": "Auto-Rig Pro automatise ce qui prend normalement des heures dans Blender : créer un squelette de personnage propre, le skinner et exporter le tout en FBX ou glTF avec des réglages prêts pour Unity, Unreal ou Godot. Il ajoute aussi un retargeting d'animations, pour réutiliser un mocap ou une animation existante sur un personnage différent.\n\nÀ 40$ en achat unique, c'est l'un des meilleurs rapports qualité-prix de l'écosystème Blender : un seul paiement, pas d'abonnement, et l'add-on est mis à jour régulièrement pour suivre les nouvelles versions de Blender. La communauté le signale parfois comme exigeant à prendre en main au début (beaucoup d'options), mais une fois maîtrisé, il fait gagner un temps considérable face à un rig manuel, surtout pour qui exporte vers un moteur de jeu.",
+    "ogImageUrl": "https://assets.superhivemarket.com/store/product/126738/image/xlarge-8c2f231da5b8fcd134fee5a937fc0824.jpg",
+    "galleryImages": [
+      "https://assets.superhivemarket.com/store/productimage/5041/image/xlarge-98c1fda52af4f61e38003fe7c956fd99.jpg",
+      "https://assets.superhivemarket.com/store/productimage/6755/image/xlarge-16b10c4486692a750494925e78b8ce83.jpg"
+    ],
+    "description": "Auto-Rig Pro accélère le rigging de personnages dans Blender, le retargeting d'animations et l'export FBX ou glTF vers Unity, Unreal Engine et Godot. Le rig reste éditable et le système couvre aussi des créatures non humanoïdes, même si le placement automatique Smart vise d'abord les bipèdes.\n\nLa version complète coûte 50 $ en achat unique et inclut le cœur du rig, Smart, l'export jeu et le remapping ; la version Core à 25 $ convient si ces fonctions avancées ne sont pas nécessaires. Le gain est réel sur une production régulière, mais il faut toujours maîtriser le skinning et le weight painting pour corriger les géométries complexes.",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -16908,7 +16912,11 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://www.blender.org/wp-content/uploads/2026/05/thumb_youtube5-480x270.jpg"
+    "ogImageUrl": "https://www.blender.org/wp-content/uploads/2026/07/blender_52_panthera_joanna_kobierska-480x270.jpg",
+    "galleryImages": [
+      "https://www.blender.org/wp-content/uploads/2017/11/features_rendering_02.jpg",
+      "https://www.blender.org/wp-content/uploads/2017/11/features_modeling.jpg"
+    ]
   },
   {
     "id": "bloc",
@@ -22412,14 +22420,14 @@
     "name": "Canva",
     "slug": "canva",
     "category": "creation",
-    "shortDescription": "Design en ligne pour non-designers : visuels sociaux, présentations et templates.",
-    "longDescription": "Canva, c'est l'outil qui a démocratisé le design. Tu pars d'un template, tu glisses tes textes et tes images, et tu sors un visuel propre pour LinkedIn, une présentation client ou un carrousel Instagram, sans aucune compétence en design. Sa bibliothèque de modèles, sa simplicité et sa collaboration en temps réel en ont fait l'outil par défaut des créateurs de contenu, community managers et indépendants.\n\nL'offre gratuite couvre déjà beaucoup. Le plan Pro, autour de 15$/mois, débloque l'essentiel pour un usage pro : suppression d'arrière-plan, Magic Resize, banque d'images premium, kit de marque et outils IA. C'est l'un des rares abonnements payants que ToolTrim recommande presque sans hésiter, parce que le temps gagné est immédiat.\n\nLa limite à connaître : on reconnaît souvent un visuel Canva entre mille, et tu as moins de contrôle créatif qu'avec Figma ou la suite Adobe. Si tu es designer pro ou que tu construis des interfaces, Canva ne remplace pas ces outils. Mais pour produire vite des visuels corrects sans être designer, il n'a pas d'équivalent.",
+    "shortDescription": "Suite de création visuelle assistée par IA : réseaux sociaux, présentations, vidéo et identité de marque.",
+    "longDescription": "Canva est devenu une suite de création visuelle complète : publications sociales, présentations, documents, vidéo, sites simples, kits de marque et contenus générés ou transformés avec IA Canva 2.0. Son avantage reste le même : partir d'un modèle, produire vite et collaborer sans imposer la courbe d'apprentissage d'un logiciel de design professionnel.\n\nLe plan Gratuit suffit pour un usage occasionnel et comprend plus de 1,6 million de modèles, 5 Go de stockage et un quota IA limité. Canva Pro coûte 110 €/an pour une personne et ajoute les contenus premium, 100 Go, cinq identités visuelles, le redimensionnement, la traduction, la suppression d'arrière-plan et davantage d'IA. Pro+ à 170 €/an par personne vise les équipes et les activités marketing avec plus de marques, validations et stockage.\n\nCanva ne remplace pas Figma pour concevoir une interface, ni Photoshop ou Illustrator pour un contrôle graphique fin. Il devient rentable quand la vitesse, la cohérence de marque et la production multiformat comptent davantage que la précision pixel par pixel. Avant de payer, vérifiez surtout si vos usages dépassent réellement les modèles et quotas du plan Gratuit.",
     "affiliateLink": "https://canva.com",
     "websiteUrl": "https://canva.com",
-    "defaultMonthlyPrice": 13.8,
+    "defaultMonthlyPrice": 9.17,
     "pricing": {
-      "free": "Gratuit avec accès limité aux templates premium",
-      "paid": "Pro à 15$/mois (tout illimité, outils IA), Teams au-delà"
+      "free": "Gratuit : plus de 1,6 million de modèles, 5 Go de stockage et quota IA limité.",
+      "paid": "Pro à 110 €/an pour une personne ; Pro+ à 170 €/an par personne. Pass IA disponible en option."
     },
     "logo": "",
     "soloRelevance": "high",
@@ -22481,7 +22489,7 @@
         "replaceEn": "Replace Canva with an AI? Not for assembled design (layout, templates, branding), where its simplicity stays unbeatable. But for image creation, dedicated AI generators do much better, and for many simple visuals an AI is enough without opening Canva. Verdict: Canva holds thanks to its ease and templates, but generative AI is nibbling at pure image creation.",
         "replaceFr": "Remplacer Canva par une IA ? Pas pour le design assemblé (mise en page, templates, marque), où sa simplicité reste imbattable. Mais pour la création d'images, les générateurs IA dédiés font beaucoup mieux, et pour beaucoup de visuels simples une IA suffit sans ouvrir Canva. Verdict : Canva tient grâce à sa facilité et ses templates, mais l'IA générative grignote la création pure d'images."
       },
-      "metaDescription": "Canva gratuit ou Pro (12€/mois) ? Découvrez quand passer à la version payante vaut le coup pour votre activité freelance. Comparatif 2026."
+      "metaDescription": "Canva Gratuit, Pro ou Pro+ en 2026 ? Tarifs vérifiés, outils IA, limites, images, vidéo officielle et alternatives pour les freelances."
     },
     "articles": [
       {
@@ -22527,14 +22535,14 @@
     "substitution_cluster_v2": "creative-suite",
     "pricing_v5": {
       "cautions": [
-        "Vérifier si l'utilisateur est sur Free, Pro ou Teams.",
-        "Prix source en USD, conversion indicative avec le taux fixe 0.92."
+        "Vérifier si l'utilisateur est sur Gratuit, Pro, Pro+ ou Entreprise.",
+        "Les quotas IA sont partagés entre les outils et varient selon le modèle utilisé."
       ],
-      "currency": "USD",
-      "verified_on": "2026-06-15",
+      "currency": "EUR",
+      "verified_on": "2026-08-27",
       "billing_model": "subscription",
       "source_domain": "canva.com",
-      "price_original": 15,
+      "price_original": 110,
       "billing_options": [
         {
           "value": "free",
@@ -22544,17 +22552,19 @@
         },
         {
           "value": "paid",
-          "currency": "USD",
+          "currency": "EUR",
           "label_en": "Canva Pro",
           "label_fr": "Canva Pro",
-          "price_original": 15,
-          "price_monthly_eur": 13.8
+          "price_original": 110,
+          "price_monthly_eur": 9.17
         },
         {
           "value": "team",
-          "label_en": "Canva Teams",
-          "label_fr": "Canva Teams",
-          "needs_verification": true
+          "currency": "EUR",
+          "label_en": "Canva Pro+",
+          "label_fr": "Canva Pro+",
+          "price_original": 170,
+          "price_monthly_eur": 14.17
         },
         {
           "value": "included",
@@ -22576,9 +22586,8 @@
       "location_sensitive": true,
       "official_source_url": "https://www.canva.com/pricing/",
       "verification_status": "official_explicit",
-      "conversion_rate_to_eur": 0.92,
-      "price_original_currency": "USD",
-      "compare_price_monthly_eur": 13.8
+      "price_original_currency": "EUR",
+      "compare_price_monthly_eur": 9.17
     },
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
@@ -22588,8 +22597,8 @@
       "never_auto_cancel_reason": null,
       "requires_context_questions": true
     },
-    "shortDescriptionEn": "Design for non-designers.",
-    "longDescriptionEn": "Canva is the tool that democratized design. You start from a template, drop in your text and images, and produce a clean visual for LinkedIn, a client presentation or an Instagram carousel, with no design skills. Its template library, simplicity and real-time collaboration made it the default tool for content creators, community managers and freelancers.\n\nThe free tier already covers a lot. The Pro plan, around $15/month, unlocks the essentials for professional use: background removal, Magic Resize, premium image library, brand kit and AI tools. It's one of the rare paid subscriptions ToolTrim recommends almost without hesitation, because the time saved is immediate.\n\nThe limit to know: a Canva visual is often recognizable a mile off, and you have less creative control than with Figma or the Adobe suite. If you're a pro designer or building interfaces, Canva doesn't replace those tools. But to quickly produce decent visuals without being a designer, it has no equal.",
+    "shortDescriptionEn": "AI-assisted visual creation suite for social content, presentations, video, and brand assets.",
+    "longDescriptionEn": "Canva has grown into a broad visual creation suite for social posts, presentations, documents, video, simple websites, brand kits, and content generated or transformed with Canva AI 2.0. Its core advantage remains speed: start from a template, create quickly, and collaborate without the learning curve of professional design software.\n\nThe Free plan covers occasional use with 1.6M+ templates, 5 GB of storage, and a limited AI quota. Canva Pro costs €110/year for one person and adds premium content, 100 GB, five brand kits, resize, translation, background removal, and a larger AI allowance. Pro+ costs €170/year per person and targets teams and marketing operations with more brands, approvals, and storage.\n\nCanva does not replace Figma for interface design or Photoshop and Illustrator for fine graphic control. It pays off when production speed, brand consistency, and multi-format output matter more than pixel-level precision. Before upgrading, check whether your actual usage exceeds the Free plan's templates and quotas.",
     "prosEn": [
       "Huge library of templates and assets.",
       "Very fast to pick up, no design expertise.",
@@ -22620,12 +22629,16 @@
       "threshold": "Canva makes sense when speed and templates matter more than fine creative control; for pixel/vector mastery, a dedicated pro tool remains stronger, and free suffices for occasional use."
     },
     "pricingEn": {
-      "free": "Free with limited access to premium templates",
-      "paid": "Pro at $15/month (unlimited everything, AI tools), Teams above"
+      "free": "Free: 1.6M+ templates, 5 GB storage, and a limited AI quota.",
+      "paid": "Pro at €110/year for one person; Pro+ at €170/year per person. Optional AI Pass available."
     },
     "force_silence": false,
-    "description": "Canva, c'est l'outil qui a démocratisé le design. Tu pars d'un template, tu glisses tes textes et tes images, et tu sors un visuel propre pour LinkedIn, une présentation client ou un carrousel Instagram, sans aucune compétence en design. Sa bibliothèque de modèles, sa simplicité et sa collaboration en temps réel en ont fait l'outil par défaut des créateurs de contenu, community managers et indépendants.\n\nL'offre gratuite couvre déjà beaucoup. Le plan Pro, autour de 15$/mois, débloque l'essentiel pour un usage pro : suppression d'arrière-plan, Magic Resize, banque d'images premium, kit de marque et outils IA. C'est l'un des rares abonnements payants que ToolTrim recommande presque sans hésiter, parce que le temps gagné est immédiat.\n\nLa limite à connaître : on reconnaît souvent un visuel Canva entre mille, et tu as moins de contrôle créatif qu'avec Figma ou la suite Adobe. Si tu es designer pro ou que tu construis des interfaces, Canva ne remplace pas ces outils. Mais pour produire vite des visuels corrects sans être designer, il n'a pas d'équivalent.",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/canva.png"
+    "description": "Canva est devenu une suite de création visuelle complète : publications sociales, présentations, documents, vidéo, sites simples, kits de marque et contenus générés ou transformés avec IA Canva 2.0. Son avantage reste le même : partir d'un modèle, produire vite et collaborer sans imposer la courbe d'apprentissage d'un logiciel de design professionnel.\n\nLe plan Gratuit suffit pour un usage occasionnel et comprend plus de 1,6 million de modèles, 5 Go de stockage et un quota IA limité. Canva Pro coûte 110 €/an pour une personne et ajoute les contenus premium, 100 Go, cinq identités visuelles, le redimensionnement, la traduction, la suppression d'arrière-plan et davantage d'IA. Pro+ à 170 €/an par personne vise les équipes et les activités marketing avec plus de marques, validations et stockage.\n\nCanva ne remplace pas Figma pour concevoir une interface, ni Photoshop ou Illustrator pour un contrôle graphique fin. Il devient rentable quand la vitesse, la cohérence de marque et la production multiformat comptent davantage que la précision pixel par pixel. Avant de payer, vérifiez surtout si vos usages dépassent réellement les modèles et quotas du plan Gratuit.",
+    "ogImageUrl": "https://content-management-files.canva.com/c37135f6-6d9a-4920-b659-4f5e12698b8d/og-image-global-1200x630.jpg",
+    "galleryImages": [
+      "https://content-management-files.canva.com/6859ff34-a242-4a2e-af5a-6161aea5eccc/Brandkit.png",
+      "https://content-management-files.canva.com/6cee9a5b-7c19-4671-8631-86eec77ebe4f/CanvaAI.png"
+    ]
   },
   {
     "id": "canva-ai",
@@ -34138,7 +34151,7 @@
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://www.blender.org/",
-    "websiteUrl": "https://www.blender.org/",
+    "websiteUrl": "https://www.blender.org/features/rendering/",
     "logo": "",
     "covers": [
       "render-engine",
@@ -34189,13 +34202,34 @@
     "prescription_quality": "question",
     "force_silence": false,
     "substitution_cluster_v2": "3d-render-engine",
-    "ogImageUrl": "https://www.blender.org/wp-content/uploads/2026/05/thumb_youtube5-480x270.jpg",
-    "description": "Moteur de rendu physique intégré à Blender, utilisant le path tracing pour produire des images réalistes de haute qualité en architecture, VFX et design de produits.",
-    "longDescription": "Moteur de rendu physique intégré à Blender, utilisant le path tracing pour produire des images réalistes de haute qualité en architecture, VFX et design de produits.",
-    "longDescriptionEn": "Physically-based render engine integrated into Blender, using path tracing to produce photorealistic images for architecture, VFX, and product design.",
-    "pricingEn": null,
-    "pricing_v5": null,
-    "seo": null,
+    "ogImageUrl": "https://www.blender.org/wp-content/uploads/2017/11/ghost_driver_lukas_walzer-480x270.jpg",
+    "galleryImages": [
+      "https://www.blender.org/wp-content/uploads/2017/11/ghost_driver_lukas_walzer.jpg",
+      "https://www.blender.org/wp-content/uploads/2017/11/features_rendering_02.jpg"
+    ],
+    "description": "Cycles est le moteur de rendu de production intégré à Blender. Son path tracing vise le photoréalisme avec rendu CPU ou GPU, matériaux PBR, volumes, passes, motion blur et débruitage, sans licence supplémentaire.",
+    "longDescription": "Cycles est le moteur de rendu de production intégré à Blender. Son path tracing vise le photoréalisme avec rendu CPU ou GPU, matériaux PBR, volumes, passes, motion blur et débruitage, sans licence supplémentaire. Il prend en charge CUDA et OptiX chez NVIDIA, HIP chez AMD, oneAPI chez Intel et Metal sur Apple.\n\nC'est le choix naturel pour un artiste déjà dans Blender qui veut produire des images réalistes sans ajouter un moteur payant à sa stack. En revanche, les temps de rendu restent très dépendants du matériel, de la scène et du réglage des samples : Cycles n'est pas un service cloud à 38 €/mois, mais une composante gratuite de Blender.",
+    "longDescriptionEn": "Cycles is Blender's built-in production render engine. Its path tracer targets photorealism with CPU or GPU rendering, PBR materials, volumes, passes, motion blur, and denoising, with no extra license. It supports CUDA and OptiX on NVIDIA, HIP on AMD, oneAPI on Intel, and Metal on Apple.\n\nIt is the natural choice for artists already working in Blender who need realistic output without adding a paid renderer to their stack. Render times still depend heavily on hardware, scene complexity, and sample settings: Cycles is not a €38/month cloud service, but a free component of Blender.",
+    "pricingEn": {
+      "free": "Included with Blender.",
+      "paid": ""
+    },
+    "pricing_v5": {
+      "cautions": [],
+      "verified_on": "2026-08-26",
+      "source_domain": "blender.org",
+      "usage_sensitive": false,
+      "compare_plan_kind": "open_source",
+      "compare_plan_name": "Included with Blender",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://www.blender.org/features/rendering/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 0
+    },
+    "seo": {
+      "metaDescription": "Cycles 2026 : le moteur de rendu photoréaliste gratuit inclus dans Blender. GPU, path tracing, limites et alternatives analysés par ToolTrim."
+    },
     "articles": [],
     "freeAlternative": null,
     "soloRelevance": null,
@@ -35101,7 +35135,7 @@
     "prescription_context_questions": [],
     "pricing_v5": {
       "cautions": [],
-      "verified_on": "2026-06-20",
+      "verified_on": "2026-08-26",
       "source_domain": "itsdart.com",
       "usage_sensitive": false,
       "compare_plan_kind": "subscription",
@@ -35772,7 +35806,7 @@
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
       "compare_plan_name": "Free",
-      "price_reliability": "medium",
+      "price_reliability": "high",
       "location_sensitive": false,
       "official_source_url": "https://www.blackmagicdesign.com/products/davinciresolve",
       "verification_status": "official_contextual",
@@ -46024,7 +46058,7 @@
     "tool_type": "satellite",
     "substitutable": true,
     "host_app": null,
-    "bundle_parent": null,
+    "bundle_parent": "figma",
     "verticals": [
       "ux-ui",
       "graphiste-da"
@@ -46090,14 +46124,14 @@
     "name": "Figma",
     "slug": "figma",
     "category": "design-tools",
-    "shortDescription": "Outil de design d'interfaces (UI/UX) collaboratif : maquettes, prototypes et design systems.",
-    "longDescription": "Figma, c'est devenu le standard du design d'interface. Tu y conçois des maquettes de sites et d'apps, tu les rends cliquables en prototypes, tu construis des design systems réutilisables, et surtout tout est collaboratif en temps réel dans le navigateur : plusieurs personnes sur le même fichier, comme un Google Docs du design. C'est ce qui lui a fait écraser Sketch et Adobe XD.\n\nLe modèle de prix a changé en 2024 et se fait maintenant par type de siège : un siège Full (création complète) coûte environ 16$/mois, un siège Dev (lecture et inspection de code) autour de 12$, et un siège Collab à 3$. L'offre gratuite, généreuse, suffit pour un projet perso ou un freelance qui travaille seul ; on paie surtout dès qu'on collabore et qu'on a besoin de plus de projets ou de bibliothèques partagées.\n\nÀ qui ça s'adresse : à tout designer UI/UX, mais aussi aux développeurs (mode Dev) et aux PM qui veulent suivre les maquettes. Si tu fais juste des visuels simples (posts, présentations), Canva est plus rapide et moins cher. Mais pour de l'interface produit sérieuse, Figma n'a pas vraiment de rival.",
+    "shortDescription": "Canvas collaboratif pour concevoir, prototyper, coder, publier et décliner des produits numériques.",
+    "longDescription": "Figma est passé d'un éditeur UI collaboratif à un écosystème complet de création numérique. Figma Design reste le cœur pour les interfaces, prototypes, composants, variables et design systems. Autour de lui, FigJam structure l'idéation, Slides les présentations, Dev Mode le passage au code, Make transforme un brief ou une maquette en prototype fonctionnel, Sites publie des sites, Draw renforce l'illustration vectorielle, Buzz industrialise les contenus de marque et Motion ajoute l'animation. Weave complète l'ensemble avec des workflows créatifs IA multi-modèles.\n\nLe plan Starter est gratuit avec un accès limité aux produits et 500 crédits IA mensuels au maximum. Sur Professional, le siège Full coûte 16 $/mois et donne accès à toute la suite ; le siège Dev coûte 12 $/mois et le siège Collab 3 $/mois. Organization monte à 55 $/mois pour un siège Full, Enterprise à 90 $/mois. Figma ne vend pas ces produits séparément : le type de siège détermine ce que chaque personne peut utiliser.\n\nPour une équipe produit, la valeur vient de la continuité entre recherche, design system, prototype, handoff et mise en ligne. Pour un indépendant qui ne fait que quelques visuels ou présentations, l'étendue de la suite peut être excessive et Canva reste souvent plus direct. Il faut surtout surveiller l'attribution des sièges et les crédits IA : l'écosystème devient rentable quand plusieurs étapes du workflow restent réellement dans Figma.",
     "affiliateLink": "https://figma.com",
     "websiteUrl": "https://figma.com",
     "defaultMonthlyPrice": 16,
     "pricing": {
-      "free": "Forfait gratuit (1 utilisateur, 3 projets)",
-      "paid": "Siège Full ~16$/mois, Dev ~12$, Collab 3$ (par utilisateur)"
+      "free": "Starter gratuit — accès limité à la suite, jusqu'à 500 crédits IA/mois",
+      "paid": "Professional : Full 16 $/mois · Dev 12 $/mois · Collab 3 $/mois"
     },
     "logo": "",
     "soloRelevance": "high",
@@ -46158,7 +46192,7 @@
         "replaceEn": "Replace Figma with an AI? No: real-time collaboration, components and design systems remain a structural need generative AI doesn't cover. AI builders (Lovable, bolt.new) generate a working interface straight from a prompt, which challenges the mockup step for simple projects, but not structured product design work. Verdict: AI augments Figma and nibbles at the simplest mockup work.",
         "replaceFr": "Remplacer Figma par une IA ? Non : la collaboration en temps réel, les composants et les design systems restent un besoin structurel que l'IA générative ne couvre pas. Les constructeurs IA (Lovable, bolt.new) génèrent une interface fonctionnelle directement depuis un prompt, ce qui challenge l'étape de maquettage pour des projets simples, mais pas le travail de design produit structuré. Verdict : l'IA augmente Figma et grignote le maquettage le plus simple."
       },
-      "metaDescription": "Figma en 2026 : prix par siège (Full ~16$), offre gratuite et alternatives. L'outil de design d'interface, analysé par ToolTrim pour les designers et freelances."
+      "metaDescription": "Figma en 2026 : Design, Make, Sites, Buzz, Draw, Motion, Dev Mode, FigJam et Slides. Prix des sièges, images, vidéos et alternatives."
     },
     "articles": [],
     "timeGainedHoursPerMonth": 7,
@@ -46200,10 +46234,10 @@
     "substitution_cluster_v2": "design-interface",
     "pricing_v5": {
       "cautions": [
-        "Offre gratuite : 1 utilisateur, 3 projets",
-        "Prix par type de siège : Full ~16$, Dev ~12$, Collab 3$ par utilisateur"
+        "Starter donne un accès limité aux produits et jusqu'à 500 crédits IA par mois.",
+        "Les produits ne sont pas vendus séparément : l'accès dépend du plan et du type de siège."
       ],
-      "verified_on": "2026-06-15",
+      "verified_on": "2026-08-27",
       "billing_model": "seat",
       "source_domain": "help.figma.com",
       "billing_options": [
@@ -46238,7 +46272,7 @@
       "compare_plan_name": "Professional Full seat",
       "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://help.figma.com/hc/en-us/articles/27468498501527-Updates-to-Figma-s-pricing-seats-and-billing-experience",
+      "official_source_url": "https://www.figma.com/pricing/",
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 16
     },
@@ -46250,8 +46284,8 @@
       "never_auto_cancel_reason": "Couche non substituable par défaut.",
       "requires_context_questions": true
     },
-    "shortDescriptionEn": "The interface design tool for creating mockups and prototypes.",
-    "longDescriptionEn": "Figma has become the standard for interface design. You build website and app mockups, turn them into clickable prototypes, create reusable design systems, and above all everything is collaborative in real time in the browser: several people on the same file, like a Google Docs for design. That's what let it crush Sketch and Adobe XD.\n\nThe pricing model changed in 2024 and is now per seat type: a Full seat (full creation) costs around $16/month, a Dev seat (read and code inspection) around $12, and a Collab seat $3. The generous free tier is enough for a personal project or a freelancer working solo; you mostly pay once you collaborate and need more projects or shared libraries.\n\nWho it's for: any UI/UX designer, but also developers (Dev mode) and PMs who want to follow the mockups. If you only make simple visuals (posts, presentations), Canva is faster and cheaper. But for serious product interface work, Figma has no real rival.",
+    "shortDescriptionEn": "Collaborative canvas for designing, prototyping, coding, publishing, and scaling digital products.",
+    "longDescriptionEn": "Figma has evolved from a collaborative UI editor into a complete digital creation ecosystem. Figma Design remains the core for interfaces, prototypes, components, variables, and design systems. Around it, FigJam supports ideation, Slides handles presentations, Dev Mode bridges design and code, Make turns a prompt or design into a functional prototype, Sites publishes websites, Draw expands vector illustration, Buzz scales brand content, and Motion adds animation. Weave complements the suite with multi-model AI creative workflows.\n\nThe Starter plan is free with limited product access and up to 500 monthly AI credits. On Professional, a Full seat costs $16/month and unlocks the whole suite; a Dev seat costs $12/month and a Collab seat $3/month. Organization rises to $55/month for a Full seat and Enterprise to $90/month. Figma does not sell these products individually: each person's seat type determines access.\n\nFor a product team, the value comes from continuity across research, design systems, prototyping, handoff, and publishing. For a freelancer who only makes occasional visuals or presentations, the suite can be excessive and Canva is often more direct. Seat allocation and AI credits deserve attention: the ecosystem pays off when several workflow stages genuinely stay inside Figma.",
     "prosEn": [
       "Interface design and real-time collaboration in the browser.",
       "Advanced prototyping (animations, variables, logic).",
@@ -46282,12 +46316,134 @@
       "threshold": "Figma makes sense when collaborative interface design and prototyping matter most; for print or pure vector work, a dedicated tool fits better."
     },
     "pricingEn": {
-      "free": "Free plan (1 user, 3 projects)",
-      "paid": "Full seat ~$16/month, Dev ~$12, Collab $3 (per user)"
+      "free": "Free Starter plan — limited suite access, up to 500 AI credits/month",
+      "paid": "Professional: Full $16/month · Dev $12/month · Collab $3/month"
     },
     "force_silence": false,
-    "description": "Figma, c'est devenu le standard du design d'interface. Tu y conçois des maquettes de sites et d'apps, tu les rends cliquables en prototypes, tu construis des design systems réutilisables, et surtout tout est collaboratif en temps réel dans le navigateur : plusieurs personnes sur le même fichier, comme un Google Docs du design. C'est ce qui lui a fait écraser Sketch et Adobe XD.\n\nLe modèle de prix a changé en 2024 et se fait maintenant par type de siège : un siège Full (création complète) coûte environ 16$/mois, un siège Dev (lecture et inspection de code) autour de 12$, et un siège Collab à 3$. L'offre gratuite, généreuse, suffit pour un projet perso ou un freelance qui travaille seul ; on paie surtout dès qu'on collabore et qu'on a besoin de plus de projets ou de bibliothèques partagées.\n\nÀ qui ça s'adresse : à tout designer UI/UX, mais aussi aux développeurs (mode Dev) et aux PM qui veulent suivre les maquettes. Si tu fais juste des visuels simples (posts, présentations), Canva est plus rapide et moins cher. Mais pour de l'interface produit sérieuse, Figma n'a pas vraiment de rival.",
-    "ogImageUrl": "https://cdn.sanity.io/images/599r6htc/regionalized/b08d37520f7d5ad8d6562975b5932dd2d9a862bb-1200x630.gif?w=1200&amp;q=70&amp;fit=max&amp;auto=format"
+    "description": "Figma est passé d'un éditeur UI collaboratif à un écosystème complet de création numérique. Figma Design reste le cœur pour les interfaces, prototypes, composants, variables et design systems. Autour de lui, FigJam structure l'idéation, Slides les présentations, Dev Mode le passage au code, Make transforme un brief ou une maquette en prototype fonctionnel, Sites publie des sites, Draw renforce l'illustration vectorielle, Buzz industrialise les contenus de marque et Motion ajoute l'animation. Weave complète l'ensemble avec des workflows créatifs IA multi-modèles.\n\nLe plan Starter est gratuit avec un accès limité aux produits et 500 crédits IA mensuels au maximum. Sur Professional, le siège Full coûte 16 $/mois et donne accès à toute la suite ; le siège Dev coûte 12 $/mois et le siège Collab 3 $/mois. Organization monte à 55 $/mois pour un siège Full, Enterprise à 90 $/mois. Figma ne vend pas ces produits séparément : le type de siège détermine ce que chaque personne peut utiliser.\n\nPour une équipe produit, la valeur vient de la continuité entre recherche, design system, prototype, handoff et mise en ligne. Pour un indépendant qui ne fait que quelques visuels ou présentations, l'étendue de la suite peut être excessive et Canva reste souvent plus direct. Il faut surtout surveiller l'attribution des sièges et les crédits IA : l'écosystème devient rentable quand plusieurs étapes du workflow restent réellement dans Figma.",
+    "ogImageUrl": "https://cdn.sanity.io/images/599r6htc/regionalized/b08d37520f7d5ad8d6562975b5932dd2d9a862bb-1200x630.gif?w=1200&q=70&fit=max&auto=format",
+    "galleryImages": [
+      "https://cdn.sanity.io/images/599r6htc/regionalized/4b9ade839f38291c91b76608d22e7c7a9ad525fd-542x305.png",
+      "https://cdn.sanity.io/images/599r6htc/regionalized/7e39b983c6ad865e0a7a5243d914020e69a23f70-542x305.png",
+      "https://cdn.sanity.io/images/599r6htc/regionalized/1883a9ebc4ce697b718301ad247c0fff45c572c1-540x304.png"
+    ]
+  },
+  {
+    "id": "figma-make",
+    "slug": "figma-make",
+    "name": "Figma Make",
+    "category": "ai-code",
+    "shortDescription": "Prompt-to-app collaboratif pour transformer une idée ou une maquette Figma en prototype fonctionnel.",
+    "shortDescriptionEn": "Collaborative prompt-to-app tool for turning an idea or Figma design into a functional prototype.",
+    "longDescription": "Figma Make génère et affine des prototypes fonctionnels à partir d'un prompt ou d'un fichier Figma, avec édition ciblée et contexte du design system. Il est inclus selon le plan et le type de siège Figma.",
+    "longDescriptionEn": "Figma Make generates and refines functional prototypes from a prompt or Figma file, with targeted editing and design-system context. Access depends on the Figma plan and seat type.",
+    "websiteUrl": "https://www.figma.com/make/",
+    "affiliateLink": "https://www.figma.com/make/",
+    "pricing": { "free": "Accès limité avec Starter", "paid": "Inclus avec un siège Full éligible" },
+    "pricingEn": { "free": "Limited access on Starter", "paid": "Included with an eligible Full seat" },
+    "defaultMonthlyPrice": 0,
+    "tool_type": "ia",
+    "substitutable": true,
+    "host_app": "figma",
+    "bundle_parent": "figma",
+    "functional_needs": ["prototyping", "generation-code", "ui-design"],
+    "verticals": ["ux-ui", "product-manager", "developpeur-solo"],
+    "covers": ["prototyping", "generation-code"],
+    "relevantFor": ["Designers produit", "Product managers", "Prototypers"],
+    "alternatives": ["lovable", "bolt-new"],
+    "articles": [],
+    "ogImageUrl": "https://cdn.sanity.io/images/599r6htc/regionalized/7e39b983c6ad865e0a7a5243d914020e69a23f70-542x305.png",
+    "force_silence": false
+  },
+  {
+    "id": "figma-sites",
+    "slug": "figma-sites",
+    "name": "Figma Sites",
+    "category": "website-builders",
+    "shortDescription": "Création et publication de sites responsives sans quitter l'environnement Figma.",
+    "shortDescriptionEn": "Build and publish responsive websites without leaving the Figma environment.",
+    "longDescription": "Figma Sites transforme une composition en site responsive publiable, avec breakpoints, composants, interactions et accès aux bibliothèques du design system. Le produit est encore présenté en bêta par Figma.",
+    "longDescriptionEn": "Figma Sites turns a composition into a publishable responsive website with breakpoints, components, interactions, and design-system libraries. Figma still presents the product as beta.",
+    "websiteUrl": "https://www.figma.com/sites/",
+    "affiliateLink": "https://www.figma.com/sites/",
+    "pricing": { "free": "Accès limité selon le plan", "paid": "Inclus avec un siège Full éligible" },
+    "pricingEn": { "free": "Limited access depending on plan", "paid": "Included with an eligible Full seat" },
+    "defaultMonthlyPrice": 0,
+    "tool_type": "metier", "substitutable": true, "host_app": "figma", "bundle_parent": "figma",
+    "functional_needs": ["website-builder", "ui-design", "publication-web"],
+    "verticals": ["ux-ui", "graphiste-da", "developpeur-solo"],
+    "covers": ["website-builder", "publication-web"], "relevantFor": ["Designers web", "Studios", "Freelances"],
+    "alternatives": ["framer", "webflow"], "articles": [],
+    "ogImageUrl": "https://cdn.sanity.io/images/599r6htc/regionalized/4b9ade839f38291c91b76608d22e7c7a9ad525fd-542x305.png",
+    "force_silence": false
+  },
+  {
+    "id": "figma-buzz",
+    "slug": "figma-buzz",
+    "name": "Figma Buzz",
+    "category": "design-tools",
+    "shortDescription": "Production à grande échelle de contenus de marque à partir de modèles contrôlés.",
+    "shortDescriptionEn": "Scale on-brand content production from controlled templates.",
+    "longDescription": "Figma Buzz relie designers de marque et équipes marketing autour de modèles personnalisables, de créations en masse et de garde-fous de marque. Le produit est présenté en bêta et accessible selon les sièges Figma.",
+    "longDescriptionEn": "Figma Buzz connects brand designers and marketing teams through customizable templates, bulk creation, and brand guardrails. The product is presented as beta and access depends on Figma seats.",
+    "websiteUrl": "https://www.figma.com/buzz/", "affiliateLink": "https://www.figma.com/buzz/",
+    "pricing": { "free": "Accès limité selon le plan", "paid": "Inclus selon le plan et le siège" },
+    "pricingEn": { "free": "Limited access depending on plan", "paid": "Included depending on plan and seat" },
+    "defaultMonthlyPrice": 0, "tool_type": "metier", "substitutable": true, "host_app": "figma", "bundle_parent": "figma",
+    "functional_needs": ["brand-assets", "content-production", "templates"], "verticals": ["graphiste-da", "marketing", "createur-contenu"],
+    "covers": ["brand-assets", "templates"], "relevantFor": ["Brand designers", "Marketing teams", "Content teams"],
+    "alternatives": ["canva"], "articles": [], "force_silence": false
+  },
+  {
+    "id": "figma-dev-mode",
+    "slug": "figma-dev-mode",
+    "name": "Figma Dev Mode",
+    "category": "developer-tools",
+    "shortDescription": "Handoff développeur avec inspection, variables, assets, code et contexte du design system.",
+    "shortDescriptionEn": "Developer handoff with inspection, variables, assets, code, and design-system context.",
+    "longDescription": "Dev Mode organise le passage du design au développement : mesures, propriétés, exports, extraits de code, statut des maquettes et intégrations. L'inspection de base reste disponible aux viewers ; les fonctions avancées nécessitent un siège Dev ou Full.",
+    "longDescriptionEn": "Dev Mode structures design-to-development handoff through measurements, properties, exports, code snippets, design status, and integrations. Basic inspection remains available to viewers; advanced features require a Dev or Full seat.",
+    "websiteUrl": "https://www.figma.com/dev-mode/", "affiliateLink": "https://www.figma.com/dev-mode/",
+    "pricing": { "free": "Inspection de base pour les viewers", "paid": "Professional Dev 12 $/mois ou siège Full 16 $/mois" },
+    "pricingEn": { "free": "Basic inspection for viewers", "paid": "Professional Dev $12/month or Full $16/month" },
+    "defaultMonthlyPrice": 12, "tool_type": "metier", "substitutable": false, "host_app": "figma", "bundle_parent": "figma",
+    "functional_needs": ["design-handoff", "inspection-code", "design-system"], "verticals": ["developpeur-solo", "ux-ui"],
+    "covers": ["design-handoff", "inspection-code"], "relevantFor": ["Développeurs", "Designers produit", "Design systems teams"],
+    "alternatives": ["zeplin"], "articles": [], "force_silence": false
+  },
+  {
+    "id": "figma-draw",
+    "slug": "figma-draw",
+    "name": "Figma Draw",
+    "category": "design-tools",
+    "shortDescription": "Outils vectoriels expressifs intégrés à Figma pour illustration, textures et tracés avancés.",
+    "shortDescriptionEn": "Expressive vector tools inside Figma for illustration, textures, and advanced paths.",
+    "longDescription": "Figma Draw enrichit l'éditeur avec shape builder, sélection multi-vecteurs, largeur de trait variable, texte sur tracé, motifs, textures et flous progressifs, tout en conservant les variables du design system.",
+    "longDescriptionEn": "Figma Draw expands the editor with shape building, multi-vector selection, variable stroke width, text on a path, patterns, textures, and progressive blur while retaining design-system variables.",
+    "websiteUrl": "https://www.figma.com/draw/", "affiliateLink": "https://www.figma.com/draw/",
+    "pricing": { "free": "Accès limité selon le plan", "paid": "Inclus avec un siège Full" },
+    "pricingEn": { "free": "Limited access depending on plan", "paid": "Included with a Full seat" },
+    "defaultMonthlyPrice": 0, "tool_type": "metier", "substitutable": true, "host_app": "figma", "bundle_parent": "figma",
+    "functional_needs": ["illustration", "vector-design", "ui-design"], "verticals": ["graphiste-da", "ux-ui"],
+    "covers": ["illustration", "vector-design"], "relevantFor": ["Illustrateurs", "Brand designers", "Product designers"],
+    "alternatives": ["adobe-illustrator"], "articles": [], "force_silence": false
+  },
+  {
+    "id": "figma-motion",
+    "slug": "figma-motion",
+    "name": "Figma Motion",
+    "category": "motion-design",
+    "shortDescription": "Animation et motion design directement dans l'environnement Figma.",
+    "shortDescriptionEn": "Animation and motion design directly inside the Figma environment.",
+    "longDescription": "Figma Motion ajoute un espace d'animation à l'écosystème afin de faire évoluer des compositions et interfaces sans exporter le travail vers un outil séparé. Il est actuellement présenté en bêta pour les sièges Full.",
+    "longDescriptionEn": "Figma Motion adds an animation workspace to the ecosystem so compositions and interfaces can move without exporting work to a separate tool. It is currently presented as beta for Full seats.",
+    "websiteUrl": "https://www.figma.com/motion/", "affiliateLink": "https://www.figma.com/motion/",
+    "pricing": { "free": "Non inclus dans Starter", "paid": "Bêta disponible avec les sièges Full" },
+    "pricingEn": { "free": "Not included on Starter", "paid": "Beta available with Full seats" },
+    "defaultMonthlyPrice": 0, "tool_type": "metier", "substitutable": true, "host_app": "figma", "bundle_parent": "figma",
+    "functional_needs": ["animation", "motion-design", "prototyping"], "verticals": ["motion-video", "ux-ui"],
+    "covers": ["animation", "motion-design"], "relevantFor": ["Motion designers", "Product designers", "Brand teams"],
+    "alternatives": ["after-effects", "rive"], "articles": [], "force_silence": false
   },
   {
     "id": "figma-slides",
@@ -46403,7 +46559,7 @@
     ],
     "personas": [],
     "host_app": null,
-    "bundle_parent": null,
+    "bundle_parent": "figma",
     "ia_use_case": null,
     "betterAlternative": null,
     "migrationGuide": null,
@@ -46770,7 +46926,7 @@
     "tool_type": "ia",
     "substitutable": true,
     "host_app": null,
-    "bundle_parent": null,
+    "bundle_parent": "figma",
     "verticals": [
       "graphiste-da",
       "motion-video",
@@ -60787,11 +60943,15 @@
       "price_reliability": "medium",
       "location_sensitive": false,
       "official_source_url": "https://superhivemarket.com/products/hard-ops--boxcutter-ultimate-bundle",
-      "verification_status": "third_party_observed",
+      "verification_status": "official_explicit",
       "compare_price_monthly_eur": 38
     },
     "substitution_cluster_v2": "plugin-blender",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/hard-ops-boxcutter.png",
+    "ogImageUrl": "https://assets.superhivemarket.com/store/product/152952/image/xlarge-6cfdfa50a4bf06c30dcb85560a376edd.png",
+    "galleryImages": [
+      "https://assets.superhivemarket.com/uploads%2F1567830360322-h6.gif",
+      "https://assets.superhivemarket.com/uploads%2F1567830624978-h13.gif"
+    ],
     "description": "Hard Ops et Boxcutter forment le duo de référence pour la modélisation hard-surface dans Blender (véhicules, robots, armes, props mécaniques). Boxcutter ajoute un découpage booléen à la souris, directement à l'écran, sans passer par les modificateurs un par un. Hard Ops automatise les tâches répétitives (chanfreins, miroirs, tableaux complexes) avec des raccourcis pensés pour un flux rapide.\n\nVendu en bundle à 38$, c'est un achat unique qui remplace des heures de modélisation manuelle. C'est devenu un standard chez les modélisateurs hard-surface sous Blender, au point que beaucoup de tutoriels et d'écoles l'enseignent comme base. La contrepartie, c'est une interface dense et un vocabulaire spécifique (les raccourcis et workflows propres à ces add-ons) qui demandent un vrai temps d'adaptation.",
     "decision_policy_v3": null,
     "force_silence": false
@@ -105894,17 +106054,17 @@
     "name": "Perplexity",
     "category": "ai-general",
     "websiteUrl": "https://perplexity.ai",
-    "shortDescription": "Moteur de recherche IA avec citations en temps réel — la recherche réinventée.",
-    "shortDescriptionEn": "AI search engine with real-time citations — search reinvented.",
-    "longDescription": "Perplexity est un moteur de recherche propulsé par l'IA qui répond directement à tes questions avec des sources citées et vérifiables, en temps réel. Contrairement à Google qui renvoie des liens, Perplexity synthétise l'information et indique précisément d'où elle vient.\n\nLe plan Pro à 20$/mois (≈18,40€) ou 200$/an (≈15,33€/mois) ajoute des modèles premium (GPT-4o, Claude, Gemini au choix), les recherches illimitées, 5$/mois de crédits API et le téléversement de fichiers illimité. La version gratuite donne déjà accès à 5 recherches Pro/jour.\n\nPour les freelances, consultants et chercheurs qui passent du temps à vérifier des informations, Perplexity remplace avantageusement les heures de recherche Google en fournissant des réponses sourcées directement. Particulièrement utile pour la veille concurrentielle, la recherche de prix et les questions techniques complexes.",
-    "longDescriptionEn": "Perplexity is an AI-powered search engine that answers your questions directly with cited, verifiable sources in real time. Unlike Google which returns links, Perplexity synthesizes information and indicates precisely where it comes from.\n\nThe Pro plan at $20/month (≈€18.40) or $200/year (≈€15.33/month) adds premium models (GPT-4o, Claude, Gemini to choose from), unlimited searches, $5/month in API credits and unlimited file upload. The free version already gives access to 5 Pro searches/day.\n\nFor freelancers, consultants and researchers who spend time verifying information, Perplexity advantageously replaces hours of Google searches by providing sourced answers directly. Particularly useful for competitive intelligence, price research and complex technical questions.",
-    "defaultMonthlyPrice": 17.52,
+    "shortDescription": "Recherche et assistant IA avec citations, Deep Research et exécution de tâches via Computer.",
+    "shortDescriptionEn": "AI search and assistant with citations, Deep Research, and task execution through Computer.",
+    "longDescription": "Perplexity combine un moteur de recherche IA, des réponses avec citations en ligne et des modes de travail plus profonds. Une requête peut produire une synthèse immédiatement vérifiable ; Deep Research explore davantage de sources ; Computer va plus loin en planifiant et exécutant des tâches ou en produisant des documents et applications.\n\nLe plan Gratuit couvre la recherche essentielle avec des limites sur les fonctions avancées. Pro coûte 20 $/mois ou 200 $/an, soit environ 17 $/mois avec facturation annuelle, et augmente l'accès à Computer, Deep Research, aux modèles avancés et aux créations. Max coûte 200 $/mois ou 2 000 $/an et vise les usages intensifs avec les limites les plus élevées.\n\nPerplexity est particulièrement pertinent pour la veille, les comparaisons et les recherches qui exigent une trace des sources. Les citations ne garantissent toutefois pas qu'une synthèse est correcte : il faut encore ouvrir les sources importantes, contrôler leur date et distinguer une source primaire d'une reprise secondaire.",
+    "longDescriptionEn": "Perplexity combines AI search, answers with inline citations, and deeper work modes. A query can produce an immediately checkable synthesis; Deep Research explores more sources; Computer goes further by planning and executing tasks or producing documents and applications.\n\nThe Free plan covers essential search with limits on advanced features. Pro costs $20/month or $200/year, roughly $17/month when billed annually, and expands access to Computer, Deep Research, advanced models, and creation tools. Max costs $200/month or $2,000/year and targets intensive use with the highest limits.\n\nPerplexity is especially useful for monitoring, comparisons, and research that requires a source trail. Citations do not guarantee that a synthesis is correct: important sources still need to be opened, dates checked, and primary evidence distinguished from secondary reporting.",
+    "defaultMonthlyPrice": 17,
     "pricing_v5": {
       "cautions": [
         "Prix affichés en dollars US, peuvent varier après conversion en euros.",
         "La facturation annuelle revient à environ 200$/an, moins chère qu'au mois."
       ],
-      "verified_on": "2026-05-08",
+      "verified_on": "2026-08-27",
       "source_domain": "perplexity.ai",
       "usage_sensitive": false,
       "compare_plan_kind": "individual",
@@ -105913,19 +106073,19 @@
       "location_sensitive": false,
       "official_source_url": "https://www.perplexity.ai/pro",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 18.4
+      "compare_price_monthly_eur": 17
     },
     "pricingTiers": {
-      "free": "Gratuit — 5 recherches Pro/jour, modèles de base",
-      "paid": "Pro 18,40€/mois · Max 184€/mois (power users)"
+      "free": "Gratuit — recherche essentielle, accès avancé limité",
+      "paid": "Pro 20 $/mois ou 200 $/an · Max 200 $/mois ou 2 000 $/an"
     },
     "pricing": {
-      "free": "Gratuit avec 5 recherches Pro/jour",
-      "paid": "Pro 20$/mois (ou 200$/an) · Max 200$/mois"
+      "free": "Gratuit pour la recherche essentielle, avec accès avancé limité.",
+      "paid": "Pro à 20 $/mois ou 200 $/an ; Max à 200 $/mois ou 2 000 $/an."
     },
     "pricingEn": {
-      "free": "Free with 5 Pro searches/day",
-      "paid": "Pro $20/month (or $200/year) · Max $200/month"
+      "free": "Free for essential search, with limited advanced access.",
+      "paid": "Pro at $20/month or $200/year; Max at $200/month or $2,000/year."
     },
     "soloRelevance": "high",
     "teamRelevance": "medium",
@@ -105940,28 +106100,28 @@
       "content-creator"
     ],
     "pros": [
-      "Recherche en temps réel avec sources fiables.",
-      "Multiples modes Focus pour ciblage du contexte.",
-      "Accès à plusieurs modèles frontier (Max).",
-      "Spaces personnalisés pour projets de recherche.",
-      "Version gratuite complète et compétente."
+      "Réponses avec citations en ligne faciles à vérifier.",
+      "Deep Research pour explorer davantage de sources.",
+      "Computer pour planifier et exécuter des tâches.",
+      "Accès à plusieurs modèles avancés selon le plan.",
+      "Version gratuite utile pour la recherche essentielle."
     ],
     "prosEn": [
-      "Real-time search with reliable sources.",
-      "Multiple Focus modes for context targeting.",
-      "Access to multiple frontier models (Max).",
-      "Custom Spaces for research projects.",
-      "Capable and free tier."
+      "Answers with inline citations that are easy to check.",
+      "Deep Research for exploring more sources.",
+      "Computer for planning and executing tasks.",
+      "Access to multiple advanced models depending on the plan.",
+      "A useful free tier for essential search."
     ],
     "cons": [
-      "Moins axé sur la productivité que le chat classique.",
-      "Max tier très coûteux pour usage occasionnel.",
-      "Apprentissage des modes Focus peut être nécessaire."
+      "Une citation ne garantit pas que la synthèse est correcte.",
+      "Computer et les meilleurs modèles sont fortement limités selon le plan.",
+      "Le plan Max est très coûteux pour un usage occasionnel."
     ],
     "consEn": [
-      "Less focused on productivity than standard chat.",
-      "Max tier expensive for occasional use.",
-      "Learning Focus modes may be needed."
+      "A citation does not guarantee that the synthesis is correct.",
+      "Computer and the best models are tightly limited depending on the plan.",
+      "The Max plan is very expensive for occasional use."
     ],
     "verdict": {
       "keepIf": [
@@ -105990,14 +106150,16 @@
       "threshold": "Perplexity excels at AI search; for office productivity, a dedicated assistant is better suited."
     },
     "useCases": [
-      "Faire des recherches avec sources citées pour articles ou rapports.",
-      "Explorer des sujets d'actualité avec contexte récent.",
-      "Comparer plusieurs modèles IA sur même requête (Max)."
+      "Faire des recherches sourcées pour des articles ou rapports.",
+      "Assurer une veille concurrentielle et comparer des offres.",
+      "Explorer un sujet en profondeur avec Deep Research.",
+      "Planifier des tâches ou produire des documents avec Computer."
     ],
     "useCasesEn": [
       "Research with cited sources for articles or reports.",
-      "Explore current topics with recent context.",
-      "Compare multiple AI models on same query (Max)."
+      "Run competitive monitoring and compare offers.",
+      "Explore a topic in depth with Deep Research.",
+      "Plan tasks or produce documents with Computer."
     ],
     "alternatives": [
       "chatgpt",
@@ -106020,10 +106182,13 @@
         "replaceEn": "Does Perplexity replace Google? For searches requiring synthesis of multiple sources, partly yes. For simple navigation or shopping, Google remains faster. Verdict: Perplexity challenges complex informational search, not general web search.",
         "replaceFr": "Perplexity remplace-t-il Google ? Pour des recherches qui demandent une synthèse de plusieurs sources, oui en partie. Pour de la navigation simple ou des achats, Google reste plus rapide. Verdict : Perplexity challenge la recherche informationnelle complexe, pas la recherche web généraliste."
       },
-      "metaDescription": "Perplexity avis 2026 : moteur de recherche IA avec citations en temps réel. Prix 18,40€/mois, alternatives ChatGPT, Claude."
+      "metaDescription": "Perplexity en 2026 : recherche IA avec citations, Deep Research et Computer. Tarifs Pro et Max, images, vidéo officielle et alternatives."
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/perplexity.png",
-    "description": "Perplexity est un moteur de recherche propulsé par l'IA qui répond directement à tes questions avec des sources citées et vérifiables, en temps réel. Contrairement à Google qui renvoie des liens, Perplexity synthétise l'information et indique précisément d'où elle vient.\n\nLe plan Pro à 20$/mois (≈18,40€) ou 200$/an (≈15,33€/mois) ajoute des modèles premium (GPT-4o, Claude, Gemini au choix), les recherches illimitées, 5$/mois de crédits API et le téléversement de fichiers illimité. La version gratuite donne déjà accès à 5 recherches Pro/jour.\n\nPour les freelances, consultants et chercheurs qui passent du temps à vérifier des informations, Perplexity remplace avantageusement les heures de recherche Google en fournissant des réponses sourcées directement. Particulièrement utile pour la veille concurrentielle, la recherche de prix et les questions techniques complexes.",
+    "ogImageUrl": "https://ppl-ai-public.s3.amazonaws.com/static/img/pplx-default-preview.png",
+    "galleryImages": [
+      "https://is1-ssl.mzstatic.com/image/thumb/Features211/v4/b8/59/96/b85996d0-de49-b477-22d1-83f9ff5a9043/3fab5649-fe34-404a-8805-52bb814758aa.png/800x450SCS.ApDPCS01.webp"
+    ],
+    "description": "Perplexity combine un moteur de recherche IA, des réponses avec citations en ligne et des modes de travail plus profonds. Une requête peut produire une synthèse immédiatement vérifiable ; Deep Research explore davantage de sources ; Computer va plus loin en planifiant et exécutant des tâches ou en produisant des documents et applications.\n\nLe plan Gratuit couvre la recherche essentielle avec des limites sur les fonctions avancées. Pro coûte 20 $/mois ou 200 $/an, soit environ 17 $/mois avec facturation annuelle, et augmente l'accès à Computer, Deep Research, aux modèles avancés et aux créations. Max coûte 200 $/mois ou 2 000 $/an et vise les usages intensifs avec les limites les plus élevées.\n\nPerplexity est particulièrement pertinent pour la veille, les comparaisons et les recherches qui exigent une trace des sources. Les citations ne garantissent toutefois pas qu'une synthèse est correcte : il faut encore ouvrir les sources importantes, contrôler leur date et distinguer une source primaire d'une reprise secondaire.",
     "affiliateLink": "https://perplexity.ai",
     "logo": "",
     "articles": [],

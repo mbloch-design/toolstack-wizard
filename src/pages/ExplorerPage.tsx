@@ -442,8 +442,8 @@ export default function ExplorerPage() {
     ? Boolean(sourceStackEntry?.needIds.includes(destination.id))
     : Boolean(sourceStackEntry);
   const sourceIsAdding = Boolean(sourceToolSlug && addingSlug === sourceToolSlug);
-  const stageCandidates = sourceTool ? visibleCandidates.slice(0, 6) : [];
-  const gridCandidates = sourceTool ? visibleCandidates.slice(stageCandidates.length) : visibleCandidates;
+  const gridCandidates = visibleCandidates;
+  const activeFilterLabel = floatingFilterItems.find((item) => item.id === (isObjectiveSource ? activeThemeId || "all" : angle))?.label;
   const tagFilters = (
     <ExplorerTagFilterNav
       activeId={isObjectiveSource ? activeThemeId || "all" : angle}
@@ -472,6 +472,29 @@ export default function ExplorerPage() {
 
     return (
       <article key={slug} data-tool-slug={slug} className={`ex-card${inDestination || inStackWithoutDestination ? " is-present" : ""}${isAdding ? " is-adding" : ""}`}>
+        <div className="ex-card-actions" aria-label={t(`Actions pour ${candidate.tool.name}`, `Actions for ${candidate.tool.name}`) as string}>
+          <button
+            type="button"
+            onClick={() => recenter(candidate.tool)}
+            aria-label={t(`Explorer autour de ${candidate.tool.name}`, `Explore around ${candidate.tool.name}`) as string}
+            title={t("Explorer autour", "Explore around") as string}
+          >
+            <Compass size={18} aria-hidden />
+          </button>
+          <button type="button" onClick={() => addTool(candidate.tool)} disabled={inDestination || inStackWithoutDestination || isAdding} aria-label={inDestination
+            ? t(`${candidate.tool.name} déjà dans ${destination?.labelFr}`, `${candidate.tool.name} already in ${destination?.labelEn}`) as string
+            : inStackWithoutDestination
+              ? t(`${candidate.tool.name} déjà dans Ma stack`, `${candidate.tool.name} already in My stack`) as string
+              : destination && candidate.stackState === "in-stack"
+                ? t(`Ajouter ${candidate.tool.name} à ${destination.labelFr}`, `Add ${candidate.tool.name} to ${destination.labelEn}`) as string
+                : t(`Ajouter ${candidate.tool.name} à Ma stack`, `Add ${candidate.tool.name} to My stack`) as string}
+            title={inDestination || inStackWithoutDestination
+              ? t("Déjà ajouté", "Already added") as string
+              : t("Ajouter à Ma stack", "Add to My stack") as string}
+          >
+            {inDestination || inStackWithoutDestination ? <Check size={18} aria-hidden /> : <Plus size={18} aria-hidden />}
+          </button>
+        </div>
         <button
           type="button"
           className="ex-card-main"
@@ -495,18 +518,6 @@ export default function ExplorerPage() {
           </span>
           <span id={`explore-card-${slug}-description`} className="ex-card-description">{description}</span>
         </button>
-        <div className="ex-card-actions">
-          <button type="button" onClick={() => addTool(candidate.tool)} disabled={inDestination || inStackWithoutDestination || isAdding} aria-label={inDestination
-            ? t(`${candidate.tool.name} déjà dans ${destination?.labelFr}`, `${candidate.tool.name} already in ${destination?.labelEn}`) as string
-            : inStackWithoutDestination
-              ? t(`${candidate.tool.name} déjà dans Ma stack`, `${candidate.tool.name} already in My stack`) as string
-              : destination && candidate.stackState === "in-stack"
-                ? t(`Ajouter ${candidate.tool.name} à ${destination.labelFr}`, `Add ${candidate.tool.name} to ${destination.labelEn}`) as string
-                : t(`Ajouter ${candidate.tool.name} à Ma stack`, `Add ${candidate.tool.name} to My stack`) as string}>
-              {inDestination || inStackWithoutDestination ? <Check size={16} aria-hidden /> : <Plus size={16} aria-hidden />}
-              <span>{inDestination ? t("Déjà ajouté", "Already added") : inStackWithoutDestination ? t("Dans Ma stack", "In My stack") : destination && candidate.stackState === "in-stack" ? t("Ajouter ici", "Add here") : t("Ajouter", "Add")}</span>
-          </button>
-        </div>
       </article>
     );
   };
@@ -524,7 +535,7 @@ export default function ExplorerPage() {
   return (
     <>
     <main className={`ex-page${isObjectiveSource ? "" : " ex-page--tool"}`} aria-labelledby="explorer-title">
-      {!isObjectiveSource && tagFilters}
+      {!isObjectiveSource && !sourceTool && tagFilters}
       {isStackSource ? (
         <header className="ex-source-banner ex-source-banner--objective">
           <button type="button" className="ex-back" onClick={handleBack} aria-label={t("Retour à Ma stack", "Back to My stack") as string}>
@@ -605,13 +616,25 @@ export default function ExplorerPage() {
             </div>
           </div>
         </header>
-        <div className="ex-tool-stage-grid">
-          {stageCandidates.map(renderCandidateCard)}
-        </div>
         </section>
       )}
 
-      {isObjectiveSource && tagFilters}
+      {(isObjectiveSource || Boolean(sourceTool)) && tagFilters}
+
+      {visibleCandidates.length > 0 && (
+        <header className="ex-results-heading">
+          <div>
+            <span>{activeFilterLabel}</span>
+            <h2>{sourceTool
+              ? t(`Outils à découvrir autour de ${sourceLabel}`, `Tools to discover around ${sourceLabel}`)
+              : t("Outils recommandés", "Recommended tools")}</h2>
+          </div>
+          <p>{t(
+            `${filteredCandidates.length} outil${filteredCandidates.length > 1 ? "s" : ""} classé${filteredCandidates.length > 1 ? "s" : ""} par pertinence`,
+            `${filteredCandidates.length} tool${filteredCandidates.length > 1 ? "s" : ""} ranked by relevance`,
+          )}</p>
+        </header>
+      )}
 
       {visibleCandidates.length > 0 ? (
         gridCandidates.length > 0 && <section className="ex-grid ex-grid--masonry" aria-label={t("Outils associés", "Related tools") as string}>
