@@ -100,6 +100,23 @@ const Footer = () => {
               <Link to={`${prefix}/privacy-policy`}>{t("Confidentialité", "Privacy")}</Link>
               <Link to={`${prefix}/terms`}>{t("CGV", "Terms")}</Link>
             </div>
+            <div className="tt-footer-badges">
+              <a
+                href="https://dang.ai"
+                target="_blank"
+                rel="dofollow noopener"
+                className="tt-footer-badge"
+                aria-label="Verified on DANG!"
+              >
+                <img
+                  src="https://assets.dang.ai/badges/dang-verified-dark.png"
+                  alt="Verified on DANG!"
+                  width={260}
+                  height={94}
+                  loading="lazy"
+                />
+              </a>
+            </div>
           </div>
         </div>
       </section>
