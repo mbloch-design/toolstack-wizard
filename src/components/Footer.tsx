@@ -125,6 +125,28 @@ const Footer = () => {
                   loading="lazy"
                 />
               </a>
+              <a
+                href="https://neeed.directory"
+                target="_blank"
+                rel="noopener"
+                className="tt-footer-badge"
+                aria-label="Featured on neeed.directory"
+              >
+                <img
+                  className="tt-footer-badge-light"
+                  src="https://neeed.directory/badges/neeed-badge-light.svg"
+                  alt="Featured on neeed.directory"
+                  width={139}
+                  loading="lazy"
+                />
+                <img
+                  className="tt-footer-badge-dark"
+                  src="https://neeed.directory/badges/neeed-badge-dark.svg"
+                  alt="Featured on neeed.directory"
+                  width={139}
+                  loading="lazy"
+                />
+              </a>
             </div>
           </div>
         </div>
