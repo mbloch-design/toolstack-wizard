@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState, type KeyboardEvent } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type KeyboardEvent, type ReactNode } from "react";
 import { ArrowLeft, Check, ChevronLeft, ChevronRight, Compass, Plus } from "lucide-react";
 import { Link, useLocation, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { toast } from "sonner";
@@ -51,6 +51,7 @@ interface ExplorerFilterItem {
 function ExplorerTagFilterNav({
   activeId,
   ariaLabel,
+  context,
   items,
   nextLabel,
   onSelect,
@@ -58,13 +59,30 @@ function ExplorerTagFilterNav({
 }: {
   activeId: string;
   ariaLabel: string;
+  context?: ReactNode;
   items: ExplorerFilterItem[];
   nextLabel: string;
   onSelect: (id: string) => void;
   previousLabel: string;
 }) {
   const trackRef = useRef<HTMLDivElement>(null);
+  const stickySentinelRef = useRef<HTMLSpanElement>(null);
   const [overflow, setOverflow] = useState({ left: false, right: false });
+  const [isPinned, setIsPinned] = useState(false);
+
+  useEffect(() => {
+    const sentinel = stickySentinelRef.current;
+    if (!sentinel) return;
+    const scrollContainer = document.getElementById("main-content");
+    const overflowY = scrollContainer ? window.getComputedStyle(scrollContainer).overflowY : "visible";
+    const root = scrollContainer && (overflowY === "auto" || overflowY === "scroll") ? scrollContainer : null;
+    const observer = new IntersectionObserver(([entry]) => setIsPinned(!entry?.isIntersecting), {
+      root,
+      threshold: 0,
+    });
+    observer.observe(sentinel);
+    return () => observer.disconnect();
+  }, []);
 
   const updateOverflow = useCallback(() => {
     const track = trackRef.current;
@@ -126,43 +144,51 @@ function ExplorerTagFilterNav({
   }
 
   return (
-    <nav className="ex-tag-filter" aria-label={ariaLabel}>
-      <div ref={trackRef} className="ex-tag-filter-track">
-        {items.map((item, index) => (
-          <button
-            key={item.id}
-            type="button"
-            data-filter-id={item.id}
-            className={`ex-tag-filter-item${activeId === item.id ? " is-active" : ""}`}
-            aria-pressed={activeId === item.id}
-            onClick={() => onSelect(item.id)}
-            onKeyDown={(event) => handleKeyDown(event, index)}
-          >
-            {item.label}
-          </button>
-        ))}
+    <>
+    <span ref={stickySentinelRef} className="ex-tag-filter-sentinel" aria-hidden />
+    <nav className={`ex-tag-filter${isPinned ? " is-pinned" : ""}`} aria-label={ariaLabel}>
+      <div className="ex-tag-filter-surface">
+        {context}
+        <div className="ex-tag-filter-scroll">
+          <div ref={trackRef} className="ex-tag-filter-track">
+            {items.map((item, index) => (
+              <button
+                key={item.id}
+                type="button"
+                data-filter-id={item.id}
+                className={`ex-tag-filter-item${activeId === item.id ? " is-active" : ""}`}
+                aria-pressed={activeId === item.id}
+                onClick={() => onSelect(item.id)}
+                onKeyDown={(event) => handleKeyDown(event, index)}
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
+          {overflow.left && (
+            <button
+              type="button"
+              className="ex-tag-filter-control ex-tag-filter-control--left"
+              onClick={() => scrollTags(-1)}
+              aria-label={previousLabel}
+            >
+              <ChevronLeft size={18} aria-hidden />
+            </button>
+          )}
+          {overflow.right && (
+            <button
+              type="button"
+              className="ex-tag-filter-control ex-tag-filter-control--right"
+              onClick={() => scrollTags(1)}
+              aria-label={nextLabel}
+            >
+              <ChevronRight size={18} aria-hidden />
+            </button>
+          )}
+        </div>
       </div>
-      {overflow.left && (
-        <button
-          type="button"
-          className="ex-tag-filter-control ex-tag-filter-control--left"
-          onClick={() => scrollTags(-1)}
-          aria-label={previousLabel}
-        >
-          <ChevronLeft size={18} aria-hidden />
-        </button>
-      )}
-      {overflow.right && (
-        <button
-          type="button"
-          className="ex-tag-filter-control ex-tag-filter-control--right"
-          onClick={() => scrollTags(1)}
-          aria-label={nextLabel}
-        >
-          <ChevronRight size={18} aria-hidden />
-        </button>
-      )}
     </nav>
+    </>
   );
 }
 
@@ -214,7 +240,9 @@ export default function ExplorerPage() {
   const categoryById = useMemo(() => new Map(categories.map((category) => [category.id, category])), [categories]);
   const getCategoryLabel = useCallback((tool: ToolSummary) => {
     const category = categoryById.get(tool.categoryId);
-    return cleanCategoryLabel(category ? (lang === "en" ? category.nameEn || category.name : category.name) : tool.categoryId);
+    if (category) return cleanCategoryLabel(lang === "en" ? category.nameEn || category.name : category.name);
+    const fallback = cleanCategoryLabel(tool.categoryId).replace(/[-_]+/g, " ");
+    return fallback ? `${fallback.charAt(0).toLocaleUpperCase(lang)}${fallback.slice(1)}` : fallback;
   }, [categoryById, lang]);
   const sourceNeed = source?.type === "objectif" ? state.needs.find((need) => need.id === source.id) || null : null;
   const sourceTool = source?.type === "outil" ? toolBySlug.get(source.slug) || null : null;
@@ -263,8 +291,27 @@ export default function ExplorerPage() {
     : [], [candidates, isObjectiveSource, source]);
   const requestedThemeId = searchParams.get("theme");
   const activeThemeId = isObjectiveSource && objectiveThemes.some((theme) => theme.id === requestedThemeId) ? requestedThemeId : null;
+  const toolCategoryFilters = useMemo(() => {
+    if (!sourceTool) return [] as Array<{ id: string; label: string; count: number }>;
+    const grouped = new Map<string, { id: string; label: string; count: number }>();
+    candidates.forEach((candidate) => {
+      const id = candidate.tool.categoryId;
+      const label = candidate.categoryLabel;
+      if (!id || !label) return;
+      const current = grouped.get(id);
+      if (current) current.count += 1;
+      else grouped.set(id, { id, label, count: 1 });
+    });
+    return [...grouped.values()].sort((a, b) => b.count - a.count || a.label.localeCompare(b.label, lang));
+  }, [candidates, lang, sourceTool]);
+  const requestedCategoryId = searchParams.get("category");
+  const activeCategoryId = sourceTool && toolCategoryFilters.some((category) => category.id === requestedCategoryId)
+    ? requestedCategoryId
+    : null;
   const filteredCandidates = isObjectiveSource
     ? activeThemeId ? candidates.filter((candidate) => getObjectiveExplorationThemeId(source.id, candidate.tool) === activeThemeId) : candidates
+    : sourceTool
+      ? activeCategoryId ? candidates.filter((candidate) => candidate.tool.categoryId === activeCategoryId) : candidates
     : angle === "all" ? candidates : candidates.filter((candidate) => candidate.direction === angle);
   const visibleCandidates = filteredCandidates.slice(0, resultLimit);
   const hasMoreCandidates = visibleCandidates.length < filteredCandidates.length;
@@ -274,7 +321,7 @@ export default function ExplorerPage() {
     setResultLimit(INITIAL_RESULT_COUNT);
     loadingMoreRef.current = false;
     setIsLoadingMore(false);
-  }, [activeThemeId, angle, sourceKey]);
+  }, [activeCategoryId, activeThemeId, angle, sourceKey]);
 
   useEffect(() => {
     const sentinel = loadMoreRef.current;
@@ -391,6 +438,15 @@ export default function ExplorerPage() {
     if (shouldScroll) scrollToTop(window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth");
   }
 
+  function setCategory(categoryId: string | null, shouldScroll = true) {
+    const nextParams = new URLSearchParams(searchParams);
+    nextParams.delete("angle");
+    if (categoryId) nextParams.set("category", categoryId);
+    else nextParams.delete("category");
+    setSearchParams(nextParams, { replace: true, state: { ...locationState, skipScrollReset: true } });
+    if (shouldScroll) scrollToTop(window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth");
+  }
+
   function recenter(tool: ToolSummary) {
     const href = getExplorerHref(prefix, { type: "outil", slug: getExplorationToolKey(tool) }, {
       angle: isObjectiveSource ? "all" : angle,
@@ -430,7 +486,10 @@ export default function ExplorerPage() {
       { id: "all", label: t("Toutes les idées", "All ideas") as string },
       ...objectiveThemes.map((theme) => ({ id: theme.id, label: t(theme.labelFr, theme.labelEn) as string })),
     ]
-    : [
+    : sourceTool ? [
+      { id: "all", label: t("Tout", "All") as string },
+      ...toolCategoryFilters.map((category) => ({ id: category.id, label: category.label })),
+    ] : [
       { id: "all", label: t("Tout", "All") as string },
       { id: "alternatives", label: t("Alternatives", "Alternatives") as string },
       { id: "extensions", label: t("Extensions", "Extensions") as string },
@@ -443,16 +502,40 @@ export default function ExplorerPage() {
     : Boolean(sourceStackEntry);
   const sourceIsAdding = Boolean(sourceToolSlug && addingSlug === sourceToolSlug);
   const gridCandidates = visibleCandidates;
-  const activeFilterLabel = floatingFilterItems.find((item) => item.id === (isObjectiveSource ? activeThemeId || "all" : angle))?.label;
+  const activeFilterId = isObjectiveSource ? activeThemeId || "all" : sourceTool ? activeCategoryId || "all" : angle;
+  const activeFilterLabel = floatingFilterItems.find((item) => item.id === activeFilterId)?.label;
   const tagFilters = (
     <ExplorerTagFilterNav
-      activeId={isObjectiveSource ? activeThemeId || "all" : angle}
-      ariaLabel={t("Trier les outils par thème", "Sort tools by theme") as string}
+      activeId={activeFilterId}
+      ariaLabel={sourceTool
+        ? t("Filtrer les outils par catégorie", "Filter tools by category") as string
+        : t("Trier les outils par thème", "Sort tools by theme") as string}
       items={floatingFilterItems}
       nextLabel={t("Voir les tags suivants", "View next tags") as string}
       previousLabel={t("Voir les tags précédents", "View previous tags") as string}
+      context={sourceTool ? (
+        <div className="ex-filter-context">
+          <button
+            type="button"
+            className="ex-filter-context-back"
+            onClick={handleBack}
+            aria-label={t(`Retour à ${previousLabel}`, `Back to ${previousLabel}`) as string}
+          >
+            <ArrowLeft size={18} aria-hidden />
+          </button>
+          <ToolLogo tool={sourceTool} size={34} />
+          <span className="ex-filter-context-copy">
+            <small>{locationState.explorerCanGoBack
+              ? t(`Depuis ${previousLabel}`, `From ${previousLabel}`)
+              : t("Explorer autour de", "Explore around")}</small>
+            <strong>{sourceLabel}</strong>
+          </span>
+          <span className="ex-filter-context-divider" aria-hidden />
+        </div>
+      ) : undefined}
       onSelect={(id) => {
         if (isObjectiveSource) setTheme(id === "all" ? null : id, false);
+        else if (sourceTool) setCategory(id === "all" ? null : id, false);
         else setAngle(id as ExplorationDirection, false);
       }}
     />
@@ -509,15 +592,16 @@ export default function ExplorerPage() {
               <ToolLogo tool={candidate.tool} size={72} />
             )}
           </span>
-          <span className="ex-card-header">
-            <ToolLogo tool={candidate.tool} size={52} className="ex-card-logo" />
-            <span className="ex-card-identity">
-              <strong>{candidate.tool.name}</strong>
-              <small>{candidate.categoryLabel}</small>
-            </span>
-          </span>
-          <span id={`explore-card-${slug}-description`} className="ex-card-description">{description}</span>
         </button>
+        <div className="ex-card-content">
+          <div className="ex-card-header">
+            <ToolLogo tool={candidate.tool} size={24} className="tce-logo ex-card-logo" />
+            <button type="button" className="ex-card-identity" onClick={() => recenter(candidate.tool)}>
+              <strong>{candidate.tool.name}</strong>
+            </button>
+          </div>
+          <p id={`explore-card-${slug}-description`} className="ex-card-description">{description}</p>
+        </div>
       </article>
     );
   };
