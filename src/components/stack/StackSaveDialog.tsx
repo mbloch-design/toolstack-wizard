@@ -1,13 +1,19 @@
 import { useEffect, useMemo, useRef, useState, type FormEvent } from "react";
 import { createPortal } from "react-dom";
-import { Bookmark, Check, FolderPlus, Search, Sparkles, Trash2, X } from "lucide-react";
-import type { StackNeed, StackToolIntent } from "@/lib/stackState";
+import { Bookmark, Check, FolderPlus, Trash2, X } from "lucide-react";
+import ToolLogo from "@/components/ToolLogo";
+import { getNeedIcon } from "@/lib/needIcons";
+import { useToolSummaries, type ToolSummary } from "@/hooks/useSupabaseData";
+import type { StackNeed, StackToolEntry, StackToolIntent } from "@/lib/stackState";
+
+const BOARD_THUMB_LIMIT = 3;
 
 interface StackSaveDialogProps {
   isOpen: boolean;
   label: string;
   lang: string;
   needs: StackNeed[];
+  toolEntries: StackToolEntry[];
   initialIntent: StackToolIntent;
   initialNeedIds: string[];
   suggestedNeedId?: string;
@@ -23,6 +29,7 @@ export function StackSaveDialog({
   label,
   lang,
   needs,
+  toolEntries,
   initialIntent,
   initialNeedIds,
   suggestedNeedId,
@@ -34,11 +41,9 @@ export function StackSaveDialog({
 }: StackSaveDialogProps) {
   const [intent, setIntent] = useState<StackToolIntent>(initialIntent);
   const [selectedNeedIds, setSelectedNeedIds] = useState<string[]>(initialNeedIds);
-  const [query, setQuery] = useState("");
   const [isCreating, setIsCreating] = useState(false);
   const [newBoardName, setNewBoardName] = useState("");
   const dialogRef = useRef<HTMLElement | null>(null);
-  const searchRef = useRef<HTMLInputElement | null>(null);
   const previousFocusRef = useRef<HTMLElement | null>(null);
   const onCloseRef = useRef(onClose);
   const initialSelectionRef = useRef({ initialIntent, initialNeedIds, suggestedNeedId });
@@ -50,13 +55,12 @@ export function StackSaveDialog({
     const initial = initialSelectionRef.current;
     setIntent(initial.initialIntent);
     setSelectedNeedIds(initial.initialNeedIds.length > 0 ? initial.initialNeedIds : initial.suggestedNeedId ? [initial.suggestedNeedId] : []);
-    setQuery("");
     setIsCreating(false);
     setNewBoardName("");
     previousFocusRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    const focusFrame = window.requestAnimationFrame(() => searchRef.current?.focus());
+    const focusFrame = window.requestAnimationFrame(() => dialogRef.current?.focus());
 
     function handleKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
@@ -89,14 +93,41 @@ export function StackSaveDialog({
     };
   }, [isOpen]);
 
+  const { tools } = useToolSummaries();
+  const toolBySlug = useMemo(() => {
+    const map = new Map<string, ToolSummary>();
+    for (const tool of tools) map.set(tool.slug || tool.id, tool);
+    return map;
+  }, [tools]);
+
+  // Board "cover": the first few tools already saved to that need, mirroring
+  // how a Pinterest board is recognized by its pins rather than its name.
+  const needPreviewTools = useMemo(() => {
+    const map = new Map<string, ToolSummary[]>();
+    for (const need of needs) {
+      const preview: ToolSummary[] = [];
+      for (const entry of toolEntries) {
+        if (preview.length >= BOARD_THUMB_LIMIT) break;
+        if (!entry.needIds.includes(need.id)) continue;
+        const tool = toolBySlug.get(entry.toolSlug);
+        if (tool) preview.push(tool);
+      }
+      map.set(need.id, preview);
+    }
+    return map;
+  }, [needs, toolEntries, toolBySlug]);
+
+  // Stays short on purpose: only collections the user already uses (has a
+  // tool in, or created themselves) plus the one suggested for this tool.
+  // Anything else is reachable via "create a new collection" instead.
+  const isNeedActive = (need: StackNeed) => need.source === "custom" || (needPreviewTools.get(need.id)?.length ?? 0) > 0;
   const visibleNeeds = useMemo(() => {
-    const normalizedQuery = query.trim().toLocaleLowerCase(lang);
-    if (!normalizedQuery) return needs;
-    return needs.filter((need) => {
-      const name = lang === "en" ? need.labelEn : need.labelFr;
-      return name.toLocaleLowerCase(lang).includes(normalizedQuery);
-    });
-  }, [lang, needs, query]);
+    const filtered = needs.filter((need) => need.id === suggestedNeedId || isNeedActive(need));
+    if (!suggestedNeedId) return filtered;
+    const suggested = filtered.find((need) => need.id === suggestedNeedId);
+    if (!suggested) return filtered;
+    return [suggested, ...filtered.filter((need) => need.id !== suggestedNeedId)];
+  }, [needPreviewTools, needs, suggestedNeedId]);
 
   if (!isOpen) return null;
 
@@ -117,7 +148,7 @@ export function StackSaveDialog({
 
   return createPortal((
     <div className="stack-save-backdrop" onMouseDown={(event) => event.target === event.currentTarget && onClose()}>
-      <section ref={dialogRef} className="stack-save-dialog" role="dialog" aria-modal="true" aria-labelledby="stack-save-title">
+      <section ref={dialogRef} className="stack-save-dialog" role="dialog" aria-modal="true" aria-labelledby="stack-save-title" tabIndex={-1}>
         <header className="stack-save-head">
           <h2 id="stack-save-title">{t(`Ajouter ${label} à une collection`, `Add ${label} to a collection`)}</h2>
           <button type="button" onClick={onClose} aria-label={t("Fermer", "Close")}><X size={19} aria-hidden /></button>
@@ -135,25 +166,37 @@ export function StackSaveDialog({
           </button>
         </div>
 
-        <label className="stack-save-search">
-          <Search size={17} aria-hidden />
-          <input ref={searchRef} value={query} onChange={(event) => setQuery(event.target.value)} placeholder={t("Filtrer les collections…", "Filter collections…")} />
-        </label>
-
         <div className="stack-save-board-list" role="list">
-          {visibleNeeds.map((need) => {
+          {suggestedNeedId && visibleNeeds[0]?.id === suggestedNeedId && (
+            <p className="stack-save-section-label">{t("Meilleur choix", "Best match")}</p>
+          )}
+          {visibleNeeds.map((need, index) => {
             const selected = selectedNeedIds.includes(need.id);
-            const suggested = need.id === suggestedNeedId;
             const needLabel = lang === "en" ? need.labelEn : need.labelFr;
+            const previewTools = needPreviewTools.get(need.id) || [];
+            const showAllLabel = suggestedNeedId && index === 1 && visibleNeeds[0]?.id === suggestedNeedId;
+            const NeedIcon = getNeedIcon(need.id);
             return (
-              <button key={need.id} type="button" role="checkbox" aria-checked={selected} className={selected ? "is-selected" : ""} onClick={() => toggleNeed(need.id)}>
-                <span className="stack-save-board-mark">{selected ? <Check size={16} aria-hidden /> : null}</span>
-                <span className="stack-save-board-copy"><strong>{needLabel}</strong><small>{need.source === "custom" ? t("Collection personnelle", "Custom collection") : t("Collection ToolTrim", "ToolTrim collection")}</small></span>
-                {suggested && <span className="stack-save-suggestion"><Sparkles size={13} aria-hidden />{t("Suggéré", "Suggested")}</span>}
-              </button>
+              <div key={need.id}>
+                {showAllLabel && <p className="stack-save-section-label">{t("Vos collections", "Your collections")}</p>}
+                <button type="button" role="checkbox" aria-checked={selected} className={selected ? "is-selected" : ""} onClick={() => toggleNeed(need.id)}>
+                  <span className="stack-save-board-thumb">
+                    <span className="stack-save-board-thumb-icon"><NeedIcon size={18} aria-hidden /></span>
+                    {previewTools.length > 0 && (
+                      <span className="stack-save-board-thumb-tools">
+                        {previewTools.slice(0, 2).map((tool) => (
+                          <ToolLogo key={tool.id || tool.slug} tool={tool} size={16} />
+                        ))}
+                      </span>
+                    )}
+                  </span>
+                  <span className="stack-save-board-copy"><strong>{needLabel}</strong><small>{need.source === "custom" ? t("Collection personnelle", "Custom collection") : t("Collection ToolTrim", "ToolTrim collection")}</small></span>
+                  <span className="stack-save-board-mark">{selected ? <Check size={16} aria-hidden /> : null}</span>
+                </button>
+              </div>
             );
           })}
-          {visibleNeeds.length === 0 && <p className="stack-save-no-result">{t("Aucune collection ne correspond.", "No matching collection.")}</p>}
+          {visibleNeeds.length === 0 && <p className="stack-save-no-result">{t("Aucune collection active pour l’instant.", "No active collection yet.")}</p>}
         </div>
 
         {isCreating && (

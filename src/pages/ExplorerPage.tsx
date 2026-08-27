@@ -556,14 +556,6 @@ export default function ExplorerPage() {
     return (
       <article key={slug} data-tool-slug={slug} className={`ex-card${inDestination || inStackWithoutDestination ? " is-present" : ""}${isAdding ? " is-adding" : ""}`}>
         <div className="ex-card-actions" aria-label={t(`Actions pour ${candidate.tool.name}`, `Actions for ${candidate.tool.name}`) as string}>
-          <button
-            type="button"
-            onClick={() => recenter(candidate.tool)}
-            aria-label={t(`Explorer autour de ${candidate.tool.name}`, `Explore around ${candidate.tool.name}`) as string}
-            title={t("Explorer autour", "Explore around") as string}
-          >
-            <Compass size={18} aria-hidden />
-          </button>
           <button type="button" onClick={() => addTool(candidate.tool)} disabled={inDestination || inStackWithoutDestination || isAdding} aria-label={inDestination
             ? t(`${candidate.tool.name} déjà dans ${destination?.labelFr}`, `${candidate.tool.name} already in ${destination?.labelEn}`) as string
             : inStackWithoutDestination
@@ -591,6 +583,9 @@ export default function ExplorerPage() {
             ) : (
               <ToolLogo tool={candidate.tool} size={72} />
             )}
+            <span className="ex-card-explore" aria-hidden>
+              <Compass size={20} aria-hidden />
+            </span>
           </span>
         </button>
         <div className="ex-card-content">
@@ -754,6 +749,7 @@ export default function ExplorerPage() {
       label={pendingTool?.name || ""}
       lang={lang}
       needs={state.needs}
+      toolEntries={state.toolEntries}
       initialIntent={pendingEntry?.intent || "stack"}
       initialNeedIds={initialNeedIds}
       suggestedNeedId={suggestedNeedId}

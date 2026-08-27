@@ -25919,9 +25919,31 @@ section[id] {
   opacity: 0;
   position: absolute;
   transition: opacity 160ms ease;
+  z-index: 1;
 }
 .ex-card:hover .ex-card-media::after,
 .ex-card:focus-within .ex-card-media::after { opacity: 1; }
+/* Single, centered "this card explores" cue — replaces the old corner
+   compass icon, which duplicated the card's own default click action. */
+.ex-card-explore {
+  align-items: center;
+  background: color-mix(in srgb, var(--color-surface) 94%, transparent);
+  border-radius: var(--radius-circle);
+  color: var(--color-text);
+  display: inline-flex;
+  height: 44px;
+  justify-content: center;
+  left: 50%;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 160ms ease;
+  width: 44px;
+  z-index: 2;
+}
+.ex-card:hover .ex-card-explore,
+.ex-card:focus-within .ex-card-explore { opacity: 1; }
 .ex-card-main:focus-visible { outline: 3px solid color-mix(in srgb, var(--color-text) 18%, transparent); outline-offset: -3px; }
 .ex-card-content { display: grid; gap: 8px; padding: 8px 2px 0; }
 .ex-card-header { align-items: center; display: grid; gap: 7px; grid-template-columns: 24px minmax(0, 1fr); min-width: 0; }
@@ -28522,28 +28544,6 @@ section[id] {
   .stack-save-destination-head strong { font-size: 14px; font-weight: 650; }
   .stack-save-destination-head span { color: var(--color-muted); font-size: 12px; margin-top: 2px; }
 
-  .stack-save-search {
-    align-items: center;
-    background: var(--color-subtle, #f8f8f4);
-    border: 1px solid var(--color-border);
-    border-radius: 10px;
-    display: flex;
-    gap: 9px;
-    margin: 0 48px 16px;
-    min-height: 56px;
-    padding: 0 18px;
-  }
-  .stack-save-search input {
-    background: transparent;
-    border: 0;
-    color: var(--color-text);
-    flex: 1;
-    font-family: var(--font-ui);
-    font-size: 16px;
-    min-width: 0;
-    outline: 0;
-  }
-
   .stack-save-board-list {
     display: flex;
     flex: 1;
@@ -28551,9 +28551,18 @@ section[id] {
     gap: 8px;
     min-height: 88px;
     overflow-y: auto;
-    padding: 0 48px 18px;
+    padding: 10px 48px 18px;
   }
-  .stack-save-board-list > button {
+  .stack-save-section-label {
+    color: var(--color-muted);
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    margin: 4px 0 2px;
+    text-transform: uppercase;
+  }
+  .stack-save-board-list button {
     align-items: center;
     background: var(--color-surface);
     border: 1px solid transparent;
@@ -28566,8 +28575,36 @@ section[id] {
     text-align: left;
     width: 100%;
   }
-  .stack-save-board-list > button:hover { background: var(--color-subtle, #f8f8f4); }
-  .stack-save-board-list > button.is-selected { background: var(--color-subtle, #f8f8f4); border-color: var(--color-border); }
+  .stack-save-board-list button:hover { background: var(--color-subtle, #f8f8f4); }
+  .stack-save-board-list button.is-selected { background: var(--color-subtle, #f8f8f4); border-color: var(--color-border); }
+  .stack-save-board-thumb {
+    flex: 0 0 auto;
+    height: 44px;
+    position: relative;
+    width: 44px;
+  }
+  .stack-save-board-thumb-icon {
+    align-items: center;
+    background: var(--color-surface-soft);
+    border-radius: 10px;
+    color: var(--color-muted);
+    display: flex;
+    height: 44px;
+    justify-content: center;
+    width: 44px;
+  }
+  /* Secondary cue: up to 2 tools already in that collection, badged onto
+     the category icon rather than replacing it — the icon is the constant,
+     always-legible identity; this is a bonus, not the primary signal. */
+  .stack-save-board-thumb-tools {
+    bottom: -4px;
+    display: flex;
+    position: absolute;
+    right: -4px;
+  }
+  .stack-save-board-thumb-tools > * { border: 2px solid var(--color-surface); border-radius: 7px; margin-left: -8px; }
+  .stack-save-board-thumb-tools > *:first-child { margin-left: 0; }
+  .stack-save-board-list button.is-selected .stack-save-board-thumb-tools > * { border-color: var(--color-subtle, #f8f8f4); }
   .stack-save-board-mark {
     align-items: center;
     border: 1px solid var(--color-border);
@@ -28578,20 +28615,12 @@ section[id] {
     justify-content: center;
     width: 27px;
   }
-  .stack-save-board-list > button.is-selected .stack-save-board-mark { background: var(--color-text); border-color: var(--color-text); color: var(--color-surface); }
+  .stack-save-board-list button.is-selected .stack-save-board-mark { background: var(--color-text); border-color: var(--color-text); color: var(--color-surface); }
   .stack-save-board-copy { flex: 1; min-width: 0; }
   .stack-save-board-copy strong,
   .stack-save-board-copy small { display: block; font-family: var(--font-ui); }
   .stack-save-board-copy strong { font-size: 15px; font-weight: 620; }
   .stack-save-board-copy small { color: var(--color-muted); font-size: 12px; margin-top: 3px; }
-  .stack-save-suggestion {
-    align-items: center;
-    color: var(--color-muted);
-    display: inline-flex;
-    font-family: var(--font-ui);
-    font-size: 11px;
-    gap: 4px;
-  }
   .stack-save-no-result { color: var(--color-muted); font-family: var(--font-ui); font-size: 13px; margin: 18px 0; text-align: center; }
 
   .stack-save-create-trigger {
@@ -28644,7 +28673,6 @@ section[id] {
     .stack-save-footer { padding-left: 18px; padding-right: 18px; }
     .stack-save-intents { padding-left: 18px; padding-right: 18px; }
     .stack-save-destination-head { padding-left: 18px; padding-right: 18px; }
-    .stack-save-search,
     .stack-save-create-trigger,
     .stack-save-create { margin-left: 18px; margin-right: 18px; }
     .stack-save-board-list { padding-left: 18px; padding-right: 18px; }

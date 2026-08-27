@@ -73,6 +73,7 @@ export function PinToolButton({ slug, label, t, compact = false, inline = false,
         label={label}
         lang={lang}
         needs={state.needs}
+        toolEntries={state.toolEntries}
         initialIntent={entry?.intent || "stack"}
         initialNeedIds={entry?.needIds || EMPTY_NEED_IDS}
         suggestedNeedId={suggestedNeedId}
