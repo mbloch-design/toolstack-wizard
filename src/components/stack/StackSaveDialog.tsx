@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState, type FormEvent } from "react";
 import { createPortal } from "react-dom";
-import { Bookmark, Check, FolderPlus, Plus, Search, Sparkles, Trash2, X } from "lucide-react";
+import { Bookmark, Check, FolderPlus, Search, Sparkles, Trash2, X } from "lucide-react";
 import type { StackNeed, StackToolIntent } from "@/lib/stackState";
 
 interface StackSaveDialogProps {
@@ -119,27 +119,20 @@ export function StackSaveDialog({
     <div className="stack-save-backdrop" onMouseDown={(event) => event.target === event.currentTarget && onClose()}>
       <section ref={dialogRef} className="stack-save-dialog" role="dialog" aria-modal="true" aria-labelledby="stack-save-title">
         <header className="stack-save-head">
-          <div>
-            <span>{t("Enregistrer l’outil", "Save tool")}</span>
-            <h2 id="stack-save-title">{label}</h2>
-          </div>
+          <h2 id="stack-save-title">{t(`Ajouter ${label} à une collection`, `Add ${label} to a collection`)}</h2>
           <button type="button" onClick={onClose} aria-label={t("Fermer", "Close")}><X size={19} aria-hidden /></button>
         </header>
 
-        <div className="stack-save-intents" role="radiogroup" aria-label={t("Type d’ajout", "Save type")}>
+        <div className="stack-save-intents" role="radiogroup" aria-label={t("Enregistrer dans", "Save to")}>
+          <span>{t("Enregistrer dans", "Save to")}</span>
           <button type="button" role="radio" aria-checked={intent === "stack"} className={intent === "stack" ? "is-selected" : ""} onClick={() => setIntent("stack")}>
-            <span className="stack-save-intent-icon"><Check size={18} aria-hidden /></span>
-            <span><strong>{t("Je l’utilise", "I use it")}</strong><small>{t("Il fait partie de ma stack actuelle", "It is part of my current stack")}</small></span>
+            <Check size={15} aria-hidden />
+            <strong>{t("Ma stack", "My stack")}</strong>
           </button>
           <button type="button" role="radio" aria-checked={intent === "wishlist"} className={intent === "wishlist" ? "is-selected" : ""} onClick={() => setIntent("wishlist")}>
-            <span className="stack-save-intent-icon"><Bookmark size={18} aria-hidden /></span>
-            <span><strong>{t("Ça me tente", "On my wishlist")}</strong><small>{t("Je le garde dans Mes envies", "Keep it on my wishlist")}</small></span>
+            <Bookmark size={15} aria-hidden />
+            <strong>{t("À essayer", "Try later")}</strong>
           </button>
-        </div>
-
-        <div className="stack-save-destination-head">
-          <div><strong>{t("Choisir une ou plusieurs collections", "Choose one or more collections")}</strong><span>{t("L’outil ne sera ajouté qu’après votre confirmation.", "The tool is only added after you confirm.")}</span></div>
-          <span>{selectedNeedIds.length} {t("sélectionné(s)", "selected")}</span>
         </div>
 
         <label className="stack-save-search">
@@ -163,18 +156,19 @@ export function StackSaveDialog({
           {visibleNeeds.length === 0 && <p className="stack-save-no-result">{t("Aucune collection ne correspond.", "No matching collection.")}</p>}
         </div>
 
-        {isCreating ? (
+        {isCreating && (
           <form className="stack-save-create" onSubmit={createBoard}>
             <label htmlFor="stack-save-new-board">{t("Nom de la nouvelle collection", "New collection name")}</label>
             <div><input id="stack-save-new-board" autoFocus maxLength={60} value={newBoardName} onChange={(event) => setNewBoardName(event.target.value)} placeholder={t("Ex. Outils client", "e.g. Client tools")} /><button type="submit" disabled={!newBoardName.trim()}>{t("Créer", "Create")}</button></div>
           </form>
-        ) : (
-          <button type="button" className="stack-save-create-trigger" onClick={() => setIsCreating(true)}><FolderPlus size={18} aria-hidden />{t("Créer une nouvelle collection", "Create a new collection")}<Plus size={16} aria-hidden /></button>
         )}
 
         <footer className="stack-save-footer">
-          {onRemove ? <button type="button" className="stack-save-remove" onClick={onRemove}><Trash2 size={16} aria-hidden />{t("Retirer", "Remove")}</button> : <span />}
-          <div><button type="button" className="stack-save-cancel" onClick={onClose}>{t("Annuler", "Cancel")}</button><button type="button" className="stack-save-confirm" onClick={() => onSave(selectedNeedIds, intent)} disabled={selectedNeedIds.length === 0}>{t("Enregistrer", "Save")}</button></div>
+          <div className="stack-save-footer-left">
+            <button type="button" className="stack-save-create-trigger" onClick={() => setIsCreating((current) => !current)}><FolderPlus size={18} aria-hidden />{t("Créer une nouvelle collection", "Create a new collection")}</button>
+            {onRemove && <button type="button" className="stack-save-remove" onClick={onRemove}><Trash2 size={16} aria-hidden />{t("Retirer", "Remove")}</button>}
+          </div>
+          <button type="button" className="stack-save-confirm" onClick={() => onSave(selectedNeedIds, intent)} disabled={selectedNeedIds.length === 0}>{t("Terminer", "Done")}</button>
         </footer>
       </section>
     </div>
