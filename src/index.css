@@ -25907,8 +25907,9 @@ section[id] {
 .ex-card.is-adding { opacity: .72; }
 .ex-card.is-present .ex-card-media { background: color-mix(in srgb, #5f7f68 20%, var(--color-surface-soft)); }
 .ex-card-main { appearance: none; background: transparent; border: 0; color: var(--color-text); cursor: pointer; display: block; min-height: 0; padding: 0; text-align: left; width: 100%; }
-.ex-card-media { align-items: center; aspect-ratio: 4 / 3; background: var(--color-surface-soft); border-radius: var(--radius-lg); display: flex; justify-content: center; overflow: hidden; position: relative; transition: background 160ms ease; width: 100%; }
-.ex-card-media.has-preview { aspect-ratio: 16 / 10; min-height: 0; }
+/* Same 40:21 box as the shared .tc-image cards (homepage, catalog) so
+   Explorer's suggestion grid reads as one system, not a different crop. */
+.ex-card-media { align-items: center; aspect-ratio: 40 / 21; background: var(--color-surface-soft); border-radius: var(--radius-lg); display: flex; justify-content: center; min-height: 0; overflow: hidden; position: relative; transition: background 160ms ease; width: 100%; }
 .ex-card-media img { display: block; height: 100%; object-fit: cover; width: 100%; }
 /* Veil: the only hover signal on the media, besides the action icons it
    makes legible — no lift, no shadow, just a background-side darkening. */
@@ -25949,10 +25950,10 @@ section[id] {
 .ex-card-header { align-items: center; display: grid; gap: 7px; grid-template-columns: 24px minmax(0, 1fr); min-width: 0; }
 .ex-card-identity { appearance: none; background: transparent; border: 0; color: var(--color-text); cursor: pointer; display: grid; gap: 3px; min-width: 0; padding: 0; text-align: left; }
 .ex-card-identity strong { font-family: var(--font-ui); font-size: 15px; font-weight: 600; letter-spacing: -.015em; line-height: 1.25; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.ex-card-identity small { color: var(--color-muted); font-family: var(--font-ui); font-size: .68rem; font-weight: 650; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ex-card-identity small { color: color-mix(in srgb, var(--color-muted) 78%, var(--color-text)); font-family: var(--font-ui); font-size: .74rem; font-weight: 650; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .ex-card-identity:hover strong { text-decoration: underline; text-underline-offset: 3px; }
 .ex-card-identity:focus-visible { border-radius: 4px; outline: 2px solid color-mix(in srgb, var(--color-text) 24%, transparent); outline-offset: 3px; }
-.ex-card-description { color: var(--color-muted); display: -webkit-box; font-family: var(--font-ui); font-size: .75rem; font-weight: 520; line-height: 1.42; margin: 0; min-height: 2.85em; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+.ex-card-description { color: color-mix(in srgb, var(--color-muted) 78%, var(--color-text)); display: -webkit-box; font-family: var(--font-ui); font-size: .875rem; font-weight: 400; line-height: 1.45; margin: 0; min-height: 2.9em; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
 .ex-card-actions {
   align-items: center;
   display: flex;
