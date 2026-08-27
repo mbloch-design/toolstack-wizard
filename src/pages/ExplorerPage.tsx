@@ -3,6 +3,7 @@ import { ArrowLeft, Check, ChevronLeft, ChevronRight, Compass, Plus } from "luci
 import { Link, useLocation, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { toast } from "sonner";
 import ToolLogo from "@/components/ToolLogo";
+import ToolCardImage from "@/components/tool/ToolCardImage";
 import StackSaveDialog from "@/components/stack/StackSaveDialog";
 import { useCategories, useToolSummaries, type ToolSummary } from "@/hooks/useSupabaseData";
 import { useLang } from "@/hooks/useLang";
@@ -408,7 +409,6 @@ export default function ExplorerPage() {
       : `${prefix}/tools`;
   const previousLabel = locationState.previousSourceLabel || sourceLabel;
   const originLabel = locationState.originLabel || locationState.previousSourceLabel || sourceLabel;
-  const sourceCover = sourceTool?.ogImageUrl || null;
   const sourceDescription = sourceTool?.shortDescription
     ? t(sourceTool.shortDescription, sourceTool.shortDescriptionEn || sourceTool.shortDescription) as string
     : null;
@@ -645,41 +645,8 @@ export default function ExplorerPage() {
       ) : sourceTool && (
         <section className="ex-tool-stage" aria-label={t(`Explorer autour de ${sourceLabel}`, `Explore around ${sourceLabel}`) as string}>
         <header className="ex-tool-focus">
-          <div className="ex-tool-focus-top">
-            <button type="button" className="ex-back" onClick={handleBack} aria-label={t(`Retour à ${previousLabel}`, `Back to ${previousLabel}`) as string}>
-              <ArrowLeft size={19} aria-hidden />
-            </button>
-            <button
-              type="button"
-              className={`ex-destination ex-tool-focus-add${sourceAlreadyAdded ? " is-added" : ""}`}
-              disabled={sourceAlreadyAdded || sourceIsAdding}
-              onClick={() => addTool(sourceTool)}
-              aria-label={destination
-                ? sourceAlreadyAdded
-                  ? t(`${sourceLabel} déjà dans ${destination.labelFr}`, `${sourceLabel} already in ${destination.labelEn}`) as string
-                  : t(`Ajouter ${sourceLabel} à ${destination.labelFr}`, `Add ${sourceLabel} to ${destination.labelEn}`) as string
-                : sourceAlreadyAdded
-                  ? t(`${sourceLabel} déjà dans Ma stack`, `${sourceLabel} already in My stack`) as string
-                  : t(`Ajouter ${sourceLabel} à Ma stack`, `Add ${sourceLabel} to My stack`) as string}
-            >
-              {sourceAlreadyAdded ? <Check size={16} aria-hidden /> : <Plus size={16} aria-hidden />}
-              <span>{destination
-                ? sourceAlreadyAdded
-                  ? t(`Déjà dans ${destination.labelFr}`, `Already in ${destination.labelEn}`)
-                  : t(`Ajouter à ${destination.labelFr}`, `Add to ${destination.labelEn}`)
-                : sourceAlreadyAdded
-                  ? t("Dans Ma stack", "In My stack")
-                  : t("Ajouter à Ma stack", "Add to My stack")}</span>
-            </button>
-          </div>
           <div className="ex-tool-focus-main">
-            <div className={`ex-tool-focus-visual${sourceCover ? " has-cover" : ""}`}>
-              {sourceCover ? (
-                <img src={sourceCover} alt={t(`Aperçu de ${sourceLabel}`, `${sourceLabel} preview`) as string} width={1200} height={630} />
-              ) : (
-                <ToolLogo tool={sourceTool} size={112} />
-              )}
-            </div>
+            <ToolCardImage tool={sourceTool} logoSize={112} className="ex-tool-focus-visual" />
             <div className="ex-tool-focus-content">
               <span className="ex-tool-focus-eyebrow">
                 {t(`Autour de ${sourceLabel}`, `Around ${sourceLabel}`)}
@@ -693,10 +660,34 @@ export default function ExplorerPage() {
                 </div>
               </div>
               {sourceDescription && <p>{sourceDescription}</p>}
-              <Link className="ex-tool-focus-profile" to={`${prefix}/tool/${getExplorationToolKey(sourceTool)}`}>
-                {t("Voir la fiche complète", "View full profile")}
-                <span aria-hidden>→</span>
-              </Link>
+              <div className="ex-tool-focus-footer">
+                <Link className="ex-tool-focus-profile" to={`${prefix}/tool/${getExplorationToolKey(sourceTool)}`}>
+                  {t("Voir la fiche complète", "View full profile")}
+                  <span aria-hidden>→</span>
+                </Link>
+                <button
+                  type="button"
+                  className={`ex-destination ex-tool-focus-add${sourceAlreadyAdded ? " is-added" : ""}`}
+                  disabled={sourceAlreadyAdded || sourceIsAdding}
+                  onClick={() => addTool(sourceTool)}
+                  aria-label={destination
+                    ? sourceAlreadyAdded
+                      ? t(`${sourceLabel} déjà dans ${destination.labelFr}`, `${sourceLabel} already in ${destination.labelEn}`) as string
+                      : t(`Ajouter ${sourceLabel} à ${destination.labelFr}`, `Add ${sourceLabel} to ${destination.labelEn}`) as string
+                    : sourceAlreadyAdded
+                      ? t(`${sourceLabel} déjà dans Ma stack`, `${sourceLabel} already in My stack`) as string
+                      : t(`Ajouter ${sourceLabel} à Ma stack`, `Add ${sourceLabel} to My stack`) as string}
+                >
+                  {sourceAlreadyAdded ? <Check size={16} aria-hidden /> : <Plus size={16} aria-hidden />}
+                  <span>{destination
+                    ? sourceAlreadyAdded
+                      ? t(`Déjà dans ${destination.labelFr}`, `Already in ${destination.labelEn}`)
+                      : t(`Ajouter à ${destination.labelFr}`, `Add to ${destination.labelEn}`)
+                    : sourceAlreadyAdded
+                      ? t("Dans Ma stack", "In My stack")
+                      : t("Ajouter à Ma stack", "Add to My stack")}</span>
+                </button>
+              </div>
             </div>
           </div>
         </header>

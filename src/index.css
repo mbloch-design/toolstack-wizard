@@ -25761,7 +25761,7 @@ section[id] {
 }
 .ex-tool-focus {
   animation: ex-tool-focus-enter 190ms cubic-bezier(.22,1,.36,1) both;
-  background: var(--color-surface);
+  background: color-mix(in srgb, var(--color-surface-soft) 45%, var(--color-surface));
   border: 1px solid var(--color-border);
   border-radius: var(--radius-2xl);
   margin: 0 auto 28px;
@@ -25769,41 +25769,47 @@ section[id] {
   transform-origin: 50% 20%;
   width: 100%;
 }
-.ex-tool-focus-top {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-  padding: 16px 18px 12px;
-}
 .ex-tool-focus-main {
   display: grid;
   gap: 22px;
   grid-template-columns: minmax(260px, 38%) minmax(0, 1fr);
-  padding: 0 18px 18px;
+  padding: 18px;
 }
-.ex-tool-focus-visual {
+/* Reuses the shared .tc-image cover/fallback logic (OG image when large
+   enough to be a real screenshot, centered logo otherwise) — these overrides
+   only adapt the box to the hero's bigger, borderless layout. */
+.ex-tool-focus-visual.tc-image {
   align-items: center;
   aspect-ratio: 1200 / 630;
-  background: var(--color-surface-soft);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   display: flex;
   justify-content: center;
+  margin: 0;
   min-height: 0;
-  overflow: hidden;
 }
 .ex-tool-focus-visual img {
   height: 100%;
   max-height: none;
   min-height: 0;
-  object-fit: contain;
   width: 100%;
 }
 .ex-tool-focus-content {
-  align-content: start;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 15px;
   padding: 12px 18px 12px 0;
+}
+/* Mirrors an e-commerce PDP footer: secondary link low-emphasis on the
+   left, primary "add" action anchored bottom-right — pinned to the base
+   of the column via margin-top: auto rather than floating on the visual. */
+.ex-tool-focus-footer {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 6px;
 }
 .ex-tool-focus-eyebrow {
   color: var(--color-muted);
@@ -25872,12 +25878,19 @@ section[id] {
 .ex-source-logos > * { background: var(--color-surface); border: 2px solid var(--color-bg); border-radius: var(--radius-md); margin-left: -10px; }
 .ex-source-logos > *:first-child { margin-left: 0; }
 .ex-destination { align-items: center; background: #f3ead2; border-radius: var(--radius-pill); color: var(--color-text); display: inline-flex; font-family: var(--font-ui); font-size: .7rem; font-weight: 790; gap: 7px; min-height: 38px; padding: 0 14px; }
+/* Primary "add to my stack" action — sized and weighted like an
+   e-commerce add-to-cart button: comfortable 44px+ touch target, higher
+   contrast than the secondary link beside it, never shrinks in the row. */
 .ex-tool-focus-add {
   appearance: none;
   background: var(--color-text);
   border: 0;
   color: var(--color-bg);
   cursor: pointer;
+  flex-shrink: 0;
+  font-size: .84rem;
+  min-height: 46px;
+  padding: 0 20px;
   transition: background 150ms ease, transform 150ms ease;
 }
 .ex-tool-focus-add:hover:not(:disabled) { background: color-mix(in srgb, var(--color-text) 88%, var(--color-bg)); transform: translateY(-1px); }
@@ -25985,13 +25998,13 @@ section[id] {
   .ex-grid--masonry { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .ex-source-banner { grid-template-columns: auto minmax(0, 1fr); top: 8px; }
   .ex-source-banner--objective { grid-template-columns: 44px minmax(0, 1fr) 44px; top: auto; }
-  .ex-destination { grid-column: 1 / -1; justify-content: center; }
-  .ex-tool-focus-top { align-items: stretch; flex-wrap: wrap; gap: 10px; }
-  .ex-tool-focus-top .ex-destination { flex: 1 1 220px; }
-  .ex-tool-focus-main { grid-template-columns: minmax(0, 1fr); padding: 0 12px 12px; }
+  .ex-destination { justify-content: center; }
+  .ex-tool-focus-main { grid-template-columns: minmax(0, 1fr); padding: 12px; }
   .ex-tool-focus-visual { border-radius: var(--radius-lg) var(--radius-lg) 0 0; min-height: 0; }
   .ex-tool-focus-visual img { max-height: none; min-height: 0; }
   .ex-tool-focus-content { border-left: 1px solid var(--color-border); border-radius: 0 0 var(--radius-lg) var(--radius-lg); gap: 14px; padding: 24px 20px; }
+  .ex-tool-focus-footer { align-items: stretch; flex-direction: column; }
+  .ex-tool-focus-add { width: 100%; }
   .ex-tool-focus-title h1 { font-size: clamp(2rem, 10vw, 3rem); }
   .ex-tool-focus > .ex-directions { padding: 12px; }
 }
