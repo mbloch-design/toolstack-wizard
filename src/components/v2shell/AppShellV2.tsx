@@ -279,7 +279,6 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
           </button>
 
           <div className="asv2-topbar-right">
-            <CurrencyPicker currency={currency} setCurrency={setCurrency} t={t} compact />
             <Link to={`${prefix}/ma-stack`} className="asv2-topbar-cta" aria-label={cartLabel}>
               <Bookmark style={{ width: 15, height: 15 }} aria-hidden />
               <span>{cartLabel}</span>
