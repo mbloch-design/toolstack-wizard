@@ -179,6 +179,26 @@ const Footer = () => {
                   loading="lazy"
                 />
               </a>
+              <a
+                href="https://launchnest.io/p/tooltrim"
+                target="_blank"
+                rel="noopener"
+                className="tt-footer-badge"
+                aria-label="Tooltrim on LaunchNest"
+              >
+                <img
+                  className="tt-footer-badge-light"
+                  src="https://launchnest.io/badge/tooltrim.svg?variant=listed&theme=light"
+                  alt="Tooltrim on LaunchNest"
+                  loading="lazy"
+                />
+                <img
+                  className="tt-footer-badge-dark"
+                  src="https://launchnest.io/badge/tooltrim.svg?variant=listed"
+                  alt="Tooltrim on LaunchNest"
+                  loading="lazy"
+                />
+              </a>
             </div>
           </div>
         </div>
