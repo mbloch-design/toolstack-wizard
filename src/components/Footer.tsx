@@ -199,6 +199,26 @@ const Footer = () => {
                   loading="lazy"
                 />
               </a>
+              <a
+                href="https://vibecodinglist.com/projects/tooltrim?utm_source=vcl_badge&utm_medium=builder_site&utm_campaign=listed_badge&utm_content=tooltrim"
+                target="_blank"
+                rel="noopener"
+                className="tt-footer-badge"
+                aria-label="Featured on VibeCodingList"
+              >
+                <img
+                  className="tt-footer-badge-light"
+                  src="https://vibecodinglist.com/assets/embed-widget/featured-on-badge-dark.png"
+                  alt="Featured on VibeCodingList"
+                  loading="lazy"
+                />
+                <img
+                  className="tt-footer-badge-dark"
+                  src="https://vibecodinglist.com/assets/embed-widget/featured-on-badge-light.png"
+                  alt="Featured on VibeCodingList"
+                  loading="lazy"
+                />
+              </a>
             </div>
           </div>
         </div>
