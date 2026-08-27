@@ -20330,16 +20330,16 @@
     "slug": "lottie",
     "name": "Lottie",
     "categoryId": "prototyping",
-    "shortDescription": "Bibliothèque d'animations légères exportées depuis After Effects pour apps natives.",
-    "shortDescriptionEn": "Lightweight animation library exported from After Effects for native apps.",
+    "shortDescription": "Format ouvert d'animations vectorielles interactives pour le web, les applications mobiles et les interfaces produit.",
+    "shortDescriptionEn": "Open format for interactive vector animations across web, mobile apps, and product interfaces.",
     "pricing": {
-      "free": "Open source / Gratuit",
-      "paid": "LottieFiles Pro à partir de 19$/mois"
+      "free": "Format et runtimes Lottie open source · LottieFiles gratuit limité",
+      "paid": "LottieFiles Individual 19,99 $/mois · Team 24,99 $/utilisateur/mois, facturation annuelle"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://lottiefiles.com",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/lottie.png",
+    "ogImageUrl": "https://creator.lottiefiles.com/creator.png",
     "logo": "",
     "tool_type": "satellite",
     "host_app": null,

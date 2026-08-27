@@ -100,7 +100,7 @@ export default function AuditLanding() {
         <link rel="canonical" href={`${SEO_BASE}${c.canonicalPath}`} />
         <link rel="alternate" hrefLang="fr" href={`${SEO_BASE}/fr/audit-saas-gratuit`} />
         <link rel="alternate" hrefLang="en" href={`${SEO_BASE}/en/free-saas-audit`} />
-        <link rel="alternate" hrefLang="x-default" href={`${SEO_BASE}/fr/audit-saas-gratuit`} />
+        <link rel="alternate" hrefLang="x-default" href={`${SEO_BASE}/en/free-saas-audit`} />
       </Helmet>
 
       <div className="container mx-auto max-w-5xl px-6 pt-8">

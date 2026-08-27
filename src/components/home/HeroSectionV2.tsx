@@ -9,7 +9,7 @@ const HeroSectionV2 = () => {
   const cartCount = cartState.pinnedToolSlugs.length;
   const cartLabel = cartCount > 0
     ? `${t("Ma stack", "My stack")} · ${cartCount}`
-    : t("Ma stack", "My stack");
+    : t("Construire ma stack", "Build my stack");
 
   return (
     <section className="hv2-root">
@@ -35,13 +35,13 @@ const HeroSectionV2 = () => {
 
           <div className="hv2-content">
             <span className="hv2-eyebrow">
-              {t("Pour les freelances et solopreneurs", "For freelancers and solopreneurs")}
+              {t("Pour les indépendants et petites équipes", "For freelancers and small teams")}
             </span>
 
             <h1 className="hv2-title">
               {lang === "fr"
-                ? <>Tu paies des outils que tu n’utilises plus.<br />Il est temps de le savoir.</>
-                : <>You pay for tools you no longer use.<br />It’s time to find out.</>}
+                ? <>Décidez quels logiciels garder,<br />remplacer ou ajouter.</>
+                : <>Decide which software to keep,<br />replace, or add.</>}
             </h1>
 
             <Link to={`${prefix}/ma-stack`} className="hv2-cta" aria-label={cartLabel}>

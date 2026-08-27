@@ -96,7 +96,12 @@ export function getAlternateLinks(path: string, base = SEO_BASE): [string, strin
     if (!GUIDE_FR_ONLY_SLUGS.has(frSlug)) {
       entries.push(["en", `${base}/en/guide/${enSlug}`]);
     }
-    entries.push(["x-default", `${base}/fr/guide/${frSlug}`]);
+    entries.push([
+      "x-default",
+      GUIDE_FR_ONLY_SLUGS.has(frSlug)
+        ? `${base}/fr/guide/${frSlug}`
+        : `${base}/en/guide/${enSlug}`,
+    ]);
     return entries;
   }
 
@@ -105,12 +110,7 @@ export function getAlternateLinks(path: string, base = SEO_BASE): [string, strin
   return [
     ["fr", `${base}/fr${frPath}`],
     ["en", `${base}/en${enPath}`],
-    // x-default -> FR: matches every prerendered page (vite.config.ts) and
-    // the guide branch above. This used to point to EN here, which meant
-    // client-side hydration silently overwrote the correct SSR x-default
-    // with the wrong one on every tool/guide/category page that calls
-    // setHreflang() after mount (ToolDetailPage, GuideDetailPage, etc).
-    ["x-default", `${base}/fr${frPath}`],
+    ["x-default", `${base}/en${enPath}`],
   ];
 }
 

@@ -81160,58 +81160,82 @@
     "slug": "lottie",
     "name": "Lottie",
     "category": "prototyping",
-    "shortDescription": "Bibliothèque d'animations légères exportées depuis After Effects pour apps natives.",
-    "shortDescriptionEn": "Lightweight animation library exported from After Effects for native apps.",
-    "description": "Lottie intègre des animations After Effects dans des apps mobiles et web via un JSON léger, gratuit et open source par Airbnb.",
-    "longDescription": "Lottie intègre des animations After Effects dans des apps mobiles et web via un JSON léger, gratuit et open source par Airbnb.",
-    "longDescriptionEn": "Lottie integrates After Effects animations into mobile and web apps via a lightweight JSON, free and open source by Airbnb.",
+    "shortDescription": "Format ouvert d'animations vectorielles interactives pour le web, les applications mobiles et les interfaces produit.",
+    "shortDescriptionEn": "Open format for interactive vector animations across web, mobile apps, and product interfaces.",
+    "description": "Lottie est un format ouvert qui décrit une animation vectorielle et ses propriétés dans un fichier exploitable par des lecteurs web, iOS, Android, React Native et Flutter. Le format JSON historique, créé autour du plugin Bodymovin pour After Effects, reste le plus universel. dotLottie ajoute un conteneur .lottie compressé capable de réunir plusieurs animations, leurs ressources, thèmes et machines à états.\n\nIl faut distinguer Lottie de LottieFiles. Lottie et ses principaux runtimes sont gratuits et open source ; LottieFiles est une plateforme commerciale pour créer, éditer, optimiser, stocker, valider et livrer ces animations. Son plan gratuit suffit pour tester et partager quelques fichiers. Individual coûte 19,99 $/utilisateur/mois avec facturation annuelle ; Team coûte 24,99 $ et ajoute collaboration, historique, rôles et ressources partagées.\n\nLottie convient particulièrement aux loaders, confirmations, onboarding et micro-interactions qui doivent rester nets à toutes les tailles. Ce n'est pas un remplacement universel de la vidéo, de Canvas ou de GSAP : les effets After Effects ne sont pas tous compatibles, les animations très complexes peuvent solliciter le processeur et chaque export doit être testé dans les runtimes réellement utilisés en production.",
+    "longDescription": "Lottie est un format ouvert qui décrit une animation vectorielle et ses propriétés dans un fichier exploitable par des lecteurs web, iOS, Android, React Native et Flutter. Le format JSON historique, créé autour du plugin Bodymovin pour After Effects, reste le plus universel. dotLottie ajoute un conteneur .lottie compressé capable de réunir plusieurs animations, leurs ressources, thèmes et machines à états.\n\nIl faut distinguer Lottie de LottieFiles. Lottie et ses principaux runtimes sont gratuits et open source ; LottieFiles est une plateforme commerciale pour créer, éditer, optimiser, stocker, valider et livrer ces animations. Son plan gratuit suffit pour tester et partager quelques fichiers. Individual coûte 19,99 $/utilisateur/mois avec facturation annuelle ; Team coûte 24,99 $ et ajoute collaboration, historique, rôles et ressources partagées.\n\nLottie convient particulièrement aux loaders, confirmations, onboarding et micro-interactions qui doivent rester nets à toutes les tailles. Ce n'est pas un remplacement universel de la vidéo, de Canvas ou de GSAP : les effets After Effects ne sont pas tous compatibles, les animations très complexes peuvent solliciter le processeur et chaque export doit être testé dans les runtimes réellement utilisés en production.",
+    "longDescriptionEn": "Lottie is an open format that describes vector animation and its properties in a file rendered by web, iOS, Android, React Native, and Flutter players. The original JSON format, created around the Bodymovin plug-in for After Effects, remains the most universally supported. dotLottie adds a compressed .lottie container that can bundle multiple animations, assets, themes, and state machines.\n\nLottie should be distinguished from LottieFiles. Lottie and its main runtimes are free and open source; LottieFiles is a commercial platform for creating, editing, optimizing, storing, reviewing, and shipping these animations. Its free plan covers testing and sharing a few files. Individual costs $19.99 per user/month when billed annually; Team costs $24.99 and adds collaboration, version history, roles, and shared assets.\n\nLottie is particularly effective for loaders, confirmations, onboarding, and micro-interactions that need to remain sharp at every size. It is not a universal replacement for video, Canvas, or GSAP: not every After Effects feature is supported, very complex animations can consume CPU, and every export should be tested in the runtimes actually used in production.",
     "pricing": {
-      "free": "Open source / Gratuit",
-      "paid": "LottieFiles Pro à partir de 19$/mois"
+      "free": "Format et runtimes Lottie open source · LottieFiles gratuit limité",
+      "paid": "LottieFiles Individual 19,99 $/mois · Team 24,99 $/utilisateur/mois, facturation annuelle"
     },
     "pricingEn": {
-      "free": "Open source / Free",
-      "paid": "LottieFiles Pro from $19/month"
+      "free": "Open-source Lottie format and runtimes · limited free LottieFiles plan",
+      "paid": "LottieFiles Individual $19.99/month · Team $24.99/user/month, billed annually"
     },
     "defaultMonthlyPrice": 0,
-    "pricing_v5": null,
+    "pricing_v5": {
+      "cautions": [
+        "Lottie est un format ouvert ; l'abonnement concerne la plateforme optionnelle LottieFiles.",
+        "Prix affichés en dollars US par utilisateur et facturés annuellement."
+      ],
+      "verified_on": "2026-08-27",
+      "billing_model": "seat",
+      "source_domain": "lottiefiles.com",
+      "price_original": 19.99,
+      "price_original_currency": "USD",
+      "usage_sensitive": false,
+      "compare_plan_kind": "individual",
+      "compare_plan_name": "Individual",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://lottiefiles.com/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 17
+    },
     "affiliateLink": "",
     "websiteUrl": "https://lottiefiles.com",
     "logo": "",
     "seo": {
-      "metaDescription": "Lottie sur ToolTrim : animations légères After Effects pour apps, LottieFiles et alternatives."
+      "metaDescription": "Lottie en 2026 : format JSON et dotLottie, LottieFiles, After Effects, runtimes web et mobile. Prix, limites, vidéo et alternatives."
     },
     "pros": [
-      "Fichiers animation très légers (JSON)",
-      "Rendu natif et performant sur toutes plateformes",
-      "Intégration After Effects fluide via Bodymovin",
-      "LottieFiles offre 800k+ animations prêtes"
+      "Format vectoriel net à toutes les tailles.",
+      "Runtimes disponibles pour le web et les principales plateformes mobiles.",
+      "JSON universel et conteneur dotLottie compressé.",
+      "Workflow possible depuis After Effects, Figma ou Lottie Creator.",
+      "Interactions, thèmes et machines à états avec dotLottie."
     ],
     "prosEn": [
-      "Very lightweight animation files (JSON)",
-      "Native performant rendering on all platforms",
-      "Smooth After Effects integration via Bodymovin",
-      "LottieFiles offers 800k+ ready-made animations"
+      "Vector format that stays sharp at every size.",
+      "Runtimes for the web and major mobile platforms.",
+      "Universal JSON plus the compressed dotLottie container.",
+      "Workflows from After Effects, Figma, or Lottie Creator.",
+      "Interactions, themes, and state machines with dotLottie."
     ],
     "cons": [
-      "Requiert After Effects ou créateur compatible",
-      "Moins flexible que les animations programmatiques",
-      "Animation complexe peut rendre les fichiers lourds"
+      "Tous les effets After Effects ne sont pas pris en charge.",
+      "Une animation complexe peut rester lourde ou coûteuse en CPU.",
+      "Le rendu doit être vérifié sur chaque runtime cible.",
+      "LottieFiles payant n'est pas nécessaire pour simplement lire un fichier Lottie."
     ],
     "consEn": [
-      "Requires After Effects or compatible creator",
-      "Less flexible than programmatic animations",
-      "Complex animations can make files heavy"
+      "Not every After Effects feature is supported.",
+      "Complex animations can still be large or CPU-intensive.",
+      "Rendering must be checked on every target runtime.",
+      "A paid LottieFiles plan is not required simply to render Lottie files."
     ],
     "useCases": [
-      "Exporter des animations After Effects vers le web",
-      "Ajouter des animations légères sans vidéos",
-      "Utiliser les animations LottieFiles prêtes"
+      "Créer des loaders, confirmations et micro-interactions d'interface.",
+      "Livrer une même animation sur le web, iOS et Android.",
+      "Exporter un motion design After Effects avec Bodymovin ou le plugin LottieFiles.",
+      "Regrouper variantes, thèmes et interactions dans un fichier dotLottie."
     ],
     "useCasesEn": [
-      "Export After Effects animations to web",
-      "Add lightweight animations without videos",
-      "Use ready-made LottieFiles animations"
+      "Create loaders, confirmations, and interface micro-interactions.",
+      "Ship one animation across web, iOS, and Android.",
+      "Export After Effects motion through Bodymovin or the LottieFiles plug-in.",
+      "Bundle variants, themes, and interactions in a dotLottie file."
     ],
     "covers": [
       "animation",
@@ -81226,7 +81250,9 @@
       "SOFIA"
     ],
     "alternatives": [
-      "greensock"
+      "rive",
+      "greensock",
+      "lottiefiles"
     ],
     "verdict": {
       "keepIf": [
@@ -81281,7 +81307,10 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/lottie.png",
+    "ogImageUrl": "https://creator.lottiefiles.com/creator.png",
+    "galleryImages": [
+      "https://creator.lottiefiles.com/creator.png"
+    ],
     "force_silence": false
   },
   {

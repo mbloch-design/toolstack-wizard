@@ -47,8 +47,8 @@
       "destination": "https://tooltrim.com/:path*",
       "permanent": true
     },
-    { "source": "/", "destination": "/fr", "permanent": true },
-    { "source": "/tool/:slug", "destination": "/fr/tool/:slug", "permanent": true },
+    { "source": "/", "destination": "/en", "permanent": true },
+    { "source": "/tool/:slug", "destination": "/en/tool/:slug", "permanent": true },
     { "source": "/en/tool/:slug/prix", "destination": "/en/tool/:slug/pricing", "permanent": true },
     { "source": "/fr/tool/:slug/pricing", "destination": "/fr/tool/:slug/prix", "permanent": true },
     { "source": "/en/tool/:slug/avis", "destination": "/en/tool/:slug/reviews", "permanent": true },
@@ -189,12 +189,12 @@
     { "source": "/en/guide/stripe-freelance-tarifs-alternatives", "destination": "/fr/guide/stripe-freelance-tarifs-alternatives", "permanent": true },
     { "source": "/en/guide/perplexity-vs-chatgpt-recherche", "destination": "/fr/guide/perplexity-vs-chatgpt-recherche", "permanent": true },
     { "source": "/en/guide/notion-gratuit-vs-payant-vrai-calcul", "destination": "/fr/guide/notion-gratuit-vs-payant-vrai-calcul", "permanent": true },
-    { "source": "/category/:slug", "destination": "/fr/category/:slug", "permanent": true },
+    { "source": "/category/:slug", "destination": "/en/category/:slug", "permanent": true },
     { "source": "/article/:slug", "destination": "/fr/article/:slug", "permanent": true },
-    { "source": "/methodology", "destination": "/fr/methodology", "permanent": true },
+    { "source": "/methodology", "destination": "/en/transparency", "permanent": true },
     { "source": "/blog/:slug", "destination": "/fr/article/:slug", "permanent": true },
     { "source": "/blog", "destination": "/fr", "permanent": true },
-    { "source": "/guides", "destination": "/fr", "permanent": true }
+    { "source": "/guides", "destination": "/en/guides", "permanent": true }
   ],
   "rewrites": [
     { "source": "/fr/:path*", "destination": "/index.html" },

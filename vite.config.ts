@@ -485,9 +485,9 @@ function sitemapPlugin(): Plugin {
           urls.push(`  <url>\n    <loc>${loc}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>${freq}</changefreq>\n    <priority>${prio}</priority>\n  </url>`);
         };
 
-        /** FR+EN pair — both entries share the same hreflang block (x-default → FR) */
+        /** FR+EN pair. Both entries share the same hreflang block with EN as x-default. */
         const addPair = (frLoc: string, enLoc: string, freq: string, prio: string, lastmod = buildDate) => {
-          const hl = `\n    <xhtml:link rel="alternate" hreflang="fr" href="${frLoc}" />\n    <xhtml:link rel="alternate" hreflang="en" href="${enLoc}" />\n    <xhtml:link rel="alternate" hreflang="x-default" href="${frLoc}" />`;
+          const hl = `\n    <xhtml:link rel="alternate" hreflang="fr" href="${frLoc}" />\n    <xhtml:link rel="alternate" hreflang="en" href="${enLoc}" />\n    <xhtml:link rel="alternate" hreflang="x-default" href="${enLoc}" />`;
           urls.push(`  <url>\n    <loc>${frLoc}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>${freq}</changefreq>\n    <priority>${prio}</priority>${hl}\n  </url>`);
           urls.push(`  <url>\n    <loc>${enLoc}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>${freq}</changefreq>\n    <priority>${prio}</priority>${hl}\n  </url>`);
         };
@@ -838,7 +838,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
               `<link rel="canonical" href="${url}" />`,
               `<link rel="alternate" hreflang="fr" href="${frToolUrl}" />`,
               `<link rel="alternate" hreflang="en" href="${enToolUrl}" />`,
-              `<link rel="alternate" hreflang="x-default" href="${frToolUrl}" />`,
+              `<link rel="alternate" hreflang="x-default" href="${enToolUrl}" />`,
               `<title>${title}</title>`,
               `<meta name="description" content="${(description || title).replace(/"/g, "&quot;")}" />`,
               `<meta property="og:title" content="${title.replace(/"/g, "&quot;")}" />`,
@@ -1112,7 +1112,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
                 `<link rel="canonical" href="${url}" />`,
                 `<link rel="alternate" hreflang="fr" href="${frUrl}" />`,
                 `<link rel="alternate" hreflang="en" href="${enUrl}" />`,
-                `<link rel="alternate" hreflang="x-default" href="${frUrl}" />`,
+                `<link rel="alternate" hreflang="x-default" href="${enUrl}" />`,
                 `<title>${title}</title>`,
                 `<meta name="description" content="${desc.replace(/"/g, "&quot;")}" />`,
                 `<meta property="og:title" content="${title.replace(/"/g, "&quot;")}" />`,
@@ -1174,32 +1174,32 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
         const landings: { file: string; lang: string; canonical: string; title: string; description: string; bodyText: string }[] = [
           {
             file: "index.html",
-            lang: "fr",
-            canonical: `${BASE}/fr`,
+            lang: "en",
+            canonical: `${BASE}/en`,
             // Kept in sync with HomePageV2's own setSeoTags() call — the two
             // had drifted (different title/description text server vs
             // client), so GA4's page_title and the actual indexed <title>
             // disagreed the moment JS took over. HomePageV2's copy wins as
             // the source of truth since it's what the live component owns.
-            title: "ToolTrim — Auditer sa stack SaaS freelance",
-            description: "ToolTrim analyse ta stack SaaS selon ton profil, ton budget, ton TJM et tes usages réels pour repérer les doublons, challenger les abonnements inutiles et recommander les outils vraiment adaptés.",
-            bodyText: "ToolTrim est le comparateur indépendant d'outils SaaS pour freelances, startups et équipes tech. Analysez votre stack actuelle, identifiez les abonnements inutiles et découvrez des alternatives plus économiques. Chaque outil est testé manuellement pendant 2 à 4 semaines. Nos recommandations sont neutres, vérifiées et conçues pour vous faire gagner du temps et de l'argent.",
+            title: "ToolTrim | Decide which software to keep, replace, or add",
+            description: "ToolTrim helps freelancers and small teams decide which software to keep, replace, or add based on their stack, budget, and real workflow.",
+            bodyText: "ToolTrim is the decision layer for your software stack. Compare tools in the context of how you work, identify overlap, and decide what deserves a place in your stack.",
           },
           {
             file: "fr/index.html",
             lang: "fr",
             canonical: `${BASE}/fr`,
-            title: "ToolTrim — Auditer sa stack SaaS freelance",
-            description: "ToolTrim analyse ta stack SaaS selon ton profil, ton budget, ton TJM et tes usages réels pour repérer les doublons, challenger les abonnements inutiles et recommander les outils vraiment adaptés.",
-            bodyText: "ToolTrim est le comparateur indépendant d'outils SaaS pour freelances, startups et équipes tech. Analysez votre stack actuelle, identifiez les abonnements inutiles et découvrez des alternatives plus économiques. Chaque outil est testé manuellement pendant 2 à 4 semaines. Nos recommandations sont neutres, vérifiées et conçues pour vous faire gagner du temps et de l'argent.",
+            title: "ToolTrim | Décidez quels logiciels garder ou remplacer",
+            description: "ToolTrim vous aide à décider quels logiciels garder, remplacer ou ajouter selon votre stack, votre budget et votre façon de travailler.",
+            bodyText: "ToolTrim est la couche de décision de votre stack logicielle. Comparez les outils dans le contexte de votre travail, repérez les doublons et décidez lesquels méritent leur place.",
           },
           {
             file: "en/index.html",
             lang: "en",
             canonical: `${BASE}/en`,
-            title: "ToolTrim — Audit your freelance SaaS stack",
-            description: "ToolTrim analyzes your SaaS stack based on your profile, budget, day rate and real usage to spot duplicates, challenge unnecessary subscriptions and recommend tools that actually fit.",
-            bodyText: "ToolTrim is the independent SaaS tool comparison platform for freelancers, startups and tech teams. Audit your current stack, spot unnecessary subscriptions and discover cheaper alternatives. Every tool is manually tested for 2 to 4 weeks. Our recommendations are unbiased, verified and designed to save you time and money.",
+            title: "ToolTrim | Decide which software to keep, replace, or add",
+            description: "ToolTrim helps freelancers and small teams decide which software to keep, replace, or add based on their stack, budget, and real workflow.",
+            bodyText: "ToolTrim is the decision layer for your software stack. Compare tools in the context of how you work, identify overlap, and decide what deserves a place in your stack.",
           },
         ];
 
@@ -1211,7 +1211,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             `<link rel="canonical" href="${lp.canonical}" />`,
             `<link rel="alternate" hreflang="fr" href="${frCanonical}" />`,
             `<link rel="alternate" hreflang="en" href="${enCanonical}" />`,
-            `<link rel="alternate" hreflang="x-default" href="${frCanonical}" />`,
+            `<link rel="alternate" hreflang="x-default" href="${enCanonical}" />`,
             `<link rel="preload" as="image" type="image/webp" href="/hero/hero-gradient-960.webp" imagesrcset="/hero/hero-gradient-960.webp 960w, /hero/hero-gradient-1800.webp 1800w" imagesizes="(max-width: 960px) 100vw, 1280px" fetchpriority="high" />`,
             `<title>${lp.title}</title>`,
             `<meta name="description" content="${lp.description.replace(/"/g, "&quot;")}" />`,
@@ -1383,11 +1383,11 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             ...(sp.path.includes("/guide/") ? [
               `<link rel="alternate" hreflang="fr" href="${frCanonical}" />`,
               `<link rel="alternate" hreflang="en" href="${enCanonical}" />`,
-              `<link rel="alternate" hreflang="x-default" href="${frCanonical}" />`,
+              `<link rel="alternate" hreflang="x-default" href="${enCanonical}" />`,
             ] : hreflangPair ? [
               `<link rel="alternate" hreflang="fr" href="${BASE}${hreflangPair.fr}" />`,
               `<link rel="alternate" hreflang="en" href="${BASE}${hreflangPair.en}" />`,
-              `<link rel="alternate" hreflang="x-default" href="${BASE}${hreflangPair.fr}" />`,
+              `<link rel="alternate" hreflang="x-default" href="${BASE}${hreflangPair.en}" />`,
             ] : []),
             `<title>${sp.title}</title>`,
             `<meta name="description" content="${sp.description.replace(/"/g, "&quot;")}" />`,
@@ -1446,7 +1446,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             `<link rel="canonical" href="${url}" />`,
             `<link rel="alternate" hreflang="${sp.lang}" href="${url}" />`,
             `<link rel="alternate" hreflang="${altLang}" href="${BASE}${altPath}" />`,
-            `<link rel="alternate" hreflang="x-default" href="${BASE}${sp.path.replace(`/${sp.lang}/`, "/fr/")}" />`,
+            `<link rel="alternate" hreflang="x-default" href="${BASE}${sp.path.replace(`/${sp.lang}/`, "/en/")}" />`,
             `<title>${sp.title}</title>`,
             `<meta name="description" content="${sp.description.replace(/"/g, "&quot;")}" />`,
             `<meta property="og:title" content="${sp.title.replace(/"/g, "&quot;")}" />`,
@@ -1517,7 +1517,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
               `<link rel="canonical" href="${url}" />`,
               `<link rel="alternate" hreflang="${lang}" href="${url}" />`,
               `<link rel="alternate" hreflang="${altLang}" href="${BASE}/${altLang}/explorer/around/${slug}" />`,
-              `<link rel="alternate" hreflang="x-default" href="${BASE}/fr/explorer/around/${slug}" />`,
+              `<link rel="alternate" hreflang="x-default" href="${BASE}/en/explorer/around/${slug}" />`,
               `<title>${title}</title>`,
               `<meta name="description" content="${description.replace(/"/g, "&quot;")}" />`,
               `<meta property="og:title" content="${title.replace(/"/g, "&quot;")}" />`,
@@ -1562,7 +1562,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
               `<link rel="canonical" href="${url}" />`,
               `<link rel="alternate" hreflang="fr" href="${frUrl}" />`,
               `<link rel="alternate" hreflang="en" href="${enUrl}" />`,
-              `<link rel="alternate" hreflang="x-default" href="${frUrl}" />`,
+              `<link rel="alternate" hreflang="x-default" href="${enUrl}" />`,
               `<title>${title.replace(/"/g, "&quot;")}</title>`,
               `<meta name="description" content="${description.replace(/"/g, "&quot;")}" />`,
               `<meta property="og:title" content="${title.replace(/"/g, "&quot;")}" />`,
@@ -1654,7 +1654,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
               `<link rel="canonical" href="${url}" />`,
               `<link rel="alternate" hreflang="fr" href="${frUrl}" />`,
               `<link rel="alternate" hreflang="en" href="${enUrl}" />`,
-              `<link rel="alternate" hreflang="x-default" href="${frUrl}" />`,
+              `<link rel="alternate" hreflang="x-default" href="${enUrl}" />`,
               `<title>${title}</title>`,
               `<meta name="description" content="${description.replace(/"/g, "&quot;")}" />`,
               `<meta property="og:title" content="${title.replace(/"/g, "&quot;")}" />`,
@@ -1729,7 +1729,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
               `<link rel="canonical" href="${url}" />`,
               `<link rel="alternate" hreflang="fr" href="${frUrl}" />`,
               `<link rel="alternate" hreflang="en" href="${enUrl}" />`,
-              `<link rel="alternate" hreflang="x-default" href="${frUrl}" />`,
+              `<link rel="alternate" hreflang="x-default" href="${enUrl}" />`,
               `<title>${title}</title>`,
               `<meta name="description" content="${description.replace(/"/g, "&quot;")}" />`,
               `<meta property="og:title" content="${title.replace(/"/g, "&quot;")}" />`,
@@ -1842,7 +1842,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             `<link rel="canonical" href="${url}" />`,
             `<link rel="alternate" hreflang="fr" href="${frUrl}" />`,
             ...(post.category === "Stories" ? [] : [`<link rel="alternate" hreflang="en" href="${enUrl}" />`]),
-            `<link rel="alternate" hreflang="x-default" href="${frUrl}" />`,
+            `<link rel="alternate" hreflang="x-default" href="${post.category === "Stories" ? frUrl : enUrl}" />`,
             `<title>${title.replace(/</g, "&lt;")}</title>`,
             `<meta name="description" content="${description.replace(/"/g, "&quot;").substring(0, 160)}" />`,
             `<meta property="og:type" content="article" />`,

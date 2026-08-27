@@ -354,11 +354,11 @@ export default function HomePageV2() {
 
   useEffect(() => {
     const title = lang === "fr"
-      ? "ToolTrim — Auditer sa stack SaaS freelance"
-      : "ToolTrim — Audit your freelance SaaS stack";
+      ? "ToolTrim | Décidez quels logiciels garder ou remplacer"
+      : "ToolTrim | Decide which software to keep, replace, or add";
     const desc = lang === "fr"
-      ? "ToolTrim analyse ta stack SaaS selon ton profil, ton budget, ton TJM et tes usages réels pour repérer les doublons, challenger les abonnements inutiles et recommander les outils vraiment adaptés."
-      : "ToolTrim analyzes your SaaS stack based on your profile, budget, day rate and real usage to spot duplicates, challenge unnecessary subscriptions and recommend tools that actually fit.";
+      ? "ToolTrim vous aide à décider quels logiciels garder, remplacer ou ajouter selon votre stack, votre budget et votre façon de travailler."
+      : "ToolTrim helps freelancers and small teams decide which software to keep, replace, or add based on their stack, budget, and real workflow.";
     const url = `${SEO_BASE}/${lang}`;
     setSeoTags({ title, description: desc, url, locale: lang === "fr" ? "fr_FR" : "en_US" });
     setHreflang(`/${lang}`);
@@ -380,7 +380,7 @@ export default function HomePageV2() {
         width: 512,
         height: 512,
       },
-      description: "Stack audit tool for freelancers and solopreneurs. Independent, honest, no affiliate bias.",
+      description: "Software stack decision platform for freelancers and small teams. Independent, transparent, and focused on real workflows.",
       foundingDate: "2024",
       email: "contact@tooltrim.com",
       contactPoint: {

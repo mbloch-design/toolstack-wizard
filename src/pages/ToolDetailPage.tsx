@@ -91,11 +91,14 @@ const ToolDetailPage = () => {
     const planName = tool.pricing_v5?.compare_plan_name || null;
     const planSuffixFr = planName ? ` (plan ${planName})` : "";
     const planSuffixEn = planName ? ` (${planName} plan)` : "";
-    const rawExcerpt = (tool.shortDescription || "").split(/[.!?]/)[0].trim();
+    const localizedShortDescription = lang === "en"
+      ? ((tool as any).shortDescriptionEn || tool.shortDescription || "")
+      : (tool.shortDescription || "");
+    const rawExcerpt = localizedShortDescription.split(/[.!?]/)[0].trim();
     const shortExcerpt = rawExcerpt.length > 90 ? rawExcerpt.slice(0, 87) + "…" : rawExcerpt;
     const cat = categories.find((c: any) => c.id === tool.categoryId);
     const catLabel = cat
-      ? stripLeadingEmoji(cat.name, cat.id || "")
+      ? stripLeadingEmoji(lang === "en" ? (cat.nameEn || cat.name) : cat.name, cat.id || "")
       : lang === "fr" ? "outil SaaS" : "SaaS tool";
 
     const SEO: Record<string, { titleFr: string; titleEn: string; descFr: string; descEn: string; suffix: string }> = {

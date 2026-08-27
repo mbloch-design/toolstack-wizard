@@ -28,7 +28,13 @@ export function CurrencyProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved === "EUR" || saved === "USD") setCurrencyState(saved);
+    if (saved === "EUR" || saved === "USD") {
+      setCurrencyState(saved);
+      return;
+    }
+
+    const pathLanguage = window.location.pathname.split("/")[1];
+    setCurrencyState(pathLanguage === "en" ? "USD" : "EUR");
   }, []);
 
   const setCurrency = (next: Currency) => {
@@ -53,4 +59,3 @@ export function CurrencyProvider({ children }: { children: ReactNode }) {
 export function useCurrency() {
   return useContext(CurrencyContext);
 }
-

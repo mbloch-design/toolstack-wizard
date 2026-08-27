@@ -15,6 +15,13 @@ export interface ToolTutorial {
  * Every entry must be checked against the provider's oEmbed endpoint.
  */
 export const TOOL_TUTORIALS: Record<string, ToolTutorial[]> = {
+  lottie: [{
+    provider: "youtube", videoId: "mLYeuwfPy3g",
+    titleFr: "Bien démarrer avec LottieFiles pour After Effects", titleEn: "Getting started with LottieFiles for Adobe After Effects",
+    author: "LottieFiles", duration: "Tutoriel officiel",
+    sourceUrl: "https://www.youtube.com/watch?v=mLYeuwfPy3g",
+    verifiedOn: "2026-08-27",
+  }],
   surveymonkey: [{
     provider: "youtube", videoId: "sdcDK5NT5FM",
     titleFr: "Créer un sondage avec SurveyMonkey", titleEn: "How to create a survey in SurveyMonkey",

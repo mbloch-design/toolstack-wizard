@@ -188,16 +188,16 @@ const LazyFallback = () => (
 
 export const AppRoutes = () => (
   <Routes>
-    <Route path="/" element={<Navigate to="/fr" replace />} />
+    <Route path="/" element={<Navigate to="/en" replace />} />
 
     {/* Legacy redirects */}
-    <Route path="/methodology" element={<Navigate to="/fr/methodology" replace />} />
+    <Route path="/methodology" element={<Navigate to="/en/transparency" replace />} />
     <Route path="/blog" element={<Navigate to="/fr/guides" replace />} />
     <Route path="/blog/:slug" element={<RedirectBlogToGuide />} />
-    <Route path="/guides" element={<Navigate to="/fr/guides" replace />} />
-    <Route path="/tool/:slug" element={<RedirectToolToFr />} />
+    <Route path="/guides" element={<Navigate to="/en/guides" replace />} />
+    <Route path="/tool/:slug" element={<RedirectToolToEn />} />
     <Route path="/article/:slug" element={<RedirectArticleToFr />} />
-    <Route path="/category/:slug" element={<RedirectCategoryToFr />} />
+    <Route path="/category/:slug" element={<RedirectCategoryToEn />} />
 
     <Route path="/:lang" element={<LangLayout />}>
       <Route index element={<HomePageV2 />} />
@@ -285,10 +285,10 @@ const App = () => (
   </QueryClientProvider>
 );
 
-/** Redirect /tool/:slug and /en/tool/:slug → /fr/tool/:slug */
-function RedirectToolToFr() {
+/** Redirect unlocalized tool URLs to the international English edition. */
+function RedirectToolToEn() {
   const { slug } = useParams();
-  return <Navigate to={`/fr/tool/${slug}`} replace />;
+  return <Navigate to={`/en/tool/${slug}`} replace />;
 }
 
 /** Redirect /fr/outils/:slug → /fr/tool/:slug */
@@ -363,10 +363,10 @@ function RedirectBlogToGuide() {
   return <Navigate to={`/fr/guide/${slug}`} replace />;
 }
 
-/** Redirect /category/:slug → /fr/category/:slug */
-function RedirectCategoryToFr() {
+/** Redirect unlocalized category URLs to the international English edition. */
+function RedirectCategoryToEn() {
   const { slug } = useParams();
-  return <Navigate to={`/fr/category/${slug}`} replace />;
+  return <Navigate to={`/en/category/${slug}`} replace />;
 }
 
 /** /v2 was the hidden preview of the new homepage — now the real homepage, so redirect there */
