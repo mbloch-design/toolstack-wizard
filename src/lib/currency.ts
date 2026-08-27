@@ -1,4 +1,10 @@
-import { EUR_TO_USD, type Currency } from "@/hooks/useCurrency";
+import { EUR_TO_GBP, EUR_TO_USD, type Currency } from "@/hooks/useCurrency";
+
+const EUR_RATES: Record<Currency, number> = {
+  EUR: 1,
+  USD: EUR_TO_USD,
+  GBP: EUR_TO_GBP,
+};
 
 export function convertCurrencyAmount(
   amount: number,
@@ -6,7 +12,8 @@ export function convertCurrencyAmount(
   to: Currency,
 ): number {
   if (from === to) return amount;
-  return from === "EUR" ? amount * EUR_TO_USD : amount / EUR_TO_USD;
+  const amountInEur = amount / EUR_RATES[from];
+  return amountInEur * EUR_RATES[to];
 }
 
 export function formatCurrencyAmount(
@@ -26,4 +33,3 @@ export function formatCurrencyAmount(
 export function formatEuroAmount(amount: number, currency: Currency, lang: string): string {
   return formatCurrencyAmount(convertCurrencyAmount(amount, "EUR", currency), currency, lang);
 }
-

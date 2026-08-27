@@ -75,7 +75,7 @@ export default function ToolCostBreakdownTable({ tool, lang, t }: Props) {
     if (currency === "EUR" || !curatedRows?.length) return value;
     const numeric = Number(value.replace(/[^0-9.,]/g, "").replace(",", "."));
     if (!Number.isFinite(numeric)) return value;
-    const source: Currency = value.includes("$") ? "USD" : "EUR";
+    const source: Currency = value.includes("$") ? "USD" : value.includes("£") ? "GBP" : "EUR";
     const converted = convertCurrencyAmount(numeric, source, currency);
     return `${value.trim().startsWith("~") || source !== currency ? "~" : ""}${formatCurrencyAmount(converted, currency, lang)}`;
   };

@@ -14,7 +14,7 @@ interface Props {
  */
 export default function ToolBillingTrapsBlock({ tool, lang, t }: Props) {
   const traps = lang === "en"
-    ? (tool as any).verdictEn?.billingTraps ?? tool.verdict?.billingTraps
+    ? (tool as any).verdictEn?.billingTraps
     : tool.verdict?.billingTraps;
 
   if (!traps?.length) return null;

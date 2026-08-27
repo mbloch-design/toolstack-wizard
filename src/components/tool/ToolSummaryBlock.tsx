@@ -44,14 +44,16 @@ export default function ToolSummaryBlock({ tool, category, alternatives, display
     ? t("freelances et indépendants", "freelancers and solopreneurs")
     : t("professionnels", "professionals");
 
-  const avoidIfRaw = (lang === "en" && tool.verdictEn?.avoidIf?.length) ? tool.verdictEn.avoidIf : tool.verdict?.avoidIf;
+  const avoidIfRaw = lang === "en" ? tool.verdictEn?.avoidIf : tool.verdict?.avoidIf;
   const avoidCases = avoidIfRaw?.length
     ? (Array.isArray(avoidIfRaw) ? avoidIfRaw : [avoidIfRaw]).filter(Boolean).slice(0, 2).join("; ")
     : null;
 
   const topAlts = alternatives.slice(0, 4).map(a => a.name).join(", ");
 
-  const fullVerdictText = (lang === "en" && tool.verdictEn?.threshold) ? tool.verdictEn.threshold : (tool.verdict?.threshold || (lang === "en" && tool.shortDescriptionEn ? tool.shortDescriptionEn : tool.shortDescription) || "");
+  const fullVerdictText = lang === "en"
+    ? (tool.verdictEn?.threshold || tool.shortDescriptionEn || "")
+    : (tool.verdict?.threshold || tool.shortDescription || "");
   // First sentence only when it's the full multi-sentence threshold — this
   // row sits right after "Décision rapide" already showed it in full, a
   // few screens up at most. Site-wide, all 1109 tools.

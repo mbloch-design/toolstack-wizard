@@ -23582,6 +23582,95 @@ section[id] {
 }
 
 
+.asv2-currency-popover {
+  width: 248px;
+  padding: 10px;
+  border-color: var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  color: var(--color-text);
+  box-shadow: 0 18px 48px color-mix(in srgb, var(--color-text) 18%, transparent);
+}
+
+.asv2-currency-popover-title {
+  margin: 2px 4px 8px;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.asv2-currency-options {
+  display: grid;
+  gap: 3px;
+}
+
+.asv2-currency-option {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr) 18px;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 48px;
+  padding: 6px 9px;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--color-text);
+  text-align: left;
+  cursor: pointer;
+}
+
+.asv2-currency-option:hover,
+.asv2-currency-option:focus-visible,
+.asv2-currency-option.is-selected {
+  background: var(--color-surface-soft);
+}
+
+.asv2-currency-option:focus-visible {
+  outline: 2px solid var(--color-text);
+  outline-offset: -2px;
+}
+
+.asv2-currency-symbol {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.asv2-currency-name {
+  display: grid;
+  gap: 1px;
+  min-width: 0;
+  font-family: var(--font-ui);
+}
+
+.asv2-currency-name strong {
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.asv2-currency-name small {
+  overflow: hidden;
+  font-size: 11px;
+  color: var(--color-muted);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.asv2-currency-option > svg {
+  width: 16px;
+  height: 16px;
+  justify-self: end;
+}
+
 .asv2-topbar-cta {
   display: inline-flex;
   align-items: center;

@@ -101,12 +101,12 @@ export function resolveToolOverview(
   limits?: { pros?: number; useCases?: number; cons?: number; coverage?: number }
 ) {
   const pick = (fr: string, en: string) =>
-    ((lang === "en" ? tool?.[en] || tool?.[fr] : tool?.[fr]) || []).filter(Boolean);
+    ((lang === "en" ? tool?.[en] : tool?.[fr]) || []).filter(Boolean);
   const cap = (arr: any[], n?: number) => (n ? arr.slice(0, n) : arr);
 
   return {
     longDescription: lang === "en"
-      ? tool?.longDescriptionEn || tool?.longDescription
+      ? tool?.longDescriptionEn || tool?.shortDescriptionEn || ""
       : tool?.longDescription,
     pros: cap(pick("pros", "prosEn"), limits?.pros),
     useCases: cap(pick("useCases", "useCasesEn"), limits?.useCases),

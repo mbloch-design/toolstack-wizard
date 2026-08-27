@@ -29,7 +29,7 @@ interface Props {
  */
 export default function ToolProfitabilityBlock({ tool, lang, t, keepText, challengeText }: Props) {
   const { currency } = useCurrency();
-  const verdict = lang === "en" && tool.verdictEn ? tool.verdictEn : tool.verdict;
+  const verdict = lang === "en" ? tool.verdictEn : tool.verdict;
   const curatedProfitable = verdict?.profitableIf;
   const curatedTooExpensive = verdict?.tooExpensiveIf;
 
@@ -38,7 +38,7 @@ export default function ToolProfitabilityBlock({ tool, lang, t, keepText, challe
   const displayPrice = `${resolvedPrice.converted ? "≈ " : ""}${formatCurrencyAmount(resolvedPrice.amount, currency, lang)}`;
   const ba = (tool as any).betterAlternative;
   const altReason = lang === "en"
-    ? (ba?.performanceGainEn || ba?.reasonEn || ba?.performanceGain || ba?.reason)
+    ? (ba?.performanceGainEn || ba?.reasonEn)
     : (ba?.performanceGain || ba?.reason);
   const freeAlt = tool.freeAlternative;
 

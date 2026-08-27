@@ -15,15 +15,17 @@ import {
   Settings2,
   Sun,
   CircleDollarSign,
+  Check,
 } from "@/lib/icons";
 import { useLang } from "@/hooks/useLang";
-import { useCurrency } from "@/hooks/useCurrency";
+import { useCurrency, type Currency } from "@/hooks/useCurrency";
 import { useTheme } from "@/hooks/useTheme";
 import { useStackPins } from "@/hooks/useStackPins";
 import logoToolTrim from "@/assets/logo-tooltrim.svg";
 import pictoToolTrim from "@/assets/picto-logo.svg";
 import { SearchModal } from "@/components/SearchModal";
 import Footer from "@/components/Footer";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 
 type NavItem = {
   id: string;
@@ -43,9 +45,88 @@ const NAV_ITEMS: NavItem[] = [
   { id: "guides",     labelFr: "Guides",      labelEn: "Guides",     Icon: BookOpen, to: "/guides",      match: ["/guides", "/guide/"] },
 ];
 
+const CURRENCIES: Array<{ code: Currency; symbol: string; labelFr: string; labelEn: string }> = [
+  { code: "EUR", symbol: "€", labelFr: "Euro", labelEn: "Euro" },
+  { code: "USD", symbol: "$", labelFr: "Dollar américain", labelEn: "US dollar" },
+  { code: "GBP", symbol: "£", labelFr: "Livre sterling", labelEn: "Pound sterling" },
+];
+
+function CurrencyPicker({
+  currency,
+  setCurrency,
+  t,
+  compact = false,
+  sidebarExpanded = true,
+}: {
+  currency: Currency;
+  setCurrency: (currency: Currency) => void;
+  t: (fr: string, en: string) => string;
+  compact?: boolean;
+  sidebarExpanded?: boolean;
+}) {
+  const [open, setOpen] = useState(false);
+  const selected = CURRENCIES.find((item) => item.code === currency) || CURRENCIES[0];
+
+  return (
+    <Popover open={open} onOpenChange={setOpen}>
+      <PopoverTrigger asChild>
+        <button
+          type="button"
+          className={compact ? "asv2-topbar-currency" : "asv2-utility-item asv2-currency-toggle"}
+          aria-label={t(`Choisir la devise, ${selected.labelFr} sélectionné`, `Choose currency, ${selected.labelEn} selected`)}
+          title={!compact && !sidebarExpanded ? t("Changer de devise", "Change currency") : undefined}
+        >
+          {compact ? (
+            <>
+              <span aria-hidden>{selected.symbol}</span>
+              <span>{selected.code}</span>
+            </>
+          ) : (
+            <>
+              <CircleDollarSign />
+              <span className="asv2-utility-text">{t("Devise", "Currency")}</span>
+              <span className="asv2-utility-value">{selected.code}</span>
+            </>
+          )}
+        </button>
+      </PopoverTrigger>
+      <PopoverContent
+        className="asv2-currency-popover"
+        side={compact ? "bottom" : "right"}
+        align={compact ? "end" : "start"}
+        sideOffset={10}
+      >
+        <p className="asv2-currency-popover-title">{t("Choisir une devise", "Choose a currency")}</p>
+        <div className="asv2-currency-options" role="radiogroup" aria-label={t("Devise", "Currency")}>
+          {CURRENCIES.map((item) => (
+            <button
+              key={item.code}
+              type="button"
+              role="radio"
+              aria-checked={currency === item.code}
+              className={`asv2-currency-option${currency === item.code ? " is-selected" : ""}`}
+              onClick={() => {
+                setCurrency(item.code);
+                setOpen(false);
+              }}
+            >
+              <span className="asv2-currency-symbol" aria-hidden>{item.symbol}</span>
+              <span className="asv2-currency-name">
+                <strong>{item.code}</strong>
+                <small>{t(item.labelFr, item.labelEn)}</small>
+              </span>
+              {currency === item.code && <Check aria-hidden />}
+            </button>
+          ))}
+        </div>
+      </PopoverContent>
+    </Popover>
+  );
+}
+
 export default function AppShellV2({ children }: { children: ReactNode }) {
   const { t, prefix, lang } = useLang();
-  const { currency, toggleCurrency } = useCurrency();
+  const { currency, setCurrency } = useCurrency();
   const { theme, toggle: toggleTheme } = useTheme();
   const location = useLocation();
   const [searchOpen, setSearchOpen] = useState(false);
@@ -136,19 +217,12 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
             <span className="asv2-utility-value">{otherLang.toUpperCase()}</span>
           </a>
 
-          <button
-            type="button"
-            className="asv2-utility-item asv2-currency-toggle"
-            onClick={toggleCurrency}
-            aria-label={currency === "EUR"
-              ? t("Afficher les prix en dollars", "Show prices in US dollars")
-              : t("Afficher les prix en euros", "Show prices in euros")}
-            title={!sidebarExpanded ? t("Changer de devise", "Change currency") : undefined}
-          >
-            <CircleDollarSign />
-            <span className="asv2-utility-text">{t("Devise", "Currency")}</span>
-            <span className="asv2-utility-value">{currency}</span>
-          </button>
+          <CurrencyPicker
+            currency={currency}
+            setCurrency={setCurrency}
+            t={t}
+            sidebarExpanded={sidebarExpanded}
+          />
 
           <button
             type="button"
@@ -205,17 +279,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
           </button>
 
           <div className="asv2-topbar-right">
-            <button
-              type="button"
-              className="asv2-topbar-currency"
-              onClick={toggleCurrency}
-              aria-label={currency === "EUR"
-                ? t("Afficher les prix en dollars", "Show prices in US dollars")
-                : t("Afficher les prix en euros", "Show prices in euros")}
-            >
-              <span aria-hidden>{currency === "EUR" ? "€" : "$"}</span>
-              <span>{currency}</span>
-            </button>
+            <CurrencyPicker currency={currency} setCurrency={setCurrency} t={t} compact />
             <Link to={`${prefix}/ma-stack`} className="asv2-topbar-cta" aria-label={cartLabel}>
               <Bookmark style={{ width: 15, height: 15 }} aria-hidden />
               <span>{cartLabel}</span>

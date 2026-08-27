@@ -50,6 +50,7 @@ const HeroSectionV2 = () => {
             </Link>
           </div>
         </div>
+
       </div>
     </section>
   );

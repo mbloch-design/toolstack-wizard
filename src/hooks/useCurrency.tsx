@@ -1,13 +1,14 @@
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 
-export type Currency = "EUR" | "USD";
+export type Currency = "EUR" | "USD" | "GBP";
 
 const STORAGE_KEY = "tooltrim:currency";
 
-// ECB reference rate published on 2026-08-21. This is deliberately a dated,
+// ECB reference rates published on 2026-08-27. These are deliberately dated,
 // editorial conversion rate: ToolTrim prices inform comparison, not checkout.
-export const EUR_TO_USD = 1.1699;
-export const CURRENCY_RATE_DATE = "2026-08-21";
+export const EUR_TO_USD = 1.1645;
+export const EUR_TO_GBP = 0.8574;
+export const CURRENCY_RATE_DATE = "2026-08-27";
 
 type CurrencyContextValue = {
   currency: Currency;
@@ -28,7 +29,7 @@ export function CurrencyProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved === "EUR" || saved === "USD") {
+    if (saved === "EUR" || saved === "USD" || saved === "GBP") {
       setCurrencyState(saved);
       return;
     }
@@ -50,7 +51,9 @@ export function CurrencyProvider({ children }: { children: ReactNode }) {
   const value = useMemo<CurrencyContextValue>(() => ({
     currency,
     setCurrency,
-    toggleCurrency: () => setCurrency(currency === "EUR" ? "USD" : "EUR"),
+    toggleCurrency: () => setCurrency(
+      currency === "EUR" ? "USD" : currency === "USD" ? "GBP" : "EUR",
+    ),
   }), [currency]);
 
   return <CurrencyContext.Provider value={value}>{children}</CurrencyContext.Provider>;

@@ -55,7 +55,7 @@ const pricingTruth = (() => {
   rows.forEach((row) => {
     const currency = row[currencyIndex];
     const amount = Number(row[amountIndex]);
-    if (row[idIndex] && Number.isFinite(amount) && (currency === "EUR" || currency === "USD")) {
+    if (row[idIndex] && Number.isFinite(amount) && (currency === "EUR" || currency === "USD" || currency === "GBP")) {
       result.set(row[idIndex], { amount, currency, source: "pricing_truth" });
     }
   });
@@ -64,17 +64,21 @@ const pricingTruth = (() => {
 
 function extractEditorialNativePrice(tool: Tool): NativePrice | null {
   const text = [tool.pricing?.paid, tool.pricingEn?.paid].filter(Boolean).join(" ");
-  const match = text.match(/(?:([$€])\s*([0-9]+(?:[.,][0-9]+)?)|([0-9]+(?:[.,][0-9]+)?)\s*([$€]))/);
+  const match = text.match(/(?:([$€£])\s*([0-9]+(?:[.,][0-9]+)?)|([0-9]+(?:[.,][0-9]+)?)\s*([$€£]))/);
   if (!match) return null;
   const symbol = match[1] || match[4];
   const amount = Number((match[2] || match[3]).replace(",", "."));
   if (!Number.isFinite(amount)) return null;
-  return { amount, currency: symbol === "$" ? "USD" : "EUR", source: "editorial_price" };
+  return {
+    amount,
+    currency: symbol === "$" ? "USD" : symbol === "£" ? "GBP" : "EUR",
+    source: "editorial_price",
+  };
 }
 
 export function getNativeComparePrice(tool: Tool): NativePrice | null {
   const plan = tool.pricing_v5?.plans?.find((item) => item.isComparePlan && !item.isFree && item.nativeAmount != null);
-  if (plan && (plan.nativeCurrency === "EUR" || plan.nativeCurrency === "USD")) {
+  if (plan && (plan.nativeCurrency === "EUR" || plan.nativeCurrency === "USD" || plan.nativeCurrency === "GBP")) {
     return { amount: plan.nativeAmount!, currency: plan.nativeCurrency, source: "canonical_plan" };
   }
   const id = tool.slug || tool.id;
@@ -94,8 +98,8 @@ export function resolveDisplayPrice(
     return { amount: normalizedEur, currency: "EUR", converted: false, nativePrice };
   }
   return {
-    amount: convertCurrencyAmount(normalizedEur, "EUR", "USD"),
-    currency: "USD",
+    amount: convertCurrencyAmount(normalizedEur, "EUR", selectedCurrency),
+    currency: selectedCurrency,
     converted: true,
     nativePrice,
   };

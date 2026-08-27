@@ -2,7 +2,7 @@ import type { Tool } from "@/data/types";
 import { CreditCard, Sparkles, Package } from "@/lib/icons";
 import { hasGenuineFreeTier } from "@/lib/pricing";
 import { relExterne } from "@/lib/externalLink";
-import { CURRENCY_RATE_DATE, EUR_TO_USD, useCurrency, type Currency } from "@/hooks/useCurrency";
+import { CURRENCY_RATE_DATE, EUR_TO_GBP, EUR_TO_USD, useCurrency, type Currency } from "@/hooks/useCurrency";
 import { convertCurrencyAmount, formatCurrencyAmount } from "@/lib/currency";
 import { resolveDisplayPrice } from "@/lib/nativePricing";
 
@@ -19,7 +19,14 @@ interface Props {
 
 export default function ToolPricingSection({ tool, displayPrice, lang, t }: Props) {
   const { currency } = useCurrency();
-  const pricing = lang === "en" && tool.pricingEn ? tool.pricingEn : tool.pricing;
+  const pricing = lang === "en"
+    ? (tool.pricingEn || {
+        free: tool.pricing?.free
+          ? (hasGenuineFreeTier(tool.pricing.free) ? "Free plan available." : "No permanent free plan.")
+          : "",
+        paid: tool.pricing?.paid ? "Paid plans available. See the official pricing source for details." : "",
+      })
+    : tool.pricing;
   // Variante de prix dans la langue de la page (résumés/plans localisés) ; repli sûr sur pricing_v5.
   const pv5 = lang === "en" && tool.pricing_v5En ? tool.pricing_v5En : tool.pricing_v5;
   const canonicalPlans = pv5?.plans || [];
@@ -31,13 +38,13 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t }: Prop
   const officialUrl = pv5?.official_source_url;
   const isOneTime = pv5?.compare_plan_kind === "one_time";
   const displayPaidPrice = resolveDisplayPrice(tool, displayPrice, currency);
-  const hasConvertedPrice = currency === "USD" && (
+  const hasConvertedPrice = (
     (canonicalPlans.length === 0 && displayPrice > 0 && displayPaidPrice.converted)
-    || canonicalPlans.some((plan) => !plan.isFree && plan.nativeAmount != null && plan.nativeCurrency === "EUR")
+    || canonicalPlans.some((plan) => !plan.isFree && plan.nativeAmount != null && plan.nativeCurrency !== currency)
   );
 
   const formatNativeAmount = (amount: number, nativeCurrency: string | null) => {
-    const source = nativeCurrency === "USD" || nativeCurrency === "EUR" ? nativeCurrency : null;
+    const source = nativeCurrency === "USD" || nativeCurrency === "EUR" || nativeCurrency === "GBP" ? nativeCurrency : null;
     if (!source) return new Intl.NumberFormat(lang === "en" ? "en-US" : "fr-FR", {
       style: "currency", currency: nativeCurrency || "EUR", maximumFractionDigits: 2,
     }).format(amount);
@@ -170,7 +177,7 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t }: Prop
 
       {hasConvertedPrice && (
         <p className="td-pricing-evidence td-pricing-conversion-note">
-          {t("Conversion indicative", "Indicative conversion")} · 1 EUR = {EUR_TO_USD} USD ·
+          {t("Conversion indicative", "Indicative conversion")} · 1 EUR = {EUR_TO_USD} USD / {EUR_TO_GBP} GBP ·
           <a href="https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html" target="_blank" rel={relExterne("source")}>
             {t(` taux BCE du ${CURRENCY_RATE_DATE}`, ` ECB rate from ${CURRENCY_RATE_DATE}`)}
           </a>

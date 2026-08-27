@@ -42,7 +42,7 @@ export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, a
       "@context": "https://schema.org",
       "@type": "WebPage",
       name: `${tool.name} : ${pageIntent} | ToolTrim`,
-      description: tool.shortDescription,
+      description: lang === "en" ? (tool.shortDescriptionEn || tool.shortDescription) : tool.shortDescription,
       url: canonicalUrl,
       dateModified: verifiedOn,
       publisher: {
@@ -59,16 +59,15 @@ export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, a
     const ratingValue = score.score.toFixed(1);
     const reviewBody =
       (lang === "en" ? tool.verdictEn?.threshold : tool.verdict?.threshold) ||
-      tool.verdict?.threshold ||
-      (lang === "en" && tool.longDescriptionEn ? tool.longDescriptionEn : tool.longDescription) ||
-      tool.shortDescription ||
+      (lang === "en" ? tool.longDescriptionEn : tool.longDescription) ||
+      (lang === "en" ? tool.shortDescriptionEn : tool.shortDescription) ||
       `${tool.name} review by ToolTrim.`;
 
     setJsonLd("tool-software-jsonld", {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
       name: tool.name,
-      description: tool.shortDescription,
+      description: lang === "en" ? (tool.shortDescriptionEn || tool.shortDescription) : tool.shortDescription,
       url: tool.websiteUrl || canonicalUrl,
       applicationCategory: "BusinessApplication",
       operatingSystem: "Web",
