@@ -18348,20 +18348,39 @@ section[id] {
 .tt-footer-meta {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
   gap: var(--space-md);
-  padding: 24px 0 28px;
+  padding: 24px 0 12px;
+}
+.tt-footer-partners {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 12px 0 24px;
+  border-top: 1px solid var(--tt-footer-border);
+}
+.tt-footer-partners-label {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--tt-footer-muted);
+  opacity: 0.7;
+  white-space: nowrap;
 }
 .tt-footer-badges {
   display: flex;
   align-items: center;
-  margin-left: auto;
+  flex-wrap: wrap;
+  gap: 18px;
 }
 .tt-footer-badge {
   display: block;
   line-height: 0;
-  opacity: 0.55;
+  opacity: 0.45;
   filter: grayscale(1);
   transition: opacity 180ms cubic-bezier(0.25, 1, 0.5, 1),
               filter 180ms cubic-bezier(0.25, 1, 0.5, 1);
@@ -18373,8 +18392,8 @@ section[id] {
 }
 .tt-footer-badge img {
   display: block;
-  width: 96px;
-  height: auto;
+  width: auto;
+  height: 18px;
   border: 0;
 }
 .tt-footer-badge img.tt-footer-badge-dark { display: none; }
@@ -18450,8 +18469,10 @@ section[id] {
     flex-direction: column;
     gap: 10px;
   }
-  .tt-footer-badges {
-    margin-left: 0;
+  .tt-footer-partners {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
 }
 
