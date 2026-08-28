@@ -282,13 +282,31 @@ export function useDiagnosticData() {
   useEffect(() => {
     (async () => {
       try {
-        const [toolRows, localToolsModule, clustersRes, doublesRes, questionsRes] = await Promise.all([
-          fetchAllDiagnosticTools(),
+        const [localToolsModule, remoteResults] = await Promise.all([
           import("@/data/tools_v4.json"),
+          Promise.allSettled([
+          fetchAllDiagnosticTools(),
           supabase.from("clusters").select("*").order("order", { ascending: true }),
           supabase.from("doublon_rules").select("*"),
           supabase.from("discovery_questions").select("*"),
+          ]),
         ]);
+
+        const [toolsResult, clustersResult, doublesResult, questionsResult] = remoteResults;
+        const toolRows = toolsResult.status === "fulfilled" ? toolsResult.value : [];
+        const clustersRes = clustersResult.status === "fulfilled" && !clustersResult.value.error
+          ? clustersResult.value
+          : { data: [] };
+        const doublesRes = doublesResult.status === "fulfilled" && !doublesResult.value.error
+          ? doublesResult.value
+          : { data: [] };
+        const questionsRes = questionsResult.status === "fulfilled" && !questionsResult.value.error
+          ? questionsResult.value
+          : { data: [] };
+
+        if (remoteResults.some((result) => result.status === "rejected")) {
+          console.warn("Diagnostic: remote data unavailable, using the local catalogue fallback");
+        }
 
         const mergedTools = new Map<string, Tool>();
         (localToolsModule.default as unknown[])

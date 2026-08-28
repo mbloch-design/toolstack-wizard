@@ -1,15 +1,9 @@
 import { Link } from "react-router-dom";
-import { Bookmark } from "@/lib/icons";
 import { useLang } from "@/hooks/useLang";
-import { useStackPins } from "@/hooks/useStackPins";
 
 const HeroSectionV2 = () => {
   const { t, lang, prefix } = useLang();
-  const { state: cartState } = useStackPins();
-  const cartCount = cartState.pinnedToolSlugs.length;
-  const cartLabel = cartCount > 0
-    ? `${t("Ma stack", "My stack")} · ${cartCount}`
-    : t("Construire ma stack", "Build my stack");
+  const auditLabel = t("Auditer ma stack", "Audit my stack");
 
   return (
     <section className="hv2-root">
@@ -44,10 +38,19 @@ const HeroSectionV2 = () => {
                 : <>Decide which software to keep,<br />replace, or add.</>}
             </h1>
 
-            <Link to={`${prefix}/ma-stack`} className="hv2-cta" aria-label={cartLabel}>
-              <Bookmark style={{ width: 15, height: 15 }} aria-hidden />
-              <span>{cartLabel}</span>
+            <p className="hv2-description">
+              {t(
+                "Analysez vos abonnements, repérez les doublons et obtenez une prochaine décision claire en 3 minutes.",
+                "Review your subscriptions, spot overlapping tools, and get one clear next decision in 3 minutes.",
+              )}
+            </p>
+
+            <Link to={`${prefix}/selector`} className="hv2-cta" aria-label={auditLabel}>
+              <span>{auditLabel}</span>
             </Link>
+            <span className="hv2-reassurance">
+              {t("Sans inscription · Sans carte bancaire", "No signup · No credit card")}
+            </span>
           </div>
         </div>
 
