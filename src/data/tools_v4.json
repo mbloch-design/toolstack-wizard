@@ -4054,14 +4054,14 @@
     "name": "Adobe Podcast AI",
     "slug": "adobe-podcast-ai",
     "category": "ai-general",
-    "shortDescription": "Nettoyage audio par IA : supprime le bruit et donne une voix de studio, gratuitement.",
-    "longDescription": "Adobe Podcast (Enhance Speech), c'est un nettoyeur de voix par IA. Tu déposes un enregistrement avec de l'écho, du bruit de fond ou un micro moyen, et l'outil te renvoie une voix nette, comme enregistrée en studio. Le résultat est bluffant sur des conditions difficiles (chambre qui résonne, bruit de clim, micro d'ordinateur portable), au point d'être devenu un réflexe pour beaucoup de podcasteurs et de créateurs vidéo.\n\nLe gros argument, c'est que la version de base est gratuite, sans abonnement Adobe : tu peux traiter jusqu'à une heure d'audio par jour, par fichiers de 30 minutes. Pour aller plus loin (fichiers de 2 heures, traitement vidéo, traitement par lots, curseur d'intensité), il y a une formule Premium autour de 10$/mois.\n\nÀ qui ça sert vraiment : si tu enregistres des voix-off, des interviews ou des podcasts dans des conditions non maîtrisées, c'est un filet de sécurité gratuit qui sauve des prises. Si tu utilises déjà Descript ou une suite de montage complète, le débruitage y est souvent intégré, et Adobe Podcast fait alors double emploi. Mais comme point d'entrée gratuit, difficile de faire mieux.",
+    "shortDescription": "Nettoyage, enregistrement et montage de voix par IA dans le navigateur.",
+    "longDescription": "Adobe Podcast transforme un enregistrement imparfait en voix plus nette directement dans le navigateur. Enhance Speech réduit le bruit et la réverbération, tandis que Studio permet d'enregistrer et de monter une conversation sans passer par un logiciel audio complexe. Les nouveautés 2026 ajoutent notamment la séparation avancée des sources, l'enregistrement vidéo et un travail multipiste plus complet.\n\nLa formule gratuite traite uniquement l'audio, un fichier à la fois, jusqu'à 30 minutes par fichier et une heure par jour. Premium ajoute la vidéo, le traitement par lots, le réglage de l'intensité et des fichiers pouvant atteindre deux heures. Adobe ne présente pas clairement un prix autonome sur la page des plans, car l'accès Premium dépend aussi de l'offre Adobe Express.\n\nC'est un excellent filet de sécurité pour les podcasts, interviews et voix-off enregistrés dans des conditions imparfaites. Pour un mixage musical précis ou une production broadcast complexe, un DAW reste plus adapté.",
     "affiliateLink": "https://podcast.adobe.com",
     "websiteUrl": "https://podcast.adobe.com",
     "defaultMonthlyPrice": 0,
     "pricing": {
       "free": "Gratuit : 1h d'audio par jour, fichiers de 30 minutes",
-      "paid": "Premium à environ 10$/mois (fichiers 2h, vidéo, traitement par lots)"
+      "paid": "Premium : vidéo, traitement par lots et fichiers jusqu'à 2h ; tarif selon l'offre Adobe Express"
     },
     "logo": "",
     "soloRelevance": "medium",
@@ -4162,9 +4162,9 @@
     "pricing_v5": {
       "cautions": [
         "Version de base gratuite : 1h d'audio par jour, fichiers de 30 minutes",
-        "Premium à environ 10$/mois pour la vidéo, les lots et les fichiers de 2h"
+        "Le prix Premium dépend de l'offre Adobe Express et doit être confirmé avant achat"
       ],
-      "verified_on": "2026-06-15",
+      "verified_on": "2026-08-27",
       "source_domain": "podcast.adobe.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
@@ -4183,8 +4183,8 @@
       "never_auto_cancel_reason": null,
       "requires_context_questions": true
     },
-    "shortDescriptionEn": "AI audio cleanup: removes noise and gives a studio-quality voice, for free.",
-    "longDescriptionEn": "Adobe Podcast (Enhance Speech) is an AI voice cleaner. You drop in a recording with echo, background noise or a mediocre mic, and the tool hands back a clean voice, as if recorded in a studio. The result is striking in difficult conditions (a room that echoes, AC hum, a laptop mic), to the point of becoming a reflex for many podcasters and video creators.\n\nThe big argument is that the basic version is free, with no Adobe subscription: you can process up to one hour of audio per day, in 30-minute files. To go further (2-hour files, video processing, batch processing, an intensity slider), there's a Premium plan around $10/month.\n\nWho it's really for: if you record voiceovers, interviews or podcasts in uncontrolled conditions, it's a free safety net that saves takes. If you already use Descript or a full editing suite, denoising is often built in, and Adobe Podcast then duplicates it. But as a free entry point, it's hard to beat.",
+    "shortDescriptionEn": "AI voice cleanup, recording and editing in the browser.",
+    "longDescriptionEn": "Adobe Podcast turns an imperfect recording into clearer speech directly in the browser. Enhance Speech reduces noise and reverb, while Studio lets you record and edit conversations without learning a complex audio application. Its 2026 updates add advanced source separation, video recording and a more capable multitrack workflow.\n\nThe free plan handles audio only, one file at a time, with a 30-minute limit per file and one hour of enhancement per day. Premium adds video, bulk processing, strength controls and files up to two hours. Adobe does not show a simple standalone price on the plans page because Premium access is also tied to Adobe Express.\n\nIt is an excellent safety net for podcasts, interviews and voice-overs recorded in imperfect conditions. For precise music mixing or complex broadcast production, a dedicated DAW remains the better fit.",
     "prosEn": [
       "AI voice enhancement with a clean result.",
       "In-browser recording and editing.",
@@ -4216,10 +4216,10 @@
     },
     "pricingEn": {
       "free": "Free: 1h of audio per day, 30-minute files",
-      "paid": "Premium around $10/month (2h files, video, batch processing)"
+      "paid": "Premium: video, bulk processing and files up to 2h; price depends on the Adobe Express offer"
     },
     "force_silence": false,
-    "description": "Adobe Podcast (Enhance Speech), c'est un nettoyeur de voix par IA. Tu déposes un enregistrement avec de l'écho, du bruit de fond ou un micro moyen, et l'outil te renvoie une voix nette, comme enregistrée en studio. Le résultat est bluffant sur des conditions difficiles (chambre qui résonne, bruit de clim, micro d'ordinateur portable), au point d'être devenu un réflexe pour beaucoup de podcasteurs et de créateurs vidéo.\n\nLe gros argument, c'est que la version de base est gratuite, sans abonnement Adobe : tu peux traiter jusqu'à une heure d'audio par jour, par fichiers de 30 minutes. Pour aller plus loin (fichiers de 2 heures, traitement vidéo, traitement par lots, curseur d'intensité), il y a une formule Premium autour de 10$/mois.\n\nÀ qui ça sert vraiment : si tu enregistres des voix-off, des interviews ou des podcasts dans des conditions non maîtrisées, c'est un filet de sécurité gratuit qui sauve des prises. Si tu utilises déjà Descript ou une suite de montage complète, le débruitage y est souvent intégré, et Adobe Podcast fait alors double emploi. Mais comme point d'entrée gratuit, difficile de faire mieux.",
+    "description": "Adobe Podcast transforme un enregistrement imparfait en voix plus nette directement dans le navigateur. Enhance Speech réduit le bruit et la réverbération, tandis que Studio permet d'enregistrer et de monter une conversation sans passer par un logiciel audio complexe. Les nouveautés 2026 ajoutent notamment la séparation avancée des sources, l'enregistrement vidéo et un travail multipiste plus complet.\n\nLa formule gratuite traite uniquement l'audio, un fichier à la fois, jusqu'à 30 minutes par fichier et une heure par jour. Premium ajoute la vidéo, le traitement par lots, le réglage de l'intensité et des fichiers pouvant atteindre deux heures. Adobe ne présente pas clairement un prix autonome sur la page des plans, car l'accès Premium dépend aussi de l'offre Adobe Express.\n\nC'est un excellent filet de sécurité pour les podcasts, interviews et voix-off enregistrés dans des conditions imparfaites. Pour un mixage musical précis ou une production broadcast complexe, un DAW reste plus adapté.",
     "ogImageUrl": "https://podcast.adobe.com/ES_1_3128967a32.webp",
     "galleryImages": [
       "https://podcast.adobe.com/tiny_Enhance_Speech_1_english_1_1ae989fa4f.png",
@@ -53864,8 +53864,8 @@
     "name": "GifGun",
     "slug": "ae-gifgun",
     "category": "design-tools",
-    "shortDescription": "Export GIF directement depuis After Effects en un clic.",
-    "longDescription": "GifGun, c'est un petit plugin qui fait une chose et la fait bien : exporter un GIF animé directement depuis After Effects, en un clic, sans passer par Photoshop ou Media Encoder. Tu cliques, tu règles la taille et la qualité, et tu obtiens ton GIF. Pour un motion designer ou un community manager qui livre souvent des animations courtes pour le web et les réseaux, c'est un gain de temps quotidien.\n\nC'est un achat unique à petit prix (~40$ chez aescripts), sans abonnement. Tu l'achètes une fois, tu l'utilises pour toujours.\n\nÀ qui ça s'adresse : à ceux qui exportent régulièrement des GIF depuis After Effects. Si tu n'as pas ce besoin, GifGun ne sert à rien. Mais si tu en fais souvent, l'investissement est dérisoire face au temps gagné, et le contrôle qualité est meilleur que l'export GIF natif.",
+    "shortDescription": "Exporter et compresser GIF, WEBP, WEBM et MP4 depuis After Effects ou l'application dédiée.",
+    "longDescription": "GifGun 2 accélère la livraison d'animations légères depuis After Effects, mais il ne se limite plus à un bouton d'export GIF. La licence inclut le plugin After Effects, une application de bureau autonome et une application web. Elle couvre les formats GIF, WEBP, WEBM et MP4, avec taille cible, compression intelligente, traitement par lots et presets JSON.\n\nLa licence coûte 39,99$ en achat unique sur aescripts. La version 2.2.1, publiée en avril 2026, prend en charge After Effects 2021 et versions ultérieures, Windows 10 ou 11 et macOS 15 ou version ultérieure.\n\nGifGun devient rentable si vous exportez régulièrement des animations pour le web, les réseaux sociaux ou les messageries. Pour quelques conversions occasionnelles, FFmpeg ou un convertisseur gratuit reste suffisant.",
     "affiliateLink": "https://aescripts.com/gifgun",
     "websiteUrl": "https://aescripts.com/gifgun",
     "defaultMonthlyPrice": 0,
@@ -53963,7 +53963,7 @@
         "Achat ponctuel ou licence non mensuelle : ne pas compter comme abonnement mensuel sans confirmation."
       ],
       "currency": "USD",
-      "verified_on": "2026-06-15",
+      "verified_on": "2026-08-27",
       "billing_model": "one_time",
       "source_domain": "aescripts.com",
       "price_original": 39.99,
@@ -53992,10 +53992,10 @@
       "usage_sensitive": false,
       "compare_plan_kind": "one_time",
       "compare_plan_name": "License",
-      "price_reliability": "medium",
+      "price_reliability": "high",
       "location_sensitive": true,
       "official_source_url": "https://aescripts.com/gifgun/",
-      "verification_status": "official_contextual",
+      "verification_status": "official_explicit",
       "price_original_currency": "USD",
       "compare_price_monthly_eur": 0
     },
@@ -54007,8 +54007,8 @@
       "never_auto_cancel_reason": "Couche non substituable par défaut.",
       "requires_context_questions": true
     },
-    "shortDescriptionEn": "Export GIFs directly from After Effects in one click.",
-    "longDescriptionEn": "GifGun is a small plugin that does one thing well: export an animated GIF directly from After Effects, in one click, without going through Photoshop or Media Encoder. You click, set size and quality, and get your GIF. For a motion designer or community manager who often delivers short animations for the web and social, it's a daily time saver.\n\nIt's a low-cost one-time purchase (~$40 at aescripts), no subscription. You buy it once, use it forever.\n\nWho it's for: those who regularly export GIFs from After Effects. If you don't have that need, GifGun is useless. But if you do it often, the investment is trivial versus the time saved, and the quality control beats the native GIF export.",
+    "shortDescriptionEn": "Export and compress GIF, WEBP, WEBM and MP4 from After Effects or the dedicated app.",
+    "longDescriptionEn": "GifGun 2 speeds up delivery of lightweight animations from After Effects, but it is no longer just a one-click GIF exporter. One license includes the After Effects plugin, a standalone desktop app and a web app. It supports GIF, WEBP, WEBM and MP4, with target file sizes, smart compression, batch processing and JSON presets.\n\nThe license costs $39.99 as a one-time purchase from aescripts. Version 2.2.1, released in April 2026, supports After Effects 2021 and later, Windows 10 or 11, and macOS 15 or later.\n\nGifGun pays for itself when you regularly export animations for websites, social media or messaging. For a few occasional conversions, FFmpeg or a free converter is still enough.",
     "prosEn": [
       "Very simple, intuitive export interface.",
       "Optimized compression (lighter files at equal quality).",
@@ -54046,7 +54046,7 @@
       "paid": "One-time purchase (~$40), lifetime license, no subscription"
     },
     "force_silence": false,
-    "description": "GifGun, c'est un petit plugin qui fait une chose et la fait bien : exporter un GIF animé directement depuis After Effects, en un clic, sans passer par Photoshop ou Media Encoder. Tu cliques, tu règles la taille et la qualité, et tu obtiens ton GIF. Pour un motion designer ou un community manager qui livre souvent des animations courtes pour le web et les réseaux, c'est un gain de temps quotidien.\n\nC'est un achat unique à petit prix (~40$ chez aescripts), sans abonnement. Tu l'achètes une fois, tu l'utilises pour toujours.\n\nÀ qui ça s'adresse : à ceux qui exportent régulièrement des GIF depuis After Effects. Si tu n'as pas ce besoin, GifGun ne sert à rien. Mais si tu en fais souvent, l'investissement est dérisoire face au temps gagné, et le contrôle qualité est meilleur que l'export GIF natif.",
+    "description": "GifGun 2 accélère la livraison d'animations légères depuis After Effects, mais il ne se limite plus à un bouton d'export GIF. La licence inclut le plugin After Effects, une application de bureau autonome et une application web. Elle couvre les formats GIF, WEBP, WEBM et MP4, avec taille cible, compression intelligente, traitement par lots et presets JSON.\n\nLa licence coûte 39,99$ en achat unique sur aescripts. La version 2.2.1, publiée en avril 2026, prend en charge After Effects 2021 et versions ultérieures, Windows 10 ou 11 et macOS 15 ou version ultérieure.\n\nGifGun devient rentable si vous exportez régulièrement des animations pour le web, les réseaux sociaux ou les messageries. Pour quelques conversions occasionnelles, FFmpeg ou un convertisseur gratuit reste suffisant.",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/ae-gifgun.png"
   },
   {
@@ -93123,10 +93123,10 @@
     "name": "Motion Bro",
     "slug": "motion-bro",
     "category": "design-tools",
-    "shortDescription": "Gestionnaire de presets et extensions pour After Effects.",
-    "longDescription": "Motion Bro, c'est une extension pour After Effects qui sert à organiser, parcourir et appliquer des packs de presets (transitions, effets, animations de texte) depuis une interface visuelle, au lieu de fouiller dans des dossiers. C'est un concurrent direct d'Animation Composer, avec la même promesse : gagner du temps quand on réutilise beaucoup de presets.\n\nLe modèle : l'extension de base est gratuite, et tu achètes ensuite des packs de presets (souvent en achat unique), certains gratuits. Tu ne paies donc que ce que tu utilises vraiment.\n\nÀ qui ça s'adresse : aux motion designers qui accumulent beaucoup de packs et veulent les gérer proprement. Si tu as peu de presets, un simple dossier local fait l'affaire. Et si tu utilises déjà Animation Composer, Motion Bro fait double emploi : choisis l'un ou l'autre selon les packs qui t'intéressent.",
-    "affiliateLink": "https://motionbro.net",
-    "websiteUrl": "https://motionbro.net",
+    "shortDescription": "Gestionnaire de presets et packs pour After Effects et Premiere Pro.",
+    "longDescription": "Motion Bro est un gestionnaire visuel de presets pour After Effects et Premiere Pro. Il permet de parcourir et d'appliquer transitions, effets, animations de texte et éléments graphiques sans fouiller dans une arborescence de fichiers. La version actuelle du plugin est gratuite, avec des packs gratuits et des bundles payants vendus séparément.\n\nLe modèle convient bien aux motion designers qui veulent construire leur bibliothèque progressivement. Les licences payantes sont ponctuelles et distinguent l'usage personnel de l'usage commercial ; un même utilisateur peut activer sa licence sur deux appareils.\n\nMotion Bro est surtout pertinent si vous réutilisez beaucoup de presets dans Adobe. Avec une petite bibliothèque, des dossiers locaux suffisent. Si vous utilisez déjà Animation Composer, comparez les packs et les licences avant de conserver les deux.",
+    "affiliateLink": "https://motionbro.com",
+    "websiteUrl": "https://motionbro.com",
     "defaultMonthlyPrice": 0,
     "pricing": {
       "free": "Extension de base gratuite",
@@ -93218,15 +93218,15 @@
       "cautions": [
         "Extension de base gratuite, packs de presets vendus séparément"
       ],
-      "verified_on": "2026-06-15",
-      "source_domain": "motionbro.net",
+      "verified_on": "2026-08-27",
+      "source_domain": "motionbro.com",
       "usage_sensitive": false,
       "compare_plan_kind": "individual",
       "compare_plan_name": "Gratuit (extension)",
-      "price_reliability": "low",
+      "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://motionbro.net",
-      "verification_status": "official_site_only",
+      "official_source_url": "https://motionbro.com/",
+      "verification_status": "official_explicit",
       "compare_price_monthly_eur": 0
     },
     "decision_policy_v3": {
@@ -93237,8 +93237,8 @@
       "never_auto_cancel_reason": "Couche non substituable par défaut.",
       "requires_context_questions": true
     },
-    "shortDescriptionEn": "Preset and extension manager for After Effects.",
-    "longDescriptionEn": "Motion Bro is an After Effects extension to organize, browse and apply preset packs (transitions, effects, text animations) from a visual interface, instead of digging through folders. It's a direct competitor to Animation Composer, with the same promise: save time when you reuse a lot of presets.\n\nThe model: the base extension is free, and you then buy preset packs (often one-time), some free. So you only pay for what you actually use.\n\nWho it's for: motion designers who accumulate many packs and want to manage them cleanly. If you have few presets, a simple local folder does the job. And if you already use Animation Composer, Motion Bro is redundant: pick one or the other depending on the packs you want.",
+    "shortDescriptionEn": "Preset and pack manager for After Effects and Premiere Pro.",
+    "longDescriptionEn": "Motion Bro is a visual preset manager for After Effects and Premiere Pro. It lets you browse and apply transitions, effects, text animations and graphic elements without digging through folders. The current plugin is free, with free packs and paid bundles sold separately.\n\nThe model works well for motion designers who want to build a library gradually. Paid licenses are one-time purchases and distinguish personal from commercial use; one user can activate a license on two devices.\n\nMotion Bro is most useful when you reuse many presets in Adobe applications. A small library can still live in local folders. If you already use Animation Composer, compare the packs and licenses before keeping both.",
     "prosEn": [
       "Free plugin and 1,400 included assets—no paywall to start.",
       "Bundles sold once, no recurring subscription.",
@@ -93274,7 +93274,7 @@
       "paid": "Preset packs sold separately (one-time), some free"
     },
     "force_silence": false,
-    "description": "Motion Bro, c'est une extension pour After Effects qui sert à organiser, parcourir et appliquer des packs de presets (transitions, effets, animations de texte) depuis une interface visuelle, au lieu de fouiller dans des dossiers. C'est un concurrent direct d'Animation Composer, avec la même promesse : gagner du temps quand on réutilise beaucoup de presets.\n\nLe modèle : l'extension de base est gratuite, et tu achètes ensuite des packs de presets (souvent en achat unique), certains gratuits. Tu ne paies donc que ce que tu utilises vraiment.\n\nÀ qui ça s'adresse : aux motion designers qui accumulent beaucoup de packs et veulent les gérer proprement. Si tu as peu de presets, un simple dossier local fait l'affaire. Et si tu utilises déjà Animation Composer, Motion Bro fait double emploi : choisis l'un ou l'autre selon les packs qui t'intéressent.",
+    "description": "Motion Bro est un gestionnaire visuel de presets pour After Effects et Premiere Pro. Il permet de parcourir et d'appliquer transitions, effets, animations de texte et éléments graphiques sans fouiller dans une arborescence de fichiers. La version actuelle du plugin est gratuite, avec des packs gratuits et des bundles payants vendus séparément.\n\nLe modèle convient bien aux motion designers qui veulent construire leur bibliothèque progressivement. Les licences payantes sont ponctuelles et distinguent l'usage personnel de l'usage commercial ; un même utilisateur peut activer sa licence sur deux appareils.\n\nMotion Bro est surtout pertinent si vous réutilisez beaucoup de presets dans Adobe. Avec une petite bibliothèque, des dossiers locaux suffisent. Si vous utilisez déjà Animation Composer, comparez les packs et les licences avant de conserver les deux.",
     "ogImageUrl": "https://motionbro.com/wp-content/uploads/2022/12/free-motion-bro-pack-cover.jpg.webp",
     "galleryImages": [
       "https://motionbro.com/wp-content/uploads/2023/10/Simple-Slide.jpg.webp",
@@ -151720,13 +151720,13 @@
     "slug": "topaz-video-ai",
     "category": "ai-general",
     "shortDescription": "Upscaling et amélioration vidéo par IA.",
-    "longDescription": "Topaz Video AI, c'est l'outil spécialisé dans l'amélioration de vidéo par IA : upscaling (passer une vidéo en 4K), débruitage, stabilisation, ralenti fluide, restauration de vieilles images. Là où un logiciel de montage classique se contente de couper, Topaz reconstruit les détails image par image avec ses modèles IA. Pour un monteur ou un vidéaste qui doit récupérer des rushes de mauvaise qualité ou livrer en haute définition, c'est redoutablement efficace.\n\nLe modèle de prix a longtemps été un achat unique autour de 299$ (avec un an de mises à jour, puis 99$/an pour continuer à les recevoir), ce qui en faisait une rareté appréciée dans un monde d'abonnements. Depuis fin 2025, Topaz est passé à un modèle par abonnement pour les nouveaux utilisateurs, vérifie l'offre en cours sur leur site.\n\nÀ qui ça s'adresse : aux vidéastes et monteurs qui font régulièrement de l'upscaling ou de la restauration. C'est gourmand en puissance machine (GPU). Pour un besoin ponctuel, des outils en ligne ou les fonctions intégrées de ton logiciel de montage peuvent suffire. Mais pour de la qualité d'upscaling sérieuse en local, Topaz reste la référence.",
+    "longDescription": "Topaz Video est spécialisé dans l'amélioration vidéo par IA : upscaling, débruitage, stabilisation, interpolation d'images et restauration de séquences anciennes. Les traitements s'exécutent en local et le plan personnel autorise un rendu local illimité, ce qui convient aux rushes sensibles ou aux volumes importants.\n\nPour les nouveaux clients, Topaz Video est désormais vendu par abonnement. L'offre personnelle coûte 299$ par an en paiement annuel, 39$ par mois avec engagement annuel, ou 59$ sans engagement. Il n'existe plus de licence perpétuelle affichée pour ce produit.\n\nL'investissement se justifie pour une utilisation récurrente en postproduction et avec un GPU suffisamment puissant. Pour une restauration ponctuelle, les fonctions intégrées d'un logiciel de montage ou un service facturé à l'usage seront souvent plus rationnels.",
     "affiliateLink": "https://topazlabs.com/topaz-video-ai",
     "websiteUrl": "https://topazlabs.com/topaz-video-ai",
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 21.4,
     "pricing": {
       "free": "",
-      "paid": "Historiquement achat unique ~299$ (1 an de MAJ, puis 99$/an). Abonnement pour les nouveaux depuis fin 2025"
+      "paid": "299$/an, 39$/mois avec engagement annuel, ou 59$/mois sans engagement"
     },
     "logo": "",
     "soloRelevance": null,
@@ -151823,21 +151823,21 @@
     "substitution_cluster_v2": "ai-video-enhancement",
     "pricing_v5": {
       "cautions": [
-        "Achat ponctuel ou licence non mensuelle : ne pas compter comme abonnement mensuel sans confirmation."
+        "Prix hors taxes éventuelles ; vérifier le tarif local avant achat"
       ],
       "currency": "USD",
-      "verified_on": "2026-06-15",
-      "billing_model": "one_time",
+      "verified_on": "2026-08-27",
+      "billing_model": "subscription",
       "source_domain": "topazlabs.com",
       "price_original": 299,
       "billing_options": [
         {
-          "value": "one_time",
+          "value": "annual",
           "currency": "USD",
-          "label_en": "One-time",
-          "label_fr": "Achat unique",
+          "label_en": "Annual prepaid",
+          "label_fr": "Annuel prépayé",
           "price_original": 299,
-          "price_monthly_eur": 0
+          "price_monthly_eur": 21.4
         },
         {
           "value": "included",
@@ -151853,14 +151853,14 @@
         }
       ],
       "usage_sensitive": false,
-      "compare_plan_kind": "one_time",
-      "compare_plan_name": "License",
-      "price_reliability": "medium",
+      "compare_plan_kind": "individual",
+      "compare_plan_name": "Topaz Video annual",
+      "price_reliability": "high",
       "location_sensitive": true,
-      "official_source_url": "https://www.topazlabs.com/topaz-video-ai",
-      "verification_status": "official_contextual",
+      "official_source_url": "https://www.topazlabs.com/pricing",
+      "verification_status": "official_explicit",
       "price_original_currency": "USD",
-      "compare_price_monthly_eur": 0
+      "compare_price_monthly_eur": 21.4
     },
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
@@ -151871,7 +151871,7 @@
       "requires_context_questions": true
     },
     "shortDescriptionEn": "AI video upscaling and enhancement.",
-    "longDescriptionEn": "Topaz Video AI is the tool specialized in AI video enhancement: upscaling (taking a video to 4K), denoising, stabilization, smooth slow motion, restoration of old footage. Where a classic editing tool just cuts, Topaz reconstructs detail frame by frame with its AI models. For an editor or videographer who has to rescue low-quality footage or deliver in high definition, it's remarkably effective.\n\nThe pricing model was long a one-time purchase around $299 (with a year of updates, then $99/year to keep receiving them), which made it a welcome rarity in a world of subscriptions. Since late 2025, Topaz moved to a subscription model for new users, so check the current offer on their site.\n\nWho it's for: videographers and editors who regularly do upscaling or restoration. It's heavy on machine power (GPU). For an occasional need, online tools or your editing software's built-in functions may be enough. But for serious local upscaling quality, Topaz remains the reference.",
+    "longDescriptionEn": "Topaz Video specializes in AI video enhancement: upscaling, denoising, stabilization, frame interpolation and restoration of older footage. Processing runs locally, and the personal plan includes unlimited local rendering, which suits sensitive footage and heavier workloads.\n\nFor new customers, Topaz Video is now subscription only. The personal plan costs $299 per year when prepaid, $39 per month with an annual commitment, or $59 month to month. No perpetual license is currently listed for this product.\n\nThe investment makes sense for recurring post-production work and a machine with a capable GPU. For a one-off restoration, built-in editor features or a usage-based service will often be more economical.",
     "prosEn": [
       "Some of the most advanced AI video upscaling and restoration.",
       "Frame interpolation for smooth slow motion.",
@@ -151903,10 +151903,10 @@
     },
     "pricingEn": {
       "free": "",
-      "paid": "Historically a one-time purchase ~$299 (1 year of updates, then $99/year). Subscription for new users since late 2025"
+      "paid": "$299/year, $39/month with annual commitment, or $59 month to month"
     },
     "force_silence": false,
-    "description": "Topaz Video AI, c'est l'outil spécialisé dans l'amélioration de vidéo par IA : upscaling (passer une vidéo en 4K), débruitage, stabilisation, ralenti fluide, restauration de vieilles images. Là où un logiciel de montage classique se contente de couper, Topaz reconstruit les détails image par image avec ses modèles IA. Pour un monteur ou un vidéaste qui doit récupérer des rushes de mauvaise qualité ou livrer en haute définition, c'est redoutablement efficace.\n\nLe modèle de prix a longtemps été un achat unique autour de 299$ (avec un an de mises à jour, puis 99$/an pour continuer à les recevoir), ce qui en faisait une rareté appréciée dans un monde d'abonnements. Depuis fin 2025, Topaz est passé à un modèle par abonnement pour les nouveaux utilisateurs, vérifie l'offre en cours sur leur site.\n\nÀ qui ça s'adresse : aux vidéastes et monteurs qui font régulièrement de l'upscaling ou de la restauration. C'est gourmand en puissance machine (GPU). Pour un besoin ponctuel, des outils en ligne ou les fonctions intégrées de ton logiciel de montage peuvent suffire. Mais pour de la qualité d'upscaling sérieuse en local, Topaz reste la référence.",
+    "description": "Topaz Video est spécialisé dans l'amélioration vidéo par IA : upscaling, débruitage, stabilisation, interpolation d'images et restauration de séquences anciennes. Les traitements s'exécutent en local et le plan personnel autorise un rendu local illimité, ce qui convient aux rushes sensibles ou aux volumes importants.\n\nPour les nouveaux clients, Topaz Video est désormais vendu par abonnement. L'offre personnelle coûte 299$ par an en paiement annuel, 39$ par mois avec engagement annuel, ou 59$ sans engagement. Il n'existe plus de licence perpétuelle affichée pour ce produit.\n\nL'investissement se justifie pour une utilisation récurrente en postproduction et avec un GPU suffisamment puissant. Pour une restauration ponctuelle, les fonctions intégrées d'un logiciel de montage ou un service facturé à l'usage seront souvent plus rationnels.",
     "ogImageUrl": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/68ca910577540672ae401448_opengraph-topaz-video.webp",
     "galleryImages": [
       "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/662078e248e0b92f5ad6bc2a_opengraph-video-1.jpg"

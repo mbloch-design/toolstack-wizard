@@ -454,7 +454,7 @@ const ToolDetailPage = () => {
                   </div>
                   {hasHeroMedia && (
                     <div className="td-hero-media">
-                      <ToolGallery images={imgs} videos={tutorials} toolName={tool.name} variant="hero" />
+                      <ToolGallery images={imgs} videos={tutorials} toolName={tool.name} lang={lang} variant="hero" />
                     </div>
                   )}
 

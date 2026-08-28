@@ -6,6 +6,7 @@ interface Props {
   images: string[];
   videos?: ToolTutorial[];
   toolName: string;
+  lang?: "fr" | "en";
   variant?: "default" | "hero";
 }
 
@@ -13,7 +14,7 @@ type GalleryItem =
   | { type: "image"; key: string; src: string }
   | { type: "video"; key: string; video: ToolTutorial };
 
-export default function ToolGallery({ images, videos = [], toolName, variant = "default" }: Props) {
+export default function ToolGallery({ images, videos = [], toolName, lang = "fr", variant = "default" }: Props) {
   const [active, setActive] = useState(0);
   const [failed, setFailed] = useState<Set<string>>(new Set());
   const [playingVideoId, setPlayingVideoId] = useState<string | null>(null);
@@ -44,7 +45,7 @@ export default function ToolGallery({ images, videos = [], toolName, variant = "
     <img
       key={media.key}
       src={media.src}
-      alt={`${toolName}, aperçu ${index + 1}`}
+      alt={lang === "en" ? `${toolName}, preview ${index + 1}` : `${toolName}, aperçu ${index + 1}`}
       className="tg-main-img"
       loading={index === 0 ? "eager" : "lazy"}
       fetchpriority={index === 0 ? "high" : "auto"}
@@ -58,7 +59,7 @@ export default function ToolGallery({ images, videos = [], toolName, variant = "
       key={media.key}
       className="tg-main-video"
       src={`https://www.youtube-nocookie.com/embed/${media.video.videoId}?autoplay=1&rel=0`}
-      title={media.video.titleFr}
+      title={lang === "en" ? media.video.titleEn : media.video.titleFr}
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowFullScreen
     />
@@ -68,11 +69,11 @@ export default function ToolGallery({ images, videos = [], toolName, variant = "
       type="button"
       className="tg-video-poster"
       onClick={() => setPlayingVideoId(media.video.videoId)}
-      aria-label={`Lire la vidéo : ${media.video.titleFr}`}
+      aria-label={lang === "en" ? `Play video: ${media.video.titleEn}` : `Lire la vidéo : ${media.video.titleFr}`}
     >
       <img src={`https://i.ytimg.com/vi/${media.video.videoId}/hqdefault.jpg`} alt="" />
       <span className="tg-video-play"><Play aria-hidden fill="currentColor" /></span>
-      <span className="tg-video-caption"><strong>{media.video.titleFr}</strong><small>{media.video.duration}</small></span>
+      <span className="tg-video-caption"><strong>{lang === "en" ? media.video.titleEn : media.video.titleFr}</strong><small>{media.video.duration}</small></span>
     </button>
   );
 
@@ -91,8 +92,8 @@ export default function ToolGallery({ images, videos = [], toolName, variant = "
         </div>
         {heroPageCount > 1 && (
           <>
-            <button type="button" className="tg-nav tg-nav-prev" onClick={previousPage} aria-label="Médias précédents" />
-            <button type="button" className="tg-nav tg-nav-next" onClick={nextPage} aria-label="Médias suivants" />
+            <button type="button" className="tg-nav tg-nav-prev" onClick={previousPage} aria-label={lang === "en" ? "Previous media" : "Médias précédents"} />
+            <button type="button" className="tg-nav tg-nav-next" onClick={nextPage} aria-label={lang === "en" ? "Next media" : "Médias suivants"} />
             <span className="tg-counter">{heroPage} / {heroPageCount}</span>
           </>
         )}
@@ -107,8 +108,8 @@ export default function ToolGallery({ images, videos = [], toolName, variant = "
         {renderMedia(item, safeActive)}
         {visible.length > 1 && (
           <>
-            <button type="button" className="tg-nav tg-nav-prev" onClick={prev} aria-label="Précédent" />
-            <button type="button" className="tg-nav tg-nav-next" onClick={next} aria-label="Suivant" />
+            <button type="button" className="tg-nav tg-nav-prev" onClick={prev} aria-label={lang === "en" ? "Previous" : "Précédent"} />
+            <button type="button" className="tg-nav tg-nav-next" onClick={next} aria-label={lang === "en" ? "Next" : "Suivant"} />
             <span className="tg-counter">{safeActive + 1} / {visible.length}</span>
           </>
         )}

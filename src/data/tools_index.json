@@ -988,11 +988,11 @@
     "slug": "adobe-podcast-ai",
     "name": "Adobe Podcast AI",
     "categoryId": "ai-general",
-    "shortDescription": "Nettoyage audio par IA : supprime le bruit et donne une voix de studio, gratuitement.",
-    "shortDescriptionEn": "AI audio cleanup: removes noise and gives a studio-quality voice, for free.",
+    "shortDescription": "Nettoyage, enregistrement et montage de voix par IA dans le navigateur.",
+    "shortDescriptionEn": "AI voice cleanup, recording and editing in the browser.",
     "pricing": {
       "free": "Gratuit : 1h d'audio par jour, fichiers de 30 minutes",
-      "paid": "Premium à environ 10$/mois (fichiers 2h, vidéo, traitement par lots)"
+      "paid": "Premium : vidéo, traitement par lots et fichiers jusqu'à 2h ; tarif selon l'offre Adobe Express"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://podcast.adobe.com",
@@ -13606,8 +13606,8 @@
     "slug": "ae-gifgun",
     "name": "GifGun",
     "categoryId": "design-tools",
-    "shortDescription": "Export GIF directement depuis After Effects en un clic.",
-    "shortDescriptionEn": "Export GIFs directly from After Effects in one click.",
+    "shortDescription": "Exporter et compresser GIF, WEBP, WEBM et MP4 depuis After Effects ou l'application dédiée.",
+    "shortDescriptionEn": "Export and compress GIF, WEBP, WEBM and MP4 from After Effects or the dedicated app.",
     "pricing": {
       "free": "",
       "paid": "Achat unique (~40$), licence à vie, pas d'abonnement"
@@ -23307,15 +23307,15 @@
     "slug": "motion-bro",
     "name": "Motion Bro",
     "categoryId": "design-tools",
-    "shortDescription": "Gestionnaire de presets et extensions pour After Effects.",
-    "shortDescriptionEn": "Preset and extension manager for After Effects.",
+    "shortDescription": "Gestionnaire de presets et packs pour After Effects et Premiere Pro.",
+    "shortDescriptionEn": "Preset and pack manager for After Effects and Premiere Pro.",
     "pricing": {
       "free": "Extension de base gratuite",
       "paid": "Packs de presets vendus séparément (achat unique), certains gratuits"
     },
     "defaultMonthlyPrice": 0,
-    "affiliateLink": "https://motionbro.net",
-    "websiteUrl": "https://motionbro.net",
+    "affiliateLink": "https://motionbro.com",
+    "websiteUrl": "https://motionbro.com",
     "ogImageUrl": "https://motionbro.com/wp-content/uploads/2022/12/free-motion-bro-pack-cover.jpg.webp",
     "logo": "",
     "tool_type": "plugin",
@@ -37767,9 +37767,9 @@
     "shortDescriptionEn": "AI video upscaling and enhancement.",
     "pricing": {
       "free": "",
-      "paid": "Historiquement achat unique ~299$ (1 an de MAJ, puis 99$/an). Abonnement pour les nouveaux depuis fin 2025"
+      "paid": "299$/an, 39$/mois avec engagement annuel, ou 59$/mois sans engagement"
     },
-    "defaultMonthlyPrice": 0,
+    "defaultMonthlyPrice": 21.4,
     "affiliateLink": "https://topazlabs.com/topaz-video-ai",
     "websiteUrl": "https://topazlabs.com/topaz-video-ai",
     "ogImageUrl": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/68ca910577540672ae401448_opengraph-topaz-video.webp",

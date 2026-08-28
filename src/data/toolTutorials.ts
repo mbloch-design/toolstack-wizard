@@ -15,6 +15,13 @@ export interface ToolTutorial {
  * Every entry must be checked against the provider's oEmbed endpoint.
  */
 export const TOOL_TUTORIALS: Record<string, ToolTutorial[]> = {
+  claude: [{
+    provider: "youtube", videoId: "0vZ_UVLhSQQ",
+    titleFr: "Bien démarrer avec Claude.ai", titleEn: "Getting started with Claude.ai",
+    author: "Anthropic", duration: "Tutoriel officiel",
+    sourceUrl: "https://www.youtube.com/watch?v=0vZ_UVLhSQQ",
+    publishedOn: "2025-12-02", verifiedOn: "2026-08-27",
+  }],
   lottie: [{
     provider: "youtube", videoId: "mLYeuwfPy3g",
     titleFr: "Bien démarrer avec LottieFiles pour After Effects", titleEn: "Getting started with LottieFiles for Adobe After Effects",
