@@ -68,15 +68,8 @@ export default function ToolSummaryBlock({ tool, category, alternatives, display
   // Keep the structured recap in the document for extraction without adding
   // a sixth, repetitive information surface to the human reading path.
   return (
-    <section
-      className="sr-only"
-      itemScope
-      itemType="https://schema.org/SoftwareApplication"
-    >
+    <section className="sr-only">
       <h2>{t(`Résumé de ${tool.name}`, `${tool.name} Summary`)}</h2>
-      <meta itemProp="name" content={tool.name} />
-      <meta itemProp="applicationCategory" content="BusinessApplication" />
-      <meta itemProp="operatingSystem" content="Web" />
 
       <dl className="td-synth-dl">
         <div className="td-synth-row">
