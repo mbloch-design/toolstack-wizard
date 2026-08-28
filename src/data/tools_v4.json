@@ -72637,9 +72637,9 @@
     "category": "ui-components",
     "shortDescription": "Framework MVVM JavaScript pour des UIs réactives, précurseur de React et Vue.",
     "shortDescriptionEn": "JavaScript MVVM framework for reactive UIs, a precursor to React and Vue.",
-    "description": "Knockout.js est un framework MVVM avec data-binding bidirectionnel, précurseur des frameworks modernes, aujourd'hui en fin de vie.",
-    "longDescription": "Knockout.js est un framework MVVM avec data-binding bidirectionnel, précurseur des frameworks modernes, aujourd'hui en fin de vie.",
-    "longDescriptionEn": "Knockout.js is an MVVM framework with two-way data binding, a precursor to modern frameworks, now end-of-life.",
+    "description": "Knockout est une bibliothèque JavaScript MVVM gratuite qui synchronise une interface HTML avec son modèle de données grâce aux observables et aux bindings déclaratifs.",
+    "longDescription": "Knockout est une bibliothèque JavaScript MVVM qui synchronise automatiquement l'interface HTML avec un modèle de données grâce aux observables et aux bindings déclaratifs. Elle reste surtout présente dans des applications historiques où une réécriture complète serait trop coûteuse.\n\nLe projet n'est pas en fin de vie : la version stable 3.5.3 est sortie en mars 2026 avec notamment la prise en charge de Trusted Types. Son écosystème et son architecture restent toutefois moins adaptés aux nouveaux projets que React, Vue ou Svelte. Le bon choix consiste généralement à maintenir Knockout lorsqu'il fonctionne déjà, puis à migrer progressivement les écrans qui évoluent le plus.",
+    "longDescriptionEn": "Knockout is a JavaScript MVVM library that automatically keeps an HTML interface in sync with its data model through observables and declarative bindings. It is now most common in established applications where a full rewrite would be too costly.\n\nThe project is not end-of-life: stable version 3.5.3 was released in March 2026 and added Trusted Types support. Its ecosystem and architecture are still less suitable for new projects than React, Vue, or Svelte. The practical choice is usually to maintain Knockout where it already works, then migrate the fastest-changing screens incrementally.",
     "pricing": {
       "free": "Open source / Gratuit",
       "paid": null
@@ -72649,7 +72649,21 @@
       "paid": null
     },
     "defaultMonthlyPrice": 0,
-    "pricing_v5": null,
+    "pricing_v5": {
+      "cautions": [
+        "Bibliothèque gratuite sous licence MIT, mais la maintenance d'une application historique reste un coût interne."
+      ],
+      "verified_on": "2026-08-28",
+      "source_domain": "knockoutjs.com",
+      "usage_sensitive": false,
+      "compare_plan_kind": "free",
+      "compare_plan_name": "Open source",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://knockoutjs.com/downloads/index.html",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 0
+    },
     "affiliateLink": "",
     "websiteUrl": "https://knockoutjs.com",
     "logo": "",
@@ -79832,36 +79846,36 @@
     "category": "organization",
     "shortDescription": "PKM open-source avec graphe de connaissances.",
     "shortDescriptionEn": "Open-source PKM with knowledge graph.",
-    "description": "Logseq est une base de connaissances open source et local-first. Les notes sont organisées en blocs reliés par des liens bidirectionnels, des références et un graphe, avec prise en charge de Markdown et Org-mode. L'application combine journal quotidien, gestion de tâches, annotation de PDF et extensions communautaires.\n\nLe cœur du produit est gratuit et stocke les données sous votre contrôle. Une synchronisation officielle optionnelle facilite l'usage sur plusieurs appareils, tandis que les applications desktop et mobiles permettent de consulter et modifier son graphe hors du navigateur.\n\nLogseq convient surtout aux chercheurs, auteurs et profils techniques qui pensent par connexions plutôt que par dossiers. Pour des notes rapides ou une collaboration d'équipe immédiate, Notion ou une application de notes classique demandent moins de configuration.",
-    "longDescription": "Logseq est une base de connaissances open source et local-first. Les notes sont organisées en blocs reliés par des liens bidirectionnels, des références et un graphe, avec prise en charge de Markdown et Org-mode. L'application combine journal quotidien, gestion de tâches, annotation de PDF et extensions communautaires.\n\nLe cœur du produit est gratuit et stocke les données sous votre contrôle. Une synchronisation officielle optionnelle facilite l'usage sur plusieurs appareils, tandis que les applications desktop et mobiles permettent de consulter et modifier son graphe hors du navigateur.\n\nLogseq convient surtout aux chercheurs, auteurs et profils techniques qui pensent par connexions plutôt que par dossiers. Pour des notes rapides ou une collaboration d'équipe immédiate, Notion ou une application de notes classique demandent moins de configuration.",
-    "longDescriptionEn": "Logseq is an open-source, local-first knowledge base. Notes are organized as blocks connected through backlinks, references, and a visual graph, with support for Markdown and Org-mode. It combines a daily journal, task management, PDF annotation, and a growing ecosystem of community plugins.\n\nThe core product is free and keeps data under your control. Optional official sync makes multi-device use easier, while desktop and mobile apps let you access and edit your graph beyond the browser.\n\nLogseq is best suited to researchers, writers, and technical users who think through connections rather than folders. For quick notes or immediate team collaboration, Notion or a conventional notes app requires less setup.",
+    "description": "Logseq est une base de connaissances open source et local-first organisée autour de blocs, liens bidirectionnels, journaux quotidiens et graphes. Son application locale reste gratuite, tandis que Sync et la nouvelle architecture DB sont encore en évolution.",
+    "longDescription": "Logseq est une base de connaissances open source et local-first organisée autour de blocs, liens bidirectionnels, journaux quotidiens et graphes. Les fonctions locales restent gratuites et les fichiers Markdown permettent de conserver la maîtrise de ses notes.\n\nLe produit traverse une transition importante entre les graphes basés sur des fichiers et la nouvelle version Logseq DB. Sync reste présenté comme une bêta et son accès passe actuellement par une contribution récurrente. La documentation officielle recommande des sauvegardes régulières et précise que la synchronisation historique ne constitue pas encore un espace collaboratif classique.\n\nLogseq convient aux chercheurs, auteurs et profils techniques prêts à investir dans leur système de notes. Pour une collaboration d'équipe immédiate ou une prise de notes sans configuration, Notion et les applications plus conventionnelles restent plus simples.",
+    "longDescriptionEn": "Logseq is an open-source, local-first knowledge base built around blocks, backlinks, daily journals, and graphs. Local features remain free, while Markdown files help users retain control of their notes.\n\nThe product is moving through a significant transition between file-based graphs and the newer Logseq DB architecture. Sync is still presented as beta and access currently depends on a recurring contribution. Official guidance recommends regular backups and notes that the established sync service is not yet a conventional collaborative workspace.\n\nLogseq suits researchers, writers, and technical users willing to invest in a personal knowledge system. For immediate team collaboration or zero-setup note-taking, Notion and more conventional apps remain simpler.",
     "pricing": {
-      "free": "Entièrement gratuit et open-source pour l'usage local, sans limite ni essai — c'est le produit complet.",
-      "paid": "Sync cloud optionnel à 5$/mois (4,17$/mois annuel) ; palier Sponsor à 15$/mois (accès anticipé aux fonctionnalités expérimentales)."
+      "free": "Application locale gratuite et open source",
+      "paid": "Sync bêta accessible via une contribution récurrente de 5 $ ou 15 $ par mois"
     },
     "pricingEn": {
-      "free": "Fully free and open-source for local use, no limits or trial — it's the complete product.",
-      "paid": "Optional cloud sync at $5/month ($4.17/month annual); Sponsor tier at $15/month (early access to experimental features)."
+      "free": "Free and open-source local app",
+      "paid": "Beta Sync access through a recurring $5 or $15 monthly contribution"
     },
     "defaultMonthlyPrice": 0,
     "pricing_v5": {
       "cautions": [
-        "L'app de base est réellement gratuite et complète sans plafond ; seule la sync cloud multi-appareils est payante."
+        "Sync est encore en bêta et son tarif commercial final n'est pas annoncé. Des sauvegardes régulières restent recommandées."
       ],
       "cautionsEn": [
-        "The core app is genuinely free and complete with no caps; only multi-device cloud sync is paid."
+        "Sync is still in beta and its final commercial price has not been announced. Regular backups remain recommended."
       ],
-      "verified_on": "2026-06-27",
+      "verified_on": "2026-08-28",
       "tcoExampleEn": "For local-only use (free) with occasional sync via a third-party service: SaaS cost = $0. Setup (graph structuring, plugins) ≈ 5h at $50/h = $250, amortized over 12 months ≈ $21/month. Maintenance (plugin management) ≈ 30 min/month ≈ $25/month. Real total cost ≈ €46/month, entirely in time, not subscription.",
       "tcoExampleFr": "Pour un usage local seul (gratuit) avec sync occasionnelle via un service tiers : coût SaaS = 0$. Configuration (structuration du graphe, plugins) ≈ 5h à 50€/h = 250€, amorti sur 12 mois ≈ 21€/mois. Maintenance (gestion des plugins) ≈ 30 min/mois ≈ 25€/mois. Coût total réel ≈ 46€/mois, entièrement en temps, pas en abonnement.",
       "source_domain": "logseq.com",
       "usage_sensitive": false,
       "compare_plan_kind": "flat",
-      "compare_plan_name": "Sync (mensuel)",
-      "price_reliability": "high",
+      "compare_plan_name": "Sync beta contribution",
+      "price_reliability": "official_context_required",
       "location_sensitive": false,
-      "official_source_url": "https://logseq.com",
-      "verification_status": "official_explicit",
+      "official_source_url": "https://blog.logseq.com/how-to-setup-and-use-logseq-sync/",
+      "verification_status": "official_contextual",
       "compare_price_monthly_eur": 5
     },
     "affiliateLink": "https://logseq.com/",
@@ -115495,74 +115509,98 @@
     "id": "pterocos",
     "slug": "pterocos",
     "name": "Pterocos",
-    "category": "prototyping",
-    "shortDescription": "Outil de prototypage et collaboration design.",
-    "shortDescriptionEn": "Design prototyping and collaboration tool.",
-    "description": "Pterocos est un outil de prototypage en early-stage avec peu d'informations publiques disponibles.",
-    "longDescription": "Pterocos est un outil de prototypage en early-stage avec peu d'informations publiques disponibles.",
-    "longDescriptionEn": "Pterocos is an early-stage prototyping tool with limited public information available.",
+    "ogImageUrl": "https://opengraph.githubassets.com/tooltrim/aminkheddache-dotcom/Pterocos",
+    "category": "developer-tools",
+    "shortDescription": "Éditeur de code gratuit dans le navigateur avec exécution locale et aperçu instantané.",
+    "shortDescriptionEn": "Free browser-based code editor with local execution and instant preview.",
+    "description": "Pterocos est un éditeur de code gratuit et open source qui exécute plusieurs langages directement dans le navigateur, sans installation ni compte obligatoire.",
+    "longDescription": "Pterocos est un éditeur de code gratuit et open source qui fonctionne directement dans le navigateur. Il combine l'éditeur Monaco, un aperçu instantané pour HTML, CSS et JavaScript, plusieurs onglets, des préprocesseurs et l'exécution locale de langages comme Python, SQL, Rust, PHP, Ruby, Lua, Java et C#.\n\nLes projets sont stockés par défaut dans le navigateur. Cette approche limite l'envoi de code vers un serveur, mais elle impose une vraie discipline de sauvegarde : vider les données du navigateur ou changer d'appareil peut faire perdre le travail local. Une sauvegarde GitHub Gist et des liens de partage temporaires sont proposés pour les cas où il faut déplacer ou montrer un projet.\n\nPterocos est pertinent pour apprendre, tester un extrait ou prototyper rapidement sans environnement local. Pour un projet durable avec dépendances, déploiement et collaboration structurée, StackBlitz, CodeSandbox ou un IDE installé restent plus solides.",
+    "longDescriptionEn": "Pterocos is a free, open-source code editor that runs directly in the browser. It combines the Monaco editor, instant preview for HTML, CSS, and JavaScript, multiple tabs, preprocessors, and local execution for languages such as Python, SQL, Rust, PHP, Ruby, Lua, Java, and C#.\n\nProjects are stored in the browser by default. This limits server-side code transfer, but it requires a real backup habit: clearing browser data or switching devices can remove local work. GitHub Gist backup and temporary sharing links are available when a project needs to be moved or shown.\n\nPterocos is useful for learning, testing a snippet, or prototyping quickly without a local setup. For long-lived projects with dependencies, deployment, and structured collaboration, StackBlitz, CodeSandbox, or an installed IDE remain stronger choices.",
     "pricing": {
-      "free": "Gratuit (selon informations disponibles)",
+      "free": "Gratuit et open source",
       "paid": null
     },
     "pricingEn": {
-      "free": "Free (based on available information)",
+      "free": "Free and open source",
       "paid": null
     },
     "defaultMonthlyPrice": 0,
-    "pricing_v5": null,
-    "affiliateLink": "",
-    "websiteUrl": "https://pterocos.com",
+    "pricing_v5": {
+      "cautions": [
+        "Le stockage principal est local au navigateur. Une sauvegarde externe reste nécessaire pour éviter la perte de données."
+      ],
+      "verified_on": "2026-08-28",
+      "source_domain": "pterocos.eu.org",
+      "usage_sensitive": false,
+      "compare_plan_kind": "free",
+      "compare_plan_name": "Open source",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://pterocos.eu.org/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 0
+    },
+    "affiliateLink": "https://pterocos.eu.org/",
+    "websiteUrl": "https://pterocos.eu.org/",
     "logo": "",
     "seo": {
-      "metaDescription": "Pterocos sur ToolTrim : outil de prototypage early-stage, informations limitées."
+      "metaDescription": "Pterocos en 2026 : éditeur de code gratuit dans le navigateur, langages pris en charge, stockage local et limites."
     },
     "pros": [
       "Gratuit",
-      "En cours de développement"
+      "Exécution de plusieurs langages dans le navigateur"
     ],
     "prosEn": [
       "Free",
-      "Under active development"
+      "Runs multiple languages in the browser"
     ],
     "cons": [
-      "Très peu d'informations disponibles",
-      "Communauté quasi inexistante",
-      "Fonctionnalités non vérifiables"
+      "Stockage local facile à perdre sans sauvegarde",
+      "Écosystème plus jeune que les IDE établis",
+      "Moins adapté aux projets complexes avec dépendances"
     ],
     "consEn": [
-      "Very little information available",
-      "Almost no community",
-      "Features not verifiable"
+      "Local storage can be lost without a backup",
+      "Younger ecosystem than established IDEs",
+      "Less suitable for complex projects with dependencies"
     ],
     "useCases": [
-      "Exploration d'alternatives early-stage au prototypage"
+      "Tester du code sans installer d'environnement local",
+      "Apprendre un langage depuis un navigateur",
+      "Partager rapidement un prototype ou un extrait"
     ],
     "useCasesEn": [
-      "Exploring early-stage prototyping alternatives"
+      "Test code without installing a local environment",
+      "Learn a language from a browser",
+      "Quickly share a prototype or snippet"
     ],
     "covers": [
-      "prototyping"
+      "code-editor",
+      "developer-tools"
     ],
     "relevantFor": [
-      "designer"
+      "Développeurs web",
+      "Étudiants",
+      "Formateurs"
     ],
     "personas": [
-      "SOFIA"
+      "DEV"
     ],
     "alternatives": [
-      "framer",
-      "invision",
-      "balsamiq"
+      "stackblitz",
+      "codesandbox",
+      "codepen"
     ],
     "verdict": {
       "keepIf": [
-        "Tu explores activement des outils early-stage"
+        "Vous voulez tester ou enseigner du code sans installation.",
+        "Vous privilégiez une exécution locale dans le navigateur."
       ],
       "avoidIf": [
-        "Tu as besoin d'un outil fiable et documenté (Figma, Framer, Balsamiq)"
+        "Vous construisez un projet durable avec de nombreuses dépendances.",
+        "Vous avez besoin d'une collaboration et d'un déploiement structurés."
       ],
-      "threshold": "Pas assez d'informations pour recommander — utiliser Figma, Framer ou Balsamiq à la place."
+      "threshold": "Pterocos convient aux tests, à l'apprentissage et aux prototypes courts. Pour une application maintenue en équipe, choisissez un environnement de développement plus établi."
     },
     "verdictEn": null,
     "articles": [],
@@ -139130,9 +139168,9 @@
     "bundle_parent": null,
     "category": "finance",
     "shortDescription": "Gestion des dépenses d'entreprise : cartes virtuelles, notes de frais, approbations.",
-    "defaultMonthlyPrice": 99,
+    "defaultMonthlyPrice": 0,
     "pricing": {
-      "paid": "À partir de 99€/mois"
+      "paid": "Sur devis, avec abonnement fixe et frais variables selon les transactions"
     },
     "covers": [
       "audit",
@@ -139151,7 +139189,7 @@
       "claire",
       "marc"
     ],
-    "affiliateLink": "https://spendesk.com",
+    "affiliateLink": "https://www.spendesk.com/pricing/",
     "verdict": {
       "keepIf": [
         "Vous voulez suite complète procure-to-pay (achat + carte + AP).",
@@ -139173,26 +139211,28 @@
     "ia_use_case": null,
     "slug": "spendesk",
     "shortDescriptionEn": "Corporate spend management: virtual cards, expense reports, approvals.",
-    "description": "Spendesk, c'est gestion des dépenses d'entreprise : cartes virtuelles, notes de frais, approbations. À partir de 99€/mois. Pensé pour les DAF et responsables finance et les managers et DSI.\n\nGain de temps estimé : 5h/mois.\n\nÀ garder si : équipe de 10+ avec dépenses fréquentes à contrôler. À éviter si : solo ou petite équipe — Qonto suffit. Rentable à partir de 10 collaborateurs avec budget variable.",
-    "longDescription": "Spendesk, c'est gestion des dépenses d'entreprise : cartes virtuelles, notes de frais, approbations. À partir de 99€/mois. Pensé pour les DAF et responsables finance et les managers et DSI.\n\nGain de temps estimé : 5h/mois.\n\nÀ garder si : équipe de 10+ avec dépenses fréquentes à contrôler. À éviter si : solo ou petite équipe — Qonto suffit. Rentable à partir de 10 collaborateurs avec budget variable.",
-    "longDescriptionEn": "Spendesk is corporate spend management: virtual cards, expense reports, approvals. Starting at €99/month. Built for CFOs and finance managers and managers and IT directors.\n\nEstimated time saving: 5h/month.\n\nKeep it if: team of 10+ with frequent expenses to control. Skip it if: solo ou petite équipe — Qonto suffit. Profitable starting from 10 employees with a variable budget.",
+    "description": "Spendesk centralise cartes d'entreprise, notes de frais, factures fournisseurs, budgets et circuits d'approbation dans une plateforme de gestion des dépenses.",
+    "longDescription": "Spendesk centralise cartes physiques et virtuelles, notes de frais, factures fournisseurs, budgets et circuits d'approbation. Le socle Foundations inclut des utilisateurs et cartes en nombre illimité, la collecte automatisée des justificatifs, l'OCR, les intégrations comptables et le suivi budgétaire en temps réel.\n\nLa tarification n'est plus affichée sous la forme d'un prix public à partir de 99 €. Spendesk établit un devis composé d'un abonnement mensuel fixe et de frais variables selon les transactions, puis propose des modules supplémentaires pour les achats, les comptes fournisseurs et les workflows avancés.\n\nLa plateforme devient pertinente lorsqu'une équipe finance doit contrôler plusieurs moyens de paiement, entités ou circuits de validation. Pour un indépendant ou une petite équipe avec peu de dépenses, une carte professionnelle et un outil comptable plus simple évitent un déploiement disproportionné.",
+    "longDescriptionEn": "Spendesk centralizes physical and virtual cards, expense claims, supplier invoices, budgets, and approval workflows. The Foundations package includes unlimited users and cards, automated receipt collection, OCR, accounting integrations, and real-time budget monitoring.\n\nPricing is no longer presented as a public plan starting at €99. Spendesk provides a quote combining a fixed monthly platform fee with variable transaction fees, then offers additional modules for procurement, accounts payable, and advanced workflows.\n\nThe platform becomes relevant when a finance team needs to control multiple payment methods, entities, or approval paths. For a freelancer or small team with limited spending, a business card and a simpler accounting tool will usually avoid an oversized rollout.",
     "pricingEn": {
-      "paid": "Starting from €99/month"
+      "paid": "Custom quote with a fixed platform fee and variable transaction fees"
     },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+      "cautions": [
+        "Aucun tarif public : le coût combine un abonnement fixe et des frais variables selon les transactions."
+      ],
+      "verified_on": "2026-08-28",
       "source_domain": "spendesk.com",
       "usage_sensitive": false,
-      "compare_plan_kind": "seat",
-      "compare_plan_name": "Entry paid plan",
-      "price_reliability": "medium",
+      "compare_plan_kind": "custom",
+      "compare_plan_name": "Devis personnalisé",
+      "price_reliability": "official_context_required",
       "location_sensitive": false,
       "official_source_url": "https://www.spendesk.com/pricing/",
-      "verification_status": "official_contextual",
-      "compare_price_monthly_eur": 99
+      "verification_status": "needs_official_quote",
+      "compare_price_monthly_eur": 0
     },
-    "websiteUrl": "https://spendesk.com",
+    "websiteUrl": "https://www.spendesk.com/pricing/",
     "logo": "",
     "seo": {},
     "articles": [],

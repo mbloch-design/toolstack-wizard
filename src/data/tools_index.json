@@ -20008,8 +20008,8 @@
     "shortDescription": "PKM open-source avec graphe de connaissances.",
     "shortDescriptionEn": "Open-source PKM with knowledge graph.",
     "pricing": {
-      "free": "Entièrement gratuit et open-source pour l'usage local, sans limite ni essai — c'est le produit complet.",
-      "paid": "Sync cloud optionnel à 5$/mois (4,17$/mois annuel) ; palier Sponsor à 15$/mois (accès anticipé aux fonctionnalités expérimentales)."
+      "free": "Application locale gratuite et open source",
+      "paid": "Sync bêta accessible via une contribution récurrente de 5 $ ou 15 $ par mois"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://logseq.com/",
@@ -28836,17 +28836,17 @@
     "id": "pterocos",
     "slug": "pterocos",
     "name": "Pterocos",
-    "categoryId": "prototyping",
-    "shortDescription": "Outil de prototypage et collaboration design.",
-    "shortDescriptionEn": "Design prototyping and collaboration tool.",
+    "categoryId": "developer-tools",
+    "shortDescription": "Éditeur de code gratuit dans le navigateur avec exécution locale et aperçu instantané.",
+    "shortDescriptionEn": "Free browser-based code editor with local execution and instant preview.",
     "pricing": {
-      "free": "Gratuit (selon informations disponibles)",
+      "free": "Gratuit et open source",
       "paid": null
     },
     "defaultMonthlyPrice": 0,
-    "affiliateLink": "",
-    "websiteUrl": "https://pterocos.com",
-    "ogImageUrl": "",
+    "affiliateLink": "https://pterocos.eu.org/",
+    "websiteUrl": "https://pterocos.eu.org/",
+    "ogImageUrl": "https://opengraph.githubassets.com/tooltrim/aminkheddache-dotcom/Pterocos",
     "logo": "",
     "tool_type": "satellite",
     "host_app": null,
@@ -28857,7 +28857,9 @@
     ],
     "verticals": [],
     "relevantFor": [
-      "designer"
+      "Développeurs web",
+      "Étudiants",
+      "Formateurs"
     ],
     "freeAlternative": "balsamiq",
     "substitutable": true,
@@ -34644,11 +34646,11 @@
     "shortDescription": "Gestion des dépenses d'entreprise : cartes virtuelles, notes de frais, approbations.",
     "shortDescriptionEn": "Corporate spend management: virtual cards, expense reports, approvals.",
     "pricing": {
-      "paid": "À partir de 99€/mois"
+      "paid": "Sur devis, avec abonnement fixe et frais variables selon les transactions"
     },
-    "defaultMonthlyPrice": 99,
-    "affiliateLink": "https://spendesk.com",
-    "websiteUrl": "https://spendesk.com",
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://www.spendesk.com/pricing/",
+    "websiteUrl": "https://www.spendesk.com/pricing/",
     "ogImageUrl": "https://a.storyblok.com/f/146026/2400x1260/7f4c022aeb/en-seo-image.png",
     "logo": "",
     "tool_type": "gestion",
