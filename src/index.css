@@ -9832,6 +9832,12 @@
     border-radius: var(--tt-surface-radius-info);
     background: var(--color-surface);
   }
+  /* Same whisper-of-blue principle as the verdict card: radial glow
+     anchored top-left, only on the positive card — the negative one stays
+     neutral so the color still reads as an affirmative signal, not decor. */
+  .td-profit-card--positive {
+    background: radial-gradient(120% 120% at 0% 0%, hsl(var(--primary) / 0.08) 0%, var(--color-surface) 62%);
+  }
   .td-profit-card-head {
     display: flex;
     align-items: center;

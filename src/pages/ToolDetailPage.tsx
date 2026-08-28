@@ -3,7 +3,7 @@ import { useLang } from "@/hooks/useLang";
 import { useCurrency } from "@/hooks/useCurrency";
 import { useToolBySlug, useToolSummaries, useCategories } from "@/hooks/useSupabaseData";
 import { useEffect, useRef, useState } from "react";
-import { ArrowRight, Check, CirclePlus, CircleMinus, ExternalLink } from "@/lib/icons";
+import { ArrowRight, Check, CirclePlus, CircleMinus, ExternalLink, Lightbulb } from "@/lib/icons";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
 import { setSeoTags, setMeta, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
@@ -506,7 +506,7 @@ const ToolDetailPage = () => {
                             const { title, detail } = splitUseCase(useCase);
                             return (
                               <li key={useCase}>
-                                <Check size={15} aria-hidden />
+                                <Lightbulb size={15} aria-hidden />
                                 <span>
                                   <strong>{title}</strong>
                                   {detail && <small>{detail}</small>}
@@ -615,7 +615,7 @@ const ToolDetailPage = () => {
                               const { title, detail } = splitUseCase(useCase);
                               return (
                                 <li key={useCase}>
-                                  <Check size={15} aria-hidden />
+                                  <Lightbulb size={15} aria-hidden />
                                   <span>
                                     <strong>{title}</strong>
                                     {detail && <small>{detail}</small>}

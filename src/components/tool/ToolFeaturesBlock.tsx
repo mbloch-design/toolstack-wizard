@@ -1,4 +1,4 @@
-import { Check } from "@/lib/icons";
+import { getFeatureIcon } from "@/lib/featureIcons";
 
 interface Props {
   covers: string[];
@@ -127,15 +127,19 @@ export default function ToolFeaturesBlock({ covers, functionalNeeds = [], toolNa
   const allSlugs = [...new Set([...covers, ...functionalNeeds])];
   if (allSlugs.length === 0) return null;
 
-  const features = allSlugs.slice(0, MAX_FEATURES).map(slug => getLabel(slug, lang as "fr" | "en"));
+  const features = allSlugs.slice(0, MAX_FEATURES).map(slug => ({
+    slug,
+    label: getLabel(slug, lang as "fr" | "en"),
+    Icon: getFeatureIcon(slug),
+  }));
 
   return (
     <div className="td-features-summary">
       {/* Feature grid (parent section already renders the eyebrow + title) */}
       <div className="td-feature-grid">
-        {features.map((label) => (
-          <div key={label} className="td-feature">
-            <Check />
+        {features.map(({ slug, label, Icon }) => (
+          <div key={slug} className="td-feature">
+            <Icon />
             <span>{label}</span>
           </div>
         ))}
