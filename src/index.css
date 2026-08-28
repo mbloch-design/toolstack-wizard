@@ -23296,17 +23296,7 @@ section[id] {
   line-height: 1.02;
   color: var(--color-text);
   max-width: 18ch;
-  margin: 0 0 var(--space-md);
-  text-wrap: balance;
-}
-
-.hv2-description {
-  max-width: 52ch;
   margin: 0 0 var(--space-xl);
-  font-family: var(--font-ui);
-  font-size: clamp(15px, 1.35vw, 18px);
-  line-height: 1.5;
-  color: var(--color-text-muted);
   text-wrap: balance;
 }
 
@@ -23328,14 +23318,6 @@ section[id] {
 .hv2-cta:hover {
   background: var(--color-text-strong);
   color: var(--color-bg);
-}
-
-.hv2-reassurance {
-  display: inline-block;
-  margin-left: 14px;
-  font-family: var(--font-ui);
-  font-size: 12px;
-  color: var(--color-text-muted);
 }
 
 /* The right-anchored logo cluster is baked into hero-gradient.png (not a
@@ -23364,8 +23346,6 @@ section[id] {
     max-width: 20ch;
     font-size: clamp(32px, 9vw, 42px);
   }
-  .hv2-description { max-width: 36ch; }
-  .hv2-reassurance { display: block; margin: 12px 0 0; }
 }
 
 /* ══════════════════════════════════════════════════════════════════════
