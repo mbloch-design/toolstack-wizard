@@ -11,11 +11,18 @@ declare global {
   }
 }
 
+let lastPageView: { path: string; sentAt: number } | null = null;
+
 export function trackEvent(name: string, params: Record<string, unknown> = {}): void {
   if (typeof window === "undefined" || typeof window.gtag !== "function") return;
   window.gtag("event", name, params);
 }
 
 export function trackPageView(path: string, title: string): void {
+  const now = Date.now();
+  // React StrictMode can replay effects in development. This also protects
+  // against two routers reporting the same URL during hydration.
+  if (lastPageView?.path === path && now - lastPageView.sentAt < 1500) return;
+  lastPageView = { path, sentAt: now };
   trackEvent("page_view", { page_path: path, page_title: title, page_location: window.location.href });
 }

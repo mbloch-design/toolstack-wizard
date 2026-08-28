@@ -112,6 +112,9 @@
     <script>
       // Defer GTM loading to after first paint
       window.addEventListener('load', function() {
+        // Never pollute the production property with localhost, previews or
+        // unrelated hostnames. Production is the only measured environment.
+        if (window.location.hostname !== 'tooltrim.com' && window.location.hostname !== 'www.tooltrim.com') return;
         var s = document.createElement('script');
         s.src = 'https://www.googletagmanager.com/gtag/js?id=G-DL5MJKQ3JE';
         s.async = true;
@@ -121,7 +124,9 @@
           function gtag(){dataLayer.push(arguments);}
           window.gtag = gtag;
           gtag('js', new Date());
-          gtag('config', 'G-DL5MJKQ3JE');
+          // React owns every page_view, including the initial one. Disabling
+          // the automatic hit avoids double-counting the first route.
+          gtag('config', 'G-DL5MJKQ3JE', { send_page_view: false, anonymize_ip: true });
         };
       });
     </script>

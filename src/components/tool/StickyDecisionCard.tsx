@@ -7,6 +7,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import type { Tool } from "@/data/types";
 import { getExplorerHref } from "@/lib/toolExploration";
 import { computeToolTrimScore } from "@/lib/toolTrimScore";
+import { trackEvent } from "@/lib/analytics";
 
 interface Props {
   tool: Tool;
@@ -63,6 +64,7 @@ export default function StickyDecisionCard({ tool, prefix, t, alternatives }: Pr
         return;
       }
       await navigator.share({ title: tool.name, url });
+      trackEvent("share", { method: "native", content_type: "tool", item_id: slug });
       setShareStatus("shared");
       setShareOpen(false);
       window.setTimeout(() => setShareStatus("idle"), 2200);
@@ -76,6 +78,7 @@ export default function StickyDecisionCard({ tool, prefix, t, alternatives }: Pr
   const copyShareUrl = async () => {
     try {
       await copyUrl(window.location.href);
+      trackEvent("share", { method: "copy_link", content_type: "tool", item_id: slug });
       setShareStatus("copied");
       setShareOpen(false);
       window.setTimeout(() => setShareStatus("idle"), 2200);
@@ -123,6 +126,7 @@ export default function StickyDecisionCard({ tool, prefix, t, alternatives }: Pr
         <Link
           to={getExplorerHref(prefix, { type: "outil", slug })}
           className="td-decision-explore"
+          onClick={() => trackEvent("explore_tool", { tool_slug: slug, source: "tool_decision_card" })}
         >
           <Compass aria-hidden />
           <span>{t("Explorer autour de cet outil", "Explore around this tool")}</span>
