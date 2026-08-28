@@ -793,7 +793,6 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
               jsonLd.review = {
                 "@type": "Review",
                 author: { "@type": "Organization", name: "ToolTrim" },
-                itemReviewed: { "@type": "SoftwareApplication", name, applicationCategory: appCategoryFor(tool) },
                 reviewRating: {
                   "@type": "Rating",
                   ratingValue: ts.score,
