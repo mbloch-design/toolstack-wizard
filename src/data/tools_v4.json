@@ -4700,13 +4700,13 @@
     "category": "design-tools",
     "shortDescription": "Prototypage et design UI (abandonné)",
     "shortDescriptionEn": "UI prototyping and design (discontinued).",
-    "description": "Adobe XD, c'est prototypage et design UI (abandonné). Entièrement gratuit.",
-    "longDescription": "Adobe XD, c'est prototypage et design UI (abandonné). Entièrement gratuit.",
-    "longDescriptionEn": "Adobe XD is uI prototyping and design (discontinued). Completely free.",
-    "pricing": null,
-    "pricingEn": null,
+    "description": "Adobe XD est un ancien outil de design d'interfaces et de prototypage désormais maintenu uniquement pour les utilisateurs existants.",
+    "longDescription": "Adobe XD permet de concevoir des interfaces, créer des composants et relier des écrans dans des prototypes interactifs. Adobe ne développe plus activement le produit et ne le propose plus comme choix principal aux nouveaux clients.\n\nLa fiche reste utile pour les équipes qui doivent ouvrir, maintenir ou convertir des fichiers XD existants. Pour un nouveau projet, Figma, Penpot ou Sketch offrent un écosystème plus vivant et réduisent le risque de migration future. Le bon réflexe est de conserver XD uniquement tant que des livrables historiques en dépendent.",
+    "longDescriptionEn": "Adobe XD is a former interface design and prototyping tool now maintained mainly for existing users. It can still create components, screen flows, and interactive prototypes.\n\nThe tool remains relevant for teams that need to open, maintain, or convert existing XD files. For a new project, Figma, Penpot, or Sketch offers a healthier ecosystem and reduces future migration risk. Keep XD only while historical deliverables still depend on it.",
+    "pricing": {"free": "Aucune nouvelle offre autonome", "paid": "Accès limité aux utilisateurs Creative Cloud existants selon leur contrat"},
+    "pricingEn": {"free": "No new standalone offer", "paid": "Limited access for existing Creative Cloud customers depending on their contract"},
     "defaultMonthlyPrice": 0,
-    "pricing_v5": null,
+    "pricing_v5": {"verified_on":"2026-08-28","source_domain":"adobe.com","official_source_url":"https://www.adobe.com/products/xd.html","verification_status":"official_contextual","compare_plan_kind":"legacy","compare_plan_name":"Existing customers","price_reliability":"official_context_required","compare_price_monthly_eur":0},
     "affiliateLink": "",
     "websiteUrl": "https://adobe.com/products/xd",
     "logo": "",
@@ -16217,19 +16217,19 @@
     "category": "analytics",
     "shortDescription": "Data warehouse Google managé pour analytics à grande échelle.",
     "shortDescriptionEn": "Managed Google data warehouse for large-scale analytics.",
-    "description": "Data warehouse Google managé pour analytics à grande échelle.",
-    "longDescription": "Data warehouse Google managé pour analytics à grande échelle.",
-    "longDescriptionEn": "Managed Google data warehouse for large-scale analytics.",
+    "description": "BigQuery est l'entrepôt de données serverless de Google Cloud pour analyser de grands volumes avec SQL.",
+    "longDescription": "BigQuery est l'entrepôt de données serverless de Google Cloud. Il sépare stockage et calcul, exécute des requêtes SQL à grande échelle et s'intègre aux outils d'analyse, de machine learning et de gouvernance de Google Cloud.\n\nLe coût dépend surtout des données stockées et du calcul consommé. Le mode à la demande facture les octets analysés par les requêtes, tandis que les offres par capacité reposent sur des slots réservés ou autoscalés. BigQuery convient aux équipes data qui veulent éviter l'administration d'un cluster. Pour de petits volumes prévisibles, une base PostgreSQL ou DuckDB peut être plus simple et plus facile à budgéter.",
+    "longDescriptionEn": "BigQuery is Google Cloud's serverless data warehouse. It separates storage and compute, runs SQL queries at scale, and integrates with Google Cloud analytics, machine learning, and governance tools.\n\nCosts mainly depend on stored data and consumed compute. On-demand pricing charges for bytes processed by queries, while capacity pricing uses reserved or autoscaled slots. BigQuery suits data teams that want to avoid cluster administration. For small predictable workloads, PostgreSQL or DuckDB can be simpler and easier to budget.",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Quota gratuit selon les limites Google Cloud en vigueur",
+      "paid": "Paiement à l'usage pour stockage et calcul, ou capacité réservée"
     },
     "pricingEn": {
-      "free": "Free or open source depending on usage",
-      "paid": "Paid options may apply depending on hosting, team, or volume"
+      "free": "Free usage allowance under current Google Cloud limits",
+      "paid": "Usage-based storage and compute, or reserved capacity"
     },
     "defaultMonthlyPrice": 0,
-    "pricing_v5": null,
+    "pricing_v5": {"verified_on":"2026-08-28","source_domain":"cloud.google.com","official_source_url":"https://cloud.google.com/bigquery/pricing","verification_status":"official_contextual","compare_plan_kind":"usage","compare_plan_name":"On-demand","price_reliability":"official_context_required","compare_price_monthly_eur":0},
     "affiliateLink": "",
     "websiteUrl": "https://cloud.google.com/bigquery",
     "logo": "",
@@ -49200,19 +49200,19 @@
     "category": "nocode-web",
     "shortDescription": "Framework Google pour apps mobiles, desktop et web avec Dart.",
     "shortDescriptionEn": "Google framework for mobile, desktop, and web apps with Dart.",
-    "description": "Framework Google pour apps mobiles, desktop et web avec Dart.",
-    "longDescription": "Framework Google pour apps mobiles, desktop et web avec Dart.",
-    "longDescriptionEn": "Google framework for mobile, desktop, and web apps with Dart.",
+    "description": "Flutter est le framework open source soutenu par Google pour créer des applications mobiles, web et desktop depuis une base de code Dart.",
+    "longDescription": "Flutter permet de développer des applications compilées pour Android, iOS, le web, Windows, macOS et Linux depuis une base de code Dart. Son moteur de rendu, ses widgets et le Hot Reload donnent un contrôle visuel précis et accélèrent les itérations.\n\nLe framework est gratuit et open source, mais un projet Flutter conserve les coûts habituels de développement, d'hébergement et de publication sur les stores. Il est pertinent lorsqu'une équipe accepte Dart et veut partager une grande partie de son interface entre plusieurs plateformes. Une application très dépendante des composants natifs ou des SDK spécifiques peut demander davantage de code par plateforme.",
+    "longDescriptionEn": "Flutter builds compiled apps for Android, iOS, web, Windows, macOS, and Linux from a Dart codebase. Its rendering engine, widget system, and Hot Reload provide precise visual control and faster iteration.\n\nThe framework is free and open source, but a Flutter project still carries normal development, hosting, and app-store costs. It fits teams willing to use Dart and share much of their interface across platforms. Apps that depend heavily on native components or platform-specific SDKs may still require additional platform code.",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Framework gratuit et open source",
+      "paid": "Coûts externes possibles pour hébergement, services cloud et stores"
     },
     "pricingEn": {
-      "free": "Free or open source depending on usage",
-      "paid": "Paid options may apply depending on hosting, team, or volume"
+      "free": "Free and open-source framework",
+      "paid": "External hosting, cloud service, and app-store costs may apply"
     },
     "defaultMonthlyPrice": 0,
-    "pricing_v5": null,
+    "pricing_v5": {"verified_on":"2026-08-28","source_domain":"flutter.dev","official_source_url":"https://flutter.dev/","verification_status":"official_explicit","compare_plan_kind":"free","compare_plan_name":"Open source","price_reliability":"high","compare_price_monthly_eur":0},
     "affiliateLink": "",
     "websiteUrl": "https://flutter.dev",
     "logo": "",
@@ -90842,13 +90842,13 @@
     "category": "design-tools",
     "shortDescription": "Tableau blanc collaboratif en ligne",
     "shortDescriptionEn": "Online collaborative whiteboard.",
-    "description": "Miro, c'est tableau blanc collaboratif en ligne. Entièrement gratuit.",
-    "longDescription": "Miro, c'est tableau blanc collaboratif en ligne. Entièrement gratuit.",
-    "longDescriptionEn": "Miro is online collaborative whiteboard. Completely free.",
-    "pricing": null,
-    "pricingEn": null,
+    "description": "Miro est un espace de travail visuel collaboratif pour ateliers, diagrammes, parcours produit, documentation et planification.",
+    "longDescription": "Miro combine tableau blanc infini, post-its, diagrammes, documents, tableaux, slides et outils d'animation d'ateliers. Les équipes peuvent brainstormer, cartographier un parcours, voter et transformer un board en livrable partagé.\n\nLe plan gratuit accepte un nombre illimité de membres mais limite l'équipe à trois boards modifiables. Starter coûte 8 $ par membre et par mois avec facturation annuelle, ajoute les boards privés et illimités, les visiteurs et 25 crédits IA mensuels par membre. Le coût augmente vite si chaque collaborateur devient membre payant, donc il faut réserver les sièges permanents aux participants réguliers.",
+    "longDescriptionEn": "Miro combines an infinite canvas, sticky notes, diagrams, documents, tables, slides, and workshop facilitation tools. Teams can brainstorm, map journeys, vote, and turn a board into a shared deliverable.\n\nThe Free plan allows unlimited team members but keeps only three boards editable. Starter costs $8 per member per month when billed annually and adds unlimited private boards, visitors, and 25 monthly AI credits per member. Costs rise quickly when every collaborator becomes a paid member, so permanent seats should be reserved for regular participants.",
+    "pricing": {"free":"Gratuit avec 3 boards modifiables","paid":"Starter à 8 $ par membre et par mois, facturé annuellement"},
+    "pricingEn": {"free":"Free with 3 editable boards","paid":"Starter at $8 per member per month, billed annually"},
     "defaultMonthlyPrice": 0,
-    "pricing_v5": null,
+    "pricing_v5": {"verified_on":"2026-08-28","source_domain":"miro.com","official_source_url":"https://miro.com/pricing/","verification_status":"official_explicit","compare_plan_kind":"seat","compare_plan_name":"Starter annual","price_reliability":"high","compare_price_monthly_eur":8},
     "affiliateLink": "",
     "websiteUrl": "https://miro.com",
     "logo": "",
@@ -99711,19 +99711,19 @@
     "category": "ai-general",
     "shortDescription": "API de modèles IA pour chat, génération, agents, embeddings et outils.",
     "shortDescriptionEn": "AI model API for chat, generation, agents, embeddings, and tools.",
-    "description": "API de modèles IA pour chat, génération, agents, embeddings et outils.",
-    "longDescription": "API de modèles IA pour chat, génération, agents, embeddings et outils.",
-    "longDescriptionEn": "AI model API for chat, generation, agents, embeddings, and tools.",
+    "description": "L'API OpenAI donne accès aux modèles GPT pour construire des assistants, automatisations et produits multimodaux.",
+    "longDescription": "L'API OpenAI permet d'intégrer des modèles de langage et de vision dans un produit via la Responses API et les SDK officiels. Elle couvre génération de texte, raisonnement, analyse d'images, outils, embeddings et workflows d'agents.\n\nLa tarification dépend du modèle et du nombre de tokens en entrée et en sortie. GPT-5.6 Sol coûte actuellement 4 $ par million de tokens en entrée et 20 $ par million en sortie. Terra et Luna offrent des compromis de coût pour les volumes plus élevés. L'API convient aux équipes capables de suivre consommation, latence, sécurité et évaluations. Pour un simple usage conversationnel individuel, un abonnement ChatGPT est plus prévisible.",
+    "longDescriptionEn": "The OpenAI API lets products use language and vision models through the Responses API and official SDKs. It covers text generation, reasoning, image understanding, tools, embeddings, and agent workflows.\n\nPricing depends on the model and the number of input and output tokens. GPT-5.6 Sol currently costs $4 per million input tokens and $20 per million output tokens. Terra and Luna provide lower-cost tradeoffs for higher-volume workloads. The API fits teams that can monitor usage, latency, security, and evaluations. For simple individual chat use, a ChatGPT subscription is more predictable.",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Aucun forfait gratuit permanent garanti",
+      "paid": "Paiement à l'usage selon le modèle et les tokens consommés"
     },
     "pricingEn": {
-      "free": "Free or open source depending on usage",
-      "paid": "Paid options may apply depending on hosting, team, or volume"
+      "free": "No guaranteed permanent free tier",
+      "paid": "Usage-based pricing by model and consumed tokens"
     },
     "defaultMonthlyPrice": 0,
-    "pricing_v5": null,
+    "pricing_v5": {"verified_on":"2026-08-28","source_domain":"openai.com","official_source_url":"https://platform.openai.com/docs/models","verification_status":"official_explicit","compare_plan_kind":"usage","compare_plan_name":"GPT-5.6 Sol","price_reliability":"high","compare_price_monthly_eur":0},
     "affiliateLink": "",
     "websiteUrl": "https://platform.openai.com",
     "logo": "",
@@ -103648,19 +103648,19 @@
     "category": "analytics",
     "shortDescription": "Audit Google des performances et Core Web Vitals.",
     "shortDescriptionEn": "Google audit for performance and Core Web Vitals.",
-    "description": "Audit Google des performances et Core Web Vitals.",
-    "longDescription": "Audit Google des performances et Core Web Vitals.",
-    "longDescriptionEn": "Google audit for performance and Core Web Vitals.",
+    "description": "PageSpeed Insights est l'outil gratuit de Google pour mesurer les performances mobiles et desktop avec Lighthouse et les données CrUX.",
+    "longDescription": "PageSpeed Insights analyse une URL sur mobile et desktop. Il combine des données de laboratoire générées par Lighthouse avec, lorsqu'elles sont disponibles, les données réelles du Chrome User Experience Report sur une fenêtre de 28 jours.\n\nLe rapport couvre notamment LCP, CLS et INP, puis propose des diagnostics techniques. Un score Lighthouse n'est pas une mesure absolue : l'environnement de test peut varier et les données terrain décrivent une population réelle différente du test simulé. Google prévoit aussi de retirer les données CrUX de l'API PageSpeed Insights, ce qui impose d'utiliser directement les API CrUX pour les automatisations futures.",
+    "longDescriptionEn": "PageSpeed Insights analyzes a URL on mobile and desktop. It combines Lighthouse lab data with real-user Chrome User Experience Report data over a 28-day window when field data is available.\n\nThe report covers metrics including LCP, CLS, and INP, then provides technical diagnostics. A Lighthouse score is not an absolute measurement because test conditions can vary and field data describes a different real-user population. Google also plans to remove CrUX field data from the PageSpeed Insights API, so future automation should use the CrUX APIs directly.",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Gratuit, sans abonnement",
+      "paid": null
     },
     "pricingEn": {
-      "free": "Free or open source depending on usage",
-      "paid": "Paid options may apply depending on hosting, team, or volume"
+      "free": "Free, with no subscription",
+      "paid": null
     },
     "defaultMonthlyPrice": 0,
-    "pricing_v5": null,
+    "pricing_v5": {"verified_on":"2026-08-28","source_domain":"developers.google.com","official_source_url":"https://developers.google.com/speed/docs/insights/v5/about","verification_status":"official_explicit","compare_plan_kind":"free","compare_plan_name":"Free","price_reliability":"high","compare_price_monthly_eur":0},
     "affiliateLink": "",
     "websiteUrl": "https://pagespeed.web.dev",
     "logo": "",

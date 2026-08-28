@@ -1147,8 +1147,8 @@
     "shortDescription": "Prototypage et design UI (abandonné)",
     "shortDescriptionEn": "UI prototyping and design (discontinued).",
     "pricing": {
-      "free": "",
-      "paid": ""
+      "free": "Aucune nouvelle offre autonome",
+      "paid": "Accès limité aux utilisateurs Creative Cloud existants selon leur contrat"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
@@ -4079,8 +4079,8 @@
     "shortDescription": "Data warehouse Google managé pour analytics à grande échelle.",
     "shortDescriptionEn": "Managed Google data warehouse for large-scale analytics.",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Quota gratuit selon les limites Google Cloud en vigueur",
+      "paid": "Paiement à l'usage pour stockage et calcul, ou capacité réservée"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
@@ -12407,8 +12407,8 @@
     "shortDescription": "Framework Google pour apps mobiles, desktop et web avec Dart.",
     "shortDescriptionEn": "Google framework for mobile, desktop, and web apps with Dart.",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Framework gratuit et open source",
+      "paid": "Coûts externes possibles pour hébergement, services cloud et stores"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
@@ -22706,8 +22706,8 @@
     "shortDescription": "Tableau blanc collaboratif en ligne",
     "shortDescriptionEn": "Online collaborative whiteboard.",
     "pricing": {
-      "free": "",
-      "paid": ""
+      "free": "Gratuit avec 3 boards modifiables",
+      "paid": "Starter à 8 $ par membre et par mois, facturé annuellement"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
@@ -24895,8 +24895,8 @@
     "shortDescription": "API de modèles IA pour chat, génération, agents, embeddings et outils.",
     "shortDescriptionEn": "AI model API for chat, generation, agents, embeddings, and tools.",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Aucun forfait gratuit permanent garanti",
+      "paid": "Paiement à l'usage selon le modèle et les tokens consommés"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
@@ -25862,8 +25862,8 @@
     "shortDescription": "Audit Google des performances et Core Web Vitals.",
     "shortDescriptionEn": "Google audit for performance and Core Web Vitals.",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Gratuit, sans abonnement",
+      "paid": null
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
