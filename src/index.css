@@ -8112,10 +8112,10 @@
   /* Sticky sidebar — sticky must live on the GRID ITEM itself */
   .td-sidebar-desktop {
     position: sticky;
-    top: 0;
+    top: 12px;
     align-self: start;      /* prevent grid stretch from killing sticky */
     height: fit-content;
-    max-height: calc(100vh - var(--navbar-h, 68px) - 12px);
+    max-height: calc(100vh - var(--navbar-h, 68px) - 24px);
     overflow-y: auto;
     overscroll-behavior: contain;
     scrollbar-width: none;
@@ -8149,11 +8149,11 @@
     .td-page-grid { --td-hero-compact-h: 80px; }
     .td-page-grid .td-hero {
       position: sticky;
-      top: 0;
+      top: 12px;
       z-index: 40;
       isolation: isolate;
       transform-origin: top center;
-      transition: height 260ms cubic-bezier(0.22, 1, 0.36, 1);
+      transition: height 260ms cubic-bezier(0.22, 1, 0.36, 1), top 260ms cubic-bezier(0.22, 1, 0.36, 1);
     }
     .td-scroll-body {
       min-width: 0;
@@ -8161,7 +8161,7 @@
       transition: padding-top 260ms cubic-bezier(0.22, 1, 0.36, 1);
     }
     .td-hero.is-compact + .td-scroll-body {
-      padding-top: calc(var(--td-hero-compact-h) + 8px);
+      padding-top: calc(var(--td-hero-compact-h) + 12px + 8px);
     }
     .td-tool-page--compact .td-scroll-body {
       -webkit-mask-image: linear-gradient(
@@ -9539,7 +9539,11 @@
     padding: 18px;
     border: 1px solid var(--color-border-soft);
     border-radius: var(--radius-lg);
-    background: var(--color-surface-soft);
+    /* A whisper of brand blue — the one spot in this card allowed a trace
+       of color, per an explicit exception to the "no gradient" rule. Radial
+       glow anchored top-left rather than a full diagonal wash, so it reads
+       as light hitting a corner instead of a flat color fill. */
+    background: radial-gradient(120% 120% at 0% 0%, hsl(var(--primary) / 0.1) 0%, var(--color-surface-soft) 62%);
     color: var(--color-text);
   }
   .td-decision-verdict-label {
@@ -9557,15 +9561,26 @@
     height: 34px;
     place-items: center;
     align-self: center;
-    border: 1px solid var(--color-border-soft);
-    border-radius: 50%;
-    background: var(--color-surface);
-    color: var(--color-text);
   }
-  .td-decision-verdict-indicator svg {
-    width: 17px;
-    height: 17px;
-    stroke-width: 1.8;
+  /* Real gauge: the ring's filled arc is the score itself (score / 5 of the
+     circumference), not a static trend arrow in a badge. */
+  .td-decision-verdict-gauge {
+    width: 34px;
+    height: 34px;
+    transform: rotate(-90deg);
+  }
+  .td-decision-verdict-gauge-track,
+  .td-decision-verdict-gauge-fill {
+    fill: none;
+    stroke-width: 3;
+  }
+  .td-decision-verdict-gauge-track {
+    stroke: var(--color-border);
+  }
+  .td-decision-verdict-gauge-fill {
+    stroke: hsl(var(--primary));
+    stroke-linecap: round;
+    transition: stroke-dashoffset 400ms cubic-bezier(0.22, 1, 0.36, 1);
   }
   .td-decision-verdict-score {
     display: flex;
@@ -9586,7 +9601,7 @@
     color: var(--color-muted);
   }
   .td-decision-verdict-copy { align-self: center; text-align: right; }
-  .td-decision-utility-actions { display: grid; gap: 4px; }
+  .td-decision-utility-actions { display: grid; gap: 8px; }
   .td-decision-utility-actions .pin-tool-button,
   .td-decision-utility-actions > button,
   .td-decision-utility-actions > a {
@@ -9614,18 +9629,32 @@
     transition: background-color 140ms ease-out, color 140ms ease-out;
   }
   .td-decision-utility-actions .pin-tool-button { color: var(--color-text); }
+  /* Explore + Add to stack are the primary pair here — pill-shaped like
+     every other CTA in the app (search action, "Add to stack" elsewhere,
+     stack save dialog), instead of the small utility-link radius above.
+     Centered as a group (icon + label together), not stretched left like
+     the utility links below — that's what reads as "harmonized" against
+     every other centered pill CTA in the app. */
+  .td-decision-utility-actions > .td-decision-explore,
+  .td-decision-utility-actions .pin-tool-button {
+    display: inline-flex;
+    justify-content: center;
+    text-align: center;
+  }
   .td-decision-utility-actions > .td-decision-explore {
     min-height: 46px;
-    padding-inline: 14px;
+    padding-inline: 16px;
     border: 1px solid var(--color-border);
+    border-radius: var(--radius-pill);
     background: var(--color-surface);
     color: var(--color-text);
     font-weight: 650;
   }
   .td-decision-utility-actions .pin-tool-button {
     min-height: 46px;
-    padding-inline: 14px;
+    padding-inline: 16px;
     border: 1px solid var(--color-text);
+    border-radius: var(--radius-pill);
     background: var(--color-text);
     color: var(--color-surface);
     font-weight: 650;
@@ -9646,7 +9675,7 @@
     background: color-mix(in srgb, var(--color-text) 88%, var(--color-surface));
     color: var(--color-surface);
   }
-  .td-decision-utility-actions .td-decision-share { margin-top: 4px; }
+  .td-decision-utility-actions .td-decision-share { margin-top: 8px; }
   .td-decision-utility-actions svg { width: 16px; height: 16px; }
   .td-share-menu {
     z-index: 80;

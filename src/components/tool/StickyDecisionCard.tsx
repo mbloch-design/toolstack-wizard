@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowDown, ArrowRight, ArrowUp, Check, Compass, Copy, Flag, Linkedin, Mail, MessageCircle, Minus, Share2 } from "@/lib/icons";
+import { ArrowRight, Check, Compass, Copy, Flag, Linkedin, Mail, MessageCircle, Share2 } from "@/lib/icons";
 import ToolLogo from "@/components/ToolLogo";
 import PinToolButton from "@/components/PinToolButton";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
@@ -22,7 +22,12 @@ export default function StickyDecisionCard({ tool, prefix, t, alternatives }: Pr
   const similar = alternatives.slice(0, 4);
   const toolTrimScore = computeToolTrimScore(tool);
   const verdictLevel = toolTrimScore.score >= 4 ? "high" : toolTrimScore.score >= 3.5 ? "mid" : "low";
-  const VerdictIcon = verdictLevel === "high" ? ArrowUp : verdictLevel === "mid" ? Minus : ArrowDown;
+  // Circular gauge: the ring itself carries the score (arc length = score / 5),
+  // replacing the old trend arrow with an actual proportional visualization.
+  const gaugeRadius = 14;
+  const gaugeCircumference = 2 * Math.PI * gaugeRadius;
+  const gaugeFraction = Math.max(0, Math.min(1, toolTrimScore.score / 5));
+  const gaugeOffset = gaugeCircumference * (1 - gaugeFraction);
 
   const copyUrl = async (url: string) => {
     if (navigator.clipboard?.writeText) {
@@ -95,7 +100,17 @@ export default function StickyDecisionCard({ tool, prefix, t, alternatives }: Pr
       <div className="td-decision-verdict">
         <span className="td-decision-verdict-label">{t("L’avis ToolTrim", "ToolTrim verdict")}</span>
         <span className={`td-decision-verdict-indicator td-decision-verdict-indicator--${verdictLevel}`} aria-hidden="true">
-          <VerdictIcon />
+          <svg className="td-decision-verdict-gauge" viewBox="0 0 34 34">
+            <circle className="td-decision-verdict-gauge-track" cx="17" cy="17" r={gaugeRadius} />
+            <circle
+              className="td-decision-verdict-gauge-fill"
+              cx="17"
+              cy="17"
+              r={gaugeRadius}
+              strokeDasharray={gaugeCircumference}
+              strokeDashoffset={gaugeOffset}
+            />
+          </svg>
         </span>
         <span className="td-decision-verdict-score">
           <strong>{toolTrimScore.score.toFixed(1)}</strong>
