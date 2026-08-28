@@ -4703,10 +4703,25 @@
     "description": "Adobe XD est un ancien outil de design d'interfaces et de prototypage désormais maintenu uniquement pour les utilisateurs existants.",
     "longDescription": "Adobe XD permet de concevoir des interfaces, créer des composants et relier des écrans dans des prototypes interactifs. Adobe ne développe plus activement le produit et ne le propose plus comme choix principal aux nouveaux clients.\n\nLa fiche reste utile pour les équipes qui doivent ouvrir, maintenir ou convertir des fichiers XD existants. Pour un nouveau projet, Figma, Penpot ou Sketch offrent un écosystème plus vivant et réduisent le risque de migration future. Le bon réflexe est de conserver XD uniquement tant que des livrables historiques en dépendent.",
     "longDescriptionEn": "Adobe XD is a former interface design and prototyping tool now maintained mainly for existing users. It can still create components, screen flows, and interactive prototypes.\n\nThe tool remains relevant for teams that need to open, maintain, or convert existing XD files. For a new project, Figma, Penpot, or Sketch offers a healthier ecosystem and reduces future migration risk. Keep XD only while historical deliverables still depend on it.",
-    "pricing": {"free": "Aucune nouvelle offre autonome", "paid": "Accès limité aux utilisateurs Creative Cloud existants selon leur contrat"},
-    "pricingEn": {"free": "No new standalone offer", "paid": "Limited access for existing Creative Cloud customers depending on their contract"},
+    "pricing": {
+      "free": "Aucune nouvelle offre autonome",
+      "paid": "Accès limité aux utilisateurs Creative Cloud existants selon leur contrat"
+    },
+    "pricingEn": {
+      "free": "No new standalone offer",
+      "paid": "Limited access for existing Creative Cloud customers depending on their contract"
+    },
     "defaultMonthlyPrice": 0,
-    "pricing_v5": {"verified_on":"2026-08-28","source_domain":"adobe.com","official_source_url":"https://www.adobe.com/products/xd.html","verification_status":"official_contextual","compare_plan_kind":"legacy","compare_plan_name":"Existing customers","price_reliability":"official_context_required","compare_price_monthly_eur":0},
+    "pricing_v5": {
+      "verified_on": "2026-08-28",
+      "source_domain": "adobe.com",
+      "official_source_url": "https://www.adobe.com/products/xd.html",
+      "verification_status": "official_contextual",
+      "compare_plan_kind": "legacy",
+      "compare_plan_name": "Existing customers",
+      "price_reliability": "official_context_required",
+      "compare_price_monthly_eur": 0
+    },
     "affiliateLink": "",
     "websiteUrl": "https://adobe.com/products/xd",
     "logo": "",
@@ -10228,7 +10243,7 @@
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
     "descriptionEn": "Are.na organizes visual and text references into \"blocks\" gathered in connectable \"channels\", with no recommendation algorithm and no ads. It's the go-to tool for designers, architects and researchers building a personal reference library rather than a social feed.\n\nAre.na doesn't publish its full pricing grid online (only a 50%-off-for-2-years student discount is documented) — check the exact Premium price on are.na/about before committing.",
-    "ogImageUrl": "http://static1.squarespace.com/static/6733a5fb2a1ee418fc513570/t/6733c14c1e48dd76a67b8dd6/1731445068875/arena-logo-primary-white.png?format=1500w",
+    "ogImageUrl": "https://static1.squarespace.com/static/6733a5fb2a1ee418fc513570/t/6733c14c1e48dd76a67b8dd6/1731445068875/arena-logo-primary-white.png?format=1500w",
     "force_silence": false
   },
   {
@@ -16229,7 +16244,16 @@
       "paid": "Usage-based storage and compute, or reserved capacity"
     },
     "defaultMonthlyPrice": 0,
-    "pricing_v5": {"verified_on":"2026-08-28","source_domain":"cloud.google.com","official_source_url":"https://cloud.google.com/bigquery/pricing","verification_status":"official_contextual","compare_plan_kind":"usage","compare_plan_name":"On-demand","price_reliability":"official_context_required","compare_price_monthly_eur":0},
+    "pricing_v5": {
+      "verified_on": "2026-08-28",
+      "source_domain": "cloud.google.com",
+      "official_source_url": "https://cloud.google.com/bigquery/pricing",
+      "verification_status": "official_contextual",
+      "compare_plan_kind": "usage",
+      "compare_plan_name": "On-demand",
+      "price_reliability": "official_context_required",
+      "compare_price_monthly_eur": 0
+    },
     "affiliateLink": "",
     "websiteUrl": "https://cloud.google.com/bigquery",
     "logo": "",
@@ -23909,7 +23933,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "http://captiontools.com/wp-content/uploads/2018/03/Toolbox.jpg",
+    "ogImageUrl": "https://captiontools.com/wp-content/uploads/2018/03/Toolbox.jpg",
     "force_silence": false
   },
   {
@@ -46347,19 +46371,43 @@
     "longDescriptionEn": "Figma Make generates and refines functional prototypes from a prompt or Figma file, with targeted editing and design-system context. Access depends on the Figma plan and seat type.",
     "websiteUrl": "https://www.figma.com/make/",
     "affiliateLink": "https://www.figma.com/make/",
-    "pricing": { "free": "Accès limité avec Starter", "paid": "Inclus avec un siège Full éligible" },
-    "pricingEn": { "free": "Limited access on Starter", "paid": "Included with an eligible Full seat" },
+    "pricing": {
+      "free": "Accès limité avec Starter",
+      "paid": "Inclus avec un siège Full éligible"
+    },
+    "pricingEn": {
+      "free": "Limited access on Starter",
+      "paid": "Included with an eligible Full seat"
+    },
     "defaultMonthlyPrice": 0,
     "logo": "https://cdn.sanity.io/images/599r6htc/regionalized/857d716d2ba170b1507a97dfd233543408c3700e-2256x2112.png?rect=1345,1550,260,260&w=256&h=256&fit=crop&auto=format",
     "tool_type": "ia",
     "substitutable": true,
     "host_app": "figma",
     "bundle_parent": "figma",
-    "functional_needs": ["prototyping", "generation-code", "ui-design"],
-    "verticals": ["ux-ui", "product-manager", "developpeur-solo"],
-    "covers": ["prototyping", "generation-code"],
-    "relevantFor": ["Designers produit", "Product managers", "Prototypers"],
-    "alternatives": ["lovable", "bolt-new"],
+    "functional_needs": [
+      "prototyping",
+      "generation-code",
+      "ui-design"
+    ],
+    "verticals": [
+      "ux-ui",
+      "product-manager",
+      "developpeur-solo"
+    ],
+    "covers": [
+      "prototyping",
+      "generation-code"
+    ],
+    "relevantFor": [
+      "Designers produit",
+      "Product managers",
+      "Prototypers"
+    ],
+    "alternatives": [
+      "lovable",
+      "bolt-new"
+    ],
     "articles": [],
     "ogImageUrl": "https://cdn.sanity.io/images/599r6htc/regionalized/7e39b983c6ad865e0a7a5243d914020e69a23f70-542x305.png",
     "force_silence": false
@@ -46375,15 +46423,44 @@
     "longDescriptionEn": "Figma Sites turns a composition into a publishable responsive website with breakpoints, components, interactions, and design-system libraries. Figma still presents the product as beta.",
     "websiteUrl": "https://www.figma.com/sites/",
     "affiliateLink": "https://www.figma.com/sites/",
-    "pricing": { "free": "Accès limité selon le plan", "paid": "Inclus avec un siège Full éligible" },
-    "pricingEn": { "free": "Limited access depending on plan", "paid": "Included with an eligible Full seat" },
+    "pricing": {
+      "free": "Accès limité selon le plan",
+      "paid": "Inclus avec un siège Full éligible"
+    },
+    "pricingEn": {
+      "free": "Limited access depending on plan",
+      "paid": "Included with an eligible Full seat"
+    },
     "logo": "https://cdn.sanity.io/images/599r6htc/regionalized/857d716d2ba170b1507a97dfd233543408c3700e-2256x2112.png?rect=650,1550,260,260&w=256&h=256&fit=crop&auto=format",
     "defaultMonthlyPrice": 0,
-    "tool_type": "metier", "substitutable": true, "host_app": "figma", "bundle_parent": "figma",
-    "functional_needs": ["website-builder", "ui-design", "publication-web"],
-    "verticals": ["ux-ui", "graphiste-da", "developpeur-solo"],
-    "covers": ["website-builder", "publication-web"], "relevantFor": ["Designers web", "Studios", "Freelances"],
-    "alternatives": ["framer", "webflow"], "articles": [],
+    "tool_type": "metier",
+    "substitutable": true,
+    "host_app": "figma",
+    "bundle_parent": "figma",
+    "functional_needs": [
+      "website-builder",
+      "ui-design",
+      "publication-web"
+    ],
+    "verticals": [
+      "ux-ui",
+      "graphiste-da",
+      "developpeur-solo"
+    ],
+    "covers": [
+      "website-builder",
+      "publication-web"
+    ],
+    "relevantFor": [
+      "Designers web",
+      "Studios",
+      "Freelances"
+    ],
+    "alternatives": [
+      "framer",
+      "webflow"
+    ],
+    "articles": [],
     "ogImageUrl": "https://cdn.sanity.io/images/599r6htc/regionalized/4b9ade839f38291c91b76608d22e7c7a9ad525fd-542x305.png",
     "force_silence": false
   },
@@ -46396,14 +46473,46 @@
     "shortDescriptionEn": "Scale on-brand content production from controlled templates.",
     "longDescription": "Figma Buzz relie designers de marque et équipes marketing autour de modèles personnalisables, de créations en masse et de garde-fous de marque. Le produit est présenté en bêta et accessible selon les sièges Figma.",
     "longDescriptionEn": "Figma Buzz connects brand designers and marketing teams through customizable templates, bulk creation, and brand guardrails. The product is presented as beta and access depends on Figma seats.",
-    "websiteUrl": "https://www.figma.com/buzz/", "affiliateLink": "https://www.figma.com/buzz/",
-    "pricing": { "free": "Accès limité selon le plan", "paid": "Inclus selon le plan et le siège" },
-    "pricingEn": { "free": "Limited access depending on plan", "paid": "Included depending on plan and seat" },
+    "websiteUrl": "https://www.figma.com/buzz/",
+    "affiliateLink": "https://www.figma.com/buzz/",
+    "pricing": {
+      "free": "Accès limité selon le plan",
+      "paid": "Inclus selon le plan et le siège"
+    },
+    "pricingEn": {
+      "free": "Limited access depending on plan",
+      "paid": "Included depending on plan and seat"
+    },
     "logo": "https://cdn.sanity.io/images/599r6htc/regionalized/857d716d2ba170b1507a97dfd233543408c3700e-2256x2112.png?rect=1000,1550,260,260&w=256&h=256&fit=crop&auto=format",
-    "defaultMonthlyPrice": 0, "tool_type": "metier", "substitutable": true, "host_app": "figma", "bundle_parent": "figma",
-    "functional_needs": ["brand-assets", "content-production", "templates"], "verticals": ["graphiste-da", "marketing", "createur-contenu"],
-    "covers": ["brand-assets", "templates"], "relevantFor": ["Brand designers", "Marketing teams", "Content teams"],
-    "alternatives": ["canva"], "articles": [], "force_silence": false
+    "defaultMonthlyPrice": 0,
+    "tool_type": "metier",
+    "substitutable": true,
+    "host_app": "figma",
+    "bundle_parent": "figma",
+    "functional_needs": [
+      "brand-assets",
+      "content-production",
+      "templates"
+    ],
+    "verticals": [
+      "graphiste-da",
+      "marketing",
+      "createur-contenu"
+    ],
+    "covers": [
+      "brand-assets",
+      "templates"
+    ],
+    "relevantFor": [
+      "Brand designers",
+      "Marketing teams",
+      "Content teams"
+    ],
+    "alternatives": [
+      "canva"
+    ],
+    "articles": [],
+    "force_silence": false
   },
   {
     "id": "figma-dev-mode",
@@ -46414,14 +46523,45 @@
     "shortDescriptionEn": "Developer handoff with inspection, variables, assets, code, and design-system context.",
     "longDescription": "Dev Mode organise le passage du design au développement : mesures, propriétés, exports, extraits de code, statut des maquettes et intégrations. L'inspection de base reste disponible aux viewers ; les fonctions avancées nécessitent un siège Dev ou Full.",
     "longDescriptionEn": "Dev Mode structures design-to-development handoff through measurements, properties, exports, code snippets, design status, and integrations. Basic inspection remains available to viewers; advanced features require a Dev or Full seat.",
-    "websiteUrl": "https://www.figma.com/dev-mode/", "affiliateLink": "https://www.figma.com/dev-mode/",
-    "pricing": { "free": "Inspection de base pour les viewers", "paid": "Professional Dev 12 $/mois ou siège Full 16 $/mois" },
-    "pricingEn": { "free": "Basic inspection for viewers", "paid": "Professional Dev $12/month or Full $16/month" },
+    "websiteUrl": "https://www.figma.com/dev-mode/",
+    "affiliateLink": "https://www.figma.com/dev-mode/",
+    "pricing": {
+      "free": "Inspection de base pour les viewers",
+      "paid": "Professional Dev 12 $/mois ou siège Full 16 $/mois"
+    },
+    "pricingEn": {
+      "free": "Basic inspection for viewers",
+      "paid": "Professional Dev $12/month or Full $16/month"
+    },
     "logo": "https://cdn.sanity.io/images/599r6htc/regionalized/857d716d2ba170b1507a97dfd233543408c3700e-2256x2112.png?rect=1345,730,260,260&w=256&h=256&fit=crop&auto=format",
-    "defaultMonthlyPrice": 12, "tool_type": "metier", "substitutable": false, "host_app": "figma", "bundle_parent": "figma",
-    "functional_needs": ["design-handoff", "inspection-code", "design-system"], "verticals": ["developpeur-solo", "ux-ui"],
-    "covers": ["design-handoff", "inspection-code"], "relevantFor": ["Développeurs", "Designers produit", "Design systems teams"],
-    "alternatives": ["zeplin"], "articles": [], "force_silence": false
+    "defaultMonthlyPrice": 12,
+    "tool_type": "metier",
+    "substitutable": false,
+    "host_app": "figma",
+    "bundle_parent": "figma",
+    "functional_needs": [
+      "design-handoff",
+      "inspection-code",
+      "design-system"
+    ],
+    "verticals": [
+      "developpeur-solo",
+      "ux-ui"
+    ],
+    "covers": [
+      "design-handoff",
+      "inspection-code"
+    ],
+    "relevantFor": [
+      "Développeurs",
+      "Designers produit",
+      "Design systems teams"
+    ],
+    "alternatives": [
+      "zeplin"
+    ],
+    "articles": [],
+    "force_silence": false
   },
   {
     "id": "figma-draw",
@@ -46432,14 +46572,45 @@
     "shortDescriptionEn": "Expressive vector tools inside Figma for illustration, textures, and advanced paths.",
     "longDescription": "Figma Draw enrichit l'éditeur avec shape builder, sélection multi-vecteurs, largeur de trait variable, texte sur tracé, motifs, textures et flous progressifs, tout en conservant les variables du design system.",
     "longDescriptionEn": "Figma Draw expands the editor with shape building, multi-vector selection, variable stroke width, text on a path, patterns, textures, and progressive blur while retaining design-system variables.",
-    "websiteUrl": "https://www.figma.com/draw/", "affiliateLink": "https://www.figma.com/draw/",
-    "pricing": { "free": "Accès limité selon le plan", "paid": "Inclus avec un siège Full" },
-    "pricingEn": { "free": "Limited access depending on plan", "paid": "Included with a Full seat" },
+    "websiteUrl": "https://www.figma.com/draw/",
+    "affiliateLink": "https://www.figma.com/draw/",
+    "pricing": {
+      "free": "Accès limité selon le plan",
+      "paid": "Inclus avec un siège Full"
+    },
+    "pricingEn": {
+      "free": "Limited access depending on plan",
+      "paid": "Included with a Full seat"
+    },
     "logo": "https://cdn.sanity.io/images/599r6htc/regionalized/857d716d2ba170b1507a97dfd233543408c3700e-2256x2112.png?rect=650,730,260,260&w=256&h=256&fit=crop&auto=format",
-    "defaultMonthlyPrice": 0, "tool_type": "metier", "substitutable": true, "host_app": "figma", "bundle_parent": "figma",
-    "functional_needs": ["illustration", "vector-design", "ui-design"], "verticals": ["graphiste-da", "ux-ui"],
-    "covers": ["illustration", "vector-design"], "relevantFor": ["Illustrateurs", "Brand designers", "Product designers"],
-    "alternatives": ["adobe-illustrator"], "articles": [], "force_silence": false
+    "defaultMonthlyPrice": 0,
+    "tool_type": "metier",
+    "substitutable": true,
+    "host_app": "figma",
+    "bundle_parent": "figma",
+    "functional_needs": [
+      "illustration",
+      "vector-design",
+      "ui-design"
+    ],
+    "verticals": [
+      "graphiste-da",
+      "ux-ui"
+    ],
+    "covers": [
+      "illustration",
+      "vector-design"
+    ],
+    "relevantFor": [
+      "Illustrateurs",
+      "Brand designers",
+      "Product designers"
+    ],
+    "alternatives": [
+      "adobe-illustrator"
+    ],
+    "articles": [],
+    "force_silence": false
   },
   {
     "id": "figma-motion",
@@ -46450,14 +46621,46 @@
     "shortDescriptionEn": "Animation and motion design directly inside the Figma environment.",
     "longDescription": "Figma Motion ajoute un espace d'animation à l'écosystème afin de faire évoluer des compositions et interfaces sans exporter le travail vers un outil séparé. Il est actuellement présenté en bêta pour les sièges Full.",
     "longDescriptionEn": "Figma Motion adds an animation workspace to the ecosystem so compositions and interfaces can move without exporting work to a separate tool. It is currently presented as beta for Full seats.",
-    "websiteUrl": "https://www.figma.com/motion/", "affiliateLink": "https://www.figma.com/motion/",
-    "pricing": { "free": "Non inclus dans Starter", "paid": "Bêta disponible avec les sièges Full" },
-    "pricingEn": { "free": "Not included on Starter", "paid": "Beta available with Full seats" },
+    "websiteUrl": "https://www.figma.com/motion/",
+    "affiliateLink": "https://www.figma.com/motion/",
+    "pricing": {
+      "free": "Non inclus dans Starter",
+      "paid": "Bêta disponible avec les sièges Full"
+    },
+    "pricingEn": {
+      "free": "Not included on Starter",
+      "paid": "Beta available with Full seats"
+    },
     "logo": "https://cdn.sanity.io/images/599r6htc/regionalized/857d716d2ba170b1507a97dfd233543408c3700e-2256x2112.png?rect=1000,730,260,260&w=256&h=256&fit=crop&auto=format",
-    "defaultMonthlyPrice": 0, "tool_type": "metier", "substitutable": true, "host_app": "figma", "bundle_parent": "figma",
-    "functional_needs": ["animation", "motion-design", "prototyping"], "verticals": ["motion-video", "ux-ui"],
-    "covers": ["animation", "motion-design"], "relevantFor": ["Motion designers", "Product designers", "Brand teams"],
-    "alternatives": ["after-effects", "rive"], "articles": [], "force_silence": false
+    "defaultMonthlyPrice": 0,
+    "tool_type": "metier",
+    "substitutable": true,
+    "host_app": "figma",
+    "bundle_parent": "figma",
+    "functional_needs": [
+      "animation",
+      "motion-design",
+      "prototyping"
+    ],
+    "verticals": [
+      "motion-video",
+      "ux-ui"
+    ],
+    "covers": [
+      "animation",
+      "motion-design"
+    ],
+    "relevantFor": [
+      "Motion designers",
+      "Product designers",
+      "Brand teams"
+    ],
+    "alternatives": [
+      "after-effects",
+      "rive"
+    ],
+    "articles": [],
+    "force_silence": false
   },
   {
     "id": "figma-slides",
@@ -49212,7 +49415,16 @@
       "paid": "External hosting, cloud service, and app-store costs may apply"
     },
     "defaultMonthlyPrice": 0,
-    "pricing_v5": {"verified_on":"2026-08-28","source_domain":"flutter.dev","official_source_url":"https://flutter.dev/","verification_status":"official_explicit","compare_plan_kind":"free","compare_plan_name":"Open source","price_reliability":"high","compare_price_monthly_eur":0},
+    "pricing_v5": {
+      "verified_on": "2026-08-28",
+      "source_domain": "flutter.dev",
+      "official_source_url": "https://flutter.dev/",
+      "verification_status": "official_explicit",
+      "compare_plan_kind": "free",
+      "compare_plan_name": "Open source",
+      "price_reliability": "high",
+      "compare_price_monthly_eur": 0
+    },
     "affiliateLink": "",
     "websiteUrl": "https://flutter.dev",
     "logo": "",
@@ -90845,10 +91057,25 @@
     "description": "Miro est un espace de travail visuel collaboratif pour ateliers, diagrammes, parcours produit, documentation et planification.",
     "longDescription": "Miro combine tableau blanc infini, post-its, diagrammes, documents, tableaux, slides et outils d'animation d'ateliers. Les équipes peuvent brainstormer, cartographier un parcours, voter et transformer un board en livrable partagé.\n\nLe plan gratuit accepte un nombre illimité de membres mais limite l'équipe à trois boards modifiables. Starter coûte 8 $ par membre et par mois avec facturation annuelle, ajoute les boards privés et illimités, les visiteurs et 25 crédits IA mensuels par membre. Le coût augmente vite si chaque collaborateur devient membre payant, donc il faut réserver les sièges permanents aux participants réguliers.",
     "longDescriptionEn": "Miro combines an infinite canvas, sticky notes, diagrams, documents, tables, slides, and workshop facilitation tools. Teams can brainstorm, map journeys, vote, and turn a board into a shared deliverable.\n\nThe Free plan allows unlimited team members but keeps only three boards editable. Starter costs $8 per member per month when billed annually and adds unlimited private boards, visitors, and 25 monthly AI credits per member. Costs rise quickly when every collaborator becomes a paid member, so permanent seats should be reserved for regular participants.",
-    "pricing": {"free":"Gratuit avec 3 boards modifiables","paid":"Starter à 8 $ par membre et par mois, facturé annuellement"},
-    "pricingEn": {"free":"Free with 3 editable boards","paid":"Starter at $8 per member per month, billed annually"},
+    "pricing": {
+      "free": "Gratuit avec 3 boards modifiables",
+      "paid": "Starter à 8 $ par membre et par mois, facturé annuellement"
+    },
+    "pricingEn": {
+      "free": "Free with 3 editable boards",
+      "paid": "Starter at $8 per member per month, billed annually"
+    },
     "defaultMonthlyPrice": 0,
-    "pricing_v5": {"verified_on":"2026-08-28","source_domain":"miro.com","official_source_url":"https://miro.com/pricing/","verification_status":"official_explicit","compare_plan_kind":"seat","compare_plan_name":"Starter annual","price_reliability":"high","compare_price_monthly_eur":8},
+    "pricing_v5": {
+      "verified_on": "2026-08-28",
+      "source_domain": "miro.com",
+      "official_source_url": "https://miro.com/pricing/",
+      "verification_status": "official_explicit",
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Starter annual",
+      "price_reliability": "high",
+      "compare_price_monthly_eur": 8
+    },
     "affiliateLink": "",
     "websiteUrl": "https://miro.com",
     "logo": "",
@@ -92180,7 +92407,7 @@
     },
     "force_silence": false,
     "description": "MongoDB Atlas, c'est la version managée et hébergée de MongoDB, la base de données NoSQL la plus connue. Contrairement à une base relationnelle (Postgres, MySQL), MongoDB stocke des documents JSON souples : pas de schéma rigide, tu fais évoluer la structure de tes données au fil du projet. Atlas s'occupe de l'hébergement, des sauvegardes, de la montée en charge et de la sécurité, pour que tu n'aies pas à administrer de serveur de base.\n\nLe modèle est progressif : un cluster gratuit (M0, 512 Mo) suffit pour prototyper ou faire tourner un petit projet, des paliers Flex à l'usage existent entre les deux, puis les clusters dédiés démarrent autour de 57$/mois (M10). La facture devient vite difficile à prévoir quand le trafic grimpe, c'est le revers du modèle cloud à l'usage.\n\nQuand le choisir : MongoDB brille quand tes données sont peu structurées ou évoluent souvent (catalogues, contenus, événements). Si ton projet est naturellement relationnel (commandes, comptabilité, relations entre tables), une base Postgres comme Neon ou Supabase sera souvent plus adaptée et moins chère. Le choix se fait sur la nature des données, pas sur la hype.",
-    "ogImageUrl": "http://s3.amazonaws.com/info-mongodb-com/_com_assets/cms/kuzt9r42or1fxvlq2-Meta_Generic.png"
+    "ogImageUrl": "https://s3.amazonaws.com/info-mongodb-com/_com_assets/cms/kuzt9r42or1fxvlq2-Meta_Generic.png"
   },
   {
     "id": "moobot",
@@ -95192,7 +95419,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "http://netchex.com/wp-content/uploads/2024/06/Netchex.jpg"
+    "ogImageUrl": "https://netchex.com/wp-content/uploads/2024/06/Netchex.jpg"
   },
   {
     "id": "netlify",
@@ -99723,7 +99950,16 @@
       "paid": "Usage-based pricing by model and consumed tokens"
     },
     "defaultMonthlyPrice": 0,
-    "pricing_v5": {"verified_on":"2026-08-28","source_domain":"openai.com","official_source_url":"https://platform.openai.com/docs/models","verification_status":"official_explicit","compare_plan_kind":"usage","compare_plan_name":"GPT-5.6 Sol","price_reliability":"high","compare_price_monthly_eur":0},
+    "pricing_v5": {
+      "verified_on": "2026-08-28",
+      "source_domain": "openai.com",
+      "official_source_url": "https://platform.openai.com/docs/models",
+      "verification_status": "official_explicit",
+      "compare_plan_kind": "usage",
+      "compare_plan_name": "GPT-5.6 Sol",
+      "price_reliability": "high",
+      "compare_price_monthly_eur": 0
+    },
     "affiliateLink": "",
     "websiteUrl": "https://platform.openai.com",
     "logo": "",
@@ -103660,7 +103896,16 @@
       "paid": null
     },
     "defaultMonthlyPrice": 0,
-    "pricing_v5": {"verified_on":"2026-08-28","source_domain":"developers.google.com","official_source_url":"https://developers.google.com/speed/docs/insights/v5/about","verification_status":"official_explicit","compare_plan_kind":"free","compare_plan_name":"Free","price_reliability":"high","compare_price_monthly_eur":0},
+    "pricing_v5": {
+      "verified_on": "2026-08-28",
+      "source_domain": "developers.google.com",
+      "official_source_url": "https://developers.google.com/speed/docs/insights/v5/about",
+      "verification_status": "official_explicit",
+      "compare_plan_kind": "free",
+      "compare_plan_name": "Free",
+      "price_reliability": "high",
+      "compare_price_monthly_eur": 0
+    },
     "affiliateLink": "",
     "websiteUrl": "https://pagespeed.web.dev",
     "logo": "",
@@ -122232,7 +122477,7 @@
     },
     "force_silence": false,
     "description": "Remix organise une application React autour des routes : chaque route gère son propre chargement de données (loader), ses écritures (action) et son rendu, avec du rendu serveur par défaut. Plutôt que d'empiler des hooks et des appels useEffect pour récupérer des données, on écrit du code proche des standards du web (Request, Response, formulaires HTML natifs). Cette approche a fait des adeptes vers 2021-2022, à une époque où beaucoup de développeurs cherchaient une alternative plus simple à Next.js.\n\nDepuis fin 2024, Remix n'existe plus vraiment comme projet à part. Shopify, qui avait racheté l'équipe de Remix en 2022 pour construire Hydrogen (son framework e-commerce headless), a fusionné Remix dans React Router. Le mode \"framework\" de React Router v7 reprend l'architecture de Remix (routes, loaders, actions, rendu serveur via Vite), porté par la même équipe (Ryan Florence et Michael Jackson). Pour démarrer un nouveau projet, la commande recommandée est create-react-router, pas create-remix.\n\nEn pratique, qu'est-ce que ça change pour un freelance en 2026 ? Si vous reprenez un projet Remix existant ou si vous travaillez sur une boutique Shopify Hydrogen, les compétences restent directement utiles : les loaders, les actions et la structure de routes n'ont presque pas changé. Mais pour un projet qui démarre de zéro, autant partir sur React Router v7 (ou Next.js selon le contexte) : même architecture, communauté plus large, et un nom qui ne va pas disparaître des offres d'emploi dans deux ans.",
-    "ogImageUrl": "http://remix.run/marketing/remix-run-share-thumbnail.png"
+    "ogImageUrl": ""
   },
   {
     "id": "remove-bg",
@@ -126315,7 +126560,7 @@
       },
       "metaDescription": "Rocket Lawyer avis : contrats et documents juridiques en ligne. Alternative moins chère à un avocat."
     },
-    "ogImageUrl": "http://localhost:3000/next-assets/Thumbnail-Solutions-Business.png",
+    "ogImageUrl": "",
     "description": "Rocket Lawyer permet aux freelances de créer des contrats vérifiés, NDA et CGU, et de consulter des avocats.",
     "articles": [],
     "force_silence": false
@@ -129228,7 +129473,7 @@
     "pivot_integration_source": true,
     "personas": [],
     "force_silence": false,
-    "ogImageUrl": "http://www.sap.com/dam/application/shared/logos/sap_logo_rgb_onwhite_0300_0300.png.adapt.png/1656382976488.png"
+    "ogImageUrl": "https://www.sap.com/dam/application/shared/logos/sap_logo_rgb_onwhite_0300_0300.png.adapt.png/1656382976488.png"
   },
   {
     "id": "sap-business-one",
@@ -129397,7 +129642,7 @@
     "pivot_integration_source": true,
     "personas": [],
     "force_silence": false,
-    "ogImageUrl": "http://www.sap.com/dam/application/shared/logos/sap_logo_rgb_onwhite_0300_0300.png.adapt.png/1656382976488.png"
+    "ogImageUrl": "https://www.sap.com/dam/application/shared/logos/sap_logo_rgb_onwhite_0300_0300.png.adapt.png/1656382976488.png"
   },
   {
     "id": "sap-s4hana",
@@ -129568,7 +129813,7 @@
     "pivot_integration_source": true,
     "personas": [],
     "force_silence": false,
-    "ogImageUrl": "http://www.sap.com/dam/application/shared/logos/sap_logo_rgb_onwhite_0300_0300.png.adapt.png/1656382976488.png"
+    "ogImageUrl": "https://www.sap.com/dam/application/shared/logos/sap_logo_rgb_onwhite_0300_0300.png.adapt.png/1656382976488.png"
   },
   {
     "id": "sap-successfactors",
@@ -129738,7 +129983,7 @@
     "pivot_integration_source": true,
     "personas": [],
     "force_silence": false,
-    "ogImageUrl": "http://www.sap.com/dam/application/shared/logos/sap_logo_rgb_onwhite_0300_0300.png.adapt.png/1656382976488.png"
+    "ogImageUrl": "https://www.sap.com/dam/application/shared/logos/sap_logo_rgb_onwhite_0300_0300.png.adapt.png/1656382976488.png"
   },
   {
     "id": "scheduling-tools",
@@ -140360,7 +140605,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "http://static1.squarespace.com/static/5134cbefe4b0c6fb04df8065/t/69b2d4e7b86fcf5aa700ae16/1773327591839/2025-homepage-thumbnail.png?format=1500w"
+    "ogImageUrl": "https://static1.squarespace.com/static/5134cbefe4b0c6fb04df8065/t/69b2d4e7b86fcf5aa700ae16/1773327591839/2025-homepage-thumbnail.png?format=1500w"
   },
   {
     "id": "stable-diffusion",
@@ -140522,7 +140767,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "http://static1.squarespace.com/static/6213c340453c3f502425776e/t/69dc368ec5c83b60b25c6a07/1775660945221/Homepage+Meta+Image.png?format=1500w"
+    "ogImageUrl": "https://static1.squarespace.com/static/6213c340453c3f502425776e/t/69dc368ec5c83b60b25c6a07/1775660945221/Homepage+Meta+Image.png?format=1500w"
   },
   {
     "id": "stan-store",
@@ -156293,7 +156538,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "http://static1.squarespace.com/static/5e3ae1048e80ab4164765fae/t/5e6e61748afded74f5455b6c/1584292215045/futurebelongs.jpg?format=1500w",
+    "ogImageUrl": "https://static1.squarespace.com/static/5e3ae1048e80ab4164765fae/t/5e6e61748afded74f5455b6c/1584292215045/futurebelongs.jpg?format=1500w",
     "force_silence": false
   },
   {
