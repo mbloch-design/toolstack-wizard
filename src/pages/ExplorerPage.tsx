@@ -447,22 +447,6 @@ export default function ExplorerPage() {
     if (shouldScroll) scrollToTop(window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth");
   }
 
-  function recenter(tool: ToolSummary) {
-    const href = getExplorerHref(prefix, { type: "outil", slug: getExplorationToolKey(tool) }, {
-      angle: isObjectiveSource ? "all" : angle,
-      destination: destination?.id,
-    });
-    navigate(href, {
-      state: {
-        ...locationState,
-        explorerCanGoBack: true,
-        originLabel,
-        previousSourceLabel: sourceLabel,
-        skipScrollReset: false,
-      } satisfies ExplorerLocationState,
-    });
-  }
-
   function addTool(tool: ToolSummary) {
     const slug = getExplorationToolKey(tool);
     if (addingSlug === slug) return;
@@ -553,6 +537,18 @@ export default function ExplorerPage() {
     const previewUrl = candidate.tool.ogImageUrl
       || (Array.isArray(candidate.tool.covers) && typeof candidate.tool.covers[0] === "string" ? candidate.tool.covers[0] : "");
 
+    const candidateHref = getExplorerHref(prefix, { type: "outil", slug: getExplorationToolKey(candidate.tool) }, {
+      angle: isObjectiveSource ? "all" : angle,
+      destination: destination?.id,
+    });
+    const candidateLinkState = {
+      ...locationState,
+      explorerCanGoBack: true,
+      originLabel,
+      previousSourceLabel: sourceLabel,
+      skipScrollReset: false,
+    } satisfies ExplorerLocationState;
+
     return (
       <article key={slug} data-tool-slug={slug} className={`ex-card${inDestination || inStackWithoutDestination ? " is-present" : ""}${isAdding ? " is-adding" : ""}`}>
         <div className="ex-card-actions" aria-label={t(`Actions pour ${candidate.tool.name}`, `Actions for ${candidate.tool.name}`) as string}>
@@ -570,10 +566,10 @@ export default function ExplorerPage() {
             {inDestination || inStackWithoutDestination ? <Check size={18} aria-hidden /> : <Plus size={18} aria-hidden />}
           </button>
         </div>
-        <button
-          type="button"
+        <Link
+          to={candidateHref}
+          state={candidateLinkState}
           className="ex-card-main"
-          onClick={() => recenter(candidate.tool)}
           aria-label={t(`Explorer autour de ${candidate.tool.name}`, `Explore around ${candidate.tool.name}`) as string}
           aria-describedby={`explore-card-${slug}-description`}
         >
@@ -587,13 +583,13 @@ export default function ExplorerPage() {
               <Compass size={20} aria-hidden />
             </span>
           </span>
-        </button>
+        </Link>
         <div className="ex-card-content">
           <div className="ex-card-header">
             <ToolLogo tool={candidate.tool} size={24} className="tce-logo ex-card-logo" />
-            <button type="button" className="ex-card-identity" onClick={() => recenter(candidate.tool)}>
+            <Link to={candidateHref} state={candidateLinkState} className="ex-card-identity">
               <strong>{candidate.tool.name}</strong>
-            </button>
+            </Link>
           </div>
           <p id={`explore-card-${slug}-description`} className="ex-card-description">{description}</p>
         </div>

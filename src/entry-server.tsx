@@ -10,7 +10,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import ScrollToTop from "@/components/ScrollToTop";
 import DynamicCanonical from "@/components/DynamicCanonical";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
-import { AppRoutes } from "@/App";
+import { AppRoutes, LangLayout } from "@/App";
 import { SsrToolContext, SsrRelatedPostsContext, SsrComparePairContext, SsrPostContext, loadLocalPosts } from "@/hooks/useSupabaseData";
 import type { Post } from "@/hooks/useSupabaseData";
 import type { Tool } from "@/data/types";
@@ -182,7 +182,9 @@ export async function renderStackPage(path: string): Promise<string> {
             <ErrorBoundary>
               <Suspense fallback={null}>
                 <Routes>
-                  <Route path="/:lang/stacks/:slug" element={<StackDetailPage />} />
+                  <Route path="/:lang" element={<LangLayout />}>
+                    <Route path="stacks/:slug" element={<StackDetailPage />} />
+                  </Route>
                 </Routes>
               </Suspense>
             </ErrorBoundary>
@@ -216,7 +218,9 @@ export async function renderCategoryPage(path: string): Promise<string> {
             <ErrorBoundary>
               <Suspense fallback={null}>
                 <Routes>
-                  <Route path="/:lang/category/:slug" element={<CategoryPage />} />
+                  <Route path="/:lang" element={<LangLayout />}>
+                    <Route path="category/:slug" element={<CategoryPage />} />
+                  </Route>
                 </Routes>
               </Suspense>
             </ErrorBoundary>
@@ -242,7 +246,9 @@ export async function renderToolsPage(path: string): Promise<string> {
             <ErrorBoundary>
               <Suspense fallback={null}>
                 <Routes>
-                  <Route path="/:lang/tools" element={<ToolsPage />} />
+                  <Route path="/:lang" element={<LangLayout />}>
+                    <Route path="tools" element={<ToolsPage />} />
+                  </Route>
                 </Routes>
               </Suspense>
             </ErrorBoundary>
@@ -268,7 +274,9 @@ export async function renderStacksHubPage(path: string): Promise<string> {
             <ErrorBoundary>
               <Suspense fallback={null}>
                 <Routes>
-                  <Route path="/:lang/stacks" element={<StacksPage />} />
+                  <Route path="/:lang" element={<LangLayout />}>
+                    <Route path="stacks" element={<StacksPage />} />
+                  </Route>
                 </Routes>
               </Suspense>
             </ErrorBoundary>
@@ -299,7 +307,9 @@ export async function renderCategoriesIndexPage(path: string): Promise<string> {
             <ErrorBoundary>
               <Suspense fallback={null}>
                 <Routes>
-                  <Route path="/:lang/category" element={<CategoriesIndexPage />} />
+                  <Route path="/:lang" element={<LangLayout />}>
+                    <Route path="category" element={<CategoriesIndexPage />} />
+                  </Route>
                 </Routes>
               </Suspense>
             </ErrorBoundary>
@@ -325,7 +335,9 @@ export async function renderGuidesIndexPage(path: string): Promise<string> {
             <ErrorBoundary>
               <Suspense fallback={null}>
                 <Routes>
-                  <Route path="/:lang/guides" element={<GuidesPage />} />
+                  <Route path="/:lang" element={<LangLayout />}>
+                    <Route path="guides" element={<GuidesPage />} />
+                  </Route>
                 </Routes>
               </Suspense>
             </ErrorBoundary>
@@ -351,7 +363,9 @@ export async function renderComparatifsIndexPage(path: string): Promise<string> 
             <ErrorBoundary>
               <Suspense fallback={null}>
                 <Routes>
-                  <Route path="/:lang/comparatifs" element={<ComparesIndexPage />} />
+                  <Route path="/:lang" element={<LangLayout />}>
+                    <Route path="comparatifs" element={<ComparesIndexPage />} />
+                  </Route>
                 </Routes>
               </Suspense>
             </ErrorBoundary>
@@ -377,7 +391,9 @@ export async function renderAboutPage(path: string): Promise<string> {
             <ErrorBoundary>
               <Suspense fallback={null}>
                 <Routes>
-                  <Route path="/:lang/about" element={<AboutPage />} />
+                  <Route path="/:lang" element={<LangLayout />}>
+                    <Route path="about" element={<AboutPage />} />
+                  </Route>
                 </Routes>
               </Suspense>
             </ErrorBoundary>
@@ -403,7 +419,9 @@ export async function renderTransparencyPage(path: string): Promise<string> {
             <ErrorBoundary>
               <Suspense fallback={null}>
                 <Routes>
-                  <Route path="/:lang/transparency" element={<TransparencyPage />} />
+                  <Route path="/:lang" element={<LangLayout />}>
+                    <Route path="transparency" element={<TransparencyPage />} />
+                  </Route>
                 </Routes>
               </Suspense>
             </ErrorBoundary>
@@ -429,7 +447,9 @@ export async function renderContactPage(path: string): Promise<string> {
             <ErrorBoundary>
               <Suspense fallback={null}>
                 <Routes>
-                  <Route path="/:lang/contact" element={<ContactPage />} />
+                  <Route path="/:lang" element={<LangLayout />}>
+                    <Route path="contact" element={<ContactPage />} />
+                  </Route>
                 </Routes>
               </Suspense>
             </ErrorBoundary>
@@ -458,7 +478,37 @@ export async function renderExplorerLandingPage(path: string): Promise<string> {
             <ErrorBoundary>
               <Suspense fallback={null}>
                 <Routes>
-                  <Route path="/:lang/explorer" element={<ExplorerPage />} />
+                  <Route path="/:lang" element={<LangLayout />}>
+                    <Route path="explorer" element={<ExplorerPage />} />
+                  </Route>
+                </Routes>
+              </Suspense>
+            </ErrorBoundary>
+          </StaticRouter>
+        </TooltipProvider>
+      </QueryClientProvider>
+    </HelmetProvider>,
+  );
+}
+
+export async function renderExplorerAroundPage(path: string): Promise<string> {
+  const queryClient = new QueryClient();
+
+  return renderToString(
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <StaticRouter location={path}>
+            <ScrollToTop />
+            <DynamicCanonical />
+            <ErrorBoundary>
+              <Suspense fallback={null}>
+                <Routes>
+                  <Route path="/:lang" element={<LangLayout />}>
+                    <Route path="explorer/around/:slug" element={<ExplorerPage />} />
+                  </Route>
                 </Routes>
               </Suspense>
             </ErrorBoundary>

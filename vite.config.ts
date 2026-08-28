@@ -692,6 +692,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
         let renderTransparencyPage: ((path: string) => Promise<string>) | null = null;
         let renderContactPage: ((path: string) => Promise<string>) | null = null;
         let renderExplorerLandingPage: ((path: string) => Promise<string>) | null = null;
+        let renderExplorerAroundPage: ((path: string) => Promise<string>) | null = null;
         const ssrEntryPath = path.resolve(__dirname, "dist-ssr/entry-server.js");
         if (fs.existsSync(ssrEntryPath)) {
           try {
@@ -711,6 +712,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             renderTransparencyPage = ssrModule.renderTransparencyPage;
             renderContactPage = ssrModule.renderContactPage;
             renderExplorerLandingPage = ssrModule.renderExplorerLandingPage;
+            renderExplorerAroundPage = ssrModule.renderExplorerAroundPage;
           } catch (e) {
             console.warn("⚠️ SSR entry failed to load, falling back to meta-only prerender:", e);
           }
@@ -1531,6 +1533,15 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             html = html.replace(/<title>[^<]*<\/title>/, "");
             html = html.replace(/<meta\s+name="description"[^>]*\/?>/, "");
             html = html.replace("</head>", `    ${metaTags}\n  </head>`);
+
+            if (renderExplorerAroundPage) {
+              try {
+                const markup = await renderExplorerAroundPage(sourcePath);
+                html = html.replace('<div id="root"></div>', `<div id="root">${markup}</div>`);
+              } catch (e) {
+                console.warn(`⚠️ SSR failed for ${sourcePath}:`, e);
+              }
+            }
 
             const outDir = path.resolve(distDir, sourcePath.replace(/^\//, ""));
             fs.mkdirSync(outDir, { recursive: true });

@@ -109,7 +109,7 @@ const GUIDE_FR_ONLY_SLUGS = new Set([
   "notion-gratuit-vs-payant-vrai-calcul",
 ]);
 
-const LangLayout = () => {
+export const LangLayout = () => {
   const { lang } = useParams<{ lang: string }>();
   const location = useLocation();
   const validLang: Lang = lang === "en" ? "en" : "fr";
