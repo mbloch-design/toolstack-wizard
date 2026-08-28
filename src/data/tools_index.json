@@ -6027,8 +6027,8 @@
     "slug": "cargo-site",
     "name": "Cargo Site",
     "categoryId": "nocode-web",
-    "shortDescription": "Créateur de portfolios créatifs au design expérimental, pour artistes et designers.",
-    "shortDescriptionEn": "Builder for creative, experimental portfolios, made for artists and designers.",
+    "shortDescription": "Le créateur de portfolios pour designers et artistes qui veulent un site aussi distinctif que leur travail.",
+    "shortDescriptionEn": "The portfolio builder for designers and artists who want a site as distinctive as their work.",
     "pricing": {
       "free": "Construction gratuite en privé, publication payante",
       "paid": "Environ 14$/mois en annuel (19$ au mois) pour publier, domaine inclus"
@@ -6036,7 +6036,7 @@
     "defaultMonthlyPrice": 14,
     "affiliateLink": "",
     "websiteUrl": "https://cargo.site/",
-    "ogImageUrl": "https://static.cargo.site/assets/C3/screenshots/cargosite.jpg",
+    "ogImageUrl": "/tool-media/cargo-site/cargo-overview.jpg",
     "logo": "",
     "tool_type": "satellite",
     "host_app": null,

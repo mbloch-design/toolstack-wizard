@@ -24253,8 +24253,8 @@
     "name": "Cargo Site",
     "slug": "cargo-site",
     "category": "nocode-web",
-    "shortDescription": "Créateur de portfolios créatifs au design expérimental, pour artistes et designers.",
-    "longDescription": "Cargo est un constructeur de sites conçu pour les designers, artistes, photographes et directeurs artistiques. Ses modèles, ses outils typographiques et ses compositions éditoriales permettent de créer des portfolios qui s'éloignent des sites professionnels standardisés.\n\nL'offre unique coûte 14$ par mois avec une facturation annuelle, ou 19$ au mois. Elle permet de publier plusieurs sites sur des domaines cargo.site, de collaborer en temps réel et de connecter gratuitement un domaine personnalisé. Chaque domaine personnalisé supplémentaire coûte 2$ par mois en annuel. Le module Commerce ajoute 5,50$ par mois en annuel et Cargo ne facture pas de commission par transaction.\n\nCargo convient particulièrement lorsque la forme du portfolio participe à l'identité du créateur. Pour un site marketing très structuré, une boutique avancée ou un contrôle SEO plus poussé, Webflow, Framer ou Shopify peuvent être plus adaptés.",
+    "shortDescription": "Le créateur de portfolios pour designers et artistes qui veulent un site aussi distinctif que leur travail.",
+    "longDescription": "Cargo est un créateur de sites pensé pour les designers, artistes, photographes et studios qui refusent le portfolio standardisé. Ses modèles graphiques, ses outils typographiques, ses galeries et son éditeur CSS permettent de construire une présence visuelle très personnelle sans partir de zéro.\n\nL'abonnement coûte 14$ par mois avec une facturation annuelle, ou 19$ au mois. Un même compte peut publier plusieurs sites, collaborer en temps réel et connecter un domaine personnalisé sans supplément. Chaque domaine personnalisé additionnel coûte 2$ par mois en annuel ou 3$ au mois. Le module Commerce coûte 5,50$ par mois en annuel ou 9$ au mois, sans commission Cargo sur les transactions.\n\nChoisissez Cargo si le design du portfolio est lui-même une démonstration de votre pratique. Préférez Framer ou Webflow pour une acquisition structurée, un CMS plus ambitieux et des intégrations marketing, Format pour un portfolio photo plus guidé, ou Squarespace pour réunir vitrine et commerce dans un outil généraliste.",
     "affiliateLink": "",
     "websiteUrl": "https://cargo.site/",
     "defaultMonthlyPrice": 14,
@@ -24267,32 +24267,32 @@
     "teamRelevance": null,
     "verdict": {
       "keepIf": [
-        "Vous êtes créatif (designer, artiste, photographe) et voulez un portfolio esthétique.",
-        "Vous privilégiez la présentation visuelle à des fonctions marketing/e-commerce lourdes.",
-        "Vous appréciez une tarification simple à un seul palier."
+        "Votre portfolio doit exprimer une identité visuelle forte, pas seulement aligner des projets.",
+        "Vous voulez publier plusieurs sites créatifs avec un seul abonnement.",
+        "Vous aimez personnaliser la typographie, les galeries et le CSS."
       ],
       "avoidIf": [
-        "Vous avez besoin d'un site marketing ou e-commerce complet (Squarespace, Wix).",
-        "Vous voulez de nombreux modèles, du SEO avancé et des intégrations.",
-        "Votre site doit gérer des fonctionnalités complexes au-delà du portfolio."
+        "Votre priorité est la génération de leads, le SEO avancé ou un CMS structuré.",
+        "Vous cherchez une boutique complète avec un vaste écosystème d'intégrations.",
+        "Vous voulez un éditeur très guidé avec peu de décisions de design."
       ],
-      "threshold": "Cargo s'impose pour un portfolio créatif au rendu soigné et une tarification simple ; pour un site marketing/e-commerce complet, un constructeur généraliste est plus adapté."
+      "threshold": "Gardez Cargo si la forme du portfolio fait partie de votre signature. Remplacez-le si votre site doit surtout convertir, publier à grande échelle ou gérer un commerce avancé."
     },
     "pros": [
-      "Portfolios au rendu esthétique distinctif.",
-      "Tarification simple à un seul palier.",
-      "Domaine personnalisé inclus.",
-      "Plan gratuit (brandé) pour démarrer sans payer."
+      "Liberté visuelle rare pour un constructeur sans code.",
+      "Plusieurs sites publiés avec un seul abonnement.",
+      "Édition collaborative en temps réel.",
+      "Un domaine personnalisé inclus."
     ],
     "cons": [
-      "Orienté portfolio, pas un constructeur de site généraliste.",
-      "Moins de fonctions marketing/SEO/e-commerce que les grands concurrents.",
-      "Le plan gratuit impose la marque Cargo et des limites."
+      "Moins adapté aux tunnels marketing et aux contenus très structurés.",
+      "Commerce payant en supplément.",
+      "La construction gratuite reste privée tant que vous ne payez pas."
     ],
     "useCases": [
-      "Publier un portfolio de designer ou de photographe soigné.",
-      "Mettre en ligne un site vitrine créatif rapidement.",
-      "Démarrer gratuitement puis passer au tarif unique avec domaine."
+      "Transformer un portfolio de designer en véritable manifeste visuel.",
+      "Publier plusieurs sites pour un studio, des projets ou des présentations clients.",
+      "Créer un portfolio photo ou artistique avec des galeries sur mesure."
     ],
     "covers": [
       "website-builder",
@@ -24305,14 +24305,16 @@
       "Artistes et studios créatifs"
     ],
     "alternatives": [
-      "squarespace",
+      "framer",
+      "webflow",
       "format",
-      "pixieset"
+      "squarespace",
+      "readymag"
     ],
     "seo": {
       "metaDescription": "Cargo (cargo.site) en 2026 : prix, plan gratuit et alternatives pour un portfolio créatif. Pour qui c'est le bon choix, par ToolTrim.",
-      "presentationTitleEn": "Cargo Site: Creative Portfolios for Designers — Price 2026 | ToolTrim",
-      "presentationTitleFr": "Cargo Site : Portfolios Créatifs pour Designers — Prix 2026 | ToolTrim"
+      "presentationTitleEn": "Cargo Site: Creative Portfolios for Designers | 2026 Price | ToolTrim",
+      "presentationTitleFr": "Cargo Site : portfolios créatifs pour designers | Prix 2026 | ToolTrim"
     },
     "articles": [],
     "timeGainedHoursPerMonth": null,
@@ -24342,8 +24344,9 @@
     "pricing_v5": {
       "cautions": [
         "Construction gratuite mais en privé : la publication est payante",
-        "Environ 14$/mois en facturation annuelle (19$ au mois), domaine inclus",
-        "Module Commerce en supplément pour vendre"
+        "14$/mois en facturation annuelle ou 19$/mois sans engagement",
+        "Un domaine personnalisé inclus, puis 2$/mois par domaine additionnel en annuel",
+        "Commerce en supplément : 5,50$/mois en annuel ou 9$/mois au mois"
       ],
       "verified_on": "2026-08-28",
       "source_domain": "cargo.site",
@@ -24359,44 +24362,48 @@
       "compare_price_monthly_eur": 14
     },
     "decision_policy_v3": null,
-    "shortDescriptionEn": "Builder for creative, experimental portfolios, made for artists and designers.",
-    "longDescriptionEn": "Cargo is a site builder created for designers, artists, photographers and art directors. Its templates, typography tools and editorial layouts help portfolios move beyond standardized business websites.\n\nThe single plan costs $14 per month when billed annually, or $19 month to month. It lets you publish multiple sites on cargo.site domains, collaborate in real time and connect one custom domain at no extra cost. Each additional custom domain costs $2 per month on annual billing. The Commerce add-on costs another $5.50 per month annually, and Cargo charges no transaction fee.\n\nCargo is especially compelling when the portfolio's visual form is part of the creator's identity. Webflow, Framer or Shopify may fit better when you need a highly structured marketing site, advanced commerce or deeper SEO control.",
+    "shortDescriptionEn": "The portfolio builder for designers and artists who want a site as distinctive as their work.",
+    "longDescriptionEn": "Cargo is a site builder for designers, artists, photographers and studios that reject standardized portfolios. Its graphic templates, typography tools, galleries and CSS editor make it possible to build a highly personal visual presence without starting from scratch.\n\nThe subscription costs $14 per month when billed annually, or $19 month to month. One account can publish multiple sites, support real-time collaboration and connect one custom domain at no extra cost. Each additional custom domain costs $2 per month annually or $3 month to month. Commerce costs $5.50 per month annually or $9 month to month, with no Cargo transaction fee.\n\nChoose Cargo when the portfolio design itself demonstrates your practice. Pick Framer or Webflow for structured acquisition, a more ambitious CMS and marketing integrations, Format for a more guided photography portfolio, or Squarespace for a general-purpose website and store.",
     "prosEn": [
-      "Distinctive, aesthetic portfolios.",
-      "Simple single-tier pricing.",
-      "Custom domain included.",
-      "Free (branded) plan to get started."
+      "Unusually strong visual freedom for a no-code builder.",
+      "Multiple published sites under one subscription.",
+      "Real-time collaborative editing.",
+      "One custom domain included."
     ],
     "consEn": [
-      "Portfolio-oriented, not a general-purpose site builder.",
-      "Fewer marketing/SEO/e-commerce features than large competitors.",
-      "The free plan enforces Cargo branding and limits."
+      "Less suited to marketing funnels and highly structured content.",
+      "Commerce costs extra.",
+      "Free building remains private until you subscribe."
     ],
     "useCasesEn": [
-      "Publish a polished designer or photographer portfolio.",
-      "Put a creative showcase site online quickly.",
-      "Start free, then move to the single tier with a custom domain."
+      "Turn a designer portfolio into a visual statement.",
+      "Publish several studio, project or client presentation sites.",
+      "Build a photography or art portfolio with custom galleries."
     ],
     "verdictEn": {
       "keepIf": [
-        "You are a creative (designer, artist, photographer) and want an aesthetic portfolio.",
-        "You value visual presentation over heavy marketing/e-commerce features.",
-        "You like simple single-tier pricing."
+        "Your portfolio must express a strong visual identity, not merely list projects.",
+        "You want to publish multiple creative sites under one subscription.",
+        "You enjoy tailoring typography, galleries and CSS."
       ],
       "avoidIf": [
-        "You need a full marketing or e-commerce site (Squarespace, Wix).",
-        "You want many templates, advanced SEO and integrations.",
-        "Your site must handle complex features beyond a portfolio."
+        "Lead generation, advanced SEO or a structured CMS is the priority.",
+        "You need a complete store with a broad integration ecosystem.",
+        "You want a tightly guided editor with few design decisions."
       ],
-      "threshold": "Cargo makes sense for a polished creative portfolio with simple pricing; for a full marketing/e-commerce site, a general-purpose builder fits better."
+      "threshold": "Keep Cargo when the portfolio's form is part of your signature. Replace it when the site mainly needs to convert, publish at scale or run advanced commerce."
     },
     "pricingEn": {
       "free": "Build for free in private, publishing is paid",
       "paid": "Around $14/month annually ($19 monthly) to publish, domain included"
     },
     "force_silence": false,
-    "description": "Cargo est un constructeur de sites conçu pour les designers, artistes, photographes et directeurs artistiques. Ses modèles, ses outils typographiques et ses compositions éditoriales permettent de créer des portfolios qui s'éloignent des sites professionnels standardisés.\n\nL'offre unique coûte 14$ par mois avec une facturation annuelle, ou 19$ au mois. Elle permet de publier plusieurs sites sur des domaines cargo.site, de collaborer en temps réel et de connecter gratuitement un domaine personnalisé. Chaque domaine personnalisé supplémentaire coûte 2$ par mois en annuel. Le module Commerce ajoute 5,50$ par mois en annuel et Cargo ne facture pas de commission par transaction.\n\nCargo convient particulièrement lorsque la forme du portfolio participe à l'identité du créateur. Pour un site marketing très structuré, une boutique avancée ou un contrôle SEO plus poussé, Webflow, Framer ou Shopify peuvent être plus adaptés.",
-    "ogImageUrl": "https://static.cargo.site/assets/C3/screenshots/cargosite.jpg"
+    "description": "Cargo est un créateur de sites pensé pour les designers, artistes, photographes et studios qui refusent le portfolio standardisé. Ses modèles graphiques, ses outils typographiques, ses galeries et son éditeur CSS permettent de construire une présence visuelle très personnelle sans partir de zéro.\n\nL'abonnement coûte 14$ par mois avec une facturation annuelle, ou 19$ au mois. Un même compte peut publier plusieurs sites, collaborer en temps réel et connecter un domaine personnalisé sans supplément. Chaque domaine personnalisé additionnel coûte 2$ par mois en annuel ou 3$ au mois. Le module Commerce coûte 5,50$ par mois en annuel ou 9$ au mois, sans commission Cargo sur les transactions.\n\nChoisissez Cargo si le design du portfolio est lui-même une démonstration de votre pratique. Préférez Framer ou Webflow pour une acquisition structurée, un CMS plus ambitieux et des intégrations marketing, Format pour un portfolio photo plus guidé, ou Squarespace pour réunir vitrine et commerce dans un outil généraliste.",
+    "ogImageUrl": "/tool-media/cargo-site/cargo-overview.jpg",
+    "galleryImages": [
+      "/tool-media/cargo-site/cargo-template.jpg",
+      "/tool-media/cargo-site/cargo-example.jpg"
+    ]
   },
   {
     "id": "carrd",
