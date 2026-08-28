@@ -542,7 +542,16 @@ function markdownToHtml(
       )
       .replace(/^\[\[\/story-gallery\]\]$/gm, "</div>");
   }
-  html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="nofollow noopener noreferrer">$1</a>');
+  // External links open in a new tab and stay nofollow (we can't vouch for
+  // third-party destinations). Internal links (relative, or absolute URLs
+  // pointing at tooltrim.com) are real navigation within the site — nofollow
+  // there only starves our own pages of internal link equity for no reason.
+  html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_match, text: string, href: string) => {
+    const isInternal = href.startsWith("/") || href.startsWith("#") || /^https?:\/\/(www\.)?tooltrim\.com/i.test(href);
+    return isInternal
+      ? `<a href="${href}">${text}</a>`
+      : `<a href="${href}" target="_blank" rel="nofollow noopener noreferrer">${text}</a>`;
+  });
   html = html.replace(/^(\|.+\|)\n(\|[-| :]+\|)\n((?:\|.+\|\n?)+)/gm, (_m, header, _s, body) => {
     const hs = header.split("|").filter((c: string) => c.trim());
     const rows = body.trim().split("\n").map((r: string) => r.split("|").filter((c: string) => c.trim()));
