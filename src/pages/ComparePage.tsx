@@ -2540,7 +2540,11 @@ const ComparePage = () => {
           </div>
           <div className="cp-decision-sidebar-links">
             <Link to={`${prefix}/tool/${toolA.slug || toolA.id}`}>{t("Voir", "View")} {toolA.name}</Link>
+            <Link to={`${prefix}/tool/${toolA.slug || toolA.id}${lang === "en" ? "/pricing" : "/prix"}`}>{t("Prix", "Pricing")} {toolA.name}</Link>
+            <Link to={`${prefix}/tool/${toolA.slug || toolA.id}${lang === "en" ? "/reviews" : "/avis"}`}>{t("Avis", "Reviews")} {toolA.name}</Link>
             <Link to={`${prefix}/tool/${toolB.slug || toolB.id}`}>{t("Voir", "View")} {toolB.name}</Link>
+            <Link to={`${prefix}/tool/${toolB.slug || toolB.id}${lang === "en" ? "/pricing" : "/prix"}`}>{t("Prix", "Pricing")} {toolB.name}</Link>
+            <Link to={`${prefix}/tool/${toolB.slug || toolB.id}${lang === "en" ? "/reviews" : "/avis"}`}>{t("Avis", "Reviews")} {toolB.name}</Link>
           </div>
         </aside>
       </div>
