@@ -9245,27 +9245,39 @@
     scroll-behavior: smooth;
     scrollbar-width: none;
     overscroll-behavior-inline: contain;
+    /* The trailing card is routinely cut mid-content by the scroll edge —
+       fade it out instead of hard-cropping it, so a partial card reads as
+       "more to scroll" rather than a broken layout. */
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 40px), transparent 100%);
+    mask-image: linear-gradient(to right, #000 calc(100% - 40px), transparent 100%);
   }
   .td-compare-grid::-webkit-scrollbar { display: none; }
+  /* Same anatomy as the sitewide media card (.tce-card--media): the image
+     carries its own rounded corners and hairline inset border, nothing
+     wraps the whole card in a second, differently-radiused box. */
   .td-compare-card {
     display: grid;
     align-content: start;
     flex: 0 0 min(236px, 78vw);
     min-width: 0;
-    border: 1px solid var(--color-border);
-    border-radius: var(--tt-surface-radius-info);
-    background: var(--color-surface);
-    overflow: hidden;
     scroll-snap-align: start;
   }
-  .td-compare-card--current {
-    background: var(--color-surface-soft);
-  }
   .td-compare-card-media {
+    position: relative;
     display: block;
     overflow: hidden;
     aspect-ratio: 2 / 1;
+    border-radius: var(--tt-surface-radius-media);
     background: var(--color-surface-soft);
+  }
+  .td-compare-card-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    border: 1px solid rgba(34, 34, 34, 0.08);
+    border-radius: inherit;
+    pointer-events: none;
   }
   .td-compare-card-media img {
     display: block;
@@ -9275,12 +9287,12 @@
     object-position: top center;
     transition: transform 220ms ease-out;
   }
-  a.td-compare-card-media:hover img { transform: scale(1.025); }
+  a.td-compare-card-media:hover img { transform: scale(1.012); }
   .td-compare-card-body {
     display: grid;
     align-content: start;
     min-width: 0;
-    padding: 14px;
+    padding: 10px 2px 0;
   }
   .td-compare-card-head {
     display: grid;
@@ -9354,16 +9366,14 @@
   .td-compare-facts {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 6px;
+    gap: 6px 12px;
     margin: 12px 0 0;
+    padding-top: 10px;
+    border-top: 1px solid var(--color-border-soft);
   }
   .td-compare-facts > div {
     min-width: 0;
-    padding: 8px;
-    border-radius: var(--radius);
-    background: var(--color-surface-soft);
   }
-  .td-compare-card--current .td-compare-facts > div { background: var(--color-surface); }
   .td-compare-facts dt {
     margin-bottom: 4px;
     font-family: var(--font-ui);
