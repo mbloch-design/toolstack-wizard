@@ -27716,7 +27716,7 @@
       "free": "Illimité avec 100 MB de stockage",
       "paid": "7$/mois par utilisateur (Unlimited)"
     },
-    "affiliateLink": "https://clickup.com",
+  "affiliateLink": "https://try.web.clickup.com/setp3llooogk",
     "articles": [],
     "covers": [
       "collaboration",
@@ -161452,15 +161452,36 @@
     "slug": "wave",
     "name": "Wave",
     "category": "finance",
-    "shortDescription": "Comptabilité et facturation gratuites pour freelances et très petites entreprises.",
-    "shortDescriptionEn": "Free accounting and invoicing for freelancers and very small businesses.",
-    "description": "Wave propose la facturation et la comptabilité de base gratuitement, sans limite de clients ni de factures — un cas rare dans la catégorie. Le modèle économique repose sur des services payants optionnels (paiement par carte, paie) plutôt que sur l'accès au logiciel lui-même.\n\nPour un freelance qui démarre avec un budget serré, c'est l'option la moins chère pour sortir des tableurs et avoir une vraie facturation professionnelle — au prix de fonctionnalités plus limitées que des outils payants comme Xero ou FreshBooks à mesure que l'activité grandit.",
-    "longDescription": "Wave propose la facturation et la comptabilité de base gratuitement, sans limite de clients ni de factures — un cas rare dans la catégorie. Le modèle économique repose sur des services payants optionnels (paiement par carte, paie) plutôt que sur l'accès au logiciel lui-même.\n\nPour un freelance qui démarre avec un budget serré, c'est l'option la moins chère pour sortir des tableurs et avoir une vraie facturation professionnelle — au prix de fonctionnalités plus limitées que des outils payants comme Xero ou FreshBooks à mesure que l'activité grandit.",
-    "longDescriptionEn": "Wave offers basic invoicing and accounting for free, with no limit on clients or invoices — a rare case in the category. The business model relies on optional paid services (card payments, payroll) rather than access to the software itself.\n\nFor a freelancer starting out on a tight budget, it's the cheapest way to move beyond spreadsheets and have real professional invoicing — at the cost of more limited features than paid tools like Xero or FreshBooks as the business grows.",
-    "pricing": "Gratuit pour la facturation et la comptabilité de base ; frais sur les paiements par carte encaissés (~2,9% + 0,30$).",
-    "pricingEn": "Free for basic invoicing and accounting; fees on card payments collected (~2.9% + $0.30).",
+    "shortDescription": "Comptabilité, facturation et paiements pour petites entreprises aux États-Unis et au Canada.",
+    "shortDescriptionEn": "Accounting, invoicing, and payments for small businesses in the US and Canada.",
+    "description": "Wave réunit comptabilité en partie double, factures, estimations, paiements et suivi de trésorerie dans une interface pensée pour les petites entreprises. Le plan Starter reste gratuit pour les fonctions de base. Le plan Pro ajoute notamment les connexions bancaires automatiques, la catégorisation, la capture de reçus et les relances de paiement.\n\nLe point décisif est géographique : Wave accepte les nouvelles entreprises situées aux États-Unis et au Canada. Pour une entreprise française ou européenne, ce n'est donc pas un choix recommandé, même si un ancien compte peut encore rester accessible avec des fonctions limitées.",
+    "longDescription": "Wave réunit comptabilité en partie double, factures, estimations, paiements et suivi de trésorerie dans une interface pensée pour les petites entreprises. Le plan Starter reste gratuit pour les fonctions de base. Le plan Pro ajoute notamment les connexions bancaires automatiques, la catégorisation, la capture de reçus et les relances de paiement.\n\nLe point décisif est géographique : Wave accepte les nouvelles entreprises situées aux États-Unis et au Canada. Pour une entreprise française ou européenne, ce n'est donc pas un choix recommandé, même si un ancien compte peut encore rester accessible avec des fonctions limitées.",
+    "longDescriptionEn": "Wave combines double-entry accounting, invoices, estimates, payments, and cash-flow tracking in an interface built for small businesses. The Starter plan remains free for core features. Pro adds automatic bank connections, transaction categorization, receipt capture, and payment reminders.\n\nThe deciding factor is location: Wave accepts new businesses based in the United States and Canada. It is therefore not a recommended choice for a new European business, although some legacy accounts outside those markets may remain accessible with limitations.",
+    "pricing": "Starter : 0 $. Pro : 19 $ US/mois ou 190 $ US/an par entreprise. Au Canada : 25 $ CA/mois ou 250 $ CA/an. Paiements et modules complémentaires facturés séparément.",
+    "pricingEn": "Starter: $0. Pro: $19 USD/month or $190 USD/year per business. In Canada: $25 CAD/month or $250 CAD/year. Payments and add-ons are charged separately.",
     "defaultMonthlyPrice": 0,
-    "pricing_v5": null,
+    "pricing_v5": {
+      "cautions": [
+        "Nouvelles inscriptions réservées aux entreprises situées aux États-Unis et au Canada.",
+        "Le tarif Pro est facturé par entreprise, pas par propriétaire.",
+        "Les paiements en ligne, la paie, les reçus et l'accompagnement peuvent ajouter des frais."
+      ],
+      "cautionsEn": [
+        "New accounts are limited to businesses located in the United States and Canada.",
+        "Pro is billed per business, not per owner.",
+        "Online payments, payroll, receipts, and advisory services can add extra fees."
+      ],
+      "verified_on": "2026-08-28",
+      "source_domain": "waveapps.com",
+      "usage_sensitive": true,
+      "compare_plan_kind": "business",
+      "compare_plan_name": "Pro",
+      "price_reliability": "high",
+      "location_sensitive": true,
+      "official_source_url": "https://www.waveapps.com/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 16.2
+    },
     "affiliateLink": "",
     "websiteUrl": "https://waveapps.com",
     "logo": "",
@@ -161483,62 +161504,67 @@
     "soloRelevance": null,
     "teamRelevance": null,
     "relevantFor": [
-      "Freelanceurs français",
-      "TPE/auto-entrepreneurs",
-      "Petits prestataires"
+      "Freelances aux États-Unis ou au Canada",
+      "Petites entreprises nord-américaines",
+      "Prestataires qui veulent facturation et comptabilité dans un seul outil"
     ],
-    "alternatives": [],
+    "alternatives": [
+      "freshbooks",
+      "quickbooks-online",
+      "xero",
+      "zoho-books"
+    ],
     "verdict": {
       "keepIf": [
-        "Vous êtes freelanceur ou TPE avec budget limité.",
-        "Vous cherchez comptabilité simple sans coût.",
-        "Vous n'avez pas besoin de réconciliation bancaire avancée."
+        "Votre entreprise est située aux États-Unis ou au Canada.",
+        "Vous cherchez une base gratuite pour facturer et tenir vos comptes.",
+        "Vous voulez centraliser factures, paiements et trésorerie."
       ],
       "avoidIf": [
-        "Vous cherchez suite complète (multi-devise, multi-entités).",
-        "Vous avez besoins comptables très avancés.",
-        "Vous préférez support français (Wave : support EN)."
+        "Votre entreprise est basée en France ou ailleurs en Europe.",
+        "Vous avez besoin d'une comptabilité conforme à la fiscalité française.",
+        "Vous avez besoin de fonctions avancées pour plusieurs entités ou devises."
       ],
-      "threshold": "Wave s'impose pour tout freelanceur/TPE français cherchant gratuit ; pour besoin comptable avancé, Pennylane ou QuickBooks Online meilleur."
+      "threshold": "Choisissez Wave pour une petite activité nord-américaine qui veut démarrer gratuitement. En France, privilégiez un outil adapté aux obligations locales."
     },
     "verdictEn": {
       "keepIf": [
-        "You're a freelancer or small business with limited budget.",
-        "You want simple accounting at no cost.",
-        "You don't need advanced bank reconciliation."
+        "Your business is located in the United States or Canada.",
+        "You want a free foundation for invoicing and bookkeeping.",
+        "You want invoices, payments, and cash flow in one product."
       ],
       "avoidIf": [
-        "You seek full suite (multi-currency, multi-entity).",
-        "You have very advanced accounting needs.",
-        "You prefer French-speaking support."
+        "Your business is based outside the United States or Canada.",
+        "You need accounting aligned with French or European tax rules.",
+        "You need advanced multi-entity or multi-currency workflows."
       ],
-      "threshold": "Wave is essential for any freelancer/SME seeking free accounting; for advanced needs, Pennylane or QuickBooks Online better."
+      "threshold": "Choose Wave for a small North American business that wants to start free. Outside the US and Canada, use a product built for your local accounting rules."
     },
     "pros": [
-      "Palier Starter entièrement gratuit, sans limite fonctionnelle.",
-      "Facturation illimitée et sans limite.",
+      "Plan Starter gratuit pour la comptabilité et la facturation de base.",
+      "Factures, estimations et écritures comptables illimitées.",
       "Simple et intuitif pour débutants.",
-      "Pas de frais cachés sur plan gratuit.",
-      "Support multi-devise intégré."
+      "Paiements et factures reliés automatiquement à la comptabilité.",
+      "Application mobile pour facturer en déplacement."
     ],
     "prosEn": [
-      "Fully free Starter tier, with no functional limits.",
-      "Unlimited invoicing without caps.",
+      "Free Starter plan for core accounting and invoicing.",
+      "Unlimited invoices, estimates, and bookkeeping records.",
       "Simple and intuitive for beginners.",
-      "No hidden fees on free plan.",
-      "Built-in multi-currency support."
+      "Payments and invoices flow into the accounting records.",
+      "Mobile app for invoicing on the go."
     ],
     "cons": [
-      "La réconciliation bancaire nécessite un plan payant.",
-      "Support client en anglais uniquement.",
-      "Moins de fonctionnalités avancées vs Xero/QB Online.",
-      "Interface moins polish que concurrents payants."
+      "Nouvelles inscriptions limitées aux États-Unis et au Canada.",
+      "Connexions bancaires automatiques réservées au plan Pro.",
+      "Frais additionnels pour les paiements, la paie et certains modules.",
+      "Moins adapté aux structures complexes que Xero ou QuickBooks Online."
     ],
     "consEn": [
-      "Bank reconciliation requires a paid plan.",
-      "Customer support English-only.",
-      "Fewer advanced features vs Xero/QB Online.",
-      "Interface less polished than paid competitors."
+      "New accounts are limited to the United States and Canada.",
+      "Automatic bank connections require Pro.",
+      "Payments, payroll, and some add-ons carry extra fees.",
+      "Less suited to complex organizations than Xero or QuickBooks Online."
     ],
     "useCases": [
       "Gérer comptabilité simple d'un freelance.",
@@ -161564,14 +161590,19 @@
     "betterAlternative": null,
     "migrationGuide": null,
     "downgradePlan": null,
-    "prescription_quality": "silence",
+    "prescription_quality": "prudente",
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
     "force_silence": false,
-    "ogImageUrl": "https://cdn.prod.website-files.com/62446230dcb514b828a6e237/669e96c8699f553fb96c51a0_409b9117b4b444fc3b91dbb202688597_Wave-1200x630-Banner%402x-100.jpg"
+    "ogImageUrl": "https://cdn.prod.website-files.com/62446230dcb514b828a6e237/6a4ff288b8823074cb3b7dfe_8ef5fd2061b1ab372327974001853343_dashboard-poster.avif",
+    "galleryImages": [
+      "https://cdn.prod.website-files.com/62446230dcb514b828a6e237/69f8dc85f57d5383e09a07c0_transactions.avif",
+      "https://cdn.prod.website-files.com/62446230dcb514b828a6e237/678ff2c9d1e5a8c2a189e261_wave2-0-invoices_op-poster-00001.jpg",
+      "https://cdn.prod.website-files.com/62446230dcb514b828a6e237/67ee9bc962b47176058b8bb1_hero.avif"
+    ]
   },
   {
     "id": "webflow",
