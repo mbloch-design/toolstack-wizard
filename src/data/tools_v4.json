@@ -4232,7 +4232,7 @@
     "slug": "adobe-premiere-pro",
     "category": "design-tools",
     "shortDescription": "Le logiciel de montage vidéo professionnel de référence.",
-    "longDescription": "Premiere Pro, c'est le logiciel de montage vidéo le plus répandu dans le monde pro. Montage multicam, étalonnage, audio, effets, export dans tous les formats : c'est l'outil complet qui équipe la majorité des monteurs, des agences et des chaînes YouTube sérieuses. Son gros avantage, c'est l'intégration avec After Effects et le reste de Creative Cloud, et le fait que toute la filière échange en fichiers Premiere.\n\nLe modèle Adobe s'applique : pas de gratuit, juste un essai, puis l'abonnement à environ 26€/mois pour Premiere seul, ou l'offre Creative Cloud complète. Pour un monteur qui en vit, c'est un coût de travail assumé.\n\nLa vraie alternative, c'est DaVinci Resolve : gratuit, redoutable en étalonnage, et largement suffisant pour beaucoup de productions. Pour du contenu court et social, CapCut est plus rapide. Premiere garde l'avantage sur les flux pro complexes, la collaboration et l'écosystème Adobe, mais ce n'est plus le seul choix sérieux.",
+    "longDescription": "Adobe Premiere est un logiciel de montage professionnel pour les productions longues, le multicam, l'audio, l'étalonnage et les workflows collaboratifs. Son avantage principal reste l'intégration avec After Effects, Frame.io, Adobe Express et le reste de Creative Cloud.\n\nLa version individuelle coûte 22,99$ par mois aux États-Unis avec un engagement annuel facturé mensuellement. Elle inclut Premiere sur ordinateur et mobile, 100 Go de stockage, Frame.io, Adobe Express Premium et 25 crédits génératifs mensuels. Il n'existe pas de licence perpétuelle, seulement un essai gratuit de sept jours.\n\nLa version 26.3 de juin 2026 ajoute notamment la création de séquences depuis Firefly Boards, les sous-titres mot par mot et les Content Credentials automatiques pour certains contenus génératifs. DaVinci Resolve reste l'alternative la plus convaincante pour l'étalonnage et un budget réduit, tandis que CapCut est souvent plus rapide pour les formats sociaux simples.",
     "affiliateLink": "https://adobe.com/products/premiere",
     "websiteUrl": "https://adobe.com/products/premiere",
     "defaultMonthlyPrice": 26.21,
@@ -4343,7 +4343,7 @@
         "Aucune version gratuite, essai uniquement",
         "Environ 26€/mois pour Premiere Pro seul, plus dans l'offre Creative Cloud complète"
       ],
-      "verified_on": "2026-06-15",
+      "verified_on": "2026-08-28",
       "billing_model": "seat",
       "source_domain": "adobe.com",
       "billing_options": [
@@ -4378,7 +4378,7 @@
       "compare_plan_name": "Premiere Pro single app",
       "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://www.adobe.com/fr/creativecloud/plans.html",
+      "official_source_url": "https://www.adobe.com/products/premiere/plans.html",
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 26.21
     },
@@ -4391,7 +4391,7 @@
       "requires_context_questions": true
     },
     "shortDescriptionEn": "The reference professional video editing software.",
-    "longDescriptionEn": "Premiere Pro is the most widely used video editing software in the professional world. Multicam editing, color grading, audio, effects, export in every format: it's the complete tool used by most editors, agencies and serious YouTube channels. Its big advantage is integration with After Effects and the rest of Creative Cloud, and the fact that the whole industry exchanges Premiere files.\n\nThe Adobe model applies: no free version, just a trial, then the subscription at around €26/month for Premiere alone, or the full Creative Cloud plan. For an editor who makes a living from it, it's an accepted work cost.\n\nThe real alternative is DaVinci Resolve: free, formidable at color grading, and more than enough for many productions. For short, social content, CapCut is faster. Premiere keeps the edge on complex pro workflows, collaboration and the Adobe ecosystem, but it's no longer the only serious choice.",
+    "longDescriptionEn": "Adobe Premiere is a professional video editor for long-form production, multicam work, audio, color and collaborative workflows. Its main advantage remains the integration with After Effects, Frame.io, Adobe Express and the rest of Creative Cloud.\n\nThe individual plan costs $22.99 per month in the US with an annual commitment billed monthly. It includes Premiere on desktop and mobile, 100GB of storage, Frame.io, Adobe Express Premium and 25 monthly generative credits. There is no perpetual license, only a seven-day free trial.\n\nVersion 26.3 from June 2026 adds sequence creation from Firefly Boards, word-by-word captions and automatic Content Credentials for qualifying generative content. DaVinci Resolve remains the strongest alternative for color work and a lower budget, while CapCut is often faster for simple social formats.",
     "prosEn": [
       "Complete professional editing (timeline, multi-format, high resolution).",
       "Advanced colour grading (Lumetri) and pro audio.",
@@ -4426,7 +4426,7 @@
       "paid": "Around €26/month (Premiere Pro alone), or via the full Creative Cloud plan"
     },
     "force_silence": false,
-    "description": "Premiere Pro, c'est le logiciel de montage vidéo le plus répandu dans le monde pro. Montage multicam, étalonnage, audio, effets, export dans tous les formats : c'est l'outil complet qui équipe la majorité des monteurs, des agences et des chaînes YouTube sérieuses. Son gros avantage, c'est l'intégration avec After Effects et le reste de Creative Cloud, et le fait que toute la filière échange en fichiers Premiere.\n\nLe modèle Adobe s'applique : pas de gratuit, juste un essai, puis l'abonnement à environ 26€/mois pour Premiere seul, ou l'offre Creative Cloud complète. Pour un monteur qui en vit, c'est un coût de travail assumé.\n\nLa vraie alternative, c'est DaVinci Resolve : gratuit, redoutable en étalonnage, et largement suffisant pour beaucoup de productions. Pour du contenu court et social, CapCut est plus rapide. Premiere garde l'avantage sur les flux pro complexes, la collaboration et l'écosystème Adobe, mais ce n'est plus le seul choix sérieux.",
+    "description": "Adobe Premiere est un logiciel de montage professionnel pour les productions longues, le multicam, l'audio, l'étalonnage et les workflows collaboratifs. Son avantage principal reste l'intégration avec After Effects, Frame.io, Adobe Express et le reste de Creative Cloud.\n\nLa version individuelle coûte 22,99$ par mois aux États-Unis avec un engagement annuel facturé mensuellement. Elle inclut Premiere sur ordinateur et mobile, 100 Go de stockage, Frame.io, Adobe Express Premium et 25 crédits génératifs mensuels. Il n'existe pas de licence perpétuelle, seulement un essai gratuit de sept jours.\n\nLa version 26.3 de juin 2026 ajoute notamment la création de séquences depuis Firefly Boards, les sous-titres mot par mot et les Content Credentials automatiques pour certains contenus génératifs. DaVinci Resolve reste l'alternative la plus convaincante pour l'étalonnage et un budget réduit, tandis que CapCut est souvent plus rapide pour les formats sociaux simples.",
     "ogImageUrl": "https://www.adobe.com/products/media_14a141cf8900a74105b7122f28472dce9fd8cf872.jpg?width=1200&#x26;format=pjpg&#x26;optimize=medium"
   },
   {
@@ -8324,13 +8324,13 @@
     "slug": "ae-animation-composer",
     "category": "design-tools",
     "shortDescription": "Bibliothèque de presets d'animation et de transitions pour After Effects.",
-    "longDescription": "Animation Composer, c'est un plugin gratuit pour After Effects édité par Mister Horse, qui ajoute une énorme bibliothèque de presets d'animation, de transitions et de textes animés. Tu glisses un effet sur ta composition, et tu obtiens une animation propre en quelques secondes, là où il faudrait sinon poser les keyframes à la main. Pour un monteur ou un motion designer qui répète souvent les mêmes gestes, c'est un accélérateur.\n\nLe modèle est malin : le plugin et une base de presets sont gratuits, et tu achètes ensuite des packs Pro thématiques (transitions, formes, sons) en achat unique. Pas d'abonnement obligatoire.\n\nÀ qui ça s'adresse : à tous ceux qui font du motion dans After Effects et veulent gagner du temps. La seule vraie limite, c'est le chevauchement avec Motion Bro, qui fait un travail comparable. Comme la base est gratuite, ça reste un quasi-réflexe à installer.",
+    "longDescription": "Animation Composer est un plugin Mister Horse pour After Effects qui regroupe presets d'animation, transitions, éléments sonores et quatre outils destinés à accélérer les tâches répétitives. Le plan gratuit inclut le plugin, plus de 1 000 ressources et les quatre outils.\n\nL'offre payante fonctionne désormais par abonnement. Elle coûte 16,50$ par mois avec une facturation annuelle de 198$, ou 19,90$ au mois, et donne accès à plus de 6 000 ressources. Les anciennes licences perpétuelles ne décrivent donc plus l'offre proposée aux nouveaux utilisateurs.\n\nLe plan gratuit suffit pour tester le workflow et couvrir des besoins réguliers simples. L'abonnement devient pertinent lorsque la profondeur de la bibliothèque réduit réellement le temps passé à construire transitions, textes et mouvements à la main. Motion Bro reste le concurrent le plus direct.",
     "affiliateLink": "https://misterhorse.com/animation-composer",
     "websiteUrl": "https://misterhorse.com/animation-composer",
     "defaultMonthlyPrice": 0,
     "pricing": {
       "free": "Version de base gratuite",
-      "paid": "49$ achat unique (Pro)"
+      "paid": "16,50$/mois en annuel (198$/an) ou 19,90$/mois"
     },
     "logo": "",
     "soloRelevance": "medium",
@@ -8421,17 +8421,17 @@
     "substitution_cluster_v2": "plugin-after-effects",
     "pricing_v5": {
       "cautions": [
-        "Version de base gratuite, packs Pro en achat unique"
+        "Plan gratuit avec plus de 1 000 ressources ; abonnement pour la bibliothèque complète"
       ],
-      "verified_on": "2026-06-15",
+      "verified_on": "2026-08-28",
       "source_domain": "misterhorse.com",
       "usage_sensitive": false,
       "compare_plan_kind": "individual",
       "compare_plan_name": "Free",
-      "price_reliability": "medium",
+      "price_reliability": "high",
       "location_sensitive": false,
       "official_source_url": "https://www.misterhorse.com/animation-composer",
-      "verification_status": "official_contextual",
+      "verification_status": "official_explicit",
       "compare_price_monthly_eur": 0
     },
     "decision_policy_v3": {
@@ -8443,7 +8443,7 @@
       "requires_context_questions": true
     },
     "shortDescriptionEn": "Library of animation presets and transitions for After Effects.",
-    "longDescriptionEn": "Animation Composer is a free After Effects plugin by Mister Horse that adds a huge library of animation presets, transitions and animated text. You drag an effect onto your composition and get a clean animation in seconds, where you'd otherwise set keyframes by hand. For an editor or motion designer who often repeats the same moves, it's an accelerator.\n\nThe model is clever: the plugin and a base of presets are free, and you then buy themed Pro packs (transitions, shapes, sounds) as one-time purchases. No mandatory subscription.\n\nWho it's for: anyone doing motion in After Effects who wants to save time. The only real limit is the overlap with Motion Bro, which does comparable work. Since the base is free, it stays a near-reflex to install.",
+    "longDescriptionEn": "Animation Composer is a Mister Horse plugin for After Effects that combines animation presets, transitions, sound elements and four tools designed to speed up repetitive work. The free plan includes the plugin, more than 1,000 assets and all four tools.\n\nThe paid offer is now a subscription. It costs $16.50 per month when billed annually at $198, or $19.90 month to month, and includes more than 6,000 assets. Older perpetual licenses therefore no longer describe the offer available to new users.\n\nThe free plan is enough to test the workflow and cover straightforward recurring needs. The subscription becomes worthwhile when the larger library meaningfully reduces the time spent building transitions, text and motion by hand. Motion Bro remains the closest competitor.",
     "prosEn": [
       "Native integration: After Effects + Premiere Pro in one subscription.",
       "Limited free version to get started.",
@@ -8476,10 +8476,10 @@
     },
     "pricingEn": {
       "free": "Free base version",
-      "paid": "Pro packs as one-time purchases (from ~$49)"
+      "paid": "$16.50/month annually ($198/year) or $19.90 month to month"
     },
     "force_silence": false,
-    "description": "Animation Composer, c'est un plugin gratuit pour After Effects édité par Mister Horse, qui ajoute une énorme bibliothèque de presets d'animation, de transitions et de textes animés. Tu glisses un effet sur ta composition, et tu obtiens une animation propre en quelques secondes, là où il faudrait sinon poser les keyframes à la main. Pour un monteur ou un motion designer qui répète souvent les mêmes gestes, c'est un accélérateur.\n\nLe modèle est malin : le plugin et une base de presets sont gratuits, et tu achètes ensuite des packs Pro thématiques (transitions, formes, sons) en achat unique. Pas d'abonnement obligatoire.\n\nÀ qui ça s'adresse : à tous ceux qui font du motion dans After Effects et veulent gagner du temps. La seule vraie limite, c'est le chevauchement avec Motion Bro, qui fait un travail comparable. Comme la base est gratuite, ça reste un quasi-réflexe à installer.",
+    "description": "Animation Composer est un plugin Mister Horse pour After Effects qui regroupe presets d'animation, transitions, éléments sonores et quatre outils destinés à accélérer les tâches répétitives. Le plan gratuit inclut le plugin, plus de 1 000 ressources et les quatre outils.\n\nL'offre payante fonctionne désormais par abonnement. Elle coûte 16,50$ par mois avec une facturation annuelle de 198$, ou 19,90$ au mois, et donne accès à plus de 6 000 ressources. Les anciennes licences perpétuelles ne décrivent donc plus l'offre proposée aux nouveaux utilisateurs.\n\nLe plan gratuit suffit pour tester le workflow et couvrir des besoins réguliers simples. L'abonnement devient pertinent lorsque la profondeur de la bibliothèque réduit réellement le temps passé à construire transitions, textes et mouvements à la main. Motion Bro reste le concurrent le plus direct.",
     "ogImageUrl": "https://d23mmnx9ld45h.cloudfront.net/misterhorse.com_web_v3/Products/Animation%20Composer/Main%20Page%20v2/pp-ac-link-preview-image.jpg"
   },
   {
@@ -24230,9 +24230,9 @@
     "slug": "cargo-site",
     "category": "nocode-web",
     "shortDescription": "Créateur de portfolios créatifs au design expérimental, pour artistes et designers.",
-    "longDescription": "Cargo, c'est un constructeur de sites pensé pour une chose : les portfolios créatifs qui sortent du moule. Là où Squarespace ou Webflow visent le site business propre, Cargo assume le côté galerie d'art numérique, avec une typographie soignée, des mises en page éditoriales et des templates qui ont une vraie identité. C'est l'outil de prédilection d'une partie de la communauté design, photo et direction artistique.\n\nLe modèle est clair : tu construis ton site gratuitement, mais en privé. Pour le publier et le rendre visible, il faut passer payant, autour de 14$/mois en facturation annuelle (19$ au mois), nom de domaine personnalisé inclus. Une boutique légère est possible via un module Commerce en supplément.\n\nÀ qui ça s'adresse vraiment : si ton portfolio EST ton produit et doit impressionner au premier coup d'œil, Cargo est taillé pour ça. Si tu veux un site business classique, optimisé SEO et performance, ou une vraie boutique, tu seras mieux servi ailleurs (Squarespace, Webflow). Cargo, c'est l'esthétique d'abord.",
+    "longDescription": "Cargo est un constructeur de sites conçu pour les designers, artistes, photographes et directeurs artistiques. Ses modèles, ses outils typographiques et ses compositions éditoriales permettent de créer des portfolios qui s'éloignent des sites professionnels standardisés.\n\nL'offre unique coûte 14$ par mois avec une facturation annuelle, ou 19$ au mois. Elle permet de publier plusieurs sites sur des domaines cargo.site, de collaborer en temps réel et de connecter gratuitement un domaine personnalisé. Chaque domaine personnalisé supplémentaire coûte 2$ par mois en annuel. Le module Commerce ajoute 5,50$ par mois en annuel et Cargo ne facture pas de commission par transaction.\n\nCargo convient particulièrement lorsque la forme du portfolio participe à l'identité du créateur. Pour un site marketing très structuré, une boutique avancée ou un contrôle SEO plus poussé, Webflow, Framer ou Shopify peuvent être plus adaptés.",
     "affiliateLink": "",
-    "websiteUrl": "",
+    "websiteUrl": "https://cargo.site/",
     "defaultMonthlyPrice": 14,
     "pricing": {
       "free": "Construction gratuite en privé, publication payante",
@@ -24321,15 +24321,22 @@
         "Environ 14$/mois en facturation annuelle (19$ au mois), domaine inclus",
         "Module Commerce en supplément pour vendre"
       ],
-      "verified_on": "2026-06-15",
+      "verified_on": "2026-08-28",
       "source_domain": "cargo.site",
+      "billing_model": "subscription",
+      "currency": "USD",
+      "price_original": 14,
+      "compare_plan_kind": "individual",
       "compare_plan_name": "Publication",
+      "price_reliability": "high",
+      "location_sensitive": false,
       "official_source_url": "https://cargo.site/information",
+      "verification_status": "official_explicit",
       "compare_price_monthly_eur": 14
     },
     "decision_policy_v3": null,
     "shortDescriptionEn": "Builder for creative, experimental portfolios, made for artists and designers.",
-    "longDescriptionEn": "Cargo is a site builder made for one thing: creative portfolios that break the mold. Where Squarespace or Webflow aim for the clean business site, Cargo leans into the digital art gallery feel, with careful typography, editorial layouts and templates that have a real identity. It's the go-to tool for part of the design, photo and art direction community.\n\nThe model is clear: you build your site for free, but privately. To publish it and make it visible, you go paid, around $14/month billed annually ($19 monthly), custom domain included. A light shop is possible via an add-on Commerce module.\n\nWho it's really for: if your portfolio IS your product and has to impress at first glance, Cargo is built for that. If you want a classic business site, SEO and performance optimized, or a real store, you'll be better served elsewhere (Squarespace, Webflow). Cargo is aesthetics first.",
+    "longDescriptionEn": "Cargo is a site builder created for designers, artists, photographers and art directors. Its templates, typography tools and editorial layouts help portfolios move beyond standardized business websites.\n\nThe single plan costs $14 per month when billed annually, or $19 month to month. It lets you publish multiple sites on cargo.site domains, collaborate in real time and connect one custom domain at no extra cost. Each additional custom domain costs $2 per month on annual billing. The Commerce add-on costs another $5.50 per month annually, and Cargo charges no transaction fee.\n\nCargo is especially compelling when the portfolio's visual form is part of the creator's identity. Webflow, Framer or Shopify may fit better when you need a highly structured marketing site, advanced commerce or deeper SEO control.",
     "prosEn": [
       "Distinctive, aesthetic portfolios.",
       "Simple single-tier pricing.",
@@ -24364,7 +24371,8 @@
       "paid": "Around $14/month annually ($19 monthly) to publish, domain included"
     },
     "force_silence": false,
-    "description": "Cargo, c'est un constructeur de sites pensé pour une chose : les portfolios créatifs qui sortent du moule. Là où Squarespace ou Webflow visent le site business propre, Cargo assume le côté galerie d'art numérique, avec une typographie soignée, des mises en page éditoriales et des templates qui ont une vraie identité. C'est l'outil de prédilection d'une partie de la communauté design, photo et direction artistique.\n\nLe modèle est clair : tu construis ton site gratuitement, mais en privé. Pour le publier et le rendre visible, il faut passer payant, autour de 14$/mois en facturation annuelle (19$ au mois), nom de domaine personnalisé inclus. Une boutique légère est possible via un module Commerce en supplément.\n\nÀ qui ça s'adresse vraiment : si ton portfolio EST ton produit et doit impressionner au premier coup d'œil, Cargo est taillé pour ça. Si tu veux un site business classique, optimisé SEO et performance, ou une vraie boutique, tu seras mieux servi ailleurs (Squarespace, Webflow). Cargo, c'est l'esthétique d'abord."
+    "description": "Cargo est un constructeur de sites conçu pour les designers, artistes, photographes et directeurs artistiques. Ses modèles, ses outils typographiques et ses compositions éditoriales permettent de créer des portfolios qui s'éloignent des sites professionnels standardisés.\n\nL'offre unique coûte 14$ par mois avec une facturation annuelle, ou 19$ au mois. Elle permet de publier plusieurs sites sur des domaines cargo.site, de collaborer en temps réel et de connecter gratuitement un domaine personnalisé. Chaque domaine personnalisé supplémentaire coûte 2$ par mois en annuel. Le module Commerce ajoute 5,50$ par mois en annuel et Cargo ne facture pas de commission par transaction.\n\nCargo convient particulièrement lorsque la forme du portfolio participe à l'identité du créateur. Pour un site marketing très structuré, une boutique avancée ou un contrôle SEO plus poussé, Webflow, Framer ou Shopify peuvent être plus adaptés.",
+    "ogImageUrl": "https://static.cargo.site/assets/C3/screenshots/cargosite.jpg"
   },
   {
     "id": "carrd",
@@ -31566,19 +31574,19 @@
     "shortDescriptionEn": "Chaos's photorealistic render engine, the archviz favorite for its simplicity.",
     "pricing": {
       "free": "Essai gratuit",
-      "paid": "Solo 394,80$/an (~33$/mois). Abonnement Chaos."
+      "paid": "Solo 414$/an (34,50$/mois) ; Premium 562,80$/an (46,90$/mois)"
     },
     "pricingEn": {
       "free": "Free trial",
-      "paid": "Solo $394.80/year (~$33/month). Chaos subscription."
+      "paid": "Solo $414/year ($34.50/month); Premium $562.80/year ($46.90/month)"
     },
-    "defaultMonthlyPrice": 33,
+    "defaultMonthlyPrice": 29.63,
     "affiliateLink": "",
     "websiteUrl": "https://www.chaos.com/corona",
     "logo": "",
     "category": "creation",
-    "longDescription": "Corona Renderer, c'est le moteur de rendu photoréaliste édité par Chaos (le même que V-Ray), et son argument tient en un mot : la simplicité. Là où V-Ray est puissant mais riche en réglages, Corona vise des résultats quasi photoréalistes avec un minimum de paramètres. C'est ce qui en a fait le chouchou des archviz : on obtient vite une belle image sans se noyer dans les options.\n\nC'est un moteur principalement CPU, avec un rendu interactif très agréable. Il s'intègre surtout à 3ds Max et Cinema 4D. Côté prix, c'est l'abonnement Chaos : Corona Solo à 394,80$/an (environ 33$/mois), soit un peu moins cher que V-Ray Solo. La licence perpétuelle a disparu.\n\nLe point amusant, c'est que V-Ray et Corona viennent du même éditeur : Corona, c'est la facilité ; V-Ray, c'est la puissance et la compatibilité multi-logiciels. Pour de l'archviz pur où tu veux aller vite, Corona est souvent le meilleur choix. Si tu as besoin de polyvalence multi-logiciels ou de VFX, V-Ray reprend l'avantage. Et pour un budget nul, Cycles dans Blender est devenu une vraie option.",
-    "longDescriptionEn": "Corona Renderer is the photorealistic render engine made by Chaos (the same company as V-Ray), and its pitch fits in one word: simplicity. Where V-Ray is powerful but settings-heavy, Corona aims for near-photoreal results with minimal parameters. That's what made it the archviz favorite: you get a beautiful image fast without drowning in options.\n\nIt's mainly a CPU engine, with a very pleasant interactive render. It integrates mostly with 3ds Max and Cinema 4D. On price, it's the Chaos subscription: Corona Solo at $394.80/year (around $33/month), a bit cheaper than V-Ray Solo. The perpetual license is gone.\n\nThe funny part is that V-Ray and Corona come from the same maker: Corona is ease, V-Ray is power and multi-app compatibility. For pure archviz where you want to move fast, Corona is often the better pick. If you need multi-app versatility or VFX, V-Ray regains the edge. And for a zero budget, Cycles in Blender has become a real option.",
+    "longDescription": "Chaos Corona est un moteur de rendu photoréaliste conçu pour 3ds Max et Cinema 4D. Il privilégie une prise en main simple, un rendu interactif rapide à régler et des outils adaptés à la visualisation architecturale.\n\nCorona Solo coûte désormais 34,50$ par mois avec une facturation annuelle de 414$. Il inclut le moteur Corona, jusqu'à 15 000 ressources et matériaux, Veras AI, la collaboration cloud et 100 crédits Chaos par mois. Corona Premium coûte 46,90$ par mois en annuel et ajoute davantage de ressources, une licence flottante et cinq fois plus de crédits.\n\nCorona est généralement plus direct que V-Ray pour l'archviz dans ses deux applications hôtes. V-Ray reste plus polyvalent entre logiciels et pour les pipelines VFX. Cycles demeure une alternative gratuite crédible pour les utilisateurs de Blender.",
+    "longDescriptionEn": "Chaos Corona is a photorealistic renderer for 3ds Max and Cinema 4D. It prioritizes approachable controls, interactive rendering and workflows suited to architectural visualization.\n\nCorona Solo now costs $34.50 per month when billed annually at $414. It includes the Corona engine, up to 15,000 assets and materials, Veras AI, cloud collaboration and 100 monthly Chaos credits. Corona Premium costs $46.90 per month annually and adds more assets, a floating license and five times as many credits.\n\nCorona is generally more direct than V-Ray for archviz inside its two host applications. V-Ray remains more versatile across software and VFX pipelines. Cycles is still a credible free alternative for Blender users.",
     "verdict": {
       "keepIf": [
         "Vous faites de la visualisation architecturale.",
@@ -31692,9 +31700,9 @@
     "prescription_context_questions": [],
     "pricing_v5": {
       "cautions": [
-        "Corona Solo 394,80$/an (~33$/mois) ; plus de licence perpétuelle"
+        "Corona Solo 414$/an (34,50$/mois) ; prix hors taxes"
       ],
-      "verified_on": "2026-06-17",
+      "verified_on": "2026-08-28",
       "source_domain": "chaos.com",
       "usage_sensitive": false,
       "compare_plan_kind": "subscription",
@@ -31703,11 +31711,11 @@
       "location_sensitive": false,
       "official_source_url": "https://www.chaos.com/corona/buy-online",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 33
+      "compare_price_monthly_eur": 29.63
     },
     "substitution_cluster_v2": "render-engine",
     "ogImageUrl": "https://static.chaos.com/images/assets/000/025/421/articles_2_columns/corona-product-og-1200x630.png?1781319481",
-    "description": "Corona Renderer, c'est le moteur de rendu photoréaliste édité par Chaos (le même que V-Ray), et son argument tient en un mot : la simplicité. Là où V-Ray est puissant mais riche en réglages, Corona vise des résultats quasi photoréalistes avec un minimum de paramètres. C'est ce qui en a fait le chouchou des archviz : on obtient vite une belle image sans se noyer dans les options.\n\nC'est un moteur principalement CPU, avec un rendu interactif très agréable. Il s'intègre surtout à 3ds Max et Cinema 4D. Côté prix, c'est l'abonnement Chaos : Corona Solo à 394,80$/an (environ 33$/mois), soit un peu moins cher que V-Ray Solo. La licence perpétuelle a disparu.\n\nLe point amusant, c'est que V-Ray et Corona viennent du même éditeur : Corona, c'est la facilité ; V-Ray, c'est la puissance et la compatibilité multi-logiciels. Pour de l'archviz pur où tu veux aller vite, Corona est souvent le meilleur choix. Si tu as besoin de polyvalence multi-logiciels ou de VFX, V-Ray reprend l'avantage. Et pour un budget nul, Cycles dans Blender est devenu une vraie option.",
+    "description": "Chaos Corona est un moteur de rendu photoréaliste conçu pour 3ds Max et Cinema 4D. Il privilégie une prise en main simple, un rendu interactif rapide à régler et des outils adaptés à la visualisation architecturale.\n\nCorona Solo coûte désormais 34,50$ par mois avec une facturation annuelle de 414$. Il inclut le moteur Corona, jusqu'à 15 000 ressources et matériaux, Veras AI, la collaboration cloud et 100 crédits Chaos par mois. Corona Premium coûte 46,90$ par mois en annuel et ajoute davantage de ressources, une licence flottante et cinq fois plus de crédits.\n\nCorona est généralement plus direct que V-Ray pour l'archviz dans ses deux applications hôtes. V-Ray reste plus polyvalent entre logiciels et pour les pipelines VFX. Cycles demeure une alternative gratuite crédible pour les utilisateurs de Blender.",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -83148,18 +83156,18 @@
     "shortDescriptionEn": "Red Giant's color grading and cinematic look suite for After Effects and Premiere.",
     "pricing": {
       "free": "",
-      "paid": "Via Red Giant Complete (~50$/mois, 599$/an) ou Maxon One. Plus vendu à l'unité."
+      "paid": "Inclus dans les abonnements Red Giant et Maxon One ; tarif régional à confirmer"
     },
     "pricingEn": {
       "free": "",
-      "paid": "Via Red Giant Complete (~$50/month, $599/year) or Maxon One. No longer sold standalone."
+      "paid": "Included with Red Giant and Maxon One subscriptions; confirm regional pricing"
     },
-    "defaultMonthlyPrice": 50,
+    "defaultMonthlyPrice": 0,
     "affiliateLink": "https://www.maxon.net/red-giant/magic-bullet",
     "websiteUrl": "https://www.maxon.net/red-giant/magic-bullet",
     "logo": "",
-    "longDescription": "Magic Bullet, c'est la suite d'étalonnage et de look cinéma de Red Giant, pensée pour rester dans le flux Adobe. Son produit star, Looks, permet d'appliquer des étalonnages cinéma complets en quelques clics. La suite ajoute Colorista (correction colorimétrique fine), Denoiser (débruitage) et Cosmo (lissage de peau). Pour un monteur qui veut un rendu pro sans plonger dans un étalonnage manuel, c'est efficace et rapide.\n\nComme le reste de Red Giant, Magic Bullet n'est plus vendu seul : il passe par l'abonnement Red Giant Complete (~50$/mois) ou Maxon One. Le vrai arbitrage, c'est DaVinci Resolve : gratuit, c'est aujourd'hui l'outil d'étalonnage le plus complet du marché. Magic Bullet garde du sens surtout pour rester dans After Effects/Premiere sans changer de logiciel. Si tu acceptes d'étalonner dans Resolve, tu peux t'en passer entièrement.",
-    "longDescriptionEn": "Magic Bullet is Red Giant's color grading and cinematic look suite, designed to stay in the Adobe flow. Its star product, Looks, lets you apply full cinema grades in a few clicks. The suite adds Colorista (fine color correction), Denoiser (noise reduction) and Cosmo (skin smoothing). For an editor who wants a pro look without diving into manual grading, it's fast and effective.\n\nLike the rest of Red Giant, Magic Bullet is no longer sold alone: it comes via the Red Giant Complete subscription (~$50/month) or Maxon One. The real trade-off is DaVinci Resolve: free, it's now the most complete grading tool on the market. Magic Bullet mostly makes sense to stay in After Effects/Premiere without switching apps. If you're fine grading in Resolve, you can skip it entirely.",
+    "longDescription": "Magic Bullet regroupe les outils couleur de Red Giant pour corriger, styliser et finaliser une image directement dans le logiciel de montage. Looks propose plus de 300 presets personnalisables, Colorista gère la correction colorimétrique, Film l'émulation de pellicule, Cosmo les visages et Denoiser le bruit. Looks prend également en charge ACES et OpenColorIO.\n\nLes outils fonctionnent notamment dans After Effects, Premiere Pro, DaVinci Resolve et Final Cut Pro, tandis que Looks couvre aussi Unreal Engine, Autograph et Cinema 4D. Ils sont inclus dans l'abonnement Red Giant et dans Maxon One ; le prix exact dépend du pays et doit être confirmé sur la boutique Maxon.\n\nMagic Bullet est surtout utile pour conserver l'étalonnage et la finition dans la timeline existante. DaVinci Resolve reste plus rationnel si vous acceptez un workflow couleur séparé et recherchez une solution gratuite très complète.",
+    "longDescriptionEn": "Magic Bullet brings Red Giant's color tools together for correcting, styling and finishing footage inside the editing application. Looks includes more than 300 customizable presets, Colorista handles color correction, Film provides film emulation, Cosmo treats faces and Denoiser reduces noise. Looks also supports ACES and OpenColorIO.\n\nThe tools run in applications including After Effects, Premiere Pro, DaVinci Resolve and Final Cut Pro, while Looks also supports Unreal Engine, Autograph and Cinema 4D. They are included with Red Giant and Maxon One subscriptions; the exact price depends on region and should be confirmed in the Maxon store.\n\nMagic Bullet is most useful when you want grading and finishing to remain inside the existing timeline. DaVinci Resolve is often more economical when a separate color workflow is acceptable and you want a capable free option.",
     "verdict": {
       "keepIf": [
         "Vous étalonnez régulièrement des vidéos ou des projects coloristes.",
@@ -83273,21 +83281,21 @@
     "prescription_context_questions": [],
     "pricing_v5": {
       "cautions": [
-        "Plus vendu à l'unité : uniquement via Red Giant Complete (~50$/mois) ou Maxon One"
+        "Inclus dans Red Giant et Maxon One ; le tarif varie selon le pays"
       ],
-      "verified_on": "2026-06-17",
+      "verified_on": "2026-08-28",
       "source_domain": "maxon.net",
       "usage_sensitive": false,
       "compare_plan_kind": "subscription",
       "compare_plan_name": "Red Giant Complete",
-      "price_reliability": "high",
+      "price_reliability": "official_context_required",
       "location_sensitive": false,
       "official_source_url": "https://www.maxon.net/en/buy",
-      "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 50
+      "verification_status": "official_contextual",
+      "compare_price_monthly_eur": 0
     },
     "substitution_cluster_v2": "plugin-after-effects",
-    "description": "Magic Bullet, c'est la suite d'étalonnage et de look cinéma de Red Giant, pensée pour rester dans le flux Adobe. Son produit star, Looks, permet d'appliquer des étalonnages cinéma complets en quelques clics. La suite ajoute Colorista (correction colorimétrique fine), Denoiser (débruitage) et Cosmo (lissage de peau). Pour un monteur qui veut un rendu pro sans plonger dans un étalonnage manuel, c'est efficace et rapide.\n\nComme le reste de Red Giant, Magic Bullet n'est plus vendu seul : il passe par l'abonnement Red Giant Complete (~50$/mois) ou Maxon One. Le vrai arbitrage, c'est DaVinci Resolve : gratuit, c'est aujourd'hui l'outil d'étalonnage le plus complet du marché. Magic Bullet garde du sens surtout pour rester dans After Effects/Premiere sans changer de logiciel. Si tu acceptes d'étalonner dans Resolve, tu peux t'en passer entièrement.",
+    "description": "Magic Bullet regroupe les outils couleur de Red Giant pour corriger, styliser et finaliser une image directement dans le logiciel de montage. Looks propose plus de 300 presets personnalisables, Colorista gère la correction colorimétrique, Film l'émulation de pellicule, Cosmo les visages et Denoiser le bruit. Looks prend également en charge ACES et OpenColorIO.\n\nLes outils fonctionnent notamment dans After Effects, Premiere Pro, DaVinci Resolve et Final Cut Pro, tandis que Looks couvre aussi Unreal Engine, Autograph et Cinema 4D. Ils sont inclus dans l'abonnement Red Giant et dans Maxon One ; le prix exact dépend du pays et doit être confirmé sur la boutique Maxon.\n\nMagic Bullet est surtout utile pour conserver l'étalonnage et la finition dans la timeline existante. DaVinci Resolve reste plus rationnel si vous acceptez un workflow couleur séparé et recherchez une solution gratuite très complète.",
     "decision_policy_v3": null,
     "force_silence": false,
     "ogImageUrl": "https://i.ytimg.com/vi/jxqSpbc8Z1A/maxresdefault.jpg"
@@ -119378,9 +119386,9 @@
     "category": "ui-components",
     "shortDescription": "Solution de routing complète pour les applications React.",
     "shortDescriptionEn": "A complete routing solution for React applications.",
-    "description": "React Router est la bibliothèque de routing la plus utilisée dans l'écosystème React. Elle gère la navigation, les routes imbriquées, les paramètres d'URL et le code splitting.",
-    "longDescription": "React Router est la bibliothèque de routing la plus utilisée dans l'écosystème React. Elle gère la navigation, les routes imbriquées, les paramètres d'URL et le code splitting.",
-    "longDescriptionEn": "React Router is the most used routing library in the React ecosystem. It handles navigation, nested routes, URL parameters and code splitting.",
+    "description": "React Router 8 réunit un routeur déclaratif, des fonctions de chargement de données et un mode framework complet pour les applications React.",
+    "longDescription": "React Router 8 peut être utilisé selon trois niveaux. Le mode déclaratif couvre la navigation classique avec BrowserRouter, Link et les hooks. Le mode Data ajoute loaders, actions, états d'attente et fetchers. Le mode Framework ajoute une configuration Vite, des routes typées, le découpage de code et le rendu SPA, SSR ou statique.\n\nLa bibliothèque reste gratuite et open source. Le choix dépend moins du type de rendu que du niveau de contrôle souhaité : déclaratif pour une intégration légère, Data pour maîtriser l'infrastructure, Framework pour obtenir une expérience plus complète proche d'un framework React.\n\nLa version 8 nécessite au minimum Node 22.22, React 19.2.7 et, en mode Framework, Vite 7. Une application Next.js possède déjà son propre routeur. TanStack Router reste l'alternative la plus directe lorsque la sécurité des types est le critère principal.",
+    "longDescriptionEn": "React Router 8 can be adopted at three levels. Declarative Mode covers classic navigation with BrowserRouter, Link and hooks. Data Mode adds loaders, actions, pending states and fetchers. Framework Mode adds Vite-based configuration, typed routes, code splitting, and SPA, SSR or static rendering.\n\nThe library remains free and open source. The choice is less about the rendering target than the level of control you want: Declarative for a light integration, Data for control over infrastructure, and Framework for a fuller React framework experience.\n\nVersion 8 requires at least Node 22.22, React 19.2.7 and, in Framework Mode, Vite 7. A Next.js application already has its own router. TanStack Router remains the closest alternative when end-to-end type safety is the main criterion.",
     "pricing": {
       "free": "Open source / Gratuit",
       "paid": null
@@ -119390,7 +119398,21 @@
       "paid": null
     },
     "defaultMonthlyPrice": 0,
-    "pricing_v5": null,
+    "pricing_v5": {
+      "cautions": [
+        "Bibliothèque open source gratuite ; coûts éventuels liés uniquement à l'hébergement et à l'infrastructure"
+      ],
+      "verified_on": "2026-08-28",
+      "source_domain": "reactrouter.com",
+      "usage_sensitive": false,
+      "compare_plan_kind": "free",
+      "compare_plan_name": "Open source",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://reactrouter.com/start/modes",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 0
+    },
     "affiliateLink": "",
     "websiteUrl": "https://reactrouter.com",
     "logo": "",
@@ -119402,14 +119424,14 @@
       "Très bonne documentation et support.",
       "Routage déclaratif et cohérent.",
       "Supports nested routes et lazy loading.",
-      "4.3B+ npm downloads — extrêmement fiable et stable."
+      "Trois modes d'adoption selon le niveau de contrôle souhaité."
     ],
     "prosEn": [
       "De facto standard for React routing with massive adoption and community.",
       "Excellent documentation and support.",
       "Declarative and consistent routing.",
       "Supports nested routes and lazy loading.",
-      "4.3B+ npm downloads — extremely reliable and stable."
+      "Three adoption modes for different levels of control."
     ],
     "cons": [
       "Courbe d'apprentissage pour débuter avec la syntaxe déclarative.",
@@ -119458,7 +119480,7 @@
         "Vous construisez une app très simple avec peu de routes.",
         "Vous préférez TanStack Router pour son approche type-safe (beta)."
       ],
-      "threshold": "React Router est le standard de facto du routage React avec 4.3B+ téléchargements npm ; l'utiliser est le choix sûr."
+      "threshold": "React Router est un choix sûr pour le routage React, à condition de sélectionner le mode adapté au projet et de vérifier les prérequis de la version 8."
     },
     "verdictEn": {
       "keepIf": [
@@ -119471,7 +119493,7 @@
         "You're building a simple app with few routes.",
         "You prefer TanStack Router for its type-safe approach (beta)."
       ],
-      "threshold": "React Router is the de facto React routing standard with 4.3B+ npm downloads; using it is the safe choice."
+      "threshold": "React Router is a safe choice for React routing when you select the right mode and verify the version 8 requirements."
     },
     "articles": [],
     "timeGainedHoursPerMonth": null,

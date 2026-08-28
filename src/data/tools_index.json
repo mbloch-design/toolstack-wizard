@@ -2052,7 +2052,7 @@
     "shortDescriptionEn": "Library of animation presets and transitions for After Effects.",
     "pricing": {
       "free": "Version de base gratuite",
-      "paid": "49$ achat unique (Pro)"
+      "paid": "16,50$/mois en annuel (198$/an) ou 19,90$/mois"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://misterhorse.com/animation-composer",
@@ -6035,8 +6035,8 @@
     },
     "defaultMonthlyPrice": 14,
     "affiliateLink": "",
-    "websiteUrl": "",
-    "ogImageUrl": "",
+    "websiteUrl": "https://cargo.site/",
+    "ogImageUrl": "https://static.cargo.site/assets/C3/screenshots/cargosite.jpg",
     "logo": "",
     "tool_type": "satellite",
     "host_app": null,
@@ -7861,9 +7861,9 @@
     "shortDescriptionEn": "Chaos's photorealistic render engine, the archviz favorite for its simplicity.",
     "pricing": {
       "free": "Essai gratuit",
-      "paid": "Solo 394,80$/an (~33$/mois). Abonnement Chaos."
+      "paid": "Solo 414$/an (34,50$/mois) ; Premium 562,80$/an (46,90$/mois)"
     },
-    "defaultMonthlyPrice": 33,
+    "defaultMonthlyPrice": 29.63,
     "affiliateLink": "",
     "websiteUrl": "https://www.chaos.com/corona",
     "ogImageUrl": "https://static.chaos.com/images/assets/000/025/421/articles_2_columns/corona-product-og-1200x630.png?1781319481",
@@ -20812,9 +20812,9 @@
     "shortDescriptionEn": "Red Giant's color grading and cinematic look suite for After Effects and Premiere.",
     "pricing": {
       "free": "",
-      "paid": "Via Red Giant Complete (~50$/mois, 599$/an) ou Maxon One. Plus vendu à l'unité."
+      "paid": "Inclus dans les abonnements Red Giant et Maxon One ; tarif régional à confirmer"
     },
-    "defaultMonthlyPrice": 50,
+    "defaultMonthlyPrice": 0,
     "affiliateLink": "https://www.maxon.net/red-giant/magic-bullet",
     "websiteUrl": "https://www.maxon.net/red-giant/magic-bullet",
     "ogImageUrl": "https://i.ytimg.com/vi/jxqSpbc8Z1A/maxresdefault.jpg",
