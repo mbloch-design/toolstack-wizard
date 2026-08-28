@@ -9276,10 +9276,6 @@
     transition: transform 220ms ease-out;
   }
   a.td-compare-card-media:hover img { transform: scale(1.025); }
-  .td-compare-card--current .td-compare-card-media {
-    min-height: 0;
-    aspect-ratio: 1.9 / 1;
-  }
   .td-compare-card-body {
     display: grid;
     align-content: start;
