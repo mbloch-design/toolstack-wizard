@@ -264,7 +264,7 @@ const GuideDetailPage = () => {
 
       {isStory && post.thumbnail && (
         <figure className="ga-story-hero-media">
-          <img src={post.thumbnail} alt="" />
+          <img src={post.thumbnail} alt={post.title} />
         </figure>
       )}
 
