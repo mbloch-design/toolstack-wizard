@@ -239,6 +239,30 @@ const Footer = () => {
                   loading="lazy"
                 />
               </a>
+              <a
+                href="https://postyourstartup.co/startup/tooltrim-1?ref=badge"
+                target="_blank"
+                rel="noopener"
+                className="tt-footer-badge"
+                aria-label="Featured on PostYourStartup"
+              >
+                <img
+                  className="tt-footer-badge-light"
+                  src="https://postyourstartup.co/api/badge/tooltrim-1?theme=light"
+                  alt="Featured on PostYourStartup"
+                  width={212}
+                  height={55}
+                  loading="lazy"
+                />
+                <img
+                  className="tt-footer-badge-dark"
+                  src="https://postyourstartup.co/api/badge/tooltrim-1?theme=dark"
+                  alt="Featured on PostYourStartup"
+                  width={212}
+                  height={55}
+                  loading="lazy"
+                />
+              </a>
             </div>
           </div>
         </div>
