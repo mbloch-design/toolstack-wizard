@@ -17530,13 +17530,13 @@
     "slug": "ae-bodymovin",
     "category": "design-tools",
     "shortDescription": "Export d'animations After Effects en JSON Lottie pour le web et mobile.",
-    "longDescription": "Bodymovin, c'est le plugin gratuit (open source) qui a popularisé le format Lottie. Il fait une chose précise : exporter une animation créée dans After Effects en un fichier JSON léger (Lottie), qui se lit ensuite nativement sur le web, iOS, Android ou React Native. Résultat : des animations vectorielles nettes, fluides et bien plus légères qu'un GIF ou une vidéo. C'est devenu le pont standard entre les motion designers et les développeurs.\n\nLe principe : le designer anime dans After Effects, exporte avec Bodymovin, et le développeur intègre le fichier Lottie. Tout le monde y gagne, et c'est gratuit.\n\nLa limite à connaître : Bodymovin n'exporte pas tout (certains effets After Effects ne passent pas), et le résultat reste une animation qui joue en boucle, sans interactivité. Si tu as besoin d'animations qui réagissent aux actions de l'utilisateur, c'est Rive qu'il faut regarder. Mais pour de l'animation web légère depuis After Effects, Bodymovin reste le réflexe.",
-    "affiliateLink": "https://aescripts.com/bodymovin",
-    "websiteUrl": "https://aescripts.com/bodymovin",
+    "longDescription": "Bodymovin exporte les compositions After Effects au format JSON Lottie pour les afficher sur le web, iOS et Android. Il prend en charge les formes, textes, images, précompositions et une partie des expressions, puis permet un rendu SVG, canvas ou HTML dans le navigateur.\n\nC'est le bon pont entre motion design et développement quand l'animation doit rester nette et légère. Il faut toutefois tester chaque composition : Lottie ne reproduit qu'un sous-ensemble des fonctions d'After Effects, et certains effets doivent être simplifiés avant l'export. Pour une animation interactive pilotée par des états, Rive sera souvent plus adapté.",
+    "affiliateLink": "https://aescripts.com/bodymovin/",
+    "websiteUrl": "https://aescripts.com/bodymovin/",
     "defaultMonthlyPrice": 0,
     "pricing": {
-      "free": "Entièrement gratuit et open source",
-      "paid": ""
+      "free": "Prix libre pour un usage individuel",
+      "paid": "20 $ suggérés et requis pour les entreprises ou les équipes"
     },
     "logo": "",
     "soloRelevance": "medium",
@@ -17631,13 +17631,13 @@
     "substitution_cluster_v2": "plugin-after-effects",
     "pricing_v5": {
       "cautions": [
-        "Entièrement gratuit et open source"
+        "Prix libre pour les particuliers, 20 $ requis pour les entreprises et équipes"
       ],
-      "verified_on": "2026-06-15",
+      "verified_on": "2026-08-28",
       "source_domain": "aescripts.com",
       "usage_sensitive": false,
       "compare_plan_kind": "individual",
-      "compare_plan_name": "Free",
+      "compare_plan_name": "Name Your Own Price",
       "price_reliability": "high",
       "location_sensitive": false,
       "official_source_url": "https://aescripts.com/bodymovin/",
@@ -17653,7 +17653,7 @@
       "requires_context_questions": true
     },
     "shortDescriptionEn": "Export After Effects animations to Lottie JSON for web and mobile.",
-    "longDescriptionEn": "Bodymovin is the free (open-source) plugin that popularized the Lottie format. It does one precise thing: export an animation created in After Effects as a lightweight JSON file (Lottie), which then plays natively on web, iOS, Android or React Native. The result: crisp, smooth vector animations far lighter than a GIF or video. It's become the standard bridge between motion designers and developers.\n\nThe principle: the designer animates in After Effects, exports with Bodymovin, and the developer integrates the Lottie file. Everyone wins, and it's free.\n\nThe limit to know: Bodymovin doesn't export everything (some After Effects effects don't carry over), and the result is an animation that loops, with no interactivity. If you need animations that react to user actions, look at Rive. But for lightweight web animation from After Effects, Bodymovin stays the reflex.",
+    "longDescriptionEn": "Bodymovin exports After Effects compositions as Lottie JSON for the web, iOS, and Android. It supports shapes, text, images, precompositions, and some expressions, with SVG, canvas, or HTML rendering in the browser.\n\nIt is a practical bridge between motion design and development when animations need to remain crisp and lightweight. Every composition still needs testing because Lottie supports only a subset of After Effects features, and some effects must be simplified before export. For state-driven interactive animation, Rive is often a better fit.",
     "prosEn": [
       "Completely free and open source.",
       "Industry standard for web/mobile animation (Lottie).",
@@ -17687,11 +17687,11 @@
       "threshold": "Bodymovin is essential for motion designers exporting to web/mobile; it's the industry-standard free tool of choice."
     },
     "pricingEn": {
-      "free": "Completely free and open source",
-      "paid": ""
+      "free": "Name your own price for individual use",
+      "paid": "$20 suggested and required for businesses or teams"
     },
     "force_silence": false,
-    "description": "Bodymovin, c'est le plugin gratuit (open source) qui a popularisé le format Lottie. Il fait une chose précise : exporter une animation créée dans After Effects en un fichier JSON léger (Lottie), qui se lit ensuite nativement sur le web, iOS, Android ou React Native. Résultat : des animations vectorielles nettes, fluides et bien plus légères qu'un GIF ou une vidéo. C'est devenu le pont standard entre les motion designers et les développeurs.\n\nLe principe : le designer anime dans After Effects, exporte avec Bodymovin, et le développeur intègre le fichier Lottie. Tout le monde y gagne, et c'est gratuit.\n\nLa limite à connaître : Bodymovin n'exporte pas tout (certains effets After Effects ne passent pas), et le résultat reste une animation qui joue en boucle, sans interactivité. Si tu as besoin d'animations qui réagissent aux actions de l'utilisateur, c'est Rive qu'il faut regarder. Mais pour de l'animation web légère depuis After Effects, Bodymovin reste le réflexe.",
+    "description": "Bodymovin exporte les compositions After Effects en JSON Lottie pour le web et les applications mobiles. Il est proposé à prix libre pour les particuliers, avec un tarif suggéré de 20 $ requis pour les entreprises et équipes.",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/ae-bodymovin.png",
     "gallery_images": [
       "/tool-media/ae-bodymovin/select-composition.jpg",
@@ -48765,13 +48765,13 @@
     "slug": "aescripts-flow",
     "category": "design-tools",
     "shortDescription": "Le plugin d'animation de courbes le plus populaire pour After Effects.",
-    "longDescription": "Flow, c'est le plugin d'easing le plus utilisé dans After Effects. Son job : remplacer l'éditeur de courbes natif, peu pratique, par une interface visuelle où tu choisis ou dessines une courbe d'accélération et tu l'appliques à tes keyframes en un clic. Pour un motion designer, c'est un gain de temps quotidien et un meilleur contrôle du 'feeling' des animations.\n\nC'est un achat unique (aescripts), sans abonnement, ce qui en fait un investissement modeste et durable. Une fois installé, il devient vite un réflexe.\n\nÀ qui ça s'adresse : à tous ceux qui animent beaucoup dans After Effects et veulent un easing propre sans se battre avec le graph editor. Pour un usage occasionnel, les courbes natives font le travail, et l'achat ne se justifie pas. Mais en motion intensif, Flow se rentabilise très vite.",
-    "affiliateLink": "https://aescripts.com/flow",
-    "websiteUrl": "https://aescripts.com/flow",
-    "defaultMonthlyPrice": 8,
+    "longDescription": "Flow remplace les manipulations répétitives du Graph Editor d'After Effects par une interface visuelle dédiée aux courbes d'accélération. Vous pouvez dessiner une courbe, l'appliquer aux images clés sélectionnées et conserver plusieurs bibliothèques de presets pour réutiliser un langage de mouvement cohérent.\n\nLe plugin ajoute aussi des courbes responsives avec overshoot ou undershoot et l'export vers KBar. À 35 $ en achat unique avec essai gratuit, il est surtout pertinent pour les motion designers qui règlent des easing curves chaque semaine. Pour un usage ponctuel, le Graph Editor natif reste suffisant.",
+    "affiliateLink": "https://aescripts.com/flow/",
+    "websiteUrl": "https://aescripts.com/flow/",
+    "defaultMonthlyPrice": 0,
     "pricing": {
       "free": "",
-      "paid": "Achat unique (~50€), licence à vie, pas d'abonnement"
+      "paid": "35 $ en achat unique, avec essai gratuit"
     },
     "logo": "",
     "soloRelevance": null,
@@ -48854,18 +48854,18 @@
     "substitution_cluster_v2": "plugin-after-effects",
     "pricing_v5": {
       "cautions": [
-        "Achat unique (~50€), pas d'abonnement"
+        "35 $ en achat unique, avec essai gratuit"
       ],
-      "verified_on": "2026-06-15",
+      "verified_on": "2026-08-28",
       "source_domain": "aescripts.com",
       "usage_sensitive": false,
-      "compare_plan_kind": "individual",
-      "compare_plan_name": "Entry paid plan",
+      "compare_plan_kind": "one_time",
+      "compare_plan_name": "Flow",
       "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://aescripts.com/?srsltid=AfmBOopmpC18DGOTCrTh3k5mv7XgYG4mKzZMqqvvBI099cvuVXBA3LaN",
+      "official_source_url": "https://aescripts.com/flow/",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 8
+      "compare_price_monthly_eur": 0
     },
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
@@ -48876,7 +48876,7 @@
       "requires_context_questions": true
     },
     "shortDescriptionEn": "The most popular curve animation plugin for After Effects.",
-    "longDescriptionEn": "Flow is the most-used easing plugin in After Effects. Its job: replace the clunky native curve editor with a visual interface where you pick or draw an easing curve and apply it to your keyframes in one click. For a motion designer, it's a daily time saver and better control over the 'feel' of animations.\n\nIt's a one-time purchase (aescripts), no subscription, making it a modest and lasting investment. Once installed, it quickly becomes a reflex.\n\nWho it's for: anyone animating a lot in After Effects who wants clean easing without fighting the graph editor. For occasional use, the native curves do the job and the purchase isn't justified. But for intensive motion, Flow pays for itself very fast.",
+    "longDescriptionEn": "Flow replaces repetitive work in After Effects' Graph Editor with a visual interface dedicated to easing curves. You can draw a curve, apply it to selected keyframes, and maintain multiple preset libraries for a consistent motion language.\n\nThe plugin also adds responsive overshoot and undershoot curves plus KBar export. At $35 as a one-time purchase with a free trial, it is most useful for motion designers who tune easing every week. For occasional work, the native Graph Editor remains sufficient.",
     "prosEn": [
       "Interface far more intuitive than After Effects' native Graph Editor.",
       "Preset library for in-house animation standards.",
@@ -48908,10 +48908,10 @@
     },
     "pricingEn": {
       "free": "",
-      "paid": "One-time purchase (~€50), lifetime license, no subscription"
+      "paid": "$35 one-time purchase with a free trial"
     },
     "force_silence": false,
-    "description": "Flow, c'est le plugin d'easing le plus utilisé dans After Effects. Son job : remplacer l'éditeur de courbes natif, peu pratique, par une interface visuelle où tu choisis ou dessines une courbe d'accélération et tu l'appliques à tes keyframes en un clic. Pour un motion designer, c'est un gain de temps quotidien et un meilleur contrôle du 'feeling' des animations.\n\nC'est un achat unique (aescripts), sans abonnement, ce qui en fait un investissement modeste et durable. Une fois installé, il devient vite un réflexe.\n\nÀ qui ça s'adresse : à tous ceux qui animent beaucoup dans After Effects et veulent un easing propre sans se battre avec le graph editor. Pour un usage occasionnel, les courbes natives font le travail, et l'achat ne se justifie pas. Mais en motion intensif, Flow se rentabilise très vite.",
+    "description": "Flow accélère le réglage des courbes d'easing dans After Effects avec un éditeur visuel, des bibliothèques de presets et des courbes responsives.",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/aescripts-flow.png"
   },
   {
@@ -51305,23 +51305,30 @@
     "shortDescription": "Suite de plugins SketchUp pour accélérer la modélisation, les courbes, arrondis et déformations.",
     "shortDescriptionEn": "SketchUp plugin suite for faster modelling, curves, rounded corners and deformations.",
     "pricing": {
-      "free": "Certains plugins gratuits",
-      "paid": "Licences par plugin"
+      "free": "Essai gratuit de 30 jours",
+      "paid": "50 $ en achat unique pour 8 plugins et 3 postes"
+    },
+    "pricingEn": {
+      "free": "30-day free trial",
+      "paid": "$50 one-time purchase for 8 plugins and 3 seats"
     },
     "defaultMonthlyPrice": 4,
-    "affiliateLink": "https://sketchucation.com/pluginstore",
-    "websiteUrl": "https://sketchucation.com/pluginstore",
+    "affiliateLink": "https://sketchucation.com/pluginstore?pauthor=fredo6",
+    "websiteUrl": "https://sketchucation.com/pluginstore?pauthor=fredo6",
     "logo": "",
     "category": "design-tools",
-    "description": "Suite de plugins SketchUp pour accélérer la modélisation, les courbes, arrondis et déformations.",
-    "longDescription": "Suite de plugins SketchUp pour accélérer la modélisation, les courbes, arrondis et déformations.",
-    "longDescriptionEn": "SketchUp plugin suite for faster modelling, curves, rounded corners and deformations.",
+    "description": "Fredo6 Bundle réunit huit extensions SketchUp consacrées aux déformations, arrondis, transformations et opérations de modélisation avancée. La licence perpétuelle couvre trois postes et inclut un essai de 30 jours.",
+    "longDescription": "Fredo6 Bundle réunit huit extensions SketchUp consacrées aux déformations, arrondis, transformations et opérations de modélisation avancée. La licence perpétuelle couvre trois postes et inclut un essai de 30 jours.\n\nLe bundle devient intéressant si vous utilisez plusieurs outils Fredo6, notamment FredoScale, plutôt que d'acheter les extensions séparément. Il nécessite LibFredo6 et l'ExtensionStore de SketchUcation. Vérifiez aussi la compatibilité de chaque extension avec votre version de SketchUp avant de mettre à jour un poste de production.",
+    "longDescriptionEn": "Fredo6 Bundle combines eight SketchUp extensions for deformation, rounded corners, transformations, and advanced modelling operations. The perpetual license covers three seats and includes a 30-day trial.\n\nThe bundle makes sense when you use several Fredo6 tools, including FredoScale, instead of buying extensions separately. It requires LibFredo6 and the SketchUcation ExtensionStore. Check each extension against your SketchUp version before updating a production workstation.",
     "pricing_v5": {
-      "verified_on": "2026-05-10",
+      "verified_on": "2026-08-28",
       "source_domain": "sketchucation.com",
-      "official_source_url": "https://sketchucation.com/pluginstore",
-      "verification_status": "manual_reference",
-      "compare_price_monthly_eur": 4
+      "official_source_url": "https://sketchucation.com/pluginstore?pauthor=fredo6",
+      "verification_status": "official_explicit",
+      "compare_plan_kind": "one_time",
+      "compare_plan_name": "Fredo6Bundle2022",
+      "price_reliability": "high",
+      "compare_price_monthly_eur": 0
     },
     "verticals": [
       "interior-design"
@@ -51367,7 +51374,6 @@
     "articles": [],
     "alternatives": [],
     "ogImageUrl": "https://tooltrim.com/og-screenshots/fredo6-bundle.png",
-    "pricingEn": null,
     "seo": null,
     "freeAlternative": null,
     "soloRelevance": null,
@@ -92994,29 +93000,29 @@
     "category": "creation",
     "shortDescription": "Marketplace de templates vidéo, musiques et stock footage en abonnement illimité.",
     "shortDescriptionEn": "Video templates, music, and stock footage marketplace with unlimited subscription.",
-    "description": "Motion Array propose un catalogue de templates After Effects/Premiere, musiques libres de droits et vidéos stock, accessible en téléchargement illimité via abonnement — un concurrent direct de Storyblocks et Envato Elements.\n\nSa spécificité est un catalogue particulièrement riche en templates de motion design prêts à l'emploi pour After Effects, utile pour qui veut un résultat professionnel sans tout animer de zéro.",
-    "longDescription": "Motion Array propose un catalogue de templates After Effects/Premiere, musiques libres de droits et vidéos stock, accessible en téléchargement illimité via abonnement — un concurrent direct de Storyblocks et Envato Elements.\n\nSa spécificité est un catalogue particulièrement riche en templates de motion design prêts à l'emploi pour After Effects, utile pour qui veut un résultat professionnel sans tout animer de zéro.",
-    "longDescriptionEn": "Motion Array offers a catalog of After Effects/Premiere templates, royalty-free music, and stock video, accessible via unlimited subscription download — a direct competitor to Storyblocks and Envato Elements.\n\nIts specificity is a particularly rich catalog of ready-to-use motion design templates for After Effects, useful for anyone wanting a professional result without animating everything from scratch.",
-    "pricing": "À partir de ~30€/mois pour un accès illimité.",
-    "pricingEn": "From ~$30/month for unlimited access.",
+    "description": "Motion Array regroupe templates vidéo, presets, motion graphics, musique, effets sonores, rushes, images, LUTs et outils IA dans un abonnement à téléchargements illimités.",
+    "longDescription": "Motion Array regroupe templates vidéo, presets, motion graphics, musique, effets sonores, rushes, images, LUTs et outils IA dans un abonnement à téléchargements illimités. Son extension Adobe et ses plugins facilitent l'utilisation des ressources dans Premiere Pro et After Effects.\n\nLe principal point de décision est la licence. Les ressources couvertes et utilisées dans un projet pendant l'abonnement restent licenciées après sa résiliation, mais certains éléments sont réservés à un usage éditorial. Vérifiez donc le badge de licence sur chaque ressource avant une campagne commerciale. Le tarif dépend du plan et doit être confirmé sur la page officielle au moment de l'achat.",
+    "longDescriptionEn": "Motion Array bundles video templates, presets, motion graphics, music, sound effects, footage, images, LUTs, and AI tools in an unlimited-download subscription. Its Adobe extension and plugins help teams use assets inside Premiere Pro and After Effects.\n\nLicensing is the main decision point. Covered assets used in a project during an active subscription remain licensed after cancellation, but some items are marked for editorial use only. Check the license badge on every asset before a commercial campaign. Pricing depends on the selected plan and should be confirmed on the official pricing page.",
+    "pricing": "Abonnement à tarif variable selon le plan. Prix à confirmer sur la page officielle.",
+    "pricingEn": "Subscription pricing varies by plan. Confirm the current price on the official page.",
     "defaultMonthlyPrice": 0,
     "pricing_v5": {
       "cautions": [
         "Prix à vérifier sur la page officielle avant décision."
       ],
-      "verified_on": "2026-05-11",
+      "verified_on": "2026-08-28",
       "source_domain": "motionarray.com",
       "usage_sensitive": true,
       "compare_plan_kind": "custom",
       "compare_plan_name": "Prix non public",
       "price_reliability": "official_context_required",
       "location_sensitive": false,
-      "official_source_url": "https://motionarray.com",
+      "official_source_url": "https://motionarray.com/pricing/",
       "verification_status": "needs_official_quote",
       "compare_price_monthly_eur": 0
     },
-    "affiliateLink": "https://motionarray.com",
-    "websiteUrl": "https://motionarray.com",
+    "affiliateLink": "https://motionarray.com/pricing/",
+    "websiteUrl": "https://motionarray.com/",
     "logo": "https://logo.clearbit.com/motionarray.com",
     "seo": {},
     "pros": [
@@ -108584,12 +108590,16 @@
     "shortDescription": "Éditeur photo et composition pour Mac, utile pour retouche, détourage et visuels rapides.",
     "shortDescriptionEn": "Mac photo editing and composition app for retouching, cutouts and quick visuals.",
     "pricing": {
-      "free": "",
-      "paid": "Achat unique ~50€ sur le Mac App Store, sans abonnement. Prix vérifié le 2026-07-08."
+      "free": "Essai gratuit de 30 jours avec Apple Creator Studio",
+      "paid": "49,99 $ en achat unique sur Mac, ou 12,99 $/mois avec Apple Creator Studio"
+    },
+    "pricingEn": {
+      "free": "30-day free trial with Apple Creator Studio",
+      "paid": "$49.99 one-time on Mac, or $12.99/month with Apple Creator Studio"
     },
     "defaultMonthlyPrice": 0,
-    "affiliateLink": "https://www.pixelmator.com/pro/",
-    "websiteUrl": "https://www.pixelmator.com/pro/",
+    "affiliateLink": "https://www.apple.com/pixelmator-pro/",
+    "websiteUrl": "https://www.apple.com/pixelmator-pro/",
     "logo": "",
     "covers": [
       "compositing",
@@ -108630,7 +108640,7 @@
     "force_silence": false,
     "substitution_cluster_v2": "photo-editor",
     "ogImageUrl": "https://www.apple.com/v/pixelmator-pro/a/images/overview/meta/pixelmator__c4dlsmpcudw2_og.png?202603241546",
-    "description": "Pixelmator Pro est un éditeur d'images et de retouche photo pour Mac uniquement, vendu en achat unique. Racheté par Apple, il mise sur une interface native soignée et des outils accélérés par le Mac (calques, retouche, upscale et détourage IA) comme alternative abordable à Photoshop pour les utilisateurs Apple.",
+    "description": "Pixelmator Pro est l'éditeur d'images d'Apple pour Mac et iPad, proposé dans Apple Creator Studio. La version Mac reste aussi disponible en achat unique.",
     "pros": [
       "Licence perpétuelle : achat unique, sans abonnement.",
       "Perfs excellentes sur Apple Silicon (très fluide).",
@@ -108657,13 +108667,17 @@
       "threshold": "Pixelmator Pro s'impose pour creativs macOS cherchant alternative légère à Photoshop ; pour budget très limité, Photopea gratuit suffit."
     },
     "pricing_v5": {
-      "verified_on": "2026-07-08",
-      "source_domain": "pixelmator.com",
-      "official_source_url": "https://www.pixelmator.com/pro/"
+      "verified_on": "2026-08-28",
+      "source_domain": "apple.com",
+      "official_source_url": "https://www.apple.com/pixelmator-pro/",
+      "verification_status": "official_explicit",
+      "compare_plan_kind": "one_time",
+      "compare_plan_name": "Pixelmator Pro for Mac",
+      "price_reliability": "high",
+      "compare_price_monthly_eur": 0
     },
-    "longDescription": "Pixelmator Pro est un éditeur d'images et de retouche photo pour Mac uniquement, vendu en achat unique. Racheté par Apple, il mise sur une interface native soignée et des outils accélérés par le Mac (calques, retouche, upscale et détourage IA) comme alternative abordable à Photoshop pour les utilisateurs Apple.",
-    "longDescriptionEn": "Native macOS image editor for photo retouching, graphic design, and digital painting. Lightweight design leveraging Apple tech (Metal, Core ML) with AI background removal and non-destructive adjustments.",
-    "pricingEn": null,
+    "longDescription": "Pixelmator Pro est l'éditeur d'images d'Apple pour la retouche photo, la composition, l'illustration et le design. Il exploite les technologies Apple pour proposer calques, réglages non destructifs, détourage automatique et outils d'amélioration, avec une interface pensée pour Mac et désormais iPad.\n\nDeux modes d'achat coexistent. La version Mac reste disponible à 49,99 $ en achat unique. Apple Creator Studio coûte 12,99 $ par mois ou 129 $ par an et inclut Pixelmator Pro sur Mac et iPad avec d'autres applications créatives. L'abonnement convient à ceux qui veulent l'écosystème complet et l'iPad. L'achat unique reste le choix le plus simple pour un usage exclusivement Mac.",
+    "longDescriptionEn": "Pixelmator Pro is Apple's image editor for photo retouching, compositing, illustration, and design. It uses Apple technologies for layers, non-destructive adjustments, automatic cutouts, and enhancement tools, with an interface built for Mac and now iPad.\n\nTwo purchase models coexist. The Mac app remains available as a $49.99 one-time purchase. Apple Creator Studio costs $12.99 per month or $129 per year and includes Pixelmator Pro on Mac and iPad alongside other creative apps. The subscription suits users who want the broader ecosystem and iPad access. The one-time purchase remains the simpler choice for Mac-only use.",
     "seo": null,
     "articles": [],
     "freeAlternative": null,
@@ -138344,19 +138358,23 @@
       "free": "Gratuit",
       "paid": "Don possible"
     },
+    "pricingEn": {
+      "free": "Free",
+      "paid": "Optional donation"
+    },
     "defaultMonthlyPrice": 0,
-    "affiliateLink": "https://extensions.sketchup.com",
-    "websiteUrl": "https://extensions.sketchup.com",
+    "affiliateLink": "https://extensions.sketchup.com/en/content/solid-inspector",
+    "websiteUrl": "https://extensions.sketchup.com/en/content/solid-inspector",
     "logo": "",
     "category": "design-tools",
-    "description": "Plugin SketchUp pour vérifier les volumes solides et repérer les problèmes de géométrie.",
-    "longDescription": "Plugin SketchUp pour vérifier les volumes solides et repérer les problèmes de géométrie.",
-    "longDescriptionEn": "SketchUp plugin to inspect solids and detect geometry issues.",
+    "description": "Extension gratuite pour SketchUp qui repère les défauts empêchant un groupe ou composant d'être un solide et répare automatiquement de nombreux problèmes.",
+    "longDescription": "Solid Inspector² analyse les groupes et composants SketchUp pour repérer les arêtes parasites, faces internes, trous et autres défauts empêchant d'obtenir un volume manifold. L'extension met les erreurs en évidence et peut réparer automatiquement une partie des problèmes.\n\nElle est particulièrement utile avant une impression 3D, un export CAO ou une opération booléenne. Elle reste un outil de diagnostic : les géométries ambiguës ou complexes demandent parfois une correction manuelle. La version officielle est gratuite, compatible avec SketchUp 2022 à 2026 sur macOS et Windows, et nécessite TT_Lib² 2.7.0.",
+    "longDescriptionEn": "Solid Inspector² scans SketchUp groups and components for stray edges, internal faces, holes, and other defects that prevent a manifold solid. It highlights errors and can automatically repair many common issues.\n\nIt is especially useful before 3D printing, CAD export, or boolean operations. It remains a diagnostic tool, so ambiguous or complex geometry may still require manual repair. The official extension is free, supports SketchUp 2022 through 2026 on macOS and Windows, and requires TT_Lib² 2.7.0.",
     "pricing_v5": {
-      "verified_on": "2026-05-10",
+      "verified_on": "2026-08-28",
       "source_domain": "extensions.sketchup.com",
-      "official_source_url": "https://extensions.sketchup.com",
-      "verification_status": "manual_reference",
+      "official_source_url": "https://extensions.sketchup.com/en/content/solid-inspector",
+      "verification_status": "official_explicit",
       "compare_price_monthly_eur": 0
     },
     "verticals": [
@@ -138408,7 +138426,6 @@
       "https://www.thomthom.net/thoughts/wp-content/uploads/2014/12/InternalFaces.png",
       "https://www.thomthom.net/thoughts/wp-content/uploads/2014/12/FixedErrors.png"
     ],
-    "pricingEn": null,
     "seo": null,
     "freeAlternative": null,
     "soloRelevance": null,

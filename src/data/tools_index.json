@@ -4399,12 +4399,12 @@
     "shortDescription": "Export d'animations After Effects en JSON Lottie pour le web et mobile.",
     "shortDescriptionEn": "Export After Effects animations to Lottie JSON for web and mobile.",
     "pricing": {
-      "free": "Entièrement gratuit et open source",
-      "paid": ""
+      "free": "Prix libre pour un usage individuel",
+      "paid": "20 $ suggérés et requis pour les entreprises ou les équipes"
     },
     "defaultMonthlyPrice": 0,
-    "affiliateLink": "https://aescripts.com/bodymovin",
-    "websiteUrl": "https://aescripts.com/bodymovin",
+    "affiliateLink": "https://aescripts.com/bodymovin/",
+    "websiteUrl": "https://aescripts.com/bodymovin/",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/ae-bodymovin.png",
     "logo": "",
     "tool_type": "plugin",
@@ -12302,11 +12302,11 @@
     "shortDescriptionEn": "The most popular curve animation plugin for After Effects.",
     "pricing": {
       "free": "",
-      "paid": "Achat unique (~50€), licence à vie, pas d'abonnement"
+      "paid": "35 $ en achat unique, avec essai gratuit"
     },
-    "defaultMonthlyPrice": 8,
-    "affiliateLink": "https://aescripts.com/flow",
-    "websiteUrl": "https://aescripts.com/flow",
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://aescripts.com/flow/",
+    "websiteUrl": "https://aescripts.com/flow/",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/aescripts-flow.png",
     "logo": "",
     "tool_type": "plugin",
@@ -12958,12 +12958,12 @@
     "shortDescription": "Suite de plugins SketchUp pour accélérer la modélisation, les courbes, arrondis et déformations.",
     "shortDescriptionEn": "SketchUp plugin suite for faster modelling, curves, rounded corners and deformations.",
     "pricing": {
-      "free": "Certains plugins gratuits",
-      "paid": "Licences par plugin"
+      "free": "Essai gratuit de 30 jours",
+      "paid": "50 $ en achat unique pour 8 plugins et 3 postes"
     },
     "defaultMonthlyPrice": 4,
-    "affiliateLink": "https://sketchucation.com/pluginstore",
-    "websiteUrl": "https://sketchucation.com/pluginstore",
+    "affiliateLink": "https://sketchucation.com/pluginstore?pauthor=fredo6",
+    "websiteUrl": "https://sketchucation.com/pluginstore?pauthor=fredo6",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/fredo6-bundle.png",
     "logo": "",
     "tool_type": "metier",
@@ -23273,10 +23273,10 @@
     "categoryId": "creation",
     "shortDescription": "Marketplace de templates vidéo, musiques et stock footage en abonnement illimité.",
     "shortDescriptionEn": "Video templates, music, and stock footage marketplace with unlimited subscription.",
-    "pricing": "À partir de ~30€/mois pour un accès illimité.",
+    "pricing": "Abonnement à tarif variable selon le plan. Prix à confirmer sur la page officielle.",
     "defaultMonthlyPrice": 0,
-    "affiliateLink": "https://motionarray.com",
-    "websiteUrl": "https://motionarray.com",
+    "affiliateLink": "https://motionarray.com/pricing/",
+    "websiteUrl": "https://motionarray.com/",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/motion-array.png",
     "logo": "https://logo.clearbit.com/motionarray.com",
     "tool_type": "satellite",
@@ -27100,12 +27100,12 @@
     "shortDescription": "Éditeur photo et composition pour Mac, utile pour retouche, détourage et visuels rapides.",
     "shortDescriptionEn": "Mac photo editing and composition app for retouching, cutouts and quick visuals.",
     "pricing": {
-      "free": "",
-      "paid": "Achat unique ~50€ sur le Mac App Store, sans abonnement. Prix vérifié le 2026-07-08."
+      "free": "Essai gratuit de 30 jours avec Apple Creator Studio",
+      "paid": "49,99 $ en achat unique sur Mac, ou 12,99 $/mois avec Apple Creator Studio"
     },
     "defaultMonthlyPrice": 0,
-    "affiliateLink": "https://www.pixelmator.com/pro/",
-    "websiteUrl": "https://www.pixelmator.com/pro/",
+    "affiliateLink": "https://www.apple.com/pixelmator-pro/",
+    "websiteUrl": "https://www.apple.com/pixelmator-pro/",
     "ogImageUrl": "https://www.apple.com/v/pixelmator-pro/a/images/overview/meta/pixelmator__c4dlsmpcudw2_og.png?202603241546",
     "logo": "",
     "tool_type": "metier",
@@ -34445,8 +34445,8 @@
       "paid": "Don possible"
     },
     "defaultMonthlyPrice": 0,
-    "affiliateLink": "https://extensions.sketchup.com",
-    "websiteUrl": "https://extensions.sketchup.com",
+    "affiliateLink": "https://extensions.sketchup.com/en/content/solid-inspector",
+    "websiteUrl": "https://extensions.sketchup.com/en/content/solid-inspector",
     "ogImageUrl": "https://i0.wp.com/www.thomthom.net/thoughts/wp-content/uploads/2014/12/UI-Example.png?resize=976%2C564",
     "logo": "",
     "tool_type": "metier",
