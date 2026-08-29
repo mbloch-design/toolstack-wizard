@@ -1,0 +1,137 @@
+{
+  "batch": "review-design-tools-critical-001",
+  "current": {
+    "affiliate_url": "https://adobe.com/creativecloud",
+    "alternatives": [],
+    "category": "design-tools",
+    "cons": [],
+    "cons_en": [],
+    "host_app": null,
+    "id": "adobe-cc",
+    "long_description": "Adobe Creative Cloud, c'est la suite complète : Photoshop, Illustrator, Premiere, After Effects, Lightroom et +20 apps. À partir de 78.65€/mois. Pensé pour les graphistes et les créateurs vidéo.\n\nGain de temps estimé : 15h/mois.\n\nÀ garder si : vous utilisez 3+ apps Adobe régulièrement ou production professionnelle tous azimuts. À éviter si : 1-2 apps seulement — prenez un plan app unique. Rentable dès que vous utilisez Photoshop + Premiere + une autre app.",
+    "long_description_en": "Adobe Creative Cloud is the complete suite: Photoshop, Illustrator, Premiere, After Effects, Lightroom and 20+ apps. Starting at €78.65/month. Built for graphic designers and video creators.\n\nEstimated time saving: 15h/month.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://www.adobe.com/products/media_14a141cf8900a74105b7122f28472dce9fd8cf872.jpg"
+    },
+    "name": "Adobe Creative Cloud",
+    "pricing": {
+      "free": "Aucun plan gratuit",
+      "paid": "Creative Cloud Pro 78,65€/mois après promo de 3 mois à 39,31€"
+    },
+    "pricing_en": null,
+    "pricing_v5": {
+      "billing_model": "bundle",
+      "billing_options": [
+        {
+          "currency": "EUR",
+          "label_en": "Creative Cloud All Apps",
+          "label_fr": "Creative Cloud All Apps",
+          "price_monthly_eur": 78.65,
+          "value": "bundle"
+        },
+        {
+          "label_en": "Company license",
+          "label_fr": "Licence entreprise",
+          "price_monthly_eur": 0,
+          "value": "included"
+        },
+        {
+          "label_en": "Team license",
+          "label_fr": "Licence équipe",
+          "needs_verification": true,
+          "value": "team"
+        },
+        {
+          "label_en": "I don’t know",
+          "label_fr": "Je ne sais pas",
+          "needs_verification": true,
+          "value": "unknown"
+        }
+      ],
+      "cautions": [],
+      "compare_plan_kind": "bundle",
+      "compare_plan_name": "Creative Cloud Pro",
+      "compare_price_monthly_eur": 78.65,
+      "location_sensitive": false,
+      "official_source_url": "https://helpx.adobe.com/fr/creative-cloud/apps/manage-plans/changes-to-individual-plan.html",
+      "price_reliability": "high",
+      "source_domain": "adobe.com",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-03-13"
+    },
+    "pros": [],
+    "pros_en": [],
+    "short_description": "La suite complète : Photoshop, Illustrator, Premiere, After Effects, Lightroom et +20 apps.",
+    "short_description_en": "The complete suite: Photoshop, Illustrator, Premiere, After Effects, Lightroom and 20+ apps.",
+    "slug": "adobe-cc",
+    "source_url": "https://helpx.adobe.com/fr/creative-cloud/apps/manage-plans/changes-to-individual-plan.html",
+    "source_verified_on": "2026-03-13",
+    "use_cases": [],
+    "use_cases_en": [],
+    "verdict": {
+      "avoidIf": [
+        "1-2 apps seulement — prenez un plan app unique"
+      ],
+      "keepIf": [
+        "Vous utilisez 3+ apps Adobe régulièrement",
+        "Production professionnelle tous azimuts"
+      ],
+      "threshold": "Rentable dès que vous utilisez Photoshop + Premiere + une autre app."
+    },
+    "verdict_en": null,
+    "website_url": "https://adobe.com/creativecloud"
+  },
+  "fact_bundle": null,
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "research_primary_sources_then_write_fact_bundle",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-001",
+    "batch_position": 3,
+    "blockers": [],
+    "catalog_hash": "sha256:4c87cf902667ba81ba6bfe4b838fcc134de8dfeb727ead054b7f8bea76cb967a",
+    "category": "design-tools",
+    "fact_bundle": "MISSING",
+    "fact_bundle_hash": null,
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Adobe Creative Cloud",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_fact_bundle",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 270,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:79a5807eea534059946ff5ac0a692e67c39d1d572c06109c994b7b093300c81a",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "adobe-cc",
+    "source_url": "https://helpx.adobe.com/fr/creative-cloud/apps/manage-plans/changes-to-individual-plan.html",
+    "source_verified_on": "2026-03-13",
+    "status": "QUEUED"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "batch": "review-design-tools-critical-001",
+  "quality_version": "catalog-review-v1",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tools": [
+    {
+      "file": "figma-buzz.json",
+      "required_action": "research_primary_sources_then_write_fact_bundle",
+      "slug": "figma-buzz",
+      "status": "QUEUED"
+    },
+    {
+      "file": "figma-draw.json",
+      "required_action": "research_primary_sources_then_write_fact_bundle",
+      "slug": "figma-draw",
+      "status": "QUEUED"
+    },
+    {
+      "file": "adobe-cc.json",
+      "required_action": "research_primary_sources_then_write_fact_bundle",
+      "slug": "adobe-cc",
+      "status": "QUEUED"
+    },
+    {
+      "file": "are-na.json",
+      "required_action": "resolve_duplicate_without_research",
+      "slug": "are-na",
+      "status": "DUPLICATE"
+    },
+    {
+      "file": "1001bit-tools.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "1001bit-tools",
+      "status": "QUEUED"
+    },
+    {
+      "file": "archicad.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "archicad",
+      "status": "QUEUED"
+    },
+    {
+      "file": "autocad-lt.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "autocad-lt",
+      "status": "QUEUED"
+    },
+    {
+      "file": "brandmark.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "brandmark",
+      "status": "QUEUED"
+    },
+    {
+      "file": "curviloft.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "curviloft",
+      "status": "QUEUED"
+    },
+    {
+      "file": "eagle.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "eagle",
+      "status": "QUEUED"
+    }
+  ]
+}

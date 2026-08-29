@@ -1,0 +1,247 @@
+{
+  "batch": "review-design-tools-critical-001",
+  "current": {
+    "affiliate_url": "https://eagle.cool",
+    "alternatives": [],
+    "category": "design-tools",
+    "cons": [
+      "Coût d'entrée (achat unique, prix non divulgué).",
+      "Pas de collaboration en temps réel ou partage d'equipe.",
+      "Pas de version gratuite permanente après essai."
+    ],
+    "cons_en": [
+      "Entry cost (one-time purchase, exact price undisclosed).",
+      "No real-time collaboration or team sharing.",
+      "No permanent free version after trial."
+    ],
+    "host_app": null,
+    "id": "eagle",
+    "long_description": "Bibliothèque locale pour organiser images, matières, textures, références, plans et inspirations.",
+    "long_description_en": "Local library to organize images, materials, textures, references, plans and inspiration.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://en.eagle.cool/images/og-image-en.png"
+    },
+    "name": "Eagle",
+    "pricing": {
+      "free": "Essai gratuit",
+      "paid": "Licence perpétuelle"
+    },
+    "pricing_en": null,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "official_source_url": "https://eagle.cool",
+      "source_domain": "eagle.cool",
+      "verification_status": "manual_reference",
+      "verified_on": "2026-05-10"
+    },
+    "pros": [
+      "Interface fluide et rapide pour parcourir des milliers d'assets.",
+      "Recherche visuelle et sémantique très intuitive.",
+      "Achat unique, pas d'abonnement récurrent.",
+      "Essai gratuit 30 jours sans risque.",
+      "Support de 90+ formats."
+    ],
+    "pros_en": [
+      "Smooth, fast interface for browsing thousands of assets.",
+      "Visual and semantic search very intuitive.",
+      "One-time purchase, no recurring subscription.",
+      "30-day free trial risk-free.",
+      "Support for 90+ formats."
+    ],
+    "short_description": "Bibliothèque locale pour organiser images, matières, textures, références, plans et inspirations.",
+    "short_description_en": "Local library to organize images, materials, textures, references, plans and inspiration.",
+    "slug": "eagle",
+    "source_url": "https://eagle.cool",
+    "source_verified_on": "2026-05-10",
+    "use_cases": [
+      "Centraliser et retrouver rapidement des images d'inspiration.",
+      "Organiser une banque de ressources visuelles personnelle.",
+      "Classer par couleur ou tag pour étudier les palettes design."
+    ],
+    "use_cases_en": [
+      "Centralize and quickly retrieve inspiration images.",
+      "Organize a personal resource visual bank.",
+      "Sort by color or tag to study design palettes."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous avez un petit volume d'assets et un gestionnaire de dossiers suffit.",
+        "Vous cherchez un outil gratuit permanent.",
+        "Vous préférez une solution cloud collaborative (Eagle est principalement local)."
+      ],
+      "keepIf": [
+        "Vous collectez et organisez des centaines ou des milliers d'assets d'inspiration.",
+        "Vous cherchez une solution qui comprend visuellement vos fichiers (recherche par couleur, forme).",
+        "Vous aimez une interface desktop sans cloud obligatoire."
+      ],
+      "threshold": "Eagle s'impose pour les designers avec une grosse bibliothèque personnelle ; sinon un dossier structuré suffit."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You have a small volume of assets and a folder manager suffices.",
+        "You seek a permanently free tool.",
+        "You prefer cloud collaboration (Eagle is primarily local)."
+      ],
+      "keepIf": [
+        "You collect and organize hundreds or thousands of inspiration assets.",
+        "You want a tool that understands your files visually (color, shape search).",
+        "You prefer a desktop solution without mandatory cloud."
+      ],
+      "threshold": "Eagle is ideal for designers with a large personal library; otherwise a structured folder system suffices."
+    },
+    "website_url": "https://eagle.cool"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Entry cost (one-time purchase, exact price undisclosed).",
+        "No real-time collaboration or team sharing.",
+        "No permanent free version after trial."
+      ],
+      "pros": [
+        "Smooth, fast interface for browsing thousands of assets.",
+        "Visual and semantic search very intuitive.",
+        "One-time purchase, no recurring subscription.",
+        "30-day free trial risk-free.",
+        "Support for 90+ formats."
+      ],
+      "use_cases": [
+        "Centralize and quickly retrieve inspiration images.",
+        "Organize a personal resource visual bank.",
+        "Sort by color or tag to study design palettes."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You have a small volume of assets and a folder manager suffices.",
+          "You seek a permanently free tool.",
+          "You prefer cloud collaboration (Eagle is primarily local)."
+        ],
+        "keepIf": [
+          "You collect and organize hundreds or thousands of inspiration assets.",
+          "You want a tool that understands your files visually (color, shape search).",
+          "You prefer a desktop solution without mandatory cloud."
+        ],
+        "threshold": "Eagle is ideal for designers with a large personal library; otherwise a structured folder system suffices."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Essai gratuit 30 jours avec accès complet ; pas de version permanente gratuite. Achat requis pour continuer.",
+        "exists": false
+      },
+      "key_features": [
+        "Collection : extension navigateur et import par drag-drop",
+        "Organisation : tags hiérarchiques, smart folders, auto-tagging par IA",
+        "Recherche : visuelle, sémantique, par couleur",
+        "Support 90+ formats : images, vidéos, GIFs, audio, fonts, PDFs",
+        "Plugins extensibles pour traitement d'image (suppression fond, upscale)"
+      ],
+      "plans": [
+        {
+          "name": "Eagle (license)",
+          "price": "Achat unique, prix sur la page officielle"
+        }
+      ],
+      "pricing_model": "Achat unique avec licence perpétuelle ; pas d'abonnement. Essai gratuit limité à 30 jours.",
+      "what": "Application desktop de gestion d'assets créatifs pour les designers, permettant de centraliser, organiser et rechercher visuellement des fichiers (images, vidéos, fonts, PDFs).",
+      "what_en": "Desktop application for managing creative assets, enabling designers to centralize, organize, and visually search files (images, videos, fonts, PDFs)."
+    },
+    "fr": {
+      "cons": [
+        "Coût d'entrée (achat unique, prix non divulgué).",
+        "Pas de collaboration en temps réel ou partage d'equipe.",
+        "Pas de version gratuite permanente après essai."
+      ],
+      "pros": [
+        "Interface fluide et rapide pour parcourir des milliers d'assets.",
+        "Recherche visuelle et sémantique très intuitive.",
+        "Achat unique, pas d'abonnement récurrent.",
+        "Essai gratuit 30 jours sans risque.",
+        "Support de 90+ formats."
+      ],
+      "relevant_for": [
+        "Designers graphiques",
+        "UX/UI designers",
+        "Directeurs artistiques"
+      ],
+      "use_cases": [
+        "Centraliser et retrouver rapidement des images d'inspiration.",
+        "Organiser une banque de ressources visuelles personnelle.",
+        "Classer par couleur ou tag pour étudier les palettes design."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous avez un petit volume d'assets et un gestionnaire de dossiers suffit.",
+          "Vous cherchez un outil gratuit permanent.",
+          "Vous préférez une solution cloud collaborative (Eagle est principalement local)."
+        ],
+        "keepIf": [
+          "Vous collectez et organisez des centaines ou des milliers d'assets d'inspiration.",
+          "Vous cherchez une solution qui comprend visuellement vos fichiers (recherche par couleur, forme).",
+          "Vous aimez une interface desktop sans cloud obligatoire."
+        ],
+        "threshold": "Eagle s'impose pour les designers avec une grosse bibliothèque personnelle ; sinon un dossier structuré suffit."
+      }
+    },
+    "slug": "eagle",
+    "sources": [
+      {
+        "label": "Eagle official site",
+        "url": "https://eagle.cool"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-001",
+    "batch_position": 10,
+    "blockers": [],
+    "catalog_hash": "sha256:1df8208f5f15536d3b85f27758de6d9eac4c70703e0686d3fc2f33c56d7171f8",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:e27d9029bbb825c430205522c5b51d4af08d0ff4c753910a8d728b00cc593581",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Eagle",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence",
+      "shallow_editorial"
+    ],
+    "priority_score": 260,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:611511256a4dbff3eee4339e08ed02d8cb9d15791c66d75c6ffee6b558827d2c",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "eagle",
+    "source_url": "https://eagle.cool",
+    "source_verified_on": "2026-05-10",
+    "status": "QUEUED"
+  }
+}

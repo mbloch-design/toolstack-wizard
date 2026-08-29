@@ -1,0 +1,243 @@
+{
+  "batch": "review-design-tools-critical-001",
+  "current": {
+    "affiliate_url": "https://www.autodesk.com/products/autocad-lt/overview",
+    "alternatives": [],
+    "category": "design-tools",
+    "cons": [
+      "Pas de 3D du tout.",
+      "Moins de fonctionnalités avancées qu'AutoCAD.",
+      "Toujours un abonnement (pas de perpétuelle)."
+    ],
+    "cons_en": [
+      "No 3D modeling at all.",
+      "Fewer advanced features than AutoCAD.",
+      "Still subscription-based (no perpetual)."
+    ],
+    "host_app": null,
+    "id": "autocad-lt",
+    "long_description": "Dessin 2D précis pour plans techniques, cotations et échanges artisans.",
+    "long_description_en": "Precise 2D drafting for technical plans, dimensions and contractor exchanges.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://tooltrim.com/og-screenshots/autocad-lt.png"
+    },
+    "name": "AutoCAD LT",
+    "pricing": {
+      "free": "Essai gratuit",
+      "paid": "À partir de 63€/mois environ"
+    },
+    "pricing_en": null,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 63,
+      "official_source_url": "https://www.autodesk.com/products/autocad-lt/overview",
+      "source_domain": "autodesk.com",
+      "verification_status": "manual_reference",
+      "verified_on": "2026-05-10"
+    },
+    "pros": [
+      "Tarif bien inférieur à AutoCAD complet.",
+      "Interface et workflows AutoCAD maintenus.",
+      "Suffisant pour la majorité des dessins 2D.",
+      "Support Autodesk de qualité professionnelle."
+    ],
+    "pros_en": [
+      "Much lower cost than full AutoCAD.",
+      "AutoCAD interface and workflows preserved.",
+      "Sufficient for most 2D drawings.",
+      "Professional-grade Autodesk support."
+    ],
+    "short_description": "Dessin 2D précis pour plans techniques, cotations et échanges artisans.",
+    "short_description_en": "Precise 2D drafting for technical plans, dimensions and contractor exchanges.",
+    "slug": "autocad-lt",
+    "source_url": "https://www.autodesk.com/products/autocad-lt/overview",
+    "source_verified_on": "2026-05-10",
+    "use_cases": [
+      "Produire des plans de construction en 2D.",
+      "Gérer des schémas technique et électrique.",
+      "Collaborer sur des dessins CAO simples en équipe."
+    ],
+    "use_cases_en": [
+      "Produce 2D construction plans.",
+      "Manage technical and electrical schematics.",
+      "Collaborate on simple CAD drawings as a team."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous avez besoin de modélisation 3D sérieuse.",
+        "Vous travaillez sur des projets très complexes.",
+        "Vous cherchez une solution très bon marché."
+      ],
+      "keepIf": [
+        "Vous faites surtout du dessin technique 2D.",
+        "Vous avez un budget limité par rapport à AutoCAD full.",
+        "La 3D n'est pas prioritaire pour votre travail."
+      ],
+      "threshold": "AutoCAD LT convient parfaitement pour la CAO 2D légère ; pour de la 3D ou un budget très restreint, comparez avec d'autres options."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You need serious 3D modeling.",
+        "You work on very complex projects.",
+        "You're looking for a very low-cost solution."
+      ],
+      "keepIf": [
+        "You mostly do 2D technical drawing.",
+        "You have a limited budget compared to full AutoCAD.",
+        "3D modeling is not a priority for your work."
+      ],
+      "threshold": "AutoCAD LT works perfectly for light 2D CAD; for 3D work or a very tight budget, explore other options."
+    },
+    "website_url": "https://www.autodesk.com/products/autocad-lt/overview"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "No 3D modeling at all.",
+        "Fewer advanced features than AutoCAD.",
+        "Still subscription-based (no perpetual)."
+      ],
+      "pros": [
+        "Much lower cost than full AutoCAD.",
+        "AutoCAD interface and workflows preserved.",
+        "Sufficient for most 2D drawings.",
+        "Professional-grade Autodesk support."
+      ],
+      "use_cases": [
+        "Produce 2D construction plans.",
+        "Manage technical and electrical schematics.",
+        "Collaborate on simple CAD drawings as a team."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You need serious 3D modeling.",
+          "You work on very complex projects.",
+          "You're looking for a very low-cost solution."
+        ],
+        "keepIf": [
+          "You mostly do 2D technical drawing.",
+          "You have a limited budget compared to full AutoCAD.",
+          "3D modeling is not a priority for your work."
+        ],
+        "threshold": "AutoCAD LT works perfectly for light 2D CAD; for 3D work or a very tight budget, explore other options."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Essai gratuit 30 jours ; pas de version gratuite.",
+        "exists": false
+      },
+      "key_features": [
+        "Dessin technique 2D complet",
+        "Pas de modélisation 3D",
+        "Outils de base de CAO (calques, blocs, références externes)",
+        "Import/export DWG",
+        "Web et mobile inclus"
+      ],
+      "plans": [
+        {
+          "name": "AutoCAD LT (abonnement annuel)",
+          "price": "60 $/mois ou 440 $/an"
+        }
+      ],
+      "pricing_model": "Abonnement annuel.",
+      "what": "Version allégée d'AutoCAD dédiée au dessin technique 2D. Conçue pour les petites équipes et freelances ayant besoin d'une CAO basique sans les outils 3D coûteux.",
+      "what_en": "Lightweight version of AutoCAD dedicated to 2D technical drawing. Designed for small teams and freelancers needing basic CAD without expensive 3D tools."
+    },
+    "fr": {
+      "cons": [
+        "Pas de 3D du tout.",
+        "Moins de fonctionnalités avancées qu'AutoCAD.",
+        "Toujours un abonnement (pas de perpétuelle)."
+      ],
+      "pros": [
+        "Tarif bien inférieur à AutoCAD complet.",
+        "Interface et workflows AutoCAD maintenus.",
+        "Suffisant pour la majorité des dessins 2D.",
+        "Support Autodesk de qualité professionnelle."
+      ],
+      "relevant_for": [
+        "Dessinateurs technique",
+        "Petites équipes CAO",
+        "Freelances en architecture 2D"
+      ],
+      "use_cases": [
+        "Produire des plans de construction en 2D.",
+        "Gérer des schémas technique et électrique.",
+        "Collaborer sur des dessins CAO simples en équipe."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous avez besoin de modélisation 3D sérieuse.",
+          "Vous travaillez sur des projets très complexes.",
+          "Vous cherchez une solution très bon marché."
+        ],
+        "keepIf": [
+          "Vous faites surtout du dessin technique 2D.",
+          "Vous avez un budget limité par rapport à AutoCAD full.",
+          "La 3D n'est pas prioritaire pour votre travail."
+        ],
+        "threshold": "AutoCAD LT convient parfaitement pour la CAO 2D légère ; pour de la 3D ou un budget très restreint, comparez avec d'autres options."
+      }
+    },
+    "slug": "autocad-lt",
+    "sources": [
+      {
+        "label": "Autodesk AutoCAD LT — site officiel",
+        "url": "https://www.autodesk.com/products/autocad-lt/overview"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-001",
+    "batch_position": 7,
+    "blockers": [],
+    "catalog_hash": "sha256:603a66942ae4342245497fe681e408c7957d967b4db9ee6372cb8ff1049a285d",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:fcec816ec962642fbb1aac067b96262d0731c330f6ba68df74eb0e571c6a20bf",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "AutoCAD LT",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence",
+      "shallow_editorial"
+    ],
+    "priority_score": 260,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:f1688474372f824077c36d56d25184429bcd008c12a7c8ff132d6ce52ae0cfbe",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "autocad-lt",
+    "source_url": "https://www.autodesk.com/products/autocad-lt/overview",
+    "source_verified_on": "2026-05-10",
+    "status": "QUEUED"
+  }
+}

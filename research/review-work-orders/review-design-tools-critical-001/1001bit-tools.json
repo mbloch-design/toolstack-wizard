@@ -1,0 +1,263 @@
+{
+  "batch": "review-design-tools-critical-001",
+  "current": {
+    "affiliate_url": "https://www.1001bit.com",
+    "alternatives": [],
+    "category": "design-tools",
+    "cons": [
+      "Interface peut être dense et complexe pour débutants.",
+      "Customisation très spécialisée (pas pour du modeling libre).",
+      "Pas de support direct en français sur le site.",
+      "La version Pro s'amortit surtout en usage professionnel fréquent."
+    ],
+    "cons_en": [
+      "Interface can be dense and complex for beginners.",
+      "Customization is specialized (not for free-form modeling).",
+      "No direct English support on the site.",
+      "The Pro version pays off mainly with frequent professional use."
+    ],
+    "host_app": null,
+    "id": "1001bit-tools",
+    "long_description": "Outils SketchUp pour éléments architecturaux simples : escaliers, ouvertures et détails constructifs.",
+    "long_description_en": "SketchUp tools for simple architectural elements: stairs, openings and construction details.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://tooltrim.com/og-screenshots/1001bit-tools.png"
+    },
+    "name": "1001bit Tools",
+    "pricing": {
+      "free": "Version gratuite",
+      "paid": "Version Pro disponible"
+    },
+    "pricing_en": null,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "official_source_url": "https://www.1001bit.com",
+      "source_domain": "1001bit.com",
+      "verification_status": "manual_reference",
+      "verified_on": "2026-05-10"
+    },
+    "pros": [
+      "Gain de temps spectaculaire sur la génération d'escaliers et portes.",
+      "Outils très paramétriques et flexibles.",
+      "Version gratuite généreuse et fonctionnelle.",
+      "Intégration serrée avec SketchUp.",
+      "Banque personnalisée de profils via fichiers .txt."
+    ],
+    "pros_en": [
+      "Spectacular time savings on staircases and door generation.",
+      "Highly parametric and flexible tools.",
+      "Generous and functional free version.",
+      "Tight SketchUp integration.",
+      "Custom profile library via .txt files."
+    ],
+    "short_description": "Outils SketchUp pour éléments architecturaux simples : escaliers, ouvertures et détails constructifs.",
+    "short_description_en": "SketchUp tools for simple architectural elements: stairs, openings and construction details.",
+    "slug": "1001bit-tools",
+    "source_url": "https://www.1001bit.com",
+    "source_verified_on": "2026-05-10",
+    "use_cases": [
+      "Concevoir rapidement un immeuble avec escaliers standards.",
+      "Générer des portes et fenêtres multiples en lot.",
+      "Analyser les ombres d'une façade avec 1001shadows.",
+      "Créer des profils de toitures complexes automatiquement."
+    ],
+    "use_cases_en": [
+      "Quickly design a building with standard staircases.",
+      "Batch-generate multiple doors and windows.",
+      "Analyze shadows of a facade with 1001shadows.",
+      "Automatically create complex roof profiles."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous cherchez une solution entièrement gratuite.",
+        "Vous dessinez surtout en 2D et rarement en 3D.",
+        "Vous avez besoin de beaucoup de customisation au-delà de l'outil."
+      ],
+      "keepIf": [
+        "Vous êtes architect ou designer et produisez beaucoup de modèles 3D.",
+        "Vous générez souvent des escaliers, des portes, des fenêtres paramétrisés.",
+        "Vous voulez accélérer votre production d'éléments standards."
+      ],
+      "threshold": "1001bit Pro s'impose pour les architectes qui génèrent beaucoup d'éléments standards ; le Freeware suffit pour un usage occasionnel."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You want a completely free solution.",
+        "You mainly draw in 2D and rarely in 3D.",
+        "You need extensive customization beyond the tool."
+      ],
+      "keepIf": [
+        "You are an architect or designer producing many 3D models.",
+        "You frequently generate parametric staircases, doors, and windows.",
+        "You want to accelerate production of standard elements."
+      ],
+      "threshold": "1001bit Pro makes sense for architects generating many standard elements; the Freeware suffices for occasional use."
+    },
+    "website_url": "https://www.1001bit.com"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Interface can be dense and complex for beginners.",
+        "Customization is specialized (not for free-form modeling).",
+        "No direct English support on the site.",
+        "The Pro version pays off mainly with frequent professional use."
+      ],
+      "pros": [
+        "Spectacular time savings on staircases and door generation.",
+        "Highly parametric and flexible tools.",
+        "Generous and functional free version.",
+        "Tight SketchUp integration.",
+        "Custom profile library via .txt files."
+      ],
+      "use_cases": [
+        "Quickly design a building with standard staircases.",
+        "Batch-generate multiple doors and windows.",
+        "Analyze shadows of a facade with 1001shadows.",
+        "Automatically create complex roof profiles."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You want a completely free solution.",
+          "You mainly draw in 2D and rarely in 3D.",
+          "You need extensive customization beyond the tool."
+        ],
+        "keepIf": [
+          "You are an architect or designer producing many 3D models.",
+          "You frequently generate parametric staircases, doors, and windows.",
+          "You want to accelerate production of standard elements."
+        ],
+        "threshold": "1001bit Pro makes sense for architects generating many standard elements; the Freeware suffices for occasional use."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "1001bit Freeware : version gratuite avec outils essentiels pour escaliers, portes, fenêtres de base.",
+        "exists": true
+      },
+      "key_features": [
+        "Générateur d'escaliers paramétrique",
+        "Générateur d'escalators",
+        "Outils murs et divisions de space",
+        "Générateur de portes et fenêtres",
+        "Générateur de toitures avec calcul auto des chevrons",
+        "Outil 1001shadows pour l'analyse d'ombrage",
+        "Base de données .txt pour profils personnalisés",
+        "Support multi-langues",
+        "Compatible SketchUp 2017+"
+      ],
+      "plans": [
+        {
+          "name": "1001bit Freeware",
+          "price": "Gratuit"
+        },
+        {
+          "name": "1001bit Pro",
+          "price": "48 $ (prix indicatif selon les sources)"
+        }
+      ],
+      "pricing_model": "Freemium : version gratuite avec fonctions de base, version Pro payante avec fonctions avancées.",
+      "what": "Suite d'outils paramétriques SketchUp pour la génération rapide d'éléments architecturaux. 1001bit crée des escaliers, escalators, murs, portes, fenêtres, toitures et autres composants avec un simple input de dimensions. Idéal pour les architects et les modélisateurs produisant rapidement du contenu.",
+      "what_en": "Suite of parametric SketchUp tools for rapid generation of architectural elements. 1001bit creates staircases, escalators, walls, doors, windows, roofs, and other components from simple dimension inputs. Ideal for architects and modelers producing content quickly."
+    },
+    "fr": {
+      "cons": [
+        "Interface peut être dense et complexe pour débutants.",
+        "Customisation très spécialisée (pas pour du modeling libre).",
+        "Pas de support direct en français sur le site.",
+        "La version Pro s'amortit surtout en usage professionnel fréquent."
+      ],
+      "pros": [
+        "Gain de temps spectaculaire sur la génération d'escaliers et portes.",
+        "Outils très paramétriques et flexibles.",
+        "Version gratuite généreuse et fonctionnelle.",
+        "Intégration serrée avec SketchUp.",
+        "Banque personnalisée de profils via fichiers .txt."
+      ],
+      "relevant_for": [
+        "Architectes SketchUp",
+        "Designers architecturaux",
+        "Bureaux d'études BIM"
+      ],
+      "use_cases": [
+        "Concevoir rapidement un immeuble avec escaliers standards.",
+        "Générer des portes et fenêtres multiples en lot.",
+        "Analyser les ombres d'une façade avec 1001shadows.",
+        "Créer des profils de toitures complexes automatiquement."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous cherchez une solution entièrement gratuite.",
+          "Vous dessinez surtout en 2D et rarement en 3D.",
+          "Vous avez besoin de beaucoup de customisation au-delà de l'outil."
+        ],
+        "keepIf": [
+          "Vous êtes architect ou designer et produisez beaucoup de modèles 3D.",
+          "Vous générez souvent des escaliers, des portes, des fenêtres paramétrisés.",
+          "Vous voulez accélérer votre production d'éléments standards."
+        ],
+        "threshold": "1001bit Pro s'impose pour les architectes qui génèrent beaucoup d'éléments standards ; le Freeware suffit pour un usage occasionnel."
+      }
+    },
+    "slug": "1001bit-tools",
+    "sources": [
+      {
+        "label": "1001bit — Architectural Tools for SketchUp (site officiel)",
+        "url": "https://www.1001bit.com"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-001",
+    "batch_position": 5,
+    "blockers": [],
+    "catalog_hash": "sha256:e70d02256c38f24c7301da11de630b46c4bcf0dea53554079810d234869f991e",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:b8bf5dc65fee95fb08c3ee9a667f049b07b9ab828820b72c80317f4b669ee1b4",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "1001bit Tools",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence",
+      "shallow_editorial"
+    ],
+    "priority_score": 260,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:64971399d3151ac0f7adf4637516cea38fb03c7b4c93d32414e54f9bb2cdd2ae",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "1001bit-tools",
+    "source_url": "https://www.1001bit.com",
+    "source_verified_on": "2026-05-10",
+    "status": "QUEUED"
+  }
+}

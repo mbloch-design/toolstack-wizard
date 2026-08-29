@@ -1,0 +1,273 @@
+{
+  "batch": "review-design-tools-critical-001",
+  "current": {
+    "affiliate_url": "https://brandmark.io",
+    "alternatives": [
+      "looka",
+      "canva",
+      "logopony"
+    ],
+    "category": "design-tools",
+    "cons": [
+      "IA ne comprend pas toujours votre vision unique.",
+      "Concepts générés peuvent sembler parfois génériques.",
+      "Pas de révisions humaines incluses (sauf Enterprise).",
+      "Difficile de pivoter radicalement après génération."
+    ],
+    "cons_en": [
+      "AI doesn't always understand your unique vision.",
+      "Generated concepts can feel generic sometimes.",
+      "No human revisions included (except Enterprise).",
+      "Hard to pivot radically after generation."
+    ],
+    "host_app": null,
+    "id": "brandmark",
+    "long_description": "Brandmark génère des logos professionnels en quelques secondes avec kit de marque, mockups et fichiers SVG.",
+    "long_description_en": "Brandmark generates professional logos in seconds with brand kit, mockups and SVG files.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://tooltrim.com/og-screenshots/brandmark.png"
+    },
+    "name": "Brandmark",
+    "pricing": {
+      "free": "Aperçu gratuit",
+      "paid": "Basic 25$/mois"
+    },
+    "pricing_en": {
+      "free": "Aperçu gratuit",
+      "paid": "Basic $25/mo"
+    },
+    "pricing_v5": {
+      "annual_monthly_eur": 24,
+      "billing_note": "Basic mensuel",
+      "currency_original": "USD",
+      "free_tier": true,
+      "free_tier_note": "Aperçu gratuit",
+      "monthly_eur": 30,
+      "plan_name": "Basic",
+      "price_original": 25,
+      "reliability": "medium",
+      "source_url": "https://brandmark.io/pricing",
+      "verified_on": "2026-05-08"
+    },
+    "pros": [
+      "Paiement unique, pas d'abonnement.",
+      "IA propose plusieurs concepts originaux.",
+      "Résultats généralement modernes et épurés.",
+      "Process très rapide (minutes).",
+      "Excellente valeur rapport qualité/prix."
+    ],
+    "pros_en": [
+      "One-time payment, no subscription.",
+      "AI proposes multiple original concepts.",
+      "Results generally modern and clean.",
+      "Very fast process (minutes).",
+      "Excellent value for money."
+    ],
+    "short_description": "Générateur de logo IA avec kit de marque complet, achat unique.",
+    "short_description_en": "AI logo generator with full brand kit, one-time purchase.",
+    "slug": "brandmark",
+    "source_url": "https://brandmark.io",
+    "source_verified_on": "2026-05-08",
+    "use_cases": [
+      "Générer un logo de démarrage rapidement.",
+      "Explorer plusieurs directions visuelles.",
+      "Créer une identité visuelle pour un projet secondaire."
+    ],
+    "use_cases_en": [
+      "Quickly generate a startup logo.",
+      "Explore multiple visual directions.",
+      "Create visual identity for a side project."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous avez besoin d'un logo réellement unique et sur-mesure.",
+        "Vous exigez une direction créative très spécifique.",
+        "Vous voulez des révisions illimitées avec un designer humain."
+      ],
+      "keepIf": [
+        "Vous cherchez un logo rapide et abordable.",
+        "Vous aimez l'idée que l'IA vous propose plusieurs concepts.",
+        "Vous avez un budget petit à moyen pour le branding."
+      ],
+      "threshold": "Brandmark excelle pour un logo rapide, original et bon marché ; pour une identité visuelle très forte, un designer humain reste préférable."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You need a truly unique, bespoke logo.",
+        "You require very specific creative direction.",
+        "You want unlimited revisions with a human designer."
+      ],
+      "keepIf": [
+        "You want a quick and affordable logo.",
+        "You like the idea of AI generating multiple concepts.",
+        "You have a small to medium branding budget."
+      ],
+      "threshold": "Brandmark excels at a fast, original, and affordable logo; for very strong visual identity, a human designer is preferable."
+    },
+    "website_url": "https://brandmark.io"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "AI doesn't always understand your unique vision.",
+        "Generated concepts can feel generic sometimes.",
+        "No human revisions included (except Enterprise).",
+        "Hard to pivot radically after generation."
+      ],
+      "pros": [
+        "One-time payment, no subscription.",
+        "AI proposes multiple original concepts.",
+        "Results generally modern and clean.",
+        "Very fast process (minutes).",
+        "Excellent value for money."
+      ],
+      "use_cases": [
+        "Quickly generate a startup logo.",
+        "Explore multiple visual directions.",
+        "Create visual identity for a side project."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You need a truly unique, bespoke logo.",
+          "You require very specific creative direction.",
+          "You want unlimited revisions with a human designer."
+        ],
+        "keepIf": [
+          "You want a quick and affordable logo.",
+          "You like the idea of AI generating multiple concepts.",
+          "You have a small to medium branding budget."
+        ],
+        "threshold": "Brandmark excels at a fast, original, and affordable logo; for very strong visual identity, a human designer is preferable."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Génération et prévisualisation des logos gratuite. Téléchargement des fichiers et brand kit nécessite un achat unique.",
+        "exists": true
+      },
+      "key_features": [
+        "Génération AI de concepts de logos",
+        "Customization couleurs et polices",
+        "Révisions illimitées",
+        "Brand guidelines et design assets (Designer+)",
+        "Droits commerciaux et personnels complets",
+        "Fichiers vecteur et raster"
+      ],
+      "plans": [
+        {
+          "name": "Basic",
+          "price": "35 $ (fichiers logo PNG et vecteur)"
+        },
+        {
+          "name": "Designer",
+          "price": "95 $ (fichiers source + brand guidelines + designs web/cartes/social)"
+        },
+        {
+          "name": "Enterprise",
+          "price": "195 $ (tout Designer + jusqu'à 10 concepts hand-crafted + téléchargement polices)"
+        }
+      ],
+      "pricing_model": "Paiement unique par package (pas d'abonnement). Générer et prévisualiser des logos est gratuit.",
+      "what": "Outil de création de logos alimenté par IA. Génère automatiquement plusieurs concepts de logo basés sur votre description, puis permet la customisation et le téléchargement de fichiers vecteur, PNG et brand guidelines.",
+      "what_en": "AI-powered logo creation tool. Automatically generates multiple logo concepts based on your description, then allows customization and download of vector, PNG files, and brand guidelines."
+    },
+    "fr": {
+      "cons": [
+        "IA ne comprend pas toujours votre vision unique.",
+        "Concepts générés peuvent sembler parfois génériques.",
+        "Pas de révisions humaines incluses (sauf Enterprise).",
+        "Difficile de pivoter radicalement après génération."
+      ],
+      "pros": [
+        "Paiement unique, pas d'abonnement.",
+        "IA propose plusieurs concepts originaux.",
+        "Résultats généralement modernes et épurés.",
+        "Process très rapide (minutes).",
+        "Excellente valeur rapport qualité/prix."
+      ],
+      "relevant_for": [
+        "Startups",
+        "Side projects",
+        "Indépendants"
+      ],
+      "use_cases": [
+        "Générer un logo de démarrage rapidement.",
+        "Explorer plusieurs directions visuelles.",
+        "Créer une identité visuelle pour un projet secondaire."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous avez besoin d'un logo réellement unique et sur-mesure.",
+          "Vous exigez une direction créative très spécifique.",
+          "Vous voulez des révisions illimitées avec un designer humain."
+        ],
+        "keepIf": [
+          "Vous cherchez un logo rapide et abordable.",
+          "Vous aimez l'idée que l'IA vous propose plusieurs concepts.",
+          "Vous avez un budget petit à moyen pour le branding."
+        ],
+        "threshold": "Brandmark excelle pour un logo rapide, original et bon marché ; pour une identité visuelle très forte, un designer humain reste préférable."
+      }
+    },
+    "slug": "brandmark",
+    "sources": [
+      {
+        "label": "Brandmark — site officiel",
+        "url": "https://brandmark.io/"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-001",
+    "batch_position": 8,
+    "blockers": [],
+    "catalog_hash": "sha256:b829ad2693c9a3623358ef3b2a2b71a6c71384cd4d7823f55573188d71b5d2c7",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:5d6c553a693e8c46ff3b2cf386224e899e724ab47c30141ea10b99692ffe7bfe",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Brandmark",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence",
+      "shallow_editorial"
+    ],
+    "priority_score": 260,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:47de389e5aa0a1fd9e3714c8bb97f0c3b93a2bceebb0d3c85f8a1a19abcf4702",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "brandmark",
+    "source_url": "https://brandmark.io",
+    "source_verified_on": "2026-05-08",
+    "status": "QUEUED"
+  }
+}

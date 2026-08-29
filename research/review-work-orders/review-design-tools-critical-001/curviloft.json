@@ -1,0 +1,255 @@
+{
+  "batch": "review-design-tools-critical-001",
+  "current": {
+    "affiliate_url": "https://sketchucation.com/pluginstore",
+    "alternatives": [],
+    "category": "design-tools",
+    "cons": [
+      "Versions récentes payantes (via Fredo6 Creator).",
+      "Requiert LibFredo6 installée.",
+      "Pas le meilleur pour la modélisation paramétrique rigide.",
+      "Courbe apprentissage modérée."
+    ],
+    "cons_en": [
+      "Recent versions paid (via Fredo6 Creator).",
+      "Requires LibFredo6 installed.",
+      "Not best for rigid parametric modeling.",
+      "Moderate learning curve."
+    ],
+    "host_app": null,
+    "id": "curviloft",
+    "long_description": "Plugin SketchUp pour générer surfaces tendues, formes organiques et volumes courbes.",
+    "long_description_en": "SketchUp plugin for lofted surfaces, organic shapes and curved volumes.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://tooltrim.com/og-screenshots/curviloft.png"
+    },
+    "name": "Curviloft",
+    "pricing": {
+      "free": "Selon licence SketchUcation",
+      "paid": "Donation/licence selon bundle"
+    },
+    "pricing_en": null,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "official_source_url": "https://sketchucation.com/pluginstore",
+      "source_domain": "sketchucation.com",
+      "verification_status": "manual_reference",
+      "verified_on": "2026-05-10"
+    },
+    "pros": [
+      "Versions anciennes entièrement gratuites.",
+      "Très efficace pour créer des surfaces lisses.",
+      "Interface SketchUp native, intégration étroite.",
+      "Résultats visuellement très bons.",
+      "Alternative (gratuite) aux outils surfaciques professionnels."
+    ],
+    "pros_en": [
+      "Older versions completely free.",
+      "Very effective at creating smooth surfaces.",
+      "Native SketchUp interface, tight integration.",
+      "Visually very good results.",
+      "Free alternative to professional surfacing tools."
+    ],
+    "short_description": "Plugin SketchUp pour générer surfaces tendues, formes organiques et volumes courbes.",
+    "short_description_en": "SketchUp plugin for lofted surfaces, organic shapes and curved volumes.",
+    "slug": "curviloft",
+    "source_url": "https://sketchucation.com/pluginstore",
+    "source_verified_on": "2026-05-10",
+    "use_cases": [
+      "Créer des surfaces lissées et organiques.",
+      "Modeliser des fuselages, carrosseries, meubles courbes.",
+      "Générer des skins entre des profils/contours."
+    ],
+    "use_cases_en": [
+      "Create smooth and organic surfaces.",
+      "Model fuselages, car bodies, curved furniture.",
+      "Generate skins between profiles/contours."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous utilisez un autre logiciel 3D (Rhino, Fusion, Blender).",
+        "Vous faites surtout de la modélisation angulaire (box modeling).",
+        "Vous ne voulez pas payer pour les versions récentes."
+      ],
+      "keepIf": [
+        "Vous modélisez des surfaces courbes complexes en SketchUp.",
+        "Vous faites du design produit ou architecture organique.",
+        "Vous importez des contours et avez besoin de les « lofter »."
+      ],
+      "threshold": "Curviloft est excellent pour les surfaces courbes organiques en SketchUp ; pour la modélisation paramétrée lourde, Rhino ou Fusion offrent plus."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You use different 3D software (Rhino, Fusion, Blender).",
+        "You mostly do angular modeling (box modeling).",
+        "You don't want to pay for recent versions."
+      ],
+      "keepIf": [
+        "You model complex curved surfaces in SketchUp.",
+        "You do product design or organic architecture.",
+        "You import contours and need to 'loft' them."
+      ],
+      "threshold": "Curviloft excels at organic curved surfaces in SketchUp; for heavy parametric modeling, Rhino or Fusion offer more."
+    },
+    "website_url": "https://sketchucation.com/pluginstore"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Recent versions paid (via Fredo6 Creator).",
+        "Requires LibFredo6 installed.",
+        "Not best for rigid parametric modeling.",
+        "Moderate learning curve."
+      ],
+      "pros": [
+        "Older versions completely free.",
+        "Very effective at creating smooth surfaces.",
+        "Native SketchUp interface, tight integration.",
+        "Visually very good results.",
+        "Free alternative to professional surfacing tools."
+      ],
+      "use_cases": [
+        "Create smooth and organic surfaces.",
+        "Model fuselages, car bodies, curved furniture.",
+        "Generate skins between profiles/contours."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You use different 3D software (Rhino, Fusion, Blender).",
+          "You mostly do angular modeling (box modeling).",
+          "You don't want to pay for recent versions."
+        ],
+        "keepIf": [
+          "You model complex curved surfaces in SketchUp.",
+          "You do product design or organic architecture.",
+          "You import contours and need to 'loft' them."
+        ],
+        "threshold": "Curviloft excels at organic curved surfaces in SketchUp; for heavy parametric modeling, Rhino or Fusion offer more."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Versions anciennes (antérieures à 2.0) gratuites et légales. Versions récentes (2.0+) payantes via Fredo6 ou trial 30 jours SketchUcation.",
+        "exists": true
+      },
+      "key_features": [
+        "Loft by Spline : relier des contours avec splines lisses",
+        "Loft along Path : créer des surfaces en suivant une courbe",
+        "Skinning : générer des surfaces bornées par 3-4 contours contigus",
+        "Support des contours ouverts et fermés",
+        "Intégration LibFredo6 requise"
+      ],
+      "plans": [
+        {
+          "name": "Curviloft (versions anciennes)",
+          "price": "Gratuit"
+        },
+        {
+          "name": "Curviloft (v2.0+ avec Fredo6)",
+          "price": "Montants sur le site Fredo6 ou SketchUcation"
+        }
+      ],
+      "pricing_model": "Ancien : gratuit (versions plus anciennes) ; Nouveau : payant via Fredo6 (plugin créateur Fredo6 payant, versions récentes).",
+      "what": "Plugin SketchUp pour créer des surfaces lissées et des « skins » 3D en reliant des contours. Inclus : Loft by Spline, Loft along Path, Skinning. Utile pour modélisation organique, surfaces courbes complexes, design de produit.",
+      "what_en": "SketchUp plugin to create smooth surfaces and 3D 'skins' by connecting contours. Includes: Loft by Spline, Loft along Path, Skinning. Useful for organic modeling, complex curved surfaces, product design."
+    },
+    "fr": {
+      "cons": [
+        "Versions récentes payantes (via Fredo6 Creator).",
+        "Requiert LibFredo6 installée.",
+        "Pas le meilleur pour la modélisation paramétrique rigide.",
+        "Courbe apprentissage modérée."
+      ],
+      "pros": [
+        "Versions anciennes entièrement gratuites.",
+        "Très efficace pour créer des surfaces lisses.",
+        "Interface SketchUp native, intégration étroite.",
+        "Résultats visuellement très bons.",
+        "Alternative (gratuite) aux outils surfaciques professionnels."
+      ],
+      "relevant_for": [
+        "Modélisateurs SketchUp",
+        "Designers produit",
+        "Architectes"
+      ],
+      "use_cases": [
+        "Créer des surfaces lissées et organiques.",
+        "Modeliser des fuselages, carrosseries, meubles courbes.",
+        "Générer des skins entre des profils/contours."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous utilisez un autre logiciel 3D (Rhino, Fusion, Blender).",
+          "Vous faites surtout de la modélisation angulaire (box modeling).",
+          "Vous ne voulez pas payer pour les versions récentes."
+        ],
+        "keepIf": [
+          "Vous modélisez des surfaces courbes complexes en SketchUp.",
+          "Vous faites du design produit ou architecture organique.",
+          "Vous importez des contours et avez besoin de les « lofter »."
+        ],
+        "threshold": "Curviloft est excellent pour les surfaces courbes organiques en SketchUp ; pour la modélisation paramétrée lourde, Rhino ou Fusion offrent plus."
+      }
+    },
+    "slug": "curviloft",
+    "sources": [
+      {
+        "label": "Curviloft — SketchUcation Plugin Store",
+        "url": "https://sketchucation.com/plugin/1175-curviloft"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-001",
+    "batch_position": 9,
+    "blockers": [],
+    "catalog_hash": "sha256:5ead6ceb6d3d8c73cef594571e4e4614b52ae2fb5f6b42ca8627037fecc255ec",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:198abf6264ea5f1b66496e9b4d331ae1cf4ea059279008adc086da710a77c4d5",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Curviloft",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence",
+      "shallow_editorial"
+    ],
+    "priority_score": 260,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:105cd10b331533a20a899ff48c834b06f2a4341433495d0c86579328e222c698",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "curviloft",
+    "source_url": "https://sketchucation.com/pluginstore",
+    "source_verified_on": "2026-05-10",
+    "status": "QUEUED"
+  }
+}

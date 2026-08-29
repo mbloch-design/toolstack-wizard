@@ -1,0 +1,96 @@
+{
+  "batch": "review-design-tools-critical-001",
+  "current": {
+    "affiliate_url": "https://www.figma.com/draw/",
+    "alternatives": [
+      "adobe-illustrator"
+    ],
+    "category": "design-tools",
+    "cons": [],
+    "cons_en": [],
+    "host_app": "figma",
+    "id": "figma-draw",
+    "long_description": "Figma Draw enrichit l'éditeur avec shape builder, sélection multi-vecteurs, largeur de trait variable, texte sur tracé, motifs, textures et flous progressifs, tout en conservant les variables du design system.",
+    "long_description_en": "Figma Draw expands the editor with shape building, multi-vector selection, variable stroke width, text on a path, patterns, textures, and progressive blur while retaining design-system variables.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": null
+    },
+    "name": "Figma Draw",
+    "pricing": {
+      "free": "Accès limité selon le plan",
+      "paid": "Inclus avec un siège Full"
+    },
+    "pricing_en": {
+      "free": "Limited access depending on plan",
+      "paid": "Included with a Full seat"
+    },
+    "pricing_v5": null,
+    "pros": [],
+    "pros_en": [],
+    "short_description": "Outils vectoriels expressifs intégrés à Figma pour illustration, textures et tracés avancés.",
+    "short_description_en": "Expressive vector tools inside Figma for illustration, textures, and advanced paths.",
+    "slug": "figma-draw",
+    "source_url": "https://www.figma.com/draw/",
+    "source_verified_on": null,
+    "use_cases": [],
+    "use_cases_en": [],
+    "verdict": null,
+    "verdict_en": null,
+    "website_url": "https://www.figma.com/draw/"
+  },
+  "fact_bundle": null,
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "research_primary_sources_then_write_fact_bundle",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-001",
+    "batch_position": 2,
+    "blockers": [],
+    "catalog_hash": "sha256:c3ef6348de93dc10fc28dd1a63b058ed9de217b4ba68e1fabc0a457bdc05e5a9",
+    "category": "design-tools",
+    "fact_bundle": "MISSING",
+    "fact_bundle_hash": null,
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Figma Draw",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_fact_bundle",
+      "missing_or_invalid_media_evidence",
+      "shallow_editorial",
+      "missing_media",
+      "undated_source"
+    ],
+    "priority_score": 370,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:a923b32c4e4a8df160a7d0d69a9d85c255a6e6fa9baef04cfd8a09feaa1bfe1f",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "figma-draw",
+    "source_url": "https://www.figma.com/draw/",
+    "source_verified_on": null,
+    "status": "QUEUED"
+  }
+}

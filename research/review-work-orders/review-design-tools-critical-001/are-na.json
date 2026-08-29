@@ -1,0 +1,151 @@
+{
+  "batch": "review-design-tools-critical-001",
+  "current": {
+    "affiliate_url": "https://arena.com",
+    "alternatives": [],
+    "category": "design-tools",
+    "cons": [
+      "Grille tarifaire complète non publiée en ligne",
+      "Moins adapté à un usage professionnel de gestion de projet (ce n'est pas son rôle)",
+      "Courbe d'apprentissage pour la logique blocks/channels si tu viens de Pinterest"
+    ],
+    "cons_en": [
+      "Full pricing grid not published online",
+      "Less suited to professional project management use (that's not its job)",
+      "Learning curve for the blocks/channels logic if you're coming from Pinterest"
+    ],
+    "host_app": null,
+    "id": "are-na",
+    "long_description": "Are.na organise des références visuelles et textuelles en \"blocks\" rassemblés dans des \"channels\" connectables entre eux, sans algorithme de recommandation ni publicité. C'est l'outil de prédilection des designers, architectes et chercheurs pour construire une bibliothèque de références personnelle plutôt qu'un fil social.\n\nAre.na ne publie pas sa grille tarifaire complète en ligne (seule l'existence d'une réduction étudiante de 50% sur 2 ans est documentée) : vérifie le prix exact du plan Premium sur are.na/about avant de t'engager.",
+    "long_description_en": "Are.na organizes visual and text references into \"blocks\" gathered in connectable \"channels\", with no recommendation algorithm and no ads. It's the go-to tool for designers, architects and researchers building a personal reference library rather than a social feed.\n\nAre.na doesn't publish its full pricing grid online (only a 50%-off-for-2-years student discount is documented) — check the exact Premium price on are.na/about before committing.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://static1.squarespace.com/static/6733a5fb2a1ee418fc513570/t/6733c14c1e48dd76a67b8dd6/1731445068875/arena-logo-primary-white.png?format=1500w"
+    },
+    "name": "Are Na",
+    "pricing": {
+      "free": "Channels et blocks illimités avec fonctionnalités de base",
+      "paid": "Premium (prix non communiqué publiquement, -50% pour les étudiants pendant 2 ans)"
+    },
+    "pricing_en": {
+      "free": "Unlimited channels and blocks with core features",
+      "paid": "Premium (price not publicly listed, 50% off for students for 2 years)"
+    },
+    "pricing_v5": {
+      "cautions": [
+        "price_not_publicly_listed"
+      ],
+      "compare_plan_kind": "flat",
+      "compare_plan_name": "Premium",
+      "compare_price_monthly_eur": 0,
+      "location_sensitive": false,
+      "official_source_url": "https://www.are.na/about",
+      "price_reliability": "low",
+      "source_domain": "are.na",
+      "usage_sensitive": false,
+      "verification_status": "unverified",
+      "verified_on": "2026-06-25"
+    },
+    "pros": [
+      "Pas d'algorithme de recommandation ni de publicité",
+      "Connexions entre channels qui font émerger des liens inattendus entre références",
+      "Communauté design/architecture/recherche de qualité"
+    ],
+    "pros_en": [
+      "No recommendation algorithm and no ads",
+      "Connections between channels surface unexpected links between references",
+      "Strong design/architecture/research community"
+    ],
+    "short_description": "Plateforme de curation visuelle pour designers et chercheurs, plus éditoriale que Pinterest.",
+    "short_description_en": "Visual curation platform for designers and researchers, more editorial than Pinterest.",
+    "slug": "are-na",
+    "source_url": "https://www.are.na/about",
+    "source_verified_on": "2026-06-25",
+    "use_cases": [
+      "Construire une bibliothèque de références visuelles pour un projet créatif",
+      "Organiser une veille de recherche avec des connexions entre sujets",
+      "Partager un moodboard collaboratif sans algorithme qui pousse du contenu non pertinent"
+    ],
+    "use_cases_en": [
+      "Build a visual reference library for a creative project",
+      "Organize research with connections between topics",
+      "Share a collaborative moodboard with no algorithm pushing irrelevant content"
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Tu cherches un outil de gestion de projet : Are.na n'en est pas un",
+        "Le prix Premium n'est pas confirmé publiquement : vérifie avant de t'engager si le budget est serré"
+      ],
+      "keepIf": [
+        "Tu veux une bibliothèque de références sans algorithme ni publicité",
+        "Tu travailles en design, architecture ou recherche et as besoin de connecter des références entre elles"
+      ],
+      "threshold": "Are.na vaut le coup si tu veux une bibliothèque de références créative sans bruit algorithmique. Vérifie le prix Premium exact sur le site officiel avant de payer, il n'est pas affiché publiquement."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You're looking for a project management tool: Are.na isn't one",
+        "The Premium price isn't publicly confirmed: check before committing if budget is tight"
+      ],
+      "keepIf": [
+        "You want a reference library with no algorithm and no ads",
+        "You work in design, architecture or research and need to connect references to each other"
+      ],
+      "threshold": "Are.na is worth it if you want a creative reference library with no algorithmic noise. Check the exact Premium price on the official site before paying, it isn't listed publicly."
+    },
+    "website_url": "https://arena.com"
+  },
+  "fact_bundle": null,
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "resolve_duplicate_without_research",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-001",
+    "batch_position": 4,
+    "blockers": [
+      "doublon de arena; produit officiel Are.na. Le slug arena est déjà utilisé par les stacks et possède le dossier factuel canonique"
+    ],
+    "catalog_hash": "sha256:5c7e63c6f375aff8e678640e8b22bb9669091f411033743e77fe9b0e3820d4d8",
+    "category": "design-tools",
+    "fact_bundle": "MISSING",
+    "fact_bundle_hash": null,
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Are Na",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_fact_bundle",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 270,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:a1a6a7543750e62bde72331534a9d555870d49598614af2ba036cea2525883b4",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "are-na",
+    "source_url": "https://www.are.na/about",
+    "source_verified_on": "2026-06-25",
+    "status": "DUPLICATE"
+  }
+}

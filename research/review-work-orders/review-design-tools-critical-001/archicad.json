@@ -1,0 +1,257 @@
+{
+  "batch": "review-design-tools-critical-001",
+  "current": {
+    "affiliate_url": "https://graphisoft.com/solutions/archicad",
+    "alternatives": [],
+    "category": "design-tools",
+    "cons": [
+      "Coût d'abonnement mensuel (pas d'achat perpétuel).",
+      "Courbe d'apprentissage BIM assez raide.",
+      "Edition Collaborate significativement plus chère pour MEP.",
+      "Moins d'accès aux plugins tiers comparé à Revit."
+    ],
+    "cons_en": [
+      "Monthly subscription cost (no perpetual purchase).",
+      "Steep learning curve for BIM.",
+      "Collaborate edition significantly more expensive for MEP.",
+      "Fewer third-party plugins compared to Revit."
+    ],
+    "host_app": null,
+    "id": "archicad",
+    "long_description": "Logiciel BIM pour projets architecturaux coordonnés, dossiers techniques et grands projets.",
+    "long_description_en": "BIM software for coordinated architecture projects, technical files and larger scopes.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://www.graphisoft.com/content/uploads/2022/05/ac26_design_Archicad-banner-1.png"
+    },
+    "name": "Archicad",
+    "pricing": {
+      "free": "Essai gratuit",
+      "paid": "Sur abonnement / devis selon pays"
+    },
+    "pricing_en": null,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 250,
+      "official_source_url": "https://graphisoft.com/solutions/archicad",
+      "source_domain": "graphisoft.com",
+      "verification_status": "manual_reference",
+      "verified_on": "2026-05-10"
+    },
+    "pros": [
+      "BIM complet et mature, standard de l'industrie.",
+      "Collaboration temps réel via BIMcloud.",
+      "Interopérabilité OpenBIM (IFC) pour équipes mixtes.",
+      "AI Visualizer intégré pour rendus professionnels.",
+      "Travail sur Mac et Windows."
+    ],
+    "pros_en": [
+      "Complete, mature BIM—industry standard.",
+      "Real-time collaboration via BIMcloud.",
+      "OpenBIM interoperability (IFC) for mixed teams.",
+      "Built-in AI Visualizer for professional renders.",
+      "Runs on Mac and Windows."
+    ],
+    "short_description": "Logiciel BIM pour projets architecturaux coordonnés, dossiers techniques et grands projets.",
+    "short_description_en": "BIM software for coordinated architecture projects, technical files and larger scopes.",
+    "slug": "archicad",
+    "source_url": "https://graphisoft.com/solutions/archicad",
+    "source_verified_on": "2026-05-10",
+    "use_cases": [
+      "Modéliser un bâtiment avec documentation automatisée pour permis de construire.",
+      "Coordonner architecture, MEP et structure via IFC pour détection de conflits.",
+      "Créer des visualisations photorréalistes du projet pour présentation client."
+    ],
+    "use_cases_en": [
+      "Model a building with automated documentation for building permits.",
+      "Coordinate architecture, MEP, and structure via IFC for conflict detection.",
+      "Create photorealistic project visualizations for client presentations."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous débutez en architecture et cherchez un outil gratuit.",
+        "Vous faites principalement du rendu 3D sans planification BIM.",
+        "Vous avez un budget très serré ou travaillez seul ponctuellement."
+      ],
+      "keepIf": [
+        "Vous êtes architecte ou designer AEC cherchant un BIM professionnel.",
+        "Vous travaillez en équipe et avez besoin de collaboration temps réel.",
+        "Vous collaborez avec d'autres disciplines (MEP, ingénieurs) via IFC."
+      ],
+      "threshold": "Archicad s'impose pour les agences professionnelles et équipes pluridisciplinaires ; pour l'architecture solo, l'édition gratuite ou le rendu pur, d'autres outils peuvent convenir."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You're new to architecture and want free software.",
+        "You focus mainly on 3D rendering without BIM planning.",
+        "You have a tight budget or work solo occasionally."
+      ],
+      "keepIf": [
+        "You're an architect or AEC designer looking for professional BIM.",
+        "You work in a team and need real-time collaboration.",
+        "You collaborate cross-discipline (MEP, engineers) via IFC."
+      ],
+      "threshold": "Archicad makes sense for professional agencies and multidisciplinary teams; for solo architecture, free editions, or pure rendering, other tools may fit better."
+    },
+    "website_url": "https://graphisoft.com/solutions/archicad"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Monthly subscription cost (no perpetual purchase).",
+        "Steep learning curve for BIM.",
+        "Collaborate edition significantly more expensive for MEP.",
+        "Fewer third-party plugins compared to Revit."
+      ],
+      "pros": [
+        "Complete, mature BIM—industry standard.",
+        "Real-time collaboration via BIMcloud.",
+        "OpenBIM interoperability (IFC) for mixed teams.",
+        "Built-in AI Visualizer for professional renders.",
+        "Runs on Mac and Windows."
+      ],
+      "use_cases": [
+        "Model a building with automated documentation for building permits.",
+        "Coordinate architecture, MEP, and structure via IFC for conflict detection.",
+        "Create photorealistic project visualizations for client presentations."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You're new to architecture and want free software.",
+          "You focus mainly on 3D rendering without BIM planning.",
+          "You have a tight budget or work solo occasionally."
+        ],
+        "keepIf": [
+          "You're an architect or AEC designer looking for professional BIM.",
+          "You work in a team and need real-time collaboration.",
+          "You collaborate cross-discipline (MEP, engineers) via IFC."
+        ],
+        "threshold": "Archicad makes sense for professional agencies and multidisciplinary teams; for solo architecture, free editions, or pure rendering, other tools may fit better."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Licences éducatives gratuites pour étudiants et enseignants. Essai gratuit de 30 jours pour tous.",
+        "exists": true
+      },
+      "key_features": [
+        "Éléments de construction paramétriques (murs, dalles, toits)",
+        "Objets intelligents (portes, fenêtres, escaliers)",
+        "Dessins générés automatiquement depuis le 3D avec annotations",
+        "BIMcloud pour collaboration temps réel",
+        "Interopérabilité OpenBIM (IFC, BCF)",
+        "AI Assistant pour optimiser le workflow",
+        "AI Visualizer pour rendus photorréalistes"
+      ],
+      "plans": [
+        {
+          "name": "Archicad Studio",
+          "price": "À partir de 203 EUR/mois (2.440 EUR/an)"
+        },
+        {
+          "name": "Archicad Collaborate",
+          "price": "À partir de 239 EUR/mois (2.870 EUR/an)"
+        }
+      ],
+      "pricing_model": "Abonnement mensuel ou annuel. Deux formules principales : Archicad Studio et Archicad Collaborate. Essai gratuit de 30 jours.",
+      "what": "Plateforme BIM (Building Information Modeling) pour architectes, designers et ingénieurs. Permet de concevoir, modéliser, visualiser et documenter des projets de toutes tailles du concept à la construction. Travail collaboratif via BIMcloud, interopérabilité OpenBIM (IFC, BCF).",
+      "what_en": "BIM (Building Information Modeling) platform for architects, designers, and engineers. Design, model, visualize, document, and collaborate on projects of any size from concept through construction. Collaborative via BIMcloud, OpenBIM interoperability (IFC, BCF)."
+    },
+    "fr": {
+      "cons": [
+        "Coût d'abonnement mensuel (pas d'achat perpétuel).",
+        "Courbe d'apprentissage BIM assez raide.",
+        "Edition Collaborate significativement plus chère pour MEP.",
+        "Moins d'accès aux plugins tiers comparé à Revit."
+      ],
+      "pros": [
+        "BIM complet et mature, standard de l'industrie.",
+        "Collaboration temps réel via BIMcloud.",
+        "Interopérabilité OpenBIM (IFC) pour équipes mixtes.",
+        "AI Visualizer intégré pour rendus professionnels.",
+        "Travail sur Mac et Windows."
+      ],
+      "relevant_for": [
+        "Architectes professionnels",
+        "Designers AEC",
+        "Équipes pluridisciplinaires"
+      ],
+      "use_cases": [
+        "Modéliser un bâtiment avec documentation automatisée pour permis de construire.",
+        "Coordonner architecture, MEP et structure via IFC pour détection de conflits.",
+        "Créer des visualisations photorréalistes du projet pour présentation client."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous débutez en architecture et cherchez un outil gratuit.",
+          "Vous faites principalement du rendu 3D sans planification BIM.",
+          "Vous avez un budget très serré ou travaillez seul ponctuellement."
+        ],
+        "keepIf": [
+          "Vous êtes architecte ou designer AEC cherchant un BIM professionnel.",
+          "Vous travaillez en équipe et avez besoin de collaboration temps réel.",
+          "Vous collaborez avec d'autres disciplines (MEP, ingénieurs) via IFC."
+        ],
+        "threshold": "Archicad s'impose pour les agences professionnelles et équipes pluridisciplinaires ; pour l'architecture solo, l'édition gratuite ou le rendu pur, d'autres outils peuvent convenir."
+      }
+    },
+    "slug": "archicad",
+    "sources": [
+      {
+        "label": "Graphisoft — Archicad BIM Platform",
+        "url": "https://graphisoft.com/solutions/archicad"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-001",
+    "batch_position": 6,
+    "blockers": [],
+    "catalog_hash": "sha256:a478d19b1cb2bbdefca00dcf9a59ee7586107a11f9d48e6c1b608452e0e8d70e",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:e673ab65a55e3b059865f52e4ae98a7cbad897f0dd56f83158c9090c9e3d9d42",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Archicad",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence",
+      "shallow_editorial"
+    ],
+    "priority_score": 260,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:c1748777c6f57b3a78b8f5e2925828a0483bbd39fcadfb8236e5713920dc41cc",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "archicad",
+    "source_url": "https://graphisoft.com/solutions/archicad",
+    "source_verified_on": "2026-05-10",
+    "status": "QUEUED"
+  }
+}
