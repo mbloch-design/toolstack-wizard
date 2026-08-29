@@ -5,6 +5,9 @@ import { readFileSync } from "node:fs";
 const frenchPosts = JSON.parse(readFileSync("src/data/posts-fr.json", "utf8"));
 const englishPosts = JSON.parse(readFileSync("src/data/posts-en.json", "utf8"));
 const parityStartDate = "2026-05-01";
+const translatedSlugs = new Map([
+  ["adobe-podcast-ai-gratuit-alternatives-2026", "adobe-podcast-ai-free-limits-alternatives-2026"],
+]);
 const latestDate = (posts) => posts.reduce((latest, post) => (
   String(post.date || "") > latest ? String(post.date) : latest
 ), "");
@@ -13,7 +16,9 @@ const latestFrenchDate = latestDate(frenchPosts);
 const latestEnglishDate = latestDate(englishPosts);
 const englishSlugs = new Set(englishPosts.map((post) => post.slug));
 const frenchOnly = frenchPosts.filter((post) => (
-  String(post.date || "") >= parityStartDate && !englishSlugs.has(post.slug)
+  String(post.date || "") >= parityStartDate
+  && !englishSlugs.has(post.slug)
+  && !englishSlugs.has(translatedSlugs.get(post.slug))
 ));
 
 console.log(`Guides FR: ${frenchPosts.length}, latest ${latestFrenchDate || "unknown"}`);

@@ -3033,10 +3033,10 @@
     "shortDescription": "Nettoyage, leveling et mastering automatique pour podcast et audio.",
     "shortDescriptionEn": "Automatic cleanup, leveling, and mastering for podcast and audio.",
     "pricing": {
-      "free": "Essai ou plan gratuit selon usage",
-      "paid": "À partir de 11€/mois environ"
+      "free": "2 h de traitement audio par mois, avec jingle Auphonic",
+      "paid": "Crédits récurrents ou ponctuels selon le nombre d'heures traité"
     },
-    "defaultMonthlyPrice": 11,
+    "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://auphonic.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/auphonic.png",
@@ -5230,7 +5230,7 @@
       "free": "2h/mois (90 jours)",
       "paid": "12$/mois (3h/mois)"
     },
-    "defaultMonthlyPrice": 10.39,
+    "defaultMonthlyPrice": 16,
     "affiliateLink": "https://buzzsprout.com",
     "websiteUrl": "https://buzzsprout.com",
     "ogImageUrl": "https://assets.buzzsprout.com/assets/home/og/buzzsprout-e8311a2f1a10386551c9310dc921205062cbee429d5bc5640ec94a4b6303e934.png",
@@ -6781,16 +6781,16 @@
     "slug": "cleanvoice",
     "name": "Cleanvoice",
     "categoryId": "creation",
-    "shortDescription": "Nettoyage audio automatique par IA.",
-    "shortDescriptionEn": "Automatic AI audio cleaning.",
+    "shortDescription": "Nettoyage de podcasts par IA : bruits, silences, hésitations, souffles et sons de bouche.",
+    "shortDescriptionEn": "AI podcast cleanup for noise, silences, filler words, breaths, and mouth sounds.",
     "pricing": {
       "free": "30 min gratuites",
-      "paid": "À partir de 10$/mois"
+      "paid": "11 $/mois pour 10 h, ou 11 $ pour 5 h en paiement à l'usage"
     },
-    "defaultMonthlyPrice": 10,
+    "defaultMonthlyPrice": 9.53,
     "affiliateLink": "",
-    "websiteUrl": "",
-    "ogImageUrl": "",
+    "websiteUrl": "https://cleanvoice.ai",
+    "ogImageUrl": "https://cleanvoice.ai/assets/figma-home/multitrack.jpg",
     "logo": "",
     "tool_type": "ia",
     "host_app": null,
@@ -9160,10 +9160,10 @@
     "shortDescription": "Édition audio/vidéo par le texte. Transcription, suppression de silences, overdub IA.",
     "shortDescriptionEn": "Text-based audio/video editing. Transcription, silence removal, AI overdub.",
     "pricing": {
-      "free": "1h transcription/mois",
-      "paid": "12$/mois (Creator)"
+      "free": "1 heure média et 100 crédits IA par mois ; export 720p sans watermark",
+      "paid": "Hobbyist : 16 $/mois annuel ou 24 $ mensuel ; Creator : 24 $/mois annuel ou 35 $ mensuel"
     },
-    "defaultMonthlyPrice": 10.39,
+    "defaultMonthlyPrice": 13.86,
     "affiliateLink": "https://descript.com",
     "websiteUrl": "https://descript.com",
     "ogImageUrl": "https://cdn.builder.io/api/v1/image/assets%2Ffcea5005d671451e9b07839c893228d0%2Fb1cf2c175fbe4a028dff4622ee1ce727",
@@ -27505,18 +27505,18 @@
   {
     "id": "podcastle",
     "slug": "podcastle",
-    "name": "Podcastle",
+    "name": "Async (ex-Podcastle)",
     "categoryId": "creation",
-    "shortDescription": "Enregistrement, édition et transcription de podcasts.",
-    "shortDescriptionEn": "Podcast recording, editing, and transcription.",
+    "shortDescription": "Studio audio et vidéo tout-en-un, anciennement Podcastle, avec Magic Dust, transcription et montage par le texte.",
+    "shortDescriptionEn": "All-in-one audio and video studio, formerly Podcastle, with Magic Dust, transcription, and text-based editing.",
     "pricing": {
-      "free": "Plan gratuit (3h/mois)",
-      "paid": "À partir de 12$/mois"
+      "free": "Basic : audio illimité, 3 h de vidéo, 1 h de transcription, export 720p avec watermark",
+      "paid": "Storyteller et Pro : prix localisés affichés par Async"
     },
-    "defaultMonthlyPrice": 12,
+    "defaultMonthlyPrice": 0,
     "affiliateLink": "",
-    "websiteUrl": "",
-    "ogImageUrl": "",
+    "websiteUrl": "https://async.com",
+    "ogImageUrl": "https://m.async.com/home-page/ads.webp",
     "logo": "",
     "tool_type": "ia",
     "host_app": null,
@@ -31436,8 +31436,8 @@
     "shortDescription": "Enregistrement podcast et vidéo en qualité studio, à distance.",
     "shortDescriptionEn": "Studio-quality podcast and video recording, remotely.",
     "pricing": {
-      "free": "2h/mois",
-      "paid": "15$/mois (Standard)"
+      "free": "2 h d'enregistrement multipiste au total, export 720p avec watermark",
+      "paid": "Standard : 15 $/mois annuel ou 19 $ mensuel, avec Magic Audio et export 4K"
     },
     "defaultMonthlyPrice": 12.99,
     "affiliateLink": "https://riverside.fm",

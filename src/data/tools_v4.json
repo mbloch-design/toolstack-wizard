@@ -4105,11 +4105,14 @@
       "Créateurs de contenu",
       "Voix-off"
     ],
-    "alternatives": [
-      "descript",
-      "audacity",
-      "riverside"
-    ],
+  "alternatives": [
+    "descript",
+    "auphonic",
+    "cleanvoice",
+    "podcastle",
+    "riverside",
+    "audacity"
+  ],
     "seo": {
       "aiAngle": {
         "stance": "augmente",
@@ -12135,16 +12138,16 @@
     "categoryId": "creation",
     "shortDescription": "Nettoyage, leveling et mastering automatique pour podcast et audio.",
     "shortDescriptionEn": "Automatic cleanup, leveling, and mastering for podcast and audio.",
-    "pricing": {
-      "free": "Essai ou plan gratuit selon usage",
-      "paid": "À partir de 11€/mois environ"
-    },
-    "defaultMonthlyPrice": 11,
+  "pricing": {
+    "free": "2 h de traitement audio par mois, avec jingle Auphonic",
+    "paid": "Crédits récurrents ou ponctuels selon le nombre d'heures traité"
+  },
+  "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://auphonic.com",
     "logo": "",
     "category": "creation",
-    "longDescription": "Nettoyage, leveling et mastering automatique pour podcast et audio.",
+  "longDescription": "Auphonic automatise la post-production des podcasts, interviews et livres audio. Son Intelligent Leveler équilibre les voix, tandis que la réduction de bruit et de réverbération, l'AutoEQ et la normalisation du loudness préparent un fichier cohérent pour la diffusion. Le service gère aussi l'encodage, les métadonnées, les chapitres et la publication vers des services externes.\n\nLe plan gratuit comprend 2 heures de traitement par mois et ajoute un jingle Auphonic. Les offres payantes fonctionnent avec des crédits récurrents ou ponctuels. Les crédits ponctuels n'expirent pas ; les crédits mensuels sont réinitialisés et ne se cumulent pas. Les fonctions de lot, les watch folders, les transcriptions multilingues et les shownotes automatiques sont réservées aux crédits payants.\n\nAuphonic est le meilleur choix de ce comparatif pour normaliser automatiquement une série d'épisodes et respecter une cible de loudness. Il est moins adapté si vous cherchez à réécrire une voix très dégradée ou à monter un épisode par le texte.",
     "verdict": {
       "keepIf": [
         "Vous voulez automatiser la finition audio de vos podcasts.",
@@ -12191,7 +12194,7 @@
     ],
     "soloRelevance": "Utile si le livrable associé revient souvent.",
     "teamRelevance": "Utile en studio si l’outil standardise la production.",
-    "alternatives": [],
+  "alternatives": ["adobe-podcast-ai", "cleanvoice", "descript", "riverside"],
     "articles": [],
     "freeAlternative": null,
     "tool_type": "satellite",
@@ -12221,9 +12224,21 @@
     "substitution_cluster_v2": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/auphonic.png",
     "description": "Nettoyage, leveling et mastering automatique pour podcast et audio.",
-    "longDescriptionEn": "Automated audio post-production web service: intelligent leveling, noise and reverb reduction, loudness normalisation and encoding for podcasts and audiobooks.",
-    "pricingEn": null,
-    "pricing_v5": null,
+  "longDescriptionEn": "Auphonic automates post-production for podcasts, interviews and audiobooks. Intelligent Leveler balances speakers, while noise and reverb reduction, AutoEQ and loudness normalisation prepare consistent files for distribution. The service also handles encoding, metadata, chapters and publishing to external platforms.\n\nThe free plan includes 2 hours of processed audio per month and adds an Auphonic jingle. Paid usage is sold through recurring or one-time credits. One-time credits do not expire; monthly credits reset and do not roll over. Batch production, watch folders, multilingual transcription and automatic shownotes require paid credits.\n\nAuphonic is the strongest option here for automatically normalising a series and meeting loudness targets. It is less suitable when you need to reconstruct heavily damaged speech or edit an episode through its transcript.",
+  "pricingEn": {"free": "2 hours of processed audio per month, with an Auphonic jingle", "paid": "Recurring or one-time credits based on processed hours"},
+  "pricing_v5": {
+    "cautions": ["Le plan gratuit ajoute un jingle Auphonic", "Les crédits mensuels non utilisés ne sont pas reportés", "Les crédits ponctuels n'expirent pas"],
+    "verified_on": "2026-08-29",
+    "source_domain": "auphonic.com",
+    "usage_sensitive": true,
+    "compare_plan_kind": "usage",
+    "compare_plan_name": "Auphonic Free",
+    "price_reliability": "high",
+    "location_sensitive": true,
+    "official_source_url": "https://auphonic.com/pricing",
+    "verification_status": "official_explicit",
+    "compare_price_monthly_eur": 0
+  },
     "seo": null,
     "verdictEn": {
       "keepIf": [
@@ -21018,7 +21033,7 @@
     "host_app": null,
     "category": "creation",
     "shortDescription": "L'hébergement podcast le plus simple à prendre en main. Distribution automatique.",
-    "defaultMonthlyPrice": 10.39,
+  "defaultMonthlyPrice": 16,
     "pricing": {
       "free": "2h/mois (90 jours)",
       "paid": "12$/mois (3h/mois)"
@@ -27297,21 +27312,34 @@
     "slug": "cleanvoice",
     "name": "Cleanvoice",
     "category": "creation",
-    "shortDescription": "Nettoyage audio automatique par IA.",
-    "shortDescriptionEn": "Automatic AI audio cleaning.",
-    "description": "Cleanvoice, c'est nettoyage audio automatique par IA. À partir de 10€/mois.\n\nNettoyage audio automatique par IA. suppression des hésitations et silences, traitement en batch. Supporte le français et l'anglais. Concrètement : nettoyer un épisode de podcast en 1 clic. Ou encore : supprimer le bruit de fond des interviews.\n\nÀ garder si : production audio régulière ou temps de post-production à réduire. À éviter si : production audio rare ou déjà un bon setup micro. Limite principale : fonction unique (pas d'édition). Rentable dès 2+ heures d'audio à nettoyer par mois.",
-    "longDescription": "Cleanvoice, c'est nettoyage audio automatique par IA. À partir de 10€/mois.\n\nNettoyage audio automatique par IA. suppression des hésitations et silences, traitement en batch. Supporte le français et l'anglais. Concrètement : nettoyer un épisode de podcast en 1 clic. Ou encore : supprimer le bruit de fond des interviews.\n\nÀ garder si : production audio régulière ou temps de post-production à réduire. À éviter si : production audio rare ou déjà un bon setup micro. Limite principale : fonction unique (pas d'édition). Rentable dès 2+ heures d'audio à nettoyer par mois.",
-    "longDescriptionEn": "Cleanvoice is automatic AI audio cleaning. Starting at €10/month.",
+  "shortDescription": "Nettoyage de podcasts par IA : bruits, silences, hésitations, souffles et sons de bouche.",
+  "shortDescriptionEn": "AI podcast cleanup for noise, silences, filler words, breaths, and mouth sounds.",
+  "description": "Cleanvoice automatise les tâches répétitives de post-production audio : suppression des hésitations, silences trop longs, souffles et bruits de bouche, réduction du bruit de fond, amélioration Studio Sound, transcription et résumé. Le service traite aussi les podcasts vidéo et permet d'exporter une timeline vers un éditeur compatible.\n\nL'essai gratuit traite 30 minutes sans carte bancaire. L'abonnement d'entrée coûte 11 $ par mois pour 10 heures de traitement ; les crédits inutilisés peuvent être reportés jusqu'à trois fois la limite du plan. Le paiement à l'usage démarre à 11 $ pour 5 heures, avec des crédits valables deux ans. Tous les plans incluent les fonctions de nettoyage.\n\nCleanvoice est plus complet qu'Adobe Podcast pour retirer les hésitations et sons parasites d'un épisode entier. Adobe reste plus simple et plus généreux pour améliorer gratuitement une voix ponctuelle.",
+  "longDescription": "Cleanvoice automatise les tâches répétitives de post-production audio : suppression des hésitations, silences trop longs, souffles et bruits de bouche, réduction du bruit de fond, amélioration Studio Sound, transcription et résumé. Le service traite aussi les podcasts vidéo et permet d'exporter une timeline vers un éditeur compatible.\n\nL'essai gratuit traite 30 minutes sans carte bancaire. L'abonnement d'entrée coûte 11 $ par mois pour 10 heures de traitement ; les crédits inutilisés peuvent être reportés jusqu'à trois fois la limite du plan. Le paiement à l'usage démarre à 11 $ pour 5 heures, avec des crédits valables deux ans. Tous les plans incluent les fonctions de nettoyage.\n\nCleanvoice est plus complet qu'Adobe Podcast pour retirer les hésitations et sons parasites d'un épisode entier. Adobe reste plus simple et plus généreux pour améliorer gratuitement une voix ponctuelle.",
+  "longDescriptionEn": "Cleanvoice automates repetitive audio post-production: filler words, long silences, breaths and mouth sounds, background-noise removal, Studio Sound enhancement, transcription and summaries. It also processes video podcasts and can export a timeline to a compatible editor.\n\nThe free trial processes 30 minutes without a credit card. The entry subscription costs $11 per month for 10 processed hours, and unused credits can roll over up to three times the plan limit. Pay-as-you-go starts at $11 for 5 hours, with credits valid for two years. Every plan includes the full cleanup feature set.\n\nCleanvoice is more complete than Adobe Podcast for removing filler words and small distractions across a whole episode. Adobe remains simpler and more generous for enhancing an occasional voice recording for free.",
     "pricing": {
       "free": "30 min gratuites",
-      "paid": "À partir de 10$/mois"
-    },
-    "pricingEn": null,
-    "defaultMonthlyPrice": 10,
-    "pricing_v5": null,
+    "paid": "11 $/mois pour 10 h, ou 11 $ pour 5 h en paiement à l'usage"
+  },
+  "pricingEn": {"free": "30-minute free trial, no credit card", "paid": "$11/month for 10 hours, or $11 for 5 pay-as-you-go hours"},
+  "defaultMonthlyPrice": 9.53,
+  "pricing_v5": {
+    "cautions": ["Prix officiels en dollars et hors TVA", "Les crédits à l'usage sont valables deux ans", "Les crédits d'abonnement sont reportables dans la limite de trois fois le forfait"],
+    "verified_on": "2026-08-29",
+    "source_domain": "cleanvoice.ai",
+    "usage_sensitive": true,
+    "compare_plan_kind": "usage",
+    "compare_plan_name": "Subscription 10 Hours",
+    "price_reliability": "high",
+    "location_sensitive": true,
+    "official_source_url": "https://cleanvoice.ai/pricing/",
+    "verification_status": "official_explicit",
+    "compare_price_monthly_eur": 9.53
+  },
     "affiliateLink": "",
-    "websiteUrl": "",
+  "websiteUrl": "https://cleanvoice.ai",
     "logo": "",
+    "ogImageUrl": "https://cleanvoice.ai/assets/figma-home/multitrack.jpg",
     "seo": {
       "aiAngle": {
         "stance": "augmente",
@@ -27336,7 +27364,7 @@
       "Monteurs audio",
       "Créateurs de contenu"
     ],
-    "alternatives": [],
+  "alternatives": ["adobe-podcast-ai", "auphonic", "descript", "podcastle"],
     "verdict": {
       "keepIf": [
         "Vous montez régulièrement des podcasts ou des voix off.",
@@ -36919,10 +36947,10 @@
     "host_app": null,
     "category": "ai-general",
     "shortDescription": "Édition audio/vidéo par le texte. Transcription, suppression de silences, overdub IA.",
-    "defaultMonthlyPrice": 10.39,
+    "defaultMonthlyPrice": 13.86,
     "pricing": {
-      "free": "1h transcription/mois",
-      "paid": "12$/mois (Creator)"
+    "free": "1 heure média et 100 crédits IA par mois ; export 720p sans watermark",
+    "paid": "Hobbyist : 16 $/mois annuel ou 24 $ mensuel ; Creator : 24 $/mois annuel ou 35 $ mensuel"
     },
     "covers": [
       "enregistrement-multipistes",
@@ -36960,18 +36988,14 @@
       "available": true
     },
     "affiliateLink": "https://descript.com",
-    "verdict": {
-      "keepIf": [
-        "Podcast, interviews, cours en ligne — gain de temps massif"
-      ],
-      "avoidIf": [
-        "Montage vidéo long format — Premiere ou DaVinci plus adaptés"
-      ],
-      "threshold": "Rentable dès 2 épisodes podcast ou vidéos par mois."
-    },
-    "pros": [],
-    "cons": [],
-    "useCases": [],
+  "verdict": {
+    "keepIf": ["Vous montez podcasts et vidéos en supprimant du texte dans la transcription.", "Vous voulez réunir Studio Sound, suppression des hésitations, transcription et clips dans un seul éditeur.", "Vous publiez au moins deux contenus longs par mois."],
+    "avoidIf": ["Vous voulez uniquement nettoyer gratuitement une voix ponctuelle.", "Vous réalisez un montage multicam ou un étalonnage vidéo complexe.", "Vous avez déjà une chaîne de montage qui couvre transcription et traitement audio."],
+    "threshold": "Descript devient rentable quand le montage par transcription remplace plusieurs heures de coupe manuelle ; pour un simple nettoyage audio occasionnel, Adobe Podcast gratuit suffit."
+  },
+  "pros": ["Montage audio et vidéo directement dans la transcription.", "Studio Sound réduit bruit et réverbération avec un réglage d'intensité.", "Suppression des hésitations, génération de clips et voix IA réunies dans le même projet.", "Export 720p sans watermark dès le plan gratuit."],
+  "cons": ["Studio Sound gratuit limité à quelques usages d'essai.", "Les offres payantes sont nettement plus chères qu'un outil de nettoyage seul.", "Moins adapté qu'un éditeur vidéo professionnel aux projets complexes."],
+  "useCases": ["Monter un podcast en corrigeant sa transcription.", "Nettoyer une interview avec Studio Sound.", "Transformer un épisode long en clips et extraits sociaux."],
     "seo": {
       "aiAngle": {
         "stance": "augmente",
@@ -36990,40 +37014,41 @@
     "teamRelevance": "low",
     "bestFor": [],
     "relevantFor": [],
-    "pricingTiers": {
-      "free": "1h transcription/mois",
-      "paid": "12$/mois (Creator)"
-    },
-    "longDescription": "Descript, c'est édition audio/vidéo par le texte. Transcription, suppression de silences, overdub IA. À partir de 10.39€/mois. Pensé pour les podcasteurs et les créateurs de contenu.\n\nGain de temps estimé : 8h/mois.\n\nÀ garder si : podcast, interviews, cours en ligne — gain de temps massif. À éviter si : montage vidéo long format — Premiere ou DaVinci plus adaptés. Rentable dès 2 épisodes podcast ou vidéos par mois.",
+  "pricingTiers": {"free": "1 heure média et 100 crédits IA par mois", "paid": "Hobbyist dès 16 $/mois avec facturation annuelle"},
+  "longDescription": "Descript transforme une transcription en interface de montage audio et vidéo. Supprimer une phrase coupe le passage correspondant ; Studio Sound réduit le bruit et la réverbération tout en renforçant la voix, avec un réglage d'intensité pour éviter un rendu artificiel. L'éditeur ajoute la suppression des hésitations, la génération de clips, les sous-titres, la voix IA et un assistant de montage.\n\nLe plan gratuit comprend 1 heure média et 100 crédits IA par mois, avec export 720p sans watermark et un usage limité des outils IA. Hobbyist coûte 16 $ par mois avec facturation annuelle, ou 24 $ au mois, pour 10 heures média et 400 crédits. Creator passe à 24 $ par mois annuel, ou 35 $ au mois, pour 30 heures et 800 crédits.\n\nDescript est une alternative à Adobe Podcast lorsque le nettoyage n'est qu'une étape d'un vrai montage. Si vous voulez seulement améliorer une voix en un clic, son abonnement est plus difficile à justifier.",
     "alternatives": [
+      "adobe-podcast-ai",
+      "auphonic",
+      "cleanvoice",
       "riverside",
+      "podcastle",
       "captions",
       "adobe-premiere-pro"
     ],
     "slug": "descript",
     "shortDescriptionEn": "Text-based audio/video editing. Transcription, silence removal, AI overdub.",
-    "description": "Descript, c'est édition audio/vidéo par le texte. Transcription, suppression de silences, overdub IA. À partir de 10.39€/mois. Pensé pour les podcasteurs et les créateurs de contenu.\n\nGain de temps estimé : 8h/mois.\n\nÀ garder si : podcast, interviews, cours en ligne — gain de temps massif. À éviter si : montage vidéo long format — Premiere ou DaVinci plus adaptés. Rentable dès 2 épisodes podcast ou vidéos par mois.",
-    "longDescriptionEn": "Descript is text-based audio/video editing. Transcription, silence removal, AI overdub. Starting at €10.39/month. Built for podcasters and content creators.\n\nEstimated time saving: 8h/month.",
-    "pricingEn": null,
+    "description": "Descript permet de monter de l'audio et de la vidéo directement dans la transcription. Le plan gratuit offre 1 heure média et 100 crédits IA par mois. Le plan Hobbyist démarre à 16 $ par mois avec facturation annuelle, soit environ 13,86 € hors variation de change. Il devient pertinent pour les podcasteurs et créateurs qui publient au moins deux contenus longs par mois.",
+  "longDescriptionEn": "Descript turns the transcript into the audio and video editing interface. Deleting a sentence removes the corresponding passage; Studio Sound reduces noise and reverb while strengthening speech, with an intensity control to avoid an artificial result. The editor also includes filler-word removal, clips, captions, AI speech and an editing assistant.\n\nFree includes 1 media hour and 100 AI credits per month, 720p watermark-free export and limited AI-tool use. Hobbyist costs $16 per month billed annually or $24 month-to-month, with 10 media hours and 400 credits. Creator costs $24 per month annually or $35 monthly, with 30 hours and 800 credits.\n\nDescript is an Adobe Podcast alternative when cleanup is only one step in a real editing workflow. If you only need occasional one-click voice enhancement, the subscription is harder to justify.",
+  "pricingEn": {"free": "1 media hour and 100 AI credits per month; 720p watermark-free export", "paid": "Hobbyist: $16/month annually or $24 monthly; Creator: $24/month annually or $35 monthly"},
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+    "cautions": ["Prix officiels en dollars par utilisateur", "Les prix les plus bas exigent une facturation annuelle", "Les outils IA consomment des crédits selon la fonction"],
+    "verified_on": "2026-08-29",
       "source_domain": "descript.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
-      "compare_plan_name": "Entry paid plan",
+    "compare_plan_name": "Hobbyist annual",
       "price_reliability": "high",
       "location_sensitive": false,
       "official_source_url": "https://www.descript.com/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 10.39
+    "compare_price_monthly_eur": 13.86
     },
     "websiteUrl": "https://descript.com",
     "logo": "",
-    "verdictEn": null,
-    "prosEn": null,
-    "consEn": null,
-    "useCasesEn": null,
+  "verdictEn": {"keepIf": ["You edit podcasts and videos by deleting text in the transcript.", "You want Studio Sound, filler-word removal, transcription and clips in one editor.", "You publish at least two long-form pieces per month."], "avoidIf": ["You only need to clean an occasional voice recording for free.", "You need complex multicam editing or colour grading.", "Your existing editor already covers transcription and audio processing."], "threshold": "Descript pays off when transcript editing replaces hours of manual cuts; for occasional audio cleanup alone, free Adobe Podcast is enough."},
+  "prosEn": ["Text-based audio and video editing.", "Studio Sound reduces noise and reverb with intensity control.", "Filler-word removal, clips and AI speech in the same project.", "720p watermark-free export on Free."],
+  "consEn": ["Free Studio Sound is limited to trial uses.", "Paid plans cost much more than a cleanup-only tool.", "Less suitable than a professional video editor for complex projects."],
+  "useCasesEn": ["Edit a podcast through its transcript.", "Clean an interview with Studio Sound.", "Turn a long episode into clips and social excerpts."],
     "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [
@@ -110509,23 +110534,24 @@
   {
     "id": "podcastle",
     "slug": "podcastle",
-    "name": "Podcastle",
+  "name": "Async (ex-Podcastle)",
     "category": "creation",
-    "shortDescription": "Enregistrement, édition et transcription de podcasts.",
-    "shortDescriptionEn": "Podcast recording, editing, and transcription.",
-    "description": "Podcastle, c'est enregistrement, édition et transcription de podcasts. À partir de 12€/mois.\n\nEnregistrement et édition intégrés. transcription IA automatique, amélioration audio par IA. Interface intuitive pour débutants. Concrètement : enregistrer et éditer des podcasts. Ou encore : transcrire des épisodes automatiquement.\n\nÀ garder si : production de podcasts régulière ou besoin d'un outil simple tout-en-un. À éviter si : production vidéo + audio (préférer Descript) ou besoin d'édition audio professionnelle (Audition). Limite principale : moins puissant que Descript pour l'édition vidéo. Utile dès 2+ épisodes de podcast par mois.",
-    "longDescription": "Podcastle, c'est enregistrement, édition et transcription de podcasts. À partir de 12€/mois.\n\nEnregistrement et édition intégrés. transcription IA automatique, amélioration audio par IA. Interface intuitive pour débutants. Concrètement : enregistrer et éditer des podcasts. Ou encore : transcrire des épisodes automatiquement.\n\nÀ garder si : production de podcasts régulière ou besoin d'un outil simple tout-en-un. À éviter si : production vidéo + audio (préférer Descript) ou besoin d'édition audio professionnelle (Audition). Limite principale : moins puissant que Descript pour l'édition vidéo. Utile dès 2+ épisodes de podcast par mois.",
-    "longDescriptionEn": "Podcastle is podcast recording, editing, and transcription. Starting at €12/month.",
+  "shortDescription": "Studio audio et vidéo tout-en-un, anciennement Podcastle, avec Magic Dust, transcription et montage par le texte.",
+  "shortDescriptionEn": "All-in-one audio and video studio, formerly Podcastle, with Magic Dust, transcription, and text-based editing.",
+  "description": "Podcastle est devenu Async. Le produit réunit l'enregistrement local à distance, le montage multipiste, la transcription et le montage par le texte. Magic Dust améliore automatiquement un fichier audio ou vidéo, tandis que la réduction du bruit, l'auto-leveling, la suppression des silences et la détection des hésitations accélèrent la post-production.\n\nLe plan Basic gratuit comprend l'enregistrement audio illimité, 3 heures de vidéo, une heure de transcription, un export vidéo 720p avec watermark et un accès limité aux fonctions IA. Les plans Storyteller et Pro augmentent les heures vidéo, la transcription, la qualité WAV et 4K, les crédits IA et retirent le watermark. Async affiche des prix localisés et variables ; ToolTrim ne présente donc pas de montant fixe tant qu'un tarif officiel stable n'est pas exposé.\n\nAsync remplace Adobe Podcast si vous voulez enregistrer, nettoyer, transcrire et publier dans un seul espace. Pour améliorer seulement une voix existante, Adobe est plus direct.",
+  "longDescription": "Podcastle est devenu Async. Le produit réunit l'enregistrement local à distance, le montage multipiste, la transcription et le montage par le texte. Magic Dust améliore automatiquement un fichier audio ou vidéo, tandis que la réduction du bruit, l'auto-leveling, la suppression des silences et la détection des hésitations accélèrent la post-production.\n\nLe plan Basic gratuit comprend l'enregistrement audio illimité, 3 heures de vidéo, une heure de transcription, un export vidéo 720p avec watermark et un accès limité aux fonctions IA. Les plans Storyteller et Pro augmentent les heures vidéo, la transcription, la qualité WAV et 4K, les crédits IA et retirent le watermark. Async affiche des prix localisés et variables ; ToolTrim ne présente donc pas de montant fixe tant qu'un tarif officiel stable n'est pas exposé.\n\nAsync remplace Adobe Podcast si vous voulez enregistrer, nettoyer, transcrire et publier dans un seul espace. Pour améliorer seulement une voix existante, Adobe est plus direct.",
+  "longDescriptionEn": "Podcastle is now Async. The product combines local remote recording, multitrack editing, transcription and text-based editing. Magic Dust automatically enhances audio or video, while noise reduction, auto-leveling, silence removal and filler-word detection speed up post-production.\n\nThe free Basic plan includes unlimited audio recording, 3 video hours, 1 transcription hour, 720p watermarked video export and limited AI access. Storyteller and Pro increase video and transcription hours, WAV and 4K quality, AI credits and remove the watermark. Async displays variable localised prices, so ToolTrim does not state a fixed paid price until the official page exposes one consistently.\n\nAsync replaces Adobe Podcast when you want to record, clean, transcribe and publish in one workspace. For enhancing a single existing voice file, Adobe is more direct.",
     "pricing": {
-      "free": "Plan gratuit (3h/mois)",
-      "paid": "À partir de 12$/mois"
-    },
-    "pricingEn": null,
-    "defaultMonthlyPrice": 12,
-    "pricing_v5": null,
+    "free": "Basic : audio illimité, 3 h de vidéo, 1 h de transcription, export 720p avec watermark",
+    "paid": "Storyteller et Pro : prix localisés affichés par Async"
+  },
+  "pricingEn": {"free": "Basic: unlimited audio, 3 video hours, 1 transcription hour, 720p watermarked export", "paid": "Storyteller and Pro: localised pricing displayed by Async"},
+  "defaultMonthlyPrice": 0,
+  "pricing_v5": {"cautions": ["Podcastle a été rebaptisé Async", "Prix payants localisés non exposés de façon stable", "Le plan gratuit ajoute un watermark vidéo"], "verified_on": "2026-08-29", "source_domain": "async.com", "usage_sensitive": true, "compare_plan_kind": "seat", "compare_plan_name": "Basic", "price_reliability": "medium", "location_sensitive": true, "official_source_url": "https://async.com/pricing", "verification_status": "official_partial", "compare_price_monthly_eur": 0},
     "affiliateLink": "",
-    "websiteUrl": "",
+  "websiteUrl": "https://async.com",
     "logo": "",
+    "ogImageUrl": "https://m.async.com/home-page/ads.webp",
     "seo": {
       "aiAngle": {
         "stance": "augmente",
@@ -110550,7 +110576,7 @@
       "Créateurs de contenu",
       "Freelances audio"
     ],
-    "alternatives": [],
+  "alternatives": ["adobe-podcast-ai", "descript", "riverside", "cleanvoice"],
     "verdict": {
       "keepIf": [
         "Vous enregistrez des podcasts à distance avec des invités.",
@@ -126125,10 +126151,10 @@
     "category": "communication",
     "shortDescription": "Enregistrement podcast et vidéo en qualité studio, à distance.",
     "defaultMonthlyPrice": 12.99,
-    "pricing": {
-      "free": "2h/mois",
-      "paid": "15$/mois (Standard)"
-    },
+  "pricing": {
+    "free": "2 h d'enregistrement multipiste au total, export 720p avec watermark",
+    "paid": "Standard : 15 $/mois annuel ou 19 $ mensuel, avec Magic Audio et export 4K"
+  },
     "covers": [
       "enregistrement-multipistes",
       "livraison-invites",
@@ -126169,17 +126195,17 @@
     "ia_use_case": null,
     "slug": "riverside",
     "shortDescriptionEn": "Studio-quality podcast and video recording, remotely.",
-    "description": "Riverside, c'est enregistrement podcast et vidéo en qualité studio, à distance. À partir de 12.99€/mois. Pensé pour les podcasteurs et les créateurs de contenu.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : podcast ou interviews à distance réguliers. À éviter si : enregistrement solo — Audacity gratuit suffit. Rentable dès 2 épisodes enregistrés par mois.",
-    "longDescription": "Riverside, c'est enregistrement podcast et vidéo en qualité studio, à distance. À partir de 12.99€/mois. Pensé pour les podcasteurs et les créateurs de contenu.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : podcast ou interviews à distance réguliers. À éviter si : enregistrement solo — Audacity gratuit suffit. Rentable dès 2 épisodes enregistrés par mois.",
-    "longDescriptionEn": "Riverside is studio-quality podcast and video recording, remotely. Starting at €12.99/month. Built for podcasters and content creators.\n\nEstimated time saving: 4h/month.",
-    "pricingEn": null,
+  "description": "Riverside enregistre chaque participant localement sur une piste séparée, jusqu'en 4K et 48 kHz sur les offres payantes, afin que les coupures de connexion n'abîment pas le fichier final. Son éditeur ajoute transcription, montage par le texte, clips automatiques et Magic Audio.\n\nMagic Audio combine réduction du bruit et de la réverbération, égalisation, amélioration de la voix et ajustement du loudness. Le plan Free propose 2 heures d'enregistrement multipiste au total, du 720p et un watermark. Standard coûte 15 $ par mois avec facturation annuelle, ou 19 $ au mois, et ajoute Magic Audio, la 4K, le 48 kHz, les transcriptions et les shownotes IA.\n\nRiverside est la meilleure alternative à Adobe Podcast pour enregistrer des entretiens à distance avant de les améliorer. Il est surdimensionné pour nettoyer un fichier solo déjà enregistré.",
+  "longDescription": "Riverside enregistre chaque participant localement sur une piste séparée, jusqu'en 4K et 48 kHz sur les offres payantes, afin que les coupures de connexion n'abîment pas le fichier final. Son éditeur ajoute transcription, montage par le texte, clips automatiques et Magic Audio.\n\nMagic Audio combine réduction du bruit et de la réverbération, égalisation, amélioration de la voix et ajustement du loudness. Le plan Free propose 2 heures d'enregistrement multipiste au total, du 720p et un watermark. Standard coûte 15 $ par mois avec facturation annuelle, ou 19 $ au mois, et ajoute Magic Audio, la 4K, le 48 kHz, les transcriptions et les shownotes IA.\n\nRiverside est la meilleure alternative à Adobe Podcast pour enregistrer des entretiens à distance avant de les améliorer. Il est surdimensionné pour nettoyer un fichier solo déjà enregistré.",
+  "longDescriptionEn": "Riverside records every participant locally on a separate track, up to 4K and 48 kHz on paid plans, so connection dropouts do not damage the final recording. Its editor adds transcription, text-based editing, automatic clips and Magic Audio.\n\nMagic Audio combines noise and reverb reduction, equalisation, voice enhancement and loudness adjustment. Free provides 2 total hours of multitrack recording, 720p video and a watermark. Standard costs $15 per month billed annually or $19 monthly, and adds Magic Audio, 4K, 48 kHz audio, transcription and AI shownotes.\n\nRiverside is the strongest Adobe Podcast alternative for recording remote interviews before enhancing them. It is excessive for cleaning an existing solo file.",
+  "pricingEn": {"free": "2 total hours of multitrack recording, 720p export with watermark", "paid": "Standard: $15/month annually or $19 monthly, with Magic Audio and 4K export"},
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+    "cautions": ["Les 2 heures multipistes du plan gratuit sont un quota total, pas mensuel", "Prix officiels en dollars", "Le tarif de 15 $ exige une facturation annuelle"],
+    "verified_on": "2026-08-29",
       "source_domain": "riverside.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
-      "compare_plan_name": "Entry paid plan",
+    "compare_plan_name": "Standard annual",
       "price_reliability": "high",
       "location_sensitive": false,
       "official_source_url": "https://riverside.com/pricing",
@@ -126208,7 +126234,7 @@
       "YouTubers",
       "Créateurs de contenu"
     ],
-    "alternatives": [],
+  "alternatives": ["adobe-podcast-ai", "descript", "podcastle", "auphonic"],
     "verdictEn": {
       "keepIf": [
         "You create podcasts or interview videos with multiple people.",

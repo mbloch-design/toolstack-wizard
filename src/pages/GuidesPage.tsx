@@ -46,6 +46,9 @@ const SORT_OPTIONS_EN = [
 
 const PAGE_SIZE = 9;
 const ENGLISH_PARITY_START_DATE = "2026-05-01";
+const ENGLISH_GUIDE_SLUGS: Record<string, string> = {
+  "adobe-podcast-ai-gratuit-alternatives-2026": "adobe-podcast-ai-free-limits-alternatives-2026",
+};
 
 /* ── Matching helpers ─────────────────────────────────────────────────────── */
 function matchesFilter(post: Post, filterId: string): boolean {
@@ -145,7 +148,9 @@ const GuidesPage = () => {
     if (lang !== "en" || posts.length === 0) return posts;
     const englishSlugs = new Set(posts.map((post) => post.slug));
     const frenchOnly = localeFallbackPosts.filter((post) => (
-      (post.date || "") >= ENGLISH_PARITY_START_DATE && !englishSlugs.has(post.slug)
+      (post.date || "") >= ENGLISH_PARITY_START_DATE
+      && !englishSlugs.has(post.slug)
+      && !englishSlugs.has(ENGLISH_GUIDE_SLUGS[post.slug])
     ));
     return [...posts, ...frenchOnly];
   }, [lang, posts, localeFallbackPosts]);
