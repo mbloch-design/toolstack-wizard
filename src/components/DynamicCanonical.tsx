@@ -53,9 +53,12 @@ export default function DynamicCanonical() {
       <meta property="og:locale" content={locale} />
       <meta property="og:image" content={OG_IMAGE} />
 
-      {/* Twitter defaults */}
+      {/* Twitter defaults. twitter:site is intentionally omitted here — it's
+          a static constant already baked into index.html's <head>, and
+          Helmet doesn't recognise that pre-existing tag as its own, so
+          re-declaring it here produced a duplicate <meta name="twitter:site">
+          once the page hydrated. */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@tooltrim" />
       <meta name="twitter:image" content={OG_IMAGE} />
 
       {/* Noindex on funnel pages */}

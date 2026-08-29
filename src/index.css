@@ -18318,7 +18318,6 @@ section[id] {
   text-transform: uppercase;
   letter-spacing: 0.04em;
   color: var(--tt-footer-muted);
-  opacity: 0.7;
   white-space: nowrap;
 }
 .tt-footer-badges {
