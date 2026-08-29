@@ -5784,11 +5784,11 @@
     "longDescription": "Agicap centralise les comptes bancaires et permet de prévoir la trésorerie à venir : entrées/sorties, scénarios, alertes sur les tensions de cash. C'est un outil utile dès que le suivi de trésorerie sur tableur devient risqué (multi-comptes, prévisions à affiner régulièrement).\n\nAgicap ne publie pas ses tarifs : le prix se négocie en fonction du nombre de comptes bancaires connectés et du chiffre d'affaires, avec un point d'entrée généralement de plusieurs centaines d'euros par mois. Un essai gratuit existe pour tester l'outil avant engagement.\n\nPour un freelance ou une TPE avec un seul compte bancaire et une trésorerie simple, Agicap est probablement disproportionné : le suivi manuel ou un outil de facturation avec module trésorerie basique (type Qonto, Pennylane) couvre déjà l'essentiel du besoin.",
     "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
     "pricing": {
-      "free": "Essai gratuit",
+      "free": "Essai gratuit complet de 30 jours, moyen de paiement requis",
       "paid": "Sur devis, généralement plusieurs centaines d'euros par mois selon comptes connectés et CA"
     },
     "pricingEn": {
-      "free": "Free trial",
+      "free": "Full 30-day free trial, payment method required",
       "paid": "Custom quote, typically several hundred euros/month depending on connected accounts and revenue"
     },
     "defaultMonthlyPrice": 0,
@@ -31612,7 +31612,7 @@
       "free": "Free trial",
       "paid": "Solo $414/year ($34.50/month); Premium $562.80/year ($46.90/month)"
     },
-    "defaultMonthlyPrice": 29.63,
+    "defaultMonthlyPrice": 34.5,
     "affiliateLink": "",
     "websiteUrl": "https://www.chaos.com/corona",
     "logo": "",
@@ -31630,7 +31630,7 @@
         "Vous cherchez un moteur de rendu gratuit.",
         "Un usage très ponctuel ne justifie pas l'abonnement."
       ],
-      "threshold": "Corona s'impose pour l'archviz sur 3ds Max ou Cinema 4D ; hors de ces hôtes ou pour un besoin gratuit, un autre moteur convient mieux."
+      "threshold": "Corona est un excellent choix pour l'archviz photoréaliste sur 3ds Max ou Cinema 4D si vous privilégiez la simplicité et disposez d'un CPU solide. Pour un pipeline GPU, d'autres hôtes ou un budget nul, choisissez un autre moteur."
     },
     "verdictEn": {
       "keepIf": [
@@ -31643,7 +31643,7 @@
         "You want a free render engine.",
         "Very occasional use doesn't justify the subscription."
       ],
-      "threshold": "Corona makes sense for archviz on 3ds Max or Cinema 4D; outside those hosts or for free needs, another engine fits better."
+      "threshold": "Corona is an excellent fit for photoreal archviz in 3ds Max or Cinema 4D when ease of use matters and you have a strong CPU. For GPU rendering, other hosts or a zero budget, choose another engine."
     },
     "pros": [
       "Rendu photoréaliste de haute qualité.",
@@ -31732,21 +31732,26 @@
     "prescription_context_questions": [],
     "pricing_v5": {
       "cautions": [
-        "Corona Solo 414$/an (34,50$/mois) ; prix hors taxes"
+        "Corona Solo 414$/an (34,50$/mois), hors taxes et renouvelé automatiquement",
+        "Essai de 30 jours avec moyen de paiement, puis conversion automatique si non annulé"
       ],
-      "verified_on": "2026-08-28",
+      "verified_on": "2026-08-29",
       "source_domain": "chaos.com",
       "usage_sensitive": false,
       "compare_plan_kind": "subscription",
       "compare_plan_name": "Corona Solo (annuel)",
       "price_reliability": "high",
-      "location_sensitive": false,
+      "location_sensitive": true,
       "official_source_url": "https://www.chaos.com/corona/buy-online",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 29.63
+      "compare_price_monthly_eur": 34.5
     },
     "substitution_cluster_v2": "render-engine",
-    "ogImageUrl": "https://static.chaos.com/images/assets/000/025/421/articles_2_columns/corona-product-og-1200x630.png?1781319481",
+    "ogImageUrl": "/tool-media/corona-renderer/overview.png",
+    "galleryImages": [
+      "/tool-media/corona-renderer/gallery-villa.jpg",
+      "/tool-media/corona-renderer/denoising.jpg"
+    ],
     "description": "Chaos Corona est un moteur de rendu photoréaliste conçu pour 3ds Max et Cinema 4D. Il privilégie une prise en main simple, un rendu interactif rapide à régler et des outils adaptés à la visualisation architecturale.\n\nCorona Solo coûte désormais 34,50$ par mois avec une facturation annuelle de 414$. Il inclut le moteur Corona, jusqu'à 15 000 ressources et matériaux, Veras AI, la collaboration cloud et 100 crédits Chaos par mois. Corona Premium coûte 46,90$ par mois en annuel et ajoute davantage de ressources, une licence flottante et cinq fois plus de crédits.\n\nCorona est généralement plus direct que V-Ray pour l'archviz dans ses deux applications hôtes. V-Ray reste plus polyvalent entre logiciels et pour les pipelines VFX. Cycles demeure une alternative gratuite crédible pour les utilisateurs de Blender.",
     "decision_policy_v3": null,
     "force_silence": false
@@ -108861,14 +108866,14 @@
     "name": "Pixelmator Pro",
     "category": "photo",
     "shortDescription": "Éditeur photo et composition pour Mac, utile pour retouche, détourage et visuels rapides.",
-    "shortDescriptionEn": "Mac photo editing and composition app for retouching, cutouts and quick visuals.",
+    "shortDescriptionEn": "Apple-native photo editing and composition app for Mac and iPad.",
     "pricing": {
       "free": "Essai gratuit de 30 jours avec Apple Creator Studio",
-      "paid": "49,99 $ en achat unique sur Mac, ou 12,99 $/mois avec Apple Creator Studio"
+      "paid": "59,99 € en achat unique sur Mac, ou 12,99 €/mois avec Apple Creator Studio"
     },
     "pricingEn": {
       "free": "30-day free trial with Apple Creator Studio",
-      "paid": "$49.99 one-time on Mac, or $12.99/month with Apple Creator Studio"
+      "paid": "€59.99 one-time on Mac, or €12.99/month with Apple Creator Studio"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://www.apple.com/pixelmator-pro/",
@@ -108912,35 +108917,39 @@
     "prescription_quality": "question",
     "force_silence": false,
     "substitution_cluster_v2": "photo-editor",
-    "ogImageUrl": "https://www.apple.com/v/pixelmator-pro/a/images/overview/meta/pixelmator__c4dlsmpcudw2_og.png?202603241546",
+    "ogImageUrl": "/tool-media/pixelmator-pro/editing.jpg",
+    "galleryImages": [
+      "/tool-media/pixelmator-pro/mac-ipad.jpg",
+      "/tool-media/pixelmator-pro/background-removal.jpg"
+    ],
     "description": "Pixelmator Pro est l'éditeur d'images d'Apple pour Mac et iPad, proposé dans Apple Creator Studio. La version Mac reste aussi disponible en achat unique.",
     "pros": [
-      "Licence perpétuelle : achat unique, sans abonnement.",
+      "Achat unique disponible pour la version Mac.",
       "Perfs excellentes sur Apple Silicon (très fluide).",
       "Suppression de fond et remplissage IA intégrés.",
       "Interface macOS native et intuitive.",
       "Alternative légère et plus abordable que Photoshop."
     ],
     "cons": [
-      "Exclusif macOS (pas Windows/Linux).",
+      "Pas de version Windows, Linux ou web ; l'iPad exige Apple Creator Studio.",
       "Moins de plugins et extensions que Photoshop.",
-      "Pas de features vidéo ou animation."
+      "Ce n'est pas un logiciel de montage vidéo ou d'animation avancée malgré les calques vidéo."
     ],
     "verdict": {
       "keepIf": [
-        "Vous utilisez macOS et cherchez éditeur image performant.",
-        "Vous faites retouche photo, graphisme ou peinture digitale.",
-        "Vous préférez logiciel léger ne consommant pas trop ressources."
+        "Vous travaillez surtout sur Mac et voulez un éditeur photo et graphique rapide sans abonnement.",
+        "Vous avez besoin de calques, RAW, PSD, SVG, PDF et retouche non destructive.",
+        "Vous voulez aussi travailler sur iPad et Creator Studio est pertinent pour vos autres apps Apple."
       ],
       "avoidIf": [
-        "Vous travaillez sur Windows/Linux.",
-        "Vous avez besoin features vidéo, 3D ou animation avancée.",
-        "Vous cherchez une solution entièrement gratuite."
+        "Votre flux doit fonctionner sur Windows, Linux ou dans un navigateur.",
+        "Vous cherchez une alternative gratuite permanente.",
+        "Vous avez besoin de l'écosystème de plugins et des workflows avancés de Photoshop."
       ],
-      "threshold": "Pixelmator Pro s'impose pour creativs macOS cherchant alternative légère à Photoshop ; pour budget très limité, Photopea gratuit suffit."
+      "threshold": "Choisissez l'achat unique Mac à 59,99 € pour un éditeur Apple complet sans abonnement. Prenez Creator Studio surtout pour l'iPad et les fonctions génératives. Pour un besoin ponctuel et gratuit, Photopea suffit."
     },
     "pricing_v5": {
-      "verified_on": "2026-08-28",
+      "verified_on": "2026-08-29",
       "source_domain": "apple.com",
       "official_source_url": "https://www.apple.com/pixelmator-pro/",
       "verification_status": "official_explicit",
@@ -108949,8 +108958,8 @@
       "price_reliability": "high",
       "compare_price_monthly_eur": 0
     },
-    "longDescription": "Pixelmator Pro est l'éditeur d'images d'Apple pour la retouche photo, la composition, l'illustration et le design. Il exploite les technologies Apple pour proposer calques, réglages non destructifs, détourage automatique et outils d'amélioration, avec une interface pensée pour Mac et désormais iPad.\n\nDeux modes d'achat coexistent. La version Mac reste disponible à 49,99 $ en achat unique. Apple Creator Studio coûte 12,99 $ par mois ou 129 $ par an et inclut Pixelmator Pro sur Mac et iPad avec d'autres applications créatives. L'abonnement convient à ceux qui veulent l'écosystème complet et l'iPad. L'achat unique reste le choix le plus simple pour un usage exclusivement Mac.",
-    "longDescriptionEn": "Pixelmator Pro is Apple's image editor for photo retouching, compositing, illustration, and design. It uses Apple technologies for layers, non-destructive adjustments, automatic cutouts, and enhancement tools, with an interface built for Mac and now iPad.\n\nTwo purchase models coexist. The Mac app remains available as a $49.99 one-time purchase. Apple Creator Studio costs $12.99 per month or $129 per year and includes Pixelmator Pro on Mac and iPad alongside other creative apps. The subscription suits users who want the broader ecosystem and iPad access. The one-time purchase remains the simpler choice for Mac-only use.",
+    "longDescription": "Pixelmator Pro est l'éditeur d'images d'Apple pour la retouche photo, la composition, l'illustration et le design. Il propose calques, réglages non destructifs, RAW, PSD, SVG, PDF, détourage automatique et outils vectoriels, sur Mac et désormais sur iPad.\n\nDeux modes d'achat coexistent. La version Mac reste disponible à 59,99 € en achat unique. Apple Creator Studio coûte 12,99 € par mois ou 129 € par an et inclut Pixelmator Pro sur Mac et iPad avec d'autres applications créatives. L'iPad, l'outil Déformation et les fonctions génératives sont liés à Creator Studio.\n\nChoisissez l'achat unique pour un usage Mac sans abonnement. Creator Studio devient pertinent pour travailler aussi sur iPad ou utiliser Final Cut Pro et Logic Pro. Pixelmator Pro n'existe pas sur Windows, Linux ou dans le navigateur.",
+    "longDescriptionEn": "Pixelmator Pro is Apple's image editor for photo retouching, compositing, illustration and design. It supports layers, non-destructive adjustments, RAW, PSD, SVG, PDF, automatic cutouts and vector tools on Mac and now iPad.\n\nTwo purchase models coexist. The Mac app remains available as a €59.99 one-time purchase in France. Apple Creator Studio costs €12.99 per month or €129 per year and includes Pixelmator Pro on Mac and iPad alongside other creative apps. iPad access, Warp and generative features are tied to Creator Studio.\n\nChoose the one-time purchase for a Mac-only workflow without a subscription. Creator Studio makes more sense for iPad or when you also use Final Cut Pro and Logic Pro. Pixelmator Pro is not available on Windows, Linux or the web.",
     "seo": null,
     "articles": [],
     "freeAlternative": null,
@@ -119728,7 +119737,7 @@
     "websiteUrl": "https://reactrouter.com",
     "logo": "",
     "seo": {
-      "metaDescription": "React Router sur ToolTrim : routing React, v6, cas d'usage et comparaison avec TanStack Router."
+      "metaDescription": "React Router 8 sur ToolTrim : modes Declarative, Data et Framework, prérequis et comparaison avec TanStack Router."
     },
     "pros": [
       "Standard de facto du routage React avec massive adoption et communauté.",
@@ -119746,12 +119755,12 @@
     ],
     "cons": [
       "Courbe d'apprentissage pour débuter avec la syntaxe déclarative.",
-      "Moins type-safe que TanStack Router (pas d'inférence de type end-to-end).",
+      "En modes Declarative et Data, le typage des routes est moins intégré que chez TanStack Router.",
       "Configuration peut être verbeux pour des routes complexes."
     ],
     "consEn": [
       "Learning curve to master declarative routing syntax.",
-      "Less type-safe than TanStack Router (no end-to-end type inference).",
+      "Declarative and Data modes offer less integrated route typing than TanStack Router.",
       "Configuration can be verbose for complex routes."
     ],
     "useCases": [
@@ -119778,20 +119787,21 @@
       "DEV"
     ],
     "alternatives": [
-      "tanstack-router"
+      "tanstack-router",
+      "next-js"
     ],
     "verdict": {
       "keepIf": [
-        "Vous construisez une Single Page Application (SPA) React.",
-        "Vous avez besoin de gestion d'URL et de navigation déclarative.",
-        "Vous voulez le standard de facto du routage React avec massive adoption."
+        "Vous voulez un routeur React qui évolue du routage déclaratif vers un framework SPA, SSR ou statique.",
+        "Vous voulez loaders, actions, états d'attente et fetchers intégrés sans adopter Next.js.",
+        "Vous pouvez respecter les prérequis modernes de React Router 8."
       ],
       "avoidIf": [
-        "Vous construisez une application Next.js (Next.js gère le routage).",
-        "Vous construisez une app très simple avec peu de routes.",
-        "Vous préférez TanStack Router pour son approche type-safe (beta)."
+        "Votre application utilise déjà le routeur de Next.js.",
+        "Vous devez rester sur Node 20, React 18 ou CommonJS.",
+        "Le typage end-to-end est prioritaire et vous préférez le modèle de TanStack Router."
       ],
-      "threshold": "React Router est un choix sûr pour le routage React, à condition de sélectionner le mode adapté au projet et de vérifier les prérequis de la version 8."
+      "threshold": "React Router 8 est le choix polyvalent pour faire évoluer une application React du routage déclaratif vers des fonctions de données ou un framework complet. Vérifiez Node 22.22+, React 19.2.7+ et Vite 7+ en mode Framework."
     },
     "verdictEn": {
       "keepIf": [
@@ -119802,7 +119812,7 @@
       "avoidIf": [
         "You're building a Next.js application (Next.js handles routing).",
         "You're building a simple app with few routes.",
-        "You prefer TanStack Router for its type-safe approach (beta)."
+        "End-to-end route type safety is the top priority and you prefer TanStack Router's model."
       ],
       "threshold": "React Router is a safe choice for React routing when you select the right mode and verify the version 8 requirements."
     },
@@ -119833,9 +119843,9 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/react-router.png",
+    "ogImageUrl": "/tool-media/react-router/v8-badge.svg",
     "galleryImages": [
-      "https://opengraph.githubassets.com/tooltrim/remix-run/react-router"
+      "/tool-media/react-router/v8-framework.svg"
     ],
     "force_silence": false
   },

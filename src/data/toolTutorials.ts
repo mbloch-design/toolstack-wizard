@@ -37,11 +37,11 @@ export const TOOL_TUTORIALS: Record<string, ToolTutorial[]> = {
     publishedOn: "2025-09-29", verifiedOn: "2026-08-25",
   }],
   "react-router": [{
-    provider: "youtube", videoId: "oTIJunBa6MA",
-    titleFr: "Comprendre React Router", titleEn: "React Router complete tutorial",
-    author: "Cosden Solutions", duration: "Tutoriel complet",
-    sourceUrl: "https://www.youtube.com/watch?v=oTIJunBa6MA",
-    publishedOn: "2024-01-31", verifiedOn: "2026-08-25",
+    provider: "youtube", videoId: "pw8FAg07kdo",
+    titleFr: "Découvrir React Router en mode Framework", titleEn: "React Router Framework Mode tutorial",
+    author: "React Router", duration: "Tutoriel officiel",
+    sourceUrl: "https://www.youtube.com/watch?v=pw8FAg07kdo",
+    verifiedOn: "2026-08-29",
   }],
   "adobe-premiere-pro": [{
     provider: "youtube", videoId: "-varpUzy9Pc",

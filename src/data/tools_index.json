@@ -1437,7 +1437,7 @@
     "shortDescription": "Pilotage de trésorerie et prévisions de cash-flow pour PME et entreprises.",
     "shortDescriptionEn": "Cash-flow forecasting and treasury management for SMEs and companies.",
     "pricing": {
-      "free": "Essai gratuit",
+      "free": "Essai gratuit complet de 30 jours, moyen de paiement requis",
       "paid": "Sur devis, généralement plusieurs centaines d'euros par mois selon comptes connectés et CA"
     },
     "defaultMonthlyPrice": 0,
@@ -7863,10 +7863,10 @@
       "free": "Essai gratuit",
       "paid": "Solo 414$/an (34,50$/mois) ; Premium 562,80$/an (46,90$/mois)"
     },
-    "defaultMonthlyPrice": 29.63,
+    "defaultMonthlyPrice": 34.5,
     "affiliateLink": "",
     "websiteUrl": "https://www.chaos.com/corona",
-    "ogImageUrl": "https://static.chaos.com/images/assets/000/025/421/articles_2_columns/corona-product-og-1200x630.png?1781319481",
+    "ogImageUrl": "/tool-media/corona-renderer/overview.png",
     "logo": "",
     "tool_type": "metier",
     "host_app": null,
@@ -27098,15 +27098,15 @@
     "name": "Pixelmator Pro",
     "categoryId": "photo",
     "shortDescription": "Éditeur photo et composition pour Mac, utile pour retouche, détourage et visuels rapides.",
-    "shortDescriptionEn": "Mac photo editing and composition app for retouching, cutouts and quick visuals.",
+    "shortDescriptionEn": "Apple-native photo editing and composition app for Mac and iPad.",
     "pricing": {
       "free": "Essai gratuit de 30 jours avec Apple Creator Studio",
-      "paid": "49,99 $ en achat unique sur Mac, ou 12,99 $/mois avec Apple Creator Studio"
+      "paid": "59,99 € en achat unique sur Mac, ou 12,99 €/mois avec Apple Creator Studio"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://www.apple.com/pixelmator-pro/",
     "websiteUrl": "https://www.apple.com/pixelmator-pro/",
-    "ogImageUrl": "https://www.apple.com/v/pixelmator-pro/a/images/overview/meta/pixelmator__c4dlsmpcudw2_og.png?202603241546",
+    "ogImageUrl": "/tool-media/pixelmator-pro/editing.jpg",
     "logo": "",
     "tool_type": "metier",
     "host_app": null,
@@ -29847,7 +29847,7 @@
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://reactrouter.com",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/react-router.png",
+    "ogImageUrl": "/tool-media/react-router/v8-badge.svg",
     "logo": "",
     "tool_type": "satellite",
     "host_app": "react",
