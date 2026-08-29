@@ -192,6 +192,144 @@
   ],
   "en": [
     {
+      "slug": "andrew-huberman-kit-systeme-audience",
+      "title": "How Huberman Lab Built an Audience of Over One Million Subscribers with Kit",
+      "date": "2026-08-18",
+      "tags": [
+        "Kit",
+        "ConvertKit",
+        "newsletter",
+        "email marketing",
+        "creators",
+        "audience",
+        "automation"
+      ],
+      "thumbnail": "/editorial/guides/kit-huberman-systeme-audience/hero.jpg"
+    },
+    {
+      "slug": "atelier-hors-champ-scenographie-espace-raconte",
+      "title": "Drawing What the Visitor Feels Before What They Look At",
+      "date": "2026-08-17",
+      "tags": [
+        "stories",
+        "scenography",
+        "creative studio",
+        "exhibition",
+        "ephemeral architecture",
+        "art direction",
+        "workflow"
+      ],
+      "thumbnail": "/editorial/stories/atelier-hors-champ/hero.jpg"
+    },
+    {
+      "slug": "auditer-stack-saas-45-minutes",
+      "title": "Auditing Your SaaS Stack in 45 Minutes: Removing Overlaps Without Breaking Your Workflow",
+      "date": "2026-08-16",
+      "tags": [
+        "stack audit",
+        "building a stack",
+        "cost reduction",
+        "SaaS subscriptions",
+        "tool overlaps",
+        "SaaS migration",
+        "freelance",
+        "organization"
+      ],
+      "thumbnail": "/editorial/stack-visuale/franken-stack-photo.jpg"
+    },
+    {
+      "slug": "anna-morel-designer-studio-augmente",
+      "title": "Designing like a studio when you work alone",
+      "date": "2026-07-28",
+      "tags": [
+        "stories",
+        "freelance designer",
+        "artificial intelligence",
+        "creative stack",
+        "future of work",
+        "workflow"
+      ],
+      "thumbnail": "/editorial/stories/anna-morel/hero.jpg"
+    },
+    {
+      "slug": "pourquoi-visualiser-stack-saas",
+      "title": "Why Visualize Your SaaS Stack Instead of Managing It in Excel",
+      "date": "2026-07-28",
+      "tags": [
+        "saas stack",
+        "organisation",
+        "productivity",
+        "workflow",
+        "freelance",
+        "tools"
+      ],
+      "thumbnail": "/editorial/stack-visuale/hero-stack-visuelle.jpg"
+    },
+    {
+      "slug": "marc-delmas-clarifier-entreprise-qui-grandit",
+      "title": "Bringing Clarity Back to a Company Growing Too Fast",
+      "date": "2026-07-27",
+      "tags": [
+        "stories",
+        "operations consultant",
+        "small business",
+        "automation",
+        "workflow",
+        "growth"
+      ],
+      "thumbnail": "/editorial/stories/marc-operations/hero.jpg"
+    },
+    {
+      "slug": "nora-bensaid-produit-sante-depuis-terrain",
+      "title": "Building a Digital Product from the Field",
+      "date": "2026-07-26",
+      "tags": [
+        "stories",
+        "freelance developer",
+        "digital product",
+        "healthcare",
+        "user research",
+        "workflow"
+      ],
+      "thumbnail": "/editorial/stories/nora-sante/hero.jpg"
+    },
+    {
+      "slug": "outils-facturation-freelance-2026",
+      "title": "Freelance Invoicing Software in France for 2026: An Honest Guide",
+      "date": "2026-05-08",
+      "tags": [
+        "invoicing",
+        "accounting",
+        "freelance",
+        "France",
+        "small business",
+        "e-invoicing",
+        "PDP",
+        "Qonto",
+        "Indy",
+        "Pennylane"
+      ],
+      "thumbnail": null
+    },
+    {
+      "slug": "top-5-competences-ia-freelance-2026",
+      "title": "Top 5 AI Skills for Freelancers to Learn in 2026 (High-Income Skills)",
+      "date": "2026-05-03",
+      "tags": [
+        "AI skills",
+        "freelance 2026",
+        "generative AI",
+        "AI CRO",
+        "AI web building",
+        "AI UGC",
+        "AI funnel",
+        "AI stack",
+        "high income",
+        "digital marketing"
+      ],
+      "thumbnail": null
+    },
+    {
       "slug": "ai-tips-freelancers-2026",
       "title": "AI Tips for Freelancers in 2026: Minimal Stack, Prompts That Actually Work, and Cutting the Waste",
       "date": "2026-04-29",
@@ -245,101 +383,6 @@
         "2026"
       ],
       "thumbnail": null
-    },
-    {
-      "slug": "minimalist-saas-stack-freelancer-2026-under-50-euros",
-      "title": "Minimalist SaaS Stack for Freelancers in 2026 — 5 Tools, Under €50/month",
-      "date": "2026-04-22",
-      "tags": [
-        "freelance stack",
-        "notion",
-        "freebe",
-        "make",
-        "fathom",
-        "proton mail",
-        "minimalist",
-        "2026"
-      ],
-      "thumbnail": null
-    },
-    {
-      "slug": "notion-free-or-paid",
-      "title": "Managing 3 clients simultaneously: Is Notion free really enough for you?",
-      "date": "2026-03-06",
-      "tags": [],
-      "thumbnail": null
-    },
-    {
-      "slug": "calendly-free-enough",
-      "title": "You just signed your 2nd client: do you need Calendly Pro?",
-      "date": "2026-03-06",
-      "tags": [],
-      "thumbnail": null
-    },
-    {
-      "slug": "chatgpt-plus-worth-it",
-      "title": "You spend 2h/day on repetitive tasks: does ChatGPT Plus really change anything?",
-      "date": "2026-03-06",
-      "tags": [],
-      "thumbnail": null
-    },
-    {
-      "slug": "grammarly-free-or-paid",
-      "title": "You got client feedback about a typo: is Grammarly Premium worth it?",
-      "date": "2026-03-06",
-      "tags": [],
-      "thumbnail": null
-    },
-    {
-      "slug": "stripe-vs-bank-transfer",
-      "title": "You just signed your 1st client: how should you get paid?",
-      "date": "2026-03-06",
-      "tags": [],
-      "thumbnail": null
-    },
-    {
-      "slug": "claude-vs-chatgpt-deepseek",
-      "title": "Looking for the most profitable AI for your tasks: ChatGPT, Claude or DeepSeek?",
-      "date": "2026-03-06",
-      "tags": [],
-      "thumbnail": null
-    },
-    {
-      "slug": "stack-freelance-writer",
-      "title": "You're a freelance writer: here's the minimal stack that's actually enough for you",
-      "date": "2026-03-06",
-      "tags": [
-        "tool stack",
-        "writer",
-        "freelance",
-        "savings",
-        "productivity",
-        "minimalism"
-      ],
-      "thumbnail": null
-    },
-    {
-      "slug": "toggl-track-free-or-paid",
-      "title": "Toggl Track: Free or Paid? The Complete Guide for Freelancers",
-      "date": "2026-03-01",
-      "tags": [
-        "toggl-track",
-        "time tracking",
-        "time tracking tool",
-        "freelance",
-        "productivity",
-        "billing",
-        "reports",
-        "free vs paid",
-        "roi",
-        "savings",
-        "essential tools",
-        "2026",
-        "alternatives",
-        "clockify",
-        "harvest"
-      ],
-      "thumbnail": "https://d2xsxph8kpxj0f.cloudfront.net/310519663245908576/gPgvWe22nicdU5ZyAmcH5z/ToogleTrack_3d257d7d.png"
     }
   ]
 }

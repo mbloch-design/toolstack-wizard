@@ -240,7 +240,6 @@ export const AppRoutes = () => (
       <Route path="guide/best-tools-freelance-content-creator" element={<PersonaPillarPage persona="ALIX" lang="en" />} />
       <Route path="guide/meilleurs-outils-ops-manager-freelance" element={<PersonaPillarPage persona="CLAIRE" lang="fr" />} />
       <Route path="guide/best-tools-freelance-ops-manager" element={<PersonaPillarPage persona="CLAIRE" lang="en" />} />
-      <Route path="guide/outils-facturation-freelance-2026" element={<ArticleFacturation />} />
       <Route path="guide/:slug" element={<LocalizedGuidePage />} />
       <Route path="story/:slug" element={<RedirectArticleToGuide />} />
       <Route path="article/:slug" element={<RedirectArticleToGuide />} />
@@ -324,6 +323,9 @@ function LocalizedToolSubpage({ subpage }: { subpage: keyof typeof TOOL_SUBPAGE_
 /** Keep guide slugs canonical per language and avoid mixed-language duplicates */
 function LocalizedGuidePage() {
   const { slug = "", lang } = useParams();
+  if (slug === "outils-facturation-freelance-2026" && lang !== "en") {
+    return <ArticleFacturation />;
+  }
   const comparisonSlug = GUIDE_COMPARISON_REDIRECTS[slug];
   if (comparisonSlug) {
     return <Navigate to={`/${lang || "fr"}/comparatif/${comparisonSlug}`} replace />;

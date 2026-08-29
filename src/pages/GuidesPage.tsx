@@ -45,6 +45,7 @@ const SORT_OPTIONS_EN = [
 ];
 
 const PAGE_SIZE = 9;
+const ENGLISH_PARITY_START_DATE = "2026-05-01";
 
 /* ── Matching helpers ─────────────────────────────────────────────────────── */
 function matchesFilter(post: Post, filterId: string): boolean {
@@ -142,14 +143,11 @@ const GuidesPage = () => {
 
   const visiblePosts = useMemo(() => {
     if (lang !== "en" || posts.length === 0) return posts;
-    const newestEnglishDate = posts.reduce((latest, post) => (
-      (post.date || "") > latest ? post.date : latest
-    ), "");
     const englishSlugs = new Set(posts.map((post) => post.slug));
-    const recentFrenchOnly = localeFallbackPosts.filter((post) => (
-      (post.date || "") > newestEnglishDate && !englishSlugs.has(post.slug)
+    const frenchOnly = localeFallbackPosts.filter((post) => (
+      (post.date || "") >= ENGLISH_PARITY_START_DATE && !englishSlugs.has(post.slug)
     ));
-    return [...posts, ...recentFrenchOnly];
+    return [...posts, ...frenchOnly];
   }, [lang, posts, localeFallbackPosts]);
 
   useEffect(() => {
