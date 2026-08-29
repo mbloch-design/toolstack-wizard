@@ -67,6 +67,8 @@ export default function ToolCardImage({ tool, logoSize = 40, className = "", ove
           alt={`${tool.name} — aperçu`}
           loading="lazy"
           decoding="async"
+          width={800}
+          height={420}
           onLoad={(event) => {
             const image = event.currentTarget;
             if (image.naturalWidth < 320 || image.naturalHeight < 160) {

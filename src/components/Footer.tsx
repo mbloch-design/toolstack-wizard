@@ -117,12 +117,16 @@ const Footer = () => {
                   className="tt-footer-badge-light"
                   src="https://assets.dang.ai/badges/dang-verified-dark.png"
                   alt="Verified on DANG!"
+                  width={260}
+                  height={94}
                   loading="lazy"
                 />
                 <img
                   className="tt-footer-badge-dark"
                   src="https://assets.dang.ai/badges/dang-verified-light.png"
                   alt="Verified on DANG!"
+                  width={260}
+                  height={94}
                   loading="lazy"
                 />
               </a>
@@ -137,12 +141,16 @@ const Footer = () => {
                   className="tt-footer-badge-light"
                   src="https://neeed.directory/badges/neeed-badge-light.svg"
                   alt="Featured on neeed.directory"
+                  width={139}
+                  height={44}
                   loading="lazy"
                 />
                 <img
                   className="tt-footer-badge-dark"
                   src="https://neeed.directory/badges/neeed-badge-dark.svg"
                   alt="Featured on neeed.directory"
+                  width={139}
+                  height={44}
                   loading="lazy"
                 />
               </a>
@@ -157,12 +165,16 @@ const Footer = () => {
                   className="tt-footer-badge-light"
                   src="https://nicklaunches.com/badges/featured.png"
                   alt="ToolTrim on Nick Launches"
+                  width={244}
+                  height={56}
                   loading="lazy"
                 />
                 <img
                   className="tt-footer-badge-dark"
                   src="https://nicklaunches.com/badges/featured-dark.png"
                   alt="ToolTrim on Nick Launches"
+                  width={244}
+                  height={56}
                   loading="lazy"
                 />
               </a>
@@ -176,6 +188,8 @@ const Footer = () => {
                 <img
                   src="https://backlinklog.com/badge/tooltrim.com.svg"
                   alt="Listed on BacklinkLog"
+                  width={160}
+                  height={40}
                   loading="lazy"
                 />
               </a>
@@ -190,12 +204,16 @@ const Footer = () => {
                   className="tt-footer-badge-light"
                   src="https://launchnest.io/badge/tooltrim.svg?variant=listed&theme=light"
                   alt="Tooltrim on LaunchNest"
+                  width={220}
+                  height={56}
                   loading="lazy"
                 />
                 <img
                   className="tt-footer-badge-dark"
                   src="https://launchnest.io/badge/tooltrim.svg?variant=listed"
                   alt="Tooltrim on LaunchNest"
+                  width={220}
+                  height={56}
                   loading="lazy"
                 />
               </a>
@@ -210,12 +228,16 @@ const Footer = () => {
                   className="tt-footer-badge-light"
                   src="https://vibecodinglist.com/assets/embed-widget/featured-on-badge-dark.png"
                   alt="Featured on VibeCodingList"
+                  width={200}
+                  height={51}
                   loading="lazy"
                 />
                 <img
                   className="tt-footer-badge-dark"
                   src="https://vibecodinglist.com/assets/embed-widget/featured-on-badge-light.png"
                   alt="Featured on VibeCodingList"
+                  width={200}
+                  height={51}
                   loading="lazy"
                 />
               </a>
@@ -230,12 +252,16 @@ const Footer = () => {
                   className="tt-footer-badge-light"
                   src="https://dailypings.com/badge.svg"
                   alt="Featured on DailyPings"
+                  width={179}
+                  height={32}
                   loading="lazy"
                 />
                 <img
                   className="tt-footer-badge-dark"
                   src="https://dailypings.com/badge-light.svg"
                   alt="Featured on DailyPings"
+                  width={179}
+                  height={32}
                   loading="lazy"
                 />
               </a>

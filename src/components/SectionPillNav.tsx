@@ -142,7 +142,7 @@ export default function SectionPillNav({
       aria-label={ariaLabel}
     >
       <Link to={logoTo} className="tt-pillnav-logo" aria-label={logoAriaLabel}>
-        <img src={pictoLogo} alt="" className="tt-pillnav-logo-img" />
+        <img src={pictoLogo} alt="" className="tt-pillnav-logo-img" width={32} height={32} />
       </Link>
       <div className="tt-pillnav-items">
         {sections.map((section) => (

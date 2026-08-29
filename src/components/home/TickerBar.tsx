@@ -101,6 +101,8 @@ function LogoPill({ tickerTool }: { tickerTool: TickerTool }) {
           src={src}
           alt=""
           loading="lazy"
+          width={32}
+          height={32}
           className="ticker-logo-image"
           onError={() => setSourceIndex((index) => index + 1)}
         />

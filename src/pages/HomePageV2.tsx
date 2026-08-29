@@ -917,6 +917,8 @@ export default function HomePageV2() {
                             alt=""
                             loading="lazy"
                             decoding="async"
+                            width={480}
+                            height={300}
                             className="v2-article-image"
                           />
                         ) : (
