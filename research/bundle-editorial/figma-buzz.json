@@ -1,0 +1,115 @@
+{
+  "slug": "figma-buzz",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-08-29",
+  "sources": [
+    {
+      "label": "Figma Buzz (site officiel)",
+      "url": "https://www.figma.com/buzz/"
+    },
+    {
+      "label": "Guide Figma Buzz (centre d'aide officiel)",
+      "url": "https://help.figma.com/hc/en-us/articles/31271566667543-Guide-to-Figma-Buzz"
+    },
+    {
+      "label": "Tarifs Figma (site officiel)",
+      "url": "https://www.figma.com/pricing/"
+    }
+  ],
+  "facts": {
+    "what": "Espace de production de contenus de marque intégré à Figma. Les designers publient des modèles contrôlés que les équipes marketing peuvent adapter, décliner en masse et exporter.",
+    "what_en": "Brand asset production workspace built into Figma. Designers publish controlled templates that marketing teams can customize, bulk-create, and export.",
+    "pricing_model": "Bêta incluse dans tous les plans et types de sièges Figma. La publication de modèles d'équipe nécessite un plan payant.",
+    "free_tier": {
+      "exists": true,
+      "detail": "Disponible pendant la bêta avec le plan Starter gratuit. La publication de modèles d'équipe reste réservée aux plans payants."
+    },
+    "plans": [
+      {
+        "name": "Starter",
+        "price": "Gratuit, accès limité aux produits Figma"
+      },
+      {
+        "name": "Professional Collab seat",
+        "price": "3 $/mois, Buzz inclus"
+      },
+      {
+        "name": "Professional Full seat",
+        "price": "16 $/mois, tous les produits Figma inclus"
+      }
+    ],
+    "key_features": [
+      "Modèles de marque avec zones modifiables et éléments verrouillés",
+      "Création en masse depuis des fichiers CSV ou XLSX",
+      "Vue grille et édition multiple pour les campagnes multiformat",
+      "Retouche, génération d'images, vidéo et extensions intégrées"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Votre équipe design doit fournir des modèles de marque réutilisables au marketing.",
+        "Vous déclinez souvent une campagne en de nombreux formats ou variantes.",
+        "Vos ressources et votre système de marque vivent déjà dans Figma."
+      ],
+      "avoidIf": [
+        "Vous cherchez un outil autonome sans dépendance à l'écosystème Figma.",
+        "Votre production visuelle reste ponctuelle et le partage de modèles n'apporte aucun gain.",
+        "Vous avez besoin d'un contrôle graphique avancé pour chaque livrable."
+      ],
+      "threshold": "Ajoutez Figma Buzz si la mise en libre-service de modèles de marque évite des demandes répétitives au studio ; sinon, gardez la production dans Figma Design ou un outil plus simple."
+    },
+    "pros": [
+      "Relie directement les modèles aux ressources et composants déjà présents dans Figma.",
+      "Protège la cohérence visuelle grâce aux restrictions d'édition.",
+      "Accélère les déclinaisons volumineuses avec l'import de données et l'édition multiple.",
+      "Couvre les publications sociales, annonces, supports événementiels et documents courts."
+    ],
+    "cons": [
+      "Reste un produit en bêta dont les conditions peuvent évoluer.",
+      "La publication de modèles d'équipe nécessite un plan payant.",
+      "Le bénéfice diminue si les équipes ne partagent ni bibliothèque ni processus de validation."
+    ],
+    "use_cases": [
+      "Publier des modèles sociaux que le marketing adapte sans casser la marque.",
+      "Générer des variantes locales ou personnalisées depuis un tableur.",
+      "Piloter les formats d'une campagne dans une vue grille commune."
+    ],
+    "relevant_for": [
+      "Équipes de marque",
+      "Équipes marketing",
+      "Studios intégrés"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "Your design team needs to provide reusable brand templates to marketing.",
+        "You frequently adapt one campaign into many formats or variants.",
+        "Your brand assets and design system already live in Figma."
+      ],
+      "avoidIf": [
+        "You need a standalone tool outside the Figma ecosystem.",
+        "Visual production is occasional and shared templates would add little value.",
+        "Every deliverable requires advanced, unrestricted graphic control."
+      ],
+      "threshold": "Add Figma Buzz when self-serve brand templates remove repeated production requests from the design team; otherwise keep the work in Figma Design or a simpler tool."
+    },
+    "pros": [
+      "Connects templates directly to assets and components already stored in Figma.",
+      "Protects brand consistency through editing restrictions.",
+      "Speeds up high-volume variants with data import and multi-edit.",
+      "Supports social posts, ads, event materials, and short documents."
+    ],
+    "cons": [
+      "It remains a beta product whose terms can change.",
+      "Publishing team templates requires a paid plan.",
+      "Its value drops when teams do not share a library or approval workflow."
+    ],
+    "use_cases": [
+      "Publish social templates that marketers can adapt without breaking the brand.",
+      "Generate localized or personalized variants from a spreadsheet.",
+      "Manage all campaign formats in a shared grid view."
+    ]
+  }
+}

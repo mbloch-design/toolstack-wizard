@@ -20,7 +20,7 @@
     "long_description_en": "Precise 2D drafting for technical plans, dimensions and contractor exchanges.",
     "media": {
       "gallery_images": [],
-      "og_image_url": "https://tooltrim.com/og-screenshots/autocad-lt.png"
+      "og_image_url": "https://tooltrim.com/og-screenshots/autocad-lt.jpg"
     },
     "name": "AutoCAD LT",
     "pricing": {
@@ -206,9 +206,9 @@
   "schema_version": 1,
   "tracking": {
     "assigned_batch": "review-design-tools-critical-001",
-    "batch_position": 7,
+    "batch_position": 6,
     "blockers": [],
-    "catalog_hash": "sha256:603a66942ae4342245497fe681e408c7957d967b4db9ee6372cb8ff1049a285d",
+    "catalog_hash": "sha256:70b3f6257dcf99dfe317b0c4629a9b7dadca14d6a140ad717d967f3ab6f98a93",
     "category": "design-tools",
     "fact_bundle": "AVAILABLE",
     "fact_bundle_hash": "sha256:fcec816ec962642fbb1aac067b96262d0731c330f6ba68df74eb0e571c6a20bf",
@@ -230,7 +230,7 @@
     "published_at": null,
     "quality_version": "catalog-review-v1",
     "rendered_at": null,
-    "review_fingerprint": "sha256:f1688474372f824077c36d56d25184429bcd008c12a7c8ff132d6ce52ae0cfbe",
+    "review_fingerprint": "sha256:ab4bd6263fc0f88dacba4b44fbf438d72669e87a05c3c65deb280ca112b2023c",
     "reviewed_at": null,
     "reviewed_hash": null,
     "reviewer": null,

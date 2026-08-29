@@ -48,6 +48,19 @@ const changed = buildLedger({ tools: changedTools, previous: ledger, today: "202
 const changedAlpha = changed.entries.find((entry) => entry.slug === "alpha");
 assert.equal(changedAlpha.status, "STALE");
 assert.equal(changedAlpha.invalidated_from, "PUBLISHED");
+assert.equal(changedAlpha.assigned_batch, alpha.assigned_batch);
+assert.equal(changedAlpha.batch_position, alpha.batch_position);
+
+const priorityChangedTools = [
+  { ...tools[0], longDescription: "x" },
+  { ...tools[1], longDescription: "x".repeat(400), websiteUrl: "https://beta.example" },
+];
+const priorityChanged = buildLedger({ tools: priorityChangedTools, previous: ledger, today: "2026-08-30", batchSize: 10, bundleDir, mediaEvidenceDir });
+for (const previousEntry of ledger.entries) {
+  const currentEntry = priorityChanged.entries.find((entry) => entry.slug === previousEntry.slug);
+  assert.equal(currentEntry.assigned_batch, previousEntry.assigned_batch);
+  assert.equal(currentEntry.batch_position, previousEntry.batch_position);
+}
 
 assert.throws(
   () => markEntry(changed, { slug: "beta", status: "PUBLISHED", reviewer: "ToolTrim", at: "2026-08-30" }),

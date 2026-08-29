@@ -112,7 +112,7 @@
   "schema_version": 1,
   "tracking": {
     "assigned_batch": "review-design-tools-critical-001",
-    "batch_position": 4,
+    "batch_position": 3,
     "blockers": [
       "doublon de arena; produit officiel Are.na. Le slug arena est déjà utilisé par les stacks et possède le dossier factuel canonique"
     ],

@@ -46507,22 +46507,80 @@
     "slug": "figma-buzz",
     "name": "Figma Buzz",
     "category": "design-tools",
-    "shortDescription": "Production à grande échelle de contenus de marque à partir de modèles contrôlés.",
-    "shortDescriptionEn": "Scale on-brand content production from controlled templates.",
-    "longDescription": "Figma Buzz relie designers de marque et équipes marketing autour de modèles personnalisables, de créations en masse et de garde-fous de marque. Le produit est présenté en bêta et accessible selon les sièges Figma.",
-    "longDescriptionEn": "Figma Buzz connects brand designers and marketing teams through customizable templates, bulk creation, and brand guardrails. The product is presented as beta and access depends on Figma seats.",
+    "shortDescription": "Des modèles de marque contrôlés que les équipes déclinent en masse dans Figma.",
+    "shortDescriptionEn": "Controlled brand templates teams can adapt at scale inside Figma.",
+    "longDescription": "Figma Buzz est l'espace de production de contenus de marque de Figma. Les designers y publient des modèles avec des zones modifiables ou verrouillées, puis les équipes marketing les adaptent pour les réseaux sociaux, les annonces, les événements ou les documents courts.\n\nLa création en masse importe les textes et images d'un fichier CSV ou XLSX. La vue grille et l'édition multiple facilitent ensuite la vérification d'une campagne composée de nombreux formats. Buzz propose aussi de la retouche assistée, de la génération d'images, l'import et le découpage vidéo, ainsi que des plugins.\n\nPendant la bêta, Buzz est disponible sur tous les plans et types de sièges Figma. Le plan gratuit permet donc de tester l'éditeur, mais la publication de modèles d'équipe exige un plan payant. Buzz devient surtout utile quand il transforme les demandes répétitives adressées au studio en production autonome et encadrée.",
+    "longDescriptionEn": "Figma Buzz is Figma's brand asset production workspace. Designers publish templates with editable or locked regions, then marketing teams adapt them for social posts, ads, events, and short documents.\n\nBulk creation imports text and images from CSV or XLSX files. Grid view and multi-edit then make it easier to review campaigns spanning many formats. Buzz also includes assisted image editing, image generation, video import and trimming, and plugins.\n\nDuring beta, Buzz is available on every Figma plan and seat type. The free plan can therefore be used to test the editor, but publishing team templates requires a paid plan. Buzz is most useful when it turns recurring studio requests into controlled self-serve production.",
     "websiteUrl": "https://www.figma.com/buzz/",
     "affiliateLink": "https://www.figma.com/buzz/",
     "pricing": {
-      "free": "Accès limité selon le plan",
-      "paid": "Inclus selon le plan et le siège"
+      "free": "Bêta disponible avec Starter ; accès limité aux produits Figma.",
+      "paid": "Buzz inclus dans les sièges payants ; publication de modèles d'équipe réservée aux plans payants."
     },
     "pricingEn": {
-      "free": "Limited access depending on plan",
-      "paid": "Included depending on plan and seat"
+      "free": "Beta available with Starter; limited access to Figma products.",
+      "paid": "Buzz is included with paid seats; publishing team templates requires a paid plan."
     },
     "logo": "https://cdn.sanity.io/images/599r6htc/regionalized/857d716d2ba170b1507a97dfd233543408c3700e-2256x2112.png?rect=1000,1550,260,260&w=256&h=256&fit=crop&auto=format",
     "defaultMonthlyPrice": 0,
+    "verdict": {
+      "keepIf": [
+        "Votre équipe design doit fournir des modèles de marque réutilisables au marketing.",
+        "Vous déclinez souvent une campagne en de nombreux formats ou variantes.",
+        "Vos ressources et votre système de marque vivent déjà dans Figma."
+      ],
+      "avoidIf": [
+        "Vous cherchez un outil autonome sans dépendance à l'écosystème Figma.",
+        "Votre production visuelle reste ponctuelle et le partage de modèles n'apporte aucun gain.",
+        "Vous avez besoin d'un contrôle graphique avancé pour chaque livrable."
+      ],
+      "threshold": "Ajoutez Figma Buzz si la mise en libre-service de modèles de marque évite des demandes répétitives au studio ; sinon, gardez la production dans Figma Design ou un outil plus simple."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "Your design team needs to provide reusable brand templates to marketing.",
+        "You frequently adapt one campaign into many formats or variants.",
+        "Your brand assets and design system already live in Figma."
+      ],
+      "avoidIf": [
+        "You need a standalone tool outside the Figma ecosystem.",
+        "Visual production is occasional and shared templates would add little value.",
+        "Every deliverable requires advanced, unrestricted graphic control."
+      ],
+      "threshold": "Add Figma Buzz when self-serve brand templates remove repeated production requests from the design team; otherwise keep the work in Figma Design or a simpler tool."
+    },
+    "pros": [
+      "Relie directement les modèles aux ressources et composants déjà présents dans Figma.",
+      "Protège la cohérence visuelle grâce aux restrictions d'édition.",
+      "Accélère les déclinaisons volumineuses avec l'import de données et l'édition multiple.",
+      "Couvre les publications sociales, annonces, supports événementiels et documents courts."
+    ],
+    "prosEn": [
+      "Connects templates directly to assets and components already stored in Figma.",
+      "Protects brand consistency through editing restrictions.",
+      "Speeds up high-volume variants with data import and multi-edit.",
+      "Supports social posts, ads, event materials, and short documents."
+    ],
+    "cons": [
+      "Reste un produit en bêta dont les conditions peuvent évoluer.",
+      "La publication de modèles d'équipe nécessite un plan payant.",
+      "Le bénéfice diminue si les équipes ne partagent ni bibliothèque ni processus de validation."
+    ],
+    "consEn": [
+      "It remains a beta product whose terms can change.",
+      "Publishing team templates requires a paid plan.",
+      "Its value drops when teams do not share a library or approval workflow."
+    ],
+    "useCases": [
+      "Publier des modèles sociaux que le marketing adapte sans casser la marque.",
+      "Générer des variantes locales ou personnalisées depuis un tableur.",
+      "Piloter les formats d'une campagne dans une vue grille commune."
+    ],
+    "useCasesEn": [
+      "Publish social templates that marketers can adapt without breaking the brand.",
+      "Generate localized or personalized variants from a spreadsheet.",
+      "Manage all campaign formats in a shared grid view."
+    ],
     "tool_type": "metier",
     "substitutable": true,
     "host_app": "figma",
@@ -46550,6 +46608,32 @@
       "canva"
     ],
     "articles": [],
+    "seo": {
+      "metaDescription": "Figma Buzz en 2026 : bêta, accès gratuit, modèles de marque, création en masse, limites et alternatives. Le verdict ToolTrim."
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Figma Buzz est encore en bêta et ses conditions peuvent évoluer.",
+        "La publication de modèles d'équipe nécessite un plan payant."
+      ],
+      "currency": "USD",
+      "verified_on": "2026-08-29",
+      "billing_model": "included_with_subscription",
+      "source_domain": "figma.com",
+      "usage_sensitive": false,
+      "compare_plan_kind": "free",
+      "compare_plan_name": "Starter beta",
+      "price_reliability": "high",
+      "location_sensitive": true,
+      "official_source_url": "https://www.figma.com/pricing/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 0
+    },
+    "ogImageUrl": "https://cdn.sanity.io/images/599r6htc/regionalized/4e73dee4a0e803e5baa4ea51befa5f42ad49312c-1260x1260.png?auto=format&fit=max&h=630&q=75&w=630",
+    "galleryImages": [
+      "https://cdn.sanity.io/images/599r6htc/regionalized/430c964dd6ffc2db4f6046bf970bd5e4c3824474-1680x1120.png?auto=format&fit=max&h=404&q=75&w=606",
+      "https://cdn.sanity.io/images/599r6htc/regionalized/0d5e593767a47aadadb218bab97b953ae43697a1-1560x1170.png?auto=format&fit=max&h=585&q=75&w=780"
+    ],
     "force_silence": false
   },
   {

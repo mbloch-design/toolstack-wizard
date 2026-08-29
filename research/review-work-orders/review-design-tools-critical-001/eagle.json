@@ -210,7 +210,7 @@
   "schema_version": 1,
   "tracking": {
     "assigned_batch": "review-design-tools-critical-001",
-    "batch_position": 10,
+    "batch_position": 9,
     "blockers": [],
     "catalog_hash": "sha256:1df8208f5f15536d3b85f27758de6d9eac4c70703e0686d3fc2f33c56d7171f8",
     "category": "design-tools",

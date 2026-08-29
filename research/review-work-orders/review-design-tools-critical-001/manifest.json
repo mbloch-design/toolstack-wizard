@@ -14,12 +14,6 @@
   "schema_version": 1,
   "tools": [
     {
-      "file": "figma-buzz.json",
-      "required_action": "research_primary_sources_then_write_fact_bundle",
-      "slug": "figma-buzz",
-      "status": "QUEUED"
-    },
-    {
       "file": "figma-draw.json",
       "required_action": "research_primary_sources_then_write_fact_bundle",
       "slug": "figma-draw",
@@ -71,6 +65,12 @@
       "file": "eagle.json",
       "required_action": "verify_bundle_freshness_then_review_editorial",
       "slug": "eagle",
+      "status": "QUEUED"
+    },
+    {
+      "file": "eneroth-face-creator.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "eneroth-face-creator",
       "status": "QUEUED"
     }
   ]

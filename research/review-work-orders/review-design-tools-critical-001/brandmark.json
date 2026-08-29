@@ -26,7 +26,7 @@
     "long_description_en": "Brandmark generates professional logos in seconds with brand kit, mockups and SVG files.",
     "media": {
       "gallery_images": [],
-      "og_image_url": "https://tooltrim.com/og-screenshots/brandmark.png"
+      "og_image_url": "https://tooltrim.com/og-screenshots/brandmark.jpg"
     },
     "name": "Brandmark",
     "pricing": {
@@ -236,9 +236,9 @@
   "schema_version": 1,
   "tracking": {
     "assigned_batch": "review-design-tools-critical-001",
-    "batch_position": 8,
+    "batch_position": 7,
     "blockers": [],
-    "catalog_hash": "sha256:b829ad2693c9a3623358ef3b2a2b71a6c71384cd4d7823f55573188d71b5d2c7",
+    "catalog_hash": "sha256:c7b04ac2086013b61d2e72e432a298683a21c68ace51527602b7e1d50d9c53c7",
     "category": "design-tools",
     "fact_bundle": "AVAILABLE",
     "fact_bundle_hash": "sha256:5d6c553a693e8c46ff3b2cf386224e899e724ab47c30141ea10b99692ffe7bfe",
@@ -260,7 +260,7 @@
     "published_at": null,
     "quality_version": "catalog-review-v1",
     "rendered_at": null,
-    "review_fingerprint": "sha256:47de389e5aa0a1fd9e3714c8bb97f0c3b93a2bceebb0d3c85f8a1a19abcf4702",
+    "review_fingerprint": "sha256:60579bbbf622a0b694d6df716d4084fb9ca1fc13b310ed61f1b885bba6aab829",
     "reviewed_at": null,
     "reviewed_hash": null,
     "reviewer": null,

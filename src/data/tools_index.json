@@ -11569,16 +11569,16 @@
     "slug": "figma-buzz",
     "name": "Figma Buzz",
     "categoryId": "design-tools",
-    "shortDescription": "Production à grande échelle de contenus de marque à partir de modèles contrôlés.",
-    "shortDescriptionEn": "Scale on-brand content production from controlled templates.",
+    "shortDescription": "Des modèles de marque contrôlés que les équipes déclinent en masse dans Figma.",
+    "shortDescriptionEn": "Controlled brand templates teams can adapt at scale inside Figma.",
     "pricing": {
-      "free": "Accès limité selon le plan",
-      "paid": "Inclus selon le plan et le siège"
+      "free": "Bêta disponible avec Starter ; accès limité aux produits Figma.",
+      "paid": "Buzz inclus dans les sièges payants ; publication de modèles d'équipe réservée aux plans payants."
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://www.figma.com/buzz/",
     "websiteUrl": "https://www.figma.com/buzz/",
-    "ogImageUrl": "",
+    "ogImageUrl": "https://cdn.sanity.io/images/599r6htc/regionalized/4e73dee4a0e803e5baa4ea51befa5f42ad49312c-1260x1260.png?auto=format&fit=max&h=630&q=75&w=630",
     "logo": "https://cdn.sanity.io/images/599r6htc/regionalized/857d716d2ba170b1507a97dfd233543408c3700e-2256x2112.png?rect=1000,1550,260,260&w=256&h=256&fit=crop&auto=format",
     "tool_type": "metier",
     "host_app": "figma",

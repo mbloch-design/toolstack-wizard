@@ -172,17 +172,33 @@ function fileFingerprint(file) {
 function assignBatches(entries, size) {
   const groups = new Map();
   for (const entry of entries) {
+    if (entry.assigned_batch && entry.batch_position) continue;
     const key = `${entry.category}:${entry.risk_tier}`;
     if (!groups.has(key)) groups.set(key, []);
     groups.get(key).push(entry);
   }
   for (const [key, group] of groups) {
     group.sort((a, b) => b.priority_score - a.priority_score || a.slug.localeCompare(b.slug));
-    group.forEach((entry, index) => {
-      const wave = String(Math.floor(index / size) + 1).padStart(3, "0");
-      entry.assigned_batch = `review-${key.replace(":", "-")}-${wave}`;
-      entry.batch_position = index % size + 1;
-    });
+    const prefix = `review-${key.replace(":", "-")}-`;
+    const occupied = new Set(
+      entries
+        .filter((entry) => entry.assigned_batch?.startsWith(prefix) && entry.batch_position)
+        .map((entry) => `${entry.assigned_batch}:${entry.batch_position}`),
+    );
+    for (const entry of group) {
+      let waveNumber = 1;
+      let position = 1;
+      while (occupied.has(`${prefix}${String(waveNumber).padStart(3, "0")}:${position}`)) {
+        position += 1;
+        if (position > size) {
+          waveNumber += 1;
+          position = 1;
+        }
+      }
+      entry.assigned_batch = `${prefix}${String(waveNumber).padStart(3, "0")}`;
+      entry.batch_position = position;
+      occupied.add(`${entry.assigned_batch}:${position}`);
+    }
   }
 }
 
@@ -250,8 +266,8 @@ export function buildLedger({ tools, previous = null, today, batchSize = 10, bun
       invalidated_from: invalidatedFrom,
       next_review_at: old?.next_review_at || null,
       quality_version: qualityVersion,
-      assigned_batch: null,
-      batch_position: null,
+      assigned_batch: old?.assigned_batch || null,
+      batch_position: old?.batch_position || null,
     });
   }
 

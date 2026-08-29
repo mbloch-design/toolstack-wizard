@@ -22,7 +22,7 @@
     "long_description_en": "SketchUp plugin for lofted surfaces, organic shapes and curved volumes.",
     "media": {
       "gallery_images": [],
-      "og_image_url": "https://tooltrim.com/og-screenshots/curviloft.png"
+      "og_image_url": "https://tooltrim.com/og-screenshots/curviloft.jpg"
     },
     "name": "Curviloft",
     "pricing": {
@@ -218,9 +218,9 @@
   "schema_version": 1,
   "tracking": {
     "assigned_batch": "review-design-tools-critical-001",
-    "batch_position": 9,
+    "batch_position": 8,
     "blockers": [],
-    "catalog_hash": "sha256:5ead6ceb6d3d8c73cef594571e4e4614b52ae2fb5f6b42ca8627037fecc255ec",
+    "catalog_hash": "sha256:37451d063eaa48bf3471a669f985fc99b74a71addcb740eadd9bed046d2c54f9",
     "category": "design-tools",
     "fact_bundle": "AVAILABLE",
     "fact_bundle_hash": "sha256:198abf6264ea5f1b66496e9b4d331ae1cf4ea059279008adc086da710a77c4d5",
@@ -242,7 +242,7 @@
     "published_at": null,
     "quality_version": "catalog-review-v1",
     "rendered_at": null,
-    "review_fingerprint": "sha256:105cd10b331533a20a899ff48c834b06f2a4341433495d0c86579328e222c698",
+    "review_fingerprint": "sha256:0df28ade4b3b9b39260f62f6c91d7a2cc90258831f2c45e36f5e6aec70c9d1bc",
     "reviewed_at": null,
     "reviewed_hash": null,
     "reviewer": null,

@@ -22,7 +22,7 @@
     "long_description_en": "SketchUp tools for simple architectural elements: stairs, openings and construction details.",
     "media": {
       "gallery_images": [],
-      "og_image_url": "https://tooltrim.com/og-screenshots/1001bit-tools.png"
+      "og_image_url": "https://tooltrim.com/og-screenshots/1001bit-tools.jpg"
     },
     "name": "1001bit Tools",
     "pricing": {
@@ -226,9 +226,9 @@
   "schema_version": 1,
   "tracking": {
     "assigned_batch": "review-design-tools-critical-001",
-    "batch_position": 5,
+    "batch_position": 4,
     "blockers": [],
-    "catalog_hash": "sha256:e70d02256c38f24c7301da11de630b46c4bcf0dea53554079810d234869f991e",
+    "catalog_hash": "sha256:311e77655d6cc34e604b56e95c107763f19e3cf24a15e04fd19e0f6764fc9649",
     "category": "design-tools",
     "fact_bundle": "AVAILABLE",
     "fact_bundle_hash": "sha256:b8bf5dc65fee95fb08c3ee9a667f049b07b9ab828820b72c80317f4b669ee1b4",
@@ -250,7 +250,7 @@
     "published_at": null,
     "quality_version": "catalog-review-v1",
     "rendered_at": null,
-    "review_fingerprint": "sha256:64971399d3151ac0f7adf4637516cea38fb03c7b4c93d32414e54f9bb2cdd2ae",
+    "review_fingerprint": "sha256:c0ea54119ab1e9c907d645559cd2177122f0b2e89204fcac7292cbd6800abde0",
     "reviewed_at": null,
     "reviewed_hash": null,
     "reviewer": null,
