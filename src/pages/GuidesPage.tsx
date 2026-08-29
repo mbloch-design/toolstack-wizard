@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
-import { usePosts, useToolSummaries, type Post, type ToolSummary } from "@/hooks/useSupabaseData";
+import { loadLocalPosts, usePosts, useToolSummaries, type Post, type ToolSummary } from "@/hooks/useSupabaseData";
 import { useState, useMemo, useEffect, useRef, type CSSProperties } from "react";
 import { ArrowUpDown, Search, X } from "@/lib/icons";
 import { useArticleTools } from "@/hooks/useArticleTools";
@@ -110,6 +110,7 @@ const GuidesPage = () => {
   const { lang, t, prefix } = useLang();
   const { posts, loading } = usePosts(lang);
   const { tools } = useToolSummaries();
+  const [localeFallbackPosts, setLocaleFallbackPosts] = useState<Post[]>([]);
 
   const [activeFilter, setActiveFilter] = useState("all");
   const [sortBy, setSortBy] = useState("recent");
@@ -125,6 +126,31 @@ const GuidesPage = () => {
   useEffect(() => {
     if (isSearchOpen) searchInputRef.current?.focus();
   }, [isSearchOpen]);
+
+  useEffect(() => {
+    let cancelled = false;
+    if (lang !== "en") {
+      setLocaleFallbackPosts([]);
+      return () => { cancelled = true; };
+    }
+
+    loadLocalPosts("fr").then((frenchPosts) => {
+      if (!cancelled) setLocaleFallbackPosts(frenchPosts);
+    });
+    return () => { cancelled = true; };
+  }, [lang]);
+
+  const visiblePosts = useMemo(() => {
+    if (lang !== "en" || posts.length === 0) return posts;
+    const newestEnglishDate = posts.reduce((latest, post) => (
+      (post.date || "") > latest ? post.date : latest
+    ), "");
+    const englishSlugs = new Set(posts.map((post) => post.slug));
+    const recentFrenchOnly = localeFallbackPosts.filter((post) => (
+      (post.date || "") > newestEnglishDate && !englishSlugs.has(post.slug)
+    ));
+    return [...posts, ...recentFrenchOnly];
+  }, [lang, posts, localeFallbackPosts]);
 
   useEffect(() => {
     const title = lang === "fr"
@@ -144,16 +170,16 @@ const GuidesPage = () => {
   const filters = lang === "fr" ? FILTERS_FR : FILTERS_EN;
   const sortOptions = lang === "fr" ? SORT_OPTIONS_FR : SORT_OPTIONS_EN;
   const storiesPosts = useMemo(
-    () => posts
+    () => visiblePosts
       .filter((post) => post.category === "Stories")
       .sort((a, b) => (b.date ?? "").localeCompare(a.date ?? "")),
-    [posts],
+    [visiblePosts],
   );
 
   /* ── Filtered + sorted posts ── */
   const filteredPosts = useMemo(() => {
     const normalizedQuery = query.trim().toLowerCase();
-    const matched = posts.filter((post) => {
+    const matched = visiblePosts.filter((post) => {
       if (post.category === "Stories") return false;
       if (!matchesFilter(post, activeFilter)) return false;
       if (!normalizedQuery) return true;
@@ -162,7 +188,7 @@ const GuidesPage = () => {
         .includes(normalizedQuery);
     });
     return sortPosts(matched, sortBy);
-  }, [posts, activeFilter, sortBy, query]);
+  }, [visiblePosts, activeFilter, sortBy, query]);
 
   const listPosts   = filteredPosts;
   const visibleList = showAll ? listPosts : listPosts.slice(0, PAGE_SIZE);
@@ -331,23 +357,25 @@ function StoriesRow({
   stories: Post[]; prefix: string; lang: string;
 }) {
   const firstStory = stories[0];
+  const storyPath = (story: Post) => `/${story.lang === "fr" ? "fr" : lang}/guide/${story.slug}`;
 
   return (
     <section className="gi-stories-row" aria-labelledby="guides-stories-title">
       <div className="gi-stories-row-header">
         <h2 id="guides-stories-title">{lang === "fr" ? "Stories" : "Stories"}</h2>
-        <Link to={`${prefix}/guide/${firstStory.slug}`}>
+        <Link to={storyPath(firstStory)}>
           {lang === "fr" ? "Tout voir" : "View all"}
         </Link>
       </div>
 
       <div className="gi-stories-grid">
         {stories.map((story) => (
-          <Link key={story.slug} to={`${prefix}/guide/${story.slug}`} className="gi-story-tile">
+          <Link key={story.slug} to={storyPath(story)} className="gi-story-tile">
             <div className="gi-story-tile-media">
               <img src={story.thumbnail} alt="" loading="lazy" decoding="async" />
             </div>
             <h3>{story.title}</h3>
+            {lang === "en" && story.lang === "fr" && <span className="gi-language-badge">FR</span>}
             <p>{formatPostDate(story.date, lang)}</p>
           </Link>
         ))}
@@ -371,10 +399,11 @@ function ArticleCard({
     || primaryTool
     || mentionedTools[0];
   const displayDate = formatPostDate(post.date, lang);
+  const postPath = `/${post.lang === "fr" ? "fr" : lang}/guide/${post.slug}`;
 
   return (
     <Link
-      to={`${prefix}/guide/${post.slug}`}
+      to={postPath}
       className={`gi-card${featured ? " gi-card--featured" : ""}${compact ? " gi-card--compact" : ""}`}
     >
       <div className="gi-card-media">
@@ -394,6 +423,9 @@ function ArticleCard({
       </div>
       <div className="gi-card-body">
         <h3 className="gi-card-title">{post.title}</h3>
+        {lang === "en" && post.lang === "fr" && (
+          <span className="gi-language-badge">Available in French</span>
+        )}
         {displayDate && (
           <div className="gi-card-meta">
             <time dateTime={post.date}>{displayDate}</time>

@@ -39,6 +39,7 @@
     "validate:design-tokens": "node scripts/validate-design-tokens.mjs",
     "audit:card-images": "node scripts/audit-card-images.mjs",
     "audit:editorial": "node scripts/audit-editorial-consistency.mjs",
+    "audit:guide-locales": "node scripts/audit-guide-locale-parity.mjs",
     "validate:card-images": "node scripts/audit-card-images.mjs --baseline",
     "validate:catalog-dark-launch": "node scripts/verify-catalog-dark-launch.mjs",
     "validate:catalog-shadow-read": "node scripts/verify-catalog-shadow-read.mjs",

@@ -250,7 +250,10 @@ export async function loadLocalPosts(lang: string): Promise<Post[]> {
   const module = lang === "en"
     ? await import("@/data/posts-en.json")
     : await import("@/data/posts-fr.json");
-  return (module.default as unknown[]).map(mapPost);
+  return (module.default as any[]).map((post) => mapPost({
+    ...post,
+    lang: post.lang || lang,
+  }));
 }
 
 // Module-level, session-lifetime caches. Every ToolDetailPage mount (i.e.

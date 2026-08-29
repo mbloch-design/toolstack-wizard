@@ -10029,7 +10029,7 @@
   .gi-card--compact .gi-card-body {
     padding: 14px 1px 0;
   }
-  .gi-card-title {
+.gi-card-title {
     margin: 0;
     font-family: var(--font-ui);
     font-size: clamp(1.05rem, 1.2vw, 1.16rem);
@@ -10494,6 +10494,22 @@
     border-color: var(--color-text);
     background: var(--color-bg);
   }
+}
+
+.gi-language-badge {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin-top: 0.55rem;
+  padding: 0.2rem 0.45rem;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  color: var(--color-text-muted);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
 }
 
 /* ── Guide Article — ga-* system ──────────────────────────────────────────── */
