@@ -58,7 +58,7 @@ const FREE_TOOL_SLUGS = [
 const HOME_TOOL_ASSETS: Record<string, { cover: string | null; logo?: string }> = {
   "affinity-photo": { cover: "/home-cards/affinity-photo.webp", logo: "/home-logos/affinity-photo.webp" },
   box: { cover: "/home-cards/box.webp", logo: "/home-logos/box.webp" },
-  chatgpt: { cover: "/og-screenshots/chatgpt.png", logo: "/home-logos/chatgpt.webp" },
+  chatgpt: { cover: "/og-screenshots/chatgpt.jpg", logo: "/home-logos/chatgpt.webp" },
   circle: { cover: "/home-cards/circle.webp", logo: "/home-logos/circle.webp" },
   claude: { cover: "/home-cards/claude.webp" },
   cursor: { cover: "/home-cards/cursor.webp", logo: "/home-logos/cursor.webp" },

@@ -656,10 +656,12 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
         const OG_SHOTS_DIR = path.resolve(__dirname, "public/og-screenshots");
         const OG_MAX_BYTES = 300 * 1024;
         const toolOgScreenshot = (s: string): string | null => {
-          try {
-            const st = fs.statSync(path.join(OG_SHOTS_DIR, `${s}.png`));
-            if (st.isFile() && st.size <= OG_MAX_BYTES) return `${BASE}/og-screenshots/${s}.png`;
-          } catch { /* no local screenshot */ }
+          for (const ext of ["jpg", "png"]) {
+            try {
+              const st = fs.statSync(path.join(OG_SHOTS_DIR, `${s}.${ext}`));
+              if (st.isFile() && st.size <= OG_MAX_BYTES) return `${BASE}/og-screenshots/${s}.${ext}`;
+            } catch { /* no local screenshot at this extension */ }
+          }
           return null;
         };
         const indexPath = path.resolve(distDir, "index.html");

@@ -69,7 +69,7 @@
     ],
     "articles": [],
     "alternatives": [],
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/1001bit-tools.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/1001bit-tools.jpg",
     "pricingEn": null,
     "seo": null,
     "freeAlternative": null,
@@ -602,7 +602,7 @@
       "compare_price_monthly_eur": 149
     },
     "substitution_cluster_v2": "3d-software",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/3ds-max.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/3ds-max.jpg",
     "description": "3ds Max, c'est l'autre logiciel 3D d'Autodesk, et son terrain de prédilection, c'est l'archviz (visualisation architecturale) et la modélisation d'assets pour le jeu vidéo. Sous Windows uniquement, il est réputé pour sa modélisation, sa stack de modifiers et surtout son écosystème de plugins gigantesque : V-Ray, Corona, Forest Pack, RailClone. Pour un archviz pro, le combo 3ds Max + V-Ray ou Corona est un quasi-standard.\n\nCôté prix, c'est l'alignement Autodesk : 1 785$/an (environ 149$/mois en annuel, 225$ en mensuel), avec une version 3ds Max Indie bien moins chère pour les indépendants sous 100 000$ de CA, et la collection Media & Entertainment qui le réunit à Maya autour de 2 600$/an.\n\nÀ qui ça s'adresse : aux archviz, aux modeleurs de jeux et aux studios déjà équipés Autodesk. L'arbitrage se fait face à Blender (gratuit, de plus en plus utilisé en archviz avec des add-ons), Cinema 4D (motion) et Maya (animation/film). 3ds Max se justifie surtout par son écosystème de plugins archviz et les pipelines existants.",
     "decision_policy_v3": null,
     "force_silence": false
@@ -762,7 +762,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/8fig.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/8fig.jpg"
   },
   {
     "id": "ableton-live",
@@ -1452,7 +1452,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/adcreative-ai.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/adcreative-ai.jpg",
     "force_silence": false
   },
   {
@@ -3150,7 +3150,7 @@
     },
     "force_silence": false,
     "description": "Adobe Firefly, c'est la famille de modèles d'IA générative d'Adobe. On la connaît surtout via Generative Fill dans Photoshop : tu sélectionnes une zone, tu décris ce que tu veux, et l'IA complète ou remplace l'image de façon bluffante. Firefly existe aussi en version web autonome pour générer des images, du texte stylisé ou des vecteurs.\n\nSon argument fort, ce n'est pas la qualité artistique pure (où Midjourney reste devant), mais l'intégration et la sécurité juridique : Firefly est entraîné sur des contenus sous licence (Adobe Stock), ce qui le rend utilisable en contexte commercial sans crainte. Le modèle est à crédits : tu en as d'inclus dans ton abonnement Creative Cloud, et des plans payants (à partir d'environ 10$/mois) pour aller plus loin.\n\nÀ qui ça s'adresse : à tous ceux qui sont déjà dans l'écosystème Adobe. Generative Fill seul justifie de l'utiliser. Si tu n'es pas chez Adobe et que tu veux la meilleure qualité ou le plus de contrôle, Midjourney ou d'autres modèles seront plus pertinents.",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/firefly.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/firefly.jpg"
   },
   {
     "id": "adobe-fresco",
@@ -4495,7 +4495,7 @@
     "prescription_quality": "question",
     "force_silence": false,
     "substitution_cluster_v2": "creative-assets",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/adobe-stock.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/adobe-stock.jpg",
     "description": "Banque d'assets sous licence (photos, vidéos, vecteurs, modèles) intégrée aux applications Creative Cloud.",
     "longDescription": "Banque d'assets sous licence (photos, vidéos, vecteurs, modèles) intégrée aux applications Creative Cloud.",
     "longDescriptionEn": "Licensed asset library (photos, videos, vectors, templates) integrated with the Creative Cloud apps.",
@@ -4827,7 +4827,7 @@
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/adobe-xd.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/adobe-xd.jpg"
   },
   {
     "id": "adp-workforce",
@@ -5003,7 +5003,7 @@
     "pivot_integration_source": true,
     "personas": [],
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/adp-workforce.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/adp-workforce.jpg"
   },
   {
     "id": "acf",
@@ -5642,7 +5642,7 @@
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/affinity-photo.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/affinity-photo.jpg"
   },
   {
     "id": "affinity-publisher",
@@ -7168,7 +7168,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/allstate.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/allstate.jpg"
   },
   {
     "id": "aloware",
@@ -7318,7 +7318,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/aloware.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/aloware.jpg"
   },
   {
     "id": "alpinejs",
@@ -8168,7 +8168,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/angular-universal.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/angular-universal.jpg",
     "force_silence": false
   },
   {
@@ -9506,7 +9506,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/app-store-connect.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/app-store-connect.jpg",
     "force_silence": false
   },
   {
@@ -9852,7 +9852,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/arcgis.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/arcgis.jpg",
     "description": "Suite SIG professionnelle pour cartographie et analyse géospatiale.",
     "longDescriptionEn": "Cloud-based GIS (Geographic Information System) platform for creating interactive maps, geospatial applications, and analyzing location-based data. Infrastructure fully managed by Esri.",
     "pricingEn": null,
@@ -10118,7 +10118,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/archive-tools.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/archive-tools.jpg",
     "force_silence": false
   },
   {
@@ -10529,7 +10529,7 @@
       "compare_price_monthly_eur": 36
     },
     "substitution_cluster_v2": "render-engine",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/arnold.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/arnold.jpg",
     "description": "Arnold, c'est le moteur de rendu d'Autodesk, et son terrain, c'est le cinéma et l'animation. Moteur physiquement réaliste (unbiased), il s'est imposé dans le long-métrage et les VFX pour sa capacité à encaisser des scènes énormes et du shading complexe sans broncher. Il est intégré à Maya, 3ds Max, Houdini et Cinema 4D, et il est devenu un quasi-standard des pipelines studio orientés animation/VFX.\n\nHistoriquement CPU, Arnold gère désormais aussi le GPU. Côté prix, c'est l'abonnement Autodesk autour de 430$/an (environ 36$/mois) pour un poste, et il est souvent inclus avec certaines licences Autodesk (Maya). C'est plutôt raisonnable pour un moteur de cette réputation.\n\nLe vrai arbitrage se joue selon ton métier. Pour l'archviz et le produit, V-Ray et Corona sont plus indiqués. Pour la vitesse GPU pure en motion, Redshift et Octane prennent l'avantage. Et côté gratuit, Cycles dans Blender est devenu très bon. Arnold reste la valeur sûre du rendu de cinéma et d'animation, surtout si tu es déjà dans l'écosystème Maya.",
     "decision_policy_v3": null,
     "force_silence": false
@@ -10635,7 +10635,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/around.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/around.jpg",
     "force_silence": false
   },
   {
@@ -11009,7 +11009,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/artlist.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/artlist.jpg",
     "description": "Musique, effets sonores et assets vidéo sous licence pour productions créatives.",
     "longDescriptionEn": "Subscription library of licensed music and sound effects (plus stock video, templates and plugins on higher plans), with a commercial, perpetual license.",
     "pricingEn": null,
@@ -11132,7 +11132,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/artstation.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/artstation.jpg",
     "description": "Portfolio et plateforme de visibilité pour artistes concept, 3D et game art.",
     "longDescriptionEn": "Portfolio platform and professional network for 3D, concept and game artists, with galleries, a marketplace and job listings.",
     "pricingEn": null,
@@ -11644,7 +11644,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/astute-graphics.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/astute-graphics.jpg",
     "description": "Plugins Illustrator pour vectoriel avancé, lettrage, formes, nettoyage et productivité.",
     "longDescriptionEn": "Plugin suite for Adobe Illustrator with 18-21 specialized tools to accelerate vector design workflow. Includes Vector First Aid (cleanup), DynamicSketch (vector sketching), InkFlow, and advanced color and geometry utilities. Used by companies like NASA, Adidas, Discord.",
     "pricingEn": null,
@@ -12128,7 +12128,7 @@
       },
       "metaDescription": "Audionotes : transcription et structuration de notes vocales, usages, limites et choix du plan pour les indépendants."
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/audionotes.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/audionotes.jpg",
     "pricing_v5": null
   },
   {
@@ -12222,7 +12222,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/auphonic.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/auphonic.jpg",
     "description": "Nettoyage, leveling et mastering automatique pour podcast et audio.",
   "longDescriptionEn": "Auphonic automates post-production for podcasts, interviews and audiobooks. Intelligent Leveler balances speakers, while noise and reverb reduction, AutoEQ and loudness normalisation prepare consistent files for distribution. The service also handles encoding, metadata, chapters and publishing to external platforms.\n\nThe free plan includes 2 hours of processed audio per month and adds an Auphonic jingle. Paid usage is sold through recurring or one-time credits. One-time credits do not expire; monthly credits reset and do not roll over. Batch production, watch folders, multilingual transcription and automatic shownotes require paid credits.\n\nAuphonic is the strongest option here for automatically normalising a series and meeting loudness targets. It is less suitable when you need to reconstruct heavily damaged speech or edit an episode through its transcript.",
   "pricingEn": {"free": "2 hours of processed audio per month, with an Auphonic jingle", "paid": "Recurring or one-time credits based on processed hours"},
@@ -12957,7 +12957,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/autocad.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/autocad.jpg"
   },
   {
     "id": "autocad-lt",
@@ -13030,7 +13030,7 @@
     ],
     "articles": [],
     "alternatives": [],
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/autocad-lt.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/autocad-lt.jpg",
     "pricingEn": null,
     "seo": null,
     "freeAlternative": null,
@@ -13225,7 +13225,7 @@
       "compare_price_monthly_eur": 10
     },
     "substitution_cluster_v2": "ai-3d-generation",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/autodesk-flow-studio.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/autodesk-flow-studio.jpg",
     "description": "Autodesk Flow Studio (anciennement Wonder Dynamics / Wonder Studio), c'est une IA qui fait un travail qui prenait des semaines : elle détecte automatiquement un acteur dans une vidéo réelle et le remplace par un personnage 3D, en gérant l'animation, l'éclairage et le compositing. Tu filmes une personne, et tu obtiens ton personnage CG intégré dans le plan. Ça embarque aussi de l'AI mocap et Wonder 3D (génération de modèles 3D par IA).\n\nRacheté par Autodesk, l'outil est passé en freemium : un palier gratuit (300 crédits/mois, 720p), puis Lite à 10$/mois, Standard à 45$ et Pro à 95$. C'est un gain de temps spectaculaire pour les VFX et l'animation de personnage en indé.\n\nPour ToolTrim, Flow Studio est l'un des challengers IA les plus impressionnants de la 3D : il automatise toute une chaîne (captation, animation, intégration) qui mobilisait des équipes. Il ne remplace pas un Maya pour l'animation fine, mais il remplace énormément d'étapes manuelles pour qui veut intégrer des personnages CG vite et pour pas cher.",
     "decision_policy_v3": null,
     "force_silence": false
@@ -13778,7 +13778,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/avocode.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/avocode.jpg",
     "force_silence": false
   },
   {
@@ -14080,7 +14080,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/aws.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/aws.jpg",
     "force_silence": false
   },
   {
@@ -14208,7 +14208,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/axe-devtools.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/axe-devtools.jpg",
     "force_silence": false
   },
   {
@@ -14934,7 +14934,7 @@
     "pivot_integration_source": true,
     "personas": [],
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/bamboohr.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/bamboohr.jpg"
   },
   {
     "id": "ae-bao-boa",
@@ -15095,7 +15095,7 @@
     },
     "force_silence": false,
     "description": "BAO Boa, c'est un plugin After Effects (aescripts) spécialisé dans l'animation de lignes et de tracés. Il permet de faire onduler, dessiner et déformer des lignes SVG de façon organique, avec un contrôle fin, là où les outils natifs d'After Effects sont vite limités. Pour un motion designer qui fait des graphiques animés, des illustrations au trait ou des transitions à base de lignes, c'est un outil précis et puissant.\n\nC'est un achat unique (~49$), sans abonnement.\n\nÀ qui ça s'adresse : aux motion designers qui animent souvent des lignes et des tracés. Si ce type d'animation n'est pas dans tes projets, BAO Boa ne te servira pas. Mais pour de l'animation de lignes organiques, il fait gagner un temps réel et permet des rendus difficiles à obtenir autrement.",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/ae-bao-boa.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/ae-bao-boa.jpg"
   },
   {
     "id": "base44",
@@ -16694,7 +16694,7 @@
     "prescription_quality": "question",
     "force_silence": false,
     "substitution_cluster_v2": "motion-compositing",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/fusion.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/fusion.jpg",
     "description": "Logiciel de compositing 2D/3D node-based professionnel, utilisé en VFX, motion graphics et post-production cinéma pour assembler et traiter des éléments visuels complexes.",
     "longDescription": "Logiciel de compositing 2D/3D node-based professionnel, utilisé en VFX, motion graphics et post-production cinéma pour assembler et traiter des éléments visuels complexes.",
     "longDescriptionEn": "Professional node-based 2D/3D compositing software used in VFX, motion graphics, and post-production to composite and process complex visual elements.",
@@ -17405,7 +17405,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/blueink-esignatures.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/blueink-esignatures.jpg"
   },
   {
     "id": "boast",
@@ -17732,7 +17732,7 @@
     },
     "force_silence": false,
     "description": "Bodymovin exporte les compositions After Effects en JSON Lottie pour le web et les applications mobiles. Il est proposé à prix libre pour les particuliers, avec un tarif suggéré de 20 $ requis pour les entreprises et équipes.",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/ae-bodymovin.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/ae-bodymovin.jpg",
     "gallery_images": [
       "/tool-media/ae-bodymovin/select-composition.jpg",
       "/tool-media/ae-bodymovin/render.jpg",
@@ -19102,7 +19102,7 @@
       },
       "metaDescription": "Brandmark avis : générateur logo IA achat unique. Logo pro en secondes pour startups et side projects."
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/brandmark.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/brandmark.jpg",
     "description": "Brandmark génère des logos professionnels en quelques secondes avec kit de marque, mockups et fichiers SVG.",
     "articles": [],
     "force_silence": false
@@ -19569,7 +19569,7 @@
     },
     "force_silence": false,
     "timeGainedHoursPerMonth": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/brevo.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/brevo.jpg"
   },
   {
     "id": "bricks",
@@ -19842,7 +19842,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/browserstack.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/browserstack.jpg",
     "force_silence": false
   },
   {
@@ -20283,7 +20283,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/buddy-punch.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/buddy-punch.jpg"
   },
   {
     "id": "budibase",
@@ -21021,7 +21021,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/burp-suite.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/burp-suite.jpg",
     "force_silence": false
   },
   {
@@ -21984,7 +21984,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/callrail.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/callrail.jpg"
   },
   {
     "id": "calltrackingmetrics",
@@ -22803,7 +22803,7 @@
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/canva-ai.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/canva-ai.jpg"
   },
   {
     "id": "canva-kits",
@@ -22902,7 +22902,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/canva-kits.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/canva-kits.jpg",
     "force_silence": false
   },
   {
@@ -23020,7 +23020,7 @@
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/canva-pro.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/canva-pro.jpg"
   },
   {
     "id": "canva-templates",
@@ -23119,7 +23119,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/canva-templates.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/canva-templates.jpg",
     "force_silence": false
   },
   {
@@ -23472,7 +23472,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/capcut-templates.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/capcut-templates.jpg",
     "force_silence": false
   },
   {
@@ -24877,7 +24877,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/causal.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/causal.jpg",
     "force_silence": false
   },
   {
@@ -25138,7 +25138,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/celery.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/celery.jpg",
     "force_silence": false
   },
   {
@@ -25374,7 +25374,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/chart-tools.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/chart-tools.jpg",
     "force_silence": false
   },
   {
@@ -26008,7 +26008,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/chatgpt.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/chatgpt.jpg"
   },
   {
     "id": "chatgpt-pour-brouillons-non-juridiques",
@@ -26371,7 +26371,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/chrome-devtools.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/chrome-devtools.jpg",
     "force_silence": false
   },
   {
@@ -27305,7 +27305,7 @@
     "pricingEn": null,
     "force_silence": false,
     "description": "CleanUp³ est un plugin SketchUp gratuit qui fait le ménage dans tes modèles 3D : il fusionne les faces coplanaires, supprime les arêtes et la géométrie inutiles, efface les composants orphelins et purge les matériaux non utilisés. Résultat : un fichier plus léger, plus rapide à manipuler et plus propre à exporter.\n\nSur des modèles d'architecture d'intérieur qui grossissent vite (mobilier importé, composants 3D Warehouse), c'est le genre d'outil qui te fait gagner un temps fou et évite les fichiers qui rament. Il s'installe via l'Extension Warehouse de SketchUp et tourne en quelques clics.\n\nC'est gratuit (avec un don possible à l'auteur), donc aucune raison de s'en priver si tu travailles régulièrement sur SketchUp. Petit point d'attention : il modifie la géométrie, donc garde une sauvegarde avant un gros nettoyage. Pour vérifier l'intégrité des volumes après coup, Solid Inspector² est le complément naturel.",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/cleanup3.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/cleanup3.jpg"
   },
   {
     "id": "cleanvoice",
@@ -28016,7 +28016,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/clickup-ai.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/clickup-ai.jpg",
     "force_silence": false
   },
   {
@@ -28725,7 +28725,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/clockify.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/clockify.jpg"
   },
   {
     "id": "clockshark",
@@ -28894,7 +28894,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/clockshark.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/clockshark.jpg"
   },
   {
     "id": "close",
@@ -30316,7 +30316,7 @@
       ],
       "tcoExampleFr": "Pour une entreprise de 800 employés avec 400 bureaux flex : 400 × ~5 $ × 12 = 24 000 $/an de licence (estimation). Ajoutez 8 000–15 000 € d'intégration et déploiement pour la première année."
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/condeco.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/condeco.jpg",
     "force_silence": false
   },
   {
@@ -30513,7 +30513,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/confluence.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/confluence.jpg"
   },
   {
     "id": "conga",
@@ -32194,7 +32194,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/coupa.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/coupa.jpg",
     "force_silence": false
   },
   {
@@ -33020,7 +33020,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/creatoriq.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/creatoriq.jpg",
     "force_silence": false
   },
   {
@@ -33204,7 +33204,7 @@
     "pivot_integration_source": true,
     "personas": [],
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/creditsafe.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/creditsafe.jpg"
   },
   {
     "id": "crisp",
@@ -33520,7 +33520,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/crowdfire-inc.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/crowdfire-inc.jpg"
   },
   {
     "id": "crowdstrike",
@@ -34018,7 +34018,7 @@
     ],
     "articles": [],
     "alternatives": [],
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/curviloft.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/curviloft.jpg",
     "pricingEn": null,
     "seo": null,
     "freeAlternative": null,
@@ -34641,7 +34641,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/d3js.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/d3js.jpg",
     "force_silence": false
   },
   {
@@ -34784,7 +34784,7 @@
       "lumion"
     ],
     "articles": [],
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/d5-render.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/d5-render.jpg",
     "host_app": null,
     "bundle_parent": null,
     "ia_use_case": null,
@@ -35981,7 +35981,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/davinci-resolve.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/davinci-resolve.jpg"
   },
   {
     "id": "dayforce",
@@ -37208,7 +37208,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/descript-ai.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/descript-ai.jpg",
     "force_silence": false
   },
   {
@@ -37378,7 +37378,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/deskpro.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/deskpro.jpg"
   },
   {
     "id": "desktopready",
@@ -37946,7 +37946,7 @@
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/digitalocean.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/digitalocean.jpg"
   },
   {
     "id": "directus",
@@ -39643,7 +39643,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/dovetail-ai.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/dovetail-ai.jpg",
     "force_silence": false
   },
   {
@@ -39941,7 +39941,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/drata.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/drata.jpg",
     "force_silence": false
   },
   {
@@ -40822,7 +40822,7 @@
     "pivot_integration_source": true,
     "personas": [],
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/dun-bradstreet.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/dun-bradstreet.jpg"
   },
   {
     "id": "dxo-photolab",
@@ -41673,7 +41673,7 @@
     },
     "force_silence": false,
     "description": "Apache ECharts est la bibliothèque de visualisation à sortir quand les autres plafonnent. Développée à l'origine par Baidu puis donnée à la fondation Apache, elle propose plus de 20 types de graphiques et, surtout, un rendu Canvas et WebGL qui encaisse des milliers (voire des millions) de points sans s'effondrer. C'est gratuit et open source, sans la licence commerciale que réclame un Highcharts.\n\nC'est le bon choix pour des dashboards data-heavy, du monitoring temps réel ou toute dataviz un peu ambitieuse. Tu gagnes les capacités d'un outil premium sans la facture. Le revers : l'API est plus verbeuse que Chart.js, une partie de la documentation et des exemples penche encore vers le chinois, et il n'y a pas de wrapper React officiel (on passe par echarts-for-react).\n\nSi ton besoin se limite à quelques graphiques standards dans une app React, Recharts ou Chart.js seront plus directs. Mais dès que le volume de données ou la richesse des graphiques deviennent un enjeu, ECharts est l'alternative gratuite la plus sérieuse à Highcharts.",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/echarts.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/echarts.jpg"
   },
   {
     "id": "ecovadis",
@@ -41862,7 +41862,7 @@
     "pivot_integration_source": true,
     "personas": [],
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/ecovadis.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/ecovadis.jpg"
   },
   {
     "id": "elementor",
@@ -42971,7 +42971,7 @@
     "seo": {
       "metaDescription": "Emergent avis 2026 : construis une app web ou SaaS avec l'IA. Prix 18,40€/mois, alternatives Lovable, Bolt. Verdict."
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/emergent.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/emergent.jpg",
     "description": "Emergent est une plateforme vibe-coding qui permet de construire des applications web et mobiles complètes depuis une description en langage naturel. L'IA comprend les exigences, génère le code, connecte les bases de données et déploie automatiquement.\n\nLe plan Standard à 20$/mois (≈18,40€) donne 100 crédits/mois — assez pour 1-2 MVPs par mois. Le plan Pro à 200$/mois débloque 750 crédits et un contexte de 1M tokens pour comprendre une codebase entière.\n\nDifférence avec Rork ou Lovable : Emergent est plus orienté web apps que mobile, et met l'accent sur la capacité à construire des apps avec des backends complexes. Pour un solopreneur non-tech qui veut lancer un SaaS rapidement, c'est une des options les plus accessibles du marché.",
     "affiliateLink": null,
     "logo": null,
@@ -43225,7 +43225,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/emotion.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/emotion.jpg",
     "force_silence": false
   },
   {
@@ -43296,7 +43296,7 @@
     ],
     "articles": [],
     "alternatives": [],
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/eneroth-face-creator.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/eneroth-face-creator.jpg",
     "pricingEn": null,
     "seo": null,
     "freeAlternative": null,
@@ -45380,7 +45380,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/fastapi.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/fastapi.jpg",
     "force_silence": false
   },
   {
@@ -46924,7 +46924,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/figma-templates.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/figma-templates.jpg",
     "force_silence": false
   },
   {
@@ -48307,7 +48307,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/fiverr.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/fiverr.jpg",
     "force_silence": false
   },
   {
@@ -48450,7 +48450,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/flask.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/flask.jpg",
     "force_silence": false
   },
   {
@@ -48607,7 +48607,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/flexiquiz.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/flexiquiz.jpg"
   },
   {
     "id": "flextools",
@@ -49153,7 +49153,7 @@
     },
     "force_silence": false,
     "description": "Flow accélère le réglage des courbes d'easing dans After Effects avec un éditeur visuel, des bibliothèques de presets et des courbes responsives.",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/aescripts-flow.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/aescripts-flow.jpg"
   },
   {
     "id": "flowcub",
@@ -49737,7 +49737,7 @@
       "never_auto_cancel_reason": null,
       "requires_context_questions": true
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/flux.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/flux.jpg",
     "force_silence": false
   },
   {
@@ -50136,7 +50136,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/fmod.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/fmod.jpg",
     "force_silence": false
   },
   {
@@ -50554,7 +50554,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/form-apps.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/form-apps.jpg",
     "force_silence": false
   },
   {
@@ -51623,7 +51623,7 @@
     ],
     "articles": [],
     "alternatives": [],
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/fredo6-bundle.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/fredo6-bundle.jpg",
     "seo": null,
     "freeAlternative": null,
     "soloRelevance": null,
@@ -51749,7 +51749,7 @@
     ],
     "articles": [],
     "alternatives": [],
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/fredocorner.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/fredocorner.jpg",
     "pricingEn": null,
     "seo": null,
     "freeAlternative": null,
@@ -52379,7 +52379,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/fusion-360.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/fusion-360.jpg",
     "description": "CAO/FAO Autodesk pour conception produit, prototypage et fabrication.",
     "longDescriptionEn": "Autodesk's design and manufacturing platform combining CAD, CAM, simulation (CAE) and electronics (PCB) in a single tool, with built-in data management.",
     "pricingEn": null,
@@ -52809,7 +52809,7 @@
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/gamma.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/gamma.jpg"
   },
   {
     "id": "gamma-ai",
@@ -52944,7 +52944,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/gamma-ai.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/gamma-ai.jpg",
     "force_silence": false
   },
   {
@@ -53118,7 +53118,7 @@
       "requires_context_questions": false
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/gelato.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/gelato.jpg"
   },
   {
     "id": "gemini",
@@ -53551,7 +53551,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/gempages.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/gempages.jpg",
     "force_silence": false
   },
   {
@@ -53832,7 +53832,7 @@
       "requires_context_questions": false
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/getida.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/getida.jpg"
   },
   {
     "id": "getresponse",
@@ -55703,7 +55703,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/gmail.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/gmail.jpg",
     "force_silence": false
   },
   {
@@ -56522,7 +56522,7 @@
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/google-analytics.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/google-analytics.jpg"
   },
   {
     "id": "ga4",
@@ -56589,7 +56589,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/ga4.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/ga4.jpg",
     "description": "Analytics web et produit gratuit pour acquisition, comportement et conversion.",
     "longDescriptionEn": null,
     "pricingEn": null,
@@ -56768,7 +56768,7 @@
     "pivot_integration_source": true,
     "personas": [],
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/google-chat.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/google-chat.jpg"
   },
   {
     "id": "gcp",
@@ -57961,7 +57961,7 @@
         "replaceFr": "Remplacer Search Console par une IA ? Non : les vraies données de recherche Google (requêtes, indexation, erreurs) ne peuvent venir que de Google lui-même, pas d'une IA générative. Verdict : l'IA aide à interpréter les données, elle ne peut pas les inventer."
       }
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/google-search-console.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/google-search-console.jpg",
     "pricing_v5": null,
     "decision_policy_v3": null,
     "force_silence": false
@@ -58261,7 +58261,7 @@
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/google-slides.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/google-slides.jpg"
   },
   {
     "id": "google-tag-manager",
@@ -58405,7 +58405,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/google-tag-manager.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/google-tag-manager.jpg",
     "force_silence": false
   },
   {
@@ -58920,7 +58920,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/grabcad.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/grabcad.jpg",
     "description": "Bibliothèque et plateforme collaborative autour des fichiers CAO.",
     "longDescriptionEn": "Online community of designers and engineers (Stratasys) with a very large library of free CAD models to download and share. The Workbench collaboration module was discontinued in June 2023; the community library remains active.",
     "pricingEn": null,
@@ -61082,7 +61082,7 @@
     "pivot_integration_source": true,
     "personas": [],
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/gusto.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/gusto.jpg"
   },
   {
     "id": "hard-ops-boxcutter",
@@ -61760,7 +61760,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/headliner.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/headliner.jpg",
     "force_silence": false
   },
   {
@@ -63057,7 +63057,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/highcharts.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/highcharts.jpg",
     "force_silence": false
   },
   {
@@ -64216,7 +64216,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/houzz-pro.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/houzz-pro.jpg"
   },
   {
     "id": "hubspot",
@@ -65643,7 +65643,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/icontact.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/icontact.jpg"
   },
   {
     "id": "ideogram",
@@ -65810,7 +65810,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/ideogram.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/ideogram.jpg"
   },
   {
     "id": "ignition",
@@ -67316,7 +67316,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/insightly.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/insightly.jpg"
   },
   {
     "id": "insomnia",
@@ -67898,7 +67898,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/instapage.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/instapage.jpg"
   },
   {
     "id": "integrately",
@@ -68446,7 +68446,7 @@
       },
       "metaDescription": "Invoicely avis 2026 : facturation gratuite pour freelances. Alternatives Indy, Pennylane. Verdict honnête."
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/invoicely.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/invoicely.jpg",
     "description": "Invoicely est un outil de facturation en ligne simple et gratuit qui permet de créer des factures professionnelles, de suivre les paiements, de gérer les clients et de générer des rapports de base. Pas de comptabilité complexe — juste de la facturation propre et rapide.\n\nLa version gratuite permet de créer des factures illimitées avec branding de base. Les plans payants ajoutent le branding personnalisé, les devises multiples, les rapports avancés et la suppression des mentions Invoicely.\n\nPour les micro-freelances qui ont besoin de facturer simplement sans payer pour un logiciel comptable complet, Invoicely est une option zéro friction.",
     "affiliateLink": null,
     "logo": null,
@@ -68771,7 +68771,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/itch-io.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/itch-io.jpg",
     "force_silence": false
   },
   {
@@ -69150,7 +69150,7 @@
       },
       "metaDescription": "Jenni AI : assistant de rédaction académique, citations, limites et différences entre les plans pour un usage responsable."
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/jenni.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/jenni.jpg",
     "pricing_v5": null
   },
   {
@@ -69471,7 +69471,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/jira.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/jira.jpg"
   },
   {
     "id": "jobber",
@@ -69640,7 +69640,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/jobber.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/jobber.jpg"
   },
   {
     "id": "joint-push-pull",
@@ -69711,7 +69711,7 @@
     ],
     "articles": [],
     "alternatives": [],
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/joint-push-pull.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/joint-push-pull.jpg",
     "pricingEn": null,
     "seo": null,
     "freeAlternative": null,
@@ -70064,7 +70064,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/jquery.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/jquery.jpg",
     "force_silence": false
   },
   {
@@ -70692,7 +70692,7 @@
     "pivot_integration_source": true,
     "personas": [],
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/justworks.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/justworks.jpg"
   },
   {
     "id": "kajabi",
@@ -71561,7 +71561,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/keynote.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/keynote.jpg",
     "description": "Outil Apple pour présentations visuelles, pitchs créatifs et dossiers clients.",
     "longDescriptionEn": "Apple's presentation software (iWork suite) to build polished slideshows with themes, cinematic transitions and animations, available on Mac, iPhone, iPad and via iCloud on the web.",
     "pricingEn": null,
@@ -72259,7 +72259,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/kit.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/kit.jpg"
   },
   {
     "id": "kixie",
@@ -72424,7 +72424,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/kixie.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/kixie.jpg"
   },
   {
     "id": "klaviyo",
@@ -72700,7 +72700,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/kling.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/kling.jpg",
     "force_silence": false
   },
   {
@@ -72884,7 +72884,7 @@
     },
     "force_silence": false,
     "description": "Kling AI, c'est un générateur de vidéo par IA : tu écris une description ou tu pars d'une image, et il produit une séquence vidéo réaliste, jusqu'à plusieurs secondes voire minutes. Développé par le chinois Kuaishou, il s'est imposé comme l'une des alternatives les plus sérieuses à Runway et Sora, avec un rendu souvent bluffant sur le réalisme et les mouvements.\n\nLe modèle marche au crédit : une offre gratuite donne quelques générations par mois pour tester, puis les plans payants démarrent autour de 7$/mois (Standard) et montent à 30$ (Pro) et au-delà, selon le volume de crédits et la priorité de génération. La génération vidéo IA consomme beaucoup, donc le nombre de crédits compte plus que le prix affiché.\n\nÀ qui ça s'adresse : aux créateurs, monteurs et marketeurs qui veulent expérimenter la vidéo générative sans matériel de tournage. C'est encore une techno jeune : résultats inégaux, contrôle limité, et plusieurs acteurs (Runway, Pika, Sora, Kling) se disputent la tête. Le bon réflexe : tester en gratuit avant de t'engager, et comparer avec Runway selon ton besoin.",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/kling-ai.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/kling-ai.jpg"
   },
   {
     "id": "knockout",
@@ -73026,7 +73026,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/knockout.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/knockout.jpg",
     "galleryImages": [
       "https://opengraph.githubassets.com/tooltrim/knockout/knockout"
     ],
@@ -73764,7 +73764,7 @@
     "prescription_quality": "question",
     "force_silence": false,
     "substitution_cluster_v2": "digital-illustration",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/krita.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/krita.jpg",
     "description": "Krita est une application open source et gratuite de peinture numérique, d'illustration et de concept art. Portée par une fondation, elle propose des brosses avancées, la gestion des calques, l'animation image par image et un support tablette solide, ce qui en fait une des meilleures alternatives gratuites pour les dessinateurs.",
     "pros": [
       "Entièrement gratuit sans limitations",
@@ -77136,7 +77136,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/lendio.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/lendio.jpg"
   },
   {
     "id": "leonardo-ai",
@@ -77294,7 +77294,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/leonardo-ai.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/leonardo-ai.jpg"
   },
   {
     "id": "lever",
@@ -77612,7 +77612,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/lighthouse.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/lighthouse.jpg",
     "force_silence": false
   },
   {
@@ -77712,7 +77712,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/lighting-kits.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/lighting-kits.jpg",
     "force_silence": false
   },
   {
@@ -78991,7 +78991,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/linkedin.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/linkedin.jpg",
     "force_silence": false
   },
   {
@@ -79388,7 +79388,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/liquid.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/liquid.jpg",
     "force_silence": false
   },
   {
@@ -80544,7 +80544,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/looka.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/looka.jpg"
   },
   {
     "id": "lookback",
@@ -80631,7 +80631,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/lookback.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/lookback.jpg",
     "description": "Tests utilisateurs et interviews vidéo pour observer les parcours en direct ou asynchrone.",
     "longDescriptionEn": "Remote qualitative user research platform combining moderated interviews, unmoderated studies, and AI-powered pattern analysis with real-time note capture, transcription, and stakeholder viewing.",
     "pricingEn": null,
@@ -80839,7 +80839,7 @@
     },
     "force_silence": false,
     "description": "Looker Studio (l'ex Google Data Studio), c'est l'outil de dashboards gratuit de Google. Tu connectes tes sources, surtout celles de l'écosystème Google (GA4, Google Ads, Sheets, BigQuery), et tu construis des rapports visuels partageables d'un simple lien. Pour un reporting client mensuel ou un tableau de bord d'acquisition, c'est rapide à mettre en place et ça ne coûte rien.\n\nSon point fort est aussi sa limite : il est imbattable quand tes données vivent chez Google, mais dès que tu sors de cet écosystème, les connecteurs deviennent payants (via des tiers) ou bancals, et l'outil montre ses limites sur des modèles de données complexes. La version Pro, autour de 9$/utilisateur/mois, ajoute surtout de la collaboration et du support, pas de la puissance.\n\nÀ qui ça sert : aux marketeurs, community managers et freelances qui font du reporting sur des données Google et veulent un livrable propre sans payer. Si tes données sont ailleurs (base SQL, produit), un outil comme Metabase sera plus flexible. Mais pour du reporting Google gratuit, Looker Studio reste la référence.",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/looker-studio.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/looker-studio.jpg"
   },
   {
     "id": "loom",
@@ -81727,7 +81727,7 @@
       "price_original_currency": "EUR",
       "compare_price_monthly_eur": 0
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/lottiefiles.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/lottiefiles.jpg",
     "description": "Plateforme pour importer, prévisualiser et livrer des animations Lottie légères.",
     "longDescriptionEn": "Centralized platform for creating, editing, and sharing Lottie JSON animations for web, iOS, and Android, with a library of over 400,000 reusable animations.",
     "pricingEn": null,
@@ -82057,7 +82057,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/ltk.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/ltk.jpg",
     "force_silence": false
   },
   {
@@ -82380,7 +82380,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/lucid-software.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/lucid-software.jpg"
   },
   {
     "id": "lucidchart",
@@ -82519,7 +82519,7 @@
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
     "descriptionEn": "Lucidchart covers flowcharts, org charts, wireframes, network diagrams and UML, with AI generation from a text description and real-time collaboration. 50+ integrations cover Jira, Confluence, Google Drive and Microsoft Teams.\n\nThe free plan caps you at 3 editable documents and a reduced shape set, fine for very occasional use but quickly limiting for regular use. The Team plan requires a 3-user minimum, so a solo freelancer pays the Individual tier or stays free.",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/lucidchart.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/lucidchart.jpg",
     "force_silence": false
   },
   {
@@ -83146,7 +83146,7 @@
     "seo": {
       "metaDescription": "Lusha avis : enrichissement contacts B2B avec emails et téléphones vérifiés. Cher mais précis."
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/lusha.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/lusha.jpg",
     "description": "Lusha trouve des coordonnées B2B (email, téléphone direct) à partir d'un profil LinkedIn ou d'un nom d'entreprise, pour de la prospection commerciale. Le fonctionnement est à crédits : 1 crédit pour un email, 10 crédits pour un numéro de téléphone direct.\n\nLe point à connaître pour 2026 : le coût d'un numéro de téléphone a doublé (10 crédits au lieu de 5 auparavant), ce qui change sérieusement le calcul si ton usage repose sur les appels à froid plutôt que l'email. Une équipe qui budgétait sur les anciens tarifs peut se retrouver à consommer 60-80% de crédits en plus que prévu. Le plan gratuit (40 crédits/mois) permet de tester ; au-delà, Starter (37,45$/mois) couvre un usage solo modéré.",
     "articles": [],
     "force_silence": false
@@ -83385,7 +83385,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/madmapper.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/madmapper.jpg",
     "description": "Mapping vidéo, projection, LED et installations visuelles.",
     "longDescriptionEn": "Video mapping and light-control software: it projects visuals onto surfaces and volumes (buildings, objects, stages) and drives LEDs, for installations, shows and VJing.",
     "pricingEn": null,
@@ -84004,7 +84004,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/magnific.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/magnific.jpg",
     "force_silence": false
   },
   {
@@ -84184,7 +84184,7 @@
     },
     "force_silence": false,
     "description": "Magnific, c'est le nouveau nom de Freepik. En avril 2026, l'entreprise espagnole (fondée à Málaga en 2010) a abandonné la marque Freepik pour tout regrouper sous Magnific : une plateforme créative IA tout-en-un. L'upscaler viral racheté en 2024, qui a donné son nom à l'ensemble, n'est plus qu'une brique parmi d'autres.\n\nConcrètement, la plateforme couvre toute la chaîne de création : génération d'images, génération de vidéo (jusqu'en 4K avec audio), l'outil d'upscaling et d'amélioration d'origine, un espace de travail collaboratif en temps réel, des outils 3D et de scènes virtuelles, un assistant IA, et l'accès à plus de 40 modèles d'IA dans une seule interface. S'y ajoute l'héritage de Freepik : une bibliothèque de plus de 250 millions d'assets. L'entreprise est rentable et bootstrapée, autour de 230 millions de dollars de revenus annuels récurrents, plus d'un million d'abonnés payants et près de 290 équipes enterprise (BBC, Guess, R/GA).\n\nCôté prix : il y a un plan gratuit (environ 20 images par jour), puis Premium à 20$/mois (14,50$ en annuel), Premium+ à 45$ (33,75$ en annuel, avec de l'illimité sur une dizaine de modèles), Pro à 280$ et Business à 55$/siège. Tout fonctionne au crédit. Si tu cherches une plateforme multi-modèles, ses concurrents directs sont Krea AI et Figma Weave (ex-Weavy) : compare-les. Et si tout ce que tu veux, c'est l'upscaling fidèle qui a fait sa réputation, un outil dédié comme Topaz Gigapixel reste plus précis et moins cher qu'un abonnement plateforme.",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/magnific-ai.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/magnific-ai.jpg"
   },
   {
     "id": "mailchimp",
@@ -84662,7 +84662,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/mailgun.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/mailgun.jpg"
   },
   {
     "id": "mainwp",
@@ -85518,7 +85518,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/map-tools.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/map-tools.jpg",
     "force_silence": false
   },
   {
@@ -86940,7 +86940,7 @@
       "compare_price_monthly_eur": 149
     },
     "substitution_cluster_v2": "3d-software",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/maya.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/maya.jpg",
     "description": "Maya, c'est le standard de l'industrie pour l'animation, le rigging et le travail de personnages dans le cinéma et le jeu vidéo AAA. Là où Cinema 4D vise le motion design, Maya vise la production lourde : ses outils d'animation et de rigging sont les plus profonds du marché, et c'est la lingua franca des gros studios. Si tu vises un poste d'animateur ou de rigger en studio, c'est l'outil à connaître.\n\nLe revers, c'est le prix : 1 785$/an (environ 149$/mois en annuel, 225$ en mensuel), soit l'un des logiciels 3D les plus chers. Autodesk propose heureusement Maya Indie, bien moins cher pour les indépendants et petites structures réalisant moins de 100 000$ de CA. Et la collection Media & Entertainment regroupe Maya, 3ds Max et MotionBuilder autour de 2 600$/an.\n\nÀ qui ça s'adresse : aux artistes 3D orientés animation/personnage, et à ceux qui veulent travailler dans des pipelines studio. Pour tout le reste, l'arbitrage est rude face à Blender, devenu gratuitement très bon en animation, et à Cinema 4D pour le motion. Maya se justifie surtout par l'employabilité studio et la profondeur de son toolset d'animation.",
     "decision_policy_v3": null,
     "force_silence": false
@@ -87530,7 +87530,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/megahr.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/megahr.jpg"
   },
   {
     "id": "meltwater",
@@ -88198,7 +88198,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/meme-templates.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/meme-templates.jpg",
     "force_silence": false
   },
   {
@@ -88615,7 +88615,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/meta-quest-developer-tools.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/meta-quest-developer-tools.jpg",
     "force_silence": false
   },
   {
@@ -89084,7 +89084,7 @@
     "pivot_integration_source": true,
     "personas": [],
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/microsoft-365.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/microsoft-365.jpg"
   },
   {
     "id": "microsoft-365-copilot",
@@ -89245,7 +89245,7 @@
       },
       "metaDescription": "Microsoft 365 Copilot avis : IA dans Word, Excel et Teams. Résume réunions et rédige documents. Justifié pour grandes équipes."
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/microsoft-365-copilot.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/microsoft-365-copilot.jpg",
     "description": "Microsoft 365 Copilot intègre l'IA dans Word, Excel, PowerPoint, Teams et Outlook. Résume réunions, rédige emails et analyse données en langage naturel.",
     "articles": [],
     "force_silence": false
@@ -89389,7 +89389,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/azure.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/azure.jpg",
     "force_silence": false
   },
   {
@@ -89837,7 +89837,7 @@
     "pivot_integration_source": true,
     "personas": [],
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/microsoft-dynamics-365-finance-operations.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/microsoft-dynamics-365-finance-operations.jpg"
   },
   {
     "id": "microsoft-dynamics-business-central",
@@ -90007,7 +90007,7 @@
     "pivot_integration_source": true,
     "personas": [],
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/microsoft-dynamics-business-central.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/microsoft-dynamics-business-central.jpg"
   },
   {
     "id": "microsoft-entra-id",
@@ -90273,7 +90273,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/excel.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/excel.jpg",
     "description": "Tableur de référence pour données, budgets, modèles et analyses.",
     "longDescriptionEn": "Microsoft's spreadsheet application for analyzing, visualizing, and organizing data. Formula support, pivot tables, charts, VBA macros. Desktop and web versions.",
     "pricingEn": null,
@@ -90397,7 +90397,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/powerpoint.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/powerpoint.jpg",
     "description": "Standard des présentations business, commerciales et institutionnelles.",
     "longDescriptionEn": "Microsoft's presentation software for building slides, part of the Microsoft 365 suite, with templates, animations, collaboration and design assistance tools.",
     "pricingEn": null,
@@ -90734,7 +90734,7 @@
     "pivot_integration_source": true,
     "personas": [],
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/microsoft-teams.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/microsoft-teams.jpg"
   },
   {
     "id": "midjourney",
@@ -90909,7 +90909,7 @@
     },
     "force_silence": false,
     "description": "Midjourney, c'est le générateur d'images par IA le plus réputé pour la qualité artistique. Tu décris une image en quelques mots (le prompt), et il produit des visuels souvent bluffants : illustrations, concept art, moodboards, visuels de marque. Là où des outils comme Canva restent génériques, Midjourney sort des images avec une vraie direction artistique, à condition d'apprendre à bien prompter.\n\nLongtemps réservé à Discord (ce qui en déroutait plus d'un), il dispose désormais d'une application web plus accessible. Il n'y a pas d'offre gratuite : les plans vont de Basic (10$/mois) à Standard (30$), Pro (60$) et Mega (120$), selon le temps de génération 'fast' et l'accès au mode privé.\n\nÀ qui ça sert : aux designers, créateurs et marketeurs qui ont besoin de visuels originaux. Deux limites à connaître : il reste faible pour générer du texte dans les images, et l'usage commercial demande un plan adapté. Des alternatives comme Flux ou Adobe Firefly progressent vite, mais Midjourney garde une longueur d'avance sur le rendu purement esthétique.",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/midjourney.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/midjourney.jpg"
   },
   {
     "id": "milanote",
@@ -92586,7 +92586,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/moobot.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/moobot.jpg",
     "force_silence": false
   },
   {
@@ -93275,7 +93275,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/motion.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/motion.jpg",
     "force_silence": false
   },
   {
@@ -93414,7 +93414,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/motion-array.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/motion-array.jpg",
     "force_silence": false
   },
   {
@@ -93718,7 +93718,7 @@
       "compare_price_monthly_eur": 15
     },
     "substitution_cluster_v2": "ai-3d-generation",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/move-ai.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/move-ai.jpg",
     "description": "Move AI, c'est de la capture de mouvement sans marqueurs : tu filmes un acteur avec un ou plusieurs téléphones ou caméras, et l'IA en extrait une animation 3D exploitable. Plus de combinaison à pastilles, plus de studio de mocap à des milliers d'euros. L'animation s'exporte en FBX vers Maya, Blender ou Unreal.\n\nPour un indépendant ou un petit studio, c'est un vrai bouleversement : la qualité est impressionnante au regard du prix, même si la mocap optique haut de gamme garde l'avantage sur la précision pure. Le tarif démarre vers 15$/mois en freemium, avec une facturation à la durée des vidéos pour les usages plus intensifs.\n\nPour ToolTrim, Move AI fait partie des IA qui challengent sérieusement un pan de la production 3D : la capture de mouvement, longtemps réservée aux studios équipés. Elle ne remplace pas ton logiciel d'animation, mais elle remplace l'étape de captation, ce qui change beaucoup de choses pour les budgets serrés.",
     "decision_policy_v3": null,
     "force_silence": false
@@ -94518,7 +94518,7 @@
       },
       "metaDescription": "Namecheap avis 2026 : domaines abordables avec SSL gratuit. Prix à partir de 5€/mois, alternatives OVH, Cloudflare."
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/namecheap.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/namecheap.jpg",
     "description": "Namecheap est l'un des registrars de noms de domaine les plus populaires au monde, reconnu pour ses tarifs compétitifs et son interface claire. Il propose également de l'hébergement web shared, VPS, des certificats SSL gratuits et des adresses email professionnelles.\n\nLes domaines .com débutent à environ 9-12$/an (5€/mois sur 12 mois en annuel, moins en promo). Le renouvellement est souvent plus cher que le prix d'entrée — à surveiller.\n\nPour les freelances et solopreneurs qui veulent enregistrer un domaine rapidement avec un service fiable et abordable, Namecheap est une valeur sûre. Moins cher qu'OVH pour les domaines .com et plus simple que Gandi.",
     "affiliateLink": null,
     "logo": null,
@@ -95767,7 +95767,7 @@
     "pivot_integration_source": true,
     "personas": [],
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/netsuite.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/netsuite.jpg"
   },
   {
     "id": "newman",
@@ -96166,7 +96166,7 @@
     },
     "force_silence": false,
     "description": "Newton, c'est un moteur de physique 2D pour After Effects. Au lieu d'animer chaque rebond et chaque collision à la main, tu donnes des propriétés physiques à tes calques (gravité, masse, rebond, friction) et Newton calcule le mouvement réaliste : objets qui tombent, s'empilent, se heurtent, typographie qui dégringole. Pour un motion designer, ça permet des animations organiques qui seraient très longues à faire en keyframes.\n\nC'est un achat unique (aescripts/Motionboutique) autour de 250$, sans abonnement. C'est cher pour un plugin, mais c'est un investissement durable si tu en as un usage régulier.\n\nÀ qui ça s'adresse : aux motion designers qui font des animations à base de physique. Si tes projets n'en contiennent pas, Newton ne te servira à rien. Mais dès qu'il faut du mouvement réaliste avec des interactions entre objets, il n'a pas vraiment d'équivalent dans After Effects.",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/ae-newton3.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/ae-newton3.jpg"
   },
   {
     "id": "next-js",
@@ -96432,7 +96432,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/nightbot.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/nightbot.jpg",
     "force_silence": false
   },
   {
@@ -96920,7 +96920,7 @@
       "compare_price_monthly_eur": 15
     },
     "substitution_cluster_v2": "3d-software",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/nomad-sculpt.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/nomad-sculpt.jpg",
     "description": "Nomad Sculpt, c'est la petite révolution de la sculpture 3D sur tablette. Pour un achat unique d'environ 15€ (sur iPad et Android), tu obtiens une application de sculpture étonnamment complète : topologie dynamique, calques, peinture PBR, rendu intégré, et un confort tactile qui rend la sculpture très intuitive. Pour le prix d'un sandwich, tu as 80 à 90% de l'expérience d'un ZBrush.\n\nÉvidemment, ce n'est pas un remplaçant total de ZBrush en production lourde : on reste sur mobile, sans certaines fonctions avancées, et pour un pipeline pro on exportera souvent vers ZBrush ou Blender pour la suite. Mais en termes de rapport qualité-prix, c'est imbattable.\n\nÀ qui ça s'adresse : aux hobbyistes, aux concept artists qui aiment crayonner des idées en 3D sur le canapé, aux débutants qui veulent apprendre la sculpture sans payer un abonnement, et même aux pros pour des esquisses rapides. Pour démarrer la sculpture 3D ou sculpter en mobilité, Nomad Sculpt est sans doute le meilleur point d'entrée du marché.",
     "decision_policy_v3": null,
     "force_silence": false
@@ -97806,7 +97806,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/noun-project.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/noun-project.jpg",
     "force_silence": false
   },
   {
@@ -98234,7 +98234,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/nvda.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/nvda.jpg",
     "force_silence": false
   },
   {
@@ -98373,7 +98373,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/obs.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/obs.jpg",
     "force_silence": false
   },
   {
@@ -99327,7 +99327,7 @@
     "pivot_integration_source": true,
     "personas": [],
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/onedrive.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/onedrive.jpg"
   },
   {
     "id": "onelogin",
@@ -99972,7 +99972,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/openai.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/openai.jpg",
     "force_silence": false
   },
   {
@@ -100117,7 +100117,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/openai-api.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/openai-api.jpg",
     "force_silence": false
   },
   {
@@ -100258,7 +100258,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/openapi.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/openapi.jpg",
     "force_silence": false
   },
   {
@@ -100353,7 +100353,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/open-cut-list.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/open-cut-list.jpg",
     "description": "Plugin SketchUp pour débits, listes de coupe, panneaux et préparation fabrication.",
     "longDescriptionEn": "Free, open-source SketchUp extension that automates generation of cut lists, cutting diagrams, nesting layouts, and cost/weight reports for woodworking projects.",
     "pricingEn": null,
@@ -101152,7 +101152,7 @@
     "pivot_integration_source": true,
     "personas": [],
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/oracle-fusion-cloud.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/oracle-fusion-cloud.jpg"
   },
   {
     "id": "origami",
@@ -101819,7 +101819,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/overlays.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/overlays.jpg",
     "force_silence": false
   },
   {
@@ -102173,7 +102173,7 @@
     },
     "force_silence": false,
     "description": "OVHcloud, c'est le grand acteur européen de l'hébergement et du cloud, et la principale alternative aux géants américains (AWS, Google Cloud, Azure). La gamme est large : hébergement web mutualisé à quelques euros par mois, serveurs privés virtuels (VPS), serveurs dédiés, et une offre Public Cloud à l'usage. Pour un freelance ou une PME qui veut héberger un site, une appli ou une base de données, il y a presque toujours une formule adaptée.\n\nSon argument fort en 2026, c'est la souveraineté : données hébergées en Europe, conformité RGPD native, et des prix souvent plus prévisibles que le cloud à l'usage américain. C'est un critère réel pour les clients sensibles à l'hébergement des données en France ou en Europe.\n\nLes contreparties : l'interface et l'expérience développeur sont moins léchées que chez un Vercel ou un DigitalOcean, le support est inégal, et la profusion d'offres peut perdre un débutant. Pour déployer une app moderne en quelques clics, des plateformes comme Vercel ou Fly.io sont plus fluides ; pour un VPS simple, DigitalOcean est plus clair. OVH se justifie quand le rapport qualité-prix, la gamme et la souveraineté européenne priment.",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/ovh.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/ovh.jpg"
   },
   {
     "id": "owasp-zap",
@@ -102745,7 +102745,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/p5-js.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/p5-js.jpg",
     "force_silence": false
   },
   {
@@ -103464,7 +103464,7 @@
     "seo": {
       "metaDescription": "PageAI avis : générateur de landing pages IA optimisées conversion. Rapide sans designer pour agences."
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/pageai.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/pageai.jpg",
     "description": "PageAI génère des landing pages professionnelles et optimisées pour la conversion grâce à l'IA, avec des textes, images et structure adaptés à votre offre.",
     "articles": [],
     "force_silence": false
@@ -103753,7 +103753,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/pagefly.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/pagefly.jpg",
     "force_silence": false
   },
   {
@@ -104070,7 +104070,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/pagespeed-insights.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/pagespeed-insights.jpg",
     "force_silence": false
   },
   {
@@ -104337,7 +104337,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/pandas.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/pandas.jpg",
     "force_silence": false
   },
   {
@@ -106274,7 +106274,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/percy.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/percy.jpg",
     "force_silence": false
   },
   {
@@ -106362,7 +106362,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/perforce.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/perforce.jpg",
     "description": "Versioning robuste pour gros fichiers, jeux vidéo et pipelines créatifs.",
     "longDescriptionEn": "Enterprise DevOps suite covering version control (P4), quality testing (Perfecto, BlazeMeter), infrastructure automation (Puppet), and data management (Delphix). Serves 20,000+ customers, including 75% of Global 500.",
     "pricingEn": null,
@@ -106749,7 +106749,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/personio.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/personio.jpg"
   },
   {
     "id": "pgvector",
@@ -107064,7 +107064,7 @@
     "prescription_quality": "question",
     "force_silence": false,
     "substitution_cluster_v2": "photo-editor",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/photopea.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/photopea.jpg",
     "description": "Photopea est un éditeur d'images en ligne, gratuit et sans installation, qui reproduit l'interface et une grande partie des fonctions de Photoshop directement dans le navigateur. Il ouvre et enregistre les fichiers PSD ainsi que d'autres formats, ce qui en fait un dépannage idéal quand on n'a pas Photoshop sous la main.",
     "pros": [
       "Entièrement gratuit pour retouche basique et moyenne.",
@@ -108880,7 +108880,7 @@
     "seo": {
       "metaDescription": "Pixco avis : éditeur photo IA en ligne. Suppression de fond et retouche sans Photoshop pour e-commerce."
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/pixco.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/pixco.jpg",
     "description": "Pixco est un éditeur photo en ligne propulsé par l'IA pour retoucher, supprimer les fonds, améliorer la qualité et créer des visuels produits professionnels sans Photoshop.",
     "articles": [],
     "force_silence": false
@@ -109604,7 +109604,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/planoly.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/planoly.jpg",
     "force_silence": false
   },
   {
@@ -110050,7 +110050,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/playwright.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/playwright.jpg",
     "force_silence": false
   },
   {
@@ -110955,7 +110955,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/poetry.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/poetry.jpg",
     "force_silence": false
   },
   {
@@ -111632,7 +111632,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/power-bi.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/power-bi.jpg",
     "description": "Solution Microsoft BI pour dashboards, rapports et analyses business.",
     "longDescriptionEn": "Microsoft analytics and BI platform. Combines interactive dashboards, reports, and premium capacity for secure sharing. Natively integrates with Microsoft 365 ecosystem.",
     "pricingEn": null,
@@ -111804,7 +111804,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/power-user.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/power-user.jpg",
     "force_silence": false
   },
   {
@@ -112294,7 +112294,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/prettier.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/prettier.jpg",
     "force_silence": false
   },
   {
@@ -112424,7 +112424,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/pretty-links.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/pretty-links.jpg",
     "force_silence": false
   },
   {
@@ -113157,7 +113157,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/pro-tools.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/pro-tools.jpg",
     "description": "DAW standard studio pour audio professionnel, mixage et postproduction.",
     "longDescriptionEn": "Industry-standard digital audio workstation (DAW) for professional studio recording, editing, mixing and audio post-production.",
     "pricingEn": null,
@@ -113787,7 +113787,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/product-hunt.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/product-hunt.jpg",
     "force_silence": false
   },
   {
@@ -114109,7 +114109,7 @@
     },
     "force_silence": false,
     "description": "ProductionCrate, c'est une banque d'assets pour la création vidéo : effets visuels (explosions, fumée, particules), sons, transitions, modèles 3D, le tout prêt à glisser dans After Effects, Premiere ou un autre logiciel de montage. Plutôt que de créer chaque effet à la main ou d'acheter des packs à l'unité, tu piocheras dans une bibliothèque qui s'enrichit en continu. Pour un monteur ou un motion designer qui livre régulièrement, c'est un gain de temps réel.\n\nLe modèle est l'abonnement : un aperçu gratuit limité, puis un accès complet autour de 20$/mois selon la formule. Tant que tu produis, ça se rentabilise ; en usage ponctuel, c'est moins évident.\n\nÀ qui ça s'adresse : aux créateurs vidéo qui ont besoin d'éléments visuels et sonores variés sans les produire eux-mêmes. Si tu n'utilises ce genre d'assets que rarement, des banques gratuites ou des achats ponctuels suffisent. Mais en production régulière, une bibliothèque illimitée comme ProductionCrate fait gagner beaucoup de temps.",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/productioncrate.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/productioncrate.jpg"
   },
   {
     "id": "productive-io",
@@ -114316,7 +114316,7 @@
     ],
     "articles": [],
     "alternatives": [],
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/profile-builder-3.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/profile-builder-3.jpg",
     "pricingEn": null,
     "seo": null,
     "freeAlternative": null,
@@ -114585,7 +114585,7 @@
     ],
     "articles": [],
     "alternatives": [],
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/programa.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/programa.jpg",
     "pricingEn": null,
     "seo": null,
     "freeAlternative": null,
@@ -115028,7 +115028,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/prompt-libraries.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/prompt-libraries.jpg",
     "force_silence": false
   },
   {
@@ -115188,7 +115188,7 @@
       },
       "metaDescription": "ProofHub avis : gestion de projet flat-rate avec proofing. Alternative Asana pour agences créatives."
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/proofhub.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/proofhub.jpg",
     "description": "ProofHub combine gestion de projet, communication et révision de fichiers dans une seule plateforme à prix fixe.",
     "articles": [],
     "force_silence": false
@@ -115640,7 +115640,7 @@
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
     "descriptionEn": "Prowly gives access to 1M+ journalist contacts, a branded newsroom builder, and press coverage tracking up to 80,000 mentions. The Basic plan starts at $369/month but doesn't include automated follow-ups or detailed reporting, reserved for the Pro plan.\n\nImportant to know before committing: Semrush, Prowly's owner, started phasing the product out in late 2025 to merge it into the Semrush AI PR Toolkit. Check the current roadmap before signing a long contract.",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/prowly.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/prowly.jpg",
     "force_silence": false
   },
   {
@@ -116137,7 +116137,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/pure-ref.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/pure-ref.jpg",
     "description": "Planche de références ultra légère pour artistes, illustrateurs et 3D.",
     "longDescriptionEn": "Standalone reference image organizer. Consolidates multiple inspiration images in a single, stay-on-top window to speed up creative processes.",
     "pricingEn": null,
@@ -116466,7 +116466,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/pytest.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/pytest.jpg",
     "force_silence": false
   },
   {
@@ -117247,7 +117247,7 @@
     "prescription_quality": "question",
     "force_silence": false,
     "substitution_cluster_v2": "layout-publishing",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/quarkxpress.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/quarkxpress.jpg",
     "description": "Logiciel de mise en page et publication assistée par ordinateur (PAO) professionnel pour la création de brochures, magazines, livres et documents multi-canal avec typographie avancée et style sheets.",
     "longDescription": "Logiciel de mise en page et publication assistée par ordinateur (PAO) professionnel pour la création de brochures, magazines, livres et documents multi-canal avec typographie avancée et style sheets.",
     "longDescriptionEn": "Professional desktop publishing (DTP) software for creating brochures, magazines, books, and multi-channel documents with advanced typography, style management, and collaborative workflows.",
@@ -117812,7 +117812,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/quickbooks.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/quickbooks.jpg"
   },
   {
     "id": "quickbooks-online",
@@ -117945,7 +117945,7 @@
       },
       "metaDescription": "QuickBooks Online avis 2026 : comptabilité et facturation référence mondiale. Prix 32€/mois, alternatives Pennylane, Indy."
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/quickbooks-online.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/quickbooks-online.jpg",
     "description": "QuickBooks Online est le logiciel de comptabilité le plus utilisé dans le monde anglophone. Il couvre la facturation, le suivi des dépenses, la TVA, la paie, les rapports financiers et la réconciliation bancaire — tout dans un seul outil cloud.\n\nLe plan Simple Start à environ 32€/mois (prix approximatif selon pays et offres) couvre les besoins d'un freelance ou d'une petite entreprise : facturation illimitée, connexion bancaire, déclaration TVA et rapports de base.\n\nPour les freelances français, QuickBooks est moins adapté que des alternatives localisées comme Pennylane ou Indy — la conformité française n'est pas native. Mais pour les freelances qui travaillent avec des clients anglophones ou internationaux, c'est souvent la référence attendue.",
     "affiliateLink": null,
     "logo": null,
@@ -118486,7 +118486,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/radix-ui.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/radix-ui.jpg",
     "force_silence": false
   },
   {
@@ -119589,7 +119589,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/react-native.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/react-native.jpg",
     "force_silence": false
   },
   {
@@ -120196,7 +120196,7 @@
     "prescription_quality": "question",
     "force_silence": false,
     "substitution_cluster_v2": "audio-daw",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/reaper.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/reaper.jpg",
     "description": "Station de travail audio numérique (DAW) légère et très personnalisable pour l'enregistrement, l'édition, le mixage et le mastering audio avec support de pistes illimitées.",
     "longDescription": "Station de travail audio numérique (DAW) légère et très personnalisable pour l'enregistrement, l'édition, le mixage et le mastering audio avec support de pistes illimitées.",
     "longDescriptionEn": "Lightweight and highly customizable digital audio workstation (DAW) for recording, editing, mixing, and mastering audio with unlimited tracks and plugin ecosystem support.",
@@ -120544,7 +120544,7 @@
     },
     "force_silence": false,
     "description": "Recharts est sans doute la façon la plus simple d'ajouter des graphiques à un projet React. Il encapsule la puissance de D3.js dans des composants déclaratifs (BarChart, LineChart, PieChart, AreaChart) que tu composes comme n'importe quel JSX. Tooltips, légendes et responsive sont gérés out-of-the-box. C'est gratuit et open source.\n\nPour 90% des dashboards SaaS et des rapports de métriques, c'est exactement ce qu'il faut : tu obtiens un graphique propre en quelques lignes, sans plonger dans la mécanique bas niveau de D3. La documentation est correcte et la communauté large.\n\nLes limites apparaissent sur les cas extrêmes : visualisations très sur mesure (là où D3.js pur reste incontournable), très gros volumes de données, ou animations sophistiquées. Si tu n'es pas sur React, Chart.js est plus adapté. Mais pour des graphiques standards dans une app React, Recharts est le compromis le plus efficace entre simplicité et rendu.",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/recharts.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/recharts.jpg"
   },
   {
     "id": "recipe-card-templates",
@@ -121977,7 +121977,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/relay.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/relay.jpg",
     "force_silence": false
   },
   {
@@ -122383,7 +122383,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/relume-ai.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/relume-ai.jpg",
     "force_silence": false
   },
   {
@@ -123666,7 +123666,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/resolume.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/resolume.jpg",
     "description": "VJing, vidéo live, mapping et performance audiovisuelle.",
     "longDescriptionEn": "VJing and media-server software to mix, trigger and manipulate video in real time during live performances; the Arena edition adds projection mapping and multi-screen blending.",
     "pricingEn": null,
@@ -124023,7 +124023,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/responsetap.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/responsetap.jpg"
   },
   {
     "id": "rest-client",
@@ -124859,7 +124859,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/review-tools.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/review-tools.jpg",
     "force_silence": false
   },
   {
@@ -125037,7 +125037,7 @@
     },
     "force_silence": false,
     "description": "Revit, c'est le logiciel de référence du BIM (Building Information Modeling), l'outil central des cabinets d'architecture et des bureaux d'études structure et fluides (MEP). Contrairement à un simple logiciel de dessin, Revit construit une maquette numérique intelligente : chaque mur, poteau ou gaine porte des informations, et toute modification se répercute automatiquement sur les plans, coupes et nomenclatures. C'est ce qui en a fait le standard de la conception de bâtiment en équipe.\n\nLe prix est à la hauteur de son positionnement : il n'y a pas de version gratuite, et l'abonnement Autodesk tourne autour de 365$/mois ou 2 900$/an, souvent pris via l'AEC Collection (qui regroupe Revit, AutoCAD et d'autres). C'est un investissement lourd, justifié seulement par un usage professionnel régulier.\n\nÀ qui ça s'adresse : aux architectes, ingénieurs et dessinateurs qui travaillent sur des projets de bâtiment en BIM, souvent parce que le client ou la réglementation l'exigent. Pour de la 3D d'architecture intérieure ou de la présentation rapide, SketchUp est bien plus léger et moins cher. ArchiCAD est le principal concurrent direct sur le BIM. Revit reste incontournable dès que le BIM collaboratif est au cœur du métier.",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/revit.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/revit.jpg"
   },
   {
     "id": "rewardful",
@@ -125449,7 +125449,7 @@
       "fusion-360",
       "sketchup-pro"
     ],
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/rhino.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/rhino.jpg",
     "host_app": null,
     "bundle_parent": null,
     "ia_use_case": null,
@@ -125598,7 +125598,7 @@
       "price_original_currency": "USD",
       "compare_price_monthly_eur": 0
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/rightfont.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/rightfont.jpg",
     "description": "Gestionnaire de polices professionnel pour équipes design et studios.",
     "longDescriptionEn": "Powerful native font manager for macOS. Consolidates local fonts, team libraries, and Google Fonts. Automatic integration with Photoshop, Illustrator, Sketch, Figma, and 20+ design tools.",
     "pricingEn": null,
@@ -127213,7 +127213,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/ae-rubberhose.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/ae-rubberhose.jpg"
   },
   {
     "id": "ruby",
@@ -128006,7 +128006,7 @@
     "pivot_integration_source": true,
     "personas": [],
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/sage.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/sage.jpg"
   },
   {
     "id": "sage-intacct",
@@ -128176,7 +128176,7 @@
     "pivot_integration_source": true,
     "personas": [],
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/sage-intacct.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/sage-intacct.jpg"
   },
   {
     "id": "sage-paie",
@@ -128905,7 +128905,7 @@
       },
       "metaDescription": "SamCart avis : checkout optimisé pour formations en ligne avec upsells. Rentable à partir de 2k€/mois."
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/samcart.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/samcart.jpg",
     "description": "SamCart maximise les conversions avec order bumps, upsells 1-click et A/B testing pour produits numériques.",
     "articles": [],
     "force_silence": false
@@ -130132,7 +130132,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/scheduling-tools.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/scheduling-tools.jpg",
     "force_silence": false
   },
   {
@@ -130785,7 +130785,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/screenshot-tools.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/screenshot-tools.jpg",
     "force_silence": false
   },
   {
@@ -132518,7 +132518,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/sendinblue.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/sendinblue.jpg"
   },
   {
     "id": "sentry",
@@ -132831,7 +132831,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/seo-meta-in-1-click.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/seo-meta-in-1-click.jpg",
     "force_silence": false
   },
   {
@@ -133374,7 +133374,7 @@
     "pivot_integration_source": true,
     "personas": [],
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/sharepoint.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/sharepoint.jpg"
   },
   {
     "id": "shield",
@@ -133509,7 +133509,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/shield.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/shield.jpg",
     "force_silence": false
   },
   {
@@ -134257,7 +134257,7 @@
       "requires_context_questions": false
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/shophero.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/shophero.jpg"
   },
   {
     "id": "shopify",
@@ -134823,7 +134823,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/shopmy.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/shopmy.jpg",
     "force_silence": false
   },
   {
@@ -135046,7 +135046,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/shotdeck.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/shotdeck.jpg",
     "description": "Base de références cinématographiques pour moodboards, cadrages, lumière et direction image.",
     "longDescriptionEn": "Searchable, richly tagged high-definition library of film and commercial stills (by shot type, color, lighting, genre…) for inspiration, moodboards and shoot prep.",
     "pricingEn": null,
@@ -136066,7 +136066,7 @@
     "seo": {
       "metaDescription": "Skatter 2026 : l'extension SketchUp pour disperser végétation et props (149€ à vie ou 99€/an). Le verdict ToolTrim."
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/skatter.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/skatter.jpg",
     "freeAlternative": null,
     "soloRelevance": null,
     "teamRelevance": null,
@@ -139038,7 +139038,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/solidworks.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/solidworks.jpg",
     "description": "CAO industrielle paramétrique pour conception produit et mécanique.",
     "longDescriptionEn": "Professional 3D CAD software by Dassault Systèmes for part modeling, assemblies, and drawings. Includes simulation tools, photorealistic rendering, and data management.",
     "pricingEn": null,
@@ -140366,7 +140366,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/sql.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/sql.jpg",
     "force_silence": false
   },
   {
@@ -141118,7 +141118,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/figma-stark.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/figma-stark.jpg"
   },
   {
     "id": "stark",
@@ -141638,7 +141638,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/storyblocks.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/storyblocks.jpg",
     "force_silence": false
   },
   {
@@ -143498,7 +143498,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/subtitle-tools.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/subtitle-tools.jpg",
     "force_silence": false
   },
   {
@@ -144130,7 +144130,7 @@
     "seo": {
       "metaDescription": "SuperDev Pro avis : suite IA pour développeurs. Code, revue et documentation automatisés. Alternative Cursor."
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/superdev-pro.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/superdev-pro.jpg",
     "description": "SuperDev Pro propose une suite d'outils IA pour développeurs : génération de code, revue automatique, génération de tests et documentation technique automatisée.",
     "articles": [],
     "force_silence": false
@@ -144902,7 +144902,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/surfer-ai.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/surfer-ai.jpg",
     "force_silence": false
   },
   {
@@ -145784,7 +145784,7 @@
       "compare_price_monthly_eur": 0
     },
     "substitution_cluster_v2": "analytics",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/switch-monster.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/switch-monster.jpg",
     "description": "switch.monster fait du call tracking et de l'attribution marketing : il affiche un numéro de téléphone différent selon le canal qui a amené le visiteur (Google Ads, PPC, SEO, direct...), ce qui permet de relier un appel entrant à la campagne qui l'a généré. C'est exactement la même catégorie que ResponseTap, mais avec un positionnement gratuit qui change la donne pour les petites structures.\n\nLes fonctionnalités couvrent l'insertion dynamique de numéro, le routage d'appels (groupes, IVR), l'enregistrement et le reporting. Pour une agence ou un e-commerçant qui veut juste savoir quelles campagnes génèrent des appels sans payer un abonnement dédié, c'est une alternative sérieuse à des outils historiquement payants comme ResponseTap ou CallRail.",
     "decision_policy_v3": null,
     "force_silence": false
@@ -146104,7 +146104,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/systeme-io.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/systeme-io.jpg",
     "force_silence": false
   },
   {
@@ -146194,7 +146194,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/tableau.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/tableau.jpg",
     "description": "Plateforme BI et dataviz pour dashboards et analyses avancées.",
     "longDescriptionEn": "Business intelligence and data visualization platform for creating interactive dashboards and analytical reports from multiple data sources.",
     "pricingEn": null,
@@ -146533,7 +146533,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/tabnine.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/tabnine.jpg"
   },
   {
     "id": "tailwind-css",
@@ -147121,7 +147121,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/taplio.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/taplio.jpg",
     "force_silence": false
   },
   {
@@ -147840,7 +147840,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/techpacker.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/techpacker.jpg",
     "description": "Fiches techniques mode, spécifications produit et suivi production.",
     "longDescriptionEn": "Production management platform for fashion, specialized in tech pack creation, production tracking, line sheets, and supplier collaboration.",
     "pricingEn": null,
@@ -148412,7 +148412,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/templates.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/templates.jpg",
     "force_silence": false
   },
   {
@@ -148641,7 +148641,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/tenor.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/tenor.jpg",
     "force_silence": false
   },
   {
@@ -148905,7 +148905,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/tezza.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/tezza.jpg",
     "force_silence": false
   },
   {
@@ -150293,7 +150293,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/tiktok.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/tiktok.jpg",
     "force_silence": false
   },
   {
@@ -150589,7 +150589,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/tiktok-studio.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/tiktok-studio.jpg",
     "force_silence": false
   },
   {
@@ -150717,7 +150717,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/timber.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/timber.jpg",
     "force_silence": false
   },
   {
@@ -151703,7 +151703,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/topaz.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/topaz.jpg",
     "force_silence": false
   },
   {
@@ -152906,7 +152906,7 @@
     ],
     "articles": [],
     "alternatives": [],
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/transmutr.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/transmutr.jpg",
     "pricingEn": null,
     "seo": null,
     "freeAlternative": null,
@@ -153292,7 +153292,7 @@
     },
     "force_silence": false,
     "description": "Trello, c'est le tableau Kanban dans sa forme la plus simple : des colonnes (À faire, En cours, Fait), des cartes qu'on glisse de l'une à l'autre, et c'est tout. Cette simplicité est sa force : on comprend l'outil en trente secondes, sans formation. Pour suivre quelques projets, organiser un backlog léger ou coordonner une petite équipe, c'est rapide et visuel.\n\nL'offre gratuite est généreuse (jusqu'à 10 tableaux par espace), puis le plan Standard est à 5$/utilisateur/mois et Premium à 10$ (qui ajoute les vues Calendrier, Timeline, Tableau). Trello appartient à Atlassian, l'éditeur de Jira.\n\nLa limite, c'est l'autre face de sa simplicité : pas de vraies dépendances, pas de Gantt natif, peu d'automatisation au-delà des bases. Dès que tes projets se complexifient, Asana, ClickUp ou Notion offrent plus de structure. Mais pour du suivi de tâches visuel et sans prise de tête, Trello reste imbattable de légèreté.",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/trello.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/trello.jpg"
   },
   {
     "id": "tremor",
@@ -153568,7 +153568,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/triple-whale.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/triple-whale.jpg",
     "force_silence": false
   },
   {
@@ -153711,7 +153711,7 @@
       "compare_price_monthly_eur": 10
     },
     "substitution_cluster_v2": "ai-3d-generation",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/tripo.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/tripo.jpg",
     "description": "Tripo (Tripo AI), c'est le grand rival de Meshy dans la 3D générative : texte ou image vers modèle 3D texturé, en quelques secondes. Son atout principal, c'est le prix : un plan gratuit généreux pour expérimenter, et un Pro qui démarre à seulement 10$/mois, soit l'un des tickets d'entrée les plus bas du marché.\n\nLe niveau de qualité et les limites sont comparables à Meshy : génération rapide et impressionnante pour du prototypage, mais une topologie brute qui demande un nettoyage avant toute production sérieuse. C'est un point de départ, pas un asset final.\n\nPour ToolTrim, Tripo est l'autre référence du text-to-3D abordable, à mettre directement en balance avec Meshy. Les deux augmentent ton flux 3D (Blender, Cinema 4D, ZBrush) en te donnant une base à raffiner. Si le budget est le critère, Tripo prend l'avantage avec son entrée à 10$/mois.",
     "decision_policy_v3": null,
     "force_silence": false
@@ -153843,7 +153843,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/truecoach.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/truecoach.jpg",
     "force_silence": false
   },
   {
@@ -154006,7 +154006,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/trustpilot.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/trustpilot.jpg"
   },
   {
     "id": "tubebuddy",
@@ -154640,7 +154640,7 @@
       "d5-render"
     ],
     "articles": [],
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/twinmotion.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/twinmotion.jpg",
     "host_app": null,
     "bundle_parent": null,
     "ia_use_case": null,
@@ -155690,7 +155690,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/typescript.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/typescript.jpg",
     "force_silence": false
   },
   {
@@ -156178,7 +156178,7 @@
     "pivot_integration_source": true,
     "personas": [],
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/ukg-pro.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/ukg-pro.jpg"
   },
   {
     "id": "unbounce",
@@ -156763,7 +156763,7 @@
     "pivot_integration_source": true,
     "personas": [],
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/unit4.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/unit4.jpg"
   },
   {
     "id": "unity",
@@ -157027,7 +157027,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": "real-time-3d",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/unreal-engine.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/unreal-engine.jpg",
     "description": "Unreal Engine, c'est le moteur temps réel d'Epic Games, et c'est sans doute le logiciel 3D le plus puissant que tu peux utiliser gratuitement. Né pour le jeu vidéo, il est désormais partout : visualisation architecturale, virtual production de cinéma (les murs LED type The Mandalorian), motion design, configurateurs automobiles, simulation. Avec Lumen (éclairage global temps réel) et Nanite (géométrie massive), il produit du photoréalisme en temps réel, ce qui change la façon de travailler.\n\nLe modèle économique est très généreux : Unreal est gratuit pour les créateurs, avec seulement une redevance de 5% sur les jeux qui dépassent 1 million de dollars de revenus. Pour certains usages non-jeu en entreprise, un abonnement par siège existe. Pour l'écrasante majorité des freelances, c'est gratuit.\n\nLe revers, c'est la courbe d'apprentissage : Unreal est vaste et technique. Pour de l'archviz simple et rapide, Twinmotion (construit sur Unreal) est bien plus accessible, et Lumion ou D5 Render visent la même facilité. Mais dès que tu veux du temps réel poussé, de l'interactivité ou de la virtual production, Unreal est la référence, et son prix imbattable (gratuit) en fait un incontournable à connaître.",
     "pricing_v5": null,
     "decision_policy_v3": null,
@@ -157338,7 +157338,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/upwork.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/upwork.jpg"
   },
   {
     "id": "usertesting",
@@ -157581,7 +157581,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/utm-builders.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/utm-builders.jpg",
     "force_silence": false
   },
   {
@@ -158486,7 +158486,7 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/vectorworks.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/vectorworks.jpg",
     "description": "CAO/BIM et conception 2D/3D très utilisée en architecture, scénographie et événementiel.",
     "longDescriptionEn": "Integrated 3D CAD platform for architecture, landscape design, lighting design, and scenic design. Offers native BIM, advanced 3D modeling tools, and project documentation. Available in specialist variants: Architect, Landmark, Spotlight, and Fundamentals.",
     "pricingEn": null,
@@ -160003,7 +160003,7 @@
       },
       "metaDescription": "VisualCV : création de CV, modèles, exports et limites. Découvrez quand le compte Pro est réellement utile."
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/visualcv.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/visualcv.jpg",
     "pricing_v5": null
   },
   {
@@ -160415,7 +160415,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/voiceover.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/voiceover.jpg",
     "force_silence": false
   },
   {
@@ -160843,7 +160843,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/vue-cli.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/vue-cli.jpg",
     "force_silence": false
   },
   {
@@ -160978,7 +160978,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/vue-router.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/vue-router.jpg",
     "force_silence": false
   },
   {
@@ -161925,7 +161925,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/webflow-framer.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/webflow-framer.jpg",
     "force_silence": false
   },
   {
@@ -162167,7 +162167,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/webpagetest.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/webpagetest.jpg",
     "force_silence": false
   },
   {
@@ -162278,7 +162278,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/webxr.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/webxr.jpg",
     "force_silence": false
   },
   {
@@ -163180,7 +163180,7 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/whisper.png"
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/whisper.jpg"
   },
   {
     "id": "windsurf",
@@ -164311,7 +164311,7 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/wordfence.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/wordfence.jpg",
     "force_silence": false
   },
   {
@@ -166255,7 +166255,7 @@
       "compare_price_monthly_eur": 36
     },
     "substitution_cluster_v2": "plugin-cinema-4d",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/x-particles.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/x-particles.jpg",
     "description": "X-Particles, c'est le système de particules de référence pour Cinema 4D, utilisé en motion design, VFX et publicité depuis plus de dix ans. Il gère des nuées massives, des fluides, des champs de force et des effets organiques (fumée, feu, eau, destruction) avec un contrôle bien plus fin que les particules natives de C4D.\n\nDepuis quelques années, X-Particles n'est plus vendu seul : il fait partie de l'abonnement Insydium Fused (avec d'autres outils comme Cycles 4D ou TerraformFX), facturé environ 160£ tous les 3 mois, 250£ tous les 6 mois ou 390£ à l'année. Ça revient à payer pour toute la collection même si on n'utilise que les particules. Pour un studio de motion design ou de VFX qui fait des effets organiques régulièrement, ça reste un investissement justifié ; pour un usage ponctuel, le coût de l'abonnement est difficile à amortir.",
     "decision_policy_v3": null,
     "force_silence": false
@@ -167113,7 +167113,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/youtube-studio.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/youtube-studio.jpg",
     "force_silence": false
   },
   {
@@ -169077,7 +169077,7 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/zotero.png",
+    "ogImageUrl": "https://tooltrim.com/og-screenshots/zotero.jpg",
     "force_silence": false
   }
 ]
