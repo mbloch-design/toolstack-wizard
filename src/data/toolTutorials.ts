@@ -93,11 +93,11 @@ export const TOOL_TUTORIALS: Record<string, ToolTutorial[]> = {
     publishedOn: "2020-11-25", verifiedOn: "2026-08-25",
   }],
   "ae-gifgun": [{
-    provider: "youtube", videoId: "jrMexR2W2h8",
-    titleFr: "Présentation de GifGun 2", titleEn: "GifGun 2 overview",
-    author: "Pixels By Preston", duration: "Présentation",
-    sourceUrl: "https://www.youtube.com/watch?v=jrMexR2W2h8",
-    verifiedOn: "2026-08-25",
+    provider: "youtube", videoId: "Olr-DqNt42s",
+    titleFr: "Découvrir GifGun 2", titleEn: "Introducing GifGun 2",
+    author: "aescripts + aeplugins", duration: "Présentation officielle",
+    sourceUrl: "https://www.youtube.com/watch?v=Olr-DqNt42s",
+    verifiedOn: "2026-08-29",
   }],
   "aescripts-flow": [{
     provider: "youtube", videoId: "olB5zSHfBr4",

@@ -988,16 +988,16 @@
     "slug": "adobe-podcast-ai",
     "name": "Adobe Podcast AI",
     "categoryId": "ai-general",
-    "shortDescription": "Nettoyage, enregistrement et montage de voix par IA dans le navigateur.",
-    "shortDescriptionEn": "AI voice cleanup, recording and editing in the browser.",
+    "shortDescription": "Nettoyage de voix, enregistrement distant et montage audio-vidéo par transcription dans le navigateur.",
+    "shortDescriptionEn": "Browser-based voice cleanup, remote recording and transcript-driven audio and video editing.",
     "pricing": {
-      "free": "Gratuit : 1h d'audio par jour, fichiers de 30 minutes",
-      "paid": "Premium : vidéo, traitement par lots et fichiers jusqu'à 2h ; tarif selon l'offre Adobe Express"
+      "free": "Gratuit : Enhance Speech 1h/jour, fichiers audio de 30 min et 500 Mo maximum ; Studio, projets de 30 min et 2 téléchargements/jour",
+      "paid": "Premium via Adobe Express Premium : 11,99 €/mois TTC en France, sans engagement annuel ; essai gratuit de 30 jours"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://podcast.adobe.com",
     "websiteUrl": "https://podcast.adobe.com",
-    "ogImageUrl": "https://podcast.adobe.com/ES_1_3128967a32.webp",
+    "ogImageUrl": "/tool-media/adobe-podcast/enhance-speech.webp",
     "logo": "",
     "tool_type": "ia",
     "host_app": null,
@@ -13610,12 +13610,12 @@
     "shortDescriptionEn": "Export and compress GIF, WEBP, WEBM and MP4 from After Effects or the dedicated app.",
     "pricing": {
       "free": "",
-      "paid": "Achat unique (~40$), licence à vie, pas d'abonnement"
+      "paid": "39,99$ en achat unique pour GifGun 2, avec mises à jour pendant la durée de vie de la version 2"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://aescripts.com/gifgun",
     "websiteUrl": "https://aescripts.com/gifgun",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/ae-gifgun.png",
+    "ogImageUrl": "/tool-media/ae-gifgun/overview.jpg",
     "logo": "",
     "tool_type": "plugin",
     "host_app": "adobe-after-effects",
@@ -37765,8 +37765,8 @@
     "slug": "topaz-video-ai",
     "name": "Topaz Video AI",
     "categoryId": "ai-general",
-    "shortDescription": "Upscaling et amélioration vidéo par IA.",
-    "shortDescriptionEn": "AI video upscaling and enhancement.",
+    "shortDescription": "Restauration, débruitage, stabilisation et upscaling vidéo avec plus de 20 modèles IA.",
+    "shortDescriptionEn": "Video restoration, denoising, stabilization and upscaling with more than 20 AI models.",
     "pricing": {
       "free": "",
       "paid": "299$/an, 39$/mois avec engagement annuel, ou 59$/mois sans engagement"
@@ -37774,7 +37774,7 @@
     "defaultMonthlyPrice": 21.4,
     "affiliateLink": "https://topazlabs.com/topaz-video-ai",
     "websiteUrl": "https://topazlabs.com/topaz-video-ai",
-    "ogImageUrl": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/68ca910577540672ae401448_opengraph-topaz-video.webp",
+    "ogImageUrl": "/tool-media/topaz-video-ai/interface.webp",
     "logo": "",
     "tool_type": "satellite",
     "host_app": null,

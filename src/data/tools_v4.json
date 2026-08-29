@@ -4054,14 +4054,14 @@
     "name": "Adobe Podcast AI",
     "slug": "adobe-podcast-ai",
     "category": "ai-general",
-    "shortDescription": "Nettoyage, enregistrement et montage de voix par IA dans le navigateur.",
-    "longDescription": "Adobe Podcast transforme un enregistrement imparfait en voix plus nette directement dans le navigateur. Enhance Speech réduit le bruit et la réverbération, tandis que Studio permet d'enregistrer et de monter une conversation sans passer par un logiciel audio complexe. Les nouveautés 2026 ajoutent notamment la séparation avancée des sources, l'enregistrement vidéo et un travail multipiste plus complet.\n\nLa formule gratuite traite uniquement l'audio, un fichier à la fois, jusqu'à 30 minutes par fichier et une heure par jour. Premium ajoute la vidéo, le traitement par lots, le réglage de l'intensité et des fichiers pouvant atteindre deux heures. Adobe ne présente pas clairement un prix autonome sur la page des plans, car l'accès Premium dépend aussi de l'offre Adobe Express.\n\nC'est un excellent filet de sécurité pour les podcasts, interviews et voix-off enregistrés dans des conditions imparfaites. Pour un mixage musical précis ou une production broadcast complexe, un DAW reste plus adapté.",
+    "shortDescription": "Nettoyage de voix, enregistrement distant et montage audio-vidéo par transcription dans le navigateur.",
+    "longDescription": "Adobe Podcast réunit deux outils web pour les podcasts, interviews et voix-off. Enhance Speech réduit le bruit, la réverbération et les écarts de niveau. Studio permet d'enregistrer à distance, de transcrire automatiquement et de monter l'audio ou la vidéo en modifiant le texte. Depuis mars 2026, Premium ajoute la séparation de la voix, de l'ambiance et de la musique, l'export de stems, l'enregistrement vidéo et des workflows multipistes plus complets.\n\nLa formule gratuite est utile, mais ses limites varient selon l'outil. Enhance Speech accepte uniquement l'audio, un fichier à la fois, jusqu'à 30 minutes et 500 Mo par fichier, avec une heure de traitement par jour. Studio permet l'enregistrement audio et vidéo, mais limite les projets téléchargés à 30 minutes et à deux téléchargements par jour. Premium porte Enhance Speech à quatre heures par jour, deux heures et 1 Go par fichier. Studio Premium autorise des projets de deux heures, les téléchargements illimités et l'export des pistes originales séparées.\n\nPremium est inclus dans Adobe Express Premium, affiché à 11,99 € TTC par mois en France, sans engagement annuel, avec un essai gratuit de 30 jours. Adobe Podcast est très convaincant pour sauver une prise parlée ou produire une interview distante sans apprendre un logiciel audio complexe. Pour la musique, le mastering ou une production broadcast, un DAW reste plus adapté.",
     "affiliateLink": "https://podcast.adobe.com",
     "websiteUrl": "https://podcast.adobe.com",
     "defaultMonthlyPrice": 0,
     "pricing": {
-      "free": "Gratuit : 1h d'audio par jour, fichiers de 30 minutes",
-      "paid": "Premium : vidéo, traitement par lots et fichiers jusqu'à 2h ; tarif selon l'offre Adobe Express"
+      "free": "Gratuit : Enhance Speech 1h/jour, fichiers audio de 30 min et 500 Mo maximum ; Studio, projets de 30 min et 2 téléchargements/jour",
+      "paid": "Premium via Adobe Express Premium : 11,99 €/mois TTC en France, sans engagement annuel ; essai gratuit de 30 jours"
     },
     "logo": "",
     "soloRelevance": "medium",
@@ -4161,19 +4161,20 @@
     "substitution_cluster_v2": "ai-audio-enhancement",
     "pricing_v5": {
       "cautions": [
-        "Version de base gratuite : 1h d'audio par jour, fichiers de 30 minutes",
-        "Le prix Premium dépend de l'offre Adobe Express et doit être confirmé avant achat"
+        "Enhance Speech gratuit : 1h/jour, 30 min et 500 Mo par fichier, audio uniquement",
+        "Studio gratuit : projets de 30 min et 2 téléchargements par jour",
+        "Premium via Adobe Express Premium : 11,99 € TTC/mois en France"
       ],
-      "verified_on": "2026-08-27",
+      "verified_on": "2026-08-29",
       "source_domain": "podcast.adobe.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
-      "compare_plan_name": "Free",
-      "price_reliability": "medium",
-      "location_sensitive": false,
-      "official_source_url": "https://podcast.adobe.com/en/plans",
-      "verification_status": "official_contextual",
-      "compare_price_monthly_eur": 0
+      "compare_plan_name": "Adobe Express Premium",
+      "price_reliability": "high",
+      "location_sensitive": true,
+      "official_source_url": "https://podcast.adobe.com/fr/plans",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 11.99
     },
     "decision_policy_v3": {
       "auto_cancel_allowed": false,
@@ -4183,8 +4184,8 @@
       "never_auto_cancel_reason": null,
       "requires_context_questions": true
     },
-    "shortDescriptionEn": "AI voice cleanup, recording and editing in the browser.",
-    "longDescriptionEn": "Adobe Podcast turns an imperfect recording into clearer speech directly in the browser. Enhance Speech reduces noise and reverb, while Studio lets you record and edit conversations without learning a complex audio application. Its 2026 updates add advanced source separation, video recording and a more capable multitrack workflow.\n\nThe free plan handles audio only, one file at a time, with a 30-minute limit per file and one hour of enhancement per day. Premium adds video, bulk processing, strength controls and files up to two hours. Adobe does not show a simple standalone price on the plans page because Premium access is also tied to Adobe Express.\n\nIt is an excellent safety net for podcasts, interviews and voice-overs recorded in imperfect conditions. For precise music mixing or complex broadcast production, a dedicated DAW remains the better fit.",
+    "shortDescriptionEn": "Browser-based voice cleanup, remote recording and transcript-driven audio and video editing.",
+    "longDescriptionEn": "Adobe Podcast combines two browser tools for podcasts, interviews and voice-overs. Enhance Speech reduces noise, reverb and uneven levels. Studio records remote conversations, generates transcripts and lets creators edit audio or video by editing text. Since March 2026, Premium has added speech, ambience and music separation, downloadable stems, remote video recording and expanded multitrack workflows.\n\nFree limits differ by tool. Enhance Speech processes audio only, one file at a time, with a 30-minute and 500 MB limit per file and one hour per day. Studio supports audio and video recording, but downloaded projects are limited to 30 minutes and two downloads per day. Premium raises Enhance Speech to four hours per day, two hours and 1 GB per file. Studio Premium supports two-hour projects, unlimited downloads and original speaker-separated tracks.\n\nPremium is included with Adobe Express Premium, listed at €11.99 per month including tax in France, with no annual commitment and a 30-day trial. Adobe Podcast is effective for rescuing spoken recordings or producing remote interviews without a complex audio application. A DAW remains better for music, mastering and broadcast production.",
     "prosEn": [
       "AI voice enhancement with a clean result.",
       "In-browser recording and editing.",
@@ -4215,15 +4216,15 @@
       "threshold": "Adobe Podcast makes sense to quickly enhance voice with AI without expertise; for fine mixing, a dedicated DAW (like Audition) fits better."
     },
     "pricingEn": {
-      "free": "Free: 1h of audio per day, 30-minute files",
-      "paid": "Premium: video, bulk processing and files up to 2h; price depends on the Adobe Express offer"
+      "free": "Free: Enhance Speech 1 hour/day, audio files up to 30 minutes and 500 MB; Studio, 30-minute projects and 2 downloads/day",
+      "paid": "Premium through Adobe Express Premium: €11.99/month including tax in France, no annual commitment; 30-day trial"
     },
     "force_silence": false,
-    "description": "Adobe Podcast transforme un enregistrement imparfait en voix plus nette directement dans le navigateur. Enhance Speech réduit le bruit et la réverbération, tandis que Studio permet d'enregistrer et de monter une conversation sans passer par un logiciel audio complexe. Les nouveautés 2026 ajoutent notamment la séparation avancée des sources, l'enregistrement vidéo et un travail multipiste plus complet.\n\nLa formule gratuite traite uniquement l'audio, un fichier à la fois, jusqu'à 30 minutes par fichier et une heure par jour. Premium ajoute la vidéo, le traitement par lots, le réglage de l'intensité et des fichiers pouvant atteindre deux heures. Adobe ne présente pas clairement un prix autonome sur la page des plans, car l'accès Premium dépend aussi de l'offre Adobe Express.\n\nC'est un excellent filet de sécurité pour les podcasts, interviews et voix-off enregistrés dans des conditions imparfaites. Pour un mixage musical précis ou une production broadcast complexe, un DAW reste plus adapté.",
-    "ogImageUrl": "https://podcast.adobe.com/ES_1_3128967a32.webp",
+    "description": "Adobe Podcast réunit deux outils web pour les podcasts, interviews et voix-off. Enhance Speech réduit le bruit, la réverbération et les écarts de niveau. Studio permet d'enregistrer à distance, de transcrire automatiquement et de monter l'audio ou la vidéo en modifiant le texte. Depuis mars 2026, Premium ajoute la séparation de la voix, de l'ambiance et de la musique, l'export de stems, l'enregistrement vidéo et des workflows multipistes plus complets.\n\nLa formule gratuite est utile, mais ses limites varient selon l'outil. Enhance Speech accepte uniquement l'audio, un fichier à la fois, jusqu'à 30 minutes et 500 Mo par fichier, avec une heure de traitement par jour. Studio permet l'enregistrement audio et vidéo, mais limite les projets téléchargés à 30 minutes et à deux téléchargements par jour. Premium porte Enhance Speech à quatre heures par jour, deux heures et 1 Go par fichier. Studio Premium autorise des projets de deux heures, les téléchargements illimités et l'export des pistes originales séparées.\n\nPremium est inclus dans Adobe Express Premium, affiché à 11,99 € TTC par mois en France, sans engagement annuel, avec un essai gratuit de 30 jours. Adobe Podcast est très convaincant pour sauver une prise parlée ou produire une interview distante sans apprendre un logiciel audio complexe. Pour la musique, le mastering ou une production broadcast, un DAW reste plus adapté.",
+    "ogImageUrl": "/tool-media/adobe-podcast/enhance-speech.webp",
     "galleryImages": [
-      "https://podcast.adobe.com/tiny_Enhance_Speech_1_english_1_1ae989fa4f.png",
-      "https://podcast.adobe.com/ES_sliders_1_82f3e8010b.webp"
+      "/tool-media/adobe-podcast/source-separation.webp",
+      "/tool-media/adobe-podcast/remote-video.webp"
     ]
   },
   {
@@ -54104,7 +54105,7 @@
     "defaultMonthlyPrice": 0,
     "pricing": {
       "free": "",
-      "paid": "Achat unique (~40$), licence à vie, pas d'abonnement"
+      "paid": "39,99$ en achat unique pour GifGun 2, avec mises à jour pendant la durée de vie de la version 2"
     },
     "logo": "",
     "soloRelevance": "medium",
@@ -54151,7 +54152,10 @@
       "Créateurs de contenu web",
       "Community managers"
     ],
-    "alternatives": [],
+    "alternatives": [
+      "adobe-photoshop",
+      "capcut"
+    ],
     "seo": {
       "metaDescription": "GifGun en 2026 : exporter des GIF depuis After Effects en un clic, prix (achat unique) et à qui ça sert. Le verdict ToolTrim."
     },
@@ -54196,7 +54200,7 @@
         "Achat ponctuel ou licence non mensuelle : ne pas compter comme abonnement mensuel sans confirmation."
       ],
       "currency": "USD",
-      "verified_on": "2026-08-27",
+      "verified_on": "2026-08-29",
       "billing_model": "one_time",
       "source_domain": "aescripts.com",
       "price_original": 39.99,
@@ -54280,7 +54284,10 @@
     },
     "force_silence": false,
     "description": "GifGun 2 accélère la livraison d'animations légères depuis After Effects, mais il ne se limite plus à un bouton d'export GIF. La licence inclut le plugin After Effects, une application de bureau autonome et une application web. Elle couvre les formats GIF, WEBP, WEBM et MP4, avec taille cible, compression intelligente, traitement par lots et presets JSON.\n\nLa licence coûte 39,99$ en achat unique sur aescripts. La version 2.2.1, publiée en avril 2026, prend en charge After Effects 2021 et versions ultérieures, Windows 10 ou 11 et macOS 15 ou version ultérieure.\n\nGifGun devient rentable si vous exportez régulièrement des animations pour le web, les réseaux sociaux ou les messageries. Pour quelques conversions occasionnelles, FFmpeg ou un convertisseur gratuit reste suffisant.",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/ae-gifgun.png"
+    "ogImageUrl": "/tool-media/ae-gifgun/overview.jpg",
+    "galleryImages": [
+      "/tool-media/ae-gifgun/official-demo.jpg"
+    ]
   },
   {
     "id": "giphy",
@@ -152050,7 +152057,7 @@
     "name": "Topaz Video AI",
     "slug": "topaz-video-ai",
     "category": "ai-general",
-    "shortDescription": "Upscaling et amélioration vidéo par IA.",
+    "shortDescription": "Restauration, débruitage, stabilisation et upscaling vidéo avec plus de 20 modèles IA.",
     "longDescription": "Topaz Video est spécialisé dans l'amélioration vidéo par IA : upscaling, débruitage, stabilisation, interpolation d'images et restauration de séquences anciennes. Les traitements s'exécutent en local et le plan personnel autorise un rendu local illimité, ce qui convient aux rushes sensibles ou aux volumes importants.\n\nPour les nouveaux clients, Topaz Video est désormais vendu par abonnement. L'offre personnelle coûte 299$ par an en paiement annuel, 39$ par mois avec engagement annuel, ou 59$ sans engagement. Il n'existe plus de licence perpétuelle affichée pour ce produit.\n\nL'investissement se justifie pour une utilisation récurrente en postproduction et avec un GPU suffisamment puissant. Pour une restauration ponctuelle, les fonctions intégrées d'un logiciel de montage ou un service facturé à l'usage seront souvent plus rationnels.",
     "affiliateLink": "https://topazlabs.com/topaz-video-ai",
     "websiteUrl": "https://topazlabs.com/topaz-video-ai",
@@ -152102,6 +152109,8 @@
       "Studios de post-production"
     ],
     "alternatives": [
+      "davinci-resolve",
+      "adobe-premiere-pro",
       "runway"
     ],
     "seo": {
@@ -152157,7 +152166,7 @@
         "Prix hors taxes éventuelles ; vérifier le tarif local avant achat"
       ],
       "currency": "USD",
-      "verified_on": "2026-08-27",
+      "verified_on": "2026-08-29",
       "billing_model": "subscription",
       "source_domain": "topazlabs.com",
       "price_original": 299,
@@ -152201,7 +152210,7 @@
       "never_auto_cancel_reason": null,
       "requires_context_questions": true
     },
-    "shortDescriptionEn": "AI video upscaling and enhancement.",
+    "shortDescriptionEn": "Video restoration, denoising, stabilization and upscaling with more than 20 AI models.",
     "longDescriptionEn": "Topaz Video specializes in AI video enhancement: upscaling, denoising, stabilization, frame interpolation and restoration of older footage. Processing runs locally, and the personal plan includes unlimited local rendering, which suits sensitive footage and heavier workloads.\n\nFor new customers, Topaz Video is now subscription only. The personal plan costs $299 per year when prepaid, $39 per month with an annual commitment, or $59 month to month. No perpetual license is currently listed for this product.\n\nThe investment makes sense for recurring post-production work and a machine with a capable GPU. For a one-off restoration, built-in editor features or a usage-based service will often be more economical.",
     "prosEn": [
       "Some of the most advanced AI video upscaling and restoration.",
@@ -152238,9 +152247,10 @@
     },
     "force_silence": false,
     "description": "Topaz Video est spécialisé dans l'amélioration vidéo par IA : upscaling, débruitage, stabilisation, interpolation d'images et restauration de séquences anciennes. Les traitements s'exécutent en local et le plan personnel autorise un rendu local illimité, ce qui convient aux rushes sensibles ou aux volumes importants.\n\nPour les nouveaux clients, Topaz Video est désormais vendu par abonnement. L'offre personnelle coûte 299$ par an en paiement annuel, 39$ par mois avec engagement annuel, ou 59$ sans engagement. Il n'existe plus de licence perpétuelle affichée pour ce produit.\n\nL'investissement se justifie pour une utilisation récurrente en postproduction et avec un GPU suffisamment puissant. Pour une restauration ponctuelle, les fonctions intégrées d'un logiciel de montage ou un service facturé à l'usage seront souvent plus rationnels.",
-    "ogImageUrl": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/68ca910577540672ae401448_opengraph-topaz-video.webp",
+    "ogImageUrl": "/tool-media/topaz-video-ai/interface.webp",
     "galleryImages": [
-      "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/662078e248e0b92f5ad6bc2a_opengraph-video-1.jpg"
+      "/tool-media/topaz-video-ai/precision-before.webp",
+      "/tool-media/topaz-video-ai/precision-after.webp"
     ]
   },
   {
