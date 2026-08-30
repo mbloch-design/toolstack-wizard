@@ -1,0 +1,318 @@
+{
+  "batch": "review-design-tools-critical-001",
+  "current": {
+    "affiliate_url": "https://spline.design",
+    "alternatives": [
+      "blender",
+      "framer",
+      "rive"
+    ],
+    "category": "design-tools",
+    "cons": [
+      "Limité au navigateur (pas d'app desktop).",
+      "Exports gratuits watermarked.",
+      "Moins puissant que Blender pour la modélisation complexe.",
+      "Pas d'outils de rendu photorealiste avancés."
+    ],
+    "cons_en": [
+      "Browser-only (no desktop app).",
+      "Free exports are watermarked.",
+      "Less powerful than Blender for complex modeling.",
+      "No advanced photorealistic rendering tools."
+    ],
+    "host_app": null,
+    "id": "spline",
+    "long_description": "Spline est un outil de design 3D basé navigateur pour créer des scènes 3D interactives et les exporter vers React, HTML ou iframe sans coder Three.js.",
+    "long_description_en": "Spline is a browser-based 3D design tool to create interactive 3D scenes and export them to React, HTML or iframe without coding Three.js.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://spline.design/_next/static/media/spline_image_banner.77c2eb63.png"
+    },
+    "name": "Spline",
+    "pricing": {
+      "free": "Plan gratuit avec watermark",
+      "paid": "Pro 12$/mois sans watermark"
+    },
+    "pricing_en": {
+      "free": "Free plan with watermark",
+      "paid": "Pro $12/mo no watermark"
+    },
+    "pricing_v5": {
+      "billing_model": "subscription",
+      "billing_options": [
+        {
+          "label_en": "Free",
+          "label_fr": "Gratuit",
+          "price_monthly_eur": 0,
+          "value": "free"
+        },
+        {
+          "currency": "USD",
+          "label_en": "Pro",
+          "label_fr": "Pro",
+          "price_monthly_eur": 11.04,
+          "price_original": 12,
+          "value": "paid"
+        },
+        {
+          "label_en": "Team",
+          "label_fr": "Équipe",
+          "needs_verification": true,
+          "value": "team"
+        },
+        {
+          "label_en": "I don’t know",
+          "label_fr": "Je ne sais pas",
+          "needs_verification": true,
+          "value": "unknown"
+        }
+      ],
+      "cautions": [
+        "Le plan gratuit peut suffire si le watermark et les limites ne posent pas problème.",
+        "Prix source en USD, conversion indicative avec le taux fixe 0.92."
+      ],
+      "compare_plan_kind": "individual",
+      "compare_plan_name": "Pro",
+      "compare_price_monthly_eur": 11.04,
+      "conversion_rate_to_eur": 0.92,
+      "currency": "USD",
+      "location_sensitive": true,
+      "official_source_url": "https://spline.design/pricing",
+      "price_original": 12,
+      "price_original_currency": "USD",
+      "price_reliability": "high",
+      "source_domain": "spline.design",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-06-15"
+    },
+    "pros": [
+      "Tier gratuit puissant (canvas illimité, exports watermarked).",
+      "Interface intuitive, pas besoin de coder.",
+      "Collaboration temps réel excellente.",
+      "Exports multi-plateforme (web, iOS, Android).",
+      "Intégration APIs et webhooks facile."
+    ],
+    "pros_en": [
+      "Powerful free tier (unlimited canvas, watermarked exports).",
+      "Intuitive UI, no coding required.",
+      "Excellent real-time collaboration.",
+      "Multi-platform exports (web, iOS, Android).",
+      "Easy APIs and webhooks integration."
+    ],
+    "short_description": "Design 3D interactif dans le navigateur pour des expériences web immersives.",
+    "short_description_en": "Browser-based interactive 3D design for immersive web experiences.",
+    "slug": "spline",
+    "source_url": "https://spline.design/pricing",
+    "source_verified_on": "2026-06-15",
+    "use_cases": [
+      "Créer un portfolio 3D interactif.",
+      "Concevoir un hero 3D pour une landing page.",
+      "Animer un produit en 3D pour la démo.",
+      "Prototyper une expérience web immersive."
+    ],
+    "use_cases_en": [
+      "Build an interactive 3D portfolio.",
+      "Design a 3D hero for a landing page.",
+      "Animate a product in 3D for demo.",
+      "Prototype an immersive web experience."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous faites de la modélisation 3D profesionnelle haute-fidélité.",
+        "Vous avez besoin de precision engineering (CAO).",
+        "Vous cherchez un outil desktop natif."
+      ],
+      "keepIf": [
+        "Vous créez des sites web ou expériences 3D interactives.",
+        "Vous cherchez un outil 3D low-barrier pour designers (pas de programmation)",
+        "Vous voulez explorer le 3D sans investissement initial."
+      ],
+      "threshold": "Spline gagne pour la création web 3D et les expériences interactives ; pour la modélisation professionnelle ou CAO, Blender/SolidWorks conviendraient mieux."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You do professional high-fidelity 3D modeling.",
+        "You need precision engineering (CAD).",
+        "You want a native desktop app."
+      ],
+      "keepIf": [
+        "You create interactive web experiences or 3D content.",
+        "You want a low-barrier 3D tool for designers (no coding).",
+        "You want to explore 3D without upfront investment."
+      ],
+      "threshold": "Spline works for web 3D and interactive experiences; for professional modeling or CAD, Blender/SolidWorks fit better."
+    },
+    "website_url": "https://spline.design"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Browser-only (no desktop app).",
+        "Free exports are watermarked.",
+        "Less powerful than Blender for complex modeling.",
+        "No advanced photorealistic rendering tools."
+      ],
+      "pros": [
+        "Powerful free tier (unlimited canvas, watermarked exports).",
+        "Intuitive UI, no coding required.",
+        "Excellent real-time collaboration.",
+        "Multi-platform exports (web, iOS, Android).",
+        "Easy APIs and webhooks integration."
+      ],
+      "use_cases": [
+        "Build an interactive 3D portfolio.",
+        "Design a 3D hero for a landing page.",
+        "Animate a product in 3D for demo.",
+        "Prototype an immersive web experience."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You do professional high-fidelity 3D modeling.",
+          "You need precision engineering (CAD).",
+          "You want a native desktop app."
+        ],
+        "keepIf": [
+          "You create interactive web experiences or 3D content.",
+          "You want a low-barrier 3D tool for designers (no coding).",
+          "You want to explore 3D without upfront investment."
+        ],
+        "threshold": "Spline works for web 3D and interactive experiences; for professional modeling or CAD, Blender/SolidWorks fit better."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Tier gratuit avec canvas illimité et exports watermarked.",
+        "exists": true
+      },
+      "key_features": [
+        "Modélisation 3D avec primitives et matériaux personnalisés",
+        "Animation et interactivité (états, événements, timeline)",
+        "Physics et particules",
+        "Variables et intégration données (APIs, webhooks)",
+        "Collaboration temps réel avec commentaires",
+        "Exports web, iOS, Android",
+        "Bibliothèque de composants et templates communautaires"
+      ],
+      "plans": [
+        {
+          "name": "Free",
+          "price": "€0"
+        },
+        {
+          "name": "Starter",
+          "price": "$12/mois"
+        },
+        {
+          "name": "Professional",
+          "price": "$20/mois"
+        },
+        {
+          "name": "AI features add-on",
+          "price": "$5/mois par siège (2000 crédits AI/mois)"
+        }
+      ],
+      "pricing_model": "Freemium : tier gratuit + abonnements payants",
+      "what": "Plateforme web de design 3D et 2D collaboratif en temps réel avec canvas infini. Permet de créer des expériences interactives production-ready : sites web 3D, animations, prototypes interactifs, exports multi-plateformes (web, iOS, Android).",
+      "what_en": "Web-based collaborative 3D and 2D design platform with real-time rendering and infinite canvas. Build production-ready interactive experiences: 3D websites, animations, prototypes, multi-platform exports."
+    },
+    "fr": {
+      "cons": [
+        "Limité au navigateur (pas d'app desktop).",
+        "Exports gratuits watermarked.",
+        "Moins puissant que Blender pour la modélisation complexe.",
+        "Pas d'outils de rendu photorealiste avancés."
+      ],
+      "pros": [
+        "Tier gratuit puissant (canvas illimité, exports watermarked).",
+        "Interface intuitive, pas besoin de coder.",
+        "Collaboration temps réel excellente.",
+        "Exports multi-plateforme (web, iOS, Android).",
+        "Intégration APIs et webhooks facile."
+      ],
+      "relevant_for": [
+        "Designers web",
+        "Créateurs de contenu 3D",
+        "UX/UI designers ambitieux"
+      ],
+      "use_cases": [
+        "Créer un portfolio 3D interactif.",
+        "Concevoir un hero 3D pour une landing page.",
+        "Animer un produit en 3D pour la démo.",
+        "Prototyper une expérience web immersive."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous faites de la modélisation 3D profesionnelle haute-fidélité.",
+          "Vous avez besoin de precision engineering (CAO).",
+          "Vous cherchez un outil desktop natif."
+        ],
+        "keepIf": [
+          "Vous créez des sites web ou expériences 3D interactives.",
+          "Vous cherchez un outil 3D low-barrier pour designers (pas de programmation)",
+          "Vous voulez explorer le 3D sans investissement initial."
+        ],
+        "threshold": "Spline gagne pour la création web 3D et les expériences interactives ; pour la modélisation professionnelle ou CAO, Blender/SolidWorks conviendraient mieux."
+      }
+    },
+    "slug": "spline",
+    "sources": [
+      {
+        "label": "Spline (site officiel)",
+        "url": "https://spline.design"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-001",
+    "batch_position": 19,
+    "blockers": [],
+    "catalog_hash": "sha256:6da4a8310f88638238aa7177e80268240e926155a5c620f2dc3de1f71fa0326c",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:a8c4fa002d078f09b0299c7be5355e5bdc5f0af3f903095250551546f792abf9",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Spline",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence",
+      "shallow_editorial"
+    ],
+    "priority_score": 260,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:2764b4b0944ce2d4db965da257ef65527c7395c6562372b7393163e425052768",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "spline",
+    "source_url": "https://spline.design/pricing",
+    "source_verified_on": "2026-06-15",
+    "status": "QUEUED"
+  }
+}

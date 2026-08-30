@@ -1,0 +1,293 @@
+{
+  "batch": "review-design-tools-critical-001",
+  "current": {
+    "affiliate_url": "https://www.maxon.net/red-giant/pluraleyes",
+    "alternatives": [
+      "ae-red-giant",
+      "davinci-resolve"
+    ],
+    "category": "design-tools",
+    "cons": [
+      "Abonnement seulement (plus de perpetual license standalone).",
+      "Coût mensuel/annuel Red Giant Complete non négligeable.",
+      "Pas d'alternative gratuite (Resolve cut-based seulement).",
+      "Final Cut Pro support moins robuste vs Adobe.",
+      "Dépend de qualité audio pour synchronisation (audio mediocre = sync imprécise)."
+    ],
+    "cons_en": [
+      "Subscription-only (no perpetual standalone license anymore).",
+      "Red Giant Complete monthly/annual cost not negligible.",
+      "No free alternative (Resolve cut-based only).",
+      "Final Cut Pro support less robust vs Adobe.",
+      "Depends on audio quality for accuracy (poor audio = imprecise sync)."
+    ],
+    "host_app": "adobe-premiere-pro",
+    "id": "pluraleyes",
+    "long_description": "PluralEyes a été un pionnier : il synchronise automatiquement l'audio et la vidéo de tournages multicaméra en analysant les formes d'onde, ce qui faisait gagner un temps fou sur les montages multicam et les prises avec enregistreur audio séparé. À son époque, c'était un quasi-indispensable des monteurs documentaires et événementiels.\n\nMais il faut être honnête sur son statut en 2026 : Maxon l'a placé en maintenance limitée depuis 2023, il n'est plus vraiment mis à jour, et il n'est accessible que via l'abonnement Red Giant Complete ou Maxon One. Surtout, les logiciels de montage ont rattrapé leur retard : Premiere Pro et DaVinci Resolve intègrent désormais une synchronisation par forme d'onde, gratuite et intégrée, qui fait le même travail. Concrètement, pour un nouveau projet, tu n'as plus besoin de PluralEyes : la synchro native de ton logiciel suffit. On garde cette fiche pour ceux qui le cherchent encore.",
+    "long_description_en": "PluralEyes was a pioneer: it automatically syncs audio and video from multicamera shoots by analyzing waveforms, saving huge time on multicam edits and takes with a separate audio recorder. In its day, it was a near-essential for documentary and event editors.\n\nBut let's be honest about its status in 2026: Maxon put it in limited maintenance mode back in 2023, it's no longer really updated, and it's only available via the Red Giant Complete or Maxon One subscription. More importantly, editing apps have caught up: Premiere Pro and DaVinci Resolve now include free, built-in waveform sync that does the same job. In practice, for a new project, you no longer need PluralEyes: your app's native sync is enough. We keep this page for those still searching for it.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": null
+    },
+    "name": "PluralEyes",
+    "pricing": {
+      "free": "",
+      "paid": "Inclus dans Red Giant Complete ou Maxon One (produit legacy, plus mis à jour)."
+    },
+    "pricing_en": {
+      "free": "",
+      "paid": "Included in Red Giant Complete or Maxon One (legacy product, no longer updated)."
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Produit legacy en maintenance limitée depuis 2023 ; uniquement via abonnement Red Giant"
+      ],
+      "compare_plan_kind": "subscription",
+      "compare_plan_name": "Red Giant Complete",
+      "compare_price_monthly_eur": 50,
+      "location_sensitive": false,
+      "official_source_url": "https://www.maxon.net/en/buy",
+      "price_reliability": "high",
+      "source_domain": "maxon.net",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-06-17"
+    },
+    "pros": [
+      "Synchronisation audio automatique, no timecode needed.",
+      "Vitesse exceptionnelle (v4.1 très rapide).",
+      "Intégration native After Effects/Premiere Pro.",
+      "Idéal multi-caméra (interviews, live events).",
+      "Inclus en Red Giant Complete (valeur ajoutée).",
+      "Support versions récentes Adobe/Apple.",
+      "Mises à jour gratuites dans l'abonnement."
+    ],
+    "pros_en": [
+      "Automatic audio sync, no timecode needed.",
+      "Exceptional speed (v4.1 markedly faster).",
+      "Native After Effects/Premiere Pro integration.",
+      "Ideal for multi-camera (interviews, live events).",
+      "Included in Red Giant Complete (added value).",
+      "Support for recent Adobe/Apple versions.",
+      "Free updates within subscription."
+    ],
+    "short_description": "Outil Red Giant de synchro audio/vidéo multicam, désormais en maintenance limitée.",
+    "short_description_en": "Red Giant's multicam audio/video sync tool, now in limited maintenance.",
+    "slug": "pluraleyes",
+    "source_url": "https://www.maxon.net/en/buy",
+    "source_verified_on": "2026-06-17",
+    "use_cases": [
+      "Synchroniser clips interviews multi-caméra sans timecode.",
+      "Assembler rushes live events (concerts, conférences) rapidement.",
+      "Monter documentaires avec sons ambiance et interviews asynchrones.",
+      "Paralléliser multi-cam setups (sport, podcasts vidéo).",
+      "Gagner heures de sync manuelle sur productions lourdes."
+    ],
+    "use_cases_en": [
+      "Sync multi-camera interview clips without timecode.",
+      "Assemble live-event rushes (concerts, conferences) fast.",
+      "Edit documentaries with ambient sound and async interviews.",
+      "Parallelize multi-cam setups (sports, video podcasts).",
+      "Save hours of manual syncing on heavy productions."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous refusez les abonnements ou cherchez une licence perpétuelle (plus dispo).",
+        "Vous utilisez Final Cut Pro uniquement (plugin existe mais moins prioritaire).",
+        "Vous avez des timecodes parfaits (sync basée audio moins critique alors)."
+      ],
+      "keepIf": [
+        "Vous montez vidéos multi-caméra et avez besoin de sync audio rapide.",
+        "Vous utilisez After Effects ou Premiere Pro (intégration native).",
+        "Vous êtes confortable avec modèle d'abonnement (Red Giant Complete)."
+      ],
+      "threshold": "PluralEyes domine pour monteurs multi-caméra sans timecode ; désormais subscription-only, donc comparer coût Red Giant Complete vs alternatives sync audio."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You refuse subscriptions or seek perpetual license (no longer available).",
+        "You use Final Cut Pro only (plugin exists but lower priority).",
+        "You have perfect timecodes (audio-based sync less critical then)."
+      ],
+      "keepIf": [
+        "You edit multi-camera video and need fast audio sync.",
+        "You use After Effects or Premiere Pro (native integration).",
+        "You're comfortable with subscription model (Red Giant Complete)."
+      ],
+      "threshold": "PluralEyes dominates for multi-camera editors without timecode; now subscription-only, so compare Red Giant Complete cost vs audio-sync alternatives."
+    },
+    "website_url": "https://www.maxon.net/red-giant/pluraleyes"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Subscription-only (no perpetual standalone license anymore).",
+        "Red Giant Complete monthly/annual cost not negligible.",
+        "No free alternative (Resolve cut-based only).",
+        "Final Cut Pro support less robust vs Adobe.",
+        "Depends on audio quality for accuracy (poor audio = imprecise sync)."
+      ],
+      "pros": [
+        "Automatic audio sync, no timecode needed.",
+        "Exceptional speed (v4.1 markedly faster).",
+        "Native After Effects/Premiere Pro integration.",
+        "Ideal for multi-camera (interviews, live events).",
+        "Included in Red Giant Complete (added value).",
+        "Support for recent Adobe/Apple versions.",
+        "Free updates within subscription."
+      ],
+      "use_cases": [
+        "Sync multi-camera interview clips without timecode.",
+        "Assemble live-event rushes (concerts, conferences) fast.",
+        "Edit documentaries with ambient sound and async interviews.",
+        "Parallelize multi-cam setups (sports, video podcasts).",
+        "Save hours of manual syncing on heavy productions."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You refuse subscriptions or seek perpetual license (no longer available).",
+          "You use Final Cut Pro only (plugin exists but lower priority).",
+          "You have perfect timecodes (audio-based sync less critical then)."
+        ],
+        "keepIf": [
+          "You edit multi-camera video and need fast audio sync.",
+          "You use After Effects or Premiere Pro (native integration).",
+          "You're comfortable with subscription model (Red Giant Complete)."
+        ],
+        "threshold": "PluralEyes dominates for multi-camera editors without timecode; now subscription-only, so compare Red Giant Complete cost vs audio-sync alternatives."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Pas de version gratuite. Accès uniquement via abonnement Red Giant Complete ou Maxon One.",
+        "exists": false
+      },
+      "key_features": [
+        "Synchronisation audio/vidéo automatique multi-caméra",
+        "Sans timecode requis (audio-based sync)",
+        "Plugins pour After Effects, Premiere Pro, Final Cut Pro",
+        "Vitesse optimisée (version 4.1 markedly plus rapide)",
+        "Support versions récentes Adobe/Apple",
+        "Inclus dans Red Giant Complete et Maxon One",
+        "Mises à jour gratuites dans le cadre de l'abonnement"
+      ],
+      "plans": [
+        {
+          "name": "Red Giant Complete / Maxon One",
+          "price": "Montants sur la page officielle (abonnement annuel avec économies vs mensuel)"
+        },
+        {
+          "name": "Legacy (archive)",
+          "price": "Ancien prix standalone $299 (plus disponible) ; upgrade $199 (historique)"
+        }
+      ],
+      "pricing_model": "Abonnement via Red Giant Complete ou Maxon One. Plus de licence perpétuelle standalone ; modèle SaaS/subscription uniquement.",
+      "what": "Plugin de synchronisation audio/vidéo pour After Effects, Premiere Pro et Final Cut Pro, permettant synchronisation rapide de plusieurs pistes/caméras sans timecode.",
+      "what_en": "Audio/video synchronization plugin for After Effects, Premiere Pro, and Final Cut Pro, enabling fast sync of multiple tracks/cameras without timecode."
+    },
+    "fr": {
+      "cons": [
+        "Abonnement seulement (plus de perpetual license standalone).",
+        "Coût mensuel/annuel Red Giant Complete non négligeable.",
+        "Pas d'alternative gratuite (Resolve cut-based seulement).",
+        "Final Cut Pro support moins robuste vs Adobe.",
+        "Dépend de qualité audio pour synchronisation (audio mediocre = sync imprécise)."
+      ],
+      "pros": [
+        "Synchronisation audio automatique, no timecode needed.",
+        "Vitesse exceptionnelle (v4.1 très rapide).",
+        "Intégration native After Effects/Premiere Pro.",
+        "Idéal multi-caméra (interviews, live events).",
+        "Inclus en Red Giant Complete (valeur ajoutée).",
+        "Support versions récentes Adobe/Apple.",
+        "Mises à jour gratuites dans l'abonnement."
+      ],
+      "relevant_for": [
+        "Monteurs vidéo",
+        "Producteurs documentaires",
+        "Chaînes YouTube/Podcast vidéo",
+        "Agences production",
+        "Réalisateurs événements"
+      ],
+      "use_cases": [
+        "Synchroniser clips interviews multi-caméra sans timecode.",
+        "Assembler rushes live events (concerts, conférences) rapidement.",
+        "Monter documentaires avec sons ambiance et interviews asynchrones.",
+        "Paralléliser multi-cam setups (sport, podcasts vidéo).",
+        "Gagner heures de sync manuelle sur productions lourdes."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous refusez les abonnements ou cherchez une licence perpétuelle (plus dispo).",
+          "Vous utilisez Final Cut Pro uniquement (plugin existe mais moins prioritaire).",
+          "Vous avez des timecodes parfaits (sync basée audio moins critique alors)."
+        ],
+        "keepIf": [
+          "Vous montez vidéos multi-caméra et avez besoin de sync audio rapide.",
+          "Vous utilisez After Effects ou Premiere Pro (intégration native).",
+          "Vous êtes confortable avec modèle d'abonnement (Red Giant Complete)."
+        ],
+        "threshold": "PluralEyes domine pour monteurs multi-caméra sans timecode ; désormais subscription-only, donc comparer coût Red Giant Complete vs alternatives sync audio."
+      }
+    },
+    "slug": "pluraleyes",
+    "sources": [
+      {
+        "label": "PluralEyes — Red Giant / Maxon (site officiel)",
+        "url": "https://www.maxon.net/en/product-detail/red-giant/pluraleyes"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-001",
+    "batch_position": 22,
+    "blockers": [],
+    "catalog_hash": "sha256:38108aa4aaec6ff181d9899dc1444aa7b9a0f30d2acbb78e92a677e90608b4bc",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:ee82d35efc1b9324d55b479290ba65020d2f3922e540d4cf9df0d7039234c592",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "PluralEyes",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence",
+      "missing_media"
+    ],
+    "priority_score": 245,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:30af206f0f65a753a7864b8973c5b0c32f8138506379dc3ebe1f37dc2ee8d85a",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "pluraleyes",
+    "source_url": "https://www.maxon.net/en/buy",
+    "source_verified_on": "2026-06-17",
+    "status": "QUEUED"
+  }
+}

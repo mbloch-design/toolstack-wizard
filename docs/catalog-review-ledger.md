@@ -19,6 +19,12 @@ npm run catalog:review:report
 npm run catalog:review:work-order -- --batch=review-design-tools-critical-001
 ```
 
+Les lots contiennent 25 fiches par défaut. Pour modifier volontairement leur taille et recalculer toutes les affectations sans perdre les statuts de revue :
+
+```bash
+npm run catalog:review:sync -- --batch-size=25 --rebalance
+```
+
 Exemple de progression d'une fiche :
 
 ```bash

@@ -62,6 +62,11 @@ for (const previousEntry of ledger.entries) {
   assert.equal(currentEntry.batch_position, previousEntry.batch_position);
 }
 
+const rebalanced = buildLedger({ tools, previous: ledger, today: "2026-08-30", batchSize: 25, rebalance: true, bundleDir, mediaEvidenceDir });
+assert.equal(rebalanced.batch_size, 25);
+assert.ok(rebalanced.entries.every((entry) => entry.batch_position >= 1 && entry.batch_position <= 25));
+assert.equal(rebalanced.entries.find((entry) => entry.slug === "alpha").status, "PUBLISHED");
+
 assert.throws(
   () => markEntry(changed, { slug: "beta", status: "PUBLISHED", reviewer: "ToolTrim", at: "2026-08-30" }),
   /Transition interdite/,

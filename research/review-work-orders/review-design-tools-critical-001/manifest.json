@@ -72,6 +72,96 @@
       "required_action": "verify_bundle_freshness_then_review_editorial",
       "slug": "eneroth-face-creator",
       "status": "QUEUED"
+    },
+    {
+      "file": "figma-slides.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "figma-slides",
+      "status": "QUEUED"
+    },
+    {
+      "file": "flextools.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "flextools",
+      "status": "QUEUED"
+    },
+    {
+      "file": "fredocorner.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "fredocorner",
+      "status": "QUEUED"
+    },
+    {
+      "file": "joint-push-pull.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "joint-push-pull",
+      "status": "QUEUED"
+    },
+    {
+      "file": "layout-sketchup.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "layout-sketchup",
+      "status": "QUEUED"
+    },
+    {
+      "file": "pikkovia.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "pikkovia",
+      "status": "QUEUED"
+    },
+    {
+      "file": "profile-builder-3.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "profile-builder-3",
+      "status": "QUEUED"
+    },
+    {
+      "file": "skatter.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "skatter",
+      "status": "QUEUED"
+    },
+    {
+      "file": "spline.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "spline",
+      "status": "QUEUED"
+    },
+    {
+      "file": "transmutr.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "transmutr",
+      "status": "QUEUED"
+    },
+    {
+      "file": "logomeai.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "logomeai",
+      "status": "QUEUED"
+    },
+    {
+      "file": "pluraleyes.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "pluraleyes",
+      "status": "QUEUED"
+    },
+    {
+      "file": "trapcode.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "trapcode",
+      "status": "QUEUED"
+    },
+    {
+      "file": "vfx-suite.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "vfx-suite",
+      "status": "QUEUED"
+    },
+    {
+      "file": "adobe-after-effects.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "adobe-after-effects",
+      "status": "QUEUED"
     }
   ]
 }

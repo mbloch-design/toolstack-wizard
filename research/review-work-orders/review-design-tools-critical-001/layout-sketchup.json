@@ -1,0 +1,276 @@
+{
+  "batch": "review-design-tools-critical-001",
+  "current": {
+    "affiliate_url": "https://www.sketchup.com/products/layout",
+    "alternatives": [],
+    "category": "design-tools",
+    "cons": [
+      "Ne s'achète pas seul, dépend d'un abonnement SketchUp.",
+      "Coût total de l'abonnement SketchUp peut être élevé.",
+      "Courbe d'apprentissage si vous n'utilisez pas SketchUp.",
+      "Pas de version autonome gratuite."
+    ],
+    "cons_en": [
+      "Cannot be purchased standalone—depends on SketchUp subscription.",
+      "Overall SketchUp subscription cost can be high.",
+      "Learning curve if you don't use SketchUp.",
+      "No free standalone version."
+    ],
+    "host_app": "sketchup-pro",
+    "id": "layout-sketchup",
+    "long_description": "Mise en page 2D liée aux modèles SketchUp : plans, coupes, cotations et dossiers client.",
+    "long_description_en": "2D documentation linked to SketchUp models: plans, sections, dimensions and client decks.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://images.ctfassets.net/5qimfmsew7zl/398ERwObwTeseKumIduAoy/520d855254ba592359b8a18d1243c8b1/SU-Website-Product-LayOut-S1.jpg"
+    },
+    "name": "LayOut",
+    "pricing": {
+      "free": "Inclus avec SketchUp Pro",
+      "paid": "Inclus dans SketchUp Pro"
+    },
+    "pricing_en": null,
+    "pricing_v5": {
+      "billing_model": "bundle",
+      "billing_options": [
+        {
+          "label_en": "Included with SketchUp Pro",
+          "label_fr": "Inclus avec SketchUp Pro",
+          "needs_verification": false,
+          "price_monthly_eur": 0,
+          "value": "included"
+        },
+        {
+          "label_en": "I don’t know",
+          "label_fr": "Je ne sais pas",
+          "needs_verification": true,
+          "price_monthly_eur": 0,
+          "value": "unknown"
+        }
+      ],
+      "compare_plan_kind": "bundle",
+      "compare_plan_name": "Inclus avec SketchUp Pro",
+      "compare_price_monthly_eur": 0,
+      "official_source_url": "https://www.sketchup.com/products/layout",
+      "source_domain": "sketchup.com",
+      "verification_status": "manual_reference",
+      "verified_on": "2026-05-10"
+    },
+    "pros": [
+      "Intégration native avec SketchUp Pro et Studio.",
+      "Cotations associatives qui se mettent à jour automatiquement.",
+      "Export DWG et PDF pour les workflows professionnels.",
+      "Outils de dessin technique complets et professionnels.",
+      "Modèles et symboles architecturaux prédéfinis."
+    ],
+    "pros_en": [
+      "Native integration with SketchUp Pro and Studio.",
+      "Associative dimensions that automatically update.",
+      "DWG and PDF export for professional workflows.",
+      "Complete professional technical drawing tools.",
+      "Pre-built architectural templates and symbols."
+    ],
+    "short_description": "Mise en page 2D liée aux modèles SketchUp : plans, coupes, cotations et dossiers client.",
+    "short_description_en": "2D documentation linked to SketchUp models: plans, sections, dimensions and client decks.",
+    "slug": "layout-sketchup",
+    "source_url": "https://www.sketchup.com/products/layout",
+    "source_verified_on": "2026-05-10",
+    "use_cases": [
+      "Produire des plans de construction détaillés à partir d'un modèle SketchUp.",
+      "Créer des présentations architecturales professionnelles.",
+      "Générer des feuilles de plans pour échange DWG."
+    ],
+    "use_cases_en": [
+      "Produce detailed construction plans from a SketchUp model.",
+      "Create professional architectural presentations.",
+      "Generate plan sheets for DWG exchange."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous cherchez un outil de mise en page autonome et gratuit.",
+        "Vous ne travaillez pas avec SketchUp.",
+        "Vous avez besoin d'une solution de documentation sans abonnement."
+      ],
+      "keepIf": [
+        "Vous travaillez avec SketchUp Pro ou Studio pour des projets d'architecture.",
+        "Vous avez besoin de convertir des modèles 3D en documents techniques 2D détaillés.",
+        "Vous échangez des fichiers DWG avec d'autres professionnels."
+      ],
+      "threshold": "LayOut s'impose pour les architectes et designers SketchUp qui produisent des documents techniques professionnels ; pour une mise en page légère ou gratuite, d'autres outils conviennent mieux."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You're looking for a standalone, free layout tool.",
+        "You don't use SketchUp.",
+        "You need documentation tools without a subscription."
+      ],
+      "keepIf": [
+        "You work with SketchUp Pro or Studio on architecture projects.",
+        "You need to convert 3D models into detailed 2D technical documents.",
+        "You exchange DWG files with other design professionals."
+      ],
+      "threshold": "LayOut makes sense for SketchUp-based architects and designers producing professional technical documentation; for light or free layout work, other tools fit better."
+    },
+    "website_url": "https://www.sketchup.com/products/layout"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Cannot be purchased standalone—depends on SketchUp subscription.",
+        "Overall SketchUp subscription cost can be high.",
+        "Learning curve if you don't use SketchUp.",
+        "No free standalone version."
+      ],
+      "pros": [
+        "Native integration with SketchUp Pro and Studio.",
+        "Associative dimensions that automatically update.",
+        "DWG and PDF export for professional workflows.",
+        "Complete professional technical drawing tools.",
+        "Pre-built architectural templates and symbols."
+      ],
+      "use_cases": [
+        "Produce detailed construction plans from a SketchUp model.",
+        "Create professional architectural presentations.",
+        "Generate plan sheets for DWG exchange."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You're looking for a standalone, free layout tool.",
+          "You don't use SketchUp.",
+          "You need documentation tools without a subscription."
+        ],
+        "keepIf": [
+          "You work with SketchUp Pro or Studio on architecture projects.",
+          "You need to convert 3D models into detailed 2D technical documents.",
+          "You exchange DWG files with other design professionals."
+        ],
+        "threshold": "LayOut makes sense for SketchUp-based architects and designers producing professional technical documentation; for light or free layout work, other tools fit better."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Essai gratuit 7 jours via l'abonnement SketchUp Pro. Pas de version gratuite permanente.",
+        "exists": false
+      },
+      "key_features": [
+        "Vues multiples d'un modèle 3D sur une même page avec angles et styles différents",
+        "Cotations associatives qui se mettent à jour automatiquement",
+        "Toolkit complet de dessin technique 2D",
+        "Import/export DWG haute fidélité",
+        "Cartouches et symboles architecturaux prédéfinis",
+        "Export PDF, DWG/DXF, JPG"
+      ],
+      "plans": [
+        {
+          "name": "Inclus dans SketchUp Pro",
+          "price": "Abonnement annuel (montants sur la page officielle)"
+        },
+        {
+          "name": "Inclus dans SketchUp Studio",
+          "price": "Abonnement annuel (montants sur la page officielle)"
+        }
+      ],
+      "pricing_model": "Inclus dans les abonnements SketchUp Pro et Studio (pas de vente indépendante). Essai gratuit 7 jours disponible.",
+      "what": "Logiciel de mise en page 2D de SketchUp conçu pour convertir des modèles 3D en documents de construction détaillés et présentations professionnelles avec annotations et cotations associatives.",
+      "what_en": "SketchUp's professional 2D drafting and layout software that converts 3D models into comprehensive construction documentation and presentations with associative dimensions and annotations."
+    },
+    "fr": {
+      "cons": [
+        "Ne s'achète pas seul, dépend d'un abonnement SketchUp.",
+        "Coût total de l'abonnement SketchUp peut être élevé.",
+        "Courbe d'apprentissage si vous n'utilisez pas SketchUp.",
+        "Pas de version autonome gratuite."
+      ],
+      "pros": [
+        "Intégration native avec SketchUp Pro et Studio.",
+        "Cotations associatives qui se mettent à jour automatiquement.",
+        "Export DWG et PDF pour les workflows professionnels.",
+        "Outils de dessin technique complets et professionnels.",
+        "Modèles et symboles architecturaux prédéfinis."
+      ],
+      "relevant_for": [
+        "Architectes",
+        "Designers d'intérieur",
+        "Ingénieurs",
+        "Professionnels SketchUp"
+      ],
+      "use_cases": [
+        "Produire des plans de construction détaillés à partir d'un modèle SketchUp.",
+        "Créer des présentations architecturales professionnelles.",
+        "Générer des feuilles de plans pour échange DWG."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous cherchez un outil de mise en page autonome et gratuit.",
+          "Vous ne travaillez pas avec SketchUp.",
+          "Vous avez besoin d'une solution de documentation sans abonnement."
+        ],
+        "keepIf": [
+          "Vous travaillez avec SketchUp Pro ou Studio pour des projets d'architecture.",
+          "Vous avez besoin de convertir des modèles 3D en documents techniques 2D détaillés.",
+          "Vous échangez des fichiers DWG avec d'autres professionnels."
+        ],
+        "threshold": "LayOut s'impose pour les architectes et designers SketchUp qui produisent des documents techniques professionnels ; pour une mise en page légère ou gratuite, d'autres outils conviennent mieux."
+      }
+    },
+    "slug": "layout-sketchup",
+    "sources": [
+      {
+        "label": "LayOut SketchUp — site officiel",
+        "url": "https://sketchup.trimble.com/products/layout"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-001",
+    "batch_position": 15,
+    "blockers": [],
+    "catalog_hash": "sha256:becf7a88a93d9516dc8b96f5d1339edd3a46f488f1b8dac47e7c73f36e9f9ec8",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:fc8e52dc9410701e75f84876eef088fb9ea74c192a855bc02926ec3df19369d8",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "LayOut",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence",
+      "shallow_editorial"
+    ],
+    "priority_score": 260,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:947a269fbe05491e36cce574b12088af7e536ad82683e91cb45ea4d63342c088",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "layout-sketchup",
+    "source_url": "https://www.sketchup.com/products/layout",
+    "source_verified_on": "2026-05-10",
+    "status": "QUEUED"
+  }
+}

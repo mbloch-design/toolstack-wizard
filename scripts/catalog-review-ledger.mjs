@@ -202,7 +202,7 @@ function assignBatches(entries, size) {
   }
 }
 
-export function buildLedger({ tools, previous = null, today, batchSize = 10, bundleDir = BUNDLE_DIR, mediaEvidenceDir = MEDIA_EVIDENCE_DIR }) {
+export function buildLedger({ tools, previous = null, today, batchSize = 25, rebalance = false, bundleDir = BUNDLE_DIR, mediaEvidenceDir = MEDIA_EVIDENCE_DIR }) {
   if (!Array.isArray(tools)) throw new Error("Le catalogue doit être un tableau JSON.");
   const previousBySlug = new Map((previous?.entries || []).map((entry) => [entry.slug, entry]));
   const seen = new Set();
@@ -266,8 +266,8 @@ export function buildLedger({ tools, previous = null, today, batchSize = 10, bun
       invalidated_from: invalidatedFrom,
       next_review_at: old?.next_review_at || null,
       quality_version: qualityVersion,
-      assigned_batch: old?.assigned_batch || null,
-      batch_position: old?.batch_position || null,
+      assigned_batch: rebalance ? null : old?.assigned_batch || null,
+      batch_position: rebalance ? null : old?.batch_position || null,
     });
   }
 
@@ -441,12 +441,13 @@ function main() {
   const catalogFile = path.resolve(argValue("catalog", DEFAULT_CATALOG));
   const ledgerFile = path.resolve(argValue("ledger", DEFAULT_LEDGER));
   const today = argValue("date", new Date().toISOString().slice(0, 10));
-  const batchSize = Number(argValue("batch-size", "10"));
+  const batchSize = Number(argValue("batch-size", "25"));
+  const rebalance = process.argv.includes("--rebalance");
   const tools = readJson(catalogFile);
 
   if (command === "sync") {
     const previous = readJson(ledgerFile, null);
-    const ledger = buildLedger({ tools, previous, today, batchSize });
+    const ledger = buildLedger({ tools, previous, today, batchSize, rebalance });
     const errors = validateLedger(ledger, tools);
     if (errors.length) throw new Error(`Registre invalide:\n${errors.join("\n")}`);
     writeFileSync(ledgerFile, stableStringify(ledger));

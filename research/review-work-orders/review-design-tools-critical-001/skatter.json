@@ -1,0 +1,263 @@
+{
+  "batch": "review-design-tools-critical-001",
+  "current": {
+    "affiliate_url": "https://getskatter.com",
+    "alternatives": [
+      "sketchup-pro",
+      "lumion"
+    ],
+    "category": "design-tools",
+    "cons": [
+      "Extension payante, investissement pour une utilisation ponctuelle.",
+      "Limité à SketchUp.",
+      "Nécessite un moteur de rendu pour voir le résultat final.",
+      "Curbe d'apprentissage pour les configurations avancées."
+    ],
+    "cons_en": [
+      "Paid extension; investment for occasional use.",
+      "Limited to SketchUp.",
+      "Requires a render engine to see final results.",
+      "Learning curve for advanced configurations."
+    ],
+    "host_app": "sketchup-pro",
+    "id": "skatter",
+    "long_description": "Extension SketchUp pour disperser des objets (végétation, foules, props) sur une surface.",
+    "long_description_en": "SketchUp extension to scatter objects (vegetation, crowds, props) across a surface.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://tooltrim.com/og-screenshots/skatter.jpg"
+    },
+    "name": "Skatter",
+    "pricing": {
+      "free": "Démo 15 jours",
+      "paid": "149€ en licence perpétuelle, ou 99€/an en abonnement (HT)."
+    },
+    "pricing_en": {
+      "free": "15-day demo",
+      "paid": "€149 perpetual license, or €99/year subscription (excl. VAT)."
+    },
+    "pricing_v5": {
+      "cautions": [],
+      "compare_plan_kind": "one_time",
+      "compare_plan_name": "Licence perpétuelle",
+      "compare_price_monthly_eur": 0,
+      "location_sensitive": false,
+      "official_source_url": "https://skatter.software/",
+      "price_reliability": "high",
+      "source_domain": "skatter.software",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-06-20"
+    },
+    "pros": [
+      "Distribution très flexible (aléatoire, grilles, courbes).",
+      "Bibliothèque 3D Bazaar intégrée avec assets de qualité.",
+      "Léger sur le modèle SketchUp grâce au « render only ».",
+      "Essai gratuit complet pendant 15 jours."
+    ],
+    "pros_en": [
+      "Flexible distribution (random, grids, curves).",
+      "Integrated 3D Bazaar library with quality assets.",
+      "Light on the SketchUp model via 'render only' mode.",
+      "Free full-featured trial for 15 days."
+    ],
+    "short_description": "Extension SketchUp pour disperser des objets (végétation, foules, props) sur une surface.",
+    "short_description_en": "SketchUp extension to scatter objects (vegetation, crowds, props) across a surface.",
+    "slug": "skatter",
+    "source_url": "https://skatter.software/",
+    "source_verified_on": "2026-06-20",
+    "use_cases": [
+      "Créer un environnement paysager avec végétation variée.",
+      "Scatter des arbres sur un terrain.",
+      "Remplir une scène urbaine d'objets répétitifs (voitures, mobilier).",
+      "Optimiser la performance de rendu en gardant le modèle léger."
+    ],
+    "use_cases_en": [
+      "Create a landscape environment with varied vegetation.",
+      "Scatter trees across terrain.",
+      "Fill an urban scene with repetitive objects (cars, furniture).",
+      "Optimize render performance by keeping the model lightweight."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous travaillez sur des modèles architecturaux simples sans détail envronnemental.",
+        "Vous cherchez une solution gratuite.",
+        "Vous n'utilisez pas SketchUp."
+      ],
+      "keepIf": [
+        "Vous faites de la visualisation de paysages ou d'environnements urbains.",
+        "Vous voulez scatterer rapidement des arbres, roches ou objets répétitifs.",
+        "Vous utilisez SketchUp avec un moteur de rendu (V-Ray, Thea) et avez besoin de gérer la complexité."
+      ],
+      "threshold": "Skatter s'impose pour les architectes/designers d'extérieur qui font de la visualisation ; pour des projets simples ou un autre logiciel, ce n'est pas indispensable."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You work on simple architectural models without environmental detail.",
+        "You're looking for a free solution.",
+        "You don't use SketchUp."
+      ],
+      "keepIf": [
+        "You visualize landscapes or urban environments.",
+        "You want to quickly scatter trees, rocks, or repetitive objects.",
+        "You use SketchUp with a render engine (V-Ray, Thea) and need complexity management."
+      ],
+      "threshold": "Skatter works for architects/designers doing exterior visualization; for simple projects or another tool, it's not essential."
+    },
+    "website_url": "https://getskatter.com"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Paid extension; investment for occasional use.",
+        "Limited to SketchUp.",
+        "Requires a render engine to see final results.",
+        "Learning curve for advanced configurations."
+      ],
+      "pros": [
+        "Flexible distribution (random, grids, curves).",
+        "Integrated 3D Bazaar library with quality assets.",
+        "Light on the SketchUp model via 'render only' mode.",
+        "Free full-featured trial for 15 days."
+      ],
+      "use_cases": [
+        "Create a landscape environment with varied vegetation.",
+        "Scatter trees across terrain.",
+        "Fill an urban scene with repetitive objects (cars, furniture).",
+        "Optimize render performance by keeping the model lightweight."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You work on simple architectural models without environmental detail.",
+          "You're looking for a free solution.",
+          "You don't use SketchUp."
+        ],
+        "keepIf": [
+          "You visualize landscapes or urban environments.",
+          "You want to quickly scatter trees, rocks, or repetitive objects.",
+          "You use SketchUp with a render engine (V-Ray, Thea) and need complexity management."
+        ],
+        "threshold": "Skatter works for architects/designers doing exterior visualization; for simple projects or another tool, it's not essential."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Essai gratuit fonctionnalités complètes pendant 15 jours. Pas de version gratuite permanente.",
+        "exists": true
+      },
+      "key_features": [
+        "Distribution aléatoire et organisée d'objets 3D",
+        "Intégration 3D Bazaar avec assets render-ready",
+        "Rendu optimisé (« render only ») pour garder le modèle léger",
+        "Compatibilité avec moteurs de rendu (V-Ray, Thea, etc.)",
+        "Support SketchUp 2022, 2023, 2024, 2025"
+      ],
+      "plans": [
+        {
+          "name": "Skatter Fixed (Annual license)",
+          "price": "montants sur la page officielle"
+        }
+      ],
+      "pricing_model": "Licence payante avec essai gratuit 15 jours",
+      "what": "Extension SketchUp de distribution d'objets 3D et de végétation pour la visualisation de paysages, terrains et scènes complexes. Intègre une bibliothèque d'assets render-ready (3D Bazaar) et un rendu optimisé pour conserver la légèreté du modèle SketchUp.",
+      "what_en": "SketchUp extension for scattering 3D objects and vegetation to visualize landscapes, terrain, and complex scenes. Includes a render-ready asset library (3D Bazaar) and optimized rendering to keep SketchUp models lightweight."
+    },
+    "fr": {
+      "cons": [
+        "Extension payante, investissement pour une utilisation ponctuelle.",
+        "Limité à SketchUp.",
+        "Nécessite un moteur de rendu pour voir le résultat final.",
+        "Curbe d'apprentissage pour les configurations avancées."
+      ],
+      "pros": [
+        "Distribution très flexible (aléatoire, grilles, courbes).",
+        "Bibliothèque 3D Bazaar intégrée avec assets de qualité.",
+        "Léger sur le modèle SketchUp grâce au « render only ».",
+        "Essai gratuit complet pendant 15 jours."
+      ],
+      "relevant_for": [
+        "Architectes paysagistes",
+        "Visualisateurs SketchUp",
+        "Designeurs d'environnement urbain"
+      ],
+      "use_cases": [
+        "Créer un environnement paysager avec végétation variée.",
+        "Scatter des arbres sur un terrain.",
+        "Remplir une scène urbaine d'objets répétitifs (voitures, mobilier).",
+        "Optimiser la performance de rendu en gardant le modèle léger."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous travaillez sur des modèles architecturaux simples sans détail envronnemental.",
+          "Vous cherchez une solution gratuite.",
+          "Vous n'utilisez pas SketchUp."
+        ],
+        "keepIf": [
+          "Vous faites de la visualisation de paysages ou d'environnements urbains.",
+          "Vous voulez scatterer rapidement des arbres, roches ou objets répétitifs.",
+          "Vous utilisez SketchUp avec un moteur de rendu (V-Ray, Thea) et avez besoin de gérer la complexité."
+        ],
+        "threshold": "Skatter s'impose pour les architectes/designers d'extérieur qui font de la visualisation ; pour des projets simples ou un autre logiciel, ce n'est pas indispensable."
+      }
+    },
+    "slug": "skatter",
+    "sources": [
+      {
+        "label": "Skatter SketchUp Extension (SketchUp Extension Warehouse)",
+        "url": "https://extensions.sketchup.com/extension/23339f53-a400-40a4-a9c1-2aad7dc0213d/skatter-2"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-001",
+    "batch_position": 18,
+    "blockers": [],
+    "catalog_hash": "sha256:3fcc89cc63403a2cf5316a1cca810ff10bde0d3e1ee5fc907af38569fb286158",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:82e551189674a0c1310afca736cdf9c4cab12bd11d01651148a8aec9b744d190",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Skatter",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence",
+      "shallow_editorial"
+    ],
+    "priority_score": 260,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:cc216d0e90492e25c57cfe802f685abf3cb8e2c752cac3f1d929c242aa00da06",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "skatter",
+    "source_url": "https://skatter.software/",
+    "source_verified_on": "2026-06-20",
+    "status": "QUEUED"
+  }
+}

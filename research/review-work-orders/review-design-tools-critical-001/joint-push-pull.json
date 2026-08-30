@@ -1,0 +1,253 @@
+{
+  "batch": "review-design-tools-critical-001",
+  "current": {
+    "affiliate_url": "https://sketchucation.com/pluginstore",
+    "alternatives": [],
+    "category": "design-tools",
+    "cons": [
+      "Courbe d'apprentissage pour découvrir tous les modes.",
+      "Nécessite SketchUp 2017+.",
+      "Support communautaire seulement (pas de support officiel payant)."
+    ],
+    "cons_en": [
+      "Learning curve to discover all modes.",
+      "Requires SketchUp 2017+.",
+      "Community support only (no paid official support)."
+    ],
+    "host_app": null,
+    "id": "joint-push-pull",
+    "long_description": "Plugin SketchUp pour extruder des surfaces complexes et créer des épaisseurs propres.",
+    "long_description_en": "SketchUp plugin to extrude complex surfaces and create clean thicknesses.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://tooltrim.com/og-screenshots/joint-push-pull.jpg"
+    },
+    "name": "Joint Push Pull",
+    "pricing": {
+      "free": "Selon licence SketchUcation",
+      "paid": "Donation/licence selon bundle"
+    },
+    "pricing_en": null,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "official_source_url": "https://sketchucation.com/pluginstore",
+      "source_domain": "sketchucation.com",
+      "verification_status": "manual_reference",
+      "verified_on": "2026-05-10"
+    },
+    "pros": [
+      "Entièrement gratuit et open source.",
+      "Beaucoup plus puissant que l'outil natif Push/Pull.",
+      "Interface intuitive et directe.",
+      "1.44 million de téléchargements (très populaire).",
+      "Mis à jour régulièrement."
+    ],
+    "pros_en": [
+      "Completely free and open source.",
+      "Much more powerful than native Push/Pull.",
+      "Intuitive and direct interface.",
+      "1.44 million downloads (very popular).",
+      "Regularly updated."
+    ],
+    "short_description": "Plugin SketchUp pour extruder des surfaces complexes et créer des épaisseurs propres.",
+    "short_description_en": "SketchUp plugin to extrude complex surfaces and create clean thicknesses.",
+    "slug": "joint-push-pull",
+    "source_url": "https://sketchucation.com/pluginstore",
+    "source_verified_on": "2026-05-10",
+    "use_cases": [
+      "Extruer des faces avec un contrôle fin.",
+      "Modeliser des architectures avec des joints complexes.",
+      "Créer des géométries 3D complexes à partir de faces planaires.",
+      "Manipuler rapidement des formes sans utiliser les outils booléens."
+    ],
+    "use_cases_en": [
+      "Extrude faces with fine control.",
+      "Model architectures with complex joints.",
+      "Create complex 3D geometries from planar faces.",
+      "Quickly manipulate shapes without using boolean tools."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "L'outil natif Push/Pull de SketchUp vous suffit.",
+        "Vous ne modélisez très rarement avec SketchUp.",
+        "Vous avez SketchUp 2016 ou antérieur."
+      ],
+      "keepIf": [
+        "Vous modélisez en SketchUp régulièrement.",
+        "Vous avez besoin d'extrusions plus contrôlées que Push/Pull.",
+        "Vous extrudez des faces complexes avec des arêtes multiples."
+      ],
+      "threshold": "Joint Push Pull s'impose pour tout modélisateur SketchUp sérieux ; c'est un plugin indispensable, gratuit et mature."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "SketchUp's native Push/Pull tool is enough for you.",
+        "You rarely model with SketchUp.",
+        "You have SketchUp 2016 or older."
+      ],
+      "keepIf": [
+        "You model in SketchUp regularly.",
+        "You need more controlled extrusions than Push/Pull.",
+        "You extrude complex faces with multiple edges."
+      ],
+      "threshold": "Joint Push Pull is essential for any serious SketchUp modeler; it's an indispensable, free, and mature plugin."
+    },
+    "website_url": "https://sketchucation.com/pluginstore"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Learning curve to discover all modes.",
+        "Requires SketchUp 2017+.",
+        "Community support only (no paid official support)."
+      ],
+      "pros": [
+        "Completely free and open source.",
+        "Much more powerful than native Push/Pull.",
+        "Intuitive and direct interface.",
+        "1.44 million downloads (very popular).",
+        "Regularly updated."
+      ],
+      "use_cases": [
+        "Extrude faces with fine control.",
+        "Model architectures with complex joints.",
+        "Create complex 3D geometries from planar faces.",
+        "Quickly manipulate shapes without using boolean tools."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "SketchUp's native Push/Pull tool is enough for you.",
+          "You rarely model with SketchUp.",
+          "You have SketchUp 2016 or older."
+        ],
+        "keepIf": [
+          "You model in SketchUp regularly.",
+          "You need more controlled extrusions than Push/Pull.",
+          "You extrude complex faces with multiple edges."
+        ],
+        "threshold": "Joint Push Pull is essential for any serious SketchUp modeler; it's an indispensable, free, and mature plugin."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Entièrement gratuit. Aucune version payante.",
+        "exists": true
+      },
+      "key_features": [
+        "Extrusion de faces bidirectionnelle",
+        "Plusieurs modes d'extrusion (joints, arêtes, etc.)",
+        "Contrôle fin de la direction et des angles",
+        "Manipulation interactive directement dans le viewport",
+        "Bien plus performant que l'outil Push/Pull natif",
+        "Compatibilité SketchUp 2017+",
+        "Open source"
+      ],
+      "plans": [
+        {
+          "name": "Joint Push Pull",
+          "price": "Gratuit"
+        }
+      ],
+      "pricing_model": "Gratuit (open source).",
+      "what": "Plugin gratuit SketchUp pour l'extrusion de faces avec plusieurs méthodes. Joint Push Pull permet de pousser et tirer des faces avec un contrôle fin de la direction et des angles, bien plus performant que l'outil native Push/Pull de SketchUp.",
+      "what_en": "Free SketchUp plugin for extruding faces with multiple methods. Joint Push Pull pushes and pulls faces with fine control over direction and angles, much more powerful than SketchUp's native Push/Pull tool."
+    },
+    "fr": {
+      "cons": [
+        "Courbe d'apprentissage pour découvrir tous les modes.",
+        "Nécessite SketchUp 2017+.",
+        "Support communautaire seulement (pas de support officiel payant)."
+      ],
+      "pros": [
+        "Entièrement gratuit et open source.",
+        "Beaucoup plus puissant que l'outil natif Push/Pull.",
+        "Interface intuitive et directe.",
+        "1.44 million de téléchargements (très populaire).",
+        "Mis à jour régulièrement."
+      ],
+      "relevant_for": [
+        "Modélisateurs SketchUp",
+        "Architectes",
+        "Designers 3D"
+      ],
+      "use_cases": [
+        "Extruer des faces avec un contrôle fin.",
+        "Modeliser des architectures avec des joints complexes.",
+        "Créer des géométries 3D complexes à partir de faces planaires.",
+        "Manipuler rapidement des formes sans utiliser les outils booléens."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "L'outil natif Push/Pull de SketchUp vous suffit.",
+          "Vous ne modélisez très rarement avec SketchUp.",
+          "Vous avez SketchUp 2016 ou antérieur."
+        ],
+        "keepIf": [
+          "Vous modélisez en SketchUp régulièrement.",
+          "Vous avez besoin d'extrusions plus contrôlées que Push/Pull.",
+          "Vous extrudez des faces complexes avec des arêtes multiples."
+        ],
+        "threshold": "Joint Push Pull s'impose pour tout modélisateur SketchUp sérieux ; c'est un plugin indispensable, gratuit et mature."
+      }
+    },
+    "slug": "joint-push-pull",
+    "sources": [
+      {
+        "label": "SketchUcation PluginStore — Joint Push Pull (site officiel)",
+        "url": "https://sketchucation.com/plugin/715-jointpushpull"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-001",
+    "batch_position": 14,
+    "blockers": [],
+    "catalog_hash": "sha256:fca6ea136202502f34cc9c6bbf536f86eaecd83aba0ae9abd7642164cd9c6d53",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:97265f92b8c6318b4e027aaf5656d5f278c7b9a6607633eb594de28b4aaf259b",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Joint Push Pull",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence",
+      "shallow_editorial"
+    ],
+    "priority_score": 260,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:8c5fea2d71fd94b3c055110c7a4bce79915d99a4c96970fe7e1dc88b143fef78",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "joint-push-pull",
+    "source_url": "https://sketchucation.com/pluginstore",
+    "source_verified_on": "2026-05-10",
+    "status": "QUEUED"
+  }
+}

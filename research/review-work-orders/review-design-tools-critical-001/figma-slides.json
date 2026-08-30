@@ -1,0 +1,258 @@
+{
+  "batch": "review-design-tools-critical-001",
+  "current": {
+    "affiliate_url": "https://www.figma.com/slides/",
+    "alternatives": [],
+    "category": "design-tools",
+    "cons": [
+      "Moins d'options d'animation que les outils dédiés.",
+      "Nécessite d'être dans Figma (pas d'export natif).",
+      "Moins mature que Keynote ou PowerPoint."
+    ],
+    "cons_en": [
+      "Fewer animation options than dedicated tools.",
+      "Requires being in Figma (no native export).",
+      "Less mature than Keynote or PowerPoint."
+    ],
+    "host_app": null,
+    "id": "figma-slides",
+    "long_description": "Présentations visuelles rapides dans l’écosystème Figma pour concepts, avant-projets et revues client.",
+    "long_description_en": "Fast visual presentations in the Figma ecosystem for concepts, early design and client reviews.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://cdn.sanity.io/images/599r6htc/regionalized/24896c37d587a0b8843b1640345f051d77a36ce4-2400x1260.png?w=1200&amp;q=70&amp;fit=max&amp;auto=format"
+    },
+    "name": "Figma Slides",
+    "pricing": {
+      "free": "Inclus selon plan Figma",
+      "paid": "Selon plan Figma"
+    },
+    "pricing_en": null,
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "official_source_url": "https://www.figma.com/slides/",
+      "source_domain": "figma.com",
+      "verification_status": "manual_reference",
+      "verified_on": "2026-05-10"
+    },
+    "pros": [
+      "Inclus gratuit avec Figma Free et tous les plans.",
+      "Accès complet à Auto Layout, composants et design systems.",
+      "Présentation live directe depuis Figma.",
+      "Collaboration en temps réel avec audio et chat.",
+      "Import et édition PowerPoint."
+    ],
+    "pros_en": [
+      "Included free with Figma Free and all plans.",
+      "Full access to Auto Layout, components, and design systems.",
+      "Live presentation directly from Figma.",
+      "Real-time collaboration with audio and chat.",
+      "PowerPoint import and editing."
+    ],
+    "short_description": "Présentations visuelles rapides dans l’écosystème Figma pour concepts, avant-projets et revues client.",
+    "short_description_en": "Fast visual presentations in the Figma ecosystem for concepts, early design and client reviews.",
+    "slug": "figma-slides",
+    "source_url": "https://www.figma.com/slides/",
+    "source_verified_on": "2026-05-10",
+    "use_cases": [
+      "Présenter des designs et décisions de UX directement.",
+      "Créer des pitch decks alignés avec votre design system.",
+      "Collaborer sur des présentations avec des designers.",
+      "Conduire des user testings intégrés avec prototypes."
+    ],
+    "use_cases_en": [
+      "Present UX designs and decisions directly.",
+      "Create pitch decks aligned with your design system.",
+      "Collaborate on presentations with designers.",
+      "Conduct user testing with embedded prototypes."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous avez besoin de transitions et animations très complexes.",
+        "Vous préférez un outil de présentation spécialisé type Keynote/PowerPoint.",
+        "Vous ne travaillez pas dans Figma."
+      ],
+      "keepIf": [
+        "Vous êtes sur Figma et avez besoin de présenter vos designs.",
+        "Vous voulez garder designs et présentations au même endroit.",
+        "Vous collaborez et présentez en live avec votre équipe."
+      ],
+      "threshold": "Figma Slides s'impose si vous êtes dans Figma et présentez directement depuis vos designs. Pour des besoins avancés, préférez une solution dédiée."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You need complex transitions and animations.",
+        "You prefer a dedicated presentation tool like Keynote/PowerPoint.",
+        "You don't work in Figma."
+      ],
+      "keepIf": [
+        "You're on Figma and need to present your designs.",
+        "You want to keep designs and presentations in the same place.",
+        "You collaborate and present live with your team."
+      ],
+      "threshold": "Figma Slides wins if you're in Figma and presenting directly from designs. For advanced needs, use a dedicated solution."
+    },
+    "website_url": "https://www.figma.com/slides/"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Fewer animation options than dedicated tools.",
+        "Requires being in Figma (no native export).",
+        "Less mature than Keynote or PowerPoint."
+      ],
+      "pros": [
+        "Included free with Figma Free and all plans.",
+        "Full access to Auto Layout, components, and design systems.",
+        "Live presentation directly from Figma.",
+        "Real-time collaboration with audio and chat.",
+        "PowerPoint import and editing."
+      ],
+      "use_cases": [
+        "Present UX designs and decisions directly.",
+        "Create pitch decks aligned with your design system.",
+        "Collaborate on presentations with designers.",
+        "Conduct user testing with embedded prototypes."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You need complex transitions and animations.",
+          "You prefer a dedicated presentation tool like Keynote/PowerPoint.",
+          "You don't work in Figma."
+        ],
+        "keepIf": [
+          "You're on Figma and need to present your designs.",
+          "You want to keep designs and presentations in the same place.",
+          "You collaborate and present live with your team."
+        ],
+        "threshold": "Figma Slides wins if you're in Figma and presenting directly from designs. For advanced needs, use a dedicated solution."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Figma Slides gratuit avec le plan Figma Free ; accès complet à la création et édition.",
+        "exists": true
+      },
+      "key_features": [
+        "Création de slides avec outils Figma complets (Auto Layout, composants)",
+        "Collaboration temps réel avec chat et audio",
+        "Prototypes interactifs et objets live",
+        "Modèles de présentation communautaires",
+        "Import PowerPoint (.pptx)",
+        "IA pour générer notes de présentateur",
+        "Fonctions polling et vote intégré",
+        "Éditeur vidéo (overlay, opacité, arrondi)"
+      ],
+      "plans": [
+        {
+          "name": "Figma Slides (avec Figma Free)",
+          "price": "Gratuit"
+        },
+        {
+          "name": "Figma Slides (avec Figma Pro+)",
+          "price": "Inclus (15 € / mois Figma Pro minimum)"
+        }
+      ],
+      "pricing_model": "Inclus dans tous les plans Figma (gratuit pour Figma Free, inclus dans Pro/Org/Enterprise).",
+      "what": "Outil de présentation natif Figma pour créer des slides avec tous les outils de design Figma (Auto Layout, composants, design systems). Inclus gratuitement dans tous les plans Figma.",
+      "what_en": "Native Figma presentation tool to create slides with full Figma design capabilities (Auto Layout, components, design systems). Included free with all Figma plans."
+    },
+    "fr": {
+      "cons": [
+        "Moins d'options d'animation que les outils dédiés.",
+        "Nécessite d'être dans Figma (pas d'export natif).",
+        "Moins mature que Keynote ou PowerPoint."
+      ],
+      "pros": [
+        "Inclus gratuit avec Figma Free et tous les plans.",
+        "Accès complet à Auto Layout, composants et design systems.",
+        "Présentation live directe depuis Figma.",
+        "Collaboration en temps réel avec audio et chat.",
+        "Import et édition PowerPoint."
+      ],
+      "relevant_for": [
+        "Design teams",
+        "Product teams",
+        "Presenters"
+      ],
+      "use_cases": [
+        "Présenter des designs et décisions de UX directement.",
+        "Créer des pitch decks alignés avec votre design system.",
+        "Collaborer sur des présentations avec des designers.",
+        "Conduire des user testings intégrés avec prototypes."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous avez besoin de transitions et animations très complexes.",
+          "Vous préférez un outil de présentation spécialisé type Keynote/PowerPoint.",
+          "Vous ne travaillez pas dans Figma."
+        ],
+        "keepIf": [
+          "Vous êtes sur Figma et avez besoin de présenter vos designs.",
+          "Vous voulez garder designs et présentations au même endroit.",
+          "Vous collaborez et présentez en live avec votre équipe."
+        ],
+        "threshold": "Figma Slides s'impose si vous êtes dans Figma et présentez directement depuis vos designs. Pour des besoins avancés, préférez une solution dédiée."
+      }
+    },
+    "slug": "figma-slides",
+    "sources": [
+      {
+        "label": "Figma Slides (site officiel)",
+        "url": "https://www.figma.com/slides/"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-001",
+    "batch_position": 11,
+    "blockers": [],
+    "catalog_hash": "sha256:1f006689dda3991a15cef5f38943d7054ed530fc9563d10675ea8e137a052fa7",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:38c833458a94e7e8a52dc11490ed9381a9ab49e8f5a7414b090010faad496a27",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Figma Slides",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence",
+      "shallow_editorial"
+    ],
+    "priority_score": 260,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:eaf7fac1b229742b2de11f49850187fc1030595b271aae22fc5a98e404ff7d77",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "figma-slides",
+    "source_url": "https://www.figma.com/slides/",
+    "source_verified_on": "2026-05-10",
+    "status": "QUEUED"
+  }
+}
