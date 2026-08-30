@@ -1,18 +1,19 @@
 {
   "slug": "flextools",
-  "author": "ToolTrim — Mike",
-  "verified_on": "2026-07-24",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-08-30",
   "sources": [
-    { "label": "FlexTools (site officiel)", "url": "https://flextools.cc" }
+    { "label": "FlexTools (site officiel)", "url": "https://flextools.cc/" },
+    { "label": "FAQ FlexTools (site officiel)", "url": "https://flextools.cc/faq/" }
   ],
   "facts": {
     "what": "Extension SketchUp pour architectes et designers. Crée des éléments architecturaux (portes, fenêtres, escaliers) paramétriques et réactifs. Inclut WallCutter pour découper automatiquement les ouvertures dans les murs superposés.",
     "what_en": "SketchUp extension for architects and designers. Creates parametric, responsive architectural elements (doors, windows, stairs). Includes WallCutter for automatic opening creation in layered walls.",
-    "pricing_model": "Licence annuelle par ordinateur (jusqu'à 2 machines). Tarif académique réduit disponible.",
-    "free_tier": { "exists": true, "detail": "Essai gratuit 30 jours avec garantie de remboursement. Aucun crédit bancaire requis." },
+    "pricing_model": "Abonnement annuel pour deux ordinateurs, avec renouvellement automatique et tarif académique.",
+    "free_tier": { "exists": false, "detail": "Aucun essai, démo ou plan gratuit. Garantie de remboursement de 30 jours après achat." },
     "plans": [
-      { "name": "FlexTools Pro", "price": "99 € / an (tous les composants, support, mises à jour)" },
-      { "name": "Academic License", "price": "19 € / an (pour étudiants vérifiés)" }
+      { "name": "FlexTools Pro", "price": "99 €/an hors taxes" },
+      { "name": "FlexTools Pro Academic", "price": "19 €/an hors taxes" }
     ],
     "key_features": [
       "Composants architecturaux paramétriques (portes, fenêtres, escaliers)",
@@ -34,10 +35,10 @@
       ],
       "avoidIf": [
         "Vous n'utilisez pas SketchUp.",
-        "Vous travaillez principalement en 2D ou wireframes.",
+      "Vous travaillez principalement en dehors de SketchUp desktop.",
         "Vous utilisez un autre logiciel 3D (Revit, ArchiCAD)."
       ],
-      "threshold": "FlexTools s'impose pour les architectes SketchUp qui créent des projets architecturaux répétitifs. Pour un usage ponctuel, l'essai suffit."
+      "threshold": "Ajoutez FlexTools à SketchUp si les composants paramétriques et les ouvertures automatiques remplacent une part récurrente de votre modélisation manuelle."
     },
     "pros": [
       "Composants paramétriques réactifs (maintiennent proportions).",
@@ -45,7 +46,7 @@
       "Abonnement annuel abordable.",
       "Licence académique fortement réduite.",
       "Support et mises à jour incluses.",
-      "Essai gratuit 30 jours sans risque."
+      "La garantie de remboursement permet de vérifier le flux de travail après achat."
     ],
     "cons": [
       "Limité à SketchUp (pas d'autres logiciels 3D).",
@@ -69,10 +70,10 @@
       ],
       "avoidIf": [
         "You don't use SketchUp.",
-        "You work primarily in 2D or wireframes.",
+      "You work primarily outside SketchUp desktop.",
         "You use another 3D software (Revit, ArchiCAD)."
       ],
-      "threshold": "FlexTools makes sense for SketchUp architects working on repetitive projects. For occasional use, the free trial suffices."
+      "threshold": "Add FlexTools to SketchUp when parametric components and automatic openings replace a recurring share of manual modeling."
     },
     "pros": [
       "Responsive parametric components (maintain proportions).",
@@ -80,7 +81,7 @@
       "Affordable annual subscription.",
       "Steep academic discount available.",
       "Support and updates included.",
-      "Risk-free 30-day trial."
+      "The refund policy provides a post-purchase evaluation window."
     ],
     "cons": [
       "Limited to SketchUp (not other 3D software).",

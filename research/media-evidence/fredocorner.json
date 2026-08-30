@@ -1,0 +1,11 @@
+{
+  "slug": "fredocorner",
+  "verified_on": "2026-08-30",
+  "mode": "sourced",
+  "discovery": { "official_media_found": true, "official_pages_checked": ["https://sketchucation.com/plugin/2120-"] },
+  "items": [
+    { "kind": "image", "url": "https://pluginrepo.sketchucation.com/image/FredoCorner/FredoCorner___Summary_Tool.png", "source_page_url": "https://sketchucation.com/plugin/2120-", "official": true },
+    { "kind": "image", "url": "https://pluginrepo.sketchucation.com/image/FredoCorner/FredoCorner___Toolbar___13.png", "source_page_url": "https://sketchucation.com/plugin/2120-", "official": true },
+    { "kind": "image", "url": "https://pluginrepo.sketchucation.com/image/FredoCorner/FredoCorner_Footprint_small.png", "source_page_url": "https://sketchucation.com/plugin/2120-", "official": true }
+  ]
+}

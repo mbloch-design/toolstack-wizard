@@ -5,205 +5,239 @@
     "alternatives": [],
     "category": "design-tools",
     "cons": [
-      "Pas de version d'essai gratuite généreuse.",
-      "Limité à SketchUp (ne fonctionne pas standalone).",
-      "Nécessite une courbe d'apprentissage pour les utilisateurs novices.",
-      "Pricing exact non transparent sur la homepage."
+      "Tarifs actuels non lisibles dans les sources officielles accessibles.",
+      "Certaines fonctions avancées dépendent du niveau de licence.",
+      "La compatibilité exacte doit être vérifiée avec chaque version de SketchUp et moteur de rendu."
     ],
     "cons_en": [
-      "No generous free trial available.",
-      "Limited to SketchUp (cannot work standalone).",
-      "Requires learning curve for novice users.",
-      "Exact pricing not transparent on homepage."
+      "Current prices are not readable in accessible official sources.",
+      "Some advanced capabilities depend on the license tier.",
+      "Exact compatibility must be checked against each SketchUp and render-engine version."
     ],
     "host_app": null,
     "id": "transmutr",
-    "long_description": "Conversion et optimisation de modèles 3D pour importer des assets lourds dans SketchUp sans casser le fichier.",
-    "long_description_en": "3D model conversion and optimization to import heavy assets into SketchUp cleanly.",
+    "long_description": "Transmutr est une application de conversion et d'optimisation d'assets 3D pour SketchUp, accompagnée d'une intégration à SketchUp. Elle importe des formats externes, simplifie la géométrie, prépare les matériaux et génère des proxies; ce n'est pas seulement un plugin exécuté dans SketchUp.\n\nFonctions clés : Import de formats 3DS, DAE, FBX, OBJ, STL et SKP dans la version documentée ; Simplification de maillages avec conservation des coordonnées de texture ; Conversion et réglage de matériaux prêts pour le rendu ; Proxies pour V-Ray, Thea et Enscape ; Réglage de l'échelle, des unités, des axes et de l'origine ; CLI, automatisations et traitement par lots selon la licence.\n\nAjoutez Transmutr au flux SketchUp lorsque l'optimisation répétée des assets coûte plus de temps que la conversion elle-même; pour quelques imports simples, les outils natifs peuvent suffire.",
+    "long_description_en": "Transmutr is a 3D asset conversion and optimization application for SketchUp with a SketchUp integration. It imports external formats, simplifies geometry, prepares materials, and generates proxies; it is not merely a plugin running inside SketchUp.\n\nKey strengths: Combines conversion, simplification, and material preparation.; Can keep SketchUp lighter through proxies.; Handles unit, axis, and origin transformations before export.; Automation features suit large asset libraries..\n\nAdd Transmutr to a SketchUp workflow when repeated asset optimization costs more time than conversion itself; native tools may be enough for a few simple imports.",
     "media": {
-      "gallery_images": [],
-      "og_image_url": "https://tooltrim.com/og-screenshots/transmutr.jpg"
+      "gallery_images": [
+        "https://i.ytimg.com/vi/LfPZUzJyoME/maxresdefault.jpg"
+      ],
+      "og_image_url": "https://i.ytimg.com/vi/I73SLyJQG60/maxresdefault.jpg"
     },
     "name": "Transmutr",
     "pricing": {
-      "free": "Essai disponible",
-      "paid": "Licence payante"
+      "free": "Pas de version gratuite permanente; essai officiel de 7 jours documenté.",
+      "paid": "Artist: Montant actuel non vérifiable sur la page officielle accessible ; Studio: Montant actuel non vérifiable sur la page officielle accessible"
     },
-    "pricing_en": null,
+    "pricing_en": {
+      "free": "Pas de version gratuite permanente; essai officiel de 7 jours documenté.",
+      "paid": "Artist: Montant actuel non vérifiable sur la page officielle accessible ; Studio: Montant actuel non vérifiable sur la page officielle accessible"
+    },
     "pricing_v5": {
       "compare_price_monthly_eur": 10,
-      "official_source_url": "https://transmutr.com",
-      "source_domain": "transmutr.com",
-      "verification_status": "manual_reference",
-      "verified_on": "2026-05-10"
+      "official_source_url": "https://lindale.io/transmutr/",
+      "source_domain": "lindale.io",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-08-30"
     },
     "pros": [
-      "Conversion bidirectionnelle d'actifs 3D directement dans SketchUp.",
-      "Maintenance active (version 2.0 récente, support des versions SketchUp actuelles).",
-      "Intégration transparente au workflow SketchUp.",
-      "Support des normes 3D modernes (V-Ray 7)."
+      "Réunit conversion, simplification et préparation des matériaux.",
+      "Permet de garder SketchUp plus léger grâce aux proxies.",
+      "Gère les transformations d'unités, d'axes et d'origine avant export.",
+      "Fonctions d'automatisation adaptées aux grandes bibliothèques."
     ],
     "pros_en": [
-      "Bidirectional 3D asset conversion directly in SketchUp.",
-      "Active maintenance (recent v2.0, current SketchUp support).",
-      "Seamless SketchUp workflow integration.",
-      "Support for modern 3D standards (V-Ray 7)."
+      "Combines conversion, simplification, and material preparation.",
+      "Can keep SketchUp lighter through proxies.",
+      "Handles unit, axis, and origin transformations before export.",
+      "Automation features suit large asset libraries."
     ],
-    "short_description": "Conversion et optimisation de modèles 3D pour importer des assets lourds dans SketchUp sans casser le fichier.",
-    "short_description_en": "3D model conversion and optimization to import heavy assets into SketchUp cleanly.",
+    "short_description": "Transmutr est une application de conversion et d'optimisation d'assets 3D pour SketchUp, accompagnée d'une intégration à SketchUp. Elle importe des formats externes, simplifie la géométrie, prépare les matériaux et génère des proxies; ce n'est pas seulement un plugin exécuté dans SketchUp.",
+    "short_description_en": "Transmutr is a 3D asset conversion and optimization application for SketchUp with a SketchUp integration. It imports external formats, simplifies geometry, prepares materials, and generates proxies; it is not merely a plugin running inside SketchUp.",
     "slug": "transmutr",
-    "source_url": "https://transmutr.com",
-    "source_verified_on": "2026-05-10",
+    "source_url": "https://lindale.io/transmutr/",
+    "source_verified_on": "2026-08-30",
     "use_cases": [
-      "Importer des modèles 3D externes (Blender, 3ds Max) dans SketchUp.",
-      "Exporter et convertir des projets SketchUp pour d'autres engines 3D.",
-      "Modifier les matériaux et textures d'actifs importés.",
-      "Préparer des modèles SketchUp pour le rendu haute fidélité."
+      "Convertir un asset FBX complexe en composant SketchUp optimisé.",
+      "Créer des proxies pour une bibliothèque de végétation.",
+      "Appliquer les mêmes règles de matériaux à une série de modèles."
     ],
     "use_cases_en": [
-      "Import external 3D models (Blender, 3ds Max) into SketchUp.",
-      "Export and convert SketchUp projects for other 3D engines.",
-      "Modify materials and textures on imported assets.",
-      "Prepare SketchUp models for high-fidelity rendering."
+      "Convert a complex FBX asset into an optimized SketchUp component.",
+      "Create proxies for a vegetation library.",
+      "Apply the same material rules to a batch of models."
     ],
     "verdict": {
       "avoidIf": [
-        "SketchUp n'est pas votre outil principal.",
-        "Vous cherchez un outil standalone de conversion 3D.",
-        "Vous n'avez pas besoin de transformation avancée d'actifs."
+        "Vous n'utilisez pas SketchUp comme destination principale.",
+        "Vos imports natifs sont rares et déjà assez légers.",
+        "Vous devez valider un budget précis avant que le checkout officiel soit vérifiable."
       ],
       "keepIf": [
-        "Vous travaillez régulièrement avec des modèles 3D dans SketchUp.",
-        "Vous avez besoin de convertir ou transformer des actifs extérieurs.",
-        "Vous intégrez SketchUp avec d'autres outils 3D (Blender, 3ds Max, etc.)."
+        "Vous préparez régulièrement des assets externes pour les utiliser dans SketchUp.",
+        "Vous devez réduire des maillages lourds sans refaire manuellement les matériaux.",
+        "Vous produisez des proxies ou automatisez la conversion de bibliothèques."
       ],
-      "threshold": "Transmutr s'impose pour les workflows SketchUp intensifs ; pour une utilisation ponctuelle, les exportateurs natifs suffisent."
+      "threshold": "Ajoutez Transmutr au flux SketchUp lorsque l'optimisation répétée des assets coûte plus de temps que la conversion elle-même; pour quelques imports simples, les outils natifs peuvent suffire."
     },
     "verdict_en": {
       "avoidIf": [
-        "SketchUp is not your primary tool.",
-        "You need a standalone 3D conversion tool.",
-        "You don't require advanced asset transformation."
+        "You do not use SketchUp as the main destination.",
+        "Your native imports are rare and already lightweight.",
+        "You need a confirmed budget before the official checkout can be verified."
       ],
       "keepIf": [
-        "You work regularly with 3D models in SketchUp.",
-        "You need to convert or transform external 3D assets.",
-        "You integrate SketchUp with other 3D tools (Blender, 3ds Max, etc.)."
+        "You regularly prepare external assets for use in SketchUp.",
+        "You need to reduce heavy meshes without manually rebuilding materials.",
+        "You create proxies or automate library conversion."
       ],
-      "threshold": "Transmutr is essential for intensive SketchUp workflows; for occasional use, native exporters suffice."
+      "threshold": "Add Transmutr to a SketchUp workflow when repeated asset optimization costs more time than conversion itself; native tools may be enough for a few simple imports."
     },
     "website_url": "https://transmutr.com"
   },
   "fact_bundle": {
-    "author": "ToolTrim — Mike",
+    "author": "ToolTrim - Mike",
     "en": {
       "cons": [
-        "No generous free trial available.",
-        "Limited to SketchUp (cannot work standalone).",
-        "Requires learning curve for novice users.",
-        "Exact pricing not transparent on homepage."
+        "Current prices are not readable in accessible official sources.",
+        "Some advanced capabilities depend on the license tier.",
+        "Exact compatibility must be checked against each SketchUp and render-engine version."
       ],
       "pros": [
-        "Bidirectional 3D asset conversion directly in SketchUp.",
-        "Active maintenance (recent v2.0, current SketchUp support).",
-        "Seamless SketchUp workflow integration.",
-        "Support for modern 3D standards (V-Ray 7)."
+        "Combines conversion, simplification, and material preparation.",
+        "Can keep SketchUp lighter through proxies.",
+        "Handles unit, axis, and origin transformations before export.",
+        "Automation features suit large asset libraries."
       ],
       "use_cases": [
-        "Import external 3D models (Blender, 3ds Max) into SketchUp.",
-        "Export and convert SketchUp projects for other 3D engines.",
-        "Modify materials and textures on imported assets.",
-        "Prepare SketchUp models for high-fidelity rendering."
+        "Convert a complex FBX asset into an optimized SketchUp component.",
+        "Create proxies for a vegetation library.",
+        "Apply the same material rules to a batch of models."
       ],
       "verdict": {
         "avoidIf": [
-          "SketchUp is not your primary tool.",
-          "You need a standalone 3D conversion tool.",
-          "You don't require advanced asset transformation."
+          "You do not use SketchUp as the main destination.",
+          "Your native imports are rare and already lightweight.",
+          "You need a confirmed budget before the official checkout can be verified."
         ],
         "keepIf": [
-          "You work regularly with 3D models in SketchUp.",
-          "You need to convert or transform external 3D assets.",
-          "You integrate SketchUp with other 3D tools (Blender, 3ds Max, etc.)."
+          "You regularly prepare external assets for use in SketchUp.",
+          "You need to reduce heavy meshes without manually rebuilding materials.",
+          "You create proxies or automate library conversion."
         ],
-        "threshold": "Transmutr is essential for intensive SketchUp workflows; for occasional use, native exporters suffice."
+        "threshold": "Add Transmutr to a SketchUp workflow when repeated asset optimization costs more time than conversion itself; native tools may be enough for a few simple imports."
       }
     },
     "facts": {
       "free_tier": {
-        "detail": "Pas de version gratuite. Achat de licence ou abonnement requis via les canaux officiels.",
+        "detail": "Pas de version gratuite permanente; essai officiel de 7 jours documenté.",
         "exists": false
       },
       "key_features": [
-        "Conversion d'actifs 3D depuis/vers SketchUp",
-        "Modification de géométrie, matériaux et textures",
-        "Support SketchUp 2025 et V-Ray 7",
-        "Intégration native à l'écosystème SketchUp",
-        "Développement actif avec mises à jour régulières"
+        "Import de formats 3DS, DAE, FBX, OBJ, STL et SKP dans la version documentée",
+        "Simplification de maillages avec conservation des coordonnées de texture",
+        "Conversion et réglage de matériaux prêts pour le rendu",
+        "Proxies pour V-Ray, Thea et Enscape",
+        "Réglage de l'échelle, des unités, des axes et de l'origine",
+        "CLI, automatisations et traitement par lots selon la licence"
       ],
       "plans": [
         {
-          "name": "Transmutr 2",
-          "price": "Montants sur la page officielle"
+          "name": "Artist",
+          "price": "Montant actuel non vérifiable sur la page officielle accessible"
+        },
+        {
+          "name": "Studio",
+          "price": "Montant actuel non vérifiable sur la page officielle accessible"
         }
       ],
-      "pricing_model": "Licence d'achat unique ou abonnement. Montants disponibles sur la page officielle et les distributeurs.",
-      "what": "Plugin SketchUp pour la conversion et transformation d'actifs 3D. Permet de modifier la géométrie, les matériaux et les textures des modèles importés ou internes à SketchUp. Actif en développement, dernière version 2.0.0 (août 2026).",
-      "what_en": "SketchUp plugin for 3D asset conversion and transformation. Enables modification of geometry, materials, and textures for imported or native SketchUp models. Actively developed with version 2.0.0 released August 2026."
+      "pricing_model": "Licences Artist et Studio documentées, mais le checkout officiel actuel ne publie pas de montants indexables et vérifiables. Les anciens prix et montants de distributeurs ne sont pas retenus comme tarifs actuels.",
+      "what": "Transmutr est une application de conversion et d'optimisation d'assets 3D pour SketchUp, accompagnée d'une intégration à SketchUp. Elle importe des formats externes, simplifie la géométrie, prépare les matériaux et génère des proxies; ce n'est pas seulement un plugin exécuté dans SketchUp.",
+      "what_en": "Transmutr is a 3D asset conversion and optimization application for SketchUp with a SketchUp integration. It imports external formats, simplifies geometry, prepares materials, and generates proxies; it is not merely a plugin running inside SketchUp."
     },
     "fr": {
       "cons": [
-        "Pas de version d'essai gratuite généreuse.",
-        "Limité à SketchUp (ne fonctionne pas standalone).",
-        "Nécessite une courbe d'apprentissage pour les utilisateurs novices.",
-        "Pricing exact non transparent sur la homepage."
+        "Tarifs actuels non lisibles dans les sources officielles accessibles.",
+        "Certaines fonctions avancées dépendent du niveau de licence.",
+        "La compatibilité exacte doit être vérifiée avec chaque version de SketchUp et moteur de rendu."
       ],
       "pros": [
-        "Conversion bidirectionnelle d'actifs 3D directement dans SketchUp.",
-        "Maintenance active (version 2.0 récente, support des versions SketchUp actuelles).",
-        "Intégration transparente au workflow SketchUp.",
-        "Support des normes 3D modernes (V-Ray 7)."
+        "Réunit conversion, simplification et préparation des matériaux.",
+        "Permet de garder SketchUp plus léger grâce aux proxies.",
+        "Gère les transformations d'unités, d'axes et d'origine avant export.",
+        "Fonctions d'automatisation adaptées aux grandes bibliothèques."
       ],
       "relevant_for": [
-        "Modélisateurs 3D",
-        "Architectes digitaux",
-        "Designers de produit",
-        "Artistes 3D"
+        "Artistes 3D utilisant SketchUp",
+        "Architectes",
+        "Gestionnaires de bibliothèques d'assets"
       ],
       "use_cases": [
-        "Importer des modèles 3D externes (Blender, 3ds Max) dans SketchUp.",
-        "Exporter et convertir des projets SketchUp pour d'autres engines 3D.",
-        "Modifier les matériaux et textures d'actifs importés.",
-        "Préparer des modèles SketchUp pour le rendu haute fidélité."
+        "Convertir un asset FBX complexe en composant SketchUp optimisé.",
+        "Créer des proxies pour une bibliothèque de végétation.",
+        "Appliquer les mêmes règles de matériaux à une série de modèles."
       ],
       "verdict": {
         "avoidIf": [
-          "SketchUp n'est pas votre outil principal.",
-          "Vous cherchez un outil standalone de conversion 3D.",
-          "Vous n'avez pas besoin de transformation avancée d'actifs."
+          "Vous n'utilisez pas SketchUp comme destination principale.",
+          "Vos imports natifs sont rares et déjà assez légers.",
+          "Vous devez valider un budget précis avant que le checkout officiel soit vérifiable."
         ],
         "keepIf": [
-          "Vous travaillez régulièrement avec des modèles 3D dans SketchUp.",
-          "Vous avez besoin de convertir ou transformer des actifs extérieurs.",
-          "Vous intégrez SketchUp avec d'autres outils 3D (Blender, 3ds Max, etc.)."
+          "Vous préparez régulièrement des assets externes pour les utiliser dans SketchUp.",
+          "Vous devez réduire des maillages lourds sans refaire manuellement les matériaux.",
+          "Vous produisez des proxies ou automatisez la conversion de bibliothèques."
         ],
-        "threshold": "Transmutr s'impose pour les workflows SketchUp intensifs ; pour une utilisation ponctuelle, les exportateurs natifs suffisent."
+        "threshold": "Ajoutez Transmutr au flux SketchUp lorsque l'optimisation répétée des assets coûte plus de temps que la conversion elle-même; pour quelques imports simples, les outils natifs peuvent suffire."
       }
     },
     "slug": "transmutr",
     "sources": [
       {
-        "label": "Transmutr Help & Docs (site officiel)",
+        "label": "Transmutr - page produit Lindalë (site officiel)",
+        "url": "https://lindale.io/transmutr/"
+      },
+      {
+        "label": "Transmutr - documentation officielle",
         "url": "https://help.transmutr.com/"
       },
       {
-        "label": "Transmutr Shop (Lindalë)",
-        "url": "https://lindale.io/transmutr"
+        "label": "Transmutr - vue d'ensemble officielle",
+        "url": "https://help.transmutr.com/overview"
+      },
+      {
+        "label": "Transmutr - notes de version officielles",
+        "url": "https://help.transmutr.com/release-notes"
       }
     ],
-    "verified_on": "2026-07-24"
+    "verified_on": "2026-08-30"
   },
-  "media_evidence": null,
+  "media_evidence": {
+    "discovery": {
+      "official_media_found": true,
+      "official_pages_checked": [
+        "https://lindale.io/transmutr/",
+        "https://help.transmutr.com/"
+      ]
+    },
+    "items": [
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://www.youtube.com/watch?v=I73SLyJQG60",
+        "url": "https://i.ytimg.com/vi/I73SLyJQG60/maxresdefault.jpg"
+      },
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://www.youtube.com/watch?v=LfPZUzJyoME",
+        "url": "https://i.ytimg.com/vi/LfPZUzJyoME/maxresdefault.jpg"
+      }
+    ],
+    "mode": "sourced",
+    "slug": "transmutr",
+    "verified_on": "2026-08-30"
+  },
   "quality_version": "catalog-review-v1",
   "required_action": "verify_bundle_freshness_then_review_editorial",
   "rules": {
@@ -220,37 +254,35 @@
   "tracking": {
     "assigned_batch": "review-design-tools-critical-001",
     "batch_position": 20,
-    "blockers": [],
-    "catalog_hash": "sha256:393359ca0562e0b6b812eae58040a41c8c0ebb63466d5fdc2f8de8fde85c4558",
+    "blockers": [
+      "tarifs actuels non vérifiables sur les pages officielles accessibles"
+    ],
+    "catalog_hash": "sha256:eb8c48fb12adcaabe747bc72e2a2875434b492770113fe04eb36fd717f6c99c4",
     "category": "design-tools",
     "fact_bundle": "AVAILABLE",
-    "fact_bundle_hash": "sha256:6f20573089c3d9b1906a75d675f556f5dc0bfe6fbe48704b46ee092987adb530",
+    "fact_bundle_hash": "sha256:1be1f922ddf4e518156d8e87eb88ac75a4367e9989c7aa1fd6dc1df88522a39f",
     "invalidated_from": null,
-    "media_errors": [
-      "media_evidence_missing"
-    ],
-    "media_evidence": "MISSING",
-    "media_evidence_hash": null,
+    "media_errors": [],
+    "media_evidence": "VALID",
+    "media_evidence_hash": "sha256:fee92259a7153e6239c1a0b55df431ec01b027c141e49e729f7bdf8370eb8403",
     "name": "Transmutr",
     "next_review_at": null,
     "priority_reasons": [
       "affiliate_link",
-      "paid_price",
-      "missing_or_invalid_media_evidence",
-      "shallow_editorial"
+      "paid_price"
     ],
-    "priority_score": 260,
+    "priority_score": 180,
     "published_at": null,
     "quality_version": "catalog-review-v1",
     "rendered_at": null,
-    "review_fingerprint": "sha256:9de58ed36d6cdc3a70215b6625b225f8269d99f5fc855fe3f7f82681d785bd57",
+    "review_fingerprint": "sha256:22152c5c02a287b58d9e0ede639fb047e9f16d3613e620f2eb2f1cce2435d1ef",
     "reviewed_at": null,
     "reviewed_hash": null,
     "reviewer": null,
     "risk_tier": "critical",
     "slug": "transmutr",
-    "source_url": "https://transmutr.com",
-    "source_verified_on": "2026-05-10",
-    "status": "QUEUED"
+    "source_url": "https://lindale.io/transmutr/",
+    "source_verified_on": "2026-08-30",
+    "status": "REVIEW_REQUIRED"
   }
 }

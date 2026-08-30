@@ -1,0 +1,44 @@
+{
+  "slug": "adobe-cc",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-08-30",
+  "sources": [
+    {"label": "Creative Cloud Pro France", "url": "https://www.adobe.com/fr/creativecloud/plans.html"},
+    {"label": "Creative Cloud France", "url": "https://www.adobe.com/fr/creativecloud.html"},
+    {"label": "Essai Creative Cloud", "url": "https://www.adobe.com/fr/creativecloud/free-trial-download.html"}
+  ],
+  "facts": {
+    "what": "Suite Adobe par abonnement réunissant plus de vingt applications de création, dont Photoshop, Illustrator, Premiere Pro, InDesign et Acrobat Pro, ainsi que les services Firefly.",
+    "what_en": "Adobe subscription suite combining more than twenty creative applications, including Photoshop, Illustrator, Premiere Pro, InDesign, and Acrobat Pro, plus Firefly services.",
+    "pricing_model": "Abonnement individuel, étudiant ou équipe. L'offre tout-en-un est commercialisée sous le nom Creative Cloud Pro.",
+    "free_tier": {"exists": false, "detail": "Essai complet de 7 jours pour les particuliers ; aucun plan gratuit permanent pour la suite complète."},
+    "plans": [
+      {"name": "Creative Cloud Pro particulier", "price": "78,65 €/mois TTC, engagement annuel facturé mensuellement"},
+      {"name": "Creative Cloud Pro équipes", "price": "86,55 €/mois/licence HT, engagement annuel facturé mensuellement"},
+      {"name": "Creative Cloud Pro Plus équipes", "price": "95,79 €/mois/licence HT"},
+      {"name": "Étudiants et enseignants", "price": "19,50 €/mois TTC la première année, puis 40,32 €/mois TTC"}
+    ],
+    "key_features": ["Plus de vingt applications créatives", "Photoshop, Illustrator, Premiere Pro et InDesign", "Acrobat Pro et outils PDF", "Firefly pour l'image, la vidéo et l'audio", "Adobe Fonts, Portfolio et bibliothèques", "Administration des licences pour les équipes"]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": ["Vous utilisez plusieurs applications Adobe chaque semaine.", "Vos livrables couvrent photo, vectoriel, vidéo et mise en page.", "Votre équipe partage bibliothèques, polices et fichiers Adobe."],
+      "avoidIf": ["Une seule application Adobe couvre vos besoins.", "Vous utilisez rarement les logiciels créatifs professionnels.", "Vous préférez des licences perpétuelles ou des outils indépendants."],
+      "threshold": "La suite devient cohérente quand plusieurs applications Adobe remplacent réellement des abonnements séparés ; sinon, choisissez une application seule ou une alternative ciblée."
+    },
+    "pros": ["Couverture très large des métiers créatifs.", "Passage fluide des fichiers entre les applications Adobe.", "Polices, bibliothèques et services cloud intégrés.", "Outils Firefly répartis dans la suite."],
+    "cons": ["Engagement récurrent élevé.", "Suite surdimensionnée pour un besoin unique.", "Conditions et promotions variables selon le profil et la région."],
+    "use_cases": ["Produire une campagne mêlant photo, illustration et vidéo.", "Gérer un flux de création professionnel multi-format.", "Standardiser les logiciels d'une équipe créative."],
+    "relevant_for": ["Studios créatifs", "Freelances multidisciplinaires", "Équipes marketing"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": ["You use several Adobe applications every week.", "Your deliverables span photo, vector, video, and publishing.", "Your team shares Adobe libraries, fonts, and files."],
+      "avoidIf": ["A single Adobe application covers your needs.", "You rarely use professional creative software.", "You prefer perpetual licenses or independent tools."],
+      "threshold": "The suite makes sense when several Adobe applications genuinely replace separate subscriptions; otherwise choose one application or a focused alternative."
+    },
+    "pros": ["Very broad coverage of creative disciplines.", "Smooth file exchange across Adobe applications.", "Integrated fonts, libraries, and cloud services.", "Firefly tools distributed across the suite."],
+    "cons": ["High recurring commitment.", "Oversized for a single need.", "Terms and promotions vary by profile and region."],
+    "use_cases": ["Produce a campaign combining photo, illustration, and video.", "Run a professional multi-format creative workflow.", "Standardize software across a creative team."]
+  }
+}

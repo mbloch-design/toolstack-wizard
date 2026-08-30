@@ -16,24 +16,30 @@
     ],
     "host_app": null,
     "id": "eagle",
-    "long_description": "Bibliothèque locale pour organiser images, matières, textures, références, plans et inspirations.",
-    "long_description_en": "Local library to organize images, materials, textures, references, plans and inspiration.",
+    "long_description": "Application desktop de gestion d'assets créatifs pour les designers, permettant de centraliser, organiser et rechercher visuellement des fichiers (images, vidéos, fonts, PDFs).\n\nFonctions clés : Collection : extension navigateur et import par drag-drop ; Organisation : tags hiérarchiques, smart folders, auto-tagging par IA ; Recherche : visuelle, sémantique, par couleur ; Support 90+ formats : images, vidéos, GIFs, audio, fonts, PDFs ; Plugins extensibles pour traitement d'image (suppression fond, upscale).\n\nEagle s'impose pour les designers avec une grosse bibliothèque personnelle ; sinon un dossier structuré suffit.",
+    "long_description_en": "Desktop application for managing creative assets, enabling designers to centralize, organize, and visually search files (images, videos, fonts, PDFs).\n\nKey strengths: Smooth, fast interface for browsing thousands of assets.; Visual and semantic search very intuitive.; One-time purchase, no recurring subscription.; 30-day free trial risk-free.; Support for 90+ formats..\n\nEagle is ideal for designers with a large personal library; otherwise a structured folder system suffices.",
     "media": {
-      "gallery_images": [],
-      "og_image_url": "https://en.eagle.cool/images/og-image-en.png"
+      "gallery_images": [
+        "https://r2-web.eagle.cool/media/home-ai-search-icon.png",
+        "https://r2-web.eagle.cool/media/home-collect-extension-icon.png"
+      ],
+      "og_image_url": "https://r2-web.eagle.cool/media/home-feature-eagle.png"
     },
     "name": "Eagle",
     "pricing": {
-      "free": "Essai gratuit",
-      "paid": "Licence perpétuelle"
+      "free": "Essai gratuit 30 jours avec accès complet ; pas de version permanente gratuite. Achat requis pour continuer.",
+      "paid": "Eagle (license): Achat unique, prix sur la page officielle"
     },
-    "pricing_en": null,
+    "pricing_en": {
+      "free": "Essai gratuit 30 jours avec accès complet ; pas de version permanente gratuite. Achat requis pour continuer.",
+      "paid": "Eagle (license): Achat unique, prix sur la page officielle"
+    },
     "pricing_v5": {
       "compare_price_monthly_eur": 0,
       "official_source_url": "https://eagle.cool",
       "source_domain": "eagle.cool",
-      "verification_status": "manual_reference",
-      "verified_on": "2026-05-10"
+      "verification_status": "official_explicit",
+      "verified_on": "2026-07-24"
     },
     "pros": [
       "Interface fluide et rapide pour parcourir des milliers d'assets.",
@@ -49,11 +55,11 @@
       "30-day free trial risk-free.",
       "Support for 90+ formats."
     ],
-    "short_description": "Bibliothèque locale pour organiser images, matières, textures, références, plans et inspirations.",
-    "short_description_en": "Local library to organize images, materials, textures, references, plans and inspiration.",
+    "short_description": "Application desktop de gestion d'assets créatifs pour les designers, permettant de centraliser, organiser et rechercher visuellement des fichiers (images, vidéos, fonts, PDFs).",
+    "short_description_en": "Desktop application for managing creative assets, enabling designers to centralize, organize, and visually search files (images, videos, fonts, PDFs).",
     "slug": "eagle",
     "source_url": "https://eagle.cool",
-    "source_verified_on": "2026-05-10",
+    "source_verified_on": "2026-07-24",
     "use_cases": [
       "Centraliser et retrouver rapidement des images d'inspiration.",
       "Organiser une banque de ressources visuelles personnelle.",
@@ -194,7 +200,37 @@
     ],
     "verified_on": "2026-07-24"
   },
-  "media_evidence": null,
+  "media_evidence": {
+    "discovery": {
+      "official_media_found": true,
+      "official_pages_checked": [
+        "https://www.eagle.cool/"
+      ]
+    },
+    "items": [
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://www.eagle.cool/",
+        "url": "https://r2-web.eagle.cool/media/home-feature-eagle.png"
+      },
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://www.eagle.cool/",
+        "url": "https://r2-web.eagle.cool/media/home-ai-search-icon.png"
+      },
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://www.eagle.cool/",
+        "url": "https://r2-web.eagle.cool/media/home-collect-extension-icon.png"
+      }
+    ],
+    "mode": "sourced",
+    "slug": "eagle",
+    "verified_on": "2026-08-30"
+  },
   "quality_version": "catalog-review-v1",
   "required_action": "verify_bundle_freshness_then_review_editorial",
   "rules": {
@@ -212,36 +248,32 @@
     "assigned_batch": "review-design-tools-critical-001",
     "batch_position": 9,
     "blockers": [],
-    "catalog_hash": "sha256:1df8208f5f15536d3b85f27758de6d9eac4c70703e0686d3fc2f33c56d7171f8",
+    "catalog_hash": "sha256:63d671572bc8e39221830c9c3e4604c70cc4ac1c03ea3b526bfa0b2d10f30afa",
     "category": "design-tools",
     "fact_bundle": "AVAILABLE",
     "fact_bundle_hash": "sha256:e27d9029bbb825c430205522c5b51d4af08d0ff4c753910a8d728b00cc593581",
     "invalidated_from": null,
-    "media_errors": [
-      "media_evidence_missing"
-    ],
-    "media_evidence": "MISSING",
-    "media_evidence_hash": null,
+    "media_errors": [],
+    "media_evidence": "VALID",
+    "media_evidence_hash": "sha256:abbb033a58dafcf07453c4c2297748ef6f3b786801415519d661d6ff4a6a572e",
     "name": "Eagle",
     "next_review_at": null,
     "priority_reasons": [
       "affiliate_link",
-      "paid_price",
-      "missing_or_invalid_media_evidence",
-      "shallow_editorial"
+      "paid_price"
     ],
-    "priority_score": 260,
+    "priority_score": 180,
     "published_at": null,
     "quality_version": "catalog-review-v1",
     "rendered_at": null,
-    "review_fingerprint": "sha256:611511256a4dbff3eee4339e08ed02d8cb9d15791c66d75c6ffee6b558827d2c",
+    "review_fingerprint": "sha256:4a480070de81374e601a5825f971c98a8c1aab21ab1ad1fc0598d0ed19700475",
     "reviewed_at": null,
     "reviewed_hash": null,
     "reviewer": null,
     "risk_tier": "critical",
     "slug": "eagle",
     "source_url": "https://eagle.cool",
-    "source_verified_on": "2026-05-10",
-    "status": "QUEUED"
+    "source_verified_on": "2026-07-24",
+    "status": "MEDIA_READY"
   }
 }

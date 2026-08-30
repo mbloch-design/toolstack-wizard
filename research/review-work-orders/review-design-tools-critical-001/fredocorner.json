@@ -8,34 +8,40 @@
       "Outil à usage très spécifique (arrondissement seulement).",
       "Passé du gratuit au payant récemment.",
       "Nécessite LibFredo6 comme dépendance.",
-      "Prix non affiché publiquement."
+      "FredoCorner reste distinct de RoundCorner malgré des usages proches."
     ],
     "cons_en": [
       "Tool for a very specific use case (rounding only).",
       "Recently transitioned from free to paid.",
       "Requires LibFredo6 as a dependency.",
-      "Pricing not publicly displayed."
+      "FredoCorner remains distinct from RoundCorner despite overlapping use cases."
     ],
     "host_app": null,
     "id": "fredocorner",
-    "long_description": "Plugin SketchUp pour chanfreins, arrondis, angles adoucis et détails de mobilier.",
-    "long_description_en": "SketchUp plugin for bevels, rounded corners and furniture details.",
+    "long_description": "Extension payante pour SketchUp desktop qui arrondit, biseaute, subdivise ou coupe les coins de formes 3D. Elle dépend de LibFredo6 et de SketchUcation ExtensionStore.\n\nFonctions clés : Arrondissement des coins et des bords par rayon ; Contrôle granulaire des angles d'arrondi ; Application batch sur sélection multiple ; Géométrie non-destructive (modifiable après) ; Compatibilité SketchUp 2017+.\n\nAjoutez FredoCorner à SketchUp si les arrondis, biseaux ou coins subdivisés sont récurrents et dépassent les capacités natives.",
+    "long_description_en": "Paid SketchUp desktop extension that rounds, bevels, subdivides, or chops the corners of 3D shapes. It requires LibFredo6 and SketchUcation ExtensionStore.\n\nKey strengths: Highly specialized and fast tool.; Precise control over radius and parameters.; Simple and intuitive interface.; Very popular in the SketchUp community..\n\nAdd FredoCorner to SketchUp when recurring rounding, beveling, or subdivided corners exceed the native tools.",
     "media": {
-      "gallery_images": [],
-      "og_image_url": "https://tooltrim.com/og-screenshots/fredocorner.jpg"
+      "gallery_images": [
+        "https://pluginrepo.sketchucation.com/image/FredoCorner/FredoCorner___Toolbar___13.png",
+        "https://pluginrepo.sketchucation.com/image/FredoCorner/FredoCorner_Footprint_small.png"
+      ],
+      "og_image_url": "https://pluginrepo.sketchucation.com/image/FredoCorner/FredoCorner___Summary_Tool.png"
     },
     "name": "FredoCorner",
     "pricing": {
-      "free": "Selon licence SketchUcation",
-      "paid": "Donation/licence selon bundle"
+      "free": "Essai complet de 15 jours à partir de l'activation, puis licence requise.",
+      "paid": "Licence perpétuelle, 3 postes: 30 $ (environ 28 €) ; Licence Rush, 3 postes et 21 jours: 8 $ (environ 7 €)"
     },
-    "pricing_en": null,
+    "pricing_en": {
+      "free": "Essai complet de 15 jours à partir de l'activation, puis licence requise.",
+      "paid": "Licence perpétuelle, 3 postes: 30 $ (environ 28 €) ; Licence Rush, 3 postes et 21 jours: 8 $ (environ 7 €)"
+    },
     "pricing_v5": {
       "compare_price_monthly_eur": 0,
-      "official_source_url": "https://sketchucation.com/pluginstore",
+      "official_source_url": "https://sketchucation.com/plugin/2120-",
       "source_domain": "sketchucation.com",
-      "verification_status": "manual_reference",
-      "verified_on": "2026-05-10"
+      "verification_status": "official_explicit",
+      "verified_on": "2026-08-30"
     },
     "pros": [
       "Outil extrêmement spécialisé et rapide.",
@@ -49,11 +55,11 @@
       "Simple and intuitive interface.",
       "Very popular in the SketchUp community."
     ],
-    "short_description": "Plugin SketchUp pour chanfreins, arrondis, angles adoucis et détails de mobilier.",
-    "short_description_en": "SketchUp plugin for bevels, rounded corners and furniture details.",
+    "short_description": "Extension payante pour SketchUp desktop qui arrondit, biseaute, subdivise ou coupe les coins de formes 3D. Elle dépend de LibFredo6 et de SketchUcation ExtensionStore.",
+    "short_description_en": "Paid SketchUp desktop extension that rounds, bevels, subdivides, or chops the corners of 3D shapes. It requires LibFredo6 and SketchUcation ExtensionStore.",
     "slug": "fredocorner",
-    "source_url": "https://sketchucation.com/pluginstore",
-    "source_verified_on": "2026-05-10",
+    "source_url": "https://sketchucation.com/plugin/2120-",
+    "source_verified_on": "2026-08-30",
     "use_cases": [
       "Arrondir les coins d'une pièce de mobilier.",
       "Lisser les arêtes d'un boîtier produit.",
@@ -77,7 +83,7 @@
         "Vous travaillez en design produit ou architecture avec des coins lisses.",
         "Vous avez besoin d'un contrôle fin du rayon d'arrondi."
       ],
-      "threshold": "FredoCorner s'impose si vous arrondissez systématiquement des coins ; sinon, les outils gratuits SketchUp suffisent."
+      "threshold": "Ajoutez FredoCorner à SketchUp si les arrondis, biseaux ou coins subdivisés sont récurrents et dépassent les capacités natives."
     },
     "verdict_en": {
       "avoidIf": [
@@ -90,18 +96,18 @@
         "You work in product design or architecture with smooth corners.",
         "You need fine-grained control over rounding radius."
       ],
-      "threshold": "FredoCorner makes sense if you systematically round corners; otherwise, free SketchUp tools are enough."
+      "threshold": "Add FredoCorner to SketchUp when recurring rounding, beveling, or subdivided corners exceed the native tools."
     },
     "website_url": "https://sketchucation.com/pluginstore"
   },
   "fact_bundle": {
-    "author": "ToolTrim — Mike",
+    "author": "ToolTrim - Mike",
     "en": {
       "cons": [
         "Tool for a very specific use case (rounding only).",
         "Recently transitioned from free to paid.",
         "Requires LibFredo6 as a dependency.",
-        "Pricing not publicly displayed."
+        "FredoCorner remains distinct from RoundCorner despite overlapping use cases."
       ],
       "pros": [
         "Highly specialized and fast tool.",
@@ -126,12 +132,12 @@
           "You work in product design or architecture with smooth corners.",
           "You need fine-grained control over rounding radius."
         ],
-        "threshold": "FredoCorner makes sense if you systematically round corners; otherwise, free SketchUp tools are enough."
+        "threshold": "Add FredoCorner to SketchUp when recurring rounding, beveling, or subdivided corners exceed the native tools."
       }
     },
     "facts": {
       "free_tier": {
-        "detail": "Essai gratuit de 30 jours ; après, achat de licence requis via SketchUcation.",
+        "detail": "Essai complet de 15 jours à partir de l'activation, puis licence requise.",
         "exists": false
       },
       "key_features": [
@@ -143,20 +149,24 @@
       ],
       "plans": [
         {
-          "name": "FredoCorner",
-          "price": "Montants sur la page officielle SketchUcation"
+          "name": "Licence perpétuelle, 3 postes",
+          "price": "30 $ (environ 28 €)"
+        },
+        {
+          "name": "Licence Rush, 3 postes et 21 jours",
+          "price": "8 $ (environ 7 €)"
         }
       ],
-      "pricing_model": "Licence payante. Extension devenue payante après 10+ ans de distribution gratuite.",
-      "what": "Plugin SketchUp spécialisé dans l'arrondissement des coins et des bords. FredoCorner arrondit les arêtes vives d'une sélection avec un contrôle fin du rayon et des angles.",
-      "what_en": "Specialized SketchUp plugin for rounding corners and edges. FredoCorner smooths sharp edges of a selection with fine control over radius and corner angles."
+      "pricing_model": "Licence perpétuelle ou licence Rush de courte durée pour trois postes.",
+      "what": "Extension payante pour SketchUp desktop qui arrondit, biseaute, subdivise ou coupe les coins de formes 3D. Elle dépend de LibFredo6 et de SketchUcation ExtensionStore.",
+      "what_en": "Paid SketchUp desktop extension that rounds, bevels, subdivides, or chops the corners of 3D shapes. It requires LibFredo6 and SketchUcation ExtensionStore."
     },
     "fr": {
       "cons": [
         "Outil à usage très spécifique (arrondissement seulement).",
         "Passé du gratuit au payant récemment.",
         "Nécessite LibFredo6 comme dépendance.",
-        "Prix non affiché publiquement."
+        "FredoCorner reste distinct de RoundCorner malgré des usages proches."
       ],
       "pros": [
         "Outil extrêmement spécialisé et rapide.",
@@ -186,19 +196,53 @@
           "Vous travaillez en design produit ou architecture avec des coins lisses.",
           "Vous avez besoin d'un contrôle fin du rayon d'arrondi."
         ],
-        "threshold": "FredoCorner s'impose si vous arrondissez systématiquement des coins ; sinon, les outils gratuits SketchUp suffisent."
+        "threshold": "Ajoutez FredoCorner à SketchUp si les arrondis, biseaux ou coins subdivisés sont récurrents et dépassent les capacités natives."
       }
     },
     "slug": "fredocorner",
     "sources": [
       {
-        "label": "SketchUcation PluginStore — FredoCorner (site officiel)",
-        "url": "https://sketchucation.com/plugin/2120-fredocorner"
+        "label": "FredoCorner sur SketchUcation (site officiel)",
+        "url": "https://sketchucation.com/plugin/2120-"
+      },
+      {
+        "label": "Guide SCFLicense (documentation officielle)",
+        "url": "https://downloads.sketchucation.com/licensing/SCFLicense-Instructions_to_Users.pdf"
       }
     ],
-    "verified_on": "2026-07-24"
+    "verified_on": "2026-08-30"
   },
-  "media_evidence": null,
+  "media_evidence": {
+    "discovery": {
+      "official_media_found": true,
+      "official_pages_checked": [
+        "https://sketchucation.com/plugin/2120-"
+      ]
+    },
+    "items": [
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://sketchucation.com/plugin/2120-",
+        "url": "https://pluginrepo.sketchucation.com/image/FredoCorner/FredoCorner___Summary_Tool.png"
+      },
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://sketchucation.com/plugin/2120-",
+        "url": "https://pluginrepo.sketchucation.com/image/FredoCorner/FredoCorner___Toolbar___13.png"
+      },
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://sketchucation.com/plugin/2120-",
+        "url": "https://pluginrepo.sketchucation.com/image/FredoCorner/FredoCorner_Footprint_small.png"
+      }
+    ],
+    "mode": "sourced",
+    "slug": "fredocorner",
+    "verified_on": "2026-08-30"
+  },
   "quality_version": "catalog-review-v1",
   "required_action": "verify_bundle_freshness_then_review_editorial",
   "rules": {
@@ -216,36 +260,32 @@
     "assigned_batch": "review-design-tools-critical-001",
     "batch_position": 13,
     "blockers": [],
-    "catalog_hash": "sha256:1c4d9c0abf958461707d8a9033720690208a265cf47cceb4cc83f1b7058de741",
+    "catalog_hash": "sha256:3b5641234879101861dc8cf0645a3f3817bca69eff1064a66f367e0bd3fe3098",
     "category": "design-tools",
     "fact_bundle": "AVAILABLE",
-    "fact_bundle_hash": "sha256:18ff55c0f09dd2363e3040aa915543e5e0374ad66ee39dd7d6907161758dda1e",
+    "fact_bundle_hash": "sha256:017f0a8ad88c7eb9b45ac22b5b840921a255f79136141d8bf8a4431d4f3374b9",
     "invalidated_from": null,
-    "media_errors": [
-      "media_evidence_missing"
-    ],
-    "media_evidence": "MISSING",
-    "media_evidence_hash": null,
+    "media_errors": [],
+    "media_evidence": "VALID",
+    "media_evidence_hash": "sha256:275b68cdd9e8db65bae2de07306bc2ab8ef183a0b1411ee0e4f6e29857c7a4e6",
     "name": "FredoCorner",
     "next_review_at": null,
     "priority_reasons": [
       "affiliate_link",
-      "paid_price",
-      "missing_or_invalid_media_evidence",
-      "shallow_editorial"
+      "paid_price"
     ],
-    "priority_score": 260,
+    "priority_score": 180,
     "published_at": null,
     "quality_version": "catalog-review-v1",
     "rendered_at": null,
-    "review_fingerprint": "sha256:997884d880b2a7dfdb44eeea6bed69198848f3a0aac8538d4a7eecf31747b41e",
+    "review_fingerprint": "sha256:daf175794f7fd21e75c2b0ca604bdbd08fa505a97e2410ac9fbdb1e5b3da7652",
     "reviewed_at": null,
     "reviewed_hash": null,
     "reviewer": null,
     "risk_tier": "critical",
     "slug": "fredocorner",
-    "source_url": "https://sketchucation.com/pluginstore",
-    "source_verified_on": "2026-05-10",
-    "status": "QUEUED"
+    "source_url": "https://sketchucation.com/plugin/2120-",
+    "source_verified_on": "2026-08-30",
+    "status": "MEDIA_READY"
   }
 }

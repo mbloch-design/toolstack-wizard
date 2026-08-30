@@ -9,35 +9,34 @@
     ],
     "category": "design-tools",
     "cons": [
-      "Limite quotidienne frustante si usage intensif (10/jour seulement).",
-      "Modèles de prix pas affichés (opacité tarifaire).",
-      "Pas alternative 2D (icônes plates — préférer Noun Project).",
-      "Blender format requiert logiciel additionnel pour export custom.",
-      "Petite collection vs Sketchfab ou CGTrader."
+      "Tarification actuelle peu lisible sur le site principal.",
+      "Informations de formats variables selon les ressources.",
+      "Catalogue plus spécialisé qu'une grande place de marché 3D."
     ],
     "cons_en": [
-      "Daily limit frustrating for heavy usage (10/day only).",
-      "Pricing models not displayed (pricing opacity).",
-      "No 2D alternatives (flat icons—use Noun Project instead).",
-      "Blender format requires additional software for custom export.",
-      "Smaller collection vs Sketchfab or CGTrader."
+      "Current pricing is not clearly presented on the main site.",
+      "Available formats vary between assets.",
+      "The catalog is more specialized than a large 3D marketplace."
     ],
     "host_app": null,
     "id": "pikkovia",
-    "long_description": "Pikkovia utilise l'IA pour générer des visuels marketing professionnels : posts réseaux sociaux, bannières publicitaires et contenus de marque en quelques secondes.",
-    "long_description_en": "Pikkovia uses AI to generate professional marketing visuals: social media posts, ad banners and branded content in seconds.",
+    "long_description": "Pikkovia, parfois écrit à tort PikkoVia, est une place de marché web d'icônes et d'illustrations 3D destinée notamment aux designers UI. Elle propose des ressources en PNG et des fichiers 3D, dont des fichiers Blender selon les packs.\n\nFonctions clés : Catalogue de plus de 1 000 icônes et illustrations 3D ; Packs classés par thèmes et usages ; Téléchargements en PNG et formats 3D selon les ressources ; Fichiers Blender proposés dans certains packs ; Recherche et navigation par catégories ; Licence pour projets personnels et commerciaux sans redistribution des fichiers source.\n\nAjoutez Pikkovia si ses packs couvrent réellement votre direction visuelle; sinon, une bibliothèque plus vaste et mieux documentée sera plus facile à standardiser.",
+    "long_description_en": "Pikkovia, sometimes incorrectly written as PikkoVia, is a web marketplace for 3D icons and illustrations aimed in particular at UI designers. It offers PNG assets and 3D files, including Blender files in some packs.\n\nKey strengths: Assets are ready for interfaces and marketing materials.; Raster and 3D formats are available depending on the pack.; The catalog is organized by theme.; The daily allowance helps test quality before purchase..\n\nAdd Pikkovia when its packs genuinely match your visual direction; otherwise, a broader and better documented library will be easier to standardize.",
     "media": {
-      "gallery_images": [],
+      "gallery_images": [
+        "https://pikkovia.com/wp-content/uploads/2023/09/Free-Plants-Voucher-3-768x576.png",
+        "https://pikkovia.com/wp-content/uploads/2023/09/Free-Plants-Voucher-2-768x576.png"
+      ],
       "og_image_url": "https://pikkovia.com/wp-content/uploads/2023/07/hero-image.png"
     },
     "name": "Pikkovia",
     "pricing": {
-      "free": "Essai gratuit",
-      "paid": "Pro 59$/mois"
+      "free": "Le site officiel annonce 10 téléchargements gratuits par jour.",
+      "paid": "Téléchargements gratuits: Gratuit, 10 assets par jour ; Ressources payantes: Prix variable selon l'asset; montant central non publié"
     },
     "pricing_en": {
-      "free": "Free trial",
-      "paid": "Pro $59/mo"
+      "free": "Le site officiel annonce 10 téléchargements gratuits par jour.",
+      "paid": "Téléchargements gratuits: Gratuit, 10 assets par jour ; Ressources payantes: Prix variable selon l'asset; montant central non publié"
     },
     "pricing_v5": {
       "annual_monthly_eur": 40,
@@ -46,205 +45,214 @@
       "free_tier": true,
       "free_tier_note": "Essai gratuit",
       "monthly_eur": 50,
+      "official_source_url": "https://pikkovia.com/",
       "plan_name": "Pro",
       "price_original": 59,
       "reliability": "low",
+      "source_domain": "pikkovia.com",
       "source_url": "https://pikkovia.com/pricing",
-      "verified_on": "2026-05-08"
+      "verification_status": "official_explicit",
+      "verified_on": "2026-08-30"
     },
     "pros": [
-      "Freemium généreux : 10 assets gratuits/jour suffisent pour prototypage.",
-      "Téléchargement en Blender pour personnalisation avancée.",
-      "Assets polies et modernes, design cohérent.",
-      "Catégorisation claire (devices, entertainment, business, santé, etc.).",
-      "Générés par IA pour variété infinie.",
-      "Interface intuitive, pas de friction.",
-      "Intégration avec photos stock (Fotolley).",
-      "Reconnu par communauté design (Product Hunt, Awwwards)."
+      "Ressources immédiatement utilisables dans des interfaces et supports marketing.",
+      "Formats raster et 3D selon les packs.",
+      "Catalogue organisé par thèmes.",
+      "Quota quotidien utile pour tester la qualité sans achat."
     ],
     "pros_en": [
-      "Generous freemium: 10 free assets/day sufficient for prototyping.",
-      "Download in Blender for advanced customization.",
-      "Polished, modern assets with consistent design.",
-      "Clear categorization (devices, entertainment, business, health, etc.).",
-      "AI-generated for infinite variety.",
-      "Intuitive interface, no friction.",
-      "Stock photo integration (Fotolley).",
-      "Endorsed by design community (Product Hunt, Awwwards)."
+      "Assets are ready for interfaces and marketing materials.",
+      "Raster and 3D formats are available depending on the pack.",
+      "The catalog is organized by theme.",
+      "The daily allowance helps test quality before purchase."
     ],
-    "short_description": "Plateforme de création de visuels marketing IA pour réseaux sociaux et publicités.",
-    "short_description_en": "AI marketing visual creation platform for social media and ads.",
+    "short_description": "Pikkovia, parfois écrit à tort PikkoVia, est une place de marché web d'icônes et d'illustrations 3D destinée notamment aux designers UI. Elle propose des ressources en PNG et des fichiers 3D, dont des fichiers Blender selon les packs.",
+    "short_description_en": "Pikkovia, sometimes incorrectly written as PikkoVia, is a web marketplace for 3D icons and illustrations aimed in particular at UI designers. It offers PNG assets and 3D files, including Blender files in some packs.",
     "slug": "pikkovia",
-    "source_url": "https://pikkovia.com",
-    "source_verified_on": "2026-05-08",
+    "source_url": "https://pikkovia.com/",
+    "source_verified_on": "2026-08-30",
     "use_cases": [
-      "Enrichir interfaces app/web avec 3D sans apprendre Blender.",
-      "Prototyper animations 3D rapidement (design sprint).",
-      "Créer asset packs pour illustration e-commerce.",
-      "Concevoir interfaces données/dashboards avec contexte 3D.",
-      "Générer variations 3D multiples pour A/B testing UI."
+      "Illustrer une interface avec une série d'icônes 3D cohérentes.",
+      "Préparer des visuels pour une présentation produit.",
+      "Adapter un asset fourni au format Blender."
     ],
     "use_cases_en": [
-      "Enrich app/web interfaces with 3D without Blender knowledge.",
-      "Rapidly prototype 3D animations (design sprint).",
-      "Create asset packs for e-commerce illustrations.",
-      "Design data interfaces/dashboards with 3D context.",
-      "Generate multiple 3D variations for UI A/B testing."
+      "Illustrate an interface with a consistent 3D icon set.",
+      "Prepare product presentation visuals.",
+      "Customize an asset supplied as a Blender file."
     ],
     "verdict": {
       "avoidIf": [
-        "Vous avez besoin de 3D hyper-customisable (Blender directement mieux).",
-        "Vous refusez les limites quotidiennes (préférer Polyhaven ou Noun Project).",
-        "Vous travaillez sur projets lourds nécessitant 100+ assets quotidiens."
+        "Vous exigez une grille tarifaire centralisée avant de parcourir le catalogue.",
+        "Vous cherchez une plateforme de modélisation ou d'animation 3D complète.",
+        "Vous devez redistribuer les fichiers source dans un produit vendu."
       ],
       "keepIf": [
-        "Vous créez des interfaces UI/UX et cherchez des 3D polies sans apprendre Blender.",
-        "Vous faites du contenu visuel (animation, motion design) nécessitant 3D.",
-        "Vous aimez le freemium avec quotas journaliers (10 assets gratuits/jour suffit en prototypage)."
+        "Vous cherchez des illustrations 3D prêtes à intégrer dans une interface ou une présentation.",
+        "Vous voulez tester plusieurs assets gratuitement avant d'acheter un pack.",
+        "Vous avez besoin de fichiers Blender pour adapter certains visuels."
       ],
-      "threshold": "Pikkovia domine pour designers UI voulant 3D de qualité sans courbe d'apprentissage ; freemium généreux pour prototypage/démarrage."
+      "threshold": "Ajoutez Pikkovia si ses packs couvrent réellement votre direction visuelle; sinon, une bibliothèque plus vaste et mieux documentée sera plus facile à standardiser."
     },
     "verdict_en": {
       "avoidIf": [
-        "You need heavily customizable 3D (use Blender directly).",
-        "You refuse daily limits (prefer Polyhaven or Noun Project).",
-        "You work on heavy projects needing 100+ assets daily."
+        "You require a centralized pricing grid before browsing.",
+        "You need a complete 3D modeling or animation platform.",
+        "You must redistribute source files inside a product for sale."
       ],
       "keepIf": [
-        "You create UI/UX and want polished 3D without learning Blender.",
-        "You do visual content (animation, motion design) needing 3D.",
-        "You like freemium with daily quotas (10 free assets/day enough for prototyping)."
+        "You need ready-made 3D illustrations for an interface or presentation.",
+        "You want to test several assets for free before buying a pack.",
+        "You need Blender files to adapt selected visuals."
       ],
-      "threshold": "Pikkovia wins for UI designers wanting quality 3D without learning curve; generous freemium for prototyping and early-stage work."
+      "threshold": "Add Pikkovia when its packs genuinely match your visual direction; otherwise, a broader and better documented library will be easier to standardize."
     },
     "website_url": "https://pikkovia.com"
   },
   "fact_bundle": {
-    "author": "ToolTrim — Mike",
+    "author": "ToolTrim - Mike",
     "en": {
       "cons": [
-        "Daily limit frustrating for heavy usage (10/day only).",
-        "Pricing models not displayed (pricing opacity).",
-        "No 2D alternatives (flat icons—use Noun Project instead).",
-        "Blender format requires additional software for custom export.",
-        "Smaller collection vs Sketchfab or CGTrader."
+        "Current pricing is not clearly presented on the main site.",
+        "Available formats vary between assets.",
+        "The catalog is more specialized than a large 3D marketplace."
       ],
       "pros": [
-        "Generous freemium: 10 free assets/day sufficient for prototyping.",
-        "Download in Blender for advanced customization.",
-        "Polished, modern assets with consistent design.",
-        "Clear categorization (devices, entertainment, business, health, etc.).",
-        "AI-generated for infinite variety.",
-        "Intuitive interface, no friction.",
-        "Stock photo integration (Fotolley).",
-        "Endorsed by design community (Product Hunt, Awwwards)."
+        "Assets are ready for interfaces and marketing materials.",
+        "Raster and 3D formats are available depending on the pack.",
+        "The catalog is organized by theme.",
+        "The daily allowance helps test quality before purchase."
       ],
       "use_cases": [
-        "Enrich app/web interfaces with 3D without Blender knowledge.",
-        "Rapidly prototype 3D animations (design sprint).",
-        "Create asset packs for e-commerce illustrations.",
-        "Design data interfaces/dashboards with 3D context.",
-        "Generate multiple 3D variations for UI A/B testing."
+        "Illustrate an interface with a consistent 3D icon set.",
+        "Prepare product presentation visuals.",
+        "Customize an asset supplied as a Blender file."
       ],
       "verdict": {
         "avoidIf": [
-          "You need heavily customizable 3D (use Blender directly).",
-          "You refuse daily limits (prefer Polyhaven or Noun Project).",
-          "You work on heavy projects needing 100+ assets daily."
+          "You require a centralized pricing grid before browsing.",
+          "You need a complete 3D modeling or animation platform.",
+          "You must redistribute source files inside a product for sale."
         ],
         "keepIf": [
-          "You create UI/UX and want polished 3D without learning Blender.",
-          "You do visual content (animation, motion design) needing 3D.",
-          "You like freemium with daily quotas (10 free assets/day enough for prototyping)."
+          "You need ready-made 3D illustrations for an interface or presentation.",
+          "You want to test several assets for free before buying a pack.",
+          "You need Blender files to adapt selected visuals."
         ],
-        "threshold": "Pikkovia wins for UI designers wanting quality 3D without learning curve; generous freemium for prototyping and early-stage work."
+        "threshold": "Add Pikkovia when its packs genuinely match your visual direction; otherwise, a broader and better documented library will be easier to standardize."
       }
     },
     "facts": {
       "free_tier": {
-        "detail": "10 assets téléchargeables gratuitement chaque jour (utilisateurs enregistrés). Navigation et browsing complets sans paywall.",
+        "detail": "Le site officiel annonce 10 téléchargements gratuits par jour.",
         "exists": true
       },
       "key_features": [
-        "1 000+ icônes 3D organisées en 15+ catégories (devices, entertainment, e-commerce, travel, etc.)",
-        "Téléchargement en formats PNG (raster) et Blender (éditable)",
-        "Assets générés par IA disponibles",
-        "Packs thématiques (Gym & Fitness, Device & Gadgets, Film & Cinema)",
-        "Accès aux photos stock via site sœur Fotolley",
-        "Recherche et filtrage par catégorie",
-        "Reconnu sur Product Hunt et Awwwards",
-        "Conversion possible PNG → Blender"
+        "Catalogue de plus de 1 000 icônes et illustrations 3D",
+        "Packs classés par thèmes et usages",
+        "Téléchargements en PNG et formats 3D selon les ressources",
+        "Fichiers Blender proposés dans certains packs",
+        "Recherche et navigation par catégories",
+        "Licence pour projets personnels et commerciaux sans redistribution des fichiers source"
       ],
       "plans": [
         {
-          "name": "Free (daily limit)",
-          "price": "Gratuit — 10 assets/day"
+          "name": "Téléchargements gratuits",
+          "price": "Gratuit, 10 assets par jour"
         },
         {
-          "name": "Paid subscription",
-          "price": "Montants sur la page officielle pour accès illimité"
+          "name": "Ressources payantes",
+          "price": "Prix variable selon l'asset; montant central non publié"
         }
       ],
-      "pricing_model": "Freemium avec limites d'utilisation quotidienne. Plan gratuit permet téléchargements quotidiens limités ; abonnement déverrouille accès illimité.",
-      "what": "Bibliothèque de plus de 1 000 icônes et illustrations 3D pour designers UI, téléchargeables en formats PNG et Blender.",
-      "what_en": "Library of over 1,000 3D icons and illustrations for UI designers, downloadable in PNG and Blender formats."
+      "pricing_model": "Téléchargements gratuits quotidiens et ressources payantes. Aucun abonnement actuel ni tarif central n'est publié clairement sur le site principal; les anciens montants du sous-domaine Store ne sont pas retenus comme prix actuel.",
+      "what": "Pikkovia, parfois écrit à tort PikkoVia, est une place de marché web d'icônes et d'illustrations 3D destinée notamment aux designers UI. Elle propose des ressources en PNG et des fichiers 3D, dont des fichiers Blender selon les packs.",
+      "what_en": "Pikkovia, sometimes incorrectly written as PikkoVia, is a web marketplace for 3D icons and illustrations aimed in particular at UI designers. It offers PNG assets and 3D files, including Blender files in some packs."
     },
     "fr": {
       "cons": [
-        "Limite quotidienne frustante si usage intensif (10/jour seulement).",
-        "Modèles de prix pas affichés (opacité tarifaire).",
-        "Pas alternative 2D (icônes plates — préférer Noun Project).",
-        "Blender format requiert logiciel additionnel pour export custom.",
-        "Petite collection vs Sketchfab ou CGTrader."
+        "Tarification actuelle peu lisible sur le site principal.",
+        "Informations de formats variables selon les ressources.",
+        "Catalogue plus spécialisé qu'une grande place de marché 3D."
       ],
       "pros": [
-        "Freemium généreux : 10 assets gratuits/jour suffisent pour prototypage.",
-        "Téléchargement en Blender pour personnalisation avancée.",
-        "Assets polies et modernes, design cohérent.",
-        "Catégorisation claire (devices, entertainment, business, santé, etc.).",
-        "Générés par IA pour variété infinie.",
-        "Interface intuitive, pas de friction.",
-        "Intégration avec photos stock (Fotolley).",
-        "Reconnu par communauté design (Product Hunt, Awwwards)."
+        "Ressources immédiatement utilisables dans des interfaces et supports marketing.",
+        "Formats raster et 3D selon les packs.",
+        "Catalogue organisé par thèmes.",
+        "Quota quotidien utile pour tester la qualité sans achat."
       ],
       "relevant_for": [
-        "Designers UX/UI",
-        "Motion designers",
-        "Développeurs frontend",
-        "Illustrateurs numériques",
-        "Startups tech"
+        "Designers UI",
+        "Illustrateurs",
+        "Équipes marketing"
       ],
       "use_cases": [
-        "Enrichir interfaces app/web avec 3D sans apprendre Blender.",
-        "Prototyper animations 3D rapidement (design sprint).",
-        "Créer asset packs pour illustration e-commerce.",
-        "Concevoir interfaces données/dashboards avec contexte 3D.",
-        "Générer variations 3D multiples pour A/B testing UI."
+        "Illustrer une interface avec une série d'icônes 3D cohérentes.",
+        "Préparer des visuels pour une présentation produit.",
+        "Adapter un asset fourni au format Blender."
       ],
       "verdict": {
         "avoidIf": [
-          "Vous avez besoin de 3D hyper-customisable (Blender directement mieux).",
-          "Vous refusez les limites quotidiennes (préférer Polyhaven ou Noun Project).",
-          "Vous travaillez sur projets lourds nécessitant 100+ assets quotidiens."
+          "Vous exigez une grille tarifaire centralisée avant de parcourir le catalogue.",
+          "Vous cherchez une plateforme de modélisation ou d'animation 3D complète.",
+          "Vous devez redistribuer les fichiers source dans un produit vendu."
         ],
         "keepIf": [
-          "Vous créez des interfaces UI/UX et cherchez des 3D polies sans apprendre Blender.",
-          "Vous faites du contenu visuel (animation, motion design) nécessitant 3D.",
-          "Vous aimez le freemium avec quotas journaliers (10 assets gratuits/jour suffit en prototypage)."
+          "Vous cherchez des illustrations 3D prêtes à intégrer dans une interface ou une présentation.",
+          "Vous voulez tester plusieurs assets gratuitement avant d'acheter un pack.",
+          "Vous avez besoin de fichiers Blender pour adapter certains visuels."
         ],
-        "threshold": "Pikkovia domine pour designers UI voulant 3D de qualité sans courbe d'apprentissage ; freemium généreux pour prototypage/démarrage."
+        "threshold": "Ajoutez Pikkovia si ses packs couvrent réellement votre direction visuelle; sinon, une bibliothèque plus vaste et mieux documentée sera plus facile à standardiser."
       }
     },
     "slug": "pikkovia",
     "sources": [
       {
-        "label": "Pikkovia — 3D Asset Library for UI Designers (site officiel)",
+        "label": "Pikkovia - catalogue et FAQ (site officiel)",
         "url": "https://pikkovia.com/"
+      },
+      {
+        "label": "Pikkovia - licence (site officiel)",
+        "url": "https://pikkovia.com/license/"
+      },
+      {
+        "label": "Pikkovia Store - catalogue historique (site officiel)",
+        "url": "https://store.pikkovia.com/"
       }
     ],
-    "verified_on": "2026-07-24"
+    "verified_on": "2026-08-30"
   },
-  "media_evidence": null,
+  "media_evidence": {
+    "discovery": {
+      "official_media_found": true,
+      "official_pages_checked": [
+        "https://pikkovia.com/"
+      ]
+    },
+    "items": [
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://pikkovia.com/",
+        "url": "https://pikkovia.com/wp-content/uploads/2023/07/hero-image.png"
+      },
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://pikkovia.com/",
+        "url": "https://pikkovia.com/wp-content/uploads/2023/09/Free-Plants-Voucher-3-768x576.png"
+      },
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://pikkovia.com/",
+        "url": "https://pikkovia.com/wp-content/uploads/2023/09/Free-Plants-Voucher-2-768x576.png"
+      }
+    ],
+    "mode": "sourced",
+    "slug": "pikkovia",
+    "verified_on": "2026-08-30"
+  },
   "quality_version": "catalog-review-v1",
   "required_action": "verify_bundle_freshness_then_review_editorial",
   "rules": {
@@ -261,37 +269,35 @@
   "tracking": {
     "assigned_batch": "review-design-tools-critical-001",
     "batch_position": 16,
-    "blockers": [],
-    "catalog_hash": "sha256:5e124060da495d9d35c7d0e55dad533f8f2d4ae0e12f0cf70695e17fad8f60e2",
+    "blockers": [
+      "identité corrigée et prix payant actuel non publié clairement"
+    ],
+    "catalog_hash": "sha256:2fc43def8d9932363f6d5a143c08845174e559c8f6fd427c015c5d1f40969074",
     "category": "design-tools",
     "fact_bundle": "AVAILABLE",
-    "fact_bundle_hash": "sha256:60afb19b0c9772fccdf0c2113da951fd09b4cd3db5b6680c5a8775d38bc08dd4",
+    "fact_bundle_hash": "sha256:10f88df9f06206cf3c6bb31ac8d4a18d7cbc7769788d1b9ac1fef54f6d6ce17e",
     "invalidated_from": null,
-    "media_errors": [
-      "media_evidence_missing"
-    ],
-    "media_evidence": "MISSING",
-    "media_evidence_hash": null,
+    "media_errors": [],
+    "media_evidence": "VALID",
+    "media_evidence_hash": "sha256:f375843456b72a57416a4a6a888d4084fc38e63d0f1798acdc1a438df5085586",
     "name": "Pikkovia",
     "next_review_at": null,
     "priority_reasons": [
       "affiliate_link",
-      "paid_price",
-      "missing_or_invalid_media_evidence",
-      "shallow_editorial"
+      "paid_price"
     ],
-    "priority_score": 260,
+    "priority_score": 180,
     "published_at": null,
     "quality_version": "catalog-review-v1",
     "rendered_at": null,
-    "review_fingerprint": "sha256:0cf42e056fa67fa6578f4d604f0433a590e2970a99584ee027bac1cdede20542",
+    "review_fingerprint": "sha256:eda8b1ea1936999efa682ecc69dbce167c3d3f642e7a9b1efa686cf0ed92d7ae",
     "reviewed_at": null,
     "reviewed_hash": null,
     "reviewer": null,
     "risk_tier": "critical",
     "slug": "pikkovia",
-    "source_url": "https://pikkovia.com",
-    "source_verified_on": "2026-05-08",
-    "status": "QUEUED"
+    "source_url": "https://pikkovia.com/",
+    "source_verified_on": "2026-08-30",
+    "status": "REVIEW_REQUIRED"
   }
 }

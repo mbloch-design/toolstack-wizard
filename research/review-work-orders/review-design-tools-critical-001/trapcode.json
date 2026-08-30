@@ -20,20 +20,22 @@
     ],
     "host_app": "adobe-after-effects",
     "id": "trapcode",
-    "long_description": "Trapcode, c'est la suite de particules et d'effets 3D la plus mythique d'After Effects. Son produit phare, Particular, est LA référence pour générer des particules, de la fumée, des nébuleuses ou des effets organiques. La suite ajoute Form (grilles de particules), Mir (surfaces 3D fluides), Tao, Shine, Starglow et d'autres. Pour un motion designer, c'est un gain de temps énorme face à un système de particules fait main.\n\nDepuis le passage chez Maxon, Trapcode n'est plus vendu seul : on y accède via l'abonnement Red Giant Complete (~50$/mois, 599$/an) ou Maxon One. C'est le point d'attention principal. Si tu n'utilises que Trapcode, tu paies en réalité toute la suite Red Giant. Les alternatives restent limitées : les particules natives d'After Effects sont basiques, et un concurrent comme Stardust existe mais ne couvre pas tout. Trapcode se justifie si les particules et effets 3D sont un usage régulier de ton flux After Effects.",
-    "long_description_en": "Trapcode is the most legendary particle and 3D effects suite for After Effects. Its flagship, Particular, is THE reference for generating particles, smoke, nebulas and organic effects. The suite adds Form (particle grids), Mir (fluid 3D surfaces), Tao, Shine, Starglow and more. For a motion designer, it's a huge time saver versus a hand-built particle system.\n\nSince moving to Maxon, Trapcode is no longer sold on its own: you access it via the Red Giant Complete subscription (~$50/month, $599/year) or Maxon One. That's the main thing to watch. If you only use Trapcode, you're really paying for the whole Red Giant suite. Alternatives stay limited: After Effects' native particles are basic, and a competitor like Stardust exists but doesn't cover everything. Trapcode earns its place if particles and 3D effects are a regular part of your After Effects flow.",
+    "long_description": "Famille de plugins de particules et d'effets 3D pour Adobe After Effects, dont Trapcode Particular est l'outil principal. Depuis 2024, Trapcode est installé et commercialisé dans l'abonnement Red Giant plutôt que comme suite autonome.\n\nFonctions clés : Système de particules 3D avancé (Particular) ; Effets de reflet et lumière (Shine, Glow) ; Distorsion et effets de terrain (Form) ; Plugin Magic Bullet Suite inclus (Red Giant Complete) ; Mise à jour continue et support actif.\n\nTrapcode s'impose pour le motion design professionnel et le VFX ; pour des effets simples, After Effects natif suffit.",
+    "long_description_en": "Family of particle and 3D effects plugins for Adobe After Effects, led by Trapcode Particular. Since 2024, Trapcode has been installed and sold through the Red Giant subscription rather than as a standalone suite.\n\nKey strengths: Powerful and flexible 3D particle system.; Deep After Effects integration (native workflow).; Red Giant Complete includes a full effects suite plus Magic Bullet.; Active support and regular updates..\n\nTrapcode is essential for professional motion design and VFX; for simple effects, After Effects alone suffices.",
     "media": {
-      "gallery_images": [],
-      "og_image_url": null
+      "gallery_images": [
+        "https://img.youtube.com/vi/ovlyRvDa3IA/maxresdefault.jpg"
+      ],
+      "og_image_url": "https://maxonassets.imgix.net/images/Products/Red-Giant/Trapcode_Designer_Interface.jpg?ar=16%3A9&auto=format%2Ccompress&crop=faces&fit=clip&fm=webp&h=1080&w=1920"
     },
     "name": "Trapcode",
     "pricing": {
-      "free": "",
-      "paid": "Via Red Giant Complete (~50$/mois, 599$/an) ou Maxon One. Plus vendu à l'unité."
+      "free": "Pas de version gratuite permanente. Essai gratuit Maxon One de 14 jours, sans carte bancaire selon Maxon.",
+      "paid": "Trapcode: Pas de vente autonome actuelle ; Red Giant: Montant régional affiché sur la page officielle Maxon ; Maxon One: Montant régional affiché sur la page officielle Maxon"
     },
     "pricing_en": {
-      "free": "",
-      "paid": "Via Red Giant Complete (~$50/month, $599/year) or Maxon One. No longer sold standalone."
+      "free": "Pas de version gratuite permanente. Essai gratuit Maxon One de 14 jours, sans carte bancaire selon Maxon.",
+      "paid": "Trapcode: Pas de vente autonome actuelle ; Red Giant: Montant régional affiché sur la page officielle Maxon ; Maxon One: Montant régional affiché sur la page officielle Maxon"
     },
     "pricing_v5": {
       "cautions": [
@@ -43,12 +45,12 @@
       "compare_plan_name": "Red Giant Complete",
       "compare_price_monthly_eur": 50,
       "location_sensitive": false,
-      "official_source_url": "https://www.maxon.net/en/buy",
+      "official_source_url": "https://www.maxon.net/en/product-detail/red-giant/particles-and-3d/trapcode-particular",
       "price_reliability": "high",
       "source_domain": "maxon.net",
       "usage_sensitive": false,
       "verification_status": "official_explicit",
-      "verified_on": "2026-06-17"
+      "verified_on": "2026-08-30"
     },
     "pros": [
       "Système de particules 3D très puissant et flexible.",
@@ -62,11 +64,11 @@
       "Red Giant Complete includes a full effects suite plus Magic Bullet.",
       "Active support and regular updates."
     ],
-    "short_description": "Suite Red Giant de particules et d'effets 3D pour After Effects (Particular, Mir, Form).",
-    "short_description_en": "Red Giant's particle and 3D effects suite for After Effects (Particular, Mir, Form).",
+    "short_description": "Famille de plugins de particules et d'effets 3D pour Adobe After Effects, dont Trapcode Particular est l'outil principal. Depuis 2024, Trapcode est installé et commercialisé dans l'abonnement Red Giant plutôt que comme suite autonome.",
+    "short_description_en": "Family of particle and 3D effects plugins for Adobe After Effects, led by Trapcode Particular. Since 2024, Trapcode has been installed and sold through the Red Giant subscription rather than as a standalone suite.",
     "slug": "trapcode",
-    "source_url": "https://www.maxon.net/en/buy",
-    "source_verified_on": "2026-06-17",
+    "source_url": "https://www.maxon.net/en/product-detail/red-giant/particles-and-3d/trapcode-particular",
+    "source_verified_on": "2026-08-30",
     "use_cases": [
       "Créer des animations de particules 3D pour les génériques ou transitions vidéo.",
       "Produire des effets VFX pour la cinématographie et la production vidéo.",
@@ -108,7 +110,7 @@
     "website_url": "https://www.maxon.net/red-giant/trapcode"
   },
   "fact_bundle": {
-    "author": "ToolTrim — Mike",
+    "author": "ToolTrim - Mike",
     "en": {
       "cons": [
         "Subscription mandatory (no one-time license).",
@@ -144,7 +146,7 @@
     },
     "facts": {
       "free_tier": {
-        "detail": "Pas de version gratuite. Accès uniquement par abonnement Red Giant Complete ou Maxon One.",
+        "detail": "Pas de version gratuite permanente. Essai gratuit Maxon One de 14 jours, sans carte bancaire selon Maxon.",
         "exists": false
       },
       "key_features": [
@@ -156,25 +158,21 @@
       ],
       "plans": [
         {
-          "name": "Red Giant Complete (abonnement mensuel)",
-          "price": "$85/mois"
+          "name": "Trapcode",
+          "price": "Pas de vente autonome actuelle"
         },
         {
-          "name": "Red Giant Complete (abonnement annuel)",
-          "price": "$639/an"
+          "name": "Red Giant",
+          "price": "Montant régional affiché sur la page officielle Maxon"
         },
         {
-          "name": "Universe seul (abonnement mensuel)",
-          "price": "$32/mois"
-        },
-        {
-          "name": "Universe seul (abonnement annuel)",
-          "price": "$214/an"
+          "name": "Maxon One",
+          "price": "Montant régional affiché sur la page officielle Maxon"
         }
       ],
-      "pricing_model": "Abonnement obligatoire (subscription-based). Les licences perpétuelles ne sont plus disponibles. Inclus dans Red Giant Complete ou Maxon One.",
-      "what": "Suite de plugins de particules et d'effets 3D pour After Effects et Premiere Pro, développée par Red Giant (groupe Maxon). Comprend Trapcode Particular (système de particules 3D), Trapcode Form, Trapcode Shine et autres effets avancés.",
-      "what_en": "Suite of particle and 3D effects plugins for After Effects and Premiere Pro, developed by Red Giant (Maxon group). Includes Trapcode Particular (3D particle system), Trapcode Form, Trapcode Shine, and other advanced effects."
+      "pricing_model": "Inclus dans l'abonnement Red Giant et dans Maxon One. Aucun prix autonome actuel pour Trapcode.",
+      "what": "Famille de plugins de particules et d'effets 3D pour Adobe After Effects, dont Trapcode Particular est l'outil principal. Depuis 2024, Trapcode est installé et commercialisé dans l'abonnement Red Giant plutôt que comme suite autonome.",
+      "what_en": "Family of particle and 3D effects plugins for Adobe After Effects, led by Trapcode Particular. Since 2024, Trapcode has been installed and sold through the Red Giant subscription rather than as a standalone suite."
     },
     "fr": {
       "cons": [
@@ -218,13 +216,46 @@
     "slug": "trapcode",
     "sources": [
       {
-        "label": "Trapcode by Red Giant / Maxon (site officiel)",
+        "label": "Trapcode Particular (site officiel Maxon)",
         "url": "https://www.maxon.net/en/product-detail/red-giant/particles-and-3d/trapcode-particular"
+      },
+      {
+        "label": "Red Giant (site officiel Maxon)",
+        "url": "https://www.maxon.net/en/red-giant"
+      },
+      {
+        "label": "Installateur Red Giant unifié (support officiel Maxon)",
+        "url": "https://support.maxon.net/hc/en-us/articles/21148760833180-How-do-I-install-the-individual-suites-within-my-Red-Giant-subscription-Magic-Bullet-Trapcode-VFX-Universe"
       }
     ],
-    "verified_on": "2026-07-24"
+    "verified_on": "2026-08-30"
   },
-  "media_evidence": null,
+  "media_evidence": {
+    "discovery": {
+      "official_media_found": true,
+      "official_pages_checked": [
+        "https://www.maxon.net/en/red-giant",
+        "https://www.maxon.net/en/product-detail/red-giant/particles-and-3d/trapcode-particular"
+      ]
+    },
+    "items": [
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://www.maxon.net/en/red-giant",
+        "url": "https://maxonassets.imgix.net/images/Products/Red-Giant/Trapcode_Designer_Interface.jpg?ar=16%3A9&auto=format%2Ccompress&crop=faces&fit=clip&fm=webp&h=1080&w=1920"
+      },
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://www.youtube.com/watch?v=ovlyRvDa3IA",
+        "url": "https://img.youtube.com/vi/ovlyRvDa3IA/maxresdefault.jpg"
+      }
+    ],
+    "mode": "sourced",
+    "slug": "trapcode",
+    "verified_on": "2026-08-30"
+  },
   "quality_version": "catalog-review-v1",
   "required_action": "verify_bundle_freshness_then_review_editorial",
   "rules": {
@@ -242,36 +273,32 @@
     "assigned_batch": "review-design-tools-critical-001",
     "batch_position": 23,
     "blockers": [],
-    "catalog_hash": "sha256:1eaca47300126c78f8b831c11c8587de382807d2910104b73224bc5ecbc5bba6",
+    "catalog_hash": "sha256:aa36223baefbbad3c0b42ce33864087eed500c8438327c6b2f4f697bbd8798dd",
     "category": "design-tools",
     "fact_bundle": "AVAILABLE",
-    "fact_bundle_hash": "sha256:3a326ec828d42b5bfce9270729897564c0d94abf70e19565075bdc93c2ad7ab9",
+    "fact_bundle_hash": "sha256:077623705ca2a4ba531a6e98d40f62dcf0e2c1aaef3005bb3cd3ee6e9f4fda0a",
     "invalidated_from": null,
-    "media_errors": [
-      "media_evidence_missing"
-    ],
-    "media_evidence": "MISSING",
-    "media_evidence_hash": null,
+    "media_errors": [],
+    "media_evidence": "VALID",
+    "media_evidence_hash": "sha256:ed334c96d80355cfd60532498fe1ab74bcfbbf5c4f2ca78e93fd778b74c9a857",
     "name": "Trapcode",
     "next_review_at": null,
     "priority_reasons": [
       "affiliate_link",
-      "paid_price",
-      "missing_or_invalid_media_evidence",
-      "missing_media"
+      "paid_price"
     ],
-    "priority_score": 245,
+    "priority_score": 180,
     "published_at": null,
     "quality_version": "catalog-review-v1",
     "rendered_at": null,
-    "review_fingerprint": "sha256:9f7236758a1dfe16ae364102d3350aa49c2bbc397fdc85e224f63f069e8ad1be",
+    "review_fingerprint": "sha256:4869fe42487068be675aefece368cfcc9c8d2e235683ccfc1ae33523f8d012fa",
     "reviewed_at": null,
     "reviewed_hash": null,
     "reviewer": null,
     "risk_tier": "critical",
     "slug": "trapcode",
-    "source_url": "https://www.maxon.net/en/buy",
-    "source_verified_on": "2026-06-17",
-    "status": "QUEUED"
+    "source_url": "https://www.maxon.net/en/product-detail/red-giant/particles-and-3d/trapcode-particular",
+    "source_verified_on": "2026-08-30",
+    "status": "MEDIA_READY"
   }
 }

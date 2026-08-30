@@ -11,25 +11,28 @@
       "Pas de version autonome gratuite."
     ],
     "cons_en": [
-      "Cannot be purchased standalone—depends on SketchUp subscription.",
+      "Cannot be purchased standalone and depends on a SketchUp subscription.",
       "Overall SketchUp subscription cost can be high.",
       "Learning curve if you don't use SketchUp.",
       "No free standalone version."
     ],
     "host_app": "sketchup-pro",
     "id": "layout-sketchup",
-    "long_description": "Mise en page 2D liée aux modèles SketchUp : plans, coupes, cotations et dossiers client.",
-    "long_description_en": "2D documentation linked to SketchUp models: plans, sections, dimensions and client decks.",
+    "long_description": "Logiciel de mise en page 2D de SketchUp conçu pour convertir des modèles 3D en documents de construction détaillés et présentations professionnelles avec annotations et cotations associatives.\n\nFonctions clés : Vues multiples d'un modèle 3D sur une même page avec angles et styles différents ; Cotations associatives qui se mettent à jour automatiquement ; Toolkit complet de dessin technique 2D ; Import/export DWG haute fidélité ; Cartouches et symboles architecturaux prédéfinis ; Export PDF, DWG/DXF, JPG.\n\nLayOut s'impose pour les architectes et designers SketchUp qui produisent des documents techniques professionnels ; pour une mise en page légère ou gratuite, d'autres outils conviennent mieux.",
+    "long_description_en": "SketchUp's professional 2D drafting and layout software that converts 3D models into comprehensive construction documentation and presentations with associative dimensions and annotations.\n\nKey strengths: Native integration with SketchUp Pro and Studio.; Associative dimensions that automatically update.; DWG and PDF export for professional workflows.; Complete professional technical drawing tools.; Pre-built architectural templates and symbols..\n\nLayOut makes sense for SketchUp-based architects and designers producing professional technical documentation; for light or free layout work, other tools fit better.",
     "media": {
       "gallery_images": [],
-      "og_image_url": "https://images.ctfassets.net/5qimfmsew7zl/398ERwObwTeseKumIduAoy/520d855254ba592359b8a18d1243c8b1/SU-Website-Product-LayOut-S1.jpg"
+      "og_image_url": "https://images.ctfassets.net/yd21npj2ir9g/8aeb1ef28387073bd4e98a/278789ba2ee27aadfb03b1a0ec87448b/2026-layout-interface.png"
     },
     "name": "LayOut",
     "pricing": {
-      "free": "Inclus avec SketchUp Pro",
-      "paid": "Inclus dans SketchUp Pro"
+      "free": "Essai gratuit 7 jours via l'abonnement SketchUp Pro. Pas de version gratuite permanente.",
+      "paid": "SketchUp Pro Annual: 33,25 $/mois/utilisateur, facturé annuellement, hors taxes ; SketchUp Studio Annual: 68,25 $/mois/utilisateur, facturé annuellement, hors taxes"
     },
-    "pricing_en": null,
+    "pricing_en": {
+      "free": "Essai gratuit 7 jours via l'abonnement SketchUp Pro. Pas de version gratuite permanente.",
+      "paid": "SketchUp Pro Annual: 33,25 $/mois/utilisateur, facturé annuellement, hors taxes ; SketchUp Studio Annual: 68,25 $/mois/utilisateur, facturé annuellement, hors taxes"
+    },
     "pricing_v5": {
       "billing_model": "bundle",
       "billing_options": [
@@ -51,10 +54,10 @@
       "compare_plan_kind": "bundle",
       "compare_plan_name": "Inclus avec SketchUp Pro",
       "compare_price_monthly_eur": 0,
-      "official_source_url": "https://www.sketchup.com/products/layout",
-      "source_domain": "sketchup.com",
-      "verification_status": "manual_reference",
-      "verified_on": "2026-05-10"
+      "official_source_url": "https://help.sketchup.com/en/layout/layout",
+      "source_domain": "help.sketchup.com",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-08-30"
     },
     "pros": [
       "Intégration native avec SketchUp Pro et Studio.",
@@ -70,11 +73,11 @@
       "Complete professional technical drawing tools.",
       "Pre-built architectural templates and symbols."
     ],
-    "short_description": "Mise en page 2D liée aux modèles SketchUp : plans, coupes, cotations et dossiers client.",
-    "short_description_en": "2D documentation linked to SketchUp models: plans, sections, dimensions and client decks.",
+    "short_description": "Logiciel de mise en page 2D de SketchUp conçu pour convertir des modèles 3D en documents de construction détaillés et présentations professionnelles avec annotations et cotations associatives.",
+    "short_description_en": "SketchUp's professional 2D drafting and layout software that converts 3D models into comprehensive construction documentation and presentations with associative dimensions and annotations.",
     "slug": "layout-sketchup",
-    "source_url": "https://www.sketchup.com/products/layout",
-    "source_verified_on": "2026-05-10",
+    "source_url": "https://help.sketchup.com/en/layout/layout",
+    "source_verified_on": "2026-08-30",
     "use_cases": [
       "Produire des plans de construction détaillés à partir d'un modèle SketchUp.",
       "Créer des présentations architecturales professionnelles.",
@@ -114,10 +117,10 @@
     "website_url": "https://www.sketchup.com/products/layout"
   },
   "fact_bundle": {
-    "author": "ToolTrim — Mike",
+    "author": "ToolTrim - Mike",
     "en": {
       "cons": [
-        "Cannot be purchased standalone—depends on SketchUp subscription.",
+        "Cannot be purchased standalone and depends on a SketchUp subscription.",
         "Overall SketchUp subscription cost can be high.",
         "Learning curve if you don't use SketchUp.",
         "No free standalone version."
@@ -163,15 +166,15 @@
       ],
       "plans": [
         {
-          "name": "Inclus dans SketchUp Pro",
-          "price": "Abonnement annuel (montants sur la page officielle)"
+          "name": "SketchUp Pro Annual",
+          "price": "33,25 $/mois/utilisateur, facturé annuellement, hors taxes"
         },
         {
-          "name": "Inclus dans SketchUp Studio",
-          "price": "Abonnement annuel (montants sur la page officielle)"
+          "name": "SketchUp Studio Annual",
+          "price": "68,25 $/mois/utilisateur, facturé annuellement, hors taxes"
         }
       ],
-      "pricing_model": "Inclus dans les abonnements SketchUp Pro et Studio (pas de vente indépendante). Essai gratuit 7 jours disponible.",
+      "pricing_model": "Application desktop incluse dans SketchUp Pro et Studio, sans vente indépendante.",
       "what": "Logiciel de mise en page 2D de SketchUp conçu pour convertir des modèles 3D en documents de construction détaillés et présentations professionnelles avec annotations et cotations associatives.",
       "what_en": "SketchUp's professional 2D drafting and layout software that converts 3D models into comprehensive construction documentation and presentations with associative dimensions and annotations."
     },
@@ -217,13 +220,39 @@
     "slug": "layout-sketchup",
     "sources": [
       {
-        "label": "LayOut SketchUp — site officiel",
-        "url": "https://sketchup.trimble.com/products/layout"
+        "label": "LayOut (centre d'aide officiel)",
+        "url": "https://help.sketchup.com/en/layout/layout"
+      },
+      {
+        "label": "Tarifs SketchUp (site officiel)",
+        "url": "https://sketchup.trimble.com/en/plans-and-pricing"
+      },
+      {
+        "label": "SketchUp Pro (centre d'aide officiel)",
+        "url": "https://help.sketchup.com/en/admin/sketchup-pro"
       }
     ],
-    "verified_on": "2026-07-24"
+    "verified_on": "2026-08-30"
   },
-  "media_evidence": null,
+  "media_evidence": {
+    "discovery": {
+      "official_media_found": true,
+      "official_pages_checked": [
+        "https://help.sketchup.com/en/layout/layout"
+      ]
+    },
+    "items": [
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://help.sketchup.com/en/layout/layout",
+        "url": "https://images.ctfassets.net/yd21npj2ir9g/8aeb1ef28387073bd4e98a/278789ba2ee27aadfb03b1a0ec87448b/2026-layout-interface.png"
+      }
+    ],
+    "mode": "sourced",
+    "slug": "layout-sketchup",
+    "verified_on": "2026-08-30"
+  },
   "quality_version": "catalog-review-v1",
   "required_action": "verify_bundle_freshness_then_review_editorial",
   "rules": {
@@ -241,36 +270,32 @@
     "assigned_batch": "review-design-tools-critical-001",
     "batch_position": 15,
     "blockers": [],
-    "catalog_hash": "sha256:becf7a88a93d9516dc8b96f5d1339edd3a46f488f1b8dac47e7c73f36e9f9ec8",
+    "catalog_hash": "sha256:c15008aebc1b15ddc31891d7df951faab9f67fbe11c98decca4901e039ae3b72",
     "category": "design-tools",
     "fact_bundle": "AVAILABLE",
-    "fact_bundle_hash": "sha256:fc8e52dc9410701e75f84876eef088fb9ea74c192a855bc02926ec3df19369d8",
+    "fact_bundle_hash": "sha256:a8b7dbf4cd6d8accde1e5437ba5684e44a64f13ecbea1494e43444349dad3a97",
     "invalidated_from": null,
-    "media_errors": [
-      "media_evidence_missing"
-    ],
-    "media_evidence": "MISSING",
-    "media_evidence_hash": null,
+    "media_errors": [],
+    "media_evidence": "VALID",
+    "media_evidence_hash": "sha256:b85532654bd0fedf1c3e1bd2c7e8126a3cdc47039ab7f9a430b9a610af9ff173",
     "name": "LayOut",
     "next_review_at": null,
     "priority_reasons": [
       "affiliate_link",
-      "paid_price",
-      "missing_or_invalid_media_evidence",
-      "shallow_editorial"
+      "paid_price"
     ],
-    "priority_score": 260,
+    "priority_score": 180,
     "published_at": null,
     "quality_version": "catalog-review-v1",
     "rendered_at": null,
-    "review_fingerprint": "sha256:947a269fbe05491e36cce574b12088af7e536ad82683e91cb45ea4d63342c088",
+    "review_fingerprint": "sha256:4ceb987867e3d19e4cdf3c1741b8a23a4d95035e8425729f59ea769457bffec0",
     "reviewed_at": null,
     "reviewed_hash": null,
     "reviewer": null,
     "risk_tier": "critical",
     "slug": "layout-sketchup",
-    "source_url": "https://www.sketchup.com/products/layout",
-    "source_verified_on": "2026-05-10",
-    "status": "QUEUED"
+    "source_url": "https://help.sketchup.com/en/layout/layout",
+    "source_verified_on": "2026-08-30",
+    "status": "MEDIA_READY"
   }
 }

@@ -1,19 +1,22 @@
 {
   "slug": "vfx-suite",
-  "author": "ToolTrim — Mike",
-  "verified_on": "2026-07-24",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-08-30",
   "sources": [
-    { "label": "Red Giant VFX Suite / Maxon (site officiel)", "url": "https://www.maxon.net/en/red-giant" }
+    { "label": "Outils de compositing Red Giant (site officiel Maxon)", "url": "https://www.maxon.net/en/solutions/compositing" },
+    { "label": "Red Giant (site officiel Maxon)", "url": "https://www.maxon.net/en/red-giant" },
+    { "label": "Compatibilité Red Giant (support officiel Maxon)", "url": "https://support.maxon.net/hc/en-us/articles/23987275556764-Red-Giant-Compatibility" },
+    { "label": "Installateur Red Giant unifié (support officiel Maxon)", "url": "https://support.maxon.net/hc/en-us/articles/21148760833180-How-do-I-install-the-individual-suites-within-my-Red-Giant-subscription-Magic-Bullet-Trapcode-VFX-Universe" }
   ],
   "facts": {
-    "what": "Suite de plugins VFX pour After Effects et Premiere Pro, développée par Red Giant (groupe Maxon). Comprend Trapcode Suite, Magic Bullet Suite, Universe et autres effets avancés pour le motion design et la post-production vidéo.",
-    "what_en": "Suite of VFX plugins for After Effects and Premiere Pro, developed by Red Giant (Maxon group). Includes Trapcode Suite, Magic Bullet Suite, Universe, and other advanced effects for motion design and video post-production.",
-    "pricing_model": "Abonnement obligatoire. Disponible uniquement via Red Giant Complete ou Maxon One subscription. Les licences perpétuelles ne sont plus vendues.",
-    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Accès uniquement par abonnement Red Giant Complete ou Maxon One." },
+    "what": "Famille de plugins de keying, tracking, nettoyage et compositing dont Adobe After Effects est l'hôte principal. Depuis 2024, VFX Suite n'est plus installée ou vendue séparément et ses outils sont inclus dans Red Giant.",
+    "what_en": "Family of keying, tracking, cleanup, and compositing plugins primarily hosted in Adobe After Effects. Since 2024, VFX Suite is no longer installed or sold separately and its tools are included with Red Giant.",
+    "pricing_model": "Inclus dans l'abonnement Red Giant et dans Maxon One. Aucun prix autonome actuel pour VFX Suite.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite permanente. Essai gratuit de 14 jours, sans carte bancaire selon Maxon." },
     "plans": [
-      { "name": "Red Giant Complete (mensuel)", "price": "$85/mois" },
-      { "name": "Red Giant Complete (annuel)", "price": "$639/an" },
-      { "name": "Maxon One (ensemble complet)", "price": "Montants sur la page officielle" }
+      { "name": "VFX Suite", "price": "Pas de vente autonome actuelle" },
+      { "name": "Red Giant", "price": "Montant régional affiché sur la page officielle Maxon" },
+      { "name": "Maxon One", "price": "Montant régional affiché sur la page officielle Maxon" }
     ],
     "key_features": [
       "Suite Trapcode complète (particules, effets 3D)",

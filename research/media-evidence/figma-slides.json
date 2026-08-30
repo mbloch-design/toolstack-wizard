@@ -1,0 +1,11 @@
+{
+  "slug": "figma-slides",
+  "verified_on": "2026-08-30",
+  "mode": "sourced",
+  "discovery": { "official_media_found": true, "official_pages_checked": ["https://www.figma.com/slides/"] },
+  "items": [
+    { "kind": "image", "url": "https://cdn.sanity.io/images/599r6htc/regionalized/89ed0f5953ed0b7d3267598af0261fee1f972ead-1080x865.png?auto=format&fit=max&h=865&q=75&w=1080", "source_page_url": "https://www.figma.com/slides/", "official": true },
+    { "kind": "image", "url": "https://cdn.sanity.io/images/599r6htc/regionalized/983f67825ffd057786323f3e5813707acf763de5-1080x865.png?auto=format&fit=max&h=865&q=75&w=1080", "source_page_url": "https://www.figma.com/slides/", "official": true },
+    { "kind": "image", "url": "https://cdn.sanity.io/images/599r6htc/regionalized/260c9b699c8f27a0d2b8b0b1a9f6dff7bff50962-1080x864.png?auto=format&fit=max&h=864&q=75&w=1080", "source_page_url": "https://www.figma.com/slides/", "official": true }
+  ]
+}

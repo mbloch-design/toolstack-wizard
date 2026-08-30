@@ -6,43 +6,251 @@
       "adobe-illustrator"
     ],
     "category": "design-tools",
-    "cons": [],
-    "cons_en": [],
+    "cons": [
+      "Dépend de Figma Design.",
+      "Certaines fonctions Design sont indisponibles en mode Draw.",
+      "Moins complet qu'un outil vectoriel spécialisé pour le prépresse."
+    ],
+    "cons_en": [
+      "Depends on Figma Design.",
+      "Some Design features are unavailable in Draw mode.",
+      "Less complete than a specialist vector tool for prepress."
+    ],
     "host_app": "figma",
     "id": "figma-draw",
-    "long_description": "Figma Draw enrichit l'éditeur avec shape builder, sélection multi-vecteurs, largeur de trait variable, texte sur tracé, motifs, textures et flous progressifs, tout en conservant les variables du design system.",
-    "long_description_en": "Figma Draw expands the editor with shape building, multi-vector selection, variable stroke width, text on a path, patterns, textures, and progressive blur while retaining design-system variables.",
+    "long_description": "Espace d'illustration et ensemble d'outils vectoriels avancés intégrés à Figma Design. Draw fonctionne dans les fichiers Figma et ne constitue pas une application autonome.\n\nFonctions clés : Pinceaux vectoriels personnalisables ; Textures, bruit et flou progressif ; Traits dynamiques et largeur variable ; Vectorisation, lasso et édition multi-vecteurs ; Texte sur tracé et répétitions ; Composants et variables de couleur Figma.\n\nAjoutez Draw si l'illustration doit rester dans le flux produit Figma ; gardez un outil spécialisé pour les travaux vectoriels complexes ou destinés à l'impression.",
+    "long_description_en": "Illustration workspace and advanced vector toolset built into Figma Design. Draw works inside Figma files and is not a standalone application.\n\nKey strengths: Same file and collaboration model as Figma Design.; Expressive tools without switching applications.; Reusable variables and components.; A free plan is available for testing..\n\nAdd Draw when illustration should remain inside the Figma product workflow; keep a specialist tool for complex vector or print production.",
     "media": {
-      "gallery_images": [],
-      "og_image_url": null
+      "gallery_images": [
+        "https://cdn.sanity.io/images/599r6htc/regionalized/a02aff53e28875fb72d35769a8827e40b2d5d552-1080x864.png?auto=format&fit=max&h=864&q=75&w=1080",
+        "https://cdn.sanity.io/images/599r6htc/regionalized/f1e43870f025011e7fcac304e4b24fa47c5d8b1d-1080x864.png?auto=format&fit=max&h=864&q=75&w=1080"
+      ],
+      "og_image_url": "https://cdn.sanity.io/images/599r6htc/regionalized/b5bdc896ad53707438f475b3e0959d217103f348-1260x1260.png?auto=format&fit=max&h=630&q=75&w=630"
     },
     "name": "Figma Draw",
     "pricing": {
-      "free": "Accès limité selon le plan",
-      "paid": "Inclus avec un siège Full"
+      "free": "Disponible sur le plan Starter gratuit avec les limites générales de Figma.",
+      "paid": "Starter: Gratuit, accès limité ; Professional Full seat: 16 $/mois ; Organization Full seat: 55 $/mois, facturé annuellement ; Enterprise Full seat: 90 $/mois, facturé annuellement"
     },
     "pricing_en": {
-      "free": "Limited access depending on plan",
-      "paid": "Included with a Full seat"
+      "free": "Disponible sur le plan Starter gratuit avec les limites générales de Figma.",
+      "paid": "Starter: Gratuit, accès limité ; Professional Full seat: 16 $/mois ; Organization Full seat: 55 $/mois, facturé annuellement ; Enterprise Full seat: 90 $/mois, facturé annuellement"
     },
-    "pricing_v5": null,
-    "pros": [],
-    "pros_en": [],
-    "short_description": "Outils vectoriels expressifs intégrés à Figma pour illustration, textures et tracés avancés.",
-    "short_description_en": "Expressive vector tools inside Figma for illustration, textures, and advanced paths.",
+    "pricing_v5": {
+      "official_source_url": "https://www.figma.com/draw/",
+      "source_domain": "figma.com",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-08-30"
+    },
+    "pros": [
+      "Même fichier et même collaboration que Figma Design.",
+      "Outils expressifs sans changer d'application.",
+      "Variables et composants réutilisables.",
+      "Plan gratuit disponible pour tester."
+    ],
+    "pros_en": [
+      "Same file and collaboration model as Figma Design.",
+      "Expressive tools without switching applications.",
+      "Reusable variables and components.",
+      "A free plan is available for testing."
+    ],
+    "short_description": "Espace d'illustration et ensemble d'outils vectoriels avancés intégrés à Figma Design. Draw fonctionne dans les fichiers Figma et ne constitue pas une application autonome.",
+    "short_description_en": "Illustration workspace and advanced vector toolset built into Figma Design. Draw works inside Figma files and is not a standalone application.",
     "slug": "figma-draw",
     "source_url": "https://www.figma.com/draw/",
-    "source_verified_on": null,
-    "use_cases": [],
-    "use_cases_en": [],
-    "verdict": null,
-    "verdict_en": null,
+    "source_verified_on": "2026-08-30",
+    "use_cases": [
+      "Créer des icônes et illustrations pour une interface.",
+      "Décliner une identité avec des variables de couleur.",
+      "Ajouter textures et traits expressifs à un produit numérique."
+    ],
+    "use_cases_en": [
+      "Create icons and illustrations for an interface.",
+      "Build identity variants with color variables.",
+      "Add textures and expressive strokes to digital products."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous n'utilisez pas Figma Design.",
+        "Votre travail exige les fonctions éditoriales ou prépresse d'un logiciel spécialisé.",
+        "Vous avez besoin d'un flux entièrement hors ligne."
+      ],
+      "keepIf": [
+        "Vous illustrez dans des fichiers Figma déjà partagés.",
+        "Vous voulez éviter les allers-retours avec un logiciel vectoriel séparé.",
+        "Vos illustrations doivent réutiliser composants et variables de couleur."
+      ],
+      "threshold": "Ajoutez Draw si l'illustration doit rester dans le flux produit Figma ; gardez un outil spécialisé pour les travaux vectoriels complexes ou destinés à l'impression."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You do not use Figma Design.",
+        "Your work requires specialist publishing or prepress features.",
+        "You need a fully offline workflow."
+      ],
+      "keepIf": [
+        "You illustrate inside shared Figma files.",
+        "You want to avoid switching to a separate vector application.",
+        "Your illustrations need to reuse components and color variables."
+      ],
+      "threshold": "Add Draw when illustration should remain inside the Figma product workflow; keep a specialist tool for complex vector or print production."
+    },
     "website_url": "https://www.figma.com/draw/"
   },
-  "fact_bundle": null,
-  "media_evidence": null,
+  "fact_bundle": {
+    "author": "ToolTrim - Mike",
+    "en": {
+      "cons": [
+        "Depends on Figma Design.",
+        "Some Design features are unavailable in Draw mode.",
+        "Less complete than a specialist vector tool for prepress."
+      ],
+      "pros": [
+        "Same file and collaboration model as Figma Design.",
+        "Expressive tools without switching applications.",
+        "Reusable variables and components.",
+        "A free plan is available for testing."
+      ],
+      "use_cases": [
+        "Create icons and illustrations for an interface.",
+        "Build identity variants with color variables.",
+        "Add textures and expressive strokes to digital products."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You do not use Figma Design.",
+          "Your work requires specialist publishing or prepress features.",
+          "You need a fully offline workflow."
+        ],
+        "keepIf": [
+          "You illustrate inside shared Figma files.",
+          "You want to avoid switching to a separate vector application.",
+          "Your illustrations need to reuse components and color variables."
+        ],
+        "threshold": "Add Draw when illustration should remain inside the Figma product workflow; keep a specialist tool for complex vector or print production."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Disponible sur le plan Starter gratuit avec les limites générales de Figma.",
+        "exists": true
+      },
+      "key_features": [
+        "Pinceaux vectoriels personnalisables",
+        "Textures, bruit et flou progressif",
+        "Traits dynamiques et largeur variable",
+        "Vectorisation, lasso et édition multi-vecteurs",
+        "Texte sur tracé et répétitions",
+        "Composants et variables de couleur Figma"
+      ],
+      "plans": [
+        {
+          "name": "Starter",
+          "price": "Gratuit, accès limité"
+        },
+        {
+          "name": "Professional Full seat",
+          "price": "16 $/mois"
+        },
+        {
+          "name": "Organization Full seat",
+          "price": "55 $/mois, facturé annuellement"
+        },
+        {
+          "name": "Enterprise Full seat",
+          "price": "90 $/mois, facturé annuellement"
+        }
+      ],
+      "pricing_model": "Inclus dans Figma. Starter gratuit avec accès limité, fonctions complètes avec un siège Full.",
+      "what": "Espace d'illustration et ensemble d'outils vectoriels avancés intégrés à Figma Design. Draw fonctionne dans les fichiers Figma et ne constitue pas une application autonome.",
+      "what_en": "Illustration workspace and advanced vector toolset built into Figma Design. Draw works inside Figma files and is not a standalone application."
+    },
+    "fr": {
+      "cons": [
+        "Dépend de Figma Design.",
+        "Certaines fonctions Design sont indisponibles en mode Draw.",
+        "Moins complet qu'un outil vectoriel spécialisé pour le prépresse."
+      ],
+      "pros": [
+        "Même fichier et même collaboration que Figma Design.",
+        "Outils expressifs sans changer d'application.",
+        "Variables et composants réutilisables.",
+        "Plan gratuit disponible pour tester."
+      ],
+      "relevant_for": [
+        "Designers produit",
+        "Illustrateurs numériques",
+        "Équipes de marque"
+      ],
+      "use_cases": [
+        "Créer des icônes et illustrations pour une interface.",
+        "Décliner une identité avec des variables de couleur.",
+        "Ajouter textures et traits expressifs à un produit numérique."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous n'utilisez pas Figma Design.",
+          "Votre travail exige les fonctions éditoriales ou prépresse d'un logiciel spécialisé.",
+          "Vous avez besoin d'un flux entièrement hors ligne."
+        ],
+        "keepIf": [
+          "Vous illustrez dans des fichiers Figma déjà partagés.",
+          "Vous voulez éviter les allers-retours avec un logiciel vectoriel séparé.",
+          "Vos illustrations doivent réutiliser composants et variables de couleur."
+        ],
+        "threshold": "Ajoutez Draw si l'illustration doit rester dans le flux produit Figma ; gardez un outil spécialisé pour les travaux vectoriels complexes ou destinés à l'impression."
+      }
+    },
+    "slug": "figma-draw",
+    "sources": [
+      {
+        "label": "Figma Draw (site officiel)",
+        "url": "https://www.figma.com/draw/"
+      },
+      {
+        "label": "Figma Draw (aide officielle)",
+        "url": "https://help.figma.com/hc/en-us/articles/31440394517143-Explore-Figma-Draw"
+      },
+      {
+        "label": "Tarifs Figma",
+        "url": "https://www.figma.com/pricing/"
+      }
+    ],
+    "verified_on": "2026-08-30"
+  },
+  "media_evidence": {
+    "discovery": {
+      "official_media_found": true,
+      "official_pages_checked": [
+        "https://www.figma.com/draw/"
+      ]
+    },
+    "items": [
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://www.figma.com/draw/",
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/b5bdc896ad53707438f475b3e0959d217103f348-1260x1260.png?auto=format&fit=max&h=630&q=75&w=630"
+      },
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://www.figma.com/draw/",
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/a02aff53e28875fb72d35769a8827e40b2d5d552-1080x864.png?auto=format&fit=max&h=864&q=75&w=1080"
+      },
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://www.figma.com/draw/",
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/f1e43870f025011e7fcac304e4b24fa47c5d8b1d-1080x864.png?auto=format&fit=max&h=864&q=75&w=1080"
+      }
+    ],
+    "mode": "sourced",
+    "slug": "figma-draw",
+    "verified_on": "2026-08-30"
+  },
   "quality_version": "catalog-review-v1",
-  "required_action": "research_primary_sources_then_write_fact_bundle",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
   "rules": {
     "facts_separate_from_editorial": true,
     "primary_sources_only": true,
@@ -58,39 +266,32 @@
     "assigned_batch": "review-design-tools-critical-001",
     "batch_position": 1,
     "blockers": [],
-    "catalog_hash": "sha256:c3ef6348de93dc10fc28dd1a63b058ed9de217b4ba68e1fabc0a457bdc05e5a9",
+    "catalog_hash": "sha256:14acb2e320e8a119db529008ec12acb6c3dade086d47f3487dd4234bfc9d3bbe",
     "category": "design-tools",
-    "fact_bundle": "MISSING",
-    "fact_bundle_hash": null,
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:e74fe76dd955b9d31c838053200fbdf1527fa777d3f7f7fc869da704a6dda199",
     "invalidated_from": null,
-    "media_errors": [
-      "media_evidence_missing"
-    ],
-    "media_evidence": "MISSING",
-    "media_evidence_hash": null,
+    "media_errors": [],
+    "media_evidence": "VALID",
+    "media_evidence_hash": "sha256:8e073ba851ead4eb4bbe0f454510710b8788efe782bbbe1874849ca1a087baeb",
     "name": "Figma Draw",
     "next_review_at": null,
     "priority_reasons": [
       "affiliate_link",
-      "paid_price",
-      "missing_fact_bundle",
-      "missing_or_invalid_media_evidence",
-      "shallow_editorial",
-      "missing_media",
-      "undated_source"
+      "paid_price"
     ],
-    "priority_score": 370,
+    "priority_score": 180,
     "published_at": null,
     "quality_version": "catalog-review-v1",
     "rendered_at": null,
-    "review_fingerprint": "sha256:a923b32c4e4a8df160a7d0d69a9d85c255a6e6fa9baef04cfd8a09feaa1bfe1f",
+    "review_fingerprint": "sha256:83458be2d076b55faf927872c1186bf30fc1f847fe2aa46f4f49d5bff05eab4e",
     "reviewed_at": null,
     "reviewed_hash": null,
     "reviewer": null,
     "risk_tier": "critical",
     "slug": "figma-draw",
     "source_url": "https://www.figma.com/draw/",
-    "source_verified_on": null,
-    "status": "QUEUED"
+    "source_verified_on": "2026-08-30",
+    "status": "MEDIA_READY"
   }
 }

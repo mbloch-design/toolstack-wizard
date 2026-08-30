@@ -1,0 +1,44 @@
+{
+  "slug": "figma-draw",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-08-30",
+  "sources": [
+    {"label": "Figma Draw (site officiel)", "url": "https://www.figma.com/draw/"},
+    {"label": "Figma Draw (aide officielle)", "url": "https://help.figma.com/hc/en-us/articles/31440394517143-Explore-Figma-Draw"},
+    {"label": "Tarifs Figma", "url": "https://www.figma.com/pricing/"}
+  ],
+  "facts": {
+    "what": "Espace d'illustration et ensemble d'outils vectoriels avancés intégrés à Figma Design. Draw fonctionne dans les fichiers Figma et ne constitue pas une application autonome.",
+    "what_en": "Illustration workspace and advanced vector toolset built into Figma Design. Draw works inside Figma files and is not a standalone application.",
+    "pricing_model": "Inclus dans Figma. Starter gratuit avec accès limité, fonctions complètes avec un siège Full.",
+    "free_tier": {"exists": true, "detail": "Disponible sur le plan Starter gratuit avec les limites générales de Figma."},
+    "plans": [
+      {"name": "Starter", "price": "Gratuit, accès limité"},
+      {"name": "Professional Full seat", "price": "16 $/mois"},
+      {"name": "Organization Full seat", "price": "55 $/mois, facturé annuellement"},
+      {"name": "Enterprise Full seat", "price": "90 $/mois, facturé annuellement"}
+    ],
+    "key_features": ["Pinceaux vectoriels personnalisables", "Textures, bruit et flou progressif", "Traits dynamiques et largeur variable", "Vectorisation, lasso et édition multi-vecteurs", "Texte sur tracé et répétitions", "Composants et variables de couleur Figma"]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": ["Vous illustrez dans des fichiers Figma déjà partagés.", "Vous voulez éviter les allers-retours avec un logiciel vectoriel séparé.", "Vos illustrations doivent réutiliser composants et variables de couleur."],
+      "avoidIf": ["Vous n'utilisez pas Figma Design.", "Votre travail exige les fonctions éditoriales ou prépresse d'un logiciel spécialisé.", "Vous avez besoin d'un flux entièrement hors ligne."],
+      "threshold": "Ajoutez Draw si l'illustration doit rester dans le flux produit Figma ; gardez un outil spécialisé pour les travaux vectoriels complexes ou destinés à l'impression."
+    },
+    "pros": ["Même fichier et même collaboration que Figma Design.", "Outils expressifs sans changer d'application.", "Variables et composants réutilisables.", "Plan gratuit disponible pour tester."],
+    "cons": ["Dépend de Figma Design.", "Certaines fonctions Design sont indisponibles en mode Draw.", "Moins complet qu'un outil vectoriel spécialisé pour le prépresse."],
+    "use_cases": ["Créer des icônes et illustrations pour une interface.", "Décliner une identité avec des variables de couleur.", "Ajouter textures et traits expressifs à un produit numérique."],
+    "relevant_for": ["Designers produit", "Illustrateurs numériques", "Équipes de marque"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": ["You illustrate inside shared Figma files.", "You want to avoid switching to a separate vector application.", "Your illustrations need to reuse components and color variables."],
+      "avoidIf": ["You do not use Figma Design.", "Your work requires specialist publishing or prepress features.", "You need a fully offline workflow."],
+      "threshold": "Add Draw when illustration should remain inside the Figma product workflow; keep a specialist tool for complex vector or print production."
+    },
+    "pros": ["Same file and collaboration model as Figma Design.", "Expressive tools without switching applications.", "Reusable variables and components.", "A free plan is available for testing."],
+    "cons": ["Depends on Figma Design.", "Some Design features are unavailable in Draw mode.", "Less complete than a specialist vector tool for prepress."],
+    "use_cases": ["Create icons and illustrations for an interface.", "Build identity variants with color variables.", "Add textures and expressive strokes to digital products."]
+  }
+}

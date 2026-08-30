@@ -1,17 +1,19 @@
 {
   "slug": "joint-push-pull",
-  "author": "ToolTrim — Mike",
-  "verified_on": "2026-07-24",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-08-30",
   "sources": [
-    { "label": "SketchUcation PluginStore — Joint Push Pull (site officiel)", "url": "https://sketchucation.com/plugin/715-jointpushpull" }
+    { "label": "Joint Push Pull sur SketchUcation (site officiel)", "url": "https://sketchucation.com/plugin/715-joint" },
+    { "label": "Guide SCFLicense (documentation officielle)", "url": "https://downloads.sketchucation.com/licensing/SCFLicense-Instructions_to_Users.pdf" }
   ],
   "facts": {
-    "what": "Plugin gratuit SketchUp pour l'extrusion de faces avec plusieurs méthodes. Joint Push Pull permet de pousser et tirer des faces avec un contrôle fin de la direction et des angles, bien plus performant que l'outil native Push/Pull de SketchUp.",
-    "what_en": "Free SketchUp plugin for extruding faces with multiple methods. Joint Push Pull pushes and pulls faces with fine control over direction and angles, much more powerful than SketchUp's native Push/Pull tool.",
-    "pricing_model": "Gratuit (open source).",
-    "free_tier": { "exists": true, "detail": "Entièrement gratuit. Aucune version payante." },
+    "what": "Extension payante pour SketchUp desktop qui extrude plusieurs faces avec des modes d'épaississement, tapering, moulage, découpe et trous. Elle dépend de LibFredo6 et de SketchUcation Tools.",
+    "what_en": "Paid SketchUp desktop extension for extruding multiple faces through thickening, tapering, molding, trimming, and hole modes. It requires LibFredo6 and SketchUcation Tools.",
+    "pricing_model": "Licence perpétuelle pour trois postes ou bundle Fredo6 de huit extensions. Les montants ne sont pas exposés sur la fiche publique actuelle.",
+    "free_tier": { "exists": false, "detail": "Essai complet de 30 jours dès la première utilisation, puis licence requise." },
     "plans": [
-      { "name": "Joint Push Pull", "price": "Gratuit" }
+      { "name": "Licence perpétuelle, 3 postes", "price": "Montant affiché dans le panier officiel" },
+      { "name": "Fredo6Bundle2022, 8 extensions", "price": "Montant affiché dans le panier officiel" }
     ],
     "key_features": [
       "Extrusion de faces bidirectionnelle",
@@ -35,10 +37,10 @@
         "Vous ne modélisez très rarement avec SketchUp.",
         "Vous avez SketchUp 2016 ou antérieur."
       ],
-      "threshold": "Joint Push Pull s'impose pour tout modélisateur SketchUp sérieux ; c'est un plugin indispensable, gratuit et mature."
+      "threshold": "Ajoutez Joint Push Pull à SketchUp si vos extrusions multi-faces et épaississements dépassent régulièrement l'outil natif."
     },
     "pros": [
-      "Entièrement gratuit et open source.",
+      "Réunit plusieurs méthodes d'extrusion dans une interface cohérente.",
       "Beaucoup plus puissant que l'outil natif Push/Pull.",
       "Interface intuitive et directe.",
       "1.44 million de téléchargements (très populaire).",
@@ -47,7 +49,7 @@
     "cons": [
       "Courbe d'apprentissage pour découvrir tous les modes.",
       "Nécessite SketchUp 2017+.",
-      "Support communautaire seulement (pas de support officiel payant)."
+      "Le montant actuel n'est visible qu'au moment de l'achat."
     ],
     "use_cases": [
       "Extruer des faces avec un contrôle fin.",
@@ -69,10 +71,10 @@
         "You rarely model with SketchUp.",
         "You have SketchUp 2016 or older."
       ],
-      "threshold": "Joint Push Pull is essential for any serious SketchUp modeler; it's an indispensable, free, and mature plugin."
+      "threshold": "Add Joint Push Pull to SketchUp when multi-face extrusions and thickening regularly exceed the native tool."
     },
     "pros": [
-      "Completely free and open source.",
+      "Combines several extrusion methods in one consistent interface.",
       "Much more powerful than native Push/Pull.",
       "Intuitive and direct interface.",
       "1.44 million downloads (very popular).",
@@ -81,7 +83,7 @@
     "cons": [
       "Learning curve to discover all modes.",
       "Requires SketchUp 2017+.",
-      "Community support only (no paid official support)."
+      "The current amount is only visible during purchase."
     ],
     "use_cases": [
       "Extrude faces with fine control.",

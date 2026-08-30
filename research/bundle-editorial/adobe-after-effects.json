@@ -1,18 +1,25 @@
 {
   "slug": "adobe-after-effects",
-  "bundle_parent": "adobe-creative-cloud",
-  "author": "ToolTrim — Mike",
-  "verified_on": "2026-07-23",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-08-30",
   "sources": [
     {
-      "label": "Adobe After Effects — description et fonctions (Wikipédia)",
-      "url": "https://en.wikipedia.org/wiki/Adobe_After_Effects"
-    }
+      "label": "Adobe After Effects (site officiel)",
+      "url": "https://www.adobe.com/products/aftereffects.html"
+    },
+    { "label": "Forfaits After Effects (site officiel Adobe)", "url": "https://www.adobe.com/products/aftereffects/plans.html" },
+    { "label": "Essai After Effects (site officiel Adobe)", "url": "https://www.adobe.com/products/aftereffects/free-trial-download.html" }
   ],
   "facts": {
     "what": "Application d'effets visuels, de motion graphics et de compositing d'Adobe (Windows, macOS).",
     "what_en": "Adobe's visual effects, motion graphics, and compositing application (Windows/macOS).",
-    "pricing_note": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite).",
+    "pricing_model": "Abonnement individuel ou équipe, seul ou inclus dans Creative Cloud Pro.",
+    "free_tier": { "exists": false, "detail": "Pas de version gratuite permanente. Essai complet de 7 jours, converti en abonnement s'il n'est pas annulé." },
+    "plans": [
+      { "name": "After Effects individuel", "price": "22,99 USD/mois, engagement annuel facturé mensuellement" },
+      { "name": "After Effects équipe", "price": "37,99 USD/mois par licence, engagement annuel facturé mensuellement" },
+      { "name": "Creative Cloud Pro individuel", "price": "69,99 USD/mois, engagement annuel facturé mensuellement" }
+    ],
     "key_features": [
       "Motion graphics et animation",
       "Effets visuels (VFX) et compositing",

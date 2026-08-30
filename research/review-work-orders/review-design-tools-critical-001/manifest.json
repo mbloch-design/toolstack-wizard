@@ -14,154 +14,148 @@
   "schema_version": 1,
   "tools": [
     {
-      "file": "figma-draw.json",
-      "required_action": "research_primary_sources_then_write_fact_bundle",
-      "slug": "figma-draw",
-      "status": "QUEUED"
-    },
-    {
-      "file": "adobe-cc.json",
-      "required_action": "research_primary_sources_then_write_fact_bundle",
-      "slug": "adobe-cc",
-      "status": "QUEUED"
-    },
-    {
-      "file": "are-na.json",
-      "required_action": "resolve_duplicate_without_research",
-      "slug": "are-na",
-      "status": "DUPLICATE"
-    },
-    {
       "file": "1001bit-tools.json",
       "required_action": "verify_bundle_freshness_then_review_editorial",
       "slug": "1001bit-tools",
-      "status": "QUEUED"
-    },
-    {
-      "file": "archicad.json",
-      "required_action": "verify_bundle_freshness_then_review_editorial",
-      "slug": "archicad",
-      "status": "QUEUED"
-    },
-    {
-      "file": "autocad-lt.json",
-      "required_action": "verify_bundle_freshness_then_review_editorial",
-      "slug": "autocad-lt",
-      "status": "QUEUED"
-    },
-    {
-      "file": "brandmark.json",
-      "required_action": "verify_bundle_freshness_then_review_editorial",
-      "slug": "brandmark",
-      "status": "QUEUED"
-    },
-    {
-      "file": "curviloft.json",
-      "required_action": "verify_bundle_freshness_then_review_editorial",
-      "slug": "curviloft",
-      "status": "QUEUED"
-    },
-    {
-      "file": "eagle.json",
-      "required_action": "verify_bundle_freshness_then_review_editorial",
-      "slug": "eagle",
-      "status": "QUEUED"
-    },
-    {
-      "file": "eneroth-face-creator.json",
-      "required_action": "verify_bundle_freshness_then_review_editorial",
-      "slug": "eneroth-face-creator",
-      "status": "QUEUED"
-    },
-    {
-      "file": "figma-slides.json",
-      "required_action": "verify_bundle_freshness_then_review_editorial",
-      "slug": "figma-slides",
-      "status": "QUEUED"
-    },
-    {
-      "file": "flextools.json",
-      "required_action": "verify_bundle_freshness_then_review_editorial",
-      "slug": "flextools",
-      "status": "QUEUED"
-    },
-    {
-      "file": "fredocorner.json",
-      "required_action": "verify_bundle_freshness_then_review_editorial",
-      "slug": "fredocorner",
-      "status": "QUEUED"
-    },
-    {
-      "file": "joint-push-pull.json",
-      "required_action": "verify_bundle_freshness_then_review_editorial",
-      "slug": "joint-push-pull",
-      "status": "QUEUED"
-    },
-    {
-      "file": "layout-sketchup.json",
-      "required_action": "verify_bundle_freshness_then_review_editorial",
-      "slug": "layout-sketchup",
-      "status": "QUEUED"
-    },
-    {
-      "file": "pikkovia.json",
-      "required_action": "verify_bundle_freshness_then_review_editorial",
-      "slug": "pikkovia",
-      "status": "QUEUED"
-    },
-    {
-      "file": "profile-builder-3.json",
-      "required_action": "verify_bundle_freshness_then_review_editorial",
-      "slug": "profile-builder-3",
-      "status": "QUEUED"
-    },
-    {
-      "file": "skatter.json",
-      "required_action": "verify_bundle_freshness_then_review_editorial",
-      "slug": "skatter",
-      "status": "QUEUED"
-    },
-    {
-      "file": "spline.json",
-      "required_action": "verify_bundle_freshness_then_review_editorial",
-      "slug": "spline",
-      "status": "QUEUED"
-    },
-    {
-      "file": "transmutr.json",
-      "required_action": "verify_bundle_freshness_then_review_editorial",
-      "slug": "transmutr",
-      "status": "QUEUED"
-    },
-    {
-      "file": "logomeai.json",
-      "required_action": "verify_bundle_freshness_then_review_editorial",
-      "slug": "logomeai",
-      "status": "QUEUED"
-    },
-    {
-      "file": "pluraleyes.json",
-      "required_action": "verify_bundle_freshness_then_review_editorial",
-      "slug": "pluraleyes",
-      "status": "QUEUED"
-    },
-    {
-      "file": "trapcode.json",
-      "required_action": "verify_bundle_freshness_then_review_editorial",
-      "slug": "trapcode",
-      "status": "QUEUED"
-    },
-    {
-      "file": "vfx-suite.json",
-      "required_action": "verify_bundle_freshness_then_review_editorial",
-      "slug": "vfx-suite",
-      "status": "QUEUED"
+      "status": "REVIEW_REQUIRED"
     },
     {
       "file": "adobe-after-effects.json",
       "required_action": "verify_bundle_freshness_then_review_editorial",
       "slug": "adobe-after-effects",
-      "status": "QUEUED"
+      "status": "MEDIA_READY"
+    },
+    {
+      "file": "adobe-cc.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "adobe-cc",
+      "status": "MEDIA_READY"
+    },
+    {
+      "file": "archicad.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "archicad",
+      "status": "MEDIA_READY"
+    },
+    {
+      "file": "autocad-lt.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "autocad-lt",
+      "status": "MEDIA_READY"
+    },
+    {
+      "file": "brandmark.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "brandmark",
+      "status": "MEDIA_READY"
+    },
+    {
+      "file": "curviloft.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "curviloft",
+      "status": "MEDIA_READY"
+    },
+    {
+      "file": "eagle.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "eagle",
+      "status": "MEDIA_READY"
+    },
+    {
+      "file": "eneroth-face-creator.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "eneroth-face-creator",
+      "status": "MEDIA_READY"
+    },
+    {
+      "file": "figma-draw.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "figma-draw",
+      "status": "MEDIA_READY"
+    },
+    {
+      "file": "figma-slides.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "figma-slides",
+      "status": "MEDIA_READY"
+    },
+    {
+      "file": "flextools.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "flextools",
+      "status": "MEDIA_READY"
+    },
+    {
+      "file": "fredocorner.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "fredocorner",
+      "status": "MEDIA_READY"
+    },
+    {
+      "file": "joint-push-pull.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "joint-push-pull",
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "file": "layout-sketchup.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "layout-sketchup",
+      "status": "MEDIA_READY"
+    },
+    {
+      "file": "logomeai.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "logomeai",
+      "status": "MEDIA_READY"
+    },
+    {
+      "file": "pikkovia.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "pikkovia",
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "file": "pluraleyes.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "pluraleyes",
+      "status": "DISCONTINUED"
+    },
+    {
+      "file": "profile-builder-3.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "profile-builder-3",
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "file": "skatter.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "skatter",
+      "status": "MEDIA_READY"
+    },
+    {
+      "file": "spline.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "spline",
+      "status": "MEDIA_READY"
+    },
+    {
+      "file": "transmutr.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "transmutr",
+      "status": "REVIEW_REQUIRED"
+    },
+    {
+      "file": "trapcode.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "trapcode",
+      "status": "MEDIA_READY"
+    },
+    {
+      "file": "vfx-suite.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "vfx-suite",
+      "status": "MEDIA_READY"
     }
   ]
 }

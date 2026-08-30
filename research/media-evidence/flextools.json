@@ -1,0 +1,11 @@
+{
+  "slug": "flextools",
+  "verified_on": "2026-08-30",
+  "mode": "sourced",
+  "discovery": { "official_media_found": true, "official_pages_checked": ["https://flextools.cc/"] },
+  "items": [
+    { "kind": "image", "url": "https://flextools.cc/wp-content/uploads/2025/11/FlexTools_Pro_01_300.png", "source_page_url": "https://flextools.cc/", "official": true },
+    { "kind": "image", "url": "https://flextools.cc/wp-content/uploads/2018/07/WallCutter_C_01-48.png", "source_page_url": "https://flextools.cc/", "official": true },
+    { "kind": "image", "url": "https://flextools.cc/wp-content/uploads/2019/05/flexstairs_icon_03_s13_02_01-64.png", "source_page_url": "https://flextools.cc/", "official": true }
+  ]
+}

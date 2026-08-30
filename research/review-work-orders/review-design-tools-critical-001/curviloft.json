@@ -18,24 +18,27 @@
     ],
     "host_app": null,
     "id": "curviloft",
-    "long_description": "Plugin SketchUp pour générer surfaces tendues, formes organiques et volumes courbes.",
-    "long_description_en": "SketchUp plugin for lofted surfaces, organic shapes and curved volumes.",
+    "long_description": "Plugin SketchUp pour créer des surfaces lissées et des « skins » 3D en reliant des contours. Inclus : Loft by Spline, Loft along Path, Skinning. Utile pour modélisation organique, surfaces courbes complexes, design de produit.\n\nFonctions clés : Loft by Spline : relier des contours avec splines lisses ; Loft along Path : créer des surfaces en suivant une courbe ; Skinning : générer des surfaces bornées par 3-4 contours contigus ; Support des contours ouverts et fermés ; Intégration LibFredo6 requise.\n\nCurviloft est excellent pour les surfaces courbes organiques en SketchUp ; pour la modélisation paramétrée lourde, Rhino ou Fusion offrent plus.",
+    "long_description_en": "SketchUp plugin to create smooth surfaces and 3D 'skins' by connecting contours. Includes: Loft by Spline, Loft along Path, Skinning. Useful for organic modeling, complex curved surfaces, product design.\n\nKey strengths: Older versions completely free.; Very effective at creating smooth surfaces.; Native SketchUp interface, tight integration.; Visually very good results.; Free alternative to professional surfacing tools..\n\nCurviloft excels at organic curved surfaces in SketchUp; for heavy parametric modeling, Rhino or Fusion offer more.",
     "media": {
       "gallery_images": [],
-      "og_image_url": "https://tooltrim.com/og-screenshots/curviloft.jpg"
+      "og_image_url": "https://pluginrepo.sketchucation.com/image/Curviloft.png"
     },
     "name": "Curviloft",
     "pricing": {
-      "free": "Selon licence SketchUcation",
-      "paid": "Donation/licence selon bundle"
+      "free": "Versions anciennes (antérieures à 2.0) gratuites et légales. Versions récentes (2.0+) payantes via Fredo6 ou trial 30 jours SketchUcation.",
+      "paid": "Curviloft (versions anciennes): Gratuit ; Curviloft (v2.0+ avec Fredo6): Montants sur le site Fredo6 ou SketchUcation"
     },
-    "pricing_en": null,
+    "pricing_en": {
+      "free": "Versions anciennes (antérieures à 2.0) gratuites et légales. Versions récentes (2.0+) payantes via Fredo6 ou trial 30 jours SketchUcation.",
+      "paid": "Curviloft (versions anciennes): Gratuit ; Curviloft (v2.0+ avec Fredo6): Montants sur le site Fredo6 ou SketchUcation"
+    },
     "pricing_v5": {
       "compare_price_monthly_eur": 0,
-      "official_source_url": "https://sketchucation.com/pluginstore",
+      "official_source_url": "https://sketchucation.com/plugin/1175-curviloft",
       "source_domain": "sketchucation.com",
-      "verification_status": "manual_reference",
-      "verified_on": "2026-05-10"
+      "verification_status": "official_explicit",
+      "verified_on": "2026-07-24"
     },
     "pros": [
       "Versions anciennes entièrement gratuites.",
@@ -51,11 +54,11 @@
       "Visually very good results.",
       "Free alternative to professional surfacing tools."
     ],
-    "short_description": "Plugin SketchUp pour générer surfaces tendues, formes organiques et volumes courbes.",
-    "short_description_en": "SketchUp plugin for lofted surfaces, organic shapes and curved volumes.",
+    "short_description": "Plugin SketchUp pour créer des surfaces lissées et des « skins » 3D en reliant des contours. Inclus : Loft by Spline, Loft along Path, Skinning. Utile pour modélisation organique, surfaces courbes complexes, design de produit.",
+    "short_description_en": "SketchUp plugin to create smooth surfaces and 3D 'skins' by connecting contours. Includes: Loft by Spline, Loft along Path, Skinning. Useful for organic modeling, complex curved surfaces, product design.",
     "slug": "curviloft",
-    "source_url": "https://sketchucation.com/pluginstore",
-    "source_verified_on": "2026-05-10",
+    "source_url": "https://sketchucation.com/plugin/1175-curviloft",
+    "source_verified_on": "2026-07-24",
     "use_cases": [
       "Créer des surfaces lissées et organiques.",
       "Modeliser des fuselages, carrosseries, meubles courbes.",
@@ -202,7 +205,25 @@
     ],
     "verified_on": "2026-07-24"
   },
-  "media_evidence": null,
+  "media_evidence": {
+    "discovery": {
+      "official_media_found": true,
+      "official_pages_checked": [
+        "https://sketchucation.com/pluginstore?pln=Curviloft"
+      ]
+    },
+    "items": [
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://sketchucation.com/pluginstore?pln=Curviloft",
+        "url": "https://pluginrepo.sketchucation.com/image/Curviloft.png"
+      }
+    ],
+    "mode": "sourced",
+    "slug": "curviloft",
+    "verified_on": "2026-08-30"
+  },
   "quality_version": "catalog-review-v1",
   "required_action": "verify_bundle_freshness_then_review_editorial",
   "rules": {
@@ -220,36 +241,32 @@
     "assigned_batch": "review-design-tools-critical-001",
     "batch_position": 8,
     "blockers": [],
-    "catalog_hash": "sha256:37451d063eaa48bf3471a669f985fc99b74a71addcb740eadd9bed046d2c54f9",
+    "catalog_hash": "sha256:c650a215ca6cf997ba55787d38b947f94644dc92a656b71a6e3089f40861448e",
     "category": "design-tools",
     "fact_bundle": "AVAILABLE",
     "fact_bundle_hash": "sha256:198abf6264ea5f1b66496e9b4d331ae1cf4ea059279008adc086da710a77c4d5",
     "invalidated_from": null,
-    "media_errors": [
-      "media_evidence_missing"
-    ],
-    "media_evidence": "MISSING",
-    "media_evidence_hash": null,
+    "media_errors": [],
+    "media_evidence": "VALID",
+    "media_evidence_hash": "sha256:c5e08968ddc3c3a18cec240029e143db02fe89b657b5b7a4523b82abae9d1b41",
     "name": "Curviloft",
     "next_review_at": null,
     "priority_reasons": [
       "affiliate_link",
-      "paid_price",
-      "missing_or_invalid_media_evidence",
-      "shallow_editorial"
+      "paid_price"
     ],
-    "priority_score": 260,
+    "priority_score": 180,
     "published_at": null,
     "quality_version": "catalog-review-v1",
     "rendered_at": null,
-    "review_fingerprint": "sha256:0df28ade4b3b9b39260f62f6c91d7a2cc90258831f2c45e36f5e6aec70c9d1bc",
+    "review_fingerprint": "sha256:c72ebc94f4b2011528d640030c0c0dd87f1242865802626b5fa30b7d668b4d54",
     "reviewed_at": null,
     "reviewed_hash": null,
     "reviewer": null,
     "risk_tier": "critical",
     "slug": "curviloft",
-    "source_url": "https://sketchucation.com/pluginstore",
-    "source_verified_on": "2026-05-10",
-    "status": "QUEUED"
+    "source_url": "https://sketchucation.com/plugin/1175-curviloft",
+    "source_verified_on": "2026-07-24",
+    "status": "MEDIA_READY"
   }
 }

@@ -16,24 +16,30 @@
     ],
     "host_app": null,
     "id": "flextools",
-    "long_description": "Composants dynamiques SketchUp pour portes, fenêtres, ouvertures et éléments paramétriques.",
-    "long_description_en": "Dynamic SketchUp components for doors, windows, openings and parametric elements.",
+    "long_description": "Extension SketchUp pour architectes et designers. Crée des éléments architecturaux (portes, fenêtres, escaliers) paramétriques et réactifs. Inclut WallCutter pour découper automatiquement les ouvertures dans les murs superposés.\n\nFonctions clés : Composants architecturaux paramétriques (portes, fenêtres, escaliers) ; Passage à l'échelle avec maintien des proportions ; WallCutter pour découper automatiquement les murs ; Component Finder pour gérer les composants sauvegardés ; Plans et élévations instantanés ; Compatible SketchUp 2017-2026 (Windows et macOS) ; Support et mises à jour inclus ; Garantie remboursement 30 jours.\n\nAjoutez FlexTools à SketchUp si les composants paramétriques et les ouvertures automatiques remplacent une part récurrente de votre modélisation manuelle.",
+    "long_description_en": "SketchUp extension for architects and designers. Creates parametric, responsive architectural elements (doors, windows, stairs). Includes WallCutter for automatic opening creation in layered walls.\n\nKey strengths: Responsive parametric components (maintain proportions).; WallCutter automates wall cutting.; Affordable annual subscription.; Steep academic discount available.; Support and updates included.; The refund policy provides a post-purchase evaluation window..\n\nAdd FlexTools to SketchUp when parametric components and automatic openings replace a recurring share of manual modeling.",
     "media": {
-      "gallery_images": [],
-      "og_image_url": "https://flextools.cc/wp-content/uploads/2018/08/flexpack_pro_01-1.png"
+      "gallery_images": [
+        "https://flextools.cc/wp-content/uploads/2018/07/WallCutter_C_01-48.png",
+        "https://flextools.cc/wp-content/uploads/2019/05/flexstairs_icon_03_s13_02_01-64.png"
+      ],
+      "og_image_url": "https://flextools.cc/wp-content/uploads/2025/11/FlexTools_Pro_01_300.png"
     },
     "name": "FlexTools",
     "pricing": {
-      "free": "Essai disponible",
-      "paid": "Abonnement/licence"
+      "free": "Aucun essai, démo ou plan gratuit. Garantie de remboursement de 30 jours après achat.",
+      "paid": "FlexTools Pro: 99 €/an hors taxes ; FlexTools Pro Academic: 19 €/an hors taxes"
     },
-    "pricing_en": null,
+    "pricing_en": {
+      "free": "Aucun essai, démo ou plan gratuit. Garantie de remboursement de 30 jours après achat.",
+      "paid": "FlexTools Pro: 99 €/an hors taxes ; FlexTools Pro Academic: 19 €/an hors taxes"
+    },
     "pricing_v5": {
       "compare_price_monthly_eur": 8,
-      "official_source_url": "https://flextools.cc",
+      "official_source_url": "https://flextools.cc/",
       "source_domain": "flextools.cc",
-      "verification_status": "manual_reference",
-      "verified_on": "2026-05-10"
+      "verification_status": "official_explicit",
+      "verified_on": "2026-08-30"
     },
     "pros": [
       "Composants paramétriques réactifs (maintiennent proportions).",
@@ -41,7 +47,7 @@
       "Abonnement annuel abordable.",
       "Licence académique fortement réduite.",
       "Support et mises à jour incluses.",
-      "Essai gratuit 30 jours sans risque."
+      "La garantie de remboursement permet de vérifier le flux de travail après achat."
     ],
     "pros_en": [
       "Responsive parametric components (maintain proportions).",
@@ -49,13 +55,13 @@
       "Affordable annual subscription.",
       "Steep academic discount available.",
       "Support and updates included.",
-      "Risk-free 30-day trial."
+      "The refund policy provides a post-purchase evaluation window."
     ],
-    "short_description": "Composants dynamiques SketchUp pour portes, fenêtres, ouvertures et éléments paramétriques.",
-    "short_description_en": "Dynamic SketchUp components for doors, windows, openings and parametric elements.",
+    "short_description": "Extension SketchUp pour architectes et designers. Crée des éléments architecturaux (portes, fenêtres, escaliers) paramétriques et réactifs. Inclut WallCutter pour découper automatiquement les ouvertures dans les murs superposés.",
+    "short_description_en": "SketchUp extension for architects and designers. Creates parametric, responsive architectural elements (doors, windows, stairs). Includes WallCutter for automatic opening creation in layered walls.",
     "slug": "flextools",
-    "source_url": "https://flextools.cc",
-    "source_verified_on": "2026-05-10",
+    "source_url": "https://flextools.cc/",
+    "source_verified_on": "2026-08-30",
     "use_cases": [
       "Créer rapidement des portes, fenêtres et escaliers paramétriques.",
       "Générer des plans et coupes automatiquement.",
@@ -71,7 +77,7 @@
     "verdict": {
       "avoidIf": [
         "Vous n'utilisez pas SketchUp.",
-        "Vous travaillez principalement en 2D ou wireframes.",
+        "Vous travaillez principalement en dehors de SketchUp desktop.",
         "Vous utilisez un autre logiciel 3D (Revit, ArchiCAD)."
       ],
       "keepIf": [
@@ -79,12 +85,12 @@
         "Vous créez des éléments architecturaux répétés (portes, fenêtres).",
         "Vous voulez automatiser la création de plans et coupes."
       ],
-      "threshold": "FlexTools s'impose pour les architectes SketchUp qui créent des projets architecturaux répétitifs. Pour un usage ponctuel, l'essai suffit."
+      "threshold": "Ajoutez FlexTools à SketchUp si les composants paramétriques et les ouvertures automatiques remplacent une part récurrente de votre modélisation manuelle."
     },
     "verdict_en": {
       "avoidIf": [
         "You don't use SketchUp.",
-        "You work primarily in 2D or wireframes.",
+        "You work primarily outside SketchUp desktop.",
         "You use another 3D software (Revit, ArchiCAD)."
       ],
       "keepIf": [
@@ -92,12 +98,12 @@
         "You create repetitive architectural elements (doors, windows).",
         "You want to automate floor plans and elevations."
       ],
-      "threshold": "FlexTools makes sense for SketchUp architects working on repetitive projects. For occasional use, the free trial suffices."
+      "threshold": "Add FlexTools to SketchUp when parametric components and automatic openings replace a recurring share of manual modeling."
     },
     "website_url": "https://flextools.cc"
   },
   "fact_bundle": {
-    "author": "ToolTrim — Mike",
+    "author": "ToolTrim - Mike",
     "en": {
       "cons": [
         "Limited to SketchUp (not other 3D software).",
@@ -110,7 +116,7 @@
         "Affordable annual subscription.",
         "Steep academic discount available.",
         "Support and updates included.",
-        "Risk-free 30-day trial."
+        "The refund policy provides a post-purchase evaluation window."
       ],
       "use_cases": [
         "Quickly create parametric doors, windows, and stairs.",
@@ -121,7 +127,7 @@
       "verdict": {
         "avoidIf": [
           "You don't use SketchUp.",
-          "You work primarily in 2D or wireframes.",
+          "You work primarily outside SketchUp desktop.",
           "You use another 3D software (Revit, ArchiCAD)."
         ],
         "keepIf": [
@@ -129,13 +135,13 @@
           "You create repetitive architectural elements (doors, windows).",
           "You want to automate floor plans and elevations."
         ],
-        "threshold": "FlexTools makes sense for SketchUp architects working on repetitive projects. For occasional use, the free trial suffices."
+        "threshold": "Add FlexTools to SketchUp when parametric components and automatic openings replace a recurring share of manual modeling."
       }
     },
     "facts": {
       "free_tier": {
-        "detail": "Essai gratuit 30 jours avec garantie de remboursement. Aucun crédit bancaire requis.",
-        "exists": true
+        "detail": "Aucun essai, démo ou plan gratuit. Garantie de remboursement de 30 jours après achat.",
+        "exists": false
       },
       "key_features": [
         "Composants architecturaux paramétriques (portes, fenêtres, escaliers)",
@@ -150,14 +156,14 @@
       "plans": [
         {
           "name": "FlexTools Pro",
-          "price": "99 € / an (tous les composants, support, mises à jour)"
+          "price": "99 €/an hors taxes"
         },
         {
-          "name": "Academic License",
-          "price": "19 € / an (pour étudiants vérifiés)"
+          "name": "FlexTools Pro Academic",
+          "price": "19 €/an hors taxes"
         }
       ],
-      "pricing_model": "Licence annuelle par ordinateur (jusqu'à 2 machines). Tarif académique réduit disponible.",
+      "pricing_model": "Abonnement annuel pour deux ordinateurs, avec renouvellement automatique et tarif académique.",
       "what": "Extension SketchUp pour architectes et designers. Crée des éléments architecturaux (portes, fenêtres, escaliers) paramétriques et réactifs. Inclut WallCutter pour découper automatiquement les ouvertures dans les murs superposés.",
       "what_en": "SketchUp extension for architects and designers. Creates parametric, responsive architectural elements (doors, windows, stairs). Includes WallCutter for automatic opening creation in layered walls."
     },
@@ -173,7 +179,7 @@
         "Abonnement annuel abordable.",
         "Licence académique fortement réduite.",
         "Support et mises à jour incluses.",
-        "Essai gratuit 30 jours sans risque."
+        "La garantie de remboursement permet de vérifier le flux de travail après achat."
       ],
       "relevant_for": [
         "Architects",
@@ -189,7 +195,7 @@
       "verdict": {
         "avoidIf": [
           "Vous n'utilisez pas SketchUp.",
-          "Vous travaillez principalement en 2D ou wireframes.",
+          "Vous travaillez principalement en dehors de SketchUp desktop.",
           "Vous utilisez un autre logiciel 3D (Revit, ArchiCAD)."
         ],
         "keepIf": [
@@ -197,19 +203,53 @@
           "Vous créez des éléments architecturaux répétés (portes, fenêtres).",
           "Vous voulez automatiser la création de plans et coupes."
         ],
-        "threshold": "FlexTools s'impose pour les architectes SketchUp qui créent des projets architecturaux répétitifs. Pour un usage ponctuel, l'essai suffit."
+        "threshold": "Ajoutez FlexTools à SketchUp si les composants paramétriques et les ouvertures automatiques remplacent une part récurrente de votre modélisation manuelle."
       }
     },
     "slug": "flextools",
     "sources": [
       {
         "label": "FlexTools (site officiel)",
-        "url": "https://flextools.cc"
+        "url": "https://flextools.cc/"
+      },
+      {
+        "label": "FAQ FlexTools (site officiel)",
+        "url": "https://flextools.cc/faq/"
       }
     ],
-    "verified_on": "2026-07-24"
+    "verified_on": "2026-08-30"
   },
-  "media_evidence": null,
+  "media_evidence": {
+    "discovery": {
+      "official_media_found": true,
+      "official_pages_checked": [
+        "https://flextools.cc/"
+      ]
+    },
+    "items": [
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://flextools.cc/",
+        "url": "https://flextools.cc/wp-content/uploads/2025/11/FlexTools_Pro_01_300.png"
+      },
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://flextools.cc/",
+        "url": "https://flextools.cc/wp-content/uploads/2018/07/WallCutter_C_01-48.png"
+      },
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://flextools.cc/",
+        "url": "https://flextools.cc/wp-content/uploads/2019/05/flexstairs_icon_03_s13_02_01-64.png"
+      }
+    ],
+    "mode": "sourced",
+    "slug": "flextools",
+    "verified_on": "2026-08-30"
+  },
   "quality_version": "catalog-review-v1",
   "required_action": "verify_bundle_freshness_then_review_editorial",
   "rules": {
@@ -227,36 +267,32 @@
     "assigned_batch": "review-design-tools-critical-001",
     "batch_position": 12,
     "blockers": [],
-    "catalog_hash": "sha256:b440de5005eed24681a1dbd7d2f567ba87125b3fb2b4d154a334a8ced06116e8",
+    "catalog_hash": "sha256:655ae2dba76a210e862838589261d2137b33f4a9d040ee36333df67cce967da4",
     "category": "design-tools",
     "fact_bundle": "AVAILABLE",
-    "fact_bundle_hash": "sha256:7926cb05863df8cb84e30ea28a1f54453a7070c3e98fc5aa93d3803fda995de8",
+    "fact_bundle_hash": "sha256:a15c1d3b369d387e26a1b006d999ad8ea0e0cfc2e9727d1d7aadba4bc7e42aba",
     "invalidated_from": null,
-    "media_errors": [
-      "media_evidence_missing"
-    ],
-    "media_evidence": "MISSING",
-    "media_evidence_hash": null,
+    "media_errors": [],
+    "media_evidence": "VALID",
+    "media_evidence_hash": "sha256:5df8a9dc79b6f794cfe4b6aa6136b662aee7e6d51f8998634a1d11bbaa2df1af",
     "name": "FlexTools",
     "next_review_at": null,
     "priority_reasons": [
       "affiliate_link",
-      "paid_price",
-      "missing_or_invalid_media_evidence",
-      "shallow_editorial"
+      "paid_price"
     ],
-    "priority_score": 260,
+    "priority_score": 180,
     "published_at": null,
     "quality_version": "catalog-review-v1",
     "rendered_at": null,
-    "review_fingerprint": "sha256:31c1343ae7af384d6a56950e16fea07b22737dd955bb039e1d48c53a3be7a501",
+    "review_fingerprint": "sha256:a779e4ea752fa8aaea35901f46a1e2f2a042413f4c77f9b9a69a4436ed3a53da",
     "reviewed_at": null,
     "reviewed_hash": null,
     "reviewer": null,
     "risk_tier": "critical",
     "slug": "flextools",
-    "source_url": "https://flextools.cc",
-    "source_verified_on": "2026-05-10",
-    "status": "QUEUED"
+    "source_url": "https://flextools.cc/",
+    "source_verified_on": "2026-08-30",
+    "status": "MEDIA_READY"
   }
 }

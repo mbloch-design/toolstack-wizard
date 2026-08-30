@@ -210,7 +210,38 @@
     ],
     "verified_on": "2026-07-24"
   },
-  "media_evidence": null,
+  "media_evidence": {
+    "discovery": {
+      "official_media_found": true,
+      "official_pages_checked": [
+        "https://www.1001bit.com/1001bit_standard.html",
+        "https://www.1001bit.com/pro/"
+      ]
+    },
+    "items": [
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://www.1001bit.com/1001bit_standard.html",
+        "url": "https://www.1001bit.com/images/1001bit.png"
+      },
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://www.1001bit.com/1001bit_standard.html",
+        "url": "https://www.1001bit.com/images/spiralstair01.png"
+      },
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://www.1001bit.com/pro/",
+        "url": "https://www.1001bit.com/images/sidefade01.png"
+      }
+    ],
+    "mode": "sourced",
+    "slug": "1001bit-tools",
+    "verified_on": "2026-08-30"
+  },
   "quality_version": "catalog-review-v1",
   "required_action": "verify_bundle_freshness_then_review_editorial",
   "rules": {
@@ -227,30 +258,29 @@
   "tracking": {
     "assigned_batch": "review-design-tools-critical-001",
     "batch_position": 4,
-    "blockers": [],
+    "blockers": [
+      "compatibilité avec les versions modernes de SketchUp non confirmée par une source officielle récente"
+    ],
     "catalog_hash": "sha256:311e77655d6cc34e604b56e95c107763f19e3cf24a15e04fd19e0f6764fc9649",
     "category": "design-tools",
     "fact_bundle": "AVAILABLE",
     "fact_bundle_hash": "sha256:b8bf5dc65fee95fb08c3ee9a667f049b07b9ab828820b72c80317f4b669ee1b4",
     "invalidated_from": null,
-    "media_errors": [
-      "media_evidence_missing"
-    ],
-    "media_evidence": "MISSING",
-    "media_evidence_hash": null,
+    "media_errors": [],
+    "media_evidence": "VALID",
+    "media_evidence_hash": "sha256:29cd0df426082d3d3264e8be30f90f9938a79685539ab6a027f1bf4230892643",
     "name": "1001bit Tools",
     "next_review_at": null,
     "priority_reasons": [
       "affiliate_link",
       "paid_price",
-      "missing_or_invalid_media_evidence",
       "shallow_editorial"
     ],
-    "priority_score": 260,
+    "priority_score": 220,
     "published_at": null,
     "quality_version": "catalog-review-v1",
     "rendered_at": null,
-    "review_fingerprint": "sha256:c0ea54119ab1e9c907d645559cd2177122f0b2e89204fcac7292cbd6800abde0",
+    "review_fingerprint": "sha256:9a735046396d412b59e042a496339b787040a71bf4548f5e494507c3c5d26a3d",
     "reviewed_at": null,
     "reviewed_hash": null,
     "reviewer": null,
@@ -258,6 +288,6 @@
     "slug": "1001bit-tools",
     "source_url": "https://www.1001bit.com",
     "source_verified_on": "2026-05-10",
-    "status": "QUEUED"
+    "status": "REVIEW_REQUIRED"
   }
 }

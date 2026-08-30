@@ -16,24 +16,29 @@
     ],
     "host_app": null,
     "id": "autocad-lt",
-    "long_description": "Dessin 2D précis pour plans techniques, cotations et échanges artisans.",
-    "long_description_en": "Precise 2D drafting for technical plans, dimensions and contractor exchanges.",
+    "long_description": "Version allégée d'AutoCAD dédiée au dessin technique 2D. Conçue pour les petites équipes et freelances ayant besoin d'une CAO basique sans les outils 3D coûteux.\n\nFonctions clés : Dessin technique 2D complet ; Pas de modélisation 3D ; Outils de base de CAO (calques, blocs, références externes) ; Import/export DWG ; Web et mobile inclus.\n\nAutoCAD LT convient parfaitement pour la CAO 2D légère ; pour de la 3D ou un budget très restreint, comparez avec d'autres options.",
+    "long_description_en": "Lightweight version of AutoCAD dedicated to 2D technical drawing. Designed for small teams and freelancers needing basic CAD without expensive 3D tools.\n\nKey strengths: Much lower cost than full AutoCAD.; AutoCAD interface and workflows preserved.; Sufficient for most 2D drawings.; Professional-grade Autodesk support..\n\nAutoCAD LT works perfectly for light 2D CAD; for 3D work or a very tight budget, explore other options.",
     "media": {
-      "gallery_images": [],
-      "og_image_url": "https://tooltrim.com/og-screenshots/autocad-lt.jpg"
+      "gallery_images": [
+        "https://images.ctfassets.net/v7wr16nrr0mz/6yP1ZccRzXA9BsbBYjejw5/98d9eda223c12507e52c4673c282f1c7/autodesk-assistant.svg"
+      ],
+      "og_image_url": "https://images.ctfassets.net/v7wr16nrr0mz/5JQTMWprZssXEdZRW6a1rI/49a52243189ea79c924d805260d44934/autocad-lt-dcn-hero-banner-1920x1080.jpg"
     },
     "name": "AutoCAD LT",
     "pricing": {
-      "free": "Essai gratuit",
-      "paid": "À partir de 63€/mois environ"
+      "free": "Essai gratuit 30 jours ; pas de version gratuite.",
+      "paid": "AutoCAD LT (abonnement annuel): 60 $/mois ou 440 $/an"
     },
-    "pricing_en": null,
+    "pricing_en": {
+      "free": "Essai gratuit 30 jours ; pas de version gratuite.",
+      "paid": "AutoCAD LT (abonnement annuel): 60 $/mois ou 440 $/an"
+    },
     "pricing_v5": {
       "compare_price_monthly_eur": 63,
       "official_source_url": "https://www.autodesk.com/products/autocad-lt/overview",
       "source_domain": "autodesk.com",
-      "verification_status": "manual_reference",
-      "verified_on": "2026-05-10"
+      "verification_status": "official_explicit",
+      "verified_on": "2026-07-24"
     },
     "pros": [
       "Tarif bien inférieur à AutoCAD complet.",
@@ -47,11 +52,11 @@
       "Sufficient for most 2D drawings.",
       "Professional-grade Autodesk support."
     ],
-    "short_description": "Dessin 2D précis pour plans techniques, cotations et échanges artisans.",
-    "short_description_en": "Precise 2D drafting for technical plans, dimensions and contractor exchanges.",
+    "short_description": "Version allégée d'AutoCAD dédiée au dessin technique 2D. Conçue pour les petites équipes et freelances ayant besoin d'une CAO basique sans les outils 3D coûteux.",
+    "short_description_en": "Lightweight version of AutoCAD dedicated to 2D technical drawing. Designed for small teams and freelancers needing basic CAD without expensive 3D tools.",
     "slug": "autocad-lt",
     "source_url": "https://www.autodesk.com/products/autocad-lt/overview",
-    "source_verified_on": "2026-05-10",
+    "source_verified_on": "2026-07-24",
     "use_cases": [
       "Produire des plans de construction en 2D.",
       "Gérer des schémas technique et électrique.",
@@ -190,7 +195,31 @@
     ],
     "verified_on": "2026-07-24"
   },
-  "media_evidence": null,
+  "media_evidence": {
+    "discovery": {
+      "official_media_found": true,
+      "official_pages_checked": [
+        "https://www.autodesk.com/eu/products/autocad-lt/overview"
+      ]
+    },
+    "items": [
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://www.autodesk.com/eu/products/autocad-lt/overview",
+        "url": "https://images.ctfassets.net/v7wr16nrr0mz/5JQTMWprZssXEdZRW6a1rI/49a52243189ea79c924d805260d44934/autocad-lt-dcn-hero-banner-1920x1080.jpg"
+      },
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://www.autodesk.com/eu/products/autocad-lt/overview",
+        "url": "https://images.ctfassets.net/v7wr16nrr0mz/6yP1ZccRzXA9BsbBYjejw5/98d9eda223c12507e52c4673c282f1c7/autodesk-assistant.svg"
+      }
+    ],
+    "mode": "sourced",
+    "slug": "autocad-lt",
+    "verified_on": "2026-08-30"
+  },
   "quality_version": "catalog-review-v1",
   "required_action": "verify_bundle_freshness_then_review_editorial",
   "rules": {
@@ -208,36 +237,32 @@
     "assigned_batch": "review-design-tools-critical-001",
     "batch_position": 6,
     "blockers": [],
-    "catalog_hash": "sha256:70b3f6257dcf99dfe317b0c4629a9b7dadca14d6a140ad717d967f3ab6f98a93",
+    "catalog_hash": "sha256:1c157ecf1fe2d938bb4950735695dbbf963c784aaed6802482ebe9951164e0c5",
     "category": "design-tools",
     "fact_bundle": "AVAILABLE",
     "fact_bundle_hash": "sha256:fcec816ec962642fbb1aac067b96262d0731c330f6ba68df74eb0e571c6a20bf",
     "invalidated_from": null,
-    "media_errors": [
-      "media_evidence_missing"
-    ],
-    "media_evidence": "MISSING",
-    "media_evidence_hash": null,
+    "media_errors": [],
+    "media_evidence": "VALID",
+    "media_evidence_hash": "sha256:0a2c0af70e046defe676b030d740fa9aec35ef180dd99476d4bcd8ca172316b1",
     "name": "AutoCAD LT",
     "next_review_at": null,
     "priority_reasons": [
       "affiliate_link",
-      "paid_price",
-      "missing_or_invalid_media_evidence",
-      "shallow_editorial"
+      "paid_price"
     ],
-    "priority_score": 260,
+    "priority_score": 180,
     "published_at": null,
     "quality_version": "catalog-review-v1",
     "rendered_at": null,
-    "review_fingerprint": "sha256:ab4bd6263fc0f88dacba4b44fbf438d72669e87a05c3c65deb280ca112b2023c",
+    "review_fingerprint": "sha256:508a464ea9f52e4e128d35223c103f7d18afddcce98e19e1d8e26477767ca77d",
     "reviewed_at": null,
     "reviewed_hash": null,
     "reviewer": null,
     "risk_tier": "critical",
     "slug": "autocad-lt",
     "source_url": "https://www.autodesk.com/products/autocad-lt/overview",
-    "source_verified_on": "2026-05-10",
-    "status": "QUEUED"
+    "source_verified_on": "2026-07-24",
+    "status": "MEDIA_READY"
   }
 }

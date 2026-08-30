@@ -22,20 +22,23 @@
     ],
     "host_app": null,
     "id": "brandmark",
-    "long_description": "Brandmark génère des logos professionnels en quelques secondes avec kit de marque, mockups et fichiers SVG.",
-    "long_description_en": "Brandmark generates professional logos in seconds with brand kit, mockups and SVG files.",
+    "long_description": "Outil de création de logos alimenté par IA. Génère automatiquement plusieurs concepts de logo basés sur votre description, puis permet la customisation et le téléchargement de fichiers vecteur, PNG et brand guidelines.\n\nFonctions clés : Génération AI de concepts de logos ; Customization couleurs et polices ; Révisions illimitées ; Brand guidelines et design assets (Designer+) ; Droits commerciaux et personnels complets ; Fichiers vecteur et raster.\n\nBrandmark excelle pour un logo rapide, original et bon marché ; pour une identité visuelle très forte, un designer humain reste préférable.",
+    "long_description_en": "AI-powered logo creation tool. Automatically generates multiple logo concepts based on your description, then allows customization and download of vector, PNG files, and brand guidelines.\n\nKey strengths: One-time payment, no subscription.; AI proposes multiple original concepts.; Results generally modern and clean.; Very fast process (minutes).; Excellent value for money..\n\nBrandmark excels at a fast, original, and affordable logo; for very strong visual identity, a human designer is preferable.",
     "media": {
-      "gallery_images": [],
-      "og_image_url": "https://tooltrim.com/og-screenshots/brandmark.jpg"
+      "gallery_images": [
+        "https://brandmark.io/images/slider/slide2.png",
+        "https://brandmark.io/images/editor_controls_inverse.png"
+      ],
+      "og_image_url": "https://brandmark.io/images/slider/slide3.png"
     },
     "name": "Brandmark",
     "pricing": {
-      "free": "Aperçu gratuit",
-      "paid": "Basic 25$/mois"
+      "free": "Génération et prévisualisation des logos gratuite. Téléchargement des fichiers et brand kit nécessite un achat unique.",
+      "paid": "Basic: 35 $ (fichiers logo PNG et vecteur) ; Designer: 95 $ (fichiers source + brand guidelines + designs web/cartes/social) ; Enterprise: 195 $ (tout Designer + jusqu'à 10 concepts hand-crafted + téléchargement polices)"
     },
     "pricing_en": {
-      "free": "Aperçu gratuit",
-      "paid": "Basic $25/mo"
+      "free": "Génération et prévisualisation des logos gratuite. Téléchargement des fichiers et brand kit nécessite un achat unique.",
+      "paid": "Basic: 35 $ (fichiers logo PNG et vecteur) ; Designer: 95 $ (fichiers source + brand guidelines + designs web/cartes/social) ; Enterprise: 195 $ (tout Designer + jusqu'à 10 concepts hand-crafted + téléchargement polices)"
     },
     "pricing_v5": {
       "annual_monthly_eur": 24,
@@ -44,11 +47,14 @@
       "free_tier": true,
       "free_tier_note": "Aperçu gratuit",
       "monthly_eur": 30,
+      "official_source_url": "https://brandmark.io/",
       "plan_name": "Basic",
       "price_original": 25,
       "reliability": "medium",
+      "source_domain": "brandmark.io",
       "source_url": "https://brandmark.io/pricing",
-      "verified_on": "2026-05-08"
+      "verification_status": "official_explicit",
+      "verified_on": "2026-07-24"
     },
     "pros": [
       "Paiement unique, pas d'abonnement.",
@@ -64,11 +70,11 @@
       "Very fast process (minutes).",
       "Excellent value for money."
     ],
-    "short_description": "Générateur de logo IA avec kit de marque complet, achat unique.",
-    "short_description_en": "AI logo generator with full brand kit, one-time purchase.",
+    "short_description": "Outil de création de logos alimenté par IA. Génère automatiquement plusieurs concepts de logo basés sur votre description, puis permet la customisation et le téléchargement de fichiers vecteur, PNG et brand guidelines.",
+    "short_description_en": "AI-powered logo creation tool. Automatically generates multiple logo concepts based on your description, then allows customization and download of vector, PNG files, and brand guidelines.",
     "slug": "brandmark",
-    "source_url": "https://brandmark.io",
-    "source_verified_on": "2026-05-08",
+    "source_url": "https://brandmark.io/",
+    "source_verified_on": "2026-07-24",
     "use_cases": [
       "Générer un logo de démarrage rapidement.",
       "Explorer plusieurs directions visuelles.",
@@ -220,7 +226,37 @@
     ],
     "verified_on": "2026-07-24"
   },
-  "media_evidence": null,
+  "media_evidence": {
+    "discovery": {
+      "official_media_found": true,
+      "official_pages_checked": [
+        "https://brandmark.io/"
+      ]
+    },
+    "items": [
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://brandmark.io/",
+        "url": "https://brandmark.io/images/slider/slide3.png"
+      },
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://brandmark.io/",
+        "url": "https://brandmark.io/images/slider/slide2.png"
+      },
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://brandmark.io/",
+        "url": "https://brandmark.io/images/editor_controls_inverse.png"
+      }
+    ],
+    "mode": "sourced",
+    "slug": "brandmark",
+    "verified_on": "2026-08-30"
+  },
   "quality_version": "catalog-review-v1",
   "required_action": "verify_bundle_freshness_then_review_editorial",
   "rules": {
@@ -238,36 +274,32 @@
     "assigned_batch": "review-design-tools-critical-001",
     "batch_position": 7,
     "blockers": [],
-    "catalog_hash": "sha256:c7b04ac2086013b61d2e72e432a298683a21c68ace51527602b7e1d50d9c53c7",
+    "catalog_hash": "sha256:7f842c2d00639033bcf7f07023626f7feeea5cf855e60a7ac962cd814bf2dcd0",
     "category": "design-tools",
     "fact_bundle": "AVAILABLE",
     "fact_bundle_hash": "sha256:5d6c553a693e8c46ff3b2cf386224e899e724ab47c30141ea10b99692ffe7bfe",
     "invalidated_from": null,
-    "media_errors": [
-      "media_evidence_missing"
-    ],
-    "media_evidence": "MISSING",
-    "media_evidence_hash": null,
+    "media_errors": [],
+    "media_evidence": "VALID",
+    "media_evidence_hash": "sha256:70416d8faf8d6993cb47891c589c87e3b539d41f6c3ff635dc4545d5629e7c0f",
     "name": "Brandmark",
     "next_review_at": null,
     "priority_reasons": [
       "affiliate_link",
-      "paid_price",
-      "missing_or_invalid_media_evidence",
-      "shallow_editorial"
+      "paid_price"
     ],
-    "priority_score": 260,
+    "priority_score": 180,
     "published_at": null,
     "quality_version": "catalog-review-v1",
     "rendered_at": null,
-    "review_fingerprint": "sha256:60579bbbf622a0b694d6df716d4084fb9ca1fc13b310ed61f1b885bba6aab829",
+    "review_fingerprint": "sha256:0f24afea31f09d2598ee62c351317390152ea21c4f8b4a697d73cc796f4c902d",
     "reviewed_at": null,
     "reviewed_hash": null,
     "reviewer": null,
     "risk_tier": "critical",
     "slug": "brandmark",
-    "source_url": "https://brandmark.io",
-    "source_verified_on": "2026-05-08",
-    "status": "QUEUED"
+    "source_url": "https://brandmark.io/",
+    "source_verified_on": "2026-07-24",
+    "status": "MEDIA_READY"
   }
 }

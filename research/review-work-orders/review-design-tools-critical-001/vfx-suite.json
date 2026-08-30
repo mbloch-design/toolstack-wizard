@@ -20,20 +20,22 @@
     ],
     "host_app": "adobe-after-effects",
     "id": "vfx-suite",
-    "long_description": "VFX Suite, c'est l'ensemble d'outils de compositing et d'effets visuels de Red Giant, pensé pour faire des VFX directement dans After Effects sans passer par un logiciel de compositing dédié. On y trouve une incrustation fond vert de qualité, Supercomp (un environnement de compositing par calques lumineux), King Pin Tracker (suivi et corner pin), Optical Glow, Chromatic Displacement et les célèbres lens flares de Knoll Light Factory.\n\nComme tout Red Giant, VFX Suite passe désormais par l'abonnement Red Giant Complete (~50$/mois) ou Maxon One, fini la vente à l'unité. C'est un confort réel pour qui fait du compositing léger à moyen dans After Effects. En revanche, pour du compositing lourd et pro, un outil dédié comme Nuke reste la référence. VFX Suite se justifie surtout si After Effects est ton outil central et que tu veux y garder tes VFX.",
-    "long_description_en": "VFX Suite is Red Giant's set of compositing and visual effects tools, designed to do VFX right inside After Effects without going through a dedicated compositing app. It includes quality green-screen keying, Supercomp (a layer-based light compositing environment), King Pin Tracker (tracking and corner pin), Optical Glow, Chromatic Displacement and the famous Knoll Light Factory lens flares.\n\nLike all of Red Giant, VFX Suite now comes via the Red Giant Complete subscription (~$50/month) or Maxon One, with no more standalone sales. It's a real comfort for anyone doing light to medium compositing in After Effects. For heavy, pro compositing, however, a dedicated tool like Nuke remains the reference. VFX Suite mostly makes sense if After Effects is your central tool and you want to keep your VFX there.",
+    "long_description": "Famille de plugins de keying, tracking, nettoyage et compositing dont Adobe After Effects est l'hôte principal. Depuis 2024, VFX Suite n'est plus installée ou vendue séparément et ses outils sont inclus dans Red Giant.\n\nFonctions clés : Suite Trapcode complète (particules, effets 3D) ; Magic Bullet Suite (correction couleur, grading) ; Universe de plugins d'effets spécialisés ; Intégration After Effects et Premiere Pro ; Mises à jour continue et support actif ; Accès à la communauté Red Giant.\n\nVFX Suite est essentiel pour les studios motion design ; pour l'édition vidéo basique, les outils natifs d'After Effects suffisent.",
+    "long_description_en": "Family of keying, tracking, cleanup, and compositing plugins primarily hosted in Adobe After Effects. Since 2024, VFX Suite is no longer installed or sold separately and its tools are included with Red Giant.\n\nKey strengths: Complete integrated suite for motion design and VFX.; Magic Bullet Studio for professional color grading.; Trapcode for advanced particles and 3D effects.; Continuous support and updates from Red Giant/Maxon.; Available for both After Effects and Premiere Pro..\n\nVFX Suite is essential for motion design studios; for basic video editing, After Effects native tools suffice.",
     "media": {
-      "gallery_images": [],
-      "og_image_url": null
+      "gallery_images": [
+        "https://maxonassets.imgix.net/images/Solution-Pages/Compositing/Compositing-Capabilities-04.jpg?ar=16%3A9&auto=format%2Ccompress&crop=faces&fit=clip&fm=webp&h=1080&w=1920"
+      ],
+      "og_image_url": "https://maxonassets.imgix.net/images/Solution-Pages/Compositing/Compositing-Capabilities-01.jpg?ar=16%3A9&auto=format%2Ccompress&crop=faces&fit=clip&fm=webp&h=1080&w=1920"
     },
     "name": "VFX Suite",
     "pricing": {
-      "free": "",
-      "paid": "Via Red Giant Complete (~50$/mois, 599$/an) ou Maxon One. Plus vendu à l'unité."
+      "free": "Pas de version gratuite permanente. Essai gratuit de 14 jours, sans carte bancaire selon Maxon.",
+      "paid": "VFX Suite: Pas de vente autonome actuelle ; Red Giant: Montant régional affiché sur la page officielle Maxon ; Maxon One: Montant régional affiché sur la page officielle Maxon"
     },
     "pricing_en": {
-      "free": "",
-      "paid": "Via Red Giant Complete (~$50/month, $599/year) or Maxon One. No longer sold standalone."
+      "free": "Pas de version gratuite permanente. Essai gratuit de 14 jours, sans carte bancaire selon Maxon.",
+      "paid": "VFX Suite: Pas de vente autonome actuelle ; Red Giant: Montant régional affiché sur la page officielle Maxon ; Maxon One: Montant régional affiché sur la page officielle Maxon"
     },
     "pricing_v5": {
       "cautions": [
@@ -43,12 +45,12 @@
       "compare_plan_name": "Red Giant Complete",
       "compare_price_monthly_eur": 50,
       "location_sensitive": false,
-      "official_source_url": "https://www.maxon.net/en/buy",
+      "official_source_url": "https://www.maxon.net/en/solutions/compositing",
       "price_reliability": "high",
       "source_domain": "maxon.net",
       "usage_sensitive": false,
       "verification_status": "official_explicit",
-      "verified_on": "2026-06-17"
+      "verified_on": "2026-08-30"
     },
     "pros": [
       "Suite complète intégrée pour motion design et VFX.",
@@ -64,11 +66,11 @@
       "Continuous support and updates from Red Giant/Maxon.",
       "Available for both After Effects and Premiere Pro."
     ],
-    "short_description": "Suite Red Giant de compositing, incrustation et effets VFX pour After Effects.",
-    "short_description_en": "Red Giant's compositing, keying and VFX effects suite for After Effects.",
+    "short_description": "Famille de plugins de keying, tracking, nettoyage et compositing dont Adobe After Effects est l'hôte principal. Depuis 2024, VFX Suite n'est plus installée ou vendue séparément et ses outils sont inclus dans Red Giant.",
+    "short_description_en": "Family of keying, tracking, cleanup, and compositing plugins primarily hosted in Adobe After Effects. Since 2024, VFX Suite is no longer installed or sold separately and its tools are included with Red Giant.",
     "slug": "vfx-suite",
-    "source_url": "https://www.maxon.net/en/buy",
-    "source_verified_on": "2026-06-17",
+    "source_url": "https://www.maxon.net/en/solutions/compositing",
+    "source_verified_on": "2026-08-30",
     "use_cases": [
       "Produire des animations de titres et génériques pour film/série.",
       "Étalonnage professionnel et grading couleur de vidéos.",
@@ -114,7 +116,7 @@
     "website_url": "https://www.maxon.net/red-giant/vfx-suite"
   },
   "fact_bundle": {
-    "author": "ToolTrim — Mike",
+    "author": "ToolTrim - Mike",
     "en": {
       "cons": [
         "Subscription mandatory (no one-time purchase).",
@@ -153,7 +155,7 @@
     },
     "facts": {
       "free_tier": {
-        "detail": "Pas de version gratuite. Accès uniquement par abonnement Red Giant Complete ou Maxon One.",
+        "detail": "Pas de version gratuite permanente. Essai gratuit de 14 jours, sans carte bancaire selon Maxon.",
         "exists": false
       },
       "key_features": [
@@ -166,21 +168,21 @@
       ],
       "plans": [
         {
-          "name": "Red Giant Complete (mensuel)",
-          "price": "$85/mois"
+          "name": "VFX Suite",
+          "price": "Pas de vente autonome actuelle"
         },
         {
-          "name": "Red Giant Complete (annuel)",
-          "price": "$639/an"
+          "name": "Red Giant",
+          "price": "Montant régional affiché sur la page officielle Maxon"
         },
         {
-          "name": "Maxon One (ensemble complet)",
-          "price": "Montants sur la page officielle"
+          "name": "Maxon One",
+          "price": "Montant régional affiché sur la page officielle Maxon"
         }
       ],
-      "pricing_model": "Abonnement obligatoire. Disponible uniquement via Red Giant Complete ou Maxon One subscription. Les licences perpétuelles ne sont plus vendues.",
-      "what": "Suite de plugins VFX pour After Effects et Premiere Pro, développée par Red Giant (groupe Maxon). Comprend Trapcode Suite, Magic Bullet Suite, Universe et autres effets avancés pour le motion design et la post-production vidéo.",
-      "what_en": "Suite of VFX plugins for After Effects and Premiere Pro, developed by Red Giant (Maxon group). Includes Trapcode Suite, Magic Bullet Suite, Universe, and other advanced effects for motion design and video post-production."
+      "pricing_model": "Inclus dans l'abonnement Red Giant et dans Maxon One. Aucun prix autonome actuel pour VFX Suite.",
+      "what": "Famille de plugins de keying, tracking, nettoyage et compositing dont Adobe After Effects est l'hôte principal. Depuis 2024, VFX Suite n'est plus installée ou vendue séparément et ses outils sont inclus dans Red Giant.",
+      "what_en": "Family of keying, tracking, cleanup, and compositing plugins primarily hosted in Adobe After Effects. Since 2024, VFX Suite is no longer installed or sold separately and its tools are included with Red Giant."
     },
     "fr": {
       "cons": [
@@ -228,13 +230,49 @@
     "slug": "vfx-suite",
     "sources": [
       {
-        "label": "Red Giant VFX Suite / Maxon (site officiel)",
+        "label": "Outils de compositing Red Giant (site officiel Maxon)",
+        "url": "https://www.maxon.net/en/solutions/compositing"
+      },
+      {
+        "label": "Red Giant (site officiel Maxon)",
         "url": "https://www.maxon.net/en/red-giant"
+      },
+      {
+        "label": "Compatibilité Red Giant (support officiel Maxon)",
+        "url": "https://support.maxon.net/hc/en-us/articles/23987275556764-Red-Giant-Compatibility"
+      },
+      {
+        "label": "Installateur Red Giant unifié (support officiel Maxon)",
+        "url": "https://support.maxon.net/hc/en-us/articles/21148760833180-How-do-I-install-the-individual-suites-within-my-Red-Giant-subscription-Magic-Bullet-Trapcode-VFX-Universe"
       }
     ],
-    "verified_on": "2026-07-24"
+    "verified_on": "2026-08-30"
   },
-  "media_evidence": null,
+  "media_evidence": {
+    "discovery": {
+      "official_media_found": true,
+      "official_pages_checked": [
+        "https://www.maxon.net/en/solutions/compositing"
+      ]
+    },
+    "items": [
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://www.maxon.net/en/solutions/compositing",
+        "url": "https://maxonassets.imgix.net/images/Solution-Pages/Compositing/Compositing-Capabilities-01.jpg?ar=16%3A9&auto=format%2Ccompress&crop=faces&fit=clip&fm=webp&h=1080&w=1920"
+      },
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://www.maxon.net/en/solutions/compositing",
+        "url": "https://maxonassets.imgix.net/images/Solution-Pages/Compositing/Compositing-Capabilities-04.jpg?ar=16%3A9&auto=format%2Ccompress&crop=faces&fit=clip&fm=webp&h=1080&w=1920"
+      }
+    ],
+    "mode": "sourced",
+    "slug": "vfx-suite",
+    "verified_on": "2026-08-30"
+  },
   "quality_version": "catalog-review-v1",
   "required_action": "verify_bundle_freshness_then_review_editorial",
   "rules": {
@@ -252,36 +290,32 @@
     "assigned_batch": "review-design-tools-critical-001",
     "batch_position": 24,
     "blockers": [],
-    "catalog_hash": "sha256:8d4e2cd7e424a808b94e69e4ae9af22ce5e00124b27e07b416617bda3879994b",
+    "catalog_hash": "sha256:9479bd9088f851f5c856dcf98b91b5384a4f9749b4580bb52bc97d6a1376ad97",
     "category": "design-tools",
     "fact_bundle": "AVAILABLE",
-    "fact_bundle_hash": "sha256:9fd118136df1bee2d15d4b7b260bf5bc34f34af95e6a99359bde78dd23b2c674",
+    "fact_bundle_hash": "sha256:b5b87f6e9d328529b94ad9c0aa3024c73130af897e55b2c65ad2c3d698cfa1fd",
     "invalidated_from": null,
-    "media_errors": [
-      "media_evidence_missing"
-    ],
-    "media_evidence": "MISSING",
-    "media_evidence_hash": null,
+    "media_errors": [],
+    "media_evidence": "VALID",
+    "media_evidence_hash": "sha256:1c4aa66357bc67be77e00a70757fa4c1738f9fcaf653e1748a816af2b0ae3719",
     "name": "VFX Suite",
     "next_review_at": null,
     "priority_reasons": [
       "affiliate_link",
-      "paid_price",
-      "missing_or_invalid_media_evidence",
-      "missing_media"
+      "paid_price"
     ],
-    "priority_score": 245,
+    "priority_score": 180,
     "published_at": null,
     "quality_version": "catalog-review-v1",
     "rendered_at": null,
-    "review_fingerprint": "sha256:30bd2a68b2eb37e139a4015a1700f36a5f43c0a5f9b3cb6599eb1313bb5213a3",
+    "review_fingerprint": "sha256:7641527fb3f3c3a0a84db776aefd751f6939d66b61f63252bbefd403d3166399",
     "reviewed_at": null,
     "reviewed_hash": null,
     "reviewer": null,
     "risk_tier": "critical",
     "slug": "vfx-suite",
-    "source_url": "https://www.maxon.net/en/buy",
-    "source_verified_on": "2026-06-17",
-    "status": "QUEUED"
+    "source_url": "https://www.maxon.net/en/solutions/compositing",
+    "source_verified_on": "2026-08-30",
+    "status": "MEDIA_READY"
   }
 }

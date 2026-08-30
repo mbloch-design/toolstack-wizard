@@ -1,17 +1,19 @@
 {
   "slug": "fredocorner",
-  "author": "ToolTrim — Mike",
-  "verified_on": "2026-07-24",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-08-30",
   "sources": [
-    { "label": "SketchUcation PluginStore — FredoCorner (site officiel)", "url": "https://sketchucation.com/plugin/2120-fredocorner" }
+    { "label": "FredoCorner sur SketchUcation (site officiel)", "url": "https://sketchucation.com/plugin/2120-" },
+    { "label": "Guide SCFLicense (documentation officielle)", "url": "https://downloads.sketchucation.com/licensing/SCFLicense-Instructions_to_Users.pdf" }
   ],
   "facts": {
-    "what": "Plugin SketchUp spécialisé dans l'arrondissement des coins et des bords. FredoCorner arrondit les arêtes vives d'une sélection avec un contrôle fin du rayon et des angles.",
-    "what_en": "Specialized SketchUp plugin for rounding corners and edges. FredoCorner smooths sharp edges of a selection with fine control over radius and corner angles.",
-    "pricing_model": "Licence payante. Extension devenue payante après 10+ ans de distribution gratuite.",
-    "free_tier": { "exists": false, "detail": "Essai gratuit de 30 jours ; après, achat de licence requis via SketchUcation." },
+    "what": "Extension payante pour SketchUp desktop qui arrondit, biseaute, subdivise ou coupe les coins de formes 3D. Elle dépend de LibFredo6 et de SketchUcation ExtensionStore.",
+    "what_en": "Paid SketchUp desktop extension that rounds, bevels, subdivides, or chops the corners of 3D shapes. It requires LibFredo6 and SketchUcation ExtensionStore.",
+    "pricing_model": "Licence perpétuelle ou licence Rush de courte durée pour trois postes.",
+    "free_tier": { "exists": false, "detail": "Essai complet de 15 jours à partir de l'activation, puis licence requise." },
     "plans": [
-      { "name": "FredoCorner", "price": "Montants sur la page officielle SketchUcation" }
+      { "name": "Licence perpétuelle, 3 postes", "price": "30 $ (environ 28 €)" },
+      { "name": "Licence Rush, 3 postes et 21 jours", "price": "8 $ (environ 7 €)" }
     ],
     "key_features": [
       "Arrondissement des coins et des bords par rayon",
@@ -33,7 +35,7 @@
         "Vous arrondissez très rarement.",
         "Les raccourcis SketchUp natifs vous suffisent."
       ],
-      "threshold": "FredoCorner s'impose si vous arrondissez systématiquement des coins ; sinon, les outils gratuits SketchUp suffisent."
+      "threshold": "Ajoutez FredoCorner à SketchUp si les arrondis, biseaux ou coins subdivisés sont récurrents et dépassent les capacités natives."
     },
     "pros": [
       "Outil extrêmement spécialisé et rapide.",
@@ -45,7 +47,7 @@
       "Outil à usage très spécifique (arrondissement seulement).",
       "Passé du gratuit au payant récemment.",
       "Nécessite LibFredo6 comme dépendance.",
-      "Prix non affiché publiquement."
+      "FredoCorner reste distinct de RoundCorner malgré des usages proches."
     ],
     "use_cases": [
       "Arrondir les coins d'une pièce de mobilier.",
@@ -67,7 +69,7 @@
         "You rarely round edges.",
         "SketchUp's built-in tools suffice."
       ],
-      "threshold": "FredoCorner makes sense if you systematically round corners; otherwise, free SketchUp tools are enough."
+      "threshold": "Add FredoCorner to SketchUp when recurring rounding, beveling, or subdivided corners exceed the native tools."
     },
     "pros": [
       "Highly specialized and fast tool.",
@@ -79,7 +81,7 @@
       "Tool for a very specific use case (rounding only).",
       "Recently transitioned from free to paid.",
       "Requires LibFredo6 as a dependency.",
-      "Pricing not publicly displayed."
+      "FredoCorner remains distinct from RoundCorner despite overlapping use cases."
     ],
     "use_cases": [
       "Round the corners of a furniture piece.",

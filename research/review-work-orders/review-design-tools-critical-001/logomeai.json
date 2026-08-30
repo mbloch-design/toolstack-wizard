@@ -27,24 +27,24 @@
       "Variable quality of AI results depending on industry.",
       "Paid plans required to download files.",
       "No human reviews or personalized feedback.",
-      "User reports of automatic billing—verify cancellation process."
+      "Recurring billing is a poor fit for a strictly one-off need."
     ],
     "host_app": null,
     "id": "logomeai",
-    "long_description": "Logome.ai, c'est générateur de logos IA en quelques minutes. À partir de 1.45€/mois. Pensé pour les graphistes et les fondateurs SaaS.\n\nGain de temps estimé : 6h/mois.\n\nDès que vous avez besoin d'un logo pro rapidement sans budget designer (20$ one-time). Alternative gratuite : canva.",
-    "long_description_en": "Logome.ai is aI logo generator in just minutes. Starting at €1.45/month. Built for graphic designers and SaaS founders.\n\nEstimated time saving: 6h/month.\n\nAs soon as you need a professional logo quickly without a designer's budget ($20 one-time). Free alternative: canva.",
+    "long_description": "Générateur de logos alimenté par l'IA qui crée des logos uniques et des kits de marque en quelques minutes, avec un éditeur intégré pour personnaliser polices, couleurs et icônes.\n\nFonctions clés : Générateur de logos IA sans expérience de design requise ; Plus de 100 polices personnalisables ; Schémas de couleurs solides et dégradés ; Bibliothèque de symboles et icônes ; Création de kits de marque (templates site, signatures email, cartes de visite) ; Support technique à vie.\n\nLogome.ai convient aux freelances et petites équipes qui veulent un logo professionnel rapidement ; pour une création vraiment personnalisée ou entièrement gratuite, d'autres solutions s'imposent.",
+    "long_description_en": "AI-powered logo generator that creates unique logos and brand kits within minutes, featuring an integrated editor to customize fonts, colors, and icons.\n\nKey strengths: AI-powered logo generation very accessible to non-designers.; Rapid professional logo creation.; Integrated editor for fine-tuning.; Plans for complete brand kit creation.; Free access to the generator for testing..\n\nLogome.ai works for freelancers and small teams wanting a professional logo fast; for truly custom work or fully free options, other solutions fit better.",
     "media": {
       "gallery_images": [],
-      "og_image_url": null
+      "og_image_url": "https://cdn.prod.website-files.com/65b8d9e0af2c51a8738e2bf7/665607f563f2220aa5f7116d_Logome%20Logo.svg"
     },
     "name": "Logome.ai",
     "pricing": {
-      "free": "Aperçu gratuit",
-      "paid": "À partir de 20$ (pack basique) - 65$ (pack premium avec brand kit)"
+      "free": "Création de compte et génération initiale gratuites. Les exports exploitables et les kits de marque nécessitent un forfait payant.",
+      "paid": "Basic Logo Pack: 29 USD/mois, ou 19 USD/mois avec facturation annuelle ; Premium Logo Pack: 99 USD/mois, ou 49 USD/mois avec facturation annuelle ; Logo + Brand Kit: 199 USD/mois, ou 99 USD/mois avec facturation annuelle"
     },
     "pricing_en": {
-      "free": "Free overview",
-      "paid": "From $20 (basic pack) - $65 (premium pack with brand kit)"
+      "free": "Création de compte et génération initiale gratuites. Les exports exploitables et les kits de marque nécessitent un forfait payant.",
+      "paid": "Basic Logo Pack: 29 USD/mois, ou 19 USD/mois avec facturation annuelle ; Premium Logo Pack: 99 USD/mois, ou 49 USD/mois avec facturation annuelle ; Logo + Brand Kit: 199 USD/mois, ou 99 USD/mois avec facturation annuelle"
     },
     "pricing_v5": {
       "cautions": [],
@@ -52,12 +52,12 @@
       "compare_plan_name": "Entry paid plan",
       "compare_price_monthly_eur": 1.45,
       "location_sensitive": false,
-      "official_source_url": "https://logomeai.partnerlinks.io/qixva38jv07p",
+      "official_source_url": "https://www.logome.ai/pricing",
       "price_reliability": "low",
-      "source_domain": "logomeai.partnerlinks.io",
+      "source_domain": "logome.ai",
       "usage_sensitive": false,
-      "verification_status": "official_site_only",
-      "verified_on": "2026-03-13"
+      "verification_status": "official_explicit",
+      "verified_on": "2026-08-30"
     },
     "pros": [
       "Générateur IA très accessible sans compétences de design.",
@@ -73,11 +73,11 @@
       "Plans for complete brand kit creation.",
       "Free access to the generator for testing."
     ],
-    "short_description": "Générateur de logos IA en quelques minutes.",
-    "short_description_en": "AI logo generator in just minutes.",
+    "short_description": "Générateur de logos alimenté par l'IA qui crée des logos uniques et des kits de marque en quelques minutes, avec un éditeur intégré pour personnaliser polices, couleurs et icônes.",
+    "short_description_en": "AI-powered logo generator that creates unique logos and brand kits within minutes, featuring an integrated editor to customize fonts, colors, and icons.",
     "slug": "logomeai",
-    "source_url": "https://logomeai.partnerlinks.io/qixva38jv07p",
-    "source_verified_on": "2026-03-13",
+    "source_url": "https://www.logome.ai/pricing",
+    "source_verified_on": "2026-08-30",
     "use_cases": [
       "Créer un premier logo pour un freelance en phase de lancement.",
       "Générer rapidement plusieurs variations de logos pour tester.",
@@ -119,13 +119,13 @@
     "website_url": "https://logomeai.partnerlinks.io/qixva38jv07p"
   },
   "fact_bundle": {
-    "author": "ToolTrim — Mike",
+    "author": "ToolTrim - Mike",
     "en": {
       "cons": [
         "Variable quality of AI results depending on industry.",
         "Paid plans required to download files.",
         "No human reviews or personalized feedback.",
-        "User reports of automatic billing—verify cancellation process."
+        "Recurring billing is a poor fit for a strictly one-off need."
       ],
       "pros": [
         "AI-powered logo generation very accessible to non-designers.",
@@ -156,7 +156,7 @@
     },
     "facts": {
       "free_tier": {
-        "detail": "Accès complet au générateur de logos IA et à l'éditeur sans paiement. Pas de téléchargement ni d'exportation sans plan payant.",
+        "detail": "Création de compte et génération initiale gratuites. Les exports exploitables et les kits de marque nécessitent un forfait payant.",
         "exists": true
       },
       "key_features": [
@@ -170,18 +170,18 @@
       "plans": [
         {
           "name": "Basic Logo Pack",
-          "price": "19 € ou USD (forfait unique, un fichier logo)"
+          "price": "29 USD/mois, ou 19 USD/mois avec facturation annuelle"
         },
         {
           "name": "Premium Logo Pack",
-          "price": "49 $/mois ou 24 $/mois (facturation annuelle)"
+          "price": "99 USD/mois, ou 49 USD/mois avec facturation annuelle"
         },
         {
           "name": "Logo + Brand Kit",
-          "price": "99 $/mois ou 57 $/mois (facturation annuelle)"
+          "price": "199 USD/mois, ou 99 USD/mois avec facturation annuelle"
         }
       ],
-      "pricing_model": "Freemium avec plans payants. Accès gratuit au générateur et à l'éditeur sans inscription ni carte bancaire requises.",
+      "pricing_model": "Abonnement mensuel ou annuel par niveau de production et d'export.",
       "what": "Générateur de logos alimenté par l'IA qui crée des logos uniques et des kits de marque en quelques minutes, avec un éditeur intégré pour personnaliser polices, couleurs et icônes.",
       "what_en": "AI-powered logo generator that creates unique logos and brand kits within minutes, featuring an integrated editor to customize fonts, colors, and icons."
     },
@@ -228,13 +228,39 @@
     "slug": "logomeai",
     "sources": [
       {
-        "label": "Logome.ai — site officiel",
-        "url": "https://logomeai.com"
+        "label": "Tarifs LogoMe (site officiel)",
+        "url": "https://www.logome.ai/pricing"
+      },
+      {
+        "label": "Inscription LogoMe (application officielle)",
+        "url": "https://app.logome.ai/register"
+      },
+      {
+        "label": "Fonctions LogoMe (site officiel)",
+        "url": "https://www.logome.ai/logo-idea/professional-business-logo-maker"
       }
     ],
-    "verified_on": "2026-07-24"
+    "verified_on": "2026-08-30"
   },
-  "media_evidence": null,
+  "media_evidence": {
+    "discovery": {
+      "official_media_found": true,
+      "official_pages_checked": [
+        "https://www.logome.ai/pricing"
+      ]
+    },
+    "items": [
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://www.logome.ai/pricing",
+        "url": "https://cdn.prod.website-files.com/65b8d9e0af2c51a8738e2bf7/665607f563f2220aa5f7116d_Logome%20Logo.svg"
+      }
+    ],
+    "mode": "sourced",
+    "slug": "logomeai",
+    "verified_on": "2026-08-30"
+  },
   "quality_version": "catalog-review-v1",
   "required_action": "verify_bundle_freshness_then_review_editorial",
   "rules": {
@@ -252,36 +278,32 @@
     "assigned_batch": "review-design-tools-critical-001",
     "batch_position": 21,
     "blockers": [],
-    "catalog_hash": "sha256:d6fea618d4053e0c1abb5590f007d8910ee13a755e6949685b7cf95ab05df9b7",
+    "catalog_hash": "sha256:cc3250c288fb39fb8c2f1224ecb09ef43d55e3a18e86db99e26ba25d1f58aa31",
     "category": "design-tools",
     "fact_bundle": "AVAILABLE",
-    "fact_bundle_hash": "sha256:4dab550d0aedf0f4bc41680f9cf0add6582e5170394337fc44f6a599ca3f2ff9",
+    "fact_bundle_hash": "sha256:b13822dae03c41508572c881019055c2147fa3d7aa67e532a366575d8fc2d6c0",
     "invalidated_from": null,
-    "media_errors": [
-      "media_evidence_missing"
-    ],
-    "media_evidence": "MISSING",
-    "media_evidence_hash": null,
+    "media_errors": [],
+    "media_evidence": "VALID",
+    "media_evidence_hash": "sha256:ddd4e88489d044b6fbb56c1a22cc267bb38666f8dc0b70d4a237ba4e0b08e5a8",
     "name": "Logome.ai",
     "next_review_at": null,
     "priority_reasons": [
       "affiliate_link",
-      "paid_price",
-      "missing_or_invalid_media_evidence",
-      "missing_media"
+      "paid_price"
     ],
-    "priority_score": 245,
+    "priority_score": 180,
     "published_at": null,
     "quality_version": "catalog-review-v1",
     "rendered_at": null,
-    "review_fingerprint": "sha256:2b72fbbfc3376e9bc69ad2a04018bdaddcd0d4b98f0e5282c2e72be13cac561b",
+    "review_fingerprint": "sha256:0d4270723ca056cbd7fb18031eba65abc2325896a28dd410eccbfa19e606f9d7",
     "reviewed_at": null,
     "reviewed_hash": null,
     "reviewer": null,
     "risk_tier": "critical",
     "slug": "logomeai",
-    "source_url": "https://logomeai.partnerlinks.io/qixva38jv07p",
-    "source_verified_on": "2026-03-13",
-    "status": "QUEUED"
+    "source_url": "https://www.logome.ai/pricing",
+    "source_verified_on": "2026-08-30",
+    "status": "MEDIA_READY"
   }
 }

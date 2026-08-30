@@ -514,16 +514,16 @@
     "slug": "adobe-after-effects",
     "name": "Adobe After Effects",
     "categoryId": "design-tools",
-    "shortDescription": "Le standard du motion design, des effets visuels et du compositing vidéo.",
-    "shortDescriptionEn": "The standard for motion design and visual effects.",
+    "shortDescription": "Application d'effets visuels, de motion graphics et de compositing d'Adobe (Windows, macOS).",
+    "shortDescriptionEn": "Adobe's visual effects, motion graphics, and compositing application (Windows/macOS).",
     "pricing": {
-      "free": "Aucune version gratuite, essai uniquement",
-      "paid": "Environ 26€/mois (After Effects seul), ou via l'offre Creative Cloud complète"
+      "free": "Pas de version gratuite permanente. Essai complet de 7 jours, converti en abonnement s'il n'est pas annulé.",
+      "paid": "After Effects individuel: 22,99 USD/mois, engagement annuel facturé mensuellement ; After Effects équipe: 37,99 USD/mois par licence, engagement annuel facturé mensuellement ; Creative Cloud Pro individuel: 69,99 USD/mois, engagement annuel facturé mensuellement"
     },
     "defaultMonthlyPrice": 26.21,
     "affiliateLink": "https://adobe.com/products/aftereffects",
     "websiteUrl": "https://adobe.com/products/aftereffects",
-    "ogImageUrl": "https://www.adobe.com/products/media_19762a181d8f7cdad7fa491acc9917bdedbcba01a.jpg?width=1200&#x26;format=pjpg&#x26;optimize=medium",
+    "ogImageUrl": "https://www.adobe.com/cc-shared/fragments/products/after-effects/media_16c76e52536bb6390f3efd8c5d09ebd0dd95d28ed.jpg?format=jpg&optimize=medium&width=750",
     "logo": "",
     "tool_type": "metier",
     "host_app": null,
@@ -592,16 +592,16 @@
     "slug": "adobe-cc",
     "name": "Adobe Creative Cloud",
     "categoryId": "design-tools",
-    "shortDescription": "La suite complète : Photoshop, Illustrator, Premiere, After Effects, Lightroom et +20 apps.",
-    "shortDescriptionEn": "The complete suite: Photoshop, Illustrator, Premiere, After Effects, Lightroom and 20+ apps.",
+    "shortDescription": "Suite Adobe par abonnement réunissant plus de vingt applications de création, dont Photoshop, Illustrator, Premiere Pro, InDesign et Acrobat Pro, ainsi que les services Firefly.",
+    "shortDescriptionEn": "Adobe subscription suite combining more than twenty creative applications, including Photoshop, Illustrator, Premiere Pro, InDesign, and Acrobat Pro, plus Firefly services.",
     "pricing": {
-      "free": "Aucun plan gratuit",
-      "paid": "Creative Cloud Pro 78,65€/mois après promo de 3 mois à 39,31€"
+      "free": "Essai complet de 7 jours pour les particuliers ; aucun plan gratuit permanent pour la suite complète.",
+      "paid": "Creative Cloud Pro particulier: 78,65 €/mois TTC, engagement annuel facturé mensuellement ; Creative Cloud Pro équipes: 86,55 €/mois/licence HT, engagement annuel facturé mensuellement ; Creative Cloud Pro Plus équipes: 95,79 €/mois/licence HT ; Étudiants et enseignants: 19,50 €/mois TTC la première année, puis 40,32 €/mois TTC"
     },
     "defaultMonthlyPrice": 78.65,
     "affiliateLink": "https://adobe.com/creativecloud",
     "websiteUrl": "https://adobe.com/creativecloud",
-    "ogImageUrl": "https://www.adobe.com/products/media_14a141cf8900a74105b7122f28472dce9fd8cf872.jpg",
+    "ogImageUrl": "https://www.adobe.com/cc-shared/assets/img/product-icons/svg/creative-cloud.svg",
     "logo": "",
     "tool_type": "metier",
     "host_app": null,
@@ -621,7 +621,11 @@
       "illustrateur",
       "scenographe"
     ],
-    "relevantFor": [],
+    "relevantFor": [
+      "Studios créatifs",
+      "Freelances multidisciplinaires",
+      "Équipes marketing"
+    ],
     "freeAlternative": null,
     "substitutable": false,
     "betterAlternative": null
@@ -2440,16 +2444,16 @@
     "slug": "archicad",
     "name": "Archicad",
     "categoryId": "design-tools",
-    "shortDescription": "Logiciel BIM pour projets architecturaux coordonnés, dossiers techniques et grands projets.",
-    "shortDescriptionEn": "BIM software for coordinated architecture projects, technical files and larger scopes.",
+    "shortDescription": "Plateforme BIM (Building Information Modeling) pour architectes, designers et ingénieurs. Permet de concevoir, modéliser, visualiser et documenter des projets de toutes tailles du concept à la construction. Travail collaboratif via BIMcloud, interopérabilité OpenBIM (IFC, BCF).",
+    "shortDescriptionEn": "BIM (Building Information Modeling) platform for architects, designers, and engineers. Design, model, visualize, document, and collaborate on projects of any size from concept through construction. Collaborative via BIMcloud, OpenBIM interoperability (IFC, BCF).",
     "pricing": {
-      "free": "Essai gratuit",
-      "paid": "Sur abonnement / devis selon pays"
+      "free": "Licences éducatives gratuites pour étudiants et enseignants. Essai gratuit de 30 jours pour tous.",
+      "paid": "Archicad Studio: À partir de 203 EUR/mois (2.440 EUR/an) ; Archicad Collaborate: À partir de 239 EUR/mois (2.870 EUR/an)"
     },
     "defaultMonthlyPrice": 250,
     "affiliateLink": "https://graphisoft.com/solutions/archicad",
     "websiteUrl": "https://graphisoft.com/solutions/archicad",
-    "ogImageUrl": "https://www.graphisoft.com/content/uploads/2022/05/ac26_design_Archicad-banner-1.png",
+    "ogImageUrl": "https://www.graphisoft.com/content/uploads/2025/11/archicad-conceptualize-confidently.png",
     "logo": "",
     "tool_type": "metier",
     "host_app": null,
@@ -2502,39 +2506,6 @@
     ],
     "relevantFor": [
       "content-creator"
-    ],
-    "freeAlternative": null,
-    "substitutable": true,
-    "betterAlternative": null
-  },
-  {
-    "id": "are-na",
-    "slug": "are-na",
-    "name": "Are Na",
-    "categoryId": "design-tools",
-    "shortDescription": "Plateforme de curation visuelle pour designers et chercheurs, plus éditoriale que Pinterest.",
-    "shortDescriptionEn": "Visual curation platform for designers and researchers, more editorial than Pinterest.",
-    "pricing": {
-      "free": "Channels et blocks illimités avec fonctionnalités de base",
-      "paid": "Premium (prix non communiqué publiquement, -50% pour les étudiants pendant 2 ans)"
-    },
-    "defaultMonthlyPrice": 0,
-    "affiliateLink": "https://arena.com",
-    "websiteUrl": "https://arena.com",
-    "ogImageUrl": "https://static1.squarespace.com/static/6733a5fb2a1ee418fc513570/t/6733c14c1e48dd76a67b8dd6/1731445068875/arena-logo-primary-white.png?format=1500w",
-    "logo": "https://logo.clearbit.com/arena.com",
-    "tool_type": "specialise",
-    "host_app": null,
-    "bundle_parent": null,
-    "substitution_cluster_v2": null,
-    "functional_needs": [
-      "consulting-workflow"
-    ],
-    "verticals": [
-      "consulting"
-    ],
-    "relevantFor": [
-      "consultant"
     ],
     "freeAlternative": null,
     "substitutable": true,
@@ -3249,16 +3220,16 @@
     "slug": "autocad-lt",
     "name": "AutoCAD LT",
     "categoryId": "design-tools",
-    "shortDescription": "Dessin 2D précis pour plans techniques, cotations et échanges artisans.",
-    "shortDescriptionEn": "Precise 2D drafting for technical plans, dimensions and contractor exchanges.",
+    "shortDescription": "Version allégée d'AutoCAD dédiée au dessin technique 2D. Conçue pour les petites équipes et freelances ayant besoin d'une CAO basique sans les outils 3D coûteux.",
+    "shortDescriptionEn": "Lightweight version of AutoCAD dedicated to 2D technical drawing. Designed for small teams and freelancers needing basic CAD without expensive 3D tools.",
     "pricing": {
-      "free": "Essai gratuit",
-      "paid": "À partir de 63€/mois environ"
+      "free": "Essai gratuit 30 jours ; pas de version gratuite.",
+      "paid": "AutoCAD LT (abonnement annuel): 60 $/mois ou 440 $/an"
     },
     "defaultMonthlyPrice": 63,
     "affiliateLink": "https://www.autodesk.com/products/autocad-lt/overview",
     "websiteUrl": "https://www.autodesk.com/products/autocad-lt/overview",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/autocad-lt.jpg",
+    "ogImageUrl": "https://images.ctfassets.net/v7wr16nrr0mz/5JQTMWprZssXEdZRW6a1rI/49a52243189ea79c924d805260d44934/autocad-lt-dcn-hero-banner-1920x1080.jpg",
     "logo": "",
     "tool_type": "metier",
     "host_app": null,
@@ -4721,16 +4692,16 @@
     "slug": "brandmark",
     "name": "Brandmark",
     "categoryId": "design-tools",
-    "shortDescription": "Générateur de logo IA avec kit de marque complet, achat unique.",
-    "shortDescriptionEn": "AI logo generator with full brand kit, one-time purchase.",
+    "shortDescription": "Outil de création de logos alimenté par IA. Génère automatiquement plusieurs concepts de logo basés sur votre description, puis permet la customisation et le téléchargement de fichiers vecteur, PNG et brand guidelines.",
+    "shortDescriptionEn": "AI-powered logo creation tool. Automatically generates multiple logo concepts based on your description, then allows customization and download of vector, PNG files, and brand guidelines.",
     "pricing": {
-      "free": "Aperçu gratuit",
-      "paid": "Basic 25$/mois"
+      "free": "Génération et prévisualisation des logos gratuite. Téléchargement des fichiers et brand kit nécessite un achat unique.",
+      "paid": "Basic: 35 $ (fichiers logo PNG et vecteur) ; Designer: 95 $ (fichiers source + brand guidelines + designs web/cartes/social) ; Enterprise: 195 $ (tout Designer + jusqu'à 10 concepts hand-crafted + téléchargement polices)"
     },
     "defaultMonthlyPrice": 30,
     "affiliateLink": "https://brandmark.io",
     "websiteUrl": "https://brandmark.io",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/brandmark.jpg",
+    "ogImageUrl": "https://brandmark.io/images/slider/slide3.png",
     "logo": "",
     "tool_type": "satellite",
     "host_app": null,
@@ -8427,16 +8398,16 @@
     "slug": "curviloft",
     "name": "Curviloft",
     "categoryId": "design-tools",
-    "shortDescription": "Plugin SketchUp pour générer surfaces tendues, formes organiques et volumes courbes.",
-    "shortDescriptionEn": "SketchUp plugin for lofted surfaces, organic shapes and curved volumes.",
+    "shortDescription": "Plugin SketchUp pour créer des surfaces lissées et des « skins » 3D en reliant des contours. Inclus : Loft by Spline, Loft along Path, Skinning. Utile pour modélisation organique, surfaces courbes complexes, design de produit.",
+    "shortDescriptionEn": "SketchUp plugin to create smooth surfaces and 3D 'skins' by connecting contours. Includes: Loft by Spline, Loft along Path, Skinning. Useful for organic modeling, complex curved surfaces, product design.",
     "pricing": {
-      "free": "Selon licence SketchUcation",
-      "paid": "Donation/licence selon bundle"
+      "free": "Versions anciennes (antérieures à 2.0) gratuites et légales. Versions récentes (2.0+) payantes via Fredo6 ou trial 30 jours SketchUcation.",
+      "paid": "Curviloft (versions anciennes): Gratuit ; Curviloft (v2.0+ avec Fredo6): Montants sur le site Fredo6 ou SketchUcation"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://sketchucation.com/pluginstore",
     "websiteUrl": "https://sketchucation.com/pluginstore",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/curviloft.jpg",
+    "ogImageUrl": "https://pluginrepo.sketchucation.com/image/Curviloft.png",
     "logo": "",
     "tool_type": "metier",
     "host_app": null,
@@ -10165,16 +10136,16 @@
     "slug": "eagle",
     "name": "Eagle",
     "categoryId": "design-tools",
-    "shortDescription": "Bibliothèque locale pour organiser images, matières, textures, références, plans et inspirations.",
-    "shortDescriptionEn": "Local library to organize images, materials, textures, references, plans and inspiration.",
+    "shortDescription": "Application desktop de gestion d'assets créatifs pour les designers, permettant de centraliser, organiser et rechercher visuellement des fichiers (images, vidéos, fonts, PDFs).",
+    "shortDescriptionEn": "Desktop application for managing creative assets, enabling designers to centralize, organize, and visually search files (images, videos, fonts, PDFs).",
     "pricing": {
-      "free": "Essai gratuit",
-      "paid": "Licence perpétuelle"
+      "free": "Essai gratuit 30 jours avec accès complet ; pas de version permanente gratuite. Achat requis pour continuer.",
+      "paid": "Eagle (license): Achat unique, prix sur la page officielle"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://eagle.cool",
     "websiteUrl": "https://eagle.cool",
-    "ogImageUrl": "https://en.eagle.cool/images/og-image-en.png",
+    "ogImageUrl": "https://r2-web.eagle.cool/media/home-feature-eagle.png",
     "logo": "",
     "tool_type": "satellite",
     "host_app": null,
@@ -10692,16 +10663,16 @@
     "slug": "eneroth-face-creator",
     "name": "Eneroth Face Creator",
     "categoryId": "design-tools",
-    "shortDescription": "Plugin SketchUp utile après import DWG pour recréer des faces à partir de lignes.",
-    "shortDescriptionEn": "SketchUp plugin useful after DWG import to recreate faces from linework.",
+    "shortDescription": "Extension gratuite SketchUp créée par Christina Eneroth qui génère automatiquement toutes les faces possibles à partir d'une sélection d'arêtes.",
+    "shortDescriptionEn": "Free SketchUp extension by Christina Eneroth that automatically generates all possible faces from a selection of edges.",
     "pricing": {
-      "free": "Gratuit",
-      "paid": "Non"
+      "free": "Gratuit, extension officielle du SketchUp Extension Warehouse, aucun frais ou limitation.",
+      "paid": "Eneroth Face Creator: Gratuit"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://extensions.sketchup.com",
     "websiteUrl": "https://extensions.sketchup.com",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/eneroth-face-creator.jpg",
+    "ogImageUrl": "https://img.youtube.com/vi/ajRGCnNya74/maxresdefault.jpg",
     "logo": "",
     "tool_type": "metier",
     "host_app": null,
@@ -11646,16 +11617,16 @@
     "slug": "figma-draw",
     "name": "Figma Draw",
     "categoryId": "design-tools",
-    "shortDescription": "Outils vectoriels expressifs intégrés à Figma pour illustration, textures et tracés avancés.",
-    "shortDescriptionEn": "Expressive vector tools inside Figma for illustration, textures, and advanced paths.",
+    "shortDescription": "Espace d'illustration et ensemble d'outils vectoriels avancés intégrés à Figma Design. Draw fonctionne dans les fichiers Figma et ne constitue pas une application autonome.",
+    "shortDescriptionEn": "Illustration workspace and advanced vector toolset built into Figma Design. Draw works inside Figma files and is not a standalone application.",
     "pricing": {
-      "free": "Accès limité selon le plan",
-      "paid": "Inclus avec un siège Full"
+      "free": "Disponible sur le plan Starter gratuit avec les limites générales de Figma.",
+      "paid": "Starter: Gratuit, accès limité ; Professional Full seat: 16 $/mois ; Organization Full seat: 55 $/mois, facturé annuellement ; Enterprise Full seat: 90 $/mois, facturé annuellement"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://www.figma.com/draw/",
     "websiteUrl": "https://www.figma.com/draw/",
-    "ogImageUrl": "",
+    "ogImageUrl": "https://cdn.sanity.io/images/599r6htc/regionalized/b5bdc896ad53707438f475b3e0959d217103f348-1260x1260.png?auto=format&fit=max&h=630&q=75&w=630",
     "logo": "https://cdn.sanity.io/images/599r6htc/regionalized/857d716d2ba170b1507a97dfd233543408c3700e-2256x2112.png?rect=650,730,260,260&w=256&h=256&fit=crop&auto=format",
     "tool_type": "metier",
     "host_app": "figma",
@@ -11671,9 +11642,9 @@
       "ux-ui"
     ],
     "relevantFor": [
-      "Illustrateurs",
-      "Brand designers",
-      "Product designers"
+      "Designers produit",
+      "Illustrateurs numériques",
+      "Équipes de marque"
     ],
     "freeAlternative": null,
     "substitutable": true,
@@ -11722,16 +11693,16 @@
     "slug": "figma-slides",
     "name": "Figma Slides",
     "categoryId": "design-tools",
-    "shortDescription": "Présentations visuelles rapides dans l’écosystème Figma pour concepts, avant-projets et revues client.",
-    "shortDescriptionEn": "Fast visual presentations in the Figma ecosystem for concepts, early design and client reviews.",
+    "shortDescription": "Outil de présentation collaboratif intégré à Figma pour créer des decks, intégrer des prototypes et faire participer une audience. Le mode Design avancé nécessite une licence Full.",
+    "shortDescriptionEn": "Collaborative presentation product built into Figma for creating decks, embedding prototypes, and engaging an audience. Advanced Design mode requires a Full seat.",
     "pricing": {
-      "free": "Inclus selon plan Figma",
-      "paid": "Selon plan Figma"
+      "free": "Le forfait Starter offre un accès gratuit limité. Slides est inclus avec toutes les licences payantes.",
+      "paid": "Starter: Gratuit, accès limité ; Professional Collab seat: 3 $/mois, Slides inclus ; Professional Dev seat: 12 $/mois, Slides inclus ; Professional Full seat: 16 $/mois, mode Design inclus"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://www.figma.com/slides/",
     "websiteUrl": "https://www.figma.com/slides/",
-    "ogImageUrl": "https://cdn.sanity.io/images/599r6htc/regionalized/24896c37d587a0b8843b1640345f051d77a36ce4-2400x1260.png?w=1200&amp;q=70&amp;fit=max&amp;auto=format",
+    "ogImageUrl": "https://cdn.sanity.io/images/599r6htc/regionalized/89ed0f5953ed0b7d3267598af0261fee1f972ead-1080x865.png?auto=format&fit=max&h=865&q=75&w=1080",
     "logo": "https://cdn.sanity.io/images/599r6htc/regionalized/857d716d2ba170b1507a97dfd233543408c3700e-2256x2112.png?rect=650,1165,260,260&w=256&h=256&fit=crop&auto=format",
     "tool_type": "metier",
     "host_app": null,
@@ -12190,16 +12161,16 @@
     "slug": "flextools",
     "name": "FlexTools",
     "categoryId": "design-tools",
-    "shortDescription": "Composants dynamiques SketchUp pour portes, fenêtres, ouvertures et éléments paramétriques.",
-    "shortDescriptionEn": "Dynamic SketchUp components for doors, windows, openings and parametric elements.",
+    "shortDescription": "Extension SketchUp pour architectes et designers. Crée des éléments architecturaux (portes, fenêtres, escaliers) paramétriques et réactifs. Inclut WallCutter pour découper automatiquement les ouvertures dans les murs superposés.",
+    "shortDescriptionEn": "SketchUp extension for architects and designers. Creates parametric, responsive architectural elements (doors, windows, stairs). Includes WallCutter for automatic opening creation in layered walls.",
     "pricing": {
-      "free": "Essai disponible",
-      "paid": "Abonnement/licence"
+      "free": "Aucun essai, démo ou plan gratuit. Garantie de remboursement de 30 jours après achat.",
+      "paid": "FlexTools Pro: 99 €/an hors taxes ; FlexTools Pro Academic: 19 €/an hors taxes"
     },
     "defaultMonthlyPrice": 8,
     "affiliateLink": "https://flextools.cc",
     "websiteUrl": "https://flextools.cc",
-    "ogImageUrl": "https://flextools.cc/wp-content/uploads/2018/08/flexpack_pro_01-1.png",
+    "ogImageUrl": "https://flextools.cc/wp-content/uploads/2025/11/FlexTools_Pro_01_300.png",
     "logo": "",
     "tool_type": "metier",
     "host_app": null,
@@ -12990,16 +12961,16 @@
     "slug": "fredocorner",
     "name": "FredoCorner",
     "categoryId": "design-tools",
-    "shortDescription": "Plugin SketchUp pour chanfreins, arrondis, angles adoucis et détails de mobilier.",
-    "shortDescriptionEn": "SketchUp plugin for bevels, rounded corners and furniture details.",
+    "shortDescription": "Extension payante pour SketchUp desktop qui arrondit, biseaute, subdivise ou coupe les coins de formes 3D. Elle dépend de LibFredo6 et de SketchUcation ExtensionStore.",
+    "shortDescriptionEn": "Paid SketchUp desktop extension that rounds, bevels, subdivides, or chops the corners of 3D shapes. It requires LibFredo6 and SketchUcation ExtensionStore.",
     "pricing": {
-      "free": "Selon licence SketchUcation",
-      "paid": "Donation/licence selon bundle"
+      "free": "Essai complet de 15 jours à partir de l'activation, puis licence requise.",
+      "paid": "Licence perpétuelle, 3 postes: 30 $ (environ 28 €) ; Licence Rush, 3 postes et 21 jours: 8 $ (environ 7 €)"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://sketchucation.com/pluginstore",
     "websiteUrl": "https://sketchucation.com/pluginstore",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/fredocorner.jpg",
+    "ogImageUrl": "https://pluginrepo.sketchucation.com/image/FredoCorner/FredoCorner___Summary_Tool.png",
     "logo": "",
     "tool_type": "metier",
     "host_app": null,
@@ -17388,16 +17359,16 @@
     "slug": "joint-push-pull",
     "name": "Joint Push Pull",
     "categoryId": "design-tools",
-    "shortDescription": "Plugin SketchUp pour extruder des surfaces complexes et créer des épaisseurs propres.",
-    "shortDescriptionEn": "SketchUp plugin to extrude complex surfaces and create clean thicknesses.",
+    "shortDescription": "Extension payante pour SketchUp desktop qui extrude plusieurs faces avec des modes d'épaississement, tapering, moulage, découpe et trous. Elle dépend de LibFredo6 et de SketchUcation Tools.",
+    "shortDescriptionEn": "Paid SketchUp desktop extension for extruding multiple faces through thickening, tapering, molding, trimming, and hole modes. It requires LibFredo6 and SketchUcation Tools.",
     "pricing": {
-      "free": "Selon licence SketchUcation",
-      "paid": "Donation/licence selon bundle"
+      "free": "Essai complet de 30 jours dès la première utilisation, puis licence requise.",
+      "paid": "Licence perpétuelle, 3 postes: Montant affiché dans le panier officiel ; Fredo6Bundle2022, 8 extensions: Montant affiché dans le panier officiel"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://sketchucation.com/pluginstore",
     "websiteUrl": "https://sketchucation.com/pluginstore",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/joint-push-pull.jpg",
+    "ogImageUrl": "https://pluginrepo.sketchucation.com/image/JointPushPull/JointPushPull_Summary_of_Tools.png",
     "logo": "",
     "tool_type": "metier",
     "host_app": null,
@@ -18803,16 +18774,16 @@
     "slug": "layout-sketchup",
     "name": "LayOut",
     "categoryId": "design-tools",
-    "shortDescription": "Mise en page 2D liée aux modèles SketchUp : plans, coupes, cotations et dossiers client.",
-    "shortDescriptionEn": "2D documentation linked to SketchUp models: plans, sections, dimensions and client decks.",
+    "shortDescription": "Logiciel de mise en page 2D de SketchUp conçu pour convertir des modèles 3D en documents de construction détaillés et présentations professionnelles avec annotations et cotations associatives.",
+    "shortDescriptionEn": "SketchUp's professional 2D drafting and layout software that converts 3D models into comprehensive construction documentation and presentations with associative dimensions and annotations.",
     "pricing": {
-      "free": "Inclus avec SketchUp Pro",
-      "paid": "Inclus dans SketchUp Pro"
+      "free": "Essai gratuit 7 jours via l'abonnement SketchUp Pro. Pas de version gratuite permanente.",
+      "paid": "SketchUp Pro Annual: 33,25 $/mois/utilisateur, facturé annuellement, hors taxes ; SketchUp Studio Annual: 68,25 $/mois/utilisateur, facturé annuellement, hors taxes"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://www.sketchup.com/products/layout",
     "websiteUrl": "https://www.sketchup.com/products/layout",
-    "ogImageUrl": "https://images.ctfassets.net/5qimfmsew7zl/398ERwObwTeseKumIduAoy/520d855254ba592359b8a18d1243c8b1/SU-Website-Product-LayOut-S1.jpg",
+    "ogImageUrl": "https://images.ctfassets.net/yd21npj2ir9g/8aeb1ef28387073bd4e98a/278789ba2ee27aadfb03b1a0ec87448b/2026-layout-interface.png",
     "logo": "",
     "tool_type": "satellite",
     "host_app": "sketchup-pro",
@@ -19966,16 +19937,16 @@
     "slug": "logomeai",
     "name": "Logome.ai",
     "categoryId": "design-tools",
-    "shortDescription": "Générateur de logos IA en quelques minutes.",
-    "shortDescriptionEn": "AI logo generator in just minutes.",
+    "shortDescription": "Générateur de logos alimenté par l'IA qui crée des logos uniques et des kits de marque en quelques minutes, avec un éditeur intégré pour personnaliser polices, couleurs et icônes.",
+    "shortDescriptionEn": "AI-powered logo generator that creates unique logos and brand kits within minutes, featuring an integrated editor to customize fonts, colors, and icons.",
     "pricing": {
-      "free": "Aperçu gratuit",
-      "paid": "À partir de 20$ (pack basique) - 65$ (pack premium avec brand kit)"
+      "free": "Création de compte et génération initiale gratuites. Les exports exploitables et les kits de marque nécessitent un forfait payant.",
+      "paid": "Basic Logo Pack: 29 USD/mois, ou 19 USD/mois avec facturation annuelle ; Premium Logo Pack: 99 USD/mois, ou 49 USD/mois avec facturation annuelle ; Logo + Brand Kit: 199 USD/mois, ou 99 USD/mois avec facturation annuelle"
     },
     "defaultMonthlyPrice": 1.45,
     "affiliateLink": "https://logomeai.partnerlinks.io/qixva38jv07p",
     "websiteUrl": "https://logomeai.partnerlinks.io/qixva38jv07p",
-    "ogImageUrl": "",
+    "ogImageUrl": "https://cdn.prod.website-files.com/65b8d9e0af2c51a8738e2bf7/665607f563f2220aa5f7116d_Logome%20Logo.svg",
     "logo": "",
     "tool_type": "ia",
     "host_app": null,
@@ -26838,11 +26809,11 @@
     "slug": "pikkovia",
     "name": "Pikkovia",
     "categoryId": "design-tools",
-    "shortDescription": "Plateforme de création de visuels marketing IA pour réseaux sociaux et publicités.",
-    "shortDescriptionEn": "AI marketing visual creation platform for social media and ads.",
+    "shortDescription": "Pikkovia, parfois écrit à tort PikkoVia, est une place de marché web d'icônes et d'illustrations 3D destinée notamment aux designers UI. Elle propose des ressources en PNG et des fichiers 3D, dont des fichiers Blender selon les packs.",
+    "shortDescriptionEn": "Pikkovia, sometimes incorrectly written as PikkoVia, is a web marketplace for 3D icons and illustrations aimed in particular at UI designers. It offers PNG assets and 3D files, including Blender files in some packs.",
     "pricing": {
-      "free": "Essai gratuit",
-      "paid": "Pro 59$/mois"
+      "free": "Le site officiel annonce 10 téléchargements gratuits par jour.",
+      "paid": "Téléchargements gratuits: Gratuit, 10 assets par jour ; Ressources payantes: Prix variable selon l'asset; montant central non publié"
     },
     "defaultMonthlyPrice": 50,
     "affiliateLink": "https://pikkovia.com",
@@ -26863,11 +26834,9 @@
       "e-commerce"
     ],
     "relevantFor": [
-      "Designers UX/UI",
-      "Motion designers",
-      "Développeurs frontend",
-      "Illustrateurs numériques",
-      "Startups tech"
+      "Designers UI",
+      "Illustrateurs",
+      "Équipes marketing"
     ],
     "freeAlternative": "Canva",
     "substitutable": true,
@@ -27398,16 +27367,16 @@
     "slug": "pluraleyes",
     "name": "PluralEyes",
     "categoryId": "design-tools",
-    "shortDescription": "Outil Red Giant de synchro audio/vidéo multicam, désormais en maintenance limitée.",
-    "shortDescriptionEn": "Red Giant's multicam audio/video sync tool, now in limited maintenance.",
+    "shortDescription": "Ancienne application Maxon de synchronisation automatique de rushes vidéo et audio par comparaison des formes d'onde. PluralEyes est arrêté commercialement et placé en maintenance limitée depuis le 1er février 2023.",
+    "shortDescriptionEn": "Former Maxon application for automatically synchronizing video and audio footage by comparing waveforms. PluralEyes is commercially discontinued and has been in limited maintenance mode since February 1, 2023.",
     "pricing": {
-      "free": "",
-      "paid": "Inclus dans Red Giant Complete ou Maxon One (produit legacy, plus mis à jour)."
+      "free": "Aucune version gratuite ni aucun essai actuel. Les installateurs compatibles sont fournis par le support aux détenteurs d'un numéro de série valide.",
+      "paid": "Nouvelle licence: Indisponible, produit arrêté ; Licence historique: Utilisable uniquement dans les anciens environnements officiellement compatibles"
     },
     "defaultMonthlyPrice": 50,
     "affiliateLink": "https://www.maxon.net/red-giant/pluraleyes",
     "websiteUrl": "https://www.maxon.net/red-giant/pluraleyes",
-    "ogImageUrl": "",
+    "ogImageUrl": "https://img.youtube.com/vi/oNwq2w2mNuA/maxresdefault.jpg",
     "logo": "",
     "tool_type": "plugin",
     "host_app": "adobe-premiere-pro",
@@ -28450,16 +28419,16 @@
     "slug": "profile-builder-3",
     "name": "Profile Builder 3",
     "categoryId": "design-tools",
-    "shortDescription": "Plugin SketchUp pour créer rapidement plinthes, corniches, tasseaux, rails et profils répétitifs.",
-    "shortDescriptionEn": "SketchUp plugin to quickly create baseboards, cornices, battens, rails and repeating profiles.",
+    "shortDescription": "Profile Builder est une extension paramétrique et BIM pour SketchUp Pro. Le slug historique vise Profile Builder 3, mais cette version a été remplacée par Profile Builder 4, l'offre actuelle de MindSight Studios.",
+    "shortDescriptionEn": "Profile Builder is a parametric and BIM extension for SketchUp Pro. The historical slug refers to Profile Builder 3, but that version has been superseded by Profile Builder 4, MindSight Studios' current product.",
     "pricing": {
-      "free": "Essai disponible",
-      "paid": "Licence payante"
+      "free": "Pas de version gratuite permanente; essai complet gratuit de 30 jours.",
+      "paid": "Essai: Gratuit pendant 30 jours ; Version 4 Pro: 119 $ US, paiement unique par poste ; Étudiant / enseignant: 75 % de réduction, usage non commercial et preuve requise"
     },
     "defaultMonthlyPrice": 8,
     "affiliateLink": "https://profilebuilder4sketchup.com",
     "websiteUrl": "https://profilebuilder4sketchup.com",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/profile-builder-3.jpg",
+    "ogImageUrl": "https://i.ytimg.com/vi/8dBg3jJzccs/maxresdefault.jpg",
     "logo": "",
     "tool_type": "metier",
     "host_app": null,
@@ -28472,9 +28441,9 @@
       "interior-design"
     ],
     "relevantFor": [
-      "Architectes",
+      "Architectes utilisant SketchUp",
       "Designers d'intérieur",
-      "Ingénieurs de construction"
+      "Constructeurs et menuisiers"
     ],
     "freeAlternative": null,
     "substitutable": true,
@@ -33800,16 +33769,16 @@
     "slug": "skatter",
     "name": "Skatter",
     "categoryId": "design-tools",
-    "shortDescription": "Extension SketchUp pour disperser des objets (végétation, foules, props) sur une surface.",
-    "shortDescriptionEn": "SketchUp extension to scatter objects (vegetation, crowds, props) across a surface.",
+    "shortDescription": "Skatter est une extension de distribution paramétrique d'objets pour SketchUp. Elle peuple des terrains et scènes avec végétation, personnes, véhicules ou autres assets tout en proposant des modes qui limitent le poids du modèle.",
+    "shortDescriptionEn": "Skatter is a parametric object-scattering extension for SketchUp. It populates terrain and scenes with vegetation, people, vehicles, or other assets while offering modes that limit model weight.",
     "pricing": {
-      "free": "Démo 15 jours",
-      "paid": "149€ en licence perpétuelle, ou 99€/an en abonnement (HT)."
+      "free": "Pas de version gratuite permanente; essai complet de 15 jours.",
+      "paid": "Perpetual, monoposte: 149 € hors TVA ; Standalone, un an: 99 € par an hors TVA ; Network, un an: 249 € par an hors TVA"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://getskatter.com",
     "websiteUrl": "https://getskatter.com",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/skatter.jpg",
+    "ogImageUrl": "https://design8.com/wp-content/uploads/2024/05/skatter-feature-life.jpg",
     "logo": "",
     "tool_type": "plugin",
     "host_app": "sketchup-pro",
@@ -33823,8 +33792,8 @@
     ],
     "relevantFor": [
       "Architectes paysagistes",
-      "Visualisateurs SketchUp",
-      "Designeurs d'environnement urbain"
+      "Artistes de visualisation",
+      "Urbanistes utilisant SketchUp"
     ],
     "freeAlternative": null,
     "substitutable": true,
@@ -34679,16 +34648,16 @@
     "slug": "spline",
     "name": "Spline",
     "categoryId": "design-tools",
-    "shortDescription": "Design 3D interactif dans le navigateur pour des expériences web immersives.",
-    "shortDescriptionEn": "Browser-based interactive 3D design for immersive web experiences.",
+    "shortDescription": "Spline est une plateforme collaborative de création 2D et 3D interactive en temps réel. Elle permet de modéliser, animer et publier des expériences pour le web et, selon le plan, pour les plateformes Apple et Android.",
+    "shortDescriptionEn": "Spline is a collaborative platform for real-time interactive 2D and 3D creation. It lets teams model, animate, and publish experiences for the web and, depending on the plan, Apple and Android platforms.",
     "pricing": {
-      "free": "Plan gratuit avec watermark",
-      "paid": "Pro 12$/mois sans watermark"
+      "free": "Fichiers personnels limités, viewers illimités, accès à la bibliothèque et exports web avec filigrane.",
+      "paid": "Free: 0 $ par mois ; Hobby: 12 $ par siège et par mois facturé annuellement, ou 15 $ en mensuel ; Pro: 25 $ par siège et par mois facturé annuellement, ou 30 $ en mensuel ; Max: 60 $ par siège et par mois facturé annuellement, ou 70 $ en mensuel ; Enterprise: Sur devis, facturation annuelle"
     },
     "defaultMonthlyPrice": 11.04,
     "affiliateLink": "https://spline.design",
     "websiteUrl": "https://spline.design",
-    "ogImageUrl": "https://spline.design/_next/static/media/spline_image_banner.77c2eb63.png",
+    "ogImageUrl": "https://spline.design/_next/image?q=100&url=%2F_next%2Fstatic%2Fimmutable%2Fmedia%2FdesignImg.2gbezukrw1o7o.webp&w=3840",
     "logo": "",
     "tool_type": "satellite",
     "host_app": null,
@@ -34705,8 +34674,8 @@
     "verticals": [],
     "relevantFor": [
       "Designers web",
-      "Créateurs de contenu 3D",
-      "UX/UI designers ambitieux"
+      "Équipes produit",
+      "Développeurs front-end"
     ],
     "freeAlternative": "Spline free",
     "substitutable": true,
@@ -37941,16 +37910,16 @@
     "slug": "transmutr",
     "name": "Transmutr",
     "categoryId": "design-tools",
-    "shortDescription": "Conversion et optimisation de modèles 3D pour importer des assets lourds dans SketchUp sans casser le fichier.",
-    "shortDescriptionEn": "3D model conversion and optimization to import heavy assets into SketchUp cleanly.",
+    "shortDescription": "Transmutr est une application de conversion et d'optimisation d'assets 3D pour SketchUp, accompagnée d'une intégration à SketchUp. Elle importe des formats externes, simplifie la géométrie, prépare les matériaux et génère des proxies; ce n'est pas seulement un plugin exécuté dans SketchUp.",
+    "shortDescriptionEn": "Transmutr is a 3D asset conversion and optimization application for SketchUp with a SketchUp integration. It imports external formats, simplifies geometry, prepares materials, and generates proxies; it is not merely a plugin running inside SketchUp.",
     "pricing": {
-      "free": "Essai disponible",
-      "paid": "Licence payante"
+      "free": "Pas de version gratuite permanente; essai officiel de 7 jours documenté.",
+      "paid": "Artist: Montant actuel non vérifiable sur la page officielle accessible ; Studio: Montant actuel non vérifiable sur la page officielle accessible"
     },
     "defaultMonthlyPrice": 10,
     "affiliateLink": "https://transmutr.com",
     "websiteUrl": "https://transmutr.com",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/transmutr.jpg",
+    "ogImageUrl": "https://i.ytimg.com/vi/I73SLyJQG60/maxresdefault.jpg",
     "logo": "",
     "tool_type": "metier",
     "host_app": null,
@@ -37963,10 +37932,9 @@
       "interior-design"
     ],
     "relevantFor": [
-      "Modélisateurs 3D",
-      "Architectes digitaux",
-      "Designers de produit",
-      "Artistes 3D"
+      "Artistes 3D utilisant SketchUp",
+      "Architectes",
+      "Gestionnaires de bibliothèques d'assets"
     ],
     "freeAlternative": null,
     "substitutable": true,
@@ -37977,16 +37945,16 @@
     "slug": "trapcode",
     "name": "Trapcode",
     "categoryId": "design-tools",
-    "shortDescription": "Suite Red Giant de particules et d'effets 3D pour After Effects (Particular, Mir, Form).",
-    "shortDescriptionEn": "Red Giant's particle and 3D effects suite for After Effects (Particular, Mir, Form).",
+    "shortDescription": "Famille de plugins de particules et d'effets 3D pour Adobe After Effects, dont Trapcode Particular est l'outil principal. Depuis 2024, Trapcode est installé et commercialisé dans l'abonnement Red Giant plutôt que comme suite autonome.",
+    "shortDescriptionEn": "Family of particle and 3D effects plugins for Adobe After Effects, led by Trapcode Particular. Since 2024, Trapcode has been installed and sold through the Red Giant subscription rather than as a standalone suite.",
     "pricing": {
-      "free": "",
-      "paid": "Via Red Giant Complete (~50$/mois, 599$/an) ou Maxon One. Plus vendu à l'unité."
+      "free": "Pas de version gratuite permanente. Essai gratuit Maxon One de 14 jours, sans carte bancaire selon Maxon.",
+      "paid": "Trapcode: Pas de vente autonome actuelle ; Red Giant: Montant régional affiché sur la page officielle Maxon ; Maxon One: Montant régional affiché sur la page officielle Maxon"
     },
     "defaultMonthlyPrice": 50,
     "affiliateLink": "https://www.maxon.net/red-giant/trapcode",
     "websiteUrl": "https://www.maxon.net/red-giant/trapcode",
-    "ogImageUrl": "",
+    "ogImageUrl": "https://maxonassets.imgix.net/images/Products/Red-Giant/Trapcode_Designer_Interface.jpg?ar=16%3A9&auto=format%2Ccompress&crop=faces&fit=clip&fm=webp&h=1080&w=1920",
     "logo": "",
     "tool_type": "plugin",
     "host_app": "adobe-after-effects",
@@ -39441,16 +39409,16 @@
     "slug": "vfx-suite",
     "name": "VFX Suite",
     "categoryId": "design-tools",
-    "shortDescription": "Suite Red Giant de compositing, incrustation et effets VFX pour After Effects.",
-    "shortDescriptionEn": "Red Giant's compositing, keying and VFX effects suite for After Effects.",
+    "shortDescription": "Famille de plugins de keying, tracking, nettoyage et compositing dont Adobe After Effects est l'hôte principal. Depuis 2024, VFX Suite n'est plus installée ou vendue séparément et ses outils sont inclus dans Red Giant.",
+    "shortDescriptionEn": "Family of keying, tracking, cleanup, and compositing plugins primarily hosted in Adobe After Effects. Since 2024, VFX Suite is no longer installed or sold separately and its tools are included with Red Giant.",
     "pricing": {
-      "free": "",
-      "paid": "Via Red Giant Complete (~50$/mois, 599$/an) ou Maxon One. Plus vendu à l'unité."
+      "free": "Pas de version gratuite permanente. Essai gratuit de 14 jours, sans carte bancaire selon Maxon.",
+      "paid": "VFX Suite: Pas de vente autonome actuelle ; Red Giant: Montant régional affiché sur la page officielle Maxon ; Maxon One: Montant régional affiché sur la page officielle Maxon"
     },
     "defaultMonthlyPrice": 50,
     "affiliateLink": "https://www.maxon.net/red-giant/vfx-suite",
     "websiteUrl": "https://www.maxon.net/red-giant/vfx-suite",
-    "ogImageUrl": "",
+    "ogImageUrl": "https://maxonassets.imgix.net/images/Solution-Pages/Compositing/Compositing-Capabilities-01.jpg?ar=16%3A9&auto=format%2Ccompress&crop=faces&fit=clip&fm=webp&h=1080&w=1920",
     "logo": "",
     "tool_type": "plugin",
     "host_app": "adobe-after-effects",

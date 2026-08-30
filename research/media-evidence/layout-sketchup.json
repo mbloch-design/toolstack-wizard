@@ -1,0 +1,9 @@
+{
+  "slug": "layout-sketchup",
+  "verified_on": "2026-08-30",
+  "mode": "sourced",
+  "discovery": { "official_media_found": true, "official_pages_checked": ["https://help.sketchup.com/en/layout/layout"] },
+  "items": [
+    { "kind": "image", "url": "https://images.ctfassets.net/yd21npj2ir9g/8aeb1ef28387073bd4e98a/278789ba2ee27aadfb03b1a0ec87448b/2026-layout-interface.png", "source_page_url": "https://help.sketchup.com/en/layout/layout", "official": true }
+  ]
+}

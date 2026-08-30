@@ -5,205 +5,243 @@
     "alternatives": [],
     "category": "design-tools",
     "cons": [
-      "Requiert SketchUp Pro (SketchUp Desktop 2017+).",
-      "Courbe d'apprentissage pour les débutants.",
-      "Pas de version gratuite permanente."
+      "Suppose une licence SketchUp Pro active.",
+      "Le nom historique peut faire croire que la version 3 est encore vendue.",
+      "La construction d'assemblages avancés demande un apprentissage."
     ],
     "cons_en": [
-      "Requires SketchUp Pro (SketchUp Desktop 2017+).",
-      "Learning curve for beginners.",
-      "No permanent free version."
+      "Requires an active SketchUp Pro license.",
+      "The historical page name can imply that version 3 is still sold.",
+      "Advanced assembly building takes time to learn."
     ],
     "host_app": null,
     "id": "profile-builder-3",
-    "long_description": "Plugin SketchUp pour créer rapidement plinthes, corniches, tasseaux, rails et profils répétitifs.",
-    "long_description_en": "SketchUp plugin to quickly create baseboards, cornices, battens, rails and repeating profiles.",
+    "long_description": "Profile Builder est une extension paramétrique et BIM pour SketchUp Pro. Le slug historique vise Profile Builder 3, mais cette version a été remplacée par Profile Builder 4, l'offre actuelle de MindSight Studios.\n\nFonctions clés : Profils paramétriques extrudés le long de chemins ; Assemblages intelligents et réutilisables ; Édition non destructive des formes et chemins ; Création et modification de trous paramétriques ; Bibliothèques de profils et assemblages ; Smart-Path Selection et compatibilité Quantifier Pro.\n\nAjoutez la version actuelle à SketchUp lorsque la répétition et les révisions paramétriques compensent l'apprentissage; pour quelques extrusions ponctuelles, les outils natifs suffisent.",
+    "long_description_en": "Profile Builder is a parametric and BIM extension for SketchUp Pro. The historical slug refers to Profile Builder 3, but that version has been superseded by Profile Builder 4, MindSight Studios' current product.\n\nKey strengths: Automates repetitive objects while keeping them editable.; Assemblies can be reused across projects.; Works on Windows and macOS with compatible SketchUp Pro.; Official libraries and training are available..\n\nAdd the current version to SketchUp when repetition and parametric revisions repay the learning effort; native tools are enough for a few one-off extrusions.",
     "media": {
-      "gallery_images": [],
-      "og_image_url": "https://tooltrim.com/og-screenshots/profile-builder-3.jpg"
+      "gallery_images": [
+        "https://i.ytimg.com/vi/NGUXlZ5FhLk/maxresdefault.jpg"
+      ],
+      "og_image_url": "https://i.ytimg.com/vi/8dBg3jJzccs/maxresdefault.jpg"
     },
     "name": "Profile Builder 3",
     "pricing": {
-      "free": "Essai disponible",
-      "paid": "Licence payante"
+      "free": "Pas de version gratuite permanente; essai complet gratuit de 30 jours.",
+      "paid": "Essai: Gratuit pendant 30 jours ; Version 4 Pro: 119 $ US, paiement unique par poste ; Étudiant / enseignant: 75 % de réduction, usage non commercial et preuve requise"
     },
-    "pricing_en": null,
+    "pricing_en": {
+      "free": "Pas de version gratuite permanente; essai complet gratuit de 30 jours.",
+      "paid": "Essai: Gratuit pendant 30 jours ; Version 4 Pro: 119 $ US, paiement unique par poste ; Étudiant / enseignant: 75 % de réduction, usage non commercial et preuve requise"
+    },
     "pricing_v5": {
       "compare_price_monthly_eur": 8,
-      "official_source_url": "https://profilebuilder4sketchup.com",
+      "official_source_url": "https://profilebuilder4sketchup.com/",
       "source_domain": "profilebuilder4sketchup.com",
-      "verification_status": "manual_reference",
-      "verified_on": "2026-05-10"
+      "verification_status": "official_explicit",
+      "verified_on": "2026-08-30"
     },
     "pros": [
-      "Automatise la création de composants réutilisables.",
-      "Les changements de conception se propagent automatiquement.",
-      "Gain de temps considérable sur les projets itératifs.",
-      "Bibliothèques gratuites de profils fournis.",
-      "Licence perpétuelle unique (pas d'abonnement)."
+      "Automatise des objets répétitifs tout en les gardant éditables.",
+      "Assemblages réutilisables entre plusieurs projets.",
+      "Fonctionne sur Windows et macOS avec SketchUp Pro compatible.",
+      "Bibliothèques et formation officielles disponibles."
     ],
     "pros_en": [
-      "Automates creation of reusable components.",
-      "Design changes propagate automatically.",
-      "Significant time savings on iterative projects.",
-      "Free profile libraries included.",
-      "One-time perpetual license (no subscription)."
+      "Automates repetitive objects while keeping them editable.",
+      "Assemblies can be reused across projects.",
+      "Works on Windows and macOS with compatible SketchUp Pro.",
+      "Official libraries and training are available."
     ],
-    "short_description": "Plugin SketchUp pour créer rapidement plinthes, corniches, tasseaux, rails et profils répétitifs.",
-    "short_description_en": "SketchUp plugin to quickly create baseboards, cornices, battens, rails and repeating profiles.",
+    "short_description": "Profile Builder est une extension paramétrique et BIM pour SketchUp Pro. Le slug historique vise Profile Builder 3, mais cette version a été remplacée par Profile Builder 4, l'offre actuelle de MindSight Studios.",
+    "short_description_en": "Profile Builder is a parametric and BIM extension for SketchUp Pro. The historical slug refers to Profile Builder 3, but that version has been superseded by Profile Builder 4, MindSight Studios' current product.",
     "slug": "profile-builder-3",
-    "source_url": "https://profilebuilder4sketchup.com",
-    "source_verified_on": "2026-05-10",
+    "source_url": "https://profilebuilder4sketchup.com/",
+    "source_verified_on": "2026-08-30",
     "use_cases": [
-      "Modéliser une structure avec escaliers et rampes paramétriques.",
-      "Concevoir des systèmes de murs réutilisables pour plusieurs projets.",
-      "Créer des mobiliers et équipements adaptatifs aux dimensions du projet."
+      "Construire un système de garde-corps adaptable à son chemin.",
+      "Réutiliser une composition de mur ou d'ossature.",
+      "Mettre à jour des moulures après une modification de plan."
     ],
     "use_cases_en": [
-      "Model a structure with parametric stairs and railings.",
-      "Design reusable wall systems for multiple projects.",
-      "Create adaptive furniture and equipment for project dimensions."
+      "Build a railing system that adapts to its path.",
+      "Reuse a wall or framing assembly.",
+      "Update mouldings after a floor-plan change."
     ],
     "verdict": {
       "avoidIf": [
-        "Vous utilisez une version gratuite de SketchUp (incompatible).",
-        "Vous n'avez pas besoin de profils paramétriques réutilisables.",
-        "Vous faites de la modélisation simple sans adaptation de design."
+        "Vous n'avez pas SketchUp Pro, car l'extension ne s'utilise pas seule.",
+        "Vos modèles sont simples et rarement modifiés.",
+        "Vous cherchez encore la version 3 plutôt que l'offre actuelle."
       ],
       "keepIf": [
-        "Vous concevez avec SketchUp Pro et créez des composants réutilisables (escaliers, rampes, moulures).",
-        "Vous avez besoin d'adapter rapidement les modèles aux changements de conception.",
-        "Vous travaillez dans l'architecture ou la conception de bâtiments."
+        "Vous utilisez déjà SketchUp Pro et répétez des profils, structures ou assemblages.",
+        "Vos modèles doivent rester modifiables après un changement de tracé ou de dimensions.",
+        "Vous concevez régulièrement murs, garde-corps, moulures, routes ou ossatures."
       ],
-      "threshold": "Profile Builder 3 s'impose pour les flux de travail architecturaux paramétriques sous SketchUp ; inutile pour la modélisation simple ponctuelle."
+      "threshold": "Ajoutez la version actuelle à SketchUp lorsque la répétition et les révisions paramétriques compensent l'apprentissage; pour quelques extrusions ponctuelles, les outils natifs suffisent."
     },
     "verdict_en": {
       "avoidIf": [
-        "You use a free version of SketchUp (incompatible).",
-        "You don't need parametric reusable profiles.",
-        "You do simple modeling without design iteration."
+        "You do not have SketchUp Pro because the extension cannot run alone.",
+        "Your models are simple and rarely revised.",
+        "You are specifically looking for version 3 rather than the current product."
       ],
       "keepIf": [
-        "You design with SketchUp Pro and create reusable components (stairs, railings, moulding).",
-        "You need to quickly adapt models to design changes.",
-        "You work in architecture or building design."
+        "You already use SketchUp Pro and repeat profiles, structures, or assemblies.",
+        "Your models must remain editable after path or dimension changes.",
+        "You regularly design walls, railings, mouldings, roads, or framing."
       ],
-      "threshold": "Profile Builder 3 is essential for parametric architectural workflows in SketchUp; unnecessary for simple one-off modeling."
+      "threshold": "Add the current version to SketchUp when repetition and parametric revisions repay the learning effort; native tools are enough for a few one-off extrusions."
     },
     "website_url": "https://profilebuilder4sketchup.com"
   },
   "fact_bundle": {
-    "author": "ToolTrim — Mike",
+    "author": "ToolTrim - Mike",
     "en": {
       "cons": [
-        "Requires SketchUp Pro (SketchUp Desktop 2017+).",
-        "Learning curve for beginners.",
-        "No permanent free version."
+        "Requires an active SketchUp Pro license.",
+        "The historical page name can imply that version 3 is still sold.",
+        "Advanced assembly building takes time to learn."
       ],
       "pros": [
-        "Automates creation of reusable components.",
-        "Design changes propagate automatically.",
-        "Significant time savings on iterative projects.",
-        "Free profile libraries included.",
-        "One-time perpetual license (no subscription)."
+        "Automates repetitive objects while keeping them editable.",
+        "Assemblies can be reused across projects.",
+        "Works on Windows and macOS with compatible SketchUp Pro.",
+        "Official libraries and training are available."
       ],
       "use_cases": [
-        "Model a structure with parametric stairs and railings.",
-        "Design reusable wall systems for multiple projects.",
-        "Create adaptive furniture and equipment for project dimensions."
+        "Build a railing system that adapts to its path.",
+        "Reuse a wall or framing assembly.",
+        "Update mouldings after a floor-plan change."
       ],
       "verdict": {
         "avoidIf": [
-          "You use a free version of SketchUp (incompatible).",
-          "You don't need parametric reusable profiles.",
-          "You do simple modeling without design iteration."
+          "You do not have SketchUp Pro because the extension cannot run alone.",
+          "Your models are simple and rarely revised.",
+          "You are specifically looking for version 3 rather than the current product."
         ],
         "keepIf": [
-          "You design with SketchUp Pro and create reusable components (stairs, railings, moulding).",
-          "You need to quickly adapt models to design changes.",
-          "You work in architecture or building design."
+          "You already use SketchUp Pro and repeat profiles, structures, or assemblies.",
+          "Your models must remain editable after path or dimension changes.",
+          "You regularly design walls, railings, mouldings, roads, or framing."
         ],
-        "threshold": "Profile Builder 3 is essential for parametric architectural workflows in SketchUp; unnecessary for simple one-off modeling."
+        "threshold": "Add the current version to SketchUp when repetition and parametric revisions repay the learning effort; native tools are enough for a few one-off extrusions."
       }
     },
     "facts": {
       "free_tier": {
-        "detail": "Essai gratuit de 30 jours avec toutes les fonctionnalités",
-        "exists": true
+        "detail": "Pas de version gratuite permanente; essai complet gratuit de 30 jours.",
+        "exists": false
       },
       "key_features": [
-        "Profils et assemblages paramétriques réutilisables",
-        "Édition non-destructive",
-        "Création et édition intelligentes de trous",
-        "Bibliothèques libres de profils et assemblages",
-        "Compatibilité PC et Mac",
-        "Intégration avec Quantifier Pro"
+        "Profils paramétriques extrudés le long de chemins",
+        "Assemblages intelligents et réutilisables",
+        "Édition non destructive des formes et chemins",
+        "Création et modification de trous paramétriques",
+        "Bibliothèques de profils et assemblages",
+        "Smart-Path Selection et compatibilité Quantifier Pro"
       ],
       "plans": [
         {
-          "name": "Trial",
-          "price": "Gratuit (30 jours)"
+          "name": "Essai",
+          "price": "Gratuit pendant 30 jours"
         },
         {
-          "name": "Pro License",
-          "price": "USD 119 (perpétuel)"
+          "name": "Version 4 Pro",
+          "price": "119 $ US, paiement unique par poste"
         },
         {
-          "name": "Student/Educator",
-          "price": "USD 30 (75% de réduction avec preuve de statut)"
+          "name": "Étudiant / enseignant",
+          "price": "75 % de réduction, usage non commercial et preuve requise"
         }
       ],
-      "pricing_model": "Licence perpétuelle unique pour la version Pro. Essai gratuit de 30 jours entièrement fonctionnel. Réduction pour étudiants et éducateurs.",
-      "what": "Extension SketchUp pour la création d'objets paramétriques intelligents et réutilisables. Les profils et assemblages s'adaptent automatiquement aux changements de conception, éliminant la remodélisation manuelle.",
-      "what_en": "SketchUp extension for creating smart, parametric, reusable objects. Profiles and assemblies automatically adapt to design changes, eliminating manual re-modeling."
+      "pricing_model": "Licence permanente monoposte pour Profile Builder 4, avec essai complet et réduction éducation. La version 3 n'est plus l'offre actuelle.",
+      "what": "Profile Builder est une extension paramétrique et BIM pour SketchUp Pro. Le slug historique vise Profile Builder 3, mais cette version a été remplacée par Profile Builder 4, l'offre actuelle de MindSight Studios.",
+      "what_en": "Profile Builder is a parametric and BIM extension for SketchUp Pro. The historical slug refers to Profile Builder 3, but that version has been superseded by Profile Builder 4, MindSight Studios' current product."
     },
     "fr": {
       "cons": [
-        "Requiert SketchUp Pro (SketchUp Desktop 2017+).",
-        "Courbe d'apprentissage pour les débutants.",
-        "Pas de version gratuite permanente."
+        "Suppose une licence SketchUp Pro active.",
+        "Le nom historique peut faire croire que la version 3 est encore vendue.",
+        "La construction d'assemblages avancés demande un apprentissage."
       ],
       "pros": [
-        "Automatise la création de composants réutilisables.",
-        "Les changements de conception se propagent automatiquement.",
-        "Gain de temps considérable sur les projets itératifs.",
-        "Bibliothèques gratuites de profils fournis.",
-        "Licence perpétuelle unique (pas d'abonnement)."
+        "Automatise des objets répétitifs tout en les gardant éditables.",
+        "Assemblages réutilisables entre plusieurs projets.",
+        "Fonctionne sur Windows et macOS avec SketchUp Pro compatible.",
+        "Bibliothèques et formation officielles disponibles."
       ],
       "relevant_for": [
-        "Architectes",
+        "Architectes utilisant SketchUp",
         "Designers d'intérieur",
-        "Ingénieurs de construction"
+        "Constructeurs et menuisiers"
       ],
       "use_cases": [
-        "Modéliser une structure avec escaliers et rampes paramétriques.",
-        "Concevoir des systèmes de murs réutilisables pour plusieurs projets.",
-        "Créer des mobiliers et équipements adaptatifs aux dimensions du projet."
+        "Construire un système de garde-corps adaptable à son chemin.",
+        "Réutiliser une composition de mur ou d'ossature.",
+        "Mettre à jour des moulures après une modification de plan."
       ],
       "verdict": {
         "avoidIf": [
-          "Vous utilisez une version gratuite de SketchUp (incompatible).",
-          "Vous n'avez pas besoin de profils paramétriques réutilisables.",
-          "Vous faites de la modélisation simple sans adaptation de design."
+          "Vous n'avez pas SketchUp Pro, car l'extension ne s'utilise pas seule.",
+          "Vos modèles sont simples et rarement modifiés.",
+          "Vous cherchez encore la version 3 plutôt que l'offre actuelle."
         ],
         "keepIf": [
-          "Vous concevez avec SketchUp Pro et créez des composants réutilisables (escaliers, rampes, moulures).",
-          "Vous avez besoin d'adapter rapidement les modèles aux changements de conception.",
-          "Vous travaillez dans l'architecture ou la conception de bâtiments."
+          "Vous utilisez déjà SketchUp Pro et répétez des profils, structures ou assemblages.",
+          "Vos modèles doivent rester modifiables après un changement de tracé ou de dimensions.",
+          "Vous concevez régulièrement murs, garde-corps, moulures, routes ou ossatures."
         ],
-        "threshold": "Profile Builder 3 s'impose pour les flux de travail architecturaux paramétriques sous SketchUp ; inutile pour la modélisation simple ponctuelle."
+        "threshold": "Ajoutez la version actuelle à SketchUp lorsque la répétition et les révisions paramétriques compensent l'apprentissage; pour quelques extrusions ponctuelles, les outils natifs suffisent."
       }
     },
     "slug": "profile-builder-3",
     "sources": [
       {
-        "label": "Profile Builder 4 for SketchUp (site officiel)",
-        "url": "https://profilebuilder4sketchup.com"
+        "label": "Profile Builder 4 - produit et tarifs (site officiel)",
+        "url": "https://profilebuilder4sketchup.com/"
+      },
+      {
+        "label": "Profile Builder 4 - fonctionnalités (site officiel)",
+        "url": "https://profilebuilder4sketchup.com/features/"
+      },
+      {
+        "label": "Profile Builder 4 - formation officielle",
+        "url": "https://profilebuilder4sketchup.com/learn/"
+      },
+      {
+        "label": "Profile Builder 4 - notes de version",
+        "url": "https://profilebuilder4sketchup.com/release-notes/"
       }
     ],
-    "verified_on": "2026-07-24"
+    "verified_on": "2026-08-30"
   },
-  "media_evidence": null,
+  "media_evidence": {
+    "discovery": {
+      "official_media_found": true,
+      "official_pages_checked": [
+        "https://profilebuilder4sketchup.com/",
+        "https://profilebuilder4sketchup.com/learn/"
+      ]
+    },
+    "items": [
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://www.youtube.com/watch?v=8dBg3jJzccs",
+        "url": "https://i.ytimg.com/vi/8dBg3jJzccs/maxresdefault.jpg"
+      },
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://www.youtube.com/watch?v=NGUXlZ5FhLk",
+        "url": "https://i.ytimg.com/vi/NGUXlZ5FhLk/maxresdefault.jpg"
+      }
+    ],
+    "mode": "sourced",
+    "slug": "profile-builder-3",
+    "verified_on": "2026-08-30"
+  },
   "quality_version": "catalog-review-v1",
   "required_action": "verify_bundle_freshness_then_review_editorial",
   "rules": {
@@ -220,37 +258,35 @@
   "tracking": {
     "assigned_batch": "review-design-tools-critical-001",
     "batch_position": 17,
-    "blockers": [],
-    "catalog_hash": "sha256:187f98e3ef1408cbb4d3d4064d43df0c923d9c7ee9f7c1037ae7ee01f4c334e9",
+    "blockers": [
+      "version 3 remplacée par Profile Builder 4"
+    ],
+    "catalog_hash": "sha256:967c53ce4982c299eb10fedaf98d3b9aaa7742e4f6a9de4aa08e855ef90c1bbf",
     "category": "design-tools",
     "fact_bundle": "AVAILABLE",
-    "fact_bundle_hash": "sha256:da145755592e01074c9b6f187b94874fe2c9e3cad5b861ea9db635d3c1e4774b",
+    "fact_bundle_hash": "sha256:f319e327e770e51c79eaeef170891d2e08f3f3a982d34b26622e6da272f59bd8",
     "invalidated_from": null,
-    "media_errors": [
-      "media_evidence_missing"
-    ],
-    "media_evidence": "MISSING",
-    "media_evidence_hash": null,
+    "media_errors": [],
+    "media_evidence": "VALID",
+    "media_evidence_hash": "sha256:1aff3e3ef796e343a92d1345ab06fc6ea0df85ff4a89f56c3c16de8d46409656",
     "name": "Profile Builder 3",
     "next_review_at": null,
     "priority_reasons": [
       "affiliate_link",
-      "paid_price",
-      "missing_or_invalid_media_evidence",
-      "shallow_editorial"
+      "paid_price"
     ],
-    "priority_score": 260,
+    "priority_score": 180,
     "published_at": null,
     "quality_version": "catalog-review-v1",
     "rendered_at": null,
-    "review_fingerprint": "sha256:95d92402aab98b8268e9900f6d60832617a6dfdd1a87bdbefb2bf65fbb0cef3b",
+    "review_fingerprint": "sha256:e4a10d6eb5bae2cf98de5a5121f4d30074dbdb4763a28dce5a2986a6fb6fc2bd",
     "reviewed_at": null,
     "reviewed_hash": null,
     "reviewer": null,
     "risk_tier": "critical",
     "slug": "profile-builder-3",
-    "source_url": "https://profilebuilder4sketchup.com",
-    "source_verified_on": "2026-05-10",
-    "status": "QUEUED"
+    "source_url": "https://profilebuilder4sketchup.com/",
+    "source_verified_on": "2026-08-30",
+    "status": "REVIEW_REQUIRED"
   }
 }

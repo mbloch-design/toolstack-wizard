@@ -1,18 +1,22 @@
 {
   "slug": "figma-slides",
-  "author": "ToolTrim — Mike",
-  "verified_on": "2026-07-24",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-08-30",
   "sources": [
-    { "label": "Figma Slides (site officiel)", "url": "https://www.figma.com/slides/" }
+    { "label": "Figma Slides (site officiel)", "url": "https://www.figma.com/slides/" },
+    { "label": "Tarifs Figma (site officiel)", "url": "https://www.figma.com/pricing/" },
+    { "label": "Explorer Figma Slides (centre d'aide officiel)", "url": "https://help.figma.com/hc/en-us/articles/24170630629911-Explore-Figma-Slides" }
   ],
   "facts": {
-    "what": "Outil de présentation natif Figma pour créer des slides avec tous les outils de design Figma (Auto Layout, composants, design systems). Inclus gratuitement dans tous les plans Figma.",
-    "what_en": "Native Figma presentation tool to create slides with full Figma design capabilities (Auto Layout, components, design systems). Included free with all Figma plans.",
-    "pricing_model": "Inclus dans tous les plans Figma (gratuit pour Figma Free, inclus dans Pro/Org/Enterprise).",
-    "free_tier": { "exists": true, "detail": "Figma Slides gratuit avec le plan Figma Free ; accès complet à la création et édition." },
+    "what": "Outil de présentation collaboratif intégré à Figma pour créer des decks, intégrer des prototypes et faire participer une audience. Le mode Design avancé nécessite une licence Full.",
+    "what_en": "Collaborative presentation product built into Figma for creating decks, embedding prototypes, and engaging an audience. Advanced Design mode requires a Full seat.",
+    "pricing_model": "Inclus dans tous les forfaits et types de licences Figma, sans achat autonome.",
+    "free_tier": { "exists": true, "detail": "Le forfait Starter offre un accès gratuit limité. Slides est inclus avec toutes les licences payantes." },
     "plans": [
-      { "name": "Figma Slides (avec Figma Free)", "price": "Gratuit" },
-      { "name": "Figma Slides (avec Figma Pro+)", "price": "Inclus (15 € / mois Figma Pro minimum)" }
+      { "name": "Starter", "price": "Gratuit, accès limité" },
+      { "name": "Professional Collab seat", "price": "3 $/mois, Slides inclus" },
+      { "name": "Professional Dev seat", "price": "12 $/mois, Slides inclus" },
+      { "name": "Professional Full seat", "price": "16 $/mois, mode Design inclus" }
     ],
     "key_features": [
       "Création de slides avec outils Figma complets (Auto Layout, composants)",
@@ -48,7 +52,7 @@
     ],
     "cons": [
       "Moins d'options d'animation que les outils dédiés.",
-      "Nécessite d'être dans Figma (pas d'export natif).",
+      "Reste dépendant de l'écosystème et du mode de partage Figma.",
       "Moins mature que Keynote ou PowerPoint."
     ],
     "use_cases": [
@@ -82,7 +86,7 @@
     ],
     "cons": [
       "Fewer animation options than dedicated tools.",
-      "Requires being in Figma (no native export).",
+      "Remains tied to Figma's ecosystem and sharing model.",
       "Less mature than Keynote or PowerPoint."
     ],
     "use_cases": [

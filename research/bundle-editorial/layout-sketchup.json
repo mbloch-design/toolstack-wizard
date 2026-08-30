@@ -1,18 +1,20 @@
 {
   "slug": "layout-sketchup",
-  "author": "ToolTrim — Mike",
-  "verified_on": "2026-07-24",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-08-30",
   "sources": [
-    { "label": "LayOut SketchUp — site officiel", "url": "https://sketchup.trimble.com/products/layout" }
+    { "label": "LayOut (centre d'aide officiel)", "url": "https://help.sketchup.com/en/layout/layout" },
+    { "label": "Tarifs SketchUp (site officiel)", "url": "https://sketchup.trimble.com/en/plans-and-pricing" },
+    { "label": "SketchUp Pro (centre d'aide officiel)", "url": "https://help.sketchup.com/en/admin/sketchup-pro" }
   ],
   "facts": {
     "what": "Logiciel de mise en page 2D de SketchUp conçu pour convertir des modèles 3D en documents de construction détaillés et présentations professionnelles avec annotations et cotations associatives.",
     "what_en": "SketchUp's professional 2D drafting and layout software that converts 3D models into comprehensive construction documentation and presentations with associative dimensions and annotations.",
-    "pricing_model": "Inclus dans les abonnements SketchUp Pro et Studio (pas de vente indépendante). Essai gratuit 7 jours disponible.",
+    "pricing_model": "Application desktop incluse dans SketchUp Pro et Studio, sans vente indépendante.",
     "free_tier": { "exists": false, "detail": "Essai gratuit 7 jours via l'abonnement SketchUp Pro. Pas de version gratuite permanente." },
     "plans": [
-      { "name": "Inclus dans SketchUp Pro", "price": "Abonnement annuel (montants sur la page officielle)" },
-      { "name": "Inclus dans SketchUp Studio", "price": "Abonnement annuel (montants sur la page officielle)" }
+      { "name": "SketchUp Pro Annual", "price": "33,25 $/mois/utilisateur, facturé annuellement, hors taxes" },
+      { "name": "SketchUp Studio Annual", "price": "68,25 $/mois/utilisateur, facturé annuellement, hors taxes" }
     ],
     "key_features": [
       "Vues multiples d'un modèle 3D sur une même page avec angles et styles différents",
@@ -79,7 +81,7 @@
       "Pre-built architectural templates and symbols."
     ],
     "cons": [
-      "Cannot be purchased standalone—depends on SketchUp subscription.",
+      "Cannot be purchased standalone and depends on a SketchUp subscription.",
       "Overall SketchUp subscription cost can be high.",
       "Learning curve if you don't use SketchUp.",
       "No free standalone version."

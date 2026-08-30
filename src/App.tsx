@@ -205,6 +205,7 @@ export const AppRoutes = () => (
       <Route path="selector" element={<SelectorPage />} />
       <Route path="selector/results" element={<ResultsPage />} />
       <Route path="tools" element={<ToolsPage />} />
+      <Route path="tool/are-na/*" element={<RedirectCanonicalToolSlug />} />
       <Route path="tool/:slug" element={<ToolDetailPage />} />
       <Route path="tool/:slug/prix" element={<LocalizedToolSubpage subpage="prix" />} />
       <Route path="tool/:slug/pricing" element={<LocalizedToolSubpage subpage="pricing" />} />
@@ -288,7 +289,14 @@ const App = () => (
 /** Redirect unlocalized tool URLs to the international English edition. */
 function RedirectToolToEn() {
   const { slug } = useParams();
-  return <Navigate to={`/en/tool/${slug}`} replace />;
+  return <Navigate to={`/en/tool/${slug === "are-na" ? "arena" : slug}`} replace />;
+}
+
+function RedirectCanonicalToolSlug() {
+  const { lang } = useParams();
+  const location = useLocation();
+  const suffix = location.pathname.split("/tool/are-na")[1] || "";
+  return <Navigate to={`/${lang || "en"}/tool/arena${suffix}`} replace />;
 }
 
 /** Redirect /fr/outils/:slug → /fr/tool/:slug */

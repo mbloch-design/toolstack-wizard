@@ -1,19 +1,21 @@
 {
   "slug": "logomeai",
-  "author": "ToolTrim — Mike",
-  "verified_on": "2026-07-24",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-08-30",
   "sources": [
-    { "label": "Logome.ai — site officiel", "url": "https://logomeai.com" }
+    { "label": "Tarifs LogoMe (site officiel)", "url": "https://www.logome.ai/pricing" },
+    { "label": "Inscription LogoMe (application officielle)", "url": "https://app.logome.ai/register" },
+    { "label": "Fonctions LogoMe (site officiel)", "url": "https://www.logome.ai/logo-idea/professional-business-logo-maker" }
   ],
   "facts": {
     "what": "Générateur de logos alimenté par l'IA qui crée des logos uniques et des kits de marque en quelques minutes, avec un éditeur intégré pour personnaliser polices, couleurs et icônes.",
     "what_en": "AI-powered logo generator that creates unique logos and brand kits within minutes, featuring an integrated editor to customize fonts, colors, and icons.",
-    "pricing_model": "Freemium avec plans payants. Accès gratuit au générateur et à l'éditeur sans inscription ni carte bancaire requises.",
-    "free_tier": { "exists": true, "detail": "Accès complet au générateur de logos IA et à l'éditeur sans paiement. Pas de téléchargement ni d'exportation sans plan payant." },
+    "pricing_model": "Abonnement mensuel ou annuel par niveau de production et d'export.",
+    "free_tier": { "exists": true, "detail": "Création de compte et génération initiale gratuites. Les exports exploitables et les kits de marque nécessitent un forfait payant." },
     "plans": [
-      { "name": "Basic Logo Pack", "price": "19 € ou USD (forfait unique, un fichier logo)" },
-      { "name": "Premium Logo Pack", "price": "49 $/mois ou 24 $/mois (facturation annuelle)" },
-      { "name": "Logo + Brand Kit", "price": "99 $/mois ou 57 $/mois (facturation annuelle)" }
+      { "name": "Basic Logo Pack", "price": "29 USD/mois, ou 19 USD/mois avec facturation annuelle" },
+      { "name": "Premium Logo Pack", "price": "99 USD/mois, ou 49 USD/mois avec facturation annuelle" },
+      { "name": "Logo + Brand Kit", "price": "199 USD/mois, ou 99 USD/mois avec facturation annuelle" }
     ],
     "key_features": [
       "Générateur de logos IA sans expérience de design requise",
@@ -84,7 +86,7 @@
       "Variable quality of AI results depending on industry.",
       "Paid plans required to download files.",
       "No human reviews or personalized feedback.",
-      "User reports of automatic billing—verify cancellation process."
+      "Recurring billing is a poor fit for a strictly one-off need."
     ],
     "use_cases": [
       "Create a first logo for a freelancer launching a business.",
