@@ -1,0 +1,248 @@
+{
+  "batch": "review-analytics-critical-001",
+  "current": {
+    "affiliate_url": null,
+    "alternatives": [],
+    "category": "analytics",
+    "cons": [
+      "Disponible uniquement si utilisateur ConvertKit.",
+      "Analytics avancés dans plan Creator Pro uniquement.",
+      "Moins complet que des outils analytics dédiés."
+    ],
+    "cons_en": [
+      "Only available if you're a ConvertKit user.",
+      "Advanced analytics in Creator Pro plan only.",
+      "Less complete than dedicated analytics tools."
+    ],
+    "host_app": null,
+    "id": "convertkit-analytics",
+    "long_description": "ConvertKit Analytics, c'est suivi de performance intégré ConvertKit. Gratuit pour commencer, payant pour aller plus loin.\n\nIntégré nativement à ConvertKit. suivi des revenus de produits numériques, interface claire et lisible. Aucune configuration nécessaire. Concrètement : suivre les performances de chaque email. Ou encore : mesurer les revenus des produits numériques.\n\nÀ garder si : déjà sur ConvertKit ou vente de produits numériques. À éviter si : pas sur ConvertKit ou besoin d'analytics poussés. Limite principale : uniquement pour ConvertKit. Gratuit avec ConvertKit — consultez au moins une fois par semaine.",
+    "long_description_en": "ConvertKit Analytics is integrated ConvertKit performance tracking. Free to start, paid plans for more.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": null
+    },
+    "name": "ConvertKit Analytics",
+    "pricing": {
+      "free": "Inclus avec ConvertKit",
+      "paid": "N/A"
+    },
+    "pricing_en": null,
+    "pricing_v5": null,
+    "pros": [
+      "Intégré nativement dans ConvertKit.",
+      "Dashboards intuitifs segmentés par funnel.",
+      "Prédictions IA pour optimisation contenu.",
+      "Suivi revenus email et abonnés payants.",
+      "SegMetrics integration pour profondeur."
+    ],
+    "pros_en": [
+      "Natively integrated in ConvertKit.",
+      "Intuitive dashboards segmented by funnel.",
+      "AI predictions for content optimization.",
+      "Track email revenue and paid subscribers.",
+      "SegMetrics integration for depth."
+    ],
+    "short_description": "Suivi de performance intégré ConvertKit.",
+    "short_description_en": "Integrated ConvertKit performance tracking.",
+    "slug": "convertkit-analytics",
+    "source_url": null,
+    "source_verified_on": null,
+    "use_cases": [
+      "Analyser performance emails et newsletters.",
+      "Optimiser taux d'ouverture et conversion.",
+      "Suivre revenus créateurs (sponsorships, paywall)."
+    ],
+    "use_cases_en": [
+      "Analyze email and newsletter performance.",
+      "Optimize open and conversion rates.",
+      "Track creator revenue (sponsorships, paywall)."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous ne cherchez que email marketing simple.",
+        "Vous préférez outils analytics web généralists.",
+        "Vous n'avez pas encore de plan ConvertKit."
+      ],
+      "keepIf": [
+        "Vous utilisez ConvertKit pour vos emails.",
+        "Vous avez besoin d'analytics email natifs.",
+        "Vous monétisez votre audience email."
+      ],
+      "threshold": "ConvertKit analytics convient si vous êtes déjà utilisateur ConvertKit ; pour analytics web générales, Google Analytics est mieux."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You only want simple email marketing.",
+        "You prefer general web analytics tools.",
+        "You're not yet a ConvertKit user."
+      ],
+      "keepIf": [
+        "You use ConvertKit for email.",
+        "You need native email analytics.",
+        "You monetize your email audience."
+      ],
+      "threshold": "ConvertKit analytics make sense if you're already using ConvertKit; for general web analytics, Google Analytics is better."
+    },
+    "website_url": null
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Only available if you're a ConvertKit user.",
+        "Advanced analytics in Creator Pro plan only.",
+        "Less complete than dedicated analytics tools."
+      ],
+      "pros": [
+        "Natively integrated in ConvertKit.",
+        "Intuitive dashboards segmented by funnel.",
+        "AI predictions for content optimization.",
+        "Track email revenue and paid subscribers.",
+        "SegMetrics integration for depth."
+      ],
+      "use_cases": [
+        "Analyze email and newsletter performance.",
+        "Optimize open and conversion rates.",
+        "Track creator revenue (sponsorships, paywall)."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You only want simple email marketing.",
+          "You prefer general web analytics tools.",
+          "You're not yet a ConvertKit user."
+        ],
+        "keepIf": [
+          "You use ConvertKit for email.",
+          "You need native email analytics.",
+          "You monetize your email audience."
+        ],
+        "threshold": "ConvertKit analytics make sense if you're already using ConvertKit; for general web analytics, Google Analytics is better."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Pas de version gratuite. Plans payants à partir de montants sur page officielle.",
+        "exists": false
+      },
+      "key_features": [
+        "Taux d'ouverture, taux de clic par email.",
+        "Suivi croissance et churn abonnés.",
+        "Dashboards Acquisition, Engagement, Ventes, Vélocité.",
+        "Segmentation par comportement abonné.",
+        "Prédictions IA pour optimiser taux conversion.",
+        "Intégration SegMetrics pour analytics avancés."
+      ],
+      "plans": [
+        {
+          "name": "Creator Standard",
+          "price": "Montants sur la page officielle ConvertKit"
+        },
+        {
+          "name": "Creator Pro",
+          "price": "Montants sur la page officielle ConvertKit, inclut analytics avancés"
+        }
+      ],
+      "pricing_model": "Inclus dans plans ConvertKit. Analytics basiques dans tous les plans ; analytics avancés dans Creator Pro. Plans : Creator Standard, Creator Pro.",
+      "what": "Analytics intégrés dans ConvertKit (plateforme email marketing). Suive taux d'ouverture, clics, croissance abonnés, engagement. Tableaux de bord segmentés par étapes du funnel (Acquisition, Engagement, Ventes, Vélocité).",
+      "what_en": "Built-in analytics in ConvertKit email marketing platform. Tracks open rates, clicks, subscriber growth, engagement. Segmented dashboards by funnel stage (Acquisition, Engagement, Sales, Velocity)."
+    },
+    "fr": {
+      "cons": [
+        "Disponible uniquement si utilisateur ConvertKit.",
+        "Analytics avancés dans plan Creator Pro uniquement.",
+        "Moins complet que des outils analytics dédiés."
+      ],
+      "pros": [
+        "Intégré nativement dans ConvertKit.",
+        "Dashboards intuitifs segmentés par funnel.",
+        "Prédictions IA pour optimisation contenu.",
+        "Suivi revenus email et abonnés payants.",
+        "SegMetrics integration pour profondeur."
+      ],
+      "relevant_for": [
+        "Email creators",
+        "Newsletter writers",
+        "Email marketers",
+        "Creators monétisés"
+      ],
+      "use_cases": [
+        "Analyser performance emails et newsletters.",
+        "Optimiser taux d'ouverture et conversion.",
+        "Suivre revenus créateurs (sponsorships, paywall)."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous ne cherchez que email marketing simple.",
+          "Vous préférez outils analytics web généralists.",
+          "Vous n'avez pas encore de plan ConvertKit."
+        ],
+        "keepIf": [
+          "Vous utilisez ConvertKit pour vos emails.",
+          "Vous avez besoin d'analytics email natifs.",
+          "Vous monétisez votre audience email."
+        ],
+        "threshold": "ConvertKit analytics convient si vous êtes déjà utilisateur ConvertKit ; pour analytics web générales, Google Analytics est mieux."
+      }
+    },
+    "slug": "convertkit-analytics",
+    "sources": [
+      {
+        "label": "ConvertKit — Email Marketing Platform (site officiel)",
+        "url": "https://convertkit.com"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-analytics-critical-001",
+    "batch_position": 11,
+    "blockers": [],
+    "catalog_hash": "sha256:c83f6c7573b19c7e8d09a9c42ba64aaa6826da843a38f08a2df1dd0757bce815",
+    "category": "analytics",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:cfbb6f5916196c600e6c7504b1916d9bd66a3ba7991b99fcadaa259fc978b712",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "ConvertKit Analytics",
+    "next_review_at": null,
+    "priority_reasons": [
+      "paid_price",
+      "missing_official_source",
+      "missing_or_invalid_media_evidence",
+      "missing_media",
+      "undated_source"
+    ],
+    "priority_score": 250,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:79c0afc33683f167b29eae9a37b47d9542a057a622aee9761c845342477613e1",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "convertkit-analytics",
+    "source_url": null,
+    "source_verified_on": null,
+    "status": "QUEUED"
+  }
+}

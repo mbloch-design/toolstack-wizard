@@ -1,0 +1,272 @@
+{
+  "batch": "review-analytics-critical-001",
+  "current": {
+    "affiliate_url": "https://lucidchart.com",
+    "alternatives": [],
+    "category": "analytics",
+    "cons": [
+      "Tier gratuit limité à 3 documents.",
+      "Tarif élevé pour les équipes nombreuses.",
+      "Courbe d'apprentissage sur les templates avancés.",
+      "Achat par utilisateur (impact sur coûts)."
+    ],
+    "cons_en": [
+      "Free tier limited to 3 documents.",
+      "Cost scales with team size.",
+      "Learning curve for advanced templates.",
+      "Per-seat pricing impacts budgets."
+    ],
+    "host_app": null,
+    "id": "lucidchart",
+    "long_description": "Lucidchart couvre les diagrammes de flux, organigrammes, wireframes, schémas réseau et UML, avec génération par IA à partir d'une description texte et collaboration en temps réel. Plus de 50 intégrations couvrent Jira, Confluence, Google Drive et Microsoft Teams.\n\nLa version gratuite limite à 3 documents éditables et un nombre réduit de formes, ce qui suffit pour un usage très occasionnel mais devient vite contraignant pour un usage régulier. Le plan Team impose un minimum de 3 utilisateurs, donc un freelance solo paie le tarif Individual ou reste sur le gratuit.",
+    "long_description_en": "Lucidchart covers flowcharts, org charts, wireframes, network diagrams and UML, with AI generation from a text description and real-time collaboration. 50+ integrations cover Jira, Confluence, Google Drive and Microsoft Teams.\n\nThe free plan caps you at 3 editable documents and a reduced shape set, fine for very occasional use but quickly limiting for regular use. The Team plan requires a 3-user minimum, so a solo freelancer pays the Individual tier or stays free.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://tooltrim.com/og-screenshots/lucidchart.jpg"
+    },
+    "name": "Lucidchart",
+    "pricing": {
+      "free": "3 documents éditables, formes limitées",
+      "paid": "Individual 7.88€/mois ; Team 8.76€/mois/utilisateur (min. 3) ; Enterprise dès 14.53€/mois/utilisateur (annuel)"
+    },
+    "pricing_en": {
+      "free": "3 editable documents, limited shapes",
+      "paid": "Individual €7.88/mo; Team €8.76/mo/user (3 min); Enterprise from €14.53/mo/user (annual)"
+    },
+    "pricing_v5": {
+      "cautions": [],
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Individual",
+      "compare_price_monthly_eur": 7.88,
+      "location_sensitive": false,
+      "official_source_url": "https://www.lucidchart.com/pages/pricing",
+      "price_reliability": "high",
+      "source_domain": "lucidchart.com",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-06-25"
+    },
+    "pros": [
+      "Édition gratuite entièrement fonctionnelle pour débuter.",
+      "Collaboration temps réel et commentaires.",
+      "IA pour auto-générer des diagrammes.",
+      "Données en direct (Sheets, CSV).",
+      "Nombreuses intégrations professionnelles."
+    ],
+    "pros_en": [
+      "Free tier is fully functional for getting started.",
+      "Real-time collaboration and commenting.",
+      "AI to auto-generate diagrams.",
+      "Live data linking (Sheets, CSV).",
+      "Rich integration ecosystem."
+    ],
+    "short_description": "Diagrammes en ligne (organigrammes, wireframes, UML) avec génération IA depuis du texte.",
+    "short_description_en": "Online diagramming (flowcharts, wireframes, UML) with AI generation from text.",
+    "slug": "lucidchart",
+    "source_url": "https://www.lucidchart.com/pages/pricing",
+    "source_verified_on": "2026-06-25",
+    "use_cases": [
+      "Créer et maintenir un diagramme d'architecture système.",
+      "Dessiner un organigramme ou processus métier.",
+      "Générer des ERD/schémas depuis des données live."
+    ],
+    "use_cases_en": [
+      "Design and maintain a system architecture diagram.",
+      "Visualize an org chart or business process.",
+      "Generate ERD from live database data."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous cherchez un outil gratuit permanent et sans limite.",
+        "Vous ne faites que du diagramme ponctuel.",
+        "Vous travaillez seul sans besoin de partage."
+      ],
+      "keepIf": [
+        "Votre équipe crée des diagrammes techniques, processus ou architectures.",
+        "Vous avez besoin de collaboration temps réel sur la visualisation.",
+        "Vous gérez des données en direct (feuilles, bases de données)."
+      ],
+      "threshold": "Lucidchart s'impose pour les équipes créant des diagrammes récurrents et collaboratifs ; pour un usage très léger, l'édition gratuite suffit ou opter pour un outil plus basique."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You need a permanently free tool without limits.",
+        "You only diagram occasionally.",
+        "You work solo without sharing needs."
+      ],
+      "keepIf": [
+        "Your team creates technical, process, or architecture diagrams.",
+        "You need real-time collaboration on diagramming.",
+        "You work with live data from sheets and databases."
+      ],
+      "threshold": "Lucidchart makes sense for teams creating recurring, collaborative diagrams; for very light use, the free tier or a simpler tool works fine."
+    },
+    "website_url": "https://lucidchart.com"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Free tier limited to 3 documents.",
+        "Cost scales with team size.",
+        "Learning curve for advanced templates.",
+        "Per-seat pricing impacts budgets."
+      ],
+      "pros": [
+        "Free tier is fully functional for getting started.",
+        "Real-time collaboration and commenting.",
+        "AI to auto-generate diagrams.",
+        "Live data linking (Sheets, CSV).",
+        "Rich integration ecosystem."
+      ],
+      "use_cases": [
+        "Design and maintain a system architecture diagram.",
+        "Visualize an org chart or business process.",
+        "Generate ERD from live database data."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You need a permanently free tool without limits.",
+          "You only diagram occasionally.",
+          "You work solo without sharing needs."
+        ],
+        "keepIf": [
+          "Your team creates technical, process, or architecture diagrams.",
+          "You need real-time collaboration on diagramming.",
+          "You work with live data from sheets and databases."
+        ],
+        "threshold": "Lucidchart makes sense for teams creating recurring, collaborative diagrams; for very light use, the free tier or a simpler tool works fine."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "3 documents, 60 formes, accès de base. Inscription gratuite sans carte bleue.",
+        "exists": true
+      },
+      "key_features": [
+        "Diagrammes IA-assistés (Lucid AI)",
+        "Collaboration temps réel avec commentaires",
+        "Données en direct (Google Sheets, Excel, CSV)",
+        "Support ERD, UML, flowcharts, org charts",
+        "100+ intégrations (Jira, Slack, Confluence, etc.)"
+      ],
+      "plans": [
+        {
+          "name": "Gratuit",
+          "price": "Gratuit, 3 documents max"
+        },
+        {
+          "name": "Individual",
+          "price": "9 $/mois (documents illimités, données en direct)"
+        },
+        {
+          "name": "Team",
+          "price": "10 $/utilisateur/mois (collaboration avancée, permissioning)"
+        },
+        {
+          "name": "Enterprise",
+          "price": "Montants sur la page officielle (SSO, support dédié)"
+        }
+      ],
+      "pricing_model": "Freemium : accès gratuit limité, abonnements payants par équipe. Tarification par siège/utilisateur.",
+      "what": "Plateforme de diagrammation collaborative (AI-assistée) pour créer des diagrammes, organigrammes, schémas ERD, UML et processus. Support des données en direct (Google Sheets, Excel, CSV) et 100+ intégrations métier.",
+      "what_en": "AI-assisted collaborative diagramming platform for creating flowcharts, org charts, ERD, UML, and process diagrams. Live data linking (Google Sheets, Excel, CSV) and 100+ business app integrations."
+    },
+    "fr": {
+      "cons": [
+        "Tier gratuit limité à 3 documents.",
+        "Tarif élevé pour les équipes nombreuses.",
+        "Courbe d'apprentissage sur les templates avancés.",
+        "Achat par utilisateur (impact sur coûts)."
+      ],
+      "pros": [
+        "Édition gratuite entièrement fonctionnelle pour débuter.",
+        "Collaboration temps réel et commentaires.",
+        "IA pour auto-générer des diagrammes.",
+        "Données en direct (Sheets, CSV).",
+        "Nombreuses intégrations professionnelles."
+      ],
+      "relevant_for": [
+        "Technical teams",
+        "Product managers",
+        "Business analysts",
+        "IT operations"
+      ],
+      "use_cases": [
+        "Créer et maintenir un diagramme d'architecture système.",
+        "Dessiner un organigramme ou processus métier.",
+        "Générer des ERD/schémas depuis des données live."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous cherchez un outil gratuit permanent et sans limite.",
+          "Vous ne faites que du diagramme ponctuel.",
+          "Vous travaillez seul sans besoin de partage."
+        ],
+        "keepIf": [
+          "Votre équipe crée des diagrammes techniques, processus ou architectures.",
+          "Vous avez besoin de collaboration temps réel sur la visualisation.",
+          "Vous gérez des données en direct (feuilles, bases de données)."
+        ],
+        "threshold": "Lucidchart s'impose pour les équipes créant des diagrammes récurrents et collaboratifs ; pour un usage très léger, l'édition gratuite suffit ou opter pour un outil plus basique."
+      }
+    },
+    "slug": "lucidchart",
+    "sources": [
+      {
+        "label": "Lucidchart — Diagramming Platform (site officiel)",
+        "url": "https://lucidchart.com"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-analytics-critical-001",
+    "batch_position": 24,
+    "blockers": [],
+    "catalog_hash": "sha256:e5f29f8ac33dbb400abef5b4173d7d4313f96f4cf1fb5ed9d40ebfd072126bc0",
+    "category": "analytics",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:14924c3c977b5fe24bfe461dc7e6bd61822f7d76d232c1962a6df17dbf15e67a",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Lucidchart",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:2f5f09c4271ca377e1282e731c243c08026181d614fa53b7f91c7865f83142fa",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "lucidchart",
+    "source_url": "https://www.lucidchart.com/pages/pricing",
+    "source_verified_on": "2026-06-25",
+    "status": "QUEUED"
+  }
+}

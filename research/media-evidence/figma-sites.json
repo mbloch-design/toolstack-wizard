@@ -1,0 +1,11 @@
+{
+  "slug": "figma-sites",
+  "verified_on": "2026-08-30",
+  "mode": "sourced",
+  "discovery": { "official_media_found": true, "official_pages_checked": ["https://www.figma.com/sites/"] },
+  "items": [
+    { "kind": "image", "url": "https://cdn.sanity.io/images/599r6htc/regionalized/335a56e4791663bdcf7bcab4969a207f8fe22c15-1260x1260.png?auto=format&fit=max&h=630&q=75&w=630", "source_page_url": "https://www.figma.com/sites/", "official": true },
+    { "kind": "image", "url": "https://cdn.sanity.io/images/599r6htc/regionalized/d88fb912c65fa24938c25b067c88b22ea6917041-1608x1072.png?auto=format&fit=max&h=520&q=75&w=780", "source_page_url": "https://www.figma.com/sites/", "official": true },
+    { "kind": "image", "url": "https://cdn.sanity.io/images/599r6htc/regionalized/812f934f093212b5f2a939227b970a6bf3406929-1080x864.png?auto=format&fit=max&h=864&q=75&w=1080", "source_page_url": "https://www.figma.com/sites/", "official": true }
+  ]
+}

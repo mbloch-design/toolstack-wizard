@@ -1,0 +1,111 @@
+{
+  "batch": "review-creation-critical-001",
+  "current": {
+    "affiliate_url": "https://lightroompresets.com",
+    "alternatives": [],
+    "category": "creation",
+    "cons": [],
+    "cons_en": [],
+    "host_app": null,
+    "id": "lightroom-presets",
+    "long_description": "Lightroom Presets est référencé pour couvrir un besoin précis dans les stacks créateurs de contenu ToolTrim.",
+    "long_description_en": "Tool or resource used in ToolTrim creator stacks.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://www.lightroompresets.com/cdn/shop/files/1200x628ppa_1200x.jpg?v=1588801656"
+    },
+    "name": "Lightroom presets génériques",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricing_en": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "pricing_v5": null,
+    "pros": [],
+    "pros_en": [],
+    "short_description": "Outil ou ressource utilisé dans les stacks créateurs de contenu ToolTrim.",
+    "short_description_en": "Tool or resource used in ToolTrim creator stacks.",
+    "slug": "lightroom-presets",
+    "source_url": "https://lightroompresets.com",
+    "source_verified_on": null,
+    "use_cases": [],
+    "use_cases_en": [],
+    "verdict": {
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "keepIf": [
+        "Le besoin revient dans plusieurs contenus ou campagnes."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central dans la production ou la monétisation."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "keepIf": [
+        "The need repeats across content or campaigns."
+      ],
+      "threshold": "Add only if the role is central to production or monetization."
+    },
+    "website_url": "https://lightroompresets.com"
+  },
+  "fact_bundle": null,
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "resolve_duplicate_without_research",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-creation-critical-001",
+    "batch_position": 3,
+    "blockers": [
+      "doublon générique de presets-lightroom"
+    ],
+    "catalog_hash": "sha256:3807b3c041158d8a45cdb7863bd671fc8b857403ed4768b9b3907677e27abfe6",
+    "category": "creation",
+    "fact_bundle": "MISSING",
+    "fact_bundle_hash": null,
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Lightroom presets génériques",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_fact_bundle",
+      "missing_or_invalid_media_evidence",
+      "shallow_editorial",
+      "undated_source"
+    ],
+    "priority_score": 345,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:8ce4697b3f374e26e65520ac8df611cd0d13fc42714f574e6be09fabe3cbdd18",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "lightroom-presets",
+    "source_url": "https://lightroompresets.com",
+    "source_verified_on": null,
+    "status": "DUPLICATE"
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "slug": "seo-mode",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-08-30",
+  "sources": [
+    { "label": "Accueil et tarifs SEO Mode (site officiel)", "url": "https://seomode.co/" },
+    { "label": "Outils SEO gratuits SEO Mode (site officiel)", "url": "https://seomode.co/tools" },
+    { "label": "Conditions SEO Mode (site officiel)", "url": "https://seomode.co/terms-and-conditions" }
+  ],
+  "facts": {
+    "what": "SEO Mode est une agence de croissance organique gérée pour les entreprises SaaS. Elle combine stratégie de mots-clés, contenu, SEO technique, backlinks, mentions sociales et optimisation AEO afin d'améliorer la visibilité dans Google et les assistants IA.",
+    "what_en": "SEO Mode is a managed organic growth agency for SaaS companies. It combines keyword strategy, content, technical SEO, backlinks, social mentions, and AEO to improve visibility in Google and AI assistants.",
+    "pricing_model": "Abonnement mensuel de service géré, avec base et modules optionnels facturés en USD. Sans engagement selon la page officielle.",
+    "free_tier": { "exists": true, "detail": "Audit initial gratuit de 15 minutes et plusieurs outils SEO gratuits sans inscription. Il ne s'agit pas d'un forfait gratuit pour le service géré." },
+    "plans": [
+      { "name": "Growth Plan, base", "price": "À partir de 1 000 USD/mois" },
+      { "name": "Growth Plan, exemple affiché avec link building", "price": "3 000 USD/mois au total, dont 2 000 USD/mois pour le module link building" },
+      { "name": "Managed Reddit Mentions", "price": "+500 USD/mois" }
+    ],
+    "key_features": [
+      "Audit technique SEO et corrections",
+      "Stratégie de contenu et groupes thématiques",
+      "Optimisation on-page et AEO pour ChatGPT, Gemini et Perplexity",
+      "Création de contenu et recherche de mots-clés à forte intention",
+      "Prospection de liens, backlinks et mentions sociales",
+      "Rapports mensuels reliés au trafic, aux classements et au revenu"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous dirigez un SaaS et voulez déléguer l'ensemble du SEO et de la visibilité dans les assistants IA.",
+        "Vous préférez une équipe gérée à l'assemblage de plusieurs outils et prestataires.",
+        "Vous pouvez relier le travail éditorial et d'autorité à des objectifs de croissance mesurables."
+      ],
+      "avoidIf": [
+        "Vous cherchez seulement un logiciel SEO en libre-service.",
+        "Vous disposez déjà d'une équipe interne couvrant contenu, technique et acquisition de liens.",
+        "Votre besoin se limite à un audit ponctuel ou à quelques suggestions on-page."
+      ],
+      "threshold": "Retenez SEO Mode lorsque la coordination d'une équipe SEO complète vaut davantage que le contrôle d'un outil autonome."
+    },
+    "pros": [
+      "Réunit contenu, technique, autorité et visibilité IA dans une même prestation.",
+      "Positionnement clair pour les entreprises SaaS.",
+      "Modules ajustables selon les canaux d'acquisition prioritaires.",
+      "Outils gratuits utiles pour effectuer un premier diagnostic."
+    ],
+    "cons": [
+      "Ce n'est plus le petit outil SEO autonome décrit par l'ancienne fiche.",
+      "La qualité dépend d'une collaboration continue avec l'équipe de service.",
+      "Le périmètre exact varie avec les modules sélectionnés.",
+      "Une équipe disposant déjà de spécialistes internes risque de payer pour des capacités redondantes."
+    ],
+    "use_cases": [
+      "Construire un système de contenu et d'autorité pour un SaaS.",
+      "Améliorer la présence d'une marque dans Google et les réponses des assistants IA.",
+      "Déléguer la stratégie de mots-clés, les contenus, le SEO technique et les backlinks.",
+      "Compléter une petite équipe marketing sans recruter chaque spécialité."
+    ],
+    "relevant_for": ["Fondateurs SaaS", "Équipes marketing B2B", "Startups en croissance", "Responsables acquisition"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You run a SaaS company and want to outsource SEO and visibility in AI assistants as one program.",
+        "You prefer a managed team over assembling several tools and contractors.",
+        "You can connect content and authority work to measurable growth goals."
+      ],
+      "avoidIf": [
+        "You only need a self-service SEO application.",
+        "Your internal team already covers content, technical SEO, and link acquisition.",
+        "Your need is limited to a one-off audit or a few on-page recommendations."
+      ],
+      "threshold": "Choose SEO Mode when the coordination of a complete SEO team is more valuable than direct control of a standalone tool."
+    },
+    "pros": [
+      "Combines content, technical work, authority, and AI visibility in one service.",
+      "Clear focus on SaaS companies.",
+      "Adjustable modules for different acquisition priorities.",
+      "Useful free tools for an initial diagnosis."
+    ],
+    "cons": [
+      "It is no longer the small standalone SEO tool described by the old listing.",
+      "Quality depends on continuous collaboration with the service team.",
+      "The exact scope varies with the selected modules.",
+      "Teams with established specialists may pay for overlapping capabilities."
+    ],
+    "use_cases": [
+      "Build a content and authority system for a SaaS company.",
+      "Improve brand presence in Google and AI assistant answers.",
+      "Outsource keyword strategy, content, technical SEO, and backlinks.",
+      "Extend a small marketing team without hiring every specialty."
+    ]
+  }
+}

@@ -1,0 +1,265 @@
+{
+  "batch": "review-analytics-critical-001",
+  "current": {
+    "affiliate_url": "https://coupler.io",
+    "alternatives": [],
+    "category": "analytics",
+    "cons": [
+      "Coût qui monte avec le nombre de sources.",
+      "Surdimensionné pour un besoin ponctuel.",
+      "Transformation avancée = prise en main."
+    ],
+    "cons_en": [
+      "Cost rises with number of sources.",
+      "Oversized for a one-off need.",
+      "Advanced transformation has a learning curve."
+    ],
+    "host_app": null,
+    "id": "coupler-io",
+    "long_description": "Plateforme no-code d'intégration de données : automatise les flux depuis 400+ apps vers tableurs, BI, entrepôts et outils IA (ETL, transformation, synchronisation).",
+    "long_description_en": "No-code data integration platform that automates data flows from 400+ apps into spreadsheets, BI tools, warehouses and AI tools.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://www.coupler.io/assets/og-image-9ea172df3bf2d3071ac41c04b5ea552e2c433819388f052ace787b3db09c2f7d.png"
+    },
+    "name": "Coupler Io",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricing_en": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "compare_plan_kind": "custom",
+      "compare_plan_name": "Prix non public",
+      "compare_price_monthly_eur": 0,
+      "location_sensitive": false,
+      "official_source_url": "https://coupler.io",
+      "price_reliability": "official_context_required",
+      "source_domain": "coupler.io",
+      "usage_sensitive": true,
+      "verification_status": "needs_official_quote",
+      "verified_on": "2026-05-11"
+    },
+    "pros": [
+      "Très large choix de connecteurs.",
+      "Flux et dashboards illimités par compte.",
+      "Facturation aux sources, pas aux utilisateurs.",
+      "Palier gratuit pour démarrer."
+    ],
+    "pros_en": [
+      "Very wide choice of connectors.",
+      "Unlimited flows and dashboards per account.",
+      "Billed per source, not per user.",
+      "Free tier to start."
+    ],
+    "short_description": "Plateforme no-code d'intégration de données : automatise les flux depuis 400+ apps vers tableurs, BI, entrepôts et outils IA (ETL, transformation, synchronisation).",
+    "short_description_en": "No-code data integration platform that automates data flows from 400+ apps into spreadsheets, BI tools, warehouses and AI tools.",
+    "slug": "coupler-io",
+    "source_url": "https://coupler.io",
+    "source_verified_on": "2026-05-11",
+    "use_cases": [
+      "Automatiser un reporting multi-sources.",
+      "Alimenter un dashboard BI ou un entrepôt.",
+      "Consolider des données cross-canal."
+    ],
+    "use_cases_en": [
+      "Automate multi-source reporting.",
+      "Feed a BI dashboard or warehouse.",
+      "Consolidate cross-channel data."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous n'avez qu'une source simple à exporter.",
+        "Vos besoins de reporting sont ponctuels.",
+        "Un export natif suffit à votre usage."
+      ],
+      "keepIf": [
+        "Vous automatisez des rapports depuis plusieurs sources.",
+        "Vous alimentez un tableur, une BI ou un entrepôt.",
+        "Vous préférez payer aux sources connectées, pas aux utilisateurs."
+      ],
+      "threshold": "Coupler.io s'impose pour automatiser du reporting multi-sources vers tableur/BI ; pour une source unique et simple, un export natif suffit."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You only have one simple source to export.",
+        "Your reporting needs are one-off.",
+        "A native export covers your use."
+      ],
+      "keepIf": [
+        "You automate reports from several sources.",
+        "You feed a spreadsheet, BI or warehouse.",
+        "You prefer paying per connected source, not per user."
+      ],
+      "threshold": "Coupler.io makes sense to automate multi-source reporting into spreadsheets/BI; for a single simple source, a native export suffices."
+    },
+    "website_url": "https://coupler.io"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Cost rises with number of sources.",
+        "Oversized for a one-off need.",
+        "Advanced transformation has a learning curve."
+      ],
+      "pros": [
+        "Very wide choice of connectors.",
+        "Unlimited flows and dashboards per account.",
+        "Billed per source, not per user.",
+        "Free tier to start."
+      ],
+      "use_cases": [
+        "Automate multi-source reporting.",
+        "Feed a BI dashboard or warehouse.",
+        "Consolidate cross-channel data."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You only have one simple source to export.",
+          "Your reporting needs are one-off.",
+          "A native export covers your use."
+        ],
+        "keepIf": [
+          "You automate reports from several sources.",
+          "You feed a spreadsheet, BI or warehouse.",
+          "You prefer paying per connected source, not per user."
+        ],
+        "threshold": "Coupler.io makes sense to automate multi-source reporting into spreadsheets/BI; for a single simple source, a native export suffices."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Version gratuite disponible ; tarif selon le nombre de comptes de sources connectés.",
+        "exists": true
+      },
+      "key_features": [
+        "400+ connecteurs de données",
+        "ETL, transformation et synchronisation",
+        "Flux et tableaux de bord illimités par compte connecté",
+        "Planification et mises à jour automatiques"
+      ],
+      "plans": [
+        {
+          "name": "Personal",
+          "price": "24 $/mois (3 comptes)"
+        },
+        {
+          "name": "Professional",
+          "price": "99 $/mois (~15 comptes)"
+        },
+        {
+          "name": "Team",
+          "price": "199 $/mois"
+        },
+        {
+          "name": "Business",
+          "price": "449 $/mois"
+        }
+      ],
+      "pricing_model": "Abonnement basé sur le nombre de comptes de sources connectés (pas par utilisateur ni par flux). Palier gratuit et essai disponibles.",
+      "what": "Plateforme no-code d'intégration de données : automatise les flux depuis 400+ apps vers tableurs, BI, entrepôts et outils IA (ETL, transformation, synchronisation).",
+      "what_en": "No-code data integration platform: automates workflows from 400+ apps to spreadsheets, BI, data warehouses, and AI tools (ETL, transformation, sync)."
+    },
+    "fr": {
+      "cons": [
+        "Coût qui monte avec le nombre de sources.",
+        "Surdimensionné pour un besoin ponctuel.",
+        "Transformation avancée = prise en main."
+      ],
+      "pros": [
+        "Très large choix de connecteurs.",
+        "Flux et dashboards illimités par compte.",
+        "Facturation aux sources, pas aux utilisateurs.",
+        "Palier gratuit pour démarrer."
+      ],
+      "relevant_for": [
+        "Équipes data",
+        "Analystes",
+        "Agences"
+      ],
+      "use_cases": [
+        "Automatiser un reporting multi-sources.",
+        "Alimenter un dashboard BI ou un entrepôt.",
+        "Consolider des données cross-canal."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous n'avez qu'une source simple à exporter.",
+          "Vos besoins de reporting sont ponctuels.",
+          "Un export natif suffit à votre usage."
+        ],
+        "keepIf": [
+          "Vous automatisez des rapports depuis plusieurs sources.",
+          "Vous alimentez un tableur, une BI ou un entrepôt.",
+          "Vous préférez payer aux sources connectées, pas aux utilisateurs."
+        ],
+        "threshold": "Coupler.io s'impose pour automatiser du reporting multi-sources vers tableur/BI ; pour une source unique et simple, un export natif suffit."
+      }
+    },
+    "slug": "coupler-io",
+    "sources": [
+      {
+        "label": "Page tarifaire officielle Coupler.io",
+        "url": "https://www.coupler.io/pricing"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-analytics-critical-001",
+    "batch_position": 6,
+    "blockers": [],
+    "catalog_hash": "sha256:a6a867effa2048eb23c9c4063c08a8b65f70b4b5febbf98237db633c2c2e43fc",
+    "category": "analytics",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:56126c665bd3b4c0f8d2a9cc9a1946a61bc78d3d0422d23e8437ba8c84f57dfa",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Coupler Io",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence",
+      "shallow_editorial"
+    ],
+    "priority_score": 260,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:62c9f767206904858124c48fd25906e6cfaea51637095bf0b46e12db50788635",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "coupler-io",
+    "source_url": "https://coupler.io",
+    "source_verified_on": "2026-05-11",
+    "status": "QUEUED"
+  }
+}

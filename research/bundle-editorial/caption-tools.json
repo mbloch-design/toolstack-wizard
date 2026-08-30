@@ -1,0 +1,117 @@
+{
+  "slug": "caption-tools",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-08-30",
+  "sources": [
+    {
+      "label": "CaptionTools - Home and pricing (site officiel)",
+      "url": "https://www.captiontools.com/"
+    },
+    {
+      "label": "CaptionTools - Features (site officiel)",
+      "url": "https://www.captiontools.com/features/"
+    },
+    {
+      "label": "CaptionTools - FAQ (site officiel)",
+      "url": "https://www.captiontools.com/faq/"
+    }
+  ],
+  "facts": {
+    "what": "Plateforme web de transcription, d'alignement de transcriptions et d'édition de sous-titres pour les contenus audio et vidéo. Elle transforme une transcription automatique ou un texte existant en fichiers de sous-titres synchronisés.",
+    "what_en": "Web platform for transcription, transcript alignment, and caption editing for audio and video content. It turns automatic transcription or an existing script into synchronized caption files.",
+    "pricing_model": "Compte et éditeur gratuits, crédits à l'usage pour la transcription automatique et l'alignement.",
+    "free_tier": {
+      "exists": true,
+      "detail": "Création de compte et éditeur de sous-titres gratuits. Les minutes de transcription automatique et d'alignement sont payantes."
+    },
+    "plans": [
+      {
+        "name": "Pay-As-You-Go",
+        "price": "1 $/minute, sans achat minimum"
+      },
+      {
+        "name": "Professional",
+        "price": "400 $ pour 500 minutes, soit 0,80 $/minute"
+      },
+      {
+        "name": "Enterprise",
+        "price": "3 000 $ pour 6 000 minutes, soit 0,50 $/minute"
+      }
+    ],
+    "key_features": [
+      "Transcription automatique par reconnaissance vocale avec éditeur de texte en ligne",
+      "Alignement d'une transcription existante avec la piste audio d'un média",
+      "Éditeur de sous-titres avec synchronisation, réglage des timecodes et contrôle de longueur de ligne",
+      "Export en SRT, WebVTT, Timed Text XML et texte brut",
+      "Intégration Streamtext pour reprendre et corriger des fichiers de sous-titrage en direct",
+      "Comptes parent-enfant et options de marque blanche pour les organisations éligibles"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous disposez déjà de transcriptions et devez les synchroniser rapidement avec des médias.",
+        "Vous produisez régulièrement des fichiers de sous-titres dans plusieurs formats standard.",
+        "Votre équipe veut corriger le texte et les timecodes dans un même espace web."
+      ],
+      "avoidIf": [
+        "Vous cherchez un service entièrement automatisé sans relecture humaine.",
+        "Vous avez besoin de formats de diffusion avancés qui ne figurent pas dans les exports proposés.",
+        "Votre flux impose une application de bureau ou un traitement entièrement local."
+      ],
+      "threshold": "Ajoutez CaptionTools si l'alignement et la correction de sous-titres sont des tâches récurrentes; pour une vidéo occasionnelle, un éditeur gratuit plus simple peut suffire."
+    },
+    "pros": [
+      "Réunit transcription, alignement et édition dans un flux cohérent.",
+      "Permet de partir d'une transcription existante pour gagner du temps.",
+      "Propose les formats de sous-titres web les plus courants.",
+      "L'éditeur reste accessible sans abonnement récurrent."
+    ],
+    "cons": [
+      "La transcription automatique doit être relue et corrigée.",
+      "Le catalogue de formats d'export reste plus limité que celui de certains logiciels spécialisés.",
+      "Les fonctions organisationnelles avancées sont réservées à certains niveaux d'achat."
+    ],
+    "use_cases": [
+      "Synchroniser une transcription validée avec une vidéo de formation.",
+      "Corriger les sous-titres d'un événement diffusé en direct.",
+      "Exporter des fichiers SRT et WebVTT pour plusieurs plateformes vidéo."
+    ],
+    "relevant_for": [
+      "Prestataires de sous-titrage",
+      "Équipes vidéo et formation",
+      "Médias et créateurs de contenu"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You already have transcripts and need to align them quickly with media.",
+        "You regularly deliver caption files in several standard formats.",
+        "Your team wants to correct text and timecodes in one web workspace."
+      ],
+      "avoidIf": [
+        "You expect a fully automated service with no human review.",
+        "You need advanced broadcast formats that are not among the available exports.",
+        "Your workflow requires a desktop application or fully local processing."
+      ],
+      "threshold": "Add CaptionTools when caption alignment and correction are recurring tasks; for an occasional video, a simpler free editor may be enough."
+    },
+    "pros": [
+      "Combines transcription, alignment, and editing in one coherent workflow.",
+      "Can start from an existing transcript to save time.",
+      "Exports the most common web caption formats.",
+      "The editor is available without a recurring subscription."
+    ],
+    "cons": [
+      "Automatic transcripts still require proofreading and correction.",
+      "The export format range is narrower than some specialist desktop tools.",
+      "Advanced organization features are limited to qualifying purchase levels."
+    ],
+    "use_cases": [
+      "Align an approved transcript with a training video.",
+      "Correct captions from a live event recording.",
+      "Export SRT and WebVTT files for multiple video platforms."
+    ]
+  }
+}

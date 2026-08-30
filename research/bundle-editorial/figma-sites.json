@@ -1,0 +1,50 @@
+{
+  "slug": "figma-sites",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-08-30",
+  "sources": [
+    { "label": "Figma Sites (site officiel)", "url": "https://www.figma.com/sites/" },
+    { "label": "Publication Figma Sites (centre d'aide officiel)", "url": "https://help.figma.com/hc/en-us/articles/35895970131479-Figma-Sites-collection-Publish-your-Figma-site" },
+    { "label": "Tarifs Figma (site officiel)", "url": "https://www.figma.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Constructeur de sites responsive en bêta ouverte intégré à Figma. Il transforme des frames Figma Design en pages publiées avec composants, interactions, CMS, code et assistance par IA.",
+    "what_en": "Open-beta responsive website builder built into Figma. It turns Figma Design frames into published pages with components, interactions, CMS, code, and AI assistance.",
+    "pricing_model": "Bêta accessible dans Figma. La publication est disponible sur les forfaits payants avec une licence Full; Starter ne peut pas publier.",
+    "free_tier": { "exists": true, "detail": "Starter permet d'explorer le produit mais nécessite une mise à niveau pour publier un site." },
+    "plans": [
+      { "name": "Starter", "price": "Gratuit, création limitée sans publication" },
+      { "name": "Professional Full seat", "price": "16 $/mois, Sites inclus" },
+      { "name": "Organization Full seat", "price": "55 $/mois, facturé annuellement" },
+      { "name": "Enterprise Full seat", "price": "90 $/mois, facturé annuellement" }
+    ],
+    "key_features": [
+      "Conversion de frames Figma Design en mises en page responsive",
+      "Blocs préconstruits, Auto Layout et interactions visuelles",
+      "CMS pour éditer et publier du contenu sans modifier le canvas",
+      "Interactions générées par prompt et édition directe du code",
+      "Réutilisation des bibliothèques, styles, composants et modèles Figma"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": ["Votre site doit reprendre fidèlement un design et un système Figma existants.", "Designers et éditeurs de contenu doivent travailler dans le même environnement.", "Vous lancez des sites marketing sans chaîne de développement séparée."],
+      "avoidIf": ["Vous avez besoin d'un framework, d'un backend ou d'un hébergement entièrement contrôlés.", "Vous ne centralisez pas vos composants dans Figma.", "Le statut bêta est incompatible avec vos exigences de production."],
+      "threshold": "Ajoutez Figma Sites si la continuité entre design, contenu et publication vaut davantage qu'une pile web personnalisée."
+    },
+    "pros": ["Préserve les détails des frames, composants et styles existants.", "Réunit design responsive, interactions, CMS et publication.", "Permet aux contributeurs de modifier le contenu sans casser la mise en page.", "Offre une voie visuelle, assistée par IA ou éditée en code."],
+    "cons": ["Reste une bêta dont les limites et conditions peuvent évoluer.", "La publication nécessite un forfait payant et une licence Full.", "Le contrôle technique reste inférieur à une application développée sur mesure."],
+    "use_cases": ["Publier un portfolio conçu dans Figma.", "Lancer une landing page de campagne.", "Maintenir un site éditorial simple avec le CMS intégré."],
+    "relevant_for": ["Web designers", "Équipes marketing", "Studios de marque"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": ["Your site must closely follow an existing Figma design system.", "Designers and content editors need one shared environment.", "You launch marketing sites without a separate development pipeline."],
+      "avoidIf": ["You need full control over framework, backend, or hosting.", "You do not centralize components in Figma.", "Beta status conflicts with production requirements."],
+      "threshold": "Add Figma Sites when continuity across design, content, and publishing matters more than a custom web stack."
+    },
+    "pros": ["Preserves details from existing frames, components, and styles.", "Combines responsive design, interactions, CMS, and publishing.", "Lets contributors update content without breaking layout.", "Supports visual, AI-assisted, and code-edited workflows."],
+    "cons": ["It remains a beta whose limits and terms can change.", "Publishing requires a paid plan and Full seat.", "Technical control remains below a custom-built application."],
+    "use_cases": ["Publish a portfolio designed in Figma.", "Launch a campaign landing page.", "Maintain a simple editorial site with the built-in CMS."]
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "batch": "review-creation-critical-001",
+  "current": {
+    "affiliate_url": "https://musiclibraries.com",
+    "alternatives": [],
+    "category": "creation",
+    "cons": [],
+    "cons_en": [],
+    "host_app": null,
+    "id": "music-libraries",
+    "long_description": "Music Libraries est référencé pour couvrir un besoin précis dans les stacks créateurs de contenu ToolTrim.",
+    "long_description_en": "Tool or resource used in ToolTrim creator stacks.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": null
+    },
+    "name": "Music Libraries",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricing_en": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "compare_plan_kind": "custom",
+      "compare_plan_name": "Prix non public",
+      "compare_price_monthly_eur": 0,
+      "location_sensitive": false,
+      "official_source_url": "https://musiclibraries.com",
+      "price_reliability": "official_context_required",
+      "source_domain": "musiclibraries.com",
+      "usage_sensitive": true,
+      "verification_status": "needs_official_quote",
+      "verified_on": "2026-05-11"
+    },
+    "pros": [],
+    "pros_en": [],
+    "short_description": "Outil ou ressource utilisé dans les stacks créateurs de contenu ToolTrim.",
+    "short_description_en": "Tool or resource used in ToolTrim creator stacks.",
+    "slug": "music-libraries",
+    "source_url": "https://musiclibraries.com",
+    "source_verified_on": "2026-05-11",
+    "use_cases": [],
+    "use_cases_en": [],
+    "verdict": {
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "keepIf": [
+        "Le besoin revient dans plusieurs contenus ou campagnes."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central dans la production ou la monétisation."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "keepIf": [
+        "The need repeats across content or campaigns."
+      ],
+      "threshold": "Add only if the role is central to production or monetization."
+    },
+    "website_url": "https://musiclibraries.com"
+  },
+  "fact_bundle": null,
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "research_primary_sources_then_write_fact_bundle",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-creation-critical-001",
+    "batch_position": 14,
+    "blockers": [
+      "catégorie générique de bibliothèques musicales, aucune identité produit unique"
+    ],
+    "catalog_hash": "sha256:35041f35d4885e145f613760ef6717d76b065eb0ad5a0c167d8d9751203153f8",
+    "category": "creation",
+    "fact_bundle": "MISSING",
+    "fact_bundle_hash": null,
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Music Libraries",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_fact_bundle",
+      "missing_or_invalid_media_evidence",
+      "shallow_editorial",
+      "missing_media"
+    ],
+    "priority_score": 335,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:99e0d178dab78a221c3038629dd8ca048ec0eda41adc8db6e1573ddcab9d4289",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "music-libraries",
+    "source_url": "https://musiclibraries.com",
+    "source_verified_on": "2026-05-11",
+    "status": "BLOCKED"
+  }
+}

@@ -1,0 +1,287 @@
+{
+  "batch": "review-analytics-critical-001",
+  "current": {
+    "affiliate_url": "https://datadoghq.com",
+    "alternatives": [
+      "sentry",
+      "prometheus"
+    ],
+    "category": "analytics",
+    "cons": [
+      "Tarification à la consommation difficile à prévoir.",
+      "Coûts totaux peuvent exploser rapidement.",
+      "Apprentissage et configuration importants.",
+      "Cher pour les petites équipes/startups."
+    ],
+    "cons_en": [
+      "Consumption-based pricing hard to predict.",
+      "Total costs can spiral quickly.",
+      "Steep learning curve and configuration.",
+      "Expensive for small teams/startups."
+    ],
+    "host_app": null,
+    "id": "datadog",
+    "long_description": "Datadog, c'est la plateforme d'observabilité de référence pour les équipes qui font tourner de l'infrastructure cloud. Logs, métriques serveur, APM (traces applicatives), monitoring réseau, alertes : tout est centralisé dans une seule interface, avec plus de 700 intégrations. Pour une équipe ops ou un CTO qui veut tout voir d'un coup d'œil quand un service ralentit, c'est extrêmement puissant.\n\nLe vrai sujet, c'est le prix. L'offre gratuite (jusqu'à 5 hosts) permet de tester, mais dès qu'on passe en payant, la facturation est à l'usage : par host, par Go de logs, par fonction activée. C'est connu pour produire des factures qui surprennent, parfois violemment, quand le volume grimpe. Beaucoup d'équipes se font piéger en activant tout sans surveiller la note.\n\nÀ qui ça s'adresse : aux équipes avec une vraie infrastructure distribuée, plusieurs services en production, où l'observabilité unifiée fait gagner un temps précieux en incident. Pour une petite stack ou un side-project, c'est surdimensionné : Sentry couvre les erreurs pour bien moins cher, et des outils open source comme Prometheus font le monitoring gratuitement.",
+    "long_description_en": "Datadog is the reference observability platform for teams running cloud infrastructure. Logs, server metrics, APM (application traces), network monitoring, alerts: everything is centralized in one interface, with over 700 integrations. For an ops team or a CTO who wants to see everything at a glance when a service slows down, it's extremely powerful.\n\nThe real issue is the price. The free tier (up to 5 hosts) lets you test, but once you go paid, billing is usage-based: per host, per GB of logs, per enabled feature. It's known for producing bills that surprise, sometimes harshly, as volume grows. Many teams get caught enabling everything without watching the meter.\n\nWho it's for: teams with real distributed infrastructure, several services in production, where unified observability saves precious time during incidents. For a small stack or a side-project, it's overkill: Sentry covers errors for far less, and open-source tools like Prometheus handle monitoring for free.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://corp.dd-static.net/img/og/og-image-10-25.png?fit=crop&w=1200&h=630"
+    },
+    "name": "Datadog",
+    "pricing": {
+      "free": "Gratuit jusqu'à 5 hosts, 1 jour de rétention",
+      "paid": "Pro à 15$/host/mois, plus facturation à l'usage (logs, APM, etc.)"
+    },
+    "pricing_en": {
+      "free": "Free up to 5 hosts, 1-day retention",
+      "paid": "Pro at $15/host/month, plus usage-based billing (logs, APM, etc.)"
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Offre gratuite jusqu'à 5 hosts, 1 jour de rétention",
+        "Facturation à l'usage : la note grimpe vite avec les hosts et le volume de logs"
+      ],
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Free",
+      "compare_price_monthly_eur": 0,
+      "location_sensitive": false,
+      "official_source_url": "https://www.datadoghq.com/pricing/list/",
+      "price_reliability": "high",
+      "source_domain": "datadoghq.com",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-06-15"
+    },
+    "pros": [
+      "Observabilité complète en un seul endroit.",
+      "Couverture logs, APM, monitoring, sécurité.",
+      "Intégrations très nombreuses et matures.",
+      "Interface moderne et alertes fines.",
+      "Service Management inclus (incidents, workflows)."
+    ],
+    "pros_en": [
+      "Complete observability in one place.",
+      "Covers logs, APM, monitoring, security.",
+      "Extensive and mature integrations.",
+      "Modern UI and fine-grained alerts.",
+      "Service Management included (incidents, workflows)."
+    ],
+    "short_description": "Observabilité complète : logs, métriques, APM, alertes en temps réel.",
+    "short_description_en": "Full observability: logs, metrics, APM, real-time alerts.",
+    "slug": "datadog",
+    "source_url": "https://www.datadoghq.com/pricing/list/",
+    "source_verified_on": "2026-06-15",
+    "use_cases": [
+      "Surveiller une infrastructure multi-cloud complexe.",
+      "Diagnostiquer les problèmes de performance applicatif.",
+      "Centraliser logs et incidents dans une dashboard unifiée."
+    ],
+    "use_cases_en": [
+      "Monitor complex multi-cloud infrastructure.",
+      "Diagnose application performance issues.",
+      "Centralize logs and incidents in a unified dashboard."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous avez une infrastructure simple.",
+        "Votre équipe est très réduite.",
+        "Les coûts de consommation imprédictibles vous préoccupent."
+      ],
+      "keepIf": [
+        "Vous gérez une infrastructure cloud complexe.",
+        "Vous avez besoin d'observabilité profonde (logs, APM, RUM).",
+        "Votre équipe peut gérer une plate-forme sophistiquée."
+      ],
+      "threshold": "Datadog domine pour les équipes SaaS et cloud natives qui demandent une observabilité complète ; pour une startup précoce ou une infrastructure simple, Prometheus + Grafana gratuits suffisent."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You have simple infrastructure.",
+        "Your team is very small.",
+        "Unpredictable consumption costs concern you."
+      ],
+      "keepIf": [
+        "You manage complex cloud infrastructure.",
+        "You need deep observability (logs, APM, RUM).",
+        "Your team can handle a sophisticated platform."
+      ],
+      "threshold": "Datadog dominates for SaaS and cloud-native teams needing complete observability; for an early-stage startup or simple infrastructure, free Prometheus + Grafana suffice."
+    },
+    "website_url": "https://datadoghq.com"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Consumption-based pricing hard to predict.",
+        "Total costs can spiral quickly.",
+        "Steep learning curve and configuration.",
+        "Expensive for small teams/startups."
+      ],
+      "pros": [
+        "Complete observability in one place.",
+        "Covers logs, APM, monitoring, security.",
+        "Extensive and mature integrations.",
+        "Modern UI and fine-grained alerts.",
+        "Service Management included (incidents, workflows)."
+      ],
+      "use_cases": [
+        "Monitor complex multi-cloud infrastructure.",
+        "Diagnose application performance issues.",
+        "Centralize logs and incidents in a unified dashboard."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You have simple infrastructure.",
+          "Your team is very small.",
+          "Unpredictable consumption costs concern you."
+        ],
+        "keepIf": [
+          "You manage complex cloud infrastructure.",
+          "You need deep observability (logs, APM, RUM).",
+          "Your team can handle a sophisticated platform."
+        ],
+        "threshold": "Datadog dominates for SaaS and cloud-native teams needing complete observability; for an early-stage startup or simple infrastructure, free Prometheus + Grafana suffice."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Plan gratuit limité avec 5 hosts/hosts essentiels pour débuter; essai gratuit pour produits payants.",
+        "exists": true
+      },
+      "key_features": [
+        "Monitoring infrastructure en temps réel",
+        "Performance des applications (APM)",
+        "Gestion centralisée des logs",
+        "Real User Monitoring et Session Replay",
+        "Synthetic testing et Alerting",
+        "Security Monitoring et Cloud SIEM",
+        "Intégrations 500+ services"
+      ],
+      "plans": [
+        {
+          "name": "Infrastructure Monitoring (Pro)",
+          "price": "$15/host/mois (annuel)"
+        },
+        {
+          "name": "Infrastructure Monitoring (Enterprise)",
+          "price": "$23/host/mois (annuel)"
+        },
+        {
+          "name": "APM",
+          "price": "de $31/host/mois à $40/host/mois"
+        },
+        {
+          "name": "Log Management",
+          "price": "$0.10/GB ingéré + $1.70 par million d'événements"
+        },
+        {
+          "name": "Real User Monitoring",
+          "price": "de $1.50 à $1.80 par 1,000 sessions (annuel)"
+        },
+        {
+          "name": "Synthetic Monitoring",
+          "price": "$5 par 10,000 tests API; $12 par 1,000 tests navigateur"
+        }
+      ],
+      "pricing_model": "Abonnement à la consommation, modèle modulaire. Vous payez chaque produit séparément selon l'utilisation réelle.",
+      "what": "Plateforme d'observabilité modulaire qui surveille l'infrastructure, l'application, les logs, la sécurité, et l'expérience utilisateur. Tarification à la consommation : vous payez séparément pour chaque produit (monitoring, APM, log management, etc.).",
+      "what_en": "Modular observability platform for infrastructure, application, logs, security, and user experience monitoring. Consumption-based pricing: pay separately for each product (Infrastructure Monitoring, APM, Log Management, etc.)."
+    },
+    "fr": {
+      "cons": [
+        "Tarification à la consommation difficile à prévoir.",
+        "Coûts totaux peuvent exploser rapidement.",
+        "Apprentissage et configuration importants.",
+        "Cher pour les petites équipes/startups."
+      ],
+      "pros": [
+        "Observabilité complète en un seul endroit.",
+        "Couverture logs, APM, monitoring, sécurité.",
+        "Intégrations très nombreuses et matures.",
+        "Interface moderne et alertes fines.",
+        "Service Management inclus (incidents, workflows)."
+      ],
+      "relevant_for": [
+        "Équipes DevOps/SRE",
+        "Startups SaaS scale-up",
+        "Entreprises cloud natives"
+      ],
+      "use_cases": [
+        "Surveiller une infrastructure multi-cloud complexe.",
+        "Diagnostiquer les problèmes de performance applicatif.",
+        "Centraliser logs et incidents dans une dashboard unifiée."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous avez une infrastructure simple.",
+          "Votre équipe est très réduite.",
+          "Les coûts de consommation imprédictibles vous préoccupent."
+        ],
+        "keepIf": [
+          "Vous gérez une infrastructure cloud complexe.",
+          "Vous avez besoin d'observabilité profonde (logs, APM, RUM).",
+          "Votre équipe peut gérer une plate-forme sophistiquée."
+        ],
+        "threshold": "Datadog domine pour les équipes SaaS et cloud natives qui demandent une observabilité complète ; pour une startup précoce ou une infrastructure simple, Prometheus + Grafana gratuits suffisent."
+      }
+    },
+    "slug": "datadog",
+    "sources": [
+      {
+        "label": "Datadog — Pricing (site officiel)",
+        "url": "https://www.datadoghq.com/pricing/"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-analytics-critical-001",
+    "batch_position": 19,
+    "blockers": [],
+    "catalog_hash": "sha256:95981ae7a54e7d8186a91427ca425887601c0e00c2ee6589e251399070f062dc",
+    "category": "analytics",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:ee697b09803fef9d3866ae6d7f7ec7d1b5a048b75dff4515324639229360d330",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Datadog",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:59b6c46ab8a408c6ebbd005272a7bd27fb6f609210c4f1600d2efeb0ebe8561c",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "datadog",
+    "source_url": "https://www.datadoghq.com/pricing/list/",
+    "source_verified_on": "2026-06-15",
+    "status": "QUEUED"
+  }
+}

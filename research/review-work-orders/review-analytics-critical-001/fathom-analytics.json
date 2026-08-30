@@ -1,0 +1,271 @@
+{
+  "batch": "review-analytics-critical-001",
+  "current": {
+    "affiliate_url": "https://usefathom.com",
+    "alternatives": [
+      "plausible",
+      "simple-analytics",
+      "google-analytics"
+    ],
+    "category": "analytics",
+    "cons": [
+      "Pas de version gratuite.",
+      "Moins de profondeur comportementale que GA.",
+      "Limité à 50 sites même sur plans élevés."
+    ],
+    "cons_en": [
+      "No free version.",
+      "Less behavioral depth than GA.",
+      "Limited to 50 sites even on higher plans."
+    ],
+    "host_app": null,
+    "id": "fathom-analytics",
+    "long_description": "Fathom Analytics est une alternative privacy-first à Google Analytics : zéro cookie, conforme RGPD/CCPA, tableau de bord simple et hébergement EU disponible.",
+    "long_description_en": "Fathom Analytics is a privacy-first Google Analytics alternative: zero cookies, GDPR/CCPA compliant, simple dashboard and EU hosting available.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://usefathom.com/assets/src/share-usefathom.com.jpg"
+    },
+    "name": "Fathom Analytics",
+    "pricing": {
+      "free": "Essai 30 jours",
+      "paid": "Starter 14$/mois (100k pageviews)"
+    },
+    "pricing_en": {
+      "free": "30-day trial",
+      "paid": "Starter $14/mo (100k pageviews)"
+    },
+    "pricing_v5": {
+      "annual_monthly_eur": 12,
+      "billing_note": "Starter 14$/mois pour 100k pageviews",
+      "currency_original": "USD",
+      "free_tier": false,
+      "free_tier_note": "Essai 30 jours",
+      "monthly_eur": 15,
+      "plan_name": "Starter",
+      "price_original": 14,
+      "reliability": "high",
+      "source_url": "https://usefathom.com/pricing",
+      "verified_on": "2026-05-08"
+    },
+    "pros": [
+      "Respect privacité et GDPR natif, pas de banners.",
+      "Tarification simple et prévisible.",
+      "Pas de cookie-tracking, données propriétaires.",
+      "Interface épurée et rapide.",
+      "Support équipe réactive."
+    ],
+    "pros_en": [
+      "Native GDPR and privacy respect, no banners.",
+      "Simple and predictable pricing.",
+      "No cookie tracking, data owned by you.",
+      "Clean and fast interface.",
+      "Responsive support team."
+    ],
+    "short_description": "Analytics web sans cookies, conforme RGPD, alternative à Google Analytics.",
+    "short_description_en": "Cookieless web analytics, GDPR compliant, Google Analytics alternative.",
+    "slug": "fathom-analytics",
+    "source_url": "https://usefathom.com",
+    "source_verified_on": "2026-05-08",
+    "use_cases": [
+      "Analytics GDPR-compliant pour sites européens.",
+      "Suivre conversions sans cookies.",
+      "Alternative éthique à Google Analytics."
+    ],
+    "use_cases_en": [
+      "GDPR-compliant analytics for EU sites.",
+      "Track conversions without cookies.",
+      "Ethical alternative to Google Analytics."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous avez besoin d'analytics très détaillés (user funnel).",
+        "Vous avez des millions de pageviews/mois.",
+        "Vous voulez absolument gratuit."
+      ],
+      "keepIf": [
+        "Vous respectez GDPR et privacité utilisateurs.",
+        "Vous n'avez pas besoin de profil utilisateur cross-site.",
+        "Vos volumes sont modérés (< 500k pageviews/mois)."
+      ],
+      "threshold": "Fathom convient pour sites respectant vie privée ; pour analytics comportementales complexes, Google Analytics convient mieux."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You need very detailed analytics (user funnel).",
+        "You have millions of pageviews/month.",
+        "You want it completely free."
+      ],
+      "keepIf": [
+        "You respect GDPR and user privacy.",
+        "You don't need cross-site user profiling.",
+        "Your volumes are moderate (< 500k pageviews/month)."
+      ],
+      "threshold": "Fathom suits privacy-respecting sites; for complex behavioral analytics, Google Analytics is better."
+    },
+    "website_url": "https://usefathom.com"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "No free version.",
+        "Less behavioral depth than GA.",
+        "Limited to 50 sites even on higher plans."
+      ],
+      "pros": [
+        "Native GDPR and privacy respect, no banners.",
+        "Simple and predictable pricing.",
+        "No cookie tracking, data owned by you.",
+        "Clean and fast interface.",
+        "Responsive support team."
+      ],
+      "use_cases": [
+        "GDPR-compliant analytics for EU sites.",
+        "Track conversions without cookies.",
+        "Ethical alternative to Google Analytics."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You need very detailed analytics (user funnel).",
+          "You have millions of pageviews/month.",
+          "You want it completely free."
+        ],
+        "keepIf": [
+          "You respect GDPR and user privacy.",
+          "You don't need cross-site user profiling.",
+          "Your volumes are moderate (< 500k pageviews/month)."
+        ],
+        "threshold": "Fathom suits privacy-respecting sites; for complex behavioral analytics, Google Analytics is better."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Pas de version gratuite. Plans commencent à 14 $/mois pour 100k pageviews.",
+        "exists": false
+      },
+      "key_features": [
+        "Analytics sans cookies, GDPR natif.",
+        "Suivi sources de trafic et pages populaires.",
+        "Conversion tracking et attribution campanges.",
+        "Au moins 50 sites inclus dans chaque plan.",
+        "Pas de traquage cross-site.",
+        "Données propriétaires (pas de vente).",
+        "Intégration Slack et Zapier."
+      ],
+      "plans": [
+        {
+          "name": "Starter",
+          "price": "14 $/mois pour 100k pageviews mensuels"
+        },
+        {
+          "name": "Growth",
+          "price": "24 $/mois pour 200k pageviews mensuels"
+        },
+        {
+          "name": "Pro",
+          "price": "44 $/mois pour 500k pageviews mensuels"
+        }
+      ],
+      "pricing_model": "Payant à l'usage (pageviews mensuels). Plans tiérés : 100k, 200k, 500k pageviews. Sites additionnels par packs de 50.",
+      "what": "Analytics web sans cookies, sans consentement banners. Respect GDPR nativement. Suive sources trafic, pages populaires, conversions, campagnes. Startup canadienne, pas de VC, pas de vente données.",
+      "what_en": "Cookie-free, GDPR-compliant web analytics. No consent banners needed. Track traffic sources, top pages, conversions, campaigns. Canadian startup, no VC, no data selling."
+    },
+    "fr": {
+      "cons": [
+        "Pas de version gratuite.",
+        "Moins de profondeur comportementale que GA.",
+        "Limité à 50 sites même sur plans élevés."
+      ],
+      "pros": [
+        "Respect privacité et GDPR natif, pas de banners.",
+        "Tarification simple et prévisible.",
+        "Pas de cookie-tracking, données propriétaires.",
+        "Interface épurée et rapide.",
+        "Support équipe réactive."
+      ],
+      "relevant_for": [
+        "Web developers",
+        "Privacy-focused businesses",
+        "European sites",
+        "Content creators"
+      ],
+      "use_cases": [
+        "Analytics GDPR-compliant pour sites européens.",
+        "Suivre conversions sans cookies.",
+        "Alternative éthique à Google Analytics."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous avez besoin d'analytics très détaillés (user funnel).",
+          "Vous avez des millions de pageviews/mois.",
+          "Vous voulez absolument gratuit."
+        ],
+        "keepIf": [
+          "Vous respectez GDPR et privacité utilisateurs.",
+          "Vous n'avez pas besoin de profil utilisateur cross-site.",
+          "Vos volumes sont modérés (< 500k pageviews/mois)."
+        ],
+        "threshold": "Fathom convient pour sites respectant vie privée ; pour analytics comportementales complexes, Google Analytics convient mieux."
+      }
+    },
+    "slug": "fathom-analytics",
+    "sources": [
+      {
+        "label": "Fathom Analytics — Privacy-First Analytics (site officiel)",
+        "url": "https://usefathom.com/pricing"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-analytics-critical-001",
+    "batch_position": 7,
+    "blockers": [],
+    "catalog_hash": "sha256:bfbd1ea953be803d1751a2e6899f1f81333e8f1a6c99b741e1afbd00feb21241",
+    "category": "analytics",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:a850265cff15bbd4ac8eabd826b6eff8baede4da01f47bc88bf5921ece2ed3d1",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Fathom Analytics",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence",
+      "shallow_editorial"
+    ],
+    "priority_score": 260,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:ff05b15e2519f0d5571c8bddeee32663fad38744fc52c3472df467d83dc3be91",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "fathom-analytics",
+    "source_url": "https://usefathom.com",
+    "source_verified_on": "2026-05-08",
+    "status": "QUEUED"
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "batch": "review-analytics-critical-001",
+  "quality_version": "catalog-review-v1",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tools": [
+    {
+      "file": "shield.json",
+      "required_action": "research_primary_sources_then_write_fact_bundle",
+      "slug": "shield",
+      "status": "QUEUED"
+    },
+    {
+      "file": "shield-app.json",
+      "required_action": "research_primary_sources_then_write_fact_bundle",
+      "slug": "shield-app",
+      "status": "QUEUED"
+    },
+    {
+      "file": "ahrefs.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "ahrefs",
+      "status": "QUEUED"
+    },
+    {
+      "file": "causal.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "causal",
+      "status": "QUEUED"
+    },
+    {
+      "file": "coupler-io.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "coupler-io",
+      "status": "QUEUED"
+    },
+    {
+      "file": "fathom-analytics.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "fathom-analytics",
+      "status": "QUEUED"
+    },
+    {
+      "file": "simple-analytics.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "simple-analytics",
+      "status": "QUEUED"
+    },
+    {
+      "file": "supermetrics.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "supermetrics",
+      "status": "QUEUED"
+    },
+    {
+      "file": "beehiiv-analytics.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "beehiiv-analytics",
+      "status": "QUEUED"
+    },
+    {
+      "file": "convertkit-analytics.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "convertkit-analytics",
+      "status": "QUEUED"
+    },
+    {
+      "file": "notionlytics.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "notionlytics",
+      "status": "QUEUED"
+    },
+    {
+      "file": "seo-mode.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "seo-mode",
+      "status": "MEDIA_READY"
+    },
+    {
+      "file": "sql.json",
+      "required_action": "research_primary_sources_then_write_fact_bundle",
+      "slug": "sql",
+      "status": "QUEUED"
+    },
+    {
+      "file": "amplitude.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "amplitude",
+      "status": "QUEUED"
+    },
+    {
+      "file": "auvik.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "auvik",
+      "status": "QUEUED"
+    },
+    {
+      "file": "brand24.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "brand24",
+      "status": "QUEUED"
+    },
+    {
+      "file": "callrail.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "callrail",
+      "status": "QUEUED"
+    },
+    {
+      "file": "chartmogul.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "chartmogul",
+      "status": "QUEUED"
+    },
+    {
+      "file": "datadog.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "datadog",
+      "status": "QUEUED"
+    },
+    {
+      "file": "hex.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "hex",
+      "status": "QUEUED"
+    },
+    {
+      "file": "hotjar.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "hotjar",
+      "status": "QUEUED"
+    },
+    {
+      "file": "keeptruckin.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "keeptruckin",
+      "status": "QUEUED"
+    },
+    {
+      "file": "looker-studio.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "looker-studio",
+      "status": "QUEUED"
+    },
+    {
+      "file": "lucidchart.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "lucidchart",
+      "status": "QUEUED"
+    },
+    {
+      "file": "metabase.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "metabase",
+      "status": "QUEUED"
+    }
+  ]
+}

@@ -1,0 +1,296 @@
+{
+  "batch": "review-analytics-critical-001",
+  "current": {
+    "affiliate_url": "https://simpleanalytics.com",
+    "alternatives": [
+      "plausible",
+      "fathom-analytics",
+      "google-analytics"
+    ],
+    "category": "analytics",
+    "cons": [
+      "Moins de fonctionnalités que Google Analytics.",
+      "Pas de remarketing ou audiences avancées.",
+      "Pas de heat maps ou session recordings.",
+      "Petit marché, moins de ressources que Google."
+    ],
+    "cons_en": [
+      "Fewer features than Google Analytics.",
+      "No remarketing or advanced audiences.",
+      "No heat maps or session recordings.",
+      "Smaller market, fewer resources than Google."
+    ],
+    "host_app": null,
+    "id": "simple-analytics",
+    "long_description": "Simple Analytics est une solution d'analytics web sans cookies, fondée en Europe, avec dashboard minimaliste et conformité RGPD native. Concurrent direct de Plausible et Fathom.",
+    "long_description_en": "Simple Analytics is a cookieless web analytics solution founded in Europe with a minimalist dashboard and native GDPR compliance. Direct competitor to Plausible and Fathom.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://assets.simpleanalytics.com/social-media/dark-chart.png"
+    },
+    "name": "Simple Analytics",
+    "pricing": {
+      "free": "Essai 14 jours",
+      "paid": "Starter 15€/mois"
+    },
+    "pricing_en": {
+      "free": "14-day trial",
+      "paid": "Starter €15/mo"
+    },
+    "pricing_v5": {
+      "annual_monthly_eur": 12,
+      "billing_note": "Starter 15€/mois (100k pageviews)",
+      "currency_original": "EUR",
+      "free_tier": false,
+      "free_tier_note": "Essai 14 jours",
+      "monthly_eur": 15,
+      "plan_name": "Starter",
+      "price_original": 15,
+      "reliability": "high",
+      "source_url": "https://simpleanalytics.com/pricing",
+      "verified_on": "2026-05-08"
+    },
+    "pros": [
+      "Privacy-first, sans cookies, conforme au RGPD.",
+      "Data en Europe, transparence garantie.",
+      "Interface épurée, simple à comprendre.",
+      "Essai gratuit 14 jours sans carte bancaire.",
+      "Capture le trafic consent-denied (GA4 le perd).",
+      "Pricing juste et transparent."
+    ],
+    "pros_en": [
+      "Privacy-first, cookieless, GDPR-compliant.",
+      "Data in Europe, full transparency.",
+      "Clean, simple interface.",
+      "14-day free trial, no credit card required.",
+      "Captures consent-denied traffic (GA4 misses it).",
+      "Fair, transparent pricing."
+    ],
+    "short_description": "Analytics web minimaliste sans cookies, fondé en Europe, conforme RGPD.",
+    "short_description_en": "Minimalist cookieless web analytics, European-founded, GDPR compliant.",
+    "slug": "simple-analytics",
+    "source_url": "https://simpleanalytics.com",
+    "source_verified_on": "2026-05-08",
+    "use_cases": [
+      "Mesurer le trafic d'un site privacy-first.",
+      "Analyser les conversions sans tracker d'identifiants.",
+      "Remplacer Google Analytics pour GDPR compliance.",
+      "Suivre les campagnes et UTM parameters.",
+      "Auditer le trafic perdu à cause du refus consentement."
+    ],
+    "use_cases_en": [
+      "Measure traffic on privacy-first site.",
+      "Analyze conversions without identifier tracking.",
+      "Replace Google Analytics for GDPR compliance.",
+      "Track campaigns and UTM parameters.",
+      "Audit traffic lost to consent denial."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous avez besoin de remarketing ou tracking multi-device.",
+        "Vous voulez une vision très détaillée des parcours utilisateurs.",
+        "Votre budget exige absolument le gratuit illimité."
+      ],
+      "keepIf": [
+        "Vous velez respecter la GDPR et la vie privée des visitants.",
+        "Vous voulez une alternative aux cookies et banneau consentement.",
+        "Vous privilégiez la clarté et la simplicité d'analytics.",
+        "Votre audience est en Europe."
+      ],
+      "threshold": "Simple Analytics est idéal pour qui priorise privacy et conformité. Pour du tracking granulaire ou du remarketing, Plausible ou Google Analytics demeurent meilleurs choix."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You need remarketing or cross-device tracking.",
+        "You want very detailed user journey insights.",
+        "Your budget absolutely requires free unlimited."
+      ],
+      "keepIf": [
+        "You want to respect GDPR and visitor privacy.",
+        "You want a cookie-free, consent-banner alternative.",
+        "You prioritize clarity and simplicity in analytics.",
+        "Your audience is in Europe."
+      ],
+      "threshold": "Simple Analytics is ideal for privacy-first and compliance. For granular tracking or remarketing, Plausible or Google Analytics are better choices."
+    },
+    "website_url": "https://simpleanalytics.com"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Fewer features than Google Analytics.",
+        "No remarketing or advanced audiences.",
+        "No heat maps or session recordings.",
+        "Smaller market, fewer resources than Google."
+      ],
+      "pros": [
+        "Privacy-first, cookieless, GDPR-compliant.",
+        "Data in Europe, full transparency.",
+        "Clean, simple interface.",
+        "14-day free trial, no credit card required.",
+        "Captures consent-denied traffic (GA4 misses it).",
+        "Fair, transparent pricing."
+      ],
+      "use_cases": [
+        "Measure traffic on privacy-first site.",
+        "Analyze conversions without identifier tracking.",
+        "Replace Google Analytics for GDPR compliance.",
+        "Track campaigns and UTM parameters.",
+        "Audit traffic lost to consent denial."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You need remarketing or cross-device tracking.",
+          "You want very detailed user journey insights.",
+          "Your budget absolutely requires free unlimited."
+        ],
+        "keepIf": [
+          "You want to respect GDPR and visitor privacy.",
+          "You want a cookie-free, consent-banner alternative.",
+          "You prioritize clarity and simplicity in analytics.",
+          "Your audience is in Europe."
+        ],
+        "threshold": "Simple Analytics is ideal for privacy-first and compliance. For granular tracking or remarketing, Plausible or Google Analytics are better choices."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Plan Gratuit : 5 sites, 1 utilisateur, data retention 3 mois, pas de rétention long-terme.",
+        "exists": true
+      },
+      "key_features": [
+        "Analytics sans cookies, 100% GDPR compliant",
+        "Data hébergée en Europe",
+        "Pas de suivi de visitants, pas d'IP stockée",
+        "Compatible GA4 (capture le trafic consentement dénié)",
+        "Pageviews, événements, referrers, campagnes",
+        "Export CSV, API access",
+        "Dashboard minimaliste et rapide",
+        "Essai gratuit 14 jours"
+      ],
+      "plans": [
+        {
+          "name": "Gratuit",
+          "price": "0 € (5 sites, 1 utilisateur)"
+        },
+        {
+          "name": "Simple",
+          "price": "15 €/month (10 sites, 1 utilisateur, data retention 3 ans)"
+        },
+        {
+          "name": "Team",
+          "price": "40 €/month (20 sites, 2 utilisateurs, data retention 5 ans, utilisateurs additionnels 20 € chacun)"
+        },
+        {
+          "name": "Enterprise",
+          "price": "À partir de 750 €/month (volumes élevés, contrats personnalisés)"
+        }
+      ],
+      "pricing_model": "Freemium : gratuit pour 5 sites/1 utilisateur (hobby), puis plans mensuels (Simple, Team, Enterprise). Essai gratuit 14 jours, pas de carte bancaire.",
+      "what": "Plateforme analytics web privacy-first, sans cookies ni suivi de visitants, 100% GDPR conforme, qui capture les vues de pages et événements sans identification personnelle. Data hébergée en Europe.",
+      "what_en": "Privacy-first web analytics platform without cookies or visitor tracking, 100% GDPR-compliant, capturing pageviews and events without personal identification. Data hosted in Europe."
+    },
+    "fr": {
+      "cons": [
+        "Moins de fonctionnalités que Google Analytics.",
+        "Pas de remarketing ou audiences avancées.",
+        "Pas de heat maps ou session recordings.",
+        "Petit marché, moins de ressources que Google."
+      ],
+      "pros": [
+        "Privacy-first, sans cookies, conforme au RGPD.",
+        "Data en Europe, transparence garantie.",
+        "Interface épurée, simple à comprendre.",
+        "Essai gratuit 14 jours sans carte bancaire.",
+        "Capture le trafic consent-denied (GA4 le perd).",
+        "Pricing juste et transparent."
+      ],
+      "relevant_for": [
+        "Éditeurs web",
+        "Agences privacy-first",
+        "Startups éthiques",
+        "Sites GDPR-sensibles"
+      ],
+      "use_cases": [
+        "Mesurer le trafic d'un site privacy-first.",
+        "Analyser les conversions sans tracker d'identifiants.",
+        "Remplacer Google Analytics pour GDPR compliance.",
+        "Suivre les campagnes et UTM parameters.",
+        "Auditer le trafic perdu à cause du refus consentement."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous avez besoin de remarketing ou tracking multi-device.",
+          "Vous voulez une vision très détaillée des parcours utilisateurs.",
+          "Votre budget exige absolument le gratuit illimité."
+        ],
+        "keepIf": [
+          "Vous velez respecter la GDPR et la vie privée des visitants.",
+          "Vous voulez une alternative aux cookies et banneau consentement.",
+          "Vous privilégiez la clarté et la simplicité d'analytics.",
+          "Votre audience est en Europe."
+        ],
+        "threshold": "Simple Analytics est idéal pour qui priorise privacy et conformité. Pour du tracking granulaire ou du remarketing, Plausible ou Google Analytics demeurent meilleurs choix."
+      }
+    },
+    "slug": "simple-analytics",
+    "sources": [
+      {
+        "label": "Simple Analytics — Privacy-First Analytics (site officiel)",
+        "url": "https://simpleanalytics.com"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-analytics-critical-001",
+    "batch_position": 8,
+    "blockers": [],
+    "catalog_hash": "sha256:17ef588856494be6655a5e364bae2b760d41a4ab3cf54d8126d3517cfce5fbe8",
+    "category": "analytics",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:aecd42b03dd344e5b0f130fd95f4d5258e268c1d8527722c2beb23b7cb5f5bfe",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Simple Analytics",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence",
+      "shallow_editorial"
+    ],
+    "priority_score": 260,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:5ea898ca9e780b4cab9ee63355b1da375f63a26d7d19a51b3edd9a599e2cd2bc",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "simple-analytics",
+    "source_url": "https://simpleanalytics.com",
+    "source_verified_on": "2026-05-08",
+    "status": "QUEUED"
+  }
+}

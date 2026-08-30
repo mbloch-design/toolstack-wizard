@@ -1,0 +1,50 @@
+{
+  "slug": "figma-make",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-08-30",
+  "sources": [
+    { "label": "FAQ Figma Make (centre d'aide officiel)", "url": "https://help.figma.com/hc/en-us/articles/31722591905559-Figma-Make-FAQs" },
+    { "label": "Présentation Figma Make (blog officiel)", "url": "https://www.figma.com/blog/introducing-figma-make/" },
+    { "label": "Tarifs Figma (site officiel)", "url": "https://www.figma.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Outil Figma piloté par prompt pour transformer une idée ou un design existant en prototype fonctionnel, interface interactive ou application web. Il combine génération, édition du code, publication et contexte de design system.",
+    "what_en": "Prompt-driven Figma tool that turns an idea or an existing design into a functional prototype, interactive interface, or web app. It combines generation, code editing, publishing, and design-system context.",
+    "pricing_model": "Inclus avec les licences Full des forfaits payants. Les autres licences et Starter peuvent l'essayer avec des limites et des crédits d'IA.",
+    "free_tier": { "exists": true, "detail": "Starter permet d'explorer Make, sans bibliothèques d'équipe et avec publication publique liée à Figma Community." },
+    "plans": [
+      { "name": "Starter", "price": "Gratuit, accès limité et 500 crédits d'IA/mois au maximum" },
+      { "name": "Professional Full seat", "price": "16 $/mois, 3 000 crédits d'IA/mois" },
+      { "name": "Organization Full seat", "price": "55 $/mois, facturé annuellement, 3 500 crédits d'IA/mois" },
+      { "name": "Enterprise Full seat", "price": "90 $/mois, facturé annuellement, 4 250 crédits d'IA/mois" }
+    ],
+    "key_features": [
+      "Génération par prompt à partir de designs, composants et fichiers de référence",
+      "Prototypes fonctionnels, applications web et publication avec URL dédiée",
+      "Édition du code, plan mode et sélection du modèle d'IA",
+      "Connexion à Supabase, GitHub, kits de design system et connecteurs",
+      "Copie du résultat en calques éditables dans Figma Design"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": ["Vous devez tester rapidement une idée à partir de designs Figma existants.", "Produit, design et développement veulent explorer dans un fichier partagé.", "Votre design system doit guider les prototypes générés."],
+      "avoidIf": ["Vous attendez une application de production sans revue du code ni de l'architecture.", "Vos sources de design ne vivent pas dans Figma.", "Les contraintes de publication et de crédits nuisent au flux prévu."],
+      "threshold": "Ajoutez Figma Make lorsque la génération réduit le délai entre maquette et prototype testable tout en conservant le contexte de design."
+    },
+    "pros": ["Démarre depuis les designs et composants existants.", "Combine génération, édition, données et publication.", "Permet aux profils non techniques de tester des interactions.", "Réinjecte le résultat dans les outils Figma."],
+    "cons": ["La qualité et la maintenabilité du code généré nécessitent une revue.", "Les limites varient selon la licence, le forfait et les crédits.", "L'accès gratuit impose des restrictions de bibliothèque et de publication."],
+    "use_cases": ["Transformer une maquette en prototype fonctionnel.", "Tester une interaction avec des données.", "Construire une preuve de concept à partager."],
+    "relevant_for": ["Product designers", "Product managers", "Équipes innovation"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": ["You need to test an idea quickly from existing Figma designs.", "Product, design, and engineering want to explore in one shared file.", "Your design system should guide generated prototypes."],
+      "avoidIf": ["You expect production software without code or architecture review.", "Your design sources do not live in Figma.", "Publishing and credit constraints conflict with the intended workflow."],
+      "threshold": "Add Figma Make when generation shortens the path from mockup to testable prototype while preserving design context."
+    },
+    "pros": ["Starts from existing designs and components.", "Combines generation, editing, data, and publishing.", "Lets non-technical roles test interactions.", "Moves results back into Figma tools."],
+    "cons": ["Generated code quality and maintainability require review.", "Limits vary by seat, plan, and credits.", "Free access restricts libraries and publishing."],
+    "use_cases": ["Turn a mockup into a functional prototype.", "Test an interaction with data.", "Build a proof of concept to share."]
+  }
+}

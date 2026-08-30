@@ -1,0 +1,268 @@
+{
+  "batch": "review-analytics-critical-001",
+  "current": {
+    "affiliate_url": "https://metabase.com",
+    "alternatives": [
+      "looker-studio"
+    ],
+    "category": "analytics",
+    "cons": [
+      "L'auto-hébergement demande maintenance et infrastructure.",
+      "Cloud payant vire vite cher à l'échelle.",
+      "Moins puissant qu'un EDW complet pour requêtes complexes."
+    ],
+    "cons_en": [
+      "Self-hosting requires maintenance and infrastructure.",
+      "Cloud pricing scales quickly.",
+      "Less powerful than full EDW for complex queries."
+    ],
+    "host_app": null,
+    "id": "metabase",
+    "long_description": "Metabase, c'est l'outil de business intelligence open source le plus accessible. Sa promesse : permettre à des gens non techniques d'interroger une base de données et de construire des dashboards sans écrire de SQL, grâce à un éditeur de questions visuel. Tu branches ta base (Postgres, MySQL, BigQuery...), et toute l'équipe peut explorer les données et suivre ses indicateurs.\n\nLe point clé pour le budget : Metabase est gratuit si tu l'héberges toi-même (open source). C'est l'option idéale pour une startup ou un dev à l'aise avec un peu d'infrastructure. Si tu ne veux pas gérer l'hébergement, la version Cloud commence autour de 100$/mois (plan Starter, jusqu'à 5 utilisateurs) et grimpe à 575$/mois sur le plan Pro. Le coût réel du self-hosting, c'est ton temps d'administration, pas une licence.\n\nÀ qui ça convient : aux équipes qui veulent donner accès aux données à des profils non techniques sans payer une licence BI lourde type Looker ou Tableau. Pour du reporting purement Google (GA4, Ads), Looker Studio gratuit suffit. Metabase brille dès que tes données vivent dans une vraie base et que plusieurs personnes doivent les explorer.",
+    "long_description_en": "Metabase is the most accessible open-source business intelligence tool. Its promise: let non-technical people query a database and build dashboards without writing SQL, through a visual question editor. You connect your database (Postgres, MySQL, BigQuery...), and the whole team can explore the data and track its metrics.\n\nThe key budget point: Metabase is free if you host it yourself (open source). It's the ideal option for a startup or a developer comfortable with a bit of infrastructure. If you don't want to manage hosting, the Cloud version starts around $100/month (Starter plan, up to 5 users) and climbs to $575/month on the Pro plan. The real cost of self-hosting is your admin time, not a license.\n\nWho it suits: teams that want to give data access to non-technical profiles without paying for a heavy BI license like Looker or Tableau. For purely Google reporting (GA4, Ads), free Looker Studio is enough. Metabase shines once your data lives in a real database and several people need to explore it.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://www.metabase.com/images/opengraph/home-og.png"
+    },
+    "name": "Metabase",
+    "pricing": {
+      "free": "Gratuit en auto-hébergement (open source)",
+      "paid": "Cloud à partir de 100$/mois (Starter), 575$/mois sur le plan Pro"
+    },
+    "pricing_en": {
+      "free": "Free when self-hosted (open source)",
+      "paid": "Cloud from $100/month (Starter), $575/month on the Pro plan"
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Gratuit en auto-hébergement (open source)",
+        "Cloud à partir de 100$/mois (Starter, 5 utilisateurs), 575$/mois sur le plan Pro"
+      ],
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Open source (gratuit)",
+      "compare_price_monthly_eur": 0,
+      "location_sensitive": false,
+      "official_source_url": "https://www.metabase.com/pricing/",
+      "price_reliability": "high",
+      "source_domain": "metabase.com",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-06-15"
+    },
+    "pros": [
+      "Option open source gratuite à auto-héberger.",
+      "Interface sans code intuitive et accessible.",
+      "Metabot IA pour poser des questions en langage naturel.",
+      "Support étendu de sources de données."
+    ],
+    "pros_en": [
+      "Free open-source self-hosted option.",
+      "Intuitive no-code interface.",
+      "Metabot AI for natural language queries.",
+      "Wide data source support."
+    ],
+    "short_description": "Outil de BI open source et gratuit : crée des dashboards depuis ta base de données sans SQL.",
+    "short_description_en": "Free, open-source BI tool: build dashboards from your database without SQL.",
+    "slug": "metabase",
+    "source_url": "https://www.metabase.com/pricing/",
+    "source_verified_on": "2026-06-15",
+    "use_cases": [
+      "Explorer des données métier sans SQL.",
+      "Créer des dashboards d'équipe collaboratifs.",
+      "Analyser des bases de données sans expert BI."
+    ],
+    "use_cases_en": [
+      "Explore business data without SQL.",
+      "Create collaborative team dashboards.",
+      "Analyze databases without BI experts."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous cherchez une solution entièrement gratuite cloud (hors essai).",
+        "Vous avez un très petit volume de données et peu d'utilisateurs.",
+        "Vous ne pouvez pas supporter d'infrastructure serveur : l'option open source nécessite auto-hébergement et maintenance."
+      ],
+      "keepIf": [
+        "Vous voulez analyser des données sans expertise SQL.",
+        "Vous privilégiez l'open source auto-hébergé.",
+        "Vous avez besoin d'une IA pour poser des questions en langage naturel."
+      ],
+      "threshold": "Metabase s'impose pour les équipes qui veulent explorer les données sans SQL ; l'option auto-hébergée convient aux budgets limités, le cloud aux besoins d'équipe."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You need a completely free cloud solution.",
+        "You have minimal data volume and few users.",
+        "You cannot support server infrastructure: the open-source option requires self-hosting and maintenance."
+      ],
+      "keepIf": [
+        "You want to analyze data without SQL expertise.",
+        "You prefer open-source self-hosted solutions.",
+        "You need AI to ask questions in natural language."
+      ],
+      "threshold": "Metabase fits teams exploring data without SQL; self-hosted for budget-conscious, cloud for team scale."
+    },
+    "website_url": "https://metabase.com"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Self-hosting requires maintenance and infrastructure.",
+        "Cloud pricing scales quickly.",
+        "Less powerful than full EDW for complex queries."
+      ],
+      "pros": [
+        "Free open-source self-hosted option.",
+        "Intuitive no-code interface.",
+        "Metabot AI for natural language queries.",
+        "Wide data source support."
+      ],
+      "use_cases": [
+        "Explore business data without SQL.",
+        "Create collaborative team dashboards.",
+        "Analyze databases without BI experts."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You need a completely free cloud solution.",
+          "You have minimal data volume and few users.",
+          "You cannot support server infrastructure: the open-source option requires self-hosting and maintenance."
+        ],
+        "keepIf": [
+          "You want to analyze data without SQL expertise.",
+          "You prefer open-source self-hosted solutions.",
+          "You need AI to ask questions in natural language."
+        ],
+        "threshold": "Metabase fits teams exploring data without SQL; self-hosted for budget-conscious, cloud for team scale."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Version open source entièrement gratuite à auto-héberger. Essai cloud gratuit de 14 jours disponible.",
+        "exists": true
+      },
+      "key_features": [
+        "Interrogation AI en langage naturel (Metabot)",
+        "Générateur de requêtes visuel sans code",
+        "Dashboards interactifs et documents collaboratifs",
+        "Support de 40+ sources de données",
+        "Couche sémantique pour métriques fiables"
+      ],
+      "plans": [
+        {
+          "name": "Open Source",
+          "price": "Gratuit (auto-hébergement)"
+        },
+        {
+          "name": "Starter Cloud",
+          "price": "montants sur la page officielle"
+        },
+        {
+          "name": "Pro Cloud",
+          "price": "montants sur la page officielle"
+        },
+        {
+          "name": "Enterprise",
+          "price": "montants sur la page officielle"
+        }
+      ],
+      "pricing_model": "Freemium : version open source auto-hébergée gratuite, ou cloud avec plans payants (Starter, Pro, Enterprise)",
+      "what": "Plateforme d'analytique open source qui fournit des réponses guidées par une couche sémantique. Permet d'explorer et visualiser les données via une interface sans code avec IA intégrée.",
+      "what_en": "Open-source analytics platform providing AI-guided answers through a semantic layer. Enables data exploration and visualization through a no-code interface with built-in AI."
+    },
+    "fr": {
+      "cons": [
+        "L'auto-hébergement demande maintenance et infrastructure.",
+        "Cloud payant vire vite cher à l'échelle.",
+        "Moins puissant qu'un EDW complet pour requêtes complexes."
+      ],
+      "pros": [
+        "Option open source gratuite à auto-héberger.",
+        "Interface sans code intuitive et accessible.",
+        "Metabot IA pour poser des questions en langage naturel.",
+        "Support étendu de sources de données."
+      ],
+      "relevant_for": [
+        "Petites équipes",
+        "Startups",
+        "Analystes métier"
+      ],
+      "use_cases": [
+        "Explorer des données métier sans SQL.",
+        "Créer des dashboards d'équipe collaboratifs.",
+        "Analyser des bases de données sans expert BI."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous cherchez une solution entièrement gratuite cloud (hors essai).",
+          "Vous avez un très petit volume de données et peu d'utilisateurs.",
+          "Vous ne pouvez pas supporter d'infrastructure serveur : l'option open source nécessite auto-hébergement et maintenance."
+        ],
+        "keepIf": [
+          "Vous voulez analyser des données sans expertise SQL.",
+          "Vous privilégiez l'open source auto-hébergé.",
+          "Vous avez besoin d'une IA pour poser des questions en langage naturel."
+        ],
+        "threshold": "Metabase s'impose pour les équipes qui veulent explorer les données sans SQL ; l'option auto-hébergée convient aux budgets limités, le cloud aux besoins d'équipe."
+      }
+    },
+    "slug": "metabase",
+    "sources": [
+      {
+        "label": "Metabase — plateforme d'analytique (site officiel)",
+        "url": "https://metabase.com"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-analytics-critical-001",
+    "batch_position": 25,
+    "blockers": [],
+    "catalog_hash": "sha256:cb5d3e625accaae516f40182d224ddce48ebd9f86090b6f2b2c918af2619cf69",
+    "category": "analytics",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:63d66ff34d7e2259bed7cad272cf538998e7df80b1cca6bd11a31fbe9b451c96",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Metabase",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:61ec9764e547557181e3cefa17d3c626ddf6ac1d987d2b6de0adee32295e6405",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "metabase",
+    "source_url": "https://www.metabase.com/pricing/",
+    "source_verified_on": "2026-06-15",
+    "status": "QUEUED"
+  }
+}

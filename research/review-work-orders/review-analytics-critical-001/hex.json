@@ -1,0 +1,287 @@
+{
+  "batch": "review-analytics-critical-001",
+  "current": {
+    "affiliate_url": "https://hex.tech",
+    "alternatives": [],
+    "category": "analytics",
+    "cons": [
+      "Coûts par éditeur montent rapidement avec les équipes.",
+      "Moins mature que Tableau/Looker/Power-BI pour le BI classique.",
+      "Courbe d'apprentissage pour exploiter pleinement l'IA (prompts, context).",
+      "Plan Community limité (3 auteurs max, small compute)."
+    ],
+    "cons_en": [
+      "Per-editor costs scale quickly with team size.",
+      "Less mature than Tableau/Looker/Power-BI for classic BI.",
+      "Learning curve to fully exploit AI (prompts, context).",
+      "Community plan is limited (3 authors max, small compute)."
+    ],
+    "host_app": null,
+    "id": "hex",
+    "long_description": "Hex, c'est notebooks data collaboratifs avec publication en apps interactives. À partir de 20.78€/mois. Pensé pour les data analysts.\n\nGain de temps estimé : 6h/mois.\n\nÀ garder si : analyses data à partager en app interactive avec des stakeholders. À éviter si : metabase ou Looker déjà en place. Pertinent si vous présentez des analyses à des non-techniques.",
+    "long_description_en": "Hex is collaborative data notebooks with interactive app publishing. Starting at €20.78/month. Built for data analysts.\n\nEstimated time saving: 6h/month.\n\nKeep it if: data analytics to share in an interactive app with stakeholders. Skip it if: metabase ou Looker déjà en place. Relevant if you present analyses to non-technical stakeholders.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://cdn.sanity.io/images/e92memrj/production/57eeccd836f0d6188862a55186ab48521fe1034b-1200x630.png"
+    },
+    "name": "Hex",
+    "pricing": {
+      "free": "5 projets publics",
+      "paid": "24$/mois (Starter)"
+    },
+    "pricing_en": {
+      "free": "5 public projects",
+      "paid": "$24/month (Starter)"
+    },
+    "pricing_v5": {
+      "cautions": [],
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Entry paid plan",
+      "compare_price_monthly_eur": 20.78,
+      "location_sensitive": false,
+      "official_source_url": "https://hex.tech/pricing/",
+      "price_reliability": "high",
+      "source_domain": "hex.tech",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-03-13"
+    },
+    "pros": [
+      "Équilibre SQL/Python (data teams) et conversationnel (business users).",
+      "Intégration dbt native et semantic models.",
+      "Agentic notebooks plus flexibles que les dashboards BI classiques.",
+      "Conversations interactives et exploration guidée.",
+      "Plan Community généreux pour small teams."
+    ],
+    "pros_en": [
+      "Balance SQL/Python (data teams) and conversational (business users).",
+      "Native dbt integration and semantic models.",
+      "Agentic notebooks more flexible than classic BI dashboards.",
+      "Interactive conversations and guided exploration.",
+      "Generous Community plan for small teams."
+    ],
+    "short_description": "Notebooks data collaboratifs avec publication en apps interactives.",
+    "short_description_en": "Collaborative data notebooks with interactive app publishing.",
+    "slug": "hex",
+    "source_url": "https://hex.tech/pricing/",
+    "source_verified_on": "2026-03-13",
+    "use_cases": [
+      "Créer des analyses ad-hoc SQL/Python et les partager avec les métiers.",
+      "Permettre aux product managers de poser des questions sur les données en conversationnel.",
+      "Construire des data apps (dashboards) avec exploration IA guidée.",
+      "Mettre en place une gouvernance dbt avec métriques centralisées."
+    ],
+    "use_cases_en": [
+      "Create ad-hoc SQL/Python analysis and share with business teams.",
+      "Let product managers ask questions about data conversationally.",
+      "Build data apps (dashboards) with guided AI exploration.",
+      "Set up dbt governance with centralized metrics."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous cherchez surtout un outil BI classique (looker/tableau/power-bi conviendrait mieux).",
+        "Votre budget est très serré et le plan gratuit trop limité.",
+        "Vous avez peu de cas d'usage « self-serve conversationnel »."
+      ],
+      "keepIf": [
+        "Votre équipe data est mixte (data scientists + business users non-techniques).",
+        "Vous voulez donner accès self-serve aux données aux métiers sans SQL/Python.",
+        "Vous êtes déjà dans l'écosystème dbt et avez besoin d'une couche analytics IA."
+      ],
+      "threshold": "Hex brille pour les équipes data-forward qui veulent combiner analyse custom + self-serve IA ; l'écosystème dbt et la conversationalité distinguent Hex des BI classiques."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You're looking for a classic BI tool (Looker/Tableau/Power-BI fits better).",
+        "Your budget is very tight and the free plan too limited.",
+        "You have few conversational self-serve use cases."
+      ],
+      "keepIf": [
+        "Your data team is mixed (data scientists + non-technical business users).",
+        "You want to give self-serve data access to business teams without SQL/Python.",
+        "You're already in the dbt ecosystem and need an AI analytics layer."
+      ],
+      "threshold": "Hex shines for data-forward teams wanting to combine custom analysis + AI self-serve; dbt integration and conversationality set Hex apart from classic BI."
+    },
+    "website_url": "https://hex.tech"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Per-editor costs scale quickly with team size.",
+        "Less mature than Tableau/Looker/Power-BI for classic BI.",
+        "Learning curve to fully exploit AI (prompts, context).",
+        "Community plan is limited (3 authors max, small compute)."
+      ],
+      "pros": [
+        "Balance SQL/Python (data teams) and conversational (business users).",
+        "Native dbt integration and semantic models.",
+        "Agentic notebooks more flexible than classic BI dashboards.",
+        "Interactive conversations and guided exploration.",
+        "Generous Community plan for small teams."
+      ],
+      "relevant_for": [
+        "Data analysts",
+        "Data scientists",
+        "Analytics engineers",
+        "Product managers (data-heavy)"
+      ],
+      "use_cases": [
+        "Create ad-hoc SQL/Python analysis and share with business teams.",
+        "Let product managers ask questions about data conversationally.",
+        "Build data apps (dashboards) with guided AI exploration.",
+        "Set up dbt governance with centralized metrics."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You're looking for a classic BI tool (Looker/Tableau/Power-BI fits better).",
+          "Your budget is very tight and the free plan too limited.",
+          "You have few conversational self-serve use cases."
+        ],
+        "keepIf": [
+          "Your data team is mixed (data scientists + non-technical business users).",
+          "You want to give self-serve data access to business teams without SQL/Python.",
+          "You're already in the dbt ecosystem and need an AI analytics layer."
+        ],
+        "threshold": "Hex shines for data-forward teams wanting to combine custom analysis + AI self-serve; dbt integration and conversationality set Hex apart from classic BI."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Plan Community gratuit : jusqu'à 3 auteurs de projets, small compute, fonctionnalités de base, sans AI agents premium.",
+        "exists": true
+      },
+      "key_features": [
+        "Agentic Notebooks : SQL/Python + assistance IA pour construire requêtes et charts",
+        "Conversational self-serve : utilisateurs posent des questions en langage naturel via Hex/Slack/MCP",
+        "Threads : conversations interactives avec suivi des questions et filtrage temps réel",
+        "Context Studio : gouvernance et modèles sémantiques pour assurer la fiabilité des réponses IA",
+        "Data Apps : dashboards interactifs avec agents IA intégrés",
+        "Intégration dbt native pour métriques unifiées"
+      ],
+      "plans": [
+        {
+          "name": "Community",
+          "price": "Gratuit (limité à 3 auteurs de projets)"
+        },
+        {
+          "name": "Professional",
+          "price": "36 $ par éditeur/mois (accès notebook agent, crédits standard)"
+        },
+        {
+          "name": "Team",
+          "price": "75 $ par éditeur/mois (threads agent, semantic model agent, apps illimitées)"
+        },
+        {
+          "name": "Enterprise",
+          "price": "Tarification custom (audit logs, OIDC SSO, support dédié)"
+        }
+      ],
+      "pricing_model": "Freemium : Community gratuit (limité) ; Professional à partir de 36 $/mois par éditeur ; Team 75 $/mois par éditeur ; Enterprise custom.",
+      "what": "Plateforme d'analytics alimentée par l'IA pour les data teams, combinant notebooks SQL/Python, chatbot conversationnel en langage naturel, et dashboards interactifs, avec intégration dbt et semantic models.",
+      "what_en": "AI-powered analytics platform for data teams, combining SQL/Python notebooks, conversational natural language chat, and interactive dashboards, with dbt integration and semantic models."
+    },
+    "fr": {
+      "cons": [
+        "Coûts par éditeur montent rapidement avec les équipes.",
+        "Moins mature que Tableau/Looker/Power-BI pour le BI classique.",
+        "Courbe d'apprentissage pour exploiter pleinement l'IA (prompts, context).",
+        "Plan Community limité (3 auteurs max, small compute)."
+      ],
+      "pros": [
+        "Équilibre SQL/Python (data teams) et conversationnel (business users).",
+        "Intégration dbt native et semantic models.",
+        "Agentic notebooks plus flexibles que les dashboards BI classiques.",
+        "Conversations interactives et exploration guidée.",
+        "Plan Community généreux pour small teams."
+      ],
+      "relevant_for": [
+        "Data analysts",
+        "Data scientists",
+        "Analytics engineers",
+        "Product managers (data-heavy teams)"
+      ],
+      "use_cases": [
+        "Créer des analyses ad-hoc SQL/Python et les partager avec les métiers.",
+        "Permettre aux product managers de poser des questions sur les données en conversationnel.",
+        "Construire des data apps (dashboards) avec exploration IA guidée.",
+        "Mettre en place une gouvernance dbt avec métriques centralisées."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous cherchez surtout un outil BI classique (looker/tableau/power-bi conviendrait mieux).",
+          "Votre budget est très serré et le plan gratuit trop limité.",
+          "Vous avez peu de cas d'usage « self-serve conversationnel »."
+        ],
+        "keepIf": [
+          "Votre équipe data est mixte (data scientists + business users non-techniques).",
+          "Vous voulez donner accès self-serve aux données aux métiers sans SQL/Python.",
+          "Vous êtes déjà dans l'écosystème dbt et avez besoin d'une couche analytics IA."
+        ],
+        "threshold": "Hex brille pour les équipes data-forward qui veulent combiner analyse custom + self-serve IA ; l'écosystème dbt et la conversationalité distinguent Hex des BI classiques."
+      }
+    },
+    "slug": "hex",
+    "sources": [
+      {
+        "label": "Hex (site officiel)",
+        "url": "https://hex.tech"
+      },
+      {
+        "label": "Hex Pricing",
+        "url": "https://hex.tech/pricing/"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-analytics-critical-001",
+    "batch_position": 20,
+    "blockers": [],
+    "catalog_hash": "sha256:4702c0caa01d3249594c2682199ae709f6c3f69774d6c16bd9580cf7b0f01ebc",
+    "category": "analytics",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:d41b0020a3c47d49b076593aa1c9ea1f5053d0fcb03de200bbac83bfdb85ebb1",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Hex",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:9b9b128ac3aef9eee0f74fa3f6553d4c2c631be3fdb2864057af241a51485df9",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "hex",
+    "source_url": "https://hex.tech/pricing/",
+    "source_verified_on": "2026-03-13",
+    "status": "QUEUED"
+  }
+}

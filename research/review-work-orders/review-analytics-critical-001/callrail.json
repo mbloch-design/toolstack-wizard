@@ -1,0 +1,268 @@
+{
+  "batch": "review-analytics-critical-001",
+  "current": {
+    "affiliate_url": "https://partners.callrail.com/80aos1quxy64",
+    "alternatives": [
+      "aircall-inc",
+      "krispcall"
+    ],
+    "category": "analytics",
+    "cons": [
+      "Frais d'utilisation substantiels en plus de l'abonnement.",
+      "Les paliers supérieurs sont nécessaires pour l'IA.",
+      "Coûts totaux souvent 1,5x à 3x le tarif affiché."
+    ],
+    "cons_en": [
+      "Usage fees add up significantly on top of subscription.",
+      "AI features require higher-tier plans.",
+      "Total costs often run 1.5x to 3x the advertised price."
+    ],
+    "host_app": null,
+    "id": "callrail",
+    "long_description": "CallRail sert à comprendre quelles campagnes, pages ou mots-clés déclenchent des appels. C'est pertinent pour les activités où le téléphone est un vrai canal de conversion. Pour ToolTrim, ce n'est pas un outil de communication généraliste : c'est un outil d'attribution à activer quand les appels pèsent réellement dans le chiffre d'affaires.",
+    "long_description_en": "CallRail helps attribute inbound calls to campaigns, landing pages and keywords. It is relevant when phone calls are a measurable acquisition channel.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://tooltrim.com/og-screenshots/callrail.jpg"
+    },
+    "name": "CallRail",
+    "pricing": {
+      "free": "Pas de plan gratuit durable identifié.",
+      "paid": "Plan Call Tracking public à partir d’environ 45 $/mois, options et volumes en supplément."
+    },
+    "pricing_en": {
+      "free": "No durable free plan identified.",
+      "paid": "Call tracking plan starts around $45/month, with add-ons and usage depending on volume."
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Les numéros, minutes et options d’attribution peuvent ajouter du coût."
+      ],
+      "compare_plan_kind": "paid",
+      "compare_plan_name": "Call Tracking",
+      "compare_price_monthly_eur": 45,
+      "location_sensitive": true,
+      "official_source_url": "https://www.callrail.com/pricing/",
+      "price_reliability": "public_pricing_or_public_entry_plan",
+      "source_domain": "callrail.com",
+      "usage_sensitive": true,
+      "verification_status": "verified_public_pricing_page",
+      "verified_on": "2026-05-03"
+    },
+    "pros": [
+      "Transcription et analyse IA robustes des appels.",
+      "Attribution multi-canal intégrée.",
+      "Intégrations CRM natives (HubSpot, Salesforce).",
+      "Tableaux de bord de tendances conversationnelles."
+    ],
+    "pros_en": [
+      "Robust AI transcription and analysis of calls.",
+      "Built-in omnichannel attribution.",
+      "Native CRM integrations (HubSpot, Salesforce).",
+      "Conversation trend dashboards."
+    ],
+    "short_description": "Call tracking, attribution marketing et analyse des appels entrants.",
+    "short_description_en": "Call tracking, marketing attribution and inbound call analytics.",
+    "slug": "callrail",
+    "source_url": "https://www.callrail.com/pricing/",
+    "source_verified_on": "2026-05-03",
+    "use_cases": [
+      "Suivre et optimiser les appels entrants pour une agence marketing.",
+      "Analyser les tendances des conversations clients.",
+      "Attribuer les leads issus d'appels téléphoniques."
+    ],
+    "use_cases_en": [
+      "Track and optimize inbound calls for a marketing agency.",
+      "Analyze customer conversation trends.",
+      "Attribute phone-sourced leads to campaigns."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous n'avez pas besoin de suivi d'appels.",
+        "Votre budget est très serré (frais d'utilisation substantiels).",
+        "Vous préférez un outil plus simple."
+      ],
+      "keepIf": [
+        "Vous avez besoin de suivre les appels entrants pour attrribuer les leads.",
+        "Vous faites du marketing entrant ou du service client multi-canal.",
+        "Vous voulez transcription et analyse IA des conversations."
+      ],
+      "threshold": "CallRail convient aux agences et PME qui financent la prospection par appels et veulent en mesurer l'efficacité ; pour la plupart des autres, un outil d'analytics web suffit."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You don't rely on phone calls for lead generation.",
+        "Your budget is very tight (usage fees add up).",
+        "You prefer a simpler tool."
+      ],
+      "keepIf": [
+        "You need to track inbound calls and attribute leads.",
+        "You do inbound marketing or omnichannel customer service.",
+        "You want AI-driven transcription and conversation analysis."
+      ],
+      "threshold": "CallRail suits agencies and SMBs that fund prospecting by phone and want to measure ROI; for most others, web analytics suffice."
+    },
+    "website_url": "https://www.callrail.com"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Usage fees add up significantly on top of subscription.",
+        "AI features require higher-tier plans.",
+        "Total costs often run 1.5x to 3x the advertised price."
+      ],
+      "pros": [
+        "Robust AI transcription and analysis of calls.",
+        "Built-in omnichannel attribution.",
+        "Native CRM integrations (HubSpot, Salesforce).",
+        "Conversation trend dashboards."
+      ],
+      "use_cases": [
+        "Track and optimize inbound calls for a marketing agency.",
+        "Analyze customer conversation trends.",
+        "Attribute phone-sourced leads to campaigns."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You don't rely on phone calls for lead generation.",
+          "Your budget is very tight (usage fees add up).",
+          "You prefer a simpler tool."
+        ],
+        "keepIf": [
+          "You need to track inbound calls and attribute leads.",
+          "You do inbound marketing or omnichannel customer service.",
+          "You want AI-driven transcription and conversation analysis."
+        ],
+        "threshold": "CallRail suits agencies and SMBs that fund prospecting by phone and want to measure ROI; for most others, web analytics suffice."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Essai gratuit 14 jours ; pas de version gratuite permanente.",
+        "exists": false
+      },
+      "key_features": [
+        "Enregistrement et transcription d'appels",
+        "Attribution multi-canal (appels, textes, formulaires)",
+        "Analyse des conversations par IA",
+        "Intégrations HubSpot, Salesforce, Google Ads",
+        "Tableaux de bord de tendances"
+      ],
+      "plans": [
+        {
+          "name": "Lead Tracking",
+          "price": "$50/mois"
+        },
+        {
+          "name": "Lead Tracking Complete",
+          "price": "$95/mois"
+        },
+        {
+          "name": "Lead Conversion",
+          "price": "$150/mois"
+        },
+        {
+          "name": "Lead Conversion Complete",
+          "price": "$195/mois"
+        }
+      ],
+      "pricing_model": "Abonnement mensuel, quatre paliers de fonctionnalités. Frais d'utilisation supplémentaires (minutes, numéros, textes).",
+      "what": "Plateforme de suivi des appels et des textes conçue pour les petites entreprises et agences. Enregistre, transcrit et analyse les conversations téléphoniques avec intelligence artificielle pour la conversion.",
+      "what_en": "Call and text tracking platform designed for small businesses and agencies. Records, transcribes, and analyzes phone conversations with AI-powered insights for lead conversion."
+    },
+    "fr": {
+      "cons": [
+        "Frais d'utilisation substantiels en plus de l'abonnement.",
+        "Les paliers supérieurs sont nécessaires pour l'IA.",
+        "Coûts totaux souvent 1,5x à 3x le tarif affiché."
+      ],
+      "pros": [
+        "Transcription et analyse IA robustes des appels.",
+        "Attribution multi-canal intégrée.",
+        "Intégrations CRM natives (HubSpot, Salesforce).",
+        "Tableaux de bord de tendances conversationnelles."
+      ],
+      "relevant_for": [
+        "Agences marketing",
+        "PME en prospection",
+        "Centres de contacts"
+      ],
+      "use_cases": [
+        "Suivre et optimiser les appels entrants pour une agence marketing.",
+        "Analyser les tendances des conversations clients.",
+        "Attribuer les leads issus d'appels téléphoniques."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous n'avez pas besoin de suivi d'appels.",
+          "Votre budget est très serré (frais d'utilisation substantiels).",
+          "Vous préférez un outil plus simple."
+        ],
+        "keepIf": [
+          "Vous avez besoin de suivre les appels entrants pour attrribuer les leads.",
+          "Vous faites du marketing entrant ou du service client multi-canal.",
+          "Vous voulez transcription et analyse IA des conversations."
+        ],
+        "threshold": "CallRail convient aux agences et PME qui financent la prospection par appels et veulent en mesurer l'efficacité ; pour la plupart des autres, un outil d'analytics web suffit."
+      }
+    },
+    "slug": "callrail",
+    "sources": [
+      {
+        "label": "CallRail — Pricing (site officiel)",
+        "url": "https://www.callrail.com/pricing"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-analytics-critical-001",
+    "batch_position": 17,
+    "blockers": [],
+    "catalog_hash": "sha256:47a97e4a16bd997a1166efd3355300a74415df2b8c5c05405a67dbec5a4fe1f2",
+    "category": "analytics",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:6abd6e70bde83da461ad59fb168a8a508c7038a7b186aed2a43e5507446e0965",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "CallRail",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:2cb00bdc5134712de0a27175f39000d174d640c5e85299a075b8016d64db0f47",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "callrail",
+    "source_url": "https://www.callrail.com/pricing/",
+    "source_verified_on": "2026-05-03",
+    "status": "QUEUED"
+  }
+}

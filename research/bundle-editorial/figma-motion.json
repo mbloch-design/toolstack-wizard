@@ -1,0 +1,50 @@
+{
+  "slug": "figma-motion",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-08-30",
+  "sources": [
+    { "label": "Figma Motion (site officiel)", "url": "https://www.figma.com/motion/" },
+    { "label": "Présentation Figma Motion (blog officiel)", "url": "https://www.figma.com/blog/introducing-figma-motion/" },
+    { "label": "Tarifs Figma (site officiel)", "url": "https://www.figma.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Mode d'animation en bêta ouverte intégré au canvas Figma. Il ajoute une timeline, des keyframes, des systèmes de mouvement et des exports pour le design et le passage en développement.",
+    "what_en": "Open-beta animation mode built into the Figma canvas. It adds a timeline, keyframes, motion systems, and exports for design and development handoff.",
+    "pricing_model": "Bêta intégrée à Figma. Accès limité sur Starter et accès étendu avec une licence Full; les fonctions de système et l'agent nécessitent un forfait payant.",
+    "free_tier": { "exists": true, "detail": "Starter permet d'essayer Motion avec des exports limités." },
+    "plans": [
+      { "name": "Starter", "price": "Gratuit, accès et exports limités" },
+      { "name": "Professional Full seat", "price": "16 $/mois" },
+      { "name": "Organization Full seat", "price": "55 $/mois, facturé annuellement" },
+      { "name": "Enterprise Full seat", "price": "90 $/mois, facturé annuellement" }
+    ],
+    "key_features": [
+      "Timeline complète, keyframes personnalisées et auto-keyframing",
+      "Styles prédéfinis, courbes de Bézier et ressorts",
+      "Composants animés, variables et systèmes de mouvement",
+      "Inspection et copie du code via Dev Mode et MCP",
+      "Exports MP4, GIF, WebM et SVG"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": ["Vos animations partent déjà de composants Figma.", "Designers et développeurs doivent commenter et inspecter le mouvement ensemble.", "Vous voulez réutiliser des règles de mouvement dans un design system."],
+      "avoidIf": ["Vous avez besoin d'une suite de compositing ou de montage avancée.", "Vous ne travaillez pas dans Figma.", "Un prototype avec transitions simples suffit à communiquer l'intention."],
+      "threshold": "Ajoutez Motion à Figma lorsque le mouvement doit devenir une propriété réutilisable et inspectable du design system."
+    },
+    "pros": ["Anime directement les composants et variables existants.", "Associe contrôle manuel, styles rapides et assistance par agent.", "Conserve le contexte pour le passage en développement.", "Exporte des formats de diffusion et du code exploitable."],
+    "cons": ["Reste une bêta dont certaines fonctions sont annoncées mais pas encore disponibles.", "Les fonctions les plus structurantes dépendent d'une licence Full payante.", "Ne remplace pas un outil spécialisé pour les productions complexes."],
+    "use_cases": ["Animer les états d'une interface.", "Créer un système de mouvement réutilisable.", "Transmettre une animation inspectable aux développeurs."],
+    "relevant_for": ["Motion designers", "Product designers", "Design systems"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": ["Your animations already start from Figma components.", "Designers and developers need to review and inspect motion together.", "You want reusable motion rules inside a design system."],
+      "avoidIf": ["You need an advanced compositing or editing suite.", "You do not work in Figma.", "Simple prototype transitions already communicate the intent."],
+      "threshold": "Add Motion to Figma when motion must become a reusable, inspectable property of the design system."
+    },
+    "pros": ["Animates existing components and variables directly.", "Combines manual control, presets, and agent assistance.", "Preserves context for developer handoff.", "Exports delivery formats and usable code."],
+    "cons": ["It remains a beta with some announced features still unavailable.", "The most structured capabilities depend on a paid Full seat.", "It does not replace a specialist tool for complex productions."],
+    "use_cases": ["Animate interface states.", "Build a reusable motion system.", "Hand an inspectable animation to developers."]
+  }
+}

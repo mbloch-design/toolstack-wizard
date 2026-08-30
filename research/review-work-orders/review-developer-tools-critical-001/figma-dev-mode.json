@@ -1,0 +1,235 @@
+{
+  "batch": "review-developer-tools-critical-001",
+  "current": {
+    "affiliate_url": "https://www.figma.com/dev-mode/",
+    "alternatives": [
+      "zeplin"
+    ],
+    "category": "developer-tools",
+    "cons": [],
+    "cons_en": [],
+    "host_app": "figma",
+    "id": "figma-dev-mode",
+    "long_description": "Dev Mode organise le passage du design au développement : mesures, propriétés, exports, extraits de code, statut des maquettes et intégrations. L'inspection de base reste disponible aux viewers ; les fonctions avancées nécessitent un siège Dev ou Full.",
+    "long_description_en": "Dev Mode structures design-to-development handoff through measurements, properties, exports, code snippets, design status, and integrations. Basic inspection remains available to viewers; advanced features require a Dev or Full seat.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": null
+    },
+    "name": "Figma Dev Mode",
+    "pricing": {
+      "free": "Inspection de base pour les viewers",
+      "paid": "Professional Dev 12 $/mois ou siège Full 16 $/mois"
+    },
+    "pricing_en": {
+      "free": "Basic inspection for viewers",
+      "paid": "Professional Dev $12/month or Full $16/month"
+    },
+    "pricing_v5": null,
+    "pros": [],
+    "pros_en": [],
+    "short_description": "Handoff développeur avec inspection, variables, assets, code et contexte du design system.",
+    "short_description_en": "Developer handoff with inspection, variables, assets, code, and design-system context.",
+    "slug": "figma-dev-mode",
+    "source_url": "https://www.figma.com/dev-mode/",
+    "source_verified_on": null,
+    "use_cases": [],
+    "use_cases_en": [],
+    "verdict": null,
+    "verdict_en": null,
+    "website_url": "https://www.figma.com/dev-mode/"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim - Mike",
+    "en": {
+      "cons": [
+        "Assumes an organized Figma design workflow.",
+        "Full capabilities require a paid Dev or Full seat.",
+        "Its value depends on upstream component and annotation quality."
+      ],
+      "pros": [
+        "Centralizes specifications in the source file.",
+        "Connects design components to real code components.",
+        "Makes change and delivery status easier to track.",
+        "Integrates with existing coding and project tools."
+      ],
+      "use_cases": [
+        "Inspect an interface and retrieve its properties.",
+        "Compare a development-ready version with an update.",
+        "Connect a Figma component to its production implementation."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You do not use Figma Design.",
+          "Occasional free inspection already covers your needs.",
+          "Your team maintains no shared components or approval workflow."
+        ],
+        "keepIf": [
+          "Developers regularly ship interfaces designed in Figma.",
+          "Your design system must connect visual and production components.",
+          "Design-to-development handoff lacks context or tracking."
+        ],
+        "threshold": "Add Dev Mode to Figma when inspection, statuses, and code links reduce handoff cycles."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Les viewers gratuits disposent d'une inspection de base, mais pas de l'espace Dev Mode complet.",
+        "exists": true
+      },
+      "key_features": [
+        "Inspection avancée, propriétés, mesures et extraits de code",
+        "Statuts prêts pour le développement, notifications et comparaison des changements",
+        "Component playground, annotations et ressources développeur",
+        "Code Connect, MCP Server et extension Figma pour VS Code",
+        "Liens vers GitHub, Jira, Storybook et documentation"
+      ],
+      "plans": [
+        {
+          "name": "Professional Dev seat",
+          "price": "12 $/mois"
+        },
+        {
+          "name": "Professional Full seat",
+          "price": "16 $/mois"
+        },
+        {
+          "name": "Organization Dev seat",
+          "price": "25 $/mois, facturé annuellement"
+        },
+        {
+          "name": "Enterprise Dev seat",
+          "price": "35 $/mois, facturé annuellement"
+        }
+      ],
+      "pricing_model": "Fonction incluse avec les licences Dev et Full des forfaits Figma payants, sans achat autonome.",
+      "what": "Espace développeur intégré aux fichiers Figma Design pour inspecter les interfaces, relier design et code et organiser le passage en développement. Il nécessite Figma et une licence Dev ou Full sur un forfait payant.",
+      "what_en": "Developer workspace inside Figma Design files for inspecting interfaces, connecting design and code, and managing handoff. It requires Figma and a Dev or Full seat on a paid plan."
+    },
+    "fr": {
+      "cons": [
+        "Suppose un flux de conception déjà organisé dans Figma.",
+        "Les fonctions complètes demandent une licence payante dédiée ou Full.",
+        "Le bénéfice dépend de la qualité des composants et annotations en amont."
+      ],
+      "pros": [
+        "Centralise les spécifications dans le fichier source.",
+        "Relie les composants de design aux composants réels.",
+        "Facilite le suivi des changements et du statut de livraison.",
+        "S'intègre aux outils de code et de gestion déjà utilisés."
+      ],
+      "relevant_for": [
+        "Développeurs front-end",
+        "Design systems",
+        "Équipes produit"
+      ],
+      "use_cases": [
+        "Inspecter une interface et récupérer ses propriétés.",
+        "Comparer une version prête à développer à une mise à jour.",
+        "Relier un composant Figma à son implémentation de production."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous n'utilisez pas Figma Design.",
+          "Une inspection gratuite et ponctuelle couvre déjà vos besoins.",
+          "Votre équipe ne maintient ni composants ni flux de validation partagé."
+        ],
+        "keepIf": [
+          "Vos développeurs livrent régulièrement des interfaces conçues dans Figma.",
+          "Votre design system doit relier composants visuels et composants de production.",
+          "Le passage design-développement manque de contexte ou de suivi."
+        ],
+        "threshold": "Ajoutez Dev Mode à Figma lorsque l'inspection, les statuts et les liens vers le code réduisent les allers-retours de livraison."
+      }
+    },
+    "slug": "figma-dev-mode",
+    "sources": [
+      {
+        "label": "Dev Mode (site officiel)",
+        "url": "https://www.figma.com/dev-mode/"
+      },
+      {
+        "label": "Guide Dev Mode (centre d'aide officiel)",
+        "url": "https://help.figma.com/hc/en-us/articles/15023124644247-Guide-to-Dev-Mode"
+      },
+      {
+        "label": "Tarifs Figma (site officiel)",
+        "url": "https://www.figma.com/pricing/"
+      }
+    ],
+    "verified_on": "2026-08-30"
+  },
+  "media_evidence": {
+    "discovery": {
+      "official_media_found": true,
+      "official_pages_checked": [
+        "https://www.figma.com/dev-mode/"
+      ]
+    },
+    "items": [
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://www.figma.com/dev-mode/",
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/c6a0a58afc2722851abd21d93a1840360c851ad9-2464x1378.png?auto=format&fit=max&h=1378&q=75&w=2464"
+      },
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://www.figma.com/dev-mode/",
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/9cdc0cedb39a7c60e5b814ea857175cfd0fd0616-2720x1360.png?auto=format&fit=max&h=1360&q=75&w=2720"
+      }
+    ],
+    "mode": "sourced",
+    "slug": "figma-dev-mode",
+    "verified_on": "2026-08-30"
+  },
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-developer-tools-critical-001",
+    "batch_position": 1,
+    "blockers": [],
+    "catalog_hash": "sha256:fc03eec7a104018467ff28fe7210dd228fc9ee2ab0231644c82db17ea9869749",
+    "category": "developer-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:9c9125a3c3ffc7bd0d79859a3aaeacef291340297eeeddcc463861a49cef37f4",
+    "invalidated_from": null,
+    "media_errors": [],
+    "media_evidence": "VALID",
+    "media_evidence_hash": "sha256:f2fbf359ea6bb49016d8700c8c42e3a0f97bd760d6501749f461ed5393589949",
+    "name": "Figma Dev Mode",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "shallow_editorial",
+      "missing_media",
+      "undated_source"
+    ],
+    "priority_score": 280,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:3551d4d47386860f77233619d752dff6d58e160f992fa7b57bc80b1a55f684ba",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "figma-dev-mode",
+    "source_url": "https://www.figma.com/dev-mode/",
+    "source_verified_on": null,
+    "status": "MEDIA_READY"
+  }
+}

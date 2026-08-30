@@ -1,0 +1,32 @@
+{
+  "slug": "seo-mode",
+  "verified_on": "2026-08-30",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://seomode.co/",
+      "https://seomode.co/tools"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://seomode.co/drawings/mehrab-lifting.webp",
+      "source_page_url": "https://seomode.co/",
+      "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://r2.seomode.co/directory-listings/h5cG9xNcA8GMzMcxiI0Jl6Qhd6eT0k37097l3Gux.webp",
+      "source_page_url": "https://seomode.co/",
+      "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://seomode.co/profiles/mehrab.png",
+      "source_page_url": "https://seomode.co/",
+      "official": true
+    }
+  ]
+}

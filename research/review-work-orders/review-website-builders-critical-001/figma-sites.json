@@ -1,0 +1,241 @@
+{
+  "batch": "review-website-builders-critical-001",
+  "current": {
+    "affiliate_url": "https://www.figma.com/sites/",
+    "alternatives": [
+      "framer",
+      "webflow"
+    ],
+    "category": "website-builders",
+    "cons": [],
+    "cons_en": [],
+    "host_app": "figma",
+    "id": "figma-sites",
+    "long_description": "Figma Sites transforme une composition en site responsive publiable, avec breakpoints, composants, interactions et accès aux bibliothèques du design system. Le produit est encore présenté en bêta par Figma.",
+    "long_description_en": "Figma Sites turns a composition into a publishable responsive website with breakpoints, components, interactions, and design-system libraries. Figma still presents the product as beta.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://cdn.sanity.io/images/599r6htc/regionalized/4b9ade839f38291c91b76608d22e7c7a9ad525fd-542x305.png"
+    },
+    "name": "Figma Sites",
+    "pricing": {
+      "free": "Accès limité selon le plan",
+      "paid": "Inclus avec un siège Full éligible"
+    },
+    "pricing_en": {
+      "free": "Limited access depending on plan",
+      "paid": "Included with an eligible Full seat"
+    },
+    "pricing_v5": null,
+    "pros": [],
+    "pros_en": [],
+    "short_description": "Création et publication de sites responsives sans quitter l'environnement Figma.",
+    "short_description_en": "Build and publish responsive websites without leaving the Figma environment.",
+    "slug": "figma-sites",
+    "source_url": "https://www.figma.com/sites/",
+    "source_verified_on": null,
+    "use_cases": [],
+    "use_cases_en": [],
+    "verdict": null,
+    "verdict_en": null,
+    "website_url": "https://www.figma.com/sites/"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim - Mike",
+    "en": {
+      "cons": [
+        "It remains a beta whose limits and terms can change.",
+        "Publishing requires a paid plan and Full seat.",
+        "Technical control remains below a custom-built application."
+      ],
+      "pros": [
+        "Preserves details from existing frames, components, and styles.",
+        "Combines responsive design, interactions, CMS, and publishing.",
+        "Lets contributors update content without breaking layout.",
+        "Supports visual, AI-assisted, and code-edited workflows."
+      ],
+      "use_cases": [
+        "Publish a portfolio designed in Figma.",
+        "Launch a campaign landing page.",
+        "Maintain a simple editorial site with the built-in CMS."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You need full control over framework, backend, or hosting.",
+          "You do not centralize components in Figma.",
+          "Beta status conflicts with production requirements."
+        ],
+        "keepIf": [
+          "Your site must closely follow an existing Figma design system.",
+          "Designers and content editors need one shared environment.",
+          "You launch marketing sites without a separate development pipeline."
+        ],
+        "threshold": "Add Figma Sites when continuity across design, content, and publishing matters more than a custom web stack."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Starter permet d'explorer le produit mais nécessite une mise à niveau pour publier un site.",
+        "exists": true
+      },
+      "key_features": [
+        "Conversion de frames Figma Design en mises en page responsive",
+        "Blocs préconstruits, Auto Layout et interactions visuelles",
+        "CMS pour éditer et publier du contenu sans modifier le canvas",
+        "Interactions générées par prompt et édition directe du code",
+        "Réutilisation des bibliothèques, styles, composants et modèles Figma"
+      ],
+      "plans": [
+        {
+          "name": "Starter",
+          "price": "Gratuit, création limitée sans publication"
+        },
+        {
+          "name": "Professional Full seat",
+          "price": "16 $/mois, Sites inclus"
+        },
+        {
+          "name": "Organization Full seat",
+          "price": "55 $/mois, facturé annuellement"
+        },
+        {
+          "name": "Enterprise Full seat",
+          "price": "90 $/mois, facturé annuellement"
+        }
+      ],
+      "pricing_model": "Bêta accessible dans Figma. La publication est disponible sur les forfaits payants avec une licence Full; Starter ne peut pas publier.",
+      "what": "Constructeur de sites responsive en bêta ouverte intégré à Figma. Il transforme des frames Figma Design en pages publiées avec composants, interactions, CMS, code et assistance par IA.",
+      "what_en": "Open-beta responsive website builder built into Figma. It turns Figma Design frames into published pages with components, interactions, CMS, code, and AI assistance."
+    },
+    "fr": {
+      "cons": [
+        "Reste une bêta dont les limites et conditions peuvent évoluer.",
+        "La publication nécessite un forfait payant et une licence Full.",
+        "Le contrôle technique reste inférieur à une application développée sur mesure."
+      ],
+      "pros": [
+        "Préserve les détails des frames, composants et styles existants.",
+        "Réunit design responsive, interactions, CMS et publication.",
+        "Permet aux contributeurs de modifier le contenu sans casser la mise en page.",
+        "Offre une voie visuelle, assistée par IA ou éditée en code."
+      ],
+      "relevant_for": [
+        "Web designers",
+        "Équipes marketing",
+        "Studios de marque"
+      ],
+      "use_cases": [
+        "Publier un portfolio conçu dans Figma.",
+        "Lancer une landing page de campagne.",
+        "Maintenir un site éditorial simple avec le CMS intégré."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous avez besoin d'un framework, d'un backend ou d'un hébergement entièrement contrôlés.",
+          "Vous ne centralisez pas vos composants dans Figma.",
+          "Le statut bêta est incompatible avec vos exigences de production."
+        ],
+        "keepIf": [
+          "Votre site doit reprendre fidèlement un design et un système Figma existants.",
+          "Designers et éditeurs de contenu doivent travailler dans le même environnement.",
+          "Vous lancez des sites marketing sans chaîne de développement séparée."
+        ],
+        "threshold": "Ajoutez Figma Sites si la continuité entre design, contenu et publication vaut davantage qu'une pile web personnalisée."
+      }
+    },
+    "slug": "figma-sites",
+    "sources": [
+      {
+        "label": "Figma Sites (site officiel)",
+        "url": "https://www.figma.com/sites/"
+      },
+      {
+        "label": "Publication Figma Sites (centre d'aide officiel)",
+        "url": "https://help.figma.com/hc/en-us/articles/35895970131479-Figma-Sites-collection-Publish-your-Figma-site"
+      },
+      {
+        "label": "Tarifs Figma (site officiel)",
+        "url": "https://www.figma.com/pricing/"
+      }
+    ],
+    "verified_on": "2026-08-30"
+  },
+  "media_evidence": {
+    "discovery": {
+      "official_media_found": true,
+      "official_pages_checked": [
+        "https://www.figma.com/sites/"
+      ]
+    },
+    "items": [
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://www.figma.com/sites/",
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/335a56e4791663bdcf7bcab4969a207f8fe22c15-1260x1260.png?auto=format&fit=max&h=630&q=75&w=630"
+      },
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://www.figma.com/sites/",
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/d88fb912c65fa24938c25b067c88b22ea6917041-1608x1072.png?auto=format&fit=max&h=520&q=75&w=780"
+      },
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://www.figma.com/sites/",
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/812f934f093212b5f2a939227b970a6bf3406929-1080x864.png?auto=format&fit=max&h=864&q=75&w=1080"
+      }
+    ],
+    "mode": "sourced",
+    "slug": "figma-sites",
+    "verified_on": "2026-08-30"
+  },
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-website-builders-critical-001",
+    "batch_position": 1,
+    "blockers": [],
+    "catalog_hash": "sha256:041cb7e47966b2808fbaf34da81036a5df434d9074b031209c6487396ed9643e",
+    "category": "website-builders",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:ac32395766c576ee41103df41af631443912ce4bced7eb79c7e97eddf2a8e573",
+    "invalidated_from": null,
+    "media_errors": [],
+    "media_evidence": "VALID",
+    "media_evidence_hash": "sha256:1782e05cee784a5f58de618354678299aa5f44c7bbc1766af95c0f337de4c591",
+    "name": "Figma Sites",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "shallow_editorial",
+      "undated_source"
+    ],
+    "priority_score": 255,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:36c6dd227be300af4cb663a4a42c89c85d3c42fa5fcc6d91d6b2fb515ee6511d",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "figma-sites",
+    "source_url": "https://www.figma.com/sites/",
+    "source_verified_on": null,
+    "status": "MEDIA_READY"
+  }
+}

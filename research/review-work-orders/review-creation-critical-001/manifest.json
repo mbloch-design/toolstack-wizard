@@ -1,0 +1,167 @@
+{
+  "batch": "review-creation-critical-001",
+  "quality_version": "catalog-review-v1",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tools": [
+    {
+      "file": "mockup-plugins.json",
+      "required_action": "research_primary_sources_then_write_fact_bundle",
+      "slug": "mockup-plugins",
+      "status": "BLOCKED"
+    },
+    {
+      "file": "presets-lightroom.json",
+      "required_action": "research_primary_sources_then_write_fact_bundle",
+      "slug": "presets-lightroom",
+      "status": "BLOCKED"
+    },
+    {
+      "file": "lightroom-presets.json",
+      "required_action": "resolve_duplicate_without_research",
+      "slug": "lightroom-presets",
+      "status": "DUPLICATE"
+    },
+    {
+      "file": "affiliate-dashboards.json",
+      "required_action": "research_primary_sources_then_write_fact_bundle",
+      "slug": "affiliate-dashboards",
+      "status": "BLOCKED"
+    },
+    {
+      "file": "affiliate-tools.json",
+      "required_action": "research_primary_sources_then_write_fact_bundle",
+      "slug": "affiliate-tools",
+      "status": "BLOCKED"
+    },
+    {
+      "file": "capcut-ai.json",
+      "required_action": "resolve_duplicate_without_research",
+      "slug": "capcut-ai",
+      "status": "DUPLICATE"
+    },
+    {
+      "file": "content-credentials-tools.json",
+      "required_action": "research_primary_sources_then_write_fact_bundle",
+      "slug": "content-credentials-tools",
+      "status": "BLOCKED"
+    },
+    {
+      "file": "emoji-sticker-packs.json",
+      "required_action": "research_primary_sources_then_write_fact_bundle",
+      "slug": "emoji-sticker-packs",
+      "status": "BLOCKED"
+    },
+    {
+      "file": "frame-guides.json",
+      "required_action": "research_primary_sources_then_write_fact_bundle",
+      "slug": "frame-guides",
+      "status": "BLOCKED"
+    },
+    {
+      "file": "gaming-overlays.json",
+      "required_action": "research_primary_sources_then_write_fact_bundle",
+      "slug": "gaming-overlays",
+      "status": "BLOCKED"
+    },
+    {
+      "file": "gsc.json",
+      "required_action": "resolve_duplicate_without_research",
+      "slug": "gsc",
+      "status": "DUPLICATE"
+    },
+    {
+      "file": "media-kit-templates.json",
+      "required_action": "research_primary_sources_then_write_fact_bundle",
+      "slug": "media-kit-templates",
+      "status": "BLOCKED"
+    },
+    {
+      "file": "mobile-gimbal-apps.json",
+      "required_action": "research_primary_sources_then_write_fact_bundle",
+      "slug": "mobile-gimbal-apps",
+      "status": "BLOCKED"
+    },
+    {
+      "file": "music-libraries.json",
+      "required_action": "research_primary_sources_then_write_fact_bundle",
+      "slug": "music-libraries",
+      "status": "BLOCKED"
+    },
+    {
+      "file": "newsletter-referral-tools.json",
+      "required_action": "research_primary_sources_then_write_fact_bundle",
+      "slug": "newsletter-referral-tools",
+      "status": "BLOCKED"
+    },
+    {
+      "file": "recipe-card-templates.json",
+      "required_action": "research_primary_sources_then_write_fact_bundle",
+      "slug": "recipe-card-templates",
+      "status": "BLOCKED"
+    },
+    {
+      "file": "shared-cloud-folders.json",
+      "required_action": "research_primary_sources_then_write_fact_bundle",
+      "slug": "shared-cloud-folders",
+      "status": "BLOCKED"
+    },
+    {
+      "file": "templates-ugc.json",
+      "required_action": "research_primary_sources_then_write_fact_bundle",
+      "slug": "templates-ugc",
+      "status": "BLOCKED"
+    },
+    {
+      "file": "archive-tools.json",
+      "required_action": "research_primary_sources_then_write_fact_bundle",
+      "slug": "archive-tools",
+      "status": "BLOCKED"
+    },
+    {
+      "file": "canva-kits.json",
+      "required_action": "resolve_duplicate_without_research",
+      "slug": "canva-kits",
+      "status": "DUPLICATE"
+    },
+    {
+      "file": "canva-templates.json",
+      "required_action": "research_primary_sources_then_write_fact_bundle",
+      "slug": "canva-templates",
+      "status": "QUEUED"
+    },
+    {
+      "file": "capcut-templates.json",
+      "required_action": "research_primary_sources_then_write_fact_bundle",
+      "slug": "capcut-templates",
+      "status": "QUEUED"
+    },
+    {
+      "file": "chart-tools.json",
+      "required_action": "research_primary_sources_then_write_fact_bundle",
+      "slug": "chart-tools",
+      "status": "QUEUED"
+    },
+    {
+      "file": "comfyui-workflows.json",
+      "required_action": "research_primary_sources_then_write_fact_bundle",
+      "slug": "comfyui-workflows",
+      "status": "QUEUED"
+    },
+    {
+      "file": "caption-tools.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "caption-tools",
+      "status": "MEDIA_READY"
+    }
+  ]
+}

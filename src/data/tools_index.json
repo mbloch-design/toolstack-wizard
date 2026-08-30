@@ -5896,11 +5896,11 @@
     "slug": "caption-tools",
     "name": "Caption Tools",
     "categoryId": "creation",
-    "shortDescription": "Outil ou ressource utilisé dans les stacks créateurs de contenu ToolTrim.",
-    "shortDescriptionEn": "Tool or resource used in ToolTrim creator stacks.",
+    "shortDescription": "Plateforme web de transcription, d'alignement de transcriptions et d'édition de sous-titres pour les contenus audio et vidéo. Elle transforme une transcription automatique ou un texte existant en fichiers de sous-titres synchronisés.",
+    "shortDescriptionEn": "Web platform for transcription, transcript alignment, and caption editing for audio and video content. It turns automatic transcription or an existing script into synchronized caption files.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "Création de compte et éditeur de sous-titres gratuits. Les minutes de transcription automatique et d'alignement sont payantes.",
+      "paid": "Pay-As-You-Go: 1 $/minute, sans achat minimum ; Professional: 400 $ pour 500 minutes, soit 0,80 $/minute ; Enterprise: 3 000 $ pour 6 000 minutes, soit 0,50 $/minute"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://captiontools.com",
@@ -5918,7 +5918,9 @@
       "creator-economy"
     ],
     "relevantFor": [
-      "content-creator"
+      "Prestataires de sous-titrage",
+      "Équipes vidéo et formation",
+      "Médias et créateurs de contenu"
     ],
     "freeAlternative": null,
     "substitutable": true,
@@ -11462,16 +11464,16 @@
     "slug": "figma-make",
     "name": "Figma Make",
     "categoryId": "ai-code",
-    "shortDescription": "Prompt-to-app collaboratif pour transformer une idée ou une maquette Figma en prototype fonctionnel.",
-    "shortDescriptionEn": "Collaborative prompt-to-app tool for turning an idea or Figma design into a functional prototype.",
+    "shortDescription": "Outil Figma piloté par prompt pour transformer une idée ou un design existant en prototype fonctionnel, interface interactive ou application web. Il combine génération, édition du code, publication et contexte de design system.",
+    "shortDescriptionEn": "Prompt-driven Figma tool that turns an idea or an existing design into a functional prototype, interactive interface, or web app. It combines generation, code editing, publishing, and design-system context.",
     "pricing": {
-      "free": "Accès limité avec Starter",
-      "paid": "Inclus avec un siège Full éligible"
+      "free": "Starter permet d'explorer Make, sans bibliothèques d'équipe et avec publication publique liée à Figma Community.",
+      "paid": "Starter: Gratuit, accès limité et 500 crédits d'IA/mois au maximum ; Professional Full seat: 16 $/mois, 3 000 crédits d'IA/mois ; Organization Full seat: 55 $/mois, facturé annuellement, 3 500 crédits d'IA/mois ; Enterprise Full seat: 90 $/mois, facturé annuellement, 4 250 crédits d'IA/mois"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://www.figma.com/make/",
     "websiteUrl": "https://www.figma.com/make/",
-    "ogImageUrl": "https://cdn.sanity.io/images/599r6htc/regionalized/7e39b983c6ad865e0a7a5243d914020e69a23f70-542x305.png",
+    "ogImageUrl": "https://cdn.sanity.io/images/599r6htc/regionalized/a1f0928acf4128e33ad6f4dd573bdaf3a3e2c893-3840x2160.png?auto=format&fit=max&h=918&q=75&w=1632",
     "logo": "https://cdn.sanity.io/images/599r6htc/regionalized/857d716d2ba170b1507a97dfd233543408c3700e-2256x2112.png?rect=1345,1550,260,260&w=256&h=256&fit=crop&auto=format",
     "tool_type": "ia",
     "host_app": "figma",
@@ -11488,9 +11490,9 @@
       "developpeur-solo"
     ],
     "relevantFor": [
-      "Designers produit",
+      "Product designers",
       "Product managers",
-      "Prototypers"
+      "Équipes innovation"
     ],
     "freeAlternative": null,
     "substitutable": true,
@@ -11501,16 +11503,16 @@
     "slug": "figma-sites",
     "name": "Figma Sites",
     "categoryId": "website-builders",
-    "shortDescription": "Création et publication de sites responsives sans quitter l'environnement Figma.",
-    "shortDescriptionEn": "Build and publish responsive websites without leaving the Figma environment.",
+    "shortDescription": "Constructeur de sites responsive en bêta ouverte intégré à Figma. Il transforme des frames Figma Design en pages publiées avec composants, interactions, CMS, code et assistance par IA.",
+    "shortDescriptionEn": "Open-beta responsive website builder built into Figma. It turns Figma Design frames into published pages with components, interactions, CMS, code, and AI assistance.",
     "pricing": {
-      "free": "Accès limité selon le plan",
-      "paid": "Inclus avec un siège Full éligible"
+      "free": "Starter permet d'explorer le produit mais nécessite une mise à niveau pour publier un site.",
+      "paid": "Starter: Gratuit, création limitée sans publication ; Professional Full seat: 16 $/mois, Sites inclus ; Organization Full seat: 55 $/mois, facturé annuellement ; Enterprise Full seat: 90 $/mois, facturé annuellement"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://www.figma.com/sites/",
     "websiteUrl": "https://www.figma.com/sites/",
-    "ogImageUrl": "https://cdn.sanity.io/images/599r6htc/regionalized/4b9ade839f38291c91b76608d22e7c7a9ad525fd-542x305.png",
+    "ogImageUrl": "https://cdn.sanity.io/images/599r6htc/regionalized/335a56e4791663bdcf7bcab4969a207f8fe22c15-1260x1260.png?auto=format&fit=max&h=630&q=75&w=630",
     "logo": "https://cdn.sanity.io/images/599r6htc/regionalized/857d716d2ba170b1507a97dfd233543408c3700e-2256x2112.png?rect=650,1550,260,260&w=256&h=256&fit=crop&auto=format",
     "tool_type": "metier",
     "host_app": "figma",
@@ -11527,9 +11529,9 @@
       "developpeur-solo"
     ],
     "relevantFor": [
-      "Designers web",
-      "Studios",
-      "Freelances"
+      "Web designers",
+      "Équipes marketing",
+      "Studios de marque"
     ],
     "freeAlternative": null,
     "substitutable": true,
@@ -11579,16 +11581,16 @@
     "slug": "figma-dev-mode",
     "name": "Figma Dev Mode",
     "categoryId": "developer-tools",
-    "shortDescription": "Handoff développeur avec inspection, variables, assets, code et contexte du design system.",
-    "shortDescriptionEn": "Developer handoff with inspection, variables, assets, code, and design-system context.",
+    "shortDescription": "Espace développeur intégré aux fichiers Figma Design pour inspecter les interfaces, relier design et code et organiser le passage en développement. Il nécessite Figma et une licence Dev ou Full sur un forfait payant.",
+    "shortDescriptionEn": "Developer workspace inside Figma Design files for inspecting interfaces, connecting design and code, and managing handoff. It requires Figma and a Dev or Full seat on a paid plan.",
     "pricing": {
-      "free": "Inspection de base pour les viewers",
-      "paid": "Professional Dev 12 $/mois ou siège Full 16 $/mois"
+      "free": "Les viewers gratuits disposent d'une inspection de base, mais pas de l'espace Dev Mode complet.",
+      "paid": "Professional Dev seat: 12 $/mois ; Professional Full seat: 16 $/mois ; Organization Dev seat: 25 $/mois, facturé annuellement ; Enterprise Dev seat: 35 $/mois, facturé annuellement"
     },
     "defaultMonthlyPrice": 12,
     "affiliateLink": "https://www.figma.com/dev-mode/",
     "websiteUrl": "https://www.figma.com/dev-mode/",
-    "ogImageUrl": "",
+    "ogImageUrl": "https://cdn.sanity.io/images/599r6htc/regionalized/c6a0a58afc2722851abd21d93a1840360c851ad9-2464x1378.png?auto=format&fit=max&h=1378&q=75&w=2464",
     "logo": "https://cdn.sanity.io/images/599r6htc/regionalized/857d716d2ba170b1507a97dfd233543408c3700e-2256x2112.png?rect=1345,730,260,260&w=256&h=256&fit=crop&auto=format",
     "tool_type": "metier",
     "host_app": "figma",
@@ -11604,9 +11606,9 @@
       "ux-ui"
     ],
     "relevantFor": [
-      "Développeurs",
-      "Designers produit",
-      "Design systems teams"
+      "Développeurs front-end",
+      "Design systems",
+      "Équipes produit"
     ],
     "freeAlternative": null,
     "substitutable": false,
@@ -11655,16 +11657,16 @@
     "slug": "figma-motion",
     "name": "Figma Motion",
     "categoryId": "motion-design",
-    "shortDescription": "Animation et motion design directement dans l'environnement Figma.",
-    "shortDescriptionEn": "Animation and motion design directly inside the Figma environment.",
+    "shortDescription": "Mode d'animation en bêta ouverte intégré au canvas Figma. Il ajoute une timeline, des keyframes, des systèmes de mouvement et des exports pour le design et le passage en développement.",
+    "shortDescriptionEn": "Open-beta animation mode built into the Figma canvas. It adds a timeline, keyframes, motion systems, and exports for design and development handoff.",
     "pricing": {
-      "free": "Non inclus dans Starter",
-      "paid": "Bêta disponible avec les sièges Full"
+      "free": "Starter permet d'essayer Motion avec des exports limités.",
+      "paid": "Starter: Gratuit, accès et exports limités ; Professional Full seat: 16 $/mois ; Organization Full seat: 55 $/mois, facturé annuellement ; Enterprise Full seat: 90 $/mois, facturé annuellement"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://www.figma.com/motion/",
     "websiteUrl": "https://www.figma.com/motion/",
-    "ogImageUrl": "",
+    "ogImageUrl": "https://cdn.sanity.io/images/599r6htc/regionalized/1be0a1a57c359165bc4c28346f987f30d662ce65-992x558.png?auto=format&fit=max&h=558&q=75&w=992",
     "logo": "https://cdn.sanity.io/images/599r6htc/regionalized/857d716d2ba170b1507a97dfd233543408c3700e-2256x2112.png?rect=1000,730,260,260&w=256&h=256&fit=crop&auto=format",
     "tool_type": "metier",
     "host_app": "figma",
@@ -11682,7 +11684,7 @@
     "relevantFor": [
       "Motion designers",
       "Product designers",
-      "Brand teams"
+      "Design systems"
     ],
     "freeAlternative": null,
     "substitutable": true,
@@ -32998,16 +33000,16 @@
     "slug": "seo-mode",
     "name": "SEO Mode",
     "categoryId": "analytics",
-    "shortDescription": "Outil SEO IA pour optimiser le contenu et booster le classement Google à 2$/mois.",
-    "shortDescriptionEn": "AI SEO tool to optimize content and boost Google rankings at $2/mo.",
+    "shortDescription": "SEO Mode est une agence de croissance organique gérée pour les entreprises SaaS. Elle combine stratégie de mots-clés, contenu, SEO technique, backlinks, mentions sociales et optimisation AEO afin d'améliorer la visibilité dans Google et les assistants IA.",
+    "shortDescriptionEn": "SEO Mode is a managed organic growth agency for SaaS companies. It combines keyword strategy, content, technical SEO, backlinks, social mentions, and AEO to improve visibility in Google and AI assistants.",
     "pricing": {
-      "free": "Plan gratuit limité",
-      "paid": "Basic 2$/mois"
+      "free": "Audit initial gratuit de 15 minutes et plusieurs outils SEO gratuits sans inscription. Il ne s'agit pas d'un forfait gratuit pour le service géré.",
+      "paid": "Growth Plan, base: À partir de 1 000 USD/mois ; Growth Plan, exemple affiché avec link building: 3 000 USD/mois au total, dont 2 000 USD/mois pour le module link building ; Managed Reddit Mentions: +500 USD/mois"
     },
     "defaultMonthlyPrice": 2,
     "affiliateLink": "https://seomode.com",
     "websiteUrl": "https://seomode.com",
-    "ogImageUrl": "",
+    "ogImageUrl": "https://seomode.co/drawings/mehrab-lifting.webp",
     "logo": "",
     "tool_type": "satellite",
     "host_app": null,
@@ -33019,9 +33021,10 @@
     ],
     "verticals": [],
     "relevantFor": [
-      "freelance",
-      "creator",
-      "indie"
+      "Fondateurs SaaS",
+      "Équipes marketing B2B",
+      "Startups en croissance",
+      "Responsables acquisition"
     ],
     "freeAlternative": "Google Search Console",
     "substitutable": true,

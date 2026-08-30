@@ -1,0 +1,122 @@
+{
+  "batch": "review-analytics-critical-001",
+  "current": {
+    "affiliate_url": null,
+    "alternatives": [],
+    "category": "analytics",
+    "cons": [
+      "À éviter sans usage récurrent",
+      "Peut ajouter de la complexité",
+      "À documenter pour la reprise"
+    ],
+    "cons_en": [
+      "Avoid without recurring use",
+      "Can add complexity",
+      "Document for handover"
+    ],
+    "host_app": null,
+    "id": "sql",
+    "long_description": "Langage de requête pour bases relationnelles, analytics et transformations data.",
+    "long_description_en": "Query language for relational databases, analytics, and data transformations.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://tooltrim.com/og-screenshots/sql.jpg"
+    },
+    "name": "SQL",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "pricing_en": {
+      "free": "Free or open source depending on usage",
+      "paid": "Paid options may apply depending on hosting, team, or volume"
+    },
+    "pricing_v5": null,
+    "pros": [
+      "Écosystème reconnu",
+      "Rôle clair dans une stack dev",
+      "Bonne adoption terrain"
+    ],
+    "pros_en": [
+      "Recognized ecosystem",
+      "Clear role in a dev stack",
+      "Good field adoption"
+    ],
+    "short_description": "Langage de requête pour bases relationnelles, analytics et transformations data.",
+    "short_description_en": "Query language for relational databases, analytics, and data transformations.",
+    "slug": "sql",
+    "source_url": "https://en.wikipedia.org/wiki/SQL",
+    "source_verified_on": null,
+    "use_cases": [
+      "Stack développeur freelance"
+    ],
+    "use_cases_en": [
+      "Freelance developer stack"
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Double emploi",
+        "Usage ponctuel"
+      ],
+      "keepIf": [
+        "Usage récurrent",
+        "Impact direct sur le livrable"
+      ],
+      "threshold": "À garder si l’outil réduit un risque ou accélère la livraison."
+    },
+    "verdict_en": null,
+    "website_url": "https://en.wikipedia.org/wiki/SQL"
+  },
+  "fact_bundle": null,
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "research_primary_sources_then_write_fact_bundle",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-analytics-critical-001",
+    "batch_position": 13,
+    "blockers": [],
+    "catalog_hash": "sha256:6454cbfb39eeaff58b0f06eacdf3b39cdb90c2c19e03133baa9325a6ad12b8ff",
+    "category": "analytics",
+    "fact_bundle": "MISSING",
+    "fact_bundle_hash": null,
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "SQL",
+    "next_review_at": null,
+    "priority_reasons": [
+      "paid_price",
+      "missing_fact_bundle",
+      "missing_or_invalid_media_evidence",
+      "shallow_editorial",
+      "undated_source"
+    ],
+    "priority_score": 245,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:b9e70906904afdfe219186469456a2a01b0dd103ca0ff77dc8f4eb09dc8e64a3",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "sql",
+    "source_url": "https://en.wikipedia.org/wiki/SQL",
+    "source_verified_on": null,
+    "status": "QUEUED"
+  }
+}

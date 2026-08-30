@@ -1,0 +1,11 @@
+{
+  "slug": "figma-make",
+  "verified_on": "2026-08-30",
+  "mode": "sourced",
+  "discovery": { "official_media_found": true, "official_pages_checked": ["https://www.figma.com/blog/introducing-figma-make/"] },
+  "items": [
+    { "kind": "image", "url": "https://cdn.sanity.io/images/599r6htc/regionalized/a1f0928acf4128e33ad6f4dd573bdaf3a3e2c893-3840x2160.png?auto=format&fit=max&h=918&q=75&w=1632", "source_page_url": "https://www.figma.com/blog/introducing-figma-make/", "official": true },
+    { "kind": "image", "url": "https://cdn.sanity.io/images/599r6htc/regionalized/ec904960a5d46447f31afe6e7abab92f97ec444e-3840x2160.png?auto=format&fit=max&h=452&q=75&rect=0%2C1%2C3840%2C2159&w=804", "source_page_url": "https://www.figma.com/blog/introducing-figma-make/", "official": true },
+    { "kind": "image", "url": "https://cdn.sanity.io/images/599r6htc/regionalized/af228a202004b8e7a6bf03fcef7f1a22a7bd603d-3840x2160.png?auto=format&fit=max&h=452&q=75&rect=0%2C1%2C3840%2C2159&w=804", "source_page_url": "https://www.figma.com/blog/introducing-figma-make/", "official": true }
+  ]
+}

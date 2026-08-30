@@ -1,0 +1,109 @@
+{
+  "slug": "map-tools",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-08-30",
+  "sources": [
+    {
+      "label": "MapTools - Home (site officiel)",
+      "url": "https://www.map-tools.com/"
+    },
+    {
+      "label": "MapTools - Geo Calculators (site officiel)",
+      "url": "https://www.map-tools.com/utils"
+    },
+    {
+      "label": "MapTools - Privacy Policy (site officiel)",
+      "url": "https://www.map-tools.com/privacy-policy"
+    }
+  ],
+  "facts": {
+    "what": "Suite web gratuite de mesure et de calcul géographique sur carte interactive. Elle couvre les coordonnées, distances, surfaces, rayons, altitudes et conversions utiles à la navigation ou au travail de terrain.",
+    "what_en": "Free web suite for geographic measurement and calculation on an interactive map. It covers coordinates, distances, areas, radii, elevation, and conversions for navigation or field work.",
+    "pricing_model": "Service gratuit, sans publicité et sans création de compte.",
+    "free_tier": {
+      "exists": true,
+      "detail": "Toutes les fonctions annoncées sont gratuites, sans inscription."
+    },
+    "plans": [
+      {
+        "name": "Free",
+        "price": "Gratuit"
+      }
+    ],
+    "key_features": [
+      "Recherche de coordonnées et conversion entre DD, DDM, DMS et UTM",
+      "Mesure de distances par segments avec plusieurs unités",
+      "Calcul de surface et de périmètre par polygone sur la carte",
+      "Calcul de rayon, diamètre, circonférence et surface avec géométrie géodésique",
+      "Consultation de l'altitude d'un point",
+      "Huit calculateurs de navigation, conversion d'unités et temps de trajet"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous devez effectuer rapidement des mesures ponctuelles sur une carte.",
+        "Vous jonglez entre plusieurs formats de coordonnées et unités.",
+        "Vous préférez un outil accessible immédiatement sans compte."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'un véritable système d'information géographique avec couches et analyses avancées.",
+        "Votre équipe doit enregistrer, versionner et partager des projets cartographiques.",
+        "Vous exigez un support contractuel ou des fonctions d'administration."
+      ],
+      "threshold": "Gardez MapTools pour les calculs géographiques rapides et autonomes; passez à un SIG dès que le travail exige des données persistantes, des couches ou une collaboration structurée."
+    },
+    "pros": [
+      "Regroupe plusieurs mesures cartographiques dans une interface unique.",
+      "Fonctionne sans compte ni configuration préalable.",
+      "Propose de nombreux formats de coordonnées et unités.",
+      "Les calculateurs géographiques s'exécutent localement dans le navigateur."
+    ],
+    "cons": [
+      "Ne remplace pas un logiciel SIG pour les analyses complexes.",
+      "N'offre pas d'espace projet collaboratif.",
+      "Les cartes dépendent de services de tuiles tiers pour leur affichage."
+    ],
+    "use_cases": [
+      "Mesurer la superficie et le périmètre d'une parcelle.",
+      "Convertir des coordonnées avant de les transmettre à un autre système.",
+      "Estimer une distance, un cap ou un temps de trajet."
+    ],
+    "relevant_for": [
+      "Professionnels de terrain",
+      "Équipes logistiques",
+      "Étudiants et utilisateurs occasionnels de données géographiques"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need quick, one-off measurements on a map.",
+        "You frequently switch between coordinate formats and units.",
+        "You prefer a tool that opens immediately without an account."
+      ],
+      "avoidIf": [
+        "You need a full geographic information system with layers and advanced analysis.",
+        "Your team must save, version, and share mapping projects.",
+        "You require contractual support or administration features."
+      ],
+      "threshold": "Keep MapTools for quick standalone geographic calculations; move to a GIS when the work requires persistent data, layers, or structured collaboration."
+    },
+    "pros": [
+      "Combines several map measurement tasks in one interface.",
+      "Works without an account or initial setup.",
+      "Supports many coordinate formats and units.",
+      "Geographic calculators run locally in the browser."
+    ],
+    "cons": [
+      "Does not replace GIS software for complex analysis.",
+      "Provides no collaborative project workspace.",
+      "Map display depends on third-party tile services."
+    ],
+    "use_cases": [
+      "Measure the area and perimeter of a land parcel.",
+      "Convert coordinates before sending them to another system.",
+      "Estimate a distance, bearing, or travel time."
+    ]
+  }
+}

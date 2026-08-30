@@ -4,87 +4,11 @@
   "catalogue_path": "src/data/tools_v4.json",
   "entries": [
     {
-      "assigned_batch": "review-developer-tools-critical-001",
-      "batch_position": 1,
-      "blockers": [],
-      "catalog_hash": "sha256:fc03eec7a104018467ff28fe7210dd228fc9ee2ab0231644c82db17ea9869749",
-      "category": "developer-tools",
-      "fact_bundle": "MISSING",
-      "fact_bundle_hash": null,
-      "invalidated_from": null,
-      "media_errors": [
-        "media_evidence_missing"
-      ],
-      "media_evidence": "MISSING",
-      "media_evidence_hash": null,
-      "name": "Figma Dev Mode",
-      "next_review_at": null,
-      "priority_reasons": [
-        "affiliate_link",
-        "paid_price",
-        "missing_fact_bundle",
-        "missing_or_invalid_media_evidence",
-        "shallow_editorial",
-        "missing_media",
-        "undated_source"
-      ],
-      "priority_score": 370,
-      "published_at": null,
-      "quality_version": "catalog-review-v1",
-      "rendered_at": null,
-      "review_fingerprint": "sha256:adec6d066beb2a1bdde4456c06d409ebc9bc6ac49cd2a0bbcd7b44b6190fe813",
-      "reviewed_at": null,
-      "reviewed_hash": null,
-      "reviewer": null,
-      "risk_tier": "critical",
-      "slug": "figma-dev-mode",
-      "source_url": "https://www.figma.com/dev-mode/",
-      "source_verified_on": null,
-      "status": "QUEUED"
-    },
-    {
-      "assigned_batch": "review-motion-design-critical-001",
-      "batch_position": 1,
-      "blockers": [],
-      "catalog_hash": "sha256:711600578af08f73491c20f137cbef359ddf3884cc55b082e9f51c0171b80f74",
-      "category": "motion-design",
-      "fact_bundle": "MISSING",
-      "fact_bundle_hash": null,
-      "invalidated_from": null,
-      "media_errors": [
-        "media_evidence_missing"
-      ],
-      "media_evidence": "MISSING",
-      "media_evidence_hash": null,
-      "name": "Figma Motion",
-      "next_review_at": null,
-      "priority_reasons": [
-        "affiliate_link",
-        "paid_price",
-        "missing_fact_bundle",
-        "missing_or_invalid_media_evidence",
-        "shallow_editorial",
-        "missing_media",
-        "undated_source"
-      ],
-      "priority_score": 370,
-      "published_at": null,
-      "quality_version": "catalog-review-v1",
-      "rendered_at": null,
-      "review_fingerprint": "sha256:34ff225c182c8737cd1612ce366f3a55b5b497d07c543e656586ac166d02cfe0",
-      "reviewed_at": null,
-      "reviewed_hash": null,
-      "reviewer": null,
-      "risk_tier": "critical",
-      "slug": "figma-motion",
-      "source_url": "https://www.figma.com/motion/",
-      "source_verified_on": null,
-      "status": "QUEUED"
-    },
-    {
       "assigned_batch": "review-creation-critical-001",
       "batch_position": 1,
-      "blockers": [],
+      "blockers": [
+        "intitulé générique sans produit ni éditeur officiel identifiable"
+      ],
       "catalog_hash": "sha256:b8af4c789d0c62504eb154823b798d61aa492a9cdc5781fb0d467abd1d817b09",
       "category": "creation",
       "fact_bundle": "MISSING",
@@ -118,12 +42,14 @@
       "slug": "mockup-plugins",
       "source_url": "https://mockupplugins.com",
       "source_verified_on": null,
-      "status": "QUEUED"
+      "status": "BLOCKED"
     },
     {
       "assigned_batch": "review-creation-critical-001",
       "batch_position": 2,
-      "blockers": [],
+      "blockers": [
+        "catégorie générique de presets sans produit ni éditeur officiel identifiable"
+      ],
       "catalog_hash": "sha256:dea32f8585ffda78534147a657a50f93b2c8d9bd4be7c9b4d15a974817616ccb",
       "category": "creation",
       "fact_bundle": "MISSING",
@@ -157,88 +83,14 @@
       "slug": "presets-lightroom",
       "source_url": "https://presetslightroom.com",
       "source_verified_on": null,
-      "status": "QUEUED"
-    },
-    {
-      "assigned_batch": "review-ai-code-critical-001",
-      "batch_position": 1,
-      "blockers": [],
-      "catalog_hash": "sha256:4a639117bfb654edfdf2d230a22c2d4fce5cdb3e41c7bb6525964fb879636825",
-      "category": "ai-code",
-      "fact_bundle": "MISSING",
-      "fact_bundle_hash": null,
-      "invalidated_from": null,
-      "media_errors": [
-        "media_evidence_missing"
-      ],
-      "media_evidence": "MISSING",
-      "media_evidence_hash": null,
-      "name": "Figma Make",
-      "next_review_at": null,
-      "priority_reasons": [
-        "affiliate_link",
-        "paid_price",
-        "missing_fact_bundle",
-        "missing_or_invalid_media_evidence",
-        "shallow_editorial",
-        "undated_source"
-      ],
-      "priority_score": 345,
-      "published_at": null,
-      "quality_version": "catalog-review-v1",
-      "rendered_at": null,
-      "review_fingerprint": "sha256:5efdac86eeb244727c0f6601f3cd1d5f9910f1ae0dc89bc76515a67d67c448ab",
-      "reviewed_at": null,
-      "reviewed_hash": null,
-      "reviewer": null,
-      "risk_tier": "critical",
-      "slug": "figma-make",
-      "source_url": "https://www.figma.com/make/",
-      "source_verified_on": null,
-      "status": "QUEUED"
-    },
-    {
-      "assigned_batch": "review-website-builders-critical-001",
-      "batch_position": 1,
-      "blockers": [],
-      "catalog_hash": "sha256:041cb7e47966b2808fbaf34da81036a5df434d9074b031209c6487396ed9643e",
-      "category": "website-builders",
-      "fact_bundle": "MISSING",
-      "fact_bundle_hash": null,
-      "invalidated_from": null,
-      "media_errors": [
-        "media_evidence_missing"
-      ],
-      "media_evidence": "MISSING",
-      "media_evidence_hash": null,
-      "name": "Figma Sites",
-      "next_review_at": null,
-      "priority_reasons": [
-        "affiliate_link",
-        "paid_price",
-        "missing_fact_bundle",
-        "missing_or_invalid_media_evidence",
-        "shallow_editorial",
-        "undated_source"
-      ],
-      "priority_score": 345,
-      "published_at": null,
-      "quality_version": "catalog-review-v1",
-      "rendered_at": null,
-      "review_fingerprint": "sha256:da2429f037fcf4ad45762e0150d2b8d230cea8e4a6f69703a3a8a74081f79629",
-      "reviewed_at": null,
-      "reviewed_hash": null,
-      "reviewer": null,
-      "risk_tier": "critical",
-      "slug": "figma-sites",
-      "source_url": "https://www.figma.com/sites/",
-      "source_verified_on": null,
-      "status": "QUEUED"
+      "status": "BLOCKED"
     },
     {
       "assigned_batch": "review-creation-critical-001",
       "batch_position": 3,
-      "blockers": [],
+      "blockers": [
+        "doublon générique de presets-lightroom"
+      ],
       "catalog_hash": "sha256:3807b3c041158d8a45cdb7863bd671fc8b857403ed4768b9b3907677e27abfe6",
       "category": "creation",
       "fact_bundle": "MISSING",
@@ -271,12 +123,14 @@
       "slug": "lightroom-presets",
       "source_url": "https://lightroompresets.com",
       "source_verified_on": null,
-      "status": "QUEUED"
+      "status": "DUPLICATE"
     },
     {
       "assigned_batch": "review-creation-critical-001",
       "batch_position": 4,
-      "blockers": [],
+      "blockers": [
+        "catégorie générique sans produit officiel identifiable"
+      ],
       "catalog_hash": "sha256:711cea3f9552ebdb4f49f65a408f381466c8a6f8dd6a413375c872b42f1331f2",
       "category": "creation",
       "fact_bundle": "MISSING",
@@ -309,12 +163,14 @@
       "slug": "affiliate-dashboards",
       "source_url": "https://affiliatedashboards.com",
       "source_verified_on": "2026-05-11",
-      "status": "QUEUED"
+      "status": "BLOCKED"
     },
     {
       "assigned_batch": "review-creation-critical-001",
       "batch_position": 5,
-      "blockers": [],
+      "blockers": [
+        "catégorie générique sans produit officiel identifiable"
+      ],
       "catalog_hash": "sha256:57c5566800f49f57e16e1a95eb588001c77586e4c491e351b17de6879f4bb9cc",
       "category": "creation",
       "fact_bundle": "MISSING",
@@ -347,12 +203,14 @@
       "slug": "affiliate-tools",
       "source_url": "https://affiliatetools.com",
       "source_verified_on": "2026-05-11",
-      "status": "QUEUED"
+      "status": "BLOCKED"
     },
     {
       "assigned_batch": "review-communication-critical-001",
       "batch_position": 1,
-      "blockers": [],
+      "blockers": [
+        "catégorie générique de bots sans produit officiel identifiable"
+      ],
       "catalog_hash": "sha256:0a46e23cbdd33b6b3c927c85d40328ee971eba50d61ac08874c584f6bec1fdcd",
       "category": "communication",
       "fact_bundle": "MISSING",
@@ -385,12 +243,14 @@
       "slug": "bots-discord",
       "source_url": "https://botsdiscord.com",
       "source_verified_on": "2026-05-11",
-      "status": "QUEUED"
+      "status": "BLOCKED"
     },
     {
       "assigned_batch": "review-creation-critical-001",
       "batch_position": 6,
-      "blockers": [],
+      "blockers": [
+        "fonctionnalités IA du produit canonique capcut"
+      ],
       "catalog_hash": "sha256:6bead4f9fe221f77e4fe9852b74bd19fecac3a6bc26b9e4ff981d91925571bfc",
       "category": "creation",
       "fact_bundle": "MISSING",
@@ -423,12 +283,14 @@
       "slug": "capcut-ai",
       "source_url": "https://capcutai.com",
       "source_verified_on": "2026-05-11",
-      "status": "QUEUED"
+      "status": "DUPLICATE"
     },
     {
       "assigned_batch": "review-project-management-critical-001",
       "batch_position": 1,
-      "blockers": [],
+      "blockers": [
+        "cas d’usage du produit canonique chatgpt"
+      ],
       "catalog_hash": "sha256:7c755a3dfc84a70803bccea46adea30679eae843564a3eee2cc770b8806fd1cf",
       "category": "project-management",
       "fact_bundle": "MISSING",
@@ -461,12 +323,14 @@
       "slug": "chatgpt-pour-brouillons-non-juridiques",
       "source_url": "https://chatgptpourbrouillonsnonjuridiques.com",
       "source_verified_on": "2026-05-11",
-      "status": "QUEUED"
+      "status": "DUPLICATE"
     },
     {
       "assigned_batch": "review-creation-critical-001",
       "batch_position": 7,
-      "blockers": [],
+      "blockers": [
+        "intitulé générique pouvant désigner plusieurs outils Content Credentials"
+      ],
       "catalog_hash": "sha256:9f69346c315d8e54feec3029737150d00372f22aacf97bce31276fadd7bff3a4",
       "category": "creation",
       "fact_bundle": "MISSING",
@@ -499,12 +363,14 @@
       "slug": "content-credentials-tools",
       "source_url": "https://contentcredentialstools.com",
       "source_verified_on": "2026-05-11",
-      "status": "QUEUED"
+      "status": "BLOCKED"
     },
     {
       "assigned_batch": "review-creation-critical-001",
       "batch_position": 8,
-      "blockers": [],
+      "blockers": [
+        "catégorie générique sans produit officiel identifiable"
+      ],
       "catalog_hash": "sha256:71568dad5ed39068a27dd71d0df98fa29bbb5a49fae6f8382b68b18693c2bbb4",
       "category": "creation",
       "fact_bundle": "MISSING",
@@ -537,12 +403,14 @@
       "slug": "emoji-sticker-packs",
       "source_url": "https://emojistickerpacks.com",
       "source_verified_on": "2026-05-11",
-      "status": "QUEUED"
+      "status": "BLOCKED"
     },
     {
       "assigned_batch": "review-project-management-critical-001",
       "batch_position": 2,
-      "blockers": [],
+      "blockers": [
+        "fonction Copilot dans Excel rattachée au produit microsoft-365-copilot"
+      ],
       "catalog_hash": "sha256:834d6d7c4587c8f668f404bdb7bdd9125f6825adb81cadaa37af566ebd001c86",
       "category": "project-management",
       "fact_bundle": "MISSING",
@@ -575,12 +443,14 @@
       "slug": "excel-copilot",
       "source_url": "https://excelcopilot.com",
       "source_verified_on": "2026-05-11",
-      "status": "QUEUED"
+      "status": "DUPLICATE"
     },
     {
       "assigned_batch": "review-creation-critical-001",
       "batch_position": 9,
-      "blockers": [],
+      "blockers": [
+        "intitulé générique sans identité officielle vérifiable"
+      ],
       "catalog_hash": "sha256:de0ae3a6739b5aa39f4bbf1b275e5064f14b83cf3291572a7023ea757dd8e03d",
       "category": "creation",
       "fact_bundle": "MISSING",
@@ -613,12 +483,14 @@
       "slug": "frame-guides",
       "source_url": "https://frameguides.com",
       "source_verified_on": "2026-05-11",
-      "status": "QUEUED"
+      "status": "BLOCKED"
     },
     {
       "assigned_batch": "review-creation-critical-001",
       "batch_position": 10,
-      "blockers": [],
+      "blockers": [
+        "catégorie générique sans produit officiel identifiable"
+      ],
       "catalog_hash": "sha256:05c886aa3e8f151efa2c7cec009e5fe9c39476fe8aae3c7aabb82a4fa44bdfca",
       "category": "creation",
       "fact_bundle": "MISSING",
@@ -651,12 +523,14 @@
       "slug": "gaming-overlays",
       "source_url": "https://gamingoverlays.com",
       "source_verified_on": "2026-05-11",
-      "status": "QUEUED"
+      "status": "BLOCKED"
     },
     {
       "assigned_batch": "review-communication-critical-001",
       "batch_position": 2,
-      "blockers": [],
+      "blockers": [
+        "alias comparatif archivé, fiche canonique gorgias"
+      ],
       "catalog_hash": "sha256:b958e98476f6514fdc8ba3a2b60e96b058ef1b891d5963cec449ea50e430dea0",
       "category": "communication",
       "fact_bundle": "MISSING",
@@ -689,12 +563,14 @@
       "slug": "gorgias-helpscout",
       "source_url": "https://gorgiashelpscout.com",
       "source_verified_on": "2026-05-11",
-      "status": "QUEUED"
+      "status": "DUPLICATE"
     },
     {
       "assigned_batch": "review-creation-critical-001",
       "batch_position": 11,
-      "blockers": [],
+      "blockers": [
+        "alias archivé de google-search-console"
+      ],
       "catalog_hash": "sha256:2831bb26a4896b114c254c00a148d6bbb2e681dafba01033a083832ec722d37f",
       "category": "creation",
       "fact_bundle": "MISSING",
@@ -727,12 +603,14 @@
       "slug": "gsc",
       "source_url": "https://gsc.com",
       "source_verified_on": "2026-05-11",
-      "status": "QUEUED"
+      "status": "DUPLICATE"
     },
     {
       "assigned_batch": "review-project-management-critical-001",
       "batch_position": 3,
-      "blockers": [],
+      "blockers": [
+        "angle éditorial selon métier, pas un produit autonome distinct de krea-ai"
+      ],
       "catalog_hash": "sha256:11de465890ae1d07c27a0a99cbe043f20dd45817e3d00be36c6503c2c9af0a3e",
       "category": "project-management",
       "fact_bundle": "MISSING",
@@ -765,12 +643,14 @@
       "slug": "krea-selon-metier",
       "source_url": "https://kreaselonmetier.com",
       "source_verified_on": "2026-05-11",
-      "status": "QUEUED"
+      "status": "REVIEW_REQUIRED"
     },
     {
       "assigned_batch": "review-creation-critical-001",
       "batch_position": 12,
-      "blockers": [],
+      "blockers": [
+        "catégorie générique de modèles, aucune identité produit unique"
+      ],
       "catalog_hash": "sha256:8f1b42cfa53d3ecdc3ba298bfd903ca3eace3d04eafbed6cbb232e0f334396c4",
       "category": "creation",
       "fact_bundle": "MISSING",
@@ -803,12 +683,14 @@
       "slug": "media-kit-templates",
       "source_url": "https://mediakittemplates.com",
       "source_verified_on": "2026-05-11",
-      "status": "QUEUED"
+      "status": "BLOCKED"
     },
     {
       "assigned_batch": "review-creation-critical-001",
       "batch_position": 13,
-      "blockers": [],
+      "blockers": [
+        "catégorie générique d applications, aucune identité produit unique"
+      ],
       "catalog_hash": "sha256:095619f0439086bdebd3abdffa9a90384125979f33f5f0be0e153a8422fa6aba",
       "category": "creation",
       "fact_bundle": "MISSING",
@@ -841,12 +723,14 @@
       "slug": "mobile-gimbal-apps",
       "source_url": "https://mobilegimbalapps.com",
       "source_verified_on": "2026-05-11",
-      "status": "QUEUED"
+      "status": "BLOCKED"
     },
     {
       "assigned_batch": "review-creation-critical-001",
       "batch_position": 14,
-      "blockers": [],
+      "blockers": [
+        "catégorie générique de bibliothèques musicales, aucune identité produit unique"
+      ],
       "catalog_hash": "sha256:35041f35d4885e145f613760ef6717d76b065eb0ad5a0c167d8d9751203153f8",
       "category": "creation",
       "fact_bundle": "MISSING",
@@ -879,12 +763,14 @@
       "slug": "music-libraries",
       "source_url": "https://musiclibraries.com",
       "source_verified_on": "2026-05-11",
-      "status": "QUEUED"
+      "status": "BLOCKED"
     },
     {
       "assigned_batch": "review-creation-critical-001",
       "batch_position": 15,
-      "blockers": [],
+      "blockers": [
+        "catégorie générique d outils de parrainage, aucune identité produit unique"
+      ],
       "catalog_hash": "sha256:3a895535dd83bb938b54c7ce53896e5b58816d0d9fbf749d31f8a5a72e33aae4",
       "category": "creation",
       "fact_bundle": "MISSING",
@@ -917,12 +803,14 @@
       "slug": "newsletter-referral-tools",
       "source_url": "https://newsletterreferraltools.com",
       "source_verified_on": "2026-05-11",
-      "status": "QUEUED"
+      "status": "BLOCKED"
     },
     {
       "assigned_batch": "review-finance-critical-001",
       "batch_position": 1,
-      "blockers": [],
+      "blockers": [
+        "angle éditorial conditionnel, pas un produit autonome distinct de pennylane"
+      ],
       "catalog_hash": "sha256:b51c40b5647363170b3491591c608e2af7a1f6cb31a91de9679f6dc100beaa04",
       "category": "finance",
       "fact_bundle": "MISSING",
@@ -955,12 +843,14 @@
       "slug": "pennylane-ai-selon-dispo",
       "source_url": "https://pennylaneaiselondispo.com",
       "source_verified_on": "2026-05-11",
-      "status": "QUEUED"
+      "status": "REVIEW_REQUIRED"
     },
     {
       "assigned_batch": "review-finance-critical-001",
       "batch_position": 2,
-      "blockers": [],
+      "blockers": [
+        "comparatif entre deux produits distincts, pennylane et indy"
+      ],
       "catalog_hash": "sha256:da975ebb9b226906a20f4511db6906f3b1515783b42c078c6bcebfde103dfe18",
       "category": "finance",
       "fact_bundle": "MISSING",
@@ -993,12 +883,14 @@
       "slug": "pennylane-ou-indy",
       "source_url": "https://pennylaneouindy.com",
       "source_verified_on": "2026-05-11",
-      "status": "QUEUED"
+      "status": "REVIEW_REQUIRED"
     },
     {
       "assigned_batch": "review-finance-critical-001",
       "batch_position": 3,
-      "blockers": [],
+      "blockers": [
+        "comparatif ou intégration entre deux produits distincts, pennylane et qonto"
+      ],
       "catalog_hash": "sha256:a338317049fa4ab5813e3a71b218cb2e8b7c66ce12cd66857463508ce59cd9d3",
       "category": "finance",
       "fact_bundle": "MISSING",
@@ -1031,12 +923,14 @@
       "slug": "pennylane-qonto",
       "source_url": "https://pennylaneqonto.com",
       "source_verified_on": "2026-05-11",
-      "status": "QUEUED"
+      "status": "REVIEW_REQUIRED"
     },
     {
       "assigned_batch": "review-creation-critical-001",
       "batch_position": 16,
-      "blockers": [],
+      "blockers": [
+        "catégorie générique de modèles, aucune identité produit unique"
+      ],
       "catalog_hash": "sha256:d11cf987df45e863388fbb4fdb3df9faee9da5fb7930ca9e3e5065f406bb0545",
       "category": "creation",
       "fact_bundle": "MISSING",
@@ -1069,50 +963,14 @@
       "slug": "recipe-card-templates",
       "source_url": "https://recipecardtemplates.com",
       "source_verified_on": "2026-05-11",
-      "status": "QUEUED"
-    },
-    {
-      "assigned_batch": "review-analytics-critical-001",
-      "batch_position": 1,
-      "blockers": [],
-      "catalog_hash": "sha256:2670e4072f8c2b9633a7c906dda6968c0bb69f8ac2f0f2fd24f00349a7d056cd",
-      "category": "analytics",
-      "fact_bundle": "MISSING",
-      "fact_bundle_hash": null,
-      "invalidated_from": null,
-      "media_errors": [
-        "media_evidence_missing"
-      ],
-      "media_evidence": "MISSING",
-      "media_evidence_hash": null,
-      "name": "SEO Mode",
-      "next_review_at": null,
-      "priority_reasons": [
-        "affiliate_link",
-        "paid_price",
-        "missing_fact_bundle",
-        "missing_or_invalid_media_evidence",
-        "shallow_editorial",
-        "missing_media"
-      ],
-      "priority_score": 335,
-      "published_at": null,
-      "quality_version": "catalog-review-v1",
-      "rendered_at": null,
-      "review_fingerprint": "sha256:5e8716dd54597c5f4844436474db90c51d901c5f40d55ca55685f594cd76f321",
-      "reviewed_at": null,
-      "reviewed_hash": null,
-      "reviewer": null,
-      "risk_tier": "critical",
-      "slug": "seo-mode",
-      "source_url": "https://seomode.com",
-      "source_verified_on": "2026-05-08",
-      "status": "QUEUED"
+      "status": "BLOCKED"
     },
     {
       "assigned_batch": "review-creation-critical-001",
       "batch_position": 17,
-      "blockers": [],
+      "blockers": [
+        "catégorie générique de stockage partagé, aucune identité produit unique"
+      ],
       "catalog_hash": "sha256:3d5ded0311b163c8f137fdd9c4e504b82e26b141e7079417199374dfd347fe91",
       "category": "creation",
       "fact_bundle": "MISSING",
@@ -1145,12 +1003,14 @@
       "slug": "shared-cloud-folders",
       "source_url": "https://sharedcloudfolders.com",
       "source_verified_on": "2026-05-11",
-      "status": "QUEUED"
+      "status": "BLOCKED"
     },
     {
       "assigned_batch": "review-communication-critical-001",
       "batch_position": 3,
-      "blockers": [],
+      "blockers": [
+        "fonction et alias archivés de streamelements"
+      ],
       "catalog_hash": "sha256:7fbbe18d604bb34673629d2ab92f2bbcb2eb352b221653859c7a51611681feef",
       "category": "communication",
       "fact_bundle": "MISSING",
@@ -1183,12 +1043,14 @@
       "slug": "streamelements-widgets",
       "source_url": "https://streamelementswidgets.com",
       "source_verified_on": "2026-05-11",
-      "status": "QUEUED"
+      "status": "DUPLICATE"
     },
     {
       "assigned_batch": "review-creation-critical-001",
       "batch_position": 18,
-      "blockers": [],
+      "blockers": [
+        "catégorie générique de modèles UGC, aucune identité produit unique"
+      ],
       "catalog_hash": "sha256:a7c8470c256a5d06e7af3a5c8ad18df7f56057df74ab79c1a6177d87a1aa5421",
       "category": "creation",
       "fact_bundle": "MISSING",
@@ -1221,12 +1083,14 @@
       "slug": "templates-ugc",
       "source_url": "https://templatesugc.com",
       "source_verified_on": "2026-05-11",
-      "status": "QUEUED"
+      "status": "BLOCKED"
     },
     {
       "assigned_batch": "review-creation-critical-001",
       "batch_position": 19,
-      "blockers": [],
+      "blockers": [
+        "catégorie générique d archivage, aucune identité produit unique"
+      ],
       "catalog_hash": "sha256:5e2f0c48fda5ab85ea656baba973cbacf087a6f76eebba5af6ceb216adc46975",
       "category": "creation",
       "fact_bundle": "MISSING",
@@ -1258,12 +1122,14 @@
       "slug": "archive-tools",
       "source_url": "https://archivetools.com",
       "source_verified_on": "2026-05-11",
-      "status": "QUEUED"
+      "status": "BLOCKED"
     },
     {
       "assigned_batch": "review-creation-critical-001",
       "batch_position": 20,
-      "blockers": [],
+      "blockers": [
+        "fonction ou collection Canva non autonome, fiche canonique canva"
+      ],
       "catalog_hash": "sha256:075a2ccf227eb18833fa74114135e58da10381696d8eb80ef0d463e65da69a82",
       "category": "creation",
       "fact_bundle": "MISSING",
@@ -1295,12 +1161,14 @@
       "slug": "canva-kits",
       "source_url": "https://canvakits.com",
       "source_verified_on": "2026-05-11",
-      "status": "QUEUED"
+      "status": "DUPLICATE"
     },
     {
       "assigned_batch": "review-creation-critical-001",
       "batch_position": 21,
-      "blockers": [],
+      "blockers": [
+        "Entrée générique ou ressource non vérifiée comme produit autonome officiel"
+      ],
       "catalog_hash": "sha256:4b67666ae4fd6b1a8f4d3106c9a8086a64a0c59bbfa90791de10b420b0afc690",
       "category": "creation",
       "fact_bundle": "MISSING",
@@ -1332,12 +1200,14 @@
       "slug": "canva-templates",
       "source_url": "https://canvatemplates.com",
       "source_verified_on": "2026-05-11",
-      "status": "QUEUED"
+      "status": "REVIEW_REQUIRED"
     },
     {
       "assigned_batch": "review-creation-critical-001",
       "batch_position": 22,
-      "blockers": [],
+      "blockers": [
+        "Entrée générique ou ressource non vérifiée comme produit autonome officiel"
+      ],
       "catalog_hash": "sha256:ddac986f8bdb6f87f0b649d06a4398e6315b9bdf80a5535484ba57f6661830df",
       "category": "creation",
       "fact_bundle": "MISSING",
@@ -1369,49 +1239,14 @@
       "slug": "capcut-templates",
       "source_url": "https://capcuttemplates.com",
       "source_verified_on": "2026-05-11",
-      "status": "QUEUED"
-    },
-    {
-      "assigned_batch": "review-creation-critical-001",
-      "batch_position": 23,
-      "blockers": [],
-      "catalog_hash": "sha256:9de8bdc79fb67e649050e9a3382f694638b92909132174ce0a5786adfb2e5aae",
-      "category": "creation",
-      "fact_bundle": "MISSING",
-      "fact_bundle_hash": null,
-      "invalidated_from": null,
-      "media_errors": [
-        "media_evidence_missing"
-      ],
-      "media_evidence": "MISSING",
-      "media_evidence_hash": null,
-      "name": "Caption Tools",
-      "next_review_at": null,
-      "priority_reasons": [
-        "affiliate_link",
-        "paid_price",
-        "missing_fact_bundle",
-        "missing_or_invalid_media_evidence",
-        "shallow_editorial"
-      ],
-      "priority_score": 310,
-      "published_at": null,
-      "quality_version": "catalog-review-v1",
-      "rendered_at": null,
-      "review_fingerprint": "sha256:417ec3ad7f410261eac7df15b6c21a98163404b674007bd9b0fcb8957e1710b6",
-      "reviewed_at": null,
-      "reviewed_hash": null,
-      "reviewer": null,
-      "risk_tier": "critical",
-      "slug": "caption-tools",
-      "source_url": "https://captiontools.com",
-      "source_verified_on": "2026-05-11",
-      "status": "QUEUED"
+      "status": "REVIEW_REQUIRED"
     },
     {
       "assigned_batch": "review-creation-critical-001",
       "batch_position": 24,
-      "blockers": [],
+      "blockers": [
+        "Entrée générique ou ressource non vérifiée comme produit autonome officiel"
+      ],
       "catalog_hash": "sha256:d9cc5f3ea5732f97912392e50ededf19e6b78e62b395b483e87a56a0931a43bc",
       "category": "creation",
       "fact_bundle": "MISSING",
@@ -1443,12 +1278,14 @@
       "slug": "chart-tools",
       "source_url": "https://charttools.com",
       "source_verified_on": "2026-05-11",
-      "status": "QUEUED"
+      "status": "REVIEW_REQUIRED"
     },
     {
       "assigned_batch": "review-project-management-critical-001",
       "batch_position": 4,
-      "blockers": [],
+      "blockers": [
+        "Fonctionnalité IA du produit canonique ClickUp"
+      ],
       "catalog_hash": "sha256:33788a12aa957d233920185aa4e95388bf9825dc2f9755e59e10d98aad7e4adb",
       "category": "project-management",
       "fact_bundle": "MISSING",
@@ -1480,12 +1317,14 @@
       "slug": "clickup-ai",
       "source_url": "https://clickupai.com",
       "source_verified_on": "2026-05-11",
-      "status": "QUEUED"
+      "status": "DUPLICATE"
     },
     {
       "assigned_batch": "review-creation-critical-001",
       "batch_position": 25,
-      "blockers": [],
+      "blockers": [
+        "Domaine parqué et identité officielle non vérifiable"
+      ],
       "catalog_hash": "sha256:8bbdb4d8faf598ce18cae91cbcd32dba45cfe1200d5a7002f7853312f38a5472",
       "category": "creation",
       "fact_bundle": "MISSING",
@@ -1517,12 +1356,14 @@
       "slug": "comfyui-workflows",
       "source_url": "https://comfyuiworkflows.com",
       "source_verified_on": "2026-05-11",
-      "status": "QUEUED"
+      "status": "BLOCKED"
     },
     {
       "assigned_batch": "review-project-management-critical-001",
       "batch_position": 5,
-      "blockers": [],
+      "blockers": [
+        "Fonctionnalité IA du produit canonique Dovetail"
+      ],
       "catalog_hash": "sha256:5d65a43bde99084ac88b2598e4a286082c3a71ed3d27eb22a6f452312bee677c",
       "category": "project-management",
       "fact_bundle": "MISSING",
@@ -1554,12 +1395,14 @@
       "slug": "dovetail-ai",
       "source_url": "https://dovetailai.com",
       "source_verified_on": "2026-05-11",
-      "status": "QUEUED"
+      "status": "DUPLICATE"
     },
     {
       "assigned_batch": "review-creation-critical-002",
       "batch_position": 1,
-      "blockers": [],
+      "blockers": [
+        "Entrée générique ou ressource non vérifiée comme produit autonome officiel"
+      ],
       "catalog_hash": "sha256:f4f2698c467a940fa538dbb53475e0d3b4c0a0a7720c4292817d106533d50ccd",
       "category": "creation",
       "fact_bundle": "MISSING",
@@ -1591,12 +1434,14 @@
       "slug": "figma-templates",
       "source_url": "https://figmatemplates.com",
       "source_verified_on": "2026-05-11",
-      "status": "QUEUED"
+      "status": "REVIEW_REQUIRED"
     },
     {
       "assigned_batch": "review-creation-critical-002",
       "batch_position": 2,
-      "blockers": [],
+      "blockers": [
+        "Entrée générique ou ressource non vérifiée comme produit autonome officiel"
+      ],
       "catalog_hash": "sha256:6ae22f85e65fbf5ff185a0dc7715102e67d64a1dd7099b4251aa7a5e00e21689",
       "category": "creation",
       "fact_bundle": "MISSING",
@@ -1628,12 +1473,14 @@
       "slug": "form-apps",
       "source_url": "https://formapps.com",
       "source_verified_on": "2026-05-11",
-      "status": "QUEUED"
+      "status": "REVIEW_REQUIRED"
     },
     {
       "assigned_batch": "review-project-management-critical-001",
       "batch_position": 6,
-      "blockers": [],
+      "blockers": [
+        "Doublon du produit canonique Gamma"
+      ],
       "catalog_hash": "sha256:5503082f5877717852bc7b0b3a2e5c25c1dd892c0490cffadf12a4df8bb6322b",
       "category": "project-management",
       "fact_bundle": "MISSING",
@@ -1665,12 +1512,14 @@
       "slug": "gamma-ai",
       "source_url": "https://gammaai.com",
       "source_verified_on": "2026-05-11",
-      "status": "QUEUED"
+      "status": "DUPLICATE"
     },
     {
       "assigned_batch": "review-creation-critical-002",
       "batch_position": 3,
-      "blockers": [],
+      "blockers": [
+        "Site et produit officiels non vérifiables"
+      ],
       "catalog_hash": "sha256:d1dc9052f3aa8272c8d24c8f402b5c42ef73583618dc2671b4fe1d44c0f9af43",
       "category": "creation",
       "fact_bundle": "MISSING",
@@ -1702,12 +1551,14 @@
       "slug": "inbound",
       "source_url": "https://inbound.so",
       "source_verified_on": "2026-05-08",
-      "status": "QUEUED"
+      "status": "BLOCKED"
     },
     {
       "assigned_batch": "review-ai-general-critical-001",
       "batch_position": 1,
-      "blockers": [],
+      "blockers": [
+        "Doublon de la fiche canonique krea-ai"
+      ],
       "catalog_hash": "sha256:3500689f343674f537e6c913880220f50414adf80eb65cef0bdaf615270a6f6b",
       "category": "ai-general",
       "fact_bundle": "MISSING",
@@ -1739,12 +1590,14 @@
       "slug": "krea",
       "source_url": "https://krea.com",
       "source_verified_on": "2026-05-11",
-      "status": "QUEUED"
+      "status": "DUPLICATE"
     },
     {
       "assigned_batch": "review-creation-critical-002",
       "batch_position": 4,
-      "blockers": [],
+      "blockers": [
+        "Entrée générique ou ressource non vérifiée comme produit autonome officiel"
+      ],
       "catalog_hash": "sha256:c105ca8731ebde3af487b61201ac32f9b170009786d9f64b8ceb1f03d452b0cf",
       "category": "creation",
       "fact_bundle": "MISSING",
@@ -1776,12 +1629,14 @@
       "slug": "lighting-kits",
       "source_url": "https://lightingkits.com",
       "source_verified_on": "2026-05-11",
-      "status": "QUEUED"
+      "status": "REVIEW_REQUIRED"
     },
     {
       "assigned_batch": "review-creation-critical-002",
       "batch_position": 5,
-      "blockers": [],
+      "blockers": [
+        "Entrée générique ou ressource non vérifiée comme produit autonome officiel"
+      ],
       "catalog_hash": "sha256:742b558167596786750c8efa9d9ad9f360015ca6714b7461db44f932564ffe7d",
       "category": "creation",
       "fact_bundle": "MISSING",
@@ -1813,12 +1668,14 @@
       "slug": "link-in-bio",
       "source_url": "https://linkinbio.com",
       "source_verified_on": "2026-05-11",
-      "status": "QUEUED"
+      "status": "REVIEW_REQUIRED"
     },
     {
       "assigned_batch": "review-creation-critical-002",
       "batch_position": 6,
-      "blockers": [],
+      "blockers": [
+        "Doublon de l'entrée link-in-bio, elle-même générique"
+      ],
       "catalog_hash": "sha256:0655ee0b2a440cd484905525e5614f06fbcfb2c5fa733fd3c317b52c85b257db",
       "category": "creation",
       "fact_bundle": "MISSING",
@@ -1850,44 +1707,7 @@
       "slug": "link-in-bio-tools",
       "source_url": "https://linkinbiotools.com",
       "source_verified_on": "2026-05-11",
-      "status": "QUEUED"
-    },
-    {
-      "assigned_batch": "review-creation-critical-002",
-      "batch_position": 7,
-      "blockers": [],
-      "catalog_hash": "sha256:67e3af57c49ab78382ec3d95726fb43ca6eba0b1aabfc635205d4002456681fa",
-      "category": "creation",
-      "fact_bundle": "MISSING",
-      "fact_bundle_hash": null,
-      "invalidated_from": null,
-      "media_errors": [
-        "media_evidence_missing"
-      ],
-      "media_evidence": "MISSING",
-      "media_evidence_hash": null,
-      "name": "Map Tools",
-      "next_review_at": null,
-      "priority_reasons": [
-        "affiliate_link",
-        "paid_price",
-        "missing_fact_bundle",
-        "missing_or_invalid_media_evidence",
-        "shallow_editorial"
-      ],
-      "priority_score": 310,
-      "published_at": null,
-      "quality_version": "catalog-review-v1",
-      "rendered_at": null,
-      "review_fingerprint": "sha256:e0be3fdd5a2b2bc21c7f208227e6deff52b8ee95717e107e067a5c7b1d5d1d64",
-      "reviewed_at": null,
-      "reviewed_hash": null,
-      "reviewer": null,
-      "risk_tier": "critical",
-      "slug": "map-tools",
-      "source_url": "https://maptools.com",
-      "source_verified_on": "2026-05-11",
-      "status": "QUEUED"
+      "status": "DUPLICATE"
     },
     {
       "assigned_batch": "review-creation-critical-002",
@@ -5970,6 +5790,44 @@
       "source_url": "https://magnific.com",
       "source_verified_on": "2026-05-11",
       "status": "QUEUED"
+    },
+    {
+      "assigned_batch": "review-creation-critical-002",
+      "batch_position": 7,
+      "blockers": [
+        "Aucun média produit officiel indexable et capture de secours non produite"
+      ],
+      "catalog_hash": "sha256:67e3af57c49ab78382ec3d95726fb43ca6eba0b1aabfc635205d4002456681fa",
+      "category": "creation",
+      "fact_bundle": "AVAILABLE",
+      "fact_bundle_hash": "sha256:849ed9e4f9f2233654926aface4d0ce3739992bd372a2468bb952ea3f4b31e02",
+      "invalidated_from": null,
+      "media_errors": [
+        "media_evidence_missing"
+      ],
+      "media_evidence": "MISSING",
+      "media_evidence_hash": null,
+      "name": "Map Tools",
+      "next_review_at": null,
+      "priority_reasons": [
+        "affiliate_link",
+        "paid_price",
+        "missing_or_invalid_media_evidence",
+        "shallow_editorial"
+      ],
+      "priority_score": 260,
+      "published_at": null,
+      "quality_version": "catalog-review-v1",
+      "rendered_at": null,
+      "review_fingerprint": "sha256:8cd367cb8ec4af6c6eb76b48bc8e8fa3008a43bcf5e09eb7ae90e5cf362f8d1a",
+      "reviewed_at": null,
+      "reviewed_hash": null,
+      "reviewer": null,
+      "risk_tier": "critical",
+      "slug": "map-tools",
+      "source_url": "https://maptools.com",
+      "source_verified_on": "2026-05-11",
+      "status": "REVIEW_REQUIRED"
     },
     {
       "assigned_batch": "review-productivity-tracking-critical-001",
@@ -30286,6 +30144,38 @@
       "status": "PUBLISHED"
     },
     {
+      "assigned_batch": "review-creation-critical-001",
+      "batch_position": 23,
+      "blockers": [],
+      "catalog_hash": "sha256:1f4b062e2e10f91773b772b35d6f9e4d925837397ad655f31899c9c9e7d063fb",
+      "category": "creation",
+      "fact_bundle": "AVAILABLE",
+      "fact_bundle_hash": "sha256:06823ecba318dc4653346b42f6acd22e16f980ad90c860115895bb52bc81b6c6",
+      "invalidated_from": null,
+      "media_errors": [],
+      "media_evidence": "VALID",
+      "media_evidence_hash": "sha256:aa5170c2e022bd1418abe9012e3a28bc09c74982c3298f5c6c8fe04f1aea2f11",
+      "name": "Caption Tools",
+      "next_review_at": null,
+      "priority_reasons": [
+        "affiliate_link",
+        "paid_price"
+      ],
+      "priority_score": 180,
+      "published_at": "2026-08-30",
+      "quality_version": "catalog-review-v1",
+      "rendered_at": "2026-08-30",
+      "review_fingerprint": "sha256:e948dd7caf5515359d25f49aa49514a5c3ad63157357d26388ce27c67f1b9eca",
+      "reviewed_at": "2026-08-30",
+      "reviewed_hash": "sha256:e948dd7caf5515359d25f49aa49514a5c3ad63157357d26388ce27c67f1b9eca",
+      "reviewer": "ToolTrim - Mike",
+      "risk_tier": "critical",
+      "slug": "caption-tools",
+      "source_url": "https://www.captiontools.com/",
+      "source_verified_on": "2026-08-30",
+      "status": "PUBLISHED"
+    },
+    {
       "assigned_batch": "review-design-tools-critical-001",
       "batch_position": 8,
       "blockers": [],
@@ -30414,6 +30304,38 @@
       "status": "PUBLISHED"
     },
     {
+      "assigned_batch": "review-developer-tools-critical-001",
+      "batch_position": 1,
+      "blockers": [],
+      "catalog_hash": "sha256:5229cc92a4f5a605e3f3e8530cc9539d4b519ed8b6701332c4ec24b05793a62b",
+      "category": "developer-tools",
+      "fact_bundle": "AVAILABLE",
+      "fact_bundle_hash": "sha256:9c9125a3c3ffc7bd0d79859a3aaeacef291340297eeeddcc463861a49cef37f4",
+      "invalidated_from": null,
+      "media_errors": [],
+      "media_evidence": "VALID",
+      "media_evidence_hash": "sha256:f2fbf359ea6bb49016d8700c8c42e3a0f97bd760d6501749f461ed5393589949",
+      "name": "Figma Dev Mode",
+      "next_review_at": null,
+      "priority_reasons": [
+        "affiliate_link",
+        "paid_price"
+      ],
+      "priority_score": 180,
+      "published_at": "2026-08-30",
+      "quality_version": "catalog-review-v1",
+      "rendered_at": "2026-08-30",
+      "review_fingerprint": "sha256:305b6b6e29f9668ce71e5d1acc72f99d6af7361d72d73d3ccbd64e0dfc425778",
+      "reviewed_at": "2026-08-30",
+      "reviewed_hash": "sha256:305b6b6e29f9668ce71e5d1acc72f99d6af7361d72d73d3ccbd64e0dfc425778",
+      "reviewer": "ToolTrim - Mike",
+      "risk_tier": "critical",
+      "slug": "figma-dev-mode",
+      "source_url": "https://www.figma.com/dev-mode/",
+      "source_verified_on": "2026-08-30",
+      "status": "PUBLISHED"
+    },
+    {
       "assigned_batch": "review-design-tools-critical-001",
       "batch_position": 1,
       "blockers": [],
@@ -30442,6 +30364,102 @@
       "risk_tier": "critical",
       "slug": "figma-draw",
       "source_url": "https://www.figma.com/draw/",
+      "source_verified_on": "2026-08-30",
+      "status": "PUBLISHED"
+    },
+    {
+      "assigned_batch": "review-ai-code-critical-001",
+      "batch_position": 1,
+      "blockers": [],
+      "catalog_hash": "sha256:959ab24a3d5e45588d0a6c137ae8cd421cae0d6a536ab6ddc7934ab1876d7567",
+      "category": "ai-code",
+      "fact_bundle": "AVAILABLE",
+      "fact_bundle_hash": "sha256:526d46cb744efcebe90a4a24edf584fc8dffcba13d13d494ce5905c70bda4aff",
+      "invalidated_from": null,
+      "media_errors": [],
+      "media_evidence": "VALID",
+      "media_evidence_hash": "sha256:2cd0bc10e5702ea58dba9e58017f112b6275c00bb01d5330e71d547bce4399e8",
+      "name": "Figma Make",
+      "next_review_at": null,
+      "priority_reasons": [
+        "affiliate_link",
+        "paid_price"
+      ],
+      "priority_score": 180,
+      "published_at": "2026-08-30",
+      "quality_version": "catalog-review-v1",
+      "rendered_at": "2026-08-30",
+      "review_fingerprint": "sha256:2538d3a2c441b0d54b5f92968de59d7950cce8009343413a42f7342c3d3739c8",
+      "reviewed_at": "2026-08-30",
+      "reviewed_hash": "sha256:2538d3a2c441b0d54b5f92968de59d7950cce8009343413a42f7342c3d3739c8",
+      "reviewer": "ToolTrim - Mike",
+      "risk_tier": "critical",
+      "slug": "figma-make",
+      "source_url": "https://help.figma.com/hc/en-us/articles/31722591905559-Figma-Make-FAQs",
+      "source_verified_on": "2026-08-30",
+      "status": "PUBLISHED"
+    },
+    {
+      "assigned_batch": "review-motion-design-critical-001",
+      "batch_position": 1,
+      "blockers": [],
+      "catalog_hash": "sha256:63b9cbf5b16a49307a0eb0d8d4b4fe6a26b035d3fc082e7343c3661eb5cc08a8",
+      "category": "motion-design",
+      "fact_bundle": "AVAILABLE",
+      "fact_bundle_hash": "sha256:e7d2b2005e915dca8041effad8f28187d129e8bc997f62fe3ea4a5a19cd14a49",
+      "invalidated_from": null,
+      "media_errors": [],
+      "media_evidence": "VALID",
+      "media_evidence_hash": "sha256:7e01c0c03ae150f4dca2a8ce331003cb255439beed94857a70aa6edba75147d1",
+      "name": "Figma Motion",
+      "next_review_at": null,
+      "priority_reasons": [
+        "affiliate_link",
+        "paid_price"
+      ],
+      "priority_score": 180,
+      "published_at": "2026-08-30",
+      "quality_version": "catalog-review-v1",
+      "rendered_at": "2026-08-30",
+      "review_fingerprint": "sha256:ccf20adafe88d36f4b46dfce958a95e3a995bc4cc3a40204eb70b5016ff8302c",
+      "reviewed_at": "2026-08-30",
+      "reviewed_hash": "sha256:ccf20adafe88d36f4b46dfce958a95e3a995bc4cc3a40204eb70b5016ff8302c",
+      "reviewer": "ToolTrim - Mike",
+      "risk_tier": "critical",
+      "slug": "figma-motion",
+      "source_url": "https://www.figma.com/motion/",
+      "source_verified_on": "2026-08-30",
+      "status": "PUBLISHED"
+    },
+    {
+      "assigned_batch": "review-website-builders-critical-001",
+      "batch_position": 1,
+      "blockers": [],
+      "catalog_hash": "sha256:36a16038f05a3dde7155e5142626924becde699511d847af8fdccf8fa38e3b38",
+      "category": "website-builders",
+      "fact_bundle": "AVAILABLE",
+      "fact_bundle_hash": "sha256:ac32395766c576ee41103df41af631443912ce4bced7eb79c7e97eddf2a8e573",
+      "invalidated_from": null,
+      "media_errors": [],
+      "media_evidence": "VALID",
+      "media_evidence_hash": "sha256:1782e05cee784a5f58de618354678299aa5f44c7bbc1766af95c0f337de4c591",
+      "name": "Figma Sites",
+      "next_review_at": null,
+      "priority_reasons": [
+        "affiliate_link",
+        "paid_price"
+      ],
+      "priority_score": 180,
+      "published_at": "2026-08-30",
+      "quality_version": "catalog-review-v1",
+      "rendered_at": "2026-08-30",
+      "review_fingerprint": "sha256:71d86c21c75a9c97289af4889709aaedb35ba95b58570d02539420db8c3c63c6",
+      "reviewed_at": "2026-08-30",
+      "reviewed_hash": "sha256:71d86c21c75a9c97289af4889709aaedb35ba95b58570d02539420db8c3c63c6",
+      "reviewer": "ToolTrim - Mike",
+      "risk_tier": "critical",
+      "slug": "figma-sites",
+      "source_url": "https://www.figma.com/sites/",
       "source_verified_on": "2026-08-30",
       "status": "PUBLISHED"
     },
@@ -30812,6 +30830,38 @@
       "source_url": "https://profilebuilder4sketchup.com/",
       "source_verified_on": "2026-08-30",
       "status": "REVIEW_REQUIRED"
+    },
+    {
+      "assigned_batch": "review-analytics-critical-001",
+      "batch_position": 1,
+      "blockers": [],
+      "catalog_hash": "sha256:738ecee457df5aabe72723d46cfc992f73ae9f653baa575f0916c53ea012e20f",
+      "category": "analytics",
+      "fact_bundle": "AVAILABLE",
+      "fact_bundle_hash": "sha256:7fa158c4023724e8971e2f24c2201b6fef7d6c8a47369c66896a15ee181aca59",
+      "invalidated_from": null,
+      "media_errors": [],
+      "media_evidence": "VALID",
+      "media_evidence_hash": "sha256:8974fa8946ecefdcf1986ddbf3d7605b26addbe62dbb8497e12b8a0566a3bc87",
+      "name": "SEO Mode",
+      "next_review_at": null,
+      "priority_reasons": [
+        "affiliate_link",
+        "paid_price"
+      ],
+      "priority_score": 180,
+      "published_at": "2026-08-30",
+      "quality_version": "catalog-review-v1",
+      "rendered_at": "2026-08-30",
+      "review_fingerprint": "sha256:ad31d4b3de7aaa606dab5292f58861f450ac48d3927383cd6db85e3c727c5422",
+      "reviewed_at": "2026-08-30",
+      "reviewed_hash": "sha256:ad31d4b3de7aaa606dab5292f58861f450ac48d3927383cd6db85e3c727c5422",
+      "reviewer": "ToolTrim - Mike",
+      "risk_tier": "critical",
+      "slug": "seo-mode",
+      "source_url": "https://seomode.co/",
+      "source_verified_on": "2026-08-30",
+      "status": "PUBLISHED"
     },
     {
       "assigned_batch": "review-design-tools-critical-001",

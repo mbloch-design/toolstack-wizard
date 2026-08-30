@@ -1,0 +1,23 @@
+{
+  "batch": "review-website-builders-critical-001",
+  "quality_version": "catalog-review-v1",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tools": [
+    {
+      "file": "figma-sites.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "figma-sites",
+      "status": "MEDIA_READY"
+    }
+  ]
+}

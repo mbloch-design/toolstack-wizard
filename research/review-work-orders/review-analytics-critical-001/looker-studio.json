@@ -1,0 +1,264 @@
+{
+  "batch": "review-analytics-critical-001",
+  "current": {
+    "affiliate_url": "https://lookerstudio.google.com",
+    "alternatives": [
+      "metabase"
+    ],
+    "category": "analytics",
+    "cons": [
+      "Limité aux connecteurs Google pour la version gratuite.",
+      "Connecteurs tiers : coûts additionnels et fonctionnalités variables.",
+      "Pas de gouvernance de données avancée.",
+      "Looker Studio Pro pour collaboration sérieuse."
+    ],
+    "cons_en": [
+      "Limited to Google connectors for free tier.",
+      "Third-party connectors have additional costs and variable features.",
+      "No advanced data governance.",
+      "Looker Studio Pro adds cost for serious collaboration."
+    ],
+    "host_app": null,
+    "id": "looker-studio",
+    "long_description": "Looker Studio (l'ex Google Data Studio), c'est l'outil de dashboards gratuit de Google. Tu connectes tes sources, surtout celles de l'écosystème Google (GA4, Google Ads, Sheets, BigQuery), et tu construis des rapports visuels partageables d'un simple lien. Pour un reporting client mensuel ou un tableau de bord d'acquisition, c'est rapide à mettre en place et ça ne coûte rien.\n\nSon point fort est aussi sa limite : il est imbattable quand tes données vivent chez Google, mais dès que tu sors de cet écosystème, les connecteurs deviennent payants (via des tiers) ou bancals, et l'outil montre ses limites sur des modèles de données complexes. La version Pro, autour de 9$/utilisateur/mois, ajoute surtout de la collaboration et du support, pas de la puissance.\n\nÀ qui ça sert : aux marketeurs, community managers et freelances qui font du reporting sur des données Google et veulent un livrable propre sans payer. Si tes données sont ailleurs (base SQL, produit), un outil comme Metabase sera plus flexible. Mais pour du reporting Google gratuit, Looker Studio reste la référence.",
+    "long_description_en": "Looker Studio (formerly Google Data Studio) is Google's free dashboard tool. You connect your sources, especially those in the Google ecosystem (GA4, Google Ads, Sheets, BigQuery), and build visual reports shareable with a single link. For a monthly client report or an acquisition dashboard, it's quick to set up and costs nothing.\n\nIts strength is also its limit: it's unbeatable when your data lives at Google, but the moment you step outside that ecosystem, connectors become paid (via third parties) or flaky, and the tool shows its limits on complex data models. The Pro version, around $9/user/month, mostly adds collaboration and support, not power.\n\nWho it's for: marketers, community managers and freelancers who report on Google data and want a clean deliverable without paying. If your data is elsewhere (SQL database, product), a tool like Metabase will be more flexible. But for free Google reporting, Looker Studio remains the reference.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://tooltrim.com/og-screenshots/looker-studio.jpg"
+    },
+    "name": "Looker Studio",
+    "pricing": {
+      "free": "Entièrement gratuit, rapports et partage illimités",
+      "paid": "Looker Studio Pro à environ 9$/utilisateur/mois (collaboration, support)"
+    },
+    "pricing_en": {
+      "free": "Completely free, unlimited reports and sharing",
+      "paid": "Looker Studio Pro at around $9/user/month (collaboration, support)"
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Entièrement gratuit pour le reporting et le partage",
+        "Looker Studio Pro à environ 9$/utilisateur/mois pour la collaboration et le support"
+      ],
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Free",
+      "compare_price_monthly_eur": 0,
+      "location_sensitive": false,
+      "official_source_url": "https://lookerstudio.google.com",
+      "price_reliability": "low",
+      "source_domain": "lookerstudio.google.com",
+      "usage_sensitive": false,
+      "verification_status": "official_site_only",
+      "verified_on": "2026-06-15"
+    },
+    "pros": [
+      "Entièrement gratuit pour l'usage avec connecteurs Google.",
+      "Interface sans code, rapide à mettre en place.",
+      "Intégration native parfaite avec Google Analytics et Ads.",
+      "Partage et collaboration faciles."
+    ],
+    "pros_en": [
+      "Free for Google native connectors.",
+      "No-code interface, fast to set up.",
+      "Native integration with Google Analytics and Ads.",
+      "Easy sharing and collaboration."
+    ],
+    "short_description": "Outil gratuit de reporting et dashboards de Google, connecté à GA4, Sheets et BigQuery.",
+    "short_description_en": "Free Google reporting and dashboard tool, connected to GA4, Sheets and BigQuery.",
+    "slug": "looker-studio",
+    "source_url": "https://lookerstudio.google.com",
+    "source_verified_on": "2026-06-15",
+    "use_cases": [
+      "Créer un tableau de bord Google Analytics pour votre équipe.",
+      "Visualiser les données Google Ads en temps quasi-réel.",
+      "Partager des rapports interactifs sans outils supplémentaires."
+    ],
+    "use_cases_en": [
+      "Create an interactive Google Analytics dashboard for your team.",
+      "Visualize Google Ads performance in near real-time.",
+      "Share interactive reports without extra tools."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous avez besoin d'une plateforme BI complète avec gouvernance d'données.",
+        "Vos données sont essentiellement en bases de données non-Google.",
+        "Vous exigez de la collaboration avancée et des rapports automatisés."
+      ],
+      "keepIf": [
+        "Vos données vivent dans Google Analytics, Google Ads ou BigQuery.",
+        "Vous voulez une solution sans code et gratuite pour débuter.",
+        "Votre équipe est petite ou en mode auto-service."
+      ],
+      "threshold": "Looker Studio excelle pour les rapports légers sur données Google ; pour une BI complète ou multi-sources, opter pour Metabase ou Looker (produit entreprise Google)."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You need a full BI platform with data governance.",
+        "Your data is mostly in non-Google databases.",
+        "You require advanced collaboration and scheduled reports."
+      ],
+      "keepIf": [
+        "Your data lives in Google Analytics, Google Ads, or BigQuery.",
+        "You want a free, no-code solution to get started.",
+        "Your team is small or self-service oriented."
+      ],
+      "threshold": "Looker Studio is great for lightweight reporting on Google data; for comprehensive BI or multi-source analytics, consider Metabase or Looker (Google's enterprise BI product)."
+    },
+    "website_url": "https://lookerstudio.google.com"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Limited to Google connectors for free tier.",
+        "Third-party connectors have additional costs and variable features.",
+        "No advanced data governance.",
+        "Looker Studio Pro adds cost for serious collaboration."
+      ],
+      "pros": [
+        "Free for Google native connectors.",
+        "No-code interface, fast to set up.",
+        "Native integration with Google Analytics and Ads.",
+        "Easy sharing and collaboration."
+      ],
+      "use_cases": [
+        "Create an interactive Google Analytics dashboard for your team.",
+        "Visualize Google Ads performance in near real-time.",
+        "Share interactive reports without extra tools."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You need a full BI platform with data governance.",
+          "Your data is mostly in non-Google databases.",
+          "You require advanced collaboration and scheduled reports."
+        ],
+        "keepIf": [
+          "Your data lives in Google Analytics, Google Ads, or BigQuery.",
+          "You want a free, no-code solution to get started.",
+          "Your team is small or self-service oriented."
+        ],
+        "threshold": "Looker Studio is great for lightweight reporting on Google data; for comprehensive BI or multi-source analytics, consider Metabase or Looker (Google's enterprise BI product)."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Accès complet gratuit aux rapports avec connecteurs Google natifs. Aucune limite de nombres de rapports ou utilisateurs.",
+        "exists": true
+      },
+      "key_features": [
+        "Connexion native aux produits Google (Analytics, Ads, Sheets, BigQuery)",
+        "Création de tableaux de bord sans code (drag-and-drop)",
+        "600+ connecteurs tiers (prix variables)",
+        "Partage et collaboration (Pro: rapports automatisés)"
+      ],
+      "plans": [
+        {
+          "name": "Looker Studio (gratuit)",
+          "price": "Gratuit, accès complet"
+        },
+        {
+          "name": "Looker Studio Pro",
+          "price": "9 $/utilisateur/mois (collaboration, rapports automatisés, support Google)"
+        }
+      ],
+      "pricing_model": "Gratuit avec connecteurs natifs Google. Looker Studio Pro payant pour collaboration d'équipe et rapports automatisés. Connecteurs tiers sont payants (montants variables).",
+      "what": "Outil Google gratuit de création de rapports et tableaux de bord visuels connectés à Google Analytics, Google Ads, BigQuery, Google Sheets et 600+ connecteurs tiers. Visualisation de données sans code.",
+      "what_en": "Free Google reporting and dashboard tool connected to Google Analytics, Google Ads, BigQuery, Google Sheets, and 600+ third-party connectors. No-code data visualization."
+    },
+    "fr": {
+      "cons": [
+        "Limité aux connecteurs Google pour la version gratuite.",
+        "Connecteurs tiers : coûts additionnels et fonctionnalités variables.",
+        "Pas de gouvernance de données avancée.",
+        "Looker Studio Pro pour collaboration sérieuse."
+      ],
+      "pros": [
+        "Entièrement gratuit pour l'usage avec connecteurs Google.",
+        "Interface sans code, rapide à mettre en place.",
+        "Intégration native parfaite avec Google Analytics et Ads.",
+        "Partage et collaboration faciles."
+      ],
+      "relevant_for": [
+        "Marketing teams",
+        "Analysts",
+        "Small businesses",
+        "Google ecosystem users"
+      ],
+      "use_cases": [
+        "Créer un tableau de bord Google Analytics pour votre équipe.",
+        "Visualiser les données Google Ads en temps quasi-réel.",
+        "Partager des rapports interactifs sans outils supplémentaires."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous avez besoin d'une plateforme BI complète avec gouvernance d'données.",
+          "Vos données sont essentiellement en bases de données non-Google.",
+          "Vous exigez de la collaboration avancée et des rapports automatisés."
+        ],
+        "keepIf": [
+          "Vos données vivent dans Google Analytics, Google Ads ou BigQuery.",
+          "Vous voulez une solution sans code et gratuite pour débuter.",
+          "Votre équipe est petite ou en mode auto-service."
+        ],
+        "threshold": "Looker Studio excelle pour les rapports légers sur données Google ; pour une BI complète ou multi-sources, opter pour Metabase ou Looker (produit entreprise Google)."
+      }
+    },
+    "slug": "looker-studio",
+    "sources": [
+      {
+        "label": "Looker Studio (site officiel)",
+        "url": "https://lookerstudio.google.com"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-analytics-critical-001",
+    "batch_position": 23,
+    "blockers": [],
+    "catalog_hash": "sha256:5a8af7bb463d31bea2495847e1858aa28c89ce3859b06b2a0a7b1064de0efff4",
+    "category": "analytics",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:e3cfb461618d88fcbc6c415647fda830c4d8dfb37bcd1fa8453ec8dabdd4fc9e",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Looker Studio",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:05aac434472a3e1cbfdb705b184b1b5e51ebc93453db6320d88fb73c13ac5827",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "looker-studio",
+    "source_url": "https://lookerstudio.google.com",
+    "source_verified_on": "2026-06-15",
+    "status": "QUEUED"
+  }
+}

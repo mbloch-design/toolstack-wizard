@@ -1,0 +1,140 @@
+{
+  "batch": "review-developer-tools-critical-001",
+  "current": {
+    "affiliate_url": "https://pterocos.eu.org/",
+    "alternatives": [
+      "stackblitz",
+      "codesandbox",
+      "codepen"
+    ],
+    "category": "developer-tools",
+    "cons": [
+      "Stockage local facile à perdre sans sauvegarde",
+      "Écosystème plus jeune que les IDE établis",
+      "Moins adapté aux projets complexes avec dépendances"
+    ],
+    "cons_en": [
+      "Local storage can be lost without a backup",
+      "Younger ecosystem than established IDEs",
+      "Less suitable for complex projects with dependencies"
+    ],
+    "host_app": null,
+    "id": "pterocos",
+    "long_description": "Pterocos est un éditeur de code gratuit et open source qui fonctionne directement dans le navigateur. Il combine l'éditeur Monaco, un aperçu instantané pour HTML, CSS et JavaScript, plusieurs onglets, des préprocesseurs et l'exécution locale de langages comme Python, SQL, Rust, PHP, Ruby, Lua, Java et C#.\n\nLes projets sont stockés par défaut dans le navigateur. Cette approche limite l'envoi de code vers un serveur, mais elle impose une vraie discipline de sauvegarde : vider les données du navigateur ou changer d'appareil peut faire perdre le travail local. Une sauvegarde GitHub Gist et des liens de partage temporaires sont proposés pour les cas où il faut déplacer ou montrer un projet.\n\nPterocos est pertinent pour apprendre, tester un extrait ou prototyper rapidement sans environnement local. Pour un projet durable avec dépendances, déploiement et collaboration structurée, StackBlitz, CodeSandbox ou un IDE installé restent plus solides.",
+    "long_description_en": "Pterocos is a free, open-source code editor that runs directly in the browser. It combines the Monaco editor, instant preview for HTML, CSS, and JavaScript, multiple tabs, preprocessors, and local execution for languages such as Python, SQL, Rust, PHP, Ruby, Lua, Java, and C#.\n\nProjects are stored in the browser by default. This limits server-side code transfer, but it requires a real backup habit: clearing browser data or switching devices can remove local work. GitHub Gist backup and temporary sharing links are available when a project needs to be moved or shown.\n\nPterocos is useful for learning, testing a snippet, or prototyping quickly without a local setup. For long-lived projects with dependencies, deployment, and structured collaboration, StackBlitz, CodeSandbox, or an installed IDE remain stronger choices.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://opengraph.githubassets.com/tooltrim/aminkheddache-dotcom/Pterocos"
+    },
+    "name": "Pterocos",
+    "pricing": {
+      "free": "Gratuit et open source",
+      "paid": null
+    },
+    "pricing_en": {
+      "free": "Free and open source",
+      "paid": null
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Le stockage principal est local au navigateur. Une sauvegarde externe reste nécessaire pour éviter la perte de données."
+      ],
+      "compare_plan_kind": "free",
+      "compare_plan_name": "Open source",
+      "compare_price_monthly_eur": 0,
+      "location_sensitive": false,
+      "official_source_url": "https://pterocos.eu.org/",
+      "price_reliability": "high",
+      "source_domain": "pterocos.eu.org",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-08-28"
+    },
+    "pros": [
+      "Gratuit",
+      "Exécution de plusieurs langages dans le navigateur"
+    ],
+    "pros_en": [
+      "Free",
+      "Runs multiple languages in the browser"
+    ],
+    "short_description": "Éditeur de code gratuit dans le navigateur avec exécution locale et aperçu instantané.",
+    "short_description_en": "Free browser-based code editor with local execution and instant preview.",
+    "slug": "pterocos",
+    "source_url": "https://pterocos.eu.org/",
+    "source_verified_on": "2026-08-28",
+    "use_cases": [
+      "Tester du code sans installer d'environnement local",
+      "Apprendre un langage depuis un navigateur",
+      "Partager rapidement un prototype ou un extrait"
+    ],
+    "use_cases_en": [
+      "Test code without installing a local environment",
+      "Learn a language from a browser",
+      "Quickly share a prototype or snippet"
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous construisez un projet durable avec de nombreuses dépendances.",
+        "Vous avez besoin d'une collaboration et d'un déploiement structurés."
+      ],
+      "keepIf": [
+        "Vous voulez tester ou enseigner du code sans installation.",
+        "Vous privilégiez une exécution locale dans le navigateur."
+      ],
+      "threshold": "Pterocos convient aux tests, à l'apprentissage et aux prototypes courts. Pour une application maintenue en équipe, choisissez un environnement de développement plus établi."
+    },
+    "verdict_en": null,
+    "website_url": "https://pterocos.eu.org/"
+  },
+  "fact_bundle": null,
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "research_primary_sources_then_write_fact_bundle",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-developer-tools-critical-001",
+    "batch_position": 2,
+    "blockers": [],
+    "catalog_hash": "sha256:7a01959f73722fde42a68ea8a4c3e456c51cad04e98fb8b53a662d67b8a1fcf9",
+    "category": "developer-tools",
+    "fact_bundle": "MISSING",
+    "fact_bundle_hash": null,
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Pterocos",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "missing_fact_bundle",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 190,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:0e082b5fae768ccfa74d0ca8aa0b97968b604b688221df5f76c7d234de04a256",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "pterocos",
+    "source_url": "https://pterocos.eu.org/",
+    "source_verified_on": "2026-08-28",
+    "status": "QUEUED"
+  }
+}

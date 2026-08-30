@@ -1,0 +1,250 @@
+{
+  "batch": "review-analytics-critical-001",
+  "current": {
+    "affiliate_url": "https://auvik.com",
+    "alternatives": [],
+    "category": "analytics",
+    "cons": [
+      "Modèle tarifaire complexe, demande devis personnalisé.",
+      "Prix peut être élevé pour nombreux dispositifs.",
+      "Pas de version gratuite."
+    ],
+    "cons_en": [
+      "Complex pricing model requiring custom quotes.",
+      "Can be expensive with many devices.",
+      "No free version."
+    ],
+    "host_app": null,
+    "id": "auvik",
+    "long_description": "Auvik cartographie automatiquement l'infrastructure réseau et la met à jour en temps réel à chaque connexion ou déconnexion d'appareil, avec plus de 64 alertes préconfigurées et un accès distant (terminal, navigateur, tunnel) directement intégré.\n\nLa tarification au nombre d'appareils facturables (firewall, switches, routeurs — pas les postes de travail) reste prévisible pour un réseau standard, mais grimpe pour des environnements avec beaucoup d'équipements réseau. Pas d'application mobile pour le monitoring en déplacement.",
+    "long_description_en": "Auvik automatically maps network infrastructure and updates it in real time with every device connection or disconnection, with over 64 preconfigured alerts and remote access (terminal, browser, tunnel) directly built in.\n\nPricing by billable device count (firewall, switches, routers — not workstations) remains predictable for a standard network, but rises for environments with many network devices. No mobile app for on-the-go monitoring.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://www.auvik.com/wp-content/uploads/2023/07/site-image.jpg"
+    },
+    "name": "Auvik",
+    "pricing": "Tarification par appareil facturable (firewalls, switches, routeurs) ; utilisateurs et sites illimités inclus. Essai gratuit 14 jours sans carte bancaire.",
+    "pricing_en": "Billed per device count (firewalls, switches, routers); unlimited users and sites included. 14-day free trial with no credit card.",
+    "pricing_v5": {
+      "cautions": [],
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Entry paid plan",
+      "compare_price_monthly_eur": 10,
+      "location_sensitive": false,
+      "official_source_url": "https://www.auvik.com/pricing/",
+      "price_reliability": "medium",
+      "source_domain": "auvik.com",
+      "usage_sensitive": false,
+      "verification_status": "official_contextual",
+      "verified_on": "2026-03-13"
+    },
+    "pros": [
+      "Découverte automatique des équipements réseau.",
+      "Alertes intelligentes et reconnaissance des problèmes.",
+      "Dashboards ergonomiques et rapports détaillés.",
+      "Support multi-sites natif."
+    ],
+    "pros_en": [
+      "Automatic device discovery and mapping.",
+      "Intelligent alerts and problem recognition.",
+      "Ergonomic dashboards and detailed reporting.",
+      "Native multi-site support."
+    ],
+    "short_description": "Monitoring réseau automatisé avec cartographie en temps réel, pour équipes IT.",
+    "short_description_en": "Automated network monitoring with real-time mapping, for IT teams.",
+    "slug": "auvik",
+    "source_url": "https://www.auvik.com/pricing/",
+    "source_verified_on": "2026-03-13",
+    "use_cases": [
+      "Surveiller la performance d'un réseau distribué.",
+      "Alerter équipes ITOps sur incidents réseau.",
+      "Générer rapports de conformité réseau."
+    ],
+    "use_cases_en": [
+      "Monitor performance of distributed networks.",
+      "Alert ITOps teams to network incidents.",
+      "Generate network compliance reports."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous avez un petit réseau avec peu de dispositifs.",
+        "Vous cherchez un outil gratuit.",
+        "Vous ne travaillez pas en mode opérationnel continu."
+      ],
+      "keepIf": [
+        "Vous gérez une infrastructure réseau complexe.",
+        "Vous avez besoin de surveillance 24/7 des équipements critiques.",
+        "Vous travaillez dans une équipe ITOps dédiée."
+      ],
+      "threshold": "Auvik convient aux entreprises avec infrastructure réseau importante ; pour petits réseaux, des solutions plus légères suffisent."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You have a small network with few devices.",
+        "You're looking for free tools.",
+        "You don't operate in continuous operational mode."
+      ],
+      "keepIf": [
+        "You manage complex network infrastructure.",
+        "You need 24/7 monitoring of critical equipment.",
+        "You work in a dedicated ITOps team."
+      ],
+      "threshold": "Auvik suits enterprises with substantial network infrastructure; for small networks, lighter solutions suffice."
+    },
+    "website_url": "https://auvik.com"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Complex pricing model requiring custom quotes.",
+        "Can be expensive with many devices.",
+        "No free version."
+      ],
+      "pros": [
+        "Automatic device discovery and mapping.",
+        "Intelligent alerts and problem recognition.",
+        "Ergonomic dashboards and detailed reporting.",
+        "Native multi-site support."
+      ],
+      "use_cases": [
+        "Monitor performance of distributed networks.",
+        "Alert ITOps teams to network incidents.",
+        "Generate network compliance reports."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You have a small network with few devices.",
+          "You're looking for free tools.",
+          "You don't operate in continuous operational mode."
+        ],
+        "keepIf": [
+          "You manage complex network infrastructure.",
+          "You need 24/7 monitoring of critical equipment.",
+          "You work in a dedicated ITOps team."
+        ],
+        "threshold": "Auvik suits enterprises with substantial network infrastructure; for small networks, lighter solutions suffice."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Pas de version gratuite, essai disponible. Certains dispositifs (points d'accès, imprimantes, UPS) ne consomment pas de licences.",
+        "exists": false
+      },
+      "key_features": [
+        "Découverte automatique des dispositifs réseau.",
+        "Surveillance temps réel et alertes.",
+        "Dashboards centralisés et rapports.",
+        "Support multi-sites et multi-localisations.",
+        "Intégrations Slack, Teams, PagerDuty."
+      ],
+      "plans": [
+        {
+          "name": "Basic",
+          "price": "À partir de 150 $/mois basé sur dispositifs"
+        },
+        {
+          "name": "Core",
+          "price": "À partir de 150 $/mois basé sur dispositifs"
+        }
+      ],
+      "pricing_model": "Abonnement mensuel ou annuel basé sur le nombre et le type de dispositifs supervisés (réseau, infrastructure, edge). Tiers Basic et Core avec fonctionnalités différentes.",
+      "what": "Plateforme de surveillance réseau SaaS pour ITOps. Monitore les dispositifs réseau, infrastructure et edge en temps réel, détecte les problèmes automatiquement et centralise alertes et dashboards.",
+      "what_en": "Cloud-based network monitoring platform for ITOps teams. Monitors network devices, infrastructure, and edge devices in real-time, auto-discovers problems, and centralizes alerts and dashboards."
+    },
+    "fr": {
+      "cons": [
+        "Modèle tarifaire complexe, demande devis personnalisé.",
+        "Prix peut être élevé pour nombreux dispositifs.",
+        "Pas de version gratuite."
+      ],
+      "pros": [
+        "Découverte automatique des équipements réseau.",
+        "Alertes intelligentes et reconnaissance des problèmes.",
+        "Dashboards ergonomiques et rapports détaillés.",
+        "Support multi-sites natif."
+      ],
+      "relevant_for": [
+        "Administrateurs réseau",
+        "Équipes ITOps",
+        "MSP (Managed Service Providers)",
+        "Infrastructures distribuées"
+      ],
+      "use_cases": [
+        "Surveiller la performance d'un réseau distribué.",
+        "Alerter équipes ITOps sur incidents réseau.",
+        "Générer rapports de conformité réseau."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous avez un petit réseau avec peu de dispositifs.",
+          "Vous cherchez un outil gratuit.",
+          "Vous ne travaillez pas en mode opérationnel continu."
+        ],
+        "keepIf": [
+          "Vous gérez une infrastructure réseau complexe.",
+          "Vous avez besoin de surveillance 24/7 des équipements critiques.",
+          "Vous travaillez dans une équipe ITOps dédiée."
+        ],
+        "threshold": "Auvik convient aux entreprises avec infrastructure réseau importante ; pour petits réseaux, des solutions plus légères suffisent."
+      }
+    },
+    "slug": "auvik",
+    "sources": [
+      {
+        "label": "Auvik — Network Monitoring Pricing (site officiel)",
+        "url": "https://www.auvik.com/pricing/"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-analytics-critical-001",
+    "batch_position": 15,
+    "blockers": [],
+    "catalog_hash": "sha256:c55f98d8d148e2f87ff04d00906ef84fdecd022092acafea3d0e53154c0bac41",
+    "category": "analytics",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:ad18ff7e3aa561c2bce1a0b3a843582a067c1903fd72cf98086205e19687155a",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Auvik",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:f65d42aaaf2902cb539748e1b09df8edbcf4121409d8b29e4103704718f1fd3c",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "auvik",
+    "source_url": "https://www.auvik.com/pricing/",
+    "source_verified_on": "2026-03-13",
+    "status": "QUEUED"
+  }
+}

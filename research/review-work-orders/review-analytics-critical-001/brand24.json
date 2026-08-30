@@ -1,0 +1,263 @@
+{
+  "batch": "review-analytics-critical-001",
+  "current": {
+    "affiliate_url": "https://try.brand24.com/2jbwm4slry45",
+    "alternatives": [],
+    "category": "analytics",
+    "cons": [
+      "Pas de version gratuite.",
+      "Prix plus élevé pour petites équipes.",
+      "Moins de fonctionnalités de publication que Hootsuite."
+    ],
+    "cons_en": [
+      "No free version.",
+      "Higher price for small teams.",
+      "Fewer publishing features than Hootsuite."
+    ],
+    "host_app": null,
+    "id": "brand24",
+    "long_description": "Brand24 surveille les mentions de marque en temps réel sur plus de 25 millions de sources (réseaux sociaux, presse, forums), avec une analyse de sentiment automatique et, depuis 2026, une détection des mentions vocales dans des vidéos YouTube avec horodatage.\n\nSon prix d'entrée (119$/mois) reste nettement inférieur aux solutions enterprise, et la mise en route est rapide. Ce n'est pas un outil tout-en-un : aucune fonctionnalité de publication, planification ou gestion de commentaires — uniquement de la veille.",
+    "long_description_en": "Brand24 monitors brand mentions in real time across over 25 million sources (social media, news, forums), with automatic sentiment analysis and, since 2026, voice mention detection in YouTube videos with timestamps.\n\nIts entry price ($119/month) remains notably lower than enterprise solutions, and setup is fast. It's not an all-in-one tool: no publishing, scheduling, or comment management features — monitoring only.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://brand24.com/app/themes/b24/assets/v4/images/og-image.png"
+    },
+    "name": "Brand24",
+    "pricing": "À partir de 119$/mois. Essai gratuit de 14 jours sans carte bancaire.",
+    "pricing_en": "From $119/month. 14-day free trial with no credit card.",
+    "pricing_v5": {
+      "cautions": [],
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Entry paid plan",
+      "compare_price_monthly_eur": 15,
+      "location_sensitive": false,
+      "official_source_url": "https://brand24.com/prices/",
+      "price_reliability": "high",
+      "source_domain": "brand24.com",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-03-13"
+    },
+    "pros": [
+      "Couverture de sources très large (25M+).",
+      "Détection sentiment avancée avec sarcasme.",
+      "Alertes temps réel pratiques via Slack/Email.",
+      "Suivi concurrence intégré.",
+      "Essai 14 jours offert."
+    ],
+    "pros_en": [
+      "Very wide coverage of sources (25M+).",
+      "Advanced sentiment detection with sarcasm.",
+      "Real-time alerts via Slack/Email.",
+      "Built-in competitor tracking.",
+      "14-day trial offered."
+    ],
+    "short_description": "Veille de marque en temps réel sur réseaux sociaux, presse et forums, avec analyse de sentiment.",
+    "short_description_en": "Real-time brand monitoring across social media, news, and forums, with sentiment analysis.",
+    "slug": "brand24",
+    "source_url": "https://brand24.com/prices/",
+    "source_verified_on": "2026-03-13",
+    "use_cases": [
+      "Monitorer réputation de marque en temps réel.",
+      "Analyser sentiment envers concurrents.",
+      "Générer rapports influenceurs et mentions clés."
+    ],
+    "use_cases_en": [
+      "Monitor brand reputation in real-time.",
+      "Analyze sentiment toward competitors.",
+      "Generate influencer and mention reports."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous ne cherchez que social media management standard.",
+        "Vous avez un budget très limité.",
+        "Vous n'avez pas besoin d'alertes temps réel."
+      ],
+      "keepIf": [
+        "Vous gérez la réputation d'une marque ou produit.",
+        "Vous avez besoin de surveiller mentions en temps réel.",
+        "Vous analysez stratégies concurrents."
+      ],
+      "threshold": "Brand24 convient aux équipes marketing/communications professionnelles ; pour besoins simples de social management, autres outils suffisent."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You only want standard social media management.",
+        "Your budget is very tight.",
+        "You don't need real-time alerts."
+      ],
+      "keepIf": [
+        "You manage brand or product reputation.",
+        "You need real-time mention monitoring.",
+        "You analyze competitor strategies."
+      ],
+      "threshold": "Brand24 suits professional marketing/communications teams; for simple social management needs, other tools suffice."
+    },
+    "website_url": "https://brand24.com"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "No free version.",
+        "Higher price for small teams.",
+        "Fewer publishing features than Hootsuite."
+      ],
+      "pros": [
+        "Very wide coverage of sources (25M+).",
+        "Advanced sentiment detection with sarcasm.",
+        "Real-time alerts via Slack/Email.",
+        "Built-in competitor tracking.",
+        "14-day trial offered."
+      ],
+      "use_cases": [
+        "Monitor brand reputation in real-time.",
+        "Analyze sentiment toward competitors.",
+        "Generate influencer and mention reports."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You only want standard social media management.",
+          "Your budget is very tight.",
+          "You don't need real-time alerts."
+        ],
+        "keepIf": [
+          "You manage brand or product reputation.",
+          "You need real-time mention monitoring.",
+          "You analyze competitor strategies."
+        ],
+        "threshold": "Brand24 suits professional marketing/communications teams; for simple social management needs, other tools suffice."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Pas de version gratuite permanente. Essai gratuit 14 jours disponible.",
+        "exists": false
+      },
+      "key_features": [
+        "Surveillance 25M+ sources en ligne (réseaux, presse, blogs, forums).",
+        "Détection sentiment avec analyse sarcasme.",
+        "Alertes temps réel via email et Slack.",
+        "Suivi jusqu'à 5 concurrents par projet.",
+        "Rapports PDF/CSV exportables avec graphiques.",
+        "Dashboard en ligne et analytics."
+      ],
+      "plans": [
+        {
+          "name": "Starter",
+          "price": "199 $/mois (annuel), 249 $/mois (mensuel)"
+        },
+        {
+          "name": "Team",
+          "price": "299 $/mois (annuel), 349 $/mois (mensuel)"
+        },
+        {
+          "name": "Pro",
+          "price": "399 $/mois (annuel), 449 $/mois (mensuel)"
+        },
+        {
+          "name": "Business",
+          "price": "599 $/mois (annuel), 699 $/mois (mensuel)"
+        }
+      ],
+      "pricing_model": "Abonnement mensuel ou annuel. Plans tiérés : Starter, Team, Pro, Business, Enterprise. Tarification progressive selon besoins.",
+      "what": "Plateforme de social listening et monitoring de marque. Surveille mentions de marque/produits sur réseaux sociaux, presse, forums et blogs. Détecte sentiment (positif/négatif/neutre), alertes temps réel, rapports concurrence.",
+      "what_en": "Social listening and brand monitoring platform. Tracks brand/product mentions across social media, news, forums, and blogs. Detects sentiment, sends real-time alerts, analyzes competitors."
+    },
+    "fr": {
+      "cons": [
+        "Pas de version gratuite.",
+        "Prix plus élevé pour petites équipes.",
+        "Moins de fonctionnalités de publication que Hootsuite."
+      ],
+      "pros": [
+        "Couverture de sources très large (25M+).",
+        "Détection sentiment avancée avec sarcasme.",
+        "Alertes temps réel pratiques via Slack/Email.",
+        "Suivi concurrence intégré.",
+        "Essai 14 jours offert."
+      ],
+      "relevant_for": [
+        "Community managers",
+        "Marketing managers",
+        "PR/Communications",
+        "Brand reputation specialists"
+      ],
+      "use_cases": [
+        "Monitorer réputation de marque en temps réel.",
+        "Analyser sentiment envers concurrents.",
+        "Générer rapports influenceurs et mentions clés."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous ne cherchez que social media management standard.",
+          "Vous avez un budget très limité.",
+          "Vous n'avez pas besoin d'alertes temps réel."
+        ],
+        "keepIf": [
+          "Vous gérez la réputation d'une marque ou produit.",
+          "Vous avez besoin de surveiller mentions en temps réel.",
+          "Vous analysez stratégies concurrents."
+        ],
+        "threshold": "Brand24 convient aux équipes marketing/communications professionnelles ; pour besoins simples de social management, autres outils suffisent."
+      }
+    },
+    "slug": "brand24",
+    "sources": [
+      {
+        "label": "Brand24 — Social Listening Platform (site officiel)",
+        "url": "https://brand24.com"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-analytics-critical-001",
+    "batch_position": 16,
+    "blockers": [],
+    "catalog_hash": "sha256:a8c8a7ead2314dae771dd4b70e71f006e99f2d98e83dbf980e456a764289c3ce",
+    "category": "analytics",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:13ee3e7c0b1fb5830416fd5bd96a4f5060c9887d1e9e9ba75bfebd3069f25fbe",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Brand24",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:9240a4630fa0d9dc0b97fd626436b37f113cba88792908041b8db41295c995c0",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "brand24",
+    "source_url": "https://brand24.com/prices/",
+    "source_verified_on": "2026-03-13",
+    "status": "QUEUED"
+  }
+}

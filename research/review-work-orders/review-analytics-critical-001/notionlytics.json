@@ -1,0 +1,250 @@
+{
+  "batch": "review-analytics-critical-001",
+  "current": {
+    "affiliate_url": null,
+    "alternatives": [],
+    "category": "analytics",
+    "cons": [
+      "Pas de version gratuite, payant à partir du Pro.",
+      "Limité aux pages Notion (pas d'usage web classique).",
+      "Petit marché de niche comparé aux outils generalist."
+    ],
+    "cons_en": [
+      "No free tier, paid from Pro.",
+      "Limited to Notion pages (no web tracking).",
+      "Small niche compared to general-purpose tools."
+    ],
+    "host_app": null,
+    "id": "notionlytics",
+    "long_description": "Notionlytics, c'est analytics pour pages Notion partagées. À partir de 5€/mois.\n\nAnalytics simples pour pages Notion. pas de configuration technique, vues, temps passé, sources. Intégration Notion native. Concrètement : suivre les vues sur un portfolio Notion. Ou encore : mesurer l'engagement sur une documentation client.\n\nÀ garder si : notion utilisé comme site public ou portfolio ou besoin de savoir qui consulte vos docs. À éviter si : notion en usage privé uniquement ou site web classique (utiliser Plausible). Limite principale : limité aux pages Notion publiques. Utile si vous partagez régulièrement des pages Notion avec des clients ou prospects.",
+    "long_description_en": "Notionlytics is analytics for shared Notion pages. Starting at €5/month.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": null
+    },
+    "name": "Notionlytics",
+    "pricing": {
+      "free": "Plan gratuit limité",
+      "paid": "À partir de 5$/mois"
+    },
+    "pricing_en": null,
+    "pricing_v5": null,
+    "pros": [
+      "Intégration native simple avec Notion, zéro code.",
+      "Widgets en temps réel pour tracking immédiat.",
+      "Retours anonymes des lecteurs intégrés.",
+      "Support d'intégrations tier (Google Analytics, Facebook)."
+    ],
+    "pros_en": [
+      "Simple native Notion integration, zero code.",
+      "Real-time widgets for instant tracking.",
+      "Anonymous reader feedback built-in.",
+      "Third-party integrations (Google Analytics, Facebook)."
+    ],
+    "short_description": "Analytics pour pages Notion partagées.",
+    "short_description_en": "Analytics for shared Notion pages.",
+    "slug": "notionlytics",
+    "source_url": null,
+    "source_verified_on": null,
+    "use_cases": [
+      "Analyser l'engagement de votre wiki d'équipe ou documentation.",
+      "Suivre le trafic sur les pages de ressources Notion partagées.",
+      "Recueillir des retours des lecteurs sur vos documents.",
+      "Optimiser la structure du contenu Notion basé sur les vues."
+    ],
+    "use_cases_en": [
+      "Analyze engagement on your team wiki or documentation.",
+      "Track traffic on shared Notion resource pages.",
+      "Collect reader feedback on your documents.",
+      "Optimize Notion content structure based on views."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous cherchez une solution entièrement gratuite.",
+        "Vous n'utilisez pas Notion ou avez peu de pages à suivre.",
+        "Vous avez besoin de tracker votre site web classique : Notionlytics est limité à Notion, sans analytique web générale."
+      ],
+      "keepIf": [
+        "Vous partagez des pages Notion publiques ou semi-privées.",
+        "Vous voulez comprendre l'engagement de votre contenu Notion.",
+        "Vous explorez Notion comme CMS ou wiki pour équipe."
+      ],
+      "threshold": "Notionlytics s'impose pour ceux qui monétisent ou partagent largement du contenu Notion ; moins pertinent pour les petits wikis privés."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You need a free solution.",
+        "You don't use Notion or have few pages to track.",
+        "You need to track your regular website: Notionlytics is limited to Notion, with no general web analytics."
+      ],
+      "keepIf": [
+        "You share public or semi-private Notion pages.",
+        "You want to understand engagement on your Notion content.",
+        "You explore Notion as a CMS or team wiki."
+      ],
+      "threshold": "Notionlytics fits those monetizing or widely sharing Notion content; less relevant for small private wikis."
+    },
+    "website_url": null
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "No free tier, paid from Pro.",
+        "Limited to Notion pages (no web tracking).",
+        "Small niche compared to general-purpose tools."
+      ],
+      "pros": [
+        "Simple native Notion integration, zero code.",
+        "Real-time widgets for instant tracking.",
+        "Anonymous reader feedback built-in.",
+        "Third-party integrations (Google Analytics, Facebook)."
+      ],
+      "use_cases": [
+        "Analyze engagement on your team wiki or documentation.",
+        "Track traffic on shared Notion resource pages.",
+        "Collect reader feedback on your documents.",
+        "Optimize Notion content structure based on views."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You need a free solution.",
+          "You don't use Notion or have few pages to track.",
+          "You need to track your regular website: Notionlytics is limited to Notion, with no general web analytics."
+        ],
+        "keepIf": [
+          "You share public or semi-private Notion pages.",
+          "You want to understand engagement on your Notion content.",
+          "You explore Notion as a CMS or team wiki."
+        ],
+        "threshold": "Notionlytics fits those monetizing or widely sharing Notion content; less relevant for small private wikis."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Pas de version gratuite. Essai présumé via inscription (détails non spécifiés sur le site).",
+        "exists": false
+      },
+      "key_features": [
+        "Widgets d'analytique en temps réel sans code",
+        "Suivi des vues, sessions et localisation",
+        "Intégration avec Google Analytics et Facebook Pixel",
+        "Retours interactifs et anonymes des lecteurs",
+        "Compatible pages publiques et privées Notion"
+      ],
+      "plans": [
+        {
+          "name": "Pro",
+          "price": "montants sur la page officielle (jusqu'à 100 pages)"
+        },
+        {
+          "name": "Team",
+          "price": "montants sur la page officielle (pages illimitées, 5 membres)"
+        },
+        {
+          "name": "Business",
+          "price": "montants sur la page officielle (pages illimitées, 100 membres, support prioritaire)"
+        }
+      ],
+      "pricing_model": "Abonnement mensuel avec trois plans : Pro, Team, Business. Basé sur le nombre de pages et membres.",
+      "what": "Outil d'analytique avancée pour les pages Notion partagées. Propose des widgets à intégrer pour suivre les vues, sessions, localisation et recueillir des retours anonymes.",
+      "what_en": "Advanced analytics tool for shared Notion pages. Provides embeddable widgets to track views, sessions, location, and collect anonymous feedback."
+    },
+    "fr": {
+      "cons": [
+        "Pas de version gratuite, payant à partir du Pro.",
+        "Limité aux pages Notion (pas d'usage web classique).",
+        "Petit marché de niche comparé aux outils generalist."
+      ],
+      "pros": [
+        "Intégration native simple avec Notion, zéro code.",
+        "Widgets en temps réel pour tracking immédiat.",
+        "Retours anonymes des lecteurs intégrés.",
+        "Support d'intégrations tier (Google Analytics, Facebook)."
+      ],
+      "relevant_for": [
+        "Créateurs de contenu",
+        "Équipes avec documentation Notion",
+        "Startups avec wikis"
+      ],
+      "use_cases": [
+        "Analyser l'engagement de votre wiki d'équipe ou documentation.",
+        "Suivre le trafic sur les pages de ressources Notion partagées.",
+        "Recueillir des retours des lecteurs sur vos documents.",
+        "Optimiser la structure du contenu Notion basé sur les vues."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous cherchez une solution entièrement gratuite.",
+          "Vous n'utilisez pas Notion ou avez peu de pages à suivre.",
+          "Vous avez besoin de tracker votre site web classique : Notionlytics est limité à Notion, sans analytique web générale."
+        ],
+        "keepIf": [
+          "Vous partagez des pages Notion publiques ou semi-privées.",
+          "Vous voulez comprendre l'engagement de votre contenu Notion.",
+          "Vous explorez Notion comme CMS ou wiki pour équipe."
+        ],
+        "threshold": "Notionlytics s'impose pour ceux qui monétisent ou partagent largement du contenu Notion ; moins pertinent pour les petits wikis privés."
+      }
+    },
+    "slug": "notionlytics",
+    "sources": [
+      {
+        "label": "Notionlytics — analytics pour Notion (site officiel)",
+        "url": "https://notionlytics.com"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-analytics-critical-001",
+    "batch_position": 12,
+    "blockers": [],
+    "catalog_hash": "sha256:189992a5f89d5083440c2abc771323facfa98a0d28513707944e26bc80b8c127",
+    "category": "analytics",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:f12ac3a85e6032beeb693bf2f21d80abde2820f43b8e503808da36423cc0034d",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Notionlytics",
+    "next_review_at": null,
+    "priority_reasons": [
+      "paid_price",
+      "missing_official_source",
+      "missing_or_invalid_media_evidence",
+      "missing_media",
+      "undated_source"
+    ],
+    "priority_score": 250,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:ae330f00266879d51b356e3b90497fdd6b9b581dd26667574f033051f09b48f8",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "notionlytics",
+    "source_url": null,
+    "source_verified_on": null,
+    "status": "QUEUED"
+  }
+}

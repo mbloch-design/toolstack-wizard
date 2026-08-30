@@ -23816,50 +23816,78 @@
     "slug": "caption-tools",
     "name": "Caption Tools",
     "category": "creation",
-    "shortDescription": "Outil ou ressource utilisé dans les stacks créateurs de contenu ToolTrim.",
-    "shortDescriptionEn": "Tool or resource used in ToolTrim creator stacks.",
-    "description": "Caption Tools est référencé pour couvrir un besoin précis dans les stacks créateurs de contenu ToolTrim.",
-    "longDescription": "Caption Tools est référencé pour couvrir un besoin précis dans les stacks créateurs de contenu ToolTrim.",
-    "longDescriptionEn": "Tool or resource used in ToolTrim creator stacks.",
+    "shortDescription": "Plateforme web de transcription, d'alignement de transcriptions et d'édition de sous-titres pour les contenus audio et vidéo. Elle transforme une transcription automatique ou un texte existant en fichiers de sous-titres synchronisés.",
+    "shortDescriptionEn": "Web platform for transcription, transcript alignment, and caption editing for audio and video content. It turns automatic transcription or an existing script into synchronized caption files.",
+    "description": "Plateforme web de transcription, d'alignement de transcriptions et d'édition de sous-titres pour les contenus audio et vidéo. Elle transforme une transcription automatique ou un texte existant en fichiers de sous-titres synchronisés.\n\nFonctions clés : Transcription automatique par reconnaissance vocale avec éditeur de texte en ligne ; Alignement d'une transcription existante avec la piste audio d'un média ; Éditeur de sous-titres avec synchronisation, réglage des timecodes et contrôle de longueur de ligne ; Export en SRT, WebVTT, Timed Text XML et texte brut ; Intégration Streamtext pour reprendre et corriger des fichiers de sous-titrage en direct ; Comptes parent-enfant et options de marque blanche pour les organisations éligibles.\n\nAjoutez CaptionTools si l'alignement et la correction de sous-titres sont des tâches récurrentes; pour une vidéo occasionnelle, un éditeur gratuit plus simple peut suffire.",
+    "longDescription": "Plateforme web de transcription, d'alignement de transcriptions et d'édition de sous-titres pour les contenus audio et vidéo. Elle transforme une transcription automatique ou un texte existant en fichiers de sous-titres synchronisés.\n\nFonctions clés : Transcription automatique par reconnaissance vocale avec éditeur de texte en ligne ; Alignement d'une transcription existante avec la piste audio d'un média ; Éditeur de sous-titres avec synchronisation, réglage des timecodes et contrôle de longueur de ligne ; Export en SRT, WebVTT, Timed Text XML et texte brut ; Intégration Streamtext pour reprendre et corriger des fichiers de sous-titrage en direct ; Comptes parent-enfant et options de marque blanche pour les organisations éligibles.\n\nAjoutez CaptionTools si l'alignement et la correction de sous-titres sont des tâches récurrentes; pour une vidéo occasionnelle, un éditeur gratuit plus simple peut suffire.",
+    "longDescriptionEn": "Web platform for transcription, transcript alignment, and caption editing for audio and video content. It turns automatic transcription or an existing script into synchronized caption files.\n\nKey strengths: Combines transcription, alignment, and editing in one coherent workflow.; Can start from an existing transcript to save time.; Exports the most common web caption formats.; The editor is available without a recurring subscription..\n\nAdd CaptionTools when caption alignment and correction are recurring tasks; for an occasional video, a simpler free editor may be enough.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "Création de compte et éditeur de sous-titres gratuits. Les minutes de transcription automatique et d'alignement sont payantes.",
+      "paid": "Pay-As-You-Go: 1 $/minute, sans achat minimum ; Professional: 400 $ pour 500 minutes, soit 0,80 $/minute ; Enterprise: 3 000 $ pour 6 000 minutes, soit 0,50 $/minute"
     },
     "pricingEn": {
-      "free": "Not disclosed",
-      "paid": "Custom / usage based"
+      "free": "Création de compte et éditeur de sous-titres gratuits. Les minutes de transcription automatique et d'alignement sont payantes.",
+      "paid": "Pay-As-You-Go: 1 $/minute, sans achat minimum ; Professional: 400 $ pour 500 minutes, soit 0,80 $/minute ; Enterprise: 3 000 $ pour 6 000 minutes, soit 0,50 $/minute"
     },
     "defaultMonthlyPrice": 0,
     "pricing_v5": {
       "cautions": [
         "Prix à vérifier sur la page officielle avant décision."
       ],
-      "verified_on": "2026-05-11",
+      "verified_on": "2026-08-30",
       "source_domain": "captiontools.com",
       "usage_sensitive": true,
       "compare_plan_kind": "custom",
       "compare_plan_name": "Prix non public",
       "price_reliability": "official_context_required",
       "location_sensitive": false,
-      "official_source_url": "https://captiontools.com",
-      "verification_status": "needs_official_quote",
+      "official_source_url": "https://www.captiontools.com/",
+      "verification_status": "official_explicit",
       "compare_price_monthly_eur": 0
     },
     "affiliateLink": "https://captiontools.com",
     "websiteUrl": "https://captiontools.com",
     "logo": "https://logo.clearbit.com/captiontools.com",
     "seo": {},
-    "pros": [],
-    "prosEn": [],
-    "cons": [],
-    "consEn": [],
-    "useCases": [],
-    "useCasesEn": [],
+    "pros": [
+      "Réunit transcription, alignement et édition dans un flux cohérent.",
+      "Permet de partir d'une transcription existante pour gagner du temps.",
+      "Propose les formats de sous-titres web les plus courants.",
+      "L'éditeur reste accessible sans abonnement récurrent."
+    ],
+    "prosEn": [
+      "Combines transcription, alignment, and editing in one coherent workflow.",
+      "Can start from an existing transcript to save time.",
+      "Exports the most common web caption formats.",
+      "The editor is available without a recurring subscription."
+    ],
+    "cons": [
+      "La transcription automatique doit être relue et corrigée.",
+      "Le catalogue de formats d'export reste plus limité que celui de certains logiciels spécialisés.",
+      "Les fonctions organisationnelles avancées sont réservées à certains niveaux d'achat."
+    ],
+    "consEn": [
+      "Automatic transcripts still require proofreading and correction.",
+      "The export format range is narrower than some specialist desktop tools.",
+      "Advanced organization features are limited to qualifying purchase levels."
+    ],
+    "useCases": [
+      "Synchroniser une transcription validée avec une vidéo de formation.",
+      "Corriger les sous-titres d'un événement diffusé en direct.",
+      "Exporter des fichiers SRT et WebVTT pour plusieurs plateformes vidéo."
+    ],
+    "useCasesEn": [
+      "Align an approved transcript with a training video.",
+      "Correct captions from a live event recording.",
+      "Export SRT and WebVTT files for multiple video platforms."
+    ],
     "covers": [
       "creator-workflow"
     ],
     "relevantFor": [
-      "content-creator"
+      "Prestataires de sous-titrage",
+      "Équipes vidéo et formation",
+      "Médias et créateurs de contenu"
     ],
     "personas": [
       "lina"
@@ -23867,21 +23895,29 @@
     "alternatives": [],
     "verdict": {
       "keepIf": [
-        "Le besoin revient dans plusieurs contenus ou campagnes."
+        "Vous disposez déjà de transcriptions et devez les synchroniser rapidement avec des médias.",
+        "Vous produisez régulièrement des fichiers de sous-titres dans plusieurs formats standard.",
+        "Votre équipe veut corriger le texte et les timecodes dans un même espace web."
       ],
       "avoidIf": [
-        "Un outil déjà payé couvre correctement ce rôle."
+        "Vous cherchez un service entièrement automatisé sans relecture humaine.",
+        "Vous avez besoin de formats de diffusion avancés qui ne figurent pas dans les exports proposés.",
+        "Votre flux impose une application de bureau ou un traitement entièrement local."
       ],
-      "threshold": "À ajouter seulement si le rôle est central dans la production ou la monétisation."
+      "threshold": "Ajoutez CaptionTools si l'alignement et la correction de sous-titres sont des tâches récurrentes; pour une vidéo occasionnelle, un éditeur gratuit plus simple peut suffire."
     },
     "verdictEn": {
       "keepIf": [
-        "The need repeats across content or campaigns."
+        "You already have transcripts and need to align them quickly with media.",
+        "You regularly deliver caption files in several standard formats.",
+        "Your team wants to correct text and timecodes in one web workspace."
       ],
       "avoidIf": [
-        "An existing paid tool already covers the role."
+        "You expect a fully automated service with no human review.",
+        "You need advanced broadcast formats that are not among the available exports.",
+        "Your workflow requires a desktop application or fully local processing."
       ],
-      "threshold": "Add only if the role is central to production or monetization."
+      "threshold": "Add CaptionTools when caption alignment and correction are recurring tasks; for an occasional video, a simpler free editor may be enough."
     },
     "articles": [],
     "timeGainedHoursPerMonth": 3,
@@ -23909,7 +23945,8 @@
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
     "ogImageUrl": "https://captiontools.com/wp-content/uploads/2018/03/Toolbox.jpg",
-    "force_silence": false
+    "force_silence": false,
+    "galleryImages": []
   },
   {
     "id": "captions",
@@ -46445,19 +46482,19 @@
     "slug": "figma-make",
     "name": "Figma Make",
     "category": "ai-code",
-    "shortDescription": "Prompt-to-app collaboratif pour transformer une idée ou une maquette Figma en prototype fonctionnel.",
-    "shortDescriptionEn": "Collaborative prompt-to-app tool for turning an idea or Figma design into a functional prototype.",
-    "longDescription": "Figma Make génère et affine des prototypes fonctionnels à partir d'un prompt ou d'un fichier Figma, avec édition ciblée et contexte du design system. Il est inclus selon le plan et le type de siège Figma.",
-    "longDescriptionEn": "Figma Make generates and refines functional prototypes from a prompt or Figma file, with targeted editing and design-system context. Access depends on the Figma plan and seat type.",
+    "shortDescription": "Outil Figma piloté par prompt pour transformer une idée ou un design existant en prototype fonctionnel, interface interactive ou application web. Il combine génération, édition du code, publication et contexte de design system.",
+    "shortDescriptionEn": "Prompt-driven Figma tool that turns an idea or an existing design into a functional prototype, interactive interface, or web app. It combines generation, code editing, publishing, and design-system context.",
+    "longDescription": "Outil Figma piloté par prompt pour transformer une idée ou un design existant en prototype fonctionnel, interface interactive ou application web. Il combine génération, édition du code, publication et contexte de design system.\n\nFonctions clés : Génération par prompt à partir de designs, composants et fichiers de référence ; Prototypes fonctionnels, applications web et publication avec URL dédiée ; Édition du code, plan mode et sélection du modèle d'IA ; Connexion à Supabase, GitHub, kits de design system et connecteurs ; Copie du résultat en calques éditables dans Figma Design.\n\nAjoutez Figma Make lorsque la génération réduit le délai entre maquette et prototype testable tout en conservant le contexte de design.",
+    "longDescriptionEn": "Prompt-driven Figma tool that turns an idea or an existing design into a functional prototype, interactive interface, or web app. It combines generation, code editing, publishing, and design-system context.\n\nKey strengths: Starts from existing designs and components.; Combines generation, editing, data, and publishing.; Lets non-technical roles test interactions.; Moves results back into Figma tools..\n\nAdd Figma Make when generation shortens the path from mockup to testable prototype while preserving design context.",
     "websiteUrl": "https://www.figma.com/make/",
     "affiliateLink": "https://www.figma.com/make/",
     "pricing": {
-      "free": "Accès limité avec Starter",
-      "paid": "Inclus avec un siège Full éligible"
+      "free": "Starter permet d'explorer Make, sans bibliothèques d'équipe et avec publication publique liée à Figma Community.",
+      "paid": "Starter: Gratuit, accès limité et 500 crédits d'IA/mois au maximum ; Professional Full seat: 16 $/mois, 3 000 crédits d'IA/mois ; Organization Full seat: 55 $/mois, facturé annuellement, 3 500 crédits d'IA/mois ; Enterprise Full seat: 90 $/mois, facturé annuellement, 4 250 crédits d'IA/mois"
     },
     "pricingEn": {
-      "free": "Limited access on Starter",
-      "paid": "Included with an eligible Full seat"
+      "free": "Starter permet d'explorer Make, sans bibliothèques d'équipe et avec publication publique liée à Figma Community.",
+      "paid": "Starter: Gratuit, accès limité et 500 crédits d'IA/mois au maximum ; Professional Full seat: 16 $/mois, 3 000 crédits d'IA/mois ; Organization Full seat: 55 $/mois, facturé annuellement, 3 500 crédits d'IA/mois ; Enterprise Full seat: 90 $/mois, facturé annuellement, 4 250 crédits d'IA/mois"
     },
     "defaultMonthlyPrice": 0,
     "logo": "https://cdn.sanity.io/images/599r6htc/regionalized/857d716d2ba170b1507a97dfd233543408c3700e-2256x2112.png?rect=1345,1550,260,260&w=256&h=256&fit=crop&auto=format",
@@ -46480,36 +46517,105 @@
       "generation-code"
     ],
     "relevantFor": [
-      "Designers produit",
+      "Product designers",
       "Product managers",
-      "Prototypers"
+      "Équipes innovation"
     ],
     "alternatives": [
       "lovable",
       "bolt-new"
     ],
     "articles": [],
-    "ogImageUrl": "https://cdn.sanity.io/images/599r6htc/regionalized/7e39b983c6ad865e0a7a5243d914020e69a23f70-542x305.png",
-    "force_silence": false
+    "ogImageUrl": "https://cdn.sanity.io/images/599r6htc/regionalized/a1f0928acf4128e33ad6f4dd573bdaf3a3e2c893-3840x2160.png?auto=format&fit=max&h=918&q=75&w=1632",
+    "force_silence": false,
+    "description": "Outil Figma piloté par prompt pour transformer une idée ou un design existant en prototype fonctionnel, interface interactive ou application web. Il combine génération, édition du code, publication et contexte de design system.\n\nFonctions clés : Génération par prompt à partir de designs, composants et fichiers de référence ; Prototypes fonctionnels, applications web et publication avec URL dédiée ; Édition du code, plan mode et sélection du modèle d'IA ; Connexion à Supabase, GitHub, kits de design system et connecteurs ; Copie du résultat en calques éditables dans Figma Design.\n\nAjoutez Figma Make lorsque la génération réduit le délai entre maquette et prototype testable tout en conservant le contexte de design.",
+    "verdict": {
+      "keepIf": [
+        "Vous devez tester rapidement une idée à partir de designs Figma existants.",
+        "Produit, design et développement veulent explorer dans un fichier partagé.",
+        "Votre design system doit guider les prototypes générés."
+      ],
+      "avoidIf": [
+        "Vous attendez une application de production sans revue du code ni de l'architecture.",
+        "Vos sources de design ne vivent pas dans Figma.",
+        "Les contraintes de publication et de crédits nuisent au flux prévu."
+      ],
+      "threshold": "Ajoutez Figma Make lorsque la génération réduit le délai entre maquette et prototype testable tout en conservant le contexte de design."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You need to test an idea quickly from existing Figma designs.",
+        "Product, design, and engineering want to explore in one shared file.",
+        "Your design system should guide generated prototypes."
+      ],
+      "avoidIf": [
+        "You expect production software without code or architecture review.",
+        "Your design sources do not live in Figma.",
+        "Publishing and credit constraints conflict with the intended workflow."
+      ],
+      "threshold": "Add Figma Make when generation shortens the path from mockup to testable prototype while preserving design context."
+    },
+    "pros": [
+      "Démarre depuis les designs et composants existants.",
+      "Combine génération, édition, données et publication.",
+      "Permet aux profils non techniques de tester des interactions.",
+      "Réinjecte le résultat dans les outils Figma."
+    ],
+    "prosEn": [
+      "Starts from existing designs and components.",
+      "Combines generation, editing, data, and publishing.",
+      "Lets non-technical roles test interactions.",
+      "Moves results back into Figma tools."
+    ],
+    "cons": [
+      "La qualité et la maintenabilité du code généré nécessitent une revue.",
+      "Les limites varient selon la licence, le forfait et les crédits.",
+      "L'accès gratuit impose des restrictions de bibliothèque et de publication."
+    ],
+    "consEn": [
+      "Generated code quality and maintainability require review.",
+      "Limits vary by seat, plan, and credits.",
+      "Free access restricts libraries and publishing."
+    ],
+    "useCases": [
+      "Transformer une maquette en prototype fonctionnel.",
+      "Tester une interaction avec des données.",
+      "Construire une preuve de concept à partager."
+    ],
+    "useCasesEn": [
+      "Turn a mockup into a functional prototype.",
+      "Test an interaction with data.",
+      "Build a proof of concept to share."
+    ],
+    "pricing_v5": {
+      "verified_on": "2026-08-30",
+      "official_source_url": "https://help.figma.com/hc/en-us/articles/31722591905559-Figma-Make-FAQs",
+      "source_domain": "help.figma.com",
+      "verification_status": "official_explicit"
+    },
+    "galleryImages": [
+      "https://cdn.sanity.io/images/599r6htc/regionalized/ec904960a5d46447f31afe6e7abab92f97ec444e-3840x2160.png?auto=format&fit=max&h=452&q=75&rect=0%2C1%2C3840%2C2159&w=804",
+      "https://cdn.sanity.io/images/599r6htc/regionalized/af228a202004b8e7a6bf03fcef7f1a22a7bd603d-3840x2160.png?auto=format&fit=max&h=452&q=75&rect=0%2C1%2C3840%2C2159&w=804"
+    ]
   },
   {
     "id": "figma-sites",
     "slug": "figma-sites",
     "name": "Figma Sites",
     "category": "website-builders",
-    "shortDescription": "Création et publication de sites responsives sans quitter l'environnement Figma.",
-    "shortDescriptionEn": "Build and publish responsive websites without leaving the Figma environment.",
-    "longDescription": "Figma Sites transforme une composition en site responsive publiable, avec breakpoints, composants, interactions et accès aux bibliothèques du design system. Le produit est encore présenté en bêta par Figma.",
-    "longDescriptionEn": "Figma Sites turns a composition into a publishable responsive website with breakpoints, components, interactions, and design-system libraries. Figma still presents the product as beta.",
+    "shortDescription": "Constructeur de sites responsive en bêta ouverte intégré à Figma. Il transforme des frames Figma Design en pages publiées avec composants, interactions, CMS, code et assistance par IA.",
+    "shortDescriptionEn": "Open-beta responsive website builder built into Figma. It turns Figma Design frames into published pages with components, interactions, CMS, code, and AI assistance.",
+    "longDescription": "Constructeur de sites responsive en bêta ouverte intégré à Figma. Il transforme des frames Figma Design en pages publiées avec composants, interactions, CMS, code et assistance par IA.\n\nFonctions clés : Conversion de frames Figma Design en mises en page responsive ; Blocs préconstruits, Auto Layout et interactions visuelles ; CMS pour éditer et publier du contenu sans modifier le canvas ; Interactions générées par prompt et édition directe du code ; Réutilisation des bibliothèques, styles, composants et modèles Figma.\n\nAjoutez Figma Sites si la continuité entre design, contenu et publication vaut davantage qu'une pile web personnalisée.",
+    "longDescriptionEn": "Open-beta responsive website builder built into Figma. It turns Figma Design frames into published pages with components, interactions, CMS, code, and AI assistance.\n\nKey strengths: Preserves details from existing frames, components, and styles.; Combines responsive design, interactions, CMS, and publishing.; Lets contributors update content without breaking layout.; Supports visual, AI-assisted, and code-edited workflows..\n\nAdd Figma Sites when continuity across design, content, and publishing matters more than a custom web stack.",
     "websiteUrl": "https://www.figma.com/sites/",
     "affiliateLink": "https://www.figma.com/sites/",
     "pricing": {
-      "free": "Accès limité selon le plan",
-      "paid": "Inclus avec un siège Full éligible"
+      "free": "Starter permet d'explorer le produit mais nécessite une mise à niveau pour publier un site.",
+      "paid": "Starter: Gratuit, création limitée sans publication ; Professional Full seat: 16 $/mois, Sites inclus ; Organization Full seat: 55 $/mois, facturé annuellement ; Enterprise Full seat: 90 $/mois, facturé annuellement"
     },
     "pricingEn": {
-      "free": "Limited access depending on plan",
-      "paid": "Included with an eligible Full seat"
+      "free": "Starter permet d'explorer le produit mais nécessite une mise à niveau pour publier un site.",
+      "paid": "Starter: Gratuit, création limitée sans publication ; Professional Full seat: 16 $/mois, Sites inclus ; Organization Full seat: 55 $/mois, facturé annuellement ; Enterprise Full seat: 90 $/mois, facturé annuellement"
     },
     "logo": "https://cdn.sanity.io/images/599r6htc/regionalized/857d716d2ba170b1507a97dfd233543408c3700e-2256x2112.png?rect=650,1550,260,260&w=256&h=256&fit=crop&auto=format",
     "defaultMonthlyPrice": 0,
@@ -46532,17 +46638,86 @@
       "publication-web"
     ],
     "relevantFor": [
-      "Designers web",
-      "Studios",
-      "Freelances"
+      "Web designers",
+      "Équipes marketing",
+      "Studios de marque"
     ],
     "alternatives": [
       "framer",
       "webflow"
     ],
     "articles": [],
-    "ogImageUrl": "https://cdn.sanity.io/images/599r6htc/regionalized/4b9ade839f38291c91b76608d22e7c7a9ad525fd-542x305.png",
-    "force_silence": false
+    "ogImageUrl": "https://cdn.sanity.io/images/599r6htc/regionalized/335a56e4791663bdcf7bcab4969a207f8fe22c15-1260x1260.png?auto=format&fit=max&h=630&q=75&w=630",
+    "force_silence": false,
+    "description": "Constructeur de sites responsive en bêta ouverte intégré à Figma. Il transforme des frames Figma Design en pages publiées avec composants, interactions, CMS, code et assistance par IA.\n\nFonctions clés : Conversion de frames Figma Design en mises en page responsive ; Blocs préconstruits, Auto Layout et interactions visuelles ; CMS pour éditer et publier du contenu sans modifier le canvas ; Interactions générées par prompt et édition directe du code ; Réutilisation des bibliothèques, styles, composants et modèles Figma.\n\nAjoutez Figma Sites si la continuité entre design, contenu et publication vaut davantage qu'une pile web personnalisée.",
+    "verdict": {
+      "keepIf": [
+        "Votre site doit reprendre fidèlement un design et un système Figma existants.",
+        "Designers et éditeurs de contenu doivent travailler dans le même environnement.",
+        "Vous lancez des sites marketing sans chaîne de développement séparée."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'un framework, d'un backend ou d'un hébergement entièrement contrôlés.",
+        "Vous ne centralisez pas vos composants dans Figma.",
+        "Le statut bêta est incompatible avec vos exigences de production."
+      ],
+      "threshold": "Ajoutez Figma Sites si la continuité entre design, contenu et publication vaut davantage qu'une pile web personnalisée."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "Your site must closely follow an existing Figma design system.",
+        "Designers and content editors need one shared environment.",
+        "You launch marketing sites without a separate development pipeline."
+      ],
+      "avoidIf": [
+        "You need full control over framework, backend, or hosting.",
+        "You do not centralize components in Figma.",
+        "Beta status conflicts with production requirements."
+      ],
+      "threshold": "Add Figma Sites when continuity across design, content, and publishing matters more than a custom web stack."
+    },
+    "pros": [
+      "Préserve les détails des frames, composants et styles existants.",
+      "Réunit design responsive, interactions, CMS et publication.",
+      "Permet aux contributeurs de modifier le contenu sans casser la mise en page.",
+      "Offre une voie visuelle, assistée par IA ou éditée en code."
+    ],
+    "prosEn": [
+      "Preserves details from existing frames, components, and styles.",
+      "Combines responsive design, interactions, CMS, and publishing.",
+      "Lets contributors update content without breaking layout.",
+      "Supports visual, AI-assisted, and code-edited workflows."
+    ],
+    "cons": [
+      "Reste une bêta dont les limites et conditions peuvent évoluer.",
+      "La publication nécessite un forfait payant et une licence Full.",
+      "Le contrôle technique reste inférieur à une application développée sur mesure."
+    ],
+    "consEn": [
+      "It remains a beta whose limits and terms can change.",
+      "Publishing requires a paid plan and Full seat.",
+      "Technical control remains below a custom-built application."
+    ],
+    "useCases": [
+      "Publier un portfolio conçu dans Figma.",
+      "Lancer une landing page de campagne.",
+      "Maintenir un site éditorial simple avec le CMS intégré."
+    ],
+    "useCasesEn": [
+      "Publish a portfolio designed in Figma.",
+      "Launch a campaign landing page.",
+      "Maintain a simple editorial site with the built-in CMS."
+    ],
+    "pricing_v5": {
+      "verified_on": "2026-08-30",
+      "official_source_url": "https://www.figma.com/sites/",
+      "source_domain": "figma.com",
+      "verification_status": "official_explicit"
+    },
+    "galleryImages": [
+      "https://cdn.sanity.io/images/599r6htc/regionalized/d88fb912c65fa24938c25b067c88b22ea6917041-1608x1072.png?auto=format&fit=max&h=520&q=75&w=780",
+      "https://cdn.sanity.io/images/599r6htc/regionalized/812f934f093212b5f2a939227b970a6bf3406929-1080x864.png?auto=format&fit=max&h=864&q=75&w=1080"
+    ]
   },
   {
     "id": "figma-buzz",
@@ -46683,19 +46858,19 @@
     "slug": "figma-dev-mode",
     "name": "Figma Dev Mode",
     "category": "developer-tools",
-    "shortDescription": "Handoff développeur avec inspection, variables, assets, code et contexte du design system.",
-    "shortDescriptionEn": "Developer handoff with inspection, variables, assets, code, and design-system context.",
-    "longDescription": "Dev Mode organise le passage du design au développement : mesures, propriétés, exports, extraits de code, statut des maquettes et intégrations. L'inspection de base reste disponible aux viewers ; les fonctions avancées nécessitent un siège Dev ou Full.",
-    "longDescriptionEn": "Dev Mode structures design-to-development handoff through measurements, properties, exports, code snippets, design status, and integrations. Basic inspection remains available to viewers; advanced features require a Dev or Full seat.",
+    "shortDescription": "Espace développeur intégré aux fichiers Figma Design pour inspecter les interfaces, relier design et code et organiser le passage en développement. Il nécessite Figma et une licence Dev ou Full sur un forfait payant.",
+    "shortDescriptionEn": "Developer workspace inside Figma Design files for inspecting interfaces, connecting design and code, and managing handoff. It requires Figma and a Dev or Full seat on a paid plan.",
+    "longDescription": "Espace développeur intégré aux fichiers Figma Design pour inspecter les interfaces, relier design et code et organiser le passage en développement. Il nécessite Figma et une licence Dev ou Full sur un forfait payant.\n\nFonctions clés : Inspection avancée, propriétés, mesures et extraits de code ; Statuts prêts pour le développement, notifications et comparaison des changements ; Component playground, annotations et ressources développeur ; Code Connect, MCP Server et extension Figma pour VS Code ; Liens vers GitHub, Jira, Storybook et documentation.\n\nAjoutez Dev Mode à Figma lorsque l'inspection, les statuts et les liens vers le code réduisent les allers-retours de livraison.",
+    "longDescriptionEn": "Developer workspace inside Figma Design files for inspecting interfaces, connecting design and code, and managing handoff. It requires Figma and a Dev or Full seat on a paid plan.\n\nKey strengths: Centralizes specifications in the source file.; Connects design components to real code components.; Makes change and delivery status easier to track.; Integrates with existing coding and project tools..\n\nAdd Dev Mode to Figma when inspection, statuses, and code links reduce handoff cycles.",
     "websiteUrl": "https://www.figma.com/dev-mode/",
     "affiliateLink": "https://www.figma.com/dev-mode/",
     "pricing": {
-      "free": "Inspection de base pour les viewers",
-      "paid": "Professional Dev 12 $/mois ou siège Full 16 $/mois"
+      "free": "Les viewers gratuits disposent d'une inspection de base, mais pas de l'espace Dev Mode complet.",
+      "paid": "Professional Dev seat: 12 $/mois ; Professional Full seat: 16 $/mois ; Organization Dev seat: 25 $/mois, facturé annuellement ; Enterprise Dev seat: 35 $/mois, facturé annuellement"
     },
     "pricingEn": {
-      "free": "Basic inspection for viewers",
-      "paid": "Professional Dev $12/month or Full $16/month"
+      "free": "Les viewers gratuits disposent d'une inspection de base, mais pas de l'espace Dev Mode complet.",
+      "paid": "Professional Dev seat: 12 $/mois ; Professional Full seat: 16 $/mois ; Organization Dev seat: 25 $/mois, facturé annuellement ; Enterprise Dev seat: 35 $/mois, facturé annuellement"
     },
     "logo": "https://cdn.sanity.io/images/599r6htc/regionalized/857d716d2ba170b1507a97dfd233543408c3700e-2256x2112.png?rect=1345,730,260,260&w=256&h=256&fit=crop&auto=format",
     "defaultMonthlyPrice": 12,
@@ -46717,15 +46892,84 @@
       "inspection-code"
     ],
     "relevantFor": [
-      "Développeurs",
-      "Designers produit",
-      "Design systems teams"
+      "Développeurs front-end",
+      "Design systems",
+      "Équipes produit"
     ],
     "alternatives": [
       "zeplin"
     ],
     "articles": [],
-    "force_silence": false
+    "force_silence": false,
+    "description": "Espace développeur intégré aux fichiers Figma Design pour inspecter les interfaces, relier design et code et organiser le passage en développement. Il nécessite Figma et une licence Dev ou Full sur un forfait payant.\n\nFonctions clés : Inspection avancée, propriétés, mesures et extraits de code ; Statuts prêts pour le développement, notifications et comparaison des changements ; Component playground, annotations et ressources développeur ; Code Connect, MCP Server et extension Figma pour VS Code ; Liens vers GitHub, Jira, Storybook et documentation.\n\nAjoutez Dev Mode à Figma lorsque l'inspection, les statuts et les liens vers le code réduisent les allers-retours de livraison.",
+    "verdict": {
+      "keepIf": [
+        "Vos développeurs livrent régulièrement des interfaces conçues dans Figma.",
+        "Votre design system doit relier composants visuels et composants de production.",
+        "Le passage design-développement manque de contexte ou de suivi."
+      ],
+      "avoidIf": [
+        "Vous n'utilisez pas Figma Design.",
+        "Une inspection gratuite et ponctuelle couvre déjà vos besoins.",
+        "Votre équipe ne maintient ni composants ni flux de validation partagé."
+      ],
+      "threshold": "Ajoutez Dev Mode à Figma lorsque l'inspection, les statuts et les liens vers le code réduisent les allers-retours de livraison."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "Developers regularly ship interfaces designed in Figma.",
+        "Your design system must connect visual and production components.",
+        "Design-to-development handoff lacks context or tracking."
+      ],
+      "avoidIf": [
+        "You do not use Figma Design.",
+        "Occasional free inspection already covers your needs.",
+        "Your team maintains no shared components or approval workflow."
+      ],
+      "threshold": "Add Dev Mode to Figma when inspection, statuses, and code links reduce handoff cycles."
+    },
+    "pros": [
+      "Centralise les spécifications dans le fichier source.",
+      "Relie les composants de design aux composants réels.",
+      "Facilite le suivi des changements et du statut de livraison.",
+      "S'intègre aux outils de code et de gestion déjà utilisés."
+    ],
+    "prosEn": [
+      "Centralizes specifications in the source file.",
+      "Connects design components to real code components.",
+      "Makes change and delivery status easier to track.",
+      "Integrates with existing coding and project tools."
+    ],
+    "cons": [
+      "Suppose un flux de conception déjà organisé dans Figma.",
+      "Les fonctions complètes demandent une licence payante dédiée ou Full.",
+      "Le bénéfice dépend de la qualité des composants et annotations en amont."
+    ],
+    "consEn": [
+      "Assumes an organized Figma design workflow.",
+      "Full capabilities require a paid Dev or Full seat.",
+      "Its value depends on upstream component and annotation quality."
+    ],
+    "useCases": [
+      "Inspecter une interface et récupérer ses propriétés.",
+      "Comparer une version prête à développer à une mise à jour.",
+      "Relier un composant Figma à son implémentation de production."
+    ],
+    "useCasesEn": [
+      "Inspect an interface and retrieve its properties.",
+      "Compare a development-ready version with an update.",
+      "Connect a Figma component to its production implementation."
+    ],
+    "pricing_v5": {
+      "verified_on": "2026-08-30",
+      "official_source_url": "https://www.figma.com/dev-mode/",
+      "source_domain": "figma.com",
+      "verification_status": "official_explicit"
+    },
+    "ogImageUrl": "https://cdn.sanity.io/images/599r6htc/regionalized/c6a0a58afc2722851abd21d93a1840360c851ad9-2464x1378.png?auto=format&fit=max&h=1378&q=75&w=2464",
+    "galleryImages": [
+      "https://cdn.sanity.io/images/599r6htc/regionalized/9cdc0cedb39a7c60e5b814ea857175cfd0fd0616-2720x1360.png?auto=format&fit=max&h=1360&q=75&w=2720"
+    ]
   },
   {
     "id": "figma-draw",
@@ -46851,19 +47095,19 @@
     "slug": "figma-motion",
     "name": "Figma Motion",
     "category": "motion-design",
-    "shortDescription": "Animation et motion design directement dans l'environnement Figma.",
-    "shortDescriptionEn": "Animation and motion design directly inside the Figma environment.",
-    "longDescription": "Figma Motion ajoute un espace d'animation à l'écosystème afin de faire évoluer des compositions et interfaces sans exporter le travail vers un outil séparé. Il est actuellement présenté en bêta pour les sièges Full.",
-    "longDescriptionEn": "Figma Motion adds an animation workspace to the ecosystem so compositions and interfaces can move without exporting work to a separate tool. It is currently presented as beta for Full seats.",
+    "shortDescription": "Mode d'animation en bêta ouverte intégré au canvas Figma. Il ajoute une timeline, des keyframes, des systèmes de mouvement et des exports pour le design et le passage en développement.",
+    "shortDescriptionEn": "Open-beta animation mode built into the Figma canvas. It adds a timeline, keyframes, motion systems, and exports for design and development handoff.",
+    "longDescription": "Mode d'animation en bêta ouverte intégré au canvas Figma. Il ajoute une timeline, des keyframes, des systèmes de mouvement et des exports pour le design et le passage en développement.\n\nFonctions clés : Timeline complète, keyframes personnalisées et auto-keyframing ; Styles prédéfinis, courbes de Bézier et ressorts ; Composants animés, variables et systèmes de mouvement ; Inspection et copie du code via Dev Mode et MCP ; Exports MP4, GIF, WebM et SVG.\n\nAjoutez Motion à Figma lorsque le mouvement doit devenir une propriété réutilisable et inspectable du design system.",
+    "longDescriptionEn": "Open-beta animation mode built into the Figma canvas. It adds a timeline, keyframes, motion systems, and exports for design and development handoff.\n\nKey strengths: Animates existing components and variables directly.; Combines manual control, presets, and agent assistance.; Preserves context for developer handoff.; Exports delivery formats and usable code..\n\nAdd Motion to Figma when motion must become a reusable, inspectable property of the design system.",
     "websiteUrl": "https://www.figma.com/motion/",
     "affiliateLink": "https://www.figma.com/motion/",
     "pricing": {
-      "free": "Non inclus dans Starter",
-      "paid": "Bêta disponible avec les sièges Full"
+      "free": "Starter permet d'essayer Motion avec des exports limités.",
+      "paid": "Starter: Gratuit, accès et exports limités ; Professional Full seat: 16 $/mois ; Organization Full seat: 55 $/mois, facturé annuellement ; Enterprise Full seat: 90 $/mois, facturé annuellement"
     },
     "pricingEn": {
-      "free": "Not included on Starter",
-      "paid": "Beta available with Full seats"
+      "free": "Starter permet d'essayer Motion avec des exports limités.",
+      "paid": "Starter: Gratuit, accès et exports limités ; Professional Full seat: 16 $/mois ; Organization Full seat: 55 $/mois, facturé annuellement ; Enterprise Full seat: 90 $/mois, facturé annuellement"
     },
     "logo": "https://cdn.sanity.io/images/599r6htc/regionalized/857d716d2ba170b1507a97dfd233543408c3700e-2256x2112.png?rect=1000,730,260,260&w=256&h=256&fit=crop&auto=format",
     "defaultMonthlyPrice": 0,
@@ -46887,14 +47131,83 @@
     "relevantFor": [
       "Motion designers",
       "Product designers",
-      "Brand teams"
+      "Design systems"
     ],
     "alternatives": [
       "after-effects",
       "rive"
     ],
     "articles": [],
-    "force_silence": false
+    "force_silence": false,
+    "description": "Mode d'animation en bêta ouverte intégré au canvas Figma. Il ajoute une timeline, des keyframes, des systèmes de mouvement et des exports pour le design et le passage en développement.\n\nFonctions clés : Timeline complète, keyframes personnalisées et auto-keyframing ; Styles prédéfinis, courbes de Bézier et ressorts ; Composants animés, variables et systèmes de mouvement ; Inspection et copie du code via Dev Mode et MCP ; Exports MP4, GIF, WebM et SVG.\n\nAjoutez Motion à Figma lorsque le mouvement doit devenir une propriété réutilisable et inspectable du design system.",
+    "verdict": {
+      "keepIf": [
+        "Vos animations partent déjà de composants Figma.",
+        "Designers et développeurs doivent commenter et inspecter le mouvement ensemble.",
+        "Vous voulez réutiliser des règles de mouvement dans un design system."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'une suite de compositing ou de montage avancée.",
+        "Vous ne travaillez pas dans Figma.",
+        "Un prototype avec transitions simples suffit à communiquer l'intention."
+      ],
+      "threshold": "Ajoutez Motion à Figma lorsque le mouvement doit devenir une propriété réutilisable et inspectable du design system."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "Your animations already start from Figma components.",
+        "Designers and developers need to review and inspect motion together.",
+        "You want reusable motion rules inside a design system."
+      ],
+      "avoidIf": [
+        "You need an advanced compositing or editing suite.",
+        "You do not work in Figma.",
+        "Simple prototype transitions already communicate the intent."
+      ],
+      "threshold": "Add Motion to Figma when motion must become a reusable, inspectable property of the design system."
+    },
+    "pros": [
+      "Anime directement les composants et variables existants.",
+      "Associe contrôle manuel, styles rapides et assistance par agent.",
+      "Conserve le contexte pour le passage en développement.",
+      "Exporte des formats de diffusion et du code exploitable."
+    ],
+    "prosEn": [
+      "Animates existing components and variables directly.",
+      "Combines manual control, presets, and agent assistance.",
+      "Preserves context for developer handoff.",
+      "Exports delivery formats and usable code."
+    ],
+    "cons": [
+      "Reste une bêta dont certaines fonctions sont annoncées mais pas encore disponibles.",
+      "Les fonctions les plus structurantes dépendent d'une licence Full payante.",
+      "Ne remplace pas un outil spécialisé pour les productions complexes."
+    ],
+    "consEn": [
+      "It remains a beta with some announced features still unavailable.",
+      "The most structured capabilities depend on a paid Full seat.",
+      "It does not replace a specialist tool for complex productions."
+    ],
+    "useCases": [
+      "Animer les états d'une interface.",
+      "Créer un système de mouvement réutilisable.",
+      "Transmettre une animation inspectable aux développeurs."
+    ],
+    "useCasesEn": [
+      "Animate interface states.",
+      "Build a reusable motion system.",
+      "Hand an inspectable animation to developers."
+    ],
+    "pricing_v5": {
+      "verified_on": "2026-08-30",
+      "official_source_url": "https://www.figma.com/motion/",
+      "source_domain": "figma.com",
+      "verification_status": "official_explicit"
+    },
+    "ogImageUrl": "https://cdn.sanity.io/images/599r6htc/regionalized/1be0a1a57c359165bc4c28346f987f30d662ce65-992x558.png?auto=format&fit=max&h=558&q=75&w=992",
+    "galleryImages": [
+      "https://cdn.sanity.io/images/599r6htc/regionalized/7fbacb4b82f4f9ecca0d9788f5eab4c8a1ae1e7b-2016x1135.png?auto=format&fit=max&h=1135&q=75&w=2016"
+    ]
   },
   {
     "id": "figma-slides",
@@ -133107,10 +133420,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "shortDescription": "Outil SEO IA pour optimiser le contenu et booster le classement Google à 2$/mois.",
-    "shortDescriptionEn": "AI SEO tool to optimize content and boost Google rankings at $2/mo.",
-    "longDescription": "SEO Mode utilise l'IA pour analyser et optimiser les pages web, suggérer des améliorations SEO on-page et générer des meta-données optimisées.",
-    "longDescriptionEn": "SEO Mode uses AI to analyze and optimize web pages, suggest on-page SEO improvements and generate optimized metadata.",
+    "shortDescription": "SEO Mode est une agence de croissance organique gérée pour les entreprises SaaS. Elle combine stratégie de mots-clés, contenu, SEO technique, backlinks, mentions sociales et optimisation AEO afin d'améliorer la visibilité dans Google et les assistants IA.",
+    "shortDescriptionEn": "SEO Mode is a managed organic growth agency for SaaS companies. It combines keyword strategy, content, technical SEO, backlinks, social mentions, and AEO to improve visibility in Google and AI assistants.",
+    "longDescription": "SEO Mode est une agence de croissance organique gérée pour les entreprises SaaS. Elle combine stratégie de mots-clés, contenu, SEO technique, backlinks, mentions sociales et optimisation AEO afin d'améliorer la visibilité dans Google et les assistants IA.\n\nFonctions clés : Audit technique SEO et corrections ; Stratégie de contenu et groupes thématiques ; Optimisation on-page et AEO pour ChatGPT, Gemini et Perplexity ; Création de contenu et recherche de mots-clés à forte intention ; Prospection de liens, backlinks et mentions sociales ; Rapports mensuels reliés au trafic, aux classements et au revenu.\n\nRetenez SEO Mode lorsque la coordination d'une équipe SEO complète vaut davantage que le contrôle d'un outil autonome.",
+    "longDescriptionEn": "SEO Mode is a managed organic growth agency for SaaS companies. It combines keyword strategy, content, technical SEO, backlinks, social mentions, and AEO to improve visibility in Google and AI assistants.\n\nKey strengths: Combines content, technical work, authority, and AI visibility in one service.; Clear focus on SaaS companies.; Adjustable modules for different acquisition priorities.; Useful free tools for an initial diagnosis..\n\nChoose SEO Mode when the coordination of a complete SEO team is more valuable than direct control of a standalone tool.",
     "defaultMonthlyPrice": 2,
     "pricing_v5": {
       "free_tier": true,
@@ -133118,24 +133431,27 @@
       "source_url": "https://seomode.com/pricing",
       "monthly_eur": 2,
       "reliability": "low",
-      "verified_on": "2026-05-08",
+      "verified_on": "2026-08-30",
       "billing_note": "Basic 2$/mois",
       "free_tier_note": "Plan gratuit limité",
       "price_original": 2,
       "currency_original": "USD",
-      "annual_monthly_eur": 2
+      "annual_monthly_eur": 2,
+      "official_source_url": "https://seomode.co/",
+      "source_domain": "seomode.co",
+      "verification_status": "official_explicit"
     },
     "pricingTiers": {
       "free": "Plan gratuit limité",
       "paid": "Basic 2$/mois"
     },
     "pricing": {
-      "free": "Plan gratuit limité",
-      "paid": "Basic 2$/mois"
+      "free": "Audit initial gratuit de 15 minutes et plusieurs outils SEO gratuits sans inscription. Il ne s'agit pas d'un forfait gratuit pour le service géré.",
+      "paid": "Growth Plan, base: À partir de 1 000 USD/mois ; Growth Plan, exemple affiché avec link building: 3 000 USD/mois au total, dont 2 000 USD/mois pour le module link building ; Managed Reddit Mentions: +500 USD/mois"
     },
     "pricingEn": {
-      "free": "Limited free plan",
-      "paid": "Basic $2/mo"
+      "free": "Audit initial gratuit de 15 minutes et plusieurs outils SEO gratuits sans inscription. Il ne s'agit pas d'un forfait gratuit pour le service géré.",
+      "paid": "Growth Plan, base: À partir de 1 000 USD/mois ; Growth Plan, exemple affiché avec link building: 3 000 USD/mois au total, dont 2 000 USD/mois pour le module link building ; Managed Reddit Mentions: +500 USD/mois"
     },
     "soloRelevance": "high",
     "teamRelevance": "low",
@@ -133144,9 +133460,10 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "relevantFor": [
-      "freelance",
-      "creator",
-      "indie"
+      "Fondateurs SaaS",
+      "Équipes marketing B2B",
+      "Startups en croissance",
+      "Responsables acquisition"
     ],
     "personas": [
       "marketer",
@@ -133160,52 +133477,66 @@
     "verticals": [],
     "ia_use_case": "seo-optimization",
     "pros": [
-      "Prix très accessible (2$/mois)",
-      "Suggestions SEO on-page IA",
-      "Meta-données automatiques"
+      "Réunit contenu, technique, autorité et visibilité IA dans une même prestation.",
+      "Positionnement clair pour les entreprises SaaS.",
+      "Modules ajustables selon les canaux d'acquisition prioritaires.",
+      "Outils gratuits utiles pour effectuer un premier diagnostic."
     ],
     "prosEn": [
-      "Very affordable ($2/mo)",
-      "AI on-page SEO suggestions",
-      "Automatic metadata"
+      "Combines content, technical work, authority, and AI visibility in one service.",
+      "Clear focus on SaaS companies.",
+      "Adjustable modules for different acquisition priorities.",
+      "Useful free tools for an initial diagnosis."
     ],
     "cons": [
-      "Moins complet qu'Ahrefs ou Semrush",
-      "Données de positionnement limitées"
+      "Ce n'est plus le petit outil SEO autonome décrit par l'ancienne fiche.",
+      "La qualité dépend d'une collaboration continue avec l'équipe de service.",
+      "Le périmètre exact varie avec les modules sélectionnés.",
+      "Une équipe disposant déjà de spécialistes internes risque de payer pour des capacités redondantes."
     ],
     "consEn": [
-      "Less comprehensive than Ahrefs/Semrush",
-      "Limited ranking data"
+      "It is no longer the small standalone SEO tool described by the old listing.",
+      "Quality depends on continuous collaboration with the service team.",
+      "The exact scope varies with the selected modules.",
+      "Teams with established specialists may pay for overlapping capabilities."
     ],
     "verdict": {
       "keepIf": [
-        "SEO basique à coût minimal",
-        "Optimisation on-page sans budget outil SEO"
+        "Vous dirigez un SaaS et voulez déléguer l'ensemble du SEO et de la visibilité dans les assistants IA.",
+        "Vous préférez une équipe gérée à l'assemblage de plusieurs outils et prestataires.",
+        "Vous pouvez relier le travail éditorial et d'autorité à des objectifs de croissance mesurables."
       ],
       "avoidIf": [
-        "Besoin d'analyses backlinks avancées"
+        "Vous cherchez seulement un logiciel SEO en libre-service.",
+        "Vous disposez déjà d'une équipe interne couvrant contenu, technique et acquisition de liens.",
+        "Votre besoin se limite à un audit ponctuel ou à quelques suggestions on-page."
       ],
-      "threshold": "2$/mois : à tester avant d'investir dans Ahrefs."
+      "threshold": "Retenez SEO Mode lorsque la coordination d'une équipe SEO complète vaut davantage que le contrôle d'un outil autonome."
     },
     "verdictEn": {
       "keepIf": [
-        "Basic SEO at minimal cost",
-        "On-page optimization without SEO budget"
+        "You run a SaaS company and want to outsource SEO and visibility in AI assistants as one program.",
+        "You prefer a managed team over assembling several tools and contractors.",
+        "You can connect content and authority work to measurable growth goals."
       ],
       "avoidIf": [
-        "Need advanced backlink analysis"
+        "You only need a self-service SEO application.",
+        "Your internal team already covers content, technical SEO, and link acquisition.",
+        "Your need is limited to a one-off audit or a few on-page recommendations."
       ],
-      "threshold": "$2/mo: try before investing in Ahrefs."
+      "threshold": "Choose SEO Mode when the coordination of a complete SEO team is more valuable than direct control of a standalone tool."
     },
     "useCases": [
-      "Optimisation on-page rapide",
-      "Génération meta-descriptions",
-      "Audit SEO basique"
+      "Construire un système de contenu et d'autorité pour un SaaS.",
+      "Améliorer la présence d'une marque dans Google et les réponses des assistants IA.",
+      "Déléguer la stratégie de mots-clés, les contenus, le SEO technique et les backlinks.",
+      "Compléter une petite équipe marketing sans recruter chaque spécialité."
     ],
     "useCasesEn": [
-      "Quick on-page optimization",
-      "Meta description generation",
-      "Basic SEO audit"
+      "Build a content and authority system for a SaaS company.",
+      "Improve brand presence in Google and AI assistant answers.",
+      "Outsource keyword strategy, content, technical SEO, and backlinks.",
+      "Extend a small marketing team without hiring every specialty."
     ],
     "covers": [
       "seo"
@@ -133225,9 +133556,14 @@
     "seo": {
       "metaDescription": "SEO Mode avis : outil SEO IA à 2$/mois. Budget minimal pour optimisation on-page et meta-descriptions."
     },
-    "description": "SEO Mode utilise l'IA pour analyser et optimiser les pages web, suggérer des améliorations SEO on-page et générer des meta-données optimisées.",
+    "description": "SEO Mode est une agence de croissance organique gérée pour les entreprises SaaS. Elle combine stratégie de mots-clés, contenu, SEO technique, backlinks, mentions sociales et optimisation AEO afin d'améliorer la visibilité dans Google et les assistants IA.\n\nFonctions clés : Audit technique SEO et corrections ; Stratégie de contenu et groupes thématiques ; Optimisation on-page et AEO pour ChatGPT, Gemini et Perplexity ; Création de contenu et recherche de mots-clés à forte intention ; Prospection de liens, backlinks et mentions sociales ; Rapports mensuels reliés au trafic, aux classements et au revenu.\n\nRetenez SEO Mode lorsque la coordination d'une équipe SEO complète vaut davantage que le contrôle d'un outil autonome.",
     "articles": [],
-    "force_silence": false
+    "force_silence": false,
+    "ogImageUrl": "https://seomode.co/drawings/mehrab-lifting.webp",
+    "galleryImages": [
+      "https://r2.seomode.co/directory-listings/h5cG9xNcA8GMzMcxiI0Jl6Qhd6eT0k37097l3Gux.webp",
+      "https://seomode.co/profiles/mehrab.png"
+    ]
   },
   {
     "id": "shadcn-ui",

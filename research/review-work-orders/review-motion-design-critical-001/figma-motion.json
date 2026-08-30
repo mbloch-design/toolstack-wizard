@@ -1,0 +1,236 @@
+{
+  "batch": "review-motion-design-critical-001",
+  "current": {
+    "affiliate_url": "https://www.figma.com/motion/",
+    "alternatives": [
+      "after-effects",
+      "rive"
+    ],
+    "category": "motion-design",
+    "cons": [],
+    "cons_en": [],
+    "host_app": "figma",
+    "id": "figma-motion",
+    "long_description": "Figma Motion ajoute un espace d'animation à l'écosystème afin de faire évoluer des compositions et interfaces sans exporter le travail vers un outil séparé. Il est actuellement présenté en bêta pour les sièges Full.",
+    "long_description_en": "Figma Motion adds an animation workspace to the ecosystem so compositions and interfaces can move without exporting work to a separate tool. It is currently presented as beta for Full seats.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": null
+    },
+    "name": "Figma Motion",
+    "pricing": {
+      "free": "Non inclus dans Starter",
+      "paid": "Bêta disponible avec les sièges Full"
+    },
+    "pricing_en": {
+      "free": "Not included on Starter",
+      "paid": "Beta available with Full seats"
+    },
+    "pricing_v5": null,
+    "pros": [],
+    "pros_en": [],
+    "short_description": "Animation et motion design directement dans l'environnement Figma.",
+    "short_description_en": "Animation and motion design directly inside the Figma environment.",
+    "slug": "figma-motion",
+    "source_url": "https://www.figma.com/motion/",
+    "source_verified_on": null,
+    "use_cases": [],
+    "use_cases_en": [],
+    "verdict": null,
+    "verdict_en": null,
+    "website_url": "https://www.figma.com/motion/"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim - Mike",
+    "en": {
+      "cons": [
+        "It remains a beta with some announced features still unavailable.",
+        "The most structured capabilities depend on a paid Full seat.",
+        "It does not replace a specialist tool for complex productions."
+      ],
+      "pros": [
+        "Animates existing components and variables directly.",
+        "Combines manual control, presets, and agent assistance.",
+        "Preserves context for developer handoff.",
+        "Exports delivery formats and usable code."
+      ],
+      "use_cases": [
+        "Animate interface states.",
+        "Build a reusable motion system.",
+        "Hand an inspectable animation to developers."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You need an advanced compositing or editing suite.",
+          "You do not work in Figma.",
+          "Simple prototype transitions already communicate the intent."
+        ],
+        "keepIf": [
+          "Your animations already start from Figma components.",
+          "Designers and developers need to review and inspect motion together.",
+          "You want reusable motion rules inside a design system."
+        ],
+        "threshold": "Add Motion to Figma when motion must become a reusable, inspectable property of the design system."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Starter permet d'essayer Motion avec des exports limités.",
+        "exists": true
+      },
+      "key_features": [
+        "Timeline complète, keyframes personnalisées et auto-keyframing",
+        "Styles prédéfinis, courbes de Bézier et ressorts",
+        "Composants animés, variables et systèmes de mouvement",
+        "Inspection et copie du code via Dev Mode et MCP",
+        "Exports MP4, GIF, WebM et SVG"
+      ],
+      "plans": [
+        {
+          "name": "Starter",
+          "price": "Gratuit, accès et exports limités"
+        },
+        {
+          "name": "Professional Full seat",
+          "price": "16 $/mois"
+        },
+        {
+          "name": "Organization Full seat",
+          "price": "55 $/mois, facturé annuellement"
+        },
+        {
+          "name": "Enterprise Full seat",
+          "price": "90 $/mois, facturé annuellement"
+        }
+      ],
+      "pricing_model": "Bêta intégrée à Figma. Accès limité sur Starter et accès étendu avec une licence Full; les fonctions de système et l'agent nécessitent un forfait payant.",
+      "what": "Mode d'animation en bêta ouverte intégré au canvas Figma. Il ajoute une timeline, des keyframes, des systèmes de mouvement et des exports pour le design et le passage en développement.",
+      "what_en": "Open-beta animation mode built into the Figma canvas. It adds a timeline, keyframes, motion systems, and exports for design and development handoff."
+    },
+    "fr": {
+      "cons": [
+        "Reste une bêta dont certaines fonctions sont annoncées mais pas encore disponibles.",
+        "Les fonctions les plus structurantes dépendent d'une licence Full payante.",
+        "Ne remplace pas un outil spécialisé pour les productions complexes."
+      ],
+      "pros": [
+        "Anime directement les composants et variables existants.",
+        "Associe contrôle manuel, styles rapides et assistance par agent.",
+        "Conserve le contexte pour le passage en développement.",
+        "Exporte des formats de diffusion et du code exploitable."
+      ],
+      "relevant_for": [
+        "Motion designers",
+        "Product designers",
+        "Design systems"
+      ],
+      "use_cases": [
+        "Animer les états d'une interface.",
+        "Créer un système de mouvement réutilisable.",
+        "Transmettre une animation inspectable aux développeurs."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous avez besoin d'une suite de compositing ou de montage avancée.",
+          "Vous ne travaillez pas dans Figma.",
+          "Un prototype avec transitions simples suffit à communiquer l'intention."
+        ],
+        "keepIf": [
+          "Vos animations partent déjà de composants Figma.",
+          "Designers et développeurs doivent commenter et inspecter le mouvement ensemble.",
+          "Vous voulez réutiliser des règles de mouvement dans un design system."
+        ],
+        "threshold": "Ajoutez Motion à Figma lorsque le mouvement doit devenir une propriété réutilisable et inspectable du design system."
+      }
+    },
+    "slug": "figma-motion",
+    "sources": [
+      {
+        "label": "Figma Motion (site officiel)",
+        "url": "https://www.figma.com/motion/"
+      },
+      {
+        "label": "Présentation Figma Motion (blog officiel)",
+        "url": "https://www.figma.com/blog/introducing-figma-motion/"
+      },
+      {
+        "label": "Tarifs Figma (site officiel)",
+        "url": "https://www.figma.com/pricing/"
+      }
+    ],
+    "verified_on": "2026-08-30"
+  },
+  "media_evidence": {
+    "discovery": {
+      "official_media_found": true,
+      "official_pages_checked": [
+        "https://www.figma.com/motion/"
+      ]
+    },
+    "items": [
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://www.figma.com/motion/",
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/1be0a1a57c359165bc4c28346f987f30d662ce65-992x558.png?auto=format&fit=max&h=558&q=75&w=992"
+      },
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://www.figma.com/motion/",
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/7fbacb4b82f4f9ecca0d9788f5eab4c8a1ae1e7b-2016x1135.png?auto=format&fit=max&h=1135&q=75&w=2016"
+      }
+    ],
+    "mode": "sourced",
+    "slug": "figma-motion",
+    "verified_on": "2026-08-30"
+  },
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-motion-design-critical-001",
+    "batch_position": 1,
+    "blockers": [],
+    "catalog_hash": "sha256:711600578af08f73491c20f137cbef359ddf3884cc55b082e9f51c0171b80f74",
+    "category": "motion-design",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:e7d2b2005e915dca8041effad8f28187d129e8bc997f62fe3ea4a5a19cd14a49",
+    "invalidated_from": null,
+    "media_errors": [],
+    "media_evidence": "VALID",
+    "media_evidence_hash": "sha256:7e01c0c03ae150f4dca2a8ce331003cb255439beed94857a70aa6edba75147d1",
+    "name": "Figma Motion",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "shallow_editorial",
+      "missing_media",
+      "undated_source"
+    ],
+    "priority_score": 280,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:9dafea32cb2c411a1503d9ee9c3484c7a35ca26a434f3a212271fcd17884c905",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "figma-motion",
+    "source_url": "https://www.figma.com/motion/",
+    "source_verified_on": null,
+    "status": "MEDIA_READY"
+  }
+}

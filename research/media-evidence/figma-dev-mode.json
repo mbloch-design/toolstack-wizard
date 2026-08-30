@@ -1,0 +1,10 @@
+{
+  "slug": "figma-dev-mode",
+  "verified_on": "2026-08-30",
+  "mode": "sourced",
+  "discovery": { "official_media_found": true, "official_pages_checked": ["https://www.figma.com/dev-mode/"] },
+  "items": [
+    { "kind": "image", "url": "https://cdn.sanity.io/images/599r6htc/regionalized/c6a0a58afc2722851abd21d93a1840360c851ad9-2464x1378.png?auto=format&fit=max&h=1378&q=75&w=2464", "source_page_url": "https://www.figma.com/dev-mode/", "official": true },
+    { "kind": "image", "url": "https://cdn.sanity.io/images/599r6htc/regionalized/9cdc0cedb39a7c60e5b814ea857175cfd0fd0616-2720x1360.png?auto=format&fit=max&h=1360&q=75&w=2720", "source_page_url": "https://www.figma.com/dev-mode/", "official": true }
+  ]
+}

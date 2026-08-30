@@ -1,0 +1,266 @@
+{
+  "batch": "review-analytics-critical-001",
+  "current": {
+    "affiliate_url": "https://amplitude.com",
+    "alternatives": [],
+    "category": "analytics",
+    "cons": [
+      "Prix monte vite avec croissance événements.",
+      "Courbe d'apprentissage pour features avancées.",
+      "Alternatives plus simples et moins chères pour MVPs."
+    ],
+    "cons_en": [
+      "Pricing scales quickly with event growth.",
+      "Learning curve for advanced features.",
+      "Simpler, cheaper alternatives for MVPs."
+    ],
+    "host_app": null,
+    "id": "amplitude",
+    "long_description": "Amplitude, c'est la plateforme d'analytics produit pour comprendre le comportement utilisateur. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les fondateurs SaaS et les product managers.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : produit digital avec analyse comportementale fine. À éviter si : simple website — Plausible suffit. Gratuit jusqu à 50k events — toujours pertinent au démarrage. Si le budget le permet, posthog va plus loin.",
+    "long_description_en": "Amplitude is the product analytics platform to understand user behaviour. Free to start, paid plans for more. Built for SaaS founders and product managers.\n\nEstimated time saving: 4h/month.\n\nIf budget allows, posthog goes further.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://amplitude.com/nextjs-public/amplitude-default-seo.png"
+    },
+    "name": "Amplitude",
+    "pricing": {
+      "free": "Jusqu'à 50k events/mois",
+      "paid": "Sur devis"
+    },
+    "pricing_en": null,
+    "pricing_v5": {
+      "cautions": [],
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Free",
+      "compare_price_monthly_eur": 0,
+      "location_sensitive": false,
+      "official_source_url": "https://amplitude.com/pricing",
+      "price_reliability": "medium",
+      "source_domain": "amplitude.com",
+      "usage_sensitive": false,
+      "verification_status": "official_contextual",
+      "verified_on": "2026-03-13"
+    },
+    "pros": [
+      "Free tier très généreux avec 2M événements illimités.",
+      "Analytics produit puissante et intuitive.",
+      "Agents IA pour automation des décisions.",
+      "Intégration avec Claude et ecosystème IA."
+    ],
+    "pros_en": [
+      "Very generous free tier with unlimited 2M events.",
+      "Powerful and intuitive product analytics.",
+      "AI agents for decision automation.",
+      "Integration with Claude and AI ecosystem."
+    ],
+    "short_description": "La plateforme d'analytics produit pour comprendre le comportement utilisateur.",
+    "short_description_en": "The product analytics platform to understand user behaviour.",
+    "slug": "amplitude",
+    "source_url": "https://amplitude.com/pricing",
+    "source_verified_on": "2026-03-13",
+    "use_cases": [
+      "Analyser l'adoption d'une nouvelle feature.",
+      "Tester variantes de UX avec A/B testing.",
+      "Identifier friction et points d'abandon.",
+      "Automatiser décisions produit avec agents IA."
+    ],
+    "use_cases_en": [
+      "Analyze adoption of new features.",
+      "Test UX variants with A/B testing.",
+      "Identify friction and drop-off points.",
+      "Automate product decisions with AI agents."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous cherchez juste de l'analytics basique.",
+        "Vous n'avez pas besoin d'expérimentation.",
+        "Votre budget analytics est très limité."
+      ],
+      "keepIf": [
+        "Vous optimisez activement un produit digital.",
+        "Vous testez régulièrement des features.",
+        "Vous avez une équipe produit data-driven."
+      ],
+      "threshold": "Amplitude s'impose pour product teams sérieuses en SaaS ; pour analytics simple ou sites statiques, des outils plus légers suffisent."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You only need basic analytics.",
+        "You don't need experimentation.",
+        "Your analytics budget is very tight."
+      ],
+      "keepIf": [
+        "You actively optimize a digital product.",
+        "You regularly test features.",
+        "You have a data-driven product team."
+      ],
+      "threshold": "Amplitude is essential for serious SaaS product teams; for basic analytics or static sites, lighter tools suffice."
+    },
+    "website_url": "https://amplitude.com"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Pricing scales quickly with event growth.",
+        "Learning curve for advanced features.",
+        "Simpler, cheaper alternatives for MVPs."
+      ],
+      "pros": [
+        "Very generous free tier with unlimited 2M events.",
+        "Powerful and intuitive product analytics.",
+        "AI agents for decision automation.",
+        "Integration with Claude and AI ecosystem."
+      ],
+      "use_cases": [
+        "Analyze adoption of new features.",
+        "Test UX variants with A/B testing.",
+        "Identify friction and drop-off points.",
+        "Automate product decisions with AI agents."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You only need basic analytics.",
+          "You don't need experimentation.",
+          "Your analytics budget is very tight."
+        ],
+        "keepIf": [
+          "You actively optimize a digital product.",
+          "You regularly test features.",
+          "You have a data-driven product team."
+        ],
+        "threshold": "Amplitude is essential for serious SaaS product teams; for basic analytics or static sites, lighter tools suffice."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Free tier : 2 millions d'événements/mois illimitéement, sièges illimités, analytics produit basique. Pas de limite de durée.",
+        "exists": true
+      },
+      "key_features": [
+        "Product Analytics : journeys et comportements utilisateurs.",
+        "Session Replay & Heatmaps : visualisation interactions.",
+        "Feature Experimentation : A/B testing et personnalisation.",
+        "AI Agents : automation et décisions autonomes.",
+        "AI Feedback : processing retours clients multi-canaux.",
+        "Intégration MCP : Claude, Cursor et tools IA."
+      ],
+      "plans": [
+        {
+          "name": "Free",
+          "price": "Gratuit (2M événements/mois)"
+        },
+        {
+          "name": "Plus",
+          "price": "À partir de 49 $/mois (billed annuel, scaling avec MTUs)"
+        },
+        {
+          "name": "Growth",
+          "price": "Tarification personnalisée (growth stage)"
+        },
+        {
+          "name": "Enterprise",
+          "price": "Tarification personnalisée (Enterprise)"
+        }
+      ],
+      "pricing_model": "Freemium : free tier avec événements illimités, plans Plus, Growth et Enterprise payants. Tarification annuelle avec réduction possible.",
+      "what": "Plateforme d'analyse produit IA permettant comprendre le comportement utilisateur, tester des features avec A/B testing, session replay, et agents IA autonomes pour optimisation continue du produit.",
+      "what_en": "AI-powered product analytics platform for understanding user behavior, feature experimentation, session replay, and autonomous AI agents for continuous product optimization."
+    },
+    "fr": {
+      "cons": [
+        "Prix monte vite avec croissance événements.",
+        "Courbe d'apprentissage pour features avancées.",
+        "Alternatives plus simples et moins chères pour MVPs."
+      ],
+      "pros": [
+        "Free tier très généreux avec 2M événements illimités.",
+        "Analytics produit puissante et intuitive.",
+        "Agents IA pour automation des décisions.",
+        "Intégration avec Claude et ecosystème IA."
+      ],
+      "relevant_for": [
+        "Product managers",
+        "Équipes produit SaaS",
+        "Équipes growth / data analytics",
+        "Startups cherchant data-driven growth"
+      ],
+      "use_cases": [
+        "Analyser l'adoption d'une nouvelle feature.",
+        "Tester variantes de UX avec A/B testing.",
+        "Identifier friction et points d'abandon.",
+        "Automatiser décisions produit avec agents IA."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous cherchez juste de l'analytics basique.",
+          "Vous n'avez pas besoin d'expérimentation.",
+          "Votre budget analytics est très limité."
+        ],
+        "keepIf": [
+          "Vous optimisez activement un produit digital.",
+          "Vous testez régulièrement des features.",
+          "Vous avez une équipe produit data-driven."
+        ],
+        "threshold": "Amplitude s'impose pour product teams sérieuses en SaaS ; pour analytics simple ou sites statiques, des outils plus légers suffisent."
+      }
+    },
+    "slug": "amplitude",
+    "sources": [
+      {
+        "label": "Amplitude - Product Analytics Platform (site officiel)",
+        "url": "https://amplitude.com"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-analytics-critical-001",
+    "batch_position": 14,
+    "blockers": [],
+    "catalog_hash": "sha256:be629f1dbecaf540f6ddd4bda6cfac2404b12865030b215f9d4793b5b2c9b13d",
+    "category": "analytics",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:0e1156830a92367f8bc6151473fd1e02d81a91c9292f0fe5b984b87644fa9d05",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Amplitude",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:30159fb336c04cf5723ad800bf3e93a02f2963e561a8ca67b8d37b3c854b7666",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "amplitude",
+    "source_url": "https://amplitude.com/pricing",
+    "source_verified_on": "2026-03-13",
+    "status": "QUEUED"
+  }
+}

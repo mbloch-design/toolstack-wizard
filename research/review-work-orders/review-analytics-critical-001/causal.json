@@ -1,0 +1,253 @@
+{
+  "batch": "review-analytics-critical-001",
+  "current": {
+    "affiliate_url": "https://causal.app",
+    "alternatives": [],
+    "category": "analytics",
+    "cons": [
+      "Pas de palier gratuit permanent.",
+      "Courbe d'apprentissage vs tableur classique.",
+      "Surdimensionné pour des calculs ponctuels."
+    ],
+    "cons_en": [
+      "No permanent free tier.",
+      "Learning curve vs a classic spreadsheet.",
+      "Oversized for one-off calculations."
+    ],
+    "host_app": null,
+    "id": "causal",
+    "long_description": "Plateforme de FP&A et modélisation financière : construit des modèles, se connecte aux données (compta, CRM…) et partage tableaux de bord et rapports interactifs, en alternative structurée au tableur.",
+    "long_description_en": "FP&A and financial modelling platform: build models, connect live data and share interactive dashboards, a structured alternative to spreadsheets.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://tooltrim.com/og-screenshots/causal.jpg"
+    },
+    "name": "Causal",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricing_en": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "compare_plan_kind": "custom",
+      "compare_plan_name": "Prix non public",
+      "compare_price_monthly_eur": 0,
+      "location_sensitive": false,
+      "official_source_url": "https://causal.app",
+      "price_reliability": "official_context_required",
+      "source_domain": "causal.app",
+      "usage_sensitive": true,
+      "verification_status": "needs_official_quote",
+      "verified_on": "2026-05-11"
+    },
+    "pros": [
+      "Modélisation plus lisible qu'un tableur.",
+      "Intégrations de données en direct.",
+      "Dashboards et rapports interactifs.",
+      "Viewers illimités."
+    ],
+    "pros_en": [
+      "More readable modelling than a spreadsheet.",
+      "Live data integrations.",
+      "Interactive dashboards and reports.",
+      "Unlimited viewers."
+    ],
+    "short_description": "Plateforme de FP&A et modélisation financière : construit des modèles, se connecte aux données (compta, CRM…) et partage tableaux de bord et rapports interactifs, en alternative structurée au tableur.",
+    "short_description_en": "FP&A and financial modelling platform: build models, connect live data and share interactive dashboards, a structured alternative to spreadsheets.",
+    "slug": "causal",
+    "source_url": "https://causal.app",
+    "source_verified_on": "2026-05-11",
+    "use_cases": [
+      "Construire un modèle financier ou un business plan.",
+      "Faire du scénario (best/worst case).",
+      "Partager des dashboards financiers à l'équipe."
+    ],
+    "use_cases_en": [
+      "Build a financial model or business plan.",
+      "Run scenarios (best/worst case).",
+      "Share financial dashboards with the team."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Un simple tableur couvre vos besoins.",
+        "Vous cherchez une solution gratuite.",
+        "Vous n'avez pas de modélisation récurrente à faire."
+      ],
+      "keepIf": [
+        "Vous construisez des modèles financiers et des prévisions.",
+        "Vous voulez sortir du tableur pour du scénario et du reporting.",
+        "Vous partagez des dashboards avec de nombreux lecteurs."
+      ],
+      "threshold": "Causal s'impose quand la modélisation financière et le scénario deviennent récurrents ; pour des calculs ponctuels, un tableur suffit."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "A simple spreadsheet covers your needs.",
+        "You want a free solution.",
+        "You have no recurring modelling to do."
+      ],
+      "keepIf": [
+        "You build financial models and forecasts.",
+        "You want to move beyond spreadsheets for scenarios and reporting.",
+        "You share dashboards with many viewers."
+      ],
+      "threshold": "Causal makes sense when financial modelling and scenario planning become recurring; for one-off calculations, a spreadsheet suffices."
+    },
+    "website_url": "https://causal.app"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "No permanent free tier.",
+        "Learning curve vs a classic spreadsheet.",
+        "Oversized for one-off calculations."
+      ],
+      "pros": [
+        "More readable modelling than a spreadsheet.",
+        "Live data integrations.",
+        "Interactive dashboards and reports.",
+        "Unlimited viewers."
+      ],
+      "use_cases": [
+        "Build a financial model or business plan.",
+        "Run scenarios (best/worst case).",
+        "Share financial dashboards with the team."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "A simple spreadsheet covers your needs.",
+          "You want a free solution.",
+          "You have no recurring modelling to do."
+        ],
+        "keepIf": [
+          "You build financial models and forecasts.",
+          "You want to move beyond spreadsheets for scenarios and reporting.",
+          "You share dashboards with many viewers."
+        ],
+        "threshold": "Causal makes sense when financial modelling and scenario planning become recurring; for one-off calculations, a spreadsheet suffices."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Essai gratuit ; pas de palier gratuit permanent. Tarif selon le nombre de members.",
+        "exists": false
+      },
+      "key_features": [
+        "Modélisation financière (scénarios, prévisions)",
+        "Intégrations de données en direct (compta, CRM)",
+        "Tableaux de bord et rapports interactifs",
+        "Viewers illimités"
+      ],
+      "plans": [
+        {
+          "name": "Membre (builder/éditeur)",
+          "price": "tarif par member, viewers illimités — montants sur la page officielle"
+        }
+      ],
+      "pricing_model": "Abonnement basé sur les « members » (utilisateurs qui construisent/éditent les modèles) ; les viewers sont illimités. Essai gratuit, pas de plan gratuit permanent.",
+      "what": "Plateforme de FP&A et modélisation financière : construit des modèles, se connecte aux données (compta, CRM…) et partage tableaux de bord et rapports interactifs, en alternative structurée au tableur.",
+      "what_en": "Financial planning and modeling platform: builds models, connects to data (accounting, CRM, etc.) and shares interactive dashboards and reports, a structured alternative to spreadsheets."
+    },
+    "fr": {
+      "cons": [
+        "Pas de palier gratuit permanent.",
+        "Courbe d'apprentissage vs tableur classique.",
+        "Surdimensionné pour des calculs ponctuels."
+      ],
+      "pros": [
+        "Modélisation plus lisible qu'un tableur.",
+        "Intégrations de données en direct.",
+        "Dashboards et rapports interactifs.",
+        "Viewers illimités."
+      ],
+      "relevant_for": [
+        "Équipes finance",
+        "Startups",
+        "Directions financières"
+      ],
+      "use_cases": [
+        "Construire un modèle financier ou un business plan.",
+        "Faire du scénario (best/worst case).",
+        "Partager des dashboards financiers à l'équipe."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Un simple tableur couvre vos besoins.",
+          "Vous cherchez une solution gratuite.",
+          "Vous n'avez pas de modélisation récurrente à faire."
+        ],
+        "keepIf": [
+          "Vous construisez des modèles financiers et des prévisions.",
+          "Vous voulez sortir du tableur pour du scénario et du reporting.",
+          "Vous partagez des dashboards avec de nombreux lecteurs."
+        ],
+        "threshold": "Causal s'impose quand la modélisation financière et le scénario deviennent récurrents ; pour des calculs ponctuels, un tableur suffit."
+      }
+    },
+    "slug": "causal",
+    "sources": [
+      {
+        "label": "Causal — plateforme FP&A / modélisation financière (site officiel)",
+        "url": "https://www.causal.app/"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-analytics-critical-001",
+    "batch_position": 5,
+    "blockers": [],
+    "catalog_hash": "sha256:eb7ab9024bd0ae11498efa361448f9ac0222ba2b57d3335b78a5c3df9e1465b9",
+    "category": "analytics",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:3304d8e9f18bdbe3c59aca1f4a84749c180b26113c916bc28e2f527a7ce95074",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Causal",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence",
+      "shallow_editorial"
+    ],
+    "priority_score": 260,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:019ec57a5c0090eeb2d3a9dde5894eb1a4f0820615dd5b1d97b143431215a360",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "causal",
+    "source_url": "https://causal.app",
+    "source_verified_on": "2026-05-11",
+    "status": "QUEUED"
+  }
+}

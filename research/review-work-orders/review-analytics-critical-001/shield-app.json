@@ -1,0 +1,116 @@
+{
+  "batch": "review-analytics-critical-001",
+  "current": {
+    "affiliate_url": null,
+    "alternatives": [],
+    "category": "analytics",
+    "cons": [
+      "Limité à LinkedIn uniquement",
+      "Prix pour un outil d'analytics niche",
+      "Pas de scheduling intégré",
+      "Données dépendantes de l'API LinkedIn"
+    ],
+    "cons_en": [],
+    "host_app": null,
+    "id": "shield-app",
+    "long_description": "Shield App, c'est analytics LinkedIn pour créateurs de contenu. À partir de 8€/mois.\n\nAnalytics LinkedIn détaillés et visuels. historique de performance illimité, benchmarks et comparaisons. Rapports exportables. Concrètement : analyser les performances de ses posts LinkedIn. Ou encore : identifier les meilleurs horaires de publication.\n\nÀ garder si : linkedIn est un canal d'acquisition majeur ou publication 3+ fois par semaine. À éviter si : linkedIn occasionnel ou publication < 1 fois par semaine. Limite principale : limité à LinkedIn uniquement. Utile si LinkedIn génère des leads ou de la visibilité business.",
+    "long_description_en": "Shield App is linkedIn analytics for content creators. Starting at €8/month.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": null
+    },
+    "name": "Shield App",
+    "pricing": {
+      "free": "Essai gratuit",
+      "paid": "À partir de 8$/mois"
+    },
+    "pricing_en": null,
+    "pricing_v5": null,
+    "pros": [
+      "Analytics LinkedIn détaillés et visuels",
+      "Historique de performance illimité",
+      "Benchmarks et comparaisons",
+      "Rapports exportables"
+    ],
+    "pros_en": [],
+    "short_description": "Analytics LinkedIn pour créateurs de contenu.",
+    "short_description_en": "LinkedIn analytics for content creators.",
+    "slug": "shield-app",
+    "source_url": null,
+    "source_verified_on": null,
+    "use_cases": [
+      "Analyser les performances de ses posts LinkedIn",
+      "Identifier les meilleurs horaires de publication",
+      "Suivre la croissance de son audience"
+    ],
+    "use_cases_en": [],
+    "verdict": {
+      "avoidIf": [
+        "LinkedIn occasionnel",
+        "Publication < 1 fois par semaine",
+        "Budget serré"
+      ],
+      "keepIf": [
+        "LinkedIn est un canal d'acquisition majeur",
+        "Publication 3+ fois par semaine",
+        "Besoin de données pour optimiser"
+      ],
+      "threshold": "Utile si LinkedIn génère des leads ou de la visibilité business."
+    },
+    "verdict_en": null,
+    "website_url": null
+  },
+  "fact_bundle": null,
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "research_primary_sources_then_write_fact_bundle",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-analytics-critical-001",
+    "batch_position": 3,
+    "blockers": [],
+    "catalog_hash": "sha256:6179b572bc7c7d2ba838e61079b03fce9eb8bf2fa6a3dde24b374392f011fea4",
+    "category": "analytics",
+    "fact_bundle": "MISSING",
+    "fact_bundle_hash": null,
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Shield App",
+    "next_review_at": null,
+    "priority_reasons": [
+      "paid_price",
+      "missing_official_source",
+      "missing_fact_bundle",
+      "missing_or_invalid_media_evidence",
+      "missing_media",
+      "undated_source"
+    ],
+    "priority_score": 300,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:c5e3cddd57300c5a919ae2015354ffba827bcfa1c982a207ecf528729cbaaa3d",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "shield-app",
+    "source_url": null,
+    "source_verified_on": null,
+    "status": "QUEUED"
+  }
+}

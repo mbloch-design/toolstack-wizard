@@ -1,0 +1,50 @@
+{
+  "slug": "figma-dev-mode",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-08-30",
+  "sources": [
+    { "label": "Dev Mode (site officiel)", "url": "https://www.figma.com/dev-mode/" },
+    { "label": "Guide Dev Mode (centre d'aide officiel)", "url": "https://help.figma.com/hc/en-us/articles/15023124644247-Guide-to-Dev-Mode" },
+    { "label": "Tarifs Figma (site officiel)", "url": "https://www.figma.com/pricing/" }
+  ],
+  "facts": {
+    "what": "Espace développeur intégré aux fichiers Figma Design pour inspecter les interfaces, relier design et code et organiser le passage en développement. Il nécessite Figma et une licence Dev ou Full sur un forfait payant.",
+    "what_en": "Developer workspace inside Figma Design files for inspecting interfaces, connecting design and code, and managing handoff. It requires Figma and a Dev or Full seat on a paid plan.",
+    "pricing_model": "Fonction incluse avec les licences Dev et Full des forfaits Figma payants, sans achat autonome.",
+    "free_tier": { "exists": true, "detail": "Les viewers gratuits disposent d'une inspection de base, mais pas de l'espace Dev Mode complet." },
+    "plans": [
+      { "name": "Professional Dev seat", "price": "12 $/mois" },
+      { "name": "Professional Full seat", "price": "16 $/mois" },
+      { "name": "Organization Dev seat", "price": "25 $/mois, facturé annuellement" },
+      { "name": "Enterprise Dev seat", "price": "35 $/mois, facturé annuellement" }
+    ],
+    "key_features": [
+      "Inspection avancée, propriétés, mesures et extraits de code",
+      "Statuts prêts pour le développement, notifications et comparaison des changements",
+      "Component playground, annotations et ressources développeur",
+      "Code Connect, MCP Server et extension Figma pour VS Code",
+      "Liens vers GitHub, Jira, Storybook et documentation"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": ["Vos développeurs livrent régulièrement des interfaces conçues dans Figma.", "Votre design system doit relier composants visuels et composants de production.", "Le passage design-développement manque de contexte ou de suivi."],
+      "avoidIf": ["Vous n'utilisez pas Figma Design.", "Une inspection gratuite et ponctuelle couvre déjà vos besoins.", "Votre équipe ne maintient ni composants ni flux de validation partagé."],
+      "threshold": "Ajoutez Dev Mode à Figma lorsque l'inspection, les statuts et les liens vers le code réduisent les allers-retours de livraison."
+    },
+    "pros": ["Centralise les spécifications dans le fichier source.", "Relie les composants de design aux composants réels.", "Facilite le suivi des changements et du statut de livraison.", "S'intègre aux outils de code et de gestion déjà utilisés."],
+    "cons": ["Suppose un flux de conception déjà organisé dans Figma.", "Les fonctions complètes demandent une licence payante dédiée ou Full.", "Le bénéfice dépend de la qualité des composants et annotations en amont."],
+    "use_cases": ["Inspecter une interface et récupérer ses propriétés.", "Comparer une version prête à développer à une mise à jour.", "Relier un composant Figma à son implémentation de production."],
+    "relevant_for": ["Développeurs front-end", "Design systems", "Équipes produit"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": ["Developers regularly ship interfaces designed in Figma.", "Your design system must connect visual and production components.", "Design-to-development handoff lacks context or tracking."],
+      "avoidIf": ["You do not use Figma Design.", "Occasional free inspection already covers your needs.", "Your team maintains no shared components or approval workflow."],
+      "threshold": "Add Dev Mode to Figma when inspection, statuses, and code links reduce handoff cycles."
+    },
+    "pros": ["Centralizes specifications in the source file.", "Connects design components to real code components.", "Makes change and delivery status easier to track.", "Integrates with existing coding and project tools."],
+    "cons": ["Assumes an organized Figma design workflow.", "Full capabilities require a paid Dev or Full seat.", "Its value depends on upstream component and annotation quality."],
+    "use_cases": ["Inspect an interface and retrieve its properties.", "Compare a development-ready version with an update.", "Connect a Figma component to its production implementation."]
+  }
+}

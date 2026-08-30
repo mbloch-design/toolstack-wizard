@@ -1,0 +1,253 @@
+{
+  "batch": "review-creation-critical-001",
+  "current": {
+    "affiliate_url": "https://captiontools.com",
+    "alternatives": [],
+    "category": "creation",
+    "cons": [],
+    "cons_en": [],
+    "host_app": null,
+    "id": "caption-tools",
+    "long_description": "Caption Tools est référencé pour couvrir un besoin précis dans les stacks créateurs de contenu ToolTrim.",
+    "long_description_en": "Tool or resource used in ToolTrim creator stacks.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://captiontools.com/wp-content/uploads/2018/03/Toolbox.jpg"
+    },
+    "name": "Caption Tools",
+    "pricing": {
+      "free": "Non communiqué",
+      "paid": "Sur devis / selon usage"
+    },
+    "pricing_en": {
+      "free": "Not disclosed",
+      "paid": "Custom / usage based"
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Prix à vérifier sur la page officielle avant décision."
+      ],
+      "compare_plan_kind": "custom",
+      "compare_plan_name": "Prix non public",
+      "compare_price_monthly_eur": 0,
+      "location_sensitive": false,
+      "official_source_url": "https://captiontools.com",
+      "price_reliability": "official_context_required",
+      "source_domain": "captiontools.com",
+      "usage_sensitive": true,
+      "verification_status": "needs_official_quote",
+      "verified_on": "2026-05-11"
+    },
+    "pros": [],
+    "pros_en": [],
+    "short_description": "Outil ou ressource utilisé dans les stacks créateurs de contenu ToolTrim.",
+    "short_description_en": "Tool or resource used in ToolTrim creator stacks.",
+    "slug": "caption-tools",
+    "source_url": "https://captiontools.com",
+    "source_verified_on": "2026-05-11",
+    "use_cases": [],
+    "use_cases_en": [],
+    "verdict": {
+      "avoidIf": [
+        "Un outil déjà payé couvre correctement ce rôle."
+      ],
+      "keepIf": [
+        "Le besoin revient dans plusieurs contenus ou campagnes."
+      ],
+      "threshold": "À ajouter seulement si le rôle est central dans la production ou la monétisation."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "An existing paid tool already covers the role."
+      ],
+      "keepIf": [
+        "The need repeats across content or campaigns."
+      ],
+      "threshold": "Add only if the role is central to production or monetization."
+    },
+    "website_url": "https://captiontools.com"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim - Mike",
+    "en": {
+      "cons": [
+        "Automatic transcripts still require proofreading and correction.",
+        "The export format range is narrower than some specialist desktop tools.",
+        "Advanced organization features are limited to qualifying purchase levels."
+      ],
+      "pros": [
+        "Combines transcription, alignment, and editing in one coherent workflow.",
+        "Can start from an existing transcript to save time.",
+        "Exports the most common web caption formats.",
+        "The editor is available without a recurring subscription."
+      ],
+      "use_cases": [
+        "Align an approved transcript with a training video.",
+        "Correct captions from a live event recording.",
+        "Export SRT and WebVTT files for multiple video platforms."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You expect a fully automated service with no human review.",
+          "You need advanced broadcast formats that are not among the available exports.",
+          "Your workflow requires a desktop application or fully local processing."
+        ],
+        "keepIf": [
+          "You already have transcripts and need to align them quickly with media.",
+          "You regularly deliver caption files in several standard formats.",
+          "Your team wants to correct text and timecodes in one web workspace."
+        ],
+        "threshold": "Add CaptionTools when caption alignment and correction are recurring tasks; for an occasional video, a simpler free editor may be enough."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Création de compte et éditeur de sous-titres gratuits. Les minutes de transcription automatique et d'alignement sont payantes.",
+        "exists": true
+      },
+      "key_features": [
+        "Transcription automatique par reconnaissance vocale avec éditeur de texte en ligne",
+        "Alignement d'une transcription existante avec la piste audio d'un média",
+        "Éditeur de sous-titres avec synchronisation, réglage des timecodes et contrôle de longueur de ligne",
+        "Export en SRT, WebVTT, Timed Text XML et texte brut",
+        "Intégration Streamtext pour reprendre et corriger des fichiers de sous-titrage en direct",
+        "Comptes parent-enfant et options de marque blanche pour les organisations éligibles"
+      ],
+      "plans": [
+        {
+          "name": "Pay-As-You-Go",
+          "price": "1 $/minute, sans achat minimum"
+        },
+        {
+          "name": "Professional",
+          "price": "400 $ pour 500 minutes, soit 0,80 $/minute"
+        },
+        {
+          "name": "Enterprise",
+          "price": "3 000 $ pour 6 000 minutes, soit 0,50 $/minute"
+        }
+      ],
+      "pricing_model": "Compte et éditeur gratuits, crédits à l'usage pour la transcription automatique et l'alignement.",
+      "what": "Plateforme web de transcription, d'alignement de transcriptions et d'édition de sous-titres pour les contenus audio et vidéo. Elle transforme une transcription automatique ou un texte existant en fichiers de sous-titres synchronisés.",
+      "what_en": "Web platform for transcription, transcript alignment, and caption editing for audio and video content. It turns automatic transcription or an existing script into synchronized caption files."
+    },
+    "fr": {
+      "cons": [
+        "La transcription automatique doit être relue et corrigée.",
+        "Le catalogue de formats d'export reste plus limité que celui de certains logiciels spécialisés.",
+        "Les fonctions organisationnelles avancées sont réservées à certains niveaux d'achat."
+      ],
+      "pros": [
+        "Réunit transcription, alignement et édition dans un flux cohérent.",
+        "Permet de partir d'une transcription existante pour gagner du temps.",
+        "Propose les formats de sous-titres web les plus courants.",
+        "L'éditeur reste accessible sans abonnement récurrent."
+      ],
+      "relevant_for": [
+        "Prestataires de sous-titrage",
+        "Équipes vidéo et formation",
+        "Médias et créateurs de contenu"
+      ],
+      "use_cases": [
+        "Synchroniser une transcription validée avec une vidéo de formation.",
+        "Corriger les sous-titres d'un événement diffusé en direct.",
+        "Exporter des fichiers SRT et WebVTT pour plusieurs plateformes vidéo."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous cherchez un service entièrement automatisé sans relecture humaine.",
+          "Vous avez besoin de formats de diffusion avancés qui ne figurent pas dans les exports proposés.",
+          "Votre flux impose une application de bureau ou un traitement entièrement local."
+        ],
+        "keepIf": [
+          "Vous disposez déjà de transcriptions et devez les synchroniser rapidement avec des médias.",
+          "Vous produisez régulièrement des fichiers de sous-titres dans plusieurs formats standard.",
+          "Votre équipe veut corriger le texte et les timecodes dans un même espace web."
+        ],
+        "threshold": "Ajoutez CaptionTools si l'alignement et la correction de sous-titres sont des tâches récurrentes; pour une vidéo occasionnelle, un éditeur gratuit plus simple peut suffire."
+      }
+    },
+    "slug": "caption-tools",
+    "sources": [
+      {
+        "label": "CaptionTools - Home and pricing (site officiel)",
+        "url": "https://www.captiontools.com/"
+      },
+      {
+        "label": "CaptionTools - Features (site officiel)",
+        "url": "https://www.captiontools.com/features/"
+      },
+      {
+        "label": "CaptionTools - FAQ (site officiel)",
+        "url": "https://www.captiontools.com/faq/"
+      }
+    ],
+    "verified_on": "2026-08-30"
+  },
+  "media_evidence": {
+    "discovery": {
+      "official_media_found": true,
+      "official_pages_checked": [
+        "https://www.captiontools.com/",
+        "https://www.captiontools.com/features/"
+      ]
+    },
+    "items": [
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://www.captiontools.com/",
+        "url": "https://captiontools.com/wp-content/uploads/2018/03/Toolbox.jpg"
+      }
+    ],
+    "mode": "sourced",
+    "slug": "caption-tools",
+    "verified_on": "2026-08-30"
+  },
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-creation-critical-001",
+    "batch_position": 23,
+    "blockers": [],
+    "catalog_hash": "sha256:9de8bdc79fb67e649050e9a3382f694638b92909132174ce0a5786adfb2e5aae",
+    "category": "creation",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:06823ecba318dc4653346b42f6acd22e16f980ad90c860115895bb52bc81b6c6",
+    "invalidated_from": null,
+    "media_errors": [],
+    "media_evidence": "VALID",
+    "media_evidence_hash": "sha256:aa5170c2e022bd1418abe9012e3a28bc09c74982c3298f5c6c8fe04f1aea2f11",
+    "name": "Caption Tools",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "shallow_editorial"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:4a2f189d0fd6ec062dec5374830584767987011cb59a3cc6f675aa49e2370c15",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "caption-tools",
+    "source_url": "https://captiontools.com",
+    "source_verified_on": "2026-05-11",
+    "status": "MEDIA_READY"
+  }
+}

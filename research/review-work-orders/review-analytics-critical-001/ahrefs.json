@@ -1,0 +1,278 @@
+{
+  "batch": "review-analytics-critical-001",
+  "current": {
+    "affiliate_url": "https://ahrefs.com",
+    "alternatives": [
+      "semrush",
+      "moz",
+      "ubersuggest"
+    ],
+    "category": "analytics",
+    "cons": [
+      "Tarification élevée pour les petites équipes.",
+      "Pas de version gratuite complète.",
+      "Surcoût pour sièges supplémentaires."
+    ],
+    "cons_en": [
+      "High pricing for small teams.",
+      "No full free version.",
+      "Additional cost per extra user seat."
+    ],
+    "host_app": null,
+    "id": "ahrefs",
+    "long_description": "Ahrefs est l'un des outils SEO les plus complets : backlinks, keyword explorer, site audit et rank tracking. Starter accessible à 29$/mois.",
+    "long_description_en": "Ahrefs is one of the most comprehensive SEO tools: backlinks, keyword explorer, site audit and rank tracking. Starter accessible at $29/mo.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://static.ahrefs.com/assets/img/og/ahrefs.png?v=2"
+    },
+    "name": "Ahrefs",
+    "pricing": {
+      "free": "Ahrefs Webmaster Tools gratuit",
+      "paid": "Starter 29$/mois"
+    },
+    "pricing_en": {
+      "free": "Ahrefs Webmaster Tools free",
+      "paid": "Starter $29/mo"
+    },
+    "pricing_v5": {
+      "annual_monthly_eur": 25,
+      "billing_note": "Starter 29$/mois; Lite 129$/mo pour usage pro",
+      "currency_original": "USD",
+      "free_tier": true,
+      "free_tier_note": "Ahrefs Webmaster Tools gratuit",
+      "monthly_eur": 25,
+      "plan_name": "Starter",
+      "price_original": 29,
+      "reliability": "high",
+      "source_url": "https://ahrefs.com/pricing",
+      "verified_on": "2026-05-08"
+    },
+    "pros": [
+      "Base de données massive et mise à jour fréquente.",
+      "Site Explorer puissant pour l'analyse competitive.",
+      "Intégration IA pour l'optimisation contenu.",
+      "Webmaster Tools gratuit pour propriétaires de domaine."
+    ],
+    "pros_en": [
+      "Massive, frequently updated database.",
+      "Powerful Site Explorer for competitive analysis.",
+      "AI-driven content optimization tools.",
+      "Free Webmaster Tools for domain owners."
+    ],
+    "short_description": "Suite SEO complète : analyse de backlinks, recherche de mots-clés et audit de site.",
+    "short_description_en": "Full SEO suite: backlink analysis, keyword research and site audit.",
+    "slug": "ahrefs",
+    "source_url": "https://ahrefs.com",
+    "source_verified_on": "2026-05-08",
+    "use_cases": [
+      "Analyser la stratégie SEO d'un concurrent.",
+      "Identifier des opportunités de mots-clés.",
+      "Auditer la santé SEO d'un site.",
+      "Découvrir le contenu qui génère du trafic."
+    ],
+    "use_cases_en": [
+      "Analyze competitor SEO strategy.",
+      "Identify keyword opportunities.",
+      "Audit site SEO health.",
+      "Find high-traffic content topics."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous cherchez une solution gratuite.",
+        "Votre budget SEO est très limité.",
+        "Vous n'avez pas de besoin d'analyse competitive."
+      ],
+      "keepIf": [
+        "Vous travaillez en SEO ou marketing de contenu.",
+        "Vous analysez régulièrement vos concurrents.",
+        "Vous avez besoin de données fiables sur les mots-clés."
+      ],
+      "threshold": "Ahrefs s'impose pour les agences et equipes SEO sérieuses ; pour un usage ponctuel ou petit budget, des alternatives gratuites suffisent."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You're looking for a free solution.",
+        "Your SEO budget is very limited.",
+        "You have no need for competitive analysis."
+      ],
+      "keepIf": [
+        "You work in SEO or content marketing.",
+        "You regularly analyze your competitors.",
+        "You need reliable keyword and backlink data."
+      ],
+      "threshold": "Ahrefs is essential for serious SEO agencies and teams; for occasional use or tight budgets, free alternatives may suffice."
+    },
+    "website_url": "https://ahrefs.com"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "High pricing for small teams.",
+        "No full free version.",
+        "Additional cost per extra user seat."
+      ],
+      "pros": [
+        "Massive, frequently updated database.",
+        "Powerful Site Explorer for competitive analysis.",
+        "AI-driven content optimization tools.",
+        "Free Webmaster Tools for domain owners."
+      ],
+      "use_cases": [
+        "Analyze competitor SEO strategy.",
+        "Identify keyword opportunities.",
+        "Audit site SEO health.",
+        "Find high-traffic content topics."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You're looking for a free solution.",
+          "Your SEO budget is very limited.",
+          "You have no need for competitive analysis."
+        ],
+        "keepIf": [
+          "You work in SEO or content marketing.",
+          "You regularly analyze your competitors.",
+          "You need reliable keyword and backlink data."
+        ],
+        "threshold": "Ahrefs is essential for serious SEO agencies and teams; for occasional use or tight budgets, free alternatives may suffice."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Pas de version gratuite permanente. Ahrefs Webmaster Tools gratuit pour propriétaires de sites vérifiés (accès limité).",
+        "exists": false
+      },
+      "key_features": [
+        "Site Explorer : analyser sites concurrents",
+        "Keywords Explorer : recherche de mots-clés, volume, difficulté",
+        "Rank Tracker : suivi de positionnement",
+        "Content Explorer : découverte de contenu viral",
+        "Site Audit : audit technique SEO",
+        "AI Content Helper : optimisation contenu pour SEO et IA"
+      ],
+      "plans": [
+        {
+          "name": "Starter",
+          "price": "29 $/mois (exploration basique)"
+        },
+        {
+          "name": "Lite",
+          "price": "129 $/mois ou 108 $/mois annuel"
+        },
+        {
+          "name": "Standard",
+          "price": "249 $/mois ou 208 $/mois annuel"
+        },
+        {
+          "name": "Advanced",
+          "price": "449 $/mois ou 374 $/mois annuel"
+        },
+        {
+          "name": "Enterprise",
+          "price": "À partir de 1 499 $/mois annuel"
+        }
+      ],
+      "pricing_model": "Abonnement mensuel ou annuel, avec 5 niveaux de tarification et formule Enterprise avec API personnalisée.",
+      "what": "Plateforme marketing IA pour analyser le SEO, suivre les classements, explorer les mots-clés, auditer les sites, et explorer le contenu concurrent avec une base de données de 170 milliards de pages indexées.",
+      "what_en": "AI-powered marketing platform for SEO analysis, rank tracking, keyword research, site audits, and competitive content insights with a database of 170 billion indexed pages."
+    },
+    "fr": {
+      "cons": [
+        "Tarification élevée pour les petites équipes.",
+        "Pas de version gratuite complète.",
+        "Surcoût pour sièges supplémentaires."
+      ],
+      "pros": [
+        "Base de données massive et mise à jour fréquente.",
+        "Site Explorer puissant pour l'analyse competitive.",
+        "Intégration IA pour l'optimisation contenu.",
+        "Webmaster Tools gratuit pour propriétaires de domaine."
+      ],
+      "relevant_for": [
+        "Spécialistes SEO",
+        "Agences marketing",
+        "Content marketers",
+        "Consultants en référencement"
+      ],
+      "use_cases": [
+        "Analyser la stratégie SEO d'un concurrent.",
+        "Identifier des opportunités de mots-clés.",
+        "Auditer la santé SEO d'un site.",
+        "Découvrir le contenu qui génère du trafic."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous cherchez une solution gratuite.",
+          "Votre budget SEO est très limité.",
+          "Vous n'avez pas de besoin d'analyse competitive."
+        ],
+        "keepIf": [
+          "Vous travaillez en SEO ou marketing de contenu.",
+          "Vous analysez régulièrement vos concurrents.",
+          "Vous avez besoin de données fiables sur les mots-clés."
+        ],
+        "threshold": "Ahrefs s'impose pour les agences et equipes SEO sérieuses ; pour un usage ponctuel ou petit budget, des alternatives gratuites suffisent."
+      }
+    },
+    "slug": "ahrefs",
+    "sources": [
+      {
+        "label": "Ahrefs - AI Marketing Platform (site officiel)",
+        "url": "https://ahrefs.com"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-analytics-critical-001",
+    "batch_position": 4,
+    "blockers": [],
+    "catalog_hash": "sha256:02913605490fd33d4643969041c7000b30a801f85ae93881349d2e7796aaa925",
+    "category": "analytics",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:c67389c8cfadb9267bcd1306ee46b70e6bee0c7907e93a0762b797deb3a6d031",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Ahrefs",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence",
+      "shallow_editorial"
+    ],
+    "priority_score": 260,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:da7b1e02837b8835eb519415932c89f0eacf5f98f159856beedb4fad7ed43633",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "ahrefs",
+    "source_url": "https://ahrefs.com",
+    "source_verified_on": "2026-05-08",
+    "status": "QUEUED"
+  }
+}

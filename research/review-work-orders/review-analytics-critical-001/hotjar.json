@@ -1,0 +1,263 @@
+{
+  "batch": "review-analytics-critical-001",
+  "current": {
+    "affiliate_url": "https://hotjar.com",
+    "alternatives": [
+      "microsoft-clarity",
+      "posthog"
+    ],
+    "category": "analytics",
+    "cons": [
+      "Approche qualitative : ne remplace pas une analytics produit quantitative complète.",
+      "L'enregistrement de session demande de gérer la confidentialité des visiteurs.",
+      "Les fonctions avancées et le fort volume font monter la note."
+    ],
+    "cons_en": [
+      "Qualitative approach: not a replacement for full quantitative product analytics.",
+      "Session recording requires managing visitor privacy.",
+      "Advanced features and high volume push the cost up."
+    ],
+    "host_app": null,
+    "id": "hotjar",
+    "long_description": "Hotjar, c'est l'outil qui te montre ce que tes visiteurs font vraiment sur ton site. Heatmaps (où ils cliquent et s'arrêtent), replays de sessions (rejouer le parcours d'un vrai utilisateur), sondages et retours en direct : au lieu de deviner pourquoi une page convertit mal, tu observes. Pour un designer, un PM ou un e-commerçant, c'est un complément concret aux chiffres de Google Analytics, qui disent le quoi mais pas le pourquoi.\n\nCôté prix, il y a une offre gratuite (longtemps limitée à 35 sessions par jour), puis des plans Plus autour de 32$/mois et Business au-delà. À noter : Hotjar appartient désormais à Contentsquare, et la gamme se réorganise progressivement entre plusieurs produits (Observe pour le comportement, Ask pour les sondages), ce qui peut compliquer la lecture des tarifs.\n\nLa vraie question, c'est l'alternative. Microsoft Clarity fait des heatmaps et des replays gratuitement et sans limite, ce qui en fait un concurrent redoutable si le budget compte. PostHog va plus loin en combinant replays, analytics produit et feature flags, intéressant si tu es une équipe tech. Hotjar reste un bon choix pour sa simplicité et ses sondages intégrés, mais ce n'est plus l'évidence gratuite qu'on croit.",
+    "long_description_en": "Hotjar is the tool that shows you what your visitors actually do on your site. Heatmaps (where they click and stop), session replays (replay a real user's journey), surveys and live feedback: instead of guessing why a page converts poorly, you observe. For a designer, a PM or an e-commerce owner, it's a concrete complement to Google Analytics figures, which tell the what but not the why.\n\nOn pricing, there's a free tier (long limited to 35 sessions per day), then Plus plans around $32/month and Business above. Note: Hotjar now belongs to Contentsquare, and the lineup is gradually reorganizing across several products (Observe for behavior, Ask for surveys), which can make pricing harder to read.\n\nThe real question is the alternative. Microsoft Clarity does heatmaps and replays for free with no limit, making it a formidable competitor if budget matters. PostHog goes further by combining replays, product analytics and feature flags, interesting if you're a tech team. Hotjar remains a good choice for its simplicity and built-in surveys, but it's no longer the free no-brainer people assume.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://images.ctfassets.net/lh3zuq09vnm2/zsJe5ujXWMeNJScarO5jX/92ee747a96ef4a5998f9a1b10b2bb737/hotjar_og_image_Jul22.png"
+    },
+    "name": "Hotjar",
+    "pricing": {
+      "free": "Offre gratuite limitée (longtemps 35 sessions par jour)",
+      "paid": "Plus à environ 32$/mois, Business au-delà"
+    },
+    "pricing_en": {
+      "free": "Limited free tier (long capped at 35 sessions per day)",
+      "paid": "Plus at around $32/month, Business above"
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Offre gratuite limitée (longtemps 35 sessions par jour)",
+        "Plus à environ 32$/mois, Business au-delà",
+        "Hotjar appartient à Contentsquare : gamme et tarifs en réorganisation"
+      ],
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Plus",
+      "compare_price_monthly_eur": 32,
+      "location_sensitive": false,
+      "official_source_url": "https://support.contentsquare.com/hc/en-us/articles/37271913608721-Hotjar-is-now-part-of-Contentsquare-Plans-and-Pricing",
+      "price_reliability": "medium",
+      "source_domain": "support.contentsquare.com",
+      "usage_sensitive": false,
+      "verification_status": "official_contextual",
+      "verified_on": "2026-06-15"
+    },
+    "pros": [
+      "Heatmaps, enregistrements de session et sondages réunis dans un seul outil.",
+      "Palier gratuit généreux pour démarrer sur un site à trafic modéré.",
+      "Mise en place rapide, sans expertise analytics.",
+      "Désormais adossé à Contentsquare (analyse enrichie, y compris par IA)."
+    ],
+    "pros_en": [
+      "Heatmaps, session recordings and surveys in a single tool.",
+      "Generous free tier to start on a moderate-traffic site.",
+      "Fast setup, no analytics expertise required.",
+      "Now backed by Contentsquare (richer, AI-assisted analysis)."
+    ],
+    "short_description": "Heatmaps, replays de sessions et sondages pour comprendre le comportement utilisateur.",
+    "short_description_en": "Heatmaps, session replays, and surveys to understand user behaviour.",
+    "slug": "hotjar",
+    "source_url": "https://support.contentsquare.com/hc/en-us/articles/37271913608721-Hotjar-is-now-part-of-Contentsquare-Plans-and-Pricing",
+    "source_verified_on": "2026-06-15",
+    "use_cases": [
+      "Repérer les points de friction d'une page grâce aux heatmaps et aux replays.",
+      "Recueillir l'avis des visiteurs via des sondages ciblés sur le site.",
+      "Prioriser des améliorations UX à partir de comportements réels observés."
+    ],
+    "use_cases_en": [
+      "Spot friction points on a page via heatmaps and replays.",
+      "Gather visitor opinions through targeted on-site surveys.",
+      "Prioritise UX improvements from real observed behaviour."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous avez besoin d'analytics produit quantitative avancée (entonnoirs, cohortes) : un outil dédié est plus adapté.",
+        "Vos contraintes de confidentialité rendent l'enregistrement de session délicat.",
+        "Vous disposez déjà d'une suite analytics complète."
+      ],
+      "keepIf": [
+        "Vous voulez comprendre visuellement le comportement des visiteurs (clics, scroll, parcours).",
+        "Vous cherchez à recueillir du feedback qualitatif directement sur votre site (sondages).",
+        "Une petite équipe veut des insights rapides sans mettre en place une analytics lourde."
+      ],
+      "threshold": "Hotjar s'impose quand le besoin est de VOIR et comprendre le comportement (heatmaps, replays, sondages) plutôt que de mesurer finement des métriques produit ; pour de l'analytics quantitative poussée, un outil spécialisé reste supérieur."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You need advanced quantitative product analytics (funnels, cohorts): a dedicated tool fits better.",
+        "Privacy constraints make session recording sensitive.",
+        "You already have a full analytics suite."
+      ],
+      "keepIf": [
+        "You want to visually understand visitor behaviour (clicks, scroll, journeys).",
+        "You want to collect qualitative feedback directly on your site (surveys).",
+        "A small team wants quick insight without setting up heavy analytics."
+      ],
+      "threshold": "Hotjar makes sense when the need is to SEE and understand behaviour (heatmaps, replays, surveys) rather than finely measure product metrics; for advanced quantitative analytics, a specialised tool remains stronger."
+    },
+    "website_url": "https://hotjar.com"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Qualitative approach: not a replacement for full quantitative product analytics.",
+        "Session recording requires managing visitor privacy.",
+        "Advanced features and high volume push the cost up."
+      ],
+      "pros": [
+        "Heatmaps, session recordings and surveys in a single tool.",
+        "Generous free tier to start on a moderate-traffic site.",
+        "Fast setup, no analytics expertise required.",
+        "Now backed by Contentsquare (richer, AI-assisted analysis)."
+      ],
+      "use_cases": [
+        "Spot friction points on a page via heatmaps and replays.",
+        "Gather visitor opinions through targeted on-site surveys.",
+        "Prioritise UX improvements from real observed behaviour."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You need advanced quantitative product analytics (funnels, cohorts): a dedicated tool fits better.",
+          "Privacy constraints make session recording sensitive.",
+          "You already have a full analytics suite."
+        ],
+        "keepIf": [
+          "You want to visually understand visitor behaviour (clicks, scroll, journeys).",
+          "You want to collect qualitative feedback directly on your site (surveys).",
+          "A small team wants quick insight without setting up heavy analytics."
+        ],
+        "threshold": "Hotjar makes sense when the need is to SEE and understand behaviour (heatmaps, replays, surveys) rather than finely measure product metrics; for advanced quantitative analytics, a specialised tool remains stronger."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Gratuit : jusqu'à 200 000 sessions/mois, 1 projet, replays/heatmaps/funnels de base, 100 sondages/mois.",
+        "exists": true
+      },
+      "key_features": [
+        "Enregistrements de session (session replay)",
+        "Cartes de chaleur par zones (heatmaps)",
+        "Sondages et feedback sur site",
+        "Analyse par IA (chat en langage naturel côté Contentsquare)"
+      ],
+      "note": "Hotjar fait désormais partie de Contentsquare (les tarifs sont servis sur contentsquare.com).",
+      "plans": [
+        {
+          "for": "équipes en croissance",
+          "name": "Growth",
+          "price": "49 $/mois"
+        },
+        {
+          "name": "Pro / Enterprise",
+          "price": "sur devis"
+        }
+      ],
+      "pricing_model": "Par volume de sessions. Palier gratuit, puis paliers payants.",
+      "what": "Outil d'analyse comportementale web : cartes de chaleur (heatmaps), enregistrements de session et sondages sur site.",
+      "what_en": "Web behavior analytics tool: heatmaps, session recordings, and on-site surveys."
+    },
+    "fr": {
+      "cons": [
+        "Approche qualitative : ne remplace pas une analytics produit quantitative complète.",
+        "L'enregistrement de session demande de gérer la confidentialité des visiteurs.",
+        "Les fonctions avancées et le fort volume font monter la note."
+      ],
+      "pros": [
+        "Heatmaps, enregistrements de session et sondages réunis dans un seul outil.",
+        "Palier gratuit généreux pour démarrer sur un site à trafic modéré.",
+        "Mise en place rapide, sans expertise analytics.",
+        "Désormais adossé à Contentsquare (analyse enrichie, y compris par IA)."
+      ],
+      "relevant_for": [
+        "Petites équipes",
+        "Product/UX",
+        "E-commerce et sites de conversion"
+      ],
+      "use_cases": [
+        "Repérer les points de friction d'une page grâce aux heatmaps et aux replays.",
+        "Recueillir l'avis des visiteurs via des sondages ciblés sur le site.",
+        "Prioriser des améliorations UX à partir de comportements réels observés."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous avez besoin d'analytics produit quantitative avancée (entonnoirs, cohortes) : un outil dédié est plus adapté.",
+          "Vos contraintes de confidentialité rendent l'enregistrement de session délicat.",
+          "Vous disposez déjà d'une suite analytics complète."
+        ],
+        "keepIf": [
+          "Vous voulez comprendre visuellement le comportement des visiteurs (clics, scroll, parcours).",
+          "Vous cherchez à recueillir du feedback qualitatif directement sur votre site (sondages).",
+          "Une petite équipe veut des insights rapides sans mettre en place une analytics lourde."
+        ],
+        "threshold": "Hotjar s'impose quand le besoin est de VOIR et comprendre le comportement (heatmaps, replays, sondages) plutôt que de mesurer finement des métriques produit ; pour de l'analytics quantitative poussée, un outil spécialisé reste supérieur."
+      }
+    },
+    "slug": "hotjar",
+    "sources": [
+      {
+        "label": "Tarifs officiels (Hotjar désormais partie de Contentsquare)",
+        "url": "https://contentsquare.com/pricing/"
+      }
+    ],
+    "verified_on": "2026-07-23"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-analytics-critical-001",
+    "batch_position": 21,
+    "blockers": [],
+    "catalog_hash": "sha256:87b3ecfb7e5fbe0904486b2f637250ced78552defe4e2cccdc4ad9fcdf6227dc",
+    "category": "analytics",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:60212c4fc9c0d8a0397fe2987ccd0211d6b3f05828b05b9703ecc4a2ac323121",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Hotjar",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:5d574833e9e3d98b3397e92aab99034cf8df2ec13cabddc12b6f9a0a5d5e66b4",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "hotjar",
+    "source_url": "https://support.contentsquare.com/hc/en-us/articles/37271913608721-Hotjar-is-now-part-of-Contentsquare-Plans-and-Pricing",
+    "source_verified_on": "2026-06-15",
+    "status": "QUEUED"
+  }
+}
