@@ -289,6 +289,30 @@ const Footer = () => {
                   loading="lazy"
                 />
               </a>
+              <a
+                href="https://turbo0.com/item/tooltrim"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="tt-footer-badge"
+                aria-label="Listed on Turbo0"
+              >
+                <img
+                  className="tt-footer-badge-light"
+                  src="https://img.turbo0.com/badge-listed-light.svg"
+                  alt="Listed on Turbo0"
+                  width={164}
+                  height={54}
+                  loading="lazy"
+                />
+                <img
+                  className="tt-footer-badge-dark"
+                  src="https://img.turbo0.com/badge-listed-dark.svg"
+                  alt="Listed on Turbo0"
+                  width={164}
+                  height={54}
+                  loading="lazy"
+                />
+              </a>
             </div>
           </div>
         </div>
