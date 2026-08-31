@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { useEffect } from "react";
 import { useLocation, useSearchParams } from "react-router-dom";
 import { SEO_BASE, OG_IMAGE, getAlternateLinks } from "@/lib/seo";
 
@@ -37,6 +38,25 @@ export default function DynamicCanonical() {
   const locale = isEn ? "en_US" : "fr_FR";
   const isFunnel =
     /\/selector(\/|$)/.test(canonicalPath) || /\/diagnostic(\/|$)/.test(canonicalPath);
+  // Internal query-result pages are useful navigation surfaces but should not
+  // become an unlimited family of thin, duplicate pages in search indexes.
+  const isInternalSearch = /\/search$/.test(canonicalPath);
+
+  useEffect(() => {
+    if (!isInternalSearch) return;
+    const robots = document.querySelector<HTMLMetaElement>('meta[name="robots"]:not([data-rh])');
+    if (!robots) return;
+
+    const previousContent = robots.content;
+    robots.content = "noindex, follow";
+    robots.dataset.tooltrimSearchRobots = "true";
+
+    return () => {
+      if (robots.dataset.tooltrimSearchRobots !== "true") return;
+      robots.content = previousContent;
+      delete robots.dataset.tooltrimSearchRobots;
+    };
+  }, [isInternalSearch]);
 
   return (
     <Helmet>

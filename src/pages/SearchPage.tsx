@@ -3,6 +3,7 @@ import { useSearchParams, useNavigate, Link } from "react-router-dom";
 import { Search, Hash, BookOpen, Wrench, ArrowRight, X } from "@/lib/icons";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories, usePosts } from "@/hooks/useSupabaseData";
+import { useCatalogSearch } from "@/hooks/useCatalogSearch";
 import ToolCardCompact from "@/components/tool/ToolCardCompact";
 import { getExplorerHref } from "@/lib/toolExploration";
 
@@ -58,7 +59,7 @@ const SearchPage = () => {
   const query = inputValue.trim().toLowerCase();
 
   /* Results */
-  const toolResults = useMemo(() => {
+  const fallbackToolResults = useMemo(() => {
     if (query.length < 2) return [];
     return tools.filter(tool =>
       (tool.name ?? "").toLowerCase().includes(query) ||
@@ -68,7 +69,7 @@ const SearchPage = () => {
     );
   }, [query, tools]);
 
-  const catResults = useMemo(() => {
+  const fallbackCatResults = useMemo(() => {
     if (query.length < 2) return [];
     return categories.filter(c =>
       (c.name ?? "").toLowerCase().includes(query) ||
@@ -78,7 +79,7 @@ const SearchPage = () => {
     );
   }, [query, categories]);
 
-  const guideResults = useMemo(() => {
+  const fallbackGuideResults = useMemo(() => {
     if (query.length < 2) return [];
     return posts.filter(p =>
       (p.title ?? "").toLowerCase().includes(query) ||
@@ -86,6 +87,43 @@ const SearchPage = () => {
       (p.tags ?? []).some((tag: string) => tag.toLowerCase().includes(query))
     );
   }, [query, posts]);
+
+  const { hits: intelligentHits, status: searchStatus } = useCatalogSearch({
+    query,
+    tools,
+    categories,
+    posts,
+    lang,
+    limit: 80,
+  });
+
+  const toolById = useMemo(() => new Map(tools.map((tool) => [tool.id, tool])), [tools]);
+  const categoryById = useMemo(() => new Map(categories.map((category) => [category.id, category])), [categories]);
+  const postById = useMemo(() => new Map(posts.map((post) => [post.id, post])), [posts]);
+
+  const toolResults = useMemo(() => intelligentHits
+    ? intelligentHits.filter((hit) => hit.kind === "tool").flatMap((hit) => {
+        const tool = toolById.get(hit.entityId);
+        return tool ? [tool] : [];
+      })
+    : fallbackToolResults,
+  [fallbackToolResults, intelligentHits, toolById]);
+
+  const catResults = useMemo(() => intelligentHits
+    ? intelligentHits.filter((hit) => hit.kind === "category").flatMap((hit) => {
+        const category = categoryById.get(hit.entityId);
+        return category ? [category] : [];
+      })
+    : fallbackCatResults,
+  [categoryById, fallbackCatResults, intelligentHits]);
+
+  const guideResults = useMemo(() => intelligentHits
+    ? intelligentHits.filter((hit) => hit.kind === "guide").flatMap((hit) => {
+        const post = postById.get(hit.entityId);
+        return post ? [post] : [];
+      })
+    : fallbackGuideResults,
+  [fallbackGuideResults, intelligentHits, postById]);
 
   const totalCount = toolResults.length + catResults.length + guideResults.length;
 
@@ -164,6 +202,9 @@ const SearchPage = () => {
       {/* Results */}
       {query.length >= 2 && (
         <>
+          <span className="sr-only" role="status" aria-live="polite">
+            {searchStatus === "loading" ? t("Recherche dans le catalogue", "Searching the catalog") : ""}
+          </span>
           {/* Header */}
           <div className="sp-results-header">
             <p>

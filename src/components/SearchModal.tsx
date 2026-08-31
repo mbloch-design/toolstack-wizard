@@ -25,6 +25,7 @@ import {
 } from "@/lib/icons";
 import { useLang } from "@/hooks/useLang";
 import { useCategories, usePosts, useToolSummaries, type Post, type ToolSummary } from "@/hooks/useSupabaseData";
+import { useCatalogSearch } from "@/hooks/useCatalogSearch";
 import ToolLogo from "@/components/ToolLogo";
 
 type SearchSection = "trending" | "categories" | "platforms" | "works" | "collections" | "articles";
@@ -82,11 +83,14 @@ export function SearchModal({ onClose }: { onClose: () => void }) {
   }, [onClose]);
 
   const toolBySlug = useMemo(() => new Map(tools.map((tool) => [tool.slug || tool.id, tool])), [tools]);
+  const toolById = useMemo(() => new Map(tools.map((tool) => [tool.id, tool])), [tools]);
+  const categoryById = useMemo(() => new Map(categories.map((category) => [category.id, category])), [categories]);
+  const postById = useMemo(() => new Map(posts.map((post) => [post.id, post])), [posts]);
   const featured = useMemo(() => FEATURED_SLUGS.map((slug) => toolBySlug.get(slug)).filter(Boolean) as ToolSummary[], [toolBySlug]);
   const platforms = useMemo(() => PLATFORM_SLUGS.map((slug) => toolBySlug.get(slug)).filter(Boolean) as ToolSummary[], [toolBySlug]);
   const latestPosts = useMemo(() => [...posts].sort((a, b) => Date.parse(b.date) - Date.parse(a.date)).slice(0, 6), [posts]);
 
-  const results = useMemo<SearchResult[]>(() => {
+  const fallbackResults = useMemo<SearchResult[]>(() => {
     const normalized = query.trim().toLocaleLowerCase(lang);
     if (normalized.length < 2) return [];
     const toolResults = tools.filter((tool) => [tool.name, tool.slug, tool.shortDescription, tool.shortDescriptionEn].some((value) => value?.toLocaleLowerCase(lang).includes(normalized))).slice(0, 8).map((tool) => ({ id: `tool-${tool.id}`, label: tool.name, meta: categoryName(categories, tool.categoryId, lang), to: `${prefix}/tool/${tool.slug || tool.id}`, tool, kind: "tool" as const }));
@@ -94,6 +98,34 @@ export function SearchModal({ onClose }: { onClose: () => void }) {
     const articleResults = posts.filter((post) => [post.title, post.excerpt, ...post.tags].some((value) => value?.toLocaleLowerCase(lang).includes(normalized))).slice(0, 5).map((post) => ({ id: `article-${post.id}`, label: post.title, meta: post.readTime, to: `${prefix}/guide/${post.slug}`, kind: "guide" as const }));
     return [...toolResults, ...categoryResults, ...articleResults];
   }, [categories, lang, posts, prefix, query, t, tools]);
+
+  const { hits: intelligentHits, status: searchStatus } = useCatalogSearch({
+    query,
+    tools,
+    categories,
+    posts,
+    lang,
+    limit: 17,
+  });
+
+  const results = useMemo<SearchResult[]>(() => {
+    if (!intelligentHits) return fallbackResults;
+    return intelligentHits.flatMap((hit): SearchResult[] => {
+      if (hit.kind === "tool") {
+        const tool = toolById.get(hit.entityId) || toolBySlug.get(hit.slug);
+        if (!tool) return [];
+        return [{ id: hit.id, label: hit.label, meta: hit.meta, to: `${prefix}/tool/${hit.slug}`, tool, kind: "tool" }];
+      }
+      if (hit.kind === "category") {
+        const category = categoryById.get(hit.entityId);
+        if (!category) return [];
+        return [{ id: hit.id, label: hit.label, meta: hit.meta, to: `${prefix}/category/${hit.slug}`, kind: "category" }];
+      }
+      const post = postById.get(hit.entityId);
+      if (!post) return [];
+      return [{ id: hit.id, label: hit.label, meta: hit.meta, to: `${prefix}/guide/${hit.slug}`, kind: "guide" }];
+    });
+  }, [categoryById, fallbackResults, intelligentHits, postById, prefix, toolById, toolBySlug]);
 
   useEffect(() => setActiveIndex(-1), [results]);
 
@@ -126,7 +158,7 @@ export function SearchModal({ onClose }: { onClose: () => void }) {
         </header>
 
         {isSearching ? (
-          <SearchResults results={results} activeIndex={activeIndex} query={query} onHover={setActiveIndex} onSelect={goTo} onViewAll={viewAllResults} t={t} />
+          <SearchResults results={results} activeIndex={activeIndex} query={query} isLoading={searchStatus === "loading"} onHover={setActiveIndex} onSelect={goTo} onViewAll={viewAllResults} t={t} />
         ) : (
           <div className="gs-explorer">
             <aside className="gs-nav" aria-label={t("Navigation de recherche", "Search navigation")}>
@@ -177,8 +209,8 @@ function ArticleGrid({ posts, prefix, onGo, t, compact = false }: { posts: Post[
   return <section><SectionTitle>{t("Derniers articles", "Latest articles")}</SectionTitle><div className={compact ? "gs-article-grid is-compact" : "gs-article-grid"}>{posts.map((post) => <button key={post.id} className="gs-article-card" onClick={() => onGo(`${prefix}/guide/${post.slug}`)}><span className="gs-article-cover">{post.thumbnail ? <img src={post.thumbnail} alt="" loading="lazy" decoding="async" /> : <BookOpen aria-hidden />}</span><strong>{post.title}</strong><span className="gs-article-meta">{post.category}{post.readTime ? ` · ${post.readTime}` : ""}</span></button>)}</div></section>;
 }
 
-function SearchResults({ results, activeIndex, query, onHover, onSelect, onViewAll, t }: { results: SearchResult[]; activeIndex: number; query: string; onHover: (index: number) => void; onSelect: (to: string) => void; onViewAll: () => void; t: (fr: string, en: string) => string }) {
-  return <div className="gs-results" role="listbox">{results.length ? <>{results.map((result, index) => <button key={result.id} className={activeIndex === index ? "gs-result is-active" : "gs-result"} onMouseEnter={() => onHover(index)} onClick={() => onSelect(result.to)} role="option" aria-selected={activeIndex === index}>{result.tool ? <ToolLogo tool={result.tool} size={42} /> : <span className="gs-result-icon">{result.kind === "guide" ? <BookOpen /> : <LayoutGrid />}</span>}<span><strong>{result.label}</strong><small>{result.meta}</small></span><ArrowRight aria-hidden /></button>)}<button className="gs-view-all" onClick={onViewAll}>{t("Voir tous les résultats pour", "See all results for")} « {query} » <ArrowRight /></button></> : <div className="gs-empty"><Search /><strong>{t("Aucun résultat", "No results")}</strong><span>{t("Essayez un autre terme", "Try another term")}</span></div>}</div>;
+function SearchResults({ results, activeIndex, query, isLoading, onHover, onSelect, onViewAll, t }: { results: SearchResult[]; activeIndex: number; query: string; isLoading: boolean; onHover: (index: number) => void; onSelect: (to: string) => void; onViewAll: () => void; t: (fr: string, en: string) => string }) {
+  return <div className="gs-results" role="listbox" aria-busy={isLoading}>{results.length ? <>{results.map((result, index) => <button key={result.id} className={activeIndex === index ? "gs-result is-active" : "gs-result"} onMouseEnter={() => onHover(index)} onClick={() => onSelect(result.to)} role="option" aria-selected={activeIndex === index}>{result.tool ? <ToolLogo tool={result.tool} size={42} /> : <span className="gs-result-icon">{result.kind === "guide" ? <BookOpen /> : <LayoutGrid />}</span>}<span><strong>{result.label}</strong><small>{result.meta}</small></span><ArrowRight aria-hidden /></button>)}<button className="gs-view-all" onClick={onViewAll}>{t("Voir tous les résultats pour", "See all results for")} « {query} » <ArrowRight /></button></> : <div className="gs-empty"><Search /><strong>{isLoading ? t("Recherche en cours…", "Searching…") : t("Aucun résultat", "No results")}</strong><span>{isLoading ? t("Analyse du catalogue", "Analysing the catalog") : t("Essayez un autre terme", "Try another term")}</span></div>}</div>;
 }
 
 function categoryName(categories: any[], categoryId: string, lang: string) {
