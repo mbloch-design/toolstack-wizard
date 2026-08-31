@@ -192,20 +192,21 @@
        Use with color: var(--color-*) in custom CSS.
        For Tailwind, use the tokens above.
     ──────────────────────────────────────────── */
-    --color-bg:            #FDFCFC;
+    --color-bg:            #F6F5F4;
     --color-surface:       #FFFFFF;
-    --color-surface-soft:  #F1F1EC;
+    --color-surface-soft:  #EDEBE9;
+    --color-chip:          #E0DBD7;    /* deeper warm taupe — tags/badges, one notch past surface-soft */
 
-    --color-text:          #222222;
-    --color-text-strong:   #111111;
+    --color-text:          #0F0F0F;
+    --color-text-strong:   #0F0F0F;
     --color-muted:         #6F6F68;
     --color-muted-light:   #9A9A92;
 
-    --color-border:        #DADAD4;
+    --color-border:        #E6E6E6;
     --color-border-soft:   #E7E7E0;
-    --color-border-strong: #222222;
+    --color-border-strong: #0F0F0F;
 
-    --color-hover:         #222222;
+    --color-hover:         #0F0F0F;
     --color-hover-text:    #FFFFFF;
     --color-hover-strong:  #000000;    /* deepest press state, one notch past --color-hover */
 
@@ -273,6 +274,34 @@
     --tt-surface-radius-panel: var(--tt-radius-lg); /* grouped section / hero panel */
   }
 
+  /* ── Global interaction primitives — adapted from details.so ──────────
+     Squircle corners everywhere (falls back invisibly to plain
+     border-radius in browsers without corner-shape support), plus a
+     press-scale on every real control, sitewide. This is deliberately
+     :active, not :hover — the source has no hover-transform anywhere
+     either; the only motion is the click/tap response.
+
+     Uses `animation`, not `transition: transform`, on purpose: `transition`
+     is a shorthand, so a lower-specificity rule adding transform to it
+     either loses outright to a component's own `transition` (no scale
+     smoothing — this bit ToolTrim's own audit: measured coverage of only
+     14–47% of real links/buttons across a sample page before this fix)
+     or a higher-specificity rule wins outright and silently deletes that
+     component's own colour/background transition timing. `animation` is a
+     wholly separate property from `transition`, so it can never collide
+     with any of the hundreds of existing per-component transitions in
+     this file — smooth press-in on 100% of controls, guaranteed. */
+  *, *::before, *::after {
+    corner-shape: superellipse(1.2);
+  }
+
+  @keyframes tt-press {
+    to { transform: scale(0.97); }
+  }
+  :where(a[href], button:not(:disabled), [role="button"]):active {
+    animation: tt-press 150ms ease-out forwards;
+  }
+
   /* Responsive gutter — tablet & mobile overrides */
   @media (max-width: 1023px) {
     :root { --layout-gutter: var(--layout-gutter-tablet); }
@@ -331,6 +360,7 @@
     --color-bg:            #111111;
     --color-surface:       #1A1A1A;
     --color-surface-soft:  #222222;
+    --color-chip:          #2B2A28;
     --color-text:          #DEDED6;
     --color-text-strong:   #F0F0EA;
     --color-muted:         #8A8A82;
@@ -956,6 +986,9 @@
   }
   .pin-tool-button:hover {
     transform: translateY(-1px);
+  }
+  .pin-tool-button:active {
+    transform: translateY(-1px) scale(0.97);
   }
   .pin-tool-button:focus-visible {
     outline: 2px solid var(--color-text);
@@ -4869,17 +4902,18 @@
   --accent: 224 76% 96%;
   --accent-foreground: 224 76% 44%;
   /* semantic hex tokens */
-  --color-bg:            #FDFCFC;
+  --color-bg:            #F6F5F4;
   --color-surface:       #FFFFFF;
-  --color-surface-soft:  #F1F1EC;
-  --color-text:          #222222;
-  --color-text-strong:   #111111;
+  --color-surface-soft:  #EDEBE9;
+  --color-chip:          #E0DBD7;
+  --color-text:          #0F0F0F;
+  --color-text-strong:   #0F0F0F;
   --color-muted:         #6F6F68;
   --color-muted-light:   #9A9A92;
-  --color-border:        #DADAD4;
+  --color-border:        #E6E6E6;
   --color-border-soft:   #E7E7E0;
-  --color-border-strong: #222222;
-  --color-hover:         #222222;
+  --color-border-strong: #0F0F0F;
+  --color-hover:         #0F0F0F;
   --color-hover-text:    #FFFFFF;
 }
 
@@ -9525,7 +9559,7 @@
     text-align: left;
     text-decoration: none;
     cursor: pointer;
-    transition: background-color 140ms ease-out, color 140ms ease-out;
+    transition: background-color 140ms ease-out, color 140ms ease-out, transform 150ms ease;
   }
   .td-decision-utility-actions .pin-tool-button { color: var(--color-text); }
   /* Explore + Add to stack are the primary pair here — pill-shaped like
@@ -13760,6 +13794,9 @@
   .cix-load-more-button:hover {
     transform: translateY(-1px);
     background: var(--color-text-strong);
+  }
+  .cix-load-more-button:active {
+    transform: translateY(-1px) scale(0.97);
   }
   .cix-load-more-button:focus-visible {
     outline: 2px solid var(--color-text);

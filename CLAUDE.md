@@ -43,8 +43,9 @@ Préfixes : `td-*` (tool detail), `gi-*` (guides index), `ga-*` (guide article),
 
 ## Palette
 
-`#222222` texte/CTA · `#F8F8F4` backgrounds · `#EDEDE8` surfaces secondaires ·
-`#FFFFFF` cards · `#DADAD4` borders · `#6F6F68` métadonnées · `#9A9A92` placeholders
+`#0F0F0F` texte/CTA · `#F6F5F4` backgrounds · `#EDEBE9` surfaces secondaires ·
+`#FFFFFF` cards · `#E6E6E6` borders · `#6F6F68` métadonnées · `#9A9A92` placeholders ·
+`#E0DBD7` chips/tags
 
 ## Règles à respecter
 
