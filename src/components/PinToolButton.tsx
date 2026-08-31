@@ -1,9 +1,10 @@
-import { useCallback, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { Bookmark, BookmarkCheck } from "@/lib/icons";
 import { toast } from "sonner";
 import { useStackPins } from "@/hooks/useStackPins";
 import { useLang } from "@/hooks/useLang";
-import StackSaveDialog from "@/components/stack/StackSaveDialog";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import StackSaveMenu from "@/components/stack/StackSaveMenu";
 
 const EMPTY_NEED_IDS: string[] = [];
 
@@ -34,14 +35,13 @@ interface PinToolButtonProps {
 export function PinToolButton({ slug, label, t, compact = false, inline = false, labelMode }: PinToolButtonProps) {
   const { lang } = useLang();
   const { state, saveToolSelection, unpinTool, createNeed } = useStackPins();
-  const [dialogOpen, setDialogOpen] = useState(false);
+  const [open, setOpen] = useState(false);
   const entry = state.toolEntries.find((item) => item.toolSlug === slug);
   const pinned = !!entry;
   const suggestedNeedId = useMemo(
     () => suggestNeedId(slug, new Set(state.needs.map((need) => need.id))),
     [slug, state.needs],
   );
-  const closeDialog = useCallback(() => setDialogOpen(false), []);
   const mode = labelMode ?? (compact ? "icon" : "full");
   const buttonLabel = pinned
     ? entry.intent === "wishlist"
@@ -50,50 +50,57 @@ export function PinToolButton({ slug, label, t, compact = false, inline = false,
     : mode === "full" ? t("Ajouter à ma stack", "Add to my stack") : t("Ajouter", "Add");
 
   return (
-    <>
-      <button
-        type="button"
-        className={`pin-tool-button${pinned ? " pin-tool-button--active" : ""}${entry?.intent === "wishlist" ? " pin-tool-button--wishlist" : ""}${compact ? " pin-tool-button--compact" : ""}${inline ? " pin-tool-button--inline" : ""}${mode === "icon" ? " pin-tool-button--icon" : ""}${mode === "full" ? " pin-tool-button--full" : ""}`}
-        onClick={(event) => {
-          event.preventDefault();
-          event.stopPropagation();
-          setDialogOpen(true);
-        }}
-        aria-pressed={pinned}
-        aria-haspopup="dialog"
-        aria-expanded={dialogOpen}
-        aria-label={pinned ? t(`Modifier l’enregistrement de ${label}`, `Edit saved ${label}`) : t(`Ajouter ${label}`, `Add ${label}`)}
-        title={pinned ? t("Modifier l’enregistrement", "Edit saved tool") : t("Ajouter", "Add")}
+    <Popover open={open} onOpenChange={setOpen}>
+      <PopoverTrigger asChild>
+        <button
+          type="button"
+          className={`pin-tool-button${pinned ? " pin-tool-button--active" : ""}${entry?.intent === "wishlist" ? " pin-tool-button--wishlist" : ""}${compact ? " pin-tool-button--compact" : ""}${inline ? " pin-tool-button--inline" : ""}${mode === "icon" ? " pin-tool-button--icon" : ""}${mode === "full" ? " pin-tool-button--full" : ""}`}
+          onClick={(event) => {
+            // Only stop the click reaching an ancestor card link — must not
+            // preventDefault() here, Radix's own trigger toggle bails out
+            // when the click event arrives already defaultPrevented.
+            event.stopPropagation();
+          }}
+          aria-pressed={pinned}
+          aria-label={pinned ? t(`Modifier l’enregistrement de ${label}`, `Edit saved ${label}`) : t(`Ajouter ${label}`, `Add ${label}`)}
+          title={pinned ? t("Modifier l’enregistrement", "Edit saved tool") : t("Ajouter à ma stack", "Add to stack")}
+        >
+          {pinned ? <BookmarkCheck size={compact ? 14 : 16} aria-hidden /> : <Bookmark size={compact ? 14 : 16} aria-hidden />}
+          {mode !== "icon" && <span className="pin-tool-button-text">{buttonLabel}</span>}
+        </button>
+      </PopoverTrigger>
+      <PopoverContent
+        className="stack-save-popover"
+        side="bottom"
+        align="end"
+        sideOffset={8}
+        onClick={(event) => event.stopPropagation()}
       >
-        {pinned ? <BookmarkCheck size={compact ? 14 : 16} aria-hidden /> : <Bookmark size={compact ? 14 : 16} aria-hidden />}
-        {mode !== "icon" && <span className="pin-tool-button-text">{buttonLabel}</span>}
-      </button>
-      <StackSaveDialog
-        isOpen={dialogOpen}
-        label={label}
-        lang={lang}
-        needs={state.needs}
-        toolEntries={state.toolEntries}
-        initialIntent={entry?.intent || "stack"}
-        initialNeedIds={entry?.needIds || EMPTY_NEED_IDS}
-        suggestedNeedId={suggestedNeedId}
-        onClose={closeDialog}
-        onCreateNeed={createNeed}
-        onRemove={entry ? () => {
-          unpinTool(slug);
-          closeDialog();
-          toast.success(t(`${label} a été retiré de vos sélections.`, `${label} was removed from your saved tools.`));
-        } : undefined}
-        onSave={(needIds, intent) => {
-          saveToolSelection(slug, needIds, intent);
-          closeDialog();
-          toast.success(intent === "stack"
-            ? t(`${label} a été ajouté à votre stack.`, `${label} was added to your stack.`)
-            : t(`${label} a été ajouté à Mes envies.`, `${label} was added to your wishlist.`));
-        }}
-        t={t}
-      />
-    </>
+        <StackSaveMenu
+          lang={lang}
+          needs={state.needs}
+          toolEntries={state.toolEntries}
+          pinned={pinned}
+          currentIntent={entry?.intent ?? null}
+          currentNeedIds={entry?.needIds || EMPTY_NEED_IDS}
+          suggestedNeedId={suggestedNeedId}
+          onCreateNeed={createNeed}
+          onSave={(needIds, intent) => {
+            saveToolSelection(slug, needIds, intent);
+            setOpen(false);
+            toast.success(intent === "stack"
+              ? t(`${label} a été ajouté à votre stack.`, `${label} was added to your stack.`)
+              : t(`${label} a été ajouté à Mes envies.`, `${label} was added to your wishlist.`));
+          }}
+          onRemove={() => {
+            unpinTool(slug);
+            setOpen(false);
+            toast.success(t(`${label} a été retiré de vos sélections.`, `${label} was removed from your saved tools.`));
+          }}
+          t={t}
+        />
+      </PopoverContent>
+    </Popover>
   );
 }
 

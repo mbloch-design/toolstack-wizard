@@ -7075,6 +7075,19 @@
 ───────────────────────────────────────────── */
 @layer components {
 
+  /* Squircle corners (corner-shape, see the global rule in @layer base)
+     flash back to a plain square for one frame on any style recalc —
+     border-color/background transition, hover-triggered transform, etc.
+     Every card triggers one of those on hover, so cards opt back out to
+     a plain border-radius here; static controls (buttons, tags, CTAs)
+     keep the squircle since they only change on the separate, cheaper
+     :active press-scale, which doesn't glitch. */
+  [class*="-card"],
+  [class*="-tile"],
+  .tc-image {
+    corner-shape: round;
+  }
+
   /* ── Card shell ─────────────────────────────── */
   .tce-card {
     display: flex;
@@ -7222,6 +7235,36 @@
     outline: 2px solid #fff;
     outline-offset: 2px;
     transform: translateY(-2px);
+  }
+  /* The icon alone doesn't say what it does ("bookmark" reads generically,
+     not specifically "add to my stack") — surface each button's own
+     title as a fast custom tooltip instead of waiting on the native
+     ~1s browser delay. Reuses the existing title attr, no new prop. */
+  .tce-hover-action::after,
+  .tce-hover-actions .pin-tool-button::after {
+    content: attr(title);
+    position: absolute;
+    bottom: calc(100% + 9px);
+    left: 50%;
+    padding: 5px 10px;
+    border-radius: var(--radius-pill);
+    background: var(--color-text);
+    color: var(--color-surface);
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, 4px);
+    transition: opacity 140ms ease-out, transform 140ms ease-out;
+  }
+  .tce-hover-action:hover::after,
+  .tce-hover-action:focus-visible::after,
+  .tce-hover-actions .pin-tool-button:hover::after,
+  .tce-hover-actions .pin-tool-button:focus-visible::after {
+    opacity: 1;
+    transform: translate(-50%, 0);
   }
   .tce-hover-actions .pin-tool-button--active {
     background: #f3d7ff;
@@ -28796,6 +28839,132 @@ section[id] {
   .stack-save-confirm:disabled { cursor: not-allowed; opacity: .4; }
 
   .pin-tool-button--wishlist { background: var(--color-surface); color: var(--color-text); }
+
+  /* ── Compact save-to-collection popover — Pinterest/details.so style:
+     a small bubble anchored to the pin button, every toggle saves
+     instantly, no separate confirm step. Replaces the StackSaveDialog
+     modal for card/button-anchored saves (ExplorerPage's page-level,
+     decoupled trigger still uses the modal). ── */
+  .stack-save-popover {
+    /* !important throughout: PopoverContent ships baked-in Tailwind
+       utilities (w-72, p-4, rounded-md...) that live in the `utilities`
+       layer, which wins over this `components`-layer rule regardless of
+       selector specificity — same reason .stack-save-confirm below needs
+       it for border-radius. */
+    z-index: 80 !important;
+    width: 240px !important;
+    padding: 10px !important;
+    border: 1px solid var(--color-border) !important;
+    border-radius: var(--radius-lg) !important;
+    background: var(--color-surface) !important;
+    box-shadow: 0 16px 40px color-mix(in srgb, var(--color-text) 16%, transparent) !important;
+  }
+  .stack-save-menu { display: grid; gap: 2px; }
+  /* "Ma stack" (icon + label, left) and the wishlist bookmark (icon only,
+     right) are two independent one-click actions sharing a row — same
+     anatomy as the reference's default-board row with its save toggle
+     on the right. Wishlist has no label: the bookmark shape already
+     says "not mine yet, but tempting — set aside for later". */
+  .stack-save-menu-quick {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px;
+    border-radius: var(--radius-md);
+  }
+  .stack-save-menu-quick-main {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    flex: 1;
+    min-width: 0;
+    padding: 5px 4px;
+    border: 0;
+    border-radius: var(--radius-sm);
+    background: transparent;
+    color: var(--color-text);
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 600;
+    text-align: left;
+  }
+  .stack-save-menu-quick-main:hover { background: var(--color-surface-soft); }
+  .stack-save-menu-quick.is-selected .stack-save-menu-quick-main { color: var(--color-text); }
+  .stack-save-menu-wishlist {
+    display: grid;
+    flex-shrink: 0;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border: 0;
+    border-radius: var(--radius-pill);
+    background: transparent;
+    color: var(--color-muted);
+  }
+  .stack-save-menu-wishlist:hover { background: var(--color-surface-soft); color: var(--color-text); }
+  .stack-save-menu-wishlist.is-selected { color: var(--color-text); }
+  .stack-save-menu-list { display: grid; gap: 1px; max-height: 240px; overflow-y: auto; margin-top: 2px; }
+  .stack-save-menu-list button {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 6px 7px;
+    border: 0;
+    border-radius: var(--radius-md);
+    background: transparent;
+    color: var(--color-text);
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 550;
+    text-align: left;
+  }
+  .stack-save-menu-list button:hover { background: var(--color-surface-soft); }
+  .stack-save-menu-list button.is-selected { background: var(--color-surface-soft); font-weight: 650; }
+  .stack-save-menu-list button > span:nth-child(2) { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .stack-save-menu-list button > svg:last-child { flex-shrink: 0; }
+  .stack-save-menu-list .stack-save-board-thumb,
+  .stack-save-menu-list .stack-save-board-thumb-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+  }
+  .stack-save-menu-list .stack-save-board-thumb-tools > * { border-radius: 5px; }
+  .stack-save-menu-create-trigger {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px;
+    border: 0;
+    border-radius: var(--radius-md);
+    background: transparent;
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 550;
+    color: var(--color-text);
+    margin-top: 4px;
+  }
+  .stack-save-menu-create-trigger:hover { background: var(--color-surface-soft); }
+  .stack-save-menu-create { display: flex; gap: 6px; margin-top: 4px; }
+  .stack-save-menu-create input {
+    flex: 1;
+    min-width: 0;
+    padding: 8px 10px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-family: var(--font-ui);
+    font-size: 13px;
+  }
+  .stack-save-menu-create button {
+    padding: 0 12px;
+    border: 0;
+    border-radius: var(--radius-md);
+    background: var(--color-text);
+    color: var(--color-surface);
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 650;
+  }
+  .stack-save-menu-create button:disabled { opacity: .4; }
 
   @media (max-width: 640px) {
     .stack-save-backdrop { align-items: flex-end; padding: 0; }
