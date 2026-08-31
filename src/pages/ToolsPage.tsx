@@ -2,44 +2,22 @@ import React, { useState, useEffect, useMemo, useRef } from "react";
 import { useLocation, useSearchParams } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories, type ToolSummary } from "@/hooks/useSupabaseData";
-import { ArrowDown, ArrowLeft, ArrowUpDown, ChevronLeft, ChevronRight, Search, SlidersHorizontal, X } from "@/lib/icons";
+import { ArrowDown, ChevronDown, MoreHorizontal } from "@/lib/icons";
 import ToolLogo from "@/components/ToolLogo";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo } from "@/lib/seo";
 import { stripLeadingEmoji } from "@/lib/text";
 import { ToolCardEditorial } from "@/components/ToolCardEditorial";
-import FilterDropdown from "@/components/filters/FilterDropdown";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import Breadcrumb from "@/components/Breadcrumb";
 import { getExplorerHref } from "@/lib/toolExploration";
 import { useCatalogStickyToolbar } from "@/hooks/useCatalogStickyToolbar";
 
 const TOOLS_PER_PAGE = 40;
 const EDITORIAL_SELECTION = ["framer", "notion", "figma"];
-const MAX_BRANCH_TAGS = 12;
 
 
 type SortKey = "popular" | "name" | "price-asc" | "free-first";
 type PriceFilter = "all" | "free" | "paid";
-
-const TOOL_VERTICAL_FILTERS: Record<string, RegExp> = {
-  ia: /\bia\b|\bai\b|gpt|llm|claude|chatgpt|midjourney|generation|generative|assistant|prompt/i,
-  organisation: /organis|project|projet|task|todo|kanban|note|doc|wiki|calendar|agenda|workspace|collaboration|meeting/i,
-  design: /design|figma|prototype|photo|image|visual|visuel|canvas|brand|branding|logo|video|vidéo|motion|3d|rendu|render|illustration|retouche|photoshop|lightroom|blender|sketch|canva|audio|podcast/i,
-  automation: /automat|workflow|zapier|make|n8n|integration|api|nocode|no-code|trigger|connector/i,
-  marketing: /marketing|seo|content|contenu|social|newsletter|email|campaign|ads|analytics|audience|growth/i,
-  vente: /crm|sales|vente|client|lead|prospect|pipeline|ecommerce|shop|payment|checkout|stripe|booking/i,
-  finance: /finance|account|compta|invoice|factur|billing|budget|expense|payroll|bank|tax/i,
-  dev: /dev|code|github|git|deploy|hosting|database|data|backend|frontend|monitoring|security|securite/i,
-};
-
-const TOOL_VERTICAL_LABELS: Record<string, { fr: string; en: string }> = {
-  ia: { fr: "IA", en: "AI" },
-  organisation: { fr: "Organisation", en: "Organization" },
-  design: { fr: "Design", en: "Design" },
-  automation: { fr: "Automatisation", en: "Automation" },
-  marketing: { fr: "Marketing", en: "Marketing" },
-  vente: { fr: "Vente", en: "Sales" },
-  finance: { fr: "Finance", en: "Finance" },
-  dev: { fr: "Dev", en: "Dev" },
-};
 
 function isTrending(tool: ToolSummary) {
   return tool.prescription_quality === "ferme";
@@ -66,12 +44,6 @@ function getToolSearchText(tool: ToolSummary, categoryLabel = "") {
     ...(tool.covers || []),
     ...(tool.functional_needs || []),
   ].join(" "));
-}
-
-function getVerticalFilterLabel(verticalId: string, lang: string) {
-  const label = TOOL_VERTICAL_LABELS[verticalId];
-  if (!label) return "";
-  return lang === "en" ? label.en : label.fr;
 }
 
 const FACET_LABELS_FR: Record<string, string> = {
@@ -103,12 +75,125 @@ const FACET_LABELS_FR: Record<string, string> = {
   wireframing: "Wireframes",
 };
 
+/**
+ * Les facettes sont stockées en français dans le catalogue. Sans traduction,
+ * la version anglaise affichait « Redaction », « Facturation » ou
+ * « Tests Utilisateurs » au milieu de libellés anglais.
+ */
+const FACET_LABELS_EN: Record<string, string> = {
+  analyse: "Analysis",
+  "analytics-produit": "Product analytics",
+  "animation-2d-3d": "2D & 3D animation",
+  "assistant-generaliste": "General assistant",
+  automatisation: "Automation",
+  "base-de-donnees": "Database",
+  "catalogue-photo": "Photo catalogue",
+  "chat-equipe": "Team chat",
+  communaute: "Community",
+  comptabilite: "Accounting",
+  "compte-pro": "Business account",
+  "cours-en-ligne": "Online courses",
+  "creation-cours": "Course creation",
+  deploiement: "Deployment",
+  "design-visuel": "Visual design",
+  detourage: "Cutout",
+  "editeur-email": "Email editor",
+  "effets-visuels": "Visual effects",
+  "enregistrement-multipistes": "Multitrack recording",
+  "evenements-live": "Live events",
+  facturation: "Invoicing",
+  "feedback-utilisateurs": "User feedback",
+  formation: "Training",
+  formulaires: "Forms",
+  "generation-code": "Code generation",
+  "generation-image": "Image generation",
+  "generation-video": "Video generation",
+  "gestion-incidents": "Incident management",
+  "hebergement-audio": "Audio hosting",
+  "illustration-vectorielle": "Vector illustration",
+  "inspection-code": "Code review",
+  "mise-en-page": "Layout",
+  "modelisation-3d": "3D modelling",
+  "montage-audio": "Audio editing",
+  "mots-de-passe": "Passwords",
+  paie: "Payroll",
+  paiements: "Payments",
+  partage: "Sharing",
+  planification: "Scheduling",
+  "plugin-sketchup": "SketchUp plugin",
+  "presentation-client": "Client presentation",
+  "prise-rendez-vous": "Appointment booking",
+  prospection: "Prospecting",
+  publication: "Publishing",
+  "publication-web": "Web publishing",
+  redaction: "Writing",
+  "rendu-3d": "3D rendering",
+  "retouche-photo": "Photo retouching",
+  "roadmap-produit": "Product roadmap",
+  securite: "Security",
+  "stockage-fichiers": "File storage",
+  "tests-utilisateurs": "User testing",
+  // Devenues visibles en supprimant la troncature à douze facettes.
+  "analyse-documents": "Document analysis",
+  "analytics-contenu": "Content analytics",
+  "analytics-reseaux": "Social analytics",
+  "creation-musicale": "Music creation",
+  "creation-sites": "Site building",
+  "direction-visuelle": "Art direction",
+  "facturation-temps": "Time billing",
+  "gestion-assets": "Asset management",
+  "gestion-conges": "Leave management",
+  "gestion-documentaire": "Document management",
+  "gestion-inbox": "Inbox management",
+  "gestion-notes-frais": "Expense management",
+  "gestion-pipeline-rh": "HR pipeline",
+  "gestion-produit": "Product management",
+  "gestion-raw": "Raw management",
+  "idees-contenus": "Content ideas",
+  "identite-visuelle": "Visual identity",
+  "liens-entre-notes": "Linked notes",
+  "logo-creation": "Logo design",
+  monetisation: "Monetisation",
+  "monetisation-newsletter": "Newsletter monetisation",
+  "monetisation-podcast": "Podcast monetisation",
+  "monetisation-video": "Video monetisation",
+  "montage-video": "Video editing",
+  "montage-video-court": "Short-form editing",
+  notes: "Notes",
+  "notes-frais": "Expense reports",
+  "notes-reunion": "Meeting notes",
+  "planification-posts": "Post scheduling",
+  "retouche-photo-mobile": "Mobile retouching",
+  "storytelling-visuel": "Visual storytelling",
+  "suivi-emails": "Email tracking",
+  "suivi-issues": "Issue tracking",
+  "suivi-temps": "Time tracking",
+  taches: "Tasks",
+  "temps-reel": "Real time",
+};
+
+/** Jetons que la capitalisation mot à mot écrirait « Seo », « Bim » ou « 3d ». */
+const FACET_TOKEN_LABELS: Record<string, string> = {
+  "2d": "2D",
+  "3d": "3D",
+  ai: "AI",
+  bim: "BIM",
+  crm: "CRM",
+  devops: "DevOps",
+  lms: "LMS",
+  pdf: "PDF",
+  seo: "SEO",
+  ui: "UI",
+  ux: "UX",
+};
+
 function formatFacetLabel(value: string, lang: string) {
-  if (lang === "fr" && FACET_LABELS_FR[value]) return FACET_LABELS_FR[value];
+  const mapped = lang === "fr" ? FACET_LABELS_FR[value] : FACET_LABELS_EN[value];
+  if (mapped) return mapped;
   return value
     .split(/[-_]/g)
     .filter(Boolean)
-    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .map((part) => FACET_TOKEN_LABELS[part] ?? part.charAt(0).toUpperCase() + part.slice(1))
     .join(" ");
 }
 
@@ -119,20 +204,20 @@ const ToolsPage = () => {
   const { categories } = useCategories();
   const [searchParams, setSearchParams] = useSearchParams();
   const urlSearch = searchParams.get("q") || "";
-  const selectedVertical = searchParams.get("vertical") || "";
   const urlPrice = searchParams.get("pricing");
   const [search, setSearch] = useState(urlSearch);
-  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
-  const [browsedCategoryId, setBrowsedCategoryId] = useState("");
-  const [selectedTags, setSelectedTags] = useState<string[]>([]);
+  // La catégorie ouverte et ses tags vivent dans l'URL, au même titre que `q`,
+  // `pricing` et `vertical`. En état React seul, un filtre ne se partageait pas,
+  // ne se mettait pas en favori et ignorait le bouton retour.
+  const browsedCategoryId = searchParams.get("category") || "";
+  const selectedTags = useMemo(
+    () => (searchParams.get("tags") || "").split(",").filter(Boolean),
+    [searchParams],
+  );
   const [sort, setSort] = useState<SortKey>("popular");
   const [priceFilter, setPriceFilter] = useState<PriceFilter>(urlPrice === "free" || urlPrice === "paid" ? urlPrice : "all");
   const [visibleCount, setVisibleCount] = useState(TOOLS_PER_PAGE);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [canScrollTopicsLeft, setCanScrollTopicsLeft] = useState(false);
-  const [canScrollTopicsRight, setCanScrollTopicsRight] = useState(false);
-  const searchInputRef = useRef<HTMLInputElement>(null);
-  const topicNavRef = useRef<HTMLElement>(null);
+  const [panelOpen, setPanelOpen] = useState(false);
   const { toolbarStuck, toolbarSentinelRef } = useCatalogStickyToolbar();
 
   useEffect(() => {
@@ -159,30 +244,65 @@ const ToolsPage = () => {
     return () => cleanupSeo(["tools-jsonld"]);
   }, [lang, tools]);
 
+  const categoryCounts = useMemo(() => {
+    const counts = new Map<string, number>();
+    for (const tool of tools) counts.set(tool.categoryId, (counts.get(tool.categoryId) || 0) + 1);
+    return counts;
+  }, [tools]);
+
   const sortedCategories = useMemo(() =>
-    [...categories].sort((a, b) =>
-      tools.filter(t => t.categoryId === b.id).length - tools.filter(t => t.categoryId === a.id).length
-    ), [categories, tools]
+    [...categories].sort((a, b) => (categoryCounts.get(b.id) || 0) - (categoryCounts.get(a.id) || 0)),
+    [categories, categoryCounts]
   );
   const categoryById = useMemo(() => new Map(categories.map((category) => [category.id, category])), [categories]);
   const browsedCategory = browsedCategoryId ? categoryById.get(browsedCategoryId) : undefined;
-  const branchTags = useMemo(() => {
-    if (!browsedCategoryId) return [];
-    const counts = new Map<string, number>();
-    tools
-      .filter((tool) => tool.categoryId === browsedCategoryId)
-      .forEach((tool) => {
-        const tags = new Set([
-          ...(tool.functional_needs || []),
-          ...(tool.covers || []),
-        ].map((tag) => normalizeToolText(tag).trim()).filter(Boolean));
-        tags.forEach((tag) => counts.set(tag, (counts.get(tag) || 0) + 1));
-      });
-    return [...counts.entries()]
-      .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
-      .slice(0, MAX_BRANCH_TAGS)
-      .map(([id, count]) => ({ id, count, label: formatFacetLabel(id, lang) }));
-  }, [browsedCategoryId, lang, tools]);
+  const toolFacets = (tool: ToolSummary) =>
+    new Set([...(tool.functional_needs || []), ...(tool.covers || [])]
+      .map((tag) => normalizeToolText(tag).trim())
+      .filter(Boolean));
+
+  /**
+   * Facettes de la catégorie ouverte, liste entière. La troncature précédente
+   * à douze en cachait 121 sur la pire catégorie, sans aucun moyen d'y accéder.
+   *
+   * Le compteur est celui qu'aurait la facette si on la cochait en plus des
+   * filtres courants. En logique ET, une facette à zéro conduit à une liste
+   * vide : on la désactive plutôt que d'y laisser tomber.
+   */
+  const facetOptions = useMemo(() => {
+    const q = normalizeToolText(search);
+    const pool = tools.filter((tool) => {
+      if (browsedCategoryId && tool.categoryId !== browsedCategoryId) return false;
+      if (priceFilter === "free" && tool.defaultMonthlyPrice !== 0) return false;
+      if (priceFilter === "paid" && !(tool.defaultMonthlyPrice > 0)) return false;
+      if (!search) return true;
+      const category = categoryById.get(tool.categoryId);
+      const categoryLabel = category
+        ? `${stripLeadingEmoji(category.name, category.id)} ${stripLeadingEmoji(category.nameEn || category.name, category.id)}`
+        : "";
+      return getToolSearchText(tool, categoryLabel).includes(q);
+    });
+
+    const univers = new Set<string>();
+    const atteignables = new Map<string, number>();
+    for (const tool of pool) {
+      const facets = toolFacets(tool);
+      const retenu = selectedTags.every((tag) => facets.has(tag));
+      for (const facet of facets) {
+        univers.add(facet);
+        if (retenu) atteignables.set(facet, (atteignables.get(facet) || 0) + 1);
+      }
+    }
+
+    const classees = [...univers]
+      .map((id) => ({ id, count: atteignables.get(id) || 0, label: formatFacetLabel(id, lang) }))
+      .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
+
+    // Une catégorie plafonne à 133 facettes : on les montre toutes. Sans
+    // catégorie, l'univers en compte 562 — on s'en tient aux plus fréquentes,
+    // la catégorie restant la porte d'entrée normale.
+    return browsedCategoryId ? classees : classees.slice(0, 30);
+  }, [browsedCategoryId, categoryById, lang, priceFilter, search, selectedTags, tools]);
 
   // A short editorial opening, deliberately distinct from the exhaustive grid.
   // Three entries are enough to create hierarchy without duplicating a full row
@@ -199,7 +319,6 @@ const ToolsPage = () => {
   // All tools filtered + sorted
   const filtered = useMemo(() => {
     const q = normalizeToolText(search);
-    const verticalPattern = selectedVertical ? TOOL_VERTICAL_FILTERS[selectedVertical] : null;
     const result = tools.filter(tool => {
       const category = categoryById.get(tool.categoryId);
       const categoryLabel = category
@@ -207,18 +326,17 @@ const ToolsPage = () => {
         : "";
       const searchText = getToolSearchText(tool, categoryLabel);
       const matchSearch = !search || searchText.includes(q);
-      const matchVertical = !verticalPattern || verticalPattern.test(searchText);
-      const matchCat = selectedCategories.length === 0 || selectedCategories.includes(tool.categoryId);
+      const matchCat = !browsedCategoryId || tool.categoryId === browsedCategoryId;
       const toolTags = [
         ...(tool.functional_needs || []),
         ...(tool.covers || []),
       ].map((tag) => normalizeToolText(tag).trim());
-      const matchTags = selectedTags.length === 0 || selectedTags.some((tag) => toolTags.includes(tag));
+      const matchTags = selectedTags.every((tag) => toolTags.includes(tag));
       const matchPrice =
         priceFilter === "free" ? tool.defaultMonthlyPrice === 0 :
         priceFilter === "paid" ? tool.defaultMonthlyPrice > 0 :
         true;
-      return matchSearch && matchVertical && matchCat && matchTags && matchPrice;
+      return matchSearch && matchCat && matchTags && matchPrice;
     });
 
     result.sort((a, b) => {
@@ -233,48 +351,35 @@ const ToolsPage = () => {
       return 0;
     });
     return result;
-  }, [categoryById, tools, search, selectedVertical, selectedCategories, selectedTags, priceFilter, sort]);
+  }, [categoryById, tools, search, browsedCategoryId, selectedTags, priceFilter, sort]);
 
-  useEffect(() => { setVisibleCount(TOOLS_PER_PAGE); }, [search, selectedVertical, selectedCategories, selectedTags, priceFilter, sort]);
+  useEffect(() => { setVisibleCount(TOOLS_PER_PAGE); }, [search, browsedCategoryId, selectedTags, priceFilter, sort]);
 
-  useEffect(() => {
-    setSearch(urlSearch);
-    if (urlSearch) setIsSearchOpen(true);
-  }, [urlSearch]);
+  useEffect(() => { setSearch(urlSearch); }, [urlSearch]);
 
   const visible = filtered.slice(0, visibleCount);
   const hasMore = visibleCount < filtered.length;
   const getCatLabel = (cat: typeof categories[0]) =>
     t(stripLeadingEmoji(cat.name, cat.id), stripLeadingEmoji(cat.nameEn, stripLeadingEmoji(cat.name, cat.id)));
 
-  const isFiltering = !!(search || selectedVertical || selectedCategories.length > 0 || selectedTags.length > 0 || priceFilter !== "all" || sort !== "popular");
-  const isSearchExpanded = isSearchOpen || search.length > 0;
-  const selectedVerticalLabel = getVerticalFilterLabel(selectedVertical, lang);
-  useEffect(() => {
-    if (isSearchExpanded) searchInputRef.current?.focus();
-  }, [isSearchExpanded]);
+  const isFiltering = !!(search || browsedCategoryId || selectedTags.length > 0 || priceFilter !== "all");
+  const activeFilterCount = selectedTags.length + (priceFilter !== "all" ? 1 : 0);
 
-  useEffect(() => {
-    const rail = topicNavRef.current;
-    if (!rail) return;
+  function applyPrice(next: PriceFilter) {
+    setPriceFilter(next);
+    updateParams((params) => {
+      if (next === "all") params.delete("pricing");
+      else params.set("pricing", next);
+    }, true);
+  }
 
-    const updateScrollState = () => {
-      const maxScrollLeft = Math.max(0, rail.scrollWidth - rail.clientWidth);
-      setCanScrollTopicsLeft(rail.scrollLeft > 2);
-      setCanScrollTopicsRight(rail.scrollLeft < maxScrollLeft - 2);
-    };
-
-    const frame = window.requestAnimationFrame(updateScrollState);
-    const observer = new ResizeObserver(updateScrollState);
-    observer.observe(rail);
-    rail.addEventListener("scroll", updateScrollState, { passive: true });
-
-    return () => {
-      window.cancelAnimationFrame(frame);
-      observer.disconnect();
-      rail.removeEventListener("scroll", updateScrollState);
-    };
-  }, [browsedCategoryId, branchTags.length, sortedCategories.length]);
+  function resetFilters() {
+    setPriceFilter("all");
+    updateParams((params) => {
+      params.delete("pricing");
+      params.delete("tags");
+    }, true);
+  }
 
   function clearUrlParam(paramName: string) {
     const nextParams = new URLSearchParams(searchParams);
@@ -282,33 +387,44 @@ const ToolsPage = () => {
     setSearchParams(nextParams, { replace: true });
   }
 
+  /**
+   * Ouvrir ou fermer une catégorie est une étape de navigation : on empile,
+   * pour que le retour arrière ramène au niveau précédent. Cocher un tag reste
+   * un ajustement au sein de cette étape et remplace l'entrée courante, sinon
+   * quatre tags cochés imposeraient quatre retours pour quitter la catégorie.
+   */
+  function updateParams(mutate: (params: URLSearchParams) => void, replace = false) {
+    const next = new URLSearchParams(searchParams);
+    mutate(next);
+    setSearchParams(next, { replace });
+  }
+
   function openCategoryBranch(categoryId: string) {
-    setBrowsedCategoryId(categoryId);
-    setSelectedCategories([categoryId]);
-    setSelectedTags([]);
+    updateParams((params) => {
+      params.set("category", categoryId);
+      params.delete("tags");
+    });
   }
 
   function closeCategoryBranch() {
-    setBrowsedCategoryId("");
-    setSelectedCategories([]);
-    setSelectedTags([]);
+    updateParams((params) => {
+      params.delete("category");
+      params.delete("tags");
+    });
+  }
+
+  function clearBranchTags() {
+    updateParams((params) => params.delete("tags"), true);
   }
 
   function toggleBranchTag(tagId: string) {
-    setSelectedTags((current) =>
-      current.includes(tagId)
-        ? current.filter((id) => id !== tagId)
-        : [...current, tagId],
-    );
-  }
-
-  function scrollTopicRail(direction: -1 | 1) {
-    const rail = topicNavRef.current;
-    if (!rail) return;
-    rail.scrollBy({
-      left: direction * Math.max(240, rail.clientWidth * 0.72),
-      behavior: "smooth",
-    });
+    const next = selectedTags.includes(tagId)
+      ? selectedTags.filter((id) => id !== tagId)
+      : [...selectedTags, tagId];
+    updateParams((params) => {
+      if (next.length) params.set("tags", next.join(","));
+      else params.delete("tags");
+    }, true);
   }
 
   return (
@@ -318,211 +434,185 @@ const ToolsPage = () => {
       <div className="tt-catalog-container">
         {/* ── Compact header: one title, then the catalogue controls. ── */}
         <div className="tt-catalog-compact-header">
+          {/* La catégorie ouverte est un état de la page, pas une URL distincte :
+              elle ferme le fil sans lien, le niveau « Outils » ramène à la racine. */}
+          <Breadcrumb
+            items={browsedCategory
+              ? [{ label: t("Outils", "Tools") as string, href: `${prefix}/tools` }, { label: getCatLabel(browsedCategory) as string }]
+              : [{ label: t("Outils", "Tools") as string }]}
+          />
           <h1 className="tt-catalog-compact-title">{t("Outils", "Tools")}</h1>
         </div>
 
         <div ref={toolbarSentinelRef} aria-hidden="true" style={{ height: 1 }} />
 
-        {/* ── Filter bar: quick pills for the primary facets ── */}
+        {/* ── Barre de filtres ──
+            Une seule rangée de pilules pour les catégories, puis les contrôles.
+            Ce qui ne tient pas se rejoint par « Plus de filtres » : il n'y a
+            plus de flèches posées sur les libellés ni de facettes injoignables. */}
         <div className={`tt-catalog-toolbar tt-sticky-toolbar${toolbarStuck ? " tt-sticky-toolbar--stuck" : ""}`}>
-          <div className="tt-catalog-toolbar-filters">
-            <div
-              className="tt-catalog-topic-rail"
-              data-can-scroll-left={canScrollTopicsLeft}
-              data-can-scroll-right={canScrollTopicsRight}
+          <nav className="tt-pillrow" aria-label={t("Filtrer par catégorie", "Filter by category") as string}>
+            <button
+              type="button"
+              className={`tt-pill${!browsedCategoryId ? " tt-pill--active" : ""}`}
+              onClick={closeCategoryBranch}
+              aria-pressed={!browsedCategoryId}
             >
-              <nav
-                ref={topicNavRef}
-                className="tt-catalog-topic-nav"
-                aria-label={t("Filtrer par catégorie", "Filter by category") as string}
-              >
-                {browsedCategory ? (
-                  <>
-                    <button
-                      type="button"
-                      className="tt-catalog-tree-back"
-                      onClick={closeCategoryBranch}
-                      aria-label={t("Retour aux univers", "Back to categories") as string}
-                    >
-                      <ArrowLeft size={17} aria-hidden />
-                    </button>
-                    <span className="tt-catalog-tree-branch" aria-live="polite">
-                      {getCatLabel(browsedCategory)}
-                    </span>
-                    <button
-                      type="button"
-                      className={`tt-catalog-topic${selectedTags.length === 0 ? " tt-catalog-topic--active" : ""}`}
-                      onClick={() => setSelectedTags([])}
-                      aria-pressed={selectedTags.length === 0}
-                    >
-                      <span className="tt-catalog-topic-label" data-label={t("Tout", "All")}>{t("Tout", "All")}</span>
-                    </button>
-                    {branchTags.map((tag) => (
-                      <button
-                        key={tag.id}
-                        type="button"
-                        className={`tt-catalog-topic${selectedTags.includes(tag.id) ? " tt-catalog-topic--active" : ""}`}
-                        onClick={() => toggleBranchTag(tag.id)}
-                        aria-pressed={selectedTags.includes(tag.id)}
-                        title={t(`${tag.count} outils`, `${tag.count} tools`) as string}
-                      >
-                        <span className="tt-catalog-topic-label" data-label={tag.label}>{tag.label}</span>
-                      </button>
-                    ))}
-                  </>
-                ) : (
-                  <>
-                    <button
-                      type="button"
-                      className="tt-catalog-topic tt-catalog-topic--active"
-                      onClick={closeCategoryBranch}
-                      aria-current="page"
-                    >
-                      <span className="tt-catalog-topic-label" data-label={t("Tout", "All")}>{t("Tout", "All")}</span>
-                    </button>
-                    {sortedCategories.map((cat) => (
-                      <button
-                        key={cat.id}
-                        type="button"
-                        className="tt-catalog-topic"
-                        onClick={() => openCategoryBranch(cat.id)}
-                        aria-label={t(`Explorer ${getCatLabel(cat)}`, `Explore ${getCatLabel(cat)}`) as string}
-                      >
-                        <span className="tt-catalog-topic-label" data-label={getCatLabel(cat) as string}>{getCatLabel(cat)}</span>
-                      </button>
-                    ))}
-                  </>
-                )}
-              </nav>
-              {canScrollTopicsLeft && (
+              {t("Tout", "All")}
+            </button>
+            <button
+              type="button"
+              className={`tt-pill${priceFilter === "free" ? " tt-pill--active" : ""}`}
+              onClick={() => applyPrice(priceFilter === "free" ? "all" : "free")}
+              aria-pressed={priceFilter === "free"}
+            >
+              {t("Gratuit", "Free")}
+            </button>
+            <span className="tt-pillrow-divider" aria-hidden />
+            {sortedCategories.map((cat) => {
+              const actif = browsedCategoryId === cat.id;
+              return (
                 <button
+                  key={cat.id}
                   type="button"
-                  className="tt-catalog-topic-scroll tt-catalog-topic-scroll--left"
-                  onClick={() => scrollTopicRail(-1)}
-                  aria-label={t("Voir les filtres précédents", "Show previous filters") as string}
+                  className={`tt-pill${actif ? " tt-pill--active" : ""}`}
+                  onClick={() => (actif ? closeCategoryBranch() : openCategoryBranch(cat.id))}
+                  aria-pressed={actif}
                 >
-                  <ChevronLeft size={18} aria-hidden />
+                  {getCatLabel(cat)}
                 </button>
-              )}
-              {canScrollTopicsRight && (
-                <button
-                  type="button"
-                  className="tt-catalog-topic-scroll tt-catalog-topic-scroll--right"
-                  onClick={() => scrollTopicRail(1)}
-                  aria-label={t("Voir les filtres suivants", "Show more filters") as string}
-                >
-                  <ChevronRight size={18} aria-hidden />
-                </button>
-              )}
-            </div>
-            <details className="tt-catalog-filter-menu">
-              <summary>
-                <SlidersHorizontal size={16} aria-hidden />
-                <span>{t("Filtrer", "Filter")}</span>
-                {(selectedTags.length > 0 || priceFilter !== "all") && (
-                  <span className="tt-catalog-filter-count">
-                    {selectedTags.length + (priceFilter !== "all" ? 1 : 0)}
-                  </span>
-                )}
-              </summary>
-              <div className="tt-catalog-filter-menu-panel">
-                <FilterDropdown
-                  label={t("Prix", "Price") as string}
-                  allLabel={t("Tous les prix", "All prices") as string}
-                  options={[
-                    { id: "free", label: t("Gratuit seulement", "Free only") as string },
-                    { id: "paid", label: t("Payant seulement", "Paid only") as string },
-                  ]}
-                  value={priceFilter}
-                  onChange={(id) => {
-                    const nextPrice = id as PriceFilter;
-                    setPriceFilter(nextPrice);
-                    const nextParams = new URLSearchParams(searchParams);
-                    if (nextPrice === "all") nextParams.delete("pricing");
-                    else nextParams.set("pricing", nextPrice);
-                    setSearchParams(nextParams, { replace: true });
-                  }}
-                />
-              </div>
-            </details>
+              );
+            })}
+          </nav>
 
-            <div className={`tt-catalog-inline-search${isSearchExpanded ? " tt-catalog-inline-search--open" : ""}`}>
-              {isSearchExpanded ? (
-                <div className="tt-catalog-inline-search-field">
-                  <Search size={17} aria-hidden />
-                  <input
-                    ref={searchInputRef}
-                    id="tools-search-input"
-                    type="search"
-                    value={search}
-                    onChange={(e) => setSearch(e.target.value)}
-                    onBlur={() => {
-                      if (!search) setIsSearchOpen(false);
-                    }}
-                    onKeyDown={(event) => {
-                      if (event.key === "Escape") {
-                        setSearch("");
-                        setIsSearchOpen(false);
-                        clearUrlParam("q");
-                      }
-                    }}
-                    placeholder={t("Rechercher", "Search") as string}
-                    className="tt-catalog-inline-search-input"
-                    autoComplete="off"
-                  />
-                  <button
-                    type="button"
-                    onMouseDown={(event) => event.preventDefault()}
-                    onClick={() => {
-                      setSearch("");
-                      setIsSearchOpen(false);
-                      clearUrlParam("q");
-                    }}
-                    className="tt-catalog-inline-search-clear"
-                    aria-label={t("Fermer la recherche", "Close search") as string}
-                  >
-                    <X size={15} aria-hidden />
-                  </button>
+          <div className="tt-catalog-toolbar-tail">
+            <Popover open={panelOpen} onOpenChange={setPanelOpen}>
+              <PopoverTrigger asChild>
+                <button
+                  type="button"
+                  className={`tt-pill tt-pill--more${activeFilterCount > 0 ? " tt-pill--active" : ""}`}
+                >
+                  <MoreHorizontal size={16} aria-hidden />
+                  <span>{t("Plus de filtres", "More filters")}</span>
+                  {activeFilterCount > 0 && <span className="tt-pill-count">{activeFilterCount}</span>}
+                </button>
+              </PopoverTrigger>
+              <PopoverContent className="tt-filter-panel" align="end" sideOffset={8}>
+                <div className="tt-filter-panel-head">
+                  <strong>{t("Filtres", "Filters")}</strong>
+                  {activeFilterCount > 0 && (
+                    <button type="button" className="tt-filter-panel-reset" onClick={resetFilters}>
+                      {t("Tout effacer", "Clear all")}
+                    </button>
+                  )}
                 </div>
-              ) : (
-                <button
-                  type="button"
-                  className="tt-catalog-inline-search-button"
-                  onClick={() => setIsSearchOpen(true)}
-                >
-                  <Search size={17} aria-hidden />
-                  <span>{t("Rechercher", "Search")}</span>
-                </button>
-              )}
-            </div>
+                <div className="tt-filter-panel-body">
 
-            {selectedVerticalLabel && (
-              <button
-                type="button"
-                className="tt-catalog-context-chip"
-                onClick={() => clearUrlParam("vertical")}
-                aria-label={t(`Retirer le filtre ${selectedVerticalLabel}`, `Remove ${selectedVerticalLabel} filter`) as string}
-              >
-                <span>{selectedVerticalLabel}</span>
-                <X size={14} aria-hidden />
-              </button>
-            )}
-          </div>
+                {/* L'ellipse annonce « la suite de la rangée » : la rangée porte
+                    les catégories, elles doivent donc se retrouver ici en entier,
+                    y compris celles que la largeur d'écran laisse hors champ. */}
+                <section className="tt-filter-group">
+                  <h3>{t("Catégorie", "Category")}</h3>
+                  <div className="tt-catgrid">
+                    <button
+                      type="button"
+                      className={`tt-catrow${!browsedCategoryId ? " is-selected" : ""}`}
+                      onClick={closeCategoryBranch}
+                      aria-pressed={!browsedCategoryId}
+                    >
+                      <span>{t("Toutes", "All")}</span>
+                      <em>{tools.length}</em>
+                    </button>
+                    {sortedCategories.map((cat) => {
+                      const actif = browsedCategoryId === cat.id;
+                      return (
+                        <button
+                          key={cat.id}
+                          type="button"
+                          className={`tt-catrow${actif ? " is-selected" : ""}`}
+                          onClick={() => (actif ? closeCategoryBranch() : openCategoryBranch(cat.id))}
+                          aria-pressed={actif}
+                        >
+                          <span>{getCatLabel(cat)}</span>
+                          <em>{categoryCounts.get(cat.id) || 0}</em>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </section>
 
-          <div className="tt-catalog-toolbar-meta">
+                <section className="tt-filter-group">
+                  <h3>{t("Prix", "Price")}</h3>
+                  <div className="tt-filter-segmented" role="radiogroup" aria-label={t("Prix", "Price") as string}>
+                    {([
+                      { id: "all", label: t("Tous", "All") },
+                      { id: "free", label: t("Gratuit", "Free") },
+                      { id: "paid", label: t("Payant", "Paid") },
+                    ] as Array<{ id: PriceFilter; label: string }>).map((option) => (
+                      <button
+                        key={option.id}
+                        type="button"
+                        role="radio"
+                        aria-checked={priceFilter === option.id}
+                        className={`tt-pill${priceFilter === option.id ? " tt-pill--active" : ""}`}
+                        onClick={() => applyPrice(option.id)}
+                      >
+                        {option.label}
+                      </button>
+                    ))}
+                  </div>
+                </section>
+
+                <section className="tt-filter-group">
+                  <h3>
+                    {browsedCategory
+                      ? t(`Affiner « ${getCatLabel(browsedCategory)} »`, `Refine "${getCatLabel(browsedCategory)}"`)
+                      : t("Affiner", "Refine")}
+                  </h3>
+                  {facetOptions.length > 0 ? (
+                    <div className="tt-filter-facets">
+                      {facetOptions.map((facet) => {
+                        const coche = selectedTags.includes(facet.id);
+                        // En ET, une facette sans résultat n'a rien à proposer.
+                        const inerte = !coche && facet.count === 0;
+                        return (
+                          <button
+                            key={facet.id}
+                            type="button"
+                            className={`tt-pill${coche ? " tt-pill--active" : ""}`}
+                            onClick={() => toggleBranchTag(facet.id)}
+                            aria-pressed={coche}
+                            disabled={inerte}
+                          >
+                            {facet.label}
+                            <span className="tt-pill-count">{facet.count}</span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  ) : (
+                    <p className="tt-filter-hint">
+                      {t("Aucun critère ne s'applique à cette sélection.", "No criteria apply to this selection.")}
+                    </p>
+                  )}
+                </section>
+                </div>
+              </PopoverContent>
+            </Popover>
+
             <label className="tt-catalog-sort-control" title={t("Trier les outils", "Sort tools") as string}>
-              <ArrowUpDown size={18} aria-hidden />
               <select
                 className="tt-catalog-sort-select"
                 value={sort}
-                onChange={(e) => setSort(e.target.value as SortKey)}
+                onChange={(event) => setSort(event.target.value as SortKey)}
                 aria-label={t("Trier par", "Sort by") as string}
               >
-                <option value="popular">{t("Populaire", "Latest")}</option>
+                <option value="popular">{t("Populaire", "Featured")}</option>
                 <option value="name">{t("A → Z", "A → Z")}</option>
                 <option value="price-asc">{t("Prix croissant", "Price: low to high")}</option>
                 <option value="free-first">{t("Gratuit d'abord", "Free first")}</option>
               </select>
+              <ChevronDown size={15} aria-hidden />
             </label>
           </div>
         </div>
@@ -583,7 +673,7 @@ const ToolsPage = () => {
             <div className="flex flex-col items-center justify-center rounded-2xl border border-dashed py-16 text-center" style={{ borderColor: "hsl(var(--border))" }}>
               <Search className="mx-auto h-8 w-8" style={{ color: "hsl(var(--muted-foreground) / 0.4)" }} />
               <p className="mt-3 font-semibold" style={{ color: "hsl(var(--foreground))" }}>{t("Aucun outil trouvé", "No tools found")}</p>
-              <button type="button" onClick={() => { setSearch(""); setSelectedCategories([]); setPriceFilter("all"); setSearchParams(new URLSearchParams(), { replace: true }); }}
+              <button type="button" onClick={() => { setSearch(""); setPriceFilter("all"); setSearchParams(new URLSearchParams(), { replace: true }); }}
                 className="mt-4 rounded-full border px-4 py-1.5 text-sm font-semibold hover:text-primary"
                 style={{ borderColor: "hsl(var(--border))", color: "hsl(var(--muted-foreground))" }}>
                 {t("Réinitialiser", "Reset")}
