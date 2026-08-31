@@ -1,0 +1,301 @@
+{
+  "batch": "review-design-tools-critical-003",
+  "current": {
+    "affiliate_url": "https://rive.app",
+    "alternatives": [
+      "ae-bodymovin",
+      "spline"
+    ],
+    "category": "design-tools",
+    "cons": [
+      "Courbe d'apprentissage (state machine, scripting).",
+      "Community plus petite que Figma ou Lottie.",
+      "Plans payants montant rapidement pour équipes.",
+      "Moins d'intégrations que Lottie ou Figma."
+    ],
+    "cons_en": [
+      "Learning curve (state machine, scripting).",
+      "Smaller community than Figma or Lottie.",
+      "Paid plans escalate quickly for teams.",
+      "Fewer integrations than Lottie or Figma."
+    ],
+    "host_app": null,
+    "id": "rive",
+    "long_description": "Rive sert à créer des animations interactives qui tournent vraiment dans une app ou un site, pas juste une vidéo qui joue en boucle. Tu dessines, tu animes, et surtout tu définis des state machines : l'animation réagit aux actions de l'utilisateur (survol, clic, chargement, état d'un bouton). Le fichier exporté est léger et se lit nativement via les runtimes Rive pour le web, iOS, Android, Flutter ou React Native.\n\nLa comparaison naturelle, c'est Lottie. Pour une animation simple qui joue en boucle, Lottie (export Bodymovin depuis After Effects) suffit largement et reste gratuit. Rive prend l'avantage dès que l'animation doit être interactive ou pilotée par la logique de l'app : c'est là qu'il n'a pas vraiment d'équivalent.\n\nCôté prix : tu peux concevoir gratuitement dans l'éditeur, l'offre payante démarre au plan Cadet à 9$/mois (un palier d'entrée plus abordable qu'avant), puis Voyager à 32$/mois pour les équipes. Pour un freelance qui livre une micro-interaction de temps en temps, le gratuit couvre déjà beaucoup.",
+    "long_description_en": "Rive is for building interactive animations that actually run inside an app or a site, not just a video looping on screen. You draw, you animate, and above all you define state machines: the animation reacts to user actions (hover, click, loading, a button's state). The exported file is light and plays natively through Rive runtimes for web, iOS, Android, Flutter or React Native.\n\nThe natural comparison is Lottie. For a simple animation that loops, Lottie (Bodymovin export from After Effects) is plenty and stays free. Rive pulls ahead the moment the animation needs to be interactive or driven by the app's logic: that's where it has no real equivalent.\n\nOn price: you can design for free in the editor, the paid tier starts at the Cadet plan at $9/month (a more affordable entry point than before), then Voyager at $32/month for teams. For a freelancer shipping the occasional micro-interaction, the free tier already covers a lot.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://framerusercontent.com/images/yEWMbP7UtsS81SlkoxTasfabvc.png"
+    },
+    "name": "Rive",
+    "pricing": {
+      "free": "Conception gratuite dans l'éditeur, projets publics illimités",
+      "paid": "Plan Cadet à 9$/mois, Voyager à 32$/mois pour les équipes"
+    },
+    "pricing_en": {
+      "free": "Free design in the editor, unlimited public projects",
+      "paid": "Cadet plan at $9/month, Voyager at $32/month for teams"
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Conception gratuite dans l'éditeur",
+        "Plan d'entrée Cadet à 9$/mois, Voyager à 32$/mois"
+      ],
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Cadet",
+      "compare_price_monthly_eur": 9,
+      "location_sensitive": false,
+      "official_source_url": "https://rive.app/pricing",
+      "price_reliability": "high",
+      "source_domain": "rive.app",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-06-15"
+    },
+    "pros": [
+      "Unification complète design-animation-développement.",
+      "Deployment multi-plateforme natif sans code duplication.",
+      "State machine pour interactions complexes bien gérées.",
+      "Collaboration temps-réel puissante.",
+      "Free plan accessible avec 3 fichiers.",
+      "Intégrations natives avec Webflow, Framer, Wix.",
+      "Fichiers nettement plus légers que les alternatives."
+    ],
+    "pros_en": [
+      "Complete unification of design-animation-development.",
+      "Native multi-platform deployment without code duplication.",
+      "State machine for well-managed complex interactions.",
+      "Powerful real-time collaboration.",
+      "Accessible free plan with 3 files.",
+      "Native integrations with Webflow, Framer, Wix.",
+      "Markedly lighter files than alternatives."
+    ],
+    "short_description": "Animation interactive pour le web et le mobile, alternative avancée à Lottie.",
+    "short_description_en": "Interactive animation for web and mobile, an advanced alternative to Lottie.",
+    "slug": "rive",
+    "source_url": "https://rive.app/pricing",
+    "source_verified_on": "2026-06-15",
+    "use_cases": [
+      "Créer une mascotte animée interactive pour une app mobile.",
+      "Concevoir une interface d'onboarding avec animations et micro-interactions.",
+      "Prototyper un gameplay ou UI interactif pour un jeu web.",
+      "Produire des graphiques de données animés pour dashboard."
+    ],
+    "use_cases_en": [
+      "Create an interactive animated mascot for a mobile app.",
+      "Design an onboarding interface with animations and micro-interactions.",
+      "Prototype gameplay or interactive UI for a web game.",
+      "Produce animated data graphics for a dashboard."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous prototypez des interfaces statiques ou wireframes simples.",
+        "Vous travaillez uniquement en web (Webflow ou Framer suffisent).",
+        "Vous avez un budget très limité (utilisez le free plan).",
+        "Vous avez besoin d'outils très spécialisés (motion capture, 3D avancée)."
+      ],
+      "keepIf": [
+        "Vous créez des animations et interactions complexes pour apps et web.",
+        "Vous travaillez dans une équipe multidisciplinaire (designers + développeurs).",
+        "Vous avez besoin de déploiement multi-plateforme natif (iOS, Android, web).",
+        "Vous appréciez l'unification design-animation-code en un seul workflow."
+      ],
+      "threshold": "Rive s'impose pour animations interactives cross-plateforme production-ready ; pour prototypes simples, Figma ou Adobe XD suffisent."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You prototype static interfaces or simple wireframes.",
+        "You work only on web (Webflow or Framer suffice).",
+        "You have a very tight budget (use the free plan).",
+        "You need highly specialized tools (motion capture, advanced 3D)."
+      ],
+      "keepIf": [
+        "You create complex animations and interactions for apps and web.",
+        "You work in a multidisciplinary team (designers + developers).",
+        "You need native multi-platform deployment (iOS, Android, web).",
+        "You value unified design-animation-code workflow."
+      ],
+      "threshold": "Rive is essential for cross-platform interactive animations production-ready; for simple prototypes, Figma or Adobe XD suffice."
+    },
+    "website_url": "https://rive.app"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Learning curve (state machine, scripting).",
+        "Smaller community than Figma or Lottie.",
+        "Paid plans escalate quickly for teams.",
+        "Fewer integrations than Lottie or Figma."
+      ],
+      "pros": [
+        "Complete unification of design-animation-development.",
+        "Native multi-platform deployment without code duplication.",
+        "State machine for well-managed complex interactions.",
+        "Powerful real-time collaboration.",
+        "Accessible free plan with 3 files.",
+        "Native integrations with Webflow, Framer, Wix.",
+        "Markedly lighter files than alternatives."
+      ],
+      "use_cases": [
+        "Create an interactive animated mascot for a mobile app.",
+        "Design an onboarding interface with animations and micro-interactions.",
+        "Prototype gameplay or interactive UI for a web game.",
+        "Produce animated data graphics for a dashboard."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You prototype static interfaces or simple wireframes.",
+          "You work only on web (Webflow or Framer suffice).",
+          "You have a very tight budget (use the free plan).",
+          "You need highly specialized tools (motion capture, advanced 3D)."
+        ],
+        "keepIf": [
+          "You create complex animations and interactions for apps and web.",
+          "You work in a multidisciplinary team (designers + developers).",
+          "You need native multi-platform deployment (iOS, Android, web).",
+          "You value unified design-animation-code workflow."
+        ],
+        "threshold": "Rive is essential for cross-platform interactive animations production-ready; for simple prototypes, Figma or Adobe XD suffice."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Plan gratuit avec 3 fichiers collaboratifs et accès limité aux agents IA",
+        "exists": true
+      },
+      "key_features": [
+        "Éditeur collaboratif temps-réel pour design et animation",
+        "State machine pour la gestion d'interactions complexes",
+        "GPU-accelerated rendering (120fps) via Rive Renderer",
+        "Scripting en direct pour automation et logique",
+        "Deployment multi-plateforme natif (iOS, Android, web, Flutter, Unity, Unreal)",
+        "AI-assisted authoring avec crédits IA inclus",
+        "Intégrations natives (Webflow, Framer, Wix Studio)",
+        "Compliance et security (SOC 2 Type II, SSO, custom S3 sur Enterprise)"
+      ],
+      "plans": [
+        {
+          "name": "Free",
+          "price": "Gratuit"
+        },
+        {
+          "name": "Cadet",
+          "price": "USD 9/mois par siège (jusqu'à 3 sièges)"
+        },
+        {
+          "name": "Voyager",
+          "price": "USD 32/mois par siège"
+        },
+        {
+          "name": "Enterprise",
+          "price": "Montants sur la page officielle"
+        }
+      ],
+      "pricing_model": "Tier freemium avec plans payants. Free plan inclus 3 fichiers collaboratifs. Escalade à Cadet, Voyager, Enterprise.",
+      "what": "Plateforme de design et animation interactive. Unifies design, animation, et codage dans un seul éditeur. Déploiement natif sur iOS, Android, web (React, Flutter), Unreal, Unity sans mockups ni prototypes intermédiaires.",
+      "what_en": "Interactive design and animation platform. Unifies design, animation, and coding in one editor. Native deployment to iOS, Android, web (React, Flutter), Unreal, Unity without mockups or intermediate prototypes."
+    },
+    "fr": {
+      "cons": [
+        "Courbe d'apprentissage (state machine, scripting).",
+        "Community plus petite que Figma ou Lottie.",
+        "Plans payants montant rapidement pour équipes.",
+        "Moins d'intégrations que Lottie ou Figma."
+      ],
+      "pros": [
+        "Unification complète design-animation-développement.",
+        "Deployment multi-plateforme natif sans code duplication.",
+        "State machine pour interactions complexes bien gérées.",
+        "Collaboration temps-réel puissante.",
+        "Free plan accessible avec 3 fichiers.",
+        "Intégrations natives avec Webflow, Framer, Wix.",
+        "Fichiers nettement plus légers que les alternatives."
+      ],
+      "relevant_for": [
+        "Interaction designers",
+        "Animateurs numériques",
+        "Product designers",
+        "Game designers"
+      ],
+      "use_cases": [
+        "Créer une mascotte animée interactive pour une app mobile.",
+        "Concevoir une interface d'onboarding avec animations et micro-interactions.",
+        "Prototyper un gameplay ou UI interactif pour un jeu web.",
+        "Produire des graphiques de données animés pour dashboard."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous prototypez des interfaces statiques ou wireframes simples.",
+          "Vous travaillez uniquement en web (Webflow ou Framer suffisent).",
+          "Vous avez un budget très limité (utilisez le free plan).",
+          "Vous avez besoin d'outils très spécialisés (motion capture, 3D avancée)."
+        ],
+        "keepIf": [
+          "Vous créez des animations et interactions complexes pour apps et web.",
+          "Vous travaillez dans une équipe multidisciplinaire (designers + développeurs).",
+          "Vous avez besoin de déploiement multi-plateforme natif (iOS, Android, web).",
+          "Vous appréciez l'unification design-animation-code en un seul workflow."
+        ],
+        "threshold": "Rive s'impose pour animations interactives cross-plateforme production-ready ; pour prototypes simples, Figma ou Adobe XD suffisent."
+      }
+    },
+    "slug": "rive",
+    "sources": [
+      {
+        "label": "Rive (site officiel)",
+        "url": "https://rive.app"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-003",
+    "batch_position": 16,
+    "blockers": [],
+    "catalog_hash": "sha256:fc2768d616391edaf72edcaebfddd61d2f55cf081620d7715a23f5855d272c3d",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:f310a89a1915518c890010bf1d61703e1ff6f240c98ee36c529e3cb865f9f331",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Rive",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:a9430041517f04260ce69e4c13221ae955de8e2142d857b45bf284613982f26f",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "rive",
+    "source_url": "https://rive.app/pricing",
+    "source_verified_on": "2026-06-15",
+    "status": "QUEUED"
+  }
+}

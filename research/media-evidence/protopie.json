@@ -1,0 +1,41 @@
+{
+  "slug": "protopie",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://www.protopie.io/"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://framerusercontent.com/images/FJliBXwqpIzVXZQvEMPcc0lmg5E.webp?width=1403&height=1406",
+      "source_page_url": "https://www.protopie.io/",
+      "official": true,
+      "alt": "protopie official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://framerusercontent.com/images/GPhod20u7xCrRvMBMYXnNNDGQ1s.webp?width=1459&height=966",
+      "source_page_url": "https://www.protopie.io/",
+      "official": true,
+      "alt": "protopie official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://framerusercontent.com/images/OtwATA9Besx4GfklTXBXGrJUk.webp?width=666&height=1034",
+      "source_page_url": "https://www.protopie.io/",
+      "official": true,
+      "alt": "protopie official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://framerusercontent.com/images/H60k0Li2Z5mmzvIq3ewAAOR78c.webp?width=1032&height=1008",
+      "source_page_url": "https://www.protopie.io/",
+      "official": true,
+      "alt": "protopie official product view"
+    }
+  ]
+}

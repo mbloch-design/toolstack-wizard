@@ -1,0 +1,284 @@
+{
+  "batch": "review-design-tools-critical-003",
+  "current": {
+    "affiliate_url": "https://www.maxon.net/red-giant/magic-bullet",
+    "alternatives": [
+      "ae-red-giant",
+      "davinci-resolve"
+    ],
+    "category": "design-tools",
+    "cons": [
+      "Coût d'abonnement annuel élevé.",
+      "Pas de version gratuite ou essai gratuit illimité.",
+      "Courbe d'apprentissage pour exploiter pleinement la suite.",
+      "Dépend de la stabilité du plugin dans votre NLE.",
+      "Pas de support pour tous les codecs ou résolutions."
+    ],
+    "cons_en": [
+      "High annual subscription cost.",
+      "No free version or unlimited free trial.",
+      "Learning curve to fully exploit the suite.",
+      "Depends on plugin stability in your NLE.",
+      "Not all codecs or resolutions supported."
+    ],
+    "host_app": "adobe-after-effects",
+    "id": "magic-bullet",
+    "long_description": "Magic Bullet regroupe les outils couleur de Red Giant pour corriger, styliser et finaliser une image directement dans le logiciel de montage. Looks propose plus de 300 presets personnalisables, Colorista gère la correction colorimétrique, Film l'émulation de pellicule, Cosmo les visages et Denoiser le bruit. Looks prend également en charge ACES et OpenColorIO.\n\nLes outils fonctionnent notamment dans After Effects, Premiere Pro, DaVinci Resolve et Final Cut Pro, tandis que Looks couvre aussi Unreal Engine, Autograph et Cinema 4D. Ils sont inclus dans l'abonnement Red Giant et dans Maxon One ; le prix exact dépend du pays et doit être confirmé sur la boutique Maxon.\n\nMagic Bullet est surtout utile pour conserver l'étalonnage et la finition dans la timeline existante. DaVinci Resolve reste plus rationnel si vous acceptez un workflow couleur séparé et recherchez une solution gratuite très complète.",
+    "long_description_en": "Magic Bullet brings Red Giant's color tools together for correcting, styling and finishing footage inside the editing application. Looks includes more than 300 customizable presets, Colorista handles color correction, Film provides film emulation, Cosmo treats faces and Denoiser reduces noise. Looks also supports ACES and OpenColorIO.\n\nThe tools run in applications including After Effects, Premiere Pro, DaVinci Resolve and Final Cut Pro, while Looks also supports Unreal Engine, Autograph and Cinema 4D. They are included with Red Giant and Maxon One subscriptions; the exact price depends on region and should be confirmed in the Maxon store.\n\nMagic Bullet is most useful when you want grading and finishing to remain inside the existing timeline. DaVinci Resolve is often more economical when a separate color workflow is acceptable and you want a capable free option.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://i.ytimg.com/vi/jxqSpbc8Z1A/maxresdefault.jpg"
+    },
+    "name": "Magic Bullet",
+    "pricing": {
+      "free": "",
+      "paid": "Inclus dans les abonnements Red Giant et Maxon One ; tarif régional à confirmer"
+    },
+    "pricing_en": {
+      "free": "",
+      "paid": "Included with Red Giant and Maxon One subscriptions; confirm regional pricing"
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Inclus dans Red Giant et Maxon One ; le tarif varie selon le pays"
+      ],
+      "compare_plan_kind": "subscription",
+      "compare_plan_name": "Red Giant Complete",
+      "compare_price_monthly_eur": 0,
+      "location_sensitive": false,
+      "official_source_url": "https://www.maxon.net/en/buy",
+      "price_reliability": "official_context_required",
+      "source_domain": "maxon.net",
+      "usage_sensitive": false,
+      "verification_status": "official_contextual",
+      "verified_on": "2026-08-28"
+    },
+    "pros": [
+      "Suite professionnelle complète d'outils coloristes.",
+      "Presets cinématiques de haute qualité pour itération rapide.",
+      "GPU-accéléré pour performance temps réel.",
+      "Intégration native major NLE et motion graphics.",
+      "Mise à jour régulière avec nouvelles lentilles et filtres."
+    ],
+    "pros_en": [
+      "Professional complete suite of grading tools.",
+      "High-quality cinematic presets for quick iteration.",
+      "GPU-accelerated for real-time performance.",
+      "Native integration with major NLE and motion graphics tools.",
+      "Regular updates with new lenses and filters."
+    ],
+    "short_description": "Suite Red Giant d'étalonnage et de look cinéma pour After Effects et Premiere.",
+    "short_description_en": "Red Giant's color grading and cinematic look suite for After Effects and Premiere.",
+    "slug": "magic-bullet",
+    "source_url": "https://www.maxon.net/en/buy",
+    "source_verified_on": "2026-08-28",
+    "use_cases": [
+      "Étalonner des vidéos commerciales avec presets de qualité.",
+      "Corriger le bruit en post-production sur footages low-light.",
+      "Générer des looks cinématiques rapides pour rough cuts.",
+      "Unifier l'étalonnage couleur entre plusieurs clips After Effects.",
+      "Ajouter des flares objectif réalistes pour effects finaux."
+    ],
+    "use_cases_en": [
+      "Color-grade commercial videos with quality presets.",
+      "Correct low-light footage noise in post-production.",
+      "Generate quick cinematic looks for rough cuts.",
+      "Unify color grading across multiple After Effects clips.",
+      "Add realistic lens flares for final effects."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous cherchez une correction couleur gratuite.",
+        "Vous utilisez surtout des outils natifs de votre NLE (pas de plugins).",
+        "Vous faites que de la correction couleur simple de base."
+      ],
+      "keepIf": [
+        "Vous étalonnez régulièrement des vidéos ou des projects coloristes.",
+        "Vous travaillez en After Effects, Premiere Pro ou DaVinci Resolve.",
+        "Vous cherchez des presets cinématiques professionnels pour itération rapide."
+      ],
+      "threshold": "Magic Bullet s'impose pour les coloristes et éditeurs vidéo cherchant des outils professionnels intégrés ; pour une correction simple gratuite, les outils natifs suffisent."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You're looking for free color correction.",
+        "You work mainly with native NLE tools (no plugins).",
+        "You only do basic color correction."
+      ],
+      "keepIf": [
+        "You regularly color-grade videos or work on color-critical projects.",
+        "You work in After Effects, Premiere Pro, or DaVinci Resolve.",
+        "You want professional cinematic presets for fast iteration."
+      ],
+      "threshold": "Magic Bullet makes sense for colorists and video editors wanting professional integrated tools; for basic free correction, native tools suffice."
+    },
+    "website_url": "https://www.maxon.net/red-giant/magic-bullet"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "High annual subscription cost.",
+        "No free version or unlimited free trial.",
+        "Learning curve to fully exploit the suite.",
+        "Depends on plugin stability in your NLE.",
+        "Not all codecs or resolutions supported."
+      ],
+      "pros": [
+        "Professional complete suite of grading tools.",
+        "High-quality cinematic presets for quick iteration.",
+        "GPU-accelerated for real-time performance.",
+        "Native integration with major NLE and motion graphics tools.",
+        "Regular updates with new lenses and filters."
+      ],
+      "use_cases": [
+        "Color-grade commercial videos with quality presets.",
+        "Correct low-light footage noise in post-production.",
+        "Generate quick cinematic looks for rough cuts.",
+        "Unify color grading across multiple After Effects clips.",
+        "Add realistic lens flares for final effects."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You're looking for free color correction.",
+          "You work mainly with native NLE tools (no plugins).",
+          "You only do basic color correction."
+        ],
+        "keepIf": [
+          "You regularly color-grade videos or work on color-critical projects.",
+          "You work in After Effects, Premiere Pro, or DaVinci Resolve.",
+          "You want professional cinematic presets for fast iteration."
+        ],
+        "threshold": "Magic Bullet makes sense for colorists and video editors wanting professional integrated tools; for basic free correction, native tools suffice."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Pas de version gratuite. Essai téléchargeable disponible pour tester avant achat.",
+        "exists": false
+      },
+      "key_features": [
+        "80+ plugins GPU-accélérés pour editing et motion graphics",
+        "Color Looks pour l'étalonnage cinématique avec presets",
+        "Colorista pour correction couleur 3 voies professionnelle",
+        "Denoiser pour réduction de bruit low-light",
+        "Real Lens Flares avec zoom et lentilles asphériques (2026.5.0+)",
+        "44+ presets de lentilles objectif",
+        "Intégration After Effects, Premiere Pro, DaVinci Resolve"
+      ],
+      "plans": [
+        {
+          "name": "Red Giant Complete Annual Subscription",
+          "price": "Abonnement annuel (montants sur la page officielle)"
+        },
+        {
+          "name": "Magic Bullet Suite (partie de Red Giant)",
+          "price": "Inclus dans l'abonnement Red Giant annuel"
+        }
+      ],
+      "pricing_model": "Abonnement annuel pour l'accès à la suite Red Giant complète. Montants sur la page officielle.",
+      "what": "Suite de plugins vidéo Red Giant incluant Color Looks (étalonnage cinématique), Colorista (correction couleur 3 voies), et Denoiser (réduction de bruit) pour After Effects, Premiere Pro et DaVinci Resolve.",
+      "what_en": "Red Giant video effects plugin suite including Color Looks (cinematic color grading), Colorista (three-way color correction), and Denoiser (noise reduction) for After Effects, Premiere Pro, and DaVinci Resolve."
+    },
+    "fr": {
+      "cons": [
+        "Coût d'abonnement annuel élevé.",
+        "Pas de version gratuite ou essai gratuit illimité.",
+        "Courbe d'apprentissage pour exploiter pleinement la suite.",
+        "Dépend de la stabilité du plugin dans votre NLE.",
+        "Pas de support pour tous les codecs ou résolutions."
+      ],
+      "pros": [
+        "Suite professionnelle complète d'outils coloristes.",
+        "Presets cinématiques de haute qualité pour itération rapide.",
+        "GPU-accéléré pour performance temps réel.",
+        "Intégration native major NLE et motion graphics.",
+        "Mise à jour régulière avec nouvelles lentilles et filtres."
+      ],
+      "relevant_for": [
+        "Coloristes vidéo",
+        "Éditeurs VFX",
+        "Motion designers",
+        "Directeurs photo numérique",
+        "Producteurs vidéo"
+      ],
+      "use_cases": [
+        "Étalonner des vidéos commerciales avec presets de qualité.",
+        "Corriger le bruit en post-production sur footages low-light.",
+        "Générer des looks cinématiques rapides pour rough cuts.",
+        "Unifier l'étalonnage couleur entre plusieurs clips After Effects.",
+        "Ajouter des flares objectif réalistes pour effects finaux."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous cherchez une correction couleur gratuite.",
+          "Vous utilisez surtout des outils natifs de votre NLE (pas de plugins).",
+          "Vous faites que de la correction couleur simple de base."
+        ],
+        "keepIf": [
+          "Vous étalonnez régulièrement des vidéos ou des projects coloristes.",
+          "Vous travaillez en After Effects, Premiere Pro ou DaVinci Resolve.",
+          "Vous cherchez des presets cinématiques professionnels pour itération rapide."
+        ],
+        "threshold": "Magic Bullet s'impose pour les coloristes et éditeurs vidéo cherchant des outils professionnels intégrés ; pour une correction simple gratuite, les outils natifs suffisent."
+      }
+    },
+    "slug": "magic-bullet",
+    "sources": [
+      {
+        "label": "Magic Bullet — Red Giant suite de plugins vidéo",
+        "url": "https://www.maxon.net/red-giant/magic-bullet"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-003",
+    "batch_position": 6,
+    "blockers": [],
+    "catalog_hash": "sha256:dc8d63ded35a62accb6c3851047d76639651f36996d209075535fa6e48bbf305",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:ac41b91e532eadb76b5256dbd7eb2ded7da0747204d85499baf5d75645f122d1",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Magic Bullet",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:b965470afae32eaf9c9c5e4def911661eaaea0eec0da85ea5d91ca477e607b46",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "magic-bullet",
+    "source_url": "https://www.maxon.net/en/buy",
+    "source_verified_on": "2026-08-28",
+    "status": "QUEUED"
+  }
+}

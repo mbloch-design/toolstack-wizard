@@ -1,0 +1,248 @@
+{
+  "batch": "review-design-tools-critical-003",
+  "current": {
+    "affiliate_url": null,
+    "alternatives": [],
+    "category": "design-tools",
+    "cons": [
+      "Abonnement annuel (no perpetual license).",
+      "Dépend entièrement d'Illustrator (n'est qu'une extension).",
+      "Courbe d'apprentissage pour débloquer l'efficacité.",
+      "Certains plugins moins utiles selon le type de travail."
+    ],
+    "cons_en": [
+      "Annual subscription (no perpetual license).",
+      "Depends entirely on Illustrator (it's just an extension).",
+      "Learning curve to unlock efficiency.",
+      "Some plugins less useful depending on work type."
+    ],
+    "host_app": "adobe-illustrator",
+    "id": "astute-graphics",
+    "long_description": "Plugins Illustrator pour vectoriel avancé, lettrage, formes, nettoyage et productivité.",
+    "long_description_en": "Plugin suite for Adobe Illustrator with 18-21 specialized tools to accelerate vector design workflow. Includes Vector First Aid (cleanup), DynamicSketch (vector sketching), InkFlow, and advanced color and geometry utilities. Used by companies like NASA, Adidas, Discord.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://tooltrim.com/og-screenshots/astute-graphics.jpg"
+    },
+    "name": "Astute Graphics",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 14€/mois environ"
+    },
+    "pricing_en": null,
+    "pricing_v5": null,
+    "pros": [
+      "Accélère le workflow Illustrator de façon significative.",
+      "Plugins très utiles pour nettoyage et effets vectoriels.",
+      "Essai gratuit 7 jours avant engagement.",
+      "4 plugins gratuits retenus après annulation.",
+      "Mise à jour mensuelles incluses."
+    ],
+    "pros_en": [
+      "Significantly accelerates Illustrator workflow.",
+      "Very useful plugins for cleanup and vector effects.",
+      "Free 7-day trial before commitment.",
+      "4 free plugins retained after cancellation.",
+      "Monthly updates included."
+    ],
+    "short_description": "Plugins Illustrator pour vectoriel avancé, lettrage, formes, nettoyage et productivité.",
+    "short_description_en": "Illustrator plugins for advanced vector work, lettering, shapes, cleanup, and productivity.",
+    "slug": "astute-graphics",
+    "source_url": "https://astutegraphics.com",
+    "source_verified_on": null,
+    "use_cases": [
+      "Nettoyer une illustration complexe importée d'une numérisation.",
+      "Créer rapidement des motifs texturés et effets de stippling.",
+      "Concevoir un logo ou identité visuelle avec contrôle géométrique avancé."
+    ],
+    "use_cases_en": [
+      "Clean a complex illustration scanned from a drawing.",
+      "Quickly create textured patterns and stipple effects.",
+      "Design a logo or visual identity with advanced geometric control."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous utilisez Illustrator occasionnellement ou pour des projets simples.",
+        "Vous cherchez principalement du web design ou UI/UX.",
+        "Vous avez un budget serré et les plugins gratuits suffisent."
+      ],
+      "keepIf": [
+        "Vous travaillez quotidiennement en Illustrator et créez du contenu vectoriel complexe.",
+        "Vous passez beaucoup de temps à nettoyer des données vectorielles mal structurées.",
+        "Vous créez des logos, illustrations ou design graphique professionnel."
+      ],
+      "threshold": "Astute Graphics s'impose pour les illustrateurs et designers vectoriels professionnels ; pour usage occasionnel ou budget limité, Illustrator natif + plugins gratuits peut suffire."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You use Illustrator occasionally or for simple projects.",
+        "You focus mainly on web design or UI/UX.",
+        "You have a tight budget and free plugins suffice."
+      ],
+      "keepIf": [
+        "You work daily in Illustrator and create complex vector content.",
+        "You spend significant time cleaning poorly structured vector data.",
+        "You create logos, illustrations, or professional graphic design."
+      ],
+      "threshold": "Astute Graphics makes sense for professional vector designers and illustrators; for occasional use or tight budgets, native Illustrator + free plugins may suffice."
+    },
+    "website_url": "https://astutegraphics.com"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Annual subscription (no perpetual license).",
+        "Depends entirely on Illustrator (it's just an extension).",
+        "Learning curve to unlock efficiency.",
+        "Some plugins less useful depending on work type."
+      ],
+      "pros": [
+        "Significantly accelerates Illustrator workflow.",
+        "Very useful plugins for cleanup and vector effects.",
+        "Free 7-day trial before commitment.",
+        "4 free plugins retained after cancellation.",
+        "Monthly updates included."
+      ],
+      "use_cases": [
+        "Clean a complex illustration scanned from a drawing.",
+        "Quickly create textured patterns and stipple effects.",
+        "Design a logo or visual identity with advanced geometric control."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You use Illustrator occasionally or for simple projects.",
+          "You focus mainly on web design or UI/UX.",
+          "You have a tight budget and free plugins suffice."
+        ],
+        "keepIf": [
+          "You work daily in Illustrator and create complex vector content.",
+          "You spend significant time cleaning poorly structured vector data.",
+          "You create logos, illustrations, or professional graphic design."
+        ],
+        "threshold": "Astute Graphics makes sense for professional vector designers and illustrators; for occasional use or tight budgets, native Illustrator + free plugins may suffice."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Essai gratuit 7 jours ; après annulation, 4 plugins restent gratuits (Autosaviour, DirectPrefs, MirrorMe, AstuteBuddy).",
+        "exists": true
+      },
+      "key_features": [
+        "Vector First Aid — nettoyage de formes complexes",
+        "DynamicSketch — dessin vectoriel intuitif",
+        "InkFlow — gestion des traits et tracés",
+        "Phantasm — effets vectoriels",
+        "ColliderScribe et SubScribe — géométrie avancée",
+        "Randomino, Stipplism, Texturino — effets de texture",
+        "WidthScribe — gestion des épaisseurs de trait",
+        "FindReplace, Reform — modulation des formes"
+      ],
+      "plans": [
+        {
+          "name": "Astute Graphics Annual Bundle",
+          "price": "149 USD/an"
+        }
+      ],
+      "pricing_model": "Abonnement annuel avec mises à jour mensuelles. Essai gratuit de 7 jours. Accès à 4 plugins gratuits après annulation.",
+      "what": "Suite de plugins pour Adobe Illustrator offrant 18-21 outils spécialisés pour accélérer le workflow de design vectoriel. Inclut Vector First Aid (nettoyage), DynamicSketch (sketch vectoriel), InkFlow, et utilitaires avancés de couleur et géométrie. Utilisée par des entreprises comme NASA, Adidas, Discord.",
+      "what_en": "Plugin suite for Adobe Illustrator with 18-21 specialized tools to accelerate vector design workflow. Includes Vector First Aid (cleanup), DynamicSketch (vector sketching), InkFlow, and advanced color and geometry utilities. Used by companies like NASA, Adidas, Discord."
+    },
+    "fr": {
+      "cons": [
+        "Abonnement annuel (no perpetual license).",
+        "Dépend entièrement d'Illustrator (n'est qu'une extension).",
+        "Courbe d'apprentissage pour débloquer l'efficacité.",
+        "Certains plugins moins utiles selon le type de travail."
+      ],
+      "pros": [
+        "Accélère le workflow Illustrator de façon significative.",
+        "Plugins très utiles pour nettoyage et effets vectoriels.",
+        "Essai gratuit 7 jours avant engagement.",
+        "4 plugins gratuits retenus après annulation.",
+        "Mise à jour mensuelles incluses."
+      ],
+      "relevant_for": [
+        "Illustrateurs numériques",
+        "Designers graphiques vectoriels",
+        "Studios de design"
+      ],
+      "use_cases": [
+        "Nettoyer une illustration complexe importée d'une numérisation.",
+        "Créer rapidement des motifs texturés et effets de stippling.",
+        "Concevoir un logo ou identité visuelle avec contrôle géométrique avancé."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous utilisez Illustrator occasionnellement ou pour des projets simples.",
+          "Vous cherchez principalement du web design ou UI/UX.",
+          "Vous avez un budget serré et les plugins gratuits suffisent."
+        ],
+        "keepIf": [
+          "Vous travaillez quotidiennement en Illustrator et créez du contenu vectoriel complexe.",
+          "Vous passez beaucoup de temps à nettoyer des données vectorielles mal structurées.",
+          "Vous créez des logos, illustrations ou design graphique professionnel."
+        ],
+        "threshold": "Astute Graphics s'impose pour les illustrateurs et designers vectoriels professionnels ; pour usage occasionnel ou budget limité, Illustrator natif + plugins gratuits peut suffire."
+      }
+    },
+    "slug": "astute-graphics",
+    "sources": [
+      {
+        "label": "Astute Graphics — Official Site",
+        "url": "https://astutegraphics.com"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-003",
+    "batch_position": 25,
+    "blockers": [],
+    "catalog_hash": "sha256:79c473447dffa9174cad60d9f8267770e938739c260072c663552db46031807e",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:300654969b8215816554c3cc752024cba455ea6cc91ec78ee06f6fc6e975fca3",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Astute Graphics",
+    "next_review_at": null,
+    "priority_reasons": [
+      "paid_price",
+      "missing_or_invalid_media_evidence",
+      "shallow_editorial",
+      "undated_source"
+    ],
+    "priority_score": 195,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:5e45fdf0bbf8b82ba68b509eba9e559c1e3acfb719a92f469555bce00ec96850",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "astute-graphics",
+    "source_url": "https://astutegraphics.com",
+    "source_verified_on": null,
+    "status": "QUEUED"
+  }
+}

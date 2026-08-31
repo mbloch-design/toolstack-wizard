@@ -2848,16 +2848,16 @@
     "slug": "astute-graphics",
     "name": "Astute Graphics",
     "categoryId": "design-tools",
-    "shortDescription": "Plugins Illustrator pour vectoriel avancé, lettrage, formes, nettoyage et productivité.",
-    "shortDescriptionEn": "Illustrator plugins for advanced vector work, lettering, shapes, cleanup, and productivity.",
+    "shortDescription": "Suite de plugins pour Adobe Illustrator offrant 18-21 outils spécialisés pour accélérer le workflow de design vectoriel. Inclut Vector First Aid (nettoyage), DynamicSketch (sketch vectoriel), InkFlow, et utilitaires avancés de couleur et géométrie. Utilisée par des entreprises comme NASA, Adidas, Discord.",
+    "shortDescriptionEn": "Plugin suite for Adobe Illustrator with 18-21 specialized tools to accelerate vector design workflow. Includes Vector First Aid (cleanup), DynamicSketch (vector sketching), InkFlow, and advanced color and geometry utilities. Used by companies like NASA, Adidas, Discord.",
     "pricing": {
-      "free": "Essai ou plan gratuit selon usage",
-      "paid": "À partir de 14€/mois environ"
+      "free": "Essai gratuit 7 jours ; après annulation, 4 plugins restent gratuits (Autosaviour, DirectPrefs, MirrorMe, AstuteBuddy).",
+      "paid": "Astute Graphics Annual Bundle: 149 USD/an"
     },
     "defaultMonthlyPrice": 14,
     "affiliateLink": "",
     "websiteUrl": "https://astutegraphics.com",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/astute-graphics.jpg",
+    "ogImageUrl": "https://astute-graphics.imgix.net/plugins/astutebuddy-media/astutebuddy-image.png?ixlib=php-3.3.1&w=660",
     "logo": "",
     "tool_type": "satellite",
     "host_app": "adobe-illustrator",
@@ -11742,16 +11742,16 @@
     "slug": "figma-tokens",
     "name": "Figma Tokens (Tokens Studio)",
     "categoryId": "design-tools",
-    "shortDescription": "Plugin Figma pour gérer les design tokens et les synchroniser avec le code via Git.",
-    "shortDescriptionEn": "Figma plugin to manage design tokens and sync them to code via Git.",
+    "shortDescription": "Plugin Figma pour gérer les design tokens (couleurs, typographie, espacements) et les synchroniser avec le code. Open source et extensible, avec intégration Git et multi-fichiers.",
+    "shortDescriptionEn": "Figma plugin for managing design tokens (colors, typography, spacing) and syncing them to code. Open-source and extensible, with Git integration and multi-file support.",
     "pricing": {
-      "free": "Plugin gratuit pour un usage local (plan Starter)",
-      "paid": "Sync Git et automatisation à partir de 39€/mois (Starter Plus)"
+      "free": "Plugin Figma gratuit pour utiliser les variables Figma ; plateforme studio en essai gratuit 14 jours.",
+      "paid": "Plugin Figma: 39 € achat unique (ou gratuit en version open source) ; Studio Starter Plus: 17 € / mois (1 éditeur, jusqu'à 5 projets) ; Studio Essential: 169 € / mois (1 éditeur, versioning, branches) ; Studio Organization: 499 € / mois (5 éditeurs, asset management, docs) ; Enterprise: Prix sur demande"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://tokens.studio",
     "websiteUrl": "https://tokens.studio",
-    "ogImageUrl": "https://framerusercontent.com/assets/EzljCTuSDgR914OMFrHugpBFx2I.png",
+    "ogImageUrl": "https://framerusercontent.com/images/dKla9Z5N984BrKpKzDUgzZldm7s.png?scale-down-to=512&width=1332&height=1706",
     "logo": "",
     "tool_type": "plugin",
     "host_app": "figma",
@@ -12909,16 +12909,16 @@
     "slug": "fredo6-bundle",
     "name": "Fredo6 Bundle",
     "categoryId": "design-tools",
-    "shortDescription": "Suite de plugins SketchUp pour accélérer la modélisation, les courbes, arrondis et déformations.",
-    "shortDescriptionEn": "SketchUp plugin suite for faster modelling, curves, rounded corners and deformations.",
+    "shortDescription": "Suite de plugins SketchUp spécialisés dans la modélisation avancée. Le bundle Fredo6 regroupe des outils comme FredoCorner (coins arrondis), FredoScale (transformations), FredoBend (déformation de géométrie), et autres extensions pour optimiser les workflows de conception architecturale et paramétrique.",
+    "shortDescriptionEn": "Suite of specialized SketchUp plugins for advanced modeling. The Fredo6 Bundle groups together tools like FredoCorner (rounded corners), FredoScale (geometric transformations), FredoBend (geometry deformation), and other extensions to optimize architectural and parametric design workflows.",
     "pricing": {
-      "free": "Essai gratuit de 30 jours",
-      "paid": "50 $ en achat unique pour 8 plugins et 3 postes"
+      "free": "Certains plugins Fredo6 (comme LibFredo6, Joint Push Pull) restent gratuits ; le bundle payant comprend les extensions avancées.",
+      "paid": "Bundle Fredo6: Montants sur la page officielle SketchUcation ; Plugin individual: Montants sur la page officielle SketchUcation"
     },
     "defaultMonthlyPrice": 4,
     "affiliateLink": "https://sketchucation.com/pluginstore?pauthor=fredo6",
     "websiteUrl": "https://sketchucation.com/pluginstore?pauthor=fredo6",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/fredo6-bundle.jpg",
+    "ogImageUrl": "/og-screenshots/fredo6-bundle.jpg",
     "logo": "",
     "tool_type": "metier",
     "host_app": null,
@@ -15279,11 +15279,11 @@
     "slug": "hard-ops-boxcutter",
     "name": "Hard Ops / Boxcutter",
     "categoryId": "design-tools",
-    "shortDescription": "Bundle Blender pour la modélisation hard-surface (booléens, bevels, arrays).",
-    "shortDescriptionEn": "Blender bundle for hard-surface modeling (booleans, bevels, arrays).",
+    "shortDescription": "Suite d'add-ons Blender pour la modélisation hard-surface non-destructive. Combine Hard Ops (gestionnaire de booléens) et Boxcutter (outil de découpe interactive). Workflow optimisé pour les designers de concept, les modeleurs d'armes/accessoires, et les artistes de design industriel.",
+    "shortDescriptionEn": "Suite of Blender add-ons for non-destructive hard-surface modeling. Combines Hard Ops (boolean manager) and Boxcutter (interactive cutting tool). Optimized workflow for concept artists, weapon/prop designers, and industrial design artists.",
     "pricing": {
-      "free": "",
-      "paid": "38$ en licence perpétuelle (achat unique, bundle des deux add-ons)."
+      "free": "Pas de version gratuite. Les deux add-ons ne sont disponibles que via achat.",
+      "paid": "Hard Ops / Boxcutter Ultimate Bundle: 38 $ (achat unique, licence perpétuelle)"
     },
     "defaultMonthlyPrice": 38,
     "affiliateLink": "https://superhivemarket.com/products/hard-ops--boxcutter-ultimate-bundle",
@@ -20536,15 +20536,16 @@
     "slug": "luminar-neo",
     "name": "Luminar Neo",
     "categoryId": "design-tools",
-    "shortDescription": "Retouche IA pour Photoshop/Lightroom : remplacement de ciel, portrait IA, atmosphère.",
-    "shortDescriptionEn": "AI retouching for Photoshop/Lightroom: sky replacement, AI portrait, atmosphere.",
+    "shortDescription": "Éditeur photo desktop alimenté par l'IA avec plus de 24 outils IA et 100+ fonctionnalités pour améliorer les portraits, paysages et autres styles photographiques sur Mac et Windows.",
+    "shortDescriptionEn": "AI-powered desktop photo editor with 24+ AI tools and 100+ features to enhance portraits, landscapes, and photography styles on Mac and Windows platforms.",
     "pricing": {
-      "paid": "Abonnement dès ~10$/mois (facturé à l'année), ou licence à vie ~149$"
+      "free": "Pas de version gratuite permanente. Essai gratuit disponible avec garantie de remboursement 30 jours sur les plans payants.",
+      "paid": "Desktop Only License: Achat unique (licence perpétuelle, accès 2 appareils) ; All Platforms License: Achat unique (inclut accès mobile et web — disponible automne 2026) ; Max License: Abonnement annuel (montants sur la page officielle, accès nouvelles fonctionnalités et bibliothèque de ressources)"
     },
     "defaultMonthlyPrice": 10,
     "affiliateLink": "https://skylum.com/luminar-neo",
     "websiteUrl": "https://skylum.com/luminar-neo",
-    "ogImageUrl": "https://media.macphun.com/img/uploads/uploads/skylum/l/Luminar-sum-26-share.jpg?f=webp&amp;q=75",
+    "ogImageUrl": "https://media.macphun.com/img/uploads/uploads/skylum/l/sum-26-devices.png",
     "logo": "",
     "tool_type": "plugin",
     "host_app": "photoshop",
@@ -20572,11 +20573,11 @@
     "slug": "lumion",
     "name": "Lumion",
     "categoryId": "design-tools",
-    "shortDescription": "Rendu architectural 3D ultra-rapide et cinématique, énorme bibliothèque d'assets.",
-    "shortDescriptionEn": "Fast, cinematic architectural 3D rendering with a massive asset library.",
+    "shortDescription": "Logiciel de rendu 3D temps réel spécialisé dans la visualisation architecturale, transformant rapidement les modèles CAO/BIM en images et animations photoréalistes.",
+    "shortDescriptionEn": "Real-time 3D rendering software specialized in architectural visualization, quickly transforming CAD/BIM models into photorealistic images and animations.",
     "pricing": {
-      "free": "Essai gratuit",
-      "paid": "Standard ~499$/an (~42$/mois), Pro ~999$/an."
+      "free": "Lumion View gratuit pour CAO basique. Essai gratuit 14 jours pour Lumion Pro sans carte bancaire requise.",
+      "paid": "Lumion View: Gratuit (rendu CAO basique en temps réel) ; Lumion Pro: 899 € ou GBP par an (licence utilisateur nommé ou flottante) ; Lumion Studio: 1049 € ou GBP par an (licence flottante pour équipes)"
     },
     "defaultMonthlyPrice": 42,
     "affiliateLink": "https://lumion.com",
@@ -20760,15 +20761,15 @@
     "slug": "magic-bullet",
     "name": "Magic Bullet",
     "categoryId": "design-tools",
-    "shortDescription": "Suite Red Giant d'étalonnage et de look cinéma pour After Effects et Premiere.",
-    "shortDescriptionEn": "Red Giant's color grading and cinematic look suite for After Effects and Premiere.",
+    "shortDescription": "Suite de plugins vidéo Red Giant incluant Color Looks (étalonnage cinématique), Colorista (correction couleur 3 voies), et Denoiser (réduction de bruit) pour After Effects, Premiere Pro et DaVinci Resolve.",
+    "shortDescriptionEn": "Red Giant video effects plugin suite including Color Looks (cinematic color grading), Colorista (three-way color correction), and Denoiser (noise reduction) for After Effects, Premiere Pro, and DaVinci Resolve.",
     "pricing": {
-      "free": "",
-      "paid": "Inclus dans les abonnements Red Giant et Maxon One ; tarif régional à confirmer"
+      "free": "Pas de version gratuite. Essai téléchargeable disponible pour tester avant achat.",
+      "paid": "Red Giant Complete Annual Subscription: Abonnement annuel (montants sur la page officielle) ; Magic Bullet Suite (partie de Red Giant): Inclus dans l'abonnement Red Giant annuel"
     },
     "defaultMonthlyPrice": 0,
-    "affiliateLink": "https://www.maxon.net/red-giant/magic-bullet",
-    "websiteUrl": "https://www.maxon.net/red-giant/magic-bullet",
+    "affiliateLink": "https://www.maxon.net/en/red-giant",
+    "websiteUrl": "https://www.maxon.net/en/red-giant",
     "ogImageUrl": "https://i.ytimg.com/vi/jxqSpbc8Z1A/maxresdefault.jpg",
     "logo": "",
     "tool_type": "plugin",
@@ -21617,16 +21618,16 @@
     "slug": "maze",
     "name": "Maze",
     "categoryId": "design-tools",
-    "shortDescription": "Tests utilisateurs continus directement depuis vos prototypes Figma.",
-    "shortDescriptionEn": "Continuous user testing directly from your Figma prototypes.",
+    "shortDescription": "Plateforme de recherche utilisateur intégrée qui combine recrutement, tests de prototypes, entretiens modérés, enquêtes et analyse pour aider les équipes à prendre des décisions produit basées sur des données.",
+    "shortDescriptionEn": "Integrated user research platform combining recruitment, prototype testing, moderated interviews, surveys, and analysis to help teams make data-driven product decisions.",
     "pricing": {
-      "free": "1 étude/mois",
-      "paid": "75$/mois (Team)"
+      "free": "Essai gratuit et tier limité disponible. Accès à certains outils de recherche de base avec restrictions de participants ou de nombre d'études.",
+      "paid": "Free Trial / Limited Free: Gratuit ; Standard: Montants sur la page officielle (plans échelonnés) ; Enterprise: Tarification personnalisée sur demande"
     },
     "defaultMonthlyPrice": 64.95,
     "affiliateLink": "https://maze.co",
     "websiteUrl": "https://maze.co",
-    "ogImageUrl": "https://www.datocms-assets.com/38511/1762727117-og-image-default.jpg?auto=format",
+    "ogImageUrl": "https://www.datocms-assets.com/38511/1778262436-promo-ai-study-builder.png?auto=format&dpr=0.94&fit=max&w=640",
     "logo": "",
     "tool_type": "satellite",
     "host_app": null,
@@ -21948,12 +21949,12 @@
     "shortDescriptionEn": "Generates textured 3D models from text or an image, in seconds.",
     "pricing": {
       "free": "Gratuit (100 crédits/mois)",
-      "paid": "Pro 20$/mois, Max 60$, API 90$."
+      "paid": "Pro 20 $/mois, Premium 40 $, Ultra 100 $, Studio 70 $, Enterprise sur devis."
     },
     "defaultMonthlyPrice": 20,
-    "affiliateLink": "https://www.meshy.ai",
+    "affiliateLink": "https://www.meshy.ai?via=tooltrim",
     "websiteUrl": "https://www.meshy.ai",
-    "ogImageUrl": "https://cdn.meshy.ai/landing-assets/og-images/website_og.webp",
+    "ogImageUrl": "https://cdn.meshy.ai/ti_w%3A3840%2Cq%3A75%2Cf%3Awebp/landing-assets/home/landing_home_hero_model_1.png",
     "logo": "",
     "tool_type": "ia",
     "host_app": null,
@@ -23220,11 +23221,11 @@
     "slug": "motion-bro",
     "name": "Motion Bro",
     "categoryId": "design-tools",
-    "shortDescription": "Gestionnaire de presets et packs pour After Effects et Premiere Pro.",
-    "shortDescriptionEn": "Preset and pack manager for After Effects and Premiere Pro.",
+    "shortDescription": "Plugin et marché d'assets pour After Effects et Premiere Pro, fournissant accès à un panel de transitions, presets, lower thirds et effets sonores directement intégrés à la timeline.",
+    "shortDescriptionEn": "Plugin and asset marketplace for After Effects and Premiere Pro, providing access to a library of transitions, presets, lower thirds, and sound effects directly within the timeline.",
     "pricing": {
-      "free": "Extension de base gratuite",
-      "paid": "Packs de presets vendus séparément (achat unique), certains gratuits"
+      "free": "Plugin gratuit pour tous + 1 400 assets. Accès illimité à la bibliothèque de transitions, presets et effets.",
+      "paid": "Essential Transitions Bundle (After Effects) — Personal: $55 (one-time purchase) ; Essential Transitions Bundle (After Effects) — Commercial: $110 (one-time purchase) ; Essential Transitions Bundle (Premiere Pro) — Personal: $68 (one-time purchase) ; Essential Transitions Bundle (Premiere Pro) — Commercial: $136 (one-time purchase)"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://motionbro.com",
@@ -23963,11 +23964,11 @@
     "slug": "nik-collection",
     "name": "Nik Collection",
     "categoryId": "design-tools",
-    "shortDescription": "Suite de filtres photo professionnels : Analog Efex, Color Efex, Silver Efex.",
-    "shortDescriptionEn": "Professional photo filter suite: Analog Efex, Color Efex, Silver Efex.",
+    "shortDescription": "Suite d'édition photo professionnelle avec filtres avancés et maskage IA, fonctionnant comme plugin Photoshop, Lightroom Classic et Affinity Photo.",
+    "shortDescriptionEn": "Professional photo editing suite with advanced filters and AI masking, available as a plugin for Photoshop, Lightroom Classic, and Affinity Photo.",
     "pricing": {
-      "free": "",
-      "paid": "Achat unique (~149€), licence à vie, mises à jour payantes"
+      "free": "Essai gratuit complet (version d'évaluation) pour tester avant achat. Pas de version gratuite permanente.",
+      "paid": "Licence complète (nouveau client): €89.99 (ou €22.50 x 4 versements PayPal) ; Licence complète (standard): €169.99 (ou €42.50 x 4 versements PayPal) ; Upgrade (Nik Collection 7 ou 8): Montants sur la page officielle"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://nikcollection.dxo.com",
@@ -26929,16 +26930,16 @@
     "slug": "pitch",
     "name": "Pitch",
     "categoryId": "design-tools",
-    "shortDescription": "Créer des présentations modernes et collaboratives pour impressionner les clients.",
-    "shortDescriptionEn": "Create modern and collaborative presentations to impress clients.",
+    "shortDescription": "Plateforme cloud de présentation collaborative avec généra­tion IA de slides, analytics, et intégrations (Slack, Notion, Figma, HubSpot).",
+    "shortDescriptionEn": "Cloud-based collaborative presentation platform with AI-powered slide generation, viewer analytics, and integrations with Slack, Notion, Figma, and HubSpot.",
     "pricing": {
-      "free": "Illimité pour 1 utilisateur (5 présentations)",
-      "paid": "8$/mois par utilisateur (Pro)"
+      "free": "100 crédits IA (une seule fois), présentations illimites, templates custom, partage avec 2 guests externes, 10 GB stockage.",
+      "paid": "Free: Gratuit (100 AI credits, 10GB, 2 external guests) ; Plus: €10/month (500 monthly AI credits, custom fonts, video uploads, 5 external guests) ; Team: €15/month (up to 25 seats, 3 teamspaces, advanced analytics) ; Business: €20/month (up to 200 seats, unlimited features) ; Enterprise: Custom pricing (30+ seats, SSO SAML, dedicated support)"
     },
     "defaultMonthlyPrice": 6.93,
     "affiliateLink": "https://pitch.com",
     "websiteUrl": "https://pitch.com",
-    "ogImageUrl": "https://framerusercontent.com/assets/WJrArV3ktU515VCNK75vEu7SjNg.jpg",
+    "ogImageUrl": "https://framerusercontent.com/images/kvNF1wOwaUfesLU3sLJuiQTHFvw.png?width=650&height=366",
     "logo": "",
     "tool_type": "satellite",
     "host_app": null,
@@ -28640,16 +28641,16 @@
     "slug": "protopie",
     "name": "ProtoPie",
     "categoryId": "design-tools",
-    "shortDescription": "Prototypage interactif avancé sans code. Interactions complexes impossibles dans Figma.",
-    "shortDescriptionEn": "Advanced interactive prototyping without code. Complex interactions impossible in Figma.",
+    "shortDescription": "Plateforme de prototypage alimentée par l'IA pour créer des interactions complexes et tester les prototypes sur des appareils réels (mobile, web, automotive, IoT, jeux).",
+    "shortDescriptionEn": "AI-driven prototyping platform for creating complex interactions and testing prototypes on real devices (mobile, web, automotive, IoT, gaming).",
     "pricing": {
-      "free": "30 jours trial",
-      "paid": "13$/mois (Basic)"
+      "free": "Enregistrement gratuit avec enregistrement d'interactions et liens partageables",
+      "paid": "Free: Gratuit ; Starter: À partir de USD 11/mois ; Enterprise: Montants sur la page officielle"
     },
     "defaultMonthlyPrice": 11.26,
     "affiliateLink": "https://protopie.io",
     "websiteUrl": "https://protopie.io",
-    "ogImageUrl": "https://framerusercontent.com/images/TiXMqJyxaDShixfO2M6qDdTFgpU.jpg",
+    "ogImageUrl": "https://framerusercontent.com/images/FJliBXwqpIzVXZQvEMPcc0lmg5E.webp?width=1403&height=1406",
     "logo": "",
     "tool_type": "satellite",
     "host_app": null,
@@ -30109,16 +30110,16 @@
     "slug": "red-giant-universe",
     "name": "Red Giant Universe",
     "categoryId": "design-tools",
-    "shortDescription": "Bibliothèque Red Giant de transitions, effets et titres pour le montage vidéo.",
-    "shortDescriptionEn": "Red Giant's library of transitions, effects and titles for video editing.",
+    "shortDescription": "Suite de plugin d'effets GPU-accélérés pour After Effects, Premiere Pro, Final Cut Pro et Motion. Propose transitions, effets de mouvement, animations de texte et outils de stylisation pour la production vidéo et motion design.",
+    "shortDescriptionEn": "Suite of GPU-accelerated effects plugins for After Effects, Premiere Pro, Final Cut Pro, and Motion. Provides transitions, motion effects, text animation, and stylization tools for video and motion design.",
     "pricing": {
-      "free": "",
-      "paid": "Via Red Giant Complete (~50$/mois, 599$/an) ou Maxon One."
+      "free": "Essai gratuit de 14 jours ; Maxon One offre également un essai de 14 jours",
+      "paid": "Universe Individual (Monthly): USD 32/mois ; Universe Individual (Annual): USD 214/an ; Red Giant Suite (Monthly): USD 85/mois ; Red Giant Suite (Annual): USD 639/an"
     },
     "defaultMonthlyPrice": 50,
     "affiliateLink": "https://www.maxon.net/red-giant/universe",
     "websiteUrl": "https://www.maxon.net/red-giant/universe",
-    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Universe/_1200x630_crop_center-center_82_none/Universe_GSA_HERO.jpg?mtime=1729010747",
+    "ogImageUrl": "https://maxonassets.imgix.net/images/Products/Universe/Universe_Texturize.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces",
     "logo": "",
     "tool_type": "plugin",
     "host_app": "adobe-premiere-pro",
@@ -30544,11 +30545,11 @@
     "slug": "renderman",
     "name": "RenderMan",
     "categoryId": "design-tools",
-    "shortDescription": "Le moteur de rendu de Pixar, gratuit en non-commercial, légende du cinéma d'animation.",
-    "shortDescriptionEn": "Pixar's render engine, free for non-commercial use, a film-animation legend.",
+    "shortDescription": "Logiciel de rendu professionnel Pixar livrant une qualité cinématographique. Utilisé en production par Pixar pour les films. Offre rendu non-commercial gratuit, licences flexibles (flottantes ou node-locked) pour usage professionnel.",
+    "shortDescriptionEn": "Pixar's professional rendering software delivering feature film quality. Used by Pixar in production. Offers free non-commercial rendering, flexible licensing (floating or node-locked) for professional use.",
     "pricing": {
-      "free": "Gratuit pour usage non-commercial (complet, sans watermark)",
-      "paid": "Licence commerciale 595$ + 250$/an de maintenance."
+      "free": "Gratuit pour tous les usages non-commerciaux",
+      "paid": "Non-Commercial: Gratuit ; Professional License: USD 595 par licence (perpetual) ; Annual Maintenance: USD 250/an (support et upgrades)"
     },
     "defaultMonthlyPrice": 595,
     "affiliateLink": "https://renderman.pixar.com",
@@ -31048,16 +31049,16 @@
     "slug": "revit",
     "name": "Revit",
     "categoryId": "design-tools",
-    "shortDescription": "Le logiciel BIM de référence pour architectes et ingénieurs structure.",
-    "shortDescriptionEn": "The reference BIM software for architects and structural engineers.",
+    "shortDescription": "Logiciel BIM (Building Information Modeling) d'Autodesk pour la conception architecturale, l'ingénierie et la gestion de projets bâtiment. Coordonne plans, élévations, coupes et planifications automatiquement.",
+    "shortDescriptionEn": "Autodesk's BIM (Building Information Modeling) software for architectural design, engineering, and building project management. Automatically coordinates plans, elevations, sections, and schedules.",
     "pricing": {
-      "free": "Aucune version gratuite, essai uniquement",
-      "paid": "Environ 365$/mois ou 2 900$/an, souvent via l'AEC Collection"
+      "free": "Essai gratuit disponible ; version gratuite inexistante, abonnement obligatoire",
+      "paid": "Revit Annual: USD 3005/an ; Revit Monthly: USD 380/mois ; Revit LT Annual: USD 560/an ; Revit LT Monthly: USD 70/mois"
     },
     "defaultMonthlyPrice": 268.47,
     "affiliateLink": "https://autodesk.com/products/revit",
     "websiteUrl": "https://autodesk.com/products/revit",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/revit.jpg",
+    "ogImageUrl": "https://images.ctfassets.net/v7wr16nrr0mz/USDuwSeAOZpDfwimuqRiN/190b88f9077d7fa38fdb74eb0888e351/see-whats-new-autodesk-revit-2025-thumb-788x444.avif",
     "logo": "",
     "tool_type": "metier",
     "host_app": null,
@@ -31153,16 +31154,16 @@
     "slug": "rhino",
     "name": "Rhino",
     "categoryId": "design-tools",
-    "shortDescription": "Modeleur 3D NURBS précis (Rhinoceros) pour design produit, archi et bijouterie.",
-    "shortDescriptionEn": "Precise NURBS 3D modeler (Rhinoceros) for product design, architecture and jewelry.",
+    "shortDescription": "Logiciel de modélisation 3D polyvalent basé sur NURBS. Utilisé en architecture, design industriel, bijouterie, design marin et VFX. Extensible via Grasshopper (programmation visuelle) pour la conception paramétrique.",
+    "shortDescriptionEn": "Versatile NURBS-based 3D modeling software. Used in architecture, industrial design, jewelry, marine design, and VFX. Extensible via Grasshopper (visual programming) for parametric design.",
     "pricing": {
-      "free": "Essai gratuit 90 jours ; licence éducation ~195$",
-      "paid": "Licence perpétuelle ~995$ (achat unique, pas d'abonnement)"
+      "free": "Essai gratuit de 90 jours (pas de carte de crédit requise)",
+      "paid": "Commercial (New): EUR 995 (~USD 995 équivalent, perpétuel) ; Commercial (Upgrade): EUR 595 (licence antérieure requise) ; Student (New): EUR 195 ; Evaluation: Gratuit (90 jours)"
     },
     "defaultMonthlyPrice": 995,
     "affiliateLink": "https://www.rhino3d.com",
     "websiteUrl": "https://www.rhino3d.com",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/rhino.jpg",
+    "ogImageUrl": "https://www.rhino3d.com/en/features/shrinkwrap/thumbnail_hu10919497186582654094.png",
     "logo": "",
     "tool_type": "metier",
     "host_app": null,
@@ -31269,16 +31270,16 @@
     "slug": "rive",
     "name": "Rive",
     "categoryId": "design-tools",
-    "shortDescription": "Animation interactive pour le web et le mobile, alternative avancée à Lottie.",
-    "shortDescriptionEn": "Interactive animation for web and mobile, an advanced alternative to Lottie.",
+    "shortDescription": "Plateforme de design et animation interactive. Unifies design, animation, et codage dans un seul éditeur. Déploiement natif sur iOS, Android, web (React, Flutter), Unreal, Unity sans mockups ni prototypes intermédiaires.",
+    "shortDescriptionEn": "Interactive design and animation platform. Unifies design, animation, and coding in one editor. Native deployment to iOS, Android, web (React, Flutter), Unreal, Unity without mockups or intermediate prototypes.",
     "pricing": {
-      "free": "Conception gratuite dans l'éditeur, projets publics illimités",
-      "paid": "Plan Cadet à 9$/mois, Voyager à 32$/mois pour les équipes"
+      "free": "Plan gratuit avec 3 fichiers collaboratifs et accès limité aux agents IA",
+      "paid": "Free: Gratuit ; Cadet: USD 9/mois par siège (jusqu'à 3 sièges) ; Voyager: USD 32/mois par siège ; Enterprise: Montants sur la page officielle"
     },
     "defaultMonthlyPrice": 9,
     "affiliateLink": "https://rive.app",
     "websiteUrl": "https://rive.app",
-    "ogImageUrl": "https://framerusercontent.com/images/yEWMbP7UtsS81SlkoxTasfabvc.png",
+    "ogImageUrl": "https://framerusercontent.com/images/aTosqj5HowH9kNricIFp8yEKBc.png?width=3432&height=940",
     "logo": "",
     "tool_type": "metier",
     "host_app": null,
@@ -33746,16 +33747,16 @@
     "slug": "sketchup-pro",
     "name": "SketchUp Pro",
     "categoryId": "design-tools",
-    "shortDescription": "Modélisation 3D intuitive pour architectes, décorateurs et scénographes.",
-    "shortDescriptionEn": "Intuitive 3D modelling for architects, interior designers, and set designers.",
+    "shortDescription": "Logiciel de modélisation 3D (Trimble) pour l'architecture, l'aménagement et le design produit, sur bureau, web et mobile.",
+    "shortDescriptionEn": "3D modeling software (Trimble) for architecture, interior design, and product design, on desktop, web, and mobile.",
     "pricing": {
-      "free": "SketchUp Free (version web limitée) et essai",
-      "paid": "Go à ~119$/an, Pro à ~349$/an (version bureau, LayOut)"
+      "free": "SketchUp for Schools gratuit avec un compte éducation Google/Microsoft ; pas de plan gratuit grand public.",
+      "paid": "Go: 10,75 $/mois (annuel) ; Pro: 33,25 $/mois (annuel) ; Studio: 68,25 $/mois (annuel)"
     },
     "defaultMonthlyPrice": 29.44,
     "affiliateLink": "https://sketchup.com",
     "websiteUrl": "https://sketchup.com",
-    "ogImageUrl": "https://images.ctfassets.net/5qimfmsew7zl/CLeItCuQzyar0Ix1BPD8b/7cb6eb778c29ab02b7aca31fc21c0450/SU-Website-Home-S1.jpg",
+    "ogImageUrl": "https://images.ctfassets.net/5qimfmsew7zl/1M12I2Eyw59Y4U4SJqCGin/a46834b0caf27f29ea566755506da7f2/SU2025-Website-NavigationPromo-WhySketchUp.jpg?w=400&h=300&fm=webp",
     "logo": "",
     "tool_type": "metier",
     "host_app": null,
@@ -34316,11 +34317,11 @@
     "slug": "solid-inspector2",
     "name": "Solid Inspector²",
     "categoryId": "design-tools",
-    "shortDescription": "Plugin SketchUp pour vérifier les volumes solides et repérer les problèmes de géométrie.",
-    "shortDescriptionEn": "SketchUp plugin to inspect solids and detect geometry issues.",
+    "shortDescription": "Extension SketchUp gratuite et open-source qui inspecte et répare les groupes/composants solides. Détecte les erreurs de géométrie courantes (trous, arêtes parasites, faces inversées) et offre des corrections automatiques.",
+    "shortDescriptionEn": "Free and open-source SketchUp extension that inspects and repairs solid groups and components. Detects common geometry errors (holes, stray edges, inverted faces) and offers automatic fixes.",
     "pricing": {
-      "free": "Gratuit",
-      "paid": "Don possible"
+      "free": "Extension complètement gratuite. Source code disponible sur GitHub.",
+      "paid": "Voir le tarif officiel."
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://extensions.sketchup.com/en/content/solid-inspector",
@@ -34490,16 +34491,16 @@
     "slug": "specify",
     "name": "Specify",
     "categoryId": "design-tools",
-    "shortDescription": "Synchronisation de design tokens entre outils design et code.",
-    "shortDescriptionEn": "Design token synchronization between design tools and code.",
+    "shortDescription": "Plateforme de distribution de design tokens et d'assets qui relie les sources de design aux dépôts et outils de développement.",
+    "shortDescriptionEn": "Design token and asset distribution platform connecting design sources with development repositories and tools.",
     "pricing": {
-      "free": "Gratuit ou plan gratuit disponible",
-      "paid": null
+      "free": "Aucun plan gratuit permanent affiché ; essai à confirmer lors de l'inscription.",
+      "paid": "Essentials: 69 $ / mois, 1 utilisateur et 1 dépôt ; Teams: 134 $ / mois, 4 utilisateurs et 2 dépôts ; Enterprise: Sur devis"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://specifyapp.com",
-    "ogImageUrl": "https://framerusercontent.com/images/fP6oA45bf0QBRGhw5Gmi0VYg.jpg",
+    "ogImageUrl": "https://framerusercontent.com/images/Mf3WhKlT44JPgm014wOOq9AHI4.png",
     "logo": "",
     "tool_type": "satellite",
     "host_app": null,
@@ -34509,7 +34510,11 @@
     "verticals": [
       "creative"
     ],
-    "relevantFor": [],
+    "relevantFor": [
+      "Équipes design system",
+      "Product designers",
+      "Développeurs frontend"
+    ],
     "freeAlternative": null,
     "substitutable": true,
     "betterAlternative": null
@@ -37536,16 +37541,16 @@
     "slug": "topaz-gigapixel",
     "name": "Topaz Gigapixel AI",
     "categoryId": "design-tools",
-    "shortDescription": "Upscaling IA d'images jusqu'à 6x avec préservation des détails. Le meilleur du marché.",
-    "shortDescriptionEn": "AI image upscaling up to 6x with detail preservation. The market leader.",
+    "shortDescription": "Logiciel d'agrandissement d'images alimenté par l'IA, capable d'augmenter les photos jusqu'à 16x tout en conservant les détails et la qualité. Disponible pour Windows et macOS, avec intégration aux plugins Photoshop et Lightroom.",
+    "shortDescriptionEn": "AI-powered desktop image upscaling software that enlarges images up to 16x while maintaining detail and quality. Available for Windows and macOS with Adobe Photoshop and Lightroom Classic plugin integration.",
     "pricing": {
-      "free": "",
-      "paid": "Environ 99$/an (modèle passé à l'abonnement en 2025), licences perpétuelles antérieures conservées"
+      "free": "Pas de version gratuite. Accès par abonnement uniquement.",
+      "paid": "Personal (mensuel): $29/mois ; Personal (annuel): $149/an ($12.42/mois) ; Pro (mensuel): $54/mois ; Pro (annuel): $499/an ($41.58/mois) ; Topaz Studio Bundle: $69/mois ou $399/an"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://topazlabs.com/gigapixel",
     "websiteUrl": "https://topazlabs.com/gigapixel",
-    "ogImageUrl": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/68ca9105d4f07b7d38a3f7f7_opengraph-topaz-giga.webp",
+    "ogImageUrl": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/683f6e96723281d501d14889_june-giga-home-before.webp",
     "logo": "",
     "tool_type": "plugin",
     "host_app": "photoshop",
@@ -38211,16 +38216,16 @@
     "slug": "twinmotion",
     "name": "Twinmotion",
     "categoryId": "design-tools",
-    "shortDescription": "Visualisation 3D temps réel d'Epic pour l'archviz, simple et gratuite sous 1M$ de CA.",
-    "shortDescriptionEn": "Epic's real-time 3D visualization for archviz, simple and free under $1M revenue.",
+    "shortDescription": "Logiciel de visualisation 3D temps réel par Epic Games, permettant de convertir des modèles 3D (SketchUp, Revit, 3ds Max, Blender, Rhino) en images et vidéos photogrammétriques haute qualité. Éditeur pour l'immobilier, l'architecture, le design de produit et le previs VFX.",
+    "shortDescriptionEn": "Real-time 3D visualization software by Epic Games that converts 3D models (SketchUp, Revit, 3ds Max, Blender, Rhino) into photorealistic images and videos. Editor for real estate, architecture, product design, and VFX previz.",
     "pricing": {
-      "free": "Gratuit pour les structures sous 1M$ de CA",
-      "paid": "445$/an au-delà (jusqu'à 1 850$/an avec Unreal et RealityCapture)."
+      "free": "Gratuit pour les entreprises avec CA <1M$ annuel, pour les étudiants, éducateurs et hobbyistes. Accès complet au logiciel sans limitations de rendu ou d'export.",
+      "paid": "Free (revenu <$1M/an): Gratuit ; Commercial (revenu >$1M/an ou Twinmotion Cloud): $445/an par siège"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://www.twinmotion.com",
     "websiteUrl": "https://www.twinmotion.com",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/twinmotion.jpg",
+    "ogImageUrl": "/og-screenshots/twinmotion.jpg",
     "logo": "",
     "tool_type": "metier",
     "host_app": null,
@@ -39006,16 +39011,16 @@
     "slug": "v-ray",
     "name": "V-Ray",
     "categoryId": "design-tools",
-    "shortDescription": "Moteur de rendu photoréaliste de référence (Chaos), roi de l'archviz et du produit.",
-    "shortDescriptionEn": "The reference photorealistic render engine (Chaos), king of archviz and product viz.",
+    "shortDescription": "Moteur de rendu photogrammetrique récipiendaire d'Emmy et d'Academy Awards, développé par Chaos. Utilisé pour l'architecture, le design de produit, le VFX et les studios de cinéma. Disponible pour Revit, SketchUp, Rhino, 3ds Max, Cinema 4D et Blender.",
+    "shortDescriptionEn": "Emmy and Academy Award-winning photorealistic rendering engine developed by Chaos. Used for architecture, product design, VFX, and film studios. Available for Revit, SketchUp, Rhino, 3ds Max, Cinema 4D, and Blender.",
     "pricing": {
-      "free": "Essai gratuit",
-      "paid": "Solo 514,80$/an (~43$/mois) ou Premium 718,80$/an. Abonnement Chaos."
+      "free": "Pas de version gratuite. Accès uniquement par abonnement au plan choisi.",
+      "paid": "Solo (mensuel): €39.50/mois ; Solo (annuel): €474/an ; Premium (mensuel): €119/mois ; Premium (annuel): €706.80/an ; Collection (mensuel): €213/mois ; Collection (annuel): €1,138.80/an"
     },
     "defaultMonthlyPrice": 43,
     "affiliateLink": "https://www.chaos.com/vray",
     "websiteUrl": "https://www.chaos.com/vray",
-    "ogImageUrl": "https://static.chaos.com/images/assets/000/025/423/articles_2_columns/v-ray-product-archviz-og-1200x630.png?1781319504",
+    "ogImageUrl": "https://static.chaos.com/images/assets/000/025/178/image/benefit-v-ray-archviz-award-winning-1140x770.png?1779737136",
     "logo": "",
     "tool_type": "metier",
     "host_app": null,
@@ -41099,16 +41104,16 @@
     "slug": "x-particles",
     "name": "X-Particles",
     "categoryId": "design-tools",
-    "shortDescription": "Système de particules et VFX avancé pour Cinema 4D (Insydium).",
-    "shortDescriptionEn": "Advanced particle and VFX system for Cinema 4D (Insydium).",
+    "shortDescription": "Plugin avancé de particules et VFX pour Cinema 4D, basé sur un système de règles (Questions et Actions). Permet de contrôler les simulations de particules, fumée/feu, fluides, cloth et destruction. Désormais inclus dans l'abonnement Fused d'Insydium.",
+    "shortDescriptionEn": "Advanced particle and VFX plugin for Cinema 4D based on a rules system (Questions and Actions). Enables control over particle simulations, smoke/fire, fluids, cloth, and destruction effects. Now included in Insydium's Fused subscription.",
     "pricing": {
-      "free": "Démo 15 jours",
-      "paid": "Via l'abonnement Insydium Fused : env. 38€/mois en 3 mois, ou 36€/mois en annuel (~390£/an)."
+      "free": "Pas de version gratuite. Accès uniquement par abonnement Fused. Cinema 4D inclut maintenant nativement des outils GPU modernes (particules, fluides, cloth).",
+      "paid": "Fused Annual Subscription: $565.50/an (€540 approx.) ; Fused Monthly: Montants sur la page officielle"
     },
     "defaultMonthlyPrice": 38,
     "affiliateLink": "https://insydium.ltd/products/x-particles/",
     "websiteUrl": "https://insydium.ltd/products/x-particles/",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/x-particles.jpg",
+    "ogImageUrl": "https://insydium.ltd/site/assets/files/2703/particlefx.jpg",
     "logo": "",
     "tool_type": "plugin",
     "host_app": "cinema-4d",
@@ -41612,16 +41617,16 @@
     "slug": "zeplin",
     "name": "Zeplin",
     "categoryId": "design-tools",
-    "shortDescription": "Handoff design-développement avec specs automatiques et assets exportés.",
-    "shortDescriptionEn": "Design-development handoff with automatic specs and exported assets.",
+    "shortDescription": "Plateforme de livraison de design pour teams produits. Zeplin documente les designs, mappe les user flows, suit les versions, et génère du code. Inclut AI Design Review pour scanner les couleurs off-system, inconsistances d'espacement, typos, et issues d'accessibilité.",
+    "shortDescriptionEn": "Design delivery platform for product teams. Zeplin documents designs, maps user flows, tracks versions, and generates code. Includes AI Design Review to scan off-system colors, spacing inconsistencies, typos, and accessibility issues.",
     "pricing": {
-      "free": "1 projet",
-      "paid": "8$/mois (Starter)"
+      "free": "Gratuit : 1 projet, 100 screens, utilisateurs illimités, annotations, flows, approvals, 30 jours d'historique de versions.",
+      "paid": "Free: Gratuit ; Basic: 13,75 $ à 118,25 $/mois (selon nombre de projets 1-12) ; Advanced: 12 $ par siège/mois (abonnement annuel) ; Enterprise: Tarification sur demande (contact sales)"
     },
     "defaultMonthlyPrice": 6.93,
     "affiliateLink": "https://zeplin.io",
     "websiteUrl": "https://zeplin.io",
-    "ogImageUrl": "https://cdn.sanity.io/images/wd3e2pma/production/716ae55a149ff63038853cb19d0c17676d406676-1200x600.jpg?rect=29,0,1143,600&amp;w=1200&amp;h=630",
+    "ogImageUrl": "https://cdn.sanity.io/images/wd3e2pma/production/f95e3816865ba574c935c3cb54f97f400efb92d4-4352x2294.jpg?w=1451&q=95",
     "logo": "",
     "tool_type": "satellite",
     "host_app": null,

@@ -1,0 +1,34 @@
+{
+  "slug": "topaz-gigapixel",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://www.topazlabs.com/topaz-gigapixel"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/683f6e96723281d501d14889_june-giga-home-before.webp",
+      "source_page_url": "https://www.topazlabs.com/topaz-gigapixel",
+      "official": true,
+      "alt": "topaz-gigapixel official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/683f6e960978f010549fc483_june-giga-home-after.webp",
+      "source_page_url": "https://www.topazlabs.com/topaz-gigapixel",
+      "official": true,
+      "alt": "topaz-gigapixel official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/69cbe483e48551e8a0c49063_precision-cta-before.webp",
+      "source_page_url": "https://www.topazlabs.com/topaz-gigapixel",
+      "official": true,
+      "alt": "topaz-gigapixel official product view"
+    }
+  ]
+}

@@ -1,10 +1,10 @@
 {
   "slug": "twinmotion",
   "author": "ToolTrim — Mike",
-  "verified_on": "2026-07-24",
+  "verified_on": "2026-08-31",
   "sources": [
     { "label": "Twinmotion (site officiel)", "url": "https://www.twinmotion.com" },
-    { "label": "Epic Games - Twinmotion Licensing Update", "url": "https://resources.imaginit.com/building-solutions-blog/update-on-twinmotion-pricing" }
+    { "label": "Twinmotion Licensing and Pricing", "url": "https://www.twinmotion.com/license?lang=en-US" }
   ],
   "facts": {
     "what": "Logiciel de visualisation 3D temps réel par Epic Games, permettant de convertir des modèles 3D (SketchUp, Revit, 3ds Max, Blender, Rhino) en images et vidéos photogrammétriques haute qualité. Éditeur pour l'immobilier, l'architecture, le design de produit et le previs VFX.",
@@ -13,8 +13,7 @@
     "free_tier": { "exists": true, "detail": "Gratuit pour les entreprises avec CA <1M$ annuel, pour les étudiants, éducateurs et hobbyistes. Accès complet au logiciel sans limitations de rendu ou d'export." },
     "plans": [
       { "name": "Free (revenu <$1M/an)", "price": "Gratuit" },
-      { "name": "Commercial (revenu >$1M/an)", "price": "$445/an par siège" },
-      { "name": "Unreal Engine Suite (revenu >$1M/an)", "price": "$1,850/an par siège (inclut Twinmotion + autres tools)" }
+      { "name": "Commercial (revenu >$1M/an ou Twinmotion Cloud)", "price": "$445/an par siège" }
     ],
     "key_features": [
       "Import de modèles 3D depuis les outils courants (SketchUp, Revit, Blender, etc.)",

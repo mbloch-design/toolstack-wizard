@@ -1,0 +1,41 @@
+{
+  "slug": "luminar-neo",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://skylum.com/luminar"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://media.macphun.com/img/uploads/uploads/skylum/l/sum-26-devices.png",
+      "source_page_url": "https://skylum.com/luminar",
+      "official": true,
+      "alt": "Luminar - Easy Photo Editor | Software for Mac & PC(6)"
+    },
+    {
+      "kind": "image",
+      "url": "https://media.macphun.com/img/uploads/uploads/skylum/l/main-discover-poster-1-min.jpg",
+      "source_page_url": "https://skylum.com/luminar",
+      "official": true,
+      "alt": "Luminar - Easy Photo Editor | Software for Mac & PC(8)"
+    },
+    {
+      "kind": "image",
+      "url": "https://media.macphun.com/img/uploads/uploads/skylum/l/multiple.jpg?f=webp&q=80",
+      "source_page_url": "https://skylum.com/luminar",
+      "official": true,
+      "alt": "Luminar - Easy Photo Editor | Software for Mac & PC(10)"
+    },
+    {
+      "kind": "image",
+      "url": "https://media.macphun.com/img/uploads/uploads/skylum/l/photoshoot__cinematic-lg-min.png",
+      "source_page_url": "https://skylum.com/luminar",
+      "official": true,
+      "alt": "Luminar - Easy Photo Editor | Software for Mac & PC(31)"
+    }
+  ]
+}

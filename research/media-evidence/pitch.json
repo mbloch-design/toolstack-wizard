@@ -1,0 +1,41 @@
+{
+  "slug": "pitch",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://pitch.com/"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://framerusercontent.com/images/kvNF1wOwaUfesLU3sLJuiQTHFvw.png?width=650&height=366",
+      "source_page_url": "https://pitch.com/",
+      "official": true,
+      "alt": "pitch official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://framerusercontent.com/images/YeEONZ55TsZQA1AE5inS1IYY99A.jpg?width=650&height=366",
+      "source_page_url": "https://pitch.com/",
+      "official": true,
+      "alt": "pitch official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://framerusercontent.com/images/JVZqMwsIVKYV4vmub7hhVZhs.png?width=650&height=366",
+      "source_page_url": "https://pitch.com/",
+      "official": true,
+      "alt": "pitch official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://framerusercontent.com/images/OjaRHcrA9lEHtXEC1Na1Jdyvbc.png?width=650&height=366",
+      "source_page_url": "https://pitch.com/",
+      "official": true,
+      "alt": "pitch official product view"
+    }
+  ]
+}

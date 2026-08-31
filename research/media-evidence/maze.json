@@ -1,0 +1,41 @@
+{
+  "slug": "maze",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://maze.co/"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://www.datocms-assets.com/38511/1778262436-promo-ai-study-builder.png?auto=format&dpr=0.94&fit=max&w=640",
+      "source_page_url": "https://maze.co/",
+      "official": true,
+      "alt": "maze official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://www.datocms-assets.com/38511/1781805987-chat-panel.png?auto=format&dpr=0.38&fit=max&w=1080",
+      "source_page_url": "https://maze.co/",
+      "official": true,
+      "alt": "maze official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://www.datocms-assets.com/38511/1781818242-view-single-report.png?auto=format&dpr=0.42&fit=max&w=960",
+      "source_page_url": "https://maze.co/",
+      "official": true,
+      "alt": "maze official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://www.datocms-assets.com/38511/1781818255-chat.png?auto=format&dpr=0.42&fit=max&w=960",
+      "source_page_url": "https://maze.co/",
+      "official": true,
+      "alt": "maze official product view"
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "slug": "specify",
+  "author": "ToolTrim",
+  "verified_on": "2026-08-31",
+  "sources": [
+    {
+      "label": "Specify Pricing",
+      "url": "https://specifyapp.com/pricing"
+    },
+    {
+      "label": "Specify Design Token Format documentation",
+      "url": "https://docs.specifyapp.com/concepts/specify-design-token-format"
+    }
+  ],
+  "facts": {
+    "what": "Plateforme de distribution de design tokens et d'assets qui relie les sources de design aux dépôts et outils de développement.",
+    "what_en": "Design token and asset distribution platform connecting design sources with development repositories and tools.",
+    "pricing_model": "Abonnement mensuel par équipe et nombre de dépôts, avec offre Enterprise sur devis.",
+    "pricing_note": "Essentials à 69 $ par mois, Teams à 134 $ par mois et Enterprise sur devis.",
+    "free_tier": {
+      "exists": false,
+      "detail": "Aucun plan gratuit permanent affiché ; essai à confirmer lors de l'inscription."
+    },
+    "plans": [
+      {
+        "name": "Essentials",
+        "price": "69 $ / mois, 1 utilisateur et 1 dépôt"
+      },
+      {
+        "name": "Teams",
+        "price": "134 $ / mois, 4 utilisateurs et 2 dépôts"
+      },
+      {
+        "name": "Enterprise",
+        "price": "Sur devis"
+      }
+    ],
+    "key_features": [
+      "Synchronisation des design tokens et assets",
+      "Figma et Tokens Studio comme sources",
+      "GitHub comme destination",
+      "CLI et SDK d'automatisation",
+      "Templates et parsers open source",
+      "Format SDTF pour structurer les tokens"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Votre équipe synchronise régulièrement des tokens entre Figma et le code.",
+        "Vous voulez automatiser plusieurs destinations depuis une source commune."
+      ],
+      "avoidIf": [
+        "Votre design system tient dans quelques variables gérées manuellement.",
+        "Le coût mensuel dépasse le temps réellement économisé."
+      ],
+      "threshold": "Specify devient pertinent lorsque la synchronisation manuelle des tokens crée des erreurs ou mobilise plusieurs personnes chaque semaine."
+    },
+    "pros": [
+      "Automatisation entre design et développement.",
+      "Sources et destinations illimitées dans les plans affichés.",
+      "CLI, SDK et format de tokens documenté."
+    ],
+    "cons": [
+      "Pas de plan gratuit permanent clairement affiché.",
+      "Nombre d'utilisateurs et de dépôts limité dans les plans d'entrée.",
+      "Configuration initiale exigeante pour une petite équipe."
+    ],
+    "use_cases": [
+      "Distribuer les variables Figma vers GitHub.",
+      "Automatiser la transformation de tokens pour plusieurs plateformes.",
+      "Maintenir un design system partagé entre designers et développeurs."
+    ],
+    "relevant_for": [
+      "Équipes design system",
+      "Product designers",
+      "Développeurs frontend"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "Your team regularly synchronizes tokens between Figma and code.",
+        "You want to automate multiple destinations from one shared source."
+      ],
+      "avoidIf": [
+        "Your design system only contains a few manually managed variables.",
+        "The monthly cost exceeds the time the workflow actually saves."
+      ],
+      "threshold": "Specify becomes worthwhile when manual token synchronization creates errors or takes several people time every week."
+    },
+    "pros": [
+      "Automation between design and development.",
+      "Unlimited sources and destinations in the displayed plans.",
+      "Documented CLI, SDK, and token format."
+    ],
+    "cons": [
+      "No clearly advertised permanent free plan.",
+      "Entry plans limit users and repositories.",
+      "Initial setup can be demanding for a small team."
+    ],
+    "use_cases": [
+      "Distribute Figma variables to GitHub.",
+      "Automate token transformations for several platforms.",
+      "Maintain a shared design system across designers and developers."
+    ]
+  }
+}

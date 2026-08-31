@@ -1,0 +1,285 @@
+{
+  "batch": "review-design-tools-critical-003",
+  "current": {
+    "affiliate_url": "https://lumion.com",
+    "alternatives": [
+      "enscape",
+      "d5-render",
+      "twinmotion"
+    ],
+    "category": "design-tools",
+    "cons": [
+      "Licence perpétuelle coûteuse (facturé annuellement).",
+      "Moins de détail ultime que les outils de ray-tracing (V-Ray, Octane).",
+      "Apprentissage requis pour optimiser les rendus.",
+      "Nécessite du matériel décent (GPU pour temps réel)."
+    ],
+    "cons_en": [
+      "Expensive perpetual license (billed annually).",
+      "Less ultimate detail than ray-tracing tools (V-Ray, Octane).",
+      "Learning curve to optimize renders.",
+      "Requires decent hardware (GPU for real-time)."
+    ],
+    "host_app": null,
+    "id": "lumion",
+    "long_description": "Lumion, c'est le moteur de rendu archviz qui mise tout sur le spectaculaire et la rapidité. Sa force, c'est une énorme bibliothèque d'assets prête à l'emploi (végétation, personnages, voitures, météo, effets atmosphériques) et un rendu très cinématique : en quelques clics, tu transformes un modèle nu en une scène vivante avec une belle lumière et une ambiance. C'est l'outil de ceux qui veulent impressionner le client.\n\nIl fonctionne en standalone (tu importes ton modèle) avec un LiveSync depuis SketchUp, Revit, Rhino ou ArchiCAD. Côté prix, c'est plus haut de gamme : Lumion Standard autour de 499$/an (environ 42$/mois) et Lumion Pro autour de 999$/an, ce qui le place au-dessus d'Enscape et de D5 Render.\n\nLe vrai arbitrage, c'est le rapport qualité-prix. Lumion offre sans doute le rendu le plus atmosphérique et la plus grosse bibliothèque, mais il est cher. Enscape est plus intégré (live-sync), D5 Render plus abordable et rapide, et Twinmotion gratuit sous 1M$ de CA pour une qualité proche. Lumion se justifie si l'ambiance cinématique et la bibliothèque d'assets sont décisives pour tes livrables.",
+    "long_description_en": "Lumion is the archviz render engine that bets everything on spectacle and speed. Its strength is a huge ready-to-use asset library (vegetation, people, cars, weather, atmospheric effects) and a very cinematic look: in a few clicks, you turn a bare model into a living scene with beautiful light and atmosphere. It's the tool for those who want to impress the client.\n\nIt runs standalone (you import your model) with LiveSync from SketchUp, Revit, Rhino or ArchiCAD. On price, it's higher-end: Lumion Standard around $499/year (about $42/month) and Lumion Pro around $999/year, placing it above Enscape and D5 Render.\n\nThe real trade-off is value for money. Lumion arguably offers the most atmospheric rendering and the biggest library, but it's expensive. Enscape is more integrated (live-sync), D5 Render more affordable and fast, and Twinmotion is free under $1M revenue for near-comparable quality. Lumion earns its place if cinematic atmosphere and the asset library are decisive for your deliverables.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://a.storyblok.com/f/180614/1200x630/eb0a9033ab/social_share_landscape.jpg"
+    },
+    "name": "Lumion",
+    "pricing": {
+      "free": "Essai gratuit",
+      "paid": "Standard ~499$/an (~42$/mois), Pro ~999$/an."
+    },
+    "pricing_en": {
+      "free": "Free trial",
+      "paid": "Standard ~$499/year (~$42/month), Pro ~$999/year."
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Standard ~499$/an (~42$/mois) ; Pro ~999$/an"
+      ],
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Entry paid plan",
+      "compare_price_monthly_eur": 42,
+      "location_sensitive": false,
+      "official_source_url": "https://lumion.com",
+      "price_reliability": "low",
+      "source_domain": "lumion.com",
+      "usage_sensitive": false,
+      "verification_status": "official_site_only",
+      "verified_on": "2026-06-17"
+    },
+    "pros": [
+      "Rendu temps réel très rapide, itération immédiate.",
+      "Intégration native avec SketchUp, Revit, AutoCAD.",
+      "Essai gratuit renouvelable 14 jours à chaque nouvelle version.",
+      "Accès Lumion Cloud pour collaboration d'équipe.",
+      "Édition View gratuite pour visualisation CAO simple.",
+      "Licences éducatives gratuites pour écoles."
+    ],
+    "pros_en": [
+      "Very fast real-time rendering with immediate iteration.",
+      "Native integration with SketchUp, Revit, AutoCAD.",
+      "Free 14-day trial renewable with each new version.",
+      "Lumion Cloud access for team collaboration.",
+      "Free View edition for simple CAD visualization.",
+      "Free educational licenses for schools."
+    ],
+    "short_description": "Rendu architectural 3D ultra-rapide et cinématique, énorme bibliothèque d'assets.",
+    "short_description_en": "Fast, cinematic architectural 3D rendering with a massive asset library.",
+    "slug": "lumion",
+    "source_url": "https://lumion.com",
+    "source_verified_on": "2026-06-17",
+    "use_cases": [
+      "Générer des rendus photoréalistes pour présentations clients.",
+      "Créer des vidéos de walkthrough architecturales.",
+      "Visualiser rapidement un projet BIM Revit.",
+      "Produire des images pour concours architecture et propositions."
+    ],
+    "use_cases_en": [
+      "Generate photorealistic renderings for client presentations.",
+      "Create architectural walkthrough videos.",
+      "Quickly visualize a Revit BIM project.",
+      "Produce images for architecture competitions and proposals."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous cherchez un rendu gratuit pour une visualisation ponctuelle.",
+        "Vous avez besoin d'une édition finale ultra-détaillée (vfx, cinéma).",
+        "Vous travaillez surtout en modélisation 3D généraliste (pas architecture)."
+      ],
+      "keepIf": [
+        "Vous produisez régulièrement des rendus photoréalistes pour des projets architecturaux.",
+        "Vous cherchez du rendu temps réel rapide plutôt que du ray-tracing long.",
+        "Vous travaillez avec CAD/BIM et avez besoin d'une intégration native."
+      ],
+      "threshold": "Lumion s'impose pour les architectes et studios de visualization cherchant du rendu rapide et professionnel ; pour une utilisation ponctuelle ou gratuite, d'autres solutions conviennent mieux."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You're looking for free rendering for one-time visualization.",
+        "You need final ultra-detailed output (VFX, film).",
+        "You work mainly in generalist 3D modeling (not architecture)."
+      ],
+      "keepIf": [
+        "You regularly produce photorealistic renderings for architectural projects.",
+        "You prefer real-time rendering speed over long ray-tracing.",
+        "You work with CAD/BIM and need native integration."
+      ],
+      "threshold": "Lumion makes sense for architects and visualization studios wanting fast, professional rendering; for occasional or free needs, other tools fit better."
+    },
+    "website_url": "https://lumion.com"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Expensive perpetual license (billed annually).",
+        "Less ultimate detail than ray-tracing tools (V-Ray, Octane).",
+        "Learning curve to optimize renders.",
+        "Requires decent hardware (GPU for real-time)."
+      ],
+      "pros": [
+        "Very fast real-time rendering with immediate iteration.",
+        "Native integration with SketchUp, Revit, AutoCAD.",
+        "Free 14-day trial renewable with each new version.",
+        "Lumion Cloud access for team collaboration.",
+        "Free View edition for simple CAD visualization.",
+        "Free educational licenses for schools."
+      ],
+      "use_cases": [
+        "Generate photorealistic renderings for client presentations.",
+        "Create architectural walkthrough videos.",
+        "Quickly visualize a Revit BIM project.",
+        "Produce images for architecture competitions and proposals."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You're looking for free rendering for one-time visualization.",
+          "You need final ultra-detailed output (VFX, film).",
+          "You work mainly in generalist 3D modeling (not architecture)."
+        ],
+        "keepIf": [
+          "You regularly produce photorealistic renderings for architectural projects.",
+          "You prefer real-time rendering speed over long ray-tracing.",
+          "You work with CAD/BIM and need native integration."
+        ],
+        "threshold": "Lumion makes sense for architects and visualization studios wanting fast, professional rendering; for occasional or free needs, other tools fit better."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Lumion View gratuit pour CAO basique. Essai gratuit 14 jours pour Lumion Pro sans carte bancaire requise.",
+        "exists": true
+      },
+      "key_features": [
+        "Rendu en temps réel des modèles architecturaux",
+        "Importation native CAD/BIM (SketchUp, Revit, AutoCAD)",
+        "Bibliothèque de matériaux, objets et environnements photophoniques",
+        "Génération d'animations et vidéos de walkthrough",
+        "Accès à Lumion Cloud pour collaboration",
+        "Essai renouvelable tous les 14 jours avec nouvelles versions",
+        "Licences éducatives gratuites pour étudiants et enseignants"
+      ],
+      "plans": [
+        {
+          "name": "Lumion View",
+          "price": "Gratuit (rendu CAO basique en temps réel)"
+        },
+        {
+          "name": "Lumion Pro",
+          "price": "899 € ou GBP par an (licence utilisateur nommé ou flottante)"
+        },
+        {
+          "name": "Lumion Studio",
+          "price": "1049 € ou GBP par an (licence flottante pour équipes)"
+        }
+      ],
+      "pricing_model": "Licence perpétuelle avec tarification annuelle. Trois éditions : View (gratuit pour CAO simple), Pro (à usage professionnel), Studio (licence flottante).",
+      "what": "Logiciel de rendu 3D temps réel spécialisé dans la visualisation architecturale, transformant rapidement les modèles CAO/BIM en images et animations photoréalistes.",
+      "what_en": "Real-time 3D rendering software specialized in architectural visualization, quickly transforming CAD/BIM models into photorealistic images and animations."
+    },
+    "fr": {
+      "cons": [
+        "Licence perpétuelle coûteuse (facturé annuellement).",
+        "Moins de détail ultime que les outils de ray-tracing (V-Ray, Octane).",
+        "Apprentissage requis pour optimiser les rendus.",
+        "Nécessite du matériel décent (GPU pour temps réel)."
+      ],
+      "pros": [
+        "Rendu temps réel très rapide, itération immédiate.",
+        "Intégration native avec SketchUp, Revit, AutoCAD.",
+        "Essai gratuit renouvelable 14 jours à chaque nouvelle version.",
+        "Accès Lumion Cloud pour collaboration d'équipe.",
+        "Édition View gratuite pour visualisation CAO simple.",
+        "Licences éducatives gratuites pour écoles."
+      ],
+      "relevant_for": [
+        "Architectes",
+        "Studios de visualization",
+        "Designers d'intérieur",
+        "Planificateurs urbains",
+        "Étudiants en architecture"
+      ],
+      "use_cases": [
+        "Générer des rendus photoréalistes pour présentations clients.",
+        "Créer des vidéos de walkthrough architecturales.",
+        "Visualiser rapidement un projet BIM Revit.",
+        "Produire des images pour concours architecture et propositions."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous cherchez un rendu gratuit pour une visualisation ponctuelle.",
+          "Vous avez besoin d'une édition finale ultra-détaillée (vfx, cinéma).",
+          "Vous travaillez surtout en modélisation 3D généraliste (pas architecture)."
+        ],
+        "keepIf": [
+          "Vous produisez régulièrement des rendus photoréalistes pour des projets architecturaux.",
+          "Vous cherchez du rendu temps réel rapide plutôt que du ray-tracing long.",
+          "Vous travaillez avec CAD/BIM et avez besoin d'une intégration native."
+        ],
+        "threshold": "Lumion s'impose pour les architectes et studios de visualization cherchant du rendu rapide et professionnel ; pour une utilisation ponctuelle ou gratuite, d'autres solutions conviennent mieux."
+      }
+    },
+    "slug": "lumion",
+    "sources": [
+      {
+        "label": "Lumion — logiciel de rendu 3D pour architectes",
+        "url": "https://lumion.com"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-003",
+    "batch_position": 5,
+    "blockers": [],
+    "catalog_hash": "sha256:0efc254ebc10f9952d435519743eed52186959f8af65ccb991e95f4c806f278b",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:5c7ccef12fd42065537c587a52a316cf391a49f5db6915999ad191ec77e84db9",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Lumion",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:d94c4bb0754201f36f7c497e65a06be32d96baaf76c7dbf3d4c0d95930151e1b",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "lumion",
+    "source_url": "https://lumion.com",
+    "source_verified_on": "2026-06-17",
+    "status": "QUEUED"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "slug": "figma-tokens",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://tokens.studio/"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://framerusercontent.com/images/dKla9Z5N984BrKpKzDUgzZldm7s.png?scale-down-to=512&width=1332&height=1706",
+      "source_page_url": "https://tokens.studio/",
+      "official": true,
+      "alt": "figma-tokens official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://framerusercontent.com/images/U6XxG0IKBx92sGG0fO4lqUfo.png?width=776&height=419",
+      "source_page_url": "https://tokens.studio/",
+      "official": true,
+      "alt": "figma-tokens official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://framerusercontent.com/images/OJky06nA4afzCfSJHu5uR1CEF2o.png?width=2560&height=1440",
+      "source_page_url": "https://tokens.studio/",
+      "official": true,
+      "alt": "figma-tokens official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://framerusercontent.com/images/ZbUviOhRzvlUmTSKs3MpZmQQjU4.png?width=2560&height=1440",
+      "source_page_url": "https://tokens.studio/",
+      "official": true,
+      "alt": "figma-tokens official product view"
+    }
+  ]
+}

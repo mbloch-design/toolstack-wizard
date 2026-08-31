@@ -1,0 +1,34 @@
+{
+  "slug": "motion-bro",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://motionbro.com/products/free-motion-bro-presets/"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://motionbro.com/wp-content/uploads/2022/12/free-motion-bro-pack-cover.jpg.webp",
+      "official": true,
+      "alt": "Free Motion Bro presets",
+      "source_page_url": "https://motionbro.com/products/free-motion-bro-presets/"
+    },
+    {
+      "kind": "image",
+      "url": "https://motionbro.com/wp-content/uploads/2023/10/Simple-Slide.jpg.webp",
+      "official": true,
+      "alt": "Motion Bro Simple Slide transitions",
+      "source_page_url": "https://motionbro.com/products/free-motion-bro-presets/"
+    },
+    {
+      "kind": "image",
+      "url": "https://motionbro.com/wp-content/uploads/2022/03/simple-slide-cover.jpg.webp",
+      "official": true,
+      "alt": "Motion Bro transition pack",
+      "source_page_url": "https://motionbro.com/products/free-motion-bro-presets/"
+    }
+  ]
+}

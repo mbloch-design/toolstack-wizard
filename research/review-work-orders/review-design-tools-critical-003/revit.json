@@ -1,0 +1,296 @@
+{
+  "batch": "review-design-tools-critical-003",
+  "current": {
+    "affiliate_url": "https://autodesk.com/products/revit",
+    "alternatives": [
+      "archicad",
+      "sketchup-pro"
+    ],
+    "category": "design-tools",
+    "cons": [
+      "Abonnement coûteux, difficile à absorber pour une petite structure.",
+      "Coûts supplémentaires (BIM 360, add-ins, hardware puissant).",
+      "Courbe d'apprentissage très raide pour débutants.",
+      "Consomme beaucoup de ressources système.",
+      "Pas d'option gratuite permanente."
+    ],
+    "cons_en": [
+      "Expensive subscription, hard to absorb for a small practice.",
+      "Additional costs (BIM 360, add-ins, powerful hardware).",
+      "Very steep learning curve for beginners.",
+      "Resource-intensive system requirements.",
+      "No permanent free option."
+    ],
+    "host_app": null,
+    "id": "revit",
+    "long_description": "Revit, c'est le logiciel de référence du BIM (Building Information Modeling), l'outil central des cabinets d'architecture et des bureaux d'études structure et fluides (MEP). Contrairement à un simple logiciel de dessin, Revit construit une maquette numérique intelligente : chaque mur, poteau ou gaine porte des informations, et toute modification se répercute automatiquement sur les plans, coupes et nomenclatures. C'est ce qui en a fait le standard de la conception de bâtiment en équipe.\n\nLe prix est à la hauteur de son positionnement : il n'y a pas de version gratuite, et l'abonnement Autodesk tourne autour de 365$/mois ou 2 900$/an, souvent pris via l'AEC Collection (qui regroupe Revit, AutoCAD et d'autres). C'est un investissement lourd, justifié seulement par un usage professionnel régulier.\n\nÀ qui ça s'adresse : aux architectes, ingénieurs et dessinateurs qui travaillent sur des projets de bâtiment en BIM, souvent parce que le client ou la réglementation l'exigent. Pour de la 3D d'architecture intérieure ou de la présentation rapide, SketchUp est bien plus léger et moins cher. ArchiCAD est le principal concurrent direct sur le BIM. Revit reste incontournable dès que le BIM collaboratif est au cœur du métier.",
+    "long_description_en": "Revit is the reference BIM (Building Information Modeling) software, the central tool of architecture firms and structural and MEP engineering offices. Unlike a simple drawing tool, Revit builds an intelligent digital model: each wall, column or duct carries information, and any change propagates automatically to plans, sections and schedules. That's what made it the standard for team building design.\n\nThe price matches its positioning: there's no free version, and the Autodesk subscription runs around $365/month or $2,900/year, often bought via the AEC Collection (which bundles Revit, AutoCAD and others). It's a heavy investment, justified only by regular professional use.\n\nWho it's for: architects, engineers and drafters working on BIM building projects, often because the client or regulations require it. For interior architecture 3D or quick presentation, SketchUp is far lighter and cheaper. ArchiCAD is the main direct competitor on BIM. Revit remains essential once collaborative BIM is at the heart of the job.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://tooltrim.com/og-screenshots/revit.jpg"
+    },
+    "name": "Revit",
+    "pricing": {
+      "free": "Aucune version gratuite, essai uniquement",
+      "paid": "Environ 365$/mois ou 2 900$/an, souvent via l'AEC Collection"
+    },
+    "pricing_en": {
+      "free": "No free version, trial only",
+      "paid": "Around $365/month or $2,900/year, often via the AEC Collection"
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Aucune version gratuite, essai uniquement",
+        "Environ 365$/mois ou 2 900$/an, souvent via l'AEC Collection"
+      ],
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Entry paid plan",
+      "compare_price_monthly_eur": 268.47,
+      "location_sensitive": false,
+      "official_source_url": "https://autodesk.com/products/revit",
+      "price_reliability": "low",
+      "source_domain": "autodesk.com",
+      "usage_sensitive": false,
+      "verification_status": "official_site_only",
+      "verified_on": "2026-06-15"
+    },
+    "pros": [
+      "Coordination automatique complète des documents BIM.",
+      "Norme industrie reconnu en architecture professionnelle.",
+      "Collaboration cloud native (BIM 360).",
+      "Nombreuses ressources de formation disponibles.",
+      "Intégration avec suite Autodesk.",
+      "Gestion de projet intégrée."
+    ],
+    "pros_en": [
+      "Complete automatic coordination of BIM documents.",
+      "Industry-recognized standard in professional architecture.",
+      "Native cloud collaboration (BIM 360).",
+      "Extensive training resources available.",
+      "Integration with Autodesk suite.",
+      "Built-in project management."
+    ],
+    "short_description": "Le logiciel BIM de référence pour architectes et ingénieurs structure.",
+    "short_description_en": "The reference BIM software for architects and structural engineers.",
+    "slug": "revit",
+    "source_url": "https://autodesk.com/products/revit",
+    "source_verified_on": "2026-06-15",
+    "use_cases": [
+      "Concevoir et coordonner les plans d'un immeuble de logements.",
+      "Gérer la documentation BIM d'un projet d'infrastructure.",
+      "Collaborer avec structure et MEP sur un projet complexe."
+    ],
+    "use_cases_en": [
+      "Design and coordinate plans for a residential building.",
+      "Manage BIM documentation for an infrastructure project.",
+      "Collaborate with structure and MEP on a complex project."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous faites du design conceptuel léger sans besoin BIM avancé.",
+        "Vous avez un budget très limité (abonnement coûteux).",
+        "Vous travaillez seul sur des petits projets.",
+        "Vous préférez une solution open source ou moins lourde (Blender, Sketchup)."
+      ],
+      "keepIf": [
+        "Vous travaillez en architecture professionnelle ou ingénierie bâtiment.",
+        "Vous avez besoin de coordination automatique plans/coupes/élévations.",
+        "Votre équipe collabore sur des projets BIM complexes.",
+        "Vous vous intégrez dans un écosystème Autodesk (AutoCAD, etc.)."
+      ],
+      "threshold": "Revit s'impose pour la pratique BIM professionnelle en architecture/ingénierie ; pour design leger ou petits projets, SketchUp ou Blender suffisent."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You do lightweight conceptual design without advanced BIM needs.",
+        "You have a very tight budget (expensive subscription).",
+        "You work solo on small projects.",
+        "You prefer an open source or lighter solution (Blender, Sketchup)."
+      ],
+      "keepIf": [
+        "You work in professional architecture or building engineering.",
+        "You need automatic coordination of plans, sections, elevations.",
+        "Your team collaborates on complex BIM projects.",
+        "You integrate with the Autodesk ecosystem (AutoCAD, etc.)."
+      ],
+      "threshold": "Revit is essential for professional BIM practice in architecture/engineering; for light design or small projects, SketchUp or Blender suffice."
+    },
+    "website_url": "https://autodesk.com/products/revit"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Expensive subscription, hard to absorb for a small practice.",
+        "Additional costs (BIM 360, add-ins, powerful hardware).",
+        "Very steep learning curve for beginners.",
+        "Resource-intensive system requirements.",
+        "No permanent free option."
+      ],
+      "pros": [
+        "Complete automatic coordination of BIM documents.",
+        "Industry-recognized standard in professional architecture.",
+        "Native cloud collaboration (BIM 360).",
+        "Extensive training resources available.",
+        "Integration with Autodesk suite.",
+        "Built-in project management."
+      ],
+      "use_cases": [
+        "Design and coordinate plans for a residential building.",
+        "Manage BIM documentation for an infrastructure project.",
+        "Collaborate with structure and MEP on a complex project."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You do lightweight conceptual design without advanced BIM needs.",
+          "You have a very tight budget (expensive subscription).",
+          "You work solo on small projects.",
+          "You prefer an open source or lighter solution (Blender, Sketchup)."
+        ],
+        "keepIf": [
+          "You work in professional architecture or building engineering.",
+          "You need automatic coordination of plans, sections, elevations.",
+          "Your team collaborates on complex BIM projects.",
+          "You integrate with the Autodesk ecosystem (AutoCAD, etc.)."
+        ],
+        "threshold": "Revit is essential for professional BIM practice in architecture/engineering; for light design or small projects, SketchUp or Blender suffice."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Essai gratuit disponible ; version gratuite inexistante, abonnement obligatoire",
+        "exists": false
+      },
+      "key_features": [
+        "Modélisation BIM 3D paramétrique complète",
+        "Génération automatique de plans, élévations, coupes, nomenclatures",
+        "Collaboration en temps réel via BIM 360 (cloud Autodesk)",
+        "Outils d'analyse structurelle et MEP intégrés",
+        "Compatibilité avec les plugins et API",
+        "Support de la visualisation et du rendu",
+        "Gestion de projet et planification intégrées"
+      ],
+      "plans": [
+        {
+          "name": "Revit Annual",
+          "price": "USD 3005/an"
+        },
+        {
+          "name": "Revit Monthly",
+          "price": "USD 380/mois"
+        },
+        {
+          "name": "Revit LT Annual",
+          "price": "USD 560/an"
+        },
+        {
+          "name": "Revit LT Monthly",
+          "price": "USD 70/mois"
+        }
+      ],
+      "pricing_model": "Abonnement annuel ou mensuel obligatoire. Options Revit LT plus économiques. Accès par token (pay-as-you-go) avec Flex disponible.",
+      "what": "Logiciel BIM (Building Information Modeling) d'Autodesk pour la conception architecturale, l'ingénierie et la gestion de projets bâtiment. Coordonne plans, élévations, coupes et planifications automatiquement.",
+      "what_en": "Autodesk's BIM (Building Information Modeling) software for architectural design, engineering, and building project management. Automatically coordinates plans, elevations, sections, and schedules."
+    },
+    "fr": {
+      "cons": [
+        "Abonnement coûteux, difficile à absorber pour une petite structure.",
+        "Coûts supplémentaires (BIM 360, add-ins, hardware puissant).",
+        "Courbe d'apprentissage très raide pour débutants.",
+        "Consomme beaucoup de ressources système.",
+        "Pas d'option gratuite permanente."
+      ],
+      "pros": [
+        "Coordination automatique complète des documents BIM.",
+        "Norme industrie reconnu en architecture professionnelle.",
+        "Collaboration cloud native (BIM 360).",
+        "Nombreuses ressources de formation disponibles.",
+        "Intégration avec suite Autodesk.",
+        "Gestion de projet intégrée."
+      ],
+      "relevant_for": [
+        "Architectes professionnels",
+        "Ingénieurs bâtiment",
+        "BIM managers",
+        "Bureaux d'études"
+      ],
+      "use_cases": [
+        "Concevoir et coordonner les plans d'un immeuble de logements.",
+        "Gérer la documentation BIM d'un projet d'infrastructure.",
+        "Collaborer avec structure et MEP sur un projet complexe."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous faites du design conceptuel léger sans besoin BIM avancé.",
+          "Vous avez un budget très limité (abonnement coûteux).",
+          "Vous travaillez seul sur des petits projets.",
+          "Vous préférez une solution open source ou moins lourde (Blender, Sketchup)."
+        ],
+        "keepIf": [
+          "Vous travaillez en architecture professionnelle ou ingénierie bâtiment.",
+          "Vous avez besoin de coordination automatique plans/coupes/élévations.",
+          "Votre équipe collabore sur des projets BIM complexes.",
+          "Vous vous intégrez dans un écosystème Autodesk (AutoCAD, etc.)."
+        ],
+        "threshold": "Revit s'impose pour la pratique BIM professionnelle en architecture/ingénierie ; pour design leger ou petits projets, SketchUp ou Blender suffisent."
+      }
+    },
+    "slug": "revit",
+    "sources": [
+      {
+        "label": "Autodesk Revit (site officiel)",
+        "url": "https://autodesk.com/products/revit"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-003",
+    "batch_position": 14,
+    "blockers": [],
+    "catalog_hash": "sha256:5997b57ef28852e7172eb9d177e5bc5269e85bc0ae68f82fe9114f478cc97846",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:ca7eebba20d9bb235484dc3b9a27a056086f76798bcbe211e4586795863c2914",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Revit",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:ec22fa78109286f18f5fd03c9dda3fd8aecee9b7c017eff9edbfffc045b8fc17",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "revit",
+    "source_url": "https://autodesk.com/products/revit",
+    "source_verified_on": "2026-06-15",
+    "status": "QUEUED"
+  }
+}

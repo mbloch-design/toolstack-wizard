@@ -1,0 +1,277 @@
+{
+  "batch": "review-design-tools-critical-003",
+  "current": {
+    "affiliate_url": "https://skylum.com/luminar-neo",
+    "alternatives": [
+      "lightroom",
+      "firefly"
+    ],
+    "category": "design-tools",
+    "cons": [
+      "Coût initial de l'achat (pas de version gratuite).",
+      "Accès mobile/web réservé au plan Max (abonnement).",
+      "Moins de fonctionnalités pointues que Lightroom pour workflows pro.",
+      "Qualité variable des résultats IA selon le type de photo."
+    ],
+    "cons_en": [
+      "Upfront purchase cost (no free version).",
+      "Mobile/web access limited to Max plan (subscription).",
+      "Fewer advanced features than Lightroom for pro workflows.",
+      "Variable AI results depending on photo type."
+    ],
+    "host_app": "photoshop",
+    "id": "luminar-neo",
+    "long_description": "Luminar Neo, c'est un éditeur photo qui mise tout sur la retouche assistée par IA : remplacement de ciel, amélioration de portrait, ajout d'atmosphère, le tout en quelques clics. Tu peux l'utiliser en autonome ou comme plugin dans Photoshop et Lightroom. Pour un photographe qui veut des résultats rapides sans passer des heures sur des masques, c'est efficace.\n\nSon vrai argument face à Adobe, c'est le modèle de prix : en plus de l'abonnement (dès ~10$/mois facturé à l'année), Skylum propose une licence à vie autour de 149$. Si tu détestes les abonnements, c'est un point fort.\n\nLe bémol, c'est le recoupement. Lightroom et Firefly intègrent de plus en plus de retouches IA (suppression d'objets, masquage automatique, ciel). Si tu paies déjà la suite Adobe, Luminar fait souvent doublon. Il prend tout son sens si tu veux échapper à l'abonnement Adobe, ou si ses effets IA paysage/portrait collent précisément à ton style. Pour de la retouche fine et complète, un éditeur pro reste devant.",
+    "long_description_en": "Luminar Neo is a photo editor built around AI-assisted retouching: sky replacement, portrait enhancement, atmosphere, all in a few clicks. You can use it standalone or as a plugin inside Photoshop and Lightroom. For a photographer who wants fast results without spending hours on masks, it's effective.\n\nIts real argument against Adobe is the pricing model: alongside the subscription (from ~$10/month billed annually), Skylum offers a lifetime license around $149. If you hate subscriptions, that's a strong point.\n\nThe catch is overlap. Lightroom and Firefly keep adding AI retouching (object removal, automatic masking, sky). If you already pay for the Adobe suite, Luminar often duplicates it. It makes sense if you want to escape the Adobe subscription, or if its landscape/portrait AI effects fit your style exactly. For fine, complete retouching, a pro editor stays ahead.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://media.macphun.com/img/uploads/uploads/skylum/l/Luminar-sum-26-share.jpg?f=webp&amp;q=75"
+    },
+    "name": "Luminar Neo",
+    "pricing": {
+      "paid": "Abonnement dès ~10$/mois (facturé à l'année), ou licence à vie ~149$"
+    },
+    "pricing_en": {
+      "paid": "Subscription from ~$10/month (billed annually), or lifetime license ~$149"
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Deux modèles distincts : abonnement annuel ou licence à vie (~149$)"
+      ],
+      "compare_plan_kind": "individual",
+      "compare_plan_name": "Entry paid plan",
+      "compare_price_monthly_eur": 10,
+      "location_sensitive": false,
+      "official_source_url": "https://skylum.com/luminar-neo",
+      "price_reliability": "low",
+      "source_domain": "skylum.com",
+      "usage_sensitive": false,
+      "verification_status": "official_site_only",
+      "verified_on": "2026-06-15"
+    },
+    "pros": [
+      "Suite complète d'outils IA pour retouche rapide.",
+      "Interface intuitive et accessible aux débutants.",
+      "Licence perpétuelle disponible (pas d'abonnement obligatoire).",
+      "Édition non-destructive avec calques.",
+      "Intégrations Lightroom et Photoshop pour hybridation."
+    ],
+    "pros_en": [
+      "Complete AI tool suite for quick retouching.",
+      "Intuitive interface, beginner-friendly.",
+      "Perpetual license available (no mandatory subscription).",
+      "Non-destructive editing with layers.",
+      "Lightroom and Photoshop integrations for hybrid workflows."
+    ],
+    "short_description": "Retouche IA pour Photoshop/Lightroom : remplacement de ciel, portrait IA, atmosphère.",
+    "short_description_en": "AI retouching for Photoshop/Lightroom: sky replacement, AI portrait, atmosphere.",
+    "slug": "luminar-neo",
+    "source_url": "https://skylum.com/luminar-neo",
+    "source_verified_on": "2026-06-15",
+    "use_cases": [
+      "Éditer rapidement un portfolio de photos avec retouche IA.",
+      "Retoucher des portraits sans expertise manuelle avancée.",
+      "Améliorer des paysages avec outils d'amélioration du ciel.",
+      "Composer une pile de photos (HDR, panorama) avec outils IA."
+    ],
+    "use_cases_en": [
+      "Quickly edit a photo portfolio with AI retouching.",
+      "Retouch portraits without advanced manual skills.",
+      "Enhance landscapes with sky-improvement tools.",
+      "Stack photos (HDR, panorama) with AI tools."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous avez un workflow Lightroom/Photoshop bien établi et coûteux à migrer.",
+        "Vous avez besoin d'une solution gratuite.",
+        "Vous cherchez un éditeur web léger uniquement."
+      ],
+      "keepIf": [
+        "Vous éditez régulièrement des photos et appréciez les outils IA pour accélérer le workflow.",
+        "Vous cherchez une alternative plus accessible à Lightroom ou Photoshop.",
+        "Vous travaillez surtout sur Mac ou Windows avec des fichiers bruts."
+      ],
+      "threshold": "Luminar Neo convient aux photographes cherchant des outils IA rapides et accessibles ; pour un workflow professionnel lourd ou gratuit, d'autres solutions s'imposent."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You have an established Lightroom/Photoshop workflow that would be costly to migrate.",
+        "You need a free solution.",
+        "You're looking for a lightweight web-only editor."
+      ],
+      "keepIf": [
+        "You regularly edit photos and appreciate AI tools to speed up your workflow.",
+        "You're looking for an accessible alternative to Lightroom or Photoshop.",
+        "You work primarily on Mac or Windows with raw files."
+      ],
+      "threshold": "Luminar Neo makes sense for photographers wanting fast AI-powered tools; for heavy professional workflows or free options, other tools fit better."
+    },
+    "website_url": "https://skylum.com/luminar-neo"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Upfront purchase cost (no free version).",
+        "Mobile/web access limited to Max plan (subscription).",
+        "Fewer advanced features than Lightroom for pro workflows.",
+        "Variable AI results depending on photo type."
+      ],
+      "pros": [
+        "Complete AI tool suite for quick retouching.",
+        "Intuitive interface, beginner-friendly.",
+        "Perpetual license available (no mandatory subscription).",
+        "Non-destructive editing with layers.",
+        "Lightroom and Photoshop integrations for hybrid workflows."
+      ],
+      "use_cases": [
+        "Quickly edit a photo portfolio with AI retouching.",
+        "Retouch portraits without advanced manual skills.",
+        "Enhance landscapes with sky-improvement tools.",
+        "Stack photos (HDR, panorama) with AI tools."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You have an established Lightroom/Photoshop workflow that would be costly to migrate.",
+          "You need a free solution.",
+          "You're looking for a lightweight web-only editor."
+        ],
+        "keepIf": [
+          "You regularly edit photos and appreciate AI tools to speed up your workflow.",
+          "You're looking for an accessible alternative to Lightroom or Photoshop.",
+          "You work primarily on Mac or Windows with raw files."
+        ],
+        "threshold": "Luminar Neo makes sense for photographers wanting fast AI-powered tools; for heavy professional workflows or free options, other tools fit better."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Pas de version gratuite permanente. Essai gratuit disponible avec garantie de remboursement 30 jours sur les plans payants.",
+        "exists": false
+      },
+      "key_features": [
+        "24+ outils IA (SkinAI, SkyAI, EnhanceAI, GenErase, GenSwap, GenExpand)",
+        "Édition non-destructive avec calques et masques",
+        "Amélioration assistée par IA pour retouche rapide",
+        "Support brut pour 1000+ caméras",
+        "Redimensionnement, suppression du bruit, fusion HDR",
+        "Intégrations plugins Lightroom Classic et Photoshop",
+        "Édition multi-appareils (desktop, mobile, web)"
+      ],
+      "plans": [
+        {
+          "name": "Desktop Only License",
+          "price": "Achat unique (licence perpétuelle, accès 2 appareils)"
+        },
+        {
+          "name": "All Platforms License",
+          "price": "Achat unique (inclut accès mobile et web — disponible automne 2026)"
+        },
+        {
+          "name": "Max License",
+          "price": "Abonnement annuel (montants sur la page officielle, accès nouvelles fonctionnalités et bibliothèque de ressources)"
+        }
+      ],
+      "pricing_model": "Achat unique avec licence perpétuelle ou abonnement annuel optionnel pour accès à des fonctionnalités premium et à une bibliothèque de ressources.",
+      "what": "Éditeur photo desktop alimenté par l'IA avec plus de 24 outils IA et 100+ fonctionnalités pour améliorer les portraits, paysages et autres styles photographiques sur Mac et Windows.",
+      "what_en": "AI-powered desktop photo editor with 24+ AI tools and 100+ features to enhance portraits, landscapes, and photography styles on Mac and Windows platforms."
+    },
+    "fr": {
+      "cons": [
+        "Coût initial de l'achat (pas de version gratuite).",
+        "Accès mobile/web réservé au plan Max (abonnement).",
+        "Moins de fonctionnalités pointues que Lightroom pour workflows pro.",
+        "Qualité variable des résultats IA selon le type de photo."
+      ],
+      "pros": [
+        "Suite complète d'outils IA pour retouche rapide.",
+        "Interface intuitive et accessible aux débutants.",
+        "Licence perpétuelle disponible (pas d'abonnement obligatoire).",
+        "Édition non-destructive avec calques.",
+        "Intégrations Lightroom et Photoshop pour hybridation."
+      ],
+      "relevant_for": [
+        "Photographes amateurs à semi-pro",
+        "Créateurs de contenu",
+        "Retoucheurs IA-first",
+        "Petites agences photo"
+      ],
+      "use_cases": [
+        "Éditer rapidement un portfolio de photos avec retouche IA.",
+        "Retoucher des portraits sans expertise manuelle avancée.",
+        "Améliorer des paysages avec outils d'amélioration du ciel.",
+        "Composer une pile de photos (HDR, panorama) avec outils IA."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous avez un workflow Lightroom/Photoshop bien établi et coûteux à migrer.",
+          "Vous avez besoin d'une solution gratuite.",
+          "Vous cherchez un éditeur web léger uniquement."
+        ],
+        "keepIf": [
+          "Vous éditez régulièrement des photos et appréciez les outils IA pour accélérer le workflow.",
+          "Vous cherchez une alternative plus accessible à Lightroom ou Photoshop.",
+          "Vous travaillez surtout sur Mac ou Windows avec des fichiers bruts."
+        ],
+        "threshold": "Luminar Neo convient aux photographes cherchant des outils IA rapides et accessibles ; pour un workflow professionnel lourd ou gratuit, d'autres solutions s'imposent."
+      }
+    },
+    "slug": "luminar-neo",
+    "sources": [
+      {
+        "label": "Luminar Neo — éditeur photo IA officiel",
+        "url": "https://skylum.com/luminar-neo"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-003",
+    "batch_position": 4,
+    "blockers": [],
+    "catalog_hash": "sha256:e105ce3bd528597ecc16517f467d2c90aea88fc850709b40da55210a2faa4fe9",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:40cf232f2170019c2e2235ea4b2ae623c454190bd4509ebd19aa962217c4aff1",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Luminar Neo",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:ea37302c431c1f13eff659455bf1dbf0e97ff8477996af0dc32e3e6d9c132bc4",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "luminar-neo",
+    "source_url": "https://skylum.com/luminar-neo",
+    "source_verified_on": "2026-06-15",
+    "status": "QUEUED"
+  }
+}

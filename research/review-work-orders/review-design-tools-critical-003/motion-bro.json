@@ -1,0 +1,274 @@
+{
+  "batch": "review-design-tools-critical-003",
+  "current": {
+    "affiliate_url": "https://motionbro.com",
+    "alternatives": [
+      "ae-animation-composer"
+    ],
+    "category": "design-tools",
+    "cons": [
+      "Nécessite After Effects ou Premiere Pro (ne fonctionne pas seul).",
+      "Les bundles payants restent onéreux pour petits budgets.",
+      "Marché fragmenté en plusieurs bundles thématiques à explorer."
+    ],
+    "cons_en": [
+      "Requires After Effects or Premiere Pro (not a standalone tool).",
+      "Paid bundles can be pricey for tight budgets.",
+      "Asset library split across multiple themed bundles to explore."
+    ],
+    "host_app": "adobe-after-effects",
+    "id": "motion-bro",
+    "long_description": "Motion Bro est un gestionnaire visuel de presets pour After Effects et Premiere Pro. Il permet de parcourir et d'appliquer transitions, effets, animations de texte et éléments graphiques sans fouiller dans une arborescence de fichiers. La version actuelle du plugin est gratuite, avec des packs gratuits et des bundles payants vendus séparément.\n\nLe modèle convient bien aux motion designers qui veulent construire leur bibliothèque progressivement. Les licences payantes sont ponctuelles et distinguent l'usage personnel de l'usage commercial ; un même utilisateur peut activer sa licence sur deux appareils.\n\nMotion Bro est surtout pertinent si vous réutilisez beaucoup de presets dans Adobe. Avec une petite bibliothèque, des dossiers locaux suffisent. Si vous utilisez déjà Animation Composer, comparez les packs et les licences avant de conserver les deux.",
+    "long_description_en": "Motion Bro is a visual preset manager for After Effects and Premiere Pro. It lets you browse and apply transitions, effects, text animations and graphic elements without digging through folders. The current plugin is free, with free packs and paid bundles sold separately.\n\nThe model works well for motion designers who want to build a library gradually. Paid licenses are one-time purchases and distinguish personal from commercial use; one user can activate a license on two devices.\n\nMotion Bro is most useful when you reuse many presets in Adobe applications. A small library can still live in local folders. If you already use Animation Composer, compare the packs and licenses before keeping both.",
+    "media": {
+      "gallery_images": [
+        "https://motionbro.com/wp-content/uploads/2023/10/Simple-Slide.jpg.webp",
+        "https://motionbro.com/wp-content/uploads/2022/03/simple-slide-cover.jpg.webp"
+      ],
+      "og_image_url": "https://motionbro.com/wp-content/uploads/2022/12/free-motion-bro-pack-cover.jpg.webp"
+    },
+    "name": "Motion Bro",
+    "pricing": {
+      "free": "Extension de base gratuite",
+      "paid": "Packs de presets vendus séparément (achat unique), certains gratuits"
+    },
+    "pricing_en": {
+      "free": "Free base extension",
+      "paid": "Preset packs sold separately (one-time), some free"
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Extension de base gratuite, packs de presets vendus séparément"
+      ],
+      "compare_plan_kind": "individual",
+      "compare_plan_name": "Gratuit (extension)",
+      "compare_price_monthly_eur": 0,
+      "location_sensitive": false,
+      "official_source_url": "https://motionbro.com/",
+      "price_reliability": "high",
+      "source_domain": "motionbro.com",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-08-27"
+    },
+    "pros": [
+      "Plugin gratuit et 1 400 assets inclus, sans barrière d'entrée.",
+      "Bundles vendus une seule fois, pas d'abonnement récurrent.",
+      "Transitions adaptatives pour les formats modernes (vertical, carré).",
+      "Mises à jour perpétuelles et libres.",
+      "Licences claires pour usage personnel et commercial."
+    ],
+    "pros_en": [
+      "Free plugin and 1,400 included assets—no paywall to start.",
+      "Bundles sold once, no recurring subscription.",
+      "Transitions adapt to modern formats (vertical, square).",
+      "Perpetual free updates.",
+      "Clear personal and commercial licensing tiers."
+    ],
+    "short_description": "Gestionnaire de presets et packs pour After Effects et Premiere Pro.",
+    "short_description_en": "Preset and pack manager for After Effects and Premiere Pro.",
+    "slug": "motion-bro",
+    "source_url": "https://motionbro.com/",
+    "source_verified_on": "2026-08-27",
+    "use_cases": [
+      "Accélérer le montage de vidéos commerciales ou de contenu social.",
+      "Enrichir une production YouTube ou TikTok avec des transitions polies.",
+      "Concevoir rapidement des lower thirds pour chaîne de diffusion."
+    ],
+    "use_cases_en": [
+      "Speed up editing on commercial or social-media videos.",
+      "Polish a YouTube or TikTok production with refined transitions.",
+      "Quickly design lower thirds for broadcast or streaming."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous avez besoin d'un DAW ou suite complète (Motion Bro est un complément, pas un logiciel autonome).",
+        "Vous refusez tout achat, même ponctuel.",
+        "Vos projets demandent plusieurs types de transitions : la bibliothèque est fragmentée en bundles payants distincts."
+      ],
+      "keepIf": [
+        "Vous montez des vidéos en After Effects ou Premiere Pro.",
+        "Vous cherchez des transitions et presets de qualité sans abonnement récurrent.",
+        "Vous acceptez de choisir entre licence personnelle (média social) et commerciale (clients, broadcast)."
+      ],
+      "threshold": "Motion Bro excelle pour enrichir vos montages sans engagement d'abonnement ; idéal si vous maîtrisez déjà After Effects ou Premiere."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You need a standalone DAW or editing suite (Motion Bro is an add-on).",
+        "You avoid any purchases, even one-time.",
+        "Your projects need multiple transition types: the library is split across separate paid bundles."
+      ],
+      "keepIf": [
+        "You edit videos in After Effects or Premiere Pro.",
+        "You want transitions and presets without recurring subscription fees.",
+        "You understand the difference between personal and commercial licenses."
+      ],
+      "threshold": "Motion Bro shines for enhancing edits without subscription commitment; perfect if you're already in After Effects or Premiere."
+    },
+    "website_url": "https://motionbro.com"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Requires After Effects or Premiere Pro (not a standalone tool).",
+        "Paid bundles can be pricey for tight budgets.",
+        "Asset library split across multiple themed bundles to explore."
+      ],
+      "pros": [
+        "Free plugin and 1,400 included assets—no paywall to start.",
+        "Bundles sold once, no recurring subscription.",
+        "Transitions adapt to modern formats (vertical, square).",
+        "Perpetual free updates.",
+        "Clear personal and commercial licensing tiers."
+      ],
+      "use_cases": [
+        "Speed up editing on commercial or social-media videos.",
+        "Polish a YouTube or TikTok production with refined transitions.",
+        "Quickly design lower thirds for broadcast or streaming."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You need a standalone DAW or editing suite (Motion Bro is an add-on).",
+          "You avoid any purchases, even one-time.",
+          "Your projects need multiple transition types: the library is split across separate paid bundles."
+        ],
+        "keepIf": [
+          "You edit videos in After Effects or Premiere Pro.",
+          "You want transitions and presets without recurring subscription fees.",
+          "You understand the difference between personal and commercial licenses."
+        ],
+        "threshold": "Motion Bro shines for enhancing edits without subscription commitment; perfect if you're already in After Effects or Premiere."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Plugin gratuit pour tous + 1 400 assets. Accès illimité à la bibliothèque de transitions, presets et effets.",
+        "exists": true
+      },
+      "key_features": [
+        "5 000+ transitions, presets, lower thirds et boucles audio",
+        "Adaptation automatique des transitions aux formats (horizontal, carré, vertical)",
+        "Drag-and-drop directement dans la timeline",
+        "Mises à jour gratuites à vie après achat",
+        "Licences personnelles et commerciales"
+      ],
+      "plans": [
+        {
+          "name": "Essential Transitions Bundle (After Effects) — Personal",
+          "price": "$55 (one-time purchase)"
+        },
+        {
+          "name": "Essential Transitions Bundle (After Effects) — Commercial",
+          "price": "$110 (one-time purchase)"
+        },
+        {
+          "name": "Essential Transitions Bundle (Premiere Pro) — Personal",
+          "price": "$68 (one-time purchase)"
+        },
+        {
+          "name": "Essential Transitions Bundle (Premiere Pro) — Commercial",
+          "price": "$136 (one-time purchase)"
+        }
+      ],
+      "pricing_model": "Plugin gratuit avec 1 400 assets inclus ; bundles thématiques vendus à l'unité (non-abonnement).",
+      "what": "Plugin et marché d'assets pour After Effects et Premiere Pro, fournissant accès à un panel de transitions, presets, lower thirds et effets sonores directement intégrés à la timeline.",
+      "what_en": "Plugin and asset marketplace for After Effects and Premiere Pro, providing access to a library of transitions, presets, lower thirds, and sound effects directly within the timeline."
+    },
+    "fr": {
+      "cons": [
+        "Nécessite After Effects ou Premiere Pro (ne fonctionne pas seul).",
+        "Les bundles payants restent onéreux pour petits budgets.",
+        "Marché fragmenté en plusieurs bundles thématiques à explorer."
+      ],
+      "pros": [
+        "Plugin gratuit et 1 400 assets inclus, sans barrière d'entrée.",
+        "Bundles vendus une seule fois, pas d'abonnement récurrent.",
+        "Transitions adaptatives pour les formats modernes (vertical, carré).",
+        "Mises à jour perpétuelles et libres.",
+        "Licences claires pour usage personnel et commercial."
+      ],
+      "relevant_for": [
+        "Monteurs vidéo",
+        "Producteurs de contenu",
+        "Agences créatives"
+      ],
+      "use_cases": [
+        "Accélérer le montage de vidéos commerciales ou de contenu social.",
+        "Enrichir une production YouTube ou TikTok avec des transitions polies.",
+        "Concevoir rapidement des lower thirds pour chaîne de diffusion."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous avez besoin d'un DAW ou suite complète (Motion Bro est un complément, pas un logiciel autonome).",
+          "Vous refusez tout achat, même ponctuel.",
+          "Vos projets demandent plusieurs types de transitions : la bibliothèque est fragmentée en bundles payants distincts."
+        ],
+        "keepIf": [
+          "Vous montez des vidéos en After Effects ou Premiere Pro.",
+          "Vous cherchez des transitions et presets de qualité sans abonnement récurrent.",
+          "Vous acceptez de choisir entre licence personnelle (média social) et commerciale (clients, broadcast)."
+        ],
+        "threshold": "Motion Bro excelle pour enrichir vos montages sans engagement d'abonnement ; idéal si vous maîtrisez déjà After Effects ou Premiere."
+      }
+    },
+    "slug": "motion-bro",
+    "sources": [
+      {
+        "label": "Motion Bro — Plugin & Marketplace (site officiel)",
+        "url": "https://motionbro.com/"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-003",
+    "batch_position": 8,
+    "blockers": [],
+    "catalog_hash": "sha256:8089f2f2a8f83039d3be695773410f1e146b2d781d1e6688a3a464cf62881f06",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:fdfec5d950394aa696de37ed9f451a2b4c8d5cda40fed8f6f2588576883a66f3",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Motion Bro",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:c223ba0265181a976b0b18cb365afaa63f6d8daf4130e7b2d986993cf7354a74",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "motion-bro",
+    "source_url": "https://motionbro.com/",
+    "source_verified_on": "2026-08-27",
+    "status": "QUEUED"
+  }
+}

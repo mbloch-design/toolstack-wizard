@@ -1,0 +1,21 @@
+{
+  "slug": "fredo6-bundle",
+  "verified_on": "2026-08-31",
+  "mode": "fallback_screenshot",
+  "discovery": {
+    "official_media_found": false,
+    "official_pages_checked": [
+      "https://sketchucation.com/pluginstore?pauthor=fredo6"
+    ]
+  },
+  "items": [
+    {
+      "kind": "screenshot",
+      "url": "/og-screenshots/fredo6-bundle.jpg",
+      "official": false,
+      "capture_method": "browser_screenshot",
+      "alt": "Fredo6 Bundle official listing",
+      "source_page_url": "https://sketchucation.com/pluginstore?pauthor=fredo6"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "slug": "rive",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://rive.app/"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://framerusercontent.com/images/aTosqj5HowH9kNricIFp8yEKBc.png?width=3432&height=940",
+      "source_page_url": "https://rive.app/",
+      "official": true,
+      "alt": "rive official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://framerusercontent.com/images/sHSAxXoU8kOqJhNeQhMnFiru36s.jpg?width=2400&height=3000",
+      "source_page_url": "https://rive.app/",
+      "official": true,
+      "alt": "rive official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://framerusercontent.com/images/aRwPYvM8aGB6CGXUyowDsgSFagI.jpeg?width=560&height=560",
+      "source_page_url": "https://rive.app/",
+      "official": true,
+      "alt": "rive official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://framerusercontent.com/images/yEWMbP7UtsS81SlkoxTasfabvc.png",
+      "source_page_url": "https://rive.app/",
+      "official": true,
+      "alt": "Official product preview"
+    }
+  ]
+}

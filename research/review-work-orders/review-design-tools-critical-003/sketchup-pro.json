@@ -1,0 +1,265 @@
+{
+  "batch": "review-design-tools-critical-003",
+  "current": {
+    "affiliate_url": "https://sketchup.com",
+    "alternatives": [
+      "blender",
+      "revit",
+      "archicad"
+    ],
+    "category": "design-tools",
+    "cons": [
+      "Pas de plan gratuit grand public (uniquement éducation).",
+      "Abonnement annuel, plus de licence perpétuelle.",
+      "Moins adapté à la 3D artistique/organique."
+    ],
+    "cons_en": [
+      "No general-public free plan (education only).",
+      "Annual subscription, no perpetual license.",
+      "Less suited to artistic/organic 3D."
+    ],
+    "host_app": null,
+    "id": "sketchup-pro",
+    "long_description": "SketchUp, c'est le logiciel de modélisation 3D le plus accessible. Sa force, c'est la prise en main : pousser-tirer des volumes, dessiner un plan, monter une maquette de pièce ou de stand en quelques heures là où des outils comme Revit demandent des semaines d'apprentissage. C'est l'outil de référence de l'architecture d'intérieur, de la scénographie et de l'aménagement.\n\nLe modèle est par abonnement : SketchUp Go autour de 119$/an pour la version web, et SketchUp Pro à environ 349$/an (le palier vraiment utile, avec la version bureau, LayOut pour les plans et l'import/export pro). Une version SketchUp Free existe dans le navigateur pour s'initier, et il y a un essai.\n\nÀ qui ça s'adresse : aux architectes d'intérieur, décorateurs, scénographes et à tous ceux qui ont besoin de modéliser vite et de présenter au client. Pour du BIM lourd et des projets de bâtiment complexes, Revit ou Archicad sont plus adaptés. Pour de la 3D libre et gratuite, Blender va beaucoup plus loin mais avec une courbe d'apprentissage autrement plus raide. SketchUp reste le meilleur compromis simplicité-vitesse pour la 3D d'espace.",
+    "long_description_en": "SketchUp is the most accessible 3D modeling software. Its strength is how quick it is to pick up: push-pull volumes, draw a plan, build a room or booth mockup in a few hours where tools like Revit take weeks to learn. It's the reference tool for interior architecture, set design and space planning.\n\nThe model is subscription-based: SketchUp Go around $119/year for the web version, and SketchUp Pro at about $349/year (the genuinely useful tier, with the desktop app, LayOut for plans and pro import/export). A SketchUp Free version exists in the browser to get started, and there's a trial.\n\nWho it's for: interior architects, decorators, set designers and anyone who needs to model fast and present to a client. For heavy BIM and complex building projects, Revit or Archicad fit better. For free, open 3D, Blender goes much further but with a far steeper learning curve. SketchUp remains the best simplicity-speed balance for spatial 3D.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://images.ctfassets.net/5qimfmsew7zl/CLeItCuQzyar0Ix1BPD8b/7cb6eb778c29ab02b7aca31fc21c0450/SU-Website-Home-S1.jpg"
+    },
+    "name": "SketchUp Pro",
+    "pricing": {
+      "free": "SketchUp Free (version web limitée) et essai",
+      "paid": "Go à ~119$/an, Pro à ~349$/an (version bureau, LayOut)"
+    },
+    "pricing_en": {
+      "free": "SketchUp Free (limited web version) and a trial",
+      "paid": "Go at ~$119/year, Pro at ~$349/year (desktop app, LayOut)"
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Version SketchUp Free limitée (web) et essai",
+        "Go à ~119$/an, Pro à ~349$/an (version bureau, LayOut)"
+      ],
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Entry paid plan",
+      "compare_price_monthly_eur": 29.44,
+      "location_sensitive": false,
+      "official_source_url": "https://sketchup.com",
+      "price_reliability": "low",
+      "source_domain": "sketchup.com",
+      "usage_sensitive": false,
+      "verification_status": "official_site_only",
+      "verified_on": "2026-06-15"
+    },
+    "pros": [
+      "Modélisation 3D accessible et rapide à prendre en main.",
+      "Écosystème de plus de 1 000 extensions.",
+      "Multi-plateforme (bureau, web, iPad) avec stockage cloud.",
+      "Rendu et visualisation photoréalistes."
+    ],
+    "pros_en": [
+      "Accessible, quick-to-learn 3D modelling.",
+      "Ecosystem of 1,000+ extensions.",
+      "Cross-platform (desktop, web, iPad) with cloud storage.",
+      "Photorealistic rendering and visualisation."
+    ],
+    "short_description": "Modélisation 3D intuitive pour architectes, décorateurs et scénographes.",
+    "short_description_en": "Intuitive 3D modelling for architects, interior designers, and set designers.",
+    "slug": "sketchup-pro",
+    "source_url": "https://sketchup.com",
+    "source_verified_on": "2026-06-15",
+    "use_cases": [
+      "Modéliser un projet d'architecture ou d'aménagement intérieur.",
+      "Concevoir un objet ou un mobilier en 3D.",
+      "Produire des visualisations photoréalistes d'un projet."
+    ],
+    "use_cases_en": [
+      "Model an architecture or interior-design project.",
+      "Design a product or piece of furniture in 3D.",
+      "Produce photorealistic visualisations of a project."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vos besoins 3D sont occasionnels ou couverts par un outil gratuit.",
+        "Vous cherchez de la 3D artistique/organique avancée (sculpture).",
+        "Vous voulez une licence perpétuelle plutôt qu'un abonnement."
+      ],
+      "keepIf": [
+        "Vous modélisez en 3D pour l'architecture, l'aménagement ou le design produit.",
+        "Vous voulez un outil accessible, avec un large écosystème d'extensions.",
+        "Vous travaillez sur plusieurs plateformes (bureau, web, iPad)."
+      ],
+      "threshold": "SketchUp Pro s'impose quand la modélisation 3D (archi, aménagement, produit) est un besoin régulier ; pour de la 3D occasionnelle ou artistique, un autre outil est plus adapté."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "Your 3D needs are occasional or covered by a free tool.",
+        "You want advanced artistic/organic 3D (sculpting).",
+        "You want a perpetual license rather than a subscription."
+      ],
+      "keepIf": [
+        "You model in 3D for architecture, interiors or product design.",
+        "You want an accessible tool with a large extension ecosystem.",
+        "You work across platforms (desktop, web, iPad)."
+      ],
+      "threshold": "SketchUp Pro makes sense when 3D modelling (arch, interiors, product) is a regular need; for occasional or artistic 3D, another tool fits better."
+    },
+    "website_url": "https://sketchup.com"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "No general-public free plan (education only).",
+        "Annual subscription, no perpetual license.",
+        "Less suited to artistic/organic 3D."
+      ],
+      "pros": [
+        "Accessible, quick-to-learn 3D modelling.",
+        "Ecosystem of 1,000+ extensions.",
+        "Cross-platform (desktop, web, iPad) with cloud storage.",
+        "Photorealistic rendering and visualisation."
+      ],
+      "use_cases": [
+        "Model an architecture or interior-design project.",
+        "Design a product or piece of furniture in 3D.",
+        "Produce photorealistic visualisations of a project."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Your 3D needs are occasional or covered by a free tool.",
+          "You want advanced artistic/organic 3D (sculpting).",
+          "You want a perpetual license rather than a subscription."
+        ],
+        "keepIf": [
+          "You model in 3D for architecture, interiors or product design.",
+          "You want an accessible tool with a large extension ecosystem.",
+          "You work across platforms (desktop, web, iPad)."
+        ],
+        "threshold": "SketchUp Pro makes sense when 3D modelling (arch, interiors, product) is a regular need; for occasional or artistic 3D, another tool fits better."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "SketchUp for Schools gratuit avec un compte éducation Google/Microsoft ; pas de plan gratuit grand public.",
+        "exists": false
+      },
+      "key_features": [
+        "Modélisation 3D multi-plateforme (bureau, iPad, web)",
+        "1 000+ extensions pour adapter les workflows",
+        "Stockage cloud et projets illimités (Trimble Connect)",
+        "Rendu et visualisation photoréalistes"
+      ],
+      "plans": [
+        {
+          "name": "Go",
+          "price": "10,75 $/mois (annuel)"
+        },
+        {
+          "name": "Pro",
+          "price": "33,25 $/mois (annuel)"
+        },
+        {
+          "name": "Studio",
+          "price": "68,25 $/mois (annuel)"
+        }
+      ],
+      "pricing_model": "Abonnement annuel par palier (Go, Pro, Studio). Pas de palier gratuit grand public (version gratuite réservée à l'éducation).",
+      "what": "Logiciel de modélisation 3D (Trimble) pour l'architecture, l'aménagement et le design produit, sur bureau, web et mobile.",
+      "what_en": "3D modeling software (Trimble) for architecture, interior design, and product design, on desktop, web, and mobile."
+    },
+    "fr": {
+      "cons": [
+        "Pas de plan gratuit grand public (uniquement éducation).",
+        "Abonnement annuel, plus de licence perpétuelle.",
+        "Moins adapté à la 3D artistique/organique."
+      ],
+      "pros": [
+        "Modélisation 3D accessible et rapide à prendre en main.",
+        "Écosystème de plus de 1 000 extensions.",
+        "Multi-plateforme (bureau, web, iPad) avec stockage cloud.",
+        "Rendu et visualisation photoréalistes."
+      ],
+      "relevant_for": [
+        "Architectes",
+        "Designers d'espace/produit",
+        "Bureaux d'études"
+      ],
+      "use_cases": [
+        "Modéliser un projet d'architecture ou d'aménagement intérieur.",
+        "Concevoir un objet ou un mobilier en 3D.",
+        "Produire des visualisations photoréalistes d'un projet."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vos besoins 3D sont occasionnels ou couverts par un outil gratuit.",
+          "Vous cherchez de la 3D artistique/organique avancée (sculpture).",
+          "Vous voulez une licence perpétuelle plutôt qu'un abonnement."
+        ],
+        "keepIf": [
+          "Vous modélisez en 3D pour l'architecture, l'aménagement ou le design produit.",
+          "Vous voulez un outil accessible, avec un large écosystème d'extensions.",
+          "Vous travaillez sur plusieurs plateformes (bureau, web, iPad)."
+        ],
+        "threshold": "SketchUp Pro s'impose quand la modélisation 3D (archi, aménagement, produit) est un besoin régulier ; pour de la 3D occasionnelle ou artistique, un autre outil est plus adapté."
+      }
+    },
+    "slug": "sketchup-pro",
+    "sources": [
+      {
+        "label": "Plans et tarifs officiels SketchUp (Trimble)",
+        "url": "https://sketchup.trimble.com/en/plans-and-pricing"
+      }
+    ],
+    "verified_on": "2026-07-23"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-003",
+    "batch_position": 17,
+    "blockers": [],
+    "catalog_hash": "sha256:2a7f9265d6a339a09c771dd83966ff45fd757b85b4bbb617471ffc307d19baa4",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:40f8c2a0702b1c124f66771139a965c6d64310c063a651d62d3caa479b44e473",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "SketchUp Pro",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:189a28deb86cabf8a7ea550d29446b077ae105bff0b6af0146b1e569a758971b",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "sketchup-pro",
+    "source_url": "https://sketchup.com",
+    "source_verified_on": "2026-06-15",
+    "status": "QUEUED"
+  }
+}

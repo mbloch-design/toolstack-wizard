@@ -1,0 +1,41 @@
+{
+  "slug": "astute-graphics",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://astutegraphics.com/"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://astute-graphics.imgix.net/plugins/astutebuddy-media/astutebuddy-image.png?ixlib=php-3.3.1&w=660",
+      "source_page_url": "https://astutegraphics.com/",
+      "official": true,
+      "alt": "AstuteBuddy Plugin for Adobe Illustrator"
+    },
+    {
+      "kind": "image",
+      "url": "https://astute-graphics.imgix.net/plugins/autosaviour/astute-plugins-thumbnail-autosaviour.png?ixlib=php-3.3.1&w=660",
+      "source_page_url": "https://astutegraphics.com/",
+      "official": true,
+      "alt": "Autosaviour Plugin for Adobe Illustrator"
+    },
+    {
+      "kind": "image",
+      "url": "https://astute-graphics.imgix.net/plugins/colliderscribe/astute-plugins-thumbnail-colliderscribe.png?ixlib=php-3.3.1&w=660",
+      "source_page_url": "https://astutegraphics.com/",
+      "official": true,
+      "alt": "ColliderScribe Plugin for Adobe Illustrator"
+    },
+    {
+      "kind": "image",
+      "url": "https://astute-graphics.imgix.net/plugins/dynamicsketch/astute-plugins-thumbnail-dynamicsketch.png?ixlib=php-3.3.1&w=660",
+      "source_page_url": "https://astutegraphics.com/",
+      "official": true,
+      "alt": "DynamicSketch Plugin for Adobe Illustrator"
+    }
+  ]
+}

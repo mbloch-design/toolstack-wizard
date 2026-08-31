@@ -1,0 +1,1861 @@
+{
+  "figma-tokens": {
+    "slug": "figma-tokens",
+    "page_url": "https://tokens.studio/",
+    "candidates": [
+      {
+        "url": "https://framerusercontent.com/images/dKla9Z5N984BrKpKzDUgzZldm7s.png?scale-down-to=512&width=1332&height=1706",
+        "alt": "",
+        "width": 1332,
+        "height": 1706
+      },
+      {
+        "url": "https://framerusercontent.com/images/SprEqZIFswxF1TcOOwjPpS9TD4.png?width=529&height=358",
+        "alt": "",
+        "width": 529,
+        "height": 358
+      },
+      {
+        "url": "https://framerusercontent.com/images/9H78kN29eFQA7sg1RkFRet0Qypo.png?width=509&height=846",
+        "alt": "",
+        "width": 509,
+        "height": 846
+      },
+      {
+        "url": "https://framerusercontent.com/images/U6XxG0IKBx92sGG0fO4lqUfo.png?width=776&height=419",
+        "alt": "",
+        "width": 776,
+        "height": 419
+      },
+      {
+        "url": "https://framerusercontent.com/images/OJky06nA4afzCfSJHu5uR1CEF2o.png?width=2560&height=1440",
+        "alt": "",
+        "width": 2560,
+        "height": 1440
+      },
+      {
+        "url": "https://framerusercontent.com/images/cMgADkCKhwYKSxyKi8dJlR0mGkY.jpeg?width=1920&height=1080",
+        "alt": "",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "https://framerusercontent.com/images/ZbUviOhRzvlUmTSKs3MpZmQQjU4.png?width=2560&height=1440",
+        "alt": "",
+        "width": 2560,
+        "height": 1440
+      },
+      {
+        "url": "https://framerusercontent.com/images/25JEu7pBjaGTw5q8b6fZfDnhOUI.png?width=2560&height=1440",
+        "alt": "",
+        "width": 2560,
+        "height": 1440
+      },
+      {
+        "url": "https://framerusercontent.com/images/Xl0ff9jWGgMzTP9HOUkIaHzs.png?width=1920&height=1080",
+        "alt": "",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "https://framerusercontent.com/images/rZgp1JjlCOnQRTg62dsYp5jntc.png?width=1920&height=1080",
+        "alt": "",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "https://framerusercontent.com/assets/EzljCTuSDgR914OMFrHugpBFx2I.png",
+        "alt": "Official product preview",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "fredo6-bundle": {
+    "slug": "fredo6-bundle",
+    "page_url": "https://sketchucation.com/pluginstore?pauthor=fredo6",
+    "candidates": [
+      {
+        "url": "https://sketchucation.com/images/banners/headers/modelur_768x90.jpg",
+        "alt": "modelur",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "hard-ops-boxcutter": {
+    "slug": "hard-ops-boxcutter",
+    "page_url": "https://superhivemarket.com/products/hard-ops--boxcutter-ultimate-bundle",
+    "candidates": [],
+    "error": "HTTP 403"
+  },
+  "luminar-neo": {
+    "slug": "luminar-neo",
+    "page_url": "https://skylum.com/luminar",
+    "candidates": [
+      {
+        "url": "https://media.macphun.com/img/uploads/uploads/skylum/l/ss-26-label-bg.png",
+        "alt": "Luminar - Easy Photo Editor | Software for Mac & PC",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.macphun.com/img/uploads/uploads/skylum/l/ss-26-label.png?f=webp&q=80",
+        "alt": "Luminar - Easy Photo Editor | Software for Mac & PC(2)",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.macphun.com/img/uploads/uploads/skylum/l/st-app-store-btn.jpg",
+        "alt": "Luminar - Easy Photo Editor | Software for Mac & PC(3)",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.macphun.com/img/uploads/uploads/skylum/l/st-play-market-btn.jpg",
+        "alt": "Luminar - Easy Photo Editor | Software for Mac & PC(4)",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.macphun.com/img/uploads/uploads/skylum/l/banner-cross.png?f=webp&q=80",
+        "alt": "Luminar - Easy Photo Editor | Software for Mac & PC(5)",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.macphun.com/img/uploads/uploads/skylum/l/sum-26-devices.png",
+        "alt": "Luminar - Easy Photo Editor | Software for Mac & PC(6)",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.macphun.com/img/uploads/uploads/skylum/l/lifetimeaccess.jpg?f=webp&q=80",
+        "alt": "Luminar - Easy Photo Editor | Software for Mac & PC(7)",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.macphun.com/img/uploads/uploads/skylum/l/main-discover-poster-1-min.jpg",
+        "alt": "Luminar - Easy Photo Editor | Software for Mac & PC(8)",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.macphun.com/img/uploads/uploads/skylum/l/main-discover-poster-2-min.jpg",
+        "alt": "Luminar - Easy Photo Editor | Software for Mac & PC(9)",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.macphun.com/img/uploads/uploads/skylum/l/multiple.jpg?f=webp&q=80",
+        "alt": "Luminar - Easy Photo Editor | Software for Mac & PC(10)",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.macphun.com/img/uploads/uploads/skylum/l/main-discover-poster-3-min.jpg",
+        "alt": "Luminar - Easy Photo Editor | Software for Mac & PC(11)",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.macphun.com/img/uploads/uploads/skylum/l/hero-slider-arrow-left.png",
+        "alt": "Luminar - Easy Photo Editor | Software for Mac & PC(22)",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.macphun.com/img/uploads/uploads/skylum/l/hero-slider-arrow-right.png",
+        "alt": "Luminar - Easy Photo Editor | Software for Mac & PC(23)",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.macphun.com/img/uploads/uploads/skylum/l/photoshoot__cinematic-lg-min.png",
+        "alt": "Luminar - Easy Photo Editor | Software for Mac & PC(31)",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.macphun.com/img/uploads/uploads/skylum/l/photoshoot__cinematic-sm-min.png",
+        "alt": "Luminar - Easy Photo Editor | Software for Mac & PC(32)",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.macphun.com/img/uploads/uploads/skylum/l/photoshoot__cinematic-xs-min.png",
+        "alt": "Luminar - Easy Photo Editor | Software for Mac & PC(33)",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.macphun.com/img/uploads/uploads/skylum/l/photoshoot__natural-lg-min.png",
+        "alt": "Luminar - Easy Photo Editor | Software for Mac & PC(34)",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.macphun.com/img/uploads/uploads/skylum/l/photoshoot__natural-sm-min.png",
+        "alt": "Luminar - Easy Photo Editor | Software for Mac & PC(35)",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.macphun.com/img/uploads/uploads/skylum/l/photoshoot__natural-xs-min.png",
+        "alt": "Luminar - Easy Photo Editor | Software for Mac & PC(36)",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.macphun.com/img/uploads/uploads/skylum/l/photoshoot__monochrome-lg-min.png",
+        "alt": "Luminar - Easy Photo Editor | Software for Mac & PC(37)",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.macphun.com/img/uploads/uploads/skylum/l/photoshoot__monochrome-sm-min.png",
+        "alt": "Luminar - Easy Photo Editor | Software for Mac & PC(38)",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.macphun.com/img/uploads/uploads/skylum/l/photoshoot__monochrome-xs-min.png",
+        "alt": "Luminar - Easy Photo Editor | Software for Mac & PC(39)",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.macphun.com/img/uploads/uploads/skylum/l/photoshoot__faded-lg-min.png",
+        "alt": "Luminar - Easy Photo Editor | Software for Mac & PC(40)",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.macphun.com/img/uploads/uploads/skylum/l/photoshoot__faded-sm-min.png",
+        "alt": "Luminar - Easy Photo Editor | Software for Mac & PC(41)",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.macphun.com/img/uploads/uploads/skylum/l/photoshoot__faded-xs-min.png",
+        "alt": "Luminar - Easy Photo Editor | Software for Mac & PC(42)",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.macphun.com/img/uploads/uploads/skylum/l/photoshoot-control-text-1.png",
+        "alt": "Luminar - Easy Photo Editor | Software for Mac & PC(43)",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.macphun.com/img/uploads/uploads/skylum/l/photoshoot-control-text-2.png",
+        "alt": "Luminar - Easy Photo Editor | Software for Mac & PC(44)",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.macphun.com/img/uploads/uploads/skylum/l/photoshoot-control-text-3.png",
+        "alt": "Luminar - Easy Photo Editor | Software for Mac & PC(45)",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.macphun.com/img/uploads/uploads/skylum/l/photoshoot-control-text-4.png",
+        "alt": "Luminar - Easy Photo Editor | Software for Mac & PC(46)",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.macphun.com/img/uploads/uploads/skylum/l/photoshoot-control-text-5.png",
+        "alt": "Luminar - Easy Photo Editor | Software for Mac & PC(47)",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "lumion": {
+    "slug": "lumion",
+    "page_url": "https://lumion.com/",
+    "candidates": [
+      {
+        "url": "https://a.storyblok.com/f/180614/1200x630/eb0a9033ab/social_share_landscape.jpg",
+        "alt": "Official product preview",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "magic-bullet": {
+    "slug": "magic-bullet",
+    "page_url": "https://www.maxon.net/red-giant/magic-bullet",
+    "candidates": [],
+    "error": "HTTP 404"
+  },
+  "maze": {
+    "slug": "maze",
+    "page_url": "https://maze.co/",
+    "candidates": [
+      {
+        "url": "https://www.datocms-assets.com/38511/1778262436-promo-ai-study-builder.png?auto=format&dpr=0.94&fit=max&w=640",
+        "alt": "",
+        "width": 640,
+        "height": 640
+      },
+      {
+        "url": "https://www.datocms-assets.com/38511/1786395298-sol-playbook-cover-square-2.png?auto=format&dpr=0.69&fit=max&w=880",
+        "alt": "",
+        "width": 880,
+        "height": 880
+      },
+      {
+        "url": "https://www.datocms-assets.com/38511/1762726660-intro-crowd-min.png?auto=format&fit=max&w=368",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://www.datocms-assets.com/38511/1781805987-chat-panel.png?auto=format&dpr=0.38&fit=max&w=1080",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://www.datocms-assets.com/38511/1781818242-view-single-report.png?auto=format&dpr=0.42&fit=max&w=960",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://www.datocms-assets.com/38511/1762726667-intro-illu-min.png?auto=format&fit=max&w=376",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://www.datocms-assets.com/38511/1781818255-chat.png?auto=format&dpr=0.42&fit=max&w=960",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://www.datocms-assets.com/38511/1762727894-versatility-thumb-min.jpg?auto=format&dpr=0.63&fit=max&w=1280",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://www.datocms-assets.com/38511/1762727470-scale-thumb-min.jpg?auto=format&dpr=0.63&fit=max&w=1280",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://www.datocms-assets.com/38511/1762726490-influence-thumb-min.jpg?auto=format&dpr=0.63&fit=max&w=1280",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://www.datocms-assets.com/38511/1762727334-purpose-built-ai-thumb-min.jpg?auto=format&dpr=0.63&fit=max&w=1280",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://www.datocms-assets.com/38511/1762725957-bg-lime-crowd.jpg?auto=format&dpr=0.53&fit=max&w=2720",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://www.datocms-assets.com/38511/1762727093-newsletter_cover.jpg?auto=format&fit=max&w=656",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://www.datocms-assets.com/38511/1762727117-og-image-default.jpg?auto=format",
+        "alt": "Official product preview",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "motion-bro": {
+    "slug": "motion-bro",
+    "page_url": "https://motionbro.com",
+    "candidates": [],
+    "error": "HTTP 403"
+  },
+  "nik-collection": {
+    "slug": "nik-collection",
+    "page_url": "https://nikcollection.dxo.com",
+    "candidates": [],
+    "error": "HTTP 403"
+  },
+  "pitch": {
+    "slug": "pitch",
+    "page_url": "https://pitch.com/",
+    "candidates": [
+      {
+        "url": "https://framerusercontent.com/images/kvNF1wOwaUfesLU3sLJuiQTHFvw.png?width=650&height=366",
+        "alt": "",
+        "width": 650,
+        "height": 366
+      },
+      {
+        "url": "https://framerusercontent.com/images/YeEONZ55TsZQA1AE5inS1IYY99A.jpg?width=650&height=366",
+        "alt": "",
+        "width": 650,
+        "height": 366
+      },
+      {
+        "url": "https://framerusercontent.com/images/JVZqMwsIVKYV4vmub7hhVZhs.png?width=650&height=366",
+        "alt": "",
+        "width": 650,
+        "height": 366
+      },
+      {
+        "url": "https://framerusercontent.com/images/OjaRHcrA9lEHtXEC1Na1Jdyvbc.png?width=650&height=366",
+        "alt": "",
+        "width": 650,
+        "height": 366
+      },
+      {
+        "url": "https://framerusercontent.com/images/LP3iTJkH2ZHcJT3ZaBplwgmhxQ.jpg?width=650&height=366",
+        "alt": "",
+        "width": 650,
+        "height": 366
+      },
+      {
+        "url": "https://framerusercontent.com/images/kzFkl6OHMR6VWnE2x7qsxxanSo.jpg?width=650&height=366",
+        "alt": "",
+        "width": 650,
+        "height": 366
+      },
+      {
+        "url": "https://framerusercontent.com/images/A8eRuGr1vXQq8ZV9Xbsr5eMAWA.png?width=650&height=366",
+        "alt": "",
+        "width": 650,
+        "height": 366
+      },
+      {
+        "url": "https://framerusercontent.com/images/kU9iv6ACzxRytWN2FllyMCzTnY.png?width=650&height=366",
+        "alt": "",
+        "width": 650,
+        "height": 366
+      },
+      {
+        "url": "https://framerusercontent.com/images/Lb65IOhleSK1Dlq7d5lZlSnrHI.jpg?width=650&height=366",
+        "alt": "",
+        "width": 650,
+        "height": 366
+      },
+      {
+        "url": "https://framerusercontent.com/images/xnAI4HUI7aEUDaqqbwBNsmRbDPc.jpg?width=650&height=366",
+        "alt": "",
+        "width": 650,
+        "height": 366
+      },
+      {
+        "url": "https://framerusercontent.com/images/DoY2PSJpDoyALYqwKOmYOU7IJLY.png?width=650&height=365",
+        "alt": "",
+        "width": 650,
+        "height": 365
+      },
+      {
+        "url": "https://framerusercontent.com/images/MBxOb8lXbaM1GfyHaoutR8JES7A.jpg?width=650&height=366",
+        "alt": "",
+        "width": 650,
+        "height": 366
+      },
+      {
+        "url": "https://framerusercontent.com/images/IPDQ3xdqHOVclaG6ulSiXjKJJU.jpg?width=650&height=366",
+        "alt": "",
+        "width": 650,
+        "height": 366
+      },
+      {
+        "url": "https://framerusercontent.com/images/oDyroPS0MQFTqSEzD7UIbLnKIVo.jpg?width=650&height=366",
+        "alt": "",
+        "width": 650,
+        "height": 366
+      },
+      {
+        "url": "https://framerusercontent.com/images/MlxCYS5uRB23HSFbg9tF5gNJgg.jpg?width=650&height=366",
+        "alt": "",
+        "width": 650,
+        "height": 366
+      },
+      {
+        "url": "https://framerusercontent.com/images/2nYLhtGc78TQ9aJOZenTOut74y0.png?width=650&height=366",
+        "alt": "",
+        "width": 650,
+        "height": 366
+      },
+      {
+        "url": "https://framerusercontent.com/images/G4jheuiyWWNbaPBK9fDnJ91TeE.jpg?width=650&height=366",
+        "alt": "",
+        "width": 650,
+        "height": 366
+      },
+      {
+        "url": "https://framerusercontent.com/images/GQV59IWyGRHwXtH7nTTtaIWuU.jpg?width=650&height=366",
+        "alt": "",
+        "width": 650,
+        "height": 366
+      },
+      {
+        "url": "https://framerusercontent.com/images/XAL4Wa3PvuMwDhBGELxHF5OCPQ.jpg?width=650&height=366",
+        "alt": "",
+        "width": 650,
+        "height": 366
+      },
+      {
+        "url": "https://framerusercontent.com/images/lZcgGC2Fb9VDe5V76XukxwQ7iDc.jpg?width=1440&height=448",
+        "alt": "",
+        "width": 1440,
+        "height": 448
+      },
+      {
+        "url": "https://framerusercontent.com/images/HbUmNNo0HrMxnA0jW6213QxU7Q.png?width=1200&height=1262",
+        "alt": "Pitch presentation workspace visual",
+        "width": 1200,
+        "height": 1262
+      },
+      {
+        "url": "https://framerusercontent.com/images/j5rAAsnVfx9oi9sXo5BJcBGCuGQ.png?width=1200&height=1262",
+        "alt": "Pitch presentation workspace visual",
+        "width": 1200,
+        "height": 1262
+      },
+      {
+        "url": "https://framerusercontent.com/images/aTlTnXxHZYt2SLJDh0oXrcQyA3Q.png?width=1200&height=1262",
+        "alt": "Pitch presentation workspace visual",
+        "width": 1200,
+        "height": 1262
+      },
+      {
+        "url": "https://framerusercontent.com/images/xdJDwJnKfVw9EH3WqYrcnZ8ndhU.png?width=1200&height=1262",
+        "alt": "Pitch presentation workspace visual",
+        "width": 1200,
+        "height": 1262
+      },
+      {
+        "url": "https://framerusercontent.com/images/5b9y14c99dT8TcSYoJMgkiEAMc.png?width=974&height=560",
+        "alt": "Pitch editor showing an AI Agent workspace",
+        "width": 974,
+        "height": 560
+      },
+      {
+        "url": "https://framerusercontent.com/images/H0945ElYSbvHBR5btGiKkiZyQCo.png?width=950&height=554",
+        "alt": "Pitch editor showing a fashion presentation slide",
+        "width": 950,
+        "height": 554
+      },
+      {
+        "url": "https://framerusercontent.com/images/LkOlR6V3ANsfuHQ4eSCPEqQns1k.png?width=985&height=554",
+        "alt": "Pitch editor showing a presentation template",
+        "width": 985,
+        "height": 554
+      },
+      {
+        "url": "https://framerusercontent.com/images/JEGUmlRIVs5v6jMv9HdGWGJJkY.png?width=960&height=552",
+        "alt": "Pitch editor displaying a media-rich presentation canvas",
+        "width": 960,
+        "height": 552
+      },
+      {
+        "url": "https://framerusercontent.com/images/7YVCxRFT4SqlFMDAlEz0lAOEN0.png?width=2310&height=1062",
+        "alt": "Pitch product workflow illustration",
+        "width": 2310,
+        "height": 1062
+      },
+      {
+        "url": "https://framerusercontent.com/images/OYX0NnaQiruZ2ZxFyVI9wao1X78.png?width=2310&height=1062",
+        "alt": "Pitch product workflow illustration",
+        "width": 2310,
+        "height": 1062
+      }
+    ]
+  },
+  "protopie": {
+    "slug": "protopie",
+    "page_url": "https://www.protopie.io/",
+    "candidates": [
+      {
+        "url": "https://framerusercontent.com/images/FJliBXwqpIzVXZQvEMPcc0lmg5E.webp?width=1403&height=1406",
+        "alt": "",
+        "width": 1403,
+        "height": 1406
+      },
+      {
+        "url": "https://framerusercontent.com/images/GPhod20u7xCrRvMBMYXnNNDGQ1s.webp?width=1459&height=966",
+        "alt": "",
+        "width": 1459,
+        "height": 966
+      },
+      {
+        "url": "https://framerusercontent.com/images/OtwATA9Besx4GfklTXBXGrJUk.webp?width=666&height=1034",
+        "alt": "",
+        "width": 666,
+        "height": 1034
+      },
+      {
+        "url": "https://framerusercontent.com/images/H60k0Li2Z5mmzvIq3ewAAOR78c.webp?width=1032&height=1008",
+        "alt": "",
+        "width": 1032,
+        "height": 1008
+      },
+      {
+        "url": "https://framerusercontent.com/images/OD4AcrY8WMPBncSZR21KN8.webp?width=656&height=742",
+        "alt": "",
+        "width": 656,
+        "height": 742
+      },
+      {
+        "url": "https://framerusercontent.com/images/hYDNLkkiqokaNrLZG3s9ngPji0.webp?width=542&height=776",
+        "alt": "",
+        "width": 542,
+        "height": 776
+      },
+      {
+        "url": "https://framerusercontent.com/images/KgrbaMb3cbkmw4vxulZxAcBCoPI.webp?width=526&height=740",
+        "alt": "",
+        "width": 526,
+        "height": 740
+      },
+      {
+        "url": "https://framerusercontent.com/images/znL6eZEyfqephaiJZ1vgu4FVow.webp?width=846&height=738",
+        "alt": "",
+        "width": 846,
+        "height": 738
+      },
+      {
+        "url": "https://i.ytimg.com/vi_webp/QXN_cEG3va0/sddefault.webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://i.ytimg.com/vi_webp/ESNrVTjMo_A/sddefault.webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://i.ytimg.com/vi_webp/XEPsrXd_PXE/sddefault.webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://framerusercontent.com/images/FxlMGQyajkbPrMBXdEmZKk0ZFE8.png?width=561&height=524",
+        "alt": "",
+        "width": 561,
+        "height": 524
+      },
+      {
+        "url": "https://framerusercontent.com/images/oj6fuqDRI3aHNTRTHA0GFbuO0.png?width=530&height=532",
+        "alt": "",
+        "width": 530,
+        "height": 532
+      },
+      {
+        "url": "https://i.ytimg.com/vi_webp/BsEbMWoPg2A/sddefault.webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://i.ytimg.com/vi_webp/JFhdIt6xiL4/sddefault.webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://framerusercontent.com/images/93xvG0emWfEYDp3aStv7VofK9Tc.png?width=501&height=457",
+        "alt": "",
+        "width": 501,
+        "height": 457
+      },
+      {
+        "url": "https://framerusercontent.com/images/b5j9M3IFACSXH9p4K1TVpE7WV4.png?width=769&height=405",
+        "alt": "ProtoPie School",
+        "width": 769,
+        "height": 405
+      },
+      {
+        "url": "https://framerusercontent.com/images/wjqLdc3U4TPOwpGMxEimPhDvWKs.png?width=769&height=405",
+        "alt": "ProtoPie School",
+        "width": 769,
+        "height": 405
+      },
+      {
+        "url": "https://framerusercontent.com/images/8pkdFsZrcYyUvfkFqothzT5l9U.png?width=576&height=303",
+        "alt": "ProtoPie School",
+        "width": 576,
+        "height": 303
+      },
+      {
+        "url": "https://framerusercontent.com/images/5Y7MGNPFz8qgxx8dkW8MTCYY.png?width=525&height=290",
+        "alt": "cta",
+        "width": 525,
+        "height": 290
+      },
+      {
+        "url": "https://framerusercontent.com/images/TiXMqJyxaDShixfO2M6qDdTFgpU.jpg",
+        "alt": "Official product preview",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "red-giant-universe": {
+    "slug": "red-giant-universe",
+    "page_url": "https://www.maxon.net/en/red-giant/universe",
+    "candidates": [
+      {
+        "url": "https://maxonassets.imgix.net/images/Products/Universe/Universe_GSA_HERO.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces&q=10&blur=100",
+        "alt": "",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "https://maxonassets.imgix.net/images/Products/Universe/Universe-Banner_Dec_2025.png?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces&q=10&blur=100",
+        "alt": "",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "https://maxonassets.imgix.net/images/Products/Universe/Universe_Texturize.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces&q=10&blur=100",
+        "alt": "Stylize the Footage image",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "https://maxonassets.imgix.net/images/Products/Universe/Universe_Bokeh_2024.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces&q=10&blur=100",
+        "alt": "Create Motion Graphics image",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "https://maxonassets.imgix.net/images/Products/Universe/Universe_World_Suicide_UE_shot_by_Andy_Lefton.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces&q=10&blur=100",
+        "alt": "Build Transitions and Effects image",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "https://maxonassets.imgix.net/images/Products/Universe/Universe_Shine_The-Muppets-Mayhem-by-Penny-Nederlander.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces&q=10&blur=100",
+        "alt": "Design Text Effects image",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "https://maxonassets.imgix.net/images/Products/Universe/Universe_Presets.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces&q=10&blur=100",
+        "alt": "Diverse & Adaptable Effects image",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "https://maxonassets.imgix.net/images/Products/Universe/Universe_GPU_Acceleration.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces&q=10&blur=100",
+        "alt": "Real-Time Efficiency image",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "https://maxonassets.imgix.net/images/Products/Universe/Universe_Bokeh_Blur_Angle.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces&q=10&blur=100",
+        "alt": "Seamless Workflow Integration image",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "https://maxonassets.imgix.net/images/Products/Red-Giant/Color-banner-V2.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces&q=10&blur=100",
+        "alt": "Color image",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "https://maxonassets.imgix.net/images/Products/Red-Giant/Distortions-banner.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces&q=10&blur=100",
+        "alt": "3D asteroid field in space with colorful light effects and cosmic motion blur",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "https://maxonassets.imgix.net/images/Products/Red-Giant/Stylize-banner-V2.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces&q=10&blur=100",
+        "alt": "Stylize image",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "https://maxonassets.imgix.net/images/Products/Red-Giant/Generators-banner.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces&q=10&blur=100",
+        "alt": "Generators image",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "https://maxonassets.imgix.net/images/Products/Red-Giant/MotionGraphics-banner.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces&q=10&blur=100",
+        "alt": "Motion Graphics image",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "https://maxonassets.imgix.net/images/Products/Red-Giant/Text-banner.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces&q=10&blur=100",
+        "alt": "Text image",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "https://maxonassets.imgix.net/images/Products/Red-Giant/Utilities-banner_2.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces&q=10&blur=100",
+        "alt": "Utilities image",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "https://maxonassets.imgix.net/images/Products/Red-Giant/Transitions-banner-V2.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces&q=10&blur=100",
+        "alt": "Transitions image",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "https://maxonassets.imgix.net/images/Products/Universe/Universe_GSA_Vid.jpg?fm=webp&auto=format,compress&w=1280&h=720&ar=16:9&fit=clip&crop=faces&q=10&blur=100",
+        "alt": "",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "url": "https://maxonassets.imgix.net/images/Products/Universe/Universe_Seamless_Integration.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces&q=10&blur=100",
+        "alt": "",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Universe/_1200x630_crop_center-center_82_none/Universe_GSA_HERO.jpg?mtime=1729010747",
+        "alt": "Official product preview",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Universe/_800x418_crop_center-center_82_none/Universe_GSA_HERO.jpg?mtime=1729010747",
+        "alt": "Official product preview",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "renderman": {
+    "slug": "renderman",
+    "page_url": "https://renderman.pixar.com/",
+    "candidates": [
+      {
+        "url": "https://assets.renderman.pixar.com/images-pixar/hoppers-bkg-homepage.webp",
+        "alt": "Official product preview",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "revit": {
+    "slug": "revit",
+    "page_url": "https://www.autodesk.com/products/revit/overview",
+    "candidates": [
+      {
+        "url": "https://images.ctfassets.net/v7wr16nrr0mz/3KDbhOhJrfVULJbhBvdV8b/4274c3ad1941f2c404ce6c34b7177b81/forma-data-management-essentials-thumb-1172x660.jpg",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.ctfassets.net/v7wr16nrr0mz/4YGgMKjBnGOg4Imvh8mZzT/6840eee59750b9e0df9073698b742e4c/forma-board-thumb-1172x660.jpg",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.ctfassets.net/v7wr16nrr0mz/7yDLwWTYi4NEwzvO0ZpR2t/e13e5b9971de512950a1f31da1980e6d/forma-carbon-insights-thumb-1172x660.jpg",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.ctfassets.net/v7wr16nrr0mz/USDuwSeAOZpDfwimuqRiN/190b88f9077d7fa38fdb74eb0888e351/see-whats-new-autodesk-revit-2025-thumb-788x444.avif",
+        "alt": "Modern four-story glass building with a rooftop terrace, surrounded by a parking lot, trees, and people walking nearby.",
+        "width": 0,
+        "height": 240
+      },
+      {
+        "url": "https://images.ctfassets.net/v7wr16nrr0mz/5rtdJ4GuP4jMxGljvUZhib/3f3be6fbb7edcab405ea7ea841e8a46a/see-whats-next-for-autodesk-revit-thumb-788x444.avif",
+        "alt": "Aerial view of a cityscape rendered in Twinmotion for Autodesk Revit",
+        "width": 0,
+        "height": 240
+      }
+    ]
+  },
+  "rhino": {
+    "slug": "rhino",
+    "page_url": "https://www.rhino3d.com/",
+    "candidates": [
+      {
+        "url": "https://www.rhino3d.com/en/features/shrinkwrap/thumbnail_hu10919497186582654094.png",
+        "alt": "thumbnail.png",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://www.rhino3d.com/en/stories/modeling/thumbnail_hu9337068004090836434.png",
+        "alt": "thumbnail.png",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://www.rhino3d.com/en/features/subd/thumbnail_hu14037153014586131710.png",
+        "alt": "thumbnail.png",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://www.rhino3d.com/en/features/display/metal/thumbnail_hu1106646715459575417.png",
+        "alt": "thumbnail.png",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://www.rhino3d.com/images/aec-thumbnail_hu785694348662396619.png",
+        "alt": "https://www.rhino3d.com/images/aec-thumbnail.png",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://www.rhino3d.com/images/marine-transpac_finish_jbird3_hu2730327146233875408.jpg",
+        "alt": "https://www.rhino3d.com/images/marine-transpac_finish_jbird3.jpg",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://www.rhino3d.com/images/jewelry-thumbnail_hu12929709966851460360.png",
+        "alt": "https://www.rhino3d.com/images/jewelry-thumbnail.png",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://www.rhino3d.com/en/for/landscape-design/thumbnail_hu11821288608813224823.png",
+        "alt": "thumbnail.png",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://www.rhino3d.com/en/for/education/teachers/thumbnail_hu13097074525977037745.png",
+        "alt": "thumbnail.png",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://www.rhino3d.com/images/home_GH_drag.gif",
+        "alt": "Grasshopper in action",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://www.rhino3d.com/images/food4rhino-256x256.png",
+        "alt": "Food4Rhino",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://www.rhino3d.com/images/discourse-256x256.png",
+        "alt": "Discourse",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://www.rhino3d.com/images/calendar-256x256.png",
+        "alt": "Events",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://www.rhino3d.com/images/rss-256x256.png",
+        "alt": "News",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://www.rhino3d.com/images/developer-256x256.png",
+        "alt": "Developer",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://www.rhino3d.com/images/iRhino.webp",
+        "alt": "iRhino 3D Splash",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://www.rhino3d.com/images/leveloneguide_hu4499146068634762989.jpg",
+        "alt": "https://www.rhino3d.com/images/leveloneguide.jpg",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://www.rhino3d.com/images/classplay_hu13537086829289413884.jpg",
+        "alt": "https://www.rhino3d.com/images/classplay.jpg",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://www.rhino3d.com/images/glassplay_hu507477057082355904.jpg",
+        "alt": "https://www.rhino3d.com/images/glassplay.jpg",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://www.rhino3d.com/images/gh-js_hu3085106564800627501.jpg",
+        "alt": "https://www.rhino3d.com/images/gh-js.jpg",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "rive": {
+    "slug": "rive",
+    "page_url": "https://rive.app/",
+    "candidates": [
+      {
+        "url": "https://framerusercontent.com/images/aTosqj5HowH9kNricIFp8yEKBc.png?width=3432&height=940",
+        "alt": "",
+        "width": 3432,
+        "height": 940
+      },
+      {
+        "url": "https://framerusercontent.com/images/lczue4RRaIwL5lYwE3Ssh1mzk.jpeg?width=500&height=500",
+        "alt": "",
+        "width": 500,
+        "height": 500
+      },
+      {
+        "url": "https://framerusercontent.com/images/sHSAxXoU8kOqJhNeQhMnFiru36s.jpg?width=2400&height=3000",
+        "alt": "",
+        "width": 2400,
+        "height": 3000
+      },
+      {
+        "url": "https://framerusercontent.com/images/aRwPYvM8aGB6CGXUyowDsgSFagI.jpeg?width=560&height=560",
+        "alt": "",
+        "width": 560,
+        "height": 560
+      },
+      {
+        "url": "https://framerusercontent.com/images/yEWMbP7UtsS81SlkoxTasfabvc.png",
+        "alt": "Official product preview",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "sketchup-pro": {
+    "slug": "sketchup-pro",
+    "page_url": "https://sketchup.trimble.com/en",
+    "candidates": [
+      {
+        "url": "https://images.ctfassets.net/5qimfmsew7zl/1M12I2Eyw59Y4U4SJqCGin/a46834b0caf27f29ea566755506da7f2/SU2025-Website-NavigationPromo-WhySketchUp.jpg?w=400&h=300&fm=webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.ctfassets.net/5qimfmsew7zl/1NtddOku1Yc7BZUK04wmDr/cbb40283f5a37aa22a16c7ef0bca8371/SU2025-Website-NavigationPromo-Plans.jpg?w=400&h=300&fm=webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.ctfassets.net/5qimfmsew7zl/1OZ566jUiLmvbnYv3mZit4/32b6a8ec40950b4f675b11140a0da58d/SU2025-Website-NavigationPromo-YVR.jpg?w=400&h=300&fm=webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.ctfassets.net/5qimfmsew7zl/581OphBRCDGFo8gj2e86aj/162998a51c9ab39f6ae529fd54cf01fc/SU26-Event-3DBC-Website-S2-card-610x344.jpg?w=400&h=300&fm=webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.ctfassets.net/5qimfmsew7zl/7BBCJXCySakQn9d60rgooy/3618cada1e3f7fcd8253f84ad5cbe711/SU26-Event-3DBC-Website-S1-Spotlight-1875x820-r2-042926.jpg?fm=webp&w=1920&h=810&fit=fill&f=bottom&q=85",
+        "alt": "",
+        "width": 1920,
+        "height": 810
+      },
+      {
+        "url": "https://sketchup.trimble.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2F5qimfmsew7zl%2FGBa5fWrRs9IOkUrkvzb9l%2F27eee7037d541384770d0be510c7d6b4%2FSU2025-Website-Home-S4-Omar.jpg&w=3840&q=98",
+        "alt": "Omar Calderon",
+        "width": 1060,
+        "height": 596
+      },
+      {
+        "url": "https://images.ctfassets.net/5qimfmsew7zl/CLeItCuQzyar0Ix1BPD8b/7cb6eb778c29ab02b7aca31fc21c0450/SU-Website-Home-S1.jpg",
+        "alt": "Official product preview",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "solid-inspector2": {
+    "slug": "solid-inspector2",
+    "page_url": "https://extensions.sketchup.com/en/content/solid-inspector",
+    "candidates": []
+  },
+  "topaz-gigapixel": {
+    "slug": "topaz-gigapixel",
+    "page_url": "https://www.topazlabs.com/topaz-gigapixel",
+    "candidates": [
+      {
+        "url": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/6a03a09c0da8d43c30312fb6_image-web-nav.webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/6a03a09c0da8d43c30312fb6_image-web-nav-p-500.webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/6a03a09c0da8d43c30312fb6_image-web-nav-p-800.webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/6a03a09c0da8d43c30312fb6_image-web-nav-p-1080.webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/6a550df5d20a88025c943ad5_mobile-nav.webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/6a550df5d20a88025c943ad5_mobile-nav-p-500.webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/68c1dca679ee4a220123eb49_topaz-astra-large.avif",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/68c1dca679ee4a220123eb49_topaz-astra-large-p-500.avif",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/67eebcb72749517085f56864_v25-nav-enterprise.webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/67eebcb72749517085f56864_v25-nav-enterprise-p-500.webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/67eebcb72749517085f56864_v25-nav-enterprise-p-800.webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/67eebcb72749517085f56864_v25-nav-enterprise-p-1080.webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/67eebcb72749517085f56864_v25-nav-enterprise-p-1600.webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/68275fd8d0309ef136909281_enterprise-form-image-cropped.webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/68275fd8d0309ef136909281_enterprise-form-image-cropped-p-500.webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/68275fd8d0309ef136909281_enterprise-form-image-cropped-p-800.webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/68275fd8d0309ef136909281_enterprise-form-image-cropped-p-1080.webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/68275fd8d0309ef136909281_enterprise-form-image-cropped-p-1600.webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/6939d4168feee4ef8492a1e2_support-headshot.jpg",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/683f6e96723281d501d14889_june-giga-home-before.webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/683f6e96723281d501d14889_june-giga-home-before-p-500.webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/683f6e96723281d501d14889_june-giga-home-before-p-800.webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/683f6e960978f010549fc483_june-giga-home-after.webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/683f6e960978f010549fc483_june-giga-home-after-p-500.webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/683f6e960978f010549fc483_june-giga-home-after-p-800.webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/683f6e960978f010549fc483_june-giga-home-after-p-1080.webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/683f6e960978f010549fc483_june-giga-home-after-p-1600.webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/683f6e960978f010549fc483_june-giga-home-after-p-2000.webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/69cbe483e48551e8a0c49063_precision-cta-before.webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/69cbe483e48551e8a0c49063_precision-cta-before-p-500.webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "twinmotion": {
+    "slug": "twinmotion",
+    "page_url": "https://www.twinmotion.com",
+    "candidates": [],
+    "error": "HTTP 403"
+  },
+  "v-ray": {
+    "slug": "v-ray",
+    "page_url": "https://www.chaos.com/vray",
+    "candidates": [
+      {
+        "url": "https://static.chaos.com/images/assets/000/023/841/original/main-menu-arch-design-enscape.png",
+        "alt": "Easy to use real-time design companion",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/026/956/original/veras-4-menu-586x164.png?1770735073",
+        "alt": "Fast AI-powered ideation & visualization",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/023/838/original/main-menu-arch-design-v-ray.png",
+        "alt": "Industry-standard photorealistic rendering",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/023/805/original/industry-solutions-studio-bazzini-thumb-1920x1080-v2.jpg",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/023/802/original/industry-solutions-tm-marvel-1920x1080-v2.jpg",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/026/964/original/FFF_City_Hall_Plaza_03_Urban_Grove.png?1770981446",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/023/803/original/industry-solutions-lazzeroni-studio-1920x1080-v2.jpg",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/026/992/full_width_original/Gemini_Generated_Image_juko03juko03juko.avif?1771232200",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/026/905/original/tiles-connect-690x380.jpeg?1769697287",
+        "alt": "CGconnect",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/026/903/original/tiles-learn-690x380.jpeg?1769697278",
+        "alt": "Chaos Academy",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/025/178/image/benefit-v-ray-archviz-award-winning-1140x770.png?1779737136",
+        "alt": "",
+        "width": 960,
+        "height": 648
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/025/177/image/benefit-v-ray-archvizy-scale-1140x770.png?1779737127",
+        "alt": "",
+        "width": 960,
+        "height": 648
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/027/313/original/1200x860_-_Benefit_-_ArchViz_-_V-Ray_-_Vantage.gif?1779750063",
+        "alt": "",
+        "width": 960,
+        "height": 688
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/025/350/image/benefit-archviz-collection-v-ray-integration-1140x770.png?1779737663",
+        "alt": "",
+        "width": 960,
+        "height": 648
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/027/132/image/archviz-vray-up-3-hero-2-1200x1010.png?1779746599",
+        "alt": "",
+        "width": 960,
+        "height": 808
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/026/466/image/workflow-widget-archviz-vray-scene-1.png?1779743566",
+        "alt": "",
+        "width": 960,
+        "height": 628
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/026/469/image/workflow-widget-archviz-vray-lighting-1.png?1779743585",
+        "alt": "",
+        "width": 960,
+        "height": 628
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/025/187/single_image_horizontal/v-ray-archviz-trial-900x500.png?1747119331",
+        "alt": "",
+        "width": 1410,
+        "height": 800
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/025/186/gallery_masonry_vertical/v-ray-trial-760x960.png?1746992260",
+        "alt": "",
+        "width": 636,
+        "height": 716
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/025/185/image/v-ray-archviz-chaos-academy-900x500.png?1747302778",
+        "alt": "",
+        "width": 960,
+        "height": 533
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/025/184/image/v-ray-archviz-sample-scenes-900x500.png?1747302776",
+        "alt": "",
+        "width": 960,
+        "height": 533
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/024/336/full_width_original/home-gallery-archipelago-house.jpg?1741281474",
+        "alt": "",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/024/450/mobile_square/mobile-home-gallery-archipelagohouse-vray-v2.png?1742371457",
+        "alt": "",
+        "width": 540,
+        "height": 540
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/025/105/image/747-studios-walter-knoll-interior-design-vray-3ds-max-gallery.jpg?1746806046",
+        "alt": "",
+        "width": 960,
+        "height": 960
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/025/105/mobile_square/747-studios-walter-knoll-interior-design-vray-3ds-max-gallery.jpg?1746806046",
+        "alt": "",
+        "width": 540,
+        "height": 540
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/025/110/image/Smart_City_Flying_Architecture_-_Zaha_Hadid_Architects-rhino-gallery.jpg?1746808100",
+        "alt": "",
+        "width": 960,
+        "height": 960
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/025/110/mobile_square/Smart_City_Flying_Architecture_-_Zaha_Hadid_Architects-rhino-gallery.jpg?1746808100",
+        "alt": "",
+        "width": 540,
+        "height": 540
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/025/108/image/uniform-canary-wharf-group-architecture-vray-3ds-max-gallery.jpg?1746807365",
+        "alt": "",
+        "width": 960,
+        "height": 1450
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/025/109/mobile_square/uniform-canary-wharf-group-architecture-vray-3ds-max-mobile-gallery.jpg?1746807452",
+        "alt": "",
+        "width": 540,
+        "height": 540
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/025/107/image/747-studios-walter-knoll-interior-design-vray-3ds-max-gallery..jpg?1746806818",
+        "alt": "",
+        "width": 960,
+        "height": 600
+      }
+    ]
+  },
+  "x-particles": {
+    "slug": "x-particles",
+    "page_url": "https://insydium.ltd/products/x-particles/",
+    "candidates": [
+      {
+        "url": "https://insydium.ltd/site/assets/files/2703/particlefx.jpg",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://insydium.ltd/site/assets/files/2704/smoke-fire.jpg",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://insydium.ltd/site/assets/files/2705/fluidsgrains.jpg",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://insydium.ltd/site/assets/files/2706/dynamics.jpg",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://insydium.ltd/site/assets/files/2707/cloth.jpg",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://insydium.ltd/site/assets/files/2561/flip_ui.jpg",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://insydium.ltd/site/assets/files/2872/ui_cache_layers.png",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://insydium.ltd/site/assets/files/1892/cinema_4d_bymaxon_light.400x0-is.png",
+        "alt": "",
+        "width": 400,
+        "height": 0
+      },
+      {
+        "url": "https://insydium.ltd/site/assets/files/1630/cycles4d_2018_compact_white.180x0-is.png",
+        "alt": "",
+        "width": 180,
+        "height": 0
+      }
+    ]
+  },
+  "zeplin": {
+    "slug": "zeplin",
+    "page_url": "https://zeplin.io/",
+    "candidates": [
+      {
+        "url": "https://cdn.sanity.io/images/wd3e2pma/production/f95e3816865ba574c935c3cb54f97f400efb92d4-4352x2294.jpg?w=1451&q=95",
+        "alt": "",
+        "width": 1451,
+        "height": 765
+      },
+      {
+        "url": "https://cdn.sanity.io/images/wd3e2pma/production/be6338f824f829d4fd67da2f282524bf17ba735d-1704x1869.png?w=568&q=95",
+        "alt": "",
+        "width": 568,
+        "height": 623
+      },
+      {
+        "url": "https://cdn.sanity.io/images/wd3e2pma/production/59d11c64187729bec230c0b90ef247c305757fac-1728x2148.png?w=576&q=95",
+        "alt": "",
+        "width": 576,
+        "height": 716
+      },
+      {
+        "url": "https://cdn.sanity.io/images/wd3e2pma/production/53f106bbacf4c4d551387e21a40f70d1c25131f2-1704x1869.png?w=568&q=95",
+        "alt": "",
+        "width": 568,
+        "height": 623
+      },
+      {
+        "url": "https://cdn.sanity.io/images/wd3e2pma/production/a78bcb7d31bca68b6170170a0179d7281ac46c7e-1728x2148.png?w=576&q=95",
+        "alt": "",
+        "width": 576,
+        "height": 716
+      },
+      {
+        "url": "https://cdn.sanity.io/images/wd3e2pma/production/a8d8025148ff9dc0ed7bb2c449a0a39b68fb8f2c-1704x1869.png?w=568&q=95",
+        "alt": "",
+        "width": 568,
+        "height": 623
+      },
+      {
+        "url": "https://cdn.sanity.io/images/wd3e2pma/production/65ef65e031ff39eccd6a522b1e17aeb859b104c7-1728x2148.png?w=576&q=95",
+        "alt": "",
+        "width": 576,
+        "height": 716
+      },
+      {
+        "url": "https://cdn.sanity.io/images/wd3e2pma/production/11cfb17a142494b70a3e73f60613a19781fb2ca3-1704x1869.png?w=568&q=95",
+        "alt": "",
+        "width": 568,
+        "height": 623
+      },
+      {
+        "url": "https://cdn.sanity.io/images/wd3e2pma/production/8407f4e817b8ee3767be13f818a416532b6749e5-1728x2148.png?w=576&q=95",
+        "alt": "",
+        "width": 576,
+        "height": 716
+      },
+      {
+        "url": "https://cdn.sanity.io/images/wd3e2pma/production/8074133281f241942cc580e299cb158116d218ed-1704x1869.png?w=568&q=95",
+        "alt": "",
+        "width": 568,
+        "height": 623
+      },
+      {
+        "url": "https://cdn.sanity.io/images/wd3e2pma/production/44e30d310313e1c713db7950d048944c6715ef71-1704x1869.png?w=568&q=95",
+        "alt": "",
+        "width": 568,
+        "height": 623
+      },
+      {
+        "url": "https://cdn.sanity.io/images/wd3e2pma/production/2fe99b4be750ee5ff55cb70065867c73a2351a67-1728x2148.png?w=576&q=95",
+        "alt": "",
+        "width": 576,
+        "height": 716
+      },
+      {
+        "url": "https://cdn.sanity.io/images/wd3e2pma/production/a9cb61fa0672ace03fdfae28e56980a5961c7bc1-1704x1869.png?w=568&q=95",
+        "alt": "",
+        "width": 568,
+        "height": 623
+      },
+      {
+        "url": "https://cdn.sanity.io/images/wd3e2pma/production/b1a6732ff7291b4e63c9e12b1ef81c7c7728f837-1770x804.png?w=590&q=95",
+        "alt": "",
+        "width": 590,
+        "height": 268
+      },
+      {
+        "url": "https://cdn.sanity.io/images/wd3e2pma/production/fb939236f0ad021290ed66541d02dab2974be515-1770x804.png?w=590&q=95",
+        "alt": "",
+        "width": 590,
+        "height": 268
+      },
+      {
+        "url": "https://cdn.sanity.io/images/wd3e2pma/production/716ae55a149ff63038853cb19d0c17676d406676-1200x600.jpg?rect=29,0,1143,600&w=1200&h=630",
+        "alt": "Official product preview",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "specify": {
+    "slug": "specify",
+    "page_url": "https://specifyapp.com/",
+    "candidates": [
+      {
+        "url": "https://framerusercontent.com/images/Mf3WhKlT44JPgm014wOOq9AHI4.png",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://framerusercontent.com/modules/2exzXhSMp27VOasm1qiX/shZw2h9fuYltTK4lyzyR/assets/OsMlcH6vgBRczHjx1VZYIVKXiw.jpg",
+        "alt": "Roy Van Rooijen",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://framerusercontent.com/modules/2exzXhSMp27VOasm1qiX/shZw2h9fuYltTK4lyzyR/assets/512/OsMlcH6vgBRczHjx1VZYIVKXiw.jpg",
+        "alt": "Roy Van Rooijen",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://framerusercontent.com/modules/2exzXhSMp27VOasm1qiX/shZw2h9fuYltTK4lyzyR/assets/fYw6Vg0BJbZ3vdUTQfTPtB7SR64.jpg",
+        "alt": "Hicham El Abbassi",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://framerusercontent.com/modules/2exzXhSMp27VOasm1qiX/shZw2h9fuYltTK4lyzyR/assets/512/fYw6Vg0BJbZ3vdUTQfTPtB7SR64.jpg",
+        "alt": "Hicham El Abbassi",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://framerusercontent.com/modules/2exzXhSMp27VOasm1qiX/shZw2h9fuYltTK4lyzyR/assets/MWmR0WkTfBy4ia1dEakDFVaILgY.jpg",
+        "alt": "Niels Boey",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://framerusercontent.com/modules/2exzXhSMp27VOasm1qiX/shZw2h9fuYltTK4lyzyR/assets/512/MWmR0WkTfBy4ia1dEakDFVaILgY.jpg",
+        "alt": "Niels Boey",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://framerusercontent.com/modules/2exzXhSMp27VOasm1qiX/shZw2h9fuYltTK4lyzyR/assets/bilMEzNnM6kdgi7vRvInvcJ1lM.jpg",
+        "alt": "Gabriel Cousin",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://framerusercontent.com/modules/2exzXhSMp27VOasm1qiX/shZw2h9fuYltTK4lyzyR/assets/512/bilMEzNnM6kdgi7vRvInvcJ1lM.jpg",
+        "alt": "Gabriel Cousin",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://framerusercontent.com/modules/2exzXhSMp27VOasm1qiX/shZw2h9fuYltTK4lyzyR/assets/xonterZXbVK7dx9DVWvAhQxpOw.jpg",
+        "alt": "Alexis Oney",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://framerusercontent.com/modules/2exzXhSMp27VOasm1qiX/shZw2h9fuYltTK4lyzyR/assets/512/xonterZXbVK7dx9DVWvAhQxpOw.jpg",
+        "alt": "Alexis Oney",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://framerusercontent.com/images/fP6oA45bf0QBRGhw5Gmi0VYg.jpg",
+        "alt": "Official product preview",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "astute-graphics": {
+    "slug": "astute-graphics",
+    "page_url": "https://astutegraphics.com/",
+    "candidates": [
+      {
+        "url": "https://astute-graphics.imgix.net/training/path-zipper/new-path-zipper.png?h=300&ixlib=php-3.3.1&w=300",
+        "alt": "How to close small gaps in Illustrator with Path Zipper",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://astute-graphics.imgix.net/plugins/astutebuddy-media/astutebuddy-image.png?ixlib=php-3.3.1&w=660",
+        "alt": "AstuteBuddy Plugin for Adobe Illustrator",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://astute-graphics.imgix.net/plugins/autosaviour/astute-plugins-thumbnail-autosaviour.png?ixlib=php-3.3.1&w=660",
+        "alt": "Autosaviour Plugin for Adobe Illustrator",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://astute-graphics.imgix.net/plugins/colliderscribe/astute-plugins-thumbnail-colliderscribe.png?ixlib=php-3.3.1&w=660",
+        "alt": "ColliderScribe Plugin for Adobe Illustrator",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://astute-graphics.imgix.net/plugins/directprefs/DirectPrefs-POP-Cover.jpg?ixlib=php-3.3.1&w=660",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://astute-graphics.imgix.net/plugins/dynamicsketch/astute-plugins-thumbnail-dynamicsketch.png?ixlib=php-3.3.1&w=660",
+        "alt": "DynamicSketch Plugin for Adobe Illustrator",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://astute-graphics.imgix.net/plugins/findreplace/astute-plugins-thumbnail-findreplace.png?ixlib=php-3.3.1&w=660",
+        "alt": "FindReplace Plugin for Adobe Illustrator",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://astute-graphics.imgix.net/plugins/inkflow/inkflow-strapline2.png?ixlib=php-3.3.1&w=660",
+        "alt": "InkFlow Plugin for Adobe Illustrator",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://astute-graphics.imgix.net/plugins/inkscribe/astute-plugins-thumbnail-inkscribe.png?ixlib=php-3.3.1&w=660",
+        "alt": "InkScribe Plugin for Adobe Illustrator",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://astute-graphics.imgix.net/plugins/mirrorme/AG-Plugin-Thumb-MirrorMe.png?ixlib=php-3.3.1&w=660",
+        "alt": "MirrorMe Plugin for Adobe Illustrator",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://astute-graphics.imgix.net/plugins/phantasm/astute-plugins-thumbnail-phantasm.png?ixlib=php-3.3.1&w=660",
+        "alt": "Phantasm Plugin for Adobe Illustrator",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://astute-graphics.imgix.net/plugins/randomino/Randomino-Feature.png?ixlib=php-3.3.1&w=660",
+        "alt": "Randomino Plugin for Adobe Illustrator",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://astute-graphics.imgix.net/plugins/rasterino/astute-plugins-thumbnail-rasterino.png?ixlib=php-3.3.1&w=660",
+        "alt": "Rasterino Plugin for Adobe Illustrator",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://astute-graphics.imgix.net/plugins/reform/Reform-Image.png?ixlib=php-3.3.1&w=660",
+        "alt": "Reform Plugin for Adobe Illustrator",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://astute-graphics.imgix.net/plugins/stipplism/astute-plugins-thumbnail-stipplism.png?ixlib=php-3.3.1&w=660",
+        "alt": "Stipplism Plugin for Adobe Illustrator",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://astute-graphics.imgix.net/plugins/stylism/AG-Plugin-Thumb-Stylism.png?ixlib=php-3.3.1&w=660",
+        "alt": "Stylism Plugin for Adobe Illustrator",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://astute-graphics.imgix.net/plugins/subscribe/astute-plugins-thumbnail-subscribe.png?ixlib=php-3.3.1&w=660",
+        "alt": "SubScribe Plugin for Adobe Illustrator",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://astute-graphics.imgix.net/plugins/texturino/astute-plugins-thumbnail-texturino.png?ixlib=php-3.3.1&w=660",
+        "alt": "Texturino Plugin for Adobe Illustrator",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://astute-graphics.imgix.net/plugins/vectorfirstaid/astute-plugins-thumbnail-vfa.png?ixlib=php-3.3.1&w=660",
+        "alt": "VectorFirstAid Plugin for Adobe Illustrator",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://astute-graphics.imgix.net/plugins/vectorscribe/astute-plugins-thumbnail-vectorscribe.png?ixlib=php-3.3.1&w=660",
+        "alt": "VectorScribe Plugin for Adobe Illustrator",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://astute-graphics.imgix.net/plugins/widthscribe/astute-plugins-thumbnail-widthscribe.png?ixlib=php-3.3.1&w=660",
+        "alt": "WidthScribe Plugin for Adobe Illustrator",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  }
+}

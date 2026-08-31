@@ -1,0 +1,265 @@
+{
+  "batch": "review-design-tools-critical-003",
+  "current": {
+    "affiliate_url": "https://protopie.io",
+    "alternatives": [],
+    "category": "design-tools",
+    "cons": [
+      "Courbe d'apprentissage pour les interactions avancées.",
+      "Plans payants nécessaires pour les prototypes sérieux.",
+      "Intégration limitée directement dans les outils de design (vs. Figma natif)."
+    ],
+    "cons_en": [
+      "Learning curve for advanced interactions.",
+      "Paid plans needed for serious prototyping.",
+      "Limited native integration in design tools (vs. Figma)."
+    ],
+    "host_app": null,
+    "id": "protopie",
+    "long_description": "ProtoPie, c'est prototypage interactif avancé sans code. Interactions complexes impossibles dans Figma. À partir de 11.26€/mois. Pensé pour les designers UX/UI.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : micro-interactions complexes, prototypes haute fidélité avancés. À éviter si : figma suffit pour 90% des prototypes — doublon si usage basique. Pertinent uniquement pour des interactions que Figma ne peut pas faire.",
+    "long_description_en": "ProtoPie is advanced interactive prototyping without code. Complex interactions impossible in Figma. Starting at €11.26/month. Built for UX/UI designers.\n\nEstimated time saving: 4h/month.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://framerusercontent.com/images/TiXMqJyxaDShixfO2M6qDdTFgpU.jpg"
+    },
+    "name": "ProtoPie",
+    "pricing": {
+      "free": "30 jours trial",
+      "paid": "13$/mois (Basic)"
+    },
+    "pricing_en": null,
+    "pricing_v5": {
+      "cautions": [],
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Entry paid plan",
+      "compare_price_monthly_eur": 11.26,
+      "location_sensitive": false,
+      "official_source_url": "https://protopie.io",
+      "price_reliability": "low",
+      "source_domain": "protopie.io",
+      "usage_sensitive": false,
+      "verification_status": "official_site_only",
+      "verified_on": "2026-03-13"
+    },
+    "pros": [
+      "Simulation d'interactions complexes sans code.",
+      "Test sur appareils réels inclus.",
+      "Support multi-domaine (mobile, web, IoT, automotive).",
+      "Collaboration en temps réel avec ProtoPie Cloud.",
+      "Tier gratuit accessible."
+    ],
+    "pros_en": [
+      "Complex interaction simulation without code.",
+      "Real device testing included.",
+      "Multi-domain support (mobile, web, IoT, automotive).",
+      "Real-time collaboration with ProtoPie Cloud.",
+      "Free tier available."
+    ],
+    "short_description": "Prototypage interactif avancé sans code. Interactions complexes impossibles dans Figma.",
+    "short_description_en": "Advanced interactive prototyping without code. Complex interactions impossible in Figma.",
+    "slug": "protopie",
+    "source_url": "https://protopie.io",
+    "source_verified_on": "2026-03-13",
+    "use_cases": [
+      "Prototyper une application mobile avec gestes et capteurs complexes.",
+      "Tester une expérience automotive ou IoT avant développement.",
+      "Valider une micro-interaction impliquant variables et conditions."
+    ],
+    "use_cases_en": [
+      "Prototype a mobile app with complex gestures and sensors.",
+      "Test an automotive or IoT experience before development.",
+      "Validate a micro-interaction involving variables and conditions."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous prototypez des interfaces simples et linéaires.",
+        "Vous avez un budget serré sans besoins de test multi-appareils.",
+        "Vous préférez un outil plus léger et intégré à Figma."
+      ],
+      "keepIf": [
+        "Vous créez des prototypes interactifs complexes avec des gestes tactiles et des capteurs.",
+        "Vous avez besoin de tester sur des appareils réels pendant le prototypage.",
+        "Vous travaillez dans plusieurs domaines (mobile, web, IoT, automotive).",
+        "Vous collaborez en temps réel avec des équipes."
+      ],
+      "threshold": "ProtoPie s'impose pour les prototypes haute-fidélité avec interactions complexes ; pour des wireframes et prototypes simples, Figma ou Adobe XD suffisent."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You prototype simple, linear interfaces.",
+        "You have a tight budget without multi-device testing needs.",
+        "You prefer a lighter tool integrated in Figma."
+      ],
+      "keepIf": [
+        "You create complex interactive prototypes with gestures and sensors.",
+        "You need to test on real devices during prototyping.",
+        "You work across multiple domains (mobile, web, IoT, automotive).",
+        "You collaborate in real-time with teams."
+      ],
+      "threshold": "ProtoPie is essential for high-fidelity prototypes with complex interactions; for wireframes and simple prototypes, Figma or Adobe XD suffice."
+    },
+    "website_url": "https://protopie.io"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Learning curve for advanced interactions.",
+        "Paid plans needed for serious prototyping.",
+        "Limited native integration in design tools (vs. Figma)."
+      ],
+      "pros": [
+        "Complex interaction simulation without code.",
+        "Real device testing included.",
+        "Multi-domain support (mobile, web, IoT, automotive).",
+        "Real-time collaboration with ProtoPie Cloud.",
+        "Free tier available."
+      ],
+      "use_cases": [
+        "Prototype a mobile app with complex gestures and sensors.",
+        "Test an automotive or IoT experience before development.",
+        "Validate a micro-interaction involving variables and conditions."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You prototype simple, linear interfaces.",
+          "You have a tight budget without multi-device testing needs.",
+          "You prefer a lighter tool integrated in Figma."
+        ],
+        "keepIf": [
+          "You create complex interactive prototypes with gestures and sensors.",
+          "You need to test on real devices during prototyping.",
+          "You work across multiple domains (mobile, web, IoT, automotive).",
+          "You collaborate in real-time with teams."
+        ],
+        "threshold": "ProtoPie is essential for high-fidelity prototypes with complex interactions; for wireframes and simple prototypes, Figma or Adobe XD suffice."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Enregistrement gratuit avec enregistrement d'interactions et liens partageables",
+        "exists": true
+      },
+      "key_features": [
+        "Animations basées sur la logique avec variables et formules",
+        "Interactions multi-appareils et cross-device",
+        "Capteurs natifs des appareils (accéléromètre, géolocalisation)",
+        "Interactions vocales",
+        "Intégrations flexibles et données réelles",
+        "ProtoPie Cloud pour le partage et la collaboration"
+      ],
+      "plans": [
+        {
+          "name": "Free",
+          "price": "Gratuit"
+        },
+        {
+          "name": "Starter",
+          "price": "À partir de USD 11/mois"
+        },
+        {
+          "name": "Enterprise",
+          "price": "Montants sur la page officielle"
+        }
+      ],
+      "pricing_model": "Tier gratuit avec fonctionnalités limitées. Plans payants à partir de montants sur la page officielle. Options Enterprise avec licences personnalisées.",
+      "what": "Plateforme de prototypage alimentée par l'IA pour créer des interactions complexes et tester les prototypes sur des appareils réels (mobile, web, automotive, IoT, jeux).",
+      "what_en": "AI-driven prototyping platform for creating complex interactions and testing prototypes on real devices (mobile, web, automotive, IoT, gaming)."
+    },
+    "fr": {
+      "cons": [
+        "Courbe d'apprentissage pour les interactions avancées.",
+        "Plans payants nécessaires pour les prototypes sérieux.",
+        "Intégration limitée directement dans les outils de design (vs. Figma natif)."
+      ],
+      "pros": [
+        "Simulation d'interactions complexes sans code.",
+        "Test sur appareils réels inclus.",
+        "Support multi-domaine (mobile, web, IoT, automotive).",
+        "Collaboration en temps réel avec ProtoPie Cloud.",
+        "Tier gratuit accessible."
+      ],
+      "relevant_for": [
+        "Designers UX/UI",
+        "Product managers",
+        "Interaction designers"
+      ],
+      "use_cases": [
+        "Prototyper une application mobile avec gestes et capteurs complexes.",
+        "Tester une expérience automotive ou IoT avant développement.",
+        "Valider une micro-interaction impliquant variables et conditions."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous prototypez des interfaces simples et linéaires.",
+          "Vous avez un budget serré sans besoins de test multi-appareils.",
+          "Vous préférez un outil plus léger et intégré à Figma."
+        ],
+        "keepIf": [
+          "Vous créez des prototypes interactifs complexes avec des gestes tactiles et des capteurs.",
+          "Vous avez besoin de tester sur des appareils réels pendant le prototypage.",
+          "Vous travaillez dans plusieurs domaines (mobile, web, IoT, automotive).",
+          "Vous collaborez en temps réel avec des équipes."
+        ],
+        "threshold": "ProtoPie s'impose pour les prototypes haute-fidélité avec interactions complexes ; pour des wireframes et prototypes simples, Figma ou Adobe XD suffisent."
+      }
+    },
+    "slug": "protopie",
+    "sources": [
+      {
+        "label": "ProtoPie (site officiel)",
+        "url": "https://protopie.io"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-003",
+    "batch_position": 11,
+    "blockers": [],
+    "catalog_hash": "sha256:1a4596190e9d1605c9a58d4f619ff4f870ae9477ddb3d8723b5ad7bd27b23eaf",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:21af70cfcfbcf7c9923784d17c5e7ef64e82410bd4766c8afed7eccda72601b6",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "ProtoPie",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:a834a6ca41ffbef651f420f74a998112b7244e910c63ecee702d1b63fd2a380d",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "protopie",
+    "source_url": "https://protopie.io",
+    "source_verified_on": "2026-03-13",
+    "status": "QUEUED"
+  }
+}

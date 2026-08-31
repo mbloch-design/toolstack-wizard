@@ -1,5 +1,19 @@
 # ToolTrim — AI Changelog
 
+## 2026-08-31 · Revue complète de la fiche Meshy
+
+- Le lien principal utilise désormais l'attribution `https://www.meshy.ai?via=tooltrim` tout en conservant le domaine officiel comme URL canonique.
+- Les tarifs et conditions du plan gratuit ont été remis à jour depuis la page officielle Meshy.
+- La galerie présente quatre images produit officielles couvrant la génération, l'interface Image to 3D et la préparation à l'impression 3D.
+- Validation : registre complet PASS, build production PASS et rendus FR/EN contrôlés sans image cassée, avec lien affilié actif.
+
+## 2026-08-31 · Revue média de 25 fiches design et 3D
+
+- Le lot `review-design-tools-critical-003` couvre 25 fiches de design, prototypage, animation, architecture, rendu et extensions créatives.
+- Les preuves média comprennent 13 galeries de quatre médias, 5 de trois médias, 1 de deux médias et 6 fiches avec un média lorsque les sources officielles ne permettent pas d'en retenir davantage.
+- Les sources tarifaires de Specify et Twinmotion ont été actualisées depuis leurs pages officielles ; Magic Bullet pointe désormais vers la page Red Giant active de Maxon.
+- Validation : registre complet PASS, 25 preuves média valides, 25 fiches publiées, build production PASS et douze routes FR/EN contrôlées sans image cassée.
+
 ## 2026-08-31 · Revue média de 25 fiches design
 
 - Le lot `review-design-tools-critical-002` couvre 25 fiches Adobe, After Effects, Autodesk, Figma, photo et rendu 3D.

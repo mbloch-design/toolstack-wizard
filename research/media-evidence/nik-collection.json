@@ -1,0 +1,34 @@
+{
+  "slug": "nik-collection",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://nikcollection.dxo.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://pub-27e14545e036427f828cd9cf06f1395f.r2.dev/web/dxo.com/nikcollection/learn/nik9-learn-screen-7.webp",
+      "official": true,
+      "alt": "Nik Collection interface",
+      "source_page_url": "https://nikcollection.dxo.com"
+    },
+    {
+      "kind": "image",
+      "url": "https://pub-27e14545e036427f828cd9cf06f1395f.r2.dev/web/dxo.com/nikcollection/learn/nik9-learn-screen-2.webp",
+      "official": true,
+      "alt": "Nik Collection editing workflow",
+      "source_page_url": "https://nikcollection.dxo.com"
+    },
+    {
+      "kind": "image",
+      "url": "https://pub-27e14545e036427f828cd9cf06f1395f.r2.dev/web/dxo.com/nikcollection/learn/nik9-learn-screen-3.webp",
+      "official": true,
+      "alt": "Nik Collection filters",
+      "source_page_url": "https://nikcollection.dxo.com"
+    }
+  ]
+}

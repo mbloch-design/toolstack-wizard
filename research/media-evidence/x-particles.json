@@ -1,0 +1,41 @@
+{
+  "slug": "x-particles",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://insydium.ltd/products/x-particles/"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://insydium.ltd/site/assets/files/2703/particlefx.jpg",
+      "source_page_url": "https://insydium.ltd/products/x-particles/",
+      "official": true,
+      "alt": "x-particles official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://insydium.ltd/site/assets/files/2704/smoke-fire.jpg",
+      "source_page_url": "https://insydium.ltd/products/x-particles/",
+      "official": true,
+      "alt": "x-particles official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://insydium.ltd/site/assets/files/2705/fluidsgrains.jpg",
+      "source_page_url": "https://insydium.ltd/products/x-particles/",
+      "official": true,
+      "alt": "x-particles official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://insydium.ltd/site/assets/files/2706/dynamics.jpg",
+      "source_page_url": "https://insydium.ltd/products/x-particles/",
+      "official": true,
+      "alt": "x-particles official product view"
+    }
+  ]
+}

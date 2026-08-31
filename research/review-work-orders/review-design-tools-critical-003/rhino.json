@@ -1,0 +1,304 @@
+{
+  "batch": "review-design-tools-critical-003",
+  "current": {
+    "affiliate_url": "https://www.rhino3d.com",
+    "alternatives": [
+      "plasticity",
+      "fusion-360",
+      "sketchup-pro"
+    ],
+    "category": "design-tools",
+    "cons": [
+      "Courbe d'apprentissage raide.",
+      "Interface UI un peu datée.",
+      "Écosystème d'outils tiers moins riche que Blender.",
+      "Pour la sculpture organique, Blender ou ZBrush meilleurs.",
+      "Moins de tutoriels YouTube que Blender (gratuit)."
+    ],
+    "cons_en": [
+      "Steep learning curve.",
+      "UI feels somewhat dated.",
+      "Smaller third-party tool ecosystem than Blender.",
+      "For organic sculpting, Blender or ZBrush superior.",
+      "Fewer YouTube tutorials than Blender (free)."
+    ],
+    "host_app": null,
+    "id": "rhino",
+    "long_description": "Rhino (Rhinoceros), c'est le modeleur 3D NURBS de référence : là où Blender ou Cinema 4D travaillent en maillage (polygones), Rhino manipule des surfaces mathématiques précises au centième. C'est ce qui en fait le chouchou du design produit, de la bijouterie, de l'architecture et du design industriel ou naval, partout où la précision des courbes compte.\n\nSon arme secrète, c'est Grasshopper : un éditeur visuel de programmation paramétrique intégré, qui permet de générer des formes complexes et du design computationnel sans coder. C'est devenu un standard de l'archi paramétrique.\n\nMais l'argument qui fait mouche en 2026, c'est le modèle économique : Rhino se vend en licence perpétuelle (achat unique autour de 995$), sans abonnement. Dans un monde où tout est devenu mensuel (Autodesk, Adobe, Maxon), payer une fois et posséder son outil est rare et très apprécié. Disponible sur Windows et Mac. Pour de la modélisation maillage gratuite, Blender reste l'alternative ; mais pour la précision NURBS et la liberté de la licence perpétuelle, Rhino n'a pas vraiment d'équivalent abordable.",
+    "long_description_en": "Rhino (Rhinoceros) is the reference NURBS 3D modeler: where Blender or Cinema 4D work with meshes (polygons), Rhino handles precise mathematical surfaces accurate to a hundredth. That makes it the favorite of product design, jewelry, architecture and industrial or naval design, anywhere curve precision matters.\n\nIts secret weapon is Grasshopper: a built-in visual parametric programming editor that lets you generate complex shapes and computational design without coding. It has become a standard of parametric architecture.\n\nBut the argument that lands in 2026 is the business model: Rhino sells as a perpetual license (a one-time purchase around $995), with no subscription. In a world where everything went monthly (Autodesk, Adobe, Maxon), paying once and owning your tool is rare and much appreciated. Available on Windows and Mac. For free mesh modeling, Blender remains the alternative; but for NURBS precision and the freedom of a perpetual license, Rhino has no real affordable equivalent.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://tooltrim.com/og-screenshots/rhino.jpg"
+    },
+    "name": "Rhino",
+    "pricing": {
+      "free": "Essai gratuit 90 jours ; licence éducation ~195$",
+      "paid": "Licence perpétuelle ~995$ (achat unique, pas d'abonnement)"
+    },
+    "pricing_en": {
+      "free": "90-day free trial; education license ~$195",
+      "paid": "Perpetual license ~$995 (one-time, no subscription)"
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Licence perpétuelle ~995$ (achat unique) ; licence éducation ~195$"
+      ],
+      "compare_plan_kind": "perpetual",
+      "compare_plan_name": "Licence perpétuelle",
+      "compare_price_monthly_eur": 995,
+      "official_source_url": "https://www.rhino3d.com",
+      "price_reliability": "high",
+      "source_domain": "rhino3d.com",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-06-17"
+    },
+    "pros": [
+      "Licence perpétuelle unique (pas d'abonnement).",
+      "NURBS et précision industrielle inégalées.",
+      "Grasshopper pour conception paramétrique avancée.",
+      "Cross-platform (Windows, Mac) natif.",
+      "90-day trial gratuit sans carte de crédit.",
+      "Export/import formats très complets.",
+      "Pas de frais de maintenance cachés."
+    ],
+    "pros_en": [
+      "One-time perpetual license (no subscription).",
+      "Unmatched NURBS and industrial precision.",
+      "Grasshopper for advanced parametric design.",
+      "Native cross-platform (Windows, Mac).",
+      "90-day free trial without credit card.",
+      "Very complete export/import format support.",
+      "No hidden maintenance fees."
+    ],
+    "short_description": "Modeleur 3D NURBS précis (Rhinoceros) pour design produit, archi et bijouterie.",
+    "short_description_en": "Precise NURBS 3D modeler (Rhinoceros) for product design, architecture and jewelry.",
+    "slug": "rhino",
+    "source_url": "https://www.rhino3d.com",
+    "source_verified_on": "2026-06-17",
+    "use_cases": [
+      "Modéliser une surface architecturale précise avec NURBS.",
+      "Concevoir une joaillerie complexe pour impression 3D.",
+      "Créer un objet industriel avec Grasshopper paramétrique.",
+      "Générer des formes organiques marines précises."
+    ],
+    "use_cases_en": [
+      "Model a precise architectural surface with NURBS.",
+      "Design complex jewelry for 3D printing.",
+      "Create a parametric industrial object with Grasshopper.",
+      "Generate precise organic marine forms."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous faites du modeling sculptural organique (Blender ou ZBrush convient mieux).",
+        "Vous avez besoin d'outils temps-réel ou jeux vidéo (Unreal, Unity).",
+        "Votre budget ne permet qu'une solution gratuite.",
+        "Vous commencez tout juste en 3D (prenez Blender d'abord)."
+      ],
+      "keepIf": [
+        "Vous travaillez en architecture, design ou VFX avec géométrie complexe.",
+        "Vous avez besoin de modélisation NURBS précise.",
+        "Vous explorez la conception paramétrique (Grasshopper).",
+        "Vous travaillez sur un projet moyen/long terme (l'investissement initial se rentabilise)."
+      ],
+      "threshold": "Rhino s'impose pour les workflows NURBS précis (architecture, joaillerie, marine) ; pour la sculpture organique ou jeux, Blender ou ZBrush conviennent."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You do organic sculptural modeling (Blender or ZBrush fit better).",
+        "You need real-time or game engine tools (Unreal, Unity).",
+        "Your budget allows only free solutions.",
+        "You're just starting in 3D (pick Blender first)."
+      ],
+      "keepIf": [
+        "You work in architecture, design, or VFX with complex geometry.",
+        "You need precise NURBS modeling.",
+        "You explore parametric design (Grasshopper).",
+        "You work on medium/long-term projects (initial investment pays off)."
+      ],
+      "threshold": "Rhino is essential for precise NURBS workflows (architecture, jewelry, marine); for organic sculpting or games, Blender or ZBrush fit better."
+    },
+    "website_url": "https://www.rhino3d.com"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Steep learning curve.",
+        "UI feels somewhat dated.",
+        "Smaller third-party tool ecosystem than Blender.",
+        "For organic sculpting, Blender or ZBrush superior.",
+        "Fewer YouTube tutorials than Blender (free)."
+      ],
+      "pros": [
+        "One-time perpetual license (no subscription).",
+        "Unmatched NURBS and industrial precision.",
+        "Grasshopper for advanced parametric design.",
+        "Native cross-platform (Windows, Mac).",
+        "90-day free trial without credit card.",
+        "Very complete export/import format support.",
+        "No hidden maintenance fees."
+      ],
+      "use_cases": [
+        "Model a precise architectural surface with NURBS.",
+        "Design complex jewelry for 3D printing.",
+        "Create a parametric industrial object with Grasshopper.",
+        "Generate precise organic marine forms."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You do organic sculptural modeling (Blender or ZBrush fit better).",
+          "You need real-time or game engine tools (Unreal, Unity).",
+          "Your budget allows only free solutions.",
+          "You're just starting in 3D (pick Blender first)."
+        ],
+        "keepIf": [
+          "You work in architecture, design, or VFX with complex geometry.",
+          "You need precise NURBS modeling.",
+          "You explore parametric design (Grasshopper).",
+          "You work on medium/long-term projects (initial investment pays off)."
+        ],
+        "threshold": "Rhino is essential for precise NURBS workflows (architecture, jewelry, marine); for organic sculpting or games, Blender or ZBrush fit better."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Essai gratuit de 90 jours (pas de carte de crédit requise)",
+        "exists": true
+      },
+      "key_features": [
+        "Modélisation NURBS courbes et surfaces complète",
+        "Subdivision Surface (SubD) et polygon meshes",
+        "Point clouds et nurbs editing",
+        "Grasshopper : programmation visuelle paramétrique",
+        "ShrinkWrap : maillage étanche pour impression 3D",
+        "Moteur de rendu amélioré avec Metal sur Mac",
+        "Support cross-platform (Windows, macOS)",
+        "Import/export multiples formats (DWG, STEP, STL, OBJ, FBX, SKP, etc.)"
+      ],
+      "plans": [
+        {
+          "name": "Commercial (New)",
+          "price": "EUR 995 (~USD 995 équivalent, perpétuel)"
+        },
+        {
+          "name": "Commercial (Upgrade)",
+          "price": "EUR 595 (licence antérieure requise)"
+        },
+        {
+          "name": "Student (New)",
+          "price": "EUR 195"
+        },
+        {
+          "name": "Evaluation",
+          "price": "Gratuit (90 jours)"
+        }
+      ],
+      "pricing_model": "Licence perpétuelle unique. Pas d'abonnement. Versions commerciale, étudiant, et essai gratuit 90 jours.",
+      "what": "Logiciel de modélisation 3D polyvalent basé sur NURBS. Utilisé en architecture, design industriel, bijouterie, design marin et VFX. Extensible via Grasshopper (programmation visuelle) pour la conception paramétrique.",
+      "what_en": "Versatile NURBS-based 3D modeling software. Used in architecture, industrial design, jewelry, marine design, and VFX. Extensible via Grasshopper (visual programming) for parametric design."
+    },
+    "fr": {
+      "cons": [
+        "Courbe d'apprentissage raide.",
+        "Interface UI un peu datée.",
+        "Écosystème d'outils tiers moins riche que Blender.",
+        "Pour la sculpture organique, Blender ou ZBrush meilleurs.",
+        "Moins de tutoriels YouTube que Blender (gratuit)."
+      ],
+      "pros": [
+        "Licence perpétuelle unique (pas d'abonnement).",
+        "NURBS et précision industrielle inégalées.",
+        "Grasshopper pour conception paramétrique avancée.",
+        "Cross-platform (Windows, Mac) natif.",
+        "90-day trial gratuit sans carte de crédit.",
+        "Export/import formats très complets.",
+        "Pas de frais de maintenance cachés."
+      ],
+      "relevant_for": [
+        "Architectes",
+        "Designers industriels",
+        "Joailliers",
+        "Designers produits",
+        "VFX modelers"
+      ],
+      "use_cases": [
+        "Modéliser une surface architecturale précise avec NURBS.",
+        "Concevoir une joaillerie complexe pour impression 3D.",
+        "Créer un objet industriel avec Grasshopper paramétrique.",
+        "Générer des formes organiques marines précises."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous faites du modeling sculptural organique (Blender ou ZBrush convient mieux).",
+          "Vous avez besoin d'outils temps-réel ou jeux vidéo (Unreal, Unity).",
+          "Votre budget ne permet qu'une solution gratuite.",
+          "Vous commencez tout juste en 3D (prenez Blender d'abord)."
+        ],
+        "keepIf": [
+          "Vous travaillez en architecture, design ou VFX avec géométrie complexe.",
+          "Vous avez besoin de modélisation NURBS précise.",
+          "Vous explorez la conception paramétrique (Grasshopper).",
+          "Vous travaillez sur un projet moyen/long terme (l'investissement initial se rentabilise)."
+        ],
+        "threshold": "Rhino s'impose pour les workflows NURBS précis (architecture, joaillerie, marine) ; pour la sculpture organique ou jeux, Blender ou ZBrush conviennent."
+      }
+    },
+    "slug": "rhino",
+    "sources": [
+      {
+        "label": "Rhinoceros 3D (site officiel)",
+        "url": "https://www.rhino3d.com"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-003",
+    "batch_position": 15,
+    "blockers": [],
+    "catalog_hash": "sha256:b321f1d18bd83db96e36a4a977d3ed018b3cf87eacdc85d04f0dc814de457b5b",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:8a0d8443086e31d1d3835216bbea518c61de5b4bc7010027424fe5f947dd9068",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Rhino",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:6128bf1978519e99a44355b70565e7179f01961ca73f70df042cf633566c7077",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "rhino",
+    "source_url": "https://www.rhino3d.com",
+    "source_verified_on": "2026-06-17",
+    "status": "QUEUED"
+  }
+}

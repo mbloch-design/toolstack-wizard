@@ -1,0 +1,41 @@
+{
+  "slug": "zeplin",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://zeplin.io/"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://cdn.sanity.io/images/wd3e2pma/production/f95e3816865ba574c935c3cb54f97f400efb92d4-4352x2294.jpg?w=1451&q=95",
+      "source_page_url": "https://zeplin.io/",
+      "official": true,
+      "alt": "zeplin official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.sanity.io/images/wd3e2pma/production/be6338f824f829d4fd67da2f282524bf17ba735d-1704x1869.png?w=568&q=95",
+      "source_page_url": "https://zeplin.io/",
+      "official": true,
+      "alt": "zeplin official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.sanity.io/images/wd3e2pma/production/59d11c64187729bec230c0b90ef247c305757fac-1728x2148.png?w=576&q=95",
+      "source_page_url": "https://zeplin.io/",
+      "official": true,
+      "alt": "zeplin official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.sanity.io/images/wd3e2pma/production/53f106bbacf4c4d551387e21a40f70d1c25131f2-1704x1869.png?w=568&q=95",
+      "source_page_url": "https://zeplin.io/",
+      "official": true,
+      "alt": "zeplin official product view"
+    }
+  ]
+}

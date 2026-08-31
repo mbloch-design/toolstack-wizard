@@ -1,0 +1,20 @@
+{
+  "slug": "lumion",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://lumion.com/"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://a.storyblok.com/f/180614/1200x630/eb0a9033ab/social_share_landscape.jpg",
+      "source_page_url": "https://lumion.com/",
+      "official": true,
+      "alt": "Official product preview"
+    }
+  ]
+}

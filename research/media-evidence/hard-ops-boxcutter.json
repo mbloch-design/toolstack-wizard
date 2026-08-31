@@ -1,0 +1,34 @@
+{
+  "slug": "hard-ops-boxcutter",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://superhivemarket.com/products/hard-ops--boxcutter-ultimate-bundle"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://assets.superhivemarket.com/store/product/152952/image/xlarge-6cfdfa50a4bf06c30dcb85560a376edd.png",
+      "official": true,
+      "alt": "Hard Ops and Boxcutter overview",
+      "source_page_url": "https://superhivemarket.com/products/hard-ops--boxcutter-ultimate-bundle"
+    },
+    {
+      "kind": "image",
+      "url": "https://assets.superhivemarket.com/uploads%2F1567830360322-h6.gif",
+      "official": true,
+      "alt": "Hard Ops workflow",
+      "source_page_url": "https://superhivemarket.com/products/hard-ops--boxcutter-ultimate-bundle"
+    },
+    {
+      "kind": "image",
+      "url": "https://assets.superhivemarket.com/uploads%2F1567830624978-h13.gif",
+      "official": true,
+      "alt": "Boxcutter workflow",
+      "source_page_url": "https://superhivemarket.com/products/hard-ops--boxcutter-ultimate-bundle"
+    }
+  ]
+}

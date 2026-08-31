@@ -1,0 +1,167 @@
+{
+  "batch": "review-design-tools-critical-003",
+  "quality_version": "catalog-review-v1",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tools": [
+    {
+      "file": "figma-tokens.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "figma-tokens",
+      "status": "QUEUED"
+    },
+    {
+      "file": "fredo6-bundle.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "fredo6-bundle",
+      "status": "QUEUED"
+    },
+    {
+      "file": "hard-ops-boxcutter.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "hard-ops-boxcutter",
+      "status": "QUEUED"
+    },
+    {
+      "file": "luminar-neo.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "luminar-neo",
+      "status": "QUEUED"
+    },
+    {
+      "file": "lumion.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "lumion",
+      "status": "QUEUED"
+    },
+    {
+      "file": "magic-bullet.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "magic-bullet",
+      "status": "QUEUED"
+    },
+    {
+      "file": "maze.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "maze",
+      "status": "QUEUED"
+    },
+    {
+      "file": "motion-bro.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "motion-bro",
+      "status": "QUEUED"
+    },
+    {
+      "file": "nik-collection.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "nik-collection",
+      "status": "QUEUED"
+    },
+    {
+      "file": "pitch.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "pitch",
+      "status": "QUEUED"
+    },
+    {
+      "file": "protopie.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "protopie",
+      "status": "QUEUED"
+    },
+    {
+      "file": "red-giant-universe.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "red-giant-universe",
+      "status": "QUEUED"
+    },
+    {
+      "file": "renderman.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "renderman",
+      "status": "QUEUED"
+    },
+    {
+      "file": "revit.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "revit",
+      "status": "QUEUED"
+    },
+    {
+      "file": "rhino.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "rhino",
+      "status": "QUEUED"
+    },
+    {
+      "file": "rive.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "rive",
+      "status": "QUEUED"
+    },
+    {
+      "file": "sketchup-pro.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "sketchup-pro",
+      "status": "QUEUED"
+    },
+    {
+      "file": "solid-inspector2.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "solid-inspector2",
+      "status": "QUEUED"
+    },
+    {
+      "file": "topaz-gigapixel.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "topaz-gigapixel",
+      "status": "QUEUED"
+    },
+    {
+      "file": "twinmotion.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "twinmotion",
+      "status": "QUEUED"
+    },
+    {
+      "file": "v-ray.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "v-ray",
+      "status": "QUEUED"
+    },
+    {
+      "file": "x-particles.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "x-particles",
+      "status": "QUEUED"
+    },
+    {
+      "file": "zeplin.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "zeplin",
+      "status": "QUEUED"
+    },
+    {
+      "file": "specify.json",
+      "required_action": "research_primary_sources_then_write_fact_bundle",
+      "slug": "specify",
+      "status": "QUEUED"
+    },
+    {
+      "file": "astute-graphics.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "astute-graphics",
+      "status": "QUEUED"
+    }
+  ]
+}

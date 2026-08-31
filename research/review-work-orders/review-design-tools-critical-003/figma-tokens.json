@@ -1,0 +1,291 @@
+{
+  "batch": "review-design-tools-critical-003",
+  "current": {
+    "affiliate_url": "https://tokens.studio",
+    "alternatives": [
+      "specify"
+    ],
+    "category": "design-tools",
+    "cons": [
+      "Pricing peut être élevé pour petites équipes.",
+      "Courbe d'apprentissage pour setup complet.",
+      "Nécessite une discipline d'équipe pour fonctionner."
+    ],
+    "cons_en": [
+      "Pricing can be high for small teams.",
+      "Learning curve for full setup.",
+      "Requires team discipline to work well."
+    ],
+    "host_app": "figma",
+    "id": "figma-tokens",
+    "long_description": "Tokens Studio (anciennement Figma Tokens) est le plugin de référence pour gérer des design tokens dans Figma : couleurs, espacements, typographies, le tout structuré, versionné et synchronisable avec ton code via Git. C'est l'outil qui fait le pont entre la maquette et le design system en production, là où les variables natives de Figma montrent leurs limites.\n\nPour un designer qui maintient un vrai design system, c'est un gain de temps concret : tu changes un token, il se propage partout, et les développeurs récupèrent les mêmes valeurs côté code. Sans design system en revanche, c'est de la sur-ingénierie : les variables natives de Figma suffisent largement.\n\nLe point à connaître en 2026 : la grille tarifaire a changé. Le plugin reste gratuit pour un usage local (plan Starter), mais la synchronisation Git et l'automatisation sont passées sur des formules nettement plus chères, à partir de 39€/mois (Starter Plus). L'époque du petit plan Pro à 9$ est révolue. À évaluer selon la taille du système que tu maintiens.",
+    "long_description_en": "Tokens Studio (formerly Figma Tokens) is the go-to plugin for managing design tokens in Figma: colors, spacing, typography, all structured, versioned and syncable to your code via Git. It's the tool that bridges the mockup and the production design system, where Figma's native variables hit their limits.\n\nFor a designer maintaining a real design system, it's a concrete time saver: change one token and it propagates everywhere, and developers get the same values in code. Without a design system, though, it's over-engineering: Figma's native variables are plenty.\n\nThe thing to know in 2026: the pricing changed. The plugin stays free for local use (Starter plan), but Git sync and automation moved to noticeably pricier tiers, starting at €39/month (Starter Plus). The days of the small $9 Pro plan are over. Weigh it against the size of the system you maintain.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://framerusercontent.com/assets/EzljCTuSDgR914OMFrHugpBFx2I.png"
+    },
+    "name": "Figma Tokens (Tokens Studio)",
+    "pricing": {
+      "free": "Plugin gratuit pour un usage local (plan Starter)",
+      "paid": "Sync Git et automatisation à partir de 39€/mois (Starter Plus)"
+    },
+    "pricing_en": {
+      "free": "Free plugin for local use (Starter plan)",
+      "paid": "Git sync and automation from €39/month (Starter Plus)"
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Plugin gratuit pour un usage local",
+        "Sync Git et automatisation à partir de 39€/mois (Starter Plus)"
+      ],
+      "compare_plan_kind": "individual",
+      "compare_plan_name": "Starter (gratuit)",
+      "compare_price_monthly_eur": 0,
+      "location_sensitive": false,
+      "official_source_url": "https://tokens.studio/pricing",
+      "price_reliability": "high",
+      "source_domain": "tokens.studio",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-06-15"
+    },
+    "pros": [
+      "Source unique de vérité pour design et code.",
+      "Sync Git native et versioning.",
+      "Support multi-outils (Figma, Penpot, VS Code).",
+      "Open source et extensible (CLI/SDK).",
+      "Theming multi-marques."
+    ],
+    "pros_en": [
+      "Single source of truth for design and code.",
+      "Native Git sync and versioning.",
+      "Multi-tool support (Figma, Penpot, VS Code).",
+      "Open source and extensible (CLI/SDK).",
+      "Multi-brand theming."
+    ],
+    "short_description": "Plugin Figma pour gérer les design tokens et les synchroniser avec le code via Git.",
+    "short_description_en": "Figma plugin to manage design tokens and sync them to code via Git.",
+    "slug": "figma-tokens",
+    "source_url": "https://tokens.studio/pricing",
+    "source_verified_on": "2026-06-15",
+    "use_cases": [
+      "Centraliser les tokens couleur, typo, spacing.",
+      "Exporter les tokens vers variables CSS pour le web.",
+      "Synchroniser les changements design-développement.",
+      "Gérer des variantes de marque (theming).",
+      "Versionner et brancher les tokens."
+    ],
+    "use_cases_en": [
+      "Centralize color, typography, and spacing tokens.",
+      "Export tokens to CSS variables for web.",
+      "Sync design and development changes.",
+      "Manage brand variants (theming).",
+      "Version and branch tokens."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous n'avez qu'un projet simple.",
+        "Vous gérez les tokens entièrement en code (sans Figma).",
+        "Vous avez un petit budget et pas d'équipe."
+      ],
+      "keepIf": [
+        "Vous gérez un design system en équipe.",
+        "Vous synchronisez régulièrement design et code.",
+        "Vous avez besoin de versioning et branches de tokens."
+      ],
+      "threshold": "Tokens Studio s'impose pour les design systems d'équipe. Pour les projets solo simples, les variables Figma natives peuvent suffire."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You have only a simple project.",
+        "You manage tokens entirely in code (without Figma).",
+        "You have a small budget and no team."
+      ],
+      "keepIf": [
+        "You manage a design system as a team.",
+        "You regularly sync design and code.",
+        "You need token versioning and branching."
+      ],
+      "threshold": "Tokens Studio wins for team design systems. For simple solo projects, native Figma variables may suffice."
+    },
+    "website_url": "https://tokens.studio"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Pricing can be high for small teams.",
+        "Learning curve for full setup.",
+        "Requires team discipline to work well."
+      ],
+      "pros": [
+        "Single source of truth for design and code.",
+        "Native Git sync and versioning.",
+        "Multi-tool support (Figma, Penpot, VS Code).",
+        "Open source and extensible (CLI/SDK).",
+        "Multi-brand theming."
+      ],
+      "use_cases": [
+        "Centralize color, typography, and spacing tokens.",
+        "Export tokens to CSS variables for web.",
+        "Sync design and development changes.",
+        "Manage brand variants (theming).",
+        "Version and branch tokens."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You have only a simple project.",
+          "You manage tokens entirely in code (without Figma).",
+          "You have a small budget and no team."
+        ],
+        "keepIf": [
+          "You manage a design system as a team.",
+          "You regularly sync design and code.",
+          "You need token versioning and branching."
+        ],
+        "threshold": "Tokens Studio wins for team design systems. For simple solo projects, native Figma variables may suffice."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Plugin Figma gratuit pour utiliser les variables Figma ; plateforme studio en essai gratuit 14 jours.",
+        "exists": true
+      },
+      "key_features": [
+        "Gestion des design tokens (couleurs, typo, spacing)",
+        "Synchronisation Figma ↔ Code (CSS, JSON)",
+        "Intégration GitHub et Git pour versioning",
+        "Support Figma, Penpot, Framer, VS Code",
+        "Sync multi-fichiers et variables Figma",
+        "CLI et SDK pour automatisation",
+        "Théming multi-marques",
+        "Open source et extensible"
+      ],
+      "plans": [
+        {
+          "name": "Plugin Figma",
+          "price": "39 € achat unique (ou gratuit en version open source)"
+        },
+        {
+          "name": "Studio Starter Plus",
+          "price": "17 € / mois (1 éditeur, jusqu'à 5 projets)"
+        },
+        {
+          "name": "Studio Essential",
+          "price": "169 € / mois (1 éditeur, versioning, branches)"
+        },
+        {
+          "name": "Studio Organization",
+          "price": "499 € / mois (5 éditeurs, asset management, docs)"
+        },
+        {
+          "name": "Enterprise",
+          "price": "Prix sur demande"
+        }
+      ],
+      "pricing_model": "Plugin Figma gratuit (39 €) ; plateforme Tokens Studio avec plans d'équipe progressifs (SaaS).",
+      "what": "Plugin Figma pour gérer les design tokens (couleurs, typographie, espacements) et les synchroniser avec le code. Open source et extensible, avec intégration Git et multi-fichiers.",
+      "what_en": "Figma plugin for managing design tokens (colors, typography, spacing) and syncing them to code. Open-source and extensible, with Git integration and multi-file support."
+    },
+    "fr": {
+      "cons": [
+        "Pricing peut être élevé pour petites équipes.",
+        "Courbe d'apprentissage pour setup complet.",
+        "Nécessite une discipline d'équipe pour fonctionner."
+      ],
+      "pros": [
+        "Source unique de vérité pour design et code.",
+        "Sync Git native et versioning.",
+        "Support multi-outils (Figma, Penpot, VS Code).",
+        "Open source et extensible (CLI/SDK).",
+        "Theming multi-marques."
+      ],
+      "relevant_for": [
+        "Design systems teams",
+        "Product designers",
+        "Frontend developers"
+      ],
+      "use_cases": [
+        "Centraliser les tokens couleur, typo, spacing.",
+        "Exporter les tokens vers variables CSS pour le web.",
+        "Synchroniser les changements design-développement.",
+        "Gérer des variantes de marque (theming).",
+        "Versionner et brancher les tokens."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous n'avez qu'un projet simple.",
+          "Vous gérez les tokens entièrement en code (sans Figma).",
+          "Vous avez un petit budget et pas d'équipe."
+        ],
+        "keepIf": [
+          "Vous gérez un design system en équipe.",
+          "Vous synchronisez régulièrement design et code.",
+          "Vous avez besoin de versioning et branches de tokens."
+        ],
+        "threshold": "Tokens Studio s'impose pour les design systems d'équipe. Pour les projets solo simples, les variables Figma natives peuvent suffire."
+      }
+    },
+    "slug": "figma-tokens",
+    "sources": [
+      {
+        "label": "Tokens Studio (site officiel)",
+        "url": "https://tokens.studio"
+      },
+      {
+        "label": "Tokens Studio Pricing",
+        "url": "https://tokens.studio/pricing"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-003",
+    "batch_position": 1,
+    "blockers": [],
+    "catalog_hash": "sha256:34b38982b1c9fa47c367c4ccf212d88ad6a4d3e56d2b5d4855dcda432c7658c6",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:51f4b10ea250ca70f5b23078dc76610b2d254f0a6a374346b99e092226bd141d",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Figma Tokens (Tokens Studio)",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:1d017a463cda6e47c13ac777db443df5320711dfb6af8fbf8e7f04ca19f71551",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "figma-tokens",
+    "source_url": "https://tokens.studio/pricing",
+    "source_verified_on": "2026-06-15",
+    "status": "QUEUED"
+  }
+}

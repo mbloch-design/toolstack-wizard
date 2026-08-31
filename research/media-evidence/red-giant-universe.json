@@ -1,0 +1,41 @@
+{
+  "slug": "red-giant-universe",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://www.maxon.net/en/red-giant/universe"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://maxonassets.imgix.net/images/Products/Universe/Universe_Texturize.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces",
+      "source_page_url": "https://www.maxon.net/en/red-giant/universe",
+      "official": true,
+      "alt": "Stylize the Footage image"
+    },
+    {
+      "kind": "image",
+      "url": "https://maxonassets.imgix.net/images/Products/Universe/Universe_Bokeh_2024.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces",
+      "source_page_url": "https://www.maxon.net/en/red-giant/universe",
+      "official": true,
+      "alt": "Create Motion Graphics image"
+    },
+    {
+      "kind": "image",
+      "url": "https://maxonassets.imgix.net/images/Products/Universe/Universe_World_Suicide_UE_shot_by_Andy_Lefton.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces",
+      "source_page_url": "https://www.maxon.net/en/red-giant/universe",
+      "official": true,
+      "alt": "Build Transitions and Effects image"
+    },
+    {
+      "kind": "image",
+      "url": "https://maxonassets.imgix.net/images/Products/Universe/Universe_Shine_The-Muppets-Mayhem-by-Penny-Nederlander.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces",
+      "source_page_url": "https://www.maxon.net/en/red-giant/universe",
+      "official": true,
+      "alt": "Design Text Effects image"
+    }
+  ]
+}

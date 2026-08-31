@@ -1,0 +1,256 @@
+{
+  "batch": "review-design-tools-critical-003",
+  "current": {
+    "affiliate_url": "https://extensions.sketchup.com/en/content/solid-inspector",
+    "alternatives": [],
+    "category": "design-tools",
+    "cons": [
+      "Limité à SketchUp.",
+      "Pas d'interface graphique avancée.",
+      "Peut ne pas corriger les problèmes complexes.",
+      "Pas de support commercial."
+    ],
+    "cons_en": [
+      "Limited to SketchUp.",
+      "No advanced GUI.",
+      "May not fix complex issues.",
+      "No commercial support."
+    ],
+    "host_app": null,
+    "id": "solid-inspector2",
+    "long_description": "Solid Inspector² analyse les groupes et composants SketchUp pour repérer les arêtes parasites, faces internes, trous et autres défauts empêchant d'obtenir un volume manifold. L'extension met les erreurs en évidence et peut réparer automatiquement une partie des problèmes.\n\nElle est particulièrement utile avant une impression 3D, un export CAO ou une opération booléenne. Elle reste un outil de diagnostic : les géométries ambiguës ou complexes demandent parfois une correction manuelle. La version officielle est gratuite, compatible avec SketchUp 2022 à 2026 sur macOS et Windows, et nécessite TT_Lib² 2.7.0.",
+    "long_description_en": "Solid Inspector² scans SketchUp groups and components for stray edges, internal faces, holes, and other defects that prevent a manifold solid. It highlights errors and can automatically repair many common issues.\n\nIt is especially useful before 3D printing, CAD export, or boolean operations. It remains a diagnostic tool, so ambiguous or complex geometry may still require manual repair. The official extension is free, supports SketchUp 2022 through 2026 on macOS and Windows, and requires TT_Lib² 2.7.0.",
+    "media": {
+      "gallery_images": [
+        "https://www.thomthom.net/thoughts/wp-content/uploads/2014/12/InternalFaces.png",
+        "https://www.thomthom.net/thoughts/wp-content/uploads/2014/12/FixedErrors.png"
+      ],
+      "og_image_url": "https://i0.wp.com/www.thomthom.net/thoughts/wp-content/uploads/2014/12/UI-Example.png?resize=976%2C564"
+    },
+    "name": "Solid Inspector²",
+    "pricing": {
+      "free": "Gratuit",
+      "paid": "Don possible"
+    },
+    "pricing_en": {
+      "free": "Free",
+      "paid": "Optional donation"
+    },
+    "pricing_v5": {
+      "compare_price_monthly_eur": 0,
+      "official_source_url": "https://extensions.sketchup.com/en/content/solid-inspector",
+      "source_domain": "extensions.sketchup.com",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-08-28"
+    },
+    "pros": [
+      "Complètement gratuit.",
+      "Open-source, transparent et auditable.",
+      "Détection robuste des erreurs courantes.",
+      "Réparation automatique de la plupart des problèmes.",
+      "Essentiel pour la préparation 3D print."
+    ],
+    "pros_en": [
+      "Completely free.",
+      "Open-source, transparent, and auditable.",
+      "Robust detection of common errors.",
+      "Automatic repair for most issues.",
+      "Essential for 3D print preparation."
+    ],
+    "short_description": "Plugin SketchUp pour vérifier les volumes solides et repérer les problèmes de géométrie.",
+    "short_description_en": "SketchUp plugin to inspect solids and detect geometry issues.",
+    "slug": "solid-inspector2",
+    "source_url": "https://extensions.sketchup.com/en/content/solid-inspector",
+    "source_verified_on": "2026-08-28",
+    "use_cases": [
+      "Vérifier et réparer les modèles avant export CAO.",
+      "Préparer un modèle SketchUp pour l'impression 3D.",
+      "Nettoyer les artefacts de géométrie après édition.",
+      "Valider la solidité d'une pièce avant simulation."
+    ],
+    "use_cases_en": [
+      "Verify and repair models before CAD export.",
+      "Prepare a SketchUp model for 3D printing.",
+      "Clean up geometry artifacts after editing.",
+      "Validate solid integrity before simulation."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous faites surtout de la modélisation non-solide (surfaces, wireframes).",
+        "Vous n'utilisez pas SketchUp.",
+        "Vous avez déjà un workflow de vérification de géométrie dans votre pipeline."
+      ],
+      "keepIf": [
+        "Vous travaillez avec des solides SketchUp et avez des problèmes de géométrie.",
+        "Vous préparez un modèle pour l'impression 3D ou l'export CAO.",
+        "Vous cherchez une solution gratuite pour nettoyer les modèles."
+      ],
+      "threshold": "Solid Inspector² s'impose pour les modélisateurs SketchUp travaillant avec des solides ; pour les surfaces ou modèles simples, ce n'est pas nécessaire."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You mostly work with non-solid geometry (surfaces, wireframes).",
+        "You don't use SketchUp.",
+        "You already have a geometry validation workflow in your pipeline."
+      ],
+      "keepIf": [
+        "You work with SketchUp solids and have geometry issues.",
+        "You're preparing a model for 3D print or CAD export.",
+        "You want a free solution to clean up models."
+      ],
+      "threshold": "Solid Inspector² works for SketchUp modelers working with solids; for surfaces or simple models, it's not necessary."
+    },
+    "website_url": "https://extensions.sketchup.com/en/content/solid-inspector"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Limited to SketchUp.",
+        "No advanced GUI.",
+        "May not fix complex issues.",
+        "No commercial support."
+      ],
+      "pros": [
+        "Completely free.",
+        "Open-source, transparent, and auditable.",
+        "Robust detection of common errors.",
+        "Automatic repair for most issues.",
+        "Essential for 3D print preparation."
+      ],
+      "use_cases": [
+        "Verify and repair models before CAD export.",
+        "Prepare a SketchUp model for 3D printing.",
+        "Clean up geometry artifacts after editing.",
+        "Validate solid integrity before simulation."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You mostly work with non-solid geometry (surfaces, wireframes).",
+          "You don't use SketchUp.",
+          "You already have a geometry validation workflow in your pipeline."
+        ],
+        "keepIf": [
+          "You work with SketchUp solids and have geometry issues.",
+          "You're preparing a model for 3D print or CAD export.",
+          "You want a free solution to clean up models."
+        ],
+        "threshold": "Solid Inspector² works for SketchUp modelers working with solids; for surfaces or simple models, it's not necessary."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Extension complètement gratuite. Source code disponible sur GitHub.",
+        "exists": true
+      },
+      "key_features": [
+        "Détection des erreurs : trous, arêtes parasites, faces inversées, arêtes masquées",
+        "Affichage organisé des problèmes détectés",
+        "Réparation automatique de la plupart des erreurs",
+        "Compatible SketchUp 2014 et versions ultérieures",
+        "Open-source et disponible sur GitHub",
+        "Support Windows et macOS"
+      ],
+      "plans": [],
+      "pricing_model": "Gratuit et open-source",
+      "what": "Extension SketchUp gratuite et open-source qui inspecte et répare les groupes/composants solides. Détecte les erreurs de géométrie courantes (trous, arêtes parasites, faces inversées) et offre des corrections automatiques.",
+      "what_en": "Free and open-source SketchUp extension that inspects and repairs solid groups and components. Detects common geometry errors (holes, stray edges, inverted faces) and offers automatic fixes."
+    },
+    "fr": {
+      "cons": [
+        "Limité à SketchUp.",
+        "Pas d'interface graphique avancée.",
+        "Peut ne pas corriger les problèmes complexes.",
+        "Pas de support commercial."
+      ],
+      "pros": [
+        "Complètement gratuit.",
+        "Open-source, transparent et auditable.",
+        "Détection robuste des erreurs courantes.",
+        "Réparation automatique de la plupart des problèmes.",
+        "Essentiel pour la préparation 3D print."
+      ],
+      "relevant_for": [
+        "Modélisateurs SketchUp",
+        "Ingénieurs produit",
+        "Designers impression 3D"
+      ],
+      "use_cases": [
+        "Vérifier et réparer les modèles avant export CAO.",
+        "Préparer un modèle SketchUp pour l'impression 3D.",
+        "Nettoyer les artefacts de géométrie après édition.",
+        "Valider la solidité d'une pièce avant simulation."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous faites surtout de la modélisation non-solide (surfaces, wireframes).",
+          "Vous n'utilisez pas SketchUp.",
+          "Vous avez déjà un workflow de vérification de géométrie dans votre pipeline."
+        ],
+        "keepIf": [
+          "Vous travaillez avec des solides SketchUp et avez des problèmes de géométrie.",
+          "Vous préparez un modèle pour l'impression 3D ou l'export CAO.",
+          "Vous cherchez une solution gratuite pour nettoyer les modèles."
+        ],
+        "threshold": "Solid Inspector² s'impose pour les modélisateurs SketchUp travaillant avec des solides ; pour les surfaces ou modèles simples, ce n'est pas nécessaire."
+      }
+    },
+    "slug": "solid-inspector2",
+    "sources": [
+      {
+        "label": "Solid Inspector² — SketchUp Extension Warehouse",
+        "url": "https://extensions.sketchup.com/extension/aad4e5d9-7115-4cac-9b75-750ed0902732/solid-inspector"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-003",
+    "batch_position": 18,
+    "blockers": [],
+    "catalog_hash": "sha256:e9d8dc4bf88e6be1b43d54542c984a057c292e7a25aa6649757b9400b9b049dc",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:8097873dcfadfd16d078d982464e1399a4da46d10c5de8b9e711728e2a2dc443",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Solid Inspector²",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:cd5934d02114d7812e82619edc78dae730de1a6e9d8623b3a05ffa5c7eb51365",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "solid-inspector2",
+    "source_url": "https://extensions.sketchup.com/en/content/solid-inspector",
+    "source_verified_on": "2026-08-28",
+    "status": "QUEUED"
+  }
+}

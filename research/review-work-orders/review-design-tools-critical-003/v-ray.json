@@ -1,0 +1,294 @@
+{
+  "batch": "review-design-tools-critical-003",
+  "current": {
+    "affiliate_url": "https://www.chaos.com/vray",
+    "alternatives": [
+      "corona-renderer",
+      "octane-render",
+      "redshift"
+    ],
+    "category": "design-tools",
+    "cons": [
+      "Abonnement obligatoire (pas de licence unique).",
+      "Coût significatif, surtout pour les plans hauts (Collection).",
+      "Courbe d'apprentissage importante.",
+      "Requiert des ressources GPU/CPU conséquentes."
+    ],
+    "cons_en": [
+      "Subscription mandatory (no one-time license).",
+      "Significant cost, especially for higher tiers (Collection).",
+      "Steep learning curve.",
+      "Requires substantial GPU/CPU resources."
+    ],
+    "host_app": null,
+    "id": "v-ray",
+    "long_description": "V-Ray, c'est la référence du rendu photoréaliste. Développé par Chaos, c'est le moteur le plus établi pour la visualisation architecturale, le rendu produit et les VFX, là où la qualité d'image prime. Sa force, c'est sa maturité : des matériaux et un éclairage extrêmement réalistes, une stabilité éprouvée, et des plugins pour à peu près tous les logiciels 3D (3ds Max, Maya, SketchUp, Rhino, Cinema 4D, Revit, Blender). C'est un rendu hybride CPU/GPU.\n\nCôté prix, Chaos a unifié son offre en abonnement : V-Ray Solo à 514,80$/an (environ 43$/mois) pour un poste, et V-Ray Premium à 718,80$/an qui ajoute les autres produits Chaos et des noeuds de rendu. La licence perpétuelle a disparu.\n\nÀ qui ça s'adresse : aux archviz, designers produit et studios qui veulent le standard du photoréalisme. L'arbitrage se joue surtout face à Corona (du même éditeur Chaos, plus simple et apprécié en archviz), à Octane et Redshift (GPU, plus rapides), et à Cycles (gratuit dans Blender, désormais très bon). V-Ray reste la valeur sûre quand la qualité et la compatibilité multi-logiciels comptent.",
+    "long_description_en": "V-Ray is the reference for photorealistic rendering. Developed by Chaos, it's the most established engine for architectural visualization, product rendering and VFX, wherever image quality comes first. Its strength is maturity: extremely realistic materials and lighting, proven stability, and plugins for just about every 3D app (3ds Max, Maya, SketchUp, Rhino, Cinema 4D, Revit, Blender). It's a hybrid CPU/GPU renderer.\n\nOn price, Chaos unified its offer into subscriptions: V-Ray Solo at $514.80/year (around $43/month) for one seat, and V-Ray Premium at $718.80/year, which adds the other Chaos products and render nodes. The perpetual license is gone.\n\nWho it's for: archviz artists, product designers and studios who want the photorealism standard. The trade-off is mainly against Corona (same maker, Chaos, simpler and loved in archviz), Octane and Redshift (GPU, faster), and Cycles (free in Blender, now very good). V-Ray remains the safe bet when quality and multi-app compatibility matter.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://static.chaos.com/images/assets/000/025/423/articles_2_columns/v-ray-product-archviz-og-1200x630.png?1781319504"
+    },
+    "name": "V-Ray",
+    "pricing": {
+      "free": "Essai gratuit",
+      "paid": "Solo 514,80$/an (~43$/mois) ou Premium 718,80$/an. Abonnement Chaos."
+    },
+    "pricing_en": {
+      "free": "Free trial",
+      "paid": "Solo $514.80/year (~$43/month) or Premium $718.80/year. Chaos subscription."
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Solo 514,80$/an (~43$/mois) ; Premium 718,80$/an ; plus de licence perpétuelle"
+      ],
+      "compare_plan_kind": "subscription",
+      "compare_plan_name": "V-Ray Solo (annuel)",
+      "compare_price_monthly_eur": 43,
+      "official_source_url": "https://www.chaos.com/vray",
+      "price_reliability": "high",
+      "source_domain": "chaos.com",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-06-17"
+    },
+    "pros": [
+      "Technologie photogrammetrique de renommée mondiale (Emmy/Academy).",
+      "Multi-plateforme (Revit, SketchUp, Rhino, 3ds Max, Cinema 4D, Blender).",
+      "IA intégrée pour l'idéation et la génération de matériaux (Veras).",
+      "Support et mises à jour continues.",
+      "Bibliothèque de matériaux très complète selon le plan."
+    ],
+    "pros_en": [
+      "World-renowned photorealistic technology (Emmy/Academy winner).",
+      "Multi-platform (Revit, SketchUp, Rhino, 3ds Max, Cinema 4D, Blender).",
+      "Built-in AI for ideation and material generation (Veras).",
+      "Support and continuous updates.",
+      "Comprehensive material library depending on plan."
+    ],
+    "short_description": "Moteur de rendu photoréaliste de référence (Chaos), roi de l'archviz et du produit.",
+    "short_description_en": "The reference photorealistic render engine (Chaos), king of archviz and product viz.",
+    "slug": "v-ray",
+    "source_url": "https://www.chaos.com/vray",
+    "source_verified_on": "2026-06-17",
+    "use_cases": [
+      "Créer des rendus photogrammetriques pour présenter une maison ou bâtiment.",
+      "Produire des images marketing pour un nouveau produit.",
+      "Concevoir des effets VFX pour une production cinéma ou série.",
+      "Générer du contenu 3D haute résolution pour un catalogue ou portfolio."
+    ],
+    "use_cases_en": [
+      "Create photorealistic renders for presenting a house or building.",
+      "Produce marketing images for a new product launch.",
+      "Design VFX effects for a film or TV production.",
+      "Generate high-resolution 3D content for a catalog or portfolio."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous avez un budget serré et cherchez une solution gratuite.",
+        "Vous faites du rendu occasionnel ou de test.",
+        "Vous préférez un modèle de licence unique à l'abonnement."
+      ],
+      "keepIf": [
+        "Vous produisez des rendus photogrammetriques pour des présentations pro.",
+        "Vous travaillez en architecture, design de produit ou VFX.",
+        "Vous avez besoin d'une solution reconnue à l'industrie.",
+        "Vous intégrez des outils populaires (Revit, 3ds Max, Blender, etc.)."
+      ],
+      "threshold": "V-Ray est incontournable pour le rendu pro haut de gamme ; pour des besoins occasionnels, des alternatives plus abordables existent."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You have a tight budget and need a free solution.",
+        "You do occasional or experimental rendering.",
+        "You prefer one-time license models over subscriptions."
+      ],
+      "keepIf": [
+        "You produce photorealistic renders for professional presentations.",
+        "You work in architecture, product design, or VFX.",
+        "You need an industry-recognized solution.",
+        "You integrate popular tools (Revit, 3ds Max, Blender, etc.)."
+      ],
+      "threshold": "V-Ray is essential for high-end professional rendering; for occasional needs, more affordable alternatives exist."
+    },
+    "website_url": "https://www.chaos.com/vray"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Subscription mandatory (no one-time license).",
+        "Significant cost, especially for higher tiers (Collection).",
+        "Steep learning curve.",
+        "Requires substantial GPU/CPU resources."
+      ],
+      "pros": [
+        "World-renowned photorealistic technology (Emmy/Academy winner).",
+        "Multi-platform (Revit, SketchUp, Rhino, 3ds Max, Cinema 4D, Blender).",
+        "Built-in AI for ideation and material generation (Veras).",
+        "Support and continuous updates.",
+        "Comprehensive material library depending on plan."
+      ],
+      "use_cases": [
+        "Create photorealistic renders for presenting a house or building.",
+        "Produce marketing images for a new product launch.",
+        "Design VFX effects for a film or TV production.",
+        "Generate high-resolution 3D content for a catalog or portfolio."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You have a tight budget and need a free solution.",
+          "You do occasional or experimental rendering.",
+          "You prefer one-time license models over subscriptions."
+        ],
+        "keepIf": [
+          "You produce photorealistic renders for professional presentations.",
+          "You work in architecture, product design, or VFX.",
+          "You need an industry-recognized solution.",
+          "You integrate popular tools (Revit, 3ds Max, Blender, etc.)."
+        ],
+        "threshold": "V-Ray is essential for high-end professional rendering; for occasional needs, more affordable alternatives exist."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Pas de version gratuite. Accès uniquement par abonnement au plan choisi.",
+        "exists": false
+      },
+      "key_features": [
+        "Technologie de rendu photogrammetrique basée sur la physique",
+        "Rendu temps réel en ray tracing (100% ray tracing final frame)",
+        "Veras AI pour l'idéation et la génération de matériaux",
+        "15,000 à 22,000+ actifs et matériaux 3D de haute qualité selon le plan",
+        "Rendu CPU, GPU ou hybrid",
+        "Vantage rendering en temps réel (Collection)"
+      ],
+      "plans": [
+        {
+          "name": "Solo (mensuel)",
+          "price": "€39.50/mois"
+        },
+        {
+          "name": "Solo (annuel)",
+          "price": "€474/an"
+        },
+        {
+          "name": "Premium (mensuel)",
+          "price": "€119/mois"
+        },
+        {
+          "name": "Premium (annuel)",
+          "price": "€706.80/an"
+        },
+        {
+          "name": "Collection (mensuel)",
+          "price": "€213/mois"
+        },
+        {
+          "name": "Collection (annuel)",
+          "price": "€1,138.80/an"
+        }
+      ],
+      "pricing_model": "Abonnement mensuel ou annuel par plan (Solo, Premium, Collection). Facturation en EUR. Inclus : support, ressources pédagogiques, garantie 14 jours, mises à jour continues.",
+      "what": "Moteur de rendu photogrammetrique récipiendaire d'Emmy et d'Academy Awards, développé par Chaos. Utilisé pour l'architecture, le design de produit, le VFX et les studios de cinéma. Disponible pour Revit, SketchUp, Rhino, 3ds Max, Cinema 4D et Blender.",
+      "what_en": "Emmy and Academy Award-winning photorealistic rendering engine developed by Chaos. Used for architecture, product design, VFX, and film studios. Available for Revit, SketchUp, Rhino, 3ds Max, Cinema 4D, and Blender."
+    },
+    "fr": {
+      "cons": [
+        "Abonnement obligatoire (pas de licence unique).",
+        "Coût significatif, surtout pour les plans hauts (Collection).",
+        "Courbe d'apprentissage importante.",
+        "Requiert des ressources GPU/CPU conséquentes."
+      ],
+      "pros": [
+        "Technologie photogrammetrique de renommée mondiale (Emmy/Academy).",
+        "Multi-plateforme (Revit, SketchUp, Rhino, 3ds Max, Cinema 4D, Blender).",
+        "IA intégrée pour l'idéation et la génération de matériaux (Veras).",
+        "Support et mises à jour continues.",
+        "Bibliothèque de matériaux très complète selon le plan."
+      ],
+      "relevant_for": [
+        "Architectes et bureaux d'études",
+        "Designers de produit",
+        "VFX artists",
+        "Studios d'animation",
+        "Agences visuelles"
+      ],
+      "use_cases": [
+        "Créer des rendus photogrammetriques pour présenter une maison ou bâtiment.",
+        "Produire des images marketing pour un nouveau produit.",
+        "Concevoir des effets VFX pour une production cinéma ou série.",
+        "Générer du contenu 3D haute résolution pour un catalogue ou portfolio."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous avez un budget serré et cherchez une solution gratuite.",
+          "Vous faites du rendu occasionnel ou de test.",
+          "Vous préférez un modèle de licence unique à l'abonnement."
+        ],
+        "keepIf": [
+          "Vous produisez des rendus photogrammetriques pour des présentations pro.",
+          "Vous travaillez en architecture, design de produit ou VFX.",
+          "Vous avez besoin d'une solution reconnue à l'industrie.",
+          "Vous intégrez des outils populaires (Revit, 3ds Max, Blender, etc.)."
+        ],
+        "threshold": "V-Ray est incontournable pour le rendu pro haut de gamme ; pour des besoins occasionnels, des alternatives plus abordables existent."
+      }
+    },
+    "slug": "v-ray",
+    "sources": [
+      {
+        "label": "V-Ray by Chaos (site officiel)",
+        "url": "https://www.chaos.com/vray"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-003",
+    "batch_position": 21,
+    "blockers": [],
+    "catalog_hash": "sha256:7b027de31087350bdbee4f16359104a1fc916e834326f0ac5199155184582dd5",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:beef1f843d8c610c19ca2fa4f5beefdb8c364120ee32986b6a19d0a1863a9e89",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "V-Ray",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:0d84dbbc63002150d56170197b7da5439a611105656129139baa77f19cb42175",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "v-ray",
+    "source_url": "https://www.chaos.com/vray",
+    "source_verified_on": "2026-06-17",
+    "status": "QUEUED"
+  }
+}

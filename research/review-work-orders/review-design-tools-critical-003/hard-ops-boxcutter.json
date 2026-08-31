@@ -1,0 +1,270 @@
+{
+  "batch": "review-design-tools-critical-003",
+  "current": {
+    "affiliate_url": "https://superhivemarket.com/products/hard-ops--boxcutter-ultimate-bundle",
+    "alternatives": [
+      "blender",
+      "modo"
+    ],
+    "category": "design-tools",
+    "cons": [
+      "Spécialisé uniquement dans le hard-surface.",
+      "Curve de apprentissage raide au départ.",
+      "Peut sembler cher pour les hobbyistes.",
+      "Pas de support direct ; communauté-driven."
+    ],
+    "cons_en": [
+      "Specialized only in hard-surface.",
+      "Steep learning curve initially.",
+      "May seem expensive for hobbyists.",
+      "No direct support; community-driven."
+    ],
+    "host_app": "blender",
+    "id": "hard-ops-boxcutter",
+    "long_description": "Hard Ops et Boxcutter forment le duo de référence pour la modélisation hard-surface dans Blender (véhicules, robots, armes, props mécaniques). Boxcutter ajoute un découpage booléen à la souris, directement à l'écran, sans passer par les modificateurs un par un. Hard Ops automatise les tâches répétitives (chanfreins, miroirs, tableaux complexes) avec des raccourcis pensés pour un flux rapide.\n\nVendu en bundle à 38$, c'est un achat unique qui remplace des heures de modélisation manuelle. C'est devenu un standard chez les modélisateurs hard-surface sous Blender, au point que beaucoup de tutoriels et d'écoles l'enseignent comme base. La contrepartie, c'est une interface dense et un vocabulaire spécifique (les raccourcis et workflows propres à ces add-ons) qui demandent un vrai temps d'adaptation.",
+    "long_description_en": "Hard Ops and Boxcutter form the reference duo for hard-surface modeling in Blender (vehicles, robots, weapons, mechanical props). Boxcutter adds on-screen boolean cutting with the mouse, without going through modifiers one by one. Hard Ops automates repetitive tasks (bevels, mirrors, complex arrays) with shortcuts built for a fast workflow.\n\nSold as a $38 bundle, it's a one-time purchase that replaces hours of manual modeling. It has become a standard among hard-surface modelers in Blender, to the point that many tutorials and schools teach it as a baseline. The trade-off is a dense interface and a specific vocabulary (shortcuts and workflows unique to these add-ons) that need real time to get used to.",
+    "media": {
+      "gallery_images": [
+        "https://assets.superhivemarket.com/uploads%2F1567830360322-h6.gif",
+        "https://assets.superhivemarket.com/uploads%2F1567830624978-h13.gif"
+      ],
+      "og_image_url": "https://assets.superhivemarket.com/store/product/152952/image/xlarge-6cfdfa50a4bf06c30dcb85560a376edd.png"
+    },
+    "name": "Hard Ops / Boxcutter",
+    "pricing": {
+      "free": "",
+      "paid": "38$ en licence perpétuelle (achat unique, bundle des deux add-ons)."
+    },
+    "pricing_en": {
+      "free": "",
+      "paid": "$38 perpetual license (one-time purchase, bundle of both add-ons)."
+    },
+    "pricing_v5": {
+      "cautions": [],
+      "compare_plan_kind": "one_time",
+      "compare_plan_name": "Bundle perpétuel",
+      "compare_price_monthly_eur": 38,
+      "location_sensitive": false,
+      "official_source_url": "https://superhivemarket.com/products/hard-ops--boxcutter-ultimate-bundle",
+      "price_reliability": "medium",
+      "source_domain": "superhivemarket.com",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-06-20"
+    },
+    "pros": [
+      "Workflow révolutionnaire pour le hard-surface.",
+      "Interface ultra-rapide et intuitive.",
+      "Licence perpétuelle (pas d'abonnement).",
+      "Communauté énorme avec des millions de tutoriels.",
+      "Régulièrement mis à jour et amélioré."
+    ],
+    "pros_en": [
+      "Revolutionary workflow for hard-surface modeling.",
+      "Ultra-fast and intuitive interface.",
+      "Perpetual license (no subscription).",
+      "Massive community with millions of tutorials.",
+      "Regularly updated and improved."
+    ],
+    "short_description": "Bundle Blender pour la modélisation hard-surface (booléens, bevels, arrays).",
+    "short_description_en": "Blender bundle for hard-surface modeling (booleans, bevels, arrays).",
+    "slug": "hard-ops-boxcutter",
+    "source_url": "https://superhivemarket.com/products/hard-ops--boxcutter-ultimate-bundle",
+    "source_verified_on": "2026-06-20",
+    "use_cases": [
+      "Concevoir des armes, des véhicules, des robots.",
+      "Créer du concept art hard-surface rapide.",
+      "Modeliser des accessoires et du design industriel.",
+      "Itérer rapidement sur la géométrie sans dépendances booléennes figées."
+    ],
+    "use_cases_en": [
+      "Design weapons, vehicles, robots.",
+      "Create fast hard-surface concept art.",
+      "Model props and industrial design.",
+      "Iterate rapidly on geometry without locked boolean dependencies."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous faites surtout du sculpting organique ou du modeling fluide.",
+        "Vous cherchez une solution gratuite pour Blender.",
+        "Le hard-surface n'est pas votre domaine principal."
+      ],
+      "keepIf": [
+        "Vous modélisez du hard-surface (mécanique, sci-fi, objets géométriques).",
+        "Vous voulez un workflow non-destructif et itératif rapide.",
+        "Vous préparez du concept art ou du design de props."
+      ],
+      "threshold": "Hard Ops + Boxcutter est la référence incontournable du hard-surface Blender ; pour le soft modeling et le sculpting, d'autres outils conviennent mieux."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You mainly do organic sculpting or fluid modeling.",
+        "You want a free Blender solution.",
+        "Hard-surface is not your main focus."
+      ],
+      "keepIf": [
+        "You model hard-surface (mechanical, sci-fi, geometric objects).",
+        "You want a non-destructive and fast iterative workflow.",
+        "You prepare concept art or prop design."
+      ],
+      "threshold": "Hard Ops + Boxcutter is the hard-surface Blender gold standard; for soft modeling and sculpting, other tools fit better."
+    },
+    "website_url": "https://superhivemarket.com/products/hard-ops--boxcutter-ultimate-bundle"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Specialized only in hard-surface.",
+        "Steep learning curve initially.",
+        "May seem expensive for hobbyists.",
+        "No direct support; community-driven."
+      ],
+      "pros": [
+        "Revolutionary workflow for hard-surface modeling.",
+        "Ultra-fast and intuitive interface.",
+        "Perpetual license (no subscription).",
+        "Massive community with millions of tutorials.",
+        "Regularly updated and improved."
+      ],
+      "use_cases": [
+        "Design weapons, vehicles, robots.",
+        "Create fast hard-surface concept art.",
+        "Model props and industrial design.",
+        "Iterate rapidly on geometry without locked boolean dependencies."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You mainly do organic sculpting or fluid modeling.",
+          "You want a free Blender solution.",
+          "Hard-surface is not your main focus."
+        ],
+        "keepIf": [
+          "You model hard-surface (mechanical, sci-fi, geometric objects).",
+          "You want a non-destructive and fast iterative workflow.",
+          "You prepare concept art or prop design."
+        ],
+        "threshold": "Hard Ops + Boxcutter is the hard-surface Blender gold standard; for soft modeling and sculpting, other tools fit better."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Pas de version gratuite. Les deux add-ons ne sont disponibles que via achat.",
+        "exists": false
+      },
+      "key_features": [
+        "Hard Ops : gestionnaire de booléens et opérateurs non-destructifs",
+        "Boxcutter : outil de découpe interactive directement dans le viewport",
+        "Assistants et helpers pour un workflow optimal",
+        "Intégration Sculpt et Grease Pencil",
+        "Communauté massive de tutoriels et d'assets",
+        "Workflow orienté speed et non-destructivité"
+      ],
+      "plans": [
+        {
+          "name": "Hard Ops / Boxcutter Ultimate Bundle",
+          "price": "38 $ (achat unique, licence perpétuelle)"
+        }
+      ],
+      "pricing_model": "Achat unique avec licence perpétuelle. Pas d'abonnement, pas de renouvellement.",
+      "what": "Suite d'add-ons Blender pour la modélisation hard-surface non-destructive. Combine Hard Ops (gestionnaire de booléens) et Boxcutter (outil de découpe interactive). Workflow optimisé pour les designers de concept, les modeleurs d'armes/accessoires, et les artistes de design industriel.",
+      "what_en": "Suite of Blender add-ons for non-destructive hard-surface modeling. Combines Hard Ops (boolean manager) and Boxcutter (interactive cutting tool). Optimized workflow for concept artists, weapon/prop designers, and industrial design artists."
+    },
+    "fr": {
+      "cons": [
+        "Spécialisé uniquement dans le hard-surface.",
+        "Curve de apprentissage raide au départ.",
+        "Peut sembler cher pour les hobbyistes.",
+        "Pas de support direct ; communauté-driven."
+      ],
+      "pros": [
+        "Workflow révolutionnaire pour le hard-surface.",
+        "Interface ultra-rapide et intuitive.",
+        "Licence perpétuelle (pas d'abonnement).",
+        "Communauté énorme avec des millions de tutoriels.",
+        "Régulièrement mis à jour et amélioré."
+      ],
+      "relevant_for": [
+        "Concept artists Blender",
+        "Designers 3D hard-surface",
+        "Modélisateurs de props/armes"
+      ],
+      "use_cases": [
+        "Concevoir des armes, des véhicules, des robots.",
+        "Créer du concept art hard-surface rapide.",
+        "Modeliser des accessoires et du design industriel.",
+        "Itérer rapidement sur la géométrie sans dépendances booléennes figées."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous faites surtout du sculpting organique ou du modeling fluide.",
+          "Vous cherchez une solution gratuite pour Blender.",
+          "Le hard-surface n'est pas votre domaine principal."
+        ],
+        "keepIf": [
+          "Vous modélisez du hard-surface (mécanique, sci-fi, objets géométriques).",
+          "Vous voulez un workflow non-destructif et itératif rapide.",
+          "Vous préparez du concept art ou du design de props."
+        ],
+        "threshold": "Hard Ops + Boxcutter est la référence incontournable du hard-surface Blender ; pour le soft modeling et le sculpting, d'autres outils conviennent mieux."
+      }
+    },
+    "slug": "hard-ops-boxcutter",
+    "sources": [
+      {
+        "label": "SuperHive Market — Hard Ops / Boxcutter Ultimate Bundle (site officiel)",
+        "url": "https://superhivemarket.com/products/hard-ops--boxcutter-ultimate-bundle"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-003",
+    "batch_position": 3,
+    "blockers": [],
+    "catalog_hash": "sha256:4b2aeeab8c844e39a568db11a45eecb00d55106454f647445dbe53ef911aa27c",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:eb8c2543a7bb4d820dc42ec13d65514f50f8bda74d131e5054cae4bff7613259",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Hard Ops / Boxcutter",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:6d9774a57b835c82f3fd677c7be328bf9b86e2ab662bb143e20dbbf436de67d2",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "hard-ops-boxcutter",
+    "source_url": "https://superhivemarket.com/products/hard-ops--boxcutter-ultimate-bundle",
+    "source_verified_on": "2026-06-20",
+    "status": "QUEUED"
+  }
+}

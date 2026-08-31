@@ -1,0 +1,290 @@
+{
+  "batch": "review-design-tools-critical-003",
+  "current": {
+    "affiliate_url": "https://maze.co",
+    "alternatives": [],
+    "category": "design-tools",
+    "cons": [
+      "Plans payants pour accès complet et participants illimités.",
+      "Qualité variable des réponses selon le panel.",
+      "Pas de substitut à une recherche qualitative très approfondie.",
+      "Tarification peut augmenter avec nombre de participants.",
+      "Fonctionnalités Enterprise nécessaires pour équipes très grandes."
+    ],
+    "cons_en": [
+      "Paid plans for full access and unlimited participants.",
+      "Variable response quality depending on panel.",
+      "Not a substitute for deep qualitative research.",
+      "Pricing can scale with number of participants.",
+      "Enterprise features needed for very large teams."
+    ],
+    "host_app": null,
+    "id": "maze",
+    "long_description": "Maze, c'est tests utilisateurs continus directement depuis vos prototypes Figma. À partir de 64.95€/mois. Pensé pour les designers UX/UI et les product managers.\n\nGain de temps estimé : 5h/mois.\n\nÀ garder si : tests utilisateurs continus sur prototypes Figma. À éviter si : hotjar déjà en place pour les tests sur site live. Free tier suffisant pour 1 test par mois.",
+    "long_description_en": "Maze is continuous user testing directly from your Figma prototypes. Starting at €64.95/month. Built for UX/UI designers and product managers.\n\nEstimated time saving: 5h/month.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://www.datocms-assets.com/38511/1762727117-og-image-default.jpg?auto=format"
+    },
+    "name": "Maze",
+    "pricing": {
+      "free": "1 étude/mois",
+      "paid": "75$/mois (Team)"
+    },
+    "pricing_en": null,
+    "pricing_v5": {
+      "cautions": [],
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Entry paid plan",
+      "compare_price_monthly_eur": 64.95,
+      "location_sensitive": false,
+      "official_source_url": "https://maze.co/pricing/",
+      "price_reliability": "high",
+      "source_domain": "maze.co",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-03-13"
+    },
+    "pros": [
+      "Plateforme all-in-one : recrutement + test + analyse intégrés.",
+      "Modérateur IA pour automatiser les entretiens et gagner du temps.",
+      "Rapports d'analyse automatisés avec insights IA.",
+      "Accès à large panel de participants (6+ millions).",
+      "Tests multiples (prototypes, live sites, mobile, surveys).",
+      "Interface conviviale sans expertise en recherche requise.",
+      "Essai gratuit disponible pour tester."
+    ],
+    "pros_en": [
+      "All-in-one platform: recruitment + testing + analysis integrated.",
+      "AI moderator to automate interviews and save time.",
+      "Automated analysis reports with AI insights.",
+      "Access to large participant panel (6+ million).",
+      "Multiple test types (prototypes, live sites, mobile, surveys).",
+      "User-friendly interface, no research expertise required.",
+      "Free trial available to test."
+    ],
+    "short_description": "Tests utilisateurs continus directement depuis vos prototypes Figma.",
+    "short_description_en": "Continuous user testing directly from your Figma prototypes.",
+    "slug": "maze",
+    "source_url": "https://maze.co/pricing/",
+    "source_verified_on": "2026-03-13",
+    "use_cases": [
+      "Tester rapidement un prototype avec 20-50 utilisateurs de votre cible.",
+      "Valider une feature avant développement complet.",
+      "Conduire une étude de satisfaction utilisateur post-launch.",
+      "Analyser l'expérience utilisateur d'un site concurrent.",
+      "Recruter et interviewer directement sans agence de recrutement."
+    ],
+    "use_cases_en": [
+      "Rapidly test a prototype with 20-50 target users.",
+      "Validate a feature before full development.",
+      "Conduct post-launch user satisfaction study.",
+      "Analyze a competitor's user experience.",
+      "Recruit and interview directly without a recruitment agency."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous faites surtout de l'analytics quantitatif (Google Analytics suffit).",
+        "Vous avez déjà un pipeline de recrutement interne établi.",
+        "Vous cherchez une recherche UX très pointue ou ethnographique."
+      ],
+      "keepIf": [
+        "Vous testez régulièrement des prototypes ou des features avec des utilisateurs réels.",
+        "Vous cherchez une plateforme all-in-one recrutement + test + analyse.",
+        "Vous avez besoin d'insights qualitatifs et quantitatifs rapides sur les produits."
+      ],
+      "threshold": "Maze convient aux product teams cherchant du user testing rapide et accessible ; pour analytics purs ou recherche qualitative profonde, d'autres outils s'imposent."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You're mostly doing quantitative analytics (Google Analytics is enough).",
+        "You have an established internal recruitment pipeline.",
+        "You need very deep or ethnographic UX research."
+      ],
+      "keepIf": [
+        "You regularly test prototypes or features with real users.",
+        "You're looking for an all-in-one platform: recruitment + testing + analysis.",
+        "You need fast qualitative and quantitative product insights."
+      ],
+      "threshold": "Maze makes sense for product teams wanting fast, accessible user testing; for pure analytics or deep qualitative research, other tools fit better."
+    },
+    "website_url": "https://maze.co"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Paid plans for full access and unlimited participants.",
+        "Variable response quality depending on panel.",
+        "Not a substitute for deep qualitative research.",
+        "Pricing can scale with number of participants.",
+        "Enterprise features needed for very large teams."
+      ],
+      "pros": [
+        "All-in-one platform: recruitment + testing + analysis integrated.",
+        "AI moderator to automate interviews and save time.",
+        "Automated analysis reports with AI insights.",
+        "Access to large participant panel (6+ million).",
+        "Multiple test types (prototypes, live sites, mobile, surveys).",
+        "User-friendly interface, no research expertise required.",
+        "Free trial available to test."
+      ],
+      "use_cases": [
+        "Rapidly test a prototype with 20-50 target users.",
+        "Validate a feature before full development.",
+        "Conduct post-launch user satisfaction study.",
+        "Analyze a competitor's user experience.",
+        "Recruit and interview directly without a recruitment agency."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You're mostly doing quantitative analytics (Google Analytics is enough).",
+          "You have an established internal recruitment pipeline.",
+          "You need very deep or ethnographic UX research."
+        ],
+        "keepIf": [
+          "You regularly test prototypes or features with real users.",
+          "You're looking for an all-in-one platform: recruitment + testing + analysis.",
+          "You need fast qualitative and quantitative product insights."
+        ],
+        "threshold": "Maze makes sense for product teams wanting fast, accessible user testing; for pure analytics or deep qualitative research, other tools fit better."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Essai gratuit et tier limité disponible. Accès à certains outils de recherche de base avec restrictions de participants ou de nombre d'études.",
+        "exists": true
+      },
+      "key_features": [
+        "Modérateur IA pour automatiser les entretiens",
+        "Tests de prototypes avec utilisateurs réels",
+        "Entretiens modérés one-to-one",
+        "Tests live de sites web",
+        "Tests mobile pour applications",
+        "Rapports automatisés avec analyse IA",
+        "Accès à un panel de 6+ millions de participants",
+        "Intégrations MCP pour outils tiers",
+        "Card sorting et tree testing"
+      ],
+      "plans": [
+        {
+          "name": "Free Trial / Limited Free",
+          "price": "Gratuit"
+        },
+        {
+          "name": "Standard",
+          "price": "Montants sur la page officielle (plans échelonnés)"
+        },
+        {
+          "name": "Enterprise",
+          "price": "Tarification personnalisée sur demande"
+        }
+      ],
+      "pricing_model": "Freemium avec plans par abonnement. Tier gratuit limité, plans Standard et Enterprise avec tarification progressive.",
+      "what": "Plateforme de recherche utilisateur intégrée qui combine recrutement, tests de prototypes, entretiens modérés, enquêtes et analyse pour aider les équipes à prendre des décisions produit basées sur des données.",
+      "what_en": "Integrated user research platform combining recruitment, prototype testing, moderated interviews, surveys, and analysis to help teams make data-driven product decisions."
+    },
+    "fr": {
+      "cons": [
+        "Plans payants pour accès complet et participants illimités.",
+        "Qualité variable des réponses selon le panel.",
+        "Pas de substitut à une recherche qualitative très approfondie.",
+        "Tarification peut augmenter avec nombre de participants.",
+        "Fonctionnalités Enterprise nécessaires pour équipes très grandes."
+      ],
+      "pros": [
+        "Plateforme all-in-one : recrutement + test + analyse intégrés.",
+        "Modérateur IA pour automatiser les entretiens et gagner du temps.",
+        "Rapports d'analyse automatisés avec insights IA.",
+        "Accès à large panel de participants (6+ millions).",
+        "Tests multiples (prototypes, live sites, mobile, surveys).",
+        "Interface conviviale sans expertise en recherche requise.",
+        "Essai gratuit disponible pour tester."
+      ],
+      "relevant_for": [
+        "Product managers",
+        "UX researchers",
+        "Équipes design",
+        "Startups cherchant validation",
+        "Agences digital"
+      ],
+      "use_cases": [
+        "Tester rapidement un prototype avec 20-50 utilisateurs de votre cible.",
+        "Valider une feature avant développement complet.",
+        "Conduire une étude de satisfaction utilisateur post-launch.",
+        "Analyser l'expérience utilisateur d'un site concurrent.",
+        "Recruter et interviewer directement sans agence de recrutement."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous faites surtout de l'analytics quantitatif (Google Analytics suffit).",
+          "Vous avez déjà un pipeline de recrutement interne établi.",
+          "Vous cherchez une recherche UX très pointue ou ethnographique."
+        ],
+        "keepIf": [
+          "Vous testez régulièrement des prototypes ou des features avec des utilisateurs réels.",
+          "Vous cherchez une plateforme all-in-one recrutement + test + analyse.",
+          "Vous avez besoin d'insights qualitatifs et quantitatifs rapides sur les produits."
+        ],
+        "threshold": "Maze convient aux product teams cherchant du user testing rapide et accessible ; pour analytics purs ou recherche qualitative profonde, d'autres outils s'imposent."
+      }
+    },
+    "slug": "maze",
+    "sources": [
+      {
+        "label": "Maze — plateforme de recherche utilisateur",
+        "url": "https://maze.co"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-003",
+    "batch_position": 7,
+    "blockers": [],
+    "catalog_hash": "sha256:8e89120c1e2897ca81c800a60245da627f41195db7909014264814079ee466c4",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:a0fac9119036d8941baa2655ead9eaeecd52fad78399bfe9b2661ccda7004da7",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Maze",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:b5fe4ce72643e46c01a9ff868f317898865edaedd97b08604ee9aea1598451fd",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "maze",
+    "source_url": "https://maze.co/pricing/",
+    "source_verified_on": "2026-03-13",
+    "status": "QUEUED"
+  }
+}

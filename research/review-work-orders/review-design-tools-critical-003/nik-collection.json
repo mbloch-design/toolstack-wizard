@@ -1,0 +1,312 @@
+{
+  "batch": "review-design-tools-critical-003",
+  "current": {
+    "affiliate_url": "https://nikcollection.dxo.com",
+    "alternatives": [
+      "adobe-lightroom",
+      "capture-one",
+      "luminar-neo"
+    ],
+    "category": "design-tools",
+    "cons": [
+      "Achat initial non négligeable face aux solutions par abonnement.",
+      "GPU compatible requis pour features IA.",
+      "Activation en ligne obligatoire pour première utilisation.",
+      "Interface Dense — courbe d'apprentissage pour novices."
+    ],
+    "cons_en": [
+      "Upfront cost significant versus subscription models.",
+      "Compatible GPU needed for AI features.",
+      "Online activation required first launch.",
+      "Dense interface—learning curve for beginners."
+    ],
+    "host_app": "photoshop",
+    "id": "nik-collection",
+    "long_description": "Nik Collection, c'est une suite de plugins de retouche créative pour la photo, éditée par DxO. Elle regroupe des modules cultes : Color Efex (effets et looks couleur), Silver Efex (la référence du noir et blanc), Analog Efex (rendus argentiques), Viveza, Dfine, HDR Efex... Tu travailles ta photo dans Lightroom ou Photoshop, tu envoies vers Nik, tu appliques un look, et tu reviens. Pour un photographe qui veut une signature visuelle, c'est un terrain de jeu énorme.\n\nC'est un achat unique (~149€), avec des mises à jour payantes pour les nouvelles versions. Pas d'abonnement obligatoire.\n\nÀ qui ça s'adresse : aux photographes qui veulent des looks créatifs au-delà des réglages de base de Lightroom ou Capture One. Si tu te contentes des outils intégrés, Nik fait double emploi. Mais pour du noir et blanc soigné ou des rendus créatifs, c'est l'une des suites les plus appréciées, et le modèle à achat unique reste rare et appréciable.",
+    "long_description_en": "Nik Collection is a suite of creative photo-editing plugins by DxO. It bundles cult modules: Color Efex (color effects and looks), Silver Efex (the black-and-white reference), Analog Efex (film looks), Viveza, Dfine, HDR Efex... You work your photo in Lightroom or Photoshop, send it to Nik, apply a look, and come back. For a photographer who wants a visual signature, it's a huge playground.\n\nIt's a one-time purchase (~€149), with paid updates for new versions. No mandatory subscription.\n\nWho it's for: photographers who want creative looks beyond Lightroom's or Capture One's base settings. If you're happy with built-in tools, Nik is redundant. But for refined black-and-white or creative renders, it's one of the most loved suites, and the one-time-purchase model stays rare and welcome.",
+    "media": {
+      "gallery_images": [
+        "https://pub-27e14545e036427f828cd9cf06f1395f.r2.dev/web/dxo.com/nikcollection/learn/nik9-learn-screen-2.webp",
+        "https://pub-27e14545e036427f828cd9cf06f1395f.r2.dev/web/dxo.com/nikcollection/learn/nik9-learn-screen-3.webp"
+      ],
+      "og_image_url": "https://pub-27e14545e036427f828cd9cf06f1395f.r2.dev/web/dxo.com/nikcollection/learn/nik9-learn-screen-7.webp"
+    },
+    "name": "Nik Collection",
+    "pricing": {
+      "free": "",
+      "paid": "Achat unique (~149€), licence à vie, mises à jour payantes"
+    },
+    "pricing_en": {
+      "free": "",
+      "paid": "One-time purchase (~€149), lifetime license, paid updates"
+    },
+    "pricing_v5": {
+      "billing_model": "one_time",
+      "billing_options": [
+        {
+          "currency": "USD",
+          "label_en": "One-time",
+          "label_fr": "Achat unique",
+          "price_monthly_eur": 0,
+          "price_original": 149,
+          "value": "one_time"
+        },
+        {
+          "label_en": "Already bought",
+          "label_fr": "Déjà acheté",
+          "price_monthly_eur": 0,
+          "value": "included"
+        },
+        {
+          "label_en": "I don’t know",
+          "label_fr": "Je ne sais pas",
+          "needs_verification": true,
+          "value": "unknown"
+        }
+      ],
+      "cautions": [
+        "Achat ponctuel ou licence non mensuelle : ne pas compter comme abonnement mensuel sans confirmation."
+      ],
+      "compare_plan_kind": "one_time",
+      "compare_plan_name": "License",
+      "compare_price_monthly_eur": 0,
+      "currency": "USD",
+      "location_sensitive": true,
+      "official_source_url": "https://nikcollection.dxo.com/",
+      "price_original": 149,
+      "price_original_currency": "USD",
+      "price_reliability": "medium",
+      "source_domain": "nikcollection.dxo.com",
+      "usage_sensitive": false,
+      "verification_status": "official_contextual",
+      "verified_on": "2026-06-15"
+    },
+    "pros": [
+      "Licence perpétuelle — pas d'abonnement récurrent après achat unique.",
+      "Outils de couleur et clarté professionnels depuis longtemps.",
+      "Maskage IA pour retouche précise et rapide.",
+      "Activation locale, utilisation hors ligne possible.",
+      "Essai gratuit complet pour valider avant engagement.",
+      "Activation sur 3 ordinateurs per licence."
+    ],
+    "pros_en": [
+      "Perpetual license—no recurring fees after one-time purchase.",
+      "Industry-standard color and clarity tools.",
+      "AI masking for precise, fast retouching.",
+      "Local activation, offline use possible.",
+      "Full free trial before commitment.",
+      "Install on up to 3 computers per license."
+    ],
+    "short_description": "Suite de filtres photo professionnels : Analog Efex, Color Efex, Silver Efex.",
+    "short_description_en": "Professional photo filter suite: Analog Efex, Color Efex, Silver Efex.",
+    "slug": "nik-collection",
+    "source_url": "https://nikcollection.dxo.com/",
+    "source_verified_on": "2026-06-15",
+    "use_cases": [
+      "Retouche couleur cohérente sur séries photographiques.",
+      "Améliorer paysages, portraits ou productions d'architecture.",
+      "Workflow Photoshop/Lightroom sans quitter l'application.",
+      "Édition batch avec dieline adjustable et presets."
+    ],
+    "use_cases_en": [
+      "Consistent color grading across photo series.",
+      "Enhance landscapes, portraits, or architectural shots.",
+      "Photoshop/Lightroom workflow without leaving the app.",
+      "Batch editing with adjustable dielines and presets."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous cherchez un outil gratuit ou entièrement gratuit.",
+        "Vous n'avez pas de GPU compatible (AI masking restera indisponible).",
+        "Vous préférez des abonnements cloud sans activation locale."
+      ],
+      "keepIf": [
+        "Vous travaillez avec Photoshop ou Lightroom et cherchez des filtres professionnels.",
+        "Vous aimez l'édition sans abonnement (achat unique, utilisation permanente).",
+        "Vous faites de la retouche couleur, paysage ou portrait avancée."
+      ],
+      "threshold": "Nik Collection s'impose pour éditeurs photo sérieux en studio ou en freelance ; excellent rapport qualité-prix face aux alternatives par abonnement."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You seek entirely free software.",
+        "Your GPU doesn't support AI features.",
+        "You prefer cloud subscriptions with no local activation."
+      ],
+      "keepIf": [
+        "You work in Photoshop or Lightroom and want professional filters.",
+        "You prefer one-time purchase over recurring subscriptions.",
+        "You do advanced color grading, landscape, or portrait retouching."
+      ],
+      "threshold": "Nik Collection wins for serious studio and freelance photographers; excellent value versus subscription alternatives."
+    },
+    "website_url": "https://nikcollection.dxo.com"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Upfront cost significant versus subscription models.",
+        "Compatible GPU needed for AI features.",
+        "Online activation required first launch.",
+        "Dense interface—learning curve for beginners."
+      ],
+      "pros": [
+        "Perpetual license—no recurring fees after one-time purchase.",
+        "Industry-standard color and clarity tools.",
+        "AI masking for precise, fast retouching.",
+        "Local activation, offline use possible.",
+        "Full free trial before commitment.",
+        "Install on up to 3 computers per license."
+      ],
+      "use_cases": [
+        "Consistent color grading across photo series.",
+        "Enhance landscapes, portraits, or architectural shots.",
+        "Photoshop/Lightroom workflow without leaving the app.",
+        "Batch editing with adjustable dielines and presets."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You seek entirely free software.",
+          "Your GPU doesn't support AI features.",
+          "You prefer cloud subscriptions with no local activation."
+        ],
+        "keepIf": [
+          "You work in Photoshop or Lightroom and want professional filters.",
+          "You prefer one-time purchase over recurring subscriptions.",
+          "You do advanced color grading, landscape, or portrait retouching."
+        ],
+        "threshold": "Nik Collection wins for serious studio and freelance photographers; excellent value versus subscription alternatives."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Essai gratuit complet (version d'évaluation) pour tester avant achat. Pas de version gratuite permanente.",
+        "exists": true
+      },
+      "key_features": [
+        "Maskage IA et maskage par profondeur (sur systèmes compatibles NVIDIA/AMD/Intel GPU)",
+        "Filtres de colorisation et teinte avancés",
+        "Outils de clarté et détails (Clarity, Structure, Detail Extractor)",
+        "Plugin pour Photoshop 2025/2026, Lightroom Classic, Affinity Photo, DxO PhotoLab 8/9",
+        "Activation sur jusqu'à 3 ordinateurs par licence",
+        "Licence perpétuelle sans frais cachés"
+      ],
+      "plans": [
+        {
+          "name": "Licence complète (nouveau client)",
+          "price": "€89.99 (ou €22.50 x 4 versements PayPal)"
+        },
+        {
+          "name": "Licence complète (standard)",
+          "price": "€169.99 (ou €42.50 x 4 versements PayPal)"
+        },
+        {
+          "name": "Upgrade (Nik Collection 7 ou 8)",
+          "price": "Montants sur la page officielle"
+        }
+      ],
+      "pricing_model": "Licence perpétuelle à achat unique. Aucun abonnement récurrent. Activation en ligne requise, puis usage hors ligne possible jusqu'à 37 jours.",
+      "what": "Suite d'édition photo professionnelle avec filtres avancés et maskage IA, fonctionnant comme plugin Photoshop, Lightroom Classic et Affinity Photo.",
+      "what_en": "Professional photo editing suite with advanced filters and AI masking, available as a plugin for Photoshop, Lightroom Classic, and Affinity Photo."
+    },
+    "fr": {
+      "cons": [
+        "Achat initial non négligeable face aux solutions par abonnement.",
+        "GPU compatible requis pour features IA.",
+        "Activation en ligne obligatoire pour première utilisation.",
+        "Interface Dense — courbe d'apprentissage pour novices."
+      ],
+      "pros": [
+        "Licence perpétuelle — pas d'abonnement récurrent après achat unique.",
+        "Outils de couleur et clarté professionnels depuis longtemps.",
+        "Maskage IA pour retouche précise et rapide.",
+        "Activation locale, utilisation hors ligne possible.",
+        "Essai gratuit complet pour valider avant engagement.",
+        "Activation sur 3 ordinateurs per licence."
+      ],
+      "relevant_for": [
+        "Photographes professionnels",
+        "Éditeurs photo freelance",
+        "Maisons de production",
+        "Photographes de produit"
+      ],
+      "use_cases": [
+        "Retouche couleur cohérente sur séries photographiques.",
+        "Améliorer paysages, portraits ou productions d'architecture.",
+        "Workflow Photoshop/Lightroom sans quitter l'application.",
+        "Édition batch avec dieline adjustable et presets."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous cherchez un outil gratuit ou entièrement gratuit.",
+          "Vous n'avez pas de GPU compatible (AI masking restera indisponible).",
+          "Vous préférez des abonnements cloud sans activation locale."
+        ],
+        "keepIf": [
+          "Vous travaillez avec Photoshop ou Lightroom et cherchez des filtres professionnels.",
+          "Vous aimez l'édition sans abonnement (achat unique, utilisation permanente).",
+          "Vous faites de la retouche couleur, paysage ou portrait avancée."
+        ],
+        "threshold": "Nik Collection s'impose pour éditeurs photo sérieux en studio ou en freelance ; excellent rapport qualité-prix face aux alternatives par abonnement."
+      }
+    },
+    "slug": "nik-collection",
+    "sources": [
+      {
+        "label": "DxO Nik Collection 9 — Boutique officielle DxO",
+        "url": "https://shop.dxo.com/en/nik-collection-9.html"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-003",
+    "batch_position": 9,
+    "blockers": [],
+    "catalog_hash": "sha256:4f0a5473a40787f98aacd71d0b06a9be35048748be63a91895089b5a3805dfec",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:1aebbeb42422785878e8979738b5862d4d21031e6fbe141dcaef6f321d7ab19a",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Nik Collection",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:91bd6d033298e6c7c310e6655135fa852f5e6aaa6f898b034f0de97ea97acac8",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "nik-collection",
+    "source_url": "https://nikcollection.dxo.com/",
+    "source_verified_on": "2026-06-15",
+    "status": "QUEUED"
+  }
+}

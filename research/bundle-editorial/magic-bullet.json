@@ -3,7 +3,7 @@
   "author": "ToolTrim — Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Magic Bullet — Red Giant suite de plugins vidéo", "url": "https://www.maxon.net/red-giant/magic-bullet" }
+    { "label": "Magic Bullet — intégré à la suite Red Giant", "url": "https://www.maxon.net/en/red-giant" }
   ],
   "facts": {
     "what": "Suite de plugins vidéo Red Giant incluant Color Looks (étalonnage cinématique), Colorista (correction couleur 3 voies), et Denoiser (réduction de bruit) pour After Effects, Premiere Pro et DaVinci Resolve.",

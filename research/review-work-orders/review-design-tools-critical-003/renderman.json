@@ -1,0 +1,287 @@
+{
+  "batch": "review-design-tools-critical-003",
+  "current": {
+    "affiliate_url": "https://renderman.pixar.com",
+    "alternatives": [
+      "arnold",
+      "v-ray",
+      "redshift"
+    ],
+    "category": "design-tools",
+    "cons": [
+      "Coût initial significatif pour un usage commercial.",
+      "Apprentissage technique poussé requis.",
+      "Maintenance annuelle facturée en supplément.",
+      "Plus lent que les renducteurs temps-réel modernes."
+    ],
+    "cons_en": [
+      "Significant upfront cost for commercial use.",
+      "Steep technical learning curve.",
+      "Optional annual maintenance billed separately.",
+      "Slower than modern real-time renderers."
+    ],
+    "host_app": null,
+    "id": "renderman",
+    "long_description": "RenderMan, c'est une légende : c'est le moteur de rendu de Pixar, celui qui a calculé tous ses films et des décennies de VFX hollywoodiens. Il a littéralement défini une partie des standards du rendu cinéma. Dire que c'est un outil de référence est un euphémisme.\n\nLa grande nouvelle pour les indépendants, c'est qu'il est gratuit pour tout usage non commercial : version complète, sans watermark ni limitation, pour apprendre, expérimenter ou faire des projets perso. Pour un usage commercial, la licence revient à 595$ (achat) plus 250$/an de maintenance. Il s'intègre à Maya, Houdini, Katana et Blender.\n\nÀ qui ça s'adresse : aux artistes orientés cinéma d'animation et VFX, et à quiconque veut apprendre le rendu de niveau studio sans payer. Pour la plupart des freelances (motion, archviz, produit), c'est surdimensionné face à un Redshift, un V-Ray ou un Octane plus simples à intégrer. Mais la gratuité en non-commercial en fait un terrain d'apprentissage exceptionnel, et un choix légitime si tu vises le pipeline de l'animation de long-métrage.",
+    "long_description_en": "RenderMan is a legend: it's Pixar's render engine, the one that rendered all its films and decades of Hollywood VFX. It literally defined part of the standards of film rendering. Calling it a reference tool is an understatement.\n\nThe big news for freelancers is that it's free for any non-commercial use: full version, no watermark or limitation, to learn, experiment or do personal projects. For commercial use, the license is $595 (purchase) plus $250/year maintenance. It integrates with Maya, Houdini, Katana and Blender.\n\nWho it's for: artists oriented toward film animation and VFX, and anyone who wants to learn studio-grade rendering for free. For most freelancers (motion, archviz, product), it's overkill next to a simpler-to-integrate Redshift, V-Ray or Octane. But the free non-commercial tier makes it an exceptional learning ground, and a legitimate choice if you aim for the feature-animation pipeline.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://assets.renderman.pixar.com/images-pixar/hoppers-bkg-homepage.webp"
+    },
+    "name": "RenderMan",
+    "pricing": {
+      "free": "Gratuit pour usage non-commercial (complet, sans watermark)",
+      "paid": "Licence commerciale 595$ + 250$/an de maintenance."
+    },
+    "pricing_en": {
+      "free": "Free for non-commercial use (full, no watermark)",
+      "paid": "Commercial license $595 + $250/year maintenance."
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Gratuit en non-commercial ; licence commerciale 595$ + 250$/an de maintenance"
+      ],
+      "compare_plan_kind": "perpetual",
+      "compare_plan_name": "Licence commerciale",
+      "compare_price_monthly_eur": 595,
+      "location_sensitive": false,
+      "official_source_url": "https://renderman.pixar.com/store",
+      "price_reliability": "high",
+      "source_domain": "renderman.pixar.com",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-06-17"
+    },
+    "pros": [
+      "Gratuit pour usage non-commercial (excellent pour apprendre).",
+      "Qualité cinématographique reconnue par l'industrie.",
+      "Licensing flexible et scalable pour équipes.",
+      "Intégration native avec tous les 3D majeurs.",
+      "Support d'équipe dédiée Pixar.",
+      "Licence perpétuelle unique."
+    ],
+    "pros_en": [
+      "Free for non-commercial use (great for learning).",
+      "Industry-recognized cinema quality.",
+      "Flexible, scalable licensing for teams.",
+      "Native integration with all major 3D software.",
+      "Dedicated Pixar support team.",
+      "One-time perpetual license."
+    ],
+    "short_description": "Le moteur de rendu de Pixar, gratuit en non-commercial, légende du cinéma d'animation.",
+    "short_description_en": "Pixar's render engine, free for non-commercial use, a film-animation legend.",
+    "slug": "renderman",
+    "source_url": "https://renderman.pixar.com/store",
+    "source_verified_on": "2026-06-17",
+    "use_cases": [
+      "Produire un court-métrage d'animation avec qualité studio.",
+      "Rendre une séquence VFX photo-réaliste pour un film.",
+      "Concevoir des rendus architecturaux cinématographiques haute-fidélité."
+    ],
+    "use_cases_en": [
+      "Produce an animated short at studio quality.",
+      "Render a photo-realistic VFX sequence for a film.",
+      "Design high-fidelity cinematic architectural renders."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous faites du rendu temps-réel ou des visualisations architecturales simples.",
+        "Vous avez un budget limité pour un freelance solo.",
+        "Vous cherchez une solution rapide et plug-and-play.",
+        "Vous n'avez que des projets non-commerciaux."
+      ],
+      "keepIf": [
+        "Vous produisez du contenu cinema-quality (films, VFX, animation).",
+        "Vous avez besoin d'un rendu pathtracing haute-fidélité.",
+        "Vous travaillez avec Maya, Houdini, Katana, ou Blender.",
+        "Vous préférez une solution professionnelle éprouvée par l'industrie."
+      ],
+      "threshold": "RenderMan s'impose pour la production cinématographique de haut niveau ; V-Ray ou Corona conviendront pour l'architecture/produit à budget serré."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You do real-time or simple architectural rendering.",
+        "You have limited budget as a solo freelancer.",
+        "You want a quick, plug-and-play solution.",
+        "You only have non-commercial projects."
+      ],
+      "keepIf": [
+        "You produce cinema-quality content (films, VFX, animation).",
+        "You need high-fidelity pathtracing rendering.",
+        "You work with Maya, Houdini, Katana, or Blender.",
+        "You prefer a professional solution proven by the industry."
+      ],
+      "threshold": "RenderMan is essential for high-end film production; V-Ray or Corona suit architecture/product at tight budgets."
+    },
+    "website_url": "https://renderman.pixar.com"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Significant upfront cost for commercial use.",
+        "Steep technical learning curve.",
+        "Optional annual maintenance billed separately.",
+        "Slower than modern real-time renderers."
+      ],
+      "pros": [
+        "Free for non-commercial use (great for learning).",
+        "Industry-recognized cinema quality.",
+        "Flexible, scalable licensing for teams.",
+        "Native integration with all major 3D software.",
+        "Dedicated Pixar support team.",
+        "One-time perpetual license."
+      ],
+      "use_cases": [
+        "Produce an animated short at studio quality.",
+        "Render a photo-realistic VFX sequence for a film.",
+        "Design high-fidelity cinematic architectural renders."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You do real-time or simple architectural rendering.",
+          "You have limited budget as a solo freelancer.",
+          "You want a quick, plug-and-play solution.",
+          "You only have non-commercial projects."
+        ],
+        "keepIf": [
+          "You produce cinema-quality content (films, VFX, animation).",
+          "You need high-fidelity pathtracing rendering.",
+          "You work with Maya, Houdini, Katana, or Blender.",
+          "You prefer a professional solution proven by the industry."
+        ],
+        "threshold": "RenderMan is essential for high-end film production; V-Ray or Corona suit architecture/product at tight budgets."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Gratuit pour tous les usages non-commerciaux",
+        "exists": true
+      },
+      "key_features": [
+        "Rendu pathtracing haute-fidélité pour qualité cinématographique",
+        "Support de géométries NURBS, meshes, subdivision surfaces, point clouds",
+        "Contrôle flexible de la lumière et matériaux PxrSurface",
+        "Intégration avec Maya, Houdini, Katana, Blender",
+        "Tractor (job scheduler) inclus",
+        "Licensing flexible (floating ou node-locked)",
+        "Support d'équipe dédiée et community forums"
+      ],
+      "plans": [
+        {
+          "name": "Non-Commercial",
+          "price": "Gratuit"
+        },
+        {
+          "name": "Professional License",
+          "price": "USD 595 par licence (perpetual)"
+        },
+        {
+          "name": "Annual Maintenance",
+          "price": "USD 250/an (support et upgrades)"
+        }
+      ],
+      "pricing_model": "Gratuit pour usage non-commercial. Licence commerciale unique avec maintenance annuelle optionnelle.",
+      "what": "Logiciel de rendu professionnel Pixar livrant une qualité cinématographique. Utilisé en production par Pixar pour les films. Offre rendu non-commercial gratuit, licences flexibles (flottantes ou node-locked) pour usage professionnel.",
+      "what_en": "Pixar's professional rendering software delivering feature film quality. Used by Pixar in production. Offers free non-commercial rendering, flexible licensing (floating or node-locked) for professional use."
+    },
+    "fr": {
+      "cons": [
+        "Coût initial significatif pour un usage commercial.",
+        "Apprentissage technique poussé requis.",
+        "Maintenance annuelle facturée en supplément.",
+        "Plus lent que les renducteurs temps-réel modernes."
+      ],
+      "pros": [
+        "Gratuit pour usage non-commercial (excellent pour apprendre).",
+        "Qualité cinématographique reconnue par l'industrie.",
+        "Licensing flexible et scalable pour équipes.",
+        "Intégration native avec tous les 3D majeurs.",
+        "Support d'équipe dédiée Pixar.",
+        "Licence perpétuelle unique."
+      ],
+      "relevant_for": [
+        "Studios d'animation",
+        "VFX artists",
+        "Directeurs de photographie numériques"
+      ],
+      "use_cases": [
+        "Produire un court-métrage d'animation avec qualité studio.",
+        "Rendre une séquence VFX photo-réaliste pour un film.",
+        "Concevoir des rendus architecturaux cinématographiques haute-fidélité."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous faites du rendu temps-réel ou des visualisations architecturales simples.",
+          "Vous avez un budget limité pour un freelance solo.",
+          "Vous cherchez une solution rapide et plug-and-play.",
+          "Vous n'avez que des projets non-commerciaux."
+        ],
+        "keepIf": [
+          "Vous produisez du contenu cinema-quality (films, VFX, animation).",
+          "Vous avez besoin d'un rendu pathtracing haute-fidélité.",
+          "Vous travaillez avec Maya, Houdini, Katana, ou Blender.",
+          "Vous préférez une solution professionnelle éprouvée par l'industrie."
+        ],
+        "threshold": "RenderMan s'impose pour la production cinématographique de haut niveau ; V-Ray ou Corona conviendront pour l'architecture/produit à budget serré."
+      }
+    },
+    "slug": "renderman",
+    "sources": [
+      {
+        "label": "RenderMan by Pixar (site officiel)",
+        "url": "https://renderman.pixar.com"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-003",
+    "batch_position": 13,
+    "blockers": [],
+    "catalog_hash": "sha256:8cc70c3e6b663eefb7ba98352c77e251caa0584baf00d4ceb89da1c59714c000",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:f0cbc72b163587839bceb82fd848400d9972ae989b826611d9b9de4db33723ba",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "RenderMan",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:13ac937f37a2cebb660272b7df3c0e78c8ec2842f86592bb8250e95ef4527ea7",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "renderman",
+    "source_url": "https://renderman.pixar.com/store",
+    "source_verified_on": "2026-06-17",
+    "status": "QUEUED"
+  }
+}

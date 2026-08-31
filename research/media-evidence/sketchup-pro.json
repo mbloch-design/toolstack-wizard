@@ -1,0 +1,41 @@
+{
+  "slug": "sketchup-pro",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://sketchup.trimble.com/en"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://images.ctfassets.net/5qimfmsew7zl/1M12I2Eyw59Y4U4SJqCGin/a46834b0caf27f29ea566755506da7f2/SU2025-Website-NavigationPromo-WhySketchUp.jpg?w=400&h=300&fm=webp",
+      "source_page_url": "https://sketchup.trimble.com/en",
+      "official": true,
+      "alt": "sketchup-pro official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://images.ctfassets.net/5qimfmsew7zl/1NtddOku1Yc7BZUK04wmDr/cbb40283f5a37aa22a16c7ef0bca8371/SU2025-Website-NavigationPromo-Plans.jpg?w=400&h=300&fm=webp",
+      "source_page_url": "https://sketchup.trimble.com/en",
+      "official": true,
+      "alt": "sketchup-pro official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://images.ctfassets.net/5qimfmsew7zl/7BBCJXCySakQn9d60rgooy/3618cada1e3f7fcd8253f84ad5cbe711/SU26-Event-3DBC-Website-S1-Spotlight-1875x820-r2-042926.jpg?fm=webp&w=1920&h=810&fit=fill&f=bottom&q=85",
+      "source_page_url": "https://sketchup.trimble.com/en",
+      "official": true,
+      "alt": "sketchup-pro official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://images.ctfassets.net/5qimfmsew7zl/CLeItCuQzyar0Ix1BPD8b/7cb6eb778c29ab02b7aca31fc21c0450/SU-Website-Home-S1.jpg",
+      "source_page_url": "https://sketchup.trimble.com/en",
+      "official": true,
+      "alt": "Official product preview"
+    }
+  ]
+}

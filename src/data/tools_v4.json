@@ -11557,18 +11557,18 @@
     "slug": "astute-graphics",
     "name": "Astute Graphics",
     "categoryId": "design-tools",
-    "shortDescription": "Plugins Illustrator pour vectoriel avancé, lettrage, formes, nettoyage et productivité.",
-    "shortDescriptionEn": "Illustrator plugins for advanced vector work, lettering, shapes, cleanup, and productivity.",
+    "shortDescription": "Suite de plugins pour Adobe Illustrator offrant 18-21 outils spécialisés pour accélérer le workflow de design vectoriel. Inclut Vector First Aid (nettoyage), DynamicSketch (sketch vectoriel), InkFlow, et utilitaires avancés de couleur et géométrie. Utilisée par des entreprises comme NASA, Adidas, Discord.",
+    "shortDescriptionEn": "Plugin suite for Adobe Illustrator with 18-21 specialized tools to accelerate vector design workflow. Includes Vector First Aid (cleanup), DynamicSketch (vector sketching), InkFlow, and advanced color and geometry utilities. Used by companies like NASA, Adidas, Discord.",
     "pricing": {
-      "free": "Essai ou plan gratuit selon usage",
-      "paid": "À partir de 14€/mois environ"
+      "free": "Essai gratuit 7 jours ; après annulation, 4 plugins restent gratuits (Autosaviour, DirectPrefs, MirrorMe, AstuteBuddy).",
+      "paid": "Astute Graphics Annual Bundle: 149 USD/an"
     },
     "defaultMonthlyPrice": 14,
     "affiliateLink": "",
     "websiteUrl": "https://astutegraphics.com",
     "logo": "",
     "category": "design-tools",
-    "longDescription": "Plugins Illustrator pour vectoriel avancé, lettrage, formes, nettoyage et productivité.",
+    "longDescription": "Suite de plugins pour Adobe Illustrator offrant 18-21 outils spécialisés pour accélérer le workflow de design vectoriel. Inclut Vector First Aid (nettoyage), DynamicSketch (sketch vectoriel), InkFlow, et utilitaires avancés de couleur et géométrie. Utilisée par des entreprises comme NASA, Adidas, Discord.\n\nFonctions clés : Vector First Aid — nettoyage de formes complexes ; DynamicSketch — dessin vectoriel intuitif ; InkFlow — gestion des traits et tracés ; Phantasm — effets vectoriels ; ColliderScribe et SubScribe — géométrie avancée ; Randomino, Stipplism, Texturino — effets de texture ; WidthScribe — gestion des épaisseurs de trait ; FindReplace, Reform — modulation des formes.\n\nAstute Graphics s'impose pour les illustrateurs et designers vectoriels professionnels ; pour usage occasionnel ou budget limité, Illustrator natif + plugins gratuits peut suffire.",
     "verdict": {
       "keepIf": [
         "Vous travaillez quotidiennement en Illustrator et créez du contenu vectoriel complexe.",
@@ -11637,11 +11637,19 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/astute-graphics.jpg",
-    "description": "Plugins Illustrator pour vectoriel avancé, lettrage, formes, nettoyage et productivité.",
-    "longDescriptionEn": "Plugin suite for Adobe Illustrator with 18-21 specialized tools to accelerate vector design workflow. Includes Vector First Aid (cleanup), DynamicSketch (vector sketching), InkFlow, and advanced color and geometry utilities. Used by companies like NASA, Adidas, Discord.",
-    "pricingEn": null,
-    "pricing_v5": null,
+    "ogImageUrl": "https://astute-graphics.imgix.net/plugins/astutebuddy-media/astutebuddy-image.png?ixlib=php-3.3.1&w=660",
+    "description": "Suite de plugins pour Adobe Illustrator offrant 18-21 outils spécialisés pour accélérer le workflow de design vectoriel. Inclut Vector First Aid (nettoyage), DynamicSketch (sketch vectoriel), InkFlow, et utilitaires avancés de couleur et géométrie. Utilisée par des entreprises comme NASA, Adidas, Discord.\n\nFonctions clés : Vector First Aid — nettoyage de formes complexes ; DynamicSketch — dessin vectoriel intuitif ; InkFlow — gestion des traits et tracés ; Phantasm — effets vectoriels ; ColliderScribe et SubScribe — géométrie avancée ; Randomino, Stipplism, Texturino — effets de texture ; WidthScribe — gestion des épaisseurs de trait ; FindReplace, Reform — modulation des formes.\n\nAstute Graphics s'impose pour les illustrateurs et designers vectoriels professionnels ; pour usage occasionnel ou budget limité, Illustrator natif + plugins gratuits peut suffire.",
+    "longDescriptionEn": "Plugin suite for Adobe Illustrator with 18-21 specialized tools to accelerate vector design workflow. Includes Vector First Aid (cleanup), DynamicSketch (vector sketching), InkFlow, and advanced color and geometry utilities. Used by companies like NASA, Adidas, Discord.\n\nKey strengths: Significantly accelerates Illustrator workflow.; Very useful plugins for cleanup and vector effects.; Free 7-day trial before commitment.; 4 free plugins retained after cancellation.; Monthly updates included..\n\nAstute Graphics makes sense for professional vector designers and illustrators; for occasional use or tight budgets, native Illustrator + free plugins may suffice.",
+    "pricingEn": {
+      "free": "Essai gratuit 7 jours ; après annulation, 4 plugins restent gratuits (Autosaviour, DirectPrefs, MirrorMe, AstuteBuddy).",
+      "paid": "Astute Graphics Annual Bundle: 149 USD/an"
+    },
+    "pricing_v5": {
+      "verified_on": "2026-07-24",
+      "official_source_url": "https://astutegraphics.com",
+      "source_domain": "astutegraphics.com",
+      "verification_status": "official_explicit"
+    },
     "seo": null,
     "verdictEn": {
       "keepIf": [
@@ -11675,7 +11683,12 @@
       "Design a logo or visual identity with advanced geometric control."
     ],
     "decision_policy_v3": null,
-    "force_silence": false
+    "force_silence": false,
+    "galleryImages": [
+      "https://astute-graphics.imgix.net/plugins/autosaviour/astute-plugins-thumbnail-autosaviour.png?ixlib=php-3.3.1&w=660",
+      "https://astute-graphics.imgix.net/plugins/colliderscribe/astute-plugins-thumbnail-colliderscribe.png?ixlib=php-3.3.1&w=660",
+      "https://astute-graphics.imgix.net/plugins/dynamicsketch/astute-plugins-thumbnail-dynamicsketch.png?ixlib=php-3.3.1&w=660"
+    ]
   },
   {
     "id": "attio",
@@ -47468,14 +47481,14 @@
     "name": "Figma Tokens (Tokens Studio)",
     "slug": "figma-tokens",
     "category": "design-tools",
-    "shortDescription": "Plugin Figma pour gérer les design tokens et les synchroniser avec le code via Git.",
-    "longDescription": "Tokens Studio (anciennement Figma Tokens) est le plugin de référence pour gérer des design tokens dans Figma : couleurs, espacements, typographies, le tout structuré, versionné et synchronisable avec ton code via Git. C'est l'outil qui fait le pont entre la maquette et le design system en production, là où les variables natives de Figma montrent leurs limites.\n\nPour un designer qui maintient un vrai design system, c'est un gain de temps concret : tu changes un token, il se propage partout, et les développeurs récupèrent les mêmes valeurs côté code. Sans design system en revanche, c'est de la sur-ingénierie : les variables natives de Figma suffisent largement.\n\nLe point à connaître en 2026 : la grille tarifaire a changé. Le plugin reste gratuit pour un usage local (plan Starter), mais la synchronisation Git et l'automatisation sont passées sur des formules nettement plus chères, à partir de 39€/mois (Starter Plus). L'époque du petit plan Pro à 9$ est révolue. À évaluer selon la taille du système que tu maintiens.",
+    "shortDescription": "Plugin Figma pour gérer les design tokens (couleurs, typographie, espacements) et les synchroniser avec le code. Open source et extensible, avec intégration Git et multi-fichiers.",
+    "longDescription": "Plugin Figma pour gérer les design tokens (couleurs, typographie, espacements) et les synchroniser avec le code. Open source et extensible, avec intégration Git et multi-fichiers.\n\nFonctions clés : Gestion des design tokens (couleurs, typo, spacing) ; Synchronisation Figma ↔ Code (CSS, JSON) ; Intégration GitHub et Git pour versioning ; Support Figma, Penpot, Framer, VS Code ; Sync multi-fichiers et variables Figma ; CLI et SDK pour automatisation ; Théming multi-marques ; Open source et extensible.\n\nTokens Studio s'impose pour les design systems d'équipe. Pour les projets solo simples, les variables Figma natives peuvent suffire.",
     "affiliateLink": "https://tokens.studio",
     "websiteUrl": "https://tokens.studio",
     "defaultMonthlyPrice": 0,
     "pricing": {
-      "free": "Plugin gratuit pour un usage local (plan Starter)",
-      "paid": "Sync Git et automatisation à partir de 39€/mois (Starter Plus)"
+      "free": "Plugin Figma gratuit pour utiliser les variables Figma ; plateforme studio en essai gratuit 14 jours.",
+      "paid": "Plugin Figma: 39 € achat unique (ou gratuit en version open source) ; Studio Starter Plus: 17 € / mois (1 éditeur, jusqu'à 5 projets) ; Studio Essential: 169 € / mois (1 éditeur, versioning, branches) ; Studio Organization: 499 € / mois (5 éditeurs, asset management, docs) ; Enterprise: Prix sur demande"
     },
     "logo": "",
     "soloRelevance": "medium",
@@ -47572,14 +47585,14 @@
         "Plugin gratuit pour un usage local",
         "Sync Git et automatisation à partir de 39€/mois (Starter Plus)"
       ],
-      "verified_on": "2026-06-15",
+      "verified_on": "2026-07-24",
       "source_domain": "tokens.studio",
       "usage_sensitive": false,
       "compare_plan_kind": "individual",
       "compare_plan_name": "Starter (gratuit)",
       "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://tokens.studio/pricing",
+      "official_source_url": "https://tokens.studio",
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 0
     },
@@ -47591,8 +47604,8 @@
       "never_auto_cancel_reason": "Couche non substituable par défaut.",
       "requires_context_questions": true
     },
-    "shortDescriptionEn": "Figma plugin to manage design tokens and sync them to code via Git.",
-    "longDescriptionEn": "Tokens Studio (formerly Figma Tokens) is the go-to plugin for managing design tokens in Figma: colors, spacing, typography, all structured, versioned and syncable to your code via Git. It's the tool that bridges the mockup and the production design system, where Figma's native variables hit their limits.\n\nFor a designer maintaining a real design system, it's a concrete time saver: change one token and it propagates everywhere, and developers get the same values in code. Without a design system, though, it's over-engineering: Figma's native variables are plenty.\n\nThe thing to know in 2026: the pricing changed. The plugin stays free for local use (Starter plan), but Git sync and automation moved to noticeably pricier tiers, starting at €39/month (Starter Plus). The days of the small $9 Pro plan are over. Weigh it against the size of the system you maintain.",
+    "shortDescriptionEn": "Figma plugin for managing design tokens (colors, typography, spacing) and syncing them to code. Open-source and extensible, with Git integration and multi-file support.",
+    "longDescriptionEn": "Figma plugin for managing design tokens (colors, typography, spacing) and syncing them to code. Open-source and extensible, with Git integration and multi-file support.\n\nKey strengths: Single source of truth for design and code.; Native Git sync and versioning.; Multi-tool support (Figma, Penpot, VS Code).; Open source and extensible (CLI/SDK).; Multi-brand theming..\n\nTokens Studio wins for team design systems. For simple solo projects, native Figma variables may suffice.",
     "prosEn": [
       "Single source of truth for design and code.",
       "Native Git sync and versioning.",
@@ -47626,12 +47639,17 @@
       "threshold": "Tokens Studio wins for team design systems. For simple solo projects, native Figma variables may suffice."
     },
     "pricingEn": {
-      "free": "Free plugin for local use (Starter plan)",
-      "paid": "Git sync and automation from €39/month (Starter Plus)"
+      "free": "Plugin Figma gratuit pour utiliser les variables Figma ; plateforme studio en essai gratuit 14 jours.",
+      "paid": "Plugin Figma: 39 € achat unique (ou gratuit en version open source) ; Studio Starter Plus: 17 € / mois (1 éditeur, jusqu'à 5 projets) ; Studio Essential: 169 € / mois (1 éditeur, versioning, branches) ; Studio Organization: 499 € / mois (5 éditeurs, asset management, docs) ; Enterprise: Prix sur demande"
     },
     "force_silence": false,
-    "description": "Tokens Studio (anciennement Figma Tokens) est le plugin de référence pour gérer des design tokens dans Figma : couleurs, espacements, typographies, le tout structuré, versionné et synchronisable avec ton code via Git. C'est l'outil qui fait le pont entre la maquette et le design system en production, là où les variables natives de Figma montrent leurs limites.\n\nPour un designer qui maintient un vrai design system, c'est un gain de temps concret : tu changes un token, il se propage partout, et les développeurs récupèrent les mêmes valeurs côté code. Sans design system en revanche, c'est de la sur-ingénierie : les variables natives de Figma suffisent largement.\n\nLe point à connaître en 2026 : la grille tarifaire a changé. Le plugin reste gratuit pour un usage local (plan Starter), mais la synchronisation Git et l'automatisation sont passées sur des formules nettement plus chères, à partir de 39€/mois (Starter Plus). L'époque du petit plan Pro à 9$ est révolue. À évaluer selon la taille du système que tu maintiens.",
-    "ogImageUrl": "https://framerusercontent.com/assets/EzljCTuSDgR914OMFrHugpBFx2I.png"
+    "description": "Plugin Figma pour gérer les design tokens (couleurs, typographie, espacements) et les synchroniser avec le code. Open source et extensible, avec intégration Git et multi-fichiers.\n\nFonctions clés : Gestion des design tokens (couleurs, typo, spacing) ; Synchronisation Figma ↔ Code (CSS, JSON) ; Intégration GitHub et Git pour versioning ; Support Figma, Penpot, Framer, VS Code ; Sync multi-fichiers et variables Figma ; CLI et SDK pour automatisation ; Théming multi-marques ; Open source et extensible.\n\nTokens Studio s'impose pour les design systems d'équipe. Pour les projets solo simples, les variables Figma natives peuvent suffire.",
+    "ogImageUrl": "https://framerusercontent.com/images/dKla9Z5N984BrKpKzDUgzZldm7s.png?scale-down-to=512&width=1332&height=1706",
+    "galleryImages": [
+      "https://framerusercontent.com/images/U6XxG0IKBx92sGG0fO4lqUfo.png?width=776&height=419",
+      "https://framerusercontent.com/images/OJky06nA4afzCfSJHu5uR1CEF2o.png?width=2560&height=1440",
+      "https://framerusercontent.com/images/ZbUviOhRzvlUmTSKs3MpZmQQjU4.png?width=2560&height=1440"
+    ]
   },
   {
     "id": "figma-weave",
@@ -52120,26 +52138,26 @@
     "slug": "fredo6-bundle",
     "name": "Fredo6 Bundle",
     "categoryId": "design-tools",
-    "shortDescription": "Suite de plugins SketchUp pour accélérer la modélisation, les courbes, arrondis et déformations.",
-    "shortDescriptionEn": "SketchUp plugin suite for faster modelling, curves, rounded corners and deformations.",
+    "shortDescription": "Suite de plugins SketchUp spécialisés dans la modélisation avancée. Le bundle Fredo6 regroupe des outils comme FredoCorner (coins arrondis), FredoScale (transformations), FredoBend (déformation de géométrie), et autres extensions pour optimiser les workflows de conception architecturale et paramétrique.",
+    "shortDescriptionEn": "Suite of specialized SketchUp plugins for advanced modeling. The Fredo6 Bundle groups together tools like FredoCorner (rounded corners), FredoScale (geometric transformations), FredoBend (geometry deformation), and other extensions to optimize architectural and parametric design workflows.",
     "pricing": {
-      "free": "Essai gratuit de 30 jours",
-      "paid": "50 $ en achat unique pour 8 plugins et 3 postes"
+      "free": "Certains plugins Fredo6 (comme LibFredo6, Joint Push Pull) restent gratuits ; le bundle payant comprend les extensions avancées.",
+      "paid": "Bundle Fredo6: Montants sur la page officielle SketchUcation ; Plugin individual: Montants sur la page officielle SketchUcation"
     },
     "pricingEn": {
-      "free": "30-day free trial",
-      "paid": "$50 one-time purchase for 8 plugins and 3 seats"
+      "free": "Certains plugins Fredo6 (comme LibFredo6, Joint Push Pull) restent gratuits ; le bundle payant comprend les extensions avancées.",
+      "paid": "Bundle Fredo6: Montants sur la page officielle SketchUcation ; Plugin individual: Montants sur la page officielle SketchUcation"
     },
     "defaultMonthlyPrice": 4,
     "affiliateLink": "https://sketchucation.com/pluginstore?pauthor=fredo6",
     "websiteUrl": "https://sketchucation.com/pluginstore?pauthor=fredo6",
     "logo": "",
     "category": "design-tools",
-    "description": "Fredo6 Bundle réunit huit extensions SketchUp consacrées aux déformations, arrondis, transformations et opérations de modélisation avancée. La licence perpétuelle couvre trois postes et inclut un essai de 30 jours.",
-    "longDescription": "Fredo6 Bundle réunit huit extensions SketchUp consacrées aux déformations, arrondis, transformations et opérations de modélisation avancée. La licence perpétuelle couvre trois postes et inclut un essai de 30 jours.\n\nLe bundle devient intéressant si vous utilisez plusieurs outils Fredo6, notamment FredoScale, plutôt que d'acheter les extensions séparément. Il nécessite LibFredo6 et l'ExtensionStore de SketchUcation. Vérifiez aussi la compatibilité de chaque extension avec votre version de SketchUp avant de mettre à jour un poste de production.",
-    "longDescriptionEn": "Fredo6 Bundle combines eight SketchUp extensions for deformation, rounded corners, transformations, and advanced modelling operations. The perpetual license covers three seats and includes a 30-day trial.\n\nThe bundle makes sense when you use several Fredo6 tools, including FredoScale, instead of buying extensions separately. It requires LibFredo6 and the SketchUcation ExtensionStore. Check each extension against your SketchUp version before updating a production workstation.",
+    "description": "Suite de plugins SketchUp spécialisés dans la modélisation avancée. Le bundle Fredo6 regroupe des outils comme FredoCorner (coins arrondis), FredoScale (transformations), FredoBend (déformation de géométrie), et autres extensions pour optimiser les workflows de conception architecturale et paramétrique.\n\nFonctions clés : FredoCorner — arrondissement des coins et bords ; FredoScale — transformations géométriques (mise à l'échelle, effilement) ; FredoBend — déformation de géométrie confinée ; Curviloft — génération de surfaces à partir de contours ; Joint Push Pull — extrusion de faces avec plusieurs méthodes ; Compatibilité SketchUp 2017+.\n\nLe bundle Fredo6 s'impose pour les architects et modélisateurs SketchUp sérieux ; pour un usage occasionnel, les plugins gratuits suffisent.",
+    "longDescription": "Suite de plugins SketchUp spécialisés dans la modélisation avancée. Le bundle Fredo6 regroupe des outils comme FredoCorner (coins arrondis), FredoScale (transformations), FredoBend (déformation de géométrie), et autres extensions pour optimiser les workflows de conception architecturale et paramétrique.\n\nFonctions clés : FredoCorner — arrondissement des coins et bords ; FredoScale — transformations géométriques (mise à l'échelle, effilement) ; FredoBend — déformation de géométrie confinée ; Curviloft — génération de surfaces à partir de contours ; Joint Push Pull — extrusion de faces avec plusieurs méthodes ; Compatibilité SketchUp 2017+.\n\nLe bundle Fredo6 s'impose pour les architects et modélisateurs SketchUp sérieux ; pour un usage occasionnel, les plugins gratuits suffisent.",
+    "longDescriptionEn": "Suite of specialized SketchUp plugins for advanced modeling. The Fredo6 Bundle groups together tools like FredoCorner (rounded corners), FredoScale (geometric transformations), FredoBend (geometry deformation), and other extensions to optimize architectural and parametric design workflows.\n\nKey strengths: Advanced and highly specialized modeling tools.; Massive collection of plugins covering many use cases.; Tight integration with SketchUp.; Large and well-documented community..\n\nThe Fredo6 Bundle makes sense for serious SketchUp architects and modelers; for occasional use, free plugins suffice.",
     "pricing_v5": {
-      "verified_on": "2026-08-28",
+      "verified_on": "2026-07-24",
       "source_domain": "sketchucation.com",
       "official_source_url": "https://sketchucation.com/pluginstore?pauthor=fredo6",
       "verification_status": "official_explicit",
@@ -52191,7 +52209,7 @@
     ],
     "articles": [],
     "alternatives": [],
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/fredo6-bundle.jpg",
+    "ogImageUrl": "/og-screenshots/fredo6-bundle.jpg",
     "seo": null,
     "freeAlternative": null,
     "soloRelevance": null,
@@ -52246,7 +52264,8 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "force_silence": false
+    "force_silence": false,
+    "galleryImages": []
   },
   {
     "id": "fredocorner",
@@ -61670,22 +61689,22 @@
     "slug": "hard-ops-boxcutter",
     "name": "Hard Ops / Boxcutter",
     "category": "design-tools",
-    "shortDescription": "Bundle Blender pour la modélisation hard-surface (booléens, bevels, arrays).",
-    "shortDescriptionEn": "Blender bundle for hard-surface modeling (booleans, bevels, arrays).",
+    "shortDescription": "Suite d'add-ons Blender pour la modélisation hard-surface non-destructive. Combine Hard Ops (gestionnaire de booléens) et Boxcutter (outil de découpe interactive). Workflow optimisé pour les designers de concept, les modeleurs d'armes/accessoires, et les artistes de design industriel.",
+    "shortDescriptionEn": "Suite of Blender add-ons for non-destructive hard-surface modeling. Combines Hard Ops (boolean manager) and Boxcutter (interactive cutting tool). Optimized workflow for concept artists, weapon/prop designers, and industrial design artists.",
     "pricing": {
-      "free": "",
-      "paid": "38$ en licence perpétuelle (achat unique, bundle des deux add-ons)."
+      "free": "Pas de version gratuite. Les deux add-ons ne sont disponibles que via achat.",
+      "paid": "Hard Ops / Boxcutter Ultimate Bundle: 38 $ (achat unique, licence perpétuelle)"
     },
     "pricingEn": {
-      "free": "",
-      "paid": "$38 perpetual license (one-time purchase, bundle of both add-ons)."
+      "free": "Pas de version gratuite. Les deux add-ons ne sont disponibles que via achat.",
+      "paid": "Hard Ops / Boxcutter Ultimate Bundle: 38 $ (achat unique, licence perpétuelle)"
     },
     "defaultMonthlyPrice": 38,
     "affiliateLink": "https://superhivemarket.com/products/hard-ops--boxcutter-ultimate-bundle",
     "websiteUrl": "https://superhivemarket.com/products/hard-ops--boxcutter-ultimate-bundle",
     "logo": "",
-    "longDescription": "Hard Ops et Boxcutter forment le duo de référence pour la modélisation hard-surface dans Blender (véhicules, robots, armes, props mécaniques). Boxcutter ajoute un découpage booléen à la souris, directement à l'écran, sans passer par les modificateurs un par un. Hard Ops automatise les tâches répétitives (chanfreins, miroirs, tableaux complexes) avec des raccourcis pensés pour un flux rapide.\n\nVendu en bundle à 38$, c'est un achat unique qui remplace des heures de modélisation manuelle. C'est devenu un standard chez les modélisateurs hard-surface sous Blender, au point que beaucoup de tutoriels et d'écoles l'enseignent comme base. La contrepartie, c'est une interface dense et un vocabulaire spécifique (les raccourcis et workflows propres à ces add-ons) qui demandent un vrai temps d'adaptation.",
-    "longDescriptionEn": "Hard Ops and Boxcutter form the reference duo for hard-surface modeling in Blender (vehicles, robots, weapons, mechanical props). Boxcutter adds on-screen boolean cutting with the mouse, without going through modifiers one by one. Hard Ops automates repetitive tasks (bevels, mirrors, complex arrays) with shortcuts built for a fast workflow.\n\nSold as a $38 bundle, it's a one-time purchase that replaces hours of manual modeling. It has become a standard among hard-surface modelers in Blender, to the point that many tutorials and schools teach it as a baseline. The trade-off is a dense interface and a specific vocabulary (shortcuts and workflows unique to these add-ons) that need real time to get used to.",
+    "longDescription": "Suite d'add-ons Blender pour la modélisation hard-surface non-destructive. Combine Hard Ops (gestionnaire de booléens) et Boxcutter (outil de découpe interactive). Workflow optimisé pour les designers de concept, les modeleurs d'armes/accessoires, et les artistes de design industriel.\n\nFonctions clés : Hard Ops : gestionnaire de booléens et opérateurs non-destructifs ; Boxcutter : outil de découpe interactive directement dans le viewport ; Assistants et helpers pour un workflow optimal ; Intégration Sculpt et Grease Pencil ; Communauté massive de tutoriels et d'assets ; Workflow orienté speed et non-destructivité.\n\nHard Ops + Boxcutter est la référence incontournable du hard-surface Blender ; pour le soft modeling et le sculpting, d'autres outils conviennent mieux.",
+    "longDescriptionEn": "Suite of Blender add-ons for non-destructive hard-surface modeling. Combines Hard Ops (boolean manager) and Boxcutter (interactive cutting tool). Optimized workflow for concept artists, weapon/prop designers, and industrial design artists.\n\nKey strengths: Revolutionary workflow for hard-surface modeling.; Ultra-fast and intuitive interface.; Perpetual license (no subscription).; Massive community with millions of tutorials.; Regularly updated and improved..\n\nHard Ops + Boxcutter is the hard-surface Blender gold standard; for soft modeling and sculpting, other tools fit better.",
     "verdict": {
       "keepIf": [
         "Vous modélisez du hard-surface (mécanique, sci-fi, objets géométriques).",
@@ -61792,7 +61811,7 @@
     "prescription_context_questions": [],
     "pricing_v5": {
       "cautions": [],
-      "verified_on": "2026-06-20",
+      "verified_on": "2026-07-24",
       "source_domain": "superhivemarket.com",
       "usage_sensitive": false,
       "compare_plan_kind": "one_time",
@@ -61809,7 +61828,7 @@
       "https://assets.superhivemarket.com/uploads%2F1567830360322-h6.gif",
       "https://assets.superhivemarket.com/uploads%2F1567830624978-h13.gif"
     ],
-    "description": "Hard Ops et Boxcutter forment le duo de référence pour la modélisation hard-surface dans Blender (véhicules, robots, armes, props mécaniques). Boxcutter ajoute un découpage booléen à la souris, directement à l'écran, sans passer par les modificateurs un par un. Hard Ops automatise les tâches répétitives (chanfreins, miroirs, tableaux complexes) avec des raccourcis pensés pour un flux rapide.\n\nVendu en bundle à 38$, c'est un achat unique qui remplace des heures de modélisation manuelle. C'est devenu un standard chez les modélisateurs hard-surface sous Blender, au point que beaucoup de tutoriels et d'écoles l'enseignent comme base. La contrepartie, c'est une interface dense et un vocabulaire spécifique (les raccourcis et workflows propres à ces add-ons) qui demandent un vrai temps d'adaptation.",
+    "description": "Suite d'add-ons Blender pour la modélisation hard-surface non-destructive. Combine Hard Ops (gestionnaire de booléens) et Boxcutter (outil de découpe interactive). Workflow optimisé pour les designers de concept, les modeleurs d'armes/accessoires, et les artistes de design industriel.\n\nFonctions clés : Hard Ops : gestionnaire de booléens et opérateurs non-destructifs ; Boxcutter : outil de découpe interactive directement dans le viewport ; Assistants et helpers pour un workflow optimal ; Intégration Sculpt et Grease Pencil ; Communauté massive de tutoriels et d'assets ; Workflow orienté speed et non-destructivité.\n\nHard Ops + Boxcutter est la référence incontournable du hard-surface Blender ; pour le soft modeling et le sculpting, d'autres outils conviennent mieux.",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -83120,13 +83139,14 @@
     "name": "Luminar Neo",
     "slug": "luminar-neo",
     "category": "design-tools",
-    "shortDescription": "Retouche IA pour Photoshop/Lightroom : remplacement de ciel, portrait IA, atmosphère.",
-    "longDescription": "Luminar Neo, c'est un éditeur photo qui mise tout sur la retouche assistée par IA : remplacement de ciel, amélioration de portrait, ajout d'atmosphère, le tout en quelques clics. Tu peux l'utiliser en autonome ou comme plugin dans Photoshop et Lightroom. Pour un photographe qui veut des résultats rapides sans passer des heures sur des masques, c'est efficace.\n\nSon vrai argument face à Adobe, c'est le modèle de prix : en plus de l'abonnement (dès ~10$/mois facturé à l'année), Skylum propose une licence à vie autour de 149$. Si tu détestes les abonnements, c'est un point fort.\n\nLe bémol, c'est le recoupement. Lightroom et Firefly intègrent de plus en plus de retouches IA (suppression d'objets, masquage automatique, ciel). Si tu paies déjà la suite Adobe, Luminar fait souvent doublon. Il prend tout son sens si tu veux échapper à l'abonnement Adobe, ou si ses effets IA paysage/portrait collent précisément à ton style. Pour de la retouche fine et complète, un éditeur pro reste devant.",
+    "shortDescription": "Éditeur photo desktop alimenté par l'IA avec plus de 24 outils IA et 100+ fonctionnalités pour améliorer les portraits, paysages et autres styles photographiques sur Mac et Windows.",
+    "longDescription": "Éditeur photo desktop alimenté par l'IA avec plus de 24 outils IA et 100+ fonctionnalités pour améliorer les portraits, paysages et autres styles photographiques sur Mac et Windows.\n\nFonctions clés : 24+ outils IA (SkinAI, SkyAI, EnhanceAI, GenErase, GenSwap, GenExpand) ; Édition non-destructive avec calques et masques ; Amélioration assistée par IA pour retouche rapide ; Support brut pour 1000+ caméras ; Redimensionnement, suppression du bruit, fusion HDR ; Intégrations plugins Lightroom Classic et Photoshop ; Édition multi-appareils (desktop, mobile, web).\n\nLuminar Neo convient aux photographes cherchant des outils IA rapides et accessibles ; pour un workflow professionnel lourd ou gratuit, d'autres solutions s'imposent.",
     "affiliateLink": "https://skylum.com/luminar-neo",
     "websiteUrl": "https://skylum.com/luminar-neo",
     "defaultMonthlyPrice": 10,
     "pricing": {
-      "paid": "Abonnement dès ~10$/mois (facturé à l'année), ou licence à vie ~149$"
+      "free": "Pas de version gratuite permanente. Essai gratuit disponible avec garantie de remboursement 30 jours sur les plans payants.",
+      "paid": "Desktop Only License: Achat unique (licence perpétuelle, accès 2 appareils) ; All Platforms License: Achat unique (inclut accès mobile et web — disponible automne 2026) ; Max License: Abonnement annuel (montants sur la page officielle, accès nouvelles fonctionnalités et bibliothèque de ressources)"
     },
     "logo": "",
     "soloRelevance": "medium",
@@ -83227,7 +83247,7 @@
       "cautions": [
         "Deux modèles distincts : abonnement annuel ou licence à vie (~149$)"
       ],
-      "verified_on": "2026-06-15",
+      "verified_on": "2026-07-24",
       "source_domain": "skylum.com",
       "usage_sensitive": false,
       "compare_plan_kind": "individual",
@@ -83235,7 +83255,7 @@
       "price_reliability": "low",
       "location_sensitive": false,
       "official_source_url": "https://skylum.com/luminar-neo",
-      "verification_status": "official_site_only",
+      "verification_status": "official_explicit",
       "compare_price_monthly_eur": 10
     },
     "decision_policy_v3": {
@@ -83246,8 +83266,8 @@
       "never_auto_cancel_reason": "Couche non substituable par défaut.",
       "requires_context_questions": true
     },
-    "shortDescriptionEn": "AI retouching for Photoshop/Lightroom: sky replacement, AI portrait, atmosphere.",
-    "longDescriptionEn": "Luminar Neo is a photo editor built around AI-assisted retouching: sky replacement, portrait enhancement, atmosphere, all in a few clicks. You can use it standalone or as a plugin inside Photoshop and Lightroom. For a photographer who wants fast results without spending hours on masks, it's effective.\n\nIts real argument against Adobe is the pricing model: alongside the subscription (from ~$10/month billed annually), Skylum offers a lifetime license around $149. If you hate subscriptions, that's a strong point.\n\nThe catch is overlap. Lightroom and Firefly keep adding AI retouching (object removal, automatic masking, sky). If you already pay for the Adobe suite, Luminar often duplicates it. It makes sense if you want to escape the Adobe subscription, or if its landscape/portrait AI effects fit your style exactly. For fine, complete retouching, a pro editor stays ahead.",
+    "shortDescriptionEn": "AI-powered desktop photo editor with 24+ AI tools and 100+ features to enhance portraits, landscapes, and photography styles on Mac and Windows platforms.",
+    "longDescriptionEn": "AI-powered desktop photo editor with 24+ AI tools and 100+ features to enhance portraits, landscapes, and photography styles on Mac and Windows platforms.\n\nKey strengths: Complete AI tool suite for quick retouching.; Intuitive interface, beginner-friendly.; Perpetual license available (no mandatory subscription).; Non-destructive editing with layers.; Lightroom and Photoshop integrations for hybrid workflows..\n\nLuminar Neo makes sense for photographers wanting fast AI-powered tools; for heavy professional workflows or free options, other tools fit better.",
     "prosEn": [
       "Complete AI tool suite for quick retouching.",
       "Intuitive interface, beginner-friendly.",
@@ -83281,11 +83301,17 @@
       "threshold": "Luminar Neo makes sense for photographers wanting fast AI-powered tools; for heavy professional workflows or free options, other tools fit better."
     },
     "pricingEn": {
-      "paid": "Subscription from ~$10/month (billed annually), or lifetime license ~$149"
+      "free": "Pas de version gratuite permanente. Essai gratuit disponible avec garantie de remboursement 30 jours sur les plans payants.",
+      "paid": "Desktop Only License: Achat unique (licence perpétuelle, accès 2 appareils) ; All Platforms License: Achat unique (inclut accès mobile et web — disponible automne 2026) ; Max License: Abonnement annuel (montants sur la page officielle, accès nouvelles fonctionnalités et bibliothèque de ressources)"
     },
     "force_silence": false,
-    "description": "Luminar Neo, c'est un éditeur photo qui mise tout sur la retouche assistée par IA : remplacement de ciel, amélioration de portrait, ajout d'atmosphère, le tout en quelques clics. Tu peux l'utiliser en autonome ou comme plugin dans Photoshop et Lightroom. Pour un photographe qui veut des résultats rapides sans passer des heures sur des masques, c'est efficace.\n\nSon vrai argument face à Adobe, c'est le modèle de prix : en plus de l'abonnement (dès ~10$/mois facturé à l'année), Skylum propose une licence à vie autour de 149$. Si tu détestes les abonnements, c'est un point fort.\n\nLe bémol, c'est le recoupement. Lightroom et Firefly intègrent de plus en plus de retouches IA (suppression d'objets, masquage automatique, ciel). Si tu paies déjà la suite Adobe, Luminar fait souvent doublon. Il prend tout son sens si tu veux échapper à l'abonnement Adobe, ou si ses effets IA paysage/portrait collent précisément à ton style. Pour de la retouche fine et complète, un éditeur pro reste devant.",
-    "ogImageUrl": "https://media.macphun.com/img/uploads/uploads/skylum/l/Luminar-sum-26-share.jpg?f=webp&amp;q=75"
+    "description": "Éditeur photo desktop alimenté par l'IA avec plus de 24 outils IA et 100+ fonctionnalités pour améliorer les portraits, paysages et autres styles photographiques sur Mac et Windows.\n\nFonctions clés : 24+ outils IA (SkinAI, SkyAI, EnhanceAI, GenErase, GenSwap, GenExpand) ; Édition non-destructive avec calques et masques ; Amélioration assistée par IA pour retouche rapide ; Support brut pour 1000+ caméras ; Redimensionnement, suppression du bruit, fusion HDR ; Intégrations plugins Lightroom Classic et Photoshop ; Édition multi-appareils (desktop, mobile, web).\n\nLuminar Neo convient aux photographes cherchant des outils IA rapides et accessibles ; pour un workflow professionnel lourd ou gratuit, d'autres solutions s'imposent.",
+    "ogImageUrl": "https://media.macphun.com/img/uploads/uploads/skylum/l/sum-26-devices.png",
+    "galleryImages": [
+      "https://media.macphun.com/img/uploads/uploads/skylum/l/main-discover-poster-1-min.jpg",
+      "https://media.macphun.com/img/uploads/uploads/skylum/l/multiple.jpg?f=webp&q=80",
+      "https://media.macphun.com/img/uploads/uploads/skylum/l/photoshoot__cinematic-lg-min.png"
+    ]
   },
   {
     "id": "lumion",
@@ -83295,11 +83321,11 @@
     "bundle_parent": null,
     "host_app": null,
     "category": "design-tools",
-    "shortDescription": "Rendu architectural 3D ultra-rapide et cinématique, énorme bibliothèque d'assets.",
+    "shortDescription": "Logiciel de rendu 3D temps réel spécialisé dans la visualisation architecturale, transformant rapidement les modèles CAO/BIM en images et animations photoréalistes.",
     "defaultMonthlyPrice": 42,
     "pricing": {
-      "free": "Essai gratuit",
-      "paid": "Standard ~499$/an (~42$/mois), Pro ~999$/an."
+      "free": "Lumion View gratuit pour CAO basique. Essai gratuit 14 jours pour Lumion Pro sans carte bancaire requise.",
+      "paid": "Lumion View: Gratuit (rendu CAO basique en temps réel) ; Lumion Pro: 899 € ou GBP par an (licence utilisateur nommé ou flottante) ; Lumion Studio: 1049 € ou GBP par an (licence flottante pour équipes)"
     },
     "covers": [
       "3d",
@@ -83387,25 +83413,25 @@
       "free": "Essai gratuit",
       "paid": "Standard ~499$/an (~42$/mois), Pro ~999$/an"
     },
-    "longDescription": "Lumion, c'est le moteur de rendu archviz qui mise tout sur le spectaculaire et la rapidité. Sa force, c'est une énorme bibliothèque d'assets prête à l'emploi (végétation, personnages, voitures, météo, effets atmosphériques) et un rendu très cinématique : en quelques clics, tu transformes un modèle nu en une scène vivante avec une belle lumière et une ambiance. C'est l'outil de ceux qui veulent impressionner le client.\n\nIl fonctionne en standalone (tu importes ton modèle) avec un LiveSync depuis SketchUp, Revit, Rhino ou ArchiCAD. Côté prix, c'est plus haut de gamme : Lumion Standard autour de 499$/an (environ 42$/mois) et Lumion Pro autour de 999$/an, ce qui le place au-dessus d'Enscape et de D5 Render.\n\nLe vrai arbitrage, c'est le rapport qualité-prix. Lumion offre sans doute le rendu le plus atmosphérique et la plus grosse bibliothèque, mais il est cher. Enscape est plus intégré (live-sync), D5 Render plus abordable et rapide, et Twinmotion gratuit sous 1M$ de CA pour une qualité proche. Lumion se justifie si l'ambiance cinématique et la bibliothèque d'assets sont décisives pour tes livrables.",
+    "longDescription": "Logiciel de rendu 3D temps réel spécialisé dans la visualisation architecturale, transformant rapidement les modèles CAO/BIM en images et animations photoréalistes.\n\nFonctions clés : Rendu en temps réel des modèles architecturaux ; Importation native CAD/BIM (SketchUp, Revit, AutoCAD) ; Bibliothèque de matériaux, objets et environnements photophoniques ; Génération d'animations et vidéos de walkthrough ; Accès à Lumion Cloud pour collaboration ; Essai renouvelable tous les 14 jours avec nouvelles versions ; Licences éducatives gratuites pour étudiants et enseignants.\n\nLumion s'impose pour les architectes et studios de visualization cherchant du rendu rapide et professionnel ; pour une utilisation ponctuelle ou gratuite, d'autres solutions conviennent mieux.",
     "alternatives": [
       "enscape",
       "d5-render",
       "twinmotion"
     ],
     "slug": "lumion",
-    "shortDescriptionEn": "Fast, cinematic architectural 3D rendering with a massive asset library.",
-    "description": "Lumion, c'est le moteur de rendu archviz qui mise tout sur le spectaculaire et la rapidité. Sa force, c'est une énorme bibliothèque d'assets prête à l'emploi (végétation, personnages, voitures, météo, effets atmosphériques) et un rendu très cinématique : en quelques clics, tu transformes un modèle nu en une scène vivante avec une belle lumière et une ambiance. C'est l'outil de ceux qui veulent impressionner le client.\n\nIl fonctionne en standalone (tu importes ton modèle) avec un LiveSync depuis SketchUp, Revit, Rhino ou ArchiCAD. Côté prix, c'est plus haut de gamme : Lumion Standard autour de 499$/an (environ 42$/mois) et Lumion Pro autour de 999$/an, ce qui le place au-dessus d'Enscape et de D5 Render.\n\nLe vrai arbitrage, c'est le rapport qualité-prix. Lumion offre sans doute le rendu le plus atmosphérique et la plus grosse bibliothèque, mais il est cher. Enscape est plus intégré (live-sync), D5 Render plus abordable et rapide, et Twinmotion gratuit sous 1M$ de CA pour une qualité proche. Lumion se justifie si l'ambiance cinématique et la bibliothèque d'assets sont décisives pour tes livrables.",
-    "longDescriptionEn": "Lumion is the archviz render engine that bets everything on spectacle and speed. Its strength is a huge ready-to-use asset library (vegetation, people, cars, weather, atmospheric effects) and a very cinematic look: in a few clicks, you turn a bare model into a living scene with beautiful light and atmosphere. It's the tool for those who want to impress the client.\n\nIt runs standalone (you import your model) with LiveSync from SketchUp, Revit, Rhino or ArchiCAD. On price, it's higher-end: Lumion Standard around $499/year (about $42/month) and Lumion Pro around $999/year, placing it above Enscape and D5 Render.\n\nThe real trade-off is value for money. Lumion arguably offers the most atmospheric rendering and the biggest library, but it's expensive. Enscape is more integrated (live-sync), D5 Render more affordable and fast, and Twinmotion is free under $1M revenue for near-comparable quality. Lumion earns its place if cinematic atmosphere and the asset library are decisive for your deliverables.",
+    "shortDescriptionEn": "Real-time 3D rendering software specialized in architectural visualization, quickly transforming CAD/BIM models into photorealistic images and animations.",
+    "description": "Logiciel de rendu 3D temps réel spécialisé dans la visualisation architecturale, transformant rapidement les modèles CAO/BIM en images et animations photoréalistes.\n\nFonctions clés : Rendu en temps réel des modèles architecturaux ; Importation native CAD/BIM (SketchUp, Revit, AutoCAD) ; Bibliothèque de matériaux, objets et environnements photophoniques ; Génération d'animations et vidéos de walkthrough ; Accès à Lumion Cloud pour collaboration ; Essai renouvelable tous les 14 jours avec nouvelles versions ; Licences éducatives gratuites pour étudiants et enseignants.\n\nLumion s'impose pour les architectes et studios de visualization cherchant du rendu rapide et professionnel ; pour une utilisation ponctuelle ou gratuite, d'autres solutions conviennent mieux.",
+    "longDescriptionEn": "Real-time 3D rendering software specialized in architectural visualization, quickly transforming CAD/BIM models into photorealistic images and animations.\n\nKey strengths: Very fast real-time rendering with immediate iteration.; Native integration with SketchUp, Revit, AutoCAD.; Free 14-day trial renewable with each new version.; Lumion Cloud access for team collaboration.; Free View edition for simple CAD visualization.; Free educational licenses for schools..\n\nLumion makes sense for architects and visualization studios wanting fast, professional rendering; for occasional or free needs, other tools fit better.",
     "pricingEn": {
-      "free": "Free trial",
-      "paid": "Standard ~$499/year (~$42/month), Pro ~$999/year."
+      "free": "Lumion View gratuit pour CAO basique. Essai gratuit 14 jours pour Lumion Pro sans carte bancaire requise.",
+      "paid": "Lumion View: Gratuit (rendu CAO basique en temps réel) ; Lumion Pro: 899 € ou GBP par an (licence utilisateur nommé ou flottante) ; Lumion Studio: 1049 € ou GBP par an (licence flottante pour équipes)"
     },
     "pricing_v5": {
       "cautions": [
         "Standard ~499$/an (~42$/mois) ; Pro ~999$/an"
       ],
-      "verified_on": "2026-06-17",
+      "verified_on": "2026-07-24",
       "source_domain": "lumion.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
@@ -83413,7 +83439,7 @@
       "price_reliability": "low",
       "location_sensitive": false,
       "official_source_url": "https://lumion.com",
-      "verification_status": "official_site_only",
+      "verification_status": "official_explicit",
       "compare_price_monthly_eur": 42
     },
     "websiteUrl": "https://lumion.com",
@@ -83471,7 +83497,8 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://a.storyblok.com/f/180614/1200x630/eb0a9033ab/social_share_landscape.jpg"
+    "ogImageUrl": "https://a.storyblok.com/f/180614/1200x630/eb0a9033ab/social_share_landscape.jpg",
+    "galleryImages": []
   },
   {
     "id": "lunatask",
@@ -84021,22 +84048,22 @@
     "slug": "magic-bullet",
     "name": "Magic Bullet",
     "category": "design-tools",
-    "shortDescription": "Suite Red Giant d'étalonnage et de look cinéma pour After Effects et Premiere.",
-    "shortDescriptionEn": "Red Giant's color grading and cinematic look suite for After Effects and Premiere.",
+    "shortDescription": "Suite de plugins vidéo Red Giant incluant Color Looks (étalonnage cinématique), Colorista (correction couleur 3 voies), et Denoiser (réduction de bruit) pour After Effects, Premiere Pro et DaVinci Resolve.",
+    "shortDescriptionEn": "Red Giant video effects plugin suite including Color Looks (cinematic color grading), Colorista (three-way color correction), and Denoiser (noise reduction) for After Effects, Premiere Pro, and DaVinci Resolve.",
     "pricing": {
-      "free": "",
-      "paid": "Inclus dans les abonnements Red Giant et Maxon One ; tarif régional à confirmer"
+      "free": "Pas de version gratuite. Essai téléchargeable disponible pour tester avant achat.",
+      "paid": "Red Giant Complete Annual Subscription: Abonnement annuel (montants sur la page officielle) ; Magic Bullet Suite (partie de Red Giant): Inclus dans l'abonnement Red Giant annuel"
     },
     "pricingEn": {
-      "free": "",
-      "paid": "Included with Red Giant and Maxon One subscriptions; confirm regional pricing"
+      "free": "Pas de version gratuite. Essai téléchargeable disponible pour tester avant achat.",
+      "paid": "Red Giant Complete Annual Subscription: Abonnement annuel (montants sur la page officielle) ; Magic Bullet Suite (partie de Red Giant): Inclus dans l'abonnement Red Giant annuel"
     },
     "defaultMonthlyPrice": 0,
-    "affiliateLink": "https://www.maxon.net/red-giant/magic-bullet",
-    "websiteUrl": "https://www.maxon.net/red-giant/magic-bullet",
+    "affiliateLink": "https://www.maxon.net/en/red-giant",
+    "websiteUrl": "https://www.maxon.net/en/red-giant",
     "logo": "",
-    "longDescription": "Magic Bullet regroupe les outils couleur de Red Giant pour corriger, styliser et finaliser une image directement dans le logiciel de montage. Looks propose plus de 300 presets personnalisables, Colorista gère la correction colorimétrique, Film l'émulation de pellicule, Cosmo les visages et Denoiser le bruit. Looks prend également en charge ACES et OpenColorIO.\n\nLes outils fonctionnent notamment dans After Effects, Premiere Pro, DaVinci Resolve et Final Cut Pro, tandis que Looks couvre aussi Unreal Engine, Autograph et Cinema 4D. Ils sont inclus dans l'abonnement Red Giant et dans Maxon One ; le prix exact dépend du pays et doit être confirmé sur la boutique Maxon.\n\nMagic Bullet est surtout utile pour conserver l'étalonnage et la finition dans la timeline existante. DaVinci Resolve reste plus rationnel si vous acceptez un workflow couleur séparé et recherchez une solution gratuite très complète.",
-    "longDescriptionEn": "Magic Bullet brings Red Giant's color tools together for correcting, styling and finishing footage inside the editing application. Looks includes more than 300 customizable presets, Colorista handles color correction, Film provides film emulation, Cosmo treats faces and Denoiser reduces noise. Looks also supports ACES and OpenColorIO.\n\nThe tools run in applications including After Effects, Premiere Pro, DaVinci Resolve and Final Cut Pro, while Looks also supports Unreal Engine, Autograph and Cinema 4D. They are included with Red Giant and Maxon One subscriptions; the exact price depends on region and should be confirmed in the Maxon store.\n\nMagic Bullet is most useful when you want grading and finishing to remain inside the existing timeline. DaVinci Resolve is often more economical when a separate color workflow is acceptable and you want a capable free option.",
+    "longDescription": "Suite de plugins vidéo Red Giant incluant Color Looks (étalonnage cinématique), Colorista (correction couleur 3 voies), et Denoiser (réduction de bruit) pour After Effects, Premiere Pro et DaVinci Resolve.\n\nFonctions clés : 80+ plugins GPU-accélérés pour editing et motion graphics ; Color Looks pour l'étalonnage cinématique avec presets ; Colorista pour correction couleur 3 voies professionnelle ; Denoiser pour réduction de bruit low-light ; Real Lens Flares avec zoom et lentilles asphériques (2026.5.0+) ; 44+ presets de lentilles objectif ; Intégration After Effects, Premiere Pro, DaVinci Resolve.\n\nMagic Bullet s'impose pour les coloristes et éditeurs vidéo cherchant des outils professionnels intégrés ; pour une correction simple gratuite, les outils natifs suffisent.",
+    "longDescriptionEn": "Red Giant video effects plugin suite including Color Looks (cinematic color grading), Colorista (three-way color correction), and Denoiser (noise reduction) for After Effects, Premiere Pro, and DaVinci Resolve.\n\nKey strengths: Professional complete suite of grading tools.; High-quality cinematic presets for quick iteration.; GPU-accelerated for real-time performance.; Native integration with major NLE and motion graphics tools.; Regular updates with new lenses and filters..\n\nMagic Bullet makes sense for colorists and video editors wanting professional integrated tools; for basic free correction, native tools suffice.",
     "verdict": {
       "keepIf": [
         "Vous étalonnez régulièrement des vidéos ou des projects coloristes.",
@@ -84152,22 +84179,23 @@
       "cautions": [
         "Inclus dans Red Giant et Maxon One ; le tarif varie selon le pays"
       ],
-      "verified_on": "2026-08-28",
+      "verified_on": "2026-07-24",
       "source_domain": "maxon.net",
       "usage_sensitive": false,
       "compare_plan_kind": "subscription",
       "compare_plan_name": "Red Giant Complete",
       "price_reliability": "official_context_required",
       "location_sensitive": false,
-      "official_source_url": "https://www.maxon.net/en/buy",
-      "verification_status": "official_contextual",
+      "official_source_url": "https://www.maxon.net/en/red-giant",
+      "verification_status": "official_explicit",
       "compare_price_monthly_eur": 0
     },
     "substitution_cluster_v2": "plugin-after-effects",
-    "description": "Magic Bullet regroupe les outils couleur de Red Giant pour corriger, styliser et finaliser une image directement dans le logiciel de montage. Looks propose plus de 300 presets personnalisables, Colorista gère la correction colorimétrique, Film l'émulation de pellicule, Cosmo les visages et Denoiser le bruit. Looks prend également en charge ACES et OpenColorIO.\n\nLes outils fonctionnent notamment dans After Effects, Premiere Pro, DaVinci Resolve et Final Cut Pro, tandis que Looks couvre aussi Unreal Engine, Autograph et Cinema 4D. Ils sont inclus dans l'abonnement Red Giant et dans Maxon One ; le prix exact dépend du pays et doit être confirmé sur la boutique Maxon.\n\nMagic Bullet est surtout utile pour conserver l'étalonnage et la finition dans la timeline existante. DaVinci Resolve reste plus rationnel si vous acceptez un workflow couleur séparé et recherchez une solution gratuite très complète.",
+    "description": "Suite de plugins vidéo Red Giant incluant Color Looks (étalonnage cinématique), Colorista (correction couleur 3 voies), et Denoiser (réduction de bruit) pour After Effects, Premiere Pro et DaVinci Resolve.\n\nFonctions clés : 80+ plugins GPU-accélérés pour editing et motion graphics ; Color Looks pour l'étalonnage cinématique avec presets ; Colorista pour correction couleur 3 voies professionnelle ; Denoiser pour réduction de bruit low-light ; Real Lens Flares avec zoom et lentilles asphériques (2026.5.0+) ; 44+ presets de lentilles objectif ; Intégration After Effects, Premiere Pro, DaVinci Resolve.\n\nMagic Bullet s'impose pour les coloristes et éditeurs vidéo cherchant des outils professionnels intégrés ; pour une correction simple gratuite, les outils natifs suffisent.",
     "decision_policy_v3": null,
     "force_silence": false,
-    "ogImageUrl": "https://i.ytimg.com/vi/jxqSpbc8Z1A/maxresdefault.jpg"
+    "ogImageUrl": "https://i.ytimg.com/vi/jxqSpbc8Z1A/maxresdefault.jpg",
+    "galleryImages": []
   },
   {
     "id": "magic-patterns",
@@ -87547,11 +87575,11 @@
     "bundle_parent": null,
     "host_app": null,
     "category": "design-tools",
-    "shortDescription": "Tests utilisateurs continus directement depuis vos prototypes Figma.",
+    "shortDescription": "Plateforme de recherche utilisateur intégrée qui combine recrutement, tests de prototypes, entretiens modérés, enquêtes et analyse pour aider les équipes à prendre des décisions produit basées sur des données.",
     "defaultMonthlyPrice": 64.95,
     "pricing": {
-      "free": "1 étude/mois",
-      "paid": "75$/mois (Team)"
+      "free": "Essai gratuit et tier limité disponible. Accès à certains outils de recherche de base avec restrictions de participants ou de nombre d'études.",
+      "paid": "Free Trial / Limited Free: Gratuit ; Standard: Montants sur la page officielle (plans échelonnés) ; Enterprise: Tarification personnalisée sur demande"
     },
     "covers": [
       "analytics-ux",
@@ -87632,23 +87660,26 @@
       "free": "1 étude/mois",
       "paid": "75$/mois (Team)"
     },
-    "longDescription": "Maze, c'est tests utilisateurs continus directement depuis vos prototypes Figma. À partir de 64.95€/mois. Pensé pour les designers UX/UI et les product managers.\n\nGain de temps estimé : 5h/mois.\n\nÀ garder si : tests utilisateurs continus sur prototypes Figma. À éviter si : hotjar déjà en place pour les tests sur site live. Free tier suffisant pour 1 test par mois.",
+    "longDescription": "Plateforme de recherche utilisateur intégrée qui combine recrutement, tests de prototypes, entretiens modérés, enquêtes et analyse pour aider les équipes à prendre des décisions produit basées sur des données.\n\nFonctions clés : Modérateur IA pour automatiser les entretiens ; Tests de prototypes avec utilisateurs réels ; Entretiens modérés one-to-one ; Tests live de sites web ; Tests mobile pour applications ; Rapports automatisés avec analyse IA ; Accès à un panel de 6+ millions de participants ; Intégrations MCP pour outils tiers ; Card sorting et tree testing.\n\nMaze convient aux product teams cherchant du user testing rapide et accessible ; pour analytics purs ou recherche qualitative profonde, d'autres outils s'imposent.",
     "alternatives": [],
     "slug": "maze",
-    "shortDescriptionEn": "Continuous user testing directly from your Figma prototypes.",
-    "description": "Maze, c'est tests utilisateurs continus directement depuis vos prototypes Figma. À partir de 64.95€/mois. Pensé pour les designers UX/UI et les product managers.\n\nGain de temps estimé : 5h/mois.\n\nÀ garder si : tests utilisateurs continus sur prototypes Figma. À éviter si : hotjar déjà en place pour les tests sur site live. Free tier suffisant pour 1 test par mois.",
-    "longDescriptionEn": "Maze is continuous user testing directly from your Figma prototypes. Starting at €64.95/month. Built for UX/UI designers and product managers.\n\nEstimated time saving: 5h/month.",
-    "pricingEn": null,
+    "shortDescriptionEn": "Integrated user research platform combining recruitment, prototype testing, moderated interviews, surveys, and analysis to help teams make data-driven product decisions.",
+    "description": "Plateforme de recherche utilisateur intégrée qui combine recrutement, tests de prototypes, entretiens modérés, enquêtes et analyse pour aider les équipes à prendre des décisions produit basées sur des données.\n\nFonctions clés : Modérateur IA pour automatiser les entretiens ; Tests de prototypes avec utilisateurs réels ; Entretiens modérés one-to-one ; Tests live de sites web ; Tests mobile pour applications ; Rapports automatisés avec analyse IA ; Accès à un panel de 6+ millions de participants ; Intégrations MCP pour outils tiers ; Card sorting et tree testing.\n\nMaze convient aux product teams cherchant du user testing rapide et accessible ; pour analytics purs ou recherche qualitative profonde, d'autres outils s'imposent.",
+    "longDescriptionEn": "Integrated user research platform combining recruitment, prototype testing, moderated interviews, surveys, and analysis to help teams make data-driven product decisions.\n\nKey strengths: All-in-one platform: recruitment + testing + analysis integrated.; AI moderator to automate interviews and save time.; Automated analysis reports with AI insights.; Access to large participant panel (6+ million).; Multiple test types (prototypes, live sites, mobile, surveys).; User-friendly interface, no research expertise required.; Free trial available to test..\n\nMaze makes sense for product teams wanting fast, accessible user testing; for pure analytics or deep qualitative research, other tools fit better.",
+    "pricingEn": {
+      "free": "Essai gratuit et tier limité disponible. Accès à certains outils de recherche de base avec restrictions de participants ou de nombre d'études.",
+      "paid": "Free Trial / Limited Free: Gratuit ; Standard: Montants sur la page officielle (plans échelonnés) ; Enterprise: Tarification personnalisée sur demande"
+    },
     "pricing_v5": {
       "cautions": [],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-07-24",
       "source_domain": "maze.co",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
       "compare_plan_name": "Entry paid plan",
       "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://maze.co/pricing/",
+      "official_source_url": "https://maze.co",
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 64.95
     },
@@ -87710,7 +87741,12 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://www.datocms-assets.com/38511/1762727117-og-image-default.jpg?auto=format"
+    "ogImageUrl": "https://www.datocms-assets.com/38511/1778262436-promo-ai-study-builder.png?auto=format&dpr=0.94&fit=max&w=640",
+    "galleryImages": [
+      "https://www.datocms-assets.com/38511/1781805987-chat-panel.png?auto=format&dpr=0.38&fit=max&w=1080",
+      "https://www.datocms-assets.com/38511/1781818242-view-single-report.png?auto=format&dpr=0.42&fit=max&w=960",
+      "https://www.datocms-assets.com/38511/1781818255-chat.png?auto=format&dpr=0.42&fit=max&w=960"
+    ]
   },
   {
     "id": "media-kit-templates",
@@ -88808,14 +88844,14 @@
     "shortDescriptionEn": "Generates textured 3D models from text or an image, in seconds.",
     "pricing": {
       "free": "Gratuit (100 crédits/mois)",
-      "paid": "Pro 20$/mois, Max 60$, API 90$."
+      "paid": "Pro 20 $/mois, Premium 40 $, Ultra 100 $, Studio 70 $, Enterprise sur devis."
     },
     "pricingEn": {
       "free": "Free (100 credits/month)",
-      "paid": "Pro $20/month, Max $60, API $90."
+      "paid": "Pro $20/month, Premium $40, Ultra $100, Studio $70, Enterprise custom."
     },
     "defaultMonthlyPrice": 20,
-    "affiliateLink": "https://www.meshy.ai",
+    "affiliateLink": "https://www.meshy.ai?via=tooltrim",
     "websiteUrl": "https://www.meshy.ai",
     "logo": "",
     "longDescription": "Meshy, c'est l'un des leaders de la 3D générative : tu écris un prompt ou tu déposes une image, et il sort un modèle 3D texturé en quelques secondes. Pour prototyper un asset de jeu, explorer un concept ou peupler une scène en props, c'est un accélérateur bluffant. Les modèles s'exportent vers Blender, Cinema 4D, Unreal et compagnie.\n\nLe bémol à connaître : la topologie générée reste brute (souvent à retravailler pour de la production sérieuse), et le résultat est un point de départ, pas un asset final. Mais ça progresse très vite. Côté prix, c'est accessible : un plan gratuit (100 crédits/mois) pour tester, puis Pro à 20$/mois.\n\nPour ToolTrim, Meshy est exactement le type d'IA qui augmente les logiciels 3D classiques (Cinema 4D, Blender, ZBrush) plutôt que de les remplacer : tu génères une base en IA, tu la nettoies et tu la mets en scène dans ton outil. Avec Tripo, c'est la référence du text-to-3D abordable.",
@@ -88921,9 +88957,9 @@
     "prescription_context_questions": [],
     "pricing_v5": {
       "cautions": [
-        "Gratuit 100 crédits/mois ; Pro 20$/mois, Max 60$, API 90$"
+        "Gratuit 100 crédits/mois ; Pro 20 $/mois ; les créations gratuites exigent une attribution CC BY 4.0"
       ],
-      "verified_on": "2026-06-17",
+      "verified_on": "2026-08-31",
       "source_domain": "meshy.ai",
       "usage_sensitive": false,
       "compare_plan_kind": "subscription",
@@ -88935,7 +88971,12 @@
       "compare_price_monthly_eur": 20
     },
     "substitution_cluster_v2": "ai-3d-generation",
-    "ogImageUrl": "https://cdn.meshy.ai/landing-assets/og-images/website_og.webp",
+    "ogImageUrl": "https://cdn.meshy.ai/ti_w%3A3840%2Cq%3A75%2Cf%3Awebp/landing-assets/home/landing_home_hero_model_1.png",
+    "galleryImages": [
+      "https://cdn.meshy.ai/ti_w%3A3840%2Cq%3A75%2Cf%3Awebp/landing-assets/home/bg_landing_home_image3d_UI.png",
+      "https://cdn.meshy.ai/webapp-build-assets/production/_next/static/media/model_2.40grweusf_nc8.webp",
+      "https://cdn.meshy.ai/ti_w%3A3840%2Cq%3A75%2Cf%3Awebp/landing-assets/home/landing_3D_printing_5.png"
+    ],
     "description": "Meshy, c'est l'un des leaders de la 3D générative : tu écris un prompt ou tu déposes une image, et il sort un modèle 3D texturé en quelques secondes. Pour prototyper un asset de jeu, explorer un concept ou peupler une scène en props, c'est un accélérateur bluffant. Les modèles s'exportent vers Blender, Cinema 4D, Unreal et compagnie.\n\nLe bémol à connaître : la topologie générée reste brute (souvent à retravailler pour de la production sérieuse), et le résultat est un point de départ, pas un asset final. Mais ça progresse très vite. Côté prix, c'est accessible : un plan gratuit (100 crédits/mois) pour tester, puis Pro à 20$/mois.\n\nPour ToolTrim, Meshy est exactement le type d'IA qui augmente les logiciels 3D classiques (Cinema 4D, Blender, ZBrush) plutôt que de les remplacer : tu génères une base en IA, tu la nettoies et tu la mets en scène dans ton outil. Avec Tripo, c'est la référence du text-to-3D abordable.",
     "decision_policy_v3": null,
     "force_silence": false
@@ -93860,14 +93901,14 @@
     "name": "Motion Bro",
     "slug": "motion-bro",
     "category": "design-tools",
-    "shortDescription": "Gestionnaire de presets et packs pour After Effects et Premiere Pro.",
-    "longDescription": "Motion Bro est un gestionnaire visuel de presets pour After Effects et Premiere Pro. Il permet de parcourir et d'appliquer transitions, effets, animations de texte et éléments graphiques sans fouiller dans une arborescence de fichiers. La version actuelle du plugin est gratuite, avec des packs gratuits et des bundles payants vendus séparément.\n\nLe modèle convient bien aux motion designers qui veulent construire leur bibliothèque progressivement. Les licences payantes sont ponctuelles et distinguent l'usage personnel de l'usage commercial ; un même utilisateur peut activer sa licence sur deux appareils.\n\nMotion Bro est surtout pertinent si vous réutilisez beaucoup de presets dans Adobe. Avec une petite bibliothèque, des dossiers locaux suffisent. Si vous utilisez déjà Animation Composer, comparez les packs et les licences avant de conserver les deux.",
+    "shortDescription": "Plugin et marché d'assets pour After Effects et Premiere Pro, fournissant accès à un panel de transitions, presets, lower thirds et effets sonores directement intégrés à la timeline.",
+    "longDescription": "Plugin et marché d'assets pour After Effects et Premiere Pro, fournissant accès à un panel de transitions, presets, lower thirds et effets sonores directement intégrés à la timeline.\n\nFonctions clés : 5 000+ transitions, presets, lower thirds et boucles audio ; Adaptation automatique des transitions aux formats (horizontal, carré, vertical) ; Drag-and-drop directement dans la timeline ; Mises à jour gratuites à vie après achat ; Licences personnelles et commerciales.\n\nMotion Bro excelle pour enrichir vos montages sans engagement d'abonnement ; idéal si vous maîtrisez déjà After Effects ou Premiere.",
     "affiliateLink": "https://motionbro.com",
     "websiteUrl": "https://motionbro.com",
     "defaultMonthlyPrice": 0,
     "pricing": {
-      "free": "Extension de base gratuite",
-      "paid": "Packs de presets vendus séparément (achat unique), certains gratuits"
+      "free": "Plugin gratuit pour tous + 1 400 assets. Accès illimité à la bibliothèque de transitions, presets et effets.",
+      "paid": "Essential Transitions Bundle (After Effects) — Personal: $55 (one-time purchase) ; Essential Transitions Bundle (After Effects) — Commercial: $110 (one-time purchase) ; Essential Transitions Bundle (Premiere Pro) — Personal: $68 (one-time purchase) ; Essential Transitions Bundle (Premiere Pro) — Commercial: $136 (one-time purchase)"
     },
     "logo": "",
     "soloRelevance": null,
@@ -93955,7 +93996,7 @@
       "cautions": [
         "Extension de base gratuite, packs de presets vendus séparément"
       ],
-      "verified_on": "2026-08-27",
+      "verified_on": "2026-07-24",
       "source_domain": "motionbro.com",
       "usage_sensitive": false,
       "compare_plan_kind": "individual",
@@ -93974,8 +94015,8 @@
       "never_auto_cancel_reason": "Couche non substituable par défaut.",
       "requires_context_questions": true
     },
-    "shortDescriptionEn": "Preset and pack manager for After Effects and Premiere Pro.",
-    "longDescriptionEn": "Motion Bro is a visual preset manager for After Effects and Premiere Pro. It lets you browse and apply transitions, effects, text animations and graphic elements without digging through folders. The current plugin is free, with free packs and paid bundles sold separately.\n\nThe model works well for motion designers who want to build a library gradually. Paid licenses are one-time purchases and distinguish personal from commercial use; one user can activate a license on two devices.\n\nMotion Bro is most useful when you reuse many presets in Adobe applications. A small library can still live in local folders. If you already use Animation Composer, compare the packs and licenses before keeping both.",
+    "shortDescriptionEn": "Plugin and asset marketplace for After Effects and Premiere Pro, providing access to a library of transitions, presets, lower thirds, and sound effects directly within the timeline.",
+    "longDescriptionEn": "Plugin and asset marketplace for After Effects and Premiere Pro, providing access to a library of transitions, presets, lower thirds, and sound effects directly within the timeline.\n\nKey strengths: Free plugin and 1,400 included assets—no paywall to start.; Bundles sold once, no recurring subscription.; Transitions adapt to modern formats (vertical, square).; Perpetual free updates.; Clear personal and commercial licensing tiers..\n\nMotion Bro shines for enhancing edits without subscription commitment; perfect if you're already in After Effects or Premiere.",
     "prosEn": [
       "Free plugin and 1,400 included assets—no paywall to start.",
       "Bundles sold once, no recurring subscription.",
@@ -94007,11 +94048,11 @@
       "threshold": "Motion Bro shines for enhancing edits without subscription commitment; perfect if you're already in After Effects or Premiere."
     },
     "pricingEn": {
-      "free": "Free base extension",
-      "paid": "Preset packs sold separately (one-time), some free"
+      "free": "Plugin gratuit pour tous + 1 400 assets. Accès illimité à la bibliothèque de transitions, presets et effets.",
+      "paid": "Essential Transitions Bundle (After Effects) — Personal: $55 (one-time purchase) ; Essential Transitions Bundle (After Effects) — Commercial: $110 (one-time purchase) ; Essential Transitions Bundle (Premiere Pro) — Personal: $68 (one-time purchase) ; Essential Transitions Bundle (Premiere Pro) — Commercial: $136 (one-time purchase)"
     },
     "force_silence": false,
-    "description": "Motion Bro est un gestionnaire visuel de presets pour After Effects et Premiere Pro. Il permet de parcourir et d'appliquer transitions, effets, animations de texte et éléments graphiques sans fouiller dans une arborescence de fichiers. La version actuelle du plugin est gratuite, avec des packs gratuits et des bundles payants vendus séparément.\n\nLe modèle convient bien aux motion designers qui veulent construire leur bibliothèque progressivement. Les licences payantes sont ponctuelles et distinguent l'usage personnel de l'usage commercial ; un même utilisateur peut activer sa licence sur deux appareils.\n\nMotion Bro est surtout pertinent si vous réutilisez beaucoup de presets dans Adobe. Avec une petite bibliothèque, des dossiers locaux suffisent. Si vous utilisez déjà Animation Composer, comparez les packs et les licences avant de conserver les deux.",
+    "description": "Plugin et marché d'assets pour After Effects et Premiere Pro, fournissant accès à un panel de transitions, presets, lower thirds et effets sonores directement intégrés à la timeline.\n\nFonctions clés : 5 000+ transitions, presets, lower thirds et boucles audio ; Adaptation automatique des transitions aux formats (horizontal, carré, vertical) ; Drag-and-drop directement dans la timeline ; Mises à jour gratuites à vie après achat ; Licences personnelles et commerciales.\n\nMotion Bro excelle pour enrichir vos montages sans engagement d'abonnement ; idéal si vous maîtrisez déjà After Effects ou Premiere.",
     "ogImageUrl": "https://motionbro.com/wp-content/uploads/2022/12/free-motion-bro-pack-cover.jpg.webp",
     "galleryImages": [
       "https://motionbro.com/wp-content/uploads/2023/10/Simple-Slide.jpg.webp",
@@ -96879,14 +96920,14 @@
     "name": "Nik Collection",
     "slug": "nik-collection",
     "category": "design-tools",
-    "shortDescription": "Suite de filtres photo professionnels : Analog Efex, Color Efex, Silver Efex.",
-    "longDescription": "Nik Collection, c'est une suite de plugins de retouche créative pour la photo, éditée par DxO. Elle regroupe des modules cultes : Color Efex (effets et looks couleur), Silver Efex (la référence du noir et blanc), Analog Efex (rendus argentiques), Viveza, Dfine, HDR Efex... Tu travailles ta photo dans Lightroom ou Photoshop, tu envoies vers Nik, tu appliques un look, et tu reviens. Pour un photographe qui veut une signature visuelle, c'est un terrain de jeu énorme.\n\nC'est un achat unique (~149€), avec des mises à jour payantes pour les nouvelles versions. Pas d'abonnement obligatoire.\n\nÀ qui ça s'adresse : aux photographes qui veulent des looks créatifs au-delà des réglages de base de Lightroom ou Capture One. Si tu te contentes des outils intégrés, Nik fait double emploi. Mais pour du noir et blanc soigné ou des rendus créatifs, c'est l'une des suites les plus appréciées, et le modèle à achat unique reste rare et appréciable.",
+    "shortDescription": "Suite d'édition photo professionnelle avec filtres avancés et maskage IA, fonctionnant comme plugin Photoshop, Lightroom Classic et Affinity Photo.",
+    "longDescription": "Suite d'édition photo professionnelle avec filtres avancés et maskage IA, fonctionnant comme plugin Photoshop, Lightroom Classic et Affinity Photo.\n\nFonctions clés : Maskage IA et maskage par profondeur (sur systèmes compatibles NVIDIA/AMD/Intel GPU) ; Filtres de colorisation et teinte avancés ; Outils de clarté et détails (Clarity, Structure, Detail Extractor) ; Plugin pour Photoshop 2025/2026, Lightroom Classic, Affinity Photo, DxO PhotoLab 8/9 ; Activation sur jusqu'à 3 ordinateurs par licence ; Licence perpétuelle sans frais cachés.\n\nNik Collection s'impose pour éditeurs photo sérieux en studio ou en freelance ; excellent rapport qualité-prix face aux alternatives par abonnement.",
     "affiliateLink": "https://nikcollection.dxo.com",
     "websiteUrl": "https://nikcollection.dxo.com",
     "defaultMonthlyPrice": 0,
     "pricing": {
-      "free": "",
-      "paid": "Achat unique (~149€), licence à vie, mises à jour payantes"
+      "free": "Essai gratuit complet (version d'évaluation) pour tester avant achat. Pas de version gratuite permanente.",
+      "paid": "Licence complète (nouveau client): €89.99 (ou €22.50 x 4 versements PayPal) ; Licence complète (standard): €169.99 (ou €42.50 x 4 versements PayPal) ; Upgrade (Nik Collection 7 ou 8): Montants sur la page officielle"
     },
     "logo": "",
     "soloRelevance": "medium",
@@ -96982,9 +97023,9 @@
         "Achat ponctuel ou licence non mensuelle : ne pas compter comme abonnement mensuel sans confirmation."
       ],
       "currency": "USD",
-      "verified_on": "2026-06-15",
+      "verified_on": "2026-07-24",
       "billing_model": "one_time",
-      "source_domain": "nikcollection.dxo.com",
+      "source_domain": "shop.dxo.com",
       "price_original": 149,
       "billing_options": [
         {
@@ -97013,8 +97054,8 @@
       "compare_plan_name": "License",
       "price_reliability": "medium",
       "location_sensitive": true,
-      "official_source_url": "https://nikcollection.dxo.com/",
-      "verification_status": "official_contextual",
+      "official_source_url": "https://shop.dxo.com/en/nik-collection-9.html",
+      "verification_status": "official_explicit",
       "price_original_currency": "USD",
       "compare_price_monthly_eur": 0
     },
@@ -97026,8 +97067,8 @@
       "never_auto_cancel_reason": "Couche non substituable par défaut.",
       "requires_context_questions": true
     },
-    "shortDescriptionEn": "Professional photo filter suite: Analog Efex, Color Efex, Silver Efex.",
-    "longDescriptionEn": "Nik Collection is a suite of creative photo-editing plugins by DxO. It bundles cult modules: Color Efex (color effects and looks), Silver Efex (the black-and-white reference), Analog Efex (film looks), Viveza, Dfine, HDR Efex... You work your photo in Lightroom or Photoshop, send it to Nik, apply a look, and come back. For a photographer who wants a visual signature, it's a huge playground.\n\nIt's a one-time purchase (~€149), with paid updates for new versions. No mandatory subscription.\n\nWho it's for: photographers who want creative looks beyond Lightroom's or Capture One's base settings. If you're happy with built-in tools, Nik is redundant. But for refined black-and-white or creative renders, it's one of the most loved suites, and the one-time-purchase model stays rare and welcome.",
+    "shortDescriptionEn": "Professional photo editing suite with advanced filters and AI masking, available as a plugin for Photoshop, Lightroom Classic, and Affinity Photo.",
+    "longDescriptionEn": "Professional photo editing suite with advanced filters and AI masking, available as a plugin for Photoshop, Lightroom Classic, and Affinity Photo.\n\nKey strengths: Perpetual license—no recurring fees after one-time purchase.; Industry-standard color and clarity tools.; AI masking for precise, fast retouching.; Local activation, offline use possible.; Full free trial before commitment.; Install on up to 3 computers per license..\n\nNik Collection wins for serious studio and freelance photographers; excellent value versus subscription alternatives.",
     "prosEn": [
       "Perpetual license—no recurring fees after one-time purchase.",
       "Industry-standard color and clarity tools.",
@@ -97062,11 +97103,11 @@
       "threshold": "Nik Collection wins for serious studio and freelance photographers; excellent value versus subscription alternatives."
     },
     "pricingEn": {
-      "free": "",
-      "paid": "One-time purchase (~€149), lifetime license, paid updates"
+      "free": "Essai gratuit complet (version d'évaluation) pour tester avant achat. Pas de version gratuite permanente.",
+      "paid": "Licence complète (nouveau client): €89.99 (ou €22.50 x 4 versements PayPal) ; Licence complète (standard): €169.99 (ou €42.50 x 4 versements PayPal) ; Upgrade (Nik Collection 7 ou 8): Montants sur la page officielle"
     },
     "force_silence": false,
-    "description": "Nik Collection, c'est une suite de plugins de retouche créative pour la photo, éditée par DxO. Elle regroupe des modules cultes : Color Efex (effets et looks couleur), Silver Efex (la référence du noir et blanc), Analog Efex (rendus argentiques), Viveza, Dfine, HDR Efex... Tu travailles ta photo dans Lightroom ou Photoshop, tu envoies vers Nik, tu appliques un look, et tu reviens. Pour un photographe qui veut une signature visuelle, c'est un terrain de jeu énorme.\n\nC'est un achat unique (~149€), avec des mises à jour payantes pour les nouvelles versions. Pas d'abonnement obligatoire.\n\nÀ qui ça s'adresse : aux photographes qui veulent des looks créatifs au-delà des réglages de base de Lightroom ou Capture One. Si tu te contentes des outils intégrés, Nik fait double emploi. Mais pour du noir et blanc soigné ou des rendus créatifs, c'est l'une des suites les plus appréciées, et le modèle à achat unique reste rare et appréciable.",
+    "description": "Suite d'édition photo professionnelle avec filtres avancés et maskage IA, fonctionnant comme plugin Photoshop, Lightroom Classic et Affinity Photo.\n\nFonctions clés : Maskage IA et maskage par profondeur (sur systèmes compatibles NVIDIA/AMD/Intel GPU) ; Filtres de colorisation et teinte avancés ; Outils de clarté et détails (Clarity, Structure, Detail Extractor) ; Plugin pour Photoshop 2025/2026, Lightroom Classic, Affinity Photo, DxO PhotoLab 8/9 ; Activation sur jusqu'à 3 ordinateurs par licence ; Licence perpétuelle sans frais cachés.\n\nNik Collection s'impose pour éditeurs photo sérieux en studio ou en freelance ; excellent rapport qualité-prix face aux alternatives par abonnement.",
     "ogImageUrl": "https://pub-27e14545e036427f828cd9cf06f1395f.r2.dev/web/dxo.com/nikcollection/learn/nik9-learn-screen-7.webp",
     "galleryImages": [
       "https://pub-27e14545e036427f828cd9cf06f1395f.r2.dev/web/dxo.com/nikcollection/learn/nik9-learn-screen-2.webp",
@@ -108992,7 +109033,7 @@
     "id": "pitch",
     "name": "Pitch",
     "category": "design-tools",
-    "shortDescription": "Créer des présentations modernes et collaboratives pour impressionner les clients.",
+    "shortDescription": "Plateforme cloud de présentation collaborative avec généra­tion IA de slides, analytics, et intégrations (Slack, Notion, Figma, HubSpot).",
     "verdict": {
       "keepIf": [
         "Vous faites des présentations B2B ou pitches pour clients régulièrement.",
@@ -109007,8 +109048,8 @@
       "threshold": "Pitch excelle pour commerciaux et managers partageant présens fréquemment ; IA + analytics transforment la routine en avantage compétitif."
     },
     "pricing": {
-      "free": "Illimité pour 1 utilisateur (5 présentations)",
-      "paid": "8$/mois par utilisateur (Pro)"
+      "free": "100 crédits IA (une seule fois), présentations illimites, templates custom, partage avec 2 guests externes, 10 GB stockage.",
+      "paid": "Free: Gratuit (100 AI credits, 10GB, 2 external guests) ; Plus: €10/month (500 monthly AI credits, custom fonts, video uploads, 5 external guests) ; Team: €15/month (up to 25 seats, 3 teamspaces, advanced analytics) ; Business: €20/month (up to 200 seats, unlimited features) ; Enterprise: Custom pricing (30+ seats, SSO SAML, dedicated support)"
     },
     "affiliateLink": "https://pitch.com",
     "articles": [],
@@ -109058,24 +109099,24 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "pitch",
-    "shortDescriptionEn": "Create modern and collaborative presentations to impress clients.",
-    "description": "Pitch, c'est créer des présentations modernes et collaboratives pour impressionner les clients. À partir de 6.93€/mois. Pensé pour les consultants B2B et les fondateurs SaaS.\n\nGain de temps estimé : 5h/mois.\n\nÀ garder si : vous présentez régulièrement à des clients ou vous détestez PowerPoint et ses templates moches. À éviter si : vous faites moins de 2 présentations par an ou google Slides vous suffit. Dès que vous présentez régulièrement et que PowerPoint/Slides ne vous satisfont plus. Alternative gratuite : canva.",
-    "longDescription": "Pitch, c'est créer des présentations modernes et collaboratives pour impressionner les clients. À partir de 6.93€/mois. Pensé pour les consultants B2B et les fondateurs SaaS.\n\nGain de temps estimé : 5h/mois.\n\nÀ garder si : vous présentez régulièrement à des clients ou vous détestez PowerPoint et ses templates moches. À éviter si : vous faites moins de 2 présentations par an ou google Slides vous suffit. Dès que vous présentez régulièrement et que PowerPoint/Slides ne vous satisfont plus. Alternative gratuite : canva.",
-    "longDescriptionEn": "Pitch is create modern and collaborative presentations to impress clients. Starting at €6.93/month. Built for B2B consultants and SaaS founders.\n\nEstimated time saving: 5h/month.\n\nKeep it if: you present to clients on a regular basis or you hate PowerPoint and its ugly templates. Skip it if: you create fewer than 2 presentations per year or google Slides is enough for you. As soon as you present regularly and PowerPoint/Slides no longer satisfy your needs. Free alternative: canva.",
+    "shortDescriptionEn": "Cloud-based collaborative presentation platform with AI-powered slide generation, viewer analytics, and integrations with Slack, Notion, Figma, and HubSpot.",
+    "description": "Plateforme cloud de présentation collaborative avec généra­tion IA de slides, analytics, et intégrations (Slack, Notion, Figma, HubSpot).\n\nFonctions clés : Génération de slides IA à partir de prompts texte ; Édition collaborative temps réel (multiple users) ; 150+ templates conçus par experts ; Analytics des visualisations et engagement ; Branding library pour consistence visuelle ; Pitch rooms personnalisées pour clients ; Support vidéo et animation native ; Intégrations Slack, Notion, HubSpot, Figma, Calendly ; Exports sans marque (Plus+) ; ~4 millions d'équipes utilisatrices.\n\nPitch excelle pour commerciaux et managers partageant présens fréquemment ; IA + analytics transforment la routine en avantage compétitif.",
+    "longDescription": "Plateforme cloud de présentation collaborative avec généra­tion IA de slides, analytics, et intégrations (Slack, Notion, Figma, HubSpot).\n\nFonctions clés : Génération de slides IA à partir de prompts texte ; Édition collaborative temps réel (multiple users) ; 150+ templates conçus par experts ; Analytics des visualisations et engagement ; Branding library pour consistence visuelle ; Pitch rooms personnalisées pour clients ; Support vidéo et animation native ; Intégrations Slack, Notion, HubSpot, Figma, Calendly ; Exports sans marque (Plus+) ; ~4 millions d'équipes utilisatrices.\n\nPitch excelle pour commerciaux et managers partageant présens fréquemment ; IA + analytics transforment la routine en avantage compétitif.",
+    "longDescriptionEn": "Cloud-based collaborative presentation platform with AI-powered slide generation, viewer analytics, and integrations with Slack, Notion, Figma, and HubSpot.\n\nKey strengths: AI slide generation saves hours of design work.; Smooth real-time collaboration.; Analytics show who opened and engaged (sales advantage).; Slack/HubSpot/Figma integrations valuable for workflows.; Branding library keeps visual consistency.; Affordable Plus tier.; ~4 million team users (strong traction).; Free tier complete enough to get started..\n\nPitch wins for sales reps and managers sharing presentations frequently; AI + analytics turn routine into competitive edge.",
     "pricingEn": {
-      "free": "Unlimited for 1 user (5 presentations)",
-      "paid": "$8/month per user (Pro)"
+      "free": "100 crédits IA (une seule fois), présentations illimites, templates custom, partage avec 2 guests externes, 10 GB stockage.",
+      "paid": "Free: Gratuit (100 AI credits, 10GB, 2 external guests) ; Plus: €10/month (500 monthly AI credits, custom fonts, video uploads, 5 external guests) ; Team: €15/month (up to 25 seats, 3 teamspaces, advanced analytics) ; Business: €20/month (up to 200 seats, unlimited features) ; Enterprise: Custom pricing (30+ seats, SSO SAML, dedicated support)"
     },
     "pricing_v5": {
       "cautions": [],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-07-24",
       "source_domain": "pitch.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
       "compare_plan_name": "Entry paid plan",
       "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://pitch.com/pricing/usd",
+      "official_source_url": "https://pitch.com/",
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 6.93
     },
@@ -109165,7 +109206,12 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://framerusercontent.com/assets/WJrArV3ktU515VCNK75vEu7SjNg.jpg"
+    "ogImageUrl": "https://framerusercontent.com/images/kvNF1wOwaUfesLU3sLJuiQTHFvw.png?width=650&height=366",
+    "galleryImages": [
+      "https://framerusercontent.com/images/YeEONZ55TsZQA1AE5inS1IYY99A.jpg?width=650&height=366",
+      "https://framerusercontent.com/images/JVZqMwsIVKYV4vmub7hhVZhs.png?width=650&height=366",
+      "https://framerusercontent.com/images/OjaRHcrA9lEHtXEC1Na1Jdyvbc.png?width=650&height=366"
+    ]
   },
   {
     "id": "pixco",
@@ -115818,11 +115864,11 @@
     "bundle_parent": null,
     "host_app": null,
     "category": "design-tools",
-    "shortDescription": "Prototypage interactif avancé sans code. Interactions complexes impossibles dans Figma.",
+    "shortDescription": "Plateforme de prototypage alimentée par l'IA pour créer des interactions complexes et tester les prototypes sur des appareils réels (mobile, web, automotive, IoT, jeux).",
     "defaultMonthlyPrice": 11.26,
     "pricing": {
-      "free": "30 jours trial",
-      "paid": "13$/mois (Basic)"
+      "free": "Enregistrement gratuit avec enregistrement d'interactions et liens partageables",
+      "paid": "Free: Gratuit ; Starter: À partir de USD 11/mois ; Enterprise: Montants sur la page officielle"
     },
     "covers": [
       "micro-interactions",
@@ -115891,16 +115937,19 @@
       "free": "30 jours trial",
       "paid": "13$/mois (Basic)"
     },
-    "longDescription": "ProtoPie, c'est prototypage interactif avancé sans code. Interactions complexes impossibles dans Figma. À partir de 11.26€/mois. Pensé pour les designers UX/UI.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : micro-interactions complexes, prototypes haute fidélité avancés. À éviter si : figma suffit pour 90% des prototypes — doublon si usage basique. Pertinent uniquement pour des interactions que Figma ne peut pas faire.",
+    "longDescription": "Plateforme de prototypage alimentée par l'IA pour créer des interactions complexes et tester les prototypes sur des appareils réels (mobile, web, automotive, IoT, jeux).\n\nFonctions clés : Animations basées sur la logique avec variables et formules ; Interactions multi-appareils et cross-device ; Capteurs natifs des appareils (accéléromètre, géolocalisation) ; Interactions vocales ; Intégrations flexibles et données réelles ; ProtoPie Cloud pour le partage et la collaboration.\n\nProtoPie s'impose pour les prototypes haute-fidélité avec interactions complexes ; pour des wireframes et prototypes simples, Figma ou Adobe XD suffisent.",
     "alternatives": [],
     "slug": "protopie",
-    "shortDescriptionEn": "Advanced interactive prototyping without code. Complex interactions impossible in Figma.",
-    "description": "ProtoPie, c'est prototypage interactif avancé sans code. Interactions complexes impossibles dans Figma. À partir de 11.26€/mois. Pensé pour les designers UX/UI.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : micro-interactions complexes, prototypes haute fidélité avancés. À éviter si : figma suffit pour 90% des prototypes — doublon si usage basique. Pertinent uniquement pour des interactions que Figma ne peut pas faire.",
-    "longDescriptionEn": "ProtoPie is advanced interactive prototyping without code. Complex interactions impossible in Figma. Starting at €11.26/month. Built for UX/UI designers.\n\nEstimated time saving: 4h/month.",
-    "pricingEn": null,
+    "shortDescriptionEn": "AI-driven prototyping platform for creating complex interactions and testing prototypes on real devices (mobile, web, automotive, IoT, gaming).",
+    "description": "Plateforme de prototypage alimentée par l'IA pour créer des interactions complexes et tester les prototypes sur des appareils réels (mobile, web, automotive, IoT, jeux).\n\nFonctions clés : Animations basées sur la logique avec variables et formules ; Interactions multi-appareils et cross-device ; Capteurs natifs des appareils (accéléromètre, géolocalisation) ; Interactions vocales ; Intégrations flexibles et données réelles ; ProtoPie Cloud pour le partage et la collaboration.\n\nProtoPie s'impose pour les prototypes haute-fidélité avec interactions complexes ; pour des wireframes et prototypes simples, Figma ou Adobe XD suffisent.",
+    "longDescriptionEn": "AI-driven prototyping platform for creating complex interactions and testing prototypes on real devices (mobile, web, automotive, IoT, gaming).\n\nKey strengths: Complex interaction simulation without code.; Real device testing included.; Multi-domain support (mobile, web, IoT, automotive).; Real-time collaboration with ProtoPie Cloud.; Free tier available..\n\nProtoPie is essential for high-fidelity prototypes with complex interactions; for wireframes and simple prototypes, Figma or Adobe XD suffice.",
+    "pricingEn": {
+      "free": "Enregistrement gratuit avec enregistrement d'interactions et liens partageables",
+      "paid": "Free: Gratuit ; Starter: À partir de USD 11/mois ; Enterprise: Montants sur la page officielle"
+    },
     "pricing_v5": {
       "cautions": [],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-07-24",
       "source_domain": "protopie.io",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
@@ -115908,7 +115957,7 @@
       "price_reliability": "low",
       "location_sensitive": false,
       "official_source_url": "https://protopie.io",
-      "verification_status": "official_site_only",
+      "verification_status": "official_explicit",
       "compare_price_monthly_eur": 11.26
     },
     "websiteUrl": "https://protopie.io",
@@ -115964,7 +116013,12 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://framerusercontent.com/images/TiXMqJyxaDShixfO2M6qDdTFgpU.jpg"
+    "ogImageUrl": "https://framerusercontent.com/images/FJliBXwqpIzVXZQvEMPcc0lmg5E.webp?width=1403&height=1406",
+    "galleryImages": [
+      "https://framerusercontent.com/images/GPhod20u7xCrRvMBMYXnNNDGQ1s.webp?width=1459&height=966",
+      "https://framerusercontent.com/images/OtwATA9Besx4GfklTXBXGrJUk.webp?width=666&height=1034",
+      "https://framerusercontent.com/images/H60k0Li2Z5mmzvIq3ewAAOR78c.webp?width=1032&height=1008"
+    ]
   },
   {
     "id": "prowly",
@@ -121623,22 +121677,22 @@
     "slug": "red-giant-universe",
     "name": "Red Giant Universe",
     "category": "design-tools",
-    "shortDescription": "Bibliothèque Red Giant de transitions, effets et titres pour le montage vidéo.",
-    "shortDescriptionEn": "Red Giant's library of transitions, effects and titles for video editing.",
+    "shortDescription": "Suite de plugin d'effets GPU-accélérés pour After Effects, Premiere Pro, Final Cut Pro et Motion. Propose transitions, effets de mouvement, animations de texte et outils de stylisation pour la production vidéo et motion design.",
+    "shortDescriptionEn": "Suite of GPU-accelerated effects plugins for After Effects, Premiere Pro, Final Cut Pro, and Motion. Provides transitions, motion effects, text animation, and stylization tools for video and motion design.",
     "pricing": {
-      "free": "",
-      "paid": "Via Red Giant Complete (~50$/mois, 599$/an) ou Maxon One."
+      "free": "Essai gratuit de 14 jours ; Maxon One offre également un essai de 14 jours",
+      "paid": "Universe Individual (Monthly): USD 32/mois ; Universe Individual (Annual): USD 214/an ; Red Giant Suite (Monthly): USD 85/mois ; Red Giant Suite (Annual): USD 639/an"
     },
     "pricingEn": {
-      "free": "",
-      "paid": "Via Red Giant Complete (~$50/month, $599/year) or Maxon One."
+      "free": "Essai gratuit de 14 jours ; Maxon One offre également un essai de 14 jours",
+      "paid": "Universe Individual (Monthly): USD 32/mois ; Universe Individual (Annual): USD 214/an ; Red Giant Suite (Monthly): USD 85/mois ; Red Giant Suite (Annual): USD 639/an"
     },
     "defaultMonthlyPrice": 50,
     "affiliateLink": "https://www.maxon.net/red-giant/universe",
     "websiteUrl": "https://www.maxon.net/red-giant/universe",
     "logo": "",
-    "longDescription": "Universe, c'est la bibliothèque d'effets et de transitions accélérés par GPU de Red Giant. Elle réunit des dizaines d'outils pour le montage : transitions stylées, effets glitch et rétro, générateurs de texte et de lignes, dégradés, holomatrix. Son intérêt, c'est la rapidité et le côté tendance : tu ajoutes en un clic des effets modernes que les monteurs aiment, sans les bricoler à la main.\n\nGros avantage par rapport aux autres suites Red Giant : Universe fonctionne dans beaucoup d'hôtes (After Effects, Premiere, DaVinci Resolve, Final Cut, Vegas). C'était historiquement le produit Red Giant le plus accessible, parfois vendu seul ; aujourd'hui Maxon pousse l'abonnement Red Giant Complete (~50$/mois) qui l'inclut. À mettre en balance avec les transitions natives de ton logiciel de montage et les packs de templates (Envato, MotionArray) si tu veux dépenser moins.",
-    "longDescriptionEn": "Universe is Red Giant's library of GPU-accelerated effects and transitions. It bundles dozens of editing tools: stylish transitions, glitch and retro effects, text and line generators, gradients, holomatrix. Its appeal is speed and trendiness: you add modern effects editors love in one click, without building them by hand.\n\nA big advantage over the other Red Giant suites: Universe works in many hosts (After Effects, Premiere, DaVinci Resolve, Final Cut, Vegas). It was historically Red Giant's most accessible product, sometimes sold alone; today Maxon pushes the Red Giant Complete subscription (~$50/month) that includes it. Weigh it against your editing app's native transitions and template packs (Envato, MotionArray) if you want to spend less.",
+    "longDescription": "Suite de plugin d'effets GPU-accélérés pour After Effects, Premiere Pro, Final Cut Pro et Motion. Propose transitions, effets de mouvement, animations de texte et outils de stylisation pour la production vidéo et motion design.\n\nFonctions clés : Transitions 3D (bokeh, secousse de caméra, glitch) ; Animation dynamique de texte pour titres et crédits ; Filtres de stylisation (rétro, moderne) pour transformation d'image ; Motion graphics (backgrounds animés, formes, barres de progression) ; Suite de color grading complète et outils de film emulation ; Effets de flou et de glow GPU-accélérés ; Aperçu en temps réel avec rendu rapide.\n\nRed Giant Universe s'impose pour les professionnels de la vidéo/motion design ; les éditeurs occasionnels se contenteront des effets natifs.",
+    "longDescriptionEn": "Suite of GPU-accelerated effects plugins for After Effects, Premiere Pro, Final Cut Pro, and Motion. Provides transitions, motion effects, text animation, and stylization tools for video and motion design.\n\nKey strengths: Vast library of ready-to-use effects and transitions.; GPU-accelerated for fast real-time rendering.; Compatible with After Effects, Premiere Pro, Final Cut Pro, Motion.; Flexible subscription (monthly or annual).; Access to ProtoPie and other Maxon tools in bundles..\n\nRed Giant Universe is essential for video/motion design professionals; casual editors can rely on native effects.",
     "verdict": {
       "keepIf": [
         "Vous éditez ou faites du motion design dans After Effects, Premiere Pro ou Final Cut Pro.",
@@ -121745,22 +121799,27 @@
       "cautions": [
         "Désormais via Red Giant Complete (~50$/mois) ou Maxon One"
       ],
-      "verified_on": "2026-06-17",
+      "verified_on": "2026-07-24",
       "source_domain": "maxon.net",
       "usage_sensitive": false,
       "compare_plan_kind": "subscription",
       "compare_plan_name": "Red Giant Complete",
       "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://www.maxon.net/en/buy",
+      "official_source_url": "https://www.maxon.net/red-giant/universe",
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 50
     },
     "substitution_cluster_v2": "plugin-after-effects",
-    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Universe/_1200x630_crop_center-center_82_none/Universe_GSA_HERO.jpg?mtime=1729010747",
-    "description": "Universe, c'est la bibliothèque d'effets et de transitions accélérés par GPU de Red Giant. Elle réunit des dizaines d'outils pour le montage : transitions stylées, effets glitch et rétro, générateurs de texte et de lignes, dégradés, holomatrix. Son intérêt, c'est la rapidité et le côté tendance : tu ajoutes en un clic des effets modernes que les monteurs aiment, sans les bricoler à la main.\n\nGros avantage par rapport aux autres suites Red Giant : Universe fonctionne dans beaucoup d'hôtes (After Effects, Premiere, DaVinci Resolve, Final Cut, Vegas). C'était historiquement le produit Red Giant le plus accessible, parfois vendu seul ; aujourd'hui Maxon pousse l'abonnement Red Giant Complete (~50$/mois) qui l'inclut. À mettre en balance avec les transitions natives de ton logiciel de montage et les packs de templates (Envato, MotionArray) si tu veux dépenser moins.",
+    "ogImageUrl": "https://maxonassets.imgix.net/images/Products/Universe/Universe_Texturize.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces",
+    "description": "Suite de plugin d'effets GPU-accélérés pour After Effects, Premiere Pro, Final Cut Pro et Motion. Propose transitions, effets de mouvement, animations de texte et outils de stylisation pour la production vidéo et motion design.\n\nFonctions clés : Transitions 3D (bokeh, secousse de caméra, glitch) ; Animation dynamique de texte pour titres et crédits ; Filtres de stylisation (rétro, moderne) pour transformation d'image ; Motion graphics (backgrounds animés, formes, barres de progression) ; Suite de color grading complète et outils de film emulation ; Effets de flou et de glow GPU-accélérés ; Aperçu en temps réel avec rendu rapide.\n\nRed Giant Universe s'impose pour les professionnels de la vidéo/motion design ; les éditeurs occasionnels se contenteront des effets natifs.",
     "decision_policy_v3": null,
-    "force_silence": false
+    "force_silence": false,
+    "galleryImages": [
+      "https://maxonassets.imgix.net/images/Products/Universe/Universe_Bokeh_2024.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces",
+      "https://maxonassets.imgix.net/images/Products/Universe/Universe_World_Suicide_UE_shot_by_Andy_Lefton.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces",
+      "https://maxonassets.imgix.net/images/Products/Universe/Universe_Shine_The-Muppets-Mayhem-by-Penny-Nederlander.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces"
+    ]
   },
   {
     "id": "redirect-path",
@@ -123292,22 +123351,22 @@
     "slug": "renderman",
     "name": "RenderMan",
     "category": "design-tools",
-    "shortDescription": "Le moteur de rendu de Pixar, gratuit en non-commercial, légende du cinéma d'animation.",
-    "shortDescriptionEn": "Pixar's render engine, free for non-commercial use, a film-animation legend.",
+    "shortDescription": "Logiciel de rendu professionnel Pixar livrant une qualité cinématographique. Utilisé en production par Pixar pour les films. Offre rendu non-commercial gratuit, licences flexibles (flottantes ou node-locked) pour usage professionnel.",
+    "shortDescriptionEn": "Pixar's professional rendering software delivering feature film quality. Used by Pixar in production. Offers free non-commercial rendering, flexible licensing (floating or node-locked) for professional use.",
     "pricing": {
-      "free": "Gratuit pour usage non-commercial (complet, sans watermark)",
-      "paid": "Licence commerciale 595$ + 250$/an de maintenance."
+      "free": "Gratuit pour tous les usages non-commerciaux",
+      "paid": "Non-Commercial: Gratuit ; Professional License: USD 595 par licence (perpetual) ; Annual Maintenance: USD 250/an (support et upgrades)"
     },
     "pricingEn": {
-      "free": "Free for non-commercial use (full, no watermark)",
-      "paid": "Commercial license $595 + $250/year maintenance."
+      "free": "Gratuit pour tous les usages non-commerciaux",
+      "paid": "Non-Commercial: Gratuit ; Professional License: USD 595 par licence (perpetual) ; Annual Maintenance: USD 250/an (support et upgrades)"
     },
     "defaultMonthlyPrice": 595,
     "affiliateLink": "https://renderman.pixar.com",
     "websiteUrl": "https://renderman.pixar.com",
     "logo": "",
-    "longDescription": "RenderMan, c'est une légende : c'est le moteur de rendu de Pixar, celui qui a calculé tous ses films et des décennies de VFX hollywoodiens. Il a littéralement défini une partie des standards du rendu cinéma. Dire que c'est un outil de référence est un euphémisme.\n\nLa grande nouvelle pour les indépendants, c'est qu'il est gratuit pour tout usage non commercial : version complète, sans watermark ni limitation, pour apprendre, expérimenter ou faire des projets perso. Pour un usage commercial, la licence revient à 595$ (achat) plus 250$/an de maintenance. Il s'intègre à Maya, Houdini, Katana et Blender.\n\nÀ qui ça s'adresse : aux artistes orientés cinéma d'animation et VFX, et à quiconque veut apprendre le rendu de niveau studio sans payer. Pour la plupart des freelances (motion, archviz, produit), c'est surdimensionné face à un Redshift, un V-Ray ou un Octane plus simples à intégrer. Mais la gratuité en non-commercial en fait un terrain d'apprentissage exceptionnel, et un choix légitime si tu vises le pipeline de l'animation de long-métrage.",
-    "longDescriptionEn": "RenderMan is a legend: it's Pixar's render engine, the one that rendered all its films and decades of Hollywood VFX. It literally defined part of the standards of film rendering. Calling it a reference tool is an understatement.\n\nThe big news for freelancers is that it's free for any non-commercial use: full version, no watermark or limitation, to learn, experiment or do personal projects. For commercial use, the license is $595 (purchase) plus $250/year maintenance. It integrates with Maya, Houdini, Katana and Blender.\n\nWho it's for: artists oriented toward film animation and VFX, and anyone who wants to learn studio-grade rendering for free. For most freelancers (motion, archviz, product), it's overkill next to a simpler-to-integrate Redshift, V-Ray or Octane. But the free non-commercial tier makes it an exceptional learning ground, and a legitimate choice if you aim for the feature-animation pipeline.",
+    "longDescription": "Logiciel de rendu professionnel Pixar livrant une qualité cinématographique. Utilisé en production par Pixar pour les films. Offre rendu non-commercial gratuit, licences flexibles (flottantes ou node-locked) pour usage professionnel.\n\nFonctions clés : Rendu pathtracing haute-fidélité pour qualité cinématographique ; Support de géométries NURBS, meshes, subdivision surfaces, point clouds ; Contrôle flexible de la lumière et matériaux PxrSurface ; Intégration avec Maya, Houdini, Katana, Blender ; Tractor (job scheduler) inclus ; Licensing flexible (floating ou node-locked) ; Support d'équipe dédiée et community forums.\n\nRenderMan s'impose pour la production cinématographique de haut niveau ; V-Ray ou Corona conviendront pour l'architecture/produit à budget serré.",
+    "longDescriptionEn": "Pixar's professional rendering software delivering feature film quality. Used by Pixar in production. Offers free non-commercial rendering, flexible licensing (floating or node-locked) for professional use.\n\nKey strengths: Free for non-commercial use (great for learning).; Industry-recognized cinema quality.; Flexible, scalable licensing for teams.; Native integration with all major 3D software.; Dedicated Pixar support team.; One-time perpetual license..\n\nRenderMan is essential for high-end film production; V-Ray or Corona suit architecture/product at tight budgets.",
     "verdict": {
       "keepIf": [
         "Vous produisez du contenu cinema-quality (films, VFX, animation).",
@@ -123433,22 +123492,23 @@
       "cautions": [
         "Gratuit en non-commercial ; licence commerciale 595$ + 250$/an de maintenance"
       ],
-      "verified_on": "2026-06-17",
+      "verified_on": "2026-07-24",
       "source_domain": "renderman.pixar.com",
       "usage_sensitive": false,
       "compare_plan_kind": "perpetual",
       "compare_plan_name": "Licence commerciale",
       "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://renderman.pixar.com/store",
+      "official_source_url": "https://renderman.pixar.com",
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 595
     },
     "substitution_cluster_v2": "render-engine",
     "ogImageUrl": "https://assets.renderman.pixar.com/images-pixar/hoppers-bkg-homepage.webp",
-    "description": "RenderMan, c'est une légende : c'est le moteur de rendu de Pixar, celui qui a calculé tous ses films et des décennies de VFX hollywoodiens. Il a littéralement défini une partie des standards du rendu cinéma. Dire que c'est un outil de référence est un euphémisme.\n\nLa grande nouvelle pour les indépendants, c'est qu'il est gratuit pour tout usage non commercial : version complète, sans watermark ni limitation, pour apprendre, expérimenter ou faire des projets perso. Pour un usage commercial, la licence revient à 595$ (achat) plus 250$/an de maintenance. Il s'intègre à Maya, Houdini, Katana et Blender.\n\nÀ qui ça s'adresse : aux artistes orientés cinéma d'animation et VFX, et à quiconque veut apprendre le rendu de niveau studio sans payer. Pour la plupart des freelances (motion, archviz, produit), c'est surdimensionné face à un Redshift, un V-Ray ou un Octane plus simples à intégrer. Mais la gratuité en non-commercial en fait un terrain d'apprentissage exceptionnel, et un choix légitime si tu vises le pipeline de l'animation de long-métrage.",
+    "description": "Logiciel de rendu professionnel Pixar livrant une qualité cinématographique. Utilisé en production par Pixar pour les films. Offre rendu non-commercial gratuit, licences flexibles (flottantes ou node-locked) pour usage professionnel.\n\nFonctions clés : Rendu pathtracing haute-fidélité pour qualité cinématographique ; Support de géométries NURBS, meshes, subdivision surfaces, point clouds ; Contrôle flexible de la lumière et matériaux PxrSurface ; Intégration avec Maya, Houdini, Katana, Blender ; Tractor (job scheduler) inclus ; Licensing flexible (floating ou node-locked) ; Support d'équipe dédiée et community forums.\n\nRenderMan s'impose pour la production cinématographique de haut niveau ; V-Ray ou Corona conviendront pour l'architecture/produit à budget serré.",
     "decision_policy_v3": null,
-    "force_silence": false
+    "force_silence": false,
+    "galleryImages": []
   },
   {
     "id": "replit",
@@ -125357,14 +125417,14 @@
     "name": "Revit",
     "slug": "revit",
     "category": "design-tools",
-    "shortDescription": "Le logiciel BIM de référence pour architectes et ingénieurs structure.",
-    "longDescription": "Revit, c'est le logiciel de référence du BIM (Building Information Modeling), l'outil central des cabinets d'architecture et des bureaux d'études structure et fluides (MEP). Contrairement à un simple logiciel de dessin, Revit construit une maquette numérique intelligente : chaque mur, poteau ou gaine porte des informations, et toute modification se répercute automatiquement sur les plans, coupes et nomenclatures. C'est ce qui en a fait le standard de la conception de bâtiment en équipe.\n\nLe prix est à la hauteur de son positionnement : il n'y a pas de version gratuite, et l'abonnement Autodesk tourne autour de 365$/mois ou 2 900$/an, souvent pris via l'AEC Collection (qui regroupe Revit, AutoCAD et d'autres). C'est un investissement lourd, justifié seulement par un usage professionnel régulier.\n\nÀ qui ça s'adresse : aux architectes, ingénieurs et dessinateurs qui travaillent sur des projets de bâtiment en BIM, souvent parce que le client ou la réglementation l'exigent. Pour de la 3D d'architecture intérieure ou de la présentation rapide, SketchUp est bien plus léger et moins cher. ArchiCAD est le principal concurrent direct sur le BIM. Revit reste incontournable dès que le BIM collaboratif est au cœur du métier.",
+    "shortDescription": "Logiciel BIM (Building Information Modeling) d'Autodesk pour la conception architecturale, l'ingénierie et la gestion de projets bâtiment. Coordonne plans, élévations, coupes et planifications automatiquement.",
+    "longDescription": "Logiciel BIM (Building Information Modeling) d'Autodesk pour la conception architecturale, l'ingénierie et la gestion de projets bâtiment. Coordonne plans, élévations, coupes et planifications automatiquement.\n\nFonctions clés : Modélisation BIM 3D paramétrique complète ; Génération automatique de plans, élévations, coupes, nomenclatures ; Collaboration en temps réel via BIM 360 (cloud Autodesk) ; Outils d'analyse structurelle et MEP intégrés ; Compatibilité avec les plugins et API ; Support de la visualisation et du rendu ; Gestion de projet et planification intégrées.\n\nRevit s'impose pour la pratique BIM professionnelle en architecture/ingénierie ; pour design leger ou petits projets, SketchUp ou Blender suffisent.",
     "affiliateLink": "https://autodesk.com/products/revit",
     "websiteUrl": "https://autodesk.com/products/revit",
     "defaultMonthlyPrice": 268.47,
     "pricing": {
-      "free": "Aucune version gratuite, essai uniquement",
-      "paid": "Environ 365$/mois ou 2 900$/an, souvent via l'AEC Collection"
+      "free": "Essai gratuit disponible ; version gratuite inexistante, abonnement obligatoire",
+      "paid": "Revit Annual: USD 3005/an ; Revit Monthly: USD 380/mois ; Revit LT Annual: USD 560/an ; Revit LT Monthly: USD 70/mois"
     },
     "logo": "",
     "soloRelevance": "medium",
@@ -125465,7 +125525,7 @@
         "Aucune version gratuite, essai uniquement",
         "Environ 365$/mois ou 2 900$/an, souvent via l'AEC Collection"
       ],
-      "verified_on": "2026-06-15",
+      "verified_on": "2026-07-24",
       "source_domain": "autodesk.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
@@ -125473,7 +125533,7 @@
       "price_reliability": "low",
       "location_sensitive": false,
       "official_source_url": "https://autodesk.com/products/revit",
-      "verification_status": "official_site_only",
+      "verification_status": "official_explicit",
       "compare_price_monthly_eur": 268.47
     },
     "decision_policy_v3": {
@@ -125484,8 +125544,8 @@
       "never_auto_cancel_reason": "Couche non substituable par défaut.",
       "requires_context_questions": true
     },
-    "shortDescriptionEn": "The reference BIM software for architects and structural engineers.",
-    "longDescriptionEn": "Revit is the reference BIM (Building Information Modeling) software, the central tool of architecture firms and structural and MEP engineering offices. Unlike a simple drawing tool, Revit builds an intelligent digital model: each wall, column or duct carries information, and any change propagates automatically to plans, sections and schedules. That's what made it the standard for team building design.\n\nThe price matches its positioning: there's no free version, and the Autodesk subscription runs around $365/month or $2,900/year, often bought via the AEC Collection (which bundles Revit, AutoCAD and others). It's a heavy investment, justified only by regular professional use.\n\nWho it's for: architects, engineers and drafters working on BIM building projects, often because the client or regulations require it. For interior architecture 3D or quick presentation, SketchUp is far lighter and cheaper. ArchiCAD is the main direct competitor on BIM. Revit remains essential once collaborative BIM is at the heart of the job.",
+    "shortDescriptionEn": "Autodesk's BIM (Building Information Modeling) software for architectural design, engineering, and building project management. Automatically coordinates plans, elevations, sections, and schedules.",
+    "longDescriptionEn": "Autodesk's BIM (Building Information Modeling) software for architectural design, engineering, and building project management. Automatically coordinates plans, elevations, sections, and schedules.\n\nKey strengths: Complete automatic coordination of BIM documents.; Industry-recognized standard in professional architecture.; Native cloud collaboration (BIM 360).; Extensive training resources available.; Integration with Autodesk suite.; Built-in project management..\n\nRevit is essential for professional BIM practice in architecture/engineering; for light design or small projects, SketchUp or Blender suffice.",
     "prosEn": [
       "Complete automatic coordination of BIM documents.",
       "Industry-recognized standard in professional architecture.",
@@ -125522,12 +125582,15 @@
       "threshold": "Revit is essential for professional BIM practice in architecture/engineering; for light design or small projects, SketchUp or Blender suffice."
     },
     "pricingEn": {
-      "free": "No free version, trial only",
-      "paid": "Around $365/month or $2,900/year, often via the AEC Collection"
+      "free": "Essai gratuit disponible ; version gratuite inexistante, abonnement obligatoire",
+      "paid": "Revit Annual: USD 3005/an ; Revit Monthly: USD 380/mois ; Revit LT Annual: USD 560/an ; Revit LT Monthly: USD 70/mois"
     },
     "force_silence": false,
-    "description": "Revit, c'est le logiciel de référence du BIM (Building Information Modeling), l'outil central des cabinets d'architecture et des bureaux d'études structure et fluides (MEP). Contrairement à un simple logiciel de dessin, Revit construit une maquette numérique intelligente : chaque mur, poteau ou gaine porte des informations, et toute modification se répercute automatiquement sur les plans, coupes et nomenclatures. C'est ce qui en a fait le standard de la conception de bâtiment en équipe.\n\nLe prix est à la hauteur de son positionnement : il n'y a pas de version gratuite, et l'abonnement Autodesk tourne autour de 365$/mois ou 2 900$/an, souvent pris via l'AEC Collection (qui regroupe Revit, AutoCAD et d'autres). C'est un investissement lourd, justifié seulement par un usage professionnel régulier.\n\nÀ qui ça s'adresse : aux architectes, ingénieurs et dessinateurs qui travaillent sur des projets de bâtiment en BIM, souvent parce que le client ou la réglementation l'exigent. Pour de la 3D d'architecture intérieure ou de la présentation rapide, SketchUp est bien plus léger et moins cher. ArchiCAD est le principal concurrent direct sur le BIM. Revit reste incontournable dès que le BIM collaboratif est au cœur du métier.",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/revit.jpg"
+    "description": "Logiciel BIM (Building Information Modeling) d'Autodesk pour la conception architecturale, l'ingénierie et la gestion de projets bâtiment. Coordonne plans, élévations, coupes et planifications automatiquement.\n\nFonctions clés : Modélisation BIM 3D paramétrique complète ; Génération automatique de plans, élévations, coupes, nomenclatures ; Collaboration en temps réel via BIM 360 (cloud Autodesk) ; Outils d'analyse structurelle et MEP intégrés ; Compatibilité avec les plugins et API ; Support de la visualisation et du rendu ; Gestion de projet et planification intégrées.\n\nRevit s'impose pour la pratique BIM professionnelle en architecture/ingénierie ; pour design leger ou petits projets, SketchUp ou Blender suffisent.",
+    "ogImageUrl": "https://images.ctfassets.net/v7wr16nrr0mz/USDuwSeAOZpDfwimuqRiN/190b88f9077d7fa38fdb74eb0888e351/see-whats-new-autodesk-revit-2025-thumb-788x444.avif",
+    "galleryImages": [
+      "https://images.ctfassets.net/v7wr16nrr0mz/5rtdJ4GuP4jMxGljvUZhib/3f3be6fbb7edcab405ea7ea841e8a46a/see-whats-next-for-autodesk-revit-thumb-788x444.avif"
+    ]
   },
   {
     "id": "rewardful",
@@ -125787,24 +125850,24 @@
     "slug": "rhino",
     "name": "Rhino",
     "categoryId": "design-tools",
-    "shortDescription": "Modeleur 3D NURBS précis (Rhinoceros) pour design produit, archi et bijouterie.",
-    "shortDescriptionEn": "Precise NURBS 3D modeler (Rhinoceros) for product design, architecture and jewelry.",
+    "shortDescription": "Logiciel de modélisation 3D polyvalent basé sur NURBS. Utilisé en architecture, design industriel, bijouterie, design marin et VFX. Extensible via Grasshopper (programmation visuelle) pour la conception paramétrique.",
+    "shortDescriptionEn": "Versatile NURBS-based 3D modeling software. Used in architecture, industrial design, jewelry, marine design, and VFX. Extensible via Grasshopper (visual programming) for parametric design.",
     "pricing": {
-      "free": "Essai gratuit 90 jours ; licence éducation ~195$",
-      "paid": "Licence perpétuelle ~995$ (achat unique, pas d'abonnement)"
+      "free": "Essai gratuit de 90 jours (pas de carte de crédit requise)",
+      "paid": "Commercial (New): EUR 995 (~USD 995 équivalent, perpétuel) ; Commercial (Upgrade): EUR 595 (licence antérieure requise) ; Student (New): EUR 195 ; Evaluation: Gratuit (90 jours)"
     },
     "pricingEn": {
-      "free": "90-day free trial; education license ~$195",
-      "paid": "Perpetual license ~$995 (one-time, no subscription)"
+      "free": "Essai gratuit de 90 jours (pas de carte de crédit requise)",
+      "paid": "Commercial (New): EUR 995 (~USD 995 équivalent, perpétuel) ; Commercial (Upgrade): EUR 595 (licence antérieure requise) ; Student (New): EUR 195 ; Evaluation: Gratuit (90 jours)"
     },
     "defaultMonthlyPrice": 995,
     "affiliateLink": "https://www.rhino3d.com",
     "websiteUrl": "https://www.rhino3d.com",
     "logo": "",
     "category": "design-tools",
-    "description": "Rhino (Rhinoceros), c'est le modeleur 3D NURBS de référence : là où Blender ou Cinema 4D travaillent en maillage (polygones), Rhino manipule des surfaces mathématiques précises au centième. C'est ce qui en fait le chouchou du design produit, de la bijouterie, de l'architecture et du design industriel ou naval, partout où la précision des courbes compte.\n\nSon arme secrète, c'est Grasshopper : un éditeur visuel de programmation paramétrique intégré, qui permet de générer des formes complexes et du design computationnel sans coder. C'est devenu un standard de l'archi paramétrique.\n\nMais l'argument qui fait mouche en 2026, c'est le modèle économique : Rhino se vend en licence perpétuelle (achat unique autour de 995$), sans abonnement. Dans un monde où tout est devenu mensuel (Autodesk, Adobe, Maxon), payer une fois et posséder son outil est rare et très apprécié. Disponible sur Windows et Mac. Pour de la modélisation maillage gratuite, Blender reste l'alternative ; mais pour la précision NURBS et la liberté de la licence perpétuelle, Rhino n'a pas vraiment d'équivalent abordable.",
-    "longDescription": "Rhino (Rhinoceros), c'est le modeleur 3D NURBS de référence : là où Blender ou Cinema 4D travaillent en maillage (polygones), Rhino manipule des surfaces mathématiques précises au centième. C'est ce qui en fait le chouchou du design produit, de la bijouterie, de l'architecture et du design industriel ou naval, partout où la précision des courbes compte.\n\nSon arme secrète, c'est Grasshopper : un éditeur visuel de programmation paramétrique intégré, qui permet de générer des formes complexes et du design computationnel sans coder. C'est devenu un standard de l'archi paramétrique.\n\nMais l'argument qui fait mouche en 2026, c'est le modèle économique : Rhino se vend en licence perpétuelle (achat unique autour de 995$), sans abonnement. Dans un monde où tout est devenu mensuel (Autodesk, Adobe, Maxon), payer une fois et posséder son outil est rare et très apprécié. Disponible sur Windows et Mac. Pour de la modélisation maillage gratuite, Blender reste l'alternative ; mais pour la précision NURBS et la liberté de la licence perpétuelle, Rhino n'a pas vraiment d'équivalent abordable.",
-    "longDescriptionEn": "Rhino (Rhinoceros) is the reference NURBS 3D modeler: where Blender or Cinema 4D work with meshes (polygons), Rhino handles precise mathematical surfaces accurate to a hundredth. That makes it the favorite of product design, jewelry, architecture and industrial or naval design, anywhere curve precision matters.\n\nIts secret weapon is Grasshopper: a built-in visual parametric programming editor that lets you generate complex shapes and computational design without coding. It has become a standard of parametric architecture.\n\nBut the argument that lands in 2026 is the business model: Rhino sells as a perpetual license (a one-time purchase around $995), with no subscription. In a world where everything went monthly (Autodesk, Adobe, Maxon), paying once and owning your tool is rare and much appreciated. Available on Windows and Mac. For free mesh modeling, Blender remains the alternative; but for NURBS precision and the freedom of a perpetual license, Rhino has no real affordable equivalent.",
+    "description": "Logiciel de modélisation 3D polyvalent basé sur NURBS. Utilisé en architecture, design industriel, bijouterie, design marin et VFX. Extensible via Grasshopper (programmation visuelle) pour la conception paramétrique.\n\nFonctions clés : Modélisation NURBS courbes et surfaces complète ; Subdivision Surface (SubD) et polygon meshes ; Point clouds et nurbs editing ; Grasshopper : programmation visuelle paramétrique ; ShrinkWrap : maillage étanche pour impression 3D ; Moteur de rendu amélioré avec Metal sur Mac ; Support cross-platform (Windows, macOS) ; Import/export multiples formats (DWG, STEP, STL, OBJ, FBX, SKP, etc.).\n\nRhino s'impose pour les workflows NURBS précis (architecture, joaillerie, marine) ; pour la sculpture organique ou jeux, Blender ou ZBrush conviennent.",
+    "longDescription": "Logiciel de modélisation 3D polyvalent basé sur NURBS. Utilisé en architecture, design industriel, bijouterie, design marin et VFX. Extensible via Grasshopper (programmation visuelle) pour la conception paramétrique.\n\nFonctions clés : Modélisation NURBS courbes et surfaces complète ; Subdivision Surface (SubD) et polygon meshes ; Point clouds et nurbs editing ; Grasshopper : programmation visuelle paramétrique ; ShrinkWrap : maillage étanche pour impression 3D ; Moteur de rendu amélioré avec Metal sur Mac ; Support cross-platform (Windows, macOS) ; Import/export multiples formats (DWG, STEP, STL, OBJ, FBX, SKP, etc.).\n\nRhino s'impose pour les workflows NURBS précis (architecture, joaillerie, marine) ; pour la sculpture organique ou jeux, Blender ou ZBrush conviennent.",
+    "longDescriptionEn": "Versatile NURBS-based 3D modeling software. Used in architecture, industrial design, jewelry, marine design, and VFX. Extensible via Grasshopper (visual programming) for parametric design.\n\nKey strengths: One-time perpetual license (no subscription).; Unmatched NURBS and industrial precision.; Grasshopper for advanced parametric design.; Native cross-platform (Windows, Mac).; 90-day free trial without credit card.; Very complete export/import format support.; No hidden maintenance fees..\n\nRhino is essential for precise NURBS workflows (architecture, jewelry, marine); for organic sculpting or games, Blender or ZBrush fit better.",
     "verdict": {
       "keepIf": [
         "Vous travaillez en architecture, design ou VFX avec géométrie complexe.",
@@ -125883,7 +125946,7 @@
       "cautions": [
         "Licence perpétuelle ~995$ (achat unique) ; licence éducation ~195$"
       ],
-      "verified_on": "2026-06-17",
+      "verified_on": "2026-07-24",
       "source_domain": "rhino3d.com",
       "compare_plan_kind": "perpetual",
       "compare_plan_name": "Licence perpétuelle",
@@ -125939,7 +126002,7 @@
       "fusion-360",
       "sketchup-pro"
     ],
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/rhino.jpg",
+    "ogImageUrl": "https://www.rhino3d.com/en/features/shrinkwrap/thumbnail_hu10919497186582654094.png",
     "host_app": null,
     "bundle_parent": null,
     "ia_use_case": null,
@@ -125951,7 +126014,12 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "force_silence": false
+    "force_silence": false,
+    "galleryImages": [
+      "https://www.rhino3d.com/en/stories/modeling/thumbnail_hu9337068004090836434.png",
+      "https://www.rhino3d.com/en/features/subd/thumbnail_hu14037153014586131710.png",
+      "https://www.rhino3d.com/en/features/display/metal/thumbnail_hu1106646715459575417.png"
+    ]
   },
   {
     "id": "rightfont",
@@ -126317,14 +126385,14 @@
     "name": "Rive",
     "slug": "rive",
     "category": "design-tools",
-    "shortDescription": "Animation interactive pour le web et le mobile, alternative avancée à Lottie.",
-    "longDescription": "Rive sert à créer des animations interactives qui tournent vraiment dans une app ou un site, pas juste une vidéo qui joue en boucle. Tu dessines, tu animes, et surtout tu définis des state machines : l'animation réagit aux actions de l'utilisateur (survol, clic, chargement, état d'un bouton). Le fichier exporté est léger et se lit nativement via les runtimes Rive pour le web, iOS, Android, Flutter ou React Native.\n\nLa comparaison naturelle, c'est Lottie. Pour une animation simple qui joue en boucle, Lottie (export Bodymovin depuis After Effects) suffit largement et reste gratuit. Rive prend l'avantage dès que l'animation doit être interactive ou pilotée par la logique de l'app : c'est là qu'il n'a pas vraiment d'équivalent.\n\nCôté prix : tu peux concevoir gratuitement dans l'éditeur, l'offre payante démarre au plan Cadet à 9$/mois (un palier d'entrée plus abordable qu'avant), puis Voyager à 32$/mois pour les équipes. Pour un freelance qui livre une micro-interaction de temps en temps, le gratuit couvre déjà beaucoup.",
+    "shortDescription": "Plateforme de design et animation interactive. Unifies design, animation, et codage dans un seul éditeur. Déploiement natif sur iOS, Android, web (React, Flutter), Unreal, Unity sans mockups ni prototypes intermédiaires.",
+    "longDescription": "Plateforme de design et animation interactive. Unifies design, animation, et codage dans un seul éditeur. Déploiement natif sur iOS, Android, web (React, Flutter), Unreal, Unity sans mockups ni prototypes intermédiaires.\n\nFonctions clés : Éditeur collaboratif temps-réel pour design et animation ; State machine pour la gestion d'interactions complexes ; GPU-accelerated rendering (120fps) via Rive Renderer ; Scripting en direct pour automation et logique ; Deployment multi-plateforme natif (iOS, Android, web, Flutter, Unity, Unreal) ; AI-assisted authoring avec crédits IA inclus ; Intégrations natives (Webflow, Framer, Wix Studio) ; Compliance et security (SOC 2 Type II, SSO, custom S3 sur Enterprise).\n\nRive s'impose pour animations interactives cross-plateforme production-ready ; pour prototypes simples, Figma ou Adobe XD suffisent.",
     "affiliateLink": "https://rive.app",
     "websiteUrl": "https://rive.app",
     "defaultMonthlyPrice": 9,
     "pricing": {
-      "free": "Conception gratuite dans l'éditeur, projets publics illimités",
-      "paid": "Plan Cadet à 9$/mois, Voyager à 32$/mois pour les équipes"
+      "free": "Plan gratuit avec 3 fichiers collaboratifs et accès limité aux agents IA",
+      "paid": "Free: Gratuit ; Cadet: USD 9/mois par siège (jusqu'à 3 sièges) ; Voyager: USD 32/mois par siège ; Enterprise: Montants sur la page officielle"
     },
     "logo": "",
     "soloRelevance": "medium",
@@ -126439,14 +126507,14 @@
         "Conception gratuite dans l'éditeur",
         "Plan d'entrée Cadet à 9$/mois, Voyager à 32$/mois"
       ],
-      "verified_on": "2026-06-15",
+      "verified_on": "2026-07-24",
       "source_domain": "rive.app",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
       "compare_plan_name": "Cadet",
       "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://rive.app/pricing",
+      "official_source_url": "https://rive.app",
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 9
     },
@@ -126458,8 +126526,8 @@
       "never_auto_cancel_reason": "Couche non substituable par défaut.",
       "requires_context_questions": true
     },
-    "shortDescriptionEn": "Interactive animation for web and mobile, an advanced alternative to Lottie.",
-    "longDescriptionEn": "Rive is for building interactive animations that actually run inside an app or a site, not just a video looping on screen. You draw, you animate, and above all you define state machines: the animation reacts to user actions (hover, click, loading, a button's state). The exported file is light and plays natively through Rive runtimes for web, iOS, Android, Flutter or React Native.\n\nThe natural comparison is Lottie. For a simple animation that loops, Lottie (Bodymovin export from After Effects) is plenty and stays free. Rive pulls ahead the moment the animation needs to be interactive or driven by the app's logic: that's where it has no real equivalent.\n\nOn price: you can design for free in the editor, the paid tier starts at the Cadet plan at $9/month (a more affordable entry point than before), then Voyager at $32/month for teams. For a freelancer shipping the occasional micro-interaction, the free tier already covers a lot.",
+    "shortDescriptionEn": "Interactive design and animation platform. Unifies design, animation, and coding in one editor. Native deployment to iOS, Android, web (React, Flutter), Unreal, Unity without mockups or intermediate prototypes.",
+    "longDescriptionEn": "Interactive design and animation platform. Unifies design, animation, and coding in one editor. Native deployment to iOS, Android, web (React, Flutter), Unreal, Unity without mockups or intermediate prototypes.\n\nKey strengths: Complete unification of design-animation-development.; Native multi-platform deployment without code duplication.; State machine for well-managed complex interactions.; Powerful real-time collaboration.; Accessible free plan with 3 files.; Native integrations with Webflow, Framer, Wix.; Markedly lighter files than alternatives..\n\nRive is essential for cross-platform interactive animations production-ready; for simple prototypes, Figma or Adobe XD suffice.",
     "prosEn": [
       "Complete unification of design-animation-development.",
       "Native multi-platform deployment without code duplication.",
@@ -126497,12 +126565,17 @@
       "threshold": "Rive is essential for cross-platform interactive animations production-ready; for simple prototypes, Figma or Adobe XD suffice."
     },
     "pricingEn": {
-      "free": "Free design in the editor, unlimited public projects",
-      "paid": "Cadet plan at $9/month, Voyager at $32/month for teams"
+      "free": "Plan gratuit avec 3 fichiers collaboratifs et accès limité aux agents IA",
+      "paid": "Free: Gratuit ; Cadet: USD 9/mois par siège (jusqu'à 3 sièges) ; Voyager: USD 32/mois par siège ; Enterprise: Montants sur la page officielle"
     },
     "force_silence": false,
-    "description": "Rive sert à créer des animations interactives qui tournent vraiment dans une app ou un site, pas juste une vidéo qui joue en boucle. Tu dessines, tu animes, et surtout tu définis des state machines : l'animation réagit aux actions de l'utilisateur (survol, clic, chargement, état d'un bouton). Le fichier exporté est léger et se lit nativement via les runtimes Rive pour le web, iOS, Android, Flutter ou React Native.\n\nLa comparaison naturelle, c'est Lottie. Pour une animation simple qui joue en boucle, Lottie (export Bodymovin depuis After Effects) suffit largement et reste gratuit. Rive prend l'avantage dès que l'animation doit être interactive ou pilotée par la logique de l'app : c'est là qu'il n'a pas vraiment d'équivalent.\n\nCôté prix : tu peux concevoir gratuitement dans l'éditeur, l'offre payante démarre au plan Cadet à 9$/mois (un palier d'entrée plus abordable qu'avant), puis Voyager à 32$/mois pour les équipes. Pour un freelance qui livre une micro-interaction de temps en temps, le gratuit couvre déjà beaucoup.",
-    "ogImageUrl": "https://framerusercontent.com/images/yEWMbP7UtsS81SlkoxTasfabvc.png"
+    "description": "Plateforme de design et animation interactive. Unifies design, animation, et codage dans un seul éditeur. Déploiement natif sur iOS, Android, web (React, Flutter), Unreal, Unity sans mockups ni prototypes intermédiaires.\n\nFonctions clés : Éditeur collaboratif temps-réel pour design et animation ; State machine pour la gestion d'interactions complexes ; GPU-accelerated rendering (120fps) via Rive Renderer ; Scripting en direct pour automation et logique ; Deployment multi-plateforme natif (iOS, Android, web, Flutter, Unity, Unreal) ; AI-assisted authoring avec crédits IA inclus ; Intégrations natives (Webflow, Framer, Wix Studio) ; Compliance et security (SOC 2 Type II, SSO, custom S3 sur Enterprise).\n\nRive s'impose pour animations interactives cross-plateforme production-ready ; pour prototypes simples, Figma ou Adobe XD suffisent.",
+    "ogImageUrl": "https://framerusercontent.com/images/aTosqj5HowH9kNricIFp8yEKBc.png?width=3432&height=940",
+    "galleryImages": [
+      "https://framerusercontent.com/images/sHSAxXoU8kOqJhNeQhMnFiru36s.jpg?width=2400&height=3000",
+      "https://framerusercontent.com/images/aRwPYvM8aGB6CGXUyowDsgSFagI.jpeg?width=560&height=560",
+      "https://framerusercontent.com/images/yEWMbP7UtsS81SlkoxTasfabvc.png"
+    ]
   },
   {
     "id": "riverpod",
@@ -136658,14 +136731,14 @@
     "name": "SketchUp Pro",
     "slug": "sketchup-pro",
     "category": "design-tools",
-    "shortDescription": "Modélisation 3D intuitive pour architectes, décorateurs et scénographes.",
-    "longDescription": "SketchUp, c'est le logiciel de modélisation 3D le plus accessible. Sa force, c'est la prise en main : pousser-tirer des volumes, dessiner un plan, monter une maquette de pièce ou de stand en quelques heures là où des outils comme Revit demandent des semaines d'apprentissage. C'est l'outil de référence de l'architecture d'intérieur, de la scénographie et de l'aménagement.\n\nLe modèle est par abonnement : SketchUp Go autour de 119$/an pour la version web, et SketchUp Pro à environ 349$/an (le palier vraiment utile, avec la version bureau, LayOut pour les plans et l'import/export pro). Une version SketchUp Free existe dans le navigateur pour s'initier, et il y a un essai.\n\nÀ qui ça s'adresse : aux architectes d'intérieur, décorateurs, scénographes et à tous ceux qui ont besoin de modéliser vite et de présenter au client. Pour du BIM lourd et des projets de bâtiment complexes, Revit ou Archicad sont plus adaptés. Pour de la 3D libre et gratuite, Blender va beaucoup plus loin mais avec une courbe d'apprentissage autrement plus raide. SketchUp reste le meilleur compromis simplicité-vitesse pour la 3D d'espace.",
+    "shortDescription": "Logiciel de modélisation 3D (Trimble) pour l'architecture, l'aménagement et le design produit, sur bureau, web et mobile.",
+    "longDescription": "Logiciel de modélisation 3D (Trimble) pour l'architecture, l'aménagement et le design produit, sur bureau, web et mobile.\n\nFonctions clés : Modélisation 3D multi-plateforme (bureau, iPad, web) ; 1 000+ extensions pour adapter les workflows ; Stockage cloud et projets illimités (Trimble Connect) ; Rendu et visualisation photoréalistes.\n\nSketchUp Pro s'impose quand la modélisation 3D (archi, aménagement, produit) est un besoin régulier ; pour de la 3D occasionnelle ou artistique, un autre outil est plus adapté.",
     "affiliateLink": "https://sketchup.com",
     "websiteUrl": "https://sketchup.com",
     "defaultMonthlyPrice": 29.44,
     "pricing": {
-      "free": "SketchUp Free (version web limitée) et essai",
-      "paid": "Go à ~119$/an, Pro à ~349$/an (version bureau, LayOut)"
+      "free": "SketchUp for Schools gratuit avec un compte éducation Google/Microsoft ; pas de plan gratuit grand public.",
+      "paid": "Go: 10,75 $/mois (annuel) ; Pro: 33,25 $/mois (annuel) ; Studio: 68,25 $/mois (annuel)"
     },
     "logo": "",
     "soloRelevance": "medium",
@@ -136772,15 +136845,15 @@
         "Version SketchUp Free limitée (web) et essai",
         "Go à ~119$/an, Pro à ~349$/an (version bureau, LayOut)"
       ],
-      "verified_on": "2026-06-15",
-      "source_domain": "sketchup.com",
+      "verified_on": "2026-07-23",
+      "source_domain": "sketchup.trimble.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
       "compare_plan_name": "Entry paid plan",
       "price_reliability": "low",
       "location_sensitive": false,
-      "official_source_url": "https://sketchup.com",
-      "verification_status": "official_site_only",
+      "official_source_url": "https://sketchup.trimble.com/en/plans-and-pricing",
+      "verification_status": "official_explicit",
       "compare_price_monthly_eur": 29.44
     },
     "decision_policy_v3": {
@@ -136791,8 +136864,8 @@
       "never_auto_cancel_reason": "Couche non substituable par défaut.",
       "requires_context_questions": true
     },
-    "shortDescriptionEn": "Intuitive 3D modelling for architects, interior designers, and set designers.",
-    "longDescriptionEn": "SketchUp is the most accessible 3D modeling software. Its strength is how quick it is to pick up: push-pull volumes, draw a plan, build a room or booth mockup in a few hours where tools like Revit take weeks to learn. It's the reference tool for interior architecture, set design and space planning.\n\nThe model is subscription-based: SketchUp Go around $119/year for the web version, and SketchUp Pro at about $349/year (the genuinely useful tier, with the desktop app, LayOut for plans and pro import/export). A SketchUp Free version exists in the browser to get started, and there's a trial.\n\nWho it's for: interior architects, decorators, set designers and anyone who needs to model fast and present to a client. For heavy BIM and complex building projects, Revit or Archicad fit better. For free, open 3D, Blender goes much further but with a far steeper learning curve. SketchUp remains the best simplicity-speed balance for spatial 3D.",
+    "shortDescriptionEn": "3D modeling software (Trimble) for architecture, interior design, and product design, on desktop, web, and mobile.",
+    "longDescriptionEn": "3D modeling software (Trimble) for architecture, interior design, and product design, on desktop, web, and mobile.\n\nKey strengths: Accessible, quick-to-learn 3D modelling.; Ecosystem of 1,000+ extensions.; Cross-platform (desktop, web, iPad) with cloud storage.; Photorealistic rendering and visualisation..\n\nSketchUp Pro makes sense when 3D modelling (arch, interiors, product) is a regular need; for occasional or artistic 3D, another tool fits better.",
     "prosEn": [
       "Accessible, quick-to-learn 3D modelling.",
       "Ecosystem of 1,000+ extensions.",
@@ -136823,12 +136896,17 @@
       "threshold": "SketchUp Pro makes sense when 3D modelling (arch, interiors, product) is a regular need; for occasional or artistic 3D, another tool fits better."
     },
     "pricingEn": {
-      "free": "SketchUp Free (limited web version) and a trial",
-      "paid": "Go at ~$119/year, Pro at ~$349/year (desktop app, LayOut)"
+      "free": "SketchUp for Schools gratuit avec un compte éducation Google/Microsoft ; pas de plan gratuit grand public.",
+      "paid": "Go: 10,75 $/mois (annuel) ; Pro: 33,25 $/mois (annuel) ; Studio: 68,25 $/mois (annuel)"
     },
     "force_silence": false,
-    "description": "SketchUp, c'est le logiciel de modélisation 3D le plus accessible. Sa force, c'est la prise en main : pousser-tirer des volumes, dessiner un plan, monter une maquette de pièce ou de stand en quelques heures là où des outils comme Revit demandent des semaines d'apprentissage. C'est l'outil de référence de l'architecture d'intérieur, de la scénographie et de l'aménagement.\n\nLe modèle est par abonnement : SketchUp Go autour de 119$/an pour la version web, et SketchUp Pro à environ 349$/an (le palier vraiment utile, avec la version bureau, LayOut pour les plans et l'import/export pro). Une version SketchUp Free existe dans le navigateur pour s'initier, et il y a un essai.\n\nÀ qui ça s'adresse : aux architectes d'intérieur, décorateurs, scénographes et à tous ceux qui ont besoin de modéliser vite et de présenter au client. Pour du BIM lourd et des projets de bâtiment complexes, Revit ou Archicad sont plus adaptés. Pour de la 3D libre et gratuite, Blender va beaucoup plus loin mais avec une courbe d'apprentissage autrement plus raide. SketchUp reste le meilleur compromis simplicité-vitesse pour la 3D d'espace.",
-    "ogImageUrl": "https://images.ctfassets.net/5qimfmsew7zl/CLeItCuQzyar0Ix1BPD8b/7cb6eb778c29ab02b7aca31fc21c0450/SU-Website-Home-S1.jpg"
+    "description": "Logiciel de modélisation 3D (Trimble) pour l'architecture, l'aménagement et le design produit, sur bureau, web et mobile.\n\nFonctions clés : Modélisation 3D multi-plateforme (bureau, iPad, web) ; 1 000+ extensions pour adapter les workflows ; Stockage cloud et projets illimités (Trimble Connect) ; Rendu et visualisation photoréalistes.\n\nSketchUp Pro s'impose quand la modélisation 3D (archi, aménagement, produit) est un besoin régulier ; pour de la 3D occasionnelle ou artistique, un autre outil est plus adapté.",
+    "ogImageUrl": "https://images.ctfassets.net/5qimfmsew7zl/1M12I2Eyw59Y4U4SJqCGin/a46834b0caf27f29ea566755506da7f2/SU2025-Website-NavigationPromo-WhySketchUp.jpg?w=400&h=300&fm=webp",
+    "galleryImages": [
+      "https://images.ctfassets.net/5qimfmsew7zl/1NtddOku1Yc7BZUK04wmDr/cbb40283f5a37aa22a16c7ef0bca8371/SU2025-Website-NavigationPromo-Plans.jpg?w=400&h=300&fm=webp",
+      "https://images.ctfassets.net/5qimfmsew7zl/7BBCJXCySakQn9d60rgooy/3618cada1e3f7fcd8253f84ad5cbe711/SU26-Event-3DBC-Website-S1-Spotlight-1875x820-r2-042926.jpg?fm=webp&w=1920&h=810&fit=fill&f=bottom&q=85",
+      "https://images.ctfassets.net/5qimfmsew7zl/CLeItCuQzyar0Ix1BPD8b/7cb6eb778c29ab02b7aca31fc21c0450/SU-Website-Home-S1.jpg"
+    ]
   },
   {
     "id": "skribble",
@@ -139080,28 +139158,28 @@
     "slug": "solid-inspector2",
     "name": "Solid Inspector²",
     "categoryId": "design-tools",
-    "shortDescription": "Plugin SketchUp pour vérifier les volumes solides et repérer les problèmes de géométrie.",
-    "shortDescriptionEn": "SketchUp plugin to inspect solids and detect geometry issues.",
+    "shortDescription": "Extension SketchUp gratuite et open-source qui inspecte et répare les groupes/composants solides. Détecte les erreurs de géométrie courantes (trous, arêtes parasites, faces inversées) et offre des corrections automatiques.",
+    "shortDescriptionEn": "Free and open-source SketchUp extension that inspects and repairs solid groups and components. Detects common geometry errors (holes, stray edges, inverted faces) and offers automatic fixes.",
     "pricing": {
-      "free": "Gratuit",
-      "paid": "Don possible"
+      "free": "Extension complètement gratuite. Source code disponible sur GitHub.",
+      "paid": "Voir le tarif officiel."
     },
     "pricingEn": {
-      "free": "Free",
-      "paid": "Optional donation"
+      "free": "Extension complètement gratuite. Source code disponible sur GitHub.",
+      "paid": "Voir le tarif officiel."
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://extensions.sketchup.com/en/content/solid-inspector",
     "websiteUrl": "https://extensions.sketchup.com/en/content/solid-inspector",
     "logo": "",
     "category": "design-tools",
-    "description": "Extension gratuite pour SketchUp qui repère les défauts empêchant un groupe ou composant d'être un solide et répare automatiquement de nombreux problèmes.",
-    "longDescription": "Solid Inspector² analyse les groupes et composants SketchUp pour repérer les arêtes parasites, faces internes, trous et autres défauts empêchant d'obtenir un volume manifold. L'extension met les erreurs en évidence et peut réparer automatiquement une partie des problèmes.\n\nElle est particulièrement utile avant une impression 3D, un export CAO ou une opération booléenne. Elle reste un outil de diagnostic : les géométries ambiguës ou complexes demandent parfois une correction manuelle. La version officielle est gratuite, compatible avec SketchUp 2022 à 2026 sur macOS et Windows, et nécessite TT_Lib² 2.7.0.",
-    "longDescriptionEn": "Solid Inspector² scans SketchUp groups and components for stray edges, internal faces, holes, and other defects that prevent a manifold solid. It highlights errors and can automatically repair many common issues.\n\nIt is especially useful before 3D printing, CAD export, or boolean operations. It remains a diagnostic tool, so ambiguous or complex geometry may still require manual repair. The official extension is free, supports SketchUp 2022 through 2026 on macOS and Windows, and requires TT_Lib² 2.7.0.",
+    "description": "Extension SketchUp gratuite et open-source qui inspecte et répare les groupes/composants solides. Détecte les erreurs de géométrie courantes (trous, arêtes parasites, faces inversées) et offre des corrections automatiques.\n\nFonctions clés : Détection des erreurs : trous, arêtes parasites, faces inversées, arêtes masquées ; Affichage organisé des problèmes détectés ; Réparation automatique de la plupart des erreurs ; Compatible SketchUp 2014 et versions ultérieures ; Open-source et disponible sur GitHub ; Support Windows et macOS.\n\nSolid Inspector² s'impose pour les modélisateurs SketchUp travaillant avec des solides ; pour les surfaces ou modèles simples, ce n'est pas nécessaire.",
+    "longDescription": "Extension SketchUp gratuite et open-source qui inspecte et répare les groupes/composants solides. Détecte les erreurs de géométrie courantes (trous, arêtes parasites, faces inversées) et offre des corrections automatiques.\n\nFonctions clés : Détection des erreurs : trous, arêtes parasites, faces inversées, arêtes masquées ; Affichage organisé des problèmes détectés ; Réparation automatique de la plupart des erreurs ; Compatible SketchUp 2014 et versions ultérieures ; Open-source et disponible sur GitHub ; Support Windows et macOS.\n\nSolid Inspector² s'impose pour les modélisateurs SketchUp travaillant avec des solides ; pour les surfaces ou modèles simples, ce n'est pas nécessaire.",
+    "longDescriptionEn": "Free and open-source SketchUp extension that inspects and repairs solid groups and components. Detects common geometry errors (holes, stray edges, inverted faces) and offers automatic fixes.\n\nKey strengths: Completely free.; Open-source, transparent, and auditable.; Robust detection of common errors.; Automatic repair for most issues.; Essential for 3D print preparation..\n\nSolid Inspector² works for SketchUp modelers working with solids; for surfaces or simple models, it's not necessary.",
     "pricing_v5": {
-      "verified_on": "2026-08-28",
+      "verified_on": "2026-07-24",
       "source_domain": "extensions.sketchup.com",
-      "official_source_url": "https://extensions.sketchup.com/en/content/solid-inspector",
+      "official_source_url": "https://extensions.sketchup.com/extension/aad4e5d9-7115-4cac-9b75-750ed0902732/solid-inspector",
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 0
     },
@@ -139777,41 +139855,50 @@
     "slug": "specify",
     "name": "Specify",
     "categoryId": "design-tools",
-    "shortDescription": "Synchronisation de design tokens entre outils design et code.",
-    "shortDescriptionEn": "Design token synchronization between design tools and code.",
+    "shortDescription": "Plateforme de distribution de design tokens et d'assets qui relie les sources de design aux dépôts et outils de développement.",
+    "shortDescriptionEn": "Design token and asset distribution platform connecting design sources with development repositories and tools.",
     "pricing": {
-      "free": "Gratuit ou plan gratuit disponible",
-      "paid": null
+      "free": "Aucun plan gratuit permanent affiché ; essai à confirmer lors de l'inscription.",
+      "paid": "Essentials: 69 $ / mois, 1 utilisateur et 1 dépôt ; Teams: 134 $ / mois, 4 utilisateurs et 2 dépôts ; Enterprise: Sur devis"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
     "websiteUrl": "https://specifyapp.com",
     "logo": "",
     "category": "design-tools",
-    "longDescription": "Synchronisation de design tokens entre outils design et code.",
+    "longDescription": "Plateforme de distribution de design tokens et d'assets qui relie les sources de design aux dépôts et outils de développement.\n\nFonctions clés : Synchronisation des design tokens et assets ; Figma et Tokens Studio comme sources ; GitHub comme destination ; CLI et SDK d'automatisation ; Templates et parsers open source ; Format SDTF pour structurer les tokens.\n\nSpecify devient pertinent lorsque la synchronisation manuelle des tokens crée des erreurs ou mobilise plusieurs personnes chaque semaine.",
     "verdict": {
       "keepIf": [
-        "L’outil répond à un livrable régulier du métier."
+        "Votre équipe synchronise régulièrement des tokens entre Figma et le code.",
+        "Vous voulez automatiser plusieurs destinations depuis une source commune."
       ],
       "avoidIf": [
-        "Il sert seulement de doublon ponctuel dans la stack."
+        "Votre design system tient dans quelques variables gérées manuellement.",
+        "Le coût mensuel dépasse le temps réellement économisé."
       ],
-      "threshold": "À garder si utilisé chaque semaine ou facturé dans la prestation."
+      "threshold": "Specify devient pertinent lorsque la synchronisation manuelle des tokens crée des erreurs ou mobilise plusieurs personnes chaque semaine."
     },
     "pros": [
-      "Adapté à un workflow métier créatif.",
-      "Utile pour structurer une chaîne de production plus professionnelle."
+      "Automatisation entre design et développement.",
+      "Sources et destinations illimitées dans les plans affichés.",
+      "CLI, SDK et format de tokens documenté."
     ],
     "cons": [
-      "Peut devenir un coût dormant si le besoin n’est pas récurrent."
+      "Pas de plan gratuit permanent clairement affiché.",
+      "Nombre d'utilisateurs et de dépôts limité dans les plans d'entrée.",
+      "Configuration initiale exigeante pour une petite équipe."
     ],
     "useCases": [
-      "Production créative",
-      "Livraison client",
-      "Organisation métier"
+      "Distribuer les variables Figma vers GitHub.",
+      "Automatiser la transformation de tokens pour plusieurs plateformes.",
+      "Maintenir un design system partagé entre designers et développeurs."
     ],
     "covers": [],
-    "relevantFor": [],
+    "relevantFor": [
+      "Équipes design system",
+      "Product designers",
+      "Développeurs frontend"
+    ],
     "personas": [
       "designer"
     ],
@@ -139837,18 +139924,49 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
-    "ogImageUrl": "https://framerusercontent.com/images/fP6oA45bf0QBRGhw5Gmi0VYg.jpg",
-    "description": "Synchronisation de design tokens entre outils design et code.",
-    "longDescriptionEn": null,
-    "pricingEn": null,
-    "pricing_v5": null,
+    "ogImageUrl": "https://framerusercontent.com/images/Mf3WhKlT44JPgm014wOOq9AHI4.png",
+    "description": "Plateforme de distribution de design tokens et d'assets qui relie les sources de design aux dépôts et outils de développement.\n\nFonctions clés : Synchronisation des design tokens et assets ; Figma et Tokens Studio comme sources ; GitHub comme destination ; CLI et SDK d'automatisation ; Templates et parsers open source ; Format SDTF pour structurer les tokens.\n\nSpecify devient pertinent lorsque la synchronisation manuelle des tokens crée des erreurs ou mobilise plusieurs personnes chaque semaine.",
+    "longDescriptionEn": "Design token and asset distribution platform connecting design sources with development repositories and tools.\n\nKey strengths: Automation between design and development.; Unlimited sources and destinations in the displayed plans.; Documented CLI, SDK, and token format..\n\nSpecify becomes worthwhile when manual token synchronization creates errors or takes several people time every week.",
+    "pricingEn": {
+      "free": "Aucun plan gratuit permanent affiché ; essai à confirmer lors de l'inscription.",
+      "paid": "Essentials: 69 $ / mois, 1 utilisateur et 1 dépôt ; Teams: 134 $ / mois, 4 utilisateurs et 2 dépôts ; Enterprise: Sur devis"
+    },
+    "pricing_v5": {
+      "verified_on": "2026-08-31",
+      "official_source_url": "https://specifyapp.com/pricing",
+      "source_domain": "specifyapp.com",
+      "verification_status": "official_explicit"
+    },
     "seo": null,
-    "verdictEn": null,
-    "prosEn": null,
-    "consEn": null,
-    "useCasesEn": null,
+    "verdictEn": {
+      "keepIf": [
+        "Your team regularly synchronizes tokens between Figma and code.",
+        "You want to automate multiple destinations from one shared source."
+      ],
+      "avoidIf": [
+        "Your design system only contains a few manually managed variables.",
+        "The monthly cost exceeds the time the workflow actually saves."
+      ],
+      "threshold": "Specify becomes worthwhile when manual token synchronization creates errors or takes several people time every week."
+    },
+    "prosEn": [
+      "Automation between design and development.",
+      "Unlimited sources and destinations in the displayed plans.",
+      "Documented CLI, SDK, and token format."
+    ],
+    "consEn": [
+      "No clearly advertised permanent free plan.",
+      "Entry plans limit users and repositories.",
+      "Initial setup can be demanding for a small team."
+    ],
+    "useCasesEn": [
+      "Distribute Figma variables to GitHub.",
+      "Automate token transformations for several platforms.",
+      "Maintain a shared design system across designers and developers."
+    ],
     "decision_policy_v3": null,
-    "force_silence": false
+    "force_silence": false,
+    "galleryImages": []
   },
   {
     "id": "spendesk",
@@ -152112,14 +152230,14 @@
     "name": "Topaz Gigapixel AI",
     "slug": "topaz-gigapixel",
     "category": "design-tools",
-    "shortDescription": "Upscaling IA d'images jusqu'à 6x avec préservation des détails. Le meilleur du marché.",
-    "longDescription": "Topaz Gigapixel AI, c'est l'outil de référence pour agrandir des images par IA. Là où un agrandissement classique rend l'image floue et pixelisée, Gigapixel reconstruit les détails de façon bluffante : tu peux multiplier la résolution par 4 ou 6 et obtenir un résultat net, exploitable pour de l'impression grand format ou la restauration de vieilles photos. C'est devenu le standard chez les photographes et retoucheurs.\n\nLe modèle a évolué : longtemps en achat unique (~199$), Topaz est passé à l'abonnement en 2025 (autour de 99$/an). Les anciens acheteurs gardent leur licence, les nouveaux passent par l'abonnement.\n\nÀ qui ça s'adresse : à ceux qui ont besoin d'agrandir des images pour l'impression ou la restauration, où la qualité compte vraiment. Si tu n'agrandis que pour le web, des solutions gratuites ou Magnific AI suffisent souvent. Mais pour du haut de gamme, Gigapixel reste difficile à battre.",
+    "shortDescription": "Logiciel d'agrandissement d'images alimenté par l'IA, capable d'augmenter les photos jusqu'à 16x tout en conservant les détails et la qualité. Disponible pour Windows et macOS, avec intégration aux plugins Photoshop et Lightroom.",
+    "longDescription": "Logiciel d'agrandissement d'images alimenté par l'IA, capable d'augmenter les photos jusqu'à 16x tout en conservant les détails et la qualité. Disponible pour Windows et macOS, avec intégration aux plugins Photoshop et Lightroom.\n\nFonctions clés : 9 modèles IA d'agrandissement (Wonder 2 & 3, Standard, High Fidelity, Recover, Face Recovery, etc.) ; Rendu illimité en local (GPU) et cloud ; Intégration plugin Photoshop et Lightroom Classic ; Recuperation de détails, restauration, enhancement de qualité artistique.\n\nGigapixel excelle pour agrandir sans perte perceptible de qualité ; pour un usage très occasionnel, les solutions gratuites suffisent.",
     "affiliateLink": "https://topazlabs.com/gigapixel",
     "websiteUrl": "https://topazlabs.com/gigapixel",
     "defaultMonthlyPrice": 0,
     "pricing": {
-      "free": "",
-      "paid": "Environ 99$/an (modèle passé à l'abonnement en 2025), licences perpétuelles antérieures conservées"
+      "free": "Pas de version gratuite. Accès par abonnement uniquement.",
+      "paid": "Personal (mensuel): $29/mois ; Personal (annuel): $149/an ($12.42/mois) ; Pro (mensuel): $54/mois ; Pro (annuel): $499/an ($41.58/mois) ; Topaz Studio Bundle: $69/mois ou $399/an"
     },
     "logo": "",
     "soloRelevance": "medium",
@@ -152220,7 +152338,7 @@
       "cautions": [
         "Modèle passé à l'abonnement en 2025 (~99$/an)"
       ],
-      "verified_on": "2026-06-15",
+      "verified_on": "2026-07-24",
       "source_domain": "topazlabs.com",
       "usage_sensitive": false,
       "compare_plan_kind": "individual",
@@ -152228,7 +152346,7 @@
       "price_reliability": "low",
       "location_sensitive": false,
       "official_source_url": "https://topazlabs.com/gigapixel",
-      "verification_status": "official_site_only",
+      "verification_status": "official_explicit",
       "compare_price_monthly_eur": 0
     },
     "decision_policy_v3": {
@@ -152239,8 +152357,8 @@
       "never_auto_cancel_reason": "Couche non substituable par défaut.",
       "requires_context_questions": true
     },
-    "shortDescriptionEn": "AI image upscaling up to 6x with detail preservation. The market leader.",
-    "longDescriptionEn": "Topaz Gigapixel AI is the reference tool for AI image upscaling. Where classic enlargement leaves an image blurry and pixelated, Gigapixel reconstructs detail strikingly: you can multiply resolution by 4 or 6 and get a clean result usable for large-format printing or restoring old photos. It's become the standard among photographers and retouchers.\n\nThe model changed: long sold as a one-time purchase (~$199), Topaz moved to a subscription in 2025 (around $99/year). Existing buyers keep their license, new users go through the subscription.\n\nWho it's for: those who need to enlarge images for printing or restoration, where quality really matters. If you only upscale for the web, free solutions or Magnific AI are often enough. But for high-end work, Gigapixel is still hard to beat.",
+    "shortDescriptionEn": "AI-powered desktop image upscaling software that enlarges images up to 16x while maintaining detail and quality. Available for Windows and macOS with Adobe Photoshop and Lightroom Classic plugin integration.",
+    "longDescriptionEn": "AI-powered desktop image upscaling software that enlarges images up to 16x while maintaining detail and quality. Available for Windows and macOS with Adobe Photoshop and Lightroom Classic plugin integration.\n\nKey strengths: Highly effective AI technology for upscaling without visible degradation.; Seamless Photoshop and Lightroom integration.; Multiple specialized models (text, art, faces, etc.).; Cloud and local rendering included..\n\nGigapixel excels at upscaling with minimal quality loss; for occasional use, free alternatives suffice.",
     "prosEn": [
       "Highly effective AI technology for upscaling without visible degradation.",
       "Seamless Photoshop and Lightroom integration.",
@@ -152273,12 +152391,16 @@
       "threshold": "Gigapixel excels at upscaling with minimal quality loss; for occasional use, free alternatives suffice."
     },
     "pricingEn": {
-      "free": "",
-      "paid": "Around $99/year (subscription since 2025)"
+      "free": "Pas de version gratuite. Accès par abonnement uniquement.",
+      "paid": "Personal (mensuel): $29/mois ; Personal (annuel): $149/an ($12.42/mois) ; Pro (mensuel): $54/mois ; Pro (annuel): $499/an ($41.58/mois) ; Topaz Studio Bundle: $69/mois ou $399/an"
     },
     "force_silence": false,
-    "description": "Topaz Gigapixel AI, c'est l'outil de référence pour agrandir des images par IA. Là où un agrandissement classique rend l'image floue et pixelisée, Gigapixel reconstruit les détails de façon bluffante : tu peux multiplier la résolution par 4 ou 6 et obtenir un résultat net, exploitable pour de l'impression grand format ou la restauration de vieilles photos. C'est devenu le standard chez les photographes et retoucheurs.\n\nLe modèle a évolué : longtemps en achat unique (~199$), Topaz est passé à l'abonnement en 2025 (autour de 99$/an). Les anciens acheteurs gardent leur licence, les nouveaux passent par l'abonnement.\n\nÀ qui ça s'adresse : à ceux qui ont besoin d'agrandir des images pour l'impression ou la restauration, où la qualité compte vraiment. Si tu n'agrandis que pour le web, des solutions gratuites ou Magnific AI suffisent souvent. Mais pour du haut de gamme, Gigapixel reste difficile à battre.",
-    "ogImageUrl": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/68ca9105d4f07b7d38a3f7f7_opengraph-topaz-giga.webp"
+    "description": "Logiciel d'agrandissement d'images alimenté par l'IA, capable d'augmenter les photos jusqu'à 16x tout en conservant les détails et la qualité. Disponible pour Windows et macOS, avec intégration aux plugins Photoshop et Lightroom.\n\nFonctions clés : 9 modèles IA d'agrandissement (Wonder 2 & 3, Standard, High Fidelity, Recover, Face Recovery, etc.) ; Rendu illimité en local (GPU) et cloud ; Intégration plugin Photoshop et Lightroom Classic ; Recuperation de détails, restauration, enhancement de qualité artistique.\n\nGigapixel excelle pour agrandir sans perte perceptible de qualité ; pour un usage très occasionnel, les solutions gratuites suffisent.",
+    "ogImageUrl": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/683f6e96723281d501d14889_june-giga-home-before.webp",
+    "galleryImages": [
+      "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/683f6e960978f010549fc483_june-giga-home-after.webp",
+      "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/69cbe483e48551e8a0c49063_precision-cta-before.webp"
+    ]
   },
   {
     "id": "topaz-photo-ai",
@@ -154910,24 +155032,24 @@
     "slug": "twinmotion",
     "name": "Twinmotion",
     "categoryId": "design-tools",
-    "shortDescription": "Visualisation 3D temps réel d'Epic pour l'archviz, simple et gratuite sous 1M$ de CA.",
-    "shortDescriptionEn": "Epic's real-time 3D visualization for archviz, simple and free under $1M revenue.",
+    "shortDescription": "Logiciel de visualisation 3D temps réel par Epic Games, permettant de convertir des modèles 3D (SketchUp, Revit, 3ds Max, Blender, Rhino) en images et vidéos photogrammétriques haute qualité. Éditeur pour l'immobilier, l'architecture, le design de produit et le previs VFX.",
+    "shortDescriptionEn": "Real-time 3D visualization software by Epic Games that converts 3D models (SketchUp, Revit, 3ds Max, Blender, Rhino) into photorealistic images and videos. Editor for real estate, architecture, product design, and VFX previz.",
     "pricing": {
-      "free": "Gratuit pour les structures sous 1M$ de CA",
-      "paid": "445$/an au-delà (jusqu'à 1 850$/an avec Unreal et RealityCapture)."
+      "free": "Gratuit pour les entreprises avec CA <1M$ annuel, pour les étudiants, éducateurs et hobbyistes. Accès complet au logiciel sans limitations de rendu ou d'export.",
+      "paid": "Free (revenu <$1M/an): Gratuit ; Commercial (revenu >$1M/an ou Twinmotion Cloud): $445/an par siège"
     },
     "pricingEn": {
-      "free": "Free for firms/individuals under $1M revenue",
-      "paid": "$445/year above (up to $1,850/year with Unreal and RealityCapture)."
+      "free": "Gratuit pour les entreprises avec CA <1M$ annuel, pour les étudiants, éducateurs et hobbyistes. Accès complet au logiciel sans limitations de rendu ou d'export.",
+      "paid": "Free (revenu <$1M/an): Gratuit ; Commercial (revenu >$1M/an ou Twinmotion Cloud): $445/an par siège"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://www.twinmotion.com",
     "websiteUrl": "https://www.twinmotion.com",
     "logo": "",
     "category": "design-tools",
-    "description": "Twinmotion, c'est l'outil de visualisation temps réel d'Epic, et c'est un peu le secret le mieux gardé de l'archviz. Construit sur Unreal Engine, il en récupère la qualité de rendu temps réel, mais avec une interface ultra-simple, en glisser-déposer, accessible aux débutants. Tu importes ton modèle (SketchUp, Revit, Rhino, Archicad, ou via Datasmith), tu poses des matériaux, de la végétation, de la lumière, et tu sors des images, des vidéos de parcours et des présentations immersives sans rien connaître à Unreal.\n\nLe meilleur, c'est le prix : Twinmotion est gratuit pour les particuliers et les structures réalisant moins d'1 million de dollars de chiffre d'affaires, ce qui couvre l'immense majorité des freelances et petites agences. Au-delà, c'est 445$/an (jusqu'à 1 850$/an si tu veux le bundle avec Unreal Engine et RealityCapture).\n\nÀ qui ça s'adresse : aux architectes et designers d'intérieur qui veulent de la qualité Unreal sans la complexité. L'arbitrage se joue face à Enscape (live-sync très intégré), Lumion (rendu cinématique) et D5 Render (bon rapport prix). Mais soyons clairs : pour un freelance, un outil de cette qualité gratuit, c'est presque imbattable.",
-    "longDescription": "Twinmotion, c'est l'outil de visualisation temps réel d'Epic, et c'est un peu le secret le mieux gardé de l'archviz. Construit sur Unreal Engine, il en récupère la qualité de rendu temps réel, mais avec une interface ultra-simple, en glisser-déposer, accessible aux débutants. Tu importes ton modèle (SketchUp, Revit, Rhino, Archicad, ou via Datasmith), tu poses des matériaux, de la végétation, de la lumière, et tu sors des images, des vidéos de parcours et des présentations immersives sans rien connaître à Unreal.\n\nLe meilleur, c'est le prix : Twinmotion est gratuit pour les particuliers et les structures réalisant moins d'1 million de dollars de chiffre d'affaires, ce qui couvre l'immense majorité des freelances et petites agences. Au-delà, c'est 445$/an (jusqu'à 1 850$/an si tu veux le bundle avec Unreal Engine et RealityCapture).\n\nÀ qui ça s'adresse : aux architectes et designers d'intérieur qui veulent de la qualité Unreal sans la complexité. L'arbitrage se joue face à Enscape (live-sync très intégré), Lumion (rendu cinématique) et D5 Render (bon rapport prix). Mais soyons clairs : pour un freelance, un outil de cette qualité gratuit, c'est presque imbattable.",
-    "longDescriptionEn": "Twinmotion is Epic's real-time visualization tool, and it's something of archviz's best-kept secret. Built on Unreal Engine, it inherits its real-time render quality but with an ultra-simple, drag-and-drop interface accessible to beginners. You import your model (SketchUp, Revit, Rhino, Archicad, or via Datasmith), drop in materials, vegetation and light, and output images, walkthrough videos and immersive presentations without knowing anything about Unreal.\n\nThe best part is the price: Twinmotion is free for individuals and firms making under $1 million in revenue, which covers the vast majority of freelancers and small agencies. Above that, it's $445/year (up to $1,850/year if you want the bundle with Unreal Engine and RealityCapture).\n\nWho it's for: architects and interior designers who want Unreal quality without the complexity. The trade-off is against Enscape (tightly integrated live-sync), Lumion (cinematic look) and D5 Render (good value). But let's be clear: for a freelancer, a tool of this quality for free is almost unbeatable.",
+    "description": "Logiciel de visualisation 3D temps réel par Epic Games, permettant de convertir des modèles 3D (SketchUp, Revit, 3ds Max, Blender, Rhino) en images et vidéos photogrammétriques haute qualité. Éditeur pour l'immobilier, l'architecture, le design de produit et le previs VFX.\n\nFonctions clés : Import de modèles 3D depuis les outils courants (SketchUp, Revit, Blender, etc.) ; Rendu temps réel photogrammetrique ; Éclairage et matériaux avancés ; Animation et navigation interactive ; Export d'images et vidéos haute résolution ; Bibliothèque d'objets et de matériaux étendus.\n\nTwinmotion est gratuit et excellent pour les petites équipes ; pour les studios, les coûts commerciaux s'accumulent vite.",
+    "longDescription": "Logiciel de visualisation 3D temps réel par Epic Games, permettant de convertir des modèles 3D (SketchUp, Revit, 3ds Max, Blender, Rhino) en images et vidéos photogrammétriques haute qualité. Éditeur pour l'immobilier, l'architecture, le design de produit et le previs VFX.\n\nFonctions clés : Import de modèles 3D depuis les outils courants (SketchUp, Revit, Blender, etc.) ; Rendu temps réel photogrammetrique ; Éclairage et matériaux avancés ; Animation et navigation interactive ; Export d'images et vidéos haute résolution ; Bibliothèque d'objets et de matériaux étendus.\n\nTwinmotion est gratuit et excellent pour les petites équipes ; pour les studios, les coûts commerciaux s'accumulent vite.",
+    "longDescriptionEn": "Real-time 3D visualization software by Epic Games that converts 3D models (SketchUp, Revit, 3ds Max, Blender, Rhino) into photorealistic images and videos. Editor for real estate, architecture, product design, and VFX previz.\n\nKey strengths: Free for teams under the revenue threshold and for students.; Intuitive interface and gentle learning curve.; Photorealistic real-time rendering quality.; Direct integration with popular CAD tools (SketchUp, Revit).; Fast and flexible image and video export..\n\nTwinmotion is free and excellent for small teams; for studios, commercial costs add up quickly.",
     "verdict": {
       "keepIf": [
         "Vous présentiez des projets architecturaux ou de design au clients.",
@@ -154998,7 +155120,7 @@
       "cautions": [
         "Gratuit sous 1M$ de CA ; 445$/an au-delà (jusqu'à 1 850$/an avec Unreal/RealityCapture)"
       ],
-      "verified_on": "2026-06-17",
+      "verified_on": "2026-08-31",
       "source_domain": "twinmotion.com",
       "compare_plan_kind": "freemium",
       "compare_plan_name": "Gratuit (sous 1M$)",
@@ -155055,7 +155177,7 @@
       "d5-render"
     ],
     "articles": [],
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/twinmotion.jpg",
+    "ogImageUrl": "/og-screenshots/twinmotion.jpg",
     "host_app": null,
     "bundle_parent": null,
     "ia_use_case": null,
@@ -155067,7 +155189,8 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "force_silence": false
+    "force_silence": false,
+    "galleryImages": []
   },
   {
     "id": "twitch",
@@ -158136,24 +158259,24 @@
     "slug": "v-ray",
     "name": "V-Ray",
     "categoryId": "design-tools",
-    "shortDescription": "Moteur de rendu photoréaliste de référence (Chaos), roi de l'archviz et du produit.",
-    "shortDescriptionEn": "The reference photorealistic render engine (Chaos), king of archviz and product viz.",
+    "shortDescription": "Moteur de rendu photogrammetrique récipiendaire d'Emmy et d'Academy Awards, développé par Chaos. Utilisé pour l'architecture, le design de produit, le VFX et les studios de cinéma. Disponible pour Revit, SketchUp, Rhino, 3ds Max, Cinema 4D et Blender.",
+    "shortDescriptionEn": "Emmy and Academy Award-winning photorealistic rendering engine developed by Chaos. Used for architecture, product design, VFX, and film studios. Available for Revit, SketchUp, Rhino, 3ds Max, Cinema 4D, and Blender.",
     "pricing": {
-      "free": "Essai gratuit",
-      "paid": "Solo 514,80$/an (~43$/mois) ou Premium 718,80$/an. Abonnement Chaos."
+      "free": "Pas de version gratuite. Accès uniquement par abonnement au plan choisi.",
+      "paid": "Solo (mensuel): €39.50/mois ; Solo (annuel): €474/an ; Premium (mensuel): €119/mois ; Premium (annuel): €706.80/an ; Collection (mensuel): €213/mois ; Collection (annuel): €1,138.80/an"
     },
     "pricingEn": {
-      "free": "Free trial",
-      "paid": "Solo $514.80/year (~$43/month) or Premium $718.80/year. Chaos subscription."
+      "free": "Pas de version gratuite. Accès uniquement par abonnement au plan choisi.",
+      "paid": "Solo (mensuel): €39.50/mois ; Solo (annuel): €474/an ; Premium (mensuel): €119/mois ; Premium (annuel): €706.80/an ; Collection (mensuel): €213/mois ; Collection (annuel): €1,138.80/an"
     },
     "defaultMonthlyPrice": 43,
     "affiliateLink": "https://www.chaos.com/vray",
     "websiteUrl": "https://www.chaos.com/vray",
     "logo": "",
     "category": "design-tools",
-    "description": "V-Ray, c'est la référence du rendu photoréaliste. Développé par Chaos, c'est le moteur le plus établi pour la visualisation architecturale, le rendu produit et les VFX, là où la qualité d'image prime. Sa force, c'est sa maturité : des matériaux et un éclairage extrêmement réalistes, une stabilité éprouvée, et des plugins pour à peu près tous les logiciels 3D (3ds Max, Maya, SketchUp, Rhino, Cinema 4D, Revit, Blender). C'est un rendu hybride CPU/GPU.\n\nCôté prix, Chaos a unifié son offre en abonnement : V-Ray Solo à 514,80$/an (environ 43$/mois) pour un poste, et V-Ray Premium à 718,80$/an qui ajoute les autres produits Chaos et des noeuds de rendu. La licence perpétuelle a disparu.\n\nÀ qui ça s'adresse : aux archviz, designers produit et studios qui veulent le standard du photoréalisme. L'arbitrage se joue surtout face à Corona (du même éditeur Chaos, plus simple et apprécié en archviz), à Octane et Redshift (GPU, plus rapides), et à Cycles (gratuit dans Blender, désormais très bon). V-Ray reste la valeur sûre quand la qualité et la compatibilité multi-logiciels comptent.",
-    "longDescription": "V-Ray, c'est la référence du rendu photoréaliste. Développé par Chaos, c'est le moteur le plus établi pour la visualisation architecturale, le rendu produit et les VFX, là où la qualité d'image prime. Sa force, c'est sa maturité : des matériaux et un éclairage extrêmement réalistes, une stabilité éprouvée, et des plugins pour à peu près tous les logiciels 3D (3ds Max, Maya, SketchUp, Rhino, Cinema 4D, Revit, Blender). C'est un rendu hybride CPU/GPU.\n\nCôté prix, Chaos a unifié son offre en abonnement : V-Ray Solo à 514,80$/an (environ 43$/mois) pour un poste, et V-Ray Premium à 718,80$/an qui ajoute les autres produits Chaos et des noeuds de rendu. La licence perpétuelle a disparu.\n\nÀ qui ça s'adresse : aux archviz, designers produit et studios qui veulent le standard du photoréalisme. L'arbitrage se joue surtout face à Corona (du même éditeur Chaos, plus simple et apprécié en archviz), à Octane et Redshift (GPU, plus rapides), et à Cycles (gratuit dans Blender, désormais très bon). V-Ray reste la valeur sûre quand la qualité et la compatibilité multi-logiciels comptent.",
-    "longDescriptionEn": "V-Ray is the reference for photorealistic rendering. Developed by Chaos, it's the most established engine for architectural visualization, product rendering and VFX, wherever image quality comes first. Its strength is maturity: extremely realistic materials and lighting, proven stability, and plugins for just about every 3D app (3ds Max, Maya, SketchUp, Rhino, Cinema 4D, Revit, Blender). It's a hybrid CPU/GPU renderer.\n\nOn price, Chaos unified its offer into subscriptions: V-Ray Solo at $514.80/year (around $43/month) for one seat, and V-Ray Premium at $718.80/year, which adds the other Chaos products and render nodes. The perpetual license is gone.\n\nWho it's for: archviz artists, product designers and studios who want the photorealism standard. The trade-off is mainly against Corona (same maker, Chaos, simpler and loved in archviz), Octane and Redshift (GPU, faster), and Cycles (free in Blender, now very good). V-Ray remains the safe bet when quality and multi-app compatibility matter.",
+    "description": "Moteur de rendu photogrammetrique récipiendaire d'Emmy et d'Academy Awards, développé par Chaos. Utilisé pour l'architecture, le design de produit, le VFX et les studios de cinéma. Disponible pour Revit, SketchUp, Rhino, 3ds Max, Cinema 4D et Blender.\n\nFonctions clés : Technologie de rendu photogrammetrique basée sur la physique ; Rendu temps réel en ray tracing (100% ray tracing final frame) ; Veras AI pour l'idéation et la génération de matériaux ; 15,000 à 22,000+ actifs et matériaux 3D de haute qualité selon le plan ; Rendu CPU, GPU ou hybrid ; Vantage rendering en temps réel (Collection).\n\nV-Ray est incontournable pour le rendu pro haut de gamme ; pour des besoins occasionnels, des alternatives plus abordables existent.",
+    "longDescription": "Moteur de rendu photogrammetrique récipiendaire d'Emmy et d'Academy Awards, développé par Chaos. Utilisé pour l'architecture, le design de produit, le VFX et les studios de cinéma. Disponible pour Revit, SketchUp, Rhino, 3ds Max, Cinema 4D et Blender.\n\nFonctions clés : Technologie de rendu photogrammetrique basée sur la physique ; Rendu temps réel en ray tracing (100% ray tracing final frame) ; Veras AI pour l'idéation et la génération de matériaux ; 15,000 à 22,000+ actifs et matériaux 3D de haute qualité selon le plan ; Rendu CPU, GPU ou hybrid ; Vantage rendering en temps réel (Collection).\n\nV-Ray est incontournable pour le rendu pro haut de gamme ; pour des besoins occasionnels, des alternatives plus abordables existent.",
+    "longDescriptionEn": "Emmy and Academy Award-winning photorealistic rendering engine developed by Chaos. Used for architecture, product design, VFX, and film studios. Available for Revit, SketchUp, Rhino, 3ds Max, Cinema 4D, and Blender.\n\nKey strengths: World-renowned photorealistic technology (Emmy/Academy winner).; Multi-platform (Revit, SketchUp, Rhino, 3ds Max, Cinema 4D, Blender).; Built-in AI for ideation and material generation (Veras).; Support and continuous updates.; Comprehensive material library depending on plan..\n\nV-Ray is essential for high-end professional rendering; for occasional needs, more affordable alternatives exist.",
     "verdict": {
       "keepIf": [
         "Vous produisez des rendus photogrammetriques pour des présentations pro.",
@@ -158224,7 +158347,7 @@
       "cautions": [
         "Solo 514,80$/an (~43$/mois) ; Premium 718,80$/an ; plus de licence perpétuelle"
       ],
-      "verified_on": "2026-06-17",
+      "verified_on": "2026-07-24",
       "source_domain": "chaos.com",
       "compare_plan_kind": "subscription",
       "compare_plan_name": "V-Ray Solo (annuel)",
@@ -158279,7 +158402,7 @@
       "octane-render",
       "redshift"
     ],
-    "ogImageUrl": "https://static.chaos.com/images/assets/000/025/423/articles_2_columns/v-ray-product-archviz-og-1200x630.png?1781319504",
+    "ogImageUrl": "https://static.chaos.com/images/assets/000/025/178/image/benefit-v-ray-archviz-award-winning-1140x770.png?1779737136",
     "host_app": null,
     "bundle_parent": null,
     "ia_use_case": null,
@@ -158291,7 +158414,12 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "force_silence": false
+    "force_silence": false,
+    "galleryImages": [
+      "https://static.chaos.com/images/assets/000/025/177/image/benefit-v-ray-archvizy-scale-1140x770.png?1779737127",
+      "https://static.chaos.com/images/assets/000/027/313/original/1200x860_-_Benefit_-_ArchViz_-_V-Ray_-_Vantage.gif?1779750063",
+      "https://static.chaos.com/images/assets/000/025/350/image/benefit-archviz-collection-v-ray-integration-1140x770.png?1779737663"
+    ]
   },
   {
     "id": "v0-vercel",
@@ -166553,22 +166681,22 @@
     "slug": "x-particles",
     "name": "X-Particles",
     "category": "design-tools",
-    "shortDescription": "Système de particules et VFX avancé pour Cinema 4D (Insydium).",
-    "shortDescriptionEn": "Advanced particle and VFX system for Cinema 4D (Insydium).",
+    "shortDescription": "Plugin avancé de particules et VFX pour Cinema 4D, basé sur un système de règles (Questions et Actions). Permet de contrôler les simulations de particules, fumée/feu, fluides, cloth et destruction. Désormais inclus dans l'abonnement Fused d'Insydium.",
+    "shortDescriptionEn": "Advanced particle and VFX plugin for Cinema 4D based on a rules system (Questions and Actions). Enables control over particle simulations, smoke/fire, fluids, cloth, and destruction effects. Now included in Insydium's Fused subscription.",
     "pricing": {
-      "free": "Démo 15 jours",
-      "paid": "Via l'abonnement Insydium Fused : env. 38€/mois en 3 mois, ou 36€/mois en annuel (~390£/an)."
+      "free": "Pas de version gratuite. Accès uniquement par abonnement Fused. Cinema 4D inclut maintenant nativement des outils GPU modernes (particules, fluides, cloth).",
+      "paid": "Fused Annual Subscription: $565.50/an (€540 approx.) ; Fused Monthly: Montants sur la page officielle"
     },
     "pricingEn": {
-      "free": "15-day demo",
-      "paid": "Via the Insydium Fused subscription: about $41/month over 3 months, or $39/month annual (~£390/year)."
+      "free": "Pas de version gratuite. Accès uniquement par abonnement Fused. Cinema 4D inclut maintenant nativement des outils GPU modernes (particules, fluides, cloth).",
+      "paid": "Fused Annual Subscription: $565.50/an (€540 approx.) ; Fused Monthly: Montants sur la page officielle"
     },
     "defaultMonthlyPrice": 38,
     "affiliateLink": "https://insydium.ltd/products/x-particles/",
     "websiteUrl": "https://insydium.ltd/products/x-particles/",
     "logo": "",
-    "longDescription": "X-Particles, c'est le système de particules de référence pour Cinema 4D, utilisé en motion design, VFX et publicité depuis plus de dix ans. Il gère des nuées massives, des fluides, des champs de force et des effets organiques (fumée, feu, eau, destruction) avec un contrôle bien plus fin que les particules natives de C4D.\n\nDepuis quelques années, X-Particles n'est plus vendu seul : il fait partie de l'abonnement Insydium Fused (avec d'autres outils comme Cycles 4D ou TerraformFX), facturé environ 160£ tous les 3 mois, 250£ tous les 6 mois ou 390£ à l'année. Ça revient à payer pour toute la collection même si on n'utilise que les particules. Pour un studio de motion design ou de VFX qui fait des effets organiques régulièrement, ça reste un investissement justifié ; pour un usage ponctuel, le coût de l'abonnement est difficile à amortir.",
-    "longDescriptionEn": "X-Particles is the reference particle system for Cinema 4D, used in motion design, VFX and advertising for over a decade. It handles massive crowds, fluids, force fields and organic effects (smoke, fire, water, destruction) with far finer control than C4D's native particles.\n\nFor a few years now, X-Particles hasn't been sold standalone: it's part of the Insydium Fused subscription (alongside other tools like Cycles 4D or TerraformFX), billed around £160 every 3 months, £250 every 6 months or £390 a year. That means paying for the whole collection even if you only use the particles. For a motion design or VFX studio doing organic effects regularly, it's a justified investment; for occasional use, the subscription cost is hard to amortize.",
+    "longDescription": "Plugin avancé de particules et VFX pour Cinema 4D, basé sur un système de règles (Questions et Actions). Permet de contrôler les simulations de particules, fumée/feu, fluides, cloth et destruction. Désormais inclus dans l'abonnement Fused d'Insydium.\n\nFonctions clés : Système de particules règle-basé (Questions & Actions) ; Smoke & Fire avec export VDB ; Fluides, grains et simulations large-scale ; Cloth simulation avec déchirure avancée ; Dynamics et destruction effects ; Multi-engine rendering (Arnold, Octane, Redshift, C4D native) ; xpScatter, xpCache, support OpenVDB.\n\nX-Particles était incontournable en 2024 ; en 2026, Cinema 4D native offre des alternatives GPU comparables pour la plupart des projets.",
+    "longDescriptionEn": "Advanced particle and VFX plugin for Cinema 4D based on a rules system (Questions and Actions). Enables control over particle simulations, smoke/fire, fluids, cloth, and destruction effects. Now included in Insydium's Fused subscription.\n\nKey strengths: Very flexible and powerful rules-based system.; Complete native Cinema 4D integration.; Advanced multi-engine rendering support.; Highly realistic smoke/fire simulation with VDB export.; Fused bundle includes complementary tools..\n\nX-Particles was essential in 2024; by 2026, Cinema 4D's native GPU tools offer comparable alternatives for most projects.",
     "verdict": {
       "keepIf": [
         "Vous produisez du VFX ou motion graphics complexe avec Cinema 4D.",
@@ -166685,22 +166813,27 @@
       "cautions": [
         "Plus vendu à l'unité : uniquement via l'abonnement Insydium Fused"
       ],
-      "verified_on": "2026-06-20",
+      "verified_on": "2026-07-24",
       "source_domain": "insydium.ltd",
       "usage_sensitive": false,
       "compare_plan_kind": "subscription",
       "compare_plan_name": "Insydium Fused (annuel)",
       "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://insydium.ltd/products/subscriptions/",
+      "official_source_url": "https://insydium.ltd/products/x-particles/",
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 36
     },
     "substitution_cluster_v2": "plugin-cinema-4d",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/x-particles.jpg",
-    "description": "X-Particles, c'est le système de particules de référence pour Cinema 4D, utilisé en motion design, VFX et publicité depuis plus de dix ans. Il gère des nuées massives, des fluides, des champs de force et des effets organiques (fumée, feu, eau, destruction) avec un contrôle bien plus fin que les particules natives de C4D.\n\nDepuis quelques années, X-Particles n'est plus vendu seul : il fait partie de l'abonnement Insydium Fused (avec d'autres outils comme Cycles 4D ou TerraformFX), facturé environ 160£ tous les 3 mois, 250£ tous les 6 mois ou 390£ à l'année. Ça revient à payer pour toute la collection même si on n'utilise que les particules. Pour un studio de motion design ou de VFX qui fait des effets organiques régulièrement, ça reste un investissement justifié ; pour un usage ponctuel, le coût de l'abonnement est difficile à amortir.",
+    "ogImageUrl": "https://insydium.ltd/site/assets/files/2703/particlefx.jpg",
+    "description": "Plugin avancé de particules et VFX pour Cinema 4D, basé sur un système de règles (Questions et Actions). Permet de contrôler les simulations de particules, fumée/feu, fluides, cloth et destruction. Désormais inclus dans l'abonnement Fused d'Insydium.\n\nFonctions clés : Système de particules règle-basé (Questions & Actions) ; Smoke & Fire avec export VDB ; Fluides, grains et simulations large-scale ; Cloth simulation avec déchirure avancée ; Dynamics et destruction effects ; Multi-engine rendering (Arnold, Octane, Redshift, C4D native) ; xpScatter, xpCache, support OpenVDB.\n\nX-Particles était incontournable en 2024 ; en 2026, Cinema 4D native offre des alternatives GPU comparables pour la plupart des projets.",
     "decision_policy_v3": null,
-    "force_silence": false
+    "force_silence": false,
+    "galleryImages": [
+      "https://insydium.ltd/site/assets/files/2704/smoke-fire.jpg",
+      "https://insydium.ltd/site/assets/files/2705/fluidsgrains.jpg",
+      "https://insydium.ltd/site/assets/files/2706/dynamics.jpg"
+    ]
   },
   {
     "id": "xero",
@@ -168654,11 +168787,11 @@
     "bundle_parent": null,
     "host_app": null,
     "category": "design-tools",
-    "shortDescription": "Handoff design-développement avec specs automatiques et assets exportés.",
+    "shortDescription": "Plateforme de livraison de design pour teams produits. Zeplin documente les designs, mappe les user flows, suit les versions, et génère du code. Inclut AI Design Review pour scanner les couleurs off-system, inconsistances d'espacement, typos, et issues d'accessibilité.",
     "defaultMonthlyPrice": 6.93,
     "pricing": {
-      "free": "1 projet",
-      "paid": "8$/mois (Starter)"
+      "free": "Gratuit : 1 projet, 100 screens, utilisateurs illimités, annotations, flows, approvals, 30 jours d'historique de versions.",
+      "paid": "Free: Gratuit ; Basic: 13,75 $ à 118,25 $/mois (selon nombre de projets 1-12) ; Advanced: 12 $ par siège/mois (abonnement annuel) ; Enterprise: Tarification sur demande (contact sales)"
     },
     "covers": [
       "collaboration-dev",
@@ -168749,16 +168882,19 @@
       "free": "1 projet",
       "paid": "8$/mois (Starter)"
     },
-    "longDescription": "Zeplin, c'est handoff design-développement avec specs automatiques et assets exportés. À partir de 6.93€/mois. Pensé pour les designers UX/UI et les développeurs solo.\n\nGain de temps estimé : 3h/mois.\n\nÀ garder si : équipe sans Figma ou besoin de specs en dehors de Figma. À éviter si : figma déjà en place — Dev Mode remplace entièrement Zeplin. Inutile si vous avez Figma — doublon évident. Si le budget le permet, figma va plus loin.",
+    "longDescription": "Plateforme de livraison de design pour teams produits. Zeplin documente les designs, mappe les user flows, suit les versions, et génère du code. Inclut AI Design Review pour scanner les couleurs off-system, inconsistances d'espacement, typos, et issues d'accessibilité.\n\nFonctions clés : Design documentation centralisée ; Git-like version control for designs ; AI Design Review (screen scans, accessibilité) ; User flow mapping et journey boards ; Component versioning et design systems ; Code generation et design-to-dev integrations ; Intégrations Figma, Storybook, Jira ; Annotations et approvals workflows ; Advanced user permissions (Advanced+) ; SSO/MFA (Enterprise).\n\nZeplin s'impose pour les teams produit structurées cherchant une source unique ; pour solo designers ou très petites équipes, le tier gratuit ou une alternative suffit.",
     "alternatives": [],
     "slug": "zeplin",
-    "shortDescriptionEn": "Design-development handoff with automatic specs and exported assets.",
-    "description": "Zeplin, c'est handoff design-développement avec specs automatiques et assets exportés. À partir de 6.93€/mois. Pensé pour les designers UX/UI et les développeurs solo.\n\nGain de temps estimé : 3h/mois.\n\nÀ garder si : équipe sans Figma ou besoin de specs en dehors de Figma. À éviter si : figma déjà en place — Dev Mode remplace entièrement Zeplin. Inutile si vous avez Figma — doublon évident. Si le budget le permet, figma va plus loin.",
-    "longDescriptionEn": "Zeplin is design-development handoff with automatic specs and exported assets. Starting at €6.93/month. Built for UX/UI designers and solo developers.\n\nEstimated time saving: 3h/month.\n\nIf budget allows, figma goes further.",
-    "pricingEn": null,
+    "shortDescriptionEn": "Design delivery platform for product teams. Zeplin documents designs, maps user flows, tracks versions, and generates code. Includes AI Design Review to scan off-system colors, spacing inconsistencies, typos, and accessibility issues.",
+    "description": "Plateforme de livraison de design pour teams produits. Zeplin documente les designs, mappe les user flows, suit les versions, et génère du code. Inclut AI Design Review pour scanner les couleurs off-system, inconsistances d'espacement, typos, et issues d'accessibilité.\n\nFonctions clés : Design documentation centralisée ; Git-like version control for designs ; AI Design Review (screen scans, accessibilité) ; User flow mapping et journey boards ; Component versioning et design systems ; Code generation et design-to-dev integrations ; Intégrations Figma, Storybook, Jira ; Annotations et approvals workflows ; Advanced user permissions (Advanced+) ; SSO/MFA (Enterprise).\n\nZeplin s'impose pour les teams produit structurées cherchant une source unique ; pour solo designers ou très petites équipes, le tier gratuit ou une alternative suffit.",
+    "longDescriptionEn": "Design delivery platform for product teams. Zeplin documents designs, maps user flows, tracks versions, and generates code. Includes AI Design Review to scan off-system colors, spacing inconsistencies, typos, and accessibility issues.\n\nKey strengths: Complete design-dev handoff platform.; Automated AI Review very useful (accessibility, spacing).; Generous free tier to get started.; Git-inspired version control (very natural for devs).; Native integrations with standard tools (Figma, Jira, Storybook).; Design systems and component versioning support..\n\nZeplin makes sense for structured product teams seeking a single source of truth; for solo designers or very small teams, the free tier or an alternative suffices.",
+    "pricingEn": {
+      "free": "Gratuit : 1 projet, 100 screens, utilisateurs illimités, annotations, flows, approvals, 30 jours d'historique de versions.",
+      "paid": "Free: Gratuit ; Basic: 13,75 $ à 118,25 $/mois (selon nombre de projets 1-12) ; Advanced: 12 $ par siège/mois (abonnement annuel) ; Enterprise: Tarification sur demande (contact sales)"
+    },
     "pricing_v5": {
       "cautions": [],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-07-24",
       "source_domain": "zeplin.io",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
@@ -168825,7 +168961,12 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://cdn.sanity.io/images/wd3e2pma/production/716ae55a149ff63038853cb19d0c17676d406676-1200x600.jpg?rect=29,0,1143,600&amp;w=1200&amp;h=630"
+    "ogImageUrl": "https://cdn.sanity.io/images/wd3e2pma/production/f95e3816865ba574c935c3cb54f97f400efb92d4-4352x2294.jpg?w=1451&q=95",
+    "galleryImages": [
+      "https://cdn.sanity.io/images/wd3e2pma/production/be6338f824f829d4fd67da2f282524bf17ba735d-1704x1869.png?w=568&q=95",
+      "https://cdn.sanity.io/images/wd3e2pma/production/59d11c64187729bec230c0b90ef247c305757fac-1728x2148.png?w=576&q=95",
+      "https://cdn.sanity.io/images/wd3e2pma/production/53f106bbacf4c4d551387e21a40f70d1c25131f2-1704x1869.png?w=568&q=95"
+    ]
   },
   {
     "id": "zoho",

@@ -1,0 +1,41 @@
+{
+  "slug": "rhino",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://www.rhino3d.com/"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://www.rhino3d.com/en/features/shrinkwrap/thumbnail_hu10919497186582654094.png",
+      "source_page_url": "https://www.rhino3d.com/",
+      "official": true,
+      "alt": "thumbnail.png"
+    },
+    {
+      "kind": "image",
+      "url": "https://www.rhino3d.com/en/stories/modeling/thumbnail_hu9337068004090836434.png",
+      "source_page_url": "https://www.rhino3d.com/",
+      "official": true,
+      "alt": "thumbnail.png"
+    },
+    {
+      "kind": "image",
+      "url": "https://www.rhino3d.com/en/features/subd/thumbnail_hu14037153014586131710.png",
+      "source_page_url": "https://www.rhino3d.com/",
+      "official": true,
+      "alt": "thumbnail.png"
+    },
+    {
+      "kind": "image",
+      "url": "https://www.rhino3d.com/en/features/display/metal/thumbnail_hu1106646715459575417.png",
+      "source_page_url": "https://www.rhino3d.com/",
+      "official": true,
+      "alt": "thumbnail.png"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "slug": "v-ray",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://www.chaos.com/vray"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://static.chaos.com/images/assets/000/025/178/image/benefit-v-ray-archviz-award-winning-1140x770.png?1779737136",
+      "source_page_url": "https://www.chaos.com/vray",
+      "official": true,
+      "alt": "v-ray official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://static.chaos.com/images/assets/000/025/177/image/benefit-v-ray-archvizy-scale-1140x770.png?1779737127",
+      "source_page_url": "https://www.chaos.com/vray",
+      "official": true,
+      "alt": "v-ray official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://static.chaos.com/images/assets/000/027/313/original/1200x860_-_Benefit_-_ArchViz_-_V-Ray_-_Vantage.gif?1779750063",
+      "source_page_url": "https://www.chaos.com/vray",
+      "official": true,
+      "alt": "v-ray official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://static.chaos.com/images/assets/000/025/350/image/benefit-archviz-collection-v-ray-integration-1140x770.png?1779737663",
+      "source_page_url": "https://www.chaos.com/vray",
+      "official": true,
+      "alt": "v-ray official product view"
+    }
+  ]
+}

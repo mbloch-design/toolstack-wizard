@@ -1,0 +1,106 @@
+{
+  "batch": "review-design-tools-critical-003",
+  "current": {
+    "affiliate_url": null,
+    "alternatives": [],
+    "category": "design-tools",
+    "cons": [
+      "Peut devenir un coût dormant si le besoin n’est pas récurrent."
+    ],
+    "cons_en": [],
+    "host_app": null,
+    "id": "specify",
+    "long_description": "Synchronisation de design tokens entre outils design et code.",
+    "long_description_en": null,
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://framerusercontent.com/images/fP6oA45bf0QBRGhw5Gmi0VYg.jpg"
+    },
+    "name": "Specify",
+    "pricing": {
+      "free": "Gratuit ou plan gratuit disponible",
+      "paid": null
+    },
+    "pricing_en": null,
+    "pricing_v5": null,
+    "pros": [
+      "Adapté à un workflow métier créatif.",
+      "Utile pour structurer une chaîne de production plus professionnelle."
+    ],
+    "pros_en": [],
+    "short_description": "Synchronisation de design tokens entre outils design et code.",
+    "short_description_en": "Design token synchronization between design tools and code.",
+    "slug": "specify",
+    "source_url": "https://specifyapp.com",
+    "source_verified_on": null,
+    "use_cases": [
+      "Production créative",
+      "Livraison client",
+      "Organisation métier"
+    ],
+    "use_cases_en": [],
+    "verdict": {
+      "avoidIf": [
+        "Il sert seulement de doublon ponctuel dans la stack."
+      ],
+      "keepIf": [
+        "L’outil répond à un livrable régulier du métier."
+      ],
+      "threshold": "À garder si utilisé chaque semaine ou facturé dans la prestation."
+    },
+    "verdict_en": null,
+    "website_url": "https://specifyapp.com"
+  },
+  "fact_bundle": null,
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "research_primary_sources_then_write_fact_bundle",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-003",
+    "batch_position": 24,
+    "blockers": [],
+    "catalog_hash": "sha256:2c42d335148b9cbed54a8392595f392fe98be4feffd1a3c422094690be0b0cad",
+    "category": "design-tools",
+    "fact_bundle": "MISSING",
+    "fact_bundle_hash": null,
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Specify",
+    "next_review_at": null,
+    "priority_reasons": [
+      "missing_fact_bundle",
+      "missing_or_invalid_media_evidence",
+      "missing_english_editorial",
+      "shallow_editorial",
+      "undated_source"
+    ],
+    "priority_score": 210,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:5c55f9d05cbb7c31a970430c7fb8fafed1a488f69053177ff46e37e9db2d23fc",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "specify",
+    "source_url": "https://specifyapp.com",
+    "source_verified_on": null,
+    "status": "QUEUED"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "slug": "solid-inspector2",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://extensions.sketchup.com/extension/aad4e5d9-7115-4cac-9b75-750ed0902732/solid-inspector"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://i0.wp.com/www.thomthom.net/thoughts/wp-content/uploads/2014/12/UI-Example.png?resize=976%2C564",
+      "official": true,
+      "alt": "Solid Inspector2 interface",
+      "source_page_url": "https://extensions.sketchup.com/extension/aad4e5d9-7115-4cac-9b75-750ed0902732/solid-inspector"
+    },
+    {
+      "kind": "image",
+      "url": "https://www.thomthom.net/thoughts/wp-content/uploads/2014/12/InternalFaces.png",
+      "official": true,
+      "alt": "Solid Inspector2 internal faces detection",
+      "source_page_url": "https://extensions.sketchup.com/extension/aad4e5d9-7115-4cac-9b75-750ed0902732/solid-inspector"
+    },
+    {
+      "kind": "image",
+      "url": "https://www.thomthom.net/thoughts/wp-content/uploads/2014/12/FixedErrors.png",
+      "official": true,
+      "alt": "Solid Inspector2 fixed errors",
+      "source_page_url": "https://extensions.sketchup.com/extension/aad4e5d9-7115-4cac-9b75-750ed0902732/solid-inspector"
+    }
+  ]
+}

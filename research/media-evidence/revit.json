@@ -1,0 +1,27 @@
+{
+  "slug": "revit",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://www.autodesk.com/products/revit/overview"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://images.ctfassets.net/v7wr16nrr0mz/USDuwSeAOZpDfwimuqRiN/190b88f9077d7fa38fdb74eb0888e351/see-whats-new-autodesk-revit-2025-thumb-788x444.avif",
+      "source_page_url": "https://www.autodesk.com/products/revit/overview",
+      "official": true,
+      "alt": "Modern four-story glass building with a rooftop terrace, surrounded by a parking lot, trees, and people walking nearby."
+    },
+    {
+      "kind": "image",
+      "url": "https://images.ctfassets.net/v7wr16nrr0mz/5rtdJ4GuP4jMxGljvUZhib/3f3be6fbb7edcab405ea7ea841e8a46a/see-whats-next-for-autodesk-revit-thumb-788x444.avif",
+      "source_page_url": "https://www.autodesk.com/products/revit/overview",
+      "official": true,
+      "alt": "Aerial view of a cityscape rendered in Twinmotion for Autodesk Revit"
+    }
+  ]
+}

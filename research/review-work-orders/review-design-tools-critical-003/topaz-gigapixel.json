@@ -1,0 +1,279 @@
+{
+  "batch": "review-design-tools-critical-003",
+  "current": {
+    "affiliate_url": "https://topazlabs.com/gigapixel",
+    "alternatives": [
+      "magnific-ai"
+    ],
+    "category": "design-tools",
+    "cons": [
+      "Pas de version gratuite ou d'essai gratuit illimité.",
+      "Abonnement obligatoire (pas d'achat unique).",
+      "Le plan Personal a des limitations commerciales.",
+      "Coût annuel élevé pour un usage occasionnel."
+    ],
+    "cons_en": [
+      "No free version or unlimited trial.",
+      "Subscription required (no one-time purchase).",
+      "Personal plan has commercial use limitations.",
+      "High annual cost for occasional use."
+    ],
+    "host_app": "photoshop",
+    "id": "topaz-gigapixel",
+    "long_description": "Topaz Gigapixel AI, c'est l'outil de référence pour agrandir des images par IA. Là où un agrandissement classique rend l'image floue et pixelisée, Gigapixel reconstruit les détails de façon bluffante : tu peux multiplier la résolution par 4 ou 6 et obtenir un résultat net, exploitable pour de l'impression grand format ou la restauration de vieilles photos. C'est devenu le standard chez les photographes et retoucheurs.\n\nLe modèle a évolué : longtemps en achat unique (~199$), Topaz est passé à l'abonnement en 2025 (autour de 99$/an). Les anciens acheteurs gardent leur licence, les nouveaux passent par l'abonnement.\n\nÀ qui ça s'adresse : à ceux qui ont besoin d'agrandir des images pour l'impression ou la restauration, où la qualité compte vraiment. Si tu n'agrandis que pour le web, des solutions gratuites ou Magnific AI suffisent souvent. Mais pour du haut de gamme, Gigapixel reste difficile à battre.",
+    "long_description_en": "Topaz Gigapixel AI is the reference tool for AI image upscaling. Where classic enlargement leaves an image blurry and pixelated, Gigapixel reconstructs detail strikingly: you can multiply resolution by 4 or 6 and get a clean result usable for large-format printing or restoring old photos. It's become the standard among photographers and retouchers.\n\nThe model changed: long sold as a one-time purchase (~$199), Topaz moved to a subscription in 2025 (around $99/year). Existing buyers keep their license, new users go through the subscription.\n\nWho it's for: those who need to enlarge images for printing or restoration, where quality really matters. If you only upscale for the web, free solutions or Magnific AI are often enough. But for high-end work, Gigapixel is still hard to beat.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://cdn.prod.website-files.com/6005fac27a49a9cd477afb63/68ca9105d4f07b7d38a3f7f7_opengraph-topaz-giga.webp"
+    },
+    "name": "Topaz Gigapixel AI",
+    "pricing": {
+      "free": "",
+      "paid": "Environ 99$/an (modèle passé à l'abonnement en 2025), licences perpétuelles antérieures conservées"
+    },
+    "pricing_en": {
+      "free": "",
+      "paid": "Around $99/year (subscription since 2025)"
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Modèle passé à l'abonnement en 2025 (~99$/an)"
+      ],
+      "compare_plan_kind": "individual",
+      "compare_plan_name": "Free",
+      "compare_price_monthly_eur": 0,
+      "location_sensitive": false,
+      "official_source_url": "https://topazlabs.com/gigapixel",
+      "price_reliability": "low",
+      "source_domain": "topazlabs.com",
+      "usage_sensitive": false,
+      "verification_status": "official_site_only",
+      "verified_on": "2026-06-15"
+    },
+    "pros": [
+      "Technologie IA très efficace pour l'agrandissement sans dégradation visible.",
+      "Intégration transparente aux workflows Photoshop/Lightroom.",
+      "Multiples modèles spécialisés (texte, art, visages, etc.).",
+      "Rendu cloud et local inclus."
+    ],
+    "pros_en": [
+      "Highly effective AI technology for upscaling without visible degradation.",
+      "Seamless Photoshop and Lightroom integration.",
+      "Multiple specialized models (text, art, faces, etc.).",
+      "Cloud and local rendering included."
+    ],
+    "short_description": "Upscaling IA d'images jusqu'à 6x avec préservation des détails. Le meilleur du marché.",
+    "short_description_en": "AI image upscaling up to 6x with detail preservation. The market leader.",
+    "slug": "topaz-gigapixel",
+    "source_url": "https://topazlabs.com/gigapixel",
+    "source_verified_on": "2026-06-15",
+    "use_cases": [
+      "Agrandir une photo de faible résolution pour une impression grand format.",
+      "Restaurer des archives photographiques anciennes ou dégradées.",
+      "Préparer des visuels pour un site e-commerce.",
+      "Améliorer la résolution d'une capture d'écran ou d'un artwork."
+    ],
+    "use_cases_en": [
+      "Upscale a low-resolution photo for large-format printing.",
+      "Restore old or degraded photographs and archives.",
+      "Prepare product visuals for e-commerce.",
+      "Improve the resolution of a screenshot or artwork."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous avez besoin d'un outil d'édition généraliste.",
+        "Vous préférez une solution gratuite ou ponctuelle.",
+        "Vous cherchez un contrôle manuel total sur chaque paramètre."
+      ],
+      "keepIf": [
+        "Vous agrandissez régulièrement des photos de faible résolution pour l'impression.",
+        "Vous restaurez des archives ou travaillez sur des images dégradées.",
+        "Vous cherchez une solution rapide et automatisée d'upscaling."
+      ],
+      "threshold": "Gigapixel excelle pour agrandir sans perte perceptible de qualité ; pour un usage très occasionnel, les solutions gratuites suffisent."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You need a general-purpose editing tool.",
+        "You prefer free or one-time solutions.",
+        "You want complete manual control over every parameter."
+      ],
+      "keepIf": [
+        "You regularly upscale low-resolution photos for printing.",
+        "You're restoring archives or working with degraded images.",
+        "You need fast, automated upscaling without manual tweaking."
+      ],
+      "threshold": "Gigapixel excels at upscaling with minimal quality loss; for occasional use, free alternatives suffice."
+    },
+    "website_url": "https://topazlabs.com/gigapixel"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "No free version or unlimited trial.",
+        "Subscription required (no one-time purchase).",
+        "Personal plan has commercial use limitations.",
+        "High annual cost for occasional use."
+      ],
+      "pros": [
+        "Highly effective AI technology for upscaling without visible degradation.",
+        "Seamless Photoshop and Lightroom integration.",
+        "Multiple specialized models (text, art, faces, etc.).",
+        "Cloud and local rendering included."
+      ],
+      "use_cases": [
+        "Upscale a low-resolution photo for large-format printing.",
+        "Restore old or degraded photographs and archives.",
+        "Prepare product visuals for e-commerce.",
+        "Improve the resolution of a screenshot or artwork."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You need a general-purpose editing tool.",
+          "You prefer free or one-time solutions.",
+          "You want complete manual control over every parameter."
+        ],
+        "keepIf": [
+          "You regularly upscale low-resolution photos for printing.",
+          "You're restoring archives or working with degraded images.",
+          "You need fast, automated upscaling without manual tweaking."
+        ],
+        "threshold": "Gigapixel excels at upscaling with minimal quality loss; for occasional use, free alternatives suffice."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Pas de version gratuite. Accès par abonnement uniquement.",
+        "exists": false
+      },
+      "key_features": [
+        "9 modèles IA d'agrandissement (Wonder 2 & 3, Standard, High Fidelity, Recover, Face Recovery, etc.)",
+        "Rendu illimité en local (GPU) et cloud",
+        "Intégration plugin Photoshop et Lightroom Classic",
+        "Recuperation de détails, restauration, enhancement de qualité artistique"
+      ],
+      "plans": [
+        {
+          "name": "Personal (mensuel)",
+          "price": "$29/mois"
+        },
+        {
+          "name": "Personal (annuel)",
+          "price": "$149/an ($12.42/mois)"
+        },
+        {
+          "name": "Pro (mensuel)",
+          "price": "$54/mois"
+        },
+        {
+          "name": "Pro (annuel)",
+          "price": "$499/an ($41.58/mois)"
+        },
+        {
+          "name": "Topaz Studio Bundle",
+          "price": "$69/mois ou $399/an"
+        }
+      ],
+      "pricing_model": "Abonnement par niveau (Personal, Pro, Studio Bundle) avec facturation mensuelle ou annuelle.",
+      "what": "Logiciel d'agrandissement d'images alimenté par l'IA, capable d'augmenter les photos jusqu'à 16x tout en conservant les détails et la qualité. Disponible pour Windows et macOS, avec intégration aux plugins Photoshop et Lightroom.",
+      "what_en": "AI-powered desktop image upscaling software that enlarges images up to 16x while maintaining detail and quality. Available for Windows and macOS with Adobe Photoshop and Lightroom Classic plugin integration."
+    },
+    "fr": {
+      "cons": [
+        "Pas de version gratuite ou d'essai gratuit illimité.",
+        "Abonnement obligatoire (pas d'achat unique).",
+        "Le plan Personal a des limitations commerciales.",
+        "Coût annuel élevé pour un usage occasionnel."
+      ],
+      "pros": [
+        "Technologie IA très efficace pour l'agrandissement sans dégradation visible.",
+        "Intégration transparente aux workflows Photoshop/Lightroom.",
+        "Multiples modèles spécialisés (texte, art, visages, etc.).",
+        "Rendu cloud et local inclus."
+      ],
+      "relevant_for": [
+        "Photographes professionnels",
+        "Designers graphiques",
+        "Archivistes numériques",
+        "Éditeurs photo"
+      ],
+      "use_cases": [
+        "Agrandir une photo de faible résolution pour une impression grand format.",
+        "Restaurer des archives photographiques anciennes ou dégradées.",
+        "Préparer des visuels pour un site e-commerce.",
+        "Améliorer la résolution d'une capture d'écran ou d'un artwork."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous avez besoin d'un outil d'édition généraliste.",
+          "Vous préférez une solution gratuite ou ponctuelle.",
+          "Vous cherchez un contrôle manuel total sur chaque paramètre."
+        ],
+        "keepIf": [
+          "Vous agrandissez régulièrement des photos de faible résolution pour l'impression.",
+          "Vous restaurez des archives ou travaillez sur des images dégradées.",
+          "Vous cherchez une solution rapide et automatisée d'upscaling."
+        ],
+        "threshold": "Gigapixel excelle pour agrandir sans perte perceptible de qualité ; pour un usage très occasionnel, les solutions gratuites suffisent."
+      }
+    },
+    "slug": "topaz-gigapixel",
+    "sources": [
+      {
+        "label": "Topaz Gigapixel AI (site officiel)",
+        "url": "https://topazlabs.com/gigapixel"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-003",
+    "batch_position": 19,
+    "blockers": [],
+    "catalog_hash": "sha256:5b38347c6ee9598543652508f40b94a87c6afb5192922ee0029aad75fe7f5f58",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:77f4c9847fcbdf473c5ec4b296408bfe5a6d6f37c1e62ae0cdf48547e593e5e7",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Topaz Gigapixel AI",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:b63e9aa966db3a9492e4888d399a15f22186c78ac747e2a11a12c3f4aeed926e",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "topaz-gigapixel",
+    "source_url": "https://topazlabs.com/gigapixel",
+    "source_verified_on": "2026-06-15",
+    "status": "QUEUED"
+  }
+}

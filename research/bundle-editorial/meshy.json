@@ -1,25 +1,32 @@
 {
   "slug": "meshy",
   "author": "ToolTrim — Mike",
-  "verified_on": "2026-07-24",
+  "verified_on": "2026-08-31",
   "sources": [
-    { "label": "Meshy — AI 3D Model Generator (site officiel)", "url": "https://www.meshy.ai" }
+    { "label": "Meshy — Tarifs officiels", "url": "https://www.meshy.ai/pricing" },
+    { "label": "Meshy — AI 3D Model Generator", "url": "https://www.meshy.ai" }
   ],
   "facts": {
     "what": "Générateur de modèles 3D basé sur l'IA qui transforme des descriptions textuelles ou des images en modèles 3D prêts à l'emploi pour les jeux vidéo et l'impression 3D.",
     "what_en": "AI-powered 3D model generator that converts text descriptions or images into ready-to-use 3D models for games and 3D printing.",
-    "pricing_model": "Freemium avec plans payants optionnels",
-    "free_tier": { "exists": true, "detail": "Accès gratuit sans carte bancaire requise" },
+    "pricing_model": "Freemium par crédits avec abonnements individuels, équipe et entreprise",
+    "free_tier": { "exists": true, "detail": "100 crédits par mois, sans carte bancaire ; créations sous licence CC BY 4.0" },
     "plans": [
-      { "name": "Free Tier", "price": "Gratuit (accès de base)" }
+      { "name": "Free", "price": "0 $ avec 100 crédits par mois" },
+      { "name": "Pro", "price": "20 $/mois avec 1 000 crédits" },
+      { "name": "Premium", "price": "40 $/mois" },
+      { "name": "Ultra", "price": "100 $/mois" },
+      { "name": "Studio", "price": "70 $/mois pour un membre, puis 10 $/mois par membre supplémentaire" },
+      { "name": "Enterprise", "price": "Sur devis" }
     ],
     "key_features": [
       "Génération texte-vers-3D et image-vers-3D",
       "Texturage automatique basé sur PBR",
       "Rigging et animation automatiques (600+ preset de mouvements)",
-      "Agent 3D pour affiner les modèles par conversation",
-      "Optimisation pour l'impression 3D (manifold, étanche)",
-      "Support multi-moteur (Unity, Unreal Engine, Godot, Blender)"
+      "Agent 3D pour passer d'une idée, photo ou esquisse à un modèle",
+      "Optimisation pour l'impression 3D avec contrôle et réparation du maillage",
+      "Export FBX, OBJ, USDZ, GLB, STL et Blender",
+      "Intégrations Blender, Unity, Unreal Engine, Godot et outils de tranchage"
     ]
   },
   "fr": {

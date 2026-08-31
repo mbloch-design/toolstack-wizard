@@ -1,0 +1,287 @@
+{
+  "batch": "review-design-tools-critical-003",
+  "current": {
+    "affiliate_url": "https://insydium.ltd/products/x-particles/",
+    "alternatives": [
+      "cinema-4d",
+      "houdini"
+    ],
+    "category": "design-tools",
+    "cons": [
+      "Coût annuel significatif pour un plugin spécialisé.",
+      "Cinema 4D a ajouté des outils GPU natifs, réduisant la différenciation.",
+      "Courbe d'apprentissage importante (système Questions/Actions).",
+      "Licensing online requiert une connexion internet.",
+      "Houdini ou Blender peuvent être de meilleures alternatives pour les effets très avancés."
+    ],
+    "cons_en": [
+      "Significant annual cost for a specialized plugin.",
+      "Cinema 4D added native GPU tools, reducing differentiation.",
+      "Steep learning curve (Questions/Actions system).",
+      "Online licensing requires internet connection.",
+      "Houdini or Blender may be better for very advanced effects."
+    ],
+    "host_app": "cinema-4d",
+    "id": "x-particles",
+    "long_description": "X-Particles, c'est le système de particules de référence pour Cinema 4D, utilisé en motion design, VFX et publicité depuis plus de dix ans. Il gère des nuées massives, des fluides, des champs de force et des effets organiques (fumée, feu, eau, destruction) avec un contrôle bien plus fin que les particules natives de C4D.\n\nDepuis quelques années, X-Particles n'est plus vendu seul : il fait partie de l'abonnement Insydium Fused (avec d'autres outils comme Cycles 4D ou TerraformFX), facturé environ 160£ tous les 3 mois, 250£ tous les 6 mois ou 390£ à l'année. Ça revient à payer pour toute la collection même si on n'utilise que les particules. Pour un studio de motion design ou de VFX qui fait des effets organiques régulièrement, ça reste un investissement justifié ; pour un usage ponctuel, le coût de l'abonnement est difficile à amortir.",
+    "long_description_en": "X-Particles is the reference particle system for Cinema 4D, used in motion design, VFX and advertising for over a decade. It handles massive crowds, fluids, force fields and organic effects (smoke, fire, water, destruction) with far finer control than C4D's native particles.\n\nFor a few years now, X-Particles hasn't been sold standalone: it's part of the Insydium Fused subscription (alongside other tools like Cycles 4D or TerraformFX), billed around £160 every 3 months, £250 every 6 months or £390 a year. That means paying for the whole collection even if you only use the particles. For a motion design or VFX studio doing organic effects regularly, it's a justified investment; for occasional use, the subscription cost is hard to amortize.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://tooltrim.com/og-screenshots/x-particles.jpg"
+    },
+    "name": "X-Particles",
+    "pricing": {
+      "free": "Démo 15 jours",
+      "paid": "Via l'abonnement Insydium Fused : env. 38€/mois en 3 mois, ou 36€/mois en annuel (~390£/an)."
+    },
+    "pricing_en": {
+      "free": "15-day demo",
+      "paid": "Via the Insydium Fused subscription: about $41/month over 3 months, or $39/month annual (~£390/year)."
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Plus vendu à l'unité : uniquement via l'abonnement Insydium Fused"
+      ],
+      "compare_plan_kind": "subscription",
+      "compare_plan_name": "Insydium Fused (annuel)",
+      "compare_price_monthly_eur": 36,
+      "location_sensitive": false,
+      "official_source_url": "https://insydium.ltd/products/subscriptions/",
+      "price_reliability": "high",
+      "source_domain": "insydium.ltd",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-06-20"
+    },
+    "pros": [
+      "Système règle-basé très flexible et puissant.",
+      "Intégration native Cinema 4D complète.",
+      "Multi-engine rendering support avancé.",
+      "Simulation smoke/fire très réaliste avec VDB export.",
+      "Fused bundle offre plusieurs outils complémentaires."
+    ],
+    "pros_en": [
+      "Very flexible and powerful rules-based system.",
+      "Complete native Cinema 4D integration.",
+      "Advanced multi-engine rendering support.",
+      "Highly realistic smoke/fire simulation with VDB export.",
+      "Fused bundle includes complementary tools."
+    ],
+    "short_description": "Système de particules et VFX avancé pour Cinema 4D (Insydium).",
+    "short_description_en": "Advanced particle and VFX system for Cinema 4D (Insydium).",
+    "slug": "x-particles",
+    "source_url": "https://insydium.ltd/products/subscriptions/",
+    "source_verified_on": "2026-06-20",
+    "use_cases": [
+      "Créer des animations de particules complexes et controllées par règles.",
+      "Simuler des explosions, destruction ou effets fire/smoke réalistes.",
+      "Concevoir du cloth simulation et effets de textile.",
+      "Produire du contenu VFX pour film, publicité ou TV."
+    ],
+    "use_cases_en": [
+      "Create complex rule-controlled particle animations.",
+      "Simulate realistic explosions, destruction, or fire/smoke effects.",
+      "Design cloth simulation and textile effects.",
+      "Produce VFX content for film, advertising, or TV."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous utilisez les outils GPU natifs de Cinema 4D (suffisants pour beaucoup de cas).",
+        "Vous avez un budget serré.",
+        "Vous ne travaillez que ponctuellement sur des effets VFX.",
+        "Vous préférez Houdini pour les simulations avancées."
+      ],
+      "keepIf": [
+        "Vous produisez du VFX ou motion graphics complexe avec Cinema 4D.",
+        "Vous avez besoin de simulations de particules/fluides controllées par règles.",
+        "Vous travaillez sur des effets destruction, explosions ou cloth.",
+        "Vous utilisez Cinema 4D en production professionnelle."
+      ],
+      "threshold": "X-Particles était incontournable en 2024 ; en 2026, Cinema 4D native offre des alternatives GPU comparables pour la plupart des projets."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "Cinema 4D's native GPU tools are sufficient for your work.",
+        "You have a tight budget.",
+        "You only occasionally work on VFX effects.",
+        "You prefer Houdini for advanced simulations."
+      ],
+      "keepIf": [
+        "You produce complex VFX or motion graphics in Cinema 4D.",
+        "You need rule-based particle/fluid simulations.",
+        "You work on destruction, explosions, or cloth effects.",
+        "You use Cinema 4D in professional production."
+      ],
+      "threshold": "X-Particles was essential in 2024; by 2026, Cinema 4D's native GPU tools offer comparable alternatives for most projects."
+    },
+    "website_url": "https://insydium.ltd/products/x-particles/"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Significant annual cost for a specialized plugin.",
+        "Cinema 4D added native GPU tools, reducing differentiation.",
+        "Steep learning curve (Questions/Actions system).",
+        "Online licensing requires internet connection.",
+        "Houdini or Blender may be better for very advanced effects."
+      ],
+      "pros": [
+        "Very flexible and powerful rules-based system.",
+        "Complete native Cinema 4D integration.",
+        "Advanced multi-engine rendering support.",
+        "Highly realistic smoke/fire simulation with VDB export.",
+        "Fused bundle includes complementary tools."
+      ],
+      "use_cases": [
+        "Create complex rule-controlled particle animations.",
+        "Simulate realistic explosions, destruction, or fire/smoke effects.",
+        "Design cloth simulation and textile effects.",
+        "Produce VFX content for film, advertising, or TV."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Cinema 4D's native GPU tools are sufficient for your work.",
+          "You have a tight budget.",
+          "You only occasionally work on VFX effects.",
+          "You prefer Houdini for advanced simulations."
+        ],
+        "keepIf": [
+          "You produce complex VFX or motion graphics in Cinema 4D.",
+          "You need rule-based particle/fluid simulations.",
+          "You work on destruction, explosions, or cloth effects.",
+          "You use Cinema 4D in professional production."
+        ],
+        "threshold": "X-Particles was essential in 2024; by 2026, Cinema 4D's native GPU tools offer comparable alternatives for most projects."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Pas de version gratuite. Accès uniquement par abonnement Fused. Cinema 4D inclut maintenant nativement des outils GPU modernes (particules, fluides, cloth).",
+        "exists": false
+      },
+      "key_features": [
+        "Système de particules règle-basé (Questions & Actions)",
+        "Smoke & Fire avec export VDB",
+        "Fluides, grains et simulations large-scale",
+        "Cloth simulation avec déchirure avancée",
+        "Dynamics et destruction effects",
+        "Multi-engine rendering (Arnold, Octane, Redshift, C4D native)",
+        "xpScatter, xpCache, support OpenVDB"
+      ],
+      "plans": [
+        {
+          "name": "Fused Annual Subscription",
+          "price": "$565.50/an (€540 approx.)"
+        },
+        {
+          "name": "Fused Monthly",
+          "price": "Montants sur la page officielle"
+        }
+      ],
+      "pricing_model": "Abonnement Fused annuel (inclut X-Particles, NeXus, Taiao, TerraformFX, MeshTools, Jidou et actifs). Licence monosiège utilisable sur deux machines.",
+      "what": "Plugin avancé de particules et VFX pour Cinema 4D, basé sur un système de règles (Questions et Actions). Permet de contrôler les simulations de particules, fumée/feu, fluides, cloth et destruction. Désormais inclus dans l'abonnement Fused d'Insydium.",
+      "what_en": "Advanced particle and VFX plugin for Cinema 4D based on a rules system (Questions and Actions). Enables control over particle simulations, smoke/fire, fluids, cloth, and destruction effects. Now included in Insydium's Fused subscription."
+    },
+    "fr": {
+      "cons": [
+        "Coût annuel significatif pour un plugin spécialisé.",
+        "Cinema 4D a ajouté des outils GPU natifs, réduisant la différenciation.",
+        "Courbe d'apprentissage importante (système Questions/Actions).",
+        "Licensing online requiert une connexion internet.",
+        "Houdini ou Blender peuvent être de meilleures alternatives pour les effets très avancés."
+      ],
+      "pros": [
+        "Système règle-basé très flexible et puissant.",
+        "Intégration native Cinema 4D complète.",
+        "Multi-engine rendering support avancé.",
+        "Simulation smoke/fire très réaliste avec VDB export.",
+        "Fused bundle offre plusieurs outils complémentaires."
+      ],
+      "relevant_for": [
+        "Artistes VFX",
+        "Motion designers Cinema 4D",
+        "Producteurs 3D",
+        "Studios d'animation"
+      ],
+      "use_cases": [
+        "Créer des animations de particules complexes et controllées par règles.",
+        "Simuler des explosions, destruction ou effets fire/smoke réalistes.",
+        "Concevoir du cloth simulation et effets de textile.",
+        "Produire du contenu VFX pour film, publicité ou TV."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous utilisez les outils GPU natifs de Cinema 4D (suffisants pour beaucoup de cas).",
+          "Vous avez un budget serré.",
+          "Vous ne travaillez que ponctuellement sur des effets VFX.",
+          "Vous préférez Houdini pour les simulations avancées."
+        ],
+        "keepIf": [
+          "Vous produisez du VFX ou motion graphics complexe avec Cinema 4D.",
+          "Vous avez besoin de simulations de particules/fluides controllées par règles.",
+          "Vous travaillez sur des effets destruction, explosions ou cloth.",
+          "Vous utilisez Cinema 4D en production professionnelle."
+        ],
+        "threshold": "X-Particles était incontournable en 2024 ; en 2026, Cinema 4D native offre des alternatives GPU comparables pour la plupart des projets."
+      }
+    },
+    "slug": "x-particles",
+    "sources": [
+      {
+        "label": "X-Particles by Insydium (site officiel)",
+        "url": "https://insydium.ltd/products/x-particles/"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-003",
+    "batch_position": 22,
+    "blockers": [],
+    "catalog_hash": "sha256:5072003e6a87c69be2dfb8ec8a84fdc59f415b224a6e828f19dc9ffaa3527f38",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:8dc1928e7b6d623ef0dcd2f7bfbe5f24ccd4edaf6027fa7b57c51b98f8011acf",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "X-Particles",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:7476848747345eb5e402f9abff64431c88f3b4075511e0c58cf4985003a11703",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "x-particles",
+    "source_url": "https://insydium.ltd/products/subscriptions/",
+    "source_verified_on": "2026-06-20",
+    "status": "QUEUED"
+  }
+}
