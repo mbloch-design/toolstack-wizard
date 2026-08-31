@@ -1,0 +1,289 @@
+{
+  "batch": "review-design-tools-critical-002",
+  "current": {
+    "affiliate_url": "https://adobe.com/products/lightroom",
+    "alternatives": [
+      "capture-one",
+      "adobe-photoshop"
+    ],
+    "category": "design-tools",
+    "cons": [
+      "Accessible via l'abonnement Creative Cloud / Photo.",
+      "Orienté cloud : le stockage compte dans l'offre.",
+      "Moins de contrôle pixel que Photoshop."
+    ],
+    "cons_en": [
+      "Available via the Creative Cloud / Photography plan.",
+      "Cloud-oriented: storage counts in the plan.",
+      "Less pixel control than Photoshop."
+    ],
+    "host_app": null,
+    "id": "adobe-lightroom",
+    "long_description": "Lightroom, c'est l'outil de référence des photographes pour gérer et développer leurs fichiers RAW. Là où Photoshop travaille un visuel pixel par pixel, Lightroom est pensé pour le volume : importer des centaines de photos, les cataloguer, appliquer un traitement, harmoniser les couleurs et exporter en lot. Les retouches sont non destructives et synchronisées entre ordinateur, mobile et cloud.\n\nContrairement à une idée reçue, Lightroom n'est pas gratuit : il n'y a qu'un essai et une appli mobile limitée. L'entrée se fait par la formule Photography (Lightroom + Photoshop) autour de 10 à 15€/mois selon le stockage, ou Lightroom seul à environ 12€/mois. Pour un photographe qui en vit, c'est un coût de production assumé.\n\nL'alternative sérieuse, c'est Capture One : meilleur rendu couleur selon beaucoup de photographes, plus rapide sur les gros catalogues, mais plus cher et plus exigeant. Pour un usage léger, les apps photo du téléphone suffisent. Lightroom reste le meilleur compromis entre puissance, catalogage et simplicité pour traiter de la photo en volume.",
+    "long_description_en": "Lightroom is photographers' go-to tool to manage and develop their RAW files. Where Photoshop works a visual pixel by pixel, Lightroom is built for volume: import hundreds of photos, catalog them, apply a treatment, harmonize colors and export in batches. Edits are non-destructive and synced across computer, mobile and cloud.\n\nContrary to a common belief, Lightroom isn't free: there's only a trial and a limited mobile app. The entry point is the Photography plan (Lightroom + Photoshop) around €10 to €15/month depending on storage, or Lightroom alone at about €12/month. For a photographer who makes a living from it, it's an accepted production cost.\n\nThe serious alternative is Capture One: better color rendering according to many photographers, faster on large catalogs, but pricier and more demanding. For light use, the phone's photo apps are enough. Lightroom remains the best balance of power, cataloging and simplicity for processing photos at volume.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://www.adobe.com/products/media_1325ced14a2fe5ee95ce8861e41db26a6fc38d95a.jpg?width=1200&#x26;format=pjpg&#x26;optimize=medium"
+    },
+    "name": "Adobe Lightroom",
+    "pricing": {
+      "free": "Pas de version gratuite complète (essai, et appli mobile limitée)",
+      "paid": "Formule Photography (avec Photoshop) dès ~10€/mois, Lightroom seul ~12€/mois"
+    },
+    "pricing_en": {
+      "free": "No full free version (trial, and a limited mobile app)",
+      "paid": "Photography plan (with Photoshop) from ~€10/month, Lightroom alone ~€12/month"
+    },
+    "pricing_v5": {
+      "billing_model": "subscription",
+      "billing_options": [
+        {
+          "currency": "USD",
+          "label_en": "Lightroom only",
+          "label_fr": "Lightroom seul",
+          "price_monthly_eur": 11.03,
+          "price_original": 11.99,
+          "value": "single_app"
+        },
+        {
+          "currency": "USD",
+          "label_en": "Photography plan",
+          "label_fr": "Photography plan",
+          "price_monthly_eur": 18.39,
+          "price_original": 19.99,
+          "value": "bundle"
+        },
+        {
+          "label_en": "Included in Creative Cloud",
+          "label_fr": "Inclus Creative Cloud",
+          "price_monthly_eur": 0,
+          "value": "included"
+        },
+        {
+          "label_en": "Team license",
+          "label_fr": "Licence équipe",
+          "needs_verification": true,
+          "value": "team"
+        },
+        {
+          "label_en": "I don’t know",
+          "label_fr": "Je ne sais pas",
+          "needs_verification": true,
+          "value": "unknown"
+        }
+      ],
+      "cautions": [
+        "Vérifier si l'utilisateur paye Lightroom seul ou le plan Photography.",
+        "Prix source en USD, conversion indicative avec le taux fixe 0.92."
+      ],
+      "compare_plan_kind": "individual",
+      "compare_plan_name": "Lightroom",
+      "compare_price_monthly_eur": 11.03,
+      "conversion_rate_to_eur": 0.92,
+      "currency": "USD",
+      "location_sensitive": true,
+      "official_source_url": "https://www.adobe.com/products/photoshop-lightroom/plans.html",
+      "price_original": 11.99,
+      "price_original_currency": "USD",
+      "price_reliability": "high",
+      "source_domain": "adobe.com",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-06-15"
+    },
+    "pros": [
+      "Retouche non destructive : l'original n'est jamais altéré.",
+      "Organisation puissante (métadonnées, mots-clés, collections).",
+      "Synchronisation cloud entre bureau, mobile et web.",
+      "Préréglages applicables en lot et partageables."
+    ],
+    "pros_en": [
+      "Non-destructive editing: the original is never altered.",
+      "Powerful organisation (metadata, keywords, collections).",
+      "Cloud sync across desktop, mobile and web.",
+      "Presets applied in batch and shareable."
+    ],
+    "short_description": "Gestion et retouche photo RAW pour photographes : catalogage, color grading, exports.",
+    "short_description_en": "The standard for RAW photo management and editing.",
+    "slug": "adobe-lightroom",
+    "source_url": "https://www.adobe.com/products/photoshop-lightroom/plans.html",
+    "source_verified_on": "2026-06-15",
+    "use_cases": [
+      "Cataloguer et retoucher une photothèque volumineuse.",
+      "Synchroniser ses édits entre ordinateur et mobile.",
+      "Appliquer des préréglages en lot à une série de photos."
+    ],
+    "use_cases_en": [
+      "Catalogue and edit a large photo library.",
+      "Sync your edits between computer and mobile.",
+      "Batch-apply presets to a set of photos."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous éditez des photos très occasionnellement.",
+        "Vous préférez un outil gratuit ou entièrement local.",
+        "Vous avez besoin d'un contrôle pixel poussé (Photoshop)."
+      ],
+      "keepIf": [
+        "Vous gérez et retouchez de gros volumes de photos.",
+        "Vous voulez une retouche non destructive et un catalogue synchronisé dans le cloud.",
+        "Vous travaillez sur plusieurs appareils (bureau, mobile, web)."
+      ],
+      "threshold": "Lightroom s'impose quand la gestion et la retouche non destructive d'une photothèque priment ; pour du contrôle pixel fin, Photoshop reste plus adapté, et un usage occasionnel n'en a pas besoin."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You edit photos very occasionally.",
+        "You prefer a free or fully local tool.",
+        "You need advanced pixel control (Photoshop)."
+      ],
+      "keepIf": [
+        "You manage and edit large photo volumes.",
+        "You want non-destructive editing and a cloud-synced catalogue.",
+        "You work across several devices (desktop, mobile, web)."
+      ],
+      "threshold": "Lightroom makes sense when managing and non-destructively editing a photo library matters most; for fine pixel control, Photoshop fits better, and occasional use doesn't need it."
+    },
+    "website_url": "https://adobe.com/products/lightroom"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "bundle_parent": "adobe-creative-cloud",
+    "en": {
+      "cons": [
+        "Available via the Creative Cloud / Photography plan.",
+        "Cloud-oriented: storage counts in the plan.",
+        "Less pixel control than Photoshop."
+      ],
+      "pros": [
+        "Non-destructive editing: the original is never altered.",
+        "Powerful organisation (metadata, keywords, collections).",
+        "Cloud sync across desktop, mobile and web.",
+        "Presets applied in batch and shareable."
+      ],
+      "use_cases": [
+        "Catalogue and edit a large photo library.",
+        "Sync your edits between computer and mobile.",
+        "Batch-apply presets to a set of photos."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You edit photos very occasionally.",
+          "You prefer a free or fully local tool.",
+          "You need advanced pixel control (Photoshop)."
+        ],
+        "keepIf": [
+          "You manage and edit large photo volumes.",
+          "You want non-destructive editing and a cloud-synced catalogue.",
+          "You work across several devices (desktop, mobile, web)."
+        ],
+        "threshold": "Lightroom makes sense when managing and non-destructively editing a photo library matters most; for fine pixel control, Photoshop fits better, and occasional use doesn't need it."
+      }
+    },
+    "facts": {
+      "key_features": [
+        "Retouche non destructive (édits enregistrés séparément de l'original)",
+        "Organisation par métadonnées, mots-clés et collections",
+        "Prise en charge RAW (et TIFF, JPEG, PNG, PSD)",
+        "Synchronisation cloud entre bureau, mobile et web",
+        "Préréglages (presets) applicables en lot et partageables"
+      ],
+      "pricing_note": "Inclus dans l'abonnement Adobe Creative Cloud / offre Photo (voir la fiche de la suite).",
+      "what": "Application d'organisation et de retouche photo d'Adobe, pensée pour gérer et éditer de gros volumes d'images.",
+      "what_en": "Adobe's photo organization and editing application, designed to manage and batch-edit thousands of photos."
+    },
+    "fr": {
+      "cons": [
+        "Accessible via l'abonnement Creative Cloud / Photo.",
+        "Orienté cloud : le stockage compte dans l'offre.",
+        "Moins de contrôle pixel que Photoshop."
+      ],
+      "pros": [
+        "Retouche non destructive : l'original n'est jamais altéré.",
+        "Organisation puissante (métadonnées, mots-clés, collections).",
+        "Synchronisation cloud entre bureau, mobile et web.",
+        "Préréglages applicables en lot et partageables."
+      ],
+      "relevant_for": [
+        "Photographes",
+        "Créatifs visuels",
+        "Studios photo"
+      ],
+      "use_cases": [
+        "Cataloguer et retoucher une photothèque volumineuse.",
+        "Synchroniser ses édits entre ordinateur et mobile.",
+        "Appliquer des préréglages en lot à une série de photos."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous éditez des photos très occasionnellement.",
+          "Vous préférez un outil gratuit ou entièrement local.",
+          "Vous avez besoin d'un contrôle pixel poussé (Photoshop)."
+        ],
+        "keepIf": [
+          "Vous gérez et retouchez de gros volumes de photos.",
+          "Vous voulez une retouche non destructive et un catalogue synchronisé dans le cloud.",
+          "Vous travaillez sur plusieurs appareils (bureau, mobile, web)."
+        ],
+        "threshold": "Lightroom s'impose quand la gestion et la retouche non destructive d'une photothèque priment ; pour du contrôle pixel fin, Photoshop reste plus adapté, et un usage occasionnel n'en a pas besoin."
+      }
+    },
+    "slug": "adobe-lightroom",
+    "sources": [
+      {
+        "label": "Adobe Lightroom — description et fonctions (Wikipédia)",
+        "url": "https://en.wikipedia.org/wiki/Adobe_Lightroom"
+      }
+    ],
+    "verified_on": "2026-07-23"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-002",
+    "batch_position": 3,
+    "blockers": [],
+    "catalog_hash": "sha256:916b60c4f23942a22aa5201212eed505ad9256ac8239678506d5016c1725fadf",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:4995f8c75ca032dc2da2d7073a27aef8e94617880849ce0cd6e812215d4279da",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Adobe Lightroom",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:5fe95573b32c38937723d4ff1f34dd02312ee57be23cc22e309ced07f6bd83b3",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "adobe-lightroom",
+    "source_url": "https://www.adobe.com/products/photoshop-lightroom/plans.html",
+    "source_verified_on": "2026-06-15",
+    "status": "QUEUED"
+  }
+}

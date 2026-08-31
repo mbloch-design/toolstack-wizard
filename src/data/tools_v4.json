@@ -2561,18 +2561,18 @@
     "slug": "adobe-creative-cloud",
     "name": "Adobe Creative Cloud All Apps",
     "category": "design-tools",
-    "shortDescription": "Suite créative complète : Photoshop, Illustrator, Premiere Pro et toutes les apps Adobe en un abonnement.",
-    "shortDescriptionEn": "The full creative suite: Photoshop, Illustrator, Premiere Pro and every Adobe app in one subscription.",
-    "description": "Adobe Creative Cloud All Apps regroupe l'intégralité des logiciels Adobe (Photoshop, Illustrator, InDesign, Premiere Pro, After Effects...) dans un seul abonnement. C'est la référence historique du secteur créatif : la plupart des studios, agences et clients travaillent nativement dans ces formats, ce qui en fait un standard difficile à contourner dès qu'il y a de la collaboration externe.\n\nLe prix (78,65€/mois sans engagement, ou 779€/an) est le principal frein : si vous n'utilisez que 2-3 apps, des alternatives ciblées (Affinity, Figma) coûtent beaucoup moins cher pour un usage solo. All Apps ne se justifie que si vous alternez réellement entre plusieurs outils Adobe dans votre workflow.\n\nÀ noter : les tarifs Adobe augmentent régulièrement (intégration de l'IA générative Firefly), et l'engagement annuel avec paiement mensuel inclut des frais de résiliation anticipée peu visibles à la souscription.",
-    "longDescription": "Adobe Creative Cloud All Apps regroupe l'intégralité des logiciels Adobe (Photoshop, Illustrator, InDesign, Premiere Pro, After Effects...) dans un seul abonnement. C'est la référence historique du secteur créatif : la plupart des studios, agences et clients travaillent nativement dans ces formats, ce qui en fait un standard difficile à contourner dès qu'il y a de la collaboration externe.\n\nLe prix (78,65€/mois sans engagement, ou 779€/an) est le principal frein : si vous n'utilisez que 2-3 apps, des alternatives ciblées (Affinity, Figma) coûtent beaucoup moins cher pour un usage solo. All Apps ne se justifie que si vous alternez réellement entre plusieurs outils Adobe dans votre workflow.\n\nÀ noter : les tarifs Adobe augmentent régulièrement (intégration de l'IA générative Firefly), et l'engagement annuel avec paiement mensuel inclut des frais de résiliation anticipée peu visibles à la souscription.",
-    "longDescriptionEn": "Specialist tool used in ToolTrim consulting stacks.",
+    "shortDescription": "Suite complète d'applications logicielles pour la création numérique : Photoshop, Illustrator, InDesign, Premiere Pro, After Effects, Lightroom, et plus de 20 autres applications. Disponible par abonnement mensuel ou annuel.",
+    "shortDescriptionEn": "Complete suite of digital creation applications: Photoshop, Illustrator, InDesign, Premiere Pro, After Effects, Lightroom, and 20+ additional apps. Available by monthly or annual subscription.",
+    "description": "Suite complète d'applications logicielles pour la création numérique : Photoshop, Illustrator, InDesign, Premiere Pro, After Effects, Lightroom, et plus de 20 autres applications. Disponible par abonnement mensuel ou annuel.\n\nFonctions clés : Photoshop, Illustrator, InDesign, Premiere Pro, After Effects, Lightroom et plus ; Synchronisation cloud des fichiers et paramètres ; Accès à des bibilothèques d'assets Adobe Stock (inclus dans Standard/Pro) ; Firefly (AI générative) intégrée dans les apps (crédits variables par plan) ; Mises à jour automatiques et support prioritaire.\n\nAdobe Creative Cloud s'impose pour les professionnels en création vidéo, photo ou design ; pour un usage ponctuel ou débutant, les alternatives libres sont pertinentes.",
+    "longDescription": "Suite complète d'applications logicielles pour la création numérique : Photoshop, Illustrator, InDesign, Premiere Pro, After Effects, Lightroom, et plus de 20 autres applications. Disponible par abonnement mensuel ou annuel.\n\nFonctions clés : Photoshop, Illustrator, InDesign, Premiere Pro, After Effects, Lightroom et plus ; Synchronisation cloud des fichiers et paramètres ; Accès à des bibilothèques d'assets Adobe Stock (inclus dans Standard/Pro) ; Firefly (AI générative) intégrée dans les apps (crédits variables par plan) ; Mises à jour automatiques et support prioritaire.\n\nAdobe Creative Cloud s'impose pour les professionnels en création vidéo, photo ou design ; pour un usage ponctuel ou débutant, les alternatives libres sont pertinentes.",
+    "longDescriptionEn": "Complete suite of digital creation applications: Photoshop, Illustrator, InDesign, Premiere Pro, After Effects, Lightroom, and 20+ additional apps. Available by monthly or annual subscription.\n\nKey strengths: Seamless integration across apps (Photoshop ↔ Illustrator ↔ InDesign, etc.).; Frequent updates with new features (Firefly, AI).; Cloud sync to work on multiple machines.; Vast ecosystem of resources (tutorials, Adobe Stock assets)..\n\nAdobe Creative Cloud is essential for professional creators in video, photo, or design; for occasional or beginner use, free alternatives work well.",
     "pricing": {
-      "free": "",
-      "paid": "78,65€/mois sans engagement, ou 779€/an (~64,90€/mois)"
+      "free": "Essai gratuit limité ; pas de version gratuite permanente. Les prix varient selon les régions et les promotions.",
+      "paid": "Single App (ex. Photoshop): 22,99 $ USD/mois (facturation mensuelle) ; Photography: 19,99 $ USD/mois (Photoshop + Lightroom) ; Creative Cloud Standard: 54,99 $ USD/mois (tous les apps, limites web/mobile, 25 crédits Firefly/mois) ; Creative Cloud Pro: 69,99 $ USD/mois (tous les apps, accès complet, plus de crédits Firefly) ; Teams Plans: 84,99 $ USD+/mois (gestion admin, cloud storage augmenté)"
     },
     "pricingEn": {
-      "free": "",
-      "paid": "$69.99/mo month-to-month, or $779/yr (~€64.90/mo)"
+      "free": "Essai gratuit limité ; pas de version gratuite permanente. Les prix varient selon les régions et les promotions.",
+      "paid": "Single App (ex. Photoshop): 22,99 $ USD/mois (facturation mensuelle) ; Photography: 19,99 $ USD/mois (Photoshop + Lightroom) ; Creative Cloud Standard: 54,99 $ USD/mois (tous les apps, limites web/mobile, 25 crédits Firefly/mois) ; Creative Cloud Pro: 69,99 $ USD/mois (tous les apps, accès complet, plus de crédits Firefly) ; Teams Plans: 84,99 $ USD+/mois (gestion admin, cloud storage augmenté)"
     },
     "defaultMonthlyPrice": 64.9,
     "pricing_v5": {
@@ -2583,7 +2583,7 @@
       "cautionsEn": [
         "No free tier; targeted alternatives (Affinity, Figma) far cheaper if you only use 1-2 apps"
       ],
-      "verified_on": "2026-07-07",
+      "verified_on": "2026-07-24",
       "source_domain": "adobe.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
@@ -2707,8 +2707,9 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://www.adobe.com/cc-shared/assets/img/product-icons/jpg/default.jpg?width=1200&#x26;format=pjpg&#x26;optimize=medium",
-    "force_silence": false
+    "ogImageUrl": "https://www.adobe.com/cc-shared/assets/img/product-icons/jpg/default.jpg?width=1200&format=pjpg&optimize=medium",
+    "force_silence": false,
+    "galleryImages": []
   },
   {
     "id": "adobe-enhance-speech",
@@ -3364,14 +3365,14 @@
     "name": "Adobe Illustrator",
     "slug": "adobe-illustrator",
     "category": "design-tools",
-    "shortDescription": "Le standard du dessin vectoriel : logos, illustrations, identité visuelle et print.",
-    "longDescription": "Illustrator, c'est l'outil de référence pour tout ce qui est vectoriel : logos, pictos, illustrations, chartes graphiques, mise en page print. Le vectoriel, ça veut dire des fichiers qui s'agrandissent sans perte, indispensables pour un logo qui doit passer d'une carte de visite à une façade. Comme After Effects ou Photoshop, c'est un standard que toute la filière partage, ce qui facilite la collaboration et la remise de fichiers clients.\n\nLa contrainte, c'est toujours Adobe : pas de version gratuite, un essai puis l'abonnement, autour de 26€/mois pour Illustrator seul, plus dans l'offre Creative Cloud complète. Pour un graphiste qui en vit, c'est un outil de travail, donc un coût assumé. Pour un besoin ponctuel, c'est cher.\n\nLa vraie alternative a changé en 2024 : Affinity Designer, longtemps le concurrent payant à achat unique, est devenu gratuit après le rachat par Canva. Pour un freelance qui veut éviter l'abonnement Adobe, c'est désormais une option sérieuse. Pour du dessin vectoriel libre et open source, Inkscape existe aussi. Illustrator garde l'avantage sur la finition, la compatibilité et l'intégration Creative Cloud.",
+    "shortDescription": "Éditeur de graphismes vectoriels de référence d'Adobe, pour créer des visuels redimensionnables à l'infini.",
+    "longDescription": "Éditeur de graphismes vectoriels de référence d'Adobe, pour créer des visuels redimensionnables à l'infini.\n\nFonctions clés : Dessin vectoriel (courbes de Bézier) redimensionnable à l'infini ; Création de logos et de branding ; Typographie et manipulation de texte avancées ; Outils de précision (plume, points d'ancrage, repères) ; IA générative (texte-vers-vecteur, recoloration).\n\nIllustrator s'impose quand le vectoriel (logos, illustrations, typographie) est central ; pour de la photo/retouche ou un usage occasionnel, un autre outil convient mieux.",
     "affiliateLink": "https://adobe.com/products/illustrator",
     "websiteUrl": "https://adobe.com/products/illustrator",
     "defaultMonthlyPrice": 23.99,
     "pricing": {
-      "free": "Aucune version gratuite, essai uniquement",
-      "paid": "23,99€/mois en engagement annuel (Illustrator seul), ou ~30,49€/mois sans engagement"
+      "free": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite).",
+      "paid": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite)."
     },
     "logo": "",
     "soloRelevance": null,
@@ -3477,14 +3478,14 @@
         "Aucune version gratuite, essai uniquement",
         "Environ 26€/mois pour Illustrator seul, plus dans l'offre Creative Cloud complète"
       ],
-      "verified_on": "2026-06-15",
+      "verified_on": "2026-08-31",
       "source_domain": "adobe.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
       "compare_plan_name": "Illustrator single app",
       "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://www.adobe.com/fr/products/illustrator.html",
+      "official_source_url": "https://www.adobe.com/products/illustrator.html",
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 26.21
     },
@@ -3496,8 +3497,8 @@
       "never_auto_cancel_reason": "Couche non substituable par défaut.",
       "requires_context_questions": true
     },
-    "shortDescriptionEn": "The standard for vector design and illustration.",
-    "longDescriptionEn": "Illustrator is the reference tool for everything vector: logos, icons, illustrations, brand guidelines, print layout. Vector means files that scale without loss, essential for a logo that has to go from a business card to a storefront. Like After Effects or Photoshop, it's a standard the whole industry shares, which makes collaboration and client file delivery easier.\n\nThe constraint is always Adobe: no free version, a trial then the subscription, around €26/month for Illustrator alone, more in the full Creative Cloud plan. For a graphic designer who makes a living from it, it's a work tool, so an accepted cost. For an occasional need, it's expensive.\n\nThe real alternative changed in 2024: Affinity Designer, long the paid one-time-purchase competitor, became free after the Canva acquisition. For a freelancer who wants to avoid the Adobe subscription, it's now a serious option. For free and open-source vector drawing, Inkscape also exists. Illustrator keeps the edge on finish, compatibility and Creative Cloud integration.",
+    "shortDescriptionEn": "Adobe's flagship vector graphics editor for creating visuals that scale across all formats.",
+    "longDescriptionEn": "Adobe's flagship vector graphics editor for creating visuals that scale across all formats.\n\nKey strengths: The reference vector editor, precise and complete.; Precision tools (pen, anchor points, guides).; Advanced typography and text handling.; Generative AI (text-to-vector, recolour)..\n\nIllustrator makes sense when vector work (logos, illustrations, typography) is central; for photo/retouch or occasional use, another tool fits better.",
     "prosEn": [
       "The reference vector editor, precise and complete.",
       "Precision tools (pen, anchor points, guides).",
@@ -3528,12 +3529,16 @@
       "threshold": "Illustrator makes sense when vector work (logos, illustrations, typography) is central; for photo/retouch or occasional use, another tool fits better."
     },
     "pricingEn": {
-      "free": "No free version, trial only",
-      "paid": "€23.99/month with annual commitment (Illustrator alone), or ~€30.49/month with no commitment"
+      "free": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite).",
+      "paid": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite)."
     },
     "force_silence": false,
-    "description": "Illustrator, c'est l'outil de référence pour tout ce qui est vectoriel : logos, pictos, illustrations, chartes graphiques, mise en page print. Le vectoriel, ça veut dire des fichiers qui s'agrandissent sans perte, indispensables pour un logo qui doit passer d'une carte de visite à une façade. Comme After Effects ou Photoshop, c'est un standard que toute la filière partage, ce qui facilite la collaboration et la remise de fichiers clients.\n\nLa contrainte, c'est toujours Adobe : pas de version gratuite, un essai puis l'abonnement, autour de 26€/mois pour Illustrator seul, plus dans l'offre Creative Cloud complète. Pour un graphiste qui en vit, c'est un outil de travail, donc un coût assumé. Pour un besoin ponctuel, c'est cher.\n\nLa vraie alternative a changé en 2024 : Affinity Designer, longtemps le concurrent payant à achat unique, est devenu gratuit après le rachat par Canva. Pour un freelance qui veut éviter l'abonnement Adobe, c'est désormais une option sérieuse. Pour du dessin vectoriel libre et open source, Inkscape existe aussi. Illustrator garde l'avantage sur la finition, la compatibilité et l'intégration Creative Cloud.",
-    "ogImageUrl": "https://www.adobe.com/products/media_19762a181d8f7cdad7fa491acc9917bdedbcba01a.jpg?width=1200&#x26;format=pjpg&#x26;optimize=medium"
+    "description": "Éditeur de graphismes vectoriels de référence d'Adobe, pour créer des visuels redimensionnables à l'infini.\n\nFonctions clés : Dessin vectoriel (courbes de Bézier) redimensionnable à l'infini ; Création de logos et de branding ; Typographie et manipulation de texte avancées ; Outils de précision (plume, points d'ancrage, repères) ; IA générative (texte-vers-vecteur, recoloration).\n\nIllustrator s'impose quand le vectoriel (logos, illustrations, typographie) est central ; pour de la photo/retouche ou un usage occasionnel, un autre outil convient mieux.",
+    "ogImageUrl": "https://www.adobe.com/products/media_19762a181d8f7cdad7fa491acc9917bdedbcba01a.jpg?width=1200&format=pjpg&optimize=medium",
+    "galleryImages": [
+      "https://www.adobe.com/products/media_13041399720796bf25e74572da8bd75f723699e43.png?width=750&format=png&optimize=medium",
+      "https://www.adobe.com/products/media_173efa03ba5a9610db9180e5958f064aa30d51f62.png?width=750&format=png&optimize=medium"
+    ]
   },
   {
     "id": "indesign",
@@ -3687,14 +3692,14 @@
     "name": "Adobe Lightroom",
     "slug": "adobe-lightroom",
     "category": "design-tools",
-    "shortDescription": "Gestion et retouche photo RAW pour photographes : catalogage, color grading, exports.",
-    "longDescription": "Lightroom, c'est l'outil de référence des photographes pour gérer et développer leurs fichiers RAW. Là où Photoshop travaille un visuel pixel par pixel, Lightroom est pensé pour le volume : importer des centaines de photos, les cataloguer, appliquer un traitement, harmoniser les couleurs et exporter en lot. Les retouches sont non destructives et synchronisées entre ordinateur, mobile et cloud.\n\nContrairement à une idée reçue, Lightroom n'est pas gratuit : il n'y a qu'un essai et une appli mobile limitée. L'entrée se fait par la formule Photography (Lightroom + Photoshop) autour de 10 à 15€/mois selon le stockage, ou Lightroom seul à environ 12€/mois. Pour un photographe qui en vit, c'est un coût de production assumé.\n\nL'alternative sérieuse, c'est Capture One : meilleur rendu couleur selon beaucoup de photographes, plus rapide sur les gros catalogues, mais plus cher et plus exigeant. Pour un usage léger, les apps photo du téléphone suffisent. Lightroom reste le meilleur compromis entre puissance, catalogage et simplicité pour traiter de la photo en volume.",
+    "shortDescription": "Application d'organisation et de retouche photo d'Adobe, pensée pour gérer et éditer de gros volumes d'images.",
+    "longDescription": "Application d'organisation et de retouche photo d'Adobe, pensée pour gérer et éditer de gros volumes d'images.\n\nFonctions clés : Retouche non destructive (édits enregistrés séparément de l'original) ; Organisation par métadonnées, mots-clés et collections ; Prise en charge RAW (et TIFF, JPEG, PNG, PSD) ; Synchronisation cloud entre bureau, mobile et web ; Préréglages (presets) applicables en lot et partageables.\n\nLightroom s'impose quand la gestion et la retouche non destructive d'une photothèque priment ; pour du contrôle pixel fin, Photoshop reste plus adapté, et un usage occasionnel n'en a pas besoin.",
     "affiliateLink": "https://adobe.com/products/lightroom",
     "websiteUrl": "https://adobe.com/products/lightroom",
     "defaultMonthlyPrice": 11.03,
     "pricing": {
-      "free": "Pas de version gratuite complète (essai, et appli mobile limitée)",
-      "paid": "Formule Photography (avec Photoshop) dès ~10€/mois, Lightroom seul ~12€/mois"
+      "free": "Inclus dans l'abonnement Adobe Creative Cloud / offre Photo (voir la fiche de la suite).",
+      "paid": "Inclus dans l'abonnement Adobe Creative Cloud / offre Photo (voir la fiche de la suite)."
     },
     "logo": "",
     "soloRelevance": null,
@@ -3806,7 +3811,7 @@
         "Prix source en USD, conversion indicative avec le taux fixe 0.92."
       ],
       "currency": "USD",
-      "verified_on": "2026-06-15",
+      "verified_on": "2026-08-31",
       "billing_model": "subscription",
       "source_domain": "adobe.com",
       "price_original": 11.99,
@@ -3851,7 +3856,7 @@
       "compare_plan_name": "Lightroom",
       "price_reliability": "high",
       "location_sensitive": true,
-      "official_source_url": "https://www.adobe.com/products/photoshop-lightroom/plans.html",
+      "official_source_url": "https://www.adobe.com/products/photoshop-lightroom.html",
       "verification_status": "official_explicit",
       "conversion_rate_to_eur": 0.92,
       "price_original_currency": "USD",
@@ -3865,8 +3870,8 @@
       "never_auto_cancel_reason": "Couche non substituable par défaut.",
       "requires_context_questions": true
     },
-    "shortDescriptionEn": "The standard for RAW photo management and editing.",
-    "longDescriptionEn": "Lightroom is photographers' go-to tool to manage and develop their RAW files. Where Photoshop works a visual pixel by pixel, Lightroom is built for volume: import hundreds of photos, catalog them, apply a treatment, harmonize colors and export in batches. Edits are non-destructive and synced across computer, mobile and cloud.\n\nContrary to a common belief, Lightroom isn't free: there's only a trial and a limited mobile app. The entry point is the Photography plan (Lightroom + Photoshop) around €10 to €15/month depending on storage, or Lightroom alone at about €12/month. For a photographer who makes a living from it, it's an accepted production cost.\n\nThe serious alternative is Capture One: better color rendering according to many photographers, faster on large catalogs, but pricier and more demanding. For light use, the phone's photo apps are enough. Lightroom remains the best balance of power, cataloging and simplicity for processing photos at volume.",
+    "shortDescriptionEn": "Adobe's photo organization and editing application, designed to manage and batch-edit thousands of photos.",
+    "longDescriptionEn": "Adobe's photo organization and editing application, designed to manage and batch-edit thousands of photos.\n\nKey strengths: Non-destructive editing: the original is never altered.; Powerful organisation (metadata, keywords, collections).; Cloud sync across desktop, mobile and web.; Presets applied in batch and shareable..\n\nLightroom makes sense when managing and non-destructively editing a photo library matters most; for fine pixel control, Photoshop fits better, and occasional use doesn't need it.",
     "prosEn": [
       "Non-destructive editing: the original is never altered.",
       "Powerful organisation (metadata, keywords, collections).",
@@ -3897,26 +3902,31 @@
       "threshold": "Lightroom makes sense when managing and non-destructively editing a photo library matters most; for fine pixel control, Photoshop fits better, and occasional use doesn't need it."
     },
     "pricingEn": {
-      "free": "No full free version (trial, and a limited mobile app)",
-      "paid": "Photography plan (with Photoshop) from ~€10/month, Lightroom alone ~€12/month"
+      "free": "Inclus dans l'abonnement Adobe Creative Cloud / offre Photo (voir la fiche de la suite).",
+      "paid": "Inclus dans l'abonnement Adobe Creative Cloud / offre Photo (voir la fiche de la suite)."
     },
     "force_silence": false,
-    "description": "Lightroom, c'est l'outil de référence des photographes pour gérer et développer leurs fichiers RAW. Là où Photoshop travaille un visuel pixel par pixel, Lightroom est pensé pour le volume : importer des centaines de photos, les cataloguer, appliquer un traitement, harmoniser les couleurs et exporter en lot. Les retouches sont non destructives et synchronisées entre ordinateur, mobile et cloud.\n\nContrairement à une idée reçue, Lightroom n'est pas gratuit : il n'y a qu'un essai et une appli mobile limitée. L'entrée se fait par la formule Photography (Lightroom + Photoshop) autour de 10 à 15€/mois selon le stockage, ou Lightroom seul à environ 12€/mois. Pour un photographe qui en vit, c'est un coût de production assumé.\n\nL'alternative sérieuse, c'est Capture One : meilleur rendu couleur selon beaucoup de photographes, plus rapide sur les gros catalogues, mais plus cher et plus exigeant. Pour un usage léger, les apps photo du téléphone suffisent. Lightroom reste le meilleur compromis entre puissance, catalogage et simplicité pour traiter de la photo en volume.",
-    "ogImageUrl": "https://www.adobe.com/products/media_1325ced14a2fe5ee95ce8861e41db26a6fc38d95a.jpg?width=1200&#x26;format=pjpg&#x26;optimize=medium"
+    "description": "Application d'organisation et de retouche photo d'Adobe, pensée pour gérer et éditer de gros volumes d'images.\n\nFonctions clés : Retouche non destructive (édits enregistrés séparément de l'original) ; Organisation par métadonnées, mots-clés et collections ; Prise en charge RAW (et TIFF, JPEG, PNG, PSD) ; Synchronisation cloud entre bureau, mobile et web ; Préréglages (presets) applicables en lot et partageables.\n\nLightroom s'impose quand la gestion et la retouche non destructive d'une photothèque priment ; pour du contrôle pixel fin, Photoshop reste plus adapté, et un usage occasionnel n'en a pas besoin.",
+    "ogImageUrl": "https://www.adobe.com/products/media_1325ced14a2fe5ee95ce8861e41db26a6fc38d95a.jpg?width=1200&format=pjpg&optimize=medium",
+    "galleryImages": [
+      "https://www.adobe.com/cc-shared/fragments/products/photoshop-lightroom/media_1801f417462e363d8f808f863ed3756ac93623343.png?width=750&format=png&optimize=medium",
+      "https://www.adobe.com/products/media_1e459da212cbda34dbab87b26a733fff0de666ad0.jpg?width=2000&format=webply&optimize=medium",
+      "https://www.adobe.com/products/media_1320c51b3235c78977c5780fc3b7fde69e2140f27.jpg?width=750&format=jpg&optimize=medium"
+    ]
   },
   {
     "id": "adobe-photoshop",
     "name": "Adobe Photoshop",
     "slug": "adobe-photoshop",
     "category": "design-tools",
-    "shortDescription": "Le standard mondial de la retouche photo, du photomontage et du compositing.",
-    "longDescription": "Photoshop, c'est le logiciel de retouche photo le plus utilisé au monde, au point que son nom est devenu un verbe. Retouche, photomontage, détourage, compositing, manipulation d'images : tout ce qui touche au pixel passe par lui, et toute la filière créative travaille avec ses fichiers. C'est un standard incontournable dès qu'on fait de la photo ou du visuel pro.\n\nLe modèle Adobe s'applique : pas de version gratuite, juste un essai, puis l'abonnement. Compte environ 26€/mois pour Photoshop seul. Mais si tu fais surtout de la photo, l'astuce à connaître, c'est la formule Photography (Photoshop + Lightroom), nettement moins chère, autour de 10 à 15€/mois selon le stockage. C'est souvent la meilleure porte d'entrée.\n\nL'alternative qui a changé la donne en 2024 : Affinity Photo, devenu gratuit après le rachat par Canva, couvre une grande partie des besoins de retouche sans abonnement. Pour du libre, Photopea reproduit l'interface dans le navigateur. Photoshop garde l'avantage sur les fonctions avancées, l'IA générative (Generative Fill) et la compatibilité des fichiers, mais ce n'est plus le passage obligé qu'il était.",
+    "shortDescription": "Éditeur d'images matricielles (raster) de référence d'Adobe, pour Windows, macOS et iPad.",
+    "longDescription": "Éditeur d'images matricielles (raster) de référence d'Adobe, pour Windows, macOS et iPad.\n\nFonctions clés : Édition multi-calques avec masques et compositing ; Retouche professionnelle (correcteur, remplissage selon le contenu) ; Traitement RAW via Camera Raw ; Fonctions d'IA générative (Remplissage et Extension génératifs) ; Disponible sur Windows, macOS et iPad.\n\nPhotoshop s'impose quand l'édition d'images matricielles est au cœur de votre travail ; pour du vectoriel ou des retouches ponctuelles, un outil plus léger (ou Illustrator) convient mieux.",
     "affiliateLink": "https://adobe.com/products/photoshop",
     "websiteUrl": "https://adobe.com/products/photoshop",
     "defaultMonthlyPrice": 23.99,
     "pricing": {
-      "free": "Aucune version gratuite, essai uniquement",
-      "paid": "23,99€/mois en engagement annuel (Photoshop seul), ou ~30,49€/mois sans engagement ; formule Photo avec Lightroom dès ~12€/mois"
+      "free": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite).",
+      "paid": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite)."
     },
     "logo": "",
     "soloRelevance": null,
@@ -4025,7 +4035,7 @@
         "Aucune version gratuite, essai uniquement",
         "Formule Photography (avec Lightroom) dès ~10€/mois, moins chère que Photoshop seul"
       ],
-      "verified_on": "2026-06-15",
+      "verified_on": "2026-08-31",
       "billing_model": "seat",
       "source_domain": "adobe.com",
       "billing_options": [
@@ -4066,7 +4076,7 @@
       "compare_plan_name": "Photoshop single app",
       "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://www.adobe.com/fr/products/photoshop/plans.html",
+      "official_source_url": "https://www.adobe.com/products/photoshop.html",
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 26.21
     },
@@ -4078,8 +4088,8 @@
       "never_auto_cancel_reason": "Couche non substituable par défaut.",
       "requires_context_questions": true
     },
-    "shortDescriptionEn": "The world standard for photo editing and compositing.",
-    "longDescriptionEn": "Photoshop is the most-used photo editing software in the world, to the point its name became a verb. Retouching, photomontage, cutouts, compositing, image manipulation: anything pixel-based goes through it, and the whole creative industry works with its files. It's an unavoidable standard once you do professional photo or visual work.\n\nThe Adobe model applies: no free version, just a trial, then the subscription. Budget around €26/month for Photoshop alone. But if you mostly do photography, the trick to know is the Photography plan (Photoshop + Lightroom), noticeably cheaper, around €10 to €15/month depending on storage. It's often the best entry point.\n\nThe alternative that changed things in 2024: Affinity Photo, now free after the Canva acquisition, covers a large part of retouching needs with no subscription. For something free in the browser, Photopea mirrors the interface. Photoshop keeps the edge on advanced features, generative AI (Generative Fill) and file compatibility, but it's no longer the obligatory path it once was.",
+    "shortDescriptionEn": "Adobe's flagship raster image editor for Windows, macOS, and iPad.",
+    "longDescriptionEn": "Adobe's flagship raster image editor for Windows, macOS, and iPad.\n\nKey strengths: The reference raster image editor, extremely complete.; Powerful retouching: healing, content-aware fill, masks.; Built-in RAW processing via Camera Raw.; Built-in Generative Fill and Expand (AI)..\n\nPhotoshop makes sense when raster image editing is core to your work; for vector work or occasional retouching, a lighter tool (or Illustrator) fits better.",
     "prosEn": [
       "The reference raster image editor, extremely complete.",
       "Powerful retouching: healing, content-aware fill, masks.",
@@ -4110,12 +4120,17 @@
       "threshold": "Photoshop makes sense when raster image editing is core to your work; for vector work or occasional retouching, a lighter tool (or Illustrator) fits better."
     },
     "pricingEn": {
-      "free": "No free version, trial only",
-      "paid": "€23.99/month with annual commitment (Photoshop alone), or ~€30.49/month with no commitment; Photography plan with Lightroom from ~€12/month"
+      "free": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite).",
+      "paid": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite)."
     },
     "force_silence": false,
-    "description": "Photoshop, c'est le logiciel de retouche photo le plus utilisé au monde, au point que son nom est devenu un verbe. Retouche, photomontage, détourage, compositing, manipulation d'images : tout ce qui touche au pixel passe par lui, et toute la filière créative travaille avec ses fichiers. C'est un standard incontournable dès qu'on fait de la photo ou du visuel pro.\n\nLe modèle Adobe s'applique : pas de version gratuite, juste un essai, puis l'abonnement. Compte environ 26€/mois pour Photoshop seul. Mais si tu fais surtout de la photo, l'astuce à connaître, c'est la formule Photography (Photoshop + Lightroom), nettement moins chère, autour de 10 à 15€/mois selon le stockage. C'est souvent la meilleure porte d'entrée.\n\nL'alternative qui a changé la donne en 2024 : Affinity Photo, devenu gratuit après le rachat par Canva, couvre une grande partie des besoins de retouche sans abonnement. Pour du libre, Photopea reproduit l'interface dans le navigateur. Photoshop garde l'avantage sur les fonctions avancées, l'IA générative (Generative Fill) et la compatibilité des fichiers, mais ce n'est plus le passage obligé qu'il était.",
-    "ogImageUrl": "https://www.adobe.com/products/media_17f61e1224166630fb2e30723046881244c8812a9.jpg?width=1200&#x26;format=pjpg&#x26;optimize=medium"
+    "description": "Éditeur d'images matricielles (raster) de référence d'Adobe, pour Windows, macOS et iPad.\n\nFonctions clés : Édition multi-calques avec masques et compositing ; Retouche professionnelle (correcteur, remplissage selon le contenu) ; Traitement RAW via Camera Raw ; Fonctions d'IA générative (Remplissage et Extension génératifs) ; Disponible sur Windows, macOS et iPad.\n\nPhotoshop s'impose quand l'édition d'images matricielles est au cœur de votre travail ; pour du vectoriel ou des retouches ponctuelles, un outil plus léger (ou Illustrator) convient mieux.",
+    "ogImageUrl": "https://www.adobe.com/products/media_17f61e1224166630fb2e30723046881244c8812a9.jpg?width=1200&format=pjpg&optimize=medium",
+    "galleryImages": [
+      "https://www.adobe.com/cc-shared/fragments/products/photoshop/product-page/media_18bfe9207cb445b0c0adb23e9358e4b04ffee9d37.jpg?width=750&format=jpg&optimize=medium",
+      "https://www.adobe.com/products/media_1593767de8d991b2148233f4972e7a75f4b8c3f1b.png?width=750&format=png&optimize=medium",
+      "https://www.adobe.com/cc-shared/fragments/products/photoshop/product-page/media_190e4e43778fc5bb8a6847f4c87c04e8e4122ccaf.jpg?width=750&format=jpg&optimize=medium"
+    ]
   },
   {
     "id": "adobe-podcast-ai",
@@ -4303,14 +4318,14 @@
     "name": "Adobe Premiere Pro",
     "slug": "adobe-premiere-pro",
     "category": "design-tools",
-    "shortDescription": "Le logiciel de montage vidéo professionnel de référence.",
-    "longDescription": "Adobe Premiere est un logiciel de montage professionnel pour les productions longues, le multicam, l'audio, l'étalonnage et les workflows collaboratifs. Son avantage principal reste l'intégration avec After Effects, Frame.io, Adobe Express et le reste de Creative Cloud.\n\nLa version individuelle coûte 22,99$ par mois aux États-Unis avec un engagement annuel facturé mensuellement. Elle inclut Premiere sur ordinateur et mobile, 100 Go de stockage, Frame.io, Adobe Express Premium et 25 crédits génératifs mensuels. Il n'existe pas de licence perpétuelle, seulement un essai gratuit de sept jours.\n\nLa version 26.3 de juin 2026 ajoute notamment la création de séquences depuis Firefly Boards, les sous-titres mot par mot et les Content Credentials automatiques pour certains contenus génératifs. DaVinci Resolve reste l'alternative la plus convaincante pour l'étalonnage et un budget réduit, tandis que CapCut est souvent plus rapide pour les formats sociaux simples.",
+    "shortDescription": "Application de montage vidéo professionnelle d'Adobe, distribuée dans Creative Cloud.",
+    "longDescription": "Application de montage vidéo professionnelle d'Adobe, distribuée dans Creative Cloud.\n\nFonctions clés : Montage sur timeline avec imbrication profonde des séquences ; Prise en charge haute résolution et grande profondeur de couleur ; Audio pro (édition fine, VST, mixage surround 5.1) ; Étalonnage couleur (outils Lumetri) ; Intégration Dynamic Link avec After Effects, Photoshop, Illustrator.\n\nPremiere Pro s'impose quand le montage vidéo est régulier et exigeant, en lien avec l'écosystème Adobe ; pour un montage occasionnel, un outil plus léger (ou gratuit) suffit.",
     "affiliateLink": "https://adobe.com/products/premiere",
     "websiteUrl": "https://adobe.com/products/premiere",
     "defaultMonthlyPrice": 26.21,
     "pricing": {
-      "free": "Aucune version gratuite, essai uniquement",
-      "paid": "Environ 26€/mois (Premiere Pro seul), ou via l'offre Creative Cloud complète"
+      "free": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite).",
+      "paid": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite)."
     },
     "logo": "",
     "soloRelevance": null,
@@ -4415,7 +4430,7 @@
         "Aucune version gratuite, essai uniquement",
         "Environ 26€/mois pour Premiere Pro seul, plus dans l'offre Creative Cloud complète"
       ],
-      "verified_on": "2026-08-28",
+      "verified_on": "2026-08-31",
       "billing_model": "seat",
       "source_domain": "adobe.com",
       "billing_options": [
@@ -4450,7 +4465,7 @@
       "compare_plan_name": "Premiere Pro single app",
       "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://www.adobe.com/products/premiere/plans.html",
+      "official_source_url": "https://www.adobe.com/products/premiere.html",
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 26.21
     },
@@ -4462,8 +4477,8 @@
       "never_auto_cancel_reason": "Couche non substituable par défaut.",
       "requires_context_questions": true
     },
-    "shortDescriptionEn": "The reference professional video editing software.",
-    "longDescriptionEn": "Adobe Premiere is a professional video editor for long-form production, multicam work, audio, color and collaborative workflows. Its main advantage remains the integration with After Effects, Frame.io, Adobe Express and the rest of Creative Cloud.\n\nThe individual plan costs $22.99 per month in the US with an annual commitment billed monthly. It includes Premiere on desktop and mobile, 100GB of storage, Frame.io, Adobe Express Premium and 25 monthly generative credits. There is no perpetual license, only a seven-day free trial.\n\nVersion 26.3 from June 2026 adds sequence creation from Firefly Boards, word-by-word captions and automatic Content Credentials for qualifying generative content. DaVinci Resolve remains the strongest alternative for color work and a lower budget, while CapCut is often faster for simple social formats.",
+    "shortDescriptionEn": "Adobe's professional video editing application, distributed through Creative Cloud.",
+    "longDescriptionEn": "Adobe's professional video editing application, distributed through Creative Cloud.\n\nKey strengths: Complete professional editing (timeline, multi-format, high resolution).; Advanced colour grading (Lumetri) and pro audio.; Dynamic Link integration with After Effects and Adobe apps.; Widely adopted production standard..\n\nPremiere Pro makes sense when video editing is regular and demanding, tied to the Adobe ecosystem; for occasional editing, a lighter (or free) tool is enough.",
     "prosEn": [
       "Complete professional editing (timeline, multi-format, high resolution).",
       "Advanced colour grading (Lumetri) and pro audio.",
@@ -4494,12 +4509,16 @@
       "threshold": "Premiere Pro makes sense when video editing is regular and demanding, tied to the Adobe ecosystem; for occasional editing, a lighter (or free) tool is enough."
     },
     "pricingEn": {
-      "free": "No free version, trial only",
-      "paid": "Around €26/month (Premiere Pro alone), or via the full Creative Cloud plan"
+      "free": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite).",
+      "paid": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite)."
     },
     "force_silence": false,
-    "description": "Adobe Premiere est un logiciel de montage professionnel pour les productions longues, le multicam, l'audio, l'étalonnage et les workflows collaboratifs. Son avantage principal reste l'intégration avec After Effects, Frame.io, Adobe Express et le reste de Creative Cloud.\n\nLa version individuelle coûte 22,99$ par mois aux États-Unis avec un engagement annuel facturé mensuellement. Elle inclut Premiere sur ordinateur et mobile, 100 Go de stockage, Frame.io, Adobe Express Premium et 25 crédits génératifs mensuels. Il n'existe pas de licence perpétuelle, seulement un essai gratuit de sept jours.\n\nLa version 26.3 de juin 2026 ajoute notamment la création de séquences depuis Firefly Boards, les sous-titres mot par mot et les Content Credentials automatiques pour certains contenus génératifs. DaVinci Resolve reste l'alternative la plus convaincante pour l'étalonnage et un budget réduit, tandis que CapCut est souvent plus rapide pour les formats sociaux simples.",
-    "ogImageUrl": "https://www.adobe.com/products/media_14a141cf8900a74105b7122f28472dce9fd8cf872.jpg?width=1200&#x26;format=pjpg&#x26;optimize=medium"
+    "description": "Application de montage vidéo professionnelle d'Adobe, distribuée dans Creative Cloud.\n\nFonctions clés : Montage sur timeline avec imbrication profonde des séquences ; Prise en charge haute résolution et grande profondeur de couleur ; Audio pro (édition fine, VST, mixage surround 5.1) ; Étalonnage couleur (outils Lumetri) ; Intégration Dynamic Link avec After Effects, Photoshop, Illustrator.\n\nPremiere Pro s'impose quand le montage vidéo est régulier et exigeant, en lien avec l'écosystème Adobe ; pour un montage occasionnel, un outil plus léger (ou gratuit) suffit.",
+    "ogImageUrl": "https://www.adobe.com/products/media_14a141cf8900a74105b7122f28472dce9fd8cf872.jpg?width=1200&format=pjpg&optimize=medium",
+    "galleryImages": [
+      "https://www.adobe.com/products/media_168928bcdc3aff4c1288aa2e481211b36d7c35d8d.png?width=750&format=png&optimize=medium",
+      "https://www.adobe.com/products/media_1f8daa11378f3f2bf31de3eba54dec9f989bf65d5.png?width=750&format=png&optimize=medium"
+    ]
   },
   {
     "id": "adobe-stock",
@@ -8258,14 +8277,14 @@
     "name": "Anima",
     "slug": "figma-anima",
     "category": "design-tools",
-    "shortDescription": "Export de designs Figma en code React/HTML/CSS. Handoff développeur automatisé.",
-    "longDescription": "Anima, c'est un plugin Figma qui transforme tes maquettes en code : React, HTML, CSS. L'idée, c'est d'automatiser le handoff entre le designer et le développeur, en générant une base de code responsive à partir du design, plutôt que de tout réintégrer à la main. Pour une petite équipe ou un freelance qui porte les deux casquettes, ça peut faire gagner du temps sur la mise en route.\n\nLe modèle est freemium : quelques exports gratuits par mois, puis un plan Pro autour de 31$/mois.\n\nLe point à connaître : depuis que Figma a sorti son Dev Mode natif (inspection, specs, variables), une partie de la valeur d'Anima s'est réduite. Et le code généré par ce type d'outil reste rarement prêt pour la production : il faut le relire et le nettoyer. Anima reste pertinent pour démarrer vite une intégration, à condition de ne pas en attendre du code final propre.",
+    "shortDescription": "Plugin Figma avec IA pour convertir des designs en code fonctionnel (React, HTML, Vue, Tailwind CSS). Inclut un AI Playground pour prototyper des apps entières via prompts naturels.",
+    "longDescription": "Plugin Figma avec IA pour convertir des designs en code fonctionnel (React, HTML, Vue, Tailwind CSS). Inclut un AI Playground pour prototyper des apps entières via prompts naturels.\n\nFonctions clés : Figma to Code export (React, HTML, Vue, Tailwind CSS, email HTML) ; AI Playground pour construire des apps sans code ; Clonage de sites web multi-pages ; Gestion base de données et authentification ; Version history et restore instantané ; Intégration Claude et autres agents IA ; Anima MCP pour connecter d'autres outils.\n\nAnima brille pour design-to-code React/HTML. Pour du prototypage riche ou 100 pourcent gratuit, explorez d'autres solutions.",
     "affiliateLink": "https://animaapp.com",
     "websiteUrl": "https://animaapp.com",
     "defaultMonthlyPrice": 26.85,
     "pricing": {
-      "free": "3 exports/mois",
-      "paid": "31$/mois (Pro)"
+      "free": "Essai gratuit sans limite de temps avec accès au plugin et à l'AI Playground.",
+      "paid": "Free Trial: Gratuit (accès complet temporaire) ; Pro: À partir de 24 $ / mois (montants sur la page officielle) ; Business: À partir de 150 $ / mois (montants sur la page officielle)"
     },
     "logo": "",
     "soloRelevance": "medium",
@@ -8359,14 +8378,14 @@
         "Offre gratuite limitée à quelques exports par mois",
         "Pro à ~31$/mois ; le code généré demande du nettoyage avant la prod"
       ],
-      "verified_on": "2026-06-15",
+      "verified_on": "2026-07-24",
       "source_domain": "animaapp.com",
       "usage_sensitive": false,
       "compare_plan_kind": "individual",
       "compare_plan_name": "Entry paid plan",
       "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://www.animaapp.com/pricing",
+      "official_source_url": "https://animaapp.com",
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 26.85
     },
@@ -8378,8 +8397,8 @@
       "never_auto_cancel_reason": "Couche non substituable par défaut.",
       "requires_context_questions": true
     },
-    "shortDescriptionEn": "Export Figma designs to React/HTML/CSS code. Automated developer handoff.",
-    "longDescriptionEn": "Anima is a Figma plugin that turns your mockups into code: React, HTML, CSS. The idea is to automate handoff between designer and developer, generating a responsive code base from the design rather than re-integrating everything by hand. For a small team or a freelancer wearing both hats, it can save time on getting started.\n\nThe model is freemium: a few free exports per month, then a Pro plan around $31/month.\n\nThe thing to know: since Figma shipped its native Dev Mode (inspection, specs, variables), part of Anima's value has shrunk. And the code generated by this kind of tool is rarely production-ready: you have to review and clean it. Anima stays relevant to quickly start an integration, as long as you don't expect clean final code.",
+    "shortDescriptionEn": "AI-powered Figma plugin that converts designs to production code (React, HTML, Vue, Tailwind CSS). Includes an AI Playground to prototype full apps using natural language prompts.",
+    "longDescriptionEn": "AI-powered Figma plugin that converts designs to production code (React, HTML, Vue, Tailwind CSS). Includes an AI Playground to prototype full apps using natural language prompts.\n\nKey strengths: Effective design-to-code conversion ready for production.; AI Playground to build full apps without coding.; Unlimited free trial.; Multi-stack support (React, Vue, HTML, Tailwind).; Built-in AI integration (Claude, agents)..\n\nAnima excels at design-to-code React/HTML. For rich prototyping or fully free, explore alternatives.",
     "prosEn": [
       "Effective design-to-code conversion ready for production.",
       "AI Playground to build full apps without coding.",
@@ -8412,26 +8431,31 @@
       "threshold": "Anima excels at design-to-code React/HTML. For rich prototyping or fully free, explore alternatives."
     },
     "pricingEn": {
-      "free": "Free tier (a few exports per month)",
-      "paid": "Pro at ~$31/month"
+      "free": "Essai gratuit sans limite de temps avec accès au plugin et à l'AI Playground.",
+      "paid": "Free Trial: Gratuit (accès complet temporaire) ; Pro: À partir de 24 $ / mois (montants sur la page officielle) ; Business: À partir de 150 $ / mois (montants sur la page officielle)"
     },
     "force_silence": false,
-    "description": "Anima, c'est un plugin Figma qui transforme tes maquettes en code : React, HTML, CSS. L'idée, c'est d'automatiser le handoff entre le designer et le développeur, en générant une base de code responsive à partir du design, plutôt que de tout réintégrer à la main. Pour une petite équipe ou un freelance qui porte les deux casquettes, ça peut faire gagner du temps sur la mise en route.\n\nLe modèle est freemium : quelques exports gratuits par mois, puis un plan Pro autour de 31$/mois.\n\nLe point à connaître : depuis que Figma a sorti son Dev Mode natif (inspection, specs, variables), une partie de la valeur d'Anima s'est réduite. Et le code généré par ce type d'outil reste rarement prêt pour la production : il faut le relire et le nettoyer. Anima reste pertinent pour démarrer vite une intégration, à condition de ne pas en attendre du code final propre.",
-    "ogImageUrl": "https://a.storyblok.com/f/89137/1840x1142/548f935261/anima-the-ux-design-agent.png"
+    "description": "Plugin Figma avec IA pour convertir des designs en code fonctionnel (React, HTML, Vue, Tailwind CSS). Inclut un AI Playground pour prototyper des apps entières via prompts naturels.\n\nFonctions clés : Figma to Code export (React, HTML, Vue, Tailwind CSS, email HTML) ; AI Playground pour construire des apps sans code ; Clonage de sites web multi-pages ; Gestion base de données et authentification ; Version history et restore instantané ; Intégration Claude et autres agents IA ; Anima MCP pour connecter d'autres outils.\n\nAnima brille pour design-to-code React/HTML. Pour du prototypage riche ou 100 pourcent gratuit, explorez d'autres solutions.",
+    "ogImageUrl": "https://a.storyblok.com/f/89137/2124x816/9f4d3b6474/frameworks-tools.png",
+    "galleryImages": [
+      "https://a.storyblok.com/f/89137/1840x1142/02948bc427/blog-clone-multi-page.jpg",
+      "https://a.storyblok.com/f/89137/1024x636/aca6d5328b/blog-claude-to-figma.jpg",
+      "https://a.storyblok.com/f/89137/1840x1142/548f935261/anima-the-ux-design-agent.png"
+    ]
   },
   {
     "id": "ae-animation-composer",
     "name": "Animation Composer 3",
     "slug": "ae-animation-composer",
     "category": "design-tools",
-    "shortDescription": "Bibliothèque de presets d'animation et de transitions pour After Effects.",
-    "longDescription": "Animation Composer est un plugin Mister Horse pour After Effects qui regroupe presets d'animation, transitions, éléments sonores et quatre outils destinés à accélérer les tâches répétitives. Le plan gratuit inclut le plugin, plus de 1 000 ressources et les quatre outils.\n\nL'offre payante fonctionne désormais par abonnement. Elle coûte 16,50$ par mois avec une facturation annuelle de 198$, ou 19,90$ au mois, et donne accès à plus de 6 000 ressources. Les anciennes licences perpétuelles ne décrivent donc plus l'offre proposée aux nouveaux utilisateurs.\n\nLe plan gratuit suffit pour tester le workflow et couvrir des besoins réguliers simples. L'abonnement devient pertinent lorsque la profondeur de la bibliothèque réduit réellement le temps passé à construire transitions, textes et mouvements à la main. Motion Bro reste le concurrent le plus direct.",
+    "shortDescription": "Plugin After Effects créé par Mister Horse permettant de composer et d'organiser les animations via des présets et des composants réutilisables. Autrefois vendu individuellement, il est maintenant inclus dans l'abonnement unified Mister Horse (qui couvre aussi Premiere Pro).",
+    "longDescription": "Plugin After Effects créé par Mister Horse permettant de composer et d'organiser les animations via des présets et des composants réutilisables. Autrefois vendu individuellement, il est maintenant inclus dans l'abonnement unified Mister Horse (qui couvre aussi Premiere Pro).\n\nFonctions clés : Bibliothèque de présets d'animations réutilisables ; Création et partage de composants personnalisés ; Intégration avec Premiere Pro et After Effects ; Accès à la suite complète Mister Horse (plusieurs outils motion design).\n\nAnimation Composer justifie l'abonnement Mister Horse surtout si vous utilisez aussi Premiere Pro et aimez travailler par présets réutilisables.",
     "affiliateLink": "https://misterhorse.com/animation-composer",
     "websiteUrl": "https://misterhorse.com/animation-composer",
     "defaultMonthlyPrice": 0,
     "pricing": {
-      "free": "Version de base gratuite",
-      "paid": "16,50$/mois en annuel (198$/an) ou 19,90$/mois"
+      "free": "Version gratuite limitée : jusqu'à 500 items en bibliothèque personnelle. L'abonnement supprime la limite et déverrouille d'autres extensions Mister Horse.",
+      "paid": "Mister Horse Subscription: Montants sur la page officielle (réduction disponible paiement annuel)"
     },
     "logo": "",
     "soloRelevance": "medium",
@@ -8524,14 +8548,14 @@
       "cautions": [
         "Plan gratuit avec plus de 1 000 ressources ; abonnement pour la bibliothèque complète"
       ],
-      "verified_on": "2026-08-28",
+      "verified_on": "2026-07-24",
       "source_domain": "misterhorse.com",
       "usage_sensitive": false,
       "compare_plan_kind": "individual",
       "compare_plan_name": "Free",
       "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://www.misterhorse.com/animation-composer",
+      "official_source_url": "https://misterhorse.com/pricing",
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 0
     },
@@ -8543,8 +8567,8 @@
       "never_auto_cancel_reason": "Couche non substituable par défaut.",
       "requires_context_questions": true
     },
-    "shortDescriptionEn": "Library of animation presets and transitions for After Effects.",
-    "longDescriptionEn": "Animation Composer is a Mister Horse plugin for After Effects that combines animation presets, transitions, sound elements and four tools designed to speed up repetitive work. The free plan includes the plugin, more than 1,000 assets and all four tools.\n\nThe paid offer is now a subscription. It costs $16.50 per month when billed annually at $198, or $19.90 month to month, and includes more than 6,000 assets. Older perpetual licenses therefore no longer describe the offer available to new users.\n\nThe free plan is enough to test the workflow and cover straightforward recurring needs. The subscription becomes worthwhile when the larger library meaningfully reduces the time spent building transitions, text and motion by hand. Motion Bro remains the closest competitor.",
+    "shortDescriptionEn": "After Effects plugin by Mister Horse for composing and organizing animations via presets and reusable components. Formerly sold standalone; now included in the unified Mister Horse subscription (covering both After Effects and Premiere Pro).",
+    "longDescriptionEn": "After Effects plugin by Mister Horse for composing and organizing animations via presets and reusable components. Formerly sold standalone; now included in the unified Mister Horse subscription (covering both After Effects and Premiere Pro).\n\nKey strengths: Native integration: After Effects + Premiere Pro in one subscription.; Limited free version to get started.; Preset library easily extends and shares.; Part of the Mister Horse ecosystem (other motion design tools)..\n\nAnimation Composer justifies the Mister Horse subscription mainly if you also use Premiere Pro and like working with reusable preset workflows.",
     "prosEn": [
       "Native integration: After Effects + Premiere Pro in one subscription.",
       "Limited free version to get started.",
@@ -8576,12 +8600,16 @@
       "threshold": "Animation Composer justifies the Mister Horse subscription mainly if you also use Premiere Pro and like working with reusable preset workflows."
     },
     "pricingEn": {
-      "free": "Free base version",
-      "paid": "$16.50/month annually ($198/year) or $19.90 month to month"
+      "free": "Version gratuite limitée : jusqu'à 500 items en bibliothèque personnelle. L'abonnement supprime la limite et déverrouille d'autres extensions Mister Horse.",
+      "paid": "Mister Horse Subscription: Montants sur la page officielle (réduction disponible paiement annuel)"
     },
     "force_silence": false,
-    "description": "Animation Composer est un plugin Mister Horse pour After Effects qui regroupe presets d'animation, transitions, éléments sonores et quatre outils destinés à accélérer les tâches répétitives. Le plan gratuit inclut le plugin, plus de 1 000 ressources et les quatre outils.\n\nL'offre payante fonctionne désormais par abonnement. Elle coûte 16,50$ par mois avec une facturation annuelle de 198$, ou 19,90$ au mois, et donne accès à plus de 6 000 ressources. Les anciennes licences perpétuelles ne décrivent donc plus l'offre proposée aux nouveaux utilisateurs.\n\nLe plan gratuit suffit pour tester le workflow et couvrir des besoins réguliers simples. L'abonnement devient pertinent lorsque la profondeur de la bibliothèque réduit réellement le temps passé à construire transitions, textes et mouvements à la main. Motion Bro reste le concurrent le plus direct.",
-    "ogImageUrl": "https://d23mmnx9ld45h.cloudfront.net/misterhorse.com_web_v3/Products/Animation%20Composer/Main%20Page%20v2/pp-ac-link-preview-image.jpg"
+    "description": "Plugin After Effects créé par Mister Horse permettant de composer et d'organiser les animations via des présets et des composants réutilisables. Autrefois vendu individuellement, il est maintenant inclus dans l'abonnement unified Mister Horse (qui couvre aussi Premiere Pro).\n\nFonctions clés : Bibliothèque de présets d'animations réutilisables ; Création et partage de composants personnalisés ; Intégration avec Premiere Pro et After Effects ; Accès à la suite complète Mister Horse (plusieurs outils motion design).\n\nAnimation Composer justifie l'abonnement Mister Horse surtout si vous utilisez aussi Premiere Pro et aimez travailler par présets réutilisables.",
+    "ogImageUrl": "https://d23mmnx9ld45h.cloudfront.net/misterhorse.com_web_v3/Products/Animation%20Composer/20260609/ac.png",
+    "galleryImages": [
+      "https://d23mmnx9ld45h.cloudfront.net/misterhorse.com_web_v3/Products/Animation%20Composer/20260609/pc.png",
+      "https://d23mmnx9ld45h.cloudfront.net/misterhorse.com_web_v3/Products/Animation%20Composer/Main%20Page%20v2/pp-ac-link-preview-image.jpg"
+    ]
   },
   {
     "id": "ant-design",
@@ -10342,22 +10370,22 @@
     "slug": "arnold",
     "name": "Arnold",
     "category": "design-tools",
-    "shortDescription": "Moteur de rendu CPU/GPU d'Autodesk, standard du cinéma et de l'animation.",
-    "shortDescriptionEn": "Autodesk's CPU/GPU render engine, the film and animation standard.",
+    "shortDescription": "Moteur de rendu Monte Carlo par tracé de rayons (ray tracing) développé par Autodesk pour le cinéma, télévision, jeux vidéo et visualisation de design. Résultats prévisibles, scalable pour les pipelines de production. Compatible Maya, 3ds Max, Houdini, Blender et autres.",
+    "shortDescriptionEn": "Advanced Monte Carlo ray tracing renderer developed by Autodesk for film, TV, games, and design visualization. Predictable results, scalable for production pipelines. Compatible with Maya, 3ds Max, Houdini, Blender, and others.",
     "pricing": {
-      "free": "Essai gratuit",
-      "paid": "~430$/an (~36$/mois). Souvent inclus avec Maya (Autodesk)."
+      "free": "Essai gratuit ; version complète accessible via abonnement Autodesk ou plan Flex.",
+      "paid": "Arnold Single-User Monthly/Annual: Montants sur page Autodesk officielle ; Arnold Flex Tokens: Paiement à l'usage (pay-as-you-go)"
     },
     "pricingEn": {
-      "free": "Free trial",
-      "paid": "~$430/year (~$36/month). Often included with Maya (Autodesk)."
+      "free": "Essai gratuit ; version complète accessible via abonnement Autodesk ou plan Flex.",
+      "paid": "Arnold Single-User Monthly/Annual: Montants sur page Autodesk officielle ; Arnold Flex Tokens: Paiement à l'usage (pay-as-you-go)"
     },
     "defaultMonthlyPrice": 36,
     "affiliateLink": "https://www.autodesk.com/products/arnold/overview",
     "websiteUrl": "https://www.autodesk.com/products/arnold/overview",
     "logo": "",
-    "longDescription": "Arnold, c'est le moteur de rendu d'Autodesk, et son terrain, c'est le cinéma et l'animation. Moteur physiquement réaliste (unbiased), il s'est imposé dans le long-métrage et les VFX pour sa capacité à encaisser des scènes énormes et du shading complexe sans broncher. Il est intégré à Maya, 3ds Max, Houdini et Cinema 4D, et il est devenu un quasi-standard des pipelines studio orientés animation/VFX.\n\nHistoriquement CPU, Arnold gère désormais aussi le GPU. Côté prix, c'est l'abonnement Autodesk autour de 430$/an (environ 36$/mois) pour un poste, et il est souvent inclus avec certaines licences Autodesk (Maya). C'est plutôt raisonnable pour un moteur de cette réputation.\n\nLe vrai arbitrage se joue selon ton métier. Pour l'archviz et le produit, V-Ray et Corona sont plus indiqués. Pour la vitesse GPU pure en motion, Redshift et Octane prennent l'avantage. Et côté gratuit, Cycles dans Blender est devenu très bon. Arnold reste la valeur sûre du rendu de cinéma et d'animation, surtout si tu es déjà dans l'écosystème Maya.",
-    "longDescriptionEn": "Arnold is Autodesk's render engine, and its home is film and animation. A physically based (unbiased) engine, it established itself in features and VFX for handling enormous scenes and complex shading without flinching. It's integrated into Maya, 3ds Max, Houdini and Cinema 4D, and has become a near-standard of animation/VFX studio pipelines.\n\nHistorically CPU, Arnold now also handles GPU. On price, it's the Autodesk subscription around $430/year (about $36/month) for one seat, and it's often included with some Autodesk licenses (Maya). That's fairly reasonable for an engine of this reputation.\n\nThe real trade-off depends on your work. For archviz and product, V-Ray and Corona are better suited. For pure GPU speed in motion, Redshift and Octane take the edge. And on the free side, Cycles in Blender has become very good. Arnold remains the safe bet for film and animation rendering, especially if you're already in the Maya ecosystem.",
+    "longDescription": "Moteur de rendu Monte Carlo par tracé de rayons (ray tracing) développé par Autodesk pour le cinéma, télévision, jeux vidéo et visualisation de design. Résultats prévisibles, scalable pour les pipelines de production. Compatible Maya, 3ds Max, Houdini, Blender et autres.\n\nFonctions clés : Moteur ray tracing Monte Carlo avancé ; Résultats de rendu prévisibles et reproductibles ; Scalabilité pour pipelines de production ; Support multi-application (Maya, 3ds Max, Houdini, Blender, etc.) ; Denoising intégré (réduction de bruit) ; Shader network système et scripting ; GPU rendering (RTX) en sus du CPU.\n\nArnold s'impose pour les studios de production cinéma/TV ; pour 3D solo, débutant ou ponctuel, Cycles (Blender) ou d'autres renderers gratuits conviendraient.",
+    "longDescriptionEn": "Advanced Monte Carlo ray tracing renderer developed by Autodesk for film, TV, games, and design visualization. Predictable results, scalable for production pipelines. Compatible with Maya, 3ds Max, Houdini, Blender, and others.\n\nKey strengths: Professional, predictable rendering for film/TV.; Strong integration with Maya/3ds Max/Houdini.; Render farm scalability for large projects.; Built-in denoising and GPU rendering.; Autodesk's industry support..\n\nArnold makes sense for film/TV production studios; for solo 3D, beginners, or occasional rendering, Cycles (Blender) or other free renderers work well.",
     "verdict": {
       "keepIf": [
         "Vous rendez des scènes complexes pour cinéma, TV ou jeux.",
@@ -10477,7 +10505,7 @@
       "cautions": [
         "~430$/an (~36$/mois) ; souvent inclus avec certaines licences Autodesk"
       ],
-      "verified_on": "2026-06-17",
+      "verified_on": "2026-07-24",
       "source_domain": "autodesk.com",
       "usage_sensitive": false,
       "compare_plan_kind": "subscription",
@@ -10489,10 +10517,14 @@
       "compare_price_monthly_eur": 36
     },
     "substitution_cluster_v2": "render-engine",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/arnold.jpg",
-    "description": "Arnold, c'est le moteur de rendu d'Autodesk, et son terrain, c'est le cinéma et l'animation. Moteur physiquement réaliste (unbiased), il s'est imposé dans le long-métrage et les VFX pour sa capacité à encaisser des scènes énormes et du shading complexe sans broncher. Il est intégré à Maya, 3ds Max, Houdini et Cinema 4D, et il est devenu un quasi-standard des pipelines studio orientés animation/VFX.\n\nHistoriquement CPU, Arnold gère désormais aussi le GPU. Côté prix, c'est l'abonnement Autodesk autour de 430$/an (environ 36$/mois) pour un poste, et il est souvent inclus avec certaines licences Autodesk (Maya). C'est plutôt raisonnable pour un moteur de cette réputation.\n\nLe vrai arbitrage se joue selon ton métier. Pour l'archviz et le produit, V-Ray et Corona sont plus indiqués. Pour la vitesse GPU pure en motion, Redshift et Octane prennent l'avantage. Et côté gratuit, Cycles dans Blender est devenu très bon. Arnold reste la valeur sûre du rendu de cinéma et d'animation, surtout si tu es déjà dans l'écosystème Maya.",
+    "ogImageUrl": "https://images.ctfassets.net/v7wr16nrr0mz/1uVn6YUvZTk9et3OSirDkg/d8d8d25c0340ca2c06d2575b3eafb9d8/what-is-autodesk-arnold-thumb-788x1050.jpg",
+    "description": "Moteur de rendu Monte Carlo par tracé de rayons (ray tracing) développé par Autodesk pour le cinéma, télévision, jeux vidéo et visualisation de design. Résultats prévisibles, scalable pour les pipelines de production. Compatible Maya, 3ds Max, Houdini, Blender et autres.\n\nFonctions clés : Moteur ray tracing Monte Carlo avancé ; Résultats de rendu prévisibles et reproductibles ; Scalabilité pour pipelines de production ; Support multi-application (Maya, 3ds Max, Houdini, Blender, etc.) ; Denoising intégré (réduction de bruit) ; Shader network système et scripting ; GPU rendering (RTX) en sus du CPU.\n\nArnold s'impose pour les studios de production cinéma/TV ; pour 3D solo, débutant ou ponctuel, Cycles (Blender) ou d'autres renderers gratuits conviendraient.",
     "decision_policy_v3": null,
-    "force_silence": false
+    "force_silence": false,
+    "galleryImages": [
+      "https://images.ctfassets.net/v7wr16nrr0mz/zZrkgOJJ5lgpm44LKv9Ni/b0f52b94b238ab96d084bb5c99f092e5/manage-complex-projects-with-production-ready-tools-thumb-788x1050.jpg",
+      "https://images.ctfassets.net/v7wr16nrr0mz/32MrQfOSmWP6pS4EmzFkIY/755934caad725b6476de09b7b2f19b5a/integrate-and-customize-your-pipeline-thumb-788x1050.jpg"
+    ]
   },
   {
     "id": "around",
@@ -12634,22 +12666,22 @@
     "slug": "auto-rig-pro",
     "name": "Auto-Rig Pro",
     "category": "design-tools",
-    "shortDescription": "Add-on Blender pour créer des rigs, retargeter des animations et exporter vers les moteurs de jeu.",
-    "shortDescriptionEn": "Blender add-on for character rigging, animation retargeting, and game-engine export.",
+    "shortDescription": "Addon Blender pour le rigging automatique de personnages humanoïdes. Généère rapidement un squelette articulé, poids de déformation et contrôles d'animation. Inclut presets d'export pour Unity et Unreal Engine. Développé pour studios de petite et moyenne taille.",
+    "shortDescriptionEn": "Blender addon for automatic humanoid character rigging. Quickly generates articulated skeleton, deformation weights, and animation controls. Includes export presets for Unity and Unreal Engine. Built for small to medium studios.",
     "pricing": {
-      "free": "",
-      "paid": "50 $ pour la version complète ou 25 $ pour Auto-Rig Pro Core, en achat unique sur Superhive."
+      "free": "Pas de version gratuite permanente. Deux tiers payants : Lite ($25) et Full ($50).",
+      "paid": "Auto-Rig Pro Lite: 25 USD ; Auto-Rig Pro Full: 50 USD"
     },
     "pricingEn": {
-      "free": "",
-      "paid": "$50 for the full version or $25 for Auto-Rig Pro Core, as a one-time purchase on Superhive."
+      "free": "Pas de version gratuite permanente. Deux tiers payants : Lite ($25) et Full ($50).",
+      "paid": "Auto-Rig Pro Lite: 25 USD ; Auto-Rig Pro Full: 50 USD"
     },
     "defaultMonthlyPrice": 50,
     "affiliateLink": "https://superhivemarket.com/products/auto-rig-pro",
     "websiteUrl": "https://superhivemarket.com/products/auto-rig-pro",
     "logo": "",
-    "longDescription": "Auto-Rig Pro accélère le rigging de personnages dans Blender, le retargeting d'animations et l'export FBX ou glTF vers Unity, Unreal Engine et Godot. Le rig reste éditable et le système couvre aussi des créatures non humanoïdes, même si le placement automatique Smart vise d'abord les bipèdes.\n\nLa version complète coûte 50 $ en achat unique et inclut le cœur du rig, Smart, l'export jeu et le remapping ; la version Core à 25 $ convient si ces fonctions avancées ne sont pas nécessaires. Le gain est réel sur une production régulière, mais il faut toujours maîtriser le skinning et le weight painting pour corriger les géométries complexes.",
-    "longDescriptionEn": "Auto-Rig Pro speeds up character rigging in Blender, animation retargeting, and FBX or glTF export to Unity, Unreal Engine, and Godot. Rigs remain editable, and the system also supports non-humanoid creatures, although the automatic Smart placement tool primarily targets bipeds.\n\nThe full version is a $50 one-time purchase and includes the core rigging tools, Smart, game export, and remapping; the $25 Core edition is enough when those advanced features are not required. It can save substantial time in recurring production, but artists still need skinning and weight-painting skills to correct complex geometry.",
+    "longDescription": "Addon Blender pour le rigging automatique de personnages humanoïdes. Généère rapidement un squelette articulé, poids de déformation et contrôles d'animation. Inclut presets d'export pour Unity et Unreal Engine. Développé pour studios de petite et moyenne taille.\n\nFonctions clés : Rigging automatique humanoïde avec détection de géométrie ; Génération squelette et hiérarchie IK/FK automatique ; Weights de déformation auto-calculés ; Presets d'export pour Unity et Unreal Engine (Full version) ; Contrôles d'animation intuitifs et paramétrables ; Support multi-squelettes et fusion ; Renouvellement optionnel pour mises à jour.\n\nAuto-Rig Pro s'impose pour les studios Blender produisant régulièrement des personnages ; pour rigging spécialisé ou usage très ponctuel, le rigging manuel ou Rigify suffisent.",
+    "longDescriptionEn": "Blender addon for automatic humanoid character rigging. Quickly generates articulated skeleton, deformation weights, and animation controls. Includes export presets for Unity and Unreal Engine. Built for small to medium studios.\n\nKey strengths: Very fast rigging for standard humanoids.; Unbeatable pricing for a studio (one-off license).; Export presets for games (Unity, Unreal).; Intelligent deformation weight automation.; Perpetual license with optional updates..\n\nAuto-Rig Pro makes sense for Blender studios regularly producing characters; for specialized rigging or very occasional use, manual rigging or Rigify suffice.",
     "verdict": {
       "keepIf": [
         "Vous riggez régulièrement des personnages humanoïdes dans Blender.",
@@ -12755,7 +12787,7 @@
     "prescription_context_questions": [],
     "pricing_v5": {
       "cautions": [],
-      "verified_on": "2026-08-26",
+      "verified_on": "2026-07-24",
       "source_domain": "superhivemarket.com",
       "usage_sensitive": false,
       "compare_plan_kind": "one_time",
@@ -12772,7 +12804,7 @@
       "https://assets.superhivemarket.com/store/productimage/5041/image/xlarge-98c1fda52af4f61e38003fe7c956fd99.jpg",
       "https://assets.superhivemarket.com/store/productimage/6755/image/xlarge-16b10c4486692a750494925e78b8ce83.jpg"
     ],
-    "description": "Auto-Rig Pro accélère le rigging de personnages dans Blender, le retargeting d'animations et l'export FBX ou glTF vers Unity, Unreal Engine et Godot. Le rig reste éditable et le système couvre aussi des créatures non humanoïdes, même si le placement automatique Smart vise d'abord les bipèdes.\n\nLa version complète coûte 50 $ en achat unique et inclut le cœur du rig, Smart, l'export jeu et le remapping ; la version Core à 25 $ convient si ces fonctions avancées ne sont pas nécessaires. Le gain est réel sur une production régulière, mais il faut toujours maîtriser le skinning et le weight painting pour corriger les géométries complexes.",
+    "description": "Addon Blender pour le rigging automatique de personnages humanoïdes. Généère rapidement un squelette articulé, poids de déformation et contrôles d'animation. Inclut presets d'export pour Unity et Unreal Engine. Développé pour studios de petite et moyenne taille.\n\nFonctions clés : Rigging automatique humanoïde avec détection de géométrie ; Génération squelette et hiérarchie IK/FK automatique ; Weights de déformation auto-calculés ; Presets d'export pour Unity et Unreal Engine (Full version) ; Contrôles d'animation intuitifs et paramétrables ; Support multi-squelettes et fusion ; Renouvellement optionnel pour mises à jour.\n\nAuto-Rig Pro s'impose pour les studios Blender produisant régulièrement des personnages ; pour rigging spécialisé ou usage très ponctuel, le rigging manuel ou Rigify suffisent.",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -12784,10 +12816,11 @@
     "bundle_parent": null,
     "host_app": null,
     "category": "design-tools",
-    "shortDescription": "Le standard mondial du dessin technique 2D et 3D.",
+    "shortDescription": "Logiciel professionnel de conception assistée par ordinateur (CAO) pour la modélisation, le dessin technique en 2D et 3D. Outil réputé auprès des architectes, ingénieurs et designers, utilisé pour les plans, schémas et maquettes complexes.",
     "defaultMonthlyPrice": 190.53,
     "pricing": {
-      "paid": "220$/mois ou 1 775$/an"
+      "free": "Essai gratuit 30 jours ; pas de version gratuite permanente.",
+      "paid": "AutoCAD (abonnement individuel): 235 $/mois ou 1 865 $/an ; AutoCAD LT (version 2D simplifiée): 500 $/an ; Architecture, Engineering & Construction Collection: 3 795 $/siège/an (inclut Revit, Civil 3D, etc.)"
     },
     "covers": [
       "dessin-technique",
@@ -12857,23 +12890,26 @@
     "pricingTiers": {
       "paid": "220$/mois ou 1 775$/an"
     },
-    "longDescription": "AutoCAD, c'est le standard mondial du dessin technique 2D et 3D. À partir de 190.53€/mois. Pensé pour les architectes BIM et les scénographes.\n\nGain de temps estimé : 10h/mois.\n\nÀ garder si : plans techniques, cotations, dessin 2D précis. À éviter si : bIM — Revit remplace AutoCAD pour l'architecture. Standard non substituable en bureaux d'études.",
+    "longDescription": "Logiciel professionnel de conception assistée par ordinateur (CAO) pour la modélisation, le dessin technique en 2D et 3D. Outil réputé auprès des architectes, ingénieurs et designers, utilisé pour les plans, schémas et maquettes complexes.\n\nFonctions clés : Dessin technique 2D et modélisation 3D ; Outils de conception paramétriques ; Compatibilité DWG/DXF ; Bibliothèques de symboles et motifs ; Collaboration en temps réel sur cloud (AutoCAD Web + Mobile).\n\nAutoCAD s'impose pour la conception technique professionnelle ; pour une introduction ou un usage léger, des alternatives gratuites ou moins chères suffisent.",
     "alternatives": [],
     "slug": "autocad",
-    "shortDescriptionEn": "The world standard for 2D and 3D technical drawing.",
-    "description": "AutoCAD, c'est le standard mondial du dessin technique 2D et 3D. À partir de 190.53€/mois. Pensé pour les architectes BIM et les scénographes.\n\nGain de temps estimé : 10h/mois.\n\nÀ garder si : plans techniques, cotations, dessin 2D précis. À éviter si : bIM — Revit remplace AutoCAD pour l'architecture. Standard non substituable en bureaux d'études.",
-    "longDescriptionEn": "AutoCAD is the world standard for 2D and 3D technical drawing. Starting at €190.53/month. Built for BIM architects and set designers.\n\nEstimated time saving: 10h/month.",
-    "pricingEn": null,
+    "shortDescriptionEn": "Professional computer-aided design (CAD) software for modeling, technical 2D and 3D drawing. Widely used by architects, engineers, and designers for plans, schematics, and complex mockups.",
+    "description": "Logiciel professionnel de conception assistée par ordinateur (CAO) pour la modélisation, le dessin technique en 2D et 3D. Outil réputé auprès des architectes, ingénieurs et designers, utilisé pour les plans, schémas et maquettes complexes.\n\nFonctions clés : Dessin technique 2D et modélisation 3D ; Outils de conception paramétriques ; Compatibilité DWG/DXF ; Bibliothèques de symboles et motifs ; Collaboration en temps réel sur cloud (AutoCAD Web + Mobile).\n\nAutoCAD s'impose pour la conception technique professionnelle ; pour une introduction ou un usage léger, des alternatives gratuites ou moins chères suffisent.",
+    "longDescriptionEn": "Professional computer-aided design (CAD) software for modeling, technical 2D and 3D drawing. Widely used by architects, engineers, and designers for plans, schematics, and complex mockups.\n\nKey strengths: De facto standard for technical CAD.; Very rich modeling toolset.; Mature plugin and extension ecosystem.; Professional support and abundant training..\n\nAutoCAD is essential for professional technical design; for getting started or light use, free or cheaper alternatives work fine.",
+    "pricingEn": {
+      "free": "Essai gratuit 30 jours ; pas de version gratuite permanente.",
+      "paid": "AutoCAD (abonnement individuel): 235 $/mois ou 1 865 $/an ; AutoCAD LT (version 2D simplifiée): 500 $/an ; Architecture, Engineering & Construction Collection: 3 795 $/siège/an (inclut Revit, Civil 3D, etc.)"
+    },
     "pricing_v5": {
       "cautions": [],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-07-24",
       "source_domain": "autodesk.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
       "compare_plan_name": "Entry paid plan",
       "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://www.autodesk.com/fr/products/autocad/overview",
+      "official_source_url": "https://www.autodesk.com/products/autocad/overview",
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 190.53
     },
@@ -12931,7 +12967,10 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/autocad.jpg"
+    "ogImageUrl": "https://images.ctfassets.net/v7wr16nrr0mz/dqMYHCggeoYcKiXjPsZZy/bf3965e57a6cf0626496fd3d3875cba5/learn-best-practices-with-autolisp-thumb-788x1050.jpg",
+    "galleryImages": [
+      "https://images.ctfassets.net/v7wr16nrr0mz/6eXQAx6Z2Wm18nlBOLgVVE/eb41da463d7799874dc282086665506b/block-creation-in-autocad-thumb-788x1050.jpg"
+    ]
   },
   {
     "id": "autocad-lt",
@@ -14923,14 +14962,14 @@
     "name": "BAO Boa",
     "slug": "ae-bao-boa",
     "category": "design-tools",
-    "shortDescription": "Animation de lignes et formes SVG dans After Effects. Tracés organiques.",
-    "longDescription": "BAO Boa, c'est un plugin After Effects (aescripts) spécialisé dans l'animation de lignes et de tracés. Il permet de faire onduler, dessiner et déformer des lignes SVG de façon organique, avec un contrôle fin, là où les outils natifs d'After Effects sont vite limités. Pour un motion designer qui fait des graphiques animés, des illustrations au trait ou des transitions à base de lignes, c'est un outil précis et puissant.\n\nC'est un achat unique (~49$), sans abonnement.\n\nÀ qui ça s'adresse : aux motion designers qui animent souvent des lignes et des tracés. Si ce type d'animation n'est pas dans tes projets, BAO Boa ne te servira pas. Mais pour de l'animation de lignes organiques, il fait gagner un temps réel et permet des rendus difficiles à obtenir autrement.",
+    "shortDescription": "Plugin After Effects qui permet de déformer les couches le long de courbes de masque. BAO Boa crée des distorsions fluides et organiques en suivant précisément les formes définies par des masques, utile pour l'animation de texte, formes et éléments complexes.",
+    "longDescription": "Plugin After Effects qui permet de déformer les couches le long de courbes de masque. BAO Boa crée des distorsions fluides et organiques en suivant précisément les formes définies par des masques, utile pour l'animation de texte, formes et éléments complexes.\n\nFonctions clés : Déformation fluide le long de chemins de masque ; Contrôle avancé de la distorsion (amplitude, atténuation, angle) ; Animations de texte courbes et ondulantes ; Compatible avec les formes, couches de texte et éléments complexes ; Options de licence flexible (utilisateur unique, réseau, rendu).\n\nBAO Boa s'impose pour les animateurs spécialisés dans le texte courbe et les déformations organiques ; pour un usage occasionnel, After Effects natif suffit.",
     "affiliateLink": "https://aescripts.com/boa",
     "websiteUrl": "https://aescripts.com/boa",
     "defaultMonthlyPrice": 0,
     "pricing": {
-      "free": "",
-      "paid": "Achat unique (~49$), licence à vie, pas d'abonnement"
+      "free": "Pas de version gratuite. Aucun essai gratuit visible sur le site officiel.",
+      "paid": "BAO Boa (Single User License): 99,99 USD ; BAO Boa (Floating License Server): 99,99 USD"
     },
     "logo": "",
     "soloRelevance": "medium",
@@ -15019,14 +15058,14 @@
       "cautions": [
         "Achat unique (~49$), pas d'abonnement"
       ],
-      "verified_on": "2026-06-15",
+      "verified_on": "2026-07-24",
       "source_domain": "aescripts.com",
       "usage_sensitive": false,
       "compare_plan_kind": "individual",
       "compare_plan_name": "Free",
       "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://aescripts.com/authors/bao-plugins/products/",
+      "official_source_url": "https://aescripts.com/bao-boa",
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 0
     },
@@ -15038,8 +15077,8 @@
       "never_auto_cancel_reason": "Couche non substituable par défaut.",
       "requires_context_questions": true
     },
-    "shortDescriptionEn": "SVG line and shape animation in After Effects. Organic strokes.",
-    "longDescriptionEn": "BAO Boa is an After Effects plugin (aescripts) specialized in animating lines and strokes. It lets you wave, draw and deform SVG lines organically, with fine control, where After Effects' native tools quickly hit their limits. For a motion designer doing animated graphics, line illustrations or line-based transitions, it's a precise, powerful tool.\n\nIt's a one-time purchase (~$49), no subscription.\n\nWho it's for: motion designers who often animate lines and strokes. If that kind of animation isn't in your projects, BAO Boa won't help you. But for organic line animation, it saves real time and enables looks hard to get otherwise.",
+    "shortDescriptionEn": "After Effects plugin that distorts layers along mask paths. BAO Boa creates smooth, organic distortions by following mask shapes precisely, useful for animating text, shapes, and complex elements.",
+    "longDescriptionEn": "After Effects plugin that distorts layers along mask paths. BAO Boa creates smooth, organic distortions by following mask shapes precisely, useful for animating text, shapes, and complex elements.\n\nKey strengths: Smooth, precise distortions along mask paths.; Perpetual license (no subscription).; Flexible licensing for teams and render nodes.; Professional curved text animations..\n\nBAO Boa is essential for animators doing curved text and organic deformations; for occasional use, After Effects built-in effects are enough.",
     "prosEn": [
       "Smooth, precise distortions along mask paths.",
       "Perpetual license (no subscription).",
@@ -15072,12 +15111,13 @@
       "threshold": "BAO Boa is essential for animators doing curved text and organic deformations; for occasional use, After Effects built-in effects are enough."
     },
     "pricingEn": {
-      "free": "",
-      "paid": "One-time purchase (~$49), lifetime license, no subscription"
+      "free": "Pas de version gratuite. Aucun essai gratuit visible sur le site officiel.",
+      "paid": "BAO Boa (Single User License): 99,99 USD ; BAO Boa (Floating License Server): 99,99 USD"
     },
     "force_silence": false,
-    "description": "BAO Boa, c'est un plugin After Effects (aescripts) spécialisé dans l'animation de lignes et de tracés. Il permet de faire onduler, dessiner et déformer des lignes SVG de façon organique, avec un contrôle fin, là où les outils natifs d'After Effects sont vite limités. Pour un motion designer qui fait des graphiques animés, des illustrations au trait ou des transitions à base de lignes, c'est un outil précis et puissant.\n\nC'est un achat unique (~49$), sans abonnement.\n\nÀ qui ça s'adresse : aux motion designers qui animent souvent des lignes et des tracés. Si ce type d'animation n'est pas dans tes projets, BAO Boa ne te servira pas. Mais pour de l'animation de lignes organiques, il fait gagner un temps réel et permet des rendus difficiles à obtenir autrement.",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/ae-bao-boa.jpg"
+    "description": "Plugin After Effects qui permet de déformer les couches le long de courbes de masque. BAO Boa crée des distorsions fluides et organiques en suivant précisément les formes définies par des masques, utile pour l'animation de texte, formes et éléments complexes.\n\nFonctions clés : Déformation fluide le long de chemins de masque ; Contrôle avancé de la distorsion (amplitude, atténuation, angle) ; Animations de texte courbes et ondulantes ; Compatible avec les formes, couches de texte et éléments complexes ; Options de licence flexible (utilisateur unique, réseau, rendu).\n\nBAO Boa s'impose pour les animateurs spécialisés dans le texte courbe et les déformations organiques ; pour un usage occasionnel, After Effects natif suffit.",
+    "ogImageUrl": "/og-screenshots/ae-bao-boa.jpg",
+    "galleryImages": []
   },
   {
     "id": "base44",
@@ -17562,14 +17602,14 @@
     "name": "Bodymovin / Lottie",
     "slug": "ae-bodymovin",
     "category": "design-tools",
-    "shortDescription": "Export d'animations After Effects en JSON Lottie pour le web et mobile.",
-    "longDescription": "Bodymovin exporte les compositions After Effects au format JSON Lottie pour les afficher sur le web, iOS et Android. Il prend en charge les formes, textes, images, précompositions et une partie des expressions, puis permet un rendu SVG, canvas ou HTML dans le navigateur.\n\nC'est le bon pont entre motion design et développement quand l'animation doit rester nette et légère. Il faut toutefois tester chaque composition : Lottie ne reproduit qu'un sous-ensemble des fonctions d'After Effects, et certains effets doivent être simplifiés avant l'export. Pour une animation interactive pilotée par des états, Rive sera souvent plus adapté.",
+    "shortDescription": "Extension After Effects créée par Hernan Torrisi (hébergée sur GitHub) qui exporte les animations en JSON au format Lottie. Permet de traduire des animations After Effects (shape layers) en fichiers JSON pour les lire nativement sur web (via Lottie JS), iOS et Android via des bibliothèques mobiles.",
+    "longDescription": "Extension After Effects créée par Hernan Torrisi (hébergée sur GitHub) qui exporte les animations en JSON au format Lottie. Permet de traduire des animations After Effects (shape layers) en fichiers JSON pour les lire nativement sur web (via Lottie JS), iOS et Android via des bibliothèques mobiles.\n\nFonctions clés : Export d'animations After Effects en JSON Lottie ; Support des shape layers, text, and animated properties ; Export SVG, Canvas, HTML + JS ou Lottie JSON ; Compatible iOS (via Lottie mobile library) et Android ; Intégration directe After Effects (ZXP extension ou Adobe Exchange).\n\nBodymovin est essentiel pour les motion designers exportant vers le web/mobile ; c'est l'outil standard gratuit de la communauté.",
     "affiliateLink": "https://aescripts.com/bodymovin/",
     "websiteUrl": "https://aescripts.com/bodymovin/",
     "defaultMonthlyPrice": 0,
     "pricing": {
-      "free": "Prix libre pour un usage individuel",
-      "paid": "20 $ suggérés et requis pour les entreprises ou les équipes"
+      "free": "Produit entièrement gratuit. Open source hébergé sur GitHub (RxLaboratory). Zéro coût, zéro restriction.",
+      "paid": "Voir le tarif officiel."
     },
     "logo": "",
     "soloRelevance": "medium",
@@ -17666,14 +17706,14 @@
       "cautions": [
         "Prix libre pour les particuliers, 20 $ requis pour les entreprises et équipes"
       ],
-      "verified_on": "2026-08-28",
+      "verified_on": "2026-07-24",
       "source_domain": "aescripts.com",
       "usage_sensitive": false,
       "compare_plan_kind": "individual",
       "compare_plan_name": "Name Your Own Price",
       "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://aescripts.com/bodymovin/",
+      "official_source_url": "https://aescripts.com/bodymovin",
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 0
     },
@@ -17685,8 +17725,8 @@
       "never_auto_cancel_reason": "Couche non substituable par défaut.",
       "requires_context_questions": true
     },
-    "shortDescriptionEn": "Export After Effects animations to Lottie JSON for web and mobile.",
-    "longDescriptionEn": "Bodymovin exports After Effects compositions as Lottie JSON for the web, iOS, and Android. It supports shapes, text, images, precompositions, and some expressions, with SVG, canvas, or HTML rendering in the browser.\n\nIt is a practical bridge between motion design and development when animations need to remain crisp and lightweight. Every composition still needs testing because Lottie supports only a subset of After Effects features, and some effects must be simplified before export. For state-driven interactive animation, Rive is often a better fit.",
+    "shortDescriptionEn": "After Effects extension created by Hernan Torrisi that exports animations to Lottie JSON format. Translates After Effects animations (shape layers) to JSON files playable natively on web (via Lottie JS), iOS, and Android via mobile libraries.",
+    "longDescriptionEn": "After Effects extension created by Hernan Torrisi that exports animations to Lottie JSON format. Translates After Effects animations (shape layers) to JSON files playable natively on web (via Lottie JS), iOS, and Android via mobile libraries.\n\nKey strengths: Completely free and open source.; Industry standard for web/mobile animation (Lottie).; Native iOS and Android support via mobile libraries.; No hidden paywalls or limitations.; Active, well-documented community..\n\nBodymovin is essential for motion designers exporting to web/mobile; it's the industry-standard free tool of choice.",
     "prosEn": [
       "Completely free and open source.",
       "Industry standard for web/mobile animation (Lottie).",
@@ -17720,17 +17760,18 @@
       "threshold": "Bodymovin is essential for motion designers exporting to web/mobile; it's the industry-standard free tool of choice."
     },
     "pricingEn": {
-      "free": "Name your own price for individual use",
-      "paid": "$20 suggested and required for businesses or teams"
+      "free": "Produit entièrement gratuit. Open source hébergé sur GitHub (RxLaboratory). Zéro coût, zéro restriction.",
+      "paid": "Voir le tarif officiel."
     },
     "force_silence": false,
-    "description": "Bodymovin exporte les compositions After Effects en JSON Lottie pour le web et les applications mobiles. Il est proposé à prix libre pour les particuliers, avec un tarif suggéré de 20 $ requis pour les entreprises et équipes.",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/ae-bodymovin.jpg",
+    "description": "Extension After Effects créée par Hernan Torrisi (hébergée sur GitHub) qui exporte les animations en JSON au format Lottie. Permet de traduire des animations After Effects (shape layers) en fichiers JSON pour les lire nativement sur web (via Lottie JS), iOS et Android via des bibliothèques mobiles.\n\nFonctions clés : Export d'animations After Effects en JSON Lottie ; Support des shape layers, text, and animated properties ; Export SVG, Canvas, HTML + JS ou Lottie JSON ; Compatible iOS (via Lottie mobile library) et Android ; Intégration directe After Effects (ZXP extension ou Adobe Exchange).\n\nBodymovin est essentiel pour les motion designers exportant vers le web/mobile ; c'est l'outil standard gratuit de la communauté.",
+    "ogImageUrl": "/og-screenshots/ae-bodymovin.jpg",
     "gallery_images": [
       "/tool-media/ae-bodymovin/select-composition.jpg",
       "/tool-media/ae-bodymovin/render.jpg",
       "/tool-media/ae-bodymovin/get-player.jpg"
-    ]
+    ],
+    "galleryImages": []
   },
   {
     "id": "bolt-business",
@@ -24130,14 +24171,14 @@
     "name": "Capture One",
     "slug": "capture-one",
     "category": "design-tools",
-    "shortDescription": "Le logiciel de retouche RAW préféré des photographes professionnels.",
-    "longDescription": "Capture One, c'est le grand rival de Lightroom, et le logiciel préféré d'une bonne partie des photographes studio, mode et portrait. Sa réputation tient surtout à son rendu colorimétrique, considéré comme supérieur, et à son excellence en capture connectée (tethering), quand l'appareil est branché à l'ordinateur pendant le shooting. Pour de la photo haut de gamme, c'est une référence.\n\nCôté prix, c'est plus cher que Lightroom, et les tarifs ont augmenté récemment : compte un abonnement Pro autour de 18 à 24$/mois, ou une licence perpétuelle à partir d'environ 299$. L'option perpétuelle, rare aujourd'hui, reste un argument face à l'abonnement Adobe.\n\nÀ qui ça s'adresse : aux photographes exigeants sur la couleur et le studio. Le vrai frein, c'est la migration : si ton flux est déjà rodé sur Lightroom, changer coûte du temps pour un gain qui n'est pas toujours décisif. Mais pour qui démarre ou cherche le meilleur rendu, Capture One vaut le détour.",
+    "shortDescription": "Logiciel professionnel d'édition et de gestion de photos pour photographes. Offre contrôle avancé couleur/détail, tethering en temps réel, gestion d'assets, collaboration. Utilisé en studio par photographes de mode, produit, mariage, paysage.",
+    "longDescription": "Logiciel professionnel d'édition et de gestion de photos pour photographes. Offre contrôle avancé couleur/détail, tethering en temps réel, gestion d'assets, collaboration. Utilisé en studio par photographes de mode, produit, mariage, paysage.\n\nFonctions clés : Édition couleur et détail avancée ; Tethering en temps réel (capture directement dans le logiciel) ; Gestion d'assets et workflow de studio ; Presets professionnels et looks ; Collaboration équipe et Live for Studio ; Support multi-caméras et profiles couleur.\n\nCapture One s'impose pour les studios photos professionnels ; pour l'amateur, Lightroom ou Darktable suffisent.",
     "affiliateLink": "https://captureone.com",
     "websiteUrl": "https://captureone.com",
     "defaultMonthlyPrice": 24,
     "pricing": {
-      "free": "",
-      "paid": "Abonnement Pro à environ 18-24$/mois, ou licence perpétuelle à partir de ~299$"
+      "free": "Essai gratuit 30 jours complet. Essai gratuit 7 jours sur iOS/iPad inclus.",
+      "paid": "Capture One Pro: 17 $/mois (annuel) ou 26 $/mois (mensuel) ; Capture One All-in-One: 23,25 $/mois (annuel) ou 36 $/mois (mensuel, avec iPad/mobile/cloud) ; Capture One Studio: 45,75 $/mois (annuel) ou 59 $/mois (mensuel, équipes/volumes) ; Licence perpétuelle desktop: ~317 $ (sans mises à jour features incluses)"
     },
     "logo": "",
     "soloRelevance": null,
@@ -24238,14 +24279,14 @@
       "cautions": [
         "Abonnement Pro ~18-24$/mois, ou licence perpétuelle dès ~299$ ; prix en hausse récente"
       ],
-      "verified_on": "2026-06-15",
+      "verified_on": "2026-07-24",
       "source_domain": "captureone.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
       "compare_plan_name": "Entry paid plan",
       "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://www.captureone.com/en/pricing/capture-one-pro",
+      "official_source_url": "https://captureone.com",
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 24
     },
@@ -24257,8 +24298,8 @@
       "never_auto_cancel_reason": "Couche non substituable par défaut.",
       "requires_context_questions": true
     },
-    "shortDescriptionEn": "The RAW editing software preferred by professional photographers.",
-    "longDescriptionEn": "Capture One is Lightroom's big rival, and the favorite of many studio, fashion and portrait photographers. Its reputation rests above all on its color rendering, considered superior, and its excellence at tethered capture, when the camera is connected to the computer during the shoot. For high-end photography, it's a reference.\n\nOn price, it's pricier than Lightroom, and rates rose recently: budget a Pro subscription around $18 to $24/month, or a perpetual license from about $299. The perpetual option, rare today, remains an argument against the Adobe subscription.\n\nWho it's for: photographers demanding on color and studio work. The real hurdle is migration: if your flow is already dialed in on Lightroom, switching costs time for a gain that isn't always decisive. But for someone starting out or chasing the best rendering, Capture One is worth a look.",
+    "shortDescriptionEn": "Professional photo editing and management software for photographers. Offers advanced color/detail control, real-time tethering, asset management, collaboration. Used in studios by fashion, product, wedding, and landscape photographers.",
+    "longDescriptionEn": "Professional photo editing and management software for photographers. Offers advanced color/detail control, real-time tethering, asset management, collaboration. Used in studios by fashion, product, wedding, and landscape photographers.\n\nKey strengths: Best-in-class color control.; Real-time tethering highly performant (studio).; Integrated professional studio workflow.; High-end presets and looks.; Professional support and training..\n\nCapture One is essential for professional photo studios; for hobbyists, Lightroom or Darktable suffice.",
     "prosEn": [
       "Best-in-class color control.",
       "Real-time tethering highly performant (studio).",
@@ -24291,12 +24332,17 @@
       "threshold": "Capture One is essential for professional photo studios; for hobbyists, Lightroom or Darktable suffice."
     },
     "pricingEn": {
-      "free": "",
-      "paid": "Pro subscription around $18-24/month, or perpetual license from ~$299"
+      "free": "Essai gratuit 30 jours complet. Essai gratuit 7 jours sur iOS/iPad inclus.",
+      "paid": "Capture One Pro: 17 $/mois (annuel) ou 26 $/mois (mensuel) ; Capture One All-in-One: 23,25 $/mois (annuel) ou 36 $/mois (mensuel, avec iPad/mobile/cloud) ; Capture One Studio: 45,75 $/mois (annuel) ou 59 $/mois (mensuel, équipes/volumes) ; Licence perpétuelle desktop: ~317 $ (sans mises à jour features incluses)"
     },
     "force_silence": false,
-    "description": "Capture One, c'est le grand rival de Lightroom, et le logiciel préféré d'une bonne partie des photographes studio, mode et portrait. Sa réputation tient surtout à son rendu colorimétrique, considéré comme supérieur, et à son excellence en capture connectée (tethering), quand l'appareil est branché à l'ordinateur pendant le shooting. Pour de la photo haut de gamme, c'est une référence.\n\nCôté prix, c'est plus cher que Lightroom, et les tarifs ont augmenté récemment : compte un abonnement Pro autour de 18 à 24$/mois, ou une licence perpétuelle à partir d'environ 299$. L'option perpétuelle, rare aujourd'hui, reste un argument face à l'abonnement Adobe.\n\nÀ qui ça s'adresse : aux photographes exigeants sur la couleur et le studio. Le vrai frein, c'est la migration : si ton flux est déjà rodé sur Lightroom, changer coûte du temps pour un gain qui n'est pas toujours décisif. Mais pour qui démarre ou cherche le meilleur rendu, Capture One vaut le détour.",
-    "ogImageUrl": "https://cdn.captureone.com/images/fpl48n9r/production/b213f73fe667849d527e0859d0e49365b7d29ea4-919x612.png?rect=52,0,816,612&amp;w=800&amp;h=600&amp;q=85&amp;auto=format"
+    "description": "Logiciel professionnel d'édition et de gestion de photos pour photographes. Offre contrôle avancé couleur/détail, tethering en temps réel, gestion d'assets, collaboration. Utilisé en studio par photographes de mode, produit, mariage, paysage.\n\nFonctions clés : Édition couleur et détail avancée ; Tethering en temps réel (capture directement dans le logiciel) ; Gestion d'assets et workflow de studio ; Presets professionnels et looks ; Collaboration équipe et Live for Studio ; Support multi-caméras et profiles couleur.\n\nCapture One s'impose pour les studios photos professionnels ; pour l'amateur, Lightroom ou Darktable suffisent.",
+    "ogImageUrl": "https://cdn.captureone.com/images/fpl48n9r/production/e3a4a775b5052c37ae8630062ba2485fe520d80d-1456x970.jpg?auto=format",
+    "galleryImages": [
+      "https://cdn.captureone.com/images/fpl48n9r/production/5e7a8babd9b6eeda8aa6679d7bee756e432d6b00-1028x590.jpg?auto=format",
+      "https://cdn.captureone.com/images/fpl48n9r/production/eeeb5b87676fa3144522a266efd569a2fcf7068c-2030x1352.png?auto=format",
+      "https://cdn.captureone.com/images/fpl48n9r/production/b213f73fe667849d527e0859d0e49365b7d29ea4-919x612.png?rect=52,0,816,612&w=800&h=600&q=85&auto=format"
+    ]
   },
   {
     "id": "cargo-site",
@@ -34561,24 +34607,24 @@
     "slug": "d5-render",
     "name": "D5 Render",
     "categoryId": "design-tools",
-    "shortDescription": "Moteur de rendu temps réel pour l'archviz, rapide et abordable (SketchUp, Revit, Rhino).",
-    "shortDescriptionEn": "Real-time render engine for archviz, fast and affordable (SketchUp, Revit, Rhino).",
+    "shortDescription": "Logiciel de rendu 3D en temps réel destiné aux architectes et designers, avec support du ray tracing instantané et intégration avec SketchUp, Revit et 3ds Max.",
+    "shortDescriptionEn": "Real-time 3D rendering software for architects and designers, featuring instant ray tracing and integration with SketchUp, Revit, and 3ds Max.",
     "pricing": {
-      "free": "Community gratuit (watermark, 1080p)",
-      "paid": "D5 Pro ~38€/mois (~456$/an)."
+      "free": "Community tier gratuit ; plans Pro et Teams payants.",
+      "paid": "Community: Gratuit ; Pro: 38 $/mois ou 360 $/an (20% de réduction annuelle) ; Teams: 75 $/siège/mois ou 708 $/siège/an (21% de réduction annuelle)"
     },
     "pricingEn": {
-      "free": "Community free (watermark, 1080p)",
-      "paid": "D5 Pro ~€38/month (~$456/year)."
+      "free": "Community tier gratuit ; plans Pro et Teams payants.",
+      "paid": "Community: Gratuit ; Pro: 38 $/mois ou 360 $/an (20% de réduction annuelle) ; Teams: 75 $/siège/mois ou 708 $/siège/an (21% de réduction annuelle)"
     },
     "defaultMonthlyPrice": 38,
     "affiliateLink": "https://www.d5render.com",
     "websiteUrl": "https://www.d5render.com",
     "logo": "",
     "category": "design-tools",
-    "description": "D5 Render, c'est la nouvelle étoile montante du rendu temps réel pour l'archviz. Son pitch : la vitesse et l'accessibilité. Tu connectes ton modèle (SketchUp, Revit, Rhino, 3ds Max, Blender, Archicad) en live-sync, et tu obtiens des rendus photoréalistes en temps réel, avec une grosse bibliothèque d'assets et des fonctions IA (génération de matériaux, d'environnements). C'est conçu pour les architectes et designers d'intérieur qui veulent de belles images vite, sans la complexité d'un V-Ray.\n\nCôté prix, D5 joue l'agressivité : une édition Community gratuite (avec watermark et limite 1080p) pour tester, et D5 Pro autour de 456$/an (environ 38$/mois), ce qui sous-cote Enscape et Lumion d'une bonne marge.\n\nL'arbitrage se joue face aux autres moteurs temps réel d'archviz. Enscape (Chaos) est le standard du live-sync, Lumion vise un rendu plus cinématique, et Twinmotion est gratuit sous 1M$ de CA. D5 Render se distingue par son rapport vitesse-prix et ses fonctions IA récentes. Pour un freelance archviz qui veut un excellent rendu sans exploser son budget, c'est devenu un choix très sérieux.",
-    "longDescription": "D5 Render, c'est la nouvelle étoile montante du rendu temps réel pour l'archviz. Son pitch : la vitesse et l'accessibilité. Tu connectes ton modèle (SketchUp, Revit, Rhino, 3ds Max, Blender, Archicad) en live-sync, et tu obtiens des rendus photoréalistes en temps réel, avec une grosse bibliothèque d'assets et des fonctions IA (génération de matériaux, d'environnements). C'est conçu pour les architectes et designers d'intérieur qui veulent de belles images vite, sans la complexité d'un V-Ray.\n\nCôté prix, D5 joue l'agressivité : une édition Community gratuite (avec watermark et limite 1080p) pour tester, et D5 Pro autour de 456$/an (environ 38$/mois), ce qui sous-cote Enscape et Lumion d'une bonne marge.\n\nL'arbitrage se joue face aux autres moteurs temps réel d'archviz. Enscape (Chaos) est le standard du live-sync, Lumion vise un rendu plus cinématique, et Twinmotion est gratuit sous 1M$ de CA. D5 Render se distingue par son rapport vitesse-prix et ses fonctions IA récentes. Pour un freelance archviz qui veut un excellent rendu sans exploser son budget, c'est devenu un choix très sérieux.",
-    "longDescriptionEn": "D5 Render is the rising star of real-time archviz rendering. Its pitch: speed and accessibility. You connect your model (SketchUp, Revit, Rhino, 3ds Max, Blender, Archicad) via live-sync and get photorealistic renders in real time, with a large asset library and AI features (material and environment generation). It's built for architects and interior designers who want great images fast, without the complexity of a V-Ray.\n\nOn price, D5 plays aggressive: a free Community edition (with watermark and 1080p cap) to try it, and D5 Pro around $456/year (about $38/month), undercutting Enscape and Lumion by a good margin.\n\nThe trade-off is against other real-time archviz engines. Enscape (Chaos) is the live-sync standard, Lumion aims for a more cinematic look, and Twinmotion is free under $1M revenue. D5 Render stands out for its speed-to-price ratio and recent AI features. For a freelance archviz artist who wants excellent rendering without blowing the budget, it's become a very serious option.",
+    "description": "Logiciel de rendu 3D en temps réel destiné aux architectes et designers, avec support du ray tracing instantané et intégration avec SketchUp, Revit et 3ds Max.\n\nFonctions clés : Real-time path tracing avec ombres et reflets instantanés ; AI Enhancer, AI Atmosphere Match, AI Ultra HD Texture ; Bibliotèque d'assets intégrée (arbres, personnes, véhicules, matériaux) ; Rendu 16K (Pro), Panoramas, tours VR et Showreel.\n\nD5 Render s'impose pour les architectes qui veulent explorer les designs en direct ; sinon un logiciel plus généraliste convient.",
+    "longDescription": "Logiciel de rendu 3D en temps réel destiné aux architectes et designers, avec support du ray tracing instantané et intégration avec SketchUp, Revit et 3ds Max.\n\nFonctions clés : Real-time path tracing avec ombres et reflets instantanés ; AI Enhancer, AI Atmosphere Match, AI Ultra HD Texture ; Bibliotèque d'assets intégrée (arbres, personnes, véhicules, matériaux) ; Rendu 16K (Pro), Panoramas, tours VR et Showreel.\n\nD5 Render s'impose pour les architectes qui veulent explorer les designs en direct ; sinon un logiciel plus généraliste convient.",
+    "longDescriptionEn": "Real-time 3D rendering software for architects and designers, featuring instant ray tracing and integration with SketchUp, Revit, and 3ds Max.\n\nKey strengths: Real-time rendering with AI for instant enhancement.; Seamless integration with popular CAD tools.; Free Community tier to get started.; Rapid generation of professional visuals without rendering expertise..\n\nD5 Render is ideal for architects exploring designs live; otherwise a more general-purpose tool suits you.",
     "verdict": {
       "keepIf": [
         "Vous êtes architecte ou designer visualisant des projets en temps réel.",
@@ -34641,7 +34687,7 @@
       "cautions": [
         "Community gratuit (watermark, 1080p) ; D5 Pro ~456$/an (~38$/mois)"
       ],
-      "verified_on": "2026-06-17",
+      "verified_on": "2026-07-24",
       "source_domain": "d5render.com",
       "compare_plan_kind": "subscription",
       "compare_plan_name": "D5 Pro (annuel)",
@@ -34696,7 +34742,7 @@
       "lumion"
     ],
     "articles": [],
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/d5-render.jpg",
+    "ogImageUrl": "https://usa-official.d5cdn.com/wp-content/uploads/2026/07/2354345346.webp",
     "host_app": null,
     "bundle_parent": null,
     "ia_use_case": null,
@@ -34708,7 +34754,12 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "force_silence": false
+    "force_silence": false,
+    "galleryImages": [
+      "https://usa-official.d5cdn.com/wp-content/uploads/2026/07/1242345423.webp",
+      "https://usa-official.d5cdn.com/wp-content/uploads/2026/07/1341234325.webp",
+      "https://usa-official.d5cdn.com/wp-content/uploads/2026/07/23425243.webp"
+    ]
   },
   {
     "id": "darktable",
@@ -43387,11 +43438,11 @@
     "bundle_parent": null,
     "host_app": "revit",
     "category": "design-tools",
-    "shortDescription": "Rendu temps réel et VR pour Revit, SketchUp, Rhino. Présentations client immersives.",
+    "shortDescription": "Plugin de visualisation 3D en temps réel et rendu pour Revit, SketchUp, Rhino, ArchiCAD et Vectorworks, avec IA intégrée (Veras) pour génération de design et analyse de durabilité.",
     "defaultMonthlyPrice": 48,
     "pricing": {
-      "free": "Essai gratuit",
-      "paid": "Solo 574,80$/an (~48$/mois). Abonnement Chaos."
+      "free": "Essai gratuit 14 jours avec accès complet ; pas de version gratuite permanente après essai.",
+      "paid": "Enscape Solo: 45 €/mois (100 AI credits/mois) ; Enscape Premium: 72 €/mois (500 AI credits/mois, 10k assets) ; Enscape Collection: 191 €/mois (1500 AI credits/mois, 18.5k+ assets, animation)"
     },
     "covers": [
       "3d",
@@ -43476,32 +43527,32 @@
       "free": "Essai gratuit",
       "paid": "Solo 574,80$/an (~48$/mois)"
     },
-    "longDescription": "Enscape, c'est le moteur de rendu temps réel le plus intégré au flux des architectes. Sa marque de fabrique, c'est le live-sync : il tourne en plugin directement dans Revit, SketchUp, Rhino ou Archicad, et tu vois ton rendu se mettre à jour en temps réel pendant que tu modélises. Ajoute la réalité virtuelle pour faire visiter un espace à un client, et tu obtiens un outil de présentation redoutable.\n\nDepuis son rachat par Chaos (l'éditeur de V-Ray), Enscape s'inscrit dans un écosystème plus large. Côté prix, c'est un abonnement : Enscape Solo autour de 574,80$/an (environ 48$/mois). La licence perpétuelle a disparu.\n\nLe vrai sujet en 2026, c'est la concurrence. Twinmotion (Epic) offre une qualité comparable et est gratuit sous 1 million de dollars de CA, et D5 Render propose un excellent rapport prix-vitesse en dessous d'Enscape. Enscape garde l'avantage sur l'intégration live-sync, particulièrement dans Revit, et sur sa fiabilité éprouvée. Mais pour un freelance attentif au budget, il faut sérieusement comparer avec Twinmotion et D5 avant de s'abonner.",
+    "longDescription": "Plugin de visualisation 3D en temps réel et rendu pour Revit, SketchUp, Rhino, ArchiCAD et Vectorworks, avec IA intégrée (Veras) pour génération de design et analyse de durabilité.\n\nFonctions clés : Visualisation en temps réel bidirectionnelle avec le modèle CAO ; AI-powered design generation via Veras AI ; Environnement avec contexte du site et intégration paysager ; Analyse de durabilité (Enscape Impact) pour confort thermique ; Collaboration cloud (Chaos Cloud) et animations ; 6700 assets (Solo) à 18500+ assets (Collection).\n\nEnscape s'impose pour les architectes qui itèrent rapidement sur des designs ; sinon un rendu classique ou screenshots suffisent.",
     "alternatives": [
       "twinmotion",
       "d5-render",
       "lumion"
     ],
     "slug": "enscape",
-    "shortDescriptionEn": "Real-time rendering and VR for Revit, SketchUp, Rhino. Immersive client presentations.",
-    "description": "Enscape, c'est le moteur de rendu temps réel le plus intégré au flux des architectes. Sa marque de fabrique, c'est le live-sync : il tourne en plugin directement dans Revit, SketchUp, Rhino ou Archicad, et tu vois ton rendu se mettre à jour en temps réel pendant que tu modélises. Ajoute la réalité virtuelle pour faire visiter un espace à un client, et tu obtiens un outil de présentation redoutable.\n\nDepuis son rachat par Chaos (l'éditeur de V-Ray), Enscape s'inscrit dans un écosystème plus large. Côté prix, c'est un abonnement : Enscape Solo autour de 574,80$/an (environ 48$/mois). La licence perpétuelle a disparu.\n\nLe vrai sujet en 2026, c'est la concurrence. Twinmotion (Epic) offre une qualité comparable et est gratuit sous 1 million de dollars de CA, et D5 Render propose un excellent rapport prix-vitesse en dessous d'Enscape. Enscape garde l'avantage sur l'intégration live-sync, particulièrement dans Revit, et sur sa fiabilité éprouvée. Mais pour un freelance attentif au budget, il faut sérieusement comparer avec Twinmotion et D5 avant de s'abonner.",
-    "longDescriptionEn": "Enscape is the real-time render engine most integrated into the architect's workflow. Its trademark is live-sync: it runs as a plugin directly inside Revit, SketchUp, Rhino or Archicad, and you see your render update in real time as you model. Add virtual reality to walk a client through a space, and you get a formidable presentation tool.\n\nSince its acquisition by Chaos (the maker of V-Ray), Enscape fits into a broader ecosystem. On price, it's a subscription: Enscape Solo around $574.80/year (about $48/month). The perpetual license is gone.\n\nThe real question in 2026 is competition. Twinmotion (Epic) offers comparable quality and is free under $1 million revenue, and D5 Render offers an excellent price-speed ratio below Enscape. Enscape keeps the edge on live-sync integration, particularly in Revit, and on proven reliability. But for a budget-conscious freelancer, it's worth seriously comparing with Twinmotion and D5 before subscribing.",
+    "shortDescriptionEn": "Real-time 3D visualization and rendering plugin for Revit, SketchUp, Rhino, ArchiCAD, and Vectorworks, with integrated AI (Veras) for design generation and sustainability analysis.",
+    "description": "Plugin de visualisation 3D en temps réel et rendu pour Revit, SketchUp, Rhino, ArchiCAD et Vectorworks, avec IA intégrée (Veras) pour génération de design et analyse de durabilité.\n\nFonctions clés : Visualisation en temps réel bidirectionnelle avec le modèle CAO ; AI-powered design generation via Veras AI ; Environnement avec contexte du site et intégration paysager ; Analyse de durabilité (Enscape Impact) pour confort thermique ; Collaboration cloud (Chaos Cloud) et animations ; 6700 assets (Solo) à 18500+ assets (Collection).\n\nEnscape s'impose pour les architectes qui itèrent rapidement sur des designs ; sinon un rendu classique ou screenshots suffisent.",
+    "longDescriptionEn": "Real-time 3D visualization and rendering plugin for Revit, SketchUp, Rhino, ArchiCAD, and Vectorworks, with integrated AI (Veras) for design generation and sustainability analysis.\n\nKey strengths: Live visualization synchronized with your CAD model.; Simple interface, no rendering expertise needed.; AI for automatic design generation and sustainability analysis.; Full 14-day free trial without restrictions.; Native cloud collaboration and animations..\n\nEnscape is ideal for architects rapidly iterating on designs; otherwise classic rendering or screenshots suffice.",
     "pricingEn": {
-      "free": "Free trial",
-      "paid": "Solo $574.80/year (~$48/month). Chaos subscription."
+      "free": "Essai gratuit 14 jours avec accès complet ; pas de version gratuite permanente après essai.",
+      "paid": "Enscape Solo: 45 €/mois (100 AI credits/mois) ; Enscape Premium: 72 €/mois (500 AI credits/mois, 10k assets) ; Enscape Collection: 191 €/mois (1500 AI credits/mois, 18.5k+ assets, animation)"
     },
     "pricing_v5": {
       "cautions": [
         "Enscape Solo ~574,80$/an (~48$/mois) ; plus de licence perpétuelle"
       ],
-      "verified_on": "2026-06-17",
-      "source_domain": "enscape-3d.fr",
+      "verified_on": "2026-07-24",
+      "source_domain": "chaos.com",
       "usage_sensitive": false,
       "compare_plan_kind": "individual",
       "compare_plan_name": "Entry paid plan",
       "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://www.enscape-3d.fr/tarifs",
+      "official_source_url": "https://www.chaos.com/enscape",
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 48
     },
@@ -43560,7 +43611,12 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://static.chaos.com/images/assets/000/025/422/articles_2_columns/enscape-product-og-1200x630.png?1781319492"
+    "ogImageUrl": "https://static.chaos.com/images/assets/000/023/805/original/industry-solutions-studio-bazzini-thumb-1920x1080-v2.jpg",
+    "galleryImages": [
+      "https://static.chaos.com/images/assets/000/023/802/original/industry-solutions-tm-marvel-1920x1080-v2.jpg",
+      "https://static.chaos.com/images/assets/000/026/964/original/FFF_City_Hall_Plaza_03_Urban_Grove.png?1770981446",
+      "https://static.chaos.com/images/assets/000/026/905/original/tiles-connect-690x380.jpeg?1769697287"
+    ]
   },
   {
     "id": "envato",
@@ -43707,13 +43763,19 @@
     "slug": "envato-elements",
     "name": "Envato Elements",
     "category": "design-tools",
-    "shortDescription": "Abonnement illimité aux templates, graphismes, musiques et vidéos d'Envato.",
-    "shortDescriptionEn": "Unlimited subscription to Envato's templates, graphics, music, and video.",
-    "description": "Envato Elements est la version abonnement illimité du catalogue Envato (templates WordPress, présentations, graphismes, musiques, vidéos stock), à la différence de ThemeForest qui vend ses produits à l'unité.\n\nPour qui télécharge plusieurs ressources créatives par mois, l'abonnement devient rapidement plus économique que l'achat individuel — un seul téléchargement suffit souvent à rentabiliser le mois.",
-    "longDescription": "Envato Elements est la version abonnement illimité du catalogue Envato (templates WordPress, présentations, graphismes, musiques, vidéos stock), à la différence de ThemeForest qui vend ses produits à l'unité.\n\nPour qui télécharge plusieurs ressources créatives par mois, l'abonnement devient rapidement plus économique que l'achat individuel — un seul téléchargement suffit souvent à rentabiliser le mois.",
-    "longDescriptionEn": "Envato Elements is the unlimited subscription version of the Envato catalog (WordPress templates, presentations, graphics, music, stock video), unlike ThemeForest which sells products individually.\n\nFor anyone downloading several creative resources a month, the subscription quickly becomes more economical than buying individually — often just one download is enough to break even for the month.",
-    "pricing": "À partir de ~17€/mois pour un accès illimité à tout le catalogue.",
-    "pricingEn": "From ~$17/month for unlimited access to the entire catalog.",
+    "shortDescription": "Abonnement aux assets créatifs illimités incluant photos, vidéos, musique, sons, graphiques, fonts, templates 3D et outils IA (génération vidéo, image, audio).",
+    "shortDescriptionEn": "Subscription to unlimited creative assets including photos, videos, music, sound effects, graphics, fonts, 3D templates, and AI tools (video, image, audio generation).",
+    "description": "Abonnement aux assets créatifs illimités incluant photos, vidéos, musique, sons, graphiques, fonts, templates 3D et outils IA (génération vidéo, image, audio).\n\nFonctions clés : 29+ millions d'assets : 16,3M photos, 340k vidéo, 940k sons, 81k fonts, 380k assets 3D ; Outils IA : VideoGen, ImageGen, ImageEdit, VoiceGen, MusicGen, GraphicsGen, MockUpGen, SoundGen ; Licence commerciale illimitée pour tous les téléchargements et contenu IA généré ; Accès cours/tutoriels Envato Tuts+ ; Plans d'équipe pour collaboration..\n\nEnvato Elements s'impose pour les créatifs/agences avec usage régulier ; pour achat ponctuel, Envato Market suffit.",
+    "longDescription": "Abonnement aux assets créatifs illimités incluant photos, vidéos, musique, sons, graphiques, fonts, templates 3D et outils IA (génération vidéo, image, audio).\n\nFonctions clés : 29+ millions d'assets : 16,3M photos, 340k vidéo, 940k sons, 81k fonts, 380k assets 3D ; Outils IA : VideoGen, ImageGen, ImageEdit, VoiceGen, MusicGen, GraphicsGen, MockUpGen, SoundGen ; Licence commerciale illimitée pour tous les téléchargements et contenu IA généré ; Accès cours/tutoriels Envato Tuts+ ; Plans d'équipe pour collaboration..\n\nEnvato Elements s'impose pour les créatifs/agences avec usage régulier ; pour achat ponctuel, Envato Market suffit.",
+    "longDescriptionEn": "Subscription to unlimited creative assets including photos, videos, music, sound effects, graphics, fonts, 3D templates, and AI tools (video, image, audio generation).\n\nKey strengths: Unlimited access to 29+ million premium quality assets.; Powerful AI suite for content generation (video, image, audio).; Commercial license: use all assets/AI-generated content for clients.; Economical subscription vs. individual purchases for high volume.; Team plans with role management and sharing..\n\nEnvato Elements is ideal for creatives/agencies with regular usage; for one-off purchase, Envato Market suffices.",
+    "pricing": {
+      "free": "Aucun tier gratuit ; abonnement payant uniquement. Montants sur la page officielle pour plans spécifiques.",
+      "paid": "Envato Elements (monthly): À partir de 14,50 €/mois ; Envato Elements (annual): Réduction à l'année (montants sur site officiel) ; Envato Elements Teams: Plans d'équipe disponibles (montants sur site officiel)"
+    },
+    "pricingEn": {
+      "free": "Aucun tier gratuit ; abonnement payant uniquement. Montants sur la page officielle pour plans spécifiques.",
+      "paid": "Envato Elements (monthly): À partir de 14,50 €/mois ; Envato Elements (annual): Réduction à l'année (montants sur site officiel) ; Envato Elements Teams: Plans d'équipe disponibles (montants sur site officiel)"
+    },
     "defaultMonthlyPrice": 15.18,
     "pricing_v5": {
       "cautions": [
@@ -43721,7 +43783,7 @@
         "Prix source en USD, conversion indicative avec le taux fixe 0.92."
       ],
       "currency": "USD",
-      "verified_on": "2026-06-15",
+      "verified_on": "2026-07-24",
       "billing_model": "subscription",
       "source_domain": "elements.envato.com",
       "price_original": 16.5,
@@ -43758,7 +43820,7 @@
       "compare_plan_name": "Core annual monthly equivalent",
       "price_reliability": "high",
       "location_sensitive": true,
-      "official_source_url": "https://elements.envato.com/pricing",
+      "official_source_url": "https://elements.envato.com",
       "verification_status": "official_explicit",
       "conversion_rate_to_eur": 0.92,
       "price_original_currency": "USD",
@@ -43883,8 +43945,13 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "https://assets.elements.envato.com/apps/storefront/og-default-724bad6c9010550aa8e3.jpg",
-    "force_silence": false
+    "ogImageUrl": "https://assets.elements.envato.com/apps/storefront/audio.compressed-11d9cee9c59e9605c2cf.avif",
+    "force_silence": false,
+    "galleryImages": [
+      "https://assets.elements.envato.com/apps/storefront/graphics-ChrisPiascik-Promo-cc0e7a16d85c2a2327d4.avif",
+      "https://assets.elements.envato.com/apps/storefront/three-d448x336.compressed-a8da95b8e96703c1c269.avif",
+      "https://assets.elements.envato.com/apps/storefront/ai-category-card-video-gen.compressed-af29db464d5384278838.avif"
+    ]
   },
   {
     "id": "epidemic-sound",
@@ -46226,14 +46293,14 @@
     "name": "Figma",
     "slug": "figma",
     "category": "design-tools",
-    "shortDescription": "Canvas collaboratif pour concevoir, prototyper, coder, publier et décliner des produits numériques.",
-    "longDescription": "Figma est passé d'un éditeur UI collaboratif à un écosystème complet de création numérique. Figma Design reste le cœur pour les interfaces, prototypes, composants, variables et design systems. Autour de lui, FigJam structure l'idéation, Slides les présentations, Dev Mode le passage au code, Make transforme un brief ou une maquette en prototype fonctionnel, Sites publie des sites, Draw renforce l'illustration vectorielle, Buzz industrialise les contenus de marque et Motion ajoute l'animation. Weave complète l'ensemble avec des workflows créatifs IA multi-modèles.\n\nLe plan Starter est gratuit avec un accès limité aux produits et 500 crédits IA mensuels au maximum. Sur Professional, le siège Full coûte 16 $/mois et donne accès à toute la suite ; le siège Dev coûte 12 $/mois et le siège Collab 3 $/mois. Organization monte à 55 $/mois pour un siège Full, Enterprise à 90 $/mois. Figma ne vend pas ces produits séparément : le type de siège détermine ce que chaque personne peut utiliser.\n\nPour une équipe produit, la valeur vient de la continuité entre recherche, design system, prototype, handoff et mise en ligne. Pour un indépendant qui ne fait que quelques visuels ou présentations, l'étendue de la suite peut être excessive et Canva reste souvent plus direct. Il faut surtout surveiller l'attribution des sièges et les crédits IA : l'écosystème devient rentable quand plusieurs étapes du workflow restent réellement dans Figma.",
+    "shortDescription": "Plateforme de design d'interface et de collaboration en temps réel, dans le navigateur.",
+    "longDescription": "Plateforme de design d'interface et de collaboration en temps réel, dans le navigateur.\n\nFonctions clés : Design d'interface (composants, auto layout, édition vectorielle) ; FigJam (tableau blanc collaboratif) ; Dev Mode (inspection, export CSS/iOS/Android, handoff) ; Prototypage avancé (animations, variables, logique conditionnelle).\n\nFigma s'impose quand le design d'interface collaboratif et le prototypage priment ; pour du print ou du vectoriel pur, un outil dédié est plus adapté.",
     "affiliateLink": "https://figma.com",
     "websiteUrl": "https://figma.com",
     "defaultMonthlyPrice": 16,
     "pricing": {
-      "free": "Starter gratuit — accès limité à la suite, jusqu'à 500 crédits IA/mois",
-      "paid": "Professional : Full 16 $/mois · Dev 12 $/mois · Collab 3 $/mois"
+      "free": "Starter gratuit : brouillons illimités, accès aux UI kits/templates, 150 crédits IA/jour (max 500/mois).",
+      "paid": "Professional: 16 $/mois par siège ; Organization: 55 $/mois par siège (annuel) ; Enterprise: 90 $/mois par siège (annuel)"
     },
     "logo": "",
     "soloRelevance": "high",
@@ -46339,9 +46406,9 @@
         "Starter donne un accès limité aux produits et jusqu'à 500 crédits IA par mois.",
         "Les produits ne sont pas vendus séparément : l'accès dépend du plan et du type de siège."
       ],
-      "verified_on": "2026-08-27",
+      "verified_on": "2026-07-23",
       "billing_model": "seat",
-      "source_domain": "help.figma.com",
+      "source_domain": "figma.com",
       "billing_options": [
         {
           "value": "free",
@@ -46386,8 +46453,8 @@
       "never_auto_cancel_reason": "Couche non substituable par défaut.",
       "requires_context_questions": true
     },
-    "shortDescriptionEn": "Collaborative canvas for designing, prototyping, coding, publishing, and scaling digital products.",
-    "longDescriptionEn": "Figma has evolved from a collaborative UI editor into a complete digital creation ecosystem. Figma Design remains the core for interfaces, prototypes, components, variables, and design systems. Around it, FigJam supports ideation, Slides handles presentations, Dev Mode bridges design and code, Make turns a prompt or design into a functional prototype, Sites publishes websites, Draw expands vector illustration, Buzz scales brand content, and Motion adds animation. Weave complements the suite with multi-model AI creative workflows.\n\nThe Starter plan is free with limited product access and up to 500 monthly AI credits. On Professional, a Full seat costs $16/month and unlocks the whole suite; a Dev seat costs $12/month and a Collab seat $3/month. Organization rises to $55/month for a Full seat and Enterprise to $90/month. Figma does not sell these products individually: each person's seat type determines access.\n\nFor a product team, the value comes from continuity across research, design systems, prototyping, handoff, and publishing. For a freelancer who only makes occasional visuals or presentations, the suite can be excessive and Canva is often more direct. Seat allocation and AI credits deserve attention: the ecosystem pays off when several workflow stages genuinely stay inside Figma.",
+    "shortDescriptionEn": "Interface design and real-time collaboration platform in the browser.",
+    "longDescriptionEn": "Interface design and real-time collaboration platform in the browser.\n\nKey strengths: Interface design and real-time collaboration in the browser.; Advanced prototyping (animations, variables, logic).; Dev Mode for developer handoff (inspection, export).; FigJam for brainstorming and diagrams..\n\nFigma makes sense when collaborative interface design and prototyping matter most; for print or pure vector work, a dedicated tool fits better.",
     "prosEn": [
       "Interface design and real-time collaboration in the browser.",
       "Advanced prototyping (animations, variables, logic).",
@@ -46418,16 +46485,16 @@
       "threshold": "Figma makes sense when collaborative interface design and prototyping matter most; for print or pure vector work, a dedicated tool fits better."
     },
     "pricingEn": {
-      "free": "Free Starter plan — limited suite access, up to 500 AI credits/month",
-      "paid": "Professional: Full $16/month · Dev $12/month · Collab $3/month"
+      "free": "Starter gratuit : brouillons illimités, accès aux UI kits/templates, 150 crédits IA/jour (max 500/mois).",
+      "paid": "Professional: 16 $/mois par siège ; Organization: 55 $/mois par siège (annuel) ; Enterprise: 90 $/mois par siège (annuel)"
     },
     "force_silence": false,
-    "description": "Figma est passé d'un éditeur UI collaboratif à un écosystème complet de création numérique. Figma Design reste le cœur pour les interfaces, prototypes, composants, variables et design systems. Autour de lui, FigJam structure l'idéation, Slides les présentations, Dev Mode le passage au code, Make transforme un brief ou une maquette en prototype fonctionnel, Sites publie des sites, Draw renforce l'illustration vectorielle, Buzz industrialise les contenus de marque et Motion ajoute l'animation. Weave complète l'ensemble avec des workflows créatifs IA multi-modèles.\n\nLe plan Starter est gratuit avec un accès limité aux produits et 500 crédits IA mensuels au maximum. Sur Professional, le siège Full coûte 16 $/mois et donne accès à toute la suite ; le siège Dev coûte 12 $/mois et le siège Collab 3 $/mois. Organization monte à 55 $/mois pour un siège Full, Enterprise à 90 $/mois. Figma ne vend pas ces produits séparément : le type de siège détermine ce que chaque personne peut utiliser.\n\nPour une équipe produit, la valeur vient de la continuité entre recherche, design system, prototype, handoff et mise en ligne. Pour un indépendant qui ne fait que quelques visuels ou présentations, l'étendue de la suite peut être excessive et Canva reste souvent plus direct. Il faut surtout surveiller l'attribution des sièges et les crédits IA : l'écosystème devient rentable quand plusieurs étapes du workflow restent réellement dans Figma.",
-    "ogImageUrl": "https://cdn.sanity.io/images/599r6htc/regionalized/b08d37520f7d5ad8d6562975b5932dd2d9a862bb-1200x630.gif?w=1200&q=70&fit=max&auto=format",
+    "description": "Plateforme de design d'interface et de collaboration en temps réel, dans le navigateur.\n\nFonctions clés : Design d'interface (composants, auto layout, édition vectorielle) ; FigJam (tableau blanc collaboratif) ; Dev Mode (inspection, export CSS/iOS/Android, handoff) ; Prototypage avancé (animations, variables, logique conditionnelle).\n\nFigma s'impose quand le design d'interface collaboratif et le prototypage priment ; pour du print ou du vectoriel pur, un outil dédié est plus adapté.",
+    "ogImageUrl": "https://cdn.sanity.io/images/599r6htc/regionalized/4b9ade839f38291c91b76608d22e7c7a9ad525fd-542x305.png?w=542&h=305&q=75&fit=max&auto=format",
     "galleryImages": [
-      "https://cdn.sanity.io/images/599r6htc/regionalized/4b9ade839f38291c91b76608d22e7c7a9ad525fd-542x305.png",
-      "https://cdn.sanity.io/images/599r6htc/regionalized/7e39b983c6ad865e0a7a5243d914020e69a23f70-542x305.png",
-      "https://cdn.sanity.io/images/599r6htc/regionalized/1883a9ebc4ce697b718301ad247c0fff45c572c1-540x304.png"
+      "https://cdn.sanity.io/images/599r6htc/regionalized/7e39b983c6ad865e0a7a5243d914020e69a23f70-542x305.png?w=542&h=305&q=75&fit=max&auto=format",
+      "https://cdn.sanity.io/images/599r6htc/regionalized/a92909334c175cb8deb08724809a6a133a2fdaee-656x816.png?w=656&h=816&q=75&fit=max&auto=format",
+      "https://cdn.sanity.io/images/599r6htc/regionalized/93c59de7e67fe357465b8ec359399d7afb637499-656x816.png?w=656&h=816&q=75&fit=max&auto=format"
     ]
   },
   {
@@ -49482,14 +49549,14 @@
     "name": "Flow (aescripts)",
     "slug": "aescripts-flow",
     "category": "design-tools",
-    "shortDescription": "Le plugin d'animation de courbes le plus populaire pour After Effects.",
-    "longDescription": "Flow remplace les manipulations répétitives du Graph Editor d'After Effects par une interface visuelle dédiée aux courbes d'accélération. Vous pouvez dessiner une courbe, l'appliquer aux images clés sélectionnées et conserver plusieurs bibliothèques de presets pour réutiliser un langage de mouvement cohérent.\n\nLe plugin ajoute aussi des courbes responsives avec overshoot ou undershoot et l'export vers KBar. À 35 $ en achat unique avec essai gratuit, il est surtout pertinent pour les motion designers qui règlent des easing curves chaque semaine. Pour un usage ponctuel, le Graph Editor natif reste suffisant.",
+    "shortDescription": "Éditeur de courbes d'interpolation (easing) pour After Effects remplaçant le Graph Editor natif par une interface moderne et normalisée. Inclut une librairie de presets d'easing réutilisables et partageables.",
+    "longDescription": "Éditeur de courbes d'interpolation (easing) pour After Effects remplaçant le Graph Editor natif par une interface moderne et normalisée. Inclut une librairie de presets d'easing réutilisables et partageables.\n\nFonctions clés : Graph Editor moderne pour éditer les courbes d'interpolation ; Preset library pour sauvegarder et réutiliser les easing curves ; Interface normalisée et snappier que AE natif ; Collaboration de Zack Lovatt et renderTom ; Support de courbes d'easing personnalisées.\n\nFlow s'impose pour les animateurs qui affinent constamment les easing curves ; pour les débutants ou animation ponctuelle, l'outil natif d'AE peut suffire.",
     "affiliateLink": "https://aescripts.com/flow/",
     "websiteUrl": "https://aescripts.com/flow/",
     "defaultMonthlyPrice": 0,
     "pricing": {
-      "free": "",
-      "paid": "35 $ en achat unique, avec essai gratuit"
+      "free": "Version d'essai gratuit avec fonctionnalités limitées ; version complète payante.",
+      "paid": "Flow (complet): montants sur la page officielle"
     },
     "logo": "",
     "soloRelevance": null,
@@ -49574,14 +49641,14 @@
       "cautions": [
         "35 $ en achat unique, avec essai gratuit"
       ],
-      "verified_on": "2026-08-28",
+      "verified_on": "2026-07-24",
       "source_domain": "aescripts.com",
       "usage_sensitive": false,
       "compare_plan_kind": "one_time",
       "compare_plan_name": "Flow",
       "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://aescripts.com/flow/",
+      "official_source_url": "https://aescripts.com/flow",
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 0
     },
@@ -49593,8 +49660,8 @@
       "never_auto_cancel_reason": "Couche non substituable par défaut.",
       "requires_context_questions": true
     },
-    "shortDescriptionEn": "The most popular curve animation plugin for After Effects.",
-    "longDescriptionEn": "Flow replaces repetitive work in After Effects' Graph Editor with a visual interface dedicated to easing curves. You can draw a curve, apply it to selected keyframes, and maintain multiple preset libraries for a consistent motion language.\n\nThe plugin also adds responsive overshoot and undershoot curves plus KBar export. At $35 as a one-time purchase with a free trial, it is most useful for motion designers who tune easing every week. For occasional work, the native Graph Editor remains sufficient.",
+    "shortDescriptionEn": "After Effects easing curve editor replacing the native Graph Editor with a modern, normalized interface. Includes a preset library for shareable, reusable easing animations.",
+    "longDescriptionEn": "After Effects easing curve editor replacing the native Graph Editor with a modern, normalized interface. Includes a preset library for shareable, reusable easing animations.\n\nKey strengths: Interface far more intuitive than After Effects' native Graph Editor.; Preset library for in-house animation standards.; Accelerates professional animation workflow.; Collaboration from highly respected creators..\n\nFlow makes sense for animators constantly refining easing curves; for beginners or occasional animation, AE's native tool may suffice.",
     "prosEn": [
       "Interface far more intuitive than After Effects' native Graph Editor.",
       "Preset library for in-house animation standards.",
@@ -49625,12 +49692,13 @@
       "threshold": "Flow makes sense for animators constantly refining easing curves; for beginners or occasional animation, AE's native tool may suffice."
     },
     "pricingEn": {
-      "free": "",
-      "paid": "$35 one-time purchase with a free trial"
+      "free": "Version d'essai gratuit avec fonctionnalités limitées ; version complète payante.",
+      "paid": "Flow (complet): montants sur la page officielle"
     },
     "force_silence": false,
-    "description": "Flow accélère le réglage des courbes d'easing dans After Effects avec un éditeur visuel, des bibliothèques de presets et des courbes responsives.",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/aescripts-flow.jpg"
+    "description": "Éditeur de courbes d'interpolation (easing) pour After Effects remplaçant le Graph Editor natif par une interface moderne et normalisée. Inclut une librairie de presets d'easing réutilisables et partageables.\n\nFonctions clés : Graph Editor moderne pour éditer les courbes d'interpolation ; Preset library pour sauvegarder et réutiliser les easing curves ; Interface normalisée et snappier que AE natif ; Collaboration de Zack Lovatt et renderTom ; Support de courbes d'easing personnalisées.\n\nFlow s'impose pour les animateurs qui affinent constamment les easing curves ; pour les débutants ou animation ponctuelle, l'outil natif d'AE peut suffire.",
+    "ogImageUrl": "/og-screenshots/aescripts-flow.jpg",
+    "galleryImages": []
   },
   {
     "id": "flowcub",
@@ -54635,14 +54703,14 @@
     "name": "GifGun",
     "slug": "ae-gifgun",
     "category": "design-tools",
-    "shortDescription": "Exporter et compresser GIF, WEBP, WEBM et MP4 depuis After Effects ou l'application dédiée.",
-    "longDescription": "GifGun 2 accélère la livraison d'animations légères depuis After Effects, mais il ne se limite plus à un bouton d'export GIF. La licence inclut le plugin After Effects, une application de bureau autonome et une application web. Elle couvre les formats GIF, WEBP, WEBM et MP4, avec taille cible, compression intelligente, traitement par lots et presets JSON.\n\nLa licence coûte 39,99$ en achat unique sur aescripts. La version 2.2.1, publiée en avril 2026, prend en charge After Effects 2021 et versions ultérieures, Windows 10 ou 11 et macOS 15 ou version ultérieure.\n\nGifGun devient rentable si vous exportez régulièrement des animations pour le web, les réseaux sociaux ou les messageries. Pour quelques conversions occasionnelles, FFmpeg ou un convertisseur gratuit reste suffisant.",
+    "shortDescription": "GifGun 2 est un plugin After Effects et un outil de bureau qui exporte les compositions After Effects en formats multiples : GIF, WEBP, WEBM, et MP4. Réputé pour son interface simple et ses optimisations de compression (réduction de taille jusqu'à 15% avec qualité améliorée).",
+    "longDescription": "GifGun 2 est un plugin After Effects et un outil de bureau qui exporte les compositions After Effects en formats multiples : GIF, WEBP, WEBM, et MP4. Réputé pour son interface simple et ses optimisations de compression (réduction de taille jusqu'à 15% avec qualité améliorée).\n\nFonctions clés : Export multi-format (GIF, WEBP, WEBM, MP4) depuis After Effects ; Compression optimisée avec réduction jusqu'à 15% de taille ; Rendu par lot (batch export) de plusieurs compositions ; Limitation automatique de taille de fichier ; Application de bureau autonome (sans After Effects) ; Présets exportables et partageables.\n\nGifGun justifie son prix si vous exportez régulièrement en GIF/WEBP depuis After Effects ; pour un usage occasion, des alternatives libres (FFmpeg) suffisent.",
     "affiliateLink": "https://aescripts.com/gifgun",
     "websiteUrl": "https://aescripts.com/gifgun",
     "defaultMonthlyPrice": 0,
     "pricing": {
-      "free": "",
-      "paid": "39,99$ en achat unique pour GifGun 2, avec mises à jour pendant la durée de vie de la version 2"
+      "free": "Pas de version gratuite, pas d'essai gratuit visible. Achat unique requis pour accéder au plugin et à l'application.",
+      "paid": "GifGun 2 (Single Purchase): 39,99 USD (licence perpétuelle pour v2, accès plugin + app desktop) ; Upgrade de v1 à v2: Tarifs réduits selon date d'achat de v1"
     },
     "logo": "",
     "soloRelevance": "medium",
@@ -54737,7 +54805,7 @@
         "Achat ponctuel ou licence non mensuelle : ne pas compter comme abonnement mensuel sans confirmation."
       ],
       "currency": "USD",
-      "verified_on": "2026-08-29",
+      "verified_on": "2026-07-24",
       "billing_model": "one_time",
       "source_domain": "aescripts.com",
       "price_original": 39.99,
@@ -54781,8 +54849,8 @@
       "never_auto_cancel_reason": "Couche non substituable par défaut.",
       "requires_context_questions": true
     },
-    "shortDescriptionEn": "Export and compress GIF, WEBP, WEBM and MP4 from After Effects or the dedicated app.",
-    "longDescriptionEn": "GifGun 2 speeds up delivery of lightweight animations from After Effects, but it is no longer just a one-click GIF exporter. One license includes the After Effects plugin, a standalone desktop app and a web app. It supports GIF, WEBP, WEBM and MP4, with target file sizes, smart compression, batch processing and JSON presets.\n\nThe license costs $39.99 as a one-time purchase from aescripts. Version 2.2.1, released in April 2026, supports After Effects 2021 and later, Windows 10 or 11, and macOS 15 or later.\n\nGifGun pays for itself when you regularly export animations for websites, social media or messaging. For a few occasional conversions, FFmpeg or a free converter is still enough.",
+    "shortDescriptionEn": "GifGun 2 is an After Effects plugin and desktop tool that exports compositions to multiple formats: GIF, WEBP, WEBM, and MP4. Known for simple interface and compression optimization (up to 15% size reduction with improved quality).",
+    "longDescriptionEn": "GifGun 2 is an After Effects plugin and desktop tool that exports compositions to multiple formats: GIF, WEBP, WEBM, and MP4. Known for simple interface and compression optimization (up to 15% size reduction with improved quality).\n\nKey strengths: Very simple, intuitive export interface.; Optimized compression (lighter files at equal quality).; Perpetual license (no recurring subscription).; Standalone desktop app (works without After Effects).; Batch export convenient for large production runs..\n\nGifGun pays for itself if you regularly export to GIF/WEBP from After Effects; for occasional use, free alternatives (FFmpeg) work fine.",
     "prosEn": [
       "Very simple, intuitive export interface.",
       "Optimized compression (lighter files at equal quality).",
@@ -54816,12 +54884,12 @@
       "threshold": "GifGun pays for itself if you regularly export to GIF/WEBP from After Effects; for occasional use, free alternatives (FFmpeg) work fine."
     },
     "pricingEn": {
-      "free": "",
-      "paid": "One-time purchase (~$40), lifetime license, no subscription"
+      "free": "Pas de version gratuite, pas d'essai gratuit visible. Achat unique requis pour accéder au plugin et à l'application.",
+      "paid": "GifGun 2 (Single Purchase): 39,99 USD (licence perpétuelle pour v2, accès plugin + app desktop) ; Upgrade de v1 à v2: Tarifs réduits selon date d'achat de v1"
     },
     "force_silence": false,
-    "description": "GifGun 2 accélère la livraison d'animations légères depuis After Effects, mais il ne se limite plus à un bouton d'export GIF. La licence inclut le plugin After Effects, une application de bureau autonome et une application web. Elle couvre les formats GIF, WEBP, WEBM et MP4, avec taille cible, compression intelligente, traitement par lots et presets JSON.\n\nLa licence coûte 39,99$ en achat unique sur aescripts. La version 2.2.1, publiée en avril 2026, prend en charge After Effects 2021 et versions ultérieures, Windows 10 ou 11 et macOS 15 ou version ultérieure.\n\nGifGun devient rentable si vous exportez régulièrement des animations pour le web, les réseaux sociaux ou les messageries. Pour quelques conversions occasionnelles, FFmpeg ou un convertisseur gratuit reste suffisant.",
-    "ogImageUrl": "/tool-media/ae-gifgun/overview.jpg",
+    "description": "GifGun 2 est un plugin After Effects et un outil de bureau qui exporte les compositions After Effects en formats multiples : GIF, WEBP, WEBM, et MP4. Réputé pour son interface simple et ses optimisations de compression (réduction de taille jusqu'à 15% avec qualité améliorée).\n\nFonctions clés : Export multi-format (GIF, WEBP, WEBM, MP4) depuis After Effects ; Compression optimisée avec réduction jusqu'à 15% de taille ; Rendu par lot (batch export) de plusieurs compositions ; Limitation automatique de taille de fichier ; Application de bureau autonome (sans After Effects) ; Présets exportables et partageables.\n\nGifGun justifie son prix si vous exportez régulièrement en GIF/WEBP depuis After Effects ; pour un usage occasion, des alternatives libres (FFmpeg) suffisent.",
+    "ogImageUrl": "/og-screenshots/ae-gifgun.png",
     "galleryImages": [
       "/tool-media/ae-gifgun/official-demo.jpg"
     ]
@@ -96377,14 +96445,14 @@
     "name": "Newton 3",
     "slug": "ae-newton3",
     "category": "design-tools",
-    "shortDescription": "Simulateur de physique 2D pour After Effects. Collisions, gravité, ressorts réalistes.",
-    "longDescription": "Newton, c'est un moteur de physique 2D pour After Effects. Au lieu d'animer chaque rebond et chaque collision à la main, tu donnes des propriétés physiques à tes calques (gravité, masse, rebond, friction) et Newton calcule le mouvement réaliste : objets qui tombent, s'empilent, se heurtent, typographie qui dégringole. Pour un motion designer, ça permet des animations organiques qui seraient très longues à faire en keyframes.\n\nC'est un achat unique (aescripts/Motionboutique) autour de 250$, sans abonnement. C'est cher pour un plugin, mais c'est un investissement durable si tu en as un usage régulier.\n\nÀ qui ça s'adresse : aux motion designers qui font des animations à base de physique. Si tes projets n'en contiennent pas, Newton ne te servira à rien. Mais dès qu'il faut du mouvement réaliste avec des interactions entre objets, il n'a pas vraiment d'équivalent dans After Effects.",
+    "shortDescription": "Newton 3 (et son successeur Newton 4) est un moteur de simulation physique 2D pour After Effects qui fait se comporter les calques comme des objets solides avec gravité, collision, friction et ressorts. Permite d'appliquer des forces réalistes (rebonds, oscillations) à du texte, formes et éléments sans keyframing manuel.",
+    "longDescription": "Newton 3 (et son successeur Newton 4) est un moteur de simulation physique 2D pour After Effects qui fait se comporter les calques comme des objets solides avec gravité, collision, friction et ressorts. Permite d'appliquer des forces réalistes (rebonds, oscillations) à du texte, formes et éléments sans keyframing manuel.\n\nFonctions clés : Simulation physique 2D (gravité, collision, friction) ; 6 types d'objets (statique, dynamique, cinématique, AEmatic, dormant, dead) ; 6 types de joints (distance, pivot, piston, ressort, roue, blob) ; Animation automatique des keyframes (conversion en keyframes AE standard) ; Contrôle des propriétés physiques (rebond, amortissement, masse) ; Export et animation de résultats sans recalcul.\n\nNewton 3 justifie son investissement pour animations physiques fréquentes ; pour un usage occasionnel, les effets natifs After Effects suffisent.",
     "affiliateLink": "https://aescripts.com/newton",
     "websiteUrl": "https://aescripts.com/newton",
     "defaultMonthlyPrice": 0,
     "pricing": {
-      "free": "",
-      "paid": "Achat unique (~250$), licence à vie, pas d'abonnement"
+      "free": "Pas de version gratuite. Aucun essai gratuit visible. Réduction de 50% disponible pour étudiants et enseignants.",
+      "paid": "Newton 3: 249,99 USD (licence perpétuelle, plus d'updates) ; Newton 4 (upgrade depuis Newton 3): 99,99 USD (tarif réduit pour propriétaires v3)"
     },
     "logo": "",
     "soloRelevance": "medium",
@@ -96476,15 +96544,15 @@
       "cautions": [
         "Achat unique (~250$), pas d'abonnement"
       ],
-      "verified_on": "2026-06-15",
+      "verified_on": "2026-07-24",
       "source_domain": "aescripts.com",
       "usage_sensitive": false,
       "compare_plan_kind": "individual",
       "compare_plan_name": "Achat unique",
       "price_reliability": "low",
       "location_sensitive": false,
-      "official_source_url": "https://aescripts.com/newton",
-      "verification_status": "official_site_only",
+      "official_source_url": "https://aescripts.com/newton/",
+      "verification_status": "official_explicit",
       "compare_price_monthly_eur": 0
     },
     "decision_policy_v3": {
@@ -96495,8 +96563,8 @@
       "never_auto_cancel_reason": "Couche non substituable par défaut.",
       "requires_context_questions": true
     },
-    "shortDescriptionEn": "2D physics simulator for After Effects. Realistic collisions, gravity, springs.",
-    "longDescriptionEn": "Newton is a 2D physics engine for After Effects. Instead of animating each bounce and collision by hand, you give your layers physical properties (gravity, mass, bounce, friction) and Newton computes realistic motion: objects falling, stacking, colliding, type tumbling down. For a motion designer, it enables organic animations that would take ages to keyframe.\n\nIt's a one-time purchase (aescripts/Motionboutique) around $250, no subscription. It's pricey for a plugin, but a lasting investment if you use it regularly.\n\nWho it's for: motion designers who do physics-based animation. If your projects don't include any, Newton will be useless to you. But the moment you need realistic motion with interactions between objects, it has no real equivalent in After Effects.",
+    "shortDescriptionEn": "Newton 3 (and successor Newton 4) is a 2D physics simulation engine for After Effects that makes layers behave like solid objects with gravity, collisions, friction, and springs. Applies realistic forces (bounces, oscillations) to text, shapes, and elements without manual keyframing.",
+    "longDescriptionEn": "Newton 3 (and successor Newton 4) is a 2D physics simulation engine for After Effects that makes layers behave like solid objects with gravity, collisions, friction, and springs. Applies realistic forces (bounces, oscillations) to text, shapes, and elements without manual keyframing.\n\nKey strengths: Professional, flexible physics simulation.; Saves huge time on physics keyframing.; Results auto-converted to AE keyframes (editable after).; Perpetual license (no subscription).; 6 object and joint types offer advanced control..\n\nNewton 3 pays off for frequent physics animations; for occasional use, After Effects built-in effects suffice.",
     "prosEn": [
       "Professional, flexible physics simulation.",
       "Saves huge time on physics keyframing.",
@@ -96531,12 +96599,13 @@
       "threshold": "Newton 3 pays off for frequent physics animations; for occasional use, After Effects built-in effects suffice."
     },
     "pricingEn": {
-      "free": "",
-      "paid": "One-time purchase (~$250), lifetime license, no subscription"
+      "free": "Pas de version gratuite. Aucun essai gratuit visible. Réduction de 50% disponible pour étudiants et enseignants.",
+      "paid": "Newton 3: 249,99 USD (licence perpétuelle, plus d'updates) ; Newton 4 (upgrade depuis Newton 3): 99,99 USD (tarif réduit pour propriétaires v3)"
     },
     "force_silence": false,
-    "description": "Newton, c'est un moteur de physique 2D pour After Effects. Au lieu d'animer chaque rebond et chaque collision à la main, tu donnes des propriétés physiques à tes calques (gravité, masse, rebond, friction) et Newton calcule le mouvement réaliste : objets qui tombent, s'empilent, se heurtent, typographie qui dégringole. Pour un motion designer, ça permet des animations organiques qui seraient très longues à faire en keyframes.\n\nC'est un achat unique (aescripts/Motionboutique) autour de 250$, sans abonnement. C'est cher pour un plugin, mais c'est un investissement durable si tu en as un usage régulier.\n\nÀ qui ça s'adresse : aux motion designers qui font des animations à base de physique. Si tes projets n'en contiennent pas, Newton ne te servira à rien. Mais dès qu'il faut du mouvement réaliste avec des interactions entre objets, il n'a pas vraiment d'équivalent dans After Effects.",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/ae-newton3.jpg"
+    "description": "Newton 3 (et son successeur Newton 4) est un moteur de simulation physique 2D pour After Effects qui fait se comporter les calques comme des objets solides avec gravité, collision, friction et ressorts. Permite d'appliquer des forces réalistes (rebonds, oscillations) à du texte, formes et éléments sans keyframing manuel.\n\nFonctions clés : Simulation physique 2D (gravité, collision, friction) ; 6 types d'objets (statique, dynamique, cinématique, AEmatic, dormant, dead) ; 6 types de joints (distance, pivot, piston, ressort, roue, blob) ; Animation automatique des keyframes (conversion en keyframes AE standard) ; Contrôle des propriétés physiques (rebond, amortissement, masse) ; Export et animation de résultats sans recalcul.\n\nNewton 3 justifie son investissement pour animations physiques fréquentes ; pour un usage occasionnel, les effets natifs After Effects suffisent.",
+    "ogImageUrl": "/og-screenshots/ae-newton3.jpg",
+    "galleryImages": []
   },
   {
     "id": "next-js",
@@ -102197,14 +102266,14 @@
     "name": "Overlord",
     "slug": "ae-overlord",
     "category": "design-tools",
-    "shortDescription": "Transfert vectoriel direct Illustrator → After Effects en un clic. Gain de temps massif.",
-    "longDescription": "Overlord, c'est un pont entre Illustrator et After Effects, signé battleaxe. Son job : transférer des formes vectorielles d'un logiciel à l'autre en un clic, en gardant les tracés et les calques éditables, là où il faudrait sinon copier-coller, réimporter ou recréer les formes à la main. Pour un motion designer qui anime des illustrations vectorielles, c'est un gain de temps énorme au quotidien.\n\nC'est un achat unique (~45$), sans abonnement. Tu l'achètes une fois et tu l'utilises pour toujours.\n\nÀ qui ça s'adresse : aux motion designers et graphistes qui font des allers-retours réguliers entre Illustrator et After Effects. Si tu ne travailles pas le vectoriel dans After Effects, Overlord ne te servira à rien. Mais dans ce workflow précis, il n'a pas vraiment d'équivalent, et il se rentabilise très vite.",
+    "shortDescription": "Overlord est un plugin After Effects et Illustrator créé par Battle Axe qui facilitant le transfert de couches depuis Figma, Photoshop et Illustrator vers After Effects en préservant les propriétés (masques, gradients, styles, noms). Rend les échanges créatifs cross-app rapides et non destructifs.",
+    "longDescription": "Overlord est un plugin After Effects et Illustrator créé par Battle Axe qui facilitant le transfert de couches depuis Figma, Photoshop et Illustrator vers After Effects en préservant les propriétés (masques, gradients, styles, noms). Rend les échanges créatifs cross-app rapides et non destructifs.\n\nFonctions clés : Import de calques depuis Figma, Photoshop, Illustrator vers After Effects ; Préservation des masques, gradients, styles, et noms ; Texte éditable avec formatage caractère ; Gradients linéaires et radiaux éditables ; Nouvelle connexion Illustrator ↔ Figma ; Export de séquences d'images depuis Photoshop ; Licence double-machine (jusqu'à 2 ordinateurs).\n\nOverlord s'impose pour des workflows collaboratifs design-animation fréquents ; pour travail solo occasionnel, ce n'est pas justifié.",
     "affiliateLink": "https://battleaxe.co/overlord",
     "websiteUrl": "https://battleaxe.co/overlord",
     "defaultMonthlyPrice": 0,
     "pricing": {
-      "free": "",
-      "paid": "Achat unique (~45$), licence à vie, pas d'abonnement"
+      "free": "Pas de version gratuite. Pas d'essai gratuit visible. Achat unique requis.",
+      "paid": "Overlord (Single User): 75 USD USD (1 an de mises à jour incluses, utilisation jusqu'à 2 ordinateurs)"
     },
     "logo": "",
     "soloRelevance": "medium",
@@ -102296,7 +102365,7 @@
         "Achat ponctuel ou licence non mensuelle : ne pas compter comme abonnement mensuel sans confirmation."
       ],
       "currency": "USD",
-      "verified_on": "2026-06-15",
+      "verified_on": "2026-07-24",
       "billing_model": "one_time",
       "source_domain": "battleaxe.co",
       "price_original": 45,
@@ -102328,7 +102397,7 @@
       "price_reliability": "medium",
       "location_sensitive": true,
       "official_source_url": "https://battleaxe.co/overlord",
-      "verification_status": "official_contextual",
+      "verification_status": "official_explicit",
       "price_original_currency": "USD",
       "compare_price_monthly_eur": 0
     },
@@ -102340,8 +102409,8 @@
       "never_auto_cancel_reason": "Couche non substituable par défaut.",
       "requires_context_questions": true
     },
-    "shortDescriptionEn": "Direct vector transfer Illustrator → After Effects in one click. Massive time saving.",
-    "longDescriptionEn": "Overlord is a bridge between Illustrator and After Effects, by battleaxe. Its job: transfer vector shapes from one app to the other in one click, keeping paths and layers editable, where you'd otherwise copy-paste, re-import or recreate shapes by hand. For a motion designer animating vector illustrations, it's a huge daily time saver.\n\nIt's a one-time purchase (~$45), no subscription. You buy it once and use it forever.\n\nWho it's for: motion designers and graphic designers who go back and forth between Illustrator and After Effects regularly. If you don't work with vectors in After Effects, Overlord will be useless to you. But in that specific workflow, it has no real equivalent, and it pays for itself fast.",
+    "shortDescriptionEn": "Overlord is an After Effects and Illustrator plugin by Battle Axe enabling layer transfer from Figma, Photoshop, and Illustrator to After Effects while preserving properties (masks, gradients, styles, names). Makes creative cross-app workflows fast and non-destructive.",
+    "longDescriptionEn": "Overlord is an After Effects and Illustrator plugin by Battle Axe enabling layer transfer from Figma, Photoshop, and Illustrator to After Effects while preserving properties (masks, gradients, styles, names). Makes creative cross-app workflows fast and non-destructive.\n\nKey strengths: Non-destructive transfer preserving properties (masks, gradients, styles).; Speeds up designer-animator collaborative workflow.; Perpetual license with 1 year of updates included.; Dual-machine (2 computers per user).; Support for multiple source apps (Figma, Photoshop, Illustrator)..\n\nOverlord is essential for frequent collaborative design-animation workflows; for solo occasional work, not justified.",
     "prosEn": [
       "Non-destructive transfer preserving properties (masks, gradients, styles).",
       "Speeds up designer-animator collaborative workflow.",
@@ -102375,12 +102444,17 @@
       "threshold": "Overlord is essential for frequent collaborative design-animation workflows; for solo occasional work, not justified."
     },
     "pricingEn": {
-      "free": "",
-      "paid": "One-time purchase (~$45), lifetime license, no subscription"
+      "free": "Pas de version gratuite. Pas d'essai gratuit visible. Achat unique requis.",
+      "paid": "Overlord (Single User): 75 USD USD (1 an de mises à jour incluses, utilisation jusqu'à 2 ordinateurs)"
     },
     "force_silence": false,
-    "description": "Overlord, c'est un pont entre Illustrator et After Effects, signé battleaxe. Son job : transférer des formes vectorielles d'un logiciel à l'autre en un clic, en gardant les tracés et les calques éditables, là où il faudrait sinon copier-coller, réimporter ou recréer les formes à la main. Pour un motion designer qui anime des illustrations vectorielles, c'est un gain de temps énorme au quotidien.\n\nC'est un achat unique (~45$), sans abonnement. Tu l'achètes une fois et tu l'utilises pour toujours.\n\nÀ qui ça s'adresse : aux motion designers et graphistes qui font des allers-retours réguliers entre Illustrator et After Effects. Si tu ne travailles pas le vectoriel dans After Effects, Overlord ne te servira à rien. Mais dans ce workflow précis, il n'a pas vraiment d'équivalent, et il se rentabilise très vite.",
-    "ogImageUrl": "https://framerusercontent.com/assets/aKz5rGcklstKoX9n59MvZ2DDHP0.jpg"
+    "description": "Overlord est un plugin After Effects et Illustrator créé par Battle Axe qui facilitant le transfert de couches depuis Figma, Photoshop et Illustrator vers After Effects en préservant les propriétés (masques, gradients, styles, noms). Rend les échanges créatifs cross-app rapides et non destructifs.\n\nFonctions clés : Import de calques depuis Figma, Photoshop, Illustrator vers After Effects ; Préservation des masques, gradients, styles, et noms ; Texte éditable avec formatage caractère ; Gradients linéaires et radiaux éditables ; Nouvelle connexion Illustrator ↔ Figma ; Export de séquences d'images depuis Photoshop ; Licence double-machine (jusqu'à 2 ordinateurs).\n\nOverlord s'impose pour des workflows collaboratifs design-animation fréquents ; pour travail solo occasionnel, ce n'est pas justifié.",
+    "ogImageUrl": "https://i.ytimg.com/vi_webp/lGYe8Kctdm0/sddefault.webp",
+    "galleryImages": [
+      "https://i.ytimg.com/vi_webp/fxaIKvMczz8/sddefault.webp",
+      "https://i.ytimg.com/vi_webp/xZhkMWs8Epc/sddefault.webp",
+      "https://framerusercontent.com/images/jCrqxVE8LqrRcRrrUjSP0ajI1Y.gif?width=787&height=301"
+    ]
   },
   {
     "id": "ovh",
@@ -121371,14 +121445,14 @@
     "name": "Red Giant",
     "slug": "ae-red-giant",
     "category": "design-tools",
-    "shortDescription": "Suite Maxon de plugins motion design, VFX et étalonnage pour After Effects et Premiere.",
-    "longDescription": "Red Giant, c'est la boîte à outils de Maxon pour le motion design, les VFX et l'étalonnage dans After Effects et Premiere Pro. Sous ce nom se cachent des suites devenues des références : Trapcode (particules, systèmes 3D, nébuleuses), Magic Bullet (étalonnage et look cinéma), VFX Suite (compositing, incrustation, lueurs) et Universe (transitions, effets et titres). Pour un motion designer ou un monteur qui travaille dans le flux Adobe, c'est un gain de temps considérable.\n\nDepuis le rachat par Maxon, le modèle a changé : plus de licence perpétuelle ni de suites vendues à l'unité. Tu prends l'abonnement Red Giant complet (environ 85$/mois ou 639$/an, qui inclut tout : Trapcode, Magic Bullet, VFX Suite, Universe), ou bien Universe seul (32$/mois, 214$/an) si tu ne veux que les transitions et les effets. Red Giant est aussi inclus dans l'abonnement Maxon One avec Cinema 4D.\n\nÀ qui ça s'adresse : aux pros du motion qui exploitent vraiment plusieurs de ces suites au quotidien. Le vrai point d'attention, c'est le prix et le doublon. Si tu ne fais que de l'étalonnage, DaVinci Resolve est gratuit et plus complet. Si tu veux juste des particules ou des transitions ponctuelles, l'abonnement complet est surdimensionné. Red Giant se justifie quand After Effects est ton outil central et que Trapcode, Magic Bullet ou VFX font partie de ton flux régulier.",
+    "shortDescription": "Red Giant est une suite professionnelle complète de plus de 50 plugins VFX et motion design créés par Maxon pour After Effects, Premiere Pro, et autres applications vidéo. Inclut Trapcode (particules, éclats lens, lumières), Universe (transitions, effets), effets de couleur, et toolsets spécialisés. Livré avec mises à jour mensuelles et accès à Maxon Studio (templates).",
+    "longDescription": "Red Giant est une suite professionnelle complète de plus de 50 plugins VFX et motion design créés par Maxon pour After Effects, Premiere Pro, et autres applications vidéo. Inclut Trapcode (particules, éclats lens, lumières), Universe (transitions, effets), effets de couleur, et toolsets spécialisés. Livré avec mises à jour mensuelles et accès à Maxon Studio (templates).\n\nFonctions clés : Trapcode Suite : moteur de particules, lens flare (Optical Flares), lumières 3D ; Universe : transitions, effets, outils compositing ; Outils de couleur (DaVinci LUT support, grading) ; Real Lens Flares avec zoom animable (2026.5) ; Depth estimation tool (2026.1) pour générer depth maps ; Maxon Studio et Capsules (templates d'animation réutilisables) ; Support OpenFX (compatibilité Autograph, Nuke, autres).\n\nRed Giant s'impose pour studios et professionnels productrices vidéo régulières ; pour freelances occasionnels ou débutants, les alternatives libres sont suffisantes.",
     "affiliateLink": "https://maxon.net/red-giant",
     "websiteUrl": "https://maxon.net/red-giant",
     "defaultMonthlyPrice": 53,
     "pricing": {
-      "free": "",
-      "paid": "Red Giant complet : 85$/mois ou 639$/an. Universe seul : 32$/mois ou 214$/an. Inclus dans Maxon One."
+      "free": "Pas de version gratuite. Essai possible (durée non spécifiée) via site Maxon. Abonnement seul modèle de facturation.",
+      "paid": "Red Giant + Universe (annuel): 639 USD/an (environ 53 USD/mois, facturé annuellement) ; Red Giant + Universe (mensuel): 85 USD/mois (facturation mensuelle, aucun engagement)"
     },
     "logo": "",
     "soloRelevance": "medium",
@@ -121475,14 +121549,14 @@
         "Red Giant complet : 85$/mois ou 639$/an. Universe seul : 32$/mois ou 214$/an.",
         "Plus de licence perpétuelle ; Red Giant est aussi inclus dans Maxon One."
       ],
-      "verified_on": "2026-06-17",
+      "verified_on": "2026-07-24",
       "source_domain": "maxon.net",
       "usage_sensitive": true,
       "compare_plan_kind": "subscription",
       "compare_plan_name": "Red Giant (complet)",
       "price_reliability": "high",
       "location_sensitive": true,
-      "official_source_url": "https://www.maxon.net/en/buy",
+      "official_source_url": "https://www.maxon.net/en/red-giant",
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 53
     },
@@ -121494,8 +121568,8 @@
       "never_auto_cancel_reason": "Couche non substituable par défaut.",
       "requires_context_questions": true
     },
-    "shortDescriptionEn": "Maxon's plugin suite for motion design, VFX and color grading in After Effects.",
-    "longDescriptionEn": "Red Giant is Maxon's toolkit for motion design, VFX and color grading in After Effects and Premiere Pro. Under that name sit suites that became references: Trapcode (particles, 3D systems, nebulas), Magic Bullet (grading and cinematic look), VFX Suite (compositing, keying, glows) and Universe (transitions, effects and titles). For a motion designer or editor working in the Adobe flow, it's a major time saver.\n\nSince the Maxon acquisition, the model changed: no more perpetual license, and no more suites sold individually. You take the complete Red Giant subscription (around $85/month or $639/year, which includes everything: Trapcode, Magic Bullet, VFX Suite, Universe), or Universe alone ($32/month, $214/year) if you only want transitions and effects. Red Giant is also included in the Maxon One subscription alongside Cinema 4D.\n\nWho it's for: motion pros who genuinely use several of these suites day to day. The real thing to watch is price and overlap. If you only do color grading, DaVinci Resolve is free and more complete. If you just want occasional particles or transitions, the full subscription is overkill. Red Giant earns its place when After Effects is your central tool and Trapcode, Magic Bullet or VFX are part of your regular flow.",
+    "shortDescriptionEn": "Red Giant is a professional suite of 50+ VFX and motion design plugins created by Maxon for After Effects, Premiere Pro, and video apps. Includes Trapcode (particles, lens flares, lights), Universe (transitions, effects), color tools, and specialized toolsets. Ships with monthly updates and Maxon Studio (templates).",
+    "longDescriptionEn": "Red Giant is a professional suite of 50+ VFX and motion design plugins created by Maxon for After Effects, Premiere Pro, and video apps. Includes Trapcode (particles, lens flares, lights), Universe (transitions, effects), color tools, and specialized toolsets. Ships with monthly updates and Maxon Studio (templates).\n\nKey strengths: Complete 50+ plugin suite covering all VFX/motion needs.; Trapcode and Universe are industry-standard, recognized tools.; Monthly updates with new features and improvements.; Maxon Studio offers reusable animation templates.; Compatible across multiple apps (After Effects, Premiere Pro, Autograph, etc.).; OpenFX support for broader compatibility..\n\nRed Giant is essential for studios and regular video producers; for occasional freelancers or beginners, free alternatives are sufficient.",
     "prosEn": [
       "Complete 50+ plugin suite covering all VFX/motion needs.",
       "Trapcode and Universe are industry-standard, recognized tools.",
@@ -121532,12 +121606,17 @@
       "threshold": "Red Giant is essential for studios and regular video producers; for occasional freelancers or beginners, free alternatives are sufficient."
     },
     "pricingEn": {
-      "free": "",
-      "paid": "Complete Red Giant: $85/month or $639/year. Universe alone: $32/month or $214/year. Included in Maxon One."
+      "free": "Pas de version gratuite. Essai possible (durée non spécifiée) via site Maxon. Abonnement seul modèle de facturation.",
+      "paid": "Red Giant + Universe (annuel): 639 USD/an (environ 53 USD/mois, facturé annuellement) ; Red Giant + Universe (mensuel): 85 USD/mois (facturation mensuelle, aucun engagement)"
     },
     "force_silence": false,
-    "description": "Red Giant, c'est la boîte à outils de Maxon pour le motion design, les VFX et l'étalonnage dans After Effects et Premiere Pro. Sous ce nom se cachent des suites devenues des références : Trapcode (particules, systèmes 3D, nébuleuses), Magic Bullet (étalonnage et look cinéma), VFX Suite (compositing, incrustation, lueurs) et Universe (transitions, effets et titres). Pour un motion designer ou un monteur qui travaille dans le flux Adobe, c'est un gain de temps considérable.\n\nDepuis le rachat par Maxon, le modèle a changé : plus de licence perpétuelle ni de suites vendues à l'unité. Tu prends l'abonnement Red Giant complet (environ 85$/mois ou 639$/an, qui inclut tout : Trapcode, Magic Bullet, VFX Suite, Universe), ou bien Universe seul (32$/mois, 214$/an) si tu ne veux que les transitions et les effets. Red Giant est aussi inclus dans l'abonnement Maxon One avec Cinema 4D.\n\nÀ qui ça s'adresse : aux pros du motion qui exploitent vraiment plusieurs de ces suites au quotidien. Le vrai point d'attention, c'est le prix et le doublon. Si tu ne fais que de l'étalonnage, DaVinci Resolve est gratuit et plus complet. Si tu veux juste des particules ou des transitions ponctuelles, l'abonnement complet est surdimensionné. Red Giant se justifie quand After Effects est ton outil central et que Trapcode, Magic Bullet ou VFX font partie de ton flux régulier.",
-    "ogImageUrl": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Red-Giant/_1200x630_crop_center-center_82_none/Red_Giant-April2025-video_loop_still-banner.jpg?mtime=1743079582"
+    "description": "Red Giant est une suite professionnelle complète de plus de 50 plugins VFX et motion design créés par Maxon pour After Effects, Premiere Pro, et autres applications vidéo. Inclut Trapcode (particules, éclats lens, lumières), Universe (transitions, effets), effets de couleur, et toolsets spécialisés. Livré avec mises à jour mensuelles et accès à Maxon Studio (templates).\n\nFonctions clés : Trapcode Suite : moteur de particules, lens flare (Optical Flares), lumières 3D ; Universe : transitions, effets, outils compositing ; Outils de couleur (DaVinci LUT support, grading) ; Real Lens Flares avec zoom animable (2026.5) ; Depth estimation tool (2026.1) pour générer depth maps ; Maxon Studio et Capsules (templates d'animation réutilisables) ; Support OpenFX (compatibilité Autograph, Nuke, autres).\n\nRed Giant s'impose pour studios et professionnels productrices vidéo régulières ; pour freelances occasionnels ou débutants, les alternatives libres sont suffisantes.",
+    "ogImageUrl": "https://maxonassets.imgix.net/images/Products/Red-Giant/RLF_Zoom_Flower_Loop_01.gif?fm=webp&auto=format,compress&w=586&h=330&ar=16:9&fit=clip&crop=faces",
+    "galleryImages": [
+      "https://maxonassets.imgix.net/images/Products/Red-Giant/ZoomLensVisualizationUI.gif?fm=webp&auto=format,compress&w=542&h=304&ar=16:9&fit=clip&crop=faces",
+      "https://maxonassets.imgix.net/images/Products/Red-Giant/Trapcode_Designer_Interface.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces",
+      "https://maxonassets.imgix.net/images/Products/Red-Giant/RG_Video_Comp_Visual_effects.png?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces"
+    ]
   },
   {
     "id": "red-giant-universe",
@@ -127492,10 +127571,11 @@
     "bundle_parent": null,
     "host_app": "adobe-after-effects",
     "category": "design-tools",
-    "shortDescription": "Animation de membres et tentacules organiques sans rigging complexe dans AE.",
+    "shortDescription": "Script de rigging pour After Effects permettant de créer et d'animer rapidement des personnages en courbes (« rubber hoses »). Offre une Session View non linéaire pour l'animation de caractères fluides et organiques.",
     "defaultMonthlyPrice": 0,
     "pricing": {
-      "paid": "45$ achat unique"
+      "free": "Pas de version gratuite permanente. Essai gratuit disponible ; achat de licence requis.",
+      "paid": "RubberHose 3: 65 USD"
     },
     "covers": [
       "animation-2d-3d",
@@ -127567,24 +127647,27 @@
     "pricingTiers": {
       "paid": "45$ achat unique"
     },
-    "longDescription": "RubberHose 2, c'est animation de membres et tentacules organiques sans rigging complexe dans AE. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les créateurs vidéo.\n\nGain de temps estimé : 3h/mois.\n\nÀ garder si : animation de personnages simples avec membres organiques. À éviter si : duik déjà maîtrisé — doublon rigging. Pertinent si Duik est trop complexe pour vos besoins. Si le budget le permet, ae-duik va plus loin.",
+    "longDescription": "Script de rigging pour After Effects permettant de créer et d'animer rapidement des personnages en courbes (« rubber hoses »). Offre une Session View non linéaire pour l'animation de caractères fluides et organiques.\n\nFonctions clés : Rigging sans os (bone-less) pour animations rapides ; Tapered hoses pour varier les épaisseurs des membres ; Hose styling personnalisable et sauvegardable ; RubberRig et RubberPin pour connecter des calques ; Optimisation de performance et baking de keyframes.\n\nRubberHose s'impose pour l'animation de personnages stylisés en motion design ; pour du rigging biomécanique réaliste ou du budget serré, d'autres solutions conviennent mieux.",
     "alternatives": [],
     "slug": "ae-rubberhose",
-    "shortDescriptionEn": "Organic limb and tentacle animation without complex rigging in AE.",
-    "description": "RubberHose 2, c'est animation de membres et tentacules organiques sans rigging complexe dans AE. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les créateurs vidéo.\n\nGain de temps estimé : 3h/mois.\n\nÀ garder si : animation de personnages simples avec membres organiques. À éviter si : duik déjà maîtrisé — doublon rigging. Pertinent si Duik est trop complexe pour vos besoins. Si le budget le permet, ae-duik va plus loin.",
-    "longDescriptionEn": "RubberHose 2 is organic limb and tentacle animation without complex rigging in AE. Free to start, paid plans for more. Built for video creators.\n\nEstimated time saving: 3h/month.\n\nIf budget allows, ae-duik goes further.",
-    "pricingEn": null,
+    "shortDescriptionEn": "After Effects rigging script for fast character creation and animation using curves (rubber hoses). Provides intuitive bone-less rigging with organic, fluid animation capabilities.",
+    "description": "Script de rigging pour After Effects permettant de créer et d'animer rapidement des personnages en courbes (« rubber hoses »). Offre une Session View non linéaire pour l'animation de caractères fluides et organiques.\n\nFonctions clés : Rigging sans os (bone-less) pour animations rapides ; Tapered hoses pour varier les épaisseurs des membres ; Hose styling personnalisable et sauvegardable ; RubberRig et RubberPin pour connecter des calques ; Optimisation de performance et baking de keyframes.\n\nRubberHose s'impose pour l'animation de personnages stylisés en motion design ; pour du rigging biomécanique réaliste ou du budget serré, d'autres solutions conviennent mieux.",
+    "longDescriptionEn": "After Effects rigging script for fast character creation and animation using curves (rubber hoses). Provides intuitive bone-less rigging with organic, fluid animation capabilities.\n\nKey strengths: Very fast rigging—ideal for high-volume content production.; Intuitive interface with short learning curve.; Smooth, organic animations without bone complexity.; Perpetual license (no subscription)..\n\nRubberHose makes sense for stylized character animation in motion design; for realistic biomechanical rigging or tight budgets, alternatives may work better.",
+    "pricingEn": {
+      "free": "Pas de version gratuite permanente. Essai gratuit disponible ; achat de licence requis.",
+      "paid": "RubberHose 3: 65 USD"
+    },
     "pricing_v5": {
       "cautions": [],
-      "verified_on": "2026-03-13",
-      "source_domain": "aescripts.com",
+      "verified_on": "2026-07-24",
+      "source_domain": "battleaxe.co",
       "usage_sensitive": false,
       "compare_plan_kind": "individual",
       "compare_plan_name": "Free",
       "price_reliability": "low",
       "location_sensitive": false,
-      "official_source_url": "https://aescripts.com/rubberhose",
-      "verification_status": "official_site_only",
+      "official_source_url": "https://battleaxe.co/rubberhose",
+      "verification_status": "official_explicit",
       "compare_price_monthly_eur": 0
     },
     "websiteUrl": "https://aescripts.com/rubberhose",
@@ -127640,7 +127723,8 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/ae-rubberhose.jpg"
+    "ogImageUrl": "/og-screenshots/ae-rubberhose.jpg",
+    "galleryImages": []
   },
   {
     "id": "ruby",
@@ -141284,11 +141368,11 @@
     "bundle_parent": null,
     "host_app": "figma",
     "category": "design-tools",
-    "shortDescription": "Vérification de l'accessibilité (contrastes, daltonisme) directement dans Figma.",
+    "shortDescription": "Plugin Figma pour tester l'accessibilité et les contrastes de couleurs. Vérifie les ratios de contraste WCAG, simule la daltonisme, gère l'ordre de focus et teste les cibles tactiles.",
     "defaultMonthlyPrice": 6.06,
     "pricing": {
-      "free": "Vérifications basiques",
-      "paid": "7$/mois (Pro)"
+      "free": "Gratuit — contraste checker et simulateur daltonisme pour 5 projets sans limite. Tous les basics de l'accessibilité.",
+      "paid": "Free: Gratuit (contraste + daltonisme sur 5 projets) ; Pro: 99 $ / an par utilisateur (focus order, alt text, touch targets, rapports) ; Business: 30 $ / éditeur / mois (collaboration, SSO) ; Enterprise: Prix sur demande (SSO, bulk licensing)"
     },
     "covers": [
       "accessibilite",
@@ -141362,16 +141446,19 @@
       "free": "Vérifications basiques",
       "paid": "7$/mois (Pro)"
     },
-    "longDescription": "Stark, c'est vérification de l'accessibilité (contrastes, daltonisme) directement dans Figma. À partir de 6.06€/mois. Pensé pour les designers UX/UI et les graphistes.\n\nGain de temps estimé : 2h/mois.\n\nÀ garder si : projets avec contraintes d'accessibilité WCAG. À éviter si : pas de contrainte accessibilité — version gratuite suffit. Gratuit pour les vérifications de base — toujours utile.",
+    "longDescription": "Plugin Figma pour tester l'accessibilité et les contrastes de couleurs. Vérifie les ratios de contraste WCAG, simule la daltonisme, gère l'ordre de focus et teste les cibles tactiles.\n\nFonctions clés : Vérificateur de contraste WCAG AA/AAA ; Simulateur de daltonisme et déficience visuelle ; Gestion de l'ordre de focus ; Suggestions d'alt text pour images ; Analyse de la typographie ; Test des cibles tactiles (touch targets) ; Rapports d'accessibilité automatisés ; Prévisualisation en navigateur.\n\nStark s'impose pour intégrer l'accessibilité dès la conception Figma. Pour un audit complet post-lancement, combiné avec des tests utilisateurs.",
     "alternatives": [],
     "slug": "figma-stark",
-    "shortDescriptionEn": "Accessibility checking (contrast, colour blindness) directly in Figma.",
-    "description": "Stark, c'est vérification de l'accessibilité (contrastes, daltonisme) directement dans Figma. À partir de 6.06€/mois. Pensé pour les designers UX/UI et les graphistes.\n\nGain de temps estimé : 2h/mois.\n\nÀ garder si : projets avec contraintes d'accessibilité WCAG. À éviter si : pas de contrainte accessibilité — version gratuite suffit. Gratuit pour les vérifications de base — toujours utile.",
-    "longDescriptionEn": "Stark is accessibility checking (contrast, colour blindness) directly in Figma. Starting at €6.06/month. Built for UX/UI designers and graphic designers.\n\nEstimated time saving: 2h/month.",
-    "pricingEn": null,
+    "shortDescriptionEn": "Figma plugin for accessibility and color contrast testing. Verifies WCAG contrast ratios, simulates color blindness, manages focus order, and checks touch targets.",
+    "description": "Plugin Figma pour tester l'accessibilité et les contrastes de couleurs. Vérifie les ratios de contraste WCAG, simule la daltonisme, gère l'ordre de focus et teste les cibles tactiles.\n\nFonctions clés : Vérificateur de contraste WCAG AA/AAA ; Simulateur de daltonisme et déficience visuelle ; Gestion de l'ordre de focus ; Suggestions d'alt text pour images ; Analyse de la typographie ; Test des cibles tactiles (touch targets) ; Rapports d'accessibilité automatisés ; Prévisualisation en navigateur.\n\nStark s'impose pour intégrer l'accessibilité dès la conception Figma. Pour un audit complet post-lancement, combiné avec des tests utilisateurs.",
+    "longDescriptionEn": "Figma plugin for accessibility and color contrast testing. Verifies WCAG contrast ratios, simulates color blindness, manages focus order, and checks touch targets.\n\nKey strengths: Robust free plan to check contrast ratios.; Color blindness simulator very useful.; Automated WCAG reports (Pro).; Complete a11y checklist.; Direct Figma integration..\n\nStark wins for embedding accessibility into Figma design. For full post-launch audits, pair with user testing.",
+    "pricingEn": {
+      "free": "Gratuit — contraste checker et simulateur daltonisme pour 5 projets sans limite. Tous les basics de l'accessibilité.",
+      "paid": "Free: Gratuit (contraste + daltonisme sur 5 projets) ; Pro: 99 $ / an par utilisateur (focus order, alt text, touch targets, rapports) ; Business: 30 $ / éditeur / mois (collaboration, SSO) ; Enterprise: Prix sur demande (SSO, bulk licensing)"
+    },
     "pricing_v5": {
       "cautions": [],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-07-24",
       "source_domain": "stark.so",
       "usage_sensitive": false,
       "compare_plan_kind": "individual",
@@ -141379,7 +141466,7 @@
       "price_reliability": "low",
       "location_sensitive": false,
       "official_source_url": "https://stark.so",
-      "verification_status": "official_site_only",
+      "verification_status": "official_explicit",
       "compare_price_monthly_eur": 6.06
     },
     "websiteUrl": "https://stark.so",
@@ -141436,7 +141523,8 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/figma-stark.jpg"
+    "ogImageUrl": "/og-screenshots/figma-stark.jpg",
+    "galleryImages": []
   },
   {
     "id": "stark",

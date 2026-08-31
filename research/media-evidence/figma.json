@@ -1,0 +1,41 @@
+{
+  "slug": "figma",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://www.figma.com/"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://cdn.sanity.io/images/599r6htc/regionalized/4b9ade839f38291c91b76608d22e7c7a9ad525fd-542x305.png?w=542&h=305&q=75&fit=max&auto=format",
+      "source_page_url": "https://www.figma.com/",
+      "official": true,
+      "alt": "figma official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.sanity.io/images/599r6htc/regionalized/7e39b983c6ad865e0a7a5243d914020e69a23f70-542x305.png?w=542&h=305&q=75&fit=max&auto=format",
+      "source_page_url": "https://www.figma.com/",
+      "official": true,
+      "alt": "figma official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.sanity.io/images/599r6htc/regionalized/a92909334c175cb8deb08724809a6a133a2fdaee-656x816.png?w=656&h=816&q=75&fit=max&auto=format",
+      "source_page_url": "https://www.figma.com/",
+      "official": true,
+      "alt": "UI showing different brush stokes that can be applied to type"
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.sanity.io/images/599r6htc/regionalized/93c59de7e67fe357465b8ec359399d7afb637499-656x816.png?w=656&h=816&q=75&fit=max&auto=format",
+      "source_page_url": "https://www.figma.com/",
+      "official": true,
+      "alt": "A cursor vector editing a design"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "slug": "ae-red-giant",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://www.maxon.net/en/red-giant"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://maxonassets.imgix.net/images/Products/Red-Giant/RLF_Zoom_Flower_Loop_01.gif?fm=webp&auto=format,compress&w=586&h=330&ar=16:9&fit=clip&crop=faces",
+      "source_page_url": "https://www.maxon.net/en/red-giant",
+      "official": true,
+      "alt": "Real Lens Flares interactive zoom image"
+    },
+    {
+      "kind": "image",
+      "url": "https://maxonassets.imgix.net/images/Products/Red-Giant/ZoomLensVisualizationUI.gif?fm=webp&auto=format,compress&w=542&h=304&ar=16:9&fit=clip&crop=faces",
+      "source_page_url": "https://www.maxon.net/en/red-giant",
+      "official": true,
+      "alt": "Real Lens Flares aspherical lenses & new presets image"
+    },
+    {
+      "kind": "image",
+      "url": "https://maxonassets.imgix.net/images/Products/Red-Giant/Trapcode_Designer_Interface.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces",
+      "source_page_url": "https://www.maxon.net/en/red-giant",
+      "official": true,
+      "alt": "Trapcode Particular maximum system number preference image"
+    },
+    {
+      "kind": "image",
+      "url": "https://maxonassets.imgix.net/images/Products/Red-Giant/RG_Video_Comp_Visual_effects.png?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces",
+      "source_page_url": "https://www.maxon.net/en/red-giant",
+      "official": true,
+      "alt": "An image shows how Red Giant can be used for video compositing and visual effects creation in commercial design & advertising."
+    }
+  ]
+}

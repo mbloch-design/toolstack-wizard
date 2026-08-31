@@ -1,0 +1,21 @@
+{
+  "slug": "figma-stark",
+  "verified_on": "2026-08-31",
+  "mode": "fallback_screenshot",
+  "discovery": {
+    "official_media_found": false,
+    "official_pages_checked": [
+      "https://stark.so"
+    ]
+  },
+  "items": [
+    {
+      "kind": "screenshot",
+      "url": "/og-screenshots/figma-stark.jpg",
+      "official": false,
+      "capture_method": "browser_screenshot",
+      "alt": "Stark official page",
+      "source_page_url": "https://stark.so"
+    }
+  ]
+}

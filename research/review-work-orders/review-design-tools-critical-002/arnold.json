@@ -1,0 +1,275 @@
+{
+  "batch": "review-design-tools-critical-002",
+  "current": {
+    "affiliate_url": "https://www.autodesk.com/products/arnold/overview",
+    "alternatives": [
+      "v-ray",
+      "redshift",
+      "octane-render"
+    ],
+    "category": "design-tools",
+    "cons": [
+      "Coût d'abonnement régulier (pas d'accès perpétuel).",
+      "Courbe d'apprentissage pour shaders et réglages avancés.",
+      "Peut être overkill pour projet simple ou artistique.",
+      "Versions open-source moins matures que V-Ray."
+    ],
+    "cons_en": [
+      "Regular subscription cost (no perpetual access).",
+      "Learning curve for shaders and advanced settings.",
+      "May be overkill for simple or artistic projects.",
+      "Open-source versions less mature than V-Ray."
+    ],
+    "host_app": null,
+    "id": "arnold",
+    "long_description": "Arnold, c'est le moteur de rendu d'Autodesk, et son terrain, c'est le cinéma et l'animation. Moteur physiquement réaliste (unbiased), il s'est imposé dans le long-métrage et les VFX pour sa capacité à encaisser des scènes énormes et du shading complexe sans broncher. Il est intégré à Maya, 3ds Max, Houdini et Cinema 4D, et il est devenu un quasi-standard des pipelines studio orientés animation/VFX.\n\nHistoriquement CPU, Arnold gère désormais aussi le GPU. Côté prix, c'est l'abonnement Autodesk autour de 430$/an (environ 36$/mois) pour un poste, et il est souvent inclus avec certaines licences Autodesk (Maya). C'est plutôt raisonnable pour un moteur de cette réputation.\n\nLe vrai arbitrage se joue selon ton métier. Pour l'archviz et le produit, V-Ray et Corona sont plus indiqués. Pour la vitesse GPU pure en motion, Redshift et Octane prennent l'avantage. Et côté gratuit, Cycles dans Blender est devenu très bon. Arnold reste la valeur sûre du rendu de cinéma et d'animation, surtout si tu es déjà dans l'écosystème Maya.",
+    "long_description_en": "Arnold is Autodesk's render engine, and its home is film and animation. A physically based (unbiased) engine, it established itself in features and VFX for handling enormous scenes and complex shading without flinching. It's integrated into Maya, 3ds Max, Houdini and Cinema 4D, and has become a near-standard of animation/VFX studio pipelines.\n\nHistorically CPU, Arnold now also handles GPU. On price, it's the Autodesk subscription around $430/year (about $36/month) for one seat, and it's often included with some Autodesk licenses (Maya). That's fairly reasonable for an engine of this reputation.\n\nThe real trade-off depends on your work. For archviz and product, V-Ray and Corona are better suited. For pure GPU speed in motion, Redshift and Octane take the edge. And on the free side, Cycles in Blender has become very good. Arnold remains the safe bet for film and animation rendering, especially if you're already in the Maya ecosystem.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://tooltrim.com/og-screenshots/arnold.jpg"
+    },
+    "name": "Arnold",
+    "pricing": {
+      "free": "Essai gratuit",
+      "paid": "~430$/an (~36$/mois). Souvent inclus avec Maya (Autodesk)."
+    },
+    "pricing_en": {
+      "free": "Free trial",
+      "paid": "~$430/year (~$36/month). Often included with Maya (Autodesk)."
+    },
+    "pricing_v5": {
+      "cautions": [
+        "~430$/an (~36$/mois) ; souvent inclus avec certaines licences Autodesk"
+      ],
+      "compare_plan_kind": "subscription",
+      "compare_plan_name": "Arnold (annuel)",
+      "compare_price_monthly_eur": 36,
+      "location_sensitive": false,
+      "official_source_url": "https://www.autodesk.com/products/arnold/overview",
+      "price_reliability": "high",
+      "source_domain": "autodesk.com",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-06-17"
+    },
+    "pros": [
+      "Rendu professionnel et prévisible pour cinéma/TV.",
+      "Intégration forte avec Maya/3ds Max/Houdini.",
+      "Scalabilité en ferme de rendu pour gros projets.",
+      "Denoising intégré et GPU rendering.",
+      "Support industriel de Autodesk."
+    ],
+    "pros_en": [
+      "Professional, predictable rendering for film/TV.",
+      "Strong integration with Maya/3ds Max/Houdini.",
+      "Render farm scalability for large projects.",
+      "Built-in denoising and GPU rendering.",
+      "Autodesk's industry support."
+    ],
+    "short_description": "Moteur de rendu CPU/GPU d'Autodesk, standard du cinéma et de l'animation.",
+    "short_description_en": "Autodesk's CPU/GPU render engine, the film and animation standard.",
+    "slug": "arnold",
+    "source_url": "https://www.autodesk.com/products/arnold/overview",
+    "source_verified_on": "2026-06-17",
+    "use_cases": [
+      "Rendre une scène cinématique haute résolution pour court-métrage.",
+      "Produire une visualisation d'architecture avec matériaux photoréalistes.",
+      "Rendre des assets en ferme pour pipeline de jeu vidéo."
+    ],
+    "use_cases_en": [
+      "Render a high-res cinematic scene for a short film.",
+      "Produce photorealistic architecture visualization.",
+      "Render assets on a render farm for game pipeline."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous débutez en 3D et cherchez un rendu simple et gratuit.",
+        "Vous travaillez exclusivement hors écosystème Autodesk.",
+        "Vous rendez ponctuellement et ne justifiez pas un abonnement."
+      ],
+      "keepIf": [
+        "Vous rendez des scènes complexes pour cinéma, TV ou jeux.",
+        "Vous utilisez déjà Maya, 3ds Max ou Houdini en production.",
+        "Vous avez besoin de résultats prévisibles et d'une scalabilité en ferme de rendu."
+      ],
+      "threshold": "Arnold s'impose pour les studios de production cinéma/TV ; pour 3D solo, débutant ou ponctuel, Cycles (Blender) ou d'autres renderers gratuits conviendraient."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You're new to 3D and want simple, free rendering.",
+        "You work exclusively outside the Autodesk ecosystem.",
+        "You render occasionally and don't justify a subscription."
+      ],
+      "keepIf": [
+        "You render complex scenes for film, TV, or games.",
+        "You already use Maya, 3ds Max, or Houdini in production.",
+        "You need predictable results and render farm scalability."
+      ],
+      "threshold": "Arnold makes sense for film/TV production studios; for solo 3D, beginners, or occasional rendering, Cycles (Blender) or other free renderers work well."
+    },
+    "website_url": "https://www.autodesk.com/products/arnold/overview"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Regular subscription cost (no perpetual access).",
+        "Learning curve for shaders and advanced settings.",
+        "May be overkill for simple or artistic projects.",
+        "Open-source versions less mature than V-Ray."
+      ],
+      "pros": [
+        "Professional, predictable rendering for film/TV.",
+        "Strong integration with Maya/3ds Max/Houdini.",
+        "Render farm scalability for large projects.",
+        "Built-in denoising and GPU rendering.",
+        "Autodesk's industry support."
+      ],
+      "use_cases": [
+        "Render a high-res cinematic scene for a short film.",
+        "Produce photorealistic architecture visualization.",
+        "Render assets on a render farm for game pipeline."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You're new to 3D and want simple, free rendering.",
+          "You work exclusively outside the Autodesk ecosystem.",
+          "You render occasionally and don't justify a subscription."
+        ],
+        "keepIf": [
+          "You render complex scenes for film, TV, or games.",
+          "You already use Maya, 3ds Max, or Houdini in production.",
+          "You need predictable results and render farm scalability."
+        ],
+        "threshold": "Arnold makes sense for film/TV production studios; for solo 3D, beginners, or occasional rendering, Cycles (Blender) or other free renderers work well."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Essai gratuit ; version complète accessible via abonnement Autodesk ou plan Flex.",
+        "exists": true
+      },
+      "key_features": [
+        "Moteur ray tracing Monte Carlo avancé",
+        "Résultats de rendu prévisibles et reproductibles",
+        "Scalabilité pour pipelines de production",
+        "Support multi-application (Maya, 3ds Max, Houdini, Blender, etc.)",
+        "Denoising intégré (réduction de bruit)",
+        "Shader network système et scripting",
+        "GPU rendering (RTX) en sus du CPU"
+      ],
+      "plans": [
+        {
+          "name": "Arnold Single-User Monthly/Annual",
+          "price": "Montants sur page Autodesk officielle"
+        },
+        {
+          "name": "Arnold Flex Tokens",
+          "price": "Paiement à l'usage (pay-as-you-go)"
+        }
+      ],
+      "pricing_model": "Abonnement mensuel, annuel ou 3 ans. Tokens Flex pour usage ponctuels. Essai gratuit.",
+      "what": "Moteur de rendu Monte Carlo par tracé de rayons (ray tracing) développé par Autodesk pour le cinéma, télévision, jeux vidéo et visualisation de design. Résultats prévisibles, scalable pour les pipelines de production. Compatible Maya, 3ds Max, Houdini, Blender et autres.",
+      "what_en": "Advanced Monte Carlo ray tracing renderer developed by Autodesk for film, TV, games, and design visualization. Predictable results, scalable for production pipelines. Compatible with Maya, 3ds Max, Houdini, Blender, and others."
+    },
+    "fr": {
+      "cons": [
+        "Coût d'abonnement régulier (pas d'accès perpétuel).",
+        "Courbe d'apprentissage pour shaders et réglages avancés.",
+        "Peut être overkill pour projet simple ou artistique.",
+        "Versions open-source moins matures que V-Ray."
+      ],
+      "pros": [
+        "Rendu professionnel et prévisible pour cinéma/TV.",
+        "Intégration forte avec Maya/3ds Max/Houdini.",
+        "Scalabilité en ferme de rendu pour gros projets.",
+        "Denoising intégré et GPU rendering.",
+        "Support industriel de Autodesk."
+      ],
+      "relevant_for": [
+        "Artistes 3D professionnels",
+        "Studios d'animation",
+        "Architectes visualisant en haute qualité"
+      ],
+      "use_cases": [
+        "Rendre une scène cinématique haute résolution pour court-métrage.",
+        "Produire une visualisation d'architecture avec matériaux photoréalistes.",
+        "Rendre des assets en ferme pour pipeline de jeu vidéo."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous débutez en 3D et cherchez un rendu simple et gratuit.",
+          "Vous travaillez exclusivement hors écosystème Autodesk.",
+          "Vous rendez ponctuellement et ne justifiez pas un abonnement."
+        ],
+        "keepIf": [
+          "Vous rendez des scènes complexes pour cinéma, TV ou jeux.",
+          "Vous utilisez déjà Maya, 3ds Max ou Houdini en production.",
+          "Vous avez besoin de résultats prévisibles et d'une scalabilité en ferme de rendu."
+        ],
+        "threshold": "Arnold s'impose pour les studios de production cinéma/TV ; pour 3D solo, débutant ou ponctuel, Cycles (Blender) ou d'autres renderers gratuits conviendraient."
+      }
+    },
+    "slug": "arnold",
+    "sources": [
+      {
+        "label": "Autodesk Arnold — Official Product Page",
+        "url": "https://www.autodesk.com/products/arnold/overview"
+      },
+      {
+        "label": "Autodesk Arnold — Free Trial & Licensing",
+        "url": "https://www.autodesk.com/products/arnold/free-trial"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-002",
+    "batch_position": 16,
+    "blockers": [],
+    "catalog_hash": "sha256:30b129413709f241846968863510c15373a4c440d3ea8f7ee6b9d53080c08e17",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:ccb72fd3f91d2bf2bf9a5bdf863fdce42956306fed722c5713a71677f32520d1",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Arnold",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:b1c5d2cca7f4a42f14144cb6a88be177b9dc63a20ebfdbbf83557e03d4e0fdaa",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "arnold",
+    "source_url": "https://www.autodesk.com/products/arnold/overview",
+    "source_verified_on": "2026-06-17",
+    "status": "QUEUED"
+  }
+}

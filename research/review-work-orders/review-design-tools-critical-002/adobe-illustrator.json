@@ -1,0 +1,249 @@
+{
+  "batch": "review-design-tools-critical-002",
+  "current": {
+    "affiliate_url": "https://adobe.com/products/illustrator",
+    "alternatives": [
+      "canva",
+      "figma",
+      "sketch"
+    ],
+    "category": "design-tools",
+    "cons": [
+      "Accessible via l'abonnement Creative Cloud.",
+      "Courbe d'apprentissage réelle.",
+      "Surdimensionné pour un besoin vectoriel occasionnel."
+    ],
+    "cons_en": [
+      "Available via the Creative Cloud subscription.",
+      "Real learning curve.",
+      "Overkill for occasional vector needs."
+    ],
+    "host_app": null,
+    "id": "adobe-illustrator",
+    "long_description": "Illustrator, c'est l'outil de référence pour tout ce qui est vectoriel : logos, pictos, illustrations, chartes graphiques, mise en page print. Le vectoriel, ça veut dire des fichiers qui s'agrandissent sans perte, indispensables pour un logo qui doit passer d'une carte de visite à une façade. Comme After Effects ou Photoshop, c'est un standard que toute la filière partage, ce qui facilite la collaboration et la remise de fichiers clients.\n\nLa contrainte, c'est toujours Adobe : pas de version gratuite, un essai puis l'abonnement, autour de 26€/mois pour Illustrator seul, plus dans l'offre Creative Cloud complète. Pour un graphiste qui en vit, c'est un outil de travail, donc un coût assumé. Pour un besoin ponctuel, c'est cher.\n\nLa vraie alternative a changé en 2024 : Affinity Designer, longtemps le concurrent payant à achat unique, est devenu gratuit après le rachat par Canva. Pour un freelance qui veut éviter l'abonnement Adobe, c'est désormais une option sérieuse. Pour du dessin vectoriel libre et open source, Inkscape existe aussi. Illustrator garde l'avantage sur la finition, la compatibilité et l'intégration Creative Cloud.",
+    "long_description_en": "Illustrator is the reference tool for everything vector: logos, icons, illustrations, brand guidelines, print layout. Vector means files that scale without loss, essential for a logo that has to go from a business card to a storefront. Like After Effects or Photoshop, it's a standard the whole industry shares, which makes collaboration and client file delivery easier.\n\nThe constraint is always Adobe: no free version, a trial then the subscription, around €26/month for Illustrator alone, more in the full Creative Cloud plan. For a graphic designer who makes a living from it, it's a work tool, so an accepted cost. For an occasional need, it's expensive.\n\nThe real alternative changed in 2024: Affinity Designer, long the paid one-time-purchase competitor, became free after the Canva acquisition. For a freelancer who wants to avoid the Adobe subscription, it's now a serious option. For free and open-source vector drawing, Inkscape also exists. Illustrator keeps the edge on finish, compatibility and Creative Cloud integration.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://www.adobe.com/products/media_19762a181d8f7cdad7fa491acc9917bdedbcba01a.jpg?width=1200&#x26;format=pjpg&#x26;optimize=medium"
+    },
+    "name": "Adobe Illustrator",
+    "pricing": {
+      "free": "Aucune version gratuite, essai uniquement",
+      "paid": "23,99€/mois en engagement annuel (Illustrator seul), ou ~30,49€/mois sans engagement"
+    },
+    "pricing_en": {
+      "free": "No free version, trial only",
+      "paid": "€23.99/month with annual commitment (Illustrator alone), or ~€30.49/month with no commitment"
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Aucune version gratuite, essai uniquement",
+        "Environ 26€/mois pour Illustrator seul, plus dans l'offre Creative Cloud complète"
+      ],
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Illustrator single app",
+      "compare_price_monthly_eur": 26.21,
+      "location_sensitive": false,
+      "official_source_url": "https://www.adobe.com/fr/products/illustrator.html",
+      "price_reliability": "high",
+      "source_domain": "adobe.com",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-06-15"
+    },
+    "pros": [
+      "Référence du dessin vectoriel, précise et complète.",
+      "Outils de précision (plume, points d'ancrage, repères).",
+      "Typographie et gestion de texte avancées.",
+      "IA générative (texte-vers-vecteur, recoloration)."
+    ],
+    "pros_en": [
+      "The reference vector editor, precise and complete.",
+      "Precision tools (pen, anchor points, guides).",
+      "Advanced typography and text handling.",
+      "Generative AI (text-to-vector, recolour)."
+    ],
+    "short_description": "Le standard du dessin vectoriel : logos, illustrations, identité visuelle et print.",
+    "short_description_en": "The standard for vector design and illustration.",
+    "slug": "adobe-illustrator",
+    "source_url": "https://www.adobe.com/fr/products/illustrator.html",
+    "source_verified_on": "2026-06-15",
+    "use_cases": [
+      "Concevoir un logo ou une identité visuelle.",
+      "Créer des illustrations et icônes redimensionnables.",
+      "Réaliser des compositions typographiques soignées."
+    ],
+    "use_cases_en": [
+      "Design a logo or a visual identity.",
+      "Create scalable illustrations and icons.",
+      "Produce polished typographic compositions."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous travaillez surtout des images matricielles : Photoshop est plus adapté.",
+        "Vos besoins vectoriels sont occasionnels.",
+        "Vous voulez éviter l'abonnement Creative Cloud."
+      ],
+      "keepIf": [
+        "Vous créez des logos, icônes ou illustrations vectorielles.",
+        "Vous voulez le standard vectoriel avec des outils de précision.",
+        "Vous avez besoin de visuels redimensionnables sans perte de qualité."
+      ],
+      "threshold": "Illustrator s'impose quand le vectoriel (logos, illustrations, typographie) est central ; pour de la photo/retouche ou un usage occasionnel, un autre outil convient mieux."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You mostly work with raster images: Photoshop fits better.",
+        "Your vector needs are occasional.",
+        "You want to avoid the Creative Cloud subscription."
+      ],
+      "keepIf": [
+        "You create logos, icons or vector illustrations.",
+        "You want the vector standard with precision tools.",
+        "You need infinitely scalable visuals without quality loss."
+      ],
+      "threshold": "Illustrator makes sense when vector work (logos, illustrations, typography) is central; for photo/retouch or occasional use, another tool fits better."
+    },
+    "website_url": "https://adobe.com/products/illustrator"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "bundle_parent": "adobe-creative-cloud",
+    "en": {
+      "cons": [
+        "Available via the Creative Cloud subscription.",
+        "Real learning curve.",
+        "Overkill for occasional vector needs."
+      ],
+      "pros": [
+        "The reference vector editor, precise and complete.",
+        "Precision tools (pen, anchor points, guides).",
+        "Advanced typography and text handling.",
+        "Generative AI (text-to-vector, recolour)."
+      ],
+      "use_cases": [
+        "Design a logo or a visual identity.",
+        "Create scalable illustrations and icons.",
+        "Produce polished typographic compositions."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You mostly work with raster images: Photoshop fits better.",
+          "Your vector needs are occasional.",
+          "You want to avoid the Creative Cloud subscription."
+        ],
+        "keepIf": [
+          "You create logos, icons or vector illustrations.",
+          "You want the vector standard with precision tools.",
+          "You need infinitely scalable visuals without quality loss."
+        ],
+        "threshold": "Illustrator makes sense when vector work (logos, illustrations, typography) is central; for photo/retouch or occasional use, another tool fits better."
+      }
+    },
+    "facts": {
+      "key_features": [
+        "Dessin vectoriel (courbes de Bézier) redimensionnable à l'infini",
+        "Création de logos et de branding",
+        "Typographie et manipulation de texte avancées",
+        "Outils de précision (plume, points d'ancrage, repères)",
+        "IA générative (texte-vers-vecteur, recoloration)"
+      ],
+      "pricing_note": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite).",
+      "what": "Éditeur de graphismes vectoriels de référence d'Adobe, pour créer des visuels redimensionnables à l'infini.",
+      "what_en": "Adobe's flagship vector graphics editor for creating visuals that scale across all formats."
+    },
+    "fr": {
+      "cons": [
+        "Accessible via l'abonnement Creative Cloud.",
+        "Courbe d'apprentissage réelle.",
+        "Surdimensionné pour un besoin vectoriel occasionnel."
+      ],
+      "pros": [
+        "Référence du dessin vectoriel, précise et complète.",
+        "Outils de précision (plume, points d'ancrage, repères).",
+        "Typographie et gestion de texte avancées.",
+        "IA générative (texte-vers-vecteur, recoloration)."
+      ],
+      "relevant_for": [
+        "Designers graphiques",
+        "Illustrateurs",
+        "Studios et agences"
+      ],
+      "use_cases": [
+        "Concevoir un logo ou une identité visuelle.",
+        "Créer des illustrations et icônes redimensionnables.",
+        "Réaliser des compositions typographiques soignées."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous travaillez surtout des images matricielles : Photoshop est plus adapté.",
+          "Vos besoins vectoriels sont occasionnels.",
+          "Vous voulez éviter l'abonnement Creative Cloud."
+        ],
+        "keepIf": [
+          "Vous créez des logos, icônes ou illustrations vectorielles.",
+          "Vous voulez le standard vectoriel avec des outils de précision.",
+          "Vous avez besoin de visuels redimensionnables sans perte de qualité."
+        ],
+        "threshold": "Illustrator s'impose quand le vectoriel (logos, illustrations, typographie) est central ; pour de la photo/retouche ou un usage occasionnel, un autre outil convient mieux."
+      }
+    },
+    "slug": "adobe-illustrator",
+    "sources": [
+      {
+        "label": "Adobe Illustrator — description et fonctions (Wikipédia)",
+        "url": "https://en.wikipedia.org/wiki/Adobe_Illustrator"
+      }
+    ],
+    "verified_on": "2026-07-23"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-002",
+    "batch_position": 2,
+    "blockers": [],
+    "catalog_hash": "sha256:9a4a17c60d9bddad14a98e2fd7a260e6e22a8ce5370046f7128518b1352e2a90",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:fc7447ec8500d037d9c6a4814daa80bdcbbab20d0d30750dc9a370e4f1d9c5c4",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Adobe Illustrator",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:de7e2c4e87fa4c25b243c60f4e1866bb9eafd7901355333001f1392ffcf97383",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "adobe-illustrator",
+    "source_url": "https://www.adobe.com/fr/products/illustrator.html",
+    "source_verified_on": "2026-06-15",
+    "status": "QUEUED"
+  }
+}

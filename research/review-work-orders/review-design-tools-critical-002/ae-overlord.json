@@ -1,0 +1,297 @@
+{
+  "batch": "review-design-tools-critical-002",
+  "current": {
+    "affiliate_url": "https://battleaxe.co/overlord",
+    "alternatives": [],
+    "category": "design-tools",
+    "cons": [
+      "Prix unique, pas gratuit, pas d'essai visible.",
+      "Utile surtout pour workflows collaboratifs (moins pertinent solo).",
+      "Renouvellement payant pour accéder aux nouvelles fonctionnalités (optionnel).",
+      "Niche : utile surtout avec Figma/Illustrator (pas pour Illustrator seul)."
+    ],
+    "cons_en": [
+      "Paid, no free version, no visible trial.",
+      "Useful mainly for collaborative workflows (less relevant solo).",
+      "Renewal cost for new features (optional).",
+      "Niche: useful mainly with Figma/Illustrator (not Illustrator-only)."
+    ],
+    "host_app": "adobe-after-effects",
+    "id": "ae-overlord",
+    "long_description": "Overlord, c'est un pont entre Illustrator et After Effects, signé battleaxe. Son job : transférer des formes vectorielles d'un logiciel à l'autre en un clic, en gardant les tracés et les calques éditables, là où il faudrait sinon copier-coller, réimporter ou recréer les formes à la main. Pour un motion designer qui anime des illustrations vectorielles, c'est un gain de temps énorme au quotidien.\n\nC'est un achat unique (~45$), sans abonnement. Tu l'achètes une fois et tu l'utilises pour toujours.\n\nÀ qui ça s'adresse : aux motion designers et graphistes qui font des allers-retours réguliers entre Illustrator et After Effects. Si tu ne travailles pas le vectoriel dans After Effects, Overlord ne te servira à rien. Mais dans ce workflow précis, il n'a pas vraiment d'équivalent, et il se rentabilise très vite.",
+    "long_description_en": "Overlord is a bridge between Illustrator and After Effects, by battleaxe. Its job: transfer vector shapes from one app to the other in one click, keeping paths and layers editable, where you'd otherwise copy-paste, re-import or recreate shapes by hand. For a motion designer animating vector illustrations, it's a huge daily time saver.\n\nIt's a one-time purchase (~$45), no subscription. You buy it once and use it forever.\n\nWho it's for: motion designers and graphic designers who go back and forth between Illustrator and After Effects regularly. If you don't work with vectors in After Effects, Overlord will be useless to you. But in that specific workflow, it has no real equivalent, and it pays for itself fast.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://framerusercontent.com/assets/aKz5rGcklstKoX9n59MvZ2DDHP0.jpg"
+    },
+    "name": "Overlord",
+    "pricing": {
+      "free": "",
+      "paid": "Achat unique (~45$), licence à vie, pas d'abonnement"
+    },
+    "pricing_en": {
+      "free": "",
+      "paid": "One-time purchase (~$45), lifetime license, no subscription"
+    },
+    "pricing_v5": {
+      "billing_model": "one_time",
+      "billing_options": [
+        {
+          "currency": "USD",
+          "label_en": "One-time",
+          "label_fr": "Achat unique",
+          "price_monthly_eur": 0,
+          "price_original": 45,
+          "value": "one_time"
+        },
+        {
+          "label_en": "Already bought",
+          "label_fr": "Déjà acheté",
+          "price_monthly_eur": 0,
+          "value": "included"
+        },
+        {
+          "label_en": "I don’t know",
+          "label_fr": "Je ne sais pas",
+          "needs_verification": true,
+          "value": "unknown"
+        }
+      ],
+      "cautions": [
+        "Achat ponctuel ou licence non mensuelle : ne pas compter comme abonnement mensuel sans confirmation."
+      ],
+      "compare_plan_kind": "one_time",
+      "compare_plan_name": "License",
+      "compare_price_monthly_eur": 0,
+      "currency": "USD",
+      "location_sensitive": true,
+      "official_source_url": "https://battleaxe.co/overlord",
+      "price_original": 45,
+      "price_original_currency": "USD",
+      "price_reliability": "medium",
+      "source_domain": "battleaxe.co",
+      "usage_sensitive": false,
+      "verification_status": "official_contextual",
+      "verified_on": "2026-06-15"
+    },
+    "pros": [
+      "Transfert non destructif préservant les propriétés (masques, gradients, styles).",
+      "Accélère le workflow collaborative designer-animateur.",
+      "Licence perpétuelle avec 1 an updates incluses.",
+      "Double-machine (2 ordinateurs par utilisateur).",
+      "Support de multiples apps source (Figma, Photoshop, Illustrator)."
+    ],
+    "pros_en": [
+      "Non-destructive transfer preserving properties (masks, gradients, styles).",
+      "Speeds up designer-animator collaborative workflow.",
+      "Perpetual license with 1 year of updates included.",
+      "Dual-machine (2 computers per user).",
+      "Support for multiple source apps (Figma, Photoshop, Illustrator)."
+    ],
+    "short_description": "Transfert vectoriel direct Illustrator → After Effects en un clic. Gain de temps massif.",
+    "short_description_en": "Direct vector transfer Illustrator → After Effects in one click. Massive time saving.",
+    "slug": "ae-overlord",
+    "source_url": "https://battleaxe.co/overlord",
+    "source_verified_on": "2026-06-15",
+    "use_cases": [
+      "Importer un design Figma complet vers After Effects sans tout recréer.",
+      "Transférer des composants Illustrator vers After Effects avec styles intacts.",
+      "Workflow agence : designer Figma → animateur After Effects.",
+      "Export de séquences Photoshop directement en couches AE."
+    ],
+    "use_cases_en": [
+      "Import a complete Figma design to After Effects without rebuilding.",
+      "Transfer Illustrator components to After Effects with styles intact.",
+      "Agency workflow: Figma designer → After Effects animator.",
+      "Export Photoshop sequences directly as AE layers."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous travaillez seul et créez toujours vos designs directement After Effects.",
+        "Vous recréez rarement vos designs (imports occasionnels suffisent).",
+        "Vous ne voulez pas d'outil payant (c'est un investissement)."
+      ],
+      "keepIf": [
+        "Vous travaillez en équipe designers-animateurs (Figma/Illustrator → After Effects).",
+        "Vous cherchez à accélérer le workflow d'import de design sans recréer à la main.",
+        "Vous appréciez une licence perpétuelle sans abonnement mensuel."
+      ],
+      "threshold": "Overlord s'impose pour des workflows collaboratifs design-animation fréquents ; pour travail solo occasionnel, ce n'est pas justifié."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You work alone and always create designs directly in After Effects.",
+        "You rarely import designs (occasional imports are fine).",
+        "You don't want paid tools (it's an investment)."
+      ],
+      "keepIf": [
+        "You work in designer-animator teams (Figma/Illustrator → After Effects).",
+        "You want to speed up design import workflows without rebuilding by hand.",
+        "You like perpetual licenses without monthly subscriptions."
+      ],
+      "threshold": "Overlord is essential for frequent collaborative design-animation workflows; for solo occasional work, not justified."
+    },
+    "website_url": "https://battleaxe.co/overlord"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Paid, no free version, no visible trial.",
+        "Useful mainly for collaborative workflows (less relevant solo).",
+        "Renewal cost for new features (optional).",
+        "Niche: useful mainly with Figma/Illustrator (not Illustrator-only)."
+      ],
+      "pros": [
+        "Non-destructive transfer preserving properties (masks, gradients, styles).",
+        "Speeds up designer-animator collaborative workflow.",
+        "Perpetual license with 1 year of updates included.",
+        "Dual-machine (2 computers per user).",
+        "Support for multiple source apps (Figma, Photoshop, Illustrator)."
+      ],
+      "use_cases": [
+        "Import a complete Figma design to After Effects without rebuilding.",
+        "Transfer Illustrator components to After Effects with styles intact.",
+        "Agency workflow: Figma designer → After Effects animator.",
+        "Export Photoshop sequences directly as AE layers."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You work alone and always create designs directly in After Effects.",
+          "You rarely import designs (occasional imports are fine).",
+          "You don't want paid tools (it's an investment)."
+        ],
+        "keepIf": [
+          "You work in designer-animator teams (Figma/Illustrator → After Effects).",
+          "You want to speed up design import workflows without rebuilding by hand.",
+          "You like perpetual licenses without monthly subscriptions."
+        ],
+        "threshold": "Overlord is essential for frequent collaborative design-animation workflows; for solo occasional work, not justified."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Pas de version gratuite. Pas d'essai gratuit visible. Achat unique requis.",
+        "exists": false
+      },
+      "key_features": [
+        "Import de calques depuis Figma, Photoshop, Illustrator vers After Effects",
+        "Préservation des masques, gradients, styles, et noms",
+        "Texte éditable avec formatage caractère",
+        "Gradients linéaires et radiaux éditables",
+        "Nouvelle connexion Illustrator ↔ Figma",
+        "Export de séquences d'images depuis Photoshop",
+        "Licence double-machine (jusqu'à 2 ordinateurs)"
+      ],
+      "plans": [
+        {
+          "name": "Overlord (Single User)",
+          "price": "75 USD USD (1 an de mises à jour incluses, utilisation jusqu'à 2 ordinateurs)"
+        }
+      ],
+      "pricing_model": "Licence perpétuelle d'achat unique. Un achat donne accès à 1 an de mises à jour de fonctionnalités. Après 1 an, renouvellement optionnel pour nouvelles fonctionnalités (pas obligatoire pour continuer utilisation).",
+      "what": "Overlord est un plugin After Effects et Illustrator créé par Battle Axe qui facilitant le transfert de couches depuis Figma, Photoshop et Illustrator vers After Effects en préservant les propriétés (masques, gradients, styles, noms). Rend les échanges créatifs cross-app rapides et non destructifs.",
+      "what_en": "Overlord is an After Effects and Illustrator plugin by Battle Axe enabling layer transfer from Figma, Photoshop, and Illustrator to After Effects while preserving properties (masks, gradients, styles, names). Makes creative cross-app workflows fast and non-destructive."
+    },
+    "fr": {
+      "cons": [
+        "Prix unique, pas gratuit, pas d'essai visible.",
+        "Utile surtout pour workflows collaboratifs (moins pertinent solo).",
+        "Renouvellement payant pour accéder aux nouvelles fonctionnalités (optionnel).",
+        "Niche : utile surtout avec Figma/Illustrator (pas pour Illustrator seul)."
+      ],
+      "pros": [
+        "Transfert non destructif préservant les propriétés (masques, gradients, styles).",
+        "Accélère le workflow collaborative designer-animateur.",
+        "Licence perpétuelle avec 1 an updates incluses.",
+        "Double-machine (2 ordinateurs par utilisateur).",
+        "Support de multiples apps source (Figma, Photoshop, Illustrator)."
+      ],
+      "relevant_for": [
+        "Motion designers",
+        "Agences créatives",
+        "Équipes design-animation"
+      ],
+      "use_cases": [
+        "Importer un design Figma complet vers After Effects sans tout recréer.",
+        "Transférer des composants Illustrator vers After Effects avec styles intacts.",
+        "Workflow agence : designer Figma → animateur After Effects.",
+        "Export de séquences Photoshop directement en couches AE."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous travaillez seul et créez toujours vos designs directement After Effects.",
+          "Vous recréez rarement vos designs (imports occasionnels suffisent).",
+          "Vous ne voulez pas d'outil payant (c'est un investissement)."
+        ],
+        "keepIf": [
+          "Vous travaillez en équipe designers-animateurs (Figma/Illustrator → After Effects).",
+          "Vous cherchez à accélérer le workflow d'import de design sans recréer à la main.",
+          "Vous appréciez une licence perpétuelle sans abonnement mensuel."
+        ],
+        "threshold": "Overlord s'impose pour des workflows collaboratifs design-animation fréquents ; pour travail solo occasionnel, ce n'est pas justifié."
+      }
+    },
+    "slug": "ae-overlord",
+    "sources": [
+      {
+        "label": "Overlord - Battle Axe (site officiel)",
+        "url": "https://battleaxe.co/overlord"
+      },
+      {
+        "label": "Getting started | Battle Axe",
+        "url": "https://help.battleaxe.co/overlord/"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-002",
+    "batch_position": 11,
+    "blockers": [],
+    "catalog_hash": "sha256:7b82a6e2055466a9ba9dce60b402a50fdd1b42f15b6fd3eaedee55e54f99eef4",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:984ff567b6c861e845b895ef2508c8f04df945c79ac66c6f97d0dbc544934a5b",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Overlord",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:aee5f31b380080864791bd4f7b42d62838050cdae9a1c17364d1b4340ebbe1e1",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "ae-overlord",
+    "source_url": "https://battleaxe.co/overlord",
+    "source_verified_on": "2026-06-15",
+    "status": "QUEUED"
+  }
+}

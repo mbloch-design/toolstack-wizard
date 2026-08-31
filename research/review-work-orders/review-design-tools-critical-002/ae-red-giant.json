@@ -1,0 +1,291 @@
+{
+  "batch": "review-design-tools-critical-002",
+  "current": {
+    "affiliate_url": "https://maxon.net/red-giant",
+    "alternatives": [
+      "davinci-resolve"
+    ],
+    "category": "design-tools",
+    "cons": [
+      "Abonnement récurrent (pas d'achat unique perpétuel).",
+      "Coût cumulatif : 639+ USD/an ou 85+ USD/mois.",
+      "Pour freelances occasionnels : overkill et non rentable.",
+      "Interface riche mais courbe apprentissage non triviale.",
+      "Dépendance Internet pour activation et mises à jour."
+    ],
+    "cons_en": [
+      "Recurring subscription (no perpetual purchase option).",
+      "Cumulative subscription cost adds up over time.",
+      "For occasional freelancers: overkill and not cost-effective.",
+      "Rich interface but non-trivial learning curve.",
+      "Internet dependency for activation and updates."
+    ],
+    "host_app": "adobe-after-effects",
+    "id": "ae-red-giant",
+    "long_description": "Red Giant, c'est la boîte à outils de Maxon pour le motion design, les VFX et l'étalonnage dans After Effects et Premiere Pro. Sous ce nom se cachent des suites devenues des références : Trapcode (particules, systèmes 3D, nébuleuses), Magic Bullet (étalonnage et look cinéma), VFX Suite (compositing, incrustation, lueurs) et Universe (transitions, effets et titres). Pour un motion designer ou un monteur qui travaille dans le flux Adobe, c'est un gain de temps considérable.\n\nDepuis le rachat par Maxon, le modèle a changé : plus de licence perpétuelle ni de suites vendues à l'unité. Tu prends l'abonnement Red Giant complet (environ 85$/mois ou 639$/an, qui inclut tout : Trapcode, Magic Bullet, VFX Suite, Universe), ou bien Universe seul (32$/mois, 214$/an) si tu ne veux que les transitions et les effets. Red Giant est aussi inclus dans l'abonnement Maxon One avec Cinema 4D.\n\nÀ qui ça s'adresse : aux pros du motion qui exploitent vraiment plusieurs de ces suites au quotidien. Le vrai point d'attention, c'est le prix et le doublon. Si tu ne fais que de l'étalonnage, DaVinci Resolve est gratuit et plus complet. Si tu veux juste des particules ou des transitions ponctuelles, l'abonnement complet est surdimensionné. Red Giant se justifie quand After Effects est ton outil central et que Trapcode, Magic Bullet ou VFX font partie de ton flux régulier.",
+    "long_description_en": "Red Giant is Maxon's toolkit for motion design, VFX and color grading in After Effects and Premiere Pro. Under that name sit suites that became references: Trapcode (particles, 3D systems, nebulas), Magic Bullet (grading and cinematic look), VFX Suite (compositing, keying, glows) and Universe (transitions, effects and titles). For a motion designer or editor working in the Adobe flow, it's a major time saver.\n\nSince the Maxon acquisition, the model changed: no more perpetual license, and no more suites sold individually. You take the complete Red Giant subscription (around $85/month or $639/year, which includes everything: Trapcode, Magic Bullet, VFX Suite, Universe), or Universe alone ($32/month, $214/year) if you only want transitions and effects. Red Giant is also included in the Maxon One subscription alongside Cinema 4D.\n\nWho it's for: motion pros who genuinely use several of these suites day to day. The real thing to watch is price and overlap. If you only do color grading, DaVinci Resolve is free and more complete. If you just want occasional particles or transitions, the full subscription is overkill. Red Giant earns its place when After Effects is your central tool and Trapcode, Magic Bullet or VFX are part of your regular flow.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Red-Giant/_1200x630_crop_center-center_82_none/Red_Giant-April2025-video_loop_still-banner.jpg?mtime=1743079582"
+    },
+    "name": "Red Giant",
+    "pricing": {
+      "free": "",
+      "paid": "Red Giant complet : 85$/mois ou 639$/an. Universe seul : 32$/mois ou 214$/an. Inclus dans Maxon One."
+    },
+    "pricing_en": {
+      "free": "",
+      "paid": "Complete Red Giant: $85/month or $639/year. Universe alone: $32/month or $214/year. Included in Maxon One."
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Red Giant complet : 85$/mois ou 639$/an. Universe seul : 32$/mois ou 214$/an.",
+        "Plus de licence perpétuelle ; Red Giant est aussi inclus dans Maxon One."
+      ],
+      "compare_plan_kind": "subscription",
+      "compare_plan_name": "Red Giant (complet)",
+      "compare_price_monthly_eur": 53,
+      "location_sensitive": true,
+      "official_source_url": "https://www.maxon.net/en/buy",
+      "price_reliability": "high",
+      "source_domain": "maxon.net",
+      "usage_sensitive": true,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-06-17"
+    },
+    "pros": [
+      "Suite complète 50+ plugins couvrant tous les besoins VFX/motion.",
+      "Trapcode et Universe sont des standards industriels reconnus.",
+      "Mises à jour mensuelles avec nouvelles fonctionnalités et améliorations.",
+      "Maxon Studio offre des templates d'animation réutilisables.",
+      "Compatible multiples apps (After Effects, Premiere Pro, Autograph, etc.).",
+      "Support OpenFX pour compatibilité élargie."
+    ],
+    "pros_en": [
+      "Complete 50+ plugin suite covering all VFX/motion needs.",
+      "Trapcode and Universe are industry-standard, recognized tools.",
+      "Monthly updates with new features and improvements.",
+      "Maxon Studio offers reusable animation templates.",
+      "Compatible across multiple apps (After Effects, Premiere Pro, Autograph, etc.).",
+      "OpenFX support for broader compatibility."
+    ],
+    "short_description": "Suite Maxon de plugins motion design, VFX et étalonnage pour After Effects et Premiere.",
+    "short_description_en": "Maxon's plugin suite for motion design, VFX and color grading in After Effects.",
+    "slug": "ae-red-giant",
+    "source_url": "https://www.maxon.net/en/buy",
+    "source_verified_on": "2026-06-17",
+    "use_cases": [
+      "Créer des effets de particules spectaculaires et réalistes (Trapcode Particular).",
+      "Ajouter des lens flares photographiques (Optical Flares).",
+      "Utiliser Universe pour transitions professionnelles et effets compositing.",
+      "Workflow studio complet avec templates Maxon Studio.",
+      "Monter une vidéo avec effets avancés (Premiere Pro + Red Giant)."
+    ],
+    "use_cases_en": [
+      "Create spectacular, realistic particle effects (Trapcode Particular).",
+      "Add photorealistic lens flares (Optical Flares).",
+      "Use Universe for professional transitions and compositing effects.",
+      "Complete studio workflow with Maxon Studio templates.",
+      "Edit video with advanced effects (Premiere Pro + Red Giant)."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous êtes débutant et voulez maîtriser les bases avant d'investir.",
+        "Vous cherchez une suite free/open source (FFmpeg, DaVinci Fusion conviennent).",
+        "Vous débutez avec seulement After Effects de temps en temps."
+      ],
+      "keepIf": [
+        "Vous produisez du contenu vidéo professionnel régulièrement (VFX, motion design).",
+        "Vous avez besoin de toolsets spécialisés (particules, lens flare, transitions).",
+        "Vous utilisez aussi Premiere Pro (package Red Giant couvre les deux)."
+      ],
+      "threshold": "Red Giant s'impose pour studios et professionnels productrices vidéo régulières ; pour freelances occasionnels ou débutants, les alternatives libres sont suffisantes."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You're starting out and want to master basics before investing.",
+        "You want free/open-source (FFmpeg, DaVinci Fusion work well).",
+        "You use After Effects only occasionally as a beginner."
+      ],
+      "keepIf": [
+        "You produce professional video content regularly (VFX, motion design).",
+        "You need specialized toolsets (particles, lens flare, transitions).",
+        "You use Premiere Pro too (Red Giant package covers both)."
+      ],
+      "threshold": "Red Giant is essential for studios and regular video producers; for occasional freelancers or beginners, free alternatives are sufficient."
+    },
+    "website_url": "https://maxon.net/red-giant"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Recurring subscription (no perpetual purchase option).",
+        "Cumulative subscription cost adds up over time.",
+        "For occasional freelancers: overkill and not cost-effective.",
+        "Rich interface but non-trivial learning curve.",
+        "Internet dependency for activation and updates."
+      ],
+      "pros": [
+        "Complete 50+ plugin suite covering all VFX/motion needs.",
+        "Trapcode and Universe are industry-standard, recognized tools.",
+        "Monthly updates with new features and improvements.",
+        "Maxon Studio offers reusable animation templates.",
+        "Compatible across multiple apps (After Effects, Premiere Pro, Autograph, etc.).",
+        "OpenFX support for broader compatibility."
+      ],
+      "use_cases": [
+        "Create spectacular, realistic particle effects (Trapcode Particular).",
+        "Add photorealistic lens flares (Optical Flares).",
+        "Use Universe for professional transitions and compositing effects.",
+        "Complete studio workflow with Maxon Studio templates.",
+        "Edit video with advanced effects (Premiere Pro + Red Giant)."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You're starting out and want to master basics before investing.",
+          "You want free/open-source (FFmpeg, DaVinci Fusion work well).",
+          "You use After Effects only occasionally as a beginner."
+        ],
+        "keepIf": [
+          "You produce professional video content regularly (VFX, motion design).",
+          "You need specialized toolsets (particles, lens flare, transitions).",
+          "You use Premiere Pro too (Red Giant package covers both)."
+        ],
+        "threshold": "Red Giant is essential for studios and regular video producers; for occasional freelancers or beginners, free alternatives are sufficient."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Pas de version gratuite. Essai possible (durée non spécifiée) via site Maxon. Abonnement seul modèle de facturation.",
+        "exists": false
+      },
+      "key_features": [
+        "Trapcode Suite : moteur de particules, lens flare (Optical Flares), lumières 3D",
+        "Universe : transitions, effets, outils compositing",
+        "Outils de couleur (DaVinci LUT support, grading)",
+        "Real Lens Flares avec zoom animable (2026.5)",
+        "Depth estimation tool (2026.1) pour générer depth maps",
+        "Maxon Studio et Capsules (templates d'animation réutilisables)",
+        "Support OpenFX (compatibilité Autograph, Nuke, autres)"
+      ],
+      "plans": [
+        {
+          "name": "Red Giant + Universe (annuel)",
+          "price": "639 USD/an (environ 53 USD/mois, facturé annuellement)"
+        },
+        {
+          "name": "Red Giant + Universe (mensuel)",
+          "price": "85 USD/mois (facturation mensuelle, aucun engagement)"
+        }
+      ],
+      "pricing_model": "Abonnement récurrent mensuel ou annuel. Abonnement complet Red Giant + Universe inclus. Pas d'achat unique perpétuel.",
+      "what": "Red Giant est une suite professionnelle complète de plus de 50 plugins VFX et motion design créés par Maxon pour After Effects, Premiere Pro, et autres applications vidéo. Inclut Trapcode (particules, éclats lens, lumières), Universe (transitions, effets), effets de couleur, et toolsets spécialisés. Livré avec mises à jour mensuelles et accès à Maxon Studio (templates).",
+      "what_en": "Red Giant is a professional suite of 50+ VFX and motion design plugins created by Maxon for After Effects, Premiere Pro, and video apps. Includes Trapcode (particles, lens flares, lights), Universe (transitions, effects), color tools, and specialized toolsets. Ships with monthly updates and Maxon Studio (templates)."
+    },
+    "fr": {
+      "cons": [
+        "Abonnement récurrent (pas d'achat unique perpétuel).",
+        "Coût cumulatif : 639+ USD/an ou 85+ USD/mois.",
+        "Pour freelances occasionnels : overkill et non rentable.",
+        "Interface riche mais courbe apprentissage non triviale.",
+        "Dépendance Internet pour activation et mises à jour."
+      ],
+      "pros": [
+        "Suite complète 50+ plugins couvrant tous les besoins VFX/motion.",
+        "Trapcode et Universe sont des standards industriels reconnus.",
+        "Mises à jour mensuelles avec nouvelles fonctionnalités et améliorations.",
+        "Maxon Studio offre des templates d'animation réutilisables.",
+        "Compatible multiples apps (After Effects, Premiere Pro, Autograph, etc.).",
+        "Support OpenFX pour compatibilité élargie."
+      ],
+      "relevant_for": [
+        "Studios de production",
+        "Motion designers professionnels",
+        "Producteurs vidéo",
+        "VFX artists"
+      ],
+      "use_cases": [
+        "Créer des effets de particules spectaculaires et réalistes (Trapcode Particular).",
+        "Ajouter des lens flares photographiques (Optical Flares).",
+        "Utiliser Universe pour transitions professionnelles et effets compositing.",
+        "Workflow studio complet avec templates Maxon Studio.",
+        "Monter une vidéo avec effets avancés (Premiere Pro + Red Giant)."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous êtes débutant et voulez maîtriser les bases avant d'investir.",
+          "Vous cherchez une suite free/open source (FFmpeg, DaVinci Fusion conviennent).",
+          "Vous débutez avec seulement After Effects de temps en temps."
+        ],
+        "keepIf": [
+          "Vous produisez du contenu vidéo professionnel régulièrement (VFX, motion design).",
+          "Vous avez besoin de toolsets spécialisés (particules, lens flare, transitions).",
+          "Vous utilisez aussi Premiere Pro (package Red Giant couvre les deux)."
+        ],
+        "threshold": "Red Giant s'impose pour studios et professionnels productrices vidéo régulières ; pour freelances occasionnels ou débutants, les alternatives libres sont suffisantes."
+      }
+    },
+    "slug": "ae-red-giant",
+    "sources": [
+      {
+        "label": "Red Giant | Toolkit for Video Editing, VFX & Motion Graphics (site officiel Maxon)",
+        "url": "https://www.maxon.net/en/red-giant"
+      },
+      {
+        "label": "Maxon releases Red Giant 2026.5 (juillet 2026)",
+        "url": "https://www.cgchannel.com/2026/07/maxon-releases-red-giant-2026-5/"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-002",
+    "batch_position": 12,
+    "blockers": [],
+    "catalog_hash": "sha256:2e0ed9c4ba9bb29e25104e4c43139b2e9f3ca972d4cb72f44626be84857fb73f",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:01891857d3b775a040a59e69cf32bbeaf12e83cd81c07fcbdda447ad445c6843",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Red Giant",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:5d70baa6153a42517a69719586f1e22216385b9d73435a577d318d5cfce0b4a8",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "ae-red-giant",
+    "source_url": "https://www.maxon.net/en/buy",
+    "source_verified_on": "2026-06-17",
+    "status": "QUEUED"
+  }
+}

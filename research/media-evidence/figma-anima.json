@@ -1,0 +1,41 @@
+{
+  "slug": "figma-anima",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://www.animaapp.com/"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://a.storyblok.com/f/89137/2124x816/9f4d3b6474/frameworks-tools.png",
+      "source_page_url": "https://www.animaapp.com/",
+      "official": true,
+      "alt": "figma-anima official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://a.storyblok.com/f/89137/1840x1142/02948bc427/blog-clone-multi-page.jpg",
+      "source_page_url": "https://www.animaapp.com/",
+      "official": true,
+      "alt": "figma-anima official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://a.storyblok.com/f/89137/1024x636/aca6d5328b/blog-claude-to-figma.jpg",
+      "source_page_url": "https://www.animaapp.com/",
+      "official": true,
+      "alt": "figma-anima official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://a.storyblok.com/f/89137/1840x1142/548f935261/anima-the-ux-design-agent.png",
+      "source_page_url": "https://www.animaapp.com/",
+      "official": true,
+      "alt": "Official product preview"
+    }
+  ]
+}

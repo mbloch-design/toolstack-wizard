@@ -1,0 +1,278 @@
+{
+  "batch": "review-design-tools-critical-002",
+  "current": {
+    "affiliate_url": "https://adobecreativecloud.com",
+    "alternatives": [],
+    "category": "design-tools",
+    "cons": [
+      "Coût cumulatif d'un abonnement sans fin (pas d'achat perpétuel).",
+      "Plan Standard limite l'accès mobile/web et les crédits Firefly.",
+      "Courbe d'apprentissage importante pour les débutants.",
+      "Dépendance à internet pour certaines fonctionnalités (cloud)."
+    ],
+    "cons_en": [
+      "Recurring subscription cost with no perpetual purchase option.",
+      "Standard plan limits mobile/web access and Firefly credits.",
+      "Steep learning curve for beginners.",
+      "Internet dependency for some features (cloud sync)."
+    ],
+    "host_app": null,
+    "id": "adobe-creative-cloud",
+    "long_description": "Adobe Creative Cloud All Apps regroupe l'intégralité des logiciels Adobe (Photoshop, Illustrator, InDesign, Premiere Pro, After Effects...) dans un seul abonnement. C'est la référence historique du secteur créatif : la plupart des studios, agences et clients travaillent nativement dans ces formats, ce qui en fait un standard difficile à contourner dès qu'il y a de la collaboration externe.\n\nLe prix (78,65€/mois sans engagement, ou 779€/an) est le principal frein : si vous n'utilisez que 2-3 apps, des alternatives ciblées (Affinity, Figma) coûtent beaucoup moins cher pour un usage solo. All Apps ne se justifie que si vous alternez réellement entre plusieurs outils Adobe dans votre workflow.\n\nÀ noter : les tarifs Adobe augmentent régulièrement (intégration de l'IA générative Firefly), et l'engagement annuel avec paiement mensuel inclut des frais de résiliation anticipée peu visibles à la souscription.",
+    "long_description_en": "Specialist tool used in ToolTrim consulting stacks.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://www.adobe.com/cc-shared/assets/img/product-icons/jpg/default.jpg?width=1200&#x26;format=pjpg&#x26;optimize=medium"
+    },
+    "name": "Adobe Creative Cloud All Apps",
+    "pricing": {
+      "free": "",
+      "paid": "78,65€/mois sans engagement, ou 779€/an (~64,90€/mois)"
+    },
+    "pricing_en": {
+      "free": "",
+      "paid": "$69.99/mo month-to-month, or $779/yr (~€64.90/mo)"
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Aucun plan gratuit ; alternatives ciblées (Affinity, Figma) bien moins chères si vous n'utilisez que 1-2 apps",
+        "Engagement annuel avec paiement mensuel = frais de résiliation anticipée"
+      ],
+      "cautionsEn": [
+        "No free tier; targeted alternatives (Affinity, Figma) far cheaper if you only use 1-2 apps"
+      ],
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "All Apps",
+      "compare_price_monthly_eur": 64.9,
+      "location_sensitive": true,
+      "official_source_url": "https://www.adobe.com/creativecloud/plans.html",
+      "price_reliability": "high",
+      "source_domain": "adobe.com",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-07-07"
+    },
+    "pros": [
+      "Intégration parfaite entre les applications (Photoshop ↔ Illustrator ↔ InDesign, etc.).",
+      "Mises à jour fréquentes avec nouvelles fonctionnalités (Firefly, IA).",
+      "Cloud sync pour travailler sur plusieurs machines.",
+      "Large écosystème de ressources (tutorials, assets Adobe Stock)."
+    ],
+    "pros_en": [
+      "Seamless integration across apps (Photoshop ↔ Illustrator ↔ InDesign, etc.).",
+      "Frequent updates with new features (Firefly, AI).",
+      "Cloud sync to work on multiple machines.",
+      "Vast ecosystem of resources (tutorials, Adobe Stock assets)."
+    ],
+    "short_description": "Suite créative complète : Photoshop, Illustrator, Premiere Pro et toutes les apps Adobe en un abonnement.",
+    "short_description_en": "The full creative suite: Photoshop, Illustrator, Premiere Pro and every Adobe app in one subscription.",
+    "slug": "adobe-creative-cloud",
+    "source_url": "https://www.adobe.com/creativecloud/plans.html",
+    "source_verified_on": "2026-07-07",
+    "use_cases": [
+      "Produire une vidéo de bout en bout avec Premiere Pro + After Effects + Photoshop.",
+      "Concevoir une identité visuelle (logos, charte graphique) via Illustrator et Photoshop.",
+      "Gérer un workflow d'agence créative avec synchronisation de projet."
+    ],
+    "use_cases_en": [
+      "Produce a complete video using Premiere Pro + After Effects + Photoshop.",
+      "Design a visual identity (logos, brand guidelines) via Illustrator and Photoshop.",
+      "Manage a creative agency workflow with project synchronization."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous cherchez une suite gratuite (GIMP, Inkscape, Blender conviendront mieux).",
+        "Vous n'utilisez qu'une seule application de manière très occasionnelle.",
+        "Vous débutez : les alternatives libres offrent aussi une bonne pédagogie."
+      ],
+      "keepIf": [
+        "Vous travaillez en production audiovisuelle ou design graphique professionnel.",
+        "Vous avez besoin de plusieurs applications Adobe intégrées et synchronisées.",
+        "Vous valorisez les mises à jour régulières et l'accès à des outils IA (Firefly)."
+      ],
+      "threshold": "Adobe Creative Cloud s'impose pour les professionnels en création vidéo, photo ou design ; pour un usage ponctuel ou débutant, les alternatives libres sont pertinentes."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You're looking for free alternatives (GIMP, Inkscape, Blender are good options).",
+        "You use only one app very occasionally.",
+        "You're a beginner: free alternatives offer solid learning resources too."
+      ],
+      "keepIf": [
+        "You work in professional video production, photo editing, or graphic design.",
+        "You need multiple Adobe apps integrated and synced together.",
+        "You value regular updates and access to AI tools like Firefly."
+      ],
+      "threshold": "Adobe Creative Cloud is essential for professional creators in video, photo, or design; for occasional or beginner use, free alternatives work well."
+    },
+    "website_url": "https://www.adobe.com/creativecloud/plans.html"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Recurring subscription cost with no perpetual purchase option.",
+        "Standard plan limits mobile/web access and Firefly credits.",
+        "Steep learning curve for beginners.",
+        "Internet dependency for some features (cloud sync)."
+      ],
+      "pros": [
+        "Seamless integration across apps (Photoshop ↔ Illustrator ↔ InDesign, etc.).",
+        "Frequent updates with new features (Firefly, AI).",
+        "Cloud sync to work on multiple machines.",
+        "Vast ecosystem of resources (tutorials, Adobe Stock assets)."
+      ],
+      "use_cases": [
+        "Produce a complete video using Premiere Pro + After Effects + Photoshop.",
+        "Design a visual identity (logos, brand guidelines) via Illustrator and Photoshop.",
+        "Manage a creative agency workflow with project synchronization."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You're looking for free alternatives (GIMP, Inkscape, Blender are good options).",
+          "You use only one app very occasionally.",
+          "You're a beginner: free alternatives offer solid learning resources too."
+        ],
+        "keepIf": [
+          "You work in professional video production, photo editing, or graphic design.",
+          "You need multiple Adobe apps integrated and synced together.",
+          "You value regular updates and access to AI tools like Firefly."
+        ],
+        "threshold": "Adobe Creative Cloud is essential for professional creators in video, photo, or design; for occasional or beginner use, free alternatives work well."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Essai gratuit limité ; pas de version gratuite permanente. Les prix varient selon les régions et les promotions.",
+        "exists": false
+      },
+      "key_features": [
+        "Photoshop, Illustrator, InDesign, Premiere Pro, After Effects, Lightroom et plus",
+        "Synchronisation cloud des fichiers et paramètres",
+        "Accès à des bibilothèques d'assets Adobe Stock (inclus dans Standard/Pro)",
+        "Firefly (AI générative) intégrée dans les apps (crédits variables par plan)",
+        "Mises à jour automatiques et support prioritaire"
+      ],
+      "plans": [
+        {
+          "name": "Single App (ex. Photoshop)",
+          "price": "22,99 $ USD/mois (facturation mensuelle)"
+        },
+        {
+          "name": "Photography",
+          "price": "19,99 $ USD/mois (Photoshop + Lightroom)"
+        },
+        {
+          "name": "Creative Cloud Standard",
+          "price": "54,99 $ USD/mois (tous les apps, limites web/mobile, 25 crédits Firefly/mois)"
+        },
+        {
+          "name": "Creative Cloud Pro",
+          "price": "69,99 $ USD/mois (tous les apps, accès complet, plus de crédits Firefly)"
+        },
+        {
+          "name": "Teams Plans",
+          "price": "84,99 $ USD+/mois (gestion admin, cloud storage augmenté)"
+        }
+      ],
+      "pricing_model": "Abonnement mensuel ou annuel (facturation annuelle possible). Plusieurs niveaux : Single App, Creative Cloud Standard (accès web/mobile limité), Creative Cloud Pro (accès complet).",
+      "what": "Suite complète d'applications logicielles pour la création numérique : Photoshop, Illustrator, InDesign, Premiere Pro, After Effects, Lightroom, et plus de 20 autres applications. Disponible par abonnement mensuel ou annuel.",
+      "what_en": "Complete suite of digital creation applications: Photoshop, Illustrator, InDesign, Premiere Pro, After Effects, Lightroom, and 20+ additional apps. Available by monthly or annual subscription."
+    },
+    "fr": {
+      "cons": [
+        "Coût cumulatif d'un abonnement sans fin (pas d'achat perpétuel).",
+        "Plan Standard limite l'accès mobile/web et les crédits Firefly.",
+        "Courbe d'apprentissage importante pour les débutants.",
+        "Dépendance à internet pour certaines fonctionnalités (cloud)."
+      ],
+      "pros": [
+        "Intégration parfaite entre les applications (Photoshop ↔ Illustrator ↔ InDesign, etc.).",
+        "Mises à jour fréquentes avec nouvelles fonctionnalités (Firefly, IA).",
+        "Cloud sync pour travailler sur plusieurs machines.",
+        "Large écosystème de ressources (tutorials, assets Adobe Stock)."
+      ],
+      "relevant_for": [
+        "Producteurs vidéo",
+        "Graphistes/designers",
+        "Photographes",
+        "Agences créatives"
+      ],
+      "use_cases": [
+        "Produire une vidéo de bout en bout avec Premiere Pro + After Effects + Photoshop.",
+        "Concevoir une identité visuelle (logos, charte graphique) via Illustrator et Photoshop.",
+        "Gérer un workflow d'agence créative avec synchronisation de projet."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous cherchez une suite gratuite (GIMP, Inkscape, Blender conviendront mieux).",
+          "Vous n'utilisez qu'une seule application de manière très occasionnelle.",
+          "Vous débutez : les alternatives libres offrent aussi une bonne pédagogie."
+        ],
+        "keepIf": [
+          "Vous travaillez en production audiovisuelle ou design graphique professionnel.",
+          "Vous avez besoin de plusieurs applications Adobe intégrées et synchronisées.",
+          "Vous valorisez les mises à jour régulières et l'accès à des outils IA (Firefly)."
+        ],
+        "threshold": "Adobe Creative Cloud s'impose pour les professionnels en création vidéo, photo ou design ; pour un usage ponctuel ou débutant, les alternatives libres sont pertinentes."
+      }
+    },
+    "slug": "adobe-creative-cloud",
+    "sources": [
+      {
+        "label": "Adobe Creative Cloud All Apps — Plans & Pricing (site officiel)",
+        "url": "https://www.adobe.com/creativecloud/plans.html"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-002",
+    "batch_position": 1,
+    "blockers": [],
+    "catalog_hash": "sha256:1133612242361d79833524b85c1c95cdfb17253c3517d8a5a7075a328f2ca665",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:3e26035adbe0058c618cb157a5aa5542a724e825ab5e3a4b81393efe0f94b385",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Adobe Creative Cloud All Apps",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:4280b686d161041131c1022bb206fb5f8c85ad6862df9f8279c3d42825b39dea",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "adobe-creative-cloud",
+    "source_url": "https://www.adobe.com/creativecloud/plans.html",
+    "source_verified_on": "2026-07-07",
+    "status": "QUEUED"
+  }
+}

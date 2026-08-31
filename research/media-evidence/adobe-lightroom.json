@@ -1,0 +1,37 @@
+{
+  "slug": "adobe-lightroom",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://adobe.com/products/lightroom"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://www.adobe.com/products/media_1325ced14a2fe5ee95ce8861e41db26a6fc38d95a.jpg?width=1200&format=pjpg&optimize=medium",
+      "source_page_url": "https://adobe.com/products/lightroom",
+      "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://www.adobe.com/cc-shared/fragments/products/photoshop-lightroom/media_1801f417462e363d8f808f863ed3756ac93623343.png?width=750&format=png&optimize=medium",
+      "source_page_url": "https://www.adobe.com/products/photoshop-lightroom.html",
+      "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://www.adobe.com/products/media_1e459da212cbda34dbab87b26a733fff0de666ad0.jpg?width=2000&format=webply&optimize=medium",
+      "source_page_url": "https://www.adobe.com/products/photoshop-lightroom.html",
+      "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://www.adobe.com/products/media_1320c51b3235c78977c5780fc3b7fde69e2140f27.jpg?width=750&format=jpg&optimize=medium",
+      "source_page_url": "https://www.adobe.com/products/photoshop-lightroom.html",
+      "official": true
+    }
+  ]
+}

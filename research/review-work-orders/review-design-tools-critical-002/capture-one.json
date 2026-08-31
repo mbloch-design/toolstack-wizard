@@ -1,0 +1,277 @@
+{
+  "batch": "review-design-tools-critical-002",
+  "current": {
+    "affiliate_url": "https://captureone.com",
+    "alternatives": [
+      "adobe-lightroom",
+      "luminar-neo"
+    ],
+    "category": "design-tools",
+    "cons": [
+      "Abonnement mensuel coûteux pour usage léger.",
+      "Courbe apprentissage importante.",
+      "Pas gratuit ni open-source.",
+      "Moins d'outils 'fun' que Lightroom pour retouche créative."
+    ],
+    "cons_en": [
+      "Monthly subscription expensive for light use.",
+      "Significant learning curve.",
+      "Not free or open-source.",
+      "Fewer 'fun' creative retouching tools than Lightroom."
+    ],
+    "host_app": null,
+    "id": "capture-one",
+    "long_description": "Capture One, c'est le grand rival de Lightroom, et le logiciel préféré d'une bonne partie des photographes studio, mode et portrait. Sa réputation tient surtout à son rendu colorimétrique, considéré comme supérieur, et à son excellence en capture connectée (tethering), quand l'appareil est branché à l'ordinateur pendant le shooting. Pour de la photo haut de gamme, c'est une référence.\n\nCôté prix, c'est plus cher que Lightroom, et les tarifs ont augmenté récemment : compte un abonnement Pro autour de 18 à 24$/mois, ou une licence perpétuelle à partir d'environ 299$. L'option perpétuelle, rare aujourd'hui, reste un argument face à l'abonnement Adobe.\n\nÀ qui ça s'adresse : aux photographes exigeants sur la couleur et le studio. Le vrai frein, c'est la migration : si ton flux est déjà rodé sur Lightroom, changer coûte du temps pour un gain qui n'est pas toujours décisif. Mais pour qui démarre ou cherche le meilleur rendu, Capture One vaut le détour.",
+    "long_description_en": "Capture One is Lightroom's big rival, and the favorite of many studio, fashion and portrait photographers. Its reputation rests above all on its color rendering, considered superior, and its excellence at tethered capture, when the camera is connected to the computer during the shoot. For high-end photography, it's a reference.\n\nOn price, it's pricier than Lightroom, and rates rose recently: budget a Pro subscription around $18 to $24/month, or a perpetual license from about $299. The perpetual option, rare today, remains an argument against the Adobe subscription.\n\nWho it's for: photographers demanding on color and studio work. The real hurdle is migration: if your flow is already dialed in on Lightroom, switching costs time for a gain that isn't always decisive. But for someone starting out or chasing the best rendering, Capture One is worth a look.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://cdn.captureone.com/images/fpl48n9r/production/b213f73fe667849d527e0859d0e49365b7d29ea4-919x612.png?rect=52,0,816,612&amp;w=800&amp;h=600&amp;q=85&amp;auto=format"
+    },
+    "name": "Capture One",
+    "pricing": {
+      "free": "",
+      "paid": "Abonnement Pro à environ 18-24$/mois, ou licence perpétuelle à partir de ~299$"
+    },
+    "pricing_en": {
+      "free": "",
+      "paid": "Pro subscription around $18-24/month, or perpetual license from ~$299"
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Abonnement Pro ~18-24$/mois, ou licence perpétuelle dès ~299$ ; prix en hausse récente"
+      ],
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Entry paid plan",
+      "compare_price_monthly_eur": 24,
+      "location_sensitive": false,
+      "official_source_url": "https://www.captureone.com/en/pricing/capture-one-pro",
+      "price_reliability": "high",
+      "source_domain": "captureone.com",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-06-15"
+    },
+    "pros": [
+      "Meilleur contrôle couleur de sa catégorie.",
+      "Tethering temps réel très performant (studio).",
+      "Workflow de studio professionnel intégré.",
+      "Presets et looks haut de gamme.",
+      "Support et formation professionnels."
+    ],
+    "pros_en": [
+      "Best-in-class color control.",
+      "Real-time tethering highly performant (studio).",
+      "Integrated professional studio workflow.",
+      "High-end presets and looks.",
+      "Professional support and training."
+    ],
+    "short_description": "Le logiciel de retouche RAW préféré des photographes professionnels.",
+    "short_description_en": "The RAW editing software preferred by professional photographers.",
+    "slug": "capture-one",
+    "source_url": "https://www.captureone.com/en/pricing/capture-one-pro",
+    "source_verified_on": "2026-06-15",
+    "use_cases": [
+      "Gérer le workflow d'un studio photo professionnel.",
+      "Éditer en masse des séries photo avec cohérence couleur.",
+      "Capturer et éditer en temps réel pendant une séance."
+    ],
+    "use_cases_en": [
+      "Manage a professional photo studio workflow.",
+      "Bulk-edit photo series with consistent color.",
+      "Capture and edit in real-time during a shoot."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous êtes photographe amateur ou hobbyiste occasionnel.",
+        "Vous cherchez un logiciel gratuit ou très bon marché.",
+        "Vous retouchez rarement (1-2 photos par semaine)."
+      ],
+      "keepIf": [
+        "Vous êtes photographe professionnel ou studio photo.",
+        "Vous avez besoin de contrôle couleur poussé et tethering.",
+        "Vous éditez des dizaines de photos par jour (workflow de volume)."
+      ],
+      "threshold": "Capture One s'impose pour les studios photos professionnels ; pour l'amateur, Lightroom ou Darktable suffisent."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You're an amateur or casual hobbyist photographer.",
+        "You're looking for free or very cheap software.",
+        "You rarely retouch (1-2 photos per week)."
+      ],
+      "keepIf": [
+        "You're a professional photographer or photo studio.",
+        "You need advanced color control and tethering.",
+        "You edit dozens of photos per day (volume workflow)."
+      ],
+      "threshold": "Capture One is essential for professional photo studios; for hobbyists, Lightroom or Darktable suffice."
+    },
+    "website_url": "https://captureone.com"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Monthly subscription expensive for light use.",
+        "Significant learning curve.",
+        "Not free or open-source.",
+        "Fewer 'fun' creative retouching tools than Lightroom."
+      ],
+      "pros": [
+        "Best-in-class color control.",
+        "Real-time tethering highly performant (studio).",
+        "Integrated professional studio workflow.",
+        "High-end presets and looks.",
+        "Professional support and training."
+      ],
+      "use_cases": [
+        "Manage a professional photo studio workflow.",
+        "Bulk-edit photo series with consistent color.",
+        "Capture and edit in real-time during a shoot."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You're an amateur or casual hobbyist photographer.",
+          "You're looking for free or very cheap software.",
+          "You rarely retouch (1-2 photos per week)."
+        ],
+        "keepIf": [
+          "You're a professional photographer or photo studio.",
+          "You need advanced color control and tethering.",
+          "You edit dozens of photos per day (volume workflow)."
+        ],
+        "threshold": "Capture One is essential for professional photo studios; for hobbyists, Lightroom or Darktable suffice."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Essai gratuit 30 jours complet. Essai gratuit 7 jours sur iOS/iPad inclus.",
+        "exists": true
+      },
+      "key_features": [
+        "Édition couleur et détail avancée",
+        "Tethering en temps réel (capture directement dans le logiciel)",
+        "Gestion d'assets et workflow de studio",
+        "Presets professionnels et looks",
+        "Collaboration équipe et Live for Studio",
+        "Support multi-caméras et profiles couleur"
+      ],
+      "plans": [
+        {
+          "name": "Capture One Pro",
+          "price": "17 $/mois (annuel) ou 26 $/mois (mensuel)"
+        },
+        {
+          "name": "Capture One All-in-One",
+          "price": "23,25 $/mois (annuel) ou 36 $/mois (mensuel, avec iPad/mobile/cloud)"
+        },
+        {
+          "name": "Capture One Studio",
+          "price": "45,75 $/mois (annuel) ou 59 $/mois (mensuel, équipes/volumes)"
+        },
+        {
+          "name": "Licence perpétuelle desktop",
+          "price": "~317 $ (sans mises à jour features incluses)"
+        }
+      ],
+      "pricing_model": "Abonnement mensuel ou annuel. Options : Pro individuel, Studio pour équipes, All-in-One avec mobile. Licence perpétuelle desktop optionnelle (~317 $).",
+      "what": "Logiciel professionnel d'édition et de gestion de photos pour photographes. Offre contrôle avancé couleur/détail, tethering en temps réel, gestion d'assets, collaboration. Utilisé en studio par photographes de mode, produit, mariage, paysage.",
+      "what_en": "Professional photo editing and management software for photographers. Offers advanced color/detail control, real-time tethering, asset management, collaboration. Used in studios by fashion, product, wedding, and landscape photographers."
+    },
+    "fr": {
+      "cons": [
+        "Abonnement mensuel coûteux pour usage léger.",
+        "Courbe apprentissage importante.",
+        "Pas gratuit ni open-source.",
+        "Moins d'outils 'fun' que Lightroom pour retouche créative."
+      ],
+      "pros": [
+        "Meilleur contrôle couleur de sa catégorie.",
+        "Tethering temps réel très performant (studio).",
+        "Workflow de studio professionnel intégré.",
+        "Presets et looks haut de gamme.",
+        "Support et formation professionnels."
+      ],
+      "relevant_for": [
+        "Photographes pro",
+        "Studios photo",
+        "Retoucheurs couleur"
+      ],
+      "use_cases": [
+        "Gérer le workflow d'un studio photo professionnel.",
+        "Éditer en masse des séries photo avec cohérence couleur.",
+        "Capturer et éditer en temps réel pendant une séance."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous êtes photographe amateur ou hobbyiste occasionnel.",
+          "Vous cherchez un logiciel gratuit ou très bon marché.",
+          "Vous retouchez rarement (1-2 photos par semaine)."
+        ],
+        "keepIf": [
+          "Vous êtes photographe professionnel ou studio photo.",
+          "Vous avez besoin de contrôle couleur poussé et tethering.",
+          "Vous éditez des dizaines de photos par jour (workflow de volume)."
+        ],
+        "threshold": "Capture One s'impose pour les studios photos professionnels ; pour l'amateur, Lightroom ou Darktable suffisent."
+      }
+    },
+    "slug": "capture-one",
+    "sources": [
+      {
+        "label": "Capture One — site officiel",
+        "url": "https://captureone.com"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-002",
+    "batch_position": 19,
+    "blockers": [],
+    "catalog_hash": "sha256:2c5ea1842fa203c6bc472c216f9fae982849f59d47b5f0e1b624ee584847611b",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:52f1d640c09aa4e4f08a37661d266c10584c2e7ccd8efc0d327ff6b7a273a1cf",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Capture One",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:1ae2e0438af517f48b3ade8f6f1edcfd50bd8893a25f25a8c3bce3c5af0a8f93",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "capture-one",
+    "source_url": "https://www.captureone.com/en/pricing/capture-one-pro",
+    "source_verified_on": "2026-06-15",
+    "status": "QUEUED"
+  }
+}

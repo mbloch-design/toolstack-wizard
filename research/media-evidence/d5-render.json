@@ -1,0 +1,41 @@
+{
+  "slug": "d5-render",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://www.d5render.com/"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://usa-official.d5cdn.com/wp-content/uploads/2026/07/2354345346.webp",
+      "source_page_url": "https://www.d5render.com/",
+      "official": true,
+      "alt": "Cloud Collaboration"
+    },
+    {
+      "kind": "image",
+      "url": "https://usa-official.d5cdn.com/wp-content/uploads/2026/07/1242345423.webp",
+      "source_page_url": "https://www.d5render.com/",
+      "official": true,
+      "alt": "AI 3D Design, Rendering & Visualization Platform for Professionals | D5"
+    },
+    {
+      "kind": "image",
+      "url": "https://usa-official.d5cdn.com/wp-content/uploads/2026/07/1341234325.webp",
+      "source_page_url": "https://www.d5render.com/",
+      "official": true,
+      "alt": "AI 3D Design, Rendering & Visualization Platform for Professionals | D5"
+    },
+    {
+      "kind": "image",
+      "url": "https://usa-official.d5cdn.com/wp-content/uploads/2026/07/23425243.webp",
+      "source_page_url": "https://www.d5render.com/",
+      "official": true,
+      "alt": "KRF case story"
+    }
+  ]
+}

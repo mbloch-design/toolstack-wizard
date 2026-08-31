@@ -1,0 +1,41 @@
+{
+  "slug": "capture-one",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://www.captureone.com/en"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://cdn.captureone.com/images/fpl48n9r/production/e3a4a775b5052c37ae8630062ba2485fe520d80d-1456x970.jpg?auto=format",
+      "source_page_url": "https://www.captureone.com/en",
+      "official": true,
+      "alt": "capture-one official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.captureone.com/images/fpl48n9r/production/5e7a8babd9b6eeda8aa6679d7bee756e432d6b00-1028x590.jpg?auto=format",
+      "source_page_url": "https://www.captureone.com/en",
+      "official": true,
+      "alt": "capture-one official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.captureone.com/images/fpl48n9r/production/eeeb5b87676fa3144522a266efd569a2fcf7068c-2030x1352.png?auto=format",
+      "source_page_url": "https://www.captureone.com/en",
+      "official": true,
+      "alt": "capture-one official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.captureone.com/images/fpl48n9r/production/b213f73fe667849d527e0859d0e49365b7d29ea4-919x612.png?rect=52,0,816,612&w=800&h=600&q=85&auto=format",
+      "source_page_url": "https://www.captureone.com/en",
+      "official": true,
+      "alt": "Official product preview"
+    }
+  ]
+}

@@ -1,0 +1,271 @@
+{
+  "batch": "review-design-tools-critical-002",
+  "current": {
+    "affiliate_url": "https://aescripts.com/bodymovin/",
+    "alternatives": [
+      "rive"
+    ],
+    "category": "design-tools",
+    "cons": [
+      "Support limité aux shape layers (pas idéal pour raster/vidéo).",
+      "Certaines propriétés After Effects ne sont pas exportables.",
+      "Interface simple mais apprentissage des limites requiert expérience.",
+      "Support communautaire principalement (pas de support commercial)."
+    ],
+    "cons_en": [
+      "Limited to shape layers (not ideal for raster/video).",
+      "Some After Effects properties don't export.",
+      "Simple interface but learning export limitations takes experience.",
+      "Community support mainly (no commercial support)."
+    ],
+    "host_app": "adobe-after-effects",
+    "id": "ae-bodymovin",
+    "long_description": "Bodymovin exporte les compositions After Effects au format JSON Lottie pour les afficher sur le web, iOS et Android. Il prend en charge les formes, textes, images, précompositions et une partie des expressions, puis permet un rendu SVG, canvas ou HTML dans le navigateur.\n\nC'est le bon pont entre motion design et développement quand l'animation doit rester nette et légère. Il faut toutefois tester chaque composition : Lottie ne reproduit qu'un sous-ensemble des fonctions d'After Effects, et certains effets doivent être simplifiés avant l'export. Pour une animation interactive pilotée par des états, Rive sera souvent plus adapté.",
+    "long_description_en": "Bodymovin exports After Effects compositions as Lottie JSON for the web, iOS, and Android. It supports shapes, text, images, precompositions, and some expressions, with SVG, canvas, or HTML rendering in the browser.\n\nIt is a practical bridge between motion design and development when animations need to remain crisp and lightweight. Every composition still needs testing because Lottie supports only a subset of After Effects features, and some effects must be simplified before export. For state-driven interactive animation, Rive is often a better fit.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://tooltrim.com/og-screenshots/ae-bodymovin.jpg"
+    },
+    "name": "Bodymovin / Lottie",
+    "pricing": {
+      "free": "Prix libre pour un usage individuel",
+      "paid": "20 $ suggérés et requis pour les entreprises ou les équipes"
+    },
+    "pricing_en": {
+      "free": "Name your own price for individual use",
+      "paid": "$20 suggested and required for businesses or teams"
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Prix libre pour les particuliers, 20 $ requis pour les entreprises et équipes"
+      ],
+      "compare_plan_kind": "individual",
+      "compare_plan_name": "Name Your Own Price",
+      "compare_price_monthly_eur": 0,
+      "location_sensitive": false,
+      "official_source_url": "https://aescripts.com/bodymovin/",
+      "price_reliability": "high",
+      "source_domain": "aescripts.com",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-08-28"
+    },
+    "pros": [
+      "Totalement gratuit et open source.",
+      "Standard de l'industrie pour animation web/mobile (Lottie).",
+      "Support natif iOS et Android via bibliothèques mobiles.",
+      "Pas de limitation ou paywalls cachés.",
+      "Communauté active et bien documentée."
+    ],
+    "pros_en": [
+      "Completely free and open source.",
+      "Industry standard for web/mobile animation (Lottie).",
+      "Native iOS and Android support via mobile libraries.",
+      "No hidden paywalls or limitations.",
+      "Active, well-documented community."
+    ],
+    "short_description": "Export d'animations After Effects en JSON Lottie pour le web et mobile.",
+    "short_description_en": "Export After Effects animations to Lottie JSON for web and mobile.",
+    "slug": "ae-bodymovin",
+    "source_url": "https://aescripts.com/bodymovin/",
+    "source_verified_on": "2026-08-28",
+    "use_cases": [
+      "Exporter une animation After Effects pour afficher sur un site web.",
+      "Créer une animation vectorielle réutilisable pour une app iOS/Android.",
+      "Exporter des icônes animées au format Lottie pour un site React.",
+      "Partager des animations animées légères sans vidéo MP4."
+    ],
+    "use_cases_en": [
+      "Export an After Effects animation to display on a website.",
+      "Create a reusable vector animation for an iOS/Android app.",
+      "Export animated icons in Lottie format for a React site.",
+      "Share lightweight animated visuals without MP4 video."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous animez principalement avec des calques vidéo ou images raster (moins adapté).",
+        "Vous cherchez un outil propriétaire avec support commercial garanti.",
+        "Vous avez besoin de formats d'export autres (XML, etc.)."
+      ],
+      "keepIf": [
+        "Vous exportez des animations After Effects pour le web ou mobile.",
+        "Vous travaillez avec des shape layers et animations vectorielles.",
+        "Vous préférez une solution gratuite et open source sans limitation."
+      ],
+      "threshold": "Bodymovin est essentiel pour les motion designers exportant vers le web/mobile ; c'est l'outil standard gratuit de la communauté."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You mainly animate raster/video layers (not well-suited).",
+        "You need a proprietary tool with guaranteed commercial support.",
+        "You need other export formats (XML, etc.)."
+      ],
+      "keepIf": [
+        "You export After Effects animations for web or mobile.",
+        "You work with shape layers and vector animations.",
+        "You prefer a free, open-source solution with no restrictions."
+      ],
+      "threshold": "Bodymovin is essential for motion designers exporting to web/mobile; it's the industry-standard free tool of choice."
+    },
+    "website_url": "https://aescripts.com/bodymovin/"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Limited to shape layers (not ideal for raster/video).",
+        "Some After Effects properties don't export.",
+        "Simple interface but learning export limitations takes experience.",
+        "Community support mainly (no commercial support)."
+      ],
+      "pros": [
+        "Completely free and open source.",
+        "Industry standard for web/mobile animation (Lottie).",
+        "Native iOS and Android support via mobile libraries.",
+        "No hidden paywalls or limitations.",
+        "Active, well-documented community."
+      ],
+      "use_cases": [
+        "Export an After Effects animation to display on a website.",
+        "Create a reusable vector animation for an iOS/Android app.",
+        "Export animated icons in Lottie format for a React site.",
+        "Share lightweight animated visuals without MP4 video."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You mainly animate raster/video layers (not well-suited).",
+          "You need a proprietary tool with guaranteed commercial support.",
+          "You need other export formats (XML, etc.)."
+        ],
+        "keepIf": [
+          "You export After Effects animations for web or mobile.",
+          "You work with shape layers and vector animations.",
+          "You prefer a free, open-source solution with no restrictions."
+        ],
+        "threshold": "Bodymovin is essential for motion designers exporting to web/mobile; it's the industry-standard free tool of choice."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Produit entièrement gratuit. Open source hébergé sur GitHub (RxLaboratory). Zéro coût, zéro restriction.",
+        "exists": true
+      },
+      "key_features": [
+        "Export d'animations After Effects en JSON Lottie",
+        "Support des shape layers, text, and animated properties",
+        "Export SVG, Canvas, HTML + JS ou Lottie JSON",
+        "Compatible iOS (via Lottie mobile library) et Android",
+        "Intégration directe After Effects (ZXP extension ou Adobe Exchange)"
+      ],
+      "plans": [],
+      "pricing_model": "Entièrement gratuit et open source. Disponible sur GitHub et via Adobe Exchange.",
+      "what": "Extension After Effects créée par Hernan Torrisi (hébergée sur GitHub) qui exporte les animations en JSON au format Lottie. Permet de traduire des animations After Effects (shape layers) en fichiers JSON pour les lire nativement sur web (via Lottie JS), iOS et Android via des bibliothèques mobiles.",
+      "what_en": "After Effects extension created by Hernan Torrisi that exports animations to Lottie JSON format. Translates After Effects animations (shape layers) to JSON files playable natively on web (via Lottie JS), iOS, and Android via mobile libraries."
+    },
+    "fr": {
+      "cons": [
+        "Support limité aux shape layers (pas idéal pour raster/vidéo).",
+        "Certaines propriétés After Effects ne sont pas exportables.",
+        "Interface simple mais apprentissage des limites requiert expérience.",
+        "Support communautaire principalement (pas de support commercial)."
+      ],
+      "pros": [
+        "Totalement gratuit et open source.",
+        "Standard de l'industrie pour animation web/mobile (Lottie).",
+        "Support natif iOS et Android via bibliothèques mobiles.",
+        "Pas de limitation ou paywalls cachés.",
+        "Communauté active et bien documentée."
+      ],
+      "relevant_for": [
+        "Développeurs web",
+        "Motion designers",
+        "Développeurs mobile",
+        "Animateurs"
+      ],
+      "use_cases": [
+        "Exporter une animation After Effects pour afficher sur un site web.",
+        "Créer une animation vectorielle réutilisable pour une app iOS/Android.",
+        "Exporter des icônes animées au format Lottie pour un site React.",
+        "Partager des animations animées légères sans vidéo MP4."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous animez principalement avec des calques vidéo ou images raster (moins adapté).",
+          "Vous cherchez un outil propriétaire avec support commercial garanti.",
+          "Vous avez besoin de formats d'export autres (XML, etc.)."
+        ],
+        "keepIf": [
+          "Vous exportez des animations After Effects pour le web ou mobile.",
+          "Vous travaillez avec des shape layers et animations vectorielles.",
+          "Vous préférez une solution gratuite et open source sans limitation."
+        ],
+        "threshold": "Bodymovin est essentiel pour les motion designers exportant vers le web/mobile ; c'est l'outil standard gratuit de la communauté."
+      }
+    },
+    "slug": "ae-bodymovin",
+    "sources": [
+      {
+        "label": "Bodymovin / Lottie - aescripts.com",
+        "url": "https://aescripts.com/bodymovin"
+      },
+      {
+        "label": "GitHub - Lottie Web (airbnb/lottie-web)",
+        "url": "https://github.com/airbnb/lottie-web"
+      },
+      {
+        "label": "LottieFiles for After Effects (aescripts.com)",
+        "url": "https://aescripts.com/lottiefiles/"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-002",
+    "batch_position": 8,
+    "blockers": [],
+    "catalog_hash": "sha256:387efd8ca0c5fc2e36eacf01252342b595e5d58cdd01f5ccfbbc459f4b344e08",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:0a7bcab54319475163acd5d4c2d78d98400c5641fa39269d133fc9023b82f2f6",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Bodymovin / Lottie",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:d230cf32a80d6bd04680c5f517161f76cdbe07755f94f19ffe8fbfca866c1ff5",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "ae-bodymovin",
+    "source_url": "https://aescripts.com/bodymovin/",
+    "source_verified_on": "2026-08-28",
+    "status": "QUEUED"
+  }
+}

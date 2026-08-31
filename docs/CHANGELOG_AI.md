@@ -1,5 +1,13 @@
 # ToolTrim — AI Changelog
 
+## 2026-08-31 · Revue média de 25 fiches design
+
+- Le lot `review-design-tools-critical-002` couvre 25 fiches Adobe, After Effects, Autodesk, Figma, photo et rendu 3D.
+- Les fiches utilisent de une à quatre images issues des pages officielles ; une seule capture existante est conservée lorsque le site bloque la collecte des médias.
+- Le collecteur réutilisable `collect-review-media-candidates.mjs` filtre les logos, portraits, images décoratives, doublons et formats trop petits avant la sélection éditoriale.
+- L’application d’un lot ne vide plus une galerie existante lorsque la preuve média ne contient qu’une image de remplacement.
+- Validation : registre complet PASS, 25 preuves média valides, 25 fiches publiées, build production PASS et dix routes FR/EN contrôlées sans image cassée.
+
 ## 2026-08-25 · Collections obligatoires à l’ajout
 
 - Chaque ajout depuis Ma Stack ou Explorer ouvre désormais le choix de collection avant toute écriture dans la stack.

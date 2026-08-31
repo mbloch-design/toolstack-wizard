@@ -1,0 +1,1374 @@
+{
+  "adobe-creative-cloud": {
+    "slug": "adobe-creative-cloud",
+    "page_url": "https://www.adobe.com/creativecloud/plans.html",
+    "candidates": []
+  },
+  "adobe-illustrator": {
+    "slug": "adobe-illustrator",
+    "page_url": "https://www.adobe.com/products/illustrator.html",
+    "candidates": [
+      {
+        "url": "https://www.adobe.com/products/media_173efa03ba5a9610db9180e5958f064aa30d51f62.png?width=750&format=png&optimize=medium",
+        "alt": "",
+        "width": 750,
+        "height": 540
+      },
+      {
+        "url": "https://www.adobe.com/products/media_13041399720796bf25e74572da8bd75f723699e43.png?width=750&format=png&optimize=medium",
+        "alt": "",
+        "width": 750,
+        "height": 768
+      },
+      {
+        "url": "https://www.adobe.com/products/media_11da871a3c564c2380777726f1e1e0a9be54b7363.png?width=750&format=png&optimize=medium",
+        "alt": "https://main--da-cc--adobecom.aem.page/cc-shared/assets/video/product/illustrator/media_13ed3ed35978b66ee31d41605b768a328a9fba09e.mp4#_autoplay |",
+        "width": 750,
+        "height": 2400
+      },
+      {
+        "url": "https://www.adobe.com/products/media_19762a181d8f7cdad7fa491acc9917bdedbcba01a.jpg?width=1200&format=pjpg&optimize=medium",
+        "alt": "Official product preview",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "adobe-lightroom": {
+    "slug": "adobe-lightroom",
+    "page_url": "https://www.adobe.com/products/photoshop-lightroom.html",
+    "candidates": [
+      {
+        "url": "https://www.adobe.com/products/media_1320c51b3235c78977c5780fc3b7fde69e2140f27.jpg?width=750&format=jpg&optimize=medium",
+        "alt": "",
+        "width": 750,
+        "height": 518
+      },
+      {
+        "url": "https://www.adobe.com/products/media_1e459da212cbda34dbab87b26a733fff0de666ad0.jpg?width=750&format=jpg&optimize=medium",
+        "alt": "",
+        "width": 750,
+        "height": 700
+      },
+      {
+        "url": "https://www.adobe.com/products/media_1325ced14a2fe5ee95ce8861e41db26a6fc38d95a.jpg?width=1200&format=pjpg&optimize=medium",
+        "alt": "Official product preview",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "adobe-photoshop": {
+    "slug": "adobe-photoshop",
+    "page_url": "https://www.adobe.com/products/photoshop.html",
+    "candidates": [
+      {
+        "url": "https://www.adobe.com/products/media_1dd3b8e6558de789330a497d3202c1c76d5cd7233.png?width=750&format=png&optimize=medium",
+        "alt": "",
+        "width": 750,
+        "height": 540
+      },
+      {
+        "url": "https://www.adobe.com/products/media_1593767de8d991b2148233f4972e7a75f4b8c3f1b.png?width=750&format=png&optimize=medium",
+        "alt": "",
+        "width": 750,
+        "height": 768
+      },
+      {
+        "url": "https://www.adobe.com/products/media_159818ecda497397cc4ce6e5460cf58008a35abb1.png?width=750&format=png&optimize=medium",
+        "alt": "https://main--da-cc--adobecom.aem.page/cc-shared/assets/video/product/photoshop/media_1d3efba2d520d8a78f742536365d1bb0a70af462f.mp4#_autoplay|",
+        "width": 750,
+        "height": 2400
+      },
+      {
+        "url": "https://www.adobe.com/products/media_17f61e1224166630fb2e30723046881244c8812a9.jpg?width=1200&format=pjpg&optimize=medium",
+        "alt": "Official product preview",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "adobe-premiere-pro": {
+    "slug": "adobe-premiere-pro",
+    "page_url": "https://www.adobe.com/products/premiere.html",
+    "candidates": [
+      {
+        "url": "https://www.adobe.com/products/media_1f8daa11378f3f2bf31de3eba54dec9f989bf65d5.png?width=750&format=png&optimize=medium",
+        "alt": "",
+        "width": 750,
+        "height": 360
+      },
+      {
+        "url": "https://www.adobe.com/products/media_168928bcdc3aff4c1288aa2e481211b36d7c35d8d.png?width=750&format=png&optimize=medium",
+        "alt": "",
+        "width": 750,
+        "height": 768
+      },
+      {
+        "url": "https://www.adobe.com/products/media_15393c3fc1e18a44741f4b4ae4101dbb0b95cfe7b.png?width=750&format=png&optimize=medium",
+        "alt": "https://main--da-cc--adobecom.aem.page/cc-shared/assets/video/product/premiere/product-page/media_1050fad5c8bf3cc5ebaf719ab5a257cc490d25043.mp4#_autoplay|",
+        "width": 750,
+        "height": 2800
+      },
+      {
+        "url": "https://www.adobe.com/products/media_14a141cf8900a74105b7122f28472dce9fd8cf872.jpg?width=1200&format=pjpg&optimize=medium",
+        "alt": "Official product preview",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "ae-animation-composer": {
+    "slug": "ae-animation-composer",
+    "page_url": "https://misterhorse.com/animation-composer",
+    "candidates": [
+      {
+        "url": "https://d23mmnx9ld45h.cloudfront.net/misterhorse.com_web_v3/Products/Common/Ae%20-%20100px%20-%20BW%20White@2x.png",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://d23mmnx9ld45h.cloudfront.net/misterhorse.com_web_v3/Products/Animation%20Composer/20260609/ac.png",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://d23mmnx9ld45h.cloudfront.net/misterhorse.com_web_v3/Products/Common/Pr%20-%20100px%20-%20BW%20White@2x.png",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://d23mmnx9ld45h.cloudfront.net/misterhorse.com_web_v3/Products/Animation%20Composer/20260609/pc.png",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://d23mmnx9ld45h.cloudfront.net/misterhorse.com_web_v3/Products/Animation%20Composer/Main%20Page%20v2/pp-ac-link-preview-image.jpg",
+        "alt": "Official product preview",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "ae-bao-boa": {
+    "slug": "ae-bao-boa",
+    "page_url": "https://aescripts.com/boa",
+    "candidates": [],
+    "error": "HTTP 403"
+  },
+  "ae-bodymovin": {
+    "slug": "ae-bodymovin",
+    "page_url": "https://aescripts.com/bodymovin/",
+    "candidates": [],
+    "error": "HTTP 403"
+  },
+  "ae-gifgun": {
+    "slug": "ae-gifgun",
+    "page_url": "https://aescripts.com/gifgun",
+    "candidates": [],
+    "error": "HTTP 403"
+  },
+  "ae-newton3": {
+    "slug": "ae-newton3",
+    "page_url": "https://aescripts.com/newton",
+    "candidates": [],
+    "error": "HTTP 403"
+  },
+  "ae-overlord": {
+    "slug": "ae-overlord",
+    "page_url": "https://battleaxe.co/overlord",
+    "candidates": [
+      {
+        "url": "https://i.ytimg.com/vi_webp/lGYe8Kctdm0/sddefault.webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://i.ytimg.com/vi_webp/fxaIKvMczz8/sddefault.webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://i.ytimg.com/vi_webp/xZhkMWs8Epc/sddefault.webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://framerusercontent.com/images/x8BvXQ4PfVnbo1bi0X1UkjZk9nE.jpg?width=800&height=800",
+        "alt": "Rubberhose",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "url": "https://framerusercontent.com/images/5nK1qBoHslHS8amqulUxRbp33JU.jpg?width=800&height=800",
+        "alt": "",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "url": "https://framerusercontent.com/images/2ehYh7RkX6tkx9OebaKEeezeaso.jpg?width=800&height=800",
+        "alt": "",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "url": "https://framerusercontent.com/images/jCrqxVE8LqrRcRrrUjSP0ajI1Y.gif?width=787&height=301",
+        "alt": "",
+        "width": 787,
+        "height": 301
+      },
+      {
+        "url": "https://framerusercontent.com/images/iqdPAZeyVeW5T3MNgF1LinMOPjo.gif?width=734&height=445",
+        "alt": "",
+        "width": 734,
+        "height": 445
+      },
+      {
+        "url": "https://framerusercontent.com/images/7a5OyuMSAT0CeatkdnqDMSaY.gif?width=664&height=346",
+        "alt": "",
+        "width": 664,
+        "height": 346
+      },
+      {
+        "url": "https://framerusercontent.com/images/JlcKXhFXRLKH6ozeg9zHIAwBY.gif?width=652&height=504",
+        "alt": "",
+        "width": 652,
+        "height": 504
+      },
+      {
+        "url": "https://framerusercontent.com/images/TwKqDUgLsgkk4SYY6Uf2Eml750.png?width=1400&height=1400",
+        "alt": "",
+        "width": 1400,
+        "height": 1400
+      },
+      {
+        "url": "https://framerusercontent.com/images/0guHIjfiB9Cq4h9aNhwPeMQ5vpI.png?width=788&height=1401",
+        "alt": "",
+        "width": 788,
+        "height": 1401
+      },
+      {
+        "url": "https://framerusercontent.com/assets/aKz5rGcklstKoX9n59MvZ2DDHP0.jpg",
+        "alt": "Official product preview",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "ae-red-giant": {
+    "slug": "ae-red-giant",
+    "page_url": "https://www.maxon.net/en/red-giant",
+    "candidates": [
+      {
+        "url": "https://maxonassets.imgix.net/images/Products/Red-Giant/Red_Giant-April2025-video_loop_still-banner.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces&q=10&blur=100",
+        "alt": "",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "https://maxonassets.imgix.net/images/Products/Red-Giant/red-giant-reel-2026.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces&q=10&blur=100",
+        "alt": "",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "https://maxonassets.imgix.net/images/Products/Red-Giant/RLF_Zoom_Flower_Loop_01.gif?fm=webp&auto=format,compress&w=586&h=330&ar=16:9&fit=clip&crop=faces&q=10&blur=100",
+        "alt": "Real Lens Flares interactive zoom image",
+        "width": 586,
+        "height": 330
+      },
+      {
+        "url": "https://maxonassets.imgix.net/images/Products/Red-Giant/ZoomLensVisualizationUI.gif?fm=webp&auto=format,compress&w=542&h=304&ar=16:9&fit=clip&crop=faces&q=10&blur=100",
+        "alt": "Real Lens Flares aspherical lenses & new presets image",
+        "width": 542,
+        "height": 304
+      },
+      {
+        "url": "https://maxonassets.imgix.net/images/Products/Red-Giant/Trapcode_Designer_Interface.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces&q=10&blur=100",
+        "alt": "Trapcode Particular maximum system number preference image",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "https://maxonassets.imgix.net/images/Products/Maxon-One/RG_Film_production-TERRITORY_STUDIO_v2.jpg?fm=webp&auto=format,compress&w=1920&h=838&ar=16:9&fit=clip&crop=faces&q=10&blur=100",
+        "alt": "Film studio crafts cinematic visuals for feature films using Red Giant&#39;s tools.",
+        "width": 1920,
+        "height": 838
+      },
+      {
+        "url": "https://maxonassets.imgix.net/images/Products/Red-Giant/RG_Video_Comp_Visual_effects.png?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces&q=10&blur=100",
+        "alt": "An image shows how Red Giant can be used for video compositing and visual effects creation in commercial design & advertising.",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "https://maxonassets.imgix.net/images/Products/Red-Giant/RG_Commercial_design_ads.png?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces&q=10&blur=100",
+        "alt": "Example of motion graphics created with Red Giant tools for commercial design and advertising.",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "https://maxonassets.imgix.net/images/Products/Red-Giant/Color-banner-V2.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces&q=10&blur=100",
+        "alt": "Color image",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "https://maxonassets.imgix.net/images/Products/Red-Giant/Distortions-banner.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces&q=10&blur=100",
+        "alt": "3D asteroid field in space with colorful light effects and cosmic motion blur",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "https://maxonassets.imgix.net/images/Products/Red-Giant/Stylize-banner-V2.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces&q=10&blur=100",
+        "alt": "Stylize image",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "https://maxonassets.imgix.net/images/Products/Red-Giant/Generators-banner.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces&q=10&blur=100",
+        "alt": "Generators image",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "https://maxonassets.imgix.net/images/Products/Red-Giant/MotionGraphics-banner.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces&q=10&blur=100",
+        "alt": "Motion Graphics image",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "https://maxonassets.imgix.net/images/Products/Red-Giant/Text-banner.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces&q=10&blur=100",
+        "alt": "Text image",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "https://maxonassets.imgix.net/images/Products/Red-Giant/Utilities-banner_2.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces&q=10&blur=100",
+        "alt": "Utilities image",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "https://maxonassets.imgix.net/images/Products/Red-Giant/VFX-banner.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces&q=10&blur=100",
+        "alt": "VFX image",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "https://maxonassets.imgix.net/images/Products/Red-Giant/Transitions-banner-V2.jpg?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces&q=10&blur=100",
+        "alt": "Transitions image",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "https://maxonassets.imgix.net/images/Products/Red-Giant/RG_Contact_Sales_Section-Roland-Hartmann.png?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces&q=10&blur=100",
+        "alt": "",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "https://maxonassets.imgix.net/images/Products/Red-Giant/RG_Try_Section-Roland_Hartmann.png?fm=webp&auto=format,compress&w=1920&h=1080&ar=16:9&fit=clip&crop=faces&q=10&blur=100",
+        "alt": "",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Red-Giant/_1200x630_crop_center-center_82_none/Red_Giant-April2025-video_loop_still-banner.jpg?mtime=1743079582",
+        "alt": "Official product preview",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://mxwebnuxtprod01.blob.core.windows.net/media/images/Products/Red-Giant/_800x418_crop_center-center_82_none/Red_Giant-April2025-video_loop_still-banner.jpg?mtime=1743079582",
+        "alt": "Official product preview",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "ae-rubberhose": {
+    "slug": "ae-rubberhose",
+    "page_url": "https://aescripts.com/rubberhose",
+    "candidates": [],
+    "error": "HTTP 403"
+  },
+  "aescripts-flow": {
+    "slug": "aescripts-flow",
+    "page_url": "https://aescripts.com/flow/",
+    "candidates": [],
+    "error": "HTTP 403"
+  },
+  "arnold": {
+    "slug": "arnold",
+    "page_url": "https://www.autodesk.com/products/arnold/overview",
+    "candidates": [
+      {
+        "url": "https://images.ctfassets.net/v7wr16nrr0mz/1uVn6YUvZTk9et3OSirDkg/d8d8d25c0340ca2c06d2575b3eafb9d8/what-is-autodesk-arnold-thumb-788x1050.jpg",
+        "alt": "Oni: Thunder God&#x27;s Tale rendered with Arnold",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.ctfassets.net/v7wr16nrr0mz/zZrkgOJJ5lgpm44LKv9Ni/b0f52b94b238ab96d084bb5c99f092e5/manage-complex-projects-with-production-ready-tools-thumb-788x1050.jpg",
+        "alt": "\"\"",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.ctfassets.net/v7wr16nrr0mz/32MrQfOSmWP6pS4EmzFkIY/755934caad725b6476de09b7b2f19b5a/integrate-and-customize-your-pipeline-thumb-788x1050.jpg",
+        "alt": "Rendered scene of characters ordering from a food truck at night.",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.ctfassets.net/v7wr16nrr0mz/6xel3RprcPm2gc5o5EZdlD/e32ca32b5a4ec22e0cd00e9126a3d35d/arjun-anand-thumb-788x444.jpg",
+        "alt": "\"\"",
+        "width": 0,
+        "height": 240
+      },
+      {
+        "url": "https://images.ctfassets.net/v7wr16nrr0mz/2mEOQrWF3L23mEUguM5KxY/77a3fde23365f4d48fc4eb44f068e165/lee-griggs-thumb-788x444-v1.jpg",
+        "alt": "\"\"",
+        "width": 0,
+        "height": 240
+      },
+      {
+        "url": "https://images.ctfassets.net/v7wr16nrr0mz/3vGOEL2slTCeq1T5L7GZt4/8a55173454b41227136cdc8fcd332408/lee-griggs-thumb-788x444-v2.jpg",
+        "alt": "\"\"",
+        "width": 0,
+        "height": 240
+      }
+    ]
+  },
+  "auto-rig-pro": {
+    "slug": "auto-rig-pro",
+    "page_url": "https://superhivemarket.com/products/auto-rig-pro",
+    "candidates": [],
+    "error": "HTTP 403"
+  },
+  "autocad": {
+    "slug": "autocad",
+    "page_url": "https://www.autodesk.com/products/autocad/overview",
+    "candidates": [
+      {
+        "url": "https://images.ctfassets.net/v7wr16nrr0mz/3RVX7FOtoTtfK5nl1p8CvM/a4355a8a25ed53259a763c6f8508ec70/autocad-2027-hero-banner-1920x1080.jpg",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.ctfassets.net/v7wr16nrr0mz/dqMYHCggeoYcKiXjPsZZy/bf3965e57a6cf0626496fd3d3875cba5/learn-best-practices-with-autolisp-thumb-788x1050.jpg",
+        "alt": "AutoCAD Load/Unload Applications interface promoting Autodesk University drafting training sessions",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.ctfassets.net/v7wr16nrr0mz/6eXQAx6Z2Wm18nlBOLgVVE/eb41da463d7799874dc282086665506b/block-creation-in-autocad-thumb-788x1050.jpg",
+        "alt": "AutoCAD interface showing block creation tools and a simple furniture layout with a desk and chair in a dark workspace.",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "capture-one": {
+    "slug": "capture-one",
+    "page_url": "https://www.captureone.com/en",
+    "candidates": [
+      {
+        "url": "https://cdn.captureone.com/images/fpl48n9r/production/e3a4a775b5052c37ae8630062ba2485fe520d80d-1456x970.jpg?auto=format",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.captureone.com/images/fpl48n9r/production/1c4cf3575aa17d86aecc6e1aa0f425fade6fa29c-1456x970.jpg?auto=format",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.captureone.com/images/fpl48n9r/production/5b97f34830c4e892bae80ad939f80e4cab6f8f35-1456x970.jpg?auto=format",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.captureone.com/images/fpl48n9r/production/535b05e26a5cb9177f429e6bd41833deb75c050a-1456x970.jpg?auto=format",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.captureone.com/images/fpl48n9r/production/68cc62e4f69c48ba78505e1526e8971995c82a70-1456x970.jpg?auto=format",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.captureone.com/images/fpl48n9r/production/7e0706c5ca52ad4ad1082d222e44d4669e500482-2000x1333.jpg?auto=format",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.captureone.com/images/fpl48n9r/production/5e7a8babd9b6eeda8aa6679d7bee756e432d6b00-1028x590.jpg?auto=format",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.captureone.com/images/fpl48n9r/production/eeeb5b87676fa3144522a266efd569a2fcf7068c-2030x1352.png?auto=format",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.captureone.com/images/fpl48n9r/production/f9fc40575e99708d67dc5c23cbbad6f8dada8272-1680x805.jpg?auto=format",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.captureone.com/images/fpl48n9r/production/e884c9c18f8b46f5dae0d829c2907e4c9ca97103-1028x590.jpg?auto=format",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.captureone.com/images/fpl48n9r/production/f8b321dbba709649211552a1b01d7591d818acdf-1028x590.jpg?auto=format",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.captureone.com/images/fpl48n9r/production/412c11c9f18496fa0f913427be1849d8ca9e054f-2040x1536.jpg?auto=format",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.captureone.com/images/fpl48n9r/production/e9ff9cd0579cce48a069bedde0da5f09c53fa568-900x600.jpg?auto=format",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.captureone.com/images/fpl48n9r/production/8e94ad6f6cd6cf67c4a45567c0d55c3497fd6200-1028x590.jpg?auto=format",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.captureone.com/images/fpl48n9r/production/aa49a089be40e2c0637534b9df4267eb8a00fc1d-2000x1122.jpg?auto=format",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.captureone.com/images/fpl48n9r/production/ed10c46c9d1411db7d6abeb75de7149ef14411fe-1600x1067.jpg?auto=format",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.captureone.com/images/fpl48n9r/production/a600746384dc1790787286048c9c5a2f6fbba3a8-2048x1365.jpg?auto=format",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.captureone.com/images/fpl48n9r/production/9e6a75bb69dcaca3ab808a8c4ca580b19ad8355c-1028x590.jpg?auto=format",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.captureone.com/images/fpl48n9r/production/2b4e16a6dfeefa582eca35ca142e272b38b0afeb-1028x590.jpg?auto=format",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.captureone.com/images/fpl48n9r/production/42a551ddafa493da0ab5fd8d6a34634cf5647524-1028x590.jpg?auto=format",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.captureone.com/images/fpl48n9r/production/31384bd89238d4b34e01661e00544c5be98b46a2-2880x577.png?auto=format",
+        "alt": "",
+        "width": 2880,
+        "height": 577
+      },
+      {
+        "url": "https://cdn.captureone.com/images/fpl48n9r/production/b213f73fe667849d527e0859d0e49365b7d29ea4-919x612.png?rect=52,0,816,612&w=800&h=600&q=85&auto=format",
+        "alt": "Official product preview",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "d5-render": {
+    "slug": "d5-render",
+    "page_url": "https://www.d5render.com/",
+    "candidates": [
+      {
+        "url": "https://usa-official.d5cdn.com/wp-content/uploads/2026/07/2354345346.webp",
+        "alt": "Cloud Collaboration",
+        "width": 575,
+        "height": 476
+      },
+      {
+        "url": "https://usa-official.d5cdn.com/wp-content/uploads/2026/07/2354345346-300x248.webp",
+        "alt": "Cloud Collaboration",
+        "width": 575,
+        "height": 476
+      },
+      {
+        "url": "https://usa-official.d5cdn.com/wp-content/uploads/2026/07/2354345346-14x12.webp",
+        "alt": "Cloud Collaboration",
+        "width": 575,
+        "height": 476
+      },
+      {
+        "url": "https://usa-official.d5cdn.com/wp-content/uploads/2026/07/2354345346-500x414.webp",
+        "alt": "Cloud Collaboration",
+        "width": 575,
+        "height": 476
+      },
+      {
+        "url": "https://usa-official.d5cdn.com/wp-content/uploads/2026/07/1242345423.webp",
+        "alt": "AI 3D Design, Rendering & Visualization Platform for Professionals | D5",
+        "width": 575,
+        "height": 476
+      },
+      {
+        "url": "https://usa-official.d5cdn.com/wp-content/uploads/2026/07/1242345423-300x248.webp",
+        "alt": "AI 3D Design, Rendering & Visualization Platform for Professionals | D5",
+        "width": 575,
+        "height": 476
+      },
+      {
+        "url": "https://usa-official.d5cdn.com/wp-content/uploads/2026/07/1242345423-14x12.webp",
+        "alt": "AI 3D Design, Rendering & Visualization Platform for Professionals | D5",
+        "width": 575,
+        "height": 476
+      },
+      {
+        "url": "https://usa-official.d5cdn.com/wp-content/uploads/2026/07/1242345423-500x414.webp",
+        "alt": "AI 3D Design, Rendering & Visualization Platform for Professionals | D5",
+        "width": 575,
+        "height": 476
+      },
+      {
+        "url": "https://usa-official.d5cdn.com/wp-content/uploads/2026/07/1341234325.webp",
+        "alt": "AI 3D Design, Rendering & Visualization Platform for Professionals | D5",
+        "width": 575,
+        "height": 476
+      },
+      {
+        "url": "https://usa-official.d5cdn.com/wp-content/uploads/2026/07/1341234325-300x248.webp",
+        "alt": "AI 3D Design, Rendering & Visualization Platform for Professionals | D5",
+        "width": 575,
+        "height": 476
+      },
+      {
+        "url": "https://usa-official.d5cdn.com/wp-content/uploads/2026/07/1341234325-14x12.webp",
+        "alt": "AI 3D Design, Rendering & Visualization Platform for Professionals | D5",
+        "width": 575,
+        "height": 476
+      },
+      {
+        "url": "https://usa-official.d5cdn.com/wp-content/uploads/2026/07/1341234325-500x414.webp",
+        "alt": "AI 3D Design, Rendering & Visualization Platform for Professionals | D5",
+        "width": 575,
+        "height": 476
+      },
+      {
+        "url": "https://usa-official.d5cdn.com/wp-content/uploads/2026/07/23425243.webp",
+        "alt": "KRF case story",
+        "width": 1031,
+        "height": 690
+      },
+      {
+        "url": "https://usa-official.d5cdn.com/wp-content/uploads/2026/07/23425243-300x201.webp",
+        "alt": "KRF case story",
+        "width": 1031,
+        "height": 690
+      },
+      {
+        "url": "https://usa-official.d5cdn.com/wp-content/uploads/2026/07/23425243-1024x685.webp",
+        "alt": "KRF case story",
+        "width": 1031,
+        "height": 690
+      },
+      {
+        "url": "https://usa-official.d5cdn.com/wp-content/uploads/2026/07/23425243-768x514.webp",
+        "alt": "KRF case story",
+        "width": 1031,
+        "height": 690
+      },
+      {
+        "url": "https://usa-official.d5cdn.com/wp-content/uploads/2026/07/23425243-18x12.webp",
+        "alt": "KRF case story",
+        "width": 1031,
+        "height": 690
+      },
+      {
+        "url": "https://usa-official.d5cdn.com/wp-content/uploads/2026/07/23425243-500x335.webp",
+        "alt": "KRF case story",
+        "width": 1031,
+        "height": 690
+      },
+      {
+        "url": "https://usa-official.d5cdn.com/wp-content/uploads/2026/07/23425243-800x535.webp",
+        "alt": "KRF case story",
+        "width": 1031,
+        "height": 690
+      },
+      {
+        "url": "https://usa-official.d5cdn.com/wp-content/uploads/2026/07/42367.webp",
+        "alt": "SWA case story",
+        "width": 1031,
+        "height": 690
+      },
+      {
+        "url": "https://usa-official.d5cdn.com/wp-content/uploads/2026/07/42367-300x201.webp",
+        "alt": "SWA case story",
+        "width": 1031,
+        "height": 690
+      },
+      {
+        "url": "https://usa-official.d5cdn.com/wp-content/uploads/2026/07/42367-1024x685.webp",
+        "alt": "SWA case story",
+        "width": 1031,
+        "height": 690
+      },
+      {
+        "url": "https://usa-official.d5cdn.com/wp-content/uploads/2026/07/42367-768x514.webp",
+        "alt": "SWA case story",
+        "width": 1031,
+        "height": 690
+      },
+      {
+        "url": "https://usa-official.d5cdn.com/wp-content/uploads/2026/07/42367-18x12.webp",
+        "alt": "SWA case story",
+        "width": 1031,
+        "height": 690
+      },
+      {
+        "url": "https://usa-official.d5cdn.com/wp-content/uploads/2026/07/42367-500x335.webp",
+        "alt": "SWA case story",
+        "width": 1031,
+        "height": 690
+      },
+      {
+        "url": "https://usa-official.d5cdn.com/wp-content/uploads/2026/07/42367-800x535.webp",
+        "alt": "SWA case story",
+        "width": 1031,
+        "height": 690
+      },
+      {
+        "url": "https://usa-official.d5cdn.com/wp-content/uploads/2026/07/34534645.webp",
+        "alt": "BIG case story",
+        "width": 1031,
+        "height": 690
+      },
+      {
+        "url": "https://usa-official.d5cdn.com/wp-content/uploads/2026/07/34534645-300x201.webp",
+        "alt": "BIG case story",
+        "width": 1031,
+        "height": 690
+      },
+      {
+        "url": "https://usa-official.d5cdn.com/wp-content/uploads/2026/07/34534645-1024x685.webp",
+        "alt": "BIG case story",
+        "width": 1031,
+        "height": 690
+      },
+      {
+        "url": "https://usa-official.d5cdn.com/wp-content/uploads/2026/07/34534645-768x514.webp",
+        "alt": "BIG case story",
+        "width": 1031,
+        "height": 690
+      }
+    ]
+  },
+  "enscape": {
+    "slug": "enscape",
+    "page_url": "https://www.chaos.com/enscape",
+    "candidates": [
+      {
+        "url": "https://static.chaos.com/images/assets/000/023/841/original/main-menu-arch-design-enscape.png",
+        "alt": "Easy to use real-time design companion",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/026/956/original/veras-4-menu-586x164.png?1770735073",
+        "alt": "Fast AI-powered ideation & visualization",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/023/838/original/main-menu-arch-design-v-ray.png",
+        "alt": "Industry-standard photorealistic rendering",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/023/805/original/industry-solutions-studio-bazzini-thumb-1920x1080-v2.jpg",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/023/802/original/industry-solutions-tm-marvel-1920x1080-v2.jpg",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/026/964/original/FFF_City_Hall_Plaza_03_Urban_Grove.png?1770981446",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/023/803/original/industry-solutions-lazzeroni-studio-1920x1080-v2.jpg",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/026/992/full_width_original/Gemini_Generated_Image_juko03juko03juko.avif?1771232200",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/026/905/original/tiles-connect-690x380.jpeg?1769697287",
+        "alt": "CGconnect",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/026/903/original/tiles-learn-690x380.jpeg?1769697278",
+        "alt": "Chaos Academy",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/027/370/image/Sh01_Intro_02-796x522.jpg?1779870703",
+        "alt": "",
+        "width": 960,
+        "height": 630
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/027/369/image/Sh02_Impact_ThermalComfort_Perfect_01_Final-796x522_(1).jpg?1779870613",
+        "alt": "",
+        "width": 960,
+        "height": 630
+      },
+      {
+        "url": "https://dev.static.cms.chaos.com/images/assets/000/025/141/single_image_horizontal/enscape-trial-b-900x500.png?1746821100",
+        "alt": "",
+        "width": 1410,
+        "height": 800
+      },
+      {
+        "url": "https://dev.static.cms.chaos.com/images/assets/000/025/142/gallery_masonry_vertical/enscape-trial-a-760x960.png?1746821100",
+        "alt": "",
+        "width": 636,
+        "height": 716
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/024/786/full_width_original/Joel_Guerra_DEPARTMENT_AR2.jpg?1744388642",
+        "alt": "",
+        "width": 1920,
+        "height": 1920
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/024/786/mobile_square/Joel_Guerra_DEPARTMENT_AR2.jpg?1744388642",
+        "alt": "",
+        "width": 540,
+        "height": 540
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/021/468/image/Dsmall_BED_N1.jpg?1744388646",
+        "alt": "",
+        "width": 960,
+        "height": 720
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/021/468/mobile_square/Dsmall_BED_N1.jpg?1744388646",
+        "alt": "",
+        "width": 540,
+        "height": 540
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/024/159/image/Enscape-SketchUp-Sang_Bui_Villa_Riverside_Daytime07-THUMB.jpg?1744628929",
+        "alt": "",
+        "width": 960,
+        "height": 960
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/024/159/mobile_square/Enscape-SketchUp-Sang_Bui_Villa_Riverside_Daytime07-THUMB.jpg?1744628929",
+        "alt": "",
+        "width": 540,
+        "height": 540
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/024/025/image/home-gallery-Tropical_Villa_Enscape.jpg?1741115912",
+        "alt": "",
+        "width": 960,
+        "height": 1450
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/024/353/mobile_square/mobile-home-gallery-tropical-villa-enscape.jpg?1741591754",
+        "alt": "",
+        "width": 540,
+        "height": 540
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/024/797/image/QuangVinh-Zin_Interior_modern_sort_of_futuristic02-THUMB..jpg?1744629630",
+        "alt": "",
+        "width": 960,
+        "height": 600
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/024/797/mobile_square/QuangVinh-Zin_Interior_modern_sort_of_futuristic02-THUMB..jpg?1744629630",
+        "alt": "",
+        "width": 540,
+        "height": 540
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/027/242/original/Farhan_Diaz_Headshot.png?1778735502",
+        "alt": "Farhan Diaz",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://static.chaos.com/images/assets/000/025/422/articles_2_columns/enscape-product-og-1200x630.png?1781319492",
+        "alt": "Official product preview",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "envato-elements": {
+    "slug": "envato-elements",
+    "page_url": "https://elements.envato.com/",
+    "candidates": [
+      {
+        "url": "https://assets.elements.envato.com/apps/storefront/audio.compressed-11d9cee9c59e9605c2cf.avif",
+        "alt": "PremiumBeat Content Feature",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://assets.elements.envato.com/apps/storefront/graphics-ChrisPiascik-Promo-cc0e7a16d85c2a2327d4.avif",
+        "alt": "Envato X Chris Piascik",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://assets.elements.envato.com/apps/storefront/three-d448x336.compressed-a8da95b8e96703c1c269.avif",
+        "alt": "KitBash3D Content Feature",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://assets.elements.envato.com/apps/storefront/job1782Cyber25OnsitePromoHeaderStripHalftoneRightPng-234c368c773c70d8f411.png",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://assets.elements.envato.com/apps/storefront/job1782Cyber25OnsitePromoHeaderStripHalftoneLeftPng-a37607219d85d702ca75.png",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://assets.elements.envato.com/apps/storefront/ai-category-card-video-gen.compressed-af29db464d5384278838.avif",
+        "alt": "AI Video Generator - Create videos from text and images",
+        "width": 588,
+        "height": 588
+      },
+      {
+        "url": "https://assets.elements.envato.com/apps/storefront/ai-category-card-video-gen@2x.compressed-4bc1b9e53eac6da39702.avif",
+        "alt": "AI Video Generator - Create videos from text and images",
+        "width": 588,
+        "height": 588
+      },
+      {
+        "url": "https://assets.elements.envato.com/apps/storefront/ai-category-card-image-gen.compressed-4582b5b71bedb3c007d2.avif",
+        "alt": "AI Image Generator - Create images from text",
+        "width": 588,
+        "height": 588
+      },
+      {
+        "url": "https://assets.elements.envato.com/apps/storefront/ai-category-card-image-gen@2x.compressed-ab845c46f43e92113721.avif",
+        "alt": "AI Image Generator - Create images from text",
+        "width": 588,
+        "height": 588
+      },
+      {
+        "url": "https://assets.elements.envato.com/apps/storefront/ai-category-card-image-edit.compressed-65e0341e955452d1260d.avif",
+        "alt": "AI Image Editor - Retouch and transform photos with AI",
+        "width": 588,
+        "height": 588
+      },
+      {
+        "url": "https://assets.elements.envato.com/apps/storefront/ai-category-card-image-edit@2x.compressed-3f1a31404374a14de819.avif",
+        "alt": "AI Image Editor - Retouch and transform photos with AI",
+        "width": 588,
+        "height": 588
+      },
+      {
+        "url": "https://assets.elements.envato.com/apps/storefront/ai-category-card-voice-gen.compressed-8bdfd48e7a0ae5cd79c0.avif",
+        "alt": "AI Voice Generator - Generate natural-sounding voiceovers",
+        "width": 588,
+        "height": 588
+      },
+      {
+        "url": "https://assets.elements.envato.com/apps/storefront/ai-category-card-voice-gen@2x.compressed-d01241ce96a0f9c986c8.avif",
+        "alt": "AI Voice Generator - Generate natural-sounding voiceovers",
+        "width": 588,
+        "height": 588
+      },
+      {
+        "url": "https://assets.elements.envato.com/apps/storefront/ai-category-card-music-gen.compressed-6ae9c37fd86bde471d55.avif",
+        "alt": "AI Music Generator - Compose songs from text prompts",
+        "width": 588,
+        "height": 588
+      },
+      {
+        "url": "https://assets.elements.envato.com/apps/storefront/ai-category-card-music-gen@2x.compressed-c6920f7dcdd13bb29208.avif",
+        "alt": "AI Music Generator - Compose songs from text prompts",
+        "width": 588,
+        "height": 588
+      },
+      {
+        "url": "https://assets.elements.envato.com/apps/storefront/ai-category-card-graphics-gen.compressed-9bada2c983e07d2e9175.avif",
+        "alt": "AI Graphics Generator - Design visuals fast with AI",
+        "width": 588,
+        "height": 588
+      },
+      {
+        "url": "https://assets.elements.envato.com/apps/storefront/ai-category-card-graphics-gen@2x.compressed-74b65c70e9004e4b2cfd.avif",
+        "alt": "AI Graphics Generator - Design visuals fast with AI",
+        "width": 588,
+        "height": 588
+      },
+      {
+        "url": "https://assets.elements.envato.com/apps/storefront/ai-category-card-mock-up-gen.compressed-de767e9c075159295679.avif",
+        "alt": "AI Mockup Generator - Create product mockups instantly",
+        "width": 588,
+        "height": 588
+      },
+      {
+        "url": "https://assets.elements.envato.com/apps/storefront/ai-category-card-mock-up-gen@2x.compressed-00bd9c12c2bc698dee1d.avif",
+        "alt": "AI Mockup Generator - Create product mockups instantly",
+        "width": 588,
+        "height": 588
+      },
+      {
+        "url": "https://assets.elements.envato.com/apps/storefront/ai-category-card-sound-gen.compressed-03df3016369fd4e0e4ec.avif",
+        "alt": "AI Sound Generator - Create custom audio and SFX",
+        "width": 588,
+        "height": 588
+      },
+      {
+        "url": "https://assets.elements.envato.com/apps/storefront/ai-category-card-sound-gen@2x.compressed-f3ed85efbc190010be5c.avif",
+        "alt": "AI Sound Generator - Create custom audio and SFX",
+        "width": 588,
+        "height": 588
+      },
+      {
+        "url": "https://assets.elements.envato.com/apps/storefront/surreal01Avif-bc1ca30e20b04c3fcaab.avif",
+        "alt": "Curated Collection: Dreamshift: Surreal design essentials",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://assets.elements.envato.com/apps/storefront/surreal02Avif2-00a1ea670350f25e41f0.avif",
+        "alt": "Dreamshift: Surreal design essentials - 1",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://assets.elements.envato.com/apps/storefront/surreal03Avif2-65a91ad80e59048a8b96.avif",
+        "alt": "Dreamshift: Surreal design essentials - 2",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://assets.elements.envato.com/apps/storefront/surreal04Avif2-7ad860e1b390c785511f.avif",
+        "alt": "Dreamshift: Surreal design essentials - 3",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://assets.elements.envato.com/apps/storefront/hp1225C2Img1CnvAvif3-8af68e53e0e32196600c.avif",
+        "alt": "Curated Collection: Thiccography",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://assets.elements.envato.com/apps/storefront/hp1225C2Img2CnvAvif3-231e58267c7f38b15172.avif",
+        "alt": "Thiccography - 1",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://assets.elements.envato.com/apps/storefront/hp1225C2Img3CnvAvif3-e243ee84faf52835d073.avif",
+        "alt": "Thiccography - 2",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://assets.elements.envato.com/apps/storefront/hp1225C2Img4CnvAvif3-77a34b34af694341e39b.avif",
+        "alt": "Thiccography - 3",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://assets.elements.envato.com/apps/storefront/hp1225C3Img1CnvAvif3-1e1b8cbc7e34c25423aa.avif",
+        "alt": "Curated Collection: Motion is Collective",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "figma": {
+    "slug": "figma",
+    "page_url": "https://www.figma.com/",
+    "candidates": [
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/4b9ade839f38291c91b76608d22e7c7a9ad525fd-542x305.png?w=542&h=305&q=75&fit=max&auto=format",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/7e39b983c6ad865e0a7a5243d914020e69a23f70-542x305.png?w=542&h=305&q=75&fit=max&auto=format",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/1883a9ebc4ce697b718301ad247c0fff45c572c1-540x304.png?w=540&h=304&q=75&fit=max&auto=format",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/b82592e52a6cc84b26ac68a8fd0fd5f2d05e0a34-656x816.png?w=656&h=816&q=75&fit=max&auto=format",
+        "alt": "A mock website showing Texture values",
+        "width": 656,
+        "height": 816
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/a92909334c175cb8deb08724809a6a133a2fdaee-656x816.png?w=656&h=816&q=75&fit=max&auto=format",
+        "alt": "UI showing different brush stokes that can be applied to type",
+        "width": 656,
+        "height": 816
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/93c59de7e67fe357465b8ec359399d7afb637499-656x816.png?w=656&h=816&q=75&fit=max&auto=format",
+        "alt": "A cursor vector editing a design",
+        "width": 656,
+        "height": 816
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/b87135e6a9c3ac94f0a433889659b3434086682e-656x816.png?w=656&h=816&q=75&fit=max&auto=format",
+        "alt": "A prompt node and a pre-selected image node connect to create the visual output of a butterfly on the Figma Weave interface",
+        "width": 656,
+        "height": 816
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/55e1130298788b5d059c311fcc01437142024bd5-992x1232.png?w=992&h=1232&q=75&fit=max&auto=format",
+        "alt": "UI over a butterfly bitmap mosaic with optionality to change the spacing and establish minimum and maximum sizes",
+        "width": 992,
+        "height": 1232
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/49adaf90dfa6810bb58849391baa1c63997c205c-984x1476.png?w=984&h=1476&q=75&fit=max&auto=format",
+        "alt": "Components for chips, cards, tiles, and checkboxes",
+        "width": 984,
+        "height": 1476
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/a1a3c0b5d4d50c322fc65cac50dd6002a1bad886-984x984.png?w=984&h=984&q=75&fit=max&auto=format",
+        "alt": "Laptop displaying a camping website",
+        "width": 984,
+        "height": 984
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/e9d39e9ed2b2566143fb3e43b6d3b1439f9503dc-984x1476.png?w=984&h=1476&q=75&fit=max&auto=format",
+        "alt": "Social media graphic promoting brunch at a coffee shop",
+        "width": 984,
+        "height": 1476
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/bafd1ed5cecdcc3a2b0e2ed559b9f3c55164812d-984x984.png?w=984&h=984&q=75&fit=max&auto=format",
+        "alt": "Running mobile app displaying a map",
+        "width": 984,
+        "height": 984
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/cf29a13641419e219ff32ad7672a5c06a53fc078-984x656.png?w=984&h=656&q=75&fit=max&auto=format",
+        "alt": "Brand Vision presentation template",
+        "width": 984,
+        "height": 656
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/4db4d42b78081b829f42f7292111b4062a5fd1e2-984x984.png?w=984&h=984&q=75&fit=max&auto=format",
+        "alt": "Wireframe of a website",
+        "width": 984,
+        "height": 984
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/99cb6044391d18db5db1faeeef73a06debe25455-984x656.png?w=984&h=656&q=75&fit=max&auto=format",
+        "alt": "Butterfly illustration",
+        "width": 984,
+        "height": 656
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/836e57c15aa7167b38429208e7cfa48363ce7340-984x984.png?w=984&h=984&q=75&fit=max&auto=format",
+        "alt": "Personal portfolio website pulled up on an ipad",
+        "width": 984,
+        "height": 984
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/b9b26ef1239186ebedb97f8a4cf62b2d512bb842-984x1476.png?w=984&h=1476&q=75&fit=max&auto=format",
+        "alt": "Ad for a sale",
+        "width": 984,
+        "height": 1476
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/b08d37520f7d5ad8d6562975b5932dd2d9a862bb-1200x630.gif?w=1200&q=70&fit=max&auto=format",
+        "alt": "Official product preview",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "figma-anima": {
+    "slug": "figma-anima",
+    "page_url": "https://www.animaapp.com/",
+    "candidates": [
+      {
+        "url": "https://a.storyblok.com/f/89137/2124x816/9f4d3b6474/frameworks-tools.png",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://a.storyblok.com/f/89137/263x263/397cfb1ad1/alex_shirazi.jpg",
+        "alt": "Alex Shirazi",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://a.storyblok.com/f/89137/400x400/f0d9a22689/miguelfez.jpg",
+        "alt": "Miguel Fernandez",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://a.storyblok.com/f/89137/399x399/396442e719/enzo_faleiro.jpg",
+        "alt": "Enzo Faleiro",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://a.storyblok.com/f/89137/400x400/1bd820334d/adikumarsaro.jpg",
+        "alt": "Aditya Kumar Saroj",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://a.storyblok.com/f/89137/400x400/14bd8acf91/andrewbaisden.png",
+        "alt": "Andrew Baisden",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://a.storyblok.com/f/89137/400x400/c693c2d997/cobi-bean.jpg",
+        "alt": "cobi.bean",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://a.storyblok.com/f/89137/400x400/0f68b0005d/deepakkoshy.jpg",
+        "alt": "Deepak Mathews Koshy",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://a.storyblok.com/f/89137/240x240/5b2afdb747/eric-simons-bolt-ceo.avif",
+        "alt": "Eric Simons",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://a.storyblok.com/f/89137/1840x1142/02948bc427/blog-clone-multi-page.jpg",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://a.storyblok.com/f/89137/1024x636/aca6d5328b/blog-claude-to-figma.jpg",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://a.storyblok.com/f/89137/1024x636/6cd08c95b3/blog-share-agent-code.jpg",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://a.storyblok.com/f/89137/1360x765/c853049624/bg-image-anima-design-to-code-last-section-1360px.png",
+        "alt": "https://a.storyblok.com/f/89137/1360x765/c853049624/bg-image-anima-design-to-code-last-section-1360px.png",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://a.storyblok.com/f/89137/1840x1142/548f935261/anima-the-ux-design-agent.png",
+        "alt": "Official product preview",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "figma-stark": {
+    "slug": "figma-stark",
+    "page_url": "https://stark.so/",
+    "candidates": []
+  },
+  "arena": {
+    "slug": "arena",
+    "page_url": "https://www.are.na/",
+    "candidates": [
+      {
+        "url": "https://www.are.na/og-image.png",
+        "alt": "Official product preview",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  }
+}

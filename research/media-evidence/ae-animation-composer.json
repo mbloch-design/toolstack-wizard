@@ -1,0 +1,34 @@
+{
+  "slug": "ae-animation-composer",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://misterhorse.com/animation-composer"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://d23mmnx9ld45h.cloudfront.net/misterhorse.com_web_v3/Products/Animation%20Composer/20260609/ac.png",
+      "source_page_url": "https://misterhorse.com/animation-composer",
+      "official": true,
+      "alt": "ae-animation-composer official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://d23mmnx9ld45h.cloudfront.net/misterhorse.com_web_v3/Products/Animation%20Composer/20260609/pc.png",
+      "source_page_url": "https://misterhorse.com/animation-composer",
+      "official": true,
+      "alt": "ae-animation-composer official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://d23mmnx9ld45h.cloudfront.net/misterhorse.com_web_v3/Products/Animation%20Composer/Main%20Page%20v2/pp-ac-link-preview-image.jpg",
+      "source_page_url": "https://misterhorse.com/animation-composer",
+      "official": true,
+      "alt": "Official product preview"
+    }
+  ]
+}

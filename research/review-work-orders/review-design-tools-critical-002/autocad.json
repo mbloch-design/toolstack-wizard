@@ -1,0 +1,260 @@
+{
+  "batch": "review-design-tools-critical-002",
+  "current": {
+    "affiliate_url": "https://autodesk.com/products/autocad",
+    "alternatives": [],
+    "category": "design-tools",
+    "cons": [
+      "Abonnement annuel obligatoire (coût récurrent).",
+      "Courbe d'apprentissage abrupte.",
+      "Ressources system importantes (RAM, processeur).",
+      "Prix très élevé pour les petites équipes."
+    ],
+    "cons_en": [
+      "Mandatory annual subscription (recurring cost).",
+      "Steep learning curve.",
+      "Significant system resources (RAM, CPU).",
+      "Very high price for small teams."
+    ],
+    "host_app": null,
+    "id": "autocad",
+    "long_description": "AutoCAD, c'est le standard mondial du dessin technique 2D et 3D. À partir de 190.53€/mois. Pensé pour les architectes BIM et les scénographes.\n\nGain de temps estimé : 10h/mois.\n\nÀ garder si : plans techniques, cotations, dessin 2D précis. À éviter si : bIM — Revit remplace AutoCAD pour l'architecture. Standard non substituable en bureaux d'études.",
+    "long_description_en": "AutoCAD is the world standard for 2D and 3D technical drawing. Starting at €190.53/month. Built for BIM architects and set designers.\n\nEstimated time saving: 10h/month.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://tooltrim.com/og-screenshots/autocad.jpg"
+    },
+    "name": "AutoCAD",
+    "pricing": {
+      "paid": "220$/mois ou 1 775$/an"
+    },
+    "pricing_en": null,
+    "pricing_v5": {
+      "cautions": [],
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Entry paid plan",
+      "compare_price_monthly_eur": 190.53,
+      "location_sensitive": false,
+      "official_source_url": "https://www.autodesk.com/fr/products/autocad/overview",
+      "price_reliability": "high",
+      "source_domain": "autodesk.com",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-03-13"
+    },
+    "pros": [
+      "Standard de facto pour la CAO technique.",
+      "Très riche ensemble d'outils de modélisation.",
+      "Écosystème de plugins et extensions mature.",
+      "Support professionnel et formations abondantes."
+    ],
+    "pros_en": [
+      "De facto standard for technical CAD.",
+      "Very rich modeling toolset.",
+      "Mature plugin and extension ecosystem.",
+      "Professional support and abundant training."
+    ],
+    "short_description": "Le standard mondial du dessin technique 2D et 3D.",
+    "short_description_en": "The world standard for 2D and 3D technical drawing.",
+    "slug": "autocad",
+    "source_url": "https://www.autodesk.com/fr/products/autocad/overview",
+    "source_verified_on": "2026-03-13",
+    "use_cases": [
+      "Concevoir des plans architecturaux ou de génie civil.",
+      "Créer des schémas techniques et définitions de produit.",
+      "Collaborer en équipe sur de gros projets CAO."
+    ],
+    "use_cases_en": [
+      "Design architectural or civil engineering plans.",
+      "Create technical schematics and product definitions.",
+      "Collaborate as a team on large CAD projects."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous cherchez une solution gratuite ou peu coûteuse.",
+        "Vous faites uniquement de la mise en page graphique (non technique).",
+        "Vous n'avez besoin que de la CAO 2D simple."
+      ],
+      "keepIf": [
+        "Vous faites de la conception technique ou architecturale professionnelle.",
+        "Vous travaillez en équipe et avez besoin de partage de fichiers fiables.",
+        "La compatibilité DWG avec vos clients est critique."
+      ],
+      "threshold": "AutoCAD s'impose pour la conception technique professionnelle ; pour une introduction ou un usage léger, des alternatives gratuites ou moins chères suffisent."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You're looking for a free or low-cost solution.",
+        "You only do graphic layout (non-technical work).",
+        "You only need simple 2D CAD."
+      ],
+      "keepIf": [
+        "You do professional technical or architectural design.",
+        "You work in teams and need reliable file sharing.",
+        "DWG compatibility with clients is critical."
+      ],
+      "threshold": "AutoCAD is essential for professional technical design; for getting started or light use, free or cheaper alternatives work fine."
+    },
+    "website_url": "https://autodesk.com/products/autocad"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Mandatory annual subscription (recurring cost).",
+        "Steep learning curve.",
+        "Significant system resources (RAM, CPU).",
+        "Very high price for small teams."
+      ],
+      "pros": [
+        "De facto standard for technical CAD.",
+        "Very rich modeling toolset.",
+        "Mature plugin and extension ecosystem.",
+        "Professional support and abundant training."
+      ],
+      "use_cases": [
+        "Design architectural or civil engineering plans.",
+        "Create technical schematics and product definitions.",
+        "Collaborate as a team on large CAD projects."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You're looking for a free or low-cost solution.",
+          "You only do graphic layout (non-technical work).",
+          "You only need simple 2D CAD."
+        ],
+        "keepIf": [
+          "You do professional technical or architectural design.",
+          "You work in teams and need reliable file sharing.",
+          "DWG compatibility with clients is critical."
+        ],
+        "threshold": "AutoCAD is essential for professional technical design; for getting started or light use, free or cheaper alternatives work fine."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Essai gratuit 30 jours ; pas de version gratuite permanente.",
+        "exists": false
+      },
+      "key_features": [
+        "Dessin technique 2D et modélisation 3D",
+        "Outils de conception paramétriques",
+        "Compatibilité DWG/DXF",
+        "Bibliothèques de symboles et motifs",
+        "Collaboration en temps réel sur cloud (AutoCAD Web + Mobile)"
+      ],
+      "plans": [
+        {
+          "name": "AutoCAD (abonnement individuel)",
+          "price": "235 $/mois ou 1 865 $/an"
+        },
+        {
+          "name": "AutoCAD LT (version 2D simplifiée)",
+          "price": "500 $/an"
+        },
+        {
+          "name": "Architecture, Engineering & Construction Collection",
+          "price": "3 795 $/siège/an (inclut Revit, Civil 3D, etc.)"
+        }
+      ],
+      "pricing_model": "Abonnement annuel (pas de licence perpétuelle). Tarification par édition ou collections thématiques.",
+      "what": "Logiciel professionnel de conception assistée par ordinateur (CAO) pour la modélisation, le dessin technique en 2D et 3D. Outil réputé auprès des architectes, ingénieurs et designers, utilisé pour les plans, schémas et maquettes complexes.",
+      "what_en": "Professional computer-aided design (CAD) software for modeling, technical 2D and 3D drawing. Widely used by architects, engineers, and designers for plans, schematics, and complex mockups."
+    },
+    "fr": {
+      "cons": [
+        "Abonnement annuel obligatoire (coût récurrent).",
+        "Courbe d'apprentissage abrupte.",
+        "Ressources system importantes (RAM, processeur).",
+        "Prix très élevé pour les petites équipes."
+      ],
+      "pros": [
+        "Standard de facto pour la CAO technique.",
+        "Très riche ensemble d'outils de modélisation.",
+        "Écosystème de plugins et extensions mature.",
+        "Support professionnel et formations abondantes."
+      ],
+      "relevant_for": [
+        "Architectes",
+        "Ingénieurs",
+        "Designers industriels",
+        "Équipes CAO"
+      ],
+      "use_cases": [
+        "Concevoir des plans architecturaux ou de génie civil.",
+        "Créer des schémas techniques et définitions de produit.",
+        "Collaborer en équipe sur de gros projets CAO."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous cherchez une solution gratuite ou peu coûteuse.",
+          "Vous faites uniquement de la mise en page graphique (non technique).",
+          "Vous n'avez besoin que de la CAO 2D simple."
+        ],
+        "keepIf": [
+          "Vous faites de la conception technique ou architecturale professionnelle.",
+          "Vous travaillez en équipe et avez besoin de partage de fichiers fiables.",
+          "La compatibilité DWG avec vos clients est critique."
+        ],
+        "threshold": "AutoCAD s'impose pour la conception technique professionnelle ; pour une introduction ou un usage léger, des alternatives gratuites ou moins chères suffisent."
+      }
+    },
+    "slug": "autocad",
+    "sources": [
+      {
+        "label": "Autodesk AutoCAD — site officiel",
+        "url": "https://www.autodesk.com/products/autocad/overview"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-002",
+    "batch_position": 18,
+    "blockers": [],
+    "catalog_hash": "sha256:6afe4a1d6e9f997f74e5eaaca807de694c814e05a026947857a329f5c25102f9",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:a6916b819fbded5472c0a39c56d42fd852348ef3fd976208b0c8155132cadabc",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "AutoCAD",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:594ee0a4a95ea1d853d0e210efe534a174aee3abc4218883b38e42b02c9bb3d5",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "autocad",
+    "source_url": "https://www.autodesk.com/fr/products/autocad/overview",
+    "source_verified_on": "2026-03-13",
+    "status": "QUEUED"
+  }
+}

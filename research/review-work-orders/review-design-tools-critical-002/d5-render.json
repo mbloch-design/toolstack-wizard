@@ -1,0 +1,262 @@
+{
+  "batch": "review-design-tools-critical-002",
+  "current": {
+    "affiliate_url": "https://www.d5render.com",
+    "alternatives": [
+      "enscape",
+      "twinmotion",
+      "lumion"
+    ],
+    "category": "design-tools",
+    "cons": [
+      "Windows uniquement ; pas de macOS/Linux.",
+      "Nécessite un GPU dédié performant.",
+      "Tier Community limité en résolutions et exports."
+    ],
+    "cons_en": [
+      "Windows only; no macOS or Linux support.",
+      "Requires a capable dedicated GPU.",
+      "Community tier limited in resolution and exports."
+    ],
+    "host_app": null,
+    "id": "d5-render",
+    "long_description": "D5 Render, c'est la nouvelle étoile montante du rendu temps réel pour l'archviz. Son pitch : la vitesse et l'accessibilité. Tu connectes ton modèle (SketchUp, Revit, Rhino, 3ds Max, Blender, Archicad) en live-sync, et tu obtiens des rendus photoréalistes en temps réel, avec une grosse bibliothèque d'assets et des fonctions IA (génération de matériaux, d'environnements). C'est conçu pour les architectes et designers d'intérieur qui veulent de belles images vite, sans la complexité d'un V-Ray.\n\nCôté prix, D5 joue l'agressivité : une édition Community gratuite (avec watermark et limite 1080p) pour tester, et D5 Pro autour de 456$/an (environ 38$/mois), ce qui sous-cote Enscape et Lumion d'une bonne marge.\n\nL'arbitrage se joue face aux autres moteurs temps réel d'archviz. Enscape (Chaos) est le standard du live-sync, Lumion vise un rendu plus cinématique, et Twinmotion est gratuit sous 1M$ de CA. D5 Render se distingue par son rapport vitesse-prix et ses fonctions IA récentes. Pour un freelance archviz qui veut un excellent rendu sans exploser son budget, c'est devenu un choix très sérieux.",
+    "long_description_en": "D5 Render is the rising star of real-time archviz rendering. Its pitch: speed and accessibility. You connect your model (SketchUp, Revit, Rhino, 3ds Max, Blender, Archicad) via live-sync and get photorealistic renders in real time, with a large asset library and AI features (material and environment generation). It's built for architects and interior designers who want great images fast, without the complexity of a V-Ray.\n\nOn price, D5 plays aggressive: a free Community edition (with watermark and 1080p cap) to try it, and D5 Pro around $456/year (about $38/month), undercutting Enscape and Lumion by a good margin.\n\nThe trade-off is against other real-time archviz engines. Enscape (Chaos) is the live-sync standard, Lumion aims for a more cinematic look, and Twinmotion is free under $1M revenue. D5 Render stands out for its speed-to-price ratio and recent AI features. For a freelance archviz artist who wants excellent rendering without blowing the budget, it's become a very serious option.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://tooltrim.com/og-screenshots/d5-render.jpg"
+    },
+    "name": "D5 Render",
+    "pricing": {
+      "free": "Community gratuit (watermark, 1080p)",
+      "paid": "D5 Pro ~38€/mois (~456$/an)."
+    },
+    "pricing_en": {
+      "free": "Community free (watermark, 1080p)",
+      "paid": "D5 Pro ~€38/month (~$456/year)."
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Community gratuit (watermark, 1080p) ; D5 Pro ~456$/an (~38$/mois)"
+      ],
+      "compare_plan_kind": "subscription",
+      "compare_plan_name": "D5 Pro (annuel)",
+      "compare_price_monthly_eur": 38,
+      "official_source_url": "https://www.d5render.com",
+      "price_reliability": "high",
+      "source_domain": "d5render.com",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-06-17"
+    },
+    "pros": [
+      "Rendu en temps réel avec IA pour amélioration instantanée.",
+      "Intégration seamless avec les outils CAO courants.",
+      "Tier Community gratuit pour débuter.",
+      "Génération rapide de visuels professionnels sans expertise en rendu."
+    ],
+    "pros_en": [
+      "Real-time rendering with AI for instant enhancement.",
+      "Seamless integration with popular CAD tools.",
+      "Free Community tier to get started.",
+      "Rapid generation of professional visuals without rendering expertise."
+    ],
+    "short_description": "Moteur de rendu temps réel pour l'archviz, rapide et abordable (SketchUp, Revit, Rhino).",
+    "short_description_en": "Real-time render engine for archviz, fast and affordable (SketchUp, Revit, Rhino).",
+    "slug": "d5-render",
+    "source_url": "https://www.d5render.com",
+    "source_verified_on": "2026-06-17",
+    "use_cases": [
+      "Visualiser un projet architectural en direct avec clients.",
+      "Itérer rapidement sur des concepts d'aménagement.",
+      "Générer des rendus 360° et tours VR pour présentation."
+    ],
+    "use_cases_en": [
+      "Visualize an architectural project live with clients.",
+      "Rapidly iterate on space planning concepts.",
+      "Generate 360° renders and VR tours for presentations."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous utilisez macOS ou Linux (Windows uniquement).",
+        "Vous n'avez pas de GPU dédié compatible DirectX 12.",
+        "Vous cherchez une solution entièrement gratuite sans limitations."
+      ],
+      "keepIf": [
+        "Vous êtes architecte ou designer visualisant des projets en temps réel.",
+        "Vous travaillez avec SketchUp, Revit ou 3ds Max et voulez itérer rapidement.",
+        "Vous avez besoin de rendus photoréalistes sans attendre d'interminables calculs."
+      ],
+      "threshold": "D5 Render s'impose pour les architectes qui veulent explorer les designs en direct ; sinon un logiciel plus généraliste convient."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You work on macOS or Linux (Windows only).",
+        "You lack a DirectX 12–capable dedicated GPU.",
+        "You seek an entirely free solution with no limitations."
+      ],
+      "keepIf": [
+        "You're an architect or designer visualizing projects in real-time.",
+        "You use SketchUp, Revit, or 3ds Max and need rapid iteration.",
+        "You want photorealistic renders without waiting for long render calculations."
+      ],
+      "threshold": "D5 Render is ideal for architects exploring designs live; otherwise a more general-purpose tool suits you."
+    },
+    "website_url": "https://www.d5render.com"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Windows only; no macOS or Linux support.",
+        "Requires a capable dedicated GPU.",
+        "Community tier limited in resolution and exports."
+      ],
+      "pros": [
+        "Real-time rendering with AI for instant enhancement.",
+        "Seamless integration with popular CAD tools.",
+        "Free Community tier to get started.",
+        "Rapid generation of professional visuals without rendering expertise."
+      ],
+      "use_cases": [
+        "Visualize an architectural project live with clients.",
+        "Rapidly iterate on space planning concepts.",
+        "Generate 360° renders and VR tours for presentations."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You work on macOS or Linux (Windows only).",
+          "You lack a DirectX 12–capable dedicated GPU.",
+          "You seek an entirely free solution with no limitations."
+        ],
+        "keepIf": [
+          "You're an architect or designer visualizing projects in real-time.",
+          "You use SketchUp, Revit, or 3ds Max and need rapid iteration.",
+          "You want photorealistic renders without waiting for long render calculations."
+        ],
+        "threshold": "D5 Render is ideal for architects exploring designs live; otherwise a more general-purpose tool suits you."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Community tier gratuit ; plans Pro et Teams payants.",
+        "exists": true
+      },
+      "key_features": [
+        "Real-time path tracing avec ombres et reflets instantanés",
+        "AI Enhancer, AI Atmosphere Match, AI Ultra HD Texture",
+        "Bibliotèque d'assets intégrée (arbres, personnes, véhicules, matériaux)",
+        "Rendu 16K (Pro), Panoramas, tours VR et Showreel"
+      ],
+      "plans": [
+        {
+          "name": "Community",
+          "price": "Gratuit"
+        },
+        {
+          "name": "Pro",
+          "price": "38 $/mois ou 360 $/an (20% de réduction annuelle)"
+        },
+        {
+          "name": "Teams",
+          "price": "75 $/siège/mois ou 708 $/siège/an (21% de réduction annuelle)"
+        }
+      ],
+      "pricing_model": "Freemium avec abonnement mensuel ou annuel pour plans Pro et Teams.",
+      "what": "Logiciel de rendu 3D en temps réel destiné aux architectes et designers, avec support du ray tracing instantané et intégration avec SketchUp, Revit et 3ds Max.",
+      "what_en": "Real-time 3D rendering software for architects and designers, featuring instant ray tracing and integration with SketchUp, Revit, and 3ds Max."
+    },
+    "fr": {
+      "cons": [
+        "Windows uniquement ; pas de macOS/Linux.",
+        "Nécessite un GPU dédié performant.",
+        "Tier Community limité en résolutions et exports."
+      ],
+      "pros": [
+        "Rendu en temps réel avec IA pour amélioration instantanée.",
+        "Intégration seamless avec les outils CAO courants.",
+        "Tier Community gratuit pour débuter.",
+        "Génération rapide de visuels professionnels sans expertise en rendu."
+      ],
+      "relevant_for": [
+        "Architectes",
+        "Designers d'intérieur",
+        "Visualisateurs 3D"
+      ],
+      "use_cases": [
+        "Visualiser un projet architectural en direct avec clients.",
+        "Itérer rapidement sur des concepts d'aménagement.",
+        "Générer des rendus 360° et tours VR pour présentation."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous utilisez macOS ou Linux (Windows uniquement).",
+          "Vous n'avez pas de GPU dédié compatible DirectX 12.",
+          "Vous cherchez une solution entièrement gratuite sans limitations."
+        ],
+        "keepIf": [
+          "Vous êtes architecte ou designer visualisant des projets en temps réel.",
+          "Vous travaillez avec SketchUp, Revit ou 3ds Max et voulez itérer rapidement.",
+          "Vous avez besoin de rendus photoréalistes sans attendre d'interminables calculs."
+        ],
+        "threshold": "D5 Render s'impose pour les architectes qui veulent explorer les designs en direct ; sinon un logiciel plus généraliste convient."
+      }
+    },
+    "slug": "d5-render",
+    "sources": [
+      {
+        "label": "D5 Render official site",
+        "url": "https://www.d5render.com"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-002",
+    "batch_position": 20,
+    "blockers": [],
+    "catalog_hash": "sha256:8911be4060d2caad40f035af7fb436f6008133864085ed2c6fb8252e7416e5a4",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:5b55d0cf1f1252505b231dd7a8f937384cf3d726bc9d5622458f3912de4cb7c0",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "D5 Render",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:3744d7289d7fc26d56851bce8133c89ee46b830556e732323401d9ae33e06758",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "d5-render",
+    "source_url": "https://www.d5render.com",
+    "source_verified_on": "2026-06-17",
+    "status": "QUEUED"
+  }
+}

@@ -1,0 +1,297 @@
+{
+  "batch": "review-design-tools-critical-002",
+  "current": {
+    "affiliate_url": "https://figma.com",
+    "alternatives": [
+      "canva",
+      "sketch",
+      "adobe-xd"
+    ],
+    "category": "design-tools",
+    "cons": [
+      "Coût par siège qui monte avec la taille de l'équipe.",
+      "Orienté produit/UI : moins adapté au print ou au vectoriel pur.",
+      "Dépendance au cloud et au navigateur."
+    ],
+    "cons_en": [
+      "Per-seat cost climbs with team size.",
+      "Product/UI-oriented: less suited to print or pure vector.",
+      "Cloud and browser dependency."
+    ],
+    "host_app": null,
+    "id": "figma",
+    "long_description": "Figma est passé d'un éditeur UI collaboratif à un écosystème complet de création numérique. Figma Design reste le cœur pour les interfaces, prototypes, composants, variables et design systems. Autour de lui, FigJam structure l'idéation, Slides les présentations, Dev Mode le passage au code, Make transforme un brief ou une maquette en prototype fonctionnel, Sites publie des sites, Draw renforce l'illustration vectorielle, Buzz industrialise les contenus de marque et Motion ajoute l'animation. Weave complète l'ensemble avec des workflows créatifs IA multi-modèles.\n\nLe plan Starter est gratuit avec un accès limité aux produits et 500 crédits IA mensuels au maximum. Sur Professional, le siège Full coûte 16 $/mois et donne accès à toute la suite ; le siège Dev coûte 12 $/mois et le siège Collab 3 $/mois. Organization monte à 55 $/mois pour un siège Full, Enterprise à 90 $/mois. Figma ne vend pas ces produits séparément : le type de siège détermine ce que chaque personne peut utiliser.\n\nPour une équipe produit, la valeur vient de la continuité entre recherche, design system, prototype, handoff et mise en ligne. Pour un indépendant qui ne fait que quelques visuels ou présentations, l'étendue de la suite peut être excessive et Canva reste souvent plus direct. Il faut surtout surveiller l'attribution des sièges et les crédits IA : l'écosystème devient rentable quand plusieurs étapes du workflow restent réellement dans Figma.",
+    "long_description_en": "Figma has evolved from a collaborative UI editor into a complete digital creation ecosystem. Figma Design remains the core for interfaces, prototypes, components, variables, and design systems. Around it, FigJam supports ideation, Slides handles presentations, Dev Mode bridges design and code, Make turns a prompt or design into a functional prototype, Sites publishes websites, Draw expands vector illustration, Buzz scales brand content, and Motion adds animation. Weave complements the suite with multi-model AI creative workflows.\n\nThe Starter plan is free with limited product access and up to 500 monthly AI credits. On Professional, a Full seat costs $16/month and unlocks the whole suite; a Dev seat costs $12/month and a Collab seat $3/month. Organization rises to $55/month for a Full seat and Enterprise to $90/month. Figma does not sell these products individually: each person's seat type determines access.\n\nFor a product team, the value comes from continuity across research, design systems, prototyping, handoff, and publishing. For a freelancer who only makes occasional visuals or presentations, the suite can be excessive and Canva is often more direct. Seat allocation and AI credits deserve attention: the ecosystem pays off when several workflow stages genuinely stay inside Figma.",
+    "media": {
+      "gallery_images": [
+        "https://cdn.sanity.io/images/599r6htc/regionalized/4b9ade839f38291c91b76608d22e7c7a9ad525fd-542x305.png",
+        "https://cdn.sanity.io/images/599r6htc/regionalized/7e39b983c6ad865e0a7a5243d914020e69a23f70-542x305.png",
+        "https://cdn.sanity.io/images/599r6htc/regionalized/1883a9ebc4ce697b718301ad247c0fff45c572c1-540x304.png"
+      ],
+      "og_image_url": "https://cdn.sanity.io/images/599r6htc/regionalized/b08d37520f7d5ad8d6562975b5932dd2d9a862bb-1200x630.gif?w=1200&q=70&fit=max&auto=format"
+    },
+    "name": "Figma",
+    "pricing": {
+      "free": "Starter gratuit — accès limité à la suite, jusqu'à 500 crédits IA/mois",
+      "paid": "Professional : Full 16 $/mois · Dev 12 $/mois · Collab 3 $/mois"
+    },
+    "pricing_en": {
+      "free": "Free Starter plan — limited suite access, up to 500 AI credits/month",
+      "paid": "Professional: Full $16/month · Dev $12/month · Collab $3/month"
+    },
+    "pricing_v5": {
+      "billing_model": "seat",
+      "billing_options": [
+        {
+          "label_en": "Starter",
+          "label_fr": "Starter",
+          "price_monthly_eur": 0,
+          "value": "free"
+        },
+        {
+          "currency": "EUR",
+          "label_en": "Professional seat",
+          "label_fr": "Professional seat",
+          "price_monthly_eur": 16,
+          "value": "paid"
+        },
+        {
+          "label_en": "Organization / team",
+          "label_fr": "Organization / équipe",
+          "needs_verification": true,
+          "value": "team"
+        },
+        {
+          "label_en": "I don’t know",
+          "label_fr": "Je ne sais pas",
+          "needs_verification": true,
+          "value": "unknown"
+        }
+      ],
+      "cautions": [
+        "Starter donne un accès limité aux produits et jusqu'à 500 crédits IA par mois.",
+        "Les produits ne sont pas vendus séparément : l'accès dépend du plan et du type de siège."
+      ],
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Professional Full seat",
+      "compare_price_monthly_eur": 16,
+      "location_sensitive": false,
+      "official_source_url": "https://www.figma.com/pricing/",
+      "price_reliability": "high",
+      "source_domain": "help.figma.com",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-08-27"
+    },
+    "pros": [
+      "Design d'interface et collaboration en temps réel dans le navigateur.",
+      "Prototypage avancé (animations, variables, logique).",
+      "Dev Mode pour le handoff développeur (inspection, export).",
+      "FigJam pour le brainstorming et les diagrammes."
+    ],
+    "pros_en": [
+      "Interface design and real-time collaboration in the browser.",
+      "Advanced prototyping (animations, variables, logic).",
+      "Dev Mode for developer handoff (inspection, export).",
+      "FigJam for brainstorming and diagrams."
+    ],
+    "short_description": "Canvas collaboratif pour concevoir, prototyper, coder, publier et décliner des produits numériques.",
+    "short_description_en": "Collaborative canvas for designing, prototyping, coding, publishing, and scaling digital products.",
+    "slug": "figma",
+    "source_url": "https://www.figma.com/pricing/",
+    "source_verified_on": "2026-08-27",
+    "use_cases": [
+      "Concevoir et prototyper une interface à plusieurs en temps réel.",
+      "Préparer le handoff développeur via Dev Mode.",
+      "Animer un atelier ou un diagramme d'équipe avec FigJam."
+    ],
+    "use_cases_en": [
+      "Design and prototype an interface collaboratively in real time.",
+      "Prepare developer handoff via Dev Mode.",
+      "Run a team workshop or diagram with FigJam."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous faites surtout du graphisme print ou vectoriel pur (Illustrator, InDesign).",
+        "Vos besoins de design UI sont très ponctuels.",
+        "Vous voulez un outil entièrement hors ligne."
+      ],
+      "keepIf": [
+        "Vous concevez des interfaces et collaborez en temps réel sur le design.",
+        "Vous voulez réunir design, prototypage et handoff développeur au même endroit.",
+        "Votre équipe design/produit travaille dans le navigateur, multi-plateforme."
+      ],
+      "threshold": "Figma s'impose quand le design d'interface collaboratif et le prototypage priment ; pour du print ou du vectoriel pur, un outil dédié est plus adapté."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You mostly do print or pure vector work (Illustrator, InDesign).",
+        "Your UI design needs are very occasional.",
+        "You want a fully offline tool."
+      ],
+      "keepIf": [
+        "You design interfaces and collaborate on design in real time.",
+        "You want design, prototyping and developer handoff in one place.",
+        "Your design/product team works in the browser, cross-platform."
+      ],
+      "threshold": "Figma makes sense when collaborative interface design and prototyping matter most; for print or pure vector work, a dedicated tool fits better."
+    },
+    "website_url": "https://figma.com"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Per-seat cost climbs with team size.",
+        "Product/UI-oriented: less suited to print or pure vector.",
+        "Cloud and browser dependency."
+      ],
+      "pros": [
+        "Interface design and real-time collaboration in the browser.",
+        "Advanced prototyping (animations, variables, logic).",
+        "Dev Mode for developer handoff (inspection, export).",
+        "FigJam for brainstorming and diagrams."
+      ],
+      "use_cases": [
+        "Design and prototype an interface collaboratively in real time.",
+        "Prepare developer handoff via Dev Mode.",
+        "Run a team workshop or diagram with FigJam."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You mostly do print or pure vector work (Illustrator, InDesign).",
+          "Your UI design needs are very occasional.",
+          "You want a fully offline tool."
+        ],
+        "keepIf": [
+          "You design interfaces and collaborate on design in real time.",
+          "You want design, prototyping and developer handoff in one place.",
+          "Your design/product team works in the browser, cross-platform."
+        ],
+        "threshold": "Figma makes sense when collaborative interface design and prototyping matter most; for print or pure vector work, a dedicated tool fits better."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Starter gratuit : brouillons illimités, accès aux UI kits/templates, 150 crédits IA/jour (max 500/mois).",
+        "exists": true
+      },
+      "key_features": [
+        "Design d'interface (composants, auto layout, édition vectorielle)",
+        "FigJam (tableau blanc collaboratif)",
+        "Dev Mode (inspection, export CSS/iOS/Android, handoff)",
+        "Prototypage avancé (animations, variables, logique conditionnelle)"
+      ],
+      "plans": [
+        {
+          "name": "Professional",
+          "price": "16 $/mois par siège"
+        },
+        {
+          "name": "Organization",
+          "price": "55 $/mois par siège (annuel)"
+        },
+        {
+          "name": "Enterprise",
+          "price": "90 $/mois par siège (annuel)"
+        }
+      ],
+      "pricing_model": "Palier Starter gratuit, puis Professional, Organization et Enterprise (par éditeur/siège).",
+      "what": "Plateforme de design d'interface et de collaboration en temps réel, dans le navigateur.",
+      "what_en": "Interface design and real-time collaboration platform in the browser."
+    },
+    "fr": {
+      "cons": [
+        "Coût par siège qui monte avec la taille de l'équipe.",
+        "Orienté produit/UI : moins adapté au print ou au vectoriel pur.",
+        "Dépendance au cloud et au navigateur."
+      ],
+      "pros": [
+        "Design d'interface et collaboration en temps réel dans le navigateur.",
+        "Prototypage avancé (animations, variables, logique).",
+        "Dev Mode pour le handoff développeur (inspection, export).",
+        "FigJam pour le brainstorming et les diagrammes."
+      ],
+      "relevant_for": [
+        "Designers produit/UI",
+        "Équipes produit",
+        "Studios et agences"
+      ],
+      "use_cases": [
+        "Concevoir et prototyper une interface à plusieurs en temps réel.",
+        "Préparer le handoff développeur via Dev Mode.",
+        "Animer un atelier ou un diagramme d'équipe avec FigJam."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous faites surtout du graphisme print ou vectoriel pur (Illustrator, InDesign).",
+          "Vos besoins de design UI sont très ponctuels.",
+          "Vous voulez un outil entièrement hors ligne."
+        ],
+        "keepIf": [
+          "Vous concevez des interfaces et collaborez en temps réel sur le design.",
+          "Vous voulez réunir design, prototypage et handoff développeur au même endroit.",
+          "Votre équipe design/produit travaille dans le navigateur, multi-plateforme."
+        ],
+        "threshold": "Figma s'impose quand le design d'interface collaboratif et le prototypage priment ; pour du print ou du vectoriel pur, un outil dédié est plus adapté."
+      }
+    },
+    "slug": "figma",
+    "sources": [
+      {
+        "label": "Page tarifaire officielle Figma",
+        "url": "https://www.figma.com/pricing/"
+      }
+    ],
+    "verified_on": "2026-07-23"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-002",
+    "batch_position": 23,
+    "blockers": [],
+    "catalog_hash": "sha256:a1277b3e3529eb8ce81f9a34bc96e3b09e8d9da5cb0a146a441d3691392f8695",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:44635629f26421919f4aed2dbd2181a10204891f95cff40dd2ee163e70879e6c",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Figma",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:425ad4964d801fb2108f0fb6bc87e2bf1bdf130e2c6c9baaf82467311c9abf50",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "figma",
+    "source_url": "https://www.figma.com/pricing/",
+    "source_verified_on": "2026-08-27",
+    "status": "QUEUED"
+  }
+}

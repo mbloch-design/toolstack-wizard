@@ -1,0 +1,302 @@
+{
+  "batch": "review-design-tools-critical-002",
+  "current": {
+    "affiliate_url": "https://elements.envato.com",
+    "alternatives": [],
+    "category": "design-tools",
+    "cons": [
+      "Abonnement récurrent (pas achat unique).",
+      "Coûts cumulés sur longue durée.",
+      "Outils IA à crédits limités par tier (authentifier sur site officiel)."
+    ],
+    "cons_en": [
+      "Recurring subscription (not one-time purchase).",
+      "Cumulative costs over time.",
+      "AI tools credit-limited per tier (verify on official site)."
+    ],
+    "host_app": null,
+    "id": "envato-elements",
+    "long_description": "Envato Elements est la version abonnement illimité du catalogue Envato (templates WordPress, présentations, graphismes, musiques, vidéos stock), à la différence de ThemeForest qui vend ses produits à l'unité.\n\nPour qui télécharge plusieurs ressources créatives par mois, l'abonnement devient rapidement plus économique que l'achat individuel — un seul téléchargement suffit souvent à rentabiliser le mois.",
+    "long_description_en": "Envato Elements is the unlimited subscription version of the Envato catalog (WordPress templates, presentations, graphics, music, stock video), unlike ThemeForest which sells products individually.\n\nFor anyone downloading several creative resources a month, the subscription quickly becomes more economical than buying individually — often just one download is enough to break even for the month.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://assets.elements.envato.com/apps/storefront/og-default-724bad6c9010550aa8e3.jpg"
+    },
+    "name": "Envato Elements",
+    "pricing": "À partir de ~17€/mois pour un accès illimité à tout le catalogue.",
+    "pricing_en": "From ~$17/month for unlimited access to the entire catalog.",
+    "pricing_v5": {
+      "billing_model": "subscription",
+      "billing_options": [
+        {
+          "currency": "USD",
+          "label_en": "Core annual",
+          "label_fr": "Core annuel",
+          "price_monthly_eur": 15.18,
+          "price_original": 16.5,
+          "value": "paid"
+        },
+        {
+          "label_en": "Teams",
+          "label_fr": "Teams",
+          "needs_verification": true,
+          "value": "team"
+        },
+        {
+          "label_en": "One-off marketplace",
+          "label_fr": "Achat ponctuel",
+          "needs_verification": true,
+          "value": "marketplace"
+        },
+        {
+          "label_en": "I don’t know",
+          "label_fr": "Je ne sais pas",
+          "needs_verification": true,
+          "value": "unknown"
+        }
+      ],
+      "cautions": [
+        "Le prix mensuel sans annuel est plus élevé ; vérifier le mode de facturation.",
+        "Prix source en USD, conversion indicative avec le taux fixe 0.92."
+      ],
+      "compare_plan_kind": "individual",
+      "compare_plan_name": "Core annual monthly equivalent",
+      "compare_price_monthly_eur": 15.18,
+      "conversion_rate_to_eur": 0.92,
+      "currency": "USD",
+      "location_sensitive": true,
+      "official_source_url": "https://elements.envato.com/pricing",
+      "price_original": 16.5,
+      "price_original_currency": "USD",
+      "price_reliability": "high",
+      "source_domain": "elements.envato.com",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-06-15"
+    },
+    "pros": [
+      "Accès illimité à 29+ millions d'assets premium de qualité.",
+      "Suite IA puissante pour génération de contenu (vidéo, image, audio).",
+      "Licence commerciale : utilisez tous les assets/contenu IA pour clients.",
+      "Abonnement économique vs achat à l'unité pour volume élevé.",
+      "Plans d'équipe avec gestion de rôles et partage."
+    ],
+    "pros_en": [
+      "Unlimited access to 29+ million premium quality assets.",
+      "Powerful AI suite for content generation (video, image, audio).",
+      "Commercial license: use all assets/AI-generated content for clients.",
+      "Economical subscription vs. individual purchases for high volume.",
+      "Team plans with role management and sharing."
+    ],
+    "short_description": "Abonnement illimité aux templates, graphismes, musiques et vidéos d'Envato.",
+    "short_description_en": "Unlimited subscription to Envato's templates, graphics, music, and video.",
+    "slug": "envato-elements",
+    "source_url": "https://elements.envato.com/pricing",
+    "source_verified_on": "2026-06-15",
+    "use_cases": [
+      "Créer du contenu vidéo marketing avec VideoGen et stock footage.",
+      "Générer des images et graphiques pour réseaux sociaux.",
+      "Composer de la musique ou sound design pour projets visuels.",
+      "Sourcer photos et video authentiques pour sites web et campagnes.",
+      "Équipes produisant contenus multiples par semaine."
+    ],
+    "use_cases_en": [
+      "Create marketing video content with VideoGen and stock footage.",
+      "Generate images and graphics for social media.",
+      "Compose music or sound design for visual projects.",
+      "Source authentic photos and video for websites and campaigns.",
+      "Teams producing multiple pieces of content weekly."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous n'avez besoin que d'un ou deux assets pour un projet ponctuel (payer à l'unité sur Envato Market).",
+        "Vous cherchez une solution gratuite.",
+        "Vous avez des besoins très spécialisés sans assets génériques."
+      ],
+      "keepIf": [
+        "Vous avez besoin de nombreux assets créatifs régulièrement (photos, videos, musique).",
+        "Vous voulez accès à des outils IA pour générer contenu (vidéos, images, audio).",
+        "Vous travaillez en équipe et avez besoin de collaboration et d'une source unique."
+      ],
+      "threshold": "Envato Elements s'impose pour les créatifs/agences avec usage régulier ; pour achat ponctuel, Envato Market suffit."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You only need one or two assets for a one-off project (pay-per-item on Envato Market).",
+        "You seek a free solution.",
+        "You have highly specialized needs without generic assets."
+      ],
+      "keepIf": [
+        "You need many creative assets regularly (photos, videos, music).",
+        "You want access to AI tools to generate content (videos, images, audio).",
+        "You work in a team and need collaboration and a single source."
+      ],
+      "threshold": "Envato Elements is ideal for creatives/agencies with regular usage; for one-off purchase, Envato Market suffices."
+    },
+    "website_url": "https://elements.envato.com"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Recurring subscription (not one-time purchase).",
+        "Cumulative costs over time.",
+        "AI tools credit-limited per tier (verify on official site)."
+      ],
+      "pros": [
+        "Unlimited access to 29+ million premium quality assets.",
+        "Powerful AI suite for content generation (video, image, audio).",
+        "Commercial license: use all assets/AI-generated content for clients.",
+        "Economical subscription vs. individual purchases for high volume.",
+        "Team plans with role management and sharing."
+      ],
+      "use_cases": [
+        "Create marketing video content with VideoGen and stock footage.",
+        "Generate images and graphics for social media.",
+        "Compose music or sound design for visual projects.",
+        "Source authentic photos and video for websites and campaigns.",
+        "Teams producing multiple pieces of content weekly."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You only need one or two assets for a one-off project (pay-per-item on Envato Market).",
+          "You seek a free solution.",
+          "You have highly specialized needs without generic assets."
+        ],
+        "keepIf": [
+          "You need many creative assets regularly (photos, videos, music).",
+          "You want access to AI tools to generate content (videos, images, audio).",
+          "You work in a team and need collaboration and a single source."
+        ],
+        "threshold": "Envato Elements is ideal for creatives/agencies with regular usage; for one-off purchase, Envato Market suffices."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Aucun tier gratuit ; abonnement payant uniquement. Montants sur la page officielle pour plans spécifiques.",
+        "exists": false
+      },
+      "key_features": [
+        "29+ millions d'assets : 16,3M photos, 340k vidéo, 940k sons, 81k fonts, 380k assets 3D",
+        "Outils IA : VideoGen, ImageGen, ImageEdit, VoiceGen, MusicGen, GraphicsGen, MockUpGen, SoundGen",
+        "Licence commerciale illimitée pour tous les téléchargements et contenu IA généré",
+        "Accès cours/tutoriels Envato Tuts+",
+        "Plans d'équipe pour collaboration."
+      ],
+      "plans": [
+        {
+          "name": "Envato Elements (monthly)",
+          "price": "À partir de 14,50 €/mois"
+        },
+        {
+          "name": "Envato Elements (annual)",
+          "price": "Réduction à l'année (montants sur site officiel)"
+        },
+        {
+          "name": "Envato Elements Teams",
+          "price": "Plans d'équipe disponibles (montants sur site officiel)"
+        }
+      ],
+      "pricing_model": "Abonnement mensuel, annuel ou par équipe avec tiers multiples incluant outils IA.",
+      "what": "Abonnement aux assets créatifs illimités incluant photos, vidéos, musique, sons, graphiques, fonts, templates 3D et outils IA (génération vidéo, image, audio).",
+      "what_en": "Subscription to unlimited creative assets including photos, videos, music, sound effects, graphics, fonts, 3D templates, and AI tools (video, image, audio generation)."
+    },
+    "fr": {
+      "cons": [
+        "Abonnement récurrent (pas achat unique).",
+        "Coûts cumulés sur longue durée.",
+        "Outils IA à crédits limités par tier (authentifier sur site officiel)."
+      ],
+      "pros": [
+        "Accès illimité à 29+ millions d'assets premium de qualité.",
+        "Suite IA puissante pour génération de contenu (vidéo, image, audio).",
+        "Licence commerciale : utilisez tous les assets/contenu IA pour clients.",
+        "Abonnement économique vs achat à l'unité pour volume élevé.",
+        "Plans d'équipe avec gestion de rôles et partage."
+      ],
+      "relevant_for": [
+        "Agences créatives",
+        "Producteurs vidéo",
+        "Graphistes",
+        "Marketers digitaux"
+      ],
+      "use_cases": [
+        "Créer du contenu vidéo marketing avec VideoGen et stock footage.",
+        "Générer des images et graphiques pour réseaux sociaux.",
+        "Composer de la musique ou sound design pour projets visuels.",
+        "Sourcer photos et video authentiques pour sites web et campagnes.",
+        "Équipes produisant contenus multiples par semaine."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous n'avez besoin que d'un ou deux assets pour un projet ponctuel (payer à l'unité sur Envato Market).",
+          "Vous cherchez une solution gratuite.",
+          "Vous avez des besoins très spécialisés sans assets génériques."
+        ],
+        "keepIf": [
+          "Vous avez besoin de nombreux assets créatifs régulièrement (photos, videos, musique).",
+          "Vous voulez accès à des outils IA pour générer contenu (vidéos, images, audio).",
+          "Vous travaillez en équipe et avez besoin de collaboration et d'une source unique."
+        ],
+        "threshold": "Envato Elements s'impose pour les créatifs/agences avec usage régulier ; pour achat ponctuel, Envato Market suffit."
+      }
+    },
+    "slug": "envato-elements",
+    "sources": [
+      {
+        "label": "Envato Elements official site",
+        "url": "https://elements.envato.com"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-002",
+    "batch_position": 22,
+    "blockers": [],
+    "catalog_hash": "sha256:3933e6e8ec5e60f75cd1e2f4dbcdebc5948c6179fef22a96c82abdaf56ab2405",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:809a6445a786496870158bdbbf2237c5b3c1a3e3d01cb16b6318b0a95c211a95",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Envato Elements",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:6911c93c41df04f4145c904e6f2a656ac1cf3147d572349fda08faca5725812b",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "envato-elements",
+    "source_url": "https://elements.envato.com/pricing",
+    "source_verified_on": "2026-06-15",
+    "status": "QUEUED"
+  }
+}

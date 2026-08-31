@@ -2,11 +2,11 @@
   "slug": "adobe-premiere-pro",
   "bundle_parent": "adobe-creative-cloud",
   "author": "ToolTrim — Mike",
-  "verified_on": "2026-07-23",
+  "verified_on": "2026-08-31",
   "sources": [
     {
-      "label": "Adobe Premiere Pro — description et fonctions (Wikipédia)",
-      "url": "https://en.wikipedia.org/wiki/Adobe_Premiere_Pro"
+      "label": "Adobe Premiere Pro — page produit officielle",
+      "url": "https://www.adobe.com/products/premiere.html"
     }
   ],
   "facts": {

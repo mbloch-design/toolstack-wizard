@@ -2,11 +2,11 @@
   "slug": "adobe-lightroom",
   "bundle_parent": "adobe-creative-cloud",
   "author": "ToolTrim — Mike",
-  "verified_on": "2026-07-23",
+  "verified_on": "2026-08-31",
   "sources": [
     {
-      "label": "Adobe Lightroom — description et fonctions (Wikipédia)",
-      "url": "https://en.wikipedia.org/wiki/Adobe_Lightroom"
+      "label": "Adobe Lightroom — page produit officielle",
+      "url": "https://www.adobe.com/products/photoshop-lightroom.html"
     }
   ],
   "facts": {

@@ -1,0 +1,269 @@
+{
+  "batch": "review-design-tools-critical-002",
+  "current": {
+    "affiliate_url": "https://aescripts.com/boa",
+    "alternatives": [],
+    "category": "design-tools",
+    "cons": [
+      "Pas de version d'essai gratuite.",
+      "Prix fixe unique sans réduction étudiants visible.",
+      "Courbe d'apprentissage pour maîtriser les animations complexes.",
+      "Niche : utile surtout pour animations texte/courbes spécifiques."
+    ],
+    "cons_en": [
+      "No free trial version.",
+      "Fixed price with no visible student discount.",
+      "Learning curve for complex animations.",
+      "Niche use case: mainly for curved text and organic deformations."
+    ],
+    "host_app": "adobe-after-effects",
+    "id": "ae-bao-boa",
+    "long_description": "BAO Boa, c'est un plugin After Effects (aescripts) spécialisé dans l'animation de lignes et de tracés. Il permet de faire onduler, dessiner et déformer des lignes SVG de façon organique, avec un contrôle fin, là où les outils natifs d'After Effects sont vite limités. Pour un motion designer qui fait des graphiques animés, des illustrations au trait ou des transitions à base de lignes, c'est un outil précis et puissant.\n\nC'est un achat unique (~49$), sans abonnement.\n\nÀ qui ça s'adresse : aux motion designers qui animent souvent des lignes et des tracés. Si ce type d'animation n'est pas dans tes projets, BAO Boa ne te servira pas. Mais pour de l'animation de lignes organiques, il fait gagner un temps réel et permet des rendus difficiles à obtenir autrement.",
+    "long_description_en": "BAO Boa is an After Effects plugin (aescripts) specialized in animating lines and strokes. It lets you wave, draw and deform SVG lines organically, with fine control, where After Effects' native tools quickly hit their limits. For a motion designer doing animated graphics, line illustrations or line-based transitions, it's a precise, powerful tool.\n\nIt's a one-time purchase (~$49), no subscription.\n\nWho it's for: motion designers who often animate lines and strokes. If that kind of animation isn't in your projects, BAO Boa won't help you. But for organic line animation, it saves real time and enables looks hard to get otherwise.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://tooltrim.com/og-screenshots/ae-bao-boa.jpg"
+    },
+    "name": "BAO Boa",
+    "pricing": {
+      "free": "",
+      "paid": "Achat unique (~49$), licence à vie, pas d'abonnement"
+    },
+    "pricing_en": {
+      "free": "",
+      "paid": "One-time purchase (~$49), lifetime license, no subscription"
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Achat unique (~49$), pas d'abonnement"
+      ],
+      "compare_plan_kind": "individual",
+      "compare_plan_name": "Free",
+      "compare_price_monthly_eur": 0,
+      "location_sensitive": false,
+      "official_source_url": "https://aescripts.com/authors/bao-plugins/products/",
+      "price_reliability": "high",
+      "source_domain": "aescripts.com",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-06-15"
+    },
+    "pros": [
+      "Déformations fluides et contrôlables avec grande précision.",
+      "Licence perpétuelle (pas d'abonnement).",
+      "Options de licence flexible pour équipes et rendus.",
+      "Animations de texte courbes professionnelles."
+    ],
+    "pros_en": [
+      "Smooth, precise distortions along mask paths.",
+      "Perpetual license (no subscription).",
+      "Flexible licensing for teams and render nodes.",
+      "Professional curved text animations."
+    ],
+    "short_description": "Animation de lignes et formes SVG dans After Effects. Tracés organiques.",
+    "short_description_en": "SVG line and shape animation in After Effects. Organic strokes.",
+    "slug": "ae-bao-boa",
+    "source_url": "https://aescripts.com/authors/bao-plugins/products/",
+    "source_verified_on": "2026-06-15",
+    "use_cases": [
+      "Animer du texte qui suit une courbe de rivière ou route.",
+      "Déformer une forme selon une trajectoire de masque.",
+      "Créer des ondulations organiques sur des éléments graphiques.",
+      "Titre génériques avec texte courbe et fluide."
+    ],
+    "use_cases_en": [
+      "Animate text following a river or road curve.",
+      "Distort a shape along a mask trajectory.",
+      "Create organic waves on graphic elements.",
+      "Generic titles with fluid, curved text."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous êtes débutant et voulez tester avant d'acheter (pas de démo gratuite).",
+        "Vous faites peu d'animations complexes.",
+        "Vous préférez des effets de base natifs After Effects."
+      ],
+      "keepIf": [
+        "Vous créez régulièrement du texte ou des formes courbes et ondulantes.",
+        "Vous avez besoin de distorsions organiques qui suivent des courbes précises.",
+        "Vous travaillez en équipe (options licence réseau disponibles)."
+      ],
+      "threshold": "BAO Boa s'impose pour les animateurs spécialisés dans le texte courbe et les déformations organiques ; pour un usage occasionnel, After Effects natif suffit."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You're new to After Effects and want to test first (no free demo).",
+        "You do little complex animation.",
+        "You prefer After Effects' built-in distortion effects."
+      ],
+      "keepIf": [
+        "You regularly create curved or wavy text and shapes.",
+        "You need organic distortions that follow precise curves.",
+        "You work in a team (network license options available)."
+      ],
+      "threshold": "BAO Boa is essential for animators doing curved text and organic deformations; for occasional use, After Effects built-in effects are enough."
+    },
+    "website_url": "https://aescripts.com/boa"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "No free trial version.",
+        "Fixed price with no visible student discount.",
+        "Learning curve for complex animations.",
+        "Niche use case: mainly for curved text and organic deformations."
+      ],
+      "pros": [
+        "Smooth, precise distortions along mask paths.",
+        "Perpetual license (no subscription).",
+        "Flexible licensing for teams and render nodes.",
+        "Professional curved text animations."
+      ],
+      "use_cases": [
+        "Animate text following a river or road curve.",
+        "Distort a shape along a mask trajectory.",
+        "Create organic waves on graphic elements.",
+        "Generic titles with fluid, curved text."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You're new to After Effects and want to test first (no free demo).",
+          "You do little complex animation.",
+          "You prefer After Effects' built-in distortion effects."
+        ],
+        "keepIf": [
+          "You regularly create curved or wavy text and shapes.",
+          "You need organic distortions that follow precise curves.",
+          "You work in a team (network license options available)."
+        ],
+        "threshold": "BAO Boa is essential for animators doing curved text and organic deformations; for occasional use, After Effects built-in effects are enough."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Pas de version gratuite. Aucun essai gratuit visible sur le site officiel.",
+        "exists": false
+      },
+      "key_features": [
+        "Déformation fluide le long de chemins de masque",
+        "Contrôle avancé de la distorsion (amplitude, atténuation, angle)",
+        "Animations de texte courbes et ondulantes",
+        "Compatible avec les formes, couches de texte et éléments complexes",
+        "Options de licence flexible (utilisateur unique, réseau, rendu)"
+      ],
+      "plans": [
+        {
+          "name": "BAO Boa (Single User License)",
+          "price": "99,99 USD"
+        },
+        {
+          "name": "BAO Boa (Floating License Server)",
+          "price": "99,99 USD"
+        }
+      ],
+      "pricing_model": "Licence perpétuelle d'achat unique. Options multiples : licence utilisateur unique, licence réseau (serveur flottant), licence de rendu. Tous au même prix.",
+      "what": "Plugin After Effects qui permet de déformer les couches le long de courbes de masque. BAO Boa crée des distorsions fluides et organiques en suivant précisément les formes définies par des masques, utile pour l'animation de texte, formes et éléments complexes.",
+      "what_en": "After Effects plugin that distorts layers along mask paths. BAO Boa creates smooth, organic distortions by following mask shapes precisely, useful for animating text, shapes, and complex elements."
+    },
+    "fr": {
+      "cons": [
+        "Pas de version d'essai gratuite.",
+        "Prix fixe unique sans réduction étudiants visible.",
+        "Courbe d'apprentissage pour maîtriser les animations complexes.",
+        "Niche : utile surtout pour animations texte/courbes spécifiques."
+      ],
+      "pros": [
+        "Déformations fluides et contrôlables avec grande précision.",
+        "Licence perpétuelle (pas d'abonnement).",
+        "Options de licence flexible pour équipes et rendus.",
+        "Animations de texte courbes professionnelles."
+      ],
+      "relevant_for": [
+        "Motion designers",
+        "Animateurs After Effects",
+        "Producteurs vidéo"
+      ],
+      "use_cases": [
+        "Animer du texte qui suit une courbe de rivière ou route.",
+        "Déformer une forme selon une trajectoire de masque.",
+        "Créer des ondulations organiques sur des éléments graphiques.",
+        "Titre génériques avec texte courbe et fluide."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous êtes débutant et voulez tester avant d'acheter (pas de démo gratuite).",
+          "Vous faites peu d'animations complexes.",
+          "Vous préférez des effets de base natifs After Effects."
+        ],
+        "keepIf": [
+          "Vous créez régulièrement du texte ou des formes courbes et ondulantes.",
+          "Vous avez besoin de distorsions organiques qui suivent des courbes précises.",
+          "Vous travaillez en équipe (options licence réseau disponibles)."
+        ],
+        "threshold": "BAO Boa s'impose pour les animateurs spécialisés dans le texte courbe et les déformations organiques ; pour un usage occasionnel, After Effects natif suffit."
+      }
+    },
+    "slug": "ae-bao-boa",
+    "sources": [
+      {
+        "label": "BAO Boa - aescripts.com (distributeur officiel)",
+        "url": "https://aescripts.com/bao-boa"
+      },
+      {
+        "label": "BAO Plugins - BAO Studio (page d'accueil)",
+        "url": "https://www.toolfarm.com/buy/bao_boa/"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-002",
+    "batch_position": 7,
+    "blockers": [],
+    "catalog_hash": "sha256:1ec9a0f7b22ecf70f970a66973c1c4bf5d8a487778434130252a67e3e42b0fe2",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:3f32f7e7f8daa84359221c993ec791341b36efdc538e2fbdd212103629a71d72",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "BAO Boa",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:345d00af1964adcac1dc3a160d99d8430079c0898e009642b70cb8dd3ca9f9fa",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "ae-bao-boa",
+    "source_url": "https://aescripts.com/authors/bao-plugins/products/",
+    "source_verified_on": "2026-06-15",
+    "status": "QUEUED"
+  }
+}

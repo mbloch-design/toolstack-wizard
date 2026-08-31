@@ -1,0 +1,167 @@
+{
+  "batch": "review-design-tools-critical-002",
+  "quality_version": "catalog-review-v1",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tools": [
+    {
+      "file": "adobe-creative-cloud.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "adobe-creative-cloud",
+      "status": "QUEUED"
+    },
+    {
+      "file": "adobe-illustrator.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "adobe-illustrator",
+      "status": "QUEUED"
+    },
+    {
+      "file": "adobe-lightroom.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "adobe-lightroom",
+      "status": "QUEUED"
+    },
+    {
+      "file": "adobe-photoshop.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "adobe-photoshop",
+      "status": "QUEUED"
+    },
+    {
+      "file": "adobe-premiere-pro.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "adobe-premiere-pro",
+      "status": "QUEUED"
+    },
+    {
+      "file": "ae-animation-composer.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "ae-animation-composer",
+      "status": "QUEUED"
+    },
+    {
+      "file": "ae-bao-boa.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "ae-bao-boa",
+      "status": "QUEUED"
+    },
+    {
+      "file": "ae-bodymovin.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "ae-bodymovin",
+      "status": "QUEUED"
+    },
+    {
+      "file": "ae-gifgun.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "ae-gifgun",
+      "status": "QUEUED"
+    },
+    {
+      "file": "ae-newton3.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "ae-newton3",
+      "status": "QUEUED"
+    },
+    {
+      "file": "ae-overlord.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "ae-overlord",
+      "status": "QUEUED"
+    },
+    {
+      "file": "ae-red-giant.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "ae-red-giant",
+      "status": "QUEUED"
+    },
+    {
+      "file": "ae-rubberhose.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "ae-rubberhose",
+      "status": "QUEUED"
+    },
+    {
+      "file": "aescripts-flow.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "aescripts-flow",
+      "status": "QUEUED"
+    },
+    {
+      "file": "arnold.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "arnold",
+      "status": "QUEUED"
+    },
+    {
+      "file": "auto-rig-pro.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "auto-rig-pro",
+      "status": "QUEUED"
+    },
+    {
+      "file": "autocad.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "autocad",
+      "status": "QUEUED"
+    },
+    {
+      "file": "capture-one.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "capture-one",
+      "status": "QUEUED"
+    },
+    {
+      "file": "d5-render.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "d5-render",
+      "status": "QUEUED"
+    },
+    {
+      "file": "enscape.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "enscape",
+      "status": "QUEUED"
+    },
+    {
+      "file": "envato-elements.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "envato-elements",
+      "status": "QUEUED"
+    },
+    {
+      "file": "figma.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "figma",
+      "status": "QUEUED"
+    },
+    {
+      "file": "figma-anima.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "figma-anima",
+      "status": "QUEUED"
+    },
+    {
+      "file": "figma-stark.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "figma-stark",
+      "status": "QUEUED"
+    },
+    {
+      "file": "arena.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "arena",
+      "status": "PUBLISHED"
+    }
+  ]
+}

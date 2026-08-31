@@ -1,0 +1,271 @@
+{
+  "batch": "review-design-tools-critical-002",
+  "current": {
+    "affiliate_url": "https://superhivemarket.com/products/auto-rig-pro",
+    "alternatives": [
+      "blender",
+      "move-ai"
+    ],
+    "category": "design-tools",
+    "cons": [
+      "Limité aux personnages humanoïdes standards.",
+      "Peut nécessiter ajustements manuels pour géométries complexes.",
+      "Rigify (gratuit) offre contrôle plus fin pour les experts.",
+      "Support/documentation moins étoffée que plugins commerciaux."
+    ],
+    "cons_en": [
+      "Limited to standard humanoid characters.",
+      "May require manual adjustments for complex geometry.",
+      "Rigify (free) offers more control for experts.",
+      "Support/documentation less comprehensive than commercial plugins."
+    ],
+    "host_app": "blender",
+    "id": "auto-rig-pro",
+    "long_description": "Auto-Rig Pro accélère le rigging de personnages dans Blender, le retargeting d'animations et l'export FBX ou glTF vers Unity, Unreal Engine et Godot. Le rig reste éditable et le système couvre aussi des créatures non humanoïdes, même si le placement automatique Smart vise d'abord les bipèdes.\n\nLa version complète coûte 50 $ en achat unique et inclut le cœur du rig, Smart, l'export jeu et le remapping ; la version Core à 25 $ convient si ces fonctions avancées ne sont pas nécessaires. Le gain est réel sur une production régulière, mais il faut toujours maîtriser le skinning et le weight painting pour corriger les géométries complexes.",
+    "long_description_en": "Auto-Rig Pro speeds up character rigging in Blender, animation retargeting, and FBX or glTF export to Unity, Unreal Engine, and Godot. Rigs remain editable, and the system also supports non-humanoid creatures, although the automatic Smart placement tool primarily targets bipeds.\n\nThe full version is a $50 one-time purchase and includes the core rigging tools, Smart, game export, and remapping; the $25 Core edition is enough when those advanced features are not required. It can save substantial time in recurring production, but artists still need skinning and weight-painting skills to correct complex geometry.",
+    "media": {
+      "gallery_images": [
+        "https://assets.superhivemarket.com/store/productimage/5041/image/xlarge-98c1fda52af4f61e38003fe7c956fd99.jpg",
+        "https://assets.superhivemarket.com/store/productimage/6755/image/xlarge-16b10c4486692a750494925e78b8ce83.jpg"
+      ],
+      "og_image_url": "https://assets.superhivemarket.com/store/product/126738/image/xlarge-8c2f231da5b8fcd134fee5a937fc0824.jpg"
+    },
+    "name": "Auto-Rig Pro",
+    "pricing": {
+      "free": "",
+      "paid": "50 $ pour la version complète ou 25 $ pour Auto-Rig Pro Core, en achat unique sur Superhive."
+    },
+    "pricing_en": {
+      "free": "",
+      "paid": "$50 for the full version or $25 for Auto-Rig Pro Core, as a one-time purchase on Superhive."
+    },
+    "pricing_v5": {
+      "cautions": [],
+      "compare_plan_kind": "one_time",
+      "compare_plan_name": "Licence perpétuelle",
+      "compare_price_monthly_eur": 50,
+      "location_sensitive": false,
+      "official_source_url": "https://superhivemarket.com/products/auto-rig-pro",
+      "price_reliability": "high",
+      "source_domain": "superhivemarket.com",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-08-26"
+    },
+    "pros": [
+      "Rigging très rapide pour humanoïdes standards.",
+      "Prix imbattable pour un studio (licence unique).",
+      "Presets d'export pour jeux (Unity, Unreal).",
+      "Automation intelligente des poids de déformation.",
+      "Licence perpétuelle avec mises à jour optionnelles."
+    ],
+    "pros_en": [
+      "Very fast rigging for standard humanoids.",
+      "Unbeatable pricing for a studio (one-off license).",
+      "Export presets for games (Unity, Unreal).",
+      "Intelligent deformation weight automation.",
+      "Perpetual license with optional updates."
+    ],
+    "short_description": "Add-on Blender pour créer des rigs, retargeter des animations et exporter vers les moteurs de jeu.",
+    "short_description_en": "Blender add-on for character rigging, animation retargeting, and game-engine export.",
+    "slug": "auto-rig-pro",
+    "source_url": "https://superhivemarket.com/products/auto-rig-pro",
+    "source_verified_on": "2026-08-26",
+    "use_cases": [
+      "Riger rapidement un modèle de personnage pour jeu vidéo.",
+      "Générer un squelette de base pour export vers Unity/Unreal.",
+      "Accélérer la préparation de modèles d'animation pour réseaux sociaux."
+    ],
+    "use_cases_en": [
+      "Quickly rig a character model for video game.",
+      "Generate a base skeleton for export to Unity/Unreal.",
+      "Speed up model preparation for social media animation."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous avez besoin de rigging très spécialisé ou non-humanoïde.",
+        "Vous débutez en 3D et cherchez à apprendre le rigging manuellement.",
+        "Vous utilisez Blender très ponctuellement."
+      ],
+      "keepIf": [
+        "Vous riggez régulièrement des personnages humanoïdes dans Blender.",
+        "Vous travaillez en studio ou pipeline de jeu vidéo.",
+        "Vous cherchez à accélérer le processus de rigging standard."
+      ],
+      "threshold": "Auto-Rig Pro s'impose pour les studios Blender produisant régulièrement des personnages ; pour rigging spécialisé ou usage très ponctuel, le rigging manuel ou Rigify suffisent."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You need highly specialized or non-humanoid rigging.",
+        "You're new to 3D and want to learn manual rigging.",
+        "You use Blender very occasionally."
+      ],
+      "keepIf": [
+        "You regularly rig humanoid characters in Blender.",
+        "You work in a studio or game development pipeline.",
+        "You want to speed up standard rigging process."
+      ],
+      "threshold": "Auto-Rig Pro makes sense for Blender studios regularly producing characters; for specialized rigging or very occasional use, manual rigging or Rigify suffice."
+    },
+    "website_url": "https://superhivemarket.com/products/auto-rig-pro"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Limited to standard humanoid characters.",
+        "May require manual adjustments for complex geometry.",
+        "Rigify (free) offers more control for experts.",
+        "Support/documentation less comprehensive than commercial plugins."
+      ],
+      "pros": [
+        "Very fast rigging for standard humanoids.",
+        "Unbeatable pricing for a studio (one-off license).",
+        "Export presets for games (Unity, Unreal).",
+        "Intelligent deformation weight automation.",
+        "Perpetual license with optional updates."
+      ],
+      "use_cases": [
+        "Quickly rig a character model for video game.",
+        "Generate a base skeleton for export to Unity/Unreal.",
+        "Speed up model preparation for social media animation."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You need highly specialized or non-humanoid rigging.",
+          "You're new to 3D and want to learn manual rigging.",
+          "You use Blender very occasionally."
+        ],
+        "keepIf": [
+          "You regularly rig humanoid characters in Blender.",
+          "You work in a studio or game development pipeline.",
+          "You want to speed up standard rigging process."
+        ],
+        "threshold": "Auto-Rig Pro makes sense for Blender studios regularly producing characters; for specialized rigging or very occasional use, manual rigging or Rigify suffice."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Pas de version gratuite permanente. Deux tiers payants : Lite ($25) et Full ($50).",
+        "exists": false
+      },
+      "key_features": [
+        "Rigging automatique humanoïde avec détection de géométrie",
+        "Génération squelette et hiérarchie IK/FK automatique",
+        "Weights de déformation auto-calculés",
+        "Presets d'export pour Unity et Unreal Engine (Full version)",
+        "Contrôles d'animation intuitifs et paramétrables",
+        "Support multi-squelettes et fusion",
+        "Renouvellement optionnel pour mises à jour"
+      ],
+      "plans": [
+        {
+          "name": "Auto-Rig Pro Lite",
+          "price": "25 USD"
+        },
+        {
+          "name": "Auto-Rig Pro Full",
+          "price": "50 USD"
+        }
+      ],
+      "pricing_model": "Achat unique (Lite ou Full) avec renouvellement optionnel annuel pour mises à jour (25% du prix initial).",
+      "what": "Addon Blender pour le rigging automatique de personnages humanoïdes. Généère rapidement un squelette articulé, poids de déformation et contrôles d'animation. Inclut presets d'export pour Unity et Unreal Engine. Développé pour studios de petite et moyenne taille.",
+      "what_en": "Blender addon for automatic humanoid character rigging. Quickly generates articulated skeleton, deformation weights, and animation controls. Includes export presets for Unity and Unreal Engine. Built for small to medium studios."
+    },
+    "fr": {
+      "cons": [
+        "Limité aux personnages humanoïdes standards.",
+        "Peut nécessiter ajustements manuels pour géométries complexes.",
+        "Rigify (gratuit) offre contrôle plus fin pour les experts.",
+        "Support/documentation moins étoffée que plugins commerciaux."
+      ],
+      "pros": [
+        "Rigging très rapide pour humanoïdes standards.",
+        "Prix imbattable pour un studio (licence unique).",
+        "Presets d'export pour jeux (Unity, Unreal).",
+        "Automation intelligente des poids de déformation.",
+        "Licence perpétuelle avec mises à jour optionnelles."
+      ],
+      "relevant_for": [
+        "Animateurs 3D",
+        "Développeurs de jeux",
+        "Studios de petit/moyen effectif"
+      ],
+      "use_cases": [
+        "Riger rapidement un modèle de personnage pour jeu vidéo.",
+        "Générer un squelette de base pour export vers Unity/Unreal.",
+        "Accélérer la préparation de modèles d'animation pour réseaux sociaux."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous avez besoin de rigging très spécialisé ou non-humanoïde.",
+          "Vous débutez en 3D et cherchez à apprendre le rigging manuellement.",
+          "Vous utilisez Blender très ponctuellement."
+        ],
+        "keepIf": [
+          "Vous riggez régulièrement des personnages humanoïdes dans Blender.",
+          "Vous travaillez en studio ou pipeline de jeu vidéo.",
+          "Vous cherchez à accélérer le processus de rigging standard."
+        ],
+        "threshold": "Auto-Rig Pro s'impose pour les studios Blender produisant régulièrement des personnages ; pour rigging spécialisé ou usage très ponctuel, le rigging manuel ou Rigify suffisent."
+      }
+    },
+    "slug": "auto-rig-pro",
+    "sources": [
+      {
+        "label": "Superhive — Auto-Rig Pro Addon",
+        "url": "https://superhivemarket.com/products/auto-rig-pro"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-002",
+    "batch_position": 17,
+    "blockers": [],
+    "catalog_hash": "sha256:07ab131d2717cb6f4e7ddd55f50c94e4d8fe09dbfb06b976e9f6ebb8cc65f6b1",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:25fe57a29fcc9a4a0390f24f104cc2c7b192bbe7c0c3c95763e542bfd025d3e0",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Auto-Rig Pro",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:253ea73b3fc0f8af900ce861a9c534df42d4ac6a7faeca0649710b00e51629e1",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "auto-rig-pro",
+    "source_url": "https://superhivemarket.com/products/auto-rig-pro",
+    "source_verified_on": "2026-08-26",
+    "status": "QUEUED"
+  }
+}

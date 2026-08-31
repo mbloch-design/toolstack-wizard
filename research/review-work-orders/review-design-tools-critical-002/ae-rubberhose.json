@@ -1,0 +1,251 @@
+{
+  "batch": "review-design-tools-critical-002",
+  "current": {
+    "affiliate_url": "https://aescripts.com/rubberhose",
+    "alternatives": [],
+    "category": "design-tools",
+    "cons": [
+      "Limité aux styles de personnages en courbes (pas idéal pour hyperréalisme).",
+      "Dépend entièrement d'After Effects.",
+      "Mises à jour majeures = nouvelle licence à acheter."
+    ],
+    "cons_en": [
+      "Limited to curve-based character styles (not ideal for photorealism).",
+      "Depends entirely on After Effects.",
+      "Major updates require buying a new license."
+    ],
+    "host_app": "adobe-after-effects",
+    "id": "ae-rubberhose",
+    "long_description": "RubberHose 2, c'est animation de membres et tentacules organiques sans rigging complexe dans AE. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les créateurs vidéo.\n\nGain de temps estimé : 3h/mois.\n\nÀ garder si : animation de personnages simples avec membres organiques. À éviter si : duik déjà maîtrisé — doublon rigging. Pertinent si Duik est trop complexe pour vos besoins. Si le budget le permet, ae-duik va plus loin.",
+    "long_description_en": "RubberHose 2 is organic limb and tentacle animation without complex rigging in AE. Free to start, paid plans for more. Built for video creators.\n\nEstimated time saving: 3h/month.\n\nIf budget allows, ae-duik goes further.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://tooltrim.com/og-screenshots/ae-rubberhose.jpg"
+    },
+    "name": "RubberHose 2",
+    "pricing": {
+      "paid": "45$ achat unique"
+    },
+    "pricing_en": null,
+    "pricing_v5": {
+      "cautions": [],
+      "compare_plan_kind": "individual",
+      "compare_plan_name": "Free",
+      "compare_price_monthly_eur": 0,
+      "location_sensitive": false,
+      "official_source_url": "https://aescripts.com/rubberhose",
+      "price_reliability": "low",
+      "source_domain": "aescripts.com",
+      "usage_sensitive": false,
+      "verification_status": "official_site_only",
+      "verified_on": "2026-03-13"
+    },
+    "pros": [
+      "Rigging très rapide, idéal pour la production de contenu.",
+      "Interface intuitive et courbe d'apprentissage courte.",
+      "Animations fluides et organiques sans complexité osseuse.",
+      "Licence perpétuelle (pas d'abonnement)."
+    ],
+    "pros_en": [
+      "Very fast rigging—ideal for high-volume content production.",
+      "Intuitive interface with short learning curve.",
+      "Smooth, organic animations without bone complexity.",
+      "Perpetual license (no subscription)."
+    ],
+    "short_description": "Animation de membres et tentacules organiques sans rigging complexe dans AE.",
+    "short_description_en": "Organic limb and tentacle animation without complex rigging in AE.",
+    "slug": "ae-rubberhose",
+    "source_url": "https://aescripts.com/rubberhose",
+    "source_verified_on": "2026-03-13",
+    "use_cases": [
+      "Animer un personnage stylisé de A à Z en motion design.",
+      "Créer rapidement des animations de caractères pour réseaux sociaux.",
+      "Concevoir des transitions et mouvements fluides dans des présentations vidéo."
+    ],
+    "use_cases_en": [
+      "Animate stylized characters end to end in motion design.",
+      "Quickly create character animations for social media.",
+      "Design smooth motion and transitions in video presentations."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous avez besoin de rigging hyperréaliste ou biomécanique complexe.",
+        "Vous cherchez un outil gratuit.",
+        "Vous ne travaillez qu'en 3D (ce script est uniquement pour AE en 2D)."
+      ],
+      "keepIf": [
+        "Vous animez des personnages stylisés ou en courbes dans After Effects.",
+        "Vous cherchez un rigging plus rapide que les systèmes traditionnels d'os.",
+        "Vous produisez du contenu type motion design ou animation pour réseaux sociaux."
+      ],
+      "threshold": "RubberHose s'impose pour l'animation de personnages stylisés en motion design ; pour du rigging biomécanique réaliste ou du budget serré, d'autres solutions conviennent mieux."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You need hyperrealistic or complex biomechanical rigging.",
+        "You want free software.",
+        "You work exclusively in 3D (this tool is AE 2D only)."
+      ],
+      "keepIf": [
+        "You animate stylized or curve-based characters in After Effects.",
+        "You need fast rigging without traditional bone complexity.",
+        "You produce motion design or social media animation content."
+      ],
+      "threshold": "RubberHose makes sense for stylized character animation in motion design; for realistic biomechanical rigging or tight budgets, alternatives may work better."
+    },
+    "website_url": "https://aescripts.com/rubberhose"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Limited to curve-based character styles (not ideal for photorealism).",
+        "Depends entirely on After Effects.",
+        "Major updates require buying a new license."
+      ],
+      "pros": [
+        "Very fast rigging—ideal for high-volume content production.",
+        "Intuitive interface with short learning curve.",
+        "Smooth, organic animations without bone complexity.",
+        "Perpetual license (no subscription)."
+      ],
+      "use_cases": [
+        "Animate stylized characters end to end in motion design.",
+        "Quickly create character animations for social media.",
+        "Design smooth motion and transitions in video presentations."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You need hyperrealistic or complex biomechanical rigging.",
+          "You want free software.",
+          "You work exclusively in 3D (this tool is AE 2D only)."
+        ],
+        "keepIf": [
+          "You animate stylized or curve-based characters in After Effects.",
+          "You need fast rigging without traditional bone complexity.",
+          "You produce motion design or social media animation content."
+        ],
+        "threshold": "RubberHose makes sense for stylized character animation in motion design; for realistic biomechanical rigging or tight budgets, alternatives may work better."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Pas de version gratuite permanente. Essai gratuit disponible ; achat de licence requis.",
+        "exists": false
+      },
+      "key_features": [
+        "Rigging sans os (bone-less) pour animations rapides",
+        "Tapered hoses pour varier les épaisseurs des membres",
+        "Hose styling personnalisable et sauvegardable",
+        "RubberRig et RubberPin pour connecter des calques",
+        "Optimisation de performance et baking de keyframes"
+      ],
+      "plans": [
+        {
+          "name": "RubberHose 3",
+          "price": "65 USD"
+        }
+      ],
+      "pricing_model": "Licence perpétuelle (achat unique), avec versions majeures facturées séparément. Mises à jour mineures gratuites.",
+      "what": "Script de rigging pour After Effects permettant de créer et d'animer rapidement des personnages en courbes (« rubber hoses »). Offre une Session View non linéaire pour l'animation de caractères fluides et organiques.",
+      "what_en": "After Effects rigging script for fast character creation and animation using curves (rubber hoses). Provides intuitive bone-less rigging with organic, fluid animation capabilities."
+    },
+    "fr": {
+      "cons": [
+        "Limité aux styles de personnages en courbes (pas idéal pour hyperréalisme).",
+        "Dépend entièrement d'After Effects.",
+        "Mises à jour majeures = nouvelle licence à acheter."
+      ],
+      "pros": [
+        "Rigging très rapide, idéal pour la production de contenu.",
+        "Interface intuitive et courbe d'apprentissage courte.",
+        "Animations fluides et organiques sans complexité osseuse.",
+        "Licence perpétuelle (pas d'abonnement)."
+      ],
+      "relevant_for": [
+        "Motion designers",
+        "Animateurs 2D",
+        "Créateurs de contenu vidéo"
+      ],
+      "use_cases": [
+        "Animer un personnage stylisé de A à Z en motion design.",
+        "Créer rapidement des animations de caractères pour réseaux sociaux.",
+        "Concevoir des transitions et mouvements fluides dans des présentations vidéo."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous avez besoin de rigging hyperréaliste ou biomécanique complexe.",
+          "Vous cherchez un outil gratuit.",
+          "Vous ne travaillez qu'en 3D (ce script est uniquement pour AE en 2D)."
+        ],
+        "keepIf": [
+          "Vous animez des personnages stylisés ou en courbes dans After Effects.",
+          "Vous cherchez un rigging plus rapide que les systèmes traditionnels d'os.",
+          "Vous produisez du contenu type motion design ou animation pour réseaux sociaux."
+        ],
+        "threshold": "RubberHose s'impose pour l'animation de personnages stylisés en motion design ; pour du rigging biomécanique réaliste ou du budget serré, d'autres solutions conviennent mieux."
+      }
+    },
+    "slug": "ae-rubberhose",
+    "sources": [
+      {
+        "label": "BattleAxe — RubberHose 3 (site officiel)",
+        "url": "https://battleaxe.co/rubberhose"
+      },
+      {
+        "label": "AEScripts — RubberHose (distributeur officiel)",
+        "url": "https://aescripts.com/rubberhose"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-002",
+    "batch_position": 13,
+    "blockers": [],
+    "catalog_hash": "sha256:166cd6e7835033895e966ea80e202b61ce97fc3e09a31651ed9360d08ab8b0bd",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:6fb8a90c7397140128afa21cbcf287617cbc3fe89bca6e4289cc80ae461c5d02",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "RubberHose 2",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:7a74dfe726413dfba00b24643f889ea6ccd89da6b1eb184e9e5f446caaf098e2",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "ae-rubberhose",
+    "source_url": "https://aescripts.com/rubberhose",
+    "source_verified_on": "2026-03-13",
+    "status": "QUEUED"
+  }
+}

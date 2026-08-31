@@ -1,0 +1,41 @@
+{
+  "slug": "ae-overlord",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://battleaxe.co/overlord"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://i.ytimg.com/vi_webp/lGYe8Kctdm0/sddefault.webp",
+      "source_page_url": "https://battleaxe.co/overlord",
+      "official": true,
+      "alt": "ae-overlord official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://i.ytimg.com/vi_webp/fxaIKvMczz8/sddefault.webp",
+      "source_page_url": "https://battleaxe.co/overlord",
+      "official": true,
+      "alt": "ae-overlord official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://i.ytimg.com/vi_webp/xZhkMWs8Epc/sddefault.webp",
+      "source_page_url": "https://battleaxe.co/overlord",
+      "official": true,
+      "alt": "ae-overlord official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://framerusercontent.com/images/jCrqxVE8LqrRcRrrUjSP0ajI1Y.gif?width=787&height=301",
+      "source_page_url": "https://battleaxe.co/overlord",
+      "official": true,
+      "alt": "ae-overlord official product view"
+    }
+  ]
+}

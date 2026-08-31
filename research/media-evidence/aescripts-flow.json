@@ -1,0 +1,21 @@
+{
+  "slug": "aescripts-flow",
+  "verified_on": "2026-08-31",
+  "mode": "fallback_screenshot",
+  "discovery": {
+    "official_media_found": false,
+    "official_pages_checked": [
+      "https://aescripts.com/flow/"
+    ]
+  },
+  "items": [
+    {
+      "kind": "screenshot",
+      "url": "/og-screenshots/aescripts-flow.jpg",
+      "official": false,
+      "capture_method": "browser_screenshot",
+      "alt": "Flow official page",
+      "source_page_url": "https://aescripts.com/flow/"
+    }
+  ]
+}

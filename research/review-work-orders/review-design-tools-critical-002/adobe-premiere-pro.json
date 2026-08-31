@@ -1,0 +1,276 @@
+{
+  "batch": "review-design-tools-critical-002",
+  "current": {
+    "affiliate_url": "https://adobe.com/products/premiere",
+    "alternatives": [
+      "davinci-resolve",
+      "capcut"
+    ],
+    "category": "design-tools",
+    "cons": [
+      "Accessible via l'abonnement Creative Cloud.",
+      "Courbe d'apprentissage réelle.",
+      "Traitement gourmand en ressources."
+    ],
+    "cons_en": [
+      "Available via the Creative Cloud subscription.",
+      "Real learning curve.",
+      "Resource-heavy processing."
+    ],
+    "host_app": null,
+    "id": "adobe-premiere-pro",
+    "long_description": "Adobe Premiere est un logiciel de montage professionnel pour les productions longues, le multicam, l'audio, l'étalonnage et les workflows collaboratifs. Son avantage principal reste l'intégration avec After Effects, Frame.io, Adobe Express et le reste de Creative Cloud.\n\nLa version individuelle coûte 22,99$ par mois aux États-Unis avec un engagement annuel facturé mensuellement. Elle inclut Premiere sur ordinateur et mobile, 100 Go de stockage, Frame.io, Adobe Express Premium et 25 crédits génératifs mensuels. Il n'existe pas de licence perpétuelle, seulement un essai gratuit de sept jours.\n\nLa version 26.3 de juin 2026 ajoute notamment la création de séquences depuis Firefly Boards, les sous-titres mot par mot et les Content Credentials automatiques pour certains contenus génératifs. DaVinci Resolve reste l'alternative la plus convaincante pour l'étalonnage et un budget réduit, tandis que CapCut est souvent plus rapide pour les formats sociaux simples.",
+    "long_description_en": "Adobe Premiere is a professional video editor for long-form production, multicam work, audio, color and collaborative workflows. Its main advantage remains the integration with After Effects, Frame.io, Adobe Express and the rest of Creative Cloud.\n\nThe individual plan costs $22.99 per month in the US with an annual commitment billed monthly. It includes Premiere on desktop and mobile, 100GB of storage, Frame.io, Adobe Express Premium and 25 monthly generative credits. There is no perpetual license, only a seven-day free trial.\n\nVersion 26.3 from June 2026 adds sequence creation from Firefly Boards, word-by-word captions and automatic Content Credentials for qualifying generative content. DaVinci Resolve remains the strongest alternative for color work and a lower budget, while CapCut is often faster for simple social formats.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://www.adobe.com/products/media_14a141cf8900a74105b7122f28472dce9fd8cf872.jpg?width=1200&#x26;format=pjpg&#x26;optimize=medium"
+    },
+    "name": "Adobe Premiere Pro",
+    "pricing": {
+      "free": "Aucune version gratuite, essai uniquement",
+      "paid": "Environ 26€/mois (Premiere Pro seul), ou via l'offre Creative Cloud complète"
+    },
+    "pricing_en": {
+      "free": "No free version, trial only",
+      "paid": "Around €26/month (Premiere Pro alone), or via the full Creative Cloud plan"
+    },
+    "pricing_v5": {
+      "billing_model": "seat",
+      "billing_options": [
+        {
+          "currency": "EUR",
+          "label_en": "Premiere Pro only",
+          "label_fr": "Premiere Pro seul",
+          "price_monthly_eur": 26.21,
+          "value": "single_app"
+        },
+        {
+          "label_en": "Included in Creative Cloud",
+          "label_fr": "Inclus Creative Cloud",
+          "price_monthly_eur": 0,
+          "value": "included"
+        },
+        {
+          "label_en": "Team license",
+          "label_fr": "Licence équipe",
+          "needs_verification": true,
+          "value": "team"
+        },
+        {
+          "label_en": "I don’t know",
+          "label_fr": "Je ne sais pas",
+          "needs_verification": true,
+          "value": "unknown"
+        }
+      ],
+      "cautions": [
+        "Aucune version gratuite, essai uniquement",
+        "Environ 26€/mois pour Premiere Pro seul, plus dans l'offre Creative Cloud complète"
+      ],
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Premiere Pro single app",
+      "compare_price_monthly_eur": 26.21,
+      "location_sensitive": false,
+      "official_source_url": "https://www.adobe.com/products/premiere/plans.html",
+      "price_reliability": "high",
+      "source_domain": "adobe.com",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-08-28"
+    },
+    "pros": [
+      "Montage professionnel complet (timeline, multi-formats, haute résolution).",
+      "Étalonnage couleur avancé (Lumetri) et audio pro.",
+      "Intégration Dynamic Link avec After Effects et les apps Adobe.",
+      "Standard largement adopté en production."
+    ],
+    "pros_en": [
+      "Complete professional editing (timeline, multi-format, high resolution).",
+      "Advanced colour grading (Lumetri) and pro audio.",
+      "Dynamic Link integration with After Effects and Adobe apps.",
+      "Widely adopted production standard."
+    ],
+    "short_description": "Le logiciel de montage vidéo professionnel de référence.",
+    "short_description_en": "The reference professional video editing software.",
+    "slug": "adobe-premiere-pro",
+    "source_url": "https://www.adobe.com/products/premiere/plans.html",
+    "source_verified_on": "2026-08-28",
+    "use_cases": [
+      "Monter un projet vidéo multi-pistes avec étalonnage et audio.",
+      "Enchaîner avec After Effects sans re-rendu (Dynamic Link).",
+      "Produire une vidéo haute résolution destinée à la diffusion."
+    ],
+    "use_cases_en": [
+      "Edit a multi-track video project with grading and audio.",
+      "Move to After Effects without re-rendering (Dynamic Link).",
+      "Produce a high-resolution video for broadcast."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vos montages sont ponctuels et simples.",
+        "Vous cherchez une alternative gratuite ou sans abonnement.",
+        "Votre machine est peu puissante."
+      ],
+      "keepIf": [
+        "Vous montez de la vidéo de façon régulière et exigeante.",
+        "Vous voulez un outil pro intégré à After Effects et aux autres apps Adobe.",
+        "Vous avez besoin d'étalonnage et d'audio professionnels."
+      ],
+      "threshold": "Premiere Pro s'impose quand le montage vidéo est régulier et exigeant, en lien avec l'écosystème Adobe ; pour un montage occasionnel, un outil plus léger (ou gratuit) suffit."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "Your edits are occasional and simple.",
+        "You want a free or subscription-free alternative.",
+        "Your machine is low-powered."
+      ],
+      "keepIf": [
+        "You edit video regularly and demandingly.",
+        "You want a pro tool integrated with After Effects and other Adobe apps.",
+        "You need professional colour grading and audio."
+      ],
+      "threshold": "Premiere Pro makes sense when video editing is regular and demanding, tied to the Adobe ecosystem; for occasional editing, a lighter (or free) tool is enough."
+    },
+    "website_url": "https://adobe.com/products/premiere"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "bundle_parent": "adobe-creative-cloud",
+    "en": {
+      "cons": [
+        "Available via the Creative Cloud subscription.",
+        "Real learning curve.",
+        "Resource-heavy processing."
+      ],
+      "pros": [
+        "Complete professional editing (timeline, multi-format, high resolution).",
+        "Advanced colour grading (Lumetri) and pro audio.",
+        "Dynamic Link integration with After Effects and Adobe apps.",
+        "Widely adopted production standard."
+      ],
+      "use_cases": [
+        "Edit a multi-track video project with grading and audio.",
+        "Move to After Effects without re-rendering (Dynamic Link).",
+        "Produce a high-resolution video for broadcast."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Your edits are occasional and simple.",
+          "You want a free or subscription-free alternative.",
+          "Your machine is low-powered."
+        ],
+        "keepIf": [
+          "You edit video regularly and demandingly.",
+          "You want a pro tool integrated with After Effects and other Adobe apps.",
+          "You need professional colour grading and audio."
+        ],
+        "threshold": "Premiere Pro makes sense when video editing is regular and demanding, tied to the Adobe ecosystem; for occasional editing, a lighter (or free) tool is enough."
+      }
+    },
+    "facts": {
+      "key_features": [
+        "Montage sur timeline avec imbrication profonde des séquences",
+        "Prise en charge haute résolution et grande profondeur de couleur",
+        "Audio pro (édition fine, VST, mixage surround 5.1)",
+        "Étalonnage couleur (outils Lumetri)",
+        "Intégration Dynamic Link avec After Effects, Photoshop, Illustrator"
+      ],
+      "pricing_note": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite).",
+      "what": "Application de montage vidéo professionnelle d'Adobe, distribuée dans Creative Cloud.",
+      "what_en": "Adobe's professional video editing application, distributed through Creative Cloud."
+    },
+    "fr": {
+      "cons": [
+        "Accessible via l'abonnement Creative Cloud.",
+        "Courbe d'apprentissage réelle.",
+        "Traitement gourmand en ressources."
+      ],
+      "pros": [
+        "Montage professionnel complet (timeline, multi-formats, haute résolution).",
+        "Étalonnage couleur avancé (Lumetri) et audio pro.",
+        "Intégration Dynamic Link avec After Effects et les apps Adobe.",
+        "Standard largement adopté en production."
+      ],
+      "relevant_for": [
+        "Monteurs vidéo",
+        "Créateurs de contenu",
+        "Studios film/vidéo"
+      ],
+      "use_cases": [
+        "Monter un projet vidéo multi-pistes avec étalonnage et audio.",
+        "Enchaîner avec After Effects sans re-rendu (Dynamic Link).",
+        "Produire une vidéo haute résolution destinée à la diffusion."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vos montages sont ponctuels et simples.",
+          "Vous cherchez une alternative gratuite ou sans abonnement.",
+          "Votre machine est peu puissante."
+        ],
+        "keepIf": [
+          "Vous montez de la vidéo de façon régulière et exigeante.",
+          "Vous voulez un outil pro intégré à After Effects et aux autres apps Adobe.",
+          "Vous avez besoin d'étalonnage et d'audio professionnels."
+        ],
+        "threshold": "Premiere Pro s'impose quand le montage vidéo est régulier et exigeant, en lien avec l'écosystème Adobe ; pour un montage occasionnel, un outil plus léger (ou gratuit) suffit."
+      }
+    },
+    "slug": "adobe-premiere-pro",
+    "sources": [
+      {
+        "label": "Adobe Premiere Pro — description et fonctions (Wikipédia)",
+        "url": "https://en.wikipedia.org/wiki/Adobe_Premiere_Pro"
+      }
+    ],
+    "verified_on": "2026-07-23"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-002",
+    "batch_position": 5,
+    "blockers": [],
+    "catalog_hash": "sha256:d3c790d872cdb44992c84cc416911212fe847ddd7165f3bbfa31d356434a5122",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:9ebf368b7595f3dfff35bca016d789d727c868129d745c94422a62b87880529b",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Adobe Premiere Pro",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:fc510eae736aa68805ee968b6c8683ef8f4902532748217983c3281a8b7c9695",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "adobe-premiere-pro",
+    "source_url": "https://www.adobe.com/products/premiere/plans.html",
+    "source_verified_on": "2026-08-28",
+    "status": "QUEUED"
+  }
+}

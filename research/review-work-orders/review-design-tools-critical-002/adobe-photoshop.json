@@ -1,0 +1,282 @@
+{
+  "batch": "review-design-tools-critical-002",
+  "current": {
+    "affiliate_url": "https://adobe.com/products/photoshop",
+    "alternatives": [
+      "affinity-photo",
+      "canva"
+    ],
+    "category": "design-tools",
+    "cons": [
+      "Accessible via l'abonnement Creative Cloud, pas en achat unique.",
+      "Courbe d'apprentissage réelle pour exploiter tout le potentiel.",
+      "Surdimensionné pour de simples retouches."
+    ],
+    "cons_en": [
+      "Available via the Creative Cloud subscription, not one-off purchase.",
+      "Real learning curve to unlock its full potential.",
+      "Overkill for simple retouching."
+    ],
+    "host_app": null,
+    "id": "adobe-photoshop",
+    "long_description": "Photoshop, c'est le logiciel de retouche photo le plus utilisé au monde, au point que son nom est devenu un verbe. Retouche, photomontage, détourage, compositing, manipulation d'images : tout ce qui touche au pixel passe par lui, et toute la filière créative travaille avec ses fichiers. C'est un standard incontournable dès qu'on fait de la photo ou du visuel pro.\n\nLe modèle Adobe s'applique : pas de version gratuite, juste un essai, puis l'abonnement. Compte environ 26€/mois pour Photoshop seul. Mais si tu fais surtout de la photo, l'astuce à connaître, c'est la formule Photography (Photoshop + Lightroom), nettement moins chère, autour de 10 à 15€/mois selon le stockage. C'est souvent la meilleure porte d'entrée.\n\nL'alternative qui a changé la donne en 2024 : Affinity Photo, devenu gratuit après le rachat par Canva, couvre une grande partie des besoins de retouche sans abonnement. Pour du libre, Photopea reproduit l'interface dans le navigateur. Photoshop garde l'avantage sur les fonctions avancées, l'IA générative (Generative Fill) et la compatibilité des fichiers, mais ce n'est plus le passage obligé qu'il était.",
+    "long_description_en": "Photoshop is the most-used photo editing software in the world, to the point its name became a verb. Retouching, photomontage, cutouts, compositing, image manipulation: anything pixel-based goes through it, and the whole creative industry works with its files. It's an unavoidable standard once you do professional photo or visual work.\n\nThe Adobe model applies: no free version, just a trial, then the subscription. Budget around €26/month for Photoshop alone. But if you mostly do photography, the trick to know is the Photography plan (Photoshop + Lightroom), noticeably cheaper, around €10 to €15/month depending on storage. It's often the best entry point.\n\nThe alternative that changed things in 2024: Affinity Photo, now free after the Canva acquisition, covers a large part of retouching needs with no subscription. For something free in the browser, Photopea mirrors the interface. Photoshop keeps the edge on advanced features, generative AI (Generative Fill) and file compatibility, but it's no longer the obligatory path it once was.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://www.adobe.com/products/media_17f61e1224166630fb2e30723046881244c8812a9.jpg?width=1200&#x26;format=pjpg&#x26;optimize=medium"
+    },
+    "name": "Adobe Photoshop",
+    "pricing": {
+      "free": "Aucune version gratuite, essai uniquement",
+      "paid": "23,99€/mois en engagement annuel (Photoshop seul), ou ~30,49€/mois sans engagement ; formule Photo avec Lightroom dès ~12€/mois"
+    },
+    "pricing_en": {
+      "free": "No free version, trial only",
+      "paid": "€23.99/month with annual commitment (Photoshop alone), or ~€30.49/month with no commitment; Photography plan with Lightroom from ~€12/month"
+    },
+    "pricing_v5": {
+      "billing_model": "seat",
+      "billing_options": [
+        {
+          "currency": "EUR",
+          "label_en": "Photoshop only",
+          "label_fr": "Photoshop seul",
+          "price_monthly_eur": 26.21,
+          "value": "single_app"
+        },
+        {
+          "label_en": "Photography / Creative Cloud",
+          "label_fr": "Photography / Creative Cloud",
+          "needs_verification": true,
+          "value": "bundle"
+        },
+        {
+          "label_en": "Included in Creative Cloud",
+          "label_fr": "Inclus Creative Cloud",
+          "price_monthly_eur": 0,
+          "value": "included"
+        },
+        {
+          "label_en": "Team license",
+          "label_fr": "Licence équipe",
+          "needs_verification": true,
+          "value": "team"
+        },
+        {
+          "label_en": "I don’t know",
+          "label_fr": "Je ne sais pas",
+          "needs_verification": true,
+          "value": "unknown"
+        }
+      ],
+      "cautions": [
+        "Aucune version gratuite, essai uniquement",
+        "Formule Photography (avec Lightroom) dès ~10€/mois, moins chère que Photoshop seul"
+      ],
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Photoshop single app",
+      "compare_price_monthly_eur": 26.21,
+      "location_sensitive": false,
+      "official_source_url": "https://www.adobe.com/fr/products/photoshop/plans.html",
+      "price_reliability": "high",
+      "source_domain": "adobe.com",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-06-15"
+    },
+    "pros": [
+      "Référence de l'édition d'images matricielles, extrêmement complète.",
+      "Retouche puissante : correcteur, remplissage selon le contenu, masques.",
+      "Traitement RAW intégré via Camera Raw.",
+      "Remplissage et Extension génératifs (IA) intégrés."
+    ],
+    "pros_en": [
+      "The reference raster image editor, extremely complete.",
+      "Powerful retouching: healing, content-aware fill, masks.",
+      "Built-in RAW processing via Camera Raw.",
+      "Built-in Generative Fill and Expand (AI)."
+    ],
+    "short_description": "Le standard mondial de la retouche photo, du photomontage et du compositing.",
+    "short_description_en": "The world standard for photo editing and compositing.",
+    "slug": "adobe-photoshop",
+    "source_url": "https://www.adobe.com/fr/products/photoshop/plans.html",
+    "source_verified_on": "2026-06-15",
+    "use_cases": [
+      "Retoucher et corriger des photographies en détail.",
+      "Composer une image multi-calques (montage, affiche).",
+      "Étendre ou compléter une image par IA générative."
+    ],
+    "use_cases_en": [
+      "Retouch and correct photographs in detail.",
+      "Composite a multi-layer image (montage, poster).",
+      "Extend or complete an image with generative AI."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous ne faites que du dessin vectoriel : Illustrator est plus adapté.",
+        "Vos retouches sont simples et occasionnelles.",
+        "Vous voulez éviter l'abonnement Creative Cloud."
+      ],
+      "keepIf": [
+        "Vous éditez, retouchez ou composez des images de façon régulière.",
+        "Vous voulez l'outil de référence, avec l'IA générative (Firefly) intégrée.",
+        "Vous travaillez sur plusieurs plateformes (bureau et iPad)."
+      ],
+      "threshold": "Photoshop s'impose quand l'édition d'images matricielles est au cœur de votre travail ; pour du vectoriel ou des retouches ponctuelles, un outil plus léger (ou Illustrator) convient mieux."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You only do vector work: Illustrator fits better.",
+        "Your edits are simple and occasional.",
+        "You want to avoid the Creative Cloud subscription."
+      ],
+      "keepIf": [
+        "You edit, retouch or composite images regularly.",
+        "You want the reference tool, with generative AI (Firefly) built in.",
+        "You work across platforms (desktop and iPad)."
+      ],
+      "threshold": "Photoshop makes sense when raster image editing is core to your work; for vector work or occasional retouching, a lighter tool (or Illustrator) fits better."
+    },
+    "website_url": "https://adobe.com/products/photoshop"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "bundle_parent": "adobe-creative-cloud",
+    "en": {
+      "cons": [
+        "Available via the Creative Cloud subscription, not one-off purchase.",
+        "Real learning curve to unlock its full potential.",
+        "Overkill for simple retouching."
+      ],
+      "pros": [
+        "The reference raster image editor, extremely complete.",
+        "Powerful retouching: healing, content-aware fill, masks.",
+        "Built-in RAW processing via Camera Raw.",
+        "Built-in Generative Fill and Expand (AI)."
+      ],
+      "use_cases": [
+        "Retouch and correct photographs in detail.",
+        "Composite a multi-layer image (montage, poster).",
+        "Extend or complete an image with generative AI."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You only do vector work: Illustrator fits better.",
+          "Your edits are simple and occasional.",
+          "You want to avoid the Creative Cloud subscription."
+        ],
+        "keepIf": [
+          "You edit, retouch or composite images regularly.",
+          "You want the reference tool, with generative AI (Firefly) built in.",
+          "You work across platforms (desktop and iPad)."
+        ],
+        "threshold": "Photoshop makes sense when raster image editing is core to your work; for vector work or occasional retouching, a lighter tool (or Illustrator) fits better."
+      }
+    },
+    "facts": {
+      "key_features": [
+        "Édition multi-calques avec masques et compositing",
+        "Retouche professionnelle (correcteur, remplissage selon le contenu)",
+        "Traitement RAW via Camera Raw",
+        "Fonctions d'IA générative (Remplissage et Extension génératifs)",
+        "Disponible sur Windows, macOS et iPad"
+      ],
+      "pricing_note": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite).",
+      "what": "Éditeur d'images matricielles (raster) de référence d'Adobe, pour Windows, macOS et iPad.",
+      "what_en": "Adobe's flagship raster image editor for Windows, macOS, and iPad."
+    },
+    "fr": {
+      "cons": [
+        "Accessible via l'abonnement Creative Cloud, pas en achat unique.",
+        "Courbe d'apprentissage réelle pour exploiter tout le potentiel.",
+        "Surdimensionné pour de simples retouches."
+      ],
+      "pros": [
+        "Référence de l'édition d'images matricielles, extrêmement complète.",
+        "Retouche puissante : correcteur, remplissage selon le contenu, masques.",
+        "Traitement RAW intégré via Camera Raw.",
+        "Remplissage et Extension génératifs (IA) intégrés."
+      ],
+      "relevant_for": [
+        "Designers",
+        "Photographes",
+        "Studios et agences"
+      ],
+      "use_cases": [
+        "Retoucher et corriger des photographies en détail.",
+        "Composer une image multi-calques (montage, affiche).",
+        "Étendre ou compléter une image par IA générative."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous ne faites que du dessin vectoriel : Illustrator est plus adapté.",
+          "Vos retouches sont simples et occasionnelles.",
+          "Vous voulez éviter l'abonnement Creative Cloud."
+        ],
+        "keepIf": [
+          "Vous éditez, retouchez ou composez des images de façon régulière.",
+          "Vous voulez l'outil de référence, avec l'IA générative (Firefly) intégrée.",
+          "Vous travaillez sur plusieurs plateformes (bureau et iPad)."
+        ],
+        "threshold": "Photoshop s'impose quand l'édition d'images matricielles est au cœur de votre travail ; pour du vectoriel ou des retouches ponctuelles, un outil plus léger (ou Illustrator) convient mieux."
+      }
+    },
+    "slug": "adobe-photoshop",
+    "sources": [
+      {
+        "label": "Adobe Photoshop — description et fonctions (Wikipédia)",
+        "url": "https://en.wikipedia.org/wiki/Adobe_Photoshop"
+      }
+    ],
+    "verified_on": "2026-07-23"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-002",
+    "batch_position": 4,
+    "blockers": [],
+    "catalog_hash": "sha256:a7752321bb3887f43e35f86975819d09c63a118801b3f31ecec8142837ce7547",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:843b3d337c6adfb3f995413d8459e94fdb02cf8d4b4ffd22802bafcfe7e17c9e",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Adobe Photoshop",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:501d468fb312213b0e10244a77f25e4c3866cad47b1c1a95ecd39f4d924d3aef",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "adobe-photoshop",
+    "source_url": "https://www.adobe.com/fr/products/photoshop/plans.html",
+    "source_verified_on": "2026-06-15",
+    "status": "QUEUED"
+  }
+}

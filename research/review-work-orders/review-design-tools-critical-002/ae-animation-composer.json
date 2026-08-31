@@ -1,0 +1,262 @@
+{
+  "batch": "review-design-tools-critical-002",
+  "current": {
+    "affiliate_url": "https://misterhorse.com/animation-composer",
+    "alternatives": [
+      "motion-bro"
+    ],
+    "category": "design-tools",
+    "cons": [
+      "Abonnement récurrent (pas d'achat définitif).",
+      "Animation Composer 3 discontinué en standalone (force l'abonnement complet).",
+      "Fonctionnalités avancées limitées à la version payante.",
+      "Limite de 500 éléments en version gratuite (peut être restrictive)."
+    ],
+    "cons_en": [
+      "Recurring subscription (no perpetual purchase).",
+      "Animation Composer 3 discontinued as standalone (forces full subscription).",
+      "Advanced features limited to paid tier.",
+      "Free version capped at 500 library items (can be restrictive)."
+    ],
+    "host_app": "adobe-after-effects",
+    "id": "ae-animation-composer",
+    "long_description": "Animation Composer est un plugin Mister Horse pour After Effects qui regroupe presets d'animation, transitions, éléments sonores et quatre outils destinés à accélérer les tâches répétitives. Le plan gratuit inclut le plugin, plus de 1 000 ressources et les quatre outils.\n\nL'offre payante fonctionne désormais par abonnement. Elle coûte 16,50$ par mois avec une facturation annuelle de 198$, ou 19,90$ au mois, et donne accès à plus de 6 000 ressources. Les anciennes licences perpétuelles ne décrivent donc plus l'offre proposée aux nouveaux utilisateurs.\n\nLe plan gratuit suffit pour tester le workflow et couvrir des besoins réguliers simples. L'abonnement devient pertinent lorsque la profondeur de la bibliothèque réduit réellement le temps passé à construire transitions, textes et mouvements à la main. Motion Bro reste le concurrent le plus direct.",
+    "long_description_en": "Animation Composer is a Mister Horse plugin for After Effects that combines animation presets, transitions, sound elements and four tools designed to speed up repetitive work. The free plan includes the plugin, more than 1,000 assets and all four tools.\n\nThe paid offer is now a subscription. It costs $16.50 per month when billed annually at $198, or $19.90 month to month, and includes more than 6,000 assets. Older perpetual licenses therefore no longer describe the offer available to new users.\n\nThe free plan is enough to test the workflow and cover straightforward recurring needs. The subscription becomes worthwhile when the larger library meaningfully reduces the time spent building transitions, text and motion by hand. Motion Bro remains the closest competitor.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://d23mmnx9ld45h.cloudfront.net/misterhorse.com_web_v3/Products/Animation%20Composer/Main%20Page%20v2/pp-ac-link-preview-image.jpg"
+    },
+    "name": "Animation Composer 3",
+    "pricing": {
+      "free": "Version de base gratuite",
+      "paid": "16,50$/mois en annuel (198$/an) ou 19,90$/mois"
+    },
+    "pricing_en": {
+      "free": "Free base version",
+      "paid": "$16.50/month annually ($198/year) or $19.90 month to month"
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Plan gratuit avec plus de 1 000 ressources ; abonnement pour la bibliothèque complète"
+      ],
+      "compare_plan_kind": "individual",
+      "compare_plan_name": "Free",
+      "compare_price_monthly_eur": 0,
+      "location_sensitive": false,
+      "official_source_url": "https://www.misterhorse.com/animation-composer",
+      "price_reliability": "high",
+      "source_domain": "misterhorse.com",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-08-28"
+    },
+    "pros": [
+      "Intégration native après Effects + Premiere Pro dans un seul abonnement.",
+      "Version gratuite limité mais fonctionnelle pour débuter.",
+      "Bibliothèque de présets facilement extensible et partageables.",
+      "Inclus dans l'écosystème Mister Horse (autres outils motion design)."
+    ],
+    "pros_en": [
+      "Native integration: After Effects + Premiere Pro in one subscription.",
+      "Limited free version to get started.",
+      "Preset library easily extends and shares.",
+      "Part of the Mister Horse ecosystem (other motion design tools)."
+    ],
+    "short_description": "Bibliothèque de presets d'animation et de transitions pour After Effects.",
+    "short_description_en": "Library of animation presets and transitions for After Effects.",
+    "slug": "ae-animation-composer",
+    "source_url": "https://www.misterhorse.com/animation-composer",
+    "source_verified_on": "2026-08-28",
+    "use_cases": [
+      "Composer rapidement des animations récurrentes à partir de présets.",
+      "Construire une bibliothèque personnalisée de mouvements de marque.",
+      "Workflow intégré After Effects + Premiere Pro pour montage + effets."
+    ],
+    "use_cases_en": [
+      "Quickly compose recurring animations from presets.",
+      "Build a custom library of brand motion signatures.",
+      "Integrated After Effects + Premiere Pro workflow for editing + effects."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous ne travaillez qu'en After Effects et n'avez pas besoin d'outils Mister Horse.",
+        "Vous préférez un achat unique perpétuel (le produit n'est plus vendu individuellement).",
+        "Vous commencez : la version gratuite est suffisante pour tester."
+      ],
+      "keepIf": [
+        "Vous cherchez à organiser et accélérer votre workflow d'animation After Effects.",
+        "Vous travaillez avec Premiere Pro et After Effects (abonnement couvre les deux).",
+        "Vous appréciez une version limitée gratuite avant d'investir."
+      ],
+      "threshold": "Animation Composer justifie l'abonnement Mister Horse surtout si vous utilisez aussi Premiere Pro et aimez travailler par présets réutilisables."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You only work in After Effects and don't need other Mister Horse tools.",
+        "You prefer a one-time perpetual purchase (product no longer sold individually).",
+        "You're starting out: the free version is plenty to test."
+      ],
+      "keepIf": [
+        "You want to organize and speed up your After Effects animation workflow.",
+        "You work in both Premiere Pro and After Effects (one subscription covers both).",
+        "You like testing a free limited version first."
+      ],
+      "threshold": "Animation Composer justifies the Mister Horse subscription mainly if you also use Premiere Pro and like working with reusable preset workflows."
+    },
+    "website_url": "https://misterhorse.com/animation-composer"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Recurring subscription (no perpetual purchase).",
+        "Animation Composer 3 discontinued as standalone (forces full subscription).",
+        "Advanced features limited to paid tier.",
+        "Free version capped at 500 library items (can be restrictive)."
+      ],
+      "pros": [
+        "Native integration: After Effects + Premiere Pro in one subscription.",
+        "Limited free version to get started.",
+        "Preset library easily extends and shares.",
+        "Part of the Mister Horse ecosystem (other motion design tools)."
+      ],
+      "use_cases": [
+        "Quickly compose recurring animations from presets.",
+        "Build a custom library of brand motion signatures.",
+        "Integrated After Effects + Premiere Pro workflow for editing + effects."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You only work in After Effects and don't need other Mister Horse tools.",
+          "You prefer a one-time perpetual purchase (product no longer sold individually).",
+          "You're starting out: the free version is plenty to test."
+        ],
+        "keepIf": [
+          "You want to organize and speed up your After Effects animation workflow.",
+          "You work in both Premiere Pro and After Effects (one subscription covers both).",
+          "You like testing a free limited version first."
+        ],
+        "threshold": "Animation Composer justifies the Mister Horse subscription mainly if you also use Premiere Pro and like working with reusable preset workflows."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Version gratuite limitée : jusqu'à 500 items en bibliothèque personnelle. L'abonnement supprime la limite et déverrouille d'autres extensions Mister Horse.",
+        "exists": true
+      },
+      "key_features": [
+        "Bibliothèque de présets d'animations réutilisables",
+        "Création et partage de composants personnalisés",
+        "Intégration avec Premiere Pro et After Effects",
+        "Accès à la suite complète Mister Horse (plusieurs outils motion design)"
+      ],
+      "plans": [
+        {
+          "name": "Mister Horse Subscription",
+          "price": "Montants sur la page officielle (réduction disponible paiement annuel)"
+        }
+      ],
+      "pricing_model": "Abonnement récurrent mensuel ou annuel. Le produit a été discontinué en tant qu'achat standalone. Animation Composer 3 est inclus dans toute souscription Mister Horse.",
+      "what": "Plugin After Effects créé par Mister Horse permettant de composer et d'organiser les animations via des présets et des composants réutilisables. Autrefois vendu individuellement, il est maintenant inclus dans l'abonnement unified Mister Horse (qui couvre aussi Premiere Pro).",
+      "what_en": "After Effects plugin by Mister Horse for composing and organizing animations via presets and reusable components. Formerly sold standalone; now included in the unified Mister Horse subscription (covering both After Effects and Premiere Pro)."
+    },
+    "fr": {
+      "cons": [
+        "Abonnement récurrent (pas d'achat définitif).",
+        "Animation Composer 3 discontinué en standalone (force l'abonnement complet).",
+        "Fonctionnalités avancées limitées à la version payante.",
+        "Limite de 500 éléments en version gratuite (peut être restrictive)."
+      ],
+      "pros": [
+        "Intégration native après Effects + Premiere Pro dans un seul abonnement.",
+        "Version gratuite limité mais fonctionnelle pour débuter.",
+        "Bibliothèque de présets facilement extensible et partageables.",
+        "Inclus dans l'écosystème Mister Horse (autres outils motion design)."
+      ],
+      "relevant_for": [
+        "Motion designers",
+        "Éditeurs vidéo",
+        "Animateurs After Effects"
+      ],
+      "use_cases": [
+        "Composer rapidement des animations récurrentes à partir de présets.",
+        "Construire une bibliothèque personnalisée de mouvements de marque.",
+        "Workflow intégré After Effects + Premiere Pro pour montage + effets."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous ne travaillez qu'en After Effects et n'avez pas besoin d'outils Mister Horse.",
+          "Vous préférez un achat unique perpétuel (le produit n'est plus vendu individuellement).",
+          "Vous commencez : la version gratuite est suffisante pour tester."
+        ],
+        "keepIf": [
+          "Vous cherchez à organiser et accélérer votre workflow d'animation After Effects.",
+          "Vous travaillez avec Premiere Pro et After Effects (abonnement couvre les deux).",
+          "Vous appréciez une version limitée gratuite avant d'investir."
+        ],
+        "threshold": "Animation Composer justifie l'abonnement Mister Horse surtout si vous utilisez aussi Premiere Pro et aimez travailler par présets réutilisables."
+      }
+    },
+    "slug": "ae-animation-composer",
+    "sources": [
+      {
+        "label": "Mister Horse — Animation Composer & Pricing (site officiel)",
+        "url": "https://misterhorse.com/pricing"
+      },
+      {
+        "label": "Animation Composer for After Effects (Mister Horse)",
+        "url": "https://misterhorse.com/animation-composer-for-after-effects"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-002",
+    "batch_position": 6,
+    "blockers": [],
+    "catalog_hash": "sha256:14e803de56df18597c525c8954efb2b1e2864dcb2773a1dea8252aa4a84d7c32",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:bd17288cd9c888433a9b59d038eb84ccc0f4413e64783a1cf116f8697805bb18",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Animation Composer 3",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:4c7276253a019702dfe4bd2d4b384024da3884a81987ad380058d35dc911bd31",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "ae-animation-composer",
+    "source_url": "https://www.misterhorse.com/animation-composer",
+    "source_verified_on": "2026-08-28",
+    "status": "QUEUED"
+  }
+}

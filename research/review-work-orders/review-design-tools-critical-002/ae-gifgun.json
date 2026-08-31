@@ -1,0 +1,305 @@
+{
+  "batch": "review-design-tools-critical-002",
+  "current": {
+    "affiliate_url": "https://aescripts.com/gifgun",
+    "alternatives": [
+      "adobe-photoshop",
+      "capcut"
+    ],
+    "category": "design-tools",
+    "cons": [
+      "Prix pour une fonction spécialisée (export seulement).",
+      "Pas de version gratuite pour tester.",
+      "Alternatives gratuites (FFmpeg) existent mais demandent ligne de commande.",
+      "Pas de mise à jour majeure fréquente après v2."
+    ],
+    "cons_en": [
+      "Price for a specialized function (export only).",
+      "No free version to test.",
+      "Free alternatives (FFmpeg) exist but require command line.",
+      "No major updates post-v2."
+    ],
+    "host_app": "adobe-after-effects",
+    "id": "ae-gifgun",
+    "long_description": "GifGun 2 accélère la livraison d'animations légères depuis After Effects, mais il ne se limite plus à un bouton d'export GIF. La licence inclut le plugin After Effects, une application de bureau autonome et une application web. Elle couvre les formats GIF, WEBP, WEBM et MP4, avec taille cible, compression intelligente, traitement par lots et presets JSON.\n\nLa licence coûte 39,99$ en achat unique sur aescripts. La version 2.2.1, publiée en avril 2026, prend en charge After Effects 2021 et versions ultérieures, Windows 10 ou 11 et macOS 15 ou version ultérieure.\n\nGifGun devient rentable si vous exportez régulièrement des animations pour le web, les réseaux sociaux ou les messageries. Pour quelques conversions occasionnelles, FFmpeg ou un convertisseur gratuit reste suffisant.",
+    "long_description_en": "GifGun 2 speeds up delivery of lightweight animations from After Effects, but it is no longer just a one-click GIF exporter. One license includes the After Effects plugin, a standalone desktop app and a web app. It supports GIF, WEBP, WEBM and MP4, with target file sizes, smart compression, batch processing and JSON presets.\n\nThe license costs $39.99 as a one-time purchase from aescripts. Version 2.2.1, released in April 2026, supports After Effects 2021 and later, Windows 10 or 11, and macOS 15 or later.\n\nGifGun pays for itself when you regularly export animations for websites, social media or messaging. For a few occasional conversions, FFmpeg or a free converter is still enough.",
+    "media": {
+      "gallery_images": [
+        "/tool-media/ae-gifgun/official-demo.jpg"
+      ],
+      "og_image_url": "/tool-media/ae-gifgun/overview.jpg"
+    },
+    "name": "GifGun",
+    "pricing": {
+      "free": "",
+      "paid": "39,99$ en achat unique pour GifGun 2, avec mises à jour pendant la durée de vie de la version 2"
+    },
+    "pricing_en": {
+      "free": "",
+      "paid": "One-time purchase (~$40), lifetime license, no subscription"
+    },
+    "pricing_v5": {
+      "billing_model": "one_time",
+      "billing_options": [
+        {
+          "currency": "USD",
+          "label_en": "One-time",
+          "label_fr": "Achat unique",
+          "price_monthly_eur": 0,
+          "price_original": 39.99,
+          "value": "one_time"
+        },
+        {
+          "label_en": "Already bought",
+          "label_fr": "Déjà acheté",
+          "price_monthly_eur": 0,
+          "value": "included"
+        },
+        {
+          "label_en": "I don’t know",
+          "label_fr": "Je ne sais pas",
+          "needs_verification": true,
+          "value": "unknown"
+        }
+      ],
+      "cautions": [
+        "Achat ponctuel ou licence non mensuelle : ne pas compter comme abonnement mensuel sans confirmation."
+      ],
+      "compare_plan_kind": "one_time",
+      "compare_plan_name": "License",
+      "compare_price_monthly_eur": 0,
+      "currency": "USD",
+      "location_sensitive": true,
+      "official_source_url": "https://aescripts.com/gifgun/",
+      "price_original": 39.99,
+      "price_original_currency": "USD",
+      "price_reliability": "high",
+      "source_domain": "aescripts.com",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-08-29"
+    },
+    "pros": [
+      "Interface très simple et intuitive pour l'export.",
+      "Compression optimisée (fichiers plus légers à qualité égale).",
+      "Licence perpétuelle (pas d'abonnement récurrent).",
+      "Application de bureau autonome (fonctionne sans After Effects).",
+      "Export par lot pratique pour production en masse."
+    ],
+    "pros_en": [
+      "Very simple, intuitive export interface.",
+      "Optimized compression (lighter files at equal quality).",
+      "Perpetual license (no recurring subscription).",
+      "Standalone desktop app (works without After Effects).",
+      "Batch export convenient for large production runs."
+    ],
+    "short_description": "Exporter et compresser GIF, WEBP, WEBM et MP4 depuis After Effects ou l'application dédiée.",
+    "short_description_en": "Export and compress GIF, WEBP, WEBM and MP4 from After Effects or the dedicated app.",
+    "slug": "ae-gifgun",
+    "source_url": "https://aescripts.com/gifgun/",
+    "source_verified_on": "2026-08-29",
+    "use_cases": [
+      "Exporter un GIF animé à partir d'une composition After Effects pour site web.",
+      "Créer des visuels optimisés pour réseaux sociaux (Twitter, Discord).",
+      "Batch export de plusieurs animations en WEBP pour économiser bande passante.",
+      "Convertir rapidement une animation After Effects en MP4 ou WEBM."
+    ],
+    "use_cases_en": [
+      "Export an animated GIF from After Effects composition to a website.",
+      "Create optimized visuals for social media (Twitter, Discord).",
+      "Batch export multiple animations to WEBP to save bandwidth.",
+      "Quickly convert After Effects animation to MP4 or WEBM."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous n'exportez qu'occasionnellement quelques GIF.",
+        "Vous avez accès à des outils gratuits (FFmpeg en ligne de commande convient).",
+        "Vous travaillez surtout en MP4 ou formats vidéo lourds."
+      ],
+      "keepIf": [
+        "Vous exportez souvent des animations After Effects en GIF ou WEBP.",
+        "Vous travaillez sur des visuels pour les réseaux sociaux (format léger).",
+        "Vous appréciez un outil simple et spécialisé plutôt que multi-usage."
+      ],
+      "threshold": "GifGun justifie son prix si vous exportez régulièrement en GIF/WEBP depuis After Effects ; pour un usage occasion, des alternatives libres (FFmpeg) suffisent."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You only occasionally export a few GIFs.",
+        "You have access to free tools (FFmpeg CLI works).",
+        "You mostly work in MP4 or heavy video formats."
+      ],
+      "keepIf": [
+        "You frequently export After Effects animations to GIF or WEBP.",
+        "You work on social media visuals (lightweight format).",
+        "You like a simple, specialized tool over a swiss-army knife."
+      ],
+      "threshold": "GifGun pays for itself if you regularly export to GIF/WEBP from After Effects; for occasional use, free alternatives (FFmpeg) work fine."
+    },
+    "website_url": "https://aescripts.com/gifgun"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Price for a specialized function (export only).",
+        "No free version to test.",
+        "Free alternatives (FFmpeg) exist but require command line.",
+        "No major updates post-v2."
+      ],
+      "pros": [
+        "Very simple, intuitive export interface.",
+        "Optimized compression (lighter files at equal quality).",
+        "Perpetual license (no recurring subscription).",
+        "Standalone desktop app (works without After Effects).",
+        "Batch export convenient for large production runs."
+      ],
+      "use_cases": [
+        "Export an animated GIF from After Effects composition to a website.",
+        "Create optimized visuals for social media (Twitter, Discord).",
+        "Batch export multiple animations to WEBP to save bandwidth.",
+        "Quickly convert After Effects animation to MP4 or WEBM."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You only occasionally export a few GIFs.",
+          "You have access to free tools (FFmpeg CLI works).",
+          "You mostly work in MP4 or heavy video formats."
+        ],
+        "keepIf": [
+          "You frequently export After Effects animations to GIF or WEBP.",
+          "You work on social media visuals (lightweight format).",
+          "You like a simple, specialized tool over a swiss-army knife."
+        ],
+        "threshold": "GifGun pays for itself if you regularly export to GIF/WEBP from After Effects; for occasional use, free alternatives (FFmpeg) work fine."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Pas de version gratuite, pas d'essai gratuit visible. Achat unique requis pour accéder au plugin et à l'application.",
+        "exists": false
+      },
+      "key_features": [
+        "Export multi-format (GIF, WEBP, WEBM, MP4) depuis After Effects",
+        "Compression optimisée avec réduction jusqu'à 15% de taille",
+        "Rendu par lot (batch export) de plusieurs compositions",
+        "Limitation automatique de taille de fichier",
+        "Application de bureau autonome (sans After Effects)",
+        "Présets exportables et partageables"
+      ],
+      "plans": [
+        {
+          "name": "GifGun 2 (Single Purchase)",
+          "price": "39,99 USD (licence perpétuelle pour v2, accès plugin + app desktop)"
+        },
+        {
+          "name": "Upgrade de v1 à v2",
+          "price": "Tarifs réduits selon date d'achat de v1"
+        }
+      ],
+      "pricing_model": "Licence perpétuelle d'achat unique. Un seul paiement donne accès à vie à la version 2 du plugin et à l'application de bureau (Windows et macOS).",
+      "what": "GifGun 2 est un plugin After Effects et un outil de bureau qui exporte les compositions After Effects en formats multiples : GIF, WEBP, WEBM, et MP4. Réputé pour son interface simple et ses optimisations de compression (réduction de taille jusqu'à 15% avec qualité améliorée).",
+      "what_en": "GifGun 2 is an After Effects plugin and desktop tool that exports compositions to multiple formats: GIF, WEBP, WEBM, and MP4. Known for simple interface and compression optimization (up to 15% size reduction with improved quality)."
+    },
+    "fr": {
+      "cons": [
+        "Prix pour une fonction spécialisée (export seulement).",
+        "Pas de version gratuite pour tester.",
+        "Alternatives gratuites (FFmpeg) existent mais demandent ligne de commande.",
+        "Pas de mise à jour majeure fréquente après v2."
+      ],
+      "pros": [
+        "Interface très simple et intuitive pour l'export.",
+        "Compression optimisée (fichiers plus légers à qualité égale).",
+        "Licence perpétuelle (pas d'abonnement récurrent).",
+        "Application de bureau autonome (fonctionne sans After Effects).",
+        "Export par lot pratique pour production en masse."
+      ],
+      "relevant_for": [
+        "Motion designers",
+        "Créateurs de contenu web",
+        "Community managers"
+      ],
+      "use_cases": [
+        "Exporter un GIF animé à partir d'une composition After Effects pour site web.",
+        "Créer des visuels optimisés pour réseaux sociaux (Twitter, Discord).",
+        "Batch export de plusieurs animations en WEBP pour économiser bande passante.",
+        "Convertir rapidement une animation After Effects en MP4 ou WEBM."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous n'exportez qu'occasionnellement quelques GIF.",
+          "Vous avez accès à des outils gratuits (FFmpeg en ligne de commande convient).",
+          "Vous travaillez surtout en MP4 ou formats vidéo lourds."
+        ],
+        "keepIf": [
+          "Vous exportez souvent des animations After Effects en GIF ou WEBP.",
+          "Vous travaillez sur des visuels pour les réseaux sociaux (format léger).",
+          "Vous appréciez un outil simple et spécialisé plutôt que multi-usage."
+        ],
+        "threshold": "GifGun justifie son prix si vous exportez régulièrement en GIF/WEBP depuis After Effects ; pour un usage occasion, des alternatives libres (FFmpeg) suffisent."
+      }
+    },
+    "slug": "ae-gifgun",
+    "sources": [
+      {
+        "label": "GifGun 2 - aescripts.com",
+        "url": "https://aescripts.com/gifgun/"
+      },
+      {
+        "label": "GifGun 2 — Official Site",
+        "url": "https://www.gifgun.io/"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-002",
+    "batch_position": 9,
+    "blockers": [],
+    "catalog_hash": "sha256:67d7ddbf8798edae56fb294b2acb3047aab7e99243f92cd29085842b014ff1a2",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:e84cc56798868bb01cbbdab8ab9d5051e38842a2bd69292ccde2aa429f040653",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "GifGun",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:5ff5b9dc0ab3c64fa394c3b82c07dc1ab5ea2c6ff96378cd619cbd9df9b7150e",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "ae-gifgun",
+    "source_url": "https://aescripts.com/gifgun/",
+    "source_verified_on": "2026-08-29",
+    "status": "QUEUED"
+  }
+}

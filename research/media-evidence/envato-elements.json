@@ -1,0 +1,41 @@
+{
+  "slug": "envato-elements",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://elements.envato.com/"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://assets.elements.envato.com/apps/storefront/audio.compressed-11d9cee9c59e9605c2cf.avif",
+      "source_page_url": "https://elements.envato.com/",
+      "official": true,
+      "alt": "PremiumBeat Content Feature"
+    },
+    {
+      "kind": "image",
+      "url": "https://assets.elements.envato.com/apps/storefront/graphics-ChrisPiascik-Promo-cc0e7a16d85c2a2327d4.avif",
+      "source_page_url": "https://elements.envato.com/",
+      "official": true,
+      "alt": "Envato X Chris Piascik"
+    },
+    {
+      "kind": "image",
+      "url": "https://assets.elements.envato.com/apps/storefront/three-d448x336.compressed-a8da95b8e96703c1c269.avif",
+      "source_page_url": "https://elements.envato.com/",
+      "official": true,
+      "alt": "KitBash3D Content Feature"
+    },
+    {
+      "kind": "image",
+      "url": "https://assets.elements.envato.com/apps/storefront/ai-category-card-video-gen.compressed-af29db464d5384278838.avif",
+      "source_page_url": "https://elements.envato.com/",
+      "official": true,
+      "alt": "AI Video Generator - Create videos from text and images"
+    }
+  ]
+}

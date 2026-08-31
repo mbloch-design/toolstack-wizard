@@ -1,0 +1,253 @@
+{
+  "batch": "review-design-tools-critical-002",
+  "current": {
+    "affiliate_url": "https://aescripts.com/flow/",
+    "alternatives": [],
+    "category": "design-tools",
+    "cons": [
+      "Nécessite une compréhension des easing curves pour être utile.",
+      "Payant (à moins de préférer le Graph Editor natif).",
+      "Limité aux courbes d'interpolation (pas d'autre contrôle d'animation)."
+    ],
+    "cons_en": [
+      "Requires understanding of easing curves to be useful.",
+      "Paid (unless you prefer AE's native Graph Editor).",
+      "Limited to interpolation curves only (no other animation controls)."
+    ],
+    "host_app": "adobe-after-effects",
+    "id": "aescripts-flow",
+    "long_description": "Flow remplace les manipulations répétitives du Graph Editor d'After Effects par une interface visuelle dédiée aux courbes d'accélération. Vous pouvez dessiner une courbe, l'appliquer aux images clés sélectionnées et conserver plusieurs bibliothèques de presets pour réutiliser un langage de mouvement cohérent.\n\nLe plugin ajoute aussi des courbes responsives avec overshoot ou undershoot et l'export vers KBar. À 35 $ en achat unique avec essai gratuit, il est surtout pertinent pour les motion designers qui règlent des easing curves chaque semaine. Pour un usage ponctuel, le Graph Editor natif reste suffisant.",
+    "long_description_en": "Flow replaces repetitive work in After Effects' Graph Editor with a visual interface dedicated to easing curves. You can draw a curve, apply it to selected keyframes, and maintain multiple preset libraries for a consistent motion language.\n\nThe plugin also adds responsive overshoot and undershoot curves plus KBar export. At $35 as a one-time purchase with a free trial, it is most useful for motion designers who tune easing every week. For occasional work, the native Graph Editor remains sufficient.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://tooltrim.com/og-screenshots/aescripts-flow.jpg"
+    },
+    "name": "Flow (aescripts)",
+    "pricing": {
+      "free": "",
+      "paid": "35 $ en achat unique, avec essai gratuit"
+    },
+    "pricing_en": {
+      "free": "",
+      "paid": "$35 one-time purchase with a free trial"
+    },
+    "pricing_v5": {
+      "cautions": [
+        "35 $ en achat unique, avec essai gratuit"
+      ],
+      "compare_plan_kind": "one_time",
+      "compare_plan_name": "Flow",
+      "compare_price_monthly_eur": 0,
+      "location_sensitive": false,
+      "official_source_url": "https://aescripts.com/flow/",
+      "price_reliability": "high",
+      "source_domain": "aescripts.com",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-08-28"
+    },
+    "pros": [
+      "Interface bien plus intuitive que le Graph Editor d'After Effects.",
+      "Preset library pour standards d'animation maison.",
+      "Accélère le workflow d'animation professionnelle.",
+      "Collaboration de créateurs très réputés."
+    ],
+    "pros_en": [
+      "Interface far more intuitive than After Effects' native Graph Editor.",
+      "Preset library for in-house animation standards.",
+      "Accelerates professional animation workflow.",
+      "Collaboration from highly respected creators."
+    ],
+    "short_description": "Le plugin d'animation de courbes le plus populaire pour After Effects.",
+    "short_description_en": "The most popular curve animation plugin for After Effects.",
+    "slug": "aescripts-flow",
+    "source_url": "https://aescripts.com/flow/",
+    "source_verified_on": "2026-08-28",
+    "use_cases": [
+      "Affiner précisément l'easing et le timing d'une animation complexe.",
+      "Maintenir une librairie de presets d'easing cohérents pour une équipe.",
+      "Accélérer l'export de courbes entre plusieurs projets similaires."
+    ],
+    "use_cases_en": [
+      "Precisely refine timing and easing of complex animations.",
+      "Maintain a consistent easing preset library for a team.",
+      "Speed up curve export across multiple similar projects."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous débutez en animation et les easing curves sont peu pertinentes pour vous.",
+        "Vous cherchez un outil gratuit pour After Effects.",
+        "Vous n'animez que rarement ou ne maîtrisez pas encore les interpolations."
+      ],
+      "keepIf": [
+        "Vous passez beaucoup de temps à affiner les animations et les easing curves en After Effects.",
+        "Vous avez besoin de réutiliser des style d'animation cohérents entre projets.",
+        "Vous faites du motion design professionnel avec des animations précises."
+      ],
+      "threshold": "Flow s'impose pour les animateurs qui affinent constamment les easing curves ; pour les débutants ou animation ponctuelle, l'outil natif d'AE peut suffire."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You're new to animation and easing curves aren't relevant yet.",
+        "You want free After Effects tools.",
+        "You animate rarely or haven't mastered interpolations."
+      ],
+      "keepIf": [
+        "You spend significant time refining animations and easing curves in After Effects.",
+        "You need consistent animation styles reused across projects.",
+        "You produce professional motion design with precise animations."
+      ],
+      "threshold": "Flow makes sense for animators constantly refining easing curves; for beginners or occasional animation, AE's native tool may suffice."
+    },
+    "website_url": "https://aescripts.com/flow/"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Requires understanding of easing curves to be useful.",
+        "Paid (unless you prefer AE's native Graph Editor).",
+        "Limited to interpolation curves only (no other animation controls)."
+      ],
+      "pros": [
+        "Interface far more intuitive than After Effects' native Graph Editor.",
+        "Preset library for in-house animation standards.",
+        "Accelerates professional animation workflow.",
+        "Collaboration from highly respected creators."
+      ],
+      "use_cases": [
+        "Precisely refine timing and easing of complex animations.",
+        "Maintain a consistent easing preset library for a team.",
+        "Speed up curve export across multiple similar projects."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You're new to animation and easing curves aren't relevant yet.",
+          "You want free After Effects tools.",
+          "You animate rarely or haven't mastered interpolations."
+        ],
+        "keepIf": [
+          "You spend significant time refining animations and easing curves in After Effects.",
+          "You need consistent animation styles reused across projects.",
+          "You produce professional motion design with precise animations."
+        ],
+        "threshold": "Flow makes sense for animators constantly refining easing curves; for beginners or occasional animation, AE's native tool may suffice."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Version d'essai gratuit avec fonctionnalités limitées ; version complète payante.",
+        "exists": true
+      },
+      "key_features": [
+        "Graph Editor moderne pour éditer les courbes d'interpolation",
+        "Preset library pour sauvegarder et réutiliser les easing curves",
+        "Interface normalisée et snappier que AE natif",
+        "Collaboration de Zack Lovatt et renderTom",
+        "Support de courbes d'easing personnalisées"
+      ],
+      "plans": [
+        {
+          "name": "Flow (complet)",
+          "price": "montants sur la page officielle"
+        }
+      ],
+      "pricing_model": "Licence unique (achat direct ou pay-what-you-want).",
+      "what": "Éditeur de courbes d'interpolation (easing) pour After Effects remplaçant le Graph Editor natif par une interface moderne et normalisée. Inclut une librairie de presets d'easing réutilisables et partageables.",
+      "what_en": "After Effects easing curve editor replacing the native Graph Editor with a modern, normalized interface. Includes a preset library for shareable, reusable easing animations."
+    },
+    "fr": {
+      "cons": [
+        "Nécessite une compréhension des easing curves pour être utile.",
+        "Payant (à moins de préférer le Graph Editor natif).",
+        "Limité aux courbes d'interpolation (pas d'autre contrôle d'animation)."
+      ],
+      "pros": [
+        "Interface bien plus intuitive que le Graph Editor d'After Effects.",
+        "Preset library pour standards d'animation maison.",
+        "Accélère le workflow d'animation professionnelle.",
+        "Collaboration de créateurs très réputés."
+      ],
+      "relevant_for": [
+        "Animateurs 2D professionnels",
+        "Motion designers",
+        "Équipes de production vidéo"
+      ],
+      "use_cases": [
+        "Affiner précisément l'easing et le timing d'une animation complexe.",
+        "Maintenir une librairie de presets d'easing cohérents pour une équipe.",
+        "Accélérer l'export de courbes entre plusieurs projets similaires."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous débutez en animation et les easing curves sont peu pertinentes pour vous.",
+          "Vous cherchez un outil gratuit pour After Effects.",
+          "Vous n'animez que rarement ou ne maîtrisez pas encore les interpolations."
+        ],
+        "keepIf": [
+          "Vous passez beaucoup de temps à affiner les animations et les easing curves en After Effects.",
+          "Vous avez besoin de réutiliser des style d'animation cohérents entre projets.",
+          "Vous faites du motion design professionnel avec des animations précises."
+        ],
+        "threshold": "Flow s'impose pour les animateurs qui affinent constamment les easing curves ; pour les débutants ou animation ponctuelle, l'outil natif d'AE peut suffire."
+      }
+    },
+    "slug": "aescripts-flow",
+    "sources": [
+      {
+        "label": "AEScripts — Flow (site officiel)",
+        "url": "https://aescripts.com/flow"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-002",
+    "batch_position": 14,
+    "blockers": [],
+    "catalog_hash": "sha256:704563ab572036bce7346f716d28efad4c57e2cf20299aa4e4b8191193908df0",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:fedc2d191c1846ac0b7ab3498643addfd20578c23b9fdb6328cd018240b9a4f5",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Flow (aescripts)",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:ad49ad9e3c24c9275e8eb4063d458ed47fca41979b3c33ee02fe129ad3226557",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "aescripts-flow",
+    "source_url": "https://aescripts.com/flow/",
+    "source_verified_on": "2026-08-28",
+    "status": "QUEUED"
+  }
+}

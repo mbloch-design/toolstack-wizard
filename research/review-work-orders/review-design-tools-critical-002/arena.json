@@ -1,0 +1,271 @@
+{
+  "batch": "review-design-tools-critical-002",
+  "current": {
+    "affiliate_url": "https://www.are.na",
+    "alternatives": [],
+    "category": "design-tools",
+    "cons": [
+      "Petite communauté comparée à Pinterest ou Instagram.",
+      "Modèle d'adhésion obligatoire pour accès complet.",
+      "Pas de native integration avec outils de design populaires.",
+      "Fonctionnalités avancées réservées au Premium."
+    ],
+    "cons_en": [
+      "Small community compared to Pinterest or Instagram.",
+      "Membership model required for full access.",
+      "No native integration with popular design tools.",
+      "Advanced features reserved for Premium."
+    ],
+    "host_app": null,
+    "id": "arena",
+    "long_description": "Plateforme collaborative en ligne pour sauvegarder, organiser et découvrir du contenu (photos, notes, fichiers, liens web). Fonctionnalités de canaux éditables pour recherche et curation de contenu humain. Écosystème de réseaux actifs, sans algorithme de recommandation.\n\nFonctions clés : Création de canaux pour organiser le contenu par thème ; Import de photos, notes, fichiers et liens web ; Partage et collaboration sur les canaux ; Réseau de 20.000+ contributeurs Premium actifs ; Pas de recommandation algorithme (curation humaine) ; Support de l'IA pour aide au workflow ; Téléchargement et export du contenu ; App mobile (iOS).\n\nAre.na s'impose pour les chercheurs et créatifs collectionnant du contenu collaboratif ; pour le partage social léger ou archivage solo, d'autres outils peuvent convenir.",
+    "long_description_en": "Online collaborative platform for saving, organizing, and discovering content (photos, notes, files, web pages). Editable channels for human-curated research. Active community networks without algorithmic recommendations.\n\nKey strengths: Independent platform, no algorithmic recommendations.; Human curation in a respectful ecosystem.; Workspace for collaborative research.; Easy content import from any source.; Responsive support and team..\n\nAre.na makes sense for researchers and creatives collecting collaborative content; for light social sharing or solo archiving, other tools may fit better.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://www.are.na/og-image.png"
+    },
+    "name": "Are.na",
+    "pricing": {
+      "free": "Plan gratuit avec limites de stockage ; Premium pour débloquer l'espace de stockage et fonctionnalités avancées.",
+      "paid": "Are.na Premium: Montants sur la page officielle"
+    },
+    "pricing_en": {
+      "free": "Plan gratuit avec limites de stockage ; Premium pour débloquer l'espace de stockage et fonctionnalités avancées.",
+      "paid": "Are.na Premium: Montants sur la page officielle"
+    },
+    "pricing_v5": {
+      "compare_price_monthly_eur": 5,
+      "official_source_url": "https://www.are.na",
+      "source_domain": "are.na",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-07-24"
+    },
+    "pros": [
+      "Plateforme indépendante, pas d'algorithme de recommandation.",
+      "Curation humaine dans un écosystème respectueux.",
+      "Espace de travail pour recherche collaborative.",
+      "Import facile de tout type de contenu.",
+      "Support et équipe réactive."
+    ],
+    "pros_en": [
+      "Independent platform, no algorithmic recommendations.",
+      "Human curation in a respectful ecosystem.",
+      "Workspace for collaborative research.",
+      "Easy content import from any source.",
+      "Responsive support and team."
+    ],
+    "short_description": "Plateforme collaborative en ligne pour sauvegarder, organiser et découvrir du contenu (photos, notes, fichiers, liens web). Fonctionnalités de canaux éditables pour recherche et curation de contenu humain. Écosystème de réseaux actifs, sans algorithme de recommandation.",
+    "short_description_en": "Online collaborative platform for saving, organizing, and discovering content (photos, notes, files, web pages). Editable channels for human-curated research. Active community networks without algorithmic recommendations.",
+    "slug": "arena",
+    "source_url": "https://www.are.na",
+    "source_verified_on": "2026-07-24",
+    "use_cases": [
+      "Créer un mood board collaboratif pour un projet créatif.",
+      "Archiver des références d'inspiration organisées par thème.",
+      "Partager et discuter de sources de recherche avec une équipe créative."
+    ],
+    "use_cases_en": [
+      "Create a collaborative mood board for a creative project.",
+      "Archive inspiration references organized by theme.",
+      "Share and discuss research sources with a creative team."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous cherchez surtout un outil de partage social (Instagram, Pinterest).",
+        "Vous avez un budget très serré et rechignez à payer un abonnement.",
+        "Vous avez besoin d'intégrations d'entreprise complexes ou SSO."
+      ],
+      "keepIf": [
+        "Vous archivez du contenu créatif ou de recherche de façon régulière.",
+        "Vous collaborez avec d'autres sur des mood boards ou collections.",
+        "Vous préférez une curation humaine à un algorithme de recommandation."
+      ],
+      "threshold": "Are.na s'impose pour les chercheurs et créatifs collectionnant du contenu collaboratif ; pour le partage social léger ou archivage solo, d'autres outils peuvent convenir."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You mainly want social sharing (Instagram, Pinterest).",
+        "You have a tight budget and resist paying for subscriptions.",
+        "You need complex enterprise integrations or SSO."
+      ],
+      "keepIf": [
+        "You regularly archive creative or research content.",
+        "You collaborate with others on mood boards or collections.",
+        "You prefer human curation over algorithmic recommendations."
+      ],
+      "threshold": "Are.na makes sense for researchers and creatives collecting collaborative content; for light social sharing or solo archiving, other tools may fit better."
+    },
+    "website_url": "https://www.are.na"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Small community compared to Pinterest or Instagram.",
+        "Membership model required for full access.",
+        "No native integration with popular design tools.",
+        "Advanced features reserved for Premium."
+      ],
+      "pros": [
+        "Independent platform, no algorithmic recommendations.",
+        "Human curation in a respectful ecosystem.",
+        "Workspace for collaborative research.",
+        "Easy content import from any source.",
+        "Responsive support and team."
+      ],
+      "use_cases": [
+        "Create a collaborative mood board for a creative project.",
+        "Archive inspiration references organized by theme.",
+        "Share and discuss research sources with a creative team."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You mainly want social sharing (Instagram, Pinterest).",
+          "You have a tight budget and resist paying for subscriptions.",
+          "You need complex enterprise integrations or SSO."
+        ],
+        "keepIf": [
+          "You regularly archive creative or research content.",
+          "You collaborate with others on mood boards or collections.",
+          "You prefer human curation over algorithmic recommendations."
+        ],
+        "threshold": "Are.na makes sense for researchers and creatives collecting collaborative content; for light social sharing or solo archiving, other tools may fit better."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Plan gratuit avec limites de stockage ; Premium pour débloquer l'espace de stockage et fonctionnalités avancées.",
+        "exists": true
+      },
+      "key_features": [
+        "Création de canaux pour organiser le contenu par thème",
+        "Import de photos, notes, fichiers et liens web",
+        "Partage et collaboration sur les canaux",
+        "Réseau de 20.000+ contributeurs Premium actifs",
+        "Pas de recommandation algorithme (curation humaine)",
+        "Support de l'IA pour aide au workflow",
+        "Téléchargement et export du contenu",
+        "App mobile (iOS)"
+      ],
+      "plans": [
+        {
+          "name": "Are.na Premium",
+          "price": "Montants sur la page officielle"
+        }
+      ],
+      "pricing_model": "Modèle d'adhésion avec plan Premium. Plate-forme indépendante soutenue par ses membres.",
+      "what": "Plateforme collaborative en ligne pour sauvegarder, organiser et découvrir du contenu (photos, notes, fichiers, liens web). Fonctionnalités de canaux éditables pour recherche et curation de contenu humain. Écosystème de réseaux actifs, sans algorithme de recommandation.",
+      "what_en": "Online collaborative platform for saving, organizing, and discovering content (photos, notes, files, web pages). Editable channels for human-curated research. Active community networks without algorithmic recommendations."
+    },
+    "fr": {
+      "cons": [
+        "Petite communauté comparée à Pinterest ou Instagram.",
+        "Modèle d'adhésion obligatoire pour accès complet.",
+        "Pas de native integration avec outils de design populaires.",
+        "Fonctionnalités avancées réservées au Premium."
+      ],
+      "pros": [
+        "Plateforme indépendante, pas d'algorithme de recommandation.",
+        "Curation humaine dans un écosystème respectueux.",
+        "Espace de travail pour recherche collaborative.",
+        "Import facile de tout type de contenu.",
+        "Support et équipe réactive."
+      ],
+      "relevant_for": [
+        "Designers",
+        "Chercheurs créatifs",
+        "Artistes collectionnant des références"
+      ],
+      "use_cases": [
+        "Créer un mood board collaboratif pour un projet créatif.",
+        "Archiver des références d'inspiration organisées par thème.",
+        "Partager et discuter de sources de recherche avec une équipe créative."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous cherchez surtout un outil de partage social (Instagram, Pinterest).",
+          "Vous avez un budget très serré et rechignez à payer un abonnement.",
+          "Vous avez besoin d'intégrations d'entreprise complexes ou SSO."
+        ],
+        "keepIf": [
+          "Vous archivez du contenu créatif ou de recherche de façon régulière.",
+          "Vous collaborez avec d'autres sur des mood boards ou collections.",
+          "Vous préférez une curation humaine à un algorithme de recommandation."
+        ],
+        "threshold": "Are.na s'impose pour les chercheurs et créatifs collectionnant du contenu collaboratif ; pour le partage social léger ou archivage solo, d'autres outils peuvent convenir."
+      }
+    },
+    "slug": "arena",
+    "sources": [
+      {
+        "label": "Are.na — Official Site",
+        "url": "https://www.are.na"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": {
+    "discovery": {
+      "official_media_found": true,
+      "official_pages_checked": [
+        "https://www.are.na/about"
+      ]
+    },
+    "items": [
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://www.are.na/about",
+        "url": "https://www.are.na/og-image.png"
+      }
+    ],
+    "mode": "sourced",
+    "slug": "arena",
+    "verified_on": "2026-08-29"
+  },
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-002",
+    "batch_position": 15,
+    "blockers": [],
+    "catalog_hash": "sha256:18c97bc74ff3fe6f7b542e482d6fe2e35d1e455e49b33302e6595d9f5cf328ee",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:f5d40963ceb8969633fb273683fed46a26b9111d7b2b8954caa7b41a4b30710b",
+    "invalidated_from": null,
+    "media_errors": [],
+    "media_evidence": "VALID",
+    "media_evidence_hash": "sha256:c7c021bf4f08deaece7a7bf1823265ff44544272a0212104cb49c6d448823a0e",
+    "name": "Are.na",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price"
+    ],
+    "priority_score": 180,
+    "published_at": "2026-08-31",
+    "quality_version": "catalog-review-v1",
+    "rendered_at": "2026-08-31",
+    "review_fingerprint": "sha256:72448164a498340300e3468165be9f33d526552c30a273633bd2a189d7afdd74",
+    "reviewed_at": "2026-08-31",
+    "reviewed_hash": "sha256:72448164a498340300e3468165be9f33d526552c30a273633bd2a189d7afdd74",
+    "reviewer": "ToolTrim - Mike",
+    "risk_tier": "critical",
+    "slug": "arena",
+    "source_url": "https://www.are.na",
+    "source_verified_on": "2026-07-24",
+    "status": "PUBLISHED"
+  }
+}

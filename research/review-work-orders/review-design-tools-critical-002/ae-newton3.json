@@ -1,0 +1,278 @@
+{
+  "batch": "review-design-tools-critical-002",
+  "current": {
+    "affiliate_url": "https://aescripts.com/newton",
+    "alternatives": [],
+    "category": "design-tools",
+    "cons": [
+      "Prix élevé pour un plugin spécialisé.",
+      "Pas de version gratuite ; seule une remise étudiante existe.",
+      "Newton 3 plus d'updates (Newton 4 recommandé, upgrade payant).",
+      "Courbe d'apprentissage : comprendre physique et contraintes.",
+      "Peut être overkill pour animations simples."
+    ],
+    "cons_en": [
+      "High price for specialized plugin.",
+      "No free version; only a student discount is available.",
+      "Newton 3 no longer updated (Newton 4 recommended, paid upgrade).",
+      "Learning curve: understanding physics and constraints.",
+      "May be overkill for simple animations."
+    ],
+    "host_app": "adobe-after-effects",
+    "id": "ae-newton3",
+    "long_description": "Newton, c'est un moteur de physique 2D pour After Effects. Au lieu d'animer chaque rebond et chaque collision à la main, tu donnes des propriétés physiques à tes calques (gravité, masse, rebond, friction) et Newton calcule le mouvement réaliste : objets qui tombent, s'empilent, se heurtent, typographie qui dégringole. Pour un motion designer, ça permet des animations organiques qui seraient très longues à faire en keyframes.\n\nC'est un achat unique (aescripts/Motionboutique) autour de 250$, sans abonnement. C'est cher pour un plugin, mais c'est un investissement durable si tu en as un usage régulier.\n\nÀ qui ça s'adresse : aux motion designers qui font des animations à base de physique. Si tes projets n'en contiennent pas, Newton ne te servira à rien. Mais dès qu'il faut du mouvement réaliste avec des interactions entre objets, il n'a pas vraiment d'équivalent dans After Effects.",
+    "long_description_en": "Newton is a 2D physics engine for After Effects. Instead of animating each bounce and collision by hand, you give your layers physical properties (gravity, mass, bounce, friction) and Newton computes realistic motion: objects falling, stacking, colliding, type tumbling down. For a motion designer, it enables organic animations that would take ages to keyframe.\n\nIt's a one-time purchase (aescripts/Motionboutique) around $250, no subscription. It's pricey for a plugin, but a lasting investment if you use it regularly.\n\nWho it's for: motion designers who do physics-based animation. If your projects don't include any, Newton will be useless to you. But the moment you need realistic motion with interactions between objects, it has no real equivalent in After Effects.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://tooltrim.com/og-screenshots/ae-newton3.jpg"
+    },
+    "name": "Newton 3",
+    "pricing": {
+      "free": "",
+      "paid": "Achat unique (~250$), licence à vie, pas d'abonnement"
+    },
+    "pricing_en": {
+      "free": "",
+      "paid": "One-time purchase (~$250), lifetime license, no subscription"
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Achat unique (~250$), pas d'abonnement"
+      ],
+      "compare_plan_kind": "individual",
+      "compare_plan_name": "Achat unique",
+      "compare_price_monthly_eur": 0,
+      "location_sensitive": false,
+      "official_source_url": "https://aescripts.com/newton",
+      "price_reliability": "low",
+      "source_domain": "aescripts.com",
+      "usage_sensitive": false,
+      "verification_status": "official_site_only",
+      "verified_on": "2026-06-15"
+    },
+    "pros": [
+      "Simulation physique professionnelle et flexible.",
+      "Économise beaucoup de temps sur keyframing physique.",
+      "Résultats automatiquement convertis en keyframes AE (éditable après).",
+      "Licence perpétuelle (pas d'abonnement).",
+      "6 types d'objets et joints offrent contrôle avancé."
+    ],
+    "pros_en": [
+      "Professional, flexible physics simulation.",
+      "Saves huge time on physics keyframing.",
+      "Results auto-converted to AE keyframes (editable after).",
+      "Perpetual license (no subscription).",
+      "6 object and joint types offer advanced control."
+    ],
+    "short_description": "Simulateur de physique 2D pour After Effects. Collisions, gravité, ressorts réalistes.",
+    "short_description_en": "2D physics simulator for After Effects. Realistic collisions, gravity, springs.",
+    "slug": "ae-newton3",
+    "source_url": "https://aescripts.com/newton",
+    "source_verified_on": "2026-06-15",
+    "use_cases": [
+      "Animer des balles ou objets qui rebondissent naturellement avec physique réaliste.",
+      "Créer des oscillations et vibrations organiques sur texte ou formes.",
+      "Simuler des chaînes flottantes ou des drapeaux ondulants.",
+      "Effet naturel de chute ou collision sans keyframing manuel."
+    ],
+    "use_cases_en": [
+      "Animate bouncing balls or objects with realistic physics.",
+      "Create organic oscillations and vibrations on text or shapes.",
+      "Simulate floating chains or waving flags.",
+      "Natural falling or collision effect without manual keyframing."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous débutez en animation et voulez maîtriser les bases d'abord.",
+        "Vous faites surtout du motion design graphique simple.",
+        "Vous avez un budget limité (plugin spécialisé, cher)."
+      ],
+      "keepIf": [
+        "Vous créez des animations complexes avec physique réaliste (rebonds, oscillations).",
+        "Vous voulez éviter le keyframing manuel pour des mouvements physiques.",
+        "Vous travaillez sur des designs motion avancés (particules, effets naturels)."
+      ],
+      "threshold": "Newton 3 justifie son investissement pour animations physiques fréquentes ; pour un usage occasionnel, les effets natifs After Effects suffisent."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You're new to animation and want to master basics first.",
+        "You mostly do simple graphic motion design.",
+        "You have a tight budget (specialized, expensive plugin)."
+      ],
+      "keepIf": [
+        "You create complex animations with realistic physics (bounces, oscillations).",
+        "You want to avoid manual keyframing for physical movement.",
+        "You work on advanced motion design (particles, natural effects)."
+      ],
+      "threshold": "Newton 3 pays off for frequent physics animations; for occasional use, After Effects built-in effects suffice."
+    },
+    "website_url": "https://aescripts.com/newton"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "High price for specialized plugin.",
+        "No free version; only a student discount is available.",
+        "Newton 3 no longer updated (Newton 4 recommended, paid upgrade).",
+        "Learning curve: understanding physics and constraints.",
+        "May be overkill for simple animations."
+      ],
+      "pros": [
+        "Professional, flexible physics simulation.",
+        "Saves huge time on physics keyframing.",
+        "Results auto-converted to AE keyframes (editable after).",
+        "Perpetual license (no subscription).",
+        "6 object and joint types offer advanced control."
+      ],
+      "use_cases": [
+        "Animate bouncing balls or objects with realistic physics.",
+        "Create organic oscillations and vibrations on text or shapes.",
+        "Simulate floating chains or waving flags.",
+        "Natural falling or collision effect without manual keyframing."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You're new to animation and want to master basics first.",
+          "You mostly do simple graphic motion design.",
+          "You have a tight budget (specialized, expensive plugin)."
+        ],
+        "keepIf": [
+          "You create complex animations with realistic physics (bounces, oscillations).",
+          "You want to avoid manual keyframing for physical movement.",
+          "You work on advanced motion design (particles, natural effects)."
+        ],
+        "threshold": "Newton 3 pays off for frequent physics animations; for occasional use, After Effects built-in effects suffice."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Pas de version gratuite. Aucun essai gratuit visible. Réduction de 50% disponible pour étudiants et enseignants.",
+        "exists": false
+      },
+      "key_features": [
+        "Simulation physique 2D (gravité, collision, friction)",
+        "6 types d'objets (statique, dynamique, cinématique, AEmatic, dormant, dead)",
+        "6 types de joints (distance, pivot, piston, ressort, roue, blob)",
+        "Animation automatique des keyframes (conversion en keyframes AE standard)",
+        "Contrôle des propriétés physiques (rebond, amortissement, masse)",
+        "Export et animation de résultats sans recalcul"
+      ],
+      "plans": [
+        {
+          "name": "Newton 3",
+          "price": "249,99 USD (licence perpétuelle, plus d'updates)"
+        },
+        {
+          "name": "Newton 4 (upgrade depuis Newton 3)",
+          "price": "99,99 USD (tarif réduit pour propriétaires v3)"
+        }
+      ],
+      "pricing_model": "Licence perpétuelle d'achat unique. Newton 3 n'est plus mis à jour (Newton 4 le remplace). Acheteurs de v3 peuvent upgrader vers v4 à tarif réduit.",
+      "what": "Newton 3 (et son successeur Newton 4) est un moteur de simulation physique 2D pour After Effects qui fait se comporter les calques comme des objets solides avec gravité, collision, friction et ressorts. Permite d'appliquer des forces réalistes (rebonds, oscillations) à du texte, formes et éléments sans keyframing manuel.",
+      "what_en": "Newton 3 (and successor Newton 4) is a 2D physics simulation engine for After Effects that makes layers behave like solid objects with gravity, collisions, friction, and springs. Applies realistic forces (bounces, oscillations) to text, shapes, and elements without manual keyframing."
+    },
+    "fr": {
+      "cons": [
+        "Prix élevé pour un plugin spécialisé.",
+        "Pas de version gratuite ; seule une remise étudiante existe.",
+        "Newton 3 plus d'updates (Newton 4 recommandé, upgrade payant).",
+        "Courbe d'apprentissage : comprendre physique et contraintes.",
+        "Peut être overkill pour animations simples."
+      ],
+      "pros": [
+        "Simulation physique professionnelle et flexible.",
+        "Économise beaucoup de temps sur keyframing physique.",
+        "Résultats automatiquement convertis en keyframes AE (éditable après).",
+        "Licence perpétuelle (pas d'abonnement).",
+        "6 types d'objets et joints offrent contrôle avancé."
+      ],
+      "relevant_for": [
+        "Motion designers avancés",
+        "Animateurs After Effects",
+        "VFX artists"
+      ],
+      "use_cases": [
+        "Animer des balles ou objets qui rebondissent naturellement avec physique réaliste.",
+        "Créer des oscillations et vibrations organiques sur texte ou formes.",
+        "Simuler des chaînes flottantes ou des drapeaux ondulants.",
+        "Effet naturel de chute ou collision sans keyframing manuel."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous débutez en animation et voulez maîtriser les bases d'abord.",
+          "Vous faites surtout du motion design graphique simple.",
+          "Vous avez un budget limité (plugin spécialisé, cher)."
+        ],
+        "keepIf": [
+          "Vous créez des animations complexes avec physique réaliste (rebonds, oscillations).",
+          "Vous voulez éviter le keyframing manuel pour des mouvements physiques.",
+          "Vous travaillez sur des designs motion avancés (particules, effets naturels)."
+        ],
+        "threshold": "Newton 3 justifie son investissement pour animations physiques fréquentes ; pour un usage occasionnel, les effets natifs After Effects suffisent."
+      }
+    },
+    "slug": "ae-newton3",
+    "sources": [
+      {
+        "label": "Newton 4 (dernière version) - aescripts.com",
+        "url": "https://aescripts.com/newton/"
+      },
+      {
+        "label": "10 Minute Crash Course: Newton 3 After Effects Plugin (Premium Beat)",
+        "url": "https://www.premiumbeat.com/blog/after-effects-newton-3-plugin/"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-002",
+    "batch_position": 10,
+    "blockers": [],
+    "catalog_hash": "sha256:b85d74e41ae3da4d6a1c0840e1f858c72d86a0582d51d24a22ca96ca6ef660d0",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:52dd123846f9baff4596b1ccbfd3a2ac5751f9c7fc5b7fdb9de0e19388264454",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Newton 3",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:d4de6993512bb5faa8de4ffe1f9e6160535684b668d073841608fc927462f0e8",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "ae-newton3",
+    "source_url": "https://aescripts.com/newton",
+    "source_verified_on": "2026-06-15",
+    "status": "QUEUED"
+  }
+}

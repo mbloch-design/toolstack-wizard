@@ -1,0 +1,41 @@
+{
+  "slug": "enscape",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://www.chaos.com/enscape"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://static.chaos.com/images/assets/000/023/805/original/industry-solutions-studio-bazzini-thumb-1920x1080-v2.jpg",
+      "source_page_url": "https://www.chaos.com/enscape",
+      "official": true,
+      "alt": "enscape official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://static.chaos.com/images/assets/000/023/802/original/industry-solutions-tm-marvel-1920x1080-v2.jpg",
+      "source_page_url": "https://www.chaos.com/enscape",
+      "official": true,
+      "alt": "enscape official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://static.chaos.com/images/assets/000/026/964/original/FFF_City_Hall_Plaza_03_Urban_Grove.png?1770981446",
+      "source_page_url": "https://www.chaos.com/enscape",
+      "official": true,
+      "alt": "enscape official product view"
+    },
+    {
+      "kind": "image",
+      "url": "https://static.chaos.com/images/assets/000/026/905/original/tiles-connect-690x380.jpeg?1769697287",
+      "source_page_url": "https://www.chaos.com/enscape",
+      "official": true,
+      "alt": "CGconnect"
+    }
+  ]
+}

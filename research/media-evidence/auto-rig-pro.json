@@ -1,0 +1,34 @@
+{
+  "slug": "auto-rig-pro",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://superhivemarket.com/products/auto-rig-pro"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://assets.superhivemarket.com/store/product/126738/image/xlarge-8c2f231da5b8fcd134fee5a937fc0824.jpg",
+      "official": true,
+      "alt": "Auto-Rig Pro overview",
+      "source_page_url": "https://superhivemarket.com/products/auto-rig-pro"
+    },
+    {
+      "kind": "image",
+      "url": "https://assets.superhivemarket.com/store/productimage/5041/image/xlarge-98c1fda52af4f61e38003fe7c956fd99.jpg",
+      "official": true,
+      "alt": "Auto-Rig Pro rigging workflow",
+      "source_page_url": "https://superhivemarket.com/products/auto-rig-pro"
+    },
+    {
+      "kind": "image",
+      "url": "https://assets.superhivemarket.com/store/productimage/6755/image/xlarge-16b10c4486692a750494925e78b8ce83.jpg",
+      "official": true,
+      "alt": "Auto-Rig Pro animation workflow",
+      "source_page_url": "https://superhivemarket.com/products/auto-rig-pro"
+    }
+  ]
+}
