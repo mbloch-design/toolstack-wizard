@@ -14,6 +14,26 @@
       "url": "https://conga.com/sites/default/files/styles/large/public/image/2026-03/Social%20Share%20%281%29%20%281%29.png?itok=uH7gF5iu",
       "source_page_url": "https://conga.com",
       "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://conga.com/sites/default/files/image/2026-05/purple_400_bkg.png",
+      "source_page_url": "https://conga.com/",
+      "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://conga.com/sites/default/files/styles/small_hq/public/image/2026-03/automate-documents-and-signatures.png.webp?itok=90DBy6IE",
+      "source_page_url": "https://conga.com/",
+      "official": true,
+      "alt": "Automate documents and signatures"
+    },
+    {
+      "kind": "image",
+      "url": "https://conga.com/sites/default/files/styles/small_hq/public/image/2026-03/manage-contracts-and-risk.png.webp?itok=LZpU793x",
+      "source_page_url": "https://conga.com/",
+      "official": true,
+      "alt": "Manage contracts and risk"
     }
   ]
 }

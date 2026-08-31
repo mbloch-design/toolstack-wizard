@@ -14,6 +14,18 @@
       "url": "https://s1.feedly.com/images/fx/og/threat-intelligence-5-26.png",
       "source_page_url": "https://feedly.com",
       "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://feedly.com/_next/static/media/test-drive-section.8a5a132f.svg",
+      "source_page_url": "https://feedly.com/",
+      "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://feedly.com/_next/static/media/test-drive-section-mobile.44ba2b69.svg",
+      "source_page_url": "https://feedly.com/",
+      "official": true
     }
   ]
 }

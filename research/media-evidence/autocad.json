@@ -1,20 +1,27 @@
 {
   "slug": "autocad",
   "verified_on": "2026-08-31",
-  "mode": "fallback_screenshot",
+  "mode": "sourced",
   "discovery": {
-    "official_media_found": false,
+    "official_media_found": true,
     "official_pages_checked": [
       "https://autodesk.com/products/autocad"
     ]
   },
   "items": [
     {
-      "kind": "screenshot",
-      "url": "/og-screenshots/autocad.jpg",
-      "source_page_url": "https://autodesk.com/products/autocad",
-      "official": false,
-      "capture_method": "browser_screenshot"
+      "kind": "image",
+      "url": "https://images.ctfassets.net/v7wr16nrr0mz/dqMYHCggeoYcKiXjPsZZy/bf3965e57a6cf0626496fd3d3875cba5/learn-best-practices-with-autolisp-thumb-788x1050.jpg",
+      "source_page_url": "https://www.autodesk.com/products/autocad/overview",
+      "official": true,
+      "alt": "AutoCAD Load/Unload Applications interface promoting Autodesk University drafting training sessions"
+    },
+    {
+      "kind": "image",
+      "url": "https://images.ctfassets.net/v7wr16nrr0mz/6eXQAx6Z2Wm18nlBOLgVVE/eb41da463d7799874dc282086665506b/block-creation-in-autocad-thumb-788x1050.jpg",
+      "source_page_url": "https://www.autodesk.com/products/autocad/overview",
+      "official": true,
+      "alt": "AutoCAD interface showing block creation tools and a simple furniture layout with a desk and chair in a dark workspace."
     }
   ]
 }

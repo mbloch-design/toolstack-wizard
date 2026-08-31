@@ -14,6 +14,25 @@
       "url": "https://a.storyblok.com/f/157376/1200x630/e9706cdc7b/og-image-en_1200x630.png/m/1200x0",
       "source_page_url": "https://aircall.io",
       "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://a.storyblok.com/f/157376/1920x1097/ec2b8abdf6/what-is-aircall-thumbnail.png/m/",
+      "source_page_url": "https://aircall.io/",
+      "official": true,
+      "alt": "What is Aircall Video"
+    },
+    {
+      "kind": "image",
+      "url": "https://a.storyblok.com/f/157376/1500x737/81dfab4a39/bgtagline-fades.png/m/",
+      "source_page_url": "https://aircall.io/",
+      "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://a.storyblok.com/f/157376/1224x652/a4d0f2888a/cta.png/m/",
+      "source_page_url": "https://aircall.io/",
+      "official": true
     }
   ]
 }

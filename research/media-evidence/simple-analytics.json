@@ -14,6 +14,20 @@
       "url": "https://assets.simpleanalytics.com/social-media/dark-chart.png",
       "source_page_url": "https://simpleanalytics.com",
       "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://files.simpleanalytics.com/2026-03-26-dashboard-simple-analytics-homepage-dark.png",
+      "source_page_url": "https://www.simpleanalytics.com/",
+      "official": true,
+      "alt": "Simple Analytics dashboard dark mode"
+    },
+    {
+      "kind": "image",
+      "url": "https://files.simpleanalytics.com/2026-03-26-dashboard-simple-analytics-homepage.png",
+      "source_page_url": "https://www.simpleanalytics.com/",
+      "official": true,
+      "alt": "Simple Analytics dashboard"
     }
   ]
 }

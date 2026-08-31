@@ -447,7 +447,9 @@
     },
     "force_silence": false,
     "ogImageUrl": "https://images.ctfassets.net/2h488pz7kgfv/4JAm44Htcrinu0sTomaEGi/1f7be85af3138e1d38bb31fe5ad6425b/open-graph-1password-business.jpg",
-    "galleryImages": []
+    "galleryImages": [
+      "https://images.ctfassets.net/2h488pz7kgfv/5PwxTj7SfVX39ACxVEO5hC/3e0fe9e02686b13b9633b80204739a4f/desktop-ORBR-graphic-1392x1392-2x.webp"
+    ]
   },
   {
     "id": "3ds-max",
@@ -1047,7 +1049,11 @@
     "decision_policy_v3": null,
     "ogImageUrl": "https://cdn.prod.website-files.com/67b6f863dda3a85687e777a6/6809ff3ab38ebd48f5709328_Acast%20OG.jpg",
     "force_silence": false,
-    "galleryImages": []
+    "galleryImages": [
+      "https://cdn.prod.website-files.com/67b6f863dda3a85687e777a6/696e4c9e98cce9252f41a4e9_Podcast%20cover%20associated.avif",
+      "https://cdn.prod.website-files.com/67b6f863dda3a85687e777a6/696e5780d45253c15a4bbe16_Main%20pic%20on%20homepage%20cropped%202.avif",
+      "https://cdn.prod.website-files.com/67b6f863dda3a85687e777a6/67ea74172a6271132623a0ab_74667fce95d7ceac510dd0c9e7fc4286_Your%20podcast%20features.svg"
+    ]
   },
   {
     "id": "activecampaign",
@@ -1910,7 +1916,11 @@
     ],
     "decision_policy_v3": null,
     "force_silence": false,
-    "galleryImages": []
+    "galleryImages": [
+      "https://www.adobe.com/dc-shared/media_17ea34bbe4b7e96781185ae6aaa4296ff200f2dd9.png?width=750&format=png&optimize=medium",
+      "https://www.adobe.com/dc-shared/media_1c7014e1d2d2f97a5960b6d9922adf5a51b53209e.png?width=750&format=png&optimize=medium",
+      "https://www.adobe.com/dc-shared/media_1cff4e7ea1c90e575787f446169021b5c99cf8667.png?width=750&format=png&optimize=medium"
+    ]
   },
   {
     "id": "adobe-acrobat-sign",
@@ -2395,7 +2405,11 @@
     ],
     "decision_policy_v3": null,
     "force_silence": false,
-    "galleryImages": []
+    "galleryImages": [
+      "https://www.adobe.com/products/media_15967c6ff869ca11d5c016bcc847117c649ec8833.jpg?width=2000&format=webply&optimize=medium",
+      "https://www.adobe.com/products/media_17c776f83aa56c4dc7a58d6e996ac2b31e840315d.jpg?width=750&format=jpg&optimize=medium",
+      "https://www.adobe.com/products/media_1e86afb9dc4614d3a04b9ea7ce8acb2fec5b4b2bf.jpg?width=750&format=jpg&optimize=medium"
+    ]
   },
   {
     "id": "adobe-cc",
@@ -3056,7 +3070,11 @@
     ],
     "decision_policy_v3": null,
     "force_silence": false,
-    "galleryImages": []
+    "galleryImages": [
+      "https://www.adobe.com/express/media_17cf7f6474fe12727dc188525b547cbce53115d4f.png?width=2000&format=webply&optimize=medium",
+      "https://www.adobe.com/express/media_1e3e46ed6d2e261925bdc9d516ebe3d20e182e609.png?width=2000&format=webply&optimize=medium",
+      "https://www.adobe.com/express/media_1b1796a6b1fda9c1a2bef0758423c47350aad666c.png?width=2000&format=webply&optimize=medium"
+    ]
   },
   {
     "id": "firefly",
@@ -3582,7 +3600,10 @@
     "force_silence": false,
     "description": "Éditeur de graphismes vectoriels de référence d'Adobe, pour créer des visuels redimensionnables à l'infini.\n\nFonctions clés : Dessin vectoriel (courbes de Bézier) redimensionnable à l'infini ; Création de logos et de branding ; Typographie et manipulation de texte avancées ; Outils de précision (plume, points d'ancrage, repères) ; IA générative (texte-vers-vecteur, recoloration).\n\nIllustrator s'impose quand le vectoriel (logos, illustrations, typographie) est central ; pour de la photo/retouche ou un usage occasionnel, un autre outil convient mieux.",
     "ogImageUrl": "https://www.adobe.com/products/media_19762a181d8f7cdad7fa491acc9917bdedbcba01a.jpg?width=1200&format=pjpg&optimize=medium",
-    "galleryImages": []
+    "galleryImages": [
+      "https://www.adobe.com/products/media_13041399720796bf25e74572da8bd75f723699e43.png?width=750&format=png&optimize=medium",
+      "https://www.adobe.com/products/media_173efa03ba5a9610db9180e5958f064aa30d51f62.png?width=750&format=png&optimize=medium"
+    ]
   },
   {
     "id": "indesign",
@@ -3731,7 +3752,10 @@
     "force_silence": false,
     "description": "Logiciel de PAO et de mise en page d'Adobe (depuis 1999), pour l'édition print et numérique.\n\nFonctions clés : Mise en page multi-pages professionnelle ; Typographie avancée (OpenType, Unicode, alignement optique) ; Publication print et numérique (export PDF, EPUB) ; Pages parentes (gabarits) pour la cohérence ; Disponible sur Windows et macOS.\n\nInDesign s'impose pour la PAO multi-pages et le contrôle typographique ; pour des documents simples, un traitement de texte est plus indiqué.",
     "ogImageUrl": "https://www.adobe.com/products/media_14a141cf8900a74105b7122f28472dce9fd8cf872.jpg?width=1200&format=pjpg&optimize=medium",
-    "galleryImages": []
+    "galleryImages": [
+      "https://www.adobe.com/products/media_174ff14868756eb8148775a3bc1137cb738c614f6.jpg?width=2000&format=webply&optimize=medium",
+      "https://www.adobe.com/products/media_16d6b2ced4aa0dd9c0f24f4a4b5630ce483342640.jpg?width=750&format=jpg&optimize=medium"
+    ]
   },
   {
     "id": "adobe-lightroom",
@@ -3954,7 +3978,11 @@
     "force_silence": false,
     "description": "Application d'organisation et de retouche photo d'Adobe, pensée pour gérer et éditer de gros volumes d'images.\n\nFonctions clés : Retouche non destructive (édits enregistrés séparément de l'original) ; Organisation par métadonnées, mots-clés et collections ; Prise en charge RAW (et TIFF, JPEG, PNG, PSD) ; Synchronisation cloud entre bureau, mobile et web ; Préréglages (presets) applicables en lot et partageables.\n\nLightroom s'impose quand la gestion et la retouche non destructive d'une photothèque priment ; pour du contrôle pixel fin, Photoshop reste plus adapté, et un usage occasionnel n'en a pas besoin.",
     "ogImageUrl": "https://www.adobe.com/products/media_1325ced14a2fe5ee95ce8861e41db26a6fc38d95a.jpg?width=1200&format=pjpg&optimize=medium",
-    "galleryImages": []
+    "galleryImages": [
+      "https://www.adobe.com/cc-shared/fragments/products/photoshop-lightroom/media_1801f417462e363d8f808f863ed3756ac93623343.png?width=750&format=png&optimize=medium",
+      "https://www.adobe.com/products/media_1e459da212cbda34dbab87b26a733fff0de666ad0.jpg?width=2000&format=webply&optimize=medium",
+      "https://www.adobe.com/products/media_1320c51b3235c78977c5780fc3b7fde69e2140f27.jpg?width=750&format=jpg&optimize=medium"
+    ]
   },
   {
     "id": "adobe-photoshop",
@@ -4168,7 +4196,11 @@
     "force_silence": false,
     "description": "Éditeur d'images matricielles (raster) de référence d'Adobe, pour Windows, macOS et iPad.\n\nFonctions clés : Édition multi-calques avec masques et compositing ; Retouche professionnelle (correcteur, remplissage selon le contenu) ; Traitement RAW via Camera Raw ; Fonctions d'IA générative (Remplissage et Extension génératifs) ; Disponible sur Windows, macOS et iPad.\n\nPhotoshop s'impose quand l'édition d'images matricielles est au cœur de votre travail ; pour du vectoriel ou des retouches ponctuelles, un outil plus léger (ou Illustrator) convient mieux.",
     "ogImageUrl": "https://www.adobe.com/products/media_17f61e1224166630fb2e30723046881244c8812a9.jpg?width=1200&format=pjpg&optimize=medium",
-    "galleryImages": []
+    "galleryImages": [
+      "https://www.adobe.com/cc-shared/fragments/products/photoshop/product-page/media_18bfe9207cb445b0c0adb23e9358e4b04ffee9d37.jpg?width=750&format=jpg&optimize=medium",
+      "https://www.adobe.com/products/media_1593767de8d991b2148233f4972e7a75f4b8c3f1b.png?width=750&format=png&optimize=medium",
+      "https://www.adobe.com/cc-shared/fragments/products/photoshop/product-page/media_190e4e43778fc5bb8a6847f4c87c04e8e4122ccaf.jpg?width=750&format=jpg&optimize=medium"
+    ]
   },
   {
     "id": "adobe-podcast-ai",
@@ -4346,7 +4378,11 @@
     "force_silence": false,
     "description": "Suite d'outils audio par IA d'Adobe pour enregistrer, éditer et améliorer la voix (podcasts, voix-off).\n\nFonctions clés : Amélioration de la voix par IA (Enhance Speech) ; Enregistrement et édition audio dans le navigateur ; Réduction de bruit et de réverbération ; Rendu de qualité studio sans expertise audio.\n\nAdobe Podcast s'impose pour améliorer rapidement de la voix par IA sans expertise ; pour un mixage fin, un DAW dédié (comme Audition) reste plus adapté.",
     "ogImageUrl": "https://tooltrim.com/tool-media/adobe-podcast/enhance-speech.webp",
-    "galleryImages": []
+    "galleryImages": [
+      "https://podcast.adobe.com/images/responsive/wp_flex_home-illustration@2x-1730.9fe6b7e706773f11.webp?responsive",
+      "https://podcast.adobe.com/images/responsive/wp_flex_splash-2700.d623aab27109253b.webp?responsive",
+      "https://podcast.adobe.com/images/responsive/wp_flex_studio-hero-french-3620.a2097ca6464062cd.webp?responsive"
+    ]
   },
   {
     "id": "adobe-premiere-pro",
@@ -4550,7 +4586,10 @@
     "force_silence": false,
     "description": "Application de montage vidéo professionnelle d'Adobe, distribuée dans Creative Cloud.\n\nFonctions clés : Montage sur timeline avec imbrication profonde des séquences ; Prise en charge haute résolution et grande profondeur de couleur ; Audio pro (édition fine, VST, mixage surround 5.1) ; Étalonnage couleur (outils Lumetri) ; Intégration Dynamic Link avec After Effects, Photoshop, Illustrator.\n\nPremiere Pro s'impose quand le montage vidéo est régulier et exigeant, en lien avec l'écosystème Adobe ; pour un montage occasionnel, un outil plus léger (ou gratuit) suffit.",
     "ogImageUrl": "https://www.adobe.com/products/media_14a141cf8900a74105b7122f28472dce9fd8cf872.jpg?width=1200&format=pjpg&optimize=medium",
-    "galleryImages": []
+    "galleryImages": [
+      "https://www.adobe.com/products/media_168928bcdc3aff4c1288aa2e481211b36d7c35d8d.png?width=750&format=png&optimize=medium",
+      "https://www.adobe.com/products/media_1f8daa11378f3f2bf31de3eba54dec9f989bf65d5.png?width=750&format=png&optimize=medium"
+    ]
   },
   {
     "id": "adobe-stock",
@@ -4832,7 +4871,11 @@
     ],
     "decision_policy_v3": null,
     "force_silence": false,
-    "galleryImages": []
+    "galleryImages": [
+      "https://www.adobe.com/cc-shared/fragments/products/substance3d/media_18d01bcdbd61b9bd76c2fa021f81fd7644e813ac2.png?width=750&format=png&optimize=medium",
+      "https://www.adobe.com/cc-shared/fragments/products/substance3d/media_14013731db65726a838b705f598ea33e09ef8a734.png?width=750&format=png&optimize=medium",
+      "https://www.adobe.com/cc-shared/fragments/products/substance3d/media_1f37f5d50f6503d305f64180e382caa235114fa35.png?width=750&format=png&optimize=medium"
+    ]
   },
   {
     "id": "adobe-xd",
@@ -5140,8 +5183,11 @@
     "pivot_integration_source": true,
     "personas": [],
     "force_silence": false,
-    "ogImageUrl": "/og-screenshots/adp-workforce.jpg",
-    "galleryImages": []
+    "ogImageUrl": "https://www.adp.com/-/media/adp/refresh2025/illustrations/default-bg/adp_illustration_payroll.png?rev=ea5b5c9d18fa4e078c6295e25a801658&hash=5ED63EE529979A2B355DC88EF0D52A50",
+    "galleryImages": [
+      "https://www.adp.com/-/media/adp/refresh2025/images/misc/navpromo_runproductscreen.png?rev=6b3e75497a62473fa94e742836118e66&hash=264EA297C8FD47547A7480656DD25AB0",
+      "https://www.adp.com/-/media/adp/refresh2025/images/home/home_runproductscreen_620w_en.png?rev=852497e28d0a4afb8dac310dc993e5ee&hash=504249EC29C8F900D29D153F8166CAC1"
+    ]
   },
   {
     "id": "acf",
@@ -5609,7 +5655,11 @@
     "decision_policy_v3": null,
     "ogImageUrl": "https://images.ctfassets.net/8dreszsahte7/2yE99dsuxDH1IVNa5HQKXJ/435b73bb5bd5e0a62bba48a6144336a8/Visuel_g%C3%A9n%C3%A9rique.png",
     "force_silence": false,
-    "galleryImages": []
+    "galleryImages": [
+      "https://images.ctfassets.net/8dreszsahte7/4tiKhy6LyKbNSBKd4jZ74C/8a444c194a61017991f062cf138938ca/Image_Vide.png?w=646&h=611&q=85&fm=webp&bg=transparent",
+      "https://images.ctfassets.net/8dreszsahte7/3VtJk5G3NH1Es66f1W9XuS/9427b4b477e8aa20e89da667e0fa2b3d/Integration_FR.png?w=960&h=745&q=85&fm=png&bg=transparent",
+      "https://images.ctfassets.net/8dreszsahte7/15AeqHGUVVuzvQ3rW2csGv/457b83271d3c719ee578071ee853ee79/Collaboration_FR.png?w=1314&h=1244&q=85&fm=png&bg=transparent"
+    ]
   },
   {
     "id": "ahrefs",
@@ -5905,7 +5955,9 @@
     },
     "ogImageUrl": "https://airbyte.com/images/opengraph-context-layer-ai-agents.png",
     "force_silence": false,
-    "galleryImages": []
+    "galleryImages": [
+      "https://airbyte.com/images/mcp-gateway/hero-diagram/mock-assets/facebook.png"
+    ]
   },
   {
     "id": "aircall-inc",
@@ -6082,7 +6134,11 @@
     },
     "force_silence": false,
     "ogImageUrl": "https://a.storyblok.com/f/157376/1200x630/e9706cdc7b/og-image-en_1200x630.png/m/1200x0",
-    "galleryImages": []
+    "galleryImages": [
+      "https://a.storyblok.com/f/157376/1920x1097/ec2b8abdf6/what-is-aircall-thumbnail.png/m/",
+      "https://a.storyblok.com/f/157376/1500x737/81dfab4a39/bgtagline-fades.png/m/",
+      "https://a.storyblok.com/f/157376/1224x652/a4d0f2888a/cta.png/m/"
+    ]
   },
   {
     "id": "airslate",
@@ -6436,7 +6492,11 @@
     },
     "force_silence": false,
     "ogImageUrl": "https://cdn.sanity.io/images/hlcyrtq5/production/00c20d5108d1335f5a243ddcd70ea4a2d6d9a844-1200x630.webp",
-    "galleryImages": []
+    "galleryImages": [
+      "https://static.airtable.com/images/marketing-nav-platform-graphic.webp",
+      "https://static.airtable.com/images/marketing-nav-resource.webp",
+      "https://static.airtable.com/images/marketing-nav-solution.webp"
+    ]
   },
   {
     "id": "albato",
@@ -6596,7 +6656,9 @@
     },
     "force_silence": false,
     "ogImageUrl": "https://albato.com/images/previews/en/embedded-ai.webp",
-    "galleryImages": []
+    "galleryImages": [
+      "https://albato.com/_next/image?url=%2Fimages%2Fembedded%2Fhero%2Fembedded-hero-img-en.webp&w=3840&q=75"
+    ]
   },
   {
     "id": "algolia",
@@ -6741,7 +6803,11 @@
     },
     "ogImageUrl": "https://www.algolia.com/files/live/sites/algolia-assets/files/opengraph/algolia-opengraph-image.jpg",
     "force_silence": false,
-    "galleryImages": []
+    "galleryImages": [
+      "https://www.algolia.com/files/live/sites/www/files/homepage-carousel/overlay-paradigm-b2b-combine.png",
+      "https://www.algolia.com/files/live/sites/www/files/homepage-carousel/overlay-analyst-recognition.png",
+      "https://www.algolia.com/files/live/sites/www/files/homepage-carousel/overlay-forrester-tei.png"
+    ]
   },
   {
     "id": "allstate",
@@ -7472,7 +7538,9 @@
     },
     "force_silence": false,
     "ogImageUrl": "https://amplitude.com/nextjs-public/amplitude-default-seo.png",
-    "galleryImages": []
+    "galleryImages": [
+      "https://amplitude.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fl5rq9j6r%2Fproduction%2Ff3bd9da3bb752f8333eeaf876de7be74cf670a40-2160x1760.png&w=3840&q=75&dpl=dpl_7asxed4WKyPeAgGSsh2j79KExiv2"
+    ]
   },
   {
     "id": "anaplan",
@@ -8649,7 +8717,9 @@
     ],
     "decision_policy_v3": null,
     "force_silence": false,
-    "galleryImages": []
+    "galleryImages": [
+      "https://www.antidote.info/images/f/e/n/e/t/fenetre-correcteur-fr2x-536496fc.png"
+    ]
   },
   {
     "id": "apexcharts",
@@ -8921,7 +8991,10 @@
     "descriptionEn": "Apollo combines a B2B contact database, automated email sequences, and a light CRM in one tool, built for regular sales prospecting activity wanting to avoid paying for several separate subscriptions (database, sending tool, CRM).\n\nThe free plan includes unlimited email credits (fair use, roughly 250/day), but only 5 mobile credits and 10 export credits per month, and caps at 2 active sequences in parallel. Paid plans start around $49/month/user (Basic) and go up to $119 (Organization).\n\nThe trade-off: credits don't roll over month to month, and for intensive prospecting (cold calling, high volumes), the real cost can climb to 2-3x the advertised rate once overages and add-ons are factored in.",
     "ogImageUrl": "https://www.apollo.com/content/dam/apolloaem/images/brand/apollo-og-image%202023.png",
     "force_silence": false,
-    "galleryImages": []
+    "galleryImages": [
+      "https://www.apollo.io/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhomepage-static-for-video.0h98v3yl13hkl.png&w=3840&q=75",
+      "https://www.apollo.io/_next/static/media/spacer-mobile.0ou~-sg1p0is~.svg"
+    ]
   },
   {
     "id": "apollo-io",
@@ -10138,11 +10211,14 @@
       "compare_price_monthly_eur": 36
     },
     "substitution_cluster_v2": "render-engine",
-    "ogImageUrl": "/og-screenshots/arnold.jpg",
+    "ogImageUrl": "https://images.ctfassets.net/v7wr16nrr0mz/1uVn6YUvZTk9et3OSirDkg/d8d8d25c0340ca2c06d2575b3eafb9d8/what-is-autodesk-arnold-thumb-788x1050.jpg",
     "description": "Moteur de rendu Monte Carlo par tracé de rayons (ray tracing) développé par Autodesk pour le cinéma, télévision, jeux vidéo et visualisation de design. Résultats prévisibles, scalable pour les pipelines de production. Compatible Maya, 3ds Max, Houdini, Blender et autres.\n\nFonctions clés : Moteur ray tracing Monte Carlo avancé ; Résultats de rendu prévisibles et reproductibles ; Scalabilité pour pipelines de production ; Support multi-application (Maya, 3ds Max, Houdini, Blender, etc.) ; Denoising intégré (réduction de bruit) ; Shader network système et scripting ; GPU rendering (RTX) en sus du CPU.\n\nArnold s'impose pour les studios de production cinéma/TV ; pour 3D solo, débutant ou ponctuel, Cycles (Blender) ou d'autres renderers gratuits conviendraient.",
     "decision_policy_v3": null,
     "force_silence": false,
-    "galleryImages": []
+    "galleryImages": [
+      "https://images.ctfassets.net/v7wr16nrr0mz/zZrkgOJJ5lgpm44LKv9Ni/b0f52b94b238ab96d084bb5c99f092e5/manage-complex-projects-with-production-ready-tools-thumb-788x1050.jpg",
+      "https://images.ctfassets.net/v7wr16nrr0mz/32MrQfOSmWP6pS4EmzFkIY/755934caad725b6476de09b7b2f19b5a/integrate-and-customize-your-pipeline-thumb-788x1050.jpg"
+    ]
   },
   {
     "id": "around",
@@ -11747,14 +11823,16 @@
       },
       "metaDescription": "Audionotes : transcription et structuration de notes vocales, usages, limites et choix du plan pour les indépendants."
     },
-    "ogImageUrl": "/og-screenshots/audionotes.jpg",
+    "ogImageUrl": "https://www.audionotes.app/home/feature-phone-0.webp",
     "pricing_v5": {
       "verified_on": "2026-08-31",
       "official_source_url": "https://www.audionotes.app/",
       "source_domain": "audionotes.app",
       "verification_status": "official_explicit"
     },
-    "galleryImages": []
+    "galleryImages": [
+      "https://www.audionotes.app/home/feature-phone-1.webp"
+    ]
   },
   {
     "id": "auphonic",
@@ -12598,8 +12676,10 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "/og-screenshots/autocad.jpg",
-    "galleryImages": []
+    "ogImageUrl": "https://images.ctfassets.net/v7wr16nrr0mz/dqMYHCggeoYcKiXjPsZZy/bf3965e57a6cf0626496fd3d3875cba5/learn-best-practices-with-autolisp-thumb-788x1050.jpg",
+    "galleryImages": [
+      "https://images.ctfassets.net/v7wr16nrr0mz/6eXQAx6Z2Wm18nlBOLgVVE/eb41da463d7799874dc282086665506b/block-creation-in-autocad-thumb-788x1050.jpg"
+    ]
   },
   {
     "id": "autocad-lt",
@@ -13998,7 +14078,11 @@
     "decision_policy_v3": null,
     "ogImageUrl": "https://www.axept.io/hubfs/axeptio-og-fr.jpg",
     "force_silence": false,
-    "galleryImages": []
+    "galleryImages": [
+      "https://www.axept.io/hs-fs/hubfs/image%201%20(1).webp?width=1000&height=871&name=image%201%20(1).webp",
+      "https://www.axept.io/hs-fs/hubfs/V6-3-CMP_EN.webp?width=2880&height=1800&name=V6-3-CMP_EN.webp",
+      "https://www.axept.io/hs-fs/hubfs/Pink-CMP-Home_EN%20(1).webp?width=2000&height=1200&name=Pink-CMP-Home_EN%20(1).webp"
+    ]
   },
   {
     "id": "axonaut",
@@ -15087,7 +15171,11 @@
     "force_silence": false,
     "description": "Outil de gestion de projet et de collaboration d'équipe qui centralise communication, tâches et fichiers.\n\nFonctions clés : Message boards (annonces) et Docs & Files ; To-dos et Card Tables (suivi façon Kanban) ; Campfires & Pings (chat de groupe et messages directs) ; Planning (échéances, jalons, événements).\n\nBasecamp s'impose quand la simplicité et la centralisation priment sur la richesse fonctionnelle ; pour de la gestion de projet lourde ou très outillée, un outil spécialisé reste plus adapté.",
     "ogImageUrl": "https://basecamp.com/assets/images/opengraph/basecamp.png?v=1.3.12",
-    "galleryImages": []
+    "galleryImages": [
+      "https://basecamp.com/assets/images/project/view-message-board-light.webp",
+      "https://basecamp.com/assets/images/project/view-docs-and-files-light.webp",
+      "https://basecamp.com/assets/images/project/view-to-dos-light.webp"
+    ]
   },
   {
     "id": "bear",
@@ -18157,7 +18245,11 @@
     },
     "force_silence": false,
     "ogImageUrl": "https://assets.box.com/sites/default/files/box_default_og_sharing_image/box-social.jpg",
-    "galleryImages": []
+    "galleryImages": [
+      "https://assets.box.com/sites/default/files/styles/2880xauto/public/2026-07/1-hero_box-contentai_1440.png?itok=G20CGTZF",
+      "https://assets.box.com/sites/default/files/styles/1440x1440/public/2025-12/3-lr_collaborate_easily_and_securely.jpg?itok=X5pTEz30",
+      "https://assets.box.com/sites/default/files/styles/400x320/public/module_110_bg/4-LR.png?itok=PibCSqAA"
+    ]
   },
   {
     "id": "brand-kits",
@@ -19251,8 +19343,11 @@
     },
     "force_silence": false,
     "timeGainedHoursPerMonth": null,
-    "ogImageUrl": "/og-screenshots/brevo.jpg",
-    "galleryImages": []
+    "ogImageUrl": "https://corp-backend.brevo.com/fr/wp-content/uploads/sites/4/2026/05/all-in-one.webp",
+    "galleryImages": [
+      "https://corp-backend.brevo.com/fr/wp-content/uploads/sites/4/2026/05/AI.webp",
+      "https://corp-backend.brevo.com/fr/wp-content/uploads/sites/4/2026/02/FR-marketing-agent.webp"
+    ]
   },
   {
     "id": "bricks",
@@ -20281,7 +20376,11 @@
     },
     "force_silence": false,
     "ogImageUrl": "https://buffer.com/ogImages/homepage-og.png",
-    "galleryImages": []
+    "galleryImages": [
+      "https://buffer.com/img/homepage/publish-composer.webp?w=1200&q=75",
+      "https://buffer.com/img/homepage/create-ideas.webp?w=1200&q=75",
+      "https://buffer.com/img/homepage/community-comments.webp?w=1200&q=75"
+    ]
   },
   {
     "id": "bugherd",
@@ -23445,7 +23544,9 @@
     "decision_policy_v3": null,
     "ogImageUrl": "https://www.captaincontrat.com/hubfs/logo-captaincontrat-4.png",
     "force_silence": false,
-    "galleryImages": []
+    "galleryImages": [
+      "https://www.captaincontrat.com/hs-fs/hubfs/fixepng0.webp?width=1200&height=1080&name=fixepng0.webp"
+    ]
   },
   {
     "id": "captaindoc",
@@ -30118,7 +30219,11 @@
     "personas": [],
     "force_silence": false,
     "ogImageUrl": "https://conga.com/sites/default/files/styles/large/public/image/2026-03/Social%20Share%20%281%29%20%281%29.png?itok=uH7gF5iu",
-    "galleryImages": []
+    "galleryImages": [
+      "https://conga.com/sites/default/files/image/2026-05/purple_400_bkg.png",
+      "https://conga.com/sites/default/files/styles/small_hq/public/image/2026-03/automate-documents-and-signatures.png.webp?itok=90DBy6IE",
+      "https://conga.com/sites/default/files/styles/small_hq/public/image/2026-03/manage-contracts-and-risk.png.webp?itok=LZpU793x"
+    ]
   },
   {
     "id": "connecteam",
@@ -31769,7 +31874,11 @@
     "decision_policy_v3": null,
     "ogImageUrl": "https://www.coupler.io/assets/og-image-9ea172df3bf2d3071ac41c04b5ea552e2c433819388f052ace787b3db09c2f7d.png",
     "force_silence": false,
-    "galleryImages": []
+    "galleryImages": [
+      "https://www.coupler.io/assets/footer-bg-1440-3e85243ff990d587a27b4309759302cf5ae9bf7d44d3416a04fa46cd8288afff.png",
+      "https://www.coupler.io/assets/roles/store@2x-6eaeec346aa15815885edbffd958920cc5595e9767dd6542bdfbb9dde74a3419.webp",
+      "https://www.coupler.io/assets/roles/visualize-1@2x-1ab0f2368336a2dc36c63a479bafae1d0f9500f32e28762973348258b5a01c91.webp"
+    ]
   },
   {
     "id": "craft",
@@ -32462,9 +32571,12 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "ogImageUrl": "/og-screenshots/creatoriq.jpg",
+    "ogImageUrl": "https://www.creatoriq.com/hs-fs/hubfs/Homepage%20Tiles/CLA26_JTS-HT-A.png?width=2480&height=3440&name=CLA26_JTS-HT-A.png",
     "force_silence": false,
-    "galleryImages": []
+    "galleryImages": [
+      "https://www.creatoriq.com/hs-fs/hubfs/Homepage%20Tiles/CE26Homepage%20Tile.png?width=2480&height=3440&name=CE26Homepage%20Tile.png",
+      "https://www.creatoriq.com/hs-fs/hubfs/Homepage%20Tiles/CreativeX-Nestle_HomepageTile-A.jpg?width=2480&height=3440&name=CreativeX-Nestle_HomepageTile-A.jpg"
+    ]
   },
   {
     "id": "creditsafe",
@@ -35912,7 +36024,11 @@
     },
     "force_silence": false,
     "ogImageUrl": "https://website-media.deel.com/General_Purple_f6b2f3f9bd.png",
-    "galleryImages": []
+    "galleryImages": [
+      "https://website-media.deel.com/HR_9158c8c5a0_avif.avif",
+      "https://website-media.deel.com/Mobility_0d0fdddfac_avif.avif",
+      "https://website-media.deel.com/Go_live_quickly_with_US_payroll_cba17cce08_avif.avif"
+    ]
   },
   {
     "id": "deepseek",
@@ -40367,8 +40483,10 @@
     "pivot_integration_source": true,
     "personas": [],
     "force_silence": false,
-    "ogImageUrl": "/og-screenshots/dun-bradstreet.jpg",
-    "galleryImages": []
+    "ogImageUrl": "https://s7d9.scene7.com/is/image/dbradstreetinc/Illustration_Homepage-AI-Data-UI_Hero%3A16-x-9?ts=1784558845172&dpr=off",
+    "galleryImages": [
+      "https://s7d9.scene7.com/is/image/dbradstreetinc/AdobeStock_808141502%3A4-x-5?ts=1784558845269&dpr=off"
+    ]
   },
   {
     "id": "dxo-photolab",
@@ -45399,7 +45517,10 @@
     "decision_policy_v3": null,
     "ogImageUrl": "https://s1.feedly.com/images/fx/og/threat-intelligence-5-26.png",
     "force_silence": false,
-    "galleryImages": []
+    "galleryImages": [
+      "https://feedly.com/_next/static/media/test-drive-section.8a5a132f.svg",
+      "https://feedly.com/_next/static/media/test-drive-section-mobile.44ba2b69.svg"
+    ]
   },
   {
     "id": "fellow",
@@ -48895,7 +49016,11 @@
     "decision_policy_v3": null,
     "ogImageUrl": "https://cdn.prod.website-files.com/65efdf52a39c7b2ca4035c98/67a24537fa82ef534146a29d_104d4d983d47ec9445c20d452789cde9_homepage-meta-img_2025.png",
     "force_silence": false,
-    "galleryImages": []
+    "galleryImages": [
+      "https://cdn.prod.website-files.com/65efdf52a39c7b2ca4035c98/68ac85e35b1b56038fce83aa_Header%20bg%20dots%20and%20lines.svg",
+      "https://cdn.prod.website-files.com/65efdf52a39c7b2ca4035c98/6a5717e2c252f0ab8d5b0ff2_hero%20side%20image%20container-1.webp",
+      "https://cdn.prod.website-files.com/660268f912a7255a6ba7becd/69261e36830aaba55abc7a7d_nexus-studios.webp"
+    ]
   },
   {
     "id": "flourish",
@@ -61144,8 +61269,11 @@
     "pivot_integration_source": true,
     "personas": [],
     "force_silence": false,
-    "ogImageUrl": "/og-screenshots/gusto.jpg",
-    "galleryImages": []
+    "ogImageUrl": "https://cms-media.gusto-cdn.com/image/upload/w_1920,c_limit,f_auto,q_auto/v1761092400/wp-migration/TheSaltyDonut_Miami_FL.jpg",
+    "galleryImages": [
+      "https://cms-media.gusto-cdn.com/image/upload/w_3840,c_limit,f_auto,q_auto/v1761090938/wp-migration/techpartners_hero402x.jpg",
+      "https://cms-media.gusto-cdn.com/image/upload/w_3840,c_limit,f_auto,q_auto/v1761079535/wp-migration/Group-with-Props-scaled-1.jpg"
+    ]
   },
   {
     "id": "hard-ops-boxcutter",
@@ -72346,8 +72474,11 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "/og-screenshots/kit.jpg",
-    "galleryImages": []
+    "ogImageUrl": "https://media.kit.com/images/pages/home/anne-laure-le-cunff_kit.jpg?q=75&fm=webp&auto=format&fit=crop&crop=faces%2Cfocalpoint&w=952&h=1174",
+    "galleryImages": [
+      "https://media.kit.com/images/pages/home/james-clear-kit.jpg?q=75&fm=webp&auto=format&fit=crop&crop=faces%2Cfocalpoint&w=952&h=1174",
+      "https://media.kit.com/images/pages/home/ali-abdaal-kit.jpg?q=75&fm=webp&auto=format&fit=crop&crop=faces%2Cfocalpoint&w=952&h=1174"
+    ]
   },
   {
     "id": "kixie",
@@ -76466,7 +76597,11 @@
     "decision_policy_v3": null,
     "ogImageUrl": "https://www.legalplace.fr/wp-content/uploads/2025/12/legalplace-creation-gestion-societe-og.png",
     "force_silence": false,
-    "galleryImages": []
+    "galleryImages": [
+      "https://www.legalplace.fr/wp-content/uploads/2024/11/Illustrations-header@2x-2.png",
+      "https://www.legalplace.fr/wp-content/uploads/2024/11/TypeExpert_Comptable2x_1.webp",
+      "https://www.legalplace.fr/wp-content/uploads/2024/11/Illustrations-header@2x-1.png"
+    ]
   },
   {
     "id": "legalstart",
@@ -76847,7 +76982,11 @@
     "force_silence": false,
     "timeGainedHoursPerMonth": null,
     "ogImageUrl": "https://web-assets.lemlist.com/lemlist/Home%20-%20Graph%20URL.png",
-    "galleryImages": []
+    "galleryImages": [
+      "https://web-assets.lemlist.com/prod/d0703c503d7ab06332106bce05aef3ff",
+      "https://web-assets.lemlist.com/prod/32294705d7af051a13468a020825bcb4",
+      "https://web-assets.lemlist.com/prod/aea7a4a14c4d7e2a1b8db87de03d485b"
+    ]
   },
   {
     "id": "lemon-squeezy",
@@ -89179,8 +89318,11 @@
     "pivot_integration_source": true,
     "personas": [],
     "force_silence": false,
-    "ogImageUrl": "/og-screenshots/microsoft-365.jpg",
-    "galleryImages": []
+    "ogImageUrl": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/787831-hero-bg-1600x680-1?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=3200&hei=1360&qlt=100&fit=constrain",
+    "galleryImages": [
+      "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/787831-plans-bg-1600x1297?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=3200&qlt=100&fit=constrain",
+      "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/966000-image-for-students?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=2000&hei=1125&qlt=100&fit=constrain"
+    ]
   },
   {
     "id": "microsoft-365-copilot",
@@ -89344,11 +89486,14 @@
       },
       "metaDescription": "Microsoft 365 Copilot avis : IA dans Word, Excel et Teams. Résume réunions et rédige documents. Justifié pour grandes équipes."
     },
-    "ogImageUrl": "/og-screenshots/microsoft-365-copilot.jpg",
+    "ogImageUrl": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/176500-BG-Agent-EDIT?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=3999&hei=2563&qlt=100&fit=constrain",
     "description": "Assistant IA intégré aux applications Microsoft 365 (Word, Excel, Outlook, Teams, PowerPoint) qui génère du contenu, résume des documents, crée des présentations et facilite la collaboration.\n\nFonctions clés : Chat + Cowork pour conversations complexes multi-projets ; Recherche IA d'entreprise au-delà de mots-clés ; Agents pré-construits et personnalisables via Copilot Studio ; Notebooks centralisées avec résumés de réunions ; Génération de contenus (designs, vidéos, sondages).\n\nMicrosoft 365 Copilot s'impose pour les organisations déjà ancrées dans l'écosystème Microsoft ; pour d'autres, des assistants IA indépendants peuvent être plus flexibles.",
     "articles": [],
     "force_silence": false,
-    "galleryImages": []
+    "galleryImages": [
+      "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/176500-BG-Search-EDIT?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=3999&hei=2563&qlt=100&fit=constrain",
+      "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/6-BG-What_s-New?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=2000&hei=1210&qlt=100&fit=constrain"
+    ]
   },
   {
     "id": "azure",
@@ -90836,8 +90981,11 @@
     "pivot_integration_source": true,
     "personas": [],
     "force_silence": false,
-    "ogImageUrl": "/og-screenshots/microsoft-teams.jpg",
-    "galleryImages": []
+    "ogImageUrl": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/3380400-teams-rooms-optimize-workspaces?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=2904&hei=1644&qlt=100&fmt=png-alpha&fit=constrain",
+    "galleryImages": [
+      "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/1034750-chatgpt-bg-image-teams-4000x800?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=4000&hei=800&qlt=100&fit=constrain",
+      "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/OverviewandFeatures_Overview_1.3?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=1664&hei=1062&qlt=100&fit=constrain"
+    ]
   },
   {
     "id": "midjourney",
@@ -99272,8 +99420,11 @@
     "pivot_integration_source": true,
     "personas": [],
     "force_silence": false,
-    "ogImageUrl": "/og-screenshots/onedrive.jpg",
-    "galleryImages": []
+    "ogImageUrl": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/408455-Hero-Resized-1600x612-option2?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=2000&hei=725&qlt=100&fmt=png-alpha&fit=constrain",
+    "galleryImages": [
+      "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/305616-ctastacked-bg-1600X1060?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=2000&hei=1328&qlt=100&fmt=png-alpha&fit=constrain",
+      "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/1032413-accordions-800x513?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=1000&hei=642&qlt=100&fmt=png-alpha&fit=constrain"
+    ]
   },
   {
     "id": "onelogin",
@@ -99628,7 +99779,9 @@
     "personas": [],
     "force_silence": false,
     "ogImageUrl": "https://www.onetrust.com/content/dam/onetrust/ot-thumbnail-onetrust-black.png",
-    "galleryImages": []
+    "galleryImages": [
+      "https://www.onetrust.com/adobe/dynamicmedia/deliver/dm-aid--d7fefb21-29f9-4536-a1fe-e764ee05304a/ot-hero-graphic-ai-governance-program-center.png?quality=82&preferwebp=true"
+    ]
   },
   {
     "id": "onramp-funds",
@@ -105607,7 +105760,11 @@
     "personas": [],
     "force_silence": false,
     "ogImageUrl": "https://images.ctfassets.net/b76knntgaaiu/5f6bEcEKJxLvdKvuwbax05/e292cd12828391facec2a2aa77eecee3/Image_Meta.jpg",
-    "galleryImages": []
+    "galleryImages": [
+      "https://images.ctfassets.net/b76knntgaaiu/2TGZgzRH4bc8qgeLVHmv3I/da61c20b3b37f1932ff539f6fdbc3ac3/Illus_Home-V0623.svg",
+      "https://images.ctfassets.net/b76knntgaaiu/7xwAJFFQt4wngY6KIrMZhv/6458469f5039143912668256c71e61a3/image_du_saas_pennylane_plateforme_tout_en_un_entreprise.png?w=3072&h=3072&fm=png",
+      "https://images.ctfassets.net/b76knntgaaiu/44SrVZheDrRnBV1ha1ZIfe/13d8f2f780c7b063619a199ea91abbc5/Image_de_l-outil_de_gestion_pennylane.png?w=3072&h=3072&fm=png"
+    ]
   },
   {
     "id": "pennylane-ai-selon-dispo",
@@ -107388,7 +107545,11 @@
     "description": "Couche de gestion des assets par-dessus stockages existants (Google Drive, S3) avec recherche IA, collaboration, versioning, rights management et partage sécurisé, promo 20% août 2026.\n\nFonctions clés : Couche DAM sur Google Drive, Amazon S3 ; Recherche IA (natural language, face, OCR, speech-to-text) ; Version control (comparaisons, approval locking) ; Collaboration in-asset comments et workflows ; Rights management (usage windows, expiration) ; Partage portails branded avec auto-conversion ; Intégrations Figma, Slack, Adobe, Zapier ; Audit trails pour compliance ; Flexible ou fixed AI credits pricing.\n\nPics.io convient organisations Google/S3 cherchant DAM couche ; pour standalone, Bynder ou Cloudinary conviennent mieux.",
     "articles": [],
     "force_silence": false,
-    "galleryImages": []
+    "galleryImages": [
+      "https://landing-assets.pics.io/3.10.3/img/picsio/integrationTools/sun-bg@2x.webp",
+      "https://landing-assets.pics.io/3.10.3/img/picsio/hello-page/find-files-in-seconds@2x.webp",
+      "https://landing-assets.pics.io/3.10.3/img/picsio/hello-page/upload@2x.webp"
+    ]
   },
   {
     "id": "pigment",
@@ -122119,7 +122280,11 @@
     "decision_policy_v3": null,
     "ogImageUrl": "https://cdn.relevanceai.com/images/og-image.webp",
     "force_silence": false,
-    "galleryImages": []
+    "galleryImages": [
+      "https://cdn.relevanceai.com/images/webflow/695e73a393ade10a193b09ab_Quali_b5a3862d.webp",
+      "https://cdn.relevanceai.com/images/webflow/695e743f048de0c5cc9e1ffc_Send__d0d0eafc.webp",
+      "https://cdn.relevanceai.com/images/webflow/6964e410c375b28f25108b45_Send-_8aca421c.webp"
+    ]
   },
   {
     "id": "relume",
@@ -133290,8 +133455,11 @@
     "pivot_integration_source": true,
     "personas": [],
     "force_silence": false,
-    "ogImageUrl": "/og-screenshots/sharepoint.jpg",
-    "galleryImages": []
+    "ogImageUrl": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/365076-skucard-1600x1052?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=2000&hei=1315&qlt=100&fit=constrain",
+    "galleryImages": [
+      "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/3778898-vertical-accordian-4.1?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=2000&hei=1283&qlt=100&fmt=png-alpha&fit=constrain",
+      "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/1072651-HeroBG-1600x616?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=4000&hei=1540&qlt=100&fit=constrain"
+    ]
   },
   {
     "id": "shield",
@@ -135582,7 +135750,10 @@
     "description": "Plateforme analytics web privacy-first, sans cookies ni suivi de visitants, 100% GDPR conforme, qui capture les vues de pages et événements sans identification personnelle. Data hébergée en Europe.\n\nFonctions clés : Analytics sans cookies, 100% GDPR compliant ; Data hébergée en Europe ; Pas de suivi de visitants, pas d'IP stockée ; Compatible GA4 (capture le trafic consentement dénié) ; Pageviews, événements, referrers, campagnes ; Export CSV, API access ; Dashboard minimaliste et rapide ; Essai gratuit 14 jours.\n\nSimple Analytics est idéal pour qui priorise privacy et conformité. Pour du tracking granulaire ou du remarketing, Plausible ou Google Analytics demeurent meilleurs choix.",
     "articles": [],
     "force_silence": false,
-    "galleryImages": []
+    "galleryImages": [
+      "https://files.simpleanalytics.com/2026-03-26-dashboard-simple-analytics-homepage-dark.png",
+      "https://files.simpleanalytics.com/2026-03-26-dashboard-simple-analytics-homepage.png"
+    ]
   },
   {
     "id": "simpletexting",
@@ -144538,7 +144709,11 @@
     "decision_policy_v3": null,
     "ogImageUrl": "https://cdn.sanity.io/images/8ly2m84z/production-2025/eee7774699fe786de151ef9785e5392dc2da9d5a-3840x2160.png",
     "force_silence": false,
-    "galleryImages": []
+    "galleryImages": [
+      "https://cdn.sanity.io/images/8ly2m84z/production-2025/1c7836db993bf92dbe3482feaa8cb81c8ab98b03-74x77.svg?w=74&h=77&fit=max&auto=format",
+      "https://supermetrics.com/cdn-cgi/image/onerror=redirect,width=1920,height=1442,format=png/https://cdn.sanity.io/images/8ly2m84z/production-2025/35c81032529cadb8e5d6e1587dbb2d930b774d1a-2002x1504.jpg?w=1920&h=1442&fit=max&auto=format",
+      "https://supermetrics.com/cdn-cgi/image/onerror=redirect,width=1920,height=1079,format=png/https://cdn.sanity.io/images/8ly2m84z/production-2025/a0ff15a33567ec250c0a6cad7b5f9ce871526fc0-2560x1440.png?rect=0,1,2560,1439&w=1920&h=1079&fit=max&auto=format"
+    ]
   },
   {
     "id": "superwhisper",
@@ -145896,7 +146071,11 @@
       "tcoExampleFr": "Pour une DSI de 8 agents gérant 500 postes : comptez environ 4 000–6 000 $/an sur le tier ITSM (estimation). Ajoutez 10–15 % pour l'intégration Active Directory et la formation initiale."
     },
     "ogImageUrl": "https://cdn.sysaid.com/wp-content/uploads/sysaid-logo-blogs.png",
-    "galleryImages": []
+    "galleryImages": [
+      "https://cdn.sysaid.com/wp-content/uploads/test-1.png",
+      "https://cdn.sysaid.com/wp-content/uploads/menu-banner-the-it-divide-2026-clean.png",
+      "https://cdn.sysaid.com/wp-content/uploads/Frame-1321317195-1-1.png"
+    ]
   },
   {
     "id": "systeme-io",
@@ -148244,7 +148423,11 @@
     "description": "Outil d'enregistrement et de montage vidéo dans le navigateur : capture webcam et écran, édition assistée par IA, arrière-plans et mises en page, export jusqu'en 4K.\n\nFonctions clés : Enregistrement webcam et écran dans le navigateur ; Édition assistée par IA (coupes, transitions) ; Arrière-plans, mises en page et branding ; Export haute qualité jusqu'en 4K.\n\nTella convient pour des vidéos soignées et rapides ; pour de simples captures ponctuelles, un enregistreur gratuit suffit.",
     "articles": [],
     "force_silence": false,
-    "galleryImages": []
+    "galleryImages": [
+      "https://www.tella.com/marketing-site/editor-bg-lake.jpg",
+      "https://www.tella.com/marketing-site/viewpage-wallpaper-bg.webp",
+      "https://www.tella.com/marketing-site/Steven_Tey.jpeg"
+    ]
   },
   {
     "id": "templates",
@@ -151500,7 +151683,11 @@
     "personas": [],
     "force_silence": false,
     "ogImageUrl": "https://cdn.prod.website-files.com/62a7039ea5539a072aa2c5d0/67069f030afd6c7c1c77b9c3_Thumbnail.png",
-    "galleryImages": []
+    "galleryImages": [
+      "https://cdn.prod.website-files.com/678ed5a51cf3c992fa25b232/686552e8123484b1deaba86c_Visual-Home-FR.avif",
+      "https://cdn.prod.website-files.com/678ed5a51cf3c992fa25b232/679024b896838ec15ffa9623_Foodles-Usecase-Thumbnail.avif",
+      "https://cdn.prod.website-files.com/678ed5a51cf3c992fa25b232/67e3db3119e057eda4c0e9e1_Visual-Home-sectionOro-AIRecommendations-Straight-FR.png"
+    ]
   },
   {
     "id": "topaz",
@@ -155048,7 +155235,10 @@
     "description": "Constructeur de sites sans code utilisant une interface texte avec slash-commands permettant de créer facilement sites, landing pages, blogs, formulaires et boutiques digitales.\n\nFonctions clés : Interface texte avec slash-commands pour design rapide ; Plus de 100 templates professionnels ; Support des CMS items et formulaires ; Domaine personnalisé avec SSL (plans payants) ; Analytics intégrée ; Vente de produits digitaux.\n\nTypedream excelle pour les créateurs solo et side projects ; pour une boutique sérieuse, Shopify reste plus complet.",
     "articles": [],
     "force_silence": false,
-    "galleryImages": []
+    "galleryImages": [
+      "https://image.typedream.com/cdn-cgi/image/width=1920,format=auto,fit=scale-down,quality=100/https://api.typedream.com/v0/document/public/df8f99cf-82fd-423b-b55b-ba08cb042d95/2TpKPBZCz6jl2NVzdG8zOKLPwB3_linkinbio.png",
+      "https://image.typedream.com/cdn-cgi/image/width=1920,format=auto,fit=scale-down,quality=100/https://api.typedream.com/v0/document/public/df8f99cf-82fd-423b-b55b-ba08cb042d95/2TpMhqQwDFlnYt7lLapWAhHGFGn_hero.png"
+    ]
   },
   {
     "id": "typeform",
@@ -160254,7 +160444,9 @@
     "description": "Suite d'édition vidéo et image en ligne assistée par IA, orientée e-commerce et créateurs : amélioration/upscaling, suppression de watermark et d'arrière-plan, génération et retouche de visuels produit.\n\nFonctions clés : Amélioration et upscaling de vidéos et d'images ; Suppression de watermark et d'arrière-plan ; Génération et retouche de visuels produit par IA ; Système de crédits flexible selon l'usage.\n\nVmake convient aux créateurs et boutiques qui traitent des visuels en volume ; pour du montage vidéo professionnel poussé, un éditeur dédié reste préférable.",
     "articles": [],
     "force_silence": false,
-    "galleryImages": []
+    "galleryImages": [
+      "https://static-assets.vmake.ai/vmake-ai/fe-assets/backmockup.707598fe.png"
+    ]
   },
   {
     "id": "voiceover",
@@ -166430,7 +166622,11 @@
     "personas": [],
     "force_silence": false,
     "ogImageUrl": "https://www.xero.com/content/dam/xero/pilot-images/opengraph/opengraph-xero.png",
-    "galleryImages": []
+    "galleryImages": [
+      "https://www.xero.com/content/dam/xero/pilot-images/core-page-assets/global-home-1-1.1786085341442.png",
+      "https://www.xero.com/content/dam/xero/pilot-images/features/dashboard/smb-dashboard-0.1647315596119.jpg",
+      "https://www.xero.com/content/dam/xero/pilot-images/just-ask-xero/jax-video-thumbnail-image-1920x1080px.1708032663202.png"
+    ]
   },
   {
     "id": "yoast",
@@ -169383,6 +169579,10 @@
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
     "decision_policy_v3": null,
-    "galleryImages": []
+    "galleryImages": [
+      "https://www.affinity.studio/cdn-cgi/image/width=1600,fit=scale-down,format=auto/https://content-management-files.affinity.studio/f7fed8d0-44ca-468e-93ea-5d4bf6718886/Image_73x.png",
+      "https://www.affinity.studio/cdn-cgi/image/width=1600,fit=scale-down,format=auto/https://content-management-files.affinity.studio/8738e306-1cff-4681-9cee-e686a31d299b/Image_53x.png",
+      "https://www.affinity.studio/cdn-cgi/image/width=1600,fit=scale-down,format=auto/https://content-management-files.affinity.studio/a906624f-8880-4854-bca5-0a997011be7a/Image_23x.png"
+    ]
   }
 ]

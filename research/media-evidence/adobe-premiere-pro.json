@@ -14,6 +14,18 @@
       "url": "https://www.adobe.com/products/media_14a141cf8900a74105b7122f28472dce9fd8cf872.jpg?width=1200&format=pjpg&optimize=medium",
       "source_page_url": "https://adobe.com/products/premiere",
       "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://www.adobe.com/products/media_168928bcdc3aff4c1288aa2e481211b36d7c35d8d.png?width=750&format=png&optimize=medium",
+      "source_page_url": "https://www.adobe.com/products/premiere.html",
+      "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://www.adobe.com/products/media_1f8daa11378f3f2bf31de3eba54dec9f989bf65d5.png?width=750&format=png&optimize=medium",
+      "source_page_url": "https://www.adobe.com/products/premiere.html",
+      "official": true
     }
   ]
 }

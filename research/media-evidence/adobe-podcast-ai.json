@@ -14,6 +14,25 @@
       "url": "https://tooltrim.com/tool-media/adobe-podcast/enhance-speech.webp",
       "source_page_url": "https://podcast.adobe.com",
       "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://podcast.adobe.com/images/responsive/wp_flex_home-illustration@2x-1730.9fe6b7e706773f11.webp?responsive",
+      "source_page_url": "https://podcast.adobe.com/fr",
+      "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://podcast.adobe.com/images/responsive/wp_flex_splash-2700.d623aab27109253b.webp?responsive",
+      "source_page_url": "https://podcast.adobe.com/fr",
+      "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://podcast.adobe.com/images/responsive/wp_flex_studio-hero-french-3620.a2097ca6464062cd.webp?responsive",
+      "source_page_url": "https://podcast.adobe.com/fr",
+      "official": true,
+      "alt": "Capture d’écran du studio Adobe Podcast"
     }
   ]
 }

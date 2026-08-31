@@ -14,6 +14,12 @@
       "url": "https://airbyte.com/images/opengraph-context-layer-ai-agents.png",
       "source_page_url": "https://airbyte.com",
       "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://airbyte.com/images/mcp-gateway/hero-diagram/mock-assets/facebook.png",
+      "source_page_url": "https://airbyte.com/",
+      "official": true
     }
   ]
 }

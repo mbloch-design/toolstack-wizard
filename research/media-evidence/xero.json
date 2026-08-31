@@ -14,6 +14,25 @@
       "url": "https://www.xero.com/content/dam/xero/pilot-images/opengraph/opengraph-xero.png",
       "source_page_url": "https://xero.com",
       "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://www.xero.com/content/dam/xero/pilot-images/core-page-assets/global-home-1-1.1786085341442.png",
+      "source_page_url": "https://www.xero.com/",
+      "official": true,
+      "alt": "Small business owner rolling croissants, with Xero invoice and payment overlay"
+    },
+    {
+      "kind": "image",
+      "url": "https://www.xero.com/content/dam/xero/pilot-images/features/dashboard/smb-dashboard-0.1647315596119.jpg",
+      "source_page_url": "https://www.xero.com/",
+      "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://www.xero.com/content/dam/xero/pilot-images/just-ask-xero/jax-video-thumbnail-image-1920x1080px.1708032663202.png",
+      "source_page_url": "https://www.xero.com/",
+      "official": true
     }
   ]
 }

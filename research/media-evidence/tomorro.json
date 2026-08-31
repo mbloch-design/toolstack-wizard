@@ -14,6 +14,24 @@
       "url": "https://cdn.prod.website-files.com/62a7039ea5539a072aa2c5d0/67069f030afd6c7c1c77b9c3_Thumbnail.png",
       "source_page_url": "https://www.tomorro.com",
       "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.prod.website-files.com/678ed5a51cf3c992fa25b232/686552e8123484b1deaba86c_Visual-Home-FR.avif",
+      "source_page_url": "https://www.tomorro.com/fr",
+      "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.prod.website-files.com/678ed5a51cf3c992fa25b232/679024b896838ec15ffa9623_Foodles-Usecase-Thumbnail.avif",
+      "source_page_url": "https://www.tomorro.com/fr",
+      "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.prod.website-files.com/678ed5a51cf3c992fa25b232/67e3db3119e057eda4c0e9e1_Visual-Home-sectionOro-AIRecommendations-Straight-FR.png",
+      "source_page_url": "https://www.tomorro.com/fr",
+      "official": true
     }
   ]
 }

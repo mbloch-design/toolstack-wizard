@@ -14,6 +14,24 @@
       "url": "https://cdn.sanity.io/images/8ly2m84z/production-2025/eee7774699fe786de151ef9785e5392dc2da9d5a-3840x2160.png",
       "source_page_url": "https://supermetrics.com",
       "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.sanity.io/images/8ly2m84z/production-2025/1c7836db993bf92dbe3482feaa8cb81c8ab98b03-74x77.svg?w=74&h=77&fit=max&auto=format",
+      "source_page_url": "https://supermetrics.com/",
+      "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://supermetrics.com/cdn-cgi/image/onerror=redirect,width=1920,height=1442,format=png/https://cdn.sanity.io/images/8ly2m84z/production-2025/35c81032529cadb8e5d6e1587dbb2d930b774d1a-2002x1504.jpg?w=1920&h=1442&fit=max&auto=format",
+      "source_page_url": "https://supermetrics.com/",
+      "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://supermetrics.com/cdn-cgi/image/onerror=redirect,width=1920,height=1079,format=png/https://cdn.sanity.io/images/8ly2m84z/production-2025/a0ff15a33567ec250c0a6cad7b5f9ce871526fc0-2560x1440.png?rect=0,1,2560,1439&w=1920&h=1079&fit=max&auto=format",
+      "source_page_url": "https://supermetrics.com/",
+      "official": true
     }
   ]
 }

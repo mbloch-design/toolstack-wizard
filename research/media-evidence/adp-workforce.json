@@ -1,20 +1,32 @@
 {
   "slug": "adp-workforce",
   "verified_on": "2026-08-31",
-  "mode": "fallback_screenshot",
+  "mode": "sourced",
   "discovery": {
-    "official_media_found": false,
+    "official_media_found": true,
     "official_pages_checked": [
       "https://www.adp.com"
     ]
   },
   "items": [
     {
-      "kind": "screenshot",
-      "url": "/og-screenshots/adp-workforce.jpg",
-      "source_page_url": "https://www.adp.com",
-      "official": false,
-      "capture_method": "browser_screenshot"
+      "kind": "image",
+      "url": "https://www.adp.com/-/media/adp/refresh2025/illustrations/default-bg/adp_illustration_payroll.png?rev=ea5b5c9d18fa4e078c6295e25a801658&hash=5ED63EE529979A2B355DC88EF0D52A50",
+      "source_page_url": "https://www.adp.com/",
+      "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://www.adp.com/-/media/adp/refresh2025/images/misc/navpromo_runproductscreen.png?rev=6b3e75497a62473fa94e742836118e66&hash=264EA297C8FD47547A7480656DD25AB0",
+      "source_page_url": "https://www.adp.com/",
+      "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://www.adp.com/-/media/adp/refresh2025/images/home/home_runproductscreen_620w_en.png?rev=852497e28d0a4afb8dac310dc993e5ee&hash=504249EC29C8F900D29D153F8166CAC1",
+      "source_page_url": "https://www.adp.com/",
+      "official": true,
+      "alt": "Screen shot of ADP payroll and HR platform homepage in a tablet device."
     }
   ]
 }

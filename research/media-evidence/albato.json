@@ -14,6 +14,13 @@
       "url": "https://albato.com/images/previews/en/embedded-ai.webp",
       "source_page_url": "https://albato.com",
       "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://albato.com/_next/image?url=%2Fimages%2Fembedded%2Fhero%2Fembedded-hero-img-en.webp&w=3840&q=75",
+      "source_page_url": "https://albato.com/",
+      "official": true,
+      "alt": "Albato Embedded"
     }
   ]
 }

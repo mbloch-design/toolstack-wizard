@@ -14,6 +14,13 @@
       "url": "https://static-assets.vmake.ai/vmake-ai/_next/static/media/vmake-logo-icon.cbfe0eab.png",
       "source_page_url": "https://vmake.ai",
       "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://static-assets.vmake.ai/vmake-ai/fe-assets/backmockup.707598fe.png",
+      "source_page_url": "https://vmake.ai/",
+      "official": true,
+      "alt": "Vmake Labs web workspace on a laptop and mobile app interface"
     }
   ]
 }

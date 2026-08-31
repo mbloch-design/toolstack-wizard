@@ -1,20 +1,32 @@
 {
   "slug": "microsoft-365",
   "verified_on": "2026-08-31",
-  "mode": "fallback_screenshot",
+  "mode": "sourced",
   "discovery": {
-    "official_media_found": false,
+    "official_media_found": true,
     "official_pages_checked": [
       "https://www.microsoft.com/microsoft-365"
     ]
   },
   "items": [
     {
-      "kind": "screenshot",
-      "url": "/og-screenshots/microsoft-365.jpg",
-      "source_page_url": "https://www.microsoft.com/microsoft-365",
-      "official": false,
-      "capture_method": "browser_screenshot"
+      "kind": "image",
+      "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/787831-hero-bg-1600x680-1?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=3200&hei=1360&qlt=100&fit=constrain",
+      "source_page_url": "https://www.microsoft.com/fr-fr/microsoft-365",
+      "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/787831-plans-bg-1600x1297?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=3200&qlt=100&fit=constrain",
+      "source_page_url": "https://www.microsoft.com/fr-fr/microsoft-365",
+      "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/966000-image-for-students?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=2000&hei=1125&qlt=100&fit=constrain",
+      "source_page_url": "https://www.microsoft.com/fr-fr/microsoft-365",
+      "official": true,
+      "alt": "Une femme travaillant sur un ordinateur portable"
     }
   ]
 }

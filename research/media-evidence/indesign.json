@@ -14,6 +14,18 @@
       "url": "https://www.adobe.com/products/media_14a141cf8900a74105b7122f28472dce9fd8cf872.jpg?width=1200&format=pjpg&optimize=medium",
       "source_page_url": "https://adobe.com/products/indesign",
       "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://www.adobe.com/products/media_174ff14868756eb8148775a3bc1137cb738c614f6.jpg?width=2000&format=webply&optimize=medium",
+      "source_page_url": "https://www.adobe.com/products/indesign.html",
+      "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://www.adobe.com/products/media_16d6b2ced4aa0dd9c0f24f4a4b5630ce483342640.jpg?width=750&format=jpg&optimize=medium",
+      "source_page_url": "https://www.adobe.com/products/indesign.html",
+      "official": true
     }
   ]
 }

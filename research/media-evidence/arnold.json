@@ -1,20 +1,34 @@
 {
   "slug": "arnold",
   "verified_on": "2026-08-31",
-  "mode": "fallback_screenshot",
+  "mode": "sourced",
   "discovery": {
-    "official_media_found": false,
+    "official_media_found": true,
     "official_pages_checked": [
       "https://www.autodesk.com/products/arnold/overview"
     ]
   },
   "items": [
     {
-      "kind": "screenshot",
-      "url": "/og-screenshots/arnold.jpg",
+      "kind": "image",
+      "url": "https://images.ctfassets.net/v7wr16nrr0mz/1uVn6YUvZTk9et3OSirDkg/d8d8d25c0340ca2c06d2575b3eafb9d8/what-is-autodesk-arnold-thumb-788x1050.jpg",
       "source_page_url": "https://www.autodesk.com/products/arnold/overview",
-      "official": false,
-      "capture_method": "browser_screenshot"
+      "official": true,
+      "alt": "Oni: Thunder God's Tale rendered with Arnold"
+    },
+    {
+      "kind": "image",
+      "url": "https://images.ctfassets.net/v7wr16nrr0mz/zZrkgOJJ5lgpm44LKv9Ni/b0f52b94b238ab96d084bb5c99f092e5/manage-complex-projects-with-production-ready-tools-thumb-788x1050.jpg",
+      "source_page_url": "https://www.autodesk.com/products/arnold/overview",
+      "official": true,
+      "alt": "\"\""
+    },
+    {
+      "kind": "image",
+      "url": "https://images.ctfassets.net/v7wr16nrr0mz/32MrQfOSmWP6pS4EmzFkIY/755934caad725b6476de09b7b2f19b5a/integrate-and-customize-your-pipeline-thumb-788x1050.jpg",
+      "source_page_url": "https://www.autodesk.com/products/arnold/overview",
+      "official": true,
+      "alt": "Rendered scene of characters ordering from a food truck at night."
     }
   ]
 }

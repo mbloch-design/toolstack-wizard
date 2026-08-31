@@ -14,6 +14,12 @@
       "url": "https://www.antidote.info/user/config/plugins/druide-seo/antidote-1200x630_v2.jpg",
       "source_page_url": "https://www.antidote.info",
       "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://www.antidote.info/images/f/e/n/e/t/fenetre-correcteur-fr2x-536496fc.png",
+      "source_page_url": "https://www.antidote.info/fr/",
+      "official": true
     }
   ]
 }

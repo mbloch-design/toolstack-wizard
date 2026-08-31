@@ -14,6 +14,25 @@
       "url": "https://www.tella.com/marketing-site/og-image.png",
       "source_page_url": "https://www.tella.tv",
       "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://www.tella.com/marketing-site/editor-bg-lake.jpg",
+      "source_page_url": "https://www.tella.com/",
+      "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://www.tella.com/marketing-site/viewpage-wallpaper-bg.webp",
+      "source_page_url": "https://www.tella.com/",
+      "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://www.tella.com/marketing-site/Steven_Tey.jpeg",
+      "source_page_url": "https://www.tella.com/",
+      "official": true,
+      "alt": "Steven Tey"
     }
   ]
 }

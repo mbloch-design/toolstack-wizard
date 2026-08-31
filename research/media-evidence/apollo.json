@@ -14,6 +14,18 @@
       "url": "https://www.apollo.com/content/dam/apolloaem/images/brand/apollo-og-image%202023.png",
       "source_page_url": "https://www.apollo.io",
       "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://www.apollo.io/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhomepage-static-for-video.0h98v3yl13hkl.png&w=3840&q=75",
+      "source_page_url": "https://www.apollo.io/fr",
+      "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://www.apollo.io/_next/static/media/spacer-mobile.0ou~-sg1p0is~.svg",
+      "source_page_url": "https://www.apollo.io/fr",
+      "official": true
     }
   ]
 }

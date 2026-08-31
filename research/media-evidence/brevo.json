@@ -1,20 +1,31 @@
 {
   "slug": "brevo",
   "verified_on": "2026-08-31",
-  "mode": "fallback_screenshot",
+  "mode": "sourced",
   "discovery": {
-    "official_media_found": false,
+    "official_media_found": true,
     "official_pages_checked": [
       "https://www.brevo.com"
     ]
   },
   "items": [
     {
-      "kind": "screenshot",
-      "url": "/og-screenshots/brevo.jpg",
-      "source_page_url": "https://www.brevo.com",
-      "official": false,
-      "capture_method": "browser_screenshot"
+      "kind": "image",
+      "url": "https://corp-backend.brevo.com/fr/wp-content/uploads/sites/4/2026/05/all-in-one.webp",
+      "source_page_url": "https://www.brevo.com/fr/",
+      "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://corp-backend.brevo.com/fr/wp-content/uploads/sites/4/2026/05/AI.webp",
+      "source_page_url": "https://www.brevo.com/fr/",
+      "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://corp-backend.brevo.com/fr/wp-content/uploads/sites/4/2026/02/FR-marketing-agent.webp",
+      "source_page_url": "https://www.brevo.com/fr/",
+      "official": true
     }
   ]
 }

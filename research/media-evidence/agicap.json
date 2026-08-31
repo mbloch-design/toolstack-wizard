@@ -14,6 +14,24 @@
       "url": "https://images.ctfassets.net/8dreszsahte7/2yE99dsuxDH1IVNa5HQKXJ/435b73bb5bd5e0a62bba48a6144336a8/Visuel_g%C3%A9n%C3%A9rique.png",
       "source_page_url": "https://agicap.com",
       "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://images.ctfassets.net/8dreszsahte7/4tiKhy6LyKbNSBKd4jZ74C/8a444c194a61017991f062cf138938ca/Image_Vide.png?w=646&h=611&q=85&fm=webp&bg=transparent",
+      "source_page_url": "https://agicap.com/fr/",
+      "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://images.ctfassets.net/8dreszsahte7/3VtJk5G3NH1Es66f1W9XuS/9427b4b477e8aa20e89da667e0fa2b3d/Integration_FR.png?w=960&h=745&q=85&fm=png&bg=transparent",
+      "source_page_url": "https://agicap.com/fr/",
+      "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://images.ctfassets.net/8dreszsahte7/15AeqHGUVVuzvQ3rW2csGv/457b83271d3c719ee578071ee853ee79/Collaboration_FR.png?w=1314&h=1244&q=85&fm=png&bg=transparent",
+      "source_page_url": "https://agicap.com/fr/",
+      "official": true
     }
   ]
 }

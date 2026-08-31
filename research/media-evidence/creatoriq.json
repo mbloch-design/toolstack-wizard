@@ -1,20 +1,34 @@
 {
   "slug": "creatoriq",
   "verified_on": "2026-08-31",
-  "mode": "fallback_screenshot",
+  "mode": "sourced",
   "discovery": {
-    "official_media_found": false,
+    "official_media_found": true,
     "official_pages_checked": [
       "https://creatoriq.com"
     ]
   },
   "items": [
     {
-      "kind": "screenshot",
-      "url": "/og-screenshots/creatoriq.jpg",
-      "source_page_url": "https://creatoriq.com",
-      "official": false,
-      "capture_method": "browser_screenshot"
+      "kind": "image",
+      "url": "https://www.creatoriq.com/hs-fs/hubfs/Homepage%20Tiles/CLA26_JTS-HT-A.png?width=2480&height=3440&name=CLA26_JTS-HT-A.png",
+      "source_page_url": "https://www.creatoriq.com/",
+      "official": true,
+      "alt": "jordan-the-stallion-keynote-connect-2026"
+    },
+    {
+      "kind": "image",
+      "url": "https://www.creatoriq.com/hs-fs/hubfs/Homepage%20Tiles/CE26Homepage%20Tile.png?width=2480&height=3440&name=CE26Homepage%20Tile.png",
+      "source_page_url": "https://www.creatoriq.com/",
+      "official": true,
+      "alt": "CE26Homepage Tile"
+    },
+    {
+      "kind": "image",
+      "url": "https://www.creatoriq.com/hs-fs/hubfs/Homepage%20Tiles/CreativeX-Nestle_HomepageTile-A.jpg?width=2480&height=3440&name=CreativeX-Nestle_HomepageTile-A.jpg",
+      "source_page_url": "https://www.creatoriq.com/",
+      "official": true,
+      "alt": "CreativeX-Nestle_HomepageTile-A"
     }
   ]
 }

@@ -14,6 +14,24 @@
       "url": "https://www.adobe.com/products/media_17f61e1224166630fb2e30723046881244c8812a9.jpg?width=1200&format=pjpg&optimize=medium",
       "source_page_url": "https://adobe.com/products/photoshop",
       "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://www.adobe.com/cc-shared/fragments/products/photoshop/product-page/media_18bfe9207cb445b0c0adb23e9358e4b04ffee9d37.jpg?width=750&format=jpg&optimize=medium",
+      "source_page_url": "https://www.adobe.com/products/photoshop.html",
+      "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://www.adobe.com/products/media_1593767de8d991b2148233f4972e7a75f4b8c3f1b.png?width=750&format=png&optimize=medium",
+      "source_page_url": "https://www.adobe.com/products/photoshop.html",
+      "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://www.adobe.com/cc-shared/fragments/products/photoshop/product-page/media_190e4e43778fc5bb8a6847f4c87c04e8e4122ccaf.jpg?width=750&format=jpg&optimize=medium",
+      "source_page_url": "https://www.adobe.com/products/photoshop.html",
+      "official": true
     }
   ]
 }

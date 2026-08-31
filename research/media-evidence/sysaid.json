@@ -14,6 +14,24 @@
       "url": "https://cdn.sysaid.com/wp-content/uploads/sysaid-logo-blogs.png",
       "source_page_url": "https://sysaid.com",
       "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.sysaid.com/wp-content/uploads/test-1.png",
+      "source_page_url": "https://www.sysaid.com/",
+      "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.sysaid.com/wp-content/uploads/menu-banner-the-it-divide-2026-clean.png",
+      "source_page_url": "https://www.sysaid.com/",
+      "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.sysaid.com/wp-content/uploads/Frame-1321317195-1-1.png",
+      "source_page_url": "https://www.sysaid.com/",
+      "official": true
     }
   ]
 }

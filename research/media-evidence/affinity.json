@@ -14,6 +14,27 @@
       "url": "https://static.canva.com/static/images/fb_cover-1.jpg",
       "source_page_url": "https://www.affinity.studio/get-affinity",
       "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://www.affinity.studio/cdn-cgi/image/width=1600,fit=scale-down,format=auto/https://content-management-files.affinity.studio/f7fed8d0-44ca-468e-93ea-5d4bf6718886/Image_73x.png",
+      "source_page_url": "https://www.affinity.studio/fr_fr/get-affinity",
+      "official": true,
+      "alt": "Illustration colorée d’un jeu d’arcade façon flipper intitulé « CRASH », avec des formes, des yeux et des étoiles éclatants sur fond bleu et rose."
+    },
+    {
+      "kind": "image",
+      "url": "https://www.affinity.studio/cdn-cgi/image/width=1600,fit=scale-down,format=auto/https://content-management-files.affinity.studio/8738e306-1cff-4681-9cee-e686a31d299b/Image_53x.png",
+      "source_page_url": "https://www.affinity.studio/fr_fr/get-affinity",
+      "official": true,
+      "alt": "Personne en costume vert vif, debout pieds nus sur un rocher dans l’eau peu profonde, bras écartés, sous un ciel de coucher de soleil rose et violet."
+    },
+    {
+      "kind": "image",
+      "url": "https://www.affinity.studio/cdn-cgi/image/width=1600,fit=scale-down,format=auto/https://content-management-files.affinity.studio/a906624f-8880-4854-bca5-0a997011be7a/Image_23x.png",
+      "source_page_url": "https://www.affinity.studio/fr_fr/get-affinity",
+      "official": true,
+      "alt": "Morceau de bois flotté avec plusieurs fleurs colorées, dont des fleurs roses, blanches et rouges, disposées sur un fond vert vif."
     }
   ]
 }

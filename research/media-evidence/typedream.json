@@ -14,6 +14,18 @@
       "url": "https://api.typedream.com/v0/document/public/46d710fd-ec90-498a-901c-d6acd853f5fa/2YsyFWeY5lf8FSwgOA5RpTOtGFt_Screenshot_2023-11-30_141243.png",
       "source_page_url": "https://typedream.com",
       "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://image.typedream.com/cdn-cgi/image/width=1920,format=auto,fit=scale-down,quality=100/https://api.typedream.com/v0/document/public/df8f99cf-82fd-423b-b55b-ba08cb042d95/2TpKPBZCz6jl2NVzdG8zOKLPwB3_linkinbio.png",
+      "source_page_url": "https://typedream.com/",
+      "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://image.typedream.com/cdn-cgi/image/width=1920,format=auto,fit=scale-down,quality=100/https://api.typedream.com/v0/document/public/df8f99cf-82fd-423b-b55b-ba08cb042d95/2TpMhqQwDFlnYt7lLapWAhHGFGn_hero.png",
+      "source_page_url": "https://typedream.com/",
+      "official": true
     }
   ]
 }

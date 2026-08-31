@@ -14,6 +14,27 @@
       "url": "https://images.ctfassets.net/b76knntgaaiu/5f6bEcEKJxLvdKvuwbax05/e292cd12828391facec2a2aa77eecee3/Image_Meta.jpg",
       "source_page_url": "https://pennylane.com",
       "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://images.ctfassets.net/b76knntgaaiu/2TGZgzRH4bc8qgeLVHmv3I/da61c20b3b37f1932ff539f6fdbc3ac3/Illus_Home-V0623.svg",
+      "source_page_url": "https://www.pennylane.com/fr",
+      "official": true,
+      "alt": "Illustration des fonctionnalités proposées par Pennylane"
+    },
+    {
+      "kind": "image",
+      "url": "https://images.ctfassets.net/b76knntgaaiu/7xwAJFFQt4wngY6KIrMZhv/6458469f5039143912668256c71e61a3/image_du_saas_pennylane_plateforme_tout_en_un_entreprise.png?w=3072&h=3072&fm=png",
+      "source_page_url": "https://www.pennylane.com/fr",
+      "official": true,
+      "alt": "Illustration de la fonctionnalité de gestion des transactions de l'application Pennylane"
+    },
+    {
+      "kind": "image",
+      "url": "https://images.ctfassets.net/b76knntgaaiu/44SrVZheDrRnBV1ha1ZIfe/13d8f2f780c7b063619a199ea91abbc5/Image_de_l-outil_de_gestion_pennylane.png?w=3072&h=3072&fm=png",
+      "source_page_url": "https://www.pennylane.com/fr",
+      "official": true,
+      "alt": "Illustration de la fonctionnalité de création de factures de l'application Pennylane"
     }
   ]
 }

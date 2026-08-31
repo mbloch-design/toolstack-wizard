@@ -14,6 +14,26 @@
       "url": "https://cdn.prod.website-files.com/65efdf52a39c7b2ca4035c98/67a24537fa82ef534146a29d_104d4d983d47ec9445c20d452789cde9_homepage-meta-img_2025.png",
       "source_page_url": "https://float.com",
       "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.prod.website-files.com/65efdf52a39c7b2ca4035c98/68ac85e35b1b56038fce83aa_Header%20bg%20dots%20and%20lines.svg",
+      "source_page_url": "https://www.float.com/",
+      "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.prod.website-files.com/65efdf52a39c7b2ca4035c98/6a5717e2c252f0ab8d5b0ff2_hero%20side%20image%20container-1.webp",
+      "source_page_url": "https://www.float.com/",
+      "official": true,
+      "alt": "A visualisation of Float’s dashboard, with a populated Schedule and an overview of financial data, margin and project profitability"
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.prod.website-files.com/660268f912a7255a6ba7becd/69261e36830aaba55abc7a7d_nexus-studios.webp",
+      "source_page_url": "https://www.float.com/",
+      "official": true,
+      "alt": "Nexus Studios"
     }
   ]
 }

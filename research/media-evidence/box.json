@@ -14,6 +14,26 @@
       "url": "https://assets.box.com/sites/default/files/box_default_og_sharing_image/box-social.jpg",
       "source_page_url": "https://box.com",
       "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://assets.box.com/sites/default/files/styles/2880xauto/public/2026-07/1-hero_box-contentai_1440.png?itok=G20CGTZF",
+      "source_page_url": "https://www.box.com/fr-fr/home?url_redirect=direct",
+      "official": true,
+      "alt": "Contenu + IA"
+    },
+    {
+      "kind": "image",
+      "url": "https://assets.box.com/sites/default/files/styles/1440x1440/public/2025-12/3-lr_collaborate_easily_and_securely.jpg?itok=X5pTEz30",
+      "source_page_url": "https://www.box.com/fr-fr/home?url_redirect=direct",
+      "official": true,
+      "alt": "membres d'une équipe en train de commenter et de collaborer sur des fichiers de proposition de campagne"
+    },
+    {
+      "kind": "image",
+      "url": "https://assets.box.com/sites/default/files/styles/400x320/public/module_110_bg/4-LR.png?itok=PibCSqAA",
+      "source_page_url": "https://www.box.com/fr-fr/home?url_redirect=direct",
+      "official": true
     }
   ]
 }

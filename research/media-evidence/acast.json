@@ -14,6 +14,24 @@
       "url": "https://cdn.prod.website-files.com/67b6f863dda3a85687e777a6/6809ff3ab38ebd48f5709328_Acast%20OG.jpg",
       "source_page_url": "https://acast.com",
       "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.prod.website-files.com/67b6f863dda3a85687e777a6/696e4c9e98cce9252f41a4e9_Podcast%20cover%20associated.avif",
+      "source_page_url": "https://www.acast.com/fr",
+      "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.prod.website-files.com/67b6f863dda3a85687e777a6/696e5780d45253c15a4bbe16_Main%20pic%20on%20homepage%20cropped%202.avif",
+      "source_page_url": "https://www.acast.com/fr",
+      "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.prod.website-files.com/67b6f863dda3a85687e777a6/67ea74172a6271132623a0ab_74667fce95d7ceac510dd0c9e7fc4286_Your%20podcast%20features.svg",
+      "source_page_url": "https://www.acast.com/fr",
+      "official": true
     }
   ]
 }

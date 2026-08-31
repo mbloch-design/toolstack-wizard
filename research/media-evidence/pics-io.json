@@ -14,6 +14,27 @@
       "url": "https://landing-assets.pics.io/3.7.2/img/cover/cover.jpg",
       "source_page_url": "https://pics.io",
       "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://landing-assets.pics.io/3.10.3/img/picsio/integrationTools/sun-bg@2x.webp",
+      "source_page_url": "https://pics.io/",
+      "official": true,
+      "alt": "Integrates with your favorite tools"
+    },
+    {
+      "kind": "image",
+      "url": "https://landing-assets.pics.io/3.10.3/img/picsio/hello-page/find-files-in-seconds@2x.webp",
+      "source_page_url": "https://pics.io/",
+      "official": true,
+      "alt": "find-files-in-seconds"
+    },
+    {
+      "kind": "image",
+      "url": "https://landing-assets.pics.io/3.10.3/img/picsio/hello-page/upload@2x.webp",
+      "source_page_url": "https://pics.io/",
+      "official": true,
+      "alt": "upload"
     }
   ]
 }

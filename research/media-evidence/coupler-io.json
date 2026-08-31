@@ -14,6 +14,26 @@
       "url": "https://www.coupler.io/assets/og-image-9ea172df3bf2d3071ac41c04b5ea552e2c433819388f052ace787b3db09c2f7d.png",
       "source_page_url": "https://coupler.io",
       "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://www.coupler.io/assets/footer-bg-1440-3e85243ff990d587a27b4309759302cf5ae9bf7d44d3416a04fa46cd8288afff.png",
+      "source_page_url": "https://www.coupler.io/",
+      "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://www.coupler.io/assets/roles/store@2x-6eaeec346aa15815885edbffd958920cc5595e9767dd6542bdfbb9dde74a3419.webp",
+      "source_page_url": "https://www.coupler.io/",
+      "official": true,
+      "alt": "roles/store image"
+    },
+    {
+      "kind": "image",
+      "url": "https://www.coupler.io/assets/roles/visualize-1@2x-1ab0f2368336a2dc36c63a479bafae1d0f9500f32e28762973348258b5a01c91.webp",
+      "source_page_url": "https://www.coupler.io/",
+      "official": true,
+      "alt": "roles/visualize-1"
     }
   ]
 }

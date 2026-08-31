@@ -14,6 +14,24 @@
       "url": "https://www.adobe.com/products/media_19762a181d8f7cdad7fa491acc9917bdedbcba01a.jpg?width=1200&format=pjpg&optimize=medium",
       "source_page_url": "https://www.adobe.com/products/audition.html",
       "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://www.adobe.com/products/media_15967c6ff869ca11d5c016bcc847117c649ec8833.jpg?width=2000&format=webply&optimize=medium",
+      "source_page_url": "https://www.adobe.com/products/audition.html",
+      "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://www.adobe.com/products/media_17c776f83aa56c4dc7a58d6e996ac2b31e840315d.jpg?width=750&format=jpg&optimize=medium",
+      "source_page_url": "https://www.adobe.com/products/audition.html",
+      "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://www.adobe.com/products/media_1e86afb9dc4614d3a04b9ea7ce8acb2fec5b4b2bf.jpg?width=750&format=jpg&optimize=medium",
+      "source_page_url": "https://www.adobe.com/products/audition.html",
+      "official": true
     }
   ]
 }

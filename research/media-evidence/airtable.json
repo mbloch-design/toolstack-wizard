@@ -14,6 +14,24 @@
       "url": "https://cdn.sanity.io/images/hlcyrtq5/production/00c20d5108d1335f5a243ddcd70ea4a2d6d9a844-1200x630.webp",
       "source_page_url": "https://airtable.com",
       "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://static.airtable.com/images/marketing-nav-platform-graphic.webp",
+      "source_page_url": "https://www.airtable.com/",
+      "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://static.airtable.com/images/marketing-nav-resource.webp",
+      "source_page_url": "https://www.airtable.com/",
+      "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://static.airtable.com/images/marketing-nav-solution.webp",
+      "source_page_url": "https://www.airtable.com/",
+      "official": true
     }
   ]
 }

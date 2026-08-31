@@ -57,7 +57,11 @@ for (const item of manifest.tools) {
     verification_status: "official_explicit",
   };
   tool.ogImageUrl = media.items[0]?.url || tool.ogImageUrl || null;
-  tool.galleryImages = media.items.slice(1).map((entry) => entry.url);
+  if (media.items.length > 1) {
+    tool.galleryImages = media.items.slice(1).map((entry) => entry.url);
+  } else if (!Array.isArray(tool.galleryImages)) {
+    tool.galleryImages = [];
+  }
   applied.push(slug);
 }
 

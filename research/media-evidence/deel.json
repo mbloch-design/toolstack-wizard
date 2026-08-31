@@ -14,6 +14,27 @@
       "url": "https://website-media.deel.com/General_Purple_f6b2f3f9bd.png",
       "source_page_url": "https://www.deel.com",
       "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://website-media.deel.com/HR_9158c8c5a0_avif.avif",
+      "source_page_url": "https://www.deel.com/",
+      "official": true,
+      "alt": "Deel HR"
+    },
+    {
+      "kind": "image",
+      "url": "https://website-media.deel.com/Mobility_0d0fdddfac_avif.avif",
+      "source_page_url": "https://www.deel.com/",
+      "official": true,
+      "alt": "Deel Mobility"
+    },
+    {
+      "kind": "image",
+      "url": "https://website-media.deel.com/Go_live_quickly_with_US_payroll_cba17cce08_avif.avif",
+      "source_page_url": "https://www.deel.com/",
+      "official": true,
+      "alt": "Go live quickly with US payroll"
     }
   ]
 }

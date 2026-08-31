@@ -1,20 +1,32 @@
 {
   "slug": "onedrive",
   "verified_on": "2026-08-31",
-  "mode": "fallback_screenshot",
+  "mode": "sourced",
   "discovery": {
-    "official_media_found": false,
+    "official_media_found": true,
     "official_pages_checked": [
       "https://onedrive.com"
     ]
   },
   "items": [
     {
-      "kind": "screenshot",
-      "url": "/og-screenshots/onedrive.jpg",
-      "source_page_url": "https://onedrive.com",
-      "official": false,
-      "capture_method": "browser_screenshot"
+      "kind": "image",
+      "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/408455-Hero-Resized-1600x612-option2?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=2000&hei=725&qlt=100&fmt=png-alpha&fit=constrain",
+      "source_page_url": "https://www.microsoft.com/fr-fr/microsoft-365/onedrive/online-cloud-storage",
+      "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/305616-ctastacked-bg-1600X1060?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=2000&hei=1328&qlt=100&fmt=png-alpha&fit=constrain",
+      "source_page_url": "https://www.microsoft.com/fr-fr/microsoft-365/onedrive/online-cloud-storage",
+      "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn-dynmedia-1.microsoft.com/is/image/microsoftcorp/1032413-accordions-800x513?resMode=sharp2&op_usm=1.5,0.65,15,0&wid=1000&hei=642&qlt=100&fmt=png-alpha&fit=constrain",
+      "source_page_url": "https://www.microsoft.com/fr-fr/microsoft-365/onedrive/online-cloud-storage",
+      "official": true,
+      "alt": "Une notification de Microsoft OneDrive indiquant que des dossiers importants sont désormais stockés"
     }
   ]
 }

@@ -14,6 +14,27 @@
       "url": "https://cdn.relevanceai.com/images/og-image.webp",
       "source_page_url": "https://relevanceai.com",
       "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.relevanceai.com/images/webflow/695e73a393ade10a193b09ab_Quali_b5a3862d.webp",
+      "source_page_url": "https://relevanceai.com/",
+      "official": true,
+      "alt": "Qualified generated $7M pipeline with 35+ AI agents across the org"
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.relevanceai.com/images/webflow/695e743f048de0c5cc9e1ffc_Send__d0d0eafc.webp",
+      "source_page_url": "https://relevanceai.com/",
+      "official": true,
+      "alt": "Send Payments saves 40 hours weekly by going AI-first across global operations"
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.relevanceai.com/images/webflow/6964e410c375b28f25108b45_Send-_8aca421c.webp",
+      "source_page_url": "https://relevanceai.com/",
+      "official": true,
+      "alt": "Send Payments"
     }
   ]
 }

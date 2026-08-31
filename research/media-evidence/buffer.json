@@ -14,6 +14,27 @@
       "url": "https://buffer.com/ogImages/homepage-og.png",
       "source_page_url": "https://buffer.com",
       "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://buffer.com/img/homepage/publish-composer.webp?w=1200&q=75",
+      "source_page_url": "https://buffer.com/fr",
+      "official": true,
+      "alt": "Espace Buffer Publish avec une file d’attente pour plusieurs comptes de réseaux sociaux, une vue calendrier et des options de programmation."
+    },
+    {
+      "kind": "image",
+      "url": "https://buffer.com/img/homepage/create-ideas.webp?w=1200&q=75",
+      "source_page_url": "https://buffer.com/fr",
+      "official": true,
+      "alt": "Espace Buffer Create avec des colonnes et un tri pour les idées de contenu, dont AI Assistant pour générer des publications et affiner le contenu."
+    },
+    {
+      "kind": "image",
+      "url": "https://buffer.com/img/homepage/community-comments.webp?w=1200&q=75",
+      "source_page_url": "https://buffer.com/fr",
+      "official": true,
+      "alt": "Espace Buffer Community avec des commentaires filtrables et triables sur plusieurs comptes de réseaux sociaux."
     }
   ]
 }

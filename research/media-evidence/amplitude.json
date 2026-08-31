@@ -14,6 +14,12 @@
       "url": "https://amplitude.com/nextjs-public/amplitude-default-seo.png",
       "source_page_url": "https://amplitude.com",
       "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://amplitude.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Fl5rq9j6r%2Fproduction%2Ff3bd9da3bb752f8333eeaf876de7be74cf670a40-2160x1760.png&w=3840&q=75&dpl=dpl_7asxed4WKyPeAgGSsh2j79KExiv2",
+      "source_page_url": "https://amplitude.com/fr-fr",
+      "official": true
     }
   ]
 }

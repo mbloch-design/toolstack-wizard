@@ -14,6 +14,27 @@
       "url": "https://www.axept.io/hubfs/axeptio-og-fr.jpg",
       "source_page_url": "https://axeptio.eu",
       "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://www.axept.io/hs-fs/hubfs/image%201%20(1).webp?width=1000&height=871&name=image%201%20(1).webp",
+      "source_page_url": "https://www.axept.io/",
+      "official": true,
+      "alt": "Capture d'écran d'une bannière de consentement Axeptio sur un site web"
+    },
+    {
+      "kind": "image",
+      "url": "https://www.axept.io/hs-fs/hubfs/V6-3-CMP_EN.webp?width=2880&height=1800&name=V6-3-CMP_EN.webp",
+      "source_page_url": "https://www.axept.io/",
+      "official": true,
+      "alt": "V6-3-CMP_EN"
+    },
+    {
+      "kind": "image",
+      "url": "https://www.axept.io/hs-fs/hubfs/Pink-CMP-Home_EN%20(1).webp?width=2000&height=1200&name=Pink-CMP-Home_EN%20(1).webp",
+      "source_page_url": "https://www.axept.io/",
+      "official": true,
+      "alt": "Pink-CMP-Home_EN (1)"
     }
   ]
 }

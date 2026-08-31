@@ -14,6 +14,13 @@
       "url": "https://www.onetrust.com/content/dam/onetrust/ot-thumbnail-onetrust-black.png",
       "source_page_url": "https://www.onetrust.com",
       "official": true
+    },
+    {
+      "kind": "image",
+      "url": "https://www.onetrust.com/adobe/dynamicmedia/deliver/dm-aid--d7fefb21-29f9-4536-a1fe-e764ee05304a/ot-hero-graphic-ai-governance-program-center.png?quality=82&preferwebp=true",
+      "source_page_url": "https://www.onetrust.com/",
+      "official": true,
+      "alt": "AI Governance Program Center mobile and tablet preview"
     }
   ]
 }
