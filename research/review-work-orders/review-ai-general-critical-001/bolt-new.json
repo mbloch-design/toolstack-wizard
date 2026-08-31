@@ -1,0 +1,253 @@
+{
+  "batch": "review-ai-general-critical-001",
+  "current": {
+    "affiliate_url": "https://bolt.new",
+    "alternatives": [],
+    "category": "ai-general",
+    "cons": [
+      "Qualité code générée inégale.",
+      "Limité à React + Node.js.",
+      "Pas idéal pour projets avancés."
+    ],
+    "cons_en": [
+      "Generated code quality is uneven.",
+      "Limited to React + Node.js.",
+      "Not ideal for advanced projects."
+    ],
+    "host_app": null,
+    "id": "bolt-new",
+    "long_description": "Bolt.new, c'est génération d'applications web complètes depuis un prompt. Alternative à Lovable. À partir de 17.32€/mois. Pensé pour les développeurs solo et les builders IA.\n\nGain de temps estimé : 12h/mois.\n\nÀ garder si : prototypage rapide sans backend complexe. À éviter si : lovable ou Cursor déjà en place — fort doublon. Rentable dès le premier prototype validé par un client.",
+    "long_description_en": "Bolt.new is full web app generation from a prompt. Alternative to Lovable. Starting at €17.32/month. Built for solo developers and AI builders.\n\nEstimated time saving: 12h/month.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://bolt.new/static/social_preview_index.jpg"
+    },
+    "name": "Bolt.new",
+    "pricing": {
+      "free": "Crédits limités",
+      "paid": "20$/mois (Pro)"
+    },
+    "pricing_en": null,
+    "pricing_v5": {
+      "cautions": [],
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Entry paid plan",
+      "compare_price_monthly_eur": 17.32,
+      "location_sensitive": false,
+      "official_source_url": "https://bolt.new/pricing",
+      "price_reliability": "high",
+      "source_domain": "bolt.new",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-03-13"
+    },
+    "pros": [
+      "Création app ultra-rapide (minutes).",
+      "Accès gratuit généreux.",
+      "Pas de setup local, tout dans le navigateur.",
+      "Code sortant est réutilisable."
+    ],
+    "pros_en": [
+      "Ultra-fast app creation (minutes).",
+      "Generous free tier.",
+      "No local setup; everything in browser.",
+      "Generated code is reusable."
+    ],
+    "short_description": "Génération d'applications web complètes depuis un prompt. Alternative à Lovable.",
+    "short_description_en": "Full web app generation from a prompt. Alternative to Lovable.",
+    "slug": "bolt-new",
+    "source_url": "https://bolt.new/pricing",
+    "source_verified_on": "2026-03-13",
+    "use_cases": [
+      "Prototyper une idée de produit en 1h.",
+      "Créer un dashboard ou outil interne.",
+      "Démontrer un concept client rapidement."
+    ],
+    "use_cases_en": [
+      "Prototype a product idea in 1 hour.",
+      "Build a dashboard or internal tool.",
+      "Demo a concept to clients quickly."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous construisez une app complexe ou très architecturée.",
+        "Vous avez besoin de contrôle fin du code.",
+        "Vous avez besoin d'une architecture personnalisée ou d'une base de données spécialisée."
+      ],
+      "keepIf": [
+        "Vous prototypez rapidement une MVP.",
+        "Vous n'avez pas d'expérience React/Node.js.",
+        "Vous voulez créer une app sans terminal local."
+      ],
+      "threshold": "Bolt.new excelle pour les prototypes et MVPs ; pour des apps métier complexes, écrivez le code directement."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You're building a complex production app.",
+        "You need fine-grained control over code.",
+        "You need custom architecture or specialized databases."
+      ],
+      "keepIf": [
+        "You want to prototype quickly.",
+        "You lack React/Node.js experience.",
+        "You prefer browser-based development over local setup."
+      ],
+      "threshold": "Bolt.new is best for prototypes and MVPs; for complex business apps, code manually."
+    },
+    "website_url": "https://bolt.new"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Generated code quality is uneven.",
+        "Limited to React + Node.js.",
+        "Not ideal for advanced projects."
+      ],
+      "pros": [
+        "Ultra-fast app creation (minutes).",
+        "Generous free tier.",
+        "No local setup; everything in browser.",
+        "Generated code is reusable."
+      ],
+      "use_cases": [
+        "Prototype a product idea in 1 hour.",
+        "Build a dashboard or internal tool.",
+        "Demo a concept to clients quickly."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You're building a complex production app.",
+          "You need fine-grained control over code.",
+          "You need custom architecture or specialized databases."
+        ],
+        "keepIf": [
+          "You want to prototype quickly.",
+          "You lack React/Node.js experience.",
+          "You prefer browser-based development over local setup."
+        ],
+        "threshold": "Bolt.new is best for prototypes and MVPs; for complex business apps, code manually."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Accès gratuit limité par crédits Claude API ; StackBlitz (parent) facture les accès avancés.",
+        "exists": true
+      },
+      "key_features": [
+        "Génération texte-vers-app complète",
+        "Exécution live dans le navigateur (WebContainers)",
+        "Édition code et UI en temps réel",
+        "Export code / déploiement direct",
+        "Choix d'IA : Claude ou agent v1"
+      ],
+      "plans": [
+        {
+          "name": "Free",
+          "price": "0 $ (limité par crédit)"
+        },
+        {
+          "name": "Premium / Pro",
+          "price": "montants sur la page officielle ou StackBlitz"
+        }
+      ],
+      "pricing_model": "Modèle gratuit avec chat en temps limité (utilise les crédits tokens Claude), plans payants non documentés publiquement.",
+      "what": "Générateur d'applications web full-stack par IA (frontend React, backend Node.js) : décrivez l'app en langage naturel, Bolt génère code exécutable et dépliable dans le navigateur sans configuration locale.",
+      "what_en": "AI-powered full-stack web app generator (React frontend, Node.js backend): describe your app in natural language, Bolt generates executable, deployable code in the browser with zero local setup."
+    },
+    "fr": {
+      "cons": [
+        "Qualité code générée inégale.",
+        "Limité à React + Node.js.",
+        "Pas idéal pour projets avancés."
+      ],
+      "pros": [
+        "Création app ultra-rapide (minutes).",
+        "Accès gratuit généreux.",
+        "Pas de setup local, tout dans le navigateur.",
+        "Code sortant est réutilisable."
+      ],
+      "relevant_for": [
+        "Makers",
+        "Entrepreneurs",
+        "Freelances",
+        "Étudiants"
+      ],
+      "use_cases": [
+        "Prototyper une idée de produit en 1h.",
+        "Créer un dashboard ou outil interne.",
+        "Démontrer un concept client rapidement."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous construisez une app complexe ou très architecturée.",
+          "Vous avez besoin de contrôle fin du code.",
+          "Vous avez besoin d'une architecture personnalisée ou d'une base de données spécialisée."
+        ],
+        "keepIf": [
+          "Vous prototypez rapidement une MVP.",
+          "Vous n'avez pas d'expérience React/Node.js.",
+          "Vous voulez créer une app sans terminal local."
+        ],
+        "threshold": "Bolt.new excelle pour les prototypes et MVPs ; pour des apps métier complexes, écrivez le code directement."
+      }
+    },
+    "slug": "bolt-new",
+    "sources": [
+      {
+        "label": "Bolt.new — web app builder avec IA (site officiel)",
+        "url": "https://bolt.new"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-ai-general-critical-001",
+    "batch_position": 16,
+    "blockers": [],
+    "catalog_hash": "sha256:63b2561e5d897a0874268d7e105a7e15ee73023d7439fb88548a957bc905d369",
+    "category": "ai-general",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:48ba0e7c216f35b2d0cfb980bf72058eeee709a589532870c3e3b641426156ff",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Bolt.new",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:7d8c602e653d05bc0403af4a598c7fdb856880f66fffd2035a403ae0df16aba3",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "bolt-new",
+    "source_url": "https://bolt.new/pricing",
+    "source_verified_on": "2026-03-13",
+    "status": "QUEUED"
+  }
+}

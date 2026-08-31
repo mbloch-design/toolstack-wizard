@@ -1,0 +1,277 @@
+{
+  "batch": "review-ai-general-critical-001",
+  "current": {
+    "affiliate_url": "https://guideless.app",
+    "alternatives": [
+      "motion",
+      "reclaim-ai",
+      "todoist"
+    ],
+    "category": "ai-general",
+    "cons": [
+      "Limité aux workflows navigateur.",
+      "Free tier : watermark et 3 guides seulement.",
+      "Montage fin pas possible dans l'outil."
+    ],
+    "cons_en": [
+      "Limited to browser workflows.",
+      "Free tier: watermark and 3 guides only.",
+      "Fine editing not possible in tool."
+    ],
+    "host_app": null,
+    "id": "guideless",
+    "long_description": "Générateur de guide vidéo automatisé : enregistrez un workflow dans le navigateur, Guideless génère script, captions, smart zooms, highlights UI, et narration IA vocale. Export MP4, pas de watermark sur Pro.\n\nFonctions clés : Enregistrement navigateur automatisé ; Génération script IA ; Captions et smart zooms ; Narration vocale IA (multilangue) ; Export MP4 (Pro sans watermark).\n\nGuideless rapproche la production doc video de l'automatisation ; pour cinéma/pro, utilisez Premiere/DaVinci.",
+    "long_description_en": "Automated video guide generator: record a browser workflow, Guideless generates script, captions, smart zooms, UI highlights, and AI voice narration. MP4 export, no watermark on Pro.\n\nKey strengths: Free with 3 generous guides.; Impressive AI script generation.; Multilingual voice narration.; Browser-based, no install..\n\nGuideless brings video doc production closer to automation; for cinema/pro, use Premiere/DaVinci.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://guideless.app/favicon.ico"
+    },
+    "name": "Guideless",
+    "pricing": {
+      "free": "Gratuit : jusqu'à 3 guides, partage, narration IA, voix IA (avec watermark).",
+      "paid": "Free: 0 $ (max 3 guides) ; Pro: 29 $/mois/user (annuel) ou mensuel (montants sur page)"
+    },
+    "pricing_en": {
+      "free": "Gratuit : jusqu'à 3 guides, partage, narration IA, voix IA (avec watermark).",
+      "paid": "Free: 0 $ (max 3 guides) ; Pro: 29 $/mois/user (annuel) ou mensuel (montants sur page)"
+    },
+    "pricing_v5": {
+      "annual_monthly_eur": 20,
+      "billing_note": "Pro 29$/mois",
+      "currency_original": "USD",
+      "free_tier": true,
+      "free_tier_note": "Plan gratuit disponible",
+      "monthly_eur": 25,
+      "official_source_url": "https://guideless.app",
+      "plan_name": "Pro",
+      "price_original": 29,
+      "reliability": "low",
+      "source_domain": "guideless.app",
+      "source_url": "https://guideless.app/pricing",
+      "verification_status": "official_explicit",
+      "verified_on": "2026-08-30"
+    },
+    "pros": [
+      "Gratuit avec 3 guides généreux.",
+      "Génération script IA impressionnante.",
+      "Narration vocale multilingue.",
+      "Pas d'installation, tout en navigateur."
+    ],
+    "pros_en": [
+      "Free with 3 generous guides.",
+      "Impressive AI script generation.",
+      "Multilingual voice narration.",
+      "Browser-based, no install."
+    ],
+    "short_description": "Générateur de guide vidéo automatisé : enregistrez un workflow dans le navigateur, Guideless génère script, captions, smart zooms, highlights UI, et narration IA vocale. Export MP4, pas de watermark sur Pro.",
+    "short_description_en": "Automated video guide generator: record a browser workflow, Guideless generates script, captions, smart zooms, UI highlights, and AI voice narration. MP4 export, no watermark on Pro.",
+    "slug": "guideless",
+    "source_url": "https://guideless.app",
+    "source_verified_on": "2026-08-30",
+    "use_cases": [
+      "Créer onboarding video employee rapidement.",
+      "Documenter workflow software pour clients.",
+      "Générer support materials auto."
+    ],
+    "use_cases_en": [
+      "Create employee onboarding video fast.",
+      "Document software workflow for clients.",
+      "Auto-generate support materials."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous produisez des videos haute qualité polies.",
+        "Vous avez besoin de montage fin.",
+        "Vous produisez des vidéos de haute qualité et polies."
+      ],
+      "keepIf": [
+        "Vous créez de la documentation software rapidement.",
+        "Vous voulez automatiser les screencast.",
+        "Votre équipe documentation est petite."
+      ],
+      "threshold": "Guideless rapproche la production doc video de l'automatisation ; pour cinéma/pro, utilisez Premiere/DaVinci."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You produce polished, high-quality videos.",
+        "You need fine editing control.",
+        "You produce high-quality polished videos."
+      ],
+      "keepIf": [
+        "You create software docs quickly.",
+        "You want to automate screencast production.",
+        "Your docs team is small."
+      ],
+      "threshold": "Guideless brings video doc production closer to automation; for cinema/pro, use Premiere/DaVinci."
+    },
+    "website_url": "https://guideless.app"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim, Mike",
+    "en": {
+      "cons": [
+        "Limited to browser workflows.",
+        "Free tier: watermark and 3 guides only.",
+        "Fine editing not possible in tool."
+      ],
+      "pros": [
+        "Free with 3 generous guides.",
+        "Impressive AI script generation.",
+        "Multilingual voice narration.",
+        "Browser-based, no install."
+      ],
+      "use_cases": [
+        "Create employee onboarding video fast.",
+        "Document software workflow for clients.",
+        "Auto-generate support materials."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You produce polished, high-quality videos.",
+          "You need fine editing control.",
+          "You produce high-quality polished videos."
+        ],
+        "keepIf": [
+          "You create software docs quickly.",
+          "You want to automate screencast production.",
+          "Your docs team is small."
+        ],
+        "threshold": "Guideless brings video doc production closer to automation; for cinema/pro, use Premiere/DaVinci."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Gratuit : jusqu'à 3 guides, partage, narration IA, voix IA (avec watermark).",
+        "exists": true
+      },
+      "key_features": [
+        "Enregistrement navigateur automatisé",
+        "Génération script IA",
+        "Captions et smart zooms",
+        "Narration vocale IA (multilangue)",
+        "Export MP4 (Pro sans watermark)"
+      ],
+      "plans": [
+        {
+          "name": "Free",
+          "price": "0 $ (max 3 guides)"
+        },
+        {
+          "name": "Pro",
+          "price": "29 $/mois/user (annuel) ou mensuel (montants sur page)"
+        }
+      ],
+      "pricing_model": "Tier gratuit avec 3 guides (watermark), Pro (29 $/mois/user) sans limite et sans watermark.",
+      "what": "Générateur de guide vidéo automatisé : enregistrez un workflow dans le navigateur, Guideless génère script, captions, smart zooms, highlights UI, et narration IA vocale. Export MP4, pas de watermark sur Pro.",
+      "what_en": "Automated video guide generator: record a browser workflow, Guideless generates script, captions, smart zooms, UI highlights, and AI voice narration. MP4 export, no watermark on Pro."
+    },
+    "fr": {
+      "cons": [
+        "Limité aux workflows navigateur.",
+        "Free tier : watermark et 3 guides seulement.",
+        "Montage fin pas possible dans l'outil."
+      ],
+      "pros": [
+        "Gratuit avec 3 guides généreux.",
+        "Génération script IA impressionnante.",
+        "Narration vocale multilingue.",
+        "Pas d'installation, tout en navigateur."
+      ],
+      "relevant_for": [
+        "Teams support",
+        "Créateurs contenu",
+        "Product teams"
+      ],
+      "use_cases": [
+        "Créer onboarding video employee rapidement.",
+        "Documenter workflow software pour clients.",
+        "Générer support materials auto."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous produisez des videos haute qualité polies.",
+          "Vous avez besoin de montage fin.",
+          "Vous produisez des vidéos de haute qualité et polies."
+        ],
+        "keepIf": [
+          "Vous créez de la documentation software rapidement.",
+          "Vous voulez automatiser les screencast.",
+          "Votre équipe documentation est petite."
+        ],
+        "threshold": "Guideless rapproche la production doc video de l'automatisation ; pour cinéma/pro, utilisez Premiere/DaVinci."
+      }
+    },
+    "slug": "guideless",
+    "sources": [
+      {
+        "label": "Guideless, documentation video AI (site officiel)",
+        "url": "https://guideless.app"
+      }
+    ],
+    "verified_on": "2026-08-30"
+  },
+  "media_evidence": {
+    "discovery": {
+      "official_media_found": true,
+      "official_pages_checked": [
+        "https://guideless.app"
+      ]
+    },
+    "items": [
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://guideless.app",
+        "url": "https://guideless.app/favicon.ico"
+      }
+    ],
+    "mode": "sourced",
+    "slug": "guideless",
+    "verified_on": "2026-08-30"
+  },
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-ai-general-critical-001",
+    "batch_position": 2,
+    "blockers": [],
+    "catalog_hash": "sha256:8a6b841db931263844f07731b852f106773f2e788eca5729e4ab91976d5495b2",
+    "category": "ai-general",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:ef116b289c7adcff51712809d12f34a88522ebe1e4c5826302b70deeae8aac83",
+    "invalidated_from": null,
+    "media_errors": [],
+    "media_evidence": "VALID",
+    "media_evidence_hash": "sha256:cb8d34713084d0ebc846368214be9d1ad6263db9810b7d28f41252a2368caa8e",
+    "name": "Guideless",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price"
+    ],
+    "priority_score": 180,
+    "published_at": "2026-08-31",
+    "quality_version": "catalog-review-v1",
+    "rendered_at": "2026-08-31",
+    "review_fingerprint": "sha256:345eec67bf3bb4eb9b2b4b5408806ea836ca192790fff019e15862c833fd3f78",
+    "reviewed_at": "2026-08-31",
+    "reviewed_hash": "sha256:345eec67bf3bb4eb9b2b4b5408806ea836ca192790fff019e15862c833fd3f78",
+    "reviewer": "ToolTrim - Mike",
+    "risk_tier": "critical",
+    "slug": "guideless",
+    "source_url": "https://guideless.app",
+    "source_verified_on": "2026-08-30",
+    "status": "PUBLISHED"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "slug": "claude",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://claude.com/"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://cdn.sanity.io/images/4zrzovbb/claude-com/6c36adaaf60ecdde313a93ad255eef573ea4de97-1200x630.jpg?w=1200&h=630&fit=crop",
+      "source_page_url": "https://claude.com/",
+      "official": true,
+      "alt": "Official product preview"
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d23594abeb9ab6ee48_70ed020ecf8fa028b9bc95fa819720b6_og_claude-generic.jpg",
+      "source_page_url": "https://claude.com/",
+      "official": true,
+      "alt": "Claude official product preview"
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.sanity.io/images/4zrzovbb/website/9aabd215e1104ea914218eaf759b3deefc02a956-1920x1080.png",
+      "source_page_url": "https://claude.com/",
+      "official": true,
+      "alt": "Claude official product preview"
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.sanity.io/images/4zrzovbb/website/c5823949d9350145ce2fda51acbc7076f2139cd0-1920x1080.png",
+      "source_page_url": "https://claude.com/",
+      "official": true,
+      "alt": "Claude official product preview"
+    }
+  ]
+}

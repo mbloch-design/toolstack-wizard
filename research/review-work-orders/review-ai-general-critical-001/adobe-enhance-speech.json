@@ -1,0 +1,282 @@
+{
+  "batch": "review-ai-general-critical-001",
+  "current": {
+    "affiliate_url": "https://podcast.adobe.com/enhance",
+    "alternatives": [],
+    "category": "ai-general",
+    "cons": [
+      "Ciblé sur la voix, pas un outil de mixage complet.",
+      "Moins de contrôle qu'un DAW pro.",
+      "Rattaché à l'écosystème Adobe."
+    ],
+    "cons_en": [
+      "Voice-focused, not a full mixing tool.",
+      "Less control than a pro DAW.",
+      "Tied to the Adobe ecosystem."
+    ],
+    "host_app": null,
+    "id": "adobe-enhance-speech",
+    "long_description": "Outil d'IA d'Adobe (Adobe Podcast) qui nettoie et améliore des enregistrements vocaux : réduction de bruit et de réverbération pour un rendu net.\n\nFonctions clés : Nettoyage vocal par IA (bruit, réverbération) ; Rendu proche d'un enregistrement studio ; Traitement rapide dans le navigateur ; Sans réglages complexes.\n\nEnhance Speech s'impose pour nettoyer vite une voix par IA sans expertise ; pour un traitement fin, un DAW dédié reste plus adapté.",
+    "long_description_en": "Adobe AI tool (Adobe Podcast) that cleans and enhances voice recordings (removes noise, improves clarity).\n\nKey strengths: Very simple AI voice cleanup.; Result close to a studio recording.; Fast, in the browser.; Free tier to try..\n\nEnhance Speech makes sense to quickly clean voice with AI without expertise; for fine processing, a dedicated DAW fits better.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://podcast.adobe.com/enhance-speech.jpg"
+    },
+    "name": "Adobe Enhance Speech",
+    "pricing": {
+      "free": "Outil web avec un niveau gratuit ; lié à l'écosystème Adobe Podcast (voir la fiche de la suite).",
+      "paid": "Outil web avec un niveau gratuit ; lié à l'écosystème Adobe Podcast (voir la fiche de la suite)."
+    },
+    "pricing_en": {
+      "free": "Outil web avec un niveau gratuit ; lié à l'écosystème Adobe Podcast (voir la fiche de la suite).",
+      "paid": "Outil web avec un niveau gratuit ; lié à l'écosystème Adobe Podcast (voir la fiche de la suite)."
+    },
+    "pricing_v5": {
+      "billing_model": "free",
+      "billing_options": [
+        {
+          "label_en": "Free",
+          "label_fr": "Gratuit",
+          "price_monthly_eur": 0,
+          "value": "free"
+        },
+        {
+          "label_en": "Team",
+          "label_fr": "Équipe",
+          "needs_verification": true,
+          "value": "team"
+        },
+        {
+          "label_en": "I don’t know",
+          "label_fr": "Je ne sais pas",
+          "needs_verification": true,
+          "value": "unknown"
+        }
+      ],
+      "cautions": [
+        "Vérifier si l'usage passe par Adobe Express Premium ou Creative Cloud."
+      ],
+      "compare_plan_kind": "free",
+      "compare_plan_name": "Free",
+      "compare_price_monthly_eur": 0,
+      "currency": "EUR",
+      "location_sensitive": false,
+      "official_source_url": "https://podcast.adobe.com/enhance",
+      "price_original": 0,
+      "price_original_currency": "EUR",
+      "price_reliability": "high",
+      "source_domain": "podcast.adobe.com",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-08-30"
+    },
+    "pros": [
+      "Nettoyage vocal par IA très simple.",
+      "Rendu proche d'un enregistrement studio.",
+      "Rapide, dans le navigateur.",
+      "Niveau gratuit pour tester."
+    ],
+    "pros_en": [
+      "Very simple AI voice cleanup.",
+      "Result close to a studio recording.",
+      "Fast, in the browser.",
+      "Free tier to try."
+    ],
+    "short_description": "Outil d'IA d'Adobe (Adobe Podcast) qui nettoie et améliore des enregistrements vocaux : réduction de bruit et de réverbération pour un rendu net.",
+    "short_description_en": "Adobe AI tool (Adobe Podcast) that cleans and enhances voice recordings (removes noise, improves clarity).",
+    "slug": "adobe-enhance-speech",
+    "source_url": "https://podcast.adobe.com/enhance",
+    "source_verified_on": "2026-08-30",
+    "use_cases": [
+      "Nettoyer une interview enregistrée en conditions difficiles.",
+      "Améliorer une voix-off avant montage.",
+      "Rendre audible un enregistrement bruité."
+    ],
+    "use_cases_en": [
+      "Clean an interview recorded in poor conditions.",
+      "Improve a voice-over before editing.",
+      "Make a noisy recording audible."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous disposez déjà d'un traitement audio professionnel.",
+        "Vos besoins sont ponctuels.",
+        "Vous préférez un outil autonome hors Adobe."
+      ],
+      "keepIf": [
+        "Vous nettoyez rapidement des voix bruitées par IA.",
+        "Vous produisez du contenu parlé (interviews, podcasts).",
+        "Vous voulez un rendu propre sans réglages complexes."
+      ],
+      "threshold": "Enhance Speech s'impose pour nettoyer vite une voix par IA sans expertise ; pour un traitement fin, un DAW dédié reste plus adapté."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You already have professional audio processing.",
+        "Your needs are occasional.",
+        "You prefer a standalone non-Adobe tool."
+      ],
+      "keepIf": [
+        "You quickly clean noisy voices with AI.",
+        "You produce spoken content (interviews, podcasts).",
+        "You want a clean result without complex settings."
+      ],
+      "threshold": "Enhance Speech makes sense to quickly clean voice with AI without expertise; for fine processing, a dedicated DAW fits better."
+    },
+    "website_url": "https://podcast.adobe.com/enhance"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim - Mike",
+    "bundle_parent": "adobe-creative-cloud",
+    "en": {
+      "cons": [
+        "Voice-focused, not a full mixing tool.",
+        "Less control than a pro DAW.",
+        "Tied to the Adobe ecosystem."
+      ],
+      "pros": [
+        "Very simple AI voice cleanup.",
+        "Result close to a studio recording.",
+        "Fast, in the browser.",
+        "Free tier to try."
+      ],
+      "use_cases": [
+        "Clean an interview recorded in poor conditions.",
+        "Improve a voice-over before editing.",
+        "Make a noisy recording audible."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You already have professional audio processing.",
+          "Your needs are occasional.",
+          "You prefer a standalone non-Adobe tool."
+        ],
+        "keepIf": [
+          "You quickly clean noisy voices with AI.",
+          "You produce spoken content (interviews, podcasts).",
+          "You want a clean result without complex settings."
+        ],
+        "threshold": "Enhance Speech makes sense to quickly clean voice with AI without expertise; for fine processing, a dedicated DAW fits better."
+      }
+    },
+    "facts": {
+      "key_features": [
+        "Nettoyage vocal par IA (bruit, réverbération)",
+        "Rendu proche d'un enregistrement studio",
+        "Traitement rapide dans le navigateur",
+        "Sans réglages complexes"
+      ],
+      "pricing_note": "Outil web avec un niveau gratuit ; lié à l'écosystème Adobe Podcast (voir la fiche de la suite).",
+      "what": "Outil d'IA d'Adobe (Adobe Podcast) qui nettoie et améliore des enregistrements vocaux : réduction de bruit et de réverbération pour un rendu net.",
+      "what_en": "Adobe AI tool (Adobe Podcast) that cleans and enhances voice recordings (removes noise, improves clarity)."
+    },
+    "fr": {
+      "cons": [
+        "Ciblé sur la voix, pas un outil de mixage complet.",
+        "Moins de contrôle qu'un DAW pro.",
+        "Rattaché à l'écosystème Adobe."
+      ],
+      "pros": [
+        "Nettoyage vocal par IA très simple.",
+        "Rendu proche d'un enregistrement studio.",
+        "Rapide, dans le navigateur.",
+        "Niveau gratuit pour tester."
+      ],
+      "relevant_for": [
+        "Podcasteurs",
+        "Créateurs de contenu",
+        "Journalistes"
+      ],
+      "use_cases": [
+        "Nettoyer une interview enregistrée en conditions difficiles.",
+        "Améliorer une voix-off avant montage.",
+        "Rendre audible un enregistrement bruité."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous disposez déjà d'un traitement audio professionnel.",
+          "Vos besoins sont ponctuels.",
+          "Vous préférez un outil autonome hors Adobe."
+        ],
+        "keepIf": [
+          "Vous nettoyez rapidement des voix bruitées par IA.",
+          "Vous produisez du contenu parlé (interviews, podcasts).",
+          "Vous voulez un rendu propre sans réglages complexes."
+        ],
+        "threshold": "Enhance Speech s'impose pour nettoyer vite une voix par IA sans expertise ; pour un traitement fin, un DAW dédié reste plus adapté."
+      }
+    },
+    "slug": "adobe-enhance-speech",
+    "sources": [
+      {
+        "label": "Adobe Podcast - Enhance Speech (page officielle)",
+        "url": "https://podcast.adobe.com/enhance"
+      }
+    ],
+    "verified_on": "2026-08-30"
+  },
+  "media_evidence": {
+    "discovery": {
+      "official_media_found": true,
+      "official_pages_checked": [
+        "https://podcast.adobe.com/enhance"
+      ]
+    },
+    "items": [
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://podcast.adobe.com/enhance",
+        "url": "https://podcast.adobe.com/enhance-speech.jpg"
+      }
+    ],
+    "mode": "sourced",
+    "slug": "adobe-enhance-speech",
+    "verified_on": "2026-08-30"
+  },
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-ai-general-critical-001",
+    "batch_position": 9,
+    "blockers": [],
+    "catalog_hash": "sha256:64d829a094e028ee91c1c409f2de69988ca0b45aa600176bf1204123cc960d49",
+    "category": "ai-general",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:6772203cc8180be9f8b04820bdad08c1a15a76b8e4b61f9a3e854b05c8eab8a5",
+    "invalidated_from": null,
+    "media_errors": [],
+    "media_evidence": "VALID",
+    "media_evidence_hash": "sha256:5f20d670d39ab5c3c2665e2b6a910ebbf0bb559bb23196e7c32c7007a48677d5",
+    "name": "Adobe Enhance Speech",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price"
+    ],
+    "priority_score": 180,
+    "published_at": "2026-08-31",
+    "quality_version": "catalog-review-v1",
+    "rendered_at": "2026-08-31",
+    "review_fingerprint": "sha256:6b6fd04a8e3359775c42977ce99f3e3938485cb4309401ce97d56c058aff3948",
+    "reviewed_at": "2026-08-31",
+    "reviewed_hash": "sha256:6b6fd04a8e3359775c42977ce99f3e3938485cb4309401ce97d56c058aff3948",
+    "reviewer": "ToolTrim - Mike",
+    "risk_tier": "critical",
+    "slug": "adobe-enhance-speech",
+    "source_url": "https://podcast.adobe.com/enhance",
+    "source_verified_on": "2026-08-30",
+    "status": "PUBLISHED"
+  }
+}

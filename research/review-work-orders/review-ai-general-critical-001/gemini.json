@@ -1,0 +1,270 @@
+{
+  "batch": "review-ai-general-critical-001",
+  "current": {
+    "affiliate_url": "https://gemini.google.com",
+    "alternatives": [
+      "chatgpt",
+      "claude"
+    ],
+    "category": "ai-general",
+    "cons": [
+      "Moins mature qu'OpenAI/Anthropic pour dev.",
+      "API moins stable historiquement.",
+      "Tiercing Google Workspace requis pour full value."
+    ],
+    "cons_en": [
+      "Less mature than OpenAI/Anthropic for dev.",
+      "API historically less stable.",
+      "Google Workspace required for full value."
+    ],
+    "host_app": null,
+    "id": "gemini",
+    "long_description": "Gemini, c'est l'IA de Google qui double ses performances tous les 3 mois. À partir de 20€/mois. Pensé pour les consultants B2B et les créateurs de contenu.\n\nRaisonnement avancé : 77.1% sur ARC-AGI-2 (double de Gemini 3 Pro). creative coding : génération de code complexe (3D, animations, SVG), pricing compétitif : $2/$12/M tokens (similaire à Claude). Intégration Google : Workspace, NotebookLM, Android Studio. Concrètement : creative coding : générer des animations SVG, interfaces 3D, designs interactifs. Ou encore : raisonnement complexe : résoudre des problèmes logiques, patterns nouveaux. Gain de temps estimé : 7h/mois.\n\nÀ garder si : besoin de raisonnement complexe (ARC-AGI-2 : 77.1%) ou creative coding et design génératif. À éviter si : préférence pour une IA plus mature (Claude/ChatGPT) ou besoin de stabilité (Gemini 3.1 Pro en preview). Limite principale : preview : pas encore en disponibilité générale (moins stable). Dès que vous avez besoin de raisonnement logique avancé ou de creative coding.",
+    "long_description_en": "Gemini is google's AI that doubles its performance every 3 months. Starting at €20/month. Built for B2B consultants and content creators.\n\nEstimated time saving: 7h/month.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://www.gstatic.com/lamda/images/gemini_aurora_thumbnail_4g_e74822ff0ca4259beb718.png"
+    },
+    "name": "Gemini",
+    "pricing": {
+      "free": "Application Gemini gratuite disponible",
+      "paid": "Google AI Pro à 19,99$/mois ; Google AI Ultra à 200$/mois"
+    },
+    "pricing_en": {
+      "free": "Free Gemini app available",
+      "paid": "Google AI Pro at $19.99/month; Google AI Ultra at $200/month"
+    },
+    "pricing_v5": {
+      "cautions": [],
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Entry paid plan",
+      "compare_price_monthly_eur": 20,
+      "location_sensitive": false,
+      "official_source_url": "https://gemini.google/subscriptions/",
+      "price_reliability": "high",
+      "source_domain": "gemini.google",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-03-13"
+    },
+    "pros": [
+      "Gratuit sans limite de temps.",
+      "Intégration Workspace seamless.",
+      "Performance solide, prix API compétitif.",
+      "Accès web temps réel natif."
+    ],
+    "pros_en": [
+      "Free with no time limit.",
+      "Seamless Workspace integration.",
+      "Solid performance, competitive API pricing.",
+      "Real-time web access built-in."
+    ],
+    "short_description": "L'IA de Google qui double ses performances tous les 3 mois.",
+    "short_description_en": "Google's AI that doubles its performance every 3 months.",
+    "slug": "gemini",
+    "source_url": "https://gemini.google/subscriptions/",
+    "source_verified_on": "2026-03-13",
+    "use_cases": [
+      "Assister tâches quotidiennes (Gmail, Docs).",
+      "Prototyper IA avec Google AI Studio gratuit.",
+      "Intégrer IA dans Google Workspace workflows."
+    ],
+    "use_cases_en": [
+      "Assist daily tasks (Gmail, Docs, Sheets).",
+      "Prototype AI with free Google AI Studio.",
+      "Integrate AI into Google Workspace workflows."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous préférez Anthropic ou OpenAI.",
+        "Vous avez besoin de très long contexte en prod.",
+        "Vous ne travaillez pas dans l'écosystème Google."
+      ],
+      "keepIf": [
+        "Vous utilisez Google Workspace (Gmail, Docs).",
+        "Vous voulez une IA grand public sans frais.",
+        "Vous intégrez IA via API Google."
+      ],
+      "threshold": "Gemini vaut pour équipes Google ; pour autres stacks, Anthropic/OpenAI sont plus standards."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You prefer Anthropic or OpenAI.",
+        "You need very long context in production.",
+        "You don't work in the Google ecosystem."
+      ],
+      "keepIf": [
+        "You use Google Workspace (Gmail, Docs).",
+        "You want free consumer AI.",
+        "You're integrating AI via Google API."
+      ],
+      "threshold": "Gemini is worth it for Google-native teams; for other stacks, Anthropic/OpenAI are more standard."
+    },
+    "website_url": "https://gemini.google.com"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Less mature than OpenAI/Anthropic for dev.",
+        "API historically less stable.",
+        "Google Workspace required for full value."
+      ],
+      "pros": [
+        "Free with no time limit.",
+        "Seamless Workspace integration.",
+        "Solid performance, competitive API pricing.",
+        "Real-time web access built-in."
+      ],
+      "use_cases": [
+        "Assist daily tasks (Gmail, Docs, Sheets).",
+        "Prototype AI with free Google AI Studio.",
+        "Integrate AI into Google Workspace workflows."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You prefer Anthropic or OpenAI.",
+          "You need very long context in production.",
+          "You don't work in the Google ecosystem."
+        ],
+        "keepIf": [
+          "You use Google Workspace (Gmail, Docs).",
+          "You want free consumer AI.",
+          "You're integrating AI via Google API."
+        ],
+        "threshold": "Gemini is worth it for Google-native teams; for other stacks, Anthropic/OpenAI are more standard."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Gratuit : accès Gemini classique, Google AI Studio pour dev (avec limites rate).",
+        "exists": true
+      },
+      "key_features": [
+        "Modèles multilingues haute performance",
+        "Accès web temps réel",
+        "Intégration Google Workspace incluse",
+        "Google AI Studio libre pour prototyper",
+        "Gemini 2.5 Advanced pour raisonnement"
+      ],
+      "plans": [
+        {
+          "name": "Free",
+          "price": "0 $ (avec limites)"
+        },
+        {
+          "name": "AI Plus",
+          "price": "4,99 $/mois (ancien 7,99 $)"
+        },
+        {
+          "name": "AI Pro",
+          "price": "19,99 $/mois"
+        },
+        {
+          "name": "AI Ultra",
+          "price": "99,99 $/mois (5x Pro) ou 199,99 $ (20x Pro)"
+        },
+        {
+          "name": "API",
+          "price": "0,10-2,00 $/M tokens selon modèle"
+        }
+      ],
+      "pricing_model": "Tier gratuit, plus plans AI Plus (4,99 $/mois), AI Pro (19,99 $/mois), AI Ultra (99,99 ou 199,99 $/mois). API : usage-based par 1M tokens.",
+      "what": "Assistant IA grand public et API développeur de Google : modèles Gemini 2.5, Gemini 3.7 Flash avec long contexte, accès web temps réel, et intégration Google Workspace.",
+      "what_en": "Google's consumer AI assistant and developer API: Gemini 2.5, Gemini 3.7 Flash models with long context, real-time web access, and Google Workspace integration."
+    },
+    "fr": {
+      "cons": [
+        "Moins mature qu'OpenAI/Anthropic pour dev.",
+        "API moins stable historiquement.",
+        "Tiercing Google Workspace requis pour full value."
+      ],
+      "pros": [
+        "Gratuit sans limite de temps.",
+        "Intégration Workspace seamless.",
+        "Performance solide, prix API compétitif.",
+        "Accès web temps réel natif."
+      ],
+      "relevant_for": [
+        "Teams Google",
+        "Utilisateurs Workspace",
+        "Développeurs Google"
+      ],
+      "use_cases": [
+        "Assister tâches quotidiennes (Gmail, Docs).",
+        "Prototyper IA avec Google AI Studio gratuit.",
+        "Intégrer IA dans Google Workspace workflows."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous préférez Anthropic ou OpenAI.",
+          "Vous avez besoin de très long contexte en prod.",
+          "Vous ne travaillez pas dans l'écosystème Google."
+        ],
+        "keepIf": [
+          "Vous utilisez Google Workspace (Gmail, Docs).",
+          "Vous voulez une IA grand public sans frais.",
+          "Vous intégrez IA via API Google."
+        ],
+        "threshold": "Gemini vaut pour équipes Google ; pour autres stacks, Anthropic/OpenAI sont plus standards."
+      }
+    },
+    "slug": "gemini",
+    "sources": [
+      {
+        "label": "Google Gemini — plans et pricing (site officiel)",
+        "url": "https://gemini.google.com/pricing"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-ai-general-critical-001",
+    "batch_position": 23,
+    "blockers": [],
+    "catalog_hash": "sha256:5bdb785214e631970d0bc0e5591378d88f40c45b8cec1cac7e2e95cdfc5c44f3",
+    "category": "ai-general",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:6ba6ebfa5d1ba036b498d0fa4783995a3a195805766ae6647cd92970dc2118e9",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Gemini",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:a8ccda84b5166514ee1d30a7dbf5ab9130a003dde17830e639992d06c1f21790",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "gemini",
+    "source_url": "https://gemini.google/subscriptions/",
+    "source_verified_on": "2026-03-13",
+    "status": "QUEUED"
+  }
+}

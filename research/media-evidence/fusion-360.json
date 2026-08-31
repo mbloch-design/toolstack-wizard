@@ -1,0 +1,27 @@
+{
+  "slug": "fusion-360",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://www.autodesk.com/products/fusion-360/overview"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://images.ctfassets.net/v7wr16nrr0mz/7cubXgLsTdlFLouyd2X4Vs/c12e1a3fa9a58107fb5bf41835183909/fusion-2027-banner-1920x1080-v4.jpg",
+      "source_page_url": "https://www.autodesk.com/products/fusion-360/overview",
+      "official": true,
+      "alt": "Fusion 360 official product preview"
+    },
+    {
+      "kind": "image",
+      "url": "https://images.ctfassets.net/v7wr16nrr0mz/5NV1D05DBUbABB1cBAd1Kj/a817d8493bb6cfc464c86b56fe7dbe49/fusion-manage-thumb-1172x660.jpg",
+      "source_page_url": "https://www.autodesk.com/products/fusion-360/overview",
+      "official": true,
+      "alt": "Fusion Manage"
+    }
+  ]
+}

@@ -1,0 +1,763 @@
+{
+  "brandpad": {
+    "slug": "brandpad",
+    "page_url": "https://brandpad.io",
+    "candidates": [],
+    "error": "fetch failed"
+  },
+  "esko-studio": {
+    "slug": "esko-studio",
+    "page_url": "https://www.esko.com/en/products/studio",
+    "candidates": [
+      {
+        "url": "https://www.esko.com/static/uploads/2024/01/hero_image.webp",
+        "alt": "Photo of monitor displaying Studio",
+        "width": 772,
+        "height": 753
+      },
+      {
+        "url": "https://www.esko.com/static/uploads/2024/01/hero_image-640x624.webp",
+        "alt": "Photo of monitor displaying Studio",
+        "width": 772,
+        "height": 753
+      },
+      {
+        "url": "https://www.esko.com/static/uploads/2024/01/hero_image-768x749.webp",
+        "alt": "Photo of monitor displaying Studio",
+        "width": 772,
+        "height": 753
+      },
+      {
+        "url": "https://www.esko.com/static/uploads/2024/01/section_image_1.webp",
+        "alt": "Photo of laptop displaying Studio",
+        "width": 663,
+        "height": 543
+      },
+      {
+        "url": "https://www.esko.com/static/uploads/2024/01/section_image_1-640x524.webp",
+        "alt": "Photo of laptop displaying Studio",
+        "width": 663,
+        "height": 543
+      },
+      {
+        "url": "https://www.esko.com/static/uploads/2024/01/section_image_2.webp",
+        "alt": "Illustration of GetSet can design",
+        "width": 680,
+        "height": 516
+      },
+      {
+        "url": "https://www.esko.com/static/uploads/2024/01/section_image_2-640x486.webp",
+        "alt": "Illustration of GetSet can design",
+        "width": 680,
+        "height": 516
+      },
+      {
+        "url": "https://www.esko.com/static/uploads/2024/01/audience_image_11.webp",
+        "alt": "Screenshot of Packaging design in Studio",
+        "width": 800,
+        "height": 501
+      },
+      {
+        "url": "https://www.esko.com/static/uploads/2024/01/audience_image_11-640x401.webp",
+        "alt": "Screenshot of Packaging design in Studio",
+        "width": 800,
+        "height": 501
+      },
+      {
+        "url": "https://www.esko.com/static/uploads/2024/01/audience_image_11-768x481.webp",
+        "alt": "Screenshot of Packaging design in Studio",
+        "width": 800,
+        "height": 501
+      },
+      {
+        "url": "https://www.esko.com/static/uploads/2024/01/audience_image_2-1-1.webp",
+        "alt": "Shelf with medicine packages",
+        "width": 800,
+        "height": 613
+      },
+      {
+        "url": "https://www.esko.com/static/uploads/2024/01/audience_image_2-1-1-640x490.webp",
+        "alt": "Shelf with medicine packages",
+        "width": 800,
+        "height": 613
+      },
+      {
+        "url": "https://www.esko.com/static/uploads/2024/01/audience_image_2-1-1-768x588.webp",
+        "alt": "Shelf with medicine packages",
+        "width": 800,
+        "height": 613
+      },
+      {
+        "url": "https://www.esko.com/static/uploads/2024/01/audience_image_3.webp",
+        "alt": "Packaging design program",
+        "width": 800,
+        "height": 485
+      },
+      {
+        "url": "https://www.esko.com/static/uploads/2024/01/audience_image_3-640x388.webp",
+        "alt": "Packaging design program",
+        "width": 800,
+        "height": 485
+      },
+      {
+        "url": "https://www.esko.com/static/uploads/2024/01/audience_image_3-768x466.webp",
+        "alt": "Packaging design program",
+        "width": 800,
+        "height": 485
+      },
+      {
+        "url": "https://www.esko.com/static/uploads/2024/02/Group-1000007057.png",
+        "alt": "Woman typing in on the laptop",
+        "width": 888,
+        "height": 431
+      },
+      {
+        "url": "https://www.esko.com/static/uploads/2024/02/Group-1000007057-640x311.png",
+        "alt": "Woman typing in on the laptop",
+        "width": 888,
+        "height": 431
+      },
+      {
+        "url": "https://www.esko.com/static/uploads/2024/02/Group-1000007057-768x373.png",
+        "alt": "Woman typing in on the laptop",
+        "width": 888,
+        "height": 431
+      },
+      {
+        "url": "https://www.esko.com/static/uploads/2025/06/maxresdefault-2.webp",
+        "alt": "Thumbnail for webinar replay titled, \"EU CLP Regulation: Are Your Labels Ready?",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "url": "https://www.esko.com/static/uploads/2025/06/maxresdefault-2-640x360.webp",
+        "alt": "Thumbnail for webinar replay titled, \"EU CLP Regulation: Are Your Labels Ready?",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "url": "https://www.esko.com/static/uploads/2025/06/maxresdefault-2-768x432.webp",
+        "alt": "Thumbnail for webinar replay titled, \"EU CLP Regulation: Are Your Labels Ready?",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "url": "https://www.esko.com/static/uploads/2025/06/maxresdefault-2-1024x576.webp",
+        "alt": "Thumbnail for webinar replay titled, \"EU CLP Regulation: Are Your Labels Ready?",
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "url": "https://www.esko.com/static/uploads/2025/06/Screenshot-2025-06-12-at-4.53.41%E2%80%AFPM-Medium.jpeg",
+        "alt": "",
+        "width": 640,
+        "height": 353
+      },
+      {
+        "url": "https://www.esko.com/static/uploads/2024/03/product_packaging.png",
+        "alt": "Man uses Esko tools to design electronic packaging",
+        "width": 1112,
+        "height": 500
+      },
+      {
+        "url": "https://www.esko.com/static/uploads/2024/03/product_packaging-640x288.png",
+        "alt": "Man uses Esko tools to design electronic packaging",
+        "width": 1112,
+        "height": 500
+      },
+      {
+        "url": "https://www.esko.com/static/uploads/2024/03/product_packaging-768x345.png",
+        "alt": "Man uses Esko tools to design electronic packaging",
+        "width": 1112,
+        "height": 500
+      },
+      {
+        "url": "https://www.esko.com/static/uploads/2024/03/product_packaging-1024x460.png",
+        "alt": "Man uses Esko tools to design electronic packaging",
+        "width": 1112,
+        "height": 500
+      },
+      {
+        "url": "https://www.esko.com/static/uploads/2023/07/award-winning-packaging-design-students-are-using-esko-studio-software-to-shape-the-future-of-the-industry.webp",
+        "alt": "People working in the office with computers",
+        "width": 1112,
+        "height": 500
+      },
+      {
+        "url": "https://www.esko.com/static/uploads/2023/07/award-winning-packaging-design-students-are-using-esko-studio-software-to-shape-the-future-of-the-industry-640x288.webp",
+        "alt": "People working in the office with computers",
+        "width": 1112,
+        "height": 500
+      }
+    ]
+  },
+  "figjam": {
+    "slug": "figjam",
+    "page_url": "https://www.figma.com/figjam/",
+    "candidates": [
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/4b9ade839f38291c91b76608d22e7c7a9ad525fd-542x305.png?w=542&h=305&q=75&fit=max&auto=format",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/7e39b983c6ad865e0a7a5243d914020e69a23f70-542x305.png?w=542&h=305&q=75&fit=max&auto=format",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/1883a9ebc4ce697b718301ad247c0fff45c572c1-540x304.png?w=540&h=304&q=75&fit=max&auto=format",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/8b99a61f768555fab9a11deccc60639cbe74695b-1680x1120.png?w=606&h=404&q=75&fit=max&auto=format",
+        "alt": "Cursors in a file adding stickers and brainstorming phrases on sticky notes",
+        "width": 606,
+        "height": 404
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/162dc7c722821d84fe55cf61de9cfc70e089980f-1680x1120.png?w=606&h=404&q=75&fit=max&auto=format",
+        "alt": "Three cursors creating a diagram using shapes and the snap-to-grid connectors",
+        "width": 606,
+        "height": 404
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/39462187946b6633cfea14175922608f6c055117-1680x1120.png?w=606&h=404&q=75&fit=max&auto=format",
+        "alt": "A section labeled \"meet the team\" featuring the photobooth widget and photos of team members",
+        "width": 606,
+        "height": 404
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/4f4c8709fc6c0d2f802464d49854f29c196acdb0-1680x1120.png?w=606&h=404&q=75&fit=max&auto=format",
+        "alt": "Two sections labeled \"in progress\" and \"blocked\" featuring Jira. A cursor chats \"needs feedback!\"",
+        "width": 606,
+        "height": 404
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/f2809314f36e0494c4e71ba06e66c08bd54ea75a-1680x1120.png?w=606&h=404&q=75&fit=max&auto=format",
+        "alt": "A table with objectives and an alignment scale asking if the objectives are the top priorities for Q3",
+        "width": 606,
+        "height": 404
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/63bca92d18d1964779d0904f48bd44e6e1d1eaf5-1680x1120.png?w=606&h=404&q=75&fit=max&auto=format",
+        "alt": "A template designed to define project goals, assign responsibilities, and align on deadlines",
+        "width": 606,
+        "height": 404
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/a56ea762432f6770424649e7eab5694cd90099e2-1680x1120.png?w=606&h=404&q=75&fit=max&auto=format",
+        "alt": "A template designed to improve workflow and processes by outlining a sychronized process ",
+        "width": 606,
+        "height": 404
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/493e4a8560fde38005a7dab94c46c82dc112ffc8-1680x1120.png?w=606&h=404&q=75&fit=max&auto=format",
+        "alt": "A template for teams to use weekly to connect, share gratitude, and align on project updates",
+        "width": 606,
+        "height": 404
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/d7f5f429834deaaf89b72e14e84a63feb87ef991-1680x1120.png?w=606&h=404&q=75&fit=max&auto=format",
+        "alt": "A stand-up template to keep your team up to date with progress and execution on projects",
+        "width": 606,
+        "height": 404
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/4b17053d6467d39c0474749e68f950722beceb04-1680x1120.png?w=606&h=404&q=75&fit=max&auto=format",
+        "alt": "A retrospective template that helps teams consider highs and lows of a past project",
+        "width": 606,
+        "height": 404
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/f0fcd55b2b601c4286e45030739ba37a01e05c04-1680x1120.png?w=606&h=404&q=75&fit=max&auto=format",
+        "alt": "A template to compile plans and align with leadership on product roadmaps",
+        "width": 606,
+        "height": 404
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/0cecaee8d0eccd7e679dde8c29d5a8b8af82cedc-1680x1120.png?w=606&h=404&q=75&fit=max&auto=format",
+        "alt": "A Gantt chart template that divides up projects into categories to visally show the timeline",
+        "width": 606,
+        "height": 404
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/b80d3a64d6988323c011088c92f65d7161e733cd-1108x1108.png?w=780&h=780&q=75&fit=max&auto=format",
+        "alt": "Interacting with FigJam for iPad",
+        "width": 780,
+        "height": 780
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/4baf0143722b830307500d7d1b1c32c79a8f87d5-1560x1094.png?w=780&h=547&q=75&fit=max&auto=format",
+        "alt": "The Asana widget with three tasks that need to be completed",
+        "width": 780,
+        "height": 547
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/ba9c22d1fd3d08b1401177aed1d8e85de4d49fb3-1560x838.png?w=780&h=419&q=75&fit=max&auto=format",
+        "alt": "A sticky note with a meeting agenda and two bitmojis of team members",
+        "width": 780,
+        "height": 419
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/f17d3078c6c170d8395dd57aab930b84e88fa6e1-2400x1260.png?w=1200&q=70&fit=max&auto=format",
+        "alt": "Official product preview",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "fusion-360": {
+    "slug": "fusion-360",
+    "page_url": "https://www.autodesk.com/products/fusion-360/overview",
+    "candidates": [
+      {
+        "url": "https://images.ctfassets.net/v7wr16nrr0mz/7cubXgLsTdlFLouyd2X4Vs/c12e1a3fa9a58107fb5bf41835183909/fusion-2027-banner-1920x1080-v4.jpg",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.ctfassets.net/v7wr16nrr0mz/5NV1D05DBUbABB1cBAd1Kj/a817d8493bb6cfc464c86b56fe7dbe49/fusion-manage-thumb-1172x660.jpg",
+        "alt": "Fusion Manage",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.ctfassets.net/v7wr16nrr0mz/6JZTWQv9s6bH0TF6BlNBC5/c23896f168ff75a7be8dc9170a697fb2/self-paced-learning-thumb-788x1050.jpg",
+        "alt": "Tutorials",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.ctfassets.net/v7wr16nrr0mz/3BPuhUp9wsGCvIgYX1LOSa/6d11587f94efd102042e1d614063dd76/blog-thumb-788x1050.jpg",
+        "alt": "Blog",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.ctfassets.net/v7wr16nrr0mz/4pkU4eI4SSFgLauabou1Ct/271fe5430320600e6a9741fc218fe654/forums-thumb-788x1050.jpg",
+        "alt": "Forums",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.ctfassets.net/v7wr16nrr0mz/UYpGc3SJeXsp3vonBWMKl/177245e98ed50c12792126d6c224447d/youtube-thumb-788x1050.jpg",
+        "alt": "Youtube",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.ctfassets.net/v7wr16nrr0mz/3f4Rz1jEMoiIoNnsZlVgZa/b2c14a803bf84a53210588766d6bc166/support-thumb-788x1050.jpg",
+        "alt": "Technical support",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.ctfassets.net/v7wr16nrr0mz/6pRTZUkLhHwiSh7C9iULda/708482764c6b42cf859ce6c618db5888/events-thumb-788x1050.jpg",
+        "alt": "Events",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "pacdora": {
+    "slug": "pacdora",
+    "page_url": "https://www.pacdora.com/",
+    "candidates": [
+      {
+        "url": "https://cdn.pacdora.com/ui/topic/4d427c21-4856-4677-bd5a-a716e3e3b6ae.webp",
+        "alt": "Mockup Generator",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.pacdora.com/image-resize/1200xauto_outside/ui/topic/4d427c21-4856-4677-bd5a-a716e3e3b6ae.webp",
+        "alt": "Mockup Generator",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.pacdora.com/image-resize/1600xauto_outside/ui/topic/4d427c21-4856-4677-bd5a-a716e3e3b6ae.webp",
+        "alt": "Mockup Generator",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.pacdora.com/image-resize/1800xauto_outside/ui/topic/4d427c21-4856-4677-bd5a-a716e3e3b6ae.webp",
+        "alt": "Mockup Generator",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.pacdora.com/image-resize/2000xauto_outside/ui/topic/4d427c21-4856-4677-bd5a-a716e3e3b6ae.webp",
+        "alt": "Mockup Generator",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.pacdora.com/ui/topic/6b1f2cce-6ab0-47e2-a822-52f608412faf.png",
+        "alt": "alt",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.pacdora.com/image-resize/1200xauto_outside/ui/topic/6b1f2cce-6ab0-47e2-a822-52f608412faf.png",
+        "alt": "alt",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.pacdora.com/image-resize/1600xauto_outside/ui/topic/6b1f2cce-6ab0-47e2-a822-52f608412faf.png",
+        "alt": "alt",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.pacdora.com/image-resize/1800xauto_outside/ui/topic/6b1f2cce-6ab0-47e2-a822-52f608412faf.png",
+        "alt": "alt",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.pacdora.com/image-resize/2000xauto_outside/ui/topic/6b1f2cce-6ab0-47e2-a822-52f608412faf.png",
+        "alt": "alt",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.pacdora.com/ui/topic/61a8a135-c098-473b-aef4-1cad540e1573.webp",
+        "alt": "3D Modeling Software",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.pacdora.com/image-resize/1200xauto_outside/ui/topic/61a8a135-c098-473b-aef4-1cad540e1573.webp",
+        "alt": "3D Modeling Software",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.pacdora.com/image-resize/1600xauto_outside/ui/topic/61a8a135-c098-473b-aef4-1cad540e1573.webp",
+        "alt": "3D Modeling Software",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.pacdora.com/image-resize/1800xauto_outside/ui/topic/61a8a135-c098-473b-aef4-1cad540e1573.webp",
+        "alt": "3D Modeling Software",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.pacdora.com/image-resize/2000xauto_outside/ui/topic/61a8a135-c098-473b-aef4-1cad540e1573.webp",
+        "alt": "3D Modeling Software",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.pacdora.com/ui/topic/cb3c491a-56ca-4b86-9f12-fdb42436d7f0.webp",
+        "alt": "Dieline Template Maker",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.pacdora.com/image-resize/1200xauto_outside/ui/topic/cb3c491a-56ca-4b86-9f12-fdb42436d7f0.webp",
+        "alt": "Dieline Template Maker",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.pacdora.com/image-resize/1600xauto_outside/ui/topic/cb3c491a-56ca-4b86-9f12-fdb42436d7f0.webp",
+        "alt": "Dieline Template Maker",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.pacdora.com/image-resize/1800xauto_outside/ui/topic/cb3c491a-56ca-4b86-9f12-fdb42436d7f0.webp",
+        "alt": "Dieline Template Maker",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.pacdora.com/image-resize/2000xauto_outside/ui/topic/cb3c491a-56ca-4b86-9f12-fdb42436d7f0.webp",
+        "alt": "Dieline Template Maker",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.pacdora.com/ui/topic/aeed5802-c6f7-4c13-9cef-e2aa026b79b4.webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.pacdora.com/image-resize/1200xauto_outside/ui/topic/aeed5802-c6f7-4c13-9cef-e2aa026b79b4.webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.pacdora.com/image-resize/1600xauto_outside/ui/topic/aeed5802-c6f7-4c13-9cef-e2aa026b79b4.webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.pacdora.com/image-resize/1800xauto_outside/ui/topic/aeed5802-c6f7-4c13-9cef-e2aa026b79b4.webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.pacdora.com/image-resize/2000xauto_outside/ui/topic/aeed5802-c6f7-4c13-9cef-e2aa026b79b4.webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.pacdora.com/ui/topic/0d183ef1-4541-4b65-b463-86bc4e9a111c.png",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.pacdora.com/image-resize/1200xauto_outside/ui/topic/0d183ef1-4541-4b65-b463-86bc4e9a111c.png",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.pacdora.com/image-resize/1600xauto_outside/ui/topic/0d183ef1-4541-4b65-b463-86bc4e9a111c.png",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.pacdora.com/image-resize/1800xauto_outside/ui/topic/0d183ef1-4541-4b65-b463-86bc4e9a111c.png",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.pacdora.com/image-resize/2000xauto_outside/ui/topic/0d183ef1-4541-4b65-b463-86bc4e9a111c.png",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "plasticity": {
+    "slug": "plasticity",
+    "page_url": "https://www.plasticity.xyz/",
+    "candidates": [
+      {
+        "url": "https://plasticity.xyz/og-image.jpg",
+        "alt": "Official product preview",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "solidworks": {
+    "slug": "solidworks",
+    "page_url": "https://www.solidworks.com/",
+    "candidates": [
+      {
+        "url": "https://www.solidworks.com/sites/default/filesd10/styles/bg_large/public/2026-02/solidworks-AI-companions-battlebots-video-cover.jpg.webp?itok=lnj4ssfA",
+        "alt": "SOLIDWORKS 3D model of a battlebot",
+        "width": 1000,
+        "height": 563
+      },
+      {
+        "url": "https://www.solidworks.com/sites/default/filesd10/styles/bg_large/public/2026-05/solidworks-free-student-edition-suchit-announcement-video-cover.jpg.webp?itok=OlQBY3ec",
+        "alt": "SOLIDWORKS VP of Strategy giving an announcement on stage",
+        "width": 1000,
+        "height": 563
+      },
+      {
+        "url": "https://www.solidworks.com/sites/default/filesd10/styles/bg_large/public/2025-11/solidworks-design-first-look-cover.jpg.webp?itok=wsh69bi0",
+        "alt": "SOLIDWORKS 3D model of industrial equipment with part highlighted",
+        "width": 1000,
+        "height": 563
+      },
+      {
+        "url": "https://www.solidworks.com/sites/default/filesd10/styles/webp/public/2025-01/Nemo2.jpg.webp?itok=MeFOakVP",
+        "alt": "NEMO submarine CAD drawing",
+        "width": 1500,
+        "height": 675
+      },
+      {
+        "url": "https://www.solidworks.com/sites/default/filesd10/styles/webp/public/2025-01/Nemo1.jpg.webp?itok=YZk1u7h5",
+        "alt": "NEMO submarine finished product",
+        "width": 1500,
+        "height": 675
+      },
+      {
+        "url": "https://www.solidworks.com/sites/default/filesd10/styles/webp/public/2026-08/solidworks-3dxw-in-one-word-video-thumb-the-latest-2.jpg.webp?itok=ChOfSz_k",
+        "alt": "3DEXPERIENCE World attendee speaking to the camera",
+        "width": 1200,
+        "height": 675
+      },
+      {
+        "url": "https://www.solidworks.com/sites/default/filesd10/styles/webp/public/2026-06/solidworks-design-without-friction-sorkflow-video-cover.jpg.webp?itok=gk8hjI2n",
+        "alt": "SOLIDWORKS expert explaining AI functionality within SOLIDWORKS",
+        "width": 1397,
+        "height": 786
+      },
+      {
+        "url": "https://www.solidworks.com/sites/default/filesd10/styles/webp/public/2026-04/solidworks-simulation-world-cup-thumb.jpg.webp?itok=5pzEZXtk",
+        "alt": "A person kicking a soccer ball with simulation data showing the forces involved",
+        "width": 1067,
+        "height": 600
+      },
+      {
+        "url": "https://www.solidworks.com/sites/default/filesd10/styles/bg_large/public/2025-10/SOLIDWORKS-Community-core-homepage-thumbnail.jpg.webp?itok=L11RJeYN",
+        "alt": "SOLIDWORKS-SWUGN-Homepage",
+        "width": 800,
+        "height": 450
+      },
+      {
+        "url": "https://www.solidworks.com/sites/default/filesd10/styles/webp/public/2025-02/SOLIDWORKS-Canada-France-Hawaii-telescope-banner-5.jpg.webp?itok=lY3eGA1Z",
+        "alt": "SOLIDWORKS-Canada-France-Hawaii Telescope - SOLIDWORKS",
+        "width": 1728,
+        "height": 540
+      },
+      {
+        "url": "https://www.solidworks.com/sites/default/filesd10/styles/og_image/public/2026-02/solidworks-vermeer-3d-rendering-social-thumb.jpg?itok=cT3JSrf7",
+        "alt": "Official product preview",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "stark": {
+    "slug": "stark",
+    "page_url": "https://www.getstark.co/",
+    "candidates": []
+  },
+  "vectorworks": {
+    "slug": "vectorworks",
+    "page_url": "https://www.vectorworks.net",
+    "candidates": [],
+    "error": "fetch failed"
+  },
+  "figma-buzz": {
+    "slug": "figma-buzz",
+    "page_url": "https://www.figma.com/buzz/",
+    "candidates": [
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/4b9ade839f38291c91b76608d22e7c7a9ad525fd-542x305.png?w=542&h=305&q=75&fit=max&auto=format",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/7e39b983c6ad865e0a7a5243d914020e69a23f70-542x305.png?w=542&h=305&q=75&fit=max&auto=format",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/1883a9ebc4ce697b718301ad247c0fff45c572c1-540x304.png?w=540&h=304&q=75&fit=max&auto=format",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/4e73dee4a0e803e5baa4ea51befa5f42ad49312c-1260x1260.png?w=630&h=630&q=75&fit=max&auto=format",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/430c964dd6ffc2db4f6046bf970bd5e4c3824474-1680x1120.png?w=606&h=404&q=75&fit=max&auto=format",
+        "alt": "multiple designed assets for hiring and spring releases",
+        "width": 606,
+        "height": 404
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/6c8ac653c96755e5d2b1af2e6b25a39c0edc445c-1680x1120.png?w=606&h=404&q=75&fit=max&auto=format",
+        "alt": "sign up and get ticket ads with images",
+        "width": 606,
+        "height": 404
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/ef6640c4b8ee639e6f018e2bda96fd6bc894e2b0-1680x1120.png?w=606&h=404&q=75&fit=max&auto=format",
+        "alt": "event posters with titles and dates and times",
+        "width": 606,
+        "height": 404
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/c3cc9a8e1e8138ed8e922f6e27270bc35ee21604-1680x1120.png?w=606&h=404&q=75&fit=max&auto=format",
+        "alt": "fact sheet designs with text and metrics",
+        "width": 606,
+        "height": 404
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/1c2dba30829585dfe0f6f4722e3d211147b5c080-1680x1120.png?w=606&h=404&q=75&fit=max&auto=format",
+        "alt": "multiple flier designs featuring open house looking for a roommate and a clean up day event",
+        "width": 606,
+        "height": 404
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/0574fac078a301910e607c9c5314356a6056174d-1680x1120.png?w=606&h=404&q=75&fit=max&auto=format",
+        "alt": "additional designed features and callouts for events",
+        "width": 606,
+        "height": 404
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/0d5e593767a47aadadb218bab97b953ae43697a1-1560x1170.png?w=780&h=585&q=75&fit=max&auto=format",
+        "alt": "Change layout dialog to show date toggled",
+        "width": 780,
+        "height": 585
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/ac3268e75e31996b167dae723daf132d17a7600f-1092x864.png?w=1092&h=864&q=75&fit=max&auto=format",
+        "alt": "element selected with a lock layer option and a cursor hovering",
+        "width": 1092,
+        "height": 864
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/70351b60fc6d75651f4a46ff991c56ad2769c5a1-1080x864.png?w=1080&h=864&q=75&fit=max&auto=format",
+        "alt": "a linkedin post asset spanning across design and buzz",
+        "width": 1080,
+        "height": 864
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/c32ace1dac7cebc75c622ff76a8884bec79ff8b2-1560x1170.png?w=780&h=585&q=75&fit=max&auto=format",
+        "alt": "text field selected for company name reflected in design",
+        "width": 780,
+        "height": 585
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/e5bf7b7f962fc4ca86983af912b19ab78ec66b64-1080x864.png?w=1080&h=864&q=75&fit=max&auto=format",
+        "alt": "bubbles asset with gpt prompt box above to generate",
+        "width": 1080,
+        "height": 864
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/3dc430b757e92b8dab3cfa0559baebdcc9ded293-1080x864.png?w=1080&h=864&q=75&fit=max&auto=format",
+        "alt": "open house video ad with seconds clock and play button",
+        "width": 1080,
+        "height": 864
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/7c5f83f1aee8ee28104ae8ff414a31d2f11eb611-1080x864.png?w=1080&h=864&q=75&fit=max&auto=format",
+        "alt": "built in plugin list in buzz with design selected",
+        "width": 1080,
+        "height": 864
+      },
+      {
+        "url": "https://cdn.sanity.io/images/599r6htc/regionalized/3541856ff87430a7a987f49e9ebb8400d8d3212d-2400x1260.png?w=1200&q=70&fit=max&auto=format",
+        "alt": "Official product preview",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  }
+}

@@ -1,5 +1,13 @@
 # ToolTrim — AI Changelog
 
+## 2026-08-31 · Revue de 25 fiches design et IA
+
+- Deux groupes complémentaires couvrent 9 outils design et 16 outils IA, dont FigJam, Fusion 360, Pacdora, Claude, ChatGPT, Adobe Podcast AI et GitHub Copilot.
+- Les preuves média comprennent 7 galeries de quatre médias, 1 de trois médias, 3 de deux médias et 14 fiches avec un seul média lorsque les sources officielles bloquent la collecte.
+- Manifest AI reste une marque active, mais son positionnement catalogue obsolète a été remplacé par son activité actuelle d'extraction de documents logistiques ; une seule capture officielle a été réalisée faute de média réutilisable.
+- L'application d'un lot ignore désormais les fiches déjà publiées afin d'éviter de les invalider lors d'une repasse voisine.
+- Validation : registre complet PASS, 25 fiches publiées, build production PASS et seize routes FR/EN contrôlées sans image cassée.
+
 ## 2026-08-31 · Revue de 24 fiches IA
 
 - Le lot `review-ai-general-critical-002` couvre 24 fiches de génération d'images, vidéo, audio, code, prise de notes et observabilité IA ; Meshy a été revalidé sans perdre son lien affilié.

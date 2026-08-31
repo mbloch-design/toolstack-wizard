@@ -1,0 +1,290 @@
+{
+  "batch": "review-ai-general-critical-001",
+  "current": {
+    "affiliate_url": "https://blackforestlabs.ai",
+    "alternatives": [
+      "react"
+    ],
+    "category": "ai-general",
+    "cons": [
+      "Le coût peut augmenter avec l'usage ou les sièges.",
+      "Les fonctions avancées exigent une offre payante.",
+      "La qualité du paramétrage influence le résultat."
+    ],
+    "cons_en": [
+      "Costs can grow with usage or seats.",
+      "Advanced capabilities require a paid tier.",
+      "Setup quality affects the result."
+    ],
+    "host_app": "react",
+    "id": "flux",
+    "long_description": "FLUX est la famille de modèles de Black Forest Labs pour générer, modifier et étendre des images, accessible par API, playground ou poids ouverts selon la variante.\n\nFonctions clés : Texte vers image ; Édition multi-références ; Inpainting et outpainting ; Rendu de texte précis ; API et poids auto-hébergeables.\n\nRetenez-le lorsque l'usage récurrent remplace un workflow manuel ou fragmenté clairement identifié.",
+    "long_description_en": "FLUX is Black Forest Labs' model family for generating, editing, and extending images through an API, playground, or open weights depending on the variant.\n\nKey strengths: Focused product workflow.; Official documentation and active development.; Integrates into professional processes.; Entry path available before scaling..\n\nKeep it when recurring usage replaces a clear manual or fragmented workflow.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://bfl.ai/favicon.ico"
+    },
+    "name": "Flux (Black Forest Labs)",
+    "pricing": {
+      "free": "FLUX.2 dev est gratuit pour le développement local non commercial. FLUX.2 klein 4B est publié sous licence Apache 2.0.",
+      "paid": "FLUX.2 klein 4B: À partir de 0,014 USD par image ; FLUX.2 pro: À partir de 0,03 USD par mégapixel ; FLUX.2 max: À partir de 0,07 USD par mégapixel ; FLUX.2 dev: Gratuit en local pour un usage non commercial"
+    },
+    "pricing_en": {
+      "free": "FLUX.2 dev est gratuit pour le développement local non commercial. FLUX.2 klein 4B est publié sous licence Apache 2.0.",
+      "paid": "FLUX.2 klein 4B: À partir de 0,014 USD par image ; FLUX.2 pro: À partir de 0,03 USD par mégapixel ; FLUX.2 max: À partir de 0,07 USD par mégapixel ; FLUX.2 dev: Gratuit en local pour un usage non commercial"
+    },
+    "pricing_v5": {
+      "cautions": [
+        "confirm_if_paid_plan_is_really_used"
+      ],
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Free",
+      "compare_price_monthly_eur": 0,
+      "location_sensitive": false,
+      "official_source_url": "https://bfl.ai/pricing?category=flux.2",
+      "price_reliability": "high",
+      "source_domain": "bfl.ai",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-08-30"
+    },
+    "pros": [
+      "Workflow produit bien défini.",
+      "Documentation officielle et développement actif.",
+      "S'intègre aux processus professionnels.",
+      "Point d'entrée disponible avant de monter en charge."
+    ],
+    "pros_en": [
+      "Focused product workflow.",
+      "Official documentation and active development.",
+      "Integrates into professional processes.",
+      "Entry path available before scaling."
+    ],
+    "short_description": "FLUX est la famille de modèles de Black Forest Labs pour générer, modifier et étendre des images, accessible par API, playground ou poids ouverts selon la variante.",
+    "short_description_en": "FLUX is Black Forest Labs' model family for generating, editing, and extending images through an API, playground, or open weights depending on the variant.",
+    "slug": "flux",
+    "source_url": "https://bfl.ai/pricing?category=flux.2",
+    "source_verified_on": "2026-08-30",
+    "use_cases": [
+      "Utiliser texte vers image dans un workflow récurrent.",
+      "Utiliser édition multi-références dans un workflow récurrent.",
+      "Utiliser inpainting et outpainting dans un workflow récurrent."
+    ],
+    "use_cases_en": [
+      "Use texte vers image in a recurring workflow.",
+      "Use édition multi-références in a recurring workflow.",
+      "Use inpainting et outpainting in a recurring workflow."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Votre besoin est ponctuel et un outil gratuit plus simple suffit.",
+        "Votre stack couvre déjà le même workflow.",
+        "Le modèle par usage ou par siège rend le coût difficile à prévoir."
+      ],
+      "keepIf": [
+        "Vous utilisez régulièrement le workflow central de Flux.",
+        "Vous préférez un produit intégré à l'assemblage de plusieurs outils.",
+        "Les limites officielles correspondent à votre volume réel."
+      ],
+      "threshold": "Retenez-le lorsque l'usage récurrent remplace un workflow manuel ou fragmenté clairement identifié."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "Your need is occasional and a simpler free tool is enough.",
+        "You already cover the same workflow in your current stack.",
+        "The usage or seat model makes costs hard to predict."
+      ],
+      "keepIf": [
+        "You need Flux's core workflow regularly.",
+        "You value an integrated product over stitching several tools together.",
+        "The official usage limits match your real volume."
+      ],
+      "threshold": "Keep it when recurring usage replaces a clear manual or fragmented workflow."
+    },
+    "website_url": "https://blackforestlabs.ai"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim - Mike",
+    "en": {
+      "cons": [
+        "Costs can grow with usage or seats.",
+        "Advanced capabilities require a paid tier.",
+        "Setup quality affects the result."
+      ],
+      "pros": [
+        "Focused product workflow.",
+        "Official documentation and active development.",
+        "Integrates into professional processes.",
+        "Entry path available before scaling."
+      ],
+      "use_cases": [
+        "Use texte vers image in a recurring workflow.",
+        "Use édition multi-références in a recurring workflow.",
+        "Use inpainting et outpainting in a recurring workflow."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Your need is occasional and a simpler free tool is enough.",
+          "You already cover the same workflow in your current stack.",
+          "The usage or seat model makes costs hard to predict."
+        ],
+        "keepIf": [
+          "You need Flux's core workflow regularly.",
+          "You value an integrated product over stitching several tools together.",
+          "The official usage limits match your real volume."
+        ],
+        "threshold": "Keep it when recurring usage replaces a clear manual or fragmented workflow."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "FLUX.2 dev est gratuit pour le développement local non commercial. FLUX.2 klein 4B est publié sous licence Apache 2.0.",
+        "exists": true
+      },
+      "key_features": [
+        "Texte vers image",
+        "Édition multi-références",
+        "Inpainting et outpainting",
+        "Rendu de texte précis",
+        "API et poids auto-hébergeables"
+      ],
+      "plans": [
+        {
+          "name": "FLUX.2 klein 4B",
+          "price": "À partir de 0,014 USD par image"
+        },
+        {
+          "name": "FLUX.2 pro",
+          "price": "À partir de 0,03 USD par mégapixel"
+        },
+        {
+          "name": "FLUX.2 max",
+          "price": "À partir de 0,07 USD par mégapixel"
+        },
+        {
+          "name": "FLUX.2 dev",
+          "price": "Gratuit en local pour un usage non commercial"
+        }
+      ],
+      "pricing_model": "Paiement à l'usage pour l'API et licences distinctes pour certains poids auto-hébergés.",
+      "what": "FLUX est la famille de modèles de Black Forest Labs pour générer, modifier et étendre des images, accessible par API, playground ou poids ouverts selon la variante.",
+      "what_en": "FLUX is Black Forest Labs' model family for generating, editing, and extending images through an API, playground, or open weights depending on the variant."
+    },
+    "fr": {
+      "cons": [
+        "Le coût peut augmenter avec l'usage ou les sièges.",
+        "Les fonctions avancées exigent une offre payante.",
+        "La qualité du paramétrage influence le résultat."
+      ],
+      "pros": [
+        "Workflow produit bien défini.",
+        "Documentation officielle et développement actif.",
+        "S'intègre aux processus professionnels.",
+        "Point d'entrée disponible avant de monter en charge."
+      ],
+      "relevant_for": [
+        "Développeurs",
+        "Studios IA",
+        "Équipes créatives"
+      ],
+      "use_cases": [
+        "Utiliser texte vers image dans un workflow récurrent.",
+        "Utiliser édition multi-références dans un workflow récurrent.",
+        "Utiliser inpainting et outpainting dans un workflow récurrent."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Votre besoin est ponctuel et un outil gratuit plus simple suffit.",
+          "Votre stack couvre déjà le même workflow.",
+          "Le modèle par usage ou par siège rend le coût difficile à prévoir."
+        ],
+        "keepIf": [
+          "Vous utilisez régulièrement le workflow central de Flux.",
+          "Vous préférez un produit intégré à l'assemblage de plusieurs outils.",
+          "Les limites officielles correspondent à votre volume réel."
+        ],
+        "threshold": "Retenez-le lorsque l'usage récurrent remplace un workflow manuel ou fragmenté clairement identifié."
+      }
+    },
+    "slug": "flux",
+    "sources": [
+      {
+        "label": "Tarifs FLUX (site officiel)",
+        "url": "https://bfl.ai/pricing?category=flux.2"
+      },
+      {
+        "label": "Documentation tarifaire FLUX (site officiel)",
+        "url": "https://docs.us.bfl.ai/quick_start/pricing"
+      },
+      {
+        "label": "Licences FLUX (site officiel)",
+        "url": "https://help.bfl.ai/articles/9272590838-self-serve-dev-license-overview-pricing"
+      }
+    ],
+    "verified_on": "2026-08-30"
+  },
+  "media_evidence": {
+    "discovery": {
+      "official_media_found": true,
+      "official_pages_checked": [
+        "https://bfl.ai/pricing?category=flux.2"
+      ]
+    },
+    "items": [
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://bfl.ai/pricing?category=flux.2",
+        "url": "https://bfl.ai/favicon.ico"
+      }
+    ],
+    "mode": "sourced",
+    "slug": "flux",
+    "verified_on": "2026-08-30"
+  },
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-ai-general-critical-001",
+    "batch_position": 6,
+    "blockers": [],
+    "catalog_hash": "sha256:8fed01ef9547a1fdea3537df9a7033bc92b7f3d57acc8fef3f307b1b53c22e29",
+    "category": "ai-general",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:7fd880f1174a567b0d4037a21b3d40e75018bf6e26093f7a4c94c0672a5c63b7",
+    "invalidated_from": null,
+    "media_errors": [],
+    "media_evidence": "VALID",
+    "media_evidence_hash": "sha256:e7d4fad408663233f85f5147f4c19531081181efb6f15b6544c39d7ad828fbea",
+    "name": "Flux (Black Forest Labs)",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price"
+    ],
+    "priority_score": 180,
+    "published_at": "2026-08-31",
+    "quality_version": "catalog-review-v1",
+    "rendered_at": "2026-08-31",
+    "review_fingerprint": "sha256:d80c42d729da81f859373f56e5ee277c241747171c34fed9095d8c589041237c",
+    "reviewed_at": "2026-08-31",
+    "reviewed_hash": "sha256:d80c42d729da81f859373f56e5ee277c241747171c34fed9095d8c589041237c",
+    "reviewer": "ToolTrim - Mike",
+    "risk_tier": "critical",
+    "slug": "flux",
+    "source_url": "https://bfl.ai/pricing?category=flux.2",
+    "source_verified_on": "2026-08-30",
+    "status": "PUBLISHED"
+  }
+}

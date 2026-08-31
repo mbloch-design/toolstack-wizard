@@ -1,0 +1,244 @@
+{
+  "batch": "review-design-tools-critical-004",
+  "current": {
+    "affiliate_url": null,
+    "alternatives": [],
+    "category": "design-tools",
+    "cons": [
+      "Abonnement obligatoire pour l'usage commercial.",
+      "Moins adapté à l'architecture/BIM.",
+      "Peut montrer ses limites sur de très gros assemblages."
+    ],
+    "cons_en": [
+      "Subscription required for commercial use.",
+      "Less suited to architecture/BIM.",
+      "Can strain on very large assemblies."
+    ],
+    "host_app": null,
+    "id": "fusion-360",
+    "long_description": "CAO/FAO Autodesk pour conception produit, prototypage et fabrication.",
+    "long_description_en": "Autodesk's design and manufacturing platform combining CAD, CAM, simulation (CAE) and electronics (PCB) in a single tool, with built-in data management.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://tooltrim.com/og-screenshots/fusion-360.jpg"
+    },
+    "name": "Fusion 360",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 70€/mois environ"
+    },
+    "pricing_en": null,
+    "pricing_v5": null,
+    "pros": [
+      "CAO, FAO, simulation et PCB dans un seul outil.",
+      "Gratuit pour l'usage personnel non commercial.",
+      "Gestion des données et collaboration intégrées.",
+      "Écosystème Autodesk et large communauté."
+    ],
+    "pros_en": [
+      "CAD, CAM, simulation and PCB in one tool.",
+      "Free for non-commercial personal use.",
+      "Built-in data management and collaboration.",
+      "Autodesk ecosystem and large community."
+    ],
+    "short_description": "CAO/FAO Autodesk pour conception produit, prototypage et fabrication.",
+    "short_description_en": "Autodesk CAD/CAM for product design, prototyping, and manufacturing.",
+    "slug": "fusion-360",
+    "source_url": "https://www.autodesk.com/products/fusion-360/overview",
+    "source_verified_on": null,
+    "use_cases": [
+      "Concevoir une pièce mécanique de A à Z.",
+      "Générer des parcours d'usinage pour une machine CNC.",
+      "Simuler des contraintes avant fabrication."
+    ],
+    "use_cases_en": [
+      "Design a mechanical part end to end.",
+      "Generate toolpaths for a CNC machine.",
+      "Simulate stresses before manufacturing."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous faites de l'architecture ou du BIM (outil dédié plus adapté).",
+        "Votre usage est strictement personnel et occasionnel (la version gratuite suffit).",
+        "Vous avez besoin d'un CAO de très haut de gamme pour de gros assemblages."
+      ],
+      "keepIf": [
+        "Vous concevez des pièces et voulez CAO et usinage réunis.",
+        "Vous travaillez en petite structure ou en indépendant sur du produit.",
+        "Vous voulez simulation et électronique dans le même outil."
+      ],
+      "threshold": "Fusion s'impose pour la conception produit qui va jusqu'à la fabrication ; pour de l'architecture ou de très gros assemblages industriels, un outil spécialisé convient mieux."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You do architecture or BIM (a dedicated tool fits better).",
+        "Your use is strictly personal and occasional (the free version suffices).",
+        "You need very high-end CAD for large assemblies."
+      ],
+      "keepIf": [
+        "You design parts and want CAD and machining together.",
+        "You work solo or in a small product team.",
+        "You want simulation and electronics in the same tool."
+      ],
+      "threshold": "Fusion makes sense for product design that goes through to manufacturing; for architecture or very large industrial assemblies, a specialised tool fits better."
+    },
+    "website_url": "https://www.autodesk.com/products/fusion-360/overview"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Subscription required for commercial use.",
+        "Less suited to architecture/BIM.",
+        "Can strain on very large assemblies."
+      ],
+      "pros": [
+        "CAD, CAM, simulation and PCB in one tool.",
+        "Free for non-commercial personal use.",
+        "Built-in data management and collaboration.",
+        "Autodesk ecosystem and large community."
+      ],
+      "use_cases": [
+        "Design a mechanical part end to end.",
+        "Generate toolpaths for a CNC machine.",
+        "Simulate stresses before manufacturing."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You do architecture or BIM (a dedicated tool fits better).",
+          "Your use is strictly personal and occasional (the free version suffices).",
+          "You need very high-end CAD for large assemblies."
+        ],
+        "keepIf": [
+          "You design parts and want CAD and machining together.",
+          "You work solo or in a small product team.",
+          "You want simulation and electronics in the same tool."
+        ],
+        "threshold": "Fusion makes sense for product design that goes through to manufacturing; for architecture or very large industrial assemblies, a specialised tool fits better."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Fusion pour usage personnel : gratuit pour les projets non commerciaux (fonctions réduites). Pas de plan gratuit commercial.",
+        "exists": true
+      },
+      "key_features": [
+        "CAO 3D paramétrique",
+        "FAO / usinage (CAM) intégré",
+        "Simulation et analyse (CAE)",
+        "Conception électronique (PCB) et gestion des données"
+      ],
+      "plans": [
+        {
+          "name": "Usage personnel",
+          "price": "gratuit (non commercial)"
+        },
+        {
+          "name": "Abonnement standard",
+          "price": "85 $/utilisateur/mois ou 680 $/utilisateur/an"
+        },
+        {
+          "name": "Startup",
+          "price": "150 $/utilisateur pour un terme de 3 ans (programme sur conditions)"
+        }
+      ],
+      "pricing_model": "Abonnement par utilisateur (mensuel, annuel ou pluriannuel). Licence gratuite pour usage personnel non commercial ; offre startup dédiée.",
+      "what": "Plateforme de conception et fabrication d'Autodesk réunissant CAO, FAO (CAM), simulation (CAE) et électronique (PCB) dans un seul outil, avec gestion des données intégrée.",
+      "what_en": "Autodesk's design and manufacturing platform combining CAD, CAM, simulation (CAE) and electronics (PCB) in a single tool, with built-in data management."
+    },
+    "fr": {
+      "cons": [
+        "Abonnement obligatoire pour l'usage commercial.",
+        "Moins adapté à l'architecture/BIM.",
+        "Peut montrer ses limites sur de très gros assemblages."
+      ],
+      "pros": [
+        "CAO, FAO, simulation et PCB dans un seul outil.",
+        "Gratuit pour l'usage personnel non commercial.",
+        "Gestion des données et collaboration intégrées.",
+        "Écosystème Autodesk et large communauté."
+      ],
+      "relevant_for": [
+        "Concepteurs produit",
+        "Makers et ateliers",
+        "Ingénieurs mécaniques"
+      ],
+      "use_cases": [
+        "Concevoir une pièce mécanique de A à Z.",
+        "Générer des parcours d'usinage pour une machine CNC.",
+        "Simuler des contraintes avant fabrication."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous faites de l'architecture ou du BIM (outil dédié plus adapté).",
+          "Votre usage est strictement personnel et occasionnel (la version gratuite suffit).",
+          "Vous avez besoin d'un CAO de très haut de gamme pour de gros assemblages."
+        ],
+        "keepIf": [
+          "Vous concevez des pièces et voulez CAO et usinage réunis.",
+          "Vous travaillez en petite structure ou en indépendant sur du produit.",
+          "Vous voulez simulation et électronique dans le même outil."
+        ],
+        "threshold": "Fusion s'impose pour la conception produit qui va jusqu'à la fabrication ; pour de l'architecture ou de très gros assemblages industriels, un outil spécialisé convient mieux."
+      }
+    },
+    "slug": "fusion-360",
+    "sources": [
+      {
+        "label": "Autodesk Fusion — page produit et tarifs (site officiel)",
+        "url": "https://www.autodesk.com/products/fusion-360/overview"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-004",
+    "batch_position": 4,
+    "blockers": [],
+    "catalog_hash": "sha256:b1fcc41ce42dd0262115a2c32154d0991c42ad15c490bd12f41d7b7e2c30d64f",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:2f846faaba1ec086ca33d09a431fd90a4a03b396386559a6dc389982e1d1a352",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Fusion 360",
+    "next_review_at": null,
+    "priority_reasons": [
+      "paid_price",
+      "missing_or_invalid_media_evidence",
+      "shallow_editorial",
+      "undated_source"
+    ],
+    "priority_score": 195,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:43ea88eeb437065008cba90d3653cb4b88ef4e916fdfb4c24191009ca77350bc",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "fusion-360",
+    "source_url": "https://www.autodesk.com/products/fusion-360/overview",
+    "source_verified_on": null,
+    "status": "QUEUED"
+  }
+}

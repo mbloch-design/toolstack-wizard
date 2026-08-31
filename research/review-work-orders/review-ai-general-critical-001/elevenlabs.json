@@ -1,0 +1,258 @@
+{
+  "batch": "review-ai-general-critical-001",
+  "current": {
+    "affiliate_url": "https://elevenlabs.io",
+    "alternatives": [],
+    "category": "ai-general",
+    "cons": [
+      "Fonctionnement aux crédits : le volume est limité selon le plan.",
+      "Le clonage soulève des questions de consentement et d'éthique.",
+      "La qualité et les fonctions varient selon le palier."
+    ],
+    "cons_en": [
+      "Credit-based: volume is limited by plan.",
+      "Cloning raises consent and ethics questions.",
+      "Quality and features vary by tier."
+    ],
+    "host_app": null,
+    "id": "elevenlabs",
+    "long_description": "ElevenLabs, c'est l'IA de synthèse vocale ultra-réaliste pour créer du contenu audio. À partir de 4.33€/mois. Pensé pour les podcasteurs et les créateurs de contenu.\n\nQualité vocale ultra-réaliste (indiscernable d'une vraie personne). 29 langues supportées dont le français, clonage de voix (créer une voix à partir de 1 minute d'audio). Contrôle des émotions et intonations. Concrètement : voix-off vidéos : créer des narrations professionnelles pour YouTube, formations. Ou encore : podcasts : générer des intros, outros, ou épisodes complets. Gain de temps estimé : 7h/mois.\n\nÀ garder si : vous créez du contenu vidéo/podcast régulièrement ou vous voulez traduire votre contenu en plusieurs langues. À éviter si : vous n'avez jamais besoin de voix synthétique ou vous préférez toujours votre propre voix. Limite principale : version gratuite limitée à 10 000 caractères/mois (~10 minutes d'audio). Dès que vous produisez +2 vidéos/podcasts par mois ou que vous voulez internationaliser votre contenu.",
+    "long_description_en": "ElevenLabs is ultra-realistic AI speech synthesis for creating audio content. Starting at €4.33/month. Built for podcasters and content creators.\n\nUltra-realistic voice quality (indistinguishable from a real person). 29 languages supported including French, voice cloning (create a voice from 1 minute of audio). Control over emotions and intonations. In practice: video voiceovers: create professional narrations for YouTube, training sessions. Also: podcasts: generate intros, outros, or full episodes. Estimated time saving: 7h/month.\n\nKeep it if: you create video/podcast content regularly or you want to translate your content into several languages. Skip it if: you never have a need for synthetic voices or you always prefer your own voice. Main limit: free version limited to 10,000 characters/month (~10 minutes of audio). As soon as you produce more than 2 videos/podcasts per month or want to internationalize your content.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://elevenlabs.io/cover.png"
+    },
+    "name": "ElevenLabs",
+    "pricing": {
+      "free": "Plan gratuit disponible",
+      "paid": "À partir de 5$/mois (Starter)"
+    },
+    "pricing_en": {
+      "free": "Free tier available",
+      "paid": "Starting at $5/month (Starter)"
+    },
+    "pricing_v5": {
+      "cautions": [],
+      "compare_plan_kind": "usage",
+      "compare_plan_name": "Starter",
+      "compare_price_monthly_eur": 4.33,
+      "location_sensitive": false,
+      "official_source_url": "https://elevenlabs.io/pricing",
+      "price_reliability": "high",
+      "source_domain": "elevenlabs.io",
+      "usage_sensitive": true,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-03-13"
+    },
+    "pros": [
+      "Voix IA de haute qualité (TTS).",
+      "Clonage de voix et doublage multilingue.",
+      "Effets sonores et isolation de voix.",
+      "Palier gratuit pour tester."
+    ],
+    "pros_en": [
+      "High-quality AI voices (TTS).",
+      "Voice cloning and multilingual dubbing.",
+      "Sound effects and voice isolation.",
+      "Free tier to try."
+    ],
+    "short_description": "L'IA de synthèse vocale ultra-réaliste pour créer du contenu audio.",
+    "short_description_en": "Ultra-realistic AI speech synthesis for creating audio content.",
+    "slug": "elevenlabs",
+    "source_url": "https://elevenlabs.io/pricing",
+    "source_verified_on": "2026-03-13",
+    "use_cases": [
+      "Générer une voix-off à partir d'un texte.",
+      "Cloner une voix pour un usage récurrent.",
+      "Doubler une vidéo dans d'autres langues."
+    ],
+    "use_cases_en": [
+      "Generate a voice-over from text.",
+      "Clone a voice for recurring use.",
+      "Dub a video into other languages."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous avez besoin de l'authenticité d'une voix humaine réelle.",
+        "Le clonage de voix pose chez vous des questions de consentement/éthique.",
+        "Vos besoins sont ponctuels (le gratuit suffit)."
+      ],
+      "keepIf": [
+        "Vous générez des voix par IA (voix-off, TTS) de qualité.",
+        "Vous voulez cloner une voix ou doubler/localiser des vidéos.",
+        "Vous produisez du contenu audio à volume."
+      ],
+      "threshold": "ElevenLabs s'impose quand la génération de voix par IA (TTS, clonage, doublage) est un besoin récurrent ; pour de l'authenticité humaine ou un usage ponctuel, une voix réelle ou le palier gratuit suffisent."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You need the authenticity of a real human voice.",
+        "Voice cloning raises consent/ethics concerns for you.",
+        "Your needs are occasional (the free tier suffices)."
+      ],
+      "keepIf": [
+        "You generate quality AI voices (voice-over, TTS).",
+        "You want to clone a voice or dub/localise videos.",
+        "You produce audio content at volume."
+      ],
+      "threshold": "ElevenLabs makes sense when AI voice generation (TTS, cloning, dubbing) is a recurring need; for human authenticity or occasional use, a real voice or the free tier suffices."
+    },
+    "website_url": "https://elevenlabs.io"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Credit-based: volume is limited by plan.",
+        "Cloning raises consent and ethics questions.",
+        "Quality and features vary by tier."
+      ],
+      "pros": [
+        "High-quality AI voices (TTS).",
+        "Voice cloning and multilingual dubbing.",
+        "Sound effects and voice isolation.",
+        "Free tier to try."
+      ],
+      "use_cases": [
+        "Generate a voice-over from text.",
+        "Clone a voice for recurring use.",
+        "Dub a video into other languages."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You need the authenticity of a real human voice.",
+          "Voice cloning raises consent/ethics concerns for you.",
+          "Your needs are occasional (the free tier suffices)."
+        ],
+        "keepIf": [
+          "You generate quality AI voices (voice-over, TTS).",
+          "You want to clone a voice or dub/localise videos.",
+          "You produce audio content at volume."
+        ],
+        "threshold": "ElevenLabs makes sense when AI voice generation (TTS, cloning, dubbing) is a recurring need; for human authenticity or occasional use, a real voice or the free tier suffices."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Gratuit : 10 000 crédits/mois, TTS et STT de base.",
+        "exists": true
+      },
+      "key_features": [
+        "Synthèse vocale (TTS) de haute qualité",
+        "Clonage de voix (instantané, puis professionnel)",
+        "Doublage (localisation audio/vidéo)",
+        "Effets sonores, isolation de voix, génération musicale"
+      ],
+      "plans": [
+        {
+          "name": "Starter",
+          "price": "6 $/mois"
+        },
+        {
+          "name": "Creator",
+          "price": "11 $/mois"
+        },
+        {
+          "name": "Pro",
+          "price": "99 $/mois"
+        }
+      ],
+      "pricing_model": "Palier gratuit puis paliers payants à crédits mensuels.",
+      "what": "Plateforme d'audio par IA : synthèse vocale (text-to-speech), clonage de voix et doublage.",
+      "what_en": "AI-powered audio platform: text-to-speech synthesis, voice cloning, and voice dubbing."
+    },
+    "fr": {
+      "cons": [
+        "Fonctionnement aux crédits : le volume est limité selon le plan.",
+        "Le clonage soulève des questions de consentement et d'éthique.",
+        "La qualité et les fonctions varient selon le palier."
+      ],
+      "pros": [
+        "Voix IA de haute qualité (TTS).",
+        "Clonage de voix et doublage multilingue.",
+        "Effets sonores et isolation de voix.",
+        "Palier gratuit pour tester."
+      ],
+      "relevant_for": [
+        "Créateurs de contenu",
+        "Podcasteurs",
+        "Studios de localisation"
+      ],
+      "use_cases": [
+        "Générer une voix-off à partir d'un texte.",
+        "Cloner une voix pour un usage récurrent.",
+        "Doubler une vidéo dans d'autres langues."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous avez besoin de l'authenticité d'une voix humaine réelle.",
+          "Le clonage de voix pose chez vous des questions de consentement/éthique.",
+          "Vos besoins sont ponctuels (le gratuit suffit)."
+        ],
+        "keepIf": [
+          "Vous générez des voix par IA (voix-off, TTS) de qualité.",
+          "Vous voulez cloner une voix ou doubler/localiser des vidéos.",
+          "Vous produisez du contenu audio à volume."
+        ],
+        "threshold": "ElevenLabs s'impose quand la génération de voix par IA (TTS, clonage, doublage) est un besoin récurrent ; pour de l'authenticité humaine ou un usage ponctuel, une voix réelle ou le palier gratuit suffisent."
+      }
+    },
+    "slug": "elevenlabs",
+    "sources": [
+      {
+        "label": "Page tarifaire officielle ElevenLabs",
+        "url": "https://elevenlabs.io/pricing"
+      }
+    ],
+    "verified_on": "2026-07-23"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-ai-general-critical-001",
+    "batch_position": 21,
+    "blockers": [],
+    "catalog_hash": "sha256:62dc894e9478e434fc2f9ea23ac0748e3cd794028bb61e7a025986452d548240",
+    "category": "ai-general",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:2a2124f6f9d21b3feb081a90e3c6ed7bd08278df527802005985474eedf45a23",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "ElevenLabs",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:fe7ebe779dcfa2556ccf721ba52a18447da463e172aaf170605bf407857e9a47",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "elevenlabs",
+    "source_url": "https://elevenlabs.io/pricing",
+    "source_verified_on": "2026-03-13",
+    "status": "QUEUED"
+  }
+}

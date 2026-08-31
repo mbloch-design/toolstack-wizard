@@ -1,0 +1,41 @@
+{
+  "slug": "bolt-new",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://bolt.new"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://bolt.new/static/marketing/homepage/value/build-without-breaking.png",
+      "source_page_url": "https://bolt.new",
+      "official": true,
+      "alt": "Bolt.new official product preview"
+    },
+    {
+      "kind": "image",
+      "url": "https://bolt.new/static/marketing/homepage/features/graph.png",
+      "source_page_url": "https://bolt.new",
+      "official": true,
+      "alt": "Bolt.new official product preview"
+    },
+    {
+      "kind": "image",
+      "url": "https://bolt.new/static/marketing/homepage/personas/agency.png",
+      "source_page_url": "https://bolt.new",
+      "official": true,
+      "alt": "Bolt.new official product preview"
+    },
+    {
+      "kind": "image",
+      "url": "https://bolt.new/static/social_preview_index.jpg",
+      "source_page_url": "https://bolt.new",
+      "official": true,
+      "alt": "Official product preview"
+    }
+  ]
+}

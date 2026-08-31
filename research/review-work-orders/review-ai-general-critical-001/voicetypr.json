@@ -1,0 +1,284 @@
+{
+  "batch": "review-ai-general-critical-001",
+  "current": {
+    "affiliate_url": "https://voicetypr.com",
+    "alternatives": [
+      "whisper",
+      "otter-ai",
+      "notta"
+    ],
+    "category": "ai-general",
+    "cons": [
+      "macOS/Windows uniquement.",
+      "Pas gratuit permanent (essai 3 jours).",
+      "Nettoyage IA optionnel coûte crédits API.",
+      "Qualité dépend du bruit ambiant."
+    ],
+    "cons_en": [
+      "macOS/Windows only.",
+      "Not permanently free (3-day trial).",
+      "Optional AI cleanup costs API credits.",
+      "Quality depends on ambient noise."
+    ],
+    "host_app": null,
+    "id": "voicetypr",
+    "long_description": "VoiceTypr permet la dictée vocale en temps réel dans n'importe quelle application, fonctionne hors-ligne et supporte plus de 50 langues. Alternative à Whisper sans configuration.",
+    "long_description_en": "VoiceTypr enables real-time voice dictation in any application, works offline and supports 50+ languages. Whisper alternative without configuration.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://voicetypr.com/voicetypr-og.png"
+    },
+    "name": "VoiceTypr",
+    "pricing": {
+      "free": "Plan gratuit limité",
+      "paid": "Pro 49$/mois"
+    },
+    "pricing_en": {
+      "free": "Limited free plan",
+      "paid": "Pro $49/mo"
+    },
+    "pricing_v5": {
+      "annual_monthly_eur": 34,
+      "billing_note": "Pro 49$/mois",
+      "currency_original": "USD",
+      "free_tier": true,
+      "free_tier_note": "Plan gratuit limité",
+      "monthly_eur": 42,
+      "plan_name": "Pro",
+      "price_original": 49,
+      "reliability": "low",
+      "source_url": "https://voicetypr.com/pricing",
+      "verified_on": "2026-05-08"
+    },
+    "pros": [
+      "Offline par défaut (confidentialité garantie).",
+      "Support 99 langues avec détection auto.",
+      "Achat unique sans abonnement perpétuel.",
+      "Fonctionne dans toutes les apps.",
+      "Nettoyage IA optionnel flexible.",
+      "Vitesse environ 3x plus rapide que typing."
+    ],
+    "pros_en": [
+      "Offline by default (guaranteed privacy).",
+      "99-language support with auto-detection.",
+      "One-time purchase without perpetual subscription.",
+      "Works in all apps.",
+      "Flexible optional AI cleanup.",
+      "Speed approximately 3x faster than typing."
+    ],
+    "short_description": "Dictée vocale IA hors-ligne et multi-langue, transcription en temps réel.",
+    "short_description_en": "Offline AI voice dictation, multi-language, real-time transcription.",
+    "slug": "voicetypr",
+    "source_url": "https://voicetypr.com",
+    "source_verified_on": "2026-05-08",
+    "use_cases": [
+      "Rédiger rapidement des documents et emails.",
+      "Transcriber des notes et brainstormings.",
+      "Dicter du code avec nettoyage IA.",
+      "Capturer des idées mains-libres en mobilité."
+    ],
+    "use_cases_en": [
+      "Quickly draft documents and emails.",
+      "Transcribe notes and brainstorms.",
+      "Dictate code with AI cleanup.",
+      "Capture ideas hands-free on the go."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous utilisez Linux ou autre OS.",
+        "Vous n'aimez pas parler à un ordinateur.",
+        "Vous cherchez une solution gratuite permanente."
+      ],
+      "keepIf": [
+        "Vous tapez beaucoup et préférez la dictée.",
+        "Vous avez besoin de confidentialité (offline par défaut).",
+        "Vous êtes sur macOS ou Windows."
+      ],
+      "threshold": "Voicetypr s'impose pour writers dictant régulièrement ; pour usage léger, un assistant textuel traditionnel suffira."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You use Linux or other OS.",
+        "You dislike speaking to a computer.",
+        "You're seeking a permanently free solution."
+      ],
+      "keepIf": [
+        "You type extensively and prefer dictation.",
+        "You need privacy (offline by default).",
+        "You use macOS or Windows."
+      ],
+      "threshold": "Voicetypr suits regular dictation users; for light use, traditional text assistant suffices."
+    },
+    "website_url": "https://voicetypr.com"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "macOS/Windows only.",
+        "Not permanently free (3-day trial).",
+        "Optional AI cleanup costs API credits.",
+        "Quality depends on ambient noise."
+      ],
+      "pros": [
+        "Offline by default (guaranteed privacy).",
+        "99-language support with auto-detection.",
+        "One-time purchase without perpetual subscription.",
+        "Works in all apps.",
+        "Flexible optional AI cleanup.",
+        "Speed approximately 3x faster than typing."
+      ],
+      "use_cases": [
+        "Quickly draft documents and emails.",
+        "Transcribe notes and brainstorms.",
+        "Dictate code with AI cleanup.",
+        "Capture ideas hands-free on the go."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You use Linux or other OS.",
+          "You dislike speaking to a computer.",
+          "You're seeking a permanently free solution."
+        ],
+        "keepIf": [
+          "You type extensively and prefer dictation.",
+          "You need privacy (offline by default).",
+          "You use macOS or Windows."
+        ],
+        "threshold": "Voicetypr suits regular dictation users; for light use, traditional text assistant suffices."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Essai gratuit 3 jours, pas de carte bancaire requise",
+        "exists": true
+      },
+      "key_features": [
+        "Dictée offline par défaut avec modèles IA locaux",
+        "Fonctionne mondialement dans n'importe quelle app avec curseur texte",
+        "Support 99 langues avec détection automatique",
+        "Nettoyage IA optionnel (API OpenAI, Anthropic, ou Gemini)",
+        "Modes push-to-talk et hands-free",
+        "Transcription fichiers audio/vidéo",
+        "CLI et Agent API pour automation",
+        "Historique transcriptions perchable",
+        "Vocabulaire personnalisé et règles formatting par-app"
+      ],
+      "plans": [
+        {
+          "name": "Pro",
+          "price": "39 $ (1 appareil, licence perpétuelle)"
+        },
+        {
+          "name": "Plus",
+          "price": "69 $ (2 appareils, licence perpétuelle)"
+        },
+        {
+          "name": "Max",
+          "price": "99 $ (4 appareils, licence perpétuelle)"
+        }
+      ],
+      "pricing_model": "Achat unique perpétuel (pas d'abonnement)",
+      "what": "Application de dictée vocale offline-first pour Mac et Windows permettant écrire par la voix dans n'importe quelle app (Cursor, ChatGPT, Claude, Slack, Gmail, docs) en utilisant des modèles IA locaux.",
+      "what_en": "Offline-first voice-to-text app for Mac and Windows enabling voice dictation in any app (Cursor, ChatGPT, Claude, Slack, Gmail, docs) using local AI models."
+    },
+    "fr": {
+      "cons": [
+        "macOS/Windows uniquement.",
+        "Pas gratuit permanent (essai 3 jours).",
+        "Nettoyage IA optionnel coûte crédits API.",
+        "Qualité dépend du bruit ambiant."
+      ],
+      "pros": [
+        "Offline par défaut (confidentialité garantie).",
+        "Support 99 langues avec détection auto.",
+        "Achat unique sans abonnement perpétuel.",
+        "Fonctionne dans toutes les apps.",
+        "Nettoyage IA optionnel flexible.",
+        "Vitesse environ 3x plus rapide que typing."
+      ],
+      "relevant_for": [
+        "Founders",
+        "Writers",
+        "Builders / Créateurs"
+      ],
+      "use_cases": [
+        "Rédiger rapidement des documents et emails.",
+        "Transcriber des notes et brainstormings.",
+        "Dicter du code avec nettoyage IA.",
+        "Capturer des idées mains-libres en mobilité."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous utilisez Linux ou autre OS.",
+          "Vous n'aimez pas parler à un ordinateur.",
+          "Vous cherchez une solution gratuite permanente."
+        ],
+        "keepIf": [
+          "Vous tapez beaucoup et préférez la dictée.",
+          "Vous avez besoin de confidentialité (offline par défaut).",
+          "Vous êtes sur macOS ou Windows."
+        ],
+        "threshold": "Voicetypr s'impose pour writers dictant régulièrement ; pour usage léger, un assistant textuel traditionnel suffira."
+      }
+    },
+    "slug": "voicetypr",
+    "sources": [
+      {
+        "label": "Voicetypr — Offline Voice-to-Text (site officiel)",
+        "url": "https://voicetypr.com"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-ai-general-critical-001",
+    "batch_position": 12,
+    "blockers": [],
+    "catalog_hash": "sha256:15b7805bd4aa2c50cc51255d870dce98a8e44e7a8b5345690737b5c66a5900fe",
+    "category": "ai-general",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:2a0a418e4580a87ccf1c2de01d630b89471abf65131c100084f8664335bdf2a1",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "VoiceTypr",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence",
+      "shallow_editorial"
+    ],
+    "priority_score": 260,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:5e53e4d89ba2cfee52cce74622c21c3a3f07b1c3d9b8d1439c71aab3a13ebe61",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "voicetypr",
+    "source_url": "https://voicetypr.com",
+    "source_verified_on": "2026-05-08",
+    "status": "QUEUED"
+  }
+}

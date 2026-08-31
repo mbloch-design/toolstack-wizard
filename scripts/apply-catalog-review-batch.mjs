@@ -21,7 +21,7 @@ for (const item of manifest.tools) {
   const bundleFile = path.join(root, "research/bundle-editorial", `${slug}.json`);
   const mediaFile = path.join(root, "research/media-evidence", `${slug}.json`);
   const tool = bySlug.get(slug);
-  if (!tool || !existsSync(bundleFile) || !existsSync(mediaFile) || ["DUPLICATE", "DISCONTINUED", "BLOCKED", "REVIEW_REQUIRED"].includes(statusBySlug.get(slug))) {
+  if (!tool || !existsSync(bundleFile) || !existsSync(mediaFile) || ["PUBLISHED", "DUPLICATE", "DISCONTINUED", "BLOCKED", "REVIEW_REQUIRED"].includes(statusBySlug.get(slug))) {
     skipped.push(slug);
     continue;
   }

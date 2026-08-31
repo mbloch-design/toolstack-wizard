@@ -1,0 +1,267 @@
+{
+  "batch": "review-ai-general-critical-001",
+  "current": {
+    "affiliate_url": "https://heygen.com",
+    "alternatives": [],
+    "category": "ai-general",
+    "cons": [
+      "Free tier limité à 3 vidéos/mois.",
+      "Le palier Creator est le minimum réaliste à l'usage.",
+      "Pas de contrôle cinématique fin."
+    ],
+    "cons_en": [
+      "Free tier limited to 3 videos/month.",
+      "The Creator tier is the realistic minimum in practice.",
+      "No fine cinematic control."
+    ],
+    "host_app": null,
+    "id": "heygen",
+    "long_description": "HeyGen, c'est création de vidéos avec avatars IA et traduction automatique. À partir de 25.11€/mois. Pensé pour les créateurs de contenu et les coachs et formateurs.\n\nGain de temps estimé : 5h/mois.\n\nÀ garder si : vidéos explicatives ou cours sans apparaître à la caméra. À éviter si : contenu authentique — un vrai visage reste plus engageant. Rentable dès 4 vidéos d'avatars par mois.",
+    "long_description_en": "HeyGen is video creation with AI avatars and automatic translation. Starting at €25.11/month. Built for content creators and coaches and trainers.\n\nEstimated time saving: 5h/month.\n\nKeep it if: explainer videos or courses without appearing on camera. Skip it if: authentic content — a real face remains more engaging. Profitable starting from 4 avatar videos per month.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://cdn.sanity.io/images/pdhqcmb1/production/579e83ff34c4c832744efaedb9681d255e58dc13-1200x630.png?fit=max&amp;fm=png"
+    },
+    "name": "HeyGen",
+    "pricing": {
+      "free": "1 vidéo/mois",
+      "paid": "29$/mois (Creator)"
+    },
+    "pricing_en": {
+      "free": "1 video/month",
+      "paid": "$29/month (Creator)"
+    },
+    "pricing_v5": {
+      "cautions": [],
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Entry paid plan",
+      "compare_price_monthly_eur": 25.11,
+      "location_sensitive": false,
+      "official_source_url": "https://www.heygen.com/pricing",
+      "price_reliability": "high",
+      "source_domain": "heygen.com",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-03-13"
+    },
+    "pros": [
+      "Avatars ultra-réalistes et lip-sync fluide.",
+      "Traduction multilingue preservée.",
+      "Free tier permet d'essayer sans payer.",
+      "137M+ vidéos déjà générées."
+    ],
+    "pros_en": [
+      "Ultra-realistic avatars with smooth lip-sync.",
+      "Multilingual translation preserved.",
+      "Free tier lets you try without paying.",
+      "137M+ videos already generated."
+    ],
+    "short_description": "Création de vidéos avec avatars IA et traduction automatique.",
+    "short_description_en": "Video creation with AI avatars and automatic translation.",
+    "slug": "heygen",
+    "source_url": "https://www.heygen.com/pricing",
+    "source_verified_on": "2026-03-13",
+    "use_cases": [
+      "Créer vidéos de présentation produit rapidement.",
+      "Dubber vidéos existantes multilingue.",
+      "Générer contenu internal training auto."
+    ],
+    "use_cases_en": [
+      "Create product presentation videos fast.",
+      "Dub existing videos in multiple languages.",
+      "Auto-generate training content."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous besoin de contrôle cinématique fin.",
+        "Vous faites de la fiction narrative longue.",
+        "Vous avez besoin de contrôle cinématographique fin sur vos vidéos."
+      ],
+      "keepIf": [
+        "Vous produisez du contenu vidéo marketing.",
+        "Vous voulez des avatars présentateurs réalistes.",
+        "Votre équipe est décentralisée."
+      ],
+      "threshold": "HeyGen shines pour marketing/didactique ; pour cinéma, utilisez une solution pro."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You need fine cinematic control.",
+        "You're doing long narrative fiction.",
+        "You need fine cinematic control over your videos."
+      ],
+      "keepIf": [
+        "You produce marketing video content.",
+        "You want realistic presenter avatars.",
+        "Your team is distributed."
+      ],
+      "threshold": "HeyGen shines for marketing/training; for cinema, use a pro solution."
+    },
+    "website_url": "https://heygen.com"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Free tier limited to 3 videos/month.",
+        "The Creator tier is the realistic minimum in practice.",
+        "No fine cinematic control."
+      ],
+      "pros": [
+        "Ultra-realistic avatars with smooth lip-sync.",
+        "Multilingual translation preserved.",
+        "Free tier lets you try without paying.",
+        "137M+ videos already generated."
+      ],
+      "use_cases": [
+        "Create product presentation videos fast.",
+        "Dub existing videos in multiple languages.",
+        "Auto-generate training content."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You need fine cinematic control.",
+          "You're doing long narrative fiction.",
+          "You need fine cinematic control over your videos."
+        ],
+        "keepIf": [
+          "You produce marketing video content.",
+          "You want realistic presenter avatars.",
+          "Your team is distributed."
+        ],
+        "threshold": "HeyGen shines for marketing/training; for cinema, use a pro solution."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Gratuit : 3 vidéos/mois avec watermark HeyGen.",
+        "exists": true
+      },
+      "key_features": [
+        "Avatars humains réalistes avec lip-sync",
+        "Traduction multilingue (preserve voix)",
+        "AI image + video generation",
+        "Avatars custom et LiveAvatar",
+        "API pour intégration"
+      ],
+      "plans": [
+        {
+          "name": "Free",
+          "price": "0 $ (3 vids/mois)"
+        },
+        {
+          "name": "Creator",
+          "price": "29 $/mois (illimité sans watermark)"
+        },
+        {
+          "name": "Pro",
+          "price": "99 $/mois (4K, avatars custom)"
+        },
+        {
+          "name": "Business",
+          "price": "149 $/mois+ (features avancées)"
+        },
+        {
+          "name": "API",
+          "price": "0,05 $/sec vidéo (3 $/min)"
+        }
+      ],
+      "pricing_model": "Tier gratuit (3 vids/mois watermark), Creator (29 $/mois illimité), Pro (99 $/mois), Business (149 $/mois+). Système crédit pour assets (15 $/mois 300 credits).",
+      "what": "Générateur vidéo IA avec avatars humains : texte-vers-vidéo avec avatars réalistes, lip-sync, traduction multilingue, génération texte-vers-vidéo, Asset generation, et API pour developers.",
+      "what_en": "AI video generator with human avatars: text-to-video with realistic avatars, lip-sync, multilingual translation, asset generation, and developer API."
+    },
+    "fr": {
+      "cons": [
+        "Free tier limité à 3 vidéos/mois.",
+        "Le palier Creator est le minimum réaliste à l'usage.",
+        "Pas de contrôle cinématique fin."
+      ],
+      "pros": [
+        "Avatars ultra-réalistes et lip-sync fluide.",
+        "Traduction multilingue preservée.",
+        "Free tier permet d'essayer sans payer.",
+        "137M+ vidéos déjà générées."
+      ],
+      "relevant_for": [
+        "Marketing teams",
+        "Équipes product",
+        "Creators contenu"
+      ],
+      "use_cases": [
+        "Créer vidéos de présentation produit rapidement.",
+        "Dubber vidéos existantes multilingue.",
+        "Générer contenu internal training auto."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous besoin de contrôle cinématique fin.",
+          "Vous faites de la fiction narrative longue.",
+          "Vous avez besoin de contrôle cinématographique fin sur vos vidéos."
+        ],
+        "keepIf": [
+          "Vous produisez du contenu vidéo marketing.",
+          "Vous voulez des avatars présentateurs réalistes.",
+          "Votre équipe est décentralisée."
+        ],
+        "threshold": "HeyGen shines pour marketing/didactique ; pour cinéma, utilisez une solution pro."
+      }
+    },
+    "slug": "heygen",
+    "sources": [
+      {
+        "label": "HeyGen — AI video avatar (site officiel)",
+        "url": "https://heygen.com"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-ai-general-critical-001",
+    "batch_position": 25,
+    "blockers": [],
+    "catalog_hash": "sha256:81efd5ad6060d7f5caea3cc81e182760d23fc83fbd2c982677da9fd1a10df5fb",
+    "category": "ai-general",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:4f689f65839d6796b2ddcaddda522e2d299ca600547e3e9ec281fe9f8d92ccc7",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "HeyGen",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:bd23a944ad64e0b1b7293e1914da96b611ded8c65507ee456fdd4edc97dfc29e",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "heygen",
+    "source_url": "https://www.heygen.com/pricing",
+    "source_verified_on": "2026-03-13",
+    "status": "QUEUED"
+  }
+}

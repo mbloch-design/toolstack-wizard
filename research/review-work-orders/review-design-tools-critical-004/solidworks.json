@@ -1,0 +1,258 @@
+{
+  "batch": "review-design-tools-critical-004",
+  "current": {
+    "affiliate_url": null,
+    "alternatives": [],
+    "category": "design-tools",
+    "cons": [
+      "Investissement très important.",
+      "Frais annuels même avec licence perpétuelle.",
+      "Courbe d'apprentissage abrupte.",
+      "Pas accessible aux petites équipes sans budget."
+    ],
+    "cons_en": [
+      "Very high upfront investment.",
+      "Annual fees even with perpetual license.",
+      "Steep learning curve.",
+      "Not accessible to small teams on tight budgets."
+    ],
+    "host_app": null,
+    "id": "solidworks",
+    "long_description": "CAO industrielle paramétrique pour conception produit et mécanique.",
+    "long_description_en": "Professional 3D CAD software by Dassault Systèmes for part modeling, assemblies, and drawings. Includes simulation tools, photorealistic rendering, and data management.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://tooltrim.com/og-screenshots/solidworks.jpg"
+    },
+    "name": "SolidWorks",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 250€/mois environ"
+    },
+    "pricing_en": null,
+    "pricing_v5": null,
+    "pros": [
+      "Standard industrie reconnu universellement.",
+      "Simulation robuste et validation d'idées.",
+      "Support technique important.",
+      "Intégration PDM et gestion de projet."
+    ],
+    "pros_en": [
+      "Universally recognized industry standard.",
+      "Robust simulation and idea validation.",
+      "Strong technical support.",
+      "PDM integration and project management."
+    ],
+    "short_description": "CAO industrielle paramétrique pour conception produit et mécanique.",
+    "short_description_en": "Parametric industrial CAD for product and mechanical design.",
+    "slug": "solidworks",
+    "source_url": "https://www.solidworks.com",
+    "source_verified_on": null,
+    "use_cases": [
+      "Modéliser un assemblage mécanique complexe.",
+      "Faire une analyse de stress ou simulation CFD.",
+      "Créer des plans d'usinage et mises en plan.",
+      "Gérer une documentation technique en équipe."
+    ],
+    "use_cases_en": [
+      "Model a complex mechanical assembly.",
+      "Run stress analysis or CFD simulation.",
+      "Create machining plans and technical drawings.",
+      "Manage technical documentation as a team."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous cherchez une solution gratuite ou low-cost.",
+        "Vous faites surtout du design/UI et pas de mécanique.",
+        "Vous êtes budget très serré pour une startup."
+      ],
+      "keepIf": [
+        "Vous faites de l'ingénierie produit et avez besoin d'un standard industrie.",
+        "Vous travaillez avec des simulations complexes (stress, dynamique, CFD).",
+        "Vous collaborez avec des équipes qui utilisent déjà SolidWorks."
+      ],
+      "threshold": "SolidWorks gagne pour l'ingénierie mécanique professionnelle et les simulations ; pour le design produit léger, FreeCAD ou Fusion 360 peuvent suffire."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You're looking for a free or low-cost solution.",
+        "You mostly do design/UI, not mechanics.",
+        "You have a tight budget as a startup."
+      ],
+      "keepIf": [
+        "You do product engineering and need an industry standard.",
+        "You need complex simulations (stress, dynamics, CFD).",
+        "Your team already uses SolidWorks."
+      ],
+      "threshold": "SolidWorks wins for professional mechanical engineering and simulations; for lighter product design, FreeCAD or Fusion 360 may suffice."
+    },
+    "website_url": "https://www.solidworks.com"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Very high upfront investment.",
+        "Annual fees even with perpetual license.",
+        "Steep learning curve.",
+        "Not accessible to small teams on tight budgets."
+      ],
+      "pros": [
+        "Universally recognized industry standard.",
+        "Robust simulation and idea validation.",
+        "Strong technical support.",
+        "PDM integration and project management."
+      ],
+      "use_cases": [
+        "Model a complex mechanical assembly.",
+        "Run stress analysis or CFD simulation.",
+        "Create machining plans and technical drawings.",
+        "Manage technical documentation as a team."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You're looking for a free or low-cost solution.",
+          "You mostly do design/UI, not mechanics.",
+          "You have a tight budget as a startup."
+        ],
+        "keepIf": [
+          "You do product engineering and need an industry standard.",
+          "You need complex simulations (stress, dynamics, CFD).",
+          "Your team already uses SolidWorks."
+        ],
+        "threshold": "SolidWorks wins for professional mechanical engineering and simulations; for lighter product design, FreeCAD or Fusion 360 may suffice."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Pas de version gratuite. Essai disponible sur demande.",
+        "exists": false
+      },
+      "key_features": [
+        "Modélisation 3D de pièces et assemblages complexes",
+        "Mise en plan automatisée",
+        "Simulation et analyse (stress, flux, etc.)",
+        "Rendu photorealiste",
+        "Gestion de données PDM intégrée",
+        "Export CAO vers multiples formats"
+      ],
+      "plans": [
+        {
+          "name": "Standard (perpetual license)",
+          "price": "montants sur la page officielle"
+        },
+        {
+          "name": "Professional (perpetual license)",
+          "price": "environ €346-458/mois en abonnement annuel ou équivalent USD"
+        },
+        {
+          "name": "Premium (perpetual license)",
+          "price": "environ €458/mois en abonnement annuel ou équivalent USD"
+        },
+        {
+          "name": "Ultimate (2026 new)",
+          "price": "montants sur la page officielle (contact expert)"
+        }
+      ],
+      "pricing_model": "Licence perpétuelle avec frais annuels ou abonnement, plusieurs éditions",
+      "what": "Logiciel CAO 3D (Conception Assistée par Ordinateur) professionnel de Dassault Systèmes pour la modélisation de pièces, assemblages et mises en plan. Inclut des outils de simulation, visualisation photorealiste et gestion de données.",
+      "what_en": "Professional 3D CAD software by Dassault Systèmes for part modeling, assemblies, and drawings. Includes simulation tools, photorealistic rendering, and data management."
+    },
+    "fr": {
+      "cons": [
+        "Investissement très important.",
+        "Frais annuels même avec licence perpétuelle.",
+        "Courbe d'apprentissage abrupte.",
+        "Pas accessible aux petites équipes sans budget."
+      ],
+      "pros": [
+        "Standard industrie reconnu universellement.",
+        "Simulation robuste et validation d'idées.",
+        "Support technique important.",
+        "Intégration PDM et gestion de projet."
+      ],
+      "relevant_for": [
+        "Ingénieurs mécaniques",
+        "Équipes R&D industrielles",
+        "Bureaux d'études"
+      ],
+      "use_cases": [
+        "Modéliser un assemblage mécanique complexe.",
+        "Faire une analyse de stress ou simulation CFD.",
+        "Créer des plans d'usinage et mises en plan.",
+        "Gérer une documentation technique en équipe."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous cherchez une solution gratuite ou low-cost.",
+          "Vous faites surtout du design/UI et pas de mécanique.",
+          "Vous êtes budget très serré pour une startup."
+        ],
+        "keepIf": [
+          "Vous faites de l'ingénierie produit et avez besoin d'un standard industrie.",
+          "Vous travaillez avec des simulations complexes (stress, dynamique, CFD).",
+          "Vous collaborez avec des équipes qui utilisent déjà SolidWorks."
+        ],
+        "threshold": "SolidWorks gagne pour l'ingénierie mécanique professionnelle et les simulations ; pour le design produit léger, FreeCAD ou Fusion 360 peuvent suffire."
+      }
+    },
+    "slug": "solidworks",
+    "sources": [
+      {
+        "label": "SolidWorks 2026 Pricing (site officiel)",
+        "url": "https://www.solidworks.com"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-004",
+    "batch_position": 7,
+    "blockers": [],
+    "catalog_hash": "sha256:2b5d8bd02734a293720bd6cdd411b93b6804dfb94c2764ef12954569ebebf994",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:b4dd5864b608f36efa08447b87ddb9af141785c5de7bbd702eb5651bc00f3ade",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "SolidWorks",
+    "next_review_at": null,
+    "priority_reasons": [
+      "paid_price",
+      "missing_or_invalid_media_evidence",
+      "shallow_editorial",
+      "undated_source"
+    ],
+    "priority_score": 195,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:3f0fc9ec0b87cc459901388714f1089f4b7faffb5cb82a89bde4d936eb12b6af",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "solidworks",
+    "source_url": "https://www.solidworks.com",
+    "source_verified_on": null,
+    "status": "QUEUED"
+  }
+}

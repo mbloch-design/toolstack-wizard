@@ -1,0 +1,273 @@
+{
+  "batch": "review-ai-general-critical-001",
+  "current": {
+    "affiliate_url": "https://try.hume.ai/ojin1rg0ivlx",
+    "alternatives": [
+      "elevenlabs",
+      "openai-whisper"
+    ],
+    "category": "ai-general",
+    "cons": [
+      "Coûts service additionnel importants.",
+      "Free tier vraiment limité (5 min).",
+      "Courbe apprentissage API."
+    ],
+    "cons_en": [
+      "Additional service costs substantial.",
+      "Free tier really limited (5 minutes).",
+      "API learning curve."
+    ],
+    "host_app": null,
+    "id": "hume-ai",
+    "long_description": "Hume AI s’adresse surtout aux équipes qui construisent des expériences vocales ou conversationnelles avancées. ToolTrim le classe comme outil expert : puissant pour un produit IA spécifique, rarement pertinent dans une stack freelance classique.",
+    "long_description_en": "Hume AI is best for teams building advanced voice or empathic AI experiences. ToolTrim treats it as an expert product tool.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://hume.ai/opengraph-image.jpg?opengraph-image.6b4cd84b.jpg"
+    },
+    "name": "Hume AI",
+    "pricing": {
+      "free": "Niveau gratuit ou crédits selon offre.",
+      "paid": "Tarification généralement liée à l’usage API, volumes et modèles."
+    },
+    "pricing_en": {
+      "free": "Free tier or credits depending on current offer.",
+      "paid": "Pricing is generally API usage, volume and model based."
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Le coût dépend du volume API et du type de modèle utilisé."
+      ],
+      "compare_plan_kind": "usage_based",
+      "compare_plan_name": "API usage",
+      "compare_price_monthly_eur": 0,
+      "location_sensitive": true,
+      "official_source_url": "https://www.hume.ai/pricing",
+      "price_reliability": "usage_based",
+      "source_domain": "hume.ai",
+      "usage_sensitive": true,
+      "verification_status": "verified_public_pricing_page",
+      "verified_on": "2026-05-03"
+    },
+    "pros": [
+      "Unique détection émotion vocale.",
+      "Réponses vocales naturelles et empathiques.",
+      "Free tier incluant Creator accessible.",
+      "Voice cloning illimité (Creator)."
+    ],
+    "pros_en": [
+      "Unique vocal emotion detection.",
+      "Natural, empathic voice responses.",
+      "Free tier including Creator accessible.",
+      "Unlimited voice cloning (Creator)."
+    ],
+    "short_description": "API IA vocale et émotionnelle pour interfaces conversationnelles avancées.",
+    "short_description_en": "Voice and empathic AI API for advanced conversational interfaces.",
+    "slug": "hume-ai",
+    "source_url": "https://www.hume.ai/pricing",
+    "source_verified_on": "2026-05-03",
+    "use_cases": [
+      "Customer support chatbot empathique.",
+      "Mental health / wellness app vocale.",
+      "Connected device voice interface."
+    ],
+    "use_cases_en": [
+      "Empathic customer support chatbot.",
+      "Mental health / wellness voice app.",
+      "Connected device voice interface."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous besoin de TTS simple (utilisez autre).",
+        "Votre budget est très limité.",
+        "Vous avez besoin de TTS simple sans détection d'émotion."
+      ],
+      "keepIf": [
+        "Vous développez une app IA conversationnelle empathique.",
+        "Vous voulez détecter émotion vocale client.",
+        "Votre use-case : customer support, mental health."
+      ],
+      "threshold": "Hume excels pour applications empathie vocale ; pour TTS standard, utilisez une solution plus simple/moins chère."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You just need simple TTS.",
+        "Your budget is very limited.",
+        "You need simple TTS without emotion detection."
+      ],
+      "keepIf": [
+        "You're building an empathic conversational AI app.",
+        "You want to detect customer vocal emotion.",
+        "Your use case: customer support, mental health."
+      ],
+      "threshold": "Hume excels for empathic voice apps; for standard TTS, use a simpler/cheaper solution."
+    },
+    "website_url": "https://www.hume.ai"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Additional service costs substantial.",
+        "Free tier really limited (5 minutes).",
+        "API learning curve."
+      ],
+      "pros": [
+        "Unique vocal emotion detection.",
+        "Natural, empathic voice responses.",
+        "Free tier including Creator accessible.",
+        "Unlimited voice cloning (Creator)."
+      ],
+      "use_cases": [
+        "Empathic customer support chatbot.",
+        "Mental health / wellness voice app.",
+        "Connected device voice interface."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You just need simple TTS.",
+          "Your budget is very limited.",
+          "You need simple TTS without emotion detection."
+        ],
+        "keepIf": [
+          "You're building an empathic conversational AI app.",
+          "You want to detect customer vocal emotion.",
+          "Your use case: customer support, mental health."
+        ],
+        "threshold": "Hume excels for empathic voice apps; for standard TTS, use a simpler/cheaper solution."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Gratuit : 5 EVI minutes, 10K TTS characters (0,15 $/1K overage).",
+        "exists": true
+      },
+      "key_features": [
+        "EVI (Empathic Voice Interface) temps réel",
+        "Octave (TTS empathique)",
+        "Détection émotions vocales",
+        "Expression Measurement API",
+        "Voice cloning illimité (Creator+)"
+      ],
+      "plans": [
+        {
+          "name": "Free",
+          "price": "0 $ (5 min EVI, 10K chars)"
+        },
+        {
+          "name": "Creator",
+          "price": "14 $/mois (140K chars TTS, unlimited voice clone)"
+        },
+        {
+          "name": "Implementation",
+          "price": "1-5K $ (onboarding, setup)"
+        },
+        {
+          "name": "Data storage",
+          "price": "100-1K $/mois (audio/video processing)"
+        },
+        {
+          "name": "Advanced features",
+          "price": "500-3,5K $/an"
+        }
+      ],
+      "pricing_model": "Tier gratuit (5 EVI min/mois, 10K TTS chars), Creator (14 $/mois), + custom services (onboarding, data storage, support, advanced features).",
+      "what": "Plateforme IA empathique vocale : EVI (Empathic Voice Interface) et Octave (TTS empathique). Détecte émotions vocales, répond naturellement. APIs pour expression measurement, EVI, et produits connectés.",
+      "what_en": "Empathic voice AI platform: EVI (Empathic Voice Interface) and Octave (empathic TTS). Detects vocal emotions, responds naturally. APIs for expression measurement, EVI, and connected products."
+    },
+    "fr": {
+      "cons": [
+        "Coûts service additionnel importants.",
+        "Free tier vraiment limité (5 min).",
+        "Courbe apprentissage API."
+      ],
+      "pros": [
+        "Unique détection émotion vocale.",
+        "Réponses vocales naturelles et empathiques.",
+        "Free tier incluant Creator accessible.",
+        "Voice cloning illimité (Creator)."
+      ],
+      "relevant_for": [
+        "Startups deep tech",
+        "Équipes mental health",
+        "Developers conversational AI"
+      ],
+      "use_cases": [
+        "Customer support chatbot empathique.",
+        "Mental health / wellness app vocale.",
+        "Connected device voice interface."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous besoin de TTS simple (utilisez autre).",
+          "Votre budget est très limité.",
+          "Vous avez besoin de TTS simple sans détection d'émotion."
+        ],
+        "keepIf": [
+          "Vous développez une app IA conversationnelle empathique.",
+          "Vous voulez détecter émotion vocale client.",
+          "Votre use-case : customer support, mental health."
+        ],
+        "threshold": "Hume excels pour applications empathie vocale ; pour TTS standard, utilisez une solution plus simple/moins chère."
+      }
+    },
+    "slug": "hume-ai",
+    "sources": [
+      {
+        "label": "Hume AI — empathic voice et APIs (site officiel)",
+        "url": "https://www.hume.ai"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-ai-general-critical-001",
+    "batch_position": 10,
+    "blockers": [],
+    "catalog_hash": "sha256:7e30f5bdf697343f755b5b19b4fdb9c07214e12807f01e97e67e4b248e683a87",
+    "category": "ai-general",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:7af5296c49d918a843bf895605a49b8fbc93c04ca2d0026e01d73b6b2e0cfd0a",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Hume AI",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence",
+      "shallow_editorial"
+    ],
+    "priority_score": 260,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:69ab20063810ad42d9f7b7a183c451c2b17dd979a2098ec1693aee35d7ad2647",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "hume-ai",
+    "source_url": "https://www.hume.ai/pricing",
+    "source_verified_on": "2026-05-03",
+    "status": "QUEUED"
+  }
+}

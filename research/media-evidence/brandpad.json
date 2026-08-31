@@ -1,0 +1,20 @@
+{
+  "slug": "brandpad",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://brandpad.io"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://brandpad.io/uploads/images/_1200x630_crop_center-center_82_none/brandpad_logo.png?mtime=1612868009",
+      "source_page_url": "https://brandpad.io",
+      "official": true,
+      "alt": "Brandpad official product preview"
+    }
+  ]
+}

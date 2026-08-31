@@ -756,16 +756,16 @@
     "slug": "firefly",
     "name": "Adobe Firefly",
     "categoryId": "ai-general",
-    "shortDescription": "La génération d'images IA intégrée dans Adobe CC.",
-    "shortDescriptionEn": "AI image generation integrated in Adobe CC.",
+    "shortDescription": "Web app et famille de modèles d'IA générative d'Adobe pour la production créative (image, vidéo, audio).",
+    "shortDescriptionEn": "Adobe's web app and generative AI model family for creative production (image, video, audio).",
     "pricing": {
-      "free": "Crédits gratuits inclus dans Adobe CC, et usage limité gratuit",
-      "paid": "Plans Firefly à partir d'environ 10$/mois pour plus de crédits"
+      "free": "Fonctionne aux crédits mensuels ; alimente aussi des fonctions dans Photoshop, Premiere Pro, InDesign (voir la fiche de la suite).",
+      "paid": "Fonctionne aux crédits mensuels ; alimente aussi des fonctions dans Photoshop, Premiere Pro, InDesign (voir la fiche de la suite)."
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://firefly.adobe.com",
     "websiteUrl": "https://firefly.adobe.com",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/firefly.jpg",
+    "ogImageUrl": "/og-screenshots/firefly.jpg",
     "logo": "",
     "tool_type": "ia",
     "host_app": null,
@@ -992,11 +992,11 @@
     "slug": "adobe-podcast-ai",
     "name": "Adobe Podcast AI",
     "categoryId": "ai-general",
-    "shortDescription": "Nettoyage de voix, enregistrement distant et montage audio-vidéo par transcription dans le navigateur.",
-    "shortDescriptionEn": "Browser-based voice cleanup, remote recording and transcript-driven audio and video editing.",
+    "shortDescription": "Suite d'outils audio par IA d'Adobe pour enregistrer, éditer et améliorer la voix (podcasts, voix-off).",
+    "shortDescriptionEn": "Adobe's suite of AI-powered audio tools for recording, editing, and enhancing voice and sound quality.",
     "pricing": {
-      "free": "Gratuit : Enhance Speech 1h/jour, fichiers audio de 30 min et 500 Mo maximum ; Studio, projets de 30 min et 2 téléchargements/jour",
-      "paid": "Premium via Adobe Express Premium : 11,99 €/mois TTC en France, sans engagement annuel ; essai gratuit de 30 jours"
+      "free": "Outils web (dont un niveau gratuit) et fonctions liées à l'écosystème Adobe (voir la fiche de la suite).",
+      "paid": "Outils web (dont un niveau gratuit) et fonctions liées à l'écosystème Adobe (voir la fiche de la suite)."
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://podcast.adobe.com",
@@ -3258,16 +3258,16 @@
     "slug": "autodesk-flow-studio",
     "name": "Autodesk Flow Studio",
     "categoryId": "ai-general",
-    "shortDescription": "IA qui insère et anime des personnages CG dans des vidéos réelles (ex-Wonder Dynamics).",
-    "shortDescriptionEn": "AI that inserts and animates CG characters into live footage (ex-Wonder Dynamics).",
+    "shortDescription": "Suite VFX et animation par IA d'Autodesk (anciennement Wonder Studio) : capture de mouvement sans matériel, animation de personnages CG, édition 3D avec contrôle créatif, et intégration vidéo temps réel.",
+    "shortDescriptionEn": "Autodesk's AI-powered VFX and animation suite (formerly Wonder Studio): hardware-free motion capture, CG character animation, 3D editing with creative control, and real-time video integration.",
     "pricing": {
-      "free": "Gratuit (300 crédits/mois, 720p)",
-      "paid": "Lite 10$/mois, Standard 45$ (360$/an), Pro 95$."
+      "free": "Tier gratuit inclus : accès aux outils core comme AI Mocap et Live Action.",
+      "paid": "Free: 0 $ (outils core) ; Lite: 10 $/mois (réduit de 20 $ avant août 2026) ; Standard: 45 $/mois ou 360 $/an (6 000 crédits/mois) ; Pro & Enterprise: montants sur la page officielle"
     },
     "defaultMonthlyPrice": 10,
     "affiliateLink": "https://wonderdynamics.com",
     "websiteUrl": "https://wonderdynamics.com",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/autodesk-flow-studio.jpg",
+    "ogImageUrl": "https://images.ctfassets.net/v7wr16nrr0mz/62WC7O2IfOpPzyQb2p2nYa/bda458bb4a6b4977294e5eda6fb2c097/community-thumb-788x1050.jpg",
     "logo": "",
     "tool_type": "ia",
     "host_app": null,
@@ -4442,16 +4442,16 @@
     "slug": "bolt-new",
     "name": "Bolt.new",
     "categoryId": "ai-general",
-    "shortDescription": "Génération d'applications web complètes depuis un prompt. Alternative à Lovable.",
-    "shortDescriptionEn": "Full web app generation from a prompt. Alternative to Lovable.",
+    "shortDescription": "Générateur d'applications web full-stack par IA (frontend React, backend Node.js) : décrivez l'app en langage naturel, Bolt génère code exécutable et dépliable dans le navigateur sans configuration locale.",
+    "shortDescriptionEn": "AI-powered full-stack web app generator (React frontend, Node.js backend): describe your app in natural language, Bolt generates executable, deployable code in the browser with zero local setup.",
     "pricing": {
-      "free": "Crédits limités",
-      "paid": "20$/mois (Pro)"
+      "free": "Accès gratuit limité par crédits Claude API ; StackBlitz (parent) facture les accès avancés.",
+      "paid": "Free: 0 $ (limité par crédit) ; Premium / Pro: montants sur la page officielle ou StackBlitz"
     },
     "defaultMonthlyPrice": 17.32,
     "affiliateLink": "https://bolt.new",
     "websiteUrl": "https://bolt.new",
-    "ogImageUrl": "https://bolt.new/static/social_preview_index.jpg",
+    "ogImageUrl": "https://bolt.new/static/marketing/homepage/value/build-without-breaking.png",
     "logo": "",
     "tool_type": "ia",
     "host_app": null,
@@ -4726,11 +4726,11 @@
     "slug": "brandpad",
     "name": "Brandpad",
     "categoryId": "design-tools",
-    "shortDescription": "Plateforme de brand guidelines en ligne pour livrer et maintenir une identité.",
-    "shortDescriptionEn": "Online brand guidelines platform to deliver and maintain an identity.",
+    "shortDescription": "Plateforme de gestion de marque (brand guidelines) pour centraliser et partager les règles visuelles, logo, typographies, couleurs avec l'équipe ou les partenaires. Permet la collaboration et la validation des assets.",
+    "shortDescriptionEn": "Brand management platform (brand guidelines) to centralize and share visual rules, logos, typography, colors with team or partners. Enables collaboration and asset validation.",
     "pricing": {
-      "free": "Essai ou plan gratuit selon usage",
-      "paid": "À partir de 30€/mois environ"
+      "free": "Plan Starter gratuit avec accès complet à tous les outils Brandpad. Révisions illimitées et collaborateurs additionnels payants sur les plans supérieurs.",
+      "paid": "Starter: Gratuit (accès complet aux outils Brandpad) ; Brand: 500 $/an ; Portfolio: 1 250 $/an ; Bespoke: Tarification personnalisée (entreprises)"
     },
     "defaultMonthlyPrice": 30,
     "affiliateLink": "",
@@ -6386,16 +6386,16 @@
     "slug": "chatgpt",
     "name": "ChatGPT",
     "categoryId": "ai-general",
-    "shortDescription": "L'assistant IA généraliste d'OpenAI.",
-    "shortDescriptionEn": "The general-purpose AI assistant from OpenAI.",
+    "shortDescription": "Éditeur de ChatGPT et des modèles GPT : assistant IA conversationnel (web, apps, API) pour rédaction, code, analyse et automatisation, avec une gamme de modèles et une API développeur.",
+    "shortDescriptionEn": "Maker of ChatGPT and the GPT models: a conversational AI assistant (web, apps, API) for writing, code, analysis and automation, with a range of models and a developer API.",
     "pricing": {
-      "free": "Plan gratuit disponible",
-      "paid": "20$/mois (Plus)"
+      "free": "ChatGPT gratuit avec accès à un modèle de base ; le modèle phare est réservé aux paliers payants.",
+      "paid": "Free: 0 $ ; Go: 8 $/mois ; Plus: 20 $/mois ; Pro: 100 $ et 200 $/mois (deux paliers) ; Business: 20 $/siège/mois (annuel) ; Enterprise sur devis"
     },
     "defaultMonthlyPrice": 17.32,
     "affiliateLink": "https://chat.openai.com",
     "websiteUrl": "https://chat.openai.com",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/chatgpt.jpg",
+    "ogImageUrl": "/og-screenshots/chatgpt.jpg",
     "logo": "",
     "tool_type": "ia",
     "host_app": null,
@@ -6645,16 +6645,16 @@
     "slug": "claude",
     "name": "Claude",
     "categoryId": "ai-general",
-    "shortDescription": "L’assistant IA d’Anthropic pour écrire, analyser, rechercher, coder et créer des livrables.",
-    "shortDescriptionEn": "Anthropic’s AI assistant for writing, analysis, research, coding and creating deliverables.",
+    "shortDescription": "Plateforme API pour accéder aux modèles Claude (Opus, Sonnet, Haiku, Fable), avec options de prompt caching, batch processing et web search pour intégration en production.",
+    "shortDescriptionEn": "API platform for accessing Claude models (Opus, Sonnet, Haiku, Fable) with prompt caching, batch processing, and web search capabilities for production integration.",
     "pricing": {
-      "free": "Plan gratuit disponible",
-      "paid": "Pro : 20 $US/mois ou 200 $US/an · Max à partir de 100 $US/mois"
+      "free": "Pas d'offre gratuite ; accès via API avec facturation au token.",
+      "paid": "Claude Haiku 4.5: 1 $/M input, 5 $/M output ; Claude Sonnet 5: 2 $/M input, 10 $/M output ; Claude Opus 5: 5 $/M input, 25 $/M output ; Claude Fable 5: 10 $/M input, 50 $/M output"
     },
     "defaultMonthlyPrice": 17,
     "affiliateLink": "https://claude.com/",
     "websiteUrl": "https://claude.com/",
-    "ogImageUrl": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d23594abeb9ab6ee48_70ed020ecf8fa028b9bc95fa819720b6_og_claude-generic.jpg",
+    "ogImageUrl": "https://cdn.sanity.io/images/4zrzovbb/claude-com/6c36adaaf60ecdde313a93ad255eef573ea4de97-1200x630.jpg?w=1200&h=630&fit=crop",
     "logo": "",
     "tool_type": "ia",
     "host_app": null,
@@ -6673,10 +6673,9 @@
       "ai-builder"
     ],
     "relevantFor": [
-      "Consultants et analystes",
-      "Rédacteurs et chercheurs",
       "Développeurs",
-      "Équipes produit et knowledge workers"
+      "Startups AI",
+      "Équipes ML/Data"
     ],
     "freeAlternative": "chatgpt",
     "substitutable": true,
@@ -8329,16 +8328,16 @@
     "slug": "cursor",
     "name": "Cursor",
     "categoryId": "ai-general",
-    "shortDescription": "L'IDE IA qui code avec vous en temps réel.",
-    "shortDescriptionEn": "The AI IDE that codes with you in real time.",
+    "shortDescription": "Éditeur de code IA natif (basé VS Code) avec Composer (multi-fichiers), Agent mode, indexation codebase, accès aux modèles Claude/GPT-4o/Gemini et MCP intégré.",
+    "shortDescriptionEn": "AI-native code editor (VS Code-based) with Composer for multi-file edits, Agent mode, codebase indexing, access to Claude/GPT-4o/Gemini models, and native MCP support.",
     "pricing": {
-      "free": "Plan gratuit disponible",
-      "paid": "20$/mois (Pro)"
+      "free": "Gratuit sans limite de temps ; crédits limités par rapport aux plans payants.",
+      "paid": "Free: 0 $ (crédits limités) ; Pro: 20 $/mois (15 $ crédits) ; Pro+: 60 $/mois (70 $ crédits) ; Ultra: 200 $/mois (200 $ crédits)"
     },
     "defaultMonthlyPrice": 20,
     "affiliateLink": "https://cursor.sh",
     "websiteUrl": "https://cursor.sh",
-    "ogImageUrl": "https://ptht05hbb1ssoooe.public.blob.vercel-storage.com/assets/og/opengraph-default.png",
+    "ogImageUrl": "https://cursor.com/marketing-static/_next/image?url=https%3A%2F%2Fptht05hbb1ssoooe.public.blob.vercel-storage.com%2Fassets%2Fmisc%2Fasset-cc24ca462279ca23250c.jpg&w=3840&q=70",
     "logo": "",
     "tool_type": "metier",
     "host_app": null,
@@ -8982,11 +8981,11 @@
     "slug": "deepseek",
     "name": "DeepSeek",
     "categoryId": "ai-general",
-    "shortDescription": "L'IA chinoise open-source qui défie ChatGPT.",
-    "shortDescriptionEn": "The open-source Chinese AI challenging ChatGPT.",
+    "shortDescription": "Fournisseur d'API IA chinois : modèles V4 Flash et V4 Pro avec tarification ultra-compétitive, pricing-cache, et 5M tokens gratuits au signup (pas de CB requise).",
+    "shortDescriptionEn": "Chinese AI API provider: V4 Flash and V4 Pro models with ultra-competitive pricing, prompt caching, and 5M free tokens at signup (no credit card required).",
     "pricing": {
-      "free": "Application gratuite + modèles open-source téléchargeables",
-      "paid": "$0.27/M tokens (API) - 50x moins cher que ChatGPT"
+      "free": "5M tokens gratuits au signup sans CB ; valables sur tous les modèles.",
+      "paid": "V4 Flash (off-peak): 0,14 $/M input, 0,28 $/M output ; V4 Pro (off-peak): 0,435 $/M input, 0,87 $/M output ; Cache-hit (Flash): 0,003 $/M (réduction 95 %)"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://www.deepseek.com",
@@ -10362,16 +10361,16 @@
     "slug": "elevenlabs",
     "name": "ElevenLabs",
     "categoryId": "ai-general",
-    "shortDescription": "L'IA de synthèse vocale ultra-réaliste pour créer du contenu audio.",
-    "shortDescriptionEn": "Ultra-realistic AI speech synthesis for creating audio content.",
+    "shortDescription": "Plateforme d'audio par IA : synthèse vocale (text-to-speech), clonage de voix et doublage.",
+    "shortDescriptionEn": "AI-powered audio platform: text-to-speech synthesis, voice cloning, and voice dubbing.",
     "pricing": {
-      "free": "Plan gratuit disponible",
-      "paid": "À partir de 5$/mois (Starter)"
+      "free": "Gratuit : 10 000 crédits/mois, TTS et STT de base.",
+      "paid": "Starter: 6 $/mois ; Creator: 11 $/mois ; Pro: 99 $/mois"
     },
     "defaultMonthlyPrice": 4.33,
     "affiliateLink": "https://elevenlabs.io",
     "websiteUrl": "https://elevenlabs.io",
-    "ogImageUrl": "https://elevenlabs.io/cover.png",
+    "ogImageUrl": "https://elevenlabs.io/_next/image?url=https%3A%2F%2Feleven-public-cdn.elevenlabs.io%2Fmarketing_website%2F_next%2Fstatic%2Fmedia%2Feleven-creative.f5fbfcf5.png&w=3840&q=80",
     "logo": "",
     "tool_type": "ia",
     "host_app": null,
@@ -10828,11 +10827,11 @@
     "slug": "esko-studio",
     "name": "Esko Studio",
     "categoryId": "design-tools",
-    "shortDescription": "Suite packaging pour mockups, prévisualisation 3D et prépresse.",
-    "shortDescriptionEn": "Packaging suite for mockups, 3D preview, and prepress.",
+    "shortDescription": "Suite logicielle d'emballage 3D pour designers, utilisant le plugin Adobe Illustrator pour concevoir et visualiser des boîtes, étiquettes et emballages souples avec rendu photorealist.",
+    "shortDescriptionEn": "3D packaging design software suite for designers, using Adobe Illustrator plugin to design and visualize boxes, labels, and flexible packaging with photorealistic rendering.",
     "pricing": {
-      "free": "Essai ou plan gratuit selon usage",
-      "paid": "À partir de 99€/mois environ"
+      "free": "Essai gratuit disponible ; pas de version gratuite permanente. Achat ou abonnement requis pour usage professionnel.",
+      "paid": "Esko Studio: Montants sur demande (editions et plans disponibles)"
     },
     "defaultMonthlyPrice": 99,
     "affiliateLink": "",
@@ -11361,16 +11360,16 @@
     "slug": "figjam",
     "name": "FigJam",
     "categoryId": "design-tools",
-    "shortDescription": "Whiteboard collaboratif pour ateliers, parcours, cadrage UX et idéation.",
-    "shortDescriptionEn": "Collaborative whiteboard for workshops, journeys, UX framing, and ideation.",
+    "shortDescription": "Tableau blanc collaboratif par Figma pour le brainstorming, la réflexion d'équipe et la planification. Inclus gratuitement dans tous les plans Figma, sans frais supplémentaires.",
+    "shortDescriptionEn": "Collaborative digital whiteboard by Figma for brainstorming, team alignment, and planning. Included free with all Figma plans, no additional cost.",
     "pricing": {
-      "free": "Essai ou plan gratuit selon usage",
-      "paid": "À partir de 5€/mois environ"
+      "free": "Plan gratuit Figma inclut FigJam : tableaux illimités personnels et 3 fichiers FigJam partagés.",
+      "paid": "FigJam (avec Figma Free): Gratuit (3 fichiers FigJam partagés inclus) ; FigJam (avec Figma Pro+): Inclus (15 € / mois Figma Pro, 45 € / mois Org)"
     },
     "defaultMonthlyPrice": 5,
     "affiliateLink": "",
     "websiteUrl": "https://www.figma.com/figjam/",
-    "ogImageUrl": "https://cdn.sanity.io/images/599r6htc/regionalized/f17d3078c6c170d8395dd57aab930b84e88fa6e1-2400x1260.png?w=1200&amp;q=70&amp;fit=max&amp;auto=format",
+    "ogImageUrl": "https://cdn.sanity.io/images/599r6htc/regionalized/8b99a61f768555fab9a11deccc60639cbe74695b-1680x1120.png?w=606&h=404&q=75&fit=max&auto=format",
     "logo": "https://cdn.sanity.io/images/599r6htc/regionalized/857d716d2ba170b1507a97dfd233543408c3700e-2256x2112.png?rect=1000,1165,260,260&w=256&h=256&fit=crop&auto=format",
     "tool_type": "satellite",
     "host_app": null,
@@ -13085,16 +13084,16 @@
     "slug": "fusion-360",
     "name": "Fusion 360",
     "categoryId": "design-tools",
-    "shortDescription": "CAO/FAO Autodesk pour conception produit, prototypage et fabrication.",
-    "shortDescriptionEn": "Autodesk CAD/CAM for product design, prototyping, and manufacturing.",
+    "shortDescription": "Plateforme de conception et fabrication d'Autodesk réunissant CAO, FAO (CAM), simulation (CAE) et électronique (PCB) dans un seul outil, avec gestion des données intégrée.",
+    "shortDescriptionEn": "Autodesk's design and manufacturing platform combining CAD, CAM, simulation (CAE) and electronics (PCB) in a single tool, with built-in data management.",
     "pricing": {
-      "free": "Essai ou plan gratuit selon usage",
-      "paid": "À partir de 70€/mois environ"
+      "free": "Fusion pour usage personnel : gratuit pour les projets non commerciaux (fonctions réduites). Pas de plan gratuit commercial.",
+      "paid": "Usage personnel: gratuit (non commercial) ; Abonnement standard: 85 $/utilisateur/mois ou 680 $/utilisateur/an ; Startup: 150 $/utilisateur pour un terme de 3 ans (programme sur conditions)"
     },
     "defaultMonthlyPrice": 70,
     "affiliateLink": "",
     "websiteUrl": "https://www.autodesk.com/products/fusion-360/overview",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/fusion-360.jpg",
+    "ogImageUrl": "https://images.ctfassets.net/v7wr16nrr0mz/7cubXgLsTdlFLouyd2X4Vs/c12e1a3fa9a58107fb5bf41835183909/fusion-2027-banner-1920x1080-v4.jpg",
     "logo": "",
     "tool_type": "satellite",
     "host_app": null,
@@ -13305,11 +13304,11 @@
     "slug": "gemini",
     "name": "Gemini",
     "categoryId": "ai-general",
-    "shortDescription": "L'IA de Google qui double ses performances tous les 3 mois.",
-    "shortDescriptionEn": "Google's AI that doubles its performance every 3 months.",
+    "shortDescription": "Assistant IA grand public et API développeur de Google : modèles Gemini 2.5, Gemini 3.7 Flash avec long contexte, accès web temps réel, et intégration Google Workspace.",
+    "shortDescriptionEn": "Google's consumer AI assistant and developer API: Gemini 2.5, Gemini 3.7 Flash models with long context, real-time web access, and Google Workspace integration.",
     "pricing": {
-      "free": "Application Gemini gratuite disponible",
-      "paid": "Google AI Pro à 19,99$/mois ; Google AI Ultra à 200$/mois"
+      "free": "Gratuit : accès Gemini classique, Google AI Studio pour dev (avec limites rate).",
+      "paid": "Free: 0 $ (avec limites) ; AI Plus: 4,99 $/mois (ancien 7,99 $) ; AI Pro: 19,99 $/mois ; AI Ultra: 99,99 $/mois (5x Pro) ou 199,99 $ (20x Pro) ; API: 0,10-2,00 $/M tokens selon modèle"
     },
     "defaultMonthlyPrice": 17.51,
     "affiliateLink": "https://gemini.google.com",
@@ -13741,11 +13740,11 @@
     "slug": "github-copilot",
     "name": "GitHub Copilot",
     "categoryId": "ai-general",
-    "shortDescription": "L'assistant de code IA intégré dans votre éditeur.",
-    "shortDescriptionEn": "The AI code assistant integrated into your editor.",
+    "shortDescription": "Assistant IA pour développeurs GitHub : auto-complétion inline, chat code, review, agent mode, et CLI. Juin 2026 : passage à facturation usage-based (crédits) ; suggestions inline gratuites sur tous les plans.",
+    "shortDescriptionEn": "AI development assistant for GitHub: inline autocomplete, code chat, review, agent mode, and CLI. June 2026: moved to usage-based billing (credits); inline suggestions free on all plans.",
     "pricing": {
-      "free": "Plan gratuit disponible",
-      "paid": "10$/mois (Copilot Pro)"
+      "free": "Gratuit : 5 messages/jour (allotment crédit gratuit), suggestions inline gratuites (pas crédit).",
+      "paid": "Free: 0 $ (5 crédits/jour) ; Pro: 10 $/mois (15 $ crédit inclus) ; Pro+: 39 $/mois (70 $ crédit inclus) ; Max: 100 $/mois (200 $ crédit inclus) ; Business: 19 $/seat/mois"
     },
     "defaultMonthlyPrice": 8.66,
     "affiliateLink": "https://github.com/features/copilot",
@@ -15666,16 +15665,16 @@
     "slug": "heygen",
     "name": "HeyGen",
     "categoryId": "ai-general",
-    "shortDescription": "Création de vidéos avec avatars IA et traduction automatique.",
-    "shortDescriptionEn": "Video creation with AI avatars and automatic translation.",
+    "shortDescription": "Générateur vidéo IA avec avatars humains : texte-vers-vidéo avec avatars réalistes, lip-sync, traduction multilingue, génération texte-vers-vidéo, Asset generation, et API pour developers.",
+    "shortDescriptionEn": "AI video generator with human avatars: text-to-video with realistic avatars, lip-sync, multilingual translation, asset generation, and developer API.",
     "pricing": {
-      "free": "1 vidéo/mois",
-      "paid": "29$/mois (Creator)"
+      "free": "Gratuit : 3 vidéos/mois avec watermark HeyGen.",
+      "paid": "Free: 0 $ (3 vids/mois) ; Creator: 29 $/mois (illimité sans watermark) ; Pro: 99 $/mois (4K, avatars custom) ; Business: 149 $/mois+ (features avancées) ; API: 0,05 $/sec vidéo (3 $/min)"
     },
     "defaultMonthlyPrice": 25.11,
     "affiliateLink": "https://heygen.com",
     "websiteUrl": "https://heygen.com",
-    "ogImageUrl": "https://cdn.sanity.io/images/pdhqcmb1/production/579e83ff34c4c832744efaedb9681d255e58dc13-1200x630.png?fit=max&amp;fm=png",
+    "ogImageUrl": "https://www.heygen.com/_next/image?url=%2Fassets_2025_redesign%2F_next%2Fstatic%2Fimmutable%2Fmedia%2Fhero-left.10_gc6gwg7h-8.png&w=3840&q=75",
     "logo": "",
     "tool_type": "ia",
     "host_app": null,
@@ -16152,11 +16151,11 @@
     "slug": "hume-ai",
     "name": "Hume AI",
     "categoryId": "ai-general",
-    "shortDescription": "API IA vocale et émotionnelle pour interfaces conversationnelles avancées.",
-    "shortDescriptionEn": "Voice and empathic AI API for advanced conversational interfaces.",
+    "shortDescription": "Plateforme IA empathique vocale : EVI (Empathic Voice Interface) et Octave (TTS empathique). Détecte émotions vocales, répond naturellement. APIs pour expression measurement, EVI, et produits connectés.",
+    "shortDescriptionEn": "Empathic voice AI platform: EVI (Empathic Voice Interface) and Octave (empathic TTS). Detects vocal emotions, responds naturally. APIs for expression measurement, EVI, and connected products.",
     "pricing": {
-      "free": "Niveau gratuit ou crédits selon offre.",
-      "paid": "Tarification généralement liée à l’usage API, volumes et modèles."
+      "free": "Gratuit : 5 EVI minutes, 10K TTS characters (0,15 $/1K overage).",
+      "paid": "Free: 0 $ (5 min EVI, 10K chars) ; Creator: 14 $/mois (140K chars TTS, unlimited voice clone) ; Implementation: 1-5K $ (onboarding, setup) ; Data storage: 100-1K $/mois (audio/video processing) ; Advanced features: 500-3,5K $/an"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://try.hume.ai/ojin1rg0ivlx",
@@ -21157,16 +21156,16 @@
     "slug": "manifest-ai",
     "name": "Manifest AI",
     "categoryId": "ai-general",
-    "shortDescription": "Chatbot IA alimenté par GPT pour de meilleures interactions client.",
-    "shortDescriptionEn": "GPT-powered AI chatbot for improved customer interactions.",
+    "shortDescription": "Platform document intelligence : automatise extraction factures/emballages freight en données structurées. OCR+IA, quality control, intégration ERP (Sage, TMS). Processing pages avec crédit system.",
+    "shortDescriptionEn": "Document intelligence platform: automates freight invoice/packing list extraction to structured data. OCR+AI, quality control, ERP integration (Sage, TMS). Page-based credits.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "20€/mois pour version Pro"
+      "free": "Trial gratuit : 1 document jusqu'à 20 pages sans CB avant committing à plan payant.",
+      "paid": "Free Trial: 0 $ (1 doc, 20 pages max) ; Starter: 299 $/mois (1K pages/mois) ; Scale: Montants sur page officielle (higher volumes)"
     },
     "defaultMonthlyPrice": 20,
     "affiliateLink": "https://manifestai.io",
     "websiteUrl": "https://manifestai.io",
-    "ogImageUrl": "",
+    "ogImageUrl": "/og-screenshots/manifest-ai.jpg",
     "logo": "",
     "tool_type": "ia",
     "host_app": null,
@@ -22167,16 +22166,16 @@
     "slug": "microsoft-365-copilot",
     "name": "Microsoft 365 Copilot",
     "categoryId": "ai-general",
-    "shortDescription": "Couche IA intégrée à Microsoft 365 : Word, Excel, Teams et Outlook.",
-    "shortDescriptionEn": "AI layer built into Microsoft 365: Word, Excel, Teams and Outlook.",
+    "shortDescription": "Assistant IA intégré aux applications Microsoft 365 (Word, Excel, Outlook, Teams, PowerPoint) qui génère du contenu, résume des documents, crée des présentations et facilite la collaboration.",
+    "shortDescriptionEn": "AI assistant built into Microsoft 365 apps (Word, Excel, Outlook, Teams, PowerPoint) that generates content, summarizes documents, creates presentations, and enables workplace collaboration.",
     "pricing": {
-      "free": "Non disponible",
-      "paid": "30$/utilisateur/mois en complément de M365"
+      "free": "Essai gratuit disponible ; fonctionnalités intégrées à Microsoft 365 existant",
+      "paid": "Copilot Pro: Montants sur la page officielle (abonnement annuel ou mensuel)"
     },
     "defaultMonthlyPrice": 25,
     "affiliateLink": "https://www.microsoft.com/microsoft-365/copilot",
     "websiteUrl": "https://www.microsoft.com/microsoft-365/copilot",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/microsoft-365-copilot.jpg",
+    "ogImageUrl": "/og-screenshots/microsoft-365-copilot.jpg",
     "logo": "",
     "tool_type": "bundle",
     "host_app": null,
@@ -25523,16 +25522,16 @@
     "slug": "pacdora",
     "name": "Pacdora",
     "categoryId": "design-tools",
-    "shortDescription": "Plateforme packaging 3D pour dielines, mockups et rendus produits.",
-    "shortDescriptionEn": "3D packaging platform for dielines, mockups, and product renders.",
+    "shortDescription": "Plateforme en ligne pour designers d'emballage, offrant générateur de mockups 3D, templates dieline personnalisables et logiciel de modélisation 3D sans expérience requise.",
+    "shortDescriptionEn": "Online packaging design platform providing 3D mockup generator, customizable dieline templates, and 3D modeling tools—no design experience required.",
     "pricing": {
-      "free": "Essai ou plan gratuit selon usage",
-      "paid": "À partir de 29€/mois environ"
+      "free": "Plan gratuit incluant 5 000+ mockups, uploads illimités, 50 crédits IA/mois, support basique, génération vidéo IA 480p, arrière-plan IA 1K.",
+      "paid": "Lite: $9/month billed annually ; Pro: $17/user/month billed annually ; Business: $59/user/month billed annually"
     },
     "defaultMonthlyPrice": 29,
     "affiliateLink": "",
     "websiteUrl": "https://www.pacdora.com",
-    "ogImageUrl": "https://cdn.pacdora.com/symbol-icon/9b549436-ad57-48cf-8b3e-cb8afdafa4a3.webp",
+    "ogImageUrl": "https://cdn.pacdora.com/ui/topic/4d427c21-4856-4677-bd5a-a716e3e3b6ae.webp",
     "logo": "",
     "tool_type": "satellite",
     "host_app": null,
@@ -27196,11 +27195,11 @@
     "slug": "plasticity",
     "name": "Plasticity",
     "categoryId": "design-tools",
-    "shortDescription": "Modeleur 3D CAD rapide pour concepts produit, hard surface et formes précises.",
-    "shortDescriptionEn": "Fast CAD modeler for product concepts, hard surface, and precise forms.",
+    "shortDescription": "Modeleur 3D NURBS basé sur les kernels Parasolid et xNURBS, conçu pour surfacing CAD et design concept sans historique de modélisation.",
+    "shortDescriptionEn": "NURBS-based 3D modeler using Parasolid and xNURBS kernels, designed for CAD surfacing and concept design without constraint-laden history workflows.",
     "pricing": {
-      "free": "Essai ou plan gratuit selon usage",
-      "paid": "À partir de 12€/mois environ"
+      "free": "Essai gratuit complet et sans limitation pour 30 jours (fonctionnalités identiques à version payante).",
+      "paid": "Indie or Studio (one-time): $149 (one-time purchase, perpetual license)"
     },
     "defaultMonthlyPrice": 12,
     "affiliateLink": "",
@@ -34388,16 +34387,16 @@
     "slug": "solidworks",
     "name": "SolidWorks",
     "categoryId": "design-tools",
-    "shortDescription": "CAO industrielle paramétrique pour conception produit et mécanique.",
-    "shortDescriptionEn": "Parametric industrial CAD for product and mechanical design.",
+    "shortDescription": "Logiciel CAO 3D (Conception Assistée par Ordinateur) professionnel de Dassault Systèmes pour la modélisation de pièces, assemblages et mises en plan. Inclut des outils de simulation, visualisation photorealiste et gestion de données.",
+    "shortDescriptionEn": "Professional 3D CAD software by Dassault Systèmes for part modeling, assemblies, and drawings. Includes simulation tools, photorealistic rendering, and data management.",
     "pricing": {
-      "free": "Essai ou plan gratuit selon usage",
-      "paid": "À partir de 250€/mois environ"
+      "free": "Pas de version gratuite. Essai disponible sur demande.",
+      "paid": "Standard (perpetual license): montants sur la page officielle ; Professional (perpetual license): environ €346-458/mois en abonnement annuel ou équivalent USD ; Premium (perpetual license): environ €458/mois en abonnement annuel ou équivalent USD ; Ultimate (2026 new): montants sur la page officielle (contact expert)"
     },
     "defaultMonthlyPrice": 250,
     "affiliateLink": "",
     "websiteUrl": "https://www.solidworks.com",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/solidworks.jpg",
+    "ogImageUrl": "https://www.solidworks.com/sites/default/filesd10/styles/bg_large/public/2026-02/solidworks-AI-companions-battlebots-video-cover.jpg.webp?itok=lnj4ssfA",
     "logo": "",
     "tool_type": "satellite",
     "host_app": null,
@@ -34931,11 +34930,11 @@
     "slug": "stark",
     "name": "Stark standalone",
     "categoryId": "design-tools",
-    "shortDescription": "Outil accessibilité design pour contrastes, annotations et conformité.",
-    "shortDescriptionEn": "Design accessibility tool for contrast, annotations, and compliance.",
+    "shortDescription": "Suite intégrée d'outils d'accessibilité pour détecter et corriger les problèmes d'accessibilité. Plugins pour Figma, Sketch, Adobe XD ; extensions navigateur ; scanning de dépôts code. Inclut vérification de contraste, analyse WCAG et rapports temps réel.",
+    "shortDescriptionEn": "Integrated accessibility compliance suite to detect and fix accessibility issues. Plugins for Figma, Sketch, Adobe XD; browser extension; code repository scanning. Includes contrast checking, WCAG analysis, real-time reporting.",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Tier gratuit avec contrast checker et color blindness simulator.",
+      "paid": "Free: €0 ; Pro: $99/an ; Team/Organization: $6000/an (minimum pour CI/CD) ; Enterprise: montants sur devis (SSO, bulk licensing)"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
@@ -39172,16 +39171,16 @@
     "slug": "vectorworks",
     "name": "Vectorworks",
     "categoryId": "design-tools",
-    "shortDescription": "CAO/BIM et conception 2D/3D très utilisée en architecture, scénographie et événementiel.",
-    "shortDescriptionEn": "CAD/BIM and 2D/3D design used in architecture, scenography, and events.",
+    "shortDescription": "Plateforme 3D CAO intégrée pour architecture, paysagisme, design d'éclairage et scénographie. Offre BIM natif, outils de modélisation 3D avancés et documentation projet. Disponible en plusieurs variantes selon la spécialité : Architect, Landmark, Spotlight et Fundamentals.",
+    "shortDescriptionEn": "Integrated 3D CAD platform for architecture, landscape design, lighting design, and scenic design. Offers native BIM, advanced 3D modeling tools, and project documentation. Available in specialist variants: Architect, Landmark, Spotlight, and Fundamentals.",
     "pricing": {
-      "free": "Essai ou plan gratuit selon usage",
-      "paid": "À partir de 153€/mois environ"
+      "free": "Pas de version gratuite grand public. Accès académique disponible pour les étudiants.",
+      "paid": "Service Select Subscription: Montants sur la page officielle ; Cloud Services: Montants sur la page officielle"
     },
     "defaultMonthlyPrice": 153,
     "affiliateLink": "",
     "websiteUrl": "https://www.vectorworks.net",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/vectorworks.jpg",
+    "ogImageUrl": "/og-screenshots/vectorworks.jpg",
     "logo": "",
     "tool_type": "satellite",
     "host_app": null,
@@ -39679,11 +39678,11 @@
     "slug": "voicetypr",
     "name": "VoiceTypr",
     "categoryId": "ai-general",
-    "shortDescription": "Dictée vocale IA hors-ligne et multi-langue, transcription en temps réel.",
-    "shortDescriptionEn": "Offline AI voice dictation, multi-language, real-time transcription.",
+    "shortDescription": "Application de dictée vocale offline-first pour Mac et Windows permettant écrire par la voix dans n'importe quelle app (Cursor, ChatGPT, Claude, Slack, Gmail, docs) en utilisant des modèles IA locaux.",
+    "shortDescriptionEn": "Offline-first voice-to-text app for Mac and Windows enabling voice dictation in any app (Cursor, ChatGPT, Claude, Slack, Gmail, docs) using local AI models.",
     "pricing": {
-      "free": "Plan gratuit limité",
-      "paid": "Pro 49$/mois"
+      "free": "Essai gratuit 3 jours, pas de carte bancaire requise",
+      "paid": "Pro: 39 $ (1 appareil, licence perpétuelle) ; Plus: 69 $ (2 appareils, licence perpétuelle) ; Max: 99 $ (4 appareils, licence perpétuelle)"
     },
     "defaultMonthlyPrice": 42,
     "affiliateLink": "https://voicetypr.com",

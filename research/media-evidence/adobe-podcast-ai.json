@@ -1,0 +1,21 @@
+{
+  "slug": "adobe-podcast-ai",
+  "verified_on": "2026-08-31",
+  "mode": "fallback_screenshot",
+  "discovery": {
+    "official_media_found": false,
+    "official_pages_checked": [
+      "https://podcast.adobe.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "screenshot",
+      "url": "/tool-media/adobe-podcast/enhance-speech.webp",
+      "source_page_url": "https://podcast.adobe.com",
+      "official": false,
+      "alt": "Adobe Podcast AI official product preview",
+      "capture_method": "browser_screenshot"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "slug": "hume-ai",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://www.hume.ai"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://hume.ai/opengraph-image.jpg?opengraph-image.6b4cd84b.jpg",
+      "source_page_url": "https://www.hume.ai",
+      "official": true,
+      "alt": "Official product preview"
+    }
+  ]
+}

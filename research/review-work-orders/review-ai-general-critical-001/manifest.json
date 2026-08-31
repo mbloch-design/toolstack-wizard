@@ -1,0 +1,167 @@
+{
+  "batch": "review-ai-general-critical-001",
+  "quality_version": "catalog-review-v1",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tools": [
+    {
+      "file": "krea.json",
+      "required_action": "resolve_duplicate_without_research",
+      "slug": "krea",
+      "status": "DUPLICATE"
+    },
+    {
+      "file": "hume-ai.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "hume-ai",
+      "status": "QUEUED"
+    },
+    {
+      "file": "microsoft-365-copilot.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "microsoft-365-copilot",
+      "status": "QUEUED"
+    },
+    {
+      "file": "voicetypr.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "voicetypr",
+      "status": "QUEUED"
+    },
+    {
+      "file": "manifest-ai.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "manifest-ai",
+      "status": "QUEUED"
+    },
+    {
+      "file": "adobe-podcast-ai.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "adobe-podcast-ai",
+      "status": "QUEUED"
+    },
+    {
+      "file": "autodesk-flow-studio.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "autodesk-flow-studio",
+      "status": "QUEUED"
+    },
+    {
+      "file": "bolt-new.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "bolt-new",
+      "status": "QUEUED"
+    },
+    {
+      "file": "chatgpt.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "chatgpt",
+      "status": "QUEUED"
+    },
+    {
+      "file": "claude.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "claude",
+      "status": "QUEUED"
+    },
+    {
+      "file": "cursor.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "cursor",
+      "status": "QUEUED"
+    },
+    {
+      "file": "deepseek.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "deepseek",
+      "status": "QUEUED"
+    },
+    {
+      "file": "elevenlabs.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "elevenlabs",
+      "status": "QUEUED"
+    },
+    {
+      "file": "firefly.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "firefly",
+      "status": "QUEUED"
+    },
+    {
+      "file": "gemini.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "gemini",
+      "status": "QUEUED"
+    },
+    {
+      "file": "github-copilot.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "github-copilot",
+      "status": "QUEUED"
+    },
+    {
+      "file": "heygen.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "heygen",
+      "status": "QUEUED"
+    },
+    {
+      "file": "adobe-enhance-speech.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "adobe-enhance-speech",
+      "status": "PUBLISHED"
+    },
+    {
+      "file": "anthropic.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "anthropic",
+      "status": "PUBLISHED"
+    },
+    {
+      "file": "descript.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "descript",
+      "status": "PUBLISHED"
+    },
+    {
+      "file": "figma-weave.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "figma-weave",
+      "status": "PUBLISHED"
+    },
+    {
+      "file": "flux.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "flux",
+      "status": "PUBLISHED"
+    },
+    {
+      "file": "guideless.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "guideless",
+      "status": "PUBLISHED"
+    },
+    {
+      "file": "kling-ai.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "kling-ai",
+      "status": "PUBLISHED"
+    },
+    {
+      "file": "magnific-ai.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "magnific-ai",
+      "status": "PUBLISHED"
+    }
+  ]
+}

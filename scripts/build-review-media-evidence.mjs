@@ -23,15 +23,19 @@ function normalizedKey(url) {
 
 for (const item of manifest.tools) {
   const slug = item.slug;
-  if (statusBySlug.get(slug) === "PUBLISHED") continue;
+  if (statusBySlug.get(slug) !== "QUEUED") continue;
   const tool = bySlug.get(slug);
   const config = selections[slug] || {};
   const found = candidates[slug]?.candidates || [];
-  const selected = (config.candidate_indexes || []).map((index) => found[index]).filter(Boolean);
+  const selected = [
+    ...(config.candidate_indexes || []).map((index) => found[index]).filter(Boolean),
+    ...(config.urls || []).map((url) => ({ url, alt: `${tool.name} product preview` })),
+  ];
   const existing = config.include_existing === false ? [] : [tool?.ogImageUrl, ...(tool?.galleryImages || [])]
     .filter(Boolean)
     .map((url) => ({ url, alt: `${tool.name} official product preview`, existing: true }));
   const combined = [...selected, ...existing];
+  const hasRemoteSelection = selected.some((entry) => /^https?:/.test(entry.url) && !entry.url.includes("tooltrim.com/og-screenshots/"));
   const seen = new Set();
   const items = [];
   for (const candidate of combined) {
@@ -39,7 +43,7 @@ for (const item of manifest.tools) {
     if (seen.has(key)) continue;
     seen.add(key);
     const localFallback = /^\/?(?:tool-media|og-screenshots)\//.test(candidate.url) || candidate.url.includes("tooltrim.com/og-screenshots/");
-    if (selected.length && localFallback) continue;
+    if (hasRemoteSelection && localFallback) continue;
     items.push({
       kind: "image",
       url: candidate.url,

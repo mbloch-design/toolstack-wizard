@@ -1,0 +1,682 @@
+{
+  "krea": {
+    "slug": "krea",
+    "page_url": "https://www.krea.com/",
+    "candidates": [
+      {
+        "url": "https://www.krea.com/assets/custom/images/intro.gif",
+        "alt": "gif",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://www.krea.com/assets/custom/images/close.png",
+        "alt": "close",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://www.krea.com/resources/images/System/krea-sm.png",
+        "alt": "Official product preview",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "hume-ai": {
+    "slug": "hume-ai",
+    "page_url": "https://www.hume.ai/",
+    "candidates": [
+      {
+        "url": "https://hume.ai/opengraph-image.jpg?opengraph-image.6b4cd84b.jpg",
+        "alt": "Official product preview",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "microsoft-365-copilot": {
+    "slug": "microsoft-365-copilot",
+    "page_url": "https://www.microsoft.com/fr-fr/microsoft-365-copilot",
+    "candidates": [
+      {
+        "url": "https://uhf.microsoft.com/images/microsoft/RE1Mu3b.png",
+        "alt": "Microsoft",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "voicetypr": {
+    "slug": "voicetypr",
+    "page_url": "https://voicetypr.com/",
+    "candidates": [
+      {
+        "url": "https://voicetypr.com/voicetypr-og.png",
+        "alt": "Official product preview",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "manifest-ai": {
+    "slug": "manifest-ai",
+    "page_url": "https://manifestai.io/",
+    "candidates": []
+  },
+  "adobe-podcast-ai": {
+    "slug": "adobe-podcast-ai",
+    "page_url": "https://podcast.adobe.com/",
+    "candidates": []
+  },
+  "autodesk-flow-studio": {
+    "slug": "autodesk-flow-studio",
+    "page_url": "https://www.autodesk.com/products/flow-studio/overview",
+    "candidates": [
+      {
+        "url": "https://images.ctfassets.net/v7wr16nrr0mz/62WC7O2IfOpPzyQb2p2nYa/bda458bb4a6b4977294e5eda6fb2c097/community-thumb-788x1050.jpg",
+        "alt": "3D animated woman wearing a cap and casual clothes standing outdoors near furniture and a TV",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.ctfassets.net/v7wr16nrr0mz/2AXAv864qc6exP4lAraDbw/d73b3f5984501a8c87deb6f87af0a2da/youtube-thumb-788x1050.jpg",
+        "alt": "3D alien character smiling while riding a carnival swing beside a child in a colorful amusement park",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.ctfassets.net/v7wr16nrr0mz/QKKXuUib31qn7gIzrJQV7/a9f874b3eeb7dfa56194e8873e6c2b42/blog-thumb-788x1050.jpg",
+        "alt": "3D animated character with red hair and green sweater smiling brightly in an outdoor setting",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://images.ctfassets.net/v7wr16nrr0mz/2MyHNaARqI5QNRxDORtBG0/6351a9637ee07ab6e36e30ebfe132755/forum-thumb-788x1050.jpg",
+        "alt": "3D animated man with dark beard typing at a desk under warm lighting in an office",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "bolt-new": {
+    "slug": "bolt-new",
+    "page_url": "https://bolt.new/",
+    "candidates": [
+      {
+        "url": "https://bolt.new/static/marketing/homepage/value/build-without-breaking.png",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://bolt.new/static/marketing/homepage/features/graph.png",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://bolt.new/static/marketing/homepage/personas/agency.png",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://bolt.new/static/marketing/homepage/personas/students.png",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://bolt.new/static/marketing/footer/bolt-bottom.webp",
+        "alt": "bolt",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://bolt.new/static/social_preview_index.jpg",
+        "alt": "Official product preview",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "chatgpt": {
+    "slug": "chatgpt",
+    "page_url": "https://chat.openai.com",
+    "candidates": [],
+    "error": "HTTP 403"
+  },
+  "claude": {
+    "slug": "claude",
+    "page_url": "https://claude.com/",
+    "candidates": [
+      {
+        "url": "https://cdn.sanity.io/images/4zrzovbb/claude-com/6c36adaaf60ecdde313a93ad255eef573ea4de97-1200x630.jpg?w=1200&h=630&fit=crop",
+        "alt": "Official product preview",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "cursor": {
+    "slug": "cursor",
+    "page_url": "https://cursor.com/",
+    "candidates": [
+      {
+        "url": "https://cursor.com/marketing-static/_next/image?url=https%3A%2F%2Fptht05hbb1ssoooe.public.blob.vercel-storage.com%2Fassets%2Fmisc%2Fasset-cc24ca462279ca23250c.jpg&w=3840&q=70",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cursor.com/marketing-static/demos/cursor-wallpaper.png",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://ptht05hbb1ssoooe.public.blob.vercel-storage.com/assets/og/opengraph-default.png",
+        "alt": "Official product preview",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "deepseek": {
+    "slug": "deepseek",
+    "page_url": "https://www.deepseek.com/",
+    "candidates": [
+      {
+        "url": "https://www.deepseek.com/images/qr-wechat.png",
+        "alt": "QR Code",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.deepseek.com/images/deepseek-chat-open-graph-image.jpeg",
+        "alt": "Official product preview",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "elevenlabs": {
+    "slug": "elevenlabs",
+    "page_url": "https://elevenlabs.io/",
+    "candidates": [
+      {
+        "url": "https://elevenlabs.io/_next/image?url=https%3A%2F%2Feleven-public-cdn.elevenlabs.io%2Fmarketing_website%2F_next%2Fstatic%2Fmedia%2Feleven-creative.f5fbfcf5.png&w=3840&q=80",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://elevenlabs.io/cover.png",
+        "alt": "Official product preview",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "firefly": {
+    "slug": "firefly",
+    "page_url": "https://firefly.adobe.com/",
+    "candidates": []
+  },
+  "gemini": {
+    "slug": "gemini",
+    "page_url": "https://gemini.google.com",
+    "candidates": [],
+    "error": "fetch failed"
+  },
+  "github-copilot": {
+    "slug": "github-copilot",
+    "page_url": "https://github.com/features/copilot",
+    "candidates": [
+      {
+        "url": "https://images.ctfassets.net/wfutmusr1t3h/4KxWJH8PVVXdqBLs1V3UJ8/0079958c464847c85fe7708ddd990889/github-copilot-social-img.png",
+        "alt": "Official product preview",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "heygen": {
+    "slug": "heygen",
+    "page_url": "https://www.heygen.com/",
+    "candidates": [
+      {
+        "url": "https://www.heygen.com/_next/image?url=%2Fassets_2025_redesign%2F_next%2Fstatic%2Fimmutable%2Fmedia%2Fhero-left.10_gc6gwg7h-8.png&w=3840&q=75",
+        "alt": "",
+        "width": 1433,
+        "height": 4459
+      },
+      {
+        "url": "https://cdn.sanity.io/images/pdhqcmb1/production/579e83ff34c4c832744efaedb9681d255e58dc13-1200x630.png?fit=max&fm=png",
+        "alt": "Official product preview",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "adobe-enhance-speech": {
+    "slug": "adobe-enhance-speech",
+    "page_url": "https://podcast.adobe.com/enhance",
+    "candidates": [
+      {
+        "url": "https://podcast.adobe.com/enhance-speech.jpg",
+        "alt": "Official product preview",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "anthropic": {
+    "slug": "anthropic",
+    "page_url": "https://claude.com/platform/api",
+    "candidates": [
+      {
+        "url": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d18f61fb5c21c81781_og-claude-api.jpg",
+        "alt": "Official product preview",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "descript": {
+    "slug": "descript",
+    "page_url": "https://www.descript.com/",
+    "candidates": [
+      {
+        "url": "https://static-cdn.descript.com/descript-website/images/nav-bg-texture-1.jpg",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://www.descript.com/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2Flsw4j9eq%2Fproduction%2Fd57caa94647cd700ce209af3b619b56241a5c722-1280x921.webp%3Ffit%3Dmax%26auto%3Dformat&w=3840&q=75",
+        "alt": "Record",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.sanity.io/images/lsw4j9eq/production/126b70d12a747eb60c81bad5b72942f7d75041dd-1200x630.jpg?fit=max&auto=format",
+        "alt": "Official product preview",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "figma-weave": {
+    "slug": "figma-weave",
+    "page_url": "https://weave.figma.com/",
+    "candidates": [
+      {
+        "url": "https://cdn.prod.website-files.com/681b040781d5b5e278a69989/69032e91ec29a8f27508fa9c_Image-Figma_acc.avif",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/681b040781d5b5e278a69989/681cd65ba87c69df161752e5_3d_card.avif",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68349ea45685e2905f5c21e6_3D_RODIN_hero_mobile.avif",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/681b040781d5b5e278a69989/681cd77722078ff43fe428f3_hcard-color%20reference.avif",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68349defe03a701656079aac_Color-diff_hero_mobile.avif",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/681b040781d5b5e278a69989/681cd7cbc22419b32bb9d8d8_hcard%20-%20STABLE%20DIFFUSION.avif",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68349df097acbeb0e747fb60_Diffusion-diff_hero_mobile.avif",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6837510acbe777269734b387_bird_desktop.avif",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/681b040781d5b5e278a69989/683751c043700044e036204f_bird_mobile.avif",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/681b040781d5b5e278a69989/681cde667778f6f5a7e80bf2_hcard%20-%20text.avif",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6835ce8a653081a97d92eebd_VIDEO_hero_Desktop.avif",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6835ce9cc9475b88f57c57da_VIDEO_hero_mobile.png",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6835ce9cc9475b88f57c57da_VIDEO_hero_mobile-p-500.png",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6825887e82ac8a8bb8139ebd_GPT%20img%201.avif",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6825887d618a9071dd147d5f_SD%203.5.avif",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6825887eda73c12eaa4c3ed8_Recraft%20V3.avif",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6825887d9b7eb0abc91263b6_Ideogram%20V2.avif",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/681b040781d5b5e278a69989/6825887d59ff2f86b8fba523_Bria.avif",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68223c9e9705b88c35e76dec_Default%402x.avif",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68223c9e9705b88c35e76dec_Default%402x-p-500.png",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68223c9e9705b88c35e76dec_Default%402x-p-800.png",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68224564b78bd840120b7a38_Blur%402x.avif",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68224564b78bd840120b7a38_Blur%402x-p-500.avif",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68224564b78bd840120b7a38_Blur%402x-p-800.avif",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563d93b3ce65b54f07b_Invert%402x.avif",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563d93b3ce65b54f07b_Invert%402x-p-500.avif",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563d93b3ce65b54f07b_Invert%402x-p-800.avif",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563d93b3ce65b54f07b_Invert%402x-p-1080.avif",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563d93b3ce65b54f07b_Invert%402x-p-1600.avif",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.prod.website-files.com/681b040781d5b5e278a69989/68224563af147b5d7c2496ff_Crop%402x.avif",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "flux": {
+    "slug": "flux",
+    "page_url": "https://bfl.ai/",
+    "candidates": [
+      {
+        "url": "https://bfl.ai/_next/image?url=https%3A%2F%2Fcdn.sanity.io%2Fimages%2F2gpum2i6%2Fproduction%2F4d91cd11acb55d8a6380b592a76823f4c803dcc0-3382x1968.png%3Fw%3D1920%26q%3D70%26auto%3Dformat%26fit%3Dmax&w=3840&q=75",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.sanity.io/images/2gpum2i6/production/bd58d0dcb1c73b25b1be03d7b5c3d2480e087f50-3426x540.png",
+        "alt": "Mistral",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.sanity.io/images/2gpum2i6/production/fe1c046c787aa6c64198dc71c91f0a874dff4953-1896x312.png",
+        "alt": "Magnific",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.sanity.io/images/2gpum2i6/production/209003c262317a00d09034b675831d1f859e0d56-1060x268.png",
+        "alt": "Adobe",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.sanity.io/images/2gpum2i6/production/143677115367965ed9fe43669d06272c57d14b87-1408x301.png",
+        "alt": "Microsoft",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.sanity.io/images/2gpum2i6/production/78ee28b5c9a96921f03f46779e9ea39363f5aa3b-7704x1768.png",
+        "alt": "Picsart",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.sanity.io/images/2gpum2i6/production/7d25fe5a4cadad77b24f454fadeab35a36bfa4e3-1200x207.png",
+        "alt": "Gamma",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://cdn.sanity.io/images/2gpum2i6/production/f1889321d14478eea16b279a5e0f45ec4218b198-2702x438.png",
+        "alt": "OpenArt",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://bfl.ai/opengraph-image-j8qpfc.png?47e2121a0eb4d5b0",
+        "alt": "Official product preview",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://bfl.ai/og-custom-bg.jpg",
+        "alt": "Official product preview",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  },
+  "guideless": {
+    "slug": "guideless",
+    "page_url": "https://guideless.app",
+    "candidates": [],
+    "error": "fetch failed"
+  },
+  "kling-ai": {
+    "slug": "kling-ai",
+    "page_url": "https://kling.ai/",
+    "candidates": []
+  },
+  "magnific-ai": {
+    "slug": "magnific-ai",
+    "page_url": "https://www.magnific.com/",
+    "candidates": [
+      {
+        "url": "https://media.magnific.com/home/relaunch/media/hero/images/magnific-hero-05-2x.webp?w=1974&h=1175",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.magnific.com/home/relaunch/media/hero/images/magnific-hero-05-1x.webp?w=1480&h=881",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.magnific.com/home/relaunch/media/ai-models/GPT2.webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.magnific.com/home/relaunch/media/useCases/card-alltools-3-2x.webp?w=930&h=1090",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.magnific.com/home/relaunch/media/useCases/card-yourentire-2x.webp?w=2860&h=1252",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.magnific.com/home/relaunch/media/useCases/card-oneplace-2x.webp?w=2000",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.magnific.com/home/relaunch/media/useCases/card-workflow-2x.webp?w=477",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.magnific.com/home/relaunch/media/useCases/advertising.webp",
+        "alt": "Advertising",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.magnific.com/home/relaunch/media/useCases/product-shots.webp",
+        "alt": "Product shots",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.magnific.com/home/relaunch/media/useCases/brand-campaign.webp",
+        "alt": "Brand campaigns",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.magnific.com/home/relaunch/media/useCases/filmmaking-preview.webp",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.magnific.com/home/relaunch/media/originals/preview-2.webp?w=640&h=360",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.magnific.com/home/relaunch/media/originals/preview-1.webp?w=640&h=360",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.magnific.com/home/relaunch/media/originals/preview-4.webp?w=640&h=360",
+        "alt": "",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.magnific.com/home/relaunch/media/teams/ai-tools.webp?w=1252&h=694",
+        "alt": "All the AI tools in a single place",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.magnific.com/home/relaunch/media/teams/unlimited-users.webp?w=1252&h=694",
+        "alt": "Unlimited users, flexible credits",
+        "width": 0,
+        "height": 0
+      },
+      {
+        "url": "https://media.magnific.com/meta-tags-social/mg-home-og.jpg?w=1200&h=675",
+        "alt": "Official product preview",
+        "width": 0,
+        "height": 0
+      }
+    ]
+  }
+}

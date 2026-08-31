@@ -1,0 +1,20 @@
+{
+  "slug": "stark",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://www.getstark.co"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://res.cloudinary.com/stark-lab/image/upload/v1761273066/marketing/meta/homepage_fzpkxd.png",
+      "source_page_url": "https://www.getstark.co",
+      "official": true,
+      "alt": "Stark standalone official product preview"
+    }
+  ]
+}

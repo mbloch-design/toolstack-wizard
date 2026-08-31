@@ -1,0 +1,277 @@
+{
+  "batch": "review-ai-general-critical-001",
+  "current": {
+    "affiliate_url": "https://firefly.adobe.com",
+    "alternatives": [
+      "midjourney",
+      "canva"
+    ],
+    "category": "ai-general",
+    "cons": [
+      "Fonctionnement aux crédits mensuels qui peut limiter le volume.",
+      "Pertinent surtout au sein de l'écosystème Adobe.",
+      "Qualité/style parfois en retrait de modèles tiers spécialisés."
+    ],
+    "cons_en": [
+      "Monthly credit model can limit volume.",
+      "Most relevant within the Adobe ecosystem.",
+      "Quality/style sometimes trails specialised third-party models."
+    ],
+    "host_app": null,
+    "id": "firefly",
+    "long_description": "Adobe Firefly, c'est la famille de modèles d'IA générative d'Adobe. On la connaît surtout via Generative Fill dans Photoshop : tu sélectionnes une zone, tu décris ce que tu veux, et l'IA complète ou remplace l'image de façon bluffante. Firefly existe aussi en version web autonome pour générer des images, du texte stylisé ou des vecteurs.\n\nSon argument fort, ce n'est pas la qualité artistique pure (où Midjourney reste devant), mais l'intégration et la sécurité juridique : Firefly est entraîné sur des contenus sous licence (Adobe Stock), ce qui le rend utilisable en contexte commercial sans crainte. Le modèle est à crédits : tu en as d'inclus dans ton abonnement Creative Cloud, et des plans payants (à partir d'environ 10$/mois) pour aller plus loin.\n\nÀ qui ça s'adresse : à tous ceux qui sont déjà dans l'écosystème Adobe. Generative Fill seul justifie de l'utiliser. Si tu n'es pas chez Adobe et que tu veux la meilleure qualité ou le plus de contrôle, Midjourney ou d'autres modèles seront plus pertinents.",
+    "long_description_en": "Adobe Firefly is Adobe's family of generative AI models. It's best known through Generative Fill in Photoshop: you select an area, describe what you want, and the AI completes or replaces the image strikingly. Firefly also exists as a standalone web app to generate images, stylized text or vectors.\n\nIts strong argument isn't pure artistic quality (where Midjourney stays ahead), but integration and legal safety: Firefly is trained on licensed content (Adobe Stock), making it usable commercially without worry. The model is credit-based: you get some included in your Creative Cloud subscription, plus paid plans (from around $10/month) to go further.\n\nWho it's for: anyone already in the Adobe ecosystem. Generative Fill alone justifies using it. If you're not on Adobe and want the best quality or most control, Midjourney or other models will fit better.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://tooltrim.com/og-screenshots/firefly.jpg"
+    },
+    "name": "Adobe Firefly",
+    "pricing": {
+      "free": "Crédits gratuits inclus dans Adobe CC, et usage limité gratuit",
+      "paid": "Plans Firefly à partir d'environ 10$/mois pour plus de crédits"
+    },
+    "pricing_en": {
+      "free": "Free credits included in Adobe CC, plus a limited free tier",
+      "paid": "Firefly plans from around $10/month for more credits"
+    },
+    "pricing_v5": {
+      "billing_model": "credits",
+      "billing_options": [
+        {
+          "label_en": "Free / included credits",
+          "label_fr": "Free / crédits inclus",
+          "price_monthly_eur": 0,
+          "value": "free"
+        },
+        {
+          "label_en": "Included in Creative Cloud",
+          "label_fr": "Inclus Creative Cloud",
+          "price_monthly_eur": 0,
+          "value": "included"
+        },
+        {
+          "label_en": "Firefly credits",
+          "label_fr": "Crédits Firefly",
+          "needs_verification": true,
+          "value": "credits"
+        },
+        {
+          "label_en": "I don’t know",
+          "label_fr": "Je ne sais pas",
+          "needs_verification": true,
+          "value": "unknown"
+        }
+      ],
+      "cautions": [
+        "Les crédits génératifs et plans Firefly peuvent dépendre de Creative Cloud."
+      ],
+      "compare_plan_kind": "free",
+      "compare_plan_name": "Free",
+      "compare_price_monthly_eur": 0,
+      "currency": "EUR",
+      "location_sensitive": false,
+      "official_source_url": "https://www.adobe.com/products/firefly.html",
+      "price_original": 0,
+      "price_original_currency": "EUR",
+      "price_reliability": "high",
+      "source_domain": "adobe.com",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-06-15"
+    },
+    "pros": [
+      "Génération image, vidéo et audio par IA.",
+      "Intégré nativement aux apps Adobe (Remplissage génératif, etc.).",
+      "Couvre plusieurs médias (image, vidéo, son, parole).",
+      "Fonctionne aux crédits, dans l'écosystème Creative Cloud."
+    ],
+    "pros_en": [
+      "AI generation of image, video and audio.",
+      "Natively integrated into Adobe apps (Generative Fill, etc.).",
+      "Covers several media (image, video, sound, speech).",
+      "Credit-based, within the Creative Cloud ecosystem."
+    ],
+    "short_description": "La génération d'images IA intégrée dans Adobe CC.",
+    "short_description_en": "AI image generation integrated in Adobe CC.",
+    "slug": "firefly",
+    "source_url": "https://www.adobe.com/products/firefly.html",
+    "source_verified_on": "2026-06-15",
+    "use_cases": [
+      "Générer des images ou variations à intégrer dans un projet.",
+      "Utiliser le Remplissage génératif dans Photoshop.",
+      "Créer des éléments vidéo ou audio par IA."
+    ],
+    "use_cases_en": [
+      "Generate images or variations to use in a project.",
+      "Use Generative Fill in Photoshop.",
+      "Create video or audio elements with AI."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous n'utilisez pas d'IA générative.",
+        "Vous préférez un modèle tiers (Midjourney, DALL·E).",
+        "Vous voulez éviter le fonctionnement aux crédits."
+      ],
+      "keepIf": [
+        "Vous générez des images ou variations par IA pour vos créations.",
+        "Vous voulez une IA générative intégrée à Photoshop, Premiere et aux apps Adobe.",
+        "Vous avez besoin d'un cadre d'usage adapté à la production créative."
+      ],
+      "threshold": "Firefly s'impose quand l'IA générative doit s'intégrer nativement à un flux Adobe (Photoshop, Premiere) ; pour un usage isolé, un modèle tiers peut convenir."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You don't use generative AI.",
+        "You prefer a third-party model (Midjourney, DALL·E).",
+        "You want to avoid a credit-based model."
+      ],
+      "keepIf": [
+        "You generate images or variations with AI for your creative work.",
+        "You want generative AI built into Photoshop, Premiere and Adobe apps.",
+        "You need a usage framework suited to creative production."
+      ],
+      "threshold": "Firefly makes sense when generative AI must integrate natively into an Adobe flow (Photoshop, Premiere); for isolated use, a third-party model may fit."
+    },
+    "website_url": "https://firefly.adobe.com"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "bundle_parent": "adobe-creative-cloud",
+    "en": {
+      "cons": [
+        "Monthly credit model can limit volume.",
+        "Most relevant within the Adobe ecosystem.",
+        "Quality/style sometimes trails specialised third-party models."
+      ],
+      "pros": [
+        "AI generation of image, video and audio.",
+        "Natively integrated into Adobe apps (Generative Fill, etc.).",
+        "Covers several media (image, video, sound, speech).",
+        "Credit-based, within the Creative Cloud ecosystem."
+      ],
+      "use_cases": [
+        "Generate images or variations to use in a project.",
+        "Use Generative Fill in Photoshop.",
+        "Create video or audio elements with AI."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You don't use generative AI.",
+          "You prefer a third-party model (Midjourney, DALL·E).",
+          "You want to avoid a credit-based model."
+        ],
+        "keepIf": [
+          "You generate images or variations with AI for your creative work.",
+          "You want generative AI built into Photoshop, Premiere and Adobe apps.",
+          "You need a usage framework suited to creative production."
+        ],
+        "threshold": "Firefly makes sense when generative AI must integrate natively into an Adobe flow (Photoshop, Premiere); for isolated use, a third-party model may fit."
+      }
+    },
+    "facts": {
+      "key_features": [
+        "Génération texte-vers-image et texte-vers-vidéo",
+        "Image-vers-vidéo",
+        "Génération de parole, de musique et d'effets sonores",
+        "Amélioration de la parole",
+        "Intégration native dans les apps Adobe (Remplissage génératif…)"
+      ],
+      "pricing_note": "Fonctionne aux crédits mensuels ; alimente aussi des fonctions dans Photoshop, Premiere Pro, InDesign (voir la fiche de la suite).",
+      "what": "Web app et famille de modèles d'IA générative d'Adobe pour la production créative (image, vidéo, audio).",
+      "what_en": "Adobe's web app and generative AI model family for creative production (image, video, audio)."
+    },
+    "fr": {
+      "cons": [
+        "Fonctionnement aux crédits mensuels qui peut limiter le volume.",
+        "Pertinent surtout au sein de l'écosystème Adobe.",
+        "Qualité/style parfois en retrait de modèles tiers spécialisés."
+      ],
+      "pros": [
+        "Génération image, vidéo et audio par IA.",
+        "Intégré nativement aux apps Adobe (Remplissage génératif, etc.).",
+        "Couvre plusieurs médias (image, vidéo, son, parole).",
+        "Fonctionne aux crédits, dans l'écosystème Creative Cloud."
+      ],
+      "relevant_for": [
+        "Créatifs",
+        "Designers",
+        "Équipes production"
+      ],
+      "use_cases": [
+        "Générer des images ou variations à intégrer dans un projet.",
+        "Utiliser le Remplissage génératif dans Photoshop.",
+        "Créer des éléments vidéo ou audio par IA."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous n'utilisez pas d'IA générative.",
+          "Vous préférez un modèle tiers (Midjourney, DALL·E).",
+          "Vous voulez éviter le fonctionnement aux crédits."
+        ],
+        "keepIf": [
+          "Vous générez des images ou variations par IA pour vos créations.",
+          "Vous voulez une IA générative intégrée à Photoshop, Premiere et aux apps Adobe.",
+          "Vous avez besoin d'un cadre d'usage adapté à la production créative."
+        ],
+        "threshold": "Firefly s'impose quand l'IA générative doit s'intégrer nativement à un flux Adobe (Photoshop, Premiere) ; pour un usage isolé, un modèle tiers peut convenir."
+      }
+    },
+    "slug": "firefly",
+    "sources": [
+      {
+        "label": "Adobe Firefly — description et fonctions (Wikipédia)",
+        "url": "https://en.wikipedia.org/wiki/Adobe_Firefly"
+      }
+    ],
+    "verified_on": "2026-07-23"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-ai-general-critical-001",
+    "batch_position": 22,
+    "blockers": [],
+    "catalog_hash": "sha256:6ea0cac8e89fdc12ce2ce122b2d3c1522127643962f8829fa3b61327fa4b2de2",
+    "category": "ai-general",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:664af51c81dc1b4ae84b7aaa6019066cb0f5cce71f20469367e34d57dceb6909",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Adobe Firefly",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:7c7c550379643164daf747183d2b6a045514764424a3e8776bf9fd33dc4f0ceb",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "firefly",
+    "source_url": "https://www.adobe.com/products/firefly.html",
+    "source_verified_on": "2026-06-15",
+    "status": "QUEUED"
+  }
+}

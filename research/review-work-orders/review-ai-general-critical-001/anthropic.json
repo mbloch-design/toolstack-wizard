@@ -1,0 +1,285 @@
+{
+  "batch": "review-ai-general-critical-001",
+  "current": {
+    "affiliate_url": "https://platform.claude.com/",
+    "alternatives": [
+      "openai-api",
+      "google-ai-studio"
+    ],
+    "category": "ai-general",
+    "cons": [
+      "Le coût peut augmenter avec l'usage ou les sièges.",
+      "Les fonctions avancées exigent une offre payante.",
+      "La qualité du paramétrage influence le résultat."
+    ],
+    "cons_en": [
+      "Costs can grow with usage or seats.",
+      "Advanced capabilities require a paid tier.",
+      "Setup quality affects the result."
+    ],
+    "host_app": null,
+    "id": "anthropic",
+    "long_description": "Anthropic API donne accès aux modèles Claude pour intégrer génération, raisonnement, analyse de documents et agents dans des applications.\n\nFonctions clés : Modèles Claude via API ; Tool use et sorties structurées ; Prompt caching et traitement par lots ; SDK et console développeur.\n\nRetenez-le lorsque l'usage récurrent remplace un workflow manuel ou fragmenté clairement identifié.",
+    "long_description_en": "The Anthropic API provides access to Claude models for generation, reasoning, document analysis, and agent workflows in applications.\n\nKey strengths: Focused product workflow.; Official documentation and active development.; Integrates into professional processes.; Entry path available before scaling..\n\nKeep it when recurring usage replaces a clear manual or fragmented workflow.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d18f61fb5c21c81781_og-claude-api.jpg"
+    },
+    "name": "Anthropic API",
+    "pricing": {
+      "free": "Aucun forfait API gratuit permanent confirmé. Des crédits d'essai peuvent être proposés selon le compte.",
+      "paid": "Claude Sonnet 5: 2 USD par million de tokens en entrée et 10 USD par million de tokens en sortie ; Claude Opus 4.8: 5 USD par million de tokens en entrée et 25 USD par million de tokens en sortie"
+    },
+    "pricing_en": {
+      "free": "Aucun forfait API gratuit permanent confirmé. Des crédits d'essai peuvent être proposés selon le compte.",
+      "paid": "Claude Sonnet 5: 2 USD par million de tokens en entrée et 10 USD par million de tokens en sortie ; Claude Opus 4.8: 5 USD par million de tokens en entrée et 25 USD par million de tokens en sortie"
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Des crédits d’essai peuvent être proposés selon le compte, sans forfait gratuit permanent.",
+        "Le prix dépend du modèle, des tokens d’entrée et de sortie et des outils utilisés.",
+        "La recherche web, l’exécution de code et certains outils entraînent des frais supplémentaires.",
+        "L’abonnement Claude Pro ou Max ne comprend pas l’usage API."
+      ],
+      "compare_plan_kind": "usage",
+      "compare_plan_name": "Haiku 4.5",
+      "compare_price_monthly_eur": 1,
+      "location_sensitive": false,
+      "official_source_url": "https://www.anthropic.com/claude/api",
+      "price_reliability": "high",
+      "source_domain": "anthropic.com",
+      "usage_sensitive": true,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-08-30"
+    },
+    "pros": [
+      "Workflow produit bien défini.",
+      "Documentation officielle et développement actif.",
+      "S'intègre aux processus professionnels.",
+      "Point d'entrée disponible avant de monter en charge."
+    ],
+    "pros_en": [
+      "Focused product workflow.",
+      "Official documentation and active development.",
+      "Integrates into professional processes.",
+      "Entry path available before scaling."
+    ],
+    "short_description": "Anthropic API donne accès aux modèles Claude pour intégrer génération, raisonnement, analyse de documents et agents dans des applications.",
+    "short_description_en": "The Anthropic API provides access to Claude models for generation, reasoning, document analysis, and agent workflows in applications.",
+    "slug": "anthropic",
+    "source_url": "https://www.anthropic.com/claude/api",
+    "source_verified_on": "2026-08-30",
+    "use_cases": [
+      "Utiliser modèles claude via api dans un workflow récurrent.",
+      "Utiliser tool use et sorties structurées dans un workflow récurrent.",
+      "Utiliser prompt caching et traitement par lots dans un workflow récurrent."
+    ],
+    "use_cases_en": [
+      "Use modèles claude via api in a recurring workflow.",
+      "Use tool use et sorties structurées in a recurring workflow.",
+      "Use prompt caching et traitement par lots in a recurring workflow."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Votre besoin est ponctuel et un outil gratuit plus simple suffit.",
+        "Votre stack couvre déjà le même workflow.",
+        "Le modèle par usage ou par siège rend le coût difficile à prévoir."
+      ],
+      "keepIf": [
+        "Vous utilisez régulièrement le workflow central de Anthropic.",
+        "Vous préférez un produit intégré à l'assemblage de plusieurs outils.",
+        "Les limites officielles correspondent à votre volume réel."
+      ],
+      "threshold": "Retenez-le lorsque l'usage récurrent remplace un workflow manuel ou fragmenté clairement identifié."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "Your need is occasional and a simpler free tool is enough.",
+        "You already cover the same workflow in your current stack.",
+        "The usage or seat model makes costs hard to predict."
+      ],
+      "keepIf": [
+        "You need Anthropic's core workflow regularly.",
+        "You value an integrated product over stitching several tools together.",
+        "The official usage limits match your real volume."
+      ],
+      "threshold": "Keep it when recurring usage replaces a clear manual or fragmented workflow."
+    },
+    "website_url": "https://www.anthropic.com/api"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim - Mike",
+    "en": {
+      "cons": [
+        "Costs can grow with usage or seats.",
+        "Advanced capabilities require a paid tier.",
+        "Setup quality affects the result."
+      ],
+      "pros": [
+        "Focused product workflow.",
+        "Official documentation and active development.",
+        "Integrates into professional processes.",
+        "Entry path available before scaling."
+      ],
+      "use_cases": [
+        "Use modèles claude via api in a recurring workflow.",
+        "Use tool use et sorties structurées in a recurring workflow.",
+        "Use prompt caching et traitement par lots in a recurring workflow."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Your need is occasional and a simpler free tool is enough.",
+          "You already cover the same workflow in your current stack.",
+          "The usage or seat model makes costs hard to predict."
+        ],
+        "keepIf": [
+          "You need Anthropic's core workflow regularly.",
+          "You value an integrated product over stitching several tools together.",
+          "The official usage limits match your real volume."
+        ],
+        "threshold": "Keep it when recurring usage replaces a clear manual or fragmented workflow."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Aucun forfait API gratuit permanent confirmé. Des crédits d'essai peuvent être proposés selon le compte.",
+        "exists": false
+      },
+      "key_features": [
+        "Modèles Claude via API",
+        "Tool use et sorties structurées",
+        "Prompt caching et traitement par lots",
+        "SDK et console développeur"
+      ],
+      "plans": [
+        {
+          "name": "Claude Sonnet 5",
+          "price": "2 USD par million de tokens en entrée et 10 USD par million de tokens en sortie"
+        },
+        {
+          "name": "Claude Opus 4.8",
+          "price": "5 USD par million de tokens en entrée et 25 USD par million de tokens en sortie"
+        }
+      ],
+      "pricing_model": "Paiement à l'usage selon le modèle, les tokens et les outils consommés.",
+      "what": "Anthropic API donne accès aux modèles Claude pour intégrer génération, raisonnement, analyse de documents et agents dans des applications.",
+      "what_en": "The Anthropic API provides access to Claude models for generation, reasoning, document analysis, and agent workflows in applications."
+    },
+    "fr": {
+      "cons": [
+        "Le coût peut augmenter avec l'usage ou les sièges.",
+        "Les fonctions avancées exigent une offre payante.",
+        "La qualité du paramétrage influence le résultat."
+      ],
+      "pros": [
+        "Workflow produit bien défini.",
+        "Documentation officielle et développement actif.",
+        "S'intègre aux processus professionnels.",
+        "Point d'entrée disponible avant de monter en charge."
+      ],
+      "relevant_for": [
+        "Équipes produit",
+        "Développeurs",
+        "Équipes IA"
+      ],
+      "use_cases": [
+        "Utiliser modèles claude via api dans un workflow récurrent.",
+        "Utiliser tool use et sorties structurées dans un workflow récurrent.",
+        "Utiliser prompt caching et traitement par lots dans un workflow récurrent."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Votre besoin est ponctuel et un outil gratuit plus simple suffit.",
+          "Votre stack couvre déjà le même workflow.",
+          "Le modèle par usage ou par siège rend le coût difficile à prévoir."
+        ],
+        "keepIf": [
+          "Vous utilisez régulièrement le workflow central de Anthropic.",
+          "Vous préférez un produit intégré à l'assemblage de plusieurs outils.",
+          "Les limites officielles correspondent à votre volume réel."
+        ],
+        "threshold": "Retenez-le lorsque l'usage récurrent remplace un workflow manuel ou fragmenté clairement identifié."
+      }
+    },
+    "slug": "anthropic",
+    "sources": [
+      {
+        "label": "API Anthropic (site officiel)",
+        "url": "https://www.anthropic.com/claude/api"
+      },
+      {
+        "label": "Tarification Claude Platform (site officiel)",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing"
+      },
+      {
+        "label": "Annonce Claude Sonnet 5 (site officiel)",
+        "url": "https://www.anthropic.com/research/claude-sonnet-5"
+      }
+    ],
+    "verified_on": "2026-08-30"
+  },
+  "media_evidence": {
+    "discovery": {
+      "official_media_found": true,
+      "official_pages_checked": [
+        "https://www.anthropic.com/claude/api"
+      ]
+    },
+    "items": [
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://www.anthropic.com/claude/api",
+        "url": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d18f61fb5c21c81781_og-claude-api.jpg"
+      }
+    ],
+    "mode": "sourced",
+    "slug": "anthropic",
+    "verified_on": "2026-08-31"
+  },
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-ai-general-critical-001",
+    "batch_position": 3,
+    "blockers": [],
+    "catalog_hash": "sha256:4e746f11a7bcf3352f26c71bb4c674c3f5db6bf9851f300da8e970770f4ec12b",
+    "category": "ai-general",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:72a0d04f6ab5875a1c87fdbd4843214cf3db609952212a4b8980f8879512adcc",
+    "invalidated_from": null,
+    "media_errors": [],
+    "media_evidence": "VALID",
+    "media_evidence_hash": "sha256:ca282cfa9c67b5edbc21f06696d7906970ee763d6b32b5f8aeb60f562ccc5f4a",
+    "name": "Anthropic API",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price"
+    ],
+    "priority_score": 180,
+    "published_at": "2026-08-31",
+    "quality_version": "catalog-review-v1",
+    "rendered_at": "2026-08-31",
+    "review_fingerprint": "sha256:4c19fbbb9c753e1780e4c262eaf32d53a57f053a79c7c01984831ec2eed66c92",
+    "reviewed_at": "2026-08-31",
+    "reviewed_hash": "sha256:4c19fbbb9c753e1780e4c262eaf32d53a57f053a79c7c01984831ec2eed66c92",
+    "reviewer": "ToolTrim - Mike",
+    "risk_tier": "critical",
+    "slug": "anthropic",
+    "source_url": "https://www.anthropic.com/claude/api",
+    "source_verified_on": "2026-08-30",
+    "status": "PUBLISHED"
+  }
+}

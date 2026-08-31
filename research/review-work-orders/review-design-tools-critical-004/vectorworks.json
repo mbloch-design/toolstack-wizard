@@ -1,0 +1,264 @@
+{
+  "batch": "review-design-tools-critical-004",
+  "current": {
+    "affiliate_url": null,
+    "alternatives": [],
+    "category": "design-tools",
+    "cons": [
+      "Coût d'abonnement significatif pour les indépendants.",
+      "Interface complexe avec courbe d'apprentissage importante.",
+      "Dépend du réseau de distributeurs pour les devis.",
+      "Performance peut être énergivore sur de gros projets."
+    ],
+    "cons_en": [
+      "Subscription costs significant for freelancers.",
+      "Complex interface with steep learning curve.",
+      "Pricing quotes depend on distributor network.",
+      "Performance can be resource-intensive on large projects."
+    ],
+    "host_app": null,
+    "id": "vectorworks",
+    "long_description": "CAO/BIM et conception 2D/3D très utilisée en architecture, scénographie et événementiel.",
+    "long_description_en": "Integrated 3D CAD platform for architecture, landscape design, lighting design, and scenic design. Offers native BIM, advanced 3D modeling tools, and project documentation. Available in specialist variants: Architect, Landmark, Spotlight, and Fundamentals.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://tooltrim.com/og-screenshots/vectorworks.jpg"
+    },
+    "name": "Vectorworks",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 153€/mois environ"
+    },
+    "pricing_en": null,
+    "pricing_v5": null,
+    "pros": [
+      "Solution professionnelle intégrée pour architecture et design.",
+      "BIM robuste et conforme aux standards industriels.",
+      "Multiples variantes (Architect, Landmark, Spotlight) adaptées aux besoins.",
+      "Outils de collaboration et gestion de projet inclus.",
+      "Export vers standards ouverts (IFC, DWG, etc.)."
+    ],
+    "pros_en": [
+      "Professional integrated solution for architecture and design.",
+      "Robust BIM compliant with industry standards.",
+      "Multiple variants (Architect, Landmark, Spotlight) tailored to needs.",
+      "Collaboration and project management tools included.",
+      "Export to open standards (IFC, DWG, etc.)."
+    ],
+    "short_description": "CAO/BIM et conception 2D/3D très utilisée en architecture, scénographie et événementiel.",
+    "short_description_en": "CAD/BIM and 2D/3D design used in architecture, scenography, and events.",
+    "slug": "vectorworks",
+    "source_url": "https://www.vectorworks.net",
+    "source_verified_on": null,
+    "use_cases": [
+      "Concevoir et documenter un projet architectural complet.",
+      "Créer des plans de paysagisme avec détails et spécifications.",
+      "Planifier l'éclairage et la scénographie pour un événement.",
+      "Produire des rendus photoréalistes et animations 3D pour présentation."
+    ],
+    "use_cases_en": [
+      "Design and document a complete architectural project.",
+      "Create landscape design plans with details and specifications.",
+      "Plan lighting and scenography for an event.",
+      "Produce photorealistic renders and 3D animations for presentations."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous cherchez un outil gratuit ou à bas coût.",
+        "Vous faites du design graphique ou illustrations (pas de CAO 3D).",
+        "Vous préférez des solutions cloud-first ou no-code.",
+        "Vous avez un faible volume de projets justifiant l'investissement."
+      ],
+      "keepIf": [
+        "Vous êtes architecte ou designer avec besoin BIM.",
+        "Vous travaillez en paysagisme ou design d'éclairage.",
+        "Vous avez besoin d'une solution intégrée (CAO + rendu + documentation).",
+        "Vous collaborez sur des projets d'envergure avec des équipes."
+      ],
+      "threshold": "Vectorworks est incontournable pour le BIM architecural professionnel ; pour du design occasionnel, SketchUp ou Blender suffisent."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You're looking for a free or low-cost tool.",
+        "You do graphic design or illustration (not 3D CAD).",
+        "You prefer cloud-first or no-code solutions.",
+        "You have low project volume not justifying investment."
+      ],
+      "keepIf": [
+        "You're an architect or designer with BIM needs.",
+        "You work in landscape design or lighting design.",
+        "You need an integrated solution (CAD + rendering + documentation).",
+        "You collaborate on large-scale projects with teams."
+      ],
+      "threshold": "Vectorworks is essential for professional architectural BIM; for occasional design, SketchUp or Blender suffice."
+    },
+    "website_url": "https://www.vectorworks.net"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Subscription costs significant for freelancers.",
+        "Complex interface with steep learning curve.",
+        "Pricing quotes depend on distributor network.",
+        "Performance can be resource-intensive on large projects."
+      ],
+      "pros": [
+        "Professional integrated solution for architecture and design.",
+        "Robust BIM compliant with industry standards.",
+        "Multiple variants (Architect, Landmark, Spotlight) tailored to needs.",
+        "Collaboration and project management tools included.",
+        "Export to open standards (IFC, DWG, etc.)."
+      ],
+      "use_cases": [
+        "Design and document a complete architectural project.",
+        "Create landscape design plans with details and specifications.",
+        "Plan lighting and scenography for an event.",
+        "Produce photorealistic renders and 3D animations for presentations."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You're looking for a free or low-cost tool.",
+          "You do graphic design or illustration (not 3D CAD).",
+          "You prefer cloud-first or no-code solutions.",
+          "You have low project volume not justifying investment."
+        ],
+        "keepIf": [
+          "You're an architect or designer with BIM needs.",
+          "You work in landscape design or lighting design.",
+          "You need an integrated solution (CAD + rendering + documentation).",
+          "You collaborate on large-scale projects with teams."
+        ],
+        "threshold": "Vectorworks is essential for professional architectural BIM; for occasional design, SketchUp or Blender suffice."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Pas de version gratuite grand public. Accès académique disponible pour les étudiants.",
+        "exists": false
+      },
+      "key_features": [
+        "BIM intégré pour architecture et design",
+        "Modélisation 3D CAO avancée",
+        "Outils de rendu et visualisation",
+        "Intégration paysage, illumination et scénographie",
+        "Gestion de projet collaborative",
+        "Export vers multiples formats (IFC, DWG, DXF, PDF 3D, etc.)"
+      ],
+      "plans": [
+        {
+          "name": "Service Select Subscription",
+          "price": "Montants sur la page officielle"
+        },
+        {
+          "name": "Cloud Services",
+          "price": "Montants sur la page officielle"
+        }
+      ],
+      "pricing_model": "Abonnement basé sur le modèle Service Select ou services cloud. Licensing via réseau distributeurs officiel. Montants disponibles auprès des revendeurs.",
+      "what": "Plateforme 3D CAO intégrée pour architecture, paysagisme, design d'éclairage et scénographie. Offre BIM natif, outils de modélisation 3D avancés et documentation projet. Disponible en plusieurs variantes selon la spécialité : Architect, Landmark, Spotlight et Fundamentals.",
+      "what_en": "Integrated 3D CAD platform for architecture, landscape design, lighting design, and scenic design. Offers native BIM, advanced 3D modeling tools, and project documentation. Available in specialist variants: Architect, Landmark, Spotlight, and Fundamentals."
+    },
+    "fr": {
+      "cons": [
+        "Coût d'abonnement significatif pour les indépendants.",
+        "Interface complexe avec courbe d'apprentissage importante.",
+        "Dépend du réseau de distributeurs pour les devis.",
+        "Performance peut être énergivore sur de gros projets."
+      ],
+      "pros": [
+        "Solution professionnelle intégrée pour architecture et design.",
+        "BIM robuste et conforme aux standards industriels.",
+        "Multiples variantes (Architect, Landmark, Spotlight) adaptées aux besoins.",
+        "Outils de collaboration et gestion de projet inclus.",
+        "Export vers standards ouverts (IFC, DWG, etc.)."
+      ],
+      "relevant_for": [
+        "Architectes",
+        "Designers paysagers",
+        "Designers d'éclairage",
+        "Scénographes",
+        "Bureaux d'études"
+      ],
+      "use_cases": [
+        "Concevoir et documenter un projet architectural complet.",
+        "Créer des plans de paysagisme avec détails et spécifications.",
+        "Planifier l'éclairage et la scénographie pour un événement.",
+        "Produire des rendus photoréalistes et animations 3D pour présentation."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous cherchez un outil gratuit ou à bas coût.",
+          "Vous faites du design graphique ou illustrations (pas de CAO 3D).",
+          "Vous préférez des solutions cloud-first ou no-code.",
+          "Vous avez un faible volume de projets justifiant l'investissement."
+        ],
+        "keepIf": [
+          "Vous êtes architecte ou designer avec besoin BIM.",
+          "Vous travaillez en paysagisme ou design d'éclairage.",
+          "Vous avez besoin d'une solution intégrée (CAO + rendu + documentation).",
+          "Vous collaborez sur des projets d'envergure avec des équipes."
+        ],
+        "threshold": "Vectorworks est incontournable pour le BIM architecural professionnel ; pour du design occasionnel, SketchUp ou Blender suffisent."
+      }
+    },
+    "slug": "vectorworks",
+    "sources": [
+      {
+        "label": "Vectorworks (site officiel)",
+        "url": "https://www.vectorworks.net"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-004",
+    "batch_position": 9,
+    "blockers": [],
+    "catalog_hash": "sha256:7361eb885010a39aa08812745c2702a874ba34787e9621749e8861905bea0662",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:47ac420f1135ef6405fbd2be6ee4658760b3f69b5cf16faa943c8de4c151a088",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Vectorworks",
+    "next_review_at": null,
+    "priority_reasons": [
+      "paid_price",
+      "missing_or_invalid_media_evidence",
+      "shallow_editorial",
+      "undated_source"
+    ],
+    "priority_score": 195,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:26119220305f345797a5b9b81c350bbc64f988ce46bb8c7e913a24422d9135b1",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "vectorworks",
+    "source_url": "https://www.vectorworks.net",
+    "source_verified_on": null,
+    "status": "QUEUED"
+  }
+}

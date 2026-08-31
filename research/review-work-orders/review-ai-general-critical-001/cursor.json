@@ -1,0 +1,262 @@
+{
+  "batch": "review-ai-general-critical-001",
+  "current": {
+    "affiliate_url": "https://cursor.sh",
+    "alternatives": [
+      "windsurf"
+    ],
+    "category": "ai-general",
+    "cons": [
+      "Plus cher que les extensions VS Code.",
+      "Courbe apprentissage (Agent mode).",
+      "Dépend des crédits limités."
+    ],
+    "cons_en": [
+      "More expensive than VS Code extensions.",
+      "Learning curve for Agent mode.",
+      "Dependent on credit limits."
+    ],
+    "host_app": null,
+    "id": "cursor",
+    "long_description": "Cursor, c'est l'IDE IA qui code avec vous en temps réel. À partir de 20€/mois. Pensé pour les développeurs solo et les builders IA.\n\nGain de temps estimé : 12h/mois.\n\nÀ garder si : développement quotidien — gain de temps massif. À éviter si : pas de code — GitHub Copilot dans VS Code suffit. Rentable dès 2h de code par semaine.",
+    "long_description_en": "Cursor is the AI IDE that codes with you in real time. Starting at €20/month. Built for solo developers and AI builders.\n\nEstimated time saving: 12h/month.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://ptht05hbb1ssoooe.public.blob.vercel-storage.com/assets/og/opengraph-default.png"
+    },
+    "name": "Cursor",
+    "pricing": {
+      "free": "Plan gratuit disponible",
+      "paid": "20$/mois (Pro)"
+    },
+    "pricing_en": null,
+    "pricing_v5": {
+      "cautions": [],
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Pro",
+      "compare_price_monthly_eur": 17.32,
+      "location_sensitive": false,
+      "official_source_url": "https://cursor.com/help/account-and-billing/pricing",
+      "price_reliability": "low",
+      "source_domain": "cursor.com",
+      "usage_sensitive": false,
+      "verification_status": "official_ambiguous_ui",
+      "verified_on": "2026-03-13"
+    },
+    "pros": [
+      "Éditeur IA le plus complet du marché.",
+      "Tous les modèles frontière dans un seul outil.",
+      "Composer pour refactoring multi-fichier puissant.",
+      "Free tier généreux pour commencer."
+    ],
+    "pros_en": [
+      "Most complete AI editor on the market.",
+      "All frontier models in one tool.",
+      "Composer for powerful multi-file refactoring.",
+      "Generous free tier to start."
+    ],
+    "short_description": "L'IDE IA qui code avec vous en temps réel.",
+    "short_description_en": "The AI IDE that codes with you in real time.",
+    "slug": "cursor",
+    "source_url": "https://cursor.com/help/account-and-billing/pricing",
+    "source_verified_on": "2026-03-13",
+    "use_cases": [
+      "Développer une app ou microservice solo rapidement.",
+      "Refactoriser un legacy codebase massif.",
+      "Pair-programming avec IA (Agent mode)."
+    ],
+    "use_cases_en": [
+      "Build an app or microservice solo quickly.",
+      "Refactor a massive legacy codebase.",
+      "Pair-program with AI (Agent mode)."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous utilisez vim ou Neovim (pas natif).",
+        "Vous voulez une solution IA gratuite.",
+        "Vous préférez utiliser des extensions au lieu d'un éditeur spécialisé."
+      ],
+      "keepIf": [
+        "Vous codez en équipe ou solo, besoin d'IA cotidienne.",
+        "Vous aimez VS Code mais voulez puissance IA.",
+        "Vous avez un budget pour Pro ou Ultra."
+      ],
+      "threshold": "Cursor s'impose pour développeurs VS Code qui veulent une IA intégrée ; pour un usage ponctuel, les extensions VS Code IA suffisent."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You use vim or Neovim.",
+        "You want a fully free solution.",
+        "You prefer using extensions instead of a specialized editor."
+      ],
+      "keepIf": [
+        "You code daily and want integrated AI.",
+        "You love VS Code and want AI power.",
+        "You have budget for Pro/Ultra."
+      ],
+      "threshold": "Cursor is the standard for VS Code developers who want integrated AI; for occasional use, VS Code AI extensions suffice."
+    },
+    "website_url": "https://cursor.sh"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "More expensive than VS Code extensions.",
+        "Learning curve for Agent mode.",
+        "Dependent on credit limits."
+      ],
+      "pros": [
+        "Most complete AI editor on the market.",
+        "All frontier models in one tool.",
+        "Composer for powerful multi-file refactoring.",
+        "Generous free tier to start."
+      ],
+      "use_cases": [
+        "Build an app or microservice solo quickly.",
+        "Refactor a massive legacy codebase.",
+        "Pair-program with AI (Agent mode)."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You use vim or Neovim.",
+          "You want a fully free solution.",
+          "You prefer using extensions instead of a specialized editor."
+        ],
+        "keepIf": [
+          "You code daily and want integrated AI.",
+          "You love VS Code and want AI power.",
+          "You have budget for Pro/Ultra."
+        ],
+        "threshold": "Cursor is the standard for VS Code developers who want integrated AI; for occasional use, VS Code AI extensions suffice."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Gratuit sans limite de temps ; crédits limités par rapport aux plans payants.",
+        "exists": true
+      },
+      "key_features": [
+        "Édition multi-fichiers (Composer)",
+        "Agent mode autonome (background tasks)",
+        "Indexation et compréhension codebase",
+        "Choix de modèles IA (Claude, GPT-4o, Gemini, o1)",
+        "MCP natif pour outils externes"
+      ],
+      "plans": [
+        {
+          "name": "Free",
+          "price": "0 $ (crédits limités)"
+        },
+        {
+          "name": "Pro",
+          "price": "20 $/mois (15 $ crédits)"
+        },
+        {
+          "name": "Pro+",
+          "price": "60 $/mois (70 $ crédits)"
+        },
+        {
+          "name": "Ultra",
+          "price": "200 $/mois (200 $ crédits)"
+        }
+      ],
+      "pricing_model": "Tier gratuit, Pro 20 $/mois, Pro+ 60 $/mois, Ultra 200 $/mois avec allotments de crédit d'usage.",
+      "what": "Éditeur de code IA natif (basé VS Code) avec Composer (multi-fichiers), Agent mode, indexation codebase, accès aux modèles Claude/GPT-4o/Gemini et MCP intégré.",
+      "what_en": "AI-native code editor (VS Code-based) with Composer for multi-file edits, Agent mode, codebase indexing, access to Claude/GPT-4o/Gemini models, and native MCP support."
+    },
+    "fr": {
+      "cons": [
+        "Plus cher que les extensions VS Code.",
+        "Courbe apprentissage (Agent mode).",
+        "Dépend des crédits limités."
+      ],
+      "pros": [
+        "Éditeur IA le plus complet du marché.",
+        "Tous les modèles frontière dans un seul outil.",
+        "Composer pour refactoring multi-fichier puissant.",
+        "Free tier généreux pour commencer."
+      ],
+      "relevant_for": [
+        "Développeurs solo",
+        "Teams agiles",
+        "Freelances développeurs"
+      ],
+      "use_cases": [
+        "Développer une app ou microservice solo rapidement.",
+        "Refactoriser un legacy codebase massif.",
+        "Pair-programming avec IA (Agent mode)."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous utilisez vim ou Neovim (pas natif).",
+          "Vous voulez une solution IA gratuite.",
+          "Vous préférez utiliser des extensions au lieu d'un éditeur spécialisé."
+        ],
+        "keepIf": [
+          "Vous codez en équipe ou solo, besoin d'IA cotidienne.",
+          "Vous aimez VS Code mais voulez puissance IA.",
+          "Vous avez un budget pour Pro ou Ultra."
+        ],
+        "threshold": "Cursor s'impose pour développeurs VS Code qui veulent une IA intégrée ; pour un usage ponctuel, les extensions VS Code IA suffisent."
+      }
+    },
+    "slug": "cursor",
+    "sources": [
+      {
+        "label": "Cursor — AI code editor pricing (site officiel)",
+        "url": "https://cursor.sh"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-ai-general-critical-001",
+    "batch_position": 19,
+    "blockers": [],
+    "catalog_hash": "sha256:79a4269a4642cd959b349e235d7392c92b85238640ef4774e31403391ce066d8",
+    "category": "ai-general",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:52b247971a90e51b5988c05b42d8e5cf8f0c22a3e8279be03ab8079bf302c411",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Cursor",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:3e0728fdfc063d4af5e71c5968a41eb3acd18136993b3d7d02190d19712dfee8",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "cursor",
+    "source_url": "https://cursor.com/help/account-and-billing/pricing",
+    "source_verified_on": "2026-03-13",
+    "status": "QUEUED"
+  }
+}

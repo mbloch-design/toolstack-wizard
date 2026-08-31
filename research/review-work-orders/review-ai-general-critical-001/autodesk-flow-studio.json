@@ -1,0 +1,268 @@
+{
+  "batch": "review-ai-general-critical-001",
+  "current": {
+    "affiliate_url": "https://wonderdynamics.com",
+    "alternatives": [
+      "move-ai",
+      "blender"
+    ],
+    "category": "ai-general",
+    "cons": [
+      "Passage payant nécessaire au-delà du palier d'essai.",
+      "Courbe d'apprentissage pour workflow VFX.",
+      "Nécessite compétences en compositing/3D."
+    ],
+    "cons_en": [
+      "A paid plan is needed beyond the entry tier.",
+      "Learning curve for VFX workflows.",
+      "Requires 3D and compositing skills."
+    ],
+    "host_app": null,
+    "id": "autodesk-flow-studio",
+    "long_description": "Autodesk Flow Studio (anciennement Wonder Dynamics / Wonder Studio), c'est une IA qui fait un travail qui prenait des semaines : elle détecte automatiquement un acteur dans une vidéo réelle et le remplace par un personnage 3D, en gérant l'animation, l'éclairage et le compositing. Tu filmes une personne, et tu obtiens ton personnage CG intégré dans le plan. Ça embarque aussi de l'AI mocap et Wonder 3D (génération de modèles 3D par IA).\n\nRacheté par Autodesk, l'outil est passé en freemium : un palier gratuit (300 crédits/mois, 720p), puis Lite à 10$/mois, Standard à 45$ et Pro à 95$. C'est un gain de temps spectaculaire pour les VFX et l'animation de personnage en indé.\n\nPour ToolTrim, Flow Studio est l'un des challengers IA les plus impressionnants de la 3D : il automatise toute une chaîne (captation, animation, intégration) qui mobilisait des équipes. Il ne remplace pas un Maya pour l'animation fine, mais il remplace énormément d'étapes manuelles pour qui veut intégrer des personnages CG vite et pour pas cher.",
+    "long_description_en": "Autodesk Flow Studio (formerly Wonder Dynamics / Wonder Studio) is an AI that does work that used to take weeks: it automatically detects an actor in live footage and replaces them with a 3D character, handling animation, lighting and compositing. You film a person, and you get your CG character integrated into the shot. It also includes AI mocap and Wonder 3D (AI 3D model generation).\n\nAcquired by Autodesk, the tool went freemium: a free tier (300 credits/month, 720p), then Lite at $10/month, Standard at $45 and Pro at $95. It's a spectacular time saver for indie VFX and character animation.\n\nFor ToolTrim, Flow Studio is one of the most impressive AI challengers in 3D: it automates a whole chain (capture, animation, integration) that used to require teams. It doesn't replace a Maya for fine animation, but it replaces a huge amount of manual steps for anyone wanting to integrate CG characters fast and cheap.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://tooltrim.com/og-screenshots/autodesk-flow-studio.jpg"
+    },
+    "name": "Autodesk Flow Studio",
+    "pricing": {
+      "free": "Gratuit (300 crédits/mois, 720p)",
+      "paid": "Lite 10$/mois, Standard 45$ (360$/an), Pro 95$."
+    },
+    "pricing_en": {
+      "free": "Free (300 credits/month, 720p)",
+      "paid": "Lite $10/month, Standard $45 ($360/year), Pro $95."
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Gratuit 300 crédits/mois (720p) ; Lite 10$, Standard 45$, Pro 95$/mois"
+      ],
+      "compare_plan_kind": "subscription",
+      "compare_plan_name": "Lite (mensuel)",
+      "compare_price_monthly_eur": 10,
+      "location_sensitive": false,
+      "official_source_url": "https://wonderdynamics.com/pricing",
+      "price_reliability": "high",
+      "source_domain": "wonderdynamics.com",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-06-17"
+    },
+    "pros": [
+      "Automatise tâches VFX complexes et longues.",
+      "Pas besoin de studio motion capture onéreux.",
+      "Intégration fluide au pipeline 3D.",
+      "Free tier généreux pour débuter."
+    ],
+    "pros_en": [
+      "Automates complex, time-consuming VFX tasks.",
+      "No need for expensive motion capture studio.",
+      "Seamless 3D pipeline integration.",
+      "Generous free tier to start."
+    ],
+    "short_description": "IA qui insère et anime des personnages CG dans des vidéos réelles (ex-Wonder Dynamics).",
+    "short_description_en": "AI that inserts and animates CG characters into live footage (ex-Wonder Dynamics).",
+    "slug": "autodesk-flow-studio",
+    "source_url": "https://wonderdynamics.com/pricing",
+    "source_verified_on": "2026-06-17",
+    "use_cases": [
+      "Produire des vidéos marketing avec CG.",
+      "Postuler pour des projets VFX clients.",
+      "Créer des animations de personnages rapidement."
+    ],
+    "use_cases_en": [
+      "Produce marketing videos with CG.",
+      "Bid on client VFX projects.",
+      "Create character animations quickly."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous n'avez besoin que d'outils traditionnels.",
+        "Votre budget VFX est très serré.",
+        "Vous n'avez pas d'expérience en compositing ou animation."
+      ],
+      "keepIf": [
+        "Vous produisez des vidéos ou films VFX intensifs.",
+        "Vous voulez automatiser le motion capture sans studio.",
+        "Vous intégrez CG dans des tournages live-action."
+      ],
+      "threshold": "Flow Studio accélère la post-production VFX pour studios et creators ; pour des projets simples, les outils traditionnels suffisent."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You only use traditional editing tools.",
+        "Your VFX budget is minimal.",
+        "You lack experience with compositing or animation."
+      ],
+      "keepIf": [
+        "You produce video or film content with VFX.",
+        "You want motion capture without an expensive studio.",
+        "You integrate CG into live-action footage."
+      ],
+      "threshold": "Flow Studio speeds up VFX post-production for studios and creators; for simple projects, traditional tools suffice."
+    },
+    "website_url": "https://wonderdynamics.com"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "A paid plan is needed beyond the entry tier.",
+        "Learning curve for VFX workflows.",
+        "Requires 3D and compositing skills."
+      ],
+      "pros": [
+        "Automates complex, time-consuming VFX tasks.",
+        "No need for expensive motion capture studio.",
+        "Seamless 3D pipeline integration.",
+        "Generous free tier to start."
+      ],
+      "use_cases": [
+        "Produce marketing videos with CG.",
+        "Bid on client VFX projects.",
+        "Create character animations quickly."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You only use traditional editing tools.",
+          "Your VFX budget is minimal.",
+          "You lack experience with compositing or animation."
+        ],
+        "keepIf": [
+          "You produce video or film content with VFX.",
+          "You want motion capture without an expensive studio.",
+          "You integrate CG into live-action footage."
+        ],
+        "threshold": "Flow Studio speeds up VFX post-production for studios and creators; for simple projects, traditional tools suffice."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Tier gratuit inclus : accès aux outils core comme AI Mocap et Live Action.",
+        "exists": true
+      },
+      "key_features": [
+        "AI Motion Capture sans caméras",
+        "Édition VFX automatisée (tracking, caméra)",
+        "Character rigging et animation par IA",
+        "3D Editor + Canvas (contrôle créatif)",
+        "Export vers Maya, Blender, Unreal"
+      ],
+      "plans": [
+        {
+          "name": "Free",
+          "price": "0 $ (outils core)"
+        },
+        {
+          "name": "Lite",
+          "price": "10 $/mois (réduit de 20 $ avant août 2026)"
+        },
+        {
+          "name": "Standard",
+          "price": "45 $/mois ou 360 $/an (6 000 crédits/mois)"
+        },
+        {
+          "name": "Pro & Enterprise",
+          "price": "montants sur la page officielle"
+        }
+      ],
+      "pricing_model": "Abonnements mensuels ou annuels avec niveaux gratuit, Lite, Standard, Pro et Enterprise.",
+      "what": "Suite VFX et animation par IA d'Autodesk (anciennement Wonder Studio) : capture de mouvement sans matériel, animation de personnages CG, édition 3D avec contrôle créatif, et intégration vidéo temps réel.",
+      "what_en": "Autodesk's AI-powered VFX and animation suite (formerly Wonder Studio): hardware-free motion capture, CG character animation, 3D editing with creative control, and real-time video integration."
+    },
+    "fr": {
+      "cons": [
+        "Passage payant nécessaire au-delà du palier d'essai.",
+        "Courbe d'apprentissage pour workflow VFX.",
+        "Nécessite compétences en compositing/3D."
+      ],
+      "pros": [
+        "Automatise tâches VFX complexes et longues.",
+        "Pas besoin de studio motion capture onéreux.",
+        "Intégration fluide au pipeline 3D.",
+        "Free tier généreux pour débuter."
+      ],
+      "relevant_for": [
+        "Créateurs vidéo",
+        "Studios VFX",
+        "Producteurs de contenu"
+      ],
+      "use_cases": [
+        "Produire des vidéos marketing avec CG.",
+        "Postuler pour des projets VFX clients.",
+        "Créer des animations de personnages rapidement."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous n'avez besoin que d'outils traditionnels.",
+          "Votre budget VFX est très serré.",
+          "Vous n'avez pas d'expérience en compositing ou animation."
+        ],
+        "keepIf": [
+          "Vous produisez des vidéos ou films VFX intensifs.",
+          "Vous voulez automatiser le motion capture sans studio.",
+          "Vous intégrez CG dans des tournages live-action."
+        ],
+        "threshold": "Flow Studio accélère la post-production VFX pour studios et creators ; pour des projets simples, les outils traditionnels suffisent."
+      }
+    },
+    "slug": "autodesk-flow-studio",
+    "sources": [
+      {
+        "label": "Autodesk Flow Studio — plans et tarifs (site officiel)",
+        "url": "https://www.autodesk.com/products/flow-studio/buy"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-ai-general-critical-001",
+    "batch_position": 15,
+    "blockers": [],
+    "catalog_hash": "sha256:ff4a74190c9fc8a0bd07120b58d0f5f0fc264b63588418a56e66d10276f9210b",
+    "category": "ai-general",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:40cfcca3b5358cc589f7951660b69f8ea0b7e87bdcf1923cb2ba246ec50d647d",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Autodesk Flow Studio",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:b3879cf335bc0e852f01166d81659bbbbb3abf4b7a58c03ac2e19e04a7566952",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "autodesk-flow-studio",
+    "source_url": "https://wonderdynamics.com/pricing",
+    "source_verified_on": "2026-06-17",
+    "status": "QUEUED"
+  }
+}

@@ -1,0 +1,246 @@
+{
+  "batch": "review-design-tools-critical-004",
+  "current": {
+    "affiliate_url": null,
+    "alternatives": [],
+    "category": "design-tools",
+    "cons": [
+      "Nécessite un compte Figma pour utiliser pleinement.",
+      "Moins de flexibilité dans le style de dessin que Excalidraw.",
+      "Coûte via abonnement Figma Pro ou Org."
+    ],
+    "cons_en": [
+      "Requires a Figma account for full access.",
+      "Less freedom in drawing style than Excalidraw.",
+      "Costs through Figma Pro or Org subscription."
+    ],
+    "host_app": null,
+    "id": "figjam",
+    "long_description": "Whiteboard collaboratif pour ateliers, parcours, cadrage UX et idéation.",
+    "long_description_en": "Collaborative digital whiteboard by Figma for brainstorming, team alignment, and planning. Included free with all Figma plans, no additional cost.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://cdn.sanity.io/images/599r6htc/regionalized/f17d3078c6c170d8395dd57aab930b84e88fa6e1-2400x1260.png?w=1200&amp;q=70&amp;fit=max&amp;auto=format"
+    },
+    "name": "FigJam",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 5€/mois environ"
+    },
+    "pricing_en": null,
+    "pricing_v5": null,
+    "pros": [
+      "Inclus sans frais supplémentaires dans Figma.",
+      "Intégration seamless avec les designs Figma et vos outils (Asana, Jira).",
+      "Modèles riches et IA pour générer des diagrammes.",
+      "Collaboration audio native et réactions expressives."
+    ],
+    "pros_en": [
+      "Included at no extra cost with Figma.",
+      "Seamless integration with Figma designs and tools (Asana, Jira).",
+      "Rich templates and AI to auto-generate diagrams.",
+      "Native audio collaboration and expressive reactions."
+    ],
+    "short_description": "Whiteboard collaboratif pour ateliers, parcours, cadrage UX et idéation.",
+    "short_description_en": "Collaborative whiteboard for workshops, journeys, UX framing, and ideation.",
+    "slug": "figjam",
+    "source_url": "https://www.figma.com/figjam/",
+    "source_verified_on": null,
+    "use_cases": [
+      "Brainstorming avant de démarrer une conception Figma.",
+      "Rétrospectives et planifications agiles.",
+      "Facilitation de réunions stratégiques.",
+      "Mind maps et wireframes rapides."
+    ],
+    "use_cases_en": [
+      "Brainstorm before starting a Figma design.",
+      "Retros and agile planning.",
+      "Facilitate strategy meetings.",
+      "Quick mind maps and wireframes."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous cherchez un tableau blanc autonome gratuit (préférez Excalidraw).",
+        "Vous n'avez pas besoin d'intégration Figma/Asana/Jira.",
+        "Vous avez un petit budget et le libre-service suffit."
+      ],
+      "keepIf": [
+        "Vous utilisez déjà Figma en équipe.",
+        "Vous avez besoin d'un tableau blanc avec beaucoup de modèles prêts à l'emploi.",
+        "Vous voulez intégrer votre brainstorming avec vos designs Figma."
+      ],
+      "threshold": "FigJam s'impose si vous êtes déjà sur Figma. Sinon, Excalidraw gratuit peut suffire."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You're looking for a standalone free whiteboard (use Excalidraw).",
+        "You don't need Figma/Asana/Jira integration.",
+        "Budget is tight and a simple free tool suffices."
+      ],
+      "keepIf": [
+        "You're already using Figma as a team.",
+        "You want a whiteboard with rich templates and AI features.",
+        "You want to connect brainstorming directly to your Figma designs."
+      ],
+      "threshold": "FigJam dominates if you're on Figma already. Otherwise, free Excalidraw may suffice."
+    },
+    "website_url": "https://www.figma.com/figjam/"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Requires a Figma account for full access.",
+        "Less freedom in drawing style than Excalidraw.",
+        "Costs through Figma Pro or Org subscription."
+      ],
+      "pros": [
+        "Included at no extra cost with Figma.",
+        "Seamless integration with Figma designs and tools (Asana, Jira).",
+        "Rich templates and AI to auto-generate diagrams.",
+        "Native audio collaboration and expressive reactions."
+      ],
+      "use_cases": [
+        "Brainstorm before starting a Figma design.",
+        "Retros and agile planning.",
+        "Facilitate strategy meetings.",
+        "Quick mind maps and wireframes."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You're looking for a standalone free whiteboard (use Excalidraw).",
+          "You don't need Figma/Asana/Jira integration.",
+          "Budget is tight and a simple free tool suffices."
+        ],
+        "keepIf": [
+          "You're already using Figma as a team.",
+          "You want a whiteboard with rich templates and AI features.",
+          "You want to connect brainstorming directly to your Figma designs."
+        ],
+        "threshold": "FigJam dominates if you're on Figma already. Otherwise, free Excalidraw may suffice."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Plan gratuit Figma inclut FigJam : tableaux illimités personnels et 3 fichiers FigJam partagés.",
+        "exists": true
+      },
+      "key_features": [
+        "Tableau blanc infini avec modèles (300+)",
+        "Audio et chat temps réel",
+        "Fonction Spotlight et réactions expressives",
+        "Résumé automatique des actions et suggestions IA",
+        "Intégration avec Asana, Jira, GitHub",
+        "Fonction iPad avec stylus"
+      ],
+      "plans": [
+        {
+          "name": "FigJam (avec Figma Free)",
+          "price": "Gratuit (3 fichiers FigJam partagés inclus)"
+        },
+        {
+          "name": "FigJam (avec Figma Pro+)",
+          "price": "Inclus (15 € / mois Figma Pro, 45 € / mois Org)"
+        }
+      ],
+      "pricing_model": "Inclus avec tous les plans Figma (gratuit pour Figma Free, inclus dans les plans Pro/Org/Entreprise).",
+      "what": "Tableau blanc collaboratif par Figma pour le brainstorming, la réflexion d'équipe et la planification. Inclus gratuitement dans tous les plans Figma, sans frais supplémentaires.",
+      "what_en": "Collaborative digital whiteboard by Figma for brainstorming, team alignment, and planning. Included free with all Figma plans, no additional cost."
+    },
+    "fr": {
+      "cons": [
+        "Nécessite un compte Figma pour utiliser pleinement.",
+        "Moins de flexibilité dans le style de dessin que Excalidraw.",
+        "Coûte via abonnement Figma Pro ou Org."
+      ],
+      "pros": [
+        "Inclus sans frais supplémentaires dans Figma.",
+        "Intégration seamless avec les designs Figma et vos outils (Asana, Jira).",
+        "Modèles riches et IA pour générer des diagrammes.",
+        "Collaboration audio native et réactions expressives."
+      ],
+      "relevant_for": [
+        "Design teams",
+        "Product managers",
+        "Agile teams"
+      ],
+      "use_cases": [
+        "Brainstorming avant de démarrer une conception Figma.",
+        "Rétrospectives et planifications agiles.",
+        "Facilitation de réunions stratégiques.",
+        "Mind maps et wireframes rapides."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous cherchez un tableau blanc autonome gratuit (préférez Excalidraw).",
+          "Vous n'avez pas besoin d'intégration Figma/Asana/Jira.",
+          "Vous avez un petit budget et le libre-service suffit."
+        ],
+        "keepIf": [
+          "Vous utilisez déjà Figma en équipe.",
+          "Vous avez besoin d'un tableau blanc avec beaucoup de modèles prêts à l'emploi.",
+          "Vous voulez intégrer votre brainstorming avec vos designs Figma."
+        ],
+        "threshold": "FigJam s'impose si vous êtes déjà sur Figma. Sinon, Excalidraw gratuit peut suffire."
+      }
+    },
+    "slug": "figjam",
+    "sources": [
+      {
+        "label": "FigJam (site officiel)",
+        "url": "https://www.figma.com/figjam/"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-004",
+    "batch_position": 3,
+    "blockers": [],
+    "catalog_hash": "sha256:df93eea21436798e90b0c7f497f9ba6e6b1d11f3d46cee127cf98e4429fce20d",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:7226afc4f1ca8e028b1d252b04f84e96ab9f3a3f25e6c22626874c79085cc87f",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "FigJam",
+    "next_review_at": null,
+    "priority_reasons": [
+      "paid_price",
+      "missing_or_invalid_media_evidence",
+      "shallow_editorial",
+      "undated_source"
+    ],
+    "priority_score": 195,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:b8195afd95f3199af4de743489125d50b4623ea5ddbee15402c9d945c326f9ab",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "figjam",
+    "source_url": "https://www.figma.com/figjam/",
+    "source_verified_on": null,
+    "status": "QUEUED"
+  }
+}

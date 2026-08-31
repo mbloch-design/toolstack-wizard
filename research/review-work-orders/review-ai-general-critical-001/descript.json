@@ -1,0 +1,290 @@
+{
+  "batch": "review-ai-general-critical-001",
+  "current": {
+    "affiliate_url": "https://descript.com",
+    "alternatives": [
+      "adobe-podcast-ai",
+      "auphonic",
+      "cleanvoice",
+      "riverside",
+      "podcastle",
+      "captions",
+      "adobe-premiere-pro"
+    ],
+    "category": "ai-general",
+    "cons": [
+      "Le coût peut augmenter avec l'usage ou les sièges.",
+      "Les fonctions avancées exigent une offre payante.",
+      "La qualité du paramétrage influence le résultat."
+    ],
+    "cons_en": [
+      "Costs can grow with usage or seats.",
+      "Advanced capabilities require a paid tier.",
+      "Setup quality affects the result."
+    ],
+    "host_app": null,
+    "id": "descript",
+    "long_description": "Descript est un éditeur audio et vidéo piloté par la transcription, avec enregistrement, montage, voix IA et amélioration sonore.\n\nFonctions clés : Montage depuis la transcription ; Studio Sound ; Suppression des hésitations ; Clips et doublage IA ; Enregistrement écran et caméra.\n\nRetenez-le lorsque l'usage récurrent remplace un workflow manuel ou fragmenté clairement identifié.",
+    "long_description_en": "Descript is a transcript-driven audio and video editor with recording, editing, AI voice, and sound enhancement tools.\n\nKey strengths: Focused product workflow.; Official documentation and active development.; Integrates into professional processes.; Entry path available before scaling..\n\nKeep it when recurring usage replaces a clear manual or fragmented workflow.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://www.descript.com/favicon.ico"
+    },
+    "name": "Descript",
+    "pricing": {
+      "free": "Accès gratuit pour tester l'éditeur avec limites d'usage et d'export.",
+      "paid": "Hobbyist: 16 USD par utilisateur et par mois avec facturation annuelle ; Creator: 24 USD par utilisateur et par mois avec facturation annuelle ; Business: 50 USD par utilisateur et par mois avec facturation annuelle"
+    },
+    "pricing_en": {
+      "free": "Accès gratuit pour tester l'éditeur avec limites d'usage et d'export.",
+      "paid": "Hobbyist: 16 USD par utilisateur et par mois avec facturation annuelle ; Creator: 24 USD par utilisateur et par mois avec facturation annuelle ; Business: 50 USD par utilisateur et par mois avec facturation annuelle"
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Prix officiels en dollars par utilisateur",
+        "Les prix les plus bas exigent une facturation annuelle",
+        "Les outils IA consomment des crédits selon la fonction"
+      ],
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Hobbyist annual",
+      "compare_price_monthly_eur": 13.86,
+      "location_sensitive": false,
+      "official_source_url": "https://www.descript.com/pricing",
+      "price_reliability": "high",
+      "source_domain": "descript.com",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-08-30"
+    },
+    "pros": [
+      "Workflow produit bien défini.",
+      "Documentation officielle et développement actif.",
+      "S'intègre aux processus professionnels.",
+      "Point d'entrée disponible avant de monter en charge."
+    ],
+    "pros_en": [
+      "Focused product workflow.",
+      "Official documentation and active development.",
+      "Integrates into professional processes.",
+      "Entry path available before scaling."
+    ],
+    "short_description": "Descript est un éditeur audio et vidéo piloté par la transcription, avec enregistrement, montage, voix IA et amélioration sonore.",
+    "short_description_en": "Descript is a transcript-driven audio and video editor with recording, editing, AI voice, and sound enhancement tools.",
+    "slug": "descript",
+    "source_url": "https://www.descript.com/pricing",
+    "source_verified_on": "2026-08-30",
+    "use_cases": [
+      "Utiliser montage depuis la transcription dans un workflow récurrent.",
+      "Utiliser studio sound dans un workflow récurrent.",
+      "Utiliser suppression des hésitations dans un workflow récurrent."
+    ],
+    "use_cases_en": [
+      "Use montage depuis la transcription in a recurring workflow.",
+      "Use studio sound in a recurring workflow.",
+      "Use suppression des hésitations in a recurring workflow."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Votre besoin est ponctuel et un outil gratuit plus simple suffit.",
+        "Votre stack couvre déjà le même workflow.",
+        "Le modèle par usage ou par siège rend le coût difficile à prévoir."
+      ],
+      "keepIf": [
+        "Vous utilisez régulièrement le workflow central de Descript.",
+        "Vous préférez un produit intégré à l'assemblage de plusieurs outils.",
+        "Les limites officielles correspondent à votre volume réel."
+      ],
+      "threshold": "Retenez-le lorsque l'usage récurrent remplace un workflow manuel ou fragmenté clairement identifié."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "Your need is occasional and a simpler free tool is enough.",
+        "You already cover the same workflow in your current stack.",
+        "The usage or seat model makes costs hard to predict."
+      ],
+      "keepIf": [
+        "You need Descript's core workflow regularly.",
+        "You value an integrated product over stitching several tools together.",
+        "The official usage limits match your real volume."
+      ],
+      "threshold": "Keep it when recurring usage replaces a clear manual or fragmented workflow."
+    },
+    "website_url": "https://descript.com"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim - Mike",
+    "en": {
+      "cons": [
+        "Costs can grow with usage or seats.",
+        "Advanced capabilities require a paid tier.",
+        "Setup quality affects the result."
+      ],
+      "pros": [
+        "Focused product workflow.",
+        "Official documentation and active development.",
+        "Integrates into professional processes.",
+        "Entry path available before scaling."
+      ],
+      "use_cases": [
+        "Use montage depuis la transcription in a recurring workflow.",
+        "Use studio sound in a recurring workflow.",
+        "Use suppression des hésitations in a recurring workflow."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Your need is occasional and a simpler free tool is enough.",
+          "You already cover the same workflow in your current stack.",
+          "The usage or seat model makes costs hard to predict."
+        ],
+        "keepIf": [
+          "You need Descript's core workflow regularly.",
+          "You value an integrated product over stitching several tools together.",
+          "The official usage limits match your real volume."
+        ],
+        "threshold": "Keep it when recurring usage replaces a clear manual or fragmented workflow."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Accès gratuit pour tester l'éditeur avec limites d'usage et d'export.",
+        "exists": true
+      },
+      "key_features": [
+        "Montage depuis la transcription",
+        "Studio Sound",
+        "Suppression des hésitations",
+        "Clips et doublage IA",
+        "Enregistrement écran et caméra"
+      ],
+      "plans": [
+        {
+          "name": "Hobbyist",
+          "price": "16 USD par utilisateur et par mois avec facturation annuelle"
+        },
+        {
+          "name": "Creator",
+          "price": "24 USD par utilisateur et par mois avec facturation annuelle"
+        },
+        {
+          "name": "Business",
+          "price": "50 USD par utilisateur et par mois avec facturation annuelle"
+        }
+      ],
+      "pricing_model": "Abonnement par utilisateur avec quotas d'heures média et de crédits IA.",
+      "what": "Descript est un éditeur audio et vidéo piloté par la transcription, avec enregistrement, montage, voix IA et amélioration sonore.",
+      "what_en": "Descript is a transcript-driven audio and video editor with recording, editing, AI voice, and sound enhancement tools."
+    },
+    "fr": {
+      "cons": [
+        "Le coût peut augmenter avec l'usage ou les sièges.",
+        "Les fonctions avancées exigent une offre payante.",
+        "La qualité du paramétrage influence le résultat."
+      ],
+      "pros": [
+        "Workflow produit bien défini.",
+        "Documentation officielle et développement actif.",
+        "S'intègre aux processus professionnels.",
+        "Point d'entrée disponible avant de monter en charge."
+      ],
+      "relevant_for": [
+        "Podcasteurs",
+        "Créateurs vidéo",
+        "Équipes marketing"
+      ],
+      "use_cases": [
+        "Utiliser montage depuis la transcription dans un workflow récurrent.",
+        "Utiliser studio sound dans un workflow récurrent.",
+        "Utiliser suppression des hésitations dans un workflow récurrent."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Votre besoin est ponctuel et un outil gratuit plus simple suffit.",
+          "Votre stack couvre déjà le même workflow.",
+          "Le modèle par usage ou par siège rend le coût difficile à prévoir."
+        ],
+        "keepIf": [
+          "Vous utilisez régulièrement le workflow central de Descript.",
+          "Vous préférez un produit intégré à l'assemblage de plusieurs outils.",
+          "Les limites officielles correspondent à votre volume réel."
+        ],
+        "threshold": "Retenez-le lorsque l'usage récurrent remplace un workflow manuel ou fragmenté clairement identifié."
+      }
+    },
+    "slug": "descript",
+    "sources": [
+      {
+        "label": "Tarifs Descript (site officiel)",
+        "url": "https://www.descript.com/pricing"
+      },
+      {
+        "label": "Produit Descript (site officiel)",
+        "url": "https://www.descript.com/"
+      }
+    ],
+    "verified_on": "2026-08-30"
+  },
+  "media_evidence": {
+    "discovery": {
+      "official_media_found": true,
+      "official_pages_checked": [
+        "https://www.descript.com/pricing"
+      ]
+    },
+    "items": [
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://www.descript.com/pricing",
+        "url": "https://www.descript.com/favicon.ico"
+      }
+    ],
+    "mode": "sourced",
+    "slug": "descript",
+    "verified_on": "2026-08-30"
+  },
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-ai-general-critical-001",
+    "batch_position": 4,
+    "blockers": [],
+    "catalog_hash": "sha256:08578d8ca0b70176d260ec24e3486a8e4e89bed54f5479d1e709ede2311d1b02",
+    "category": "ai-general",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:f424869a2549959a0d697509b633168a815f5c68208314e6d00654edf306532e",
+    "invalidated_from": null,
+    "media_errors": [],
+    "media_evidence": "VALID",
+    "media_evidence_hash": "sha256:e7118c88e182736e10487e9799b5fdb8b67c69b9ad08a9a40c7cb716025d10ea",
+    "name": "Descript",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price"
+    ],
+    "priority_score": 180,
+    "published_at": "2026-08-31",
+    "quality_version": "catalog-review-v1",
+    "rendered_at": "2026-08-31",
+    "review_fingerprint": "sha256:819b08038fa4583be9bf4529ee8b6bec3157e9534d4b928387779995ed04fbb8",
+    "reviewed_at": "2026-08-31",
+    "reviewed_hash": "sha256:819b08038fa4583be9bf4529ee8b6bec3157e9534d4b928387779995ed04fbb8",
+    "reviewer": "ToolTrim - Mike",
+    "risk_tier": "critical",
+    "slug": "descript",
+    "source_url": "https://www.descript.com/pricing",
+    "source_verified_on": "2026-08-30",
+    "status": "PUBLISHED"
+  }
+}

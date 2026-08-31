@@ -1,0 +1,41 @@
+{
+  "slug": "autodesk-flow-studio",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://wonderdynamics.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://images.ctfassets.net/v7wr16nrr0mz/62WC7O2IfOpPzyQb2p2nYa/bda458bb4a6b4977294e5eda6fb2c097/community-thumb-788x1050.jpg",
+      "source_page_url": "https://wonderdynamics.com",
+      "official": true,
+      "alt": "3D animated woman wearing a cap and casual clothes standing outdoors near furniture and a TV"
+    },
+    {
+      "kind": "image",
+      "url": "https://images.ctfassets.net/v7wr16nrr0mz/2AXAv864qc6exP4lAraDbw/d73b3f5984501a8c87deb6f87af0a2da/youtube-thumb-788x1050.jpg",
+      "source_page_url": "https://wonderdynamics.com",
+      "official": true,
+      "alt": "3D alien character smiling while riding a carnival swing beside a child in a colorful amusement park"
+    },
+    {
+      "kind": "image",
+      "url": "https://images.ctfassets.net/v7wr16nrr0mz/QKKXuUib31qn7gIzrJQV7/a9f874b3eeb7dfa56194e8873e6c2b42/blog-thumb-788x1050.jpg",
+      "source_page_url": "https://wonderdynamics.com",
+      "official": true,
+      "alt": "3D animated character with red hair and green sweater smiling brightly in an outdoor setting"
+    },
+    {
+      "kind": "image",
+      "url": "https://images.ctfassets.net/v7wr16nrr0mz/2MyHNaARqI5QNRxDORtBG0/6351a9637ee07ab6e36e30ebfe132755/forum-thumb-788x1050.jpg",
+      "source_page_url": "https://wonderdynamics.com",
+      "official": true,
+      "alt": "3D animated man with dark beard typing at a desk under warm lighting in an office"
+    }
+  ]
+}

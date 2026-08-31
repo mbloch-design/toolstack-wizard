@@ -1,0 +1,266 @@
+{
+  "batch": "review-ai-general-critical-001",
+  "current": {
+    "affiliate_url": "https://chat.openai.com",
+    "alternatives": [],
+    "category": "ai-general",
+    "cons": [
+      "Modèle le plus capable réservé au payant.",
+      "Coût API qui monte avec le volume de tokens.",
+      "Dépendance à un fournisseur propriétaire."
+    ],
+    "cons_en": [
+      "Most capable model reserved for paid tiers.",
+      "API cost rises with token volume.",
+      "Dependence on a proprietary provider."
+    ],
+    "host_app": null,
+    "id": "chatgpt",
+    "long_description": "ChatGPT, c'est l'assistant IA généraliste d'OpenAI. À partir de 17.32€/mois. Pensé pour les graphistes et les créateurs vidéo.\n\nVersion gratuite déjà très performante (GPT-3.5). polyvalence totale : rédaction, code, analyse, traduction, idéation, interface simple et intuitive. Mémoire de conversation pour contexte long. Concrètement : rédaction : générer des brouillons d'emails, articles, posts LinkedIn. Ou encore : brainstorming : générer des idées de contenu, noms de projets, angles d'articles. Gain de temps estimé : 7h/mois.\n\nÀ garder si : usage intensif (>10h/semaine) ou besoin de raisonnement complexe (GPT-4). À éviter si : usage ponctuel ou recherches simples. Limite principale : peut générer des informations incorrectes (hallucinations). Dès que l'attente ou les erreurs de la version gratuite vous font perdre 1h/semaine.",
+    "long_description_en": "ChatGPT is the general-purpose AI assistant from OpenAI. Starting at €17.32/month. Built for graphic designers and video creators.\n\nFree version already highly performant (GPT-3.5). total versatility: writing, code, analysis, translation, ideation, simple and intuitive interface. Conversation memory for long context. In practice: writing: generate drafts for emails, articles, and LinkedIn posts. Also: brainstorming: generate content ideas, project names, and article angles. Estimated time saving: 7h/month.\n\nKeep it if: intensive use (>10h/week) or need for complex reasoning (GPT-4). Skip it if: occasional use or simple searches. Main limit: can generate incorrect information (hallucinations). As soon as wait times or errors in the free version cost you 1 hour per week.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://tooltrim.com/og-screenshots/chatgpt.jpg"
+    },
+    "name": "ChatGPT",
+    "pricing": {
+      "free": "Plan gratuit disponible",
+      "paid": "20$/mois (Plus)"
+    },
+    "pricing_en": {
+      "free": "Free plan available",
+      "paid": "$20 USD/month (Plus)"
+    },
+    "pricing_v5": {
+      "cautions": [],
+      "compare_plan_kind": "individual",
+      "compare_plan_name": "Plus",
+      "compare_price_monthly_eur": 17.32,
+      "location_sensitive": false,
+      "official_source_url": "https://openai.com/chatgpt/pricing/",
+      "price_reliability": "high",
+      "source_domain": "openai.com",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-03-13"
+    },
+    "pros": [
+      "Assistant IA polyvalent et mature.",
+      "Accès au modèle phare sur les paliers payants.",
+      "API pour intégrer l'IA dans ses outils.",
+      "Palier gratuit pour découvrir."
+    ],
+    "pros_en": [
+      "Versatile, mature AI assistant.",
+      "Access to the flagship model on paid tiers.",
+      "API to embed AI into your tools.",
+      "Free tier to explore."
+    ],
+    "short_description": "L'assistant IA généraliste d'OpenAI.",
+    "short_description_en": "The general-purpose AI assistant from OpenAI.",
+    "slug": "chatgpt",
+    "source_url": "https://openai.com/chatgpt/pricing/",
+    "source_verified_on": "2026-03-13",
+    "use_cases": [
+      "Rédiger, résumer et traduire du contenu.",
+      "Assister au code et au débogage.",
+      "Automatiser des tâches via l'API."
+    ],
+    "use_cases_en": [
+      "Write, summarise and translate content.",
+      "Assist with code and debugging.",
+      "Automate tasks via the API."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Un usage ponctuel du gratuit vous suffit.",
+        "Vous préférez un modèle open source auto-hébergé.",
+        "Vos besoins sont couverts par un assistant intégré à un autre outil."
+      ],
+      "keepIf": [
+        "Vous utilisez l'IA au quotidien (rédaction, code, analyse).",
+        "Vous voulez accéder au modèle le plus capable.",
+        "Vous intégrez l'IA via une API dans vos outils."
+      ],
+      "threshold": "ChatGPT s'impose comme assistant IA généraliste dès que l'usage devient quotidien ou intégré via API ; pour un usage rare, le gratuit suffit."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "Occasional use of the free tier is enough.",
+        "You prefer a self-hosted open-source model.",
+        "Your needs are covered by an AI assistant built into another tool."
+      ],
+      "keepIf": [
+        "You use AI daily (writing, code, analysis).",
+        "You want access to the most capable model.",
+        "You integrate AI via an API into your tools."
+      ],
+      "threshold": "ChatGPT makes sense as a general AI assistant once usage becomes daily or API-integrated; for rare use, the free tier suffices."
+    },
+    "website_url": "https://chat.openai.com"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Most capable model reserved for paid tiers.",
+        "API cost rises with token volume.",
+        "Dependence on a proprietary provider."
+      ],
+      "pros": [
+        "Versatile, mature AI assistant.",
+        "Access to the flagship model on paid tiers.",
+        "API to embed AI into your tools.",
+        "Free tier to explore."
+      ],
+      "use_cases": [
+        "Write, summarise and translate content.",
+        "Assist with code and debugging.",
+        "Automate tasks via the API."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Occasional use of the free tier is enough.",
+          "You prefer a self-hosted open-source model.",
+          "Your needs are covered by an AI assistant built into another tool."
+        ],
+        "keepIf": [
+          "You use AI daily (writing, code, analysis).",
+          "You want access to the most capable model.",
+          "You integrate AI via an API into your tools."
+        ],
+        "threshold": "ChatGPT makes sense as a general AI assistant once usage becomes daily or API-integrated; for rare use, the free tier suffices."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "ChatGPT gratuit avec accès à un modèle de base ; le modèle phare est réservé aux paliers payants.",
+        "exists": true
+      },
+      "key_features": [
+        "Assistant conversationnel (rédaction, code, analyse)",
+        "Gamme de modèles (du rapide au modèle phare)",
+        "API développeur facturée au token",
+        "Apps web, mobile et desktop"
+      ],
+      "plans": [
+        {
+          "name": "Free",
+          "price": "0 $"
+        },
+        {
+          "name": "Go",
+          "price": "8 $/mois"
+        },
+        {
+          "name": "Plus",
+          "price": "20 $/mois"
+        },
+        {
+          "name": "Pro",
+          "price": "100 $ et 200 $/mois (deux paliers)"
+        },
+        {
+          "name": "Business",
+          "price": "20 $/siège/mois (annuel) ; Enterprise sur devis"
+        }
+      ],
+      "pricing_model": "Palier gratuit puis abonnements individuels (Go, Plus, Pro), offres Team/Business par siège et Enterprise sur devis. API facturée au token (input/output).",
+      "what": "Éditeur de ChatGPT et des modèles GPT : assistant IA conversationnel (web, apps, API) pour rédaction, code, analyse et automatisation, avec une gamme de modèles et une API développeur.",
+      "what_en": "Maker of ChatGPT and the GPT models: a conversational AI assistant (web, apps, API) for writing, code, analysis and automation, with a range of models and a developer API."
+    },
+    "fr": {
+      "cons": [
+        "Modèle le plus capable réservé au payant.",
+        "Coût API qui monte avec le volume de tokens.",
+        "Dépendance à un fournisseur propriétaire."
+      ],
+      "pros": [
+        "Assistant IA polyvalent et mature.",
+        "Accès au modèle phare sur les paliers payants.",
+        "API pour intégrer l'IA dans ses outils.",
+        "Palier gratuit pour découvrir."
+      ],
+      "relevant_for": [
+        "Freelances",
+        "Équipes tech",
+        "Toute personne utilisant l'IA au quotidien"
+      ],
+      "use_cases": [
+        "Rédiger, résumer et traduire du contenu.",
+        "Assister au code et au débogage.",
+        "Automatiser des tâches via l'API."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Un usage ponctuel du gratuit vous suffit.",
+          "Vous préférez un modèle open source auto-hébergé.",
+          "Vos besoins sont couverts par un assistant intégré à un autre outil."
+        ],
+        "keepIf": [
+          "Vous utilisez l'IA au quotidien (rédaction, code, analyse).",
+          "Vous voulez accéder au modèle le plus capable.",
+          "Vous intégrez l'IA via une API dans vos outils."
+        ],
+        "threshold": "ChatGPT s'impose comme assistant IA généraliste dès que l'usage devient quotidien ou intégré via API ; pour un usage rare, le gratuit suffit."
+      }
+    },
+    "slug": "chatgpt",
+    "sources": [
+      {
+        "label": "OpenAI — ChatGPT et tarifs (site officiel)",
+        "url": "https://openai.com/chatgpt/pricing/"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-ai-general-critical-001",
+    "batch_position": 17,
+    "blockers": [],
+    "catalog_hash": "sha256:146ec2d76dcf222483956b479588e9a4539c3f8e17360b3475a0173a33965528",
+    "category": "ai-general",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:9e9e06a60ed27a7a13b4c8505315175aa3208b683144b632d462d047163aceec",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "ChatGPT",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:ec7d6d2e0eaca816d9bef0f9cf511fb45f391e59297cd3118005fa37c9c4d83a",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "chatgpt",
+    "source_url": "https://openai.com/chatgpt/pricing/",
+    "source_verified_on": "2026-03-13",
+    "status": "QUEUED"
+  }
+}

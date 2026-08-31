@@ -1,0 +1,255 @@
+{
+  "batch": "review-ai-general-critical-001",
+  "current": {
+    "affiliate_url": "https://podcast.adobe.com",
+    "alternatives": [
+      "descript",
+      "auphonic",
+      "cleanvoice",
+      "podcastle",
+      "riverside",
+      "audacity"
+    ],
+    "category": "ai-general",
+    "cons": [
+      "Moins fin qu'un mixage pro dans un DAW.",
+      "Pertinent surtout pour la voix (pas la musique).",
+      "Rattaché à l'écosystème Adobe."
+    ],
+    "cons_en": [
+      "Less fine than pro mixing in a DAW.",
+      "Mostly relevant for voice (not music).",
+      "Tied to the Adobe ecosystem."
+    ],
+    "host_app": null,
+    "id": "adobe-podcast-ai",
+    "long_description": "Adobe Podcast réunit deux outils web pour les podcasts, interviews et voix-off. Enhance Speech réduit le bruit, la réverbération et les écarts de niveau. Studio permet d'enregistrer à distance, de transcrire automatiquement et de monter l'audio ou la vidéo en modifiant le texte. Depuis mars 2026, Premium ajoute la séparation de la voix, de l'ambiance et de la musique, l'export de stems, l'enregistrement vidéo et des workflows multipistes plus complets.\n\nLa formule gratuite est utile, mais ses limites varient selon l'outil. Enhance Speech accepte uniquement l'audio, un fichier à la fois, jusqu'à 30 minutes et 500 Mo par fichier, avec une heure de traitement par jour. Studio permet l'enregistrement audio et vidéo, mais limite les projets téléchargés à 30 minutes et à deux téléchargements par jour. Premium porte Enhance Speech à quatre heures par jour, deux heures et 1 Go par fichier. Studio Premium autorise des projets de deux heures, les téléchargements illimités et l'export des pistes originales séparées.\n\nPremium est inclus dans Adobe Express Premium, affiché à 11,99 € TTC par mois en France, sans engagement annuel, avec un essai gratuit de 30 jours. Adobe Podcast est très convaincant pour sauver une prise parlée ou produire une interview distante sans apprendre un logiciel audio complexe. Pour la musique, le mastering ou une production broadcast, un DAW reste plus adapté.",
+    "long_description_en": "Adobe Podcast combines two browser tools for podcasts, interviews and voice-overs. Enhance Speech reduces noise, reverb and uneven levels. Studio records remote conversations, generates transcripts and lets creators edit audio or video by editing text. Since March 2026, Premium has added speech, ambience and music separation, downloadable stems, remote video recording and expanded multitrack workflows.\n\nFree limits differ by tool. Enhance Speech processes audio only, one file at a time, with a 30-minute and 500 MB limit per file and one hour per day. Studio supports audio and video recording, but downloaded projects are limited to 30 minutes and two downloads per day. Premium raises Enhance Speech to four hours per day, two hours and 1 GB per file. Studio Premium supports two-hour projects, unlimited downloads and original speaker-separated tracks.\n\nPremium is included with Adobe Express Premium, listed at €11.99 per month including tax in France, with no annual commitment and a 30-day trial. Adobe Podcast is effective for rescuing spoken recordings or producing remote interviews without a complex audio application. A DAW remains better for music, mastering and broadcast production.",
+    "media": {
+      "gallery_images": [
+        "/tool-media/adobe-podcast/source-separation.webp",
+        "/tool-media/adobe-podcast/remote-video.webp"
+      ],
+      "og_image_url": "/tool-media/adobe-podcast/enhance-speech.webp"
+    },
+    "name": "Adobe Podcast AI",
+    "pricing": {
+      "free": "Gratuit : Enhance Speech 1h/jour, fichiers audio de 30 min et 500 Mo maximum ; Studio, projets de 30 min et 2 téléchargements/jour",
+      "paid": "Premium via Adobe Express Premium : 11,99 €/mois TTC en France, sans engagement annuel ; essai gratuit de 30 jours"
+    },
+    "pricing_en": {
+      "free": "Free: Enhance Speech 1 hour/day, audio files up to 30 minutes and 500 MB; Studio, 30-minute projects and 2 downloads/day",
+      "paid": "Premium through Adobe Express Premium: €11.99/month including tax in France, no annual commitment; 30-day trial"
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Enhance Speech gratuit : 1h/jour, 30 min et 500 Mo par fichier, audio uniquement",
+        "Studio gratuit : projets de 30 min et 2 téléchargements par jour",
+        "Premium via Adobe Express Premium : 11,99 € TTC/mois en France"
+      ],
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Adobe Express Premium",
+      "compare_price_monthly_eur": 11.99,
+      "location_sensitive": true,
+      "official_source_url": "https://podcast.adobe.com/fr/plans",
+      "price_reliability": "high",
+      "source_domain": "podcast.adobe.com",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-08-29"
+    },
+    "pros": [
+      "Amélioration de la voix par IA, rendu propre.",
+      "Enregistrement et édition dans le navigateur.",
+      "Réduction de bruit et de réverbération.",
+      "Accessible sans expertise audio."
+    ],
+    "pros_en": [
+      "AI voice enhancement with a clean result.",
+      "In-browser recording and editing.",
+      "Noise and reverb reduction.",
+      "Accessible without audio expertise."
+    ],
+    "short_description": "Nettoyage de voix, enregistrement distant et montage audio-vidéo par transcription dans le navigateur.",
+    "short_description_en": "Browser-based voice cleanup, remote recording and transcript-driven audio and video editing.",
+    "slug": "adobe-podcast-ai",
+    "source_url": "https://podcast.adobe.com/fr/plans",
+    "source_verified_on": "2026-08-29",
+    "use_cases": [
+      "Nettoyer une voix bruitée pour un podcast.",
+      "Enregistrer et éditer une voix-off dans le navigateur.",
+      "Obtenir un rendu voix « qualité studio » rapidement."
+    ],
+    "use_cases_en": [
+      "Clean a noisy voice for a podcast.",
+      "Record and edit a voice-over in the browser.",
+      "Get studio-quality voice quickly."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous mixez déjà finement dans un DAW.",
+        "Vos besoins audio sont rares.",
+        "Vous cherchez un outil hors Adobe."
+      ],
+      "keepIf": [
+        "Vous produisez du contenu parlé (podcasts, voix-off) et voulez un rendu propre par IA.",
+        "Vous voulez enregistrer et améliorer de la voix sans expertise audio.",
+        "Vous cherchez un traitement rapide, dans le navigateur."
+      ],
+      "threshold": "Adobe Podcast s'impose pour améliorer rapidement de la voix par IA sans expertise ; pour un mixage fin, un DAW dédié (comme Audition) reste plus adapté."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You already mix finely in a DAW.",
+        "Your audio needs are rare.",
+        "You want a non-Adobe tool."
+      ],
+      "keepIf": [
+        "You produce spoken content (podcasts, voice-overs) and want a clean AI result.",
+        "You want to record and enhance voice without audio expertise.",
+        "You want fast, in-browser processing."
+      ],
+      "threshold": "Adobe Podcast makes sense to quickly enhance voice with AI without expertise; for fine mixing, a dedicated DAW (like Audition) fits better."
+    },
+    "website_url": "https://podcast.adobe.com"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "bundle_parent": "adobe-creative-cloud",
+    "en": {
+      "cons": [
+        "Less fine than pro mixing in a DAW.",
+        "Mostly relevant for voice (not music).",
+        "Tied to the Adobe ecosystem."
+      ],
+      "pros": [
+        "AI voice enhancement with a clean result.",
+        "In-browser recording and editing.",
+        "Noise and reverb reduction.",
+        "Accessible without audio expertise."
+      ],
+      "use_cases": [
+        "Clean a noisy voice for a podcast.",
+        "Record and edit a voice-over in the browser.",
+        "Get studio-quality voice quickly."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You already mix finely in a DAW.",
+          "Your audio needs are rare.",
+          "You want a non-Adobe tool."
+        ],
+        "keepIf": [
+          "You produce spoken content (podcasts, voice-overs) and want a clean AI result.",
+          "You want to record and enhance voice without audio expertise.",
+          "You want fast, in-browser processing."
+        ],
+        "threshold": "Adobe Podcast makes sense to quickly enhance voice with AI without expertise; for fine mixing, a dedicated DAW (like Audition) fits better."
+      }
+    },
+    "facts": {
+      "key_features": [
+        "Amélioration de la voix par IA (Enhance Speech)",
+        "Enregistrement et édition audio dans le navigateur",
+        "Réduction de bruit et de réverbération",
+        "Rendu de qualité studio sans expertise audio"
+      ],
+      "pricing_note": "Outils web (dont un niveau gratuit) et fonctions liées à l'écosystème Adobe (voir la fiche de la suite).",
+      "what": "Suite d'outils audio par IA d'Adobe pour enregistrer, éditer et améliorer la voix (podcasts, voix-off).",
+      "what_en": "Adobe's suite of AI-powered audio tools for recording, editing, and enhancing voice and sound quality."
+    },
+    "fr": {
+      "cons": [
+        "Moins fin qu'un mixage pro dans un DAW.",
+        "Pertinent surtout pour la voix (pas la musique).",
+        "Rattaché à l'écosystème Adobe."
+      ],
+      "pros": [
+        "Amélioration de la voix par IA, rendu propre.",
+        "Enregistrement et édition dans le navigateur.",
+        "Réduction de bruit et de réverbération.",
+        "Accessible sans expertise audio."
+      ],
+      "relevant_for": [
+        "Podcasteurs",
+        "Créateurs de contenu",
+        "Voix-off"
+      ],
+      "use_cases": [
+        "Nettoyer une voix bruitée pour un podcast.",
+        "Enregistrer et éditer une voix-off dans le navigateur.",
+        "Obtenir un rendu voix « qualité studio » rapidement."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous mixez déjà finement dans un DAW.",
+          "Vos besoins audio sont rares.",
+          "Vous cherchez un outil hors Adobe."
+        ],
+        "keepIf": [
+          "Vous produisez du contenu parlé (podcasts, voix-off) et voulez un rendu propre par IA.",
+          "Vous voulez enregistrer et améliorer de la voix sans expertise audio.",
+          "Vous cherchez un traitement rapide, dans le navigateur."
+        ],
+        "threshold": "Adobe Podcast s'impose pour améliorer rapidement de la voix par IA sans expertise ; pour un mixage fin, un DAW dédié (comme Audition) reste plus adapté."
+      }
+    },
+    "slug": "adobe-podcast-ai",
+    "sources": [
+      {
+        "label": "Adobe Podcast — page officielle",
+        "url": "https://podcast.adobe.com/"
+      }
+    ],
+    "verified_on": "2026-07-23"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-ai-general-critical-001",
+    "batch_position": 14,
+    "blockers": [],
+    "catalog_hash": "sha256:a387db5c2a019606cd88117846c3b4ea2d6cb8a7a112327c9f8b3fd5bdcccba7",
+    "category": "ai-general",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:a437bcd241bd1eeab7c99bed54daa7905c290bf02e53f150873d1268699231af",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Adobe Podcast AI",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:6f460dd0a5e11be321e893e46856d2d62252ac9a8384e1ab9184533be6f9dcf9",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "adobe-podcast-ai",
+    "source_url": "https://podcast.adobe.com/fr/plans",
+    "source_verified_on": "2026-08-29",
+    "status": "QUEUED"
+  }
+}

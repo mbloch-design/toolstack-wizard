@@ -1,0 +1,260 @@
+{
+  "batch": "review-ai-general-critical-001",
+  "current": {
+    "affiliate_url": "https://manifestai.io",
+    "alternatives": [],
+    "category": "ai-general",
+    "cons": [
+      "Ticket d'entrée élevé, sans palier gratuit.",
+      "Limité factures/emballages (spécialisé).",
+      "Coûts marginaux pages extra."
+    ],
+    "cons_en": [
+      "High entry ticket, with no free tier.",
+      "Limited to invoices/packing lists (specialized).",
+      "Marginal costs for extra pages."
+    ],
+    "host_app": null,
+    "id": "manifest-ai",
+    "long_description": "Manifest AI, c'est chatbot IA alimenté par GPT pour de meilleures interactions client. À partir de 20€/mois. Pensé pour les e-commerçants et les fondateurs SaaS.\n\nSpécialisé en chatbot, et interface professionnelle. Gain de temps estimé : 7h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 20€/mois.",
+    "long_description_en": "Manifest AI is gPT-powered AI chatbot for improved customer interactions. Starting at €20/month. Built for e-commerce sellers and SaaS founders.\n\nSpecialized in chatbot, and professional interface. Estimated time saving: 7h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: pricing to be verified based on usage. As soon as the tool saves you more than €20/month.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": null
+    },
+    "name": "Manifest AI",
+    "pricing": {
+      "free": "Fonctionnalités de base",
+      "paid": "20€/mois pour version Pro"
+    },
+    "pricing_en": {
+      "free": "Core features",
+      "paid": "€20/month for the Pro version"
+    },
+    "pricing_v5": {
+      "cautions": [],
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Entry paid plan",
+      "compare_price_monthly_eur": 20,
+      "location_sensitive": false,
+      "official_source_url": "https://manifestai.io",
+      "price_reliability": "low",
+      "source_domain": "manifestai.io",
+      "usage_sensitive": false,
+      "verification_status": "official_site_only",
+      "verified_on": "2026-03-13"
+    },
+    "pros": [
+      "ROI rapide (vs 3min manual/page).",
+      "Vendor mapping apprentissage.",
+      "Quality control bâti-in.",
+      "Free trial sans CB."
+    ],
+    "pros_en": [
+      "Fast ROI (vs 3min manual/page).",
+      "Vendor mapping learns.",
+      "Quality control built-in.",
+      "Free trial no credit card."
+    ],
+    "short_description": "Chatbot IA alimenté par GPT pour de meilleures interactions client.",
+    "short_description_en": "GPT-powered AI chatbot for improved customer interactions.",
+    "slug": "manifest-ai",
+    "source_url": "https://manifestai.io",
+    "source_verified_on": "2026-03-13",
+    "use_cases": [
+      "Traiter 1K+ factures freight/mois auto.",
+      "Réduire erreur data entry manual.",
+      "Accélérer accounting reconciliation."
+    ],
+    "use_cases_en": [
+      "Process 1K+ freight invoices/month auto.",
+      "Reduce manual data entry errors.",
+      "Speed up accounting reconciliation."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous traitez peu de documents.",
+        "Vos documents ne sont pas factures/packing lists.",
+        "Vos documents arrivent sporadiquement : le crédit minimum mensuel (1K pages) n'est pas rentable pour usage léger."
+      ],
+      "keepIf": [
+        "Vous gérez gros volume factures freight.",
+        "Vous avez workflow accounting/TMS.",
+        "ROI évident dès que le traitement manuel coûte plus cher."
+      ],
+      "threshold": "Manifest AI justifié pour logistics/forwarding ; pour usage léger, coûts dépassent bénéfices."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You have few documents (<100/month).",
+        "Your documents aren't invoices/packing lists.",
+        "Your documents arrive sporadically: the minimum monthly credit (1K pages) is not cost-effective for light use."
+      ],
+      "keepIf": [
+        "You manage high-volume freight invoices.",
+        "You have accounting/TMS workflow.",
+        "Obvious ROI once manual processing costs more."
+      ],
+      "threshold": "Manifest AI justified for logistics/forwarding; for light use, costs outweigh benefits."
+    },
+    "website_url": "https://manifestai.io"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "High entry ticket, with no free tier.",
+        "Limited to invoices/packing lists (specialized).",
+        "Marginal costs for extra pages."
+      ],
+      "pros": [
+        "Fast ROI (vs 3min manual/page).",
+        "Vendor mapping learns.",
+        "Quality control built-in.",
+        "Free trial no credit card."
+      ],
+      "use_cases": [
+        "Process 1K+ freight invoices/month auto.",
+        "Reduce manual data entry errors.",
+        "Speed up accounting reconciliation."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You have few documents (<100/month).",
+          "Your documents aren't invoices/packing lists.",
+          "Your documents arrive sporadically: the minimum monthly credit (1K pages) is not cost-effective for light use."
+        ],
+        "keepIf": [
+          "You manage high-volume freight invoices.",
+          "You have accounting/TMS workflow.",
+          "Obvious ROI once manual processing costs more."
+        ],
+        "threshold": "Manifest AI justified for logistics/forwarding; for light use, costs outweigh benefits."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Trial gratuit : 1 document jusqu'à 20 pages sans CB avant committing à plan payant.",
+        "exists": true
+      },
+      "key_features": [
+        "OCR + IA extraction invoices/packing lists",
+        "Quality assurance flags et reconciliation",
+        "Vendor mapping learning",
+        "ERP integration (Excel, TMS, accounting)",
+        "Savings calc : 3min/page manual → automation"
+      ],
+      "plans": [
+        {
+          "name": "Free Trial",
+          "price": "0 $ (1 doc, 20 pages max)"
+        },
+        {
+          "name": "Starter",
+          "price": "299 $/mois (1K pages/mois)"
+        },
+        {
+          "name": "Scale",
+          "price": "Montants sur page officielle (higher volumes)"
+        }
+      ],
+      "pricing_model": "Subscription crédit : 1 crédit = 1 page traitée. Plans à partir de 299 $/mois (1K pages). Free trial : 1 doc (20 pages max).",
+      "what": "Platform document intelligence : automatise extraction factures/emballages freight en données structurées. OCR+IA, quality control, intégration ERP (Sage, TMS). Processing pages avec crédit system.",
+      "what_en": "Document intelligence platform: automates freight invoice/packing list extraction to structured data. OCR+AI, quality control, ERP integration (Sage, TMS). Page-based credits."
+    },
+    "fr": {
+      "cons": [
+        "Ticket d'entrée élevé, sans palier gratuit.",
+        "Limité factures/emballages (spécialisé).",
+        "Coûts marginaux pages extra."
+      ],
+      "pros": [
+        "ROI rapide (vs 3min manual/page).",
+        "Vendor mapping apprentissage.",
+        "Quality control bâti-in.",
+        "Free trial sans CB."
+      ],
+      "relevant_for": [
+        "Freight forwarders",
+        "Customs brokers",
+        "Finance teams"
+      ],
+      "use_cases": [
+        "Traiter 1K+ factures freight/mois auto.",
+        "Réduire erreur data entry manual.",
+        "Accélérer accounting reconciliation."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous traitez peu de documents.",
+          "Vos documents ne sont pas factures/packing lists.",
+          "Vos documents arrivent sporadiquement : le crédit minimum mensuel (1K pages) n'est pas rentable pour usage léger."
+        ],
+        "keepIf": [
+          "Vous gérez gros volume factures freight.",
+          "Vous avez workflow accounting/TMS.",
+          "ROI évident dès que le traitement manuel coûte plus cher."
+        ],
+        "threshold": "Manifest AI justifié pour logistics/forwarding ; pour usage léger, coûts dépassent bénéfices."
+      }
+    },
+    "slug": "manifest-ai",
+    "sources": [
+      {
+        "label": "Manifest AI — document intelligence platform (site officiel)",
+        "url": "https://manifestai.io"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-ai-general-critical-001",
+    "batch_position": 13,
+    "blockers": [],
+    "catalog_hash": "sha256:cfc6346f234df90b5e269534823a5a939fd14da0f60df47d0ab1edd1a090ca38",
+    "category": "ai-general",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:6b9c93a1c384f75c90f38100eda0deeb605743029d3091419ed8d35385cf8eca",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Manifest AI",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence",
+      "missing_media"
+    ],
+    "priority_score": 245,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:74a7aace2e494671e391bd5bbed9270b987ec272c43ab70eaa1d94b1c41bb53b",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "manifest-ai",
+    "source_url": "https://manifestai.io",
+    "source_verified_on": "2026-03-13",
+    "status": "QUEUED"
+  }
+}

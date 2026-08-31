@@ -1,0 +1,21 @@
+{
+  "slug": "vectorworks",
+  "verified_on": "2026-08-31",
+  "mode": "fallback_screenshot",
+  "discovery": {
+    "official_media_found": false,
+    "official_pages_checked": [
+      "https://www.vectorworks.net"
+    ]
+  },
+  "items": [
+    {
+      "kind": "screenshot",
+      "url": "/og-screenshots/vectorworks.jpg",
+      "source_page_url": "https://www.vectorworks.net",
+      "official": false,
+      "alt": "Vectorworks official product preview",
+      "capture_method": "browser_screenshot"
+    }
+  ]
+}

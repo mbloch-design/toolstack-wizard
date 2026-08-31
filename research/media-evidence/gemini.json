@@ -1,0 +1,20 @@
+{
+  "slug": "gemini",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://gemini.google.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://www.gstatic.com/lamda/images/gemini_aurora_thumbnail_4g_e74822ff0ca4259beb718.png",
+      "source_page_url": "https://gemini.google.com",
+      "official": true,
+      "alt": "Gemini official product preview"
+    }
+  ]
+}

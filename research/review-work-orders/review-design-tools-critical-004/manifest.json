@@ -1,0 +1,77 @@
+{
+  "batch": "review-design-tools-critical-004",
+  "quality_version": "catalog-review-v1",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tools": [
+    {
+      "file": "brandpad.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "brandpad",
+      "status": "QUEUED"
+    },
+    {
+      "file": "esko-studio.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "esko-studio",
+      "status": "QUEUED"
+    },
+    {
+      "file": "figjam.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "figjam",
+      "status": "QUEUED"
+    },
+    {
+      "file": "fusion-360.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "fusion-360",
+      "status": "QUEUED"
+    },
+    {
+      "file": "pacdora.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "pacdora",
+      "status": "QUEUED"
+    },
+    {
+      "file": "plasticity.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "plasticity",
+      "status": "QUEUED"
+    },
+    {
+      "file": "solidworks.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "solidworks",
+      "status": "QUEUED"
+    },
+    {
+      "file": "stark.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "stark",
+      "status": "QUEUED"
+    },
+    {
+      "file": "vectorworks.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "vectorworks",
+      "status": "QUEUED"
+    },
+    {
+      "file": "figma-buzz.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "figma-buzz",
+      "status": "PUBLISHED"
+    }
+  ]
+}

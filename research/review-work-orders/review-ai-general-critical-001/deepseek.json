@@ -1,0 +1,259 @@
+{
+  "batch": "review-ai-general-critical-001",
+  "current": {
+    "affiliate_url": "https://www.deepseek.com",
+    "alternatives": [
+      "chatgpt",
+      "claude"
+    ],
+    "category": "ai-general",
+    "cons": [
+      "Fournisseur chinois (données sensibles).",
+      "Support communautaire vs. professionnel.",
+      "Plus jeune que OpenAI/Anthropic."
+    ],
+    "cons_en": [
+      "Chinese provider (data sensitivity).",
+      "Community support vs. enterprise.",
+      "Younger than OpenAI/Anthropic."
+    ],
+    "host_app": null,
+    "id": "deepseek",
+    "long_description": "DeepSeek, c'est l'IA chinoise open-source qui défie ChatGPT. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les développeurs solo et les builders IA.\n\nPrix imbattable : $0.27/M tokens (50x moins cher que ChatGPT). open-source : modèles téléchargeables gratuitement, performances coding excellentes (HumanEval ~90%). Contexte étendu (>1M tokens). Concrètement : coding : génération de code, debugging, refactoring (excellent rapport qualité/prix). Ou encore : aPI intensive : remplacer ChatGPT API pour économiser 98% des coûts. Gain de temps estimé : 7h/mois.\n\nÀ garder si : budget serré (50x moins cher que ChatGPT) ou besoin d'un modèle open-source. À éviter si : préoccupations de sécurité des données ou besoin de support entreprise garanti. Limite principale : préoccupations sécurité des données (interdictions gouvernementales). Dès que votre facture API ChatGPT dépasse 50$/mois. Si le budget le permet, claude va plus loin.",
+    "long_description_en": "DeepSeek is the open-source Chinese AI challenging ChatGPT. Free to start, paid plans for more. Built for solo developers and AI builders.\n\nEstimated time saving: 7h/month.\n\nIf budget allows, claude goes further.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://cdn.deepseek.com/images/deepseek-chat-open-graph-image.jpeg"
+    },
+    "name": "DeepSeek",
+    "pricing": {
+      "free": "Application gratuite + modèles open-source téléchargeables",
+      "paid": "$0.27/M tokens (API) - 50x moins cher que ChatGPT"
+    },
+    "pricing_en": null,
+    "pricing_v5": {
+      "cautions": [],
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Free",
+      "compare_price_monthly_eur": 0,
+      "location_sensitive": false,
+      "official_source_url": "https://api-docs.deepseek.com/quick_start/pricing",
+      "price_reliability": "high",
+      "source_domain": "api-docs.deepseek.com",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-03-13"
+    },
+    "pros": [
+      "Tarification extrêmement compétitive.",
+      "Mise en cache des prompts très avantageuse.",
+      "5M tokens gratuits, pas de CB.",
+      "Performance solide pour les coûts."
+    ],
+    "pros_en": [
+      "Extremely competitive pricing.",
+      "Highly advantageous prompt caching.",
+      "5M free tokens, no credit card.",
+      "Solid performance for the cost."
+    ],
+    "short_description": "L'IA chinoise open-source qui défie ChatGPT.",
+    "short_description_en": "The open-source Chinese AI challenging ChatGPT.",
+    "slug": "deepseek",
+    "source_url": "https://api-docs.deepseek.com/quick_start/pricing",
+    "source_verified_on": "2026-03-13",
+    "use_cases": [
+      "Prototyper une app IA avec budget zéro.",
+      "Traiter gros volumes texte avec RAG.",
+      "A/B tester avec budgets API minimaux."
+    ],
+    "use_cases_en": [
+      "Prototype an AI app with zero budget.",
+      "Process large text volumes with RAG.",
+      "A/B test with minimal API budgets."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous ne voulez pas de fournisseur chinois.",
+        "Vous avez besoin d'une relation directe support.",
+        "Vous avez besoin de garanties strictes de conformité de données."
+      ],
+      "keepIf": [
+        "Vous cherchez le meilleur rapport prix/perfo.",
+        "Votre budget API est serré.",
+        "Vous avez beaucoup de contexte répété (cache)."
+      ],
+      "threshold": "DeepSeek offre le meilleur pricing du marché pour développeurs budgétés ; pour priorité support/entreprise, préférez Anthropic."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You don't want a Chinese provider.",
+        "You need direct enterprise support.",
+        "You need strict data compliance guarantees."
+      ],
+      "keepIf": [
+        "You want best-in-class price-to-performance.",
+        "Your API budget is tight.",
+        "You have repeated context (caching benefit)."
+      ],
+      "threshold": "DeepSeek offers the best pricing on the market for budget-conscious developers; for priority support/enterprise, choose Anthropic."
+    },
+    "website_url": "https://www.deepseek.com"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Chinese provider (data sensitivity).",
+        "Community support vs. enterprise.",
+        "Younger than OpenAI/Anthropic."
+      ],
+      "pros": [
+        "Extremely competitive pricing.",
+        "Highly advantageous prompt caching.",
+        "5M free tokens, no credit card.",
+        "Solid performance for the cost."
+      ],
+      "use_cases": [
+        "Prototype an AI app with zero budget.",
+        "Process large text volumes with RAG.",
+        "A/B test with minimal API budgets."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You don't want a Chinese provider.",
+          "You need direct enterprise support.",
+          "You need strict data compliance guarantees."
+        ],
+        "keepIf": [
+          "You want best-in-class price-to-performance.",
+          "Your API budget is tight.",
+          "You have repeated context (caching benefit)."
+        ],
+        "threshold": "DeepSeek offers the best pricing on the market for budget-conscious developers; for priority support/enterprise, choose Anthropic."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "5M tokens gratuits au signup sans CB ; valables sur tous les modèles.",
+        "exists": true
+      },
+      "key_features": [
+        "Tarification très compétitive vs OpenAI/Anthropic",
+        "Prompt caching (réduction 95 %)",
+        "Off-peak et peak rates",
+        "5M tokens gratuits (signup)",
+        "API RESTful standard"
+      ],
+      "plans": [
+        {
+          "name": "V4 Flash (off-peak)",
+          "price": "0,14 $/M input, 0,28 $/M output"
+        },
+        {
+          "name": "V4 Pro (off-peak)",
+          "price": "0,435 $/M input, 0,87 $/M output"
+        },
+        {
+          "name": "Cache-hit (Flash)",
+          "price": "0,003 $/M (réduction 95 %)"
+        }
+      ],
+      "pricing_model": "Tarification au token (input/output) avec cache-hit discount, off-peak et peak rates, 5M crédits gratuits pour nouveaux utilisateurs.",
+      "what": "Fournisseur d'API IA chinois : modèles V4 Flash et V4 Pro avec tarification ultra-compétitive, pricing-cache, et 5M tokens gratuits au signup (pas de CB requise).",
+      "what_en": "Chinese AI API provider: V4 Flash and V4 Pro models with ultra-competitive pricing, prompt caching, and 5M free tokens at signup (no credit card required)."
+    },
+    "fr": {
+      "cons": [
+        "Fournisseur chinois (données sensibles).",
+        "Support communautaire vs. professionnel.",
+        "Plus jeune que OpenAI/Anthropic."
+      ],
+      "pros": [
+        "Tarification extrêmement compétitive.",
+        "Mise en cache des prompts très avantageuse.",
+        "5M tokens gratuits, pas de CB.",
+        "Performance solide pour les coûts."
+      ],
+      "relevant_for": [
+        "Startups bootstrappées",
+        "Chercheurs",
+        "Développeurs solo"
+      ],
+      "use_cases": [
+        "Prototyper une app IA avec budget zéro.",
+        "Traiter gros volumes texte avec RAG.",
+        "A/B tester avec budgets API minimaux."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous ne voulez pas de fournisseur chinois.",
+          "Vous avez besoin d'une relation directe support.",
+          "Vous avez besoin de garanties strictes de conformité de données."
+        ],
+        "keepIf": [
+          "Vous cherchez le meilleur rapport prix/perfo.",
+          "Votre budget API est serré.",
+          "Vous avez beaucoup de contexte répété (cache)."
+        ],
+        "threshold": "DeepSeek offre le meilleur pricing du marché pour développeurs budgétés ; pour priorité support/entreprise, préférez Anthropic."
+      }
+    },
+    "slug": "deepseek",
+    "sources": [
+      {
+        "label": "DeepSeek — modèles et pricing API (site officiel)",
+        "url": "https://www.deepseek.com"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-ai-general-critical-001",
+    "batch_position": 20,
+    "blockers": [],
+    "catalog_hash": "sha256:2b5674aaffd4e05ca30f352dcc64bb33f0bc2f1a66d0f8ce1963747dc0c02354",
+    "category": "ai-general",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:27daa6d93aea8e053d180360e60d8673f53d2915fa33b36d286003e9e5447dae",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "DeepSeek",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:9e889bcf83f003e99c5a5909db21263afd4a4035c24978a0870dbbf070aeb327",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "deepseek",
+    "source_url": "https://api-docs.deepseek.com/quick_start/pricing",
+    "source_verified_on": "2026-03-13",
+    "status": "QUEUED"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "slug": "pacdora",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://www.pacdora.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://cdn.pacdora.com/ui/topic/4d427c21-4856-4677-bd5a-a716e3e3b6ae.webp",
+      "source_page_url": "https://www.pacdora.com",
+      "official": true,
+      "alt": "Mockup Generator"
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.pacdora.com/ui/topic/6b1f2cce-6ab0-47e2-a822-52f608412faf.png",
+      "source_page_url": "https://www.pacdora.com",
+      "official": true,
+      "alt": "alt"
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.pacdora.com/ui/topic/61a8a135-c098-473b-aef4-1cad540e1573.webp",
+      "source_page_url": "https://www.pacdora.com",
+      "official": true,
+      "alt": "3D Modeling Software"
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.pacdora.com/ui/topic/cb3c491a-56ca-4b86-9f12-fdb42436d7f0.webp",
+      "source_page_url": "https://www.pacdora.com",
+      "official": true,
+      "alt": "Dieline Template Maker"
+    }
+  ]
+}

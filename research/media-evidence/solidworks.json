@@ -1,0 +1,41 @@
+{
+  "slug": "solidworks",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://www.solidworks.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://www.solidworks.com/sites/default/filesd10/styles/bg_large/public/2026-02/solidworks-AI-companions-battlebots-video-cover.jpg.webp?itok=lnj4ssfA",
+      "source_page_url": "https://www.solidworks.com",
+      "official": true,
+      "alt": "SOLIDWORKS 3D model of a battlebot"
+    },
+    {
+      "kind": "image",
+      "url": "https://www.solidworks.com/sites/default/filesd10/styles/bg_large/public/2025-11/solidworks-design-first-look-cover.jpg.webp?itok=wsh69bi0",
+      "source_page_url": "https://www.solidworks.com",
+      "official": true,
+      "alt": "SOLIDWORKS 3D model of industrial equipment with part highlighted"
+    },
+    {
+      "kind": "image",
+      "url": "https://www.solidworks.com/sites/default/filesd10/styles/webp/public/2025-01/Nemo2.jpg.webp?itok=MeFOakVP",
+      "source_page_url": "https://www.solidworks.com",
+      "official": true,
+      "alt": "NEMO submarine CAD drawing"
+    },
+    {
+      "kind": "image",
+      "url": "https://www.solidworks.com/sites/default/filesd10/styles/webp/public/2026-06/solidworks-design-without-friction-sorkflow-video-cover.jpg.webp?itok=gk8hjI2n",
+      "source_page_url": "https://www.solidworks.com",
+      "official": true,
+      "alt": "SOLIDWORKS expert explaining AI functionality within SOLIDWORKS"
+    }
+  ]
+}

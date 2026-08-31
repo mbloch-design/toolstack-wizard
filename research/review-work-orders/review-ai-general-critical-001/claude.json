@@ -1,0 +1,281 @@
+{
+  "batch": "review-ai-general-critical-001",
+  "current": {
+    "affiliate_url": "https://claude.com/",
+    "alternatives": [
+      "chatgpt",
+      "gemini",
+      "perplexity"
+    ],
+    "category": "ai-general",
+    "cons": [
+      "Les limites d’usage peuvent interrompre les longues sessions.",
+      "Le plan Max démarre à 100 $US/mois.",
+      "L’abonnement Claude et l’API Anthropic sont facturés séparément.",
+      "Pas de génération d’images native comparable aux outils spécialisés."
+    ],
+    "cons_en": [
+      "Usage limits can interrupt long sessions.",
+      "Max starts at US$100/month.",
+      "Claude subscriptions and Anthropic API usage are billed separately.",
+      "No native image generation comparable to specialist tools."
+    ],
+    "host_app": null,
+    "id": "claude",
+    "long_description": "Claude est l’assistant IA d’Anthropic pour réfléchir, écrire, analyser des documents, rechercher sur le web et produire du code. L’application est disponible sur le web, mobile et ordinateur, avec une fenêtre de contexte de 200 000 tokens sur les offres individuelles.\n\nSa vraie force est le travail suivi : Projects rassemble conversations, documents et instructions dans un même espace ; Artifacts affiche à côté du chat les documents, visualisations, prototypes ou extraits de code que vous pouvez faire évoluer avec Claude. Le plan Pro ajoute davantage d’usage, Research, Claude Code et un accès élargi aux modèles.\n\nLe plan gratuit est déjà solide pour un usage ponctuel. Pro se justifie surtout si Claude devient un outil quotidien ou si vous avez besoin de sessions plus longues. L’abonnement à Claude n’inclut pas l’usage de l’API Anthropic, facturé séparément.",
+    "long_description_en": "Claude is Anthropic’s AI assistant for thinking, writing, document analysis, web research and coding. The app is available on web, mobile and desktop, with a 200K-token context window on individual plans.\n\nIts main strength is sustained work: Projects brings conversations, documents and instructions into one workspace, while Artifacts displays documents, visualizations, prototypes or code beside the chat so you can iterate with Claude. Pro adds more usage, Research, Claude Code and broader model access.\n\nThe free plan is strong enough for occasional use. Pro makes the most sense when Claude becomes a daily tool or you need longer sessions. A Claude subscription does not include Anthropic API usage, which is billed separately.",
+    "media": {
+      "gallery_images": [
+        "https://cdn.sanity.io/images/4zrzovbb/website/9aabd215e1104ea914218eaf759b3deefc02a956-1920x1080.png",
+        "https://cdn.sanity.io/images/4zrzovbb/website/c5823949d9350145ce2fda51acbc7076f2139cd0-1920x1080.png"
+      ],
+      "og_image_url": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d23594abeb9ab6ee48_70ed020ecf8fa028b9bc95fa819720b6_og_claude-generic.jpg"
+    },
+    "name": "Claude",
+    "pricing": {
+      "free": "Plan gratuit disponible",
+      "paid": "Pro : 20 $US/mois ou 200 $US/an · Max à partir de 100 $US/mois"
+    },
+    "pricing_en": {
+      "free": "Free plan available",
+      "paid": "Pro: US$20/month or US$200/year · Max from US$100/month"
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Usage limits apply and reset on rolling windows.",
+        "Claude API usage is billed separately from consumer subscriptions.",
+        "Local prices and taxes may vary."
+      ],
+      "compare_plan_kind": "individual",
+      "compare_plan_name": "Pro",
+      "compare_price_monthly_eur": 17,
+      "location_sensitive": true,
+      "official_source_url": "https://claude.com/pricing",
+      "price_reliability": "high",
+      "source_domain": "claude.com",
+      "usage_sensitive": true,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-08-25"
+    },
+    "pros": [
+      "Très à l’aise avec les documents longs, la rédaction et l’analyse structurée.",
+      "Projects pour regrouper sources, instructions et conversations.",
+      "Artifacts pour créer et itérer sur du code, des documents et des visualisations.",
+      "Recherche web avec citations et connexions à des outils externes.",
+      "Claude Code inclus dans le plan Pro."
+    ],
+    "pros_en": [
+      "Strong with long documents, writing and structured analysis.",
+      "Projects bring sources, instructions and conversations together.",
+      "Artifacts support iterative work on code, documents and visualizations.",
+      "Web research with citations and external connectors.",
+      "Claude Code is included with Pro."
+    ],
+    "short_description": "L’assistant IA d’Anthropic pour écrire, analyser, rechercher, coder et créer des livrables.",
+    "short_description_en": "Anthropic’s AI assistant for writing, analysis, research, coding and creating deliverables.",
+    "slug": "claude",
+    "source_url": "https://claude.com/pricing",
+    "source_verified_on": "2026-08-25",
+    "use_cases": [
+      "Analyser un contrat, un rapport ou un corpus de recherche.",
+      "Rédiger et réviser une note, une proposition ou un article.",
+      "Construire un prototype ou une visualisation dans Artifacts.",
+      "Explorer un codebase et déléguer des tâches avec Claude Code."
+    ],
+    "use_cases_en": [
+      "Analyze a contract, report or research corpus.",
+      "Draft and revise a memo, proposal or article.",
+      "Build a prototype or visualization in Artifacts.",
+      "Explore a codebase and delegate tasks with Claude Code."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous avez surtout besoin de génération d’images native.",
+        "Votre usage est occasionnel et les limites du plan gratuit vous suffisent.",
+        "Vous cherchez une suite bureautique complète plutôt qu’un partenaire de réflexion."
+      ],
+      "keepIf": [
+        "Vous travaillez régulièrement sur des documents longs, du code ou des analyses complexes.",
+        "Vous voulez organiser vos conversations et vos sources dans des Projects.",
+        "Vous utilisez les Artifacts pour produire et améliorer des documents, prototypes ou visualisations."
+      ],
+      "threshold": "Le plan Pro devient pertinent si les limites gratuites interrompent votre travail ou si Projects, Research et Claude Code font partie de votre routine."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You mainly need native image generation.",
+        "Your usage is occasional and the free limits are sufficient.",
+        "You want a full office suite rather than a thinking partner."
+      ],
+      "keepIf": [
+        "You regularly work with long documents, code or complex analysis.",
+        "You want to organize chats and sources in Projects.",
+        "You use Artifacts to build and iterate on documents, prototypes or visualizations."
+      ],
+      "threshold": "Pro makes sense when free limits interrupt your work or Projects, Research and Claude Code are part of your routine."
+    },
+    "website_url": "https://claude.com/"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "No free tier for developers.",
+        "High costs at scale.",
+        "API integration required (not web-based)."
+      ],
+      "pros": [
+        "Best-in-class model quality and reasoning.",
+        "Up to 1M token context window.",
+        "Batch processing sharply cuts costs.",
+        "Prompt caching for repeated-context scenarios."
+      ],
+      "use_cases": [
+        "Deploy a production chatbot.",
+        "Process thousands of archived documents.",
+        "Run complex autonomous agents."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You just want to chat with an AI (use claude.com/chat).",
+          "You need free API access.",
+          "You don't want to rely on a third-party API for AI needs."
+        ],
+        "keepIf": [
+          "You're building autonomous AI agents or production apps.",
+          "You need high reliability and long context windows.",
+          "You're willing to pay for top-tier model quality."
+        ],
+        "threshold": "Anthropic API is for developers shipping Claude to production; for casual chat, use the free web interface."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Pas d'offre gratuite ; accès via API avec facturation au token.",
+        "exists": false
+      },
+      "key_features": [
+        "Modèles multilingues haute performance",
+        "Prompt caching (90 % de réduction sur input)",
+        "Batch processing (50 % moins cher)",
+        "Web search et code execution",
+        "Context window jusqu'à 1M tokens",
+        "Agents gérés (Managed Agents)"
+      ],
+      "plans": [
+        {
+          "name": "Claude Haiku 4.5",
+          "price": "1 $/M input, 5 $/M output"
+        },
+        {
+          "name": "Claude Sonnet 5",
+          "price": "2 $/M input, 10 $/M output"
+        },
+        {
+          "name": "Claude Opus 5",
+          "price": "5 $/M input, 25 $/M output"
+        },
+        {
+          "name": "Claude Fable 5",
+          "price": "10 $/M input, 50 $/M output"
+        }
+      ],
+      "pricing_model": "Facturation à l'usage par token (input/output), réductions pour batch processing et prompt caching.",
+      "what": "Plateforme API pour accéder aux modèles Claude (Opus, Sonnet, Haiku, Fable), avec options de prompt caching, batch processing et web search pour intégration en production.",
+      "what_en": "API platform for accessing Claude models (Opus, Sonnet, Haiku, Fable) with prompt caching, batch processing, and web search capabilities for production integration."
+    },
+    "fr": {
+      "cons": [
+        "Pas d'offre gratuite pour les développeurs.",
+        "Coûts élevés sur gros volumes.",
+        "Courbe d'apprentissage API (vs interface web)."
+      ],
+      "pros": [
+        "Modèles très performants et précis.",
+        "Support d'un très long contexte (1M tokens).",
+        "Traitement par lots pour réduire fortement les coûts.",
+        "Prompt caching (économie majeure sur contexte répétitif)."
+      ],
+      "relevant_for": [
+        "Développeurs",
+        "Startups AI",
+        "Équipes ML/Data"
+      ],
+      "use_cases": [
+        "Déployer un chatbot en production.",
+        "Analyser de grandes archives (milliers de documents).",
+        "Orchestrer des agents autonomes complexes."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous cherchez une UI conversationnelle simple (préférez claude.com/chat).",
+          "Vous ne voulez pas de frais API.",
+          "Vous ne voulez pas dépendre d'une API tierce pour vos besoins IA."
+        ],
+        "keepIf": [
+          "Vous développez des agents ou applications IA autonomes.",
+          "Vous voulez une API hautement fiable pour la production.",
+          "Votre cas nécessite un très long contexte (RAG, archives)."
+        ],
+        "threshold": "Anthropic API s'adresse aux développeurs intégrant Claude en production ; pour discuter simplement avec Claude, utilisez l'interface web gratuite."
+      }
+    },
+    "slug": "claude",
+    "sources": [
+      {
+        "label": "Anthropic API — pricing et modèles (site officiel)",
+        "url": "https://claude.com/platform/api"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-ai-general-critical-001",
+    "batch_position": 18,
+    "blockers": [],
+    "catalog_hash": "sha256:e76deb088b1d5cbde01f552c8318fbd0180511a1e4f178ccc5db20db3ab3c564",
+    "category": "ai-general",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:61e1fab96261b466e55b7467eed8d55f141297415a4f84a5394b96cd0e79b39a",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Claude",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:ec40ba45199112730c7651586cc4f1ba395d951066abed861e9ed57cc85cd897",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "claude",
+    "source_url": "https://claude.com/pricing",
+    "source_verified_on": "2026-08-25",
+    "status": "QUEUED"
+  }
+}

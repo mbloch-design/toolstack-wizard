@@ -1,0 +1,41 @@
+{
+  "slug": "figjam",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://www.figma.com/figjam/"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://cdn.sanity.io/images/599r6htc/regionalized/8b99a61f768555fab9a11deccc60639cbe74695b-1680x1120.png?w=606&h=404&q=75&fit=max&auto=format",
+      "source_page_url": "https://www.figma.com/figjam/",
+      "official": true,
+      "alt": "Cursors in a file adding stickers and brainstorming phrases on sticky notes"
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.sanity.io/images/599r6htc/regionalized/162dc7c722821d84fe55cf61de9cfc70e089980f-1680x1120.png?w=606&h=404&q=75&fit=max&auto=format",
+      "source_page_url": "https://www.figma.com/figjam/",
+      "official": true,
+      "alt": "Three cursors creating a diagram using shapes and the snap-to-grid connectors"
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.sanity.io/images/599r6htc/regionalized/39462187946b6633cfea14175922608f6c055117-1680x1120.png?w=606&h=404&q=75&fit=max&auto=format",
+      "source_page_url": "https://www.figma.com/figjam/",
+      "official": true,
+      "alt": "A section labeled \"meet the team\" featuring the photobooth widget and photos of team members"
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.sanity.io/images/599r6htc/regionalized/4f4c8709fc6c0d2f802464d49854f29c196acdb0-1680x1120.png?w=606&h=404&q=75&fit=max&auto=format",
+      "source_page_url": "https://www.figma.com/figjam/",
+      "official": true,
+      "alt": "Two sections labeled \"in progress\" and \"blocked\" featuring Jira. A cursor chats \"needs feedback!\""
+    }
+  ]
+}

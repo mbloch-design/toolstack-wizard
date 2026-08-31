@@ -1,0 +1,267 @@
+{
+  "batch": "review-ai-general-critical-001",
+  "current": {
+    "affiliate_url": "https://github.com/features/copilot",
+    "alternatives": [
+      "cursor",
+      "windsurf"
+    ],
+    "category": "ai-general",
+    "cons": [
+      "Chat/review consomment crédits rapidement.",
+      "Moins de choix modèles qu'autres outils.",
+      "Free tier vraiment limité (5 messages)."
+    ],
+    "cons_en": [
+      "Chat/review burn credits quickly.",
+      "Fewer model choices than alternatives.",
+      "Free tier is very limited (5 messages)."
+    ],
+    "host_app": null,
+    "id": "github-copilot",
+    "long_description": "GitHub Copilot, c'est l'assistant de code IA intégré dans votre éditeur. À partir de 8.66€/mois. Pensé pour les développeurs solo et les CTOs et leads tech.\n\nGain de temps estimé : 8h/mois.\n\nÀ garder si : développement quotidien sans Cursor. À éviter si : cursor déjà dans le stack — fort doublon. Rentable dès 1h de code par jour. Si le budget le permet, cursor va plus loin.",
+    "long_description_en": "GitHub Copilot is the AI code assistant integrated into your editor. Starting at €8.66/month. Built for solo developers and CTOs and tech leads.\n\nEstimated time saving: 8h/month.\n\nIf budget allows, cursor goes further.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://images.ctfassets.net/wfutmusr1t3h/4KxWJH8PVVXdqBLs1V3UJ8/0079958c464847c85fe7708ddd990889/github-copilot-social-img.png"
+    },
+    "name": "GitHub Copilot",
+    "pricing": {
+      "free": "Plan gratuit disponible",
+      "paid": "10$/mois (Copilot Pro)"
+    },
+    "pricing_en": null,
+    "pricing_v5": {
+      "cautions": [],
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Pro",
+      "compare_price_monthly_eur": 7.22,
+      "location_sensitive": false,
+      "official_source_url": "https://docs.github.com/en/copilot/get-started/plans",
+      "price_reliability": "high",
+      "source_domain": "github.com",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-03-13"
+    },
+    "pros": [
+      "Autocomplétion inline totalement gratuite.",
+      "Intégration GitHub seamless (PRs, issues).",
+      "Pricing transparent (crédits clairs).",
+      "Support entreprise mature."
+    ],
+    "pros_en": [
+      "Inline autocomplete is completely free.",
+      "Seamless GitHub integration (PRs, issues).",
+      "Transparent pricing (clear credits).",
+      "Mature enterprise support."
+    ],
+    "short_description": "L'assistant de code IA intégré dans votre éditeur.",
+    "short_description_en": "The AI code assistant integrated into your editor.",
+    "slug": "github-copilot",
+    "source_url": "https://docs.github.com/en/copilot/get-started/plans",
+    "source_verified_on": "2026-03-13",
+    "use_cases": [
+      "Développer en équipe avec PR automation.",
+      "Coaching code via review IA.",
+      "Accélérer gestion tickets GitHub."
+    ],
+    "use_cases_en": [
+      "Develop in teams with PR automation.",
+      "Code coaching via AI review.",
+      "Speed up GitHub issue triage."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous préférez Cursor ou autres éditeurs.",
+        "Vous voulez une solution IA standalone.",
+        "Vous utilisez un éditeur autre que GitHub ou VS Code."
+      ],
+      "keepIf": [
+        "Vous codez avec GitHub workflow.",
+        "Vous travaillez en équipe (Business).",
+        "Vous aimez l'intégration VS Code native."
+      ],
+      "threshold": "GitHub Copilot s'impose pour équipes GitHub ; solo, Cursor offre plus de puissance IA."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You prefer Cursor or other editors.",
+        "You want a standalone AI solution.",
+        "You use an editor other than GitHub or VS Code."
+      ],
+      "keepIf": [
+        "You work with GitHub workflow.",
+        "You're in a team (Business plans).",
+        "You like native VS Code integration."
+      ],
+      "threshold": "GitHub Copilot is standard for GitHub teams; solo, Cursor packs more AI power."
+    },
+    "website_url": "https://github.com/features/copilot"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Chat/review burn credits quickly.",
+        "Fewer model choices than alternatives.",
+        "Free tier is very limited (5 messages)."
+      ],
+      "pros": [
+        "Inline autocomplete is completely free.",
+        "Seamless GitHub integration (PRs, issues).",
+        "Transparent pricing (clear credits).",
+        "Mature enterprise support."
+      ],
+      "use_cases": [
+        "Develop in teams with PR automation.",
+        "Code coaching via AI review.",
+        "Speed up GitHub issue triage."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You prefer Cursor or other editors.",
+          "You want a standalone AI solution.",
+          "You use an editor other than GitHub or VS Code."
+        ],
+        "keepIf": [
+          "You work with GitHub workflow.",
+          "You're in a team (Business plans).",
+          "You like native VS Code integration."
+        ],
+        "threshold": "GitHub Copilot is standard for GitHub teams; solo, Cursor packs more AI power."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Gratuit : 5 messages/jour (allotment crédit gratuit), suggestions inline gratuites (pas crédit).",
+        "exists": true
+      },
+      "key_features": [
+        "Autocomplétion inline (gratuit tous plans)",
+        "Code chat (consomme crédit)",
+        "Code review avec IA (crédit)",
+        "Agent mode (tâches background, crédit)",
+        "Copilot CLI pour shell"
+      ],
+      "plans": [
+        {
+          "name": "Free",
+          "price": "0 $ (5 crédits/jour)"
+        },
+        {
+          "name": "Pro",
+          "price": "10 $/mois (15 $ crédit inclus)"
+        },
+        {
+          "name": "Pro+",
+          "price": "39 $/mois (70 $ crédit inclus)"
+        },
+        {
+          "name": "Max",
+          "price": "100 $/mois (200 $ crédit inclus)"
+        },
+        {
+          "name": "Business",
+          "price": "19 $/seat/mois"
+        }
+      ],
+      "pricing_model": "Gratuit (5 crédits/jour), Pro (10 $/mois, 15 $ crédit inclus), Pro+ (39 $/mois, 70 $ crédit), Max (100 $/mois, 200 $ crédit). Business (19 $/seat), Enterprise (39 $/seat).",
+      "what": "Assistant IA pour développeurs GitHub : auto-complétion inline, chat code, review, agent mode, et CLI. Juin 2026 : passage à facturation usage-based (crédits) ; suggestions inline gratuites sur tous les plans.",
+      "what_en": "AI development assistant for GitHub: inline autocomplete, code chat, review, agent mode, and CLI. June 2026: moved to usage-based billing (credits); inline suggestions free on all plans."
+    },
+    "fr": {
+      "cons": [
+        "Chat/review consomment crédits rapidement.",
+        "Moins de choix modèles qu'autres outils.",
+        "Free tier vraiment limité (5 messages)."
+      ],
+      "pros": [
+        "Autocomplétion inline totalement gratuite.",
+        "Intégration GitHub seamless (PRs, issues).",
+        "Pricing transparent (crédits clairs).",
+        "Support entreprise mature."
+      ],
+      "relevant_for": [
+        "Teams GitHub",
+        "Entreprises",
+        "Contributeurs open-source"
+      ],
+      "use_cases": [
+        "Développer en équipe avec PR automation.",
+        "Coaching code via review IA.",
+        "Accélérer gestion tickets GitHub."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous préférez Cursor ou autres éditeurs.",
+          "Vous voulez une solution IA standalone.",
+          "Vous utilisez un éditeur autre que GitHub ou VS Code."
+        ],
+        "keepIf": [
+          "Vous codez avec GitHub workflow.",
+          "Vous travaillez en équipe (Business).",
+          "Vous aimez l'intégration VS Code native."
+        ],
+        "threshold": "GitHub Copilot s'impose pour équipes GitHub ; solo, Cursor offre plus de puissance IA."
+      }
+    },
+    "slug": "github-copilot",
+    "sources": [
+      {
+        "label": "GitHub Copilot — plans et pricing (site officiel)",
+        "url": "https://github.com/features/copilot"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-ai-general-critical-001",
+    "batch_position": 24,
+    "blockers": [],
+    "catalog_hash": "sha256:8051919b0cb905c95048b1a0b2b41ef94ac9deedc9a2e351ef9a70840cebcb4d",
+    "category": "ai-general",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:00b7990aa7acfdc341c76a921d8f2661d721d68911ac6d462df4c79ec3b9b7e4",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "GitHub Copilot",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:5889ca9f82a6830776c5dff1f6eeb1dd2d546f67b5d270787822b3cccb0860d6",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "github-copilot",
+    "source_url": "https://docs.github.com/en/copilot/get-started/plans",
+    "source_verified_on": "2026-03-13",
+    "status": "QUEUED"
+  }
+}

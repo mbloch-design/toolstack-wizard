@@ -1,0 +1,292 @@
+{
+  "batch": "review-ai-general-critical-001",
+  "current": {
+    "affiliate_url": "https://weave.figma.com",
+    "alternatives": [
+      "krea-ai",
+      "magnific-ai"
+    ],
+    "category": "ai-general",
+    "cons": [
+      "Le coût peut augmenter avec l'usage ou les sièges.",
+      "Les fonctions avancées exigent une offre payante.",
+      "La qualité du paramétrage influence le résultat."
+    ],
+    "cons_en": [
+      "Costs can grow with usage or seats.",
+      "Advanced capabilities require a paid tier.",
+      "Setup quality affects the result."
+    ],
+    "host_app": null,
+    "id": "figma-weave",
+    "long_description": "Figma Weave est un espace de création visuelle IA autonome avec workflows nodaux, plusieurs modèles génératifs et outils de compositing.\n\nFonctions clés : Canvas nodal ; Modèles image et vidéo multiples ; Calques et compositing ; Workflows réutilisables ; Crédits partagés en équipe.\n\nRetenez-le lorsque l'usage récurrent remplace un workflow manuel ou fragmenté clairement identifié.",
+    "long_description_en": "Figma Weave is a standalone AI visual creation workspace with node-based workflows, multiple generative models, and compositing tools.\n\nKey strengths: Focused product workflow.; Official documentation and active development.; Integrates into professional processes.; Entry path available before scaling..\n\nKeep it when recurring usage replaces a clear manual or fragmented workflow.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://weave.figma.com/favicon.ico"
+    },
+    "name": "Figma Weave",
+    "pricing": {
+      "free": "150 crédits mensuels, cinq workflows, modèles image et licence commerciale.",
+      "paid": "Free: 0 USD ; Starter: 24 USD par mois, ou 228 USD par an ; Professional: 45 USD par mois, ou 432 USD par an ; Team: 60 USD par utilisateur et par mois, ou 576 USD par an"
+    },
+    "pricing_en": {
+      "free": "150 crédits mensuels, cinq workflows, modèles image et licence commerciale.",
+      "paid": "Free: 0 USD ; Starter: 24 USD par mois, ou 228 USD par an ; Professional: 45 USD par mois, ou 432 USD par an ; Team: 60 USD par utilisateur et par mois, ou 576 USD par an"
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Système de crédits : top-up à 10$ les 1 000 crédits",
+        "Plans Professional et Team avec quotas plus élevés"
+      ],
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Starter",
+      "compare_price_monthly_eur": 24,
+      "location_sensitive": false,
+      "official_source_url": "https://weave.figma.com/pricing",
+      "price_reliability": "high",
+      "source_domain": "weave.figma.com",
+      "usage_sensitive": true,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-08-30"
+    },
+    "pros": [
+      "Workflow produit bien défini.",
+      "Documentation officielle et développement actif.",
+      "S'intègre aux processus professionnels.",
+      "Point d'entrée disponible avant de monter en charge."
+    ],
+    "pros_en": [
+      "Focused product workflow.",
+      "Official documentation and active development.",
+      "Integrates into professional processes.",
+      "Entry path available before scaling."
+    ],
+    "short_description": "Figma Weave est un espace de création visuelle IA autonome avec workflows nodaux, plusieurs modèles génératifs et outils de compositing.",
+    "short_description_en": "Figma Weave is a standalone AI visual creation workspace with node-based workflows, multiple generative models, and compositing tools.",
+    "slug": "figma-weave",
+    "source_url": "https://weave.figma.com/pricing",
+    "source_verified_on": "2026-08-30",
+    "use_cases": [
+      "Utiliser canvas nodal dans un workflow récurrent.",
+      "Utiliser modèles image et vidéo multiples dans un workflow récurrent.",
+      "Utiliser calques et compositing dans un workflow récurrent."
+    ],
+    "use_cases_en": [
+      "Use canvas nodal in a recurring workflow.",
+      "Use modèles image et vidéo multiples in a recurring workflow.",
+      "Use calques et compositing in a recurring workflow."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Votre besoin est ponctuel et un outil gratuit plus simple suffit.",
+        "Votre stack couvre déjà le même workflow.",
+        "Le modèle par usage ou par siège rend le coût difficile à prévoir."
+      ],
+      "keepIf": [
+        "Vous utilisez régulièrement le workflow central de Figma Weave.",
+        "Vous préférez un produit intégré à l'assemblage de plusieurs outils.",
+        "Les limites officielles correspondent à votre volume réel."
+      ],
+      "threshold": "Retenez-le lorsque l'usage récurrent remplace un workflow manuel ou fragmenté clairement identifié."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "Your need is occasional and a simpler free tool is enough.",
+        "You already cover the same workflow in your current stack.",
+        "The usage or seat model makes costs hard to predict."
+      ],
+      "keepIf": [
+        "You need Figma Weave's core workflow regularly.",
+        "You value an integrated product over stitching several tools together.",
+        "The official usage limits match your real volume."
+      ],
+      "threshold": "Keep it when recurring usage replaces a clear manual or fragmented workflow."
+    },
+    "website_url": "https://weave.figma.com"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim - Mike",
+    "en": {
+      "cons": [
+        "Costs can grow with usage or seats.",
+        "Advanced capabilities require a paid tier.",
+        "Setup quality affects the result."
+      ],
+      "pros": [
+        "Focused product workflow.",
+        "Official documentation and active development.",
+        "Integrates into professional processes.",
+        "Entry path available before scaling."
+      ],
+      "use_cases": [
+        "Use canvas nodal in a recurring workflow.",
+        "Use modèles image et vidéo multiples in a recurring workflow.",
+        "Use calques et compositing in a recurring workflow."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Your need is occasional and a simpler free tool is enough.",
+          "You already cover the same workflow in your current stack.",
+          "The usage or seat model makes costs hard to predict."
+        ],
+        "keepIf": [
+          "You need Figma Weave's core workflow regularly.",
+          "You value an integrated product over stitching several tools together.",
+          "The official usage limits match your real volume."
+        ],
+        "threshold": "Keep it when recurring usage replaces a clear manual or fragmented workflow."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "150 crédits mensuels, cinq workflows, modèles image et licence commerciale.",
+        "exists": true
+      },
+      "key_features": [
+        "Canvas nodal",
+        "Modèles image et vidéo multiples",
+        "Calques et compositing",
+        "Workflows réutilisables",
+        "Crédits partagés en équipe"
+      ],
+      "plans": [
+        {
+          "name": "Free",
+          "price": "0 USD"
+        },
+        {
+          "name": "Starter",
+          "price": "24 USD par mois, ou 228 USD par an"
+        },
+        {
+          "name": "Professional",
+          "price": "45 USD par mois, ou 432 USD par an"
+        },
+        {
+          "name": "Team",
+          "price": "60 USD par utilisateur et par mois, ou 576 USD par an"
+        }
+      ],
+      "pricing_model": "Freemium par crédits, avec abonnements individuels et équipe séparés des forfaits Figma.",
+      "what": "Figma Weave est un espace de création visuelle IA autonome avec workflows nodaux, plusieurs modèles génératifs et outils de compositing.",
+      "what_en": "Figma Weave is a standalone AI visual creation workspace with node-based workflows, multiple generative models, and compositing tools."
+    },
+    "fr": {
+      "cons": [
+        "Le coût peut augmenter avec l'usage ou les sièges.",
+        "Les fonctions avancées exigent une offre payante.",
+        "La qualité du paramétrage influence le résultat."
+      ],
+      "pros": [
+        "Workflow produit bien défini.",
+        "Documentation officielle et développement actif.",
+        "S'intègre aux processus professionnels.",
+        "Point d'entrée disponible avant de monter en charge."
+      ],
+      "relevant_for": [
+        "Designers",
+        "Directeurs artistiques",
+        "Studios créatifs"
+      ],
+      "use_cases": [
+        "Utiliser canvas nodal dans un workflow récurrent.",
+        "Utiliser modèles image et vidéo multiples dans un workflow récurrent.",
+        "Utiliser calques et compositing dans un workflow récurrent."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Votre besoin est ponctuel et un outil gratuit plus simple suffit.",
+          "Votre stack couvre déjà le même workflow.",
+          "Le modèle par usage ou par siège rend le coût difficile à prévoir."
+        ],
+        "keepIf": [
+          "Vous utilisez régulièrement le workflow central de Figma Weave.",
+          "Vous préférez un produit intégré à l'assemblage de plusieurs outils.",
+          "Les limites officielles correspondent à votre volume réel."
+        ],
+        "threshold": "Retenez-le lorsque l'usage récurrent remplace un workflow manuel ou fragmenté clairement identifié."
+      }
+    },
+    "slug": "figma-weave",
+    "sources": [
+      {
+        "label": "Tarifs Figma Weave (site officiel)",
+        "url": "https://weave.figma.com/pricing"
+      },
+      {
+        "label": "Produit Figma Weave (site officiel)",
+        "url": "https://weave.figma.com/"
+      },
+      {
+        "label": "Conditions Figma Weave (site officiel)",
+        "url": "https://content.weave.figma.com/terms-of-service"
+      }
+    ],
+    "verified_on": "2026-08-30"
+  },
+  "media_evidence": {
+    "discovery": {
+      "official_media_found": true,
+      "official_pages_checked": [
+        "https://weave.figma.com/pricing"
+      ]
+    },
+    "items": [
+      {
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://weave.figma.com/pricing",
+        "url": "https://weave.figma.com/favicon.ico"
+      }
+    ],
+    "mode": "sourced",
+    "slug": "figma-weave",
+    "verified_on": "2026-08-30"
+  },
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-ai-general-critical-001",
+    "batch_position": 5,
+    "blockers": [],
+    "catalog_hash": "sha256:eed23d58f7797d878b38b34465f042d48d5260c7ffba1e5a53a3dcd128233b1f",
+    "category": "ai-general",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:67dab1462ffbefceda58dafb304a9049713ca716241a00a1f93f69e47a012134",
+    "invalidated_from": null,
+    "media_errors": [],
+    "media_evidence": "VALID",
+    "media_evidence_hash": "sha256:b56fcdea5f633546a74ac1aabea0cd60f156a3ff15d3dda9111913c2604c698a",
+    "name": "Figma Weave",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price"
+    ],
+    "priority_score": 180,
+    "published_at": "2026-08-31",
+    "quality_version": "catalog-review-v1",
+    "rendered_at": "2026-08-31",
+    "review_fingerprint": "sha256:c4d82ae0c7a6671cca4a83b67c37442566dd44ff368a6b09849b53dc6ec37e5c",
+    "reviewed_at": "2026-08-31",
+    "reviewed_hash": "sha256:c4d82ae0c7a6671cca4a83b67c37442566dd44ff368a6b09849b53dc6ec37e5c",
+    "reviewer": "ToolTrim - Mike",
+    "risk_tier": "critical",
+    "slug": "figma-weave",
+    "source_url": "https://weave.figma.com/pricing",
+    "source_verified_on": "2026-08-30",
+    "status": "PUBLISHED"
+  }
+}

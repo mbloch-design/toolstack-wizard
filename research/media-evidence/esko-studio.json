@@ -1,0 +1,41 @@
+{
+  "slug": "esko-studio",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://www.esko.com/en/products/studio"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://www.esko.com/static/uploads/2024/01/hero_image.webp",
+      "source_page_url": "https://www.esko.com/en/products/studio",
+      "official": true,
+      "alt": "Photo of monitor displaying Studio"
+    },
+    {
+      "kind": "image",
+      "url": "https://www.esko.com/static/uploads/2024/01/section_image_1.webp",
+      "source_page_url": "https://www.esko.com/en/products/studio",
+      "official": true,
+      "alt": "Photo of laptop displaying Studio"
+    },
+    {
+      "kind": "image",
+      "url": "https://www.esko.com/static/uploads/2024/01/section_image_2.webp",
+      "source_page_url": "https://www.esko.com/en/products/studio",
+      "official": true,
+      "alt": "Illustration of GetSet can design"
+    },
+    {
+      "kind": "image",
+      "url": "https://www.esko.com/static/uploads/2024/01/audience_image_11.webp",
+      "source_page_url": "https://www.esko.com/en/products/studio",
+      "official": true,
+      "alt": "Screenshot of Packaging design in Studio"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "slug": "elevenlabs",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://elevenlabs.io"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://elevenlabs.io/_next/image?url=https%3A%2F%2Feleven-public-cdn.elevenlabs.io%2Fmarketing_website%2F_next%2Fstatic%2Fmedia%2Feleven-creative.f5fbfcf5.png&w=3840&q=80",
+      "source_page_url": "https://elevenlabs.io",
+      "official": true,
+      "alt": "ElevenLabs official product preview"
+    },
+    {
+      "kind": "image",
+      "url": "https://elevenlabs.io/cover.png",
+      "source_page_url": "https://elevenlabs.io",
+      "official": true,
+      "alt": "Official product preview"
+    }
+  ]
+}

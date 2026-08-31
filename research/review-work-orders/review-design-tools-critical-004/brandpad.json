@@ -1,0 +1,258 @@
+{
+  "batch": "review-design-tools-critical-004",
+  "current": {
+    "affiliate_url": null,
+    "alternatives": [],
+    "category": "design-tools",
+    "cons": [
+      "Pas de création de design intégrée (organise seulement).",
+      "Plan payant peut être cher pour petites équipes.",
+      "Courbe d'apprentissage modérée.",
+      "Overkill si les guidelines sont très simples."
+    ],
+    "cons_en": [
+      "No integrated design creation (organizes only).",
+      "Paid plan can be pricey for small teams.",
+      "Moderate learning curve.",
+      "Overkill if guidelines are very simple."
+    ],
+    "host_app": null,
+    "id": "brandpad",
+    "long_description": "Plateforme de brand guidelines en ligne pour livrer et maintenir une identité.",
+    "long_description_en": "Brand management platform (brand guidelines) to centralize and share visual rules, logos, typography, colors with team or partners. Enables collaboration and asset validation.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://brandpad.io/uploads/images/_1200x630_crop_center-center_82_none/brandpad_logo.png?mtime=1612868009"
+    },
+    "name": "Brandpad",
+    "pricing": {
+      "free": "Essai ou plan gratuit selon usage",
+      "paid": "À partir de 30€/mois environ"
+    },
+    "pricing_en": null,
+    "pricing_v5": null,
+    "pros": [
+      "Plan Starter gratuit très complet.",
+      "Parfait pour les grands comptes et agences.",
+      "Centralisation et versioning des assets brand.",
+      "Collaboration et approbation workflow intégrés.",
+      "Essai gratuit 3 semaines sans carte bancaire."
+    ],
+    "pros_en": [
+      "Very complete free Starter plan.",
+      "Perfect for large accounts and agencies.",
+      "Centralization and versioning of brand assets.",
+      "Integrated collaboration and approval workflow.",
+      "3-week free trial, no credit card required."
+    ],
+    "short_description": "Plateforme de brand guidelines en ligne pour livrer et maintenir une identité.",
+    "short_description_en": "Online brand guidelines platform to deliver and maintain an identity.",
+    "slug": "brandpad",
+    "source_url": "https://brandpad.io",
+    "source_verified_on": null,
+    "use_cases": [
+      "Centraliser et versionner les assets d'une marque.",
+      "Partager les guidelines avec une équipe ou agence partenaire.",
+      "Approuver les utilisations de la marque avant publication."
+    ],
+    "use_cases_en": [
+      "Centralize and version a brand's assets.",
+      "Share guidelines with a team or partner agency.",
+      "Approve brand usage before publishing."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous cherchez un outil de création de logos ou design (Brandpad ne crée pas, organise).",
+        "Votre budget est très limité et les guidelines sont simples.",
+        "Vous travaillez seul sans équipe."
+      ],
+      "keepIf": [
+        "Vous gérez une marque complexe avec multiples guideline.",
+        "Vous avez besoin de centraliser et partager les assets visuels.",
+        "Votre équipe a besoin d'approuver les utilisations de la marque."
+      ],
+      "threshold": "Brandpad excelle pour les grandes marques ou équipes ayant besoin de contrôle strict ; pour une petite marque simple, une simple documentation suffit."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You're looking for a logo or design creation tool (Brandpad organizes, doesn't create).",
+        "Your budget is tight and guidelines are simple.",
+        "You work alone without a team."
+      ],
+      "keepIf": [
+        "You manage a complex brand with multiple guidelines.",
+        "You need to centralize and share visual assets.",
+        "Your team needs to approve brand usage."
+      ],
+      "threshold": "Brandpad excels for large brands or teams needing strict control; for a small simple brand, simple documentation suffices."
+    },
+    "website_url": "https://brandpad.io"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "No integrated design creation (organizes only).",
+        "Paid plan can be pricey for small teams.",
+        "Moderate learning curve.",
+        "Overkill if guidelines are very simple."
+      ],
+      "pros": [
+        "Very complete free Starter plan.",
+        "Perfect for large accounts and agencies.",
+        "Centralization and versioning of brand assets.",
+        "Integrated collaboration and approval workflow.",
+        "3-week free trial, no credit card required."
+      ],
+      "use_cases": [
+        "Centralize and version a brand's assets.",
+        "Share guidelines with a team or partner agency.",
+        "Approve brand usage before publishing."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You're looking for a logo or design creation tool (Brandpad organizes, doesn't create).",
+          "Your budget is tight and guidelines are simple.",
+          "You work alone without a team."
+        ],
+        "keepIf": [
+          "You manage a complex brand with multiple guidelines.",
+          "You need to centralize and share visual assets.",
+          "Your team needs to approve brand usage."
+        ],
+        "threshold": "Brandpad excels for large brands or teams needing strict control; for a small simple brand, simple documentation suffices."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Plan Starter gratuit avec accès complet à tous les outils Brandpad. Révisions illimitées et collaborateurs additionnels payants sur les plans supérieurs.",
+        "exists": true
+      },
+      "key_features": [
+        "Centralisation des brand guidelines (logos, couleurs, typographies)",
+        "Gestion des versions et contrôle de change",
+        "Partage sécurisé avec équipe et partenaires",
+        "Library d'assets centralisée",
+        "Approbation et validation des designs",
+        "Intégration avec outils design (Figma, Adobe, etc.)"
+      ],
+      "plans": [
+        {
+          "name": "Starter",
+          "price": "Gratuit (accès complet aux outils Brandpad)"
+        },
+        {
+          "name": "Brand",
+          "price": "500 $/an"
+        },
+        {
+          "name": "Portfolio",
+          "price": "1 250 $/an"
+        },
+        {
+          "name": "Bespoke",
+          "price": "Tarification personnalisée (entreprises)"
+        }
+      ],
+      "pricing_model": "Abonnement annuel par plan (Starter gratuit, Brand et Portfolio payants). Essai gratuit 3 semaines.",
+      "what": "Plateforme de gestion de marque (brand guidelines) pour centraliser et partager les règles visuelles, logo, typographies, couleurs avec l'équipe ou les partenaires. Permet la collaboration et la validation des assets.",
+      "what_en": "Brand management platform (brand guidelines) to centralize and share visual rules, logos, typography, colors with team or partners. Enables collaboration and asset validation."
+    },
+    "fr": {
+      "cons": [
+        "Pas de création de design intégrée (organise seulement).",
+        "Plan payant peut être cher pour petites équipes.",
+        "Courbe d'apprentissage modérée.",
+        "Overkill si les guidelines sont très simples."
+      ],
+      "pros": [
+        "Plan Starter gratuit très complet.",
+        "Parfait pour les grands comptes et agences.",
+        "Centralisation et versioning des assets brand.",
+        "Collaboration et approbation workflow intégrés.",
+        "Essai gratuit 3 semaines sans carte bancaire."
+      ],
+      "relevant_for": [
+        "Grandes marques",
+        "Agences créatives",
+        "Équipes marketing"
+      ],
+      "use_cases": [
+        "Centraliser et versionner les assets d'une marque.",
+        "Partager les guidelines avec une équipe ou agence partenaire.",
+        "Approuver les utilisations de la marque avant publication."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous cherchez un outil de création de logos ou design (Brandpad ne crée pas, organise).",
+          "Votre budget est très limité et les guidelines sont simples.",
+          "Vous travaillez seul sans équipe."
+        ],
+        "keepIf": [
+          "Vous gérez une marque complexe avec multiples guideline.",
+          "Vous avez besoin de centraliser et partager les assets visuels.",
+          "Votre équipe a besoin d'approuver les utilisations de la marque."
+        ],
+        "threshold": "Brandpad excelle pour les grandes marques ou équipes ayant besoin de contrôle strict ; pour une petite marque simple, une simple documentation suffit."
+      }
+    },
+    "slug": "brandpad",
+    "sources": [
+      {
+        "label": "Brandpad — site officiel et tarifs",
+        "url": "https://brandpad.io/pricing"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-design-tools-critical-004",
+    "batch_position": 1,
+    "blockers": [],
+    "catalog_hash": "sha256:91036a72ee15a1ea2477758d5cc7bcabdecb2efbf20ecb6310f164c1478b8084",
+    "category": "design-tools",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:cccb8db636f4caff9bc1454e1c7e32d103549dfb05e233bec510a708dfa4d77e",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Brandpad",
+    "next_review_at": null,
+    "priority_reasons": [
+      "paid_price",
+      "missing_or_invalid_media_evidence",
+      "shallow_editorial",
+      "undated_source"
+    ],
+    "priority_score": 195,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:9bcb217b4362e3bf9c330c9002f2fe8a0a85ebcf3c5c75d982d373ad75fcd3fa",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "brandpad",
+    "source_url": "https://brandpad.io",
+    "source_verified_on": null,
+    "status": "QUEUED"
+  }
+}

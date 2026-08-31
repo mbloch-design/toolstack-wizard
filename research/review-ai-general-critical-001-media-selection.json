@@ -1,0 +1,18 @@
+{
+  "hume-ai": { "candidate_indexes": [0] },
+  "microsoft-365-copilot": { "candidate_indexes": [] },
+  "voicetypr": { "candidate_indexes": [0] },
+  "manifest-ai": { "candidate_indexes": [], "urls": ["/og-screenshots/manifest-ai.jpg"], "include_existing": false },
+  "adobe-podcast-ai": { "candidate_indexes": [] },
+  "autodesk-flow-studio": { "candidate_indexes": [0, 1, 2, 3], "include_existing": false },
+  "bolt-new": { "candidate_indexes": [0, 1, 2, 5], "include_existing": false },
+  "chatgpt": { "candidate_indexes": [] },
+  "claude": { "candidate_indexes": [0] },
+  "cursor": { "candidate_indexes": [0, 1, 2], "include_existing": false },
+  "deepseek": { "candidate_indexes": [1], "include_existing": false },
+  "elevenlabs": { "candidate_indexes": [0, 1], "include_existing": false },
+  "firefly": { "candidate_indexes": [] },
+  "gemini": { "candidate_indexes": [] },
+  "github-copilot": { "candidate_indexes": [0] },
+  "heygen": { "candidate_indexes": [0, 1], "include_existing": false }
+}
