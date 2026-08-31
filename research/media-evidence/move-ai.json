@@ -1,0 +1,20 @@
+{
+  "slug": "move-ai",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://www.move.ai"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://cdn.prod.website-files.com/695feac1f2e19ffbc09581db/696f9a8fcc78b469d694ff48_transfer.png",
+      "source_page_url": "https://www.move.ai",
+      "official": true,
+      "alt": "Move AI official product preview"
+    }
+  ]
+}

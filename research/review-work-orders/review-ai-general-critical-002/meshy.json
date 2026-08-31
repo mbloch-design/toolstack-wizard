@@ -1,0 +1,327 @@
+{
+  "batch": "review-ai-general-critical-002",
+  "current": {
+    "affiliate_url": "https://www.meshy.ai?via=tooltrim",
+    "alternatives": [
+      "tripo",
+      "blender"
+    ],
+    "category": "ai-general",
+    "cons": [
+      "Qualité variable selon la complexité du modèle.",
+      "Contrôle limité sur les détails fins.",
+      "Performance dépendante du prompt texte."
+    ],
+    "cons_en": [
+      "Quality varies with model complexity.",
+      "Limited control over fine details.",
+      "Performance depends on text prompt quality."
+    ],
+    "host_app": null,
+    "id": "meshy",
+    "long_description": "Meshy, c'est l'un des leaders de la 3D générative : tu écris un prompt ou tu déposes une image, et il sort un modèle 3D texturé en quelques secondes. Pour prototyper un asset de jeu, explorer un concept ou peupler une scène en props, c'est un accélérateur bluffant. Les modèles s'exportent vers Blender, Cinema 4D, Unreal et compagnie.\n\nLe bémol à connaître : la topologie générée reste brute (souvent à retravailler pour de la production sérieuse), et le résultat est un point de départ, pas un asset final. Mais ça progresse très vite. Côté prix, c'est accessible : un plan gratuit (100 crédits/mois) pour tester, puis Pro à 20$/mois.\n\nPour ToolTrim, Meshy est exactement le type d'IA qui augmente les logiciels 3D classiques (Cinema 4D, Blender, ZBrush) plutôt que de les remplacer : tu génères une base en IA, tu la nettoies et tu la mets en scène dans ton outil. Avec Tripo, c'est la référence du text-to-3D abordable.",
+    "long_description_en": "Meshy is one of the leaders in generative 3D: you write a prompt or drop an image, and it outputs a textured 3D model in seconds. For prototyping a game asset, exploring a concept or populating a scene with props, it's a striking accelerator. Models export to Blender, Cinema 4D, Unreal and the rest.\n\nThe catch: the generated topology stays rough (often needs reworking for serious production), and the result is a starting point, not a final asset. But it's improving fast. On price, it's accessible: a free plan (100 credits/month) to test, then Pro at $20/month.\n\nFor ToolTrim, Meshy is exactly the kind of AI that augments classic 3D apps (Cinema 4D, Blender, ZBrush) rather than replacing them: you generate a base with AI, clean it up and stage it in your tool. With Tripo, it's the reference for affordable text-to-3D.",
+    "media": {
+      "gallery_images": [
+        "https://cdn.meshy.ai/ti_w%3A3840%2Cq%3A75%2Cf%3Awebp/landing-assets/home/bg_landing_home_image3d_UI.png",
+        "https://cdn.meshy.ai/webapp-build-assets/production/_next/static/media/model_2.40grweusf_nc8.webp",
+        "https://cdn.meshy.ai/ti_w%3A3840%2Cq%3A75%2Cf%3Awebp/landing-assets/home/landing_3D_printing_5.png"
+      ],
+      "og_image_url": "https://cdn.meshy.ai/ti_w%3A3840%2Cq%3A75%2Cf%3Awebp/landing-assets/home/landing_home_hero_model_1.png"
+    },
+    "name": "Meshy",
+    "pricing": {
+      "free": "Gratuit (100 crédits/mois)",
+      "paid": "Pro 20 $/mois, Premium 40 $, Ultra 100 $, Studio 70 $, Enterprise sur devis."
+    },
+    "pricing_en": {
+      "free": "Free (100 credits/month)",
+      "paid": "Pro $20/month, Premium $40, Ultra $100, Studio $70, Enterprise custom."
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Gratuit 100 crédits/mois ; Pro 20 $/mois ; les créations gratuites exigent une attribution CC BY 4.0"
+      ],
+      "compare_plan_kind": "subscription",
+      "compare_plan_name": "Pro (mensuel)",
+      "compare_price_monthly_eur": 20,
+      "location_sensitive": false,
+      "official_source_url": "https://www.meshy.ai/pricing",
+      "price_reliability": "high",
+      "source_domain": "meshy.ai",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-08-31"
+    },
+    "pros": [
+      "Génération rapide (moins d'une minute).",
+      "Aucun abonnement obligatoire pour démarrer.",
+      "Optimisation automatique pour l'impression 3D.",
+      "Support de multiples formats et moteurs.",
+      "Texturage et rigging automatiques."
+    ],
+    "pros_en": [
+      "Fast generation (under a minute).",
+      "No mandatory subscription to start.",
+      "Automatic optimization for 3D printing.",
+      "Multi-format and multi-engine support.",
+      "Automatic texturing and rigging."
+    ],
+    "short_description": "Génère des modèles 3D texturés à partir d'un texte ou d'une image, en secondes.",
+    "short_description_en": "Generates textured 3D models from text or an image, in seconds.",
+    "slug": "meshy",
+    "source_url": "https://www.meshy.ai/pricing",
+    "source_verified_on": "2026-08-31",
+    "use_cases": [
+      "Générer rapidement des modèles de jeux inédits.",
+      "Préparer des objets pour l'impression 3D.",
+      "Créer des prototypes 3D à partir de descriptions."
+    ],
+    "use_cases_en": [
+      "Quickly generate game models.",
+      "Prepare objects for 3D printing.",
+      "Create 3D prototypes from text descriptions."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous nécessitez un contrôle total sur la géométrie.",
+        "Vous travaillez sur des scènes complexes multi-objets.",
+        "Vous avez besoin de compatibilité avec des formats très spécialisés."
+      ],
+      "keepIf": [
+        "Vous créez des contenus 3D pour des jeux vidéo.",
+        "Vous avez besoin de modèles imprimables rapidement.",
+        "Vous préférez une solution sans abonnement coûteux."
+      ],
+      "threshold": "Meshy convient aux créateurs 3D cherchant rapidité et accessibilité ; pour des projets exigeant un contrôle méticuleux, un outil traditionnel demeure préférable."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You require complete control over geometry.",
+        "You work on complex multi-object scenes.",
+        "You need compatibility with very specialized formats."
+      ],
+      "keepIf": [
+        "You create 3D content for games.",
+        "You need printable models quickly.",
+        "You prefer a solution without expensive subscriptions."
+      ],
+      "threshold": "Meshy suits creators seeking speed and accessibility; for projects demanding meticulous control, traditional tools are preferable."
+    },
+    "website_url": "https://www.meshy.ai"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Quality varies with model complexity.",
+        "Limited control over fine details.",
+        "Performance depends on text prompt quality."
+      ],
+      "pros": [
+        "Fast generation (under a minute).",
+        "No mandatory subscription to start.",
+        "Automatic optimization for 3D printing.",
+        "Multi-format and multi-engine support.",
+        "Automatic texturing and rigging."
+      ],
+      "use_cases": [
+        "Quickly generate game models.",
+        "Prepare objects for 3D printing.",
+        "Create 3D prototypes from text descriptions."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You require complete control over geometry.",
+          "You work on complex multi-object scenes.",
+          "You need compatibility with very specialized formats."
+        ],
+        "keepIf": [
+          "You create 3D content for games.",
+          "You need printable models quickly.",
+          "You prefer a solution without expensive subscriptions."
+        ],
+        "threshold": "Meshy suits creators seeking speed and accessibility; for projects demanding meticulous control, traditional tools are preferable."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "100 crédits par mois, sans carte bancaire ; créations sous licence CC BY 4.0",
+        "exists": true
+      },
+      "key_features": [
+        "Génération texte-vers-3D et image-vers-3D",
+        "Texturage automatique basé sur PBR",
+        "Rigging et animation automatiques (600+ preset de mouvements)",
+        "Agent 3D pour passer d'une idée, photo ou esquisse à un modèle",
+        "Optimisation pour l'impression 3D avec contrôle et réparation du maillage",
+        "Export FBX, OBJ, USDZ, GLB, STL et Blender",
+        "Intégrations Blender, Unity, Unreal Engine, Godot et outils de tranchage"
+      ],
+      "plans": [
+        {
+          "name": "Free",
+          "price": "0 $ avec 100 crédits par mois"
+        },
+        {
+          "name": "Pro",
+          "price": "20 $/mois avec 1 000 crédits"
+        },
+        {
+          "name": "Premium",
+          "price": "40 $/mois"
+        },
+        {
+          "name": "Ultra",
+          "price": "100 $/mois"
+        },
+        {
+          "name": "Studio",
+          "price": "70 $/mois pour un membre, puis 10 $/mois par membre supplémentaire"
+        },
+        {
+          "name": "Enterprise",
+          "price": "Sur devis"
+        }
+      ],
+      "pricing_model": "Freemium par crédits avec abonnements individuels, équipe et entreprise",
+      "what": "Générateur de modèles 3D basé sur l'IA qui transforme des descriptions textuelles ou des images en modèles 3D prêts à l'emploi pour les jeux vidéo et l'impression 3D.",
+      "what_en": "AI-powered 3D model generator that converts text descriptions or images into ready-to-use 3D models for games and 3D printing."
+    },
+    "fr": {
+      "cons": [
+        "Qualité variable selon la complexité du modèle.",
+        "Contrôle limité sur les détails fins.",
+        "Performance dépendante du prompt texte."
+      ],
+      "pros": [
+        "Génération rapide (moins d'une minute).",
+        "Aucun abonnement obligatoire pour démarrer.",
+        "Optimisation automatique pour l'impression 3D.",
+        "Support de multiples formats et moteurs.",
+        "Texturage et rigging automatiques."
+      ],
+      "relevant_for": [
+        "Game developers",
+        "3D artists",
+        "Makers / Entrepreneurs impression 3D"
+      ],
+      "use_cases": [
+        "Générer rapidement des modèles de jeux inédits.",
+        "Préparer des objets pour l'impression 3D.",
+        "Créer des prototypes 3D à partir de descriptions."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous nécessitez un contrôle total sur la géométrie.",
+          "Vous travaillez sur des scènes complexes multi-objets.",
+          "Vous avez besoin de compatibilité avec des formats très spécialisés."
+        ],
+        "keepIf": [
+          "Vous créez des contenus 3D pour des jeux vidéo.",
+          "Vous avez besoin de modèles imprimables rapidement.",
+          "Vous préférez une solution sans abonnement coûteux."
+        ],
+        "threshold": "Meshy convient aux créateurs 3D cherchant rapidité et accessibilité ; pour des projets exigeant un contrôle méticuleux, un outil traditionnel demeure préférable."
+      }
+    },
+    "slug": "meshy",
+    "sources": [
+      {
+        "label": "Meshy — Tarifs officiels",
+        "url": "https://www.meshy.ai/pricing"
+      },
+      {
+        "label": "Meshy — AI 3D Model Generator",
+        "url": "https://www.meshy.ai"
+      }
+    ],
+    "verified_on": "2026-08-31"
+  },
+  "media_evidence": {
+    "discovery": {
+      "official_media_found": true,
+      "official_pages_checked": [
+        "https://www.meshy.ai"
+      ]
+    },
+    "items": [
+      {
+        "alt": "Personnage 3D généré avec Meshy",
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://www.meshy.ai",
+        "url": "https://cdn.meshy.ai/ti_w%3A3840%2Cq%3A75%2Cf%3Awebp/landing-assets/home/landing_home_hero_model_1.png"
+      },
+      {
+        "alt": "Interface Image to 3D de Meshy",
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://www.meshy.ai",
+        "url": "https://cdn.meshy.ai/ti_w%3A3840%2Cq%3A75%2Cf%3Awebp/landing-assets/home/bg_landing_home_image3d_UI.png"
+      },
+      {
+        "alt": "Exemple de modèle 3D produit avec Meshy",
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://www.meshy.ai",
+        "url": "https://cdn.meshy.ai/webapp-build-assets/production/_next/static/media/model_2.40grweusf_nc8.webp"
+      },
+      {
+        "alt": "Contrôle de maillage pour impression 3D dans Meshy",
+        "kind": "image",
+        "official": true,
+        "source_page_url": "https://www.meshy.ai",
+        "url": "https://cdn.meshy.ai/ti_w%3A3840%2Cq%3A75%2Cf%3Awebp/landing-assets/home/landing_3D_printing_5.png"
+      }
+    ],
+    "mode": "sourced",
+    "slug": "meshy",
+    "verified_on": "2026-08-31"
+  },
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-ai-general-critical-002",
+    "batch_position": 6,
+    "blockers": [],
+    "catalog_hash": "sha256:20b0871f2f92fee41dd4820d01e0534844546c9e42db82ef0c8b308b3d61dc46",
+    "category": "ai-general",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:4515104d928ccdeb6dd20530ab329a3d609bf82832e9887d8c90dc011dab1a88",
+    "invalidated_from": null,
+    "media_errors": [],
+    "media_evidence": "VALID",
+    "media_evidence_hash": "sha256:a4f2937c0ca4feaea88b91fd45a963adb184eb463cb8afcd0b0db71331f4d879",
+    "name": "Meshy",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price"
+    ],
+    "priority_score": 180,
+    "published_at": "2026-08-31",
+    "quality_version": "catalog-review-v1",
+    "rendered_at": "2026-08-31",
+    "review_fingerprint": "sha256:8325085aa5a9d4882c86ac7b7cfd45c22a52200f7f3e5a542658f3bc41800b59",
+    "reviewed_at": "2026-08-31",
+    "reviewed_hash": "sha256:8325085aa5a9d4882c86ac7b7cfd45c22a52200f7f3e5a542658f3bc41800b59",
+    "reviewer": "ToolTrim",
+    "risk_tier": "critical",
+    "slug": "meshy",
+    "source_url": "https://www.meshy.ai/pricing",
+    "source_verified_on": "2026-08-31",
+    "status": "PUBLISHED"
+  }
+}

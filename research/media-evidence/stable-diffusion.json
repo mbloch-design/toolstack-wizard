@@ -1,0 +1,41 @@
+{
+  "slug": "stable-diffusion",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://stability.ai"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://stability.ai/s/scene-still-d.jpg",
+      "source_page_url": "https://stability.ai",
+      "official": true,
+      "alt": "Stable Diffusion official product preview"
+    },
+    {
+      "kind": "image",
+      "url": "https://stability.ai/s/closeup-figma-c.png",
+      "source_page_url": "https://stability.ai",
+      "official": true,
+      "alt": "Stable Diffusion official product preview"
+    },
+    {
+      "kind": "image",
+      "url": "https://images.squarespace-cdn.com/content/v1/6213c340453c3f502425776e/fe0dd1f0-3b47-4c57-8ca0-72b36e9973a1/hubspot-image-generation.png",
+      "source_page_url": "https://stability.ai",
+      "official": true,
+      "alt": "150% Increase in image  generation"
+    },
+    {
+      "kind": "image",
+      "url": "http://static1.squarespace.com/static/6213c340453c3f502425776e/t/6a8c72c5b1aae375b65a7a86/1775660945221/Homepage+Meta+Image.png?format=1500w",
+      "source_page_url": "https://stability.ai",
+      "official": true,
+      "alt": "Official product preview"
+    }
+  ]
+}

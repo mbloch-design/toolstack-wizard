@@ -1,0 +1,41 @@
+{
+  "slug": "jasper",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://jasper.ai"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://cdn.prod.website-files.com/6807ee8d73c233fb82842313/69a9c7e65810eadefa81494f_233fc11d48858aeb5d62081b163af549_Nav%20-%20Agents.avif",
+      "source_page_url": "https://jasper.ai",
+      "official": true,
+      "alt": "Jasper official product preview"
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.prod.website-files.com/6807ee8d73c233fb82842313/69a9c7e5282c836dda2f0366_6eb903f1a850d6de5e588930419b8728_Nav%20-%20Pipelines.avif",
+      "source_page_url": "https://jasper.ai",
+      "official": true,
+      "alt": "Jasper official product preview"
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.prod.website-files.com/6807ee8d73c233fb82842313/69a9c7e547c39b8a59297383_Nav%20-%20IQ.avif",
+      "source_page_url": "https://jasper.ai",
+      "official": true,
+      "alt": "Jasper official product preview"
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.prod.website-files.com/6807ee8d73c233fb82842313/6a303a31f30d66091bf101bf_Nav%20-%20GEO.avif",
+      "source_page_url": "https://jasper.ai",
+      "official": true,
+      "alt": "Jasper official product preview"
+    }
+  ]
+}

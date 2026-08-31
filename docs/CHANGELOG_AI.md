@@ -1,5 +1,12 @@
 # ToolTrim — AI Changelog
 
+## 2026-08-31 · Revue de 24 fiches IA
+
+- Le lot `review-ai-general-critical-002` couvre 24 fiches de génération d'images, vidéo, audio, code, prise de notes et observabilité IA ; Meshy a été revalidé sans perdre son lien affilié.
+- Les preuves média comprennent 8 galeries de quatre médias, 1 de trois médias, 4 de deux médias et 11 fiches avec un seul média lorsque le site officiel bloque la collecte.
+- Un générateur réutilisable transforme désormais une sélection éditoriale auditable en preuves média, déduplique les variantes responsives et distingue médias officiels et captures de secours.
+- Validation : registre complet PASS, 24 fiches publiées, Meshy republié, build production PASS et quatorze routes FR/EN contrôlées sans image cassée.
+
 ## 2026-08-31 · Revue complète de la fiche Meshy
 
 - Le lien principal utilise désormais l'attribution `https://www.meshy.ai?via=tooltrim` tout en conservant le domaine officiel comme URL canonique.

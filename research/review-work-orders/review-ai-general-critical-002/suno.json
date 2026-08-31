@@ -1,0 +1,278 @@
+{
+  "batch": "review-ai-general-critical-002",
+  "current": {
+    "affiliate_url": "https://suno.com",
+    "alternatives": [],
+    "category": "ai-general",
+    "cons": [
+      "Qualité musicale parfois aléatoire/inégale.",
+      "Moins de contrôle fin que production traditionnelle.",
+      "Droits commerciaux uniquement en forfait payant.",
+      "Pas d'édition note-par-note granulaire."
+    ],
+    "cons_en": [
+      "Music quality sometimes random/uneven.",
+      "Less fine control than traditional production.",
+      "Commercial rights only on paid plans.",
+      "No granular note-by-note editing."
+    ],
+    "host_app": null,
+    "id": "suno",
+    "long_description": "Suno, c'est génération musicale IA avec paroles et voix intégrées. À partir de 8.66€/mois. Pensé pour les créateurs de contenu et les créateurs vidéo.\n\nGain de temps estimé : 3h/mois.\n\nÀ garder si : chansons complètes avec paroles pour contenus viraux. À éviter si : udio déjà dans le stack — doublon génération musicale. Les deux ont un free tier généreux — tester avant de payer. Si le budget le permet, udio va plus loin.",
+    "long_description_en": "Suno is aI music generation with integrated lyrics and voice. Starting at €8.66/month. Built for content creators and video creators.\n\nEstimated time saving: 3h/month.\n\nIf budget allows, udio goes further.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://cdn-o.suno.com/meta-preview.jpg"
+    },
+    "name": "Suno",
+    "pricing": {
+      "free": "50 crédits/jour",
+      "paid": "10$/mois (Pro)"
+    },
+    "pricing_en": null,
+    "pricing_v5": {
+      "cautions": [],
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Entry paid plan",
+      "compare_price_monthly_eur": 8.66,
+      "location_sensitive": false,
+      "official_source_url": "https://suno.com/pricing",
+      "price_reliability": "high",
+      "source_domain": "suno.com",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-03-13"
+    },
+    "pros": [
+      "Génération ultra-rapide de musique complète.",
+      "Plan gratuit généreux (10 chansons/jour).",
+      "Droits commerciaux sur forfaits payants.",
+      "Stem separation pour flexibility post-production.",
+      "Suno Studio avec fonctionnalités DAW.",
+      "Top 10 iOS et Android (4.8+ stars)."
+    ],
+    "pros_en": [
+      "Ultra-fast complete music generation.",
+      "Generous free tier (10 songs/day).",
+      "Commercial rights on paid plans.",
+      "Stem separation for post-production flexibility.",
+      "Suno Studio with DAW features.",
+      "Top 10 iOS and Android (4.8+ stars)."
+    ],
+    "short_description": "Génération musicale IA avec paroles et voix intégrées.",
+    "short_description_en": "AI music generation with integrated lyrics and voice.",
+    "slug": "suno",
+    "source_url": "https://suno.com/pricing",
+    "source_verified_on": "2026-03-13",
+    "use_cases": [
+      "Générer des jingles ou bandes sonores pour vidéos.",
+      "Créer de la musique de fond pour podcasts/streams.",
+      "Produire des variations musicales rapidement.",
+      "Accompagner des contenus créatifs audiovisuels."
+    ],
+    "use_cases_en": [
+      "Generate jingles or soundtracks for videos.",
+      "Create background music for podcasts/streams.",
+      "Produce musical variations quickly.",
+      "Accompany audiovisual creative content."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous créez de la musique professionnelle complexe.",
+        "Vous avez besoin de contrôle précis note-par-note.",
+        "Votre budget est extrêmement limité."
+      ],
+      "keepIf": [
+        "Vous avez besoin de musique rapidement pour contenu.",
+        "Vous voulez des droits commerciaux sur votre musique.",
+        "Vous appréciez la création musicale sans expérience.",
+        "Vous avez besoin de multiples variations musicales."
+      ],
+      "threshold": "Suno s'impose pour contenu créatif rapide ; pour production musicale professionnelle, un DAW traditionnel + musicien conviendrait mieux."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You create complex professional music.",
+        "You need precise note-by-note control.",
+        "Your budget is extremely tight."
+      ],
+      "keepIf": [
+        "You need music quickly for content.",
+        "You want commercial rights on your music.",
+        "You enjoy music creation without experience.",
+        "You need multiple musical variations."
+      ],
+      "threshold": "Suno suits quick creative content; for professional music production, traditional DAW + musician is better."
+    },
+    "website_url": "https://suno.com"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Music quality sometimes random/uneven.",
+        "Less fine control than traditional production.",
+        "Commercial rights only on paid plans.",
+        "No granular note-by-note editing."
+      ],
+      "pros": [
+        "Ultra-fast complete music generation.",
+        "Generous free tier (10 songs/day).",
+        "Commercial rights on paid plans.",
+        "Stem separation for post-production flexibility.",
+        "Suno Studio with DAW features.",
+        "Top 10 iOS and Android (4.8+ stars)."
+      ],
+      "use_cases": [
+        "Generate jingles or soundtracks for videos.",
+        "Create background music for podcasts/streams.",
+        "Produce musical variations quickly.",
+        "Accompany audiovisual creative content."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You create complex professional music.",
+          "You need precise note-by-note control.",
+          "Your budget is extremely tight."
+        ],
+        "keepIf": [
+          "You need music quickly for content.",
+          "You want commercial rights on your music.",
+          "You enjoy music creation without experience.",
+          "You need multiple musical variations."
+        ],
+        "threshold": "Suno suits quick creative content; for professional music production, traditional DAW + musician is better."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "10 chansons quotidiennes gratuites, pas de carte bancaire requise",
+        "exists": true
+      },
+      "key_features": [
+        "Génération de chansons complètes en moins d'une minute",
+        "Support tous genres (rock, pop, hip-hop, classique, EDM, etc)",
+        "Contrôles granulaires : voix, style, sliders créatifs",
+        "Séparation de stems (export WAV alignés pour DAW)",
+        "Droits commerciaux pour utilisateurs payants",
+        "Suno Studio : workstation générative audio avec éditeur multitrack",
+        "Import audio jusqu'à 8 minutes"
+      ],
+      "plans": [
+        {
+          "name": "Free",
+          "price": "Gratuit (10 chansons/jour)"
+        },
+        {
+          "name": "Pro",
+          "price": "20% rabais annuel (500 chansons/mois, droits commerciaux)"
+        },
+        {
+          "name": "Premier",
+          "price": "20% rabais annuel (2000 chansons/mois, Suno Studio, MIDI export)"
+        }
+      ],
+      "pricing_model": "Freemium avec tiers payants",
+      "what": "Générateur de musique IA qui crée des chansons complètes (paroles, voix, production) à partir de descriptions textuelles en moins d'une minute, avec support multi-genres et droits commerciaux.",
+      "what_en": "AI music generator creating complete songs (lyrics, vocals, production) from text descriptions in under a minute, with multi-genre support and commercial rights."
+    },
+    "fr": {
+      "cons": [
+        "Qualité musicale parfois aléatoire/inégale.",
+        "Moins de contrôle fin que production traditionnelle.",
+        "Droits commerciaux uniquement en forfait payant.",
+        "Pas d'édition note-par-note granulaire."
+      ],
+      "pros": [
+        "Génération ultra-rapide de musique complète.",
+        "Plan gratuit généreux (10 chansons/jour).",
+        "Droits commerciaux sur forfaits payants.",
+        "Stem separation pour flexibility post-production.",
+        "Suno Studio avec fonctionnalités DAW.",
+        "Top 10 iOS et Android (4.8+ stars)."
+      ],
+      "relevant_for": [
+        "Content creators",
+        "Producteurs vidéo",
+        "Musiciens amateurs"
+      ],
+      "use_cases": [
+        "Générer des jingles ou bandes sonores pour vidéos.",
+        "Créer de la musique de fond pour podcasts/streams.",
+        "Produire des variations musicales rapidement.",
+        "Accompagner des contenus créatifs audiovisuels."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous créez de la musique professionnelle complexe.",
+          "Vous avez besoin de contrôle précis note-par-note.",
+          "Votre budget est extrêmement limité."
+        ],
+        "keepIf": [
+          "Vous avez besoin de musique rapidement pour contenu.",
+          "Vous voulez des droits commerciaux sur votre musique.",
+          "Vous appréciez la création musicale sans expérience.",
+          "Vous avez besoin de multiples variations musicales."
+        ],
+        "threshold": "Suno s'impose pour contenu créatif rapide ; pour production musicale professionnelle, un DAW traditionnel + musicien conviendrait mieux."
+      }
+    },
+    "slug": "suno",
+    "sources": [
+      {
+        "label": "Suno — AI Music Generator (site officiel)",
+        "url": "https://suno.com"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-ai-general-critical-002",
+    "batch_position": 15,
+    "blockers": [],
+    "catalog_hash": "sha256:10c1bd518bc9cd3167ea043f4890dd8fb9a5d971e15a10a975505a563248f0c0",
+    "category": "ai-general",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:97b5233781176bb249271d33b6095021d9af59f1d780b71b0619f71b324543aa",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Suno",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:c10772cd85efb229046394e7018b18aa08ccdef61917aa64b9192220081511d3",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "suno",
+    "source_url": "https://suno.com/pricing",
+    "source_verified_on": "2026-03-13",
+    "status": "QUEUED"
+  }
+}

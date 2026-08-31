@@ -1,0 +1,41 @@
+{
+  "slug": "runway",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://runwayml.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://image.mux.com/JFHOwdZ8ujlrDDSLujoSv9su9PQb5001CiRiNdMgIjnk/thumbnail.webp?time=0&width=480",
+      "source_page_url": "https://runwayml.com",
+      "official": true,
+      "alt": "Runway official product preview"
+    },
+    {
+      "kind": "image",
+      "url": "https://d3phaj0sisr2ct.cloudfront.net/site/assets/media-router-thumbnail.webp",
+      "source_page_url": "https://runwayml.com",
+      "official": true,
+      "alt": "Introducing Runway Media Router"
+    },
+    {
+      "kind": "image",
+      "url": "https://d3phaj0sisr2ct.cloudfront.net/site/assets/chime-tv-spot-thumbnail.webp",
+      "source_page_url": "https://runwayml.com",
+      "official": true,
+      "alt": "How Chime Used Runway to Produce Their Latest National TV Spot"
+    },
+    {
+      "kind": "image",
+      "url": "https://d3phaj0sisr2ct.cloudfront.net/site/assets/homepage-og-card-v3.webp",
+      "source_page_url": "https://runwayml.com",
+      "official": true,
+      "alt": "Official product preview"
+    }
+  ]
+}

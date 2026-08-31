@@ -1,0 +1,265 @@
+{
+  "batch": "review-ai-general-critical-002",
+  "current": {
+    "affiliate_url": "https://ideogram.ai",
+    "alternatives": [],
+    "category": "ai-general",
+    "cons": [
+      "Plus cher que Midjourney au volume.",
+      "Moins optimisé pour portraiture.",
+      "API pricing plus cher que FLUX."
+    ],
+    "cons_en": [
+      "More expensive than Midjourney at volume.",
+      "Less optimized for portraiture.",
+      "API pricing higher than FLUX."
+    ],
+    "host_app": null,
+    "id": "ideogram",
+    "long_description": "Ideogram, c'est génération d'images IA avec texte intégré — le meilleur du marché pour la typo. À partir de 6.93€/mois. Pensé pour les graphistes et les community managers.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : visuels avec texte intégré (affiches, covers, thumbnails). À éviter si : midjourney pour usage purement artistique sans texte. Complémentaire à Midjourney — couvre un angle différent.",
+    "long_description_en": "Ideogram is aI image generation with integrated text — the market leader for typography. Starting at €6.93/month. Built for graphic designers and community managers.\n\nEstimated time saving: 4h/month.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://tooltrim.com/og-screenshots/ideogram.jpg"
+    },
+    "name": "Ideogram",
+    "pricing": {
+      "free": "10 générations/jour",
+      "paid": "8$/mois (Basic)"
+    },
+    "pricing_en": null,
+    "pricing_v5": {
+      "cautions": [],
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Entry paid plan",
+      "compare_price_monthly_eur": 6.93,
+      "location_sensitive": false,
+      "official_source_url": "https://ideogram.ai/pricing",
+      "price_reliability": "high",
+      "source_domain": "ideogram.ai",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-03-13"
+    },
+    "pros": [
+      "Rendu du texte dans les images particulièrement fidèle.",
+      "Free tier généreux (10 prompts/jour).",
+      "Remixing fluide et variations.",
+      "Vitesse génération compétitive."
+    ],
+    "pros_en": [
+      "Notably accurate text rendering in images.",
+      "Generous free tier (10 prompts/day).",
+      "Smooth remixing and variations.",
+      "Competitive generation speed."
+    ],
+    "short_description": "Génération d'images IA avec texte intégré — le meilleur du marché pour la typo.",
+    "short_description_en": "AI image generation with integrated text — the market leader for typography.",
+    "slug": "ideogram",
+    "source_url": "https://ideogram.ai/pricing",
+    "source_verified_on": "2026-03-13",
+    "use_cases": [
+      "Générer assets design avec texte.",
+      "Créer mockups produit visuels.",
+      "Designer branding matériaux (social, web)."
+    ],
+    "use_cases_en": [
+      "Generate design assets with text.",
+      "Create visual product mockups.",
+      "Design branding materials (social, web)."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous faites surtout du portrait/photo réaliste.",
+        "Vous avez un budget api serré.",
+        "Vous faites surtout du portrait ou photo réaliste."
+      ],
+      "keepIf": [
+        "Vous créez des designs avec du texte graphique.",
+        "Vous voulez la meilleure qualité texte image.",
+        "Votre use-case : marketing, design, branding."
+      ],
+      "threshold": "Ideogram s'impose pour designs texte ; pour portraiture, utilisez Midjourney ou Leonardo."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You mostly do realistic portraiture.",
+        "You have a tight API budget.",
+        "You mostly do portraiture or realistic photos."
+      ],
+      "keepIf": [
+        "You create designs with graphic text.",
+        "You want best-in-class text-in-image quality.",
+        "Your use case: marketing, design, branding."
+      ],
+      "threshold": "Ideogram is standard for text designs; for portraiture, use Midjourney or Leonardo."
+    },
+    "website_url": "https://ideogram.ai"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "More expensive than Midjourney at volume.",
+        "Less optimized for portraiture.",
+        "API pricing higher than FLUX."
+      ],
+      "pros": [
+        "Notably accurate text rendering in images.",
+        "Generous free tier (10 prompts/day).",
+        "Smooth remixing and variations.",
+        "Competitive generation speed."
+      ],
+      "use_cases": [
+        "Generate design assets with text.",
+        "Create visual product mockups.",
+        "Design branding materials (social, web)."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You mostly do realistic portraiture.",
+          "You have a tight API budget.",
+          "You mostly do portraiture or realistic photos."
+        ],
+        "keepIf": [
+          "You create designs with graphic text.",
+          "You want best-in-class text-in-image quality.",
+          "Your use case: marketing, design, branding."
+        ],
+        "threshold": "Ideogram is standard for text designs; for portraiture, use Midjourney or Leonardo."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Gratuit : 10 prompts/jour à vitesse standard (≈ 40 images/jour, 4 variations par prompt).",
+        "exists": true
+      },
+      "key_features": [
+        "Texte intégré dans images (90 % accuracy)",
+        "Génération rapide et mode qualité",
+        "Remixing et variantes",
+        "API pour intégration",
+        "Modèles Ideogram 2a et 4.0"
+      ],
+      "plans": [
+        {
+          "name": "Free",
+          "price": "0 $ (10 prompts/jour)"
+        },
+        {
+          "name": "Plus",
+          "price": "15 $/mois (annuel)"
+        },
+        {
+          "name": "Pro",
+          "price": "20 $/mois (annuel)"
+        },
+        {
+          "name": "Team",
+          "price": "42 $/mois (annuel, min. 3)"
+        },
+        {
+          "name": "API",
+          "price": "0,025-0,10 $/image selon modèle"
+        }
+      ],
+      "pricing_model": "Tier gratuit (10 prompts/jour), Plus (15 $/mois), Pro (20 $/mois), Team (42 $/mois annuel), Enterprise. API : 0,025-0,10 $/image.",
+      "what": "Générateur d'images IA avec texte intégré : render texte dans images avec 90 % précision (vs 30 % Midjourney), variantes, remixing, et API pour developers. Fast generation et quality modes.",
+      "what_en": "AI image generator with integrated text rendering: render text in images with 90% accuracy (vs 30% Midjourney), variations, remixing, and developer API. Fast and quality modes."
+    },
+    "fr": {
+      "cons": [
+        "Plus cher que Midjourney au volume.",
+        "Moins optimisé pour portraiture.",
+        "API pricing plus cher que FLUX."
+      ],
+      "pros": [
+        "Rendu du texte dans les images particulièrement fidèle.",
+        "Free tier généreux (10 prompts/jour).",
+        "Remixing fluide et variations.",
+        "Vitesse génération compétitive."
+      ],
+      "relevant_for": [
+        "Designers graphique",
+        "Marketing teams",
+        "Brand teams",
+        "Content creators"
+      ],
+      "use_cases": [
+        "Générer assets design avec texte.",
+        "Créer mockups produit visuels.",
+        "Designer branding matériaux (social, web)."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous faites surtout du portrait/photo réaliste.",
+          "Vous avez un budget api serré.",
+          "Vous faites surtout du portrait ou photo réaliste."
+        ],
+        "keepIf": [
+          "Vous créez des designs avec du texte graphique.",
+          "Vous voulez la meilleure qualité texte image.",
+          "Votre use-case : marketing, design, branding."
+        ],
+        "threshold": "Ideogram s'impose pour designs texte ; pour portraiture, utilisez Midjourney ou Leonardo."
+      }
+    },
+    "slug": "ideogram",
+    "sources": [
+      {
+        "label": "Ideogram — image generation et pricing (site officiel)",
+        "url": "https://ideogram.ai"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-ai-general-critical-002",
+    "batch_position": 1,
+    "blockers": [],
+    "catalog_hash": "sha256:10fe26a32dac44a8ee942c1d8eb961a068a96a7157b68bdd66e1624871f117b6",
+    "category": "ai-general",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:62a7c464f9a7d928b97a49eb68e64cb390ad965349500cd31a39521e351d8b32",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Ideogram",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:bed2b42e3c4b53610535167c8a85d154185dfad37d3d1e26ab2e3d7394584b3b",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "ideogram",
+    "source_url": "https://ideogram.ai/pricing",
+    "source_verified_on": "2026-03-13",
+    "status": "QUEUED"
+  }
+}

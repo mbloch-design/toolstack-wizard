@@ -1,0 +1,27 @@
+{
+  "slug": "perplexity",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://perplexity.ai"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://ppl-ai-public.s3.amazonaws.com/static/img/pplx-default-preview.png",
+      "source_page_url": "https://perplexity.ai",
+      "official": true,
+      "alt": "Perplexity official product preview"
+    },
+    {
+      "kind": "image",
+      "url": "https://is1-ssl.mzstatic.com/image/thumb/Features211/v4/b8/59/96/b85996d0-de49-b477-22d1-83f9ff5a9043/3fab5649-fe34-404a-8805-52bb814758aa.png/800x450SCS.ApDPCS01.webp",
+      "source_page_url": "https://perplexity.ai",
+      "official": true,
+      "alt": "Perplexity official product preview"
+    }
+  ]
+}

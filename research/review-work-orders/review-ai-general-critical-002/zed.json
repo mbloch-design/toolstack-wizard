@@ -1,0 +1,261 @@
+{
+  "batch": "review-ai-general-critical-002",
+  "current": {
+    "affiliate_url": "https://zed.dev/",
+    "alternatives": [
+      "cursor",
+      "windsurf"
+    ],
+    "category": "ai-general",
+    "cons": [
+      "Écosystème plugins moins riche que VS Code.",
+      "Jeune produit (2023-2026).",
+      "Migration depuis VS Code exige adaptation."
+    ],
+    "cons_en": [
+      "Smaller extension ecosystem than VS Code",
+      "No web version",
+      "Product and ecosystem are still evolving quickly"
+    ],
+    "host_app": null,
+    "id": "zed",
+    "long_description": "Zed est un éditeur de code natif conçu pour rester rapide sur de gros projets. Sa collaboration multijoueur permet de partager un projet et de modifier les mêmes fichiers en temps réel, avec curseurs partagés et appels privés.\n\nLe plan Personal est gratuit et l'éditeur fonctionne sans abonnement. Il inclut 2 000 prédictions de modification acceptées et permet d'utiliser ses propres clés API ou des agents externes sans limite imposée par Zed. Le plan Pro coûte 10 $/mois et ajoute les prédictions illimitées ainsi que 5 $ de crédits de tokens hébergés.\n\nZed est disponible sur macOS, Linux et Windows. Son principal compromis reste un écosystème d'extensions moins vaste que celui de VS Code ou des IDE JetBrains.",
+    "long_description_en": "Zed is a native code editor designed to stay fast on large projects. Its built-in multiplayer collaboration lets people share a project and edit the same files in real time, with shared cursors and private calls.\n\nThe Personal plan is free and the editor works without a subscription. It includes 2,000 accepted edit predictions and unlimited use with your own API keys or external agents. Pro costs $10/month and adds unlimited edit predictions plus $5 in hosted token credits.\n\nZed is available on macOS, Linux, and Windows. Its main trade-off is a smaller extension ecosystem than VS Code or JetBrains IDEs.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "/og-screenshots/zed.webp"
+    },
+    "name": "Zed",
+    "pricing": {
+      "free": "Gratuit et open-source",
+      "paid": "Pro à 10 $/mois · Business à 30 $/utilisateur/mois"
+    },
+    "pricing_en": {
+      "free": "Personal plan: $0 forever",
+      "paid": "Pro $10/month · Business $30/user/month"
+    },
+    "pricing_v5": {
+      "compare_plan_kind": "individual",
+      "compare_plan_name": "Personal",
+      "compare_price_monthly_eur": 0,
+      "location_sensitive": false,
+      "official_source_url": "https://zed.dev/pricing",
+      "price_reliability": "official_explicit",
+      "source_domain": "zed.dev",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-08-26"
+    },
+    "pros": [
+      "Entièrement gratuit et open-source.",
+      "Ultra-rapide (architecture Rust).",
+      "Collaboration temps réel native.",
+      "LSP multilingue intégré.",
+      "Terminal intégré.",
+      "Créé par expert (Atom co-créateur)."
+    ],
+    "pros_en": [
+      "Fast native editor",
+      "Built-in real-time multiplayer collaboration",
+      "Works with your own API keys and external agents",
+      "Available on macOS, Linux, and Windows"
+    ],
+    "short_description": "Éditeur de code natif, rapide, collaboratif et compatible avec les agents IA.",
+    "short_description_en": "A fast native code editor with multiplayer collaboration and AI agents.",
+    "slug": "zed",
+    "source_url": "https://zed.dev/pricing",
+    "source_verified_on": "2026-08-26",
+    "use_cases": [
+      "Pair programming temps réel sans plugin.",
+      "Développer en Rust performant.",
+      "Édition légère et ultra-rapide."
+    ],
+    "use_cases_en": [
+      "Edit large codebases in a responsive native editor",
+      "Pair-program with shared cursors and edits",
+      "Use AI agents with hosted models or your own API keys"
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous êtes IDE-dépendant (Visual Studio, IntelliJ).",
+        "Vous n'avez jamais quitté VS Code.",
+        "Vous avez peur d'expérimenter nouvel éditeur."
+      ],
+      "keepIf": [
+        "Vous êtes développeur cherchant éditeur performant.",
+        "Vous aimez les outils modernes et rustiques.",
+        "Vous voulez collaboration temps réel intégrée."
+      ],
+      "threshold": "Zed s'impose pour développeurs Rust et modernes ; pour projet complexe, VS Code ou IDE reste sûr."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You rely on niche VS Code extensions",
+        "Your workflow depends heavily on a JetBrains IDE"
+      ],
+      "keepIf": [
+        "Your current editor slows down on large projects",
+        "You pair-program or share code live",
+        "You want AI agents without being locked into a hosted model"
+      ],
+      "threshold": "Start with the free Personal plan; pay for Pro only when unlimited edit predictions or hosted AI credits matter."
+    },
+    "website_url": "https://zed.dev/"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Plugin ecosystem less rich than VS Code.",
+        "Young product (2023-2026).",
+        "Migration from VS Code requires adaptation."
+      ],
+      "pros": [
+        "Completely free and open-source.",
+        "Ultra-fast (Rust architecture).",
+        "Native real-time collaboration.",
+        "Integrated multilingual LSP.",
+        "Built-in terminal.",
+        "Created by expert (Atom co-creator)."
+      ],
+      "use_cases": [
+        "Real-time pair programming without plugins.",
+        "Develop in performant Rust.",
+        "Lightning-fast and lightweight editing."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You're IDE-dependent (Visual Studio, IntelliJ).",
+          "You've never left VS Code.",
+          "You're afraid to experiment with new editors."
+        ],
+        "keepIf": [
+          "You're a developer seeking high-performance editor.",
+          "You love modern Rust-based tools.",
+          "You want integrated real-time collaboration."
+        ],
+        "threshold": "Zed is ideal for Rust and modern developers; for complex projects, VS Code or IDEs remain safe."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Complètement gratuit et open-source. Pas de limitation fonctionnelle. Développé par Zed Industries.",
+        "exists": true
+      },
+      "key_features": [
+        "Éditeur ultra-performant en Rust",
+        "Collaboration temps réel (pair programming)",
+        "LSP intégré pour intellisense multilingue",
+        "Terminal intégré",
+        "Thèmes personnalisables",
+        "Support de 50+ langages de programmation",
+        "Extensibilité via plugins",
+        "Open-source sur GitHub"
+      ],
+      "plans": [
+        {
+          "name": "Zed Free",
+          "price": "Gratuit et open-source"
+        }
+      ],
+      "pricing_model": "Logiciel libre et open-source, entièrement gratuit.",
+      "what": "Éditeur de code moderne open-source écrit en Rust pour Linux, macOS et Windows. Créé par Nathan Sobo, co-créateur d'Atom. Conçu pour performance maximale avec collaboration en temps réel et fonctionnalités IA.",
+      "what_en": "Modern open-source code editor written in Rust for Linux, macOS, and Windows. Created by Nathan Sobo, co-creator of Atom. Designed for maximum performance with real-time collaboration and AI features."
+    },
+    "fr": {
+      "cons": [
+        "Écosystème plugins moins riche que VS Code.",
+        "Jeune produit (2023-2026).",
+        "Migration depuis VS Code exige adaptation."
+      ],
+      "pros": [
+        "Entièrement gratuit et open-source.",
+        "Ultra-rapide (architecture Rust).",
+        "Collaboration temps réel native.",
+        "LSP multilingue intégré.",
+        "Terminal intégré.",
+        "Créé par expert (Atom co-créateur)."
+      ],
+      "relevant_for": [
+        "Développeurs Rust",
+        "Startups tech",
+        "Paires programmation"
+      ],
+      "use_cases": [
+        "Pair programming temps réel sans plugin.",
+        "Développer en Rust performant.",
+        "Édition légère et ultra-rapide."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous êtes IDE-dépendant (Visual Studio, IntelliJ).",
+          "Vous n'avez jamais quitté VS Code.",
+          "Vous avez peur d'expérimenter nouvel éditeur."
+        ],
+        "keepIf": [
+          "Vous êtes développeur cherchant éditeur performant.",
+          "Vous aimez les outils modernes et rustiques.",
+          "Vous voulez collaboration temps réel intégrée."
+        ],
+        "threshold": "Zed s'impose pour développeurs Rust et modernes ; pour projet complexe, VS Code ou IDE reste sûr."
+      }
+    },
+    "slug": "zed",
+    "sources": [
+      {
+        "label": "Zed — High-Performance Code Editor (site officiel)",
+        "url": "https://zed.dev/"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-ai-general-critical-002",
+    "batch_position": 21,
+    "blockers": [],
+    "catalog_hash": "sha256:786d3c95bdc7d774b1d727287bc9632b650313770f8d0aef004fe01dddb7e94b",
+    "category": "ai-general",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:28df179d0dd0e953d30d3de87ced764f85421793989c24fb24d6b5ad9b7c1f42",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Zed",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:717b375d2bdef4e2c27354a31a52cdd35c7b12d08233308b594df047ad031f50",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "zed",
+    "source_url": "https://zed.dev/pricing",
+    "source_verified_on": "2026-08-26",
+    "status": "QUEUED"
+  }
+}

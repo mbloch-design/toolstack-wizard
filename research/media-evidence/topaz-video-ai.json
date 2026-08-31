@@ -1,0 +1,21 @@
+{
+  "slug": "topaz-video-ai",
+  "verified_on": "2026-08-31",
+  "mode": "fallback_screenshot",
+  "discovery": {
+    "official_media_found": false,
+    "official_pages_checked": [
+      "https://topazlabs.com/topaz-video-ai"
+    ]
+  },
+  "items": [
+    {
+      "kind": "screenshot",
+      "url": "/tool-media/topaz-video-ai/interface.webp",
+      "source_page_url": "https://topazlabs.com/topaz-video-ai",
+      "official": false,
+      "alt": "Topaz Video AI official product preview",
+      "capture_method": "browser_screenshot"
+    }
+  ]
+}

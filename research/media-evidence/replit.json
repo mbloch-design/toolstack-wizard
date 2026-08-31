@@ -1,0 +1,27 @@
+{
+  "slug": "replit",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://replit.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://replit.com/cdn-cgi/image/width=3840,quality=80,format=auto/public/images/landing/outcome-focused-experience@2x.webp",
+      "source_page_url": "https://replit.com",
+      "official": true,
+      "alt": "Replit official product preview"
+    },
+    {
+      "kind": "image",
+      "url": "https://replit.com/public/images/opengraph_rebrand.jpg",
+      "source_page_url": "https://replit.com",
+      "official": true,
+      "alt": "Replit official product preview"
+    }
+  ]
+}

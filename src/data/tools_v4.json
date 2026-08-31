@@ -62480,21 +62480,26 @@
     "slug": "helicone",
     "name": "Helicone",
     "category": "ai-general",
-    "shortDescription": "Observabilité LLM : coûts, latence, prompts, logs et monitoring.",
-    "shortDescriptionEn": "LLM observability: costs, latency, prompts, logs, and monitoring.",
-    "description": "Observabilité LLM : coûts, latence, prompts, logs et monitoring.",
-    "longDescription": "Observabilité LLM : coûts, latence, prompts, logs et monitoring.",
-    "longDescriptionEn": "LLM observability: costs, latency, prompts, logs, and monitoring.",
+    "shortDescription": "Plateforme d'observabilité LLM : logging, coûts, latence, prompt/completion analysis, evaluations, caching. Gateway proxy ou intégration native. Open-source et cloud gérée. Depuis mars 2026 : maintenance-mode (racheté par Mintlify).",
+    "shortDescriptionEn": "LLM observability platform: logging, costs, latency, prompt/completion analysis, evaluations, caching. Proxy gateway or native integration. Open-source and managed cloud. Since March 2026: maintenance mode (acquired by Mintlify).",
+    "description": "Plateforme d'observabilité LLM : logging, coûts, latence, prompt/completion analysis, evaluations, caching. Gateway proxy ou intégration native. Open-source et cloud gérée. Depuis mars 2026 : maintenance-mode (racheté par Mintlify).\n\nFonctions clés : Gateway proxy pass-through (300+ modèles) ; Cost tracking et analytics ; Prompt/completion logging ; Caching et rate-limiting ; Evaluations et A/B testing.\n\nHelicone était standard pour observabilité LLM ; depuis acquisition par Mintlify (mars 2026), préférez alternatives actives.",
+    "longDescription": "Plateforme d'observabilité LLM : logging, coûts, latence, prompt/completion analysis, evaluations, caching. Gateway proxy ou intégration native. Open-source et cloud gérée. Depuis mars 2026 : maintenance-mode (racheté par Mintlify).\n\nFonctions clés : Gateway proxy pass-through (300+ modèles) ; Cost tracking et analytics ; Prompt/completion logging ; Caching et rate-limiting ; Evaluations et A/B testing.\n\nHelicone était standard pour observabilité LLM ; depuis acquisition par Mintlify (mars 2026), préférez alternatives actives.",
+    "longDescriptionEn": "LLM observability platform: logging, costs, latency, prompt/completion analysis, evaluations, caching. Proxy gateway or native integration. Open-source and managed cloud. Since March 2026: maintenance mode (acquired by Mintlify).\n\nKey strengths: Open-source (MIT) for self-hosting.; Gateway pass-through (300+ models).; Detailed cost tracking.; Caching and optimizations..\n\nHelicone was standard for LLM observability; since Mintlify acquisition (March 2026), prefer active alternatives.",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Gratuit cloud : 50K observations/mois ; self-hosted open-source gratuit.",
+      "paid": "Hobby (Free): 0 $ (50K observations) ; Core / Pro: 79 $/mois (1M observations) ou custom ; Self-hosted (OSS): Gratuit (MIT license) ; Frais platform: 5,5 % sur pass-through pricing"
     },
     "pricingEn": {
-      "free": "Free or open source depending on usage",
-      "paid": "Paid options may apply depending on hosting, team, or volume"
+      "free": "Gratuit cloud : 50K observations/mois ; self-hosted open-source gratuit.",
+      "paid": "Hobby (Free): 0 $ (50K observations) ; Core / Pro: 79 $/mois (1M observations) ou custom ; Self-hosted (OSS): Gratuit (MIT license) ; Frais platform: 5,5 % sur pass-through pricing"
     },
     "defaultMonthlyPrice": 0,
-    "pricing_v5": null,
+    "pricing_v5": {
+      "verified_on": "2026-07-24",
+      "official_source_url": "https://www.helicone.ai",
+      "source_domain": "helicone.ai",
+      "verification_status": "official_explicit"
+    },
     "affiliateLink": "",
     "websiteUrl": "https://www.helicone.ai",
     "logo": "",
@@ -62601,7 +62606,8 @@
       "auto_downgrade_allowed": false
     },
     "ogImageUrl": "https://www.helicone.ai/static/new-open-graph.png",
-    "force_silence": false
+    "force_silence": false,
+    "galleryImages": []
   },
   {
     "id": "helpscout",
@@ -66253,11 +66259,11 @@
     "bundle_parent": null,
     "host_app": null,
     "category": "ai-general",
-    "shortDescription": "Génération d'images IA avec texte intégré — le meilleur du marché pour la typo.",
+    "shortDescription": "Générateur d'images IA avec texte intégré : render texte dans images avec 90 % précision (vs 30 % Midjourney), variantes, remixing, et API pour developers. Fast generation et quality modes.",
     "defaultMonthlyPrice": 6.93,
     "pricing": {
-      "free": "10 générations/jour",
-      "paid": "8$/mois (Basic)"
+      "free": "Gratuit : 10 prompts/jour à vitesse standard (≈ 40 images/jour, 4 variations par prompt).",
+      "paid": "Free: 0 $ (10 prompts/jour) ; Plus: 15 $/mois (annuel) ; Pro: 20 $/mois (annuel) ; Team: 42 $/mois (annuel, min. 3) ; API: 0,025-0,10 $/image selon modèle"
     },
     "covers": [
       "design-visuel",
@@ -66335,23 +66341,26 @@
       "free": "10 générations/jour",
       "paid": "8$/mois (Basic)"
     },
-    "longDescription": "Ideogram, c'est génération d'images IA avec texte intégré — le meilleur du marché pour la typo. À partir de 6.93€/mois. Pensé pour les graphistes et les community managers.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : visuels avec texte intégré (affiches, covers, thumbnails). À éviter si : midjourney pour usage purement artistique sans texte. Complémentaire à Midjourney — couvre un angle différent.",
+    "longDescription": "Générateur d'images IA avec texte intégré : render texte dans images avec 90 % précision (vs 30 % Midjourney), variantes, remixing, et API pour developers. Fast generation et quality modes.\n\nFonctions clés : Texte intégré dans images (90 % accuracy) ; Génération rapide et mode qualité ; Remixing et variantes ; API pour intégration ; Modèles Ideogram 2a et 4.0.\n\nIdeogram s'impose pour designs texte ; pour portraiture, utilisez Midjourney ou Leonardo.",
     "alternatives": [],
     "slug": "ideogram",
-    "shortDescriptionEn": "AI image generation with integrated text — the market leader for typography.",
-    "description": "Ideogram, c'est génération d'images IA avec texte intégré — le meilleur du marché pour la typo. À partir de 6.93€/mois. Pensé pour les graphistes et les community managers.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : visuels avec texte intégré (affiches, covers, thumbnails). À éviter si : midjourney pour usage purement artistique sans texte. Complémentaire à Midjourney — couvre un angle différent.",
-    "longDescriptionEn": "Ideogram is aI image generation with integrated text — the market leader for typography. Starting at €6.93/month. Built for graphic designers and community managers.\n\nEstimated time saving: 4h/month.",
-    "pricingEn": null,
+    "shortDescriptionEn": "AI image generator with integrated text rendering: render text in images with 90% accuracy (vs 30% Midjourney), variations, remixing, and developer API. Fast and quality modes.",
+    "description": "Générateur d'images IA avec texte intégré : render texte dans images avec 90 % précision (vs 30 % Midjourney), variantes, remixing, et API pour developers. Fast generation et quality modes.\n\nFonctions clés : Texte intégré dans images (90 % accuracy) ; Génération rapide et mode qualité ; Remixing et variantes ; API pour intégration ; Modèles Ideogram 2a et 4.0.\n\nIdeogram s'impose pour designs texte ; pour portraiture, utilisez Midjourney ou Leonardo.",
+    "longDescriptionEn": "AI image generator with integrated text rendering: render text in images with 90% accuracy (vs 30% Midjourney), variations, remixing, and developer API. Fast and quality modes.\n\nKey strengths: Notably accurate text rendering in images.; Generous free tier (10 prompts/day).; Smooth remixing and variations.; Competitive generation speed..\n\nIdeogram is standard for text designs; for portraiture, use Midjourney or Leonardo.",
+    "pricingEn": {
+      "free": "Gratuit : 10 prompts/jour à vitesse standard (≈ 40 images/jour, 4 variations par prompt).",
+      "paid": "Free: 0 $ (10 prompts/jour) ; Plus: 15 $/mois (annuel) ; Pro: 20 $/mois (annuel) ; Team: 42 $/mois (annuel, min. 3) ; API: 0,025-0,10 $/image selon modèle"
+    },
     "pricing_v5": {
       "cautions": [],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-07-24",
       "source_domain": "ideogram.ai",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
       "compare_plan_name": "Entry paid plan",
       "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://ideogram.ai/pricing",
+      "official_source_url": "https://ideogram.ai",
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 6.93
     },
@@ -66410,7 +66419,8 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/ideogram.jpg"
+    "ogImageUrl": "/og-screenshots/ideogram.jpg",
+    "galleryImages": []
   },
   {
     "id": "ignition",
@@ -69495,15 +69505,26 @@
     "slug": "jasper",
     "name": "Jasper",
     "category": "ai-general",
-    "shortDescription": "Assistant IA pour le marketing et la rédaction",
-    "shortDescriptionEn": "AI assistant for marketing and copywriting.",
-    "description": "Jasper, c'est assistant IA pour le marketing et la rédaction. À partir de 39€/mois.",
-    "longDescription": "Jasper, c'est assistant IA pour le marketing et la rédaction. À partir de 39€/mois.",
-    "longDescriptionEn": "Jasper is aI assistant for marketing and copywriting. Starting at €39/month.",
-    "pricing": null,
-    "pricingEn": null,
+    "shortDescription": "Plateforme d'écriture assistée par IA pour le marketing : génération de contenus (articles, posts, campagnes), templates, chat et extension navigateur, avec voix de marque.",
+    "shortDescriptionEn": "AI writing platform for marketing: content generation (articles, posts, campaigns), templates, chat and browser extension, with brand voice.",
+    "description": "Plateforme d'écriture assistée par IA pour le marketing : génération de contenus (articles, posts, campagnes), templates, chat et extension navigateur, avec voix de marque.\n\nFonctions clés : Génération de contenu marketing (articles, posts, campagnes) ; Templates et Jasper Chat ; Voix de marque personnalisée ; Extension navigateur (Gmail, Docs…).\n\nJasper s'impose pour des équipes marketing qui produisent du contenu à volume avec voix de marque ; pour un usage ponctuel, un assistant IA généraliste suffit.",
+    "longDescription": "Plateforme d'écriture assistée par IA pour le marketing : génération de contenus (articles, posts, campagnes), templates, chat et extension navigateur, avec voix de marque.\n\nFonctions clés : Génération de contenu marketing (articles, posts, campagnes) ; Templates et Jasper Chat ; Voix de marque personnalisée ; Extension navigateur (Gmail, Docs…).\n\nJasper s'impose pour des équipes marketing qui produisent du contenu à volume avec voix de marque ; pour un usage ponctuel, un assistant IA généraliste suffit.",
+    "longDescriptionEn": "AI writing platform for marketing: content generation (articles, posts, campaigns), templates, chat and browser extension, with brand voice.\n\nKey strengths: Built for marketing content.; Brand voice and templates.; Chat and browser extension.; Collaborative features..\n\nJasper makes sense for marketing teams producing content at volume with a brand voice; for occasional use, a general AI assistant suffices.",
+    "pricing": {
+      "free": "Essai gratuit de 7 jours ; abonnement requis ensuite.",
+      "paid": "Creator: 39 $/mois (annuel), 49 $ en mensuel — 1 siège ; Pro: paliers supérieurs (multi-sièges, fonctions équipe) ; Business: sur devis"
+    },
+    "pricingEn": {
+      "free": "Essai gratuit de 7 jours ; abonnement requis ensuite.",
+      "paid": "Creator: 39 $/mois (annuel), 49 $ en mensuel — 1 siège ; Pro: paliers supérieurs (multi-sièges, fonctions équipe) ; Business: sur devis"
+    },
     "defaultMonthlyPrice": 39,
-    "pricing_v5": null,
+    "pricing_v5": {
+      "verified_on": "2026-07-24",
+      "official_source_url": "https://www.jasper.ai/pricing",
+      "source_domain": "jasper.ai",
+      "verification_status": "official_explicit"
+    },
     "affiliateLink": "",
     "websiteUrl": "https://jasper.ai",
     "logo": "",
@@ -69618,7 +69639,12 @@
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
     "force_silence": false,
-    "ogImageUrl": "https://cdn.prod.website-files.com/6807ee8d73c233fb82842313/6846454bda26628fcf51d54c_9650916b48ce089735bcc21cc8e43f2f_OpenGraph%20-%20Home.png"
+    "ogImageUrl": "https://cdn.prod.website-files.com/6807ee8d73c233fb82842313/69a9c7e65810eadefa81494f_233fc11d48858aeb5d62081b163af549_Nav%20-%20Agents.avif",
+    "galleryImages": [
+      "https://cdn.prod.website-files.com/6807ee8d73c233fb82842313/69a9c7e5282c836dda2f0366_6eb903f1a850d6de5e588930419b8728_Nav%20-%20Pipelines.avif",
+      "https://cdn.prod.website-files.com/6807ee8d73c233fb82842313/69a9c7e547c39b8a59297383_Nav%20-%20IQ.avif",
+      "https://cdn.prod.website-files.com/6807ee8d73c233fb82842313/6a303a31f30d66091bf101bf_Nav%20-%20GEO.avif"
+    ]
   },
   {
     "logo": "",
@@ -73761,14 +73787,14 @@
     "name": "Krea AI",
     "slug": "krea-ai",
     "category": "ai-general",
-    "shortDescription": "Krea AI : génération image/vidéo IA en temps réel et canvas multi-modèles (Nodes).",
-    "longDescription": "Krea AI est l'un des nouveaux poids lourds du média génératif. Sa marque de fabrique, c'est le temps réel : le Realtime Canvas affiche une image qui se redessine en moins d'une seconde pendant que tu tapes ton prompt ou esquisses au pinceau. Mais Krea est devenu bien plus qu'un générateur d'images : c'est un agrégateur qui réunit plus de 60 modèles (Flux, Veo, Runway, Kling, son modèle maison Krea 1, etc.) dans une seule interface, avec upscaling jusqu'à 22K, génération vidéo, 3D, lipsync et entraînement de LoRA.\n\nLa pièce maîtresse pour les pros, c'est Nodes : un canvas nodal où tu enchaînes les modèles et les étapes, un peu comme ComfyUI mais accessible. C'est exactement la tendance du moment : on ne paie plus un outil par tâche, on paie un atelier qui orchestre tous les modèles. Krea revendique plus de 30 millions d'utilisateurs et 83 millions de dollars levés.\n\nCôté budget : un plan gratuit honnête (100 crédits/jour), puis Basic à 9$/mois, Pro à 35$ (qui débloque Nodes et tous les modèles vidéo), Max à 70$ et Business à 200$. Si tu as déjà Midjourney pour la pure génération d'images, Krea fait en partie doublon, mais son temps réel et son canvas nodal le rendent complémentaire. Ses vrais concurrents directs, ce sont Magnific (ex-Freepik) et Figma Weave (ex-Weavy) : si tu cherches une plateforme multi-modèles, compare les trois avant de t'abonner.",
+    "shortDescription": "Agrégateur de 64+ modèles d'IA image et vidéo (Flux, Runway, Veo 3, Krea propriétaire) dans une plateforme unifiée avec compute units et tarification à l'usage. Real-time art generation.",
+    "longDescription": "Agrégateur de 64+ modèles d'IA image et vidéo (Flux, Runway, Veo 3, Krea propriétaire) dans une plateforme unifiée avec compute units et tarification à l'usage. Real-time art generation.\n\nFonctions clés : 64+ modèles agrégés (Flux, Runway, Veo 3) ; Real-time generation sur canvas ; Compute units (cost depends on model/quality) ; Video generation (veo 3, runway) ; Early access features.\n\nKrea shines pour explorateurs ; pour production, choisissez un modèle et utilisez directement.",
     "affiliateLink": "https://krea.ai",
     "websiteUrl": "https://krea.ai",
     "defaultMonthlyPrice": 9,
     "pricing": {
-      "free": "100 crédits/jour (gratuit)",
-      "paid": "Basic 9$/mois, Pro 35$, Max 70$, Business 200$"
+      "free": "Gratuit : 100 compute units/jour (limité générations selon qualité/modèle).",
+      "paid": "Free: 0 $ (100 daily units) ; Basic: 10 $/mois (image + video generation) ; Pro: 35 $/mois (plus video) ; Max: 60 $/mois (3x Pro generation)"
     },
     "logo": "",
     "soloRelevance": "medium",
@@ -73878,14 +73904,14 @@
         "Système de crédits : le coût réel dépend du volume généré",
         "Nodes et modèles vidéo complets à partir du plan Pro (35$/mois)"
       ],
-      "verified_on": "2026-06-17",
+      "verified_on": "2026-07-24",
       "source_domain": "krea.ai",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
       "compare_plan_name": "Basic",
       "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://www.krea.ai/pricing",
+      "official_source_url": "https://krea.ai",
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 9
     },
@@ -73897,8 +73923,8 @@
       "never_auto_cancel_reason": null,
       "requires_context_questions": true
     },
-    "shortDescriptionEn": "Real-time AI image/video generation with a multi-model node canvas.",
-    "longDescriptionEn": "Krea AI is one of the new heavyweights in generative media. Its signature is real time: the Realtime Canvas shows an image that redraws in under a second while you type your prompt or sketch with a brush. But Krea has become far more than an image generator: it's an aggregator bringing 60+ models (Flux, Veo, Runway, Kling, its in-house Krea 1, and more) into a single interface, with upscaling up to 22K, video generation, 3D, lipsync, and LoRA training.\n\nThe centerpiece for pros is Nodes: a node canvas where you chain models and steps, a bit like ComfyUI but accessible. That's exactly the current trend: you no longer pay for a single-task tool, you pay for a workshop that orchestrates every model. Krea claims over 30 million users and $83 million raised.\n\nOn budget: an honest free plan (100 credits/day), then Basic at $9/month, Pro at $35 (which unlocks Nodes and all video models), Max at $70, and Business at $200. If you already have Midjourney for pure image generation, Krea partly overlaps, but its real-time canvas and Nodes make it complementary. Its real direct competitors are Magnific (ex-Freepik) and Figma Weave (ex-Weavy): if you want a multi-model platform, compare the three before subscribing.",
+    "shortDescriptionEn": "Aggregator of 64+ AI image and video models (Flux, Runway, Veo 3, proprietary Krea) in a unified platform with compute units and usage-based pricing. Real-time art generation.",
+    "longDescriptionEn": "Aggregator of 64+ AI image and video models (Flux, Runway, Veo 3, proprietary Krea) in a unified platform with compute units and usage-based pricing. Real-time art generation.\n\nKey strengths: Access 64+ models in one place.; Real-time generation on canvas.; Generous free tier (100 units/day).; Early access to new features..\n\nKrea shines for explorers; for production, choose one model and use it directly.",
     "prosEn": [
       "Access 64+ models in one place.",
       "Real-time generation on canvas.",
@@ -73929,12 +73955,13 @@
       "threshold": "Krea shines for explorers; for production, choose one model and use it directly."
     },
     "pricingEn": {
-      "free": "100 credits/day (free)",
-      "paid": "Basic $9/month, Pro $35, Max $70, Business $200"
+      "free": "Gratuit : 100 compute units/jour (limité générations selon qualité/modèle).",
+      "paid": "Free: 0 $ (100 daily units) ; Basic: 10 $/mois (image + video generation) ; Pro: 35 $/mois (plus video) ; Max: 60 $/mois (3x Pro generation)"
     },
     "force_silence": false,
-    "description": "Krea AI est l'un des nouveaux poids lourds du média génératif. Sa marque de fabrique, c'est le temps réel : le Realtime Canvas affiche une image qui se redessine en moins d'une seconde pendant que tu tapes ton prompt ou esquisses au pinceau. Mais Krea est devenu bien plus qu'un générateur d'images : c'est un agrégateur qui réunit plus de 60 modèles (Flux, Veo, Runway, Kling, son modèle maison Krea 1, etc.) dans une seule interface, avec upscaling jusqu'à 22K, génération vidéo, 3D, lipsync et entraînement de LoRA.\n\nLa pièce maîtresse pour les pros, c'est Nodes : un canvas nodal où tu enchaînes les modèles et les étapes, un peu comme ComfyUI mais accessible. C'est exactement la tendance du moment : on ne paie plus un outil par tâche, on paie un atelier qui orchestre tous les modèles. Krea revendique plus de 30 millions d'utilisateurs et 83 millions de dollars levés.\n\nCôté budget : un plan gratuit honnête (100 crédits/jour), puis Basic à 9$/mois, Pro à 35$ (qui débloque Nodes et tous les modèles vidéo), Max à 70$ et Business à 200$. Si tu as déjà Midjourney pour la pure génération d'images, Krea fait en partie doublon, mais son temps réel et son canvas nodal le rendent complémentaire. Ses vrais concurrents directs, ce sont Magnific (ex-Freepik) et Figma Weave (ex-Weavy) : si tu cherches une plateforme multi-modèles, compare les trois avant de t'abonner.",
-    "ogImageUrl": "https://s.krea.ai/KreaOpenGraph2.webp"
+    "description": "Agrégateur de 64+ modèles d'IA image et vidéo (Flux, Runway, Veo 3, Krea propriétaire) dans une plateforme unifiée avec compute units et tarification à l'usage. Real-time art generation.\n\nFonctions clés : 64+ modèles agrégés (Flux, Runway, Veo 3) ; Real-time generation sur canvas ; Compute units (cost depends on model/quality) ; Video generation (veo 3, runway) ; Early access features.\n\nKrea shines pour explorateurs ; pour production, choisissez un modèle et utilisez directement.",
+    "ogImageUrl": "https://s.krea.ai/KreaOpenGraph2.webp",
+    "galleryImages": []
   },
   {
     "id": "krea",
@@ -75079,21 +75106,26 @@
     "slug": "langchain",
     "name": "LangChain",
     "category": "ai-general",
-    "shortDescription": "Framework pour chaînes, agents, outils et orchestration LLM.",
-    "shortDescriptionEn": "Framework for chains, agents, tools, and LLM orchestration.",
-    "description": "Framework pour chaînes, agents, outils et orchestration LLM.",
-    "longDescription": "Framework pour chaînes, agents, outils et orchestration LLM.",
-    "longDescriptionEn": "Framework for chains, agents, tools, and LLM orchestration.",
+    "shortDescription": "Framework open-source MIT pour construire apps LLM : abstractions Python/JavaScript, intégrations 100+ LLMs/outils, RAG, agents autonomes, et LangGraph pour orchestration agents.",
+    "shortDescriptionEn": "MIT open-source framework for building LLM apps: Python/JavaScript abstractions, 100+ LLM/tool integrations, RAG, autonomous agents, and LangGraph for agent orchestration.",
+    "description": "Framework open-source MIT pour construire apps LLM : abstractions Python/JavaScript, intégrations 100+ LLMs/outils, RAG, agents autonomes, et LangGraph pour orchestration agents.\n\nFonctions clés : Abstractions LLM standardisées ; 100+ intégrations LLM/tools ; RAG chains et agents autonomes ; LangGraph pour orchestration ; LangSmith pour observabilité.\n\nLangChain s'impose pour dev LLM ; pour UI/no-code, essayez des builders.",
+    "longDescription": "Framework open-source MIT pour construire apps LLM : abstractions Python/JavaScript, intégrations 100+ LLMs/outils, RAG, agents autonomes, et LangGraph pour orchestration agents.\n\nFonctions clés : Abstractions LLM standardisées ; 100+ intégrations LLM/tools ; RAG chains et agents autonomes ; LangGraph pour orchestration ; LangSmith pour observabilité.\n\nLangChain s'impose pour dev LLM ; pour UI/no-code, essayez des builders.",
+    "longDescriptionEn": "MIT open-source framework for building LLM apps: Python/JavaScript abstractions, 100+ LLM/tool integrations, RAG, autonomous agents, and LangGraph for agent orchestration.\n\nKey strengths: Open-source, stable, mature framework.; Large ecosystem + integrations.; RAG and agents \"out of box\".; Free for prototyping..\n\nLangChain is standard for LLM dev; for UI/no-code, try builders.",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "LangChain OSS gratuit; LangSmith Developer free (5K traces/mois).",
+      "paid": "LangChain (OSS): Gratuit (MIT license) ; LangSmith Developer: 0 $ (5K traces/mois) ; LangSmith Plus: 39 $/seat/mois (100K traces) ; LangGraph Platform: 35 $/mois+ (deployment)"
     },
     "pricingEn": {
-      "free": "Free or open source depending on usage",
-      "paid": "Paid options may apply depending on hosting, team, or volume"
+      "free": "LangChain OSS gratuit; LangSmith Developer free (5K traces/mois).",
+      "paid": "LangChain (OSS): Gratuit (MIT license) ; LangSmith Developer: 0 $ (5K traces/mois) ; LangSmith Plus: 39 $/seat/mois (100K traces) ; LangGraph Platform: 35 $/mois+ (deployment)"
     },
     "defaultMonthlyPrice": 0,
-    "pricing_v5": null,
+    "pricing_v5": {
+      "verified_on": "2026-07-24",
+      "official_source_url": "https://www.langchain.com",
+      "source_domain": "langchain.com",
+      "verification_status": "official_explicit"
+    },
     "affiliateLink": "",
     "websiteUrl": "https://www.langchain.com",
     "logo": "",
@@ -75207,29 +75239,39 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/69a1e9409d6b1c287c69da0d_Website%20preview.png",
-    "force_silence": false
+    "ogImageUrl": "https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/6a5fabcd35c833ad1738ce2c_einstein-smoke-langchain.avif",
+    "force_silence": false,
+    "galleryImages": [
+      "https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/6a670b36585d346876e89449_733f80b86ab20ceeec551fc5c19f5f2c_newton-mobile.avif",
+      "https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/6a5f755831f70573692c9cb5_resting-newton.avif",
+      "https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/69a1e9409d6b1c287c69da0d_Website%20preview.png"
+    ]
   },
   {
     "id": "langsmith",
     "slug": "langsmith",
     "name": "LangSmith",
     "category": "ai-general",
-    "shortDescription": "Debug, tracing et évaluation des applications LLM.",
-    "shortDescriptionEn": "Debugging, tracing, and evaluation for LLM applications.",
-    "description": "Debug, tracing et évaluation des applications LLM.",
-    "longDescription": "Debug, tracing et évaluation des applications LLM.",
-    "longDescriptionEn": "Debugging, tracing, and evaluation for LLM applications.",
+    "shortDescription": "Plateforme observabilité et evaluation pour apps LLM : logging traces, versioning prompts, datasets d'évaluation, monitoring performance, et debugging agents. Complément LangChain.",
+    "shortDescriptionEn": "Observability and evaluation platform for LLM apps: trace logging, prompt versioning, evaluation datasets, performance monitoring, and agent debugging. LangChain complement.",
+    "description": "Plateforme observabilité et evaluation pour apps LLM : logging traces, versioning prompts, datasets d'évaluation, monitoring performance, et debugging agents. Complément LangChain.\n\nFonctions clés : Trace logging automatisé ; Versioning et A/B test prompts ; Datasets d'évaluation LLM ; Monitoring latence/costs ; Debugging agents interactif.\n\nLangSmith se rentabilise dès que l'observabilité réduit sensiblement les coûts d'API ; pour du prototypage, le palier Developer gratuit suffit.",
+    "longDescription": "Plateforme observabilité et evaluation pour apps LLM : logging traces, versioning prompts, datasets d'évaluation, monitoring performance, et debugging agents. Complément LangChain.\n\nFonctions clés : Trace logging automatisé ; Versioning et A/B test prompts ; Datasets d'évaluation LLM ; Monitoring latence/costs ; Debugging agents interactif.\n\nLangSmith se rentabilise dès que l'observabilité réduit sensiblement les coûts d'API ; pour du prototypage, le palier Developer gratuit suffit.",
+    "longDescriptionEn": "Observability and evaluation platform for LLM apps: trace logging, prompt versioning, evaluation datasets, performance monitoring, and agent debugging. LangChain complement.\n\nKey strengths: Complete observability for LLM apps.; Agent debugging very efficient.; Evaluation datasets built automatically.; Developer free tier reasonably generous..\n\nLangSmith pays for itself once observability meaningfully cuts API costs; for prototyping, the free Developer tier suffices.",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Developer : 5K traces/mois, 1 user, 14-day retention. Suffisant local dev.",
+      "paid": "Developer: 0 $ (5K traces/mois) ; Plus: 39 $/seat/mois (100K traces, 400-day retention) ; Enterprise: Custom (self-hosting, SLA) ; Overage: 2,50-5 $/1K traces (retention dépend)"
     },
     "pricingEn": {
-      "free": "Free or open source depending on usage",
-      "paid": "Paid options may apply depending on hosting, team, or volume"
+      "free": "Developer : 5K traces/mois, 1 user, 14-day retention. Suffisant local dev.",
+      "paid": "Developer: 0 $ (5K traces/mois) ; Plus: 39 $/seat/mois (100K traces, 400-day retention) ; Enterprise: Custom (self-hosting, SLA) ; Overage: 2,50-5 $/1K traces (retention dépend)"
     },
     "defaultMonthlyPrice": 0,
-    "pricing_v5": null,
+    "pricing_v5": {
+      "verified_on": "2026-07-24",
+      "official_source_url": "https://www.langchain.com/langsmith",
+      "source_domain": "langchain.com",
+      "verification_status": "official_explicit"
+    },
     "affiliateLink": "",
     "websiteUrl": "https://www.langchain.com/langsmith",
     "logo": "",
@@ -75335,8 +75377,13 @@
       "auto_replace_allowed": false,
       "auto_downgrade_allowed": false
     },
-    "ogImageUrl": "https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/69a2224227e2e682a3a49a95_Website%20preview-LangSmith%20Platform%20Page-obs.png",
-    "force_silence": false
+    "ogImageUrl": "https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/69a5c46ca3220abe59789f08_Observ_hero%20-%20default.avif",
+    "force_silence": false,
+    "galleryImages": [
+      "https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/69a5c46d42f7f95e74f9c2f8_Observ_hero%20-%20hover.avif",
+      "https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/69932430916ccb44cfd9c6e8_tracing_default.avif",
+      "https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/69932430a073663596eca46d_monitoring_default.avif"
+    ]
   },
   {
     "id": "languagetool",
@@ -77759,11 +77806,11 @@
     "substitutable": true,
     "bundle_parent": null,
     "category": "ai-general",
-    "shortDescription": "Génération d'images IA avec fine-tuning et modèles spécialisés.",
+    "shortDescription": "Générateur d'images IA avec modèles propriétaires (Leonardo) et tiers : haute qualité, édition, upscaling, photo-to-painting. Crédits system ; usage commercial dès Free.",
     "defaultMonthlyPrice": 10.39,
     "pricing": {
-      "free": "150 tokens/jour",
-      "paid": "12$/mois (Artisan)"
+      "free": "Gratuit : 150 tokens/jour (~30-50 images) avec watermark ; usage non-commercial uniquement.",
+      "paid": "Free: 0 $ (150 tokens/jour, non-commercial) ; Apprentice: 12 $/mois (8.5K crédits, commercial ok) ; Artisan: 30 $/mois (25K crédits) ; Ultimate: 60 $/mois (60K crédits) ; Enterprise: 2.5K crédits à 89 $/mois"
     },
     "covers": [
       "concept-art",
@@ -77806,14 +77853,17 @@
     "migrationGuide": null,
     "host_app": null,
     "slug": "leonardo-ai",
-    "shortDescriptionEn": "AI image generation with fine-tuning and specialised models.",
-    "description": "Leonardo AI, c'est génération d'images IA avec fine-tuning et modèles spécialisés. À partir de 10.39€/mois. Pensé pour les graphistes et les illustrateurs.\n\nGain de temps estimé : 5h/mois.\n\nÀ garder si : fine-tuning sur votre style visuel ou concept art et jeux vidéo. À éviter si : midjourney déjà dans le stack — fort doublon. Rentable si vous avez un style visuel à entraîner.",
-    "longDescription": "Leonardo AI, c'est génération d'images IA avec fine-tuning et modèles spécialisés. À partir de 10.39€/mois. Pensé pour les graphistes et les illustrateurs.\n\nGain de temps estimé : 5h/mois.\n\nÀ garder si : fine-tuning sur votre style visuel ou concept art et jeux vidéo. À éviter si : midjourney déjà dans le stack — fort doublon. Rentable si vous avez un style visuel à entraîner.",
-    "longDescriptionEn": "Leonardo AI is aI image generation with fine-tuning and specialised models. Starting at €10.39/month. Built for graphic designers and illustrators.\n\nEstimated time saving: 5h/month.",
-    "pricingEn": null,
+    "shortDescriptionEn": "AI image generator with proprietary and third-party models: high quality, editing, upscaling, photo-to-painting. Credit system; commercial use from Free tier.",
+    "description": "Générateur d'images IA avec modèles propriétaires (Leonardo) et tiers : haute qualité, édition, upscaling, photo-to-painting. Crédits system ; usage commercial dès Free.\n\nFonctions clés : Modèles propriétaires high quality ; Édition et inpainting ; Upscaling jusqu'à 8× ; Photo-to-painting ; Tokens system, usage commercial dès Apprentice.\n\nLeonardo excels pour qualité + commercial dès entrée ; pour designs texte, Ideogram meilleur.",
+    "longDescription": "Générateur d'images IA avec modèles propriétaires (Leonardo) et tiers : haute qualité, édition, upscaling, photo-to-painting. Crédits system ; usage commercial dès Free.\n\nFonctions clés : Modèles propriétaires high quality ; Édition et inpainting ; Upscaling jusqu'à 8× ; Photo-to-painting ; Tokens system, usage commercial dès Apprentice.\n\nLeonardo excels pour qualité + commercial dès entrée ; pour designs texte, Ideogram meilleur.",
+    "longDescriptionEn": "AI image generator with proprietary and third-party models: high quality, editing, upscaling, photo-to-painting. Credit system; commercial use from Free tier.\n\nKey strengths: Commercial use from Free.; Token system is flexible.; Good editing and upscaling.; Discount on annual commitment..\n\nLeonardo excels for quality + commercial from entry; for text designs, Ideogram better.",
+    "pricingEn": {
+      "free": "Gratuit : 150 tokens/jour (~30-50 images) avec watermark ; usage non-commercial uniquement.",
+      "paid": "Free: 0 $ (150 tokens/jour, non-commercial) ; Apprentice: 12 $/mois (8.5K crédits, commercial ok) ; Artisan: 30 $/mois (25K crédits) ; Ultimate: 60 $/mois (60K crédits) ; Enterprise: 2.5K crédits à 89 $/mois"
+    },
     "pricing_v5": {
       "cautions": [],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-07-24",
       "source_domain": "leonardo.ai",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
@@ -77821,7 +77871,7 @@
       "price_reliability": "low",
       "location_sensitive": false,
       "official_source_url": "https://leonardo.ai",
-      "verification_status": "official_site_only",
+      "verification_status": "official_explicit",
       "compare_price_monthly_eur": 10.39
     },
     "websiteUrl": "https://leonardo.ai",
@@ -77908,7 +77958,8 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/leonardo-ai.jpg"
+    "ogImageUrl": "/og-screenshots/leonardo-ai.jpg",
+    "galleryImages": []
   },
   {
     "id": "lever",
@@ -82387,11 +82438,11 @@
     "bundle_parent": null,
     "host_app": null,
     "category": "ai-general",
-    "shortDescription": "Génération d'applications full-stack depuis un prompt avec Supabase intégré.",
+    "shortDescription": "AI web app builder : chat naturel → code React/Supabase generé en temps réel. Preview live, GitHub sync, one-click deployment. Crédits system (message complexity). Students : -50 % first year.",
     "defaultMonthlyPrice": 17.32,
     "pricing": {
-      "free": "Crédits limités",
-      "paid": "20$/mois (Starter)"
+      "free": "Gratuit : 5 messages/jour (≈ 30/mois), projects illimités publics, GitHub sync, one-click deploy.",
+      "paid": "Free: 0 $ (5 msgs/jour) ; Pro: 25 $/mois (100 msgs/mois avec credit variation) ; Business: 50 $/mois (illimité msgs) ; Student: 12,50 $/mois (first year Pro, -50 %)"
     },
     "covers": [
       "app-builder",
@@ -82468,23 +82519,26 @@
       "free": "Crédits limités",
       "paid": "20$/mois (Starter)"
     },
-    "longDescription": "Lovable, c'est génération d'applications full-stack depuis un prompt avec Supabase intégré. À partir de 17.32€/mois. Pensé pour les fondateurs SaaS et les builders IA.\n\nGain de temps estimé : 15h/mois.\n\nÀ garder si : construire un SaaS complet sans équipe dev. À éviter si : bolt.new ou Cursor déjà en place — doublon builder. Rentable dès le premier produit qui génère du revenu.",
+    "longDescription": "AI web app builder : chat naturel → code React/Supabase generé en temps réel. Preview live, GitHub sync, one-click deployment. Crédits system (message complexity). Students : -50 % first year.\n\nFonctions clés : Chat naturel → code React ; Preview live temps réel ; Supabase backend auto-généré ; GitHub sync bidirectionnel ; One-click deployment.\n\nLovable shines pour prototypage fast et solopreneur ; pour apps complexes, écrivez code directement.",
     "alternatives": [],
     "slug": "lovable",
-    "shortDescriptionEn": "Full-stack app generation from a prompt with integrated Supabase.",
-    "description": "Lovable, c'est génération d'applications full-stack depuis un prompt avec Supabase intégré. À partir de 17.32€/mois. Pensé pour les fondateurs SaaS et les builders IA.\n\nGain de temps estimé : 15h/mois.\n\nÀ garder si : construire un SaaS complet sans équipe dev. À éviter si : bolt.new ou Cursor déjà en place — doublon builder. Rentable dès le premier produit qui génère du revenu.",
-    "longDescriptionEn": "Lovable is full-stack app generation from a prompt with integrated Supabase. Starting at €17.32/month. Built for SaaS founders and AI builders.\n\nEstimated time saving: 15h/month.",
-    "pricingEn": null,
+    "shortDescriptionEn": "AI web app builder: natural chat → real-time generated React/Supabase code. Live preview, GitHub sync, one-click deployment. Credits system (message complexity). Students: -50% first year.",
+    "description": "AI web app builder : chat naturel → code React/Supabase generé en temps réel. Preview live, GitHub sync, one-click deployment. Crédits system (message complexity). Students : -50 % first year.\n\nFonctions clés : Chat naturel → code React ; Preview live temps réel ; Supabase backend auto-généré ; GitHub sync bidirectionnel ; One-click deployment.\n\nLovable shines pour prototypage fast et solopreneur ; pour apps complexes, écrivez code directement.",
+    "longDescriptionEn": "AI web app builder: natural chat → real-time generated React/Supabase code. Live preview, GitHub sync, one-click deployment. Credits system (message complexity). Students: -50% first year.\n\nKey strengths: Ultra-fast prototyping (minutes).; Generous free (5 msgs/day).; Smooth GitHub sync.; One-click deployment..\n\nLovable shines for fast prototyping and solopreneurs; for complex apps, code directly.",
+    "pricingEn": {
+      "free": "Gratuit : 5 messages/jour (≈ 30/mois), projects illimités publics, GitHub sync, one-click deploy.",
+      "paid": "Free: 0 $ (5 msgs/jour) ; Pro: 25 $/mois (100 msgs/mois avec credit variation) ; Business: 50 $/mois (illimité msgs) ; Student: 12,50 $/mois (first year Pro, -50 %)"
+    },
     "pricing_v5": {
       "cautions": [],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-07-24",
       "source_domain": "lovable.dev",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
       "compare_plan_name": "Entry paid plan",
       "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://lovable.dev/pricing",
+      "official_source_url": "https://lovable.dev",
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 17.32
     },
@@ -82540,7 +82594,8 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://lovable.dev/img/opengraph-image.png"
+    "ogImageUrl": "https://lovable.dev/img/opengraph-image.png",
+    "galleryImages": []
   },
   {
     "id": "ltk",
@@ -88311,10 +88366,11 @@
     "bundle_parent": null,
     "host_app": null,
     "category": "ai-general",
-    "shortDescription": "Note-taking IA avec mémoire contextuelle — vos notes se connectent automatiquement.",
+    "shortDescription": "Application de gestion des connaissances personnelles basée sur l'IA, qui organise automatiquement les notes via un assistant conversationnel et propose une recherche intelligente parmi vos contenus.",
     "defaultMonthlyPrice": 12.12,
     "pricing": {
-      "paid": "14$/mois (Pro)"
+      "free": "Version gratuite avec 25 notes par mois",
+      "paid": "Mem Free: Gratuit (25 notes/mois) ; Mem Pro: 12 $/mois (notes illimitées)"
     },
     "covers": [
       "brainstorming",
@@ -88393,16 +88449,19 @@
     "pricingTiers": {
       "paid": "14$/mois (Pro)"
     },
-    "longDescription": "Mem AI, c'est note-taking IA avec mémoire contextuelle — vos notes se connectent automatiquement. À partir de 12.12€/mois. Pensé pour les consultants B2B et les auteurs et newslettistes.\n\nGain de temps estimé : 3h/mois.\n\nÀ garder si : chercheur, auteur avec volume massif de notes à connecter. À éviter si : notion ou Obsidian déjà en place. Niche — pertinent surtout pour les knowledge workers intensifs. Si le budget le permet, notion va plus loin.",
+    "longDescription": "Application de gestion des connaissances personnelles basée sur l'IA, qui organise automatiquement les notes via un assistant conversationnel et propose une recherche intelligente parmi vos contenus.\n\nFonctions clés : Organisation automatique des notes sans dossiers ; Mem Chat pour interroger vos notes en conversation ; Mode Voice pour capture mains-libres ; Heads Up pour lier automatiquement les idées connexes.\n\nMem AI s'impose pour les professionnels gérant des contenus volumineux au quotidien ; pour une utilisation légère ou une organisation rigide, un éditeur de notes classique convient mieux.",
     "alternatives": [],
     "slug": "mem-ai",
-    "shortDescriptionEn": "AI note-taking with contextual memory — your notes connect automatically.",
-    "description": "Mem AI, c'est note-taking IA avec mémoire contextuelle — vos notes se connectent automatiquement. À partir de 12.12€/mois. Pensé pour les consultants B2B et les auteurs et newslettistes.\n\nGain de temps estimé : 3h/mois.\n\nÀ garder si : chercheur, auteur avec volume massif de notes à connecter. À éviter si : notion ou Obsidian déjà en place. Niche — pertinent surtout pour les knowledge workers intensifs. Si le budget le permet, notion va plus loin.",
-    "longDescriptionEn": "Mem AI is aI note-taking with contextual memory — your notes connect automatically. Starting at €12.12/month. Built for B2B consultants and writers and newsletter creators.\n\nEstimated time saving: 3h/month.\n\nIf budget allows, notion goes further.",
-    "pricingEn": null,
+    "shortDescriptionEn": "AI-powered personal knowledge management app that automatically organizes notes via conversational assistant and offers intelligent search across your content.",
+    "description": "Application de gestion des connaissances personnelles basée sur l'IA, qui organise automatiquement les notes via un assistant conversationnel et propose une recherche intelligente parmi vos contenus.\n\nFonctions clés : Organisation automatique des notes sans dossiers ; Mem Chat pour interroger vos notes en conversation ; Mode Voice pour capture mains-libres ; Heads Up pour lier automatiquement les idées connexes.\n\nMem AI s'impose pour les professionnels gérant des contenus volumineux au quotidien ; pour une utilisation légère ou une organisation rigide, un éditeur de notes classique convient mieux.",
+    "longDescriptionEn": "AI-powered personal knowledge management app that automatically organizes notes via conversational assistant and offers intelligent search across your content.\n\nKey strengths: Automatic organization without manual effort.; Intuitive conversational search.; Voice capture and cross-device sync.; Smart recommendations for related content..\n\nMem AI suits professionals handling large content daily; for light use or rigid organization, a traditional note editor is better.",
+    "pricingEn": {
+      "free": "Version gratuite avec 25 notes par mois",
+      "paid": "Mem Free: Gratuit (25 notes/mois) ; Mem Pro: 12 $/mois (notes illimitées)"
+    },
     "pricing_v5": {
       "cautions": [],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-07-24",
       "source_domain": "mem.ai",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
@@ -88410,7 +88469,7 @@
       "price_reliability": "low",
       "location_sensitive": false,
       "official_source_url": "https://mem.ai",
-      "verification_status": "official_site_only",
+      "verification_status": "official_explicit",
       "compare_price_monthly_eur": 12.12
     },
     "websiteUrl": "https://mem.ai",
@@ -88465,7 +88524,10 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://storage.googleapis.com/mem-public-assets/sq-f.jpg"
+    "ogImageUrl": "https://mem.ai/assets/seo/mem-open-graph-card.png",
+    "galleryImages": [
+      "https://storage.googleapis.com/mem-public-assets/sq-f.jpg"
+    ]
   },
   {
     "id": "memberful",
@@ -88840,22 +88902,22 @@
     "bundle_parent": null,
     "host_app": null,
     "category": "ai-general",
-    "shortDescription": "Génère des modèles 3D texturés à partir d'un texte ou d'une image, en secondes.",
-    "shortDescriptionEn": "Generates textured 3D models from text or an image, in seconds.",
+    "shortDescription": "Générateur de modèles 3D basé sur l'IA qui transforme des descriptions textuelles ou des images en modèles 3D prêts à l'emploi pour les jeux vidéo et l'impression 3D.",
+    "shortDescriptionEn": "AI-powered 3D model generator that converts text descriptions or images into ready-to-use 3D models for games and 3D printing.",
     "pricing": {
-      "free": "Gratuit (100 crédits/mois)",
-      "paid": "Pro 20 $/mois, Premium 40 $, Ultra 100 $, Studio 70 $, Enterprise sur devis."
+      "free": "100 crédits par mois, sans carte bancaire ; créations sous licence CC BY 4.0",
+      "paid": "Free: 0 $ avec 100 crédits par mois ; Pro: 20 $/mois avec 1 000 crédits ; Premium: 40 $/mois ; Ultra: 100 $/mois ; Studio: 70 $/mois pour un membre, puis 10 $/mois par membre supplémentaire ; Enterprise: Sur devis"
     },
     "pricingEn": {
-      "free": "Free (100 credits/month)",
-      "paid": "Pro $20/month, Premium $40, Ultra $100, Studio $70, Enterprise custom."
+      "free": "100 crédits par mois, sans carte bancaire ; créations sous licence CC BY 4.0",
+      "paid": "Free: 0 $ avec 100 crédits par mois ; Pro: 20 $/mois avec 1 000 crédits ; Premium: 40 $/mois ; Ultra: 100 $/mois ; Studio: 70 $/mois pour un membre, puis 10 $/mois par membre supplémentaire ; Enterprise: Sur devis"
     },
     "defaultMonthlyPrice": 20,
     "affiliateLink": "https://www.meshy.ai?via=tooltrim",
     "websiteUrl": "https://www.meshy.ai",
     "logo": "",
-    "longDescription": "Meshy, c'est l'un des leaders de la 3D générative : tu écris un prompt ou tu déposes une image, et il sort un modèle 3D texturé en quelques secondes. Pour prototyper un asset de jeu, explorer un concept ou peupler une scène en props, c'est un accélérateur bluffant. Les modèles s'exportent vers Blender, Cinema 4D, Unreal et compagnie.\n\nLe bémol à connaître : la topologie générée reste brute (souvent à retravailler pour de la production sérieuse), et le résultat est un point de départ, pas un asset final. Mais ça progresse très vite. Côté prix, c'est accessible : un plan gratuit (100 crédits/mois) pour tester, puis Pro à 20$/mois.\n\nPour ToolTrim, Meshy est exactement le type d'IA qui augmente les logiciels 3D classiques (Cinema 4D, Blender, ZBrush) plutôt que de les remplacer : tu génères une base en IA, tu la nettoies et tu la mets en scène dans ton outil. Avec Tripo, c'est la référence du text-to-3D abordable.",
-    "longDescriptionEn": "Meshy is one of the leaders in generative 3D: you write a prompt or drop an image, and it outputs a textured 3D model in seconds. For prototyping a game asset, exploring a concept or populating a scene with props, it's a striking accelerator. Models export to Blender, Cinema 4D, Unreal and the rest.\n\nThe catch: the generated topology stays rough (often needs reworking for serious production), and the result is a starting point, not a final asset. But it's improving fast. On price, it's accessible: a free plan (100 credits/month) to test, then Pro at $20/month.\n\nFor ToolTrim, Meshy is exactly the kind of AI that augments classic 3D apps (Cinema 4D, Blender, ZBrush) rather than replacing them: you generate a base with AI, clean it up and stage it in your tool. With Tripo, it's the reference for affordable text-to-3D.",
+    "longDescription": "Générateur de modèles 3D basé sur l'IA qui transforme des descriptions textuelles ou des images en modèles 3D prêts à l'emploi pour les jeux vidéo et l'impression 3D.\n\nFonctions clés : Génération texte-vers-3D et image-vers-3D ; Texturage automatique basé sur PBR ; Rigging et animation automatiques (600+ preset de mouvements) ; Agent 3D pour passer d'une idée, photo ou esquisse à un modèle ; Optimisation pour l'impression 3D avec contrôle et réparation du maillage ; Export FBX, OBJ, USDZ, GLB, STL et Blender ; Intégrations Blender, Unity, Unreal Engine, Godot et outils de tranchage.\n\nMeshy convient aux créateurs 3D cherchant rapidité et accessibilité ; pour des projets exigeant un contrôle méticuleux, un outil traditionnel demeure préférable.",
+    "longDescriptionEn": "AI-powered 3D model generator that converts text descriptions or images into ready-to-use 3D models for games and 3D printing.\n\nKey strengths: Fast generation (under a minute).; No mandatory subscription to start.; Automatic optimization for 3D printing.; Multi-format and multi-engine support.; Automatic texturing and rigging..\n\nMeshy suits creators seeking speed and accessibility; for projects demanding meticulous control, traditional tools are preferable.",
     "verdict": {
       "keepIf": [
         "Vous créez des contenus 3D pour des jeux vidéo.",
@@ -88977,7 +89039,7 @@
       "https://cdn.meshy.ai/webapp-build-assets/production/_next/static/media/model_2.40grweusf_nc8.webp",
       "https://cdn.meshy.ai/ti_w%3A3840%2Cq%3A75%2Cf%3Awebp/landing-assets/home/landing_3D_printing_5.png"
     ],
-    "description": "Meshy, c'est l'un des leaders de la 3D générative : tu écris un prompt ou tu déposes une image, et il sort un modèle 3D texturé en quelques secondes. Pour prototyper un asset de jeu, explorer un concept ou peupler une scène en props, c'est un accélérateur bluffant. Les modèles s'exportent vers Blender, Cinema 4D, Unreal et compagnie.\n\nLe bémol à connaître : la topologie générée reste brute (souvent à retravailler pour de la production sérieuse), et le résultat est un point de départ, pas un asset final. Mais ça progresse très vite. Côté prix, c'est accessible : un plan gratuit (100 crédits/mois) pour tester, puis Pro à 20$/mois.\n\nPour ToolTrim, Meshy est exactement le type d'IA qui augmente les logiciels 3D classiques (Cinema 4D, Blender, ZBrush) plutôt que de les remplacer : tu génères une base en IA, tu la nettoies et tu la mets en scène dans ton outil. Avec Tripo, c'est la référence du text-to-3D abordable.",
+    "description": "Générateur de modèles 3D basé sur l'IA qui transforme des descriptions textuelles ou des images en modèles 3D prêts à l'emploi pour les jeux vidéo et l'impression 3D.\n\nFonctions clés : Génération texte-vers-3D et image-vers-3D ; Texturage automatique basé sur PBR ; Rigging et animation automatiques (600+ preset de mouvements) ; Agent 3D pour passer d'une idée, photo ou esquisse à un modèle ; Optimisation pour l'impression 3D avec contrôle et réparation du maillage ; Export FBX, OBJ, USDZ, GLB, STL et Blender ; Intégrations Blender, Unity, Unreal Engine, Godot et outils de tranchage.\n\nMeshy convient aux créateurs 3D cherchant rapidité et accessibilité ; pour des projets exigeant un contrôle méticuleux, un outil traditionnel demeure préférable.",
     "decision_policy_v3": null,
     "force_silence": false
   },
@@ -94068,22 +94130,22 @@
     "bundle_parent": null,
     "host_app": null,
     "category": "ai-general",
-    "shortDescription": "Capture de mouvement sans marqueurs ni studio, depuis de simples vidéos (IA).",
-    "shortDescriptionEn": "Markerless motion capture from ordinary video, no studio needed (AI).",
+    "shortDescription": "Système de capture de mouvement sans marqueurs utilisant l'IA et plusieurs caméras pour capturer les mouvements humains sans tenues ni marqueurs physiques, destiné à la VFX, l'animation et les jeux vidéo.",
+    "shortDescriptionEn": "Markerless motion capture system using AI and multi-camera setup to capture human movement without physical suits or markers, designed for VFX, animation, and gaming.",
     "pricing": {
-      "free": "Freemium (tests limités)",
-      "paid": "Dès 15$/mois ; facturation à la durée pour le pro."
+      "free": "Accès via démo ; tarifs sur demande",
+      "paid": "Enterprise: Montants sur la page officielle (devis personnalisé)"
     },
     "pricingEn": {
-      "free": "Freemium (limited tests)",
-      "paid": "From $15/month; duration-based billing for pro."
+      "free": "Accès via démo ; tarifs sur demande",
+      "paid": "Enterprise: Montants sur la page officielle (devis personnalisé)"
     },
     "defaultMonthlyPrice": 15,
     "affiliateLink": "https://www.move.ai",
     "websiteUrl": "https://www.move.ai",
     "logo": "",
-    "longDescription": "Move AI, c'est de la capture de mouvement sans marqueurs : tu filmes un acteur avec un ou plusieurs téléphones ou caméras, et l'IA en extrait une animation 3D exploitable. Plus de combinaison à pastilles, plus de studio de mocap à des milliers d'euros. L'animation s'exporte en FBX vers Maya, Blender ou Unreal.\n\nPour un indépendant ou un petit studio, c'est un vrai bouleversement : la qualité est impressionnante au regard du prix, même si la mocap optique haut de gamme garde l'avantage sur la précision pure. Le tarif démarre vers 15$/mois en freemium, avec une facturation à la durée des vidéos pour les usages plus intensifs.\n\nPour ToolTrim, Move AI fait partie des IA qui challengent sérieusement un pan de la production 3D : la capture de mouvement, longtemps réservée aux studios équipés. Elle ne remplace pas ton logiciel d'animation, mais elle remplace l'étape de captation, ce qui change beaucoup de choses pour les budgets serrés.",
-    "longDescriptionEn": "Move AI is markerless motion capture: you film an actor with one or several phones or cameras, and the AI extracts usable 3D animation. No marker suit, no thousand-euro mocap studio. The animation exports as FBX to Maya, Blender or Unreal.\n\nFor a freelancer or small studio, it's a real shake-up: quality is impressive for the price, even if high-end optical mocap keeps the edge on pure precision. Pricing starts around $15/month freemium, with duration-based billing for heavier use.\n\nFor ToolTrim, Move AI is one of the AIs seriously challenging a part of 3D production: motion capture, long reserved for equipped studios. It doesn't replace your animation software, but it replaces the capture step, which changes a lot for tight budgets.",
+    "longDescription": "Système de capture de mouvement sans marqueurs utilisant l'IA et plusieurs caméras pour capturer les mouvements humains sans tenues ni marqueurs physiques, destiné à la VFX, l'animation et les jeux vidéo.\n\nFonctions clés : Capture sans marqueurs ni tenues (IA + multi-caméra) ; Qualité comparable aux systèmes optiques traditionnels ; Réduction des durées et coûts de tournage ; Volumes de capture adaptables ; Utilisation par studios majeurs (Ubisoft, Disney, Sony, Paramount).\n\nMove AI s'adresse aux studios professionnels ; pour des productions légères, les solutions traditionnelles ou logicielles peuvent suffire.",
+    "longDescriptionEn": "Markerless motion capture system using AI and multi-camera setup to capture human movement without physical suits or markers, designed for VFX, animation, and gaming.\n\nKey strengths: High-quality motion capture without heavy equipment.; Significant cost reduction vs. optical systems.; Flexible and scalable across production sizes.; Used by major studios globally..\n\nMove AI targets professional studios; for lighter productions, traditional or software solutions may suffice.",
     "verdict": {
       "keepIf": [
         "Vous produisez du contenu VFX ou animation haut de gamme.",
@@ -94185,22 +94247,25 @@
       "cautions": [
         "Freemium ; dès 15$/mois, facturation à la durée pour le pro"
       ],
-      "verified_on": "2026-06-17",
+      "verified_on": "2026-07-24",
       "source_domain": "move.ai",
       "usage_sensitive": true,
       "compare_plan_kind": "subscription",
       "compare_plan_name": "Entrée mensuelle",
       "price_reliability": "medium",
       "location_sensitive": false,
-      "official_source_url": "https://move.ai/products",
-      "verification_status": "official_site_only",
+      "official_source_url": "https://www.move.ai",
+      "verification_status": "official_explicit",
       "compare_price_monthly_eur": 15
     },
     "substitution_cluster_v2": "ai-3d-generation",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/move-ai.jpg",
-    "description": "Move AI, c'est de la capture de mouvement sans marqueurs : tu filmes un acteur avec un ou plusieurs téléphones ou caméras, et l'IA en extrait une animation 3D exploitable. Plus de combinaison à pastilles, plus de studio de mocap à des milliers d'euros. L'animation s'exporte en FBX vers Maya, Blender ou Unreal.\n\nPour un indépendant ou un petit studio, c'est un vrai bouleversement : la qualité est impressionnante au regard du prix, même si la mocap optique haut de gamme garde l'avantage sur la précision pure. Le tarif démarre vers 15$/mois en freemium, avec une facturation à la durée des vidéos pour les usages plus intensifs.\n\nPour ToolTrim, Move AI fait partie des IA qui challengent sérieusement un pan de la production 3D : la capture de mouvement, longtemps réservée aux studios équipés. Elle ne remplace pas ton logiciel d'animation, mais elle remplace l'étape de captation, ce qui change beaucoup de choses pour les budgets serrés.",
+    "ogImageUrl": "https://cdn.prod.website-files.com/695feac1f2e19ffbc09581db/696f9a8fcc78b469d694ff48_transfer.png",
+    "description": "Système de capture de mouvement sans marqueurs utilisant l'IA et plusieurs caméras pour capturer les mouvements humains sans tenues ni marqueurs physiques, destiné à la VFX, l'animation et les jeux vidéo.\n\nFonctions clés : Capture sans marqueurs ni tenues (IA + multi-caméra) ; Qualité comparable aux systèmes optiques traditionnels ; Réduction des durées et coûts de tournage ; Volumes de capture adaptables ; Utilisation par studios majeurs (Ubisoft, Disney, Sony, Paramount).\n\nMove AI s'adresse aux studios professionnels ; pour des productions légères, les solutions traditionnelles ou logicielles peuvent suffire.",
     "decision_policy_v3": null,
-    "force_silence": false
+    "force_silence": false,
+    "galleryImages": [
+      "https://tooltrim.com/og-screenshots/move-ai.jpg"
+    ]
   },
   {
     "id": "mrpeasy",
@@ -97857,10 +97922,11 @@
     "bundle_parent": "notion",
     "host_app": null,
     "category": "ai-general",
-    "shortDescription": "IA intégrée dans Notion : rédaction, résumé, traduction directement dans vos docs.",
+    "shortDescription": "Suite de fonctionnalités IA intégrées à Notion, incluant génération de texte, agents personnalisés pour automatiser les tâches, recherche d'entreprise, et résumés de réunions.",
     "defaultMonthlyPrice": 6.93,
     "pricing": {
-      "paid": "8$/mois en add-on Notion"
+      "free": "Essai gratuit avec accès limité aux fonctionnalités IA",
+      "paid": "Business Plan: Inclut Notion AI ; crédits agents 10 $/1000 à partir du 4 mai 2026"
     },
     "covers": [
       "brainstorming",
@@ -97949,16 +98015,19 @@
     "pricingTiers": {
       "paid": "8$/mois en add-on Notion"
     },
-    "longDescription": "Notion AI, c'est iA intégrée dans Notion : rédaction, résumé, traduction directement dans vos docs. À partir de 6.93€/mois. Pensé pour les consultants B2B et les product managers.\n\nGain de temps estimé : 3h/mois.\n\nÀ garder si : vous n'avez pas d'abonnement Claude ou ChatGPT. À éviter si : claude ou ChatGPT déjà dans le stack — doublon évident. Inutile si vous avez déjà un abonnement IA généraliste. Si le budget le permet, claude va plus loin.",
+    "longDescription": "Suite de fonctionnalités IA intégrées à Notion, incluant génération de texte, agents personnalisés pour automatiser les tâches, recherche d'entreprise, et résumés de réunions.\n\nFonctions clés : Agent Notion pour automatisation multi-étapes ; Agents personnalisés pour workflows récurrents 24/7 ; Recherche d'entreprise multi-source (Slack, Google Drive, GitHub) ; Résumés et notes de réunion avec transcription ; Remplissage de base de données et génération de formules.\n\nNotion AI convient aux organisations Notion cherchant l'automatisation ; pour débuter sans Notion, un assistant IA généraliste peut être plus approprié.",
     "alternatives": [],
     "slug": "notion-ai",
-    "shortDescriptionEn": "AI built into Notion: writing, summarising, translating directly in your docs.",
-    "description": "Notion AI, c'est iA intégrée dans Notion : rédaction, résumé, traduction directement dans vos docs. À partir de 6.93€/mois. Pensé pour les consultants B2B et les product managers.\n\nGain de temps estimé : 3h/mois.\n\nÀ garder si : vous n'avez pas d'abonnement Claude ou ChatGPT. À éviter si : claude ou ChatGPT déjà dans le stack — doublon évident. Inutile si vous avez déjà un abonnement IA généraliste. Si le budget le permet, claude va plus loin.",
-    "longDescriptionEn": "Notion AI is aI built into Notion: writing, summarising, translating directly in your docs. Starting at €6.93/month. Built for B2B consultants and product managers.\n\nEstimated time saving: 3h/month.\n\nIf budget allows, claude goes further.",
-    "pricingEn": null,
+    "shortDescriptionEn": "Suite of AI features built into Notion, including text generation, custom agents for task automation, enterprise search, and meeting summaries.",
+    "description": "Suite de fonctionnalités IA intégrées à Notion, incluant génération de texte, agents personnalisés pour automatiser les tâches, recherche d'entreprise, et résumés de réunions.\n\nFonctions clés : Agent Notion pour automatisation multi-étapes ; Agents personnalisés pour workflows récurrents 24/7 ; Recherche d'entreprise multi-source (Slack, Google Drive, GitHub) ; Résumés et notes de réunion avec transcription ; Remplissage de base de données et génération de formules.\n\nNotion AI convient aux organisations Notion cherchant l'automatisation ; pour débuter sans Notion, un assistant IA généraliste peut être plus approprié.",
+    "longDescriptionEn": "Suite of AI features built into Notion, including text generation, custom agents for task automation, enterprise search, and meeting summaries.\n\nKey strengths: Seamless Notion integration.; Custom agents for unique workflows.; Smart cross-app search.; Automatic meeting summaries and transcriptions..\n\nNotion AI suits Notion-based organizations seeking automation; for non-Notion teams, a standalone AI assistant may be more appropriate.",
+    "pricingEn": {
+      "free": "Essai gratuit avec accès limité aux fonctionnalités IA",
+      "paid": "Business Plan: Inclut Notion AI ; crédits agents 10 $/1000 à partir du 4 mai 2026"
+    },
     "pricing_v5": {
       "cautions": [],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-07-24",
       "source_domain": "notion.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
@@ -97966,7 +98035,7 @@
       "price_reliability": "medium",
       "location_sensitive": false,
       "official_source_url": "https://www.notion.com/product/ai",
-      "verification_status": "official_contextual",
+      "verification_status": "official_explicit",
       "compare_price_monthly_eur": 6.93
     },
     "websiteUrl": "https://notion.so/product/ai",
@@ -98021,7 +98090,12 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://www.notion.com/front-static/meta/teams-and-agents.jpg"
+    "ogImageUrl": "https://images.ctfassets.net/spoqsaf9291f/PxonT2OYW98z2zblXpzQV/54201835140efd39fd8c038218e705d6/custom-agents-16-9.gif",
+    "galleryImages": [
+      "https://images.ctfassets.net/spoqsaf9291f/6QsRtEoZ8fMvaopdSwPNsZ/d7d9a90baf1b26446caa75b7a9e960de/builder-16-9.gif",
+      "https://images.ctfassets.net/spoqsaf9291f/3Dkho83Hk0dkyY0UJrc0b5/96884c6e565ee250b1a8be7348cedeae/researcher-16-9.gif",
+      "https://images.ctfassets.net/spoqsaf9291f/5Xo6iNDa3B3SvilAqM63EY/346f32a3eb2798396e42689ada240f08/meeting-notes-16-9.gif"
+    ]
   },
   {
     "id": "notionlytics",
@@ -101905,11 +101979,11 @@
     "bundle_parent": null,
     "host_app": null,
     "category": "ai-general",
-    "shortDescription": "Transcription et résumé automatique de réunions en temps réel.",
+    "shortDescription": "Plateforme IA de transcription et résumés de réunions qui enregistre, transcrit et résume automatiquement les discussions, avec intégration à Zoom, Google Meet, Slack et autres outils collaboratifs.",
     "defaultMonthlyPrice": 8.66,
     "pricing": {
-      "free": "300 minutes/mois",
-      "paid": "10$/mois (Pro)"
+      "free": "Basic gratuit : 300 minutes/mois de transcription, intégrations de base",
+      "paid": "Basic: Gratuit (300 min/mois) ; Business: 19,99 $/utilisateur/mois (1200 min/mois) ; Enterprise: Montants sur la page officielle (tarif personnalisé)"
     },
     "covers": [
       "notes-reunion",
@@ -102005,26 +102079,29 @@
       "free": "300 minutes/mois",
       "paid": "10$/mois (Pro)"
     },
-    "longDescription": "Otter.ai, c'est transcription et résumé automatique de réunions en temps réel. À partir de 8.66€/mois. Pensé pour les consultants B2B et les managers et DSI.\n\nGain de temps estimé : 5h/mois.\n\nÀ garder si : beaucoup de réunions clients à retranscrire. À éviter si : descript déjà en place — doublon transcription. Free tier généreux — rarement nécessaire de payer. Si le budget le permet, descript va plus loin.",
+    "longDescription": "Plateforme IA de transcription et résumés de réunions qui enregistre, transcrit et résume automatiquement les discussions, avec intégration à Zoom, Google Meet, Slack et autres outils collaboratifs.\n\nFonctions clés : Transcription temps réel en plusieurs langues avec reconnaissance du locuteur ; Résumés automatiques et identification des points d'action ; Otter Chat pour rechercher dans les réunions et applis connectées ; App de bureau sans bot tiers pour Mac et Windows ; Intégrations 30+ apps (Zoom, Meet, Slack, Notion, HubSpot, Salesforce) ; Canaux organisés par équipe ou projet.\n\nOtter.ai s'impose pour les équipes distantes ou hybrides ; pour un usage ponctuel, la version gratuite suffit.",
     "alternatives": [
       "fathom",
       "riverside"
     ],
     "slug": "otter-ai",
-    "shortDescriptionEn": "Real-time automatic meeting transcription and summarisation.",
-    "description": "Otter.ai, c'est transcription et résumé automatique de réunions en temps réel. À partir de 8.66€/mois. Pensé pour les consultants B2B et les managers et DSI.\n\nGain de temps estimé : 5h/mois.\n\nÀ garder si : beaucoup de réunions clients à retranscrire. À éviter si : descript déjà en place — doublon transcription. Free tier généreux — rarement nécessaire de payer. Si le budget le permet, descript va plus loin.",
-    "longDescriptionEn": "Otter.ai is real-time automatic meeting transcription and summarisation. Starting at €8.66/month. Built for B2B consultants and managers and IT directors.\n\nEstimated time saving: 5h/month.\n\nIf budget allows, descript goes further.",
-    "pricingEn": null,
+    "shortDescriptionEn": "AI meeting transcription platform that records, transcribes, and summarizes conversations automatically with integration to Zoom, Google Meet, Slack, and other collaboration tools.",
+    "description": "Plateforme IA de transcription et résumés de réunions qui enregistre, transcrit et résume automatiquement les discussions, avec intégration à Zoom, Google Meet, Slack et autres outils collaboratifs.\n\nFonctions clés : Transcription temps réel en plusieurs langues avec reconnaissance du locuteur ; Résumés automatiques et identification des points d'action ; Otter Chat pour rechercher dans les réunions et applis connectées ; App de bureau sans bot tiers pour Mac et Windows ; Intégrations 30+ apps (Zoom, Meet, Slack, Notion, HubSpot, Salesforce) ; Canaux organisés par équipe ou projet.\n\nOtter.ai s'impose pour les équipes distantes ou hybrides ; pour un usage ponctuel, la version gratuite suffit.",
+    "longDescriptionEn": "AI meeting transcription platform that records, transcribes, and summarizes conversations automatically with integration to Zoom, Google Meet, Slack, and other collaboration tools.\n\nKey strengths: Highly accurate transcription and multi-language support.; Automatic summaries and action items.; Deep integration with popular collaboration tools.; Generous free tier (300 min/month).; Intuitive conversational search..\n\nOtter.ai suits remote or hybrid teams; for occasional use, the free tier is sufficient.",
+    "pricingEn": {
+      "free": "Basic gratuit : 300 minutes/mois de transcription, intégrations de base",
+      "paid": "Basic: Gratuit (300 min/mois) ; Business: 19,99 $/utilisateur/mois (1200 min/mois) ; Enterprise: Montants sur la page officielle (tarif personnalisé)"
+    },
     "pricing_v5": {
       "cautions": [],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-07-24",
       "source_domain": "otter.ai",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
       "compare_plan_name": "Entry paid plan",
       "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://otter.ai/pricing",
+      "official_source_url": "https://otter.ai",
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 8.66
     },
@@ -102084,7 +102161,12 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://cdn.prod.website-files.com/618e9316785b3582a5178502/67dd5a945aeed07e329d4e10_og-image-otter-optim.jpg"
+    "ogImageUrl": "https://cdn.prod.website-files.com/618e9316785b3582a5178502/67e18e5721ebc3692a58387d_618e9316785b3582a5178502_67d99b7c978ce7b1089828f4_Otter%20-%20Landing%20Video%201x1-poster-00001.jpg",
+    "galleryImages": [
+      "https://cdn.prod.website-files.com/618e9316785b3582a5178502/67db8d0b77f6c3eb435214cc_397f63dc4ab563ff369504b311566798_questions-when%402x.avif",
+      "https://cdn.prod.website-files.com/618e9316785b3582a5178502/69efd6421d22145e7e71d32d_8bb7ffcbd5ffe595b266f99c77401e94_otter-desktop-app-card.png",
+      "https://cdn.prod.website-files.com/618e9316785b3582a5178502/67dd5a945aeed07e329d4e10_og-image-otter-optim.jpg"
+    ]
   },
   {
     "id": "outrank",
@@ -106891,24 +106973,24 @@
     "name": "Perplexity",
     "category": "ai-general",
     "websiteUrl": "https://perplexity.ai",
-    "shortDescription": "Recherche et assistant IA avec citations, Deep Research et exécution de tâches via Computer.",
-    "shortDescriptionEn": "AI search and assistant with citations, Deep Research, and task execution through Computer.",
-    "longDescription": "Perplexity combine un moteur de recherche IA, des réponses avec citations en ligne et des modes de travail plus profonds. Une requête peut produire une synthèse immédiatement vérifiable ; Deep Research explore davantage de sources ; Computer va plus loin en planifiant et exécutant des tâches ou en produisant des documents et applications.\n\nLe plan Gratuit couvre la recherche essentielle avec des limites sur les fonctions avancées. Pro coûte 20 $/mois ou 200 $/an, soit environ 17 $/mois avec facturation annuelle, et augmente l'accès à Computer, Deep Research, aux modèles avancés et aux créations. Max coûte 200 $/mois ou 2 000 $/an et vise les usages intensifs avec les limites les plus élevées.\n\nPerplexity est particulièrement pertinent pour la veille, les comparaisons et les recherches qui exigent une trace des sources. Les citations ne garantissent toutefois pas qu'une synthèse est correcte : il faut encore ouvrir les sources importantes, contrôler leur date et distinguer une source primaire d'une reprise secondaire.",
-    "longDescriptionEn": "Perplexity combines AI search, answers with inline citations, and deeper work modes. A query can produce an immediately checkable synthesis; Deep Research explores more sources; Computer goes further by planning and executing tasks or producing documents and applications.\n\nThe Free plan covers essential search with limits on advanced features. Pro costs $20/month or $200/year, roughly $17/month when billed annually, and expands access to Computer, Deep Research, advanced models, and creation tools. Max costs $200/month or $2,000/year and targets intensive use with the highest limits.\n\nPerplexity is especially useful for monitoring, comparisons, and research that requires a source trail. Citations do not guarantee that a synthesis is correct: important sources still need to be opened, dates checked, and primary evidence distinguished from secondary reporting.",
+    "shortDescription": "Moteur de recherche IA avec réponses récentes, citations numérotées et fonctionnalités avancées comme Spaces personnalisés, recherche académique, et accès à plusieurs modèles frontier.",
+    "shortDescriptionEn": "AI search engine with real-time answers, numbered citations, and advanced features like custom Spaces, academic search, and access to multiple frontier models.",
+    "longDescription": "Moteur de recherche IA avec réponses récentes, citations numérotées et fonctionnalités avancées comme Spaces personnalisés, recherche académique, et accès à plusieurs modèles frontier.\n\nFonctions clés : Recherche web en temps réel avec citations numérotées ; 6 modes Focus (Web, Académique, Reddit, YouTube, News, Wolfram Alpha) ; Spaces personnalisés jusqu'à 50 fichiers (Pro) ou 5000 (Max) ; Model Council (Max) : requête simultanée sur Claude Opus 4.6, GPT-5.2, Gemini 3 Pro ; Crédits Perplexity Computer pour divers outils ; Recherche multi-appareils synchronisée.\n\nPerplexity excelle pour la recherche IA ; pour la productivité bureautique, un assistant dédié conviendrait mieux.",
+    "longDescriptionEn": "AI search engine with real-time answers, numbered citations, and advanced features like custom Spaces, academic search, and access to multiple frontier models.\n\nKey strengths: Real-time search with reliable sources.; Multiple Focus modes for context targeting.; Access to multiple frontier models (Max).; Custom Spaces for research projects.; Capable and free tier..\n\nPerplexity excels at AI search; for office productivity, a dedicated assistant is better suited.",
     "defaultMonthlyPrice": 17,
     "pricing_v5": {
       "cautions": [
         "Prix affichés en dollars US, peuvent varier après conversion en euros.",
         "La facturation annuelle revient à environ 200$/an, moins chère qu'au mois."
       ],
-      "verified_on": "2026-08-27",
+      "verified_on": "2026-07-24",
       "source_domain": "perplexity.ai",
       "usage_sensitive": false,
       "compare_plan_kind": "individual",
       "compare_plan_name": "Pro",
       "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://www.perplexity.ai/pro",
+      "official_source_url": "https://perplexity.ai",
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 17
     },
@@ -106917,12 +106999,12 @@
       "paid": "Pro 20 $/mois ou 200 $/an · Max 200 $/mois ou 2 000 $/an"
     },
     "pricing": {
-      "free": "Gratuit pour la recherche essentielle, avec accès avancé limité.",
-      "paid": "Pro à 20 $/mois ou 200 $/an ; Max à 200 $/mois ou 2 000 $/an."
+      "free": "Gratuit avec recherches illimitées, 6 modes Focus, Collections, Spaces avec limite de fichiers",
+      "paid": "Free: Gratuit (recherches illimitées) ; Pro: 20 $/mois ou 200 $/an (200 $/an = 16,67 $/mois) ; Education Pro: 10 $/mois pour étudiants/professeurs vérifiés ; Max: 200 $/mois (pas de limites, Model Council) ; Enterprise Pro: 40 $/utilisateur/mois (400 $/an)"
     },
     "pricingEn": {
-      "free": "Free for essential search, with limited advanced access.",
-      "paid": "Pro at $20/month or $200/year; Max at $200/month or $2,000/year."
+      "free": "Gratuit avec recherches illimitées, 6 modes Focus, Collections, Spaces avec limite de fichiers",
+      "paid": "Free: Gratuit (recherches illimitées) ; Pro: 20 $/mois ou 200 $/an (200 $/an = 16,67 $/mois) ; Education Pro: 10 $/mois pour étudiants/professeurs vérifiés ; Max: 200 $/mois (pas de limites, Model Council) ; Enterprise Pro: 40 $/utilisateur/mois (400 $/an)"
     },
     "soloRelevance": "high",
     "teamRelevance": "medium",
@@ -106937,28 +107019,28 @@
       "content-creator"
     ],
     "pros": [
-      "Réponses avec citations en ligne faciles à vérifier.",
-      "Deep Research pour explorer davantage de sources.",
-      "Computer pour planifier et exécuter des tâches.",
-      "Accès à plusieurs modèles avancés selon le plan.",
-      "Version gratuite utile pour la recherche essentielle."
+      "Recherche en temps réel avec sources fiables.",
+      "Multiples modes Focus pour ciblage du contexte.",
+      "Accès à plusieurs modèles frontier (Max).",
+      "Spaces personnalisés pour projets de recherche.",
+      "Version gratuite complète et compétente."
     ],
     "prosEn": [
-      "Answers with inline citations that are easy to check.",
-      "Deep Research for exploring more sources.",
-      "Computer for planning and executing tasks.",
-      "Access to multiple advanced models depending on the plan.",
-      "A useful free tier for essential search."
+      "Real-time search with reliable sources.",
+      "Multiple Focus modes for context targeting.",
+      "Access to multiple frontier models (Max).",
+      "Custom Spaces for research projects.",
+      "Capable and free tier."
     ],
     "cons": [
-      "Une citation ne garantit pas que la synthèse est correcte.",
-      "Computer et les meilleurs modèles sont fortement limités selon le plan.",
-      "Le plan Max est très coûteux pour un usage occasionnel."
+      "Moins axé sur la productivité que le chat classique.",
+      "Max tier très coûteux pour usage occasionnel.",
+      "Apprentissage des modes Focus peut être nécessaire."
     ],
     "consEn": [
-      "A citation does not guarantee that the synthesis is correct.",
-      "Computer and the best models are tightly limited depending on the plan.",
-      "The Max plan is very expensive for occasional use."
+      "Less focused on productivity than standard chat.",
+      "Max tier expensive for occasional use.",
+      "Learning Focus modes may be needed."
     ],
     "verdict": {
       "keepIf": [
@@ -106987,16 +107069,14 @@
       "threshold": "Perplexity excels at AI search; for office productivity, a dedicated assistant is better suited."
     },
     "useCases": [
-      "Faire des recherches sourcées pour des articles ou rapports.",
-      "Assurer une veille concurrentielle et comparer des offres.",
-      "Explorer un sujet en profondeur avec Deep Research.",
-      "Planifier des tâches ou produire des documents avec Computer."
+      "Faire des recherches avec sources citées pour articles ou rapports.",
+      "Explorer des sujets d'actualité avec contexte récent.",
+      "Comparer plusieurs modèles IA sur même requête (Max)."
     ],
     "useCasesEn": [
       "Research with cited sources for articles or reports.",
-      "Run competitive monitoring and compare offers.",
-      "Explore a topic in depth with Deep Research.",
-      "Plan tasks or produce documents with Computer."
+      "Explore current topics with recent context.",
+      "Compare multiple AI models on same query (Max)."
     ],
     "alternatives": [
       "chatgpt",
@@ -107025,7 +107105,7 @@
     "galleryImages": [
       "https://is1-ssl.mzstatic.com/image/thumb/Features211/v4/b8/59/96/b85996d0-de49-b477-22d1-83f9ff5a9043/3fab5649-fe34-404a-8805-52bb814758aa.png/800x450SCS.ApDPCS01.webp"
     ],
-    "description": "Perplexity combine un moteur de recherche IA, des réponses avec citations en ligne et des modes de travail plus profonds. Une requête peut produire une synthèse immédiatement vérifiable ; Deep Research explore davantage de sources ; Computer va plus loin en planifiant et exécutant des tâches ou en produisant des documents et applications.\n\nLe plan Gratuit couvre la recherche essentielle avec des limites sur les fonctions avancées. Pro coûte 20 $/mois ou 200 $/an, soit environ 17 $/mois avec facturation annuelle, et augmente l'accès à Computer, Deep Research, aux modèles avancés et aux créations. Max coûte 200 $/mois ou 2 000 $/an et vise les usages intensifs avec les limites les plus élevées.\n\nPerplexity est particulièrement pertinent pour la veille, les comparaisons et les recherches qui exigent une trace des sources. Les citations ne garantissent toutefois pas qu'une synthèse est correcte : il faut encore ouvrir les sources importantes, contrôler leur date et distinguer une source primaire d'une reprise secondaire.",
+    "description": "Moteur de recherche IA avec réponses récentes, citations numérotées et fonctionnalités avancées comme Spaces personnalisés, recherche académique, et accès à plusieurs modèles frontier.\n\nFonctions clés : Recherche web en temps réel avec citations numérotées ; 6 modes Focus (Web, Académique, Reddit, YouTube, News, Wolfram Alpha) ; Spaces personnalisés jusqu'à 50 fichiers (Pro) ou 5000 (Max) ; Model Council (Max) : requête simultanée sur Claude Opus 4.6, GPT-5.2, Gemini 3 Pro ; Crédits Perplexity Computer pour divers outils ; Recherche multi-appareils synchronisée.\n\nPerplexity excelle pour la recherche IA ; pour la productivité bureautique, un assistant dédié conviendrait mieux.",
     "affiliateLink": "https://perplexity.ai",
     "logo": "",
     "articles": [],
@@ -108102,14 +108182,14 @@
     "name": "Pika Labs",
     "slug": "pika-labs",
     "category": "ai-general",
-    "shortDescription": "Génération vidéo IA centrée sur l'animation de personnages et d'objets.",
-    "longDescription": "Pika Labs, c'est un générateur de vidéo par IA pensé pour les clips courts : tu pars d'un texte ou d'une image, et l'outil anime des personnages, des objets ou applique des effets. Le rendu est souvent stylisé et accrocheur, ce qui en fait un bon allié pour du contenu réseaux sociaux où il faut sortir des visuels qui attirent l'oeil rapidement.\n\nL'atout, c'est le prix et la simplicité : un plan payant démarre à 8$/mois (puis 28$ et 76$), et la prise en main est rapide. Pas besoin d'un logiciel de montage lourd pour obtenir un petit clip animé. En revanche, on reste sur du format court, et l'outil est moins polyvalent qu'un Runway.\n\nLe vrai point d'attention, c'est le doublon. Si tu as déjà Runway, Sora ou un autre générateur vidéo IA dans ton stack, Pika fait largement la même chose et tu paies deux fois. Garde-le si la génération de clips courts est ton usage principal et que tu veux l'option la plus abordable. Pour de l'édition plus complète (rotoscopie, inpainting), Runway reste devant.",
+    "shortDescription": "Plateforme créative IA permettant de générer des vidéos, d'automatiser des workflows avec des agents IA, et d'appliquer des effets d'édition vidéo powered par IA.",
+    "longDescription": "Plateforme créative IA permettant de générer des vidéos, d'automatiser des workflows avec des agents IA, et d'appliquer des effets d'édition vidéo powered par IA.\n\nFonctions clés : Pika Agent : partenaire créatif IA pour collaboration ; Pika MCP : intégration d'agents existants à des modèles créatifs ; Pika Video App (Pikaffects) : création vidéo basée sur effets ; AI Trendmaker : génération vidéo basée sur trends depuis selfies ; Pika API Club : accès à des modèles de médias génératives.\n\nPika convient aux créateurs cherchant rapidité et accessibilité ; pour du cinéma professionnel, un suite de montage traditionnelle demeure préférable.",
     "affiliateLink": "https://pika.art",
     "websiteUrl": "https://pika.art",
     "defaultMonthlyPrice": 8,
     "pricing": {
-      "free": "Crédits gratuits limités",
-      "paid": "Standard à 8$/mois, Pro 28$, Fancy 76$"
+      "free": "Accès gratuit disponible sans carte bancaire",
+      "paid": "Pika Free: Gratuit (accès de base) ; Pika Premium: Montants sur la page officielle"
     },
     "logo": "",
     "soloRelevance": "medium",
@@ -108219,14 +108299,14 @@
       "cautions": [
         "Système de crédits : le coût réel dépend du volume généré"
       ],
-      "verified_on": "2026-06-15",
+      "verified_on": "2026-07-24",
       "source_domain": "pika.art",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
       "compare_plan_name": "Entry paid plan",
       "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://pika.art/pricing",
+      "official_source_url": "https://pika.art",
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 8
     },
@@ -108238,8 +108318,8 @@
       "never_auto_cancel_reason": null,
       "requires_context_questions": true
     },
-    "shortDescriptionEn": "AI video generation focused on character and object animation.",
-    "longDescriptionEn": "Pika Labs is an AI video generator built for short clips: you start from text or an image, and it animates characters, objects, or applies effects. The output is often stylized and eye-catching, which makes it a solid pick for social media content where you need attention-grabbing visuals fast.\n\nThe upside is price and simplicity: a paid plan starts at $8/month (then $28 and $76), and it's quick to learn. You don't need heavy editing software to get a short animated clip. The trade-off is the short format and less versatility than something like Runway.\n\nThe real thing to watch is overlap. If you already have Runway, Sora, or another AI video generator in your stack, Pika does largely the same job and you're paying twice. Keep it if short-clip generation is your main use and you want the most affordable option. For fuller editing (rotoscoping, inpainting), Runway stays ahead.",
+    "shortDescriptionEn": "Creative AI platform enabling video generation, workflow automation with AI agents, and AI-powered video editing effects.",
+    "longDescriptionEn": "Creative AI platform enabling video generation, workflow automation with AI agents, and AI-powered video editing effects.\n\nKey strengths: Intuitive interface for non-experts.; AI agents to automate repetitive tasks.; Fast and accessible video generation.; Generous free tier for getting started..\n\nPika suits creators seeking speed and accessibility; for professional filmmaking, traditional editing software is preferable.",
     "prosEn": [
       "Intuitive interface for non-experts.",
       "AI agents to automate repetitive tasks.",
@@ -108270,12 +108350,15 @@
       "threshold": "Pika suits creators seeking speed and accessibility; for professional filmmaking, traditional editing software is preferable."
     },
     "pricingEn": {
-      "free": "Limited free credits",
-      "paid": "Standard at $8/month, Pro $28, Fancy $76"
+      "free": "Accès gratuit disponible sans carte bancaire",
+      "paid": "Pika Free: Gratuit (accès de base) ; Pika Premium: Montants sur la page officielle"
     },
     "force_silence": false,
-    "description": "Pika Labs, c'est un générateur de vidéo par IA pensé pour les clips courts : tu pars d'un texte ou d'une image, et l'outil anime des personnages, des objets ou applique des effets. Le rendu est souvent stylisé et accrocheur, ce qui en fait un bon allié pour du contenu réseaux sociaux où il faut sortir des visuels qui attirent l'oeil rapidement.\n\nL'atout, c'est le prix et la simplicité : un plan payant démarre à 8$/mois (puis 28$ et 76$), et la prise en main est rapide. Pas besoin d'un logiciel de montage lourd pour obtenir un petit clip animé. En revanche, on reste sur du format court, et l'outil est moins polyvalent qu'un Runway.\n\nLe vrai point d'attention, c'est le doublon. Si tu as déjà Runway, Sora ou un autre générateur vidéo IA dans ton stack, Pika fait largement la même chose et tu paies deux fois. Garde-le si la génération de clips courts est ton usage principal et que tu veux l'option la plus abordable. Pour de l'édition plus complète (rotoscopie, inpainting), Runway reste devant.",
-    "ogImageUrl": "https://pika.art/images/og.jpeg"
+    "description": "Plateforme créative IA permettant de générer des vidéos, d'automatiser des workflows avec des agents IA, et d'appliquer des effets d'édition vidéo powered par IA.\n\nFonctions clés : Pika Agent : partenaire créatif IA pour collaboration ; Pika MCP : intégration d'agents existants à des modèles créatifs ; Pika Video App (Pikaffects) : création vidéo basée sur effets ; AI Trendmaker : génération vidéo basée sur trends depuis selfies ; Pika API Club : accès à des modèles de médias génératives.\n\nPika convient aux créateurs cherchant rapidité et accessibilité ; pour du cinéma professionnel, un suite de montage traditionnelle demeure préférable.",
+    "ogImageUrl": "https://pika.art/_next/image?url=%2Fimages%2Flanding%2Fapi-club-banner-bg.webp&w=3840&q=75",
+    "galleryImages": [
+      "https://pika.art/images/og.jpeg"
+    ]
   },
   {
     "id": "pikkovia",
@@ -123518,11 +123601,11 @@
     "bundle_parent": null,
     "host_app": null,
     "category": "ai-general",
-    "shortDescription": "IDE en ligne avec IA intégrée, hébergement et collaboration en temps réel.",
+    "shortDescription": "Plateforme d'application IA permettant aux utilisateurs de créer des apps, sites, jeux et données-vizes en décrivant leurs idées en langage naturel, sans codage requis.",
     "defaultMonthlyPrice": 17.32,
     "pricing": {
-      "free": "Usage limité",
-      "paid": "20$/mois (Core)"
+      "free": "Starter gratuit avec crédits quotidiens et 1 projet",
+      "paid": "Starter: Gratuit (crédits quotidiens, 1 projet) ; Core: 20 $/mois (25 $ crédits/mois, 5 collaborateurs) ; Pro: 95 $/mois facturation annuelle (100 $ crédits, 15 collaborateurs, 10 agents parallèles) ; Enterprise: Montants sur la page officielle (pricing personnalisé)"
     },
     "covers": [
       "coding",
@@ -123614,23 +123697,26 @@
       "free": "Usage limité",
       "paid": "20$/mois (Core)"
     },
-    "longDescription": "Replit, c'est iDE en ligne avec IA intégrée, hébergement et collaboration en temps réel. À partir de 17.32€/mois. Pensé pour les développeurs solo et les builders IA.\n\nGain de temps estimé : 6h/mois.\n\nÀ garder si : formation au code, prototypage rapide en ligne. À éviter si : cursor ou Bolt déjà en place. Surtout utile pour enseigner le code ou prototyper sur iPad. Si le budget le permet, cursor va plus loin.",
+    "longDescription": "Plateforme d'application IA permettant aux utilisateurs de créer des apps, sites, jeux et données-vizes en décrivant leurs idées en langage naturel, sans codage requis.\n\nFonctions clés : Agent 4 : assistant IA écrivant du code production prêt ; Support multi-format : sites web, apps mobiles, designs, jeux, docs, spreadsheets, data-vizes ; Agents parallèles pour exécution simultanée ; Infra intégrée : authentification, base de données, hosting, monitoring ; 100+ intégrations (OpenAI, Stripe, Google Workspace, etc) ; Sécurité entreprise : SSO/SAML, SOC 2, contrôles admin.\n\nReplit s'impose pour entrepreneurs sans dev ; pour applications complexes, développement traditionnel reste indispensable.",
     "alternatives": [],
     "slug": "replit",
-    "shortDescriptionEn": "Online IDE with built-in AI, hosting, and real-time collaboration.",
-    "description": "Replit, c'est iDE en ligne avec IA intégrée, hébergement et collaboration en temps réel. À partir de 17.32€/mois. Pensé pour les développeurs solo et les builders IA.\n\nGain de temps estimé : 6h/mois.\n\nÀ garder si : formation au code, prototypage rapide en ligne. À éviter si : cursor ou Bolt déjà en place. Surtout utile pour enseigner le code ou prototyper sur iPad. Si le budget le permet, cursor va plus loin.",
-    "longDescriptionEn": "Replit is online IDE with built-in AI, hosting, and real-time collaboration. Starting at €17.32/month. Built for solo developers and AI builders.\n\nEstimated time saving: 6h/month.\n\nIf budget allows, cursor goes further.",
-    "pricingEn": null,
+    "shortDescriptionEn": "AI app platform enabling users to create apps, websites, games, and data visualizations by describing ideas in natural language, no coding required.",
+    "description": "Plateforme d'application IA permettant aux utilisateurs de créer des apps, sites, jeux et données-vizes en décrivant leurs idées en langage naturel, sans codage requis.\n\nFonctions clés : Agent 4 : assistant IA écrivant du code production prêt ; Support multi-format : sites web, apps mobiles, designs, jeux, docs, spreadsheets, data-vizes ; Agents parallèles pour exécution simultanée ; Infra intégrée : authentification, base de données, hosting, monitoring ; 100+ intégrations (OpenAI, Stripe, Google Workspace, etc) ; Sécurité entreprise : SSO/SAML, SOC 2, contrôles admin.\n\nReplit s'impose pour entrepreneurs sans dev ; pour applications complexes, développement traditionnel reste indispensable.",
+    "longDescriptionEn": "AI app platform enabling users to create apps, websites, games, and data visualizations by describing ideas in natural language, no coding required.\n\nKey strengths: Create apps without coding (text prompt).; Included infrastructure (db, auth, hosting).; Idea to MVP in hours not weeks.; Generous free tier.; Parallel agents for concurrent tasks..\n\nReplit suits non-technical founders; for complex apps, traditional development remains necessary.",
+    "pricingEn": {
+      "free": "Starter gratuit avec crédits quotidiens et 1 projet",
+      "paid": "Starter: Gratuit (crédits quotidiens, 1 projet) ; Core: 20 $/mois (25 $ crédits/mois, 5 collaborateurs) ; Pro: 95 $/mois facturation annuelle (100 $ crédits, 15 collaborateurs, 10 agents parallèles) ; Enterprise: Montants sur la page officielle (pricing personnalisé)"
+    },
     "pricing_v5": {
       "cautions": [],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-07-24",
       "source_domain": "replit.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
       "compare_plan_name": "Entry paid plan",
       "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://replit.com/pricing",
+      "official_source_url": "https://replit.com",
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 17.32
     },
@@ -123688,7 +123774,10 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://replit.com/public/images/opengraph_rebrand.jpg"
+    "ogImageUrl": "https://replit.com/cdn-cgi/image/width=3840,quality=80,format=auto/public/images/landing/outcome-focused-experience@2x.webp",
+    "galleryImages": [
+      "https://replit.com/public/images/opengraph_rebrand.jpg"
+    ]
   },
   {
     "id": "replyio",
@@ -127961,14 +128050,14 @@
     "name": "Runway",
     "slug": "runway",
     "category": "ai-general",
-    "shortDescription": "Génération et édition vidéo par IA. Le standard du genre.",
-    "longDescription": "Runway, c'est le standard de la génération et de l'édition vidéo par IA. Là où la plupart des outils se contentent de produire un clip, Runway va plus loin : génération texte-vers-vidéo et image-vers-vidéo, mais aussi rotoscopie, suppression de fond, inpainting et outils de motion. C'est la boîte à outils complète du créateur vidéo IA.\n\nLe plan payant démarre à 15$/mois (Standard), puis 35$ (Pro) et 95$ (Unlimited). Le gratuit existe mais avec des crédits vite épuisés. Le vrai sujet, c'est l'intensité d'usage : si tu génères de la vidéo toutes les semaines, l'abonnement se rentabilise. Si c'est ponctuel, tu paies un abonnement complet pour peu de rendu.\n\nÀ qui ça s'adresse : aux créateurs et monteurs qui veulent un outil tout-en-un et acceptent d'y mettre le prix. Pour de la simple génération de clips courts, Pika Labs suffit et coûte moins cher. Et côté coût pur des crédits, Kling AI est souvent plus avantageux. Runway se justifie quand tu exploites l'ensemble de ses fonctions d'édition, pas juste la génération.",
+    "shortDescription": "Plateforme créative cloud proposant génération et édition vidéo/image/audio alimentées par IA, avec outils pour développeurs (Runway Dev) et simulation robotique (Runway Robotics).",
+    "longDescription": "Plateforme créative cloud proposant génération et édition vidéo/image/audio alimentées par IA, avec outils pour développeurs (Runway Dev) et simulation robotique (Runway Robotics).\n\nFonctions clés : Runway Creative : plateforme cloud all-in-one pour vidéo/image/audio ; Runway Dev : plateforme IA pour développeurs avec pipelines personnalisés ; Runway Robotics : simulation photorealiste pour inférence de politiques ; Utilisé par 60M+ créatifs mondialement ; Génération de contenu multimédia haute qualité.\n\nRunway s'impose pour créatifs cherchant rapidité et IA ; pour montage professionnel classique, Adobe ou Final Cut sont plus appropriés.",
     "affiliateLink": "https://runwayml.com",
     "websiteUrl": "https://runwayml.com",
     "defaultMonthlyPrice": 15,
     "pricing": {
-      "free": "Crédits gratuits limités",
-      "paid": "Standard à 15$/mois, Pro 35$, Unlimited 95$"
+      "free": "Essai gratuit ; tarifs sur la page officielle",
+      "paid": "Free Trial: Gratuit, annulable à tout moment ; Runway Creative Paid: Montants sur la page officielle"
     },
     "logo": "",
     "soloRelevance": null,
@@ -128075,14 +128164,14 @@
       "cautions": [
         "Système de crédits : le coût réel dépend du volume généré"
       ],
-      "verified_on": "2026-06-15",
-      "source_domain": "runwayml.com",
+      "verified_on": "2026-07-24",
+      "source_domain": "runway.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
       "compare_plan_name": "Entry paid plan",
       "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://runwayml.com/pricing",
+      "official_source_url": "https://runway.com",
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 15
     },
@@ -128094,8 +128183,8 @@
       "never_auto_cancel_reason": null,
       "requires_context_questions": true
     },
-    "shortDescriptionEn": "AI video generation and editing. The category standard.",
-    "longDescriptionEn": "Runway is the standard for AI video generation and editing. Where most tools just produce a clip, Runway goes further: text-to-video and image-to-video generation, but also rotoscoping, background removal, inpainting, and motion tools. It's the full toolbox for the AI video creator.\n\nThe paid plan starts at $15/month (Standard), then $35 (Pro) and $95 (Unlimited). A free tier exists but its credits run out fast. The real question is usage intensity: if you generate video every week, the subscription pays off. If it's occasional, you're paying for a full plan to get little output.\n\nWho it's for: creators and editors who want an all-in-one tool and accept the price. For simple short-clip generation, Pika Labs is enough and cheaper. And on pure credit cost, Kling AI is often a better deal. Runway earns its place when you use the full set of editing features, not just generation.",
+    "shortDescriptionEn": "Cloud-based creative platform offering AI-powered video, image, and audio generation and editing, with developer tools (Runway Dev) and robotic simulation (Runway Robotics).",
+    "longDescriptionEn": "Cloud-based creative platform offering AI-powered video, image, and audio generation and editing, with developer tools (Runway Dev) and robotic simulation (Runway Robotics).\n\nKey strengths: Intuitive and accessible cloud interface.; High-quality multimedia generation.; Used by millions of creators.; Free trial without credit card.; Custom pipelines for developers..\n\nRunway suits creators seeking speed and AI; for professional editing, Adobe or Final Cut are more appropriate.",
     "prosEn": [
       "Intuitive and accessible cloud interface.",
       "High-quality multimedia generation.",
@@ -128127,12 +128216,17 @@
       "threshold": "Runway suits creators seeking speed and AI; for professional editing, Adobe or Final Cut are more appropriate."
     },
     "pricingEn": {
-      "free": "Limited free credits",
-      "paid": "Standard at $15/month, Pro $35, Unlimited $95"
+      "free": "Essai gratuit ; tarifs sur la page officielle",
+      "paid": "Free Trial: Gratuit, annulable à tout moment ; Runway Creative Paid: Montants sur la page officielle"
     },
     "force_silence": false,
-    "description": "Runway, c'est le standard de la génération et de l'édition vidéo par IA. Là où la plupart des outils se contentent de produire un clip, Runway va plus loin : génération texte-vers-vidéo et image-vers-vidéo, mais aussi rotoscopie, suppression de fond, inpainting et outils de motion. C'est la boîte à outils complète du créateur vidéo IA.\n\nLe plan payant démarre à 15$/mois (Standard), puis 35$ (Pro) et 95$ (Unlimited). Le gratuit existe mais avec des crédits vite épuisés. Le vrai sujet, c'est l'intensité d'usage : si tu génères de la vidéo toutes les semaines, l'abonnement se rentabilise. Si c'est ponctuel, tu paies un abonnement complet pour peu de rendu.\n\nÀ qui ça s'adresse : aux créateurs et monteurs qui veulent un outil tout-en-un et acceptent d'y mettre le prix. Pour de la simple génération de clips courts, Pika Labs suffit et coûte moins cher. Et côté coût pur des crédits, Kling AI est souvent plus avantageux. Runway se justifie quand tu exploites l'ensemble de ses fonctions d'édition, pas juste la génération.",
-    "ogImageUrl": "https://runwayml.com/twitter-image.png?twitter-image.1066gbuqgwttu.png?dpl=dpl_2Mm8Cnhjy7H2i8wKAemViqnjxvf3"
+    "description": "Plateforme créative cloud proposant génération et édition vidéo/image/audio alimentées par IA, avec outils pour développeurs (Runway Dev) et simulation robotique (Runway Robotics).\n\nFonctions clés : Runway Creative : plateforme cloud all-in-one pour vidéo/image/audio ; Runway Dev : plateforme IA pour développeurs avec pipelines personnalisés ; Runway Robotics : simulation photorealiste pour inférence de politiques ; Utilisé par 60M+ créatifs mondialement ; Génération de contenu multimédia haute qualité.\n\nRunway s'impose pour créatifs cherchant rapidité et IA ; pour montage professionnel classique, Adobe ou Final Cut sont plus appropriés.",
+    "ogImageUrl": "https://image.mux.com/JFHOwdZ8ujlrDDSLujoSv9su9PQb5001CiRiNdMgIjnk/thumbnail.webp?time=0&width=480",
+    "galleryImages": [
+      "https://d3phaj0sisr2ct.cloudfront.net/site/assets/media-router-thumbnail.webp",
+      "https://d3phaj0sisr2ct.cloudfront.net/site/assets/chime-tv-spot-thumbnail.webp",
+      "https://d3phaj0sisr2ct.cloudfront.net/site/assets/homepage-og-card-v3.webp"
+    ]
   },
   {
     "id": "rydoo",
@@ -141185,11 +141279,11 @@
     "bundle_parent": null,
     "host_app": null,
     "category": "ai-general",
-    "shortDescription": "Génération d'images IA open source — contrôle total, hébergement local possible.",
+    "shortDescription": "Modèle de génération d'images IA open-source et libre d'utilisation, accessible via API cloud (Stability.ai) ou en auto-hébergement, permettant créer des images à partir de descriptions texte.",
     "defaultMonthlyPrice": 0,
     "pricing": {
-      "free": "Open source gratuit (local)",
-      "paid": "Via Stability AI API : pay-as-you-go"
+      "free": "API cloud payante ; modèle open-source auto-hébergeable gratuitement",
+      "paid": "Platform API: Montants sur la page officielle (pay-per-use) ; Brand Studio: Montants sur la page officielle (plans tiérés) ; Self-Hosted License: Gratuit (modèle open-source)"
     },
     "covers": [
       "ai-general",
@@ -141264,16 +141358,19 @@
       "free": "Open source gratuit (local)",
       "paid": "Via Stability AI API : pay-as-you-go"
     },
-    "longDescription": "Stable Diffusion, c'est génération d'images IA open source — contrôle total, hébergement local possible. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les graphistes et les illustrateurs.\n\nGain de temps estimé : 6h/mois.\n\nÀ garder si : fine-tuning sur votre style, génération locale sans cloud. À éviter si : midjourney ou Firefly suffisent pour 95% des usages créatifs. Pertinent uniquement si vous avez un GPU dédié ou des besoins de volume.",
+    "longDescription": "Modèle de génération d'images IA open-source et libre d'utilisation, accessible via API cloud (Stability.ai) ou en auto-hébergement, permettant créer des images à partir de descriptions texte.\n\nFonctions clés : Génération d'images haute qualité depuis texte ; Modèles entraînés sur données complètement licenciées ; Déploiements flexibles : API cloud, auto-hébergement, cloud partners ; Brand Studio : plateforme de production créative managée ; Prêt pour production et déploiement à grande échelle.\n\nStable Diffusion s'impose pour génération d'images en production ; pour usage léger, des services freemium conviendraient mieux.",
     "alternatives": [],
     "slug": "stable-diffusion",
-    "shortDescriptionEn": "Open-source AI image generation — full control, local hosting possible.",
-    "description": "Stable Diffusion, c'est génération d'images IA open source — contrôle total, hébergement local possible. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les graphistes et les illustrateurs.\n\nGain de temps estimé : 6h/mois.\n\nÀ garder si : fine-tuning sur votre style, génération locale sans cloud. À éviter si : midjourney ou Firefly suffisent pour 95% des usages créatifs. Pertinent uniquement si vous avez un GPU dédié ou des besoins de volume.",
-    "longDescriptionEn": "Stable Diffusion is open-source AI image generation — full control, local hosting possible. Free to start, paid plans for more. Built for graphic designers and illustrators.\n\nEstimated time saving: 6h/month.",
-    "pricingEn": null,
+    "shortDescriptionEn": "Open-source image generation AI model freely available via cloud API (Stability.ai) or self-hosted, creating images from text descriptions.",
+    "description": "Modèle de génération d'images IA open-source et libre d'utilisation, accessible via API cloud (Stability.ai) ou en auto-hébergement, permettant créer des images à partir de descriptions texte.\n\nFonctions clés : Génération d'images haute qualité depuis texte ; Modèles entraînés sur données complètement licenciées ; Déploiements flexibles : API cloud, auto-hébergement, cloud partners ; Brand Studio : plateforme de production créative managée ; Prêt pour production et déploiement à grande échelle.\n\nStable Diffusion s'impose pour génération d'images en production ; pour usage léger, des services freemium conviendraient mieux.",
+    "longDescriptionEn": "Open-source image generation AI model freely available via cloud API (Stability.ai) or self-hosted, creating images from text descriptions.\n\nKey strengths: Open-source and self-hostable at no cost.; Models trained on legally licensed data.; Flexible deployments (cloud, on-premise, partners).; Very performant and production-ready.; Large ecosystem of community tools and integrations..\n\nStable Diffusion suits production image generation; for light use, freemium services would be more appropriate.",
+    "pricingEn": {
+      "free": "API cloud payante ; modèle open-source auto-hébergeable gratuitement",
+      "paid": "Platform API: Montants sur la page officielle (pay-per-use) ; Brand Studio: Montants sur la page officielle (plans tiérés) ; Self-Hosted License: Gratuit (modèle open-source)"
+    },
     "pricing_v5": {
       "cautions": [],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-07-24",
       "source_domain": "stability.ai",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
@@ -141281,7 +141378,7 @@
       "price_reliability": "low",
       "location_sensitive": false,
       "official_source_url": "https://stability.ai",
-      "verification_status": "official_site_only",
+      "verification_status": "official_explicit",
       "compare_price_monthly_eur": 0
     },
     "websiteUrl": "https://stability.ai",
@@ -141337,7 +141434,12 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://static1.squarespace.com/static/6213c340453c3f502425776e/t/69dc368ec5c83b60b25c6a07/1775660945221/Homepage+Meta+Image.png?format=1500w"
+    "ogImageUrl": "https://stability.ai/s/scene-still-d.jpg",
+    "galleryImages": [
+      "https://stability.ai/s/closeup-figma-c.png",
+      "https://images.squarespace-cdn.com/content/v1/6213c340453c3f502425776e/fe0dd1f0-3b47-4c57-8ca0-72b36e9973a1/hubspot-image-generation.png",
+      "http://static1.squarespace.com/static/6213c340453c3f502425776e/t/6a8c72c5b1aae375b65a7a86/1775660945221/Homepage+Meta+Image.png?format=1500w"
+    ]
   },
   {
     "id": "stan-store",
@@ -144194,11 +144296,11 @@
     "bundle_parent": null,
     "host_app": null,
     "category": "ai-general",
-    "shortDescription": "Génération musicale IA avec paroles et voix intégrées.",
+    "shortDescription": "Générateur de musique IA qui crée des chansons complètes (paroles, voix, production) à partir de descriptions textuelles en moins d'une minute, avec support multi-genres et droits commerciaux.",
     "defaultMonthlyPrice": 8.66,
     "pricing": {
-      "free": "50 crédits/jour",
-      "paid": "10$/mois (Pro)"
+      "free": "10 chansons quotidiennes gratuites, pas de carte bancaire requise",
+      "paid": "Free: Gratuit (10 chansons/jour) ; Pro: 20% rabais annuel (500 chansons/mois, droits commerciaux) ; Premier: 20% rabais annuel (2000 chansons/mois, Suno Studio, MIDI export)"
     },
     "covers": [
       "creation-musicale",
@@ -144284,23 +144386,26 @@
       "free": "50 crédits/jour",
       "paid": "10$/mois (Pro)"
     },
-    "longDescription": "Suno, c'est génération musicale IA avec paroles et voix intégrées. À partir de 8.66€/mois. Pensé pour les créateurs de contenu et les créateurs vidéo.\n\nGain de temps estimé : 3h/mois.\n\nÀ garder si : chansons complètes avec paroles pour contenus viraux. À éviter si : udio déjà dans le stack — doublon génération musicale. Les deux ont un free tier généreux — tester avant de payer. Si le budget le permet, udio va plus loin.",
+    "longDescription": "Générateur de musique IA qui crée des chansons complètes (paroles, voix, production) à partir de descriptions textuelles en moins d'une minute, avec support multi-genres et droits commerciaux.\n\nFonctions clés : Génération de chansons complètes en moins d'une minute ; Support tous genres (rock, pop, hip-hop, classique, EDM, etc) ; Contrôles granulaires : voix, style, sliders créatifs ; Séparation de stems (export WAV alignés pour DAW) ; Droits commerciaux pour utilisateurs payants ; Suno Studio : workstation générative audio avec éditeur multitrack ; Import audio jusqu'à 8 minutes.\n\nSuno s'impose pour contenu créatif rapide ; pour production musicale professionnelle, un DAW traditionnel + musicien conviendrait mieux.",
     "alternatives": [],
     "slug": "suno",
-    "shortDescriptionEn": "AI music generation with integrated lyrics and voice.",
-    "description": "Suno, c'est génération musicale IA avec paroles et voix intégrées. À partir de 8.66€/mois. Pensé pour les créateurs de contenu et les créateurs vidéo.\n\nGain de temps estimé : 3h/mois.\n\nÀ garder si : chansons complètes avec paroles pour contenus viraux. À éviter si : udio déjà dans le stack — doublon génération musicale. Les deux ont un free tier généreux — tester avant de payer. Si le budget le permet, udio va plus loin.",
-    "longDescriptionEn": "Suno is aI music generation with integrated lyrics and voice. Starting at €8.66/month. Built for content creators and video creators.\n\nEstimated time saving: 3h/month.\n\nIf budget allows, udio goes further.",
-    "pricingEn": null,
+    "shortDescriptionEn": "AI music generator creating complete songs (lyrics, vocals, production) from text descriptions in under a minute, with multi-genre support and commercial rights.",
+    "description": "Générateur de musique IA qui crée des chansons complètes (paroles, voix, production) à partir de descriptions textuelles en moins d'une minute, avec support multi-genres et droits commerciaux.\n\nFonctions clés : Génération de chansons complètes en moins d'une minute ; Support tous genres (rock, pop, hip-hop, classique, EDM, etc) ; Contrôles granulaires : voix, style, sliders créatifs ; Séparation de stems (export WAV alignés pour DAW) ; Droits commerciaux pour utilisateurs payants ; Suno Studio : workstation générative audio avec éditeur multitrack ; Import audio jusqu'à 8 minutes.\n\nSuno s'impose pour contenu créatif rapide ; pour production musicale professionnelle, un DAW traditionnel + musicien conviendrait mieux.",
+    "longDescriptionEn": "AI music generator creating complete songs (lyrics, vocals, production) from text descriptions in under a minute, with multi-genre support and commercial rights.\n\nKey strengths: Ultra-fast complete music generation.; Generous free tier (10 songs/day).; Commercial rights on paid plans.; Stem separation for post-production flexibility.; Suno Studio with DAW features.; Top 10 iOS and Android (4.8+ stars)..\n\nSuno suits quick creative content; for professional music production, traditional DAW + musician is better.",
+    "pricingEn": {
+      "free": "10 chansons quotidiennes gratuites, pas de carte bancaire requise",
+      "paid": "Free: Gratuit (10 chansons/jour) ; Pro: 20% rabais annuel (500 chansons/mois, droits commerciaux) ; Premier: 20% rabais annuel (2000 chansons/mois, Suno Studio, MIDI export)"
+    },
     "pricing_v5": {
       "cautions": [],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-07-24",
       "source_domain": "suno.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
       "compare_plan_name": "Entry paid plan",
       "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://suno.com/pricing",
+      "official_source_url": "https://suno.com",
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 8.66
     },
@@ -144360,7 +144465,12 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://cdn-o.suno.com/meta-preview.jpg"
+    "ogImageUrl": "https://cdn-o.suno.com/Aura-1-Hero-Web.jpg",
+    "galleryImages": [
+      "https://cdn2.suno.ai/7326a60b-77ab-4fa5-a0a1-21264f09b1bc_b611dc96.jpeg?width=360",
+      "https://cdn2.suno.ai/e99d5730-9950-4261-90ba-3525819ecfc2_f3c7b06d.jpeg?width=360",
+      "https://cdn2.suno.ai/image_large_7fcbc22d-fb68-48f2-a6b8-39cdfde3dc9f.jpeg"
+    ]
   },
   {
     "id": "supabase",
@@ -146890,11 +147000,11 @@
     "bundle_parent": null,
     "host_app": null,
     "category": "ai-general",
-    "shortDescription": "Assistant de code IA avec modèle privé — pour les équipes soucieuses de confidentialité.",
+    "shortDescription": "Assistant IA pour la programmation offrant auto-complétion intelligente de code, chat IA pour workflows dev, et agents pour exécution de tâches, adapté à l'architecture et standards d'une organisation.",
     "defaultMonthlyPrice": 10.39,
     "pricing": {
-      "free": "Modèle basique gratuit",
-      "paid": "12$/mois (Pro)"
+      "free": "Version gratuite avec auto-complétion de base",
+      "paid": "Free: Gratuit (auto-complétion simple) ; Pro: Montants sur la page officielle ; Enterprise: Montants sur la page officielle"
     },
     "covers": [
       "code-generation",
@@ -146975,16 +147085,19 @@
       "free": "Modèle basique gratuit",
       "paid": "12$/mois (Pro)"
     },
-    "longDescription": "Tabnine, c'est assistant de code IA avec modèle privé — pour les équipes soucieuses de confidentialité. À partir de 10.39€/mois. Pensé pour les développeurs solo et les CTOs et leads tech.\n\nGain de temps estimé : 5h/mois.\n\nÀ garder si : équipe avec contraintes de confidentialité strictes (pas de cloud). À éviter si : gitHub Copilot ou Cursor déjà en place — doublon. Pertinent uniquement si la conformité RGPD est une contrainte forte. Si le budget le permet, cursor va plus loin.",
+    "longDescription": "Assistant IA pour la programmation offrant auto-complétion intelligente de code, chat IA pour workflows dev, et agents pour exécution de tâches, adapté à l'architecture et standards d'une organisation.\n\nFonctions clés : Auto-complétion contextuelle single-token ou multi-ligne ; IA chat pour tout le cycle de vie du dev ; Enterprise Context Engine pour intelligence organisationnelle ; Support multi-LLM (choix du modèle préféré) ; Zero data retention optionnel pour confidentialité ; CLI integration pour workflows en terminal ; IP protection et scanning conformité licenses ; Visionnaire dans Gartner Magic Quadrant Sept 2025.\n\nTabnine s'impose pour développeurs ; pour usage ponctuel ou non-dev, un assistant textuel généraliste suffira.",
     "alternatives": [],
     "slug": "tabnine",
-    "shortDescriptionEn": "AI code assistant with private model — for privacy-conscious teams.",
-    "description": "Tabnine, c'est assistant de code IA avec modèle privé — pour les équipes soucieuses de confidentialité. À partir de 10.39€/mois. Pensé pour les développeurs solo et les CTOs et leads tech.\n\nGain de temps estimé : 5h/mois.\n\nÀ garder si : équipe avec contraintes de confidentialité strictes (pas de cloud). À éviter si : gitHub Copilot ou Cursor déjà en place — doublon. Pertinent uniquement si la conformité RGPD est une contrainte forte. Si le budget le permet, cursor va plus loin.",
-    "longDescriptionEn": "Tabnine is aI code assistant with private model — for privacy-conscious teams. Starting at €10.39/month. Built for solo developers and CTOs and tech leads.\n\nEstimated time saving: 5h/month.\n\nIf budget allows, cursor goes further.",
-    "pricingEn": null,
+    "shortDescriptionEn": "AI coding assistant offering intelligent code completion, AI chat for dev workflows, and agents for task execution, adapted to organization's architecture and standards.",
+    "description": "Assistant IA pour la programmation offrant auto-complétion intelligente de code, chat IA pour workflows dev, et agents pour exécution de tâches, adapté à l'architecture et standards d'une organisation.\n\nFonctions clés : Auto-complétion contextuelle single-token ou multi-ligne ; IA chat pour tout le cycle de vie du dev ; Enterprise Context Engine pour intelligence organisationnelle ; Support multi-LLM (choix du modèle préféré) ; Zero data retention optionnel pour confidentialité ; CLI integration pour workflows en terminal ; IP protection et scanning conformité licenses ; Visionnaire dans Gartner Magic Quadrant Sept 2025.\n\nTabnine s'impose pour développeurs ; pour usage ponctuel ou non-dev, un assistant textuel généraliste suffira.",
+    "longDescriptionEn": "AI coding assistant offering intelligent code completion, AI chat for dev workflows, and agents for task execution, adapted to organization's architecture and standards.\n\nKey strengths: Fast and contextual code completion.; Multi-LLM for flexibility.; Enterprise Context Engine for standardization.; Optional zero data retention.; Gartner recognition 2025.; Complete CLI and IDE integrations..\n\nTabnine suits developers; for occasional use or non-dev, a generalist text assistant suffices.",
+    "pricingEn": {
+      "free": "Version gratuite avec auto-complétion de base",
+      "paid": "Free: Gratuit (auto-complétion simple) ; Pro: Montants sur la page officielle ; Enterprise: Montants sur la page officielle"
+    },
     "pricing_v5": {
       "cautions": [],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-07-24",
       "source_domain": "tabnine.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
@@ -146992,7 +147105,7 @@
       "price_reliability": "low",
       "location_sensitive": false,
       "official_source_url": "https://tabnine.com",
-      "verification_status": "official_site_only",
+      "verification_status": "official_explicit",
       "compare_price_monthly_eur": 10.39
     },
     "websiteUrl": "https://tabnine.com",
@@ -147052,7 +147165,8 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/tabnine.jpg"
+    "ogImageUrl": "/og-screenshots/tabnine.jpg",
+    "galleryImages": []
   },
   {
     "id": "tailwind-css",
@@ -152625,14 +152739,14 @@
     "name": "Topaz Video AI",
     "slug": "topaz-video-ai",
     "category": "ai-general",
-    "shortDescription": "Restauration, débruitage, stabilisation et upscaling vidéo avec plus de 20 modèles IA.",
-    "longDescription": "Topaz Video est spécialisé dans l'amélioration vidéo par IA : upscaling, débruitage, stabilisation, interpolation d'images et restauration de séquences anciennes. Les traitements s'exécutent en local et le plan personnel autorise un rendu local illimité, ce qui convient aux rushes sensibles ou aux volumes importants.\n\nPour les nouveaux clients, Topaz Video est désormais vendu par abonnement. L'offre personnelle coûte 299$ par an en paiement annuel, 39$ par mois avec engagement annuel, ou 59$ sans engagement. Il n'existe plus de licence perpétuelle affichée pour ce produit.\n\nL'investissement se justifie pour une utilisation récurrente en postproduction et avec un GPU suffisamment puissant. Pour une restauration ponctuelle, les fonctions intégrées d'un logiciel de montage ou un service facturé à l'usage seront souvent plus rationnels.",
+    "shortDescription": "Logiciel de bureau (Mac/Windows) d'amélioration vidéo par IA : upscaling, débruitage, interpolation et stabilisation.",
+    "longDescription": "Logiciel de bureau (Mac/Windows) d'amélioration vidéo par IA : upscaling, débruitage, interpolation et stabilisation.\n\nFonctions clés : Upscaling vidéo (montée en résolution jusqu'à 4K+) ; Interpolation d'images (ralentis fluides) ; Débruitage et restauration de séquences ; Stabilisation après tournage.\n\nTopaz Video AI s'impose quand l'amélioration/restauration vidéo par IA est un besoin récurrent et que vous disposez d'une machine capable ; pour un besoin ponctuel ou léger, l'abonnement et la charge GPU sont difficiles à justifier.",
     "affiliateLink": "https://topazlabs.com/topaz-video-ai",
     "websiteUrl": "https://topazlabs.com/topaz-video-ai",
     "defaultMonthlyPrice": 21.4,
     "pricing": {
-      "free": "",
-      "paid": "299$/an, 39$/mois avec engagement annuel, ou 59$/mois sans engagement"
+      "free": "Essai possible selon l'éditeur ; traitement en local sur la machine.",
+      "paid": "Personal: 25 $/mois (annuel) ou 39 $/mois (mensuel) ; Pro: 58 $/mois (annuel) ou 74 $/mois (mensuel)"
     },
     "logo": "",
     "soloRelevance": null,
@@ -152734,7 +152848,7 @@
         "Prix hors taxes éventuelles ; vérifier le tarif local avant achat"
       ],
       "currency": "USD",
-      "verified_on": "2026-08-29",
+      "verified_on": "2026-07-23",
       "billing_model": "subscription",
       "source_domain": "topazlabs.com",
       "price_original": 299,
@@ -152765,7 +152879,7 @@
       "compare_plan_name": "Topaz Video annual",
       "price_reliability": "high",
       "location_sensitive": true,
-      "official_source_url": "https://www.topazlabs.com/pricing",
+      "official_source_url": "https://www.topazlabs.com/topaz-video-ai",
       "verification_status": "official_explicit",
       "price_original_currency": "USD",
       "compare_price_monthly_eur": 21.4
@@ -152778,8 +152892,8 @@
       "never_auto_cancel_reason": null,
       "requires_context_questions": true
     },
-    "shortDescriptionEn": "Video restoration, denoising, stabilization and upscaling with more than 20 AI models.",
-    "longDescriptionEn": "Topaz Video specializes in AI video enhancement: upscaling, denoising, stabilization, frame interpolation and restoration of older footage. Processing runs locally, and the personal plan includes unlimited local rendering, which suits sensitive footage and heavier workloads.\n\nFor new customers, Topaz Video is now subscription only. The personal plan costs $299 per year when prepaid, $39 per month with an annual commitment, or $59 month to month. No perpetual license is currently listed for this product.\n\nThe investment makes sense for recurring post-production work and a machine with a capable GPU. For a one-off restoration, built-in editor features or a usage-based service will often be more economical.",
+    "shortDescriptionEn": "Desktop software (Mac/Windows) for AI video enhancement: upscaling, denoising, interpolation, and stabilization.",
+    "longDescriptionEn": "Desktop software (Mac/Windows) for AI video enhancement: upscaling, denoising, interpolation, and stabilization.\n\nKey strengths: Some of the most advanced AI video upscaling and restoration.; Frame interpolation for smooth slow motion.; Local processing (no uploading videos to the cloud).; Built-in denoise and stabilisation..\n\nTopaz Video AI makes sense when AI video enhancement/restoration is a recurring need and you have a capable machine; for occasional or light needs, the subscription and GPU load are hard to justify.",
     "prosEn": [
       "Some of the most advanced AI video upscaling and restoration.",
       "Frame interpolation for smooth slow motion.",
@@ -152810,11 +152924,11 @@
       "threshold": "Topaz Video AI makes sense when AI video enhancement/restoration is a recurring need and you have a capable machine; for occasional or light needs, the subscription and GPU load are hard to justify."
     },
     "pricingEn": {
-      "free": "",
-      "paid": "$299/year, $39/month with annual commitment, or $59 month to month"
+      "free": "Essai possible selon l'éditeur ; traitement en local sur la machine.",
+      "paid": "Personal: 25 $/mois (annuel) ou 39 $/mois (mensuel) ; Pro: 58 $/mois (annuel) ou 74 $/mois (mensuel)"
     },
     "force_silence": false,
-    "description": "Topaz Video est spécialisé dans l'amélioration vidéo par IA : upscaling, débruitage, stabilisation, interpolation d'images et restauration de séquences anciennes. Les traitements s'exécutent en local et le plan personnel autorise un rendu local illimité, ce qui convient aux rushes sensibles ou aux volumes importants.\n\nPour les nouveaux clients, Topaz Video est désormais vendu par abonnement. L'offre personnelle coûte 299$ par an en paiement annuel, 39$ par mois avec engagement annuel, ou 59$ sans engagement. Il n'existe plus de licence perpétuelle affichée pour ce produit.\n\nL'investissement se justifie pour une utilisation récurrente en postproduction et avec un GPU suffisamment puissant. Pour une restauration ponctuelle, les fonctions intégrées d'un logiciel de montage ou un service facturé à l'usage seront souvent plus rationnels.",
+    "description": "Logiciel de bureau (Mac/Windows) d'amélioration vidéo par IA : upscaling, débruitage, interpolation et stabilisation.\n\nFonctions clés : Upscaling vidéo (montée en résolution jusqu'à 4K+) ; Interpolation d'images (ralentis fluides) ; Débruitage et restauration de séquences ; Stabilisation après tournage.\n\nTopaz Video AI s'impose quand l'amélioration/restauration vidéo par IA est un besoin récurrent et que vous disposez d'une machine capable ; pour un besoin ponctuel ou léger, l'abonnement et la charge GPU sont difficiles à justifier.",
     "ogImageUrl": "/tool-media/topaz-video-ai/interface.webp",
     "galleryImages": [
       "/tool-media/topaz-video-ai/precision-before.webp",
@@ -154117,22 +154231,22 @@
     "bundle_parent": null,
     "host_app": null,
     "category": "ai-general",
-    "shortDescription": "Générateur 3D par IA (texte/image vers modèle), rapide et parmi les moins chers.",
-    "shortDescriptionEn": "AI 3D generator (text/image to model), fast and among the cheapest.",
+    "shortDescription": "Générateur de modèles 3D basé sur l'IA transformant des descriptions texte ou images en modèles 3D haute qualité ou optimisés pour jeux, avec texturage et rigging automatiques.",
+    "shortDescriptionEn": "AI 3D model generator converting text descriptions or images into high-quality or game-optimized 3D models with automatic texturing and rigging.",
     "pricing": {
-      "free": "Gratuit (crédits limités, généreux)",
-      "paid": "Pro dès 10$/mois."
+      "free": "Tripo Studio gratuit (studio.tripo3d.ai) avec accès de base",
+      "paid": "Tripo Studio Free: Gratuit ; Premium Plans: Montants sur la page officielle"
     },
     "pricingEn": {
-      "free": "Free (limited but generous credits)",
-      "paid": "Pro from $10/month."
+      "free": "Tripo Studio gratuit (studio.tripo3d.ai) avec accès de base",
+      "paid": "Tripo Studio Free: Gratuit ; Premium Plans: Montants sur la page officielle"
     },
     "defaultMonthlyPrice": 10,
     "affiliateLink": "https://www.tripo3d.ai",
     "websiteUrl": "https://www.tripo3d.ai",
     "logo": "",
-    "longDescription": "Tripo (Tripo AI), c'est le grand rival de Meshy dans la 3D générative : texte ou image vers modèle 3D texturé, en quelques secondes. Son atout principal, c'est le prix : un plan gratuit généreux pour expérimenter, et un Pro qui démarre à seulement 10$/mois, soit l'un des tickets d'entrée les plus bas du marché.\n\nLe niveau de qualité et les limites sont comparables à Meshy : génération rapide et impressionnante pour du prototypage, mais une topologie brute qui demande un nettoyage avant toute production sérieuse. C'est un point de départ, pas un asset final.\n\nPour ToolTrim, Tripo est l'autre référence du text-to-3D abordable, à mettre directement en balance avec Meshy. Les deux augmentent ton flux 3D (Blender, Cinema 4D, ZBrush) en te donnant une base à raffiner. Si le budget est le critère, Tripo prend l'avantage avec son entrée à 10$/mois.",
-    "longDescriptionEn": "Tripo (Tripo AI) is Meshy's main rival in generative 3D: text or image to textured 3D model, in seconds. Its main edge is price: a generous free plan to experiment, and a Pro that starts at just $10/month, one of the lowest entry tickets on the market.\n\nQuality and limits are comparable to Meshy: fast, impressive generation for prototyping, but rough topology that needs cleanup before any serious production. It's a starting point, not a final asset.\n\nFor ToolTrim, Tripo is the other reference for affordable text-to-3D, to weigh directly against Meshy. Both augment your 3D flow (Blender, Cinema 4D, ZBrush) by giving you a base to refine. If budget is the criterion, Tripo takes the edge with its $10/month entry.",
+    "longDescription": "Générateur de modèles 3D basé sur l'IA transformant des descriptions texte ou images en modèles 3D haute qualité ou optimisés pour jeux, avec texturage et rigging automatiques.\n\nFonctions clés : Génération texte-vers-3D et image-vers-3D instantanée ; High Detail Model : jusqu'à 2M polygones pour rendering/VFX/impression 3D ; Smart Mesh : mesh quad optimisés (500-50K polygones) pour jeux/VR/AR ; Texturage IA et segmentation automatique ; Rigging et stylisation de modèles ; Utilisé par 20M+ créatifs, 200M+ modèles générés ; Partenaires : Sony, NetEase Games, ByteDance, HTC.\n\nTripo convient aux game devs et créateurs 3D rapides ; pour arts plastiques complexes, Blender/Maya demeurent référence.",
+    "longDescriptionEn": "AI 3D model generator converting text descriptions or images into high-quality or game-optimized 3D models with automatic texturing and rigging.\n\nKey strengths: Instant generation from text or image.; Two output modes (high-detail vs game-optimized).; Automatic texturing and rigging.; Free studio without clear usage limits.; Used by major studios..\n\nTripo suits game devs and fast 3D creators; for complex art, Blender/Maya remain reference.",
     "verdict": {
       "keepIf": [
         "Vous créez du contenu 3D pour jeux ou VR.",
@@ -154236,7 +154350,7 @@
       "cautions": [
         "Plan gratuit généreux ; Pro dès 10$/mois"
       ],
-      "verified_on": "2026-06-17",
+      "verified_on": "2026-07-24",
       "source_domain": "tripo3d.ai",
       "usage_sensitive": false,
       "compare_plan_kind": "subscription",
@@ -154244,14 +154358,15 @@
       "price_reliability": "high",
       "location_sensitive": false,
       "official_source_url": "https://www.tripo3d.ai",
-      "verification_status": "official_site_only",
+      "verification_status": "official_explicit",
       "compare_price_monthly_eur": 10
     },
     "substitution_cluster_v2": "ai-3d-generation",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/tripo.jpg",
-    "description": "Tripo (Tripo AI), c'est le grand rival de Meshy dans la 3D générative : texte ou image vers modèle 3D texturé, en quelques secondes. Son atout principal, c'est le prix : un plan gratuit généreux pour expérimenter, et un Pro qui démarre à seulement 10$/mois, soit l'un des tickets d'entrée les plus bas du marché.\n\nLe niveau de qualité et les limites sont comparables à Meshy : génération rapide et impressionnante pour du prototypage, mais une topologie brute qui demande un nettoyage avant toute production sérieuse. C'est un point de départ, pas un asset final.\n\nPour ToolTrim, Tripo est l'autre référence du text-to-3D abordable, à mettre directement en balance avec Meshy. Les deux augmentent ton flux 3D (Blender, Cinema 4D, ZBrush) en te donnant une base à raffiner. Si le budget est le critère, Tripo prend l'avantage avec son entrée à 10$/mois.",
+    "ogImageUrl": "/og-screenshots/tripo.jpg",
+    "description": "Générateur de modèles 3D basé sur l'IA transformant des descriptions texte ou images en modèles 3D haute qualité ou optimisés pour jeux, avec texturage et rigging automatiques.\n\nFonctions clés : Génération texte-vers-3D et image-vers-3D instantanée ; High Detail Model : jusqu'à 2M polygones pour rendering/VFX/impression 3D ; Smart Mesh : mesh quad optimisés (500-50K polygones) pour jeux/VR/AR ; Texturage IA et segmentation automatique ; Rigging et stylisation de modèles ; Utilisé par 20M+ créatifs, 200M+ modèles générés ; Partenaires : Sony, NetEase Games, ByteDance, HTC.\n\nTripo convient aux game devs et créateurs 3D rapides ; pour arts plastiques complexes, Blender/Maya demeurent référence.",
     "decision_policy_v3": null,
-    "force_silence": false
+    "force_silence": false,
+    "galleryImages": []
   },
   {
     "id": "truecoach",
@@ -156390,11 +156505,11 @@
     "bundle_parent": null,
     "host_app": null,
     "category": "ai-general",
-    "shortDescription": "Génération musicale IA de haute qualité à partir d'un prompt texte.",
+    "shortDescription": "Générateur de musique IA permettant créer des chansons complètes (avec voix et production) à partir de descriptions texte, avec support des droits commerciaux sur forfaits payants.",
     "defaultMonthlyPrice": 8.66,
     "pricing": {
-      "free": "100 crédits/mois",
-      "paid": "10$/mois (Standard)"
+      "free": "100 crédits/mois gratuits (environ 1-3 chansons quotidiennement)",
+      "paid": "Free: Gratuit (100 crédits/mois) ; Standard: 10 $/mois (2400 crédits) ou 8 $/mois annuel ; Pro: 30 $/mois (6000 crédits) ou 24 $/mois annuel"
     },
     "covers": [
       "creation-musicale",
@@ -156474,23 +156589,26 @@
       "free": "100 crédits/mois",
       "paid": "10$/mois (Standard)"
     },
-    "longDescription": "Udio, c'est génération musicale IA de haute qualité à partir d'un prompt texte. À partir de 8.66€/mois. Pensé pour les créateurs vidéo et les créateurs de contenu.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : création de jingles, ambiances ou musiques pour vos vidéos. À éviter si : suno déjà dans le stack — doublon génération musicale. Rentable dès 3 projets vidéo avec musique originale par mois.",
+    "longDescription": "Générateur de musique IA permettant créer des chansons complètes (avec voix et production) à partir de descriptions texte, avec support des droits commerciaux sur forfaits payants.\n\nFonctions clés : Génération de chansons complètes en moins d'une minute ; Création multi-genres (tous genres supportés) ; Droits commerciaux sur forfaits payants (pas sur free tier) ; HD audio downloads sur Pro ; Accès aux vocal models et profils mixing premium ; Création illimitée sur Pro (pas de cap quotidien).\n\nUdio s'impose pour créateurs souhaitant musique IA avec droits ; pour usage gratuit sans droits, le free tier suffit.",
     "alternatives": [],
     "slug": "udio",
-    "shortDescriptionEn": "High-quality AI music generation from a text prompt.",
-    "description": "Udio, c'est génération musicale IA de haute qualité à partir d'un prompt texte. À partir de 8.66€/mois. Pensé pour les créateurs vidéo et les créateurs de contenu.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : création de jingles, ambiances ou musiques pour vos vidéos. À éviter si : suno déjà dans le stack — doublon génération musicale. Rentable dès 3 projets vidéo avec musique originale par mois.",
-    "longDescriptionEn": "Udio is high-quality AI music generation from a text prompt. Starting at €8.66/month. Built for video creators and content creators.\n\nEstimated time saving: 4h/month.",
-    "pricingEn": null,
+    "shortDescriptionEn": "AI music generator creating complete songs (with vocals and production) from text descriptions, with commercial rights support on paid plans.",
+    "description": "Générateur de musique IA permettant créer des chansons complètes (avec voix et production) à partir de descriptions texte, avec support des droits commerciaux sur forfaits payants.\n\nFonctions clés : Génération de chansons complètes en moins d'une minute ; Création multi-genres (tous genres supportés) ; Droits commerciaux sur forfaits payants (pas sur free tier) ; HD audio downloads sur Pro ; Accès aux vocal models et profils mixing premium ; Création illimitée sur Pro (pas de cap quotidien).\n\nUdio s'impose pour créateurs souhaitant musique IA avec droits ; pour usage gratuit sans droits, le free tier suffit.",
+    "longDescriptionEn": "AI music generator creating complete songs (with vocals and production) from text descriptions, with commercial rights support on paid plans.\n\nKey strengths: Ultra-fast complete music generation.; Generous free tier (100 credits/month).; Clear commercial rights on paid plans.; HD audio downloads on Pro.; Premium vocal models and mixing profiles..\n\nUdio suits creators wanting AI music with rights; for free use without rights, free tier suffices.",
+    "pricingEn": {
+      "free": "100 crédits/mois gratuits (environ 1-3 chansons quotidiennement)",
+      "paid": "Free: Gratuit (100 crédits/mois) ; Standard: 10 $/mois (2400 crédits) ou 8 $/mois annuel ; Pro: 30 $/mois (6000 crédits) ou 24 $/mois annuel"
+    },
     "pricing_v5": {
       "cautions": [],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-07-24",
       "source_domain": "udio.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
       "compare_plan_name": "Entry paid plan",
       "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://www.udio.com/pricing",
+      "official_source_url": "https://udio.com",
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 8.66
     },
@@ -156548,7 +156666,8 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://imagedelivery.net/C9yUr1FL21Q6JwfYYh2ozQ/1647e9a2-47d6-4d95-5ae0-02bae7a44000/public"
+    "ogImageUrl": "https://imagedelivery.net/C9yUr1FL21Q6JwfYYh2ozQ/1647e9a2-47d6-4d95-5ae0-02bae7a44000/public",
+    "galleryImages": []
   },
   {
     "id": "ukg-pro",
@@ -163579,11 +163698,11 @@
     "bundle_parent": null,
     "host_app": null,
     "category": "ai-general",
-    "shortDescription": "Transcription audio open source d'OpenAI. Précis, multilingue, gratuit.",
+    "shortDescription": "Modèle de transcription audio IA d'OpenAI offrant conversion speech-to-text précise multilingue via API payante, avec plusieurs tiers de performance et coût.",
     "defaultMonthlyPrice": 0,
     "pricing": {
-      "free": "Open source gratuit",
-      "paid": "Via API OpenAI : 0.006$/minute"
+      "free": "API payante uniquement ; modèle open-source disponible",
+      "paid": "Whisper 1: 0,006 $/minute audio (standard) ; GPT-4o Mini Transcribe: 0,003 $/minute (économique) ; GPT-4o Transcribe: 0,006 $/minute ; GPT-realtime Whisper: 0,017 $/minute (temps réel)"
     },
     "covers": [
       "notes-reunion",
@@ -163660,16 +163779,19 @@
       "free": "Open source gratuit",
       "paid": "Via API OpenAI : 0.006$/minute"
     },
-    "longDescription": "Whisper (OpenAI), c'est transcription audio open source d'OpenAI. Précis, multilingue, gratuit. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les podcasteurs et les créateurs de contenu.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : transcription en volume via pipeline automatisé. À éviter si : descript ou Otter.ai déjà en place pour un usage non-technique. Gratuit — toujours pertinent pour les profils techniques.",
+    "longDescription": "Modèle de transcription audio IA d'OpenAI offrant conversion speech-to-text précise multilingue via API payante, avec plusieurs tiers de performance et coût.\n\nFonctions clés : Transcription multilingue précise ; Modèle open-source (whisper) librement téléchargeable ; API commerciale pour intégration dans applications ; Choix multiples de modèles (Whisper 1, GPT-4o Mini, GPT-realtime) ; Facturation à la seconde près ; Pas de réductions de volume publiées (tarif unique).\n\nWhisper API s'impose pour transcription en production ; pour usage léger, des services comme Otter.ai conviendront mieux.",
     "alternatives": [],
     "slug": "whisper",
-    "shortDescriptionEn": "OpenAI open-source audio transcription. Accurate, multilingual, free.",
-    "description": "Whisper (OpenAI), c'est transcription audio open source d'OpenAI. Précis, multilingue, gratuit. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les podcasteurs et les créateurs de contenu.\n\nGain de temps estimé : 4h/mois.\n\nÀ garder si : transcription en volume via pipeline automatisé. À éviter si : descript ou Otter.ai déjà en place pour un usage non-technique. Gratuit — toujours pertinent pour les profils techniques.",
-    "longDescriptionEn": "Whisper (OpenAI) is openAI open-source audio transcription. Accurate, multilingual, free. Free to start, paid plans for more. Built for podcasters and content creators.\n\nEstimated time saving: 4h/month.",
-    "pricingEn": null,
+    "shortDescriptionEn": "OpenAI's AI audio transcription model providing accurate multilingual speech-to-text conversion via paid API with multiple performance and cost tiers.",
+    "description": "Modèle de transcription audio IA d'OpenAI offrant conversion speech-to-text précise multilingue via API payante, avec plusieurs tiers de performance et coût.\n\nFonctions clés : Transcription multilingue précise ; Modèle open-source (whisper) librement téléchargeable ; API commerciale pour intégration dans applications ; Choix multiples de modèles (Whisper 1, GPT-4o Mini, GPT-realtime) ; Facturation à la seconde près ; Pas de réductions de volume publiées (tarif unique).\n\nWhisper API s'impose pour transcription en production ; pour usage léger, des services comme Otter.ai conviendront mieux.",
+    "longDescriptionEn": "OpenAI's AI audio transcription model providing accurate multilingual speech-to-text conversion via paid API with multiple performance and cost tiers.\n\nKey strengths: Open-source model freely available (self-host).; Highly accurate multilingual transcription.; Multiple cost tiers suited to need.; Easily integrable into applications.; Granular billing to the second..\n\nWhisper API suits production transcription; for light use, services like Otter.ai work better.",
+    "pricingEn": {
+      "free": "API payante uniquement ; modèle open-source disponible",
+      "paid": "Whisper 1: 0,006 $/minute audio (standard) ; GPT-4o Mini Transcribe: 0,003 $/minute (économique) ; GPT-4o Transcribe: 0,006 $/minute ; GPT-realtime Whisper: 0,017 $/minute (temps réel)"
+    },
     "pricing_v5": {
       "cautions": [],
-      "verified_on": "2026-03-13",
+      "verified_on": "2026-07-24",
       "source_domain": "openai.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
@@ -163677,7 +163799,7 @@
       "price_reliability": "low",
       "location_sensitive": false,
       "official_source_url": "https://openai.com/research/whisper",
-      "verification_status": "official_site_only",
+      "verification_status": "official_explicit",
       "compare_price_monthly_eur": 0
     },
     "websiteUrl": "https://openai.com/research/whisper",
@@ -163735,7 +163857,8 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/whisper.jpg"
+    "ogImageUrl": "/og-screenshots/whisper.jpg",
+    "galleryImages": []
   },
   {
     "id": "windsurf",
@@ -168291,18 +168414,18 @@
     "slug": "zed",
     "name": "Zed",
     "category": "ai-general",
-    "shortDescription": "Éditeur de code natif, rapide, collaboratif et compatible avec les agents IA.",
-    "shortDescriptionEn": "A fast native code editor with multiplayer collaboration and AI agents.",
-    "description": "Zed est un éditeur de code natif conçu pour rester rapide sur de gros projets. Sa collaboration multijoueur permet de partager un projet et de modifier les mêmes fichiers en temps réel, avec curseurs partagés et appels privés.\n\nLe plan Personal est gratuit et l'éditeur fonctionne sans abonnement. Il inclut 2 000 prédictions de modification acceptées et permet d'utiliser ses propres clés API ou des agents externes sans limite imposée par Zed. Le plan Pro coûte 10 $/mois et ajoute les prédictions illimitées ainsi que 5 $ de crédits de tokens hébergés.\n\nZed est disponible sur macOS, Linux et Windows. Son principal compromis reste un écosystème d'extensions moins vaste que celui de VS Code ou des IDE JetBrains.",
-    "longDescription": "Zed est un éditeur de code natif conçu pour rester rapide sur de gros projets. Sa collaboration multijoueur permet de partager un projet et de modifier les mêmes fichiers en temps réel, avec curseurs partagés et appels privés.\n\nLe plan Personal est gratuit et l'éditeur fonctionne sans abonnement. Il inclut 2 000 prédictions de modification acceptées et permet d'utiliser ses propres clés API ou des agents externes sans limite imposée par Zed. Le plan Pro coûte 10 $/mois et ajoute les prédictions illimitées ainsi que 5 $ de crédits de tokens hébergés.\n\nZed est disponible sur macOS, Linux et Windows. Son principal compromis reste un écosystème d'extensions moins vaste que celui de VS Code ou des IDE JetBrains.",
-    "longDescriptionEn": "Zed is a native code editor designed to stay fast on large projects. Its built-in multiplayer collaboration lets people share a project and edit the same files in real time, with shared cursors and private calls.\n\nThe Personal plan is free and the editor works without a subscription. It includes 2,000 accepted edit predictions and unlimited use with your own API keys or external agents. Pro costs $10/month and adds unlimited edit predictions plus $5 in hosted token credits.\n\nZed is available on macOS, Linux, and Windows. Its main trade-off is a smaller extension ecosystem than VS Code or JetBrains IDEs.",
+    "shortDescription": "Éditeur de code moderne open-source écrit en Rust pour Linux, macOS et Windows. Créé par Nathan Sobo, co-créateur d'Atom. Conçu pour performance maximale avec collaboration en temps réel et fonctionnalités IA.",
+    "shortDescriptionEn": "Modern open-source code editor written in Rust for Linux, macOS, and Windows. Created by Nathan Sobo, co-creator of Atom. Designed for maximum performance with real-time collaboration and AI features.",
+    "description": "Éditeur de code moderne open-source écrit en Rust pour Linux, macOS et Windows. Créé par Nathan Sobo, co-créateur d'Atom. Conçu pour performance maximale avec collaboration en temps réel et fonctionnalités IA.\n\nFonctions clés : Éditeur ultra-performant en Rust ; Collaboration temps réel (pair programming) ; LSP intégré pour intellisense multilingue ; Terminal intégré ; Thèmes personnalisables ; Support de 50+ langages de programmation ; Extensibilité via plugins ; Open-source sur GitHub.\n\nZed s'impose pour développeurs Rust et modernes ; pour projet complexe, VS Code ou IDE reste sûr.",
+    "longDescription": "Éditeur de code moderne open-source écrit en Rust pour Linux, macOS et Windows. Créé par Nathan Sobo, co-créateur d'Atom. Conçu pour performance maximale avec collaboration en temps réel et fonctionnalités IA.\n\nFonctions clés : Éditeur ultra-performant en Rust ; Collaboration temps réel (pair programming) ; LSP intégré pour intellisense multilingue ; Terminal intégré ; Thèmes personnalisables ; Support de 50+ langages de programmation ; Extensibilité via plugins ; Open-source sur GitHub.\n\nZed s'impose pour développeurs Rust et modernes ; pour projet complexe, VS Code ou IDE reste sûr.",
+    "longDescriptionEn": "Modern open-source code editor written in Rust for Linux, macOS, and Windows. Created by Nathan Sobo, co-creator of Atom. Designed for maximum performance with real-time collaboration and AI features.\n\nKey strengths: Completely free and open-source.; Ultra-fast (Rust architecture).; Native real-time collaboration.; Integrated multilingual LSP.; Built-in terminal.; Created by expert (Atom co-creator)..\n\nZed is ideal for Rust and modern developers; for complex projects, VS Code or IDEs remain safe.",
     "pricing": {
-      "free": "Gratuit et open-source",
-      "paid": "Pro à 10 $/mois · Business à 30 $/utilisateur/mois"
+      "free": "Complètement gratuit et open-source. Pas de limitation fonctionnelle. Développé par Zed Industries.",
+      "paid": "Zed Free: Gratuit et open-source"
     },
     "pricingEn": {
-      "free": "Personal plan: $0 forever",
-      "paid": "Pro $10/month · Business $30/user/month"
+      "free": "Complètement gratuit et open-source. Pas de limitation fonctionnelle. Développé par Zed Industries.",
+      "paid": "Zed Free: Gratuit et open-source"
     },
     "defaultMonthlyPrice": 0,
     "pricing_v5": {
@@ -168312,15 +168435,15 @@
       "price_reliability": "official_explicit",
       "usage_sensitive": false,
       "location_sensitive": false,
-      "verified_on": "2026-08-26",
+      "verified_on": "2026-07-24",
       "source_domain": "zed.dev",
-      "official_source_url": "https://zed.dev/pricing",
+      "official_source_url": "https://zed.dev/",
       "verification_status": "official_explicit"
     },
     "affiliateLink": "https://zed.dev/",
     "websiteUrl": "https://zed.dev/",
     "logo": "/logos/zed.svg",
-    "ogImageUrl": "/og-screenshots/zed.webp",
+    "ogImageUrl": "https://zed.dev/cdn-cgi/image/width=2048,quality=75,format=auto/img/parallel-agents/sidebar.webp",
     "seo": {
       "metaDescription": "Zed en 2026 : éditeur de code natif rapide, collaboration multijoueur, agents IA, plan gratuit et Pro à 10 $/mois. Verdict ToolTrim.",
       "metaDescriptionEn": "Zed in 2026: fast native code editor, multiplayer collaboration, AI agents, free plan and $10/month Pro tier. ToolTrim verdict."
@@ -168357,15 +168480,16 @@
     },
     "verdictEn": {
       "keepIf": [
-        "Your current editor slows down on large projects",
-        "You pair-program or share code live",
-        "You want AI agents without being locked into a hosted model"
+        "You're a developer seeking high-performance editor.",
+        "You love modern Rust-based tools.",
+        "You want integrated real-time collaboration."
       ],
       "avoidIf": [
-        "You rely on niche VS Code extensions",
-        "Your workflow depends heavily on a JetBrains IDE"
+        "You're IDE-dependent (Visual Studio, IntelliJ).",
+        "You've never left VS Code.",
+        "You're afraid to experiment with new editors."
       ],
-      "threshold": "Start with the free Personal plan; pay for Pro only when unlimited edit predictions or hosted AI credits matter."
+      "threshold": "Zed is ideal for Rust and modern developers; for complex projects, VS Code or IDEs remain safe."
     },
     "pros": [
       "Entièrement gratuit et open-source.",
@@ -168376,10 +168500,12 @@
       "Créé par expert (Atom co-créateur)."
     ],
     "prosEn": [
-      "Fast native editor",
-      "Built-in real-time multiplayer collaboration",
-      "Works with your own API keys and external agents",
-      "Available on macOS, Linux, and Windows"
+      "Completely free and open-source.",
+      "Ultra-fast (Rust architecture).",
+      "Native real-time collaboration.",
+      "Integrated multilingual LSP.",
+      "Built-in terminal.",
+      "Created by expert (Atom co-creator)."
     ],
     "cons": [
       "Écosystème plugins moins riche que VS Code.",
@@ -168387,9 +168513,9 @@
       "Migration depuis VS Code exige adaptation."
     ],
     "consEn": [
-      "Smaller extension ecosystem than VS Code",
-      "No web version",
-      "Product and ecosystem are still evolving quickly"
+      "Plugin ecosystem less rich than VS Code.",
+      "Young product (2023-2026).",
+      "Migration from VS Code requires adaptation."
     ],
     "useCases": [
       "Pair programming temps réel sans plugin.",
@@ -168397,9 +168523,9 @@
       "Édition légère et ultra-rapide."
     ],
     "useCasesEn": [
-      "Edit large codebases in a responsive native editor",
-      "Pair-program with shared cursors and edits",
-      "Use AI agents with hosted models or your own API keys"
+      "Real-time pair programming without plugins.",
+      "Develop in performant Rust.",
+      "Lightning-fast and lightweight editing."
     ],
     "personas": [
       "THEO"
@@ -168432,7 +168558,11 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "force_silence": false
+    "force_silence": false,
+    "galleryImages": [
+      "https://zed.dev/cdn-cgi/image/width=2048,quality=75,format=auto/https://images.zed.dev/video-posters/debugger.webp",
+      "https://zed.dev/cdn-cgi/image/width=2048,quality=75,format=auto/https://images.zed.dev/video-posters/agent.webp"
+    ]
   },
   {
     "id": "zelt",

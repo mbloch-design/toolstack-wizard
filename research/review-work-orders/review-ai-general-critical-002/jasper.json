@@ -1,0 +1,244 @@
+{
+  "batch": "review-ai-general-critical-002",
+  "current": {
+    "affiliate_url": null,
+    "alternatives": [
+      "chatgpt",
+      "claude"
+    ],
+    "category": "ai-general",
+    "cons": [
+      "Pas de palier gratuit.",
+      "Plus cher qu'un assistant IA généraliste.",
+      "Fonctionnement à crédits de mots."
+    ],
+    "cons_en": [
+      "No free tier.",
+      "Pricier than a general AI assistant.",
+      "Word-credit based."
+    ],
+    "host_app": null,
+    "id": "jasper",
+    "long_description": "Jasper, c'est assistant IA pour le marketing et la rédaction. À partir de 39€/mois.",
+    "long_description_en": "Jasper is aI assistant for marketing and copywriting. Starting at €39/month.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://cdn.prod.website-files.com/6807ee8d73c233fb82842313/6846454bda26628fcf51d54c_9650916b48ce089735bcc21cc8e43f2f_OpenGraph%20-%20Home.png"
+    },
+    "name": "Jasper",
+    "pricing": null,
+    "pricing_en": null,
+    "pricing_v5": null,
+    "pros": [
+      "Pensé pour le contenu marketing.",
+      "Voix de marque et templates.",
+      "Chat et extension navigateur.",
+      "Fonctions collaboratives."
+    ],
+    "pros_en": [
+      "Built for marketing content.",
+      "Brand voice and templates.",
+      "Chat and browser extension.",
+      "Collaborative features."
+    ],
+    "short_description": "Assistant IA pour le marketing et la rédaction",
+    "short_description_en": "AI assistant for marketing and copywriting.",
+    "slug": "jasper",
+    "source_url": "https://jasper.ai",
+    "source_verified_on": null,
+    "use_cases": [
+      "Rédiger des articles et posts à la chaîne.",
+      "Décliner une campagne sur plusieurs canaux.",
+      "Maintenir une voix de marque cohérente."
+    ],
+    "use_cases_en": [
+      "Write articles and posts at scale.",
+      "Adapt a campaign across channels.",
+      "Maintain a consistent brand voice."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Un assistant IA généraliste (ChatGPT) vous suffit.",
+        "Vous écrivez trop peu pour justifier l'abonnement.",
+        "Vous cherchez un outil gratuit."
+      ],
+      "keepIf": [
+        "Vous produisez du contenu marketing à volume.",
+        "Vous voulez une voix de marque cohérente en IA.",
+        "Vous travaillez en équipe marketing."
+      ],
+      "threshold": "Jasper s'impose pour des équipes marketing qui produisent du contenu à volume avec voix de marque ; pour un usage ponctuel, un assistant IA généraliste suffit."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "A general AI assistant (ChatGPT) is enough for you.",
+        "You write too little to justify the subscription.",
+        "You want a free tool."
+      ],
+      "keepIf": [
+        "You produce marketing content at volume.",
+        "You want a consistent AI brand voice.",
+        "You work in a marketing team."
+      ],
+      "threshold": "Jasper makes sense for marketing teams producing content at volume with a brand voice; for occasional use, a general AI assistant suffices."
+    },
+    "website_url": "https://jasper.ai"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "No free tier.",
+        "Pricier than a general AI assistant.",
+        "Word-credit based."
+      ],
+      "pros": [
+        "Built for marketing content.",
+        "Brand voice and templates.",
+        "Chat and browser extension.",
+        "Collaborative features."
+      ],
+      "use_cases": [
+        "Write articles and posts at scale.",
+        "Adapt a campaign across channels.",
+        "Maintain a consistent brand voice."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "A general AI assistant (ChatGPT) is enough for you.",
+          "You write too little to justify the subscription.",
+          "You want a free tool."
+        ],
+        "keepIf": [
+          "You produce marketing content at volume.",
+          "You want a consistent AI brand voice.",
+          "You work in a marketing team."
+        ],
+        "threshold": "Jasper makes sense for marketing teams producing content at volume with a brand voice; for occasional use, a general AI assistant suffices."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Essai gratuit de 7 jours ; abonnement requis ensuite.",
+        "exists": false
+      },
+      "key_features": [
+        "Génération de contenu marketing (articles, posts, campagnes)",
+        "Templates et Jasper Chat",
+        "Voix de marque personnalisée",
+        "Extension navigateur (Gmail, Docs…)"
+      ],
+      "plans": [
+        {
+          "name": "Creator",
+          "price": "39 $/mois (annuel), 49 $ en mensuel — 1 siège"
+        },
+        {
+          "name": "Pro",
+          "price": "paliers supérieurs (multi-sièges, fonctions équipe)"
+        },
+        {
+          "name": "Business",
+          "price": "sur devis"
+        }
+      ],
+      "pricing_model": "Abonnement par siège (mensuel/annuel), avec crédits de mots. Essai gratuit 7 jours.",
+      "what": "Plateforme d'écriture assistée par IA pour le marketing : génération de contenus (articles, posts, campagnes), templates, chat et extension navigateur, avec voix de marque.",
+      "what_en": "AI writing platform for marketing: content generation (articles, posts, campaigns), templates, chat and browser extension, with brand voice."
+    },
+    "fr": {
+      "cons": [
+        "Pas de palier gratuit.",
+        "Plus cher qu'un assistant IA généraliste.",
+        "Fonctionnement à crédits de mots."
+      ],
+      "pros": [
+        "Pensé pour le contenu marketing.",
+        "Voix de marque et templates.",
+        "Chat et extension navigateur.",
+        "Fonctions collaboratives."
+      ],
+      "relevant_for": [
+        "Équipes marketing",
+        "Créateurs de contenu",
+        "Agences"
+      ],
+      "use_cases": [
+        "Rédiger des articles et posts à la chaîne.",
+        "Décliner une campagne sur plusieurs canaux.",
+        "Maintenir une voix de marque cohérente."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Un assistant IA généraliste (ChatGPT) vous suffit.",
+          "Vous écrivez trop peu pour justifier l'abonnement.",
+          "Vous cherchez un outil gratuit."
+        ],
+        "keepIf": [
+          "Vous produisez du contenu marketing à volume.",
+          "Vous voulez une voix de marque cohérente en IA.",
+          "Vous travaillez en équipe marketing."
+        ],
+        "threshold": "Jasper s'impose pour des équipes marketing qui produisent du contenu à volume avec voix de marque ; pour un usage ponctuel, un assistant IA généraliste suffit."
+      }
+    },
+    "slug": "jasper",
+    "sources": [
+      {
+        "label": "Page tarifaire officielle Jasper",
+        "url": "https://www.jasper.ai/pricing"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-ai-general-critical-002",
+    "batch_position": 23,
+    "blockers": [],
+    "catalog_hash": "sha256:08d96436a3770a8bb058590a6683aa7975d4fed409e9676696ecd9c647e04b77",
+    "category": "ai-general",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:be09b84a79254c428c868dd9686765646f33eed91039b5d7b6d26b6de24a3ced",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Jasper",
+    "next_review_at": null,
+    "priority_reasons": [
+      "paid_price",
+      "missing_or_invalid_media_evidence",
+      "shallow_editorial",
+      "undated_source"
+    ],
+    "priority_score": 195,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:574595bc29bd31742261563f81947b0def77871e4b1fa947da20aa1853ddc120",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "jasper",
+    "source_url": "https://jasper.ai",
+    "source_verified_on": null,
+    "status": "QUEUED"
+  }
+}

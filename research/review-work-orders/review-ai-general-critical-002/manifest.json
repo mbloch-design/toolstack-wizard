@@ -1,0 +1,167 @@
+{
+  "batch": "review-ai-general-critical-002",
+  "quality_version": "catalog-review-v1",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tools": [
+    {
+      "file": "ideogram.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "ideogram",
+      "status": "QUEUED"
+    },
+    {
+      "file": "krea-ai.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "krea-ai",
+      "status": "QUEUED"
+    },
+    {
+      "file": "leonardo-ai.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "leonardo-ai",
+      "status": "QUEUED"
+    },
+    {
+      "file": "lovable.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "lovable",
+      "status": "QUEUED"
+    },
+    {
+      "file": "mem-ai.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "mem-ai",
+      "status": "QUEUED"
+    },
+    {
+      "file": "move-ai.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "move-ai",
+      "status": "QUEUED"
+    },
+    {
+      "file": "notion-ai.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "notion-ai",
+      "status": "QUEUED"
+    },
+    {
+      "file": "otter-ai.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "otter-ai",
+      "status": "QUEUED"
+    },
+    {
+      "file": "perplexity.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "perplexity",
+      "status": "QUEUED"
+    },
+    {
+      "file": "pika-labs.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "pika-labs",
+      "status": "QUEUED"
+    },
+    {
+      "file": "replit.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "replit",
+      "status": "QUEUED"
+    },
+    {
+      "file": "runway.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "runway",
+      "status": "QUEUED"
+    },
+    {
+      "file": "stable-diffusion.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "stable-diffusion",
+      "status": "QUEUED"
+    },
+    {
+      "file": "suno.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "suno",
+      "status": "QUEUED"
+    },
+    {
+      "file": "tabnine.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "tabnine",
+      "status": "QUEUED"
+    },
+    {
+      "file": "topaz-video-ai.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "topaz-video-ai",
+      "status": "QUEUED"
+    },
+    {
+      "file": "tripo.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "tripo",
+      "status": "QUEUED"
+    },
+    {
+      "file": "udio.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "udio",
+      "status": "QUEUED"
+    },
+    {
+      "file": "whisper.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "whisper",
+      "status": "QUEUED"
+    },
+    {
+      "file": "zed.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "zed",
+      "status": "QUEUED"
+    },
+    {
+      "file": "helicone.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "helicone",
+      "status": "QUEUED"
+    },
+    {
+      "file": "jasper.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "jasper",
+      "status": "QUEUED"
+    },
+    {
+      "file": "langchain.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "langchain",
+      "status": "QUEUED"
+    },
+    {
+      "file": "langsmith.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "langsmith",
+      "status": "QUEUED"
+    },
+    {
+      "file": "meshy.json",
+      "required_action": "verify_bundle_freshness_then_review_editorial",
+      "slug": "meshy",
+      "status": "PUBLISHED"
+    }
+  ]
+}

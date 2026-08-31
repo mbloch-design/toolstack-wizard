@@ -1,0 +1,27 @@
+{
+  "slug": "mem-ai",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://mem.ai"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://mem.ai/assets/seo/mem-open-graph-card.png",
+      "source_page_url": "https://mem.ai",
+      "official": true,
+      "alt": "Official product preview"
+    },
+    {
+      "kind": "image",
+      "url": "https://storage.googleapis.com/mem-public-assets/sq-f.jpg",
+      "source_page_url": "https://mem.ai",
+      "official": true,
+      "alt": "Mem AI official product preview"
+    }
+  ]
+}

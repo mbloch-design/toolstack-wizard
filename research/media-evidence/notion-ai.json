@@ -1,0 +1,41 @@
+{
+  "slug": "notion-ai",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://notion.so/product/ai"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://images.ctfassets.net/spoqsaf9291f/PxonT2OYW98z2zblXpzQV/54201835140efd39fd8c038218e705d6/custom-agents-16-9.gif",
+      "source_page_url": "https://notion.so/product/ai",
+      "official": true,
+      "alt": "AI Face"
+    },
+    {
+      "kind": "image",
+      "url": "https://images.ctfassets.net/spoqsaf9291f/6QsRtEoZ8fMvaopdSwPNsZ/d7d9a90baf1b26446caa75b7a9e960de/builder-16-9.gif",
+      "source_page_url": "https://notion.so/product/ai",
+      "official": true,
+      "alt": "AI Face"
+    },
+    {
+      "kind": "image",
+      "url": "https://images.ctfassets.net/spoqsaf9291f/3Dkho83Hk0dkyY0UJrc0b5/96884c6e565ee250b1a8be7348cedeae/researcher-16-9.gif",
+      "source_page_url": "https://notion.so/product/ai",
+      "official": true,
+      "alt": "AI Face"
+    },
+    {
+      "kind": "image",
+      "url": "https://images.ctfassets.net/spoqsaf9291f/5Xo6iNDa3B3SvilAqM63EY/346f32a3eb2798396e42689ada240f08/meeting-notes-16-9.gif",
+      "source_page_url": "https://notion.so/product/ai",
+      "official": true,
+      "alt": "AI Face"
+    }
+  ]
+}

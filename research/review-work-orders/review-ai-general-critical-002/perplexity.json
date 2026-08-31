@@ -1,0 +1,283 @@
+{
+  "batch": "review-ai-general-critical-002",
+  "current": {
+    "affiliate_url": "https://perplexity.ai",
+    "alternatives": [
+      "chatgpt",
+      "claude",
+      "gemini"
+    ],
+    "category": "ai-general",
+    "cons": [
+      "Une citation ne garantit pas que la synthèse est correcte.",
+      "Computer et les meilleurs modèles sont fortement limités selon le plan.",
+      "Le plan Max est très coûteux pour un usage occasionnel."
+    ],
+    "cons_en": [
+      "A citation does not guarantee that the synthesis is correct.",
+      "Computer and the best models are tightly limited depending on the plan.",
+      "The Max plan is very expensive for occasional use."
+    ],
+    "host_app": null,
+    "id": "perplexity",
+    "long_description": "Perplexity combine un moteur de recherche IA, des réponses avec citations en ligne et des modes de travail plus profonds. Une requête peut produire une synthèse immédiatement vérifiable ; Deep Research explore davantage de sources ; Computer va plus loin en planifiant et exécutant des tâches ou en produisant des documents et applications.\n\nLe plan Gratuit couvre la recherche essentielle avec des limites sur les fonctions avancées. Pro coûte 20 $/mois ou 200 $/an, soit environ 17 $/mois avec facturation annuelle, et augmente l'accès à Computer, Deep Research, aux modèles avancés et aux créations. Max coûte 200 $/mois ou 2 000 $/an et vise les usages intensifs avec les limites les plus élevées.\n\nPerplexity est particulièrement pertinent pour la veille, les comparaisons et les recherches qui exigent une trace des sources. Les citations ne garantissent toutefois pas qu'une synthèse est correcte : il faut encore ouvrir les sources importantes, contrôler leur date et distinguer une source primaire d'une reprise secondaire.",
+    "long_description_en": "Perplexity combines AI search, answers with inline citations, and deeper work modes. A query can produce an immediately checkable synthesis; Deep Research explores more sources; Computer goes further by planning and executing tasks or producing documents and applications.\n\nThe Free plan covers essential search with limits on advanced features. Pro costs $20/month or $200/year, roughly $17/month when billed annually, and expands access to Computer, Deep Research, advanced models, and creation tools. Max costs $200/month or $2,000/year and targets intensive use with the highest limits.\n\nPerplexity is especially useful for monitoring, comparisons, and research that requires a source trail. Citations do not guarantee that a synthesis is correct: important sources still need to be opened, dates checked, and primary evidence distinguished from secondary reporting.",
+    "media": {
+      "gallery_images": [
+        "https://is1-ssl.mzstatic.com/image/thumb/Features211/v4/b8/59/96/b85996d0-de49-b477-22d1-83f9ff5a9043/3fab5649-fe34-404a-8805-52bb814758aa.png/800x450SCS.ApDPCS01.webp"
+      ],
+      "og_image_url": "https://ppl-ai-public.s3.amazonaws.com/static/img/pplx-default-preview.png"
+    },
+    "name": "Perplexity",
+    "pricing": {
+      "free": "Gratuit pour la recherche essentielle, avec accès avancé limité.",
+      "paid": "Pro à 20 $/mois ou 200 $/an ; Max à 200 $/mois ou 2 000 $/an."
+    },
+    "pricing_en": {
+      "free": "Free for essential search, with limited advanced access.",
+      "paid": "Pro at $20/month or $200/year; Max at $200/month or $2,000/year."
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Prix affichés en dollars US, peuvent varier après conversion en euros.",
+        "La facturation annuelle revient à environ 200$/an, moins chère qu'au mois."
+      ],
+      "compare_plan_kind": "individual",
+      "compare_plan_name": "Pro",
+      "compare_price_monthly_eur": 17,
+      "location_sensitive": false,
+      "official_source_url": "https://www.perplexity.ai/pro",
+      "price_reliability": "high",
+      "source_domain": "perplexity.ai",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-08-27"
+    },
+    "pros": [
+      "Réponses avec citations en ligne faciles à vérifier.",
+      "Deep Research pour explorer davantage de sources.",
+      "Computer pour planifier et exécuter des tâches.",
+      "Accès à plusieurs modèles avancés selon le plan.",
+      "Version gratuite utile pour la recherche essentielle."
+    ],
+    "pros_en": [
+      "Answers with inline citations that are easy to check.",
+      "Deep Research for exploring more sources.",
+      "Computer for planning and executing tasks.",
+      "Access to multiple advanced models depending on the plan.",
+      "A useful free tier for essential search."
+    ],
+    "short_description": "Recherche et assistant IA avec citations, Deep Research et exécution de tâches via Computer.",
+    "short_description_en": "AI search and assistant with citations, Deep Research, and task execution through Computer.",
+    "slug": "perplexity",
+    "source_url": "https://www.perplexity.ai/pro",
+    "source_verified_on": "2026-08-27",
+    "use_cases": [
+      "Faire des recherches sourcées pour des articles ou rapports.",
+      "Assurer une veille concurrentielle et comparer des offres.",
+      "Explorer un sujet en profondeur avec Deep Research.",
+      "Planifier des tâches ou produire des documents avec Computer."
+    ],
+    "use_cases_en": [
+      "Research with cited sources for articles or reports.",
+      "Run competitive monitoring and compare offers.",
+      "Explore a topic in depth with Deep Research.",
+      "Plan tasks or produce documents with Computer."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous avez besoin surtout d'un chatbot de productivité.",
+        "Votre budget est très serré.",
+        "Vous préférez un seul modèle IA plutôt que plusieurs."
+      ],
+      "keepIf": [
+        "Vous faites de la recherche régulière sur des sujets d'actualité.",
+        "Vous voulez des réponses récentes avec sources vérifiables.",
+        "Vous appréciez les fonctionnalités de recherche spécialisées (académique, Reddit, etc)."
+      ],
+      "threshold": "Perplexity excelle pour la recherche IA ; pour la productivité bureautique, un assistant dédié conviendrait mieux."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You primarily need an office productivity chatbot.",
+        "Your budget is very tight.",
+        "You prefer a single AI model over multiple."
+      ],
+      "keepIf": [
+        "You do regular research on current topics.",
+        "You want recent answers with verifiable sources.",
+        "You appreciate specialized search features (academic, Reddit, etc)."
+      ],
+      "threshold": "Perplexity excels at AI search; for office productivity, a dedicated assistant is better suited."
+    },
+    "website_url": "https://perplexity.ai"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Less focused on productivity than standard chat.",
+        "Max tier expensive for occasional use.",
+        "Learning Focus modes may be needed."
+      ],
+      "pros": [
+        "Real-time search with reliable sources.",
+        "Multiple Focus modes for context targeting.",
+        "Access to multiple frontier models (Max).",
+        "Custom Spaces for research projects.",
+        "Capable and free tier."
+      ],
+      "use_cases": [
+        "Research with cited sources for articles or reports.",
+        "Explore current topics with recent context.",
+        "Compare multiple AI models on same query (Max)."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You primarily need an office productivity chatbot.",
+          "Your budget is very tight.",
+          "You prefer a single AI model over multiple."
+        ],
+        "keepIf": [
+          "You do regular research on current topics.",
+          "You want recent answers with verifiable sources.",
+          "You appreciate specialized search features (academic, Reddit, etc)."
+        ],
+        "threshold": "Perplexity excels at AI search; for office productivity, a dedicated assistant is better suited."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Gratuit avec recherches illimitées, 6 modes Focus, Collections, Spaces avec limite de fichiers",
+        "exists": true
+      },
+      "key_features": [
+        "Recherche web en temps réel avec citations numérotées",
+        "6 modes Focus (Web, Académique, Reddit, YouTube, News, Wolfram Alpha)",
+        "Spaces personnalisés jusqu'à 50 fichiers (Pro) ou 5000 (Max)",
+        "Model Council (Max) : requête simultanée sur Claude Opus 4.6, GPT-5.2, Gemini 3 Pro",
+        "Crédits Perplexity Computer pour divers outils",
+        "Recherche multi-appareils synchronisée"
+      ],
+      "plans": [
+        {
+          "name": "Free",
+          "price": "Gratuit (recherches illimitées)"
+        },
+        {
+          "name": "Pro",
+          "price": "20 $/mois ou 200 $/an (200 $/an = 16,67 $/mois)"
+        },
+        {
+          "name": "Education Pro",
+          "price": "10 $/mois pour étudiants/professeurs vérifiés"
+        },
+        {
+          "name": "Max",
+          "price": "200 $/mois (pas de limites, Model Council)"
+        },
+        {
+          "name": "Enterprise Pro",
+          "price": "40 $/utilisateur/mois (400 $/an)"
+        }
+      ],
+      "pricing_model": "Freemium avec tiers payants",
+      "what": "Moteur de recherche IA avec réponses récentes, citations numérotées et fonctionnalités avancées comme Spaces personnalisés, recherche académique, et accès à plusieurs modèles frontier.",
+      "what_en": "AI search engine with real-time answers, numbered citations, and advanced features like custom Spaces, academic search, and access to multiple frontier models."
+    },
+    "fr": {
+      "cons": [
+        "Moins axé sur la productivité que le chat classique.",
+        "Max tier très coûteux pour usage occasionnel.",
+        "Apprentissage des modes Focus peut être nécessaire."
+      ],
+      "pros": [
+        "Recherche en temps réel avec sources fiables.",
+        "Multiples modes Focus pour ciblage du contexte.",
+        "Accès à plusieurs modèles frontier (Max).",
+        "Spaces personnalisés pour projets de recherche.",
+        "Version gratuite complète et compétente."
+      ],
+      "relevant_for": [
+        "Chercheurs",
+        "Journalistes",
+        "Professionnels en veille"
+      ],
+      "use_cases": [
+        "Faire des recherches avec sources citées pour articles ou rapports.",
+        "Explorer des sujets d'actualité avec contexte récent.",
+        "Comparer plusieurs modèles IA sur même requête (Max)."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous avez besoin surtout d'un chatbot de productivité.",
+          "Votre budget est très serré.",
+          "Vous préférez un seul modèle IA plutôt que plusieurs."
+        ],
+        "keepIf": [
+          "Vous faites de la recherche régulière sur des sujets d'actualité.",
+          "Vous voulez des réponses récentes avec sources vérifiables.",
+          "Vous appréciez les fonctionnalités de recherche spécialisées (académique, Reddit, etc)."
+        ],
+        "threshold": "Perplexity excelle pour la recherche IA ; pour la productivité bureautique, un assistant dédié conviendrait mieux."
+      }
+    },
+    "slug": "perplexity",
+    "sources": [
+      {
+        "label": "Perplexity AI (site officiel)",
+        "url": "https://perplexity.ai"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-ai-general-critical-002",
+    "batch_position": 10,
+    "blockers": [],
+    "catalog_hash": "sha256:6e10f51297e09ef003a6677147e2c16234d545f4e1485e3dd35c3fc68b4c3135",
+    "category": "ai-general",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:42726e7136a868e25861a1a2d6474e997ad908f34a3bbc492fea33cca8a8bb1d",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Perplexity",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:d1955cd58d641ec77d61858bf28e28dec8e68b68b730e27ab4adaf179b2a8d80",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "perplexity",
+    "source_url": "https://www.perplexity.ai/pro",
+    "source_verified_on": "2026-08-27",
+    "status": "QUEUED"
+  }
+}

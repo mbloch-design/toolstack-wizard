@@ -1,0 +1,266 @@
+{
+  "batch": "review-ai-general-critical-002",
+  "current": {
+    "affiliate_url": "https://www.tripo3d.ai",
+    "alternatives": [
+      "meshy",
+      "blender"
+    ],
+    "category": "ai-general",
+    "cons": [
+      "Qualité variable selon complexité de la description.",
+      "Moins de contrôle fin que sculpture traditionnelle.",
+      "Tarifs premium non publiés (sur demande)."
+    ],
+    "cons_en": [
+      "Quality variable based on description complexity.",
+      "Less fine control than traditional sculpting.",
+      "Premium pricing not published (on request)."
+    ],
+    "host_app": null,
+    "id": "tripo",
+    "long_description": "Tripo (Tripo AI), c'est le grand rival de Meshy dans la 3D générative : texte ou image vers modèle 3D texturé, en quelques secondes. Son atout principal, c'est le prix : un plan gratuit généreux pour expérimenter, et un Pro qui démarre à seulement 10$/mois, soit l'un des tickets d'entrée les plus bas du marché.\n\nLe niveau de qualité et les limites sont comparables à Meshy : génération rapide et impressionnante pour du prototypage, mais une topologie brute qui demande un nettoyage avant toute production sérieuse. C'est un point de départ, pas un asset final.\n\nPour ToolTrim, Tripo est l'autre référence du text-to-3D abordable, à mettre directement en balance avec Meshy. Les deux augmentent ton flux 3D (Blender, Cinema 4D, ZBrush) en te donnant une base à raffiner. Si le budget est le critère, Tripo prend l'avantage avec son entrée à 10$/mois.",
+    "long_description_en": "Tripo (Tripo AI) is Meshy's main rival in generative 3D: text or image to textured 3D model, in seconds. Its main edge is price: a generous free plan to experiment, and a Pro that starts at just $10/month, one of the lowest entry tickets on the market.\n\nQuality and limits are comparable to Meshy: fast, impressive generation for prototyping, but rough topology that needs cleanup before any serious production. It's a starting point, not a final asset.\n\nFor ToolTrim, Tripo is the other reference for affordable text-to-3D, to weigh directly against Meshy. Both augment your 3D flow (Blender, Cinema 4D, ZBrush) by giving you a base to refine. If budget is the criterion, Tripo takes the edge with its $10/month entry.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://tooltrim.com/og-screenshots/tripo.jpg"
+    },
+    "name": "Tripo",
+    "pricing": {
+      "free": "Gratuit (crédits limités, généreux)",
+      "paid": "Pro dès 10$/mois."
+    },
+    "pricing_en": {
+      "free": "Free (limited but generous credits)",
+      "paid": "Pro from $10/month."
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Plan gratuit généreux ; Pro dès 10$/mois"
+      ],
+      "compare_plan_kind": "subscription",
+      "compare_plan_name": "Pro (mensuel)",
+      "compare_price_monthly_eur": 10,
+      "location_sensitive": false,
+      "official_source_url": "https://www.tripo3d.ai",
+      "price_reliability": "high",
+      "source_domain": "tripo3d.ai",
+      "usage_sensitive": false,
+      "verification_status": "official_site_only",
+      "verified_on": "2026-06-17"
+    },
+    "pros": [
+      "Génération instantanée depuis texte ou image.",
+      "Deux modes de sortie (haute détail vs optimisé gaming).",
+      "Texturage et rigging automatiques.",
+      "Studio gratuit sans limite claire.",
+      "Utilisé par studios majeurs."
+    ],
+    "pros_en": [
+      "Instant generation from text or image.",
+      "Two output modes (high-detail vs game-optimized).",
+      "Automatic texturing and rigging.",
+      "Free studio without clear usage limits.",
+      "Used by major studios."
+    ],
+    "short_description": "Générateur 3D par IA (texte/image vers modèle), rapide et parmi les moins chers.",
+    "short_description_en": "AI 3D generator (text/image to model), fast and among the cheapest.",
+    "slug": "tripo",
+    "source_url": "https://www.tripo3d.ai",
+    "source_verified_on": "2026-06-17",
+    "use_cases": [
+      "Générer des modèles 3D pour jeux rapidement.",
+      "Créer des assets optimisés pour VR/AR.",
+      "Produire des modèles pour impression 3D."
+    ],
+    "use_cases_en": [
+      "Generate 3D models for games quickly.",
+      "Create optimized assets for VR/AR.",
+      "Produce models for 3D printing."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous créez des sculptures 3D ultra-complexes.",
+        "Vous avez besoin de contrôle architectural au pixel.",
+        "Vous travaillez uniquement en impression 3D fine-art."
+      ],
+      "keepIf": [
+        "Vous créez du contenu 3D pour jeux ou VR.",
+        "Vous avez besoin de modèles optimisés pour gaming.",
+        "Vous voulez accès gratuit sans abonnement immédiat."
+      ],
+      "threshold": "Tripo convient aux game devs et créateurs 3D rapides ; pour arts plastiques complexes, Blender/Maya demeurent référence."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You create ultra-complex 3D sculptures.",
+        "You need pixel-level architectural control.",
+        "You work only in fine-art 3D printing."
+      ],
+      "keepIf": [
+        "You create 3D content for games or VR.",
+        "You need game-optimized models.",
+        "You want free access without immediate subscription."
+      ],
+      "threshold": "Tripo suits game devs and fast 3D creators; for complex art, Blender/Maya remain reference."
+    },
+    "website_url": "https://www.tripo3d.ai"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Quality variable based on description complexity.",
+        "Less fine control than traditional sculpting.",
+        "Premium pricing not published (on request)."
+      ],
+      "pros": [
+        "Instant generation from text or image.",
+        "Two output modes (high-detail vs game-optimized).",
+        "Automatic texturing and rigging.",
+        "Free studio without clear usage limits.",
+        "Used by major studios."
+      ],
+      "use_cases": [
+        "Generate 3D models for games quickly.",
+        "Create optimized assets for VR/AR.",
+        "Produce models for 3D printing."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You create ultra-complex 3D sculptures.",
+          "You need pixel-level architectural control.",
+          "You work only in fine-art 3D printing."
+        ],
+        "keepIf": [
+          "You create 3D content for games or VR.",
+          "You need game-optimized models.",
+          "You want free access without immediate subscription."
+        ],
+        "threshold": "Tripo suits game devs and fast 3D creators; for complex art, Blender/Maya remain reference."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Tripo Studio gratuit (studio.tripo3d.ai) avec accès de base",
+        "exists": true
+      },
+      "key_features": [
+        "Génération texte-vers-3D et image-vers-3D instantanée",
+        "High Detail Model : jusqu'à 2M polygones pour rendering/VFX/impression 3D",
+        "Smart Mesh : mesh quad optimisés (500-50K polygones) pour jeux/VR/AR",
+        "Texturage IA et segmentation automatique",
+        "Rigging et stylisation de modèles",
+        "Utilisé par 20M+ créatifs, 200M+ modèles générés",
+        "Partenaires : Sony, NetEase Games, ByteDance, HTC"
+      ],
+      "plans": [
+        {
+          "name": "Tripo Studio Free",
+          "price": "Gratuit"
+        },
+        {
+          "name": "Premium Plans",
+          "price": "Montants sur la page officielle"
+        }
+      ],
+      "pricing_model": "Freemium avec accès studio gratuit",
+      "what": "Générateur de modèles 3D basé sur l'IA transformant des descriptions texte ou images en modèles 3D haute qualité ou optimisés pour jeux, avec texturage et rigging automatiques.",
+      "what_en": "AI 3D model generator converting text descriptions or images into high-quality or game-optimized 3D models with automatic texturing and rigging."
+    },
+    "fr": {
+      "cons": [
+        "Qualité variable selon complexité de la description.",
+        "Moins de contrôle fin que sculpture traditionnelle.",
+        "Tarifs premium non publiés (sur demande)."
+      ],
+      "pros": [
+        "Génération instantanée depuis texte ou image.",
+        "Deux modes de sortie (haute détail vs optimisé gaming).",
+        "Texturage et rigging automatiques.",
+        "Studio gratuit sans limite claire.",
+        "Utilisé par studios majeurs."
+      ],
+      "relevant_for": [
+        "Game developers",
+        "3D artists",
+        "VR/AR creators"
+      ],
+      "use_cases": [
+        "Générer des modèles 3D pour jeux rapidement.",
+        "Créer des assets optimisés pour VR/AR.",
+        "Produire des modèles pour impression 3D."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous créez des sculptures 3D ultra-complexes.",
+          "Vous avez besoin de contrôle architectural au pixel.",
+          "Vous travaillez uniquement en impression 3D fine-art."
+        ],
+        "keepIf": [
+          "Vous créez du contenu 3D pour jeux ou VR.",
+          "Vous avez besoin de modèles optimisés pour gaming.",
+          "Vous voulez accès gratuit sans abonnement immédiat."
+        ],
+        "threshold": "Tripo convient aux game devs et créateurs 3D rapides ; pour arts plastiques complexes, Blender/Maya demeurent référence."
+      }
+    },
+    "slug": "tripo",
+    "sources": [
+      {
+        "label": "Tripo — AI 3D Model Generator (site officiel)",
+        "url": "https://www.tripo3d.ai"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-ai-general-critical-002",
+    "batch_position": 18,
+    "blockers": [],
+    "catalog_hash": "sha256:27675059ce9c515cb8863f16c306e726e959042f6f89897bd478ceeaedaea1e4",
+    "category": "ai-general",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:c03eaac8025086fffcfa1bc3275b3b8292c5f684fba8dab9b38c1d2bf5551070",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Tripo",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:7cffffb82f4772d90fa04487beed77413992b462fced76173d00fd836c30e4ec",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "tripo",
+    "source_url": "https://www.tripo3d.ai",
+    "source_verified_on": "2026-06-17",
+    "status": "QUEUED"
+  }
+}

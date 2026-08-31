@@ -1,0 +1,252 @@
+{
+  "batch": "review-ai-general-critical-002",
+  "current": {
+    "affiliate_url": null,
+    "alternatives": [],
+    "category": "ai-general",
+    "cons": [
+      "Le palier Plus revient vite cher en équipe.",
+      "Overage pricing peut surprendre.",
+      "Courbe apprentissage UI."
+    ],
+    "cons_en": [
+      "The Plus tier adds up fast across a team.",
+      "Overage pricing can surprise.",
+      "UI learning curve."
+    ],
+    "host_app": null,
+    "id": "langsmith",
+    "long_description": "Debug, tracing et évaluation des applications LLM.",
+    "long_description_en": "Debugging, tracing, and evaluation for LLM applications.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/69a2224227e2e682a3a49a95_Website%20preview-LangSmith%20Platform%20Page-obs.png"
+    },
+    "name": "LangSmith",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "pricing_en": {
+      "free": "Free or open source depending on usage",
+      "paid": "Paid options may apply depending on hosting, team, or volume"
+    },
+    "pricing_v5": null,
+    "pros": [
+      "Observabilité complète pour LLM apps.",
+      "Debugging agents est très efficace.",
+      "Datasets d'évaluation bâtis automatiquement.",
+      "Developer free tier assez généreux."
+    ],
+    "pros_en": [
+      "Complete observability for LLM apps.",
+      "Agent debugging very efficient.",
+      "Evaluation datasets built automatically.",
+      "Developer free tier reasonably generous."
+    ],
+    "short_description": "Debug, tracing et évaluation des applications LLM.",
+    "short_description_en": "Debugging, tracing, and evaluation for LLM applications.",
+    "slug": "langsmith",
+    "source_url": "https://www.langchain.com/langsmith",
+    "source_verified_on": null,
+    "use_cases": [
+      "Monitorer performance chatbot production.",
+      "Optimiser prompts via versioning A/B.",
+      "Debugger agents complexes interactively."
+    ],
+    "use_cases_en": [
+      "Monitor production chatbot performance.",
+      "Optimize prompts via A/B versioning.",
+      "Debug complex agents interactively."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous prototypez en local (Developer suffisant).",
+        "Votre app LLM est stateless simple.",
+        "Vous prototypez localement et n'avez besoin que du palier Developer."
+      ],
+      "keepIf": [
+        "Vous deployez une app LLM production.",
+        "Vous debuggez agents ou chains complexes.",
+        "Votre LLM spend est > 1K $/mois (ROI obvie)."
+      ],
+      "threshold": "LangSmith se rentabilise dès que l'observabilité réduit sensiblement les coûts d'API ; pour du prototypage, le palier Developer gratuit suffit."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You prototype locally (free Developer ok).",
+        "Your LLM app is stateless simple.",
+        "You prototype locally and only need the free Developer tier."
+      ],
+      "keepIf": [
+        "You're deploying an LLM app to production.",
+        "You debug complex agents/chains.",
+        "Your LLM spend is > 1K $/month (ROI obvious)."
+      ],
+      "threshold": "LangSmith pays for itself once observability meaningfully cuts API costs; for prototyping, the free Developer tier suffices."
+    },
+    "website_url": "https://www.langchain.com/langsmith"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "The Plus tier adds up fast across a team.",
+        "Overage pricing can surprise.",
+        "UI learning curve."
+      ],
+      "pros": [
+        "Complete observability for LLM apps.",
+        "Agent debugging very efficient.",
+        "Evaluation datasets built automatically.",
+        "Developer free tier reasonably generous."
+      ],
+      "use_cases": [
+        "Monitor production chatbot performance.",
+        "Optimize prompts via A/B versioning.",
+        "Debug complex agents interactively."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You prototype locally (free Developer ok).",
+          "Your LLM app is stateless simple.",
+          "You prototype locally and only need the free Developer tier."
+        ],
+        "keepIf": [
+          "You're deploying an LLM app to production.",
+          "You debug complex agents/chains.",
+          "Your LLM spend is > 1K $/month (ROI obvious)."
+        ],
+        "threshold": "LangSmith pays for itself once observability meaningfully cuts API costs; for prototyping, the free Developer tier suffices."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Developer : 5K traces/mois, 1 user, 14-day retention. Suffisant local dev.",
+        "exists": true
+      },
+      "key_features": [
+        "Trace logging automatisé",
+        "Versioning et A/B test prompts",
+        "Datasets d'évaluation LLM",
+        "Monitoring latence/costs",
+        "Debugging agents interactif"
+      ],
+      "plans": [
+        {
+          "name": "Developer",
+          "price": "0 $ (5K traces/mois)"
+        },
+        {
+          "name": "Plus",
+          "price": "39 $/seat/mois (100K traces, 400-day retention)"
+        },
+        {
+          "name": "Enterprise",
+          "price": "Custom (self-hosting, SLA)"
+        },
+        {
+          "name": "Overage",
+          "price": "2,50-5 $/1K traces (retention dépend)"
+        }
+      ],
+      "pricing_model": "Developer gratuit (5K traces/mois), Plus (39 $/seat/mois), Enterprise custom. Overage : 2,50-5 $/1K traces selon retention.",
+      "what": "Plateforme observabilité et evaluation pour apps LLM : logging traces, versioning prompts, datasets d'évaluation, monitoring performance, et debugging agents. Complément LangChain.",
+      "what_en": "Observability and evaluation platform for LLM apps: trace logging, prompt versioning, evaluation datasets, performance monitoring, and agent debugging. LangChain complement."
+    },
+    "fr": {
+      "cons": [
+        "Le palier Plus revient vite cher en équipe.",
+        "Overage pricing peut surprendre.",
+        "Courbe apprentissage UI."
+      ],
+      "pros": [
+        "Observabilité complète pour LLM apps.",
+        "Debugging agents est très efficace.",
+        "Datasets d'évaluation bâtis automatiquement.",
+        "Developer free tier assez généreux."
+      ],
+      "relevant_for": [
+        "Équipes AI production",
+        "Ingénieros LLM",
+        "Data/ML teams"
+      ],
+      "use_cases": [
+        "Monitorer performance chatbot production.",
+        "Optimiser prompts via versioning A/B.",
+        "Debugger agents complexes interactively."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous prototypez en local (Developer suffisant).",
+          "Votre app LLM est stateless simple.",
+          "Vous prototypez localement et n'avez besoin que du palier Developer."
+        ],
+        "keepIf": [
+          "Vous deployez une app LLM production.",
+          "Vous debuggez agents ou chains complexes.",
+          "Votre LLM spend est > 1K $/mois (ROI obvie)."
+        ],
+        "threshold": "LangSmith se rentabilise dès que l'observabilité réduit sensiblement les coûts d'API ; pour du prototypage, le palier Developer gratuit suffit."
+      }
+    },
+    "slug": "langsmith",
+    "sources": [
+      {
+        "label": "LangSmith — LLM observability et pricing (site officiel)",
+        "url": "https://www.langchain.com/langsmith"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-ai-general-critical-002",
+    "batch_position": 25,
+    "blockers": [],
+    "catalog_hash": "sha256:ee8f355d7c9e95d84f8ec23a58254f5ee22d44bd1fd2fe451aebc06461c128db",
+    "category": "ai-general",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:91948ff162181d35f23bf854481af32f66ec627d3d351dab54b8419fe68e0150",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "LangSmith",
+    "next_review_at": null,
+    "priority_reasons": [
+      "paid_price",
+      "missing_or_invalid_media_evidence",
+      "shallow_editorial",
+      "undated_source"
+    ],
+    "priority_score": 195,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:847019b7021f1dd0f823a659c9bb4a5f59766e803dd893eb05e1ca1cb929f6fe",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "langsmith",
+    "source_url": "https://www.langchain.com/langsmith",
+    "source_verified_on": null,
+    "status": "QUEUED"
+  }
+}

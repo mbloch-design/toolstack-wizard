@@ -1,0 +1,289 @@
+{
+  "batch": "review-ai-general-critical-002",
+  "current": {
+    "affiliate_url": "https://topazlabs.com/topaz-video-ai",
+    "alternatives": [
+      "davinci-resolve",
+      "adobe-premiere-pro",
+      "runway"
+    ],
+    "category": "ai-general",
+    "cons": [
+      "Abonnement uniquement, aucune licence perpétuelle affichée.",
+      "Traitement très gourmand : nécessite une machine puissante (GPU).",
+      "Outil d'amélioration, pas de montage : à combiner avec un éditeur."
+    ],
+    "cons_en": [
+      "Subscription only, no perpetual license shown.",
+      "Very compute-heavy: needs a powerful machine (GPU).",
+      "An enhancement tool, not an editor: pair it with a video editor."
+    ],
+    "host_app": null,
+    "id": "topaz-video-ai",
+    "long_description": "Topaz Video est spécialisé dans l'amélioration vidéo par IA : upscaling, débruitage, stabilisation, interpolation d'images et restauration de séquences anciennes. Les traitements s'exécutent en local et le plan personnel autorise un rendu local illimité, ce qui convient aux rushes sensibles ou aux volumes importants.\n\nPour les nouveaux clients, Topaz Video est désormais vendu par abonnement. L'offre personnelle coûte 299$ par an en paiement annuel, 39$ par mois avec engagement annuel, ou 59$ sans engagement. Il n'existe plus de licence perpétuelle affichée pour ce produit.\n\nL'investissement se justifie pour une utilisation récurrente en postproduction et avec un GPU suffisamment puissant. Pour une restauration ponctuelle, les fonctions intégrées d'un logiciel de montage ou un service facturé à l'usage seront souvent plus rationnels.",
+    "long_description_en": "Topaz Video specializes in AI video enhancement: upscaling, denoising, stabilization, frame interpolation and restoration of older footage. Processing runs locally, and the personal plan includes unlimited local rendering, which suits sensitive footage and heavier workloads.\n\nFor new customers, Topaz Video is now subscription only. The personal plan costs $299 per year when prepaid, $39 per month with an annual commitment, or $59 month to month. No perpetual license is currently listed for this product.\n\nThe investment makes sense for recurring post-production work and a machine with a capable GPU. For a one-off restoration, built-in editor features or a usage-based service will often be more economical.",
+    "media": {
+      "gallery_images": [
+        "/tool-media/topaz-video-ai/precision-before.webp",
+        "/tool-media/topaz-video-ai/precision-after.webp"
+      ],
+      "og_image_url": "/tool-media/topaz-video-ai/interface.webp"
+    },
+    "name": "Topaz Video AI",
+    "pricing": {
+      "free": "",
+      "paid": "299$/an, 39$/mois avec engagement annuel, ou 59$/mois sans engagement"
+    },
+    "pricing_en": {
+      "free": "",
+      "paid": "$299/year, $39/month with annual commitment, or $59 month to month"
+    },
+    "pricing_v5": {
+      "billing_model": "subscription",
+      "billing_options": [
+        {
+          "currency": "USD",
+          "label_en": "Annual prepaid",
+          "label_fr": "Annuel prépayé",
+          "price_monthly_eur": 21.4,
+          "price_original": 299,
+          "value": "annual"
+        },
+        {
+          "label_en": "Already bought",
+          "label_fr": "Déjà acheté",
+          "price_monthly_eur": 0,
+          "value": "included"
+        },
+        {
+          "label_en": "I don’t know",
+          "label_fr": "Je ne sais pas",
+          "needs_verification": true,
+          "value": "unknown"
+        }
+      ],
+      "cautions": [
+        "Prix hors taxes éventuelles ; vérifier le tarif local avant achat"
+      ],
+      "compare_plan_kind": "individual",
+      "compare_plan_name": "Topaz Video annual",
+      "compare_price_monthly_eur": 21.4,
+      "currency": "USD",
+      "location_sensitive": true,
+      "official_source_url": "https://www.topazlabs.com/pricing",
+      "price_original": 299,
+      "price_original_currency": "USD",
+      "price_reliability": "high",
+      "source_domain": "topazlabs.com",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-08-29"
+    },
+    "pros": [
+      "Upscaling et restauration vidéo par IA parmi les plus aboutis.",
+      "Interpolation d'images pour des ralentis fluides.",
+      "Traitement en local (pas d'envoi de vidéos dans le cloud).",
+      "Débruitage et stabilisation intégrés."
+    ],
+    "pros_en": [
+      "Some of the most advanced AI video upscaling and restoration.",
+      "Frame interpolation for smooth slow motion.",
+      "Local processing (no uploading videos to the cloud).",
+      "Built-in denoise and stabilisation."
+    ],
+    "short_description": "Restauration, débruitage, stabilisation et upscaling vidéo avec plus de 20 modèles IA.",
+    "short_description_en": "Video restoration, denoising, stabilization and upscaling with more than 20 AI models.",
+    "slug": "topaz-video-ai",
+    "source_url": "https://www.topazlabs.com/pricing",
+    "source_verified_on": "2026-08-29",
+    "use_cases": [
+      "Upscaler d'anciennes vidéos vers une résolution plus élevée.",
+      "Créer un ralenti fluide à partir d'une séquence standard.",
+      "Débruiter et stabiliser des rushes tournés en basse lumière."
+    ],
+    "use_cases_en": [
+      "Upscale old videos to a higher resolution.",
+      "Create smooth slow motion from standard footage.",
+      "Denoise and stabilise low-light rushes."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Votre besoin est ponctuel et l'abonnement n'est pas rentable.",
+        "Vous n'avez pas de machine assez puissante (traitement gourmand en GPU).",
+        "De simples retouches suffisent : ce n'est pas un outil de montage."
+      ],
+      "keepIf": [
+        "Vous devez améliorer, restaurer ou upscaler des vidéos (montée en résolution, débruitage).",
+        "Vous voulez créer des ralentis fluides par interpolation d'images.",
+        "Vous préférez un traitement en local sur votre machine plutôt qu'un service cloud."
+      ],
+      "threshold": "Topaz Video AI s'impose quand l'amélioration/restauration vidéo par IA est un besoin récurrent et que vous disposez d'une machine capable ; pour un besoin ponctuel ou léger, l'abonnement et la charge GPU sont difficiles à justifier."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "Your need is occasional and the subscription isn't worth it.",
+        "You lack a powerful enough machine (GPU-heavy processing).",
+        "Simple retouching is enough: this is not an editor."
+      ],
+      "keepIf": [
+        "You need to enhance, restore or upscale video (resolution, denoise).",
+        "You want smooth slow motion via frame interpolation.",
+        "You prefer local processing on your machine over a cloud service."
+      ],
+      "threshold": "Topaz Video AI makes sense when AI video enhancement/restoration is a recurring need and you have a capable machine; for occasional or light needs, the subscription and GPU load are hard to justify."
+    },
+    "website_url": "https://topazlabs.com/topaz-video-ai"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Subscription only, no perpetual license shown.",
+        "Very compute-heavy: needs a powerful machine (GPU).",
+        "An enhancement tool, not an editor: pair it with a video editor."
+      ],
+      "pros": [
+        "Some of the most advanced AI video upscaling and restoration.",
+        "Frame interpolation for smooth slow motion.",
+        "Local processing (no uploading videos to the cloud).",
+        "Built-in denoise and stabilisation."
+      ],
+      "use_cases": [
+        "Upscale old videos to a higher resolution.",
+        "Create smooth slow motion from standard footage.",
+        "Denoise and stabilise low-light rushes."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Your need is occasional and the subscription isn't worth it.",
+          "You lack a powerful enough machine (GPU-heavy processing).",
+          "Simple retouching is enough: this is not an editor."
+        ],
+        "keepIf": [
+          "You need to enhance, restore or upscale video (resolution, denoise).",
+          "You want smooth slow motion via frame interpolation.",
+          "You prefer local processing on your machine over a cloud service."
+        ],
+        "threshold": "Topaz Video AI makes sense when AI video enhancement/restoration is a recurring need and you have a capable machine; for occasional or light needs, the subscription and GPU load are hard to justify."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Essai possible selon l'éditeur ; traitement en local sur la machine.",
+        "exists": false
+      },
+      "key_features": [
+        "Upscaling vidéo (montée en résolution jusqu'à 4K+)",
+        "Interpolation d'images (ralentis fluides)",
+        "Débruitage et restauration de séquences",
+        "Stabilisation après tournage"
+      ],
+      "plans": [
+        {
+          "name": "Personal",
+          "price": "25 $/mois (annuel) ou 39 $/mois (mensuel)"
+        },
+        {
+          "name": "Pro",
+          "price": "58 $/mois (annuel) ou 74 $/mois (mensuel)"
+        }
+      ],
+      "pricing_model": "Abonnement (mensuel ou annuel). Plans Personal et Pro ; inclus dans Topaz Studio. Aucune licence perpétuelle affichée.",
+      "what": "Logiciel de bureau (Mac/Windows) d'amélioration vidéo par IA : upscaling, débruitage, interpolation et stabilisation.",
+      "what_en": "Desktop software (Mac/Windows) for AI video enhancement: upscaling, denoising, interpolation, and stabilization."
+    },
+    "fr": {
+      "cons": [
+        "Abonnement uniquement, aucune licence perpétuelle affichée.",
+        "Traitement très gourmand : nécessite une machine puissante (GPU).",
+        "Outil d'amélioration, pas de montage : à combiner avec un éditeur."
+      ],
+      "pros": [
+        "Upscaling et restauration vidéo par IA parmi les plus aboutis.",
+        "Interpolation d'images pour des ralentis fluides.",
+        "Traitement en local (pas d'envoi de vidéos dans le cloud).",
+        "Débruitage et stabilisation intégrés."
+      ],
+      "relevant_for": [
+        "Vidéastes",
+        "Monteurs",
+        "Studios de post-production"
+      ],
+      "use_cases": [
+        "Upscaler d'anciennes vidéos vers une résolution plus élevée.",
+        "Créer un ralenti fluide à partir d'une séquence standard.",
+        "Débruiter et stabiliser des rushes tournés en basse lumière."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Votre besoin est ponctuel et l'abonnement n'est pas rentable.",
+          "Vous n'avez pas de machine assez puissante (traitement gourmand en GPU).",
+          "De simples retouches suffisent : ce n'est pas un outil de montage."
+        ],
+        "keepIf": [
+          "Vous devez améliorer, restaurer ou upscaler des vidéos (montée en résolution, débruitage).",
+          "Vous voulez créer des ralentis fluides par interpolation d'images.",
+          "Vous préférez un traitement en local sur votre machine plutôt qu'un service cloud."
+        ],
+        "threshold": "Topaz Video AI s'impose quand l'amélioration/restauration vidéo par IA est un besoin récurrent et que vous disposez d'une machine capable ; pour un besoin ponctuel ou léger, l'abonnement et la charge GPU sont difficiles à justifier."
+      }
+    },
+    "slug": "topaz-video-ai",
+    "sources": [
+      {
+        "label": "Page produit officielle Topaz Video AI",
+        "url": "https://www.topazlabs.com/topaz-video-ai"
+      }
+    ],
+    "verified_on": "2026-07-23"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-ai-general-critical-002",
+    "batch_position": 17,
+    "blockers": [],
+    "catalog_hash": "sha256:a8a32a3146e3eabb62ea67fbcccb59ae0a2071b99e20f727989f4f9c2587efd6",
+    "category": "ai-general",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:092f3a37738bc220f319a220d071e0233675f3706f3f0ccace4bc40b2d474155",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Topaz Video AI",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:bf494183987c910771a787a2eacd09cf5f44d15d5fc7c126c0c32e9314220e51",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "topaz-video-ai",
+    "source_url": "https://www.topazlabs.com/pricing",
+    "source_verified_on": "2026-08-29",
+    "status": "QUEUED"
+  }
+}

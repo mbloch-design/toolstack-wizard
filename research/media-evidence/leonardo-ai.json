@@ -1,0 +1,21 @@
+{
+  "slug": "leonardo-ai",
+  "verified_on": "2026-08-31",
+  "mode": "fallback_screenshot",
+  "discovery": {
+    "official_media_found": false,
+    "official_pages_checked": [
+      "https://leonardo.ai"
+    ]
+  },
+  "items": [
+    {
+      "kind": "screenshot",
+      "url": "/og-screenshots/leonardo-ai.jpg",
+      "source_page_url": "https://leonardo.ai",
+      "official": false,
+      "alt": "Leonardo AI official product preview",
+      "capture_method": "browser_screenshot"
+    }
+  ]
+}

@@ -4,7 +4,9 @@
   "mode": "sourced",
   "discovery": {
     "official_media_found": true,
-    "official_pages_checked": ["https://www.meshy.ai"]
+    "official_pages_checked": [
+      "https://www.meshy.ai"
+    ]
   },
   "items": [
     {
@@ -12,28 +14,28 @@
       "url": "https://cdn.meshy.ai/ti_w%3A3840%2Cq%3A75%2Cf%3Awebp/landing-assets/home/landing_home_hero_model_1.png",
       "source_page_url": "https://www.meshy.ai",
       "official": true,
-      "alt": "Personnage 3D généré avec Meshy"
+      "alt": "Meshy official product preview"
     },
     {
       "kind": "image",
       "url": "https://cdn.meshy.ai/ti_w%3A3840%2Cq%3A75%2Cf%3Awebp/landing-assets/home/bg_landing_home_image3d_UI.png",
       "source_page_url": "https://www.meshy.ai",
       "official": true,
-      "alt": "Interface Image to 3D de Meshy"
+      "alt": "Meshy official product preview"
     },
     {
       "kind": "image",
       "url": "https://cdn.meshy.ai/webapp-build-assets/production/_next/static/media/model_2.40grweusf_nc8.webp",
       "source_page_url": "https://www.meshy.ai",
       "official": true,
-      "alt": "Exemple de modèle 3D produit avec Meshy"
+      "alt": "Meshy official product preview"
     },
     {
       "kind": "image",
       "url": "https://cdn.meshy.ai/ti_w%3A3840%2Cq%3A75%2Cf%3Awebp/landing-assets/home/landing_3D_printing_5.png",
       "source_page_url": "https://www.meshy.ai",
       "official": true,
-      "alt": "Contrôle de maillage pour impression 3D dans Meshy"
+      "alt": "Meshy official product preview"
     }
   ]
 }

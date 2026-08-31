@@ -1,0 +1,34 @@
+{
+  "slug": "zed",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://zed.dev/"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://zed.dev/cdn-cgi/image/width=2048,quality=75,format=auto/img/parallel-agents/sidebar.webp",
+      "source_page_url": "https://zed.dev/",
+      "official": true,
+      "alt": "Zed official product preview"
+    },
+    {
+      "kind": "image",
+      "url": "https://zed.dev/cdn-cgi/image/width=2048,quality=75,format=auto/https://images.zed.dev/video-posters/debugger.webp",
+      "source_page_url": "https://zed.dev/",
+      "official": true,
+      "alt": "Zed official product preview"
+    },
+    {
+      "kind": "image",
+      "url": "https://zed.dev/cdn-cgi/image/width=2048,quality=75,format=auto/https://images.zed.dev/video-posters/agent.webp",
+      "source_page_url": "https://zed.dev/",
+      "official": true,
+      "alt": "Zed official product preview"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "slug": "pika-labs",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://pika.art"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://pika.art/_next/image?url=%2Fimages%2Flanding%2Fapi-club-banner-bg.webp&w=3840&q=75",
+      "source_page_url": "https://pika.art",
+      "official": true,
+      "alt": "Pika Labs official product preview"
+    },
+    {
+      "kind": "image",
+      "url": "https://pika.art/images/og.jpeg",
+      "source_page_url": "https://pika.art",
+      "official": true,
+      "alt": "Official product preview"
+    }
+  ]
+}

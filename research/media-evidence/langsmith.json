@@ -1,0 +1,41 @@
+{
+  "slug": "langsmith",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://www.langchain.com/langsmith"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/69a5c46ca3220abe59789f08_Observ_hero%20-%20default.avif",
+      "source_page_url": "https://www.langchain.com/langsmith",
+      "official": true,
+      "alt": "LangSmith official product preview"
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/69a5c46d42f7f95e74f9c2f8_Observ_hero%20-%20hover.avif",
+      "source_page_url": "https://www.langchain.com/langsmith",
+      "official": true,
+      "alt": "LangSmith official product preview"
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/69932430916ccb44cfd9c6e8_tracing_default.avif",
+      "source_page_url": "https://www.langchain.com/langsmith",
+      "official": true,
+      "alt": "LangSmith official product preview"
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/69932430a073663596eca46d_monitoring_default.avif",
+      "source_page_url": "https://www.langchain.com/langsmith",
+      "official": true,
+      "alt": "LangSmith official product preview"
+    }
+  ]
+}

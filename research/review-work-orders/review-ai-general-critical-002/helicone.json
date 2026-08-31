@@ -1,0 +1,252 @@
+{
+  "batch": "review-ai-general-critical-002",
+  "current": {
+    "affiliate_url": null,
+    "alternatives": [],
+    "category": "ai-general",
+    "cons": [
+      "Projet en maintenance-mode depuis mars 2026.",
+      "Équipe réduite post-acquisition.",
+      "Alternatives plus actives émergentes."
+    ],
+    "cons_en": [
+      "Project in maintenance mode since March 2026.",
+      "Reduced team post-acquisition.",
+      "More active alternatives emerging."
+    ],
+    "host_app": null,
+    "id": "helicone",
+    "long_description": "Observabilité LLM : coûts, latence, prompts, logs et monitoring.",
+    "long_description_en": "LLM observability: costs, latency, prompts, logs, and monitoring.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://www.helicone.ai/static/new-open-graph.png"
+    },
+    "name": "Helicone",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "pricing_en": {
+      "free": "Free or open source depending on usage",
+      "paid": "Paid options may apply depending on hosting, team, or volume"
+    },
+    "pricing_v5": null,
+    "pros": [
+      "Open-source (MIT) pour self-hosted.",
+      "Gateway pass-through (300+ modèles).",
+      "Cost tracking détaillé.",
+      "Caching et optimisations."
+    ],
+    "pros_en": [
+      "Open-source (MIT) for self-hosting.",
+      "Gateway pass-through (300+ models).",
+      "Detailed cost tracking.",
+      "Caching and optimizations."
+    ],
+    "short_description": "Observabilité LLM : coûts, latence, prompts, logs et monitoring.",
+    "short_description_en": "LLM observability: costs, latency, prompts, logs, and monitoring.",
+    "slug": "helicone",
+    "source_url": "https://www.helicone.ai",
+    "source_verified_on": null,
+    "use_cases": [
+      "Tracer coûts API LLM en prod.",
+      "Monitorer latence et erreurs.",
+      "A/B test modèles et prompts."
+    ],
+    "use_cases_en": [
+      "Track LLM API costs in production.",
+      "Monitor latency and errors.",
+      "A/B test models and prompts."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous n'avez pas d'app LLM deployée.",
+        "Le projet Helicone est en maintenance (depuis mars 2026).",
+        "Vous n'avez pas d'application LLM deployée en production."
+      ],
+      "keepIf": [
+        "Vous déployez des apps LLM en production.",
+        "Vous voulez tracer coûts et performance.",
+        "Vous préférez les solutions open-source."
+      ],
+      "threshold": "Helicone était standard pour observabilité LLM ; depuis acquisition par Mintlify (mars 2026), préférez alternatives actives."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You don't have an LLM app deployed.",
+        "The Helicone project is in maintenance (since March 2026).",
+        "You don't have a production LLM application deployed."
+      ],
+      "keepIf": [
+        "You deploy LLM apps to production.",
+        "You want to track costs and performance.",
+        "You prefer open-source solutions."
+      ],
+      "threshold": "Helicone was standard for LLM observability; since Mintlify acquisition (March 2026), prefer active alternatives."
+    },
+    "website_url": "https://www.helicone.ai"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Project in maintenance mode since March 2026.",
+        "Reduced team post-acquisition.",
+        "More active alternatives emerging."
+      ],
+      "pros": [
+        "Open-source (MIT) for self-hosting.",
+        "Gateway pass-through (300+ models).",
+        "Detailed cost tracking.",
+        "Caching and optimizations."
+      ],
+      "use_cases": [
+        "Track LLM API costs in production.",
+        "Monitor latency and errors.",
+        "A/B test models and prompts."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You don't have an LLM app deployed.",
+          "The Helicone project is in maintenance (since March 2026).",
+          "You don't have a production LLM application deployed."
+        ],
+        "keepIf": [
+          "You deploy LLM apps to production.",
+          "You want to track costs and performance.",
+          "You prefer open-source solutions."
+        ],
+        "threshold": "Helicone was standard for LLM observability; since Mintlify acquisition (March 2026), prefer active alternatives."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Gratuit cloud : 50K observations/mois ; self-hosted open-source gratuit.",
+        "exists": true
+      },
+      "key_features": [
+        "Gateway proxy pass-through (300+ modèles)",
+        "Cost tracking et analytics",
+        "Prompt/completion logging",
+        "Caching et rate-limiting",
+        "Evaluations et A/B testing"
+      ],
+      "plans": [
+        {
+          "name": "Hobby (Free)",
+          "price": "0 $ (50K observations)"
+        },
+        {
+          "name": "Core / Pro",
+          "price": "79 $/mois (1M observations) ou custom"
+        },
+        {
+          "name": "Self-hosted (OSS)",
+          "price": "Gratuit (MIT license)"
+        },
+        {
+          "name": "Frais platform",
+          "price": "5,5 % sur pass-through pricing"
+        }
+      ],
+      "pricing_model": "Cloud managée : tier gratuit (50K obs), Core plan et pay-as-you-go. Frais 5,5 % sur pass-through pricing. Open-source self-hosted gratuit.",
+      "what": "Plateforme d'observabilité LLM : logging, coûts, latence, prompt/completion analysis, evaluations, caching. Gateway proxy ou intégration native. Open-source et cloud gérée. Depuis mars 2026 : maintenance-mode (racheté par Mintlify).",
+      "what_en": "LLM observability platform: logging, costs, latency, prompt/completion analysis, evaluations, caching. Proxy gateway or native integration. Open-source and managed cloud. Since March 2026: maintenance mode (acquired by Mintlify)."
+    },
+    "fr": {
+      "cons": [
+        "Projet en maintenance-mode depuis mars 2026.",
+        "Équipe réduite post-acquisition.",
+        "Alternatives plus actives émergentes."
+      ],
+      "pros": [
+        "Open-source (MIT) pour self-hosted.",
+        "Gateway pass-through (300+ modèles).",
+        "Cost tracking détaillé.",
+        "Caching et optimisations."
+      ],
+      "relevant_for": [
+        "Ingénieros LLM",
+        "Startups AI",
+        "Équipes ML ops"
+      ],
+      "use_cases": [
+        "Tracer coûts API LLM en prod.",
+        "Monitorer latence et erreurs.",
+        "A/B test modèles et prompts."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous n'avez pas d'app LLM deployée.",
+          "Le projet Helicone est en maintenance (depuis mars 2026).",
+          "Vous n'avez pas d'application LLM deployée en production."
+        ],
+        "keepIf": [
+          "Vous déployez des apps LLM en production.",
+          "Vous voulez tracer coûts et performance.",
+          "Vous préférez les solutions open-source."
+        ],
+        "threshold": "Helicone était standard pour observabilité LLM ; depuis acquisition par Mintlify (mars 2026), préférez alternatives actives."
+      }
+    },
+    "slug": "helicone",
+    "sources": [
+      {
+        "label": "Helicone — LLM observability (site officiel)",
+        "url": "https://www.helicone.ai"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-ai-general-critical-002",
+    "batch_position": 22,
+    "blockers": [],
+    "catalog_hash": "sha256:f26ba2137b17ca100aba0cff52b627cf4106d2c43b09a7585628a942516021f1",
+    "category": "ai-general",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:a0fc999f24d96b7c48a112d674cdbb8e8ebf443f89d74d4fda9ee6345bb240f2",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Helicone",
+    "next_review_at": null,
+    "priority_reasons": [
+      "paid_price",
+      "missing_or_invalid_media_evidence",
+      "shallow_editorial",
+      "undated_source"
+    ],
+    "priority_score": 195,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:94ade8ccd172eaeb54d2fd5731424e0c962d6e5a0a91a56faac9a705f356d104",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "helicone",
+    "source_url": "https://www.helicone.ai",
+    "source_verified_on": null,
+    "status": "QUEUED"
+  }
+}

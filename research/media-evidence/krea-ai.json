@@ -1,0 +1,20 @@
+{
+  "slug": "krea-ai",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://krea.ai"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://s.krea.ai/KreaOpenGraph2.webp",
+      "source_page_url": "https://krea.ai",
+      "official": true,
+      "alt": "Krea AI official product preview"
+    }
+  ]
+}

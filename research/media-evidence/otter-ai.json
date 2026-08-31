@@ -1,0 +1,41 @@
+{
+  "slug": "otter-ai",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://otter.ai"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://cdn.prod.website-files.com/618e9316785b3582a5178502/67e18e5721ebc3692a58387d_618e9316785b3582a5178502_67d99b7c978ce7b1089828f4_Otter%20-%20Landing%20Video%201x1-poster-00001.jpg",
+      "source_page_url": "https://otter.ai",
+      "official": true,
+      "alt": "Otter.ai official product preview"
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.prod.website-files.com/618e9316785b3582a5178502/67db8d0b77f6c3eb435214cc_397f63dc4ab563ff369504b311566798_questions-when%402x.avif",
+      "source_page_url": "https://otter.ai",
+      "official": true,
+      "alt": "Otter.ai official product preview"
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.prod.website-files.com/618e9316785b3582a5178502/69efd6421d22145e7e71d32d_8bb7ffcbd5ffe595b266f99c77401e94_otter-desktop-app-card.png",
+      "source_page_url": "https://otter.ai",
+      "official": true,
+      "alt": "Otter.ai official product preview"
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.prod.website-files.com/618e9316785b3582a5178502/67dd5a945aeed07e329d4e10_og-image-otter-optim.jpg",
+      "source_page_url": "https://otter.ai",
+      "official": true,
+      "alt": "Otter.ai official product preview"
+    }
+  ]
+}

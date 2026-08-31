@@ -1,0 +1,267 @@
+{
+  "batch": "review-ai-general-critical-002",
+  "current": {
+    "affiliate_url": "https://tabnine.com",
+    "alternatives": [],
+    "category": "ai-general",
+    "cons": [
+      "Tarification détails non publiés (sur demande).",
+      "Courbe d'apprentissage pour features avancées.",
+      "Nécessite configuration d'équipe pour full value."
+    ],
+    "cons_en": [
+      "Pricing details not published (on request).",
+      "Learning curve for advanced features.",
+      "Requires team setup for full value."
+    ],
+    "host_app": null,
+    "id": "tabnine",
+    "long_description": "Tabnine, c'est assistant de code IA avec modèle privé — pour les équipes soucieuses de confidentialité. À partir de 10.39€/mois. Pensé pour les développeurs solo et les CTOs et leads tech.\n\nGain de temps estimé : 5h/mois.\n\nÀ garder si : équipe avec contraintes de confidentialité strictes (pas de cloud). À éviter si : gitHub Copilot ou Cursor déjà en place — doublon. Pertinent uniquement si la conformité RGPD est une contrainte forte. Si le budget le permet, cursor va plus loin.",
+    "long_description_en": "Tabnine is aI code assistant with private model — for privacy-conscious teams. Starting at €10.39/month. Built for solo developers and CTOs and tech leads.\n\nEstimated time saving: 5h/month.\n\nIf budget allows, cursor goes further.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://tooltrim.com/og-screenshots/tabnine.jpg"
+    },
+    "name": "Tabnine",
+    "pricing": {
+      "free": "Modèle basique gratuit",
+      "paid": "12$/mois (Pro)"
+    },
+    "pricing_en": null,
+    "pricing_v5": {
+      "cautions": [],
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Entry paid plan",
+      "compare_price_monthly_eur": 10.39,
+      "location_sensitive": false,
+      "official_source_url": "https://tabnine.com",
+      "price_reliability": "low",
+      "source_domain": "tabnine.com",
+      "usage_sensitive": false,
+      "verification_status": "official_site_only",
+      "verified_on": "2026-03-13"
+    },
+    "pros": [
+      "Auto-complétion très rapide et contextuelle.",
+      "Multi-LLM pour flexibilité.",
+      "Enterprise Context Engine pour standardisation.",
+      "Zero data retention optionnel.",
+      "Reconnaissance par Gartner 2025.",
+      "CLI et IDE integrations complètes."
+    ],
+    "pros_en": [
+      "Fast and contextual code completion.",
+      "Multi-LLM for flexibility.",
+      "Enterprise Context Engine for standardization.",
+      "Optional zero data retention.",
+      "Gartner recognition 2025.",
+      "Complete CLI and IDE integrations."
+    ],
+    "short_description": "Assistant de code IA avec modèle privé — pour les équipes soucieuses de confidentialité.",
+    "short_description_en": "AI code assistant with private model — for privacy-conscious teams.",
+    "slug": "tabnine",
+    "source_url": "https://tabnine.com",
+    "source_verified_on": "2026-03-13",
+    "use_cases": [
+      "Accélérer l'écriture de code quotidienne.",
+      "Générer du code standardisé conforme aux patterns d'équipe.",
+      "Réduire le temps sur tâches répétitives de code."
+    ],
+    "use_cases_en": [
+      "Accelerate daily code writing.",
+      "Generate standardized code compliant with team patterns.",
+      "Reduce time on repetitive coding tasks."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous programmez très occasionnellement.",
+        "Vous avez des exigences de confidentialité strictes.",
+        "Vous préférez un seul outil IA généraliste."
+      ],
+      "keepIf": [
+        "Vous programmez quotidiennement (Python, JavaScript, etc).",
+        "Vous voulez accélérer l'écriture de code.",
+        "Vous appréciez une IA adaptée aux standards de votre équipe."
+      ],
+      "threshold": "Tabnine s'impose pour développeurs ; pour usage ponctuel ou non-dev, un assistant textuel généraliste suffira."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You code very occasionally.",
+        "You have strict confidentiality requirements.",
+        "You prefer a single generalist AI tool."
+      ],
+      "keepIf": [
+        "You code daily (Python, JavaScript, etc).",
+        "You want to accelerate code writing.",
+        "You appreciate AI adapted to team standards."
+      ],
+      "threshold": "Tabnine suits developers; for occasional use or non-dev, a generalist text assistant suffices."
+    },
+    "website_url": "https://tabnine.com"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Pricing details not published (on request).",
+        "Learning curve for advanced features.",
+        "Requires team setup for full value."
+      ],
+      "pros": [
+        "Fast and contextual code completion.",
+        "Multi-LLM for flexibility.",
+        "Enterprise Context Engine for standardization.",
+        "Optional zero data retention.",
+        "Gartner recognition 2025.",
+        "Complete CLI and IDE integrations."
+      ],
+      "use_cases": [
+        "Accelerate daily code writing.",
+        "Generate standardized code compliant with team patterns.",
+        "Reduce time on repetitive coding tasks."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You code very occasionally.",
+          "You have strict confidentiality requirements.",
+          "You prefer a single generalist AI tool."
+        ],
+        "keepIf": [
+          "You code daily (Python, JavaScript, etc).",
+          "You want to accelerate code writing.",
+          "You appreciate AI adapted to team standards."
+        ],
+        "threshold": "Tabnine suits developers; for occasional use or non-dev, a generalist text assistant suffices."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Version gratuite avec auto-complétion de base",
+        "exists": true
+      },
+      "key_features": [
+        "Auto-complétion contextuelle single-token ou multi-ligne",
+        "IA chat pour tout le cycle de vie du dev",
+        "Enterprise Context Engine pour intelligence organisationnelle",
+        "Support multi-LLM (choix du modèle préféré)",
+        "Zero data retention optionnel pour confidentialité",
+        "CLI integration pour workflows en terminal",
+        "IP protection et scanning conformité licenses",
+        "Visionnaire dans Gartner Magic Quadrant Sept 2025"
+      ],
+      "plans": [
+        {
+          "name": "Free",
+          "price": "Gratuit (auto-complétion simple)"
+        },
+        {
+          "name": "Pro",
+          "price": "Montants sur la page officielle"
+        },
+        {
+          "name": "Enterprise",
+          "price": "Montants sur la page officielle"
+        }
+      ],
+      "pricing_model": "Plan gratuit + tiers payants",
+      "what": "Assistant IA pour la programmation offrant auto-complétion intelligente de code, chat IA pour workflows dev, et agents pour exécution de tâches, adapté à l'architecture et standards d'une organisation.",
+      "what_en": "AI coding assistant offering intelligent code completion, AI chat for dev workflows, and agents for task execution, adapted to organization's architecture and standards."
+    },
+    "fr": {
+      "cons": [
+        "Tarification détails non publiés (sur demande).",
+        "Courbe d'apprentissage pour features avancées.",
+        "Nécessite configuration d'équipe pour full value."
+      ],
+      "pros": [
+        "Auto-complétion très rapide et contextuelle.",
+        "Multi-LLM pour flexibilité.",
+        "Enterprise Context Engine pour standardisation.",
+        "Zero data retention optionnel.",
+        "Reconnaissance par Gartner 2025.",
+        "CLI et IDE integrations complètes."
+      ],
+      "relevant_for": [
+        "Développeurs",
+        "Équipes tech",
+        "Entreprises SaaS"
+      ],
+      "use_cases": [
+        "Accélérer l'écriture de code quotidienne.",
+        "Générer du code standardisé conforme aux patterns d'équipe.",
+        "Réduire le temps sur tâches répétitives de code."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous programmez très occasionnellement.",
+          "Vous avez des exigences de confidentialité strictes.",
+          "Vous préférez un seul outil IA généraliste."
+        ],
+        "keepIf": [
+          "Vous programmez quotidiennement (Python, JavaScript, etc).",
+          "Vous voulez accélérer l'écriture de code.",
+          "Vous appréciez une IA adaptée aux standards de votre équipe."
+        ],
+        "threshold": "Tabnine s'impose pour développeurs ; pour usage ponctuel ou non-dev, un assistant textuel généraliste suffira."
+      }
+    },
+    "slug": "tabnine",
+    "sources": [
+      {
+        "label": "Tabnine — AI Coding Assistant (site officiel)",
+        "url": "https://tabnine.com"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-ai-general-critical-002",
+    "batch_position": 16,
+    "blockers": [],
+    "catalog_hash": "sha256:69397a2217a9f1f3764a712c9de8506846a7086928acf9a1a49f01564ea96d36",
+    "category": "ai-general",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:9a02036d4e8492c5aa1224e3f0139706743635b9d19f7c69228b8c3e3273b33a",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Tabnine",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:64411801f4daec1c16fff9cfc5a88bc231fb1c2696049819493d15f763415ab0",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "tabnine",
+    "source_url": "https://tabnine.com",
+    "source_verified_on": "2026-03-13",
+    "status": "QUEUED"
+  }
+}

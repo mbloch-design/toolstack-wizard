@@ -1,0 +1,21 @@
+{
+  "slug": "whisper",
+  "verified_on": "2026-08-31",
+  "mode": "fallback_screenshot",
+  "discovery": {
+    "official_media_found": false,
+    "official_pages_checked": [
+      "https://openai.com/research/whisper"
+    ]
+  },
+  "items": [
+    {
+      "kind": "screenshot",
+      "url": "/og-screenshots/whisper.jpg",
+      "source_page_url": "https://openai.com/research/whisper",
+      "official": false,
+      "alt": "Whisper (OpenAI) official product preview",
+      "capture_method": "browser_screenshot"
+    }
+  ]
+}

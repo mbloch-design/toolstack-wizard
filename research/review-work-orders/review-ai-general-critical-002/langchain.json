@@ -1,0 +1,252 @@
+{
+  "batch": "review-ai-general-critical-002",
+  "current": {
+    "affiliate_url": null,
+    "alternatives": [],
+    "category": "ai-general",
+    "cons": [
+      "Courbe apprentissage pour débutants.",
+      "Ecosystem vaste → choix paralysant.",
+      "LangSmith coûts peuvent escalader vite."
+    ],
+    "cons_en": [
+      "Learning curve for beginners.",
+      "Vast ecosystem → choice paralysis.",
+      "LangSmith costs can escalate fast."
+    ],
+    "host_app": null,
+    "id": "langchain",
+    "long_description": "Framework pour chaînes, agents, outils et orchestration LLM.",
+    "long_description_en": "Framework for chains, agents, tools, and LLM orchestration.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/69a1e9409d6b1c287c69da0d_Website%20preview.png"
+    },
+    "name": "LangChain",
+    "pricing": {
+      "free": "Gratuit ou open source selon usage",
+      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+    },
+    "pricing_en": {
+      "free": "Free or open source depending on usage",
+      "paid": "Paid options may apply depending on hosting, team, or volume"
+    },
+    "pricing_v5": null,
+    "pros": [
+      "Framework open-source, stable et mature.",
+      "Large écosystème + intégrations.",
+      "RAG et agents « out of box ».",
+      "Gratuit pour prototyping."
+    ],
+    "pros_en": [
+      "Open-source, stable, mature framework.",
+      "Large ecosystem + integrations.",
+      "RAG and agents \"out of box\".",
+      "Free for prototyping."
+    ],
+    "short_description": "Framework pour chaînes, agents, outils et orchestration LLM.",
+    "short_description_en": "Framework for chains, agents, tools, and LLM orchestration.",
+    "slug": "langchain",
+    "source_url": "https://www.langchain.com",
+    "source_verified_on": null,
+    "use_cases": [
+      "Construire un chatbot RAG custom.",
+      "Créer agents autonomes multi-étapes.",
+      "Abstraire multi-LLM backends."
+    ],
+    "use_cases_en": [
+      "Build a custom RAG chatbot.",
+      "Create multi-step autonomous agents.",
+      "Abstract multi-LLM backends."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous ne codez pas (utilisez UI builder).",
+        "Votre stack est très spécialiste (pas besoin abstraction).",
+        "Vous préférez une UI/builder plutôt que de coder."
+      ],
+      "keepIf": [
+        "Vous construisez une app LLM en Python/JS.",
+        "Vous avez des besoin RAG ou agents.",
+        "Vous utilisez multi-LLMs (abstraction)."
+      ],
+      "threshold": "LangChain s'impose pour dev LLM ; pour UI/no-code, essayez des builders."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You don't code (use UI builder).",
+        "Your stack is very specialist (no abstraction needed).",
+        "You prefer a UI/builder rather than coding."
+      ],
+      "keepIf": [
+        "You're building an LLM app in Python/JS.",
+        "You have RAG or agent needs.",
+        "You use multiple LLMs (abstraction)."
+      ],
+      "threshold": "LangChain is standard for LLM dev; for UI/no-code, try builders."
+    },
+    "website_url": "https://www.langchain.com"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Learning curve for beginners.",
+        "Vast ecosystem → choice paralysis.",
+        "LangSmith costs can escalate fast."
+      ],
+      "pros": [
+        "Open-source, stable, mature framework.",
+        "Large ecosystem + integrations.",
+        "RAG and agents \"out of box\".",
+        "Free for prototyping."
+      ],
+      "use_cases": [
+        "Build a custom RAG chatbot.",
+        "Create multi-step autonomous agents.",
+        "Abstract multi-LLM backends."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You don't code (use UI builder).",
+          "Your stack is very specialist (no abstraction needed).",
+          "You prefer a UI/builder rather than coding."
+        ],
+        "keepIf": [
+          "You're building an LLM app in Python/JS.",
+          "You have RAG or agent needs.",
+          "You use multiple LLMs (abstraction)."
+        ],
+        "threshold": "LangChain is standard for LLM dev; for UI/no-code, try builders."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "LangChain OSS gratuit; LangSmith Developer free (5K traces/mois).",
+        "exists": true
+      },
+      "key_features": [
+        "Abstractions LLM standardisées",
+        "100+ intégrations LLM/tools",
+        "RAG chains et agents autonomes",
+        "LangGraph pour orchestration",
+        "LangSmith pour observabilité"
+      ],
+      "plans": [
+        {
+          "name": "LangChain (OSS)",
+          "price": "Gratuit (MIT license)"
+        },
+        {
+          "name": "LangSmith Developer",
+          "price": "0 $ (5K traces/mois)"
+        },
+        {
+          "name": "LangSmith Plus",
+          "price": "39 $/seat/mois (100K traces)"
+        },
+        {
+          "name": "LangGraph Platform",
+          "price": "35 $/mois+ (deployment)"
+        }
+      ],
+      "pricing_model": "LangChain framework : gratuit (MIT). LangSmith (platform observabilité) : Developer gratuit, Plus 39 $/seat/mois. LangGraph Platform : 35 $/mois+.",
+      "what": "Framework open-source MIT pour construire apps LLM : abstractions Python/JavaScript, intégrations 100+ LLMs/outils, RAG, agents autonomes, et LangGraph pour orchestration agents.",
+      "what_en": "MIT open-source framework for building LLM apps: Python/JavaScript abstractions, 100+ LLM/tool integrations, RAG, autonomous agents, and LangGraph for agent orchestration."
+    },
+    "fr": {
+      "cons": [
+        "Courbe apprentissage pour débutants.",
+        "Ecosystem vaste → choix paralysant.",
+        "LangSmith coûts peuvent escalader vite."
+      ],
+      "pros": [
+        "Framework open-source, stable et mature.",
+        "Large écosystème + intégrations.",
+        "RAG et agents « out of box ».",
+        "Gratuit pour prototyping."
+      ],
+      "relevant_for": [
+        "Développeurs Python/JS",
+        "Startups AI",
+        "Équipes ML/data"
+      ],
+      "use_cases": [
+        "Construire un chatbot RAG custom.",
+        "Créer agents autonomes multi-étapes.",
+        "Abstraire multi-LLM backends."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous ne codez pas (utilisez UI builder).",
+          "Votre stack est très spécialiste (pas besoin abstraction).",
+          "Vous préférez une UI/builder plutôt que de coder."
+        ],
+        "keepIf": [
+          "Vous construisez une app LLM en Python/JS.",
+          "Vous avez des besoin RAG ou agents.",
+          "Vous utilisez multi-LLMs (abstraction)."
+        ],
+        "threshold": "LangChain s'impose pour dev LLM ; pour UI/no-code, essayez des builders."
+      }
+    },
+    "slug": "langchain",
+    "sources": [
+      {
+        "label": "LangChain — framework et docs (site officiel)",
+        "url": "https://www.langchain.com"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-ai-general-critical-002",
+    "batch_position": 24,
+    "blockers": [],
+    "catalog_hash": "sha256:9d19441be908aa90cf280a5083f51e1ef25f927561e4e89584534b154937b318",
+    "category": "ai-general",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:327ef057e2581e71440e151ee739d557cf268432cfb807dc5caacc24bc571237",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "LangChain",
+    "next_review_at": null,
+    "priority_reasons": [
+      "paid_price",
+      "missing_or_invalid_media_evidence",
+      "shallow_editorial",
+      "undated_source"
+    ],
+    "priority_score": 195,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:c3445b9bcac9467d33809f5f485de308fbeffdf7bbc7a950b08b4512d0c31237",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "langchain",
+    "source_url": "https://www.langchain.com",
+    "source_verified_on": null,
+    "status": "QUEUED"
+  }
+}

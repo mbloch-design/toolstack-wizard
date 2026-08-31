@@ -1,0 +1,41 @@
+{
+  "slug": "langchain",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://www.langchain.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/6a5fabcd35c833ad1738ce2c_einstein-smoke-langchain.avif",
+      "source_page_url": "https://www.langchain.com",
+      "official": true,
+      "alt": "LangChain official product preview"
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/6a670b36585d346876e89449_733f80b86ab20ceeec551fc5c19f5f2c_newton-mobile.avif",
+      "source_page_url": "https://www.langchain.com",
+      "official": true,
+      "alt": "LangChain official product preview"
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/6a5f755831f70573692c9cb5_resting-newton.avif",
+      "source_page_url": "https://www.langchain.com",
+      "official": true,
+      "alt": "LangChain official product preview"
+    },
+    {
+      "kind": "image",
+      "url": "https://cdn.prod.website-files.com/65b8cd72835ceeacd4449a53/69a1e9409d6b1c287c69da0d_Website%20preview.png",
+      "source_page_url": "https://www.langchain.com",
+      "official": true,
+      "alt": "LangChain official product preview"
+    }
+  ]
+}

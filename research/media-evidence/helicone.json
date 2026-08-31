@@ -1,0 +1,20 @@
+{
+  "slug": "helicone",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://www.helicone.ai"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://www.helicone.ai/static/new-open-graph.png",
+      "source_page_url": "https://www.helicone.ai",
+      "official": true,
+      "alt": "Helicone official product preview"
+    }
+  ]
+}

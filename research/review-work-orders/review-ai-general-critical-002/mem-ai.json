@@ -1,0 +1,250 @@
+{
+  "batch": "review-ai-general-critical-002",
+  "current": {
+    "affiliate_url": "https://mem.ai",
+    "alternatives": [],
+    "category": "ai-general",
+    "cons": [
+      "Limite stricte sur la version gratuite.",
+      "Moins de contrôle sur l'architecture des données.",
+      "Prix récurrent pour la version complète."
+    ],
+    "cons_en": [
+      "Strict free tier limits.",
+      "Less control over data architecture.",
+      "Recurring subscription for full features."
+    ],
+    "host_app": null,
+    "id": "mem-ai",
+    "long_description": "Mem AI, c'est note-taking IA avec mémoire contextuelle — vos notes se connectent automatiquement. À partir de 12.12€/mois. Pensé pour les consultants B2B et les auteurs et newslettistes.\n\nGain de temps estimé : 3h/mois.\n\nÀ garder si : chercheur, auteur avec volume massif de notes à connecter. À éviter si : notion ou Obsidian déjà en place. Niche — pertinent surtout pour les knowledge workers intensifs. Si le budget le permet, notion va plus loin.",
+    "long_description_en": "Mem AI is aI note-taking with contextual memory — your notes connect automatically. Starting at €12.12/month. Built for B2B consultants and writers and newsletter creators.\n\nEstimated time saving: 3h/month.\n\nIf budget allows, notion goes further.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://storage.googleapis.com/mem-public-assets/sq-f.jpg"
+    },
+    "name": "Mem AI",
+    "pricing": {
+      "paid": "14$/mois (Pro)"
+    },
+    "pricing_en": null,
+    "pricing_v5": {
+      "cautions": [],
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Entry paid plan",
+      "compare_price_monthly_eur": 12.12,
+      "location_sensitive": false,
+      "official_source_url": "https://mem.ai",
+      "price_reliability": "low",
+      "source_domain": "mem.ai",
+      "usage_sensitive": false,
+      "verification_status": "official_site_only",
+      "verified_on": "2026-03-13"
+    },
+    "pros": [
+      "Organisation automatique sans effort manuel.",
+      "Recherche conversationnelle intuitive.",
+      "Capture vocale et synchronisation multi-appareils.",
+      "Recommandations intelligentes de contenus connexes."
+    ],
+    "pros_en": [
+      "Automatic organization without manual effort.",
+      "Intuitive conversational search.",
+      "Voice capture and cross-device sync.",
+      "Smart recommendations for related content."
+    ],
+    "short_description": "Note-taking IA avec mémoire contextuelle — vos notes se connectent automatiquement.",
+    "short_description_en": "AI note-taking with contextual memory — your notes connect automatically.",
+    "slug": "mem-ai",
+    "source_url": "https://mem.ai",
+    "source_verified_on": "2026-03-13",
+    "use_cases": [
+      "Centraliser des notes de recherche et de projets.",
+      "Retrouver rapidement des idées passées via conversation.",
+      "Construire une base de connaissance personnelle."
+    ],
+    "use_cases_en": [
+      "Centralize research and project notes.",
+      "Quickly retrieve past ideas via conversation.",
+      "Build a personal knowledge base."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous avez besoin d'une organisation stricte par dossiers.",
+        "Vous n'utilisez les notes que ponctuellement.",
+        "Vous préférez une approche entièrement gratuite."
+      ],
+      "keepIf": [
+        "Vous gérez un volume élevé d'informations quotidiennes.",
+        "Vous préférez une approche conversationnelle pour retrouver vos notes.",
+        "Vous voulez que l'IA organise vos contenus sans effort manuel."
+      ],
+      "threshold": "Mem AI s'impose pour les professionnels gérant des contenus volumineux au quotidien ; pour une utilisation légère ou une organisation rigide, un éditeur de notes classique convient mieux."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You need strict folder-based organization.",
+        "You use notes only occasionally.",
+        "You prefer entirely free solutions."
+      ],
+      "keepIf": [
+        "You manage high information volumes daily.",
+        "You prefer conversational search for your notes.",
+        "You want AI to organize content without manual effort."
+      ],
+      "threshold": "Mem AI suits professionals handling large content daily; for light use or rigid organization, a traditional note editor is better."
+    },
+    "website_url": "https://mem.ai"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Strict free tier limits.",
+        "Less control over data architecture.",
+        "Recurring subscription for full features."
+      ],
+      "pros": [
+        "Automatic organization without manual effort.",
+        "Intuitive conversational search.",
+        "Voice capture and cross-device sync.",
+        "Smart recommendations for related content."
+      ],
+      "use_cases": [
+        "Centralize research and project notes.",
+        "Quickly retrieve past ideas via conversation.",
+        "Build a personal knowledge base."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You need strict folder-based organization.",
+          "You use notes only occasionally.",
+          "You prefer entirely free solutions."
+        ],
+        "keepIf": [
+          "You manage high information volumes daily.",
+          "You prefer conversational search for your notes.",
+          "You want AI to organize content without manual effort."
+        ],
+        "threshold": "Mem AI suits professionals handling large content daily; for light use or rigid organization, a traditional note editor is better."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Version gratuite avec 25 notes par mois",
+        "exists": true
+      },
+      "key_features": [
+        "Organisation automatique des notes sans dossiers",
+        "Mem Chat pour interroger vos notes en conversation",
+        "Mode Voice pour capture mains-libres",
+        "Heads Up pour lier automatiquement les idées connexes"
+      ],
+      "plans": [
+        {
+          "name": "Mem Free",
+          "price": "Gratuit (25 notes/mois)"
+        },
+        {
+          "name": "Mem Pro",
+          "price": "12 $/mois (notes illimitées)"
+        }
+      ],
+      "pricing_model": "Freemium avec version Pro payante",
+      "what": "Application de gestion des connaissances personnelles basée sur l'IA, qui organise automatiquement les notes via un assistant conversationnel et propose une recherche intelligente parmi vos contenus.",
+      "what_en": "AI-powered personal knowledge management app that automatically organizes notes via conversational assistant and offers intelligent search across your content."
+    },
+    "fr": {
+      "cons": [
+        "Limite stricte sur la version gratuite.",
+        "Moins de contrôle sur l'architecture des données.",
+        "Prix récurrent pour la version complète."
+      ],
+      "pros": [
+        "Organisation automatique sans effort manuel.",
+        "Recherche conversationnelle intuitive.",
+        "Capture vocale et synchronisation multi-appareils.",
+        "Recommandations intelligentes de contenus connexes."
+      ],
+      "relevant_for": [
+        "Chercheurs",
+        "Consultants",
+        "Managers de projet"
+      ],
+      "use_cases": [
+        "Centraliser des notes de recherche et de projets.",
+        "Retrouver rapidement des idées passées via conversation.",
+        "Construire une base de connaissance personnelle."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous avez besoin d'une organisation stricte par dossiers.",
+          "Vous n'utilisez les notes que ponctuellement.",
+          "Vous préférez une approche entièrement gratuite."
+        ],
+        "keepIf": [
+          "Vous gérez un volume élevé d'informations quotidiennes.",
+          "Vous préférez une approche conversationnelle pour retrouver vos notes.",
+          "Vous voulez que l'IA organise vos contenus sans effort manuel."
+        ],
+        "threshold": "Mem AI s'impose pour les professionnels gérant des contenus volumineux au quotidien ; pour une utilisation légère ou une organisation rigide, un éditeur de notes classique convient mieux."
+      }
+    },
+    "slug": "mem-ai",
+    "sources": [
+      {
+        "label": "Mem AI — Personal Knowledge Management (site officiel)",
+        "url": "https://mem.ai"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-ai-general-critical-002",
+    "batch_position": 5,
+    "blockers": [],
+    "catalog_hash": "sha256:522a566050aebc19f88a494a14be8994e89cb539ccca7704fe1d6640fe354cff",
+    "category": "ai-general",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:79defa862a50b68de925b2d644714f604052a4a4343ec7fd3685a37583dd40ae",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Mem AI",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:d65c48aa58e2afa63a3a05abe3aa12af21dc3126f6eaa099c44ce5df15b14cd2",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "mem-ai",
+    "source_url": "https://mem.ai",
+    "source_verified_on": "2026-03-13",
+    "status": "QUEUED"
+  }
+}

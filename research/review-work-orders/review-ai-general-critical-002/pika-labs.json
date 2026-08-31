@@ -1,0 +1,259 @@
+{
+  "batch": "review-ai-general-critical-002",
+  "current": {
+    "affiliate_url": "https://pika.art",
+    "alternatives": [
+      "runway"
+    ],
+    "category": "ai-general",
+    "cons": [
+      "Qualité variable selon les prompts et paramètres.",
+      "Moins de contrôle fin qu'un outil traditionnel.",
+      "Modèles créatifs limités à ce que propose Pika."
+    ],
+    "cons_en": [
+      "Variable quality based on prompts and settings.",
+      "Less fine control than traditional tools.",
+      "Creative models limited to Pika's offerings."
+    ],
+    "host_app": null,
+    "id": "pika-labs",
+    "long_description": "Pika Labs, c'est un générateur de vidéo par IA pensé pour les clips courts : tu pars d'un texte ou d'une image, et l'outil anime des personnages, des objets ou applique des effets. Le rendu est souvent stylisé et accrocheur, ce qui en fait un bon allié pour du contenu réseaux sociaux où il faut sortir des visuels qui attirent l'oeil rapidement.\n\nL'atout, c'est le prix et la simplicité : un plan payant démarre à 8$/mois (puis 28$ et 76$), et la prise en main est rapide. Pas besoin d'un logiciel de montage lourd pour obtenir un petit clip animé. En revanche, on reste sur du format court, et l'outil est moins polyvalent qu'un Runway.\n\nLe vrai point d'attention, c'est le doublon. Si tu as déjà Runway, Sora ou un autre générateur vidéo IA dans ton stack, Pika fait largement la même chose et tu paies deux fois. Garde-le si la génération de clips courts est ton usage principal et que tu veux l'option la plus abordable. Pour de l'édition plus complète (rotoscopie, inpainting), Runway reste devant.",
+    "long_description_en": "Pika Labs is an AI video generator built for short clips: you start from text or an image, and it animates characters, objects, or applies effects. The output is often stylized and eye-catching, which makes it a solid pick for social media content where you need attention-grabbing visuals fast.\n\nThe upside is price and simplicity: a paid plan starts at $8/month (then $28 and $76), and it's quick to learn. You don't need heavy editing software to get a short animated clip. The trade-off is the short format and less versatility than something like Runway.\n\nThe real thing to watch is overlap. If you already have Runway, Sora, or another AI video generator in your stack, Pika does largely the same job and you're paying twice. Keep it if short-clip generation is your main use and you want the most affordable option. For fuller editing (rotoscoping, inpainting), Runway stays ahead.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://pika.art/images/og.jpeg"
+    },
+    "name": "Pika Labs",
+    "pricing": {
+      "free": "Crédits gratuits limités",
+      "paid": "Standard à 8$/mois, Pro 28$, Fancy 76$"
+    },
+    "pricing_en": {
+      "free": "Limited free credits",
+      "paid": "Standard at $8/month, Pro $28, Fancy $76"
+    },
+    "pricing_v5": {
+      "cautions": [
+        "Système de crédits : le coût réel dépend du volume généré"
+      ],
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Entry paid plan",
+      "compare_price_monthly_eur": 8,
+      "location_sensitive": false,
+      "official_source_url": "https://pika.art/pricing",
+      "price_reliability": "high",
+      "source_domain": "pika.art",
+      "usage_sensitive": false,
+      "verification_status": "official_explicit",
+      "verified_on": "2026-06-15"
+    },
+    "pros": [
+      "Interface intuitive pour créateurs sans expérience.",
+      "Agents IA pour automatiser tâches répétitives.",
+      "Génération vidéo rapide et accessible.",
+      "Plan gratuit généreux pour débuter."
+    ],
+    "pros_en": [
+      "Intuitive interface for non-experts.",
+      "AI agents to automate repetitive tasks.",
+      "Fast and accessible video generation.",
+      "Generous free tier for getting started."
+    ],
+    "short_description": "Génération vidéo IA centrée sur l'animation de personnages et d'objets.",
+    "short_description_en": "AI video generation focused on character and object animation.",
+    "slug": "pika-labs",
+    "source_url": "https://pika.art/pricing",
+    "source_verified_on": "2026-06-15",
+    "use_cases": [
+      "Générer des contenus vidéo pour réseaux sociaux rapidement.",
+      "Créer des vidéos de démonstration produit.",
+      "Automatiser la création de variations sur un thème."
+    ],
+    "use_cases_en": [
+      "Generate social media video content quickly.",
+      "Create product demo videos.",
+      "Automate creation of variations on a theme."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous faites du montage très professionnel ou complexe.",
+        "Vous avez besoin de contrôle pixel-perfect.",
+        "Votre budget est extrêmement serré."
+      ],
+      "keepIf": [
+        "Vous créez du contenu vidéo régulièrement.",
+        "Vous voulez automatiser des workflows créatifs.",
+        "Vous avez besoin d'effets vidéo rapides sans montage manuel."
+      ],
+      "threshold": "Pika convient aux créateurs cherchant rapidité et accessibilité ; pour du cinéma professionnel, un suite de montage traditionnelle demeure préférable."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You do professional or complex editing.",
+        "You need pixel-perfect control.",
+        "Your budget is extremely tight."
+      ],
+      "keepIf": [
+        "You create video content regularly.",
+        "You want to automate creative workflows.",
+        "You need fast video effects without manual editing."
+      ],
+      "threshold": "Pika suits creators seeking speed and accessibility; for professional filmmaking, traditional editing software is preferable."
+    },
+    "website_url": "https://pika.art"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Variable quality based on prompts and settings.",
+        "Less fine control than traditional tools.",
+        "Creative models limited to Pika's offerings."
+      ],
+      "pros": [
+        "Intuitive interface for non-experts.",
+        "AI agents to automate repetitive tasks.",
+        "Fast and accessible video generation.",
+        "Generous free tier for getting started."
+      ],
+      "use_cases": [
+        "Generate social media video content quickly.",
+        "Create product demo videos.",
+        "Automate creation of variations on a theme."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You do professional or complex editing.",
+          "You need pixel-perfect control.",
+          "Your budget is extremely tight."
+        ],
+        "keepIf": [
+          "You create video content regularly.",
+          "You want to automate creative workflows.",
+          "You need fast video effects without manual editing."
+        ],
+        "threshold": "Pika suits creators seeking speed and accessibility; for professional filmmaking, traditional editing software is preferable."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "Accès gratuit disponible sans carte bancaire",
+        "exists": true
+      },
+      "key_features": [
+        "Pika Agent : partenaire créatif IA pour collaboration",
+        "Pika MCP : intégration d'agents existants à des modèles créatifs",
+        "Pika Video App (Pikaffects) : création vidéo basée sur effets",
+        "AI Trendmaker : génération vidéo basée sur trends depuis selfies",
+        "Pika API Club : accès à des modèles de médias génératives"
+      ],
+      "plans": [
+        {
+          "name": "Pika Free",
+          "price": "Gratuit (accès de base)"
+        },
+        {
+          "name": "Pika Premium",
+          "price": "Montants sur la page officielle"
+        }
+      ],
+      "pricing_model": "Plan gratuit avec options premium (details sur pricing page)",
+      "what": "Plateforme créative IA permettant de générer des vidéos, d'automatiser des workflows avec des agents IA, et d'appliquer des effets d'édition vidéo powered par IA.",
+      "what_en": "Creative AI platform enabling video generation, workflow automation with AI agents, and AI-powered video editing effects."
+    },
+    "fr": {
+      "cons": [
+        "Qualité variable selon les prompts et paramètres.",
+        "Moins de contrôle fin qu'un outil traditionnel.",
+        "Modèles créatifs limités à ce que propose Pika."
+      ],
+      "pros": [
+        "Interface intuitive pour créateurs sans expérience.",
+        "Agents IA pour automatiser tâches répétitives.",
+        "Génération vidéo rapide et accessible.",
+        "Plan gratuit généreux pour débuter."
+      ],
+      "relevant_for": [
+        "Content creators",
+        "Marketeurs digitaux",
+        "Créateurs indépendants"
+      ],
+      "use_cases": [
+        "Générer des contenus vidéo pour réseaux sociaux rapidement.",
+        "Créer des vidéos de démonstration produit.",
+        "Automatiser la création de variations sur un thème."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous faites du montage très professionnel ou complexe.",
+          "Vous avez besoin de contrôle pixel-perfect.",
+          "Votre budget est extrêmement serré."
+        ],
+        "keepIf": [
+          "Vous créez du contenu vidéo régulièrement.",
+          "Vous voulez automatiser des workflows créatifs.",
+          "Vous avez besoin d'effets vidéo rapides sans montage manuel."
+        ],
+        "threshold": "Pika convient aux créateurs cherchant rapidité et accessibilité ; pour du cinéma professionnel, un suite de montage traditionnelle demeure préférable."
+      }
+    },
+    "slug": "pika-labs",
+    "sources": [
+      {
+        "label": "Pika Labs — AI Video & Agents (site officiel)",
+        "url": "https://pika.art"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-ai-general-critical-002",
+    "batch_position": 11,
+    "blockers": [],
+    "catalog_hash": "sha256:f8198ad9f9bc312d034ac9b5dde1679db0ad239e4767aaebdc2bc849e5788c2b",
+    "category": "ai-general",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:64475206877c12b9514d1ac772e39b0b1dd97011e6f0e891dd3e1e3007aceb64",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Pika Labs",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:4dde91a9f03ea0d95fffc3446b98a0b0b540cd96d5fb0064fbf20681c6d6953d",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "pika-labs",
+    "source_url": "https://pika.art/pricing",
+    "source_verified_on": "2026-06-15",
+    "status": "QUEUED"
+  }
+}

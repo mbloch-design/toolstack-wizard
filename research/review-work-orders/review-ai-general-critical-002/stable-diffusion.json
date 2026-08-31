@@ -1,0 +1,260 @@
+{
+  "batch": "review-ai-general-critical-002",
+  "current": {
+    "affiliate_url": "https://stability.ai",
+    "alternatives": [],
+    "category": "ai-general",
+    "cons": [
+      "API cloud payante par usage (coûts variables).",
+      "Nécessite compétences techniques pour auto-hébergement.",
+      "Qualité d'image variable selon prompts."
+    ],
+    "cons_en": [
+      "Cloud API payable by usage (variable costs).",
+      "Requires technical skills for self-hosting.",
+      "Image quality variable based on prompts."
+    ],
+    "host_app": null,
+    "id": "stable-diffusion",
+    "long_description": "Stable Diffusion, c'est génération d'images IA open source — contrôle total, hébergement local possible. Gratuit pour commencer, payant pour aller plus loin. Pensé pour les graphistes et les illustrateurs.\n\nGain de temps estimé : 6h/mois.\n\nÀ garder si : fine-tuning sur votre style, génération locale sans cloud. À éviter si : midjourney ou Firefly suffisent pour 95% des usages créatifs. Pertinent uniquement si vous avez un GPU dédié ou des besoins de volume.",
+    "long_description_en": "Stable Diffusion is open-source AI image generation — full control, local hosting possible. Free to start, paid plans for more. Built for graphic designers and illustrators.\n\nEstimated time saving: 6h/month.",
+    "media": {
+      "gallery_images": [],
+      "og_image_url": "https://static1.squarespace.com/static/6213c340453c3f502425776e/t/69dc368ec5c83b60b25c6a07/1775660945221/Homepage+Meta+Image.png?format=1500w"
+    },
+    "name": "Stable Diffusion",
+    "pricing": {
+      "free": "Open source gratuit (local)",
+      "paid": "Via Stability AI API : pay-as-you-go"
+    },
+    "pricing_en": null,
+    "pricing_v5": {
+      "cautions": [],
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Free",
+      "compare_price_monthly_eur": 0,
+      "location_sensitive": false,
+      "official_source_url": "https://stability.ai",
+      "price_reliability": "low",
+      "source_domain": "stability.ai",
+      "usage_sensitive": false,
+      "verification_status": "official_site_only",
+      "verified_on": "2026-03-13"
+    },
+    "pros": [
+      "Open-source et auto-hébergeable sans coûts.",
+      "Modèles entraînés sur données licenciées légalement.",
+      "Déploiements flexibles (cloud, on-premise, partners).",
+      "Très performant et prêt pour production.",
+      "Large écosystème de community tools et intégrations."
+    ],
+    "pros_en": [
+      "Open-source and self-hostable at no cost.",
+      "Models trained on legally licensed data.",
+      "Flexible deployments (cloud, on-premise, partners).",
+      "Very performant and production-ready.",
+      "Large ecosystem of community tools and integrations."
+    ],
+    "short_description": "Génération d'images IA open source — contrôle total, hébergement local possible.",
+    "short_description_en": "Open-source AI image generation — full control, local hosting possible.",
+    "slug": "stable-diffusion",
+    "source_url": "https://stability.ai",
+    "source_verified_on": "2026-03-13",
+    "use_cases": [
+      "Générer des images pour marketing/contenu en masse.",
+      "Créer une galerie 3D de produits via images IA.",
+      "Prototyper des designs visuels rapidement."
+    ],
+    "use_cases_en": [
+      "Generate images for marketing/content at scale.",
+      "Create 3D product gallery via AI images.",
+      "Quickly prototype visual designs."
+    ],
+    "verdict": {
+      "avoidIf": [
+        "Vous n'avez besoin que d'une image occasionnelle.",
+        "Vous voulez une interface web gratuite sans compte.",
+        "Vous avez des contraintes légales strictes sur données."
+      ],
+      "keepIf": [
+        "Vous générez des images régulièrement pour contenu.",
+        "Vous voulez flexibilité de déploiement (cloud ou on-premise).",
+        "Vous avez un budget pour API usage ou infrastructure."
+      ],
+      "threshold": "Stable Diffusion s'impose pour génération d'images en production ; pour usage léger, des services freemium conviendraient mieux."
+    },
+    "verdict_en": {
+      "avoidIf": [
+        "You only need occasional images.",
+        "You want a free web interface without account.",
+        "You have strict legal constraints on data."
+      ],
+      "keepIf": [
+        "You generate images regularly for content.",
+        "You want deployment flexibility (cloud or on-premise).",
+        "You have budget for API usage or infrastructure."
+      ],
+      "threshold": "Stable Diffusion suits production image generation; for light use, freemium services would be more appropriate."
+    },
+    "website_url": "https://stability.ai"
+  },
+  "fact_bundle": {
+    "author": "ToolTrim — Mike",
+    "en": {
+      "cons": [
+        "Cloud API payable by usage (variable costs).",
+        "Requires technical skills for self-hosting.",
+        "Image quality variable based on prompts."
+      ],
+      "pros": [
+        "Open-source and self-hostable at no cost.",
+        "Models trained on legally licensed data.",
+        "Flexible deployments (cloud, on-premise, partners).",
+        "Very performant and production-ready.",
+        "Large ecosystem of community tools and integrations."
+      ],
+      "use_cases": [
+        "Generate images for marketing/content at scale.",
+        "Create 3D product gallery via AI images.",
+        "Quickly prototype visual designs."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "You only need occasional images.",
+          "You want a free web interface without account.",
+          "You have strict legal constraints on data."
+        ],
+        "keepIf": [
+          "You generate images regularly for content.",
+          "You want deployment flexibility (cloud or on-premise).",
+          "You have budget for API usage or infrastructure."
+        ],
+        "threshold": "Stable Diffusion suits production image generation; for light use, freemium services would be more appropriate."
+      }
+    },
+    "facts": {
+      "free_tier": {
+        "detail": "API cloud payante ; modèle open-source auto-hébergeable gratuitement",
+        "exists": false
+      },
+      "key_features": [
+        "Génération d'images haute qualité depuis texte",
+        "Modèles entraînés sur données complètement licenciées",
+        "Déploiements flexibles : API cloud, auto-hébergement, cloud partners",
+        "Brand Studio : plateforme de production créative managée",
+        "Prêt pour production et déploiement à grande échelle"
+      ],
+      "plans": [
+        {
+          "name": "Platform API",
+          "price": "Montants sur la page officielle (pay-per-use)"
+        },
+        {
+          "name": "Brand Studio",
+          "price": "Montants sur la page officielle (plans tiérés)"
+        },
+        {
+          "name": "Self-Hosted License",
+          "price": "Gratuit (modèle open-source)"
+        }
+      ],
+      "pricing_model": "API payante (usage-based) + auto-hébergement gratuit",
+      "what": "Modèle de génération d'images IA open-source et libre d'utilisation, accessible via API cloud (Stability.ai) ou en auto-hébergement, permettant créer des images à partir de descriptions texte.",
+      "what_en": "Open-source image generation AI model freely available via cloud API (Stability.ai) or self-hosted, creating images from text descriptions."
+    },
+    "fr": {
+      "cons": [
+        "API cloud payante par usage (coûts variables).",
+        "Nécessite compétences techniques pour auto-hébergement.",
+        "Qualité d'image variable selon prompts."
+      ],
+      "pros": [
+        "Open-source et auto-hébergeable sans coûts.",
+        "Modèles entraînés sur données licenciées légalement.",
+        "Déploiements flexibles (cloud, on-premise, partners).",
+        "Très performant et prêt pour production.",
+        "Large écosystème de community tools et intégrations."
+      ],
+      "relevant_for": [
+        "Developers",
+        "Content creators",
+        "Entreprises SaaS"
+      ],
+      "use_cases": [
+        "Générer des images pour marketing/contenu en masse.",
+        "Créer une galerie 3D de produits via images IA.",
+        "Prototyper des designs visuels rapidement."
+      ],
+      "verdict": {
+        "avoidIf": [
+          "Vous n'avez besoin que d'une image occasionnelle.",
+          "Vous voulez une interface web gratuite sans compte.",
+          "Vous avez des contraintes légales strictes sur données."
+        ],
+        "keepIf": [
+          "Vous générez des images régulièrement pour contenu.",
+          "Vous voulez flexibilité de déploiement (cloud ou on-premise).",
+          "Vous avez un budget pour API usage ou infrastructure."
+        ],
+        "threshold": "Stable Diffusion s'impose pour génération d'images en production ; pour usage léger, des services freemium conviendraient mieux."
+      }
+    },
+    "slug": "stable-diffusion",
+    "sources": [
+      {
+        "label": "Stability AI — Stable Diffusion (site officiel)",
+        "url": "https://stability.ai"
+      }
+    ],
+    "verified_on": "2026-07-24"
+  },
+  "media_evidence": null,
+  "quality_version": "catalog-review-v1",
+  "required_action": "verify_bundle_freshness_then_review_editorial",
+  "rules": {
+    "facts_separate_from_editorial": true,
+    "primary_sources_only": true,
+    "require_render_verification": true,
+    "required_locales": [
+      "fr",
+      "en"
+    ],
+    "uncertain_identity_or_price": "BLOCKED"
+  },
+  "schema_version": 1,
+  "tracking": {
+    "assigned_batch": "review-ai-general-critical-002",
+    "batch_position": 14,
+    "blockers": [],
+    "catalog_hash": "sha256:98b6bba5aa99476f2cf07988244abc84e8966d0c6902ca856b02a65f2fb85bea",
+    "category": "ai-general",
+    "fact_bundle": "AVAILABLE",
+    "fact_bundle_hash": "sha256:d1c85da6aa27137084d4f8b919c6330f9757725585dc0768fe0f2d947b14fed7",
+    "invalidated_from": null,
+    "media_errors": [
+      "media_evidence_missing"
+    ],
+    "media_evidence": "MISSING",
+    "media_evidence_hash": null,
+    "name": "Stable Diffusion",
+    "next_review_at": null,
+    "priority_reasons": [
+      "affiliate_link",
+      "paid_price",
+      "missing_or_invalid_media_evidence"
+    ],
+    "priority_score": 220,
+    "published_at": null,
+    "quality_version": "catalog-review-v1",
+    "rendered_at": null,
+    "review_fingerprint": "sha256:24f0df0c8b1dfecb5ec167c9563a2ef1637577b7e315bada723e30a3f69acb00",
+    "reviewed_at": null,
+    "reviewed_hash": null,
+    "reviewer": null,
+    "risk_tier": "critical",
+    "slug": "stable-diffusion",
+    "source_url": "https://stability.ai",
+    "source_verified_on": "2026-03-13",
+    "status": "QUEUED"
+  }
+}
