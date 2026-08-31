@@ -1,0 +1,16 @@
+{
+  "slug": "elgato-stream-deck",
+  "author": "ToolTrim, Mike",
+  "verified_on": "2026-08-30",
+  "sources": [{"label":"Elgato Stream Deck MK.2, page officielle","url":"https://www.elgato.com/us/en/p/stream-deck-mk2-black"},{"label":"Logiciel Stream Deck, page officielle","url":"https://www.elgato.com/us/en/s/downloads"}],
+  "facts": {
+    "what": "Contrôleur matériel à touches LCD personnalisables, piloté par le logiciel Stream Deck pour lancer des actions, automatisations et intégrations.",
+    "what_en": "Hardware controller with customisable LCD keys, powered by Stream Deck software to trigger actions, automations, and integrations.",
+    "pricing_model": "Achat matériel à l'unité. Le logiciel de configuration est inclus gratuitement.",
+    "free_tier": {"exists":false,"detail":"Le contrôleur physique est payant. Le logiciel compagnon est téléchargeable gratuitement."},
+    "plans": [{"name":"Stream Deck MK.2","price":"Prix variable selon le pays et le revendeur, montant sur la page officielle"}],
+    "key_features": ["Touches LCD personnalisables","Actions multiples et profils","Plugins et intégrations de services","Icônes, dossiers et pages configurables"]
+  },
+  "fr": {"verdict":{"keepIf":["Vous répétez les mêmes actions pendant vos streams ou productions.","Vous voulez des commandes visuelles physiques.","Vos logiciels disposent de plugins Stream Deck utiles."],"avoidIf":["Quelques raccourcis clavier couvrent déjà vos besoins.","Vous travaillez souvent loin de votre poste fixe.","Vous ne voulez pas ajouter de matériel."],"threshold":"Stream Deck se justifie lorsque les actions répétées et multi-apps font gagner assez de temps pour mériter un contrôleur dédié."},"pros":["Commandes visuelles immédiates.","Écosystème de plugins étendu.","Profils adaptés à chaque application.","Automatisations multi-actions."],"cons":["Nécessite un achat matériel.","Occupe de la place sur le bureau.","La valeur dépend des intégrations utilisées."],"use_cases":["Piloter un live.","Accélérer un workflow créatif.","Déclencher des automatisations."],"relevant_for":["Streamers","Créateurs vidéo","Professionnels productifs"]},
+  "en": {"verdict":{"keepIf":["You repeat the same actions while streaming or producing content.","You want physical visual controls.","Your software has useful Stream Deck plugins."],"avoidIf":["Keyboard shortcuts already cover your needs.","You often work away from a fixed desk.","You do not want extra hardware."],"threshold":"Stream Deck is worthwhile when repeated, cross-app actions save enough time to justify a dedicated controller."},"pros":["Immediate visual controls.","Broad plugin ecosystem.","Per-app profiles.","Multi-action automations."],"cons":["Requires hardware purchase.","Takes desk space.","Value depends on integrations."],"use_cases":["Control a live stream.","Speed up creative workflows.","Trigger automations."]}
+}

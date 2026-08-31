@@ -1,0 +1,104 @@
+{
+  "slug": "glyphe",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-08-30",
+  "sources": [
+    {
+      "label": "Produit et tarif Glyphe (site officiel)",
+      "url": "https://glyphe.eu/"
+    },
+    {
+      "label": "Conformité Compagnie des CGP (site officiel)",
+      "url": "https://glyphe.eu/logiciel-conformite-cgp-compagnie-des-cgp"
+    }
+  ],
+  "facts": {
+    "what": "Glyphe automatise la collecte KYC, la génération documentaire réglementaire et la signature pour les conseillers en gestion de patrimoine français.",
+    "what_en": "Glyphe automates KYC collection, regulatory document generation, and signatures for French wealth management advisers.",
+    "pricing_model": "Abonnement mensuel hors taxes par utilisateur, sans engagement.",
+    "free_tier": {
+      "exists": true,
+      "detail": "Premier client offert sans carte bancaire ni limite de durée. L'abonnement démarre au deuxième client."
+    },
+    "plans": [
+      {
+        "name": "Tout inclus",
+        "price": "79 EUR HT par utilisateur et par mois"
+      }
+    ],
+    "key_features": [
+      "Magic Link mobile",
+      "KYC avec OCR",
+      "Documents conformes aux associations CGP",
+      "Signature électronique eIDAS",
+      "Marque blanche et archivage"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez régulièrement le workflow central de Glyphe.",
+        "Vous préférez un produit intégré à l'assemblage de plusieurs outils.",
+        "Les limites officielles correspondent à votre volume réel."
+      ],
+      "avoidIf": [
+        "Votre besoin est ponctuel et un outil gratuit plus simple suffit.",
+        "Votre stack couvre déjà le même workflow.",
+        "Le modèle par usage ou par siège rend le coût difficile à prévoir."
+      ],
+      "threshold": "Retenez-le lorsque l'usage récurrent remplace un workflow manuel ou fragmenté clairement identifié."
+    },
+    "pros": [
+      "Workflow produit bien défini.",
+      "Documentation officielle et développement actif.",
+      "S'intègre aux processus professionnels.",
+      "Point d'entrée disponible avant de monter en charge."
+    ],
+    "cons": [
+      "Le coût peut augmenter avec l'usage ou les sièges.",
+      "Les fonctions avancées exigent une offre payante.",
+      "La qualité du paramétrage influence le résultat."
+    ],
+    "use_cases": [
+      "Utiliser magic link mobile dans un workflow récurrent.",
+      "Utiliser kyc avec ocr dans un workflow récurrent.",
+      "Utiliser documents conformes aux associations cgp dans un workflow récurrent."
+    ],
+    "relevant_for": [
+      "CGP français",
+      "Cabinets CIF",
+      "Conseillers patrimoniaux"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need Glyphe's core workflow regularly.",
+        "You value an integrated product over stitching several tools together.",
+        "The official usage limits match your real volume."
+      ],
+      "avoidIf": [
+        "Your need is occasional and a simpler free tool is enough.",
+        "You already cover the same workflow in your current stack.",
+        "The usage or seat model makes costs hard to predict."
+      ],
+      "threshold": "Keep it when recurring usage replaces a clear manual or fragmented workflow."
+    },
+    "pros": [
+      "Focused product workflow.",
+      "Official documentation and active development.",
+      "Integrates into professional processes.",
+      "Entry path available before scaling."
+    ],
+    "cons": [
+      "Costs can grow with usage or seats.",
+      "Advanced capabilities require a paid tier.",
+      "Setup quality affects the result."
+    ],
+    "use_cases": [
+      "Use magic link mobile in a recurring workflow.",
+      "Use kyc avec ocr in a recurring workflow.",
+      "Use documents conformes aux associations cgp in a recurring workflow."
+    ]
+  }
+}

@@ -1,9 +1,9 @@
 {
   "slug": "guideless",
-  "author": "ToolTrim — Mike",
-  "verified_on": "2026-07-24",
+  "author": "ToolTrim, Mike",
+  "verified_on": "2026-08-30",
   "sources": [
-    { "label": "Guideless — documentation video AI (site officiel)", "url": "https://guideless.app" }
+    { "label": "Guideless, documentation video AI (site officiel)", "url": "https://guideless.app" }
   ],
   "facts": {
     "what": "Générateur de guide vidéo automatisé : enregistrez un workflow dans le navigateur, Guideless génère script, captions, smart zooms, highlights UI, et narration IA vocale. Export MP4, pas de watermark sur Pro.",

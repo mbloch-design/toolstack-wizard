@@ -1,0 +1,120 @@
+{
+  "slug": "figma-weave",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-08-30",
+  "sources": [
+    {
+      "label": "Tarifs Figma Weave (site officiel)",
+      "url": "https://weave.figma.com/pricing"
+    },
+    {
+      "label": "Produit Figma Weave (site officiel)",
+      "url": "https://weave.figma.com/"
+    },
+    {
+      "label": "Conditions Figma Weave (site officiel)",
+      "url": "https://content.weave.figma.com/terms-of-service"
+    }
+  ],
+  "facts": {
+    "what": "Figma Weave est un espace de création visuelle IA autonome avec workflows nodaux, plusieurs modèles génératifs et outils de compositing.",
+    "what_en": "Figma Weave is a standalone AI visual creation workspace with node-based workflows, multiple generative models, and compositing tools.",
+    "pricing_model": "Freemium par crédits, avec abonnements individuels et équipe séparés des forfaits Figma.",
+    "free_tier": {
+      "exists": true,
+      "detail": "150 crédits mensuels, cinq workflows, modèles image et licence commerciale."
+    },
+    "plans": [
+      {
+        "name": "Free",
+        "price": "0 USD"
+      },
+      {
+        "name": "Starter",
+        "price": "24 USD par mois, ou 228 USD par an"
+      },
+      {
+        "name": "Professional",
+        "price": "45 USD par mois, ou 432 USD par an"
+      },
+      {
+        "name": "Team",
+        "price": "60 USD par utilisateur et par mois, ou 576 USD par an"
+      }
+    ],
+    "key_features": [
+      "Canvas nodal",
+      "Modèles image et vidéo multiples",
+      "Calques et compositing",
+      "Workflows réutilisables",
+      "Crédits partagés en équipe"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez régulièrement le workflow central de Figma Weave.",
+        "Vous préférez un produit intégré à l'assemblage de plusieurs outils.",
+        "Les limites officielles correspondent à votre volume réel."
+      ],
+      "avoidIf": [
+        "Votre besoin est ponctuel et un outil gratuit plus simple suffit.",
+        "Votre stack couvre déjà le même workflow.",
+        "Le modèle par usage ou par siège rend le coût difficile à prévoir."
+      ],
+      "threshold": "Retenez-le lorsque l'usage récurrent remplace un workflow manuel ou fragmenté clairement identifié."
+    },
+    "pros": [
+      "Workflow produit bien défini.",
+      "Documentation officielle et développement actif.",
+      "S'intègre aux processus professionnels.",
+      "Point d'entrée disponible avant de monter en charge."
+    ],
+    "cons": [
+      "Le coût peut augmenter avec l'usage ou les sièges.",
+      "Les fonctions avancées exigent une offre payante.",
+      "La qualité du paramétrage influence le résultat."
+    ],
+    "use_cases": [
+      "Utiliser canvas nodal dans un workflow récurrent.",
+      "Utiliser modèles image et vidéo multiples dans un workflow récurrent.",
+      "Utiliser calques et compositing dans un workflow récurrent."
+    ],
+    "relevant_for": [
+      "Designers",
+      "Directeurs artistiques",
+      "Studios créatifs"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need Figma Weave's core workflow regularly.",
+        "You value an integrated product over stitching several tools together.",
+        "The official usage limits match your real volume."
+      ],
+      "avoidIf": [
+        "Your need is occasional and a simpler free tool is enough.",
+        "You already cover the same workflow in your current stack.",
+        "The usage or seat model makes costs hard to predict."
+      ],
+      "threshold": "Keep it when recurring usage replaces a clear manual or fragmented workflow."
+    },
+    "pros": [
+      "Focused product workflow.",
+      "Official documentation and active development.",
+      "Integrates into professional processes.",
+      "Entry path available before scaling."
+    ],
+    "cons": [
+      "Costs can grow with usage or seats.",
+      "Advanced capabilities require a paid tier.",
+      "Setup quality affects the result."
+    ],
+    "use_cases": [
+      "Use canvas nodal in a recurring workflow.",
+      "Use modèles image et vidéo multiples in a recurring workflow.",
+      "Use calques et compositing in a recurring workflow."
+    ]
+  }
+}

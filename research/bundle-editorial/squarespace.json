@@ -1,0 +1,116 @@
+{
+  "slug": "squarespace",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-08-30",
+  "sources": [
+    {
+      "label": "Squarespace - Pricing (site officiel)",
+      "url": "https://www.squarespace.com/pricing"
+    },
+    {
+      "label": "Squarespace - Choosing a plan (site officiel)",
+      "url": "https://support.squarespace.com/hc/en-us/articles/206536797-Choosing-the-right-Squarespace-plan"
+    }
+  ],
+  "facts": {
+    "what": "Plateforme hébergée pour créer des sites, boutiques et espaces de contenu avec éditeur visuel, modèles, hébergement, SEO et outils commerciaux intégrés.",
+    "what_en": "Hosted platform for building websites, stores, and content spaces with a visual editor, templates, hosting, SEO, and integrated commerce tools.",
+    "pricing_model": "Abonnement par site, mensuel ou annuel, avec tarifs et taxes variant selon le pays.",
+    "free_tier": {
+      "exists": false,
+      "detail": "Essai gratuit de 14 jours sans carte bancaire, sans plan gratuit permanent."
+    },
+    "plans": [
+      {
+        "name": "Basic",
+        "price": "À partir de 19 $/mois avec facturation annuelle, tarif localisé"
+      },
+      {
+        "name": "Core",
+        "price": "Montant localisé sur la page officielle"
+      },
+      {
+        "name": "Plus",
+        "price": "Montant localisé sur la page officielle"
+      },
+      {
+        "name": "Advanced",
+        "price": "Montant localisé sur la page officielle"
+      }
+    ],
+    "key_features": [
+      "Éditeur visuel et modèles adaptatifs",
+      "Hébergement géré, SSL et bande passante",
+      "Vente de produits, services et contenus",
+      "Outils SEO, statistiques et visibilité IA"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez Squarespace chaque semaine pour publier ou collecter des données.",
+        "Vous voulez centraliser l'hébergement, l'édition et le suivi.",
+        "Votre équipe peut maintenir la structure et les règles de publication."
+      ],
+      "avoidIf": [
+        "Votre besoin est ponctuel et très simple.",
+        "Vous exigez un fonctionnement entièrement local.",
+        "Vous avez besoin d'une portabilité totale sans dépendance à la plateforme."
+      ],
+      "threshold": "Choisissez Squarespace si la plateforme remplace plusieurs étapes récurrentes; sinon, une solution plus légère suffit."
+    },
+    "pros": [
+      "Plateforme intégrée avec un parcours cohérent.",
+      "Démarrage possible sans développement spécifique.",
+      "Fonctions adaptées à une utilisation régulière.",
+      "Écosystème de modèles ou d'intégrations."
+    ],
+    "cons": [
+      "La configuration demande une gouvernance claire.",
+      "Les limites varient selon le plan.",
+      "La migration vers une autre plateforme peut demander du travail."
+    ],
+    "use_cases": [
+      "Lancer un projet sans infrastructure dédiée.",
+      "Centraliser le travail d'une petite équipe.",
+      "Standardiser un processus récurrent."
+    ],
+    "relevant_for": [
+      "Indépendants",
+      "Petites équipes",
+      "Équipes marketing et opérations"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You use Squarespace every week to publish or collect data.",
+        "You want to centralize hosting, editing, and follow-up.",
+        "Your team can maintain the structure and publishing rules."
+      ],
+      "avoidIf": [
+        "Your need is occasional and very simple.",
+        "You require a fully local workflow.",
+        "You need complete portability with no platform dependency."
+      ],
+      "threshold": "Choose Squarespace when the platform replaces several recurring steps; otherwise, a lighter solution is enough."
+    },
+    "pros": [
+      "Integrated platform with a coherent workflow.",
+      "Can be started without custom development.",
+      "Capabilities suit recurring use.",
+      "Ecosystem of templates or integrations."
+    ],
+    "cons": [
+      "Setup requires clear governance.",
+      "Limits vary by plan.",
+      "Migration to another platform may require work."
+    ],
+    "use_cases": [
+      "Launch a project without dedicated infrastructure.",
+      "Centralize a small team's work.",
+      "Standardize a recurring process."
+    ]
+  }
+}
+

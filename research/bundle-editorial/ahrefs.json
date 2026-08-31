@@ -1,21 +1,42 @@
 {
   "slug": "ahrefs",
-  "author": "ToolTrim — Mike",
-  "verified_on": "2026-07-24",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-08-30",
   "sources": [
-    { "label": "Ahrefs - AI Marketing Platform (site officiel)", "url": "https://ahrefs.com" }
+    {
+      "label": "Ahrefs - AI Marketing Platform (site officiel)",
+      "url": "https://ahrefs.com"
+    }
   ],
   "facts": {
     "what": "Plateforme marketing IA pour analyser le SEO, suivre les classements, explorer les mots-clés, auditer les sites, et explorer le contenu concurrent avec une base de données de 170 milliards de pages indexées.",
     "what_en": "AI-powered marketing platform for SEO analysis, rank tracking, keyword research, site audits, and competitive content insights with a database of 170 billion indexed pages.",
     "pricing_model": "Abonnement mensuel ou annuel, avec 5 niveaux de tarification et formule Enterprise avec API personnalisée.",
-    "free_tier": { "exists": false, "detail": "Pas de version gratuite permanente. Ahrefs Webmaster Tools gratuit pour propriétaires de sites vérifiés (accès limité)." },
+    "free_tier": {
+      "exists": false,
+      "detail": "Pas de version gratuite permanente. Ahrefs Webmaster Tools gratuit pour propriétaires de sites vérifiés (accès limité)."
+    },
     "plans": [
-      { "name": "Starter", "price": "29 $/mois (exploration basique)" },
-      { "name": "Lite", "price": "129 $/mois ou 108 $/mois annuel" },
-      { "name": "Standard", "price": "249 $/mois ou 208 $/mois annuel" },
-      { "name": "Advanced", "price": "449 $/mois ou 374 $/mois annuel" },
-      { "name": "Enterprise", "price": "À partir de 1 499 $/mois annuel" }
+      {
+        "name": "Starter",
+        "price": "29 $/mois (exploration basique)"
+      },
+      {
+        "name": "Lite",
+        "price": "129 $/mois ou 108 $/mois annuel"
+      },
+      {
+        "name": "Standard",
+        "price": "249 $/mois ou 208 $/mois annuel"
+      },
+      {
+        "name": "Advanced",
+        "price": "449 $/mois ou 374 $/mois annuel"
+      },
+      {
+        "name": "Enterprise",
+        "price": "À partir de 1 499 $/mois annuel"
+      }
     ],
     "key_features": [
       "Site Explorer : analyser sites concurrents",

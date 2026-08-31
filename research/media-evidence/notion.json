@@ -1,0 +1,19 @@
+{
+  "slug": "notion",
+  "verified_on": "2026-08-30",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://www.notion.com/fr/pricing"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://www.notion.com/favicon.ico",
+      "source_page_url": "https://www.notion.com/fr/pricing",
+      "official": true
+    }
+  ]
+}

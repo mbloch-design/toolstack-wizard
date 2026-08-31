@@ -1,12 +1,12 @@
 {
   "slug": "adobe-stock",
   "bundle_parent": "adobe-creative-cloud",
-  "author": "ToolTrim — Mike",
-  "verified_on": "2026-07-23",
+  "author": "ToolTrim, Mike",
+  "verified_on": "2026-08-30",
   "sources": [
     {
-      "label": "Adobe Stock — description et modèle (Wikipédia)",
-      "url": "https://en.wikipedia.org/wiki/Adobe_Stock"
+      "label": "Adobe Stock, tarifs officiels",
+      "url": "https://stock.adobe.com/fr/Plans"
     }
   ],
   "facts": {

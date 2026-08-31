@@ -1,17 +1,26 @@
 {
   "slug": "anaplan",
-  "author": "ToolTrim — Mike",
-  "verified_on": "2026-07-24",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-08-30",
   "sources": [
-    { "label": "Anaplan official website", "url": "https://www.anaplan.com" }
+    {
+      "label": "Anaplan - Platform (site officiel)",
+      "url": "https://www.anaplan.com/"
+    }
   ],
   "facts": {
     "what": "Plateforme de planification d'entreprise modulaire (CPM) avec modélisation multi-dimensionnelle, budgeting, forecasting, planification des ventes et gestion des stocks, intégration IA pour scénarios prédictifs.",
     "what_en": "Modular corporate performance management (CPM) platform with multi-dimensional modeling, budgeting, forecasting, sales planning, and inventory management, plus AI-powered predictive scenarios.",
-    "pricing_model": "Modèle d'entreprise personnalisé avec tarification basée sur nombre utilisateurs (named, read-only, automation), taille du modèle, modules additionnels et support. Pas de pricing public.",
-    "free_tier": { "exists": false, "detail": "Pas de version gratuite. Accès uniquement via contrats d'entreprise avec pricing personnalisé et contrats multi-ans (3-5 ans typiques)." },
+    "pricing_model": "Contrat entreprise sur devis selon le périmètre, les cas d'usage et les utilisateurs.",
+    "free_tier": {
+      "exists": false,
+      "detail": "Aucun plan gratuit public ni essai libre-service annoncé."
+    },
     "plans": [
-      { "name": "Estimation pour déploiement 50 utilisateurs", "price": "15 000 $ / mois approximativement (contrat 3-5 ans, escalade ~10% annuels)" }
+      {
+        "name": "Anaplan Platform",
+        "price": "Sur devis"
+      }
     ],
     "key_features": [
       "Planification budgétaire et forecasting avancé",
@@ -30,7 +39,7 @@
         "Vous êtes une moyenne/grande entreprise avec besoins complexes de planification.",
         "Vous intégrez budgeting, ventes, supply chain et RH.",
         "Vous validez budgets collaboratifs multi-niveaux.",
-        "Vous avez budget significatif (> 20k€/an recommandé)."
+        "Vous disposez d'un budget entreprise et d'une équipe de déploiement dédiée."
       ],
       "avoidIf": [
         "Vous débutez dans la planification (surspecifié).",
@@ -59,7 +68,11 @@
       "Consolidation de planification supply chain et RH.",
       "Scenariosing et simulations stratégiques complexes."
     ],
-    "relevant_for": ["Grandes entreprises (> 500 salariés)", "Groupes multinationaux", "Organisations avec cycles planification complexes"]
+    "relevant_for": [
+      "Grandes entreprises (> 500 salariés)",
+      "Groupes multinationaux",
+      "Organisations avec cycles planification complexes"
+    ]
   },
   "en": {
     "verdict": {

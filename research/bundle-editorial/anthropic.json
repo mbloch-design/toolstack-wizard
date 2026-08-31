@@ -1,0 +1,111 @@
+{
+  "slug": "anthropic",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-08-30",
+  "sources": [
+    {
+      "label": "API Anthropic (site officiel)",
+      "url": "https://www.anthropic.com/claude/api"
+    },
+    {
+      "label": "Tarification Claude Platform (site officiel)",
+      "url": "https://platform.claude.com/docs/en/about-claude/pricing"
+    },
+    {
+      "label": "Annonce Claude Sonnet 5 (site officiel)",
+      "url": "https://www.anthropic.com/research/claude-sonnet-5"
+    }
+  ],
+  "facts": {
+    "what": "Anthropic API donne accès aux modèles Claude pour intégrer génération, raisonnement, analyse de documents et agents dans des applications.",
+    "what_en": "The Anthropic API provides access to Claude models for generation, reasoning, document analysis, and agent workflows in applications.",
+    "pricing_model": "Paiement à l'usage selon le modèle, les tokens et les outils consommés.",
+    "free_tier": {
+      "exists": false,
+      "detail": "Aucun forfait API gratuit permanent confirmé. Des crédits d'essai peuvent être proposés selon le compte."
+    },
+    "plans": [
+      {
+        "name": "Claude Sonnet 5",
+        "price": "2 USD par million de tokens en entrée et 10 USD par million de tokens en sortie"
+      },
+      {
+        "name": "Claude Opus 4.8",
+        "price": "5 USD par million de tokens en entrée et 25 USD par million de tokens en sortie"
+      }
+    ],
+    "key_features": [
+      "Modèles Claude via API",
+      "Tool use et sorties structurées",
+      "Prompt caching et traitement par lots",
+      "SDK et console développeur"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez régulièrement le workflow central de Anthropic.",
+        "Vous préférez un produit intégré à l'assemblage de plusieurs outils.",
+        "Les limites officielles correspondent à votre volume réel."
+      ],
+      "avoidIf": [
+        "Votre besoin est ponctuel et un outil gratuit plus simple suffit.",
+        "Votre stack couvre déjà le même workflow.",
+        "Le modèle par usage ou par siège rend le coût difficile à prévoir."
+      ],
+      "threshold": "Retenez-le lorsque l'usage récurrent remplace un workflow manuel ou fragmenté clairement identifié."
+    },
+    "pros": [
+      "Workflow produit bien défini.",
+      "Documentation officielle et développement actif.",
+      "S'intègre aux processus professionnels.",
+      "Point d'entrée disponible avant de monter en charge."
+    ],
+    "cons": [
+      "Le coût peut augmenter avec l'usage ou les sièges.",
+      "Les fonctions avancées exigent une offre payante.",
+      "La qualité du paramétrage influence le résultat."
+    ],
+    "use_cases": [
+      "Utiliser modèles claude via api dans un workflow récurrent.",
+      "Utiliser tool use et sorties structurées dans un workflow récurrent.",
+      "Utiliser prompt caching et traitement par lots dans un workflow récurrent."
+    ],
+    "relevant_for": [
+      "Équipes produit",
+      "Développeurs",
+      "Équipes IA"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need Anthropic's core workflow regularly.",
+        "You value an integrated product over stitching several tools together.",
+        "The official usage limits match your real volume."
+      ],
+      "avoidIf": [
+        "Your need is occasional and a simpler free tool is enough.",
+        "You already cover the same workflow in your current stack.",
+        "The usage or seat model makes costs hard to predict."
+      ],
+      "threshold": "Keep it when recurring usage replaces a clear manual or fragmented workflow."
+    },
+    "pros": [
+      "Focused product workflow.",
+      "Official documentation and active development.",
+      "Integrates into professional processes.",
+      "Entry path available before scaling."
+    ],
+    "cons": [
+      "Costs can grow with usage or seats.",
+      "Advanced capabilities require a paid tier.",
+      "Setup quality affects the result."
+    ],
+    "use_cases": [
+      "Use modèles claude via api in a recurring workflow.",
+      "Use tool use et sorties structurées in a recurring workflow.",
+      "Use prompt caching et traitement par lots in a recurring workflow."
+    ]
+  }
+}

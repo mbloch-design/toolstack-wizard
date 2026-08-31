@@ -1,12 +1,12 @@
 {
   "slug": "adobe-fresco",
   "bundle_parent": "adobe-creative-cloud",
-  "author": "ToolTrim — Mike",
-  "verified_on": "2026-07-23",
+  "author": "ToolTrim, Mike",
+  "verified_on": "2026-08-30",
   "sources": [
     {
-      "label": "Adobe Fresco — description et fonctions (Wikipédia)",
-      "url": "https://en.wikipedia.org/wiki/Adobe_Fresco"
+      "label": "Adobe Fresco, page produit officielle",
+      "url": "https://www.adobe.com/products/fresco.html"
     }
   ],
   "facts": {

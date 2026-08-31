@@ -1,7 +1,7 @@
 {
   "slug": "axonaut",
-  "author": "ToolTrim — Mike",
-  "verified_on": "2026-07-24",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-08-30",
   "sources": [
     {
       "label": "Page tarifaire officielle Axonaut",
@@ -19,7 +19,7 @@
     "plans": [
       {
         "name": "Abonnement (tout inclus)",
-        "price": "à partir de ~34,99 € HT/mois (annuel), jusqu'à ~69,99 € HT/mois sans engagement — par entreprise, options en plus"
+        "price": "à partir de ~34,99 € HT/mois (annuel), jusqu'à ~69,99 € HT/mois sans engagement - par entreprise, options en plus"
       }
     ],
     "key_features": [

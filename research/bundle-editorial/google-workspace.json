@@ -1,0 +1,121 @@
+{
+  "slug": "google-workspace",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-08-30",
+  "sources": [
+    {
+      "label": "Tarifs Google Workspace (site officiel)",
+      "url": "https://workspace.google.com/pricing.html?hl=en"
+    },
+    {
+      "label": "Comparaison des engagements (site officiel)",
+      "url": "https://knowledge.workspace.google.com/admin/billing/compare-flexible-and-annual-fixed-term-payment-plans"
+    },
+    {
+      "label": "Éditions Business (site officiel)",
+      "url": "https://knowledge.workspace.google.com/admin/getting-started/editions/compare-business-editions"
+    }
+  ],
+  "facts": {
+    "what": "Google Workspace regroupe Gmail professionnel, Drive, Docs, Sheets, Meet, Calendar et Gemini dans une suite collaborative administrée.",
+    "what_en": "Google Workspace combines business Gmail, Drive, Docs, Sheets, Meet, Calendar, and Gemini in an administered collaboration suite.",
+    "pricing_model": "Abonnement par utilisateur, flexible ou avec engagement annuel.",
+    "free_tier": {
+      "exists": false,
+      "detail": "Pas de forfait Business gratuit permanent. Un essai est proposé depuis la page officielle."
+    },
+    "plans": [
+      {
+        "name": "Business Starter",
+        "price": "7 USD par utilisateur et par mois avec engagement annuel"
+      },
+      {
+        "name": "Business Standard",
+        "price": "14 USD par utilisateur et par mois avec engagement annuel"
+      },
+      {
+        "name": "Business Plus",
+        "price": "22 USD par utilisateur et par mois avec engagement annuel"
+      },
+      {
+        "name": "Enterprise",
+        "price": "Sur devis"
+      }
+    ],
+    "key_features": [
+      "Email professionnel",
+      "Stockage Drive partagé",
+      "Docs et Sheets collaboratifs",
+      "Visioconférence Meet",
+      "Administration et sécurité",
+      "Assistant Gemini intégré"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez régulièrement le workflow central de Google Workspace.",
+        "Vous préférez un produit intégré à l'assemblage de plusieurs outils.",
+        "Les limites officielles correspondent à votre volume réel."
+      ],
+      "avoidIf": [
+        "Votre besoin est ponctuel et un outil gratuit plus simple suffit.",
+        "Votre stack couvre déjà le même workflow.",
+        "Le modèle par usage ou par siège rend le coût difficile à prévoir."
+      ],
+      "threshold": "Retenez-le lorsque l'usage récurrent remplace un workflow manuel ou fragmenté clairement identifié."
+    },
+    "pros": [
+      "Workflow produit bien défini.",
+      "Documentation officielle et développement actif.",
+      "S'intègre aux processus professionnels.",
+      "Point d'entrée disponible avant de monter en charge."
+    ],
+    "cons": [
+      "Le coût peut augmenter avec l'usage ou les sièges.",
+      "Les fonctions avancées exigent une offre payante.",
+      "La qualité du paramétrage influence le résultat."
+    ],
+    "use_cases": [
+      "Utiliser email professionnel dans un workflow récurrent.",
+      "Utiliser stockage drive partagé dans un workflow récurrent.",
+      "Utiliser docs et sheets collaboratifs dans un workflow récurrent."
+    ],
+    "relevant_for": [
+      "TPE et PME",
+      "Équipes distribuées",
+      "Organisations Google"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need Google Workspace's core workflow regularly.",
+        "You value an integrated product over stitching several tools together.",
+        "The official usage limits match your real volume."
+      ],
+      "avoidIf": [
+        "Your need is occasional and a simpler free tool is enough.",
+        "You already cover the same workflow in your current stack.",
+        "The usage or seat model makes costs hard to predict."
+      ],
+      "threshold": "Keep it when recurring usage replaces a clear manual or fragmented workflow."
+    },
+    "pros": [
+      "Focused product workflow.",
+      "Official documentation and active development.",
+      "Integrates into professional processes.",
+      "Entry path available before scaling."
+    ],
+    "cons": [
+      "Costs can grow with usage or seats.",
+      "Advanced capabilities require a paid tier.",
+      "Setup quality affects the result."
+    ],
+    "use_cases": [
+      "Use email professionnel in a recurring workflow.",
+      "Use stockage drive partagé in a recurring workflow.",
+      "Use docs et sheets collaboratifs in a recurring workflow."
+    ]
+  }
+}

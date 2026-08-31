@@ -1,18 +1,38 @@
 {
   "slug": "bamboohr",
-  "author": "ToolTrim — Mike",
-  "verified_on": "2026-07-24",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-08-30",
   "sources": [
-    { "label": "BambooHR — Human Capital Management Software (site officiel)", "url": "https://bamboohr.com" }
+    {
+      "label": "BambooHR - Pricing (site officiel)",
+      "url": "https://www.bamboohr.com/pricing/"
+    }
   ],
   "facts": {
     "what": "Logiciel de gestion des ressources humaines (HCM) conçu pour les PME et petites équipes. Offre des modules pour la gestion des employés, les congés, la paie simplifiée et les rapports RH.",
     "what_en": "Human Capital Management (HCM) software designed for SMBs and small teams. Offers employee management, time-off tracking, simplified payroll, and HR reporting.",
     "pricing_model": "Modèle par employé. Montants sur la page officielle. Essai gratuit 7 jours sans carte.",
-    "free_tier": { "exists": true, "detail": "Essai gratuit 7 jours sans carte de crédit requise." },
+    "free_tier": {
+      "exists": false,
+      "detail": "Aucun plan gratuit permanent annoncé."
+    },
     "plans": [
-      { "name": "Free Trial", "price": "7 jours gratuit (pas de carte)" },
-      { "name": "Paid Plans", "price": "Montants sur la page officielle (par employé)" }
+      {
+        "name": "Core",
+        "price": "À partir de 10 $/employé/mois"
+      },
+      {
+        "name": "Pro",
+        "price": "À partir de 17 $/employé/mois"
+      },
+      {
+        "name": "Elite",
+        "price": "À partir de 25 $/employé/mois"
+      },
+      {
+        "name": "25 employés ou moins",
+        "price": "Forfait à partir de 250 $/mois"
+      }
     ],
     "key_features": [
       "Annuaire des employés (profils, contacts, documents)",
@@ -56,7 +76,11 @@
       "Automatiser gestion des congés pour équipe.",
       "Créer des rapports RH personnalisés."
     ],
-    "relevant_for": ["PME", "Startups", "Équipes 5-100 personnes"]
+    "relevant_for": [
+      "PME",
+      "Startups",
+      "Équipes 5-100 personnes"
+    ]
   },
   "en": {
     "verdict": {

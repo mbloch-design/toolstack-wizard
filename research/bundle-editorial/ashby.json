@@ -1,11 +1,11 @@
 {
   "slug": "ashby",
-  "author": "ToolTrim — Mike",
-  "verified_on": "2026-07-24",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-08-30",
   "sources": [
     {
-      "label": "Ashby — plateforme de recrutement (site officiel)",
-      "url": "https://www.ashbyhq.com/"
+      "label": "Ashby - Pricing (site officiel)",
+      "url": "https://www.ashbyhq.com/pricing"
     }
   ],
   "facts": {
@@ -18,12 +18,16 @@
     },
     "plans": [
       {
-        "name": "Foundations",
-        "price": "à partir de ~400 $/mois (jusqu'à ~100 employés)"
+        "name": "Foundations, jusqu'à 100 employés",
+        "price": "400 $/mois; réduction de 10 % possible avec engagement annuel"
       },
       {
-        "name": "Plus / Enterprise",
-        "price": "sur devis (scale selon l'effectif)"
+        "name": "Plus, 101 à 1 000 employés",
+        "price": "Sur devis"
+      },
+      {
+        "name": "Enterprise, plus de 1 000 employés",
+        "price": "Sur devis"
       }
     ],
     "key_features": [

@@ -1,0 +1,20 @@
+{
+  "slug": "bamboohr",
+  "verified_on": "2026-08-30",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://www.bamboohr.com/"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://www.bamboohr.com/media_115e701ac04beaf329bff3e3855a6c76267d2b007.png?width=1200&format=pjpg&optimize=medium",
+      "source_page_url": "https://www.bamboohr.com/",
+      "official": true
+    }
+  ]
+}
+

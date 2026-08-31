@@ -1,18 +1,34 @@
 {
   "slug": "buddy-punch",
-  "author": "ToolTrim — Mike",
-  "verified_on": "2026-07-24",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-08-30",
   "sources": [
-    { "label": "Buddy Punch — Employee Time Tracking & Scheduling (site officiel)", "url": "https://buddypunch.com" }
+    {
+      "label": "Buddy Punch - Pricing (site officiel)",
+      "url": "https://buddypunch.com/pricing/"
+    }
   ],
   "facts": {
     "what": "Logiciel de suivi du temps et d'ordonnancement pour équipes horaires en Amérique du Nord. Propose GPS, géofencing, vérification photo, et gestion des pauses conformes aux lois locales.",
     "what_en": "Time tracking and scheduling software for hourly teams in North America. Offers GPS, geofencing, photo verification, and break management compliant with local labor laws.",
     "pricing_model": "Abonnement SaaS avec tarification à l'utilisateur.",
-    "free_tier": { "exists": true, "detail": "Essai gratuit offert. Pas de version gratuite permanente ; tarification commencée sur demande." },
+    "free_tier": {
+      "exists": false,
+      "detail": "Essai gratuit de 14 jours sans carte bancaire, sans plan gratuit permanent."
+    },
     "plans": [
-      { "name": "Essai gratuit", "price": "Gratuit" },
-      { "name": "Forfait Standard", "price": "Montants sur la page officielle" }
+      {
+        "name": "Starter",
+        "price": "4,99 $/utilisateur/mois + 19 $ de frais de base mensuels"
+      },
+      {
+        "name": "Pro",
+        "price": "6,99 $/utilisateur/mois + 19 $ de frais de base mensuels"
+      },
+      {
+        "name": "Advanced",
+        "price": "12,99 $/utilisateur/mois + 19 $ de frais de base mensuels"
+      }
     ],
     "key_features": [
       "Suivi du temps par GPS et géofencing",
@@ -54,7 +70,11 @@
       "Gérer l'ordonnancement de serveurs en restaurant.",
       "Prévenir la fraude temps sur chantier."
     ],
-    "relevant_for": ["Managers RH", "Entreprises de construction", "Restaurants et services"]
+    "relevant_for": [
+      "Managers RH",
+      "Entreprises de construction",
+      "Restaurants et services"
+    ]
   },
   "en": {
     "verdict": {

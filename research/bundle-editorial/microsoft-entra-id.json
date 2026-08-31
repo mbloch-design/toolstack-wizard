@@ -1,15 +1,15 @@
 {
   "slug": "microsoft-entra-id",
-  "author": "ToolTrim — Mike",
-  "verified_on": "2026-07-24",
+  "author": "ToolTrim, Mike",
+  "verified_on": "2026-08-30",
   "sources": [
-    { "label": "Microsoft Entra — Plans et tarification (site officiel)", "url": "https://www.microsoft.com/en-us/security/business/microsoft-entra-pricing" }
+    { "label": "Microsoft Entra, Plans et tarification (site officiel)", "url": "https://www.microsoft.com/en-us/security/business/microsoft-entra-pricing" }
   ],
   "facts": {
     "what": "Service de gestion des identités et accès (IAM) basé sur le cloud offrant authentification multi-facteur, single sign-on (SSO), accès conditionnel et gouvernance des identités pour entreprises et identités externes.",
     "what_en": "Cloud-based identity and access management (IAM) service providing multifactor authentication, single sign-on (SSO), conditional access, and identity governance for enterprises and external identities.",
     "pricing_model": "Plans gratuit ou par utilisateur/mois selon fonctionnalités (Free, P1, P2, Suite). Accès inclus dans Microsoft 365 E3/E5.",
-    "free_tier": { "exists": true, "detail": "Entra ID Free — Inclus avec Microsoft Cloud (Azure, Microsoft 365). Authentification multifacteur, SSO illimité, rapports basiques, changement autogéré de mot de passe." },
+    "free_tier": { "exists": true, "detail": "Entra ID Free, Inclus avec Microsoft Cloud (Azure, Microsoft 365). Authentification multifacteur, SSO illimité, rapports basiques, changement autogéré de mot de passe." },
     "plans": [
       { "name": "Microsoft Entra ID Free", "price": "Gratuit (inclus Microsoft Cloud)" },
       { "name": "Microsoft Entra ID P1", "price": "$6–7/utilisateur/mois (engagement annuel)" },

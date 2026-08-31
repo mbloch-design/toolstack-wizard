@@ -27,7 +27,9 @@ for (const item of manifest.tools) {
   }
   const bundle = JSON.parse(readFileSync(bundleFile, "utf8"));
   const media = JSON.parse(readFileSync(mediaFile, "utf8"));
-  const featuresFr = bundle.facts.key_features.join(" ; ");
+  const featuresFr = (bundle.facts.key_features || []).join(" ; ");
+  const freeDetail = bundle.facts.free_tier?.detail || bundle.facts.pricing_note || "Voir les conditions tarifaires officielles.";
+  const plans = Array.isArray(bundle.facts.plans) ? bundle.facts.plans : [];
   tool.description = `${bundle.facts.what}\n\nFonctions clés : ${featuresFr}.\n\n${bundle.fr.verdict.threshold}`;
   tool.longDescription = tool.description;
   tool.longDescriptionEn = `${bundle.facts.what_en}\n\nKey strengths: ${bundle.en.pros.join("; ")}.\n\n${bundle.en.verdict.threshold}`;
@@ -43,8 +45,8 @@ for (const item of manifest.tools) {
   tool.useCasesEn = bundle.en.use_cases;
   tool.relevantFor = bundle.fr.relevant_for || tool.relevantFor || [];
   tool.pricing = {
-    free: bundle.facts.free_tier.detail,
-    paid: bundle.facts.plans.map((plan) => `${plan.name}: ${plan.price}`).join(" ; "),
+    free: freeDetail,
+    paid: plans.map((plan) => `${plan.name}: ${plan.price}`).join(" ; ") || bundle.facts.pricing_note || "Voir le tarif officiel.",
   };
   tool.pricingEn = tool.pricing;
   tool.pricing_v5 = {

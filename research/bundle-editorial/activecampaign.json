@@ -1,20 +1,38 @@
 {
   "slug": "activecampaign",
-  "author": "ToolTrim — Mike",
-  "verified_on": "2026-07-24",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-08-30",
   "sources": [
-    { "label": "ActiveCampaign (site officiel)", "url": "https://www.activecampaign.com" }
+    {
+      "label": "ActiveCampaign (site officiel)",
+      "url": "https://www.activecampaign.com"
+    }
   ],
   "facts": {
     "what": "Plateforme d'automatisation marketing autonome pour email, SMS, WhatsApp et autres canaux, avec des agents IA pilotant les campagnes et des analyses avancées.",
     "what_en": "Autonomous marketing automation platform for email, SMS, WhatsApp and multichannel engagement, with AI agents managing campaigns and advanced analytics.",
     "pricing_model": "Abonnement par nombre de contacts et fonctionnalités ; essai gratuit 14 jours",
-    "free_tier": { "exists": true, "detail": "Essai gratuit de 14 jours sans carte bancaire ; pas de plan gratuit permanent" },
+    "free_tier": {
+      "exists": true,
+      "detail": "Essai gratuit de 14 jours sans carte bancaire ; pas de plan gratuit permanent"
+    },
     "plans": [
-      { "name": "Starter", "price": "À partir de montants sur la page officielle selon le nombre de contacts" },
-      { "name": "Plus", "price": "Montants sur la page officielle" },
-      { "name": "Pro", "price": "Montants sur la page officielle" },
-      { "name": "Enterprise", "price": "Montants sur demande" }
+      {
+        "name": "Starter",
+        "price": "À partir de montants sur la page officielle selon le nombre de contacts"
+      },
+      {
+        "name": "Plus",
+        "price": "Montants sur la page officielle"
+      },
+      {
+        "name": "Pro",
+        "price": "Montants sur la page officielle"
+      },
+      {
+        "name": "Enterprise",
+        "price": "Montants sur demande"
+      }
     ],
     "key_features": [
       "Agents IA autonomes (Active Intelligence 2.8) adaptés à votre brand",

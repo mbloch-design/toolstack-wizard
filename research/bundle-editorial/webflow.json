@@ -1,0 +1,116 @@
+{
+  "slug": "webflow",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-08-30",
+  "sources": [
+    {
+      "label": "Webflow - Pricing (site officiel)",
+      "url": "https://webflow.com/pricing"
+    },
+    {
+      "label": "Webflow - 2026 pricing update (site officiel)",
+      "url": "https://help.webflow.com/hc/en-us/articles/51059955082387-Updated-pricing-and-simplified-plans-for-May-2026"
+    }
+  ],
+  "facts": {
+    "what": "Plateforme de conception et de développement web visuel combinant éditeur de mise en page, CMS, hébergement, interactions et outils de collaboration.",
+    "what_en": "Visual web design and development platform combining a layout editor, CMS, hosting, interactions, and collaboration tools.",
+    "pricing_model": "Plans Site par site et plans Workspace pour la collaboration, avec facturation mensuelle ou annuelle.",
+    "free_tier": {
+      "exists": true,
+      "detail": "Starter gratuit avec sous-domaine Webflow, 2 pages statiques et limites de CMS, bande passante et formulaires."
+    },
+    "plans": [
+      {
+        "name": "Starter",
+        "price": "Gratuit"
+      },
+      {
+        "name": "Basic",
+        "price": "15 $/mois par site, facturation annuelle"
+      },
+      {
+        "name": "Premium",
+        "price": "25 $/mois par site, facturation annuelle, options de capacité variables"
+      },
+      {
+        "name": "Team et Enterprise",
+        "price": "Sur devis"
+      }
+    ],
+    "key_features": [
+      "Conception visuelle avec contrôle HTML et CSS",
+      "CMS structuré et publication de contenu",
+      "Animations et interactions basées sur GSAP",
+      "Hébergement, formulaires et domaine personnalisé"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez Webflow chaque semaine pour publier ou collecter des données.",
+        "Vous voulez centraliser l'hébergement, l'édition et le suivi.",
+        "Votre équipe peut maintenir la structure et les règles de publication."
+      ],
+      "avoidIf": [
+        "Votre besoin est ponctuel et très simple.",
+        "Vous exigez un fonctionnement entièrement local.",
+        "Vous avez besoin d'une portabilité totale sans dépendance à la plateforme."
+      ],
+      "threshold": "Choisissez Webflow si la plateforme remplace plusieurs étapes récurrentes; sinon, une solution plus légère suffit."
+    },
+    "pros": [
+      "Plateforme intégrée avec un parcours cohérent.",
+      "Démarrage possible sans développement spécifique.",
+      "Fonctions adaptées à une utilisation régulière.",
+      "Écosystème de modèles ou d'intégrations."
+    ],
+    "cons": [
+      "La configuration demande une gouvernance claire.",
+      "Les limites varient selon le plan.",
+      "La migration vers une autre plateforme peut demander du travail."
+    ],
+    "use_cases": [
+      "Lancer un projet sans infrastructure dédiée.",
+      "Centraliser le travail d'une petite équipe.",
+      "Standardiser un processus récurrent."
+    ],
+    "relevant_for": [
+      "Indépendants",
+      "Petites équipes",
+      "Équipes marketing et opérations"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You use Webflow every week to publish or collect data.",
+        "You want to centralize hosting, editing, and follow-up.",
+        "Your team can maintain the structure and publishing rules."
+      ],
+      "avoidIf": [
+        "Your need is occasional and very simple.",
+        "You require a fully local workflow.",
+        "You need complete portability with no platform dependency."
+      ],
+      "threshold": "Choose Webflow when the platform replaces several recurring steps; otherwise, a lighter solution is enough."
+    },
+    "pros": [
+      "Integrated platform with a coherent workflow.",
+      "Can be started without custom development.",
+      "Capabilities suit recurring use.",
+      "Ecosystem of templates or integrations."
+    ],
+    "cons": [
+      "Setup requires clear governance.",
+      "Limits vary by plan.",
+      "Migration to another platform may require work."
+    ],
+    "use_cases": [
+      "Launch a project without dedicated infrastructure.",
+      "Centralize a small team's work.",
+      "Standardize a recurring process."
+    ]
+  }
+}
+

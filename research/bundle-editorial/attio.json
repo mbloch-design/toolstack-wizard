@@ -1,7 +1,7 @@
 {
   "slug": "attio",
-  "author": "ToolTrim — Mike",
-  "verified_on": "2026-07-24",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-08-30",
   "sources": [
     {
       "label": "Page tarifaire officielle Attio",
@@ -19,19 +19,19 @@
     "plans": [
       {
         "name": "Free",
-        "price": "0 €"
+        "price": "0 $/utilisateur/mois"
       },
       {
         "name": "Plus",
-        "price": "31 €/siège/mois (annuel), 39 € en mensuel"
+        "price": "44 $ mensuel ou 35 $/utilisateur/mois annuel"
       },
       {
         "name": "Pro",
-        "price": "74 €/siège/mois (annuel), 93 € en mensuel"
+        "price": "99 $ mensuel ou 79 $/utilisateur/mois annuel"
       },
       {
         "name": "Enterprise",
-        "price": "sur devis, facturé annuellement"
+        "price": "Sur devis, facturation annuelle"
       }
     ],
     "key_features": [

@@ -1,0 +1,20 @@
+{
+  "slug": "axonaut",
+  "verified_on": "2026-08-30",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://axonaut.com/content/prix"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://axonaut.com/assets/home/images/axonaut-crm-francais-simple-abordable.jpg",
+      "source_page_url": "https://axonaut.com/content/prix",
+      "official": true
+    }
+  ]
+}
+

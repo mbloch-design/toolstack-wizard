@@ -1,0 +1,19 @@
+{
+  "slug": "google-workspace",
+  "verified_on": "2026-08-30",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://workspace.google.com/pricing.html?hl=en"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://workspace.google.com/favicon.ico",
+      "source_page_url": "https://workspace.google.com/pricing.html?hl=en",
+      "official": true
+    }
+  ]
+}

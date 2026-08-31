@@ -1,0 +1,19 @@
+{
+  "slug": "glyphe",
+  "verified_on": "2026-08-30",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://glyphe.eu/"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://glyphe.eu/favicon.ico",
+      "source_page_url": "https://glyphe.eu/",
+      "official": true
+    }
+  ]
+}

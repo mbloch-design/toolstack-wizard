@@ -1,0 +1,16 @@
+{
+  "slug": "desktopready",
+  "author": "ToolTrim, Mike",
+  "verified_on": "2026-08-30",
+  "sources": [{"label":"DesktopReady, page officielle Anunta","url":"https://www.anunta.com/platforms/desktopready/"}],
+  "facts": {
+    "what": "Service de postes de travail virtuels gérés par Anunta, conçu pour déployer et administrer des environnements Windows dans le cloud.",
+    "what_en": "Managed cloud desktop service from Anunta for deploying and administering Windows work environments.",
+    "pricing_model": "Service B2B sur devis, sans tarif public vérifiable.",
+    "free_tier": {"exists":false,"detail":"Aucun palier gratuit public. Démonstration et devis auprès d'Anunta."},
+    "plans": [{"name":"DesktopReady","price":"Sur devis"}],
+    "key_features": ["Postes Windows virtuels gérés","Provisionnement et administration centralisés","Sécurité et contrôle des accès","Supervision et assistance du service"]
+  },
+  "fr": {"verdict":{"keepIf":["Vous devez fournir des postes Windows distants à une équipe.","Vous voulez déléguer l'exploitation de votre environnement VDI.","Votre organisation préfère un service géré."],"avoidIf":["Vous cherchez un simple accès distant individuel.","Vous voulez une tarification publique en libre-service.","Vous administrez déjà votre VDI en interne."],"threshold":"DesktopReady devient pertinent lorsque l'exploitation d'un parc de postes cloud justifie un prestataire géré."},"pros":["Service géré de bout en bout.","Administration centralisée.","Adapté aux équipes distribuées.","Accompagnement par un spécialiste VDI."],"cons":["Tarification non publique.","Déploiement orienté entreprise.","Dépendance à un prestataire."],"use_cases":["Équiper une équipe distante.","Centraliser des postes Windows.","Externaliser l'exploitation VDI."],"relevant_for":["Entreprises distribuées","Équipes IT","Organisations réglementées"]},
+  "en": {"verdict":{"keepIf":["You need to provide remote Windows desktops to a team.","You want to outsource VDI operations.","Your organisation prefers a managed service."],"avoidIf":["You only need individual remote access.","You want public self-service pricing.","You already operate VDI internally."],"threshold":"DesktopReady makes sense when operating a cloud desktop fleet warrants a managed provider."},"pros":["End-to-end managed service.","Centralised administration.","Suitable for distributed teams.","VDI specialist support."],"cons":["No public pricing.","Enterprise-oriented deployment.","Provider dependency."],"use_cases":["Equip a remote workforce.","Centralise Windows desktops.","Outsource VDI operations."]}
+}

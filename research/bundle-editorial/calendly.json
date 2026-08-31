@@ -1,0 +1,116 @@
+{
+  "slug": "calendly",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-08-30",
+  "sources": [
+    {
+      "label": "Tarifs Calendly (site officiel)",
+      "url": "https://calendly.com/pricing"
+    },
+    {
+      "label": "Produit Calendly (site officiel)",
+      "url": "https://calendly.com/"
+    }
+  ],
+  "facts": {
+    "what": "Calendly automatise la prise de rendez-vous à partir des disponibilités connectées aux calendriers et distribue les réunions individuelles ou d'équipe.",
+    "what_en": "Calendly automates meeting booking from connected calendar availability and routes individual or team meetings.",
+    "pricing_model": "Freemium par utilisateur, avec facturation mensuelle ou annuelle.",
+    "free_tier": {
+      "exists": true,
+      "detail": "Plan Free permanent avec un type d'événement et un calendrier connecté. Essai payant de 14 jours."
+    },
+    "plans": [
+      {
+        "name": "Free",
+        "price": "0 USD"
+      },
+      {
+        "name": "Standard",
+        "price": "10 USD par utilisateur et par mois avec facturation annuelle"
+      },
+      {
+        "name": "Teams",
+        "price": "16 USD par utilisateur et par mois avec facturation annuelle"
+      },
+      {
+        "name": "Enterprise",
+        "price": "À partir de 15 000 USD par an"
+      }
+    ],
+    "key_features": [
+      "Pages de réservation",
+      "Synchronisation de calendriers",
+      "Rappels automatisés",
+      "Paiements Stripe et PayPal",
+      "Round-robin et routage de leads"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez régulièrement le workflow central de Calendly.",
+        "Vous préférez un produit intégré à l'assemblage de plusieurs outils.",
+        "Les limites officielles correspondent à votre volume réel."
+      ],
+      "avoidIf": [
+        "Votre besoin est ponctuel et un outil gratuit plus simple suffit.",
+        "Votre stack couvre déjà le même workflow.",
+        "Le modèle par usage ou par siège rend le coût difficile à prévoir."
+      ],
+      "threshold": "Retenez-le lorsque l'usage récurrent remplace un workflow manuel ou fragmenté clairement identifié."
+    },
+    "pros": [
+      "Workflow produit bien défini.",
+      "Documentation officielle et développement actif.",
+      "S'intègre aux processus professionnels.",
+      "Point d'entrée disponible avant de monter en charge."
+    ],
+    "cons": [
+      "Le coût peut augmenter avec l'usage ou les sièges.",
+      "Les fonctions avancées exigent une offre payante.",
+      "La qualité du paramétrage influence le résultat."
+    ],
+    "use_cases": [
+      "Utiliser pages de réservation dans un workflow récurrent.",
+      "Utiliser synchronisation de calendriers dans un workflow récurrent.",
+      "Utiliser rappels automatisés dans un workflow récurrent."
+    ],
+    "relevant_for": [
+      "Indépendants",
+      "Équipes commerciales",
+      "Recruteurs"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need Calendly's core workflow regularly.",
+        "You value an integrated product over stitching several tools together.",
+        "The official usage limits match your real volume."
+      ],
+      "avoidIf": [
+        "Your need is occasional and a simpler free tool is enough.",
+        "You already cover the same workflow in your current stack.",
+        "The usage or seat model makes costs hard to predict."
+      ],
+      "threshold": "Keep it when recurring usage replaces a clear manual or fragmented workflow."
+    },
+    "pros": [
+      "Focused product workflow.",
+      "Official documentation and active development.",
+      "Integrates into professional processes.",
+      "Entry path available before scaling."
+    ],
+    "cons": [
+      "Costs can grow with usage or seats.",
+      "Advanced capabilities require a paid tier.",
+      "Setup quality affects the result."
+    ],
+    "use_cases": [
+      "Use pages de réservation in a recurring workflow.",
+      "Use synchronisation de calendriers in a recurring workflow.",
+      "Use rappels automatisés in a recurring workflow."
+    ]
+  }
+}

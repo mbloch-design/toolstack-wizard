@@ -1,0 +1,19 @@
+{
+  "slug": "descript",
+  "verified_on": "2026-08-30",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://www.descript.com/pricing"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://www.descript.com/favicon.ico",
+      "source_page_url": "https://www.descript.com/pricing",
+      "official": true
+    }
+  ]
+}

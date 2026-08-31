@@ -1,0 +1,20 @@
+{
+  "slug": "webflow",
+  "verified_on": "2026-08-30",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://webflow.com/"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://cdn.prod.website-files.com/686294e263eb7e215bd232f7/6a048234cec10a58c38e1758_webflow-og.jpg",
+      "source_page_url": "https://webflow.com/",
+      "official": true
+    }
+  ]
+}
+

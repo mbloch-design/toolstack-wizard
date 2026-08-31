@@ -1,0 +1,116 @@
+{
+  "slug": "surveymonkey",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-08-30",
+  "sources": [
+    {
+      "label": "SurveyMonkey - Surveys (site officiel)",
+      "url": "https://www.surveymonkey.com/product/surveys/"
+    },
+    {
+      "label": "SurveyMonkey - Pricing (site officiel)",
+      "url": "https://www.surveymonkey.com/pricing/details/"
+    }
+  ],
+  "facts": {
+    "what": "Plateforme web pour créer, diffuser et analyser des sondages, formulaires et quiz, avec modèles, logique conditionnelle et fonctions de collaboration.",
+    "what_en": "Web platform for creating, distributing, and analyzing surveys, forms, and quizzes, with templates, conditional logic, and collaboration features.",
+    "pricing_model": "Plan gratuit limité, abonnements individuels, équipe et entreprise.",
+    "free_tier": {
+      "exists": true,
+      "detail": "Basic gratuit: sondages illimités, 10 questions et 25 réponses visibles par sondage."
+    },
+    "plans": [
+      {
+        "name": "Basic",
+        "price": "Gratuit"
+      },
+      {
+        "name": "Standard Monthly",
+        "price": "99 $/mois"
+      },
+      {
+        "name": "Team Premier",
+        "price": "92 $/utilisateur/mois, minimum 3 utilisateurs, facturation annuelle"
+      },
+      {
+        "name": "Enterprise",
+        "price": "Sur devis"
+      }
+    ],
+    "key_features": [
+      "Sondages, formulaires, quiz et modèles",
+      "Logique conditionnelle sur les offres payantes",
+      "Collecte par lien, email et intégration web",
+      "Exports, analyses et collaboration"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez SurveyMonkey chaque semaine pour publier ou collecter des données.",
+        "Vous voulez centraliser l'hébergement, l'édition et le suivi.",
+        "Votre équipe peut maintenir la structure et les règles de publication."
+      ],
+      "avoidIf": [
+        "Votre besoin est ponctuel et très simple.",
+        "Vous exigez un fonctionnement entièrement local.",
+        "Vous avez besoin d'une portabilité totale sans dépendance à la plateforme."
+      ],
+      "threshold": "Choisissez SurveyMonkey si la plateforme remplace plusieurs étapes récurrentes; sinon, une solution plus légère suffit."
+    },
+    "pros": [
+      "Plateforme intégrée avec un parcours cohérent.",
+      "Démarrage possible sans développement spécifique.",
+      "Fonctions adaptées à une utilisation régulière.",
+      "Écosystème de modèles ou d'intégrations."
+    ],
+    "cons": [
+      "La configuration demande une gouvernance claire.",
+      "Les limites varient selon le plan.",
+      "La migration vers une autre plateforme peut demander du travail."
+    ],
+    "use_cases": [
+      "Lancer un projet sans infrastructure dédiée.",
+      "Centraliser le travail d'une petite équipe.",
+      "Standardiser un processus récurrent."
+    ],
+    "relevant_for": [
+      "Indépendants",
+      "Petites équipes",
+      "Équipes marketing et opérations"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You use SurveyMonkey every week to publish or collect data.",
+        "You want to centralize hosting, editing, and follow-up.",
+        "Your team can maintain the structure and publishing rules."
+      ],
+      "avoidIf": [
+        "Your need is occasional and very simple.",
+        "You require a fully local workflow.",
+        "You need complete portability with no platform dependency."
+      ],
+      "threshold": "Choose SurveyMonkey when the platform replaces several recurring steps; otherwise, a lighter solution is enough."
+    },
+    "pros": [
+      "Integrated platform with a coherent workflow.",
+      "Can be started without custom development.",
+      "Capabilities suit recurring use.",
+      "Ecosystem of templates or integrations."
+    ],
+    "cons": [
+      "Setup requires clear governance.",
+      "Limits vary by plan.",
+      "Migration to another platform may require work."
+    ],
+    "use_cases": [
+      "Launch a project without dedicated infrastructure.",
+      "Centralize a small team's work.",
+      "Standardize a recurring process."
+    ]
+  }
+}
+

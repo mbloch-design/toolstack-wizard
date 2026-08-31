@@ -1,0 +1,20 @@
+{
+  "slug": "wix",
+  "verified_on": "2026-08-30",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://www.wix.com/"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://static.wixstatic.com/media/343a2a_383f6393fabd4a0fa7f4732b1dd7cdb4~mv2.jpg/v1/fill/w_1200,h_630,al_c/343a2a_383f6393fabd4a0fa7f4732b1dd7cdb4~mv2.jpg",
+      "source_page_url": "https://www.wix.com/",
+      "official": true
+    }
+  ]
+}
+

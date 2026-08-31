@@ -1,0 +1,112 @@
+{
+  "slug": "descript",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-08-30",
+  "sources": [
+    {
+      "label": "Tarifs Descript (site officiel)",
+      "url": "https://www.descript.com/pricing"
+    },
+    {
+      "label": "Produit Descript (site officiel)",
+      "url": "https://www.descript.com/"
+    }
+  ],
+  "facts": {
+    "what": "Descript est un éditeur audio et vidéo piloté par la transcription, avec enregistrement, montage, voix IA et amélioration sonore.",
+    "what_en": "Descript is a transcript-driven audio and video editor with recording, editing, AI voice, and sound enhancement tools.",
+    "pricing_model": "Abonnement par utilisateur avec quotas d'heures média et de crédits IA.",
+    "free_tier": {
+      "exists": true,
+      "detail": "Accès gratuit pour tester l'éditeur avec limites d'usage et d'export."
+    },
+    "plans": [
+      {
+        "name": "Hobbyist",
+        "price": "16 USD par utilisateur et par mois avec facturation annuelle"
+      },
+      {
+        "name": "Creator",
+        "price": "24 USD par utilisateur et par mois avec facturation annuelle"
+      },
+      {
+        "name": "Business",
+        "price": "50 USD par utilisateur et par mois avec facturation annuelle"
+      }
+    ],
+    "key_features": [
+      "Montage depuis la transcription",
+      "Studio Sound",
+      "Suppression des hésitations",
+      "Clips et doublage IA",
+      "Enregistrement écran et caméra"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez régulièrement le workflow central de Descript.",
+        "Vous préférez un produit intégré à l'assemblage de plusieurs outils.",
+        "Les limites officielles correspondent à votre volume réel."
+      ],
+      "avoidIf": [
+        "Votre besoin est ponctuel et un outil gratuit plus simple suffit.",
+        "Votre stack couvre déjà le même workflow.",
+        "Le modèle par usage ou par siège rend le coût difficile à prévoir."
+      ],
+      "threshold": "Retenez-le lorsque l'usage récurrent remplace un workflow manuel ou fragmenté clairement identifié."
+    },
+    "pros": [
+      "Workflow produit bien défini.",
+      "Documentation officielle et développement actif.",
+      "S'intègre aux processus professionnels.",
+      "Point d'entrée disponible avant de monter en charge."
+    ],
+    "cons": [
+      "Le coût peut augmenter avec l'usage ou les sièges.",
+      "Les fonctions avancées exigent une offre payante.",
+      "La qualité du paramétrage influence le résultat."
+    ],
+    "use_cases": [
+      "Utiliser montage depuis la transcription dans un workflow récurrent.",
+      "Utiliser studio sound dans un workflow récurrent.",
+      "Utiliser suppression des hésitations dans un workflow récurrent."
+    ],
+    "relevant_for": [
+      "Podcasteurs",
+      "Créateurs vidéo",
+      "Équipes marketing"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need Descript's core workflow regularly.",
+        "You value an integrated product over stitching several tools together.",
+        "The official usage limits match your real volume."
+      ],
+      "avoidIf": [
+        "Your need is occasional and a simpler free tool is enough.",
+        "You already cover the same workflow in your current stack.",
+        "The usage or seat model makes costs hard to predict."
+      ],
+      "threshold": "Keep it when recurring usage replaces a clear manual or fragmented workflow."
+    },
+    "pros": [
+      "Focused product workflow.",
+      "Official documentation and active development.",
+      "Integrates into professional processes.",
+      "Entry path available before scaling."
+    ],
+    "cons": [
+      "Costs can grow with usage or seats.",
+      "Advanced capabilities require a paid tier.",
+      "Setup quality affects the result."
+    ],
+    "use_cases": [
+      "Use montage depuis la transcription in a recurring workflow.",
+      "Use studio sound in a recurring workflow.",
+      "Use suppression des hésitations in a recurring workflow."
+    ]
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "slug": "flux",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-08-30",
+  "sources": [
+    {
+      "label": "Tarifs FLUX (site officiel)",
+      "url": "https://bfl.ai/pricing?category=flux.2"
+    },
+    {
+      "label": "Documentation tarifaire FLUX (site officiel)",
+      "url": "https://docs.us.bfl.ai/quick_start/pricing"
+    },
+    {
+      "label": "Licences FLUX (site officiel)",
+      "url": "https://help.bfl.ai/articles/9272590838-self-serve-dev-license-overview-pricing"
+    }
+  ],
+  "facts": {
+    "what": "FLUX est la famille de modèles de Black Forest Labs pour générer, modifier et étendre des images, accessible par API, playground ou poids ouverts selon la variante.",
+    "what_en": "FLUX is Black Forest Labs' model family for generating, editing, and extending images through an API, playground, or open weights depending on the variant.",
+    "pricing_model": "Paiement à l'usage pour l'API et licences distinctes pour certains poids auto-hébergés.",
+    "free_tier": {
+      "exists": true,
+      "detail": "FLUX.2 dev est gratuit pour le développement local non commercial. FLUX.2 klein 4B est publié sous licence Apache 2.0."
+    },
+    "plans": [
+      {
+        "name": "FLUX.2 klein 4B",
+        "price": "À partir de 0,014 USD par image"
+      },
+      {
+        "name": "FLUX.2 pro",
+        "price": "À partir de 0,03 USD par mégapixel"
+      },
+      {
+        "name": "FLUX.2 max",
+        "price": "À partir de 0,07 USD par mégapixel"
+      },
+      {
+        "name": "FLUX.2 dev",
+        "price": "Gratuit en local pour un usage non commercial"
+      }
+    ],
+    "key_features": [
+      "Texte vers image",
+      "Édition multi-références",
+      "Inpainting et outpainting",
+      "Rendu de texte précis",
+      "API et poids auto-hébergeables"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez régulièrement le workflow central de Flux.",
+        "Vous préférez un produit intégré à l'assemblage de plusieurs outils.",
+        "Les limites officielles correspondent à votre volume réel."
+      ],
+      "avoidIf": [
+        "Votre besoin est ponctuel et un outil gratuit plus simple suffit.",
+        "Votre stack couvre déjà le même workflow.",
+        "Le modèle par usage ou par siège rend le coût difficile à prévoir."
+      ],
+      "threshold": "Retenez-le lorsque l'usage récurrent remplace un workflow manuel ou fragmenté clairement identifié."
+    },
+    "pros": [
+      "Workflow produit bien défini.",
+      "Documentation officielle et développement actif.",
+      "S'intègre aux processus professionnels.",
+      "Point d'entrée disponible avant de monter en charge."
+    ],
+    "cons": [
+      "Le coût peut augmenter avec l'usage ou les sièges.",
+      "Les fonctions avancées exigent une offre payante.",
+      "La qualité du paramétrage influence le résultat."
+    ],
+    "use_cases": [
+      "Utiliser texte vers image dans un workflow récurrent.",
+      "Utiliser édition multi-références dans un workflow récurrent.",
+      "Utiliser inpainting et outpainting dans un workflow récurrent."
+    ],
+    "relevant_for": [
+      "Développeurs",
+      "Studios IA",
+      "Équipes créatives"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need Flux's core workflow regularly.",
+        "You value an integrated product over stitching several tools together.",
+        "The official usage limits match your real volume."
+      ],
+      "avoidIf": [
+        "Your need is occasional and a simpler free tool is enough.",
+        "You already cover the same workflow in your current stack.",
+        "The usage or seat model makes costs hard to predict."
+      ],
+      "threshold": "Keep it when recurring usage replaces a clear manual or fragmented workflow."
+    },
+    "pros": [
+      "Focused product workflow.",
+      "Official documentation and active development.",
+      "Integrates into professional processes.",
+      "Entry path available before scaling."
+    ],
+    "cons": [
+      "Costs can grow with usage or seats.",
+      "Advanced capabilities require a paid tier.",
+      "Setup quality affects the result."
+    ],
+    "use_cases": [
+      "Use texte vers image in a recurring workflow.",
+      "Use édition multi-références in a recurring workflow.",
+      "Use inpainting et outpainting in a recurring workflow."
+    ]
+  }
+}

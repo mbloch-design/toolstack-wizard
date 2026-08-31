@@ -1,0 +1,19 @@
+{
+  "slug": "flux",
+  "verified_on": "2026-08-30",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://bfl.ai/pricing?category=flux.2"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://bfl.ai/favicon.ico",
+      "source_page_url": "https://bfl.ai/pricing?category=flux.2",
+      "official": true
+    }
+  ]
+}

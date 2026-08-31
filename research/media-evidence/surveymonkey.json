@@ -1,0 +1,20 @@
+{
+  "slug": "surveymonkey",
+  "verified_on": "2026-08-30",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://www.surveymonkey.com/product/surveys/"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://prod.smassets.net/assets/content/sm/resources-let-the-feedback-flow.webp",
+      "source_page_url": "https://www.surveymonkey.com/product/surveys/",
+      "official": true
+    }
+  ]
+}
+

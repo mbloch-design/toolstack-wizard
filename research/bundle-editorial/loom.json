@@ -1,0 +1,112 @@
+{
+  "slug": "loom",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-08-30",
+  "sources": [
+    {
+      "label": "Tarifs Loom (site officiel)",
+      "url": "https://www.loom.com/pricing"
+    },
+    {
+      "label": "Aide Loom (site officiel)",
+      "url": "https://support.loom.com/hc/en-us/articles/360002241017-How-to-upgrade-your-Loom-plan"
+    }
+  ],
+  "facts": {
+    "what": "Loom enregistre l'écran, la caméra et la voix puis publie immédiatement une vidéo partageable avec transcription, commentaires et fonctions IA.",
+    "what_en": "Loom records screen, camera, and voice, then instantly publishes a shareable video with transcription, comments, and AI features.",
+    "pricing_model": "Freemium par utilisateur avec offres équipe et entreprise.",
+    "free_tier": {
+      "exists": true,
+      "detail": "Starter gratuit avec jusqu'à 25 vidéos par personne et cinq minutes par enregistrement."
+    },
+    "plans": [
+      {
+        "name": "Starter",
+        "price": "0 USD"
+      },
+      {
+        "name": "Business + AI",
+        "price": "24 USD par utilisateur et par mois"
+      },
+      {
+        "name": "Enterprise",
+        "price": "Sur devis"
+      }
+    ],
+    "key_features": [
+      "Capture écran et caméra",
+      "Lien partageable immédiat",
+      "Transcription et sous-titres",
+      "Commentaires horodatés",
+      "Résumés et montage IA"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez régulièrement le workflow central de Loom.",
+        "Vous préférez un produit intégré à l'assemblage de plusieurs outils.",
+        "Les limites officielles correspondent à votre volume réel."
+      ],
+      "avoidIf": [
+        "Votre besoin est ponctuel et un outil gratuit plus simple suffit.",
+        "Votre stack couvre déjà le même workflow.",
+        "Le modèle par usage ou par siège rend le coût difficile à prévoir."
+      ],
+      "threshold": "Retenez-le lorsque l'usage récurrent remplace un workflow manuel ou fragmenté clairement identifié."
+    },
+    "pros": [
+      "Workflow produit bien défini.",
+      "Documentation officielle et développement actif.",
+      "S'intègre aux processus professionnels.",
+      "Point d'entrée disponible avant de monter en charge."
+    ],
+    "cons": [
+      "Le coût peut augmenter avec l'usage ou les sièges.",
+      "Les fonctions avancées exigent une offre payante.",
+      "La qualité du paramétrage influence le résultat."
+    ],
+    "use_cases": [
+      "Utiliser capture écran et caméra dans un workflow récurrent.",
+      "Utiliser lien partageable immédiat dans un workflow récurrent.",
+      "Utiliser transcription et sous-titres dans un workflow récurrent."
+    ],
+    "relevant_for": [
+      "Équipes distribuées",
+      "Support client",
+      "Vente et produit"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need Loom's core workflow regularly.",
+        "You value an integrated product over stitching several tools together.",
+        "The official usage limits match your real volume."
+      ],
+      "avoidIf": [
+        "Your need is occasional and a simpler free tool is enough.",
+        "You already cover the same workflow in your current stack.",
+        "The usage or seat model makes costs hard to predict."
+      ],
+      "threshold": "Keep it when recurring usage replaces a clear manual or fragmented workflow."
+    },
+    "pros": [
+      "Focused product workflow.",
+      "Official documentation and active development.",
+      "Integrates into professional processes.",
+      "Entry path available before scaling."
+    ],
+    "cons": [
+      "Costs can grow with usage or seats.",
+      "Advanced capabilities require a paid tier.",
+      "Setup quality affects the result."
+    ],
+    "use_cases": [
+      "Use capture écran et caméra in a recurring workflow.",
+      "Use lien partageable immédiat in a recurring workflow.",
+      "Use transcription et sous-titres in a recurring workflow."
+    ]
+  }
+}

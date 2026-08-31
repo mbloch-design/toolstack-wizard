@@ -1,0 +1,19 @@
+{
+  "slug": "linear",
+  "verified_on": "2026-08-30",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://linear.app/pricing"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://linear.app/favicon.ico",
+      "source_page_url": "https://linear.app/pricing",
+      "official": true
+    }
+  ]
+}

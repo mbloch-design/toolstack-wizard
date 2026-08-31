@@ -1,0 +1,120 @@
+{
+  "slug": "wix",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-08-30",
+  "sources": [
+    {
+      "label": "Wix - Plans (site officiel)",
+      "url": "https://www.wix.com/plans"
+    },
+    {
+      "label": "Wix - Website cost guide (site officiel)",
+      "url": "https://www.wix.com/blog/how-much-is-a-wix-website"
+    }
+  ],
+  "facts": {
+    "what": "Plateforme hébergée pour créer des sites web, boutiques et services en ligne avec éditeur visuel, génération IA, modèles et outils métier intégrés.",
+    "what_en": "Hosted platform for creating websites, stores, and online services with a visual editor, AI generation, templates, and integrated business tools.",
+    "pricing_model": "Plan gratuit et abonnements par site, avec tarifs, taxes et promotions variant selon la localisation.",
+    "free_tier": {
+      "exists": true,
+      "detail": "Plan gratuit avec hébergement et URL Wix, sans domaine personnalisé."
+    },
+    "plans": [
+      {
+        "name": "Free",
+        "price": "Gratuit"
+      },
+      {
+        "name": "Light",
+        "price": "Tarif localisé sur la page officielle"
+      },
+      {
+        "name": "Core",
+        "price": "Tarif localisé sur la page officielle"
+      },
+      {
+        "name": "Business",
+        "price": "Tarif localisé sur la page officielle"
+      },
+      {
+        "name": "Business Elite",
+        "price": "Tarif localisé sur la page officielle"
+      }
+    ],
+    "key_features": [
+      "Éditeur visuel et constructeur par IA",
+      "Plus de 2 000 modèles personnalisables",
+      "Hébergement géré et sécurité intégrée",
+      "Boutique, paiements, réservations et marketing"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez Wix chaque semaine pour publier ou collecter des données.",
+        "Vous voulez centraliser l'hébergement, l'édition et le suivi.",
+        "Votre équipe peut maintenir la structure et les règles de publication."
+      ],
+      "avoidIf": [
+        "Votre besoin est ponctuel et très simple.",
+        "Vous exigez un fonctionnement entièrement local.",
+        "Vous avez besoin d'une portabilité totale sans dépendance à la plateforme."
+      ],
+      "threshold": "Choisissez Wix si la plateforme remplace plusieurs étapes récurrentes; sinon, une solution plus légère suffit."
+    },
+    "pros": [
+      "Plateforme intégrée avec un parcours cohérent.",
+      "Démarrage possible sans développement spécifique.",
+      "Fonctions adaptées à une utilisation régulière.",
+      "Écosystème de modèles ou d'intégrations."
+    ],
+    "cons": [
+      "La configuration demande une gouvernance claire.",
+      "Les limites varient selon le plan.",
+      "La migration vers une autre plateforme peut demander du travail."
+    ],
+    "use_cases": [
+      "Lancer un projet sans infrastructure dédiée.",
+      "Centraliser le travail d'une petite équipe.",
+      "Standardiser un processus récurrent."
+    ],
+    "relevant_for": [
+      "Indépendants",
+      "Petites équipes",
+      "Équipes marketing et opérations"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You use Wix every week to publish or collect data.",
+        "You want to centralize hosting, editing, and follow-up.",
+        "Your team can maintain the structure and publishing rules."
+      ],
+      "avoidIf": [
+        "Your need is occasional and very simple.",
+        "You require a fully local workflow.",
+        "You need complete portability with no platform dependency."
+      ],
+      "threshold": "Choose Wix when the platform replaces several recurring steps; otherwise, a lighter solution is enough."
+    },
+    "pros": [
+      "Integrated platform with a coherent workflow.",
+      "Can be started without custom development.",
+      "Capabilities suit recurring use.",
+      "Ecosystem of templates or integrations."
+    ],
+    "cons": [
+      "Setup requires clear governance.",
+      "Limits vary by plan.",
+      "Migration to another platform may require work."
+    ],
+    "use_cases": [
+      "Launch a project without dedicated infrastructure.",
+      "Centralize a small team's work.",
+      "Standardize a recurring process."
+    ]
+  }
+}
+

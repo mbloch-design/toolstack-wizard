@@ -1,0 +1,20 @@
+{
+  "slug": "attio",
+  "verified_on": "2026-08-30",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://attio.com/pricing"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://a.storyblok.com/f/234930/1900x1000/c2028529da/og-default.jpeg",
+      "source_page_url": "https://attio.com/pricing",
+      "official": true
+    }
+  ]
+}
+

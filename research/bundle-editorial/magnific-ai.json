@@ -1,0 +1,104 @@
+{
+  "slug": "magnific-ai",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-08-30",
+  "sources": [
+    {
+      "label": "Produit Magnific (site officiel)",
+      "url": "https://magnific.ai/"
+    },
+    {
+      "label": "Facturation Magnific (site officiel)",
+      "url": "https://billing.magnific.ai/"
+    }
+  ],
+  "facts": {
+    "what": "Magnific AI améliore, agrandit, transforme et génère des images en combinant prompts et réglages de créativité, ressemblance et HDR.",
+    "what_en": "Magnific AI enhances, upscales, transforms, and generates images using prompts and creativity, resemblance, and HDR controls.",
+    "pricing_model": "Abonnement et crédits intégrés à l'écosystème Freepik. Les montants applicables sont affichés au moment de l'achat.",
+    "free_tier": {
+      "exists": false,
+      "detail": "Aucun forfait gratuit permanent confirmé sur la page officielle consultée."
+    },
+    "plans": [
+      {
+        "name": "Offres Magnific via Freepik",
+        "price": "Montants affichés dans le parcours officiel d'achat selon le pays et les taxes"
+      }
+    ],
+    "key_features": [
+      "Upscaling haute résolution",
+      "Amélioration guidée par prompt",
+      "Contrôles de créativité et ressemblance",
+      "Transformation d'images",
+      "Génération visuelle"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez régulièrement le workflow central de Magnific AI.",
+        "Vous préférez un produit intégré à l'assemblage de plusieurs outils.",
+        "Les limites officielles correspondent à votre volume réel."
+      ],
+      "avoidIf": [
+        "Votre besoin est ponctuel et un outil gratuit plus simple suffit.",
+        "Votre stack couvre déjà le même workflow.",
+        "Le modèle par usage ou par siège rend le coût difficile à prévoir."
+      ],
+      "threshold": "Retenez-le lorsque l'usage récurrent remplace un workflow manuel ou fragmenté clairement identifié."
+    },
+    "pros": [
+      "Workflow produit bien défini.",
+      "Documentation officielle et développement actif.",
+      "S'intègre aux processus professionnels.",
+      "Point d'entrée disponible avant de monter en charge."
+    ],
+    "cons": [
+      "Le coût peut augmenter avec l'usage ou les sièges.",
+      "Les fonctions avancées exigent une offre payante.",
+      "La qualité du paramétrage influence le résultat."
+    ],
+    "use_cases": [
+      "Utiliser upscaling haute résolution dans un workflow récurrent.",
+      "Utiliser amélioration guidée par prompt dans un workflow récurrent.",
+      "Utiliser contrôles de créativité et ressemblance dans un workflow récurrent."
+    ],
+    "relevant_for": [
+      "Artistes IA",
+      "Photographes",
+      "Designers et studios"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need Magnific AI's core workflow regularly.",
+        "You value an integrated product over stitching several tools together.",
+        "The official usage limits match your real volume."
+      ],
+      "avoidIf": [
+        "Your need is occasional and a simpler free tool is enough.",
+        "You already cover the same workflow in your current stack.",
+        "The usage or seat model makes costs hard to predict."
+      ],
+      "threshold": "Keep it when recurring usage replaces a clear manual or fragmented workflow."
+    },
+    "pros": [
+      "Focused product workflow.",
+      "Official documentation and active development.",
+      "Integrates into professional processes.",
+      "Entry path available before scaling."
+    ],
+    "cons": [
+      "Costs can grow with usage or seats.",
+      "Advanced capabilities require a paid tier.",
+      "Setup quality affects the result."
+    ],
+    "use_cases": [
+      "Use upscaling haute résolution in a recurring workflow.",
+      "Use amélioration guidée par prompt in a recurring workflow.",
+      "Use contrôles de créativité et ressemblance in a recurring workflow."
+    ]
+  }
+}

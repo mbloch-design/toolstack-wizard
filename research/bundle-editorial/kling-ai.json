@@ -1,0 +1,108 @@
+{
+  "slug": "kling-ai",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-08-30",
+  "sources": [
+    {
+      "label": "Tarifs Kling AI (site officiel)",
+      "url": "https://klingai.com/pricing"
+    },
+    {
+      "label": "Produit Kling AI (site officiel)",
+      "url": "https://klingai.com/"
+    }
+  ],
+  "facts": {
+    "what": "Kling AI est une plateforme de génération vidéo et image par IA à partir de texte, d'images et de références de mouvement.",
+    "what_en": "Kling AI is an AI video and image generation platform using text, images, and motion references.",
+    "pricing_model": "Freemium par crédits, avec abonnements mensuels et annuels.",
+    "free_tier": {
+      "exists": true,
+      "detail": "Accès gratuit avec crédits limités. Les quotas et promotions peuvent varier selon le compte."
+    },
+    "plans": [
+      {
+        "name": "Standard",
+        "price": "Environ 7 USD par mois selon la grille officielle consultée"
+      },
+      {
+        "name": "Pro",
+        "price": "Environ 30 USD par mois selon la grille officielle consultée"
+      }
+    ],
+    "key_features": [
+      "Texte vers vidéo",
+      "Image vers vidéo",
+      "Contrôle de mouvement",
+      "Génération d'images",
+      "Extensions et variations vidéo"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous utilisez régulièrement le workflow central de Kling AI.",
+        "Vous préférez un produit intégré à l'assemblage de plusieurs outils.",
+        "Les limites officielles correspondent à votre volume réel."
+      ],
+      "avoidIf": [
+        "Votre besoin est ponctuel et un outil gratuit plus simple suffit.",
+        "Votre stack couvre déjà le même workflow.",
+        "Le modèle par usage ou par siège rend le coût difficile à prévoir."
+      ],
+      "threshold": "Retenez-le lorsque l'usage récurrent remplace un workflow manuel ou fragmenté clairement identifié."
+    },
+    "pros": [
+      "Workflow produit bien défini.",
+      "Documentation officielle et développement actif.",
+      "S'intègre aux processus professionnels.",
+      "Point d'entrée disponible avant de monter en charge."
+    ],
+    "cons": [
+      "Le coût peut augmenter avec l'usage ou les sièges.",
+      "Les fonctions avancées exigent une offre payante.",
+      "La qualité du paramétrage influence le résultat."
+    ],
+    "use_cases": [
+      "Utiliser texte vers vidéo dans un workflow récurrent.",
+      "Utiliser image vers vidéo dans un workflow récurrent.",
+      "Utiliser contrôle de mouvement dans un workflow récurrent."
+    ],
+    "relevant_for": [
+      "Créateurs vidéo",
+      "Studios sociaux",
+      "Équipes marketing"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You need Kling AI's core workflow regularly.",
+        "You value an integrated product over stitching several tools together.",
+        "The official usage limits match your real volume."
+      ],
+      "avoidIf": [
+        "Your need is occasional and a simpler free tool is enough.",
+        "You already cover the same workflow in your current stack.",
+        "The usage or seat model makes costs hard to predict."
+      ],
+      "threshold": "Keep it when recurring usage replaces a clear manual or fragmented workflow."
+    },
+    "pros": [
+      "Focused product workflow.",
+      "Official documentation and active development.",
+      "Integrates into professional processes.",
+      "Entry path available before scaling."
+    ],
+    "cons": [
+      "Costs can grow with usage or seats.",
+      "Advanced capabilities require a paid tier.",
+      "Setup quality affects the result."
+    ],
+    "use_cases": [
+      "Use texte vers vidéo in a recurring workflow.",
+      "Use image vers vidéo in a recurring workflow.",
+      "Use contrôle de mouvement in a recurring workflow."
+    ]
+  }
+}
