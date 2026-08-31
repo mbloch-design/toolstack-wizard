@@ -1,9 +1,9 @@
 {
   "slug": "agicap",
-  "author": "ToolTrim — Mike",
+  "author": "ToolTrim - Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Agicap — Treasury management platform (site officiel)", "url": "https://agicap.com" }
+    { "label": "Agicap - Treasury management platform (site officiel)", "url": "https://agicap.com" }
   ],
   "facts": {
     "what": "Plateforme SaaS française de gestion de trésorerie et cash flow. Agrège les flux bancaires et comptables, offrant une visibilité en temps réel, des prévisions multi-horizon, et automation des paiements. Conforme aux normes e-invoicing européennes.",

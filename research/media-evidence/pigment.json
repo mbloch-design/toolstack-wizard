@@ -1,0 +1,19 @@
+{
+  "slug": "pigment",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://www.gopigment.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://cdn.prod.website-files.com/6605b12132f6a8b5d23896bd/66d863e42d71cb716b67d825_Pigment%20-%20Prepare%20for%20anything.jpg",
+      "source_page_url": "https://www.gopigment.com",
+      "official": true
+    }
+  ]
+}

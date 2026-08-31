@@ -1,0 +1,19 @@
+{
+  "slug": "brand24",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://brand24.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://brand24.com/app/themes/b24/assets/v4/images/og-image.png",
+      "source_page_url": "https://brand24.com",
+      "official": true
+    }
+  ]
+}

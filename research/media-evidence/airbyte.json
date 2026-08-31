@@ -1,0 +1,19 @@
+{
+  "slug": "airbyte",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://airbyte.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://airbyte.com/images/opengraph-context-layer-ai-agents.png",
+      "source_page_url": "https://airbyte.com",
+      "official": true
+    }
+  ]
+}

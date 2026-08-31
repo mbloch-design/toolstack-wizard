@@ -1,0 +1,19 @@
+{
+  "slug": "crawlbase",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://crawlbase.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://crawlbase.com/assets/images/open-graph/open-graph-index-82ddc97877.jpg",
+      "source_page_url": "https://crawlbase.com",
+      "official": true
+    }
+  ]
+}

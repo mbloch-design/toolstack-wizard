@@ -1,0 +1,19 @@
+{
+  "slug": "conga",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://conga.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://conga.com/sites/default/files/styles/large/public/image/2026-03/Social%20Share%20%281%29%20%281%29.png?itok=uH7gF5iu",
+      "source_page_url": "https://conga.com",
+      "official": true
+    }
+  ]
+}

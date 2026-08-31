@@ -1,9 +1,9 @@
 {
   "slug": "microsoft-365",
-  "author": "ToolTrim — Mike",
+  "author": "ToolTrim - Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Microsoft 365 — Abonnement productivité cloud (site officiel)", "url": "https://www.microsoft.com/microsoft-365" }
+    { "label": "Microsoft 365 - Abonnement productivité cloud (site officiel)", "url": "https://www.microsoft.com/microsoft-365" }
   ],
   "facts": {
     "what": "Suite d'applications cloud de productivité incluant Word, Excel, PowerPoint, Outlook, OneNote, Teams, stockage OneDrive, et Copilot IA. Conçue pour professionnels et équipes travaillant en ligne.",

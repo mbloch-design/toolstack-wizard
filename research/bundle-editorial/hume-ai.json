@@ -1,9 +1,9 @@
 {
   "slug": "hume-ai",
-  "author": "ToolTrim — Mike",
+  "author": "ToolTrim - Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Hume AI — empathic voice et APIs (site officiel)", "url": "https://www.hume.ai" }
+    { "label": "Hume AI - empathic voice et APIs (site officiel)", "url": "https://www.hume.ai" }
   ],
   "facts": {
     "what": "Plateforme IA empathique vocale : EVI (Empathic Voice Interface) et Octave (TTS empathique). Détecte émotions vocales, répond naturellement. APIs pour expression measurement, EVI, et produits connectés.",

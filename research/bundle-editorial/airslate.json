@@ -1,9 +1,9 @@
 {
   "slug": "airslate",
-  "author": "ToolTrim — Mike",
+  "author": "ToolTrim - Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "airSlate — Automation Platform (site officiel)", "url": "https://airslate.com" }
+    { "label": "airSlate - Automation Platform (site officiel)", "url": "https://airslate.com" }
   ],
   "facts": {
     "what": "Suite d'outils d'automatisation de documents pour les flux de travail numériques, incluant signature électronique (SignNow), édition PDF (pdfFiller), automatisation documentaire (altaFlow) et landing pages (Instapage).",

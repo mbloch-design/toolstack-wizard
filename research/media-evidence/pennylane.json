@@ -1,0 +1,19 @@
+{
+  "slug": "pennylane",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://pennylane.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://images.ctfassets.net/b76knntgaaiu/5f6bEcEKJxLvdKvuwbax05/e292cd12828391facec2a2aa77eecee3/Image_Meta.jpg",
+      "source_page_url": "https://pennylane.com",
+      "official": true
+    }
+  ]
+}

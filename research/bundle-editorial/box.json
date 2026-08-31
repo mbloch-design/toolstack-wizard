@@ -1,9 +1,9 @@
 {
   "slug": "box",
-  "author": "ToolTrim — Mike",
+  "author": "ToolTrim - Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Box — Intelligent Content Management (site officiel)", "url": "https://box.com" }
+    { "label": "Box - Intelligent Content Management (site officiel)", "url": "https://box.com" }
   ],
   "facts": {
     "what": "Plateforme de gestion de contenu cloud combinant stockage sécurisé, collaboration documentaire et automatisation de workflows, avec capacités IA pour extraire et analyser des données non structurées.",

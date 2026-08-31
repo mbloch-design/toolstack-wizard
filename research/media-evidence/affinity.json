@@ -1,0 +1,19 @@
+{
+  "slug": "affinity",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://www.affinity.studio/get-affinity"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://static.canva.com/static/images/fb_cover-1.jpg",
+      "source_page_url": "https://www.affinity.studio/get-affinity",
+      "official": true
+    }
+  ]
+}

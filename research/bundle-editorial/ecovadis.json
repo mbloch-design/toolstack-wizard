@@ -1,9 +1,9 @@
 {
   "slug": "ecovadis",
-  "author": "ToolTrim — Mike",
+  "author": "ToolTrim - Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "EcoVadis — Sustainability Ratings Platform (site officiel)", "url": "https://ecovadis.com" }
+    { "label": "EcoVadis - Sustainability Ratings Platform (site officiel)", "url": "https://ecovadis.com" }
   ],
   "facts": {
     "what": "Plateforme d'évaluation de durabilité ESG (environnemental, social, gouvernance) pour chaînes d'approvisionnement mondiales, fournissant ratings de fournisseurs alignés sur standards UN et GRI pour acheteurs et fournisseurs.",
@@ -11,9 +11,9 @@
     "pricing_model": "Tarification échelonnée selon volume d'évaluations de fournisseurs. Plus avantageux pour programmes gros volume (500+ fournisseurs).",
     "free_tier": { "exists": false, "detail": "Pas de version gratuite. Tarification basée sur le volume d'évaluations." },
     "plans": [
-      { "name": "SME Program", "price": "Tarif sur demande — pour petits programmes <50 fournisseurs" },
-      { "name": "Mid-Market Program", "price": "Tarif sur demande — 50–500 fournisseurs" },
-      { "name": "Enterprise Program", "price": "Tarif préférentiel — 500+ fournisseurs (plus rentable par évaluation)" }
+      { "name": "SME Program", "price": "Tarif sur demande - pour petits programmes <50 fournisseurs" },
+      { "name": "Mid-Market Program", "price": "Tarif sur demande - 50–500 fournisseurs" },
+      { "name": "Enterprise Program", "price": "Tarif préférentiel - 500+ fournisseurs (plus rentable par évaluation)" }
     ],
     "key_features": [
       "Ratings ESG sur 200+ catégories industrielles",

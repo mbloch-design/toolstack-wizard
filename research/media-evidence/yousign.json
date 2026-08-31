@@ -1,0 +1,19 @@
+{
+  "slug": "yousign",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://yousign.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://yousign.com/og-image-facebook-en.png",
+      "source_page_url": "https://yousign.com",
+      "official": true
+    }
+  ]
+}

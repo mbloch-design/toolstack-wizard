@@ -1,10 +1,10 @@
 {
   "slug": "google-chat",
-  "author": "ToolTrim — Mike",
+  "author": "ToolTrim - Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Google Chat — Features & Integrations (site officiel)", "url": "https://workspace.google.com/products/chat/" },
-    { "label": "Google Workspace — Tarification (site officiel)", "url": "https://workspace.google.com/pricing" }
+    { "label": "Google Chat - Features & Integrations (site officiel)", "url": "https://workspace.google.com/products/chat/" },
+    { "label": "Google Workspace - Tarification (site officiel)", "url": "https://workspace.google.com/pricing" }
   ],
   "facts": {
     "what": "Plateforme de communication d'équipe incluse dans Google Workspace pour chat en temps réel, espaces collaboration jusqu'à 500 000 membres, et intégrations tiers (Asana, Jira, Slack, Salesforce). Assistée par Gemini pour résumés, traduction et composition de messages.",

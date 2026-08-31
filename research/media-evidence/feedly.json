@@ -1,0 +1,19 @@
+{
+  "slug": "feedly",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://feedly.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://s1.feedly.com/images/fx/og/threat-intelligence-5-26.png",
+      "source_page_url": "https://feedly.com",
+      "official": true
+    }
+  ]
+}

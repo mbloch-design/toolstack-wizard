@@ -1,0 +1,19 @@
+{
+  "slug": "lindy",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://lindy.ai"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://cdn.prod.website-files.com/63e15df811f9df22b231e58f/69a20da89a23a65ce1b211c3_Lindy%20OG.jpg",
+      "source_page_url": "https://lindy.ai",
+      "official": true
+    }
+  ]
+}

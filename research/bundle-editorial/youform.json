@@ -1,9 +1,9 @@
 {
   "slug": "youform",
-  "author": "ToolTrim — Mike",
+  "author": "ToolTrim - Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Youform — Pricing (site officiel)", "url": "https://youform.com/pricing/" }
+    { "label": "Youform - Pricing (site officiel)", "url": "https://youform.com/pricing/" }
   ],
   "facts": {
     "what": "Constructeur de formulaires no-code avec plan gratuit illimité. Drag-and-drop pour formulaires/sondages/quiz, logique conditionnelle, signatures, intégrations 6000+ (Zapier, Slack, Notion, Stripe, Google Sheets).",

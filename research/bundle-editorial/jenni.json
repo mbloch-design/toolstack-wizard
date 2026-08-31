@@ -1,0 +1,42 @@
+{
+  "slug": "jenni",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-08-31",
+  "sources": [
+    { "label": "Jenni - produit (site officiel)", "url": "https://jenni.ai/" },
+    { "label": "Jenni - tarifs (site officiel)", "url": "https://jenni.ai/pricing" }
+  ],
+  "facts": {
+    "what": "Assistant d'écriture académique centré sur la recherche, la rédaction, les citations et le travail à partir de sources importées.",
+    "what_en": "Academic writing assistant focused on research, drafting, citations, and working from imported sources.",
+    "pricing_model": "Freemium avec abonnement individuel et offres pour équipes et institutions.",
+    "free_tier": { "exists": true, "detail": "Plan gratuit disponible avec limites d'usage." },
+    "plans": [
+      { "name": "Free", "price": "Gratuit avec limites" },
+      { "name": "Individual", "price": "Montant affiché sur la page officielle" },
+      { "name": "Team and Institutional", "price": "Sur devis" }
+    ],
+    "key_features": ["Assistant de rédaction", "Citations intégrées", "Import de sources", "Aide à la recherche"]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": ["Vous rédigez régulièrement des travaux académiques.", "Vous devez gérer des citations pendant la rédaction.", "Vous travaillez à partir d'un corpus de sources."],
+      "avoidIf": ["Vous cherchez un assistant généraliste pour tous vos contenus.", "Vous n'avez pas besoin de citations académiques.", "Votre établissement interdit ce type d'assistance."],
+      "threshold": "Jenni se justifie par un flux académique fréquent avec sources et citations, pas par la rédaction occasionnelle d'un texte généraliste."
+    },
+    "pros": ["Positionnement académique clair.", "Citations dans le flux de rédaction.", "Travail à partir de documents importés.", "Prise en main directe."],
+    "cons": ["Moins pertinent hors contexte académique.", "Les sources et citations doivent rester vérifiées.", "Les limites du plan gratuit arrivent vite pour un usage intensif."],
+    "use_cases": ["Structurer un article académique.", "Rédiger à partir de documents de recherche.", "Insérer et organiser des citations."],
+    "relevant_for": ["Étudiants", "Chercheurs", "Auteurs académiques"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": ["You regularly write academic work.", "You need citations while drafting.", "You work from a defined source library."],
+      "avoidIf": ["You want a general-purpose assistant for every content type.", "You do not need academic citations.", "Your institution prohibits this kind of assistance."],
+      "threshold": "Jenni makes sense for recurring academic workflows with sources and citations, not for occasional general writing."
+    },
+    "pros": ["Clear academic focus.", "Citations inside the writing flow.", "Works from imported documents.", "Straightforward onboarding."],
+    "cons": ["Less useful outside academic contexts.", "Sources and citations still require verification.", "Free-plan limits can constrain intensive use."],
+    "use_cases": ["Structure an academic paper.", "Draft from research documents.", "Insert and organize citations."]
+  }
+}

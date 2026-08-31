@@ -1,9 +1,9 @@
 {
   "slug": "ironclad",
-  "author": "ToolTrim — Mike",
+  "author": "ToolTrim - Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Ironclad — Contract Lifecycle Management (site officiel)", "url": "https://ironcladapp.com" }
+    { "label": "Ironclad - Contract Lifecycle Management (site officiel)", "url": "https://ironcladapp.com" }
   ],
   "facts": {
     "what": "Plateforme SaaS de gestion du cycle de vie des contrats (CLM) alimentée par l'IA, permettant automatisation de la création, révision, signature, stockage et analyse des contrats. Inclut Jurist AI pour examen automatisé.",

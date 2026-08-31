@@ -1,0 +1,20 @@
+{
+  "slug": "dun-bradstreet",
+  "verified_on": "2026-08-31",
+  "mode": "fallback_screenshot",
+  "discovery": {
+    "official_media_found": false,
+    "official_pages_checked": [
+      "https://www.dnb.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "screenshot",
+      "url": "/og-screenshots/dun-bradstreet.jpg",
+      "source_page_url": "https://www.dnb.com",
+      "official": false,
+      "capture_method": "browser_screenshot"
+    }
+  ]
+}

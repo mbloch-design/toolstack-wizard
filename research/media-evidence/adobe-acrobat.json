@@ -1,0 +1,19 @@
+{
+  "slug": "adobe-acrobat",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://www.adobe.com/acrobat.html"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://www.adobe.com/acrobat/media_14da7a4ea109e868041eecca664e1538d41f5beb4.png?width=1200&format=pjpg&optimize=medium",
+      "source_page_url": "https://www.adobe.com/acrobat.html",
+      "official": true
+    }
+  ]
+}

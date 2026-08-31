@@ -1,9 +1,9 @@
 {
   "slug": "tella",
-  "author": "ToolTrim — Mike",
+  "author": "ToolTrim - Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Tella — tarifs (site officiel)", "url": "https://www.tella.tv/pricing" }
+    { "label": "Tella - tarifs (site officiel)", "url": "https://www.tella.tv/pricing" }
   ],
   "facts": {
     "what": "Outil d'enregistrement et de montage vidéo dans le navigateur : capture webcam et écran, édition assistée par IA, arrière-plans et mises en page, export jusqu'en 4K.",
@@ -11,9 +11,9 @@
     "pricing_model": "Abonnement mensuel ou annuel (remise annuelle). Essai gratuit de 7 jours.",
     "free_tier": { "exists": false, "detail": "Pas de version gratuite permanente ; essai gratuit de 7 jours." },
     "plans": [
-      { "name": "Pro", "price": "19 $/mois (12 $/mois en annuel) — enregistrement illimité, édition IA, export 4K" },
-      { "name": "Premium", "price": "49 $/mois (39 $/mois en annuel) — branding, domaine, analytics" },
-      { "name": "Team", "price": "sur demande — collaboration d'équipe" }
+      { "name": "Pro", "price": "19 $/mois (12 $/mois en annuel) - enregistrement illimité, édition IA, export 4K" },
+      { "name": "Premium", "price": "49 $/mois (39 $/mois en annuel) - branding, domaine, analytics" },
+      { "name": "Team", "price": "sur demande - collaboration d'équipe" }
     ],
     "key_features": [
       "Enregistrement webcam et écran dans le navigateur",

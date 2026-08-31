@@ -1,0 +1,19 @@
+{
+  "slug": "juro",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://juro.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://cdn.prod.website-files.com/612c95056c9d4b399ddfd2ef/681b76bdf3051d222fd5d9cc_photo_2025-05-07_18-05-20.jpg",
+      "source_page_url": "https://juro.com",
+      "official": true
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "slug": "relevance-ai",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://relevanceai.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://cdn.relevanceai.com/images/og-image.webp",
+      "source_page_url": "https://relevanceai.com",
+      "official": true
+    }
+  ]
+}

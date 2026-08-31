@@ -1,9 +1,9 @@
 {
   "slug": "onetrust",
-  "author": "ToolTrim — Mike",
+  "author": "ToolTrim - Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "OneTrust — Plateforme de gouvernance (site officiel)", "url": "https://www.onetrust.com" }
+    { "label": "OneTrust - Plateforme de gouvernance (site officiel)", "url": "https://www.onetrust.com" }
   ],
   "facts": {
     "what": "Plateforme de gouvernance IA pour piloter confidentialité des données, conformité, gestion des risques et gouvernance IA en temps réel à travers toute l'organisation.",

@@ -1,0 +1,19 @@
+{
+  "slug": "adobe-podcast-ai",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://podcast.adobe.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://tooltrim.com/tool-media/adobe-podcast/enhance-speech.webp",
+      "source_page_url": "https://podcast.adobe.com",
+      "official": true
+    }
+  ]
+}

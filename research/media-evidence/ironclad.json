@@ -1,0 +1,19 @@
+{
+  "slug": "ironclad",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://ironcladapp.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://ironcladapp.com/wp-content/uploads/2025/09/HOMEPAGE-2A.svg",
+      "source_page_url": "https://ironcladapp.com",
+      "official": true
+    }
+  ]
+}

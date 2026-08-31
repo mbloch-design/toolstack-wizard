@@ -1,0 +1,19 @@
+{
+  "slug": "airslate",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://airslate.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://v.fastcdn.co/u/3bac2f90/65769823-0-opengraph-airSlate.jpg",
+      "source_page_url": "https://airslate.com",
+      "official": true
+    }
+  ]
+}

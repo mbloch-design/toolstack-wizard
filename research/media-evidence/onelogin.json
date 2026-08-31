@@ -1,0 +1,19 @@
+{
+  "slug": "onelogin",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://www.onelogin.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://www.onelogin.com/images/og/WebImage-OneLogin-OG-103168-02_159085.jpg",
+      "source_page_url": "https://www.onelogin.com",
+      "official": true
+    }
+  ]
+}

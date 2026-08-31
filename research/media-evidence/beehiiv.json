@@ -1,0 +1,19 @@
+{
+  "slug": "beehiiv",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://beehiiv.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://media.beehiiv.com/www/og-image/og-beehiiv.png",
+      "source_page_url": "https://beehiiv.com",
+      "official": true
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "slug": "adobe-express",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://www.adobe.com/express/"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://www.adobe.com/express/media_1fcab73980cfc55a24701342170da2c2098771fd4.png?width=1200&format=pjpg&optimize=medium",
+      "source_page_url": "https://www.adobe.com/express/",
+      "official": true
+    }
+  ]
+}

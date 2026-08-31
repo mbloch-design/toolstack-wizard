@@ -1,0 +1,37 @@
+{
+  "slug": "affinity",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-08-31",
+  "sources": [
+    { "label": "Affinity by Canva (site officiel)", "url": "https://www.affinity.studio/get-affinity" }
+  ],
+  "facts": {
+    "what": "Application créative unifiée de Canva qui réunit dessin vectoriel, retouche photo et mise en page dans un même environnement de bureau.",
+    "what_en": "Canva's unified desktop creative application combining vector design, photo editing, and page layout in one environment.",
+    "pricing_model": "Application gratuite avec compte Canva, fonctions Canva AI liées à une offre Canva premium.",
+    "free_tier": { "exists": true, "detail": "Les outils vectoriels, pixel et mise en page sont accessibles gratuitement avec un compte Canva." },
+    "plans": [{ "name": "Affinity", "price": "Gratuit" }, { "name": "Canva AI", "price": "Nécessite une offre Canva premium" }],
+    "key_features": ["Dessin vectoriel", "Retouche non destructive", "Mise en page", "Import et export de formats professionnels"]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": ["Vous voulez réunir vectoriel, photo et mise en page.", "Vous travaillez principalement sur ordinateur.", "Vous cherchez une alternative gratuite aux suites créatives par abonnement."],
+      "avoidIf": ["Votre équipe dépend de flux Adobe très spécifiques.", "Vous créez surtout dans le navigateur et en collaboration temps réel.", "Vous avez besoin des fonctions Canva AI sans offre premium."],
+      "threshold": "Affinity est un choix fort pour produire localement avec trois disciplines réunies, moins pour les équipes centrées sur la collaboration web."
+    },
+    "pros": ["Trois disciplines dans une application.", "Fonctions principales gratuites.", "Édition non destructive.", "Large compatibilité de formats."],
+    "cons": ["Compte Canva requis.", "Collaboration web moins centrale.", "Certaines fonctions IA dépendent d'une offre Canva."],
+    "use_cases": ["Créer une identité visuelle.", "Retoucher des images.", "Mettre en page une publication."],
+    "relevant_for": ["Graphistes", "Photographes", "Éditeurs indépendants"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": ["You want vector, photo, and layout tools together.", "You work mainly on desktop.", "You want a free alternative to subscription creative suites."],
+      "avoidIf": ["Your team depends on highly specific Adobe workflows.", "You mostly create in a browser with real-time collaboration.", "You need Canva AI features without a premium plan."],
+      "threshold": "Affinity is a strong fit for local production across three disciplines, less so for teams centered on browser collaboration."
+    },
+    "pros": ["Three creative disciplines in one app.", "Core tools are free.", "Non-destructive editing.", "Broad format compatibility."],
+    "cons": ["A Canva account is required.", "Web collaboration is less central.", "Some AI features depend on a Canva plan."],
+    "use_cases": ["Build a visual identity.", "Edit photographs.", "Lay out a publication."]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "slug": "adobe-creative-cloud",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://www.adobe.com/creativecloud/plans.html"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://www.adobe.com/cc-shared/assets/img/product-icons/jpg/default.jpg?width=1200&format=pjpg&optimize=medium",
+      "source_page_url": "https://www.adobe.com/creativecloud/plans.html",
+      "official": true
+    }
+  ]
+}

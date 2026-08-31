@@ -1,0 +1,19 @@
+{
+  "slug": "apollo",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://www.apollo.io"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://www.apollo.com/content/dam/apolloaem/images/brand/apollo-og-image%202023.png",
+      "source_page_url": "https://www.apollo.io",
+      "official": true
+    }
+  ]
+}

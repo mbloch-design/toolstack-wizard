@@ -1,0 +1,19 @@
+{
+  "slug": "securityscorecard",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://securityscorecard.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://securityscorecard.com/wp-content/uploads/2026/03/SSC_Web_FI_Fallback-7.webp",
+      "source_page_url": "https://securityscorecard.com",
+      "official": true
+    }
+  ]
+}

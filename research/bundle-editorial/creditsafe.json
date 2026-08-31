@@ -1,9 +1,9 @@
 {
   "slug": "creditsafe",
-  "author": "ToolTrim — Mike",
+  "author": "ToolTrim - Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Creditsafe — Business Intelligence & Credit Risk (site officiel)", "url": "https://www.creditsafe.com/us/en" }
+    { "label": "Creditsafe - Business Intelligence & Credit Risk (site officiel)", "url": "https://www.creditsafe.com/us/en" }
   ],
   "facts": {
     "what": "Plateforme d'intelligence commerciale fournissant rapports de crédit, scores de risque de crédit, et alertes en temps réel sur 430 millions d'entreprises mondiales pour évaluer partenaires, fournisseurs et prospects.",
@@ -13,7 +13,7 @@
     "plans": [
       { "name": "Standard Plan", "price": "À partir de ~$149/mois" },
       { "name": "Premium Plan", "price": "À partir de ~$249/mois" },
-      { "name": "Enterprise Custom", "price": "Tarif sur demande — API illimitée et intégrations"
+      { "name": "Enterprise Custom", "price": "Tarif sur demande - API illimitée et intégrations"
       }
     ],
     "key_features": [

@@ -1,0 +1,19 @@
+{
+  "slug": "aircall",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://aircall.io"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://a.storyblok.com/f/157376/1200x630/e9706cdc7b/og-image-en_1200x630.png/m/1200x0",
+      "source_page_url": "https://aircall.io",
+      "official": true
+    }
+  ]
+}

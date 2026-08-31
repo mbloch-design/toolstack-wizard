@@ -1,0 +1,19 @@
+{
+  "slug": "adobe-photoshop",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://adobe.com/products/photoshop"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://www.adobe.com/products/media_17f61e1224166630fb2e30723046881244c8812a9.jpg?width=1200&format=pjpg&optimize=medium",
+      "source_page_url": "https://adobe.com/products/photoshop",
+      "official": true
+    }
+  ]
+}

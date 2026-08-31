@@ -1,9 +1,9 @@
 {
   "slug": "simple-analytics",
-  "author": "ToolTrim — Mike",
+  "author": "ToolTrim - Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Simple Analytics — Privacy-First Analytics (site officiel)", "url": "https://simpleanalytics.com" }
+    { "label": "Simple Analytics - Privacy-First Analytics (site officiel)", "url": "https://simpleanalytics.com" }
   ],
   "facts": {
     "what": "Plateforme analytics web privacy-first, sans cookies ni suivi de visitants, 100% GDPR conforme, qui capture les vues de pages et événements sans identification personnelle. Data hébergée en Europe.",

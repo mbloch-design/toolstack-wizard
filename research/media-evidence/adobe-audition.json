@@ -1,0 +1,19 @@
+{
+  "slug": "adobe-audition",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://www.adobe.com/products/audition.html"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://www.adobe.com/products/media_19762a181d8f7cdad7fa491acc9917bdedbcba01a.jpg?width=1200&format=pjpg&optimize=medium",
+      "source_page_url": "https://www.adobe.com/products/audition.html",
+      "official": true
+    }
+  ]
+}

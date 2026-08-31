@@ -1,10 +1,10 @@
 {
   "slug": "sysaid",
-  "author": "ToolTrim — Mike",
+  "author": "ToolTrim - Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "SysAid — ITSM platform (site officiel)", "url": "https://sysaid.com" },
-    { "label": "SysAid — Pricing (site officiel)", "url": "https://www.sysaid.com/pricing" }
+    { "label": "SysAid - ITSM platform (site officiel)", "url": "https://sysaid.com" },
+    { "label": "SysAid - Pricing (site officiel)", "url": "https://www.sysaid.com/pricing" }
   ],
   "facts": {
     "what": "Plateforme ITSM (IT Service Management) intégrant ticketing, gestion d'incidents et d'actifs informatiques, enrichie par des agents IA pour automatiser jusqu'à 60 % des incidents sans intervention humaine.",

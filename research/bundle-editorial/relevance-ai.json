@@ -1,6 +1,6 @@
 {
   "slug": "relevance-ai",
-  "author": "ToolTrim — Mike",
+  "author": "ToolTrim - Mike",
   "verified_on": "2026-07-24",
   "sources": [
     {
@@ -14,7 +14,7 @@
     "pricing_model": "Double compteur : « Actions » (exécutions d'agents) et « Vendor Credits » (crédits prépayés pour le compute IA). Agents illimités sur tous les plans. Palier gratuit disponible.",
     "free_tier": {
       "exists": true,
-      "detail": "Gratuit : 200 Actions/mois + 1 000 Vendor Credits one-time — pour explorer et tester, pas pour la production."
+      "detail": "Gratuit : 200 Actions/mois + 1 000 Vendor Credits one-time - pour explorer et tester, pas pour la production."
     },
     "plans": [
       {

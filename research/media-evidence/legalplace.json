@@ -1,0 +1,19 @@
+{
+  "slug": "legalplace",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://legalplace.fr"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://www.legalplace.fr/wp-content/uploads/2025/12/legalplace-creation-gestion-societe-og.png",
+      "source_page_url": "https://legalplace.fr",
+      "official": true
+    }
+  ]
+}

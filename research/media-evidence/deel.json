@@ -1,0 +1,19 @@
+{
+  "slug": "deel",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://www.deel.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://website-media.deel.com/General_Purple_f6b2f3f9bd.png",
+      "source_page_url": "https://www.deel.com",
+      "official": true
+    }
+  ]
+}

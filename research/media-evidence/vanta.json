@@ -1,0 +1,19 @@
+{
+  "slug": "vanta",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://www.vanta.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://cdn.prod.website-files.com/64009032676f24f376f002fc/693c66c494e0178e6fae41c8_OG_default.jpg",
+      "source_page_url": "https://www.vanta.com",
+      "official": true
+    }
+  ]
+}

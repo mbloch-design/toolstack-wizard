@@ -1,0 +1,19 @@
+{
+  "slug": "typedream",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://typedream.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://api.typedream.com/v0/document/public/46d710fd-ec90-498a-901c-d6acd853f5fa/2YsyFWeY5lf8FSwgOA5RpTOtGFt_Screenshot_2023-11-30_141243.png",
+      "source_page_url": "https://typedream.com",
+      "official": true
+    }
+  ]
+}

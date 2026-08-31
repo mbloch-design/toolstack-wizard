@@ -1,0 +1,19 @@
+{
+  "slug": "gong",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://gong.io"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://cdn.sanity.io/images/ww20clc6/production/e5b5bf0e084b83ad6b6607c10f026a91a4cfc1f3-2400x1256.png",
+      "source_page_url": "https://gong.io",
+      "official": true
+    }
+  ]
+}

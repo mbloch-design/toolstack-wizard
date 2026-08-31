@@ -1,10 +1,10 @@
 {
   "slug": "aircall",
-  "author": "ToolTrim — Mike",
+  "author": "ToolTrim - Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Aircall — plateforme de communication (site officiel)", "url": "https://aircall.io" },
-    { "label": "Aircall — tarification (site officiel)", "url": "https://aircall.io/pricing" }
+    { "label": "Aircall - plateforme de communication (site officiel)", "url": "https://aircall.io" },
+    { "label": "Aircall - tarification (site officiel)", "url": "https://aircall.io/pricing" }
   ],
   "facts": {
     "what": "Plateforme de communication alimentée par l'IA pour les équipes de vente et support, combinant systèmes téléphoniques modernes, agents vocaux IA et workflows automatisés.",

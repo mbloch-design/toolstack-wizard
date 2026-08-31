@@ -1,0 +1,19 @@
+{
+  "slug": "tella",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://www.tella.tv"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://www.tella.com/marketing-site/og-image.png",
+      "source_page_url": "https://www.tella.tv",
+      "official": true
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "slug": "adobe-substance-3d",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://www.adobe.com/products/substance3d.html"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://www.adobe.com/products/media_1493006c2adba238de471ed68a47f1663e254966c.jpg?width=1200&format=pjpg&optimize=medium",
+      "source_page_url": "https://www.adobe.com/products/substance3d.html",
+      "official": true
+    }
+  ]
+}

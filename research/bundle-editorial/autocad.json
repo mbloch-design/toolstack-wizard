@@ -1,9 +1,9 @@
 {
   "slug": "autocad",
-  "author": "ToolTrim — Mike",
+  "author": "ToolTrim - Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Autodesk AutoCAD — site officiel", "url": "https://www.autodesk.com/products/autocad/overview" }
+    { "label": "Autodesk AutoCAD - site officiel", "url": "https://www.autodesk.com/products/autocad/overview" }
   ],
   "facts": {
     "what": "Logiciel professionnel de conception assistée par ordinateur (CAO) pour la modélisation, le dessin technique en 2D et 3D. Outil réputé auprès des architectes, ingénieurs et designers, utilisé pour les plans, schémas et maquettes complexes.",

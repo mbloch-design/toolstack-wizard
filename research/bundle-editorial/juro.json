@@ -1,9 +1,9 @@
 {
   "slug": "juro",
-  "author": "ToolTrim — Mike",
+  "author": "ToolTrim - Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Juro — Plateforme de contrats intelligents (site officiel)", "url": "https://juro.com" }
+    { "label": "Juro - Plateforme de contrats intelligents (site officiel)", "url": "https://juro.com" }
   ],
   "facts": {
     "what": "Plateforme de gestion de cycle de vie des contrats (CLM) alimentée par l'IA, automatisant création, révision, négociation et approbation de contrats avec intégration CRM et assistant IA natif.",
@@ -13,7 +13,7 @@
     "plans": [
       { "name": "Starter", "price": "Estimé ~$25/utilisateur/mois ou à partir de ~10 000 $/an pour petites équipes" },
       { "name": "Premium Signing (add-on)", "price": "~$10/utilisateur/mois (optionnel)" },
-      { "name": "Enterprise", "price": "Tarif sur demande — API, intégrations personnalisées, support dédié" }
+      { "name": "Enterprise", "price": "Tarif sur demande - API, intégrations personnalisées, support dédié" }
     ],
     "key_features": [
       "Modèles de contrats sans code avec approbation intelligente.",
@@ -47,7 +47,7 @@
       "Réduction notable du temps de signature selon l'éditeur."
     ],
     "cons": [
-      "Tarification non publique — contact commercial requis.",
+      "Tarification non publique - contact commercial requis.",
       "E-signature premium à coût supplémentaire.",
       "Personnalisations avancées onéreuses.",
       "Courbe d'apprentissage pour l'assistant IA."
@@ -83,7 +83,7 @@
       "Notable reduction in time-to-sign reported by the vendor."
     ],
     "cons": [
-      "Pricing not public — sales engagement required.",
+      "Pricing not public - sales engagement required.",
       "Premium e-signature carries additional cost.",
       "Advanced customizations are expensive.",
       "Learning curve for AI assistant optimization."

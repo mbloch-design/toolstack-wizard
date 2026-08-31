@@ -1,6 +1,6 @@
 {
   "slug": "lindy",
-  "author": "ToolTrim — Mike",
+  "author": "ToolTrim - Mike",
   "verified_on": "2026-07-24",
   "sources": [
     {
@@ -19,15 +19,15 @@
     "plans": [
       {
         "name": "Plus",
-        "price": "49,99 $/mois — jusqu'à 2 boîtes"
+        "price": "49,99 $/mois - jusqu'à 2 boîtes"
       },
       {
         "name": "Pro",
-        "price": "99,99 $/mois — 3× l'usage, automatisation navigateur"
+        "price": "99,99 $/mois - 3× l'usage, automatisation navigateur"
       },
       {
         "name": "Max",
-        "price": "199,99 $/mois — 7× l'usage, jusqu'à 5 boîtes"
+        "price": "199,99 $/mois - 7× l'usage, jusqu'à 5 boîtes"
       },
       {
         "name": "Enterprise",

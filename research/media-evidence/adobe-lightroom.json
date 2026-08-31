@@ -1,0 +1,19 @@
+{
+  "slug": "adobe-lightroom",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://adobe.com/products/lightroom"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://www.adobe.com/products/media_1325ced14a2fe5ee95ce8861e41db26a6fc38d95a.jpg?width=1200&format=pjpg&optimize=medium",
+      "source_page_url": "https://adobe.com/products/lightroom",
+      "official": true
+    }
+  ]
+}

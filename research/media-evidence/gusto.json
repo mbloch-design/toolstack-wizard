@@ -1,0 +1,20 @@
+{
+  "slug": "gusto",
+  "verified_on": "2026-08-31",
+  "mode": "fallback_screenshot",
+  "discovery": {
+    "official_media_found": false,
+    "official_pages_checked": [
+      "https://gusto.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "screenshot",
+      "url": "/og-screenshots/gusto.jpg",
+      "source_page_url": "https://gusto.com",
+      "official": false,
+      "capture_method": "browser_screenshot"
+    }
+  ]
+}

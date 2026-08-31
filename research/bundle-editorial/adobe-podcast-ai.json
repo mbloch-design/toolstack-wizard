@@ -1,11 +1,11 @@
 {
   "slug": "adobe-podcast-ai",
   "bundle_parent": "adobe-creative-cloud",
-  "author": "ToolTrim — Mike",
+  "author": "ToolTrim - Mike",
   "verified_on": "2026-07-23",
   "sources": [
     {
-      "label": "Adobe Podcast — page officielle",
+      "label": "Adobe Podcast - page officielle",
       "url": "https://podcast.adobe.com/"
     }
   ],

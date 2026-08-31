@@ -1,0 +1,19 @@
+{
+  "slug": "float",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://float.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://cdn.prod.website-files.com/65efdf52a39c7b2ca4035c98/67a24537fa82ef534146a29d_104d4d983d47ec9445c20d452789cde9_homepage-meta-img_2025.png",
+      "source_page_url": "https://float.com",
+      "official": true
+    }
+  ]
+}

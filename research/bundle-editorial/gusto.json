@@ -1,9 +1,9 @@
 {
   "slug": "gusto",
-  "author": "ToolTrim — Mike",
+  "author": "ToolTrim - Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Gusto — Payroll and HR platform (site officiel)", "url": "https://gusto.com" }
+    { "label": "Gusto - Payroll and HR platform (site officiel)", "url": "https://gusto.com" }
   ],
   "facts": {
     "what": "Plateforme de paie et RH cloud pour petites et moyennes entreprises. Inclut processing de paie, dépôts directs, filings fiscaux, gestion des avantages (santé, retraite), time tracking, et outils RH. Support pour 650+ intégrations.",

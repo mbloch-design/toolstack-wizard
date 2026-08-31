@@ -1,9 +1,9 @@
 {
   "slug": "antidote",
-  "author": "ToolTrim — Mike",
+  "author": "ToolTrim - Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Antidote — Correcteur d'orthographe et grammaire (site officiel)", "url": "https://www.antidote.info" }
+    { "label": "Antidote - Correcteur d'orthographe et grammaire (site officiel)", "url": "https://www.antidote.info" }
   ],
   "facts": {
     "what": "Logiciel d'aide à l'écriture intelligent qui corrige les erreurs de grammaire, d'orthographe et de style en français et en anglais. Propose des dictionnaires complets et des guides linguistiques pour améliorer la qualité du texte.",

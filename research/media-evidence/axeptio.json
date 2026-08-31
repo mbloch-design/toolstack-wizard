@@ -1,0 +1,19 @@
+{
+  "slug": "axeptio",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://axeptio.eu"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://www.axept.io/hubfs/axeptio-og-fr.jpg",
+      "source_page_url": "https://axeptio.eu",
+      "official": true
+    }
+  ]
+}

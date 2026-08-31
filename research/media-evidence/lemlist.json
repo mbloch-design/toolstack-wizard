@@ -1,0 +1,19 @@
+{
+  "slug": "lemlist",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://www.lemlist.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://web-assets.lemlist.com/lemlist/Home%20-%20Graph%20URL.png",
+      "source_page_url": "https://www.lemlist.com",
+      "official": true
+    }
+  ]
+}

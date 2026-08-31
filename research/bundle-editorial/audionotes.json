@@ -1,0 +1,42 @@
+{
+  "slug": "audionotes",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-08-31",
+  "sources": [
+    { "label": "Audionotes - produit (site officiel)", "url": "https://www.audionotes.app/" },
+    { "label": "Audionotes - tarifs (site officiel)", "url": "https://www.audionotes.app/pricing" }
+  ],
+  "facts": {
+    "what": "Assistant de prise de notes qui transforme la voix, les fichiers audio et vidéo, les images et le texte en transcriptions, résumés et notes structurées.",
+    "what_en": "AI note-taking assistant that turns voice, audio and video files, images, and text into transcripts, summaries, and structured notes.",
+    "pricing_model": "Freemium avec abonnement annuel et offre entreprise sur devis.",
+    "free_tier": { "exists": true, "detail": "Gratuit avec notes vocales limitées à une minute par note et fonctions essentielles." },
+    "plans": [
+      { "name": "Free", "price": "$0" },
+      { "name": "Pro", "price": "$129.99/an" },
+      { "name": "Enterprise", "price": "Sur devis" }
+    ],
+    "key_features": ["Transcription multilingue", "Résumés et sorties personnalisées", "Conversation avec les notes", "Exports et intégrations"]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": ["Vous capturez souvent vos idées à la voix.", "Vous centralisez réunions, cours et fichiers dans un même espace.", "Vous avez besoin de résumés réutilisables."],
+      "avoidIf": ["Vous prenez uniquement de courtes notes écrites.", "Vous exigez une prise de notes de réunion entièrement automatisée.", "Vous ne voulez pas confier vos enregistrements à un service cloud."],
+      "threshold": "Audionotes devient utile quand la voix et les fichiers sont votre matière première régulière, pas pour remplacer un simple bloc-notes."
+    },
+    "pros": ["Plusieurs types d'entrée.", "Transcription et résumé réunis.", "Organisation et recherche intégrées.", "Disponible sur plusieurs appareils."],
+    "cons": ["Le plan gratuit limite la durée des notes vocales.", "La qualité dépend de l'enregistrement.", "Les usages avancés nécessitent un abonnement."],
+    "use_cases": ["Transformer une réunion en notes structurées.", "Développer une idée dictée en contenu.", "Résumer un cours ou une vidéo."],
+    "relevant_for": ["Indépendants", "Étudiants", "Créateurs de contenu"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": ["You often capture ideas by voice.", "You centralize meetings, lectures, and files in one workspace.", "You need reusable summaries."],
+      "avoidIf": ["You only take short written notes.", "You need fully automated meeting attendance.", "You do not want recordings processed in the cloud."],
+      "threshold": "Audionotes earns its place when voice and uploaded files are recurring inputs, not as a replacement for a basic notebook."
+    },
+    "pros": ["Multiple input types.", "Transcription and summarization together.", "Built-in organization and search.", "Available across devices."],
+    "cons": ["The free plan limits voice-note length.", "Output quality depends on the recording.", "Advanced workflows require a subscription."],
+    "use_cases": ["Turn a meeting into structured notes.", "Develop a dictated idea into content.", "Summarize a lecture or video."]
+  }
+}

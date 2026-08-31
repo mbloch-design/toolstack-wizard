@@ -1,9 +1,9 @@
 {
   "slug": "3ds-max",
-  "author": "ToolTrim — Mike",
+  "author": "ToolTrim - Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Autodesk — 3ds Max présentation et achat (site officiel)", "url": "https://www.autodesk.com/products/3ds-max/overview" }
+    { "label": "Autodesk - 3ds Max présentation et achat (site officiel)", "url": "https://www.autodesk.com/products/3ds-max/overview" }
   ],
   "facts": {
     "what": "Logiciel de modélisation, d'animation et de rendu 3D d'Autodesk, très utilisé pour l'archviz, le jeu vidéo et les effets visuels sur Windows.",

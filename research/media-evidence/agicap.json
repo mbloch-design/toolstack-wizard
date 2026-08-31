@@ -1,0 +1,19 @@
+{
+  "slug": "agicap",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://agicap.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://images.ctfassets.net/8dreszsahte7/2yE99dsuxDH1IVNa5HQKXJ/435b73bb5bd5e0a62bba48a6144336a8/Visuel_g%C3%A9n%C3%A9rique.png",
+      "source_page_url": "https://agicap.com",
+      "official": true
+    }
+  ]
+}

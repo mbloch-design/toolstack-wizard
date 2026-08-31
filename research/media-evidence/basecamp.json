@@ -1,0 +1,19 @@
+{
+  "slug": "basecamp",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://basecamp.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://basecamp.com/assets/images/opengraph/basecamp.png?v=1.3.12",
+      "source_page_url": "https://basecamp.com",
+      "official": true
+    }
+  ]
+}

@@ -1,9 +1,9 @@
 {
   "slug": "voicetypr",
-  "author": "ToolTrim — Mike",
+  "author": "ToolTrim - Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Voicetypr — Offline Voice-to-Text (site officiel)", "url": "https://voicetypr.com" }
+    { "label": "Voicetypr - Offline Voice-to-Text (site officiel)", "url": "https://voicetypr.com" }
   ],
   "facts": {
     "what": "Application de dictée vocale offline-first pour Mac et Windows permettant écrire par la voix dans n'importe quelle app (Cursor, ChatGPT, Claude, Slack, Gmail, docs) en utilisant des modèles IA locaux.",

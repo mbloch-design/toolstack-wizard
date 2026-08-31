@@ -1,9 +1,9 @@
 {
   "slug": "vmake",
-  "author": "ToolTrim — Mike",
+  "author": "ToolTrim - Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Vmake — tarifs (site officiel)", "url": "https://vmake.ai/pricing" }
+    { "label": "Vmake - tarifs (site officiel)", "url": "https://vmake.ai/pricing" }
   ],
   "facts": {
     "what": "Suite d'édition vidéo et image en ligne assistée par IA, orientée e-commerce et créateurs : amélioration/upscaling, suppression de watermark et d'arrière-plan, génération et retouche de visuels produit.",

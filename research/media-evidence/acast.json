@@ -1,0 +1,19 @@
+{
+  "slug": "acast",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://acast.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://cdn.prod.website-files.com/67b6f863dda3a85687e777a6/6809ff3ab38ebd48f5709328_Acast%20OG.jpg",
+      "source_page_url": "https://acast.com",
+      "official": true
+    }
+  ]
+}

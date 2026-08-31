@@ -1,0 +1,19 @@
+{
+  "slug": "sysaid",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://sysaid.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://cdn.sysaid.com/wp-content/uploads/sysaid-logo-blogs.png",
+      "source_page_url": "https://sysaid.com",
+      "official": true
+    }
+  ]
+}

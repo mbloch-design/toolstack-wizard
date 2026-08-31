@@ -1,6 +1,6 @@
 {
   "slug": "feedly",
-  "author": "ToolTrim — Mike",
+  "author": "ToolTrim - Mike",
   "verified_on": "2026-07-24",
   "sources": [
     {
@@ -8,7 +8,7 @@
       "url": "https://feedly.com/i/pricing"
     },
     {
-      "label": "Feedly — différences entre les plans (documentation officielle)",
+      "label": "Feedly - différences entre les plans (documentation officielle)",
       "url": "https://docs.feedly.com/article/140-what-is-the-difference-between-feedly-basic-pro-and-teams"
     }
   ],

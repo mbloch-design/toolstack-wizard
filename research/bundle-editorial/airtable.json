@@ -1,9 +1,9 @@
 {
   "slug": "airtable",
-  "author": "ToolTrim — Mike",
+  "author": "ToolTrim - Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Airtable — Pricing (site officiel)", "url": "https://airtable.com/pricing" }
+    { "label": "Airtable - Pricing (site officiel)", "url": "https://airtable.com/pricing" }
   ],
   "facts": {
     "what": "Plateforme collaborative de gestion de données permettant de construire des applications sans code, avec des tables reliées, des automations, et une interface personnalisable pour équipes.",

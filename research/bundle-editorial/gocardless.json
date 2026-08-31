@@ -1,16 +1,16 @@
 {
   "slug": "gocardless",
-  "author": "ToolTrim — Mike",
+  "author": "ToolTrim - Mike",
   "verified_on": "2026-07-24",
   "sources": [
     {
-      "label": "GoCardless — prélèvement bancaire récurrent (site officiel)",
+      "label": "GoCardless - prélèvement bancaire récurrent (site officiel)",
       "url": "https://gocardless.com/"
     }
   ],
   "facts": {
-    "what": "Plateforme de paiements récurrents par prélèvement bancaire (Direct Debit, SEPA, ACH…), pensée pour la facturation par abonnement — alternative bancaire aux paiements par carte.",
-    "what_en": "Platform for recurring bank transfer payments (Direct Debit, SEPA, ACH, etc.), designed for subscription billing—a bank transfer alternative to card payments.",
+    "what": "Plateforme de paiements récurrents par prélèvement bancaire (Direct Debit, SEPA, ACH…), pensée pour la facturation par abonnement - alternative bancaire aux paiements par carte.",
+    "what_en": "Platform for recurring bank transfer payments (Direct Debit, SEPA, ACH, etc.), designed for subscription billing-a bank transfer alternative to card payments.",
     "pricing_model": "À la transaction, sans frais mensuels obligatoires ni engagement. Paliers Standard / Advanced / Pro selon le volume.",
     "free_tier": {
       "exists": false,

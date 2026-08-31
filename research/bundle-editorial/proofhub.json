@@ -1,9 +1,9 @@
 {
   "slug": "proofhub",
-  "author": "ToolTrim — Mike",
+  "author": "ToolTrim - Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "ProofHub — pricing et plans (site officiel)", "url": "https://www.proofhub.com/pricing" }
+    { "label": "ProofHub - pricing et plans (site officiel)", "url": "https://www.proofhub.com/pricing" }
   ],
   "facts": {
     "what": "Plateforme collaborative de gestion de projet et d'approbation avec tarification forfaitaire (pas de frais par utilisateur), couvrant tâches, Gantt, discussions, chat, approbations de fichiers (proofing) et intégrations.",

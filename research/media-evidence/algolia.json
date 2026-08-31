@@ -1,0 +1,19 @@
+{
+  "slug": "algolia",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://www.algolia.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://www.algolia.com/files/live/sites/algolia-assets/files/opengraph/algolia-opengraph-image.jpg",
+      "source_page_url": "https://www.algolia.com",
+      "official": true
+    }
+  ]
+}

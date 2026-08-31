@@ -1,0 +1,19 @@
+{
+  "slug": "tomorro",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://www.tomorro.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://cdn.prod.website-files.com/62a7039ea5539a072aa2c5d0/67069f030afd6c7c1c77b9c3_Thumbnail.png",
+      "source_page_url": "https://www.tomorro.com",
+      "official": true
+    }
+  ]
+}

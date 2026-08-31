@@ -1,0 +1,19 @@
+{
+  "slug": "weezevent",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://weezevent.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://weezevent.com/opengraph.jpg",
+      "source_page_url": "https://weezevent.com",
+      "official": true
+    }
+  ]
+}

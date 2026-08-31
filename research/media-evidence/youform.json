@@ -1,0 +1,19 @@
+{
+  "slug": "youform",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://youform.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://youform.com/assets/images/youform-builder.png",
+      "source_page_url": "https://youform.com",
+      "official": true
+    }
+  ]
+}

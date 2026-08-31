@@ -22858,7 +22858,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Outil métier",
         "roleEn": "Specialist tool",
-        "slug": "condeco",
+        "slug": "eptura-engage",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",

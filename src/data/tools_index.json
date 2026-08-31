@@ -73,11 +73,11 @@
     "slug": "1password",
     "name": "1Password",
     "categoryId": "security",
-    "shortDescription": "Le gestionnaire de mots de passe pro pour sécuriser tous vos comptes.",
-    "shortDescriptionEn": "The professional password manager to secure all your accounts.",
+    "shortDescription": "Plateforme unifiée de gestion des accès (gestionnaire de mots de passe d'entreprise) sécurisant les identifiants pour les humains, les agents IA et les systèmes automatisés avec authentification multi-facteur et gestion des secrets.",
+    "shortDescriptionEn": "Unified access management platform (enterprise password manager) securing credentials for humans, AI agents, and automated systems with multi-factor authentication and secrets management.",
     "pricing": {
-      "free": "Aucun plan gratuit",
-      "paid": "Individual à partir de 48$/an (~3,46€/mois équiv.)"
+      "free": "Pas d'offre gratuite permanente. Démonstration gratuite disponible.",
+      "paid": "Plan Personnel: Tarification personnalisée - montants sur la page officielle ; Plan Affaires: Tarification personnalisée - montants sur la page officielle ; Plan Entreprise: Tarification personnalisée - montants sur la page officielle"
     },
     "defaultMonthlyPrice": 3.46,
     "affiliateLink": "https://1password.com",
@@ -112,16 +112,16 @@
     "slug": "3ds-max",
     "name": "3ds Max",
     "categoryId": "creation",
-    "shortDescription": "Logiciel Autodesk de modélisation 3D et de rendu, roi de l'archviz et du jeu.",
-    "shortDescriptionEn": "Autodesk 3D modeling and rendering software, king of archviz and games.",
+    "shortDescription": "Logiciel de modélisation, d'animation et de rendu 3D d'Autodesk, très utilisé pour l'archviz, le jeu vidéo et les effets visuels sur Windows.",
+    "shortDescriptionEn": "Autodesk's 3D modeling, animation and rendering software, widely used for architectural visualization, game development and visual effects on Windows.",
     "pricing": {
-      "free": "Essai gratuit ; 3ds Max Indie pour <100k$ de CA",
-      "paid": "1 785$/an (~149$/mois) ou 225$/mois. Collection M&E avec Maya ~2 600$/an."
+      "free": "Pas de version gratuite permanente. Essai gratuit ; licence éducative gratuite pour étudiants/enseignants éligibles ; sinon abonnement.",
+      "paid": "Abonnement mensuel: 245 $/mois (montants sur la page officielle) ; Abonnement annuel: environ 33 % d'économie vs le mensuel (montants sur la page officielle) ; Abonnement 3 ans: tarif verrouillé sur 3 ans (montants sur la page officielle)"
     },
     "defaultMonthlyPrice": 149,
     "affiliateLink": "",
     "websiteUrl": "https://www.autodesk.com/products/3ds-max/overview",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/3ds-max.jpg",
+    "ogImageUrl": "/og-screenshots/3ds-max.jpg",
     "logo": "",
     "tool_type": "metier",
     "host_app": null,
@@ -150,16 +150,16 @@
     "slug": "8fig",
     "name": "8fig",
     "categoryId": "finance",
-    "shortDescription": "Plateforme de financement de croissance pour les fondateurs e-commerce.",
-    "shortDescriptionEn": "Growth funding platform for e-commerce founders.",
+    "shortDescription": "Plateforme de financement pour vendeurs Amazon et Shopify, offrant du capital pour l'inventaire et les besoins de la chaîne d'approvisionnement. Modèle sans équité basé sur le chiffre d'affaires, avec approbation rapide et aucune vérification de crédit personnel.",
+    "shortDescriptionEn": "Funding platform for Amazon and Shopify sellers, providing capital for inventory and supply chain needs. Equity-free revenue-based model with fast approval and no personal credit check.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "5€/mois pour version Pro"
+      "free": "Pas de version gratuite ; financement sur demande uniquement.",
+      "paid": "Financement personnalisé: Taux commissionné selon le profil ; montants sur demande"
     },
     "defaultMonthlyPrice": 5,
     "affiliateLink": "https://8fig.com",
     "websiteUrl": "https://8fig.com",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/8fig.jpg",
+    "ogImageUrl": "/og-screenshots/8fig.jpg",
     "logo": "",
     "tool_type": "gestion",
     "host_app": null,
@@ -186,11 +186,11 @@
     "slug": "ableton-live",
     "name": "Ableton Live",
     "categoryId": "creation",
-    "shortDescription": "Production musicale, live performance et sound design.",
-    "shortDescriptionEn": "Music production, live performance, and sound design.",
+    "shortDescription": "Station de travail audio numérique (DAW) réputée pour la production électronique et le live, avec sa Session View non linéaire (clips/scènes) en plus de l'Arrangement View classique.",
+    "shortDescriptionEn": "Digital audio workstation (DAW) renowned for electronic production and live performance, with its non-linear Session View (clips/scenes) in addition to the classic Arrangement View.",
     "pricing": {
-      "free": "Essai ou plan gratuit selon usage",
-      "paid": "À partir de 20€/mois environ"
+      "free": "Essai gratuit ; pas de version gratuite permanente. Achat de licence par édition.",
+      "paid": "Intro: 99 $ (16 pistes/scènes, pour débuter) ; Standard: 349 $ (sans limites, plus d'outils) ; Suite: 749 $ (tout inclus + Max for Live)"
     },
     "defaultMonthlyPrice": 20,
     "affiliateLink": "",
@@ -226,9 +226,12 @@
     "slug": "acast",
     "name": "Acast",
     "categoryId": "creation",
-    "shortDescription": "Plateforme d'hébergement et de monétisation de podcasts.",
-    "shortDescriptionEn": "Podcast hosting and monetization platform.",
-    "pricing": "Hébergement gratuit possible ; monétisation via le réseau publicitaire intégré selon l'audience.",
+    "shortDescription": "Plateforme mondiale d'hébergement et de monétisation de podcasts : distribution, insertion publicitaire dynamique, mise en relation avec des annonceurs et analytics.",
+    "shortDescriptionEn": "Global podcast hosting and monetization platform: distribution, dynamic ad insertion, connecting with advertisers, and analytics.",
+    "pricing": {
+      "free": "Gratuit limité (ex. quelques épisodes) sauf activation de la monétisation. Partage de revenus sur la pub (Acast prélève une part).",
+      "paid": "Gratuit: 0 $ (limité) ; Payant: ~15–30 $/mois selon les fonctions (montants sur le site officiel)"
+    },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://acast.com",
     "websiteUrl": "https://acast.com",
@@ -439,16 +442,16 @@
     "slug": "adobe-acrobat",
     "name": "Adobe Acrobat Pro",
     "categoryId": "legal-contracts",
-    "shortDescription": "Outil de référence pour contrôler, annoter, signer et préparer des PDF professionnels.",
-    "shortDescriptionEn": "Reference tool to check, annotate, sign, and prepare professional PDFs.",
+    "shortDescription": "Famille d'applications et de services Adobe pour visualiser, créer, éditer, signer et gérer des fichiers PDF.",
+    "shortDescriptionEn": "Family of Adobe applications and services for viewing, creating, editing, signing, and managing PDFs.",
     "pricing": {
-      "free": "Essai ou plan gratuit selon usage",
-      "paid": "À partir de 20€/mois environ"
+      "free": "Acrobat Reader gratuit pour visualiser, imprimer et annoter des PDF.",
+      "paid": "Acrobat Reader gratuit (lecture/annotation) ; Acrobat (création/édition complète) via licence payante / Creative Cloud."
     },
     "defaultMonthlyPrice": 20,
     "affiliateLink": "",
     "websiteUrl": "https://www.adobe.com/acrobat.html",
-    "ogImageUrl": "https://www.adobe.com/acrobat/media_14da7a4ea109e868041eecca664e1538d41f5beb4.png?width=1200&#x26;#x26;format=pjpg&#x26;#x26;optimize=medium",
+    "ogImageUrl": "https://www.adobe.com/acrobat/media_14da7a4ea109e868041eecca664e1538d41f5beb4.png?width=1200&format=pjpg&optimize=medium",
     "logo": "",
     "tool_type": "satellite",
     "host_app": null,
@@ -551,16 +554,16 @@
     "slug": "adobe-audition",
     "name": "Adobe Audition",
     "categoryId": "creation",
-    "shortDescription": "Nettoyage audio, mixage, voix off et postproduction sonore dans l’écosystème Adobe.",
-    "shortDescriptionEn": "Audio cleanup, mixing, voiceover, and sound post-production in the Adobe ecosystem.",
+    "shortDescription": "Station de travail audionumérique (DAW) d'Adobe : environnement multipiste non destructif et éditeur de forme d'onde.",
+    "shortDescriptionEn": "Adobe's digital audio workstation (DAW): non-destructive multitrack environment for audio recording, editing, and mixing.",
     "pricing": {
-      "free": "Essai ou plan gratuit selon usage",
-      "paid": "À partir de 26€/mois environ"
+      "free": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite).",
+      "paid": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite)."
     },
     "defaultMonthlyPrice": 26,
     "affiliateLink": "",
     "websiteUrl": "https://www.adobe.com/products/audition.html",
-    "ogImageUrl": "https://www.adobe.com/products/media_19762a181d8f7cdad7fa491acc9917bdedbcba01a.jpg?width=1200&#x26;format=pjpg&#x26;optimize=medium",
+    "ogImageUrl": "https://www.adobe.com/products/media_19762a181d8f7cdad7fa491acc9917bdedbcba01a.jpg?width=1200&format=pjpg&optimize=medium",
     "logo": "",
     "tool_type": "satellite",
     "host_app": null,
@@ -635,16 +638,16 @@
     "slug": "adobe-creative-cloud",
     "name": "Adobe Creative Cloud All Apps",
     "categoryId": "design-tools",
-    "shortDescription": "Suite créative complète : Photoshop, Illustrator, Premiere Pro et toutes les apps Adobe en un abonnement.",
-    "shortDescriptionEn": "The full creative suite: Photoshop, Illustrator, Premiere Pro and every Adobe app in one subscription.",
+    "shortDescription": "Suite complète d'applications logicielles pour la création numérique : Photoshop, Illustrator, InDesign, Premiere Pro, After Effects, Lightroom, et plus de 20 autres applications. Disponible par abonnement mensuel ou annuel.",
+    "shortDescriptionEn": "Complete suite of digital creation applications: Photoshop, Illustrator, InDesign, Premiere Pro, After Effects, Lightroom, and 20+ additional apps. Available by monthly or annual subscription.",
     "pricing": {
-      "free": "",
-      "paid": "78,65€/mois sans engagement, ou 779€/an (~64,90€/mois)"
+      "free": "Essai gratuit limité ; pas de version gratuite permanente. Les prix varient selon les régions et les promotions.",
+      "paid": "Single App (ex. Photoshop): 22,99 $ USD/mois (facturation mensuelle) ; Photography: 19,99 $ USD/mois (Photoshop + Lightroom) ; Creative Cloud Standard: 54,99 $ USD/mois (tous les apps, limites web/mobile, 25 crédits Firefly/mois) ; Creative Cloud Pro: 69,99 $ USD/mois (tous les apps, accès complet, plus de crédits Firefly) ; Teams Plans: 84,99 $ USD+/mois (gestion admin, cloud storage augmenté)"
     },
     "defaultMonthlyPrice": 64.9,
     "affiliateLink": "https://adobecreativecloud.com",
     "websiteUrl": "https://www.adobe.com/creativecloud/plans.html",
-    "ogImageUrl": "https://www.adobe.com/cc-shared/assets/img/product-icons/jpg/default.jpg?width=1200&#x26;format=pjpg&#x26;optimize=medium",
+    "ogImageUrl": "https://www.adobe.com/cc-shared/assets/img/product-icons/jpg/default.jpg?width=1200&format=pjpg&optimize=medium",
     "logo": "https://logo.clearbit.com/adobecreativecloud.com",
     "tool_type": "metier",
     "host_app": null,
@@ -713,16 +716,16 @@
     "slug": "adobe-express",
     "name": "Adobe Express",
     "categoryId": "creation",
-    "shortDescription": "Création rapide de supports de marque, formats sociaux et déclinaisons visuelles.",
-    "shortDescriptionEn": "Fast creation of branded assets, social formats, and visual variations.",
+    "shortDescription": "Plateforme de design cloud d'Adobe, orientée grand public, pour créer rapidement visuels, vidéos, PDF et pages web à partir de modèles.",
+    "shortDescriptionEn": "Adobe's cloud design platform, geared toward everyday users, for quickly creating visuals (cards, videos, graphics).",
     "pricing": {
-      "free": "Essai ou plan gratuit selon usage",
-      "paid": "À partir de 10€/mois environ"
+      "free": "Palier gratuit + premium ; inclus dans l'écosystème Creative Cloud (voir la fiche de la suite).",
+      "paid": "Palier gratuit + premium ; inclus dans l'écosystème Creative Cloud (voir la fiche de la suite)."
     },
     "defaultMonthlyPrice": 10,
     "affiliateLink": "",
     "websiteUrl": "https://www.adobe.com/express/",
-    "ogImageUrl": "https://www.adobe.com/express/media_1fcab73980cfc55a24701342170da2c2098771fd4.png?width=1200&#x26;format=pjpg&#x26;optimize=medium",
+    "ogImageUrl": "https://www.adobe.com/express/media_1fcab73980cfc55a24701342170da2c2098771fd4.png?width=1200&format=pjpg&optimize=medium",
     "logo": "",
     "tool_type": "satellite",
     "host_app": null,
@@ -756,16 +759,16 @@
     "slug": "firefly",
     "name": "Adobe Firefly",
     "categoryId": "ai-general",
-    "shortDescription": "La génération d'images IA intégrée dans Adobe CC.",
-    "shortDescriptionEn": "AI image generation integrated in Adobe CC.",
+    "shortDescription": "Web app et famille de modèles d'IA générative d'Adobe pour la production créative (image, vidéo, audio).",
+    "shortDescriptionEn": "Adobe's web app and generative AI model family for creative production (image, video, audio).",
     "pricing": {
-      "free": "Crédits gratuits inclus dans Adobe CC, et usage limité gratuit",
-      "paid": "Plans Firefly à partir d'environ 10$/mois pour plus de crédits"
+      "free": "Fonctionne aux crédits mensuels ; alimente aussi des fonctions dans Photoshop, Premiere Pro, InDesign (voir la fiche de la suite).",
+      "paid": "Fonctionne aux crédits mensuels ; alimente aussi des fonctions dans Photoshop, Premiere Pro, InDesign (voir la fiche de la suite)."
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://firefly.adobe.com",
     "websiteUrl": "https://firefly.adobe.com",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/firefly.jpg",
+    "ogImageUrl": "/og-screenshots/firefly.jpg",
     "logo": "",
     "tool_type": "ia",
     "host_app": null,
@@ -832,16 +835,16 @@
     "slug": "adobe-illustrator",
     "name": "Adobe Illustrator",
     "categoryId": "design-tools",
-    "shortDescription": "Le standard du dessin vectoriel : logos, illustrations, identité visuelle et print.",
-    "shortDescriptionEn": "The standard for vector design and illustration.",
+    "shortDescription": "Éditeur de graphismes vectoriels de référence d'Adobe, pour créer des visuels redimensionnables à l'infini.",
+    "shortDescriptionEn": "Adobe's flagship vector graphics editor for creating visuals that scale across all formats.",
     "pricing": {
-      "free": "Aucune version gratuite, essai uniquement",
-      "paid": "23,99€/mois en engagement annuel (Illustrator seul), ou ~30,49€/mois sans engagement"
+      "free": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite).",
+      "paid": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite)."
     },
     "defaultMonthlyPrice": 23.99,
     "affiliateLink": "https://adobe.com/products/illustrator",
     "websiteUrl": "https://adobe.com/products/illustrator",
-    "ogImageUrl": "https://www.adobe.com/products/media_19762a181d8f7cdad7fa491acc9917bdedbcba01a.jpg?width=1200&#x26;format=pjpg&#x26;optimize=medium",
+    "ogImageUrl": "https://www.adobe.com/products/media_19762a181d8f7cdad7fa491acc9917bdedbcba01a.jpg?width=1200&format=pjpg&optimize=medium",
     "logo": "",
     "tool_type": "metier",
     "host_app": null,
@@ -871,16 +874,16 @@
     "slug": "indesign",
     "name": "Adobe InDesign",
     "categoryId": "design-tools",
-    "shortDescription": "Mise en page et PAO professionnelle : magazines, brochures, livres et documents print.",
-    "shortDescriptionEn": "Professional layout and desktop publishing: magazines, brochures, books, print.",
+    "shortDescription": "Logiciel de PAO et de mise en page d'Adobe (depuis 1999), pour l'édition print et numérique.",
+    "shortDescriptionEn": "Adobe's desktop publishing and layout software (since 1999) for print and digital publishing.",
     "pricing": {
-      "free": "Aucune version gratuite, essai uniquement",
-      "paid": "Environ 26€/mois (InDesign seul), ou via l'offre Creative Cloud complète"
+      "free": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite).",
+      "paid": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite)."
     },
     "defaultMonthlyPrice": 26.21,
     "affiliateLink": "",
     "websiteUrl": "https://adobe.com/products/indesign",
-    "ogImageUrl": "https://www.adobe.com/products/media_14a141cf8900a74105b7122f28472dce9fd8cf872.jpg?width=1200&#x26;format=pjpg&#x26;optimize=medium",
+    "ogImageUrl": "https://www.adobe.com/products/media_14a141cf8900a74105b7122f28472dce9fd8cf872.jpg?width=1200&format=pjpg&optimize=medium",
     "logo": "",
     "tool_type": "metier",
     "host_app": null,
@@ -909,16 +912,16 @@
     "slug": "adobe-lightroom",
     "name": "Adobe Lightroom",
     "categoryId": "design-tools",
-    "shortDescription": "Gestion et retouche photo RAW pour photographes : catalogage, color grading, exports.",
-    "shortDescriptionEn": "The standard for RAW photo management and editing.",
+    "shortDescription": "Application d'organisation et de retouche photo d'Adobe, pensée pour gérer et éditer de gros volumes d'images.",
+    "shortDescriptionEn": "Adobe's photo organization and editing application, designed to manage and batch-edit thousands of photos.",
     "pricing": {
-      "free": "Pas de version gratuite complète (essai, et appli mobile limitée)",
-      "paid": "Formule Photography (avec Photoshop) dès ~10€/mois, Lightroom seul ~12€/mois"
+      "free": "Inclus dans l'abonnement Adobe Creative Cloud / offre Photo (voir la fiche de la suite).",
+      "paid": "Inclus dans l'abonnement Adobe Creative Cloud / offre Photo (voir la fiche de la suite)."
     },
     "defaultMonthlyPrice": 11.03,
     "affiliateLink": "https://adobe.com/products/lightroom",
     "websiteUrl": "https://adobe.com/products/lightroom",
-    "ogImageUrl": "https://www.adobe.com/products/media_1325ced14a2fe5ee95ce8861e41db26a6fc38d95a.jpg?width=1200&#x26;format=pjpg&#x26;optimize=medium",
+    "ogImageUrl": "https://www.adobe.com/products/media_1325ced14a2fe5ee95ce8861e41db26a6fc38d95a.jpg?width=1200&format=pjpg&optimize=medium",
     "logo": "",
     "tool_type": "metier",
     "host_app": null,
@@ -952,16 +955,16 @@
     "slug": "adobe-photoshop",
     "name": "Adobe Photoshop",
     "categoryId": "design-tools",
-    "shortDescription": "Le standard mondial de la retouche photo, du photomontage et du compositing.",
-    "shortDescriptionEn": "The world standard for photo editing and compositing.",
+    "shortDescription": "Éditeur d'images matricielles (raster) de référence d'Adobe, pour Windows, macOS et iPad.",
+    "shortDescriptionEn": "Adobe's flagship raster image editor for Windows, macOS, and iPad.",
     "pricing": {
-      "free": "Aucune version gratuite, essai uniquement",
-      "paid": "23,99€/mois en engagement annuel (Photoshop seul), ou ~30,49€/mois sans engagement ; formule Photo avec Lightroom dès ~12€/mois"
+      "free": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite).",
+      "paid": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite)."
     },
     "defaultMonthlyPrice": 23.99,
     "affiliateLink": "https://adobe.com/products/photoshop",
     "websiteUrl": "https://adobe.com/products/photoshop",
-    "ogImageUrl": "https://www.adobe.com/products/media_17f61e1224166630fb2e30723046881244c8812a9.jpg?width=1200&#x26;format=pjpg&#x26;optimize=medium",
+    "ogImageUrl": "https://www.adobe.com/products/media_17f61e1224166630fb2e30723046881244c8812a9.jpg?width=1200&format=pjpg&optimize=medium",
     "logo": "",
     "tool_type": "metier",
     "host_app": null,
@@ -992,16 +995,16 @@
     "slug": "adobe-podcast-ai",
     "name": "Adobe Podcast AI",
     "categoryId": "ai-general",
-    "shortDescription": "Nettoyage de voix, enregistrement distant et montage audio-vidéo par transcription dans le navigateur.",
-    "shortDescriptionEn": "Browser-based voice cleanup, remote recording and transcript-driven audio and video editing.",
+    "shortDescription": "Suite d'outils audio par IA d'Adobe pour enregistrer, éditer et améliorer la voix (podcasts, voix-off).",
+    "shortDescriptionEn": "Adobe's suite of AI-powered audio tools for recording, editing, and enhancing voice and sound quality.",
     "pricing": {
-      "free": "Gratuit : Enhance Speech 1h/jour, fichiers audio de 30 min et 500 Mo maximum ; Studio, projets de 30 min et 2 téléchargements/jour",
-      "paid": "Premium via Adobe Express Premium : 11,99 €/mois TTC en France, sans engagement annuel ; essai gratuit de 30 jours"
+      "free": "Outils web (dont un niveau gratuit) et fonctions liées à l'écosystème Adobe (voir la fiche de la suite).",
+      "paid": "Outils web (dont un niveau gratuit) et fonctions liées à l'écosystème Adobe (voir la fiche de la suite)."
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://podcast.adobe.com",
     "websiteUrl": "https://podcast.adobe.com",
-    "ogImageUrl": "/tool-media/adobe-podcast/enhance-speech.webp",
+    "ogImageUrl": "https://tooltrim.com/tool-media/adobe-podcast/enhance-speech.webp",
     "logo": "",
     "tool_type": "ia",
     "host_app": null,
@@ -1030,16 +1033,16 @@
     "slug": "adobe-premiere-pro",
     "name": "Adobe Premiere Pro",
     "categoryId": "design-tools",
-    "shortDescription": "Le logiciel de montage vidéo professionnel de référence.",
-    "shortDescriptionEn": "The reference professional video editing software.",
+    "shortDescription": "Application de montage vidéo professionnelle d'Adobe, distribuée dans Creative Cloud.",
+    "shortDescriptionEn": "Adobe's professional video editing application, distributed through Creative Cloud.",
     "pricing": {
-      "free": "Aucune version gratuite, essai uniquement",
-      "paid": "Environ 26€/mois (Premiere Pro seul), ou via l'offre Creative Cloud complète"
+      "free": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite).",
+      "paid": "Inclus dans l'abonnement Adobe Creative Cloud (voir la fiche de la suite)."
     },
     "defaultMonthlyPrice": 26.21,
     "affiliateLink": "https://adobe.com/products/premiere",
     "websiteUrl": "https://adobe.com/products/premiere",
-    "ogImageUrl": "https://www.adobe.com/products/media_14a141cf8900a74105b7122f28472dce9fd8cf872.jpg?width=1200&#x26;format=pjpg&#x26;optimize=medium",
+    "ogImageUrl": "https://www.adobe.com/products/media_14a141cf8900a74105b7122f28472dce9fd8cf872.jpg?width=1200&format=pjpg&optimize=medium",
     "logo": "",
     "tool_type": "metier",
     "host_app": null,
@@ -1110,16 +1113,16 @@
     "slug": "adobe-substance-3d",
     "name": "Adobe Substance 3D",
     "categoryId": "creation",
-    "shortDescription": "Suite 3D Adobe pour matériaux, textures, staging et visualisation produit.",
-    "shortDescriptionEn": "Adobe 3D suite for materials, textures, staging, and product visualization.",
+    "shortDescription": "Suite d'outils 3D d'Adobe pour la création de matériaux et de textures : Painter, Designer, Sampler et Stager.",
+    "shortDescriptionEn": "Adobe's suite of 3D tools for creating materials and textures: Painter, Designer, Sampler, and Stager.",
     "pricing": {
-      "free": "Essai ou plan gratuit selon usage",
-      "paid": "À partir de 50€/mois environ"
+      "free": "Disponible en abonnement Substance 3D dédié ou via Creative Cloud (voir la fiche de la suite).",
+      "paid": "Disponible en abonnement Substance 3D dédié ou via Creative Cloud (voir la fiche de la suite)."
     },
     "defaultMonthlyPrice": 50,
     "affiliateLink": "",
     "websiteUrl": "https://www.adobe.com/products/substance3d.html",
-    "ogImageUrl": "https://www.adobe.com/products/media_1493006c2adba238de471ed68a47f1663e254966c.jpg?width=1200&#x26;format=pjpg&#x26;optimize=medium",
+    "ogImageUrl": "https://www.adobe.com/products/media_1493006c2adba238de471ed68a47f1663e254966c.jpg?width=1200&format=pjpg&optimize=medium",
     "logo": "",
     "tool_type": "satellite",
     "host_app": null,
@@ -1185,16 +1188,16 @@
     "slug": "adp-workforce",
     "name": "ADP Workforce",
     "categoryId": "hris-payroll",
-    "shortDescription": "ADP Workforce structure les données collaborateurs, RH ou paie dans une stack d'entreprise.",
-    "shortDescriptionEn": "ADP Workforce structures employee, HR, or payroll data in a company stack.",
+    "shortDescription": "Logiciel de paie et RH d'ADP pour organisations mid-market (50-1000+ employés). Offre une solution intégrée pour gestion payroll, HR et conformité.",
+    "shortDescriptionEn": "ADP payroll and HR software for mid-market organizations (50-1,000+ employees). Offers integrated payroll, HR management, and compliance solution.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / prix non public"
+      "free": "Pas de tier gratuit. Modèle consultative (contact sales).",
+      "paid": "Enterprise: Tarification custom (contact 800-225-5237)"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://www.adp.com",
     "websiteUrl": "https://www.adp.com",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/adp-workforce.jpg",
+    "ogImageUrl": "/og-screenshots/adp-workforce.jpg",
     "logo": "",
     "tool_type": "metier",
     "host_app": null,
@@ -1319,130 +1322,15 @@
     "betterAlternative": null
   },
   {
-    "id": "affinity-designer",
-    "slug": "affinity-designer",
-    "name": "Affinity Designer",
-    "categoryId": "design",
-    "shortDescription": "Alternative vectorielle pour logos, identités, illustrations et visuels de marque.",
-    "shortDescriptionEn": "Vector design alternative for logos, identities, illustrations and brand visuals.",
-    "pricing": {
-      "free": "",
-      "paid": "Gratuit. Les fonctions IA (Generative Fill, etc.) nécessitent un compte Canva premium (~120$/an)."
-    },
-    "defaultMonthlyPrice": 0,
-    "affiliateLink": "https://affinity.serif.com/designer/",
-    "websiteUrl": "https://affinity.serif.com/designer/",
-    "ogImageUrl": "https://static.canva.com/static/images/fb_cover-1.jpg",
-    "logo": "",
-    "tool_type": "metier",
-    "host_app": null,
-    "bundle_parent": null,
-    "substitution_cluster_v2": "vector-design",
-    "functional_needs": [
-      "branding",
-      "creation",
-      "design-visuel",
-      "illustration-vectorielle",
-      "logos"
-    ],
-    "verticals": [
-      "graphiste-da",
-      "illustrateur",
-      "createur-contenu"
-    ],
-    "relevantFor": [
-      "Designers graphiques",
-      "Illustrateurs",
-      "Créatifs indépendants"
-    ],
-    "freeAlternative": null,
-    "substitutable": true,
-    "betterAlternative": null
-  },
-  {
-    "id": "affinity-photo",
-    "slug": "affinity-photo",
-    "name": "Affinity Photo",
-    "categoryId": "design-tools",
-    "shortDescription": "Retouche photo professionnelle, gratuite depuis 2024.",
-    "shortDescriptionEn": "Professional photo editing, free since 2024.",
-    "pricing": {
-      "free": "Gratuit depuis 2024 (rachat par Canva)",
-      "paid": ""
-    },
-    "defaultMonthlyPrice": 0,
-    "affiliateLink": "",
-    "websiteUrl": "https://affinity.serif.com/photo",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/affinity-photo.jpg",
-    "logo": "",
-    "tool_type": "metier",
-    "host_app": null,
-    "bundle_parent": null,
-    "substitution_cluster_v2": null,
-    "functional_needs": [
-      "retouche-photo",
-      "photo-enhancement",
-      "design-tools"
-    ],
-    "verticals": [],
-    "relevantFor": [
-      "Photographes professionnels",
-      "Retoucheurs photo",
-      "Designers graphiques cherchant une alternative à Photoshop"
-    ],
-    "freeAlternative": null,
-    "substitutable": true,
-    "betterAlternative": null
-  },
-  {
-    "id": "affinity-publisher",
-    "slug": "affinity-publisher",
-    "name": "Affinity Publisher",
-    "categoryId": "publishing",
-    "shortDescription": "Outil de mise en page pour brochures, éditions, dossiers imprimés et supports PDF.",
-    "shortDescriptionEn": "Layout tool for brochures, publications, print documents and PDFs.",
-    "pricing": {
-      "free": "",
-      "paid": "Gratuit (réuni dans l'app Affinity de Canva). Fonctions IA via compte Canva premium (~120$/an)."
-    },
-    "defaultMonthlyPrice": 0,
-    "affiliateLink": "https://affinity.serif.com/publisher/",
-    "websiteUrl": "https://affinity.serif.com/publisher/",
-    "ogImageUrl": "https://static.canva.com/static/images/fb_cover-1.jpg",
-    "logo": "",
-    "tool_type": "metier",
-    "host_app": null,
-    "bundle_parent": null,
-    "substitution_cluster_v2": "layout-publishing",
-    "functional_needs": [
-      "mise-en-page",
-      "presentation-client",
-      "print",
-      "publication"
-    ],
-    "verticals": [
-      "graphiste-da",
-      "createur-contenu"
-    ],
-    "relevantFor": [
-      "Éditeurs",
-      "Designers graphiques",
-      "Créatifs indépendants"
-    ],
-    "freeAlternative": null,
-    "substitutable": true,
-    "betterAlternative": null
-  },
-  {
     "id": "agicap",
     "slug": "agicap",
     "name": "Agicap",
     "categoryId": "finance",
-    "shortDescription": "Pilotage de trésorerie et prévisions de cash-flow pour PME et entreprises.",
-    "shortDescriptionEn": "Cash-flow forecasting and treasury management for SMEs and companies.",
+    "shortDescription": "Plateforme SaaS française de gestion de trésorerie et cash flow. Agrège les flux bancaires et comptables, offrant une visibilité en temps réel, des prévisions multi-horizon, et automation des paiements. Conforme aux normes e-invoicing européennes.",
+    "shortDescriptionEn": "French treasury management SaaS platform. Aggregates bank and accounting data for real-time cash flow visibility, multi-horizon forecasting, and automated payment execution. Compliant with EU e-invoicing standards.",
     "pricing": {
-      "free": "Essai gratuit complet de 30 jours, moyen de paiement requis",
-      "paid": "Sur devis, généralement plusieurs centaines d'euros par mois selon comptes connectés et CA"
+      "free": "Pas de version gratuite ; tous les plans sont sur devis.",
+      "paid": "Plan personnalisé: Montants sur la page officielle selon les besoins"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://agicap.com",
@@ -1507,11 +1395,11 @@
     "slug": "airbyte",
     "name": "Airbyte",
     "categoryId": "analytics",
-    "shortDescription": "Connecteurs ELT open source pour synchroniser sources de données.",
-    "shortDescriptionEn": "Open-source ELT connectors for syncing data sources.",
+    "shortDescription": "Plateforme d'intégration de données open-source avec 600+ connecteurs pour pipelines ELT vers entrepôts de données, incluant une Context Store pour agents IA et support MCP.",
+    "shortDescriptionEn": "Open-source data integration platform with 600+ connectors for ELT pipelines to data warehouses, featuring a Context Store for AI agents and MCP support.",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Core plan gratuit avec version self-hosted et 6 fonctionnalités incluses avec limites d'usage.",
+      "paid": "Core: Gratuit (self-hosted, open-source) ; Standard: À partir de 10 $/mois (4 credits inclus, 2,50 $ par crédit supplémentaire) ; Data Replication Plus: 2 083 $/mois annuel (25 000 $/an) ; Agents Individual: 29 $/mois ; Agents Team: 299 $/mois"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
@@ -1543,11 +1431,11 @@
     "slug": "aircall",
     "name": "Aircall",
     "categoryId": "communication",
-    "shortDescription": "Téléphonie cloud pour équipes commerciales et support, intégrée au CRM.",
-    "shortDescriptionEn": "Cloud phone system for sales and support teams, integrated with CRM workflows.",
+    "shortDescription": "Plateforme de communication alimentée par l'IA pour les équipes de vente et support, combinant systèmes téléphoniques modernes, agents vocaux IA et workflows automatisés.",
+    "shortDescriptionEn": "AI-powered communications platform for sales and support teams, combining modern phone systems, AI voice agents, and automated workflows.",
     "pricing": {
-      "free": "Pas de plan gratuit durable identifié.",
-      "paid": "Plans publics par utilisateur, souvent à partir d’environ 30 $/utilisateur/mois selon facturation."
+      "free": "Essai gratuit disponible sans carte de crédit.",
+      "paid": "Essentials: À partir de 3 licences minimum (tarification annuelle) ; Professional: À partir de 3 licences minimum (tarification annuelle) ; Custom: À partir de 25 licences minimum (tarification personnalisée) ; AI Voice Agents: À partir de quelques centimes par minute"
     },
     "defaultMonthlyPrice": 30,
     "affiliateLink": "https://get.aircall.io/inlxr1yjycil",
@@ -1581,11 +1469,11 @@
     "slug": "airslate",
     "name": "airSlate",
     "categoryId": "organization",
-    "shortDescription": "Automatisation de workflows documentaires no-code avec signature électronique intégrée.",
-    "shortDescriptionEn": "No-code document workflow automation with built-in e-signature.",
+    "shortDescription": "Suite d'outils d'automatisation de documents pour les flux de travail numériques, incluant signature électronique (SignNow), édition PDF (pdfFiller), automatisation documentaire (altaFlow) et landing pages (Instapage).",
+    "shortDescriptionEn": "Suite of document automation tools for digital workflows, including e-signature (SignNow), PDF editing (pdfFiller), document automation (altaFlow), and landing page builder (Instapage).",
     "pricing": {
-      "free": "Pas de plan gratuit permanent : essai disponible.",
-      "paid": "À partir de 19$/mois ; plans Pro et Business+ pour les PME en croissance, Enterprise pour du marque blanche sur devis."
+      "free": "Essais gratuits disponibles pour plusieurs produits ; versions gratuites limitées selon le produit.",
+      "paid": "SignNow: Plans à partir de montants sur la page officielle ; pdfFiller: Plans à partir de montants sur la page officielle ; Instapage: Plans à partir de montants sur la page officielle"
     },
     "defaultMonthlyPrice": 16.64,
     "affiliateLink": "https://airslate.com",
@@ -1618,11 +1506,11 @@
     "slug": "airtable",
     "name": "Airtable",
     "categoryId": "project-management",
-    "shortDescription": "La base de données flexible qui remplace 5 outils (CRM, projets, contenus).",
-    "shortDescriptionEn": "The flexible database that replaces 5 tools (CRM, projects, content).",
+    "shortDescription": "Plateforme collaborative de gestion de données permettant de construire des applications sans code, avec des tables reliées, des automations, et une interface personnalisable pour équipes.",
+    "shortDescriptionEn": "Collaborative data management platform that enables building no-code applications, with linked tables, automations, and customizable interfaces for teams.",
     "pricing": {
-      "free": "Plan gratuit disponible",
-      "paid": "24$/mois (Team)"
+      "free": "Free tier offert à tous les utilisateurs.",
+      "paid": "Free: Gratuit ; Team: 20 $/utilisateur/mois (facturation annuelle) ; Business: 45 $/utilisateur/mois (facturation annuelle) ; Enterprise Scale: Tarification personnalisée sur devis"
     },
     "defaultMonthlyPrice": 20.78,
     "affiliateLink": "https://airtable.com",
@@ -1660,11 +1548,11 @@
     "slug": "albato",
     "name": "Albato",
     "categoryId": "automation",
-    "shortDescription": "Plateforme no-code pour étendre les intégrations et automatisations SaaS.",
-    "shortDescriptionEn": "No-code platform to extend SaaS integrations and automations.",
+    "shortDescription": "Plateforme iPaaS (Integration Platform-as-a-Service) intégrée permettant aux entreprises SaaS d'embarquer des intégrations blanches et des agents d'IA directement dans leurs produits. Supporte plus de 1000 applications natives.",
+    "shortDescriptionEn": "Embedded iPaaS platform enabling SaaS companies and AI agents to white-label integrations and AI assistants within their products. Supports 1,000+ native integrations.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Pas de tier gratuit. Plateforme orientée entreprise avec vente consultative (démos et onboarding personnalisé).",
+      "paid": "Abonnement standard: À partir de $5,000/mois (montants exacts sur la page officielle)"
     },
     "defaultMonthlyPrice": 15,
     "affiliateLink": "https://albato.com",
@@ -1697,11 +1585,11 @@
     "slug": "algolia",
     "name": "Algolia",
     "categoryId": "analytics",
-    "shortDescription": "Recherche hébergée rapide pour catalogues, contenus et apps.",
-    "shortDescriptionEn": "Fast hosted search for catalogs, content, and apps.",
+    "shortDescription": "Plateforme de recherche et découverte IA permettant recherche en langage naturel, RAG (Retrieval-Augmented Generation), et expériences de commerce agentic, avec ranking IA, neural search et personnalisation.",
+    "shortDescriptionEn": "AI-powered search and discovery platform enabling natural language search, RAG capabilities, agentic commerce experiences, with AI ranking, neural search, and personalization.",
     "pricing": {
-      "free": "Gratuit ou open source selon usage",
-      "paid": "Options payantes possibles selon hébergement, équipe ou volume"
+      "free": "Plan Build gratuit : 10 000 requêtes/mois et 1 million d'enregistrements. Suite complète de features incluse pour testing.",
+      "paid": "Build: Gratuit (10k requêtes, 1M enregistrements/mois) ; Grow: 0,50 $ par 1 000 requêtes, 0,40 $ par 1 000 enregistrements (pas de frais fixes) ; Grow Plus: 0,75 $ par 1 000 requêtes supplémentaires ; Premium: Sur devis (Enterprise) ; Elevate: Sur devis (Enterprise premium)"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "",
@@ -1868,11 +1756,11 @@
     "slug": "amplitude",
     "name": "Amplitude",
     "categoryId": "analytics",
-    "shortDescription": "La plateforme d'analytics produit pour comprendre le comportement utilisateur.",
-    "shortDescriptionEn": "The product analytics platform to understand user behaviour.",
+    "shortDescription": "Plateforme d'analyse produit IA permettant comprendre le comportement utilisateur, tester des features avec A/B testing, session replay, et agents IA autonomes pour optimisation continue du produit.",
+    "shortDescriptionEn": "AI-powered product analytics platform for understanding user behavior, feature experimentation, session replay, and autonomous AI agents for continuous product optimization.",
     "pricing": {
-      "free": "Jusqu'à 50k events/mois",
-      "paid": "Sur devis"
+      "free": "Free tier : 2 millions d'événements/mois illimitéement, sièges illimités, analytics produit basique. Pas de limite de durée.",
+      "paid": "Free: Gratuit (2M événements/mois) ; Plus: À partir de 49 $/mois (billed annuel, scaling avec MTUs) ; Growth: Tarification personnalisée (growth stage) ; Enterprise: Tarification personnalisée (Enterprise)"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://amplitude.com",
@@ -2159,11 +2047,11 @@
     "slug": "antidote",
     "name": "Antidote",
     "categoryId": "productivity-tracking",
-    "shortDescription": "Suite avancée de correction et dictionnaires pour rédaction française.",
-    "shortDescriptionEn": "Advanced correction and dictionaries suite for French writing.",
+    "shortDescription": "Logiciel d'aide à l'écriture intelligent qui corrige les erreurs de grammaire, d'orthographe et de style en français et en anglais. Propose des dictionnaires complets et des guides linguistiques pour améliorer la qualité du texte.",
+    "shortDescriptionEn": "Intelligent writing assistant software that corrects grammar, spelling, and style errors in French and English. Provides comprehensive dictionaries and language guides to improve text quality.",
     "pricing": {
-      "free": "Essai ou plan gratuit selon usage",
-      "paid": "À partir de 5€/mois environ"
+      "free": "Pas de version gratuite. Essai gratuit disponible avant achat.",
+      "paid": "Antidote 12 (Desktop): Prix sur la page officielle ; Antidote Web (Browser-based): Prix sur la page officielle ; Antidote+ (All-in-one): Abonnement, montants sur la page officielle"
     },
     "defaultMonthlyPrice": 5,
     "affiliateLink": "",
@@ -2228,11 +2116,11 @@
     "slug": "apollo",
     "name": "Apollo",
     "categoryId": "crm",
-    "shortDescription": "Prospection commerciale B2B : sourcing de leads, séquences d'e-mails et CRM léger.",
-    "shortDescriptionEn": "B2B sales prospecting: lead sourcing, email sequences, and a light CRM.",
+    "shortDescription": "Plateforme de prospection commerciale complète combinant recherche de leads, outreach automation, enrichissement données, et deal management. Base de données 240M+ contacts et 30M+ entreprises vérifiées.",
+    "shortDescriptionEn": "Comprehensive sales prospecting platform combining lead research, outreach automation, data enrichment, and deal management. Database of 240M+ verified contacts and 30M+ companies.",
     "pricing": {
-      "free": "Plan gratuit avec crédits e-mail illimités (usage raisonnable, ~250/jour), 5 crédits mobile et 10 crédits export par mois, limité à 2 séquences actives",
-      "paid": "Basic à environ 49$/mois/utilisateur ; Professional à 79$/mois ; Organization à 119$/mois (facturation annuelle)."
+      "free": "Accès gratuit recherche leads, extensions Chrome, alertes. Crédit limité ; enrichissement données consomme crédits supplémentaires.",
+      "paid": "Free: Gratuit avec crédit limité ; Basic: 49 USD/utilisateur/mois (facturation annuelle) ; Professional: 79 USD/utilisateur/mois (facturation annuelle) ; Organization: 119 USD/utilisateur/mois minimum 3 utilisateurs (facturation annuelle)"
     },
     "defaultMonthlyPrice": 49,
     "affiliateLink": "https://apollo.com",
@@ -2550,16 +2438,16 @@
     "slug": "arnold",
     "name": "Arnold",
     "categoryId": "design-tools",
-    "shortDescription": "Moteur de rendu CPU/GPU d'Autodesk, standard du cinéma et de l'animation.",
-    "shortDescriptionEn": "Autodesk's CPU/GPU render engine, the film and animation standard.",
+    "shortDescription": "Moteur de rendu Monte Carlo par tracé de rayons (ray tracing) développé par Autodesk pour le cinéma, télévision, jeux vidéo et visualisation de design. Résultats prévisibles, scalable pour les pipelines de production. Compatible Maya, 3ds Max, Houdini, Blender et autres.",
+    "shortDescriptionEn": "Advanced Monte Carlo ray tracing renderer developed by Autodesk for film, TV, games, and design visualization. Predictable results, scalable for production pipelines. Compatible with Maya, 3ds Max, Houdini, Blender, and others.",
     "pricing": {
-      "free": "Essai gratuit",
-      "paid": "~430$/an (~36$/mois). Souvent inclus avec Maya (Autodesk)."
+      "free": "Essai gratuit ; version complète accessible via abonnement Autodesk ou plan Flex.",
+      "paid": "Arnold Single-User Monthly/Annual: Montants sur page Autodesk officielle ; Arnold Flex Tokens: Paiement à l'usage (pay-as-you-go)"
     },
     "defaultMonthlyPrice": 36,
     "affiliateLink": "https://www.autodesk.com/products/arnold/overview",
     "websiteUrl": "https://www.autodesk.com/products/arnold/overview",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/arnold.jpg",
+    "ogImageUrl": "/og-screenshots/arnold.jpg",
     "logo": "",
     "tool_type": "metier",
     "host_app": null,
@@ -2767,11 +2655,11 @@
     "slug": "asana",
     "name": "Asana",
     "categoryId": "organization",
-    "shortDescription": "Gestion de projet pour équipes avec plusieurs projets clients, deadlines et reporting. Souvent trop structuré pour un freelance solo.",
-    "shortDescriptionEn": "Project management for teams running several client projects, deadlines and reporting. Often overkill for a solo freelancer.",
+    "shortDescription": "Plateforme de gestion du travail combinant gestion de projets, planification des ressources et automatisation alimentée par l'IA pour coordonner le travail entre équipes.",
+    "shortDescriptionEn": "Work management platform combining project management, resource planning, and AI-powered automation to coordinate work across teams.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "10,99$/mois par utilisateur (Starter, annuel) ; Advanced à 24,99$/mois (min. 2 utilisateurs)"
+      "free": "Tier gratuit avec fonctionnalités de base pour petites équipes ; essai gratuit sans carte de crédit.",
+      "paid": "Starter: Plans payants à partir de montants sur la page officielle ; Advanced: Plans payants à partir de montants sur la page officielle ; Enterprise: Tarification personnalisée sur demande"
     },
     "defaultMonthlyPrice": 10.99,
     "affiliateLink": "https://asana.com",
@@ -2962,16 +2850,16 @@
     "slug": "audionotes",
     "name": "Audionotes",
     "categoryId": "organization",
-    "shortDescription": "Transforme notes vocales, fichiers et vidéos en notes structurées et interrogeables.",
-    "shortDescriptionEn": "Turns voice notes, files and videos into structured, searchable notes.",
+    "shortDescription": "Assistant de prise de notes qui transforme la voix, les fichiers audio et vidéo, les images et le texte en transcriptions, résumés et notes structurées.",
+    "shortDescriptionEn": "AI note-taking assistant that turns voice, audio and video files, images, and text into transcripts, summaries, and structured notes.",
     "pricing": {
-      "free": "Plan gratuit durable avec limites de capture.",
-      "paid": "Pro annuel ; Enterprise sur devis."
+      "free": "Gratuit avec notes vocales limitées à une minute par note et fonctions essentielles.",
+      "paid": "Free: $0 ; Pro: $129.99/an ; Enterprise: Sur devis"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://www.audionotes.app/",
     "websiteUrl": "https://www.audionotes.app/",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/audionotes.jpg",
+    "ogImageUrl": "/og-screenshots/audionotes.jpg",
     "logo": "",
     "tool_type": "satellite",
     "host_app": null,
@@ -2987,9 +2875,9 @@
       "createur-contenu"
     ],
     "relevantFor": [
-      "consultant",
-      "createur-contenu",
-      "etudiant"
+      "Indépendants",
+      "Étudiants",
+      "Créateurs de contenu"
     ],
     "freeAlternative": null,
     "substitutable": true,
@@ -3182,15 +3070,16 @@
     "slug": "autocad",
     "name": "AutoCAD",
     "categoryId": "design-tools",
-    "shortDescription": "Le standard mondial du dessin technique 2D et 3D.",
-    "shortDescriptionEn": "The world standard for 2D and 3D technical drawing.",
+    "shortDescription": "Logiciel professionnel de conception assistée par ordinateur (CAO) pour la modélisation, le dessin technique en 2D et 3D. Outil réputé auprès des architectes, ingénieurs et designers, utilisé pour les plans, schémas et maquettes complexes.",
+    "shortDescriptionEn": "Professional computer-aided design (CAD) software for modeling, technical 2D and 3D drawing. Widely used by architects, engineers, and designers for plans, schematics, and complex mockups.",
     "pricing": {
-      "paid": "220$/mois ou 1 775$/an"
+      "free": "Essai gratuit 30 jours ; pas de version gratuite permanente.",
+      "paid": "AutoCAD (abonnement individuel): 235 $/mois ou 1 865 $/an ; AutoCAD LT (version 2D simplifiée): 500 $/an ; Architecture, Engineering & Construction Collection: 3 795 $/siège/an (inclut Revit, Civil 3D, etc.)"
     },
     "defaultMonthlyPrice": 190.53,
     "affiliateLink": "https://autodesk.com/products/autocad",
     "websiteUrl": "https://autodesk.com/products/autocad",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/autocad.jpg",
+    "ogImageUrl": "/og-screenshots/autocad.jpg",
     "logo": "",
     "tool_type": "metier",
     "host_app": null,
@@ -3534,11 +3423,11 @@
     "slug": "axeptio",
     "name": "Axeptio",
     "categoryId": "legal-contracts",
-    "shortDescription": "Bannière de consentement cookies (CMP) conforme RGPD, dès 29€/mois.",
-    "shortDescriptionEn": "GDPR-compliant cookie consent banner (CMP), from €29/month.",
+    "shortDescription": "Plateforme de gestion du consentement (CMP) permettant de gérer les cookies, données personnelles et marketing en conformité RGPD. Offre des banneau personnalisables, scan de trackers et support de multiples réglementations (GDPR, CCPA, ePrivacy).",
+    "shortDescriptionEn": "Consent Management Platform (CMP) for managing cookies, personal data, and marketing in GDPR compliance. Offers customizable consent banners, tracker scanning, and support for multiple regulations (GDPR, CCPA, ePrivacy).",
     "pricing": {
-      "free": "Gratuit sous 200 visiteurs/mois",
-      "paid": "29€/mois (Small, 5 000 pages vues) à 129€/mois (Large, 500 000 pages vues)"
+      "free": "Inscription gratuite disponible pour tester la plateforme.",
+      "paid": "Starter: Gratuit (inscription) ; Plans payants: Tarifs sur demande selon volume de sites et consentements"
     },
     "defaultMonthlyPrice": 29,
     "affiliateLink": "https://axeptio.eu",
@@ -3788,11 +3677,11 @@
     "slug": "basecamp",
     "name": "Basecamp",
     "categoryId": "organization",
-    "shortDescription": "Gestion de projet et collaboration d'équipe, avec un forfait illimité à prix fixe.",
-    "shortDescriptionEn": "Project management and team collaboration software.",
+    "shortDescription": "Outil de gestion de projet et de collaboration d'équipe qui centralise communication, tâches et fichiers.",
+    "shortDescriptionEn": "Project management and team collaboration tool that centralizes communication, tasks, and files.",
     "pricing": {
-      "free": "Plan gratuit limité (1 projet, jusqu'à 20 personnes)",
-      "paid": "Plus à 15$/utilisateur/mois, ou Pro Unlimited à 299$/mois (utilisateurs illimités)"
+      "free": "Gratuit : 1 projet, 1 Go de stockage, jusqu'à 20 utilisateurs.",
+      "paid": "Pro: 15 $/utilisateur/mois ; Pro Unlimited: 299 $/mois (annuel)"
     },
     "defaultMonthlyPrice": 15,
     "affiliateLink": "https://basecamp.com",
@@ -3903,11 +3792,11 @@
     "slug": "beehiiv",
     "name": "Beehiiv",
     "categoryId": "email-productivity",
-    "shortDescription": "La plateforme newsletter conçue pour la croissance et la monétisation.",
-    "shortDescriptionEn": "The newsletter platform built for growth and monetisation.",
+    "shortDescription": "Plateforme de newsletter orientée croissance et monétisation, avec outils de recommandation croisée, analytics avancées, et marketplace de découverte pour les creators.",
+    "shortDescriptionEn": "Newsletter platform focused on growth and monetization, featuring cross-recommendation tools, advanced analytics, and discovery marketplace for creators.",
     "pricing": {
-      "free": "Jusqu'à 2500 abonnés",
-      "paid": "39$/mois (Scale)"
+      "free": "Plan gratuit avec fonctionnalités core pour newsletters petites",
+      "paid": "Free: Gratuit (montants limités) ; Paid tiers: Montants sur la page officielle"
     },
     "defaultMonthlyPrice": 37.31,
     "affiliateLink": "https://beehiiv.com",
@@ -4550,11 +4439,11 @@
     "slug": "box",
     "name": "Box",
     "categoryId": "organization",
-    "shortDescription": "Stockage et gestion de contenu d'entreprise avec sécurité et conformité poussées.",
-    "shortDescriptionEn": "Enterprise content storage and management with advanced security and compliance.",
+    "shortDescription": "Plateforme de gestion de contenu cloud combinant stockage sécurisé, collaboration documentaire et automatisation de workflows, avec capacités IA pour extraire et analyser des données non structurées.",
+    "shortDescriptionEn": "Cloud content management platform combining secure storage, document collaboration, and workflow automation, with AI capabilities for extracting and analyzing unstructured data.",
     "pricing": {
-      "free": "Plan Individual gratuit avec 10 Go de stockage",
-      "paid": "Business Starter à 7$/utilisateur/mois (minimum 3 utilisateurs, 100 Go/utilisateur) ; Business à 15$/mois en annuel (stockage illimité, minimum 3 utilisateurs) ; Business Plus 33$, Enterprise 47$, Enterprise Plus 50$."
+      "free": "Pas de version gratuite permanente ; essai gratuit ou démo sur demande.",
+      "paid": "Starter: Montants sur la page officielle ; Professional: Montants sur la page officielle ; Business: Montants sur la page officielle ; Enterprise: Tarification personnalisée sur demande"
     },
     "defaultMonthlyPrice": 7,
     "affiliateLink": "https://box.com",
@@ -4621,9 +4510,12 @@
     "slug": "brand24",
     "name": "Brand24",
     "categoryId": "analytics",
-    "shortDescription": "Veille de marque en temps réel sur réseaux sociaux, presse et forums, avec analyse de sentiment.",
-    "shortDescriptionEn": "Real-time brand monitoring across social media, news, and forums, with sentiment analysis.",
-    "pricing": "À partir de 119$/mois. Essai gratuit de 14 jours sans carte bancaire.",
+    "shortDescription": "Plateforme de social listening et monitoring de marque. Surveille mentions de marque/produits sur réseaux sociaux, presse, forums et blogs. Détecte sentiment (positif/négatif/neutre), alertes temps réel, rapports concurrence.",
+    "shortDescriptionEn": "Social listening and brand monitoring platform. Tracks brand/product mentions across social media, news, forums, and blogs. Detects sentiment, sends real-time alerts, analyzes competitors.",
+    "pricing": {
+      "free": "Pas de version gratuite permanente. Essai gratuit 14 jours disponible.",
+      "paid": "Starter: 199 $/mois (annuel), 249 $/mois (mensuel) ; Team: 299 $/mois (annuel), 349 $/mois (mensuel) ; Pro: 399 $/mois (annuel), 449 $/mois (mensuel) ; Business: 599 $/mois (annuel), 699 $/mois (mensuel)"
+    },
     "defaultMonthlyPrice": 104.24,
     "affiliateLink": "https://try.brand24.com/2jbwm4slry45",
     "websiteUrl": "https://brand24.com",
@@ -4799,16 +4691,16 @@
     "slug": "brevo",
     "name": "Brevo",
     "categoryId": "email-productivity",
-    "shortDescription": "Email marketing, automation, SMS et CRM léger pour PME.",
-    "shortDescriptionEn": "Email marketing, automation, SMS and lightweight CRM for SMBs.",
+    "shortDescription": "Plateforme all-in-one email, SMS, CRM et automation (rebaptisée Brevo en 2023, anciennement Sendinblue), facturation par emails envoyés plutôt que contacts stockés.",
+    "shortDescriptionEn": "All-in-one email, SMS, CRM and automation platform (rebranded as Brevo in 2023, formerly Sendinblue), billing based on emails sent rather than stored contacts.",
     "pricing": {
-      "free": "Plan gratuit limité en volume quotidien.",
-      "paid": "Plans publics à partir d’environ 9 €/mois selon volume et fonctionnalités."
+      "free": "Plan gratuit durable : 300 emails/jour, 2 utilisateurs, CRM limité",
+      "paid": "Free: Gratuit (300 emails/jour) ; Starter: Montants sur la page officielle (selon volume emails) ; Business: Montants sur la page officielle ; Enterprise: Montants sur demande"
     },
     "defaultMonthlyPrice": 9,
     "affiliateLink": "https://get.brevo.com/k11w0iqmh2r0-m7y3c",
     "websiteUrl": "https://www.brevo.com",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/brevo.jpg",
+    "ogImageUrl": "/og-screenshots/brevo.jpg",
     "logo": "",
     "tool_type": "gestion",
     "host_app": null,
@@ -5049,11 +4941,11 @@
     "slug": "buffer",
     "name": "Buffer",
     "categoryId": "creation",
-    "shortDescription": "Planification de posts sur tous les réseaux. Simple, propre, efficace.",
-    "shortDescriptionEn": "Schedule posts across all social networks. Simple, clean, effective.",
+    "shortDescription": "Outil simple de planification et de gestion des réseaux sociaux : programmation de posts, analytics et collaboration, facturé par canal (pas par utilisateur).",
+    "shortDescriptionEn": "Simple social media planning and management tool: post scheduling, analytics, and collaboration, priced per channel (not per user).",
     "pricing": {
-      "free": "3 canaux, 10 posts en file",
-      "paid": "6$/mois (Essentials)"
+      "free": "Gratuit : jusqu'à 3 canaux, 10 posts programmés par canal, assistant IA, analytics de base.",
+      "paid": "Free: 0 $ (3 canaux) ; Essentials: 6 $/canal/mois (dégressif au volume) ; Team: 12 $/canal/mois (dégressif au volume)"
     },
     "defaultMonthlyPrice": 5.2,
     "affiliateLink": "https://buffer.com",
@@ -5833,10 +5725,10 @@
     "name": "Captain Contrat",
     "categoryId": "legal-contracts",
     "shortDescription": "Legaltech française d'accompagnement juridique : création d'entreprise, rédaction de contrats et assistance juridique, sur un modèle hybride (technologie + avocats/juristes).",
-    "shortDescriptionEn": "French legaltech for legal guidance: company formation, contract drafting and legal support, on a hybrid tech + lawyers model.",
+    "shortDescriptionEn": "French legal tech for legal support: business setup, contract drafting, and legal assistance, on a hybrid model (technology + lawyers/legal experts).",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "Service payant ; abonnement juridique ou prestations à l'acte.",
+      "paid": "Abonnement Essential: 29,90 € HT/mois ; Abonnement Premium: 249 € HT/mois ; Création d'entreprise: à l'acte + frais administratifs"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://captaincontrat.com",
@@ -6106,15 +5998,15 @@
     "name": "Causal",
     "categoryId": "analytics",
     "shortDescription": "Plateforme de FP&A et modélisation financière : construit des modèles, se connecte aux données (compta, CRM…) et partage tableaux de bord et rapports interactifs, en alternative structurée au tableur.",
-    "shortDescriptionEn": "FP&A and financial modelling platform: build models, connect live data and share interactive dashboards, a structured alternative to spreadsheets.",
+    "shortDescriptionEn": "Financial planning and modeling platform: builds models, connects to data (accounting, CRM, etc.) and shares interactive dashboards and reports, a structured alternative to spreadsheets.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "Essai gratuit ; pas de palier gratuit permanent. Tarif selon le nombre de members.",
+      "paid": "Membre (builder/éditeur): tarif par member, viewers illimités - montants sur la page officielle"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://causal.app",
     "websiteUrl": "https://causal.app",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/causal.jpg",
+    "ogImageUrl": "/og-screenshots/causal.jpg",
     "logo": "https://logo.clearbit.com/causal.app",
     "tool_type": "specialise",
     "host_app": null,
@@ -7422,42 +7314,6 @@
     "betterAlternative": null
   },
   {
-    "id": "condeco",
-    "slug": "condeco",
-    "name": "Condeco",
-    "categoryId": "organization",
-    "shortDescription": "Plateforme de réservation de bureaux et salles de réunion pour le travail hybride — intégrée à Microsoft 365 et Teams, tarification sur devis. Rachetée par Eptura en 2023.",
-    "shortDescriptionEn": "Desk and meeting room booking platform for hybrid work — integrates with Microsoft 365 and Teams, quote-based pricing. Acquired by Eptura in 2023.",
-    "pricing": {
-      "free": "Aucun plan gratuit ni essai public. L'accès passe obligatoirement par un contact commercial Eptura/Condeco.",
-      "paid": "Tarification sur devis. Les estimations du marché situent le prix entre 3 et 8 $/bureau/mois selon le volume et les modules (réservation seule vs analytique d'occupation + gestion visiteurs). Engagement annuel minimum généralement requis."
-    },
-    "defaultMonthlyPrice": 0,
-    "affiliateLink": "https://condecosoftware.com",
-    "websiteUrl": "https://www.condecosoftware.com",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/condeco.jpg",
-    "logo": "https://logo.clearbit.com/condecosoftware.com",
-    "tool_type": "specialise",
-    "host_app": null,
-    "bundle_parent": null,
-    "substitution_cluster_v2": null,
-    "functional_needs": [
-      "consulting-workflow"
-    ],
-    "verticals": [
-      "consulting"
-    ],
-    "relevantFor": [
-      "Grandes organisations",
-      "Facilities managers",
-      "Head of workplace",
-      "Directeurs opérations"
-    ],
-    "freeAlternative": null,
-    "substitutable": true,
-    "betterAlternative": null
-  },
-  {
     "id": "confluence",
     "slug": "confluence",
     "name": "Confluence",
@@ -7508,11 +7364,11 @@
     "slug": "conga",
     "name": "Conga",
     "categoryId": "legal-contracts",
-    "shortDescription": "Conga aide à gérer signatures, contrats ou documents juridiques.",
+    "shortDescription": "Plateforme de commerce unifié combinant automatisation documentaire, gestion du cycle de vie des contrats, tarification et commerce des revenus, optimisation des prix et intelligence IA pour aligner les équipes commerciales et juridiques.",
     "shortDescriptionEn": "Unified commerce platform combining document automation, contract lifecycle management, revenue and commerce capabilities, pricing optimization, and AI-driven intelligence to align sales and legal teams.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / prix non public"
+      "free": "Pas de version gratuite. Essai sur demande via contact commercial.",
+      "paid": "Conga Composer (Document Automation): Tarif sur demande ; Conga Sign (eSignature): Tarif sur demande ; Conga CLM (Contract Lifecycle Management): Estimé 30 000–100 000 $/an ; Conga CPQ & Billing: Tarif sur demande"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://conga.com",
@@ -7942,10 +7798,10 @@
     "name": "Coupler Io",
     "categoryId": "analytics",
     "shortDescription": "Plateforme no-code d'intégration de données : automatise les flux depuis 400+ apps vers tableurs, BI, entrepôts et outils IA (ETL, transformation, synchronisation).",
-    "shortDescriptionEn": "No-code data integration platform that automates data flows from 400+ apps into spreadsheets, BI tools, warehouses and AI tools.",
+    "shortDescriptionEn": "No-code data integration platform: automates workflows from 400+ apps to spreadsheets, BI, data warehouses, and AI tools (ETL, transformation, sync).",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "Version gratuite disponible ; tarif selon le nombre de comptes de sources connectés.",
+      "paid": "Personal: 24 $/mois (3 comptes) ; Professional: 99 $/mois (~15 comptes) ; Team: 199 $/mois ; Business: 449 $/mois"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://coupler.io",
@@ -8012,11 +7868,11 @@
     "slug": "crawlbase",
     "name": "Crawlbase",
     "categoryId": "creation",
-    "shortDescription": "API de web scraping et crawling pour extraire des données de n'importe quel site.",
-    "shortDescriptionEn": "Web scraping and crawling API to extract data from any website.",
+    "shortDescription": "Plateforme d'API de web scraping et de proxies : elle récupère le HTML de pages web (avec rendu JavaScript possible), contourne les blocages et propose du stockage de données extraites, facturé à la requête réussie.",
+    "shortDescriptionEn": "Web scraping and proxy API platform: it fetches web page HTML (with optional JavaScript rendering), bypasses blocks and offers extracted-data storage, billed per successful request.",
     "pricing": {
-      "free": "1000 requêtes/mois gratuites",
-      "paid": "Pay-as-you-go à partir de 29$/mois"
+      "free": "1 000 requêtes gratuites pour tester avant tout engagement.",
+      "paid": "Crawling API - Starter: 29 $/mois (~25 000 requêtes) ; Crawling API - intermédiaire: 99 $/mois (~100 000 requêtes) ; Crawling API - avancé: 199 $/mois (~500 000 requêtes) ; Proxies / Storage: montants sur la page officielle"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://crawlbase.com",
@@ -8115,15 +7971,15 @@
     "name": "Creatoriq",
     "categoryId": "creation",
     "shortDescription": "Plateforme entreprise de creator/influence marketing : découverte de créateurs sur une base indexée, gestion de campagnes, workflows relationnels, analytics et reporting, avec de l'IA sur la découverte et la mesure.",
-    "shortDescriptionEn": "Enterprise creator/influencer marketing platform: creator discovery, campaign management, relationship workflows, analytics and reporting.",
+    "shortDescriptionEn": "Enterprise creator/influencer marketing platform: creator discovery on an indexed database, campaign management, relationship workflows, analytics and reporting, with AI for discovery and measurement.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "Pas de plan mensuel ni de tarif public ; contrat annuel entreprise, ticket d'entrée élevé.",
+      "paid": "Entreprise: sur devis, contrat annuel (ticket d'entrée de l'ordre de plusieurs dizaines de milliers de dollars/an)"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://creatoriq.com",
     "websiteUrl": "https://creatoriq.com",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/creatoriq.jpg",
+    "ogImageUrl": "/og-screenshots/creatoriq.jpg",
     "logo": "https://logo.clearbit.com/creatoriq.com",
     "tool_type": "specialise",
     "host_app": null,
@@ -8149,16 +8005,16 @@
     "slug": "creditsafe",
     "name": "Creditsafe",
     "categoryId": "vendor-risk-data",
-    "shortDescription": "Creditsafe fournit des données de risque ou de conformité sur les fournisseurs.",
+    "shortDescription": "Plateforme d'intelligence commerciale fournissant rapports de crédit, scores de risque de crédit, et alertes en temps réel sur 430 millions d'entreprises mondiales pour évaluer partenaires, fournisseurs et prospects.",
     "shortDescriptionEn": "Business intelligence platform providing credit reports, credit risk scores, and real-time alerts on 430+ million businesses worldwide to assess partners, suppliers, and prospects.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / prix non public"
+      "free": "Pas de version gratuite. Tarification sur demande basée sur utilisation.",
+      "paid": "Standard Plan: À partir de ~$149/mois ; Premium Plan: À partir de ~$249/mois ; Enterprise Custom: Tarif sur demande - API illimitée et intégrations"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://www.creditsafe.com",
     "websiteUrl": "https://www.creditsafe.com",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/creditsafe.jpg",
+    "ogImageUrl": "/og-screenshots/creditsafe.jpg",
     "logo": "",
     "tool_type": "metier",
     "host_app": null,
@@ -8403,15 +8259,15 @@
     "name": "Customer Io",
     "categoryId": "project-management",
     "shortDescription": "Plateforme d'automatisation marketing multicanal (email, push, in-app, SMS, webhooks) pilotée par les données first-party, avec segmentation et éditeur de workflows visuel.",
-    "shortDescriptionEn": "Multichannel marketing automation platform (email, push, in-app, SMS, webhooks) driven by first-party data, with segmentation and a visual workflow builder.",
+    "shortDescriptionEn": "Multi-channel marketing automation platform (email, push, in-app, SMS, webhooks) driven by first-party data, with segmentation and visual workflow editor.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "Pas de palier gratuit permanent (essai possible) ; tarification à partir du plan Essentials.",
+      "paid": "Essentials: à partir de 100 $/mois (5 000 profils, ~1 M emails/mois) ; Premium: à partir de 1 000 $/mois (délivrabilité gérée, IP dédiées, HIPAA, support premium)"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://customer.io",
     "websiteUrl": "https://customer.io",
-    "ogImageUrl": "https://cdn.sanity.io/images/onirtmj2/production/10390db7c2394eae65523bbaafced08666b75189-1200x630.png?rect=0,1,1200,628&amp;w=1200&amp;h=628&amp;fit=crop&amp;auto=format",
+    "ogImageUrl": "https://cdn.sanity.io/images/onirtmj2/production/10390db7c2394eae65523bbaafced08666b75189-1200x630.png?rect=0,1,1200,628&w=1200&h=628&fit=crop&auto=format",
     "logo": "https://logo.clearbit.com/customer.io",
     "tool_type": "specialise",
     "host_app": null,
@@ -8944,11 +8800,11 @@
     "slug": "deel",
     "name": "Deel",
     "categoryId": "hris-payroll",
-    "shortDescription": "Contrats, paie internationale, EOR et gestion de collaborateurs distribués.",
-    "shortDescriptionEn": "Contracts, global payroll, EOR and distributed workforce management.",
+    "shortDescription": "Plateforme de gestion globale des salaires et RH permettant aux entreprises d'embaucher, gérer, payer et équiper n'importe qui dans 150+ pays. Consolidée paie locale/globale, conformité, visa et gestion IT.",
+    "shortDescriptionEn": "Global payroll and HR platform enabling organizations to hire, manage, pay, and equip anyone across 150+ countries. Consolidates local/global payroll, compliance, visa, and IT management.",
     "pricing": {
-      "free": "Certains modules RH peuvent être gratuits ou inclus selon offre.",
-      "paid": "Deel Contractor Management affiché à partir d’environ 49 $/mois ; EOR, Payroll et modules avancés sur devis."
+      "free": "Pas de tier gratuit. Modèle consultatif (book a demo pour discussion tarifaire).",
+      "paid": "Enterprise: Tarification custom (demo requise)"
     },
     "defaultMonthlyPrice": 49,
     "affiliateLink": "https://get.deel.com/hftlk37l5raa",
@@ -9627,11 +9483,11 @@
     "slug": "dorik",
     "name": "Dorik",
     "categoryId": "nocode-web",
-    "shortDescription": "Constructeur de sites no-code avec IA intégrée et hébergement inclus à 4$/mois.",
-    "shortDescriptionEn": "No-code website builder with built-in AI and hosting included at $4/mo.",
+    "shortDescription": "Créateur de sites web no-code avec IA intégrée, CMS, blogging et formulaires, permettant de concevoir et publier des sites modernes sans code ni maintenance serveur.",
+    "shortDescriptionEn": "No-code AI website builder with built-in CMS, blogging, and forms, enabling design and publishing of modern websites without coding or server maintenance.",
     "pricing": {
-      "free": "Plan gratuit avec sous-domaine",
-      "paid": "Personal 3.99$/mois (annuel)"
+      "free": "Plan gratuit : sites illimités, pages et articles illimités, 1 domaine personnalisé, storage et bandwidth illimités, branding 'Built with Dorik'",
+      "paid": "Free: Gratuit ; Personal: $29/mois (mensuel) ou $10.38/mois (biennal) ; Business: $59/mois (mensuel) ou $20.75/mois (biennal) ; Lifetime Personal: $249 (paiement unique) ; Lifetime Business: $599 (paiement unique)"
     },
     "defaultMonthlyPrice": 3,
     "affiliateLink": "https://dorik.com",
@@ -9997,16 +9853,16 @@
     "slug": "dun-bradstreet",
     "name": "Dun & Bradstreet",
     "categoryId": "vendor-risk-data",
-    "shortDescription": "Dun & Bradstreet fournit des données de risque ou de conformité sur les fournisseurs.",
+    "shortDescription": "Fournisseur historique de données commerciales globales et numéro D-U-N-S, offrant rapports de crédit, scores de risque, monitoring fournisseurs et données d'entreprises pour compliance et prise de décision commerciale.",
     "shortDescriptionEn": "Global business data provider offering credit reports, D-U-N-S numbers, supplier monitoring, and company intelligence for compliance and commercial decision-making.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / prix non public"
+      "free": "D-U-N-S Manager gratuit pour consulter et mettre à jour infos entreprise. D-U-N-S gratuit en traitement standard (Traitement accéléré : $229–349).",
+      "paid": "Credit Insights: $49–149/mois ; D&B Hoovers Essentials: $49/mois ; Business Information Reports: À partir de $139.99/an (par rapport) ; D&B Credit Evaluator Plus: $61.99/rapport ; Enterprise Solution: À partir de $10 000/an (contrats annuels requis); $25 000–$50 000+ pour bundles complets"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://www.dnb.com",
     "websiteUrl": "https://www.dnb.com",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/dun-bradstreet.jpg",
+    "ogImageUrl": "/og-screenshots/dun-bradstreet.jpg",
     "logo": "",
     "tool_type": "metier",
     "host_app": null,
@@ -10252,16 +10108,16 @@
     "slug": "ecovadis",
     "name": "EcoVadis",
     "categoryId": "vendor-risk-data",
-    "shortDescription": "EcoVadis fournit des données de risque ou de conformité sur les fournisseurs.",
+    "shortDescription": "Plateforme d'évaluation de durabilité ESG (environnemental, social, gouvernance) pour chaînes d'approvisionnement mondiales, fournissant ratings de fournisseurs alignés sur standards UN et GRI pour acheteurs et fournisseurs.",
     "shortDescriptionEn": "ESG sustainability ratings platform for global supply chains, providing standardized supplier assessments aligned with UN Global Compact and GRI standards for buyers and suppliers.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / prix non public"
+      "free": "Pas de version gratuite. Tarification basée sur le volume d'évaluations.",
+      "paid": "SME Program: Tarif sur demande - pour petits programmes <50 fournisseurs ; Mid-Market Program: Tarif sur demande - 50–500 fournisseurs ; Enterprise Program: Tarif préférentiel - 500+ fournisseurs (plus rentable par évaluation)"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://ecovadis.com",
     "websiteUrl": "https://ecovadis.com",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/ecovadis.jpg",
+    "ogImageUrl": "/og-screenshots/ecovadis.jpg",
     "logo": "",
     "tool_type": "metier",
     "host_app": null,
@@ -11261,10 +11117,10 @@
     "name": "Feedly",
     "categoryId": "project-management",
     "shortDescription": "Lecteur de flux RSS et outil de veille : agrège sources, blogs et actualités en un seul endroit, avec des « AI Feeds » pour filtrer et prioriser l'information.",
-    "shortDescriptionEn": "RSS reader and monitoring tool that aggregates sources, blogs and news in one place, with AI Feeds to filter and prioritise information.",
+    "shortDescriptionEn": "RSS feed reader and monitoring tool: aggregates sources, blogs, and news in one place, with AI Feeds to filter and prioritize information.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "Gratuit : limité à 100 sources et 3 feeds, sans fonctions IA.",
+      "paid": "Free: 0 $ (100 sources, 3 feeds, sans IA) ; Pro: ~6 $/mois en annuel (72 $/an) ; Pro+: ~8,25 $/mois en annuel (99 $/an), fonctions IA ; Enterprise / Market Intelligence: sur devis"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://feedly.com",
@@ -12174,10 +12030,10 @@
     "name": "Float",
     "categoryId": "project-management",
     "shortDescription": "Logiciel de gestion des ressources (resource management) pour équipes de prestation : planifie qui travaille sur quoi, la capacité, les disponibilités et le suivi du temps.",
-    "shortDescriptionEn": "Resource management software for delivery teams: plan who works on what, capacity, availability and time tracking.",
+    "shortDescriptionEn": "Resource management software for service teams: plans who works on what, capacity, availability, and time tracking.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "Essai gratuit disponible ; pas de palier gratuit permanent. Tarif par utilisateur.",
+      "paid": "Starter: 7,50 $/utilisateur/mois ; Pro: 12,50 $/utilisateur/mois ; Enterprise: sur devis (CSM dédié, SLA, support prioritaire)"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://float.com",
@@ -13958,11 +13814,11 @@
     "slug": "gocardless",
     "name": "Gocardless",
     "categoryId": "finance",
-    "shortDescription": "Plateforme de paiements récurrents par prélèvement bancaire (Direct Debit, SEPA, ACH…), pensée pour la facturation par abonnement — alternative bancaire aux paiements par carte.",
-    "shortDescriptionEn": "Recurring bank-debit payments platform (Direct Debit, SEPA, ACH) built for subscription billing — a bank-based alternative to card payments.",
+    "shortDescription": "Plateforme de paiements récurrents par prélèvement bancaire (Direct Debit, SEPA, ACH…), pensée pour la facturation par abonnement - alternative bancaire aux paiements par carte.",
+    "shortDescriptionEn": "Platform for recurring bank transfer payments (Direct Debit, SEPA, ACH, etc.), designed for subscription billing-a bank transfer alternative to card payments.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "Pas d'abonnement mensuel obligatoire ni de frais de mise en place ; on paie à la transaction.",
+      "paid": "Standard: ~1 % + 0,20 £ par transaction, plafonné à 4 £ ; SEPA ~1 % plafonné à 2 € ; Advanced / Pro: options avancées selon le volume traité"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://gocardless.com",
@@ -14029,10 +13885,10 @@
     "name": "Gong",
     "categoryId": "project-management",
     "shortDescription": "Plateforme de revenue intelligence : enregistre, transcrit et analyse par IA les appels et réunions commerciales pour dégager des insights (risque de deal, coaching, mentions concurrents, santé du pipeline).",
-    "shortDescriptionEn": "Revenue intelligence platform that records, transcribes and AI-analyses sales calls to surface deal risk, coaching and pipeline insights.",
+    "shortDescriptionEn": "Revenue intelligence platform: records, transcribes, and AI-analyzes sales calls and meetings for insights (deal risk, coaching, competitor mentions, pipeline health).",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "Pas de palier gratuit ; tarification entreprise sur devis.",
+      "paid": "Voir le tarif officiel."
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://gong.io",
@@ -14163,16 +14019,16 @@
     "slug": "google-chat",
     "name": "Google Chat",
     "categoryId": "communication-team",
-    "shortDescription": "Google Chat permet aux équipes de recevoir et traiter des notifications dans leur outil de communication.",
+    "shortDescription": "Plateforme de communication d'équipe incluse dans Google Workspace pour chat en temps réel, espaces collaboration jusqu'à 500 000 membres, et intégrations tiers (Asana, Jira, Slack, Salesforce). Assistée par Gemini pour résumés, traduction et composition de messages.",
     "shortDescriptionEn": "Team communication platform included with Google Workspace for real-time chat, collaboration spaces supporting up to 500,000 members, and third-party integrations (Asana, Jira, Slack, Salesforce). Powered by Gemini for summaries, translation, and message composition.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / prix non public"
+      "free": "Google Chat n'est pas disponible en version gratuite autonome ; inclus uniquement avec les plans payants Google Workspace.",
+      "paid": "Starter: À partir de €3,40/utilisateur/mois (montants USD et autres devises sur la page officielle) ; Standard: À partir de €6,80/utilisateur/mois ; Plus: À partir de €10,55/utilisateur/mois ; Enterprise: Tarification personnalisée (devis)"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://chat.google.com",
     "websiteUrl": "https://chat.google.com",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/google-chat.jpg",
+    "ogImageUrl": "/og-screenshots/google-chat.jpg",
     "logo": "",
     "tool_type": "satellite",
     "host_app": null,
@@ -15236,16 +15092,16 @@
     "slug": "gusto",
     "name": "Gusto",
     "categoryId": "finance",
-    "shortDescription": "Paie et avantages sociaux",
-    "shortDescriptionEn": "Payroll and employee benefits.",
+    "shortDescription": "Plateforme de paie et RH cloud pour petites et moyennes entreprises. Inclut processing de paie, dépôts directs, filings fiscaux, gestion des avantages (santé, retraite), time tracking, et outils RH. Support pour 650+ intégrations.",
+    "shortDescriptionEn": "Cloud payroll and HR platform for small to mid-sized businesses. Includes payroll processing, direct deposit, tax filings, benefits admin (health, 401k), time tracking, and HR tools. Supports 650+ integrations.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / prix non public"
+      "free": "Pas d'essai gratuit gratuit ; plans payants à partir de 49 $/mois.",
+      "paid": "Simple: 49 $/mois + 6 $/personne (paie basique) ; Plus: 80 $/mois + 12 $/personne (paie + outils RH) ; Premium: 180 $/mois + 22 $/personne (paie + HR avancé + benefits) ; Contractor-Only: 35 $/mois + 6 $/contractor"
     },
     "defaultMonthlyPrice": 40,
     "affiliateLink": "https://gusto.com",
     "websiteUrl": "https://gusto.com",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/gusto.jpg",
+    "ogImageUrl": "/og-screenshots/gusto.jpg",
     "logo": "",
     "tool_type": "satellite",
     "host_app": null,
@@ -16148,11 +16004,11 @@
     "slug": "hume-ai",
     "name": "Hume AI",
     "categoryId": "ai-general",
-    "shortDescription": "API IA vocale et émotionnelle pour interfaces conversationnelles avancées.",
-    "shortDescriptionEn": "Voice and empathic AI API for advanced conversational interfaces.",
+    "shortDescription": "Plateforme IA empathique vocale : EVI (Empathic Voice Interface) et Octave (TTS empathique). Détecte émotions vocales, répond naturellement. APIs pour expression measurement, EVI, et produits connectés.",
+    "shortDescriptionEn": "Empathic voice AI platform: EVI (Empathic Voice Interface) and Octave (empathic TTS). Detects vocal emotions, responds naturally. APIs for expression measurement, EVI, and connected products.",
     "pricing": {
-      "free": "Niveau gratuit ou crédits selon offre.",
-      "paid": "Tarification généralement liée à l’usage API, volumes et modèles."
+      "free": "Gratuit : 5 EVI minutes, 10K TTS characters (0,15 $/1K overage).",
+      "paid": "Free: 0 $ (5 min EVI, 10K chars) ; Creator: 14 $/mois (140K chars TTS, unlimited voice clone) ; Implementation: 1-5K $ (onboarding, setup) ; Data storage: 100-1K $/mois (audio/video processing) ; Advanced features: 500-3,5K $/an"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://try.hume.ai/ojin1rg0ivlx",
@@ -17039,11 +16895,11 @@
     "slug": "ironclad",
     "name": "Ironclad",
     "categoryId": "legal-contracts",
-    "shortDescription": "Ironclad aide à gérer signatures, contrats ou documents juridiques.",
-    "shortDescriptionEn": "Ironclad helps manage signatures, contracts, or legal documents.",
+    "shortDescription": "Plateforme SaaS de gestion du cycle de vie des contrats (CLM) alimentée par l'IA, permettant automatisation de la création, révision, signature, stockage et analyse des contrats. Inclut Jurist AI pour examen automatisé.",
+    "shortDescriptionEn": "AI-powered Contract Lifecycle Management (CLM) platform for automating creation, review, signature, storage, and analysis. Includes Jurist AI for automated contract review.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / prix non public"
+      "free": "Pas de version gratuite. Démo et essai disponibles via contact sales.",
+      "paid": "Mid-market: Estimé 50 000-120 000€/an selon volume contrats ; Enterprise: 200 000€+/an pour déploiements complexes"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://ironcladapp.com",
@@ -17181,16 +17037,16 @@
     "slug": "jenni",
     "name": "Jenni AI",
     "categoryId": "creation",
-    "shortDescription": "Assistant de rédaction académique avec autocomplétion, citations, bibliothèque et révision.",
-    "shortDescriptionEn": "Academic writing assistant with autocomplete, citations, a source library and review tools.",
+    "shortDescription": "Assistant d'écriture académique centré sur la recherche, la rédaction, les citations et le travail à partir de sources importées.",
+    "shortDescriptionEn": "Academic writing assistant focused on research, drafting, citations, and working from imported sources.",
     "pricing": {
-      "free": "Plan gratuit durable avec limites d’usage.",
-      "paid": "Plans Plus et Pro, facturation mensuelle ou annuelle."
+      "free": "Plan gratuit disponible avec limites d'usage.",
+      "paid": "Free: Gratuit avec limites ; Individual: Montant affiché sur la page officielle ; Team and Institutional: Sur devis"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://jenni.ai/",
     "websiteUrl": "https://jenni.ai/",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/jenni.jpg",
+    "ogImageUrl": "/og-screenshots/jenni.jpg",
     "logo": "",
     "tool_type": "satellite",
     "host_app": null,
@@ -17206,9 +17062,9 @@
       "createur-contenu"
     ],
     "relevantFor": [
-      "etudiant",
-      "chercheur",
-      "redacteur"
+      "Étudiants",
+      "Chercheurs",
+      "Auteurs académiques"
     ],
     "freeAlternative": null,
     "substitutable": true,
@@ -17511,11 +17367,11 @@
     "slug": "juro",
     "name": "Juro",
     "categoryId": "legal-contracts",
-    "shortDescription": "Juro aide à gérer signatures, contrats ou documents juridiques.",
+    "shortDescription": "Plateforme de gestion de cycle de vie des contrats (CLM) alimentée par l'IA, automatisant création, révision, négociation et approbation de contrats avec intégration CRM et assistant IA natif.",
     "shortDescriptionEn": "AI-powered contract lifecycle management (CLM) platform automating contract creation, review, negotiation, and approval with native CRM integration and AI assistant (Operator).",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / prix non public"
+      "free": "Pas de version gratuite. Essai sur demande. Montants sur la page officielle.",
+      "paid": "Starter: Estimé ~$25/utilisateur/mois ou à partir de ~10 000 $/an pour petites équipes ; Premium Signing (add-on): ~$10/utilisateur/mois (optionnel) ; Enterprise: Tarif sur demande - API, intégrations personnalisées, support dédié"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://juro.com",
@@ -17915,16 +17771,16 @@
     "slug": "kit",
     "name": "Kit",
     "categoryId": "email-productivity",
-    "shortDescription": "Newsletter, formulaires et automatisations pour créateurs et indépendants.",
-    "shortDescriptionEn": "Newsletter, forms and automations for creators and independent businesses.",
+    "shortDescription": "Plateforme email pour creators vendant newsletters, courses et digital products, avec automation visuelle, templates et intégration native MCP Claude pour management depuis chat.",
+    "shortDescriptionEn": "Email platform for creators selling newsletters, courses and digital products, with visual automation, templates and native Claude MCP integration for chat-based management.",
     "pricing": {
-      "free": "Plan gratuit selon volume et fonctionnalités disponibles.",
-      "paid": "Plan Creator autour de 25 $/mois selon taille de liste et facturation."
+      "free": "Plan Newsletter gratuit : jusqu'à 10,000 abonnés avec 1 sequence automation",
+      "paid": "Newsletter: Gratuit (10k abonnés) ; Creator: 39 $/mois (1000 abonnés, ou 33 $/mois annuel) ; Advanced: Montants sur la page officielle"
     },
     "defaultMonthlyPrice": 25,
     "affiliateLink": "https://partners.kit.com/u037oht6r48p",
     "websiteUrl": "https://kit.com",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/kit.jpg",
+    "ogImageUrl": "/og-screenshots/kit.jpg",
     "logo": "",
     "tool_type": "gestion",
     "host_app": null,
@@ -18942,10 +18798,10 @@
     "name": "Legalplace",
     "categoryId": "legal-contracts",
     "shortDescription": "Legaltech française spécialisée dans la création d'entreprise en ligne et les démarches juridiques : statuts, modifications, dissolution, domiciliation, comptabilité et documents juridiques du quotidien.",
-    "shortDescriptionEn": "French legaltech specialised in online company formation and legal procedures: articles, changes, dissolution, business address, accounting and everyday legal documents.",
+    "shortDescriptionEn": "French legal tech specialized in online business creation and legal procedures: bylaws, modifications, dissolution, domiciliation, accounting, and everyday legal documents.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "Service payant ; prestations à l'acte ou par abonnement.",
+      "paid": "Création d'entreprise: à partir de 99 € HT (statuts + formalités RCS, hors frais légaux ~50–200 €) ; Domiciliation: à partir de 19 €/mois ; Abonnement juridique: à partir de 49 €/mois"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://legalplace.fr",
@@ -19037,16 +18893,16 @@
     "slug": "lemlist",
     "name": "Lemlist",
     "categoryId": "email-productivity",
-    "shortDescription": "Séquences d’email outbound et prospection multicanale personnalisée.",
-    "shortDescriptionEn": "Outbound email sequences and personalized multichannel prospecting.",
+    "shortDescription": "Plateforme multi-canal de cold outreach (email, LinkedIn, WhatsApp, calls) avec IA pour personnalisation dynamique, images personalisées, et warm-up lemwarm inclus.",
+    "shortDescriptionEn": "Multi-channel cold outreach platform (email, LinkedIn, WhatsApp, calls) with AI for dynamic personalization, personalized images, and included lemwarm warm-up.",
     "pricing": {
-      "free": "Pas de plan gratuit durable identifié.",
-      "paid": "Plans publics à partir d’environ 39 $/mois selon fonctionnalités."
+      "free": "Pas de plan gratuit ; essai possible sur demande",
+      "paid": "Starter: Montants sur la page officielle ; Growth: Montants sur la page officielle ; Enterprise: Montants sur demande"
     },
     "defaultMonthlyPrice": 39,
     "affiliateLink": "https://get.lemlist.com/iqofb24egwan",
     "websiteUrl": "https://www.lemlist.com",
-    "ogImageUrl": "https://web-assets.lemlist.com/lemlist/Home - Graph URL.png",
+    "ogImageUrl": "https://web-assets.lemlist.com/lemlist/Home%20-%20Graph%20URL.png",
     "logo": "",
     "tool_type": "satellite",
     "host_app": null,
@@ -19459,10 +19315,10 @@
     "name": "Lindy",
     "categoryId": "automation",
     "shortDescription": "Plateforme no-code d'agents IA : automatise email, réunions et workflows via 100+ intégrations (tri d'emails, prise de notes en réunion, mise à jour CRM, workflows multi-étapes).",
-    "shortDescriptionEn": "No-code AI agent platform that automates email, meetings and workflows across 100+ integrations (email triage, meeting notes, CRM updates, multi-step workflows).",
+    "shortDescriptionEn": "No-code AI agent platform: automates email, meetings, and workflows via 100+ integrations (email sorting, meeting notes, CRM updates, multi-step workflows).",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "Paliers payants à crédits ; l'usage réel fait varier la facture. Offre Enterprise sur devis.",
+      "paid": "Plus: 49,99 $/mois - jusqu'à 2 boîtes ; Pro: 99,99 $/mois - 3× l'usage, automatisation navigateur ; Max: 199,99 $/mois - 7× l'usage, jusqu'à 5 boîtes ; Enterprise: sur devis"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://lindy.ai",
@@ -22123,16 +21979,16 @@
     "slug": "microsoft-365",
     "name": "Microsoft 365",
     "categoryId": "productivity-tracking",
-    "shortDescription": "Microsoft 365 aide à gérer signatures, contrats ou documents juridiques.",
-    "shortDescriptionEn": "Microsoft productivity suite: Word, Excel, PowerPoint, Outlook, Teams and more.",
+    "shortDescription": "Suite d'applications cloud de productivité incluant Word, Excel, PowerPoint, Outlook, OneNote, Teams, stockage OneDrive, et Copilot IA. Conçue pour professionnels et équipes travaillant en ligne.",
+    "shortDescriptionEn": "Cloud-based productivity suite including Word, Excel, PowerPoint, Outlook, OneNote, Teams, OneDrive storage, and AI Copilot. Designed for professionals and teams working online.",
     "pricing": {
-      "free": "Aucune offre gratuite complète (Office en ligne limité)",
-      "paid": "Personal à 6,99$/mois (69,99$/an) ; Family (jusqu'à 6 personnes) à 129,99$/an"
+      "free": "Version gratuite limitée (5 Go OneDrive, sans Copilot). Plans payants débutent à partir de 20 EUR/an.",
+      "paid": "Free: Gratuit (5 Go stockage) ; Basic: 20 EUR/an (100 Go) ; Personal: 99 EUR/an (1 To + Copilot) ; Family: 129 EUR/an (6 To partagés, jusqu'à 6 utilisateurs) ; Premium: 219 EUR/an (1 To + Copilot avancé)"
     },
     "defaultMonthlyPrice": 7,
     "affiliateLink": "https://www.microsoft.com/microsoft-365",
     "websiteUrl": "https://www.microsoft.com/microsoft-365",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/microsoft-365.jpg",
+    "ogImageUrl": "/og-screenshots/microsoft-365.jpg",
     "logo": "",
     "tool_type": "core",
     "host_app": null,
@@ -22161,16 +22017,16 @@
     "slug": "microsoft-365-copilot",
     "name": "Microsoft 365 Copilot",
     "categoryId": "ai-general",
-    "shortDescription": "Couche IA intégrée à Microsoft 365 : Word, Excel, Teams et Outlook.",
-    "shortDescriptionEn": "AI layer built into Microsoft 365: Word, Excel, Teams and Outlook.",
+    "shortDescription": "Assistant IA intégré aux applications Microsoft 365 (Word, Excel, Outlook, Teams, PowerPoint) qui génère du contenu, résume des documents, crée des présentations et facilite la collaboration.",
+    "shortDescriptionEn": "AI assistant built into Microsoft 365 apps (Word, Excel, Outlook, Teams, PowerPoint) that generates content, summarizes documents, creates presentations, and enables workplace collaboration.",
     "pricing": {
-      "free": "Non disponible",
-      "paid": "30$/utilisateur/mois en complément de M365"
+      "free": "Essai gratuit disponible ; fonctionnalités intégrées à Microsoft 365 existant",
+      "paid": "Copilot Pro: Montants sur la page officielle (abonnement annuel ou mensuel)"
     },
     "defaultMonthlyPrice": 25,
     "affiliateLink": "https://www.microsoft.com/microsoft-365/copilot",
     "websiteUrl": "https://www.microsoft.com/microsoft-365/copilot",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/microsoft-365-copilot.jpg",
+    "ogImageUrl": "/og-screenshots/microsoft-365-copilot.jpg",
     "logo": "",
     "tool_type": "bundle",
     "host_app": null,
@@ -22526,16 +22382,16 @@
     "slug": "microsoft-teams",
     "name": "Microsoft Teams",
     "categoryId": "communication-team",
-    "shortDescription": "Microsoft Teams permet aux équipes de recevoir et traiter des notifications dans leur outil de communication.",
-    "shortDescriptionEn": "Microsoft communication and collaboration platform.",
+    "shortDescription": "Plateforme collaborative Microsoft pour communication unifiée : chat, vidéoconférence, partage de fichiers et intégration avec suite Microsoft 365. Support jusqu'à 300 participants par réunion avec transcription.",
+    "shortDescriptionEn": "Microsoft's unified collaboration platform combining chat, video conferencing, file sharing, and Microsoft 365 integration. Supports up to 300 participants per meeting with transcription.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / prix non public"
+      "free": "Version gratuite avec chat, appels 1:1 vidéo, partage écran, stockage limité (5GB). Historique messages limité à 90 jours.",
+      "paid": "Free: Gratuit (limité) ; Microsoft Teams Essentials: 4 USD/utilisateur/mois (facturation annuelle) ; Microsoft 365 Business Basic: 7 USD/utilisateur/mois (facturation annuelle) ; Microsoft 365 Business Standard: 14 USD/utilisateur/mois (facturation annuelle) ; Teams Premium (add-on): 10 USD/utilisateur/mois"
     },
     "defaultMonthlyPrice": 4.2,
     "affiliateLink": "https://www.microsoft.com/microsoft-teams",
     "websiteUrl": "https://www.microsoft.com/teams",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/microsoft-teams.jpg",
+    "ogImageUrl": "/og-screenshots/microsoft-teams.jpg",
     "logo": "",
     "tool_type": "satellite",
     "host_app": null,
@@ -24617,16 +24473,16 @@
     "slug": "onedrive",
     "name": "OneDrive",
     "categoryId": "storage",
-    "shortDescription": "Stockage cloud Microsoft",
-    "shortDescriptionEn": "Microsoft cloud storage.",
+    "shortDescription": "Service cloud de stockage Microsoft intégrant synchronisation fichiers multi-appareils, Personal Vault sécurisé, ransomware detection, collaboration temps réel Office 365 et backup automatique.",
+    "shortDescriptionEn": "Microsoft cloud storage service integrating multi-device file sync, Personal Vault security, ransomware detection, real-time Office 365 collaboration, and automatic backup.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / prix non public"
+      "free": "5 GB gratuit + 15 GB mailbox storage. Plans payants : Basic (100 GB), Personnel (1 TB), Famille (6 TB, 6 users).",
+      "paid": "Free: Gratuit (5 GB storage + 15 GB mailbox) ; Basic: 20 €/an (100 GB storage) ; Personnel: 99 €/an (1 TB + Office apps + Copilot) ; Famille: 129 €/an (6 TB total, up to 6 users)"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://www.microsoft.com/microsoft-365/onedrive/online-cloud-storage",
     "websiteUrl": "https://onedrive.com",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/onedrive.jpg",
+    "ogImageUrl": "/og-screenshots/onedrive.jpg",
     "logo": "",
     "tool_type": "satellite",
     "host_app": null,
@@ -24655,11 +24511,11 @@
     "slug": "onelogin",
     "name": "OneLogin",
     "categoryId": "security",
-    "shortDescription": "OneLogin aide à gérer accès, conformité ou sécurité dans une stack d’entreprise.",
-    "shortDescriptionEn": "OneLogin helps manage access, compliance, or security in a company stack.",
+    "shortDescription": "Plateforme IAM cloud fournissant SSO, authentification multi-facteur, gestion du cycle de vie des identités et hooks intelligents pour automatisation personnalisée des identités.",
+    "shortDescriptionEn": "Cloud IAM platform providing SSO, multi-factor authentication, identity lifecycle management, and Smart Hooks for custom identity automation.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / prix non public"
+      "free": "Pas de plan gratuit permanent. Essai gratuit disponible. Plans payants : Basic (3$/user/mois), Business (10$/user/mois), Unlimited (variable).",
+      "paid": "Basic: 3 $/user/mois (SSO, MFA, 5 apps basique) ; Business: 10 $/user/mois (Smart Hooks, automation avancée) ; Unlimited: 8-12 $/user/mois (features complètes, tarif négocié)"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://www.onelogin.com",
@@ -24692,16 +24548,16 @@
     "slug": "onetrust",
     "name": "OneTrust",
     "categoryId": "security",
-    "shortDescription": "OneTrust aide à gérer accès, conformité ou sécurité dans une stack d’entreprise.",
+    "shortDescription": "Plateforme de gouvernance IA pour piloter confidentialité des données, conformité, gestion des risques et gouvernance IA en temps réel à travers toute l'organisation.",
     "shortDescriptionEn": "AI-powered governance platform for managing data privacy, compliance, risk management, and AI governance in real-time across the organization.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / prix non public"
+      "free": "Pas de version gratuite. Minimum de contrat annuel de $10 000 à partir de Q2 2026. Montants sur demande auprès du commercial.",
+      "paid": "Consent Management (par domaine): À partir de ~$1 100/mois ; Privacy Automation: À partir de ~$3 860/mois ; Third-Party Risk Management: À partir de ~$10 000/an ; GRC (Governance, Risk, Compliance): À partir de ~$50 000/an ; AI Governance (2026): Tarif sur demande"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://www.onetrust.com",
     "websiteUrl": "https://www.onetrust.com",
-    "ogImageUrl": "/content/dam/onetrust/ot-thumbnail-onetrust-black.png",
+    "ogImageUrl": "https://www.onetrust.com/content/dam/onetrust/ot-thumbnail-onetrust-black.png",
     "logo": "",
     "tool_type": "metier",
     "host_app": null,
@@ -26148,11 +26004,11 @@
     "slug": "pennylane",
     "name": "Pennylane",
     "categoryId": "finance",
-    "shortDescription": "Comptabilité collaborative en temps réel",
-    "shortDescriptionEn": "Real-time collaborative accounting.",
+    "shortDescription": "Logiciel français de gestion comptable tout-en-un combinant facturation, comptabilité, trésorerie, gestion des achats et rapports automatisés, conçu pour les TPE, PME et cabinets comptables en France.",
+    "shortDescriptionEn": "All-in-one French accounting software combining invoicing, bookkeeping, cash flow management, purchase orders, and automated reporting, designed for SMEs and accounting firms in France.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Basique dès 14€/mois (indépendant) ; Essentiel dès 24€/mois ; Premium dès 79€/mois (selon nombre d'utilisateurs et de factures)"
+      "free": "Pas de version gratuite permanente ; essai gratuit possible, puis abonnement payant.",
+      "paid": "Basique (Freelancers/TPE): À partir de 14 € HT/mois ; SME Starter: Tarification sur demande selon modules ; SME Advanced: Tarification sur demande selon modules ; Cabinet comptable: Tarification sur demande selon modules"
     },
     "defaultMonthlyPrice": 14,
     "affiliateLink": "https://www.pennylane.com",
@@ -26633,11 +26489,11 @@
     "slug": "pics-io",
     "name": "Pics.io",
     "categoryId": "storage",
-    "shortDescription": "Gestionnaire d'assets digitaux (DAM) sur Google Drive ou S3.",
-    "shortDescriptionEn": "Digital asset management (DAM) on top of Google Drive or S3.",
+    "shortDescription": "Couche de gestion des assets par-dessus stockages existants (Google Drive, S3) avec recherche IA, collaboration, versioning, rights management et partage sécurisé, promo 20% août 2026.",
+    "shortDescriptionEn": "Asset management layer over existing storage (Google Drive, S3) with AI search, collaboration, versioning, rights management, and secure sharing, 20% discount August 2026.",
     "pricing": {
-      "free": "Essai 7 jours",
-      "paid": "Startup 100$/mois"
+      "free": "Essai gratuit 7 jours sans CB requise. Plans payants avec pricing transparent affichée sur site (tiers non spécifiés ici).",
+      "paid": "Essai Gratuit: 7 jours sans carte crédit ; Plans Payants: Tarification transparent sur le site (avec promo 20% jusqu'au 31 août 2026)"
     },
     "defaultMonthlyPrice": 85,
     "affiliateLink": "https://pics.io",
@@ -26667,11 +26523,11 @@
     "slug": "pigment",
     "name": "Pigment",
     "categoryId": "budgeting-fpa",
-    "shortDescription": "Pigment aide les équipes finance à piloter budget, prévisionnel et reporting.",
+    "shortDescription": "Plateforme de planification d'entreprise (IBP) native IA avec architecture intégrée, 30+ connecteurs natifs et modélisation multi-dimensionnelle pour budgeting, forecasting, planification ventes et scenariosing collaboratif.",
     "shortDescriptionEn": "AI-native integrated business planning (IBP) platform with integrated architecture, 30+ native connectors, and multi-dimensional modeling for budgeting, forecasting, sales planning, and collaborative scenario building.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / prix non public"
+      "free": "Pas de version gratuite ni trial autonome. Pricing sur-mesure uniquement via démonstration et négociation commerciale.",
+      "paid": "Contrats personnalisés (estimé SMB): Montants sur la page officielle (Pigment n'affiche pas pricing public)"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://www.gopigment.com",
@@ -28323,10 +28179,10 @@
     "name": "Productive Io",
     "categoryId": "project-management",
     "shortDescription": "Outil tout-en-un de gestion d'agence : gestion de projet, planification des ressources, budgets, facturation et reporting dans une seule plateforme, avec fonctions IA et intégrations (Jira, QuickBooks…).",
-    "shortDescriptionEn": "All-in-one agency management tool: project management, resource planning, budgets, invoicing and reporting in one platform, with AI features and integrations.",
+    "shortDescriptionEn": "All-in-one agency management tool: project management, resource planning, budgets, billing, and reporting in one platform, with AI features and integrations (Jira, QuickBooks, etc.).",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "Essai gratuit de 14 jours ; abonnement par utilisateur ensuite.",
+      "paid": "Essential: 9 $/utilisateur/mois (annuel), 11 $ en mensuel ; Professional: 24 $/utilisateur/mois (annuel), 28 $ en mensuel ; Enterprise / paliers supérieurs: sur devis"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://productive.io",
@@ -28427,16 +28283,16 @@
     "slug": "programa",
     "name": "Programa",
     "categoryId": "project-management",
-    "shortDescription": "Plateforme FF&E pour designers et architectes d’intérieur : sourcing, fiches produits, fournisseurs, validations et achats.",
-    "shortDescriptionEn": "FF&E platform for interior designers: sourcing, schedules, suppliers, approvals and procurement.",
+    "shortDescription": "Logiciel de gestion de projets conçu spécifiquement pour designers d'intérieur et architectes, couvrant les spécifications FF&E, calendriers, approbations clients, procurements et coordination de projets.",
+    "shortDescriptionEn": "Project management software designed specifically for interior designers and architects, covering FF&E specifications, schedules, client approvals, procurement, and project coordination.",
     "pricing": {
-      "free": "Essai disponible",
-      "paid": "Abonnement payant"
+      "free": "Essai gratuit de 7 jours sans carte de crédit requise.",
+      "paid": "Pro: $71/mois (1 siège inclus) ou équivalent annuel ; Sièges additionnels: $31/mois par utilisateur supplémentaire"
     },
     "defaultMonthlyPrice": 49,
     "affiliateLink": "https://programa.design",
     "websiteUrl": "https://programa.design",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/programa.jpg",
+    "ogImageUrl": "/og-screenshots/programa.jpg",
     "logo": "",
     "tool_type": "satellite",
     "host_app": null,
@@ -28567,16 +28423,16 @@
     "slug": "proofhub",
     "name": "ProofHub",
     "categoryId": "project-management",
-    "shortDescription": "Gestion de projet flat-rate avec tâches, chat et proofing de fichiers.",
-    "shortDescriptionEn": "Flat-rate project management with tasks, chat and file proofing.",
+    "shortDescription": "Plateforme collaborative de gestion de projet et d'approbation avec tarification forfaitaire (pas de frais par utilisateur), couvrant tâches, Gantt, discussions, chat, approbations de fichiers (proofing) et intégrations.",
+    "shortDescriptionEn": "Collaborative project management and approval platform with flat-rate pricing (no per-user fees), covering tasks, Gantt charts, discussions, chat, file approvals (proofing), and integrations.",
     "pricing": {
-      "free": "Essai 14 jours",
-      "paid": "Essential 45$/mois"
+      "free": "Pas de plan gratuit ; essai gratuit sur demande.",
+      "paid": "Essential: $45/mois en annuel ou $50/mois en mensuel (40 projets, 15 Go) ; Ultimate Control: $89/mois first 3 months annual then $135/mois, or $99/mois first 3 months monthly then $150/mois (projets illimités, 100 Go)"
     },
     "defaultMonthlyPrice": 38,
     "affiliateLink": "https://www.proofhub.com",
     "websiteUrl": "https://www.proofhub.com",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/proofhub.jpg",
+    "ogImageUrl": "/og-screenshots/proofhub.jpg",
     "logo": "",
     "tool_type": "satellite",
     "host_app": null,
@@ -30317,10 +30173,10 @@
     "name": "Relevance AI",
     "categoryId": "automation",
     "shortDescription": "Plateforme no-code pour construire et orchestrer des équipes d'agents IA (« AI Workforce ») : automatise recherche, outbound, enrichissement de données et tâches back-office, pour les équipes go-to-market et ops.",
-    "shortDescriptionEn": "No-code platform to build and orchestrate teams of AI agents ('AI Workforce'): automates research, outbound, data enrichment and back-office tasks for GTM and ops teams.",
+    "shortDescriptionEn": "No-code platform to build and orchestrate AI agent teams (AI Workforce): automates research, outbound, data enrichment, and back-office tasks for go-to-market and ops teams.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "Gratuit : 200 Actions/mois + 1 000 Vendor Credits one-time - pour explorer et tester, pas pour la production.",
+      "paid": "Free: 0 $ (200 Actions/mois, 1 000 crédits one-time) ; Pro: 19 $/mois (annuel) ; Team: 234 $/mois (annuel), ~349 $ en mensuel ; Enterprise: sur devis"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://relevanceai.com",
@@ -31226,11 +31082,11 @@
     "slug": "rippling",
     "name": "Rippling",
     "categoryId": "hris-payroll",
-    "shortDescription": "RH, paie et gestion IT unifiée",
-    "shortDescriptionEn": "Unified HR, payroll, and IT management.",
+    "shortDescription": "Plateforme intégrée de gestion des ressources humaines (HR, IT, Finance, Payroll) sur un seul système unifié. Offre automation pilotée par IA et un App Studio pour workflows custom.",
+    "shortDescriptionEn": "Integrated workforce management system (HR, IT, Finance, Payroll) on a unified platform. Features AI-driven automation and App Studio for custom workflows.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / prix non public"
+      "free": "Offre spéciale : 6 mois gratuits pour startups venture-backed (Payroll, HR, IT, Finance).",
+      "paid": "Venture-Backed Offer: 6 mois gratuits (tous modules) ; Paid Plans: Montants sur la page tarification"
     },
     "defaultMonthlyPrice": 8,
     "affiliateLink": "https://www.rippling.com",
@@ -31701,11 +31557,11 @@
     "slug": "safetyculture",
     "name": "Safetyculture",
     "categoryId": "organization",
-    "shortDescription": "Plateforme d'opérations terrain : checklists d'inspection, audits sécurité, observations et formations — plan gratuit disponible, Premium à 24 $/siège/mois.",
-    "shortDescriptionEn": "Frontline operations platform: inspection checklists, safety audits, observations and training — free plan available, Premium at $24/seat/month.",
+    "shortDescription": "Système d'opérations sur le terrain (Mitti by SafetyCulture) : centralise inspections, formation, gestion d'actifs, signalement d'incidents et conformité pour équipes terrains (80 000 organisations, 2M+ utilisateurs).",
+    "shortDescriptionEn": "Field operations system (Mitti by SafetyCulture): centralizes inspections, training, asset management, incident reporting and compliance for frontline teams (80,000+ organizations, 2M+ users).",
     "pricing": {
-      "free": "Plan gratuit : utilisateurs illimités, inspections de base, historique de données limité à 6 mois. Suffisant pour tester avec une petite équipe terrain.",
-      "paid": "Premium : 24 $/siège/mois (facturation mensuelle) ou ~19 $/siège/mois en annuel. Inclut analytique avancée, historique illimité, intégrations (Power BI, Salesforce, SAP). Enterprise : sur devis avec SSO, API étendue et support dédié."
+      "free": "Pas de version gratuite. Tarification personnalisée selon modules et nombre d'utilisateurs.",
+      "paid": "Modules à la carte: Montants sur la page officielle (Inspections, Formation, Gestion d'actifs, etc.) ; Enterprise: Tarifs personnalisés sur devis"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://safetyculture.com",
@@ -31953,16 +31809,16 @@
     "slug": "samcart",
     "name": "SamCart",
     "categoryId": "finance",
-    "shortDescription": "Plateforme de checkout optimisée pour vendre formations et produits numériques.",
-    "shortDescriptionEn": "Checkout platform optimized for selling courses and digital products.",
+    "shortDescription": "Plateforme de vente en ligne et funnel d'acquisition dédiée aux créateurs vendant des formations, produits numériques et services. Checkout optimisé, upsells, checkout abandonné recovery, support affilié.",
+    "shortDescriptionEn": "Sales funnel and e-commerce platform for creators selling courses, digital products, and services. Optimized checkout, upsells, cart abandonment recovery, affiliate support.",
     "pricing": {
-      "free": "Essai 7 jours",
-      "paid": "Launch 79$/mois"
+      "free": "Essai 14 jours gratuit. Pas de plan gratuit permanent ; abonnement payant obligatoire.",
+      "paid": "Core: 79 $ / mois (ou 59 $ en annuel) ; Pro: 199 $ / mois (ou 149 $ en annuel) ; Enterprise: Tarification custom"
     },
     "defaultMonthlyPrice": 67,
     "affiliateLink": "https://www.samcart.com",
     "websiteUrl": "https://www.samcart.com",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/samcart.jpg",
+    "ogImageUrl": "/og-screenshots/samcart.jpg",
     "logo": "",
     "tool_type": "satellite",
     "host_app": null,
@@ -32529,11 +32385,11 @@
     "slug": "securityscorecard",
     "name": "SecurityScorecard",
     "categoryId": "vendor-risk-data",
-    "shortDescription": "SecurityScorecard fournit des données de risque ou de conformité sur les fournisseurs.",
+    "shortDescription": "Plateforme de gestion des risques tiers (TPRM) évaluant posture de sécurité des fournisseurs et tiers-parties avec ratings A-F, monitoring temps-réel, et intelligence des menaces pour identifier et réduire risques cyber dans l'écosystème.",
     "shortDescriptionEn": "Third-party risk management (TPRM) platform assessing vendor security posture with A-F ratings, real-time monitoring, and threat intelligence to identify and mitigate cyber risks across extended supply chains.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / prix non public"
+      "free": "SecurityScorecard Free - Ratings et monitoring basiques pour un nombre limité de vendeurs. Essai gratuit 14 jours pour plans payants.",
+      "paid": "SecurityScorecard Free: Gratuit - Ratings de base et monitoring limité ; Business Plan: Tarif personnalisé (custom) ; Enterprise Plan: Tarif personnalisé (custom) - TITAN AI, automations avancées"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://securityscorecard.com",
@@ -33001,16 +32857,16 @@
     "slug": "sharepoint",
     "name": "SharePoint",
     "categoryId": "storage",
-    "shortDescription": "SharePoint sert à stocker, partager ou synchroniser des fichiers dans l’organisation.",
-    "shortDescriptionEn": "SharePoint is used to store, share, or sync files across an organization.",
+    "shortDescription": "Plateforme collaboration web Microsoft stockant, organisant et partageant informations de manière sécurisée, intégrée Teams, Word, Excel, Copilot pour boost productivité avec AI et gouvernance.",
+    "shortDescriptionEn": "Microsoft web collaboration platform storing, organizing, and securely sharing information, integrated with Teams, Word, Excel, Copilot for productivity boost with AI and governance.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / prix non public"
+      "free": "Pas de plan gratuit standalone. SharePoint inclus Microsoft 365 plans payants. Essai gratuit disponible.",
+      "paid": "Business Basic: 6,07 €/user/mois (web/mobile apps, 1 TB) ; Business Standard + Copilot: 20,36 €/user/mois (desktop/web/mobile, Copilot) ; Business Premium + Copilot: 27,73 €/user/mois (advanced device mgmt, security)"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://www.microsoft.com/microsoft-365/sharepoint/collaboration",
     "websiteUrl": "https://www.microsoft.com/microsoft-365/sharepoint/collaboration",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/sharepoint.jpg",
+    "ogImageUrl": "/og-screenshots/sharepoint.jpg",
     "logo": "",
     "tool_type": "gestion",
     "host_app": null,
@@ -33564,11 +33420,11 @@
     "slug": "simple-analytics",
     "name": "Simple Analytics",
     "categoryId": "analytics",
-    "shortDescription": "Analytics web minimaliste sans cookies, fondé en Europe, conforme RGPD.",
-    "shortDescriptionEn": "Minimalist cookieless web analytics, European-founded, GDPR compliant.",
+    "shortDescription": "Plateforme analytics web privacy-first, sans cookies ni suivi de visitants, 100% GDPR conforme, qui capture les vues de pages et événements sans identification personnelle. Data hébergée en Europe.",
+    "shortDescriptionEn": "Privacy-first web analytics platform without cookies or visitor tracking, 100% GDPR-compliant, capturing pageviews and events without personal identification. Data hosted in Europe.",
     "pricing": {
-      "free": "Essai 14 jours",
-      "paid": "Starter 15€/mois"
+      "free": "Plan Gratuit : 5 sites, 1 utilisateur, data retention 3 mois, pas de rétention long-terme.",
+      "paid": "Gratuit: 0 € (5 sites, 1 utilisateur) ; Simple: 15 €/month (10 sites, 1 utilisateur, data retention 3 ans) ; Team: 40 €/month (20 sites, 2 utilisateurs, data retention 5 ans, utilisateurs additionnels 20 € chacun) ; Enterprise: À partir de 750 €/month (volumes élevés, contrats personnalisés)"
     },
     "defaultMonthlyPrice": 15,
     "affiliateLink": "https://simpleanalytics.com",
@@ -34203,11 +34059,11 @@
     "slug": "socialbee",
     "name": "SocialBee",
     "categoryId": "email-productivity",
-    "shortDescription": "Planification, recyclage et organisation de contenus social media.",
-    "shortDescriptionEn": "Social media scheduling, content categories and evergreen recycling.",
+    "shortDescription": "Outil de gestion des réseaux sociaux avec planification, recyclage automatique de contenu, optimisations IA et intégrations Canva pour simplifier la publication et l'engagement.",
+    "shortDescriptionEn": "Social media management tool for scheduling, automatic content recycling, AI-powered optimization, and Canva integration for simplified publishing.",
     "pricing": {
-      "free": "Essai gratuit selon offre.",
-      "paid": "Plans publics à partir d’environ 29 $/mois."
+      "free": "Pas de plan gratuit. Trial gratuit 14 jours sans carte de crédit.",
+      "paid": "Starter/Pro/Agency: À partir de 29 $ / mois"
     },
     "defaultMonthlyPrice": 29,
     "affiliateLink": "https://get.socialbee.io/ezo1u6nhi8ow",
@@ -35745,10 +35601,10 @@
     "name": "Supermetrics",
     "categoryId": "analytics",
     "shortDescription": "Plateforme d'intégration de données marketing : extrait et transfère automatiquement les données de 150+ canaux (Google Ads, Meta, Shopify…) vers Google Sheets, Excel, Looker Studio ou un entrepôt de données.",
-    "shortDescriptionEn": "Marketing data integration platform that automatically extracts and moves data from 150+ channels (Google Ads, Meta, Shopify) into Sheets, Excel, Looker Studio or a warehouse.",
+    "shortDescriptionEn": "Marketing data integration platform: automatically extracts and transfers data from 150+ channels (Google Ads, Meta, Shopify, etc.) to Google Sheets, Excel, Looker Studio, or a data warehouse.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "Essai gratuit de 14 jours ; abonnement requis ensuite.",
+      "paid": "Essential / connecteur unique: à partir de 29 $/mois ; Core: à partir de ~159 $/mois ; Paliers supérieurs: coûts croissants avec les sources, sièges et destinations"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://supermetrics.com",
@@ -36062,11 +35918,11 @@
     "slug": "sysaid",
     "name": "SysAid",
     "categoryId": "organization",
-    "shortDescription": "Logiciel ITSM (IT Service Management) avec helpdesk, gestion des actifs et workflows ITIL — prix sur devis uniquement.",
-    "shortDescriptionEn": "ITSM platform with help desk, asset management, and ITIL workflows — quote-only pricing.",
+    "shortDescription": "Plateforme ITSM (IT Service Management) intégrant ticketing, gestion d'incidents et d'actifs informatiques, enrichie par des agents IA pour automatiser jusqu'à 60 % des incidents sans intervention humaine.",
+    "shortDescriptionEn": "ITSM (IT Service Management) platform combining help desk, incident management and IT asset tracking with AI agents to automate up to 60% of incidents without human intervention.",
     "pricing": {
-      "free": "Aucun plan gratuit : SysAid propose uniquement un essai de 30 jours. Aucun accès permanent sans contrat.",
-      "paid": "Tarification sur devis. Tier Help Desk : environ 1 200–1 500 $/an pour 3 agents et 250 actifs (estimation marché). Tier ITSM et ITSM+ : à partir de ~3 000–6 000 $/an selon agents et modules. Déploiement on-premise et cloud disponibles à des tarifs différents."
+      "free": "Essai gratuit sans carte de crédit requis. Pas de version gratuite permanente.",
+      "paid": "Professional: 89 $ par agent/mois (avec IA illimitée, pas de caps d'utilisation) ; Enterprise: Tarif personnalisé à partir de 20 agents (inclut tout + sandbox, IA sur mesure, support 1h)"
     },
     "defaultMonthlyPrice": 10,
     "affiliateLink": "https://sysaid.com",
@@ -36639,11 +36495,11 @@
     "slug": "tella",
     "name": "Tella",
     "categoryId": "creation",
-    "shortDescription": "Enregistrement et montage vidéo simple pour démos, tutoriels et cours en ligne.",
-    "shortDescriptionEn": "Simple screen and camera recording with editing for demos, tutorials and courses.",
+    "shortDescription": "Outil d'enregistrement et de montage vidéo dans le navigateur : capture webcam et écran, édition assistée par IA, arrière-plans et mises en page, export jusqu'en 4K.",
+    "shortDescriptionEn": "Browser-based screen and webcam recording and editing tool: AI-assisted editing, backgrounds and layouts, and export up to 4K.",
     "pricing": {
-      "free": "Plan gratuit limité",
-      "paid": "Pro 12$/mois"
+      "free": "Pas de version gratuite permanente ; essai gratuit de 7 jours.",
+      "paid": "Pro: 19 $/mois (12 $/mois en annuel) - enregistrement illimité, édition IA, export 4K ; Premium: 49 $/mois (39 $/mois en annuel) - branding, domaine, analytics ; Team: sur demande - collaboration d'équipe"
     },
     "defaultMonthlyPrice": 11.04,
     "affiliateLink": "https://www.tella.tv",
@@ -37459,11 +37315,11 @@
     "slug": "tomorro",
     "name": "Tomorro",
     "categoryId": "legal-contracts",
-    "shortDescription": "Tomorro aide à gérer signatures, contrats ou documents juridiques.",
+    "shortDescription": "Plateforme de gestion du cycle de vie des contrats (CLM) utilisant l'IA pour automatiser création, négociation, signature et archivage avec assistant Oro IA pour révision et extraction de données.",
     "shortDescriptionEn": "AI-powered contract lifecycle management (CLM) platform automating contract creation, negotiation, signature, and storage with Oro AI assistant for document review and data extraction.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / prix non public"
+      "free": "Pas de version gratuite. Essai sur demande.",
+      "paid": "Pro: $119/utilisateur core/mois (max 10 utilisateurs core, 150 collaborateurs, 2 000 contrats) ; Advanced: Tarif sur demande - utilisateurs core illimités, collaborateurs illimités"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://www.tomorro.com",
@@ -38316,11 +38172,11 @@
     "slug": "typedream",
     "name": "Typedream",
     "categoryId": "nocode-web",
-    "shortDescription": "Constructeur de site no-code style Notion, simple et rapide.",
-    "shortDescriptionEn": "No-code website builder with a Notion-like interface.",
+    "shortDescription": "Constructeur de sites sans code utilisant une interface texte avec slash-commands permettant de créer facilement sites, landing pages, blogs, formulaires et boutiques digitales.",
+    "shortDescriptionEn": "No-code website builder using a text-based interface with slash-commands for easily creating sites, landing pages, blogs, forms, and digital stores.",
     "pricing": {
-      "free": "Plan gratuit avec sous-domaine",
-      "paid": "Starter 12$/mois"
+      "free": "Gratuit pour commencer ; limitations sur domaine personnalisé et analytics",
+      "paid": "Free: Gratuit ; Launch: 12 $ / mois (facturation annuelle) ou 15 $ / mois (mensuel) ; Business: Montants sur la page officielle ; Enterprise: Montants sur la page officielle"
     },
     "defaultMonthlyPrice": 10,
     "affiliateLink": "https://typedream.com",
@@ -39086,11 +38942,11 @@
     "slug": "vanta",
     "name": "Vanta",
     "categoryId": "security",
-    "shortDescription": "Vanta aide à gérer accès, conformité ou sécurité dans une stack d’entreprise.",
-    "shortDescriptionEn": "Vanta helps manage access, compliance, or security in a company stack.",
+    "shortDescription": "Plateforme de gestion de conformité continu (GRC) automatisant surveillance de 35+ frameworks (SOC 2, ISO 27001, HIPAA, FedRAMP, etc.) avec agents IA et portail de confiance client.",
+    "shortDescriptionEn": "Continuous compliance management platform (GRC) automating monitoring across 35+ frameworks (SOC 2, ISO 27001, HIPAA, FedRAMP, etc.) with AI agents and client trust portal.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / prix non public"
+      "free": "Pas d'offre gratuite. Démo et contact commercial requis pour tarification.",
+      "paid": "Plan Personnalisé: Tarification sur devis (contact commercial)"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://www.vanta.com",
@@ -39525,16 +39381,16 @@
     "slug": "visualcv",
     "name": "VisualCV",
     "categoryId": "organization",
-    "shortDescription": "Crée, adapte et partage des CV avec modèles, exports PDF et suivi des consultations.",
-    "shortDescriptionEn": "Creates, adapts and shares resumes with templates, PDF exports and view analytics.",
+    "shortDescription": "Plateforme de création de CV et portfolio en ligne. Permet de concevoir, partager et tracker l'engagement sur des résumés professionnels via des templates ATS-optimisés, avec portfolio intégré et analytics unique d'ouverture/engagement.",
+    "shortDescriptionEn": "Online resume and portfolio builder platform. Create, share, and track resume engagement through ATS-optimized templates, integrated portfolio, and unique open/engagement analytics.",
     "pricing": {
-      "free": "Compte gratuit durable.",
-      "paid": "Abonnement Pro mensuel ou trimestriel."
+      "free": "Free durable : créer 1 CV, 30+ templates, exports PDF illimités, site professionnel, analytics, cover letter builder. Limité à 1 seul CV à la fois.",
+      "paid": "Free: $0/mois ; Pro (monthly): $16/mois ; Pro (quarterly): $48 par trimestre"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://www.visualcv.com/",
     "websiteUrl": "https://www.visualcv.com/",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/visualcv.jpg",
+    "ogImageUrl": "/og-screenshots/visualcv.jpg",
     "logo": "",
     "tool_type": "satellite",
     "host_app": null,
@@ -39597,11 +39453,11 @@
     "slug": "vmake",
     "name": "Vmake",
     "categoryId": "creation",
-    "shortDescription": "Amélioration et upscale vidéo par IA en ligne, sans logiciel à installer.",
-    "shortDescriptionEn": "AI video enhancement and upscaling online, no software to install.",
+    "shortDescription": "Suite d'édition vidéo et image en ligne assistée par IA, orientée e-commerce et créateurs : amélioration/upscaling, suppression de watermark et d'arrière-plan, génération et retouche de visuels produit.",
+    "shortDescriptionEn": "Online AI-powered video and image editing suite aimed at e-commerce and creators: enhancement/upscaling, watermark and background removal, and product visual generation and retouching.",
     "pricing": {
-      "free": "Crédits gratuits limités",
-      "paid": "Basic 28$/mois"
+      "free": "Plan gratuit à crédits limités, exports filigranés et fonctions de base.",
+      "paid": "Free: gratuit (crédits limités, exports filigranés) ; Plus: 9,99 $/mois (retrait watermark, export 1080p) ; Pro: 29,99 $/mois (crédits élevés, export 2K/4K, usage commercial)"
     },
     "defaultMonthlyPrice": 25,
     "affiliateLink": "https://vmake.ai",
@@ -39667,11 +39523,11 @@
     "slug": "voicetypr",
     "name": "VoiceTypr",
     "categoryId": "ai-general",
-    "shortDescription": "Dictée vocale IA hors-ligne et multi-langue, transcription en temps réel.",
-    "shortDescriptionEn": "Offline AI voice dictation, multi-language, real-time transcription.",
+    "shortDescription": "Application de dictée vocale offline-first pour Mac et Windows permettant écrire par la voix dans n'importe quelle app (Cursor, ChatGPT, Claude, Slack, Gmail, docs) en utilisant des modèles IA locaux.",
+    "shortDescriptionEn": "Offline-first voice-to-text app for Mac and Windows enabling voice dictation in any app (Cursor, ChatGPT, Claude, Slack, Gmail, docs) using local AI models.",
     "pricing": {
-      "free": "Plan gratuit limité",
-      "paid": "Pro 49$/mois"
+      "free": "Essai gratuit 3 jours, pas de carte bancaire requise",
+      "paid": "Pro: 39 $ (1 appareil, licence perpétuelle) ; Plus: 69 $ (2 appareils, licence perpétuelle) ; Max: 99 $ (4 appareils, licence perpétuelle)"
     },
     "defaultMonthlyPrice": 42,
     "affiliateLink": "https://voicetypr.com",
@@ -40151,10 +40007,10 @@
     "name": "Weezevent",
     "categoryId": "project-management",
     "shortDescription": "Plateforme de billetterie et solutions événementielles : billetterie en ligne, cashless, contrôle d'accès, accréditation du personnel et CRM, pour salons, concerts, festivals, conférences et événements sportifs.",
-    "shortDescriptionEn": "Ticketing and event platform: online ticketing, cashless, access control, staff accreditation and CRM for trade shows, concerts, festivals and conferences.",
+    "shortDescriptionEn": "Ticketing and event solutions platform: online ticketing, cashless payments, access control, staff accreditation, and CRM for trade shows, concerts, festivals, conferences, and sporting events.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / selon usage"
+      "free": "Gratuit pour les événements gratuits ; sinon commission par billet vendu, sans abonnement ni frais cachés.",
+      "paid": "À la billetterie: ~0,99 £ + 2,50 % TTC par billet vendu (gratuit pour les événements gratuits)"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://weezevent.com",
@@ -41130,11 +40986,11 @@
     "slug": "xero",
     "name": "Xero",
     "categoryId": "finance",
-    "shortDescription": "Logiciel de comptabilité cloud",
-    "shortDescriptionEn": "Cloud accounting software.",
+    "shortDescription": "Logiciel de comptabilité cloud pour PME offrant facturation, gestion des dépenses, rapports financiers, et réconciliation bancaire. Unlimited users par plan. Support multi-devise et multi-pays.",
+    "shortDescriptionEn": "Cloud accounting software for SMEs providing invoicing, expense management, financial reporting, and bank reconciliation. Unlimited users per plan. Multi-currency and multi-country support.",
     "pricing": {
-      "free": "Essai gratuit 30 jours",
-      "paid": "Early à 25$/mois, Growing à 55$/mois, Established à 90$/mois (facturation mensuelle uniquement aux US depuis mars 2026)"
+      "free": "Essai 30 jours gratuit. Pas de version gratuite permanente. Fréquentes promotions : 90% réduction 6 mois.",
+      "paid": "Early: 25 $ / mois (max 20 factures, 5 bills) ; Growing: 55 $ / mois (unlimited factures/bills) ; Established: 90 $ / mois (+ analytics, projet, expense)"
     },
     "defaultMonthlyPrice": 21.9,
     "affiliateLink": "https://www.xero.com",
@@ -41200,11 +41056,11 @@
     "slug": "youform",
     "name": "Youform",
     "categoryId": "nocode-web",
-    "shortDescription": "Créateur de formulaires avec logique conditionnelle, alternative à Typeform.",
-    "shortDescriptionEn": "Form builder with conditional logic, Typeform alternative.",
+    "shortDescription": "Constructeur de formulaires no-code avec plan gratuit illimité. Drag-and-drop pour formulaires/sondages/quiz, logique conditionnelle, signatures, intégrations 6000+ (Zapier, Slack, Notion, Stripe, Google Sheets).",
+    "shortDescriptionEn": "No-code form builder with unlimited free plan. Drag-and-drop forms, surveys, quizzes with conditional logic, signatures, 6000+ integrations (Zapier, Slack, Notion, Stripe, Google Sheets).",
     "pricing": {
-      "free": "100 soumissions/mois gratuites",
-      "paid": "Pro 29$/mois"
+      "free": "Plan gratuit illimité : formulaires illimités, soumissions illimités, 500+ templates, 30+ block types, logique conditionnelle, vérification, exports, analytics. Aucun crédit requis.",
+      "paid": "Free: 0 $ (illimité) ; Pro: 29 $/mois ; Business: 89 $/mois"
     },
     "defaultMonthlyPrice": 25,
     "affiliateLink": "https://youform.com",
@@ -41235,11 +41091,11 @@
     "slug": "yousign",
     "name": "Yousign",
     "categoryId": "legal-contracts",
-    "shortDescription": "Signature électronique pour devis, contrats, lettres de mission et validations client.",
-    "shortDescriptionEn": "Electronic signature for quotes, contracts, engagement letters and client approvals.",
+    "shortDescription": "Solution européenne de signature électronique, créée en France en 2013 : signature conforme eIDAS et RGPD, archivage des documents, vérification d'identité, workflows configurables, sceau électronique et API. Hébergement en France, certification ANSSI.",
+    "shortDescriptionEn": "European e-signature solution, founded in France in 2013: eIDAS- and GDPR-compliant signing, document archiving, identity verification, configurable workflows, electronic seal and an API. Hosted in France, ANSSI-certified.",
     "pricing": {
-      "free": "Plan gratuit limité",
-      "paid": "Plans payants"
+      "free": "Essai gratuit disponible ; abonnement requis pour un usage courant.",
+      "paid": "Starter: à partir de 9 €/mois ; Business: à partir de 25 €/mois ; API: à partir de 75 €/mois selon le volume annuel de signatures ; Enterprise: sur devis"
     },
     "defaultMonthlyPrice": 9,
     "affiliateLink": "https://yousign.com",
@@ -41809,6 +41665,82 @@
       "Étudiants chercheurs",
       "Universitaires",
       "Auteurs académiques"
+    ],
+    "freeAlternative": null,
+    "substitutable": true,
+    "betterAlternative": null
+  },
+  {
+    "id": "eptura-engage",
+    "slug": "eptura-engage",
+    "name": "Eptura Engage",
+    "categoryId": "organization",
+    "shortDescription": "Plateforme de réservation de bureaux et de salles, de coordination des journées au bureau et d'analyse de l'occupation. Eptura Engage est le nouveau nom de Condeco.",
+    "shortDescriptionEn": "Desk and room booking platform for coordinating office days and analyzing occupancy. Eptura Engage is the new name for Condeco.",
+    "pricing": {
+      "free": "Démonstration et tarification sur demande.",
+      "paid": "Eptura Engage: Sur devis"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://eptura.com/our-platform/eptura-engage/",
+    "websiteUrl": "https://eptura.com/our-platform/eptura-engage/",
+    "ogImageUrl": "/og-screenshots/eptura-engage.jpg",
+    "logo": "",
+    "tool_type": "specialise",
+    "host_app": null,
+    "bundle_parent": null,
+    "substitution_cluster_v2": null,
+    "functional_needs": [
+      "consulting-workflow"
+    ],
+    "verticals": [
+      "consulting"
+    ],
+    "relevantFor": [
+      "Équipes workplace",
+      "Services généraux",
+      "Entreprises hybrides"
+    ],
+    "freeAlternative": null,
+    "substitutable": true,
+    "betterAlternative": null
+  },
+  {
+    "id": "affinity",
+    "slug": "affinity",
+    "name": "Affinity",
+    "categoryId": "design",
+    "shortDescription": "Application créative unifiée de Canva qui réunit dessin vectoriel, retouche photo et mise en page dans un même environnement de bureau.",
+    "shortDescriptionEn": "Canva's unified desktop creative application combining vector design, photo editing, and page layout in one environment.",
+    "pricing": {
+      "free": "Les outils vectoriels, pixel et mise en page sont accessibles gratuitement avec un compte Canva.",
+      "paid": "Affinity: Gratuit ; Canva AI: Nécessite une offre Canva premium"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "https://www.affinity.studio/get-affinity",
+    "websiteUrl": "https://www.affinity.studio/get-affinity",
+    "ogImageUrl": "https://static.canva.com/static/images/fb_cover-1.jpg",
+    "logo": "",
+    "tool_type": "metier",
+    "host_app": null,
+    "bundle_parent": null,
+    "substitution_cluster_v2": "vector-design",
+    "functional_needs": [
+      "branding",
+      "creation",
+      "design-visuel",
+      "illustration-vectorielle",
+      "logos"
+    ],
+    "verticals": [
+      "graphiste-da",
+      "illustrateur",
+      "createur-contenu"
+    ],
+    "relevantFor": [
+      "Graphistes",
+      "Photographes",
+      "Éditeurs indépendants"
     ],
     "freeAlternative": null,
     "substitutable": true,

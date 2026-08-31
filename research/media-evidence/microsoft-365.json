@@ -1,0 +1,20 @@
+{
+  "slug": "microsoft-365",
+  "verified_on": "2026-08-31",
+  "mode": "fallback_screenshot",
+  "discovery": {
+    "official_media_found": false,
+    "official_pages_checked": [
+      "https://www.microsoft.com/microsoft-365"
+    ]
+  },
+  "items": [
+    {
+      "kind": "screenshot",
+      "url": "/og-screenshots/microsoft-365.jpg",
+      "source_page_url": "https://www.microsoft.com/microsoft-365",
+      "official": false,
+      "capture_method": "browser_screenshot"
+    }
+  ]
+}

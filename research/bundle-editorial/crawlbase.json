@@ -1,9 +1,9 @@
 {
   "slug": "crawlbase",
-  "author": "ToolTrim — Mike",
+  "author": "ToolTrim - Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Crawlbase — tarifs (site officiel)", "url": "https://crawlbase.com/pricing" }
+    { "label": "Crawlbase - tarifs (site officiel)", "url": "https://crawlbase.com/pricing" }
   ],
   "facts": {
     "what": "Plateforme d'API de web scraping et de proxies : elle récupère le HTML de pages web (avec rendu JavaScript possible), contourne les blocages et propose du stockage de données extraites, facturé à la requête réussie.",
@@ -11,9 +11,9 @@
     "pricing_model": "Abonnement mensuel par volume de requêtes + option pay-as-you-go ; paiement uniquement pour les requêtes réussies.",
     "free_tier": { "exists": true, "detail": "1 000 requêtes gratuites pour tester avant tout engagement." },
     "plans": [
-      { "name": "Crawling API — Starter", "price": "29 $/mois (~25 000 requêtes)" },
-      { "name": "Crawling API — intermédiaire", "price": "99 $/mois (~100 000 requêtes)" },
-      { "name": "Crawling API — avancé", "price": "199 $/mois (~500 000 requêtes)" },
+      { "name": "Crawling API - Starter", "price": "29 $/mois (~25 000 requêtes)" },
+      { "name": "Crawling API - intermédiaire", "price": "99 $/mois (~100 000 requêtes)" },
+      { "name": "Crawling API - avancé", "price": "199 $/mois (~500 000 requêtes)" },
       { "name": "Proxies / Storage", "price": "montants sur la page officielle" }
     ],
     "key_features": [

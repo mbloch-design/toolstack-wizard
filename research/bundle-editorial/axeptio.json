@@ -1,9 +1,9 @@
 {
   "slug": "axeptio",
-  "author": "ToolTrim — Mike",
+  "author": "ToolTrim - Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Axeptio — Plateforme de gestion du consentement (site officiel)", "url": "https://www.axept.io/" }
+    { "label": "Axeptio - Plateforme de gestion du consentement (site officiel)", "url": "https://www.axept.io/" }
   ],
   "facts": {
     "what": "Plateforme de gestion du consentement (CMP) permettant de gérer les cookies, données personnelles et marketing en conformité RGPD. Offre des banneau personnalisables, scan de trackers et support de multiples réglementations (GDPR, CCPA, ePrivacy).",

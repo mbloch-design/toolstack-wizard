@@ -1,0 +1,19 @@
+{
+  "slug": "dorik",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://dorik.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://cdn.dorik.com/5e373b6c43a72a001f56dbf6/61a1f4035bfd7b0011fb92f9/images/8_3vw6iujc.png",
+      "source_page_url": "https://dorik.com",
+      "official": true
+    }
+  ]
+}

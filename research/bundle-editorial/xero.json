@@ -1,9 +1,9 @@
 {
   "slug": "xero",
-  "author": "ToolTrim — Mike",
+  "author": "ToolTrim - Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Xero — Cloud Accounting Software (site officiel)", "url": "https://xero.com" }
+    { "label": "Xero - Cloud Accounting Software (site officiel)", "url": "https://xero.com" }
   ],
   "facts": {
     "what": "Logiciel de comptabilité cloud pour PME offrant facturation, gestion des dépenses, rapports financiers, et réconciliation bancaire. Unlimited users par plan. Support multi-devise et multi-pays.",

@@ -208,6 +208,10 @@ export const AppRoutes = () => (
       <Route path="tool/are-na/*" element={<RedirectCanonicalToolSlug />} />
       <Route path="tool/sendinblue/*" element={<RedirectCanonicalToolSlug />} />
       <Route path="tool/clearbit/*" element={<RedirectCanonicalToolSlug />} />
+      <Route path="tool/condeco/*" element={<RedirectCanonicalToolSlug />} />
+      <Route path="tool/affinity-designer/*" element={<RedirectCanonicalToolSlug />} />
+      <Route path="tool/affinity-photo/*" element={<RedirectCanonicalToolSlug />} />
+      <Route path="tool/affinity-publisher/*" element={<RedirectCanonicalToolSlug />} />
       <Route path="tool/:slug" element={<ToolDetailPage />} />
       <Route path="tool/:slug/prix" element={<LocalizedToolSubpage subpage="prix" />} />
       <Route path="tool/:slug/pricing" element={<LocalizedToolSubpage subpage="pricing" />} />
@@ -291,14 +295,14 @@ const App = () => (
 /** Redirect unlocalized tool URLs to the international English edition. */
 function RedirectToolToEn() {
   const { slug } = useParams();
-  const canonical = { "are-na": "arena", sendinblue: "brevo", clearbit: "hubspot" }[slug || ""] || slug;
+  const canonical = { "are-na": "arena", sendinblue: "brevo", clearbit: "hubspot", condeco: "eptura-engage", "affinity-designer": "affinity", "affinity-photo": "affinity", "affinity-publisher": "affinity" }[slug || ""] || slug;
   return <Navigate to={`/en/tool/${canonical}`} replace />;
 }
 
 function RedirectCanonicalToolSlug() {
   const { lang } = useParams();
   const location = useLocation();
-  const redirects = { "are-na": "arena", sendinblue: "brevo", clearbit: "hubspot" };
+  const redirects = { "are-na": "arena", sendinblue: "brevo", clearbit: "hubspot", condeco: "eptura-engage", "affinity-designer": "affinity", "affinity-photo": "affinity", "affinity-publisher": "affinity" };
   const legacySlug = location.pathname.split("/tool/")[1]?.split("/")[0] || "";
   const canonical = redirects[legacySlug];
   if (!canonical) return <Navigate to={`/${lang || "en"}/tools`} replace />;

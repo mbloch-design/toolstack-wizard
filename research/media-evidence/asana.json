@@ -1,0 +1,19 @@
+{
+  "slug": "asana",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://asana.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://assets.asana.biz/m/4aecf2c7c66aa51b/original/asana-meta-coral-1x.png",
+      "source_page_url": "https://asana.com",
+      "official": true
+    }
+  ]
+}

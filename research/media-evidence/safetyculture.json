@@ -1,0 +1,19 @@
+{
+  "slug": "safetyculture",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://safetyculture.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://safetyculture.com/shared/safetyculture-og-image.jpg",
+      "source_page_url": "https://safetyculture.com",
+      "official": true
+    }
+  ]
+}

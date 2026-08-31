@@ -1,9 +1,9 @@
 {
   "slug": "dun-bradstreet",
-  "author": "ToolTrim — Mike",
+  "author": "ToolTrim - Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Dun & Bradstreet — Business Intelligence & Credit (site officiel)", "url": "https://www.dnb.com/en-us" }
+    { "label": "Dun & Bradstreet - Business Intelligence & Credit (site officiel)", "url": "https://www.dnb.com/en-us" }
   ],
   "facts": {
     "what": "Fournisseur historique de données commerciales globales et numéro D-U-N-S, offrant rapports de crédit, scores de risque, monitoring fournisseurs et données d'entreprises pour compliance et prise de décision commerciale.",

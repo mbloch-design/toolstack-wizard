@@ -1,9 +1,9 @@
 {
   "slug": "tomorro",
-  "author": "ToolTrim — Mike",
+  "author": "ToolTrim - Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Tomorro — Plateforme de gestion de contrats (site officiel)", "url": "https://www.tomorro.com" }
+    { "label": "Tomorro - Plateforme de gestion de contrats (site officiel)", "url": "https://www.tomorro.com" }
   ],
   "facts": {
     "what": "Plateforme de gestion du cycle de vie des contrats (CLM) utilisant l'IA pour automatiser création, négociation, signature et archivage avec assistant Oro IA pour révision et extraction de données.",
@@ -12,7 +12,7 @@
     "free_tier": { "exists": false, "detail": "Pas de version gratuite. Essai sur demande." },
     "plans": [
       { "name": "Pro", "price": "$119/utilisateur core/mois (max 10 utilisateurs core, 150 collaborateurs, 2 000 contrats)" },
-      { "name": "Advanced", "price": "Tarif sur demande — utilisateurs core illimités, collaborateurs illimités" }
+      { "name": "Advanced", "price": "Tarif sur demande - utilisateurs core illimités, collaborateurs illimités" }
     ],
     "key_features": [
       "Assistant Oro IA pour révision assistée, recommandations de politique.",

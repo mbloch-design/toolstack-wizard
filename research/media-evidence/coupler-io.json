@@ -1,0 +1,19 @@
+{
+  "slug": "coupler-io",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://coupler.io"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://www.coupler.io/assets/og-image-9ea172df3bf2d3071ac41c04b5ea552e2c433819388f052ace787b3db09c2f7d.png",
+      "source_page_url": "https://coupler.io",
+      "official": true
+    }
+  ]
+}

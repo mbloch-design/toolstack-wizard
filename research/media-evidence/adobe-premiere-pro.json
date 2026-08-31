@@ -1,0 +1,19 @@
+{
+  "slug": "adobe-premiere-pro",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://adobe.com/products/premiere"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://www.adobe.com/products/media_14a141cf8900a74105b7122f28472dce9fd8cf872.jpg?width=1200&format=pjpg&optimize=medium",
+      "source_page_url": "https://adobe.com/products/premiere",
+      "official": true
+    }
+  ]
+}

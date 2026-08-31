@@ -1,9 +1,9 @@
 {
   "slug": "asana",
-  "author": "ToolTrim — Mike",
+  "author": "ToolTrim - Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Asana — Work Management Platform (site officiel)", "url": "https://asana.com" }
+    { "label": "Asana - Work Management Platform (site officiel)", "url": "https://asana.com" }
   ],
   "facts": {
     "what": "Plateforme de gestion du travail combinant gestion de projets, planification des ressources et automatisation alimentée par l'IA pour coordonner le travail entre équipes.",

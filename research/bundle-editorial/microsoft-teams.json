@@ -1,9 +1,9 @@
 {
   "slug": "microsoft-teams",
-  "author": "ToolTrim — Mike",
+  "author": "ToolTrim - Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Microsoft Teams — Plans d'affaires (site officiel)", "url": "https://www.microsoft.com/en-us/microsoft-teams/compare-microsoft-teams-business-options" }
+    { "label": "Microsoft Teams - Plans d'affaires (site officiel)", "url": "https://www.microsoft.com/en-us/microsoft-teams/compare-microsoft-teams-business-options" }
   ],
   "facts": {
     "what": "Plateforme collaborative Microsoft pour communication unifiée : chat, vidéoconférence, partage de fichiers et intégration avec suite Microsoft 365. Support jusqu'à 300 participants par réunion avec transcription.",

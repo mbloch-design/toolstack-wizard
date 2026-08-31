@@ -1,26 +1,26 @@
 {
   "slug": "securityscorecard",
-  "author": "ToolTrim — Mike",
+  "author": "ToolTrim - Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "SecurityScorecard — Vendor Risk Management Platform (site officiel)", "url": "https://securityscorecard.com" }
+    { "label": "SecurityScorecard - Vendor Risk Management Platform (site officiel)", "url": "https://securityscorecard.com" }
   ],
   "facts": {
     "what": "Plateforme de gestion des risques tiers (TPRM) évaluant posture de sécurité des fournisseurs et tiers-parties avec ratings A-F, monitoring temps-réel, et intelligence des menaces pour identifier et réduire risques cyber dans l'écosystème.",
     "what_en": "Third-party risk management (TPRM) platform assessing vendor security posture with A-F ratings, real-time monitoring, and threat intelligence to identify and mitigate cyber risks across extended supply chains.",
     "pricing_model": "Plan gratuit disponible ; plans Business et Enterprise sur demande (custom).",
-    "free_tier": { "exists": true, "detail": "SecurityScorecard Free — Ratings et monitoring basiques pour un nombre limité de vendeurs. Essai gratuit 14 jours pour plans payants." },
+    "free_tier": { "exists": true, "detail": "SecurityScorecard Free - Ratings et monitoring basiques pour un nombre limité de vendeurs. Essai gratuit 14 jours pour plans payants." },
     "plans": [
-      { "name": "SecurityScorecard Free", "price": "Gratuit — Ratings de base et monitoring limité" },
+      { "name": "SecurityScorecard Free", "price": "Gratuit - Ratings de base et monitoring limité" },
       { "name": "Business Plan", "price": "Tarif personnalisé (custom)" },
-      { "name": "Enterprise Plan", "price": "Tarif personnalisé (custom) — TITAN AI, automations avancées" }
+      { "name": "Enterprise Plan", "price": "Tarif personnalisé (custom) - TITAN AI, automations avancées" }
     ],
     "key_features": [
       "Ratings de sécurité A-F pour 10+ critères de risque",
-      "TITAN Watch — Monitoring continu des vendeurs",
-      "TITAN Assess — Automation des questionnaires (92 % réduction).",
-      "TITAN Secure — Gestion TPRM avec intelligence des menaces",
-      "TITAN AI Agents — Portfolio analysis et remediation planning",
+      "TITAN Watch - Monitoring continu des vendeurs",
+      "TITAN Assess - Automation des questionnaires (92 % réduction).",
+      "TITAN Secure - Gestion TPRM avec intelligence des menaces",
+      "TITAN AI Agents - Portfolio analysis et remediation planning",
       "Rating 10+ millions d'entreprises mondialement",
       "Live threat feeds et alertes en temps-réel",
       "Compliance mapping (SOC 2, ISO 27001, etc.)",

@@ -1,0 +1,19 @@
+{
+  "slug": "box",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://box.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://assets.box.com/sites/default/files/box_default_og_sharing_image/box-social.jpg",
+      "source_page_url": "https://box.com",
+      "official": true
+    }
+  ]
+}

@@ -1,9 +1,9 @@
 {
   "slug": "albato",
-  "author": "ToolTrim — Mike",
+  "author": "ToolTrim - Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Albato — Embedded iPaaS Platform (site officiel)", "url": "https://albato.com" }
+    { "label": "Albato - Embedded iPaaS Platform (site officiel)", "url": "https://albato.com" }
   ],
   "facts": {
     "what": "Plateforme iPaaS (Integration Platform-as-a-Service) intégrée permettant aux entreprises SaaS d'embarquer des intégrations blanches et des agents d'IA directement dans leurs produits. Supporte plus de 1000 applications natives.",

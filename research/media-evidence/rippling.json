@@ -1,0 +1,19 @@
+{
+  "slug": "rippling",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://rippling.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://images.ctfassets.net/k0itp0ir7ty4/3kY0HlA6r398ZS1hLhq2Pf/5da93caeafeaef92645161efe8759827/SEO_-_General_blank.png",
+      "source_page_url": "https://rippling.com",
+      "official": true
+    }
+  ]
+}

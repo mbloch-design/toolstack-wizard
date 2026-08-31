@@ -1,9 +1,9 @@
 {
   "slug": "yousign",
-  "author": "ToolTrim — Mike",
+  "author": "ToolTrim - Mike",
   "verified_on": "2026-07-24",
   "sources": [
-    { "label": "Yousign — tarifs (site officiel)", "url": "https://yousign.com/fr-fr/tarifs" }
+    { "label": "Yousign - tarifs (site officiel)", "url": "https://yousign.com/fr-fr/tarifs" }
   ],
   "facts": {
     "what": "Solution européenne de signature électronique, créée en France en 2013 : signature conforme eIDAS et RGPD, archivage des documents, vérification d'identité, workflows configurables, sceau électronique et API. Hébergement en France, certification ANSSI.",

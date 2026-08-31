@@ -1,0 +1,620 @@
+{
+  "schema_version": 1,
+  "batch": "review-autonomous-100-001",
+  "quality_version": "catalog-review-v1",
+  "rules": {
+    "autonomous_products_only": true,
+    "official_sources_required": true,
+    "official_media_first": true,
+    "single_browser_screenshot_only_if_no_official_media": true,
+    "remove_legacy_brands": true,
+    "merge_duplicates": true,
+    "locales": [
+      "fr",
+      "en"
+    ],
+    "forbid_em_dash": true
+  },
+  "tools": [
+    {
+      "slug": "audionotes",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "audionotes.json"
+    },
+    {
+      "slug": "jenni",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "jenni.json"
+    },
+    {
+      "slug": "captain-contrat",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "captain-contrat.json"
+    },
+    {
+      "slug": "causal",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "causal.json"
+    },
+    {
+      "slug": "conga",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "conga.json"
+    },
+    {
+      "slug": "coupler-io",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "coupler-io.json"
+    },
+    {
+      "slug": "crawlbase",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "crawlbase.json"
+    },
+    {
+      "slug": "creatoriq",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "creatoriq.json"
+    },
+    {
+      "slug": "creditsafe",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "creditsafe.json"
+    },
+    {
+      "slug": "customer-io",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "customer-io.json"
+    },
+    {
+      "slug": "deel",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "deel.json"
+    },
+    {
+      "slug": "dorik",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "dorik.json"
+    },
+    {
+      "slug": "dun-bradstreet",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "dun-bradstreet.json"
+    },
+    {
+      "slug": "ecovadis",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "ecovadis.json"
+    },
+    {
+      "slug": "feedly",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "feedly.json"
+    },
+    {
+      "slug": "float",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "float.json"
+    },
+    {
+      "slug": "gocardless",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "gocardless.json"
+    },
+    {
+      "slug": "gong",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "gong.json"
+    },
+    {
+      "slug": "google-chat",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "google-chat.json"
+    },
+    {
+      "slug": "gusto",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "gusto.json"
+    },
+    {
+      "slug": "hume-ai",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "hume-ai.json"
+    },
+    {
+      "slug": "ironclad",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "ironclad.json"
+    },
+    {
+      "slug": "juro",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "juro.json"
+    },
+    {
+      "slug": "kit",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "kit.json"
+    },
+    {
+      "slug": "legalplace",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "legalplace.json"
+    },
+    {
+      "slug": "lemlist",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "lemlist.json"
+    },
+    {
+      "slug": "lindy",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "lindy.json"
+    },
+    {
+      "slug": "microsoft-365",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "microsoft-365.json"
+    },
+    {
+      "slug": "microsoft-365-copilot",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "microsoft-365-copilot.json"
+    },
+    {
+      "slug": "microsoft-teams",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "microsoft-teams.json"
+    },
+    {
+      "slug": "onedrive",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "onedrive.json"
+    },
+    {
+      "slug": "onelogin",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "onelogin.json"
+    },
+    {
+      "slug": "onetrust",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "onetrust.json"
+    },
+    {
+      "slug": "pennylane",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "pennylane.json"
+    },
+    {
+      "slug": "pics-io",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "pics-io.json"
+    },
+    {
+      "slug": "pigment",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "pigment.json"
+    },
+    {
+      "slug": "productive-io",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "productive-io.json"
+    },
+    {
+      "slug": "programa",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "programa.json"
+    },
+    {
+      "slug": "proofhub",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "proofhub.json"
+    },
+    {
+      "slug": "relevance-ai",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "relevance-ai.json"
+    },
+    {
+      "slug": "rippling",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "rippling.json"
+    },
+    {
+      "slug": "samcart",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "samcart.json"
+    },
+    {
+      "slug": "securityscorecard",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "securityscorecard.json"
+    },
+    {
+      "slug": "sharepoint",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "sharepoint.json"
+    },
+    {
+      "slug": "simple-analytics",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "simple-analytics.json"
+    },
+    {
+      "slug": "socialbee",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "socialbee.json"
+    },
+    {
+      "slug": "supermetrics",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "supermetrics.json"
+    },
+    {
+      "slug": "tella",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "tella.json"
+    },
+    {
+      "slug": "tomorro",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "tomorro.json"
+    },
+    {
+      "slug": "typedream",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "typedream.json"
+    },
+    {
+      "slug": "vanta",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "vanta.json"
+    },
+    {
+      "slug": "vmake",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "vmake.json"
+    },
+    {
+      "slug": "voicetypr",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "voicetypr.json"
+    },
+    {
+      "slug": "weezevent",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "weezevent.json"
+    },
+    {
+      "slug": "3ds-max",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "3ds-max.json"
+    },
+    {
+      "slug": "xero",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "xero.json"
+    },
+    {
+      "slug": "youform",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "youform.json"
+    },
+    {
+      "slug": "yousign",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "yousign.json"
+    },
+    {
+      "slug": "eptura-engage",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "eptura-engage.json"
+    },
+    {
+      "slug": "safetyculture",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "safetyculture.json"
+    },
+    {
+      "slug": "sysaid",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "sysaid.json"
+    },
+    {
+      "slug": "visualcv",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "visualcv.json"
+    },
+    {
+      "slug": "1password",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "1password.json"
+    },
+    {
+      "slug": "8fig",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "8fig.json"
+    },
+    {
+      "slug": "adobe-creative-cloud",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "adobe-creative-cloud.json"
+    },
+    {
+      "slug": "adobe-illustrator",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "adobe-illustrator.json"
+    },
+    {
+      "slug": "adobe-lightroom",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "adobe-lightroom.json"
+    },
+    {
+      "slug": "adobe-photoshop",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "adobe-photoshop.json"
+    },
+    {
+      "slug": "adobe-podcast-ai",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "adobe-podcast-ai.json"
+    },
+    {
+      "slug": "adobe-premiere-pro",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "adobe-premiere-pro.json"
+    },
+    {
+      "slug": "adp-workforce",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "adp-workforce.json"
+    },
+    {
+      "slug": "ableton-live",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "ableton-live.json"
+    },
+    {
+      "slug": "acast",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "acast.json"
+    },
+    {
+      "slug": "adobe-acrobat",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "adobe-acrobat.json"
+    },
+    {
+      "slug": "adobe-audition",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "adobe-audition.json"
+    },
+    {
+      "slug": "adobe-express",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "adobe-express.json"
+    },
+    {
+      "slug": "firefly",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "firefly.json"
+    },
+    {
+      "slug": "indesign",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "indesign.json"
+    },
+    {
+      "slug": "adobe-substance-3d",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "adobe-substance-3d.json"
+    },
+    {
+      "slug": "airbyte",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "airbyte.json"
+    },
+    {
+      "slug": "affinity",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "affinity.json"
+    },
+    {
+      "slug": "antidote",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "antidote.json"
+    },
+    {
+      "slug": "agicap",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "agicap.json"
+    },
+    {
+      "slug": "aircall",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "aircall.json"
+    },
+    {
+      "slug": "airslate",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "airslate.json"
+    },
+    {
+      "slug": "airtable",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "airtable.json"
+    },
+    {
+      "slug": "albato",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "albato.json"
+    },
+    {
+      "slug": "amplitude",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "amplitude.json"
+    },
+    {
+      "slug": "apollo",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "apollo.json"
+    },
+    {
+      "slug": "arnold",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "arnold.json"
+    },
+    {
+      "slug": "asana",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "asana.json"
+    },
+    {
+      "slug": "algolia",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "algolia.json"
+    },
+    {
+      "slug": "autocad",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "autocad.json"
+    },
+    {
+      "slug": "axeptio",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "axeptio.json"
+    },
+    {
+      "slug": "basecamp",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "basecamp.json"
+    },
+    {
+      "slug": "beehiiv",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "beehiiv.json"
+    },
+    {
+      "slug": "box",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "box.json"
+    },
+    {
+      "slug": "brand24",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "brand24.json"
+    },
+    {
+      "slug": "brevo",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "brevo.json"
+    },
+    {
+      "slug": "buffer",
+      "status": "QUEUED",
+      "required_action": "apply_review_bundle",
+      "file": "buffer.json"
+    }
+  ]
+}

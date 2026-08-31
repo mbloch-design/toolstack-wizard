@@ -1,0 +1,38 @@
+{
+  "slug": "eptura-engage",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-08-31",
+  "sources": [
+    { "label": "Eptura Engage (site officiel)", "url": "https://eptura.com/our-platform/eptura-engage/" },
+    { "label": "Historique Eptura (site officiel)", "url": "https://eptura.com/resource/eptura-history/" }
+  ],
+  "facts": {
+    "what": "Plateforme de réservation de bureaux et de salles, de coordination des journées au bureau et d'analyse de l'occupation. Eptura Engage est le nouveau nom de Condeco.",
+    "what_en": "Desk and room booking platform for coordinating office days and analyzing occupancy. Eptura Engage is the new name for Condeco.",
+    "pricing_model": "Abonnement entreprise sur devis.",
+    "free_tier": { "exists": false, "detail": "Démonstration et tarification sur demande." },
+    "plans": [{ "name": "Eptura Engage", "price": "Sur devis" }],
+    "key_features": ["Réservation de bureaux", "Réservation de salles", "Coordination des équipes hybrides", "Analyse de l'occupation"]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": ["Vous coordonnez un parc de bureaux hybride.", "Vous devez réunir réservation et données d'occupation.", "Vous gérez plusieurs sites ou de grands effectifs."],
+      "avoidIf": ["Votre équipe travaille entièrement à distance.", "Une simple réservation de salle suffit.", "Vous cherchez un outil léger en libre-service."],
+      "threshold": "Eptura Engage devient pertinent quand la réservation doit alimenter une vraie stratégie d'occupation, pas pour un calendrier partagé."
+    },
+    "pros": ["Réservation de bureaux et de salles réunie.", "Pensé pour le travail hybride.", "Données d'occupation exploitables.", "Intégration à la plateforme Eptura."],
+    "cons": ["Tarification non publique.", "Déploiement orienté entreprise.", "Surdimensionné pour une petite équipe."],
+    "use_cases": ["Organiser les jours de présence.", "Réserver postes et salles.", "Mesurer l'utilisation des espaces."],
+    "relevant_for": ["Équipes workplace", "Services généraux", "Entreprises hybrides"]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": ["You coordinate a hybrid office portfolio.", "You need booking and occupancy data together.", "You manage several locations or a large workforce."],
+      "avoidIf": ["Your team is fully remote.", "Basic room booking is enough.", "You want a lightweight self-serve tool."],
+      "threshold": "Eptura Engage becomes relevant when booking must inform an occupancy strategy, not for a shared calendar."
+    },
+    "pros": ["Desk and room booking together.", "Designed for hybrid work.", "Actionable occupancy data.", "Part of the Eptura platform."],
+    "cons": ["No public pricing.", "Enterprise-oriented deployment.", "Too heavy for a small team."],
+    "use_cases": ["Coordinate office attendance.", "Book desks and rooms.", "Measure space utilization."]
+  }
+}

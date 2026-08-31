@@ -1,0 +1,19 @@
+{
+  "slug": "gocardless",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": [
+      "https://gocardless.com"
+    ]
+  },
+  "items": [
+    {
+      "kind": "image",
+      "url": "https://gocardless.com/content-platform/static/816e9048c2a134da3e79b8677556ad0f/f8482/og-full.png",
+      "source_page_url": "https://gocardless.com",
+      "official": true
+    }
+  ]
+}
