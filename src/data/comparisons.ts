@@ -58,7 +58,7 @@ export const FEATURED_COMPARISONS: FeaturedComparison[] = [
   { slugPair: "box-vs-google-drive", toolA: "box", toolB: "google-drive" },
 
   // Email Marketing
-  { slugPair: "mailchimp-vs-sendinblue", toolA: "mailchimp", toolB: "sendinblue" },
+  { slugPair: "mailchimp-vs-brevo", toolA: "mailchimp", toolB: "brevo" },
   { slugPair: "mailchimp-vs-getresponse", toolA: "mailchimp", toolB: "getresponse" },
   { slugPair: "mailchimp-vs-convertkit", toolA: "mailchimp", toolB: "kit" },
   { slugPair: "convertkit-vs-getresponse", toolA: "kit", toolB: "getresponse" },

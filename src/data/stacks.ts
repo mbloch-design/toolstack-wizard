@@ -29549,7 +29549,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Outil métier",
         "roleEn": "Specialist tool",
-        "slug": "clearbit",
+        "slug": "hubspot",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",

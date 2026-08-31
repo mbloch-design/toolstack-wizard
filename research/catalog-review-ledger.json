@@ -1,6 +1,6 @@
 {
   "batch_size": 25,
-  "catalogue_count": 1162,
+  "catalogue_count": 1159,
   "catalogue_path": "src/data/tools_v4.json",
   "entries": [
     {
@@ -2897,120 +2897,6 @@
       "status": "QUEUED"
     },
     {
-      "assigned_batch": "review-email-productivity-critical-001",
-      "batch_position": 1,
-      "blockers": [
-        "Sous-lot interrompu avant constitution du bundle et des médias"
-      ],
-      "catalog_hash": "sha256:b0a2a7f5c807c43e878c446f164a07eba71c45933b731a63476939c653cf88b7",
-      "category": "email-productivity",
-      "fact_bundle": "MISSING",
-      "fact_bundle_hash": null,
-      "invalidated_from": null,
-      "media_errors": [
-        "media_evidence_missing"
-      ],
-      "media_evidence": "MISSING",
-      "media_evidence_hash": null,
-      "name": "Clearbit",
-      "next_review_at": null,
-      "priority_reasons": [
-        "affiliate_link",
-        "paid_price",
-        "missing_fact_bundle",
-        "missing_or_invalid_media_evidence"
-      ],
-      "priority_score": 270,
-      "published_at": null,
-      "quality_version": "catalog-review-v1",
-      "rendered_at": null,
-      "review_fingerprint": "sha256:928bad63e7d824e9785e7b7457fe719a123464e95165599a9a093573043adc21",
-      "reviewed_at": null,
-      "reviewed_hash": null,
-      "reviewer": null,
-      "risk_tier": "critical",
-      "slug": "clearbit",
-      "source_url": "https://clearbit.com/",
-      "source_verified_on": "2026-03-13",
-      "status": "REVIEW_REQUIRED"
-    },
-    {
-      "assigned_batch": "review-creation-critical-003",
-      "batch_position": 2,
-      "blockers": [
-        "Sous-lot interrompu avant vérification du statut actuel du produit"
-      ],
-      "catalog_hash": "sha256:e47a55cab9d72034ad83ed91096e438d1651f37c71718904c2fd214ebaeadb8d",
-      "category": "creation",
-      "fact_bundle": "MISSING",
-      "fact_bundle_hash": null,
-      "invalidated_from": null,
-      "media_errors": [
-        "media_evidence_missing"
-      ],
-      "media_evidence": "MISSING",
-      "media_evidence_hash": null,
-      "name": "Modo",
-      "next_review_at": null,
-      "priority_reasons": [
-        "affiliate_link",
-        "paid_price",
-        "missing_fact_bundle",
-        "missing_or_invalid_media_evidence"
-      ],
-      "priority_score": 270,
-      "published_at": null,
-      "quality_version": "catalog-review-v1",
-      "rendered_at": null,
-      "review_fingerprint": "sha256:7e4a8f7aa7259b83ee242ab46452ffbba26de0a97397e0bb2a24acbe72e71b72",
-      "reviewed_at": null,
-      "reviewed_hash": null,
-      "reviewer": null,
-      "risk_tier": "critical",
-      "slug": "modo",
-      "source_url": "https://www.foundry.com/products/modo",
-      "source_verified_on": "2026-06-17",
-      "status": "REVIEW_REQUIRED"
-    },
-    {
-      "assigned_batch": "review-email-productivity-critical-001",
-      "batch_position": 2,
-      "blockers": [
-        "Sous-lot interrompu avant vérification de la migration vers Brevo"
-      ],
-      "catalog_hash": "sha256:8c9a38bb52536cc561f3c92bd9b35d8d72a8bbf0b0970a2434fa9200518f6aea",
-      "category": "email-productivity",
-      "fact_bundle": "MISSING",
-      "fact_bundle_hash": null,
-      "invalidated_from": null,
-      "media_errors": [
-        "media_evidence_missing"
-      ],
-      "media_evidence": "MISSING",
-      "media_evidence_hash": null,
-      "name": "Sendinblue",
-      "next_review_at": null,
-      "priority_reasons": [
-        "affiliate_link",
-        "paid_price",
-        "missing_fact_bundle",
-        "missing_or_invalid_media_evidence"
-      ],
-      "priority_score": 270,
-      "published_at": null,
-      "quality_version": "catalog-review-v1",
-      "rendered_at": null,
-      "review_fingerprint": "sha256:d53148ab305d800f50bc1244dcb4d3586129ebcfc025546d1410ff4a5888c341",
-      "reviewed_at": null,
-      "reviewed_hash": null,
-      "reviewer": null,
-      "risk_tier": "critical",
-      "slug": "sendinblue",
-      "source_url": "https://sendinblue.com",
-      "source_verified_on": "2026-03-13",
-      "status": "REVIEW_REQUIRED"
-    },
-    {
       "assigned_batch": "review-creation-critical-003",
       "batch_position": 3,
       "blockers": [],
@@ -3080,42 +2966,6 @@
       "slug": "captain-contrat",
       "source_url": "https://captaincontrat.com",
       "source_verified_on": "2026-05-11",
-      "status": "QUEUED"
-    },
-    {
-      "assigned_batch": "review-nocode-web-critical-001",
-      "batch_position": 4,
-      "blockers": [],
-      "catalog_hash": "sha256:04b69d4d0ed8e5eaba8a31d15cc07de317700916f999bd46b68dde4592cb4b15",
-      "category": "nocode-web",
-      "fact_bundle": "AVAILABLE",
-      "fact_bundle_hash": "sha256:9ac67fa6b75b090fb5ddd9454acef10c907f8a98ebec2d605af27d09938f2215",
-      "invalidated_from": null,
-      "media_errors": [
-        "media_evidence_missing"
-      ],
-      "media_evidence": "MISSING",
-      "media_evidence_hash": null,
-      "name": "Carrd",
-      "next_review_at": null,
-      "priority_reasons": [
-        "affiliate_link",
-        "paid_price",
-        "missing_or_invalid_media_evidence",
-        "shallow_editorial"
-      ],
-      "priority_score": 260,
-      "published_at": null,
-      "quality_version": "catalog-review-v1",
-      "rendered_at": null,
-      "review_fingerprint": "sha256:9b34c6aace042fd4182d3e217bf5b86d72301a24d70c04cab73187249c848706",
-      "reviewed_at": null,
-      "reviewed_hash": null,
-      "reviewer": null,
-      "risk_tier": "critical",
-      "slug": "carrd",
-      "source_url": "https://carrd.co",
-      "source_verified_on": "2026-05-08",
       "status": "QUEUED"
     },
     {
@@ -3443,42 +3293,6 @@
       "status": "QUEUED"
     },
     {
-      "assigned_batch": "review-photo-critical-001",
-      "batch_position": 2,
-      "blockers": [],
-      "catalog_hash": "sha256:a997ed55854307bc9366ba3ef269f8d18ac32df5e7a9aa42307c951f44555e5d",
-      "category": "photo",
-      "fact_bundle": "AVAILABLE",
-      "fact_bundle_hash": "sha256:09e7968e6766a6a52c9507ba53a9f481225b62898b9f9b6b88d34a642e25eb06",
-      "invalidated_from": null,
-      "media_errors": [
-        "media_evidence_missing"
-      ],
-      "media_evidence": "MISSING",
-      "media_evidence_hash": null,
-      "name": "darktable",
-      "next_review_at": null,
-      "priority_reasons": [
-        "affiliate_link",
-        "paid_price",
-        "missing_or_invalid_media_evidence",
-        "shallow_editorial"
-      ],
-      "priority_score": 260,
-      "published_at": null,
-      "quality_version": "catalog-review-v1",
-      "rendered_at": null,
-      "review_fingerprint": "sha256:744e957f168f82dd3da22ddb2aef75bc78c052223582f6a17cd73dadc3a4a802",
-      "reviewed_at": null,
-      "reviewed_hash": null,
-      "reviewer": null,
-      "risk_tier": "critical",
-      "slug": "darktable",
-      "source_url": "https://www.darktable.org/",
-      "source_verified_on": "2026-07-08",
-      "status": "QUEUED"
-    },
-    {
       "assigned_batch": "review-hris-payroll-critical-001",
       "batch_position": 4,
       "blockers": [],
@@ -3512,42 +3326,6 @@
       "slug": "deel",
       "source_url": "https://www.deel.com/pricing",
       "source_verified_on": "2026-05-03",
-      "status": "QUEUED"
-    },
-    {
-      "assigned_batch": "review-legal-contracts-critical-001",
-      "batch_position": 7,
-      "blockers": [],
-      "catalog_hash": "sha256:f3ad007100f051d89903550738a568c2431015b75d635631f4cf62e34d5e78e5",
-      "category": "legal-contracts",
-      "fact_bundle": "AVAILABLE",
-      "fact_bundle_hash": "sha256:c2e6e4bbfc54ea36553eb8029a7749e3e50e1dc76e8b1afbbe120102dc1140da",
-      "invalidated_from": null,
-      "media_errors": [
-        "media_evidence_missing"
-      ],
-      "media_evidence": "MISSING",
-      "media_evidence_hash": null,
-      "name": "DocuSign",
-      "next_review_at": null,
-      "priority_reasons": [
-        "affiliate_link",
-        "paid_price",
-        "missing_or_invalid_media_evidence",
-        "shallow_editorial"
-      ],
-      "priority_score": 260,
-      "published_at": null,
-      "quality_version": "catalog-review-v1",
-      "rendered_at": null,
-      "review_fingerprint": "sha256:7e528b2534dc2ee5f1edda506b58d4348751bc5b2372ac9acacc9fe9777be363",
-      "reviewed_at": null,
-      "reviewed_hash": null,
-      "reviewer": null,
-      "risk_tier": "critical",
-      "slug": "docusign",
-      "source_url": "https://www.docusign.com",
-      "source_verified_on": "2026-05-02",
       "status": "QUEUED"
     },
     {
@@ -3656,42 +3434,6 @@
       "slug": "ecovadis",
       "source_url": "https://ecovadis.com",
       "source_verified_on": "2026-05-02",
-      "status": "QUEUED"
-    },
-    {
-      "assigned_batch": "review-analytics-critical-001",
-      "batch_position": 7,
-      "blockers": [],
-      "catalog_hash": "sha256:bfbd1ea953be803d1751a2e6899f1f81333e8f1a6c99b741e1afbd00feb21241",
-      "category": "analytics",
-      "fact_bundle": "AVAILABLE",
-      "fact_bundle_hash": "sha256:a850265cff15bbd4ac8eabd826b6eff8baede4da01f47bc88bf5921ece2ed3d1",
-      "invalidated_from": null,
-      "media_errors": [
-        "media_evidence_missing"
-      ],
-      "media_evidence": "MISSING",
-      "media_evidence_hash": null,
-      "name": "Fathom Analytics",
-      "next_review_at": null,
-      "priority_reasons": [
-        "affiliate_link",
-        "paid_price",
-        "missing_or_invalid_media_evidence",
-        "shallow_editorial"
-      ],
-      "priority_score": 260,
-      "published_at": null,
-      "quality_version": "catalog-review-v1",
-      "rendered_at": null,
-      "review_fingerprint": "sha256:ff05b15e2519f0d5571c8bddeee32663fad38744fc52c3472df467d83dc3be91",
-      "reviewed_at": null,
-      "reviewed_hash": null,
-      "reviewer": null,
-      "risk_tier": "critical",
-      "slug": "fathom-analytics",
-      "source_url": "https://usefathom.com",
-      "source_verified_on": "2026-05-08",
       "status": "QUEUED"
     },
     {
@@ -8701,43 +8443,6 @@
       "status": "QUEUED"
     },
     {
-      "assigned_batch": "review-ai-general-critical-001",
-      "batch_position": 3,
-      "blockers": [
-        "Bundle disponible mais preuve média officielle manquante"
-      ],
-      "catalog_hash": "sha256:3535b328a5bb4d24135b6d9ff042b35ca64e59f67cb879aacb852cfed4800601",
-      "category": "ai-general",
-      "fact_bundle": "AVAILABLE",
-      "fact_bundle_hash": "sha256:72a0d04f6ab5875a1c87fdbd4843214cf3db609952212a4b8980f8879512adcc",
-      "invalidated_from": null,
-      "media_errors": [
-        "media_evidence_missing"
-      ],
-      "media_evidence": "MISSING",
-      "media_evidence_hash": null,
-      "name": "Anthropic API",
-      "next_review_at": null,
-      "priority_reasons": [
-        "affiliate_link",
-        "paid_price",
-        "missing_or_invalid_media_evidence"
-      ],
-      "priority_score": 220,
-      "published_at": null,
-      "quality_version": "catalog-review-v1",
-      "rendered_at": null,
-      "review_fingerprint": "sha256:c18132f4d33dc5a853838b67318bb18c990a03543f0c8357cc64b6696bce018e",
-      "reviewed_at": null,
-      "reviewed_hash": null,
-      "reviewer": null,
-      "risk_tier": "critical",
-      "slug": "anthropic",
-      "source_url": "https://claude.com/pricing#api",
-      "source_verified_on": "2026-08-25",
-      "status": "REVIEW_REQUIRED"
-    },
-    {
       "assigned_batch": "review-crm-critical-001",
       "batch_position": 4,
       "blockers": [],
@@ -8805,39 +8510,6 @@
       "slug": "apollo-io",
       "source_url": "https://www.apollo.io/pricing",
       "source_verified_on": "2026-05-03",
-      "status": "QUEUED"
-    },
-    {
-      "assigned_batch": "review-design-tools-critical-002",
-      "batch_position": 15,
-      "blockers": [],
-      "catalog_hash": "sha256:902f038950f8dba33028207be44674c3eaf03831b72b2de461d07a0160006316",
-      "category": "design-tools",
-      "fact_bundle": "AVAILABLE",
-      "fact_bundle_hash": "sha256:f5d40963ceb8969633fb273683fed46a26b9111d7b2b8954caa7b41a4b30710b",
-      "invalidated_from": null,
-      "media_errors": [],
-      "media_evidence": "VALID",
-      "media_evidence_hash": "sha256:c7c021bf4f08deaece7a7bf1823265ff44544272a0212104cb49c6d448823a0e",
-      "name": "Are.na",
-      "next_review_at": null,
-      "priority_reasons": [
-        "affiliate_link",
-        "paid_price",
-        "shallow_editorial"
-      ],
-      "priority_score": 220,
-      "published_at": null,
-      "quality_version": "catalog-review-v1",
-      "rendered_at": null,
-      "review_fingerprint": "sha256:981fcc1e785fa1bd70d6be650896e449ef2be4400fdb5d5c8234f08bf222aa13",
-      "reviewed_at": null,
-      "reviewed_hash": null,
-      "reviewer": null,
-      "risk_tier": "critical",
-      "slug": "arena",
-      "source_url": "https://www.are.na",
-      "source_verified_on": "2026-05-10",
       "status": "QUEUED"
     },
     {
@@ -28896,6 +28568,38 @@
       "status": "PUBLISHED"
     },
     {
+      "assigned_batch": "review-ai-general-critical-001",
+      "batch_position": 3,
+      "blockers": [],
+      "catalog_hash": "sha256:4e746f11a7bcf3352f26c71bb4c674c3f5db6bf9851f300da8e970770f4ec12b",
+      "category": "ai-general",
+      "fact_bundle": "AVAILABLE",
+      "fact_bundle_hash": "sha256:72a0d04f6ab5875a1c87fdbd4843214cf3db609952212a4b8980f8879512adcc",
+      "invalidated_from": null,
+      "media_errors": [],
+      "media_evidence": "VALID",
+      "media_evidence_hash": "sha256:ca282cfa9c67b5edbc21f06696d7906970ee763d6b32b5f8aeb60f562ccc5f4a",
+      "name": "Anthropic API",
+      "next_review_at": null,
+      "priority_reasons": [
+        "affiliate_link",
+        "paid_price"
+      ],
+      "priority_score": 180,
+      "published_at": "2026-08-31",
+      "quality_version": "catalog-review-v1",
+      "rendered_at": "2026-08-31",
+      "review_fingerprint": "sha256:4c19fbbb9c753e1780e4c262eaf32d53a57f053a79c7c01984831ec2eed66c92",
+      "reviewed_at": "2026-08-31",
+      "reviewed_hash": "sha256:4c19fbbb9c753e1780e4c262eaf32d53a57f053a79c7c01984831ec2eed66c92",
+      "reviewer": "ToolTrim - Mike",
+      "risk_tier": "critical",
+      "slug": "anthropic",
+      "source_url": "https://www.anthropic.com/claude/api",
+      "source_verified_on": "2026-08-30",
+      "status": "PUBLISHED"
+    },
+    {
       "assigned_batch": "review-design-tools-critical-001",
       "batch_position": 5,
       "blockers": [],
@@ -28924,6 +28628,38 @@
       "risk_tier": "critical",
       "slug": "archicad",
       "source_url": "https://graphisoft.com/solutions/archicad",
+      "source_verified_on": "2026-07-24",
+      "status": "PUBLISHED"
+    },
+    {
+      "assigned_batch": "review-design-tools-critical-002",
+      "batch_position": 15,
+      "blockers": [],
+      "catalog_hash": "sha256:18c97bc74ff3fe6f7b542e482d6fe2e35d1e455e49b33302e6595d9f5cf328ee",
+      "category": "design-tools",
+      "fact_bundle": "AVAILABLE",
+      "fact_bundle_hash": "sha256:f5d40963ceb8969633fb273683fed46a26b9111d7b2b8954caa7b41a4b30710b",
+      "invalidated_from": null,
+      "media_errors": [],
+      "media_evidence": "VALID",
+      "media_evidence_hash": "sha256:c7c021bf4f08deaece7a7bf1823265ff44544272a0212104cb49c6d448823a0e",
+      "name": "Are.na",
+      "next_review_at": null,
+      "priority_reasons": [
+        "affiliate_link",
+        "paid_price"
+      ],
+      "priority_score": 180,
+      "published_at": "2026-08-31",
+      "quality_version": "catalog-review-v1",
+      "rendered_at": "2026-08-31",
+      "review_fingerprint": "sha256:72448164a498340300e3468165be9f33d526552c30a273633bd2a189d7afdd74",
+      "reviewed_at": "2026-08-31",
+      "reviewed_hash": "sha256:72448164a498340300e3468165be9f33d526552c30a273633bd2a189d7afdd74",
+      "reviewer": "ToolTrim - Mike",
+      "risk_tier": "critical",
+      "slug": "arena",
+      "source_url": "https://www.are.na",
       "source_verified_on": "2026-07-24",
       "status": "PUBLISHED"
     },
@@ -29216,6 +28952,38 @@
       "status": "PUBLISHED"
     },
     {
+      "assigned_batch": "review-nocode-web-critical-001",
+      "batch_position": 4,
+      "blockers": [],
+      "catalog_hash": "sha256:c5d57fcfcd133e87ad0cd78c27457935dc4a06da3ebeff7627c109ed200b93a2",
+      "category": "nocode-web",
+      "fact_bundle": "AVAILABLE",
+      "fact_bundle_hash": "sha256:9ac67fa6b75b090fb5ddd9454acef10c907f8a98ebec2d605af27d09938f2215",
+      "invalidated_from": null,
+      "media_errors": [],
+      "media_evidence": "VALID",
+      "media_evidence_hash": "sha256:700e8deb336b668d1de44075ff34038305d2351a6ef159b932117512cf530874",
+      "name": "Carrd",
+      "next_review_at": null,
+      "priority_reasons": [
+        "affiliate_link",
+        "paid_price"
+      ],
+      "priority_score": 180,
+      "published_at": "2026-08-31",
+      "quality_version": "catalog-review-v1",
+      "rendered_at": "2026-08-31",
+      "review_fingerprint": "sha256:ae29b374a7e92d2ec2695c40f9d6bfeb42ac7dc08572cc756b02d44076e00823",
+      "reviewed_at": "2026-08-31",
+      "reviewed_hash": "sha256:ae29b374a7e92d2ec2695c40f9d6bfeb42ac7dc08572cc756b02d44076e00823",
+      "reviewer": "ToolTrim - Mike",
+      "risk_tier": "critical",
+      "slug": "carrd",
+      "source_url": "https://carrd.co",
+      "source_verified_on": "2026-07-24",
+      "status": "PUBLISHED"
+    },
+    {
       "assigned_batch": "review-design-tools-critical-001",
       "batch_position": 8,
       "blockers": [],
@@ -29244,6 +29012,38 @@
       "risk_tier": "critical",
       "slug": "curviloft",
       "source_url": "https://sketchucation.com/plugin/1175-curviloft",
+      "source_verified_on": "2026-07-24",
+      "status": "PUBLISHED"
+    },
+    {
+      "assigned_batch": "review-photo-critical-001",
+      "batch_position": 2,
+      "blockers": [],
+      "catalog_hash": "sha256:227f3a72de6d0a6b214370bd03b7c2f58de021ea638e0409ccd1fd88cdffa1b6",
+      "category": "photo",
+      "fact_bundle": "AVAILABLE",
+      "fact_bundle_hash": "sha256:09e7968e6766a6a52c9507ba53a9f481225b62898b9f9b6b88d34a642e25eb06",
+      "invalidated_from": null,
+      "media_errors": [],
+      "media_evidence": "VALID",
+      "media_evidence_hash": "sha256:1b6639f7c30a35ce68bc223cf83dd1f898fbcd091d131537b15027a6d7766a57",
+      "name": "darktable",
+      "next_review_at": null,
+      "priority_reasons": [
+        "affiliate_link",
+        "paid_price"
+      ],
+      "priority_score": 180,
+      "published_at": "2026-08-31",
+      "quality_version": "catalog-review-v1",
+      "rendered_at": "2026-08-31",
+      "review_fingerprint": "sha256:285376a5f20d13ad3fec768dbccbe2cc43c5964157d2a46dfbee4b973d5a7f29",
+      "reviewed_at": "2026-08-31",
+      "reviewed_hash": "sha256:285376a5f20d13ad3fec768dbccbe2cc43c5964157d2a46dfbee4b973d5a7f29",
+      "reviewer": "ToolTrim - Mike",
+      "risk_tier": "critical",
+      "slug": "darktable",
+      "source_url": "https://www.darktable.org",
       "source_verified_on": "2026-07-24",
       "status": "PUBLISHED"
     },
@@ -29309,6 +29109,38 @@
       "slug": "desktopready",
       "source_url": "https://www.anunta.com/platforms/desktopready/",
       "source_verified_on": "2026-08-30",
+      "status": "PUBLISHED"
+    },
+    {
+      "assigned_batch": "review-legal-contracts-critical-001",
+      "batch_position": 7,
+      "blockers": [],
+      "catalog_hash": "sha256:472e27c8be38f48c67c8dea9d479eb3ec0ddbf97ba974ace1b0230057875c9a1",
+      "category": "legal-contracts",
+      "fact_bundle": "AVAILABLE",
+      "fact_bundle_hash": "sha256:c2e6e4bbfc54ea36553eb8029a7749e3e50e1dc76e8b1afbbe120102dc1140da",
+      "invalidated_from": null,
+      "media_errors": [],
+      "media_evidence": "VALID",
+      "media_evidence_hash": "sha256:b57f22603dddc868087a93b6d6110cc06cb183903a76147d2a4ebacebf7f55e0",
+      "name": "DocuSign",
+      "next_review_at": null,
+      "priority_reasons": [
+        "affiliate_link",
+        "paid_price"
+      ],
+      "priority_score": 180,
+      "published_at": "2026-08-31",
+      "quality_version": "catalog-review-v1",
+      "rendered_at": "2026-08-31",
+      "review_fingerprint": "sha256:cb36f239c80e5fd2fb0b0ae2345f809fff06cea5b778569466ed43e3619a2a9e",
+      "reviewed_at": "2026-08-31",
+      "reviewed_hash": "sha256:cb36f239c80e5fd2fb0b0ae2345f809fff06cea5b778569466ed43e3619a2a9e",
+      "reviewer": "ToolTrim - Mike",
+      "risk_tier": "critical",
+      "slug": "docusign",
+      "source_url": "https://www.docusign.com",
+      "source_verified_on": "2026-07-24",
       "status": "PUBLISHED"
     },
     {
@@ -29404,6 +29236,38 @@
       "risk_tier": "critical",
       "slug": "eneroth-face-creator",
       "source_url": "https://extensions.sketchup.com",
+      "source_verified_on": "2026-07-24",
+      "status": "PUBLISHED"
+    },
+    {
+      "assigned_batch": "review-analytics-critical-001",
+      "batch_position": 7,
+      "blockers": [],
+      "catalog_hash": "sha256:d6c49eecdd53bdeddb67752ccd6e958144fb165dce97655b3a0d029c8a6dc7cc",
+      "category": "analytics",
+      "fact_bundle": "AVAILABLE",
+      "fact_bundle_hash": "sha256:a850265cff15bbd4ac8eabd826b6eff8baede4da01f47bc88bf5921ece2ed3d1",
+      "invalidated_from": null,
+      "media_errors": [],
+      "media_evidence": "VALID",
+      "media_evidence_hash": "sha256:d6f461e7097ed801ea9e0771df9881c2c24001e696ff4ea36327e1da8c6dacd2",
+      "name": "Fathom Analytics",
+      "next_review_at": null,
+      "priority_reasons": [
+        "affiliate_link",
+        "paid_price"
+      ],
+      "priority_score": 180,
+      "published_at": "2026-08-31",
+      "quality_version": "catalog-review-v1",
+      "rendered_at": "2026-08-31",
+      "review_fingerprint": "sha256:3d1f99652fb9111dd2c64e0969ff7c083cb586895c13693e1bdbc60f45fe6504",
+      "reviewed_at": "2026-08-31",
+      "reviewed_hash": "sha256:3d1f99652fb9111dd2c64e0969ff7c083cb586895c13693e1bdbc60f45fe6504",
+      "reviewer": "ToolTrim - Mike",
+      "risk_tier": "critical",
+      "slug": "fathom-analytics",
+      "source_url": "https://usefathom.com/pricing",
       "source_verified_on": "2026-07-24",
       "status": "PUBLISHED"
     },

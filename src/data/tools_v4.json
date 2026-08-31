@@ -8721,18 +8721,18 @@
     "slug": "anthropic",
     "name": "Anthropic API",
     "category": "ai-general",
-    "shortDescription": "Intégrez les modèles Claude dans vos applications, agents et workflows métier.",
-    "shortDescriptionEn": "Integrate Claude models into applications, agents and business workflows.",
-    "description": "L’API Anthropic donne accès aux modèles Claude et à leurs outils pour construire des produits IA en production.",
-    "longDescription": "L’API Anthropic permet d’intégrer les modèles Claude dans une application, un agent ou un workflow interne via la Messages API et les SDK officiels. Elle accepte du texte et des images, gère de grands contextes et propose des fonctions adaptées à la production : tool use, sorties structurées, traitement par lots et prompt caching.\n\nPour les agents, Anthropic fournit notamment la recherche web avec citations, l’exécution de code, une Files API et un connecteur MCP distant. La Console permet de tester les prompts dans le Workbench, suivre les coûts et organiser les accès par workspace.\n\nLa facturation est entièrement à l’usage, par million de tokens et selon le modèle. L’abonnement Claude Pro ou Max ne comprend aucun crédit API : la Console Anthropic possède sa propre facturation.",
-    "longDescriptionEn": "The Anthropic API brings Claude models into applications, agents and internal workflows through the Messages API and official SDKs. It accepts text and images, handles large contexts and provides production features including tool use, structured outputs, batch processing and prompt caching.\n\nFor agents, Anthropic also provides web search with citations, code execution, a Files API and a remote MCP connector. The Console lets teams test prompts in Workbench, monitor costs and organize access by workspace.\n\nBilling is fully usage-based, per million tokens and model. Claude Pro or Max subscriptions do not include API credits: Anthropic Console has separate billing.",
+    "shortDescription": "Anthropic API donne accès aux modèles Claude pour intégrer génération, raisonnement, analyse de documents et agents dans des applications.",
+    "shortDescriptionEn": "The Anthropic API provides access to Claude models for generation, reasoning, document analysis, and agent workflows in applications.",
+    "description": "Anthropic API donne accès aux modèles Claude pour intégrer génération, raisonnement, analyse de documents et agents dans des applications.\n\nFonctions clés : Modèles Claude via API ; Tool use et sorties structurées ; Prompt caching et traitement par lots ; SDK et console développeur.\n\nRetenez-le lorsque l'usage récurrent remplace un workflow manuel ou fragmenté clairement identifié.",
+    "longDescription": "Anthropic API donne accès aux modèles Claude pour intégrer génération, raisonnement, analyse de documents et agents dans des applications.\n\nFonctions clés : Modèles Claude via API ; Tool use et sorties structurées ; Prompt caching et traitement par lots ; SDK et console développeur.\n\nRetenez-le lorsque l'usage récurrent remplace un workflow manuel ou fragmenté clairement identifié.",
+    "longDescriptionEn": "The Anthropic API provides access to Claude models for generation, reasoning, document analysis, and agent workflows in applications.\n\nKey strengths: Focused product workflow.; Official documentation and active development.; Integrates into professional processes.; Entry path available before scaling..\n\nKeep it when recurring usage replaces a clear manual or fragmented workflow.",
     "pricing": {
-      "free": "",
-      "paid": "Haiku dès 1/5 $US par MTok entrée/sortie · Sonnet 2/10 $US · Opus 5/25 $US"
+      "free": "Aucun forfait API gratuit permanent confirmé. Des crédits d'essai peuvent être proposés selon le compte.",
+      "paid": "Claude Sonnet 5: 2 USD par million de tokens en entrée et 10 USD par million de tokens en sortie ; Claude Opus 4.8: 5 USD par million de tokens en entrée et 25 USD par million de tokens en sortie"
     },
     "pricingEn": {
-      "free": "",
-      "paid": "Haiku from US$1/$5 per MTok input/output · Sonnet $2/$10 · Opus $5/$25"
+      "free": "Aucun forfait API gratuit permanent confirmé. Des crédits d'essai peuvent être proposés selon le compte.",
+      "paid": "Claude Sonnet 5: 2 USD par million de tokens en entrée et 10 USD par million de tokens en sortie ; Claude Opus 4.8: 5 USD par million de tokens en entrée et 25 USD par million de tokens en sortie"
     },
     "defaultMonthlyPrice": 1,
     "pricing_v5": {
@@ -8742,14 +8742,14 @@
         "La recherche web, l’exécution de code et certains outils entraînent des frais supplémentaires.",
         "L’abonnement Claude Pro ou Max ne comprend pas l’usage API."
       ],
-      "verified_on": "2026-08-25",
-      "source_domain": "claude.com",
+      "verified_on": "2026-08-30",
+      "source_domain": "anthropic.com",
       "usage_sensitive": true,
       "compare_plan_kind": "usage",
       "compare_plan_name": "Haiku 4.5",
       "price_reliability": "high",
       "location_sensitive": false,
-      "official_source_url": "https://claude.com/pricing#api",
+      "official_source_url": "https://www.anthropic.com/claude/api",
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 1
     },
@@ -8768,40 +8768,36 @@
       "metaDescription": "Anthropic API sur ToolTrim : rôle, limites et place dans une stack freelance."
     },
     "pros": [
-      "Modèles performants pour le code, le raisonnement et l’analyse de documents.",
-      "Tool use, sorties structurées et outils agentiques intégrés.",
-      "Prompt caching et Batch API pour réduire les coûts.",
-      "SDK officiels et compatibilité avec les principaux clouds."
+      "Workflow produit bien défini.",
+      "Documentation officielle et développement actif.",
+      "S'intègre aux processus professionnels.",
+      "Point d'entrée disponible avant de monter en charge."
     ],
     "prosEn": [
-      "Strong models for coding, reasoning and document analysis.",
-      "Built-in tool use, structured outputs and agent capabilities.",
-      "Prompt caching and Batch API reduce costs.",
-      "Official SDKs and availability through major clouds."
+      "Focused product workflow.",
+      "Official documentation and active development.",
+      "Integrates into professional processes.",
+      "Entry path available before scaling."
     ],
     "cons": [
-      "Aucun forfait mensuel prévisible : le coût suit le volume.",
-      "Les sorties longues des modèles avancés deviennent vite coûteuses.",
-      "L’orchestration, les garde-fous et l’observabilité restent à construire.",
-      "Facturation séparée de l’abonnement Claude."
+      "Le coût peut augmenter avec l'usage ou les sièges.",
+      "Les fonctions avancées exigent une offre payante.",
+      "La qualité du paramétrage influence le résultat."
     ],
     "consEn": [
-      "No predictable flat monthly plan: cost follows usage.",
-      "Long outputs from advanced models become expensive quickly.",
-      "Orchestration, guardrails and observability still need engineering.",
-      "Billed separately from Claude subscriptions."
+      "Costs can grow with usage or seats.",
+      "Advanced capabilities require a paid tier.",
+      "Setup quality affects the result."
     ],
     "useCases": [
-      "Ajouter un assistant IA à un SaaS ou un outil interne.",
-      "Construire un agent connecté à des outils via MCP.",
-      "Extraire et analyser des documents à grande échelle.",
-      "Automatiser du support, de la recherche ou de la génération de code."
+      "Utiliser modèles claude via api dans un workflow récurrent.",
+      "Utiliser tool use et sorties structurées dans un workflow récurrent.",
+      "Utiliser prompt caching et traitement par lots dans un workflow récurrent."
     ],
     "useCasesEn": [
-      "Add an AI assistant to a SaaS product or internal tool.",
-      "Build an agent connected to tools through MCP.",
-      "Extract and analyze documents at scale.",
-      "Automate support, research or code generation."
+      "Use modèles claude via api in a recurring workflow.",
+      "Use tool use et sorties structurées in a recurring workflow.",
+      "Use prompt caching et traitement par lots in a recurring workflow."
     ],
     "covers": [
       "ai-api",
@@ -8809,10 +8805,9 @@
       "document-processing"
     ],
     "relevantFor": [
-      "Développeurs",
       "Équipes produit",
-      "AI engineers",
-      "Startups SaaS"
+      "Développeurs",
+      "Équipes IA"
     ],
     "personas": [
       "THEO"
@@ -8823,29 +8818,29 @@
     ],
     "verdict": {
       "keepIf": [
-        "Vous intégrez Claude dans un produit ou un workflow en production.",
-        "Vous avez besoin de raisonnement, de code ou d’analyse documentaire avancée.",
-        "Vous pouvez suivre précisément les tokens, les erreurs et les coûts."
+        "Vous utilisez régulièrement le workflow central de Anthropic.",
+        "Vous préférez un produit intégré à l'assemblage de plusieurs outils.",
+        "Les limites officielles correspondent à votre volume réel."
       ],
       "avoidIf": [
-        "Un abonnement Claude suffit à votre usage humain.",
-        "Vous cherchez un coût mensuel fixe et parfaitement prévisible.",
-        "Vous n’avez pas les ressources pour sécuriser et superviser une intégration IA."
+        "Votre besoin est ponctuel et un outil gratuit plus simple suffit.",
+        "Votre stack couvre déjà le même workflow.",
+        "Le modèle par usage ou par siège rend le coût difficile à prévoir."
       ],
-      "threshold": "Choisissez l’API lorsque Claude doit agir dans votre produit ou traiter automatiquement un volume récurrent ; pour un usage individuel, la fiche Claude est la bonne référence."
+      "threshold": "Retenez-le lorsque l'usage récurrent remplace un workflow manuel ou fragmenté clairement identifié."
     },
     "verdictEn": {
       "keepIf": [
-        "You are integrating Claude into a product or production workflow.",
-        "You need advanced reasoning, coding or document analysis.",
-        "You can monitor tokens, errors and costs closely."
+        "You need Anthropic's core workflow regularly.",
+        "You value an integrated product over stitching several tools together.",
+        "The official usage limits match your real volume."
       ],
       "avoidIf": [
-        "A Claude subscription already covers your human usage.",
-        "You need a fixed and fully predictable monthly cost.",
-        "You lack the resources to secure and observe an AI integration."
+        "Your need is occasional and a simpler free tool is enough.",
+        "You already cover the same workflow in your current stack.",
+        "The usage or seat model makes costs hard to predict."
       ],
-      "threshold": "Use the API when Claude needs to operate inside your product or process recurring volume automatically; for individual use, the Claude app page is the right reference."
+      "threshold": "Keep it when recurring usage replaces a clear manual or fragmented workflow."
     },
     "articles": [],
     "timeGainedHoursPerMonth": null,
@@ -8884,7 +8879,8 @@
       "auto_downgrade_allowed": false
     },
     "ogImageUrl": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d18f61fb5c21c81781_og-claude-api.jpg",
-    "force_silence": false
+    "force_silence": false,
+    "galleryImages": []
   },
   {
     "id": "antidote",
@@ -10215,25 +10211,25 @@
     "slug": "arena",
     "name": "Are.na",
     "categoryId": "organization",
-    "shortDescription": "Veille visuelle et curation de références plus éditoriales que les plateformes d’inspiration classiques.",
-    "shortDescriptionEn": "Visual research and reference curation with a more editorial feel than classic inspiration platforms.",
+    "shortDescription": "Plateforme collaborative en ligne pour sauvegarder, organiser et découvrir du contenu (photos, notes, fichiers, liens web). Fonctionnalités de canaux éditables pour recherche et curation de contenu humain. Écosystème de réseaux actifs, sans algorithme de recommandation.",
+    "shortDescriptionEn": "Online collaborative platform for saving, organizing, and discovering content (photos, notes, files, web pages). Editable channels for human-curated research. Active community networks without algorithmic recommendations.",
     "pricing": {
-      "free": "Plan gratuit",
-      "paid": "Premium payant"
+      "free": "Plan gratuit avec limites de stockage ; Premium pour débloquer l'espace de stockage et fonctionnalités avancées.",
+      "paid": "Are.na Premium: Montants sur la page officielle"
     },
     "defaultMonthlyPrice": 5,
     "affiliateLink": "https://www.are.na",
     "websiteUrl": "https://www.are.na",
     "logo": "",
     "category": "design-tools",
-    "description": "Veille visuelle et curation de références plus éditoriales que les plateformes d’inspiration classiques.",
-    "longDescription": "Veille visuelle et curation de références plus éditoriales que les plateformes d’inspiration classiques.",
-    "longDescriptionEn": "Visual research and reference curation with a more editorial feel than classic inspiration platforms.",
+    "description": "Plateforme collaborative en ligne pour sauvegarder, organiser et découvrir du contenu (photos, notes, fichiers, liens web). Fonctionnalités de canaux éditables pour recherche et curation de contenu humain. Écosystème de réseaux actifs, sans algorithme de recommandation.\n\nFonctions clés : Création de canaux pour organiser le contenu par thème ; Import de photos, notes, fichiers et liens web ; Partage et collaboration sur les canaux ; Réseau de 20.000+ contributeurs Premium actifs ; Pas de recommandation algorithme (curation humaine) ; Support de l'IA pour aide au workflow ; Téléchargement et export du contenu ; App mobile (iOS).\n\nAre.na s'impose pour les chercheurs et créatifs collectionnant du contenu collaboratif ; pour le partage social léger ou archivage solo, d'autres outils peuvent convenir.",
+    "longDescription": "Plateforme collaborative en ligne pour sauvegarder, organiser et découvrir du contenu (photos, notes, fichiers, liens web). Fonctionnalités de canaux éditables pour recherche et curation de contenu humain. Écosystème de réseaux actifs, sans algorithme de recommandation.\n\nFonctions clés : Création de canaux pour organiser le contenu par thème ; Import de photos, notes, fichiers et liens web ; Partage et collaboration sur les canaux ; Réseau de 20.000+ contributeurs Premium actifs ; Pas de recommandation algorithme (curation humaine) ; Support de l'IA pour aide au workflow ; Téléchargement et export du contenu ; App mobile (iOS).\n\nAre.na s'impose pour les chercheurs et créatifs collectionnant du contenu collaboratif ; pour le partage social léger ou archivage solo, d'autres outils peuvent convenir.",
+    "longDescriptionEn": "Online collaborative platform for saving, organizing, and discovering content (photos, notes, files, web pages). Editable channels for human-curated research. Active community networks without algorithmic recommendations.\n\nKey strengths: Independent platform, no algorithmic recommendations.; Human curation in a respectful ecosystem.; Workspace for collaborative research.; Easy content import from any source.; Responsive support and team..\n\nAre.na makes sense for researchers and creatives collecting collaborative content; for light social sharing or solo archiving, other tools may fit better.",
     "pricing_v5": {
-      "verified_on": "2026-05-10",
+      "verified_on": "2026-07-24",
       "source_domain": "are.na",
       "official_source_url": "https://www.are.na",
-      "verification_status": "manual_reference",
+      "verification_status": "official_explicit",
       "compare_price_monthly_eur": 5
     },
     "verticals": [
@@ -10281,7 +10277,10 @@
     "articles": [],
     "alternatives": [],
     "ogImageUrl": "https://www.are.na/og-image.png",
-    "pricingEn": null,
+    "pricingEn": {
+      "free": "Plan gratuit avec limites de stockage ; Premium pour débloquer l'espace de stockage et fonctionnalités avancées.",
+      "paid": "Are.na Premium: Montants sur la page officielle"
+    },
     "seo": null,
     "freeAlternative": null,
     "soloRelevance": null,
@@ -10335,7 +10334,8 @@
     "prescription_context_questions": [],
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
-    "force_silence": false
+    "force_silence": false,
+    "galleryImages": []
   },
   {
     "id": "arnold",
@@ -24467,10 +24467,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "shortDescription": "Créateur de sites one-page ultra-simple à 9$/an pour portfolio et landing page.",
-    "shortDescriptionEn": "Ultra-simple one-page site builder at $9/year for portfolio and landing page.",
-    "longDescription": "Carrd permet de créer un site one-page professionnel en 30 minutes pour 9$/an. Idéal pour portfolio, landing page, page de liens ou CV en ligne.",
-    "longDescriptionEn": "Carrd lets you build a professional one-page site in 30 minutes for $9/year. Ideal for portfolio, landing page, link page or online resume.",
+    "shortDescription": "Constructeur de pages de destination ultra-minimaliste. Création rapide de landing pages, micro-portfolios et sites d'une seule page, sans code. Cible les créateurs solo, freelances et micro-entreprises.",
+    "shortDescriptionEn": "Ultra-minimal landing page builder. Fast creation of single-page websites, micro-portfolios, and landing pages with no code. Targets solo creators, freelancers, and micro-businesses.",
+    "longDescription": "Constructeur de pages de destination ultra-minimaliste. Création rapide de landing pages, micro-portfolios et sites d'une seule page, sans code. Cible les créateurs solo, freelances et micro-entreprises.\n\nFonctions clés : Template library ou blank page ; Responsive design tous appareils ; Custom domain & SSL ; Contact forms avec intégrations (Mailchimp, Stripe, PayPal) ; Google Analytics, Plausible, Matomo integration ; Custom code embed et third-party widgets.\n\nCarrd excelle pour lancer une page simple et convertir au tarif imbattable ; pour un site multi-pages riche ou du design sur mesure, une autre solution convient.",
+    "longDescriptionEn": "Ultra-minimal landing page builder. Fast creation of single-page websites, micro-portfolios, and landing pages with no code. Targets solo creators, freelancers, and micro-businesses.\n\nKey strengths: Unbeatable pricing for a full-featured plan.; Ultra-fast creation (under one hour).; Choice: provided templates or blank canvas.; Native integrations (Stripe, Mailchimp, etc).; Responsive and mobile-friendly by default..\n\nCarrd shines for quick, cheap single-page launches; for multi-page or design-heavy sites, another builder fits better.",
     "defaultMonthlyPrice": 1,
     "pricing_v5": {
       "free_tier": true,
@@ -24478,24 +24478,27 @@
       "source_url": "https://carrd.co/pro",
       "monthly_eur": 1,
       "reliability": "high",
-      "verified_on": "2026-05-08",
+      "verified_on": "2026-07-24",
       "billing_note": "Pro Standard 9$/an = ~0.75$/mois",
       "free_tier_note": "Sites gratuits avec sous-domaine",
       "price_original": 9,
       "currency_original": "USD",
-      "annual_monthly_eur": 1
+      "annual_monthly_eur": 1,
+      "official_source_url": "https://carrd.co",
+      "source_domain": "carrd.co",
+      "verification_status": "official_explicit"
     },
     "pricingTiers": {
       "free": "Sites gratuits avec sous-domaine",
       "paid": "Pro Standard 9$/an"
     },
     "pricing": {
-      "free": "Sites gratuits avec sous-domaine",
-      "paid": "Pro Standard 9$/an"
+      "free": "3 sites, tous les templates, branding Carrd en pied",
+      "paid": "Free: Gratuit (3 sites, branding Carrd) ; Pro Lite: $9 / année ; Pro Standard: $19 / année (domaine custom, formulaires, analytics) ; Pro Plus: $49 / année (toutes les fonctionnalités premium)"
     },
     "pricingEn": {
-      "free": "Free sites with subdomain",
-      "paid": "Pro Standard $9/year"
+      "free": "3 sites, tous les templates, branding Carrd en pied",
+      "paid": "Free: Gratuit (3 sites, branding Carrd) ; Pro Lite: $9 / année ; Pro Standard: $19 / année (domaine custom, formulaires, analytics) ; Pro Plus: $49 / année (toutes les fonctionnalités premium)"
     },
     "soloRelevance": "high",
     "teamRelevance": "low",
@@ -24617,9 +24620,10 @@
       "metaDescription": "Carrd avis : créateur de site one-page à 9$/an. Meilleur rapport qualité-prix pour portfolio freelance."
     },
     "ogImageUrl": "https://carrd.co/assets/images/etc/share.jpg",
-    "description": "Carrd permet de créer un site one-page professionnel en 30 minutes pour 9$/an. Idéal pour portfolio, landing page, page de liens ou CV en ligne.",
+    "description": "Constructeur de pages de destination ultra-minimaliste. Création rapide de landing pages, micro-portfolios et sites d'une seule page, sans code. Cible les créateurs solo, freelances et micro-entreprises.\n\nFonctions clés : Template library ou blank page ; Responsive design tous appareils ; Custom domain & SSL ; Contact forms avec intégrations (Mailchimp, Stripe, PayPal) ; Google Analytics, Plausible, Matomo integration ; Custom code embed et third-party widgets.\n\nCarrd excelle pour lancer une page simple et convertir au tarif imbattable ; pour un site multi-pages riche ou du design sur mesure, une autre solution convient.",
     "articles": [],
-    "force_silence": false
+    "force_silence": false,
+    "galleryImages": []
   },
   {
     "id": "castmagic",
@@ -27497,148 +27501,6 @@
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
     "force_silence": false
-  },
-  {
-    "id": "clearbit",
-    "name": "Clearbit",
-    "shortDescription": "Enrichissement de données B2B en temps réel, désormais intégré à HubSpot (Breeze Intelligence).",
-    "description": "Clearbit enrichit automatiquement un lead ou client avec plus de 100 points de données (taille d'entreprise, secteur, stack technique, décideurs) à partir d'un simple email ou domaine. Depuis le rachat par HubSpot, l'outil standalone a disparu : Clearbit fonctionne désormais uniquement comme module \"Breeze Intelligence\" à l'intérieur de HubSpot.\n\nCe changement impose un verrouillage total à l'écosystème HubSpot (plus de Salesforce ou Pipedrive) et une tarification à crédits dont le coût réel grimpe vite (1000 crédits ≈ 450$/mois), avec des migrants rapportant 30-60% de hausse de coût pour une fonctionnalité équivalente.",
-    "category": "email-productivity",
-    "pricing": "Système à crédits dans HubSpot : 100 crédits ≈ 45-50$/mois ; ~1000 crédits ≈ 450$/mois. Pas d'essai gratuit.",
-    "website": "https://clearbit.com",
-    "affiliateLink": "https://clearbit.com",
-    "pros": [
-      "Précision élevée des données firmographiques, particulièrement pour identifier les décideurs",
-      "Intégration fluide dans les workflows CRM et marketing automation existants",
-      "Plus de 100 points de données enrichis en quelques secondes depuis un email ou domaine"
-    ],
-    "cons": [
-      "Verrouillage total à HubSpot — plus d'usage avec Salesforce ou Pipedrive",
-      "Tarification à crédits imprévisible, coût réel pouvant atteindre 1000-5000$/mois pour une équipe mid-market",
-      "Précision en baisse pour les petites entreprises et les sociétés internationales"
-    ],
-    "bestFor": [
-      "all"
-    ],
-    "covers": [
-      "data-enrichment"
-    ],
-    "freeAlternative": null,
-    "soloRelevance": "high",
-    "teamRelevance": "medium",
-    "defaultMonthlyPrice": 39.42,
-    "pricingTiers": {
-      "free": "Fonctionnalités de base",
-      "paid": "Toutes les fonctionnalités"
-    },
-    "relevantFor": [
-      "all"
-    ],
-    "verdict": {
-      "keepIf": [
-        "Tu es déjà sur HubSpot et acceptes le verrouillage à son écosystème",
-        "Le budget crédits (450$+/mois) est justifié par ton volume de leads à enrichir"
-      ],
-      "avoidIf": [
-        "Tu utilises Salesforce ou Pipedrive — Clearbit n'est plus accessible en standalone",
-        "Tu cibles des petites entreprises ou internationales où la précision baisse"
-      ],
-      "threshold": "Pertinent uniquement si tu es déjà engagé dans l'écosystème HubSpot ; sinon cherche une alternative standalone."
-    },
-    "alternatives": [],
-    "seo": {
-      "metaDescription": "Clearbit : Outil d’enrichissement de données et insights pour marketing et ventes. Découvrez si cet outil vaut le coup pour votre activité freelance."
-    },
-    "articles": [],
-    "tool_type": "satellite",
-    "substitutable": true,
-    "verticals": [
-      "ecommercant",
-      "fondateur-saas"
-    ],
-    "functional_needs": [
-      "data-enrichment"
-    ],
-    "betterAlternative": null,
-    "migrationGuide": null,
-    "bundle_parent": null,
-    "host_app": null,
-    "ia_use_case": null,
-    "slug": "clearbit",
-    "shortDescriptionEn": "Real-time B2B data enrichment, now integrated into HubSpot (Breeze Intelligence).",
-    "longDescription": "Clearbit enrichit automatiquement un lead ou client avec plus de 100 points de données (taille d'entreprise, secteur, stack technique, décideurs) à partir d'un simple email ou domaine. Depuis le rachat par HubSpot, l'outil standalone a disparu : Clearbit fonctionne désormais uniquement comme module \"Breeze Intelligence\" à l'intérieur de HubSpot.\n\nCe changement impose un verrouillage total à l'écosystème HubSpot (plus de Salesforce ou Pipedrive) et une tarification à crédits dont le coût réel grimpe vite (1000 crédits ≈ 450$/mois), avec des migrants rapportant 30-60% de hausse de coût pour une fonctionnalité équivalente.",
-    "longDescriptionEn": "Clearbit automatically enriches a lead or customer with over 100 data points (company size, industry, tech stack, decision-makers) from a simple email or domain. Since the HubSpot acquisition, the standalone tool disappeared: Clearbit now only works as a \"Breeze Intelligence\" module inside HubSpot.\n\nThis change imposes full lock-in to the HubSpot ecosystem (no more Salesforce or Pipedrive) and credit-based pricing whose real cost rises quickly (1,000 credits ≈ $450/month), with migrants reporting 30-60% cost increases for equivalent functionality.",
-    "pricingEn": "Credit-based system inside HubSpot: 100 credits ≈ $45-50/month; ~1,000 credits ≈ $450/month. No free trial.",
-    "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
-      "source_domain": "clearbit.com",
-      "usage_sensitive": false,
-      "compare_plan_kind": "seat",
-      "compare_plan_name": "Entry paid plan",
-      "price_reliability": "medium",
-      "location_sensitive": false,
-      "official_source_url": "https://clearbit.com/",
-      "verification_status": "official_contextual",
-      "compare_price_monthly_eur": 15
-    },
-    "websiteUrl": "https://clearbit.com",
-    "logo": "",
-    "verdictEn": {
-      "keepIf": [
-        "You're already on HubSpot and accept the lock-in to its ecosystem",
-        "The credit budget ($450+/month) is justified by your lead enrichment volume"
-      ],
-      "avoidIf": [
-        "You use Salesforce or Pipedrive — Clearbit is no longer available standalone",
-        "You target small or international companies where accuracy drops"
-      ],
-      "threshold": "Only worth it if you're already committed to the HubSpot ecosystem; otherwise look for a standalone alternative."
-    },
-    "prosEn": [
-      "High accuracy of firmographic data, particularly for identifying decision-makers",
-      "Smooth integration into existing CRM and marketing automation workflows",
-      "Over 100 data points enriched in seconds from an email or domain"
-    ],
-    "consEn": [
-      "Full HubSpot lock-in — no more use with Salesforce or Pipedrive",
-      "Unpredictable credit-based pricing, real cost potentially reaching $1,000-5,000/month for a mid-market team",
-      "Declining accuracy for small companies and international businesses"
-    ],
-    "useCases": [
-      "Enrichir automatiquement des leads HubSpot avec des données firmographiques",
-      "Identifier les décideurs et prioriser les leads à fort potentiel",
-      "Optimiser des formulaires en réduisant les champs demandés grâce à l'enrichissement"
-    ],
-    "useCasesEn": [
-      "Automatically enrich HubSpot leads with firmographic data",
-      "Identify decision-makers and prioritize high-potential leads",
-      "Optimize forms by reducing required fields thanks to enrichment"
-    ],
-    "personas": [],
-    "timeGainedHoursPerMonth": 3,
-    "downgradePlan": null,
-    "prescription_quality": "question",
-    "prescription_output": null,
-    "prescription_block_reasons": [
-      "cluster-trop-large"
-    ],
-    "prescription_context_questions": [
-      "contact_volume",
-      "deliverability_requirement",
-      "multichannel_requirement"
-    ],
-    "substitution_cluster_v2": "email-outreach",
-    "decision_policy_v3": {
-      "auto_cancel_allowed": true,
-      "auto_replace_allowed": true,
-      "default_decision_lane": "review_then_prescribe",
-      "auto_downgrade_allowed": true,
-      "never_auto_cancel_reason": null,
-      "requires_context_questions": true
-    },
-    "force_silence": false,
-    "ogImageUrl": "/sharing/social-share-2.jpg"
   },
   {
     "id": "clerk",
@@ -34853,11 +34715,11 @@
     "slug": "darktable",
     "name": "darktable",
     "category": "photo",
-    "shortDescription": "Workflow photo open source pour développement RAW, classement et ajustements colorimétriques.",
-    "shortDescriptionEn": "Open-source photography workflow for RAW development, organization and color adjustments.",
+    "shortDescription": "Logiciel open source gratuit pour le traitement et l'édition non-destructive de fichiers RAW. Fonctionne comme une chambre noire virtuelle (darkroom) avec gestion complète des workflows photo professionnels.",
+    "shortDescriptionEn": "Free open source software for non-destructive processing and editing of RAW files. Functions as a virtual darkroom with complete management of professional photo workflows.",
     "pricing": {
-      "free": "Open source.",
-      "paid": "Gratuit et open source."
+      "free": "Entièrement gratuit, sans limitations. Logiciel libre sous licence GNU General Public License v3.",
+      "paid": "Voir le tarif officiel."
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://www.darktable.org/",
@@ -34901,7 +34763,7 @@
     "force_silence": false,
     "substitution_cluster_v2": "photo-raw-workflow",
     "ogImageUrl": "https://www.darktable.org/images/darktable-logo-only-512w.png",
-    "description": "Darktable est un logiciel libre et gratuit de développement RAW et de gestion de photothèque, souvent présenté comme l'alternative open source à Lightroom. Il propose un flux non destructif par modules, un catalogue et une gestion des métadonnées, sur Windows, Mac et Linux.",
+    "description": "Logiciel open source gratuit pour le traitement et l'édition non-destructive de fichiers RAW. Fonctionne comme une chambre noire virtuelle (darkroom) avec gestion complète des workflows photo professionnels.\n\nFonctions clés : Support RAW de centaines de modèles d'appareils ; Gestion de la couleur précise et HDR ; Interface lighttable et darkroom ; Traitement non-destructive avec historique complet ; GPU acceleration pour performance.\n\ndarktable est le meilleur choix gratuit pour les photographes pro shootant en RAW ; pour les amateurs, Lightroom ou On1 Photo RAW peuvent convenir.",
     "pros": [
       "Entièrement gratuit sans limitations fonctionnelles",
       "Professionnel-grade RAW processing",
@@ -34928,13 +34790,17 @@
       "threshold": "darktable est le meilleur choix gratuit pour les photographes pro shootant en RAW ; pour les amateurs, Lightroom ou On1 Photo RAW peuvent convenir."
     },
     "pricing_v5": {
-      "verified_on": "2026-07-08",
+      "verified_on": "2026-07-24",
       "source_domain": "darktable.org",
-      "official_source_url": "https://www.darktable.org/"
+      "official_source_url": "https://www.darktable.org",
+      "verification_status": "official_explicit"
     },
-    "longDescription": "Darktable est un logiciel libre et gratuit de développement RAW et de gestion de photothèque, souvent présenté comme l'alternative open source à Lightroom. Il propose un flux non destructif par modules, un catalogue et une gestion des métadonnées, sur Windows, Mac et Linux.",
-    "longDescriptionEn": "Free open source software for non-destructive processing and editing of RAW files. Functions as a virtual darkroom with complete management of professional photo workflows.",
-    "pricingEn": null,
+    "longDescription": "Logiciel open source gratuit pour le traitement et l'édition non-destructive de fichiers RAW. Fonctionne comme une chambre noire virtuelle (darkroom) avec gestion complète des workflows photo professionnels.\n\nFonctions clés : Support RAW de centaines de modèles d'appareils ; Gestion de la couleur précise et HDR ; Interface lighttable et darkroom ; Traitement non-destructive avec historique complet ; GPU acceleration pour performance.\n\ndarktable est le meilleur choix gratuit pour les photographes pro shootant en RAW ; pour les amateurs, Lightroom ou On1 Photo RAW peuvent convenir.",
+    "longDescriptionEn": "Free open source software for non-destructive processing and editing of RAW files. Functions as a virtual darkroom with complete management of professional photo workflows.\n\nKey strengths: Completely free with no functional limitations; Professional-grade RAW processing; Complete lighttable/darkroom workflow; Total control over color and exposure.\n\ndarktable is the best free choice for pro photographers shooting RAW; for amateurs, Lightroom or On1 Photo RAW may suffice.",
+    "pricingEn": {
+      "free": "Entièrement gratuit, sans limitations. Logiciel libre sous licence GNU General Public License v3.",
+      "paid": "Voir le tarif officiel."
+    },
     "seo": null,
     "articles": [],
     "freeAlternative": null,
@@ -34981,7 +34847,8 @@
     "prescription_output": null,
     "prescription_block_reasons": [],
     "prescription_context_questions": [],
-    "decision_policy_v3": null
+    "decision_policy_v3": null,
+    "galleryImages": []
   },
   {
     "id": "dart",
@@ -38652,18 +38519,18 @@
     "slug": "docusign",
     "name": "DocuSign",
     "category": "legal-contracts",
-    "shortDescription": "DocuSign aide à gérer signatures, contrats ou documents juridiques.",
-    "shortDescriptionEn": "DocuSign helps manage signatures, contracts, or legal documents.",
-    "description": "DocuSign devient utile quand contrats, validations et preuves doivent être suivis proprement. Pour une petite activité, le risque est de payer un outil contractuel alors qu’un flux simple suffit encore.",
-    "longDescription": "DocuSign devient utile quand contrats, validations et preuves doivent être suivis proprement. Pour une petite activité, le risque est de payer un outil contractuel alors qu’un flux simple suffit encore.",
-    "longDescriptionEn": "DocuSign becomes useful when contracts, approvals, and evidence need to be tracked cleanly. For a small business, the risk is paying for a contract tool while a simpler workflow is still enough.",
+    "shortDescription": "Plateforme leader de signature électronique et gestion des contrats offrant eSignature, Intelligent Agreement Management (IAM), et Contract Lifecycle Management (CLM). Support workflows, API, intégrations Salesforce/Workday.",
+    "shortDescriptionEn": "Leading platform for electronic signatures and contract management offering eSignature, Intelligent Agreement Management (IAM), and Contract Lifecycle Management (CLM). Supports workflows, APIs, and Salesforce/Workday integrations.",
+    "description": "Plateforme leader de signature électronique et gestion des contrats offrant eSignature, Intelligent Agreement Management (IAM), et Contract Lifecycle Management (CLM). Support workflows, API, intégrations Salesforce/Workday.\n\nFonctions clés : eSignature conforme ESIGN Act et eIDAS ; Intelligent Agreement Management avec AI-powered analysis ; Contract Lifecycle Management (CLM) Maestro workflows ; Intégrations Salesforce, Workday, Microsoft Word, Slack ; Notarization, payment collection, conditional routing ; API access pour intégration custom.\n\nDocuSign s'impose pour grandes entreprises et volumineux (CLM) ; PME avec peu de signatures préfèrent Yousign/Pandadoc.",
+    "longDescription": "Plateforme leader de signature électronique et gestion des contrats offrant eSignature, Intelligent Agreement Management (IAM), et Contract Lifecycle Management (CLM). Support workflows, API, intégrations Salesforce/Workday.\n\nFonctions clés : eSignature conforme ESIGN Act et eIDAS ; Intelligent Agreement Management avec AI-powered analysis ; Contract Lifecycle Management (CLM) Maestro workflows ; Intégrations Salesforce, Workday, Microsoft Word, Slack ; Notarization, payment collection, conditional routing ; API access pour intégration custom.\n\nDocuSign s'impose pour grandes entreprises et volumineux (CLM) ; PME avec peu de signatures préfèrent Yousign/Pandadoc.",
+    "longDescriptionEn": "Leading platform for electronic signatures and contract management offering eSignature, Intelligent Agreement Management (IAM), and Contract Lifecycle Management (CLM). Supports workflows, APIs, and Salesforce/Workday integrations.\n\nKey strengths: Market leader, most mature and recognized.; Extensive integrations (Salesforce, Workday, APIs).; Complex workflows and end-to-end CLM support.; ESIGN and eIDAS compliant, globally usable..\n\nDocuSign is essential for large enterprises and high-volume CLM; SMBs with light signing prefer Yousign/Pandadoc.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / prix non public"
+      "free": "Essai gratuit ; pas de version gratuite permanente. Accès free trial 30 jours.",
+      "paid": "Personal: À partir de 10€/mois annualisé (15€ mensuel) - 5 enveloppes/mois ; Standard: 25€/user/mois annualisé (45€ mensuel) - 100 enveloppes/an ; Business Pro: 40€/user/mois annualisé (65€ mensuel) - 100 enveloppes/an + bulk send ; Enterprise: Prix personnalisé - tous les features avancés"
     },
     "pricingEn": {
-      "free": "Not disclosed",
-      "paid": "Custom pricing / no public baseline"
+      "free": "Essai gratuit ; pas de version gratuite permanente. Accès free trial 30 jours.",
+      "paid": "Personal: À partir de 10€/mois annualisé (15€ mensuel) - 5 enveloppes/mois ; Standard: 25€/user/mois annualisé (45€ mensuel) - 100 enveloppes/an ; Business Pro: 40€/user/mois annualisé (65€ mensuel) - 100 enveloppes/an + bulk send ; Enterprise: Prix personnalisé - tous les features avancés"
     },
     "defaultMonthlyPrice": 0,
     "pricingTiers": {
@@ -38674,7 +38541,7 @@
       "cautions": [
         "Prix dépendant du plan, du pays, du volume ou du contrat. À vérifier sur la page officielle avant décision."
       ],
-      "verified_on": "2026-05-02",
+      "verified_on": "2026-07-24",
       "source_domain": "docusign.com",
       "usage_sensitive": true,
       "compare_plan_kind": "custom",
@@ -38682,7 +38549,7 @@
       "price_reliability": "official_context_required",
       "location_sensitive": false,
       "official_source_url": "https://www.docusign.com",
-      "verification_status": "needs_official_quote",
+      "verification_status": "official_explicit",
       "compare_price_monthly_eur": 0
     },
     "affiliateLink": "https://www.docusign.com",
@@ -38821,7 +38688,8 @@
     "pivot_integration_source": true,
     "personas": [],
     "force_silence": false,
-    "ogImageUrl": "https://images.ctfassets.net/0jnmtsdzg6p5/4GSPcvcpIZpsXsZ7F0EXTW/e83c17556674508addba7639c46fa6dd/ds-iam-og-image.png"
+    "ogImageUrl": "https://images.ctfassets.net/0jnmtsdzg6p5/4GSPcvcpIZpsXsZ7F0EXTW/e83c17556674508addba7639c46fa6dd/ds-iam-og-image.png",
+    "galleryImages": []
   },
   {
     "id": "docyt",
@@ -45712,10 +45580,10 @@
     "substitutable": true,
     "host_app": null,
     "bundle_parent": null,
-    "shortDescription": "Analytics web sans cookies, conforme RGPD, alternative à Google Analytics.",
-    "shortDescriptionEn": "Cookieless web analytics, GDPR compliant, Google Analytics alternative.",
-    "longDescription": "Fathom Analytics est une alternative privacy-first à Google Analytics : zéro cookie, conforme RGPD/CCPA, tableau de bord simple et hébergement EU disponible.",
-    "longDescriptionEn": "Fathom Analytics is a privacy-first Google Analytics alternative: zero cookies, GDPR/CCPA compliant, simple dashboard and EU hosting available.",
+    "shortDescription": "Analytics web sans cookies, sans consentement banners. Respect GDPR nativement. Suive sources trafic, pages populaires, conversions, campagnes. Startup canadienne, pas de VC, pas de vente données.",
+    "shortDescriptionEn": "Cookie-free, GDPR-compliant web analytics. No consent banners needed. Track traffic sources, top pages, conversions, campaigns. Canadian startup, no VC, no data selling.",
+    "longDescription": "Analytics web sans cookies, sans consentement banners. Respect GDPR nativement. Suive sources trafic, pages populaires, conversions, campagnes. Startup canadienne, pas de VC, pas de vente données.\n\nFonctions clés : Analytics sans cookies, GDPR natif. ; Suivi sources de trafic et pages populaires. ; Conversion tracking et attribution campanges. ; Au moins 50 sites inclus dans chaque plan. ; Pas de traquage cross-site. ; Données propriétaires (pas de vente). ; Intégration Slack et Zapier..\n\nFathom convient pour sites respectant vie privée ; pour analytics comportementales complexes, Google Analytics convient mieux.",
+    "longDescriptionEn": "Cookie-free, GDPR-compliant web analytics. No consent banners needed. Track traffic sources, top pages, conversions, campaigns. Canadian startup, no VC, no data selling.\n\nKey strengths: Native GDPR and privacy respect, no banners.; Simple and predictable pricing.; No cookie tracking, data owned by you.; Clean and fast interface.; Responsive support team..\n\nFathom suits privacy-respecting sites; for complex behavioral analytics, Google Analytics is better.",
     "defaultMonthlyPrice": 15,
     "pricing_v5": {
       "free_tier": false,
@@ -45723,24 +45591,27 @@
       "source_url": "https://usefathom.com/pricing",
       "monthly_eur": 15,
       "reliability": "high",
-      "verified_on": "2026-05-08",
+      "verified_on": "2026-07-24",
       "billing_note": "Starter 14$/mois pour 100k pageviews",
       "free_tier_note": "Essai 30 jours",
       "price_original": 14,
       "currency_original": "USD",
-      "annual_monthly_eur": 12
+      "annual_monthly_eur": 12,
+      "official_source_url": "https://usefathom.com/pricing",
+      "source_domain": "usefathom.com",
+      "verification_status": "official_explicit"
     },
     "pricingTiers": {
       "free": "Essai 30 jours",
       "paid": "Starter 14$/mois (100k pageviews)"
     },
     "pricing": {
-      "free": "Essai 30 jours",
-      "paid": "Starter 14$/mois (100k pageviews)"
+      "free": "Pas de version gratuite. Plans commencent à 14 $/mois pour 100k pageviews.",
+      "paid": "Starter: 14 $/mois pour 100k pageviews mensuels ; Growth: 24 $/mois pour 200k pageviews mensuels ; Pro: 44 $/mois pour 500k pageviews mensuels"
     },
     "pricingEn": {
-      "free": "30-day trial",
-      "paid": "Starter $14/mo (100k pageviews)"
+      "free": "Pas de version gratuite. Plans commencent à 14 $/mois pour 100k pageviews.",
+      "paid": "Starter: 14 $/mois pour 100k pageviews mensuels ; Growth: 24 $/mois pour 200k pageviews mensuels ; Pro: 44 $/mois pour 500k pageviews mensuels"
     },
     "soloRelevance": "high",
     "teamRelevance": "medium",
@@ -45844,9 +45715,10 @@
       "metaDescription": "Fathom Analytics avis : analytics RGPD sans cookies. Alternative simple à Google Analytics pour freelances."
     },
     "ogImageUrl": "https://usefathom.com/assets/src/share-usefathom.com.jpg",
-    "description": "Fathom Analytics est une alternative privacy-first à Google Analytics : zéro cookie, conforme RGPD/CCPA, tableau de bord simple et hébergement EU disponible.",
+    "description": "Analytics web sans cookies, sans consentement banners. Respect GDPR nativement. Suive sources trafic, pages populaires, conversions, campagnes. Startup canadienne, pas de VC, pas de vente données.\n\nFonctions clés : Analytics sans cookies, GDPR natif. ; Suivi sources de trafic et pages populaires. ; Conversion tracking et attribution campanges. ; Au moins 50 sites inclus dans chaque plan. ; Pas de traquage cross-site. ; Données propriétaires (pas de vente). ; Intégration Slack et Zapier..\n\nFathom convient pour sites respectant vie privée ; pour analytics comportementales complexes, Google Analytics convient mieux.",
     "articles": [],
-    "force_silence": false
+    "force_silence": false,
+    "galleryImages": []
   },
   {
     "id": "feedly",
@@ -92356,164 +92228,6 @@
     "force_silence": false
   },
   {
-    "id": "modo",
-    "slug": "modo",
-    "name": "Modo",
-    "category": "creation",
-    "shortDescription": "Logiciel 3D Foundry de modélisation et rendu, apprécié pour le design produit.",
-    "shortDescriptionEn": "Foundry's 3D modeling and rendering app, loved for product design.",
-    "pricing": {
-      "free": "Essai gratuit",
-      "paid": "599$/an ou 59$/mois."
-    },
-    "pricingEn": {
-      "free": "Free trial",
-      "paid": "$599/year or $59/month."
-    },
-    "defaultMonthlyPrice": 50,
-    "affiliateLink": "https://www.foundry.com/products/modo",
-    "websiteUrl": "https://www.foundry.com/products/modo",
-    "logo": "",
-    "longDescription": "Modo, c'est le logiciel 3D de Foundry, surtout réputé pour sa modélisation polygonale rapide et intuitive et pour son moteur de rendu intégré de qualité. Il a longtemps été un chouchou du design produit, de la pub et du game art, apprécié pour son confort de modélisation là où Maya ou 3ds Max peuvent sembler rigides.\n\nCôté prix, c'est un abonnement autour de 599$/an (ou 59$/mois), plus accessible que les gros Autodesk mais plus cher que la gratuité de Blender. Foundry a annoncé une bascule complète en abonnement d'ici 2027.\n\nLe vrai sujet pour Modo en 2026, c'est sa position face à Blender. Blender, gratuit, a énormément progressé en modélisation et en rendu (Cycles), au point de grignoter le terrain de Modo. Modo reste un excellent modeleur avec un flux agréable, mais il devient difficile à recommander en priorité face à un Blender gratuit ou à un Cinema 4D pour le motion. Il garde du sens pour qui aime spécifiquement son ergonomie de modélisation.",
-    "longDescriptionEn": "Modo is Foundry's 3D application, best known for its fast, intuitive polygon modeling and its quality built-in renderer. It was long a favorite for product design, advertising and game art, prized for its modeling comfort where Maya or 3ds Max can feel rigid.\n\nOn price, it's a subscription around $599/year (or $59/month), more accessible than the big Autodesk apps but pricier than Blender's free offering. Foundry has announced a full move to subscription by 2027.\n\nThe real question for Modo in 2026 is its position against Blender. Free Blender has improved enormously in modeling and rendering (Cycles), to the point of eating into Modo's turf. Modo remains an excellent modeler with a pleasant flow, but it's getting hard to recommend first over a free Blender or a Cinema 4D for motion. It still makes sense for those who specifically love its modeling ergonomics.",
-    "verdict": {
-      "keepIf": [
-        "Tu aimes spécifiquement l'ergonomie de modélisation de Modo",
-        "Tu fais du design produit ou du game art et tu es déjà sur Modo"
-      ],
-      "avoidIf": [
-        "Tu débutes ou as un budget serré : Blender modélise gratuitement et très bien",
-        "Tu fais du motion design : Cinema 4D est plus adapté"
-      ],
-      "threshold": "Bon modeleur, mais difficile à recommander en priorité face à Blender (gratuit). Pertinent surtout si tu apprécies son flux spécifique."
-    },
-    "verdictEn": {
-      "keepIf": [
-        "You specifically love Modo's modeling ergonomics",
-        "You do product design or game art and are already on Modo"
-      ],
-      "avoidIf": [
-        "You're a beginner or on a tight budget: Blender models very well for free",
-        "You do motion design: Cinema 4D fits better"
-      ],
-      "threshold": "A good modeler, but hard to recommend first over free Blender. Mainly worth it if you value its specific flow."
-    },
-    "pros": [
-      "Modélisation polygonale rapide et intuitive",
-      "Moteur de rendu intégré de qualité",
-      "Plus accessible que les gros Autodesk",
-      "Apprécié en design produit et game art"
-    ],
-    "prosEn": [
-      "Fast, intuitive polygon modeling",
-      "Quality built-in renderer",
-      "More accessible than the big Autodesk apps",
-      "Loved in product design and game art"
-    ],
-    "cons": [
-      "Blender (gratuit) grignote fortement son terrain",
-      "Abonnement ~599$/an, plus de perpétuel à terme (2027)",
-      "Communauté plus petite que Blender ou Maya",
-      "Moins central dans les pipelines studio"
-    ],
-    "consEn": [
-      "Blender (free) is heavily eating into its turf",
-      "Subscription ~$599/year, no perpetual eventually (2027)",
-      "Smaller community than Blender or Maya",
-      "Less central in studio pipelines"
-    ],
-    "useCases": [
-      "Modéliser des objets de design produit",
-      "Créer des assets pour le game art",
-      "Rendre des visuels avec le moteur intégré",
-      "Modéliser confortablement sans la rigidité de Maya/3ds Max"
-    ],
-    "useCasesEn": [
-      "Model product-design objects",
-      "Create game-art assets",
-      "Render visuals with the built-in engine",
-      "Model comfortably without the rigidity of Maya/3ds Max"
-    ],
-    "covers": [
-      "3d",
-      "modelisation-3d",
-      "rendu-3d"
-    ],
-    "relevantFor": [
-      "designer"
-    ],
-    "personas": [
-      "designer"
-    ],
-    "soloRelevance": "low",
-    "teamRelevance": "medium",
-    "seo": {
-      "aiAngle": {
-        "stance": "challenge",
-        "aiTools": [
-          "meshy",
-          "tripo"
-        ],
-        "augmentEn": "Modo mainly relied on its fast modeling and rendering flow. Generative AI (Meshy, Tripo) attacks exactly that ground: getting a 3D base out fast, which further reduces the case for paying for a tool Blender already matched for free.",
-        "augmentFr": "Modo profitait surtout de son flux de modélisation et de rendu rapide. L'IA générative (Meshy, Tripo) attaque exactement ce terrain : sortir une base 3D vite, ce qui réduit encore l'intérêt de payer pour un outil que Blender égalait déjà gratuitement.",
-        "replaceEn": "Replace Modo with an AI? Not directly, but the double pressure of Blender (free) and generative 3D (fast) makes Modo increasingly hard to justify, unless you're attached to its specific workflow. Verdict: already challenged by free tools, even more so by AI.",
-        "replaceFr": "Remplacer Modo par une IA ? Pas directement, mais la double pression de Blender (gratuit) et de la 3D générative (rapide) rend Modo de plus en plus difficile à justifier, sauf attachement à son flux spécifique. Verdict : déjà challengé par le gratuit, encore plus par l'IA."
-      },
-      "metaDescription": "Modo (Foundry) en 2026 : logiciel 3D de modélisation et rendu. Prix réels et pourquoi Blender (gratuit) le concurrence. Le verdict ToolTrim."
-    },
-    "alternatives": [
-      "blender",
-      "cinema-4d",
-      "maya"
-    ],
-    "articles": [],
-    "freeAlternative": "blender",
-    "tool_type": "metier",
-    "substitutable": true,
-    "host_app": null,
-    "bundle_parent": null,
-    "verticals": [
-      "creative"
-    ],
-    "functional_needs": [
-      "3d",
-      "modelisation-3d"
-    ],
-    "ia_use_case": null,
-    "betterAlternative": {
-      "tool": "blender",
-      "reason": "Blender modélise et rend gratuitement à un niveau désormais comparable, ce qui rend Modo difficile à justifier pour la plupart des usages.",
-      "saving": null,
-      "performanceGain": null
-    },
-    "migrationGuide": null,
-    "downgradePlan": null,
-    "prescription_quality": "question",
-    "prescription_output": null,
-    "prescription_block_reasons": [],
-    "prescription_context_questions": [],
-    "pricing_v5": {
-      "cautions": [
-        "Abonnement ~599$/an (59$/mois) ; bascule abonnement-only d'ici 2027"
-      ],
-      "verified_on": "2026-06-17",
-      "source_domain": "foundry.com",
-      "usage_sensitive": false,
-      "compare_plan_kind": "subscription",
-      "compare_plan_name": "Modo (annuel)",
-      "price_reliability": "high",
-      "location_sensitive": false,
-      "official_source_url": "https://www.foundry.com/products/modo",
-      "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 50
-    },
-    "substitution_cluster_v2": "3d-software",
-    "ogImageUrl": "https://www.foundry.com/sites/default/files/2024-11/EOL%20Modo%20-%20600x320.jpg",
-    "description": "Modo, c'est le logiciel 3D de Foundry, surtout réputé pour sa modélisation polygonale rapide et intuitive et pour son moteur de rendu intégré de qualité. Il a longtemps été un chouchou du design produit, de la pub et du game art, apprécié pour son confort de modélisation là où Maya ou 3ds Max peuvent sembler rigides.\n\nCôté prix, c'est un abonnement autour de 599$/an (ou 59$/mois), plus accessible que les gros Autodesk mais plus cher que la gratuité de Blender. Foundry a annoncé une bascule complète en abonnement d'ici 2027.\n\nLe vrai sujet pour Modo en 2026, c'est sa position face à Blender. Blender, gratuit, a énormément progressé en modélisation et en rendu (Cycles), au point de grignoter le terrain de Modo. Modo reste un excellent modeleur avec un flux agréable, mais il devient difficile à recommander en priorité face à un Blender gratuit ou à un Cinema 4D pour le motion. Il garde du sens pour qui aime spécifiquement son ergonomie de modélisation.",
-    "decision_policy_v3": null,
-    "force_silence": false
-  },
-  {
     "id": "mojo",
     "slug": "mojo",
     "name": "Mojo",
@@ -133093,145 +132807,6 @@
       "requires_context_questions": true
     },
     "force_silence": false
-  },
-  {
-    "id": "sendinblue",
-    "name": "Sendinblue",
-    "shortDescription": "Logiciel d’automatisation marketing et emailing.",
-    "description": "Sendinblue, c'est logiciel d’automatisation marketing et emailing. À partir de 5€/mois. Pensé pour les e-commerçants et les fondateurs SaaS.\n\nSpécialisé en email marketing, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 5€/mois.",
-    "category": "email-productivity",
-    "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "5€/mois pour version Pro"
-    },
-    "website": "https://sendinblue.com",
-    "affiliateLink": "https://sendinblue.com",
-    "pros": [
-      "Spécialisé en email marketing",
-      "Interface professionnelle"
-    ],
-    "cons": [
-      "Prix à vérifier selon usage"
-    ],
-    "bestFor": [
-      "writer",
-      "consultant",
-      "creator"
-    ],
-    "covers": [
-      "email-marketing"
-    ],
-    "freeAlternative": null,
-    "soloRelevance": "high",
-    "teamRelevance": "medium",
-    "defaultMonthlyPrice": 5,
-    "pricingTiers": {
-      "free": "Fonctionnalités de base",
-      "paid": "Toutes les fonctionnalités"
-    },
-    "relevantFor": [
-      "writer",
-      "consultant",
-      "creator"
-    ],
-    "verdict": {
-      "keepIf": [
-        "Usage régulier",
-        "Fonctionnalités essentielles"
-      ],
-      "avoidIf": [
-        "Usage ponctuel",
-        "Budget serré"
-      ],
-      "threshold": "Dès que l'outil vous fait gagner plus de 5€/mois"
-    },
-    "alternatives": [],
-    "seo": {
-      "metaDescription": "Sendinblue : Logiciel d’automatisation marketing et emailing. Découvrez si cet outil vaut le coup pour votre activité freelance."
-    },
-    "articles": [],
-    "tool_type": "satellite",
-    "substitutable": true,
-    "verticals": [
-      "ecommercant",
-      "fondateur-saas",
-      "coach-formateur"
-    ],
-    "functional_needs": [
-      "email-marketing"
-    ],
-    "betterAlternative": null,
-    "migrationGuide": null,
-    "bundle_parent": null,
-    "host_app": null,
-    "ia_use_case": null,
-    "slug": "sendinblue",
-    "shortDescriptionEn": "Marketing automation and emailing software.",
-    "longDescription": "Sendinblue, c'est logiciel d’automatisation marketing et emailing. À partir de 5€/mois. Pensé pour les e-commerçants et les fondateurs SaaS.\n\nSpécialisé en email marketing, et interface professionnelle. Gain de temps estimé : 3h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 5€/mois.",
-    "longDescriptionEn": "Sendinblue is marketing automation and emailing software. Starting at €5/month. Built for e-commerce sellers and SaaS founders.\n\nSpecialized in email marketing, and professional interface. Estimated time saving: 3h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: prix à vérifier selon usage. As soon as the tool saves you more than €5/month.",
-    "pricingEn": {
-      "free": "Core features",
-      "paid": "€5/month for the Pro version"
-    },
-    "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
-      "source_domain": "sendinblue.com",
-      "usage_sensitive": false,
-      "compare_plan_kind": "seat",
-      "compare_plan_name": "Entry paid plan",
-      "price_reliability": "low",
-      "location_sensitive": false,
-      "official_source_url": "https://sendinblue.com",
-      "verification_status": "official_site_only",
-      "compare_price_monthly_eur": 5
-    },
-    "websiteUrl": "https://sendinblue.com",
-    "logo": "",
-    "verdictEn": {
-      "keepIf": [
-        "Regular use",
-        "Essential features"
-      ],
-      "avoidIf": [
-        "Occasional use",
-        "Tight budget"
-      ],
-      "threshold": "As soon as the tool saves you more than €5/month"
-    },
-    "prosEn": [
-      "Specialized in email marketing",
-      "Professional interface"
-    ],
-    "consEn": [
-      "Prix à vérifier selon usage"
-    ],
-    "useCases": [],
-    "useCasesEn": null,
-    "personas": [],
-    "timeGainedHoursPerMonth": 3,
-    "downgradePlan": null,
-    "prescription_quality": "question",
-    "prescription_output": null,
-    "prescription_block_reasons": [
-      "cluster-trop-large"
-    ],
-    "prescription_context_questions": [
-      "contact_volume",
-      "deliverability_requirement",
-      "multichannel_requirement"
-    ],
-    "substitution_cluster_v2": "email-outreach",
-    "decision_policy_v3": {
-      "auto_cancel_allowed": true,
-      "auto_replace_allowed": true,
-      "default_decision_lane": "review_then_prescribe",
-      "auto_downgrade_allowed": true,
-      "never_auto_cancel_reason": null,
-      "requires_context_questions": true
-    },
-    "force_silence": false,
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/sendinblue.jpg"
   },
   {
     "id": "sentry",

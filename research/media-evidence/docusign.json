@@ -1,0 +1,7 @@
+{
+  "slug": "docusign",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": { "official_media_found": true, "official_pages_checked": ["https://www.docusign.com/"] },
+  "items": [{ "kind": "image", "url": "https://images.ctfassets.net/0jnmtsdzg6p5/4GSPcvcpIZpsXsZ7F0EXTW/e83c17556674508addba7639c46fa6dd/ds-iam-og-image.png", "source_page_url": "https://www.docusign.com/", "official": true }]
+}

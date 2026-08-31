@@ -1,0 +1,7 @@
+{
+  "slug": "darktable",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": { "official_media_found": true, "official_pages_checked": ["https://www.darktable.org/"] },
+  "items": [{ "kind": "image", "url": "https://www.darktable.org/images/darktable-logo-only-512w.png", "source_page_url": "https://www.darktable.org/", "official": true }]
+}

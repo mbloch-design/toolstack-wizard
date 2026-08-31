@@ -206,6 +206,8 @@ export const AppRoutes = () => (
       <Route path="selector/results" element={<ResultsPage />} />
       <Route path="tools" element={<ToolsPage />} />
       <Route path="tool/are-na/*" element={<RedirectCanonicalToolSlug />} />
+      <Route path="tool/sendinblue/*" element={<RedirectCanonicalToolSlug />} />
+      <Route path="tool/clearbit/*" element={<RedirectCanonicalToolSlug />} />
       <Route path="tool/:slug" element={<ToolDetailPage />} />
       <Route path="tool/:slug/prix" element={<LocalizedToolSubpage subpage="prix" />} />
       <Route path="tool/:slug/pricing" element={<LocalizedToolSubpage subpage="pricing" />} />
@@ -289,14 +291,19 @@ const App = () => (
 /** Redirect unlocalized tool URLs to the international English edition. */
 function RedirectToolToEn() {
   const { slug } = useParams();
-  return <Navigate to={`/en/tool/${slug === "are-na" ? "arena" : slug}`} replace />;
+  const canonical = { "are-na": "arena", sendinblue: "brevo", clearbit: "hubspot" }[slug || ""] || slug;
+  return <Navigate to={`/en/tool/${canonical}`} replace />;
 }
 
 function RedirectCanonicalToolSlug() {
   const { lang } = useParams();
   const location = useLocation();
-  const suffix = location.pathname.split("/tool/are-na")[1] || "";
-  return <Navigate to={`/${lang || "en"}/tool/arena${suffix}`} replace />;
+  const redirects = { "are-na": "arena", sendinblue: "brevo", clearbit: "hubspot" };
+  const legacySlug = location.pathname.split("/tool/")[1]?.split("/")[0] || "";
+  const canonical = redirects[legacySlug];
+  if (!canonical) return <Navigate to={`/${lang || "en"}/tools`} replace />;
+  const suffix = location.pathname.split(`/tool/${legacySlug}`)[1] || "";
+  return <Navigate to={`/${lang || "en"}/tool/${canonical}${suffix}`} replace />;
 }
 
 /** Redirect /fr/outils/:slug → /fr/tool/:slug */

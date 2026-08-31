@@ -5220,64 +5220,6 @@
       "timeGainedHoursPerMonth": 3
     },
     {
-      "id": "clearbit",
-      "name": "Clearbit",
-      "shortDescription": "Outil d’enrichissement de données et insights pour marketing et ventes.",
-      "description": "Outil d’enrichissement de données et insights pour marketing et ventes.",
-      "category": "email-productivity",
-      "pricing": {
-        "free": "Fonctionnalités de base",
-        "paid": "15€/mois pour version Pro"
-      },
-      "website": "https://clearbit.com",
-      "affiliateLink": "https://clearbit.com",
-      "pros": [
-        "Spécialisé en data enrichment",
-        "Interface professionnelle"
-      ],
-      "cons": [
-        "Prix à vérifier selon usage"
-      ],
-      "bestFor": [
-        "all"
-      ],
-      "covers": [
-        "data enrichment"
-      ],
-      "freeAlternative": null,
-      "soloRelevance": "high",
-      "teamRelevance": "medium",
-      "defaultMonthlyPrice": 15,
-      "pricingTiers": {
-        "free": "Fonctionnalités de base",
-        "paid": "Toutes les fonctionnalités"
-      },
-      "relevantFor": [
-        "all"
-      ],
-      "verdict": {
-        "keepIf": [
-          "Usage régulier",
-          "Fonctionnalités essentielles"
-        ],
-        "avoidIf": [
-          "Usage ponctuel",
-          "Budget serré"
-        ],
-        "threshold": "Dès que l'outil vous fait gagner plus de 15€/mois"
-      },
-      "alternatives": [],
-      "seo": {
-        "metaDescription": "Clearbit : Outil d’enrichissement de données et insights pour marketing et ventes. Découvrez si cet outil vaut le coup pour votre activité freelance."
-      },
-      "articles": [],
-      "personas": [
-        "marc",
-        "theo"
-      ],
-      "timeGainedHoursPerMonth": 5
-    },
-    {
       "id": "clockshark",
       "name": "ClockShark",
       "shortDescription": "Application de feuilles de temps pour BTP ou entreprises de terrain.",
@@ -10585,68 +10527,6 @@
       "alternatives": [],
       "seo": {
         "metaDescription": "SEMrush : Plateforme SaaS de marketing digital et SEO. Découvrez si cet outil vaut le coup pour votre activité freelance."
-      },
-      "articles": [],
-      "personas": [
-        "sofia",
-        "theo"
-      ],
-      "timeGainedHoursPerMonth": 5
-    },
-    {
-      "id": "sendinblue",
-      "name": "Sendinblue",
-      "shortDescription": "Logiciel d’automatisation marketing et emailing.",
-      "description": "Logiciel d’automatisation marketing et emailing.",
-      "category": "email-productivity",
-      "pricing": {
-        "free": "Fonctionnalités de base",
-        "paid": "5€/mois pour version Pro"
-      },
-      "website": "https://sendinblue.com",
-      "affiliateLink": "https://sendinblue.com",
-      "pros": [
-        "Spécialisé en email marketing",
-        "Interface professionnelle"
-      ],
-      "cons": [
-        "Prix à vérifier selon usage"
-      ],
-      "bestFor": [
-        "writer",
-        "consultant",
-        "creator"
-      ],
-      "covers": [
-        "email marketing"
-      ],
-      "freeAlternative": null,
-      "soloRelevance": "high",
-      "teamRelevance": "medium",
-      "defaultMonthlyPrice": 5,
-      "pricingTiers": {
-        "free": "Fonctionnalités de base",
-        "paid": "Toutes les fonctionnalités"
-      },
-      "relevantFor": [
-        "writer",
-        "consultant",
-        "creator"
-      ],
-      "verdict": {
-        "keepIf": [
-          "Usage régulier",
-          "Fonctionnalités essentielles"
-        ],
-        "avoidIf": [
-          "Usage ponctuel",
-          "Budget serré"
-        ],
-        "threshold": "Dès que l'outil vous fait gagner plus de 5€/mois"
-      },
-      "alternatives": [],
-      "seo": {
-        "metaDescription": "Sendinblue : Logiciel d’automatisation marketing et emailing. Découvrez si cet outil vaut le coup pour votre activité freelance."
       },
       "articles": [],
       "personas": [

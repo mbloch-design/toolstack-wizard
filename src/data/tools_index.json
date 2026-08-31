@@ -2122,11 +2122,11 @@
     "slug": "anthropic",
     "name": "Anthropic API",
     "categoryId": "ai-general",
-    "shortDescription": "Intégrez les modèles Claude dans vos applications, agents et workflows métier.",
-    "shortDescriptionEn": "Integrate Claude models into applications, agents and business workflows.",
+    "shortDescription": "Anthropic API donne accès aux modèles Claude pour intégrer génération, raisonnement, analyse de documents et agents dans des applications.",
+    "shortDescriptionEn": "The Anthropic API provides access to Claude models for generation, reasoning, document analysis, and agent workflows in applications.",
     "pricing": {
-      "free": "",
-      "paid": "Haiku dès 1/5 $US par MTok entrée/sortie · Sonnet 2/10 $US · Opus 5/25 $US"
+      "free": "Aucun forfait API gratuit permanent confirmé. Des crédits d'essai peuvent être proposés selon le compte.",
+      "paid": "Claude Sonnet 5: 2 USD par million de tokens en entrée et 10 USD par million de tokens en sortie ; Claude Opus 4.8: 5 USD par million de tokens en entrée et 25 USD par million de tokens en sortie"
     },
     "defaultMonthlyPrice": 1,
     "affiliateLink": "https://platform.claude.com/",
@@ -2146,10 +2146,9 @@
       "dev-freelance"
     ],
     "relevantFor": [
-      "Développeurs",
       "Équipes produit",
-      "AI engineers",
-      "Startups SaaS"
+      "Développeurs",
+      "Équipes IA"
     ],
     "freeAlternative": "google-ai-studio",
     "substitutable": false,
@@ -2516,11 +2515,11 @@
     "slug": "arena",
     "name": "Are.na",
     "categoryId": "design-tools",
-    "shortDescription": "Veille visuelle et curation de références plus éditoriales que les plateformes d’inspiration classiques.",
-    "shortDescriptionEn": "Visual research and reference curation with a more editorial feel than classic inspiration platforms.",
+    "shortDescription": "Plateforme collaborative en ligne pour sauvegarder, organiser et découvrir du contenu (photos, notes, fichiers, liens web). Fonctionnalités de canaux éditables pour recherche et curation de contenu humain. Écosystème de réseaux actifs, sans algorithme de recommandation.",
+    "shortDescriptionEn": "Online collaborative platform for saving, organizing, and discovering content (photos, notes, files, web pages). Editable channels for human-curated research. Active community networks without algorithmic recommendations.",
     "pricing": {
-      "free": "Plan gratuit",
-      "paid": "Premium payant"
+      "free": "Plan gratuit avec limites de stockage ; Premium pour débloquer l'espace de stockage et fonctionnalités avancées.",
+      "paid": "Are.na Premium: Montants sur la page officielle"
     },
     "defaultMonthlyPrice": 5,
     "affiliateLink": "https://www.are.na",
@@ -6034,11 +6033,11 @@
     "slug": "carrd",
     "name": "Carrd",
     "categoryId": "nocode-web",
-    "shortDescription": "Créateur de sites one-page ultra-simple à 9$/an pour portfolio et landing page.",
-    "shortDescriptionEn": "Ultra-simple one-page site builder at $9/year for portfolio and landing page.",
+    "shortDescription": "Constructeur de pages de destination ultra-minimaliste. Création rapide de landing pages, micro-portfolios et sites d'une seule page, sans code. Cible les créateurs solo, freelances et micro-entreprises.",
+    "shortDescriptionEn": "Ultra-minimal landing page builder. Fast creation of single-page websites, micro-portfolios, and landing pages with no code. Targets solo creators, freelancers, and micro-businesses.",
     "pricing": {
-      "free": "Sites gratuits avec sous-domaine",
-      "paid": "Pro Standard 9$/an"
+      "free": "3 sites, tous les templates, branding Carrd en pied",
+      "paid": "Free: Gratuit (3 sites, branding Carrd) ; Pro Lite: $9 / année ; Pro Standard: $19 / année (domaine custom, formulaires, analytics) ; Pro Plus: $49 / année (toutes les fonctionnalités premium)"
     },
     "defaultMonthlyPrice": 1,
     "affiliateLink": "https://carrd.co",
@@ -6782,37 +6781,6 @@
       "Podcasteurs",
       "Monteurs audio",
       "Créateurs de contenu"
-    ],
-    "freeAlternative": null,
-    "substitutable": true,
-    "betterAlternative": null
-  },
-  {
-    "id": "clearbit",
-    "slug": "clearbit",
-    "name": "Clearbit",
-    "categoryId": "email-productivity",
-    "shortDescription": "Enrichissement de données B2B en temps réel, désormais intégré à HubSpot (Breeze Intelligence).",
-    "shortDescriptionEn": "Real-time B2B data enrichment, now integrated into HubSpot (Breeze Intelligence).",
-    "pricing": "Système à crédits dans HubSpot : 100 crédits ≈ 45-50$/mois ; ~1000 crédits ≈ 450$/mois. Pas d'essai gratuit.",
-    "defaultMonthlyPrice": 39.42,
-    "affiliateLink": "https://clearbit.com",
-    "websiteUrl": "https://clearbit.com",
-    "ogImageUrl": "/sharing/social-share-2.jpg",
-    "logo": "",
-    "tool_type": "satellite",
-    "host_app": null,
-    "bundle_parent": null,
-    "substitution_cluster_v2": "email-outreach",
-    "functional_needs": [
-      "data-enrichment"
-    ],
-    "verticals": [
-      "ecommercant",
-      "fondateur-saas"
-    ],
-    "relevantFor": [
-      "all"
     ],
     "freeAlternative": null,
     "substitutable": true,
@@ -8614,11 +8582,11 @@
     "slug": "darktable",
     "name": "darktable",
     "categoryId": "photo",
-    "shortDescription": "Workflow photo open source pour développement RAW, classement et ajustements colorimétriques.",
-    "shortDescriptionEn": "Open-source photography workflow for RAW development, organization and color adjustments.",
+    "shortDescription": "Logiciel open source gratuit pour le traitement et l'édition non-destructive de fichiers RAW. Fonctionne comme une chambre noire virtuelle (darkroom) avec gestion complète des workflows photo professionnels.",
+    "shortDescriptionEn": "Free open source software for non-destructive processing and editing of RAW files. Functions as a virtual darkroom with complete management of professional photo workflows.",
     "pricing": {
-      "free": "Open source.",
-      "paid": "Gratuit et open source."
+      "free": "Entièrement gratuit, sans limitations. Logiciel libre sous licence GNU General Public License v3.",
+      "paid": "Voir le tarif officiel."
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://www.darktable.org/",
@@ -9522,11 +9490,11 @@
     "slug": "docusign",
     "name": "DocuSign",
     "categoryId": "legal-contracts",
-    "shortDescription": "DocuSign aide à gérer signatures, contrats ou documents juridiques.",
-    "shortDescriptionEn": "DocuSign helps manage signatures, contracts, or legal documents.",
+    "shortDescription": "Plateforme leader de signature électronique et gestion des contrats offrant eSignature, Intelligent Agreement Management (IAM), et Contract Lifecycle Management (CLM). Support workflows, API, intégrations Salesforce/Workday.",
+    "shortDescriptionEn": "Leading platform for electronic signatures and contract management offering eSignature, Intelligent Agreement Management (IAM), and Contract Lifecycle Management (CLM). Supports workflows, APIs, and Salesforce/Workday integrations.",
     "pricing": {
-      "free": "Non communiqué",
-      "paid": "Sur devis / prix non public"
+      "free": "Essai gratuit ; pas de version gratuite permanente. Accès free trial 30 jours.",
+      "paid": "Personal: À partir de 10€/mois annualisé (15€ mensuel) - 5 enveloppes/mois ; Standard: 25€/user/mois annualisé (45€ mensuel) - 100 enveloppes/an ; Business Pro: 40€/user/mois annualisé (65€ mensuel) - 100 enveloppes/an + bulk send ; Enterprise: Prix personnalisé - tous les features avancés"
     },
     "defaultMonthlyPrice": 0,
     "affiliateLink": "https://www.docusign.com",
@@ -11257,11 +11225,11 @@
     "slug": "fathom-analytics",
     "name": "Fathom Analytics",
     "categoryId": "analytics",
-    "shortDescription": "Analytics web sans cookies, conforme RGPD, alternative à Google Analytics.",
-    "shortDescriptionEn": "Cookieless web analytics, GDPR compliant, Google Analytics alternative.",
+    "shortDescription": "Analytics web sans cookies, sans consentement banners. Respect GDPR nativement. Suive sources trafic, pages populaires, conversions, campagnes. Startup canadienne, pas de VC, pas de vente données.",
+    "shortDescriptionEn": "Cookie-free, GDPR-compliant web analytics. No consent banners needed. Track traffic sources, top pages, conversions, campaigns. Canadian startup, no VC, no data selling.",
     "pricing": {
-      "free": "Essai 30 jours",
-      "paid": "Starter 14$/mois (100k pageviews)"
+      "free": "Pas de version gratuite. Plans commencent à 14 $/mois pour 100k pageviews.",
+      "paid": "Starter: 14 $/mois pour 100k pageviews mensuels ; Growth: 24 $/mois pour 200k pageviews mensuels ; Pro: 44 $/mois pour 500k pageviews mensuels"
     },
     "defaultMonthlyPrice": 15,
     "affiliateLink": "https://usefathom.com",
@@ -22855,45 +22823,6 @@
     "betterAlternative": null
   },
   {
-    "id": "modo",
-    "slug": "modo",
-    "name": "Modo",
-    "categoryId": "creation",
-    "shortDescription": "Logiciel 3D Foundry de modélisation et rendu, apprécié pour le design produit.",
-    "shortDescriptionEn": "Foundry's 3D modeling and rendering app, loved for product design.",
-    "pricing": {
-      "free": "Essai gratuit",
-      "paid": "599$/an ou 59$/mois."
-    },
-    "defaultMonthlyPrice": 50,
-    "affiliateLink": "https://www.foundry.com/products/modo",
-    "websiteUrl": "https://www.foundry.com/products/modo",
-    "ogImageUrl": "https://www.foundry.com/sites/default/files/2024-11/EOL%20Modo%20-%20600x320.jpg",
-    "logo": "",
-    "tool_type": "metier",
-    "host_app": null,
-    "bundle_parent": null,
-    "substitution_cluster_v2": "3d-software",
-    "functional_needs": [
-      "3d",
-      "modelisation-3d"
-    ],
-    "verticals": [
-      "creative"
-    ],
-    "relevantFor": [
-      "designer"
-    ],
-    "freeAlternative": "blender",
-    "substitutable": true,
-    "betterAlternative": {
-      "tool": "blender",
-      "reason": "Blender modélise et rend gratuitement à un niveau désormais comparable, ce qui rend Modo difficile à justifier pour la plupart des usages.",
-      "saving": null,
-      "performanceGain": null
-    }
-  },
-  {
     "id": "mojo",
     "slug": "mojo",
     "name": "Mojo",
@@ -32884,43 +32813,6 @@
       "Agences digitales",
       "Gestionnaires réseaux sociaux",
       "Équipes marketing"
-    ],
-    "freeAlternative": null,
-    "substitutable": true,
-    "betterAlternative": null
-  },
-  {
-    "id": "sendinblue",
-    "slug": "sendinblue",
-    "name": "Sendinblue",
-    "categoryId": "email-productivity",
-    "shortDescription": "Logiciel d’automatisation marketing et emailing.",
-    "shortDescriptionEn": "Marketing automation and emailing software.",
-    "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "5€/mois pour version Pro"
-    },
-    "defaultMonthlyPrice": 5,
-    "affiliateLink": "https://sendinblue.com",
-    "websiteUrl": "https://sendinblue.com",
-    "ogImageUrl": "https://tooltrim.com/og-screenshots/sendinblue.jpg",
-    "logo": "",
-    "tool_type": "satellite",
-    "host_app": null,
-    "bundle_parent": null,
-    "substitution_cluster_v2": "email-outreach",
-    "functional_needs": [
-      "email-marketing"
-    ],
-    "verticals": [
-      "ecommercant",
-      "fondateur-saas",
-      "coach-formateur"
-    ],
-    "relevantFor": [
-      "writer",
-      "consultant",
-      "creator"
     ],
     "freeAlternative": null,
     "substitutable": true,

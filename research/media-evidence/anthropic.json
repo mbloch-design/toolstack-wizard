@@ -1,0 +1,15 @@
+{
+  "slug": "anthropic",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": {
+    "official_media_found": true,
+    "official_pages_checked": ["https://www.anthropic.com/claude/api"]
+  },
+  "items": [{
+    "kind": "image",
+    "url": "https://cdn.prod.website-files.com/6889473510b50328dbb70ae6/68c469d18f61fb5c21c81781_og-claude-api.jpg",
+    "source_page_url": "https://www.anthropic.com/claude/api",
+    "official": true
+  }]
+}

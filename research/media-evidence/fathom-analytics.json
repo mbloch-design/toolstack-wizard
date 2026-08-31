@@ -1,0 +1,7 @@
+{
+  "slug": "fathom-analytics",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": { "official_media_found": true, "official_pages_checked": ["https://usefathom.com/"] },
+  "items": [{ "kind": "image", "url": "https://usefathom.com/assets/src/share-usefathom.com.jpg", "source_page_url": "https://usefathom.com/", "official": true }]
+}

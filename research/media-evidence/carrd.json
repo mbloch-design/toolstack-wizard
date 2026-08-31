@@ -1,0 +1,7 @@
+{
+  "slug": "carrd",
+  "verified_on": "2026-08-31",
+  "mode": "sourced",
+  "discovery": { "official_media_found": true, "official_pages_checked": ["https://carrd.co"] },
+  "items": [{ "kind": "image", "url": "https://carrd.co/assets/images/etc/share.jpg", "source_page_url": "https://carrd.co", "official": true }]
+}
