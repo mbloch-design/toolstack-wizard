@@ -20252,25 +20252,51 @@ section[id] {
   gap: 8px;
   flex: 0 0 auto;
 }
-/* Le tri se distingue des filtres : contour plutôt que fond plein, il ne
-   restreint rien et n'a donc pas à ressembler à une pilule de filtre. */
 .tt-catalog-sort-control {
   position: relative;
   display: inline-flex;
-  flex: 0 0 auto;
+  flex: 0 0 40px;
   align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-circle);
+  color: var(--color-text);
+  cursor: pointer;
+  transition: color 140ms ease-out, background-color 140ms ease-out;
+}
+
+/* Page outils uniquement : le tri y est un menu libellé, pas une pastille
+   muette. Les autres catalogues partagent la classe et n'ont pas la place. */
+.tt-catalog-page .tt-catalog-toolbar-tail .tt-catalog-sort-control {
   gap: 6px;
+  width: auto;
   height: 38px;
   padding: 0 12px 0 16px;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-pill);
   background: var(--color-surface);
-  color: var(--color-text);
-  cursor: pointer;
   transition: border-color 140ms ease-out;
 }
-.tt-catalog-sort-control:hover,
-.tt-catalog-sort-control:focus-within { border-color: var(--color-border-strong); }
+.tt-catalog-page .tt-catalog-toolbar-tail .tt-catalog-sort-control:hover,
+.tt-catalog-page .tt-catalog-toolbar-tail .tt-catalog-sort-control:focus-within {
+  background: var(--color-surface);
+  border-color: var(--color-border-strong);
+}
+.tt-catalog-page .tt-catalog-toolbar-tail .tt-catalog-sort-select {
+  position: static;
+  width: auto;
+  min-width: 0;
+  height: 38px;
+  padding: 0;
+  opacity: 1;
+  background: transparent;
+  color: inherit;
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-card-body);
+  font-weight: 600;
+  cursor: pointer;
+}
 
 /* Panneau « Plus de filtres ».
    L'en-tête ne défile pas : « Tout effacer » doit rester sous la main même au
@@ -20753,28 +20779,6 @@ section[id] {
 .tt-catalog-page .tt-catalog-toolbar.sk-mobile-trigger-row {
   flex-wrap: nowrap;
 }
-/* Les flèches de défilement occupent leur propre place au lieu d'être posées
-   sur la rangée : en absolu elles masquaient en permanence un libellé de
-   catégorie, qui paraissait tronqué et restait inatteignable au clic.
-   L'estompe est portée par le contenu lui-même, via un masque, pour signaler
-   qu'il continue au-delà du bord sans jamais rien recouvrir. */
-.tt-catalog-topic-rail {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  flex: 1 1 auto;
-  min-width: 0;
-}
-.tt-catalog-topic-rail[data-can-scroll-left="true"] .tt-catalog-topic-nav {
-  mask-image: linear-gradient(90deg, transparent, #000 40px);
-}
-.tt-catalog-topic-rail[data-can-scroll-right="true"] .tt-catalog-topic-nav {
-  mask-image: linear-gradient(270deg, transparent, #000 40px);
-}
-.tt-catalog-topic-rail[data-can-scroll-left="true"][data-can-scroll-right="true"] .tt-catalog-topic-nav {
-  mask-image: linear-gradient(90deg, transparent, #000 40px calc(100% - 40px), transparent);
-}
 .tt-catalog-topic-nav {
   display: flex;
   align-items: center;
@@ -20786,33 +20790,6 @@ section[id] {
   scrollbar-width: none;
 }
 .tt-catalog-topic-nav::-webkit-scrollbar { display: none; }
-.tt-catalog-topic-scroll {
-  position: relative;
-  z-index: 3;
-  display: grid;
-  flex: 0 0 36px;
-  width: 36px;
-  height: 36px;
-  place-items: center;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-circle);
-  background: color-mix(in srgb, var(--color-surface) 94%, transparent);
-  color: var(--color-text);
-  cursor: pointer;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  transition: border-color 140ms ease-out, background-color 140ms ease-out;
-}
-.tt-catalog-topic-scroll--left { order: -1; }
-.tt-catalog-topic-scroll--right { order: 1; }
-.tt-catalog-topic-scroll:hover {
-  border-color: var(--color-border-strong);
-  background: var(--color-surface);
-}
-.tt-catalog-topic-scroll:focus-visible {
-  outline: 2px solid var(--color-text);
-  outline-offset: 2px;
-}
 .tt-catalog-topic {
   display: inline-flex;
   flex: 0 0 auto;
@@ -20840,47 +20817,6 @@ section[id] {
 }
 .tt-catalog-topic--active {
   font-weight: 620;
-}
-.tt-catalog-topic-label {
-  display: inline-grid;
-}
-.tt-catalog-topic-label::after {
-  content: attr(data-label);
-  grid-area: 1 / 1;
-  height: 0;
-  overflow: hidden;
-  font-weight: 620;
-  pointer-events: none;
-  visibility: hidden;
-}
-.tt-catalog-tree-back {
-  display: inline-grid;
-  flex: 0 0 40px;
-  width: 40px;
-  height: 40px;
-  place-items: center;
-  border: 0;
-  border-radius: var(--radius-circle);
-  background: var(--color-surface-soft);
-  color: var(--color-text);
-  cursor: pointer;
-  transition: background-color 140ms ease-out;
-}
-.tt-catalog-tree-back:hover {
-  background: var(--color-border);
-}
-.tt-catalog-tree-back:focus-visible {
-  outline: 2px solid var(--color-text);
-  outline-offset: 2px;
-}
-.tt-catalog-tree-branch {
-  flex: 0 0 auto;
-  margin-right: 4px;
-  color: var(--color-text);
-  font-family: var(--font-ui);
-  font-size: var(--tt-size-card-title);
-  font-weight: 650;
-  white-space: nowrap;
 }
 .tt-catalog-topic:focus-visible {
   outline: 2px solid var(--color-text);
@@ -20923,20 +20859,19 @@ section[id] {
    trois ronds de 40 px sans texte, dont un cachait un <select> transparent. */
 .tt-catalog-page .tt-catalog-inline-search-button {
   justify-content: center;
-  gap: 8px;
-  width: auto;
-  min-width: 0;
-  padding: 0 14px;
-  border-radius: var(--radius-pill);
+  width: 40px;
+  min-width: 40px;
+  padding: 0;
+  border-radius: var(--radius-circle);
   color: var(--color-text);
-  font-size: var(--tt-size-card-body);
-  font-weight: 600;
-  white-space: nowrap;
+  font-size: var(--tt-size-card-title);
 }
 .tt-catalog-page .tt-catalog-inline-search:not(.tt-catalog-inline-search--open) {
   flex: 0 0 auto;
   width: auto;
 }
+.tt-catalog-page .tt-catalog-inline-search-button > span,
+.tt-catalog-page .tt-catalog-filter-menu > summary > span:not(.tt-catalog-filter-count),
 .tt-catalog-page .sk-mobile-trigger > span {
   position: absolute;
   width: 1px;
@@ -20989,19 +20924,16 @@ section[id] {
    étiré sur l'icône : le contrôle était fonctionnel mais illisible, rien
    n'indiquait l'ordre appliqué. */
 .tt-catalog-page .tt-catalog-sort-select {
-  position: static;
-  width: auto;
-  min-width: 0;
+  position: absolute;
+  inset: 0;
+  width: 40px;
+  min-width: 40px;
   height: 40px;
   padding: 0;
   border: 0;
   border-radius: 0;
-  opacity: 1;
-  background: transparent;
-  color: inherit;
-  font-family: var(--font-ui);
-  font-size: var(--tt-size-card-body);
-  font-weight: 600;
+  opacity: 0;
+  font-size: 16px;
   cursor: pointer;
 }
 .tt-catalog-page .tt-catalog-sort-select:hover {
@@ -21028,21 +20960,21 @@ section[id] {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  width: auto;
+  gap: 0;
+  width: 40px;
   height: 40px;
-  padding: 0 14px;
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius-circle);
   color: var(--color-text);
   font-family: var(--font-ui);
-  font-size: var(--tt-size-card-body);
-  font-weight: 600;
-  white-space: nowrap;
+  font-size: var(--tt-size-card-title);
+  font-weight: 520;
   list-style: none;
   cursor: pointer;
 }
 .tt-catalog-filter-menu > summary .tt-catalog-filter-count {
-  position: static;
+  position: absolute;
+  top: 0;
+  right: -2px;
 }
 .tt-catalog-filter-menu > summary::-webkit-details-marker { display: none; }
 .tt-catalog-filter-menu > summary:hover {
@@ -21291,10 +21223,6 @@ section[id] {
     top: 78px;
     right: 16px;
     left: 16px;
-  }
-  .tt-catalog-topic-rail::before,
-  .tt-catalog-topic-rail::after {
-    width: 56px;
   }
 }
 
