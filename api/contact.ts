@@ -40,6 +40,14 @@ const hasValidBadgeToken = (token: unknown, badgeUrl: unknown, toolUrl: unknown)
 };
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
+  const requestOrigin = String(req.headers.origin || "");
+  if (/^http:\/\/(?:localhost|127\.0\.0\.1):\d+$/.test(requestOrigin)) {
+    res.setHeader("Access-Control-Allow-Origin", requestOrigin);
+    res.setHeader("Vary", "Origin");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+    res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+  }
+  if (req.method === "OPTIONS") return res.status(204).end();
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
@@ -82,7 +90,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     from: "ToolTrim Contact <contact@tooltrim.com>",
     to: "contact@tooltrim.com",
     replyTo: email,
-    subject: `${isToolSubmission ? "[Outil]" : "[Contact]"} ${String(subject).replace(/[\r\n]/g, " ")}`,
+    subject: `${isToolSubmission ? "[Soumission — étape 3/3]" : "[Contact]"} ${String(subject).replace(/[\r\n]/g, " ")}`,
     html: `
       <p><strong>De :</strong> ${escapeHtml(name)} &lt;${escapeHtml(email)}&gt;</p>
       <p><strong>Sujet :</strong> ${escapeHtml(subject)}</p>
