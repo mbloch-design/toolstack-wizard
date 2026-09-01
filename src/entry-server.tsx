@@ -24,6 +24,7 @@ import ComparesIndexPage from "@/pages/ComparesIndexPage";
 import AboutPage from "@/pages/AboutPage";
 import TransparencyPage from "@/pages/TransparencyPage";
 import ContactPage from "@/pages/ContactPage";
+import SubmitToolPage from "@/pages/SubmitToolPage";
 import ExplorerPage from "@/pages/ExplorerPage";
 
 export interface RenderedToolPage {
@@ -449,6 +450,34 @@ export async function renderContactPage(path: string): Promise<string> {
                 <Routes>
                   <Route path="/:lang" element={<LangLayout />}>
                     <Route path="contact" element={<ContactPage />} />
+                  </Route>
+                </Routes>
+              </Suspense>
+            </ErrorBoundary>
+          </StaticRouter>
+        </TooltipProvider>
+      </QueryClientProvider>
+    </HelmetProvider>,
+  );
+}
+
+export async function renderSubmitToolPage(path: string): Promise<string> {
+  const queryClient = new QueryClient();
+
+  return renderToString(
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <StaticRouter location={path}>
+            <ScrollToTop />
+            <DynamicCanonical />
+            <ErrorBoundary>
+              <Suspense fallback={null}>
+                <Routes>
+                  <Route path="/:lang" element={<LangLayout />}>
+                    <Route path="submit" element={<SubmitToolPage />} />
                   </Route>
                 </Routes>
               </Suspense>

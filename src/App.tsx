@@ -43,6 +43,7 @@ const AboutPage = lazy(() => import("@/pages/AboutPage"));
 const MethodologyPage = lazy(() => import("@/pages/MethodologyPage"));
 const TransparencyPage = lazy(() => import("@/pages/TransparencyPage"));
 const ContactPage = lazy(() => import("@/pages/ContactPage"));
+const SubmitToolPage = lazy(() => import("@/pages/SubmitToolPage"));
 const LegalNoticePage = lazy(() => import("@/pages/LegalNoticePage"));
 const PrivacyPolicyPage = lazy(() => import("@/pages/PrivacyPolicyPage"));
 const TermsPage = lazy(() => import("@/pages/TermsPage"));
@@ -254,6 +255,7 @@ export const AppRoutes = () => (
       <Route path="methodologie" element={<RedirectToTransparency />} />
       <Route path="transparency" element={<TransparencyPage />} />
       <Route path="contact" element={<ContactPage />} />
+      <Route path="submit" element={<SubmitToolPage />} />
       <Route path="legal-notice" element={<LegalNoticePage />} />
       <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
       <Route path="terms" element={<TermsPage />} />

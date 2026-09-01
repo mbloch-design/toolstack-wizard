@@ -13,7 +13,7 @@ import { catalogProjectionRowsToTool, type CatalogProjectionRow } from "./src/li
 const BASE = "https://tooltrim.com";
 const LANGS = ["fr", "en"];
 // /selector excluded from sitemap (noindex tunnel)
-const STATIC_PAGES = ["", "tools", "category", "guides", "stacks", "about", "methodology", "transparency", "contact", "explorer"];
+const STATIC_PAGES = ["", "tools", "category", "guides", "stacks", "about", "methodology", "transparency", "contact", "submit", "explorer"];
 const EXCLUDE_SITEMAP_PATTERNS = ["/selector/results", "/methodology"];
 // Fiches doublons consolidées : ces slugs redirigent (301) vers leur canonique
 // dans vercel.json. On ne les prérend pas et on ne les liste pas au sitemap
@@ -693,6 +693,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
         let renderAboutPage: ((path: string) => Promise<string>) | null = null;
         let renderTransparencyPage: ((path: string) => Promise<string>) | null = null;
         let renderContactPage: ((path: string) => Promise<string>) | null = null;
+        let renderSubmitToolPage: ((path: string) => Promise<string>) | null = null;
         let renderExplorerLandingPage: ((path: string) => Promise<string>) | null = null;
         let renderExplorerAroundPage: ((path: string) => Promise<string>) | null = null;
         const ssrEntryPath = path.resolve(__dirname, "dist-ssr/entry-server.js");
@@ -713,6 +714,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             renderAboutPage = ssrModule.renderAboutPage;
             renderTransparencyPage = ssrModule.renderTransparencyPage;
             renderContactPage = ssrModule.renderContactPage;
+            renderSubmitToolPage = ssrModule.renderSubmitToolPage;
             renderExplorerLandingPage = ssrModule.renderExplorerLandingPage;
             renderExplorerAroundPage = ssrModule.renderExplorerAroundPage;
           } catch (e) {
@@ -1435,6 +1437,8 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           { path: "/en/about",      lang: "en", title: "About ToolTrim | Independent SaaS auditor",               description: "ToolTrim is an independent SaaS tool comparator. Manually verified pricing, no commercial affiliation. Our mission: help you pay less." },
           { path: "/fr/contact",    lang: "fr", title: "Contactez ToolTrim | Questions et suggestions",           description: "Vous avez une question sur ToolTrim ou une suggestion d'outil ? Contactez-nous, on répond à tous les messages." },
           { path: "/en/contact",    lang: "en", title: "Contact ToolTrim | Questions and suggestions",            description: "Have a question about ToolTrim or a tool suggestion? Contact us, we reply to every message." },
+          { path: "/fr/submit",     lang: "fr", title: "Soumettre un outil à ToolTrim",                         description: "Soumettez votre outil à ToolTrim. Nous analysons son site, ses fonctionnalités et ses informations avant toute décision de publication." },
+          { path: "/en/submit",     lang: "en", title: "Submit a tool to ToolTrim",                             description: "Submit your tool to ToolTrim. We review its website, features, and information before any publication decision." },
           { path: "/fr/transparency",lang:"fr", title: "Transparence et méthodologie | ToolTrim",                 description: "Comment ToolTrim évalue les outils SaaS : critères de sélection, fréquence de mise à jour et politique d'indépendance éditoriale." },
           { path: "/en/transparency",lang:"en", title: "Transparency and methodology | ToolTrim",                 description: "How ToolTrim evaluates SaaS tools: selection criteria, update frequency and editorial independence policy." },
           { path: "/fr/explorer",   lang: "fr", title: "Explorer les outils SaaS par besoin | ToolTrim",          description: "Parcourez le catalogue SaaS de ToolTrim par objectif, catégorie ou workflow, et composez une stack adaptée à votre façon de travailler." },
@@ -1478,6 +1482,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             : sp.path.endsWith("/about") ? renderAboutPage
             : sp.path.endsWith("/transparency") ? renderTransparencyPage
             : sp.path.endsWith("/contact") ? renderContactPage
+            : sp.path.endsWith("/submit") ? renderSubmitToolPage
             : sp.path.endsWith("/explorer") ? renderExplorerLandingPage
             : null;
           if (sectionRenderer) {

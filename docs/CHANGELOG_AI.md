@@ -4088,3 +4088,13 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Ajout d’une couche centralisée `src/lib/icons.tsx` qui conserve les tailles, refs, attributs ARIA et contrats existants tout en définissant les équivalents Iconoir choisis par ToolTrim.
 - Suppression de Lucide des dépendances et synchronisation des lockfiles npm et Bun.
 - Validation TypeScript, contrôle des imports résiduels, `git diff --check` et build production complet avec fallback JSON pendant la restriction de quota Supabase.
+
+## 2026-09-01 · Page dédiée de soumission d’un outil
+
+- Création d’une route bilingue `/submit`, distincte de Contact, avec une explication claire de l’analyse effectuée avant toute décision de publication.
+- Tunnel en trois étapes : informations sur l’outil, installation et vérification du badge ToolTrim, puis récapitulatif et validation finale.
+- Vérification serveur du badge sur une page HTTPS publique du domaine présenté, avec blocage des destinations privées et jeton signé temporaire obligatoire pour l’envoi final.
+- Proposition d’un contact direct lorsqu’un éditeur souhaite convenir d’une autre solution que le badge.
+- Ajout d’un badge neutre « Choisir, pas empiler » utilisant le pictogramme officiel ToolTrim, sans revendiquer une sélection avant analyse.
+- Déclinaison Light/Dark au format 216 × 54, avec snippet HTML prêt à copier, attribut `alt` personnalisé au nom de l’outil et suivi des clics par paramètres UTM.
+- Renforcement de l’API avec validation des champs et URL, limites de longueur et échappement HTML des emails reçus.

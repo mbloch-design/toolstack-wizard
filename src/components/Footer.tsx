@@ -83,7 +83,7 @@ const Footer = () => {
               <span className="tt-footer-col-label">ToolTrim</span>
               <Link to={`${prefix}/about`}>{t("Qui est ToolTrim", "Who is ToolTrim")}</Link>
               <Link to={`${prefix}/contact`}>{t("Contact", "Contact")}</Link>
-              <Link to={`${prefix}/contact?subject=submit-tool`}>{t("Soumettre un outil", "Submit a tool")}</Link>
+              <Link to={`${prefix}/submit`}>{t("Soumettre un outil", "Submit a tool")}</Link>
             </nav>
 
           </div>
