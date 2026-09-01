@@ -30,10 +30,6 @@ const EMPTY_SUBMISSION: Submission = {
   verificationToken: "",
 };
 
-const LOCAL_DEMO_TOOL_URL = "https://example.com";
-const LOCAL_DEMO_BADGE_URL = "https://example.com/tooltrim-badge-test";
-const DEMO_ACCESS_KEY = "tt-badge-9c7e4d2a";
-
 const SubmitToolPage = () => {
   const { t, lang, prefix } = useLang();
   const [step, setStep] = useState<Step>(1);
@@ -46,22 +42,6 @@ const SubmitToolPage = () => {
   const infoFormRef = useRef<HTMLFormElement>(null);
   const badgeUrlRef = useRef<HTMLInputElement>(null);
   const sentProgressRef = useRef(new Set<string>());
-  const isDemoMode = typeof window !== "undefined"
-    && new URLSearchParams(window.location.search).get("preview") === DEMO_ACCESS_KEY;
-
-  useEffect(() => {
-    if (!isDemoMode) return;
-    setSubmission({
-      toolName: "ToolTrim Demo",
-      toolUrl: LOCAL_DEMO_TOOL_URL,
-      submitterRole: "founder",
-      name: "Test ToolTrim",
-      email: "demo@example.com",
-      message: "Parcours de démonstration de la soumission et de la vérification du badge ToolTrim.",
-      badgeUrl: LOCAL_DEMO_BADGE_URL,
-      verificationToken: "",
-    });
-  }, [isDemoMode]);
 
   useEffect(() => {
     setSeoTags({
@@ -141,9 +121,7 @@ const SubmitToolPage = () => {
     setStatus("saving");
     setError("");
     try {
-      if (!(isDemoMode && new URL(submission.toolUrl).origin === LOCAL_DEMO_TOOL_URL)) {
-        await sendProgressEmail(1);
-      }
+      await sendProgressEmail(1);
       setStep(2);
       setStatus("idle");
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -176,17 +154,6 @@ const SubmitToolPage = () => {
         "Enter a complete public URL beginning with https://.",
       ));
       badgeUrlRef.current?.focus();
-      return;
-    }
-    if (
-      isDemoMode
-      && new URL(submission.toolUrl).origin === LOCAL_DEMO_TOOL_URL
-      && submission.badgeUrl === LOCAL_DEMO_BADGE_URL
-    ) {
-      setSubmission((current) => ({ ...current, verificationToken: "local-demo" }));
-      setStatus("idle");
-      setStep(3);
-      window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
     setStatus("checking");
@@ -229,10 +196,6 @@ const SubmitToolPage = () => {
   };
 
   const submit = async () => {
-    if (isDemoMode && submission.verificationToken === "local-demo") {
-      setStatus("success");
-      return;
-    }
     setStatus("submitting");
     setError("");
     try {
