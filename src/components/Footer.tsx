@@ -313,6 +313,30 @@ const Footer = () => {
                   loading="lazy"
                 />
               </a>
+              <a
+                href="https://goodaitools.com/ai/tooltrim"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="tt-footer-badge"
+                aria-label="ToolTrim on Good AI Tools"
+              >
+                <img
+                  className="tt-footer-badge-light"
+                  src="https://goodaitools.com/assets/images/badge.png"
+                  alt="Good AI Tools"
+                  width={207}
+                  height={54}
+                  loading="lazy"
+                />
+                <img
+                  className="tt-footer-badge-dark"
+                  src="https://goodaitools.com/assets/images/badge-dark.png"
+                  alt="Good AI Tools"
+                  width={207}
+                  height={54}
+                  loading="lazy"
+                />
+              </a>
             </div>
           </div>
         </div>
