@@ -353,6 +353,30 @@ const Footer = () => {
                   loading="lazy"
                 />
               </a>
+              <a
+                href="https://linksalad.me/projects/tooltrim?utm_source=badge"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="tt-footer-badge"
+                aria-label="ToolTrim on LinkSalad"
+              >
+                <img
+                  className="tt-footer-badge-light"
+                  src="https://linksalad.me/images/badges/featured-on-light.svg"
+                  alt="Featured on LinkSalad"
+                  width={150}
+                  height={44}
+                  loading="lazy"
+                />
+                <img
+                  className="tt-footer-badge-dark"
+                  src="https://linksalad.me/images/badges/featured-on-dark.svg"
+                  alt="Featured on LinkSalad"
+                  width={150}
+                  height={44}
+                  loading="lazy"
+                />
+              </a>
             </div>
           </div>
         </div>
