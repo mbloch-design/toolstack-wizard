@@ -210,6 +210,7 @@ const SubmitToolPage = () => {
           subject: t("Soumission d'un outil", "Tool submission"),
           submissionType: "tool",
           badgeReview: true,
+          lang,
         }),
       });
       if (!response.ok) throw new Error("submit_failed");
