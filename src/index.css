@@ -8217,12 +8217,15 @@
      a bordered rounded card, cover image on top, heading below. Cleaner and
      far more scannable than the giant poster name it replaces. ── */
   .td-hero-card {
-    border: 1px solid var(--color-border);
+    border: 0;
     border-radius: var(--tt-surface-radius-panel);
     overflow: hidden;
-    background: var(--color-surface);
+    background: color-mix(in srgb, var(--color-surface-soft) 94%, var(--color-text));
+    box-shadow: 0 10px 30px color-mix(in srgb, var(--color-text) 5%, transparent);
   }
-  @media (min-width: 1101px) {
+  /* Keep the identity visible while reading on both tablet and desktop.
+     768px and below retain the simpler non-sticky mobile flow. */
+  @media (min-width: 769px) {
     .td-page-grid { --td-hero-compact-h: 80px; }
     .td-page-grid .td-hero {
       position: sticky;
@@ -8304,13 +8307,22 @@
     }
     .td-hero.is-compact .td-hero-heading {
       min-width: 0;
+      min-height: var(--td-hero-compact-h);
+      height: var(--td-hero-compact-h);
       padding: 12px 20px;
+      box-sizing: border-box;
     }
     .td-hero.is-compact .td-hero-identity-grid {
       grid-template-columns: 56px minmax(0, 1fr) auto;
       gap: 16px;
+      height: 56px;
     }
-    .td-hero.is-compact .td-hero-name-block { height: 56px; }
+    .td-hero.is-compact .td-hero-name-block {
+      grid-template-rows: 34px 20px;
+      gap: 0;
+      height: 56px;
+      overflow: hidden;
+    }
     .td-hero.is-compact .td-hero-cat {
       font-size: 16px;
       font-weight: 500;
@@ -8365,7 +8377,8 @@
   .td-hero-heading {
     display: grid;
     align-content: center;
-    padding: 20px;
+    min-height: 156px;
+    padding: clamp(28px, 3vw, 38px);
     border-radius: 10px;
   }
   @media (max-width: 640px) {
@@ -8377,26 +8390,36 @@
   }
   .td-hero-identity-grid {
     display: grid;
-    grid-template-columns: 56px minmax(0, 1fr) auto;
+    grid-template-columns: 72px minmax(0, 1fr) auto;
     align-items: center;
-    gap: 16px;
+    gap: 24px;
     min-width: 0;
   }
   .td-hero-name-block {
     display: grid;
-    grid-template-rows: 36px 20px;
+    grid-template-rows: auto auto;
+    gap: 7px;
     align-self: center;
-    height: 56px;
+    height: auto;
     min-width: 0;
   }
   .td-hero-logo {
     display: grid;
     place-items: center;
-    width: 56px;
-    height: 56px;
+    width: 72px;
+    height: 72px;
     flex: 0 0 auto;
     overflow: hidden;
     border-radius: var(--radius-md);
+    border: 0;
+    background: var(--color-surface);
+    box-shadow: 0 8px 24px color-mix(in srgb, var(--color-text) 6%, transparent);
+  }
+  .td-hero-logo-image {
+    width: 58px !important;
+    height: 58px !important;
+    min-width: 58px !important;
+    min-height: 58px !important;
   }
   .td-hero-logo-image { transition: width 220ms ease-out, height 220ms ease-out; }
   .td-hero-site-link {
@@ -8404,23 +8427,29 @@
     align-items: center;
     justify-content: center;
     gap: 7px;
-    min-height: 40px;
-    padding: 0 16px;
-    border: 1px solid color-mix(in srgb, hsl(var(--primary)) 24%, var(--color-border));
+    min-height: 50px;
+    padding: 0 22px;
+    border: 0;
     border-radius: var(--radius-pill);
     background: var(--color-surface);
-    color: hsl(var(--primary));
+    color: var(--color-text);
     font-family: Inter, system-ui, arial, sans-serif;
-    font-size: 14px;
-    font-weight: 400;
+    font-size: 15px;
+    font-weight: 600;
     line-height: 20px;
     letter-spacing: normal;
     text-decoration: none;
-    transition: border-color 140ms ease-out, background-color 140ms ease-out;
+    box-shadow: 0 6px 18px color-mix(in srgb, var(--color-text) 9%, transparent);
+    transition: transform 160ms ease-out, border-color 160ms ease-out, background-color 160ms ease-out, box-shadow 160ms ease-out;
   }
   .td-hero-site-link:hover {
-    border-color: color-mix(in srgb, hsl(var(--primary)) 48%, var(--color-border));
-    background: color-mix(in srgb, hsl(var(--primary)) 6%, var(--color-surface));
+    background: color-mix(in srgb, var(--color-surface) 92%, var(--color-bg));
+    box-shadow: 0 9px 22px color-mix(in srgb, var(--color-text) 12%, transparent);
+    transform: translateY(-1px);
+  }
+  .td-hero-site-link:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 3px;
   }
   .td-hero-site-link svg { width: 14px; height: 14px; }
   .td-hero-cat {
@@ -8439,8 +8468,8 @@
   .td-hero-cat svg { display: none; }
   .td-hero-h1 {
     font-family: var(--font-ui);
-    font-size: 30px;
-    font-weight: 820;
+    font-size: clamp(34px, 3vw, 42px);
+    font-weight: 700;
     letter-spacing: -0.05em;
     line-height: 1;
     color: var(--color-text);
@@ -8454,8 +8483,8 @@
     }
     .td-hero-logo { width: 52px; height: 52px; }
     .td-hero-name-block {
-      grid-template-rows: 34px 18px;
-      height: 52px;
+      grid-template-rows: auto auto;
+      height: auto;
     }
     .td-hero-logo-image {
       width: 52px !important;
@@ -8470,8 +8499,8 @@
   }
   .td-hero-desc {
     font-family: var(--font-ui);
-    font-size: 1.05rem;
-    line-height: 1.5;
+    font-size: 1.08rem;
+    line-height: 1.42;
     letter-spacing: -0.015em;
     color: color-mix(in srgb, var(--color-text) 80%, var(--color-muted));
     margin: 0;
@@ -28607,22 +28636,20 @@ section[id] {
    article page title and must keep the same proportions across every slug. */
 .td-hero-h1 {
   font-family: Inter, system-ui, arial, sans-serif;
-  font-size: 30px;
-  font-weight: 400;
-  line-height: 36px;
-  letter-spacing: -0.75px;
+  font-size: clamp(34px, 2.6vw, 40px);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.045em;
 }
 .td-hero-desc {
-  max-width: 100%;
+  max-width: 56ch;
   margin: 0;
-  overflow: hidden;
   font-family: Inter, system-ui, arial, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 20px;
+  line-height: 1.42;
   letter-spacing: -0.01em;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  text-wrap: pretty;
 }
 .td-hero-cat {
   font-size: 16px;
@@ -28633,13 +28660,13 @@ section[id] {
 }
 @media (max-width: 640px) {
   .td-hero-h1 {
-    font-size: 28px;
-    line-height: 34px;
+    font-size: 30px;
+    line-height: 1.08;
   }
   .td-hero-cat { font-size: 14px; }
   .td-hero-desc {
-    font-size: 13px;
-    line-height: 18px;
+    font-size: 14px;
+    line-height: 20px;
   }
 }
 
