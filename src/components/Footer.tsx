@@ -337,6 +337,22 @@ const Footer = () => {
                   loading="lazy"
                 />
               </a>
+              <a
+                href="https://aiagentsdirectory.com/agent/tooltrim"
+                target="_blank"
+                rel="noopener"
+                title="Discover ToolTrim on AI Agents Directory"
+                className="tt-footer-badge"
+                aria-label="ToolTrim on AI Agents Directory"
+              >
+                <img
+                  src="https://aiagentsdirectory.com/featured-badge.svg?v=2024"
+                  alt="ToolTrim - Featured on AI Agents Directory"
+                  width={200}
+                  height={50}
+                  loading="lazy"
+                />
+              </a>
             </div>
           </div>
         </div>
