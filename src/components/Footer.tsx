@@ -392,6 +392,21 @@ const Footer = () => {
                   loading="lazy"
                 />
               </a>
+              <a
+                href="https://startupfa.me/s/tooltrim?utm_source=tooltrim.com"
+                target="_blank"
+                rel="noopener"
+                className="tt-footer-badge"
+                aria-label="ToolTrim - Featured on Startup Fame"
+              >
+                <img
+                  src="https://startupfa.me/badges/featured-badge.webp"
+                  alt="ToolTrim - Featured on Startup Fame"
+                  width={171}
+                  height={54}
+                  loading="lazy"
+                />
+              </a>
             </div>
           </div>
         </div>
