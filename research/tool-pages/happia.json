@@ -1,0 +1,268 @@
+{
+  "schemaVersion": 1,
+  "slug": "happia",
+  "researchedOn": "2026-09-02",
+  "researcher": "Claude Code",
+  "status": "draft",
+  "identity": {
+    "officialName": "Happia",
+    "vendor": "HAPPIA (SAS), RCS Antibes 106 642 184, siège 8 Chemin du Val Fleuri, Cagnes-sur-Mer (06)",
+    "officialUrl": "https://happia.fr/",
+    "pricingUrl": "https://happia.fr/tarifs",
+    "docsUrl": "https://happia.fr/methodologie",
+    "changelogUrl": null
+  },
+  "claims": [
+    {
+      "id": "pricing.essentiel",
+      "value": "Essentiel : 79 €HT/mois (94,80 €TTC), sans engagement, résiliable en 1 clic",
+      "sourceUrl": "https://happia.fr/tarifs",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-02",
+      "evidence": "Bloc tarif 'ESSENTIEL' : '79€ HT / mois ; 94,80€ TTC · sans engagement'",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "pricing.pro",
+      "value": "Pro : 119 €HT/mois (142,80 €TTC), plan marqué 'le plus populaire'",
+      "sourceUrl": "https://happia.fr/tarifs",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-02",
+      "evidence": "Bloc tarif 'PRO' : '119€ HT / mois ; 142,80€ TTC · sans engagement'",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "pricing.premium",
+      "value": "Premium : 159 €HT/mois (190,80 €TTC)",
+      "sourceUrl": "https://happia.fr/tarifs",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-02",
+      "evidence": "Bloc tarif 'PREMIUM' : '159€ HT / mois ; 190,80€ TTC · sans engagement'",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "pricing.addon-etablissement",
+      "value": "Add-on multi-établissements (Premium uniquement) : +49 €HT/mois/site, jusqu'à 3 sites, +30 crédits Happy/site",
+      "sourceUrl": "https://happia.fr/tarifs",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-02",
+      "evidence": "Section 'ADD-ON PREMIUM · Établissement supplémentaire' : '+49€ HT / mois / site'",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "pricing.free-trial",
+      "value": "Essai gratuit 14 jours, accès complet au plan Pro, carte bancaire enregistrée, aucun prélèvement pendant l'essai, notification 3 jours avant, bascule automatique sur Pro si aucune action, résiliable en 1 clic",
+      "sourceUrl": "https://happia.fr/tarifs",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-02",
+      "evidence": "Encart '14 jours d'essai gratuit' en haut de la page tarifs",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "pricing.no-free-plan",
+      "value": "Pas de plan gratuit permanent",
+      "sourceUrl": "https://happia.fr/tarifs",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-02",
+      "evidence": "Seuls 3 plans payants listés (Essentiel/Pro/Premium) + un pré-audit gratuit hors abonnement, sans back-office",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "pricing.happy-credits",
+      "value": "Crédits agent IA Happy inclus : 50/mois (Essentiel), 100/mois (Pro), 150/mois (Premium) ; packs additionnels 9,99 €HT (+50), 16,99 €HT (+100), 34,99 €HT (+250)",
+      "sourceUrl": "https://happia.fr/tarifs",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-02",
+      "evidence": "Tableau comparatif + section 'Packs additionnels Happy'",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "capability.audit-sources",
+      "value": "L'audit couvre 11 sources pondérées en 3 piliers : Socle 45%, Autorité 35%, Fraîcheur 20%",
+      "sourceUrl": "https://happia.fr/methodologie",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-02",
+      "evidence": "Page méthodologie, section 'LE CADRE · 3 PILIERS' et 'LE RÉFÉRENTIEL · 11 SOURCES'",
+      "confidence": "high",
+      "volatility": "low"
+    },
+    {
+      "id": "capability.ai-engines",
+      "value": "5 moteurs IA mesurés en direct : ChatGPT, Gemini, Perplexity, Claude, Google AI Overview ; Copilot et Apple Intelligence suivis mais non mesurés en direct",
+      "sourceUrl": "https://happia.fr/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-02",
+      "evidence": "Bandeau homepage 'HAPPIA TE SUIT SUR 6 IA CONVERSATIONNELLES (5 MESURÉES EN DIRECT)'",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "capability.audit-frequency",
+      "value": "Audit complet 87 critères tous les 3 mois (Essentiel) ou tous les mois (Pro/Premium)",
+      "sourceUrl": "https://happia.fr/tarifs",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-02",
+      "evidence": "Tableau comparatif, ligne 'Fréquence de l'audit'",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "capability.review-response",
+      "value": "Réponse automatique aux avis Google publiée en direct via API en Pro/Premium ; autres plateformes (TripAdvisor, Trustpilot, Doctolib...) rédigées par Happy en copier-coller, pas de publication directe",
+      "sourceUrl": "https://happia.fr/tarifs",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-02",
+      "evidence": "Tableau comparatif, section 'GESTION DES AVIS'",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "capability.publishing",
+      "value": "Publication directe (OAuth) sur Google Business, Instagram et Facebook réservée à Pro et Premium ; Essentiel n'a pas la publication directe",
+      "sourceUrl": "https://happia.fr/tarifs",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-02",
+      "evidence": "Tableau comparatif, ligne 'Publication directe (Google Business, Insta, FB)'",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "capability.competitive-watch",
+      "value": "Veille concurrentielle (top 3 concurrents auto-détectés, snapshot mercredi et dimanche) réservée à Pro et Premium",
+      "sourceUrl": "https://happia.fr/tarifs",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-02",
+      "evidence": "Tableau comparatif, section 'VEILLE CONCURRENTIELLE'",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "capability.coach",
+      "value": "Coach personnalisé 1h/mois en visio (Google Meet/Zoom) avec Christophe Solczynski (fondateur) ou un expert GEO du réseau, réservé au plan Premium",
+      "sourceUrl": "https://happia.fr/tarifs",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-02",
+      "evidence": "FAQ tarifs, question 'Qu'est-ce que le coach personnalisé inclus en Premium ?'",
+      "confidence": "high",
+      "volatility": "low"
+    },
+    {
+      "id": "capability.blog",
+      "value": "Articles de blog générés depuis le back-office, 500 à 1200 mots, avec ou sans infographie, maillage interne vers les pages réelles du site, modifiables avant publication",
+      "sourceUrl": "https://happia.fr/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-02",
+      "evidence": "Section homepage 'MON BLOG'",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "identity.vendor",
+      "value": "Éditeur : HAPPIA, SAS au capital de 1 000 €, RCS Antibes 106 642 184, siège 8 Chemin du Val Fleuri, Bât. A, 06800 Cagnes-sur-Mer. Président : Christophe Solczynski. Directeur général : Thierry Lor. Hébergeur : Cloudflare Inc.",
+      "sourceUrl": "https://happia.fr/mentions-legales",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-02",
+      "evidence": "Page Mentions légales, mise à jour au 30 juin 2026",
+      "confidence": "high",
+      "volatility": "low"
+    },
+    {
+      "id": "identity.founder-background",
+      "value": "Christophe Solczynski (co-fondateur, président) : ex-directeur réseau 5 ans dans un groupe de restauration, puis exploitant de 7 commerces indépendants cédés pour se consacrer à Happia",
+      "sourceUrl": "https://happia.fr/equipe",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-02",
+      "evidence": "Page Équipe, biographie de Christophe Solczynski",
+      "confidence": "high",
+      "volatility": "low"
+    },
+    {
+      "id": "proof.google-aio-citation",
+      "value": "Happia affirme être cité par l'Aperçu IA de Google sur la requête 'pourquoi mon entreprise n'apparaît pas sur ChatGPT', en août 2026 (affirmation auto-rapportée, non vérifiée indépendamment lors de cette recherche)",
+      "sourceUrl": "https://happia.fr/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-02",
+      "evidence": "Section homepage 'PREUVE PAR L'EXEMPLE' : capture d'écran fournie par Happia, non recoupée sur Google en direct",
+      "confidence": "medium",
+      "volatility": "high"
+    },
+    {
+      "id": "proof.case-study-greensushi",
+      "value": "Cas client autoproclamé GreenSushi (restaurant japonais, Cannes, 869 avis Google) : score IA 46/100 → 68/100 projeté à 90 jours",
+      "sourceUrl": "https://happia.fr/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-02",
+      "evidence": "Section homepage 'CAS CLIENT · GREENSUSHI' : étude de cas propriétaire publiée par Happia, chiffres non audités par un tiers",
+      "confidence": "low",
+      "volatility": "high"
+    }
+  ],
+  "pricing": {
+    "originalCurrency": "EUR",
+    "billingContext": "mensuel, sans engagement",
+    "taxIncluded": false,
+    "freePlan": null,
+    "plans": [
+      { "name": "Essentiel", "priceHT": 79, "priceTTC": 94.80, "period": "mois" },
+      { "name": "Pro", "priceHT": 119, "priceTTC": 142.80, "period": "mois" },
+      { "name": "Premium", "priceHT": 159, "priceTTC": 190.80, "period": "mois" }
+    ],
+    "seatMinimum": null,
+    "usageLimits": [
+      "Crédits Happy mensuels : 50 (Essentiel) / 100 (Pro) / 150 (Premium)",
+      "Add-on établissement Premium : jusqu'à 3 sites supplémentaires, +49 €HT/mois chacun"
+    ],
+    "cautions": [
+      "Prix affichés hors taxes ; TVA française 20% en supplément",
+      "Pas de plan gratuit permanent : uniquement un essai de 14 jours carte enregistrée, bascule automatique en Pro si non résilié"
+    ]
+  },
+  "capabilities": [
+    "Audit de visibilité IA sur 11 sources (Google Business, site, avis, presse, annuaires, plateformes métier, réseaux, entité/identité, cohérence transversale)",
+    "Score de préparation pondéré (Socle/Autorité/Fraîcheur) distinct du score de citation réelle mesurée dans 5 moteurs IA",
+    "Agent IA 'Happy' : réponses aux avis, posts réseaux, bios, articles de blog, sous validation manuelle systématique",
+    "Calendrier éditorial et publication directe OAuth (Google Business, Instagram, Facebook) en Pro/Premium",
+    "Veille concurrentielle automatique (Pro/Premium) et coach humain mensuel (Premium)"
+  ],
+  "limitations": [
+    "Pas de plan gratuit durable",
+    "Publication directe des avis limitée à Google (API) ; autres plateformes en copier-coller manuel",
+    "Positionnement mono-marché francophone / commerce local, pas pensé pour l'e-commerce pur ou les marques nationales",
+    "Statistiques d'impact (score projeté, cas client) auto-rapportées par Happia, non auditées par un tiers indépendant identifié"
+  ],
+  "integrations": [
+    "Google Business Profile (API)",
+    "Instagram et Facebook (OAuth)",
+    "TripAdvisor, Trustpilot, Doctolib et autres plateformes d'avis (rédaction copier-coller, sans API)"
+  ],
+  "audiences": [
+    "Commerces locaux indépendants (restaurants, hôtels, beauté, artisans, santé/paramédical, professions libérales)",
+    "Multi-établissements jusqu'à 4 sites via l'add-on Premium"
+  ],
+  "useCases": [
+    "Obtenir un diagnostic chiffré de sa présence dans les réponses de ChatGPT/Gemini/Perplexity/Claude avant d'agir",
+    "Déléguer la rédaction des réponses aux avis Google",
+    "Planifier et publier un calendrier de contenu multi-réseaux depuis un seul back-office"
+  ],
+  "alternatives": ["google-search-console", "ahrefs"],
+  "editorialNotes": [
+    "Aucun concurrent direct 'visibilité IA pour commerce local' n'est encore présent dans le catalogue ToolTrim au 2026-09-02 : pas d'alternative équivalente sans en inventer une.",
+    "Brand24 (déjà catalogué, catégorie analytics) couvre la veille de marque généraliste, pas l'audit de citation IA ni la gestion d'avis locale : ne pas le présenter comme une alternative directe.",
+    "Décision (2026-09-02, sur demande explicite) : rattachement à des outils déjà catalogués sur l'axe SEO plutôt que création de nouvelles fiches concurrentes (Peec AI, Otterly.AI non catalogués, non ajoutés). Piste initiale 'seo-mode' écartée : bien que sa fiche mentionne une 'optimisation AEO pour ChatGPT, Gemini et Perplexity' (l'angle GEO le plus proche trouvé dans le catalogue), son slug figure dans DEPRECATED_TOOL_SLUGS (src/hooks/useSupabaseData.ts) au motif 'URL morte ou domaine parké' : ne jamais le proposer comme alternative active. 'google-search-console' (gratuit, officiel) et 'ahrefs' (payant, suite SEO généraliste) retenus comme les deux alternatives SEO traditionnelles les plus reconnaissables, avec la réserve explicite qu'aucun des deux ne couvre la citation IA ni la gestion d'avis locale.",
+    "Décision d'angle éditorial (2026-09-02) : l'audience native de Happia (commerçants locaux : restaurateurs, coiffeurs, artisans) ne correspond à aucun des 6 personas ToolTrim (créateur, consultant, designer, développeur, ops, solo) définis dans docs/tooltrim-strategy/00-positioning.md. Un premier essai a rattaché l'outil au persona Consultant via l'add-on multi-établissements (jusqu'à 4 sites, source pricing.addon-etablissement). Michael a corrigé ('Ça mangle l'angle de la cible aussi') : mélanger commerçant local et consultant dans les mêmes listes de décision (keepIf/relevantFor) brouille le message même si le fait est réel. Décision finale : cible unique et honnête (le commerçant local), sans rattachement forcé à un persona ToolTrim existant. Voir la mémoire feedback-single-target-angle pour la règle générale qui en découle.",
+    "Ce choix reste un écart assumé par rapport au lectorat ToolTrim habituel, pas une garantie de fit ; à revalider si le catalogue s'oriente vers plus d'outils destinés au commerce physique.",
+    "Image principale (2026-09-02) : capture d'écran réelle du back-office Happia (tableau de bord 'Bonjour Green Sushi', happia.fr/espace-client/) fournie directement par Michael, hors du site public (espace client authentifié, non crawlable). Fichier reçu en local (/Users/mike/Downloads/image-1788366713974.webp) et copié dans public/tool-media/happia/happia-dashboard.webp, référencé en ogImageUrl. Provenance : Michael (propriétaire ToolTrim), pas vérifiable indépendamment par une source publique, mais fournie par la partie qui a un lien direct avec Happia (badge réciproque 'Discover ToolTrim via Happia' observé sur happia.fr le 2026-09-02). La capture d'Aperçu IA Google (preuve-apercu-ia-google.webp, seule image publique trouvée sur happia.fr) reste en second visuel (galleryImages)."
+  ],
+  "unknowns": [
+    "Aucune métrique d'usage indépendante (nombre de clients, ancienneté réelle du produit au-delà de la mention '2026') trouvée hors du site officiel",
+    "Persona/vertical ToolTrim 'commerce local physique' absent du référentiel existant (verticals actuels : ecommercant, coach-formateur, etc., aucun ne correspond exactement) : laissé vide plutôt qu'approximé"
+  ],
+  "conflicts": []
+}
