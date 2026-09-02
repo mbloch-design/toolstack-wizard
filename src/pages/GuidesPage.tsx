@@ -7,6 +7,7 @@ import { setSeoTags, cleanupSeo } from "@/lib/seo";
 import ToolCardImage from "@/components/tool/ToolCardImage";
 import { useCatalogStickyToolbar } from "@/hooks/useCatalogStickyToolbar";
 import CatalogToolbar from "@/components/catalog/CatalogToolbar";
+import Breadcrumb from "@/components/Breadcrumb";
 
 /* ─────────────────────────────────────────────────────────────────────────────
    GuidesPage — editorial redesign v2
@@ -194,6 +195,11 @@ const GuidesPage = () => {
         <div className="gi-container tt-catalog-container">
 
           <div className="tt-catalog-compact-header">
+            <Breadcrumb
+              items={activeFilter !== "all"
+                ? [{ label: t("Guides", "Guides") as string, href: `${prefix}/guides` }, { label: filters.find((filter) => filter.id === activeFilter)?.label || activeFilter }]
+                : [{ label: t("Guides", "Guides") as string }]}
+            />
             <h1 className="tt-catalog-compact-title">{t("Guides", "Guides")}</h1>
           </div>
 

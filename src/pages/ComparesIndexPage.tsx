@@ -8,6 +8,7 @@ import ToolLogo from "@/components/ToolLogo";
 import { FEATURED_COMPARISONS } from "@/data/comparisons";
 import { useCatalogStickyToolbar } from "@/hooks/useCatalogStickyToolbar";
 import CatalogToolbar from "@/components/catalog/CatalogToolbar";
+import Breadcrumb from "@/components/Breadcrumb";
 
 /* ─── Helpers ────────────────────────────────────────────────────────────── */
 function findTool(tools: ToolSummary[], idOrSlug: string): ToolSummary | undefined {
@@ -199,6 +200,11 @@ const ComparesIndexPage = () => {
         <div className="cix-container">
 
           <header className="tt-catalog-compact-header cix-hero">
+            <Breadcrumb
+              items={categoryFilter !== "all"
+                ? [{ label: t("Comparatifs", "Comparisons") as string, href: `${prefix}/comparatifs` }, { label: (lang === "fr" ? COMPARE_CATEGORY_FILTERS.find((f) => f.id === categoryFilter)?.label : COMPARE_CATEGORY_FILTERS.find((f) => f.id === categoryFilter)?.labelEn) || categoryFilter }]
+                : [{ label: t("Comparatifs", "Comparisons") as string }]}
+            />
             <h1 className="tt-catalog-compact-title cix-hero-title">{t("Comparatifs", "Comparisons")}</h1>
           </header>
 
