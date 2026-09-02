@@ -765,6 +765,7 @@ const StacksPage = () => {
             panelTitle={t("Filtres", "Filters") as string}
             moreLabel={t("Plus de filtres", "More filters") as string}
             clearLabel={t("Tout effacer", "Clear all") as string}
+            closeLabel={t("Fermer", "Close") as string}
             activeFilterCount={panelFilterCount}
             onClearFilters={resetFacets}
             onPanelOpenChange={setPanelOpen}

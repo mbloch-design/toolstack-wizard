@@ -1,5 +1,5 @@
 import { Fragment, useState, type ReactNode } from "react";
-import { ChevronDown, MoreHorizontal } from "@/lib/icons";
+import { ChevronDown, MoreHorizontal, X } from "@/lib/icons";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 
 export type ToolbarPill = {
@@ -29,6 +29,9 @@ type Props = {
   panelTitle: string;
   moreLabel: string;
   clearLabel?: string;
+  /** Lu par les lecteurs d'écran sur le bouton de fermeture affiché en
+      feuille mobile (le panneau devient un bottom sheet sous 640px). */
+  closeLabel?: string;
   activeFilterCount?: number;
   onClearFilters?: () => void;
   /** Rendu dans la queue, avant « Plus de filtres » — ex. une recherche en ligne. */
@@ -60,6 +63,7 @@ export default function CatalogToolbar({
   panelTitle,
   moreLabel,
   clearLabel,
+  closeLabel = "Close",
   activeFilterCount = 0,
   onClearFilters,
   extraTail,
@@ -106,14 +110,25 @@ export default function CatalogToolbar({
                 {activeFilterCount > 0 && <span className="tt-pill-count">{activeFilterCount}</span>}
               </button>
             </PopoverTrigger>
+            {panelOpen && <div className="tt-filter-panel-backdrop" aria-hidden />}
             <PopoverContent className="tt-filter-panel" align="end" sideOffset={8}>
               <div className="tt-filter-panel-head">
                 <strong>{panelTitle}</strong>
-                {activeFilterCount > 0 && onClearFilters && clearLabel && (
-                  <button type="button" className="tt-filter-panel-reset" onClick={onClearFilters}>
-                    {clearLabel}
+                <div className="tt-filter-panel-head-actions">
+                  {activeFilterCount > 0 && onClearFilters && clearLabel && (
+                    <button type="button" className="tt-filter-panel-reset" onClick={onClearFilters}>
+                      {clearLabel}
+                    </button>
+                  )}
+                  <button
+                    type="button"
+                    className="tt-filter-panel-close"
+                    onClick={() => handlePanelOpenChange(false)}
+                    aria-label={closeLabel}
+                  >
+                    <X size={18} aria-hidden />
                   </button>
-                )}
+                </div>
               </div>
               <div className="tt-filter-panel-body">{panel}</div>
             </PopoverContent>

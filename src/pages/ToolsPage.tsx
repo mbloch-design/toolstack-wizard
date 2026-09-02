@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo, useRef } from "react";
 import { useLocation, useSearchParams } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories, type ToolSummary } from "@/hooks/useSupabaseData";
-import { ArrowDown, ChevronDown, MoreHorizontal } from "@/lib/icons";
+import { ArrowDown, ChevronDown, MoreHorizontal, Search, X } from "@/lib/icons";
 import ToolLogo from "@/components/ToolLogo";
 import { setSeoTags, setJsonLd, setHreflang, cleanupSeo } from "@/lib/seo";
 import { stripLeadingEmoji } from "@/lib/text";
@@ -499,14 +499,25 @@ const ToolsPage = () => {
                   {activeFilterCount > 0 && <span className="tt-pill-count">{activeFilterCount}</span>}
                 </button>
               </PopoverTrigger>
+              {panelOpen && <div className="tt-filter-panel-backdrop" aria-hidden />}
               <PopoverContent className="tt-filter-panel" align="end" sideOffset={8}>
                 <div className="tt-filter-panel-head">
                   <strong>{t("Filtres", "Filters")}</strong>
-                  {activeFilterCount > 0 && (
-                    <button type="button" className="tt-filter-panel-reset" onClick={resetFilters}>
-                      {t("Tout effacer", "Clear all")}
+                  <div className="tt-filter-panel-head-actions">
+                    {activeFilterCount > 0 && (
+                      <button type="button" className="tt-filter-panel-reset" onClick={resetFilters}>
+                        {t("Tout effacer", "Clear all")}
+                      </button>
+                    )}
+                    <button
+                      type="button"
+                      className="tt-filter-panel-close"
+                      onClick={() => setPanelOpen(false)}
+                      aria-label={t("Fermer", "Close") as string}
+                    >
+                      <X size={18} aria-hidden />
                     </button>
-                  )}
+                  </div>
                 </div>
                 <div className="tt-filter-panel-body">
 

@@ -20352,12 +20352,21 @@ section[id] {
   font-size: 17px;
   font-weight: 600;
 }
+.tt-filter-panel-head-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
 .tt-filter-panel-reset {
   color: var(--color-muted);
   font-size: var(--tt-size-card-body);
   cursor: pointer;
 }
 .tt-filter-panel-reset:hover { color: var(--color-text); }
+/* Desktop dismisses via outside-click or re-toggling the pill — the close
+   button only earns its place once the panel becomes a full mobile sheet
+   below, where a single scrim tap is the only other way out. */
+.tt-filter-panel-close { display: none; }
 .tt-filter-panel-body {
   flex: 1 1 auto;
   overflow-y: auto;
@@ -20384,6 +20393,93 @@ section[id] {
   gap: 8px;
 }
 .tt-filter-hint { color: var(--color-muted); font-size: var(--tt-size-card-body); }
+
+.tt-filter-panel-backdrop { display: none; }
+
+/* Under 640px, "Plus de filtres" stops being a popover pinned to its
+   trigger — on a narrow screen that either clipped against the edge or sat
+   too small to hold a category grid, segmented controls and tag facets at
+   once. It becomes a real bottom sheet instead: full width, slides up from
+   the bottom edge, dimmed scrim behind it, explicit close button (the
+   scrim and Escape still work, but a sheet this size needs an obvious way
+   out).
+
+   Radix doesn't position .tt-filter-panel itself — it wraps it in a
+   generated [data-radix-popper-content-wrapper] that carries the real
+   inline position/transform. That wrapper's own `transform` also makes it
+   the containing block for any `position: fixed` descendant (CSS
+   Transforms spec), so overriding position on .tt-filter-panel directly
+   resolved against that small, mispositioned wrapper instead of the
+   viewport — the panel collapsed to a couple of px, off-screen. Override
+   the wrapper instead (:has() scopes it to just this panel's wrapper, not
+   every Radix popover on the page), and let the panel simply fill it. */
+@media (max-width: 640px) {
+  .tt-filter-panel-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 210;
+    background: color-mix(in srgb, var(--color-text) 45%, transparent);
+    animation: tt-sheet-backdrop-in 180ms ease-out both;
+  }
+  [data-radix-popper-content-wrapper]:has(> .tt-filter-panel) {
+    position: fixed !important;
+    inset: auto 0 0 0 !important;
+    transform: none !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    z-index: 220 !important;
+  }
+  .tt-filter-panel {
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: 85vh;
+    border-radius: 20px 20px 0 0;
+    padding-bottom: env(safe-area-inset-bottom);
+    animation: tt-sheet-in 220ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  .tt-filter-panel-head {
+    position: relative;
+    padding-top: 22px;
+  }
+  /* Drag-handle affordance, purely visual — the sheet dismisses via the
+     scrim, the close button or Escape, not an actual drag gesture. */
+  .tt-filter-panel-head::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    width: 36px;
+    height: 4px;
+    border-radius: var(--radius-pill);
+    background: var(--color-border);
+    transform: translateX(-50%);
+  }
+  .tt-filter-panel-body { overscroll-behavior: contain; }
+  .tt-filter-panel-close {
+    display: grid;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    margin: -8px -6px -8px 0;
+    border-radius: var(--radius-circle);
+    color: var(--color-muted);
+    transition: background-color 120ms ease-out, color 120ms ease-out;
+  }
+  .tt-filter-panel-close:hover { background: var(--color-surface-soft); color: var(--color-text); }
+  .tt-filter-panel-close:focus-visible { outline: 2px solid var(--color-text); outline-offset: 2px; }
+}
+@keyframes tt-sheet-in {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+@keyframes tt-sheet-backdrop-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tt-filter-panel, .tt-filter-panel-backdrop { animation: none; }
+}
 
 /* Vingt-cinq catégories en pilules s'enroulaient en escalier : des largeurs
    inégales, des trous, aucune ligne de lecture. En rangées alignées sur deux

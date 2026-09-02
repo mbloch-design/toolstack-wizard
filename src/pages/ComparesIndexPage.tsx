@@ -232,6 +232,7 @@ const ComparesIndexPage = () => {
               onClick: () => setCategoryFilter(filter.id),
             }))}
             panelTitle={t("Filtres", "Filters") as string}
+            closeLabel={t("Fermer", "Close") as string}
             moreLabel={t("Plus de filtres", "More filters") as string}
             sort={{
               value: sortBy,
