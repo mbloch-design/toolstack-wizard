@@ -407,6 +407,30 @@ const Footer = () => {
                   loading="lazy"
                 />
               </a>
+              <a
+                href="https://shipthing.com/projects/tooltrim-6645?utm_source=badge"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="tt-footer-badge"
+                aria-label="Featured on ShipThing"
+              >
+                <img
+                  className="tt-footer-badge-light"
+                  src="https://shipthing.com/shipthing/images/badges/featured-on-light.svg"
+                  alt="Featured on ShipThing"
+                  width={150}
+                  height={44}
+                  loading="lazy"
+                />
+                <img
+                  className="tt-footer-badge-dark"
+                  src="https://shipthing.com/shipthing/images/badges/featured-on-dark.svg"
+                  alt="Featured on ShipThing"
+                  width={150}
+                  height={44}
+                  loading="lazy"
+                />
+              </a>
             </div>
           </div>
         </div>
