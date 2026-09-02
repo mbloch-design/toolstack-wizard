@@ -901,9 +901,31 @@ const ToolDetailPage = () => {
                           <span className="td-eyebrow td-eyebrow--tight">{t("Pourquoi ce verdict", "Why this verdict")}</span>
                           <p className="td-review-label">{t(ts.labelFr, ts.labelEn)}</p>
                         </div>
-                        <p className="td-score-text">
-                          {t(`${tool.name} est ${scoreReasonFr}.`, `${tool.name} is ${scoreReasonEn}.`)}
-                        </p>
+                        {ts.source === "v2" && tool.toolTrimRating ? (
+                          <div className="td-score-breakdown">
+                            {([
+                              ["valeurAjoutee", "Valeur ajoutée", "Added value"],
+                              ["simplicite", "Simplicité", "Simplicity"],
+                              ["utilisation", "Utilisation", "Fit for purpose"],
+                              ["puissance", "Puissance", "Performance"],
+                              ["reversibilite", "Réversibilité", "Reversibility"],
+                            ] as const).map(([key, labelFr, labelEn]) => (
+                              <div key={key}>
+                                <div className="td-score-axis-row">
+                                  <span className="td-score-axis-name">{t(labelFr, labelEn)}</span>
+                                  <span className="td-score-axis-value">{tool.toolTrimRating![key]}/5</span>
+                                </div>
+                                {tool.toolTrimRating!.evidence[key] && (
+                                  <p className="td-score-axis-evidence">{tool.toolTrimRating!.evidence[key]}</p>
+                                )}
+                              </div>
+                            ))}
+                          </div>
+                        ) : (
+                          <p className="td-score-text">
+                            {t(`${tool.name} est ${scoreReasonFr}.`, `${tool.name} is ${scoreReasonEn}.`)}
+                          </p>
+                        )}
                       </div>
 
                     </div>

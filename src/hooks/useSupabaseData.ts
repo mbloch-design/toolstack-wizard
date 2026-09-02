@@ -104,6 +104,7 @@ function mapToolFromJson(t: any): Tool {
     substitution_cluster_v2: t.substitution_cluster_v2 || null,
     pricing_v5: t.pricing_v5 || null,
     decision_policy_v3: t.decision_policy_v3 || null,
+    toolTrimRating: t.toolTrimRating || null,
   };
 }
 

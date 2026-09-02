@@ -9045,6 +9045,40 @@
     color: var(--color-text);
   }
 
+  /* Five-axis v2 rating breakdown — one row per axis, score + cited evidence */
+  .td-score-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid var(--color-border);
+  }
+  .td-score-axis-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    font-family: var(--font-ui);
+    font-size: 13px;
+  }
+  .td-score-axis-name {
+    font-weight: 600;
+    color: var(--color-text);
+    white-space: nowrap;
+  }
+  .td-score-axis-value {
+    color: var(--color-muted);
+    white-space: nowrap;
+  }
+  .td-score-axis-evidence {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--color-muted);
+    margin: -4px 0 0;
+  }
+
   /* Editorial judgment list — pros / limits, no badges, hairline-ruled */
   .td-judgment {
     list-style: none;
