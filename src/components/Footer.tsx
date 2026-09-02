@@ -377,6 +377,21 @@ const Footer = () => {
                   loading="lazy"
                 />
               </a>
+              <a
+                href="https://peerpush.com/p/tooltrim"
+                target="_blank"
+                rel="noopener"
+                className="tt-footer-badge"
+                aria-label="ToolTrim on PeerPush"
+              >
+                <img
+                  src="https://peerpush.com/p/tooltrim/badge.png"
+                  alt="ToolTrim on PeerPush"
+                  width={230}
+                  height={65}
+                  loading="lazy"
+                />
+              </a>
             </div>
           </div>
         </div>
