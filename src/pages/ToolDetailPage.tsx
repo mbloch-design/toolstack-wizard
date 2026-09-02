@@ -896,12 +896,12 @@ const ToolDetailPage = () => {
                       {/* The numeric score already lives in the sticky/mobile
                           decision card. This section explains it instead of
                           printing the same large metric twice. */}
-                      <div className="td-review-rationale">
-                        <div>
-                          <span className="td-eyebrow td-eyebrow--tight">{t("Pourquoi ce verdict", "Why this verdict")}</span>
-                          <p className="td-review-label">{t(ts.labelFr, ts.labelEn)}</p>
-                        </div>
-                        {ts.source === "v2" && tool.toolTrimRating ? (
+                      {ts.source === "v2" && tool.toolTrimRating ? (
+                        <div className="td-review-rationale-v2">
+                          <div className="td-review-verdict-header">
+                            <span className="td-eyebrow td-eyebrow--tight">{t("Pourquoi ce verdict", "Why this verdict")}</span>
+                            <p className="td-review-label">{t(ts.labelFr, ts.labelEn)}</p>
+                          </div>
                           <div className="td-score-breakdown">
                             {([
                               ["valeurAjoutee", "Valeur ajoutée", "Added value"],
@@ -909,24 +909,37 @@ const ToolDetailPage = () => {
                               ["utilisation", "Utilisation", "Fit for purpose"],
                               ["puissance", "Puissance", "Performance"],
                               ["reversibilite", "Réversibilité", "Reversibility"],
-                            ] as const).map(([key, labelFr, labelEn]) => (
-                              <div key={key}>
-                                <div className="td-score-axis-row">
-                                  <span className="td-score-axis-name">{t(labelFr, labelEn)}</span>
-                                  <span className="td-score-axis-value">{tool.toolTrimRating![key]}/5</span>
+                            ] as const).map(([key, labelFr, labelEn]) => {
+                              const value = tool.toolTrimRating![key] ?? 0;
+                              return (
+                                <div className="td-score-axis-card" key={key}>
+                                  <div className="td-score-axis-row">
+                                    <span className="td-score-axis-name">{t(labelFr, labelEn)}</span>
+                                    <div className="td-score-meter" aria-label={`${value}/5`}>
+                                      {[1, 2, 3, 4, 5].map((i) => (
+                                        <span key={i} className={`td-score-dot${i <= value ? " td-score-dot--filled" : ""}`} aria-hidden="true" />
+                                      ))}
+                                    </div>
+                                  </div>
+                                  {tool.toolTrimRating!.evidence[key] && (
+                                    <p className="td-score-axis-evidence">{tool.toolTrimRating!.evidence[key]}</p>
+                                  )}
                                 </div>
-                                {tool.toolTrimRating!.evidence[key] && (
-                                  <p className="td-score-axis-evidence">{tool.toolTrimRating!.evidence[key]}</p>
-                                )}
-                              </div>
-                            ))}
+                              );
+                            })}
                           </div>
-                        ) : (
+                        </div>
+                      ) : (
+                        <div className="td-review-rationale">
+                          <div>
+                            <span className="td-eyebrow td-eyebrow--tight">{t("Pourquoi ce verdict", "Why this verdict")}</span>
+                            <p className="td-review-label">{t(ts.labelFr, ts.labelEn)}</p>
+                          </div>
                           <p className="td-score-text">
                             {t(`${tool.name} est ${scoreReasonFr}.`, `${tool.name} is ${scoreReasonEn}.`)}
                           </p>
-                        )}
-                      </div>
+                        </div>
+                      )}
 
                     </div>
                   );

@@ -9045,38 +9045,55 @@
     color: var(--color-text);
   }
 
-  /* Five-axis v2 rating breakdown — one row per axis, score + cited evidence */
+  /* Five-axis v2 rating breakdown — full-width visual grid of axis cards,
+     replaces the cramped narrow-label/tall-content two-column layout that
+     left a large dead space under the verdict label. */
   .td-score-breakdown {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 18px;
+  }
+  .td-score-axis-card {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-top: 14px;
-    padding-top: 14px;
-    border-top: 1px solid var(--color-border);
+    gap: 8px;
+    padding: 16px;
+    border-radius: var(--radius-lg);
+    background: var(--color-surface-soft);
   }
   .td-score-axis-row {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
     gap: 12px;
-    font-family: var(--font-ui);
-    font-size: 13px;
   }
   .td-score-axis-name {
+    font-family: var(--font-ui);
     font-weight: 600;
+    font-size: 13px;
     color: var(--color-text);
-    white-space: nowrap;
   }
-  .td-score-axis-value {
-    color: var(--color-muted);
-    white-space: nowrap;
+  .td-score-meter {
+    display: flex;
+    gap: 4px;
+    flex-shrink: 0;
+  }
+  .td-score-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-border);
+  }
+  .td-score-dot--filled {
+    background: var(--color-text);
   }
   .td-score-axis-evidence {
     font-family: var(--font-ui);
     font-size: 13px;
     line-height: 1.5;
     color: var(--color-muted);
-    margin: -4px 0 0;
+    margin: 0;
   }
 
   /* Editorial judgment list — pros / limits, no badges, hairline-ruled */
@@ -9540,6 +9557,23 @@
     border-radius: var(--radius-lg);
     background: var(--color-surface-soft);
   }
+
+  /* v2 rating: verdict header stacked full-width above the axis grid,
+     instead of a narrow label column starved next to a much taller one. */
+  .td-review-rationale-v2 {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 24px;
+    border-radius: var(--radius-lg);
+    background: var(--color-surface-soft);
+  }
+  .td-review-verdict-header {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+  .td-review-verdict-header .td-review-label { margin: 0; }
   .td-review-label {
     font-family: var(--font-brand);
     font-size: 22px;
@@ -29174,6 +29208,8 @@ section[id] {
 .td-tool-page .td-overview-group,
 .td-tool-page .td-decision-verdict,
 .td-tool-page .td-review-rationale,
+.td-tool-page .td-review-rationale-v2,
+.td-tool-page .td-score-axis-card,
 .td-tool-page .td-compare-card,
 .td-tool-page .td-pricing-plans,
 .td-tool-page .td-profit-card,
