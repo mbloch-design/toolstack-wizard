@@ -8,9 +8,13 @@ export interface ToolTrimScoreResult {
   source: "v2" | "legacy";
 }
 
+// Band vocabulary and cutoffs follow Trustpilot's TrustScore convention
+// (Bad/Poor/Average/Great/Excellent), adopted so the wording stays legible
+// once the v2 axis average can actually fall below the legacy score's old
+// 2.8 floor.
 const labelsFor = (score: number) => ({
-  labelFr: score >= 4.5 ? "Incontournable" : score >= 4.0 ? "Très bon" : score >= 3.5 ? "Correct" : "Mitigé",
-  labelEn: score >= 4.5 ? "Must-have" : score >= 4.0 ? "Very good" : score >= 3.5 ? "Decent" : "Mixed",
+  labelFr: score >= 4.3 ? "Excellent" : score >= 3.8 ? "Très bon" : score >= 2.8 ? "Moyen" : score >= 1.8 ? "Médiocre" : "Mauvais",
+  labelEn: score >= 4.3 ? "Excellent" : score >= 3.8 ? "Great" : score >= 2.8 ? "Average" : score >= 1.8 ? "Poor" : "Bad",
 });
 
 const STALE_THRESHOLD_DAYS = 365;
