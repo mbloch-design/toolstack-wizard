@@ -1,5 +1,11 @@
 # ToolTrim — AI Changelog
 
+## 2026-09-02 · Correction note Albato et bug prix "$0" sur 31 fiches
+
+- `ia_use_case` était vide pour Albato malgré son copilote et ses agents IA ; le champ est renseigné (`["agents"]`), ce qui fait passer la note ToolTrim calculée de 3.8 ("Correct") à 4.0 ("Très bon").
+- Bug corrigé dans `extractEditorialNativePrice` (`src/lib/nativePricing.ts`) : le prix affiché prenait le premier montant trouvé dans le texte `pricing.paid`, souvent "0 $" du plan gratuit listé en premier, plutôt que le vrai prix payant. Concernait 31 fiches (Albato, ChatGPT, Cursor, GitHub Copilot, Gemini, Attio...).
+- La carte de prix payant d'Albato affiche désormais "à partir de" car son champ `paid` regroupe plusieurs paliers tarifaires (Pro/Teams) sous un seul prix (`pricing_v5.usage_sensitive`).
+
 ## 2026-09-02 · FranklyMail et Albato
 
 - FranklyMail rejoint le catalogue avec son plan à 9 $ par an, ses limites, son unique média produit officiel et un lien éditorial dofollow explicitement limité à ce domaine.
