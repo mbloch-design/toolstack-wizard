@@ -38,6 +38,35 @@ export interface ToolBillingTrap {
   text: string;
 }
 
+// ─── ToolTrim rating v2 ───
+// Replaces the old pros/cons-count heuristic. Each axis is graded 1-5 from a
+// citable source (official docs, pricing page, changelog, aggregated
+// reviews) — never from feel. An axis stays null rather than guessed when no
+// evidence exists; computeToolTrimScoreV2 only returns a score once all five
+// are filled, so an incomplete rating never surfaces a fabricated number.
+export type ToolTrimRatingAxis = 1 | 2 | 3 | 4 | 5;
+
+export interface ToolTrimRating {
+  // Gain réel (temps/argent) rapporté à l'investissement.
+  valeurAjoutee: ToolTrimRatingAxis | null;
+  // Temps et compétence nécessaires pour un premier résultat utile.
+  simplicite: ToolTrimRatingAxis | null;
+  // Degré de réalisation de l'objectif annoncé par l'outil, sans contournement.
+  utilisation: ToolTrimRatingAxis | null;
+  // Profondeur technique / plafond de capacité face à la catégorie.
+  puissance: ToolTrimRatingAxis | null;
+  // Portabilité des données si l'utilisateur quitte l'outil (export, API).
+  reversibilite: ToolTrimRatingAxis | null;
+  // Preuve citée par axe (source, date, ou constat précis) — obligatoire
+  // pour tout axe non-null.
+  evidence: Partial<Record<"valeurAjoutee" | "simplicite" | "utilisation" | "puissance" | "reversibilite", string>>;
+  // Dernière mise à jour produit documentée (changelog/release notes) ;
+  // sert de proxy de pérennité sans juger la santé financière de l'éditeur.
+  lastActivityVerifiedOn?: string | null;
+  // Date à laquelle cette notation a été produite.
+  notedOn: string;
+}
+
 export interface ToolPricing {
   free: string;
   paid: string;
@@ -236,6 +265,7 @@ export interface Tool {
   pricing_v5?: PricingV5 | null;
   pricing_v5En?: PricingV5 | null;
   decision_policy_v3?: DecisionPolicyV3 | null;
+  toolTrimRating?: ToolTrimRating | null;
 }
 
 export interface BlogPost {

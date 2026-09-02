@@ -1,11 +1,50 @@
 import { hasGenuineFreeTier } from "./pricing";
+import type { ToolTrimRating } from "@/data/types";
+
+export interface ToolTrimScoreResult {
+  score: number;
+  labelFr: string;
+  labelEn: string;
+  source: "v2" | "legacy";
+}
+
+const labelsFor = (score: number) => ({
+  labelFr: score >= 4.5 ? "Incontournable" : score >= 4.0 ? "Très bon" : score >= 3.5 ? "Correct" : "Mitigé",
+  labelEn: score >= 4.5 ? "Must-have" : score >= 4.0 ? "Very good" : score >= 3.5 ? "Decent" : "Mixed",
+});
+
+const STALE_THRESHOLD_DAYS = 365;
 
 /**
- * Computes the ToolTrim editorial score for a given tool.
- * Score range: 2.8–4.8 / 5
- * Not a user rating — reflects ToolTrim's independent editorial analysis.
+ * v2 score: plain average of five 1-5 axes graded from citable evidence
+ * (valeurAjoutee, simplicite, utilisation, puissance, reversibilite) — see
+ * ToolTrimRating in data/types.ts for what each axis means and why pros/cons
+ * counts and free-tier presence were dropped (they measured editorial effort
+ * and pricing model, not tool quality). Returns null when any axis is still
+ * unrated: an incomplete rating must never surface a number, so callers fall
+ * back to computeLegacyToolTrimScore until every axis has evidence.
  */
-export function computeToolTrimScore(tool: any): { score: number; labelFr: string; labelEn: string } {
+export function computeToolTrimScoreV2(rating: ToolTrimRating | null | undefined): ToolTrimScoreResult | null {
+  if (!rating) return null;
+  const axes = [rating.valeurAjoutee, rating.simplicite, rating.utilisation, rating.puissance, rating.reversibilite];
+  if (axes.some((axis) => axis == null)) return null;
+
+  let score = axes.reduce((sum, axis) => sum + (axis as number), 0) / axes.length;
+
+  if (rating.lastActivityVerifiedOn) {
+    const daysSince = (Date.now() - new Date(rating.lastActivityVerifiedOn).getTime()) / 86_400_000;
+    if (daysSince > STALE_THRESHOLD_DAYS) score = Math.min(score, 3.5);
+  }
+
+  score = Math.round(score * 10) / 10;
+  return { score, ...labelsFor(score), source: "v2" };
+}
+
+/**
+ * Legacy heuristic, kept as a fallback for the ~1150 tools not yet rated on
+ * the five-axis grid. Score range: 2.8–4.8 / 5.
+ */
+function computeLegacyToolTrimScore(tool: any): ToolTrimScoreResult {
   let score = 3.5;
 
   // Tool type
@@ -32,10 +71,15 @@ export function computeToolTrimScore(tool: any): { score: number; labelFr: strin
   score = Math.max(2.8, Math.min(4.8, score));
   score = Math.round(score * 10) / 10;
 
-  const labelFr = score >= 4.5 ? "Incontournable" : score >= 4.0 ? "Très bon" : score >= 3.5 ? "Correct" : "Mitigé";
-  const labelEn = score >= 4.5 ? "Must-have" : score >= 4.0 ? "Very good" : score >= 3.5 ? "Decent" : "Mixed";
+  return { score, ...labelsFor(score), source: "legacy" };
+}
 
-  return { score, labelFr, labelEn };
+/**
+ * Single entry point used by the page and JSON-LD: prefers the five-axis v2
+ * rating once complete, otherwise falls back to the legacy heuristic.
+ */
+export function computeToolTrimScore(tool: any): ToolTrimScoreResult {
+  return computeToolTrimScoreV2(tool?.toolTrimRating) ?? computeLegacyToolTrimScore(tool);
 }
 
 /** Render 5 star SVGs for a given score (supports half-star) */

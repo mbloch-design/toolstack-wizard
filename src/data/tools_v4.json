@@ -170431,6 +170431,20 @@
     "galleryImages": [
       "https://happia.fr/preuve-apercu-ia-google.webp"
     ],
-    "force_silence": false
+    "force_silence": false,
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": null,
+      "reversibilite": null,
+      "evidence": {
+        "valeurAjoutee": "timeGainedHoursPerMonth=2h/mois pour 79-159 €HT/mois : gain réel mais modeste rapporté au prix.",
+        "simplicite": "Pré-audit gratuit instantané sans inscription, mais audit complet nécessite de connecter 11 sources (fiche Google Business, avis, presse, annuaires...) : configuration de plusieurs heures, aucune compétence technique requise.",
+        "utilisation": "Méthodologie publique en 3 piliers pondérés (Socle 45%, Autorité 35%, Fraîcheur 20%), score de préparation et score de citation réelle mesurés séparément sans être fusionnés. Seul écart documenté : réponse aux avis automatisée via API pour Google uniquement, copier-coller pour TripAdvisor/Trustpilot (happia.fr/tarifs, WebSearch 2026-09-02)."
+      },
+      "lastActivityVerifiedOn": null,
+      "notedOn": "2026-09-02"
+    }
   }
 ]
