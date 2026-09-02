@@ -8217,12 +8217,15 @@
      a bordered rounded card, cover image on top, heading below. Cleaner and
      far more scannable than the giant poster name it replaces. ── */
   .td-hero-card {
-    border: 1px solid var(--color-border);
+    border: 0;
     border-radius: var(--tt-surface-radius-panel);
     overflow: hidden;
-    background: var(--color-surface);
+    background: color-mix(in srgb, var(--color-surface-soft) 94%, var(--color-text));
+    box-shadow: 0 10px 30px color-mix(in srgb, var(--color-text) 5%, transparent);
   }
-  @media (min-width: 1101px) {
+  /* Keep the identity visible while reading on both tablet and desktop.
+     768px and below retain the simpler non-sticky mobile flow. */
+  @media (min-width: 769px) {
     .td-page-grid { --td-hero-compact-h: 80px; }
     .td-page-grid .td-hero {
       position: sticky;
@@ -8304,13 +8307,22 @@
     }
     .td-hero.is-compact .td-hero-heading {
       min-width: 0;
+      min-height: var(--td-hero-compact-h);
+      height: var(--td-hero-compact-h);
       padding: 12px 20px;
+      box-sizing: border-box;
     }
     .td-hero.is-compact .td-hero-identity-grid {
       grid-template-columns: 56px minmax(0, 1fr) auto;
       gap: 16px;
+      height: 56px;
     }
-    .td-hero.is-compact .td-hero-name-block { height: 56px; }
+    .td-hero.is-compact .td-hero-name-block {
+      grid-template-rows: 34px 20px;
+      gap: 0;
+      height: 56px;
+      overflow: hidden;
+    }
     .td-hero.is-compact .td-hero-cat {
       font-size: 16px;
       font-weight: 500;
@@ -8365,7 +8377,8 @@
   .td-hero-heading {
     display: grid;
     align-content: center;
-    padding: 20px;
+    min-height: 156px;
+    padding: clamp(28px, 3vw, 38px);
     border-radius: 10px;
   }
   @media (max-width: 640px) {
@@ -8377,26 +8390,36 @@
   }
   .td-hero-identity-grid {
     display: grid;
-    grid-template-columns: 56px minmax(0, 1fr) auto;
+    grid-template-columns: 72px minmax(0, 1fr) auto;
     align-items: center;
-    gap: 16px;
+    gap: 24px;
     min-width: 0;
   }
   .td-hero-name-block {
     display: grid;
-    grid-template-rows: 36px 20px;
+    grid-template-rows: auto auto;
+    gap: 7px;
     align-self: center;
-    height: 56px;
+    height: auto;
     min-width: 0;
   }
   .td-hero-logo {
     display: grid;
     place-items: center;
-    width: 56px;
-    height: 56px;
+    width: 72px;
+    height: 72px;
     flex: 0 0 auto;
     overflow: hidden;
     border-radius: var(--radius-md);
+    border: 0;
+    background: var(--color-surface);
+    box-shadow: 0 8px 24px color-mix(in srgb, var(--color-text) 6%, transparent);
+  }
+  .td-hero-logo-image {
+    width: 58px !important;
+    height: 58px !important;
+    min-width: 58px !important;
+    min-height: 58px !important;
   }
   .td-hero-logo-image { transition: width 220ms ease-out, height 220ms ease-out; }
   .td-hero-site-link {
@@ -8404,23 +8427,29 @@
     align-items: center;
     justify-content: center;
     gap: 7px;
-    min-height: 40px;
-    padding: 0 16px;
-    border: 1px solid color-mix(in srgb, hsl(var(--primary)) 24%, var(--color-border));
+    min-height: 50px;
+    padding: 0 22px;
+    border: 0;
     border-radius: var(--radius-pill);
     background: var(--color-surface);
-    color: hsl(var(--primary));
+    color: var(--color-text);
     font-family: Inter, system-ui, arial, sans-serif;
-    font-size: 14px;
-    font-weight: 400;
+    font-size: 15px;
+    font-weight: 600;
     line-height: 20px;
     letter-spacing: normal;
     text-decoration: none;
-    transition: border-color 140ms ease-out, background-color 140ms ease-out;
+    box-shadow: 0 6px 18px color-mix(in srgb, var(--color-text) 9%, transparent);
+    transition: transform 160ms ease-out, border-color 160ms ease-out, background-color 160ms ease-out, box-shadow 160ms ease-out;
   }
   .td-hero-site-link:hover {
-    border-color: color-mix(in srgb, hsl(var(--primary)) 48%, var(--color-border));
-    background: color-mix(in srgb, hsl(var(--primary)) 6%, var(--color-surface));
+    background: color-mix(in srgb, var(--color-surface) 92%, var(--color-bg));
+    box-shadow: 0 9px 22px color-mix(in srgb, var(--color-text) 12%, transparent);
+    transform: translateY(-1px);
+  }
+  .td-hero-site-link:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 3px;
   }
   .td-hero-site-link svg { width: 14px; height: 14px; }
   .td-hero-cat {
@@ -8439,8 +8468,8 @@
   .td-hero-cat svg { display: none; }
   .td-hero-h1 {
     font-family: var(--font-ui);
-    font-size: 30px;
-    font-weight: 820;
+    font-size: clamp(34px, 3vw, 42px);
+    font-weight: 700;
     letter-spacing: -0.05em;
     line-height: 1;
     color: var(--color-text);
@@ -8454,8 +8483,8 @@
     }
     .td-hero-logo { width: 52px; height: 52px; }
     .td-hero-name-block {
-      grid-template-rows: 34px 18px;
-      height: 52px;
+      grid-template-rows: auto auto;
+      height: auto;
     }
     .td-hero-logo-image {
       width: 52px !important;
@@ -8470,8 +8499,8 @@
   }
   .td-hero-desc {
     font-family: var(--font-ui);
-    font-size: 1.05rem;
-    line-height: 1.5;
+    font-size: 1.08rem;
+    line-height: 1.42;
     letter-spacing: -0.015em;
     color: color-mix(in srgb, var(--color-text) 80%, var(--color-muted));
     margin: 0;
@@ -20164,6 +20193,257 @@ section[id] {
   }
 }
 
+/* ── Barre de filtres du catalogue ──────────────────────────────────────────
+   Une rangée de pilules qui défile, et une queue fixe : « Plus de filtres »,
+   recherche, tri. La queue ne défile jamais, donc l'accès à l'ensemble des
+   facettes reste garanti quelle que soit la largeur — c'est ce qui remplace
+   les flèches qui se posaient sur les libellés. */
+.tt-pillrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  /* L'estompe dit que la rangée continue, sans rien recouvrir. */
+  mask-image: linear-gradient(90deg, #000 calc(100% - 32px), transparent);
+}
+.tt-pillrow::-webkit-scrollbar { display: none; }
+.tt-pillrow-divider {
+  flex: 0 0 auto;
+  width: 1px;
+  height: 20px;
+  margin-inline: 4px;
+  background: var(--color-border);
+}
+.tt-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  flex: 0 0 auto;
+  height: 38px;
+  padding: 0 18px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  background: var(--color-surface-soft);
+  color: var(--color-text);
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-card-body);
+  font-weight: 560;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 140ms ease-out, color 140ms ease-out, border-color 140ms ease-out;
+}
+.tt-pill:hover:not(:disabled):not(.tt-pill--active) { background: var(--color-chip); }
+.tt-pill:focus-visible { outline: 2px solid var(--color-text); outline-offset: 2px; }
+.tt-pill--active {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+.tt-pill:disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+}
+.tt-pill-count {
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.62;
+}
+
+/* « Plus de filtres » n'est pas un filtre : c'est le prolongement de la rangée.
+   Sans fond, il ne se lit pas comme une catégorie de plus. L'ellipse dit la
+   suite — le picto réglages précédent n'évoquait rien de tel. */
+.tt-pill--more {
+  background: transparent;
+  padding-inline: 12px;
+}
+.tt-pill--more:hover:not(:disabled) { background: var(--color-surface-soft); }
+.tt-pill--more.tt-pill--active {
+  background: transparent;
+  color: var(--color-text);
+  font-weight: 640;
+}
+.tt-pill--more.tt-pill--active .tt-pill-count {
+  display: grid;
+  place-items: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: var(--radius-pill);
+  background: var(--color-text);
+  color: var(--color-bg);
+  opacity: 1;
+}
+.tt-catalog-toolbar-tail {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
+}
+.tt-catalog-sort-control {
+  position: relative;
+  display: inline-flex;
+  flex: 0 0 40px;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-circle);
+  color: var(--color-text);
+  cursor: pointer;
+  transition: color 140ms ease-out, background-color 140ms ease-out;
+}
+
+/* Page outils uniquement : le tri y est un menu libellé, pas une pastille
+   muette. Les autres catalogues partagent la classe et n'ont pas la place. */
+.tt-catalog-page .tt-catalog-toolbar-tail .tt-catalog-sort-control {
+  gap: 6px;
+  width: auto;
+  height: 38px;
+  padding: 0 12px 0 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  transition: border-color 140ms ease-out;
+}
+.tt-catalog-page .tt-catalog-toolbar-tail .tt-catalog-sort-control:hover,
+.tt-catalog-page .tt-catalog-toolbar-tail .tt-catalog-sort-control:focus-within {
+  background: var(--color-surface);
+  border-color: var(--color-border-strong);
+}
+.tt-catalog-page .tt-catalog-toolbar-tail .tt-catalog-sort-select {
+  position: static;
+  width: auto;
+  min-width: 0;
+  height: 38px;
+  padding: 0;
+  opacity: 1;
+  background: transparent;
+  color: inherit;
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-card-body);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Panneau « Plus de filtres ».
+   L'en-tête ne défile pas : « Tout effacer » doit rester sous la main même au
+   bas d'une longue liste de facettes. */
+.tt-filter-panel {
+  display: flex;
+  flex-direction: column;
+  width: min(520px, calc(100vw - 32px));
+  max-height: min(66vh, 560px);
+  padding: 0;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.tt-filter-panel-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex: 0 0 auto;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--color-border);
+}
+.tt-filter-panel-head strong {
+  font-family: var(--font-brand);
+  font-size: 17px;
+  font-weight: 600;
+}
+.tt-filter-panel-reset {
+  color: var(--color-muted);
+  font-size: var(--tt-size-card-body);
+  cursor: pointer;
+}
+.tt-filter-panel-reset:hover { color: var(--color-text); }
+.tt-filter-panel-body {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding: 18px 20px 20px;
+}
+.tt-filter-group + .tt-filter-group {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px solid var(--color-border-soft, var(--color-border));
+}
+.tt-filter-group h3 {
+  margin-bottom: 12px;
+  color: var(--color-muted);
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 640;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.tt-filter-segmented,
+.tt-filter-facets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.tt-filter-hint { color: var(--color-muted); font-size: var(--tt-size-card-body); }
+
+/* Vingt-cinq catégories en pilules s'enroulaient en escalier : des largeurs
+   inégales, des trous, aucune ligne de lecture. En rangées alignées sur deux
+   colonnes, l'œil descend une seule liste et le compteur devient lisible. */
+.tt-catgrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2px 10px;
+}
+.tt-catrow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  height: 34px;
+  padding: 0 10px;
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  font-family: var(--font-ui);
+  font-size: var(--tt-size-card-body);
+  font-weight: 520;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 120ms ease-out, color 120ms ease-out;
+}
+.tt-catrow span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tt-catrow em {
+  flex: 0 0 auto;
+  font-style: normal;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.5;
+}
+.tt-catrow:hover { background: var(--color-surface-soft); }
+.tt-catrow.is-selected {
+  background: var(--color-text);
+  color: var(--color-bg);
+  font-weight: 600;
+}
+.tt-catrow.is-selected em { opacity: 0.7; }
+.tt-catrow:focus-visible { outline: 2px solid var(--color-text); outline-offset: 2px; }
+
+@media (max-width: 560px) {
+  .tt-catgrid { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 900px) {
+  /* La queue passe sous la rangée : à 375 px, les deux ne tiennent pas côte à
+     côte et c'est la rangée de catégories qui était réduite à un onglet.
+     La recherche prend sa propre ligne, sinon elle repoussait le tri hors
+     de l'écran — il devenait inatteignable. */
+  .tt-catalog-toolbar { flex-wrap: wrap; }
+  .tt-pillrow { flex: 1 0 100%; order: -1; }
+  .tt-catalog-toolbar-tail { flex: 1 0 100%; justify-content: space-between; }
+}
+
 .tt-catalog-toolbar {
   display: flex;
   align-items: center;
@@ -20528,35 +20808,6 @@ section[id] {
 .tt-catalog-page .tt-catalog-toolbar.sk-mobile-trigger-row {
   flex-wrap: nowrap;
 }
-.tt-catalog-topic-rail {
-  position: relative;
-  flex: 1 1 auto;
-  min-width: 0;
-}
-.tt-catalog-topic-rail::before,
-.tt-catalog-topic-rail::after {
-  position: absolute;
-  z-index: 2;
-  top: 0;
-  bottom: 0;
-  width: 72px;
-  content: "";
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 160ms ease-out;
-}
-.tt-catalog-topic-rail::before {
-  left: 0;
-  background: linear-gradient(90deg, var(--color-surface) 24%, transparent);
-}
-.tt-catalog-topic-rail::after {
-  right: 0;
-  background: linear-gradient(270deg, var(--color-surface) 24%, transparent);
-}
-.tt-catalog-topic-rail[data-can-scroll-left="true"]::before,
-.tt-catalog-topic-rail[data-can-scroll-right="true"]::after {
-  opacity: 1;
-}
 .tt-catalog-topic-nav {
   display: flex;
   align-items: center;
@@ -20568,33 +20819,6 @@ section[id] {
   scrollbar-width: none;
 }
 .tt-catalog-topic-nav::-webkit-scrollbar { display: none; }
-.tt-catalog-topic-scroll {
-  position: absolute;
-  z-index: 3;
-  top: 2px;
-  display: grid;
-  width: 36px;
-  height: 36px;
-  place-items: center;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-circle);
-  background: color-mix(in srgb, var(--color-surface) 94%, transparent);
-  color: var(--color-text);
-  cursor: pointer;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  transition: border-color 140ms ease-out, background-color 140ms ease-out;
-}
-.tt-catalog-topic-scroll--left { left: 0; }
-.tt-catalog-topic-scroll--right { right: 0; }
-.tt-catalog-topic-scroll:hover {
-  border-color: var(--color-border-strong);
-  background: var(--color-surface);
-}
-.tt-catalog-topic-scroll:focus-visible {
-  outline: 2px solid var(--color-text);
-  outline-offset: 2px;
-}
 .tt-catalog-topic {
   display: inline-flex;
   flex: 0 0 auto;
@@ -20622,47 +20846,6 @@ section[id] {
 }
 .tt-catalog-topic--active {
   font-weight: 620;
-}
-.tt-catalog-topic-label {
-  display: inline-grid;
-}
-.tt-catalog-topic-label::after {
-  content: attr(data-label);
-  grid-area: 1 / 1;
-  height: 0;
-  overflow: hidden;
-  font-weight: 620;
-  pointer-events: none;
-  visibility: hidden;
-}
-.tt-catalog-tree-back {
-  display: inline-grid;
-  flex: 0 0 40px;
-  width: 40px;
-  height: 40px;
-  place-items: center;
-  border: 0;
-  border-radius: var(--radius-circle);
-  background: var(--color-surface-soft);
-  color: var(--color-text);
-  cursor: pointer;
-  transition: background-color 140ms ease-out;
-}
-.tt-catalog-tree-back:hover {
-  background: var(--color-border);
-}
-.tt-catalog-tree-back:focus-visible {
-  outline: 2px solid var(--color-text);
-  outline-offset: 2px;
-}
-.tt-catalog-tree-branch {
-  flex: 0 0 auto;
-  margin-right: 4px;
-  color: var(--color-text);
-  font-family: var(--font-ui);
-  font-size: var(--tt-size-card-title);
-  font-weight: 650;
-  white-space: nowrap;
 }
 .tt-catalog-topic:focus-visible {
   outline: 2px solid var(--color-text);
@@ -20700,6 +20883,9 @@ section[id] {
   border-radius: 0;
   background: transparent;
 }
+/* Les trois actions de la barre portent leur libellé. Réduites à des pastilles
+   muettes, « Filtrer », « Rechercher » et le tri n'étaient plus identifiables :
+   trois ronds de 40 px sans texte, dont un cachait un <select> transparent. */
 .tt-catalog-page .tt-catalog-inline-search-button {
   justify-content: center;
   width: 40px;
@@ -20710,8 +20896,8 @@ section[id] {
   font-size: var(--tt-size-card-title);
 }
 .tt-catalog-page .tt-catalog-inline-search:not(.tt-catalog-inline-search--open) {
-  flex: 0 0 40px;
-  width: 40px;
+  flex: 0 0 auto;
+  width: auto;
 }
 .tt-catalog-page .tt-catalog-inline-search-button > span,
 .tt-catalog-page .tt-catalog-filter-menu > summary > span:not(.tt-catalog-filter-count),
@@ -20763,6 +20949,9 @@ section[id] {
   border-color: var(--color-text);
   background: transparent;
 }
+/* Le tri montre sa valeur courante. Auparavant un <select> en opacity:0 était
+   étiré sur l'icône : le contrôle était fonctionnel mais illisible, rien
+   n'indiquait l'ordre appliqué. */
 .tt-catalog-page .tt-catalog-sort-select {
   position: absolute;
   inset: 0;
@@ -20786,26 +20975,7 @@ section[id] {
   margin-left: auto;
   font-size: var(--tt-size-card-body);
 }
-.tt-catalog-sort-control {
-  position: relative;
-  display: inline-flex;
-  flex: 0 0 40px;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-circle);
-  color: var(--color-text);
-  cursor: pointer;
-  transition: color 140ms ease-out, background-color 140ms ease-out;
-}
-.tt-catalog-sort-control:hover,
-.tt-catalog-sort-control:focus-within {
-  background: var(--color-surface-soft);
-  color: var(--color-text);
-}
-.tt-catalog-sort-control:focus-visible,
-.tt-catalog-sort-control:focus-within {
+.tt-catalog-sort-control:focus-visible {
   outline: 2px solid var(--color-text);
   outline-offset: 2px;
 }
@@ -21082,10 +21252,6 @@ section[id] {
     top: 78px;
     right: 16px;
     left: 16px;
-  }
-  .tt-catalog-topic-rail::before,
-  .tt-catalog-topic-rail::after {
-    width: 56px;
   }
 }
 
@@ -23770,53 +23936,12 @@ section[id] {
   border-bottom: 1px solid color-mix(in srgb, var(--color-border-soft) 72%, transparent);
 }
 
-/* Sur les catalogues, le sticky remplace la recherche globale, mais conserve
-   l'accès Ma stack comme action utilitaire du shell. La topbar ne forme donc
-   jamais une deuxième rangée : seul son CTA reste superposé à droite. */
-@media (min-width: 641px) {
-  .asv2-workspace:has(.tt-catalog-page) > .asv2-topbar {
-    position: absolute;
-    inset: 0 0 auto auto;
-    width: auto;
-    padding-inline: 20px;
-    background: transparent;
-    pointer-events: none;
-    z-index: 40;
-  }
-  .asv2-workspace:has(.tt-catalog-page) > .asv2-topbar .asv2-mobile-logo,
-  .asv2-workspace:has(.tt-catalog-page) > .asv2-topbar .asv2-search {
-    display: none;
-  }
-  .asv2-workspace:has(.tt-catalog-page) > .asv2-topbar .asv2-topbar-right {
-    pointer-events: auto;
-  }
-  .asv2-workspace:has(.tt-sticky-toolbar--stuck) > .asv2-topbar .asv2-topbar-right {
-    animation: tt-sticky-utility-in 180ms cubic-bezier(0.16, 1, 0.3, 1) both;
-  }
-  .asv2-workspace:has(.tt-sticky-toolbar--stuck) .tt-sticky-toolbar--stuck {
-    padding-inline-end: 184px;
-  }
-}
+/* Le catalogue porte la même topbar que le reste du site : la recherche
+   globale y reste accessible et le fil d'Ariane prend le relais du repérage.
+   La barre de filtres n'a donc plus à réserver de place pour un CTA flottant. */
 @media (min-width: 901px) and (max-width: 1400px) {
   .tt-catalog-toolbar.sk-mobile-trigger-row {
     flex-wrap: nowrap;
-  }
-  .asv2-workspace:has(.tt-sticky-toolbar--stuck) .tt-catalog-toolbar-meta > span {
-    display: none;
-  }
-}
-@media (min-width: 641px) and (max-width: 1100px) {
-  .asv2-workspace:has(.tt-sticky-toolbar--stuck) > .asv2-topbar .asv2-topbar-cta {
-    width: 42px;
-    height: 42px;
-    justify-content: center;
-    padding: 0;
-  }
-  .asv2-workspace:has(.tt-sticky-toolbar--stuck) > .asv2-topbar .asv2-topbar-cta span {
-    display: none;
-  }
-  .asv2-workspace:has(.tt-sticky-toolbar--stuck) .tt-sticky-toolbar--stuck {
-    padding-inline-end: 72px;
   }
 }
 
@@ -28771,22 +28896,20 @@ section[id] {
    article page title and must keep the same proportions across every slug. */
 .td-hero-h1 {
   font-family: Inter, system-ui, arial, sans-serif;
-  font-size: 30px;
-  font-weight: 400;
-  line-height: 36px;
-  letter-spacing: -0.75px;
+  font-size: clamp(34px, 2.6vw, 40px);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.045em;
 }
 .td-hero-desc {
-  max-width: 100%;
+  max-width: 56ch;
   margin: 0;
-  overflow: hidden;
   font-family: Inter, system-ui, arial, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 20px;
+  line-height: 1.42;
   letter-spacing: -0.01em;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  text-wrap: pretty;
 }
 .td-hero-cat {
   font-size: 16px;
@@ -28797,13 +28920,13 @@ section[id] {
 }
 @media (max-width: 640px) {
   .td-hero-h1 {
-    font-size: 28px;
-    line-height: 34px;
+    font-size: 30px;
+    line-height: 1.08;
   }
   .td-hero-cat { font-size: 14px; }
   .td-hero-desc {
-    font-size: 13px;
-    line-height: 18px;
+    font-size: 14px;
+    line-height: 20px;
   }
 }
 

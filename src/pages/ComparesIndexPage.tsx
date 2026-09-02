@@ -7,6 +7,7 @@ import { setSeoTags, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/
 import ToolLogo from "@/components/ToolLogo";
 import { FEATURED_COMPARISONS } from "@/data/comparisons";
 import { useCatalogStickyToolbar } from "@/hooks/useCatalogStickyToolbar";
+import CatalogToolbar from "@/components/catalog/CatalogToolbar";
 
 /* ─── Helpers ────────────────────────────────────────────────────────────── */
 function findTool(tools: ToolSummary[], idOrSlug: string): ToolSummary | undefined {
@@ -90,12 +91,6 @@ const ComparesIndexPage = () => {
   );
   const [sortBy, setSortBy] = useState<CompareSortId>("featured");
   const [visibleCount, setVisibleCount] = useState(COMPARISONS_BATCH_SIZE);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const searchInputRef = useRef<HTMLInputElement>(null);
-  const isSearchExpanded = isSearchOpen || query.length > 0;
-  useEffect(() => {
-    if (isSearchExpanded) searchInputRef.current?.focus();
-  }, [isSearchExpanded]);
 
   const { toolbarStuck, toolbarSentinelRef } = useCatalogStickyToolbar();
   /* Sync state changes back to the URL (replaceState so back-button isn't polluted) */
@@ -220,88 +215,29 @@ const ComparesIndexPage = () => {
 
           <div ref={toolbarSentinelRef} aria-hidden="true" style={{ height: 1 }} />
 
-          <div className={`tt-catalog-toolbar cix-toolbar tt-sticky-toolbar${toolbarStuck ? " tt-sticky-toolbar--stuck" : ""}`}>
-            <div className="cix-filter-group">
-              <div className="tt-catalog-toolbar-filters">
-                <nav className="tt-catalog-topic-nav" aria-label={t("Filtrer par catégorie", "Filter by category") as string}>
-                  {COMPARE_CATEGORY_FILTERS.map((filter) => (
-                    <button
-                      key={filter.id}
-                      type="button"
-                      className={`tt-catalog-topic${categoryFilter === filter.id ? " tt-catalog-topic--active" : ""}`}
-                      onClick={() => setCategoryFilter(filter.id)}
-                    >
-                      {lang === "fr" ? filter.label : filter.labelEn}
-                    </button>
-                  ))}
-                </nav>
-
-                <div className={`tt-catalog-inline-search${isSearchExpanded ? " tt-catalog-inline-search--open" : ""}`}>
-                  {isSearchExpanded ? (
-                    <div className="tt-catalog-inline-search-field">
-                      <Search size={17} aria-hidden />
-                      <input
-                        ref={searchInputRef}
-                        id="cix-search-input"
-                        type="search"
-                        value={query}
-                        onChange={(e) => setQuery(e.target.value)}
-                        onBlur={() => {
-                          if (!query) setIsSearchOpen(false);
-                        }}
-                        onKeyDown={(event) => {
-                          if (event.key === "Escape") {
-                            setQuery("");
-                            setIsSearchOpen(false);
-                          }
-                        }}
-                        placeholder={t("Filtrer par outil, ex. Notion, Figma…", "Filter by tool, e.g. Notion, Figma…") as string}
-                        className="tt-catalog-inline-search-input"
-                        autoComplete="off"
-                        aria-label={t("Filtrer les comparatifs", "Filter comparisons") as string}
-                      />
-                      <button
-                        type="button"
-                        onMouseDown={(event) => event.preventDefault()}
-                        onClick={() => {
-                          setQuery("");
-                          setIsSearchOpen(false);
-                        }}
-                        className="tt-catalog-inline-search-clear"
-                        aria-label={t("Fermer la recherche", "Close search") as string}
-                      >
-                        <X size={15} aria-hidden />
-                      </button>
-                    </div>
-                  ) : (
-                    <button
-                      type="button"
-                      className="tt-catalog-inline-search-button"
-                      onClick={() => setIsSearchOpen(true)}
-                    >
-                      <Search size={17} aria-hidden />
-                      <span>{t("Rechercher", "Search")}</span>
-                    </button>
-                  )}
-                </div>
-              </div>
-            </div>
-
-            <div className="tt-catalog-toolbar-meta">
-              <label className="tt-catalog-sort-control" title={t("Trier les comparatifs", "Sort comparisons") as string}>
-                <ArrowUpDown size={18} aria-hidden />
-                <select
-                  className="tt-catalog-sort-select"
-                  value={sortBy}
-                  onChange={(event) => setSortBy(event.target.value as CompareSortId)}
-                  aria-label={t("Trier par", "Sort by") as string}
-                >
-                  <option value="featured">{t("Sélection", "Featured")}</option>
-                  <option value="name">{t("A → Z", "A → Z")}</option>
-                </select>
-              </label>
-            </div>
-          </div>
+          <CatalogToolbar
+            className="cix-toolbar"
+            stuck={toolbarStuck}
+            navLabel={t("Filtrer par catégorie", "Filter by category") as string}
+            pills={COMPARE_CATEGORY_FILTERS.map((filter) => ({
+              id: filter.id,
+              label: (lang === "fr" ? filter.label : filter.labelEn) as string,
+              active: categoryFilter === filter.id,
+              onClick: () => setCategoryFilter(filter.id),
+            }))}
+            panelTitle={t("Filtres", "Filters") as string}
+            moreLabel={t("Plus de filtres", "More filters") as string}
+            sort={{
+              value: sortBy,
+              options: [
+                { value: "featured", label: t("Sélection", "Featured") as string },
+                { value: "name", label: t("A → Z", "A → Z") as string },
+              ],
+              onChange: (value) => setSortBy(value as CompareSortId),
+              ariaLabel: t("Trier par", "Sort by") as string,
+              title: t("Trier les comparatifs", "Sort comparisons") as string,
+            }}
+          />
 
           {/* Decision grid — each card keeps the duel and its two choices together. */}
           {filteredComparisons.length > 0 ? (
