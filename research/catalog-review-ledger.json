@@ -1,6 +1,6 @@
 {
   "batch_size": 25,
-  "catalogue_count": 1160,
+  "catalogue_count": 1161,
   "catalogue_path": "src/data/tools_v4.json",
   "entries": [
     {
@@ -39629,6 +39629,37 @@
       "source_url": "https://www.langchain.com/langsmith",
       "source_verified_on": "2026-07-24",
       "status": "PUBLISHED"
+    },
+    {
+      "assigned_batch": "review-crm-medium-001",
+      "batch_position": 1,
+      "blockers": [],
+      "catalog_hash": "sha256:bc01d225f21551510554332b2b71e5b495652ad609ea0d2928b21f41243b16e7",
+      "category": "crm",
+      "fact_bundle": "AVAILABLE",
+      "fact_bundle_hash": "sha256:43f5ad9570225f50c97484ac3438adb3ae30d094940ed22a0848480f4c25a1e6",
+      "invalidated_from": null,
+      "media_errors": [],
+      "media_evidence": "VALID",
+      "media_evidence_hash": "sha256:5f069dfbff2dc349dab386eee8a4d2f896a75e3905989ad9e8b4abaa957ad309",
+      "name": "Loyzia",
+      "next_review_at": null,
+      "priority_reasons": [
+        "paid_price"
+      ],
+      "priority_score": 80,
+      "published_at": null,
+      "quality_version": "catalog-review-v1",
+      "rendered_at": "2026-09-02",
+      "review_fingerprint": "sha256:8ada46d27889204d9a0625a0e015951b016434a9adc638543663d16831d138f9",
+      "reviewed_at": "2026-09-02",
+      "reviewed_hash": "sha256:8ada46d27889204d9a0625a0e015951b016434a9adc638543663d16831d138f9",
+      "reviewer": "codex",
+      "risk_tier": "medium",
+      "slug": "loyzia",
+      "source_url": "https://loyzia.com/#pricing",
+      "source_verified_on": "2026-09-02",
+      "status": "RENDER_VERIFIED"
     },
     {
       "assigned_batch": "review-design-tools-critical-004",

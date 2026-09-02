@@ -34,7 +34,12 @@ const POLITIQUE: Record<NatureLien, "dofollow" | "nofollow" | "sponsored"> = {
 };
 
 const BASE = "noopener noreferrer";
-const DOMAINES_EDITORIAUX_DOFOLLOW = new Set(["franklymail.com", "www.franklymail.com"]);
+const DOMAINES_EDITORIAUX_DOFOLLOW = new Set([
+  "franklymail.com",
+  "www.franklymail.com",
+  "loyzia.com",
+  "www.loyzia.com",
+]);
 
 function estLienEditorialDofollow(url: string): boolean {
   try {

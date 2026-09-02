@@ -41867,5 +41867,45 @@
     "freeAlternative": null,
     "substitutable": true,
     "betterAlternative": null
+  },
+  {
+    "id": "loyzia",
+    "slug": "loyzia",
+    "name": "Loyzia",
+    "categoryId": "crm",
+    "shortDescription": "Fidélité Wallet, CRM et avis Google pour les commerces de proximité.",
+    "shortDescriptionEn": "Wallet loyalty, CRM and Google reviews for local businesses.",
+    "pricing": {
+      "free": "Essai Pro de 14 jours sans carte bancaire",
+      "paid": "Starter 29 €/mois, Pro 59 €/mois, Business 129 €/mois"
+    },
+    "defaultMonthlyPrice": 29,
+    "affiliateLink": "",
+    "websiteUrl": "https://loyzia.com/",
+    "ogImageUrl": "https://loyzia.com/_next/image?url=%2Fdemo-coffee.jpg&w=640&q=75",
+    "logo": "",
+    "tool_type": "specialise",
+    "host_app": null,
+    "bundle_parent": null,
+    "substitution_cluster_v2": "local-loyalty-crm",
+    "functional_needs": [
+      "fidelite-client",
+      "crm-commerce"
+    ],
+    "verticals": [
+      "ecommercant",
+      "consultant-b2b"
+    ],
+    "relevantFor": [
+      "Restaurants",
+      "Cafés",
+      "Boulangeries",
+      "Salons de coiffure",
+      "Instituts de beauté",
+      "Commerces de proximité"
+    ],
+    "freeAlternative": null,
+    "substitutable": true,
+    "betterAlternative": null
   }
 ]

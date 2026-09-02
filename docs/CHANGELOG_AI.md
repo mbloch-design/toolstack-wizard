@@ -6,6 +6,13 @@
 - Bug corrigé dans `extractEditorialNativePrice` (`src/lib/nativePricing.ts`) : le prix affiché prenait le premier montant trouvé dans le texte `pricing.paid`, souvent "0 $" du plan gratuit listé en premier, plutôt que le vrai prix payant. Concernait 31 fiches (Albato, ChatGPT, Cursor, GitHub Copilot, Gemini, Attio...).
 - La carte de prix payant d'Albato affiche désormais "à partir de" car son champ `paid` regroupe plusieurs paliers tarifaires (Pro/Teams) sous un seul prix (`pricing_v5.usage_sensitive`).
 
+## 2026-09-02 · Ajout de la fiche Loyzia
+
+- Loyzia rejoint le catalogue comme solution française de fidélité Wallet, CRM et collecte d'avis Google pour les commerces de proximité.
+- Les plans Starter, Pro et Business, l'essai de 14 jours et les principales limites sont vérifiés depuis le site officiel.
+- Le seul visuel produit officiel réutilisable est intégré sans fabriquer de capture supplémentaire.
+- Le lien principal vers `loyzia.com` est dofollow via une exception éditoriale strictement limitée à ce domaine.
+
 ## 2026-09-02 · FranklyMail et Albato
 
 - FranklyMail rejoint le catalogue avec son plan à 9 $ par an, ses limites, son unique média produit officiel et un lien éditorial dofollow explicitement limité à ce domaine.
