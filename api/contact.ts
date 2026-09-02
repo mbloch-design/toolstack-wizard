@@ -39,54 +39,49 @@ const hasValidBadgeToken = (token: unknown, badgeUrl: unknown, toolUrl: unknown)
   }
 };
 
-const submissionConfirmationHtml = ({ name, toolName, isFrench }: { name: unknown; toolName: unknown; isFrench: boolean }) => {
+const submissionConfirmationHtml = ({ name, toolName }: { name: unknown; toolName: unknown }) => {
   const safeName = escapeHtml(name);
   const safeToolName = escapeHtml(toolName);
-  const copy = isFrench ? {
-    eyebrow: "SOUMISSION REÇUE",
-    title: `Merci, ${safeName}.`,
-    intro: `Nous avons bien reçu la soumission de <strong>${safeToolName}</strong> sur ToolTrim.`,
-    body: "Notre équipe va maintenant analyser le site, les fonctionnalités et les informations disponibles afin de préparer sa présentation.",
-    status: "Prochaine étape",
-    statusCopy: "Nous reviendrons directement vers vous dès que la fiche sera en ligne sur ToolTrim.",
-    note: "La vérification du badge confirme que votre dossier est complet. La publication reste soumise à notre analyse éditoriale.",
-    cta: "Découvrir ToolTrim",
-    footer: "ToolTrim vous aide à choisir les bons outils, sans les empiler.",
-  } : {
-    eyebrow: "SUBMISSION RECEIVED",
-    title: `Thank you, ${safeName}.`,
-    intro: `We have received the submission of <strong>${safeToolName}</strong> to ToolTrim.`,
-    body: "Our team will now review the website, features, and available information to prepare its presentation.",
-    status: "What happens next",
-    statusCopy: "We will contact you directly as soon as the listing is live on ToolTrim.",
-    note: "Badge verification confirms that your submission is complete. Publication remains subject to our editorial review.",
-    cta: "Explore ToolTrim",
-    footer: "ToolTrim helps you choose the right tools without stacking them.",
-  };
 
   return `<!doctype html>
-  <html><body style="margin:0;padding:0;background:#f4f4f0;color:#222222;font-family:Arial,sans-serif;">
-    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#f4f4f0;padding:32px 16px;">
+  <html lang="en"><body style="margin:0;padding:0;background:#F6F5F4;color:#0F0F0F;font-family:'Uncut Sans',Arial,Helvetica,sans-serif;">
+    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#F6F5F4;padding:40px 16px;">
       <tr><td align="center">
-        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:620px;background:#ffffff;border:1px solid #deded8;border-radius:14px;overflow:hidden;">
-          <tr><td style="padding:24px 30px;border-bottom:1px solid #ecece7;">
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:640px;background:#FFFFFF;border:1px solid #E6E6E6;border-radius:12px;overflow:hidden;">
+          <tr><td style="padding:24px 32px;border-bottom:1px solid #E6E6E6;">
             <table role="presentation" width="100%"><tr>
-              <td style="font-size:22px;font-weight:700;letter-spacing:-0.7px;color:#222222;"><span style="display:inline-block;width:12px;height:12px;margin-right:9px;background:#1e52f1;border-radius:3px;vertical-align:1px;"></span>tooltrim</td>
-              <td align="right" style="font-size:11px;font-weight:700;letter-spacing:1.2px;color:#76766f;">${copy.eyebrow}</td>
+              <td><img src="https://tooltrim.com/logo-tooltrim-email.svg" width="136" height="30" alt="ToolTrim" style="display:block;width:136px;height:30px;border:0;" /></td>
+              <td align="right" style="font-size:11px;font-weight:700;letter-spacing:1.2px;color:#6F6F68;">SUBMISSION RECEIVED</td>
             </tr></table>
           </td></tr>
-          <tr><td style="padding:42px 30px 34px;">
-            <h1 style="margin:0 0 18px;font-size:34px;line-height:1.08;letter-spacing:-1.2px;color:#222222;">${copy.title}</h1>
-            <p style="margin:0 0 14px;font-size:17px;line-height:1.6;color:#383834;">${copy.intro}</p>
-            <p style="margin:0;font-size:16px;line-height:1.65;color:#62625c;">${copy.body}</p>
-            <div style="margin:30px 0;padding:22px;background:#f2f5ff;border-left:3px solid #1e52f1;border-radius:8px;">
-              <p style="margin:0 0 7px;font-size:12px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;color:#1e52f1;">${copy.status}</p>
-              <p style="margin:0;font-size:16px;font-weight:600;line-height:1.5;color:#222222;">${copy.statusCopy}</p>
-            </div>
-            <p style="margin:0 0 28px;font-size:13px;line-height:1.55;color:#777770;">${copy.note}</p>
-            <a href="https://tooltrim.com" style="display:inline-block;padding:13px 20px;background:#222222;border-radius:8px;color:#ffffff;font-size:14px;font-weight:700;text-decoration:none;">${copy.cta} →</a>
+          <tr><td style="padding:48px 32px 40px;">
+            <p style="margin:0 0 16px;font-size:12px;font-weight:700;letter-spacing:1.1px;color:#6F6F68;">TOOL SUBMISSION</p>
+            <h1 style="margin:0 0 22px;font-size:38px;line-height:1.06;font-weight:600;letter-spacing:-1.6px;color:#0F0F0F;">Thank you, ${safeName}.</h1>
+            <p style="margin:0 0 14px;font-size:17px;line-height:1.6;color:#0F0F0F;">We’ve received the submission of <strong>${safeToolName}</strong> to ToolTrim.</p>
+            <p style="margin:0;font-size:16px;line-height:1.65;color:#6F6F68;">Our team will now review the website, its features, and the information provided before preparing the listing.</p>
+            <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin:32px 0;border-collapse:separate;">
+              <tr><td style="padding:22px;background:#EDEBE9;border:1px solid #E6E6E6;border-radius:10px;">
+                <p style="margin:0 0 7px;font-size:11px;font-weight:700;letter-spacing:1px;color:#6F6F68;">WHAT HAPPENS NEXT</p>
+                <p style="margin:0;font-size:16px;font-weight:600;line-height:1.5;color:#0F0F0F;">We’ll contact you directly as soon as the listing is live on ToolTrim.</p>
+              </td></tr>
+            </table>
+            <p style="margin:0 0 30px;font-size:13px;line-height:1.55;color:#6F6F68;">Your verified badge confirms that the submission is complete. Publication remains subject to our independent editorial review.</p>
+            <a href="https://tooltrim.com/en" style="display:inline-block;padding:13px 20px;background:#0F0F0F;border:1px solid #0F0F0F;border-radius:7px;color:#FFFFFF;font-size:14px;font-weight:700;text-decoration:none;">Explore ToolTrim →</a>
           </td></tr>
-          <tr><td style="padding:20px 30px;background:#f8f8f5;border-top:1px solid #ecece7;font-size:12px;line-height:1.5;color:#777770;">${copy.footer}<br><a href="https://tooltrim.com" style="color:#222222;">tooltrim.com</a></td></tr>
+        </table>
+        <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:640px;">
+          <tr><td align="center" style="padding:34px 24px 8px;">
+            <img src="https://tooltrim.com/picto-logo.svg" width="38" height="38" alt="" style="display:block;width:38px;height:38px;margin:0 auto 18px;border:0;border-radius:7px;" />
+            <p style="margin:0 0 8px;font-size:13px;line-height:1.55;color:#6F6F68;">You’re receiving this email because you submitted a tool to ToolTrim.</p>
+            <p style="margin:0 0 18px;font-size:12px;line-height:1.5;color:#6F6F68;">© 2026 ToolTrim. Independent software decisions.</p>
+            <p style="margin:0;font-size:12px;line-height:1.6;">
+              <a href="https://tooltrim.com/en/contact" style="color:#0F0F0F;text-decoration:underline;">Contact</a>
+              <span style="padding:0 9px;color:#A2A29B;">·</span>
+              <a href="https://tooltrim.com/en/transparency" style="color:#0F0F0F;text-decoration:underline;">Transparency</a>
+              <span style="padding:0 9px;color:#A2A29B;">·</span>
+              <a href="https://tooltrim.com/en/privacy-policy" style="color:#0F0F0F;text-decoration:underline;">Privacy</a>
+            </p>
+          </td></tr>
         </table>
       </td></tr>
     </table>
@@ -108,7 +103,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   const {
     name, email, subject, message, submissionType,
-    toolName, toolUrl, submitterRole, badgeReview, badgeUrl, verificationToken, lang,
+    toolName, toolUrl, submitterRole, badgeReview, badgeUrl, verificationToken,
   } = req.body ?? {};
 
   if (!name || !email || !subject || !message || !isValidEmail(email)) {
@@ -160,15 +155,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   if (isToolSubmission) {
-    const isFrench = lang !== "en";
     const confirmation = await resend.emails.send({
       from: "ToolTrim <contact@tooltrim.com>",
       to: String(email),
       replyTo: "contact@tooltrim.com",
-      subject: isFrench
-        ? `Merci pour votre soumission — ${String(toolName).replace(/[\r\n]/g, " ")}`
-        : `Thank you for your submission — ${String(toolName).replace(/[\r\n]/g, " ")}`,
-      html: submissionConfirmationHtml({ name, toolName, isFrench }),
+      subject: `Thank you for your submission — ${String(toolName).replace(/[\r\n]/g, " ")}`,
+      html: submissionConfirmationHtml({ name, toolName }),
     });
     if (confirmation.error) {
       console.error("[contact] Submission confirmation error:", confirmation.error);
