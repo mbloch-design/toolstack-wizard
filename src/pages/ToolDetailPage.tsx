@@ -443,7 +443,15 @@ const ToolDetailPage = () => {
                           target="_blank"
                           rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl)}
                           className="td-hero-site-link"
-                          onClick={() => trackEvent("outbound_tool_click", { tool_slug: tool.slug || tool.id })}
+                          onClick={() => trackEvent("outbound_tool_click", {
+                            tool_slug: tool.slug || tool.id,
+                            tool_name: tool.name,
+                            cta_location: "tool_hero",
+                            cta_label: primaryCtaLabel,
+                            destination_domain: getDomainFromUrl(primaryCtaUrl),
+                            language: lang,
+                            is_affiliate: Boolean(tool.affiliateLink && primaryCtaUrl === tool.affiliateLink),
+                          })}
                         >
                           {primaryCtaLabel}
                           <ExternalLink aria-hidden />
