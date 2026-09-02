@@ -189,7 +189,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
                 to={`${prefix}${item.to}`}
                 className={`asv2-nav-item${isActive ? " asv2-nav-item--active" : ""}`}
                 aria-label={t(item.labelFr, item.labelEn)}
-                title={!sidebarExpanded ? t(item.labelFr, item.labelEn) : undefined}
+                data-tooltip={t(item.labelFr, item.labelEn)}
               >
                 <span className="asv2-nav-icon">
                   <item.Icon style={{ width: 20, height: 20 }} />
@@ -255,6 +255,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
           <span aria-hidden>
             {sidebarExpanded ? <PanelLeftClose /> : <PanelLeftOpen />}
           </span>
+          <b aria-hidden>{sidebarExpanded ? t("Réduire la barre", "Close sidebar") : t("Ouvrir la barre", "Open sidebar")}</b>
         </button>
       </aside>
 

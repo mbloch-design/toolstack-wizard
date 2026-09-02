@@ -24143,12 +24143,13 @@ section[id] {
 }
 
 .asv2-sidebar {
+  position: relative;
   display: flex;
   flex-direction: column;
   height: 100%;
   width: 76px;
   flex-shrink: 0;
-  overflow: hidden;
+  overflow: visible;
   padding: 12px 12px 14px;
   background: var(--color-surface);
   border-right: 1px solid color-mix(in srgb, var(--color-border-soft) 78%, transparent);
@@ -24168,6 +24169,7 @@ section[id] {
 }
 
 .asv2-nav-item {
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -24239,32 +24241,54 @@ section[id] {
   opacity: 1;
 }
 
+/* In the compact rail the whole link is the hover/active pill, not only its
+   glyph. The floating label keeps every destination identifiable. */
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav-item:hover,
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav-item:focus-visible,
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav-item--active {
+  background: color-mix(in srgb, var(--color-surface-soft) 84%, var(--color-surface));
+}
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav-item .asv2-nav-icon {
+  background: transparent;
+}
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav-item::after {
+  position: absolute;
+  left: calc(100% + 10px);
+  top: 50%;
+  z-index: 80;
+  padding: 7px 11px;
+  border-radius: var(--radius-pill);
+  background: var(--color-text-strong);
+  color: var(--color-bg);
+  content: attr(data-tooltip);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-4px, -50%);
+  transition: opacity 120ms ease-out, transform 120ms ease-out;
+  white-space: nowrap;
+}
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav-item:hover::after,
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav-item:focus-visible::after {
+  opacity: 1;
+  transform: translate(0, -50%);
+}
+
 .asv2-sidebar-utility {
+  margin-top: auto;
+  padding: 18px 0 4px;
+  border-top: 0;
+}
+.asv2-utility-actions {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  margin-top: auto;
-  padding-top: 12px;
-  border-top: 1px solid color-mix(in srgb, var(--color-border-soft) 78%, transparent);
-}
-.asv2-utility-heading {
-  display: none;
-  align-items: center;
-  gap: 9px;
-  min-height: 28px;
-  padding: 0 10px 4px;
-  color: var(--color-muted);
-  font-family: var(--font-ui);
-  font-size: 10px;
-  font-weight: 650;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-.asv2-utility-heading svg {
-  width: 14px;
-  height: 14px;
 }
 .asv2-utility-item {
+  position: relative;
   display: grid;
   grid-template-columns: 44px minmax(0, 1fr) auto;
   align-items: center;
@@ -24285,6 +24309,31 @@ section[id] {
 .asv2-utility-item:hover {
   background: color-mix(in srgb, var(--color-surface-soft) 72%, var(--color-surface));
   color: var(--color-text);
+}
+.asv2-utility-item::after {
+  position: absolute;
+  left: calc(100% + 10px);
+  top: 50%;
+  z-index: 80;
+  padding: 6px 10px;
+  border-radius: var(--radius-pill);
+  background: var(--color-text-strong);
+  color: var(--color-bg);
+  content: attr(data-tooltip);
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-4px, -50%);
+  transition: opacity 120ms ease-out, transform 120ms ease-out;
+  white-space: nowrap;
+}
+.asv2-utility-item:hover::after,
+.asv2-utility-item:focus-visible::after {
+  opacity: 1;
+  transform: translate(0, -50%);
 }
 .asv2-utility-item:focus-visible {
   outline: 2px solid var(--color-text);
@@ -24310,15 +24359,11 @@ section[id] {
   font-size: 11px;
   font-weight: 650;
 }
-.asv2-theme-toggle,
-.asv2-sidebar-toggle {
+.asv2-theme-toggle {
   grid-template-columns: 44px minmax(0, 1fr);
 }
 .asv2-theme-toggle .asv2-utility-value {
   display: none;
-}
-.asv2-root--sidebar-expanded .asv2-utility-heading {
-  display: flex;
 }
 .asv2-root--sidebar-expanded .asv2-utility-text,
 .asv2-root--sidebar-expanded .asv2-utility-value {
@@ -24328,12 +24373,137 @@ section[id] {
 .asv2-root--sidebar-expanded .asv2-utility-item {
   padding-right: 10px;
 }
-.asv2-sidebar-toggle {
-  margin-top: 4px;
-  border-top: 1px solid var(--color-border-soft);
-  border-radius: 0 0 var(--radius-md) var(--radius-md);
-  padding-top: 5px;
-  min-height: 46px;
+.asv2-sidebar-resizer {
+  position: absolute;
+  top: 18px;
+  right: 14px;
+  z-index: 60;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: var(--color-surface-soft);
+  color: var(--color-muted);
+  cursor: pointer;
+  transition: background 140ms ease-out, color 140ms ease-out;
+}
+.asv2-sidebar-resizer > span {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+}
+.asv2-sidebar-resizer svg {
+  flex: 0 0 auto;
+  width: 16px;
+  height: 16px;
+}
+.asv2-sidebar-resizer > b {
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 12px);
+  width: max-content;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  background: var(--color-surface-soft);
+  box-shadow: 0 10px 26px color-mix(in srgb, var(--color-text) 14%, transparent);
+  color: var(--color-text);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-5px, -50%);
+  transition: opacity 140ms ease-out, transform 140ms ease-out;
+  white-space: nowrap;
+}
+.asv2-sidebar-resizer:hover,
+.asv2-sidebar-resizer:focus-visible {
+  background: color-mix(in srgb, var(--color-surface-soft) 76%, var(--color-border));
+  color: var(--color-text);
+}
+.asv2-sidebar-resizer:hover > b,
+.asv2-sidebar-resizer:focus-visible > b {
+  opacity: 1;
+  transform: translate(0, -50%);
+}
+.asv2-sidebar-resizer:focus-visible {
+  outline: none;
+}
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer {
+  top: 0;
+  right: -10px;
+  width: 20px;
+  height: 100%;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  cursor: e-resize;
+}
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer > span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  box-shadow: 0 0 0 1px var(--color-border-soft), 0 8px 22px color-mix(in srgb, var(--color-text) 10%, transparent);
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.92);
+  transition: opacity 140ms ease-out, transform 140ms ease-out;
+}
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer > b {
+  top: 50%;
+}
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer:hover > span,
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer:focus-visible > span {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+@media (min-width: 901px) {
+  .asv2-root--sidebar-expanded .asv2-utility-actions {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0;
+  }
+  .asv2-root--sidebar-expanded .asv2-utility-item {
+    display: grid;
+    flex: 1 1 0;
+    grid-template-columns: 1fr;
+    min-width: 0;
+    max-width: 48px;
+    min-height: 48px;
+    padding: 3px;
+    border-radius: var(--radius-pill);
+  }
+  .asv2-root--sidebar-expanded .asv2-utility-item > svg {
+    justify-self: center;
+  }
+  .asv2-root--sidebar-expanded .asv2-utility-text,
+  .asv2-root--sidebar-expanded .asv2-utility-value {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    opacity: 0;
+  }
+  .asv2-root--sidebar-expanded .asv2-utility-item::after {
+    left: 50%;
+    top: auto;
+    bottom: calc(100% + 9px);
+    transform: translate(-50%, 4px);
+  }
+  .asv2-root--sidebar-expanded .asv2-utility-item:hover::after,
+  .asv2-root--sidebar-expanded .asv2-utility-item:focus-visible::after {
+    transform: translate(-50%, 0);
+  }
 }
 
 .dark .asv2-logo img {
@@ -24352,11 +24522,6 @@ section[id] {
 .dark .asv2-search:hover {
   background: color-mix(in srgb, var(--color-surface-soft) 82%, var(--color-border));
 }
-.dark .asv2-sidebar-toggle:hover {
-  background: var(--color-surface-soft);
-  color: var(--color-text);
-}
-
 .asv2-content {
   flex: 1;
   min-width: 0;
@@ -24384,6 +24549,41 @@ section[id] {
   .asv2-root--sidebar-expanded .asv2-utility-value,
   .asv2-root--sidebar-expanded .asv2-utility-heading { display: none; }
   .asv2-root--sidebar-expanded .asv2-utility-item { padding-right: 5px; }
+  /* This range is a forced compact rail: expose the same destination pills,
+     and hide the resize affordance because changing the stored desktop
+     preference would have no visible effect here. */
+  .asv2-sidebar-resizer { display: none; }
+  .asv2-root--sidebar-expanded .asv2-nav-item:hover,
+  .asv2-root--sidebar-expanded .asv2-nav-item:focus-visible,
+  .asv2-root--sidebar-expanded .asv2-nav-item--active {
+    background: color-mix(in srgb, var(--color-surface-soft) 84%, var(--color-surface));
+  }
+  .asv2-root--sidebar-expanded .asv2-nav-item .asv2-nav-icon { background: transparent; }
+  .asv2-root--sidebar-expanded .asv2-nav-item::after {
+    position: absolute;
+    left: calc(100% + 10px);
+    top: 50%;
+    z-index: 80;
+    padding: 7px 11px;
+    border-radius: var(--radius-pill);
+    background: var(--color-text-strong);
+    color: var(--color-bg);
+    content: attr(data-tooltip);
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-4px, -50%);
+    transition: opacity 120ms ease-out, transform 120ms ease-out;
+    white-space: nowrap;
+  }
+  .asv2-root--sidebar-expanded .asv2-nav-item:hover::after,
+  .asv2-root--sidebar-expanded .asv2-nav-item:focus-visible::after {
+    opacity: 1;
+    transform: translate(0, -50%);
+  }
 }
 
 @media (max-width: 640px) {
