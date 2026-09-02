@@ -11,6 +11,7 @@ import { useStackPins } from "@/hooks/useStackPins";
 import { classifyToolForStack } from "@/lib/stackAutoClassification";
 import { scrollToTop } from "@/lib/scroll";
 import { setSeoTags, setNoindex, removeNoindex, cleanupSeo, SEO_BASE } from "@/lib/seo";
+import { trackEvent } from "@/lib/analytics";
 import {
   buildExplorationCandidates,
   getExplorerHref,
@@ -572,6 +573,7 @@ export default function ExplorerPage() {
           className="ex-card-main"
           aria-label={t(`Explorer autour de ${candidate.tool.name}`, `Explore around ${candidate.tool.name}`) as string}
           aria-describedby={`explore-card-${slug}-description`}
+          onClick={() => trackEvent("explorer_recenter", { tool_slug: slug })}
         >
           <span className="ex-card-media">
             {previewUrl ? (

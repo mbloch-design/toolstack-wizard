@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Breadcrumb from "@/components/Breadcrumb";
 import { useLang } from "@/hooks/useLang";
 import { cleanupSeo, SEO_BASE, setHreflang, setSeoTags } from "@/lib/seo";
+import { trackEvent } from "@/lib/analytics";
 
 type Step = 1 | 2 | 3;
 type Status = "idle" | "saving" | "checking" | "submitting" | "success" | "error";
@@ -214,6 +215,7 @@ const SubmitToolPage = () => {
         }),
       });
       if (!response.ok) throw new Error("submit_failed");
+      trackEvent("submit_tool", { tool_name: submission.toolName, submitter_role: submission.submitterRole });
       setStatus("success");
     } catch {
       setStatus("error");

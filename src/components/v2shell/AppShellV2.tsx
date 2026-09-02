@@ -12,7 +12,6 @@ import {
   Moon,
   PanelLeftClose,
   PanelLeftOpen,
-  Settings2,
   Sun,
   CircleDollarSign,
   Check,
@@ -26,6 +25,7 @@ import pictoToolTrim from "@/assets/picto-logo.svg";
 import { SearchModal } from "@/components/SearchModal";
 import Footer from "@/components/Footer";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { trackEvent } from "@/lib/analytics";
 
 type NavItem = {
   id: string;
@@ -75,6 +75,7 @@ function CurrencyPicker({
           className={compact ? "asv2-topbar-currency" : "asv2-utility-item asv2-currency-toggle"}
           aria-label={t(`Choisir la devise, ${selected.labelFr} sélectionné`, `Choose currency, ${selected.labelEn} selected`)}
           title={!compact && !sidebarExpanded ? t("Changer de devise", "Change currency") : undefined}
+          data-tooltip={!compact ? t("Devise", "Currency") : undefined}
         >
           {compact ? (
             <>
@@ -106,6 +107,7 @@ function CurrencyPicker({
               aria-checked={currency === item.code}
               className={`asv2-currency-option${currency === item.code ? " is-selected" : ""}`}
               onClick={() => {
+                if (item.code !== currency) trackEvent("currency_switch", { from: currency, to: item.code });
                 setCurrency(item.code);
                 setOpen(false);
               }}
@@ -199,16 +201,13 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
         </nav>
 
         <div className="asv2-sidebar-utility">
-          <div className="asv2-utility-heading" aria-hidden="true">
-            <Settings2 />
-            <span>{t("Préférences", "Preferences")}</span>
-          </div>
-
+          <div className="asv2-utility-actions">
           <a
             href={languageHref}
             className="asv2-utility-item"
             aria-label={t("Passer le site en anglais", "Switch the site to French")}
             title={!sidebarExpanded ? t("Changer de langue", "Change language") : undefined}
+            data-tooltip={t("Langue", "Language")}
           >
             <Languages />
             <span className="asv2-utility-text">
@@ -233,6 +232,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
               ? t("Passer en mode clair", "Switch to light mode")
               : t("Passer en mode sombre", "Switch to dark mode")}
             title={!sidebarExpanded ? t("Changer de thème", "Change theme") : undefined}
+            data-tooltip={t("Thème", "Theme")}
           >
             {theme === "dark" ? <Sun /> : <Moon />}
             <span className="asv2-utility-text">
@@ -240,23 +240,22 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
             </span>
             <span className="asv2-utility-value">{theme === "dark" ? t("Clair", "Light") : t("Sombre", "Dark")}</span>
           </button>
-
-          <button
-            type="button"
-            className="asv2-utility-item asv2-sidebar-toggle"
-            onClick={toggleSidebar}
-            aria-expanded={sidebarExpanded}
-            aria-label={sidebarExpanded
-              ? t("Réduire la barre latérale", "Collapse sidebar")
-              : t("Déployer la barre latérale", "Expand sidebar")}
-            title={!sidebarExpanded ? t("Déployer la navigation", "Expand navigation") : undefined}
-          >
-            {sidebarExpanded ? <PanelLeftClose /> : <PanelLeftOpen />}
-            <span className="asv2-utility-text">
-              {sidebarExpanded ? t("Réduire", "Collapse") : t("Déployer", "Expand")}
-            </span>
-          </button>
+          </div>
         </div>
+
+        <button
+          type="button"
+          className="asv2-sidebar-resizer"
+          onClick={toggleSidebar}
+          aria-expanded={sidebarExpanded}
+          aria-label={sidebarExpanded
+            ? t("Réduire la barre latérale", "Collapse sidebar")
+            : t("Déployer la barre latérale", "Expand sidebar")}
+        >
+          <span aria-hidden>
+            {sidebarExpanded ? <PanelLeftClose /> : <PanelLeftOpen />}
+          </span>
+        </button>
       </aside>
 
       <div className="asv2-workspace">

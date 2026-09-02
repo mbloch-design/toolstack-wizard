@@ -27,6 +27,7 @@ import { useLang } from "@/hooks/useLang";
 import { useCategories, usePosts, useToolSummaries, type Post, type ToolSummary } from "@/hooks/useSupabaseData";
 import { useCatalogSearch } from "@/hooks/useCatalogSearch";
 import ToolLogo from "@/components/ToolLogo";
+import { trackEvent } from "@/lib/analytics";
 
 type SearchSection = "trending" | "categories" | "platforms" | "works" | "collections" | "articles";
 type SearchResult = { id: string; label: string; meta: string; to: string; tool?: ToolSummary; kind: "tool" | "category" | "guide" };
@@ -129,7 +130,15 @@ export function SearchModal({ onClose }: { onClose: () => void }) {
 
   useEffect(() => setActiveIndex(-1), [results]);
 
-  const goTo = useCallback((to: string) => { navigate(to); onClose(); }, [navigate, onClose]);
+  const goTo = useCallback((to: string) => {
+    // Only a real typed search, not a browse-tab click from ExploreSection
+    // (those call goTo too, with an empty query).
+    if (query.trim().length >= 2) {
+      trackEvent("search_tool", { query: query.trim(), result_count: results.length });
+    }
+    navigate(to);
+    onClose();
+  }, [navigate, onClose, query, results.length]);
   const viewAllResults = useCallback(() => {
     const value = query.trim();
     if (value.length >= 2) goTo(`${prefix}/search?q=${encodeURIComponent(value)}`);

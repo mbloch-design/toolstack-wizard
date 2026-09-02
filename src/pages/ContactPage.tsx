@@ -3,6 +3,7 @@ import { Link, Navigate, useSearchParams } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
 import Breadcrumb from "@/components/Breadcrumb";
 import { setSeoTags, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
+import { trackEvent } from "@/lib/analytics";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -83,6 +84,7 @@ const ContactPage = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
+      if (res.ok) trackEvent("contact_form_submit", { subject: data.subject });
       setStatus(res.ok ? "success" : "error");
     } catch {
       setStatus("error");

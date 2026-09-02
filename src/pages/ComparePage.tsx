@@ -11,6 +11,7 @@ import { setSeoTags, setMeta, setJsonLd, setHreflang, cleanupSeo, setNoindex, re
 import type { Tool } from "@/data/types";
 import { FEATURED_COMPARISONS as COMPARISONS } from "@/data/comparisons";
 import { BATTLE_COMPARISON_DATA, type BattleComparisonSlug } from "@/data/comparisonBattles";
+import { trackEvent } from "@/lib/analytics";
 
 /* ─── Helpers ────────────────────────────────────────────────────────────── */
 // findTool removed — useToolPair now resolves slugs directly via targeted query.
@@ -2015,6 +2016,15 @@ const ComparePage = () => {
     const timer = setTimeout(() => setStaleLoading(true), 10000);
     return () => clearTimeout(timer);
   }, [loading]);
+
+  useEffect(() => {
+    if (loading || !toolA || !toolB) return;
+    trackEvent("comparison_view", {
+      tool_a: toolA.slug || toolA.id,
+      tool_b: toolB.slug || toolB.id,
+      is_featured: isFeaturedPair,
+    });
+  }, [loading, toolA, toolB, isFeaturedPair]);
 
   useEffect(() => {
     if (!toolA || !toolB) return;

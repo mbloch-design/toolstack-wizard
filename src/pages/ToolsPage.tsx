@@ -11,6 +11,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import Breadcrumb from "@/components/Breadcrumb";
 import { getExplorerHref } from "@/lib/toolExploration";
 import { useCatalogStickyToolbar } from "@/hooks/useCatalogStickyToolbar";
+import { trackEvent } from "@/lib/analytics";
 
 const TOOLS_PER_PAGE = 40;
 const EDITORIAL_SELECTION = ["framer", "notion", "figma"];
@@ -400,6 +401,7 @@ const ToolsPage = () => {
   }
 
   function openCategoryBranch(categoryId: string) {
+    trackEvent("filter_category", { category_id: categoryId, source: "tools_catalog" });
     updateParams((params) => {
       params.set("category", categoryId);
       params.delete("tags");
