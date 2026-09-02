@@ -120,6 +120,9 @@ export default function StickyDecisionCard({ tool, prefix, t, alternatives }: Pr
           <span>/ 5</span>
         </span>
         <span className="td-decision-verdict-copy">{t(toolTrimScore.labelFr, toolTrimScore.labelEn)}</span>
+        <Link to={`${prefix}/methodology#notation`} className="td-decision-verdict-methodology-link">
+          {t("Comment est calculée cette note ?", "How is this score calculated?")}
+        </Link>
       </div>
 
       <nav className="td-decision-utility-actions" aria-label={t("Actions sur l’outil", "Tool actions")}>

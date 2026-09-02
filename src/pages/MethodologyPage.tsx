@@ -195,6 +195,50 @@ const MethodologyPage = () => {
             </p>
           </section>
 
+          {/* ── Comment on calcule la note ── */}
+          <section className="ab-section" id="notation">
+            <h2 className="ab-section-title">{t("Comment on calcule la note ToolTrim.", "How the ToolTrim score is calculated.")}</h2>
+            <div className="ab-prose">
+              <p>
+                {t(
+                  "La note sur 5 affichée sur une fiche outil n'est pas une moyenne d'avis clients : c'est une analyse éditoriale, notée sur cinq critères factuels, chacun noté de 1 à 5 à partir d'une preuve citée (documentation officielle, page tarifs, avis vérifiés, comparatif concurrent) — jamais au ressenti.",
+                  "The score out of 5 shown on a tool page isn't an average of customer reviews: it's an editorial analysis, graded on five factual criteria, each scored 1 to 5 from a cited piece of evidence (official documentation, pricing page, verified reviews, competitor comparison) — never from feel.",
+                )}
+              </p>
+            </div>
+            <dl className="me-cars">
+              {[
+                { letter: "1", word: t("Valeur ajoutée", "Added value"), desc: t("Le gain réel (temps, argent) rapporté à ce que l'outil coûte.", "The real gain (time, money) relative to what the tool costs.") },
+                { letter: "2", word: t("Simplicité", "Simplicity"), desc: t("Le temps et la compétence nécessaires pour en tirer un premier résultat utile.", "The time and skill needed to get a first useful result.") },
+                { letter: "3", word: t("Utilisation", "Fit for purpose"), desc: t("Le degré de réalisation de l'objectif que l'outil annonce, sans contournement.", "How fully the tool delivers on its stated promise, without workarounds.") },
+                { letter: "4", word: t("Puissance", "Performance"), desc: t("La profondeur technique et le plafond de capacité face à sa catégorie.", "Technical depth and capability ceiling relative to its category.") },
+                { letter: "5", word: t("Réversibilité", "Reversibility"), desc: t("La facilité à récupérer ses données et à partir si l'outil ne convient plus.", "How easily you can get your data out and leave if the tool stops working for you.") },
+              ].map((b) => (
+                <div key={b.letter} className="me-cars-row">
+                  <dt className="me-cars-letter">{b.letter}</dt>
+                  <div className="me-cars-body">
+                    <p className="me-cars-word">{b.word}</p>
+                    <p className="me-cars-desc">{b.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </dl>
+            <div className="ab-prose">
+              <p>
+                {t(
+                  "Les cinq notes sont ensuite moyennées. Tant qu'un critère n'a pas de preuve suffisante, il reste vide et la fiche affiche à la place une note provisoire basée sur des signaux plus généraux (type d'outil, présence d'IA native, etc.) — jamais une moyenne inventée sur des critères manquants.",
+                  "The five scores are then averaged. Until a criterion has enough evidence, it stays unrated and the page shows a provisional score based on broader signals instead (tool type, native AI features...) — never an average computed over missing criteria.",
+                )}
+              </p>
+              <p>
+                {t(
+                  "Les paliers de lecture (Mauvais, Médiocre, Moyen, Très bon, Excellent) reprennent la convention de bandes utilisée par Trustpilot pour son TrustScore. Chaque preuve citée par critère reste visible directement dans la section \"Notre avis\" de la fiche.",
+                  "The reading bands (Bad, Poor, Average, Great, Excellent) follow the band convention Trustpilot uses for its TrustScore. Every cited piece of evidence per criterion stays visible directly in the tool page's \"Our verdict\" section.",
+                )}
+              </p>
+            </div>
+          </section>
+
           {/* ── CARS — framework, prose-led, no colored panel ── */}
           <section className="ab-section">
             <h2 className="ab-section-title">{t("Le framework derrière cette page : CARS.", "The framework behind this page: CARS.")}</h2>

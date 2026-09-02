@@ -9674,6 +9674,16 @@
     color: var(--color-muted);
   }
   .td-decision-verdict-copy { align-self: center; text-align: right; }
+  .td-decision-verdict-methodology-link {
+    grid-column: 1 / -1;
+    justify-self: end;
+    font-family: var(--font-ui);
+    font-size: 11px;
+    color: var(--color-muted);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .td-decision-verdict-methodology-link:hover { color: var(--color-text); }
   .td-decision-utility-actions { display: grid; gap: 8px; }
   .td-decision-utility-actions .pin-tool-button,
   .td-decision-utility-actions > button,
