@@ -60,6 +60,10 @@ export interface ToolTrimRating {
   // Preuve citée par axe (source, date, ou constat précis) — obligatoire
   // pour tout axe non-null.
   evidence: Partial<Record<"valeurAjoutee" | "simplicite" | "utilisation" | "puissance" | "reversibilite", string>>;
+  // English translation of evidence, same keys. Optional — the EN page
+  // falls back to the French text rather than rendering nothing, same
+  // convention as prosEn/consEn elsewhere in Tool.
+  evidenceEn?: Partial<Record<"valeurAjoutee" | "simplicite" | "utilisation" | "puissance" | "reversibilite", string>>;
   // Dernière mise à jour produit documentée (changelog/release notes) ;
   // sert de proxy de pérennité sans juger la santé financière de l'éditeur.
   lastActivityVerifiedOn?: string | null;

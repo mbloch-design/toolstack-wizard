@@ -170445,6 +170445,13 @@
         "puissance": "4 à 5 moteurs IA interrogés en direct (ChatGPT, Gemini, Perplexity, Claude, + Aperçu IA Google), audit sur 11 sources datées et tracées, méthodologie publique (\"mesurer, jamais supposer\") mais sans étude de validation chiffrée ni comparatif publié. Un concurrent du même segment (Botrank.ai) annonce un audit à 20+ critères sur 5 moteurs dont Mistral : Happia se situe dans la moyenne du marché plutôt qu'en tête (source : happia.fr/methodologie et recherche comparative, consulté le 2026-09-02).",
         "reversibilite": "La politique de confidentialité mentionne un droit RGPD générique à la portabilité (\"récupérer tes données dans un format structuré CSV, JSON\") accessible sur demande, mais aucune fonctionnalité produit d'export en libre-service des rapports d'audit, scores ou contenus générés par Happy (source : happia.fr/confidentialite, consulté le 2026-09-02)."
       },
+      "evidenceEn": {
+        "valeurAjoutee": "Estimated time saving of 2h/month for a price of €79 to €159 excl. VAT/month: a real but modest gain relative to the price.",
+        "simplicite": "Instant free pre-audit with no sign-up, but the full audit requires connecting 11 sources (Google Business Profile, reviews, press, directories...): several hours of setup, no technical skill required.",
+        "utilisation": "Public methodology with 3 weighted pillars (Foundation 45%, Authority 35%, Freshness 20%), preparation score and real-citation score measured separately without being merged. Only documented gap: automated review replies via API for Google only, copy-paste for TripAdvisor/Trustpilot (source: happia.fr/tarifs, checked 2026-09-02).",
+        "puissance": "4 to 5 AI engines queried live (ChatGPT, Gemini, Perplexity, Claude, + Google AI Overview), audit across 11 dated and traced sources, public methodology (\"measure, never assume\") but no quantified validation study or published comparison. A same-segment competitor (Botrank.ai) advertises a 20+ criteria audit across 5 engines including Mistral: Happia sits at market average rather than ahead (source: happia.fr/methodologie and comparative research, checked 2026-09-02).",
+        "reversibilite": "The privacy policy mentions a generic RGPD portability right (\"get your data in a structured CSV, JSON format\") available on request, but no self-service product feature to export audit reports, scores or Happy-generated content (source: happia.fr/confidentialite, checked 2026-09-02)."
+      },
       "lastActivityVerifiedOn": null,
       "notedOn": "2026-09-02"
     }

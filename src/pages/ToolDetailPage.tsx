@@ -911,6 +911,8 @@ const ToolDetailPage = () => {
                               ["reversibilite", "Réversibilité", "Reversibility"],
                             ] as const).map(([key, labelFr, labelEn]) => {
                               const value = tool.toolTrimRating![key] ?? 0;
+                              const evidenceText = (lang === "en" && tool.toolTrimRating!.evidenceEn?.[key])
+                                || tool.toolTrimRating!.evidence[key];
                               return (
                                 <div className="td-score-axis-card" key={key}>
                                   <div className="td-score-axis-row">
@@ -921,8 +923,8 @@ const ToolDetailPage = () => {
                                       ))}
                                     </div>
                                   </div>
-                                  {tool.toolTrimRating!.evidence[key] && (
-                                    <p className="td-score-axis-evidence">{tool.toolTrimRating!.evidence[key]}</p>
+                                  {evidenceText && (
+                                    <p className="td-score-axis-evidence">{evidenceText}</p>
                                   )}
                                 </div>
                               );
