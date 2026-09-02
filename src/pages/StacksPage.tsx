@@ -1,9 +1,11 @@
-import { useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties } from "react";
-import { createPortal } from "react-dom";
-import { Link, useSearchParams } from "react-router-dom";
-import { ArrowLeft, ArrowUpDown, Search, X, SlidersHorizontal } from "@/lib/icons";
+import { useEffect, useMemo, useState, type CSSProperties } from "react";
+import { useSearchParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { X } from "@/lib/icons";
 import ToolLogoPile from "@/components/ToolLogoPile";
 import ToolCardImage from "@/components/tool/ToolCardImage";
+import Breadcrumb from "@/components/Breadcrumb";
+import CatalogToolbar, { type ToolbarPill } from "@/components/catalog/CatalogToolbar";
 import { useLang } from "@/hooks/useLang";
 import { cleanupSeo, SEO_BASE, setHreflang, setJsonLd, setSeoTags } from "@/lib/seo";
 import { useCatalogStickyToolbar } from "@/hooks/useCatalogStickyToolbar";
@@ -228,8 +230,46 @@ function truncate(text: string, max = 150) {
   return `${text.slice(0, max - 1).trim()}…`;
 }
 
-/* ─── Components ─────────────────────────────────────────────────────────────── */
-interface SingleFacetGroupProps<T extends string> {
+/* ─── Filter panel (shared "Plus de filtres" visual language, see
+   CatalogToolbar / ToolsPage) ────────────────────────────────────────────── */
+interface CatGroupProps<T extends string> {
+  label: string;
+  options: Option<T>[];
+  active: T;
+  counts?: Map<T, number>;
+  onChange: (id: T) => void;
+  lang: "fr" | "en";
+  disabledIds?: Set<T>;
+}
+
+function CatGroup<T extends string>({ label, options, active, counts, onChange, lang, disabledIds }: CatGroupProps<T>) {
+  return (
+    <section className="tt-filter-group">
+      <h3>{label}</h3>
+      <div className="tt-catgrid">
+        {options.map((opt) => {
+          const isActive = opt.id === active;
+          const isDisabled = Boolean(disabledIds?.has(opt.id) && !isActive);
+          return (
+            <button
+              key={opt.id}
+              type="button"
+              className={`tt-catrow${isActive ? " is-selected" : ""}`}
+              onClick={() => onChange(opt.id)}
+              aria-pressed={isActive}
+              disabled={isDisabled}
+            >
+              <span>{lang === "fr" ? opt.label : opt.labelEn}</span>
+              {counts && <em>{counts.get(opt.id) ?? 0}</em>}
+            </button>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
+interface SegmentedGroupProps<T extends string> {
   label: string;
   options: Option<T>[];
   active: T;
@@ -238,11 +278,11 @@ interface SingleFacetGroupProps<T extends string> {
   disabledIds?: Set<T>;
 }
 
-function SingleFacetGroup<T extends string>({ label, options, active, onChange, lang, disabledIds }: SingleFacetGroupProps<T>) {
+function SegmentedGroup<T extends string>({ label, options, active, onChange, lang, disabledIds }: SegmentedGroupProps<T>) {
   return (
-    <div className="sk-facet-group">
-      <p className="sk-facet-group-label">{label}</p>
-      <div className="sk-facet-options">
+    <section className="tt-filter-group">
+      <h3>{label}</h3>
+      <div className="tt-filter-segmented" role="radiogroup" aria-label={label}>
         {options.map((opt) => {
           const isActive = opt.id === active;
           const isDisabled = Boolean(disabledIds?.has(opt.id) && !isActive);
@@ -250,57 +290,62 @@ function SingleFacetGroup<T extends string>({ label, options, active, onChange, 
             <button
               key={opt.id}
               type="button"
-              aria-pressed={isActive}
+              role="radio"
+              aria-checked={isActive}
               disabled={isDisabled}
+              className={`tt-pill${isActive ? " tt-pill--active" : ""}`}
               onClick={() => onChange(opt.id)}
-              className={`sk-facet-option${isActive ? " sk-facet-option--active" : ""}`}
             >
-              <span>{lang === "fr" ? opt.label : opt.labelEn}</span>
+              {lang === "fr" ? opt.label : opt.labelEn}
             </button>
           );
         })}
       </div>
-    </div>
+    </section>
   );
 }
 
-interface MultiFacetGroupProps<T extends string> {
+interface FacetGroupProps<T extends string> {
   label: string;
   options: Option<T>[];
   active: T[];
   onToggle: (id: T) => void;
   lang: "fr" | "en";
   disabledIds?: Set<T>;
+  emptyHint?: string;
 }
 
-function MultiFacetGroup<T extends string>({ label, options, active, onToggle, lang, disabledIds }: MultiFacetGroupProps<T>) {
+function FacetGroup<T extends string>({ label, options, active, onToggle, lang, disabledIds, emptyHint }: FacetGroupProps<T>) {
   return (
-    <div className="sk-facet-group">
-      <p className="sk-facet-group-label">{label}</p>
-      <div className="sk-facet-options">
-        {options.map((opt) => {
-          const isActive = active.includes(opt.id);
-          const isDisabled = Boolean(disabledIds?.has(opt.id) && !isActive);
-          return (
-            <button
-              key={opt.id}
-              type="button"
-              aria-pressed={isActive}
-              disabled={isDisabled}
-              onClick={() => onToggle(opt.id)}
-              className={`sk-facet-option sk-facet-option--multi${isActive ? " sk-facet-option--active" : ""}`}
-            >
-              <span className="sk-facet-check" aria-hidden />
-              <span>{lang === "fr" ? opt.label : opt.labelEn}</span>
-            </button>
-          );
-        })}
-      </div>
-    </div>
+    <section className="tt-filter-group">
+      <h3>{label}</h3>
+      {options.length > 0 ? (
+        <div className="tt-filter-facets">
+          {options.map((opt) => {
+            const isActive = active.includes(opt.id);
+            const isDisabled = Boolean(disabledIds?.has(opt.id) && !isActive);
+            return (
+              <button
+                key={opt.id}
+                type="button"
+                aria-pressed={isActive}
+                disabled={isDisabled}
+                className={`tt-pill${isActive ? " tt-pill--active" : ""}`}
+                onClick={() => onToggle(opt.id)}
+              >
+                {lang === "fr" ? opt.label : opt.labelEn}
+              </button>
+            );
+          })}
+        </div>
+      ) : (
+        emptyHint && <p className="tt-filter-hint">{emptyHint}</p>
+      )}
+    </section>
   );
 }
 
-interface SidebarContentProps {
+interface StackFilterPanelProps {
   lang: "fr" | "en";
   facetProfile: StackFacetProfile;
   facetSpecialties: StackSubProfile[];
@@ -319,8 +364,6 @@ interface SidebarContentProps {
   setFacetComplexity: (v: StackFacetComplexity) => void;
   toggleFacetType: (v: StackFacetTypeValue) => void;
   setFacetToolCount: (v: StackFacetToolCount) => void;
-  onReset: () => void;
-  isFiltered: boolean;
   disabled: {
     profiles: Set<StackFacetProfile>;
     specialties: Set<StackSubProfile>;
@@ -333,7 +376,7 @@ interface SidebarContentProps {
   };
 }
 
-function SidebarContent({
+function StackFilterPanel({
   lang,
   facetProfile,
   facetSpecialties,
@@ -352,54 +395,26 @@ function SidebarContent({
   setFacetComplexity,
   toggleFacetType,
   setFacetToolCount,
-  onReset,
-  isFiltered,
   disabled,
-}: SidebarContentProps) {
+}: StackFilterPanelProps) {
   return (
     <>
-      <div className="sk-sidebar-header">
-        <span className="sk-sidebar-eyebrow">{lang === "fr" ? "AFFINER" : "FILTER"}</span>
-        <p className="sk-sidebar-title">{lang === "fr" ? "Trouver la bonne stack" : "Find the right stack"}</p>
-        <p className="sk-sidebar-desc">
-          {lang === "fr"
-            ? "Commence par ton profil, puis précise le contexte."
-            : "Start with your profile, then refine the context."}
-        </p>
-      </div>
-
-      <div className="sk-facet-section">
-        <p className="sk-facet-section-title">{lang === "fr" ? "TON CONTEXTE" : "YOUR CONTEXT"}</p>
-        <SingleFacetGroup label={lang === "fr" ? "Profil" : "Profile"} options={PROFILE_OPTIONS} active={facetProfile} onChange={setFacetProfile} lang={lang} disabledIds={disabled.profiles} />
-        {facetProfile === "all" ? (
-          <div className="sk-facet-group">
-            <p className="sk-facet-group-label">{lang === "fr" ? "Spécialité" : "Specialty"}</p>
-            <p className="sk-facet-empty">{lang === "fr" ? "Choisis d’abord un profil." : "Choose a profile first."}</p>
-          </div>
-        ) : (
-          <MultiFacetGroup label={lang === "fr" ? "Spécialité" : "Specialty"} options={subProfileOptions} active={facetSpecialties} onToggle={toggleFacetSpecialty} lang={lang} disabledIds={disabled.specialties} />
-        )}
-        <SingleFacetGroup label={lang === "fr" ? "Niveau" : "Level"} options={LEVEL_OPTIONS} active={facetLevel} onChange={setFacetLevel} lang={lang} disabledIds={disabled.levels} />
-      </div>
-
-      <div className="sk-facet-section">
-        <p className="sk-facet-section-title">{lang === "fr" ? "TON BESOIN" : "YOUR NEED"}</p>
-        <MultiFacetGroup label={lang === "fr" ? "Objectif" : "Objective"} options={OBJECTIVE_MULTI_OPTIONS} active={facetObjectives} onToggle={toggleFacetObjective} lang={lang} disabledIds={disabled.objectives} />
-        <SingleFacetGroup label={lang === "fr" ? "Budget cible" : "Target budget"} options={BUDGET_OPTIONS} active={facetBudget} onChange={setFacetBudget} lang={lang} disabledIds={disabled.budgets} />
-      </div>
-
-      <div className="sk-facet-section">
-        <p className="sk-facet-section-title">{lang === "fr" ? "AFFINER" : "REFINE"}</p>
-        <SingleFacetGroup label={lang === "fr" ? "Complexité" : "Complexity"} options={COMPLEXITY_OPTIONS} active={facetComplexity} onChange={setFacetComplexity} lang={lang} disabledIds={disabled.complexities} />
-        <MultiFacetGroup label={lang === "fr" ? "Type de stack" : "Stack type"} options={TYPE_MULTI_OPTIONS} active={facetTypes} onToggle={toggleFacetType} lang={lang} disabledIds={disabled.types} />
-        <SingleFacetGroup label={lang === "fr" ? "Nombre d’outils" : "Tool count"} options={TOOL_COUNT_OPTIONS} active={facetToolCount} onChange={setFacetToolCount} lang={lang} disabledIds={disabled.toolCounts} />
-      </div>
-
-      <div className="sk-sidebar-reset-row">
-        <button type="button" onClick={onReset} disabled={!isFiltered} className="sk-sidebar-reset">
-          {lang === "fr" ? "Réinitialiser" : "Reset filters"}
-        </button>
-      </div>
+      <CatGroup label={lang === "fr" ? "Profil" : "Profile"} options={PROFILE_OPTIONS} active={facetProfile} onChange={setFacetProfile} lang={lang} disabledIds={disabled.profiles} />
+      <FacetGroup
+        label={lang === "fr" ? "Spécialité" : "Specialty"}
+        options={subProfileOptions}
+        active={facetSpecialties}
+        onToggle={toggleFacetSpecialty}
+        lang={lang}
+        disabledIds={disabled.specialties}
+        emptyHint={facetProfile === "all" ? (lang === "fr" ? "Choisis d’abord un profil." : "Choose a profile first.") : undefined}
+      />
+      <SegmentedGroup label={lang === "fr" ? "Niveau" : "Level"} options={LEVEL_OPTIONS} active={facetLevel} onChange={setFacetLevel} lang={lang} disabledIds={disabled.levels} />
+      <FacetGroup label={lang === "fr" ? "Objectif" : "Objective"} options={OBJECTIVE_MULTI_OPTIONS} active={facetObjectives} onToggle={toggleFacetObjective} lang={lang} disabledIds={disabled.objectives} />
+      <SegmentedGroup label={lang === "fr" ? "Budget cible" : "Target budget"} options={BUDGET_OPTIONS} active={facetBudget} onChange={setFacetBudget} lang={lang} disabledIds={disabled.budgets} />
+      <SegmentedGroup label={lang === "fr" ? "Complexité" : "Complexity"} options={COMPLEXITY_OPTIONS} active={facetComplexity} onChange={setFacetComplexity} lang={lang} disabledIds={disabled.complexities} />
+      <FacetGroup label={lang === "fr" ? "Type de stack" : "Stack type"} options={TYPE_MULTI_OPTIONS} active={facetTypes} onToggle={toggleFacetType} lang={lang} disabledIds={disabled.types} />
+      <SegmentedGroup label={lang === "fr" ? "Nombre d’outils" : "Tool count"} options={TOOL_COUNT_OPTIONS} active={facetToolCount} onChange={setFacetToolCount} lang={lang} disabledIds={disabled.toolCounts} />
     </>
   );
 }
@@ -504,23 +519,18 @@ const StacksPage = () => {
     { id: "budget", label: "", labelEn: "" },
     { id: "tools", label: "", labelEn: "" },
   ], "recommended"));
+  // La recherche n'est plus dans la barre de filtres : elle vit dans le sticky
+  // du haut, commun à tout le site. `query` reste alimenté par ?q= dans l'URL.
   const [query, setQuery] = useState(() => searchParams.get("q") || "");
-  const [isSearchOpen, setIsSearchOpen] = useState(() => Boolean(searchParams.get("q")));
-  const [mobileOpen, setMobileOpen] = useState(false);
+  // Gates the (fairly expensive) per-option availability scan below — only
+  // worth computing while the filter panel is actually open to see it.
+  const [panelOpen, setPanelOpen] = useState(false);
   // Progressive rendering: the catalog has 200+ stacks; rendering them all at
   // once produced a ~116,000px page with 9k+ DOM nodes. Show a page at a time.
   const STACK_LIST_PAGE_SIZE = 12;
   const [visibleCount, setVisibleCount] = useState(STACK_LIST_PAGE_SIZE);
 
-  const panelRef = useRef<HTMLDivElement>(null);
-  const filtersRef = useRef<HTMLButtonElement>(null);
-  const searchInputRef = useRef<HTMLInputElement>(null);
-  const [panelCoords, setPanelCoords] = useState({ top: 0, left: 0 });
   const { toolbarStuck, toolbarSentinelRef } = useCatalogStickyToolbar();
-
-  useEffect(() => {
-    if (isSearchOpen) searchInputRef.current?.focus();
-  }, [isSearchOpen]);
 
   const toolBySlug = useMemo(() => new Map(STACK_TOOLS.map((tool) => [tool.slug || tool.id, tool])), []);
   const enrichedStacks = useMemo<EnrichedStack[]>(() => STACKS.map((stack) => ({ stack, derived: stack.derived })), []);
@@ -559,10 +569,35 @@ const StacksPage = () => {
   const isFiltered = facetProfile !== "all" || facetSpecialties.length > 0 || facetObjectives.length > 0 || facetBudget !== "all"
     || facetLevel !== "all" || facetComplexity !== "all" || facetTypes.length > 0 || facetToolCount !== "all" || query.trim() !== "";
 
-  const activeFilterCount = (facetProfile !== "all" ? 1 : 0) + facetSpecialties.length + facetObjectives.length
+  // Objectif drives the pill row itself (see toolbarPills below), so — like
+  // ToolsPage's category — it isn't counted again on the "More filters"
+  // badge; only facets that live exclusively inside the panel are.
+  const panelFilterCount = (facetProfile !== "all" ? 1 : 0) + facetSpecialties.length
     + [facetBudget, facetLevel, facetComplexity, facetToolCount].filter((f) => f !== "all").length
-    + facetTypes.length + (query.trim() ? 1 : 0);
+    + facetTypes.length;
   const cloudObjective = facetObjectives.length === 1 ? facetObjectives[0] : null;
+
+  const toolbarPills = useMemo<ToolbarPill[]>(() => {
+    if (cloudObjective) {
+      return [
+        { id: "back", label: t("Tout", "All") as string, onClick: () => { setFacetObjectives([]); setFacetSpecialties([]); } },
+        ...OBJECTIVE_TAG_CLOUD[cloudObjective].map((specialty) => ({
+          id: specialty,
+          label: subProfileLabel(specialty, lang),
+          active: facetSpecialties.includes(specialty),
+          onClick: () => setFacetSpecialties(facetSpecialties.includes(specialty) ? [] : [specialty]),
+        })),
+      ];
+    }
+    return [
+      { id: "all", label: t("Tout", "All") as string, active: true, onClick: () => setFacetObjectives([]) },
+      ...OBJECTIVE_MULTI_OPTIONS.map((objective) => ({
+        id: objective.id,
+        label: optionLabel(OBJECTIVE_OPTIONS, objective.id, lang),
+        onClick: () => { setFacetObjectives([objective.id]); setFacetSpecialties([]); },
+      })),
+    ];
+  }, [cloudObjective, facetSpecialties, lang, t]);
 
   useEffect(() => {
     const next = new URLSearchParams(searchParams);
@@ -596,61 +631,6 @@ const StacksPage = () => {
     setSortBy("recommended");
   }
 
-  useEffect(() => {
-    if (!mobileOpen) return;
-    const focusFrame = window.requestAnimationFrame(() => {
-      panelRef.current?.querySelector<HTMLElement>("button, input, [href]")?.focus();
-    });
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") {
-        e.preventDefault();
-        setMobileOpen(false);
-        return;
-      }
-      if (e.key !== "Tab" || !panelRef.current) return;
-      const focusable = Array.from(panelRef.current.querySelectorAll<HTMLElement>(
-        'button:not([disabled]), input:not([disabled]), [href], [tabindex]:not([tabindex="-1"])',
-      ));
-      if (focusable.length === 0) return;
-      const first = focusable[0];
-      const last = focusable[focusable.length - 1];
-      if (e.shiftKey && document.activeElement === first) {
-        e.preventDefault();
-        last.focus();
-      } else if (!e.shiftKey && document.activeElement === last) {
-        e.preventDefault();
-        first.focus();
-      }
-    };
-    const onPointerDown = (e: PointerEvent) => {
-      const target = e.target as Node;
-      if (filtersRef.current?.contains(target) || panelRef.current?.contains(target)) return;
-      setMobileOpen(false);
-    };
-    document.addEventListener("keydown", onKey);
-    document.addEventListener("pointerdown", onPointerDown);
-    return () => {
-      window.cancelAnimationFrame(focusFrame);
-      document.removeEventListener("keydown", onKey);
-      document.removeEventListener("pointerdown", onPointerDown);
-      filtersRef.current?.focus();
-    };
-  }, [mobileOpen]);
-
-  // Panel is portaled to document.body (the filter bar scrolls horizontally
-  // on narrow widths, which would otherwise clip an absolutely-positioned
-  // panel's vertical overflow) — position it with fixed coordinates computed
-  // from the trigger's own rect, clamped so it never spills off either edge.
-  useLayoutEffect(() => {
-    if (!mobileOpen || !filtersRef.current) return;
-    const rect = filtersRef.current.getBoundingClientRect();
-    const panelWidth = Math.min(720, window.innerWidth - 32);
-    let left = rect.left;
-    if (left + panelWidth > window.innerWidth - 16) left = window.innerWidth - 16 - panelWidth;
-    if (left < 16) left = 16;
-    setPanelCoords({ top: rect.bottom + 8, left });
-  }, [mobileOpen]);
-
   const currentFilters = useMemo(() => ({
     profile: facetProfile,
     specialties: facetSpecialties,
@@ -672,7 +652,7 @@ const StacksPage = () => {
     // Availability checks scan the catalogue for every filter option. They are
     // useful only while the filter panel is visible, so keep them off the
     // critical rendering path.
-    if (!mobileOpen) {
+    if (!panelOpen) {
       return {
         profiles: new Set<StackFacetProfile>(),
         specialties: new Set<StackSubProfile>(),
@@ -694,7 +674,7 @@ const StacksPage = () => {
       types: new Set(TYPE_MULTI_OPTIONS.filter((option) => !facetTypes.includes(option.id) && !hasStackFor({ types: [option.id] })).map((option) => option.id)),
       toolCounts: new Set(TOOL_COUNT_OPTIONS.filter((option) => option.id !== "all" && !hasStackFor({ toolCount: option.id })).map((option) => option.id)),
     };
-  }, [facetObjectives, facetSpecialties, facetTypes, hasStackFor, mobileOpen, subProfileOptions]);
+  }, [facetObjectives, facetSpecialties, facetTypes, hasStackFor, panelOpen, subProfileOptions]);
 
   const filteredStacks = useMemo(() => {
     const filtered = enrichedStacks.filter((enriched) => matchesStack(enriched, currentFilters));
@@ -763,164 +743,66 @@ const StacksPage = () => {
     <div className="tt-catalog-page min-h-screen" style={{ "--page-accent": "#00E572" } as CSSProperties}>
       <section id="stacks" className="sk-section sk-listing-section scroll-mt-20">
         <div className="sk-container">
-          {/* ── Compact header: one title, then the catalogue controls. ── */}
+          {/* ── Compact header: breadcrumb, then one title. ── */}
           <div className="tt-catalog-compact-header">
+            <Breadcrumb
+              items={cloudObjective
+                ? [{ label: t("Stacks", "Stacks") as string, href: `${prefix}/stacks` }, { label: optionLabel(OBJECTIVE_OPTIONS, cloudObjective, lang) }]
+                : [{ label: t("Stacks", "Stacks") as string }]}
+            />
             <h1 className="tt-catalog-compact-title">{t("Stacks", "Stacks")}</h1>
           </div>
 
           <div ref={toolbarSentinelRef} aria-hidden="true" style={{ height: 1 }} />
 
-          {/* Filter bar — same shape as ToolsPage's .tt-filter-bar: quick
-              pills for the 2 most decision-relevant facets (Profil, Budget),
-              a "Filtres" trigger for the long tail (Spécialité, Objectif,
-              Niveau, Complexité, Type, Nb d'outils), reusing the same panel
-              at every breakpoint instead of only on mobile. */}
-          <div className={`tt-catalog-toolbar sk-mobile-trigger-row tt-sticky-toolbar${toolbarStuck ? " tt-sticky-toolbar--stuck" : ""}`}>
-            <div className="tt-catalog-toolbar-filters">
-              <nav className="tt-catalog-topic-nav" aria-label={t("Naviguer par besoin", "Browse by need") as string}>
-                {cloudObjective ? (
-                  <>
-                    <button
-                      type="button"
-                      className="tt-catalog-topic"
-                      onClick={() => {
-                        setFacetObjectives([]);
-                        setFacetSpecialties([]);
-                      }}
-                    >
-                      <ArrowLeft size={14} aria-hidden />
-                      {t("Tout", "All")}
-                    </button>
-                    {OBJECTIVE_TAG_CLOUD[cloudObjective].map((specialty) => {
-                      const active = facetSpecialties.includes(specialty);
-                      return (
-                        <button
-                          key={specialty}
-                          type="button"
-                          className={`tt-catalog-topic${active ? " tt-catalog-topic--active" : ""}`}
-                          aria-pressed={active}
-                          onClick={() => setFacetSpecialties(active ? [] : [specialty])}
-                        >
-                          {subProfileLabel(specialty, lang)}
-                        </button>
-                      );
-                    })}
-                  </>
-                ) : (
-                  <>
-                    <button type="button" className="tt-catalog-topic tt-catalog-topic--active" onClick={() => setFacetObjectives([])}>
-                      {t("Tout", "All")}
-                    </button>
-                    {OBJECTIVE_MULTI_OPTIONS.map((objective) => (
-                      <button
-                        key={objective.id}
-                        type="button"
-                        className="tt-catalog-topic"
-                        aria-pressed="false"
-                        onClick={() => {
-                          setFacetObjectives([objective.id]);
-                          setFacetSpecialties([]);
-                        }}
-                      >
-                        {optionLabel(OBJECTIVE_OPTIONS, objective.id, lang)}
-                      </button>
-                    ))}
-                  </>
-                )}
-              </nav>
-              <button type="button" ref={filtersRef} onClick={() => setMobileOpen((o) => !o)} className={`sk-mobile-trigger${mobileOpen ? " tf-dd-trigger--open" : ""}`} aria-label={mobileOpen ? t("Fermer les filtres", "Close filters") as string : t("Ouvrir les filtres", "Open filters") as string} aria-expanded={mobileOpen} aria-haspopup="dialog">
-                <SlidersHorizontal size={15} aria-hidden />
-                <span>{activeFilterCount > 0 ? t(`Filtrer (${activeFilterCount})`, `Filter (${activeFilterCount})`) : t("Filtrer", "Filter")}</span>
-              </button>
-            {mobileOpen && createPortal(
-              <div className="sk-filters-panel" role="dialog" aria-modal="true" aria-labelledby="stack-filters-title" ref={panelRef} style={{ position: "fixed", top: panelCoords.top, left: panelCoords.left }}>
-                <div className="sk-mobile-panel-header">
-                  <span id="stack-filters-title" className="sk-mobile-panel-title">
-                    {activeFilterCount > 0 ? t(`Filtres (${activeFilterCount})`, `Filters (${activeFilterCount})`) : t("Filtres", "Filters")}
-                  </span>
-                  <button type="button" className="sk-mobile-panel-close" onClick={() => setMobileOpen(false)} aria-label={t("Fermer", "Close") as string}>
-                    <X size={20} aria-hidden />
-                  </button>
-                </div>
-                <div className="sk-mobile-panel-body">
-                  <SidebarContent
-                    lang={lang}
-                    facetProfile={facetProfile}
-                    facetSpecialties={facetSpecialties}
-                    facetObjectives={facetObjectives}
-                    facetBudget={facetBudget}
-                    facetLevel={facetLevel}
-                    facetComplexity={facetComplexity}
-                    facetTypes={facetTypes}
-                    facetToolCount={facetToolCount}
-                    subProfileOptions={subProfileOptions}
-                    setFacetProfile={handleProfileChange}
-                    toggleFacetSpecialty={toggleFacetSpecialty}
-                    toggleFacetObjective={toggleFacetObjective}
-                    setFacetBudget={setFacetBudget}
-                    setFacetLevel={setFacetLevel}
-                    setFacetComplexity={setFacetComplexity}
-                    toggleFacetType={toggleFacetType}
-                    setFacetToolCount={setFacetToolCount}
-                    onReset={resetFacets}
-                    isFiltered={isFiltered}
-                    disabled={disabledFacetIds}
-                  />
-                </div>
-              </div>,
-              document.body,
-            )}
-              <div className={`tt-catalog-inline-search${isSearchOpen || query ? " tt-catalog-inline-search--open" : ""}`}>
-                {isSearchOpen || query ? (
-                  <div className="tt-catalog-inline-search-field">
-                    <Search size={17} aria-hidden />
-                    <input
-                      ref={searchInputRef}
-                      type="search"
-                      value={query}
-                      onChange={(e) => setQuery(e.target.value)}
-                      onBlur={() => { if (!query) setIsSearchOpen(false); }}
-                      onKeyDown={(event) => {
-                        if (event.key === "Escape") {
-                          setQuery("");
-                          setIsSearchOpen(false);
-                        }
-                      }}
-                      placeholder={t("Rechercher", "Search") as string}
-                      className="tt-catalog-inline-search-input"
-                    />
-                    <button
-                      type="button"
-                      className="tt-catalog-inline-search-clear"
-                      onMouseDown={(event) => event.preventDefault()}
-                      onClick={() => {
-                        setQuery("");
-                        setIsSearchOpen(false);
-                      }}
-                      aria-label={t("Fermer la recherche", "Close search") as string}
-                    >
-                      <X size={15} aria-hidden />
-                    </button>
-                  </div>
-                ) : (
-                  <button type="button" className="tt-catalog-inline-search-button" onClick={() => setIsSearchOpen(true)} aria-label={t("Rechercher", "Search") as string}>
-                    <Search size={17} aria-hidden />
-                    <span>{t("Rechercher", "Search")}</span>
-                  </button>
-                )}
-              </div>
-            </div>
-            <div className="tt-catalog-toolbar-meta">
-              <label className="tt-catalog-sort-control" title={t("Trier les stacks", "Sort stacks") as string}>
-                <ArrowUpDown size={18} aria-hidden />
-                <select className="tt-catalog-sort-select" value={sortBy} onChange={(e) => setSortBy(e.target.value as StackSortId)} aria-label={t("Trier par", "Sort by") as string}>
-                  <option value="recommended">{t("Recommandé", "Recommended")}</option>
-                  <option value="budget">{t("Budget", "Budget")}</option>
-                  <option value="tools">{t("Nombre d’outils", "Tool count")}</option>
-                </select>
-              </label>
-            </div>
-          </div>
+          {/* Filter bar — same shape as ToolsPage: a single pill row (here,
+              Objectif, with its specialty drill-down), a "Plus de filtres"
+              popover for the long tail, and sort. */}
+          <CatalogToolbar
+            pills={toolbarPills}
+            navLabel={t("Naviguer par besoin", "Browse by need") as string}
+            stuck={toolbarStuck}
+            panelTitle={t("Filtres", "Filters") as string}
+            moreLabel={t("Plus de filtres", "More filters") as string}
+            clearLabel={t("Tout effacer", "Clear all") as string}
+            activeFilterCount={panelFilterCount}
+            onClearFilters={resetFacets}
+            onPanelOpenChange={setPanelOpen}
+            panel={
+              <StackFilterPanel
+                lang={lang}
+                facetProfile={facetProfile}
+                facetSpecialties={facetSpecialties}
+                facetObjectives={facetObjectives}
+                facetBudget={facetBudget}
+                facetLevel={facetLevel}
+                facetComplexity={facetComplexity}
+                facetTypes={facetTypes}
+                facetToolCount={facetToolCount}
+                subProfileOptions={subProfileOptions}
+                setFacetProfile={handleProfileChange}
+                toggleFacetSpecialty={toggleFacetSpecialty}
+                toggleFacetObjective={toggleFacetObjective}
+                setFacetBudget={setFacetBudget}
+                setFacetLevel={setFacetLevel}
+                setFacetComplexity={setFacetComplexity}
+                toggleFacetType={toggleFacetType}
+                setFacetToolCount={setFacetToolCount}
+                disabled={disabledFacetIds}
+              />
+            }
+            sort={{
+              value: sortBy,
+              onChange: (value) => setSortBy(value as StackSortId),
+              ariaLabel: t("Trier par", "Sort by") as string,
+              title: t("Trier les stacks", "Sort stacks") as string,
+              options: [
+                { value: "recommended", label: t("Recommandé", "Recommended") as string },
+                { value: "budget", label: t("Budget", "Budget") as string },
+                { value: "tools", label: t("Nombre d’outils", "Tool count") as string },
+              ],
+            }}
+          />
 
           <div className="sk-listing-layout">
             <div className="sk-results">
