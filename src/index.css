@@ -10838,6 +10838,17 @@
   .ga-toc-link:hover { color: var(--color-text); }
   .ga-toc-link--active { color: var(--color-text); font-weight: 450; }
   .ga-toc-link--active::before { background: var(--color-text); }
+
+  /* Methodology page TOC: larger and darker at rest than the guide default
+     (13px / muted-light, ~2.5:1 contrast) — this page's sidebar sits next to
+     dense prose rather than short guide sections, so it needs to read on its
+     own without relying only on the active-state color jump. */
+  .ab-page .ga-toc-link {
+    font-size: 15px;
+    color: var(--color-muted);
+  }
+  .ab-page .ga-toc-link--active { color: var(--color-text); font-weight: 600; }
+
   /* Progress bar + mobile TOC */
   .ga-mobile-toc {
     display: none;

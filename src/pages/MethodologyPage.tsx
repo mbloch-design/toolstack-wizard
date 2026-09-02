@@ -2,8 +2,12 @@ import { useLang } from "@/hooks/useLang";
 import Breadcrumb from "@/components/Breadcrumb";
 import { Link } from "react-router-dom";
 import { useToolSummaries } from "@/hooks/useSupabaseData";
-import { useMemo, useEffect } from "react";
+import { useMemo, useEffect, useState } from "react";
 import { setSeoTags, setHreflang, setJsonLd, cleanupSeo, SEO_BASE } from "@/lib/seo";
+
+// Fixed section ids (this page's headings are static, unlike guides' parsed
+// markdown TOC), same scroll-spy approach as GuideDetailPage's h2Toc.
+const TOC_IDS = ["probleme", "principes", "contraste", "notation", "cars"] as const;
 
 /**
  * Methodology — long-form editorial piece, voice-led.
@@ -22,6 +26,25 @@ const MethodologyPage = () => {
     const verified = tools.filter((tool: any) => tool.pricing_v5?.verified_on).length;
     return { tools: tools.length, ferme, verified };
   }, [tools]);
+
+  const [activeHeading, setActiveHeading] = useState<string>(TOC_IDS[0]);
+  useEffect(() => {
+    setActiveHeading((current) => current || TOC_IDS[0]);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+        if (visible?.target.id) setActiveHeading(visible.target.id);
+      },
+      { rootMargin: "-18% 0px -68% 0px", threshold: [0, 1] },
+    );
+    TOC_IDS.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, []);
 
   const now = new Date();
   const monthFr = ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."];
@@ -109,11 +132,17 @@ const MethodologyPage = () => {
           <aside className="ga-toc-col">
             <p className="ga-toc-label">{t("Sommaire", "Contents")}</p>
             <nav className="ga-toc-nav">
-              <a href="#probleme" className="ga-toc-link">{t("Le problème", "The problem")}</a>
-              <a href="#principes" className="ga-toc-link">{t("Nos principes", "Our principles")}</a>
-              <a href="#contraste" className="ga-toc-link">{t("Annuaire vs diagnostic", "Directory vs diagnosis")}</a>
-              <a href="#notation" className="ga-toc-link">{t("Comment on note", "How we score")}</a>
-              <a href="#cars" className="ga-toc-link">{t("Le framework CARS", "The CARS framework")}</a>
+              {([
+                ["probleme", t("Le problème", "The problem")],
+                ["principes", t("Nos principes", "Our principles")],
+                ["contraste", t("Annuaire vs diagnostic", "Directory vs diagnosis")],
+                ["notation", t("Comment on note", "How we score")],
+                ["cars", t("Le framework CARS", "The CARS framework")],
+              ] as const).map(([id, label]) => (
+                <a key={id} href={`#${id}`} className={`ga-toc-link${activeHeading === id ? " ga-toc-link--active" : ""}`}>
+                  {label}
+                </a>
+              ))}
             </nav>
           </aside>
 
