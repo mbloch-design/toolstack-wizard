@@ -9621,6 +9621,9 @@
   }
   .td-decision-verdict-label {
     grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 6px;
     font-family: var(--font-ui);
     font-size: var(--tt-size-kicker);
     font-weight: 700;
@@ -9628,6 +9631,12 @@
     text-transform: uppercase;
     color: var(--color-muted);
   }
+  .td-decision-verdict-info {
+    display: inline-flex;
+    color: var(--color-muted);
+  }
+  .td-decision-verdict-info svg { width: 13px; height: 13px; }
+  .td-decision-verdict-info:hover { color: var(--color-text); }
   .td-decision-verdict-indicator {
     display: grid;
     width: 34px;
@@ -9674,16 +9683,6 @@
     color: var(--color-muted);
   }
   .td-decision-verdict-copy { align-self: center; text-align: right; }
-  .td-decision-verdict-methodology-link {
-    grid-column: 1 / -1;
-    justify-self: end;
-    font-family: var(--font-ui);
-    font-size: 11px;
-    color: var(--color-muted);
-    text-decoration: underline;
-    text-underline-offset: 3px;
-  }
-  .td-decision-verdict-methodology-link:hover { color: var(--color-text); }
   .td-decision-utility-actions { display: grid; gap: 8px; }
   .td-decision-utility-actions .pin-tool-button,
   .td-decision-utility-actions > button,
@@ -22174,6 +22173,14 @@ section[id] {
   font-style: italic;
   line-height: 1.5;
   color: var(--color-muted);
+}
+.me-axis-detail-title {
+  margin: 32px 0 4px;
+  font-family: var(--font-ui);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--color-text-strong);
 }
 
 /* ─────────────────────────────────────────────────────────────────────────

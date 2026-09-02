@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Check, Compass, Copy, Flag, Linkedin, Mail, MessageCircle, Share2 } from "@/lib/icons";
+import { ArrowRight, Check, Compass, Copy, Flag, Info, Linkedin, Mail, MessageCircle, Share2 } from "@/lib/icons";
 import ToolLogo from "@/components/ToolLogo";
 import PinToolButton from "@/components/PinToolButton";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
@@ -101,7 +101,17 @@ export default function StickyDecisionCard({ tool, prefix, t, alternatives }: Pr
   return (
     <div className="td-decision-card td-decision-card--utility">
       <div className="td-decision-verdict">
-        <span className="td-decision-verdict-label">{t("L’avis ToolTrim", "ToolTrim verdict")}</span>
+        <span className="td-decision-verdict-label">
+          {t("L’avis ToolTrim", "ToolTrim verdict")}
+          <Link
+            to={`${prefix}/methodology#notation`}
+            className="td-decision-verdict-info"
+            aria-label={t("Comment est calculée cette note ?", "How is this score calculated?")}
+            title={t("Comment est calculée cette note ?", "How is this score calculated?")}
+          >
+            <Info aria-hidden />
+          </Link>
+        </span>
         <span className={`td-decision-verdict-indicator td-decision-verdict-indicator--${verdictLevel}`} aria-hidden="true">
           <svg className="td-decision-verdict-gauge" viewBox="0 0 34 34">
             <circle className="td-decision-verdict-gauge-track" cx="17" cy="17" r={gaugeRadius} />
@@ -120,9 +130,6 @@ export default function StickyDecisionCard({ tool, prefix, t, alternatives }: Pr
           <span>/ 5</span>
         </span>
         <span className="td-decision-verdict-copy">{t(toolTrimScore.labelFr, toolTrimScore.labelEn)}</span>
-        <Link to={`${prefix}/methodology#notation`} className="td-decision-verdict-methodology-link">
-          {t("Comment est calculée cette note ?", "How is this score calculated?")}
-        </Link>
       </div>
 
       <nav className="td-decision-utility-actions" aria-label={t("Actions sur l’outil", "Tool actions")}>

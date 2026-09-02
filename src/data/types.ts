@@ -41,7 +41,7 @@ export interface ToolBillingTrap {
 // ─── ToolTrim rating v2 ───
 // Replaces the old pros/cons-count heuristic. Each axis is graded 1-5 from a
 // citable source (official docs, pricing page, changelog, aggregated
-// reviews) — never from feel. An axis stays null rather than guessed when no
+// reviews), never from feel. An axis stays null rather than guessed when no
 // evidence exists; computeToolTrimScoreV2 only returns a score once all five
 // are filled, so an incomplete rating never surfaces a fabricated number.
 export type ToolTrimRatingAxis = 1 | 2 | 3 | 4 | 5;
@@ -57,10 +57,10 @@ export interface ToolTrimRating {
   puissance: ToolTrimRatingAxis | null;
   // Portabilité des données si l'utilisateur quitte l'outil (export, API).
   reversibilite: ToolTrimRatingAxis | null;
-  // Preuve citée par axe (source, date, ou constat précis) — obligatoire
+  // Preuve citée par axe (source, date, ou constat précis), obligatoire
   // pour tout axe non-null.
   evidence: Partial<Record<"valeurAjoutee" | "simplicite" | "utilisation" | "puissance" | "reversibilite", string>>;
-  // English translation of evidence, same keys. Optional — the EN page
+  // English translation of evidence, same keys. Optional: the EN page
   // falls back to the French text rather than rendering nothing, same
   // convention as prosEn/consEn elsewhere in Tool.
   evidenceEn?: Partial<Record<"valeurAjoutee" | "simplicite" | "utilisation" | "puissance" | "reversibilite", string>>;

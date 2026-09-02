@@ -100,9 +100,24 @@ const MethodologyPage = () => {
         </div>
       </section>
 
-      {/* ── Article body ────────────────────────────────── */}
+      {/* ── Article body: wide site grid (sticky TOC + capped reading
+          column), same ga-body-grid pattern as guide articles, replacing
+          the old lone 720px column centered in the full page width. ── */}
       <article className="ab-article">
-        <div className="ab-container">
+        <div className="ga-body-grid">
+
+          <aside className="ga-toc-col">
+            <p className="ga-toc-label">{t("Sommaire", "Contents")}</p>
+            <nav className="ga-toc-nav">
+              <a href="#probleme" className="ga-toc-link">{t("Le problème", "The problem")}</a>
+              <a href="#principes" className="ga-toc-link">{t("Nos principes", "Our principles")}</a>
+              <a href="#contraste" className="ga-toc-link">{t("Annuaire vs diagnostic", "Directory vs diagnosis")}</a>
+              <a href="#notation" className="ga-toc-link">{t("Comment on note", "How we score")}</a>
+              <a href="#cars" className="ga-toc-link">{t("Le framework CARS", "The CARS framework")}</a>
+            </nav>
+          </aside>
+
+          <article>
 
           {/* Lede */}
           <p className="ab-lede">
@@ -114,7 +129,7 @@ const MethodologyPage = () => {
           </p>
 
           {/* ── Le problème ── */}
-          <section className="ab-section">
+          <section className="ab-section" id="probleme">
             <h2 className="ab-section-title">{t("Un annuaire ne sait pas qui vous êtes.", "A directory doesn't know who you are.")}</h2>
             <div className="ab-prose">
               <p>
@@ -133,7 +148,7 @@ const MethodologyPage = () => {
           </section>
 
           {/* ── Trois principes ── */}
-          <section className="ab-section">
+          <section className="ab-section" id="principes">
             <h2 className="ab-section-title">{t("Trois principes non négociables.", "Three non-negotiable principles.")}</h2>
             <ol className="ab-rules">
               <li>
@@ -161,7 +176,7 @@ const MethodologyPage = () => {
           </section>
 
           {/* ── La preuve par le contraste ── */}
-          <section className="ab-section">
+          <section className="ab-section" id="contraste">
             <h2 className="ab-section-title">{t("Annuaire vs diagnostic.", "Directory vs diagnosis.")}</h2>
             <p className="ab-prose">
               {t(
@@ -201,8 +216,14 @@ const MethodologyPage = () => {
             <div className="ab-prose">
               <p>
                 {t(
-                  "La note sur 5 affichée sur une fiche outil n'est pas une moyenne d'avis clients : c'est une analyse éditoriale, notée sur cinq critères factuels, chacun noté de 1 à 5 à partir d'une preuve citée (documentation officielle, page tarifs, avis vérifiés, comparatif concurrent) — jamais au ressenti.",
-                  "The score out of 5 shown on a tool page isn't an average of customer reviews: it's an editorial analysis, graded on five factual criteria, each scored 1 to 5 from a cited piece of evidence (official documentation, pricing page, verified reviews, competitor comparison) — never from feel.",
+                  "La question qu'on se pose n'est jamais « est-ce un bon produit dans l'absolu ? ». C'est : est-ce que cet outil facilite vraiment ta journée, est-ce que tu y gagnes à l'utiliser, est-ce que ça vaut le coup d'y investir du temps ou de l'argent, et est-ce que cet investissement est à la hauteur du gain réel. La note sur 5 est la réponse chiffrée à ces quatre questions, jamais une moyenne d'avis clients.",
+                  "The question we're answering is never \"is this a good product in the abstract?\". It's: does this tool actually make your day easier, do you gain from using it, is it worth investing time or money in, and is that investment proportional to the real gain. The score out of 5 is the numeric answer to those four questions, never an average of customer reviews.",
+                )}
+              </p>
+              <p>
+                {t(
+                  "On note cinq critères factuels, chacun de 1 à 5 à partir d'une preuve citée (documentation officielle, page tarifs, avis vérifiés, comparatif concurrent), jamais au ressenti. Deux raccourcis tentants n'en font volontairement pas partie : le nombre d'avantages/inconvénients rédigés sur la fiche (ça mesure l'effort d'écriture d'un éditeur, pas la qualité du produit) et la présence d'un plan gratuit (c'est un choix de modèle économique, pas un indicateur de qualité : un excellent outil payant ne doit pas être pénalisé, un outil médiocre avec un plan gratuit généreux ne doit pas être avantagé).",
+                  "We grade five factual criteria, each 1 to 5 from a cited piece of evidence (official documentation, pricing page, verified reviews, competitor comparison), never from feel. Two tempting shortcuts are deliberately left out: the number of pros/cons written on a page (that measures an editor's writing effort, not product quality) and the presence of a free plan (a pricing-model choice, not a quality signal: a great paid-only tool shouldn't be penalized, and a mediocre tool with a generous free tier shouldn't be rewarded for it).",
                 )}
               </p>
             </div>
@@ -223,11 +244,53 @@ const MethodologyPage = () => {
                 </div>
               ))}
             </dl>
+
+            <h3 className="me-axis-detail-title">
+              {t("Ce qu'on regarde concrètement, critère par critère.", "What we actually look at, criterion by criterion.")}
+            </h3>
+            <ol className="ab-rules">
+              <li>
+                <strong>{t("Valeur ajoutée.", "Added value.")}</strong>{" "}
+                {t(
+                  "Le temps ou l'argent réellement économisé par rapport à un usage sans l'outil, rapporté à son coût, pas le gain en absolu. Un gain de deux heures par mois sur un outil à 80 €/mois n'obtient pas la même note qu'un gain équivalent sur un outil à 10 €/mois. Preuve recherchée : temps annoncé ou mesuré, témoignages chiffrés, comparaison avant/après documentée.",
+                  "The time or money actually saved compared to not using the tool, relative to its cost, not the gain in absolute terms. Saving two hours a month on an €80/month tool doesn't earn the same score as the same saving on a €10/month tool. Evidence sought: stated or measured time savings, quantified testimonials, a documented before/after comparison.",
+                )}
+              </li>
+              <li>
+                <strong>{t("Simplicité.", "Simplicity.")}</strong>{" "}
+                {t(
+                  "Uniquement la friction de démarrage (combien de temps et quelle compétence pour un premier résultat utile), pas la richesse fonctionnelle globale. Un outil no-code utilisable en cinq minutes note haut même s'il plafonne vite ; un outil qui exige un développeur dédié note bas même si le résultat final est excellent, parce que ce plafond-là est le rôle du critère puissance, pas de celui-ci.",
+                  "Only the startup friction (how much time and skill for a first useful result), not the overall feature depth. A no-code tool usable in five minutes scores high even if it plateaus quickly; a tool that requires a dedicated developer scores low even if the end result is excellent, because that ceiling is the performance criterion's job, not this one's.",
+                )}
+              </li>
+              <li>
+                <strong>{t("Utilisation.", "Fit for purpose.")}</strong>{" "}
+                {t(
+                  "Est-ce que l'outil tient la promesse affichée sur sa page produit, dans des conditions d'usage réelles, sans qu'il faille bricoler un contournement ou ajouter un autre outil pour compléter. On compare ce qui est vendu à ce qui est documenté comme limite : cons, avis vérifiés, changelog, écarts constatés entre deux plans.",
+                  "Whether the tool delivers on the promise stated on its product page, under real usage conditions, without needing a workaround or another tool to fill the gap. We compare what's sold against what's documented as a limit: cons, verified reviews, changelog entries, gaps observed between plans.",
+                )}
+              </li>
+              <li>
+                <strong>{t("Puissance.", "Performance.")}</strong>{" "}
+                {t(
+                  "Une fois que l'outil fait ce qu'il promet, jusqu'où peut-il aller : profondeur technique, plafond de capacité, position face aux meilleurs de sa catégorie. Quand un comparatif concurrent existe, on s'en sert ; sans preuve comparative, la note reste prudente (moyenne du marché), jamais optimiste par défaut.",
+                  "Once the tool does what it promises, how far it can go: technical depth, capability ceiling, standing against the best in its category. When a competitor comparison exists, we use it; without comparative evidence, the score stays conservative (market average), never optimistic by default.",
+                )}
+              </li>
+              <li>
+                <strong>{t("Réversibilité.", "Reversibility.")}</strong>{" "}
+                {t(
+                  "Si l'outil ne convient plus, peut-on repartir avec ses données sans y laisser du travail ? On cherche une fonctionnalité produit d'export en libre-service (pas seulement un droit RGPD générique accessible sur demande), une API, et un format réutilisable ailleurs.",
+                  "If the tool stops working for you, can you leave with your data intact, without losing the work put in? We look for a self-service export feature in the product (not just a generic RGPD right available on request), an API, and a format usable elsewhere.",
+                )}
+              </li>
+            </ol>
+
             <div className="ab-prose">
               <p>
                 {t(
-                  "Les cinq notes sont ensuite moyennées. Tant qu'un critère n'a pas de preuve suffisante, il reste vide et la fiche affiche à la place une note provisoire basée sur des signaux plus généraux (type d'outil, présence d'IA native, etc.) — jamais une moyenne inventée sur des critères manquants.",
-                  "The five scores are then averaged. Until a criterion has enough evidence, it stays unrated and the page shows a provisional score based on broader signals instead (tool type, native AI features...) — never an average computed over missing criteria.",
+                  "Les cinq notes sont ensuite moyennées. Tant qu'un critère n'a pas de preuve suffisante, il reste vide et la fiche affiche à la place une note provisoire basée sur des signaux plus généraux (type d'outil, présence d'IA native, etc.), jamais une moyenne inventée sur des critères manquants.",
+                  "The five scores are then averaged. Until a criterion has enough evidence, it stays unrated and the page shows a provisional score based on broader signals instead (tool type, native AI features...), never an average computed over missing criteria.",
                 )}
               </p>
               <p>
@@ -240,7 +303,7 @@ const MethodologyPage = () => {
           </section>
 
           {/* ── CARS — framework, prose-led, no colored panel ── */}
-          <section className="ab-section">
+          <section className="ab-section" id="cars">
             <h2 className="ab-section-title">{t("Le framework derrière cette page : CARS.", "The framework behind this page: CARS.")}</h2>
             <div className="ab-prose">
               <p>
@@ -272,6 +335,7 @@ const MethodologyPage = () => {
             </p>
           </section>
 
+          </article>
         </div>
       </article>
     </div>

@@ -21,7 +21,7 @@ const STALE_THRESHOLD_DAYS = 365;
 
 /**
  * v2 score: plain average of five 1-5 axes graded from citable evidence
- * (valeurAjoutee, simplicite, utilisation, puissance, reversibilite) — see
+ * (valeurAjoutee, simplicite, utilisation, puissance, reversibilite): see
  * ToolTrimRating in data/types.ts for what each axis means and why pros/cons
  * counts and free-tier presence were dropped (they measured editorial effort
  * and pricing model, not tool quality). Returns null when any axis is still

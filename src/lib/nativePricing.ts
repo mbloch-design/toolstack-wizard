@@ -65,7 +65,7 @@ const pricingTruth = (() => {
 function extractEditorialNativePrice(tool: Tool): NativePrice | null {
   const text = [tool.pricing?.paid, tool.pricingEn?.paid].filter(Boolean).join(" ");
   // "paid" text often lists the free tier first (e.g. "Free: 0 $ ; Pro: 22 $/mois"),
-  // so the first amount found isn't necessarily the actual paid price — skip zero matches.
+  // so the first amount found isn't necessarily the actual paid price: skip zero matches.
   const matches = text.matchAll(/(?:([$€£])\s*([0-9]+(?:[.,][0-9]+)?)|([0-9]+(?:[.,][0-9]+)?)\s*([$€£]))/g);
   for (const match of matches) {
     const symbol = match[1] || match[4];
