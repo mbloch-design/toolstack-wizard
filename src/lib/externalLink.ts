@@ -34,6 +34,15 @@ const POLITIQUE: Record<NatureLien, "dofollow" | "nofollow" | "sponsored"> = {
 };
 
 const BASE = "noopener noreferrer";
+const DOMAINES_EDITORIAUX_DOFOLLOW = new Set(["franklymail.com", "www.franklymail.com"]);
+
+function estLienEditorialDofollow(url: string): boolean {
+  try {
+    return DOMAINES_EDITORIAUX_DOFOLLOW.has(new URL(url).hostname.toLowerCase());
+  } catch {
+    return false;
+  }
+}
 
 export function relExterne(nature: NatureLien = "autre"): string {
   const regle = POLITIQUE[nature];
@@ -79,7 +88,9 @@ export function relPourLienOutil(
   const affilie = (affiliateLink || "").trim();
   const officiel = (websiteUrl || "").trim();
   const declareAffilie = !!href && !!affilie && href === affilie && affilie !== officiel;
-  return relExterne(declareAffilie || estLienRemunere(href) ? "affilie" : "source");
+  const remunere = declareAffilie || estLienRemunere(href);
+  if (!remunere && estLienEditorialDofollow(href)) return BASE;
+  return relExterne(remunere ? "affilie" : "source");
 }
 
 /** Valeur brute pour les cas non-React (conversion markdown côté serveur). */

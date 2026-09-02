@@ -1,88 +1,47 @@
 {
   "slug": "ae-rubberhose",
-  "author": "ToolTrim — Mike",
-  "verified_on": "2026-07-24",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-09-02",
   "sources": [
-    { "label": "BattleAxe — RubberHose 3 (site officiel)", "url": "https://battleaxe.co/rubberhose" },
-    { "label": "AEScripts — RubberHose (distributeur officiel)", "url": "https://aescripts.com/rubberhose" }
+    { "label": "Battle Axe - Rubberhose 3", "url": "https://battleaxe.co/rubberhose" },
+    { "label": "Battle Axe - documentation Rubberhose 3", "url": "https://battleaxe.co/rubberhose/docs" }
   ],
   "facts": {
-    "what": "Script de rigging pour After Effects permettant de créer et d'animer rapidement des personnages en courbes (« rubber hoses »). Offre une Session View non linéaire pour l'animation de caractères fluides et organiques.",
-    "what_en": "After Effects rigging script for fast character creation and animation using curves (rubber hoses). Provides intuitive bone-less rigging with organic, fluid animation capabilities.",
-    "pricing_model": "Licence perpétuelle (achat unique), avec versions majeures facturées séparément. Mises à jour mineures gratuites.",
-    "free_tier": { "exists": false, "detail": "Pas de version gratuite permanente. Essai gratuit disponible ; achat de licence requis." },
+    "what": "Extension de rigging pour After Effects conçue pour créer rapidement des membres flexibles, relier des illustrations et réutiliser des rigs de personnages stylisés.",
+    "what_en": "After Effects rigging extension for quickly building flexible limbs, connecting artwork and reusing stylized character rigs.",
+    "pricing_model": "Achat unique par utilisateur. Les mises à jour de Rubberhose 3 sont incluses.",
+    "free_tier": { "exists": false, "detail": "Pas de plan gratuit permanent. Rubberhose 3 coûte 65 $ en achat unique." },
     "plans": [
-      { "name": "RubberHose 3", "price": "65 USD" }
+      { "name": "Rubberhose 3", "price": "65 $ en achat unique" }
     ],
     "key_features": [
-      "Rigging sans os (bone-less) pour animations rapides",
-      "Tapered hoses pour varier les épaisseurs des membres",
-      "Hose styling personnalisable et sauvegardable",
-      "RubberRig et RubberPin pour connecter des calques",
-      "Optimisation de performance et baking de keyframes"
+      "Création d'un membre en un clic ou à partir d'un tracé",
+      "Points de courbure supplémentaires pour les courbes en S, doigts et queues",
+      "Styles prédéfinis et styles personnalisés réutilisables",
+      "RubberRig et RubberPin pour relier les calques d'illustration",
+      "Réutilisation des rigs avec les propriétés essentielles d'After Effects",
+      "Rigs basés sur les fonctions natives d'After Effects"
     ]
   },
   "fr": {
     "verdict": {
-      "keepIf": [
-        "Vous animez des personnages stylisés ou en courbes dans After Effects.",
-        "Vous cherchez un rigging plus rapide que les systèmes traditionnels d'os.",
-        "Vous produisez du contenu type motion design ou animation pour réseaux sociaux."
-      ],
-      "avoidIf": [
-        "Vous avez besoin de rigging hyperréaliste ou biomécanique complexe.",
-        "Vous cherchez un outil gratuit.",
-        "Vous ne travaillez qu'en 3D (ce script est uniquement pour AE en 2D)."
-      ],
-      "threshold": "RubberHose s'impose pour l'animation de personnages stylisés en motion design ; pour du rigging biomécanique réaliste ou du budget serré, d'autres solutions conviennent mieux."
+      "keepIf": ["Vous animez régulièrement des personnages stylisés dans After Effects.", "Vous voulez tester rapidement plusieurs silhouettes sans reconstruire le rig.", "Votre équipe doit ouvrir et rendre les compositions sans acheter une licence pour chaque poste de rendu."],
+      "avoidIf": ["Vous avez besoin d'un système complet de squelette, marche automatique ou synchronisation labiale.", "Vous travaillez principalement dans Blender, Moho ou Toon Boom.", "Vous ne créez des personnages que ponctuellement et Duik suffit à votre workflow."],
+      "threshold": "Choisissez Rubberhose 3 pour accélérer les membres souples et les personnages graphiques dans After Effects. Préférez Duik pour un rig plus complet et gratuit, au prix d'une prise en main plus longue."
     },
-    "pros": [
-      "Rigging très rapide, idéal pour la production de contenu.",
-      "Interface intuitive et courbe d'apprentissage courte.",
-      "Animations fluides et organiques sans complexité osseuse.",
-      "Licence perpétuelle (pas d'abonnement)."
-    ],
-    "cons": [
-      "Limité aux styles de personnages en courbes (pas idéal pour hyperréalisme).",
-      "Dépend entièrement d'After Effects.",
-      "Mises à jour majeures = nouvelle licence à acheter."
-    ],
-    "use_cases": [
-      "Animer un personnage stylisé de A à Z en motion design.",
-      "Créer rapidement des animations de caractères pour réseaux sociaux.",
-      "Concevoir des transitions et mouvements fluides dans des présentations vidéo."
-    ],
-    "relevant_for": ["Motion designers", "Animateurs 2D", "Créateurs de contenu vidéo"]
+    "pros": ["Rig très rapide pour les membres flexibles.", "Styles modifiables sans refaire les animations.", "Achat unique sans abonnement.", "Les compositions utilisent des fonctions natives d'After Effects.", "Bon équilibre entre simplicité et contrôle visuel."],
+    "cons": ["Dépend entièrement d'After Effects.", "Moins complet qu'un système de rig généraliste.", "Chaque personne qui crée ou gère des rigs complexes doit disposer d'une licence.", "Le style de membres souples ne convient pas à tous les personnages."],
+    "use_cases": ["Créer un personnage éditorial pour une vidéo explicative.", "Décliner rapidement plusieurs poses à partir du même rig.", "Relier des calques Illustrator à des membres extensibles."],
+    "relevant_for": ["Motion designers", "Animateurs 2D", "Studios After Effects", "Créateurs de vidéos explicatives"]
   },
   "en": {
     "verdict": {
-      "keepIf": [
-        "You animate stylized or curve-based characters in After Effects.",
-        "You need fast rigging without traditional bone complexity.",
-        "You produce motion design or social media animation content."
-      ],
-      "avoidIf": [
-        "You need hyperrealistic or complex biomechanical rigging.",
-        "You want free software.",
-        "You work exclusively in 3D (this tool is AE 2D only)."
-      ],
-      "threshold": "RubberHose makes sense for stylized character animation in motion design; for realistic biomechanical rigging or tight budgets, alternatives may work better."
+      "keepIf": ["You regularly animate stylized characters in After Effects.", "You want to test different silhouettes without rebuilding the rig.", "Your team needs to open and render compositions without licensing every render workstation."],
+      "avoidIf": ["You need a complete skeleton system, automated walk cycles or lip sync.", "You primarily work in Blender, Moho or Toon Boom.", "You only create characters occasionally and Duik already covers the workflow."],
+      "threshold": "Choose Rubberhose 3 to speed up flexible limbs and graphic characters in After Effects. Choose Duik for a broader free rigging system if you accept a longer learning curve."
     },
-    "pros": [
-      "Very fast rigging—ideal for high-volume content production.",
-      "Intuitive interface with short learning curve.",
-      "Smooth, organic animations without bone complexity.",
-      "Perpetual license (no subscription)."
-    ],
-    "cons": [
-      "Limited to curve-based character styles (not ideal for photorealism).",
-      "Depends entirely on After Effects.",
-      "Major updates require buying a new license."
-    ],
-    "use_cases": [
-      "Animate stylized characters end to end in motion design.",
-      "Quickly create character animations for social media.",
-      "Design smooth motion and transitions in video presentations."
-    ]
+    "pros": ["Very fast setup for flexible limbs.", "Editable styles without rebuilding animation.", "One-time purchase with no subscription.", "Compositions rely on native After Effects features.", "A strong balance between simplicity and visual control."],
+    "cons": ["Entirely dependent on After Effects.", "Less comprehensive than a general-purpose rigging system.", "Each person creating or deeply managing rigs needs a license.", "The flexible-limb look does not suit every character style."],
+    "use_cases": ["Build an editorial character for an explainer video.", "Create several poses quickly from one rig.", "Connect Illustrator artwork to flexible limbs."]
   }
 }

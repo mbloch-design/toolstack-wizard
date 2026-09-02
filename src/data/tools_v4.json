@@ -6833,25 +6833,27 @@
   {
     "id": "albato",
     "name": "Albato",
-    "shortDescription": "Plateforme no-code pour étendre les intégrations et automatisations SaaS.",
-    "description": "Albato, c'est plateforme no-code pour étendre les intégrations et automatisations SaaS. À partir de 15€/mois. Pensé pour les fondateurs SaaS et les e-commerçants.\n\nSpécialisé en automation, et interface professionnelle. Gain de temps estimé : 8h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
+    "shortDescription": "Plateforme d'automatisation no-code qui relie plus de 1 000 applications, construit des scénarios multi-étapes et propose un copilote ainsi que des agents IA.",
+    "description": "Plateforme d'automatisation no-code qui relie plus de 1 000 applications, construit des scénarios multi-étapes et propose un copilote ainsi que des agents IA.\n\nFonctions clés : Plus de 1 000 applications et connexions illimitées ; Scénarios multi-étapes, webhooks, filtres et outils de transformation ; Albato Copilot pour construire un workflow en langage naturel ; Agents IA et actions IA intégrées ; App Integrator pour ajouter un service doté d'une API ; Modèle distinct pour les intégrations embarquées en marque blanche.\n\nChoisissez Albato si son catalogue d'intégrations ou son constructeur réduit nettement le temps de maintenance de vos scénarios. Comparez le coût total sur votre volume réel, car le plan et les transactions sont deux composantes distinctes.",
     "category": "automation",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Free : 5 automatisations actives, 2 étapes par automatisation, 100 transactions et connexions illimitées.",
+      "paid": "Free: 0 $ : 100 transactions ; Pro: 22 $/mois ou 15 $/mois avec facturation annuelle pour 1 000 transactions ; Teams: 93 $/mois ou 65 $/mois avec facturation annuelle, 5 sièges et 5 000 transactions, annoncé prochainement ; Custom: Sur devis"
     },
     "website": "https://albato.com",
-    "affiliateLink": "https://albato.com",
+    "affiliateLink": "https://albato.com/automate?fpr=michael-c8d497",
     "pros": [
-      "1000+ intégrations natives pré-construites.",
-      "Embedding blanc-label complet (iFrame, API, MCP).",
-      "Agents d'IA avec support MCP nativement.",
-      "Conformité et sécurité multi-tenant robustes."
+      "Plan gratuit sans limite de durée.",
+      "Plus de 1 000 intégrations.",
+      "Scénarios et étapes illimités sur Pro.",
+      "Copilote et agents IA intégrés.",
+      "App Integrator pour les connecteurs absents."
     ],
     "cons": [
-      "Tarif plancher élevé sur les offres hautes.",
-      "Pas de tier gratuit ou de trial libre.",
-      "Requiert vente consultative et onboarding."
+      "Le nouveau modèle tarifaire sépare plan et volume de transactions.",
+      "Les transactions supplémentaires coûtent plus cher.",
+      "Teams est encore annoncé comme prochainement disponible.",
+      "Le plan Free est limité à 100 transactions."
     ],
     "bestFor": [
       "developer",
@@ -6869,26 +6871,32 @@
       "paid": "Toutes les fonctionnalités"
     },
     "relevantFor": [
-      "Entreprises SaaS B2B",
-      "Plates-formes CRM/Marketing",
-      "Éditeurs de logiciels"
+      "Indépendants",
+      "Agences",
+      "Équipes marketing",
+      "Opérations",
+      "Petites entreprises"
     ],
     "verdict": {
       "keepIf": [
-        "Vous êtes une entreprise SaaS B2B voulant embarquer des intégrations natives.",
-        "Vous avez besoin de sécurité multi-tenant et de conformité GDPR/SOC 2.",
-        "Vous servez des clients entreprise exigeant des agents d'IA personnalisés."
+        "Vous voulez automatiser directement vos outils sans coder.",
+        "Les 1 000 intégrations et l'App Integrator couvrent mieux votre stack qu'une solution concurrente.",
+        "Le copilote IA accélère réellement la création de scénarios complexes."
       ],
       "avoidIf": [
-        "Vous cherchez une plateforme d'automatisation directe pour votre usage interne.",
-        "Vous avez un budget limité ou pas d'équipe d'intégration.",
-        "Vous avez besoin d'une solution plug-and-play sans onboarding."
+        "Vos scénarios dépassent souvent leur forfait de transactions.",
+        "Vous avez besoin dès maintenant d'un espace collaboratif mature pour plusieurs clients.",
+        "Votre besoin se limite à quelques automatisations simples déjà incluses dans vos outils."
       ],
-      "threshold": "Albato cible les entreprises SaaS B2B voulant offrir des intégrations et des agents embarqués à leurs clients, avec support d'entreprise et infrastructure à grande échelle."
+      "threshold": "Choisissez Albato si son catalogue d'intégrations ou son constructeur réduit nettement le temps de maintenance de vos scénarios. Comparez le coût total sur votre volume réel, car le plan et les transactions sont deux composantes distinctes."
     },
-    "alternatives": [],
+    "alternatives": [
+      "zapier",
+      "make",
+      "n8n"
+    ],
     "seo": {
-      "metaDescription": "Albato : Plateforme no-code pour étendre les intégrations et automatisations SaaS. Découvrez si cet outil vaut le coup pour votre activité freelance."
+      "metaDescription": "Albato : avis, tarifs, plan gratuit, transactions, copilote IA et alternatives pour automatiser plus de 1 000 applications."
     },
     "articles": [],
     "tool_type": "satellite",
@@ -6907,20 +6915,29 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "albato",
-    "shortDescriptionEn": "No-code platform to extend SaaS integrations and automations.",
-    "longDescription": "Albato, c'est plateforme no-code pour étendre les intégrations et automatisations SaaS. À partir de 15€/mois. Pensé pour les fondateurs SaaS et les e-commerçants.\n\nSpécialisé en automation, et interface professionnelle. Gain de temps estimé : 8h/mois.\n\nÀ garder si : usage régulier ou fonctionnalités essentielles. À éviter si : usage ponctuel ou budget serré. Limite principale : prix à vérifier selon usage. Dès que l'outil vous fait gagner plus de 15€/mois.",
-    "longDescriptionEn": "Albato is no-code platform to extend SaaS integrations and automations. Starting at €15/month. Built for SaaS founders and e-commerce sellers.\n\nSpecialized in automation, and professional interface. Estimated time saving: 8h/month.\n\nKeep it if: regular use or essential features. Skip it if: occasional use or tight budget. Main limit: price to be verified based on usage. As soon as the tool saves you more than €15/month.",
+    "shortDescriptionEn": "No-code automation platform connecting more than 1,000 apps, building multi-step workflows and offering an AI copilot and agents.",
+    "longDescription": "Plateforme d'automatisation no-code qui relie plus de 1 000 applications, construit des scénarios multi-étapes et propose un copilote ainsi que des agents IA.\n\nFonctions clés : Plus de 1 000 applications et connexions illimitées ; Scénarios multi-étapes, webhooks, filtres et outils de transformation ; Albato Copilot pour construire un workflow en langage naturel ; Agents IA et actions IA intégrées ; App Integrator pour ajouter un service doté d'une API ; Modèle distinct pour les intégrations embarquées en marque blanche.\n\nChoisissez Albato si son catalogue d'intégrations ou son constructeur réduit nettement le temps de maintenance de vos scénarios. Comparez le coût total sur votre volume réel, car le plan et les transactions sont deux composantes distinctes.",
+    "longDescriptionEn": "Albato connects more than 1,000 apps through no-code workflows, webhooks, filters and data tools. Its copilot can assemble workflows from a natural-language request, while App Integrator covers services that expose an API but lack a ready-made connector.\n\nFree includes 5 active workflows, 2 steps per workflow and 100 transactions. Pro costs $22 per month or $15 per month billed yearly for 1,000 transactions. The Teams plan is listed as coming soon, starting at $93 monthly or $65 monthly billed yearly for 5 seats and 5,000 transactions.\n\nChoose Albato when its integration catalog or builder materially reduces workflow maintenance. Compare total cost at your real volume because the plan and transaction package are separate components.",
     "pricingEn": {
-      "free": "Core features",
-      "paid": "€15/month for the Pro version"
+      "free": "Free: 5 active workflows, 2 steps per workflow and 100 transactions.",
+      "paid": "Pro: $22/month or $15/month billed yearly for 1,000 transactions. Teams: coming soon, from $93/month or $65/month billed yearly."
     },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-03-13",
+      "cautions": [
+        "Le prix combine un plan et un forfait de transactions séparé.",
+        "Les transactions supplémentaires sont facturées automatiquement et coûtent 50 % plus cher que celles du forfait.",
+        "Teams est encore indiqué comme prochainement disponible."
+      ],
+      "cautionsEn": [
+        "Pricing combines a plan with a separate transaction package.",
+        "Extra transactions are purchased automatically and cost 50% more than bundled transactions.",
+        "Teams is still listed as coming soon."
+      ],
+      "verified_on": "2026-09-02",
       "source_domain": "albato.com",
-      "usage_sensitive": false,
-      "compare_plan_kind": "seat",
-      "compare_plan_name": "Entry paid plan",
+      "usage_sensitive": true,
+      "compare_plan_kind": "usage",
+      "compare_plan_name": "Pro 1K",
       "price_reliability": "high",
       "location_sensitive": false,
       "official_source_url": "https://albato.com/pricing",
@@ -6931,37 +6948,41 @@
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "You are a SaaS company wanting to embed native integrations into your product.",
-        "You need multi-tenant security and GDPR/SOC 2 compliance.",
-        "Your customers are enterprise clients demanding AI agents."
+        "You want to automate your tools directly without writing code.",
+        "Its 1,000 integrations and App Integrator cover your stack better than competitors.",
+        "The AI copilot genuinely speeds up complex workflow creation."
       ],
       "avoidIf": [
-        "You need direct automation for internal use.",
-        "You have budget constraints or limited integration resources.",
-        "You need plug-and-play without enterprise onboarding."
+        "Your workflows regularly exceed their transaction allowance.",
+        "You need a mature multi-client collaboration space immediately.",
+        "You only need a few simple automations already included in your tools."
       ],
-      "threshold": "Albato targets B2B SaaS companies wanting to offer embedded integrations and AI agents to customers, with enterprise support and large-scale infrastructure."
+      "threshold": "Choose Albato when its integration catalog or builder materially reduces workflow maintenance. Compare total cost at your real volume because the plan and transaction package are separate components."
     },
     "prosEn": [
-      "1,000+ pre-built native integrations.",
-      "Full white-label embedding (iFrame, API, MCP).",
-      "Native AI agents with MCP support.",
-      "Robust multi-tenant compliance and security."
+      "A free plan with no time limit.",
+      "More than 1,000 integrations.",
+      "Unlimited workflows and steps on Pro.",
+      "Built-in AI copilot and agents.",
+      "App Integrator for missing connectors."
     ],
     "consEn": [
-      "High pricing floor on upper tiers.",
-      "No free tier or free trial.",
-      "Requires consultative sales and onboarding."
+      "The new pricing model separates plan and transaction volume.",
+      "Extra transactions cost more.",
+      "Teams is still listed as coming soon.",
+      "Free is limited to 100 transactions."
     ],
     "useCases": [
-      "Ajouter des intégrations à un produit SaaS client.",
-      "Proposer des agents d'IA embarqués à des clients.",
-      "Centraliser l'intégration pour des clients en self-service."
+      "Synchroniser CRM, formulaires et tableurs.",
+      "Acheminer automatiquement des leads vers les bons outils.",
+      "Construire un scénario multi-applications avec le copilote.",
+      "Créer un connecteur privé à partir d'une API."
     ],
     "useCasesEn": [
-      "Add integrations to a SaaS product for customers.",
-      "Offer white-label AI agents embedded in products.",
-      "Centralize integration management for self-service."
+      "Sync a CRM, forms and spreadsheets.",
+      "Route leads automatically to the right tools.",
+      "Build a multi-app workflow with the copilot.",
+      "Create a private connector from an API."
     ],
     "personas": [],
     "timeGainedHoursPerMonth": 8,
@@ -6987,7 +7008,12 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://albato.com/images/previews/en/embedded-ai.webp"
+    "ogImageUrl": "https://albato.com/_next/image?url=%2Fimages%2Fhome%2Fhero%2Fhero-steps-copilot-desc-img-en.webp&w=3840&q=75",
+    "galleryImages": [
+      "https://albato.com/images/home/feature/copilot/hero-copilot-feature-en.png",
+      "https://albato.com/_next/image?url=%2Fimages%2Fhome%2Fcopilot-ai%2Fcopilot-albato-ai-en.webp&w=1080&q=75",
+      "https://albato.com/_next/image?url=%2Fimages%2Fhome%2Ffeature%2Fhome-feature-1.webp&w=1920&q=75"
+    ]
   },
   {
     "id": "algolia",
@@ -79069,48 +79095,50 @@
     "name": "Linear",
     "slug": "linear",
     "category": "organization",
-    "shortDescription": "Outil de gestion de projet et de suivi d'issues taillé pour les équipes produit et d'ingénierie, misant sur la rapidité et une méthode d'exécution opinionée.",
-    "longDescription": "Linear est un outil de gestion de projet et de suivi d'issues pensé pour les équipes produit et d'ingénierie logicielle. Là où beaucoup d'outils cherchent la polyvalence maximale, Linear assume une approche opinionée : un modèle de travail organisé autour des issues, des cycles (sprints), des projets et des roadmaps, avec des raccourcis clavier omniprésents et une interface volontairement rapide.\n\nLe produit s'adresse d'abord aux équipes qui construisent un logiciel de façon itérative : ingénieurs, product managers, designers qui veulent planifier, suivre l'avancement et relier le travail au cycle de développement. Les intégrations avec les dépôts de code, les outils de communication et de design font partie de l'usage attendu. Un profil non technique peut l'utiliser, mais la logique d'issues, de cycles et de statuts suppose d'adopter la méthode de Linear plutôt que de la plier à un fonctionnement arbitraire.\n\nLinear se distribue en SaaS, avec un plan gratuit destiné aux petites équipes et aux essais, et des plans payants facturés par utilisateur qui débloquent des limites étendues et des fonctions de collaboration et d'administration. L'édition Enterprise couvre les besoins de gouvernance, de conformité et de contractualisation des grandes organisations. Il n'y a pas d'édition auto-hébergée : les données vivent sur l'infrastructure gérée par Linear.",
+    "shortDescription": "Plateforme de développement produit qui relie issues, cycles, projets, initiatives, demandes clients et workflows d'agents pour les équipes produit et ingénierie.",
+    "longDescription": "Plateforme de développement produit qui relie issues, cycles, projets, initiatives, demandes clients et workflows d'agents pour les équipes produit et ingénierie.\n\nFonctions clés : Issues, projets, cycles et initiatives ; Triage et automatisations ; Intégrations GitHub, GitLab, Figma et Slack ; Demandes clients et intake ; Linear Agent et plateforme d'agents ; Insights, Asks et Code Intelligence selon le plan.\n\nChoisissez Linear si une équipe qui construit un produit logiciel adoptera réellement ses issues, cycles et raccourcis. Pour une simple liste de tâches ou un travail non technique, son cadre et son prix par siège sont difficiles à justifier.",
     "affiliateLink": "https://linear.app",
     "websiteUrl": "https://linear.app",
     "defaultMonthlyPrice": 8.66,
     "pricing": {
-      "free": "Illimité pour une petite équipe, jusqu'à 250 issues actives",
-      "paid": "Standard à 8$/utilisateur/mois, Business à 14$, Enterprise sur devis"
+      "free": "Plan Free : membres illimités, 2 équipes et 250 issues.",
+      "paid": "Free: 0 $ : membres illimités, 2 équipes et 250 issues ; Basic: 10 $/utilisateur/mois avec facturation annuelle : 5 équipes, issues et fichiers illimités ; Business: 16 $/utilisateur/mois avec facturation annuelle : équipes illimitées, invités, Triage Intelligence, Loops, Code Intelligence et Insights ; Enterprise: Sur devis, facturation annuelle uniquement"
     },
     "logo": "",
     "soloRelevance": "medium",
     "teamRelevance": "high",
     "verdict": {
       "keepIf": [
-        "Votre équipe construit un produit logiciel de façon itérative et veut un suivi d'issues rapide et structuré.",
-        "Vous préférez une méthode opinionée (issues, cycles, projets) prête à l'emploi plutôt qu'un outil à tout configurer.",
-        "La vitesse d'usage au clavier et une interface épurée sont des critères importants pour l'adoption."
+        "Votre équipe produit et ingénierie travaille déjà avec issues, cycles et pull requests.",
+        "La vitesse de saisie et une méthode commune comptent plus qu'une personnalisation sans limite.",
+        "Vous voulez relier demandes clients, roadmap et exécution technique dans le même système."
       ],
       "avoidIf": [
-        "Vous cherchez un outil de gestion de projet généraliste très personnalisable pour des équipes non techniques.",
-        "Vous avez besoin d'un déploiement auto-hébergé ou d'un contrôle complet de l'infrastructure de données.",
-        "Votre besoin se limite à une simple liste de tâches partagée, sans notion de cycles ni de roadmap."
+        "Vous gérez surtout des campagnes, prestations ou opérations non logicielles.",
+        "Vous avez besoin d'un outil auto-hébergé ou d'une personnalisation profonde des workflows.",
+        "Les invités doivent être gratuits ou vos fonctions IA doivent avoir un coût parfaitement fixe."
       ],
-      "threshold": "Linear devient le bon choix quand une équipe produit/ingénierie veut cadrer son exécution avec une méthode claire et rapide ; pour un usage généraliste, hors développement logiciel, ou totalement sur mesure, un outil plus flexible reste préférable."
+      "threshold": "Choisissez Linear si une équipe qui construit un produit logiciel adoptera réellement ses issues, cycles et raccourcis. Pour une simple liste de tâches ou un travail non technique, son cadre et son prix par siège sont difficiles à justifier."
     },
     "pros": [
-      "Interface très rapide, pilotable au clavier, pensée pour un usage quotidien intensif.",
-      "Méthode d'exécution opinionée (issues, cycles, projets, roadmaps) prête à l'emploi.",
-      "Bonne intégration au cycle de développement logiciel (code, communication, design).",
-      "Plan gratuit permettant de démarrer en petite équipe avant de passer à un plan payant."
+      "Interface rapide et excellente navigation au clavier.",
+      "Modèle cohérent entre roadmap, projets, cycles et issues.",
+      "Intégrations solides avec le développement et le support client.",
+      "Plan gratuit utilisable pour un petit périmètre.",
+      "Fonctions d'agents intégrées au contexte produit."
     ],
     "cons": [
-      "Approche opinionée : il faut adopter la méthode de Linear, peu adaptée à un usage totalement sur mesure.",
-      "Orientation produit/ingénierie : moins naturel pour des équipes non techniques ou des projets non logiciels.",
-      "Pas d'auto-hébergement : les données reposent sur l'infrastructure gérée par Linear.",
-      "Facturation par utilisateur : le coût suit la taille de l'équipe, à anticiper lors de la montée en charge."
+      "Approche volontairement opinionée.",
+      "Invités facturés comme des membres sur Business et Enterprise.",
+      "Basic et Business coûtent rapidement cher avec la taille de l'équipe.",
+      "Coding sessions et Loops peuvent consommer des crédits IA prépayés.",
+      "Pas d'auto-hébergement."
     ],
     "useCases": [
-      "Suivre les issues et bugs d'une équipe d'ingénierie tout au long des cycles.",
-      "Planifier des sprints et une roadmap produit avec des projets reliés au travail réel.",
-      "Coordonner produit, design et ingénierie autour d'un référentiel de tâches unique.",
-      "Relier le suivi des tâches au cycle de développement via les intégrations de code."
+      "Piloter bugs et fonctionnalités pendant des cycles de développement.",
+      "Relier une roadmap produit aux issues et pull requests qui la réalisent.",
+      "Transformer les demandes Slack, e-mail ou support en travail priorisé.",
+      "Faire intervenir des agents dans le triage et les sessions de code."
     ],
     "covers": [
       "gestion-produit",
@@ -79118,10 +79146,11 @@
       "suivi-issues"
     ],
     "relevantFor": [
-      "engineering",
-      "product",
-      "design",
-      "ops"
+      "Équipes produit",
+      "Développeurs",
+      "Startups SaaS",
+      "Product managers",
+      "Designers produit"
     ],
     "alternatives": [
       "jira",
@@ -79141,7 +79170,7 @@
       },
       "idealForEn": "Ideal for a software development team wanting fast issue tracking. Not a fit for non-tech teams or complex roadmaps.",
       "idealForFr": "Idéal pour une équipe de développement logiciel qui veut un suivi d'issues rapide. Pas adapté aux équipes non-tech ni aux roadmaps complexes.",
-      "prixTitleFr": "Linear Prix 2026 : 9€/mois — Tarifs en Français | ToolTrim",
+      "prixTitleFr": "Linear Prix 2026 : plan gratuit, Basic et Business | ToolTrim",
       "metaDescription": "Linear : gestion de projet ultra-rapide pour les équipes tech. Prix, plan gratuit et alternatives. Le verdict ToolTrim pour les freelances et petites équipes."
     },
     "articles": [],
@@ -79182,15 +79211,18 @@
     "substitution_cluster_v2": "dev-issue-tracker",
     "pricing_v5": {
       "cautions": [
-        "Plan gratuit jusqu'à 250 issues actives",
-        "Standard à 8$/utilisateur/mois, facturation annuelle"
+        "Plan gratuit limité à 2 équipes et 250 issues.",
+        "Basic coûte 10 $ par utilisateur et par mois avec facturation annuelle.",
+        "Coding sessions et Loops utilisent des crédits IA prépayés en plus des sièges."
       ],
       "cautionsEn": [
-        "Free plan up to 250 active issues"
+        "The Free plan is limited to 2 teams and 250 issues.",
+        "Basic costs $10 per user per month when billed yearly.",
+        "Coding sessions and Loops use prepaid AI credits in addition to seat fees."
       ],
-      "verified_on": "2026-06-15",
-      "tcoExampleEn": "Concrete example: a small dev team billing $50/h that collectively loses 2h/month sorting tickets in a slower tool is losing $100/month in hidden time. Linear Basic at $8/month/user pays for itself once the speed gain clears that threshold — but the lack of monthly billing means committing for a year before even validating real usage.",
-      "tcoExampleFr": "Exemple concret : une petite équipe dev facturant 50$/h qui perd collectivement 2h/mois à trier des tickets dans un outil plus lent perd 100$/mois en temps masqué. Linear Basic à 8$/mois/utilisateur est rentabilisé dès que le gain de vitesse dépasse ce seuil — mais l'absence de facturation mensuelle impose de s'engager un an avant même de valider l'usage réel.",
+      "verified_on": "2026-09-02",
+      "tcoExampleEn": "Basic costs $600 per year for a 5-person team. Business costs $960 per year for the same team, before taxes and optional AI credits.",
+      "tcoExampleFr": "Basic coûte 600 $ par an pour une équipe de 5 personnes. Business coûte 960 $ par an pour la même équipe, avant taxes et crédits IA optionnels.",
       "source_domain": "linear.app",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
@@ -79209,46 +79241,53 @@
       "never_auto_cancel_reason": null,
       "requires_context_questions": true
     },
-    "shortDescriptionEn": "Project management and issue tracking built for product and engineering teams, betting on speed and an opinionated execution method.",
-    "longDescriptionEn": "Linear is a project management and issue-tracking tool designed for product and software-engineering teams. Where many tools chase maximum versatility, Linear takes an opinionated stance: a work model organised around issues, cycles (sprints), projects and roadmaps, with keyboard shortcuts everywhere and a deliberately fast interface.\n\nThe product targets teams that build software iteratively: engineers, product managers and designers who want to plan, track progress and tie work to the development cycle. Integrations with code repositories, communication tools and design tools are part of the expected use. A non-technical person can use it, but the logic of issues, cycles and statuses assumes you adopt Linear's method rather than bending it to an arbitrary workflow.\n\nLinear ships as SaaS, with a free plan aimed at small teams and trials, and paid plans billed per user that unlock expanded limits and collaboration and administration features. The Enterprise edition covers the governance, compliance and contracting needs of larger organisations. There is no self-hosted edition: data lives on Linear's managed infrastructure.",
+    "shortDescriptionEn": "Product development platform connecting issues, cycles, projects, initiatives, customer requests and agent workflows for product and engineering teams.",
+    "longDescriptionEn": "Linear connects issues, cycles, projects, initiatives, customer requests and agent workflows for product and engineering teams. Its opinionated structure and keyboard-driven interface are designed for teams that ship software continuously.\n\nThe Free plan supports unlimited members, 2 teams and 250 issues. Basic costs $10 per user per month when billed yearly, while Business costs $16 and adds unlimited teams, guests, Triage Intelligence, Loops, Code Intelligence and Insights. Coding sessions and Loops may also consume prepaid AI credits.\n\nChoose Linear when a software product team will genuinely adopt its issues, cycles and shortcuts. For a basic task list or non-technical work, its structure and per-seat price are hard to justify.",
     "prosEn": [
-      "Very fast, keyboard-driven interface built for intensive daily use.",
-      "Opinionated execution method (issues, cycles, projects, roadmaps) ready out of the box.",
-      "Solid integration with the software development cycle (code, communication, design).",
-      "A free plan to get started as a small team before moving to a paid plan."
+      "Fast interface with excellent keyboard navigation.",
+      "A coherent model across roadmap, projects, cycles and issues.",
+      "Strong development and customer-support integrations.",
+      "A usable free plan for a small scope.",
+      "Agent features connected to product context."
     ],
     "consEn": [
-      "Opinionated approach: you must adopt Linear's method, ill-suited to a fully bespoke workflow.",
-      "Product/engineering focus: less natural for non-technical teams or non-software projects.",
-      "No self-hosting: data sits on Linear's managed infrastructure.",
-      "Per-user billing: cost tracks team size, to anticipate as you scale."
+      "A deliberately opinionated approach.",
+      "Guests are billed as regular members on Business and Enterprise.",
+      "Basic and Business become expensive as the team grows.",
+      "Coding sessions and Loops can consume prepaid AI credits.",
+      "No self-hosted edition."
     ],
     "useCasesEn": [
-      "Track an engineering team's issues and bugs across cycles.",
-      "Plan sprints and a product roadmap with projects tied to real work.",
-      "Coordinate product, design and engineering around a single task repository.",
-      "Connect task tracking to the development cycle through code integrations."
+      "Manage bugs and features through development cycles.",
+      "Connect a product roadmap to the issues and pull requests delivering it.",
+      "Turn Slack, email or support requests into prioritized work.",
+      "Use agents for triage and coding sessions."
     ],
     "verdictEn": {
       "keepIf": [
-        "Your team builds a software product iteratively and wants fast, structured issue tracking.",
-        "You prefer an opinionated method (issues, cycles, projects) out of the box over a tool you must configure entirely.",
-        "Keyboard-driven speed and a clean interface matter for adoption."
+        "Your product and engineering team already works with issues, cycles and pull requests.",
+        "Fast input and a shared method matter more than unlimited customization.",
+        "You want customer requests, roadmap and technical execution in one system."
       ],
       "avoidIf": [
-        "You want a general-purpose, highly customisable project tool for non-technical teams.",
-        "You need a self-hosted deployment or full control of the data infrastructure.",
-        "Your need is limited to a simple shared task list, with no notion of cycles or roadmap."
+        "You mainly manage campaigns, client delivery or non-software operations.",
+        "You need self-hosting or deeply customized workflows.",
+        "Guests must be free or AI functionality needs a perfectly fixed cost."
       ],
-      "threshold": "Linear becomes the right choice when a product/engineering team wants to frame its execution with a clear, fast method; for general-purpose, non-software or fully bespoke use, a more flexible tool is preferable."
+      "threshold": "Choose Linear when a software product team will genuinely adopt its issues, cycles and shortcuts. For a basic task list or non-technical work, its structure and per-seat price are hard to justify."
     },
     "pricingEn": {
-      "free": "Unlimited for a small team, up to 250 active issues",
-      "paid": "Standard at $8/user/month, Business at $14, Enterprise on request"
+      "free": "Free: unlimited members, 2 teams and 250 issues.",
+      "paid": "Basic: $10/user/month billed yearly. Business: $16/user/month billed yearly. Enterprise: custom pricing."
     },
     "force_silence": false,
-    "description": "Linear est un outil de gestion de projet et de suivi d'issues pensé pour les équipes produit et d'ingénierie logicielle. Là où beaucoup d'outils cherchent la polyvalence maximale, Linear assume une approche opinionée : un modèle de travail organisé autour des issues, des cycles (sprints), des projets et des roadmaps, avec des raccourcis clavier omniprésents et une interface volontairement rapide.\n\nLe produit s'adresse d'abord aux équipes qui construisent un logiciel de façon itérative : ingénieurs, product managers, designers qui veulent planifier, suivre l'avancement et relier le travail au cycle de développement. Les intégrations avec les dépôts de code, les outils de communication et de design font partie de l'usage attendu. Un profil non technique peut l'utiliser, mais la logique d'issues, de cycles et de statuts suppose d'adopter la méthode de Linear plutôt que de la plier à un fonctionnement arbitraire.\n\nLinear se distribue en SaaS, avec un plan gratuit destiné aux petites équipes et aux essais, et des plans payants facturés par utilisateur qui débloquent des limites étendues et des fonctions de collaboration et d'administration. L'édition Enterprise couvre les besoins de gouvernance, de conformité et de contractualisation des grandes organisations. Il n'y a pas d'édition auto-hébergée : les données vivent sur l'infrastructure gérée par Linear.",
-    "ogImageUrl": "https://linear.app/static/og/homepage.jpg"
+    "description": "Plateforme de développement produit qui relie issues, cycles, projets, initiatives, demandes clients et workflows d'agents pour les équipes produit et ingénierie.\n\nFonctions clés : Issues, projets, cycles et initiatives ; Triage et automatisations ; Intégrations GitHub, GitLab, Figma et Slack ; Demandes clients et intake ; Linear Agent et plateforme d'agents ; Insights, Asks et Code Intelligence selon le plan.\n\nChoisissez Linear si une équipe qui construit un produit logiciel adoptera réellement ses issues, cycles et raccourcis. Pour une simple liste de tâches ou un travail non technique, son cadre et son prix par siège sont difficiles à justifier.",
+    "ogImageUrl": "https://linear.app/cdn-cgi/imagedelivery/fO02fVwohEs9s9UHFwon6A/6600ca96-e49b-4fd9-c03a-7979faddad00/f=auto,fit=scale-down,metadata=none,width=2560",
+    "galleryImages": [
+      "https://linear.app/cdn-cgi/imagedelivery/fO02fVwohEs9s9UHFwon6A/028734bb-2e5c-463d-c4ef-702eef293500/f=auto,fit=scale-down,metadata=none",
+      "https://linear.app/cdn-cgi/imagedelivery/fO02fVwohEs9s9UHFwon6A/344ddb1f-7bcb-4d44-9335-d142bc388500/f=auto,fit=scale-down,metadata=none",
+      "https://linear.app/cdn-cgi/imagedelivery/fO02fVwohEs9s9UHFwon6A/d88e5465-ccb5-446e-a95d-148b4c258f00/f=auto,fit=scale-down,metadata=none"
+    ]
   },
   {
     "id": "link-in-bio",
@@ -127833,17 +127872,17 @@
   },
   {
     "id": "ae-rubberhose",
-    "name": "RubberHose 2",
+    "name": "Rubberhose 3",
     "tool_type": "plugin",
     "substitutable": false,
     "bundle_parent": null,
     "host_app": "adobe-after-effects",
     "category": "design-tools",
-    "shortDescription": "Script de rigging pour After Effects permettant de créer et d'animer rapidement des personnages en courbes (« rubber hoses »). Offre une Session View non linéaire pour l'animation de caractères fluides et organiques.",
+    "shortDescription": "Extension de rigging pour After Effects conçue pour créer rapidement des membres flexibles, relier des illustrations et réutiliser des rigs de personnages stylisés.",
     "defaultMonthlyPrice": 0,
     "pricing": {
-      "free": "Pas de version gratuite permanente. Essai gratuit disponible ; achat de licence requis.",
-      "paid": "RubberHose 3: 65 USD"
+      "free": "Pas de plan gratuit permanent. Rubberhose 3 coûte 65 $ en achat unique.",
+      "paid": "Rubberhose 3: 65 $ en achat unique"
     },
     "covers": [
       "animation-2d-3d",
@@ -127872,35 +127911,37 @@
     },
     "migrationGuide": null,
     "downgradePlan": null,
-    "affiliateLink": "https://aescripts.com/rubberhose",
+    "affiliateLink": "https://battleaxe.co/rubberhose",
     "verdict": {
       "keepIf": [
-        "Vous animez des personnages stylisés ou en courbes dans After Effects.",
-        "Vous cherchez un rigging plus rapide que les systèmes traditionnels d'os.",
-        "Vous produisez du contenu type motion design ou animation pour réseaux sociaux."
+        "Vous animez régulièrement des personnages stylisés dans After Effects.",
+        "Vous voulez tester rapidement plusieurs silhouettes sans reconstruire le rig.",
+        "Votre équipe doit ouvrir et rendre les compositions sans acheter une licence pour chaque poste de rendu."
       ],
       "avoidIf": [
-        "Vous avez besoin de rigging hyperréaliste ou biomécanique complexe.",
-        "Vous cherchez un outil gratuit.",
-        "Vous ne travaillez qu'en 3D (ce script est uniquement pour AE en 2D)."
+        "Vous avez besoin d'un système complet de squelette, marche automatique ou synchronisation labiale.",
+        "Vous travaillez principalement dans Blender, Moho ou Toon Boom.",
+        "Vous ne créez des personnages que ponctuellement et Duik suffit à votre workflow."
       ],
-      "threshold": "RubberHose s'impose pour l'animation de personnages stylisés en motion design ; pour du rigging biomécanique réaliste ou du budget serré, d'autres solutions conviennent mieux."
+      "threshold": "Choisissez Rubberhose 3 pour accélérer les membres souples et les personnages graphiques dans After Effects. Préférez Duik pour un rig plus complet et gratuit, au prix d'une prise en main plus longue."
     },
     "pros": [
-      "Rigging très rapide, idéal pour la production de contenu.",
-      "Interface intuitive et courbe d'apprentissage courte.",
-      "Animations fluides et organiques sans complexité osseuse.",
-      "Licence perpétuelle (pas d'abonnement)."
+      "Rig très rapide pour les membres flexibles.",
+      "Styles modifiables sans refaire les animations.",
+      "Achat unique sans abonnement.",
+      "Les compositions utilisent des fonctions natives d'After Effects.",
+      "Bon équilibre entre simplicité et contrôle visuel."
     ],
     "cons": [
-      "Limité aux styles de personnages en courbes (pas idéal pour hyperréalisme).",
       "Dépend entièrement d'After Effects.",
-      "Mises à jour majeures = nouvelle licence à acheter."
+      "Moins complet qu'un système de rig généraliste.",
+      "Chaque personne qui crée ou gère des rigs complexes doit disposer d'une licence.",
+      "Le style de membres souples ne convient pas à tous les personnages."
     ],
     "useCases": [
-      "Animer un personnage stylisé de A à Z en motion design.",
-      "Créer rapidement des animations de caractères pour réseaux sociaux.",
-      "Concevoir des transitions et mouvements fluides dans des présentations vidéo."
+      "Créer un personnage éditorial pour une vidéo explicative.",
+      "Décliner rapidement plusieurs poses à partir du même rig.",
+      "Relier des calques Illustrator à des membres extensibles."
     ],
     "seo": {},
     "articles": [],
@@ -127910,64 +127951,72 @@
     "relevantFor": [
       "Motion designers",
       "Animateurs 2D",
-      "Créateurs de contenu vidéo"
+      "Studios After Effects",
+      "Créateurs de vidéos explicatives"
     ],
     "pricingTiers": {
-      "paid": "45$ achat unique"
+      "paid": "65 $ en achat unique"
     },
-    "longDescription": "Script de rigging pour After Effects permettant de créer et d'animer rapidement des personnages en courbes (« rubber hoses »). Offre une Session View non linéaire pour l'animation de caractères fluides et organiques.\n\nFonctions clés : Rigging sans os (bone-less) pour animations rapides ; Tapered hoses pour varier les épaisseurs des membres ; Hose styling personnalisable et sauvegardable ; RubberRig et RubberPin pour connecter des calques ; Optimisation de performance et baking de keyframes.\n\nRubberHose s'impose pour l'animation de personnages stylisés en motion design ; pour du rigging biomécanique réaliste ou du budget serré, d'autres solutions conviennent mieux.",
+    "longDescription": "Extension de rigging pour After Effects conçue pour créer rapidement des membres flexibles, relier des illustrations et réutiliser des rigs de personnages stylisés.\n\nFonctions clés : Création d'un membre en un clic ou à partir d'un tracé ; Points de courbure supplémentaires pour les courbes en S, doigts et queues ; Styles prédéfinis et styles personnalisés réutilisables ; RubberRig et RubberPin pour relier les calques d'illustration ; Réutilisation des rigs avec les propriétés essentielles d'After Effects ; Rigs basés sur les fonctions natives d'After Effects.\n\nChoisissez Rubberhose 3 pour accélérer les membres souples et les personnages graphiques dans After Effects. Préférez Duik pour un rig plus complet et gratuit, au prix d'une prise en main plus longue.",
     "alternatives": [],
     "slug": "ae-rubberhose",
-    "shortDescriptionEn": "After Effects rigging script for fast character creation and animation using curves (rubber hoses). Provides intuitive bone-less rigging with organic, fluid animation capabilities.",
-    "description": "Script de rigging pour After Effects permettant de créer et d'animer rapidement des personnages en courbes (« rubber hoses »). Offre une Session View non linéaire pour l'animation de caractères fluides et organiques.\n\nFonctions clés : Rigging sans os (bone-less) pour animations rapides ; Tapered hoses pour varier les épaisseurs des membres ; Hose styling personnalisable et sauvegardable ; RubberRig et RubberPin pour connecter des calques ; Optimisation de performance et baking de keyframes.\n\nRubberHose s'impose pour l'animation de personnages stylisés en motion design ; pour du rigging biomécanique réaliste ou du budget serré, d'autres solutions conviennent mieux.",
-    "longDescriptionEn": "After Effects rigging script for fast character creation and animation using curves (rubber hoses). Provides intuitive bone-less rigging with organic, fluid animation capabilities.\n\nKey strengths: Very fast rigging—ideal for high-volume content production.; Intuitive interface with short learning curve.; Smooth, organic animations without bone complexity.; Perpetual license (no subscription)..\n\nRubberHose makes sense for stylized character animation in motion design; for realistic biomechanical rigging or tight budgets, alternatives may work better.",
+    "shortDescriptionEn": "After Effects rigging extension for quickly building flexible limbs, connecting artwork and reusing stylized character rigs.",
+    "description": "Extension de rigging pour After Effects conçue pour créer rapidement des membres flexibles, relier des illustrations et réutiliser des rigs de personnages stylisés.\n\nFonctions clés : Création d'un membre en un clic ou à partir d'un tracé ; Points de courbure supplémentaires pour les courbes en S, doigts et queues ; Styles prédéfinis et styles personnalisés réutilisables ; RubberRig et RubberPin pour relier les calques d'illustration ; Réutilisation des rigs avec les propriétés essentielles d'After Effects ; Rigs basés sur les fonctions natives d'After Effects.\n\nChoisissez Rubberhose 3 pour accélérer les membres souples et les personnages graphiques dans After Effects. Préférez Duik pour un rig plus complet et gratuit, au prix d'une prise en main plus longue.",
+    "longDescriptionEn": "After Effects rigging extension for quickly building flexible limbs, connecting artwork and reusing stylized character rigs.\n\nKey strengths: very fast setup for flexible limbs; editable styles without rebuilding animation; one-time purchase with no subscription; compositions rely on native After Effects features; a strong balance between simplicity and visual control.\n\nChoose Rubberhose 3 to speed up flexible limbs and graphic characters in After Effects. Choose Duik for a broader free rigging system if you accept a longer learning curve.",
     "pricingEn": {
-      "free": "Pas de version gratuite permanente. Essai gratuit disponible ; achat de licence requis.",
-      "paid": "RubberHose 3: 65 USD"
+      "free": "No permanent free plan. Rubberhose 3 costs $65 as a one-time purchase.",
+      "paid": "Rubberhose 3: $65 one-time purchase"
     },
     "pricing_v5": {
-      "cautions": [],
-      "verified_on": "2026-07-24",
+      "cautions": [
+        "Achat unique par utilisateur. Une licence est requise pour créer de nouveaux rigs ou gérer les hoses de façon avancée."
+      ],
+      "cautionsEn": [
+        "One-time purchase per user. A license is required to create new rigs or perform advanced hose management."
+      ],
+      "verified_on": "2026-09-02",
       "source_domain": "battleaxe.co",
       "usage_sensitive": false,
       "compare_plan_kind": "individual",
-      "compare_plan_name": "Free",
-      "price_reliability": "low",
+      "compare_plan_name": "Rubberhose 3",
+      "price_reliability": "high",
       "location_sensitive": false,
       "official_source_url": "https://battleaxe.co/rubberhose",
       "verification_status": "official_explicit",
       "compare_price_monthly_eur": 0
     },
-    "websiteUrl": "https://aescripts.com/rubberhose",
+    "websiteUrl": "https://battleaxe.co/rubberhose",
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "You animate stylized or curve-based characters in After Effects.",
-        "You need fast rigging without traditional bone complexity.",
-        "You produce motion design or social media animation content."
+        "You regularly animate stylized characters in After Effects.",
+        "You want to test different silhouettes without rebuilding the rig.",
+        "Your team needs to open and render compositions without licensing every render workstation."
       ],
       "avoidIf": [
-        "You need hyperrealistic or complex biomechanical rigging.",
-        "You want free software.",
-        "You work exclusively in 3D (this tool is AE 2D only)."
+        "You need a complete skeleton system, automated walk cycles or lip sync.",
+        "You primarily work in Blender, Moho or Toon Boom.",
+        "You only create characters occasionally and Duik already covers the workflow."
       ],
-      "threshold": "RubberHose makes sense for stylized character animation in motion design; for realistic biomechanical rigging or tight budgets, alternatives may work better."
+      "threshold": "Choose Rubberhose 3 to speed up flexible limbs and graphic characters in After Effects. Choose Duik for a broader free rigging system if you accept a longer learning curve."
     },
     "prosEn": [
-      "Very fast rigging—ideal for high-volume content production.",
-      "Intuitive interface with short learning curve.",
-      "Smooth, organic animations without bone complexity.",
-      "Perpetual license (no subscription)."
+      "Very fast setup for flexible limbs.",
+      "Editable styles without rebuilding animation.",
+      "One-time purchase with no subscription.",
+      "Compositions rely on native After Effects features.",
+      "A strong balance between simplicity and visual control."
     ],
     "consEn": [
-      "Limited to curve-based character styles (not ideal for photorealism).",
-      "Depends entirely on After Effects.",
-      "Major updates require buying a new license."
+      "Entirely dependent on After Effects.",
+      "Less comprehensive than a general-purpose rigging system.",
+      "Each person creating or deeply managing rigs needs a license.",
+      "The flexible-limb look does not suit every character style."
     ],
     "useCasesEn": [
-      "Animate stylized characters end to end in motion design.",
-      "Quickly create character animations for social media.",
-      "Design smooth motion and transitions in video presentations."
+      "Build an editorial character for an explainer video.",
+      "Create several poses quickly from one rig.",
+      "Connect Illustrator artwork to flexible limbs."
     ],
     "prescription_quality": "silence",
     "prescription_output": null,
@@ -127991,8 +128040,12 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "/og-screenshots/ae-rubberhose.jpg",
-    "galleryImages": []
+    "ogImageUrl": "https://i.ytimg.com/vi_webp/nqpJPfAkYA4/sddefault.webp",
+    "galleryImages": [
+      "https://i.ytimg.com/vi_webp/WkiZNpsxVDw/sddefault.webp",
+      "https://framerusercontent.com/images/3E2LCWe56YRRx93JfPIF4WMk8.jpg?width=700&height=700",
+      "https://framerusercontent.com/images/oqBzDsh7M0f11jZGOjddcJopg0.jpg?width=700&height=700"
+    ]
   },
   {
     "id": "ruby",
@@ -151806,23 +151859,23 @@
     "id": "todoist",
     "name": "Todoist",
     "category": "organization",
-    "shortDescription": "La to-do list pure et dure.",
+    "shortDescription": "Le gestionnaire de tâches rapide pour organiser priorités, routines et échéances.",
     "verdict": {
       "keepIf": [
-        "Vous avez besoin d'une todo-list simple et efficace.",
-        "Vous collaborez avec une petite équipe sur des tâches.",
-        "Vous voulez IA pour organiser vos tâches disséminées."
+        "Vous voulez capturer et planifier vos tâches sans administrer un outil de projet lourd.",
+        "Les récurrences, rappels et vues Today ou Upcoming structurent réellement votre semaine.",
+        "Vous travaillez seul ou partagez quelques projets avec une petite équipe."
       ],
       "avoidIf": [
-        "Vous cherchez un outil de gestion de projet lourd (Gantt, ressources).",
-        "Le plan Beginner gratuit (5 projets) vous suffit.",
-        "Vous avez besoin de features très avancées (automatisations)."
+        "Vous avez besoin de dépendances, de Gantt, de gestion de charge ou de validations avancées.",
+        "Votre travail vit surtout dans des documents, des bases de connaissances ou des briefs riches.",
+        "Votre équipe nécessite des automatisations et des workflows fortement personnalisés."
       ],
-      "threshold": "Todoist s'impose pour perso et petits teams de tâches ; pour projets complexes/Gantt, un vrai PM tool s'impose."
+      "threshold": "Gardez Todoist si la vitesse de capture et les routines comptent davantage que le pilotage de projet. Passez à un outil de gestion de projet dès que les dépendances, les ressources ou les validations deviennent centrales."
     },
     "pricing": {
       "free": "Plan gratuit disponible",
-      "paid": "Pro 7€/mois ou 60€/an (5€/mois équivalent)"
+      "paid": "Pro : 7 $/mois ou 60 $/an. Business : 10 $/utilisateur/mois ou 96 $/utilisateur/an"
     },
     "affiliateLink": "https://todoist.com",
     "articles": [],
@@ -151838,7 +151891,7 @@
     "defaultMonthlyPrice": 7,
     "pricingTiers": {
       "free": "5 projets actifs",
-      "paid": "4$/mois pour projets illimités et rappels"
+      "paid": "Pro à 7 $/mois ou 60 $/an"
     },
     "relevantFor": [
       "Travailleurs indépendants",
@@ -151850,33 +151903,33 @@
       "aiAngle": {
         "stance": "augmente",
         "aiTools": [],
-        "augmentEn": "Todoist added AI-assisted natural language input to create tasks faster, but remains fundamentally a structured task manager — AI speeds up entry, not prioritization or execution.",
-        "augmentFr": "Todoist a ajouté la saisie en langage naturel assistée par IA pour créer des tâches plus vite, mais reste fondamentalement un gestionnaire de tâches structuré — l'IA accélère la saisie, pas la priorisation ou l'exécution.",
+        "augmentEn": "Todoist added AI-assisted natural language input to create tasks faster, but remains fundamentally a structured task manager. AI speeds up entry, not prioritization or execution.",
+        "augmentFr": "Todoist a ajouté la saisie en langage naturel assistée par IA pour créer des tâches plus vite, mais reste fondamentalement un gestionnaire de tâches structuré. L'IA accélère la saisie, pas la priorisation ou l'exécution.",
         "replaceEn": "Replace Todoist with an AI? No: organizing tasks with dates, projects, and priorities remains a structural need AI assists without replacing. It helps enter a task via natural description, it doesn't do the work for you. Verdict: AI augments entry, task structure remains the product.",
         "replaceFr": "Remplacer Todoist par une IA ? Non : organiser ses tâches avec des dates, projets et priorités reste un besoin structurel que l'IA assiste sans remplacer. Elle aide à saisir une tâche par description naturelle, elle ne fait pas le travail à ta place. Verdict : l'IA augmente la saisie, la structure des tâches reste le produit."
       },
-      "idealForEn": "Ideal for a fast, minimalist personal to-do list. Not a fit for advanced project management with dependencies.",
-      "idealForFr": "Idéal pour une todo-list personnelle rapide et minimaliste. Pas adapté à une gestion de projet avancée avec dépendances.",
-      "metaDescription": "Todoist : La to-do list pure et dure. Découvrez si cet outil vaut le coup pour votre activité freelance."
+      "idealForEn": "Ideal for solo professionals and small teams that value fast capture, recurring tasks and clear daily planning. Not a fit for advanced project management with dependencies.",
+      "idealForFr": "Idéal pour les indépendants et petites équipes qui privilégient la capture rapide, les récurrences et un planning quotidien clair. Pas adapté à une gestion de projet avancée avec dépendances.",
+      "metaDescription": "Todoist : avis, tarifs Pro et Business, fonctions, limites et alternatives pour indépendants et petites équipes."
     },
-    "longDescription": "Todoist, c'est la to-do list pure et dure. À partir de 7€/mois. Pensé pour les consultants B2B et les graphistes.\n\nInterface minimaliste et ultra-rapide. langage naturel pour créer des tâches ('demain à 14h'), récurrences puissantes ('tous les 2e mardi du mois'). Intégrations partout (Gmail, Slack, Calendrier, Alexa). Concrètement : gTD : implémenter la méthode Getting Things Done avec projets et contextes. Ou encore : routine quotidienne : gérer vos tâches récurrentes (emails, facturation, prospection). Gain de temps estimé : 3h/mois.\n\nÀ garder si : vous voulez juste noter et cocher ou notion est trop lent/compliqué pour vous. À éviter si : vous voulez gérer des projets complexes ou vous avez besoin de documentation liée. Limite principale : version gratuite limitée à 5 projets actifs. Dès que votre cerveau sature de petites tâches à ne pas oublier.",
+    "longDescription": "Todoist centralise tâches, échéances et routines dans une interface conçue pour la saisie rapide. Le langage naturel permet de créer une tâche datée ou récurrente sans passer par plusieurs menus, tandis que les vues Today, Upcoming, filtres et calendrier aident à organiser la semaine.\n\nLe plan Beginner est gratuit avec 5 projets personnels. Pro coûte 7 $ par mois ou 60 $ par an et ajoute notamment 300 projets, le calendrier, la durée des tâches, les rappels personnalisés, Task Assist et les deadlines. Business coûte 10 $ par utilisateur et par mois ou 96 $ par utilisateur et par an pour un espace d'équipe partagé, les rôles, permissions et la facturation centralisée.\n\nTodoist convient surtout aux indépendants et petites équipes qui veulent une liste d'actions fiable sur tous leurs appareils. Si le travail exige des dépendances, un Gantt, une gestion de charge ou des validations structurées, un outil de gestion de projet complet sera plus adapté.",
     "pros": [
-      "Plan gratuit vraiment utilisable (5 projets).",
-      "Todoist Assist IA intégré (Pro+).",
-      "Ultra simple et rapide (pas de courbe apprentissage).",
-      "Multi-plateforme (web, mobile, desktop).",
-      "Collaboration fluide et temps réel."
+      "Saisie très rapide en langage naturel.",
+      "Récurrences et rappels solides pour les routines.",
+      "Interface cohérente sur web, mobile et desktop.",
+      "Plan gratuit suffisant pour tester un usage personnel.",
+      "Nombreuses intégrations avec les outils du quotidien."
     ],
     "cons": [
-      "Plan gratuit très limité (5 projets seulement).",
-      "Pas de Gantt chart ou planning visuel.",
-      "Business plan par siège (coûteux pour team important).",
-      "Fonctionnalités automations limitées."
+      "Les fonctions les plus utiles de planification sont réservées au plan Pro.",
+      "Pas de Gantt ni de gestion avancée des ressources.",
+      "Le plan Business est facturé par utilisateur.",
+      "Moins adapté aux projets qui exigent beaucoup de documentation contextuelle."
     ],
     "useCases": [
-      "Gérer une todo-list perso et synchroniser multi-devices.",
-      "Organiser tâches dispersées en un plan d'action cohérent (IA).",
-      "Collaborer avec une petite équipe sur un projet donné."
+      "Centraliser tâches personnelles, relances clients et échéances.",
+      "Créer des routines récurrentes pour l'administratif et la prospection.",
+      "Partager des listes d'actions simples avec une petite équipe."
     ],
     "tool_type": "satellite",
     "substitutable": true,
@@ -151896,26 +151949,26 @@
     "host_app": null,
     "ia_use_case": null,
     "slug": "todoist",
-    "shortDescriptionEn": "The ultimate to-do list.",
-    "description": "Todoist, c'est la to-do list pure et dure. À partir de 7€/mois. Pensé pour les consultants B2B et les graphistes.\n\nInterface minimaliste et ultra-rapide. langage naturel pour créer des tâches ('demain à 14h'), récurrences puissantes ('tous les 2e mardi du mois'). Intégrations partout (Gmail, Slack, Calendrier, Alexa). Concrètement : gTD : implémenter la méthode Getting Things Done avec projets et contextes. Ou encore : routine quotidienne : gérer vos tâches récurrentes (emails, facturation, prospection). Gain de temps estimé : 3h/mois.\n\nÀ garder si : vous voulez juste noter et cocher ou notion est trop lent/compliqué pour vous. À éviter si : vous voulez gérer des projets complexes ou vous avez besoin de documentation liée. Limite principale : version gratuite limitée à 5 projets actifs. Dès que votre cerveau sature de petites tâches à ne pas oublier.",
-    "longDescriptionEn": "Todoist is the ultimate to-do list. Starting at €7/month. Built for B2B consultants and graphic designers.\n\nMinimalist and ultra-fast interface. natural language for task creation ('tomorrow at 2pm'), powerful recurring dates ('every 2nd Tuesday of the month'). Integrations everywhere (Gmail, Slack, Calendar, Alexa). In practice: gTD: implement the Getting Things Done method with projects and contexts. Also: daily routine: manage your recurring tasks (emails, invoicing, prospecting). Estimated time saving: 3h/month.\n\nKeep it if: you just want to take notes and check boxes or notion is too slow/complicated for you. Skip it if: you want to manage complex projects or you need linked documentation. Main limit: free version limited to 5 active projects. As soon as your brain becomes overwhelmed by small tasks you shouldn't forget.",
+    "shortDescriptionEn": "The fast task manager for priorities, routines and deadlines.",
+    "description": "Todoist centralise tâches, échéances et routines dans une interface conçue pour la saisie rapide. Le langage naturel permet de créer une tâche datée ou récurrente sans passer par plusieurs menus, tandis que les vues Today, Upcoming, filtres et calendrier aident à organiser la semaine.\n\nLe plan Beginner est gratuit avec 5 projets personnels. Pro coûte 7 $ par mois ou 60 $ par an et ajoute notamment 300 projets, le calendrier, la durée des tâches, les rappels personnalisés, Task Assist et les deadlines. Business coûte 10 $ par utilisateur et par mois ou 96 $ par utilisateur et par an pour un espace d'équipe partagé, les rôles, permissions et la facturation centralisée.\n\nTodoist convient surtout aux indépendants et petites équipes qui veulent une liste d'actions fiable sur tous leurs appareils. Si le travail exige des dépendances, un Gantt, une gestion de charge ou des validations structurées, un outil de gestion de projet complet sera plus adapté.",
+    "longDescriptionEn": "Todoist centralizes tasks, deadlines and routines in an interface built for fast capture. Natural-language input creates dated or recurring tasks without opening several menus, while Today, Upcoming, filters and calendar views help organize the week.\n\nBeginner is free with 5 personal projects. Pro costs $7 per month or $60 per year and adds 300 projects, calendar layout, task duration, custom reminders, Task Assist and deadlines. Business costs $10 per user per month or $96 per user per year for a shared team workspace, roles, permissions and centralized billing.\n\nTodoist is best for solo professionals and small teams that want a dependable action list on every device. If the work requires dependencies, Gantt charts, workload management or structured approvals, a full project management tool will fit better.",
     "pricingEn": {
       "free": "Free plan available",
-      "paid": "Pro €7/month or €60/year (€5/month equivalent)"
+      "paid": "Pro: $7/month or $60/year. Business: $10/user/month or $96/user/year"
     },
     "pricing_v5": {
       "cautions": [
-        "Plan gratuit limité à 5 projets actifs, sans rappels ni pièces jointes."
+        "Le plan gratuit est limité à 5 projets personnels et ne comprend pas les fonctions avancées de planification du plan Pro."
       ],
       "cautionsEn": [
-        "Free plan limited to 5 active projects, no reminders or attachments."
+        "The free plan is limited to 5 personal projects and excludes Pro's advanced planning features."
       ],
-      "verified_on": "2026-03-13",
-      "tcoExampleEn": "Concrete example: a freelancer billing $50/h who misses one client follow-up a month without reminders loses at least $50/month in missed opportunity. Todoist Pro at $5/month (annual) pays for itself from that one avoided miss — but the free plan's 5-active-project cap is hit as soon as you're juggling more than 2-3 clients at once.",
-      "tcoExampleFr": "Exemple concret : un freelance qui facture 50$/h et oublie une relance client par mois sans rappels perd au moins 50$/mois en opportunité manquée. Todoist Pro à 5$/mois (annuel) est rentabilisé dès ce seul oubli évité — mais le plafond de 5 projets actifs du plan gratuit est atteint dès qu'on gère plus de 2-3 clients en parallèle.",
+      "verified_on": "2026-09-02",
+      "tcoExampleEn": "For a solo user, Pro costs $60 per year. Business is a separate team plan at $96 per user per year, so a 5-person team costs $480 per year before taxes.",
+      "tcoExampleFr": "Pour un usage solo, Pro coûte 60 $ par an. Business est un plan d'équipe distinct à 96 $ par utilisateur et par an, soit 480 $ par an pour 5 personnes avant taxes.",
       "source_domain": "todoist.com",
       "usage_sensitive": false,
-      "compare_plan_kind": "seat",
+      "compare_plan_kind": "individual",
       "compare_plan_name": "Pro",
       "price_reliability": "high",
       "location_sensitive": false,
@@ -151927,34 +151980,34 @@
     "logo": "",
     "verdictEn": {
       "keepIf": [
-        "You need a simple, fast task management app.",
-        "You collaborate with a small team.",
-        "You want AI to organize scattered tasks."
+        "You want to capture and schedule tasks without administering a heavyweight project tool.",
+        "Recurring tasks, reminders and Today or Upcoming views genuinely structure your week.",
+        "You work solo or share a few projects with a small team."
       ],
       "avoidIf": [
-        "You need heavy project management (Gantt, resource allocation).",
-        "Free plan with 5 projects is enough for you.",
-        "You need advanced automation or custom workflows."
+        "You need dependencies, Gantt charts, workload management or advanced approvals.",
+        "Your work primarily lives in documents, knowledge bases or detailed briefs.",
+        "Your team needs highly customized workflows and automation."
       ],
-      "threshold": "Todoist works for personal and small-team task management; for complex projects, a full PM tool is better."
+      "threshold": "Keep Todoist when capture speed and routines matter more than project control. Move to a full project management tool once dependencies, resources or approvals become central."
     },
     "prosEn": [
-      "Generous free plan (5 projects really usable).",
-      "Todoist Assist AI included (Pro+).",
-      "Ultra-simple, zero learning curve.",
-      "Multi-platform (web, mobile, desktop).",
-      "Smooth real-time collaboration."
+      "Very fast natural-language capture.",
+      "Strong recurring tasks and reminders for routines.",
+      "Consistent interface across web, mobile and desktop.",
+      "A free plan that is sufficient to test personal use.",
+      "A broad integration catalog for everyday tools."
     ],
     "consEn": [
-      "Free plan is restrictive (only 5 projects).",
-      "No Gantt chart or visual planning.",
-      "Business plan per-seat (pricey for large teams).",
-      "Limited automation capabilities."
+      "The most useful planning features require Pro.",
+      "No Gantt chart or advanced resource management.",
+      "Business is priced per user.",
+      "Less suitable for projects requiring rich contextual documentation."
     ],
     "useCasesEn": [
-      "Manage personal tasks across all devices.",
-      "Turn scattered tasks into a cohesive action plan (AI).",
-      "Collaborate with a small team on a project."
+      "Centralize personal tasks, client follow-ups and deadlines.",
+      "Build recurring routines for admin and prospecting.",
+      "Share straightforward action lists with a small team."
     ],
     "personas": [],
     "timeGainedHoursPerMonth": 3,
@@ -151980,7 +152033,12 @@
       "requires_context_questions": true
     },
     "force_silence": false,
-    "ogImageUrl": "https://www.todoist.com/static/ogimages/en/og-image-home.png"
+    "ogImageUrl": "https://res.cloudinary.com/imagist/image/fetch/q_auto,f_auto,c_scale,w_1000/https%3A%2F%2Fwww.todoist.com%2F_astro%2Fheaderui.en.DAyuar6R.png",
+    "galleryImages": [
+      "https://res.cloudinary.com/imagist/image/fetch/q_auto,f_auto,c_scale,w_1088/https%3A%2F%2Fwww.todoist.com%2F_astro%2Fposter-image.gT-Fq9B1.png",
+      "https://res.cloudinary.com/imagist/image/fetch/q_auto,f_auto,c_scale,w_1088/https%3A%2F%2Fwww.todoist.com%2F_astro%2Fai-video-thumbnail.CZxmLcd8.png",
+      "https://www.todoist.com/static/ogimages/en/og-image-home.png"
+    ]
   },
   {
     "id": "toggl",
@@ -169929,6 +169987,175 @@
     "substitution_cluster_v2": null,
     "decision_policy_v3": null,
     "ogImageUrl": "https://tooltrim.com/og-screenshots/zotero.jpg",
+    "force_silence": false
+  },
+  {
+    "id": "franklymail",
+    "slug": "franklymail",
+    "name": "FranklyMail",
+    "category": "communication",
+    "shortDescription": "Hébergement e-mail à prix fixe pour domaines personnalisés, sans facturation par boîte.",
+    "shortDescriptionEn": "Flat-price email hosting for custom domains with no per-mailbox fee.",
+    "description": "FranklyMail héberge les e-mails de vos propres domaines pour 9 $ par an. Le plan comprend un nombre illimité de domaines, boîtes et alias avec 10 Go de stockage partagé, puis 0,40 $ par Go et par an.\n\nLe service prend en charge IMAP, POP3, JMAP, SMTP et le webmail. La configuration guide les enregistrements MX, SPF, DKIM et DMARC, et la migration IMAP s'exécute côté serveur.\n\nFranklyMail est pertinent si vous voulez uniquement de l'e-mail professionnel à faible coût. Il ne comprend ni calendrier, ni drive, ni suite documentaire, et interdit les newsletters ou envois marketing.",
+    "longDescription": "FranklyMail héberge les e-mails de vos propres domaines pour 9 $ par an. Le plan comprend un nombre illimité de domaines, boîtes et alias avec 10 Go de stockage partagé, puis 0,40 $ par Go et par an.\n\nLe service prend en charge IMAP, POP3, JMAP, SMTP et le webmail. La configuration guide les enregistrements MX, SPF, DKIM et DMARC, et la migration IMAP s'exécute côté serveur.\n\nFranklyMail est pertinent si vous voulez uniquement de l'e-mail professionnel à faible coût. Il ne comprend ni calendrier, ni drive, ni suite documentaire, et interdit les newsletters ou envois marketing.",
+    "longDescriptionEn": "FranklyMail hosts email for your own domains for $9 per year. The plan includes unlimited domains, mailboxes and aliases with 10 GB of shared storage, then $0.40 per additional GB per year.\n\nThe service supports IMAP, POP3, JMAP, SMTP and webmail. Setup guides MX, SPF, DKIM and DMARC records, while IMAP migration runs server-side.\n\nFranklyMail is relevant when you only need low-cost professional email. It includes no calendar, drive or document suite and does not allow newsletters or marketing sends.",
+    "pricing": {
+      "free": "Pas de plan gratuit",
+      "paid": "9 $/an, puis 0,40 $/Go/an au-delà de 10 Go partagés"
+    },
+    "pricingEn": {
+      "free": "No free plan",
+      "paid": "$9/year, then $0.40/GB/year beyond 10 GB shared"
+    },
+    "defaultMonthlyPrice": 0.75,
+    "pricing_v5": {
+      "cautions": [
+        "Pas de calendrier, drive, suite documentaire ou envoi marketing.",
+        "Aucun SLA ni crédit de service."
+      ],
+      "cautionsEn": [
+        "No calendar, drive, document suite or marketing sends.",
+        "No SLA or service credits."
+      ],
+      "verified_on": "2026-09-02",
+      "source_domain": "franklymail.com",
+      "usage_sensitive": true,
+      "compare_plan_kind": "account",
+      "compare_plan_name": "FranklyMail",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://franklymail.com/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 0.75
+    },
+    "websiteUrl": "https://franklymail.com/",
+    "affiliateLink": "",
+    "logo": "",
+    "verdict": {
+      "keepIf": [
+        "Vous possédez votre domaine et cherchez uniquement un hébergement e-mail.",
+        "Vous voulez créer plusieurs boîtes ou alias sans payer par utilisateur.",
+        "IMAP, JMAP ou le webmail suffisent à votre usage."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'un calendrier, d'un drive ou d'une suite collaborative.",
+        "Vous envoyez des newsletters ou des campagnes marketing.",
+        "Votre organisation exige un SLA contractuel ou une assistance entreprise."
+      ],
+      "threshold": "FranklyMail devient très intéressant lorsque plusieurs boîtes sur vos propres domaines rendent la facturation par utilisateur disproportionnée. Il ne remplace pas Google Workspace ou Microsoft 365 si vous utilisez leur suite collaborative."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You own your domain and only need email hosting.",
+        "You want several mailboxes or aliases without per-user pricing.",
+        "IMAP, JMAP or webmail cover your workflow."
+      ],
+      "avoidIf": [
+        "You need calendar, drive or a collaborative office suite.",
+        "You send newsletters or marketing campaigns.",
+        "Your organization requires a contractual SLA or enterprise support."
+      ],
+      "threshold": "FranklyMail is compelling when several mailboxes on your own domains make per-user pricing disproportionate. It does not replace Google Workspace or Microsoft 365 when you rely on their collaboration suites."
+    },
+    "pros": [
+      "Prix fixe de 9 $ par an.",
+      "Boîtes, domaines et alias illimités.",
+      "Protocoles standards et migration IMAP.",
+      "Configuration DNS guidée.",
+      "Positionnement tarifaire transparent."
+    ],
+    "prosEn": [
+      "A flat $9 yearly price.",
+      "Unlimited mailboxes, domains and aliases.",
+      "Standard protocols and server-side IMAP migration.",
+      "Guided DNS configuration.",
+      "Transparent pricing and limits."
+    ],
+    "cons": [
+      "10 Go seulement à partager avant supplément.",
+      "Pas de calendrier, drive ou documents.",
+      "Pas d'envoi marketing ou de newsletters.",
+      "Aucun engagement de disponibilité ni crédit de service."
+    ],
+    "consEn": [
+      "Only 10 GB shared before storage charges.",
+      "No calendar, drive or documents.",
+      "No marketing or newsletter sending.",
+      "No uptime commitment or service credits."
+    ],
+    "useCases": [
+      "Héberger les adresses d'une petite équipe sur son domaine.",
+      "Créer des alias par projet ou service.",
+      "Migrer une archive depuis un fournisseur IMAP."
+    ],
+    "useCasesEn": [
+      "Host a small team's addresses on its own domain.",
+      "Create aliases for each project or function.",
+      "Migrate an archive from an IMAP provider."
+    ],
+    "covers": [
+      "email-professionnel",
+      "hebergement-email",
+      "alias-email"
+    ],
+    "functional_needs": [
+      "email-professionnel",
+      "hebergement-email"
+    ],
+    "relevantFor": [
+      "Indépendants",
+      "Petites équipes",
+      "Associations",
+      "Propriétaires de plusieurs domaines"
+    ],
+    "alternatives": [
+      "google-workspace",
+      "protonmail",
+      "fastmail"
+    ],
+    "seo": {
+      "idealForFr": "Idéal pour héberger plusieurs adresses sur ses propres domaines à coût fixe.",
+      "idealForEn": "Ideal for hosting several addresses across your own domains at a flat cost.",
+      "metaDescription": "FranklyMail : avis, prix à 9 $ par an, stockage, protocoles, limites et alternatives pour vos domaines professionnels."
+    },
+    "articles": [],
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "consultant-b2b",
+      "fondateur-saas",
+      "creator-economy"
+    ],
+    "ia_use_case": null,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "personas": [],
+    "timeGainedHoursPerMonth": 1,
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [
+      "calendar_requirement",
+      "storage_requirement",
+      "team_seats"
+    ],
+    "substitution_cluster_v2": "email-hosting",
+    "decision_policy_v3": {
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": true,
+      "default_decision_lane": "review_then_prescribe",
+      "auto_downgrade_allowed": true,
+      "never_auto_cancel_reason": null,
+      "requires_context_questions": true
+    },
+    "ogImageUrl": "https://franklymail.com/video-poster.jpg",
+    "galleryImages": [],
     "force_silence": false
   }
 ]

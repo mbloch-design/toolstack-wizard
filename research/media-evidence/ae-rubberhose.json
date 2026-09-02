@@ -1,21 +1,12 @@
 {
   "slug": "ae-rubberhose",
-  "verified_on": "2026-08-31",
-  "mode": "fallback_screenshot",
-  "discovery": {
-    "official_media_found": false,
-    "official_pages_checked": [
-      "https://aescripts.com/rubberhose"
-    ]
-  },
+  "verified_on": "2026-09-02",
+  "mode": "sourced",
+  "discovery": { "official_media_found": true, "official_pages_checked": ["https://battleaxe.co/rubberhose"] },
   "items": [
-    {
-      "kind": "screenshot",
-      "url": "/og-screenshots/ae-rubberhose.jpg",
-      "official": false,
-      "capture_method": "browser_screenshot",
-      "alt": "RubberHose official page",
-      "source_page_url": "https://aescripts.com/rubberhose"
-    }
+    { "kind": "image", "url": "https://i.ytimg.com/vi_webp/nqpJPfAkYA4/sddefault.webp", "source_page_url": "https://battleaxe.co/rubberhose", "official": true },
+    { "kind": "image", "url": "https://i.ytimg.com/vi_webp/WkiZNpsxVDw/sddefault.webp", "source_page_url": "https://battleaxe.co/rubberhose", "official": true },
+    { "kind": "image", "url": "https://framerusercontent.com/images/3E2LCWe56YRRx93JfPIF4WMk8.jpg?width=700&height=700", "source_page_url": "https://battleaxe.co/rubberhose", "official": true },
+    { "kind": "image", "url": "https://framerusercontent.com/images/oqBzDsh7M0f11jZGOjddcJopg0.jpg?width=700&height=700", "source_page_url": "https://battleaxe.co/rubberhose", "official": true }
   ]
 }

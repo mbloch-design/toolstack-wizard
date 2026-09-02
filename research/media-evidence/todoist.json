@@ -1,0 +1,12 @@
+{
+  "slug": "todoist",
+  "verified_on": "2026-09-02",
+  "mode": "sourced",
+  "discovery": { "official_media_found": true, "official_pages_checked": ["https://www.todoist.com/"] },
+  "items": [
+    { "kind": "image", "url": "https://res.cloudinary.com/imagist/image/fetch/q_auto,f_auto,c_scale,w_1000/https%3A%2F%2Fwww.todoist.com%2F_astro%2Fheaderui.en.DAyuar6R.png", "source_page_url": "https://www.todoist.com/", "official": true },
+    { "kind": "image", "url": "https://res.cloudinary.com/imagist/image/fetch/q_auto,f_auto,c_scale,w_1088/https%3A%2F%2Fwww.todoist.com%2F_astro%2Fposter-image.gT-Fq9B1.png", "source_page_url": "https://www.todoist.com/", "official": true },
+    { "kind": "image", "url": "https://res.cloudinary.com/imagist/image/fetch/q_auto,f_auto,c_scale,w_1088/https%3A%2F%2Fwww.todoist.com%2F_astro%2Fai-video-thumbnail.CZxmLcd8.png", "source_page_url": "https://www.todoist.com/", "official": true },
+    { "kind": "image", "url": "https://www.todoist.com/static/ogimages/en/og-image-home.png", "source_page_url": "https://www.todoist.com/", "official": true }
+  ]
+}

@@ -1660,16 +1660,16 @@
     "slug": "albato",
     "name": "Albato",
     "categoryId": "automation",
-    "shortDescription": "Plateforme no-code pour étendre les intégrations et automatisations SaaS.",
-    "shortDescriptionEn": "No-code platform to extend SaaS integrations and automations.",
+    "shortDescription": "Plateforme d'automatisation no-code qui relie plus de 1 000 applications, construit des scénarios multi-étapes et propose un copilote ainsi que des agents IA.",
+    "shortDescriptionEn": "No-code automation platform connecting more than 1,000 apps, building multi-step workflows and offering an AI copilot and agents.",
     "pricing": {
-      "free": "Fonctionnalités de base",
-      "paid": "15€/mois pour version Pro"
+      "free": "Free : 5 automatisations actives, 2 étapes par automatisation, 100 transactions et connexions illimitées.",
+      "paid": "Free: 0 $ : 100 transactions ; Pro: 22 $/mois ou 15 $/mois avec facturation annuelle pour 1 000 transactions ; Teams: 93 $/mois ou 65 $/mois avec facturation annuelle, 5 sièges et 5 000 transactions, annoncé prochainement ; Custom: Sur devis"
     },
     "defaultMonthlyPrice": 15,
-    "affiliateLink": "https://albato.com",
+    "affiliateLink": "https://albato.com/automate?fpr=michael-c8d497",
     "websiteUrl": "https://albato.com",
-    "ogImageUrl": "https://albato.com/images/previews/en/embedded-ai.webp",
+    "ogImageUrl": "https://albato.com/_next/image?url=%2Fimages%2Fhome%2Fhero%2Fhero-steps-copilot-desc-img-en.webp&w=3840&q=75",
     "logo": "",
     "tool_type": "satellite",
     "host_app": null,
@@ -1684,9 +1684,11 @@
       "developpeur-solo"
     ],
     "relevantFor": [
-      "Entreprises SaaS B2B",
-      "Plates-formes CRM/Marketing",
-      "Éditeurs de logiciels"
+      "Indépendants",
+      "Agences",
+      "Équipes marketing",
+      "Opérations",
+      "Petites entreprises"
     ],
     "freeAlternative": null,
     "substitutable": true,
@@ -19496,16 +19498,16 @@
     "slug": "linear",
     "name": "Linear",
     "categoryId": "organization",
-    "shortDescription": "Outil de gestion de projet et de suivi d'issues taillé pour les équipes produit et d'ingénierie, misant sur la rapidité et une méthode d'exécution opinionée.",
-    "shortDescriptionEn": "Project management and issue tracking built for product and engineering teams, betting on speed and an opinionated execution method.",
+    "shortDescription": "Plateforme de développement produit qui relie issues, cycles, projets, initiatives, demandes clients et workflows d'agents pour les équipes produit et ingénierie.",
+    "shortDescriptionEn": "Product development platform connecting issues, cycles, projects, initiatives, customer requests and agent workflows for product and engineering teams.",
     "pricing": {
-      "free": "Illimité pour une petite équipe, jusqu'à 250 issues actives",
-      "paid": "Standard à 8$/utilisateur/mois, Business à 14$, Enterprise sur devis"
+      "free": "Plan Free : membres illimités, 2 équipes et 250 issues.",
+      "paid": "Free: 0 $ : membres illimités, 2 équipes et 250 issues ; Basic: 10 $/utilisateur/mois avec facturation annuelle : 5 équipes, issues et fichiers illimités ; Business: 16 $/utilisateur/mois avec facturation annuelle : équipes illimitées, invités, Triage Intelligence, Loops, Code Intelligence et Insights ; Enterprise: Sur devis, facturation annuelle uniquement"
     },
     "defaultMonthlyPrice": 8.66,
     "affiliateLink": "https://linear.app",
     "websiteUrl": "https://linear.app",
-    "ogImageUrl": "https://linear.app/static/og/homepage.jpg",
+    "ogImageUrl": "https://linear.app/cdn-cgi/imagedelivery/fO02fVwohEs9s9UHFwon6A/6600ca96-e49b-4fd9-c03a-7979faddad00/f=auto,fit=scale-down,metadata=none,width=2560",
     "logo": "",
     "tool_type": "satellite",
     "host_app": null,
@@ -19523,10 +19525,11 @@
       "fondateur-saas"
     ],
     "relevantFor": [
-      "engineering",
-      "product",
-      "design",
-      "ops"
+      "Équipes produit",
+      "Développeurs",
+      "Startups SaaS",
+      "Product managers",
+      "Designers produit"
     ],
     "freeAlternative": null,
     "substitutable": true,
@@ -31557,18 +31560,18 @@
   {
     "id": "ae-rubberhose",
     "slug": "ae-rubberhose",
-    "name": "RubberHose 2",
+    "name": "Rubberhose 3",
     "categoryId": "design-tools",
-    "shortDescription": "Script de rigging pour After Effects permettant de créer et d'animer rapidement des personnages en courbes (« rubber hoses »). Offre une Session View non linéaire pour l'animation de caractères fluides et organiques.",
-    "shortDescriptionEn": "After Effects rigging script for fast character creation and animation using curves (rubber hoses). Provides intuitive bone-less rigging with organic, fluid animation capabilities.",
+    "shortDescription": "Extension de rigging pour After Effects conçue pour créer rapidement des membres flexibles, relier des illustrations et réutiliser des rigs de personnages stylisés.",
+    "shortDescriptionEn": "After Effects rigging extension for quickly building flexible limbs, connecting artwork and reusing stylized character rigs.",
     "pricing": {
-      "free": "Pas de version gratuite permanente. Essai gratuit disponible ; achat de licence requis.",
-      "paid": "RubberHose 3: 65 USD"
+      "free": "Pas de plan gratuit permanent. Rubberhose 3 coûte 65 $ en achat unique.",
+      "paid": "Rubberhose 3: 65 $ en achat unique"
     },
     "defaultMonthlyPrice": 0,
-    "affiliateLink": "https://aescripts.com/rubberhose",
-    "websiteUrl": "https://aescripts.com/rubberhose",
-    "ogImageUrl": "/og-screenshots/ae-rubberhose.jpg",
+    "affiliateLink": "https://battleaxe.co/rubberhose",
+    "websiteUrl": "https://battleaxe.co/rubberhose",
+    "ogImageUrl": "https://i.ytimg.com/vi_webp/nqpJPfAkYA4/sddefault.webp",
     "logo": "",
     "tool_type": "plugin",
     "host_app": "adobe-after-effects",
@@ -31584,7 +31587,8 @@
     "relevantFor": [
       "Motion designers",
       "Animateurs 2D",
-      "Créateurs de contenu vidéo"
+      "Studios After Effects",
+      "Créateurs de vidéos explicatives"
     ],
     "freeAlternative": null,
     "substitutable": false,
@@ -37392,16 +37396,16 @@
     "slug": "todoist",
     "name": "Todoist",
     "categoryId": "organization",
-    "shortDescription": "La to-do list pure et dure.",
-    "shortDescriptionEn": "The ultimate to-do list.",
+    "shortDescription": "Le gestionnaire de tâches rapide pour organiser priorités, routines et échéances.",
+    "shortDescriptionEn": "The fast task manager for priorities, routines and deadlines.",
     "pricing": {
       "free": "Plan gratuit disponible",
-      "paid": "Pro 7€/mois ou 60€/an (5€/mois équivalent)"
+      "paid": "Pro : 7 $/mois ou 60 $/an. Business : 10 $/utilisateur/mois ou 96 $/utilisateur/an"
     },
     "defaultMonthlyPrice": 7,
     "affiliateLink": "https://todoist.com",
     "websiteUrl": "https://todoist.com",
-    "ogImageUrl": "https://www.todoist.com/static/ogimages/en/og-image-home.png",
+    "ogImageUrl": "https://res.cloudinary.com/imagist/image/fetch/q_auto,f_auto,c_scale,w_1000/https%3A%2F%2Fwww.todoist.com%2F_astro%2Fheaderui.en.DAyuar6R.png",
     "logo": "",
     "tool_type": "satellite",
     "host_app": null,
@@ -41820,6 +41824,45 @@
       "Étudiants chercheurs",
       "Universitaires",
       "Auteurs académiques"
+    ],
+    "freeAlternative": null,
+    "substitutable": true,
+    "betterAlternative": null
+  },
+  {
+    "id": "franklymail",
+    "slug": "franklymail",
+    "name": "FranklyMail",
+    "categoryId": "communication",
+    "shortDescription": "Hébergement e-mail à prix fixe pour domaines personnalisés, sans facturation par boîte.",
+    "shortDescriptionEn": "Flat-price email hosting for custom domains with no per-mailbox fee.",
+    "pricing": {
+      "free": "Pas de plan gratuit",
+      "paid": "9 $/an, puis 0,40 $/Go/an au-delà de 10 Go partagés"
+    },
+    "defaultMonthlyPrice": 0.75,
+    "affiliateLink": "",
+    "websiteUrl": "https://franklymail.com/",
+    "ogImageUrl": "https://franklymail.com/video-poster.jpg",
+    "logo": "",
+    "tool_type": "specialise",
+    "host_app": null,
+    "bundle_parent": null,
+    "substitution_cluster_v2": "email-hosting",
+    "functional_needs": [
+      "email-professionnel",
+      "hebergement-email"
+    ],
+    "verticals": [
+      "consultant-b2b",
+      "fondateur-saas",
+      "creator-economy"
+    ],
+    "relevantFor": [
+      "Indépendants",
+      "Petites équipes",
+      "Associations",
+      "Propriétaires de plusieurs domaines"
     ],
     "freeAlternative": null,
     "substitutable": true,

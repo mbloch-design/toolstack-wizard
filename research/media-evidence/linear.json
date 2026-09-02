@@ -1,19 +1,12 @@
 {
   "slug": "linear",
-  "verified_on": "2026-08-30",
+  "verified_on": "2026-09-02",
   "mode": "sourced",
-  "discovery": {
-    "official_media_found": true,
-    "official_pages_checked": [
-      "https://linear.app/pricing"
-    ]
-  },
+  "discovery": { "official_media_found": true, "official_pages_checked": ["https://linear.app/", "https://linear.app/plan", "https://linear.app/build", "https://linear.app/ai"] },
   "items": [
-    {
-      "kind": "image",
-      "url": "https://linear.app/favicon.ico",
-      "source_page_url": "https://linear.app/pricing",
-      "official": true
-    }
+    { "kind": "image", "url": "https://linear.app/cdn-cgi/imagedelivery/fO02fVwohEs9s9UHFwon6A/6600ca96-e49b-4fd9-c03a-7979faddad00/f=auto,fit=scale-down,metadata=none,width=2560", "source_page_url": "https://linear.app/", "official": true },
+    { "kind": "image", "url": "https://linear.app/cdn-cgi/imagedelivery/fO02fVwohEs9s9UHFwon6A/028734bb-2e5c-463d-c4ef-702eef293500/f=auto,fit=scale-down,metadata=none", "source_page_url": "https://linear.app/plan", "official": true },
+    { "kind": "image", "url": "https://linear.app/cdn-cgi/imagedelivery/fO02fVwohEs9s9UHFwon6A/344ddb1f-7bcb-4d44-9335-d142bc388500/f=auto,fit=scale-down,metadata=none", "source_page_url": "https://linear.app/build", "official": true },
+    { "kind": "image", "url": "https://linear.app/cdn-cgi/imagedelivery/fO02fVwohEs9s9UHFwon6A/d88e5465-ccb5-446e-a95d-148b4c258f00/f=auto,fit=scale-down,metadata=none", "source_page_url": "https://linear.app/ai", "official": true }
   ]
 }

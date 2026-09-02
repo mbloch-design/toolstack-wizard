@@ -1,5 +1,32 @@
 # ToolTrim — AI Changelog
 
+## 2026-09-02 · FranklyMail et Albato
+
+- FranklyMail rejoint le catalogue avec son plan à 9 $ par an, ses limites, son unique média produit officiel et un lien éditorial dofollow explicitement limité à ce domaine.
+- Albato est repositionné sur l'automatisation directe, avec le plan Free, la nouvelle tarification séparant plan et transactions, quatre médias officiels et les alternatives Zapier, Make et n8n.
+- Le CTA Albato utilise le lien affilié `https://albato.com/automate?fpr=michael-c8d497`, automatiquement marqué comme sponsorisé.
+
+## 2026-09-02 · Revue complète de la fiche Linear
+
+- Les anciens tarifs Standard à 8 $ et Business à 14 $ sont remplacés par Basic à 10 $ et Business à 16 $ par utilisateur et par mois avec facturation annuelle.
+- Le contenu FR/EN intègre Linear Agent, Coding Sessions, Loops et le coût additionnel possible des crédits IA.
+- Le favicon utilisé comme média est remplacé par quatre visuels produit officiels couvrant planification, développement et IA.
+- Le verdict précise le seuil d'adoption pour une équipe produit et ingénierie face à un simple gestionnaire de tâches.
+
+## 2026-09-02 · Revue complète de la fiche Rubberhose 3
+
+- L'ancienne appellation RubberHose 2 est remplacée par la marque active Rubberhose 3.
+- Le prix de 65 $ en achat unique, les conditions de licence et les fonctions sont vérifiés auprès de Battle Axe.
+- L'ancien visuel de secours est remplacé par quatre médias officiels montrant le produit et ses usages.
+- Le contenu FR/EN précise le choix entre Rubberhose et Duik selon la profondeur de rig attendue.
+
+## 2026-09-02 · Revue complète de la fiche Todoist
+
+- Le contenu FR/EN distingue désormais la gestion de tâches rapide d'un outil complet de gestion de projet.
+- Les tarifs Beginner, Pro et Business sont datés et sourcés depuis la page officielle, avec une séparation claire entre usage individuel et facturation par siège.
+- La galerie passe d'un seul visuel à quatre médias officiels issus de Todoist.
+- Validation : JSON, registre catalogue, build production et rendu local FR/EN.
+
 ## 2026-08-31 · Revue de 25 fiches design et IA
 
 - Deux groupes complémentaires couvrent 9 outils design et 16 outils IA, dont FigJam, Fusion 360, Pacdora, Claude, ChatGPT, Adobe Podcast AI et GitHub Copilot.

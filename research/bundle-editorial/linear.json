@@ -1,116 +1,44 @@
 {
   "slug": "linear",
   "author": "ToolTrim - Mike",
-  "verified_on": "2026-08-30",
+  "verified_on": "2026-09-02",
   "sources": [
-    {
-      "label": "Tarifs Linear (site officiel)",
-      "url": "https://linear.app/pricing"
-    },
-    {
-      "label": "Documentation des forfaits (site officiel)",
-      "url": "https://linear.app/docs/billing-and-plans"
-    }
+    { "label": "Linear - tarifs officiels", "url": "https://linear.app/pricing" },
+    { "label": "Linear - facturation et plans", "url": "https://linear.app/docs/billing-and-plans" },
+    { "label": "Linear - crédits IA", "url": "https://linear.app/docs/ai-credits" }
   ],
   "facts": {
-    "what": "Linear organise le suivi des issues, projets, cycles et feuilles de route pour les équipes produit et ingénierie.",
-    "what_en": "Linear organizes issues, projects, cycles, and roadmaps for product and engineering teams.",
-    "pricing_model": "Freemium par utilisateur avec facturation annuelle sur les offres payantes.",
-    "free_tier": {
-      "exists": true,
-      "detail": "Membres illimités, deux équipes et 250 issues."
-    },
+    "what": "Plateforme de développement produit qui relie issues, cycles, projets, initiatives, demandes clients et workflows d'agents pour les équipes produit et ingénierie.",
+    "what_en": "Product development platform connecting issues, cycles, projects, initiatives, customer requests and agent workflows for product and engineering teams.",
+    "pricing_model": "Freemium facturé par utilisateur, avec options mensuelle et annuelle. Enterprise est annuel uniquement. Certains usages IA nécessitent des crédits prépayés en plus des sièges.",
+    "free_tier": { "exists": true, "detail": "Plan Free : membres illimités, 2 équipes et 250 issues." },
     "plans": [
-      {
-        "name": "Free",
-        "price": "0 USD"
-      },
-      {
-        "name": "Basic",
-        "price": "10 USD par utilisateur et par mois avec facturation annuelle"
-      },
-      {
-        "name": "Business",
-        "price": "16 USD par utilisateur et par mois avec facturation annuelle"
-      },
-      {
-        "name": "Enterprise",
-        "price": "Sur devis"
-      }
+      { "name": "Free", "price": "0 $ : membres illimités, 2 équipes et 250 issues" },
+      { "name": "Basic", "price": "10 $/utilisateur/mois avec facturation annuelle : 5 équipes, issues et fichiers illimités" },
+      { "name": "Business", "price": "16 $/utilisateur/mois avec facturation annuelle : équipes illimitées, invités, Triage Intelligence, Loops, Code Intelligence et Insights" },
+      { "name": "Enterprise", "price": "Sur devis, facturation annuelle uniquement" }
     ],
-    "key_features": [
-      "Issues et projets",
-      "Cycles et initiatives",
-      "Triage et automatisations",
-      "Intégrations de code",
-      "Agents et workflows IA"
-    ]
+    "key_features": ["Issues, projets, cycles et initiatives", "Triage et automatisations", "Intégrations GitHub, GitLab, Figma et Slack", "Demandes clients et intake", "Linear Agent et plateforme d'agents", "Insights, Asks et Code Intelligence selon le plan"]
   },
   "fr": {
     "verdict": {
-      "keepIf": [
-        "Vous utilisez régulièrement le workflow central de Linear.",
-        "Vous préférez un produit intégré à l'assemblage de plusieurs outils.",
-        "Les limites officielles correspondent à votre volume réel."
-      ],
-      "avoidIf": [
-        "Votre besoin est ponctuel et un outil gratuit plus simple suffit.",
-        "Votre stack couvre déjà le même workflow.",
-        "Le modèle par usage ou par siège rend le coût difficile à prévoir."
-      ],
-      "threshold": "Retenez-le lorsque l'usage récurrent remplace un workflow manuel ou fragmenté clairement identifié."
+      "keepIf": ["Votre équipe produit et ingénierie travaille déjà avec issues, cycles et pull requests.", "La vitesse de saisie et une méthode commune comptent plus qu'une personnalisation sans limite.", "Vous voulez relier demandes clients, roadmap et exécution technique dans le même système."],
+      "avoidIf": ["Vous gérez surtout des campagnes, prestations ou opérations non logicielles.", "Vous avez besoin d'un outil auto-hébergé ou d'une personnalisation profonde des workflows.", "Les invités doivent être gratuits ou vos fonctions IA doivent avoir un coût parfaitement fixe."],
+      "threshold": "Choisissez Linear si une équipe qui construit un produit logiciel adoptera réellement ses issues, cycles et raccourcis. Pour une simple liste de tâches ou un travail non technique, son cadre et son prix par siège sont difficiles à justifier."
     },
-    "pros": [
-      "Workflow produit bien défini.",
-      "Documentation officielle et développement actif.",
-      "S'intègre aux processus professionnels.",
-      "Point d'entrée disponible avant de monter en charge."
-    ],
-    "cons": [
-      "Le coût peut augmenter avec l'usage ou les sièges.",
-      "Les fonctions avancées exigent une offre payante.",
-      "La qualité du paramétrage influence le résultat."
-    ],
-    "use_cases": [
-      "Utiliser issues et projets dans un workflow récurrent.",
-      "Utiliser cycles et initiatives dans un workflow récurrent.",
-      "Utiliser triage et automatisations dans un workflow récurrent."
-    ],
-    "relevant_for": [
-      "Équipes produit",
-      "Développeurs",
-      "Startups SaaS"
-    ]
+    "pros": ["Interface rapide et excellente navigation au clavier.", "Modèle cohérent entre roadmap, projets, cycles et issues.", "Intégrations solides avec le développement et le support client.", "Plan gratuit utilisable pour un petit périmètre.", "Fonctions d'agents intégrées au contexte produit."],
+    "cons": ["Approche volontairement opinionée.", "Invités facturés comme des membres sur Business et Enterprise.", "Basic et Business coûtent rapidement cher avec la taille de l'équipe.", "Coding sessions et Loops peuvent consommer des crédits IA prépayés.", "Pas d'auto-hébergement."],
+    "use_cases": ["Piloter bugs et fonctionnalités pendant des cycles de développement.", "Relier une roadmap produit aux issues et pull requests qui la réalisent.", "Transformer les demandes Slack, e-mail ou support en travail priorisé.", "Faire intervenir des agents dans le triage et les sessions de code."],
+    "relevant_for": ["Équipes produit", "Développeurs", "Startups SaaS", "Product managers", "Designers produit"]
   },
   "en": {
     "verdict": {
-      "keepIf": [
-        "You need Linear's core workflow regularly.",
-        "You value an integrated product over stitching several tools together.",
-        "The official usage limits match your real volume."
-      ],
-      "avoidIf": [
-        "Your need is occasional and a simpler free tool is enough.",
-        "You already cover the same workflow in your current stack.",
-        "The usage or seat model makes costs hard to predict."
-      ],
-      "threshold": "Keep it when recurring usage replaces a clear manual or fragmented workflow."
+      "keepIf": ["Your product and engineering team already works with issues, cycles and pull requests.", "Fast input and a shared method matter more than unlimited customization.", "You want customer requests, roadmap and technical execution in one system."],
+      "avoidIf": ["You mainly manage campaigns, client delivery or non-software operations.", "You need self-hosting or deeply customized workflows.", "Guests must be free or AI functionality needs a perfectly fixed cost."],
+      "threshold": "Choose Linear when a software product team will genuinely adopt its issues, cycles and shortcuts. For a basic task list or non-technical work, its structure and per-seat price are hard to justify."
     },
-    "pros": [
-      "Focused product workflow.",
-      "Official documentation and active development.",
-      "Integrates into professional processes.",
-      "Entry path available before scaling."
-    ],
-    "cons": [
-      "Costs can grow with usage or seats.",
-      "Advanced capabilities require a paid tier.",
-      "Setup quality affects the result."
-    ],
-    "use_cases": [
-      "Use issues et projets in a recurring workflow.",
-      "Use cycles et initiatives in a recurring workflow.",
-      "Use triage et automatisations in a recurring workflow."
-    ]
+    "pros": ["Fast interface with excellent keyboard navigation.", "A coherent model across roadmap, projects, cycles and issues.", "Strong development and customer-support integrations.", "A usable free plan for a small scope.", "Agent features connected to product context."],
+    "cons": ["A deliberately opinionated approach.", "Guests are billed as regular members on Business and Enterprise.", "Basic and Business become expensive as the team grows.", "Coding sessions and Loops can consume prepaid AI credits.", "No self-hosted edition."],
+    "use_cases": ["Manage bugs and features through development cycles.", "Connect a product roadmap to the issues and pull requests delivering it.", "Turn Slack, email or support requests into prioritized work.", "Use agents for triage and coding sessions."]
   }
 }
