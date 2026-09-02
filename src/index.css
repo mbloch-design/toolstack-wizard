@@ -20436,12 +20436,15 @@ section[id] {
 
 @media (max-width: 900px) {
   /* La queue passe sous la rangée : à 375 px, les deux ne tiennent pas côte à
-     côte et c'est la rangée de catégories qui était réduite à un onglet.
-     La recherche prend sa propre ligne, sinon elle repoussait le tri hors
-     de l'écran — il devenait inatteignable. */
+     côte et c'est la rangée de catégories qui était réduite à un onglet. */
   .tt-catalog-toolbar { flex-wrap: wrap; }
   .tt-pillrow { flex: 1 0 100%; order: -1; }
-  .tt-catalog-toolbar-tail { flex: 1 0 100%; justify-content: space-between; }
+  /* flex-end, pas space-between : certaines pages n'ont qu'un seul élément
+     dans la queue (pas de panneau "Plus de filtres", ex. Guides et
+     Comparatifs) — space-between le collait alors à gauche, seul, alors que
+     partout ailleurs la queue reste groupée à droite. Même comportement
+     qu'il y ait un ou deux éléments, comme sur desktop. */
+  .tt-catalog-toolbar-tail { flex: 1 0 100%; justify-content: flex-end; }
 }
 
 .tt-catalog-toolbar {
@@ -24400,7 +24403,17 @@ section[id] {
     overflow: visible;
     border-radius: 0;
   }
-  .asv2-content { height: auto; overflow-x: hidden; overflow-y: visible; scrollbar-gutter: auto; }
+  /* overflow-x: clip, not hidden — pairing hidden with overflow-y: visible
+     makes the UA silently promote that visible to auto (the overflow spec's
+     rule against a clipped axis next to a scrollable one), turning this
+     back into a real scroll container. That's the whole reason mobile
+     stickiness broke: position: sticky was resolving against this box
+     instead of the actual page scroll, since a height: auto container never
+     scrolls internally. clip doesn't trigger that promotion, so overflow-y
+     stays genuinely visible and .asv2-content stops being a scroll
+     container at all, letting position: sticky descendants (the catalog
+     toolbars) stick to the real page scroll like on desktop. */
+  .asv2-content { height: auto; overflow-x: clip; overflow-y: visible; scrollbar-gutter: auto; }
 
   .asv2-topbar { position: sticky; top: 0; padding: 0 16px; height: 56px; gap: 12px; }
   .asv2-mobile-logo { display: flex; padding-right: 4px; }
