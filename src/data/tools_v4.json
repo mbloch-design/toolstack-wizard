@@ -6913,7 +6913,7 @@
     "migrationGuide": null,
     "bundle_parent": null,
     "host_app": null,
-    "ia_use_case": null,
+    "ia_use_case": ["agents"],
     "slug": "albato",
     "shortDescriptionEn": "No-code automation platform connecting more than 1,000 apps, building multi-step workflows and offering an AI copilot and agents.",
     "longDescription": "Plateforme d'automatisation no-code qui relie plus de 1 000 applications, construit des scénarios multi-étapes et propose un copilote ainsi que des agents IA.\n\nFonctions clés : Plus de 1 000 applications et connexions illimitées ; Scénarios multi-étapes, webhooks, filtres et outils de transformation ; Albato Copilot pour construire un workflow en langage naturel ; Agents IA et actions IA intégrées ; App Integrator pour ajouter un service doté d'une API ; Modèle distinct pour les intégrations embarquées en marque blanche.\n\nChoisissez Albato si son catalogue d'intégrations ou son constructeur réduit nettement le temps de maintenance de vos scénarios. Comparez le coût total sur votre volume réel, car le plan et les transactions sont deux composantes distinctes.",

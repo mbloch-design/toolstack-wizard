@@ -148,6 +148,7 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t }: Prop
               </span>
               {displayPrice > 0 && (
                 <strong className="td-pricing-price">
+                  {pv5?.usage_sensitive && <small>{t("à partir de ", "from ")}</small>}
                   {displayPaidPrice.converted ? "≈ " : ""}{formatCurrencyAmount(displayPaidPrice.amount, currency, lang || "fr")}
                   <small>{isOneTime ? ` · ${t("achat unique", "one-time")}` : `/${t("mois", "mo")}`}</small>
                 </strong>

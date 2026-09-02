@@ -64,16 +64,21 @@ const pricingTruth = (() => {
 
 function extractEditorialNativePrice(tool: Tool): NativePrice | null {
   const text = [tool.pricing?.paid, tool.pricingEn?.paid].filter(Boolean).join(" ");
-  const match = text.match(/(?:([$€£])\s*([0-9]+(?:[.,][0-9]+)?)|([0-9]+(?:[.,][0-9]+)?)\s*([$€£]))/);
-  if (!match) return null;
-  const symbol = match[1] || match[4];
-  const amount = Number((match[2] || match[3]).replace(",", "."));
-  if (!Number.isFinite(amount)) return null;
-  return {
-    amount,
-    currency: symbol === "$" ? "USD" : symbol === "£" ? "GBP" : "EUR",
-    source: "editorial_price",
-  };
+  // "paid" text often lists the free tier first (e.g. "Free: 0 $ ; Pro: 22 $/mois"),
+  // so the first amount found isn't necessarily the actual paid price — skip zero matches.
+  const matches = text.matchAll(/(?:([$€£])\s*([0-9]+(?:[.,][0-9]+)?)|([0-9]+(?:[.,][0-9]+)?)\s*([$€£]))/g);
+  for (const match of matches) {
+    const symbol = match[1] || match[4];
+    const amount = Number((match[2] || match[3]).replace(",", "."));
+    if (Number.isFinite(amount) && amount > 0) {
+      return {
+        amount,
+        currency: symbol === "$" ? "USD" : symbol === "£" ? "GBP" : "EUR",
+        source: "editorial_price",
+      };
+    }
+  }
+  return null;
 }
 
 export function getNativeComparePrice(tool: Tool): NativePrice | null {
