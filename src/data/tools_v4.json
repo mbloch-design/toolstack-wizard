@@ -171425,5 +171425,273 @@
       "lastActivityVerifiedOn": "2026-08-10",
       "notedOn": "2026-09-03"
     }
+  },
+  {
+    "id": "charik",
+    "slug": "charik",
+    "name": "Charik",
+    "category": "crm",
+    "shortDescription": "CRM français avec enrichissement de prospects et recherche ICP, tarif fixe sans crédits.",
+    "shortDescriptionEn": "French CRM with prospect enrichment and ICP search, flat pricing with no credit system.",
+    "description": "Charik réunit pipeline, contacts, sociétés et deals dans un CRM français, avec devis, emails et synchronisation Gmail/Outlook dès le plan d'entrée (17 €HT/utilisateur/mois en annuel, 25 €HT en mensuel). Le plan Pro (58 €HT/utilisateur/mois, engagement annuel uniquement) ajoute la recherche de prospects par ICP dans une base de plus de 5 millions d'entreprises françaises, les emails professionnels vérifiés, les signaux commerciaux (recrutements, changements de poste) et la détection d'appels d'offres publics, avec un enrichissement illimité sans système de crédits.\n\nLa politique de confidentialité mentionne explicitement un export de données en CSV/JSON, au-delà du simple droit RGPD générique. Le changelog est actif (dernière entrée le 17 août 2026) et Charik cite une note de 4,1/5 sur Salesdorado, un média indépendant du secteur.\n\nCharik cible les startups, TPE et PME françaises et se positionne face à HubSpot, Pipedrive et Sellsy, avec des pages de comparaison dédiées à chacun.",
+    "longDescription": "Charik réunit pipeline, contacts, sociétés et deals dans un CRM français, avec devis, emails et synchronisation Gmail/Outlook dès le plan d'entrée (17 €HT/utilisateur/mois en annuel, 25 €HT en mensuel). Le plan Pro (58 €HT/utilisateur/mois, engagement annuel uniquement) ajoute la recherche de prospects par ICP dans une base de plus de 5 millions d'entreprises françaises, les emails professionnels vérifiés, les signaux commerciaux (recrutements, changements de poste) et la détection d'appels d'offres publics, avec un enrichissement illimité sans système de crédits.\n\nLa politique de confidentialité mentionne explicitement un export de données en CSV/JSON, au-delà du simple droit RGPD générique. Le changelog est actif (dernière entrée le 17 août 2026) et Charik cite une note de 4,1/5 sur Salesdorado, un média indépendant du secteur.\n\nCharik cible les startups, TPE et PME françaises et se positionne face à HubSpot, Pipedrive et Sellsy, avec des pages de comparaison dédiées à chacun.",
+    "longDescriptionEn": "Charik brings pipeline, contacts, companies and deals together in a French CRM, with quotes, email and Gmail/Outlook sync from the entry plan (€17 excl. VAT/user/month annual, €25 monthly). The Pro plan (€58 excl. VAT/user/month, annual commitment only) adds ICP prospect search across a database of over 5 million French companies, verified professional emails, commercial signals (hiring, job changes) and public tender detection, with unlimited enrichment and no credit system.\n\nThe privacy policy explicitly mentions data export in CSV/JSON, beyond the generic GDPR right. The changelog is active (last entry August 17, 2026) and Charik cites a 4.1/5 rating on Salesdorado, an independent industry publication.\n\nCharik targets French startups, small businesses and mid-sized companies, and positions itself against HubSpot, Pipedrive and Sellsy with dedicated comparison pages for each.",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent ; essai 7 jours sans carte, limité à 10 utilisateurs et 100 contacts/sociétés/deals",
+      "paid": "Charik 17 à 25 €HT/utilisateur/mois, Charik Pro 58 €HT/utilisateur/mois (engagement annuel), Charik Entreprise à partir de 460 €HT/mois (10+ utilisateurs, sur devis)"
+    },
+    "pricingEn": {
+      "free": "No permanent free plan; 7-day trial with no card, limited to 10 users and 100 contacts/companies/deals",
+      "paid": "Charik €17 to €25 excl. VAT/user/month, Charik Pro €58 excl. VAT/user/month (annual commitment), Charik Entreprise from €460 excl. VAT/month (10+ users, custom quote)"
+    },
+    "defaultMonthlyPrice": 17,
+    "pricing_v5": {
+      "cautions": [
+        "Le plan Pro n'est disponible qu'en engagement annuel, pas de tarif mensuel flexible.",
+        "Pas de plan gratuit permanent, seulement un essai de 7 jours.",
+        "Une 'offre de lancement début septembre' est mentionnée sur le site au moment de la vérification : les tarifs peuvent évoluer."
+      ],
+      "cautionsEn": [
+        "The Pro plan is only available with an annual commitment, no flexible monthly rate.",
+        "No permanent free plan, only a 7-day trial.",
+        "A 'launch offer in early September' is mentioned on the site at time of verification: pricing may change."
+      ],
+      "verified_on": "2026-09-03",
+      "source_domain": "charik.app",
+      "usage_sensitive": true,
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Charik",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://www.charik.app/prix/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 17,
+      "plans": [
+        {
+          "planKey": "charik",
+          "displayName": "Charik",
+          "summary": "CRM complet : pipeline, contacts, sociétés, deals, devis, emails, reporting.",
+          "featureHighlights": [
+            "Pipeline, contacts, sociétés, deals",
+            "Emails et synchro Gmail/Outlook",
+            "Devis, reporting, extension Chrome"
+          ],
+          "detailsSourceUrl": "https://www.charik.app/prix/",
+          "pricingUnit": "par utilisateur",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 17,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "annual",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "ht",
+          "observedMarket": "FR",
+          "observedLocale": "fr-FR",
+          "observedOn": "2026-09-03",
+          "lastConfirmedOn": "2026-09-03"
+        },
+        {
+          "planKey": "pro",
+          "displayName": "Charik Pro",
+          "summary": "Recherche de prospects par ICP, enrichissement illimité, signaux commerciaux.",
+          "featureHighlights": [
+            "Recherche ICP, 5M+ entreprises françaises",
+            "Emails vérifiés + profils LinkedIn",
+            "Signaux commerciaux, appels d'offres"
+          ],
+          "detailsSourceUrl": "https://www.charik.app/prix/",
+          "pricingUnit": "par utilisateur",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 58,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "annual",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "ht",
+          "observedMarket": "FR",
+          "observedLocale": "fr-FR",
+          "observedOn": "2026-09-03",
+          "lastConfirmedOn": "2026-09-03"
+        },
+        {
+          "planKey": "entreprise",
+          "displayName": "Charik Entreprise",
+          "summary": "10+ utilisateurs, accès data mutualisé à l'échelle de la société, sur devis.",
+          "featureHighlights": [
+            "17 €/utilisateur + 290 €/mois d'accès data mutualisé",
+            "10+ utilisateurs",
+            "Sur devis"
+          ],
+          "detailsSourceUrl": "https://www.charik.app/prix/",
+          "pricingUnit": "par équipe",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 460,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "annual",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "ht",
+          "observedMarket": "FR",
+          "observedLocale": "fr-FR",
+          "observedOn": "2026-09-03",
+          "lastConfirmedOn": "2026-09-03"
+        }
+      ]
+    },
+    "websiteUrl": "https://www.charik.app/",
+    "affiliateLink": "",
+    "logo": "https://logo.clearbit.com/charik.app",
+    "verdict": {
+      "keepIf": [
+        "Tu es une startup, TPE ou PME française qui veut un CRM et la prospection dans le même outil.",
+        "Tu veux enrichir tes contacts et sociétés sans compter des crédits à chaque recherche.",
+        "Tu factures ton activité commerciale en France et veux des données hébergées en France."
+      ],
+      "avoidIf": [
+        "Tu veux tester le plan Pro sans engagement annuel : seul le plan Charik de base a une option mensuelle.",
+        "Tu as besoin d'un écosystème d'intégrations aussi large que HubSpot à l'international.",
+        "Tu veux vérifier la note Salesdorado (4,1/5) et les gains clients annoncés par une source indépendante avant de payer."
+      ],
+      "threshold": "Charik devient pertinent si le prix fixe (17 à 58 €HT/utilisateur/mois) reste inférieur à ta stack actuelle de CRM + outils de prospection séparés. Pour un écosystème plus large et éprouvé à l'international, HubSpot ou Pipedrive ont plus de recul ; pour une suite CRM + facturation française, Sellsy est l'alternative la plus proche."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You're a French startup, small business or mid-sized company that wants CRM and prospecting in one tool.",
+        "You want to enrich contacts and companies without counting credits on every search.",
+        "You run your sales activity in France and want data hosted in France."
+      ],
+      "avoidIf": [
+        "You want to try the Pro plan without an annual commitment: only the base Charik plan has a monthly option.",
+        "You need as broad an integration ecosystem as HubSpot's at international scale.",
+        "You want to verify the Salesdorado rating (4.1/5) and claimed customer gains through an independent source before paying."
+      ],
+      "threshold": "Charik is worth it if its flat pricing (€17 to €58 excl. VAT/user/month) beats your current CRM-plus-separate-prospecting-tools stack. For a broader, internationally proven ecosystem, HubSpot or Pipedrive have more track record; for a French CRM-plus-invoicing suite, Sellsy is the closest alternative."
+    },
+    "pros": [
+      "Tarif fixe sans système de crédits, enrichissement illimité sur le plan Pro.",
+      "Base de plus de 5 millions d'entreprises françaises pour la recherche ICP.",
+      "Export de données en CSV/JSON explicitement documenté, au-delà du droit RGPD générique.",
+      "Note indépendante de 4,1/5 sur Salesdorado, un média spécialisé du secteur.",
+      "Changelog daté et actif, données hébergées en France (OVHcloud)."
+    ],
+    "prosEn": [
+      "Flat pricing with no credit system, unlimited enrichment on the Pro plan.",
+      "Database of over 5 million French companies for ICP search.",
+      "CSV/JSON data export explicitly documented, beyond the generic GDPR right.",
+      "Independent 4.1/5 rating on Salesdorado, a specialized industry publication.",
+      "Dated, active changelog, data hosted in France (OVHcloud)."
+    ],
+    "cons": [
+      "Plan Pro disponible en engagement annuel uniquement, pas de flexibilité mensuelle.",
+      "Pas de plan gratuit permanent, seulement un essai de 7 jours.",
+      "Écosystème d'intégrations plus étroit que des CRM généralistes globaux comme HubSpot.",
+      "Note Salesdorado et témoignages clients cités par Charik lui-même, non vérifiés indépendamment par ToolTrim."
+    ],
+    "consEn": [
+      "Pro plan available with annual commitment only, no monthly flexibility.",
+      "No permanent free plan, only a 7-day trial.",
+      "Narrower integration ecosystem than global generalist CRMs like HubSpot.",
+      "Salesdorado rating and customer testimonials cited by Charik itself, not independently verified by ToolTrim."
+    ],
+    "useCases": [
+      "Centraliser pipeline, contacts et deals dans un seul CRM français.",
+      "Trouver des prospects qualifiés par ICP avec emails professionnels vérifiés.",
+      "Suivre les signaux commerciaux pour prioriser sa prospection."
+    ],
+    "useCasesEn": [
+      "Centralize pipeline, contacts and deals in a single French CRM.",
+      "Find qualified prospects by ICP with verified professional emails.",
+      "Track commercial signals to prioritize prospecting."
+    ],
+    "covers": [
+      "crm",
+      "lead-generation",
+      "enrichissement-donnees"
+    ],
+    "functional_needs": [
+      "crm",
+      "lead-generation"
+    ],
+    "relevantFor": [
+      "Startups françaises",
+      "TPE et PME françaises",
+      "Équipes commerciales B2B"
+    ],
+    "alternatives": [
+      "hubspot",
+      "pipedrive",
+      "sellsy"
+    ],
+    "seo": {
+      "idealForFr": "Idéal pour une startup ou PME française qui veut un CRM et la prospection par ICP dans le même outil, sans système de crédits.",
+      "idealForEn": "Ideal for a French startup or small business that wants CRM and ICP-based prospecting in one tool, with no credit system.",
+      "metaDescription": "Charik : avis, prix dès 17 €HT/utilisateur/mois, enrichissement de prospects par IA et alternatives à HubSpot, Pipedrive et Sellsy."
+    },
+    "articles": [],
+    "soloRelevance": "medium",
+    "teamRelevance": "high",
+    "tool_type": "gestion",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "fondateur-saas",
+      "consultant-b2b",
+      "business-ops"
+    ],
+    "ia_use_case": [
+      "content-generation"
+    ],
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "personas": [],
+    "timeGainedHoursPerMonth": 4,
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [
+      "team_size",
+      "prospecting_volume",
+      "existing_crm"
+    ],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": {
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": false,
+      "default_decision_lane": "review_then_prescribe",
+      "auto_downgrade_allowed": false,
+      "never_auto_cancel_reason": null,
+      "requires_context_questions": true
+    },
+    "ogImageUrl": "https://i.ytimg.com/vi/E3e-_IMPl00/maxresdefault.jpg",
+    "galleryImages": [
+      "https://i.ytimg.com/vi/mO1Ed2RUxSw/maxresdefault.jpg"
+    ],
+    "force_silence": false,
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 3,
+      "reversibilite": 4,
+      "evidence": {
+        "valeurAjoutee": "Comparaison chiffrée revendiquée face à une stack de 6 à 8 outils (250 €HT+/mois) contre 58 €HT/utilisateur/mois tout compris. Contrairement aux autres fiches du jour, Charik cite une note tierce indépendante (4,1/5 sur Salesdorado, média spécialisé du secteur) en plus de témoignages nommés avec entreprises identifiables (Republik Group, Nestor Software), un niveau de preuve un cran au-dessus des verbatims anonymes habituels (source : charik.app, consulté le 2026-09-03).",
+        "simplicite": "Essai 7 jours sans carte, limité à 10 utilisateurs et 100 contacts/sociétés/deals. La mise en route d'un CRM implique une configuration du pipeline et un import de données, un effort de démarrage classique pour la catégorie plutôt qu'une simplicité exceptionnelle (source : charik.app/prix/, consulté le 2026-09-03).",
+        "utilisation": "Captures d'écran réelles du produit (issues des vidéos de démonstration intégrées) confirment une interface fonctionnelle : liste de contacts, recherche ICP retournant 2000 résultats réels. Changelog daté et actif (17 août 2026 : extension Chrome v1.6 ; 22 juillet 2026 : signaux commerciaux) confirme un développement continu (source : charik.app/nouveautes/ et captures vidéo, consulté le 2026-09-03).",
+        "puissance": "Base de 5M+ entreprises françaises et fonctionnalités de prospection (ICP, signaux commerciaux, appels d'offres) différenciantes face aux CRM généralistes purs. Mais le positionnement reste spécifiquement France/B2B, avec un écosystème d'intégrations plus étroit que des plateformes globales comme HubSpot, et aucune validation indépendante de la fiabilité de l'enrichissement à grande échelle (source : charik.app, consulté le 2026-09-03).",
+        "reversibilite": "La politique de confidentialité mentionne explicitement un export de données en 'format structuré et couramment utilisé (CSV, JSON)', une formulation plus précise que le simple droit RGPD générique trouvé sur d'autres fiches, complétée par un import/export Excel documenté parmi les intégrations (source : charik.app/confidentialite/, consulté le 2026-09-03)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Claimed cost comparison against a 6-to-8-tool stack (€250+ excl. VAT/month) versus €58 excl. VAT/user/month all-in. Unlike other fiches from today, Charik cites an independent third-party rating (4.1/5 on Salesdorado, a specialized industry publication) in addition to named testimonials with identifiable companies (Republik Group, Nestor Software), a stronger evidence tier than the usual anonymous verbatims (source: charik.app, checked 2026-09-03).",
+        "simplicite": "7-day trial with no card, limited to 10 users and 100 contacts/companies/deals. Setting up a CRM involves pipeline configuration and data import, a typical category setup effort rather than exceptional simplicity (source: charik.app/prix/, checked 2026-09-03).",
+        "utilisation": "Real product screenshots (from embedded demo videos) confirm a functioning interface: contacts list, ICP search returning 2,000 real results. A dated, active changelog (Aug 17, 2026: Chrome extension v1.6; Jul 22, 2026: commercial signals) confirms ongoing development (source: charik.app/nouveautes/ and video screenshots, checked 2026-09-03).",
+        "puissance": "A 5M+ French company database and prospecting features (ICP, commercial signals, tenders) differentiate it from pure generalist CRMs. But the positioning stays specifically France/B2B, with a narrower integration ecosystem than global platforms like HubSpot, and no independent validation of enrichment reliability at scale (source: charik.app, checked 2026-09-03).",
+        "reversibilite": "The privacy policy explicitly mentions data export in a 'structured, commonly used format (CSV, JSON)', a more precise wording than the generic GDPR right found on other fiches, backed by a documented Excel import/export integration (source: charik.app/confidentialite/, checked 2026-09-03)."
+      },
+      "lastActivityVerifiedOn": "2026-08-17",
+      "notedOn": "2026-09-03"
+    }
   }
 ]

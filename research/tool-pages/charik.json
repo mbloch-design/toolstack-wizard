@@ -1,0 +1,229 @@
+{
+  "schemaVersion": 1,
+  "slug": "charik",
+  "researchedOn": "2026-09-03",
+  "researcher": "Claude Code",
+  "status": "draft",
+  "identity": {
+    "officialName": "Charik",
+    "vendor": "CHARIK (SAS), capital 100 000 €, SIREN 981 587 793, siège 10 rue de Penthièvre, 75008 Paris. Directeur général : Jimmy Hoareau",
+    "officialUrl": "https://www.charik.app/",
+    "pricingUrl": "https://www.charik.app/prix/",
+    "docsUrl": "https://www.charik.app/documentation/",
+    "changelogUrl": "https://www.charik.app/nouveautes/"
+  },
+  "claims": [
+    {
+      "id": "pricing.charik",
+      "value": "Charik (CRM complet) : 17 €HT/utilisateur/mois en facturation annuelle, ou 25 €HT/utilisateur/mois en mensuel",
+      "sourceUrl": "https://www.charik.app/prix/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Page tarifs : 'Charik Le CRM complet 17 € HT / utilisateur / mois En facturation annuelle · 25€/utilisateur/mois en mensuel'",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "pricing.pro",
+      "value": "Charik Pro (CRM + génération de prospects) : 58 €HT/utilisateur/mois, engagement annuel uniquement",
+      "sourceUrl": "https://www.charik.app/prix/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Page tarifs : 'Charik Pro Le CRM qui trouve aussi vos prospects 58 € HT / utilisateur / mois Engagement annuel'",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "pricing.entreprise",
+      "value": "Charik Entreprise (10+ utilisateurs) : à partir de 460 €HT/mois, engagement annuel, sur devis. Formule = 17 €HT/utilisateur/mois + 290 €HT/mois d'accès data mutualisé à l'échelle de la société",
+      "sourceUrl": "https://www.charik.app/prix/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Page tarifs : 'À partir de 460 € HT / mois Engagement annuel Contactez-nous' + JSON-LD 'Formule : 17€ HT/utilisateur/mois + 290€ HT/mois d'accès data mutualisé'",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "pricing.trial",
+      "value": "Essai gratuit 7 jours, sans carte bancaire, accès complet Pro limité à 10 utilisateurs et 100 contacts/sociétés/deals ; données conservées 30 jours après l'essai",
+      "sourceUrl": "https://www.charik.app/prix/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "'7 jours gratuits', 'Jusqu'à 10 utilisateurs et 100 contacts, sociétés et deals', 'Vos données sont conservées 30 jours'",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "pricing.launch-offer",
+      "value": "Mention d'une 'offre de lancement début septembre' au moment de la recherche, contexte temporel non détaillé plus précisément",
+      "sourceUrl": "https://www.charik.app/prix/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Texte de la page tarifs : 'Offre de lancement début septembre'",
+      "confidence": "medium",
+      "volatility": "high"
+    },
+    {
+      "id": "capability.core-crm",
+      "value": "CRM avec pipeline, contacts, sociétés, deals/activités, devis, envoi d'emails, synchro Gmail/Outlook, séquences email automatisées, reporting, prise de RDV, extension Chrome",
+      "sourceUrl": "https://www.charik.app/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Page d'accueil et /fonctionnalites/",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "capability.pro-enrichment",
+      "value": "Plan Pro : recherche de prospects par ICP, emails professionnels vérifiés avec profils LinkedIn, signaux commerciaux (recrutements, changements de poste, mouvements d'entreprise), détection d'appels d'offres publics, mise à jour automatique des données, enrichissement illimité sans crédits",
+      "sourceUrl": "https://www.charik.app/prix/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Comparatif de plans page tarifs",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "capability.database-size",
+      "value": "Base de données de plus de 5 millions d'entreprises françaises pour l'enrichissement",
+      "sourceUrl": "https://www.charik.app/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Page d'accueil, section enrichissement",
+      "confidence": "high",
+      "volatility": "low"
+    },
+    {
+      "id": "capability.data-export",
+      "value": "La politique de confidentialité mentionne explicitement un export de données en 'format structuré et couramment utilisé (CSV, JSON)', au-delà du simple droit RGPD générique ; import/export Excel listé parmi les intégrations",
+      "sourceUrl": "https://www.charik.app/confidentialite/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Section 6.5 politique de confidentialité : 'Vous pouvez exporter vos données dans un format structuré et couramment utilisé (CSV, JSON)' ; page d'accueil section intégrations : 'Microsoft Excel (import/export)'",
+      "confidence": "high",
+      "volatility": "low"
+    },
+    {
+      "id": "proof.third-party-rating",
+      "value": "Note de 4,1/5 sur Salesdorado, média indépendant spécialisé sur les outils de vente B2B en France, cité comme source par Charik lui-même",
+      "sourceUrl": "https://www.charik.app/",
+      "sourceTier": 2,
+      "accessedOn": "2026-09-03",
+      "evidence": "Page d'accueil : mention '4.1/5 sur Salesdorado' — source tierce indépendante, plus crédible qu'un témoignage self-published, mais non vérifiée directement sur salesdorado.fr par ToolTrim",
+      "confidence": "medium",
+      "volatility": "medium"
+    },
+    {
+      "id": "proof.testimonials",
+      "value": "Témoignages attribués nommément : Florent Régent (CEO, Nestor Software) ; gain de temps '-1h/jour' rapporté par Ouest Croissance ; taux d'enrichissement de contacts de 77,2% chez Republik Group",
+      "sourceUrl": "https://www.charik.app/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Section témoignages page d'accueil, avec logos d'entreprises identifiables (Republik Group, Nestor Software) contrairement aux prénoms seuls d'autres fiches",
+      "confidence": "medium",
+      "volatility": "medium"
+    },
+    {
+      "id": "identity.vendor",
+      "value": "Éditeur : CHARIK, SAS au capital de 100 000 €, SIREN 981 587 793, siège 10 rue de Penthièvre, 75008 Paris. Directeur général : Jimmy Hoareau. Hébergement OVHcloud (France, régions Gravelines et Strasbourg)",
+      "sourceUrl": "https://www.charik.app/mentions-legales/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Page Mentions légales",
+      "confidence": "high",
+      "volatility": "low"
+    },
+    {
+      "id": "identity.activity",
+      "value": "Changelog actif : dernière entrée le 17 août 2026 (extension Chrome v1.6, suppression en masse), entrée précédente le 22 juillet 2026 (signaux commerciaux, résumés IA)",
+      "sourceUrl": "https://www.charik.app/nouveautes/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Page /nouveautes/, entrées datées",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "capability.competitor-alternatives",
+      "value": "Charik publie des pages de comparaison nommant HubSpot, Pipedrive, Sellsy, Axonaut, Koban et noCRM comme alternatives concurrentes",
+      "sourceUrl": "https://www.charik.app/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "URLs /alternative-hubspot, /alternative-pipedrive, /alternative-sellsy, /alternative-axonaut, /alternative-koban, /alternative-nocrm",
+      "confidence": "high",
+      "volatility": "low"
+    },
+    {
+      "id": "quality.real-screenshots",
+      "value": "Aucune capture d'écran statique du produit sur les pages fonctionnalités, mais deux vraies images de démonstration produit trouvées via les miniatures de vidéos YouTube intégrées (vue Contacts, recherche ICP)",
+      "sourceUrl": "https://www.charik.app/enrichissement-contacts/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Miniatures i.ytimg.com des vidéos intégrées sur /enrichissement-contacts/ et /recherche-icp/, montrant l'interface réelle (liste de contacts, recherche ICP avec 2000 résultats)",
+      "confidence": "high",
+      "volatility": "medium"
+    }
+  ],
+  "pricing": {
+    "originalCurrency": "EUR",
+    "billingContext": "mensuel ou annuel selon le plan",
+    "taxIncluded": false,
+    "freePlan": null,
+    "plans": [
+      { "name": "Charik", "priceHT_annual": 17, "priceHT_monthly": 25, "period": "utilisateur/mois" },
+      { "name": "Charik Pro", "priceHT_annual": 58, "period": "utilisateur/mois (engagement annuel uniquement)" },
+      { "name": "Charik Entreprise", "priceHT": 460, "period": "mois (à partir de, engagement annuel, sur devis)" }
+    ],
+    "seatMinimum": null,
+    "usageLimits": [
+      "Essai limité à 10 utilisateurs et 100 contacts/sociétés/deals"
+    ],
+    "cautions": [
+      "Le plan Pro n'est disponible qu'en engagement annuel, pas de tarif mensuel flexible",
+      "Pas de plan gratuit permanent, seulement un essai de 7 jours",
+      "Mention d'une 'offre de lancement début septembre' au moment de la recherche : les tarifs affichés peuvent évoluer"
+    ]
+  },
+  "capabilities": [
+    "CRM complet (pipeline, contacts, sociétés, deals, devis, emails)",
+    "Recherche de prospects par ICP avec base de 5M+ entreprises françaises",
+    "Enrichissement illimité de contacts/sociétés sans système de crédits (plan Pro)",
+    "Signaux commerciaux et détection d'appels d'offres publics",
+    "Export de données en CSV/JSON, import/export Excel"
+  ],
+  "limitations": [
+    "Plan Pro réservé à l'engagement annuel, pas de flexibilité mensuelle",
+    "Pas de plan gratuit permanent",
+    "Note Salesdorado (4,1/5) citée par Charik mais non vérifiée directement sur le site source par ToolTrim",
+    "Capacités plus étroites qu'un CRM généraliste global (HubSpot) : positionnement spécifiquement France/B2B"
+  ],
+  "integrations": [
+    "Gmail, Outlook (email et calendrier)",
+    "Microsoft Excel (import/export)",
+    "Pennylane (comptabilité)",
+    "Brevo, Lemlist (marketing/emailing)",
+    "Migrations documentées depuis HubSpot, Pipedrive, Sellsy"
+  ],
+  "audiences": [
+    "Startups françaises",
+    "TPE et PME françaises",
+    "Équipes commerciales B2B"
+  ],
+  "useCases": [
+    "Centraliser pipeline, contacts et deals dans un seul CRM",
+    "Trouver des prospects qualifiés par ICP avec emails vérifiés",
+    "Suivre les signaux commerciaux (recrutements, appels d'offres) pour prioriser la prospection"
+  ],
+  "alternatives": ["hubspot", "pipedrive", "sellsy"],
+  "editorialNotes": [
+    "Alternatives retenues parmi les 3 concurrents nommés par Charik lui-même (pages /alternative-hubspot, /alternative-pipedrive, /alternative-sellsy) déjà catalogués ToolTrim sous la catégorie 'crm' : correspondance directe, aucun compromis nécessaire. Axonaut, Koban et noCRM également nommés par Charik mais Axonaut est un ERP généraliste (déjà catalogué en 'finance') et Koban/noCRM ne sont pas catalogués : non ajoutés.",
+    "Charik est référencé par ToolTrim comme partenaire réciproque (page charik.app/partenaires-annuaires/ liste ToolTrim comme 'Comparateur d'outils B2B'). Notation traitée avec la même rigueur que les autres fiches du jour, sans ajustement lié à cette relation (voir feedback-no-score-favors).",
+    "Aucune capture d'écran statique publiée par Charik sur ses pages fonctionnalités ; les deux images retenues proviennent des miniatures de vidéos de démonstration intégrées (YouTube), montrant l'interface réelle."
+  ],
+  "unknowns": [
+    "Nombre réel de clients actifs, aucune métrique publique indépendante trouvée au-delà des témoignages nommés",
+    "Contenu exact et durée de l'offre de lancement mentionnée sans détail",
+    "Fiabilité de l'export CSV/JSON non testée en compte réel par ToolTrim"
+  ],
+  "conflicts": []
+}
