@@ -1,4 +1,4 @@
-import { CSSProperties, FormEvent, useEffect, useRef, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import Breadcrumb from "@/components/Breadcrumb";
 import { useLang } from "@/hooks/useLang";
@@ -77,6 +77,14 @@ const SubmitToolPage = () => {
     searchParams.delete("paid");
     setSearchParams(searchParams, { replace: true });
     // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    if (document.querySelector('script[src="https://www.creem.io/embed.js"]')) return;
+    const script = document.createElement("script");
+    script.src = "https://www.creem.io/embed.js";
+    script.async = true;
+    document.body.appendChild(script);
   }, []);
 
   useEffect(() => {
@@ -235,10 +243,9 @@ const SubmitToolPage = () => {
     try {
       window.localStorage.setItem(SUBMIT_DRAFT_KEY, JSON.stringify({ ...submission, lang }));
     } catch {
-      // ignore storage failure, redirect anyway
+      // ignore storage failure, checkout still opens
     }
     trackEvent("submit_pay_skip_badge", { tool_name: submission.toolName });
-    window.location.href = CREEM_PAYMENT_LINK;
   };
 
   const submit = async () => {
@@ -307,11 +314,13 @@ const SubmitToolPage = () => {
 
       <div className="sp-shell">
         <ol className="sp-steps" aria-label={t("Étapes de la soumission", "Submission steps")}>
-          <li className="sp-steps-progress" style={{ "--sp-progress": `${((step - 1) / 2) * 100}%` } as CSSProperties} aria-hidden="true" />
           {[1, 2, 3].map((number) => (
-            <li key={number} className={`${step === number ? "sp-step--active" : ""}${step > number ? " sp-step--done" : ""}`}>
-              <span>{step > number ? <Check size={13} /> : number}</span>
-              <strong>{number === 1 ? t("Informations", "Information") : number === 2 ? t("Publication", "Publication") : t("Validation", "Confirmation")}</strong>
+            <li key={number} className="sp-step-item">
+              <span className={`sp-step ${step === number ? "sp-step--active" : ""}${step > number ? " sp-step--done" : ""}`}>
+                <span className="sp-step-dot">{step > number ? <Check size={13} /> : number}</span>
+                <strong>{number === 1 ? t("Informations", "Information") : number === 2 ? t("Publication", "Publication") : t("Validation", "Confirmation")}</strong>
+              </span>
+              {number < 3 && <span className={`sp-step-connector${step > number ? " sp-step-connector--filled" : ""}`} aria-hidden="true" />}
             </li>
           ))}
         </ol>
@@ -348,7 +357,7 @@ const SubmitToolPage = () => {
               <div className="sp-plan-grid">
                 <div className="sp-plan-card">
                   <div className="sp-plan-card-head">
-                    <div><span className="sp-plan-price">0 €</span><span className="sp-plan-period">{t("pour toujours", "forever")}</span></div>
+                    <div><span className="sp-plan-price">0 $</span><span className="sp-plan-period">{t("pour toujours", "forever")}</span></div>
                     <span className="sp-plan-name">{t("Badge gratuit", "Free badge")}</span>
                   </div>
                   <p className="sp-plan-desc">{t("Installe notre badge de découverte sur ton site pour publier sans payer.", "Install our discovery badge on your site to publish for free.")}</p>
@@ -358,7 +367,7 @@ const SubmitToolPage = () => {
                     <li><Check size={15} /><span>{t("Lien dofollow une fois le badge vérifié", "Dofollow link once the badge is verified")}</span></li>
                     <li><Check size={15} /><span>{t("Soumise à notre revue éditoriale avant publication", "Subject to our editorial review before publication")}</span></li>
                   </ul>
-                  <button type="button" className="sp-button-secondary sp-plan-cta" onClick={() => setPlanChoice("free")}>{t("Choisir le badge gratuit →", "Choose the free badge →")}</button>
+                  <button type="button" className="tt-button-secondary sp-plan-cta" onClick={() => setPlanChoice("free")}>{t("Choisir le badge gratuit →", "Choose the free badge →")}</button>
                 </div>
                 <div className="sp-plan-card sp-plan-card--highlight">
                   <span className="sp-plan-tag"><Zap size={13} />{t("Publication garantie", "Guaranteed publication")}</span>
@@ -374,11 +383,18 @@ const SubmitToolPage = () => {
                     <li><Check size={15} /><span>{t("Échange direct avec notre rédacteur pour affiner ta fiche avant publication", "Direct exchange with our editor to refine your listing before publication")}</span></li>
                     <li><Check size={15} /><span>{t("Lien dofollow permanent dès le paiement", "Permanent dofollow link as soon as you pay")}</span></li>
                   </ul>
-                  <button type="button" className="tt-button-primary sp-plan-cta" onClick={payToSkipBadge}>{t(`Publier pour ${SKIP_BADGE_PRICE} →`, `Publish for ${SKIP_BADGE_PRICE} →`)}</button>
+                  <a
+                    href={CREEM_PAYMENT_LINK}
+                    data-creem-checkout
+                    className="tt-button-primary sp-plan-cta"
+                    onClick={payToSkipBadge}
+                  >
+                    {t(`Publier pour ${SKIP_BADGE_PRICE} →`, `Publish for ${SKIP_BADGE_PRICE} →`)}
+                  </a>
                 </div>
               </div>
               <div className="sp-note"><strong>{t("Tu préfères une autre solution ?", "Would you prefer another option?")}</strong><p>{t("Contacte-nous directement : nous étudierons avec toi une alternative.", "Contact us directly and we will discuss an alternative with you.")}</p><Link to={`${prefix}/contact?subject=partnership`}>{t("Contacter ToolTrim →", "Contact ToolTrim →")}</Link></div>
-              <div className="sp-actions"><button type="button" className="sp-button-secondary" onClick={() => { setStep(1); setStatus("idle"); }}>{t("← Modifier les informations", "← Edit information")}</button></div>
+              <div className="sp-actions"><button type="button" className="tt-button-secondary" onClick={() => { setStep(1); setStatus("idle"); }}>{t("← Modifier les informations", "← Edit information")}</button></div>
             </section>
           )}
 
@@ -406,7 +422,7 @@ const SubmitToolPage = () => {
                 {badgeVerified && <div className="sp-verified">✓ {t("Badge vérifié — soumission débloquée", "Badge verified — submission unlocked")}</div>}
               </div>
               {error && <p id="submit-badge-error" className="tt-form-error" role="alert">{error}</p>}
-              <div className="sp-actions sp-actions--split"><button type="button" className="sp-button-secondary" onClick={() => { setPlanChoice(null); setStatus("idle"); }}>{t("← Revoir les options", "← Review options")}</button><button type="button" className="tt-button-primary" disabled={!badgeInstalled || status === "checking"} onClick={verifyBadge}>{status === "checking" ? t("Validation du badge…", "Validating badge…") : t("Valider le badge et continuer →", "Validate badge and continue →")}</button></div>
+              <div className="sp-actions sp-actions--split"><button type="button" className="tt-button-secondary" onClick={() => { setPlanChoice(null); setStatus("idle"); }}>{t("← Revoir les options", "← Review options")}</button><button type="button" className="tt-button-primary" disabled={!badgeInstalled || status === "checking"} onClick={verifyBadge}>{status === "checking" ? t("Validation du badge…", "Validating badge…") : t("Valider le badge et continuer →", "Validate badge and continue →")}</button></div>
             </section>
           )}
 
@@ -437,7 +453,7 @@ const SubmitToolPage = () => {
                 ? t("Après l'envoi, ToolTrim publiera ton outil : le paiement garantit la publication, sans passer par la revue éditoriale du badge gratuit.", "After submission, ToolTrim will publish your tool: payment guarantees publication, without going through the free badge's editorial review.")
                 : t("Après l'envoi, ToolTrim analysera le site et les informations disponibles. Cette validation ne garantit pas la publication : elle confirme uniquement que la soumission est complète.", "After submission, ToolTrim will review the website and available information. This confirmation does not guarantee publication; it only confirms that the submission is complete.")}</p>
               {error && <p className="tt-form-error" role="alert">{error}</p>}
-              <div className="sp-actions sp-actions--split">{!paid && <button type="button" className="sp-button-secondary" onClick={() => { setStep(2); setStatus("idle"); }}>{t("← Revoir le badge", "← Review badge")}</button>}<button type="button" className="tt-button-primary" disabled={status === "submitting"} onClick={submit}>{status === "submitting" ? t("Envoi…", "Submitting…") : t("Envoyer la soumission →", "Submit tool →")}</button></div>
+              <div className="sp-actions sp-actions--split">{!paid && <button type="button" className="tt-button-secondary" onClick={() => { setStep(2); setStatus("idle"); }}>{t("← Revoir le badge", "← Review badge")}</button>}<button type="button" className="tt-button-primary" disabled={status === "submitting"} onClick={submit}>{status === "submitting" ? t("Envoi…", "Submitting…") : t("Envoyer la soumission →", "Submit tool →")}</button></div>
             </section>
           )}
         </main>

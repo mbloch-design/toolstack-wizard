@@ -39,33 +39,56 @@ const hasValidBadgeToken = (token: unknown, badgeUrl: unknown, toolUrl: unknown)
   }
 };
 
-const submissionConfirmationHtml = ({ name, toolName }: { name: unknown; toolName: unknown }) => {
+const submissionConfirmationHtml = ({ name, toolName, paid }: { name: unknown; toolName: unknown; paid: boolean }) => {
   const safeName = escapeHtml(name);
   const safeToolName = escapeHtml(toolName);
 
+  const eyebrow = paid ? "PAID SUBMISSION" : "SUBMISSION RECEIVED";
+  const intro = paid
+    ? `We’ve received the submission of <strong>${safeToolName}</strong> to ToolTrim, along with your payment.`
+    : `We’ve received the submission of <strong>${safeToolName}</strong> to ToolTrim.`;
+  const nextStepsBody = paid
+    ? "Your payment guarantees publication. We’ll prepare the listing and let you know as soon as it’s live."
+    : "Our team will now review the website, its features, and the information provided before preparing the listing.";
+  const nextStepsBanner = paid
+    ? "Michael, ToolTrim’s founder, personally handles every paid listing — he’ll be in touch directly."
+    : "We’ll contact you directly as soon as the listing is live on ToolTrim.";
+  const footnote = paid
+    ? "Your payment guarantees publication — this submission doesn’t go through the free badge’s editorial review."
+    : "Your verified badge confirms that the submission is complete. Publication remains subject to our independent editorial review.";
+  const editorBlock = paid
+    ? `<table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin:0 0 24px;border-collapse:separate;">
+              <tr><td style="padding:20px 22px;background:#FFFFFF;border:1px solid #E6E6E6;border-radius:10px;">
+                <p style="margin:0 0 6px;font-size:14px;font-weight:700;color:#0F0F0F;">A question about your listing?</p>
+                <p style="margin:0;font-size:14px;line-height:1.55;color:#6F6F68;">Write directly to <a href="mailto:contact@tooltrim.com?subject=${encodeURIComponent(`About the listing for ${String(toolName ?? "my tool")}`)}" style="color:#0F0F0F;font-weight:600;">Michael at contact@tooltrim.com</a> — he answers himself.</p>
+              </td></tr>
+            </table>`
+    : "";
+
   return `<!doctype html>
-  <html lang="en"><body style="margin:0;padding:0;background:#F6F5F4;color:#0F0F0F;font-family:'Uncut Sans',Arial,Helvetica,sans-serif;">
+  <html lang="en"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /></head><body style="margin:0;padding:0;background:#F6F5F4;color:#0F0F0F;font-family:'Uncut Sans',Arial,Helvetica,sans-serif;">
     <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#F6F5F4;padding:40px 16px;">
       <tr><td align="center">
         <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:640px;background:#FFFFFF;border:1px solid #E6E6E6;border-radius:12px;overflow:hidden;">
           <tr><td style="padding:24px 32px;border-bottom:1px solid #E6E6E6;">
             <table role="presentation" width="100%"><tr>
               <td><img src="https://tooltrim.com/logo-tooltrim-email.svg" width="136" height="30" alt="ToolTrim" style="display:block;width:136px;height:30px;border:0;" /></td>
-              <td align="right" style="font-size:11px;font-weight:700;letter-spacing:1.2px;color:#6F6F68;">SUBMISSION RECEIVED</td>
+              <td align="right" style="font-size:11px;font-weight:700;letter-spacing:1.2px;color:#6F6F68;">${eyebrow}</td>
             </tr></table>
           </td></tr>
           <tr><td style="padding:48px 32px 40px;">
             <p style="margin:0 0 16px;font-size:12px;font-weight:700;letter-spacing:1.1px;color:#6F6F68;">TOOL SUBMISSION</p>
             <h1 style="margin:0 0 22px;font-size:38px;line-height:1.06;font-weight:600;letter-spacing:-1.6px;color:#0F0F0F;">Thank you, ${safeName}.</h1>
-            <p style="margin:0 0 14px;font-size:17px;line-height:1.6;color:#0F0F0F;">We’ve received the submission of <strong>${safeToolName}</strong> to ToolTrim.</p>
-            <p style="margin:0;font-size:16px;line-height:1.65;color:#6F6F68;">Our team will now review the website, its features, and the information provided before preparing the listing.</p>
+            <p style="margin:0 0 14px;font-size:17px;line-height:1.6;color:#0F0F0F;">${intro}</p>
+            <p style="margin:0;font-size:16px;line-height:1.65;color:#6F6F68;">${nextStepsBody}</p>
             <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin:32px 0;border-collapse:separate;">
               <tr><td style="padding:22px;background:#EDEBE9;border:1px solid #E6E6E6;border-radius:10px;">
                 <p style="margin:0 0 7px;font-size:11px;font-weight:700;letter-spacing:1px;color:#6F6F68;">WHAT HAPPENS NEXT</p>
-                <p style="margin:0;font-size:16px;font-weight:600;line-height:1.5;color:#0F0F0F;">We’ll contact you directly as soon as the listing is live on ToolTrim.</p>
+                <p style="margin:0;font-size:16px;font-weight:600;line-height:1.5;color:#0F0F0F;">${nextStepsBanner}</p>
               </td></tr>
             </table>
-            <p style="margin:0 0 30px;font-size:13px;line-height:1.55;color:#6F6F68;">Your verified badge confirms that the submission is complete. Publication remains subject to our independent editorial review.</p>
+            ${editorBlock}
+            <p style="margin:0 0 30px;font-size:13px;line-height:1.55;color:#6F6F68;">${footnote}</p>
             <a href="https://tooltrim.com/en" style="display:inline-block;padding:13px 20px;background:#0F0F0F;border:1px solid #0F0F0F;border-radius:7px;color:#FFFFFF;font-size:14px;font-weight:700;text-decoration:none;">Explore ToolTrim →</a>
           </td></tr>
         </table>
@@ -103,7 +126,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   const {
     name, email, subject, message, submissionType,
-    toolName, toolUrl, submitterRole, badgeReview, badgeUrl, verificationToken,
+    toolName, toolUrl, submitterRole, badgeReview, badgeUrl, verificationToken, paid,
   } = req.body ?? {};
 
   if (!name || !email || !subject || !message || !isValidEmail(email)) {
@@ -115,6 +138,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   const isToolSubmission = submissionType === "tool";
+  const isPaidSubmission = isToolSubmission && Boolean(paid);
   if (isToolSubmission && (!toolName || !isValidHttpUrl(toolUrl) || !submitterRole)) {
     return res.status(400).json({ error: "Invalid tool submission" });
   }
@@ -125,12 +149,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(400).json({ error: "Badge verification required" });
   }
 
+  const reviewLane = isPaidSubmission ? "Payante — publication garantie" : badgeReview ? "Prioritaire avec badge" : "Standard";
   const toolDetails = isToolSubmission ? `
       <h2>Proposition d'outil</h2>
       <p><strong>Outil :</strong> ${escapeHtml(toolName)}</p>
       <p><strong>Site officiel :</strong> ${escapeHtml(toolUrl)}</p>
       <p><strong>Lien avec l'outil :</strong> ${escapeHtml(submitterRole)}</p>
-      <p><strong>File de revue :</strong> ${badgeReview ? "Prioritaire avec badge" : "Standard"}</p>
+      <p><strong>File de revue :</strong> ${reviewLane}</p>
       ${badgeReview ? `<p><strong>URL du badge :</strong> ${escapeHtml(badgeUrl)}</p>` : ""}
       <hr />
     ` : "";
@@ -139,7 +164,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     from: "ToolTrim Contact <contact@tooltrim.com>",
     to: "contact@tooltrim.com",
     replyTo: email,
-    subject: `${isToolSubmission ? "[Soumission — étape 3/3]" : "[Contact]"} ${String(subject).replace(/[\r\n]/g, " ")}`,
+    subject: `${isToolSubmission ? (isPaidSubmission ? "[Soumission payante]" : "[Soumission — étape 3/3]") : "[Contact]"} ${String(subject).replace(/[\r\n]/g, " ")}`,
     html: `
       <p><strong>De :</strong> ${escapeHtml(name)} &lt;${escapeHtml(email)}&gt;</p>
       <p><strong>Sujet :</strong> ${escapeHtml(subject)}</p>
@@ -160,7 +185,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       to: String(email),
       replyTo: "contact@tooltrim.com",
       subject: `Thank you for your submission — ${String(toolName).replace(/[\r\n]/g, " ")}`,
-      html: submissionConfirmationHtml({ name, toolName }),
+      html: submissionConfirmationHtml({ name, toolName, paid: isPaidSubmission }),
     });
     if (confirmation.error) {
       console.error("[contact] Submission confirmation error:", confirmation.error);

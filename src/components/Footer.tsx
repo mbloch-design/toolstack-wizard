@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight } from "@/lib/icons";
+import { ArrowRight, Rocket } from "@/lib/icons";
 import { useLang } from "@/hooks/useLang";
 import logoToolTrim from "@/assets/logo-tooltrim.svg";
 
@@ -83,7 +83,7 @@ const Footer = () => {
               <span className="tt-footer-col-label">ToolTrim</span>
               <Link to={`${prefix}/about`}>{t("Qui est ToolTrim", "Who is ToolTrim")}</Link>
               <Link to={`${prefix}/contact`}>{t("Contact", "Contact")}</Link>
-              <Link to={`${prefix}/submit`}>{t("Soumettre un outil", "Submit a tool")}</Link>
+              <Link to={`${prefix}/submit`} className="tt-footer-link--submit"><Rocket size={13} />{t("Soumettre un outil", "Submit a tool")}</Link>
             </nav>
 
           </div>
