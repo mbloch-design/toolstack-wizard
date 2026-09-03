@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 1,
+  "slug": "stellaflow",
+  "researchedOn": "2026-09-03",
+  "researcher": "Claude Code",
+  "status": "draft",
+  "identity": {
+    "officialName": "StellaFlow",
+    "vendor": "Anvil Dragoon, SIRET 941330045, TVA FR47941330045, siège 52 Avenue du Bac, 94210 Saint-Maur-des-Fossés",
+    "officialUrl": "https://www.stellaflow.com/",
+    "pricingUrl": "https://www.stellaflow.com/",
+    "docsUrl": null,
+    "changelogUrl": null
+  },
+  "claims": [
+    {
+      "id": "pricing.pilote",
+      "value": "Pilote : 19,00 €HT/mois en engagement annuel (228 €/an), ou 22,80 €HT/mois sans engagement (facturation mensuelle)",
+      "sourceUrl": "https://www.stellaflow.com/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Attribut data-pricing-toggle-plans-value embarqué dans le HTML de la page d'accueil : pilote.value annuel '19,00 €' (228 €), mensuel '22,80 €'",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "pricing.explorateur",
+      "value": "Explorateur : 49,00 €HT/mois en engagement annuel (588 €/an), ou 58,80 €HT/mois sans engagement",
+      "sourceUrl": "https://www.stellaflow.com/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Même attribut JSON embarqué : explorateur.value annuel '49,00 €' (588 €), mensuel '58,80 €'",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "pricing.commandant",
+      "value": "Commandant : 99,00 €HT/mois en engagement annuel (1188 €/an), ou 118,80 €HT/mois sans engagement",
+      "sourceUrl": "https://www.stellaflow.com/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Même attribut JSON embarqué : commandant.value annuel '99,00 €' (1188 €), mensuel '118,80 €'",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "pricing.trial",
+      "value": "Essai gratuit de 7 jours, sans engagement",
+      "sourceUrl": "https://www.stellaflow.com/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "'Essai gratuit de 7 jours. Sans engagement.' affiché sur la page d'accueil",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "pricing.no-free-plan",
+      "value": "Pas de plan gratuit permanent",
+      "sourceUrl": "https://www.stellaflow.com/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Seuls 3 plans payants affichés (Pilote/Explorateur/Commandant), aucune mention de palier gratuit permanent",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "capability.plans-limits",
+      "value": "Pilote : 1 canal social, 15 posts/mois, 5 000 crédits IA/mois, analyses de base, support email. Explorateur : 5 canaux, 30 posts/mois, IA avancée + identité visuelle, analyses complètes, 10 000 crédits IA/mois, support prioritaire. Commandant : 10 canaux, 60 posts/mois, collaboration d'équipe, 15 000 crédits IA/mois, support prioritaire",
+      "sourceUrl": "https://www.stellaflow.com/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Cartes tarifaires de la page d'accueil, listes de fonctionnalités par plan",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "capability.channels",
+      "value": "Réseaux pris en charge : Instagram, LinkedIn, X, Facebook, Blog, TikTok, Threads",
+      "sourceUrl": "https://www.stellaflow.com/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Menu de navigation 'Réseaux' de la page d'accueil, liste des logos de plateformes",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "capability.ai-visual-identity",
+      "value": "L'IA (Stella) génère textes, visuels et vidéos à partir du logo et des photos importés par l'utilisateur pour produire un contenu 'à l'image' de la marque ; fonctionnalité 'Identité Visuelle' réservée aux plans Explorateur et Commandant",
+      "sourceUrl": "https://www.stellaflow.com/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Section 'L'IA qui s'imprègne de votre marque. Importez votre logo, vos photos...' page d'accueil ; comparatif des plans",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "proof.savings-claim",
+      "value": "Claim marketing non détaillé : 'Gagnez 8h par semaine' affiché en hero de la page d'accueil, sans méthodologie, échantillon ni source",
+      "sourceUrl": "https://www.stellaflow.com/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Section hero : 'Votre assistant marketing personnel, la fatigue en moins. Gagnez 8h par semaine'",
+      "confidence": "low",
+      "volatility": "high"
+    },
+    {
+      "id": "proof.testimonials",
+      "value": "Témoignages cités : Marie D. (fondatrice boutique en ligne, 'gagne des heures chaque semaine'), Thomas L. (responsable PME services, relances automatiques), Alex M. (directeur marketing) — attribués par prénom/initiale, non vérifiables indépendamment",
+      "sourceUrl": "https://www.stellaflow.com/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Section témoignages de la page d'accueil",
+      "confidence": "low",
+      "volatility": "medium"
+    },
+    {
+      "id": "identity.vendor",
+      "value": "Éditeur : Anvil Dragoon, SIRET 941330045, TVA FR47941330045, siège 52 Avenue du Bac, 94210 Saint-Maur-des-Fossés. Forme juridique et capital non précisés",
+      "sourceUrl": "https://www.stellaflow.com/fr/cgu",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Page CGU et politique de confidentialité, section 'Informations légales'",
+      "confidence": "high",
+      "volatility": "low"
+    },
+    {
+      "id": "capability.no-data-portability",
+      "value": "La politique de confidentialité liste explicitement les droits utilisateurs comme : accès, modification/suppression, et révocation du consentement aux publications automatisées. Aucun droit de portabilité ni fonctionnalité d'export n'est mentionné nulle part sur le site (page d'accueil, CGU, politique de confidentialité)",
+      "sourceUrl": "https://www.stellaflow.com/fr/privacy",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Section 6 'Vos droits' de la politique de confidentialité : 'Accéder à vos informations personnelles / Demander la modification ou la suppression de vos données / Révoquer votre consentement...' — pas de mention de portabilité, contrairement à des politiques RGPD standard",
+      "confidence": "high",
+      "volatility": "low"
+    },
+    {
+      "id": "quality.marketing-images",
+      "value": "Plusieurs visuels marketing du site (illustrations 'channels/instagram') sont des images générées par IA avec artefacts visibles (chiffres et texte de graphique illisibles/incohérents), pas des captures d'écran du produit réel",
+      "sourceUrl": "https://www.stellaflow.com/fr/channels/instagram",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Images /assets/img/channels/instagram_1, instagram-features : illustrations stylisées avec texte de graphique déformé/incohérent, aucune capture d'interface réelle trouvée sur le site",
+      "confidence": "high",
+      "volatility": "low"
+    }
+  ],
+  "pricing": {
+    "originalCurrency": "EUR",
+    "billingContext": "mensuel ou annuel (-20%), sans engagement en mensuel",
+    "taxIncluded": false,
+    "freePlan": null,
+    "plans": [
+      { "name": "Pilote", "priceHT_annual": 19, "priceHT_monthly": 22.80, "period": "mois" },
+      { "name": "Explorateur", "priceHT_annual": 49, "priceHT_monthly": 58.80, "period": "mois" },
+      { "name": "Commandant", "priceHT_annual": 99, "priceHT_monthly": 118.80, "period": "mois" }
+    ],
+    "seatMinimum": null,
+    "usageLimits": [
+      "Crédits IA mensuels : 5 000 (Pilote) / 10 000 (Explorateur) / 15 000 (Commandant)",
+      "Posts mensuels : 15 (Pilote) / 30 (Explorateur) / 60 (Commandant)",
+      "Canaux sociaux : 1 (Pilote) / 5 (Explorateur) / 10 (Commandant)"
+    ],
+    "cautions": [
+      "Le prix affiché par défaut sur le site (19 €/mois) correspond à l'engagement annuel prépayé (228 €/an) ; en facturation mensuelle sans engagement, le prix réel est 22,80 €/mois",
+      "Pas de plan gratuit permanent, seulement un essai de 7 jours"
+    ]
+  },
+  "capabilities": [
+    "Génération de contenu par IA (textes, visuels, vidéos) personnalisée à partir du logo et des photos de la marque",
+    "Planification et publication multi-réseaux (Instagram, LinkedIn, X, Facebook, Blog, TikTok, Threads)",
+    "Identité visuelle IA (Explorateur/Commandant uniquement)",
+    "Collaboration d'équipe avec rôles (Commandant uniquement)",
+    "Système de crédits IA mensuels par plan"
+  ],
+  "limitations": [
+    "Pas de plan gratuit permanent, seulement un essai 7 jours",
+    "Fonctionnalités avancées (identité visuelle, collaboration d'équipe) réservées aux plans supérieurs",
+    "Aucun droit de portabilité ni fonctionnalité d'export mentionné dans la politique de confidentialité ou ailleurs sur le site",
+    "Claim d'économie de temps agrégé ('8h/semaine') non sourcé",
+    "Aucune capture d'écran réelle du produit trouvée sur le site public ; les visuels marketing sont des illustrations générées par IA, certaines avec des artefacts visibles"
+  ],
+  "integrations": [
+    "Instagram, LinkedIn, X, Facebook, TikTok, Threads (publication)",
+    "Blog (canal de publication propre)"
+  ],
+  "audiences": [
+    "Petites entreprises et entrepreneurs solo",
+    "E-commerçants",
+    "Community managers indépendants",
+    "PME avec petite équipe marketing"
+  ],
+  "useCases": [
+    "Générer et planifier des posts multi-réseaux personnalisés à la marque",
+    "Déléguer la création de contenu visuel sans designer",
+    "Collaborer en équipe sur la validation des publications (plan Commandant)"
+  ],
+  "alternatives": ["buffer", "later", "metricool"],
+  "editorialNotes": [
+    "Alternatives retenues parmi les outils déjà catalogués ToolTrim couvrant directement le même besoin (planification de contenu multi-réseaux) : Buffer (le plus proche en simplicité/prix), Later (positionnement intermédiaire), Metricool (palier gratuit disponible). Hootsuite et Sprout Social existent aussi au catalogue mais visent un segment plus premium/entreprise, moins comparable au budget StellaFlow.",
+    "Après l'expérience Klark (recherche initiale incomplète sur l'export), vérification systématique et approfondie de la politique de confidentialité avant de conclure sur l'axe réversibilité : ici la politique de confidentialité de StellaFlow liste explicitement les droits utilisateurs SANS mentionner la portabilité, ce qui est un signal plus net et plus négatif que le cas Happia/Klark (qui avaient au moins la mention générique RGPD)."
+  ],
+  "unknowns": [
+    "Nombre réel d'utilisateurs ou de comptes actifs, aucune métrique indépendante publique trouvée",
+    "Fiabilité technique de la publication automatisée sur les plateformes à API restrictive (Instagram, TikTok, Threads) non démontrée par un tiers indépendant",
+    "Forme juridique exacte et capital social d'Anvil Dragoon non précisés sur le site"
+  ],
+  "conflicts": []
+}

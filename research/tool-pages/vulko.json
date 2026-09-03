@@ -1,0 +1,243 @@
+{
+  "schemaVersion": 1,
+  "slug": "vulko",
+  "researchedOn": "2026-09-03",
+  "researcher": "Claude Code",
+  "status": "draft",
+  "identity": {
+    "officialName": "Vulko",
+    "vendor": "VULKO (SASU, associé unique), capital 100 €, SIREN 106 518 343, siège Bâtiment A1, Résidence Allia Garden, 50 chemin de la Parouquine, 06600 Antibes. Président : Lamine Djemouai",
+    "officialUrl": "https://vulko.fr/",
+    "pricingUrl": "https://vulko.fr/",
+    "docsUrl": "https://vulko.fr/api-docs",
+    "changelogUrl": "https://vulko.fr/changelog"
+  },
+  "claims": [
+    {
+      "id": "pricing.starter",
+      "value": "Starter : 19 €HT/mois (22,80 €TTC) : 5 devis IA/mois + 10 devis manuels, factures automatiques, 1 utilisateur, 5 envois email client/mois",
+      "sourceUrl": "https://vulko.fr/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "FAQ tarifs page d'accueil + carte tarif : '19 € /mois HT soit 22,80 € TTC /mois'",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "pricing.solo",
+      "value": "Solo : 49 €HT/mois (58,80 €TTC) : 50 devis IA/mois, email client illimité, suivi chantier illimité, export FEC, gestion de stock, inbox Factur-X reçues",
+      "sourceUrl": "https://vulko.fr/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "FAQ tarifs page d'accueil + carte tarif : '49 € /mois HT soit 58,80 € TTC /mois'",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "pricing.duo",
+      "value": "Duo : 79 €HT/mois (94,80 €TTC) : 100 devis IA/mois, 2 utilisateurs, gestion des sous-traitants par ligne avec auto-liquidation TVA",
+      "sourceUrl": "https://vulko.fr/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "FAQ tarifs page d'accueil + carte tarif : '79 € /mois HT soit 94,80 € TTC /mois'",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "pricing.pme",
+      "value": "PME : 119 €HT/mois (142,80 €TTC) : 200 devis IA/mois, jusqu'à 5 utilisateurs, rapports mensuels PDF automatiques, import Excel, rôles personnalisés, PDF sans mention Vulko",
+      "sourceUrl": "https://vulko.fr/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "FAQ tarifs page d'accueil + carte tarif : '119 € /mois HT soit 142,80 € TTC /mois'",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "pricing.equipe",
+      "value": "Équipe : 299 €HT/mois : 400 devis IA/mois, utilisateurs illimités, API REST publique, support prioritaire",
+      "sourceUrl": "https://vulko.fr/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "FAQ tarifs page d'accueil : 'Équipe à 299 € HT (400 devis IA, utilisateurs illimités, API REST publique, support prioritaire)'",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "pricing.trial-annual",
+      "value": "Essai gratuit 14 jours, sans carte bancaire, annulable en 1 clic. Tarifs annuels disponibles avec environ 2 mois offerts",
+      "sourceUrl": "https://vulko.fr/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "'14 jours gratuits · Sans carte bancaire · Annulable en 1 clic' ; 'Tarifs annuels disponibles avec ~2 mois offerts'",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "capability.ai-quote",
+      "value": "Génération de devis par IA à partir d'une description vocale, d'une photo du chantier, ou de texte libre ; l'IA chiffre matériaux et main d'œuvre et mémorise le style de rédaction de l'utilisateur pour les devis suivants",
+      "sourceUrl": "https://vulko.fr/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Section produit page d'accueil + capture d'écran /marketing/decouvrir/02-quote-new.png (interface 'Nouveau devis' avec options Décrire/Photo/Saisie libre)",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "capability.facturx",
+      "value": "Génère des factures conformes Factur-X, format obligatoire pour les échanges B2B en France à partir de septembre 2026",
+      "sourceUrl": "https://vulko.fr/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Bandeau produit capturé : 'Factur-X devient obligatoire dans 121 jours... Vulko s'en charge automatiquement' (capture dashboard-hero.png) ; page dédiée /factur-x et /facturation-electronique-2026",
+      "confidence": "high",
+      "volatility": "low"
+    },
+    {
+      "id": "capability.esignature",
+      "value": "Signature électronique niveau eIDAS 1, horodatage SHA-256",
+      "sourceUrl": "https://vulko.fr/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Section sécurité/signature page d'accueil et page dédiée /fonctionnalites/signature",
+      "confidence": "high",
+      "volatility": "low"
+    },
+    {
+      "id": "capability.offline",
+      "value": "Mode hors-ligne (Service Worker + IndexedDB) : saisie manuelle possible sans connexion, synchronisation automatique à la reconnexion, réservé au plan Duo et supérieur",
+      "sourceUrl": "https://vulko.fr/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Section produit page d'accueil : 'Mode hors-ligne Plan Duo — Service Worker + IndexedDb...'",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "capability.export-accounting",
+      "value": "Export comptable au format FEC (Fichier des Écritures Comptables) inclus dès le plan Solo, synchronisation Pennylane, intégrations Sage/EBP/Cegid annoncées comme à venir",
+      "sourceUrl": "https://vulko.fr/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "FAQ tarifs : plan Solo inclut 'export FEC' ; section intégrations page d'accueil : Pennylane (sync), Sage/EBP/Cegid (à venir)",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "capability.data-portability",
+      "value": "Politique de confidentialité mentionne explicitement le droit RGPD à la portabilité : 'recevoir vos données dans un format structuré et lisible par machine', exerçable via dpo@vulko.fr",
+      "sourceUrl": "https://vulko.fr/confidentialite",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Section 4 et 7 de la politique de confidentialité : 'Droit à la portabilité : recevoir vos données dans un format structuré et lisible par machine'",
+      "confidence": "high",
+      "volatility": "low"
+    },
+    {
+      "id": "identity.vendor",
+      "value": "Éditeur : VULKO, SASU au capital de 100 €, SIREN 106 518 343, siège à Antibes (06600). Président : Lamine Djemouai. Hébergement application/CDN chez Vercel (États-Unis), base de données chez Supabase (Irlande, UE)",
+      "sourceUrl": "https://vulko.fr/mentions-legales",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Page Mentions légales",
+      "confidence": "high",
+      "volatility": "low"
+    },
+    {
+      "id": "identity.activity",
+      "value": "Changelog actif : dernière entrée le 10 août 2026 (mémorisation du style de rédaction IA, correctifs PDF), entrée précédente le 24 juillet 2026 (lancement apps mobiles iOS/Android, expansion marché belge)",
+      "sourceUrl": "https://vulko.fr/changelog",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Page /changelog, entrées datées",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "proof.no-testimonials",
+      "value": "Aucun témoignage client, chiffre d'usage ou étude de cas n'est présenté sur la page d'accueil, contrairement à Happia/Klark/StellaFlow qui affichent (au moins) des verbatims non vérifiables",
+      "sourceUrl": "https://vulko.fr/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Absence constatée sur la page d'accueil complète",
+      "confidence": "medium",
+      "volatility": "medium"
+    },
+    {
+      "id": "capability.competitor-comparison",
+      "value": "Vulko publie sa propre page de comparaison nommant Tolteck, Obat, EBP Bâtiment, Axonaut et Tarifeo, avec des écarts fonctionnels précis revendiqués (ex: Tolteck sans génération IA, EBP Bâtiment sans paiement en ligne, Axonaut sans spécialisation BTP)",
+      "sourceUrl": "https://vulko.fr/comparatif-logiciel-artisan-btp",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Page /comparatif-logiciel-artisan-btp, tableau comparatif éditeur (source non indépendante, à lire avec la réserve habituelle d'un comparatif auto-publié)",
+      "confidence": "medium",
+      "volatility": "medium"
+    }
+  ],
+  "pricing": {
+    "originalCurrency": "EUR",
+    "billingContext": "mensuel ou annuel (~2 mois offerts), sans engagement",
+    "taxIncluded": false,
+    "freePlan": null,
+    "plans": [
+      { "name": "Starter", "priceHT": 19, "priceTTC": 22.80, "period": "mois" },
+      { "name": "Solo", "priceHT": 49, "priceTTC": 58.80, "period": "mois" },
+      { "name": "Duo", "priceHT": 79, "priceTTC": 94.80, "period": "mois" },
+      { "name": "PME", "priceHT": 119, "priceTTC": 142.80, "period": "mois" },
+      { "name": "Équipe", "priceHT": 299, "period": "mois" }
+    ],
+    "seatMinimum": null,
+    "usageLimits": [
+      "Devis IA mensuels : 5 (Starter) / 50 (Solo) / 100 (Duo) / 200 (PME) / 400 (Équipe)",
+      "Utilisateurs : 1 (Starter/Solo) / 2 (Duo) / 5 (PME) / illimité (Équipe)"
+    ],
+    "cautions": [
+      "Prix affichés HT ; TVA française 20% en supplément",
+      "Pas de plan gratuit permanent, seulement un essai de 14 jours sans carte"
+    ]
+  },
+  "capabilities": [
+    "Génération de devis par IA (voix, photo, texte)",
+    "Facturation conforme Factur-X (obligatoire dès septembre 2026)",
+    "Signature électronique eIDAS niveau 1",
+    "Mode hors-ligne avec synchronisation automatique",
+    "Export comptable FEC et synchronisation Pennylane",
+    "Suivi de chantier, pointage GPS, liens de paiement (SumUp/Lydia/PayPal/Stripe)"
+  ],
+  "limitations": [
+    "Aucun témoignage client ni étude de cas publié pour vérifier les gains de temps annoncés",
+    "Éditeur très jeune et de très petite taille (SASU à 100 € de capital, fondateur unique identifié)",
+    "Intégrations comptables Sage/EBP/Cegid annoncées mais pas encore livrées au moment de la recherche",
+    "Comparatif concurrentiel publié par Vulko lui-même, à lire avec réserve (source non indépendante)"
+  ],
+  "integrations": [
+    "Pennylane (synchronisation comptable), export FEC",
+    "SumUp, Lydia, PayPal, Stripe (paiement)",
+    "Zapier, Make, n8n (automatisation, 5000+ apps via webhooks)",
+    "Google Calendar, Outlook, Apple Calendar (iCal)",
+    "API ADEME (récupération automatique des certifications RGE pour MaPrimeRénov')"
+  ],
+  "audiences": [
+    "Artisans du BTP indépendants (26 métiers couverts : électriciens, plombiers, maçons, peintres, carreleurs, menuisiers, couvreurs, chauffagistes...)",
+    "Petites équipes BTP (2 à 5 utilisateurs)",
+    "PME du bâtiment"
+  ],
+  "useCases": [
+    "Générer un devis chiffré en dictant la description d'un chantier",
+    "Émettre une facture conforme Factur-X avant l'obligation de septembre 2026",
+    "Faire signer un devis sur site via une tablette et encaisser un acompte en ligne"
+  ],
+  "alternatives": ["axonaut", "houzz-pro"],
+  "editorialNotes": [
+    "Concurrents directs nommés par Vulko lui-même (Tolteck, Obat, EBP Bâtiment, Tarifeo) absents du catalogue ToolTrim au 2026-09-03 : non ajoutés, conformément à la consigne de ne pas créer de nouvelles fiches concurrentes sans demande explicite.",
+    "Axonaut (déjà catalogué, finance) est un ERP/CRM généraliste sans spécialisation BTP : alternative partielle, retenue car c'est la seule option française du même registre (devis/factures pour indépendants) déjà présente au catalogue.",
+    "Houzz Pro (déjà catalogué, project-management) est un outil de gestion de projet BTP tout-en-un mais positionné marché américain, pas spécifiquement Factur-X/France : alternative partielle sur le principe (devis/factures BTP), pas sur le marché cible.",
+    "Contrairement à Happia/Klark/StellaFlow, Vulko ne publie aucun témoignage client sur sa page d'accueil : c'est à la fois un signal de rigueur (pas de preuve sociale fabriquée ou non vérifiable à filtrer) et un manque de validation externe, noté sans trancher dans un sens ou l'autre."
+  ],
+  "unknowns": [
+    "Nombre réel de clients/utilisateurs actifs, aucune métrique publique indépendante trouvée",
+    "Fiabilité de l'export FEC et de la synchronisation Pennylane non testée en compte réel par ToolTrim",
+    "Date de livraison réelle des intégrations Sage/EBP/Cegid annoncées comme 'à venir'"
+  ],
+  "conflicts": []
+}

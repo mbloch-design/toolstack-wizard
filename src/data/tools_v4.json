@@ -170844,5 +170844,586 @@
       "lastActivityVerifiedOn": null,
       "notedOn": "2026-09-03"
     }
+  },
+  {
+    "id": "stellaflow",
+    "slug": "stellaflow",
+    "name": "StellaFlow",
+    "category": "creation",
+    "shortDescription": "Génération de contenu par IA et planification multi-réseaux personnalisée à ta marque.",
+    "shortDescriptionEn": "AI content generation and multi-network scheduling personalized to your brand.",
+    "description": "StellaFlow génère des posts, visuels et vidéos par IA à partir du logo et des photos que tu importes, puis les planifie sur Instagram, LinkedIn, X, Facebook, TikTok, Threads et un blog. Le plan d'entrée (Pilote) couvre 1 canal et 15 posts par mois ; l'identité visuelle IA et la publication multi-réseaux n'arrivent qu'à partir du plan Explorateur (5 canaux, 30 posts/mois) ; la collaboration d'équipe est réservée au plan Commandant (10 canaux, 60 posts/mois).\n\nChaque plan inclut un quota de crédits IA mensuels (5 000 à 15 000 selon le plan) qui limite le volume de générations. Le prix affiché en avant (19 €HT/mois) correspond à un engagement annuel prépayé ; en facturation mensuelle sans engagement, le tarif réel est 22,80 €HT/mois.\n\nStellaFlow cible les petites entreprises, e-commerçants et community managers solo qui veulent déléguer la création de contenu sans designer. Aucune capture d'écran réelle du produit n'est publiée sur le site : les visuels marketing sont des illustrations générées par IA.",
+    "longDescription": "StellaFlow génère des posts, visuels et vidéos par IA à partir du logo et des photos que tu importes, puis les planifie sur Instagram, LinkedIn, X, Facebook, TikTok, Threads et un blog. Le plan d'entrée (Pilote) couvre 1 canal et 15 posts par mois ; l'identité visuelle IA et la publication multi-réseaux n'arrivent qu'à partir du plan Explorateur (5 canaux, 30 posts/mois) ; la collaboration d'équipe est réservée au plan Commandant (10 canaux, 60 posts/mois).\n\nChaque plan inclut un quota de crédits IA mensuels (5 000 à 15 000 selon le plan) qui limite le volume de générations. Le prix affiché en avant (19 €HT/mois) correspond à un engagement annuel prépayé ; en facturation mensuelle sans engagement, le tarif réel est 22,80 €HT/mois.\n\nStellaFlow cible les petites entreprises, e-commerçants et community managers solo qui veulent déléguer la création de contenu sans designer. Aucune capture d'écran réelle du produit n'est publiée sur le site : les visuels marketing sont des illustrations générées par IA.",
+    "longDescriptionEn": "StellaFlow generates posts, visuals and videos with AI from the logo and photos you upload, then schedules them on Instagram, LinkedIn, X, Facebook, TikTok, Threads and a blog. The entry plan (Pilote) covers 1 channel and 15 posts a month; AI visual identity and multi-network publishing only start at the Explorateur plan (5 channels, 30 posts/month); team collaboration is Commandant-only (10 channels, 60 posts/month).\n\nEach plan includes a monthly AI credit quota (5,000 to 15,000 depending on plan) that caps generation volume. The price shown up front (€19 excl. VAT/month) is an annual prepaid commitment; on flexible monthly billing, the real price is €22.80 excl. VAT/month.\n\nStellaFlow targets small businesses, e-commerce sellers and solo community managers who want to offload content creation without a designer. No real product screenshot is published on the site: the marketing visuals are AI-generated illustrations.",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent ; essai 7 jours sans engagement",
+      "paid": "Pilote 19 à 22,80 €HT/mois, Explorateur 49 à 58,80 €HT/mois, Commandant 99 à 118,80 €HT/mois (prix bas = engagement annuel, prix haut = facturation mensuelle)"
+    },
+    "pricingEn": {
+      "free": "No permanent free plan; 7-day trial with no commitment",
+      "paid": "Pilote €19 to €22.80 excl. VAT/month, Explorateur €49 to €58.80 excl. VAT/month, Commandant €99 to €118.80 excl. VAT/month (lower price = annual commitment, higher price = monthly billing)"
+    },
+    "defaultMonthlyPrice": 19,
+    "pricing_v5": {
+      "cautions": [
+        "Le prix mis en avant (19 €/mois) correspond à un engagement annuel prépayé (228 €/an) ; en facturation mensuelle flexible, le tarif réel est 22,80 €HT/mois.",
+        "Pas de plan gratuit permanent, seulement un essai de 7 jours.",
+        "Fonctionnalités avancées (identité visuelle IA, publication multi-réseaux, collaboration d'équipe) réservées aux plans Explorateur et Commandant."
+      ],
+      "cautionsEn": [
+        "The featured price (€19/month) is an annual prepaid commitment (€228/year); on flexible monthly billing, the real price is €22.80 excl. VAT/month.",
+        "No permanent free plan, only a 7-day trial.",
+        "Advanced features (AI visual identity, multi-network publishing, team collaboration) are Explorateur/Commandant-only."
+      ],
+      "verified_on": "2026-09-03",
+      "source_domain": "stellaflow.com",
+      "usage_sensitive": true,
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Pilote",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://www.stellaflow.com/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 19,
+      "plans": [
+        {
+          "planKey": "pilote",
+          "displayName": "Pilote",
+          "summary": "1 canal social, 15 posts/mois, génération de contenu IA et analyses de base.",
+          "featureHighlights": [
+            "1 canal social",
+            "Jusqu'à 15 posts / mois",
+            "5 000 crédits IA / mois",
+            "Analyses de base, support email"
+          ],
+          "detailsSourceUrl": "https://www.stellaflow.com/",
+          "pricingUnit": "par compte",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 19,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "annual",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "ht",
+          "observedMarket": "FR",
+          "observedLocale": "fr-FR",
+          "observedOn": "2026-09-03",
+          "lastConfirmedOn": "2026-09-03"
+        },
+        {
+          "planKey": "explorateur",
+          "displayName": "Explorateur",
+          "summary": "5 canaux, 30 posts/mois, IA avancée et identité visuelle, analyses complètes.",
+          "featureHighlights": [
+            "5 canaux sociaux",
+            "Jusqu'à 30 posts / mois",
+            "IA avancée + identité visuelle",
+            "10 000 crédits IA / mois, support prioritaire"
+          ],
+          "detailsSourceUrl": "https://www.stellaflow.com/",
+          "pricingUnit": "par compte",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 49,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "annual",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "ht",
+          "observedMarket": "FR",
+          "observedLocale": "fr-FR",
+          "observedOn": "2026-09-03",
+          "lastConfirmedOn": "2026-09-03"
+        },
+        {
+          "planKey": "commandant",
+          "displayName": "Commandant",
+          "summary": "10 canaux, 60 posts/mois, collaboration d'équipe, 15 000 crédits IA/mois.",
+          "featureHighlights": [
+            "10 canaux sociaux",
+            "Jusqu'à 60 posts / mois",
+            "Collaboration d'équipe",
+            "15 000 crédits IA / mois, support prioritaire"
+          ],
+          "detailsSourceUrl": "https://www.stellaflow.com/",
+          "pricingUnit": "par compte",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 99,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "annual",
+          "billingCommitment": "annual_prepaid",
+          "taxInclusion": "ht",
+          "observedMarket": "FR",
+          "observedLocale": "fr-FR",
+          "observedOn": "2026-09-03",
+          "lastConfirmedOn": "2026-09-03"
+        }
+      ]
+    },
+    "websiteUrl": "https://www.stellaflow.com/",
+    "affiliateLink": "",
+    "logo": "https://logo.clearbit.com/stellaflow.com",
+    "verdict": {
+      "keepIf": [
+        "Tu es seul ou en petite équipe et veux déléguer la création de posts sans designer.",
+        "Tu publies sur plusieurs réseaux et veux un contenu généré à partir de ton logo et tes photos.",
+        "Un quota de 15 à 60 posts/mois selon le plan couvre ton rythme de publication."
+      ],
+      "avoidIf": [
+        "Tu veux un plan gratuit permanent pour tester sans limite de temps.",
+        "Tu veux exporter facilement tes contenus ou données si tu changes d'outil : aucun droit de portabilité n'est mentionné.",
+        "Tu cherches un historique de fiabilité établi sur la publication automatisée à grande échelle."
+      ],
+      "threshold": "StellaFlow devient intéressant si la génération de contenu IA personnalisée à ta marque te fait gagner du temps réel sur la création, au-delà de 19 à 99 €HT/mois selon le plan. Pour un simple outil de planification éprouvé et moins cher, Buffer ou Metricool ont plus de recul."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You're solo or a small team and want to offload post creation without a designer.",
+        "You publish across several networks and want content generated from your logo and photos.",
+        "A 15-to-60-post/month quota depending on plan covers your publishing pace."
+      ],
+      "avoidIf": [
+        "You want a permanent free plan to test without a time limit.",
+        "You want to easily export your content or data if you switch tools: no portability right is mentioned.",
+        "You're after an established track record for automated publishing at scale."
+      ],
+      "threshold": "StellaFlow is worth it if brand-personalized AI content generation saves you real time on creation, beyond its €19-to-€99 excl. VAT/month range. For a proven, cheaper scheduling tool, Buffer or Metricool have more track record."
+    },
+    "pros": [
+      "Génération de contenu IA personnalisée à partir du logo et des photos de la marque.",
+      "Sept canaux couverts (Instagram, LinkedIn, X, Facebook, Blog, TikTok, Threads).",
+      "Essai 7 jours sans engagement.",
+      "Prix d'entrée abordable (19 €HT/mois en annuel) face aux outils premium du secteur.",
+      "Quota de crédits IA transparent et différencié par plan."
+    ],
+    "prosEn": [
+      "AI content generation personalized from the brand's logo and photos.",
+      "Seven channels covered (Instagram, LinkedIn, X, Facebook, Blog, TikTok, Threads).",
+      "7-day trial with no commitment.",
+      "Affordable entry price (€19 excl. VAT/month annual) versus premium tools in the category.",
+      "Transparent AI credit quota, tiered by plan."
+    ],
+    "cons": [
+      "Aucun droit de portabilité ni fonctionnalité d'export mentionné dans la politique de confidentialité.",
+      "Prix mis en avant (19 €/mois) valable seulement en engagement annuel ; 22,80 €/mois en mensuel flexible.",
+      "Identité visuelle IA et publication multi-réseaux absentes du plan d'entrée.",
+      "Claim d'économie de temps ('8h/semaine') affiché sans méthode ni source vérifiable."
+    ],
+    "consEn": [
+      "No portability right or export feature mentioned in the privacy policy.",
+      "Featured price (€19/month) only applies with an annual commitment; €22.80/month on flexible monthly billing.",
+      "AI visual identity and multi-network publishing are absent from the entry plan.",
+      "A time-saving claim ('8h/week') displayed with no method or verifiable source."
+    ],
+    "useCases": [
+      "Générer et planifier des posts multi-réseaux personnalisés à la marque.",
+      "Déléguer la création de visuels et vidéos sans recruter de designer.",
+      "Valider les publications en équipe avant diffusion (plan Commandant)."
+    ],
+    "useCasesEn": [
+      "Generate and schedule brand-personalized posts across networks.",
+      "Offload visual and video creation without hiring a designer.",
+      "Approve posts as a team before they go out (Commandant plan)."
+    ],
+    "covers": [
+      "planification-posts",
+      "generation-contenu-ia",
+      "social-media-management"
+    ],
+    "functional_needs": [
+      "planification-posts",
+      "generation-contenu-ia",
+      "social-media-management"
+    ],
+    "relevantFor": [
+      "Community managers indépendants",
+      "Petites entreprises et e-commerçants",
+      "Solo créateurs multi-réseaux"
+    ],
+    "alternatives": [
+      "buffer",
+      "later",
+      "metricool"
+    ],
+    "seo": {
+      "idealForFr": "Idéal pour une petite entreprise ou un community manager solo qui veut générer et planifier du contenu IA personnalisé à sa marque sur plusieurs réseaux.",
+      "idealForEn": "Ideal for a small business or solo community manager who wants to generate and schedule brand-personalized AI content across several networks.",
+      "metaDescription": "StellaFlow : avis, prix dès 19 €HT/mois (engagement annuel), fonctionnalités IA et alternatives pour la planification de contenu multi-réseaux."
+    },
+    "articles": [],
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "community-manager",
+      "createur-contenu",
+      "ecommercant"
+    ],
+    "ia_use_case": [
+      "content-generation"
+    ],
+    "freeAlternative": "metricool",
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "personas": [],
+    "timeGainedHoursPerMonth": 4,
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [
+      "channels_count",
+      "posting_frequency",
+      "team_size"
+    ],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": {
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": false,
+      "default_decision_lane": "review_then_prescribe",
+      "auto_downgrade_allowed": false,
+      "never_auto_cancel_reason": null,
+      "requires_context_questions": true
+    },
+    "ogImageUrl": null,
+    "galleryImages": [],
+    "force_silence": false,
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 3,
+      "utilisation": 3,
+      "puissance": 2,
+      "reversibilite": 2,
+      "evidence": {
+        "valeurAjoutee": "Prix d'entrée modéré (19 à 22,80 €HT/mois) face à des outils premium comme Hootsuite ou Sprout Social. Le claim d'économie de temps ('Gagnez 8h par semaine') n'est appuyé par aucune méthodologie ni échantillon ; les témoignages clients cités ne sont pas vérifiables indépendamment (source : stellaflow.com, consulté le 2026-09-03).",
+        "simplicite": "Essai 7 jours sans engagement, plans clairement différenciés par quota de posts et de crédits IA. Un premier résultat de qualité suppose d'importer logo et photos pour que l'IA s'aligne sur l'identité de marque, une étape de configuration avant les gains promis (source : stellaflow.com, consulté le 2026-09-03).",
+        "utilisation": "La planification multi-réseaux et la génération de contenu IA sont des fonctions établies dans la catégorie, mais aucune capture d'écran du produit réel n'est publiée sur le site : les visuels marketing des pages canaux sont des illustrations générées par IA, certaines avec des artefacts visibles (graphiques au texte incohérent), ce qui questionne le soin apporté à la vérification du contenu publié (source : stellaflow.com/fr/channels/instagram, consulté le 2026-09-03).",
+        "puissance": "Couvre 7 canaux (Instagram, LinkedIn, X, Facebook, Blog, TikTok, Threads), en ligne avec la catégorie, mais sans différenciateur technique démontré face à des concurrents plus établis (Buffer, Later, Hootsuite, Sprout Social). L'éditeur (Anvil Dragoon, SIRET seul, forme juridique et capital non communiqués) ne publie aucune preuve de fiabilité à grande échelle sur les API restrictives (Instagram, TikTok) (source : stellaflow.com et mentions légales, consulté le 2026-09-03).",
+        "reversibilite": "La politique de confidentialité liste explicitement les droits utilisateurs (accès, modification/suppression, révocation du consentement) sans jamais mentionner de droit de portabilité ni de fonctionnalité d'export, contrairement à une politique RGPD standard. Aucune mention d'export ailleurs sur le site (source : stellaflow.com/fr/privacy, consulté le 2026-09-03)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Moderate entry price (€19 to €22.80 excl. VAT/month) versus premium tools like Hootsuite or Sprout Social. The time-saving claim ('Save 8h a week') is backed by no methodology or sample size; the cited customer testimonials aren't independently verifiable (source: stellaflow.com, checked 2026-09-03).",
+        "simplicite": "7-day trial with no commitment, plans clearly differentiated by post and AI-credit quotas. A good first result assumes uploading a logo and photos so the AI matches the brand identity, a setup step before the promised gains (source: stellaflow.com, checked 2026-09-03).",
+        "utilisation": "Multi-network scheduling and AI content generation are established category functions, but no real product screenshot is published on the site: the channel-page marketing visuals are AI-generated illustrations, some with visible artifacts (garbled chart text), which raises a question about the care put into published content (source: stellaflow.com/fr/channels/instagram, checked 2026-09-03).",
+        "puissance": "Covers 7 channels (Instagram, LinkedIn, X, Facebook, Blog, TikTok, Threads), in line with the category, but with no demonstrated technical edge over more established competitors (Buffer, Later, Hootsuite, Sprout Social). The publisher (Anvil Dragoon, SIRET only, legal form and capital undisclosed) publishes no evidence of reliability at scale on restrictive APIs (Instagram, TikTok) (source: stellaflow.com and legal notices, checked 2026-09-03).",
+        "reversibilite": "The privacy policy explicitly lists user rights (access, modification/deletion, consent revocation) without ever mentioning a portability right or export feature, unlike a standard GDPR policy. No mention of export anywhere else on the site (source: stellaflow.com/fr/privacy, checked 2026-09-03)."
+      },
+      "lastActivityVerifiedOn": null,
+      "notedOn": "2026-09-03"
+    }
+  },
+  {
+    "id": "vulko",
+    "slug": "vulko",
+    "name": "Vulko",
+    "category": "finance",
+    "shortDescription": "Devis et factures BTP générés par IA, conformes Factur-X, avec signature électronique et mode hors-ligne.",
+    "shortDescriptionEn": "AI-generated construction quotes and Factur-X compliant invoices, with e-signature and offline mode.",
+    "description": "Vulko génère des devis BTP par IA à partir d'une description orale, d'une photo du chantier ou d'un texte libre, puis chiffre matériaux et main d'œuvre. Les factures produites sont conformes au format Factur-X, obligatoire pour les échanges B2B en France à partir de septembre 2026. L'outil couvre 26 métiers du bâtiment (électriciens, plombiers, maçons, peintres, carreleurs, menuisiers, couvreurs, chauffagistes...).\n\nLe plan d'entrée (Starter, 19 €HT/mois) inclut 5 devis IA et 10 devis manuels par mois pour un utilisateur. L'export comptable au format FEC et la synchronisation Pennylane arrivent au plan Solo (49 €HT/mois), la gestion de sous-traitants au plan Duo (79 €HT/mois). Signature électronique eIDAS niveau 1, mode hors-ligne avec synchronisation automatique, pointage GPS et liens de paiement (SumUp, Lydia, PayPal, Stripe) complètent l'offre selon les plans.\n\nVulko est édité par une très petite structure (SASU à 100 € de capital, fondateur unique) mais publie un changelog daté et actif, et documente précisément ses écarts fonctionnels face à des concurrents nommés (Tolteck, Obat, EBP Bâtiment, Axonaut). Aucun témoignage client n'est en revanche publié pour vérifier les gains de temps annoncés (~5 minutes par devis, ~20 fois plus rapide qu'à la main).",
+    "longDescription": "Vulko génère des devis BTP par IA à partir d'une description orale, d'une photo du chantier ou d'un texte libre, puis chiffre matériaux et main d'œuvre. Les factures produites sont conformes au format Factur-X, obligatoire pour les échanges B2B en France à partir de septembre 2026. L'outil couvre 26 métiers du bâtiment (électriciens, plombiers, maçons, peintres, carreleurs, menuisiers, couvreurs, chauffagistes...).\n\nLe plan d'entrée (Starter, 19 €HT/mois) inclut 5 devis IA et 10 devis manuels par mois pour un utilisateur. L'export comptable au format FEC et la synchronisation Pennylane arrivent au plan Solo (49 €HT/mois), la gestion de sous-traitants au plan Duo (79 €HT/mois). Signature électronique eIDAS niveau 1, mode hors-ligne avec synchronisation automatique, pointage GPS et liens de paiement (SumUp, Lydia, PayPal, Stripe) complètent l'offre selon les plans.\n\nVulko est édité par une très petite structure (SASU à 100 € de capital, fondateur unique) mais publie un changelog daté et actif, et documente précisément ses écarts fonctionnels face à des concurrents nommés (Tolteck, Obat, EBP Bâtiment, Axonaut). Aucun témoignage client n'est en revanche publié pour vérifier les gains de temps annoncés (~5 minutes par devis, ~20 fois plus rapide qu'à la main).",
+    "longDescriptionEn": "Vulko generates construction quotes with AI from a voice description, a job-site photo or free text, then prices materials and labor. Invoices are Factur-X compliant, mandatory for B2B exchanges in France from September 2026. The tool covers 26 construction trades (electricians, plumbers, masons, painters, tilers, carpenters, roofers, HVAC technicians...).\n\nThe entry plan (Starter, €19 excl. VAT/month) includes 5 AI quotes and 10 manual quotes a month for one user. Accounting export in FEC format and Pennylane sync arrive at the Solo plan (€49 excl. VAT/month), subcontractor management at Duo (€79 excl. VAT/month). eIDAS level-1 e-signature, offline mode with automatic sync, GPS clock-in and payment links (SumUp, Lydia, PayPal, Stripe) round out the offering depending on plan.\n\nVulko is published by a very small structure (SASU with €100 capital, single founder) but ships a dated, active changelog and documents specific functional gaps against named competitors (Tolteck, Obat, EBP Bâtiment, Axonaut). No customer testimonial is published, however, to verify the claimed time savings (~5 minutes per quote, ~20x faster than by hand).",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent ; essai 14 jours sans carte bancaire, annulable en 1 clic",
+      "paid": "Starter 19 €HT/mois, Solo 49 €HT/mois, Duo 79 €HT/mois, PME 119 €HT/mois, Équipe 299 €HT/mois (tarifs annuels avec ~2 mois offerts)"
+    },
+    "pricingEn": {
+      "free": "No permanent free plan; 14-day trial with no card, cancel anytime",
+      "paid": "Starter €19 excl. VAT/month, Solo €49, Duo €79, PME €119, Équipe €299 excl. VAT/month (annual pricing with ~2 months free)"
+    },
+    "defaultMonthlyPrice": 19,
+    "pricing_v5": {
+      "cautions": [
+        "Prix affichés HT ; TVA française 20% en supplément (22,80 à 142,80 €TTC selon le plan).",
+        "Pas de plan gratuit permanent, seulement un essai de 14 jours sans carte."
+      ],
+      "cautionsEn": [
+        "Prices shown excl. VAT; French 20% VAT added on top (€22.80 to €142.80 incl. tax depending on plan).",
+        "No permanent free plan, only a 14-day trial with no card."
+      ],
+      "verified_on": "2026-09-03",
+      "source_domain": "vulko.fr",
+      "usage_sensitive": true,
+      "compare_plan_kind": "seat",
+      "compare_plan_name": "Starter",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://vulko.fr/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 19,
+      "plans": [
+        {
+          "planKey": "starter",
+          "displayName": "Starter",
+          "summary": "5 devis IA et 10 devis manuels par mois, factures automatiques, pour démarrer et tester.",
+          "featureHighlights": [
+            "5 devis IA + 10 manuels / mois",
+            "Factures automatiques",
+            "1 utilisateur"
+          ],
+          "detailsSourceUrl": "https://vulko.fr/",
+          "pricingUnit": "par utilisateur",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 19,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "ht",
+          "observedMarket": "FR",
+          "observedLocale": "fr-FR",
+          "observedOn": "2026-09-03",
+          "lastConfirmedOn": "2026-09-03"
+        },
+        {
+          "planKey": "solo",
+          "displayName": "Solo",
+          "summary": "50 devis IA/mois, export comptable FEC, suivi chantier illimité, pour l'artisan indépendant.",
+          "featureHighlights": [
+            "50 devis IA/mois",
+            "Export FEC, sync Pennylane",
+            "Suivi chantier illimité"
+          ],
+          "detailsSourceUrl": "https://vulko.fr/",
+          "pricingUnit": "par utilisateur",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 49,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "ht",
+          "observedMarket": "FR",
+          "observedLocale": "fr-FR",
+          "observedOn": "2026-09-03",
+          "lastConfirmedOn": "2026-09-03"
+        },
+        {
+          "planKey": "duo",
+          "displayName": "Duo",
+          "summary": "2 utilisateurs, gestion des sous-traitants avec auto-liquidation TVA.",
+          "featureHighlights": [
+            "100 devis IA/mois",
+            "2 utilisateurs",
+            "Gestion sous-traitants"
+          ],
+          "detailsSourceUrl": "https://vulko.fr/",
+          "pricingUnit": "par équipe",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 79,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "ht",
+          "observedMarket": "FR",
+          "observedLocale": "fr-FR",
+          "observedOn": "2026-09-03",
+          "lastConfirmedOn": "2026-09-03"
+        },
+        {
+          "planKey": "pme",
+          "displayName": "PME",
+          "summary": "Jusqu'à 5 utilisateurs, rapports automatiques, rôles personnalisés, PDF sans mention Vulko.",
+          "featureHighlights": [
+            "200 devis IA/mois",
+            "Jusqu'à 5 utilisateurs",
+            "Rôles personnalisés"
+          ],
+          "detailsSourceUrl": "https://vulko.fr/",
+          "pricingUnit": "par équipe",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 119,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "ht",
+          "observedMarket": "FR",
+          "observedLocale": "fr-FR",
+          "observedOn": "2026-09-03",
+          "lastConfirmedOn": "2026-09-03"
+        },
+        {
+          "planKey": "equipe",
+          "displayName": "Équipe",
+          "summary": "Utilisateurs illimités, API REST publique, support prioritaire.",
+          "featureHighlights": [
+            "400 devis IA/mois",
+            "Utilisateurs illimités",
+            "API REST publique"
+          ],
+          "detailsSourceUrl": "https://vulko.fr/",
+          "pricingUnit": "par équipe",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 299,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "ht",
+          "observedMarket": "FR",
+          "observedLocale": "fr-FR",
+          "observedOn": "2026-09-03",
+          "lastConfirmedOn": "2026-09-03"
+        }
+      ]
+    },
+    "websiteUrl": "https://vulko.fr/",
+    "affiliateLink": "",
+    "logo": "https://logo.clearbit.com/vulko.fr",
+    "verdict": {
+      "keepIf": [
+        "Tu es artisan ou petite équipe BTP et veux générer des devis chiffrés en dictant ou photographiant un chantier.",
+        "Tu veux être prêt pour l'obligation Factur-X de septembre 2026 sans y penser.",
+        "Tu factures depuis un chantier, avec ou sans connexion, et veux encaisser un acompte en ligne."
+      ],
+      "avoidIf": [
+        "Tu veux un historique de fiabilité vérifié par des témoignages clients ou une base d'utilisateurs établie.",
+        "Tu as besoin d'une intégration comptable Sage, EBP ou Cegid dès aujourd'hui : elles sont annoncées mais pas encore livrées.",
+        "Tu factures plus de 200 devis par mois sans vouloir passer au plan Équipe à 299 €HT/mois."
+      ],
+      "threshold": "Vulko devient pertinent si générer des devis chiffrés à la voix ou en photo te fait vraiment gagner du temps face à un devis fait à la main, au-delà de 19 à 299 €HT/mois selon ton volume. Pour un logiciel BTP établi avec plus de recul, Axonaut ou Houzz Pro existent, mais aucun des deux n'a la spécialisation Factur-X et devis IA française de Vulko."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You're a tradesperson or small construction team who wants to generate priced quotes by voice or photo.",
+        "You want to be ready for the September 2026 Factur-X requirement without thinking about it.",
+        "You invoice from a job site, with or without a connection, and want to collect a deposit online."
+      ],
+      "avoidIf": [
+        "You want a verified track record through customer testimonials or an established user base.",
+        "You need a Sage, EBP or Cegid accounting integration today: they're announced but not yet shipped.",
+        "You invoice more than 200 quotes a month without wanting to move to the €299 excl. VAT/month Équipe plan."
+      ],
+      "threshold": "Vulko is worth it if generating priced quotes by voice or photo genuinely saves you time over a hand-written quote, beyond its €19-to-€299 excl. VAT/month range depending on volume. For an established construction tool with more track record, Axonaut or Houzz Pro exist, but neither has Vulko's French Factur-X and AI-quote specialization."
+    },
+    "pros": [
+      "Génération de devis par IA à la voix, en photo ou en texte libre, spécialisée pour 26 métiers du BTP.",
+      "Facturation conforme Factur-X avant l'obligation de septembre 2026.",
+      "Export comptable FEC et synchronisation Pennylane dès le plan Solo.",
+      "Mode hors-ligne avec synchronisation automatique sur chantier.",
+      "Changelog daté et actif, écarts fonctionnels documentés face aux concurrents nommés."
+    ],
+    "prosEn": [
+      "AI quote generation by voice, photo or free text, specialized for 26 construction trades.",
+      "Factur-X compliant invoicing ahead of the September 2026 requirement.",
+      "FEC accounting export and Pennylane sync from the Solo plan up.",
+      "Offline mode with automatic sync on job sites.",
+      "Dated, active changelog with documented functional gaps against named competitors."
+    ],
+    "cons": [
+      "Aucun témoignage client ni étude de cas publié pour vérifier les gains de temps annoncés.",
+      "Éditeur très jeune et de très petite taille (SASU à 100 € de capital, fondateur unique).",
+      "Intégrations Sage, EBP et Cegid annoncées mais pas encore livrées.",
+      "Comparatif concurrentiel publié par Vulko lui-même, à lire avec réserve."
+    ],
+    "consEn": [
+      "No customer testimonial or case study published to verify the claimed time savings.",
+      "Very young, very small publisher (SASU with €100 capital, single founder).",
+      "Sage, EBP and Cegid integrations announced but not yet shipped.",
+      "Competitor comparison published by Vulko itself, to be read with caution."
+    ],
+    "useCases": [
+      "Générer un devis chiffré en dictant la description d'un chantier.",
+      "Émettre une facture conforme Factur-X et suivre les paiements.",
+      "Faire signer un devis sur tablette et encaisser un acompte en ligne sur site."
+    ],
+    "useCasesEn": [
+      "Generate a priced quote by dictating a job-site description.",
+      "Issue a Factur-X compliant invoice and track payments.",
+      "Get a quote signed on a tablet and collect a deposit online on site."
+    ],
+    "covers": [
+      "devis-facturation-btp",
+      "facturation-electronique",
+      "signature-electronique"
+    ],
+    "functional_needs": [
+      "devis-facturation-btp",
+      "facturation-electronique"
+    ],
+    "relevantFor": [
+      "Artisans du BTP indépendants",
+      "Petites équipes du bâtiment",
+      "PME du BTP"
+    ],
+    "alternatives": [
+      "axonaut",
+      "houzz-pro"
+    ],
+    "seo": {
+      "idealForFr": "Idéal pour un artisan ou une petite équipe BTP qui veut générer des devis par IA et facturer conforme Factur-X.",
+      "idealForEn": "Ideal for a tradesperson or small construction team who wants AI-generated quotes and Factur-X compliant invoicing.",
+      "metaDescription": "Vulko : avis, prix dès 19 €HT/mois, devis par IA, Factur-X, signature électronique et alternatives pour artisans du BTP."
+    },
+    "articles": [],
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "tool_type": "metier",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "consultant-b2b",
+      "dev-freelance"
+    ],
+    "ia_use_case": [
+      "content-generation"
+    ],
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "personas": [],
+    "timeGainedHoursPerMonth": 5,
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [
+      "trade_profession",
+      "quotes_per_month",
+      "team_size"
+    ],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": {
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": false,
+      "default_decision_lane": "review_then_prescribe",
+      "auto_downgrade_allowed": false,
+      "never_auto_cancel_reason": null,
+      "requires_context_questions": true
+    },
+    "ogImageUrl": "https://vulko.fr/marketing/dashboard-hero.png",
+    "galleryImages": [
+      "https://vulko.fr/marketing/decouvrir/02-quote-new.png",
+      "https://vulko.fr/marketing/decouvrir/08-factures.png"
+    ],
+    "force_silence": false,
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 4,
+      "evidence": {
+        "valeurAjoutee": "Prix d'entrée à 19 €HT/mois, positionné par Vulko comme équivalent au prix d'entrée de Tolteck mais avec l'IA incluse. Claims chiffrés ('~5 min pour un devis complet', '~20x plus rapide qu'à la main') plausibles pour la catégorie mais non vérifiés indépendamment, et aucun témoignage client n'est publié pour les corroborer (source : vulko.fr, consulté le 2026-09-03).",
+        "simplicite": "Essai 14 jours sans carte, annulable en 1 clic. Saisie du devis pensée pour le terrain (dictée vocale ou photo du chantier plutôt que formulaire), adaptée à un public d'artisans peu enclins à taper du texte sur chantier (source : vulko.fr et capture 02-quote-new.png, consulté le 2026-09-03).",
+        "utilisation": "Captures d'écran publiques confirment un produit fonctionnel (tableau de bord, devis, factures, Factur-X), et un changelog daté montre un développement actif (10 août 2026 : mémorisation du style de rédaction IA ; 24 juillet 2026 : lancement iOS/Android). Signal de délivrabilité plus solide que de simples promesses marketing (source : vulko.fr/changelog, consulté le 2026-09-03).",
+        "puissance": "Combine génération de devis par IA, signature électronique eIDAS niveau 1 avec horodatage SHA-256, mode hors-ligne (Service Worker + IndexedDB) et récupération automatique des certifications RGE via l'API ADEME : des spécifications techniques précises et vérifiables, au-delà du discours marketing vague. Le comparatif publié par Vulko cite des écarts fonctionnels précis face à des concurrents nommés (Tolteck, Obat, EBP Bâtiment), mais reste une source auto-publiée, non indépendante (source : vulko.fr et vulko.fr/comparatif-logiciel-artisan-btp, consulté le 2026-09-03).",
+        "reversibilite": "Export comptable au format FEC (norme française standard) inclus dès le plan Solo, synchronisation Pennylane confirmée, en plus du droit RGPD standard à la portabilité mentionné dans la politique de confidentialité. Les intégrations Sage/EBP/Cegid annoncées ne sont pas encore livrées (source : vulko.fr et vulko.fr/confidentialite, consulté le 2026-09-03)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Entry price of €19 excl. VAT/month, positioned by Vulko as matching Tolteck's entry price but with AI included. Quantified claims ('~5 min per complete quote', '~20x faster than by hand') are plausible for the category but not independently verified, and no customer testimonial is published to back them up (source: vulko.fr, checked 2026-09-03).",
+        "simplicite": "14-day trial with no card, cancel in one click. Quote input is designed for the field (voice dictation or a job-site photo rather than a form), suited to tradespeople who aren't keen on typing on site (source: vulko.fr and screenshot 02-quote-new.png, checked 2026-09-03).",
+        "utilisation": "Public screenshots confirm a working product (dashboard, quotes, invoices, Factur-X), and a dated changelog shows active development (Aug 10, 2026: AI writing-style memory; Jul 24, 2026: iOS/Android launch). A stronger delivery signal than plain marketing promises (source: vulko.fr/changelog, checked 2026-09-03).",
+        "puissance": "Combines AI quote generation, eIDAS level-1 e-signature with SHA-256 timestamping, offline mode (Service Worker + IndexedDB) and automatic RGE certification lookup via the ADEME API: precise, verifiable technical specs beyond vague marketing talk. Vulko's own published comparison cites specific functional gaps against named competitors (Tolteck, Obat, EBP Bâtiment), but remains a self-published, non-independent source (source: vulko.fr and vulko.fr/comparatif-logiciel-artisan-btp, checked 2026-09-03).",
+        "reversibilite": "Accounting export in FEC format (standard French norm) included from the Solo plan, confirmed Pennylane sync, on top of the standard GDPR portability right mentioned in the privacy policy. Announced Sage/EBP/Cegid integrations are not yet shipped (source: vulko.fr and vulko.fr/confidentialite, checked 2026-09-03)."
+      },
+      "lastActivityVerifiedOn": "2026-08-10",
+      "notedOn": "2026-09-03"
+    }
   }
 ]
