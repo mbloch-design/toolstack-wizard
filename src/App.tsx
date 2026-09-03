@@ -200,6 +200,7 @@ export const AppRoutes = () => (
     <Route path="/tool/:slug" element={<RedirectToolToEn />} />
     <Route path="/article/:slug" element={<RedirectArticleToFr />} />
     <Route path="/category/:slug" element={<RedirectCategoryToEn />} />
+    <Route path="/submit" element={<RedirectSubmitReturn />} />
 
     <Route path="/:lang" element={<LangLayout />}>
       <Route index element={<HomePageV2 />} />
@@ -387,6 +388,19 @@ function RedirectBlogToGuide() {
 function RedirectCategoryToEn() {
   const { slug } = useParams();
   return <Navigate to={`/en/category/${slug}`} replace />;
+}
+
+/** Creem's Return URL has no language segment; recover it from the saved draft and re-enter the flow. */
+function RedirectSubmitReturn() {
+  const location = useLocation();
+  let lang = "fr";
+  try {
+    const draft = window.localStorage.getItem("tt_submit_draft");
+    if (draft) lang = JSON.parse(draft).lang === "en" ? "en" : "fr";
+  } catch {
+    // ignore malformed/unavailable storage, fall back to fr
+  }
+  return <Navigate to={`/${lang}/submit${location.search}`} replace />;
 }
 
 /** /v2 was the hidden preview of the new homepage — now the real homepage, so redirect there */
