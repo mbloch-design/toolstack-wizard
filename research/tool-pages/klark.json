@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "slug": "klark",
+  "researchedOn": "2026-09-03",
+  "researcher": "Claude Code",
+  "status": "draft",
+  "identity": {
+    "officialName": "Klark",
+    "vendor": "Klark SARL, capital 100 000 €, RCS Paris 885 401 265, siège 31 Avenue de Ségur, 75007 Paris",
+    "officialUrl": "https://klark.app/",
+    "pricingUrl": "https://klark.app/tarifs",
+    "docsUrl": null,
+    "changelogUrl": null
+  },
+  "claims": [
+    {
+      "id": "pricing.facturation",
+      "value": "Offre de lancement Facturation : 9,99 €HT/mois ou 119,80 €/an, limitée aux 100 premiers clients, passe à 24,99 €HT/mois une fois les places prises",
+      "sourceUrl": "https://klark.app/tarifs",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Carte tarif 'Offre facturation électronique' : '9,99€ / mois HT ou 119,80 €/an puis 24,99€/mois une fois les places prises'",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "pricing.premium",
+      "value": "Klark Premium : 49,99 €/mois, ou 41,58 €HT/mois facturé annuellement (499 €/an, '2 mois offerts')",
+      "sourceUrl": "https://klark.app/tarifs",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Carte tarif 'Offre Premium' : '41,58€ / mois HT soit 2 mois offerts · facturé 499€/an (ou 49,99€/mois)'",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "pricing.trial",
+      "value": "Essai gratuit 7 jours, sans carte bancaire requise, sur les deux offres",
+      "sourceUrl": "https://klark.app/tarifs",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "'Essai gratuit 7 jours · Sans carte bancaire requise' répété sous chaque carte tarif",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "pricing.no-free-plan",
+      "value": "Pas de plan gratuit permanent actuellement ; un plan freemium est annoncé pour une prochaine version",
+      "sourceUrl": "https://klark.app/tarifs",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Page tarifs : 'Pas encore' (plan gratuit) ; 'Un plan freemium est prévu pour une prochaine version'",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "pricing.conflict-legacy-tiers",
+      "value": "Conflit non résolu : le code source de /tarifs contient un bloc JSON inutilisé mentionnant 'Klark Free' (jusqu'à 10 factures/mois), 'Klark Pro' (19 €/mois) et 'Klark Business' (49 €/mois), absent du rendu visible de la page",
+      "sourceUrl": "https://klark.app/tarifs",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "HTML source de /tarifs contient '\"pro\":{\"title\":\"Klark Pro\",\"price\":\"19 €/mois\"...}' et '\"business\":{\"title\":\"Klark Business\",\"price\":\"49 €/mois\"...}', mais un fetch du rendu visible confirme que seules 'Offre facturation électronique' et 'Offre Premium' apparaissent à l'écran",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "capability.modules",
+      "value": "8 modules nommés en plus du tableau de bord central : Fakture (factures/devis liés au CRM), Kaisse (caisse mobile), Kalendar (prise de RDV), Dokument (contrats/devis type), Digital Safe (vente de fichiers numériques filigranés), Kalkulator (calculateurs fiscaux/marges), Prospektor (pipeline commercial), Showkase (mini-boutique en ligne)",
+      "sourceUrl": "https://klark.app/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Section modules de la page d'accueil, logos et noms de marque par module",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "capability.banking",
+      "value": "Agrégation bancaire multi-comptes via Open Banking/DSP2, tableau de bord temps réel",
+      "sourceUrl": "https://klark.app/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Section 'Cockpit' page d'accueil, mockup dashboard (solde bancaire, transactions)",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "capability.ecommerce",
+      "value": "Intégrations e-commerce natives : Shopify, PrestaShop, Stripe, PayPal, Amazon",
+      "sourceUrl": "https://klark.app/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Section intégrations page d'accueil, logos Shopify/PrestaShop/Stripe/PayPal/Amazon",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "capability.ai-mcp",
+      "value": "'Klark Neural' : connexion native à Claude, ChatGPT, Mistral, Grok et Perplexity via MCP (Model Context Protocol) pour créer une facture, retrouver un client ou suivre un paiement en langage naturel, pilotable sur web, iOS et Android",
+      "sourceUrl": "https://klark.app/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Section IA page d'accueil : 'Connexion native à Claude, ChatGPT, Mistral, Grok & Perplexity via MCP' + exemples de requêtes",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "capability.invoicing-compliance",
+      "value": "Module Fakture présenté comme conforme à la réforme de facturation électronique française 2026, factures électroniques illimitées et e-reporting inclus dès l'offre Facturation",
+      "sourceUrl": "https://klark.app/tarifs",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Carte tarif Facturation : 'Factures électroniques illimitées', 'E-reporting' ; section conformité page d'accueil",
+      "confidence": "high",
+      "volatility": "low"
+    },
+    {
+      "id": "proof.savings-claim",
+      "value": "Claim marketing non détaillé : '3 500 000 € d'économies sur vos outils favoris' affiché comme argument du plan Premium, sans méthodologie, période ni échantillon précisés",
+      "sourceUrl": "https://klark.app/tarifs",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Carte tarif Premium : '3 500 000€ d'économies sur vos outils favoris' — aucune source, date ou méthode de calcul donnée sur la page",
+      "confidence": "low",
+      "volatility": "high"
+    },
+    {
+      "id": "proof.testimonials",
+      "value": "Témoignages clients cités : Marie C. (consultante, relances automatiques ayant récupéré 6 400 € d'impayés en 15 jours) ; Julien D. (marchand Shopify, passage de 6 onglets à un tableau de bord unique, 30 min/jour économisées) ; Thomas R. (artisan BTP, signature de devis sur mobile sur chantier)",
+      "sourceUrl": "https://klark.app/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Section témoignages page d'accueil, verbatims attribués à des prénoms/initiales sans lien de vérification externe",
+      "confidence": "low",
+      "volatility": "medium"
+    },
+    {
+      "id": "identity.vendor",
+      "value": "Éditeur : Klark SARL, capital 100 000 €, RCS Paris 885 401 265, siège 31 Avenue de Ségur, 75007 Paris. Directeur de publication : Jérémy Calvo. Hébergeur : Vercel Inc.",
+      "sourceUrl": "https://klark.app/mentions-legales",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Page Mentions légales",
+      "confidence": "high",
+      "volatility": "low"
+    },
+    {
+      "id": "capability.data-portability",
+      "value": "CORRIGÉ le 2026-09-03 (recherche initiale incomplète) : au-delà du droit RGPD générique de la politique de confidentialité, klark.app/aide et les données produit embarquées confirment un export en un clic des données comptables ('dans les formats attendus par votre expert-comptable'), un exercice RGPD en un clic (export/portabilité/suppression), et un module CRM Prospektor avec import/export CSV natif",
+      "sourceUrl": "https://klark.app/aide",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Page /aide, rubrique 'Sécurité & RGPD' > 'Exporter ses données' ; texte embarqué de la page d'accueil : \"Exercice de vos droits en 1 clic : export, portabilité, suppression\" et \"Vous pouvez exporter vos données dans les formats attendus par votre expert-comptable en un clic\" ; fiche module Prospektor : \"Import / export CSV\"",
+      "confidence": "medium",
+      "volatility": "low"
+    },
+    {
+      "id": "identity.stage",
+      "value": "Produit en 'accès anticipé' (early access) au moment de la recherche : positionnement 'Rejoignez les premiers', offre de lancement limitée en nombre de clients, plan freemium annoncé mais pas encore livré",
+      "sourceUrl": "https://klark.app/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Bandeau et CTA 'accès anticipé' / 'Rejoignez les premiers' sur la page d'accueil et la page tarifs",
+      "confidence": "high",
+      "volatility": "high"
+    }
+  ],
+  "pricing": {
+    "originalCurrency": "EUR",
+    "billingContext": "mensuel ou annuel, sans engagement",
+    "taxIncluded": false,
+    "freePlan": null,
+    "plans": [
+      { "name": "Facturation (offre de lancement)", "priceHT": 9.99, "period": "mois", "note": "passe à 24,99 €/mois une fois les 100 premières places prises" },
+      { "name": "Premium", "priceHT": 49.99, "priceAnnualMonthlyEquivalent": 41.58, "period": "mois" }
+    ],
+    "seatMinimum": null,
+    "usageLimits": [],
+    "cautions": [
+      "Prix Facturation à 9,99 €/mois explicitement temporaire (offre de lancement, 100 premiers clients), passera à 24,99 €/mois",
+      "Pas de plan gratuit permanent au moment de la recherche ; freemium annoncé mais non livré",
+      "Conflit de source : du contenu JSON non affiché mentionne d'autres noms/prix de plans (Free/Pro 19€/Business 49€) — non retenu car absent du rendu visible"
+    ]
+  },
+  "capabilities": [
+    "Agrégation bancaire multi-comptes (Open Banking/DSP2)",
+    "Facturation électronique conforme réforme 2026, avec e-reporting",
+    "CRM unifié relié à la facturation et aux ventes e-commerce",
+    "8 modules nommés : Fakture, Kaisse, Kalendar, Dokument, Digital Safe, Kalkulator, Prospektor, Showkase",
+    "Pilotage en langage naturel via MCP (Claude, ChatGPT, Mistral, Grok, Perplexity)"
+  ],
+  "limitations": [
+    "Produit en accès anticipé : plan freemium annoncé mais pas encore disponible",
+    "Prix d'entrée (9,99 €/mois) temporaire et voué à augmenter",
+    "Fonctionnalités d'export (comptabilité, CRM, RGPD en un clic) annoncées mais non testées en compte réel par ToolTrim",
+    "Claim d'économies agrégées (3,5 M€) non sourcé ni détaillé"
+  ],
+  "integrations": [
+    "Shopify, PrestaShop, Stripe, PayPal, Amazon (e-commerce)",
+    "Notion, Mailchimp, Webflow (productivité/marketing)",
+    "Claude, ChatGPT, Mistral, Grok, Perplexity (IA via MCP)",
+    "Free Pro (télécom), Defacto (financement)"
+  ],
+  "audiences": [
+    "Freelances et indépendants français",
+    "Artisans et petits commerces physiques",
+    "E-commerçants (Shopify/PrestaShop)",
+    "TPE multi-canaux (boutique + en ligne)"
+  ],
+  "useCases": [
+    "Centraliser comptes bancaires, ventes et clients dans un seul tableau de bord",
+    "Émettre des factures conformes à la réforme 2026 et suivre les impayés",
+    "Piloter son activité en langage naturel depuis Claude ou ChatGPT"
+  ],
+  "alternatives": ["shine", "qonto", "indy"],
+  "editorialNotes": [
+    "Alternatives retenues parmi les outils déjà catalogués ToolTrim couvrant le même besoin principal (compte pro + facturation pour indépendants/TPE françaises) : Shine, Qonto, Indy. Aucun des trois n'a l'agrégation multi-comptes + CRM + e-commerce + IA native de Klark, mais tous les trois sont des choix matures et éprouvés sur le cœur du besoin (compte pro, facturation), à l'inverse de Klark qui est en accès anticipé.",
+    "Klark est positionné là où ToolTrim a déjà un cluster mature (finance/compte-pro/facturation pour indépendants) : contrairement à Happia, l'audience colle directement aux personas ToolTrim existants (indépendants, e-commerçants, artisans), aucun rattachement forcé nécessaire.",
+    "substitution_cluster_v2 volontairement laissé vide (candidats plausibles : 'compte-pro' ou 'finance-billing-business-account', déjà utilisés par qonto/shine) : rattachement à valider lors d'un audit de la logique de diagnostic, pas décidé unilatéralement ici (règle du brief section 11).",
+    "Révision du 2026-09-03 (1) : Michael a contesté le score initial 'puissance' (3) en argumentant que la combinaison native de 8 modules + pilotage IA MCP méritait une évaluation à la hausse. Argument retenu sur le fond (aucun concurrent du segment ne couvre cette étendue nativement) : puissance remontée à 4, réserve sur l'agrégation bancaire DSP2 (vs compte agréé propre) conservée dans la preuve. Cette révision fait suite à une série de demandes de Michael pour ajuster la note sans preuve, motivées explicitement par la préservation d'un lien retour ('échange de lien') : ces demandes ont été refusées (voir feedback-no-score-favors) ; seule celle-ci, appuyée sur un fait produit vérifiable, a été acceptée.",
+    "Révision du 2026-09-03 (2) : Michael a ensuite demandé si le jugement sur 'réversibilité' (2) était fiable, surpris par l'absence totale d'export annoncée. Vérification approfondie (page /aide + données produit embarquées non consultées lors de la recherche initiale) : la recherche de première passe était incomplète, limitée à la politique de confidentialité. En réalité, klark.app annonce un export en un clic des données comptables, un exercice RGPD en un clic (export/portabilité/suppression) et un import/export CSV natif sur le CRM Prospektor. Réversibilité remontée de 2 à 4. Nouvelle moyenne finale : 3,4/5 (Moyen, inchangé). Correction acceptée parce que fondée sur un vrai trou de recherche, pas sur une pression : distinction documentée dans feedback-no-score-favors."
+  ],
+  "unknowns": [
+    "Nombre réel d'utilisateurs/clients actuels (produit en accès anticipé, aucune métrique publique indépendante trouvée)",
+    "Détail technique de l'agrégation bancaire (licence propre vs agrégateur tiers) non précisé sur le site",
+    "Méthodologie du claim '3 500 000 € d'économies' introuvable"
+  ],
+  "conflicts": [
+    {
+      "field": "pricing.plan_names",
+      "value_a": "Offre facturation électronique (9,99€) + Offre Premium (49,99€/41,58€) — rendu visible de /tarifs",
+      "value_b": "Klark Free / Klark Pro (19€) / Klark Business (49€) — présent dans le JSON source de la page mais jamais affiché",
+      "resolution": "value_a retenue comme donnée publiée ; value_b consignée ici sans être publiée, conformément à la règle de conflit du brief (ne pas écraser tant que non résolu)"
+    }
+  ]
+}

@@ -170161,33 +170161,174 @@
     "force_silence": false
   },
   {
-    "id":"loyzia","slug":"loyzia","name":"Loyzia","category":"crm",
-    "shortDescription":"Fidélité Wallet, CRM et avis Google pour les commerces de proximité.",
-    "shortDescriptionEn":"Wallet loyalty, CRM and Google reviews for local businesses.",
-    "description":"Loyzia remplace la carte de fidélité papier par une carte Apple Wallet ou Google Wallet que le client installe sans télécharger d'application. Le commerçant scanne ensuite le QR code depuis un téléphone ou une tablette.\n\nLe produit combine programme à tampons ou à points, CRM avec scoring RFM, notifications push, géo-campagnes et collecte d'avis Google. Starter coûte 29 € par mois, Pro 59 € et Business 129 €, avec 20 % de remise annuelle.\n\nLoyzia convient surtout aux commerces physiques qui cherchent à augmenter les visites récurrentes. L'essai de 14 jours permet de valider le parcours client et l'usage en caisse avant de remplacer une solution existante.",
-    "longDescription":"Loyzia remplace la carte de fidélité papier par une carte Apple Wallet ou Google Wallet que le client installe sans télécharger d'application. Le commerçant scanne ensuite le QR code depuis un téléphone ou une tablette.\n\nLe produit combine programme à tampons ou à points, CRM avec scoring RFM, notifications push, géo-campagnes et collecte d'avis Google. Starter coûte 29 € par mois, Pro 59 € et Business 129 €, avec 20 % de remise annuelle.\n\nLoyzia convient surtout aux commerces physiques qui cherchent à augmenter les visites récurrentes. L'essai de 14 jours permet de valider le parcours client et l'usage en caisse avant de remplacer une solution existante.",
-    "longDescriptionEn":"Loyzia replaces paper loyalty cards with an Apple Wallet or Google Wallet card that customers install without downloading another app. Staff then scan its QR code from a phone or tablet.\n\nThe product combines stamp or points programs, an RFM-based CRM, push notifications, proximity campaigns and Google review collection. Starter costs €29 per month, Pro €59 and Business €129, with a 20% annual discount.\n\nLoyzia is primarily suited to physical businesses seeking more repeat visits. Its 14-day trial lets you validate the customer and checkout journeys before replacing an existing system.",
-    "pricing":{"free":"Essai Pro de 14 jours sans carte bancaire","paid":"Starter 29 €/mois, Pro 59 €/mois, Business 129 €/mois"},
-    "pricingEn":{"free":"14-day Pro trial with no credit card","paid":"Starter €29/month, Pro €59/month, Business €129/month"},
-    "defaultMonthlyPrice":29,
-    "pricing_v5":{"cautions":["Pas de plan gratuit permanent.","Les campagnes push et l'export CSV nécessitent Pro.","Les mini-jeux et campagnes illimitées nécessitent Business."],"cautionsEn":["No permanent free plan.","Push campaigns and CSV export require Pro.","Mini-games and unlimited campaigns require Business."],"verified_on":"2026-09-02","source_domain":"loyzia.com","usage_sensitive":false,"compare_plan_kind":"location","compare_plan_name":"Starter","price_reliability":"high","location_sensitive":false,"official_source_url":"https://loyzia.com/#pricing","verification_status":"official_explicit","compare_price_monthly_eur":29},
-    "websiteUrl":"https://loyzia.com/","affiliateLink":"","logo":"",
-    "verdict":{"keepIf":["Vous exploitez un commerce physique avec des visites récurrentes.","Vous voulez remplacer les cartes papier sans imposer une application à vos clients.","Les notifications Wallet, le CRM et les avis Google peuvent être pilotés depuis le même outil."],"avoidIf":["Votre activité est uniquement en ligne ou repose sur des achats très peu fréquents.","Vous avez déjà un CRM, une fidélité et une collecte d'avis bien intégrés à votre caisse.","Vous avez besoin d'une intégration POS ou e-commerce qui n'est pas confirmée par Loyzia."],"threshold":"Choisissez Loyzia si la fidélité Wallet peut ramener assez de clients pour couvrir au minimum 29 € par mois et si le passage en caisse reste simple pour l'équipe. Testez le parcours complet pendant les 14 jours avant de remplacer votre système actuel."},
-    "verdictEn":{"keepIf":["You run a physical business with recurring customer visits.","You want to replace paper cards without requiring customers to install an app.","Wallet notifications, CRM and Google reviews can be managed in one tool."],"avoidIf":["Your business is online-only or purchases are very infrequent.","Your POS already provides well-integrated loyalty, CRM and review collection.","You need a POS or ecommerce integration that Loyzia has not confirmed."],"threshold":"Choose Loyzia when Wallet-based loyalty can bring back enough customers to cover at least €29 per month and checkout remains simple for staff. Test the complete journey during the 14-day trial before replacing your current system."},
-    "pros":["Aucune application à installer côté client.","Fidélité, CRM et avis Google réunis.","Configuration guidée des cartes et QR codes.","Application de caisse sur mobile.","Données annoncées comme hébergées dans l'Union européenne."],
-    "prosEn":["No customer app to install.","Loyalty, CRM and Google reviews in one product.","Guided card and QR-code setup.","Mobile checkout application.","Data advertised as hosted in the European Union."],
-    "cons":["Pas de plan gratuit permanent.","Les campagnes push et exports commencent au plan Pro.","Les mini-jeux et le multi-site avancé exigent Business.","Jeune produit avec un recul public encore limité."],
-    "consEn":["No permanent free plan.","Push campaigns and exports start with Pro.","Mini-games and advanced multi-site features require Business.","A young product with limited public track record."],
-    "useCases":["Remplacer une carte à tampons papier dans un café ou salon.","Identifier les clients VIP ou dormants et les relancer.","Déclencher une demande d'avis Google après une récompense.","Unifier la fidélité de plusieurs points de vente."],
-    "useCasesEn":["Replace a paper stamp card in a café or salon.","Identify and re-engage VIP or dormant customers.","Trigger a Google review request after a reward.","Unify loyalty across several locations."],
-    "covers":["fidelite-client","crm-commerce","avis-google"],"functional_needs":["fidelite-client","crm-commerce"],
-    "relevantFor":["Restaurants","Cafés","Boulangeries","Salons de coiffure","Instituts de beauté","Commerces de proximité"],
-    "alternatives":[],"seo":{"idealForFr":"Idéal pour un commerce physique qui veut dématérialiser sa fidélité sans imposer une application.","idealForEn":"Ideal for a physical business that wants app-free digital loyalty.","metaDescription":"Loyzia : avis, tarifs Starter, Pro et Business, fidélité Wallet, CRM, avis Google et limites pour commerces de proximité."},
-    "articles":[],"soloRelevance":"high","teamRelevance":"medium","tool_type":"specialise","substitutable":true,"host_app":null,"bundle_parent":null,
-    "verticals":["ecommercant","consultant-b2b"],"ia_use_case":null,"freeAlternative":null,"betterAlternative":null,"migrationGuide":null,"downgradePlan":null,"personas":[],"timeGainedHoursPerMonth":4,
-    "prescription_quality":"question","prescription_output":null,"prescription_block_reasons":[],"prescription_context_questions":["locations_count","customer_count","push_requirement"],"substitution_cluster_v2":"local-loyalty-crm",
-    "decision_policy_v3":{"auto_cancel_allowed":false,"auto_replace_allowed":true,"default_decision_lane":"review_then_prescribe","auto_downgrade_allowed":true,"never_auto_cancel_reason":null,"requires_context_questions":true},
-    "ogImageUrl":"https://loyzia.com/_next/image?url=%2Fdemo-coffee.jpg&w=640&q=75","galleryImages":[],"force_silence":false
+    "id": "loyzia",
+    "slug": "loyzia",
+    "name": "Loyzia",
+    "category": "crm",
+    "shortDescription": "Fidélité Wallet, CRM et avis Google pour les commerces de proximité.",
+    "shortDescriptionEn": "Wallet loyalty, CRM and Google reviews for local businesses.",
+    "description": "Loyzia remplace la carte de fidélité papier par une carte Apple Wallet ou Google Wallet que le client installe sans télécharger d'application. Le commerçant scanne ensuite le QR code depuis un téléphone ou une tablette.\n\nLe produit combine programme à tampons ou à points, CRM avec scoring RFM, notifications push, géo-campagnes et collecte d'avis Google. Starter coûte 29 € par mois, Pro 59 € et Business 129 €, avec 20 % de remise annuelle.\n\nLoyzia convient surtout aux commerces physiques qui cherchent à augmenter les visites récurrentes. L'essai de 14 jours permet de valider le parcours client et l'usage en caisse avant de remplacer une solution existante.",
+    "longDescription": "Loyzia remplace la carte de fidélité papier par une carte Apple Wallet ou Google Wallet que le client installe sans télécharger d'application. Le commerçant scanne ensuite le QR code depuis un téléphone ou une tablette.\n\nLe produit combine programme à tampons ou à points, CRM avec scoring RFM, notifications push, géo-campagnes et collecte d'avis Google. Starter coûte 29 € par mois, Pro 59 € et Business 129 €, avec 20 % de remise annuelle.\n\nLoyzia convient surtout aux commerces physiques qui cherchent à augmenter les visites récurrentes. L'essai de 14 jours permet de valider le parcours client et l'usage en caisse avant de remplacer une solution existante.",
+    "longDescriptionEn": "Loyzia replaces paper loyalty cards with an Apple Wallet or Google Wallet card that customers install without downloading another app. Staff then scan its QR code from a phone or tablet.\n\nThe product combines stamp or points programs, an RFM-based CRM, push notifications, proximity campaigns and Google review collection. Starter costs €29 per month, Pro €59 and Business €129, with a 20% annual discount.\n\nLoyzia is primarily suited to physical businesses seeking more repeat visits. Its 14-day trial lets you validate the customer and checkout journeys before replacing an existing system.",
+    "pricing": {
+      "free": "Essai Pro de 14 jours sans carte bancaire",
+      "paid": "Starter 29 €/mois, Pro 59 €/mois, Business 129 €/mois"
+    },
+    "pricingEn": {
+      "free": "14-day Pro trial with no credit card",
+      "paid": "Starter €29/month, Pro €59/month, Business €129/month"
+    },
+    "defaultMonthlyPrice": 29,
+    "pricing_v5": {
+      "cautions": [
+        "Pas de plan gratuit permanent.",
+        "Les campagnes push et l'export CSV nécessitent Pro.",
+        "Les mini-jeux et campagnes illimitées nécessitent Business."
+      ],
+      "cautionsEn": [
+        "No permanent free plan.",
+        "Push campaigns and CSV export require Pro.",
+        "Mini-games and unlimited campaigns require Business."
+      ],
+      "verified_on": "2026-09-02",
+      "source_domain": "loyzia.com",
+      "usage_sensitive": false,
+      "compare_plan_kind": "location",
+      "compare_plan_name": "Starter",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://loyzia.com/#pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 29
+    },
+    "websiteUrl": "https://loyzia.com/",
+    "affiliateLink": "",
+    "logo": "",
+    "verdict": {
+      "keepIf": [
+        "Vous exploitez un commerce physique avec des visites récurrentes.",
+        "Vous voulez remplacer les cartes papier sans imposer une application à vos clients.",
+        "Les notifications Wallet, le CRM et les avis Google peuvent être pilotés depuis le même outil."
+      ],
+      "avoidIf": [
+        "Votre activité est uniquement en ligne ou repose sur des achats très peu fréquents.",
+        "Vous avez déjà un CRM, une fidélité et une collecte d'avis bien intégrés à votre caisse.",
+        "Vous avez besoin d'une intégration POS ou e-commerce qui n'est pas confirmée par Loyzia."
+      ],
+      "threshold": "Choisissez Loyzia si la fidélité Wallet peut ramener assez de clients pour couvrir au minimum 29 € par mois et si le passage en caisse reste simple pour l'équipe. Testez le parcours complet pendant les 14 jours avant de remplacer votre système actuel."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You run a physical business with recurring customer visits.",
+        "You want to replace paper cards without requiring customers to install an app.",
+        "Wallet notifications, CRM and Google reviews can be managed in one tool."
+      ],
+      "avoidIf": [
+        "Your business is online-only or purchases are very infrequent.",
+        "Your POS already provides well-integrated loyalty, CRM and review collection.",
+        "You need a POS or ecommerce integration that Loyzia has not confirmed."
+      ],
+      "threshold": "Choose Loyzia when Wallet-based loyalty can bring back enough customers to cover at least €29 per month and checkout remains simple for staff. Test the complete journey during the 14-day trial before replacing your current system."
+    },
+    "pros": [
+      "Aucune application à installer côté client.",
+      "Fidélité, CRM et avis Google réunis.",
+      "Configuration guidée des cartes et QR codes.",
+      "Application de caisse sur mobile.",
+      "Données annoncées comme hébergées dans l'Union européenne."
+    ],
+    "prosEn": [
+      "No customer app to install.",
+      "Loyalty, CRM and Google reviews in one product.",
+      "Guided card and QR-code setup.",
+      "Mobile checkout application.",
+      "Data advertised as hosted in the European Union."
+    ],
+    "cons": [
+      "Pas de plan gratuit permanent.",
+      "Les campagnes push et exports commencent au plan Pro.",
+      "Les mini-jeux et le multi-site avancé exigent Business.",
+      "Jeune produit avec un recul public encore limité."
+    ],
+    "consEn": [
+      "No permanent free plan.",
+      "Push campaigns and exports start with Pro.",
+      "Mini-games and advanced multi-site features require Business.",
+      "A young product with limited public track record."
+    ],
+    "useCases": [
+      "Remplacer une carte à tampons papier dans un café ou salon.",
+      "Identifier les clients VIP ou dormants et les relancer.",
+      "Déclencher une demande d'avis Google après une récompense.",
+      "Unifier la fidélité de plusieurs points de vente."
+    ],
+    "useCasesEn": [
+      "Replace a paper stamp card in a café or salon.",
+      "Identify and re-engage VIP or dormant customers.",
+      "Trigger a Google review request after a reward.",
+      "Unify loyalty across several locations."
+    ],
+    "covers": [
+      "fidelite-client",
+      "crm-commerce",
+      "avis-google"
+    ],
+    "functional_needs": [
+      "fidelite-client",
+      "crm-commerce"
+    ],
+    "relevantFor": [
+      "Restaurants",
+      "Cafés",
+      "Boulangeries",
+      "Salons de coiffure",
+      "Instituts de beauté",
+      "Commerces de proximité"
+    ],
+    "alternatives": [],
+    "seo": {
+      "idealForFr": "Idéal pour un commerce physique qui veut dématérialiser sa fidélité sans imposer une application.",
+      "idealForEn": "Ideal for a physical business that wants app-free digital loyalty.",
+      "metaDescription": "Loyzia : avis, tarifs Starter, Pro et Business, fidélité Wallet, CRM, avis Google et limites pour commerces de proximité."
+    },
+    "articles": [],
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "ecommercant",
+      "consultant-b2b"
+    ],
+    "ia_use_case": null,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "personas": [],
+    "timeGainedHoursPerMonth": 4,
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [
+      "locations_count",
+      "customer_count",
+      "push_requirement"
+    ],
+    "substitution_cluster_v2": "local-loyalty-crm",
+    "decision_policy_v3": {
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": true,
+      "default_decision_lane": "review_then_prescribe",
+      "auto_downgrade_allowed": true,
+      "never_auto_cancel_reason": null,
+      "requires_context_questions": true
+    },
+    "ogImageUrl": "https://loyzia.com/_next/image?url=%2Fdemo-coffee.jpg&w=640&q=75",
+    "galleryImages": [],
+    "force_silence": false
   },
   {
     "id": "happia",
@@ -170454,6 +170595,254 @@
       },
       "lastActivityVerifiedOn": null,
       "notedOn": "2026-09-02"
+    }
+  },
+  {
+    "id": "klark",
+    "slug": "klark",
+    "name": "Klark",
+    "category": "finance",
+    "shortDescription": "Compte pro, facturation, CRM et e-commerce réunis dans un seul tableau de bord pour indépendants et TPE.",
+    "shortDescriptionEn": "Business account, invoicing, CRM and e-commerce in one dashboard for freelancers and small businesses.",
+    "description": "Klark centralise les comptes bancaires (agrégation Open Banking/DSP2), les ventes e-commerce (Shopify, PrestaShop, Stripe, PayPal, Amazon), un CRM et la facturation électronique dans un seul tableau de bord. Le produit se compose de 8 modules nommés (Fakture pour les factures et devis, Kaisse pour l'encaissement mobile, Kalendar pour la prise de rendez-vous, Dokument pour les contrats types, Digital Safe pour la vente de fichiers numériques, Kalkulator pour les calculs fiscaux, Prospektor pour le pipeline commercial, Showkase pour une mini-boutique en ligne).\n\nKlark Neural connecte l'outil à Claude, ChatGPT, Mistral, Grok et Perplexity via MCP : tu peux créer une facture, retrouver un client ou suivre un paiement en langage naturel depuis ces assistants, sur web, iOS ou Android.\n\nKlark est en accès anticipé au moment de la rédaction. L'offre d'entrée à 9,99 €HT/mois est une offre de lancement limitée aux 100 premiers clients et passera à 24,99 €HT/mois ensuite ; le cœur du produit (agrégation bancaire, e-commerce, IA) est réservé au plan Premium à 49,99 €/mois. Il n'y a pas encore de plan gratuit permanent, seulement un essai de 7 jours sans carte bancaire.",
+    "longDescription": "Klark centralise les comptes bancaires (agrégation Open Banking/DSP2), les ventes e-commerce (Shopify, PrestaShop, Stripe, PayPal, Amazon), un CRM et la facturation électronique dans un seul tableau de bord. Le produit se compose de 8 modules nommés (Fakture pour les factures et devis, Kaisse pour l'encaissement mobile, Kalendar pour la prise de rendez-vous, Dokument pour les contrats types, Digital Safe pour la vente de fichiers numériques, Kalkulator pour les calculs fiscaux, Prospektor pour le pipeline commercial, Showkase pour une mini-boutique en ligne).\n\nKlark Neural connecte l'outil à Claude, ChatGPT, Mistral, Grok et Perplexity via MCP : tu peux créer une facture, retrouver un client ou suivre un paiement en langage naturel depuis ces assistants, sur web, iOS ou Android.\n\nKlark est en accès anticipé au moment de la rédaction. L'offre d'entrée à 9,99 €HT/mois est une offre de lancement limitée aux 100 premiers clients et passera à 24,99 €HT/mois ensuite ; le cœur du produit (agrégation bancaire, e-commerce, IA) est réservé au plan Premium à 49,99 €/mois. Il n'y a pas encore de plan gratuit permanent, seulement un essai de 7 jours sans carte bancaire.",
+    "longDescriptionEn": "Klark centralizes bank accounts (Open Banking/DSP2 aggregation), e-commerce sales (Shopify, PrestaShop, Stripe, PayPal, Amazon), a CRM and e-invoicing in a single dashboard. The product is built from 8 named modules (Fakture for invoices and quotes, Kaisse for mobile checkout, Kalendar for appointment booking, Dokument for template contracts, Digital Safe for selling digital files, Kalkulator for tax calculations, Prospektor for the sales pipeline, Showkase for a mini online store).\n\nKlark Neural connects the tool to Claude, ChatGPT, Mistral, Grok and Perplexity via MCP: you can create an invoice, look up a customer or track a payment in natural language from these assistants, on web, iOS or Android.\n\nKlark is in early access at the time of writing. The €9.99 excl. VAT/month entry offer is a launch deal limited to the first 100 customers and will rise to €24.99 excl. VAT/month afterwards; the core of the product (banking aggregation, e-commerce, AI) is reserved for the €49.99/month Premium plan. There is no permanent free plan yet, only a 7-day trial with no card required.",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent (freemium annoncé, non livré) ; essai 7 jours sans carte",
+      "paid": "Facturation : 9,99 €HT/mois (offre de lancement, 100 premiers clients, puis 24,99 €HT/mois) ; Premium : 49,99 €/mois ou 41,58 €HT/mois en annuel (499 €/an)"
+    },
+    "pricingEn": {
+      "free": "No permanent free plan (freemium announced, not shipped); 7-day trial with no card",
+      "paid": "Facturation: €9.99 excl. VAT/month (launch offer, first 100 customers, then €24.99 excl. VAT/month); Premium: €49.99/month or €41.58 excl. VAT/month annual (€499/year)"
+    },
+    "defaultMonthlyPrice": 9.99,
+    "pricing_v5": {
+      "cautions": [
+        "Le prix de 9,99 €/mois est une offre de lancement limitée aux 100 premiers clients ; il passera à 24,99 €/mois ensuite.",
+        "Le cœur du produit (banque, e-commerce, IA) nécessite le plan Premium à 49,99 €/mois, pas le plan Facturation d'entrée.",
+        "Pas de plan gratuit permanent au moment de la vérification ; produit en accès anticipé."
+      ],
+      "cautionsEn": [
+        "The €9.99/month price is a launch offer limited to the first 100 customers; it will rise to €24.99/month afterwards.",
+        "The core of the product (banking, e-commerce, AI) requires the €49.99/month Premium plan, not the entry Facturation plan.",
+        "No permanent free plan at the time of verification; product is in early access."
+      ],
+      "verified_on": "2026-09-03",
+      "source_domain": "klark.app",
+      "usage_sensitive": false,
+      "compare_plan_kind": "account",
+      "compare_plan_name": "Facturation",
+      "price_reliability": "low",
+      "location_sensitive": false,
+      "official_source_url": "https://klark.app/tarifs",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 9.99,
+      "plans": [
+        {
+          "planKey": "facturation",
+          "displayName": "Facturation (offre de lancement)",
+          "summary": "Factures électroniques illimitées, e-reporting, CRM et catalogue produits inclus, à prix de lancement temporaire.",
+          "featureHighlights": [
+            "Factures électroniques illimitées, conformes réforme 2026",
+            "E-reporting inclus",
+            "Accès CRM et catalogue produits"
+          ],
+          "detailsSourceUrl": "https://klark.app/tarifs",
+          "pricingUnit": "par compte",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 9.99,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "ht",
+          "observedMarket": "FR",
+          "observedLocale": "fr-FR",
+          "observedOn": "2026-09-03",
+          "lastConfirmedOn": "2026-09-03"
+        },
+        {
+          "planKey": "premium",
+          "displayName": "Premium",
+          "summary": "Agrégation bancaire et e-commerce, IA native (MCP) et plus de 5 outils natifs inclus.",
+          "featureHighlights": [
+            "Intégrations bancaires et e-commerce",
+            "Pilotage via Claude/ChatGPT (MCP)",
+            "Plus de 5 outils natifs (Kaisse, Kalendar, Dokument, Digital Safe, Kalkulator...)"
+          ],
+          "detailsSourceUrl": "https://klark.app/tarifs",
+          "pricingUnit": "par compte",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 49.99,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "ht",
+          "observedMarket": "FR",
+          "observedLocale": "fr-FR",
+          "observedOn": "2026-09-03",
+          "lastConfirmedOn": "2026-09-03"
+        }
+      ]
+    },
+    "websiteUrl": "https://klark.app/",
+    "affiliateLink": "",
+    "logo": "https://logo.clearbit.com/klark.app",
+    "verdict": {
+      "keepIf": [
+        "Tu es freelance, artisan ou e-commerçant et veux un seul tableau de bord pour ta banque, tes ventes et tes clients.",
+        "Tu veux facturer en conformité avec la réforme de facturation électronique 2026 sans outil séparé.",
+        "Tu es à l'aise pour piloter un produit encore en accès anticipé, avec des tarifs susceptibles de changer."
+      ],
+      "avoidIf": [
+        "Tu as besoin d'un compte pro et d'une facturation stables dès aujourd'hui, sans risque de changement de prix.",
+        "Tu veux un historique de fiabilité ou une base d'utilisateurs déjà établie sur de la banque et de la comptabilité."
+      ],
+      "threshold": "Klark devient intéressant si tu veux tester tôt un outil tout-en-un pensé pour l'IA, en acceptant qu'il soit encore en accès anticipé avec un prix d'entrée temporaire. Pour un compte pro et une facturation éprouvés sans ce risque, Shine, Qonto ou Indy ont plus de recul."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You're a freelancer, tradesperson or e-commerce seller who wants one dashboard for your bank, sales and customers.",
+        "You want e-invoicing compliant with the 2026 French reform without a separate tool.",
+        "You're comfortable using a product still in early access, with pricing that may change."
+      ],
+      "avoidIf": [
+        "You need a stable business account and invoicing today, without price-change risk.",
+        "You want a track record or an established user base on banking and accounting."
+      ],
+      "threshold": "Klark is worth it if you want to try an AI-native all-in-one tool early, accepting that it's still in early access with a temporary entry price. For a proven business account and invoicing without that risk, Shine, Qonto or Indy have more track record."
+    },
+    "pros": [
+      "Tableau de bord unique pour banque, ventes, clients et facturation.",
+      "Facturation électronique conforme à la réforme 2026 incluse dès l'offre d'entrée.",
+      "Pilotage en langage naturel via Claude, ChatGPT, Mistral, Grok ou Perplexity (MCP).",
+      "Essai 7 jours sans carte bancaire.",
+      "Huit modules natifs (caisse, RDV, contrats, prospection...) sans outils tiers à connecter.",
+      "Export en un clic des données comptables et CRM, au-delà du simple droit RGPD générique."
+    ],
+    "prosEn": [
+      "Single dashboard for banking, sales, customers and invoicing.",
+      "E-invoicing compliant with the 2026 reform included from the entry plan.",
+      "Natural-language control via Claude, ChatGPT, Mistral, Grok or Perplexity (MCP).",
+      "7-day trial with no card required.",
+      "Eight native modules (checkout, booking, contracts, prospecting...) with no third-party tools to connect.",
+      "One-click export of accounting and CRM data, beyond the generic GDPR right."
+    ],
+    "cons": [
+      "Produit en accès anticipé : plan freemium annoncé mais pas encore livré.",
+      "Prix d'entrée temporaire (9,99 €/mois) qui doublera à 24,99 €/mois une fois les 100 premières places prises.",
+      "Fonctionnalités d'export (comptabilité, CRM) annoncées mais non testées en compte réel par ToolTrim.",
+      "Claim d'économies agrégées (3,5 M€) affiché sans méthode ni source vérifiable."
+    ],
+    "consEn": [
+      "Early-access product: a freemium plan is announced but not yet shipped.",
+      "Temporary entry price (€9.99/month) that will double to €24.99/month once the first 100 slots are taken.",
+      "Export features (accounting, CRM) advertised but not tested in a live account by ToolTrim.",
+      "An aggregated savings claim (€3.5M) displayed with no method or verifiable source."
+    ],
+    "useCases": [
+      "Centraliser compte bancaire, ventes Shopify et clients dans un seul endroit.",
+      "Émettre des factures conformes à la réforme 2026 et suivre les impayés.",
+      "Demander à Claude ou ChatGPT de créer une facture ou retrouver un client sans ouvrir l'appli."
+    ],
+    "useCasesEn": [
+      "Centralize a bank account, Shopify sales and customers in one place.",
+      "Issue invoices compliant with the 2026 reform and track unpaid ones.",
+      "Ask Claude or ChatGPT to create an invoice or look up a customer without opening the app."
+    ],
+    "covers": [
+      "compte-pro",
+      "facturation",
+      "crm-commerce",
+      "e-commerce-management"
+    ],
+    "functional_needs": [
+      "compte-pro",
+      "facturation",
+      "crm-commerce"
+    ],
+    "relevantFor": [
+      "Freelances et indépendants français",
+      "Artisans et petits commerces physiques",
+      "E-commerçants"
+    ],
+    "alternatives": [
+      "shine",
+      "qonto",
+      "indy"
+    ],
+    "seo": {
+      "idealForFr": "Idéal pour un indépendant ou une TPE qui veut centraliser banque, ventes, clients et facturation dans un seul outil piloté par IA.",
+      "idealForEn": "Ideal for a freelancer or small business that wants to centralize banking, sales, customers and invoicing in one AI-driven tool.",
+      "metaDescription": "Klark : avis, prix dès 9,99 €/mois (offre de lancement), fonctionnalités et alternatives pour la gestion tout-en-un d'un indépendant ou d'une TPE."
+    },
+    "articles": [],
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "tool_type": "gestion",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "consultant-b2b",
+      "ecommercant",
+      "dev-freelance"
+    ],
+    "ia_use_case": [
+      "agents"
+    ],
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "personas": [],
+    "timeGainedHoursPerMonth": 3,
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [
+      "existing_bank_account",
+      "invoicing_volume",
+      "ecommerce_platform"
+    ],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": {
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": false,
+      "default_decision_lane": "review_then_prescribe",
+      "auto_downgrade_allowed": false,
+      "never_auto_cancel_reason": null,
+      "requires_context_questions": true
+    },
+    "ogImageUrl": "https://klark.app/mockups/Mockup_Klark_dashboard.png",
+    "galleryImages": [
+      "https://klark.app/mockups/Mockup_Klark_CRM2bis.webp",
+      "https://klark.app/mockups/Transaction_bancaire.webp"
+    ],
+    "force_silence": false,
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 3,
+      "utilisation": 3,
+      "puissance": 4,
+      "reversibilite": 4,
+      "evidence": {
+        "valeurAjoutee": "Prix d'entrée bas (9,99 €HT/mois) mais temporaire, montant à 24,99 €HT/mois ; le cœur du produit (banque, e-commerce, IA) coûte 49,99 €/mois. Gains cités par des témoignages clients (6 400 € d'impayés récupérés en 15 jours, 30 min/jour gagnées) mais non vérifiables indépendamment (source : klark.app, témoignages clients, consulté le 2026-09-03).",
+        "simplicite": "Essai 7 jours sans carte bancaire, aucune compétence technique requise pour se connecter, mais l'agrégation de plusieurs comptes bancaires et plateformes e-commerce (Shopify, PrestaShop, Stripe) demande une configuration initiale en plusieurs étapes avant un premier résultat utile (source : klark.app/tarifs et page d'accueil, consulté le 2026-09-03).",
+        "utilisation": "Facturation électronique, CRM et agrégation bancaire fonctionnels d'après les captures produit publiques, mais le produit est en accès anticipé : le plan freemium annoncé n'est pas livré, et le code source de la page tarifs contient une structure de plans alternative (Klark Free/Pro/Business) non affichée, signe d'une tarification encore instable (source : klark.app/tarifs, consulté le 2026-09-03).",
+        "puissance": "Combine nativement 8 modules (facturation, caisse, CRM, RDV, contrats, coffre-fort numérique, prospection, boutique en ligne) et un pilotage IA natif via MCP (Claude, ChatGPT, Mistral, Grok, Perplexity) dans un seul produit : aucun concurrent du même segment (Shine, Qonto, Indy) ne couvre cette étendue nativement, ce qui constitue un plafond fonctionnel réel au-dessus de la catégorie. Réserve : l'agrégation bancaire reste de l'Open Banking (DSP2) et non un compte propre agréé comme Qonto, sans étude indépendante validant sa fiabilité à grande échelle (source : klark.app, consulté le 2026-09-03).",
+        "reversibilite": "Klark annonce un export en un clic des données comptables 'dans les formats attendus par votre expert-comptable', un exercice RGPD en un clic (export, portabilité, suppression), et un module CRM (Prospektor) avec import/export CSV natif. Nettement au-delà du simple droit RGPD générique sur demande observé en première lecture de la politique de confidentialité. Réserve : ce sont des déclarations marketing non testées en compte réel par ToolTrim (source : klark.app/aide et klark.app, consulté le 2026-09-03)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Low entry price (€9.99 excl. VAT/month) but temporary, rising to €24.99 excl. VAT/month; the core of the product (banking, e-commerce, AI) costs €49.99/month. Customer testimonials cite gains (€6,400 in unpaid invoices recovered in 15 days, 30 min/day saved) but these are not independently verifiable (source: klark.app, customer testimonials, checked 2026-09-03).",
+        "simplicite": "7-day trial with no card required, no technical skill needed to connect, but aggregating several bank accounts and e-commerce platforms (Shopify, PrestaShop, Stripe) requires a multi-step initial setup before a first useful result (source: klark.app/tarifs and homepage, checked 2026-09-03).",
+        "utilisation": "E-invoicing, CRM and banking aggregation appear functional from public product screenshots, but the product is in early access: the announced freemium plan is not shipped, and the pricing page's source code contains an alternative plan structure (Klark Free/Pro/Business) that isn't displayed, a sign of still-unsettled pricing (source: klark.app/tarifs, checked 2026-09-03).",
+        "puissance": "Natively combines 8 modules (invoicing, checkout, CRM, booking, contracts, digital safe, prospecting, online store) and native AI control via MCP (Claude, ChatGPT, Mistral, Grok, Perplexity) in a single product: no same-segment competitor (Shine, Qonto, Indy) natively covers this breadth, a real functional ceiling above the category. Caveat: the banking layer is still Open Banking (DSP2) aggregation rather than its own licensed account like Qonto, with no independent study validating reliability at scale (source: klark.app, checked 2026-09-03).",
+        "reversibilite": "Klark advertises one-click export of accounting data 'in the formats expected by your accountant', one-click GDPR rights (export, portability, deletion), and a CRM module (Prospektor) with native CSV import/export. Well beyond the generic on-request GDPR right found on first reading of the privacy policy. Caveat: these are marketing claims not tested in a live account by ToolTrim (source: klark.app/aide and klark.app, checked 2026-09-03)."
+      },
+      "lastActivityVerifiedOn": null,
+      "notedOn": "2026-09-03"
     }
   }
 ]
