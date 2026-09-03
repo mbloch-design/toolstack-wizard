@@ -140,7 +140,7 @@ const SubmitToolPage = () => {
     window.setTimeout(() => setCodeCopied(false), 1800);
   };
 
-  const sendProgressEmail = async (progressStep: 1 | 2) => {
+  const sendProgressEmail = async (progressStep: 1 | 2 | 3, paidFlag = false) => {
     const signature = `${progressStep}:${JSON.stringify(submission)}`;
     if (sentProgressRef.current.has(signature)) return;
     const endpoint = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
@@ -149,7 +149,7 @@ const SubmitToolPage = () => {
     const response = await fetch(endpoint, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...submission, progressStep, lang }),
+      body: JSON.stringify({ ...submission, progressStep, paid: paidFlag, lang }),
     });
     if (!response.ok) throw new Error("progress_email_failed");
     sentProgressRef.current.add(signature);
@@ -246,6 +246,9 @@ const SubmitToolPage = () => {
       // ignore storage failure, checkout still opens
     }
     trackEvent("submit_pay_skip_badge", { tool_name: submission.toolName });
+    sendProgressEmail(3, true).catch(() => {
+      // best-effort notification, checkout still opens regardless
+    });
   };
 
   const submit = async () => {

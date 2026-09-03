@@ -30,8 +30,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method === "OPTIONS") return res.status(204).end();
   if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
 
-  const { progressStep, toolName, toolUrl, submitterRole, name, email, message, badgeUrl, lang } = req.body ?? {};
-  if (![1, 2].includes(progressStep) || !toolName || !submitterRole || !name || !message || !validEmail(email) || !validHttpsUrl(toolUrl)) {
+  const { progressStep, toolName, toolUrl, submitterRole, name, email, message, badgeUrl, paid, lang } = req.body ?? {};
+  if (![1, 2, 3].includes(progressStep) || !toolName || !submitterRole || !name || !message || !validEmail(email) || !validHttpsUrl(toolUrl)) {
     return res.status(400).json({ error: "Invalid submission progress" });
   }
   if ([toolName, submitterRole, name, email].some((value) => String(value).length > 300) || String(message).length > 2000) {
@@ -41,15 +41,18 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     return res.status(400).json({ error: "Invalid badge URL" });
   }
 
-  const stepLabel = progressStep === 1 ? "Informations reçues" : "Badge vérifié";
+  const isPaid = Boolean(paid);
+  const stepLabel = progressStep === 1 ? "Informations reçues" : progressStep === 2 ? "Badge vérifié" : "Paiement engagé (Creem)";
+  const paidTag = isPaid ? "[Payante] " : "";
   const { error } = await resend.emails.send({
     from: "ToolTrim Submissions <contact@tooltrim.com>",
     to: "contact@tooltrim.com",
     replyTo: String(email),
-    subject: `[Soumission — étape ${progressStep}/3] ${String(toolName).replace(/[\r\n]/g, " ")} — ${stepLabel}`,
+    subject: `${paidTag}[Soumission — étape ${progressStep}/3] ${String(toolName).replace(/[\r\n]/g, " ")} — ${stepLabel}`,
     html: `
       <h1>Soumission d’un outil — étape ${progressStep}/3</h1>
       <p><strong>État :</strong> ${stepLabel}</p>
+      <p><strong>Type de soumission :</strong> ${isPaid ? "Payante — publication garantie" : "Gratuite — badge"}</p>
       <p><strong>Langue du parcours :</strong> ${escapeHtml(lang)}</p>
       <hr />
       <p><strong>Outil :</strong> ${escapeHtml(toolName)}</p>
