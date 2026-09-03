@@ -171269,7 +171269,8 @@
           "observedOn": "2026-09-03",
           "lastConfirmedOn": "2026-09-03"
         }
-      ]
+      ],
+      "showCostTable": false
     },
     "websiteUrl": "https://vulko.fr/",
     "affiliateLink": "",
@@ -171396,10 +171397,10 @@
       "never_auto_cancel_reason": null,
       "requires_context_questions": true
     },
-    "ogImageUrl": "https://vulko.fr/marketing/dashboard-hero.png",
+    "ogImageUrl": "/tool-media/vulko/dashboard.png",
     "galleryImages": [
-      "https://vulko.fr/marketing/decouvrir/02-quote-new.png",
-      "https://vulko.fr/marketing/decouvrir/08-factures.png"
+      "/tool-media/vulko/quote-new.png",
+      "/tool-media/vulko/factures.png"
     ],
     "force_silence": false,
     "toolTrimRating": {
