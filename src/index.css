@@ -9076,17 +9076,20 @@
   }
   .td-score-meter {
     display: flex;
-    gap: 4px;
+    gap: 3px;
     flex-shrink: 0;
   }
-  .td-score-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--color-border);
+  /* Stars, not dots — a dot at 8px reads as noise; a star silhouette reads
+     as a rating at a glance. Unearned stars keep a visible outline
+     (Iconoir's stroke-only "Star", not a near-invisible faint fill) so the
+     5-star scale stays legible instead of trailing off into the
+     background. */
+  .td-score-star {
+    flex-shrink: 0;
+    color: var(--color-border-strong);
   }
-  .td-score-dot--filled {
-    background: var(--color-text);
+  .td-score-star--filled {
+    color: var(--color-text);
   }
   .td-score-axis-evidence {
     font-family: var(--font-ui);

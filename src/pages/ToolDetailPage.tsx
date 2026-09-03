@@ -3,7 +3,7 @@ import { useLang } from "@/hooks/useLang";
 import { useCurrency } from "@/hooks/useCurrency";
 import { useToolBySlug, useToolSummaries, useCategories } from "@/hooks/useSupabaseData";
 import { useEffect, useRef, useState } from "react";
-import { ArrowRight, Check, CirclePlus, CircleMinus, ExternalLink, Lightbulb } from "@/lib/icons";
+import { ArrowRight, Check, CirclePlus, CircleMinus, ExternalLink, Lightbulb, Star, StarSolid } from "@/lib/icons";
 import ToolLogo from "@/components/ToolLogo";
 import Breadcrumb from "@/components/Breadcrumb";
 import { setSeoTags, setMeta, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
@@ -918,9 +918,11 @@ const ToolDetailPage = () => {
                                   <div className="td-score-axis-row">
                                     <span className="td-score-axis-name">{t(labelFr, labelEn)}</span>
                                     <div className="td-score-meter" aria-label={`${value}/5`}>
-                                      {[1, 2, 3, 4, 5].map((i) => (
-                                        <span key={i} className={`td-score-dot${i <= value ? " td-score-dot--filled" : ""}`} aria-hidden="true" />
-                                      ))}
+                                      {[1, 2, 3, 4, 5].map((i) =>
+                                        i <= value
+                                          ? <StarSolid key={i} size={16} className="td-score-star td-score-star--filled" aria-hidden="true" />
+                                          : <Star key={i} size={16} className="td-score-star" aria-hidden="true" />
+                                      )}
                                     </div>
                                   </div>
                                   {evidenceText && (
