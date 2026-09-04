@@ -1,16 +1,39 @@
 import { useLang } from "@/hooks/useLang";
 import Breadcrumb from "@/components/Breadcrumb";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { setSeoTags, setHreflang, cleanupSeo } from "@/lib/seo";
+
+// Fixed section ids, same scroll-spy approach as MethodologyPage's TOC_IDS.
+const TOC_IDS = ["financement", "refus", "prix", "notation", "donnees"] as const;
 
 /**
  * Transparency — long-form editorial piece, voice-led.
- * Reuses .ab-* (article) classes from About / Methodology. Same shape:
- * hero with date stamp, lede with endmark, 5 prose sections, quiet CTA.
+ * Reuses .ab-* (article) classes from About / Methodology, and the same
+ * sticky-TOC + reading-column grid (.ga-body-grid) as Methodology now that
+ * this page carries five sections including a full ratings breakdown.
  */
 const TransparencyPage = () => {
   const { t, prefix, lang } = useLang();
+
+  const [activeHeading, setActiveHeading] = useState<string>(TOC_IDS[0]);
+  useEffect(() => {
+    setActiveHeading((current) => current || TOC_IDS[0]);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+        if (visible?.target.id) setActiveHeading(visible.target.id);
+      },
+      { rootMargin: "-18% 0px -68% 0px", threshold: [0, 1] },
+    );
+    TOC_IDS.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, []);
 
   const now = new Date();
   const monthFr = ["janv.", "févr.", "mars", "avr.", "mai", "juin", "juil.", "août", "sept.", "oct.", "nov.", "déc."];
@@ -21,8 +44,8 @@ const TransparencyPage = () => {
 
   useEffect(() => {
     const title = t(
-      "Transparence | ToolTrim — Comment on se finance, ce qu'on refuse",
-      "Transparency | ToolTrim — How we make money, what we refuse",
+      "Transparence | ToolTrim : comment on se finance, ce qu'on refuse",
+      "Transparency | ToolTrim: how we make money, what we refuse",
     );
     const desc = t(
       "Liens affiliés, oui. Influence sur le verdict, non. Voici exactement comment ToolTrim se finance, comment on note, et ce qu'on fait de vos données.",
@@ -57,9 +80,30 @@ const TransparencyPage = () => {
         </div>
       </section>
 
-      {/* ── Article body ──────────────────────────────────────── */}
+      {/* ── Article body: sticky TOC + reading column, same ga-body-grid
+          pattern as Methodology, now that this page holds five sections
+          including a full ratings breakdown. ── */}
       <article className="ab-article">
-        <div className="ab-container">
+        <div className="ga-body-grid">
+
+          <aside className="ga-toc-col">
+            <p className="ga-toc-label">{t("Sommaire", "Contents")}</p>
+            <nav className="ga-toc-nav">
+              {([
+                ["financement", t("Comment on est financé", "How we make money")],
+                ["refus", t("Ce qu'on refuse", "What we refuse")],
+                ["prix", t("Comment on collecte les prix", "How we collect prices")],
+                ["notation", t("Comment on note", "How we score")],
+                ["donnees", t("Vos données", "Your data")],
+              ] as const).map(([id, label]) => (
+                <a key={id} href={`#${id}`} className={`ga-toc-link${activeHeading === id ? " ga-toc-link--active" : ""}`}>
+                  {label}
+                </a>
+              ))}
+            </nav>
+          </aside>
+
+          <article>
 
           {/* Lede — the core commitment */}
           <p className="ab-lede">
@@ -71,13 +115,13 @@ const TransparencyPage = () => {
           </p>
 
           {/* ── 1. Comment on est financé ── */}
-          <section className="ab-section">
+          <section className="ab-section" id="financement">
             <h2 className="ab-section-title">{t("Comment on est financé", "How we make money")}</h2>
             <div className="ab-prose">
               <p>
                 {t(
-                  "Liens affiliés sur les outils qu'on recommande déjà. Quand vous souscrivez via un de ces liens, on touche une commission — sans surcoût pour vous. C'est notre seule source de revenu.",
-                  "Affiliate links on the tools we already recommend. When you subscribe through one of these links, we receive a commission — at no extra cost to you. That's our only source of revenue.",
+                  "Liens affiliés sur les outils qu'on recommande déjà. Quand vous souscrivez via un de ces liens, on touche une commission, sans surcoût pour vous. C'est notre seule source de revenu.",
+                  "Affiliate links on the tools we already recommend. When you subscribe through one of these links, we receive a commission, at no extra cost to you. That's our only source of revenue.",
                 )}
               </p>
               <p>
@@ -86,30 +130,42 @@ const TransparencyPage = () => {
                   "Affiliate links are explicitly identified on the relevant pages. They are never hidden behind neutral text.",
                 )}
               </p>
+              <p>
+                {t(
+                  "Deuxième levier, plus récent : le traitement accéléré. Un éditeur peut payer pour que sa fiche soit auditée et publiée plus vite dans notre file d'attente éditoriale. Ça joue sur le délai, jamais sur le contenu ni sur la note. Une mise en avant visuelle payante (badge et emplacement identifiés comme tels dans le catalogue) arrive prochainement, avec la même règle : zéro effet sur le classement organique ou le verdict.",
+                  "A second, more recent lever: accelerated treatment. A vendor can pay to have their page audited and published faster in our editorial queue. That affects the timeline, never the content or the score. A paid visual placement (badge and slot clearly labeled as such in the catalog) is coming soon, under the same rule: zero effect on organic ranking or the verdict.",
+                )}
+              </p>
             </div>
           </section>
 
-          {/* ── 2. Ce qu'on refuse ── */}
-          <section className="ab-section">
+          {/* ── 2. Ce qu'on refuse ──
+              Reworded to stay accurate once accelerated treatment and paid
+              placement (disclosed above) are both live: the hard line was
+              never "no paid anything", it's "no paid influence on organic
+              ranking or the verdict". Keep that precise instead of a
+              blanket "no paid placements" that a labeled paid slot would
+              directly contradict. */}
+          <section className="ab-section" id="refus">
             <h2 className="ab-section-title">{t("Ce qu'on refuse", "What we refuse")}</h2>
             <div className="ab-prose">
               <p>
                 {t(
-                  "Aucun éditeur SaaS ne paie pour apparaître dans le catalogue, être mieux positionné, ou recevoir un meilleur verdict. Le classement éditorial est strictement séparé du programme d'affiliation.",
-                  "No SaaS vendor pays to appear in the catalog, be better positioned, or receive a better verdict. Editorial ranking is strictly separated from the affiliate program.",
+                  "Aucun éditeur SaaS ne paie pour apparaître dans le catalogue, améliorer son classement organique, ou recevoir un meilleur verdict. Le classement éditorial est strictement séparé du programme d'affiliation.",
+                  "No SaaS vendor pays to appear in the catalog, improve their organic ranking, or receive a better verdict. Editorial ranking is strictly separated from the affiliate program.",
                 )}
               </p>
               <p>
                 {t(
-                  "Pas de placements payants, pas de « sponsorisé », pas de top-list sponsorisée déguisée en édito. Si un outil paie pour être recommandé sur d'autres sites, c'est probablement une raison pour qu'il ne le soit pas ici.",
-                  "No paid placements, no \"sponsored\", no sponsored top-list dressed as editorial. If a tool pays to be recommended elsewhere, that's probably a reason it isn't here.",
+                  "Aucun placement payant n'influence le classement organique ni la note. Pas de top-list sponsorisée déguisée en édito : un emplacement payant reste identifié comme tel, jamais confondu avec une recommandation. Si un outil paie pour être recommandé sur d'autres sites, c'est probablement une raison pour qu'il ne le soit pas ici.",
+                  "No paid placement influences organic ranking or the score. No sponsored top-list disguised as editorial: a paid slot stays labeled as such, never confused with a recommendation. If a tool pays to be recommended elsewhere, that's probably a reason it isn't here.",
                 )}
               </p>
             </div>
           </section>
 
           {/* ── 3. Comment on collecte les prix ── */}
-          <section className="ab-section">
+          <section className="ab-section" id="prix">
             <h2 className="ab-section-title">{t("Comment on collecte les prix", "How we collect prices")}</h2>
             <div className="ab-prose">
               <p>
@@ -120,8 +176,8 @@ const TransparencyPage = () => {
               </p>
               <p>
                 {t(
-                  "Unité standard : prix mensuel TTC en €. Quand un outil ne publie que le prix annuel, on le ramène au mensuel équivalent — la conversion est explicitée.",
-                  "Standard unit: monthly price including tax in €. When a tool only publishes the annual price, we bring it back to the monthly equivalent — the conversion is shown.",
+                  "Unité standard : prix mensuel TTC en €. Quand un outil ne publie que le prix annuel, on le ramène au mensuel équivalent, calcul de conversion affiché.",
+                  "Standard unit: monthly price including tax in €. When a tool only publishes the annual price, we bring it back to the monthly equivalent, with the conversion shown.",
                 )}
               </p>
             </div>
@@ -178,7 +234,7 @@ const TransparencyPage = () => {
           </section>
 
           {/* ── 5. Données ── */}
-          <section className="ab-section">
+          <section className="ab-section" id="donnees">
             <h2 className="ab-section-title">{t("Ce qu'on fait de vos données", "What we do with your data")}</h2>
             <div className="ab-prose">
               <p>
@@ -206,6 +262,7 @@ const TransparencyPage = () => {
             </Link>
           </div>
 
+          </article>
         </div>
       </article>
     </div>
