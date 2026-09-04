@@ -31,7 +31,7 @@ import { findSimilarTools } from "@/lib/alternativesSimilarity";
 import ToolFAQSection from "@/components/tool/ToolFAQSection";
 import ToolJsonLd from "@/components/tool/ToolJsonLd";
 import StickyDecisionCard from "@/components/tool/StickyDecisionCard";
-import { relPourLienOutil } from "@/lib/externalLink";
+import { relPourLienOutil, relExterne } from "@/lib/externalLink";
 
 /* ─────────────────────────────────────────────────────────────────────────────
    ToolDetailPage — editorial redesign
@@ -589,7 +589,7 @@ const ToolDetailPage = () => {
                   {tool.websiteUrl && (
                     <section className="td-editorial-fact-group">
                       <h3>{t("Lien", "Link")}</h3>
-                      <a className="td-editorial-official-link" href={tool.websiteUrl} target="_blank" rel="noopener noreferrer">
+                      <a className="td-editorial-official-link" href={tool.websiteUrl} target="_blank" rel={relExterne("source")}>
                         <span>{t("Site officiel", "Official website")}</span>
                         <ExternalLink aria-hidden />
                       </a>

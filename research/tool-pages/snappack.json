@@ -1,0 +1,205 @@
+{
+  "schemaVersion": 1,
+  "slug": "snappack",
+  "researchedOn": "2026-09-03",
+  "researcher": "Claude Code",
+  "status": "draft",
+  "identity": {
+    "officialName": "SnapPack",
+    "vendor": "Anvil Dragoon, SIRET 941330045, RCS Créteil 941 330 045, TVA FR47941330045 (même entité juridique que StellaFlow, déjà catalogué)",
+    "officialUrl": "https://www.snappack.io/",
+    "pricingUrl": "https://www.snappack.io/",
+    "docsUrl": null,
+    "changelogUrl": null
+  },
+  "claims": [
+    {
+      "id": "pricing.starter",
+      "value": "Starter : 19 €HT/mois, 50 images, 0,38 €/image, historique 30 jours",
+      "sourceUrl": "https://www.snappack.io/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Carte tarif page d'accueil : 'Starter 19€ HT/month 0,38€ per image 50 images ... History: 30 Days'",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "pricing.premium",
+      "value": "Premium : 49 €HT/mois, 150 images, 0,33 €/image, upload multi-angles (3 images), modèles personnalisés, templates de marque, historique 3 mois",
+      "sourceUrl": "https://www.snappack.io/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Carte tarif page d'accueil : 'Premium 49€ HT/month 0,33€ per image 150 images ... History: 3 Months'",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "pricing.gold",
+      "value": "Gold : 99 €HT/mois, 350 images, 0,28 €/image, upload multi-angles (6 images), fonds personnalisés, support prioritaire, opérations en masse, historique 12 mois",
+      "sourceUrl": "https://www.snappack.io/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Carte tarif page d'accueil : 'Gold 99€ HT/month 0,28€ per image 350 images ... History: 12 Months'",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "pricing.trial",
+      "value": "5 images gratuites à l'essai, sans engagement, sans carte bancaire",
+      "sourceUrl": "https://www.snappack.io/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "'5 free images · No commitment · No credit card'",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "capability.render-styles",
+      "value": "3 styles de rendu : packshot studio, effet mannequin fantôme (volume sans mannequin réel), rendu porté sur modèle studio",
+      "sourceUrl": "https://www.snappack.io/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Section produit page d'accueil : options de rendu par photo source",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "capability.resolution",
+      "value": "Sortie native en 4K, formats acceptés JPG/PNG/HEIC, génération en quelques secondes",
+      "sourceUrl": "https://www.snappack.io/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "'Get 4K visuals ready for your store and marketplaces. Generated in seconds'",
+      "confidence": "high",
+      "volatility": "low"
+    },
+    {
+      "id": "capability.bulk-export",
+      "value": "Export en masse : téléchargement de toutes les générations en une seule archive ZIP (plan Gold)",
+      "sourceUrl": "https://www.snappack.io/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "'Bulk Export - Download all your generations at once in a single ZIP archive'",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "capability.history-retention",
+      "value": "Rétention de l'historique des générations limitée selon le plan : 30 jours (Starter), 3 mois (Premium), 12 mois (Gold) — au-delà, les visuels non téléchargés deviennent probablement inaccessibles",
+      "sourceUrl": "https://www.snappack.io/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Cartes tarifaires : 'History: 30 Days' / '3 Months' / '12 Months'",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "capability.no-data-portability",
+      "value": "La politique de confidentialité mentionne uniquement les droits d'accès, rectification, suppression et limitation du traitement au titre du RGPD, sans mentionner de droit à la portabilité",
+      "sourceUrl": "https://www.snappack.io/en/privacy",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "'Under GDPR, you have the right to access, rectify, delete, or restrict the processing of your data.' — portabilité absente de cette liste",
+      "confidence": "high",
+      "volatility": "low"
+    },
+    {
+      "id": "identity.vendor",
+      "value": "Éditeur : Anvil Dragoon, SIRET 941330045, RCS Créteil, TVA FR47941330045. Forme juridique, capital et adresse non précisés dans les CGU. Entité identique à StellaFlow (déjà au catalogue ToolTrim)",
+      "sourceUrl": "https://www.snappack.io/en/terms",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Page CGU (Terms), mentions légales",
+      "confidence": "high",
+      "volatility": "low"
+    },
+    {
+      "id": "proof.testimonials",
+      "value": "Témoignages cités : Mathilde V. (boutique mode/vintage, 'time-to-market cut by 3'), Thomas B. (e-commerce lead, direction visuelle cohérente), Sophie C. (designer, hausse des ventes avec l'effet mannequin fantôme) — attribués par prénom/initiale, non vérifiables indépendamment. Stat '+500 creators and e-commerce teams already onboard' également non vérifiable",
+      "sourceUrl": "https://www.snappack.io/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Section témoignages et bandeau '+500 creators' de la page d'accueil",
+      "confidence": "low",
+      "volatility": "medium"
+    },
+    {
+      "id": "quality.output-samples",
+      "value": "Exemples avant/après consultés directement (vêtements, montre, cosmétique) : rendus IA de qualité visuellement convaincante, cohérents avec les promesses marketing",
+      "sourceUrl": "https://www.snappack.io/assets/img/comparisons/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Inspection directe de plusieurs paires avant/après (shirt_before/after, watch_after) : rendus studio et mise en scène lifestyle de bonne qualité",
+      "confidence": "high",
+      "volatility": "low"
+    },
+    {
+      "id": "quality.stock-testimonial-photos",
+      "value": "Les photos de témoignages/équipe (team-1 à team-4.jpg) sont les mêmes fichiers que ceux utilisés sur StellaFlow (même éditeur), suggérant des visuels stock réutilisés plutôt que de vraies photos de clients ou d'équipe",
+      "sourceUrl": "https://www.snappack.io/",
+      "sourceTier": 2,
+      "accessedOn": "2026-09-03",
+      "evidence": "Comparaison des noms de fichiers identiques (team-1-CQROBLH.jpg etc.) entre stellaflow.com et snappack.io",
+      "confidence": "medium",
+      "volatility": "low"
+    }
+  ],
+  "pricing": {
+    "originalCurrency": "EUR",
+    "billingContext": "mensuel",
+    "taxIncluded": false,
+    "freePlan": null,
+    "plans": [
+      { "name": "Starter", "priceHT": 19, "period": "mois" },
+      { "name": "Premium", "priceHT": 49, "period": "mois" },
+      { "name": "Gold", "priceHT": 99, "period": "mois" }
+    ],
+    "seatMinimum": null,
+    "usageLimits": [
+      "Images/mois : 50 (Starter) / 150 (Premium) / 350 (Gold)",
+      "Historique des générations : 30 jours (Starter) / 3 mois (Premium) / 12 mois (Gold)"
+    ],
+    "cautions": [
+      "Prix affichés HT",
+      "Pas de plan gratuit permanent, seulement 5 images offertes à l'essai"
+    ]
+  },
+  "capabilities": [
+    "Génération de visuels produit studio par IA à partir d'une photo smartphone",
+    "3 styles : packshot studio, mannequin fantôme, rendu porté sur modèle",
+    "Sortie native 4K",
+    "Upload multi-angles et modèles personnalisés (Premium/Gold)",
+    "Export en masse (ZIP) et opérations en masse (Gold)"
+  ],
+  "limitations": [
+    "Pas de plan gratuit permanent, seulement un essai de 5 images",
+    "Historique des générations limité dans le temps selon le plan (30 jours sur Starter)",
+    "Aucun droit de portabilité mentionné dans la politique de confidentialité",
+    "Éditeur très jeune (même structure qu'un autre outil du catalogue, StellaFlow), aucune preuve indépendante d'usage à grande échelle",
+    "Témoignages et photos associées non vérifiables ; mêmes fichiers image réutilisés que sur StellaFlow"
+  ],
+  "integrations": [],
+  "audiences": [
+    "E-commerçants et marques qui vendent en ligne",
+    "Marques de mode et prêt-à-porter",
+    "Créateurs et artisans",
+    "Revendeurs de produits"
+  ],
+  "useCases": [
+    "Transformer une photo smartphone en visuel studio prêt à publier",
+    "Générer un rendu mannequin fantôme sans shooting avec mannequin réel",
+    "Produire des visuels cohérents sur tout un catalogue produit"
+  ],
+  "alternatives": [],
+  "editorialNotes": [
+    "Aucune alternative retenue : remove-bg (déjà catalogué) ne couvre que la détourure d'arrière-plan, pas la génération de scène studio, mannequin fantôme ou rendu porté — besoin principal différent malgré le chevauchement thématique (photo produit). Pas d'autre concurrent direct (type Photoroom, Claid.ai, Pebblely) déjà catalogué au 2026-09-03 ; non ajouté, conformément à la consigne de ne pas créer de nouvelles fiches concurrentes sans demande explicite.",
+    "SnapPack et StellaFlow partagent la même entité juridique (Anvil Dragoon, SIRET 941330045) et les mêmes fichiers image de témoignages/équipe : à noter si les deux fiches sont un jour comparées ou croisées dans un guide éditorial.",
+    "Lien sortant demandé en dofollow (domaine ajouté à DOMAINES_EDITORIAUX_DOFOLLOW dans src/lib/externalLink.ts, aux côtés de franklymail.com et loyzia.com déjà présents) : décision distincte de la notation, qui reste inchangée et sourcée indépendamment de cette relation."
+  ],
+  "unknowns": [
+    "Fiabilité de la génération à grande échelle (au-delà des exemples choisis par l'éditeur) non testée indépendamment",
+    "Forme juridique et capital social d'Anvil Dragoon non communiqués",
+    "Détail exact du droit d'usage commercial des images générées (mentionné 'inclus' mais sans contrat-type consulté)"
+  ],
+  "conflicts": []
+}

@@ -171694,5 +171694,268 @@
       "lastActivityVerifiedOn": "2026-08-17",
       "notedOn": "2026-09-03"
     }
+  },
+  {
+    "id": "snappack",
+    "slug": "snappack",
+    "name": "SnapPack",
+    "category": "creation",
+    "shortDescription": "Transforme une photo smartphone en visuel produit studio 4K par IA.",
+    "shortDescriptionEn": "Turns a smartphone photo into a studio-quality 4K product visual with AI.",
+    "description": "SnapPack génère des visuels produit de qualité studio à partir d'une simple photo prise au smartphone. Trois styles de rendu sont proposés : packshot studio classique, effet mannequin fantôme (donne du volume au vêtement sans mannequin réel) et rendu porté sur modèle. La sortie est en 4K natif, produite en quelques secondes.\n\nLe plan Starter (19 €HT/mois) inclut 50 images par mois avec un historique de 30 jours. Le plan Premium (49 €HT/mois, 150 images) ajoute l'upload multi-angles et les modèles personnalisés ; le plan Gold (99 €HT/mois, 350 images) ajoute l'export en masse par ZIP et le support prioritaire. Pas de plan gratuit permanent, seulement 5 images offertes à l'essai sans carte bancaire.\n\nSnapPack cible les e-commerçants, marques de mode et créateurs qui veulent des visuels cohérents sur tout leur catalogue sans shooting studio. L'éditeur (Anvil Dragoon) est le même que celui de StellaFlow, déjà catalogué : même profil de très jeune structure, mêmes visuels de témoignages réutilisés d'un site à l'autre.",
+    "longDescription": "SnapPack génère des visuels produit de qualité studio à partir d'une simple photo prise au smartphone. Trois styles de rendu sont proposés : packshot studio classique, effet mannequin fantôme (donne du volume au vêtement sans mannequin réel) et rendu porté sur modèle. La sortie est en 4K natif, produite en quelques secondes.\n\nLe plan Starter (19 €HT/mois) inclut 50 images par mois avec un historique de 30 jours. Le plan Premium (49 €HT/mois, 150 images) ajoute l'upload multi-angles et les modèles personnalisés ; le plan Gold (99 €HT/mois, 350 images) ajoute l'export en masse par ZIP et le support prioritaire. Pas de plan gratuit permanent, seulement 5 images offertes à l'essai sans carte bancaire.\n\nSnapPack cible les e-commerçants, marques de mode et créateurs qui veulent des visuels cohérents sur tout leur catalogue sans shooting studio. L'éditeur (Anvil Dragoon) est le même que celui de StellaFlow, déjà catalogué : même profil de très jeune structure, mêmes visuels de témoignages réutilisés d'un site à l'autre.",
+    "longDescriptionEn": "SnapPack generates studio-quality product visuals from a plain smartphone photo. Three render styles are offered: classic studio packshot, ghost-mannequin effect (gives a garment volume without a real model) and on-model rendering. Output is native 4K, produced in seconds.\n\nThe Starter plan (€19 excl. VAT/month) includes 50 images a month with 30-day history. Premium (€49 excl. VAT/month, 150 images) adds multi-angle upload and custom models; Gold (€99 excl. VAT/month, 350 images) adds bulk ZIP export and priority support. No permanent free plan, only 5 free trial images with no card required.\n\nSnapPack targets e-commerce sellers, fashion brands and creators who want consistent visuals across a whole catalog without a studio shoot. The publisher (Anvil Dragoon) is the same as StellaFlow, already catalogued: same very-young-company profile, same testimonial visuals reused across both sites.",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent ; 5 images offertes à l'essai, sans carte bancaire",
+      "paid": "Starter 19 €HT/mois (50 images), Premium 49 €HT/mois (150 images), Gold 99 €HT/mois (350 images)"
+    },
+    "pricingEn": {
+      "free": "No permanent free plan; 5 free trial images, no card required",
+      "paid": "Starter €19 excl. VAT/month (50 images), Premium €49 excl. VAT/month (150 images), Gold €99 excl. VAT/month (350 images)"
+    },
+    "defaultMonthlyPrice": 19,
+    "pricing_v5": {
+      "cautions": [
+        "Prix affichés HT.",
+        "Pas de plan gratuit permanent, seulement 5 images offertes à l'essai.",
+        "Historique des générations limité selon le plan (30 jours sur Starter) : télécharge tes visuels avant expiration."
+      ],
+      "cautionsEn": [
+        "Prices shown excl. VAT.",
+        "No permanent free plan, only 5 free trial images.",
+        "Generation history is time-limited by plan (30 days on Starter): download your visuals before they expire."
+      ],
+      "verified_on": "2026-09-03",
+      "source_domain": "snappack.io",
+      "usage_sensitive": true,
+      "compare_plan_kind": "account",
+      "compare_plan_name": "Starter",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://www.snappack.io/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 19,
+      "plans": [
+        {
+          "planKey": "starter",
+          "displayName": "Starter",
+          "summary": "50 images/mois, sortie 4K, historique 30 jours.",
+          "featureHighlights": [
+            "50 images/mois (0,38 €/image)",
+            "Sortie 4K native",
+            "Historique 30 jours"
+          ],
+          "detailsSourceUrl": "https://www.snappack.io/",
+          "pricingUnit": "par compte",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 19,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "ht",
+          "observedMarket": "FR",
+          "observedLocale": "fr-FR",
+          "observedOn": "2026-09-03",
+          "lastConfirmedOn": "2026-09-03"
+        },
+        {
+          "planKey": "premium",
+          "displayName": "Premium",
+          "summary": "150 images/mois, upload multi-angles, modèles personnalisés.",
+          "featureHighlights": [
+            "150 images/mois (0,33 €/image)",
+            "Upload multi-angles (3 images)",
+            "Modèles personnalisés, templates de marque"
+          ],
+          "detailsSourceUrl": "https://www.snappack.io/",
+          "pricingUnit": "par compte",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 49,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "ht",
+          "observedMarket": "FR",
+          "observedLocale": "fr-FR",
+          "observedOn": "2026-09-03",
+          "lastConfirmedOn": "2026-09-03"
+        },
+        {
+          "planKey": "gold",
+          "displayName": "Gold",
+          "summary": "350 images/mois, export en masse, support prioritaire.",
+          "featureHighlights": [
+            "350 images/mois (0,28 €/image)",
+            "Export ZIP en masse",
+            "Support prioritaire, historique 12 mois"
+          ],
+          "detailsSourceUrl": "https://www.snappack.io/",
+          "pricingUnit": "par compte",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 99,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "ht",
+          "observedMarket": "FR",
+          "observedLocale": "fr-FR",
+          "observedOn": "2026-09-03",
+          "lastConfirmedOn": "2026-09-03"
+        }
+      ]
+    },
+    "websiteUrl": "https://www.snappack.io/",
+    "affiliateLink": "",
+    "logo": "https://logo.clearbit.com/snappack.io",
+    "verdict": {
+      "keepIf": [
+        "Tu vends en ligne et veux des visuels produit cohérents sans payer un studio photo.",
+        "Une photo smartphone par produit te suffit comme matière première.",
+        "50 à 350 images par mois selon le plan couvrent ton rythme de mise en ligne."
+      ],
+      "avoidIf": [
+        "Tu veux un plan gratuit permanent pour tester sans limite de temps.",
+        "Tu comptes garder tes visuels générés indéfiniment sans les télécharger : l'historique expire après 30 jours à 12 mois selon le plan.",
+        "Tu veux un historique de fiabilité établi : l'éditeur est très jeune et partage sa structure avec un autre outil récent du catalogue."
+      ],
+      "threshold": "SnapPack devient intéressant si remplacer un shooting studio par une génération IA à 0,28 à 0,38 € par image te fait vraiment gagner du temps et de l'argent. Vérifie la qualité sur tes propres produits pendant l'essai gratuit avant de t'engager sur un plan payant."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You sell online and want consistent product visuals without paying for a photo studio.",
+        "One smartphone photo per product is enough as source material for you.",
+        "50 to 350 images a month depending on plan covers your listing pace."
+      ],
+      "avoidIf": [
+        "You want a permanent free plan to test without a time limit.",
+        "You plan to keep generated visuals indefinitely without downloading them: history expires after 30 days to 12 months depending on plan.",
+        "You want an established track record: the publisher is very young and shares its structure with another recent catalog tool."
+      ],
+      "threshold": "SnapPack is worth it if replacing a studio shoot with AI generation at €0.28 to €0.38 per image genuinely saves you time and money. Check the quality on your own products during the free trial before committing to a paid plan."
+    },
+    "pros": [
+      "Rendus studio, mannequin fantôme et porté sur modèle à partir d'une seule photo smartphone.",
+      "Sortie native 4K, génération en quelques secondes.",
+      "Exemples avant/après vérifiés visuellement convaincants sur plusieurs catégories de produits.",
+      "Export en masse par ZIP sur le plan Gold.",
+      "Essai gratuit de 5 images sans carte bancaire."
+    ],
+    "prosEn": [
+      "Studio, ghost-mannequin and on-model renders from a single smartphone photo.",
+      "Native 4K output, generated in seconds.",
+      "Verified before/after examples visually convincing across several product categories.",
+      "Bulk ZIP export on the Gold plan.",
+      "Free 5-image trial with no card required."
+    ],
+    "cons": [
+      "Historique des générations limité dans le temps selon le plan (30 jours sur Starter).",
+      "Aucun droit de portabilité mentionné dans la politique de confidentialité.",
+      "Pas de plan gratuit permanent.",
+      "Éditeur très jeune, même structure qu'un autre outil récent du catalogue, sans preuve d'usage indépendante à grande échelle."
+    ],
+    "consEn": [
+      "Generation history is time-limited by plan (30 days on Starter).",
+      "No portability right mentioned in the privacy policy.",
+      "No permanent free plan.",
+      "Very young publisher, shares its structure with another recent catalog tool, with no independent evidence of usage at scale."
+    ],
+    "useCases": [
+      "Transformer une photo smartphone en visuel studio prêt à publier.",
+      "Générer un rendu mannequin fantôme sans shooting avec mannequin réel.",
+      "Uniformiser les visuels de tout un catalogue produit."
+    ],
+    "useCasesEn": [
+      "Turn a smartphone photo into a publish-ready studio visual.",
+      "Generate a ghost-mannequin render without a real model shoot.",
+      "Standardize visuals across a whole product catalog."
+    ],
+    "covers": [
+      "generation-visuels-produit",
+      "photographie-produit-ia"
+    ],
+    "functional_needs": [
+      "generation-visuels-produit",
+      "photographie-produit-ia"
+    ],
+    "relevantFor": [
+      "E-commerçants",
+      "Marques de mode et prêt-à-porter",
+      "Créateurs et artisans"
+    ],
+    "alternatives": [],
+    "seo": {
+      "idealForFr": "Idéal pour un e-commerçant ou une marque qui veut des visuels produit studio par IA sans shooting photo.",
+      "idealForEn": "Ideal for an e-commerce seller or brand that wants AI studio product visuals without a photo shoot.",
+      "metaDescription": "SnapPack : avis, prix dès 19 €HT/mois, rendus IA studio et mannequin fantôme, et limites pour visuels produit e-commerce."
+    },
+    "articles": [],
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "ecommercant",
+      "graphiste-da"
+    ],
+    "ia_use_case": [
+      "content-generation"
+    ],
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "personas": [],
+    "timeGainedHoursPerMonth": 3,
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [
+      "catalog_size",
+      "product_category",
+      "images_per_month"
+    ],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": {
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": false,
+      "default_decision_lane": "review_then_prescribe",
+      "auto_downgrade_allowed": false,
+      "never_auto_cancel_reason": null,
+      "requires_context_questions": true
+    },
+    "ogImageUrl": "https://www.snappack.io/assets/img/comparisons/shirt_after-8Khl4yN.webp",
+    "galleryImages": [
+      "https://www.snappack.io/assets/img/comparisons/watch_after-3rvIFYt.webp",
+      "https://www.snappack.io/assets/img/comparisons/shirt_before-qT8J6fr.webp"
+    ],
+    "force_silence": false,
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 3,
+      "reversibilite": 3,
+      "evidence": {
+        "valeurAjoutee": "0,28 à 0,38 € par image contre le coût d'un shooting studio classique, avec des témoignages chiffrés (hausse des ventes, 'time-to-market cut by 3') mais non vérifiables indépendamment et attribués par prénom/initiale seulement (source : snappack.io, consulté le 2026-09-03).",
+        "simplicite": "Essai 5 images sans carte, workflow annoncé en 3 étapes ('fast, intuitive, no technical skills required') : upload d'une photo smartphone, choix du rendu, génération en quelques secondes (source : snappack.io, consulté le 2026-09-03).",
+        "utilisation": "Inspection directe de plusieurs exemples avant/après (chemise, montre, cosmétique) : rendus visuellement convaincants et cohérents avec la promesse marketing, un signal plus solide qu'un simple discours commercial car vérifiable à l'œil (source : snappack.io/assets/img/comparisons, consulté le 2026-09-03).",
+        "puissance": "Combine 3 styles de rendu (studio, mannequin fantôme, porté sur modèle) et une sortie 4K native, revendiquée comme unique sur le marché IA ('the only AI tool with this capability') mais non vérifiable indépendamment. Éditeur très jeune (même structure que StellaFlow, capital non communiqué), sans étude de fiabilité à grande échelle (source : snappack.io, consulté le 2026-09-03).",
+        "reversibilite": "Export en masse par ZIP confirmé sur le plan Gold, téléchargement individuel 4K disponible sur tous les plans, mais historique des générations limité dans le temps selon le plan (30 jours sur Starter) et aucun droit de portabilité mentionné dans la politique de confidentialité (seulement accès, rectification, suppression, limitation) (source : snappack.io et snappack.io/en/privacy, consulté le 2026-09-03)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "€0.28 to €0.38 per image versus the cost of a classic studio shoot, with quantified testimonials (sales increase, 'time-to-market cut by 3') that aren't independently verifiable and are attributed by first name/initial only (source: snappack.io, checked 2026-09-03).",
+        "simplicite": "5-image trial with no card, a workflow advertised in 3 steps ('fast, intuitive, no technical skills required'): upload a smartphone photo, pick a render style, generate in seconds (source: snappack.io, checked 2026-09-03).",
+        "utilisation": "Direct inspection of several before/after examples (shirt, watch, cosmetic) shows visually convincing renders consistent with the marketing promise, a stronger signal than plain marketing copy because it's directly checkable (source: snappack.io/assets/img/comparisons, checked 2026-09-03).",
+        "puissance": "Combines 3 render styles (studio, ghost mannequin, on-model) and native 4K output, claimed as unique in the AI market ('the only AI tool with this capability') but not independently verifiable. Very young publisher (same structure as StellaFlow, capital undisclosed), with no reliability study at scale (source: snappack.io, checked 2026-09-03).",
+        "reversibilite": "Bulk ZIP export confirmed on the Gold plan, individual 4K downloads available on every plan, but generation history is time-limited by plan (30 days on Starter) and no portability right is mentioned in the privacy policy (only access, rectification, deletion, restriction) (source: snappack.io and snappack.io/en/privacy, checked 2026-09-03)."
+      },
+      "lastActivityVerifiedOn": null,
+      "notedOn": "2026-09-03"
+    }
   }
 ]

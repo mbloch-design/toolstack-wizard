@@ -39,6 +39,18 @@ const DOMAINES_EDITORIAUX_DOFOLLOW = new Set([
   "www.franklymail.com",
   "loyzia.com",
   "www.loyzia.com",
+  "snappack.io",
+  "www.snappack.io",
+  "happia.fr",
+  "www.happia.fr",
+  "klark.app",
+  "www.klark.app",
+  "stellaflow.com",
+  "www.stellaflow.com",
+  "vulko.fr",
+  "www.vulko.fr",
+  "charik.app",
+  "www.charik.app",
 ]);
 
 function estLienEditorialDofollow(url: string): boolean {
