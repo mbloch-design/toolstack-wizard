@@ -21835,14 +21835,15 @@ section[id] {
   color: var(--color-text);
 }
 
-/* Dedicated tool presentation flow */
-.sp-page {
+/* Dedicated tool submission flow — own class (not .sp-page) so it never
+   inherits SearchPage's 768px-capped .sp-page rule above. */
+.stp-page {
   min-height: 100%;
   background: var(--color-bg);
   color: var(--color-text);
 }
 .sp-hero {
-  max-width: 900px;
+  max-width: var(--layout-content, 1280px);
   margin: 0 auto;
   padding: clamp(48px, 7vw, 88px) var(--layout-gutter, 48px) clamp(36px, 5vw, 60px);
 }
@@ -21856,49 +21857,81 @@ section[id] {
   line-height: 0.98;
   letter-spacing: -0.045em;
   color: var(--color-text-strong);
+  max-width: 16ch;
 }
 .sp-hero > p,
 .sp-success > p {
-  max-width: 720px;
+  max-width: 640px;
   margin: 0;
   font-family: var(--font-ui);
   font-size: clamp(17px, 2vw, 20px);
   line-height: 1.55;
   color: var(--color-muted);
 }
-.sp-trust-strip {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px 28px;
-  margin: 24px 0 0;
-  padding: 18px 0 0;
+/* Fact band — full-width strip of key numbers under the hero, echoing
+   Toolfolio's stat row while keeping only figures we can actually back up. */
+.sp-fact-band {
   border-top: 1px solid var(--color-border);
-  list-style: none;
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface-soft);
 }
-.sp-trust-strip li {
+.sp-fact-band-inner {
+  max-width: var(--layout-content, 1280px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: clamp(24px, 3vw, 36px) var(--layout-gutter, 48px);
+}
+.sp-fact {
   display: flex;
   align-items: center;
-  gap: 7px;
+  gap: 12px;
+  padding: 0 clamp(16px, 2vw, 32px);
+  border-left: 1px solid var(--color-border);
+}
+.sp-fact:first-child { border-left: 0; padding-left: 0; }
+.sp-fact svg { flex-shrink: 0; color: var(--color-text-strong); }
+.sp-fact-value {
+  display: block;
+  font-family: var(--font-brand);
+  font-size: clamp(18px, 1.8vw, 22px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-text-strong);
+  line-height: 1.2;
+}
+.sp-fact-label {
+  display: block;
   font-family: var(--font-ui);
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 12.5px;
+  line-height: 1.35;
   color: var(--color-muted);
 }
-.sp-trust-strip svg { flex-shrink: 0; color: var(--color-text-strong); }
 .sp-shell {
-  max-width: 900px;
+  max-width: var(--layout-content, 1280px);
   margin: 0 auto;
   padding: 0 var(--layout-gutter, 48px) clamp(72px, 9vw, 120px);
 }
+.sp-shell-inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
 .sp-overview,
 .sp-faq {
-  max-width: 900px;
+  max-width: var(--layout-content, 1280px);
   margin: 0 auto;
-  padding: 0 var(--layout-gutter, 48px) clamp(56px, 7vw, 88px);
+  padding: clamp(48px, 6vw, 72px) var(--layout-gutter, 48px) clamp(56px, 7vw, 88px);
+}
+.sp-overview-inner {
+  max-width: 1040px;
+  margin: 0 auto;
 }
 .sp-faq {
   border-top: 1px solid var(--color-border);
-  padding-top: clamp(48px, 6vw, 72px);
+}
+.sp-faq-inner {
+  max-width: 860px;
+  margin: 0 auto;
 }
 .sp-overview .sp-plan-card-head { border-bottom: 1px solid var(--color-border); }
 .sp-overview .sp-plan-card--highlight .sp-plan-card-head { border-bottom-color: color-mix(in srgb, var(--color-text-strong) 15%, transparent); }
@@ -22310,7 +22343,12 @@ section[id] {
 @media (max-width: 640px) {
   .sp-hero,
   .sp-shell,
+  .sp-overview,
+  .sp-faq,
+  .sp-fact-band-inner,
   .sp-success { padding-left: 20px; padding-right: 20px; }
+  .sp-fact-band-inner { grid-template-columns: 1fr; gap: 16px; }
+  .sp-fact { border-left: 0; padding-left: 0; }
   .sp-form-grid { grid-template-columns: 1fr; }
   .sp-step strong { display: none; }
   .sp-step-connector { margin: 0 8px; }

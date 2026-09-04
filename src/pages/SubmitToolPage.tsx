@@ -335,7 +335,7 @@ const SubmitToolPage = () => {
 
   if (status === "success") {
     return (
-      <div className="sp-page">
+      <div className="stp-page">
         <section className="sp-success">
           <span className="tt-page-hero-eyebrow">{t("Soumission reçue", "Submission received")}</span>
           <h1>{paid ? t("Merci. Ta publication est garantie.", "Thank you. Your publication is guaranteed.") : t("Merci. Nous allons analyser le site.", "Thank you. We will review the website.")}</h1>
@@ -353,7 +353,7 @@ const SubmitToolPage = () => {
   }
 
   return (
-    <div className="sp-page">
+    <div className="stp-page">
       <header className="sp-hero">
         <Breadcrumb items={[{ label: t("Soumettre un outil", "Submit a tool") }]} />
         <span className="tt-page-hero-eyebrow">{t("Soumission d'un outil", "Tool submission")}</span>
@@ -362,14 +362,18 @@ const SubmitToolPage = () => {
           "Cette démarche permet de soumettre ton produit à notre équipe. Une fois le dossier envoyé, nous analyserons le site, les fonctionnalités et les informations disponibles avant de décider d'une publication.",
           "This process lets you submit your product to our team. Once submitted, we will review the website, features, and available information before deciding whether to publish it.",
         )}</p>
-        <ul className="sp-trust-strip">
-          <li><BadgeCheck size={15} />{t("1 100+ outils déjà référencés", "1,100+ tools already listed")}</li>
-          <li><Clock size={15} />{t("Revue sous quelques jours ouvrés", "Reviewed within a few business days")}</li>
-          <li><ShieldCheck size={15} />{t("Aucune carte bancaire pour le badge gratuit", "No card required for the free badge")}</li>
-        </ul>
       </header>
 
+      <section className="sp-fact-band">
+        <div className="sp-fact-band-inner">
+          <div className="sp-fact"><BadgeCheck size={20} /><div><span className="sp-fact-value">{t("1 100+", "1,100+")}</span><span className="sp-fact-label">{t("Outils déjà référencés", "Tools already listed")}</span></div></div>
+          <div className="sp-fact"><Clock size={20} /><div><span className="sp-fact-value">{t("Quelques jours", "A few days")}</span><span className="sp-fact-label">{t("Délai de revue éditoriale", "Editorial review turnaround")}</span></div></div>
+          <div className="sp-fact"><ShieldCheck size={20} /><div><span className="sp-fact-value">0 $</span><span className="sp-fact-label">{t("Badge gratuit, aucune carte requise", "Free badge, no card required")}</span></div></div>
+        </div>
+      </section>
+
       <section className="sp-overview">
+        <div className="sp-overview-inner">
         <div className="sp-section-heading">
           <span>—</span>
           <div>
@@ -417,10 +421,12 @@ const SubmitToolPage = () => {
             <button type="button" className="tt-button-primary sp-plan-cta" onClick={() => choosePlan("paid")}>{t(`Publier pour ${SKIP_BADGE_PRICE} →`, `Publish for ${SKIP_BADGE_PRICE} →`)}</button>
           </div>
         </div>
+        </div>
       </section>
 
       {planChoice && (
       <div className="sp-shell" id="submit-form">
+      <div className="sp-shell-inner">
         <ol className="sp-steps" aria-label={t("Étapes de la soumission", "Submission steps")}>
           {[1, 2, 3].map((number) => (
             <li key={number} className="sp-step-item">
@@ -550,9 +556,11 @@ const SubmitToolPage = () => {
           )}
         </main>
       </div>
+      </div>
       )}
 
       <section className="sp-faq">
+        <div className="sp-faq-inner">
         <div className="sp-section-heading">
           <span>—</span>
           <div><h2>{t("Questions fréquentes", "Frequently asked questions")}</h2></div>
@@ -575,6 +583,7 @@ const SubmitToolPage = () => {
               <p className="sd-faq-answer">{t(item.a, item.aEn)}</p>
             </details>
           ))}
+        </div>
         </div>
       </section>
     </div>
