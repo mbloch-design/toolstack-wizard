@@ -194,7 +194,8 @@
   "editorialNotes": [
     "Aucune alternative retenue : remove-bg (déjà catalogué) ne couvre que la détourure d'arrière-plan, pas la génération de scène studio, mannequin fantôme ou rendu porté — besoin principal différent malgré le chevauchement thématique (photo produit). Pas d'autre concurrent direct (type Photoroom, Claid.ai, Pebblely) déjà catalogué au 2026-09-03 ; non ajouté, conformément à la consigne de ne pas créer de nouvelles fiches concurrentes sans demande explicite.",
     "SnapPack et StellaFlow partagent la même entité juridique (Anvil Dragoon, SIRET 941330045) et les mêmes fichiers image de témoignages/équipe : à noter si les deux fiches sont un jour comparées ou croisées dans un guide éditorial.",
-    "Lien sortant demandé en dofollow (domaine ajouté à DOMAINES_EDITORIAUX_DOFOLLOW dans src/lib/externalLink.ts, aux côtés de franklymail.com et loyzia.com déjà présents) : décision distincte de la notation, qui reste inchangée et sourcée indépendamment de cette relation."
+    "Lien sortant demandé en dofollow (domaine ajouté à DOMAINES_EDITORIAUX_DOFOLLOW dans src/lib/externalLink.ts, aux côtés de franklymail.com et loyzia.com déjà présents) : décision distincte de la notation, qui reste inchangée et sourcée indépendamment de cette relation.",
+    "Image principale corrigée le 2026-09-03 : le premier choix (shirt_after, photo produit carrée sur fond blanc) ne communiquait pas ce que fait l'outil. Remplacée par l'image OG officielle du site (assets/img/hero-sGTGI8F.webp), un visuel avant/après de marque conçu par SnapPack pour le partage social, qui illustre directement la proposition de valeur (photo smartphone -> rendu studio)."
   ],
   "unknowns": [
     "Fiabilité de la génération à grande échelle (au-delà des exemples choisis par l'éditeur) non testée indépendamment",
