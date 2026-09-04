@@ -431,6 +431,30 @@ const Footer = () => {
                   loading="lazy"
                 />
               </a>
+              <a
+                href="https://findly.tools/tooltrim?utm_source=tooltrim"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="tt-footer-badge"
+                aria-label="Featured on Findly.tools"
+              >
+                <img
+                  className="tt-footer-badge-light"
+                  src="https://findly.tools/badges/findly-tools-badge-light.svg"
+                  alt="Featured on Findly.tools"
+                  width={175}
+                  height={55}
+                  loading="lazy"
+                />
+                <img
+                  className="tt-footer-badge-dark"
+                  src="https://findly.tools/badges/findly-tools-badge-dark.svg"
+                  alt="Featured on Findly.tools"
+                  width={175}
+                  height={55}
+                  loading="lazy"
+                />
+              </a>
             </div>
           </div>
         </div>
