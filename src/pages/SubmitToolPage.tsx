@@ -4,7 +4,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import { useLang } from "@/hooks/useLang";
 import { cleanupSeo, SEO_BASE, setHreflang, setSeoTags } from "@/lib/seo";
 import { trackEvent } from "@/lib/analytics";
-import { BadgeCheck, Briefcase, Check, ChevronDown, Clock, Globe, Mail, MessageSquare, ShieldCheck, User, Zap } from "@/lib/icons";
+import { BadgeCheck, Briefcase, Check, Clock, Globe, Mail, MessageSquare, Minus, Plus, ShieldCheck, User, Zap } from "@/lib/icons";
 
 type Step = 1 | 2 | 3;
 type Status = "idle" | "saving" | "checking" | "submitting" | "success" | "error";
@@ -32,36 +32,48 @@ const EMPTY_SUBMISSION: Submission = {
   verificationToken: "",
 };
 
-const SUBMIT_FAQ: { q: string; qEn: string; a: string; aEn: string }[] = [
+const SUBMIT_FAQ: { theme: string; themeEn: string; items: { q: string; qEn: string; a: string; aEn: string }[] }[] = [
   {
-    q: "Qu'est-ce que ToolTrim ?",
-    qEn: "What is ToolTrim?",
-    a: "ToolTrim est un site éditorial de comparaison d'outils SaaS pour freelances et petites équipes. Chaque fiche est écrite pour aider à choisir, pas pour empiler des logos.",
-    aEn: "ToolTrim is an editorial comparison site for SaaS tools, built for freelancers and small teams. Every listing is written to help with a decision, not to stack logos.",
+    theme: "Général",
+    themeEn: "General",
+    items: [
+      {
+        q: "Qu'est-ce que ToolTrim ?",
+        qEn: "What is ToolTrim?",
+        a: "ToolTrim est un site éditorial de comparaison d'outils SaaS pour freelances et petites équipes. Chaque fiche est écrite pour aider à choisir, pas pour empiler des logos.",
+        aEn: "ToolTrim is an editorial comparison site for SaaS tools, built for freelancers and small teams. Every listing is written to help with a decision, not to stack logos.",
+      },
+      {
+        q: "Combien de temps prend la revue éditoriale ?",
+        qEn: "How long does the editorial review take?",
+        a: "En général quelques jours ouvrés pour le badge gratuit. Les soumissions payantes sont traitées en priorité.",
+        aEn: "Usually a few business days for the free badge. Paid submissions are handled with priority.",
+      },
+    ],
   },
   {
-    q: "Quelle est la différence entre le badge gratuit et la publication payante ?",
-    qEn: "What's the difference between the free badge and the paid publication?",
-    a: "Le badge gratuit demande d'installer un lien vers ToolTrim sur ton site, puis ta soumission suit la revue éditoriale classique. La publication payante retire cette étape, passe devant la file et t'offre une révision avec le fondateur avant la mise en ligne.",
-    aEn: "The free badge asks you to install a link to ToolTrim on your website, then your submission follows the normal editorial review. The paid publication removes that step, jumps the queue, and gives you one review round with the founder before it goes live.",
-  },
-  {
-    q: "Combien de temps prend la revue éditoriale ?",
-    qEn: "How long does the editorial review take?",
-    a: "En général quelques jours ouvrés pour le badge gratuit. Les soumissions payantes sont traitées en priorité.",
-    aEn: "Usually a few business days for the free badge. Paid submissions are handled with priority.",
-  },
-  {
-    q: "Le badge gratuit garantit-il la publication ?",
-    qEn: "Does the free badge guarantee publication?",
-    a: "Non. Une fois le badge vérifié, la soumission est complète et passe en revue. La publication payante, elle, garantit la mise en ligne.",
-    aEn: "No. Once the badge is verified, the submission is complete and goes to review. The paid publication, on the other hand, guarantees it goes live.",
-  },
-  {
-    q: "Puis-je modifier ma fiche une fois publiée ?",
-    qEn: "Can I update my listing after it's published?",
-    a: "Oui, écris-nous à contact@tooltrim.com avec les changements et nous mettons la fiche à jour.",
-    aEn: "Yes, email us at contact@tooltrim.com with the changes and we'll update the listing.",
+    theme: "Publication",
+    themeEn: "Publication",
+    items: [
+      {
+        q: "Quelle est la différence entre le badge gratuit et la publication payante ?",
+        qEn: "What's the difference between the free badge and the paid publication?",
+        a: "Le badge gratuit demande d'installer un lien vers ToolTrim sur ton site, puis ta soumission suit la revue éditoriale classique. La publication payante retire cette étape, passe devant la file et t'offre une révision avec le fondateur avant la mise en ligne.",
+        aEn: "The free badge asks you to install a link to ToolTrim on your website, then your submission follows the normal editorial review. The paid publication removes that step, jumps the queue, and gives you one review round with the founder before it goes live.",
+      },
+      {
+        q: "Le badge gratuit garantit-il la publication ?",
+        qEn: "Does the free badge guarantee publication?",
+        a: "Non. Une fois le badge vérifié, la soumission est complète et passe en revue. La publication payante, elle, garantit la mise en ligne.",
+        aEn: "No. Once the badge is verified, the submission is complete and goes to review. The paid publication, on the other hand, guarantees it goes live.",
+      },
+      {
+        q: "Puis-je modifier ma fiche une fois publiée ?",
+        qEn: "Can I update my listing after it's published?",
+        a: "Oui, écris-nous à contact@tooltrim.com avec les changements et nous mettons la fiche à jour.",
+        aEn: "Yes, email us at contact@tooltrim.com with the changes and we'll update the listing.",
+      },
+    ],
   },
 ];
 
@@ -83,7 +95,7 @@ const SubmitToolPage = () => {
   const [submission, setSubmission] = useState<Submission>(EMPTY_SUBMISSION);
   const [paid, setPaid] = useState(false);
   const [planChoice, setPlanChoice] = useState<"free" | "paid" | null>(null);
-  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+  const [openFaqKey, setOpenFaqKey] = useState<string | null>(null);
   const infoFormRef = useRef<HTMLFormElement>(null);
   const badgeUrlRef = useRef<HTMLInputElement>(null);
   const sentProgressRef = useRef(new Set<string>());
@@ -355,34 +367,27 @@ const SubmitToolPage = () => {
   return (
     <div className="stp-page">
       <header className="sp-hero">
-        <Breadcrumb items={[{ label: t("Soumettre un outil", "Submit a tool") }]} />
-        <span className="tt-page-hero-eyebrow">{t("Soumission d'un outil", "Tool submission")}</span>
-        <h1>{t("Soumets ton outil à ToolTrim.", "Submit your tool to ToolTrim.")}</h1>
+        <div className="sp-hero-crumb"><Breadcrumb items={[{ label: t("Soumettre un outil", "Submit a tool") }]} /></div>
+        <h1>{t("Présente ton produit à ToolTrim.", "Introduce your product to ToolTrim.")}</h1>
         <p>{t(
-          "Cette démarche permet de soumettre ton produit à notre équipe. Une fois le dossier envoyé, nous analyserons le site, les fonctionnalités et les informations disponibles avant de décider d'une publication.",
-          "This process lets you submit your product to our team. Once submitted, we will review the website, features, and available information before deciding whether to publish it.",
+          "Remplis le formulaire une fois : nous analysons ensuite le site, les fonctionnalités et les informations disponibles avant de décider d'une publication.",
+          "Fill out the form once: we'll then review the website, features, and available information before deciding whether to publish it.",
         )}</p>
+        <ul className="sp-trust-strip">
+          <li><BadgeCheck size={15} /><strong>{t("1 100+", "1,100+")}</strong>{t("outils déjà référencés", "tools already listed")}</li>
+          <li><Clock size={15} /><strong>{t("Quelques jours", "A few days")}</strong>{t("de délai de revue", "review turnaround")}</li>
+          <li><ShieldCheck size={15} /><strong>0 $</strong>{t("pour le badge gratuit", "for the free badge")}</li>
+        </ul>
       </header>
-
-      <section className="sp-fact-band">
-        <div className="sp-fact-band-inner">
-          <div className="sp-fact"><BadgeCheck size={20} /><div><span className="sp-fact-value">{t("1 100+", "1,100+")}</span><span className="sp-fact-label">{t("Outils déjà référencés", "Tools already listed")}</span></div></div>
-          <div className="sp-fact"><Clock size={20} /><div><span className="sp-fact-value">{t("Quelques jours", "A few days")}</span><span className="sp-fact-label">{t("Délai de revue éditoriale", "Editorial review turnaround")}</span></div></div>
-          <div className="sp-fact"><ShieldCheck size={20} /><div><span className="sp-fact-value">0 $</span><span className="sp-fact-label">{t("Badge gratuit, aucune carte requise", "Free badge, no card required")}</span></div></div>
-        </div>
-      </section>
 
       <section className="sp-overview">
         <div className="sp-overview-inner">
-        <div className="sp-section-heading">
-          <span>—</span>
-          <div>
-            <h2>{t("Deux façons de rejoindre ToolTrim", "Two ways to join ToolTrim")}</h2>
-            <p>{t(
-              "Choisis l'option qui correspond à ton rythme. Les deux passent par le même formulaire ci-dessous.",
-              "Pick the option that fits your pace. Both go through the same form below.",
-            )}</p>
-          </div>
+        <div className="sp-overview-heading">
+          <h2>{t("Deux façons de rejoindre ToolTrim", "Two ways to join ToolTrim")}</h2>
+          <p>{t(
+            "Choisis l'option qui correspond à ton rythme. Les deux passent par le même formulaire ci-dessous.",
+            "Pick the option that fits your pace. Both go through the same form below.",
+          )}</p>
         </div>
         <div className="sp-plan-grid">
           <div className="sp-plan-card">
@@ -561,29 +566,54 @@ const SubmitToolPage = () => {
 
       <section className="sp-faq">
         <div className="sp-faq-inner">
-        <div className="sp-section-heading">
-          <span>—</span>
-          <div><h2>{t("Questions fréquentes", "Frequently asked questions")}</h2></div>
-        </div>
-        <div className="sd-faq-list">
-          {SUBMIT_FAQ.map((item, i) => (
-            <details
-              key={i}
-              className="sd-faq-item"
-              open={openFaqIndex === i}
-              onToggle={(e) => {
-                if ((e.currentTarget as HTMLDetailsElement).open) setOpenFaqIndex(i);
-                else if (openFaqIndex === i) setOpenFaqIndex(null);
-              }}
-            >
-              <summary className="sd-faq-summary">
-                {t(item.q, item.qEn)}
-                <ChevronDown size={16} className="sd-faq-icon" />
-              </summary>
-              <p className="sd-faq-answer">{t(item.a, item.aEn)}</p>
-            </details>
-          ))}
-        </div>
+          <div className="sp-faq-layout">
+            <div className="sp-faq-side">
+              <h2>{t("Questions fréquentes", "Frequently asked questions")}</h2>
+              <nav className="sp-faq-nav-list" aria-label={t("Catégories de la FAQ", "FAQ categories")}>
+                {SUBMIT_FAQ.map((group, gi) => (
+                  <a
+                    key={gi}
+                    href={`#faq-${gi}`}
+                    className="sp-faq-nav-pill"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      document.getElementById(`faq-${gi}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }}
+                  >
+                    {t(group.theme, group.themeEn)}
+                  </a>
+                ))}
+              </nav>
+            </div>
+            <div className="sp-faq-main">
+              {SUBMIT_FAQ.map((group, gi) => (
+                <div key={gi} id={`faq-${gi}`} className="sp-faq-group">
+                  {gi > 0 && <p className="sp-faq-group-title">{t(group.theme, group.themeEn)}</p>}
+                  {group.items.map((item, ii) => {
+                    const key = `${gi}-${ii}`;
+                    const isOpen = openFaqKey === key;
+                    return (
+                      <details
+                        key={key}
+                        className="sp-faq-item"
+                        open={isOpen}
+                        onToggle={(e) => {
+                          if ((e.currentTarget as HTMLDetailsElement).open) setOpenFaqKey(key);
+                          else if (isOpen) setOpenFaqKey(null);
+                        }}
+                      >
+                        <summary className="sp-faq-summary">
+                          {t(item.q, item.qEn)}
+                          <span className="sp-faq-icon">{isOpen ? <Minus size={16} /> : <Plus size={16} />}</span>
+                        </summary>
+                        <p className="sp-faq-answer">{t(item.a, item.aEn)}</p>
+                      </details>
+                    );
+                  })}
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
     </div>
