@@ -132,8 +132,14 @@ const TransparencyPage = () => {
               </p>
               <p>
                 {t(
-                  "Deuxième levier, plus récent : le traitement accéléré. Un éditeur peut payer pour que sa fiche soit auditée et publiée plus vite dans notre file d'attente éditoriale. Ça joue sur le délai, jamais sur le contenu ni sur la note. Une mise en avant visuelle payante (badge et emplacement identifiés comme tels dans le catalogue) arrive prochainement, avec la même règle : zéro effet sur le classement organique ou le verdict.",
-                  "A second, more recent lever: accelerated treatment. A vendor can pay to have their page audited and published faster in our editorial queue. That affects the timeline, never the content or the score. A paid visual placement (badge and slot clearly labeled as such in the catalog) is coming soon, under the same rule: zero effect on organic ranking or the verdict.",
+                  "Deuxième levier, plus récent : accélérer le passage dans notre file d'attente éditoriale. Deux façons d'y accéder : gratuite, contre l'ajout d'un badge ToolTrim sur le site de l'éditeur ; payante, plus rapide encore, sans rien à afficher en retour. Une mise en avant visuelle payante (badge et emplacement identifiés comme tels dans le catalogue) arrive prochainement, avec la même règle.",
+                  "A second, more recent lever: speeding up the wait in our editorial queue. Two ways in: free, in exchange for the vendor adding a ToolTrim badge to their site; paid, even faster, with nothing to display in return. A paid visual placement (badge and slot clearly labeled as such in the catalog) is coming soon, under the same rule.",
+                )}
+              </p>
+              <p>
+                {t(
+                  "Dans les trois cas (gratuit, accéléré, mis en avant), chaque fiche est revue individuellement, avec la même grille de preuve. Payer ou afficher un badge change le délai ou la visibilité, jamais le contenu ni la note.",
+                  "In all three cases (free, accelerated, featured), every page is reviewed individually, against the same evidence grid. Paying or displaying a badge changes the timeline or the visibility, never the content or the score.",
                 )}
               </p>
             </div>
@@ -176,8 +182,8 @@ const TransparencyPage = () => {
               </p>
               <p>
                 {t(
-                  "Unité standard : prix mensuel TTC en €. Quand un outil ne publie que le prix annuel, on le ramène au mensuel équivalent, calcul de conversion affiché.",
-                  "Standard unit: monthly price including tax in €. When a tool only publishes the annual price, we bring it back to the monthly equivalent, with the conversion shown.",
+                  "Unité de référence : prix mensuel en dollars US ($), la devise dans laquelle la plupart des éditeurs SaaS publient, la majorité étant internationaux. Convertible en euros via le sélecteur de devise du site. Quand un outil ne publie que le prix annuel, on le ramène au mensuel équivalent, calcul affiché.",
+                  "Reference unit: monthly price in US dollars ($), the currency most SaaS vendors publish in, most of them being international. Convertible to euros via the site's currency switcher. When a tool only publishes the annual price, we bring it back to the monthly equivalent, with the calculation shown.",
                 )}
               </p>
             </div>
