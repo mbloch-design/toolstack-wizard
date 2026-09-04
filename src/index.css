@@ -22230,6 +22230,14 @@ section[id] {
 .sp-note p,
 .sp-publication-note { margin-top: 5px; font-size: 14px; line-height: 1.55; color: var(--color-muted); }
 .sp-note a { display: inline-block; margin-top: 8px; color: var(--color-text-strong); font-size: 14px; font-weight: 600; text-underline-offset: 3px; }
+/* Flat, no accent bar — matches the plan cards' flat rounded treatment
+   instead of the bordered-callout style used inside the white step cards. */
+.sp-overview .sp-note {
+  margin-top: clamp(20px, 2.5vw, 28px);
+  padding: 24px 28px;
+  border-left: 0;
+  border-radius: var(--radius-lg);
+}
 .sp-plan-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -22270,6 +22278,9 @@ section[id] {
   border-radius: var(--radius-pill);
 }
 .sp-plan-tag svg { flex-shrink: 0; }
+/* Invisible twin of the tag on the plan without one, so both cards' price
+   rows line up instead of the untagged card's price sitting higher. */
+.sp-plan-tag--placeholder { visibility: hidden; }
 .sp-plan-card-head {
   display: flex;
   flex-direction: column;
@@ -22353,6 +22364,18 @@ section[id] {
   justify-content: center;
   width: 100%;
 }
+.sp-skip-badge-link {
+  align-self: flex-start;
+  margin-top: -6px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-muted);
+  text-decoration: underline;
+  text-decoration-color: var(--color-border-strong);
+  text-underline-offset: 3px;
+}
+.sp-skip-badge-link:hover { color: var(--color-text-strong); text-decoration-color: var(--color-text-strong); }
 .sp-verified {
   text-align: center;
   padding: 14px 16px;

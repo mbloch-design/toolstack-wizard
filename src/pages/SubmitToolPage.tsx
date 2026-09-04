@@ -391,6 +391,7 @@ const SubmitToolPage = () => {
         </div>
         <div className="sp-plan-grid">
           <div className="sp-plan-card">
+            <span className="sp-plan-tag sp-plan-tag--placeholder" aria-hidden="true">&nbsp;</span>
             <div className="sp-plan-card-head">
               <div><span className="sp-plan-price">0 $</span><span className="sp-plan-period">{t("pour toujours", "forever")}</span></div>
               <span className="sp-plan-name">{t("Badge gratuit", "Free badge")}</span>
@@ -403,11 +404,12 @@ const SubmitToolPage = () => {
               <li><Check size={15} /><span>{t("Aucun paiement requis", "No payment required")}</span></li>
               <li><Check size={15} /><span>{t("Vérification automatique du badge", "Automatic badge verification")}</span></li>
               <li><Check size={15} /><span>{t("Lien dofollow une fois le badge vérifié", "Dofollow link once the badge is verified")}</span></li>
+              <li><Check size={15} /><span>{t("Revue éditoriale incluse", "Editorial review included")}</span></li>
             </ul>
             <button type="button" className="tt-button-secondary sp-plan-cta" onClick={() => choosePlan("free")}>{t("Choisir le badge gratuit →", "Choose the free badge →")}</button>
           </div>
           <div className="sp-plan-card sp-plan-card--highlight">
-            <span className="sp-plan-tag"><Zap size={13} />{t("Publication garantie", "Guaranteed publication")}</span>
+            <span className="sp-plan-tag"><Zap size={13} />{t("Publication prioritaire", "Priority publication")}</span>
             <div className="sp-plan-card-head">
               <div><span className="sp-plan-price">{SKIP_BADGE_PRICE}</span><span className="sp-plan-period">{t("paiement unique", "one-time")}</span>{SPECIAL_OFFER_ACTIVE && <span className="sp-plan-flag">{t("Offre spéciale", "Special offer")}</span>}</div>
               <span className="sp-plan-name">{t("Publication payante", "Paid publication")}</span>
@@ -426,6 +428,7 @@ const SubmitToolPage = () => {
             <button type="button" className="tt-button-primary sp-plan-cta" onClick={() => choosePlan("paid")}>{t(`Publier pour ${SKIP_BADGE_PRICE} →`, `Publish for ${SKIP_BADGE_PRICE} →`)}</button>
           </div>
         </div>
+        <div className="sp-note"><strong>{t("Tu préfères une autre solution ?", "Would you prefer another option?")}</strong><p>{t("Contacte-nous directement : nous étudierons avec toi une alternative.", "Contact us directly and we will discuss an alternative with you.")}</p><Link to={`${prefix}/contact?subject=partnership`}>{t("Contacter ToolTrim →", "Contact ToolTrim →")}</Link></div>
         </div>
       </section>
 
@@ -469,7 +472,7 @@ const SubmitToolPage = () => {
             <section className="sp-form">
               <div className="sp-section-heading"><span>02</span><div><h2>{t("Publication payante", "Paid publication")}</h2><p>{t("Aucun badge à installer : le paiement débloque directement la dernière étape.", "No badge to install: payment unlocks the final step directly.")}</p></div></div>
               <div className="sp-plan-card sp-plan-card--highlight">
-                <span className="sp-plan-tag"><Zap size={13} />{t("Publication garantie", "Guaranteed publication")}</span>
+                <span className="sp-plan-tag"><Zap size={13} />{t("Publication prioritaire", "Priority publication")}</span>
                 <div className="sp-plan-card-head">
                   <div><span className="sp-plan-price">{SKIP_BADGE_PRICE}</span><span className="sp-plan-period">{t("paiement unique", "one-time")}</span>{SPECIAL_OFFER_ACTIVE && <span className="sp-plan-flag">{t("Offre spéciale", "Special offer")}</span>}</div>
                   <span className="sp-plan-name">{t("Publication payante", "Paid publication")}</span>
@@ -519,6 +522,9 @@ const SubmitToolPage = () => {
                   <span>{t("J’ai ajouté le badge sur mon site", "I've added the badge to my website")}</span>
                 </label>
                 <div className="tt-form-field"><label className="tt-form-label" htmlFor="submit-badge-url">{t("URL exacte de la page avec le badge", "Exact URL of the page with the badge")}</label><input ref={badgeUrlRef} className="tt-form-input" id="submit-badge-url" required type="url" value={submission.badgeUrl} onChange={(e) => { update("badgeUrl", e.target.value); update("verificationToken", ""); }} placeholder={`${submission.toolUrl.replace(/\/$/, "") || "https://example.com"}/partners`} aria-describedby={error ? "submit-badge-error" : undefined} /></div>
+                <button type="button" className="sp-skip-badge-link" onClick={() => choosePlan("paid")}>
+                  {t("Impossible d'installer le badge ? Passe à la publication payante →", "Can't install the badge? Switch to paid publication →")}
+                </button>
                 {badgeVerified && <div className="sp-verified">✓ {t("Badge vérifié — soumission débloquée", "Badge verified — submission unlocked")}</div>}
               </div>
               {error && <p id="submit-badge-error" className="tt-form-error" role="alert">{error}</p>}
