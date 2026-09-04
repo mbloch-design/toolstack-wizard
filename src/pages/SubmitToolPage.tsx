@@ -177,7 +177,7 @@ const SubmitToolPage = () => {
     window.setTimeout(() => setCodeCopied(false), 1800);
   };
 
-  const sendProgressEmail = async (progressStep: 1 | 2 | 3, paidFlag = false) => {
+  const sendProgressEmail = async (progressStep: 1 | 2, paidFlag = false) => {
     const signature = `${progressStep}:${JSON.stringify(submission)}`;
     if (sentProgressRef.current.has(signature)) return;
     const endpoint = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
@@ -283,7 +283,7 @@ const SubmitToolPage = () => {
       // ignore storage failure, checkout still opens
     }
     trackEvent("submit_pay_skip_badge", { tool_name: submission.toolName });
-    sendProgressEmail(3, true).catch(() => {
+    sendProgressEmail(2, true).catch(() => {
       // best-effort notification, checkout still opens regardless
     });
   };

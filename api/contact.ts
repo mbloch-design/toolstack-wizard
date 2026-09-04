@@ -164,7 +164,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     from: "ToolTrim Contact <contact@tooltrim.com>",
     to: "contact@tooltrim.com",
     replyTo: email,
-    subject: `${isToolSubmission ? (isPaidSubmission ? "[Soumission payante]" : "[Soumission — étape 3/3]") : "[Contact]"} ${String(subject).replace(/[\r\n]/g, " ")}`,
+    subject: `${isToolSubmission ? `${isPaidSubmission ? "[Payante] " : ""}[Soumission — étape 3/3]` : "[Contact]"} ${String(subject).replace(/[\r\n]/g, " ")}`,
     html: `
       <p><strong>De :</strong> ${escapeHtml(name)} &lt;${escapeHtml(email)}&gt;</p>
       <p><strong>Sujet :</strong> ${escapeHtml(subject)}</p>
