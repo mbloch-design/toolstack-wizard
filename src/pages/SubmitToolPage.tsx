@@ -437,7 +437,11 @@ const SubmitToolPage = () => {
             <li key={number} className="sp-step-item">
               <span className={`sp-step ${step === number ? "sp-step--active" : ""}${step > number ? " sp-step--done" : ""}`}>
                 <span className="sp-step-dot">{step > number ? <Check size={13} /> : number}</span>
-                <strong>{number === 1 ? t("Contact", "Contact") : number === 2 ? t("Publication", "Publication") : t("Finalisation", "Details")}</strong>
+                <strong>{number === 1
+                  ? t("Contact", "Contact")
+                  : number === 2
+                    ? (planChoice === "paid" ? t("Paiement", "Payment") : t("Badge", "Badge"))
+                    : t("Finalisation", "Details")}</strong>
               </span>
               {number < 3 && <span className={`sp-step-connector${step > number ? " sp-step-connector--filled" : ""}`} aria-hidden="true" />}
             </li>
