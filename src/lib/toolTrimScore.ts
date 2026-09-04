@@ -13,7 +13,7 @@ export interface ToolTrimScoreResult {
 // once the v2 axis average can actually fall below the legacy score's old
 // 2.8 floor.
 const labelsFor = (score: number) => ({
-  labelFr: score >= 4.3 ? "Excellent" : score >= 3.8 ? "Très bon" : score >= 2.8 ? "Moyen" : score >= 1.8 ? "Médiocre" : "Mauvais",
+  labelFr: score >= 4.3 ? "Excellent" : score >= 3.8 ? "Très bon" : score >= 2.8 ? "Correct" : score >= 1.8 ? "Médiocre" : "Mauvais",
   labelEn: score >= 4.3 ? "Excellent" : score >= 3.8 ? "Great" : score >= 2.8 ? "Average" : score >= 1.8 ? "Poor" : "Bad",
 });
 
