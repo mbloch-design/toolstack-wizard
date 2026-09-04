@@ -127,8 +127,15 @@ const TransparencyPage = () => {
             </div>
           </section>
 
-          {/* ── 4. Comment on note ── */}
-          <section className="ab-section">
+          {/* ── 4. Comment on note ──
+              Two distinct things get scored on ToolTrim: the diagnostic
+              engine (stack audit) and the per-tool rating out of 5 shown as
+              stars on each tool page. This section used to only describe
+              the former and claimed "no 5-star score" — which the star
+              display now directly contradicts. Reuses the same five-axis
+              grid (.me-cars) and copy as Methodology's #notation section so
+              the two pages never drift apart on what the criteria are. */}
+          <section className="ab-section" id="notation">
             <h2 className="ab-section-title">{t("Comment on note", "How we score")}</h2>
             <div className="ab-prose">
               <p>
@@ -139,13 +146,32 @@ const TransparencyPage = () => {
               </p>
               <p>
                 {t(
-                  "Chaque recommandation est explicable : on peut pointer la raison exacte pour laquelle un outil est gardé, remplacé ou supprimé. Pas de score à 5 étoiles opaque.",
-                  "Every recommendation is explainable: we can point to the exact reason a tool is kept, replaced, or dropped. No opaque 5-star score.",
+                  "La note sur 5 affichée sur chaque fiche outil suit la même logique : chaque recommandation est explicable, jamais une moyenne d'avis clients. On note cinq critères factuels, chacun à partir d'une preuve citée.",
+                  "The score out of 5 shown on every tool page follows the same logic: every recommendation is explainable, never an average of customer reviews. We grade five factual criteria, each from a cited piece of evidence.",
                 )}
               </p>
+            </div>
+            <dl className="me-cars">
+              {[
+                { letter: "1", word: t("Valeur ajoutée", "Added value"), desc: t("Le gain réel (temps, argent) rapporté à ce que l'outil coûte.", "The real gain (time, money) relative to what the tool costs.") },
+                { letter: "2", word: t("Simplicité", "Simplicity"), desc: t("Le temps et la compétence nécessaires pour en tirer un premier résultat utile.", "The time and skill needed to get a first useful result.") },
+                { letter: "3", word: t("Utilisation", "Fit for purpose"), desc: t("Le degré de réalisation de l'objectif que l'outil annonce, sans contournement.", "How fully the tool delivers on its stated promise, without workarounds.") },
+                { letter: "4", word: t("Puissance", "Performance"), desc: t("La profondeur technique et le plafond de capacité face à sa catégorie.", "Technical depth and capability ceiling relative to its category.") },
+                { letter: "5", word: t("Réversibilité", "Reversibility"), desc: t("La facilité à récupérer ses données et à partir si l'outil ne convient plus.", "How easily you can get your data out and leave if the tool stops working for you.") },
+              ].map((b) => (
+                <div key={b.letter} className="me-cars-row">
+                  <dt className="me-cars-letter">{b.letter}</dt>
+                  <div className="me-cars-body">
+                    <p className="me-cars-word">{b.word}</p>
+                    <p className="me-cars-desc">{b.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </dl>
+            <div className="ab-prose">
               <p>
-                <Link to={`${prefix}/methodology`} className="ab-inline-link">
-                  {t("Lire la méthodologie complète", "Read the full methodology")}
+                <Link to={`${prefix}/methodology#notation`} className="ab-inline-link">
+                  {t("Lire le détail de chaque critère", "Read the detail on each criterion")}
                 </Link>
               </p>
             </div>
