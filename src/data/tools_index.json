@@ -41907,5 +41907,266 @@
     "freeAlternative": null,
     "substitutable": true,
     "betterAlternative": null
+  },
+  {
+    "id": "happia",
+    "slug": "happia",
+    "name": "Happia",
+    "categoryId": "analytics",
+    "shortDescription": "Audit et pilotage de la visibilité d'un commerce local dans les réponses de ChatGPT, Gemini, Perplexity et Claude.",
+    "shortDescriptionEn": "Audits and manages a local business's visibility in ChatGPT, Gemini, Perplexity and Claude answers.",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent (essai 14 jours, carte enregistrée, aucun prélèvement)",
+      "paid": "79 à 159 €HT/mois selon le plan (Essentiel, Pro, Premium), + 49 €HT/mois/site en add-on multi-établissements (Premium)"
+    },
+    "defaultMonthlyPrice": 79,
+    "affiliateLink": "",
+    "websiteUrl": "https://happia.fr/",
+    "ogImageUrl": "/tool-media/happia/happia-dashboard.webp",
+    "logo": "https://logo.clearbit.com/happia.fr",
+    "tool_type": "satellite",
+    "host_app": null,
+    "bundle_parent": null,
+    "substitution_cluster_v2": null,
+    "functional_needs": [
+      "visibilite-ia",
+      "gestion-avis",
+      "referencement-local"
+    ],
+    "verticals": [],
+    "relevantFor": [
+      "Commerces locaux indépendants",
+      "Restaurateurs et hôteliers",
+      "Artisans et professions de santé de proximité"
+    ],
+    "freeAlternative": null,
+    "substitutable": true,
+    "betterAlternative": null
+  },
+  {
+    "id": "klark",
+    "slug": "klark",
+    "name": "Klark",
+    "categoryId": "finance",
+    "shortDescription": "Compte pro, facturation, CRM et e-commerce réunis dans un seul tableau de bord pour indépendants et TPE.",
+    "shortDescriptionEn": "Business account, invoicing, CRM and e-commerce in one dashboard for freelancers and small businesses.",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent (freemium annoncé, non livré) ; essai 7 jours sans carte",
+      "paid": "Facturation : 9,99 €HT/mois (offre de lancement, 100 premiers clients, puis 24,99 €HT/mois) ; Premium : 49,99 €/mois ou 41,58 €HT/mois en annuel (499 €/an)"
+    },
+    "defaultMonthlyPrice": 9.99,
+    "affiliateLink": "",
+    "websiteUrl": "https://klark.app/",
+    "ogImageUrl": "https://klark.app/mockups/Mockup_Klark_dashboard.png",
+    "logo": "https://logo.clearbit.com/klark.app",
+    "tool_type": "gestion",
+    "host_app": null,
+    "bundle_parent": null,
+    "substitution_cluster_v2": null,
+    "functional_needs": [
+      "compte-pro",
+      "facturation",
+      "crm-commerce"
+    ],
+    "verticals": [
+      "consultant-b2b",
+      "ecommercant",
+      "dev-freelance"
+    ],
+    "relevantFor": [
+      "Freelances et indépendants français",
+      "Artisans et petits commerces physiques",
+      "E-commerçants"
+    ],
+    "freeAlternative": null,
+    "substitutable": true,
+    "betterAlternative": null
+  },
+  {
+    "id": "stellaflow",
+    "slug": "stellaflow",
+    "name": "StellaFlow",
+    "categoryId": "creation",
+    "shortDescription": "Génération de contenu par IA et planification multi-réseaux personnalisée à ta marque.",
+    "shortDescriptionEn": "AI content generation and multi-network scheduling personalized to your brand.",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent ; essai 7 jours sans engagement",
+      "paid": "Pilote 19 à 22,80 €HT/mois, Explorateur 49 à 58,80 €HT/mois, Commandant 99 à 118,80 €HT/mois (prix bas = engagement annuel, prix haut = facturation mensuelle)"
+    },
+    "defaultMonthlyPrice": 19,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.stellaflow.com/",
+    "ogImageUrl": "",
+    "logo": "https://logo.clearbit.com/stellaflow.com",
+    "tool_type": "satellite",
+    "host_app": null,
+    "bundle_parent": null,
+    "substitution_cluster_v2": null,
+    "functional_needs": [
+      "planification-posts",
+      "generation-contenu-ia",
+      "social-media-management"
+    ],
+    "verticals": [
+      "community-manager",
+      "createur-contenu",
+      "ecommercant"
+    ],
+    "relevantFor": [
+      "Community managers indépendants",
+      "Petites entreprises et e-commerçants",
+      "Solo créateurs multi-réseaux"
+    ],
+    "freeAlternative": "metricool",
+    "substitutable": true,
+    "betterAlternative": null
+  },
+  {
+    "id": "vulko",
+    "slug": "vulko",
+    "name": "Vulko",
+    "categoryId": "finance",
+    "shortDescription": "Devis et factures BTP générés par IA, conformes Factur-X, avec signature électronique et mode hors-ligne.",
+    "shortDescriptionEn": "AI-generated construction quotes and Factur-X compliant invoices, with e-signature and offline mode.",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent ; essai 14 jours sans carte bancaire, annulable en 1 clic",
+      "paid": "Starter 19 €HT/mois, Solo 49 €HT/mois, Duo 79 €HT/mois, PME 119 €HT/mois, Équipe 299 €HT/mois (tarifs annuels avec ~2 mois offerts)"
+    },
+    "defaultMonthlyPrice": 19,
+    "affiliateLink": "",
+    "websiteUrl": "https://vulko.fr/",
+    "ogImageUrl": "/tool-media/vulko/dashboard.png",
+    "logo": "https://logo.clearbit.com/vulko.fr",
+    "tool_type": "metier",
+    "host_app": null,
+    "bundle_parent": null,
+    "substitution_cluster_v2": null,
+    "functional_needs": [
+      "devis-facturation-btp",
+      "facturation-electronique"
+    ],
+    "verticals": [
+      "consultant-b2b",
+      "dev-freelance"
+    ],
+    "relevantFor": [
+      "Artisans du BTP indépendants",
+      "Petites équipes du bâtiment",
+      "PME du BTP"
+    ],
+    "freeAlternative": null,
+    "substitutable": true,
+    "betterAlternative": null
+  },
+  {
+    "id": "charik",
+    "slug": "charik",
+    "name": "Charik",
+    "categoryId": "crm",
+    "shortDescription": "CRM français avec enrichissement de prospects et recherche ICP, tarif fixe sans crédits.",
+    "shortDescriptionEn": "French CRM with prospect enrichment and ICP search, flat pricing with no credit system.",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent ; essai 7 jours sans carte, limité à 10 utilisateurs et 100 contacts/sociétés/deals",
+      "paid": "Charik 17 à 25 €HT/utilisateur/mois, Charik Pro 58 €HT/utilisateur/mois (engagement annuel), Charik Entreprise à partir de 460 €HT/mois (10+ utilisateurs, sur devis)"
+    },
+    "defaultMonthlyPrice": 17,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.charik.app/",
+    "ogImageUrl": "https://i.ytimg.com/vi/E3e-_IMPl00/maxresdefault.jpg",
+    "logo": "https://logo.clearbit.com/charik.app",
+    "tool_type": "gestion",
+    "host_app": null,
+    "bundle_parent": null,
+    "substitution_cluster_v2": null,
+    "functional_needs": [
+      "crm",
+      "lead-generation"
+    ],
+    "verticals": [
+      "fondateur-saas",
+      "consultant-b2b",
+      "business-ops"
+    ],
+    "relevantFor": [
+      "Startups françaises",
+      "TPE et PME françaises",
+      "Équipes commerciales B2B"
+    ],
+    "freeAlternative": null,
+    "substitutable": true,
+    "betterAlternative": null
+  },
+  {
+    "id": "snappack",
+    "slug": "snappack",
+    "name": "SnapPack",
+    "categoryId": "creation",
+    "shortDescription": "Transforme une photo smartphone en visuel produit studio 4K par IA.",
+    "shortDescriptionEn": "Turns a smartphone photo into a studio-quality 4K product visual with AI.",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent ; 5 images offertes à l'essai, sans carte bancaire",
+      "paid": "Starter 19 €HT/mois (50 images), Premium 49 €HT/mois (150 images), Gold 99 €HT/mois (350 images)"
+    },
+    "defaultMonthlyPrice": 19,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.snappack.io/",
+    "ogImageUrl": "https://www.snappack.io/assets/img/hero-sGTGI8F.webp",
+    "logo": "https://logo.clearbit.com/snappack.io",
+    "tool_type": "satellite",
+    "host_app": null,
+    "bundle_parent": null,
+    "substitution_cluster_v2": null,
+    "functional_needs": [
+      "generation-visuels-produit",
+      "photographie-produit-ia"
+    ],
+    "verticals": [
+      "ecommercant",
+      "graphiste-da"
+    ],
+    "relevantFor": [
+      "E-commerçants",
+      "Marques de mode et prêt-à-porter",
+      "Créateurs et artisans"
+    ],
+    "freeAlternative": null,
+    "substitutable": true,
+    "betterAlternative": null
+  },
+  {
+    "id": "orlo",
+    "slug": "orlo",
+    "name": "Orlo",
+    "categoryId": "organization",
+    "shortDescription": "Extrait les échéances de tes factures et contrats par IA et te rappelle avant qu'ils n'expirent.",
+    "shortDescriptionEn": "Extracts deadlines from your bills and contracts with AI and reminds you before they expire.",
+    "pricing": {
+      "free": "Plan Free permanent : 0 £/mois, 5 documents/mois, sans carte bancaire",
+      "paid": "Basic 2,99 £/mois (50 documents), Pro 7,99 £/mois (250 documents), essai 14 jours sur les deux"
+    },
+    "defaultMonthlyPrice": 3.44,
+    "affiliateLink": "",
+    "websiteUrl": "https://www.getorlo.app/",
+    "ogImageUrl": "https://www.getorlo.app/opengraph-image?0aa54a79b9b4e49e",
+    "logo": "https://logo.clearbit.com/getorlo.app",
+    "tool_type": "satellite",
+    "host_app": null,
+    "bundle_parent": null,
+    "substitution_cluster_v2": null,
+    "functional_needs": [
+      "gestion-documents",
+      "rappel-echeances"
+    ],
+    "verticals": [
+      "consultant-b2b"
+    ],
+    "relevantFor": [
+      "Indépendants et propriétaires bailleurs (Royaume-Uni)",
+      "Petites entreprises pour le suivi documentaire",
+      "Foyers britanniques pour l'administratif personnel"
+    ],
+    "freeAlternative": null,
+    "substitutable": true,
+    "betterAlternative": null
   }
 ]

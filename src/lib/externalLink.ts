@@ -51,6 +51,8 @@ const DOMAINES_EDITORIAUX_DOFOLLOW = new Set([
   "www.vulko.fr",
   "charik.app",
   "www.charik.app",
+  "getorlo.app",
+  "www.getorlo.app",
 ]);
 
 function estLienEditorialDofollow(url: string): boolean {
