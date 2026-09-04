@@ -41,6 +41,8 @@
     { "source": "/:lang(fr|en)/story/:slug", "destination": "/:lang/guide/:slug", "permanent": true },
     { "source": "/fr/methodology", "destination": "/fr/transparency", "permanent": true },
     { "source": "/en/methodology", "destination": "/en/transparency", "permanent": true },
+    { "source": "/fr/audit-saas-gratuit", "destination": "/fr/ma-stack", "permanent": true },
+    { "source": "/en/free-saas-audit", "destination": "/en/ma-stack", "permanent": true },
     {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "www.tooltrim.com" }],

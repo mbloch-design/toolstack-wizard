@@ -49,7 +49,6 @@ const PrivacyPolicyPage = lazy(() => import("@/pages/PrivacyPolicyPage"));
 const TermsPage = lazy(() => import("@/pages/TermsPage"));
 const ComparesIndexPage = lazy(() => import("@/pages/ComparesIndexPage"));
 const NotFound = lazy(() => import("@/pages/NotFound"));
-const AuditLanding = lazy(() => import("@/pages/AuditLanding"));
 const SearchPage = lazy(() => import("@/pages/SearchPage"));
 const PersonaPillarPage = lazy(() => import("@/pages/PersonaPillarPage"));
 const ArticleFacturation = lazy(() => import("@/pages/ArticleFacturation"));
@@ -262,8 +261,6 @@ export const AppRoutes = () => (
       <Route path="terms" element={<TermsPage />} />
       {/* SEO landing — localized slugs (FR + EN) under same LangLayout */}
       <Route path="search" element={<SearchPage />} />
-      <Route path="audit-saas-gratuit" element={<AuditLanding />} />
-      <Route path="free-saas-audit" element={<AuditLanding />} />
       <Route path="back-office" element={<BackOfficePage />} />
       <Route path="v2" element={<RedirectV2ToHome />} />
     </Route>

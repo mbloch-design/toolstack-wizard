@@ -171957,5 +171957,265 @@
       "lastActivityVerifiedOn": null,
       "notedOn": "2026-09-03"
     }
+  },
+  {
+    "id": "orlo",
+    "slug": "orlo",
+    "name": "Orlo",
+    "category": "organization",
+    "shortDescription": "Extrait les échéances de tes factures et contrats par IA et te rappelle avant qu'ils n'expirent.",
+    "shortDescriptionEn": "Extracts deadlines from your bills and contracts with AI and reminds you before they expire.",
+    "description": "Orlo lit tes documents (assurances, contrôle technique, factures d'énergie, déclarations fiscales, contrats, passeports) et en extrait les échéances importantes. Transfère un reçu ou une facture à ton adresse email personnelle Orlo, ou prends-le en photo : l'IA analyse le document en moins de 2 secondes, tu relis et valides avant sauvegarde.\n\nOrlo suit 18 catégories de documents, propose des rappels configurables (6 semaines, 4 semaines, 2 semaines, 3 jours avant échéance) par email, notification ou récapitulatif hebdomadaire, et organise tes documents par espace (personnel, foyer, bien locatif, entreprise) partageable avec d'autres personnes.\n\nLe plan Free (0 £/mois, 5 documents/mois) est un vrai plan gratuit permanent, pas un essai. Basic (2,99 £/mois, 50 documents) ajoute les rappels et le stockage sécurisé ; Pro (7,99 £/mois, 250 documents) ajoute l'extraction avancée et un calendrier intégré. Orlo est un produit pensé pour le Royaume-Uni (MOT, fiscalité britannique), utile pour un indépendant ou un propriétaire bailleur qui veut suivre ses renouvellements professionnels sans tableur. C'est un produit indépendant très récent (studio Mearovate, un seul fondateur), sans capture d'écran publique du produit et avec seulement 10 avis à ce jour.",
+    "longDescription": "Orlo lit tes documents (assurances, contrôle technique, factures d'énergie, déclarations fiscales, contrats, passeports) et en extrait les échéances importantes. Transfère un reçu ou une facture à ton adresse email personnelle Orlo, ou prends-le en photo : l'IA analyse le document en moins de 2 secondes, tu relis et valides avant sauvegarde.\n\nOrlo suit 18 catégories de documents, propose des rappels configurables (6 semaines, 4 semaines, 2 semaines, 3 jours avant échéance) par email, notification ou récapitulatif hebdomadaire, et organise tes documents par espace (personnel, foyer, bien locatif, entreprise) partageable avec d'autres personnes.\n\nLe plan Free (0 £/mois, 5 documents/mois) est un vrai plan gratuit permanent, pas un essai. Basic (2,99 £/mois, 50 documents) ajoute les rappels et le stockage sécurisé ; Pro (7,99 £/mois, 250 documents) ajoute l'extraction avancée et un calendrier intégré. Orlo est un produit pensé pour le Royaume-Uni (MOT, fiscalité britannique), utile pour un indépendant ou un propriétaire bailleur qui veut suivre ses renouvellements professionnels sans tableur. C'est un produit indépendant très récent (studio Mearovate, un seul fondateur), sans capture d'écran publique du produit et avec seulement 10 avis à ce jour.",
+    "longDescriptionEn": "Stop missing renewals, stop overpaying. Orlo remembers so you don't have to. Forward a receipt or bill to your personal Orlo email, or snap a photo and let AI read it. Insurance, MOT, utility bills, tax returns, contracts, passports. Orlo extracts the details, tracks price changes, and reminds you before anything expires.\n\nOrlo tracks 18 document categories, offers configurable reminders (6 weeks, 4 weeks, 2 weeks, 3 days before expiry) by email, push notification or weekly digest, and organizes documents into shareable workspaces (personal, household, rental property, business).\n\nThe Free plan (£0/month, 5 documents/month) is a genuine permanent free tier, not a trial. Basic (£2.99/month, 50 documents) adds reminders and secure storage; Pro (£7.99/month, 250 documents) adds advanced extraction and a built-in calendar. Orlo is built for the UK (MOT, UK tax deadlines), useful for a self-employed person or landlord tracking business renewals without a spreadsheet. It's a very young indie product (Mearovate studio, single founder), with no public product screenshot and only 10 reviews to date.",
+    "pricing": {
+      "free": "Plan Free permanent : 0 £/mois, 5 documents/mois, sans carte bancaire",
+      "paid": "Basic 2,99 £/mois (50 documents), Pro 7,99 £/mois (250 documents), essai 14 jours sur les deux"
+    },
+    "pricingEn": {
+      "free": "Permanent Free plan: £0/month, 5 documents/month, no card required",
+      "paid": "Basic £2.99/month (50 documents), Pro £7.99/month (250 documents), 14-day trial on both"
+    },
+    "defaultMonthlyPrice": 3.44,
+    "pricing_v5": {
+      "cautions": [
+        "Prix en livres sterling (GBP) ; converti ici à titre indicatif à 1 £ = 1,15 € (taux approximatif au 2026-09-03, à revérifier).",
+        "Produit pensé pour le Royaume-Uni (MOT, fiscalité UK) : moins directement applicable hors UK.",
+        "Plan Free permanent limité à 5 documents/mois."
+      ],
+      "cautionsEn": [
+        "Prices in GBP; converted here indicatively at £1 = €1.15 (approximate rate as of 2026-09-03, to be re-verified).",
+        "Built for the UK (MOT, UK tax deadlines): less directly applicable outside the UK.",
+        "Permanent Free plan capped at 5 documents/month."
+      ],
+      "verified_on": "2026-09-03",
+      "source_domain": "getorlo.app",
+      "usage_sensitive": true,
+      "compare_plan_kind": "account",
+      "compare_plan_name": "Basic",
+      "price_reliability": "high",
+      "location_sensitive": true,
+      "official_source_url": "https://www.getorlo.app/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 3.44,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "summary": "5 documents/mois, scan basique, accès dashboard. Plan gratuit permanent.",
+          "featureHighlights": [
+            "5 uploads/mois",
+            "Scan basique",
+            "Accès dashboard"
+          ],
+          "detailsSourceUrl": "https://www.getorlo.app/",
+          "pricingUnit": "par compte",
+          "isFree": true,
+          "isComparePlan": false,
+          "nativeAmount": 0,
+          "nativeCurrency": "GBP",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedMarket": "UK",
+          "observedLocale": "en-GB",
+          "observedOn": "2026-09-03",
+          "lastConfirmedOn": "2026-09-03"
+        },
+        {
+          "planKey": "basic",
+          "displayName": "Basic",
+          "summary": "50 documents/mois, rappels, stockage sécurisé.",
+          "featureHighlights": [
+            "50 uploads/mois",
+            "Rappels avant échéance",
+            "Stockage sécurisé"
+          ],
+          "detailsSourceUrl": "https://www.getorlo.app/",
+          "pricingUnit": "par compte",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 2.99,
+          "nativeCurrency": "GBP",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedMarket": "UK",
+          "observedLocale": "en-GB",
+          "observedOn": "2026-09-03",
+          "lastConfirmedOn": "2026-09-03"
+        },
+        {
+          "planKey": "pro",
+          "displayName": "Pro",
+          "summary": "250 documents/mois, extraction avancée, calendrier intégré.",
+          "featureHighlights": [
+            "250 uploads/mois",
+            "Extraction avancée, traitement prioritaire",
+            "Calendrier intégré"
+          ],
+          "detailsSourceUrl": "https://www.getorlo.app/",
+          "pricingUnit": "par compte",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 7.99,
+          "nativeCurrency": "GBP",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedMarket": "UK",
+          "observedLocale": "en-GB",
+          "observedOn": "2026-09-03",
+          "lastConfirmedOn": "2026-09-03"
+        }
+      ]
+    },
+    "websiteUrl": "https://www.getorlo.app/",
+    "affiliateLink": "",
+    "logo": "https://logo.clearbit.com/getorlo.app",
+    "verdict": {
+      "keepIf": [
+        "Tu es indépendant ou propriétaire bailleur et veux suivre tes renouvellements (assurance, contrats, fiscalité) sans tableur.",
+        "Transférer un reçu par email ou le prendre en photo te suffit comme mode de saisie.",
+        "5 documents par mois (plan Free) ou 50 à 250 (plans payants) couvrent ton volume d'échéances à suivre."
+      ],
+      "avoidIf": [
+        "Tu n'es pas au Royaume-Uni : plusieurs catégories (MOT, fiscalité UK) ne s'appliquent pas ailleurs.",
+        "Tu veux un historique de fiabilité établi : produit indépendant très récent, seulement 10 avis publiés.",
+        "Tu as besoin d'un export comptable structuré plutôt que de rappels personnels : Dext couvre mieux ce besoin B2B."
+      ],
+      "threshold": "Orlo devient intéressant si tu perds du temps ou de l'argent à cause d'échéances manquées (renouvellement d'assurance, contrat, MOT) et que le suivi manuel ne tient pas. Le plan Free permanent permet de tester sans risque avant de passer à 2,99 ou 7,99 £/mois."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You're self-employed or a landlord and want to track renewals (insurance, contracts, tax) without a spreadsheet.",
+        "Forwarding a receipt by email or snapping a photo is enough as an input method for you.",
+        "5 documents a month (Free) or 50 to 250 (paid plans) cover your volume of deadlines to track."
+      ],
+      "avoidIf": [
+        "You're not in the UK: several categories (MOT, UK tax) don't apply elsewhere.",
+        "You want an established track record: very young indie product, only 10 reviews published.",
+        "You need structured accounting export rather than personal reminders: Dext covers that B2B need better."
+      ],
+      "threshold": "Orlo is worth it if missed deadlines (an insurance renewal, a contract, an MOT) have cost you time or money and manual tracking isn't holding up. The permanent Free plan lets you test it risk-free before moving to £2.99 or £7.99/month."
+    },
+    "pros": [
+      "Plan Free permanent (pas un essai) à 5 documents par mois, sans carte bancaire.",
+      "Extraction IA en moins de 2 secondes, avec relecture et validation avant sauvegarde.",
+      "Rappels configurables à 4 échéances (6 sem., 4 sem., 2 sem., 3 jours) par email, push ou récap hebdomadaire.",
+      "Export complet des données et droit de suppression, au-delà du simple droit RGPD générique.",
+      "10 avis affichés, tous à 5 étoiles, sans chiffre agrégé gonflé pour paraître plus gros que ce qu'il est."
+    ],
+    "prosEn": [
+      "Permanent Free plan (not a trial) at 5 documents a month, no card required.",
+      "AI extraction in under 2 seconds, with review and confirmation before saving.",
+      "Configurable reminders at 4 intervals (6 wks, 4 wks, 2 wks, 3 days) by email, push or weekly digest.",
+      "Full data export and deletion rights, beyond the generic GDPR right alone.",
+      "10 reviews shown, all five stars, with no inflated aggregate number to look bigger than it is."
+    ],
+    "cons": [
+      "Pensé pour le Royaume-Uni : plusieurs catégories de documents ne s'appliquent pas hors UK.",
+      "Produit indépendant très récent, sans structure juridique identifiée ni preuve d'usage à grande échelle.",
+      "Aucune capture d'écran réelle du produit disponible publiquement.",
+      "Calendrier intégré réservé au plan Pro à 7,99 £/mois."
+    ],
+    "consEn": [
+      "Built for the UK: several document categories don't apply outside the UK.",
+      "Very young indie product, no identified legal structure or evidence of use at scale.",
+      "No real product screenshot publicly available.",
+      "Built-in calendar is Pro-only at £7.99/month."
+    ],
+    "useCases": [
+      "Transférer une facture ou un reçu par email et se faire rappeler avant l'échéance.",
+      "Suivre le renouvellement d'une assurance professionnelle ou d'un contrat sans tableur.",
+      "Centraliser les documents d'un bien locatif dans un espace partageable."
+    ],
+    "useCasesEn": [
+      "Forward a bill or receipt by email and get reminded before it's due.",
+      "Track a business insurance or contract renewal without a spreadsheet.",
+      "Centralize a rental property's documents in a shareable workspace."
+    ],
+    "covers": [
+      "gestion-documents",
+      "rappel-echeances",
+      "suivi-renouvellements"
+    ],
+    "functional_needs": [
+      "gestion-documents",
+      "rappel-echeances"
+    ],
+    "relevantFor": [
+      "Indépendants et propriétaires bailleurs (Royaume-Uni)",
+      "Petites entreprises pour le suivi documentaire",
+      "Foyers britanniques pour l'administratif personnel"
+    ],
+    "alternatives": [],
+    "seo": {
+      "idealForFr": "Idéal pour un indépendant ou un propriétaire bailleur au Royaume-Uni qui veut suivre ses renouvellements et échéances sans tableur.",
+      "idealForEn": "Ideal for a self-employed person or landlord in the UK who wants to track renewals and deadlines without a spreadsheet.",
+      "metaDescription": "Orlo : avis, prix dès 0 £/mois (plan gratuit permanent), extraction IA de documents et rappels d'échéances pour indépendants britanniques."
+    },
+    "articles": [],
+    "soloRelevance": "high",
+    "teamRelevance": "low",
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "consultant-b2b"
+    ],
+    "ia_use_case": [
+      "content-generation"
+    ],
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "personas": [],
+    "timeGainedHoursPerMonth": 1,
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [
+      "country_uk",
+      "documents_per_month",
+      "landlord_or_business"
+    ],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": {
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": false,
+      "default_decision_lane": "review_then_prescribe",
+      "auto_downgrade_allowed": false,
+      "never_auto_cancel_reason": null,
+      "requires_context_questions": true
+    },
+    "ogImageUrl": "https://www.getorlo.app/opengraph-image?0aa54a79b9b4e49e",
+    "galleryImages": [],
+    "force_silence": false,
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 4,
+      "utilisation": 3,
+      "puissance": 3,
+      "reversibilite": 4,
+      "evidence": {
+        "valeurAjoutee": "Vrai plan gratuit permanent (5 documents/mois, sans carte) et plans payants à 2,99 et 7,99 £/mois : barrière d'entrée très basse pour éviter le coût réel d'une échéance manquée (assurance, contrat). Preuve sociale modeste et honnête (10 avis, tous 5 étoiles), sans chiffre agrégé gonflé (source : getorlo.app, consulté le 2026-09-03).",
+        "simplicite": "Transfert d'un reçu par email ou photo, extraction en moins de 2 secondes, relecture et validation avant sauvegarde. Plan gratuit sans carte bancaire pour tester immédiatement (source : getorlo.app, consulté le 2026-09-03).",
+        "utilisation": "Fonctionnalités précises et cohérentes (18 catégories de documents, 4 intervalles de rappel exacts, espaces partagés), mais aucune capture d'écran réelle du produit trouvée publiquement pour vérifier visuellement la qualité d'extraction annoncée, contrairement à d'autres fiches du même lot (source : getorlo.app, consulté le 2026-09-03).",
+        "puissance": "Produit indépendant très jeune (studio Mearovate, un seul fondateur identifié, aucune structure juridique formelle trouvée), périmètre volontairement étroit (suivi documentaire et rappels) plutôt qu'une plateforme large. Sécurité décrite en termes génériques (TLS, RLS, RGPD) sans audit indépendant (source : getorlo.app et mearovate.cloud, consulté le 2026-09-03).",
+        "reversibilite": "'Full data export and deletion rights' revendiqué sur le produit, en plus d'une politique de confidentialité qui détaille explicitement le droit RGPD à la portabilité ('structured, commonly used, and machine-readable format'), plus précis que la mention générique observée sur d'autres fiches du lot (source : getorlo.app/privacy, consulté le 2026-09-03)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Genuine permanent free plan (5 documents/month, no card) and paid plans at £2.99 and £7.99/month: a very low entry barrier against the real cost of a missed deadline (insurance, contract). Modest, honest social proof (10 reviews, all five stars), with no inflated aggregate figure (source: getorlo.app, checked 2026-09-03).",
+        "simplicite": "Forward a receipt by email or photo, extraction in under 2 seconds, review and confirmation before saving. Free plan with no card required to test immediately (source: getorlo.app, checked 2026-09-03).",
+        "utilisation": "Precise, consistent features (18 document categories, 4 exact reminder intervals, shared workspaces), but no real product screenshot found publicly to visually verify the claimed extraction quality, unlike other tools in the same batch (source: getorlo.app, checked 2026-09-03).",
+        "puissance": "Very young indie product (Mearovate studio, one identified founder, no formal legal structure found), deliberately narrow scope (document tracking and reminders) rather than a broad platform. Security described in generic terms (TLS, RLS, GDPR) with no independent audit (source: getorlo.app and mearovate.cloud, checked 2026-09-03).",
+        "reversibilite": "'Full data export and deletion rights' claimed on the product, plus a privacy policy that explicitly details the GDPR portability right ('structured, commonly used, and machine-readable format'), more precise than the generic mention seen on other tools in this batch (source: getorlo.app/privacy, checked 2026-09-03)."
+      },
+      "lastActivityVerifiedOn": null,
+      "notedOn": "2026-09-03"
+    }
   }
 ]

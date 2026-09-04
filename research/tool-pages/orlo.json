@@ -1,0 +1,196 @@
+{
+  "schemaVersion": 1,
+  "slug": "orlo",
+  "researchedOn": "2026-09-03",
+  "researcher": "Claude Code",
+  "status": "draft",
+  "identity": {
+    "officialName": "Orlo",
+    "vendor": "Mearovate (studio indépendant, \"studio for micro-products\"), fondateur Dean O'Meara. Aucun numéro d'immatriculation (Companies House) trouvé sur getorlo.app ni mearovate.cloud",
+    "officialUrl": "https://www.getorlo.app/",
+    "pricingUrl": "https://www.getorlo.app/",
+    "docsUrl": null,
+    "changelogUrl": null
+  },
+  "claims": [
+    {
+      "id": "pricing.free",
+      "value": "Free : 0 £/mois, 5 uploads/mois, scan basique, accès dashboard, sans carte bancaire",
+      "sourceUrl": "https://www.getorlo.app/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Carte tarif page d'accueil : 'Free £0 per month 5 uploads/month Basic scanning Dashboard access'",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "pricing.basic",
+      "value": "Basic : 2,99 £/mois, 50 uploads/mois, rappels, stockage sécurisé, essai 14 jours",
+      "sourceUrl": "https://www.getorlo.app/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Carte tarif page d'accueil : 'Basic £2.99 per month 50 uploads/month ... 14-day trial'",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "pricing.pro",
+      "value": "Pro : 7,99 £/mois, 250 uploads/mois, extraction avancée, traitement prioritaire, calendrier intégré, essai 14 jours",
+      "sourceUrl": "https://www.getorlo.app/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Carte tarif page d'accueil : 'Pro £7.99 per month 250 uploads/month Advanced extraction Priority processing ... 14-day trial'",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "capability.document-types",
+      "value": "18 catégories de documents reconnues : assurances, documents véhicule (MOT/contrôle technique, taxe, permis), passeport/voyage, documents fiscaux, contrats, garanties, dossiers médicaux, factures, factures d'énergie, abonnements, reçus, réservations, billets, certificats de conformité, documents scolaires, dossiers d'animaux",
+      "sourceUrl": "https://www.getorlo.app/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Section produit page d'accueil, liste des 18 catégories",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "capability.extraction",
+      "value": "L'IA extrait les informations d'un document en moins de 2 secondes ; l'utilisateur relit et confirme avant sauvegarde ; formats acceptés JPEG/PNG/WebP/HEIC/PDF jusqu'à 20 Mo, upload en masse possible",
+      "sourceUrl": "https://www.getorlo.app/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Section produit page d'accueil",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "capability.reminders",
+      "value": "Rappels configurables à 6 semaines, 4 semaines, 2 semaines et 3 jours avant échéance, par email, notification iOS ou récapitulatif hebdomadaire du lundi",
+      "sourceUrl": "https://www.getorlo.app/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Section produit page d'accueil, détail des intervalles de rappel",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "capability.email-forwarding",
+      "value": "Adresse email personnelle Orlo pour import automatique de documents transférés (Basic/Pro), compatible Gmail/Outlook/iCloud/Yahoo",
+      "sourceUrl": "https://www.getorlo.app/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Section produit page d'accueil",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "capability.workspaces",
+      "value": "Espaces séparés (personnel, foyer, bien locatif, entreprise), partageables avec des personnes précises, chacun avec son propre tableau de bord et sa propre adresse de transfert",
+      "sourceUrl": "https://www.getorlo.app/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Section produit page d'accueil",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "capability.data-export",
+      "value": "Droit d'export complet des données et de suppression revendiqué sur le produit, en plus du droit RGPD standard à la portabilité ('receive your personal data in a structured, commonly used, and machine-readable format') dans la politique de confidentialité",
+      "sourceUrl": "https://www.getorlo.app/privacy",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Page d'accueil : 'Full data export and deletion rights' ; politique de confidentialité section 7 : droit à la portabilité explicite",
+      "confidence": "high",
+      "volatility": "low"
+    },
+    {
+      "id": "identity.vendor",
+      "value": "Orlo est un produit de Mearovate, studio indépendant qui se présente comme 'a studio for micro-products' fondé par Dean O'Meara. Aucun numéro d'immatriculation d'entreprise (type Companies House) trouvé sur getorlo.app ni mearovate.cloud",
+      "sourceUrl": "https://www.getorlo.app/terms",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "CGU : 'Orlo is operated by Mearovate (mearovate.cloud)' ; mearovate.cloud, données structurées Organization/founder",
+      "confidence": "high",
+      "volatility": "low"
+    },
+    {
+      "id": "proof.reviews",
+      "value": "10 avis affichés, tous 5 étoiles : un nombre faible mais précis et non gonflé, contrairement aux statistiques agrégées vagues observées sur d'autres fiches du jour",
+      "sourceUrl": "https://www.getorlo.app/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "'10 reviews · all five stars' affiché sur la page d'accueil",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "quality.no-real-screenshot",
+      "value": "Aucune capture d'écran réelle du produit trouvée sur le site (page très majoritairement construite en CSS/composants, une seule image détectée dans le HTML statique en dehors des badges de stores et logos de messagerie). L'image OG officielle est une carte de marque (logo + accroche), pas une capture d'interface",
+      "sourceUrl": "https://www.getorlo.app/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Inspection du HTML statique de la page d'accueil : 1 seule balise <img> hors badges/logos ; image OG (opengraph-image) = carte de marque texte+logo",
+      "confidence": "high",
+      "volatility": "low"
+    }
+  ],
+  "pricing": {
+    "originalCurrency": "GBP",
+    "billingContext": "mensuel",
+    "taxIncluded": null,
+    "freePlan": "Free : 0 £/mois, 5 uploads/mois, sans carte bancaire",
+    "plans": [
+      { "name": "Free", "price": 0, "period": "mois" },
+      { "name": "Basic", "price": 2.99, "period": "mois" },
+      { "name": "Pro", "price": 7.99, "period": "mois" }
+    ],
+    "seatMinimum": null,
+    "usageLimits": [
+      "Uploads/mois : 5 (Free) / 50 (Basic) / 250 (Pro)"
+    ],
+    "cautions": [
+      "Prix en livres sterling (GBP), produit pensé pour le Royaume-Uni (MOT, contrôle technique britannique, fiscalité UK)",
+      "Taxe/TVA non précisée sur la page tarifaire"
+    ]
+  },
+  "capabilities": [
+    "Extraction IA des informations d'un document (reçu, facture, contrat, assurance...) en moins de 2 secondes",
+    "18 catégories de documents reconnues automatiquement",
+    "Rappels avant échéance configurables (email, push, récap hebdomadaire)",
+    "Adresse email personnelle pour import automatique par transfert",
+    "Espaces séparés (personnel, foyer, bien locatif, entreprise) partageables"
+  ],
+  "limitations": [
+    "Produit pensé pour le marché britannique (MOT, fiscalité UK) : moins pertinent hors Royaume-Uni",
+    "Studio indépendant très petit (pas de structure juridique identifiée), aucune preuve d'usage à grande échelle au-delà de 10 avis",
+    "Aucune capture d'écran réelle du produit disponible publiquement",
+    "Calendrier intégré réservé au plan Pro"
+  ],
+  "integrations": [
+    "Transfert email compatible Gmail, Outlook, iCloud, Yahoo",
+    "Stripe, Apple Pay, Google Play Billing (paiement)",
+    "iOS App Store, Google Play, accès web (app.getorlo.com)"
+  ],
+  "audiences": [
+    "Indépendants et propriétaires bailleurs au Royaume-Uni (suivi des renouvellements d'assurance, contrats, échéances fiscales)",
+    "Foyers et familles britanniques (documents personnels, MOT, factures)",
+    "Petites entreprises pour le suivi documentaire administratif"
+  ],
+  "useCases": [
+    "Transférer une facture ou un reçu par email et se faire rappeler avant l'échéance",
+    "Suivre les renouvellements d'assurance professionnelle ou de contrats sans tableur",
+    "Centraliser les documents d'un bien locatif dans un espace dédié partageable"
+  ],
+  "alternatives": [],
+  "editorialNotes": [
+    "Aucune alternative retenue : Dext (déjà catalogué) fait de l'extraction de justificatifs mais pour un usage comptable B2B (cabinets, PME), pas pour le suivi de renouvellements personnels/administratifs. Besoin principal différent malgré le chevauchement technique (OCR/extraction IA de documents). Aucun autre concurrent direct (type Fyi, Papra) déjà catalogué au 2026-09-03 ; non ajouté.",
+    "Produit UK-centrique (MOT, fiscalité britannique) : angle retenu pour ToolTrim = l'indépendant ou le propriétaire bailleur qui suit ses renouvellements professionnels, cohérent avec le lectorat ToolTrim, plutôt que le foyer familial généraliste qui est l'audience la plus large mais hors du cœur de cible ToolTrim.",
+    "Introduction fournie telle quelle par Michael pour la version anglaise : \"Stop missing renewals, stop overpaying. Orlo remembers so you don't have to. Forward a receipt or bill to your personal Orlo email, or snap a photo and let AI read it. Insurance, MOT, utility bills, tax returns, contracts, passports. Orlo extracts the details, tracks price changes, and reminds you before anything expires.\" Reprise en ouverture de longDescriptionEn ; longDescription (FR) est une rédaction équivalente, pas une traduction mot à mot, conformément à la charte."
+  ],
+  "unknowns": [
+    "Nombre réel d'utilisateurs actifs, aucune métrique publique au-delà de '10 reviews'",
+    "Forme juridique de Mearovate non identifiée (pas de numéro Companies House trouvé)",
+    "Fiabilité de l'extraction IA à grande échelle non vérifiée indépendamment"
+  ],
+  "conflicts": []
+}

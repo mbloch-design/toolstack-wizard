@@ -310,8 +310,8 @@ export default function ArticleFacturation() {
               </Link>
             </li>
             <li>
-              <Link to="/fr/audit-saas-gratuit" className="text-primary hover:underline">
-                → Audit SaaS gratuit : détectez les doublons dans votre stack en 5 minutes
+              <Link to="/fr/ma-stack" className="text-primary hover:underline">
+                → Composez votre stack et repérez les doublons
               </Link>
             </li>
           </ul>
