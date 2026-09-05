@@ -5298,6 +5298,12 @@
     transition: background 0.15s ease;
   }
   .tt-button-primary:hover { background: #3A3A38; }
+  /* Both buttons render with no visible focus state at all (verified: a
+     tabbed-to .tt-button-primary computes outline: none with nothing to
+     replace it) — every other interactive control in this file gets a
+     :focus-visible outline, these two global, site-wide button classes
+     didn't. */
+  .tt-button-primary:focus-visible { outline: 2px solid var(--color-text); outline-offset: 2px; }
   .tt-button-secondary {
     display: inline-flex;
     align-items: center;
@@ -5317,6 +5323,7 @@
     transition: background 0.15s ease, color 0.15s ease;
   }
   .tt-button-secondary:hover { background: var(--color-text); color: var(--color-surface); }
+  .tt-button-secondary:focus-visible { outline: 2px solid var(--color-text); outline-offset: 2px; }
 
 }
 
