@@ -32,6 +32,7 @@ const ContactPage = () => {
     ? subjectPresets[subjectParam][lang === "en" ? "en" : "fr"]
     : subjectParam;
   const isToolSubmission = subjectParam === "submit-tool";
+  const isPartnership = subjectParam === "partnership";
   const [badgeReview, setBadgeReview] = useState(false);
 
   const now = new Date();
@@ -43,20 +44,26 @@ const ContactPage = () => {
 
   useEffect(() => {
     const title = isToolSubmission
-      ? t("Proposer un outil — ToolTrim", "Submit a tool — ToolTrim")
-      : t("Contact — ToolTrim", "Contact — ToolTrim");
+      ? t("Proposer un outil | ToolTrim", "Submit a tool | ToolTrim")
+      : isPartnership
+        ? t("Partenariat éditeur | ToolTrim", "Vendor partnership | ToolTrim")
+        : t("Contact | ToolTrim", "Contact | ToolTrim");
     const desc = t(
       isToolSubmission
         ? "Propose un outil à ToolTrim. Chaque soumission est revue selon nos critères éditoriaux."
-        : "Une question, une suggestion, une correction. On lit chaque message. Réponse sous 48 heures.",
+        : isPartnership
+          ? "Revue accélérée gratuite contre badge, ou payante. Mise en avant visuelle payante bientôt disponible. Jamais d'effet sur la note ou le classement."
+          : "Une question, une suggestion, une correction. On lit chaque message. Réponse sous 48 heures.",
       isToolSubmission
         ? "Submit a tool to ToolTrim. Every submission is reviewed against our editorial criteria."
-        : "A question, a suggestion, a correction. We read every message. Response within 48 hours.",
+        : isPartnership
+          ? "Free accelerated review in exchange for a badge, or paid. Paid visual placement coming soon. Never any effect on the score or ranking."
+          : "A question, a suggestion, a correction. We read every message. Response within 48 hours.",
     );
     setSeoTags({ title, description: desc, url: `${SEO_BASE}/${lang}/contact` });
     setHreflang(`/${lang}/contact`);
     return () => cleanupSeo([]);
-  }, [isToolSubmission, lang, t]);
+  }, [isToolSubmission, isPartnership, lang, t]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -118,8 +125,8 @@ const ContactPage = () => {
                       : "We'll verify the submitted information. Publication still depends on our editorial criteria.",
                   )
                 : t(
-                    "On revient vers toi dans les 48 heures. Pas de réponse automatique — un humain lit ton message.",
-                    "We'll get back to you within 48 hours. No auto-reply — a human reads your message.",
+                    "On revient vers toi dans les 48 heures. Pas de réponse automatique : un humain lit ton message.",
+                    "We'll get back to you within 48 hours. No auto-reply: a human reads your message.",
                   )}
             </p>
             <div className="tt-page-hero-cta">
@@ -148,21 +155,34 @@ const ContactPage = () => {
           </div>
 
           <span className="tt-page-hero-eyebrow">
-            {isToolSubmission ? t("Référencement ToolTrim", "ToolTrim listing") : t("Contact", "Contact")}
+            {isToolSubmission
+              ? t("Référencement ToolTrim", "ToolTrim listing")
+              : isPartnership
+                ? t("Partenariat éditeur", "Vendor partnership")
+                : t("Contact", "Contact")}
           </span>
           <h1 className="tt-page-hero-title">
-            {isToolSubmission ? t("Proposer un outil.", "Submit a tool.") : t("Parlons-en.", "Let's talk.")}
+            {isToolSubmission
+              ? t("Proposer un outil.", "Submit a tool.")
+              : isPartnership
+                ? t("Accélérer, pas influencer.", "Faster, not favored.")
+                : t("Parlons-en.", "Let's talk.")}
           </h1>
           <p className="tt-page-hero-desc">
             {isToolSubmission
               ? t(
-                  "Présente-nous ton outil. Chaque proposition est vérifiée par un humain — le badge accélère la revue, sans acheter la publication.",
-                  "Tell us about your tool. Every submission is checked by a human — the badge speeds up review without buying publication.",
+                  "Présente-nous ton outil. Chaque proposition est vérifiée par un humain. Le badge accélère la revue, sans acheter la publication.",
+                  "Tell us about your tool. Every submission is checked by a human. The badge speeds up review without buying publication.",
                 )
-              : t(
-                  "Question, suggestion, correction — on lit chaque message. Réponse sous 48 heures, par un humain.",
-                  "Question, suggestion, correction — we read every message. Response within 48 hours, by a human.",
-                )}
+              : isPartnership
+                ? t(
+                    "Une revue accélérée ou une mise en avant changent le délai ou la visibilité. Jamais le contenu ni la note.",
+                    "An accelerated review or a featured placement change the timeline or the visibility. Never the content or the score.",
+                  )
+                : t(
+                    "Question, suggestion, correction : on lit chaque message. Réponse sous 48 heures, par un humain.",
+                    "Question, suggestion, correction: we read every message. Response within 48 hours, by a human.",
+                  )}
           </p>
         </div>
       </section>
@@ -356,13 +376,22 @@ const ContactPage = () => {
 
               <div className="cn-aside-block">
                 <span className="cn-aside-label">
-                  {isToolSubmission ? t("Indépendance éditoriale", "Editorial independence") : t("Avant d'écrire", "Before writing")}
+                  {isToolSubmission
+                    ? t("Indépendance éditoriale", "Editorial independence")
+                    : isPartnership
+                      ? t("Ce qu'un partenariat change", "What a partnership changes")
+                      : t("Avant d'écrire", "Before writing")}
                 </span>
                 <p className="cn-aside-text">
                   {isToolSubmission ? t(
                     "Toutes les propositions suivent la même méthodologie. Le badge influence le délai de revue, jamais le verdict.",
                     "Every submission follows the same methodology. The badge affects review time, never the verdict.",
-                  ) : <>
+                  ) : isPartnership ? <>
+                    {t("Revue accélérée gratuite contre badge, ou payante sans contrepartie, via ", "Free accelerated review in exchange for a badge, or paid with nothing to display, via ")}
+                    <Link to={`${prefix}/submit`} className="ab-inline-link">{t("soumettre un outil", "submit a tool")}</Link>
+                    {t(". Mise en avant visuelle payante bientôt disponible. Détail complet sur la ", ". Paid visual placement coming soon. Full detail on the ")}
+                    <Link to={`${prefix}/transparency#financement`} className="ab-inline-link">{t("page transparence", "transparency page")}</Link>.
+                  </> : <>
                     {t("Ta réponse est probablement déjà dans la ", "Your answer is probably already in our ")}
                     <Link to={`${prefix}/methodology`} className="ab-inline-link">{t("méthodologie", "methodology")}</Link>
                     {t(" ou dans la ", " or our ")}
