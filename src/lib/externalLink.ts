@@ -53,6 +53,8 @@ const DOMAINES_EDITORIAUX_DOFOLLOW = new Set([
   "www.charik.app",
   "getorlo.app",
   "www.getorlo.app",
+  "glyphe.eu",
+  "www.glyphe.eu",
 ]);
 
 function estLienEditorialDofollow(url: string): boolean {
