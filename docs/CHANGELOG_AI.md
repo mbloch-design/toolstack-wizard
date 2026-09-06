@@ -4155,3 +4155,9 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - La correspondance vers Iconoir sort du bundle client et vit dans `scripts/icon-sprite-map.mjs` ; le générateur échoue si elle diverge de `src/lib/icons.tsx`, une icône manquante ne se verrait sinon qu'en production.
 - Support des références externes dans `<use>` vérifié sur Safari et Chromium avant adoption, y compris l'héritage de la couleur et de l'épaisseur de trait.
 - Vérifié sur le build : hydratation sans avertissement, navigation SPA, et aucune référence vide sur les pages contrôlées.
+
+## 2026-09-06 · Allègement de l'enveloppe des icônes
+
+- Retrait de `xmlns` et de `color="currentColor"` sur le `<svg>` des icônes : l'analyseur HTML place déjà l'élément dans le bon espace de noms, et `color: currentColor` résout vers la valeur héritée, donc vers le comportement qu'on a sans l'attribut.
+- Page moyenne : 94,0 à 91,6 Ko. Part SVG : 10,0 à 7,6 Ko par page, soit 133 à 101 Mo sur l'ensemble. Build à 1 297 Mo.
+- Espace de noms vérifié sur le build : les `<svg>` sont bien en `http://www.w3.org/2000/svg` sans l'attribut, et aucune référence vide sur les pages contrôlées.

@@ -29,6 +29,13 @@ export type LucideIcon = IconComponent;
  * partagent le même `viewBox` et le même `fill`, et une épaisseur de 1,5 quand
  * elles en ont une, donc ces valeurs peuvent être uniformes.
  *
+ * L'enveloppe est réduite à ce qui sert. `xmlns` est inutile : l'analyseur HTML
+ * place déjà `<svg>` dans le bon espace de noms, il n'est requis que pour un
+ * fichier SVG autonome. `color="currentColor"` est une auto-référence qui
+ * résout vers la valeur héritée, donc au comportement qu'on aurait sans elle.
+ * Répétés une cinquantaine de fois par page sur 13 545 pages, ces deux
+ * attributs coûtaient une quarantaine de mégaoctets de build.
+ *
  * La correspondance vers Iconoir vit dans scripts/icon-sprite-map.mjs, hors du
  * bundle client.
  */
@@ -45,8 +52,6 @@ function adaptIcon(spriteId: string): IconComponent {
         viewBox="0 0 24 24"
         fill="none"
         strokeWidth={1.5}
-        xmlns="http://www.w3.org/2000/svg"
-        color="currentColor"
         {...props}
       >
         <use href={`${ICON_SPRITE_URL}#${spriteId}`} />
