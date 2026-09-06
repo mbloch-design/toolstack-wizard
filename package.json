@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "node scripts/build-production.mjs",
     "gen:tools-index": "node scripts/gen-tools-index.mjs",
+    "gen:icon-sprite": "node scripts/gen-icon-sprite.mjs",
     "indexnow": "node scripts/submit-indexnow.mjs",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",

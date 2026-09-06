@@ -1,5 +1,6 @@
 import * as React from "react";
-import * as Iconoir from "iconoir-react";
+
+import { ICON_SPRITE_URL } from "./icon-sprite-url";
 
 export type IconProps = React.SVGProps<SVGSVGElement> & {
   size?: number | string;
@@ -13,167 +14,195 @@ export type IconComponent = React.ForwardRefExoticComponent<
 // Temporary type alias for component contracts that previously named the vendor.
 export type LucideIcon = IconComponent;
 
-type IconoirIcon = React.ForwardRefExoticComponent<
-  Omit<React.SVGProps<SVGSVGElement>, "ref"> & React.RefAttributes<SVGSVGElement>
->;
-
-function adaptIcon(Component: IconoirIcon): IconComponent {
+/**
+ * Les icônes ne portent plus leurs tracés : elles pointent vers le sprite
+ * partagé que produit scripts/gen-icon-sprite.mjs.
+ *
+ * Recopier les tracés dans chacune des 13 545 pages prérendues coûtait ~25 Ko
+ * par page ; une référence en coûte une cinquantaine d'octets, et le sprite est
+ * mis en cache une fois pour l'ensemble du site.
+ *
+ * Les attributs de tracé restent ici, sur le `<svg>` appelant, plutôt que sur
+ * le `<symbol>` : ce sont des propriétés héritées, elles traversent donc la
+ * référence, et les laisser ici préserve la possibilité pour un appelant de
+ * passer son propre `strokeWidth`, ce que fait HomePageV2. Les 151 icônes
+ * partagent le même `viewBox` et le même `fill`, et une épaisseur de 1,5 quand
+ * elles en ont une, donc ces valeurs peuvent être uniformes.
+ *
+ * La correspondance vers Iconoir vit dans scripts/icon-sprite-map.mjs, hors du
+ * bundle client.
+ */
+function adaptIcon(spriteId: string): IconComponent {
   return React.forwardRef<SVGSVGElement, IconProps>(function ToolTrimIcon(
     { size = 24, absoluteStrokeWidth: _absoluteStrokeWidth, ...props },
     ref,
   ) {
-    return <Component ref={ref} width={size} height={size} {...props} />;
+    return (
+      <svg
+        ref={ref}
+        width={size}
+        height={size}
+        viewBox="0 0 24 24"
+        fill="none"
+        strokeWidth={1.5}
+        xmlns="http://www.w3.org/2000/svg"
+        color="currentColor"
+        {...props}
+      >
+        <use href={`${ICON_SPRITE_URL}#${spriteId}`} />
+      </svg>
+    );
   });
 }
 
-export const Activity = adaptIcon(Iconoir.Activity);
-export const AlertTriangle = adaptIcon(Iconoir.WarningTriangle);
-export const ArrowDown = adaptIcon(Iconoir.ArrowDown);
-export const ArrowDownCircle = adaptIcon(Iconoir.ArrowDownCircle);
-export const ArrowLeft = adaptIcon(Iconoir.ArrowLeft);
-export const ArrowRight = adaptIcon(Iconoir.ArrowRight);
-export const ArrowUp = adaptIcon(Iconoir.ArrowUp);
-export const ArrowUpDown = adaptIcon(Iconoir.DataTransferBoth);
-export const ArrowUpRight = adaptIcon(Iconoir.ArrowUpRight);
-export const BadgeCheck = adaptIcon(Iconoir.BadgeCheck);
-export const Ban = adaptIcon(Iconoir.Prohibition);
-export const Banknote = adaptIcon(Iconoir.Cash);
-export const BarChart2 = adaptIcon(Iconoir.StatsReport);
-export const BarChart3 = adaptIcon(Iconoir.StatsUpSquare);
-export const BookOpen = adaptIcon(Iconoir.OpenBook);
-export const BookOpenText = adaptIcon(Iconoir.Book);
-export const Bookmark = adaptIcon(Iconoir.Bookmark);
-export const BookmarkCheck = adaptIcon(Iconoir.FavouriteBook);
-export const Bot = adaptIcon(Iconoir.BrainElectricity);
-export const Boxes = adaptIcon(Iconoir.Packages);
-export const Brain = adaptIcon(Iconoir.Brain);
-export const Briefcase = adaptIcon(Iconoir.Suitcase);
-export const BriefcaseBusiness = adaptIcon(Iconoir.Suitcase);
-export const Building2 = adaptIcon(Iconoir.Building);
-export const Calculator = adaptIcon(Iconoir.Calculator);
-export const Camera = adaptIcon(Iconoir.Camera);
-export const Check = adaptIcon(Iconoir.Check);
-export const CheckCircle = adaptIcon(Iconoir.CheckCircle);
-export const CheckCircle2 = adaptIcon(Iconoir.CheckCircle);
-export const ChevronDown = adaptIcon(Iconoir.NavArrowDown);
-export const ChevronLeft = adaptIcon(Iconoir.NavArrowLeft);
-export const ChevronRight = adaptIcon(Iconoir.NavArrowRight);
-export const ChevronUp = adaptIcon(Iconoir.NavArrowUp);
-export const Circle = adaptIcon(Iconoir.Circle);
-export const CircleAlert = adaptIcon(Iconoir.WarningCircle);
-export const CircleDollarSign = adaptIcon(Iconoir.DollarCircle);
-export const CircleDot = adaptIcon(Iconoir.OnePointCircle);
-export const CircleMinus = adaptIcon(Iconoir.MinusCircle);
-export const CirclePlus = adaptIcon(Iconoir.PlusCircle);
-export const ClipboardCheck = adaptIcon(Iconoir.ClipboardCheck);
-export const Clock = adaptIcon(Iconoir.Clock);
-export const Clock3 = adaptIcon(Iconoir.Clock);
-export const Cloud = adaptIcon(Iconoir.Cloud);
-export const Code2 = adaptIcon(Iconoir.CodeBrackets);
-export const Compass = adaptIcon(Iconoir.Compass);
-export const Copy = adaptIcon(Iconoir.Copy);
-export const Cpu = adaptIcon(Iconoir.Cpu);
-export const CreditCard = adaptIcon(Iconoir.CreditCard);
-export const Database = adaptIcon(Iconoir.Database);
-export const DollarSign = adaptIcon(Iconoir.Dollar);
-export const Dot = adaptIcon(Iconoir.OnePointCircle);
-export const Download = adaptIcon(Iconoir.Download);
-export const Euro = adaptIcon(Iconoir.Euro);
-export const ExternalLink = adaptIcon(Iconoir.OpenNewWindow);
-export const Eye = adaptIcon(Iconoir.Eye);
-export const FileText = adaptIcon(Iconoir.Page);
-export const Filter = adaptIcon(Iconoir.Filter);
-export const Flag = adaptIcon(Iconoir.WhiteFlag);
-export const Flame = adaptIcon(Iconoir.FireFlame);
-export const Folder = adaptIcon(Iconoir.Folder);
-export const FolderKanban = adaptIcon(Iconoir.KanbanBoard);
-export const FolderPlus = adaptIcon(Iconoir.FolderPlus);
-export const Gauge = adaptIcon(Iconoir.DashboardSpeed);
-export const GitCompare = adaptIcon(Iconoir.GitCompare);
-export const Globe = adaptIcon(Iconoir.Globe);
-export const GraduationCap = adaptIcon(Iconoir.GraduationCap);
-export const GripVertical = adaptIcon(Iconoir.Drag);
-export const Handshake = adaptIcon(Iconoir.HandCard);
-export const HardDrive = adaptIcon(Iconoir.HardDrive);
-export const Hash = adaptIcon(Iconoir.Hashtag);
-export const Headphones = adaptIcon(Iconoir.Headset);
-export const Heart = adaptIcon(Iconoir.Heart);
-export const HelpCircle = adaptIcon(Iconoir.HelpCircle);
-export const Home = adaptIcon(Iconoir.HomeSimple);
-export const Info = adaptIcon(Iconoir.InfoCircle);
-export const Languages = adaptIcon(Iconoir.Translate);
-export const Laptop2 = adaptIcon(Iconoir.Laptop);
-export const Layers = adaptIcon(Iconoir.MultiplePages);
-export const Layers3 = adaptIcon(Iconoir.ViewStructureUp);
-export const LayoutGrid = adaptIcon(Iconoir.ViewGrid);
-export const Lightbulb = adaptIcon(Iconoir.LightBulb);
-export const Link2 = adaptIcon(Iconoir.Link);
-export const Linkedin = adaptIcon(Iconoir.Linkedin);
-export const List = adaptIcon(Iconoir.List);
-export const ListChecks = adaptIcon(Iconoir.TaskList);
-export const Loader2 = adaptIcon(Iconoir.Refresh);
-export const LoaderCircle = adaptIcon(Iconoir.RefreshCircle);
-export const Lock = adaptIcon(Iconoir.Lock);
-export const LogOut = adaptIcon(Iconoir.LogOut);
-export const Mail = adaptIcon(Iconoir.Mail);
-export const Megaphone = adaptIcon(Iconoir.Megaphone);
-export const Menu = adaptIcon(Iconoir.Menu);
-export const MessageCircle = adaptIcon(Iconoir.ChatBubble);
-export const MessageSquare = adaptIcon(Iconoir.ChatBubble);
-export const MessagesSquare = adaptIcon(Iconoir.MultiBubble);
-export const Minus = adaptIcon(Iconoir.Minus);
-export const Moon = adaptIcon(Iconoir.HalfMoon);
-export const MoreHorizontal = adaptIcon(Iconoir.MoreHoriz);
-export const Package = adaptIcon(Iconoir.Package);
-export const Palette = adaptIcon(Iconoir.Palette);
-export const PanelLeft = adaptIcon(Iconoir.SidebarCollapse);
-export const PanelLeftClose = adaptIcon(Iconoir.SidebarCollapse);
-export const PanelLeftOpen = adaptIcon(Iconoir.SidebarExpand);
-export const Pen = adaptIcon(Iconoir.DesignPencil);
-export const Pencil = adaptIcon(Iconoir.EditPencil);
-export const PenLine = adaptIcon(Iconoir.EditPencil);
-export const PenTool = adaptIcon(Iconoir.DesignNib);
-export const PiggyBank = adaptIcon(Iconoir.PiggyBank);
-export const Play = adaptIcon(Iconoir.Play);
-export const PlayCircle = adaptIcon(Iconoir.PlaylistPlay);
-export const Plug = adaptIcon(Iconoir.EvPlug);
-export const Plus = adaptIcon(Iconoir.Plus);
-export const Puzzle = adaptIcon(Iconoir.Puzzle);
-export const Receipt = adaptIcon(Iconoir.Page);
-export const RefreshCcw = adaptIcon(Iconoir.RefreshDouble);
-export const RefreshCw = adaptIcon(Iconoir.Refresh);
-export const Rocket = adaptIcon(Iconoir.Rocket);
-export const RotateCcw = adaptIcon(Iconoir.UndoCircle);
-export const Save = adaptIcon(Iconoir.FloppyDisk);
-export const Scale = adaptIcon(Iconoir.Weight);
-export const Scissors = adaptIcon(Iconoir.Scissor);
-export const Search = adaptIcon(Iconoir.Search);
-export const SearchCheck = adaptIcon(Iconoir.SearchWindow);
-export const Settings2 = adaptIcon(Iconoir.Settings);
-export const Share2 = adaptIcon(Iconoir.ShareAndroid);
-export const Shield = adaptIcon(Iconoir.Shield);
-export const ShieldAlert = adaptIcon(Iconoir.ShieldAlert);
-export const ShieldCheck = adaptIcon(Iconoir.ShieldCheck);
-export const ShoppingCart = adaptIcon(Iconoir.Cart);
-export const SlidersHorizontal = adaptIcon(Iconoir.SettingsProfiles);
-export const Sparkles = adaptIcon(Iconoir.Sparks);
-export const Star = adaptIcon(Iconoir.Star);
-export const StarSolid = adaptIcon(Iconoir.StarSolid);
-export const Sun = adaptIcon(Iconoir.SunLight);
-export const Swords = adaptIcon(Iconoir.Tournament);
-export const Tag = adaptIcon(Iconoir.Label);
-export const Target = adaptIcon(Iconoir.PrecisionTool);
-export const Trash2 = adaptIcon(Iconoir.Trash);
-export const TrendingDown = adaptIcon(Iconoir.StatDown);
-export const TrendingUp = adaptIcon(Iconoir.StatUp);
-export const Twitter = adaptIcon(Iconoir.Twitter);
-export const User = adaptIcon(Iconoir.User);
-export const UserRound = adaptIcon(Iconoir.UserCircle);
-export const Users = adaptIcon(Iconoir.Group);
-export const Video = adaptIcon(Iconoir.VideoCamera);
-export const Wallet = adaptIcon(Iconoir.Wallet);
-export const WandSparkles = adaptIcon(Iconoir.MagicWand);
-export const Workflow = adaptIcon(Iconoir.Network);
-export const Wrench = adaptIcon(Iconoir.Wrench);
-export const X = adaptIcon(Iconoir.Xmark);
-export const Zap = adaptIcon(Iconoir.Flash);
+export const Activity = adaptIcon("tt-activity");
+export const AlertTriangle = adaptIcon("tt-alert-triangle");
+export const ArrowDown = adaptIcon("tt-arrow-down");
+export const ArrowDownCircle = adaptIcon("tt-arrow-down-circle");
+export const ArrowLeft = adaptIcon("tt-arrow-left");
+export const ArrowRight = adaptIcon("tt-arrow-right");
+export const ArrowUp = adaptIcon("tt-arrow-up");
+export const ArrowUpDown = adaptIcon("tt-arrow-up-down");
+export const ArrowUpRight = adaptIcon("tt-arrow-up-right");
+export const BadgeCheck = adaptIcon("tt-badge-check");
+export const Ban = adaptIcon("tt-ban");
+export const Banknote = adaptIcon("tt-banknote");
+export const BarChart2 = adaptIcon("tt-bar-chart2");
+export const BarChart3 = adaptIcon("tt-bar-chart3");
+export const BookOpen = adaptIcon("tt-book-open");
+export const BookOpenText = adaptIcon("tt-book-open-text");
+export const Bookmark = adaptIcon("tt-bookmark");
+export const BookmarkCheck = adaptIcon("tt-bookmark-check");
+export const Bot = adaptIcon("tt-bot");
+export const Boxes = adaptIcon("tt-boxes");
+export const Brain = adaptIcon("tt-brain");
+export const Briefcase = adaptIcon("tt-briefcase");
+export const BriefcaseBusiness = adaptIcon("tt-briefcase-business");
+export const Building2 = adaptIcon("tt-building2");
+export const Calculator = adaptIcon("tt-calculator");
+export const Camera = adaptIcon("tt-camera");
+export const Check = adaptIcon("tt-check");
+export const CheckCircle = adaptIcon("tt-check-circle");
+export const CheckCircle2 = adaptIcon("tt-check-circle2");
+export const ChevronDown = adaptIcon("tt-chevron-down");
+export const ChevronLeft = adaptIcon("tt-chevron-left");
+export const ChevronRight = adaptIcon("tt-chevron-right");
+export const ChevronUp = adaptIcon("tt-chevron-up");
+export const Circle = adaptIcon("tt-circle");
+export const CircleAlert = adaptIcon("tt-circle-alert");
+export const CircleDollarSign = adaptIcon("tt-circle-dollar-sign");
+export const CircleDot = adaptIcon("tt-circle-dot");
+export const CircleMinus = adaptIcon("tt-circle-minus");
+export const CirclePlus = adaptIcon("tt-circle-plus");
+export const ClipboardCheck = adaptIcon("tt-clipboard-check");
+export const Clock = adaptIcon("tt-clock");
+export const Clock3 = adaptIcon("tt-clock3");
+export const Cloud = adaptIcon("tt-cloud");
+export const Code2 = adaptIcon("tt-code2");
+export const Compass = adaptIcon("tt-compass");
+export const Copy = adaptIcon("tt-copy");
+export const Cpu = adaptIcon("tt-cpu");
+export const CreditCard = adaptIcon("tt-credit-card");
+export const Database = adaptIcon("tt-database");
+export const DollarSign = adaptIcon("tt-dollar-sign");
+export const Dot = adaptIcon("tt-dot");
+export const Download = adaptIcon("tt-download");
+export const Euro = adaptIcon("tt-euro");
+export const ExternalLink = adaptIcon("tt-external-link");
+export const Eye = adaptIcon("tt-eye");
+export const FileText = adaptIcon("tt-file-text");
+export const Filter = adaptIcon("tt-filter");
+export const Flag = adaptIcon("tt-flag");
+export const Flame = adaptIcon("tt-flame");
+export const Folder = adaptIcon("tt-folder");
+export const FolderKanban = adaptIcon("tt-folder-kanban");
+export const FolderPlus = adaptIcon("tt-folder-plus");
+export const Gauge = adaptIcon("tt-gauge");
+export const GitCompare = adaptIcon("tt-git-compare");
+export const Globe = adaptIcon("tt-globe");
+export const GraduationCap = adaptIcon("tt-graduation-cap");
+export const GripVertical = adaptIcon("tt-grip-vertical");
+export const Handshake = adaptIcon("tt-handshake");
+export const HardDrive = adaptIcon("tt-hard-drive");
+export const Hash = adaptIcon("tt-hash");
+export const Headphones = adaptIcon("tt-headphones");
+export const Heart = adaptIcon("tt-heart");
+export const HelpCircle = adaptIcon("tt-help-circle");
+export const Home = adaptIcon("tt-home");
+export const Info = adaptIcon("tt-info");
+export const Languages = adaptIcon("tt-languages");
+export const Laptop2 = adaptIcon("tt-laptop2");
+export const Layers = adaptIcon("tt-layers");
+export const Layers3 = adaptIcon("tt-layers3");
+export const LayoutGrid = adaptIcon("tt-layout-grid");
+export const Lightbulb = adaptIcon("tt-lightbulb");
+export const Link2 = adaptIcon("tt-link2");
+export const Linkedin = adaptIcon("tt-linkedin");
+export const List = adaptIcon("tt-list");
+export const ListChecks = adaptIcon("tt-list-checks");
+export const Loader2 = adaptIcon("tt-loader2");
+export const LoaderCircle = adaptIcon("tt-loader-circle");
+export const Lock = adaptIcon("tt-lock");
+export const LogOut = adaptIcon("tt-log-out");
+export const Mail = adaptIcon("tt-mail");
+export const Megaphone = adaptIcon("tt-megaphone");
+export const Menu = adaptIcon("tt-menu");
+export const MessageCircle = adaptIcon("tt-message-circle");
+export const MessageSquare = adaptIcon("tt-message-square");
+export const MessagesSquare = adaptIcon("tt-messages-square");
+export const Minus = adaptIcon("tt-minus");
+export const Moon = adaptIcon("tt-moon");
+export const MoreHorizontal = adaptIcon("tt-more-horizontal");
+export const Package = adaptIcon("tt-package");
+export const Palette = adaptIcon("tt-palette");
+export const PanelLeft = adaptIcon("tt-panel-left");
+export const PanelLeftClose = adaptIcon("tt-panel-left-close");
+export const PanelLeftOpen = adaptIcon("tt-panel-left-open");
+export const Pen = adaptIcon("tt-pen");
+export const Pencil = adaptIcon("tt-pencil");
+export const PenLine = adaptIcon("tt-pen-line");
+export const PenTool = adaptIcon("tt-pen-tool");
+export const PiggyBank = adaptIcon("tt-piggy-bank");
+export const Play = adaptIcon("tt-play");
+export const PlayCircle = adaptIcon("tt-play-circle");
+export const Plug = adaptIcon("tt-plug");
+export const Plus = adaptIcon("tt-plus");
+export const Puzzle = adaptIcon("tt-puzzle");
+export const Receipt = adaptIcon("tt-receipt");
+export const RefreshCcw = adaptIcon("tt-refresh-ccw");
+export const RefreshCw = adaptIcon("tt-refresh-cw");
+export const Rocket = adaptIcon("tt-rocket");
+export const RotateCcw = adaptIcon("tt-rotate-ccw");
+export const Save = adaptIcon("tt-save");
+export const Scale = adaptIcon("tt-scale");
+export const Scissors = adaptIcon("tt-scissors");
+export const Search = adaptIcon("tt-search");
+export const SearchCheck = adaptIcon("tt-search-check");
+export const Settings2 = adaptIcon("tt-settings2");
+export const Share2 = adaptIcon("tt-share2");
+export const Shield = adaptIcon("tt-shield");
+export const ShieldAlert = adaptIcon("tt-shield-alert");
+export const ShieldCheck = adaptIcon("tt-shield-check");
+export const ShoppingCart = adaptIcon("tt-shopping-cart");
+export const SlidersHorizontal = adaptIcon("tt-sliders-horizontal");
+export const Sparkles = adaptIcon("tt-sparkles");
+export const Star = adaptIcon("tt-star");
+export const StarSolid = adaptIcon("tt-star-solid");
+export const Sun = adaptIcon("tt-sun");
+export const Swords = adaptIcon("tt-swords");
+export const Tag = adaptIcon("tt-tag");
+export const Target = adaptIcon("tt-target");
+export const Trash2 = adaptIcon("tt-trash2");
+export const TrendingDown = adaptIcon("tt-trending-down");
+export const TrendingUp = adaptIcon("tt-trending-up");
+export const Twitter = adaptIcon("tt-twitter");
+export const User = adaptIcon("tt-user");
+export const UserRound = adaptIcon("tt-user-round");
+export const Users = adaptIcon("tt-users");
+export const Video = adaptIcon("tt-video");
+export const Wallet = adaptIcon("tt-wallet");
+export const WandSparkles = adaptIcon("tt-wand-sparkles");
+export const Workflow = adaptIcon("tt-workflow");
+export const Wrench = adaptIcon("tt-wrench");
+export const X = adaptIcon("tt-x");
+export const Zap = adaptIcon("tt-zap");

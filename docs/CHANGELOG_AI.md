@@ -4145,3 +4145,13 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Motif : les 13 545 pages recopiaient à l'identique les commentaires et l'indentation du bloc de tokens de design, sans effet sur le rendu.
 - Repli sur le CSS brut en cas d'échec de la passe, afin qu'une erreur de minification ne fasse jamais tomber le build.
 - Intégrité vérifiée sur une fiche produite : 126 variables `:root` et 49 variables `.dark` conservées, `@font-face`, `url()` et `content:` intacts.
+
+## 2026-09-06 · Sprite d'icônes partagé
+
+- Extraction des tracés d'icônes vers un sprite unique référencé par `<use>`, au lieu de les recopier dans chacune des 13 545 pages prérendues.
+- Poids du build : 1,5 à 1,3 Go. Page moyenne : 108,4 à 94,0 Ko. Part SVG : 25,0 à 10,0 Ko par page, soit 324 à 133 Mo sur l'ensemble.
+- Le sprite porte une empreinte de contenu dans son nom et atterrit dans `/assets`, déjà servi en `immutable` : une page neuve ne peut pas référencer une icône absente d'une copie mise en cache.
+- Les attributs `fill`, `stroke-width` et la couleur restent sur le `<svg>` appelant plutôt que sur le `<symbol>` : ce sont des propriétés héritées, elles traversent la référence, et les y laisser préserve les surcharges existantes de `HomePageV2` et `ToolGallery`.
+- La correspondance vers Iconoir sort du bundle client et vit dans `scripts/icon-sprite-map.mjs` ; le générateur échoue si elle diverge de `src/lib/icons.tsx`, une icône manquante ne se verrait sinon qu'en production.
+- Support des références externes dans `<use>` vérifié sur Safari et Chromium avant adoption, y compris l'héritage de la couleur et de l'épaisseur de trait.
+- Vérifié sur le build : hydratation sans avertissement, navigation SPA, et aucune référence vide sur les pages contrôlées.
