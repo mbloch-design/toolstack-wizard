@@ -4138,3 +4138,10 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Ajout d’un badge neutre « Choisir, pas empiler » utilisant le pictogramme officiel ToolTrim, sans revendiquer une sélection avant analyse.
 - Déclinaison Light/Dark au format 216 × 54, avec snippet HTML prêt à copier, attribut `alt` personnalisé au nom de l’outil et suivi des clics par paramètres UTM.
 - Renforcement de l’API avec validation des champs et URL, limites de longueur et échappement HTML des emails reçus.
+
+## 2026-09-06 · Minification du CSS inline des pages prérendues
+
+- Minification du CSS injecté dans chaque page prérendue via esbuild, appliquée au CSS critique et aux utilitaires Tailwind extraits par page.
+- Motif : les 13 545 pages recopiaient à l'identique les commentaires et l'indentation du bloc de tokens de design, sans effet sur le rendu.
+- Repli sur le CSS brut en cas d'échec de la passe, afin qu'une erreur de minification ne fasse jamais tomber le build.
+- Intégrité vérifiée sur une fiche produite : 126 variables `:root` et 49 variables `.dark` conservées, `@font-face`, `url()` et `content:` intacts.

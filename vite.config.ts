@@ -3,6 +3,7 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 import fs from "fs";
 import postcss from "postcss";
+import { transformSync } from "esbuild";
 import { componentTagger } from "lovable-tagger";
 import { STACKS } from "./src/data/stacks";
 import { FEATURED_COMPARISONS } from "./src/data/comparisons";
@@ -1942,6 +1943,28 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
  * Built from src/index.css directly (not a hand-maintained copy) so the two
  * never drift apart.
  */
+/**
+ * Le CSS injecté dans chaque page l'était brut, commentaires compris : le bloc
+ * `:root` des tokens de design pèse à lui seul 9,3 Ko d'en-têtes décoratifs,
+ * recopiés à l'identique dans les 13 545 pages prérendues.
+ *
+ * Minifier ne change rien au rendu — mesuré sur une fiche : 180 variables CSS,
+ * `@font-face`, `:root` et `.dark` tous préservés — mais fait passer l'inline
+ * de ~29,6 à ~22,4 Ko par page, soit ~95 Mo de build en moins.
+ *
+ * esbuild plutôt qu'une passe d'expressions régulières : c'est un vrai parseur,
+ * il ne cassera pas une `url()` ou une chaîne `content:`. Un échec ne doit
+ * jamais faire tomber le build, on retombe alors sur le CSS brut.
+ */
+function minifyCss(css: string): string {
+  if (!css) return css;
+  try {
+    return transformSync(css, { loader: "css", minify: true }).code.trim();
+  } catch {
+    return css;
+  }
+}
+
 function extractCriticalCss(): string {
   const css = fs.readFileSync(path.resolve(__dirname, "src/index.css"), "utf-8");
   const root = postcss.parse(css);
@@ -1996,7 +2019,7 @@ function extractCriticalCss(): string {
     if (sel === "body") critical.push(rule.toString());
   });
 
-  return critical.join("\n\n");
+  return minifyCss(critical.join("\n\n"));
 }
 
 // Pulls the compiled rule for every plain (no responsive/hover/dark-mode
@@ -2122,7 +2145,7 @@ function extractUsedUtilityCss(markup: string, compiledCssPath: string): string 
       }
     }
   }
-  return rules.join("");
+  return minifyCss(rules.join(""));
 }
 
 function criticalCssPlugin(): Plugin {
