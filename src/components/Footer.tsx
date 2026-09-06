@@ -455,6 +455,30 @@ const Footer = () => {
                   loading="lazy"
                 />
               </a>
+              <a
+                href="https://sellwithboost.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="tt-footer-badge"
+                aria-label="Listed on Sell With boost"
+              >
+                <img
+                  className="tt-footer-badge-light"
+                  src="https://sellwithboost.com/badge/listing.svg"
+                  alt="Listed on Sell With boost"
+                  width={160}
+                  height={40}
+                  loading="lazy"
+                />
+                <img
+                  className="tt-footer-badge-dark"
+                  src="https://sellwithboost.com/badge/listing-dark.svg"
+                  alt="Listed on Sell With boost"
+                  width={160}
+                  height={40}
+                  loading="lazy"
+                />
+              </a>
             </div>
           </div>
         </div>
