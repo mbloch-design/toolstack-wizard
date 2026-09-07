@@ -4161,3 +4161,10 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Retrait de `xmlns` et de `color="currentColor"` sur le `<svg>` des icônes : l'analyseur HTML place déjà l'élément dans le bon espace de noms, et `color: currentColor` résout vers la valeur héritée, donc vers le comportement qu'on a sans l'attribut.
 - Page moyenne : 94,0 à 91,6 Ko. Part SVG : 10,0 à 7,6 Ko par page, soit 133 à 101 Mo sur l'ensemble. Build à 1 297 Mo.
 - Espace de noms vérifié sur le build : les `<svg>` sont bien en `http://www.w3.org/2000/svg` sans l'attribut, et aucune référence vide sur les pages contrôlées.
+
+## 2026-09-07 — Guides local-first pendant les indisponibilités Supabase
+
+- Les listes de guides affichent désormais le bundle éditorial local dès son chargement, sans attendre la requête Supabase lancée en arrière-plan.
+- Les ouvertures d'articles côté client suivent le même principe : contenu local immédiat, puis remplacement silencieux si une version distante est disponible.
+- Un cache local par langue évite de recharger le même bundle lors des navigations suivantes dans la session.
+- Un test mobile bloque Supabase pendant dix secondes et vérifie que la liste puis l'article restent accessibles en moins de cinq secondes.

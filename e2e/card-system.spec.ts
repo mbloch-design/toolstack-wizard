@@ -18,6 +18,22 @@ async function seedDecisionCard(page: Page) {
 }
 
 test.describe("Cards outils — contrats visuels et interactifs", () => {
+  test("les guides utilisent le contenu local sans attendre Supabase", async ({ page }) => {
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.route("**/*.supabase.co/**", async (route) => {
+      await new Promise((resolve) => setTimeout(resolve, 10_000));
+      await route.abort("failed");
+    });
+
+    await page.goto("/fr/guides", { waitUntil: "domcontentloaded" });
+    const firstGuide = page.locator(".gi-card").first();
+    await expect(firstGuide).toBeVisible({ timeout: 5_000 });
+
+    await firstGuide.click();
+    await expect(page.locator("article")).toBeVisible({ timeout: 5_000 });
+    await expect(page.getByText("Une erreur est survenue")).toHaveCount(0);
+  });
+
   test("les routes de découverte ne chargent pas le catalogue de fiches complet", async ({ page }) => {
     const routes = [
       "/fr/tools",

@@ -237,6 +237,9 @@ export interface Post {
   seo: { metaTitle?: string; metaDescription?: string; keywords?: string } | null;
 }
 
+const localPostsCache = new Map<string, Post[]>();
+const localPostsPromises = new Map<string, Promise<Post[]>>();
+
 function mapPost(p: any): Post {
   return {
     id: p.id, slug: p.slug, lang: p.lang, title: p.title, excerpt: p.excerpt || "",
@@ -248,13 +251,31 @@ function mapPost(p: any): Post {
 }
 
 export async function loadLocalPosts(lang: string): Promise<Post[]> {
-  const module = lang === "en"
-    ? await import("@/data/posts-en.json")
-    : await import("@/data/posts-fr.json");
-  return (module.default as any[]).map((post) => mapPost({
-    ...post,
-    lang: post.lang || lang,
-  }));
+  const cached = localPostsCache.get(lang);
+  if (cached) return cached;
+
+  const pending = localPostsPromises.get(lang);
+  if (pending) return pending;
+
+  const promise = (lang === "en"
+    ? import("@/data/posts-en.json")
+    : import("@/data/posts-fr.json"))
+    .then((module) => {
+      const posts = (module.default as any[]).map((post) => mapPost({
+        ...post,
+        lang: post.lang || lang,
+      }));
+      localPostsCache.set(lang, posts);
+      localPostsPromises.delete(lang);
+      return posts;
+    })
+    .catch((error) => {
+      localPostsPromises.delete(lang);
+      throw error;
+    });
+
+  localPostsPromises.set(lang, promise);
+  return promise;
 }
 
 // Module-level, session-lifetime caches. Every ToolDetailPage mount (i.e.
@@ -509,21 +530,33 @@ export function usePosts(lang: string) {
   // (a ~70KB chunk + a Supabase query, both sitting in the critical
   // network chain) is pure waste there. Skip it entirely in that case.
   const skip = useContext(SsrRelatedPostsContext) !== undefined;
-  const [posts, setPosts] = useState<Post[]>([]);
-  const [loading, setLoading] = useState(!skip);
+  const cachedLocalPosts = localPostsCache.get(lang) ?? [];
+  const [posts, setPosts] = useState<Post[]>(cachedLocalPosts);
+  const [loading, setLoading] = useState(!skip && cachedLocalPosts.length === 0);
 
   useEffect(() => {
     if (skip) return;
     let cancelled = false;
 
     (async () => {
-      setLoading(true);
+      if (!localPostsCache.has(lang)) setLoading(true);
 
-      const [localPosts, { data, error }] = await Promise.all([
-        loadLocalPosts(lang),
-        supabase.from("posts").select("*").eq("lang", lang).order("date", { ascending: false }),
-      ]);
+      // Start the remote refresh immediately, but never make local editorial
+      // content wait for Supabase. This keeps guides usable when the project is
+      // slow, paused or restricted by its egress quota.
+      const remotePostsPromise = supabase
+        .from("posts")
+        .select("*")
+        .eq("lang", lang)
+        .order("date", { ascending: false });
+      const localPosts = await loadLocalPosts(lang);
 
+      if (cancelled) return;
+
+      setPosts(localPosts);
+      setLoading(false);
+
+      const { data, error } = await remotePostsPromise;
       if (cancelled) return;
 
       if (!error && data && data.length > 0) {
@@ -532,10 +565,7 @@ export function usePosts(lang: string) {
         const merged = [...supabasePosts, ...localPosts.filter(p => !supabaseSlugs.has(p.slug))];
         merged.sort((a, b) => (b.date || "").localeCompare(a.date || ""));
         setPosts(merged);
-      } else {
-        setPosts(localPosts);
       }
-      setLoading(false);
     })();
 
     return () => {
@@ -561,17 +591,26 @@ export function usePostBySlug(slug: string | undefined, lang: string) {
 
     (async () => {
       setLoading(true);
-      const { data } = await supabase.from("posts").select("*").eq("slug", slug).eq("lang", lang).maybeSingle();
+
+      const remotePostPromise = supabase
+        .from("posts")
+        .select("*")
+        .eq("slug", slug)
+        .eq("lang", lang)
+        .maybeSingle();
+      const localPosts = await loadLocalPosts(lang);
       if (cancelled) return;
 
-      if (data) {
-        setPost(mapPost(data));
-      } else {
-        const localPosts = await loadLocalPosts(lang);
-        if (cancelled) return;
-        const found = localPosts.find((p) => p.slug === slug);
-        setPost(found || null);
+      const localPost = localPosts.find((p) => p.slug === slug) || null;
+      if (localPost) {
+        setPost(localPost);
+        setLoading(false);
       }
+
+      const { data } = await remotePostPromise;
+      if (cancelled) return;
+
+      setPost(data ? mapPost(data) : localPost);
       setLoading(false);
     })();
 
