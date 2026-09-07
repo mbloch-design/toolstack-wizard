@@ -42168,5 +42168,79 @@
     "freeAlternative": null,
     "substitutable": true,
     "betterAlternative": null
+  },
+  {
+    "id": "autophotos-ai",
+    "slug": "autophotos-ai",
+    "name": "AutoPhotos.ai",
+    "categoryId": "creation",
+    "shortDescription": "Retouche les photos produit et crée des vidéos e-commerce avec l'IA.",
+    "shortDescriptionEn": "Edits product photos and creates e-commerce videos with AI.",
+    "pricing": {
+      "free": "Plusieurs outils gratuits dans leur limite quotidienne, plus 5 crédits à la vérification du compte",
+      "paid": "Packs : 4,50 € (20 crédits), 9 € (60), 18 € (150) ; abonnements aux mêmes prix pour 65, 180 ou 400 crédits/mois"
+    },
+    "defaultMonthlyPrice": 4.5,
+    "affiliateLink": "",
+    "websiteUrl": "https://autophotos.ai/",
+    "ogImageUrl": "/og-screenshots/autophotos-ai.png",
+    "logo": "https://autophotos.ai/favicon.svg",
+    "tool_type": "satellite",
+    "host_app": null,
+    "bundle_parent": null,
+    "substitution_cluster_v2": "ai-product-photography",
+    "functional_needs": [
+      "generation-visuels-produit",
+      "photographie-produit-ia"
+    ],
+    "verticals": [
+      "ecommercant",
+      "graphiste-da"
+    ],
+    "relevantFor": [
+      "E-commerçants",
+      "Freelances créatifs",
+      "Agences e-commerce",
+      "Petites marques avec un catalogue produit"
+    ],
+    "freeAlternative": "remove-bg",
+    "substitutable": true,
+    "betterAlternative": null
+  },
+  {
+    "id": "commutebar",
+    "slug": "commutebar",
+    "name": "CommuteBar",
+    "categoryId": "organization",
+    "shortDescription": "Affiche le temps de trajet Apple Maps dans la barre des menus du Mac.",
+    "shortDescriptionEn": "Shows Apple Maps commute times in the Mac menu bar.",
+    "pricing": {
+      "free": "Pas de plan gratuit permanent",
+      "paid": "Licence à vie 6,99 $ en promotion au lieu de 9,99 $, sans abonnement"
+    },
+    "defaultMonthlyPrice": 0,
+    "affiliateLink": "",
+    "websiteUrl": "https://commute.bar/",
+    "ogImageUrl": "https://www.commute.bar/_next/image?url=%2Ffeatures%2Flight%2Flive-eta-traffic-time.jpg&w=3840&q=75",
+    "logo": "https://www.commute.bar/_next/image?url=%2Flogo-rounded.png&w=256&q=75",
+    "tool_type": "satellite",
+    "host_app": "macos",
+    "bundle_parent": null,
+    "substitution_cluster_v2": "commute-monitoring",
+    "functional_needs": [
+      "temps-trajet",
+      "planification-trajets"
+    ],
+    "verticals": [
+      "consultant-b2b"
+    ],
+    "relevantFor": [
+      "Indépendants travaillant sur Mac",
+      "Parents avec trajets réguliers",
+      "Consultants se déplaçant chez des clients"
+    ],
+    "freeAlternative": null,
+    "substitutable": true,
+    "betterAlternative": null
   }
 ]

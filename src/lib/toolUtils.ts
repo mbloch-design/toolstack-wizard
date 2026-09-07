@@ -8,8 +8,9 @@ import { formatCurrencyAmount } from "@/lib/currency";
 import { resolveDisplayPrice } from "@/lib/nativePricing";
 
 /** True if the tool's paid pricing is a one-time/perpetual license, not a subscription. */
-export function isOneTimePrice(tool: { pricing?: { paid?: string } }): boolean {
-  return /licence|à vie|perp[ée]tuel|one-?time|perpetual/i.test(tool.pricing?.paid || "");
+export function isOneTimePrice(tool: { pricing?: { paid?: string }; pricing_v5?: { compare_plan_kind?: string | null } | null }): boolean {
+  return tool.pricing_v5?.compare_plan_kind === "one_time"
+    || /licence|à vie|perp[ée]tuel|one-?time|perpetual/i.test(tool.pricing?.paid || "");
 }
 
 /** Format a displayable price label ("16,80€" or "16,80€/mois"), without hiding observed decimals. */
@@ -20,6 +21,9 @@ export function formatPriceLabel(
   currency: Currency = "EUR",
   lang: string = "fr",
 ): string {
+  if (isOneTimePrice(tool) && price === 0) {
+    return tool.pricing_v5?.compare_plan_name || t("Licence à vie", "Lifetime license");
+  }
   if (price === 0) return t("Gratuit", "Free");
   const resolved = resolveDisplayPrice(tool, price, currency);
   const amount = `${resolved.converted ? "≈ " : ""}${formatCurrencyAmount(resolved.amount, currency, lang)}`;

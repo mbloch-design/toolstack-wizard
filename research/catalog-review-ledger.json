@@ -1,6 +1,6 @@
 {
   "batch_size": 25,
-  "catalogue_count": 1161,
+  "catalogue_count": 1170,
   "catalogue_path": "src/data/tools_v4.json",
   "entries": [
     {
@@ -23615,6 +23615,42 @@
       "status": "QUEUED"
     },
     {
+      "assigned_batch": "review-creation-critical-003",
+      "batch_position": 2,
+      "blockers": [],
+      "catalog_hash": "sha256:f34dc5e042e7abbd6936b1bad1d4b458761e69d5f673f681c0a1830fa1f907ae",
+      "category": "creation",
+      "fact_bundle": "MISSING",
+      "fact_bundle_hash": null,
+      "invalidated_from": null,
+      "media_errors": [
+        "media_evidence_missing"
+      ],
+      "media_evidence": "MISSING",
+      "media_evidence_hash": null,
+      "name": "StellaFlow",
+      "next_review_at": null,
+      "priority_reasons": [
+        "paid_price",
+        "missing_fact_bundle",
+        "missing_or_invalid_media_evidence",
+        "missing_media"
+      ],
+      "priority_score": 195,
+      "published_at": null,
+      "quality_version": "catalog-review-v1",
+      "rendered_at": null,
+      "review_fingerprint": "sha256:5b097ff376f2a90f684b7109250f00aea11efef2edbe6111b50940f06af6593f",
+      "reviewed_at": null,
+      "reviewed_hash": null,
+      "reviewer": null,
+      "risk_tier": "critical",
+      "slug": "stellaflow",
+      "source_url": "https://www.stellaflow.com/",
+      "source_verified_on": "2026-09-03",
+      "status": "QUEUED"
+    },
+    {
       "assigned_batch": "review-nocode-web-critical-004",
       "batch_position": 25,
       "blockers": [],
@@ -25464,11 +25500,11 @@
       "assigned_batch": "review-automation-critical-001",
       "batch_position": 14,
       "blockers": [],
-      "catalog_hash": "sha256:22281093efb6a4d201e0e22551b60ef2f5de57e2713436271f2bb94a546559d9",
+      "catalog_hash": "sha256:4a1e85dfebdf38cda963f0c54222d1a519975823b6936ed73a8211dc43b93e4a",
       "category": "automation",
       "fact_bundle": "AVAILABLE",
       "fact_bundle_hash": "sha256:be5e7a7c01a81d6a5bad5541fe008ae35cef3b35e460eba1c06e409f54f638da",
-      "invalidated_from": null,
+      "invalidated_from": "RENDER_VERIFIED",
       "media_errors": [],
       "media_evidence": "VALID",
       "media_evidence_hash": "sha256:04e3e767c6fb82bfbdbc8fda7f9b720169a5b3d596b3971238f8f6099f00c627",
@@ -25482,7 +25518,7 @@
       "published_at": null,
       "quality_version": "catalog-review-v1",
       "rendered_at": "2026-09-02",
-      "review_fingerprint": "sha256:eb39b0b99d101c369b4840cebd421af38b3a007f33d345150f0279cdb2f29c26",
+      "review_fingerprint": "sha256:b7f6f16542918542b726e1e0e3091efbdd76e1e74a038baf30f3b5d387ba6848",
       "reviewed_at": "2026-09-02",
       "reviewed_hash": "sha256:eb39b0b99d101c369b4840cebd421af38b3a007f33d345150f0279cdb2f29c26",
       "reviewer": "codex",
@@ -25490,7 +25526,7 @@
       "slug": "albato",
       "source_url": "https://albato.com/pricing",
       "source_verified_on": "2026-09-02",
-      "status": "RENDER_VERIFIED"
+      "status": "STALE"
     },
     {
       "assigned_batch": "review-budgeting-fpa-critical-001",
@@ -29927,6 +29963,41 @@
       "status": "PUBLISHED"
     },
     {
+      "assigned_batch": "review-crm-high-001",
+      "batch_position": 3,
+      "blockers": [],
+      "catalog_hash": "sha256:b82222f59b69a16f75208f96411efeacc15fc0d5e9fadeff851ba17aff007f3e",
+      "category": "crm",
+      "fact_bundle": "MISSING",
+      "fact_bundle_hash": null,
+      "invalidated_from": null,
+      "media_errors": [
+        "media_evidence_missing"
+      ],
+      "media_evidence": "MISSING",
+      "media_evidence_hash": null,
+      "name": "Charik",
+      "next_review_at": null,
+      "priority_reasons": [
+        "paid_price",
+        "missing_fact_bundle",
+        "missing_or_invalid_media_evidence"
+      ],
+      "priority_score": 170,
+      "published_at": null,
+      "quality_version": "catalog-review-v1",
+      "rendered_at": null,
+      "review_fingerprint": "sha256:a0c9168e93382897ee7b1c4d25e57c972be5b30226a60d9415b314d3ad7d1660",
+      "reviewed_at": null,
+      "reviewed_hash": null,
+      "reviewer": null,
+      "risk_tier": "high",
+      "slug": "charik",
+      "source_url": "https://www.charik.app/prix/",
+      "source_verified_on": "2026-09-03",
+      "status": "QUEUED"
+    },
+    {
       "assigned_batch": "review-project-management-high-001",
       "batch_position": 1,
       "blockers": [],
@@ -29997,6 +30068,76 @@
       "status": "QUEUED"
     },
     {
+      "assigned_batch": "review-analytics-high-001",
+      "batch_position": 8,
+      "blockers": [],
+      "catalog_hash": "sha256:853743f1a3108f119c2391f5b18464261a4fa94719543f7bb328122ca96186a8",
+      "category": "analytics",
+      "fact_bundle": "MISSING",
+      "fact_bundle_hash": null,
+      "invalidated_from": null,
+      "media_errors": [
+        "media_evidence_missing"
+      ],
+      "media_evidence": "MISSING",
+      "media_evidence_hash": null,
+      "name": "Happia",
+      "next_review_at": null,
+      "priority_reasons": [
+        "paid_price",
+        "missing_fact_bundle",
+        "missing_or_invalid_media_evidence"
+      ],
+      "priority_score": 170,
+      "published_at": null,
+      "quality_version": "catalog-review-v1",
+      "rendered_at": null,
+      "review_fingerprint": "sha256:8324b183760ca8f637768759dceb2233e6dca8536b2b35920a2fcb4a7a1cce4e",
+      "reviewed_at": null,
+      "reviewed_hash": null,
+      "reviewer": null,
+      "risk_tier": "high",
+      "slug": "happia",
+      "source_url": "https://happia.fr/tarifs",
+      "source_verified_on": "2026-09-02",
+      "status": "QUEUED"
+    },
+    {
+      "assigned_batch": "review-finance-high-001",
+      "batch_position": 12,
+      "blockers": [],
+      "catalog_hash": "sha256:0570092e76e61988e54a48ba2a15fde9e4397ce8b941068712c265902c905210",
+      "category": "finance",
+      "fact_bundle": "MISSING",
+      "fact_bundle_hash": null,
+      "invalidated_from": null,
+      "media_errors": [
+        "media_evidence_missing"
+      ],
+      "media_evidence": "MISSING",
+      "media_evidence_hash": null,
+      "name": "Klark",
+      "next_review_at": null,
+      "priority_reasons": [
+        "paid_price",
+        "missing_fact_bundle",
+        "missing_or_invalid_media_evidence"
+      ],
+      "priority_score": 170,
+      "published_at": null,
+      "quality_version": "catalog-review-v1",
+      "rendered_at": null,
+      "review_fingerprint": "sha256:37625cae60d7410c44fd6c5c3205274cf3e6a3e01b3e5b2a8656a13108502cc5",
+      "reviewed_at": null,
+      "reviewed_hash": null,
+      "reviewer": null,
+      "risk_tier": "high",
+      "slug": "klark",
+      "source_url": "https://klark.app/tarifs",
+      "source_verified_on": "2026-09-03",
+      "status": "QUEUED"
+    },
+    {
       "assigned_batch": "review-project-management-high-001",
       "batch_position": 2,
       "blockers": [],
@@ -30029,6 +30170,41 @@
       "slug": "monday",
       "source_url": "https://monday.com/pricing",
       "source_verified_on": "2026-05-08",
+      "status": "QUEUED"
+    },
+    {
+      "assigned_batch": "review-organization-high-001",
+      "batch_position": 18,
+      "blockers": [],
+      "catalog_hash": "sha256:38aca3abf8e236d3e244f3c5232c5a6a5966eb1576378ec80275b36c2d69706b",
+      "category": "organization",
+      "fact_bundle": "MISSING",
+      "fact_bundle_hash": null,
+      "invalidated_from": null,
+      "media_errors": [
+        "media_evidence_missing"
+      ],
+      "media_evidence": "MISSING",
+      "media_evidence_hash": null,
+      "name": "Orlo",
+      "next_review_at": null,
+      "priority_reasons": [
+        "paid_price",
+        "missing_fact_bundle",
+        "missing_or_invalid_media_evidence"
+      ],
+      "priority_score": 170,
+      "published_at": null,
+      "quality_version": "catalog-review-v1",
+      "rendered_at": null,
+      "review_fingerprint": "sha256:316e875b381bc56f67cc609ea76c305166ba4dfe69e38db8be8db3a22335bb6d",
+      "reviewed_at": null,
+      "reviewed_hash": null,
+      "reviewer": null,
+      "risk_tier": "high",
+      "slug": "orlo",
+      "source_url": "https://www.getorlo.app/",
+      "source_verified_on": "2026-09-03",
       "status": "QUEUED"
     },
     {
@@ -30099,6 +30275,76 @@
       "slug": "reclaim-ai",
       "source_url": "https://reclaim.ai/pricing",
       "source_verified_on": "2026-05-08",
+      "status": "QUEUED"
+    },
+    {
+      "assigned_batch": "review-creation-high-003",
+      "batch_position": 21,
+      "blockers": [],
+      "catalog_hash": "sha256:5f89ed85712a8844c2d4d2101a6ed52f08bd1702ae5a3c49e44b19efdf301aa1",
+      "category": "creation",
+      "fact_bundle": "MISSING",
+      "fact_bundle_hash": null,
+      "invalidated_from": null,
+      "media_errors": [
+        "media_evidence_missing"
+      ],
+      "media_evidence": "MISSING",
+      "media_evidence_hash": null,
+      "name": "SnapPack",
+      "next_review_at": null,
+      "priority_reasons": [
+        "paid_price",
+        "missing_fact_bundle",
+        "missing_or_invalid_media_evidence"
+      ],
+      "priority_score": 170,
+      "published_at": null,
+      "quality_version": "catalog-review-v1",
+      "rendered_at": null,
+      "review_fingerprint": "sha256:b703aba3f830399429a896b8593a6f38f3db5e7ee6604790b1af9421a1a9abcc",
+      "reviewed_at": null,
+      "reviewed_hash": null,
+      "reviewer": null,
+      "risk_tier": "high",
+      "slug": "snappack",
+      "source_url": "https://www.snappack.io/",
+      "source_verified_on": "2026-09-03",
+      "status": "QUEUED"
+    },
+    {
+      "assigned_batch": "review-finance-high-001",
+      "batch_position": 13,
+      "blockers": [],
+      "catalog_hash": "sha256:e590d183996cbbe8b4c377066473f90acfb2e5bf2b3afccb5289f04be6abf300",
+      "category": "finance",
+      "fact_bundle": "MISSING",
+      "fact_bundle_hash": null,
+      "invalidated_from": null,
+      "media_errors": [
+        "media_evidence_missing"
+      ],
+      "media_evidence": "MISSING",
+      "media_evidence_hash": null,
+      "name": "Vulko",
+      "next_review_at": null,
+      "priority_reasons": [
+        "paid_price",
+        "missing_fact_bundle",
+        "missing_or_invalid_media_evidence"
+      ],
+      "priority_score": 170,
+      "published_at": null,
+      "quality_version": "catalog-review-v1",
+      "rendered_at": null,
+      "review_fingerprint": "sha256:34adf2aaaa10c8d992aa07adb5394bf85436b3293e742356787e6f009d2ee585",
+      "reviewed_at": null,
+      "reviewed_hash": null,
+      "reviewer": null,
+      "risk_tier": "high",
+      "slug": "vulko",
+      "source_url": "https://vulko.fr/",
+      "source_verified_on": "2026-09-03",
       "status": "QUEUED"
     },
     {
@@ -39318,6 +39564,37 @@
       "status": "PUBLISHED"
     },
     {
+      "assigned_batch": "review-creation-medium-001",
+      "batch_position": 12,
+      "blockers": [],
+      "catalog_hash": "sha256:49e978ac970c8de9d1603f94519348ab998623fd24cc87027d72d4f3dbabc5ea",
+      "category": "creation",
+      "fact_bundle": "AVAILABLE",
+      "fact_bundle_hash": "sha256:92e40cbc84f0832ac01caa6a3daa4afd36a39dfeebf0a644a3c6b7b857e932cf",
+      "invalidated_from": null,
+      "media_errors": [],
+      "media_evidence": "VALID",
+      "media_evidence_hash": "sha256:8c7f6ea7b556ca7a48947c4b470a2e1fb95d1ffd71e0570050a98273c62a599f",
+      "name": "AutoPhotos.ai",
+      "next_review_at": null,
+      "priority_reasons": [
+        "paid_price"
+      ],
+      "priority_score": 80,
+      "published_at": null,
+      "quality_version": "catalog-review-v1",
+      "rendered_at": "2026-09-07",
+      "review_fingerprint": "sha256:45db4dc7f5faadb67679d3f965e02807647b5848948b7e47d3b77f0d5b992016",
+      "reviewed_at": "2026-09-07",
+      "reviewed_hash": "sha256:45db4dc7f5faadb67679d3f965e02807647b5848948b7e47d3b77f0d5b992016",
+      "reviewer": "codex",
+      "risk_tier": "medium",
+      "slug": "autophotos-ai",
+      "source_url": "https://autophotos.ai/pricing/",
+      "source_verified_on": "2026-09-07",
+      "status": "RENDER_VERIFIED"
+    },
+    {
       "assigned_batch": "review-design-tools-critical-004",
       "batch_position": 1,
       "blockers": [],
@@ -39347,6 +39624,37 @@
       "source_url": "https://brandpad.io/pricing",
       "source_verified_on": "2026-07-24",
       "status": "PUBLISHED"
+    },
+    {
+      "assigned_batch": "review-organization-medium-001",
+      "batch_position": 3,
+      "blockers": [],
+      "catalog_hash": "sha256:20444cebe32191c6707ec1a97e62a0d41b6a095693e09da223f48f7b44fe7cac",
+      "category": "organization",
+      "fact_bundle": "AVAILABLE",
+      "fact_bundle_hash": "sha256:9d1dab918a1e4bcdc521e2e910e3def85b45dc7aa597e24f0abb1f47fc4bd032",
+      "invalidated_from": null,
+      "media_errors": [],
+      "media_evidence": "VALID",
+      "media_evidence_hash": "sha256:5f9d610654ff03033486692b45de2f4f0e548a29f4d4a157a44b763e91200549",
+      "name": "CommuteBar",
+      "next_review_at": null,
+      "priority_reasons": [
+        "paid_price"
+      ],
+      "priority_score": 80,
+      "published_at": null,
+      "quality_version": "catalog-review-v1",
+      "rendered_at": "2026-09-07",
+      "review_fingerprint": "sha256:be94508b7847e04040638909fe7a80235f6058a45e193541be2a7cff7dc7fe59",
+      "reviewed_at": "2026-09-07",
+      "reviewed_hash": "sha256:be94508b7847e04040638909fe7a80235f6058a45e193541be2a7cff7dc7fe59",
+      "reviewer": "codex",
+      "risk_tier": "medium",
+      "slug": "commutebar",
+      "source_url": "https://www.commute.bar/",
+      "source_verified_on": "2026-09-07",
+      "status": "RENDER_VERIFIED"
     },
     {
       "assigned_batch": "review-design-tools-critical-004",
@@ -40557,6 +40865,6 @@
       "status": "QUEUED"
     }
   ],
-  "generated_on": "2026-09-02",
+  "generated_on": "2026-09-07",
   "schema_version": 1
 }

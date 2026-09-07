@@ -1,0 +1,124 @@
+{
+  "slug": "autophotos-ai",
+  "author": "ToolTrim - Mike",
+  "verified_on": "2026-09-07",
+  "sources": [
+    {
+      "label": "AutoPhotos.ai - site officiel",
+      "url": "https://autophotos.ai/"
+    },
+    {
+      "label": "AutoPhotos.ai - tarifs officiels",
+      "url": "https://autophotos.ai/pricing/"
+    },
+    {
+      "label": "AutoPhotos.ai - conditions officielles",
+      "url": "https://autophotos.ai/terms/"
+    }
+  ],
+  "facts": {
+    "what": "Suite de retouche photo et vidéo par IA orientée e-commerce, avec suppression et génération d'arrière-plan, amélioration d'image, création de reels et outils audio-vidéo.",
+    "what_en": "AI photo and video editing suite for e-commerce, including background removal and generation, image enhancement, reel creation, and audio-video tools.",
+    "pricing_model": "Crédits à l'unité ou abonnement mensuel/annuel. Les packs coûtent 4,50 €, 9 € ou 18 €. Les abonnements utilisent les mêmes prix mensuels avec 65, 180 ou 400 crédits par mois.",
+    "free_tier": {
+      "exists": true,
+      "detail": "Plusieurs outils proposent 3 traitements gratuits par jour et un compte vérifié reçoit 5 crédits de bienvenue. Les limites varient selon l'outil."
+    },
+    "plans": [
+      {
+        "name": "Starter",
+        "price": "4,50 € : 20 crédits à l'unité ou 65 crédits par mois en abonnement"
+      },
+      {
+        "name": "Standard",
+        "price": "9 € : 60 crédits à l'unité ou 180 crédits par mois en abonnement"
+      },
+      {
+        "name": "Pro",
+        "price": "18 € : 150 crédits à l'unité ou 400 crédits par mois en abonnement"
+      }
+    ],
+    "key_features": [
+      "Suppression et remplacement d'arrière-plan",
+      "Génération de fonds studio pour photos produit",
+      "Upscale 2x ou 4x et correction colorimétrique",
+      "Gomme magique, recadrage et ombres produit",
+      "AutoReel, sous-titres, doublage et nettoyage audio",
+      "Intégrations Shopify, WooCommerce et BaseLinker"
+    ]
+  },
+  "fr": {
+    "verdict": {
+      "keepIf": [
+        "Vous produisez régulièrement des photos produit et des formats courts pour une boutique en ligne.",
+        "Vous préférez payer à l'usage ou commencer par quelques opérations gratuites.",
+        "Shopify, WooCommerce ou BaseLinker fait déjà partie de votre flux e-commerce."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'une direction artistique très contrôlée ou d'une retouche avancée par calques.",
+        "Votre volume vidéo rend le coût en crédits difficile à prévoir.",
+        "Vous exigez des preuves indépendantes de qualité ou un historique produit établi."
+      ],
+      "threshold": "Choisissez AutoPhotos.ai si ses outils remplacent plusieurs retouches répétitives et si un test sur vos propres références produit donne des résultats cohérents. Commencez gratuitement, puis comparez le coût par visuel réussi avec votre méthode actuelle avant d'acheter un gros pack."
+    },
+    "pros": [
+      "Photo, vidéo et audio réunis dans une même réserve de crédits.",
+      "Plusieurs traitements gratuits permettent de tester sans carte bancaire.",
+      "Packs sans abonnement et crédits achetés à l'unité annoncés sans expiration.",
+      "Intégrations Shopify, WooCommerce et BaseLinker confirmées.",
+      "Fichiers téléversés annoncés comme supprimés après 60 minutes."
+    ],
+    "cons": [
+      "Le coût réel dépend du nombre d'opérations et certaines fonctions vidéo consomment les crédits par durée.",
+      "Les crédits d'abonnement ne suivent pas la même règle de conservation que les crédits achetés à l'unité.",
+      "Peu de preuves indépendantes permettent encore d'évaluer la régularité des résultats.",
+      "Ce n'est pas un éditeur avancé par calques comparable à Photoshop."
+    ],
+    "use_cases": [
+      "Détourer et uniformiser des photos produit pour une boutique en ligne.",
+      "Créer des fonds studio et des déclinaisons publicitaires à partir d'une photo.",
+      "Transformer une série de photos en reel avec voix et sous-titres.",
+      "Traiter les images produit depuis Shopify, WooCommerce ou BaseLinker."
+    ],
+    "relevant_for": [
+      "E-commerçants",
+      "Freelances créatifs",
+      "Agences e-commerce",
+      "Petites marques avec un catalogue produit"
+    ]
+  },
+  "en": {
+    "verdict": {
+      "keepIf": [
+        "You regularly produce product photos and short-form content for an online store.",
+        "You prefer usage-based pricing or want to start with a few free operations.",
+        "Shopify, WooCommerce, or BaseLinker is already part of your e-commerce workflow."
+      ],
+      "avoidIf": [
+        "You need tightly controlled art direction or advanced layer-based editing.",
+        "Your video volume makes credit costs difficult to forecast.",
+        "You require independent quality evidence or a long product track record."
+      ],
+      "threshold": "Choose AutoPhotos.ai when its tools replace several repetitive edits and a test on your own product references produces consistent results. Start free, then compare the cost per usable visual with your current workflow before buying a large credit pack."
+    },
+    "pros": [
+      "Photo, video, and audio tools share the same credit balance.",
+      "Several free operations let you test without a credit card.",
+      "One-time packs are available and purchased credits are advertised as non-expiring.",
+      "Confirmed Shopify, WooCommerce, and BaseLinker integrations.",
+      "Uploaded files are advertised as deleted after 60 minutes."
+    ],
+    "cons": [
+      "Actual cost depends on operation count, while some video features charge by duration.",
+      "Subscription credits do not follow the same retention rules as one-time credits.",
+      "There is little independent evidence yet about output consistency.",
+      "It is not an advanced layer-based editor comparable to Photoshop."
+    ],
+    "use_cases": [
+      "Remove backgrounds and standardize product photos for an online store.",
+      "Create studio backgrounds and advertising variations from one photo.",
+      "Turn a photo series into a reel with narration and captions.",
+      "Process product images from Shopify, WooCommerce, or BaseLinker."
+    ]
+  }
+}

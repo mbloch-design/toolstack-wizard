@@ -9,7 +9,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import { setSeoTags, setMeta, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
 import { trackEvent } from "@/lib/analytics";
 import { FEATURED_COMPARISONS } from "@/data/comparisons";
-import { getToolDomain, getDomainFromUrl, formatPriceLabel, resolveVerdict, resolveToolOverview } from "@/lib/toolUtils";
+import { getToolDomain, getDomainFromUrl, formatPriceLabel, isOneTimePrice, resolveVerdict, resolveToolOverview } from "@/lib/toolUtils";
 import { stripLeadingEmoji } from "@/lib/text";
 import { hasGenuineFreeTier, resolveMonthlyPrice } from "@/lib/pricing";
 
@@ -85,6 +85,7 @@ const ToolDetailPage = () => {
     if (!tool) return;
     const price = resolveMonthlyPrice(tool);
     const hasPrice = price != null && price > 0;
+    const oneTime = tool.pricing_v5?.compare_plan_kind === "one_time";
     const year = new Date().getFullYear();
     const baseSlug = tool.slug || tool.id;
     const priceRounded = hasPrice ? Math.round(price as number) : 0;
@@ -103,19 +104,27 @@ const ToolDetailPage = () => {
 
     const SEO: Record<string, { titleFr: string; titleEn: string; descFr: string; descEn: string; suffix: string }> = {
       presentation: {
-        titleFr: hasPrice
+        titleFr: oneTime
+          ? `${tool.name} : licence à vie, avis et alternatives ${year} | ToolTrim`
+          : hasPrice
           ? `${tool.name} : prix dès ${priceRounded}€, avis et alternatives ${year} | ToolTrim`
           : `${tool.name} : gratuit, avis et alternatives ${year} | ToolTrim`,
-        titleEn: hasPrice
+        titleEn: oneTime
+          ? `${tool.name}: lifetime license, review & alternatives ${year} | ToolTrim`
+          : hasPrice
           ? `${tool.name}: pricing from €${priceRounded}, review & alternatives ${year} | ToolTrim`
           : `${tool.name}: free, review & alternatives ${year} | ToolTrim`,
         descFr: shortExcerpt
-          ? `${shortExcerpt}. ${hasPrice ? `Coûte ${price}€/mois${planSuffixFr}, vaut-il le coût ?` : "Gratuit ou freemium ?"} Alternatives et verdict ToolTrim ${year}.`
+          ? `${shortExcerpt}. ${oneTime ? "Licence à vie, sans abonnement." : hasPrice ? `Coûte ${price}€/mois${planSuffixFr}, vaut-il le coût ?` : "Gratuit ou freemium ?"} Alternatives et verdict ToolTrim ${year}.`
+          : oneTime
+            ? `${tool.name} est proposé en licence à vie, sans abonnement. Alternatives et verdict ToolTrim ${year}.`
           : hasPrice
             ? `${tool.name} coûte ${price}€/mois${planSuffixFr}. Verdict ToolTrim : vaut-il le coût ? Meilleures alternatives moins chères en ${year}.`
             : `${tool.name} est-il vraiment gratuit ? Plans, tarifs cachés et meilleures alternatives analysés, mis à jour ${year}.`,
         descEn: shortExcerpt
-          ? `${shortExcerpt}. ${hasPrice ? `Costs €${price}/mo${planSuffixEn}, is it worth it?` : "Free or freemium?"} Alternatives and ToolTrim verdict ${year}.`
+          ? `${shortExcerpt}. ${oneTime ? "Lifetime license with no subscription." : hasPrice ? `Costs €${price}/mo${planSuffixEn}, is it worth it?` : "Free or freemium?"} Alternatives and ToolTrim verdict ${year}.`
+          : oneTime
+            ? `${tool.name} is sold as a lifetime license with no subscription. Alternatives and ToolTrim verdict ${year}.`
           : hasPrice
             ? `${tool.name} costs €${price}/mo${planSuffixEn}. ToolTrim verdict: is it worth it? Best cheaper alternatives for ${year}.`
             : `Is ${tool.name} really free? Plans, hidden costs and best alternatives, updated ${year}.`,
@@ -128,10 +137,14 @@ const ToolDetailPage = () => {
         titleEn: hasPrice
           ? `${tool.name} pricing & plans ${year} | ToolTrim`
           : `${tool.name} Pricing ${year}: Free, Freemium or Paid? | ToolTrim`,
-        descFr: hasPrice
+        descFr: oneTime
+          ? `Combien coûte ${tool.name} en ${year} ? Licence à vie sans abonnement. Détail du tarif, des conditions et des alternatives.`
+          : hasPrice
           ? `Combien coûte ${tool.name} en ${year} ? ${priceRounded}€/mois${planName ? ` (plan ${planName})` : ""}${shortExcerpt ? `, ${shortExcerpt.charAt(0).toLowerCase() + shortExcerpt.slice(1)}.` : "."} Détail des plans et alternatives moins chères.`
           : `${tool.name} est-il gratuit en ${year} ?${shortExcerpt ? ` ${shortExcerpt}.` : ""} Plans gratuits, freemium et payants comparés avec les meilleures alternatives.`,
-        descEn: hasPrice
+        descEn: oneTime
+          ? `How much does ${tool.name} cost in ${year}? Lifetime license with no subscription. Price, terms and alternatives explained.`
+          : hasPrice
           ? `How much does ${tool.name} cost in ${year}? €${priceRounded}/mo${planName ? ` (${planName} plan)` : ""}${shortExcerpt ? `, ${shortExcerpt.charAt(0).toLowerCase() + shortExcerpt.slice(1)}.` : "."} All plans and cheaper alternatives.`
           : `Is ${tool.name} free in ${year}?${shortExcerpt ? ` ${shortExcerpt}.` : ""} Free, freemium and paid plans compared with top alternatives.`,
         suffix: "/prix",
@@ -143,10 +156,14 @@ const ToolDetailPage = () => {
         titleEn: hasPrice
           ? `Best ${tool.name} alternatives in ${year} | ToolTrim`
           : `Best ${tool.name} Alternatives, ${catLabel} | ToolTrim`,
-        descFr: hasPrice
+        descFr: oneTime
+          ? `${tool.name} est vendu en licence à vie, pas au mois. Voici les meilleures alternatives gratuites ou payantes, comparées par ToolTrim en ${year}.`
+          : hasPrice
           ? `Vous payez ${priceRounded}€/mois pour ${tool.name} (${catLabel}) ? Voici les meilleures alternatives moins chères ou gratuites, comparées par ToolTrim en ${year}.`
           : `Quelles sont les meilleures alternatives à ${tool.name} en ${catLabel} ? ToolTrim compare les options gratuites, freemium et payantes les plus adaptées en ${year}.`,
-        descEn: hasPrice
+        descEn: oneTime
+          ? `${tool.name} is sold as a lifetime license, not monthly. Best free and paid alternatives compared by ToolTrim for ${year}.`
+          : hasPrice
           ? `Paying €${priceRounded}/mo for ${tool.name} (${catLabel})? Best cheaper or free alternatives, compared by ToolTrim for ${year}.`
           : `What are the best alternatives to ${tool.name} in ${catLabel}? ToolTrim compares the top free, freemium and paid options for ${year}.`,
         suffix: "/alternatives",
@@ -558,9 +575,9 @@ const ToolDetailPage = () => {
                   <dl className="td-editorial-fact-list">
                     <div>
                       <dt>{t("Prix", "Pricing")}</dt>
-                      <dd>{displayPrice === 0
+                      <dd>{displayPrice === 0 && !isOneTimePrice(tool)
                         ? t("Gratuit", "Free")
-                        : displayPrice != null && displayPrice > 0
+                        : displayPrice != null && (displayPrice > 0 || isOneTimePrice(tool))
                           ? formatPriceLabel(tool, displayPrice, t, currency, lang)
                           : t("Sur devis", "Contact sales")}</dd>
                     </div>

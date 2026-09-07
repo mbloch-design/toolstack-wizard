@@ -11,7 +11,7 @@ interface ToolCardCompactTool {
   shortDescriptionEn?: string;
   defaultMonthlyPrice?: number;
   pricing?: { free?: string; paid?: string } | null;
-  pricing_v5?: { compare_price_monthly_eur?: number | null } | null;
+  pricing_v5?: { compare_price_monthly_eur?: number | null; compare_plan_kind?: string | null } | null;
   logo?: string;
 }
 
@@ -48,7 +48,7 @@ export function ToolCardCompact({
         <h3 className="tcc-name">{name}</h3>
         {description && <p className="tcc-description">{description}</p>}
       </div>
-      {presentation.monthlyPrice > 0 && (
+      {(presentation.monthlyPrice > 0 || tool.pricing_v5?.compare_plan_kind === "one_time") && (
         <span className="tcc-price">{presentation.planLabel}</span>
       )}
       <ArrowRight className="tcc-arrow" size={15} aria-hidden />

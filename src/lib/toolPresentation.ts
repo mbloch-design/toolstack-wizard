@@ -38,8 +38,8 @@ export function getToolPresentation(tool: ToolPresentationInput, lang: "fr" | "e
     ? "Freemium"
     : freeTier
       ? (lang === "fr" ? "Gratuit" : "Free")
-      : oneTime && monthlyPrice > 0
-        ? (lang === "fr" ? "Achat unique" : "One-time purchase")
+      : oneTime
+        ? (lang === "fr" ? "Licence à vie" : "Lifetime license")
       : monthlyPrice > 0
         ? (lang === "fr" ? `${monthlyPrice} €/mois` : `€${monthlyPrice}/mo`)
         : "N/A";

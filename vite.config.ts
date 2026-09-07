@@ -137,11 +137,12 @@ function buildToolMetaDesc(tool: any, lang: string): string {
 
   const mentionsFree = /gratuit|free/i.test(base);
   // Licence à vie / perpétuelle : pas de "/mois" dans le snippet.
-  const oneTime = /licence|à vie|perp[ée]tuel|one-?time|perpetual/i.test(tool.pricing?.paid || "");
+  const oneTime = tool.pricing_v5?.compare_plan_kind === "one_time"
+    || /licence|à vie|perp[ée]tuel|one-?time|perpetual/i.test(tool.pricing?.paid || "");
   const per = isFr ? (oneTime ? "" : "/mois") : (oneTime ? "" : "/mo");
   const priceClause = isFr
-    ? (price > 0 ? `Prix dès ${price}€${per}.` : (hasFree && !mentionsFree ? "Version gratuite." : ""))
-    : (price > 0 ? `From €${price}${per}.` : (hasFree && !mentionsFree ? "Free version." : ""));
+    ? (oneTime ? "Licence à vie, sans abonnement." : price > 0 ? `Prix dès ${price}€${per}.` : (hasFree && !mentionsFree ? "Version gratuite." : ""))
+    : (oneTime ? "Lifetime license with no subscription." : price > 0 ? `From €${price}${per}.` : (hasFree && !mentionsFree ? "Free version." : ""));
   const hook = isFr
     ? "Avis ToolTrim et alternatives moins chères."
     : "ToolTrim review and cheaper alternatives.";
@@ -751,14 +752,15 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           // turn a real "it's free" value into "price unknown".
           const price = resolveMonthlyPrice(tool);
           const priceDisplay = price != null ? Math.round(price) : null;
+          const oneTime = tool.pricing_v5?.compare_plan_kind === "one_time";
 
           for (const lang of LANGS) {
             const isFr = lang === "fr";
             // Titre mené par le prix : la requête dominante est "combien ça coûte".
             // Prix concret si payant, "gratuit" si offre gratuite, sinon "prix".
             const priceTag = isFr
-              ? (priceDisplay && priceDisplay > 0 ? `prix dès ${priceDisplay}€` : (tool.pricing?.free ? "gratuit" : "prix"))
-              : (priceDisplay && priceDisplay > 0 ? `pricing from €${priceDisplay}` : (tool.pricing?.free ? "free" : "pricing"));
+              ? (oneTime ? "licence à vie" : priceDisplay && priceDisplay > 0 ? `prix dès ${priceDisplay}€` : (tool.pricing?.free ? "gratuit" : "prix"))
+              : (oneTime ? "lifetime license" : priceDisplay && priceDisplay > 0 ? `pricing from €${priceDisplay}` : (tool.pricing?.free ? "free" : "pricing"));
             const presentationOverride = isFr ? tool.seo?.presentationTitleFr : tool.seo?.presentationTitleEn;
             // Drop the " | ToolTrim" brand suffix when the full title would
             // overflow Google's ~60-char SERP truncation point — long tool
@@ -941,13 +943,20 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
                 ? `${name} : prix et tarifs 2026 | ToolTrim`
                 : `${name} pricing & plans 2026 | ToolTrim`;
             },
-            buildDesc: (name, price, isFr) => isFr
-              ? (price ? `Combien coûte vraiment ${name} ? Plans, tarifs détaillés et comparaison, à jour 2026. Vaut-il ses ${price}€/mois ?` : `Plans et tarifs de ${name} : gratuit, freemium ou payant ? Toutes les options décryptées par ToolTrim.`)
-              : (price ? `How much does ${name} really cost? Detailed plans, pricing breakdown, updated 2026. Is it worth €${price}/mo?` : `${name} plans and pricing: free, freemium or paid? All options explained by ToolTrim.`),
+            buildDesc: (name, price, isFr, tool) => tool.pricing_v5?.compare_plan_kind === "one_time"
+              ? (isFr ? `${name} est vendu en licence à vie, sans abonnement. Tarif, conditions et alternatives analysés par ToolTrim.` : `${name} is sold as a lifetime license with no subscription. Price, terms and alternatives reviewed by ToolTrim.`)
+              : isFr
+                ? (price ? `Combien coûte vraiment ${name} ? Plans, tarifs détaillés et comparaison, à jour 2026. Vaut-il ses ${price}€/mois ?` : `Plans et tarifs de ${name} : gratuit, freemium ou payant ? Toutes les options décryptées par ToolTrim.`)
+                : (price ? `How much does ${name} really cost? Detailed plans, pricing breakdown, updated 2026. Is it worth €${price}/mo?` : `${name} plans and pricing: free, freemium or paid? All options explained by ToolTrim.`),
             buildBody: (name, price, isFr, tool) => {
               const v5 = tool.pricing_v5;
               const planNote = v5?.compare_plan_name ? (isFr ? ` (plan ${v5.compare_plan_name})` : ` (${v5.compare_plan_name} plan)`) : "";
               const caution = v5?.cautions?.[0] ? ` ${v5.cautions[0]}` : "";
+              if (v5?.compare_plan_kind === "one_time") {
+                return isFr
+                  ? `Tous les tarifs de ${name} : licence à vie sans abonnement.${caution}`
+                  : `All ${name} pricing: lifetime license with no subscription.${caution}`;
+              }
               return isFr
                 ? `Tous les plans et tarifs de ${name}${price ? ` : à partir de ${price}€/mois${planNote}` : " : gratuit ou freemium"}. ${caution || `Prix vérifié par ToolTrim : analyse du rapport qualité-prix pour freelances.`}`
                 : `All ${name} plans and pricing${price ? `: from €${price}/month${planNote}` : ": free or freemium"}. ${caution || `Price verified by ToolTrim: value analysis for freelancers.`}`;

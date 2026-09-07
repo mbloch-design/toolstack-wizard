@@ -1,0 +1,23 @@
+{
+  "slug": "autophotos-ai",
+  "verified_on": "2026-09-07",
+  "mode": "fallback_screenshot",
+  "discovery": {
+    "official_media_found": false,
+    "official_pages_checked": [
+      "https://autophotos.ai/",
+      "https://autophotos.ai/remove-bg/",
+      "https://autophotos.ai/create/",
+      "https://autophotos.ai/autoreel/"
+    ]
+  },
+  "items": [
+    {
+      "kind": "screenshot",
+      "url": "/og-screenshots/autophotos-ai.png",
+      "source_page_url": "https://autophotos.ai/",
+      "official": false,
+      "capture_method": "browser_screenshot"
+    }
+  ]
+}

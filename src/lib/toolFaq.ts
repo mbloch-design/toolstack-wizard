@@ -25,6 +25,7 @@ export function buildToolFaqs(
   const plan = tool.pricing_v5?.compare_plan_name
     ? isFr ? ` (plan ${tool.pricing_v5.compare_plan_name})` : ` (${tool.pricing_v5.compare_plan_name} plan)`
     : "";
+  const oneTime = tool.pricing_v5?.compare_plan_kind === "one_time";
 
   const faqs: ToolFaqEntry[] = [
     {
@@ -34,9 +35,13 @@ export function buildToolFaqs(
     },
     {
       q: isFr ? `Combien coûte ${tool.name} ?` : `How much does ${tool.name} cost?`,
-      a: isFr
-        ? `${tool.name} coûte ${displayPrice === 0 ? "0€ (gratuit)" : `${displayPrice}€/mois`}${plan}. Prix vérifié le ${verifiedOn}.`
-        : `${tool.name} costs ${displayPrice === 0 ? "€0 (free)" : `€${displayPrice}/month`}${plan}. Price verified on ${verifiedOn}.`,
+      a: oneTime
+        ? (isFr
+          ? `${tool.name} est vendu en licence à vie, sans abonnement. ${tool.pricing?.paid || "Consultez le tarif officiel."} Prix vérifié le ${verifiedOn}.`
+          : `${tool.name} is sold as a lifetime license with no subscription. ${tool.pricingEn?.paid || "See the official price."} Price verified on ${verifiedOn}.`)
+        : isFr
+          ? `${tool.name} coûte ${displayPrice === 0 ? "0€ (gratuit)" : `${displayPrice}€/mois`}${plan}. Prix vérifié le ${verifiedOn}.`
+          : `${tool.name} costs ${displayPrice === 0 ? "€0 (free)" : `€${displayPrice}/month`}${plan}. Price verified on ${verifiedOn}.`,
     },
     {
       q: isFr ? `${tool.name} est-il adapté aux débutants ?` : `Is ${tool.name} suitable for beginners?`,

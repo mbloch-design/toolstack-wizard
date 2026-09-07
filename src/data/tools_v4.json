@@ -172217,5 +172217,333 @@
       "lastActivityVerifiedOn": null,
       "notedOn": "2026-09-03"
     }
+  },
+  {
+    "id": "autophotos-ai",
+    "slug": "autophotos-ai",
+    "name": "AutoPhotos.ai",
+    "category": "creation",
+    "shortDescription": "Retouche les photos produit et crée des vidéos e-commerce avec l'IA.",
+    "shortDescriptionEn": "Edits product photos and creates e-commerce videos with AI.",
+    "description": "AutoPhotos.ai réunit des outils de retouche photo, de création vidéo et de nettoyage audio pensés pour les catalogues e-commerce. Il supprime ou génère des arrière-plans, agrandit les images, corrige les couleurs, crée des ombres et produit des descriptions à partir d'une photo.\n\nLa partie vidéo couvre notamment le détourage, les sous-titres, le doublage, le nettoyage audio et AutoReel, qui transforme des photos et un script en vidéo courte. Les intégrations officielles couvrent Shopify, WooCommerce et BaseLinker.\n\nLe paiement repose sur des crédits. Les packs à l'unité coûtent 4,50 €, 9 € ou 18 € pour 20, 60 ou 150 crédits. Aux mêmes prix mensuels, les abonnements donnent respectivement 65, 180 ou 400 crédits par mois. Plusieurs outils peuvent être testés gratuitement et un compte vérifié reçoit 5 crédits de bienvenue.",
+    "longDescription": "AutoPhotos.ai réunit des outils de retouche photo, de création vidéo et de nettoyage audio pensés pour les catalogues e-commerce. Il supprime ou génère des arrière-plans, agrandit les images, corrige les couleurs, crée des ombres et produit des descriptions à partir d'une photo.\n\nLa partie vidéo couvre notamment le détourage, les sous-titres, le doublage, le nettoyage audio et AutoReel, qui transforme des photos et un script en vidéo courte. Les intégrations officielles couvrent Shopify, WooCommerce et BaseLinker.\n\nLe paiement repose sur des crédits. Les packs à l'unité coûtent 4,50 €, 9 € ou 18 € pour 20, 60 ou 150 crédits. Aux mêmes prix mensuels, les abonnements donnent respectivement 65, 180 ou 400 crédits par mois. Plusieurs outils peuvent être testés gratuitement et un compte vérifié reçoit 5 crédits de bienvenue.",
+    "longDescriptionEn": "AutoPhotos.ai combines photo editing, video creation, and audio cleanup tools built for e-commerce catalogs. It removes or generates backgrounds, upscales images, corrects colors, adds shadows, and writes product descriptions from a photo.\n\nIts video toolkit includes background removal, captions, dubbing, audio cleanup, and AutoReel, which turns photos and a script into a short video. Official integrations cover Shopify, WooCommerce, and BaseLinker.\n\nPricing is credit-based. One-time packs cost €4.50, €9, or €18 for 20, 60, or 150 credits. Monthly subscriptions at the same price points provide 65, 180, or 400 credits per month. Several tools can be tested for free, and a verified account receives 5 welcome credits.",
+    "pricing": {
+      "free": "Plusieurs outils gratuits dans leur limite quotidienne, plus 5 crédits à la vérification du compte",
+      "paid": "Packs : 4,50 € (20 crédits), 9 € (60), 18 € (150) ; abonnements aux mêmes prix pour 65, 180 ou 400 crédits/mois"
+    },
+    "pricingEn": {
+      "free": "Several tools are free within their daily limit, plus 5 credits after account verification",
+      "paid": "Packs: €4.50 (20 credits), €9 (60), €18 (150); subscriptions at the same prices for 65, 180, or 400 credits/month"
+    },
+    "defaultMonthlyPrice": 4.5,
+    "pricing_v5": {
+      "cautions": [
+        "Le nombre de crédits consommés varie selon l'outil et la durée des vidéos.",
+        "Les crédits d'abonnement ne sont conservés que jusqu'à la fin du mois suivant.",
+        "Les crédits achetés à l'unité sont annoncés sans expiration tant que le service et le compte restent actifs."
+      ],
+      "cautionsEn": [
+        "Credit usage varies by tool and video duration.",
+        "Subscription credits only roll over through the end of the following month.",
+        "One-time credits are advertised as non-expiring while the service and account remain active."
+      ],
+      "verified_on": "2026-09-07",
+      "source_domain": "autophotos.ai",
+      "usage_sensitive": true,
+      "compare_plan_kind": "account",
+      "compare_plan_name": "Starter Sub",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://autophotos.ai/pricing/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 4.5,
+      "plans": [
+        {
+          "planKey": "starter",
+          "displayName": "Starter Sub",
+          "summary": "65 crédits par mois.",
+          "featureHighlights": [
+            "65 crédits mensuels",
+            "Crédits utilisables sur tous les outils payants",
+            "Prix annuel : 45 €"
+          ],
+          "detailsSourceUrl": "https://autophotos.ai/pricing/",
+          "pricingUnit": "par compte",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 4.5,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedMarket": "EU",
+          "observedLocale": "en-EU",
+          "observedOn": "2026-09-07",
+          "lastConfirmedOn": "2026-09-07"
+        },
+        {
+          "planKey": "standard",
+          "displayName": "Standard Sub",
+          "summary": "180 crédits par mois.",
+          "featureHighlights": [
+            "180 crédits mensuels",
+            "Crédits utilisables sur tous les outils payants",
+            "Prix annuel : 90 €"
+          ],
+          "detailsSourceUrl": "https://autophotos.ai/pricing/",
+          "pricingUnit": "par compte",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 9,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedMarket": "EU",
+          "observedLocale": "en-EU",
+          "observedOn": "2026-09-07",
+          "lastConfirmedOn": "2026-09-07"
+        },
+        {
+          "planKey": "pro",
+          "displayName": "Pro Sub",
+          "summary": "400 crédits par mois.",
+          "featureHighlights": [
+            "400 crédits mensuels",
+            "Crédits utilisables sur tous les outils payants",
+            "Prix annuel : 180 €"
+          ],
+          "detailsSourceUrl": "https://autophotos.ai/pricing/",
+          "pricingUnit": "par compte",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 18,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedMarket": "EU",
+          "observedLocale": "en-EU",
+          "observedOn": "2026-09-07",
+          "lastConfirmedOn": "2026-09-07"
+        }
+      ]
+    },
+    "websiteUrl": "https://autophotos.ai/",
+    "affiliateLink": "",
+    "logo": "https://autophotos.ai/favicon.svg",
+    "verdict": {
+      "keepIf": [
+        "Vous produisez régulièrement des photos produit et des formats courts pour une boutique en ligne.",
+        "Vous préférez payer à l'usage ou commencer par quelques opérations gratuites.",
+        "Shopify, WooCommerce ou BaseLinker fait déjà partie de votre flux e-commerce."
+      ],
+      "avoidIf": [
+        "Vous avez besoin d'une direction artistique très contrôlée ou d'une retouche avancée par calques.",
+        "Votre volume vidéo rend le coût en crédits difficile à prévoir.",
+        "Vous exigez des preuves indépendantes de qualité ou un historique produit établi."
+      ],
+      "threshold": "Choisissez AutoPhotos.ai si ses outils remplacent plusieurs retouches répétitives et si un test sur vos propres références produit donne des résultats cohérents. Commencez gratuitement, puis comparez le coût par visuel réussi avec votre méthode actuelle avant d'acheter un gros pack."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You regularly produce product photos and short-form content for an online store.",
+        "You prefer usage-based pricing or want to start with a few free operations.",
+        "Shopify, WooCommerce, or BaseLinker is already part of your e-commerce workflow."
+      ],
+      "avoidIf": [
+        "You need tightly controlled art direction or advanced layer-based editing.",
+        "Your video volume makes credit costs difficult to forecast.",
+        "You require independent quality evidence or a long product track record."
+      ],
+      "threshold": "Choose AutoPhotos.ai when its tools replace several repetitive edits and a test on your own product references produces consistent results. Start free, then compare the cost per usable visual with your current workflow before buying a large credit pack."
+    },
+    "pros": [
+      "Photo, vidéo et audio réunis dans une même réserve de crédits.",
+      "Plusieurs traitements gratuits permettent de tester sans carte bancaire.",
+      "Packs sans abonnement et crédits achetés à l'unité annoncés sans expiration.",
+      "Intégrations Shopify, WooCommerce et BaseLinker confirmées.",
+      "Fichiers téléversés annoncés comme supprimés après 60 minutes."
+    ],
+    "prosEn": [
+      "Photo, video, and audio tools share the same credit balance.",
+      "Several free operations let you test without a credit card.",
+      "One-time packs are available and purchased credits are advertised as non-expiring.",
+      "Confirmed Shopify, WooCommerce, and BaseLinker integrations.",
+      "Uploaded files are advertised as deleted after 60 minutes."
+    ],
+    "cons": [
+      "Le coût réel dépend du nombre d'opérations et certaines fonctions vidéo consomment les crédits par durée.",
+      "Les crédits d'abonnement ne suivent pas la même règle de conservation que les crédits achetés à l'unité.",
+      "Peu de preuves indépendantes permettent encore d'évaluer la régularité des résultats.",
+      "Ce n'est pas un éditeur avancé par calques comparable à Photoshop."
+    ],
+    "consEn": [
+      "Actual cost depends on operation count, while some video features charge by duration.",
+      "Subscription credits do not follow the same retention rules as one-time credits.",
+      "There is little independent evidence yet about output consistency.",
+      "It is not an advanced layer-based editor comparable to Photoshop."
+    ],
+    "useCases": [
+      "Détourer et uniformiser des photos produit pour une boutique en ligne.",
+      "Créer des fonds studio et des déclinaisons publicitaires à partir d'une photo.",
+      "Transformer une série de photos en reel avec voix et sous-titres.",
+      "Traiter les images produit depuis Shopify, WooCommerce ou BaseLinker."
+    ],
+    "useCasesEn": [
+      "Remove backgrounds and standardize product photos for an online store.",
+      "Create studio backgrounds and advertising variations from one photo.",
+      "Turn a photo series into a reel with narration and captions.",
+      "Process product images from Shopify, WooCommerce, or BaseLinker."
+    ],
+    "covers": [
+      "generation-visuels-produit",
+      "retouche-photo-ia",
+      "creation-video-produit"
+    ],
+    "functional_needs": [
+      "generation-visuels-produit",
+      "photographie-produit-ia"
+    ],
+    "relevantFor": [
+      "E-commerçants",
+      "Freelances créatifs",
+      "Agences e-commerce",
+      "Petites marques avec un catalogue produit"
+    ],
+    "alternatives": [
+      "remove-bg",
+      "canva",
+      "firefly"
+    ],
+    "seo": {
+      "idealForFr": "Idéal pour un e-commerçant qui veut traiter ses photos produit et créer des formats vidéo courts depuis une même réserve de crédits.",
+      "idealForEn": "Ideal for an e-commerce seller who wants to edit product photos and create short videos from one shared credit balance.",
+      "metaDescription": "AutoPhotos.ai : avis, tarifs dès 4,50 €, crédits, retouche photo produit, vidéo IA, intégrations Shopify, WooCommerce et BaseLinker."
+    },
+    "articles": [],
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "ecommercant",
+      "graphiste-da"
+    ],
+    "ia_use_case": [
+      "generation-image",
+      "generation-video"
+    ],
+    "freeAlternative": "remove-bg",
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": {
+      "freeTier": "Limites quotidiennes gratuites selon l'outil",
+      "available": true
+    },
+    "personas": [],
+    "timeGainedHoursPerMonth": 4,
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [
+      "images_per_month",
+      "video_minutes_per_month",
+      "ecommerce_platform"
+    ],
+    "substitution_cluster_v2": "ai-product-photography",
+    "decision_policy_v3": {
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": true,
+      "default_decision_lane": "review_then_prescribe",
+      "auto_downgrade_allowed": true,
+      "never_auto_cancel_reason": null,
+      "requires_context_questions": true
+    },
+    "ogImageUrl": "/og-screenshots/autophotos-ai.png",
+    "galleryImages": [],
+    "force_silence": false,
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 4,
+      "utilisation": 3,
+      "puissance": 4,
+      "reversibilite": 4,
+      "evidence": {
+        "valeurAjoutee": "Le point d'entrée est bas : 5 crédits offerts après vérification du compte, plusieurs outils gratuits dans leur limite quotidienne et abonnement Starter à 4,50 €/mois pour 65 crédits. La valeur reste dépendante du nombre de résultats réellement publiables (sources : autophotos.ai et endpoint tarifaire public, consultés le 2026-09-07).",
+        "simplicite": "Le parcours officiel tient en 3 étapes : importer une photo ou une vidéo, choisir une opération, télécharger le résultat. JPG, PNG, WebP, MP4, MOV, AVI et WebM sont acceptés, et plusieurs outils démarrent sans achat (source : autophotos.ai, consulté le 2026-09-07).",
+        "utilisation": "Les pages produit confirment des réglages concrets comme le détourage, les fonds, l'upscale 2x ou 4x et le traitement par lot. En revanche, aucun test indépendant ni galerie avant/après suffisamment documentée n'a été trouvé pour mesurer la régularité des résultats (sources : autophotos.ai/remove-bg et autophotos.ai/upscale, consultées le 2026-09-07).",
+        "puissance": "La suite couvre photo, vidéo et audio, avec génération de fonds, amélioration, sous-titres, doublage, nettoyage audio et AutoReel. Les intégrations Shopify, WooCommerce et BaseLinker élargissent le workflow e-commerce, sans atteindre la profondeur d'un éditeur professionnel par calques (source : autophotos.ai, consulté le 2026-09-07).",
+        "reversibilite": "Les résultats sont téléchargeables, l'éditeur ne revendique pas la propriété des contenus et annonce la suppression automatique des fichiers après 60 minutes. L'export des données personnelles est disponible sur demande, mais les crédits d'abonnement expirent après leur mois de report (sources : autophotos.ai/privacy et autophotos.ai/terms, consultées le 2026-09-07)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "The entry cost is low: 5 welcome credits after account verification, several tools free within their daily limits, and a €4.50/month Starter subscription with 65 credits. Value still depends on how many outputs are actually publishable (sources: autophotos.ai and public pricing endpoint, checked 2026-09-07).",
+        "simplicite": "The official workflow has 3 steps: upload a photo or video, choose an operation, and download the result. JPG, PNG, WebP, MP4, MOV, AVI, and WebM are accepted, and several tools can be started without a purchase (source: autophotos.ai, checked 2026-09-07).",
+        "utilisation": "Product pages confirm concrete controls including background removal, backgrounds, 2x or 4x upscaling, and batch processing. However, no independent test or sufficiently documented before-and-after gallery was found to measure output consistency (sources: autophotos.ai/remove-bg and autophotos.ai/upscale, checked 2026-09-07).",
+        "puissance": "The suite covers photo, video, and audio, including background generation, enhancement, captions, dubbing, audio cleanup, and AutoReel. Shopify, WooCommerce, and BaseLinker integrations extend the e-commerce workflow without matching the depth of a professional layer-based editor (source: autophotos.ai, checked 2026-09-07).",
+        "reversibilite": "Results can be downloaded, the publisher does not claim ownership of uploaded content, and files are advertised as automatically deleted after 60 minutes. Personal data export is available on request, but subscription credits expire after their rollover month (sources: autophotos.ai/privacy and autophotos.ai/terms, checked 2026-09-07)."
+      },
+      "lastActivityVerifiedOn": "2026-08-23",
+      "notedOn": "2026-09-07"
+    }
+  },
+  {
+    "id": "commutebar",
+    "slug": "commutebar",
+    "name": "CommuteBar",
+    "category": "organization",
+    "shortDescription": "Affiche le temps de trajet Apple Maps dans la barre des menus du Mac.",
+    "shortDescriptionEn": "Shows Apple Maps commute times in the Mac menu bar.",
+    "description": "CommuteBar est une application native pour macOS 14 ou version ultérieure. Elle garde le temps de trajet Apple Maps visible près de l'horloge et indique si le trafic s'améliore ou se dégrade.\n\nL'utilisateur enregistre ses destinations, programme des fenêtres de trajet et reçoit des alertes pour partir bientôt ou immédiatement. L'application gère la voiture, le vélo et la marche, compare les itinéraires et peut éviter les péages ou autoroutes.\n\nCommuteBar ne remplace pas une navigation détaillée. Il évite surtout de rouvrir Maps ou son téléphone avant chaque départ. La licence directe est vendue 6,99 $ en promotion, sans abonnement, et fonctionne sur trois Mac.",
+    "longDescription": "CommuteBar est une application native pour macOS 14 ou version ultérieure. Elle garde le temps de trajet Apple Maps visible près de l'horloge et indique si le trafic s'améliore ou se dégrade.\n\nL'utilisateur enregistre ses destinations, programme des fenêtres de trajet et reçoit des alertes pour partir bientôt ou immédiatement. L'application gère la voiture, le vélo et la marche, compare les itinéraires et peut éviter les péages ou autoroutes.\n\nCommuteBar ne remplace pas une navigation détaillée. Il évite surtout de rouvrir Maps ou son téléphone avant chaque départ. La licence directe est vendue 6,99 $ en promotion, sans abonnement, et fonctionne sur trois Mac.",
+    "longDescriptionEn": "CommuteBar is a native app for macOS 14 or later. It keeps Apple Maps travel time visible next to the clock and shows whether traffic is improving or getting worse.\n\nUsers save destinations, schedule commute windows, and receive leave-soon or leave-now alerts. The app supports driving, cycling, and walking, compares routes, and can avoid tolls or highways.\n\nCommuteBar does not replace turn-by-turn navigation. It mainly removes repeated Maps or phone checks before leaving. The direct lifetime license is currently $6.99, with no subscription, and activates on three Macs.",
+    "pricing": {"free":"Pas de plan gratuit permanent","paid":"Licence à vie 6,99 $ en promotion au lieu de 9,99 $, sans abonnement"},
+    "pricingEn": {"free":"No permanent free plan","paid":"$6.99 promotional lifetime license, down from $9.99, with no subscription"},
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {"cautions":["Prix promotionnel susceptible de changer.","La licence à vie garantit l'usage des versions reçues, pas les futures mises à jour ni la compatibilité avec les prochains macOS.","Remboursement direct sous 7 jours."],"cautionsEn":["Promotional price may change.","The lifetime license covers received builds, not guaranteed future updates or macOS compatibility.","Direct purchases have a 7-day refund window."],"verified_on":"2026-09-07","source_domain":"commute.bar","usage_sensitive":false,"compare_plan_kind":"one_time","compare_plan_name":"Licence à vie, 6,99 $","price_reliability":"high","location_sensitive":true,"official_source_url":"https://www.commute.bar/","verification_status":"official_explicit","compare_price_monthly_eur":0},
+    "websiteUrl": "https://commute.bar/",
+    "affiliateLink": "",
+    "logo": "https://www.commute.bar/_next/image?url=%2Flogo-rounded.png&w=256&q=75",
+    "verdict": {"keepIf":["Vous travaillez sur Mac avant un trajet régulier et vérifiez souvent le trafic.","Une indication discrète dans la barre des menus suffit avant d'ouvrir la navigation.","Vous préférez une licence à vie peu coûteuse à un abonnement."],"avoidIf":["Vous n'utilisez pas macOS 14 ou une version ultérieure.","Vous cherchez une navigation GPS détaillée pendant le trajet.","Vos déplacements sont rares ou imprévisibles."],"threshold":"Achetez CommuteBar si éviter les vérifications répétées de Maps vous fait gagner quelques minutes chaque semaine. Les horaires restant fondés sur des estimations Apple Maps, gardez votre application de navigation pour les trajets critiques."},
+    "verdictEn": {"keepIf":["You work on a Mac before a regular commute and repeatedly check traffic.","A discreet menu-bar indicator is enough before opening navigation.","You prefer a low-cost lifetime license over a subscription."],"avoidIf":["You do not use macOS 14 or later.","You need turn-by-turn navigation during the trip.","Your trips are rare or unpredictable."],"threshold":"Buy CommuteBar when avoiding repeated Maps checks saves a few minutes each week. Because timing still relies on Apple Maps estimates, keep a navigation app for time-critical trips."},
+    "pros": ["ETA visible sans ouvrir une application de cartographie.","Destinations et fenêtres de trajet programmables.","Alertes de départ et hausse importante du trafic.","Localisation et destinations traitées localement sur le Mac.","Licence directe activable sur trois Mac."],
+    "prosEn": ["ETA visible without opening a maps app.","Scheduled destinations and commute windows.","Departure and major traffic-delay alerts.","Location and destinations processed locally on the Mac.","Direct license activates on three Macs."],
+    "cons": ["Disponible uniquement sur macOS 14 ou version ultérieure.","Dépend de la précision et de la disponibilité d'Apple Maps.","Ne fournit pas de navigation détaillée.","Les futures mises à jour et compatibilités macOS ne sont pas garanties."],
+    "consEn": ["Only available on macOS 14 or later.","Depends on Apple Maps accuracy and availability.","Does not provide turn-by-turn navigation.","Future updates and macOS compatibility are not guaranteed."],
+    "useCases": ["Surveiller le trafic vers le bureau depuis la barre des menus.","Afficher automatiquement l'école, la salle de sport ou un client selon l'horaire.","Recevoir une alerte quand un retard important apparaît."],
+    "useCasesEn": ["Monitor traffic to work from the menu bar.","Automatically show school, gym, or a client destination by schedule.","Get alerted when a significant delay appears."],
+    "covers": ["temps-trajet","alertes-depart","planification-trajets"],
+    "functional_needs": ["temps-trajet","planification-trajets"],
+    "relevantFor": ["Indépendants travaillant sur Mac","Parents avec trajets réguliers","Consultants se déplaçant chez des clients"],
+    "alternatives": [],
+    "seo": {"idealForFr":"Idéal pour un utilisateur Mac qui veut savoir quand partir sans consulter Maps à répétition.","idealForEn":"Ideal for a Mac user who wants to know when to leave without repeatedly checking Maps.","metaDescription":"CommuteBar : avis, prix à vie, ETA Apple Maps dans la barre des menus, alertes de départ, confidentialité et limites."},
+    "articles": [],
+    "soloRelevance": "high",
+    "teamRelevance": "low",
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": "macos",
+    "bundle_parent": null,
+    "verticals": ["consultant-b2b"],
+    "ia_use_case": null,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "personas": [],
+    "timeGainedHoursPerMonth": 1,
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": ["macos_version","commutes_per_week","regular_destinations"],
+    "substitution_cluster_v2": "commute-monitoring",
+    "decision_policy_v3": {"auto_cancel_allowed":false,"auto_replace_allowed":false,"default_decision_lane":"review_then_prescribe","auto_downgrade_allowed":false,"never_auto_cancel_reason":null,"requires_context_questions":true},
+    "ogImageUrl": "https://www.commute.bar/_next/image?url=%2Ffeatures%2Flight%2Flive-eta-traffic-time.jpg&w=3840&q=75",
+    "galleryImages": ["https://www.commute.bar/_next/image?url=%2Ffeatures%2Flight%2Fmultiple-destinations.jpg&w=3840&q=75","https://www.commute.bar/_next/image?url=%2Ffeatures%2Flight%2Ftravel-modes.jpg&w=3840&q=75","https://www.commute.bar/_next/image?url=%2Ffeatures%2Flight%2Fcommute-windows.jpg&w=3840&q=75"],
+    "force_silence": false,
+    "toolTrimRating": {"valeurAjoutee":4,"simplicite":4,"utilisation":4,"puissance":3,"reversibilite":4,"evidence":{"valeurAjoutee":"Licence à vie affichée à 6,99 $ et suppression d'une vérification répétitive avant les trajets réguliers (source : commute.bar, consulté le 2026-09-07).","simplicite":"Installation native, ajout d'une destination, autorisation de localisation puis ETA visible dans la barre des menus, sans compte obligatoire (sources : commute.bar et support, consultées le 2026-09-07).","utilisation":"Les fonctions clés sont montrées dans quatre captures produit officielles : ETA, destinations, modes de transport et fenêtres de trajet. Les estimations restent dépendantes d'Apple Maps (source : commute.bar, consulté le 2026-09-07).","puissance":"Outil spécialisé couvrant horaires, alertes, itinéraires et trois modes de transport, mais sans navigation détaillée ni plateforme mobile (sources : commute.bar et conditions, consultées le 2026-09-07).","reversibilite":"Destinations et préférences stockées localement avec SwiftData et supprimables en retirant les destinations ou l'application. La licence directe reste utilisable sur les versions reçues (sources : commute.bar/privacy et support, consultées le 2026-09-07)."},"evidenceEn":{"valeurAjoutee":"The lifetime license is listed at $6.99 and removes a repetitive check before regular trips (source: commute.bar, checked 2026-09-07).","simplicite":"Native installation, add a destination, grant location access, then see ETA in the menu bar, with no required account (sources: commute.bar and support, checked 2026-09-07).","utilisation":"Four official product images show ETA, destinations, travel modes, and commute windows. Estimates still depend on Apple Maps (source: commute.bar, checked 2026-09-07).","puissance":"A focused utility covering schedules, alerts, routes, and three travel modes, but no turn-by-turn navigation or mobile platform (sources: commute.bar and terms, checked 2026-09-07).","reversibilite":"Destinations and preferences are stored locally with SwiftData and can be removed by deleting destinations or uninstalling the app. The direct license remains valid for received builds (sources: commute.bar/privacy and support, checked 2026-09-07)."},"lastActivityVerifiedOn":"2026-09-05","notedOn":"2026-09-07"}
   }
 ]

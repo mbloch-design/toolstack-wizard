@@ -144,7 +144,7 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t }: Prop
             <div className="td-pricing-plan-head">
               <span className="td-pricing-plan-name">
                 <CreditCard aria-hidden />
-                {pv5?.compare_plan_name || t("Plan payant", "Paid plan")}
+                {isOneTime ? t("Licence à vie", "Lifetime license") : pv5?.compare_plan_name || t("Plan payant", "Paid plan")}
               </span>
               {displayPrice > 0 && (
                 <strong className="td-pricing-price">

@@ -1,5 +1,19 @@
 # ToolTrim — AI Changelog
 
+## 2026-09-07 · Ajout de la fiche CommuteBar
+
+- CommuteBar rejoint le catalogue avec ses fonctions macOS, son prix à vie, quatre médias produit officiels et sa notation ToolTrim sur cinq axes.
+- Le lien principal vers `commute.bar` est dofollow via une exception strictement limitée à ce domaine.
+
+## 2026-09-07 · Ajout de la fiche AutoPhotos.ai
+
+- AutoPhotos.ai rejoint le catalogue avec un contenu complet en français et en anglais, centré sur la retouche photo produit et la création vidéo pour l'e-commerce.
+- Les packs à l'unité, les trois abonnements et leurs volumes de crédits ont été vérifiés depuis les endpoints tarifaires publics du site officiel.
+- Les intégrations Shopify, WooCommerce et BaseLinker sont confirmées. Shoper n'est pas présenté comme disponible.
+- Aucun média produit réutilisable n'étant publié, une seule capture de la page officielle est utilisée conformément au protocole média.
+- Le lien principal vers `autophotos.ai` est dofollow via une exception éditoriale limitée à ce domaine.
+- La notation ToolTrim v2 s'appuie sur cinq axes documentés et aboutit à 3,8/5, avec une réserve explicite sur l'absence de tests indépendants de la qualité des résultats.
+
 ## 2026-09-02 · Correction note Albato et bug prix "$0" sur 31 fiches
 
 - `ia_use_case` était vide pour Albato malgré son copilote et ses agents IA ; le champ est renseigné (`["agents"]`), ce qui fait passer la note ToolTrim calculée de 3.8 ("Correct") à 4.0 ("Très bon").
