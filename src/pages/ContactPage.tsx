@@ -393,7 +393,7 @@ const ContactPage = () => {
                     <Link to={`${prefix}/transparency#financement`} className="ab-inline-link">{t("page transparence", "transparency page")}</Link>.
                   </> : <>
                     {t("Ta réponse est probablement déjà dans la ", "Your answer is probably already in our ")}
-                    <Link to={`${prefix}/methodology`} className="ab-inline-link">{t("méthodologie", "methodology")}</Link>
+                    <Link to={`${prefix}/transparency`} className="ab-inline-link">{t("méthodologie", "methodology")}</Link>
                     {t(" ou dans la ", " or our ")}
                     <Link to={`${prefix}/transparency`} className="ab-inline-link">{t("page transparence", "transparency page")}</Link>.
                   </>}

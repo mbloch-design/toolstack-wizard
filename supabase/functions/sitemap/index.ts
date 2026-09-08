@@ -51,10 +51,6 @@ Deno.serve(async () => {
     addUrl(`${BASE}/${lang}/comparatifs`, "weekly", "0.8");
   }
 
-  // SEO landing pages (localized slugs)
-  addUrl(`${BASE}/fr/audit-saas-gratuit`, "weekly", "0.9");
-  addUrl(`${BASE}/en/free-saas-audit`, "weekly", "0.9");
-
   // Persona pillar guides (localized slugs FR/EN)
   const PILLAR_GUIDES: [string, string][] = [
     ["meilleurs-outils-developpeur-freelance", "best-tools-freelance-developer"],

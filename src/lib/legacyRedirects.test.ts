@@ -33,4 +33,16 @@ describe("legacy article redirects", () => {
     expect(legacyRedirects.length).toBeGreaterThan(0);
     expect(legacyRedirects.every(({ permanent }) => permanent)).toBe(true);
   });
+
+  it("keeps redirected audit landing aliases out of sitemap sources", () => {
+    const sitemapSources = ["vite.config.ts", "supabase/functions/sitemap/index.ts"]
+      .map((file) => fs.readFileSync(path.resolve(process.cwd(), file), "utf8"))
+      .join("\n");
+
+    expect(sitemapSources).not.toContain('addUrl(`${BASE}/fr/audit-saas-gratuit`');
+    expect(sitemapSources).not.toContain('addUrl(`${BASE}/en/free-saas-audit`');
+    expect(sitemapSources).not.toContain('fr: "/fr/audit-saas-gratuit"');
+    expect(sitemapSources).not.toContain('path: "/fr/audit-saas-gratuit"');
+    expect(sitemapSources).not.toContain('path: "/en/free-saas-audit"');
+  });
 });

@@ -4223,3 +4223,10 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Correction des deux liens éditoriaux Adobe Podcast AI qui exposaient encore cette ancienne forme paramétrée.
 - Génération déterministe de `llms.txt` et `llms-full.txt` depuis le catalogue canonique courant, avec 1 170 outils et des URLs bilingues cohérentes.
 - Ajout de contrôles de régression sur les anciennes routes éditoriales et sur la cohérence des fichiers LLM.
+
+## 2026-09-08 — Liens internes directs vers les pages méthodologiques
+
+- Remplacement des liens sitewide `/methodology` par leur destination canonique `/transparency`, sans supprimer les redirections nécessaires aux anciennes URLs déjà connues de Google.
+- Correction du lien français vers le guide Claude vs ChatGPT afin qu'il pointe directement vers le slug français canonique.
+- Retrait des anciennes landings `/audit-saas-gratuit` et `/free-saas-audit` des deux générateurs de sitemap et du prérendu ; leurs redirections permanentes vers `/ma-stack` restent actives pour l'historique.
+- Ajout de tests empêchant la réintroduction de ces alias redirigés dans le footer, les pages clés et les contenus éditoriaux.

@@ -31,4 +31,16 @@ describe("editorial internal links", () => {
 
     expect(legacyLinks).toEqual([]);
   });
+
+  it("links directly to each localized Claude comparison guide", () => {
+    const redirectedGuideLinks = POST_FILES.flatMap((file) => {
+      const content = fs.readFileSync(path.resolve(process.cwd(), file), "utf8");
+      return [
+        "/fr/guide/claude-vs-chatgpt-deepseek",
+        "/en/guide/claude-vs-chatgpt-2026-lequel-choisir-business",
+      ].filter((url) => content.includes(url)).map((url) => `${file}: ${url}`);
+    });
+
+    expect(redirectedGuideLinks).toEqual([]);
+  });
 });

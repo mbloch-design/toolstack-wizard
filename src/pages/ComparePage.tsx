@@ -2561,7 +2561,7 @@ const ComparePage = () => {
 
       {/* ── Methodology footnote ───────────────────────────────────────────── */}
       <div className="cp-methodology-note">
-        <Link to={`${prefix}/methodology`} className="cp-methodology-link">
+        <Link to={`${prefix}/transparency`} className="cp-methodology-link">
           {t("Comment ToolTrim évalue les outils →", "How ToolTrim evaluates tools →")}
         </Link>
       </div>

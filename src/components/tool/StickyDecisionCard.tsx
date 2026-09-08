@@ -104,7 +104,7 @@ export default function StickyDecisionCard({ tool, prefix, t, alternatives }: Pr
         <span className="td-decision-verdict-label">
           {t("L’avis ToolTrim", "ToolTrim verdict")}
           <Link
-            to={`${prefix}/methodology#notation`}
+            to={`${prefix}/transparency#notation`}
             className="td-decision-verdict-info"
             aria-label={t("Comment est calculée cette note ?", "How is this score calculated?")}
             title={t("Comment est calculée cette note ?", "How is this score calculated?")}

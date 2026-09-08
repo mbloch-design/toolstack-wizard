@@ -126,7 +126,7 @@ const AboutPage = () => {
                 )}
               </p>
               <p>
-                <Link to={`${prefix}/methodology`} className="ab-inline-link">
+                <Link to={`${prefix}/transparency`} className="ab-inline-link">
                   {t("Lire la méthodologie complète", "Read the full methodology")}
                 </Link>
               </p>
@@ -213,7 +213,7 @@ const AboutPage = () => {
 
           {/* ── CTA quiet ── */}
           <div className="ab-cta">
-            <Link to={`${prefix}/methodology`} className="ab-cta-secondary">
+            <Link to={`${prefix}/transparency`} className="ab-cta-secondary">
               {t("Voir la méthodologie", "See the methodology")}
             </Link>
           </div>

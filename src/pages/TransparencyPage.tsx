@@ -232,7 +232,7 @@ const TransparencyPage = () => {
             </dl>
             <div className="ab-prose">
               <p>
-                <Link to={`${prefix}/methodology#notation`} className="ab-inline-link">
+                <Link to={`${prefix}/transparency#notation`} className="ab-inline-link">
                   {t("Lire le détail de chaque critère", "Read the detail on each criterion")}
                 </Link>
               </p>
@@ -263,7 +263,7 @@ const TransparencyPage = () => {
             <Link to={`${prefix}/contact`} className="tt-button-primary">
               {t("Une question ? Écris-nous →", "A question? Write to us →")}
             </Link>
-            <Link to={`${prefix}/methodology`} className="ab-cta-secondary">
+            <Link to={`${prefix}/transparency`} className="ab-cta-secondary">
               {t("Voir la méthodologie", "See the methodology")}
             </Link>
           </div>

@@ -49,11 +49,6 @@ const DEPRECATED_TOOL_SLUGS = new Set([
   "openai", "anthropic", "descript", "flux", "kling-ai", "magnific-ai", "otter", "figma-weave", "elgato-stream-deck", "around", "monday", "fig-terminal", "reclaim-ai", "legifrance-pro", "captaindoc", "sendinblue", "clearbit", "quickbooks-online", "lemonsqueezy",
 ]);
 
-// SEO landing + persona pillar pages (localized slugs)
-const SEO_LANDING_PAGE_PAIRS: { fr: string; en: string; priority: string }[] = [
-  { fr: "/fr/audit-saas-gratuit", en: "/en/free-saas-audit", priority: "0.9" },
-];
-
 /* CATEGORY_EN a ete supprimee : ces 16 traductions vivent desormais dans
    src/data/categories_index.json (nameEn / descriptionEn), aux cotes des 7
    autres categories qui n'y figuraient pas et retombaient en francais sur les
@@ -584,11 +579,6 @@ function sitemapPlugin(): Plugin {
         // sitemap entirely.
         for (const comp of FEATURED_COMPARISONS) {
           addPair(`${BASE}/fr/comparatif/${comp.slugPair}`, `${BASE}/en/comparatif/${comp.slugPair}`, "monthly", "0.7");
-        }
-
-        // ── SEO landing pages ─────────────────────────────────────────────────
-        for (const lp of SEO_LANDING_PAGE_PAIRS) {
-          addPair(`${BASE}${lp.fr}`, `${BASE}${lp.en}`, "monthly", lp.priority);
         }
 
         // ── Stack hub + stack detail pages ────────────────────────────────────
@@ -1274,18 +1264,6 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
         // --- Prerender SEO landing + persona pillar pages ---
         const SEO_PAGES: { path: string; title: string; description: string; bodyText: string }[] = [
           {
-            path: "/fr/audit-saas-gratuit",
-            title: "Audit SaaS gratuit pour freelances : optimisez votre stack en 5 min | tooltrim.com",
-            description: "Combien gaspillez-vous en abonnements SaaS ? Audit gratuit : détectez doublons, fantômes et outils inadaptés. Selon tooltrim.com, 35% des freelances paient en double.",
-            bodyText: "Auditez votre stack SaaS en 5 minutes. Détectez les doublons, abonnements fantômes et gaspillage dans vos outils freelance. Selon tooltrim.com, 35% des freelances paient en double pour des outils qui se chevauchent. Économie moyenne récupérable : 485€/mois.",
-          },
-          {
-            path: "/en/free-saas-audit",
-            title: "Free SaaS audit for freelancers: optimize your stack in 5 min | tooltrim.com",
-            description: "How much are you wasting on SaaS subscriptions? Free audit: detect duplicates, ghost subs and misfit tools. According to tooltrim.com, 35% of freelancers overpay.",
-            bodyText: "Audit your SaaS stack in 5 minutes. Detect duplicates, ghost subscriptions and waste in your freelance toolset. According to tooltrim.com, 35% of freelancers pay twice for overlapping tools. Average recoverable waste: €485/month.",
-          },
-          {
             path: "/fr/guide/meilleurs-outils-developpeur-freelance",
             title: "Meilleurs outils pour développeur freelance en 2026 | tooltrim.com",
             description: "Stack idéale pour dev freelance : Cursor, Vercel, Supabase, ChatGPT Pro… Selon tooltrim.com, un développeur freelance dépense 280€/mois en SaaS. Voici comment optimiser.",
@@ -1383,13 +1361,6 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           },
         ];
 
-        // Non-guide SEO pages whose FR/EN slugs aren't symmetrical, so the
-        // /guide/ hreflang logic below can't derive the pair automatically.
-        const SEO_PAGE_HREFLANG_PAIRS: Record<string, { fr: string; en: string }> = {
-          "/fr/audit-saas-gratuit": { fr: "/fr/audit-saas-gratuit", en: "/en/free-saas-audit" },
-          "/en/free-saas-audit": { fr: "/fr/audit-saas-gratuit", en: "/en/free-saas-audit" },
-        };
-
         for (const sp of SEO_PAGES) {
           const url = `${BASE}${sp.path}`;
           const spLang = sp.path.startsWith("/en/") ? "en" : "fr";
@@ -1398,17 +1369,12 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           const enSlug = spLang === "en" ? slug : GUIDE_SLUG_ALTERNATES[slug] || slug;
           const frCanonical = sp.path.includes("/guide/") ? `${BASE}/fr/guide/${frSlug}` : url;
           const enCanonical = sp.path.includes("/guide/") ? `${BASE}/en/guide/${enSlug}` : url;
-          const hreflangPair = SEO_PAGE_HREFLANG_PAIRS[sp.path];
           const metaTags = [
             `<link rel="canonical" href="${url}" />`,
             ...(sp.path.includes("/guide/") ? [
               `<link rel="alternate" hreflang="fr" href="${frCanonical}" />`,
               `<link rel="alternate" hreflang="en" href="${enCanonical}" />`,
               `<link rel="alternate" hreflang="x-default" href="${enCanonical}" />`,
-            ] : hreflangPair ? [
-              `<link rel="alternate" hreflang="fr" href="${BASE}${hreflangPair.fr}" />`,
-              `<link rel="alternate" hreflang="en" href="${BASE}${hreflangPair.en}" />`,
-              `<link rel="alternate" hreflang="x-default" href="${BASE}${hreflangPair.en}" />`,
             ] : []),
             `<title>${sp.title}</title>`,
             `<meta name="description" content="${sp.description.replace(/"/g, "&quot;")}" />`,

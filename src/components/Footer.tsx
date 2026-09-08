@@ -68,7 +68,7 @@ const Footer = () => {
               <span className="tt-footer-col-label">{t("Décider", "Decide")}</span>
               <Link to={`${prefix}/comparatifs`}>{t("Comparatifs", "Comparisons")}</Link>
               <Link to={`${prefix}/guides`}>{t("Guides", "Guides")}</Link>
-              <Link to={`${prefix}/methodology`}>{t("Méthodologie éditoriale", "Editorial methodology")}</Link>
+              <Link to={`${prefix}/transparency`}>{t("Méthodologie éditoriale", "Editorial methodology")}</Link>
               <Link to={`${prefix}/transparency`}>{t("Transparence", "Transparency")}</Link>
             </nav>
 
