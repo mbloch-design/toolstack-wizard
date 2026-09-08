@@ -20,4 +20,15 @@ describe("editorial internal links", () => {
 
     expect(legacyLinks).toEqual([]);
   });
+
+  it("does not expose the legacy query-based tool Explorer route", () => {
+    const legacyLinks = POST_FILES.flatMap((file) => {
+      const content = fs.readFileSync(path.resolve(process.cwd(), file), "utf8");
+      return [...content.matchAll(/\/(?:fr|en)\/explorer\?type=outil(?:&amp;|&)source=/g)].map(
+        () => file,
+      );
+    });
+
+    expect(legacyLinks).toEqual([]);
+  });
 });

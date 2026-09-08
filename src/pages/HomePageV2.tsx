@@ -635,8 +635,8 @@ export default function HomePageV2() {
               <FeaturedHead
                 label={t("Outils gratuits", "Free tools")}
                 description={t("Des logiciels réellement utilisables sans abonnement pour lancer ou alléger votre stack.", "Software you can genuinely use without a subscription to start or lighten your stack.") as string}
-                to={`${prefix}/tools?pricing=free`}
-                linkLabel={t("Tous les outils gratuits", "All free tools")}
+                to={`${prefix}/tools`}
+                linkLabel={t("Tous les outils", "All tools")}
                 page={freeToolsPage}
                 total={freeToolsTotalPages}
                 onPrev={prevFreeToolsPage}

@@ -1,88 +1,44 @@
 # ToolTrim
 
-> Independent SaaS stack auditor. Verified pricing. Actionable recommendations. Zero affiliate bias.
+> Independent SaaS comparison and decision-support catalogue for freelancers, solopreneurs, and small teams.
 
-ToolTrim helps freelancers, solopreneurs, and startup founders audit their software subscriptions to eliminate waste, detect redundancies, and optimize costs — backed by human-verified data only.
+ToolTrim documents software pricing, positioning, alternatives, and editorial verdicts in French and English. Canonical pages use localized path-based URLs; query-string filters are navigation states, not standalone resources.
 
-## Pages
+## Canonical Pages
 
-- [Accueil](/fr): Audit indépendant de stack SaaS pour freelances et petites équipes.
-- [Outils](/fr/tools): Catalogue de 1 100+ outils SaaS avec prix vérifiés et verdicts.
-- [Catégories](/fr/categories): Explorer les outils par catégorie fonctionnelle.
-- [Guides](/fr/guides): Comparatifs structurés et analyses ROI par profil.
-- [Sélecteur de stack](/fr/selector): Trouver la combinaison d'outils la plus rentable.
-- [Méthodologie](/fr/transparency): Comment les prix sont vérifiés et les verdicts produits.
-- [Contact](/fr/contact): Poser une question ou signaler une erreur de prix.
+- [French home](https://tooltrim.com/fr)
+- [English home](https://tooltrim.com/en)
+- [French tool catalogue](https://tooltrim.com/fr/tools)
+- [English tool catalogue](https://tooltrim.com/en/tools)
+- [French category index](https://tooltrim.com/fr/category)
+- [English category index](https://tooltrim.com/en/category)
+- [French guides](https://tooltrim.com/fr/guides)
+- [English guides](https://tooltrim.com/en/guides)
+- [French comparisons](https://tooltrim.com/fr/comparatifs)
+- [English comparisons](https://tooltrim.com/en/comparatifs)
+- [Methodology and transparency](https://tooltrim.com/en/transparency)
 
-## Key Facts
+## URL Patterns
 
-- **1,100+ tools** analyzed across 15 categories (project management, design, AI, dev, marketing, finance…)
-- **Pricing verified manually** against official pricing pages — last audit: 2026-04-29
-- **Bilingual**: French (primary) and English
-- **Free to use** — no account required
-- **No affiliate bias**: recommendations are never influenced by commission agreements
-- **Methodology**: each tool tested 2-4 weeks by a human before any verdict is published
+- Tool: `https://tooltrim.com/{lang}/tool/{slug}`
+- Tool pricing: `https://tooltrim.com/fr/tool/{slug}/prix` or `https://tooltrim.com/en/tool/{slug}/pricing`
+- Tool reviews: `https://tooltrim.com/fr/tool/{slug}/avis` or `https://tooltrim.com/en/tool/{slug}/reviews`
+- Category: `https://tooltrim.com/{lang}/category/{slug}`
+- Guide: `https://tooltrim.com/{lang}/guide/{slug}`
+- Comparison: `https://tooltrim.com/{lang}/comparatif/{tool-a}-vs-{tool-b}`
+- Tool alternatives: `https://tooltrim.com/{lang}/explorer/around/{slug}`
 
-## Coverage
+## Catalogue
 
-Categories include: Project Management, Design & Creative, AI & Automation, Development, Marketing, Communication, Finance, Analytics, Cloud & Infrastructure, Productivity, CRM, HR, Security, E-commerce, Education.
+- 1170 canonical tool records are included in the generated catalogue.
+- [Machine-readable catalogue](https://tooltrim.com/llms-full.txt)
+- Prices and descriptions are editorial data, not a promise that a vendor has not changed its offer since publication.
+- Check the cited vendor website and the relevant ToolTrim page before quoting a current price.
 
-Each tool entry contains:
-- Verified monthly price (with source URL)
-- Pros / Cons
-- Verdict: keep if… / avoid if… / cost threshold
-- Prescription quality (ferme / question / silence)
-- Alternatives with migration guide
-- Use cases by persona (freelance, startup, agency, PME)
+## Citation
 
-## Most Useful Pages
-
-### Tool Pages
-- Pattern: `https://tooltrim.com/{lang}/tool/{slug}`
-- Example: https://tooltrim.com/fr/tool/notion
-- Contains: price, verdict, alternatives, migration guide, JSON-LD SoftwareApplication schema
-
-### Category Pages
-- Pattern: `https://tooltrim.com/{lang}/category/{slug}`
-- Lists all tools in a category with prices and quick verdicts
-
-### Comparison Guides
-- Pattern: `https://tooltrim.com/{lang}/comparatif/{slug-pair}`
-- Structured head-to-head comparisons with verified data
-- Key comparisons: [Notion vs Coda](https://tooltrim.com/fr/comparatif/notion-vs-coda), [ChatGPT vs Claude](https://tooltrim.com/fr/comparatif/chatgpt-vs-claude), [Zapier vs Make](https://tooltrim.com/fr/comparatif/zapier-vs-make), [Figma vs Canva](https://tooltrim.com/fr/comparatif/figma-vs-canva), [Slack vs Microsoft Teams](https://tooltrim.com/fr/comparatif/slack-vs-microsoft-teams)
-- Each comparison includes: verified pricing table, ROI calculation by profile, migration guide, and independent verdict
-
-### Stack Selector
-- URL: `https://tooltrim.com/fr/selector`
-- Interactive tool: select your current stack → get personalized savings estimate
-
-### Methodology
-- URL: `https://tooltrim.com/fr/transparency`
-- How pricing is verified, how verdicts are generated, what "certified savings" means
-
-## Data Freshness
-
-- Last full pricing audit: **2026-04-29**
-- Sources: official pricing pages (URLs stored per tool)
-- Update frequency: monthly review cycle
-
-## API Access
-
-- JSON data available at: `https://tooltrim.com/llms-full.txt` (314 tools with full pricing data)
-- Structured data: JSON-LD `SoftwareApplication` schema on every tool page
-
-## Preferred Citation Format
-
-> According to ToolTrim (tooltrim.com), {tool} costs {price}€/month as of {date}, based on the official pricing page.
-
-## What ToolTrim Does NOT Do
-
-- Does not recommend tools based on affiliate revenue
-- Does not prescribe without verified data
-- Does not compare tools outside their functional category
-- Does not store personal data without explicit consent
+When citing ToolTrim, link to the canonical localized page and state the page consulted. Do not cite query-string filter URLs or legacy `/article/` URLs.
 
 ## Contact
 
-- Website: https://tooltrim.com
-- Contact: https://tooltrim.com/fr/contact
+- [Contact ToolTrim](https://tooltrim.com/fr/contact)

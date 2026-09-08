@@ -4215,3 +4215,11 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Les ouvertures d'articles côté client suivent le même principe : contenu local immédiat, puis remplacement silencieux si une version distante est disponible.
 - Un cache local par langue évite de recharger le même bundle lors des navigations suivantes dans la session.
 - Un test mobile bloque Supabase pendant dix secondes et vérifie que la liste puis l'article restent accessibles en moins de cinq secondes.
+
+## 2026-09-08 — Assainissement des surfaces de découverte SEO
+
+- Remplacement dans la navigation globale des liens à paramètres vers des destinations canoniques existantes : catégories, stacks et pages Explorer autour d'un outil.
+- Suppression de l'auto-canonicalisation de l'ancienne route Explorer `?type=outil&source=…` ; les pages indexables utilisent désormais `/explorer/around/:slug`.
+- Correction des deux liens éditoriaux Adobe Podcast AI qui exposaient encore cette ancienne forme paramétrée.
+- Génération déterministe de `llms.txt` et `llms-full.txt` depuis le catalogue canonique courant, avec 1 170 outils et des URLs bilingues cohérentes.
+- Ajout de contrôles de régression sur les anciennes routes éditoriales et sur la cohérence des fichiers LLM.
