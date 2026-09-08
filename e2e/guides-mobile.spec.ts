@@ -53,4 +53,14 @@ test.describe("Guides — parcours mobile-first", () => {
     expect(pageErrors).toEqual([]);
     expect(editorialApiRequests).toEqual([]);
   });
+
+  test("une couverture outil locale remplace le placeholder éditorial", async ({ page }) => {
+    await page.goto("/en/guides", { waitUntil: "domcontentloaded" });
+    await page.getByRole("searchbox", { name: "Search guides" }).fill("AI tips");
+
+    const card = page.locator(".gi-card", { hasText: "AI Tips" }).first();
+    await expect(card).toBeVisible();
+    await expect(card.locator(".gi-card-media img")).toHaveAttribute("src", "/og-screenshots/chatgpt.jpg");
+    await expect(card.locator(".gi-card-cover-fallback")).toHaveCount(0);
+  });
 });

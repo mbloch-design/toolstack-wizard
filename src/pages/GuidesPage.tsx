@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
-import type { Post } from "@/hooks/useSupabaseData";
+import { useToolSummaries, type Post, type ToolSummary } from "@/hooks/useSupabaseData";
 import { useState, useMemo, useEffect, type CSSProperties } from "react";
+import { useArticleTools } from "@/hooks/useArticleTools";
 import { setSeoTags, cleanupSeo } from "@/lib/seo";
+import ToolCardImage from "@/components/tool/ToolCardImage";
 import Breadcrumb from "@/components/Breadcrumb";
 import { Search, X } from "@/lib/icons";
 import { getGuidePosts } from "@/lib/guideCatalog";
@@ -112,6 +114,7 @@ function formatPostDate(date: string | undefined, lang: string): string | null {
 const GuidesPage = () => {
   const { lang, t, prefix } = useLang();
   const posts = getGuidePosts(lang);
+  const { tools } = useToolSummaries({ refreshRemote: false });
 
   const [activeFilter, setActiveFilter] = useState("all");
   const [sortBy, setSortBy] = useState("recent");
@@ -250,11 +253,11 @@ const GuidesPage = () => {
           {visibleList.length > 0 && (
             <>
               <div className="gi-lead-grid">
-                <ArticleCard post={visibleList[0]} prefix={prefix} lang={lang} featured />
+                <ArticleCard post={visibleList[0]} prefix={prefix} lang={lang} tools={tools} featured />
                 {visibleList.length > 1 && (
                   <div className="gi-lead-side">
                     {visibleList.slice(1, 3).map((post) => (
-                      <ArticleCard key={post.slug} post={post} prefix={prefix} lang={lang} compact />
+                      <ArticleCard key={post.slug} post={post} prefix={prefix} lang={lang} tools={tools} compact />
                     ))}
                   </div>
                 )}
@@ -262,7 +265,7 @@ const GuidesPage = () => {
               {visibleList.length > 3 && (
                 <div className="gi-card-grid">
                   {visibleList.slice(3).map((post) => (
-                    <ArticleCard key={post.slug} post={post} prefix={prefix} lang={lang} />
+                    <ArticleCard key={post.slug} post={post} prefix={prefix} lang={lang} tools={tools} />
                   ))}
                 </div>
               )}
@@ -329,11 +332,19 @@ function StoriesRow({
 }
 
 function ArticleCard({
-  post, prefix, lang, featured = false, compact = false,
+  post, prefix, lang, tools, featured = false, compact = false,
 }: {
-  post: Post; prefix: string; lang: string; featured?: boolean; compact?: boolean;
+  post: Post; prefix: string; lang: string; tools: ToolSummary[]; featured?: boolean; compact?: boolean;
 }) {
+  const mentionedTools = useArticleTools(post, tools);
   const type   = getPostType(post);
+  const primaryTool = post.toolId
+    ? tools.find((tool) => tool.id === post.toolId || tool.slug === post.toolId)
+    : undefined;
+  const coverTool = (primaryTool?.ogImageUrl ? primaryTool : undefined)
+    || mentionedTools.find((tool) => tool.ogImageUrl)
+    || primaryTool
+    || mentionedTools[0];
   const displayDate = formatPostDate(post.date, lang);
   const postPath = `/${post.lang === "fr" ? "fr" : lang}/guide/${post.slug}`;
 
@@ -350,6 +361,13 @@ function ArticleCard({
             className="gi-card-editorial-cover"
             loading={featured ? "eager" : "lazy"}
             decoding="async"
+          />
+        ) : coverTool ? (
+          <ToolCardImage
+            tool={coverTool}
+            logoSize={featured ? 54 : compact ? 34 : 42}
+            className="gi-card-cover"
+            allowRemoteLogoSources={false}
           />
         ) : (
           <div className="gi-card-cover-fallback">{type}</div>

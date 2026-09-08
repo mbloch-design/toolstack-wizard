@@ -31,10 +31,11 @@ function normalizeCardImageUrl(value?: string | null): { src: string; quality: E
  * tool has one, otherwise a centered logo on the same panel background —
  * so the shape stays identical whether or not a screenshot exists yet.
  */
-export default function ToolCardImage({ tool, logoSize = 40, className = "", overlay, overlayMode = "hover" }: {
+export default function ToolCardImage({ tool, logoSize = 40, className = "", overlay, overlayMode = "hover", allowRemoteLogoSources = true }: {
   tool: ToolCardImageTool;
   logoSize?: number;
   className?: string;
+  allowRemoteLogoSources?: boolean;
   /** Optional content absolutely-positioned over the image, revealed by the
    *  consumer's own hover/focus state (e.g. ToolCardEditorial's description
    *  + CTA) — keeps hover-only info from ever changing the card's height. */
@@ -84,7 +85,7 @@ export default function ToolCardImage({ tool, logoSize = 40, className = "", ove
         />
       ) : (
         <div className="tc-image-fallback">
-          <ToolLogo tool={tool} size={logoSize} />
+          <ToolLogo tool={tool} size={logoSize} allowRemoteSources={allowRemoteLogoSources} />
         </div>
       )}
       {overlay && <div className={`tc-image-overlay tc-image-overlay--${overlayMode}`}>{overlay}</div>}
