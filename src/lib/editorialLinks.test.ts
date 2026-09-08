@@ -43,4 +43,18 @@ describe("editorial internal links", () => {
 
     expect(redirectedGuideLinks).toEqual([]);
   });
+
+  it("does not expose unlocalized or renamed catalogue links", () => {
+    const forbidden = [
+      /(?:^|[^a-z])\/tool\/(?:obsidian|todoist|google-drive|notion|clickup|linear|airtable)(?=[)"?\s])/,
+      /\/(?:fr|en)\/category\/(?:creation|ai-general|automation)(?=[)"?\s])/,
+      /\/(?:fr|en)\/tool\/(?:anthropic|descript)(?=[)"?\s])/,
+    ];
+    const offenders = POST_FILES.flatMap((file) => {
+      const content = fs.readFileSync(path.resolve(process.cwd(), file), "utf8");
+      return forbidden.filter((pattern) => pattern.test(content)).map((pattern) => `${file}: ${pattern}`);
+    });
+
+    expect(offenders).toEqual([]);
+  });
 });

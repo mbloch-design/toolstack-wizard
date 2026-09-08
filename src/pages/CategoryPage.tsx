@@ -14,6 +14,7 @@ import { useCatalogStickyToolbar } from "@/hooks/useCatalogStickyToolbar";
 type SortKey = "name" | "price-asc" | "price-desc" | "free-first" | "savings";
 type PriceFilter = "all" | "free" | "freemium" | "paid";
 const PER_PAGE = 20;
+const REDIRECTED_TOOL_SLUGS = new Set(["anthropic"]);
 
 // ── Profile options (mapped from relevantFor values) ──
 const PROFILE_OPTIONS = [
@@ -53,7 +54,9 @@ const CategoryPage = () => {
   const { posts } = usePosts(lang);
   const category = categories.find((c) => c.slug === slug);
   const allCatTools = useMemo(
-    () => category ? tools.filter((tool) => tool.categoryId === category.id) : [],
+    () => category
+      ? tools.filter((tool) => tool.categoryId === category.id && !REDIRECTED_TOOL_SLUGS.has(tool.slug))
+      : [],
     [category, tools]
   );
 

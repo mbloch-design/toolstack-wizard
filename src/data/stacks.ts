@@ -12379,7 +12379,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Socle",
         "roleEn": "Foundation",
-        "slug": "anthropic",
+        "slug": "claude",
         "decision": "core",
         "reason": "À garder dans cette stack : rôle clair, usage récurrent et impact direct sur le livrable.",
         "reasonEn": "Keep in this stack: clear role, recurring use, direct impact on delivery.",
@@ -39035,16 +39035,6 @@ export const STACKS: StackGuide[] = [
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Outil métier : utile pour sécuriser workflow sans alourdir le système.",
         "reasonEn": "Useful to secure workflow without weighing down the system."
-      },
-      {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
-        "slug": "anthropic",
-        "decision": "conditional",
-        "tip": "À activer si le volume ou la complexité le justifie.",
-        "tipEn": "Activate if volume or complexity justifies it.",
-        "reason": "Outil métier : utile pour sécuriser api sans alourdir le système.",
-        "reasonEn": "Useful to secure api without weighing down the system."
       },
       {
         "role": "Outil métier",

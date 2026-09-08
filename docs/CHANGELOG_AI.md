@@ -4230,3 +4230,11 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Correction du lien français vers le guide Claude vs ChatGPT afin qu'il pointe directement vers le slug français canonique.
 - Retrait des anciennes landings `/audit-saas-gratuit` et `/free-saas-audit` des deux générateurs de sitemap et du prérendu ; leurs redirections permanentes vers `/ma-stack` restent actives pour l'historique.
 - Ajout de tests empêchant la réintroduction de ces alias redirigés dans le footer, les pages clés et les contenus éditoriaux.
+
+## 2026-09-08 — Canonicalisation des liens éditoriaux résiduels
+
+- Localisation directe des liens d'outils encore écrits sous la forme historique `/tool/:slug` dans les guides français et anglais.
+- Remplacement des anciens slugs de catégories `creation`, `ai-general` et `automation` par leurs slugs canoniques actuels.
+- Remplacement des anciens slugs outils `anthropic` et `descript` par `claude` et `descript-ai` dans le maillage éditorial.
+- Correction des liens de catégories de l'accueil et retrait de l'alias `anthropic` des catégories et stacks qui continuaient à l'exposer dans le HTML prérendu.
+- Ajout d'un contrôle de régression dédié à ces trois familles d'alias.

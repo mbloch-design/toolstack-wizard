@@ -21,4 +21,17 @@ describe("canonical discovery surfaces", () => {
 
     expect(offenders).toEqual([]);
   });
+
+  it("uses canonical category and tool slugs on generated discovery surfaces", () => {
+    const homepage = fs.readFileSync(path.resolve(process.cwd(), "src/pages/HomePageV2.tsx"), "utf8");
+    const categories = fs.readFileSync(path.resolve(process.cwd(), "src/data/categories_index.json"), "utf8");
+    const stacks = fs.readFileSync(path.resolve(process.cwd(), "src/data/stacks.ts"), "utf8");
+    const categoryPage = fs.readFileSync(path.resolve(process.cwd(), "src/pages/CategoryPage.tsx"), "utf8");
+
+    expect(homepage).not.toContain("/category/ai-general");
+    expect(homepage).not.toContain("/category/automation");
+    expect(categories).not.toContain('"anthropic"');
+    expect(stacks).not.toContain('"slug": "anthropic"');
+    expect(categoryPage).toContain('REDIRECTED_TOOL_SLUGS = new Set(["anthropic"])');
+  });
 });

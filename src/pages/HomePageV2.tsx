@@ -601,7 +601,7 @@ export default function HomePageV2() {
               <FeaturedHead
                 label={t("Outils IA", "AI Design Tools")}
                 description={t("Les assistants et modèles à comparer selon ton usage réel.", "Assistants and models to compare for your actual use.") as string}
-                to={`${prefix}/category/ai-general`}
+                to={`${prefix}/category/ia-generaliste`}
                 linkLabel={t("Voir tout", "See all")}
                 page={aiPage}
                 total={aiTotalPages}
@@ -727,7 +727,7 @@ export default function HomePageV2() {
                     visualVariant={categoryIndex}
                     tools={categoryTools}
                     prefix={prefix}
-                    categoryHref={`${prefix}/category/${cat.categoryId}`}
+                    categoryHref={`${prefix}/category/${categories.find((category) => category.id === cat.categoryId)?.slug || cat.categoryId}`}
                     seeAllLabel={t("Voir plus", "See more") as string}
                     toolsLabel={t("outils à explorer", "tools to explore") as string}
                   />
@@ -818,7 +818,7 @@ export default function HomePageV2() {
               <FeaturedHead
                 label={t("Automatiser son travail", "Automate your work")}
                 description={t("Connectez vos outils, éliminez les tâches répétitives et construisez des workflows plus fluides.", "Connect your tools, remove repetitive tasks and build smoother workflows.") as string}
-                to={`${prefix}/category/automation`}
+                to={`${prefix}/category/automatisation`}
                 linkLabel={t("Tous les outils d’automatisation", "All automation tools")}
                 page={automationPage}
                 total={automationTotalPages}
