@@ -1,14 +1,11 @@
 import { Link } from "react-router-dom";
 import { useLang } from "@/hooks/useLang";
-import { loadLocalPosts, usePosts, useToolSummaries, type Post, type ToolSummary } from "@/hooks/useSupabaseData";
-import { useState, useMemo, useEffect, useRef, type CSSProperties } from "react";
-import { useArticleTools } from "@/hooks/useArticleTools";
+import type { Post } from "@/hooks/useSupabaseData";
+import { useState, useMemo, useEffect, type CSSProperties } from "react";
 import { setSeoTags, cleanupSeo } from "@/lib/seo";
-import ToolCardImage from "@/components/tool/ToolCardImage";
-import { useCatalogStickyToolbar } from "@/hooks/useCatalogStickyToolbar";
-import CatalogToolbar from "@/components/catalog/CatalogToolbar";
 import Breadcrumb from "@/components/Breadcrumb";
 import { Search, X } from "@/lib/icons";
+import { getGuidePosts } from "@/lib/guideCatalog";
 
 /* ─────────────────────────────────────────────────────────────────────────────
    GuidesPage — editorial redesign v2
@@ -114,43 +111,26 @@ function formatPostDate(date: string | undefined, lang: string): string | null {
 /* ═══════════════════════════════════════════════════════════════════════════ */
 const GuidesPage = () => {
   const { lang, t, prefix } = useLang();
-  const { posts, loading } = usePosts(lang, { refreshRemote: false });
-  const { tools } = useToolSummaries({ refreshRemote: false });
-  const [localeFallbackPosts, setLocaleFallbackPosts] = useState<Post[]>([]);
+  const posts = getGuidePosts(lang);
 
   const [activeFilter, setActiveFilter] = useState("all");
   const [sortBy, setSortBy] = useState("recent");
   const [searchQuery, setSearchQuery] = useState("");
   const [showAll, setShowAll] = useState(false);
-  const { toolbarStuck, toolbarSentinelRef } = useCatalogStickyToolbar();
 
   /* Reset pagination on filter/sort change */
   useEffect(() => { setShowAll(false); }, [activeFilter, sortBy, searchQuery]);
 
-
-  useEffect(() => {
-    let cancelled = false;
-    if (lang !== "en") {
-      setLocaleFallbackPosts([]);
-      return () => { cancelled = true; };
-    }
-
-    loadLocalPosts("fr").then((frenchPosts) => {
-      if (!cancelled) setLocaleFallbackPosts(frenchPosts);
-    });
-    return () => { cancelled = true; };
-  }, [lang]);
-
   const visiblePosts = useMemo(() => {
     if (lang !== "en" || posts.length === 0) return posts;
     const englishSlugs = new Set(posts.map((post) => post.slug));
-    const frenchOnly = localeFallbackPosts.filter((post) => (
+    const frenchOnly = getGuidePosts("fr").filter((post) => (
       (post.date || "") >= ENGLISH_PARITY_START_DATE
       && !englishSlugs.has(post.slug)
       && !englishSlugs.has(ENGLISH_GUIDE_SLUGS[post.slug])
     ));
     return [...posts, ...frenchOnly];
-  }, [lang, posts, localeFallbackPosts]);
+  }, [lang, posts]);
 
   useEffect(() => {
     const title = lang === "fr"
@@ -210,61 +190,50 @@ const GuidesPage = () => {
             <h1 className="tt-catalog-compact-title">{t("Guides", "Guides")}</h1>
           </div>
 
-          <div ref={toolbarSentinelRef} aria-hidden="true" style={{ height: 1 }} />
+          <div className="gi-simple-controls">
+            <div className="gi-simple-search">
+              <Search size={18} aria-hidden />
+              <input
+                id="guide-search"
+                name="guide-search"
+                type="search"
+                value={searchQuery}
+                onChange={(event) => setSearchQuery(event.target.value)}
+                placeholder={t("Rechercher un guide", "Search guides") as string}
+                aria-label={t("Rechercher un guide", "Search guides") as string}
+                autoComplete="off"
+              />
+              {searchQuery ? (
+                <button type="button" onClick={() => setSearchQuery("")} aria-label={t("Effacer la recherche", "Clear search") as string}>
+                  <X size={16} aria-hidden />
+                </button>
+              ) : null}
+            </div>
 
-          <CatalogToolbar
-            className="gi-catalog-toolbar"
-            stuck={toolbarStuck}
-            navLabel={t("Filtrer les guides par thème", "Filter guides by topic") as string}
-            pills={filters.map((filter) => ({
-              id: filter.id,
-              label: filter.label,
-              active: activeFilter === filter.id,
-              onClick: () => setActiveFilter(filter.id),
-            }))}
-            panelTitle={t("Filtres", "Filters")as string}
-            closeLabel={t("Fermer", "Close") as string}
-            moreLabel={t("Plus de filtres", "More filters") as string}
-            extraTail={(
-              <div className="tt-catalog-inline-search tt-catalog-inline-search--open">
-                <div className="tt-catalog-inline-search-field">
-                  <Search size={17} aria-hidden />
-                  <input
-                    id="guide-search"
-                    name="guide-search"
-                    type="search"
-                    value={searchQuery}
-                    onChange={(event) => setSearchQuery(event.target.value)}
-                    placeholder={t("Rechercher un guide", "Search guides") as string}
-                    className="tt-catalog-inline-search-input"
-                    autoComplete="off"
-                  />
-                  {searchQuery && (
-                    <button
-                      type="button"
-                      onClick={() => setSearchQuery("")}
-                      className="tt-catalog-inline-search-clear"
-                      aria-label={t("Effacer la recherche", "Clear search") as string}
-                    >
-                      <X size={15} aria-hidden />
-                    </button>
-                  )}
-                </div>
-              </div>
-            )}
-            sort={{
-              value: sortBy,
-              options: sortOptions.map((option) => ({ value: option.id, label: option.label })),
-              onChange: (value) => { setSortBy(value); setShowAll(false); },
-              ariaLabel: t("Trier par", "Sort by") as string,
-              title: t("Trier les guides", "Sort guides") as string,
-            }}
-          />
+            <div className="gi-filter-pills" aria-label={t("Filtrer les guides par thème", "Filter guides by topic") as string}>
+              {filters.map((filter) => (
+                <button
+                  key={filter.id}
+                  type="button"
+                  className={`gi-filter-pill${activeFilter === filter.id ? " gi-filter-pill--active" : ""}`}
+                  aria-pressed={activeFilter === filter.id}
+                  onClick={() => setActiveFilter(filter.id)}
+                >
+                  {filter.label}
+                </button>
+              ))}
+            </div>
+
+            <label className="gi-sort-wrapper">
+              <span className="gi-sort-label">{t("Trier", "Sort")}</span>
+              <select className="gi-sort-select" value={sortBy} onChange={(event) => setSortBy(event.target.value)}>
+                {sortOptions.map((option) => <option key={option.id} value={option.id}>{option.label}</option>)}
+              </select>
+            </label>
+          </div>
 
           {/* Guides list */}
-          {loading && <LoadingSkeleton />}
-
-          {!loading && filteredPosts.length === 0 && (
+          {filteredPosts.length === 0 && (
             <div style={{ paddingTop: 48, textAlign: "center" }}>
               <p style={{ fontFamily: "var(--font-ui)", fontSize: 16, color: "var(--color-muted-light)" }}>
                 {t("Aucun guide pour ce filtre.", "No guides for this filter.")}
@@ -278,14 +247,14 @@ const GuidesPage = () => {
             </div>
           )}
 
-          {!loading && visibleList.length > 0 && (
+          {visibleList.length > 0 && (
             <>
               <div className="gi-lead-grid">
-                <ArticleCard post={visibleList[0]} prefix={prefix} lang={lang} tools={tools} featured />
+                <ArticleCard post={visibleList[0]} prefix={prefix} lang={lang} featured />
                 {visibleList.length > 1 && (
                   <div className="gi-lead-side">
                     {visibleList.slice(1, 3).map((post) => (
-                      <ArticleCard key={post.slug} post={post} prefix={prefix} lang={lang} tools={tools} compact />
+                      <ArticleCard key={post.slug} post={post} prefix={prefix} lang={lang} compact />
                     ))}
                   </div>
                 )}
@@ -293,7 +262,7 @@ const GuidesPage = () => {
               {visibleList.length > 3 && (
                 <div className="gi-card-grid">
                   {visibleList.slice(3).map((post) => (
-                    <ArticleCard key={post.slug} post={post} prefix={prefix} lang={lang} tools={tools} />
+                    <ArticleCard key={post.slug} post={post} prefix={prefix} lang={lang} />
                   ))}
                 </div>
               )}
@@ -301,7 +270,7 @@ const GuidesPage = () => {
           )}
 
           {/* Load more */}
-          {!loading && hasMore && (
+          {hasMore && (
             <div style={{ paddingTop: 40, display: "flex", justifyContent: "center" }}>
               <button
                 className="gi-load-more"
@@ -315,7 +284,7 @@ const GuidesPage = () => {
             </div>
           )}
 
-          {!loading && storiesPosts.length > 0 && (
+          {storiesPosts.length > 0 && (
             <StoriesRow stories={storiesPosts.slice(0, 3)} prefix={prefix} lang={lang} />
           )}
 
@@ -360,19 +329,11 @@ function StoriesRow({
 }
 
 function ArticleCard({
-  post, prefix, lang, tools, featured = false, compact = false,
+  post, prefix, lang, featured = false, compact = false,
 }: {
-  post: Post; prefix: string; lang: string; tools: ToolSummary[]; featured?: boolean; compact?: boolean;
+  post: Post; prefix: string; lang: string; featured?: boolean; compact?: boolean;
 }) {
-  const mentionedTools = useArticleTools(post, tools);
   const type   = getPostType(post);
-  const primaryTool = post.toolId
-    ? tools.find((tool) => tool.id === post.toolId || tool.slug === post.toolId)
-    : undefined;
-  const coverTool = (primaryTool?.ogImageUrl ? primaryTool : undefined)
-    || mentionedTools.find((tool) => tool.ogImageUrl)
-    || primaryTool
-    || mentionedTools[0];
   const displayDate = formatPostDate(post.date, lang);
   const postPath = `/${post.lang === "fr" ? "fr" : lang}/guide/${post.slug}`;
 
@@ -390,8 +351,6 @@ function ArticleCard({
             loading={featured ? "eager" : "lazy"}
             decoding="async"
           />
-        ) : coverTool ? (
-          <ToolCardImage tool={coverTool} logoSize={featured ? 54 : compact ? 34 : 42} className="gi-card-cover" />
         ) : (
           <div className="gi-card-cover-fallback">{type}</div>
         )}
@@ -408,30 +367,6 @@ function ArticleCard({
         )}
       </div>
     </Link>
-  );
-}
-
-/* ── Loading skeleton ─────────────────────────────────────────────────────── */
-function LoadingSkeleton() {
-  return (
-    <div style={{ display: "flex", flexDirection: "column", gap: 0, marginTop: 24 }}>
-      {[1, 2, 3, 4].map((i) => (
-        <div key={i} style={{
-          display: "grid", gridTemplateColumns: "150px 1fr auto",
-          gap: 32, padding: "32px 0", borderTop: i > 1 ? "1px solid var(--color-border)" : "none",
-        }}>
-          <div style={{ display: "flex", flexDirection: "column", gap: 6 }}>
-            <div style={{ height: 12, background: "var(--color-surface-soft)", borderRadius: "var(--radius-xs)", width: 64 }} />
-            <div style={{ height: 12, background: "var(--color-surface-soft)", borderRadius: "var(--radius-xs)", width: 88 }} />
-          </div>
-          <div>
-            <div style={{ height: 28, background: "var(--color-surface-soft)", borderRadius: "var(--radius-xs)", marginBottom: 10, maxWidth: 480 }} />
-            <div style={{ height: 14, background: "var(--color-surface-soft)", borderRadius: "var(--radius-xs)", maxWidth: 600 }} />
-          </div>
-          <div style={{ height: 14, background: "var(--color-surface-soft)", borderRadius: "var(--radius-xs)", width: 40 }} />
-        </div>
-      ))}
-    </div>
   );
 }
 

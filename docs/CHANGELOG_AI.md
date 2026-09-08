@@ -1,5 +1,13 @@
 # ToolTrim — AI Changelog
 
+## 2026-09-08 — Remise à plat technique des Guides
+
+- Index Guides alimenté directement par le snapshot JSON local, sans Supabase ni état de chargement réseau.
+- Recherche mobile remplacée par un champ natif pleine largeur ; filtres et tri restent dans le flux normal, sans sticky JavaScript.
+- Page article réduite à un document statique pré-rendu : suppression du scroll-spy, de la progression de lecture et des rerenders React pendant le scroll.
+- Renderer Markdown extrait dans un module pur et identique côté build/client ; suppression du retraitement DOMPurify à l'hydratation.
+- Suppression des scans automatiques du catalogue outils et des blocs secondaires injectés après hydratation.
+
 ## 2026-09-08 — Guides mobile-first
 
 - Barre de filtres sticky positionnée sous le header mobile au lieu de le recouvrir.

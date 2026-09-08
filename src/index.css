@@ -10020,6 +10020,62 @@
     letter-spacing: -0.015em;
     color: var(--color-muted);
   }
+  .gi-simple-controls {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px 24px;
+    margin-bottom: 44px;
+  }
+  .gi-simple-search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 52px;
+    padding: 0 16px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+    color: var(--color-muted);
+  }
+  .gi-simple-search:focus-within { border-color: var(--color-text); }
+  .gi-simple-search input {
+    min-width: 0;
+    flex: 1;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: var(--color-text);
+    font-family: var(--font-ui);
+    font-size: 16px;
+  }
+  .gi-simple-search button {
+    display: inline-grid;
+    width: 32px;
+    height: 32px;
+    place-items: center;
+    border: 0;
+    background: transparent;
+    color: var(--color-muted);
+    cursor: pointer;
+  }
+  .gi-simple-controls .gi-filter-pills { flex: 1 1 620px; }
+  @media (max-width: 700px) {
+    .gi-simple-controls {
+      align-items: stretch;
+      gap: 14px;
+      margin-bottom: 36px;
+    }
+    .gi-simple-search { min-height: 50px; border-radius: var(--radius); }
+    .gi-simple-controls .gi-filter-pills {
+      flex-basis: 100%;
+      margin-inline: calc(var(--layout-gutter) * -1);
+      width: auto;
+      padding: 0 var(--layout-gutter) 4px;
+    }
+    .gi-simple-controls .gi-sort-wrapper { width: 100%; justify-content: space-between; }
+  }
   /* Guides is an editorial landing, not a dense data catalogue. Its opening
      uses the same two-column reading rhythm as the reference pages: a clear
      subject on the left and a short framing sentence on the right. */
@@ -11326,6 +11382,46 @@
     transition: border-color 140ms, color 140ms;
   }
   .ga-share-btn:hover { border-color: var(--color-text); color: var(--color-text); }
+  .ga-share-btn svg { width: 16px; height: 16px; }
+  .ga-article-back {
+    margin-top: 48px;
+    padding-top: 28px;
+    border-top: 1px solid var(--color-border);
+  }
+  .ga-article-back a,
+  .ga-story-back a,
+  .ga-not-found a {
+    font-family: var(--font-ui);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-muted);
+    text-decoration: none;
+  }
+  .ga-not-found {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 80px var(--layout-gutter);
+    text-align: center;
+  }
+  .ga-not-found h1 {
+    margin-bottom: 16px;
+    font-family: var(--font-brand);
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+  .ga-loading {
+    max-width: var(--layout-content);
+    margin: 0 auto;
+    padding: 80px var(--layout-gutter);
+  }
+  .ga-loading-line {
+    background: var(--color-surface-soft);
+    border-radius: var(--radius-xs);
+  }
+  .ga-loading-line--meta { width: 200px; height: 14px; margin-bottom: 32px; }
+  .ga-loading-line--title { width: min(70%, 760px); height: 72px; margin-bottom: 20px; }
+  .ga-loading-line--copy { width: min(55%, 620px); height: 22px; }
 
   @media (max-width: 900px) {
     .ga-header {

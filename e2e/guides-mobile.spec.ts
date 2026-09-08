@@ -3,21 +3,19 @@ import { expect, test } from "playwright/test";
 test.describe("Guides — parcours mobile-first", () => {
   test.use({ viewport: { width: 390, height: 844 } });
 
-  test("recherche, sticky et contenu d'article restent utilisables", async ({ page }) => {
+  test("recherche simple et contenu d'article restent utilisables", async ({ page }) => {
     await page.route("**/*.supabase.co/**", (route) => route.abort("failed"));
     await page.goto("/fr/guides", { waitUntil: "domcontentloaded" });
 
-    const toolbar = page.locator(".gi-catalog-toolbar");
+    const controls = page.locator(".gi-simple-controls");
     const search = page.getByRole("searchbox", { name: "Rechercher un guide" });
-    await expect(toolbar).toBeVisible();
+    await expect(controls).toBeVisible();
     await expect(search).toBeVisible();
+    await expect(controls).toHaveCSS("position", "static");
 
     await search.fill("Huberman");
     const hubermanCard = page.locator(".gi-card", { hasText: "Huberman" }).first();
     await expect(hubermanCard).toBeVisible();
-
-    await page.evaluate(() => window.scrollTo(0, 500));
-    await expect.poll(async () => Math.round((await toolbar.boundingBox())?.y ?? -1)).toBe(56);
 
     await hubermanCard.click();
     await expect(page).toHaveURL(/\/fr\/guide\/andrew-huberman-kit-systeme-audience/);
@@ -47,6 +45,11 @@ test.describe("Guides — parcours mobile-first", () => {
       "Andrew Huberman already had a substantial audience",
     );
     await expect(page.locator(".ga-content p")).toHaveCount(48);
+    const sections = page.locator(".ga-article-section");
+    for (const index of [0, Math.floor(await sections.count() / 2), await sections.count() - 1]) {
+      await sections.nth(index).scrollIntoViewIfNeeded();
+      await expect(sections.nth(index)).toBeVisible();
+    }
     expect(pageErrors).toEqual([]);
     expect(editorialApiRequests).toEqual([]);
   });

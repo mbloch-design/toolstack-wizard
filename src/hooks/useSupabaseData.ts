@@ -595,12 +595,17 @@ export function usePostBySlug(slug: string | undefined, lang: string, { refreshR
   // seed from the SSR context and skip the client fetch so hydration matches.
   const ssrPost = useContext(SsrPostContext);
   const ssrMatches = ssrPost !== undefined && ssrPost.slug === slug;
-  const [post, setPost] = useState<Post | null>(ssrMatches ? ssrPost : null);
-  const [loading, setLoading] = useState(!ssrMatches);
+  const cachedPost = slug
+    ? localPostsCache.get(lang)?.find((candidate) => candidate.slug === slug) ?? null
+    : null;
+  const initialPost = ssrMatches ? ssrPost : cachedPost;
+  const [post, setPost] = useState<Post | null>(initialPost);
+  const [loading, setLoading] = useState(!initialPost);
 
   useEffect(() => {
     if (!slug) { setLoading(false); return; }
     if (ssrMatches) { setPost(ssrPost); setLoading(false); return; }
+    if (cachedPost) { setPost(cachedPost); setLoading(false); return; }
     let cancelled = false;
 
     (async () => {
@@ -638,7 +643,7 @@ export function usePostBySlug(slug: string | undefined, lang: string, { refreshR
     return () => {
       cancelled = true;
     };
-  }, [slug, lang, refreshRemote, ssrMatches, ssrPost]);
+  }, [cachedPost, slug, lang, refreshRemote, ssrMatches, ssrPost]);
 
   return { post, loading };
 }

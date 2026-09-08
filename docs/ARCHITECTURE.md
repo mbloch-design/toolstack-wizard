@@ -204,6 +204,22 @@ Plage : 2.8 → 4.8. Utilisé dans StickyDecisionCard et section Avis.
 
 ## GuideDetailPage — composants et conventions (après Sprint 3)
 
+### Architecture statique des Guides
+
+- `GuidesPage` lit le snapshot éditorial local via `src/lib/guideCatalog.ts` :
+  aucun fetch Supabase, aucun squelette dépendant du réseau et aucune toolbar
+  sticky pilotée par JavaScript.
+- `GuideDetailPage` est un document statique pré-rendu. Il ne possède aucun
+  listener de scroll, barre de progression, scroll-spy ou scan du catalogue
+  outils. Le texte complet est dans le DOM dès le premier rendu.
+- `src/lib/guideMarkdown.ts` contient les deux seules transformations de
+  contenu : génération du sommaire et conversion déterministe du Markdown
+  éditorial en HTML. Le serveur et le navigateur exécutent exactement la même
+  transformation, sans assainissement client susceptible de remplacer le DOM
+  pendant l'hydratation.
+- Les images éditoriales conservent `loading="lazy"`; seul le média est différé,
+  jamais le texte de l'article.
+
 ### Grille éditoriale des chapitres
 
 Le template repose sur une grille large adaptée au contenu de fond :
