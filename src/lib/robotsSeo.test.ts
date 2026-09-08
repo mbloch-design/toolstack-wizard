@@ -9,6 +9,7 @@ const dynamicCanonical = fs.readFileSync(
   "utf8",
 );
 const appRoutes = fs.readFileSync(path.join(root, "src/App.tsx"), "utf8");
+const seoSource = fs.readFileSync(path.join(root, "src/lib/seo.ts"), "utf8");
 
 describe("robots SEO policy", () => {
   it("keeps private API routes blocked", () => {
@@ -33,5 +34,11 @@ describe("robots SEO policy", () => {
     );
     expect(appRoutes).not.toContain('import("@/pages/SelectorPage")');
     expect(appRoutes).not.toContain('import("@/pages/ResultsPage")');
+  });
+
+  it("maps the Adobe Podcast guide to its real English alternate", () => {
+    expect(seoSource).toContain(
+      '"adobe-podcast-ai-gratuit-alternatives-2026": "adobe-podcast-ai-free-limits-alternatives-2026"',
+    );
   });
 });

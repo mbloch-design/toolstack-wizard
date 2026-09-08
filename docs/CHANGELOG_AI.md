@@ -4247,3 +4247,10 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Redirection permanente des anciennes architectures `/selector/*` et `/diagnostic/*` vers la page localisée Ma Stack.
 - Remplacement des liens vers le sélecteur dans l'accueil, les composants éditoriaux et les guides FR/EN ; le code actuel ne génère plus ces anciennes URLs.
 - Ajout de contrôles de régression sur les redirections, les surfaces de découverte et les variantes de tracking.
+
+# 2026-09-08 — Résidus actifs de l'export GSC
+
+- Croisement des 1 000 exemples de pages avec redirection fournis par GSC avec le sitemap et le HTML prérendu actuels.
+- Correction du hreflang anglais du guide Adobe Podcast, qui pointait encore vers le slug français redirigé.
+- Suppression du lien éditorial vers la fiche inexistante `/tool/claap` ; la mention du produit reste en texte simple.
+- Contrôles de régression ajoutés pour ces deux sources actives.

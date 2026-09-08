@@ -57,6 +57,7 @@ describe("editorial internal links", () => {
       /(?:^|[^a-z])\/tool\/(?:obsidian|todoist|google-drive|notion|clickup|linear|airtable)(?=[)"?\s])/,
       /\/(?:fr|en)\/category\/(?:creation|ai-general|automation)(?=[)"?\s])/,
       /\/(?:fr|en)\/tool\/(?:anthropic|descript)(?=[)"?\s])/,
+      /\/(?:fr|en)\/tool\/claap(?=[)"?\s])/,
     ];
     const offenders = POST_FILES.flatMap((file) => {
       const content = fs.readFileSync(path.resolve(process.cwd(), file), "utf8");

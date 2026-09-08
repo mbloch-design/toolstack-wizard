@@ -22,6 +22,7 @@ const GUIDE_SLUG_ALTERNATES: Record<string, string> = {
   "figma-vs-canva-comparatif-2026": "figma-vs-canva-comparison-2026",
   "slack-vs-teams-comparatif-2026": "slack-vs-teams-comparison-2026",
   "stack-redactrice-freelance": "stack-freelance-writer",
+  "adobe-podcast-ai-gratuit-alternatives-2026": "adobe-podcast-ai-free-limits-alternatives-2026",
   "meilleurs-outils-developpeur-freelance": "best-tools-freelance-developer",
   "meilleurs-outils-designer-freelance": "best-tools-freelance-designer",
   "meilleurs-outils-consultant-freelance": "best-tools-freelance-consultant",
