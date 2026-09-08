@@ -304,7 +304,14 @@ const GuideDetailPage = () => {
               // DOMPurify needs a DOM; during SSR (Node, no window) fall back to
               // the raw content — it's our own authored post HTML, not user
               // input, and it's sanitised again on the client at hydration.
-              dangerouslySetInnerHTML={{ __html: typeof window === "undefined" ? htmlContent : DOMPurify.sanitize(htmlContent) }}
+              // Preserve target because markdownToHtml adds it to external
+              // links during SSR; stripping it here changes the HTML tree and
+              // forces React to discard and rebuild the whole article.
+              dangerouslySetInnerHTML={{
+                __html: typeof window === "undefined"
+                  ? htmlContent
+                  : DOMPurify.sanitize(htmlContent, { ADD_ATTR: ["target"] }),
+              }}
             />
 
             {/* Share row */}
