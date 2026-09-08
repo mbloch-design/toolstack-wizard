@@ -15,6 +15,14 @@
 - Ajout d'une recherche locale de guides, utilisable dans la barre de commandes et dimensionnée pour 320–390 px.
 - Sommaire mobile replié par défaut afin que le contenu de l'article commence immédiatement après le hero.
 - Conservation du chargement local-first des listes et articles lorsque Supabase est indisponible.
+
+## 2026-09-08 — Maillage éditorial canonique
+
+- Remplacement des liens internes ToolTrim encore écrits en `/article/...` par leurs pages `/guide/...` canoniques et réellement présentes dans le sitemap.
+- Localisation des destinations anglaises lorsque leur équivalent EN existe ; conservation de la page FR canonique pour les guides volontairement francophones.
+- Conversion en texte simple des références Airtable vs Notion et Calendly vs Cal.com, aucune page canonique correspondante n’étant publiée.
+- Ajout d’un test de non-régression couvrant les bundles éditoriaux source et public.
+- Validation du prerender : zéro lien ToolTrim `/article/...` dans le HTML généré.
 - Hydratation des articles stabilisée en conservant les attributs de liens externes et en différant les blocs secondaires alimentés côté client.
 - Les pages Guides utilisent désormais exclusivement le catalogue éditorial local au runtime et ne déclenchent plus de requêtes Supabase bloquantes.
 - Les logos des outils mentionnés ne testent plus de CDN externes depuis un article : asset local ou initiale de secours uniquement.
