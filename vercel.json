@@ -37,6 +37,10 @@
     }
   ],
   "redirects": [
+    { "source": "/:lang(fr|en)/selector/:path*", "destination": "/:lang/ma-stack", "permanent": true },
+    { "source": "/:lang(fr|en)/selector", "destination": "/:lang/ma-stack", "permanent": true },
+    { "source": "/:lang(fr|en)/diagnostic/:path*", "destination": "/:lang/ma-stack", "permanent": true },
+    { "source": "/:lang(fr|en)/diagnostic", "destination": "/:lang/ma-stack", "permanent": true },
     { "source": "/:lang(fr|en)/stories", "destination": "/:lang/guides", "permanent": true },
     { "source": "/:lang(fr|en)/story/:slug", "destination": "/:lang/guide/:slug", "permanent": true },
     { "source": "/fr/methodology", "destination": "/fr/transparency", "permanent": true },

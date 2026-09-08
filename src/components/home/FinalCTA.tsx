@@ -21,7 +21,7 @@ const FinalCTA = () => {
 
           <div style={{ display: "flex", alignItems: "center", gap: 16, marginTop: 36, flexWrap: "wrap" }}>
             <Link
-              to={`${prefix}/selector`}
+              to={`${prefix}/ma-stack`}
               style={{
                 display: "inline-flex",
                 alignItems: "center",

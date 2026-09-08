@@ -4242,5 +4242,8 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 # 2026-09-08 — Canonicalisation des URLs de tracking
 
 - Suppression des règles `robots.txt` qui bloquaient les paramètres `utm_source`, `utm_medium` et `utm_campaign` avant la lecture du canonical.
-- Conservation des blocages des routes API, selector et diagnostic.
-- Ajout d'un test de régression vérifiant que les variantes de tracking restent explorables tout en pointant vers le canonical sans paramètres déjà généré par l'application.
+- Conservation du blocage des routes API uniquement.
+- Retrait du sélecteur public et de son écran de résultats du bundle applicatif.
+- Redirection permanente des anciennes architectures `/selector/*` et `/diagnostic/*` vers la page localisée Ma Stack.
+- Remplacement des liens vers le sélecteur dans l'accueil, les composants éditoriaux et les guides FR/EN ; le code actuel ne génère plus ces anciennes URLs.
+- Ajout de contrôles de régression sur les redirections, les surfaces de découverte et les variantes de tracking.

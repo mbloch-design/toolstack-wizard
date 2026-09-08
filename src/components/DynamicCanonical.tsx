@@ -9,7 +9,6 @@ import { SEO_BASE, OG_IMAGE, getAlternateLinks } from "@/lib/seo";
  *  - og:locale + og:site_name + og:type + og:url + og:image (default)
  *  - twitter:card defaults
  *  - <html lang="fr|en">
- *  - noindex on /selector and /diagnostic funnel routes
  *
  * Page-specific title / description / og:title / og:image continue to be set
  * imperatively via setSeoTags() in each page — Helmet here only fills universal defaults.
@@ -28,8 +27,6 @@ export default function DynamicCanonical() {
 
   const isEn = clean.startsWith("/en");
   const locale = isEn ? "en_US" : "fr_FR";
-  const isFunnel =
-    /\/selector(\/|$)/.test(canonicalPath) || /\/diagnostic(\/|$)/.test(canonicalPath);
   // Internal query-result pages are useful navigation surfaces but should not
   // become an unlimited family of thin, duplicate pages in search indexes.
   const isInternalSearch = /\/search$/.test(canonicalPath);
@@ -73,8 +70,6 @@ export default function DynamicCanonical() {
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:image" content={OG_IMAGE} />
 
-      {/* Noindex on funnel pages */}
-      {isFunnel && <meta name="robots" content="noindex, nofollow" />}
     </Helmet>
   );
 }

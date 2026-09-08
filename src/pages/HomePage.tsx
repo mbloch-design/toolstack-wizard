@@ -341,7 +341,7 @@ function EntryCardsSection() {
         <div className="home-actions-grid">
 
           {/* ── Card 1 — Audit ── */}
-          <Link to={`${prefix}/selector`} className="hac-card">
+          <Link to={`${prefix}/ma-stack`} className="hac-card">
             <div className="hac-header">
               <span className="hac-header-label">{t("Audit", "Audit")}</span>
               <span className="hac-header-num">01</span>
@@ -642,7 +642,7 @@ function WhatWeCutSection() {
                 "ToolTrim spots these signals and shows what to keep, cut, or challenge.",
               )}
             </p>
-            <Link to={`${prefix}/selector`} className="hp-cuts-cta">
+            <Link to={`${prefix}/ma-stack`} className="hp-cuts-cta">
               {t("Auditer ma stack", "Audit my stack")}
               <ArrowRight style={{ width: 15, height: 15 }} />
             </Link>
@@ -884,7 +884,7 @@ function MethodeSection() {
               )}
             </p>
           </div>
-          <Link to={`${prefix}/selector`} className="hp-cuts-cta" style={{ marginTop: 0, flexShrink: 0 }}>
+          <Link to={`${prefix}/ma-stack`} className="hp-cuts-cta" style={{ marginTop: 0, flexShrink: 0 }}>
             {t("Commencer l’audit", "Start the audit")}
             <ArrowRight style={{ width: 15, height: 15 }} />
           </Link>

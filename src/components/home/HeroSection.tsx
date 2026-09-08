@@ -147,7 +147,7 @@ function StackAuditPreview({ lang, prefix }: { lang: string; prefix: string }) {
 
       <div className="hp-audit-bottom">
         {/* Mini CTA */}
-        <Link to={`${prefix}/selector`} className="hp-audit-mini-cta">
+        <Link to={`${prefix}/ma-stack`} className="hp-audit-mini-cta">
           {isFr ? "Auditer ma vraie stack" : "Audit my real stack"}
           <ArrowRight style={{ width: 13, height: 13 }} />
         </Link>
@@ -195,7 +195,7 @@ const HeroSection = () => {
             </p>
 
             <div className="eh-cta-group" style={{ justifyContent: "flex-start", marginTop: 36 }}>
-              <Link to={`${prefix}/selector`} className="eh-cta-primary">
+              <Link to={`${prefix}/ma-stack`} className="eh-cta-primary">
                 {t("Auditer ma stack", "Audit my stack")}
                 <ArrowRight style={{ width: 15, height: 15 }} />
               </Link>

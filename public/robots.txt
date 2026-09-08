@@ -4,12 +4,9 @@ User-agent: *
 Allow: /
 Allow: /assets/
 Disallow: /api/
-Disallow: /fr/selector
-Disallow: /en/selector
-Disallow: /fr/diagnostic
-Disallow: /en/diagnostic
 
-# Les variantes de tracking restent explorables afin que leur canonical propre soit lu.
+# Les pages noindex et les variantes de tracking restent explorables afin que
+# les moteurs puissent lire leurs directives de consolidation.
 
 Sitemap: https://tooltrim.com/sitemap.xml
 

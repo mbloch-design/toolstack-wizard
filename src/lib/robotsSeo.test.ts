@@ -8,21 +8,30 @@ const dynamicCanonical = fs.readFileSync(
   path.join(root, "src/components/DynamicCanonical.tsx"),
   "utf8",
 );
+const appRoutes = fs.readFileSync(path.join(root, "src/App.tsx"), "utf8");
 
 describe("robots SEO policy", () => {
-  it("keeps private and diagnostic routes blocked", () => {
+  it("keeps private API routes blocked", () => {
     expect(robots).toContain("Disallow: /api/");
-    expect(robots).toContain("Disallow: /fr/selector");
-    expect(robots).toContain("Disallow: /en/selector");
-    expect(robots).toContain("Disallow: /fr/diagnostic");
-    expect(robots).toContain("Disallow: /en/diagnostic");
   });
 
-  it("lets crawlers read canonical tags on tracking variants", () => {
+  it("lets crawlers read directives on noindex and tracking variants", () => {
+    expect(robots).not.toMatch(/Disallow:.*\/(selector|diagnostic)/);
     expect(robots).not.toMatch(/Disallow:.*utm_(source|medium|campaign)/);
     expect(dynamicCanonical).toContain(
       "const canonical = `${SEO_BASE}${canonicalPath}`;",
     );
     expect(dynamicCanonical).not.toContain("location.search");
+  });
+
+  it("redirects retired selector and diagnostic URL families to Ma Stack", () => {
+    expect(appRoutes).toContain(
+      '<Route path="diagnostic/*" element={<Navigate to="../ma-stack" replace />} />',
+    );
+    expect(appRoutes).toContain(
+      '<Route path="selector/*" element={<Navigate to="../ma-stack" replace />} />',
+    );
+    expect(appRoutes).not.toContain('import("@/pages/SelectorPage")');
+    expect(appRoutes).not.toContain('import("@/pages/ResultsPage")');
   });
 });

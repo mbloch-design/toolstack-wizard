@@ -28,8 +28,6 @@ import ComparePage from "@/pages/ComparePage";
 import GuideDetailPage from "@/pages/GuideDetailPage";
 
 // Lazy-loaded pages (below the fold / secondary routes)
-const SelectorPage = lazy(() => import("@/pages/SelectorPage"));
-const ResultsPage = lazy(() => import("@/pages/ResultsPage"));
 const ToolsPage = lazy(() => import("@/pages/ToolsPage"));
 const CategoryPage = lazy(() => import("@/pages/CategoryPage"));
 const HostPage = lazy(() => import("@/pages/HostPage"));
@@ -119,15 +117,8 @@ export const LangLayout = () => {
   const pathLang = location.pathname.split("/")[1];
   const effectiveLang: Lang = pathLang === "en" ? "en" : validLang;
 
-  // Diagnostic flow (Codex-owned): exact /selector is a focused, chromeless
-  // step-by-step screen. /selector and its subroutes (e.g. /selector/results)
-  // keep the legacy Navbar/Footer chrome untouched — never wrapped in the
-  // new webapp shell, so we never alter diagnostic-adjacent presentation.
-  const isDiagnosticFocusRoute = /^\/(fr|en)\/selector\/?$/.test(location.pathname);
-  const isSelectorFamily = /^\/(fr|en)\/selector(\/.*)?$/.test(location.pathname);
-  // Back-office (Codex-owned): same rule, legacy chrome only.
+  // Back-office keeps the legacy Navbar/Footer chrome.
   const isBackOffice = /^\/(fr|en)\/back-office\/?$/.test(location.pathname);
-  const isLegacyChrome = (isSelectorFamily && !isDiagnosticFocusRoute) || isBackOffice;
 
   // Suspense lives here (inside the shell) rather than only at the app root,
   // so a lazy page's chunk-load fallback only ever replaces the inner content
@@ -148,16 +139,7 @@ export const LangLayout = () => {
         prefix: `/${effectiveLang}`,
       }}
     >
-      {isDiagnosticFocusRoute ? (
-        <div className="flex min-h-screen flex-col">
-          <a href="#main-content" className="skip-to-content">
-            {effectiveLang === "en" ? "Skip to main content" : "Aller au contenu"}
-          </a>
-          <main id="main-content" className="flex-1">
-            {content}
-          </main>
-        </div>
-      ) : isLegacyChrome ? (
+      {isBackOffice ? (
         <div className="flex min-h-screen flex-col">
           <a href="#main-content" className="skip-to-content">
             {effectiveLang === "en" ? "Skip to main content" : "Aller au contenu"}
@@ -203,8 +185,8 @@ export const AppRoutes = () => (
 
     <Route path="/:lang" element={<LangLayout />}>
       <Route index element={<HomePageV2 />} />
-      <Route path="selector" element={<SelectorPage />} />
-      <Route path="selector/results" element={<ResultsPage />} />
+      <Route path="diagnostic/*" element={<Navigate to="../ma-stack" replace />} />
+      <Route path="selector/*" element={<Navigate to="../ma-stack" replace />} />
       <Route path="tools" element={<ToolsPage />} />
       <Route path="tool/are-na/*" element={<RedirectCanonicalToolSlug />} />
       <Route path="tool/sendinblue/*" element={<RedirectCanonicalToolSlug />} />

@@ -21,6 +21,14 @@ describe("editorial internal links", () => {
     expect(legacyLinks).toEqual([]);
   });
 
+  it("does not expose the retired selector", () => {
+    const offenders = POST_FILES.filter((file) =>
+      fs.readFileSync(path.resolve(process.cwd(), file), "utf8").includes("/selector"),
+    );
+
+    expect(offenders).toEqual([]);
+  });
+
   it("does not expose the legacy query-based tool Explorer route", () => {
     const legacyLinks = POST_FILES.flatMap((file) => {
       const content = fs.readFileSync(path.resolve(process.cwd(), file), "utf8");

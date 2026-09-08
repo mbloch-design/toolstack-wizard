@@ -130,7 +130,7 @@ const PersonaSavings = () => {
         {/* CTA */}
         <div className="mt-8 text-center">
           <Link
-            to={`${prefix}/selector`}
+            to={`${prefix}/ma-stack`}
             className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3.5 font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:bg-primary/85 hover:shadow-xl hover:shadow-primary/30"
           >
             {t(
