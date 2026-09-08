@@ -26,6 +26,7 @@ import { SearchModal } from "@/components/SearchModal";
 import Footer from "@/components/Footer";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { trackEvent } from "@/lib/analytics";
+import { getLanguageSwitchPath } from "@/lib/seo";
 
 type NavItem = {
   id: string;
@@ -142,7 +143,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
     ? `${t("Ma stack", "My stack")} · ${cartCount}`
     : t("Ma stack", "My stack");
   const otherLang = lang === "fr" ? "en" : "fr";
-  const languageHref = `/${otherLang}${location.pathname.replace(/^\/(fr|en)/, "")}${location.search}${location.hash}`;
+  const languageHref = `${getLanguageSwitchPath(location.pathname, otherLang)}${location.search}${location.hash}`;
 
   // Path relative to the /:lang prefix, e.g. "/tool/notion" or "" for the homepage.
   const relPath = location.pathname.startsWith(prefix)

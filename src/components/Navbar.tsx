@@ -16,6 +16,7 @@ import { useLang } from "@/hooks/useLang";
 import { useStackPins } from "@/hooks/useStackPins";
 import logoToolTrim from "@/assets/logo-tooltrim.svg";
 import { SearchModal } from "@/components/SearchModal";
+import { getLanguageSwitchPath } from "@/lib/seo";
 
 /* ─────────────────────────────────────────────
    Constants
@@ -391,7 +392,7 @@ const Navbar = () => {
     setPanelOpen(false);
   }, [location.pathname]);
 
-  const languageHref = `/${otherLang}${location.pathname.replace(/^\/(fr|en)/, "")}${location.search}`;
+  const languageHref = `${getLanguageSwitchPath(location.pathname, otherLang)}${location.search}${location.hash}`;
   const isPath = (path: string) => location.pathname.startsWith(path);
 
   const secondaryNavItems = [

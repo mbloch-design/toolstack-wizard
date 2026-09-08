@@ -84,6 +84,11 @@ const GUIDE_SLUG_ALTERNATES: Record<string, string> = {
   "figma-vs-canva-comparatif-2026": "figma-vs-canva-comparison-2026",
   "slack-vs-teams-comparatif-2026": "slack-vs-teams-comparison-2026",
   "stack-redactrice-freelance": "stack-freelance-writer",
+  "meilleurs-outils-developpeur-freelance": "best-tools-freelance-developer",
+  "meilleurs-outils-designer-freelance": "best-tools-freelance-designer",
+  "meilleurs-outils-consultant-freelance": "best-tools-freelance-consultant",
+  "meilleurs-outils-createur-contenu-freelance": "best-tools-freelance-content-creator",
+  "meilleurs-outils-ops-manager-freelance": "best-tools-freelance-ops-manager",
 };
 
 const GUIDE_EN_TO_FR = Object.fromEntries(
@@ -563,6 +568,7 @@ function sitemapPlugin(): Plugin {
             contentArticleSlugs.has(post.slug) ||
             pairedEnSlugs.has(post.slug) ||
             GUIDE_COMPARISON_REDIRECTS.has(post.slug) ||
+            Object.prototype.hasOwnProperty.call(GUIDE_SLUG_ALTERNATES, post.slug) ||
             GUIDE_EN_TO_FR[post.slug] ||
             GUIDE_FR_ONLY_SLUGS.has(post.slug)
           ) continue;
@@ -1806,6 +1812,8 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           if (GUIDE_FR_ONLY_SLUGS.has(post.slug)) return false;
           return !Object.prototype.hasOwnProperty.call(GUIDE_SLUG_ALTERNATES, post.slug);
         });
+        const postsFrSlugs = new Set(postsFrData.map((post: any) => post.slug));
+        const postsEnSlugs = new Set(postsEnData.map((post: any) => post.slug));
 
         for (const post of allPostsData) {
           const lang: string = post.lang;
@@ -1816,6 +1824,8 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           const enSlug = lang === "en" ? slug : GUIDE_SLUG_ALTERNATES[slug] || slug;
           const frUrl = `${BASE}/fr/guide/${frSlug}`;
           const enUrl = `${BASE}/en/guide/${enSlug}`;
+          const hasFrAlternate = postsFrSlugs.has(frSlug);
+          const hasEnAlternate = !GUIDE_FR_ONLY_SLUGS.has(frSlug) && postsEnSlugs.has(enSlug);
           const title = post.seo?.metaTitle || post.title || slug;
           const description = post.seo?.metaDescription || post.excerpt || "";
 
@@ -1867,9 +1877,9 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
 
           const postMetaTags = [
             `<link rel="canonical" href="${url}" />`,
-            `<link rel="alternate" hreflang="fr" href="${frUrl}" />`,
-            ...(post.category === "Stories" ? [] : [`<link rel="alternate" hreflang="en" href="${enUrl}" />`]),
-            `<link rel="alternate" hreflang="x-default" href="${post.category === "Stories" ? frUrl : enUrl}" />`,
+            ...(hasFrAlternate ? [`<link rel="alternate" hreflang="fr" href="${frUrl}" />`] : []),
+            ...(hasEnAlternate ? [`<link rel="alternate" hreflang="en" href="${enUrl}" />`] : []),
+            `<link rel="alternate" hreflang="x-default" href="${hasEnAlternate ? enUrl : hasFrAlternate ? frUrl : url}" />`,
             `<title>${title.replace(/</g, "&lt;")}</title>`,
             `<meta name="description" content="${description.replace(/"/g, "&quot;").substring(0, 160)}" />`,
             `<meta property="og:type" content="article" />`,

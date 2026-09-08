@@ -22,6 +22,11 @@ const GUIDE_SLUG_ALTERNATES: Record<string, string> = {
   "figma-vs-canva-comparatif-2026": "figma-vs-canva-comparison-2026",
   "slack-vs-teams-comparatif-2026": "slack-vs-teams-comparison-2026",
   "stack-redactrice-freelance": "stack-freelance-writer",
+  "meilleurs-outils-developpeur-freelance": "best-tools-freelance-developer",
+  "meilleurs-outils-designer-freelance": "best-tools-freelance-designer",
+  "meilleurs-outils-consultant-freelance": "best-tools-freelance-consultant",
+  "meilleurs-outils-createur-contenu-freelance": "best-tools-freelance-content-creator",
+  "meilleurs-outils-ops-manager-freelance": "best-tools-freelance-ops-manager",
 };
 
 const GUIDE_EN_TO_FR = Object.fromEntries(
@@ -112,6 +117,17 @@ export function getAlternateLinks(path: string, base = SEO_BASE): [string, strin
     ["en", `${base}/en${enPath}`],
     ["x-default", `${base}/en${enPath}`],
   ];
+}
+
+/** Return the canonical route for the requested locale, including translated
+ * route suffixes and guide slugs. French-only guides fall back to the target
+ * guide index instead of exposing a URL that cannot resolve canonically. */
+export function getLanguageSwitchPath(path: string, targetLang: "fr" | "en"): string {
+  const alternate = getAlternateLinks(path, "").find(([lang]) => lang === targetLang);
+  if (alternate) return alternate[1];
+
+  if (/^\/(fr|en)\/guide\//.test(path)) return `/${targetLang}/guides`;
+  return `/${targetLang}${path.replace(/^\/(fr|en)/, "")}`;
 }
 
 export function setNoindex() {

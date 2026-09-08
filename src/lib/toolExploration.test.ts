@@ -43,10 +43,13 @@ describe("toolExploration", () => {
 
   it("génère et relit une URL partageable", () => {
     const href = getExplorerHref("/fr", { type: "outil", slug: "figma" }, { angle: "extensions", destination: "design" });
-    const params = new URL(href, "https://tooltrim.test").searchParams;
+    const url = new URL(href, "https://tooltrim.test");
 
-    expect(href).toBe("/fr/explorer?type=outil&source=figma&destination=design&angle=extensions");
-    expect(parseExplorationSource(params)).toEqual({ type: "outil", slug: "figma" });
+    expect(href).toBe("/fr/explorer/around/figma?destination=design&angle=extensions");
+    expect(url.pathname).toBe("/fr/explorer/around/figma");
+    expect(url.searchParams.get("destination")).toBe("design");
+    expect(url.searchParams.get("angle")).toBe("extensions");
+    expect(parseExplorationSource(new URLSearchParams("type=outil&source=figma"))).toEqual({ type: "outil", slug: "figma" });
     expect(getExplorerHref("/fr", { type: "stack" })).toBe("/fr/explorer?type=stack&source=ma-stack");
     expect(parseExplorationSource(new URLSearchParams("type=stack&source=ma-stack"))).toEqual({ type: "stack" });
   });

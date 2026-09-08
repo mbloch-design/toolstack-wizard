@@ -15,6 +15,7 @@ import { CarouselControls, CarouselPagination } from "@/components/CarouselContr
 // data-stacks chunk on every page. Regenerate with scripts/gen-stacks-index.ts.
 import STACKS from "@/data/stacks-index.json";
 import HOME_POSTS from "@/data/home-posts-index.json";
+import { getExplorerHref } from "@/lib/toolExploration";
 
 
 const PAGE_SIZE = 8;      // 2 rows × 4 cols — featured carousel
@@ -785,7 +786,7 @@ export default function HomePageV2() {
                     previousLabel={t("Page précédente", "Previous page") as string}
                     nextLabel={t("Page suivante", "Next page") as string}
                   />
-                  <Link to={`${prefix}/explorer?type=outil&source=${selectedHost}`} className="tt-section-action v2-section-link">
+                  <Link to={getExplorerHref(prefix, { type: "outil", slug: selectedHost })} className="tt-section-action v2-section-link">
                     {t("Voir tous les outils", "View all tools")} <ArrowRight aria-hidden />
                   </Link>
                 </div>
