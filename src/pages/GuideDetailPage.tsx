@@ -277,8 +277,13 @@ const GuideDetailPage = () => {
 
             {/* Mobile TOC */}
             {!isStory && h2Toc.length > 1 && (
-              <div className="ga-mobile-toc">
-                <p className="ga-mobile-toc-label">{t("Sommaire", "Contents")}</p>
+              <details className="ga-mobile-toc">
+                <summary className="ga-mobile-toc-summary">
+                  <span>{t("Sommaire", "Contents")}</span>
+                  <span className="ga-mobile-toc-count">
+                    {h2Toc.length} {t("sections", "sections")}
+                  </span>
+                </summary>
                 <nav className="ga-mobile-toc-list" aria-label={t("Sommaire de l’article", "Article contents")}>
                   {h2Toc.map((item) => (
                     <a
@@ -290,7 +295,7 @@ const GuideDetailPage = () => {
                     </a>
                   ))}
                 </nav>
-              </div>
+              </details>
             )}
 
             {/* Article body */}

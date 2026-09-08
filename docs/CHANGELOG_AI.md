@@ -1,5 +1,12 @@
 # ToolTrim — AI Changelog
 
+## 2026-09-08 — Guides mobile-first
+
+- Barre de filtres sticky positionnée sous le header mobile au lieu de le recouvrir.
+- Ajout d'une recherche locale de guides, utilisable dans la barre de commandes et dimensionnée pour 320–390 px.
+- Sommaire mobile replié par défaut afin que le contenu de l'article commence immédiatement après le hero.
+- Conservation du chargement local-first des listes et articles lorsque Supabase est indisponible.
+
 ## 2026-09-08 — Navigation et chargement mobile
 
 - Navigation basse ramenée à une seule rangée compacte ; accès Ma stack conservé dans le header mobile.

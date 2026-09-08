@@ -8,6 +8,7 @@ import ToolCardImage from "@/components/tool/ToolCardImage";
 import { useCatalogStickyToolbar } from "@/hooks/useCatalogStickyToolbar";
 import CatalogToolbar from "@/components/catalog/CatalogToolbar";
 import Breadcrumb from "@/components/Breadcrumb";
+import { Search, X } from "@/lib/icons";
 
 /* ─────────────────────────────────────────────────────────────────────────────
    GuidesPage — editorial redesign v2
@@ -119,11 +120,12 @@ const GuidesPage = () => {
 
   const [activeFilter, setActiveFilter] = useState("all");
   const [sortBy, setSortBy] = useState("recent");
+  const [searchQuery, setSearchQuery] = useState("");
   const [showAll, setShowAll] = useState(false);
   const { toolbarStuck, toolbarSentinelRef } = useCatalogStickyToolbar();
 
   /* Reset pagination on filter/sort change */
-  useEffect(() => { setShowAll(false); }, [activeFilter, sortBy]);
+  useEffect(() => { setShowAll(false); }, [activeFilter, sortBy, searchQuery]);
 
 
   useEffect(() => {
@@ -176,12 +178,17 @@ const GuidesPage = () => {
 
   /* ── Filtered + sorted posts ── */
   const filteredPosts = useMemo(() => {
+    const normalizedQuery = searchQuery.trim().toLocaleLowerCase(lang);
     const matched = visiblePosts.filter((post) => {
       if (post.category === "Stories") return false;
-      return matchesFilter(post, activeFilter);
+      if (!matchesFilter(post, activeFilter)) return false;
+      if (!normalizedQuery) return true;
+      const searchable = `${post.title ?? ""} ${post.excerpt ?? ""} ${(post.tags ?? []).join(" ")} ${post.category ?? ""}`
+        .toLocaleLowerCase(lang);
+      return searchable.includes(normalizedQuery);
     });
     return sortPosts(matched, sortBy);
-  }, [visiblePosts, activeFilter, sortBy]);
+  }, [visiblePosts, activeFilter, sortBy, searchQuery, lang]);
 
   const listPosts   = filteredPosts;
   const visibleList = showAll ? listPosts : listPosts.slice(0, PAGE_SIZE);
@@ -206,6 +213,7 @@ const GuidesPage = () => {
           <div ref={toolbarSentinelRef} aria-hidden="true" style={{ height: 1 }} />
 
           <CatalogToolbar
+            className="gi-catalog-toolbar"
             stuck={toolbarStuck}
             navLabel={t("Filtrer les guides par thème", "Filter guides by topic") as string}
             pills={filters.map((filter) => ({
@@ -217,6 +225,33 @@ const GuidesPage = () => {
             panelTitle={t("Filtres", "Filters")as string}
             closeLabel={t("Fermer", "Close") as string}
             moreLabel={t("Plus de filtres", "More filters") as string}
+            extraTail={(
+              <div className="tt-catalog-inline-search tt-catalog-inline-search--open">
+                <div className="tt-catalog-inline-search-field">
+                  <Search size={17} aria-hidden />
+                  <input
+                    id="guide-search"
+                    name="guide-search"
+                    type="search"
+                    value={searchQuery}
+                    onChange={(event) => setSearchQuery(event.target.value)}
+                    placeholder={t("Rechercher un guide", "Search guides") as string}
+                    className="tt-catalog-inline-search-input"
+                    autoComplete="off"
+                  />
+                  {searchQuery && (
+                    <button
+                      type="button"
+                      onClick={() => setSearchQuery("")}
+                      className="tt-catalog-inline-search-clear"
+                      aria-label={t("Effacer la recherche", "Clear search") as string}
+                    >
+                      <X size={15} aria-hidden />
+                    </button>
+                  )}
+                </div>
+              </div>
+            )}
             sort={{
               value: sortBy,
               options: sortOptions.map((option) => ({ value: option.id, label: option.label })),

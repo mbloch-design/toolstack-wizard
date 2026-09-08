@@ -10863,19 +10863,49 @@
   .ga-mobile-toc {
     display: none;
     margin-bottom: var(--space-3xl);
-    padding-bottom: var(--space-xl);
-    border-bottom: 1px solid var(--color-border-soft);
+    border: 1px solid var(--color-border-soft);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+    overflow: hidden;
   }
-  .ga-mobile-toc-label {
-    margin-bottom: var(--space-md);
+  .ga-mobile-toc-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    min-height: 54px;
+    padding: 0 var(--space-md);
     font-family: var(--font-ui);
-    font-size: 12px;
-    font-weight: 500;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-text);
+    cursor: pointer;
+    list-style: none;
+  }
+  .ga-mobile-toc-summary::-webkit-details-marker {
+    display: none;
+  }
+  .ga-mobile-toc-summary::after {
+    content: "+";
+    flex: 0 0 auto;
     color: var(--color-muted);
+    font-size: 18px;
+    font-weight: 400;
+  }
+  .ga-mobile-toc[open] .ga-mobile-toc-summary::after {
+    content: "−";
+  }
+  .ga-mobile-toc-count {
+    margin-left: auto;
+    color: var(--color-muted);
+    font-size: 12px;
+    font-weight: 450;
   }
   .ga-mobile-toc-list {
     display: grid;
     gap: 0;
+    padding: 0 var(--space-md) var(--space-sm);
+    border-top: 1px solid var(--color-border-soft);
   }
   .ga-mobile-toc-link {
     display: block;
@@ -21485,8 +21515,33 @@ section[id] {
 }
 
 @media (max-width: 560px) {
+  .tt-catalog-page .gi-catalog-toolbar.tt-sticky-toolbar,
+  .tt-catalog-page .gi-catalog-toolbar.tt-sticky-toolbar--stuck {
+    top: 56px;
+    z-index: 19;
+  }
+  .gi-catalog-toolbar .tt-catalog-toolbar-tail {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    width: 100%;
+  }
+  .gi-catalog-toolbar .tt-catalog-inline-search {
+    min-width: 0;
+  }
+  .gi-catalog-toolbar .tt-catalog-inline-search-field {
+    width: 100%;
+  }
+  .tt-catalog-page .gi-catalog-toolbar .tt-catalog-sort-control {
+    width: 118px;
+    min-width: 118px;
+    padding-inline: 12px;
+  }
+  .tt-catalog-page .gi-catalog-toolbar .tt-catalog-sort-select {
+    width: 82px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
   .tt-catalog-page .tt-sticky-toolbar--stuck {
-    top: 0;
     border-radius: 0;
   }
   .tt-catalog-toolbar .tf-dd-trigger,
