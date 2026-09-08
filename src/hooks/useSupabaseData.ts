@@ -408,15 +408,19 @@ export function useTools() {
 
 let _toolSummariesCache: ToolSummary[] | null = null;
 
-export function useToolSummaries() {
+interface RefreshOptions {
+  refreshRemote?: boolean;
+}
+
+export function useToolSummaries({ refreshRemote = true }: RefreshOptions = {}) {
   // Same rationale as useCategories above: don't swap the alternatives/
   // summaries list out from under an already-painted SSR'd tool page.
   const isSsrPage = useContext(SsrToolContext) !== undefined;
   const [tools, setTools] = useState<ToolSummary[]>(_toolSummariesCache ?? staticToolSummaries);
-  const [loading, setLoading] = useState(!_toolSummariesCache && !isSsrPage);
+  const [loading, setLoading] = useState(refreshRemote && !_toolSummariesCache && !isSsrPage);
 
   useEffect(() => {
-    if (_toolSummariesCache || isSsrPage) return;
+    if (!refreshRemote || _toolSummariesCache || isSsrPage) return;
     (async () => {
       const { data, error } = await supabase
         .from("tools")
@@ -462,7 +466,7 @@ export function useToolSummaries() {
       }
       setLoading(false);
     })();
-  }, []);
+  }, [isSsrPage, refreshRemote]);
 
   return { tools, loading };
 }
@@ -530,7 +534,7 @@ export function useToolBySlug(slug: string | undefined) {
   return { tool, loading };
 }
 
-export function usePosts(lang: string) {
+export function usePosts(lang: string, { refreshRemote = true }: RefreshOptions = {}) {
   // On an SSR'd tool page, ToolDetailPage already has its relatedPosts
   // pre-computed server-side (see SsrRelatedPostsContext) and never reads
   // this hook's own `posts` value — so fetching the full posts dataset
@@ -551,11 +555,13 @@ export function usePosts(lang: string) {
       // Start the remote refresh immediately, but never make local editorial
       // content wait for Supabase. This keeps guides usable when the project is
       // slow, paused or restricted by its egress quota.
-      const remotePostsPromise = supabase
-        .from("posts")
-        .select("*")
-        .eq("lang", lang)
-        .order("date", { ascending: false });
+      const remotePostsPromise = refreshRemote
+        ? supabase
+          .from("posts")
+          .select("*")
+          .eq("lang", lang)
+          .order("date", { ascending: false })
+        : null;
       const localPosts = await loadLocalPosts(lang);
 
       if (cancelled) return;
@@ -563,6 +569,7 @@ export function usePosts(lang: string) {
       setPosts(localPosts);
       setLoading(false);
 
+      if (!remotePostsPromise) return;
       const { data, error } = await remotePostsPromise;
       if (cancelled) return;
 
@@ -578,12 +585,12 @@ export function usePosts(lang: string) {
     return () => {
       cancelled = true;
     };
-  }, [lang]);
+  }, [lang, refreshRemote, skip]);
 
   return { posts, loading };
 }
 
-export function usePostBySlug(slug: string | undefined, lang: string) {
+export function usePostBySlug(slug: string | undefined, lang: string, { refreshRemote = true }: RefreshOptions = {}) {
   // When the post was server-rendered for this exact slug (see renderGuidePage),
   // seed from the SSR context and skip the client fetch so hydration matches.
   const ssrPost = useContext(SsrPostContext);
@@ -599,12 +606,14 @@ export function usePostBySlug(slug: string | undefined, lang: string) {
     (async () => {
       setLoading(true);
 
-      const remotePostPromise = supabase
-        .from("posts")
-        .select("*")
-        .eq("slug", slug)
-        .eq("lang", lang)
-        .maybeSingle();
+      const remotePostPromise = refreshRemote
+        ? supabase
+          .from("posts")
+          .select("*")
+          .eq("slug", slug)
+          .eq("lang", lang)
+          .maybeSingle()
+        : null;
       const localPosts = await loadLocalPosts(lang);
       if (cancelled) return;
 
@@ -614,6 +623,11 @@ export function usePostBySlug(slug: string | undefined, lang: string) {
         setLoading(false);
       }
 
+      if (!remotePostPromise) {
+        setPost(localPost);
+        setLoading(false);
+        return;
+      }
       const { data } = await remotePostPromise;
       if (cancelled) return;
 
@@ -624,7 +638,7 @@ export function usePostBySlug(slug: string | undefined, lang: string) {
     return () => {
       cancelled = true;
     };
-  }, [slug, lang]);
+  }, [slug, lang, refreshRemote, ssrMatches, ssrPost]);
 
   return { post, loading };
 }

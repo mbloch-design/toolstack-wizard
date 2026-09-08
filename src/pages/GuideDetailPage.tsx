@@ -19,9 +19,9 @@ import DOMPurify from "dompurify";
 const GuideDetailPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const { lang, t, prefix } = useLang();
-  const { post, loading } = usePostBySlug(slug, lang);
-  const { posts: allPosts } = usePosts(lang);
-  const { tools } = useToolSummaries();
+  const { post, loading } = usePostBySlug(slug, lang, { refreshRemote: false });
+  const { posts: allPosts } = usePosts(lang, { refreshRemote: false });
+  const { tools } = useToolSummaries({ refreshRemote: false });
   const mentionedTools = useArticleTools(post, tools);
   const [readProgress, setReadProgress] = useState(0);
   const [showBackToTop, setShowBackToTop] = useState(false);
@@ -471,7 +471,7 @@ function ToolRow({ tool, prefix, lang }: { tool: ToolSummary; prefix: string; la
         border: "1px solid var(--color-border)", background: "var(--color-bg)",
         display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0,
       }}>
-        <ToolLogo tool={tool} size={22} />
+        <ToolLogo tool={tool} size={22} allowRemoteSources={false} />
       </div>
       <div>
         <p style={{ fontFamily: "var(--font-brand)", fontSize: 15, fontWeight: 600, letterSpacing: "-0.025em", color: "var(--color-text)", marginBottom: 3 }}>

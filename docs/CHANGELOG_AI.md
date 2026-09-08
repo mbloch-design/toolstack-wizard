@@ -7,6 +7,8 @@
 - Sommaire mobile replié par défaut afin que le contenu de l'article commence immédiatement après le hero.
 - Conservation du chargement local-first des listes et articles lorsque Supabase est indisponible.
 - Hydratation des articles stabilisée en conservant les attributs de liens externes et en différant les blocs secondaires alimentés côté client.
+- Les pages Guides utilisent désormais exclusivement le catalogue éditorial local au runtime et ne déclenchent plus de requêtes Supabase bloquantes.
+- Les logos des outils mentionnés ne testent plus de CDN externes depuis un article : asset local ou initiale de secours uniquement.
 
 ## 2026-09-08 — Navigation et chargement mobile
 

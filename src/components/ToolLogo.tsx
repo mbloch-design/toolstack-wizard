@@ -8,6 +8,7 @@ interface ToolLogoProps {
   tool: LogoTool;
   size?: number;
   className?: string;
+  allowRemoteSources?: boolean;
 }
 
 /**
@@ -25,8 +26,13 @@ const SOURCE_TIMEOUT_MS = 1500;
  */
 const OBSERVER_GRACE_MS = 4000;
 
-const ToolLogo = ({ tool, size = 32, className = "" }: ToolLogoProps) => {
-  const sources = useMemo(() => getToolLogoSources(tool, size <= 32 ? 32 : size <= 64 ? 64 : 128), [tool, size]);
+const ToolLogo = ({ tool, size = 32, className = "", allowRemoteSources = true }: ToolLogoProps) => {
+  const sources = useMemo(() => {
+    const candidates = getToolLogoSources(tool, size <= 32 ? 32 : size <= 64 ? 64 : 128);
+    return allowRemoteSources
+      ? candidates
+      : candidates.filter((source) => source.startsWith("/") || source.startsWith("data:"));
+  }, [allowRemoteSources, tool, size]);
   const sourceKey = sources.join("|");
   const [sourceIndex, setSourceIndex] = useState(0);
   const [loaded, setLoaded] = useState(false);

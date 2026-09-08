@@ -30,7 +30,13 @@ test.describe("Guides — parcours mobile-first", () => {
 
   test("l'article anglais hydraté directement reste stable", async ({ page }) => {
     const pageErrors: string[] = [];
+    const editorialApiRequests: string[] = [];
     page.on("pageerror", (error) => pageErrors.push(error.message));
+    page.on("request", (request) => {
+      if (/\/rest\/v1\/(posts|tools)(?:\?|$)/.test(request.url())) {
+        editorialApiRequests.push(request.url());
+      }
+    });
     await page.route("**/*.supabase.co/**", (route) => route.abort("failed"));
 
     await page.goto("/en/guide/andrew-huberman-kit-systeme-audience", {
@@ -42,5 +48,6 @@ test.describe("Guides — parcours mobile-first", () => {
     );
     await expect(page.locator(".ga-content p")).toHaveCount(48);
     expect(pageErrors).toEqual([]);
+    expect(editorialApiRequests).toEqual([]);
   });
 });

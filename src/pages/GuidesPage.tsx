@@ -114,8 +114,8 @@ function formatPostDate(date: string | undefined, lang: string): string | null {
 /* ═══════════════════════════════════════════════════════════════════════════ */
 const GuidesPage = () => {
   const { lang, t, prefix } = useLang();
-  const { posts, loading } = usePosts(lang);
-  const { tools } = useToolSummaries();
+  const { posts, loading } = usePosts(lang, { refreshRemote: false });
+  const { tools } = useToolSummaries({ refreshRemote: false });
   const [localeFallbackPosts, setLocaleFallbackPosts] = useState<Post[]>([]);
 
   const [activeFilter, setActiveFilter] = useState("all");
