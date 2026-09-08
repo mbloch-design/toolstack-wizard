@@ -486,32 +486,39 @@ export function useToolBySlug(slug: string | undefined) {
 
     (async () => {
       setLoading(true);
-      const useCatalogProjection = import.meta.env.VITE_CATALOG_PROJECTION_FICHE !== "false";
-      if (useCatalogProjection) {
-        try {
-          const { fetchProjectedTool } = await import("@/lib/catalogProjection");
-          const projectedTool = await fetchProjectedTool(slug);
-          if (cancelled) return;
-          if (projectedTool) {
-            setTool(projectedTool);
-            setLoading(false);
-            return;
+      // Refresh remotely in parallel, but never keep client navigation behind
+      // Supabase. The local catalogue is the immediate rendering source.
+      const remoteToolPromise = (async (): Promise<Tool | null> => {
+        const useCatalogProjection = import.meta.env.VITE_CATALOG_PROJECTION_FICHE !== "false";
+        if (useCatalogProjection) {
+          try {
+            const { fetchProjectedTool } = await import("@/lib/catalogProjection");
+            const projectedTool = await fetchProjectedTool(slug);
+            if (projectedTool) return projectedTool;
+          } catch (error) {
+            console.warn("Fiche: projection catalog_api indisponible, fallback historique", error);
           }
-        } catch (error) {
-          console.warn("Fiche: projection catalog_api indisponible, fallback historique", error);
         }
+
+        let { data } = await supabase.from("tools").select("*").eq("slug", slug).maybeSingle();
+        if (!data) ({ data } = await supabase.from("tools").select("*").eq("id", slug).maybeSingle());
+        return data ? mapToolFromJson(data) : null;
+      })();
+
+      const localTools = await loadLocalTools();
+      if (cancelled) return;
+
+      const localTool = localTools.find((t) => t.slug === slug || t.id === slug) || null;
+      if (localTool) {
+        setTool(localTool);
+        setLoading(false);
       }
 
-      let { data } = await supabase.from("tools").select("*").eq("slug", slug).maybeSingle();
-      if (!data) ({ data } = await supabase.from("tools").select("*").eq("id", slug).maybeSingle());
+      const remoteTool = await remoteToolPromise;
       if (cancelled) return;
-      if (data) setTool(mapToolFromJson(data));
-      else {
-        const localTools = await loadLocalTools();
-        if (cancelled) return;
-        const found = localTools.find((t) => t.slug === slug || t.id === slug);
-        setTool(found || null);
-      }
+
+      if (remoteTool) setTool(remoteTool);
+      else if (!localTool) setTool(null);
       setLoading(false);
     })();
 

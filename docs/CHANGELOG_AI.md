@@ -1,5 +1,11 @@
 # ToolTrim — AI Changelog
 
+## 2026-09-08 — Navigation et chargement mobile
+
+- Navigation basse ramenée à une seule rangée compacte ; accès Ma stack conservé dans le header mobile.
+- Recherche mobile corrigée : déclencheur circulaire, placeholder adapté et actions Effacer/Fermer toujours accessibles.
+- Les fiches ouvertes par navigation client affichent le catalogue local sans attendre le rafraîchissement Supabase.
+
 ## 2026-09-07 · Ajout de la fiche CommuteBar
 
 - CommuteBar rejoint le catalogue avec ses fonctions macOS, son prix à vie, quatre médias produit officiels et sa notation ToolTrim sur cinq axes.

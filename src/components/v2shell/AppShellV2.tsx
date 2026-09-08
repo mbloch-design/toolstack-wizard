@@ -292,22 +292,20 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
         </main>
       </div>
 
-      {/* ── Mobile bottom navigation (hidden on desktop via CSS) ──
-          Minimal flat tab row with a small top indicator on the active item,
-          plus a subtle "Ma stack" pill floating just above the row. */}
+      {/* ── Mobile bottom navigation (hidden on desktop via CSS) ── */}
       <nav className="asv2-bottomnav" aria-label={t("Navigation", "Navigation")}>
-        <Link to={`${prefix}/ma-stack`} className="asv2-bn-cta" aria-label={cartLabel}>
-          <Bookmark style={{ width: 16, height: 16 }} aria-hidden />
-          <span>{cartLabel}</span>
-        </Link>
-
         <div className="asv2-bn-row">
           {NAV_ITEMS.map((item) => {
             const isActive = item.id === "home"
               ? relPath === ""
               : item.match.some((m) => relPath === m || relPath.startsWith(m));
             return (
-              <Link key={item.id} to={`${prefix}${item.to}`} className={`asv2-bn-item${isActive ? " asv2-bn-item--active" : ""}`}>
+              <Link
+                key={item.id}
+                to={`${prefix}${item.to}`}
+                className={`asv2-bn-item${isActive ? " asv2-bn-item--active" : ""}`}
+                aria-current={isActive ? "page" : undefined}
+              >
                 <span className="asv2-bn-indicator" aria-hidden />
                 <item.Icon style={{ width: 21, height: 21 }} />
                 <span className="asv2-bn-label">{t(item.labelFr, item.labelEn)}</span>

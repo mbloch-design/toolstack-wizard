@@ -161,7 +161,7 @@ export function SearchModal({ onClose }: { onClose: () => void }) {
       <div ref={dialogRef} className="gs-dialog" role="dialog" aria-modal="true" aria-label={t("Recherche globale", "Global search")}>
         <header className="gs-searchbar">
           <Search aria-hidden />
-          <input ref={inputRef} value={query} onChange={(event) => setQuery(event.target.value)} onKeyDown={handleInputKeyDown} placeholder={t("Rechercher un outil, une catégorie ou un guide", "Search for a tool, category or guide")} aria-label={t("Rechercher", "Search")} autoComplete="off" />
+          <input ref={inputRef} value={query} onChange={(event) => setQuery(event.target.value)} onKeyDown={handleInputKeyDown} placeholder={t("Rechercher un outil…", "Search for a tool…")} aria-label={t("Rechercher", "Search")} autoComplete="off" />
           {query && <button className="gs-icon-button" onClick={() => setQuery("")} aria-label={t("Effacer", "Clear")}><X /></button>}
           <button className="gs-icon-button" onClick={onClose} aria-label={t("Fermer", "Close")}><X /></button>
         </header>

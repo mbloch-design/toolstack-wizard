@@ -17154,9 +17154,8 @@
   @media (max-width: 640px) {
     .gs-overlay { padding: 0; }
     .gs-dialog { width: 100vw; height: 100dvh; border: 0; border-radius: 0; }
-    .gs-searchbar { grid-template-columns: auto minmax(0, 1fr) auto; }
+    .gs-searchbar { grid-template-columns: auto minmax(0, 1fr) auto auto; }
     .gs-searchbar input { font-size: 17px; }
-    .gs-searchbar > .gs-icon-button:first-of-type { display: none; }
     .gs-logo-grid, .gs-category-grid, .gs-collection-grid, .gs-article-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .gs-logo-grid.is-compact { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .gs-tool-tile, .gs-category-tile { min-height: 112px; }
@@ -25248,6 +25247,20 @@ section[id] {
 
 @media (max-width: 440px) {
   .asv2-search > span:not(.asv2-search-action) { display: none; }
+  .asv2-search {
+    flex: 0 0 42px;
+    width: 42px;
+    min-width: 42px;
+    max-width: 42px;
+    padding: 0;
+    justify-content: center;
+    gap: 0;
+    background: transparent;
+  }
+  .asv2-search span.asv2-search-action {
+    width: 42px;
+    height: 42px;
+  }
 }
 
 /* ══════════════════════════════════════════════════════════════════════
@@ -25260,23 +25273,20 @@ section[id] {
 
 @media (max-width: 640px) {
   /* Desktop sidebar is replaced by the mobile bottom bar */
-  .asv2-topbar-cta { display: none; }
-  .asv2-content { padding-bottom: calc(118px + env(safe-area-inset-bottom)); }
+  .asv2-topbar-cta { display: inline-flex; }
+  .asv2-content { padding-bottom: calc(68px + env(safe-area-inset-bottom)); }
 
   .asv2-bottomnav {
     display: flex;
-    flex-direction: column;
     align-items: stretch;
     position: fixed;
     left: 0;
     right: 0;
     bottom: 0;
     z-index: 200;
-    padding: 10px 0 calc(6px + env(safe-area-inset-bottom));
+    padding: 0 0 calc(6px + env(safe-area-inset-bottom));
     background: var(--color-surface);
-    border-top-left-radius: 22px;
-    border-top-right-radius: 22px;
-    box-shadow: 0 -1px 0 var(--color-border-soft), 0 -6px 24px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 -1px 0 var(--color-border-soft), 0 -4px 16px rgba(0, 0, 0, 0.04);
   }
 
   /* Subtle "Ma stack" pill, centered above the divider (like the ref chip) */
@@ -25301,10 +25311,9 @@ section[id] {
 
   .asv2-bn-row {
     display: flex;
+    width: 100%;
     justify-content: space-around;
     align-items: stretch;
-    border-top: 1px solid var(--color-border-soft);
-    padding-top: 8px;
   }
 
   .asv2-bn-item {
@@ -25314,7 +25323,8 @@ section[id] {
     flex-direction: column;
     align-items: center;
     gap: 5px;
-    padding: 8px 0 2px;
+    min-height: 60px;
+    padding: 9px 0 4px;
     text-decoration: none;
     color: var(--color-muted);
     transition: color 140ms ease-out;
@@ -25325,7 +25335,7 @@ section[id] {
   /* Small top indicator bar on the active tab (sits on the divider) */
   .asv2-bn-indicator {
     position: absolute;
-    top: -8px;
+    top: 0;
     width: 26px;
     height: 3px;
     border-radius: var(--radius-pill);
@@ -25343,6 +25353,16 @@ section[id] {
     letter-spacing: -0.01em;
   }
   .asv2-bn-item--active .asv2-bn-label { font-weight: 650; }
+}
+
+@media (max-width: 440px) {
+  .asv2-topbar-cta {
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    justify-content: center;
+  }
+  .asv2-topbar-cta > span { display: none; }
 }
 
 /* ══════════════════════════════════════════════════════════════════════
