@@ -6,7 +6,7 @@
 - Ajout d'une recherche locale de guides, utilisable dans la barre de commandes et dimensionnée pour 320–390 px.
 - Sommaire mobile replié par défaut afin que le contenu de l'article commence immédiatement après le hero.
 - Conservation du chargement local-first des listes et articles lorsque Supabase est indisponible.
-- Hydratation des articles stabilisée en conservant les attributs de liens externes lors de la sanitation côté client.
+- Hydratation des articles stabilisée en conservant les attributs de liens externes et en différant les blocs secondaires alimentés côté client.
 
 ## 2026-09-08 — Navigation et chargement mobile
 

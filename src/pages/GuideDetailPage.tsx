@@ -27,6 +27,11 @@ const GuideDetailPage = () => {
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [copied, setCopied] = useState(false);
   const [activeHeading, setActiveHeading] = useState<string | null>(null);
+  const [hasHydrated, setHasHydrated] = useState(false);
+
+  useEffect(() => {
+    setHasHydrated(true);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -343,7 +348,7 @@ const GuideDetailPage = () => {
             </div>
 
             {/* Mentioned tools — editorial rows */}
-            {!isStory && mentionedTools.length > 0 && (
+            {hasHydrated && !isStory && mentionedTools.length > 0 && (
               <div className="ga-tools-section">
                 <p className="ga-tools-section-label">{t("Outils mentionnés", "Tools mentioned")}</p>
                 {mentionedTools.slice(0, 6).map((tool) => (
@@ -353,7 +358,7 @@ const GuideDetailPage = () => {
             )}
 
             {/* Related guides */}
-            {!isStory && relatedPosts.length > 0 && (
+            {hasHydrated && !isStory && relatedPosts.length > 0 && (
               <div className="ga-related">
                 <p className="ga-related-label">{t("À lire ensuite", "Read next")}</p>
                 <div className="ga-related-grid">
