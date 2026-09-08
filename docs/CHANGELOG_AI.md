@@ -4238,3 +4238,9 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Remplacement des anciens slugs outils `anthropic` et `descript` par `claude` et `descript-ai` dans le maillage éditorial.
 - Correction des liens de catégories de l'accueil et retrait de l'alias `anthropic` des catégories et stacks qui continuaient à l'exposer dans le HTML prérendu.
 - Ajout d'un contrôle de régression dédié à ces trois familles d'alias.
+
+# 2026-09-08 — Canonicalisation des URLs de tracking
+
+- Suppression des règles `robots.txt` qui bloquaient les paramètres `utm_source`, `utm_medium` et `utm_campaign` avant la lecture du canonical.
+- Conservation des blocages des routes API, selector et diagnostic.
+- Ajout d'un test de régression vérifiant que les variantes de tracking restent explorables tout en pointant vers le canonical sans paramètres déjà généré par l'application.
