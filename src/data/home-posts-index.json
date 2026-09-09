@@ -1,6 +1,28 @@
 {
   "fr": [
     {
+      "slug": "alternatives-freshservice-2026",
+      "title": "Alternatives à Freshservice : que choisir selon ce qui te bloque",
+      "date": "2026-09-09",
+      "tags": [
+        "freshservice",
+        "itsm",
+        "helpdesk",
+        "cmdb",
+        "gestion d’actifs",
+        "itil 4",
+        "esm",
+        "alternatives",
+        "comparatif",
+        "ops",
+        "2026",
+        "budget mensuel",
+        "snipe-it",
+        "deskpro"
+      ],
+      "thumbnail": null
+    },
+    {
       "slug": "chatgpt-plus-utile-ou-inutile",
       "title": "GPT-6 Astra : ChatGPT Pro vaut-il vraiment son prix ?",
       "date": "2026-09-07",
@@ -169,24 +191,6 @@
         "marketing digital"
       ],
       "thumbnail": null
-    },
-    {
-      "slug": "conseils-ia-freelances-2026",
-      "title": "Conseils IA pour freelances en 2026 : construire une stack utile, sans payer deux fois",
-      "date": "2026-04-29",
-      "tags": [
-        "ia freelance",
-        "chatgpt",
-        "claude",
-        "gemini",
-        "stack ia",
-        "productivité",
-        "anti-gaspillage",
-        "2026",
-        "prompts",
-        "workflows ia"
-      ],
-      "thumbnail": "/editorial/conseils-ia-freelances-2026/surcharge-outils-ia.jpg"
     }
   ],
   "en": [

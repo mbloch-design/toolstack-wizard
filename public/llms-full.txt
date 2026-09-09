@@ -3829,7 +3829,7 @@
     "monthly_price_eur": 39,
     "pricing": {
       "free": "Pas de plan gratuit permanent : essai disponible.",
-      "paid": "Team 39$/agent/mois (facturation annuelle) ; Professional 59$/agent/mois ; Enterprise 99$/agent/mois. Déploiement on-premise disponible en alternative au cloud."
+      "paid": "Team 39$/agent/mois (minimum 5 agents) ; Professional 59$/agent/mois (minimum 10) ; Enterprise 99$/agent/mois (minimum 25). Déploiement on-premise disponible en alternative au cloud."
     },
     "description_fr": "Helpdesk omnicanal avec déploiement cloud ou on-premise au choix.",
     "description_en": "Omnichannel helpdesk with cloud or on-premise deployment of your choice."
@@ -5416,7 +5416,7 @@
     "monthly_price_eur": 19,
     "pricing": {
       "free": "Pas de plan gratuit permanent : essai de 14 jours.",
-      "paid": "Starter à partir de 19€/agent/mois (facturation annuelle, 29€ en mensuel) ; Growth 49€/59€ ; Pro 95€ ; Enterprise 119€/agent/mois."
+      "paid": "Starter 19$/agent/mois (facturation annuelle, 29$ en mensuel) ; Growth 49$/59$ ; Pro 99$ ; Enterprise sur devis."
     },
     "description_fr": "Helpdesk IT et ITSM avec gestion d'actifs, conforme ITIL, pour équipes support qui dépassent le ticketing basique.",
     "description_en": "IT helpdesk and ITSM with asset management, ITIL-aligned, for support teams outgrowing basic ticketing."
@@ -14189,7 +14189,7 @@
     "monthly_price_eur": 0,
     "pricing": {
       "free": "Version auto-hébergée gratuite et open source, utilisateurs et actifs illimités.",
-      "paid": "Cloud géré : Self-Hosted Hosting 39,99$/mois, Basic Hosting 99,99$/mois, Small Business Hosting 249,99$/mois (forfaits selon volume d'actifs, pas par utilisateur)."
+      "paid": "Cloud géré : Basic Hosting 39,99$/mois ou 399,99$/an ; Small Business 99,99$/mois ou 999,99$/an ; Dedicated 249,99$/mois ou 2499,99$/an. Utilisateurs et actifs illimités sur tous les plans."
     },
     "description_fr": "Gestion d'actifs IT open source : suivi du matériel, licences et consommables, auto-hébergeable gratuitement ou en cloud payant.",
     "description_en": "Open-source IT asset management: hardware, license and consumable tracking, free self-hosted or paid cloud."

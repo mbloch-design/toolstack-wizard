@@ -9428,10 +9428,10 @@
     "shortDescriptionEn": "Omnichannel helpdesk with cloud or on-premise deployment of your choice.",
     "pricing": {
       "free": "Pas de plan gratuit permanent : essai disponible.",
-      "paid": "Team 39$/agent/mois (facturation annuelle) ; Professional 59$/agent/mois ; Enterprise 99$/agent/mois. Déploiement on-premise disponible en alternative au cloud."
+      "paid": "Team 39$/agent/mois (minimum 5 agents) ; Professional 59$/agent/mois (minimum 10) ; Enterprise 99$/agent/mois (minimum 25). Déploiement on-premise disponible en alternative au cloud."
     },
     "defaultMonthlyPrice": 39,
-    "compareMonthlyPrice": 36,
+    "compareMonthlyPrice": 39,
     "affiliateLink": "https://deskpro.com",
     "websiteUrl": "https://deskpro.com",
     "ogImageUrl": "https://tooltrim.com/og-screenshots/deskpro.jpg",
@@ -13377,10 +13377,10 @@
     "shortDescriptionEn": "IT helpdesk and ITSM with asset management, ITIL-aligned, for support teams outgrowing basic ticketing.",
     "pricing": {
       "free": "Pas de plan gratuit permanent : essai de 14 jours.",
-      "paid": "Starter à partir de 19€/agent/mois (facturation annuelle, 29€ en mensuel) ; Growth 49€/59€ ; Pro 95€ ; Enterprise 119€/agent/mois."
+      "paid": "Starter 19$/agent/mois (facturation annuelle, 29$ en mensuel) ; Growth 49$/59$ ; Pro 99$ ; Enterprise sur devis."
     },
     "defaultMonthlyPrice": 19,
-    "compareMonthlyPrice": 18,
+    "compareMonthlyPrice": 19,
     "affiliateLink": "https://freshworks.com/freshservice",
     "websiteUrl": "https://freshworks.com/freshservice",
     "ogImageUrl": "https://dam.freshworks.com/asset/aac3abf3-7dca-4397-b868-c29415ecebaa/ex-lp-og-image.webp",
@@ -34985,10 +34985,10 @@
     "shortDescriptionEn": "Open-source IT asset management: hardware, license and consumable tracking, free self-hosted or paid cloud.",
     "pricing": {
       "free": "Version auto-hébergée gratuite et open source, utilisateurs et actifs illimités.",
-      "paid": "Cloud géré : Self-Hosted Hosting 39,99$/mois, Basic Hosting 99,99$/mois, Small Business Hosting 249,99$/mois (forfaits selon volume d'actifs, pas par utilisateur)."
+      "paid": "Cloud géré : Basic Hosting 39,99$/mois ou 399,99$/an ; Small Business 99,99$/mois ou 999,99$/an ; Dedicated 249,99$/mois ou 2499,99$/an. Utilisateurs et actifs illimités sur tous les plans."
     },
     "defaultMonthlyPrice": 0,
-    "compareMonthlyPrice": 37,
+    "compareMonthlyPrice": 39.99,
     "affiliateLink": "https://snipeitapp.com",
     "websiteUrl": "https://snipeitapp.com",
     "ogImageUrl": "https://snipeitapp.com/img/desktop_snipe.png",

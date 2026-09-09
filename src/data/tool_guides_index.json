@@ -1,5 +1,16 @@
 {
   "byTool": {
+    "freshservice": {
+      "fr": [
+        {
+          "slug": "alternatives-freshservice-2026",
+          "title": "Alternatives à Freshservice : que choisir selon ce qui te bloque",
+          "date": "2026-09-09",
+          "category": "Comparatifs"
+        }
+      ],
+      "en": []
+    },
     "adobe-podcast-ai": {
       "fr": [
         {
@@ -344,6 +355,11 @@
     }
   },
   "byGuide": {
+    "fr:alternatives-freshservice-2026": {
+      "slug": "freshservice",
+      "name": "Freshservice",
+      "hasPricing": true
+    },
     "fr:adobe-podcast-ai-gratuit-alternatives-2026": {
       "slug": "adobe-podcast-ai",
       "name": "Adobe Podcast AI",
