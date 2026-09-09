@@ -178,6 +178,7 @@ export type ToolSummary = Pick<
   | "verticals"
   | "prescription_quality"
   | "relevantFor"
+  | "personas"
   | "freeAlternative"
   | "substitutable"
   | "betterAlternative"
@@ -246,6 +247,7 @@ const staticToolSummaries: ToolSummary[] = (toolsIndexJson as any[]).map((t: any
   verticals: t.verticals || [],
   prescription_quality: t.prescription_quality || null,
   relevantFor: t.relevantFor || t.relevant_for || [],
+  personas: t.personas || [],
   freeAlternative: t.freeAlternative || t.free_alternative || null,
   substitutable: t.substitutable ?? true,
   betterAlternative: t.betterAlternative || t.better_alternative || null,
@@ -469,7 +471,7 @@ export function useToolSummaries({ refreshRemote = true }: RefreshOptions = {}) 
     (async () => {
       const { data, error } = await supabase
         .from("tools")
-        .select("id, slug, name, category, short_description, short_description_en, pricing, default_monthly_price, affiliate_link, website_url, og_image_url, logo, covers, pros, pros_en, tool_type, host_app, bundle_parent, substitution_cluster_v2, functional_needs, verticals, prescription_quality, relevant_for, free_alternative, substitutable, better_alternative, published_at, works_with, form_factor")
+        .select("id, slug, name, category, short_description, short_description_en, pricing, default_monthly_price, affiliate_link, website_url, og_image_url, logo, covers, pros, pros_en, tool_type, host_app, bundle_parent, substitution_cluster_v2, functional_needs, verticals, prescription_quality, relevant_for, personas, free_alternative, substitutable, better_alternative, published_at, works_with, form_factor")
         .limit(5000);
 
       if (!error && data && data.length > 0) {
@@ -497,6 +499,7 @@ export function useToolSummaries({ refreshRemote = true }: RefreshOptions = {}) 
           verticals: t.verticals || [],
           prescription_quality: t.prescription_quality || null,
           relevantFor: t.relevant_for || [],
+          personas: t.personas || [],
           freeAlternative: t.free_alternative || null,
           substitutable: t.substitutable ?? true,
           betterAlternative: t.better_alternative || null,

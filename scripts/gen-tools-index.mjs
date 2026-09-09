@@ -56,6 +56,9 @@ const summaries = tools.map((tool, index) => {
     ...(tool.functional_needs?.length ? { functional_needs: tool.functional_needs } : {}),
     ...(tool.verticals?.length ? { verticals: tool.verticals } : {}),
     ...(tool.relevantFor?.length ? { relevantFor: tool.relevantFor } : {}),
+    // Les pages piliers persona filtrent sur ce champ. Sans lui dans l'index,
+    // le filtre tourne a vide cote application, meme si tools_v4.json le porte.
+    ...(tool.personas?.length ? { personas: tool.personas } : {}),
     ...(tool.freeAlternative ? { freeAlternative: tool.freeAlternative } : {}),
     ...(tool.substitutable === false ? { substitutable: false } : {}),
     ...(tool.betterAlternative ? { betterAlternative: tool.betterAlternative } : {}),

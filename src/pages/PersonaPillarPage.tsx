@@ -199,6 +199,15 @@ export default function PersonaPillarPage({ persona, lang }: Props) {
   const recommendedTools = useMemo(() => {
     if (!tools.length) return [];
     return tools
+      // Comparaison sensible a la casse, volontairement.
+      //
+      // `personas` porte deux taxonomies distinctes et disjointes : les 5 codes
+      // en majuscules, qui sont la vraie nomenclature persona, et un fouillis en
+      // minuscules ("theo", "designer", "ops") issu d'une autre passe de
+      // marquage. Les deux ne se recoupent sur aucun outil et ne veulent pas
+      // dire la meme chose : "theo" remonte Audacity et Beehiiv, "marc" remonte
+      // GitHub et Datadog pour un persona consultant. Elargir a la casse basse
+      // triple le volume et degrade la pertinence, donc on s'en tient aux codes.
       .filter((t: any) => Array.isArray(t.personas) && t.personas.includes(persona))
       .map((t: any) => ({ tool: t, score: computeToolTrimScore(t)?.score ?? 0 }))
       // Departage par nom pour que SSR et client produisent le meme ordre.
