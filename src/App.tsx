@@ -197,7 +197,7 @@ export const AppRoutes = () => (
       <Route path="tool/:slug/alternatives" element={<ToolDetailPage />} />
       <Route path="tool/:slug/avis" element={<LocalizedToolSubpage subpage="avis" />} />
       <Route path="tool/:slug/reviews" element={<LocalizedToolSubpage subpage="reviews" />} />
-      <Route path="tool/:slug/faq" element={<ToolDetailPage />} />
+      <Route path="tool/:slug/faq" element={<RedirectToolFaq />} />
       <Route path="outils/:slug" element={<RedirectOutils />} />
       <Route path="category" element={<CategoriesIndexPage />} />
       <Route path="category/:slug" element={<CategoryPage />} />
@@ -316,6 +316,11 @@ function LocalizedToolSubpage({ subpage }: { subpage: keyof typeof TOOL_SUBPAGE_
     return <Navigate to={`/${lang || "fr"}/tool/${slug}/${expected}`} replace />;
   }
   return <ToolDetailPage />;
+}
+
+function RedirectToolFaq() {
+  const { slug, lang } = useParams();
+  return <Navigate to={`/${lang || "en"}/tool/${slug}`} replace />;
 }
 
 /** Keep guide slugs canonical per language and avoid mixed-language duplicates */

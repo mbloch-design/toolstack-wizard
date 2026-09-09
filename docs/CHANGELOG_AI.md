@@ -24,6 +24,7 @@
 - Suppression de l’alias JavaScript figé datant de mai 2026 ; les déploiements Vercel immuables et les assets hashés restent la source de cache.
 - Le build SSR intermédiaire ne recopie plus `public/` : les médias sont émis une seule fois par le build client dans `dist/`.
 - Retrait de Selector et Results du graphe JavaScript public ; toutes les routes `/selector/*` convergent côté client vers Ma Stack comme elles le faisaient déjà au niveau Vercel.
+- Les anciennes sous-pages outils `/faq`, déjà absentes du sitemap et canoniques vers la fiche, redirigent désormais définitivement vers celle-ci et ne sont plus générées dans `dist`.
 
 ## 2026-09-08 — Remise à plat technique des Guides
 

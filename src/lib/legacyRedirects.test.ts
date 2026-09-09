@@ -41,6 +41,12 @@ describe("legacy article redirects", () => {
     );
   });
 
+  it("redirects duplicate tool FAQ pages to their canonical fiche", () => {
+    const redirect = redirectMap.get("/:lang(fr|en)/tool/:slug/faq");
+    expect(redirect?.destination).toBe("/:lang/tool/:slug");
+    expect(redirect?.permanent).toBe(true);
+  });
+
   it("keeps redirected audit landing aliases out of sitemap sources", () => {
     const sitemapSources = ["vite.config.ts", "supabase/functions/sitemap/index.ts"]
       .map((file) => fs.readFileSync(path.resolve(process.cwd(), file), "utf8"))

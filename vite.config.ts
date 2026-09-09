@@ -173,24 +173,15 @@ function buildToolMetaDesc(tool: any, lang: string): string {
   return `${base} ${tail}`.replace(/\s+/g, " ").trim().substring(0, 160);
 }
 
-/**
- * Same 4-question FAQPage shape used on both the canonical tool page and
- * its /faq sub-page — extracted to one function after a code review found
- * the two independently-maintained copies had already drifted (one used
- * a rounded price, the other didn't, so the two URLs disagreed on the
- * exact same question). `referMainPage` only exists because the /faq
- * sub-page's "worth it" fallback deliberately points back to "the main
- * page" while the canonical page's own fallback doesn't need to.
- */
+/** Four-question FAQPage schema embedded on the canonical tool page. */
 function buildToolFaqSchema(params: {
   name: string;
   isFr: boolean;
   tool: any;
   priceDisplay: number | null;
   slugToName: Record<string, string>;
-  referMainPage: boolean;
 }) {
-  const { name, isFr, tool, priceDisplay, slugToName, referMainPage } = params;
+  const { name, isFr, tool, priceDisplay, slugToName } = params;
   const verdictThreshold = (isFr ? tool.verdict?.threshold : tool.verdictEn?.threshold || tool.verdict?.threshold) || "";
   const altNames = (tool.alternatives || []).slice(0, 3)
     .map((id: string) => slugToName[id] || id).filter(Boolean);
@@ -234,8 +225,8 @@ function buildToolFaqSchema(params: {
         acceptedAnswer: {
           "@type": "Answer",
           text: verdictThreshold || (isFr
-            ? `Cela dépend de votre usage. Consultez notre verdict complet sur ${referMainPage ? "la page principale de" : "la page de"} ${name}.`
-            : `It depends on your usage. See our full verdict on ${name}'s ${referMainPage ? "main " : ""}page.`),
+            ? `Cela dépend de votre usage. Consultez notre verdict complet sur la page de ${name}.`
+            : `It depends on your usage. See our full verdict on ${name}'s page.`),
         },
       },
       {
@@ -828,7 +819,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             // the FAQ rich-result opportunity was missing exactly where it
             // matters. Shared with the /faq sub-page via buildToolFaqSchema —
             // real content already shown on the page, not invented for schema.
-            const mainFaqSchema = buildToolFaqSchema({ name, isFr, tool, priceDisplay, slugToName, referMainPage: false });
+            const mainFaqSchema = buildToolFaqSchema({ name, isFr, tool, priceDisplay, slugToName });
             const webPageSchema = {
               "@context": "https://schema.org",
               "@type": "WebPage",
@@ -919,7 +910,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           }
         }
 
-        // --- Prerender tool sub-pages: /prix, /alternatives, /faq, /avis ---
+        // --- Prerender canonical tool sub-pages: /prix, /alternatives, /avis ---
         // EN path overrides for FR-only slug names
         const EN_SUB_PATH: Record<string, string> = { prix: "pricing", avis: "reviews" };
 
@@ -987,24 +978,6 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
               return isFr
                 ? `Alternatives à ${name} sélectionnées par ToolTrim : comparaison des fonctionnalités, prix et positionnement pour chaque profil freelance.${altList}${freeAlt}`
                 : `${name} alternatives selected by ToolTrim: feature, pricing and positioning comparison for every freelance profile.${altList}${freeAlt}`;
-            },
-          },
-          {
-            path: "faq",
-            buildTitle: (name, isFr) => isFr
-              ? `${name} : questions fréquentes 2026 | ToolTrim`
-              : `${name} FAQ 2026 | ToolTrim`,
-            buildDesc: (name, _price, isFr) => isFr
-              ? `Toutes les questions fréquentes sur ${name} : prix, plans, alternatives, intégrations et conseils d'utilisation. Réponses ToolTrim 2026.`
-              : `All frequently asked questions about ${name}: pricing, plans, alternatives, integrations and usage tips. ToolTrim answers 2026.`,
-            buildBody: (name, price, isFr, tool) => {
-              const threshold = (isFr ? tool.verdict?.threshold : tool.verdictEn?.threshold || tool.verdict?.threshold) || "";
-              const soloNote = (isFr ? tool.soloRelevance : null) || "";
-              const thresholdPart = threshold ? ` ${threshold}` : "";
-              const soloPart = soloNote ? ` ${soloNote}` : "";
-              return isFr
-                ? `FAQ ToolTrim sur ${name} : combien ça coûte${price ? ` (${price}€/mois)` : ""}, quelles alternatives, comment annuler.${thresholdPart}${soloPart}`
-                : `ToolTrim FAQ for ${name}: how much does it cost${price ? ` (€${price}/month)` : ""}, what are the alternatives, how to cancel.${thresholdPart}`;
             },
           },
           {
@@ -1078,13 +1051,6 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
                 ],
               };
 
-              // FAQPage schema — /faq sub-page only, injected in static HTML
-              // so Google's first-pass crawler (no JS) can validate it.
-              // Shared with the main tool page via buildToolFaqSchema.
-              const faqSchema = sub.path === "faq"
-                ? buildToolFaqSchema({ name, isFr, tool, priceDisplay, slugToName, referMainPage: true })
-                : null;
-
               const subProductUrl = tool.websiteUrl || tool.affiliateLink || tool.website_url || tool.affiliate_link || "";
               const subScore = computeToolTrimScore(tool);
 
@@ -1120,27 +1086,11 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
                 publisher: { "@type": "Organization", name: "ToolTrim", url: BASE },
               };
 
-              // `/faq` holds nothing the fiche does not already show: buildToolFaqs
-              // derives all six answers from shortDescription, the price and
-              // verdict.threshold, and the overrides meant to break that repetition
-              // cover 0 of 1171 tools for the price answer. GSC over the last three
-              // months: 8 clicks for 4648 impressions across the whole family, at an
-              // average position of 43 — while the same pricing queries it surfaces
-              // on ("datadog pricing", "dropbox pricing") are what /prix exists for.
-              // Pointing it at the fiche stops the two from splitting one signal.
-              // The page stays reachable and rendered; only the separate indexing
-              // claim is withdrawn. Mirrored in DynamicCanonical and dropped from
-              // the sitemap — keep the three in sync.
-              const isFaq = sub.path === "faq";
-              const canonicalUrl = isFaq ? mainUrl : url;
-              const frCanonical  = isFaq ? `${BASE}/fr/tool/${slug}` : frUrl;
-              const enCanonical  = isFaq ? `${BASE}/en/tool/${slug}` : enUrl;
-
               const metaTags = [
-                `<link rel="canonical" href="${canonicalUrl}" />`,
-                `<link rel="alternate" hreflang="fr" href="${frCanonical}" />`,
-                `<link rel="alternate" hreflang="en" href="${enCanonical}" />`,
-                `<link rel="alternate" hreflang="x-default" href="${enCanonical}" />`,
+                `<link rel="canonical" href="${url}" />`,
+                `<link rel="alternate" hreflang="fr" href="${frUrl}" />`,
+                `<link rel="alternate" hreflang="en" href="${enUrl}" />`,
+                `<link rel="alternate" hreflang="x-default" href="${enUrl}" />`,
                 `<title>${title}</title>`,
                 `<meta name="description" content="${desc.replace(/"/g, "&quot;")}" />`,
                 `<meta property="og:title" content="${title.replace(/"/g, "&quot;")}" />`,
@@ -1151,7 +1101,6 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
                 // defaults in index.html (see main tool-page block).
                 `<script id="tool-subpage-breadcrumb-jsonld" type="application/ld+json">${JSON.stringify(breadcrumb)}</script>`,
                 `<script id="tool-subpage-webpage-jsonld" type="application/ld+json">${JSON.stringify(subPageSchema)}</script>`,
-                ...(faqSchema ? [`<script id="tool-faq-jsonld" type="application/ld+json">${JSON.stringify(faqSchema)}</script>`] : []),
                 ...(appSchema ? [`<script id="tool-subpage-app-jsonld" type="application/ld+json">${JSON.stringify(appSchema)}</script>`] : []),
               ].join("\n    ");
 
@@ -1927,7 +1876,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
         html404 = html404.replace("</head>", `    ${meta404}\n  </head>`);
         fs.writeFileSync(path.resolve(distDir, "404.html"), html404, "utf-8");
 
-        const subPageCount = tools.length * 2 * 4; // 4 sub-pages (prix, alternatives, faq, avis) × 2 langs
+        const subPageCount = tools.length * 2 * 3; // 3 sub-pages (prix, alternatives, avis) × 2 langs
         const guidesCount = allPostsData.length;
         console.log(`✅ Prerender : ${count} tool pages + ${subPageCount} tool sub-pages (${subPagesSsrd} SSR'd) + ${STACKS.length * 2} stack pages (${stacksRendered} SSR'd) + 3 landings + ${SEO_PAGES.length} SEO/pillar pages + ${SECTION_PAGES.length} section pages + ${categories.length * 2} category pages (ItemList) + ${FEATURED_COMPARISONS.length * 2} comparisons (${comparisonsRendered} SSR'd) + ${guidesCount} guide pages (${guidesSsrd} SSR'd, Article + FAQPage) + ${explorerAroundRendered} explorer/around pages + 404.html`);
       } catch (e) {

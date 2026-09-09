@@ -59,6 +59,7 @@
     { "source": "/fr/tool/:slug/pricing", "destination": "/fr/tool/:slug/prix", "permanent": true },
     { "source": "/en/tool/:slug/avis", "destination": "/en/tool/:slug/reviews", "permanent": true },
     { "source": "/fr/tool/:slug/reviews", "destination": "/fr/tool/:slug/avis", "permanent": true },
+    { "source": "/:lang(fr|en)/tool/:slug/faq", "destination": "/:lang/tool/:slug", "permanent": true },
     { "source": "/:lang(fr|en)/methodologie", "destination": "/:lang/transparency", "permanent": true },
     { "source": "/:lang(fr|en)/category/ai-general", "destination": "/:lang/category/ia-generaliste", "permanent": true },
     { "source": "/:lang(fr|en)/category/automation", "destination": "/:lang/category/automatisation", "permanent": true },
