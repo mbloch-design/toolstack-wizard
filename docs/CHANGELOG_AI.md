@@ -4267,3 +4267,12 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Suppression à la source des liens Explorer `/around/anthropic` qui continuaient à être générés depuis les recommandations associées.
 - Nettoyage de l'ancienne exception sitemap du sélecteur retiré.
 - Ajout d'un contrôle de régression sur le filtre du catalogue consommé par les surfaces clientes.
+
+# 2026-09-09 — Cibles éditoriales absentes
+
+- Localisation des anciens liens `/guide/*` présents dans les articles FR et EN.
+- Remplacement des liens vers les stacks inexistantes par l'index des stacks et du slug `convertkit` par la fiche canonique `kit`.
+- Correction de l'alternate du guide sur la stack SaaS minimaliste et classement du guide Agents IA comme contenu français sans équivalent anglais.
+- Redirection directe du lien Zapier/Make/N8N vers le comparatif canonique.
+- Ajout de contrôles empêchant le retour des liens de guides non localisés et des cibles catalogue absentes.
+- Application du même filtre HTTP(S) aux sources tarifaires, qui pouvaient encore transformer du texte catalogue parasite en lien relatif.

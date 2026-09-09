@@ -23,6 +23,7 @@ const GUIDE_SLUG_ALTERNATES: Record<string, string> = {
   "slack-vs-teams-comparatif-2026": "slack-vs-teams-comparison-2026",
   "stack-redactrice-freelance": "stack-freelance-writer",
   "adobe-podcast-ai-gratuit-alternatives-2026": "adobe-podcast-ai-free-limits-alternatives-2026",
+  "stack-saas-minimaliste-freelance-2026-moins-50-euros": "minimalist-saas-stack-freelancer-2026-under-50-euros",
   "meilleurs-outils-developpeur-freelance": "best-tools-freelance-developer",
   "meilleurs-outils-designer-freelance": "best-tools-freelance-designer",
   "meilleurs-outils-consultant-freelance": "best-tools-freelance-consultant",
@@ -35,6 +36,8 @@ const GUIDE_EN_TO_FR = Object.fromEntries(
 ) as Record<string, string>;
 
 const GUIDE_FR_ONLY_SLUGS = new Set([
+  "agents-ia-freelances-2026-lesquels-valent-le-coup",
+  "zapier-vs-make-vs-n8n-2026-automatiser-stack",
   "claude-sonnet-4-6-vs-chatgpt-vs-deepseek-vs-gemini-fevrier-2026",
   "meilleurs-outils-ia-freelances-2026",
   "claude-opus-4-6-guide-complet-freelances",

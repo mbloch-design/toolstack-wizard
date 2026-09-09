@@ -1,7 +1,7 @@
 import type { Tool } from "@/data/types";
 import { CreditCard, Sparkles, Package } from "@/lib/icons";
 import { hasGenuineFreeTier } from "@/lib/pricing";
-import { relExterne } from "@/lib/externalLink";
+import { relExterne, safeExternalUrl } from "@/lib/externalLink";
 import { CURRENCY_RATE_DATE, EUR_TO_GBP, EUR_TO_USD, useCurrency, type Currency } from "@/hooks/useCurrency";
 import { convertCurrencyAmount, formatCurrencyAmount } from "@/lib/currency";
 import { resolveDisplayPrice } from "@/lib/nativePricing";
@@ -35,7 +35,7 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t }: Prop
   const hasFree = hasGenuineFreeTier(pricing?.free);
   const hasPaid = pricing?.paid && !pricing.paid.toLowerCase().includes("non public");
   const verifiedOn = pv5?.verified_on;
-  const officialUrl = pv5?.official_source_url;
+  const officialUrl = safeExternalUrl(pv5?.official_source_url);
   const isOneTime = pv5?.compare_plan_kind === "one_time";
   const displayPaidPrice = resolveDisplayPrice(tool, displayPrice, currency);
   const hasConvertedPrice = (

@@ -58,11 +58,23 @@ describe("editorial internal links", () => {
       /\/(?:fr|en)\/category\/(?:creation|ai-general|automation)(?=[)"?\s])/,
       /\/(?:fr|en)\/tool\/(?:anthropic|descript)(?=[)"?\s])/,
       /\/(?:fr|en)\/tool\/claap(?=[)"?\s])/,
+      /\/(?:fr|en)\/tool\/convertkit(?=[)"?\s])/,
+      /\/(?:fr|en)\/stacks\/(?:nocode-app-builder|ai-visual-aggregator|product-analytics-aggregator)(?=[)"?\s])/,
     ];
     const offenders = POST_FILES.flatMap((file) => {
       const content = fs.readFileSync(path.resolve(process.cwd(), file), "utf8");
       return forbidden.filter((pattern) => pattern.test(content)).map((pattern) => `${file}: ${pattern}`);
     });
+
+    expect(offenders).toEqual([]);
+  });
+
+  it("does not expose guide links without a locale", () => {
+    const offenders = POST_FILES.filter((file) =>
+      /\]\(\/(?:guide|methodologie)(?:\/|\))/.test(
+        fs.readFileSync(path.resolve(process.cwd(), file), "utf8"),
+      ),
+    );
 
     expect(offenders).toEqual([]);
   });

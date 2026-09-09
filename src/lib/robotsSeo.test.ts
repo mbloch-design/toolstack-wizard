@@ -41,4 +41,16 @@ describe("robots SEO policy", () => {
       '"adobe-podcast-ai-gratuit-alternatives-2026": "adobe-podcast-ai-free-limits-alternatives-2026"',
     );
   });
+
+  it("maps translated guides and omits alternates for French-only guides", () => {
+    expect(seoSource).toContain(
+      '"stack-saas-minimaliste-freelance-2026-moins-50-euros": "minimalist-saas-stack-freelancer-2026-under-50-euros"',
+    );
+    expect(seoSource).toMatch(
+      /GUIDE_FR_ONLY_SLUGS[\s\S]*"agents-ia-freelances-2026-lesquels-valent-le-coup"/,
+    );
+    expect(seoSource).toMatch(
+      /GUIDE_FR_ONLY_SLUGS[\s\S]*"zapier-vs-make-vs-n8n-2026-automatiser-stack"/,
+    );
+  });
 });
