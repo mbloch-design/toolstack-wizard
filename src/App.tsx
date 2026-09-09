@@ -16,16 +16,11 @@ import AnalyticsPageView from "@/components/AnalyticsPageView";
 import { ErrorBoundary } from "@/components/ErrorBoundary";
 import { Analytics } from "@vercel/analytics/react";
 
-// Critical: loaded eagerly (FCP for the homepage; SSR + no lazy-chunk
-// waterfall for ToolDetailPage and ComparePage — React can't resolve a
-// lazy() chunk during renderToString, so SSR silently falls through to
-// the Suspense fallback for any route still lazy-loaded here).
+// The homepage stays eager for FCP. Detail pages must be synchronous in the
+// SSR build, but can remain route chunks in the browser. import.meta.env.SSR
+// is replaced at build time, so each build keeps only the relevant branch.
 import HomePageV2 from "@/pages/HomePageV2";
-import ToolDetailPage from "@/pages/ToolDetailPage";
-import ComparePage from "@/pages/ComparePage";
-// Eager (not lazy) so renderToString can SSR /guide/:slug — a lazy() chunk
-// can't be resolved during renderToString, it renders the Suspense fallback.
-import GuideDetailPage from "@/pages/GuideDetailPage";
+import { ComparePage, GuideDetailPage, ToolDetailPage } from "@/routes/detailPages";
 
 // Lazy-loaded pages (below the fold / secondary routes)
 const ToolsPage = lazy(() => import("@/pages/ToolsPage"));

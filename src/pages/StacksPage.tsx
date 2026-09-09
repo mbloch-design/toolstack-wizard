@@ -52,6 +52,7 @@ interface Option<T extends string> {
 interface EnrichedStack {
   stack: StackListItem;
   derived: StackListItem["derived"];
+  searchText: string;
 }
 
 const STACKS = stackCatalog.stacks as StackListItem[];
@@ -67,6 +68,7 @@ const STACK_SUB_PROFILES = stackCatalog.subProfiles as Array<{
   personas?: StackPersona[];
 }>;
 const STACK_TOOLS = stackCatalog.tools as StackCatalogTool[];
+const STACK_TOOL_NAMES = new Map(STACK_TOOLS.map((tool) => [tool.slug, tool.name]));
 
 /* ─── Constants ─────────────────────────────────────────────────────────────── */
 const FEATURED_STACK_SLUGS = [
@@ -199,6 +201,35 @@ function toolCountMatches(count: number, facet: StackFacetToolCount) {
   return count >= 11;
 }
 
+function buildStackSearchText(stack: StackListItem) {
+  const persona = STACK_PERSONAS.find((item) => item.value === stack.persona);
+  return normalizeStackSearchText([
+    stack.title,
+    stack.titleEn,
+    stack.subtitle,
+    stack.subtitleEn,
+    stack.bestFor,
+    stack.bestForEn,
+    stack.avoidIf,
+    stack.avoidIfEn,
+    stack.risk,
+    stack.riskEn,
+    persona?.label,
+    persona?.labelEn,
+    ...stack.subProfiles.flatMap((value) => {
+      const profile = STACK_SUB_PROFILES.find((item) => item.value === value);
+      return [value, profile?.label, profile?.labelEn];
+    }),
+    ...stack.derived.objectives,
+    ...stack.tools.flatMap((tool) => [tool.slug, tool.role, tool.roleEn, STACK_TOOL_NAMES.get(tool.slug)]),
+    stack.searchTerms,
+  ]);
+}
+
+function normalizeStackSearchText(values: Array<string | undefined>) {
+  return values.filter(Boolean).join(" ").toLocaleLowerCase("fr");
+}
+
 function matchesStack(enriched: EnrichedStack, filters: {
   profile: StackFacetProfile;
   specialties: StackSubProfile[];
@@ -222,7 +253,7 @@ function matchesStack(enriched: EnrichedStack, filters: {
 
   const q = filters.query.trim().toLowerCase();
   if (!q) return true;
-  return stack.searchText.includes(q);
+  return enriched.searchText.includes(q);
 }
 
 function truncate(text: string, max = 150) {
@@ -533,7 +564,11 @@ const StacksPage = () => {
   const { toolbarStuck, toolbarSentinelRef } = useCatalogStickyToolbar();
 
   const toolBySlug = useMemo(() => new Map(STACK_TOOLS.map((tool) => [tool.slug || tool.id, tool])), []);
-  const enrichedStacks = useMemo<EnrichedStack[]>(() => STACKS.map((stack) => ({ stack, derived: stack.derived })), []);
+  const enrichedStacks = useMemo<EnrichedStack[]>(() => STACKS.map((stack) => ({
+    stack,
+    derived: stack.derived,
+    searchText: buildStackSearchText(stack),
+  })), []);
 
   const subProfileOptions = useMemo<Option<StackSubProfile>[]>(() => {
     const available = new Set(facetProfile === "all"

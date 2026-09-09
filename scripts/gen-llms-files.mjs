@@ -72,12 +72,12 @@ const catalogue = tools.map((tool) => {
     slug: tool.slug,
     url_fr: `https://tooltrim.com/fr/tool/${tool.slug}`,
     url_en: `https://tooltrim.com/en/tool/${tool.slug}`,
-    website: tool.websiteUrl || undefined,
+    website: tool.websiteUrl || tool.affiliateLink || undefined,
     category: tool.categoryId || undefined,
-    monthly_price_eur: Number.isFinite(tool.defaultMonthlyPrice) ? tool.defaultMonthlyPrice : undefined,
-    pricing: tool.pricing || undefined,
+    monthly_price_eur: Number.isFinite(tool.defaultMonthlyPrice ?? 0) ? (tool.defaultMonthlyPrice ?? 0) : undefined,
+    pricing: tool.pricing ?? { free: "", paid: "" },
     description_fr: tool.shortDescription || undefined,
-    description_en: tool.shortDescriptionEn || undefined,
+    description_en: tool.shortDescriptionEn || tool.shortDescription || undefined,
     alternatives: alternatives.length > 0 ? [...new Set(alternatives)] : undefined,
   };
 });

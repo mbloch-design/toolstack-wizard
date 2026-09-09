@@ -11,6 +11,9 @@ import {
 const toolsBySlug = new Map(
   toolsIndex.map((tool) => [tool.slug || tool.id, tool]),
 );
+const toolNames = new Map(
+  toolsIndex.map((tool) => [tool.slug || tool.id, tool.name]),
+);
 
 const referencedToolSlugs = new Set(
   STACKS.flatMap((stack) => stack.tools.slice(0, 6).map((tool) => tool.slug)),
@@ -29,12 +32,6 @@ const tools = [...referencedToolSlugs]
     ogImageUrl: tool.ogImageUrl || null,
   }));
 
-const toolNames = new Map(
-  toolsIndex.map((tool) => [tool.slug || tool.id, tool.name]),
-);
-const personaLabels = new Map(STACK_PERSONAS.map((item) => [item.value, `${item.label} ${item.labelEn}`]));
-const subProfileLabels = new Map(STACK_SUB_PROFILES.map((item) => [item.value, `${item.label} ${item.labelEn}`]));
-
 const stacks = STACKS.map((stack) => {
   const derived = getStackDerivedFields(stack);
   const compactTools = stack.tools.slice(0, 6).map((tool) => ({
@@ -42,23 +39,6 @@ const stacks = STACKS.map((stack) => {
     role: tool.role,
     roleEn: tool.roleEn,
   }));
-  const searchText = [
-    stack.title,
-    stack.titleEn,
-    stack.subtitle,
-    stack.subtitleEn,
-    stack.bestFor,
-    stack.bestForEn,
-    stack.avoidIf,
-    stack.avoidIfEn,
-    stack.risk,
-    stack.riskEn,
-    personaLabels.get(stack.persona),
-    ...stack.subProfiles.map((subProfile) => `${subProfile} ${subProfileLabels.get(subProfile) || ""}`),
-    ...derived.objectives,
-    ...stack.tools.map((tool) => `${tool.slug} ${tool.role} ${tool.roleEn} ${toolNames.get(tool.slug) || ""}`),
-  ].join(" ").toLocaleLowerCase("fr");
-
   return {
     id: stack.id,
     slug: stack.slug,
@@ -77,6 +57,13 @@ const stacks = STACKS.map((stack) => {
     avoidIf: stack.avoidIf,
     avoidIfEn: stack.avoidIfEn,
     tools: compactTools,
+    // Only terms not reconstructible from the six displayed tools are kept.
+    // This preserves searches for tools deeper in a stack without duplicating
+    // every title, description and label in a precomputed searchText field.
+    searchTerms: stack.tools.slice(6)
+      .map((tool) => `${tool.slug} ${tool.role} ${tool.roleEn} ${toolNames.get(tool.slug) || ""}`)
+      .join(" ")
+      .toLocaleLowerCase("fr"),
     derived: {
       profile: derived.profile,
       objectives: derived.objectives,
@@ -86,7 +73,6 @@ const stacks = STACKS.map((stack) => {
       stackType: derived.stackType,
       toolCount: derived.toolCount,
     },
-    searchText,
   };
 });
 

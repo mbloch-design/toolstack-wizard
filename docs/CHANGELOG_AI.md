@@ -1,5 +1,13 @@
 # ToolTrim — AI Changelog
 
+## 2026-09-09 — Allègement des index et du chargement initial
+
+- L’index Stacks ne stocke plus un texte de recherche redondant pour chaque fiche : il est reconstruit une fois côté catalogue, tout en conservant les termes des outils secondaires.
+- L’index Outils omet désormais les valeurs par défaut répétées ; le mapper client restaure le même contrat de données et les fichiers `llms` conservent leur contenu.
+- Les templates Fiche outil, Guide et Comparatif restent synchrones pour le pré-rendu SSR mais deviennent des chunks dédiés dans le navigateur, au lieu de gonfler l’entrée commune.
+- Les utilitaires Tailwind et styles dédiés aux anciennes routes Selector/Diagnostic, désormais redirigées vers Ma Stack, ne sont plus émis dans le CSS public.
+- Le build complet, les contrôles SEO et une vérification mobile des quatre familles de pages passent sans page blanche ni débordement horizontal.
+
 ## 2026-09-09 — Garde-fous SEO des surfaces programmatiques
 
 - Les variantes à paramètres des catalogues Outils, Stacks, Comparatifs et Explorer reçoivent désormais `noindex, follow` tout en conservant leur canonical propre ; la recherche interne est toujours non indexable.

@@ -2207,9 +2207,16 @@ export default defineConfig(({ mode, isSsrBuild }) => {
     },
   },
   resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
-    },
+    alias: [
+      {
+        find: "@/routes/detailPages",
+        replacement: path.resolve(
+          __dirname,
+          isSsrBuild ? "./src/routes/detailPages.server.ts" : "./src/routes/detailPages.client.ts",
+        ),
+      },
+      { find: "@", replacement: path.resolve(__dirname, "./src") },
+    ],
   },
   };
 });

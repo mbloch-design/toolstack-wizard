@@ -24,30 +24,41 @@ const summaries = tools.map((tool, index) => {
   }
   seen.add(slug);
 
+  const pricing = tool.pricing || { free: "", paid: "" };
+  const affiliateLink = tool.affiliateLink || "";
+  const websiteUrl = tool.websiteUrl || affiliateLink;
+
+  // Keep the browser index sparse. The client mapper restores these defaults,
+  // so repeating empty arrays/nulls/default booleans for every tool only adds
+  // transfer and parse cost without carrying information.
   return {
     id,
     slug,
     name: tool.name || id,
     categoryId: tool.category || tool.categoryId || "",
     shortDescription: tool.shortDescription || "",
-    shortDescriptionEn: tool.shortDescriptionEn || "",
-    pricing: tool.pricing || { free: "", paid: "" },
-    defaultMonthlyPrice: tool.defaultMonthlyPrice ?? 0,
-    compareMonthlyPrice: tool.pricing_v5?.compare_price_monthly_eur ?? null,
-    affiliateLink: tool.affiliateLink || "",
-    websiteUrl: tool.websiteUrl || tool.affiliateLink || "",
-    ogImageUrl: tool.ogImageUrl || "",
-    logo: tool.logo || "",
-    tool_type: tool.tool_type || "satellite",
-    host_app: tool.host_app || null,
-    bundle_parent: tool.bundle_parent || null,
-    substitution_cluster_v2: tool.substitution_cluster_v2 || null,
-    functional_needs: tool.functional_needs || [],
-    verticals: tool.verticals || [],
-    relevantFor: tool.relevantFor || [],
-    freeAlternative: tool.freeAlternative || null,
-    substitutable: tool.substitutable ?? true,
-    betterAlternative: tool.betterAlternative || null,
+    ...(tool.shortDescriptionEn && tool.shortDescriptionEn !== tool.shortDescription
+      ? { shortDescriptionEn: tool.shortDescriptionEn }
+      : {}),
+    ...((typeof pricing === "string" && pricing) || pricing.free || pricing.paid ? { pricing } : {}),
+    ...(tool.defaultMonthlyPrice ? { defaultMonthlyPrice: tool.defaultMonthlyPrice } : {}),
+    ...(tool.pricing_v5?.compare_price_monthly_eur != null
+      ? { compareMonthlyPrice: tool.pricing_v5.compare_price_monthly_eur }
+      : {}),
+    ...(affiliateLink ? { affiliateLink } : {}),
+    ...(websiteUrl && websiteUrl !== affiliateLink ? { websiteUrl } : {}),
+    ...(tool.ogImageUrl ? { ogImageUrl: tool.ogImageUrl } : {}),
+    ...(tool.logo ? { logo: tool.logo } : {}),
+    ...(tool.tool_type && tool.tool_type !== "satellite" ? { tool_type: tool.tool_type } : {}),
+    ...(tool.host_app ? { host_app: tool.host_app } : {}),
+    ...(tool.bundle_parent ? { bundle_parent: tool.bundle_parent } : {}),
+    ...(tool.substitution_cluster_v2 ? { substitution_cluster_v2: tool.substitution_cluster_v2 } : {}),
+    ...(tool.functional_needs?.length ? { functional_needs: tool.functional_needs } : {}),
+    ...(tool.verticals?.length ? { verticals: tool.verticals } : {}),
+    ...(tool.relevantFor?.length ? { relevantFor: tool.relevantFor } : {}),
+    ...(tool.freeAlternative ? { freeAlternative: tool.freeAlternative } : {}),
+    ...(tool.substitutable === false ? { substitutable: false } : {}),
+    ...(tool.betterAlternative ? { betterAlternative: tool.betterAlternative } : {}),
   };
 });
 

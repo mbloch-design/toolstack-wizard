@@ -4,7 +4,18 @@ import animate from "tailwindcss-animate";
 
 export default {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+    // Retired routes redirect to /ma-stack. Excluding their unreachable source
+    // prevents Tailwind from shipping utilities that no rendered page can use.
+    "!./src/pages/{SelectorPage,ResultsPage}.tsx",
+    "!./src/components/diagnostic/**/*.{ts,tsx}",
+    "!./src/components/selector/**/*.{ts,tsx}",
+    "!./src/components/dashboard/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {

@@ -223,7 +223,7 @@ const DEPRECATED_TOOL_SLUGS = new Set([
 ]);
 
 const staticToolSummaries: ToolSummary[] = (toolsIndexJson as any[]).map((t: any) => ({
-  id: asLocalizedText(t.id, ""),
+  id: asLocalizedText(t.id || t.slug, ""),
   slug: asLocalizedText(t.slug || t.id, ""),
   name: asLocalizedText(t.name, asLocalizedText(t.id, ""), "fr"),
   categoryId: asLocalizedText(t.categoryId || t.category, ""),
