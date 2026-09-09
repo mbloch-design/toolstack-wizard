@@ -6,6 +6,7 @@ import { computeToolTrimScore } from "@/lib/toolTrimScore";
 import { hasGenuineFreeTier } from "@/lib/pricing";
 import { getCategoryLabel } from "@/lib/categoryLabel";
 import { getToolTutorials } from "@/data/toolTutorials";
+import { safeExternalUrl } from "@/lib/externalLink";
 
 interface Props {
   tool: Tool;
@@ -68,7 +69,7 @@ export default function ToolJsonLd({ tool, category, displayPrice, verifiedOn, a
       "@type": "SoftwareApplication",
       name: tool.name,
       description: lang === "en" ? (tool.shortDescriptionEn || tool.shortDescription) : tool.shortDescription,
-      url: tool.websiteUrl || canonicalUrl,
+      url: safeExternalUrl(tool.websiteUrl) || canonicalUrl,
       applicationCategory: "BusinessApplication",
       operatingSystem: "Web",
       offers: hasGenuineFreeTier(tool.pricing?.free) && displayPrice > 0

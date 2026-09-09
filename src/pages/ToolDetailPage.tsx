@@ -31,7 +31,7 @@ import { findSimilarTools } from "@/lib/alternativesSimilarity";
 import ToolFAQSection from "@/components/tool/ToolFAQSection";
 import ToolJsonLd from "@/components/tool/ToolJsonLd";
 import StickyDecisionCard from "@/components/tool/StickyDecisionCard";
-import { relPourLienOutil, relExterne } from "@/lib/externalLink";
+import { relPourLienOutil, relExterne, safeExternalUrl } from "@/lib/externalLink";
 
 /* ─────────────────────────────────────────────────────────────────────────────
    ToolDetailPage — editorial redesign
@@ -339,7 +339,9 @@ const ToolDetailPage = () => {
   const verifiedOn    = tool.pricing_v5?.verified_on || "2026-03-29";
   const sourceDomain  = tool.pricing_v5?.source_domain;
   const domain        = getDomainFromUrl(tool.websiteUrl) || getToolDomain(tool);
-  const primaryCtaUrl = tool.affiliateLink || tool.websiteUrl || "#";
+  const safeAffiliateUrl = safeExternalUrl(tool.affiliateLink);
+  const safeWebsiteUrl = safeExternalUrl(tool.websiteUrl);
+  const primaryCtaUrl = safeAffiliateUrl || safeWebsiteUrl;
   const isFree        = displayPrice === 0 && !tool.pricing?.paid;
   const primaryCtaLabel = t("Visiter le site", "Visit website");
   const hasFreeplan   = hasGenuineFreeTier(tool.pricing?.free);
@@ -455,7 +457,7 @@ const ToolDetailPage = () => {
                           )}
                         </div>
 
-                        <a
+                        {primaryCtaUrl && <a
                           href={primaryCtaUrl}
                           target="_blank"
                           rel={relPourLienOutil(primaryCtaUrl, tool.affiliateLink, tool.websiteUrl)}
@@ -467,12 +469,12 @@ const ToolDetailPage = () => {
                             cta_label: primaryCtaLabel,
                             destination_domain: getDomainFromUrl(primaryCtaUrl),
                             language: lang,
-                            is_affiliate: Boolean(tool.affiliateLink && primaryCtaUrl === tool.affiliateLink),
+                            is_affiliate: Boolean(safeAffiliateUrl && primaryCtaUrl === safeAffiliateUrl),
                           })}
                         >
                           {primaryCtaLabel}
                           <ExternalLink aria-hidden />
-                        </a>
+                        </a>}
                       </div>
 
                     </div>
@@ -603,10 +605,10 @@ const ToolDetailPage = () => {
                     </div>
                   </dl>
 
-                  {tool.websiteUrl && (
+                  {safeWebsiteUrl && (
                     <section className="td-editorial-fact-group">
                       <h3>{t("Lien", "Link")}</h3>
-                      <a className="td-editorial-official-link" href={tool.websiteUrl} target="_blank" rel={relExterne("source")}>
+                      <a className="td-editorial-official-link" href={safeWebsiteUrl} target="_blank" rel={relExterne("source")}>
                         <span>{t("Site officiel", "Official website")}</span>
                         <ExternalLink aria-hidden />
                       </a>

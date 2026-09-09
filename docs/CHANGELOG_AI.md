@@ -4254,3 +4254,9 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Correction du hreflang anglais du guide Adobe Podcast, qui pointait encore vers le slug français redirigé.
 - Suppression du lien éditorial vers la fiche inexistante `/tool/claap` ; la mention du produit reste en texte simple.
 - Contrôles de régression ajoutés pour ces deux sources actives.
+
+# 2026-09-08 — Liens outils corrompus transformés en 404
+
+- Validation centralisée des liens externes avant rendu des CTA, liens officiels et données structurées des fiches outils.
+- Les valeurs catalogue corrompues ou relatives ne peuvent plus devenir des liens internes tels que `/rapports).` ou `/grammaire et clarté.`.
+- Ajout de tests couvrant les URL HTTP(S), le texte parasite, les chemins relatifs et les protocoles dangereux.

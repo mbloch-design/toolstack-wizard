@@ -61,6 +61,19 @@ const DOMAINES_EDITORIAUX_DOFOLLOW = new Set([
   "www.commute.bar",
 ]);
 
+/** Refuse les valeurs éditoriales corrompues que le navigateur interpréterait
+ * sinon comme des chemins internes relatifs (par exemple `rapports).`). */
+export function safeExternalUrl(url: string | null | undefined): string | undefined {
+  const value = (url || "").trim();
+  if (!value) return undefined;
+  try {
+    const parsed = new URL(value);
+    return parsed.protocol === "http:" || parsed.protocol === "https:" ? parsed.toString() : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
 function estLienEditorialDofollow(url: string): boolean {
   try {
     return DOMAINES_EDITORIAUX_DOFOLLOW.has(new URL(url).hostname.toLowerCase());
