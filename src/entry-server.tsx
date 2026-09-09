@@ -28,6 +28,7 @@ import TransparencyPage from "@/pages/TransparencyPage";
 import ContactPage from "@/pages/ContactPage";
 import SubmitToolPage from "@/pages/SubmitToolPage";
 import ExplorerPage from "@/pages/ExplorerPage";
+import PersonaPillarPage from "@/pages/PersonaPillarPage";
 
 export interface RenderedToolPage {
   html: string;
@@ -541,6 +542,44 @@ export async function renderExplorerAroundPage(path: string): Promise<string> {
                 <Routes>
                   <Route path="/:lang" element={<LangLayout />}>
                     <Route path="explorer/around/:slug" element={<ExplorerPage />} />
+                  </Route>
+                </Routes>
+              </Suspense>
+            </ErrorBoundary>
+          </StaticRouter>
+        </TooltipProvider>
+      </QueryClientProvider>
+    </HelmetProvider>,
+  );
+}
+
+// Les 5 pages piliers persona, en FR et en EN, soit 10 URL. Elles ne shippaient
+// qu'un <div id="root"> vide plus un <noscript> d'une phrase : 44 mots au crawl.
+// PersonaPillarPage est un lazy() dans App.tsx (volontairement, pour ne pas
+// alourdir le bundle client), et renderToString ne sait pas resoudre un chunk
+// lazy. Il est donc importe en dur ici, cote SSR uniquement, et rendu dans une
+// route qui reproduit celle d'App.tsx.
+export async function renderPersonaPillarPage(
+  path: string,
+  persona: "THEO" | "SOFIA" | "MARC" | "ALIX" | "CLAIRE",
+  lang: "fr" | "en",
+): Promise<string> {
+  const queryClient = new QueryClient();
+
+  return renderToString(
+    <HelmetProvider>
+      <QueryClientProvider client={queryClient}>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <StaticRouter location={path}>
+            <ScrollToTop />
+            <DynamicCanonical />
+            <ErrorBoundary>
+              <Suspense fallback={null}>
+                <Routes>
+                  <Route path="/:lang" element={<LangLayout />}>
+                    <Route path="guide/*" element={<PersonaPillarPage persona={persona} lang={lang} />} />
                   </Route>
                 </Routes>
               </Suspense>

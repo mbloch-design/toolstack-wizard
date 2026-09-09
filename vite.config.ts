@@ -696,6 +696,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
         let renderSubmitToolPage: ((path: string) => Promise<string>) | null = null;
         let renderExplorerLandingPage: ((path: string) => Promise<string>) | null = null;
         let renderExplorerAroundPage: ((path: string) => Promise<string>) | null = null;
+        let renderPersonaPillarPage: ((path: string, persona: string, lang: string) => Promise<string>) | null = null;
         const ssrEntryPath = path.resolve(__dirname, "dist-ssr/entry-server.js");
         if (fs.existsSync(ssrEntryPath)) {
           try {
@@ -717,6 +718,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             renderSubmitToolPage = ssrModule.renderSubmitToolPage;
             renderExplorerLandingPage = ssrModule.renderExplorerLandingPage;
             renderExplorerAroundPage = ssrModule.renderExplorerAroundPage;
+            renderPersonaPillarPage = ssrModule.renderPersonaPillarPage;
           } catch (e) {
             console.warn("⚠️ SSR entry failed to load, falling back to meta-only prerender:", e);
           }
@@ -1337,6 +1339,23 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           },
         ];
 
+        // Chemin de page pilier vers son code persona, pour le rendu serveur.
+        // Les memes couples sont declares dans App.tsx (routes) et dans
+        // PersonaPillarPage.tsx (contenu) : les trois doivent rester alignes.
+        const PERSONA_BY_PILLAR_PATH: Record<string, string> = {
+          "/fr/guide/meilleurs-outils-developpeur-freelance": "THEO",
+          "/en/guide/best-tools-freelance-developer": "THEO",
+          "/fr/guide/meilleurs-outils-designer-freelance": "SOFIA",
+          "/en/guide/best-tools-freelance-designer": "SOFIA",
+          "/fr/guide/meilleurs-outils-consultant-freelance": "MARC",
+          "/en/guide/best-tools-freelance-consultant": "MARC",
+          "/fr/guide/meilleurs-outils-createur-contenu-freelance": "ALIX",
+          "/en/guide/best-tools-freelance-content-creator": "ALIX",
+          "/fr/guide/meilleurs-outils-ops-manager-freelance": "CLAIRE",
+          "/en/guide/best-tools-freelance-ops-manager": "CLAIRE",
+        };
+        let pillarsSsrd = 0;
+
         for (const sp of SEO_PAGES) {
           const url = `${BASE}${sp.path}`;
           const spLang = sp.path.startsWith("/en/") ? "en" : "fr";
@@ -1369,6 +1388,21 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           html = html.replace(/<meta\s+name="description"[^>]*\/?>/, "");
           html = html.replace("</head>", `    ${metaTags}\n  </head>`);
           html = html.replace("</body>", `    ${staticParagraph}\n  </body>`);
+
+          // Les 10 pages piliers persona ne shippaient que ce <noscript> d'une
+          // phrase autour d'un <div id="root"> vide : 44 mots au crawl, alors
+          // que la liste d'outils et la FAQ existent cote client. Meme correctif
+          // que pour /tools et /stacks, via un rendu de la page dans sa route.
+          const pillarPersona = PERSONA_BY_PILLAR_PATH[sp.path];
+          if (pillarPersona && renderPersonaPillarPage) {
+            try {
+              const markup = await renderPersonaPillarPage(sp.path, pillarPersona, spLang);
+              html = html.replace('<div id="root"></div>', `<div id="root">${markup}</div>`);
+              pillarsSsrd++;
+            } catch (e) {
+              console.warn(`⚠️ Persona pillar SSR failed for ${sp.path}, falling back to meta-only prerender:`, e);
+            }
+          }
 
           const outDir = path.resolve(distDir, sp.path.replace(/^\//, ""));
           fs.mkdirSync(outDir, { recursive: true });
@@ -1893,7 +1927,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
 
         const subPageCount = tools.length * 2 * 3; // 3 sub-pages (prix, alternatives, avis) × 2 langs
         const guidesCount = allPostsData.length;
-        console.log(`✅ Prerender : ${count} tool pages + ${subPageCount} tool sub-pages (${subPagesSsrd} SSR'd) + ${STACKS.length * 2} stack pages (${stacksRendered} SSR'd) + 3 landings + ${SEO_PAGES.length} SEO/pillar pages + ${SECTION_PAGES.length} section pages + ${categories.length * 2} category pages (ItemList) + ${FEATURED_COMPARISONS.length * 2} comparisons (${comparisonsRendered} SSR'd) + ${guidesCount} guide pages (${guidesSsrd} SSR'd, Article + FAQPage) + ${explorerAroundRendered} explorer/around pages + 404.html`);
+        console.log(`✅ Prerender : ${count} tool pages + ${subPageCount} tool sub-pages (${subPagesSsrd} SSR'd) + ${STACKS.length * 2} stack pages (${stacksRendered} SSR'd) + 3 landings + ${SEO_PAGES.length} SEO/pillar pages (${pillarsSsrd} SSR'd) + ${SECTION_PAGES.length} section pages + ${categories.length * 2} category pages (ItemList) + ${FEATURED_COMPARISONS.length * 2} comparisons (${comparisonsRendered} SSR'd) + ${guidesCount} guide pages (${guidesSsrd} SSR'd, Article + FAQPage) + ${explorerAroundRendered} explorer/around pages + 404.html`);
       } catch (e) {
         console.warn("⚠️ Prerender failed:", e);
       }
