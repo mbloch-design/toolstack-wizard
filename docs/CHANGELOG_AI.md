@@ -1,5 +1,11 @@
 # ToolTrim — AI Changelog
 
+## 2026-09-09 — Slugs canoniques des stacks
+
+- Les huit références de stacks à l'ancien slug `convertkit` utilisent désormais la fiche canonique `kit`.
+- Les références conditionnelles `docsend` et `visible`, absentes du catalogue, ont été retirées de la stack consultant fundraising au lieu de générer des destinations sans fiche.
+- Un test de non-régression interdit ces trois slugs orphelins dans les surfaces de découverte générées.
+
 ## 2026-09-08 — Remise à plat technique des Guides
 
 - Index Guides alimenté directement par le snapshot JSON local, sans Supabase ni état de chargement réseau.

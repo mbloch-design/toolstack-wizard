@@ -23176,26 +23176,6 @@ export const STACKS: StackGuide[] = [
         "reasonEn": "Useful to secure narratif without scattering the workflow."
       },
       {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
-        "slug": "docsend",
-        "decision": "conditional",
-        "tip": "À activer seulement si la mission le justifie.",
-        "tipEn": "Activate only when the mission requires it.",
-        "reason": "Outil métier : utile pour sécuriser deck sans disperser le workflow.",
-        "reasonEn": "Useful to secure deck without scattering the workflow."
-      },
-      {
-        "role": "Outil métier",
-        "roleEn": "Specialist tool",
-        "slug": "visible",
-        "decision": "conditional",
-        "tip": "À activer seulement si la mission le justifie.",
-        "tipEn": "Activate only when the mission requires it.",
-        "reason": "Outil métier : utile pour sécuriser business plan sans disperser le workflow.",
-        "reasonEn": "Useful to secure business plan without scattering the workflow."
-      },
-      {
         "role": "Modèle chiffré",
         "roleEn": "Modèle chiffré",
         "slug": "excel",
@@ -25011,7 +24991,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Email marketing",
         "roleEn": "Email marketing",
-        "slug": "convertkit",
+        "slug": "kit",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
@@ -26468,7 +26448,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Email marketing",
         "roleEn": "Email marketing",
-        "slug": "convertkit",
+        "slug": "kit",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
@@ -29228,7 +29208,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Email marketing",
         "roleEn": "Email marketing",
-        "slug": "convertkit",
+        "slug": "kit",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
@@ -29780,7 +29760,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Email marketing",
         "roleEn": "Email marketing",
-        "slug": "convertkit",
+        "slug": "kit",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
@@ -31958,7 +31938,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Email marketing",
         "roleEn": "Email marketing",
-        "slug": "convertkit",
+        "slug": "kit",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
@@ -37643,7 +37623,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Outil métier",
         "roleEn": "Specialist tool",
-        "slug": "convertkit",
+        "slug": "kit",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
@@ -39853,7 +39833,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Outil métier",
         "roleEn": "Specialist tool",
-        "slug": "convertkit",
+        "slug": "kit",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
@@ -40325,7 +40305,7 @@ export const STACKS: StackGuide[] = [
       {
         "role": "Outil métier",
         "roleEn": "Specialist tool",
-        "slug": "convertkit",
+        "slug": "kit",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",

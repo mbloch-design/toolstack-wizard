@@ -45,6 +45,10 @@ describe("canonical discovery surfaces", () => {
     expect(homepage).not.toContain("/category/automation");
     expect(categories).not.toContain('"anthropic"');
     expect(stacks).not.toContain('"slug": "anthropic"');
+    expect(stacks).not.toContain('"slug": "convertkit"');
+    expect(stacks).not.toContain('"slug": "docsend"');
+    expect(stacks).not.toContain('"slug": "visible"');
+    expect(stacks).toContain('"slug": "kit"');
     expect(categoryPage).toContain('REDIRECTED_TOOL_SLUGS = new Set(["anthropic"])');
     expect(catalogueHook).toMatch(/DEPRECATED_TOOL_SLUGS[\s\S]*"anthropic"/);
   });
