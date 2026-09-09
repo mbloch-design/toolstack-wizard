@@ -133,7 +133,7 @@ export const LangLayout = () => {
   );
 
   return (
-    <CurrencyProvider>
+    <CurrencyProvider lang={effectiveLang}>
     <LangContext.Provider
       value={{
         lang: effectiveLang,

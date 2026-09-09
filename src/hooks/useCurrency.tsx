@@ -22,20 +22,22 @@ const CurrencyContext = createContext<CurrencyContextValue>({
   toggleCurrency: () => undefined,
 });
 
-export function CurrencyProvider({ children }: { children: ReactNode }) {
-  // Keep EUR as the deterministic SSR value. The saved preference is restored
-  // after hydration, preventing a server/client markup mismatch.
-  const [currency, setCurrencyState] = useState<Currency>("EUR");
+export function CurrencyProvider({ children, lang }: { children: ReactNode; lang?: string }) {
+  // The initial value is derived from the route language, not hardcoded to EUR.
+  // It stays deterministic across SSR and hydration because both compute it
+  // from the same URL, so there is no server/client markup mismatch.
+  //
+  // Hardcoding EUR here meant every prerendered /en/ page shipped euro prices:
+  // the switch to USD only happened in the effect below, after hydration, so
+  // crawlers (which don't run it) only ever saw euros on the English site.
+  const [currency, setCurrencyState] = useState<Currency>(lang === "en" ? "USD" : "EUR");
 
   useEffect(() => {
+    // An explicit user choice always wins over the language default.
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved === "EUR" || saved === "USD" || saved === "GBP") {
       setCurrencyState(saved);
-      return;
     }
-
-    const pathLanguage = window.location.pathname.split("/")[1];
-    setCurrencyState(pathLanguage === "en" ? "USD" : "EUR");
   }, []);
 
   const setCurrency = (next: Currency) => {
