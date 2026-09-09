@@ -170,6 +170,12 @@
           "category": "Organisation"
         },
         {
+          "slug": "alternatives-gratuites-notion-freelance-2026",
+          "title": "Alternatives gratuites à Notion pour freelances en 2026 : le guide complet",
+          "date": "2026-02-12",
+          "category": "Guides"
+        },
+        {
           "slug": "notion-gratuit-vs-payant-vrai-calcul",
           "title": "Notion gratuit vs payant : le vrai calcul (2026)",
           "date": "2026-02-04",
@@ -182,6 +188,12 @@
           "title": "Managing 3 clients simultaneously: Is Notion free really enough for you?",
           "date": "2026-03-06",
           "category": "Organization"
+        },
+        {
+          "slug": "alternatives-gratuites-notion-freelance-2026",
+          "title": "Free Notion Alternatives for Freelancers in 2026: The Complete Guide",
+          "date": "2026-02-12",
+          "category": "Guides"
         },
         {
           "slug": "notion-gratuit-vs-payant-vrai-calcul",
@@ -395,6 +407,11 @@
       "name": "Claude",
       "hasPricing": true
     },
+    "fr:alternatives-gratuites-notion-freelance-2026": {
+      "slug": "notion",
+      "name": "Notion",
+      "hasPricing": true
+    },
     "fr:notion-gratuit-ou-payant": {
       "slug": "notion",
       "name": "Notion",
@@ -493,6 +510,11 @@
     "en:claude-opus-4-6-guide-complet-freelances": {
       "slug": "claude",
       "name": "Claude",
+      "hasPricing": true
+    },
+    "en:alternatives-gratuites-notion-freelance-2026": {
+      "slug": "notion",
+      "name": "Notion",
       "hasPricing": true
     },
     "en:notion-gratuit-ou-payant": {
