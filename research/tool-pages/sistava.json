@@ -1,0 +1,213 @@
+{
+  "schemaVersion": 1,
+  "slug": "sistava",
+  "researchedOn": "2026-09-03",
+  "researcher": "Claude Code",
+  "status": "draft",
+  "identity": {
+    "officialName": "Sistava",
+    "vendor": "Sista AI B.V. (société à responsabilité limitée néerlandaise), Korte Lijnbaanssteeg 1-4557, 1012SL Amsterdam, Pays-Bas. Fondateur : Mahmoud Zalt",
+    "officialUrl": "https://sistava.com/",
+    "pricingUrl": "https://sistava.com/en/pricing",
+    "docsUrl": "https://sistava.com/en/features",
+    "changelogUrl": null
+  },
+  "claims": [
+    {
+      "id": "identity.name-correction",
+      "value": "Le formulaire de soumission interne désignait l'outil comme 'Zalt', mais il s'agit en réalité du nom de famille du fondateur (Mahmoud Zalt) ; le vrai nom du produit, confirmé par le site (title, og:site_name, page /en/about), est 'Sistava', édité par la société Sista AI B.V.",
+      "sourceUrl": "https://sistava.com/en/about",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Balise <title>'Sistava | Hire AI Employees to Run Your Business' ; og:site_name='Sistava' ; page /en/about : 'Founder: Mahmoud Zalt'",
+      "confidence": "high",
+      "volatility": "low"
+    },
+    {
+      "id": "pricing.starter",
+      "value": "Starter : 25 $/mois, pour un individu qui engage un assistant IA dédié",
+      "sourceUrl": "https://sistava.com/en/pricing",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "'Starter ($25/month) — For individuals hiring a dedicated AI assistant.'",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "pricing.builder",
+      "value": "Builder : 50 $/mois, pour un fondateur solo qui avance vite",
+      "sourceUrl": "https://sistava.com/en/pricing",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "'Builder ($50/month) — For solo founders running lean and moving fast.'",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "pricing.founder-plan",
+      "value": "Founder : 100 $/mois, pour une petite équipe qui grandit plus vite avec l'IA",
+      "sourceUrl": "https://sistava.com/en/pricing",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "'Founder ($100/month) — For small teams growing faster with AI.'",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "pricing.leader",
+      "value": "Leader : 200 $/mois, pour une grande équipe qui opère à l'échelle",
+      "sourceUrl": "https://sistava.com/en/pricing",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "'Leader ($200/month) — For large teams operating efficiently at scale.'",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "pricing.credits",
+      "value": "Système de crédits : chaque tâche d'un employé IA consomme des crédits selon le modèle et la complexité. Packs de recharge : Boost 1000 crédits/6 $, Recharge 2000 crédits/11 $, Power 3000 crédits/15 $. Pas de plan gratuit ni d'essai mentionné",
+      "sourceUrl": "https://sistava.com/en/pricing",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "'Every AI employee task consumes credits based on model + complexity' ; tableau des packs de recharge",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "capability.departments",
+      "value": "Employés IA disponibles sur 10 fonctions : Sales, Marketing, Support, Operations, Data, Finance, Product, Design, People, Legal",
+      "sourceUrl": "https://sistava.com/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Section produit de la page d'accueil, liste des départements",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "capability.workflow",
+      "value": "Workflow d'usage : choisir un rôle disponible ou définir un workflow ciblé, ajouter le contexte métier et les outils nécessaires, déléguer une tâche bornée, relire le résultat, puis élargir le périmètre progressivement",
+      "sourceUrl": "https://sistava.com/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "'Pick an available role or define a focused workflow... Delegate a bounded task, review the result, then expand scope deliberately'",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "capability.security-docs",
+      "value": "Documentation légale et sécurité étoffée pour la taille de l'entreprise : DPA (accord de traitement des données), liste de sous-traitants (subprocessors), politique de rétention des données, programme de divulgation responsable avec 'security hall of fame'",
+      "sourceUrl": "https://sistava.com/en/legal",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Page /en/legal, liens vers /dpa, /subprocessors, /data-retention, /responsible-disclosure, /security-hall-of-fame",
+      "confidence": "high",
+      "volatility": "low"
+    },
+    {
+      "id": "capability.data-portability",
+      "value": "Droit RGPD explicite à la portabilité (article 20), avec engagement concret : export dans un format structuré (JSON ou CSV) sous 30 jours suite à une demande vérifiée. Une section dédiée des CGU (18.A 'Data Portability & Switching') traite spécifiquement de l'export et du changement de plateforme",
+      "sourceUrl": "https://sistava.com/en/privacy",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "'If you request a copy of your personal data, we will provide it in a structured, commonly used, and machine-readable format (e.g., JSON or CSV) within 30 days...' ; 'The export and switching process in Section 18.A of our Terms of Service implements this right at the platform level.'",
+      "confidence": "high",
+      "volatility": "low"
+    },
+    {
+      "id": "capability.inactivity-deletion",
+      "value": "Risque à noter : suppression du compte et de toutes les données associées après 12 mois consécutifs d'inactivité sans abonnement payant actif ; les données supprimées peuvent ne pas être récupérables",
+      "sourceUrl": "https://sistava.com/en/terms",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "'We may terminate or delete your account and all associated data if your account has been inactive for twelve (12) consecutive months and you do not have an active paid subscription.' ; données supprimées 'may not be recoverable'",
+      "confidence": "high",
+      "volatility": "low"
+    },
+    {
+      "id": "identity.timeline",
+      "value": "Développement démarré en décembre 2022, société Sista AI enregistrée aux Pays-Bas en juillet 2023, premier prototype fonctionnel en janvier 2026, lancement de la plateforme en avril 2026",
+      "sourceUrl": "https://sistava.com/en/about",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Page /en/about, chronologie de l'entreprise",
+      "confidence": "high",
+      "volatility": "low"
+    },
+    {
+      "id": "proof.testimonials",
+      "value": "Six témoignages nommés (prénom + initiale) mis en avant, dont un avec une réserve explicite : 'I liked it straight away. The UI is a bit confusing, but the customization is great.' — Daan V., Product maker",
+      "sourceUrl": "https://sistava.com/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Section témoignages de la page d'accueil",
+      "confidence": "medium",
+      "volatility": "medium"
+    },
+    {
+      "id": "quality.no-real-screenshot",
+      "value": "Aucune capture d'écran statique du produit réel trouvée (le site indique explicitement que la démo interactive nécessite du JavaScript et n'est pas capturable en HTML statique) ; l'image OG est une carte de marque stylisée, pas une capture d'interface",
+      "sourceUrl": "https://sistava.com/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Texte de la page : 'This page needs JavaScript for the interactive product (workspace, marketplace...)' ; image OG = carte de marque texte+logo",
+      "confidence": "high",
+      "volatility": "low"
+    }
+  ],
+  "pricing": {
+    "originalCurrency": "USD",
+    "billingContext": "mensuel, plus packs de crédits à la demande",
+    "taxIncluded": null,
+    "freePlan": null,
+    "plans": [
+      { "name": "Starter", "price": 25, "period": "mois" },
+      { "name": "Builder", "price": 50, "period": "mois" },
+      { "name": "Founder", "price": 100, "period": "mois" },
+      { "name": "Leader", "price": 200, "period": "mois" },
+      { "name": "Custom", "price": null, "period": "mois" }
+    ],
+    "seatMinimum": null,
+    "usageLimits": [
+      "Consommation de crédits par tâche selon le modèle IA et la complexité"
+    ],
+    "cautions": [
+      "Aucun plan gratuit ni essai mentionné sur le site",
+      "Suppression de compte après 12 mois d'inactivité sans abonnement actif"
+    ]
+  },
+  "capabilities": [
+    "Employés IA déployables sur 10 fonctions métier (Sales, Marketing, Support, Ops, Data, Finance, Product, Design, People, Legal)",
+    "Système de crédits transparent, packs de recharge à la demande",
+    "Documentation sécurité/conformité étoffée (DPA, sous-traitants, divulgation responsable)",
+    "Export de données structuré (JSON/CSV) sous 30 jours, section CGU dédiée au changement de plateforme"
+  ],
+  "limitations": [
+    "Aucun plan gratuit ni essai gratuit annoncé",
+    "Aucune capture d'écran réelle du produit disponible publiquement (démo interactive en JS uniquement)",
+    "Témoignage client lui-même signale une interface 'un peu confuse'",
+    "Suppression de compte et données après 12 mois d'inactivité sans abonnement payant"
+  ],
+  "integrations": [],
+  "audiences": [
+    "Fondateurs solo et petites équipes qui veulent déléguer des workflows métier définis à des agents IA",
+    "Startups qui veulent éviter d'embaucher pour des tâches répétables et bornées"
+  ],
+  "useCases": [
+    "Déléguer une tâche métier bornée (ex: qualification de leads) à un agent IA dédié",
+    "Étendre progressivement le périmètre d'un agent après validation des premiers résultats",
+    "Centraliser plusieurs employés IA (vente, support, finance) dans un même espace de travail"
+  ],
+  "alternatives": ["lindy", "relevance-ai"],
+  "editorialNotes": [
+    "Le nom d'origine indiqué dans la file de soumission interne ('Zalt') était en réalité le nom de famille du fondateur, pas le nom du produit. Fiche créée sous le vrai nom du produit : Sistava.",
+    "Alternatives retenues, déjà catalogué ToolTrim, même besoin principal (plateforme d'agents/employés IA pour déléguer des workflows métier) : Lindy et Relevance AI (qui utilise elle-même le terme 'AI Workforce', positionnement quasi identique).",
+    "Soumission reçue via le formulaire ToolTrim (contact admin@sista.ai, lien avec l'outil : fondateur, file prioritaire avec badge 'vérifié', soumission gratuite avec badge). Le contact officiel publié sur le site est hello@sistava.com / support@sista.ai : l'email admin@sista.ai fourni dans la soumission n'apparaît pas publiquement sur le site, cohérent avec un contact interne du fondateur plutôt qu'une erreur.",
+    "Notation faite indépendamment du statut de soumission prioritaire/badge, conformément à la règle : un badge ou une file prioritaire ne change jamais la méthode de recherche ni le score."
+  ],
+  "unknowns": [
+    "Détail exact des crédits inclus et de la 'capacité employés' par plan, non précisé publiquement au-delà du prix",
+    "Fiabilité des employés IA en usage réel non vérifiée indépendamment par ToolTrim",
+    "Contenu complet de la section CGU 18.A (Data Portability & Switching) non entièrement récupéré"
+  ],
+  "conflicts": []
+}

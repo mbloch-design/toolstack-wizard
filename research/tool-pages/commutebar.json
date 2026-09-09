@@ -1,0 +1,161 @@
+{
+  "schemaVersion": 1,
+  "slug": "commutebar",
+  "researchedOn": "2026-09-03",
+  "researcher": "Claude Code",
+  "status": "draft",
+  "identity": {
+    "officialName": "CommuteBar",
+    "vendor": "UI Lab Inc., juridiction Ontario, Canada (loi fédérale canadienne applicable). Adresse et numéro d'immatriculation non publiés, contact support@commute.bar",
+    "officialUrl": "https://www.commute.bar/",
+    "pricingUrl": "https://www.commute.bar/",
+    "docsUrl": "https://www.commute.bar/support",
+    "changelogUrl": null
+  },
+  "claims": [
+    {
+      "id": "pricing.lifetime",
+      "value": "Licence à vie (paiement unique) : 6,99 $ en offre de lancement (prix normal 9,99 $), aucun abonnement. Disponible en achat direct ou sur le Mac App Store",
+      "sourceUrl": "https://www.commute.bar/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "'Launch deal. $9.99 $6.99 lifetime license' ; 'Lifetime deal. No subscription.' ; bouton 'Buy $6.99 $9.99' et 'Download on the Mac App Store'",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "pricing.launch-deadline",
+      "value": "L'offre de lancement à 6,99 $ est affichée avec un compte à rebours ('Ends in 48d...'), donc temporaire",
+      "sourceUrl": "https://www.commute.bar/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Minuteur affiché sous le prix : 'Ends in 48d 20h 53m 55s'",
+      "confidence": "high",
+      "volatility": "high"
+    },
+    {
+      "id": "capability.platform",
+      "value": "Application macOS uniquement, nécessite macOS 14 Sonoma ou supérieur, sans icône dans le Dock",
+      "sourceUrl": "https://www.commute.bar/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "'Requires macOS 14 Sonoma or later'",
+      "confidence": "high",
+      "volatility": "low"
+    },
+    {
+      "id": "capability.features",
+      "value": "Affichage de l'ETA en temps réel avec indicateur de retard trafic dans la barre de menu, plusieurs destinations (Maison, Travail, École, Salle de sport...), modes de trajet (voiture/vélo/marche), évitement péages/autoroutes, plages horaires de trajet programmables avec notifications automatiques ('Leave soon', 'Leave now', alerte pic de trafic), 6 icônes de barre de menu personnalisables, programmation automatique basée sur le calendrier",
+      "sourceUrl": "https://www.commute.bar/",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Section fonctionnalités de la page d'accueil",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "capability.privacy",
+      "value": "Utilise Apple Maps (MapKit) localement sur le Mac ; la localisation n'est jamais envoyée aux serveurs de UI Lab. Destinations et préférences stockées localement via SwiftData. Un identifiant matériel stable (IOPlatformUUID) peut être envoyé aux serveurs uniquement pour la version en distribution directe (hors Mac App Store), à l'activation",
+      "sourceUrl": "https://www.commute.bar/privacy",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Politique de confidentialité : 'Processed locally; not sent to UI Lab servers' ; 'Stored locally on your device using SwiftData' ; 'may send a stable hardware identifier...when you activate'",
+      "confidence": "high",
+      "volatility": "low"
+    },
+    {
+      "id": "capability.no-export",
+      "value": "Aucun mécanisme d'export formel des données. Suppression possible en retirant les destinations ou en désinstallant l'app ; les données de licence/achat peuvent être demandées au support",
+      "sourceUrl": "https://www.commute.bar/privacy",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Politique de confidentialité, section données/droits",
+      "confidence": "high",
+      "volatility": "low"
+    },
+    {
+      "id": "identity.vendor",
+      "value": "Éditeur : UI Lab Inc., juridiction Ontario/Canada selon les CGU. Détenteur de la marque CommuteBar™. Adresse et numéro d'entreprise non publiés",
+      "sourceUrl": "https://www.commute.bar/terms",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "CGU : 'UI Lab Inc.' comme éditeur, clause de droit applicable 'Province of Ontario and the applicable federal laws of Canada'",
+      "confidence": "high",
+      "volatility": "low"
+    },
+    {
+      "id": "proof.no-reviews-yet",
+      "value": "Fiche Mac App Store consultée : 'This app hasn't received enough ratings or reviews to display an overview' — aucun avis chiffré nulle part (site, App Store, recherche web), mais aucune statistique fabriquée non plus sur le site officiel",
+      "sourceUrl": "https://apps.apple.com/app/id6803743918",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Fiche Mac App Store de CommuteBar (id6803743918)",
+      "confidence": "high",
+      "volatility": "medium"
+    },
+    {
+      "id": "quality.real-screenshot",
+      "value": "Captures d'écran réelles du produit vérifiées directement (ex: live-eta-traffic-time.jpg) : montrent l'interface de la barre de menu déroulée avec ETA, alerte trafic '+1min', bouton 'Leave now · 14min late', et carte Apple Maps intégrée — cohérent avec les promesses marketing",
+      "sourceUrl": "https://www.commute.bar/features/dark/live-eta-traffic-time.jpg",
+      "sourceTier": 1,
+      "accessedOn": "2026-09-03",
+      "evidence": "Inspection directe de plusieurs captures du dossier /features/",
+      "confidence": "high",
+      "volatility": "low"
+    }
+  ],
+  "pricing": {
+    "originalCurrency": "USD",
+    "billingContext": "achat unique, licence à vie",
+    "taxIncluded": null,
+    "freePlan": null,
+    "plans": [
+      { "name": "Licence à vie", "price": 6.99, "priceRegular": 9.99, "period": "unique" }
+    ],
+    "seatMinimum": null,
+    "usageLimits": [],
+    "cautions": [
+      "Le prix de 6,99 $ est une offre de lancement à durée limitée (compte à rebours affiché), le prix normal est 9,99 $",
+      "macOS uniquement, aucune version Windows/iOS/Android"
+    ]
+  },
+  "capabilities": [
+    "ETA en temps réel avec alerte de retard trafic dans la barre de menu",
+    "Plusieurs destinations et modes de trajet (voiture, vélo, marche)",
+    "Notifications programmées ('Leave soon', 'Leave now', pic de trafic)",
+    "Traitement local des données de localisation (Apple Maps/MapKit), jamais envoyées aux serveurs de l'éditeur"
+  ],
+  "limitations": [
+    "macOS uniquement (nécessite macOS 14+)",
+    "Aucun mécanisme d'export formel des données (mais données limitées à des adresses stockées localement)",
+    "Aucun avis chiffré disponible nulle part (App Store, recherche web) : produit très récent",
+    "Prix de lancement temporaire, passera à 9,99 $ après la période promotionnelle"
+  ],
+  "integrations": [
+    "Apple Maps / MapKit (calcul d'itinéraire, local)",
+    "Calendrier macOS (programmation automatique des trajets)",
+    "Stripe (paiement direct), Mac App Store (paiement alternatif)"
+  ],
+  "audiences": [
+    "Utilisateurs Mac avec un trajet régulier (domicile-travail, école, sport)",
+    "Indépendants et télétravailleurs partiels qui alternent domicile et lieux de rendez-vous"
+  ],
+  "useCases": [
+    "Vérifier en un coup d'œil s'il faut partir maintenant pour arriver à l'heure",
+    "Comparer le temps de trajet vers plusieurs destinations sans ouvrir Maps",
+    "Recevoir une alerte automatique en cas de pic de trafic avant un rendez-vous programmé"
+  ],
+  "alternatives": ["google-maps"],
+  "editorialNotes": [
+    "CommuteBar est une application native macOS à paiement unique, pas un SaaS web par abonnement : ça sort du périmètre habituel du catalogue ToolTrim (positioning.md exclut explicitement les comparaisons hardware/mobile, et le catalogue est presque exclusivement du SaaS web par abonnement). Ajouté sur demande explicite de Michael ; à traiter comme un cas particulier assumé plutôt qu'un précédent pour élargir systématiquement le catalogue aux apps natives.",
+    "Alternative retenue : Google Maps (déjà catalogué), gratuit et universel, mais nécessite d'ouvrir l'app/le site à chaque fois plutôt qu'un coup d'œil dans la barre de menu — différence de confort, pas de fonctionnalité manquante, honnêtement présentée comme telle.",
+    "Aucun concurrent direct (autre app de barre de menu de trajet) trouvé au catalogue ni recherché activement, conformément à la consigne de ne pas créer de nouvelles fiches concurrentes sans demande explicite.",
+    "Corrections post-vérification (2026-09-03) : (1) le bloc auto-généré 'rentabilité' parlait de 'coût mensuel' pour un achat unique — ajout de profitableIf/tooExpensiveIf curatés dans verdict/verdictEn pour éviter le mauvais libellé ; (2) le champ freeAlternative contenait le slug brut 'google-maps' au lieu du nom affichable 'Google Maps' (le champ attend un nom, pas un slug, comme confirmé sur d'autres fiches du catalogue)."
+  ],
+  "unknowns": [
+    "Nombre réel d'utilisateurs/téléchargements, aucune métrique publique",
+    "Taille réelle de l'équipe UI Lab Inc., aucune page 'à propos' trouvée",
+    "Fiabilité de la détection trafic en conditions réelles non testée indépendamment par ToolTrim"
+  ],
+  "conflicts": []
+}

@@ -172500,26 +172500,122 @@
     "description": "CommuteBar est une application native pour macOS 14 ou version ultérieure. Elle garde le temps de trajet Apple Maps visible près de l'horloge et indique si le trafic s'améliore ou se dégrade.\n\nL'utilisateur enregistre ses destinations, programme des fenêtres de trajet et reçoit des alertes pour partir bientôt ou immédiatement. L'application gère la voiture, le vélo et la marche, compare les itinéraires et peut éviter les péages ou autoroutes.\n\nCommuteBar ne remplace pas une navigation détaillée. Il évite surtout de rouvrir Maps ou son téléphone avant chaque départ. La licence directe est vendue 6,99 $ en promotion, sans abonnement, et fonctionne sur trois Mac.",
     "longDescription": "CommuteBar est une application native pour macOS 14 ou version ultérieure. Elle garde le temps de trajet Apple Maps visible près de l'horloge et indique si le trafic s'améliore ou se dégrade.\n\nL'utilisateur enregistre ses destinations, programme des fenêtres de trajet et reçoit des alertes pour partir bientôt ou immédiatement. L'application gère la voiture, le vélo et la marche, compare les itinéraires et peut éviter les péages ou autoroutes.\n\nCommuteBar ne remplace pas une navigation détaillée. Il évite surtout de rouvrir Maps ou son téléphone avant chaque départ. La licence directe est vendue 6,99 $ en promotion, sans abonnement, et fonctionne sur trois Mac.",
     "longDescriptionEn": "CommuteBar is a native app for macOS 14 or later. It keeps Apple Maps travel time visible next to the clock and shows whether traffic is improving or getting worse.\n\nUsers save destinations, schedule commute windows, and receive leave-soon or leave-now alerts. The app supports driving, cycling, and walking, compares routes, and can avoid tolls or highways.\n\nCommuteBar does not replace turn-by-turn navigation. It mainly removes repeated Maps or phone checks before leaving. The direct lifetime license is currently $6.99, with no subscription, and activates on three Macs.",
-    "pricing": {"free":"Pas de plan gratuit permanent","paid":"Licence à vie 6,99 $ en promotion au lieu de 9,99 $, sans abonnement"},
-    "pricingEn": {"free":"No permanent free plan","paid":"$6.99 promotional lifetime license, down from $9.99, with no subscription"},
+    "pricing": {
+      "free": "Pas de plan gratuit permanent",
+      "paid": "Licence à vie 6,99 $ en promotion au lieu de 9,99 $, sans abonnement"
+    },
+    "pricingEn": {
+      "free": "No permanent free plan",
+      "paid": "$6.99 promotional lifetime license, down from $9.99, with no subscription"
+    },
     "defaultMonthlyPrice": 0,
-    "pricing_v5": {"cautions":["Prix promotionnel susceptible de changer.","La licence à vie garantit l'usage des versions reçues, pas les futures mises à jour ni la compatibilité avec les prochains macOS.","Remboursement direct sous 7 jours."],"cautionsEn":["Promotional price may change.","The lifetime license covers received builds, not guaranteed future updates or macOS compatibility.","Direct purchases have a 7-day refund window."],"verified_on":"2026-09-07","source_domain":"commute.bar","usage_sensitive":false,"compare_plan_kind":"one_time","compare_plan_name":"Licence à vie, 6,99 $","price_reliability":"high","location_sensitive":true,"official_source_url":"https://www.commute.bar/","verification_status":"official_explicit","compare_price_monthly_eur":0},
+    "pricing_v5": {
+      "cautions": [
+        "Prix promotionnel susceptible de changer.",
+        "La licence à vie garantit l'usage des versions reçues, pas les futures mises à jour ni la compatibilité avec les prochains macOS.",
+        "Remboursement direct sous 7 jours."
+      ],
+      "cautionsEn": [
+        "Promotional price may change.",
+        "The lifetime license covers received builds, not guaranteed future updates or macOS compatibility.",
+        "Direct purchases have a 7-day refund window."
+      ],
+      "verified_on": "2026-09-07",
+      "source_domain": "commute.bar",
+      "usage_sensitive": false,
+      "compare_plan_kind": "one_time",
+      "compare_plan_name": "Licence à vie, 6,99 $",
+      "price_reliability": "high",
+      "location_sensitive": true,
+      "official_source_url": "https://www.commute.bar/",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 0
+    },
     "websiteUrl": "https://commute.bar/",
     "affiliateLink": "",
     "logo": "https://www.commute.bar/_next/image?url=%2Flogo-rounded.png&w=256&q=75",
-    "verdict": {"keepIf":["Vous travaillez sur Mac avant un trajet régulier et vérifiez souvent le trafic.","Une indication discrète dans la barre des menus suffit avant d'ouvrir la navigation.","Vous préférez une licence à vie peu coûteuse à un abonnement."],"avoidIf":["Vous n'utilisez pas macOS 14 ou une version ultérieure.","Vous cherchez une navigation GPS détaillée pendant le trajet.","Vos déplacements sont rares ou imprévisibles."],"threshold":"Achetez CommuteBar si éviter les vérifications répétées de Maps vous fait gagner quelques minutes chaque semaine. Les horaires restant fondés sur des estimations Apple Maps, gardez votre application de navigation pour les trajets critiques."},
-    "verdictEn": {"keepIf":["You work on a Mac before a regular commute and repeatedly check traffic.","A discreet menu-bar indicator is enough before opening navigation.","You prefer a low-cost lifetime license over a subscription."],"avoidIf":["You do not use macOS 14 or later.","You need turn-by-turn navigation during the trip.","Your trips are rare or unpredictable."],"threshold":"Buy CommuteBar when avoiding repeated Maps checks saves a few minutes each week. Because timing still relies on Apple Maps estimates, keep a navigation app for time-critical trips."},
-    "pros": ["ETA visible sans ouvrir une application de cartographie.","Destinations et fenêtres de trajet programmables.","Alertes de départ et hausse importante du trafic.","Localisation et destinations traitées localement sur le Mac.","Licence directe activable sur trois Mac."],
-    "prosEn": ["ETA visible without opening a maps app.","Scheduled destinations and commute windows.","Departure and major traffic-delay alerts.","Location and destinations processed locally on the Mac.","Direct license activates on three Macs."],
-    "cons": ["Disponible uniquement sur macOS 14 ou version ultérieure.","Dépend de la précision et de la disponibilité d'Apple Maps.","Ne fournit pas de navigation détaillée.","Les futures mises à jour et compatibilités macOS ne sont pas garanties."],
-    "consEn": ["Only available on macOS 14 or later.","Depends on Apple Maps accuracy and availability.","Does not provide turn-by-turn navigation.","Future updates and macOS compatibility are not guaranteed."],
-    "useCases": ["Surveiller le trafic vers le bureau depuis la barre des menus.","Afficher automatiquement l'école, la salle de sport ou un client selon l'horaire.","Recevoir une alerte quand un retard important apparaît."],
-    "useCasesEn": ["Monitor traffic to work from the menu bar.","Automatically show school, gym, or a client destination by schedule.","Get alerted when a significant delay appears."],
-    "covers": ["temps-trajet","alertes-depart","planification-trajets"],
-    "functional_needs": ["temps-trajet","planification-trajets"],
-    "relevantFor": ["Indépendants travaillant sur Mac","Parents avec trajets réguliers","Consultants se déplaçant chez des clients"],
+    "verdict": {
+      "keepIf": [
+        "Tu travailles sur Mac avant un trajet régulier et vérifies souvent le trafic.",
+        "Une indication discrète dans la barre des menus suffit avant d'ouvrir la navigation.",
+        "Tu préfères une licence à vie peu coûteuse à un abonnement."
+      ],
+      "avoidIf": [
+        "Tu n'utilises pas macOS 14 ou une version ultérieure.",
+        "Tu cherches une navigation GPS détaillée pendant le trajet.",
+        "Tes déplacements sont rares ou imprévisibles."
+      ],
+      "threshold": "Achète CommuteBar si éviter les vérifications répétées de Maps te fait gagner quelques minutes chaque semaine. Les horaires restant fondés sur des estimations Apple Maps, garde ton application de navigation pour les trajets critiques."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You work on a Mac before a regular commute and repeatedly check traffic.",
+        "A discreet menu-bar indicator is enough before opening navigation.",
+        "You prefer a low-cost lifetime license over a subscription."
+      ],
+      "avoidIf": [
+        "You do not use macOS 14 or later.",
+        "You need turn-by-turn navigation during the trip.",
+        "Your trips are rare or unpredictable."
+      ],
+      "threshold": "Buy CommuteBar when avoiding repeated Maps checks saves a few minutes each week. Because timing still relies on Apple Maps estimates, keep a navigation app for time-critical trips."
+    },
+    "pros": [
+      "ETA visible sans ouvrir une application de cartographie.",
+      "Destinations et fenêtres de trajet programmables.",
+      "Alertes de départ et hausse importante du trafic.",
+      "Localisation et destinations traitées localement sur le Mac.",
+      "Licence directe activable sur trois Mac."
+    ],
+    "prosEn": [
+      "ETA visible without opening a maps app.",
+      "Scheduled destinations and commute windows.",
+      "Departure and major traffic-delay alerts.",
+      "Location and destinations processed locally on the Mac.",
+      "Direct license activates on three Macs."
+    ],
+    "cons": [
+      "Disponible uniquement sur macOS 14 ou version ultérieure.",
+      "Dépend de la précision et de la disponibilité d'Apple Maps.",
+      "Ne fournit pas de navigation détaillée.",
+      "Les futures mises à jour et compatibilités macOS ne sont pas garanties."
+    ],
+    "consEn": [
+      "Only available on macOS 14 or later.",
+      "Depends on Apple Maps accuracy and availability.",
+      "Does not provide turn-by-turn navigation.",
+      "Future updates and macOS compatibility are not guaranteed."
+    ],
+    "useCases": [
+      "Surveiller le trafic vers le bureau depuis la barre des menus.",
+      "Afficher automatiquement l'école, la salle de sport ou un client selon l'horaire.",
+      "Recevoir une alerte quand un retard important apparaît."
+    ],
+    "useCasesEn": [
+      "Monitor traffic to work from the menu bar.",
+      "Automatically show school, gym, or a client destination by schedule.",
+      "Get alerted when a significant delay appears."
+    ],
+    "covers": [
+      "temps-trajet",
+      "alertes-depart",
+      "planification-trajets"
+    ],
+    "functional_needs": [
+      "temps-trajet",
+      "planification-trajets"
+    ],
+    "relevantFor": [
+      "Indépendants travaillant sur Mac",
+      "Parents avec trajets réguliers",
+      "Consultants se déplaçant chez des clients"
+    ],
     "alternatives": [],
-    "seo": {"idealForFr":"Idéal pour un utilisateur Mac qui veut savoir quand partir sans consulter Maps à répétition.","idealForEn":"Ideal for a Mac user who wants to know when to leave without repeatedly checking Maps.","metaDescription":"CommuteBar : avis, prix à vie, ETA Apple Maps dans la barre des menus, alertes de départ, confidentialité et limites."},
+    "seo": {
+      "idealForFr": "Idéal pour un utilisateur Mac qui veut savoir quand partir sans consulter Maps à répétition.",
+      "idealForEn": "Ideal for a Mac user who wants to know when to leave without repeatedly checking Maps.",
+      "metaDescription": "CommuteBar : avis, prix à vie, ETA Apple Maps dans la barre des menus, alertes de départ, confidentialité et limites."
+    },
     "articles": [],
     "soloRelevance": "high",
     "teamRelevance": "low",
@@ -172527,7 +172623,9 @@
     "substitutable": true,
     "host_app": "macos",
     "bundle_parent": null,
-    "verticals": ["consultant-b2b"],
+    "verticals": [
+      "consultant-b2b"
+    ],
     "ia_use_case": null,
     "freeAlternative": null,
     "betterAlternative": null,
@@ -172538,12 +172636,330 @@
     "prescription_quality": "question",
     "prescription_output": null,
     "prescription_block_reasons": [],
-    "prescription_context_questions": ["macos_version","commutes_per_week","regular_destinations"],
+    "prescription_context_questions": [
+      "macos_version",
+      "commutes_per_week",
+      "regular_destinations"
+    ],
     "substitution_cluster_v2": "commute-monitoring",
-    "decision_policy_v3": {"auto_cancel_allowed":false,"auto_replace_allowed":false,"default_decision_lane":"review_then_prescribe","auto_downgrade_allowed":false,"never_auto_cancel_reason":null,"requires_context_questions":true},
+    "decision_policy_v3": {
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": false,
+      "default_decision_lane": "review_then_prescribe",
+      "auto_downgrade_allowed": false,
+      "never_auto_cancel_reason": null,
+      "requires_context_questions": true
+    },
     "ogImageUrl": "https://www.commute.bar/_next/image?url=%2Ffeatures%2Flight%2Flive-eta-traffic-time.jpg&w=3840&q=75",
-    "galleryImages": ["https://www.commute.bar/_next/image?url=%2Ffeatures%2Flight%2Fmultiple-destinations.jpg&w=3840&q=75","https://www.commute.bar/_next/image?url=%2Ffeatures%2Flight%2Ftravel-modes.jpg&w=3840&q=75","https://www.commute.bar/_next/image?url=%2Ffeatures%2Flight%2Fcommute-windows.jpg&w=3840&q=75"],
+    "galleryImages": [
+      "https://www.commute.bar/_next/image?url=%2Ffeatures%2Flight%2Fmultiple-destinations.jpg&w=3840&q=75",
+      "https://www.commute.bar/_next/image?url=%2Ffeatures%2Flight%2Ftravel-modes.jpg&w=3840&q=75",
+      "https://www.commute.bar/_next/image?url=%2Ffeatures%2Flight%2Fcommute-windows.jpg&w=3840&q=75"
+    ],
     "force_silence": false,
-    "toolTrimRating": {"valeurAjoutee":4,"simplicite":4,"utilisation":4,"puissance":3,"reversibilite":4,"evidence":{"valeurAjoutee":"Licence à vie affichée à 6,99 $ et suppression d'une vérification répétitive avant les trajets réguliers (source : commute.bar, consulté le 2026-09-07).","simplicite":"Installation native, ajout d'une destination, autorisation de localisation puis ETA visible dans la barre des menus, sans compte obligatoire (sources : commute.bar et support, consultées le 2026-09-07).","utilisation":"Les fonctions clés sont montrées dans quatre captures produit officielles : ETA, destinations, modes de transport et fenêtres de trajet. Les estimations restent dépendantes d'Apple Maps (source : commute.bar, consulté le 2026-09-07).","puissance":"Outil spécialisé couvrant horaires, alertes, itinéraires et trois modes de transport, mais sans navigation détaillée ni plateforme mobile (sources : commute.bar et conditions, consultées le 2026-09-07).","reversibilite":"Destinations et préférences stockées localement avec SwiftData et supprimables en retirant les destinations ou l'application. La licence directe reste utilisable sur les versions reçues (sources : commute.bar/privacy et support, consultées le 2026-09-07)."},"evidenceEn":{"valeurAjoutee":"The lifetime license is listed at $6.99 and removes a repetitive check before regular trips (source: commute.bar, checked 2026-09-07).","simplicite":"Native installation, add a destination, grant location access, then see ETA in the menu bar, with no required account (sources: commute.bar and support, checked 2026-09-07).","utilisation":"Four official product images show ETA, destinations, travel modes, and commute windows. Estimates still depend on Apple Maps (source: commute.bar, checked 2026-09-07).","puissance":"A focused utility covering schedules, alerts, routes, and three travel modes, but no turn-by-turn navigation or mobile platform (sources: commute.bar and terms, checked 2026-09-07).","reversibilite":"Destinations and preferences are stored locally with SwiftData and can be removed by deleting destinations or uninstalling the app. The direct license remains valid for received builds (sources: commute.bar/privacy and support, checked 2026-09-07)."},"lastActivityVerifiedOn":"2026-09-05","notedOn":"2026-09-07"}
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 3,
+      "reversibilite": 4,
+      "evidence": {
+        "valeurAjoutee": "Licence à vie affichée à 6,99 $ et suppression d'une vérification répétitive avant les trajets réguliers (source : commute.bar, consulté le 2026-09-07).",
+        "simplicite": "Installation native, ajout d'une destination, autorisation de localisation puis ETA visible dans la barre des menus, sans compte obligatoire (sources : commute.bar et support, consultées le 2026-09-07).",
+        "utilisation": "Les fonctions clés sont montrées dans quatre captures produit officielles : ETA, destinations, modes de transport et fenêtres de trajet. Les estimations restent dépendantes d'Apple Maps (source : commute.bar, consulté le 2026-09-07).",
+        "puissance": "Outil spécialisé couvrant horaires, alertes, itinéraires et trois modes de transport, mais sans navigation détaillée ni plateforme mobile (sources : commute.bar et conditions, consultées le 2026-09-07).",
+        "reversibilite": "Destinations et préférences stockées localement avec SwiftData et supprimables en retirant les destinations ou l'application. La licence directe reste utilisable sur les versions reçues (sources : commute.bar/privacy et support, consultées le 2026-09-07)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "The lifetime license is listed at $6.99 and removes a repetitive check before regular trips (source: commute.bar, checked 2026-09-07).",
+        "simplicite": "Native installation, add a destination, grant location access, then see ETA in the menu bar, with no required account (sources: commute.bar and support, checked 2026-09-07).",
+        "utilisation": "Four official product images show ETA, destinations, travel modes, and commute windows. Estimates still depend on Apple Maps (source: commute.bar, checked 2026-09-07).",
+        "puissance": "A focused utility covering schedules, alerts, routes, and three travel modes, but no turn-by-turn navigation or mobile platform (sources: commute.bar and terms, checked 2026-09-07).",
+        "reversibilite": "Destinations and preferences are stored locally with SwiftData and can be removed by deleting destinations or uninstalling the app. The direct license remains valid for received builds (sources: commute.bar/privacy and support, checked 2026-09-07)."
+      },
+      "lastActivityVerifiedOn": "2026-09-05",
+      "notedOn": "2026-09-07"
+    }
+  },
+  {
+    "id": "sistava",
+    "slug": "sistava",
+    "name": "Sistava",
+    "category": "automation",
+    "shortDescription": "Déploie des employés IA sur 10 fonctions métier pour déléguer des workflows définis.",
+    "shortDescriptionEn": "Deploy AI employees across 10 business functions to delegate defined workflows.",
+    "description": "Sistava fait travailler des « employés IA » sur des workflows métier définis et répétables (vente, marketing, support, opérations, data, finance, produit, design, RH, juridique), plutôt que sur des tâches ponctuelles nécessitant du jugement humain. Tu choisis un rôle disponible ou définis un workflow ciblé, ajoutes le contexte et les outils nécessaires, délègues une tâche bornée, relis le résultat, puis élargis le périmètre progressivement.\n\nQuatre plans mensuels (25 $ à 200 $) plus un plan sur-mesure, avec un système de crédits transparent consommés selon le modèle IA et la complexité de la tâche (packs de recharge disponibles à la demande). Aucun plan gratuit ni essai n'est annoncé.\n\nSistava est édité par Sista AI B.V., société néerlandaise basée à Amsterdam, fondée par Mahmoud Zalt (ingénieur logiciel, 16 ans d'expérience). La documentation légale et sécurité (accord de traitement des données, liste de sous-traitants, programme de divulgation responsable) est plus étoffée que la plupart des jeunes outils IA. Aucune capture d'écran réelle du produit n'est publiée : la démo interactive nécessite JavaScript et n'a pas pu être vérifiée visuellement.",
+    "longDescription": "Sistava fait travailler des « employés IA » sur des workflows métier définis et répétables (vente, marketing, support, opérations, data, finance, produit, design, RH, juridique), plutôt que sur des tâches ponctuelles nécessitant du jugement humain. Tu choisis un rôle disponible ou définis un workflow ciblé, ajoutes le contexte et les outils nécessaires, délègues une tâche bornée, relis le résultat, puis élargis le périmètre progressivement.\n\nQuatre plans mensuels (25 $ à 200 $) plus un plan sur-mesure, avec un système de crédits transparent consommés selon le modèle IA et la complexité de la tâche (packs de recharge disponibles à la demande). Aucun plan gratuit ni essai n'est annoncé.\n\nSistava est édité par Sista AI B.V., société néerlandaise basée à Amsterdam, fondée par Mahmoud Zalt (ingénieur logiciel, 16 ans d'expérience). La documentation légale et sécurité (accord de traitement des données, liste de sous-traitants, programme de divulgation responsable) est plus étoffée que la plupart des jeunes outils IA. Aucune capture d'écran réelle du produit n'est publiée : la démo interactive nécessite JavaScript et n'a pas pu être vérifiée visuellement.",
+    "longDescriptionEn": "Sistava puts \"AI employees\" to work on defined, repeatable business workflows (sales, marketing, support, operations, data, finance, product, design, people, legal), rather than one-off tasks that need human judgment. You pick an available role or define a focused workflow, add the business context and tools needed, delegate a bounded task, review the result, then expand scope deliberately.\n\nFour monthly plans ($25 to $200) plus a custom tier, with a transparent credit system consumed based on the AI model and task complexity (top-up packs available on demand). No free plan or trial is advertised.\n\nSistava is published by Sista AI B.V., a Dutch company based in Amsterdam, founded by Mahmoud Zalt (a software engineer with 16 years of experience). Legal and security documentation (data processing agreement, subprocessor list, responsible disclosure program) is more developed than most young AI tools. No real product screenshot is published: the interactive demo requires JavaScript and couldn't be visually verified.",
+    "pricing": {
+      "free": "Pas de plan gratuit ni d'essai annoncé",
+      "paid": "Starter 25 $/mois, Builder 50 $/mois, Founder 100 $/mois, Leader 200 $/mois, Custom sur devis"
+    },
+    "pricingEn": {
+      "free": "No free plan or trial advertised",
+      "paid": "Starter $25/month, Builder $50/month, Founder $100/month, Leader $200/month, Custom on request"
+    },
+    "defaultMonthlyPrice": 25,
+    "pricing_v5": {
+      "cautions": [
+        "Aucun plan gratuit ni essai gratuit annoncé sur le site.",
+        "Suppression du compte et des données après 12 mois d'inactivité sans abonnement payant actif.",
+        "Détail exact des crédits inclus par plan non précisé publiquement au-delà du prix."
+      ],
+      "cautionsEn": [
+        "No free plan or free trial advertised on the site.",
+        "Account and data deleted after 12 consecutive months of inactivity without an active paid subscription.",
+        "Exact included credits per plan not disclosed publicly beyond the price."
+      ],
+      "verified_on": "2026-09-03",
+      "source_domain": "sistava.com",
+      "usage_sensitive": true,
+      "compare_plan_kind": "account",
+      "compare_plan_name": "Starter",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://sistava.com/en/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 23,
+      "plans": [
+        {
+          "planKey": "starter",
+          "displayName": "Starter",
+          "summary": "Pour un individu qui engage un assistant IA dédié.",
+          "featureHighlights": [
+            "Assistant IA dédié",
+            "Crédits inclus (volume non précisé)"
+          ],
+          "detailsSourceUrl": "https://sistava.com/en/pricing",
+          "pricingUnit": "par compte",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 25,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedLocale": "en-US",
+          "observedOn": "2026-09-03",
+          "lastConfirmedOn": "2026-09-03"
+        },
+        {
+          "planKey": "builder",
+          "displayName": "Builder",
+          "summary": "Pour un fondateur solo qui avance vite.",
+          "featureHighlights": [
+            "Capacité employés IA supérieure",
+            "Crédits inclus plus élevés"
+          ],
+          "detailsSourceUrl": "https://sistava.com/en/pricing",
+          "pricingUnit": "par compte",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 50,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedLocale": "en-US",
+          "observedOn": "2026-09-03",
+          "lastConfirmedOn": "2026-09-03"
+        },
+        {
+          "planKey": "founder",
+          "displayName": "Founder",
+          "summary": "Pour une petite équipe qui grandit plus vite avec l'IA.",
+          "featureHighlights": [
+            "Pensé pour petites équipes",
+            "Capacité employés IA élargie"
+          ],
+          "detailsSourceUrl": "https://sistava.com/en/pricing",
+          "pricingUnit": "par compte",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 100,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedLocale": "en-US",
+          "observedOn": "2026-09-03",
+          "lastConfirmedOn": "2026-09-03"
+        },
+        {
+          "planKey": "leader",
+          "displayName": "Leader",
+          "summary": "Pour une grande équipe qui opère à l'échelle.",
+          "featureHighlights": [
+            "Capacité employés IA maximale",
+            "Pensé pour grandes équipes"
+          ],
+          "detailsSourceUrl": "https://sistava.com/en/pricing",
+          "pricingUnit": "par compte",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 200,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "monthly",
+          "taxInclusion": "unknown",
+          "observedMarket": "US",
+          "observedLocale": "en-US",
+          "observedOn": "2026-09-03",
+          "lastConfirmedOn": "2026-09-03"
+        }
+      ]
+    },
+    "websiteUrl": "https://sistava.com/",
+    "affiliateLink": "",
+    "logo": "https://logo.clearbit.com/sistava.com",
+    "verdict": {
+      "keepIf": [
+        "Tu as un workflow métier défini et répétable (qualification de leads, support de premier niveau...) que tu veux déléguer sans embaucher.",
+        "Tu es à l'aise pour commencer par une tâche bornée et élargir le périmètre progressivement.",
+        "Un système de crédits transparent (plutôt qu'un prix par siège) correspond à ton usage."
+      ],
+      "avoidIf": [
+        "Tu veux tester gratuitement avant de payer : aucun plan gratuit ni essai n'est annoncé.",
+        "Tu veux un historique de fiabilité établi : la plateforme n'a été lancée qu'en avril 2026.",
+        "Tu risques de laisser le compte inactif plus de 12 mois : les données sont supprimées passé ce délai sans abonnement actif."
+      ],
+      "threshold": "Sistava devient intéressant si tu as un workflow métier assez défini pour le confier à un agent IA et assez répétitif pour justifier 25 à 200 $/mois. Pour des besoins plus exploratoires ou une automatisation ponctuelle, Lindy ou Relevance AI proposent un point d'entrée gratuit pour tester avant de t'engager."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You have a defined, repeatable business workflow (lead qualification, first-line support...) you want to delegate without hiring.",
+        "You're comfortable starting with a bounded task and expanding scope gradually.",
+        "A transparent credit system (rather than a per-seat price) fits how you'd use it."
+      ],
+      "avoidIf": [
+        "You want to test for free before paying: no free plan or trial is advertised.",
+        "You want an established track record: the platform only launched in April 2026.",
+        "You risk leaving the account inactive for over 12 months: data is deleted after that period without an active subscription."
+      ],
+      "threshold": "Sistava is worth it if you have a business workflow defined enough to hand to an AI agent and repetitive enough to justify $25 to $200/month. For more exploratory needs or one-off automation, Lindy or Relevance AI offer a free entry point to test before committing."
+    },
+    "pros": [
+      "Dix fonctions métier couvertes (vente, marketing, support, ops, data, finance, produit, design, RH, juridique).",
+      "Système de crédits transparent, packs de recharge à la demande.",
+      "Documentation légale et sécurité étoffée (DPA, sous-traitants, divulgation responsable) pour la taille de l'entreprise.",
+      "Engagement d'export de données concret (JSON/CSV sous 30 jours) et section CGU dédiée au changement de plateforme.",
+      "Approche délibérément prudente : tâche bornée d'abord, extension du périmètre ensuite."
+    ],
+    "prosEn": [
+      "Ten business functions covered (sales, marketing, support, ops, data, finance, product, design, people, legal).",
+      "Transparent credit system, on-demand top-up packs.",
+      "Developed legal and security documentation (DPA, subprocessors, responsible disclosure) for the company's size.",
+      "Concrete data export commitment (JSON/CSV within 30 days) and a dedicated ToS section on switching platforms.",
+      "Deliberately cautious approach: bounded task first, expanded scope later."
+    ],
+    "cons": [
+      "Aucun plan gratuit ni essai gratuit annoncé.",
+      "Aucune capture d'écran réelle du produit disponible publiquement.",
+      "Un témoignage client cité par l'éditeur signale lui-même une interface 'un peu confuse'.",
+      "Suppression du compte et des données après 12 mois d'inactivité sans abonnement payant actif."
+    ],
+    "consEn": [
+      "No free plan or free trial advertised.",
+      "No real product screenshot publicly available.",
+      "A customer testimonial cited by the publisher itself flags a 'bit confusing' interface.",
+      "Account and data deleted after 12 months of inactivity without an active paid subscription."
+    ],
+    "useCases": [
+      "Déléguer une tâche métier bornée (qualification de leads, réponses support) à un agent IA dédié.",
+      "Étendre progressivement le périmètre d'un agent après validation des premiers résultats.",
+      "Centraliser plusieurs employés IA (vente, support, finance) dans un même espace de travail."
+    ],
+    "useCasesEn": [
+      "Delegate a bounded business task (lead qualification, support replies) to a dedicated AI agent.",
+      "Gradually expand an agent's scope after validating initial results.",
+      "Centralize several AI employees (sales, support, finance) in one workspace."
+    ],
+    "covers": [
+      "agents-ia-metier",
+      "automatisation-workflow"
+    ],
+    "functional_needs": [
+      "agents-ia-metier",
+      "automatisation-workflow"
+    ],
+    "relevantFor": [
+      "Fondateurs solo",
+      "Petites équipes qui délèguent des workflows définis à l'IA"
+    ],
+    "alternatives": [
+      "lindy",
+      "relevance-ai"
+    ],
+    "seo": {
+      "idealForFr": "Idéal pour un fondateur solo qui veut déléguer un workflow métier défini et répétable à un agent IA plutôt que d'embaucher.",
+      "idealForEn": "Ideal for a solo founder who wants to delegate a defined, repeatable business workflow to an AI agent instead of hiring.",
+      "metaDescription": "Sistava : avis, prix dès 25 $/mois, employés IA par fonction métier et alternatives (Lindy, Relevance AI) pour déléguer des workflows définis."
+    },
+    "articles": [],
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "tool_type": "satellite",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "fondateur-saas",
+      "ai-builder"
+    ],
+    "ia_use_case": [
+      "agents"
+    ],
+    "freeAlternative": "Lindy",
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "personas": [],
+    "timeGainedHoursPerMonth": 4,
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [
+      "defined_workflow",
+      "team_size",
+      "budget_range"
+    ],
+    "substitution_cluster_v2": null,
+    "decision_policy_v3": {
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": false,
+      "default_decision_lane": "review_then_prescribe",
+      "auto_downgrade_allowed": false,
+      "never_auto_cancel_reason": null,
+      "requires_context_questions": true
+    },
+    "ogImageUrl": "https://sistava.com/site-assets/share/sistava-share-dark-1200x630.png",
+    "galleryImages": [],
+    "force_silence": false,
+    "toolTrimRating": {
+      "valeurAjoutee": 3,
+      "simplicite": 3,
+      "utilisation": 3,
+      "puissance": 4,
+      "reversibilite": 4,
+      "evidence": {
+        "valeurAjoutee": "Plans de 25 à 200 $/mois avec système de crédits transparent, positionné comme alternative à l'embauche pour des workflows définis. Aucun plan gratuit ni essai pour valider le retour avant de payer ; gains réels non vérifiés indépendamment (source : sistava.com/en/pricing, consulté le 2026-09-03).",
+        "simplicite": "Approche délibérément prudente (tâche bornée puis extension progressive), mais un témoignage client cité par l'éditeur lui-même indique explicitement 'The UI is a bit confusing' : signal de friction réelle rapporté sans être caché (source : sistava.com, consulté le 2026-09-03).",
+        "utilisation": "Aucune capture d'écran réelle du produit trouvée (démo interactive en JavaScript non capturable), donc pas de vérification visuelle directe possible. Six témoignages nommés avec des angles spécifiques (facilité vs concurrents, automatisation navigateur, prise en main) plutôt que génériques, mais restent une sélection publiée par l'éditeur (source : sistava.com, consulté le 2026-09-03).",
+        "puissance": "Couvre 10 fonctions métier et dispose d'une documentation légale/sécurité inhabituellement étoffée pour un outil aussi jeune (DPA, liste de sous-traitants, programme de divulgation responsable avec historique de failles corrigées). Société enregistrée aux Pays-Bas depuis juillet 2023, plateforme lancée en avril 2026 (source : sistava.com/en/legal et sistava.com/en/about, consulté le 2026-09-03).",
+        "reversibilite": "Engagement de portabilité RGPD explicite et concret : export JSON/CSV sous 30 jours, section dédiée des CGU (18.A) sur l'export et le changement de plateforme ; le plus détaillé observé dans ce lot de fiches. Réserve : suppression du compte et des données après 12 mois d'inactivité sans abonnement actif, données non récupérables ensuite (source : sistava.com/en/privacy et sistava.com/en/terms, consulté le 2026-09-03)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Plans from $25 to $200/month with a transparent credit system, positioned as an alternative to hiring for defined workflows. No free plan or trial to validate ROI before paying; real gains not independently verified (source: sistava.com/en/pricing, checked 2026-09-03).",
+        "simplicite": "Deliberately cautious approach (bounded task then gradual expansion), but a customer testimonial cited by the publisher itself explicitly states 'The UI is a bit confusing' : a real friction signal reported rather than hidden (source: sistava.com, checked 2026-09-03).",
+        "utilisation": "No real product screenshot found (the interactive demo requires JavaScript and couldn't be captured), so no direct visual verification was possible. Six named testimonials with specific angles (ease vs competitors, browser automation, onboarding) rather than generic ones, but remain a publisher-selected sample (source: sistava.com, checked 2026-09-03).",
+        "puissance": "Covers 10 business functions and has unusually developed legal/security documentation for such a young tool (DPA, subprocessor list, responsible disclosure program with a track record of fixed issues). Company registered in the Netherlands since July 2023, platform launched April 2026 (source: sistava.com/en/legal and sistava.com/en/about, checked 2026-09-03).",
+        "reversibilite": "Explicit, concrete GDPR portability commitment: JSON/CSV export within 30 days, a dedicated ToS section (18.A) on export and platform switching; the most detailed seen in this batch. Caveat: account and data deleted after 12 months of inactivity without an active subscription, unrecoverable afterward (source: sistava.com/en/privacy and sistava.com/en/terms, checked 2026-09-03)."
+      },
+      "lastActivityVerifiedOn": null,
+      "notedOn": "2026-09-03"
+    }
   }
 ]

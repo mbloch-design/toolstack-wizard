@@ -42242,5 +42242,41 @@
     "freeAlternative": null,
     "substitutable": true,
     "betterAlternative": null
+  },
+  {
+    "id": "sistava",
+    "slug": "sistava",
+    "name": "Sistava",
+    "categoryId": "automation",
+    "shortDescription": "Déploie des employés IA sur 10 fonctions métier pour déléguer des workflows définis.",
+    "shortDescriptionEn": "Deploy AI employees across 10 business functions to delegate defined workflows.",
+    "pricing": {
+      "free": "Pas de plan gratuit ni d'essai annoncé",
+      "paid": "Starter 25 $/mois, Builder 50 $/mois, Founder 100 $/mois, Leader 200 $/mois, Custom sur devis"
+    },
+    "defaultMonthlyPrice": 25,
+    "affiliateLink": "",
+    "websiteUrl": "https://sistava.com/",
+    "ogImageUrl": "https://sistava.com/site-assets/share/sistava-share-dark-1200x630.png",
+    "logo": "https://logo.clearbit.com/sistava.com",
+    "tool_type": "satellite",
+    "host_app": null,
+    "bundle_parent": null,
+    "substitution_cluster_v2": null,
+    "functional_needs": [
+      "agents-ia-metier",
+      "automatisation-workflow"
+    ],
+    "verticals": [
+      "fondateur-saas",
+      "ai-builder"
+    ],
+    "relevantFor": [
+      "Fondateurs solo",
+      "Petites équipes qui délèguent des workflows définis à l'IA"
+    ],
+    "freeAlternative": "Lindy",
+    "substitutable": true,
+    "betterAlternative": null
   }
 ]
