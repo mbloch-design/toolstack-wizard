@@ -81,6 +81,7 @@ const GUIDE_SLUG_ALTERNATES: Record<string, string> = {
   "stack-redactrice-freelance": "stack-freelance-writer",
   "adobe-podcast-ai-gratuit-alternatives-2026": "adobe-podcast-ai-free-limits-alternatives-2026",
   "alternatives-freshservice-2026": "freshservice-alternatives-2026",
+  "zapier-vs-make-vs-n8n-2026-automatiser-stack": "zapier-vs-make-vs-n8n-pricing",
 };
 
 const GUIDE_EN_TO_FR = Object.fromEntries(

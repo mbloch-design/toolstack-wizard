@@ -84,6 +84,7 @@ const GUIDE_SLUG_ALTERNATES: Record<string, string> = {
   "meilleurs-outils-createur-contenu-freelance": "best-tools-freelance-content-creator",
   "meilleurs-outils-ops-manager-freelance": "best-tools-freelance-ops-manager",
   "alternatives-freshservice-2026": "freshservice-alternatives-2026",
+  "zapier-vs-make-vs-n8n-2026-automatiser-stack": "zapier-vs-make-vs-n8n-pricing",
 };
 
 const GUIDE_EN_TO_FR = Object.fromEntries(

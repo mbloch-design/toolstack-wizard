@@ -168,6 +168,24 @@
         }
       ]
     },
+    "zapier": {
+      "fr": [
+        {
+          "slug": "zapier-vs-make-vs-n8n-2026-automatiser-stack",
+          "title": "Zapier vs Make vs n8n : pourquoi l'écart de prix est de 14x",
+          "date": "2026-09-09",
+          "category": "Comparatifs"
+        }
+      ],
+      "en": [
+        {
+          "slug": "zapier-vs-make-vs-n8n-pricing",
+          "title": "Zapier vs Make vs n8n: the price gap is 14x, here is why",
+          "date": "2026-09-09",
+          "category": "Comparatifs"
+        }
+      ]
+    },
     "notion": {
       "fr": [
         {
@@ -409,6 +427,11 @@
       "name": "Loom",
       "hasPricing": true
     },
+    "fr:zapier-vs-make-vs-n8n-2026-automatiser-stack": {
+      "slug": "zapier",
+      "name": "Zapier",
+      "hasPricing": true
+    },
     "fr:claude-opus-4-6-guide-complet-freelances": {
       "slug": "claude",
       "name": "Claude",
@@ -477,6 +500,11 @@
     "fr:toggl-track-gratuit-ou-payant": {
       "slug": "toggl",
       "name": "Toggl Track",
+      "hasPricing": true
+    },
+    "en:zapier-vs-make-vs-n8n-pricing": {
+      "slug": "zapier",
+      "name": "Zapier",
       "hasPricing": true
     },
     "en:freshservice-alternatives-2026": {

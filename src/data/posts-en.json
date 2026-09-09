@@ -1,5 +1,102 @@
 [
   {
+    "slug": "zapier-vs-make-vs-n8n-pricing",
+    "title": "Zapier vs Make vs n8n: the price gap is 14x, here is why",
+    "excerpt": "Zapier bills tasks, Make bills credits, n8n bills executions. Three units that do not compare, and a 14x gap on identical work. Prices verified at source.",
+    "date": "2026-09-09",
+    "category": "Comparatifs",
+    "toolId": "zapier",
+    "readTime": "9 min",
+    "tags": [
+      "zapier",
+      "make",
+      "n8n",
+      "automation",
+      "workflow automation",
+      "ipaas",
+      "pricing",
+      "comparison",
+      "no-code",
+      "freelance",
+      "2026",
+      "self-hosted",
+      "tasks",
+      "credits"
+    ],
+    "content": "# Zapier vs Make vs n8n: the price gap is 14x, here is why\n\n<p class=\"ga-story-lead\">Every comparison of these three tools lines their prices up in a table. That table is meaningless, because the three of them do not bill the same thing.</p>\n\n**Zapier bills a task. Make bills a credit. n8n bills an execution.** Those are three different units, and the difference between them is not cosmetic. Run the same automation on all three and the bill can vary by a factor of fourteen, not because one is expensive and another is cheap, but because one of them charges for the depth of your workflow and another does not.\n\nThat is the whole article. What follows is the arithmetic, with every price read on the official pricing page on **9 September 2026**.\n\n## The three units, defined by their own documentation\n\nThis is the part that decides your bill, and it is almost never spelled out.\n\n**Zapier: one task is one successful action step.** Its documentation is explicit about what escapes the meter. Triggers never consume a task. Filters and Paths do not. Formatter steps do not. Failed steps do not. Only successful actions count.\n\n**Make: one credit is one module action.** Its wording is that every time a module in a scenario performs an action, it consumes credits. There is no published exemption equivalent to Zapier's for triggers or logic steps.\n\n**n8n: one execution is one run of the entire workflow.** Its pricing page states the case directly: it does not matter how many steps are in the workflow or how much data it processes, it is still a single execution.\n\nRead those three lines again, because the consequence is large. **Zapier and Make both bill steps multiplied by runs. n8n bills runs alone.** Adding a step to an n8n workflow costs nothing. Adding a step to a Zapier Zap raises your consumption by one unit on every single run, forever.\n\n## What each one lists\n\nZapier, in dollars, on annual billing. The Professional plan is a slider, so this is the bottom of the range:\n\n| Tasks per month | Professional, annual | Professional, monthly |\n|---|---|---|\n| 100 | free | free |\n| 750 | $19.99 | $29.99 |\n| 2,000 | $49.00 | $73.50 |\n| 5,000 | $89.00 | $133.50 |\n| 10,000 | $129.00 | $193.50 |\n\nMake, in dollars, priced at the 10,000 credit mark:\n\n| Plan | Price | Included |\n|---|---|---|\n| Free | $0 | 1,000 credits |\n| Core | $9 | 10,000 credits |\n| Pro | $16 | 10,000 credits |\n| Teams | $29 | 10,000 credits |\n\nn8n, and here comes a wrinkle worth naming: **its pricing page publishes in euros, with no currency switcher.** Zapier and Make publish in dollars. No conversion is printed below, because a converted figure without a dated rate is an invented figure.\n\n| Plan | Price | Included | Hosting |\n|---|---|---|---|\n| Starter | 20€ | 2,500 executions | n8n cloud |\n| Pro | 50€ | 10,000 executions | n8n cloud |\n| Business | 667€ | 40,000 executions | self-hosted |\n| Enterprise | quote only | custom | either |\n\nThere is also a self-hosted community edition on GitHub at no licence cost. Free in the software sense only: the server, the updates and the backups become your job.\n\n## The same job, priced three ways\n\nHere is the comparison the tables above cannot give you. One automation, ten action steps, running a thousand times a month. A realistic shape for anything that syncs a form to a CRM and notifies a channel.\n\n| Tool | What it counts | Consumption | Plan needed | Monthly |\n|---|---|---|---|---|\n| Make | 10 module actions × 1,000 | about 10,000 credits | Core | **$9** |\n| n8n | 1,000 runs | 1,000 executions | Starter | **20€** |\n| Zapier | 10 actions × 1,000 | 10,000 tasks | Professional | **$129** |\n\n**Same work. Fourteen times the price between the cheapest and the most expensive.** Nothing in that gap is about quality, and everything in it is about the unit.\n\nNow change one variable and watch it move. Same thousand runs, but a shallow automation of two steps instead of ten:\n\n| Tool | Consumption | Plan needed | Monthly |\n|---|---|---|---|\n| Make | about 2,000 credits | Core | **$9** |\n| n8n | 1,000 executions | Starter | **20€** |\n| Zapier | 2,000 tasks | Professional | **$49** |\n\nZapier fell from $129 to $49 while n8n did not move at all. **n8n's bill is flat with respect to workflow depth.** It only responds to how often you run.\n\nThat gives you a clean decision rule, and it is not the one the marketing pages suggest:\n\n- **Deep workflows, moderate volume:** n8n is structurally cheapest, and the deeper your workflows get, the wider the gap.\n- **Shallow workflows, high volume:** the advantage collapses. n8n's executions burn at the same rate whether a workflow has two steps or twenty, so a high count of simple runs eats your allowance fast.\n- **Anything on Zapier:** every step you add is a recurring cost, not a one-off. This is the reason Zapier bills climb without anyone changing anything.\n\n## The number nobody puts in the table\n\nThere is a second cost, and on n8n it is the one that decides.\n\nZapier and Make are configured. n8n is operated. The self-hosted edition costs nothing in licence and needs a server, upgrades, backups and someone who notices when it stops. Price two hours a month of that at $50 an hour and the free edition costs $100 a month, which is more than n8n's own hosted Starter plan.\n\n**So the free self-hosted version is the cheapest option only if your time is worth nothing, or if you were already running the server anyway.** For most small teams the honest comparison is Starter against Core, not GitHub against everything.\n\nZapier's cost sits elsewhere. It is the fastest of the three to get a first automation live, and that speed is real. What it buys you is fewer hours in setup, which is worth something concrete when you are one person. **Zapier is not overpriced, it is priced for people whose hours cost more than their subscription.** That describes plenty of freelancers, and the arithmetic in this article does not overrule it.\n\n## The trap in switching\n\nMigrating between these three is not a config export. Each one models logic differently: Zapier's Paths, Make's routers and n8n's branching nodes do not map cleanly onto one another, and the connector catalogues do not overlap completely.\n\n**Before migrating for price alone, check that your three or four critical integrations exist on the target.** A missing connector turns a $120 monthly saving into a custom API build, and that build is not a one-time cost either, because it needs maintaining every time the vendor changes an endpoint.\n\nThe reasonable move is to run the new tool alongside the old one for a single workflow, for one month, and read the actual consumption instead of estimating it. All three show usage in the interface. One month of real data beats any table, including this one.\n\n## Verdict, by shape rather than by tool\n\n**Take Make** if you want the widest gap between capability and price and you accept a steeper interface. At $9 for 10,000 credits it is the hardest to argue against on cost alone, and it bills the same unit as Zapier while charging a fraction of it.\n\n**Take n8n** if your workflows are deep, if you want the option of keeping data on your own infrastructure, or if you expect to add steps over time without your bill responding. Take its hosted Starter plan rather than the community edition unless you are already comfortable running a server.\n\n**Take Zapier** if the automation has to exist this afternoon and you are the one who would otherwise be building it. You are paying a premium of roughly ten times against Make, knowingly, in exchange for the shortest path from idea to running.\n\n**And if you are already on one of them and it works, the migration probably does not pay.** Price the switch in hours, not in subscription difference, and a lot of these comparisons resolve themselves.\n\nThe per-plan detail sits on the [Zapier pricing page](/en/tool/zapier/pricing), the [Make pricing page](/en/tool/make/pricing) and the [n8n pricing page](/en/tool/n8n/pricing).\n\nIf automation is one line in a wider stack you have not audited recently, the [45-minute stack audit](/en/guide/auditer-stack-saas-45-minutes) is the better place to start. A fair number of automation projects turn out to be two tools that should have been one.\n\n## What this article does not do\n\nIt does not convert n8n's euros into dollars, because no dated source rate was used and a converted price presented as a published one is a fabrication.\n\nIt does not print Make's prices above the 10,000 credit mark or Zapier's above 10,000 tasks, because those sit behind sliders that were not read tier by tier.\n\nIt recommends no tool ToolTrim earns anything from, because there is no such tool.\n\n## Frequently asked questions\n\n### Why is Zapier so much more expensive than Make?\n\nBecause both bill steps multiplied by runs, and Zapier charges far more per unit. A ten-step automation run a thousand times a month costs about 10,000 tasks on Zapier, which is $129 a month on Professional, against roughly 10,000 credits on Make, which is $9 a month on Core.\n\n### What is the difference between a task, a credit and an execution?\n\nA Zapier task is one successful action step, with triggers, filters, paths and formatter steps exempt. A Make credit is one module action, with no published exemption for the trigger. An n8n execution is one run of the whole workflow, whatever the number of steps. So Zapier and Make scale with workflow depth and n8n does not.\n\n### Is self-hosted n8n really free?\n\nFree in licence only. The community edition on GitHub costs nothing to install, but the server, the upgrades and the backups become your responsibility. Two hours of upkeep a month at $50 an hour is $100, which is more than n8n's own hosted Starter plan at 20€ a month.\n\n### Which of the three is cheapest for deep workflows?\n\nn8n, and the advantage widens with every step you add, because its bill responds only to how often a workflow runs and not to how many steps it contains. The picture reverses for shallow workflows run very often, where an execution is consumed just as fast for two steps as for twenty.\n\n### Is it worth migrating from Zapier to Make to save money?\n\nOnly after checking that your critical integrations exist on the target. Paths, routers and branching nodes do not map cleanly between the three, and a missing connector turns the saving into a custom API build you then have to maintain. Run one workflow in parallel for a month and read the real consumption before deciding.\n",
+    "faq": [
+      {
+        "question": "Why is Zapier so much more expensive than Make?",
+        "answer": "Because both bill steps multiplied by runs, and Zapier charges far more per unit. A ten-step automation run a thousand times a month costs about 10,000 tasks on Zapier, which is $129 a month on Professional, against roughly 10,000 credits on Make, which is $9 a month on Core."
+      },
+      {
+        "question": "What is the difference between a task, a credit and an execution?",
+        "answer": "A Zapier task is one successful action step, with triggers, filters, paths and formatter steps exempt. A Make credit is one module action, with no published exemption for the trigger. An n8n execution is one run of the whole workflow, whatever the number of steps. So Zapier and Make scale with workflow depth and n8n does not."
+      },
+      {
+        "question": "Is self-hosted n8n really free?",
+        "answer": "Free in licence only. The community edition on GitHub costs nothing to install, but the server, the upgrades and the backups become your responsibility. Two hours of upkeep a month at $50 an hour is $100, which is more than n8n's own hosted Starter plan at 20€ a month."
+      },
+      {
+        "question": "Which of the three is cheapest for deep workflows?",
+        "answer": "n8n, and the advantage widens with every step you add, because its bill responds only to how often a workflow runs and not to how many steps it contains. The picture reverses for shallow workflows run very often, where an execution is consumed just as fast for two steps as for twenty."
+      },
+      {
+        "question": "Is it worth migrating from Zapier to Make to save money?",
+        "answer": "Only after checking that your critical integrations exist on the target. Paths, routers and branching nodes do not map cleanly between the three, and a missing connector turns the saving into a custom API build you then have to maintain. Run one workflow in parallel for a month and read the real consumption before deciding."
+      }
+    ],
+    "seo": {
+      "metaDescription": "Zapier bills tasks, Make credits, n8n executions. Same automation, 14x price gap. The three units compared with prices verified at source.",
+      "schema": {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Why is Zapier so much more expensive than Make?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Because both bill steps multiplied by runs, and Zapier charges far more per unit. A ten-step automation run a thousand times a month costs about 10,000 tasks on Zapier, which is $129 a month on Professional, against roughly 10,000 credits on Make, which is $9 a month on Core."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between a task, a credit and an execution?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A Zapier task is one successful action step, with triggers, filters, paths and formatter steps exempt. A Make credit is one module action, with no published exemption for the trigger. An n8n execution is one run of the whole workflow, whatever the number of steps. So Zapier and Make scale with workflow depth and n8n does not."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is self-hosted n8n really free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Free in licence only. The community edition on GitHub costs nothing to install, but the server, the upgrades and the backups become your responsibility. Two hours of upkeep a month at $50 an hour is $100, which is more than n8n's own hosted Starter plan at 20€ a month."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which of the three is cheapest for deep workflows?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "n8n, and the advantage widens with every step you add, because its bill responds only to how often a workflow runs and not to how many steps it contains. The picture reverses for shallow workflows run very often, where an execution is consumed just as fast for two steps as for twenty."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is it worth migrating from Zapier to Make to save money?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Only after checking that your critical integrations exist on the target. Paths, routers and branching nodes do not map cleanly between the three, and a missing connector turns the saving into a custom API build you then have to maintain. Run one workflow in parallel for a month and read the real consumption before deciding."
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
     "slug": "freshservice-alternatives-2026",
     "title": "Freshservice alternatives: what to pick based on what is blocking you",
     "excerpt": "Freshservice keeps the CMDB and automation for the Growth plan: $19 becomes $49 per agent. Alternatives compared by reason for leaving, with official prices.",

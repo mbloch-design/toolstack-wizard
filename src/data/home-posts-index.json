@@ -23,6 +23,26 @@
       "thumbnail": null
     },
     {
+      "slug": "zapier-vs-make-vs-n8n-2026-automatiser-stack",
+      "title": "Zapier vs Make vs n8n : pourquoi l'écart de prix est de 14x",
+      "date": "2026-09-09",
+      "tags": [
+        "zapier",
+        "make",
+        "n8n",
+        "automatisation",
+        "comparatif",
+        "tarifs",
+        "no-code",
+        "freelance",
+        "2026",
+        "auto-hébergé",
+        "ipaas",
+        "workflow"
+      ],
+      "thumbnail": null
+    },
+    {
       "slug": "chatgpt-plus-utile-ou-inutile",
       "title": "GPT-6 Astra : ChatGPT Pro vaut-il vraiment son prix ?",
       "date": "2026-09-07",
@@ -173,27 +193,31 @@
         "dougs"
       ],
       "thumbnail": null
-    },
-    {
-      "slug": "top-5-competences-ia-freelance-2026",
-      "title": "Top 5 des compétences IA freelance à apprendre en 2026 (compétences à haut revenu)",
-      "date": "2026-05-03",
-      "tags": [
-        "compétences ia",
-        "freelance 2026",
-        "ia generative",
-        "ai cro",
-        "ai web building",
-        "ugc ia",
-        "ai funnel",
-        "stack ia",
-        "haut revenu",
-        "marketing digital"
-      ],
-      "thumbnail": null
     }
   ],
   "en": [
+    {
+      "slug": "zapier-vs-make-vs-n8n-pricing",
+      "title": "Zapier vs Make vs n8n: the price gap is 14x, here is why",
+      "date": "2026-09-09",
+      "tags": [
+        "zapier",
+        "make",
+        "n8n",
+        "automation",
+        "workflow automation",
+        "ipaas",
+        "pricing",
+        "comparison",
+        "no-code",
+        "freelance",
+        "2026",
+        "self-hosted",
+        "tasks",
+        "credits"
+      ],
+      "thumbnail": null
+    },
     {
       "slug": "freshservice-alternatives-2026",
       "title": "Freshservice alternatives: what to pick based on what is blocking you",
@@ -365,24 +389,6 @@
         "AI stack",
         "high income",
         "digital marketing"
-      ],
-      "thumbnail": null
-    },
-    {
-      "slug": "ai-tips-freelancers-2026",
-      "title": "AI Tips for Freelancers in 2026: Minimal Stack, Prompts That Actually Work, and Cutting the Waste",
-      "date": "2026-04-29",
-      "tags": [
-        "ai freelance",
-        "chatgpt",
-        "claude",
-        "gemini",
-        "ai stack",
-        "productivity",
-        "anti-waste",
-        "2026",
-        "prompts",
-        "ai workflows"
       ],
       "thumbnail": null
     }
