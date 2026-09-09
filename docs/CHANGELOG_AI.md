@@ -15,6 +15,13 @@
 - Les références conditionnelles `docsend` et `visible`, absentes du catalogue, ont été retirées de la stack consultant fundraising au lieu de générer des destinations sans fiche.
 - Un test de non-régression interdit ces trois slugs orphelins dans les surfaces de découverte générées.
 
+## 2026-09-09 — Hygiène de l’artefact de production
+
+- Exclusion du contexte de build Vercel des recherches, documents, tests et rapports qui ne participent pas à l’application.
+- Suppression de cinq anciens PNG de hero remplacés par les variantes WebP et d’une copie binaire inutilisée de la police Uncut Sans.
+- Ajout d’un audit automatique après chaque build : nombre de fichiers, poids total, poids HTML/JavaScript et doublons exacts.
+- Ajout de budgets bloquants pour empêcher une nouvelle croissance silencieuse de l’artefact, sans modifier les routes ni le pré-rendu existants.
+
 ## 2026-09-08 — Remise à plat technique des Guides
 
 - Index Guides alimenté directement par le snapshot JSON local, sans Supabase ni état de chargement réseau.

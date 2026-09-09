@@ -136,5 +136,6 @@ run("Build client", "vite", [
 run("Alias assets historiques", "node", ["scripts/alias-legacy-assets.mjs"]);
 run("Validation SEO du sitemap généré", "node", ["scripts/validate-generated-seo.mjs"]);
 run("Audit SEO des pages Explorer", "node", ["scripts/audit-explorer-seo.mjs"]);
+run("Budget et doublons de l'artefact", "node", ["scripts/audit-build-output.mjs"]);
 
 console.log("\nVerdict build production : PASS");

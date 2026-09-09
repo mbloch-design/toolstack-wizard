@@ -9,6 +9,25 @@ AI_HANDOFF 2.md
 AI_HANDOFF 3.md
 AI_HANDOFF 4.md
 .claude/
+.impeccable/
+.lovable/
+docs/
+research/
+e2e/
+reports/
+test-results/
+playwright-report/
+AI_HANDOFF*.md
+FULL-AUDIT-REPORT-*.md
+ROADMAP_DIAGNOSTIC.md
+DESIGN.md
+PRODUCT.md
+README.md
+AGENTS.md
+CLAUDE.md
+playwright.config.ts
+playwright-fixture.ts
+vitest*.config.*
 scripts/_*.mjs
 scripts/add-ai-angle-*.mjs
 scripts/add-content-batch-*.mjs

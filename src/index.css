@@ -24616,7 +24616,7 @@ section[id] {
 }
 
 /* ══════════════════════════════════════════════════════════════════════
-   V2 Hero — real gradient artwork band (hero-gradient.png) + text overlay
+   V2 Hero — responsive WebP artwork band + text overlay
    ══════════════════════════════════════════════════════════════════════ */
 .hv2-root {
   padding: 32px 0 8px;
@@ -24699,7 +24699,7 @@ section[id] {
   color: var(--color-bg);
 }
 
-/* The right-anchored logo cluster is baked into hero-gradient.png (not a
+/* The right-anchored logo cluster is baked into the responsive hero artwork (not a
    separate element), so its on-screen width only shrinks in step with the
    title once the band itself is narrow — a single 980px breakpoint left a
    wide "danger zone" (~860-1300px viewport) where the 48px title still ran
