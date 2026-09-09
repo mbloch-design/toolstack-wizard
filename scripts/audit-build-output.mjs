@@ -70,6 +70,16 @@ const htmlWithoutCriticalCss = files.filter((file) => {
   const html = fs.readFileSync(file.absolute, "utf8");
   return !html.includes('id="critical-css"');
 });
+const monolithicToolCatalogChunks = files.filter((file) =>
+  /^assets\/data-tools-[^/]+\.js$/.test(file.relative),
+);
+const toolCatalogShards = files.filter((file) =>
+  /^assets\/tool-catalog\/[^/]+\.json$/.test(file.relative),
+);
+const largestToolCatalogShard = toolCatalogShards.reduce(
+  (largest, file) => Math.max(largest, file.size),
+  0,
+);
 const formatMiB = (bytes) => `${(bytes / MiB).toFixed(1)} MiB`;
 
 console.log(`Build output: ${files.length} files, ${formatMiB(totalBytes)}`);
@@ -80,6 +90,8 @@ console.log(`  Exact duplicates: ${duplicateGroups.length} groups, ${formatMiB(d
 console.log(`  Legacy tool FAQ files: ${legacyFaqFiles.length}`);
 console.log(`  Inline critical CSS blocks: ${inlineCriticalStyles.length}`);
 console.log(`  ToolTrim HTML files without critical CSS: ${htmlWithoutCriticalCss.length}`);
+console.log(`  Monolithic tool catalogue chunks: ${monolithicToolCatalogChunks.length}`);
+console.log(`  Tool catalogue shards: ${toolCatalogShards.length}, largest ${formatMiB(largestToolCatalogShard)}`);
 
 for (const group of duplicateGroups
   .sort((a, b) => b[0].size * (b.length - 1) - a[0].size * (a.length - 1))
@@ -99,6 +111,9 @@ const failures = [
   [legacyFaqFiles.length, 0, "legacy tool FAQ files", (value) => String(value)],
   [inlineCriticalStyles.length, 0, "inline critical CSS blocks", (value) => String(value)],
   [htmlWithoutCriticalCss.length, 0, "ToolTrim HTML files without critical CSS", (value) => String(value)],
+  [monolithicToolCatalogChunks.length, 0, "monolithic tool catalogue chunks", (value) => String(value)],
+  [toolCatalogShards.length < 1 ? 1 : 0, 0, "missing tool catalogue shards", (value) => String(value)],
+  [largestToolCatalogShard, 1 * MiB, "largest tool catalogue shard", formatMiB],
 ].filter(([value, limit]) => value > limit);
 
 if (failures.length > 0) {

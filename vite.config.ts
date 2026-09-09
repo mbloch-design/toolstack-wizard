@@ -2180,7 +2180,6 @@ export default defineConfig(({ mode, isSsrBuild }) => {
         manualChunks(id) {
           // Data chunks only — vendor splitting is left to Vite's defaults
           // to avoid circular reference issues between React chunks
-          if (id.includes("/src/data/tools_v4.json")) return "data-tools";
           if (id.includes("/src/data/tools_index.json")) return "data-tool-index";
           if (id.includes("/src/data/categories_index.json")) return "data-category-index";
           if (id.includes("/src/data/content.json")) return "data-content";

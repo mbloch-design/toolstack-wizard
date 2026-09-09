@@ -113,6 +113,46 @@ async function loadLocalTools(): Promise<Tool[]> {
   return (module.default as unknown[]).map(mapToolFromJson);
 }
 
+const localToolShardPromises = new Map<string, Promise<Tool[]>>();
+
+function getToolShardKey(slug: string): string {
+  const firstCharacter = slug.trim().toLowerCase().charAt(0);
+  return /^[a-z0-9]$/.test(firstCharacter) ? firstCharacter : "other";
+}
+
+async function loadLocalTool(slug: string): Promise<Tool | null> {
+  // Vite serves source files directly in development. Production uses the
+  // compact catalogue shards emitted after the client build, so navigating to
+  // one fiche never downloads and parses all 1,171 tools.
+  if (import.meta.env.DEV) {
+    const tools = await loadLocalTools();
+    return tools.find((tool) => tool.slug === slug || tool.id === slug) || null;
+  }
+
+  const shardKey = getToolShardKey(slug);
+  let pending = localToolShardPromises.get(shardKey);
+  if (!pending) {
+    pending = fetch(`/assets/tool-catalog/${shardKey}.json`, { cache: "force-cache" })
+      .then((response) => {
+        if (!response.ok) throw new Error(`Catalogue shard ${shardKey}: HTTP ${response.status}`);
+        return response.json() as Promise<unknown[]>;
+      })
+      .then((tools) => tools.map(mapToolFromJson));
+    localToolShardPromises.set(shardKey, pending);
+  }
+
+  try {
+    const tools = await pending;
+    return tools.find((tool) => tool.slug === slug || tool.id === slug) || null;
+  } catch (error) {
+    // Do not poison the session cache after a transient CDN/network failure;
+    // the remote request can still render the fiche and a later navigation can retry.
+    localToolShardPromises.delete(shardKey);
+    console.warn(`Catalogue shard ${shardKey} unavailable`, error);
+    return null;
+  }
+}
+
 export type ToolSummary = Pick<
   Tool,
   | "id"
@@ -142,6 +182,7 @@ export type ToolSummary = Pick<
   | "substitutable"
   | "betterAlternative"
 > & {
+  compareMonthlyPrice?: number | null;
   // Date de publication, utilisée pour trier la section Nouveautés de l'accueil.
   // Absente des fiches statiques du bundle : optionnelle, les fiches sans date
   // sont reléguées en fin de tri plutôt que remontées par hasard.
@@ -208,6 +249,7 @@ const staticToolSummaries: ToolSummary[] = (toolsIndexJson as any[]).map((t: any
   freeAlternative: t.freeAlternative || t.free_alternative || null,
   substitutable: t.substitutable ?? true,
   betterAlternative: t.betterAlternative || t.better_alternative || null,
+  compareMonthlyPrice: Number(t.compareMonthlyPrice ?? t.pricing_v5?.compare_price_monthly_eur) || null,
 })).filter((t) => !DEPRECATED_TOOL_SLUGS.has(t.slug));
 
 function mapSupabaseCat(c: any): Category {
@@ -360,11 +402,14 @@ export function useToolPair(slugA: string | undefined | null, slugB: string | un
         }
       } catch { /* fall through to local */ }
 
-      // 2) Fallback: lazy import the full local catalog
-      const localTools = await loadLocalTools();
+      // 2) Fallback: fetch only the small local shards containing both tools.
+      const [localA, localB] = await Promise.all([
+        loadLocalTool(slugA),
+        loadLocalTool(slugB),
+      ]);
       if (cancelled) return;
-      setToolA(findInList(localTools, slugA));
-      setToolB(findInList(localTools, slugB));
+      setToolA(localA || undefined);
+      setToolB(localB || undefined);
       setLoading(false);
     })();
 
@@ -455,6 +500,7 @@ export function useToolSummaries({ refreshRemote = true }: RefreshOptions = {}) 
           freeAlternative: t.free_alternative || null,
           substitutable: t.substitutable ?? true,
           betterAlternative: t.better_alternative || null,
+          compareMonthlyPrice: Number(t.pricing_v5?.compare_price_monthly_eur) || null,
           publishedAt: t.published_at || null,
           worksWith: Array.isArray(t.works_with) ? t.works_with : [],
           formFactor: t.form_factor || null,
@@ -509,10 +555,9 @@ export function useToolBySlug(slug: string | undefined) {
         return data ? mapToolFromJson(data) : null;
       })();
 
-      const localTools = await loadLocalTools();
+      const localTool = await loadLocalTool(slug);
       if (cancelled) return;
 
-      const localTool = localTools.find((t) => t.slug === slug || t.id === slug) || null;
       if (localTool) {
         setTool(localTool);
         setLoading(false);

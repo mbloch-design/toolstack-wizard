@@ -33,6 +33,7 @@ const summaries = tools.map((tool, index) => {
     shortDescriptionEn: tool.shortDescriptionEn || "",
     pricing: tool.pricing || { free: "", paid: "" },
     defaultMonthlyPrice: tool.defaultMonthlyPrice ?? 0,
+    compareMonthlyPrice: tool.pricing_v5?.compare_price_monthly_eur ?? null,
     affiliateLink: tool.affiliateLink || "",
     websiteUrl: tool.websiteUrl || tool.affiliateLink || "",
     ogImageUrl: tool.ogImageUrl || "",

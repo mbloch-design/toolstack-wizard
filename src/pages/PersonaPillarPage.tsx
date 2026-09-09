@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet-async";
 import Breadcrumb from "@/components/Breadcrumb";
 import FaqBlock from "@/components/FaqBlock";
 import ToolLogo from "@/components/ToolLogo";
-import { useTools } from "@/hooks/useSupabaseData";
+import { useToolSummaries } from "@/hooks/useSupabaseData";
 import { setSeoTags, SEO_BASE } from "@/lib/seo";
 import { ArrowRight, Sparkles, AlertTriangle, HelpCircle, Layers, ShieldCheck } from "@/lib/icons";
 
@@ -191,7 +191,7 @@ const META: Record<Persona, Record<Lang, Meta>> = {
 
 export default function PersonaPillarPage({ persona, lang }: Props) {
   const m = META[persona][lang];
-  const { tools, loading } = useTools();
+  const { tools, loading } = useToolSummaries({ refreshRemote: false });
 
   // SEO: title/description (canonical + hreflang are overridden via <Helmet> below)
   useEffect(() => {
@@ -327,8 +327,9 @@ export default function PersonaPillarPage({ persona, lang }: Props) {
                 lang === "en"
                   ? tool.shortDescription_en || tool.short_description_en || tool.shortDescription
                   : tool.shortDescription;
-              const v5 = tool.pricing_v5?.compare_price_monthly_eur;
-              const price = v5 != null && v5 > 0 ? v5 : tool.defaultMonthlyPrice ?? 0;
+              const price = tool.compareMonthlyPrice != null && tool.compareMonthlyPrice > 0
+                ? tool.compareMonthlyPrice
+                : tool.defaultMonthlyPrice ?? 0;
               return (
                 <Link
                   key={tool.id}
