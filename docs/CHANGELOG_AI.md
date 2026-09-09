@@ -4320,3 +4320,9 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Redirection directe du lien Zapier/Make/N8N vers le comparatif canonique.
 - Ajout de contrôles empêchant le retour des liens de guides non localisés et des cibles catalogue absentes.
 - Application du même filtre HTTP(S) aux sources tarifaires, qui pouvaient encore transformer du texte catalogue parasite en lien relatif.
+
+# 2026-09-09 — Texte d’ancrage des cartes outils
+
+- Ajout du nom visible aux liens couvrant les cartes outils éditoriales et compactes, tout en conservant leur `aria-label`.
+- Le rendu reste inchangé grâce au texte réservé aux technologies d’assistance, mais les crawlers disposent désormais d’un véritable texte d’ancrage HTML.
+- Validation sur les 11 418 pages générées : aucun lien vers une fiche `/fr/tool/*` ou `/en/tool/*` ne reste sans texte d’ancrage.

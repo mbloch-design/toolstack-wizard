@@ -42,7 +42,9 @@ export function ToolCardCompact({
         to={`${prefix}/tool/${slug}`}
         className="tcc-primary-link"
         aria-label={t(`Voir la fiche de ${name}`, `View ${name}`)}
-      />
+      >
+        <span className="sr-only">{name}</span>
+      </Link>
       <ToolLogo tool={{ ...tool, name }} size={36} className="tcc-logo" />
       <div className="tcc-copy">
         <h3 className="tcc-name">{name}</h3>

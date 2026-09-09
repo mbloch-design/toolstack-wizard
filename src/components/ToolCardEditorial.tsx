@@ -172,7 +172,9 @@ export function ToolCardEditorial({
           state={linkState}
           aria-label={t(`Voir la fiche de ${tool.name}`, `View ${tool.name}`)}
           aria-current={selected ? "true" : undefined}
-        />
+        >
+          <span className="sr-only">{tool.name}</span>
+        </Link>
 
         <div className="tce-cover">
           <ToolCardImage
