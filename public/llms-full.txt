@@ -1,6 +1,6 @@
 # ToolTrim canonical tool catalogue
 # Generated from src/data/tools_index.json
-# Records: 1170
+# Records: 1171
 # Prices can change; verify current vendor pricing before citation.
 
 [
@@ -17598,5 +17598,23 @@
     },
     "description_fr": "Affiche le temps de trajet Apple Maps dans la barre des menus du Mac.",
     "description_en": "Shows Apple Maps commute times in the Mac menu bar."
+  },
+  {
+    "name": "Sistava",
+    "slug": "sistava",
+    "url_fr": "https://tooltrim.com/fr/tool/sistava",
+    "url_en": "https://tooltrim.com/en/tool/sistava",
+    "website": "https://sistava.com/",
+    "category": "automation",
+    "monthly_price_eur": 25,
+    "pricing": {
+      "free": "Pas de plan gratuit ni d'essai annoncé",
+      "paid": "Starter 25 $/mois, Builder 50 $/mois, Founder 100 $/mois, Leader 200 $/mois, Custom sur devis"
+    },
+    "description_fr": "Déploie des employés IA sur 10 fonctions métier pour déléguer des workflows définis.",
+    "description_en": "Deploy AI employees across 10 business functions to delegate defined workflows.",
+    "alternatives": [
+      "Lindy"
+    ]
   }
 ]
