@@ -1,5 +1,11 @@
 # ToolTrim — AI Changelog
 
+## 2026-09-09 — Nettoyage prudent des médias dupliqués
+
+- Suppression de neuf fichiers image strictement identiques à une copie conservée et sans aucune référence dans le code ou les données actuelles.
+- Conservation des doublons visuels encore rattachés à des fiches distinctes : chaque outil garde ainsi son média indépendant et peut être mis à jour sans effet de bord sur une autre fiche.
+- Aucun chemin utilisé par les Guides, les fiches outils, Alternatives ou Explorer n’est modifié.
+
 ## 2026-09-09 — Allègement des index et du chargement initial
 
 - L’index Stacks ne stocke plus un texte de recherche redondant pour chaque fiche : il est reconstruit une fois côté catalogue, tout en conservant les termes des outils secondaires.
