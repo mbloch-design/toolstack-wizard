@@ -1,4 +1,5 @@
 import { hasGenuineFreeTier, isFreemiumPricing } from "@/lib/pricing";
+import { formatToolPrice } from "@/lib/currencyRates";
 
 export type ToolPresentationInput = {
   id: string;
@@ -41,7 +42,7 @@ export function getToolPresentation(tool: ToolPresentationInput, lang: "fr" | "e
       : oneTime
         ? (lang === "fr" ? "Licence à vie" : "Lifetime license")
       : monthlyPrice > 0
-        ? (lang === "fr" ? `${monthlyPrice} €/mois` : `€${monthlyPrice}/mo`)
+        ? (lang === "fr" ? `${monthlyPrice} €/mois` : `${formatToolPrice(tool, monthlyPrice, "USD", "en").text}/mo`)
         : "N/A";
   const replaceability: ToolReplaceability = tool.substitutable === true
     ? "replaceable"

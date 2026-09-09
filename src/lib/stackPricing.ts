@@ -1,4 +1,5 @@
 import { hasGenuineFreeTier } from "@/lib/pricing";
+import { formatToolPrice } from "@/lib/currencyRates";
 
 export type StackPricedTool = {
   id: string;
@@ -83,7 +84,7 @@ export function formatStackToolPrice(tool: StackPricedTool, lang: string) {
   if (kind === "free") return lang === "en" ? "Free" : "Gratuit";
   if (kind === "unknown") return lang === "en" ? "Price unknown" : "Prix inconnu";
   const price = Math.round(getToolPrice(tool));
-  return lang === "en" ? `From €${price}/mo` : `À partir de ${price} €/mois`;
+  return lang === "en" ? `From ${formatToolPrice(tool, price, "USD", "en", { round: true }).text}/mo` : `À partir de ${price} €/mois`;
 }
 
 export function computeStackPricing<T extends StackPricedTool>(selectedTools: T[], allTools: T[]): StackPricingSummary<T> {

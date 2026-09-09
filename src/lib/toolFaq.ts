@@ -1,4 +1,5 @@
 import type { Tool } from "@/data/types";
+import { formatToolPrice } from "@/lib/currencyRates";
 
 export interface ToolFaqEntry {
   q: string;
@@ -41,7 +42,7 @@ export function buildToolFaqs(
           : `${tool.name} is sold as a lifetime license with no subscription. ${tool.pricingEn?.paid || "See the official price."} Price verified on ${verifiedOn}.`)
         : isFr
           ? `${tool.name} coûte ${displayPrice === 0 ? "0€ (gratuit)" : `${displayPrice}€/mois`}${plan}. Prix vérifié le ${verifiedOn}.`
-          : `${tool.name} costs ${displayPrice === 0 ? "€0 (free)" : `€${displayPrice}/month`}${plan}. Price verified on ${verifiedOn}.`,
+          : `${tool.name} costs ${displayPrice === 0 ? "$0 (free)" : `${formatToolPrice(tool, displayPrice, "USD", "en").text}/month`}${plan}. Price verified on ${verifiedOn}.`,
     },
     {
       q: isFr ? `${tool.name} est-il adapté aux débutants ?` : `Is ${tool.name} suitable for beginners?`,

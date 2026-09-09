@@ -1,14 +1,13 @@
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
+import { CURRENCY_RATE_DATE, EUR_TO_GBP, EUR_TO_USD, currencyForLang, isCurrency, type Currency } from "@/lib/currencyRates";
 
-export type Currency = "EUR" | "USD" | "GBP";
+// Les taux et le type vivent dans @/lib/currencyRates, un module sans React que
+// le prérendu peut importer. Réexportés ici pour ne pas casser les imports
+// existants et garder un taux unique entre le build et l'application.
+export type { Currency };
+export { CURRENCY_RATE_DATE, EUR_TO_GBP, EUR_TO_USD };
 
 const STORAGE_KEY = "tooltrim:currency";
-
-// ECB reference rates published on 2026-08-27. These are deliberately dated,
-// editorial conversion rate: ToolTrim prices inform comparison, not checkout.
-export const EUR_TO_USD = 1.1645;
-export const EUR_TO_GBP = 0.8574;
-export const CURRENCY_RATE_DATE = "2026-08-27";
 
 type CurrencyContextValue = {
   currency: Currency;
@@ -30,14 +29,12 @@ export function CurrencyProvider({ children, lang }: { children: ReactNode; lang
   // Hardcoding EUR here meant every prerendered /en/ page shipped euro prices:
   // the switch to USD only happened in the effect below, after hydration, so
   // crawlers (which don't run it) only ever saw euros on the English site.
-  const [currency, setCurrencyState] = useState<Currency>(lang === "en" ? "USD" : "EUR");
+  const [currency, setCurrencyState] = useState<Currency>(currencyForLang(lang ?? "fr"));
 
   useEffect(() => {
     // An explicit user choice always wins over the language default.
     const saved = localStorage.getItem(STORAGE_KEY);
-    if (saved === "EUR" || saved === "USD" || saved === "GBP") {
-      setCurrencyState(saved);
-    }
+    if (isCurrency(saved)) setCurrencyState(saved);
   }, []);
 
   const setCurrency = (next: Currency) => {
