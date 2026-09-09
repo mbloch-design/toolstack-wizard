@@ -109,6 +109,7 @@ run(
   ["scripts/gen-stacks-catalog-index.ts"],
 );
 run("Index léger des guides d’accueil", "node", ["scripts/gen-home-posts-index.mjs"]);
+run("Index croisé guides ↔ outils", "node", ["scripts/gen-tool-guides-index.mjs"]);
 // Avant les builds : les pages référencent le sprite par `<use>`, il doit donc
 // exister dans public/ au moment où Vite copie les assets statiques.
 run("Sprite d’icônes", "node", ["scripts/gen-icon-sprite.mjs"]);

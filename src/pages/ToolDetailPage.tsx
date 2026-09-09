@@ -29,6 +29,7 @@ import { getToolTutorials } from "@/data/toolTutorials";
 import { computeToolTrimScore } from "@/lib/toolTrimScore";
 import { findSimilarTools } from "@/lib/alternativesSimilarity";
 import ToolFAQSection from "@/components/tool/ToolFAQSection";
+import { getGuidesForTool } from "@/lib/toolGuides";
 import ToolJsonLd from "@/components/tool/ToolJsonLd";
 import StickyDecisionCard from "@/components/tool/StickyDecisionCard";
 import { relPourLienOutil, relExterne, safeExternalUrl } from "@/lib/externalLink";
@@ -373,6 +374,7 @@ const ToolDetailPage = () => {
   const showDeepDive = isPresentation;
   const showReview = isPresentation || subPage === "avis";
   const showFaq = isPresentation || subPage === "faq";
+  const relatedGuides = getGuidesForTool(tool.slug || tool.id, lang);
   const baseToolPath = `${prefix}/tool/${tool.slug || tool.id}`;
   const subpageLinks = [
     { key: "presentation", label: t("Vue d’ensemble", "Overview"), to: baseToolPath },
@@ -981,6 +983,36 @@ const ToolDetailPage = () => {
                     verifiedOn={verifiedOn} alternatives={alternatives}
                     lang={lang} t={t}
                   />
+                </div>
+              </div>
+            )}
+
+            {/* ════════════════════════════════
+                SECTION: guides couvrant l'outil
+                Le seul lien sortant de la fiche vers l'éditorial : sans lui, le
+                catalogue ne renvoie que vers lui-même. Réservé à la page de
+                présentation, les sous-pages restant des extraits de celle-ci.
+            ════════════════════════════════ */}
+            {isPresentation && relatedGuides.length > 0 && (
+              <div className="td-subpage-content">
+                <div className="td-section">
+                  <section className="td-guides">
+                    <h2 className="td-guides-title">
+                      {t(`Nos guides sur ${tool.name}`, `Our guides on ${tool.name}`)}
+                    </h2>
+                    <ul className="td-guides-list">
+                      {relatedGuides.slice(0, 3).map((guide) => (
+                        <li key={guide.slug}>
+                          <Link to={`${prefix}/guide/${guide.slug}`} className="td-guides-link">
+                            <span className="td-guides-link-title">{guide.title}</span>
+                            {guide.category ? (
+                              <span className="td-guides-link-meta">{guide.category}</span>
+                            ) : null}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
                 </div>
               </div>
             )}

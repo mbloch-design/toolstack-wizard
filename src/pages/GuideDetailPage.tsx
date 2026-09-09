@@ -6,6 +6,7 @@ import { usePostBySlug, type Post } from "@/hooks/useSupabaseData";
 import { Check, Clock, Link2 } from "@/lib/icons";
 import { buildGuideToc, renderGuideMarkdown, type GuideTocItem } from "@/lib/guideMarkdown";
 import { cleanupSeo, setHreflang, setJsonLd, setMeta, setSeoTags } from "@/lib/seo";
+import { getToolForGuide } from "@/lib/toolGuides";
 
 /**
  * Mostly-static article document. There is deliberately no scroll listener,
@@ -18,6 +19,9 @@ const GuideDetailPage = () => {
   const [copied, setCopied] = useState(false);
 
   const toc = useMemo(() => buildGuideToc(post?.content), [post?.content]);
+  // Resolved from the guide's `toolId` through a build-time index, so this
+  // stays a static read — the page loads no catalogue at runtime.
+  const relatedTool = useMemo(() => getToolForGuide(post?.slug, lang), [post?.slug, lang]);
   const h2Toc = useMemo(() => toc.filter((item) => item.level === 2), [toc]);
   const isStory = post?.category === "Stories";
   const htmlContent = useMemo(() => (
@@ -155,6 +159,25 @@ const GuideDetailPage = () => {
             ) : null}
 
             <div className="ga-content" dangerouslySetInnerHTML={{ __html: htmlContent }} />
+
+            {relatedTool ? (
+              <aside className="ga-tool-link">
+                <p className="ga-tool-link-label">
+                  {t("L’outil de ce guide", "The tool covered here")}
+                </p>
+                <p className="ga-tool-link-name">{relatedTool.name}</p>
+                <div className="ga-tool-link-actions">
+                  <Link to={`${prefix}/tool/${relatedTool.slug}`}>
+                    {t(`Fiche ${relatedTool.name}`, `${relatedTool.name} overview`)}
+                  </Link>
+                  {relatedTool.hasPricing ? (
+                    <Link to={`${prefix}/tool/${relatedTool.slug}${lang === "en" ? "/pricing" : "/prix"}`}>
+                      {t(`Prix de ${relatedTool.name}`, `${relatedTool.name} pricing`)}
+                    </Link>
+                  ) : null}
+                </div>
+              </aside>
+            ) : null}
 
             <div className={`ga-share-row${isStory ? " ga-share-row--story" : ""}`}>
               <span className="ga-share-label">{t("Cet article vous a été utile ?", "Found this useful?")}</span>

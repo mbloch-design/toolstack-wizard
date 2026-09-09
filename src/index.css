@@ -9393,6 +9393,46 @@
     margin-top: var(--td-block-gap);
   }
 
+  /* Guides éditoriaux couvrant l'outil */
+  .td-guides-title {
+    font-family: var(--font-brand);
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+  .td-guides-list {
+    margin-top: 16px;
+    display: grid;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+  }
+  .td-guides-link {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 16px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-bg);
+    text-decoration: none;
+    transition: border-color 140ms;
+  }
+  .td-guides-link:hover { border-color: var(--color-text); }
+  .td-guides-link-title {
+    font-family: var(--font-ui);
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--color-text);
+  }
+  .td-guides-link-meta {
+    flex-shrink: 0;
+    font-family: var(--font-ui);
+    font-size: 13px;
+    color: var(--color-muted);
+  }
+
   /* Hero metadata row */
 
   /* Editorial comparison rows (alternatives section) */
@@ -11349,6 +11389,51 @@
     transition: background 160ms ease-out;
   }
   .ga-cta-btn:hover { background: var(--color-hover-strong); }
+
+  /* Renvoi vers la fiche outil du guide */
+  .ga-tool-link {
+    margin-top: 48px;
+    padding: 20px 24px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background: var(--color-surface);
+  }
+  .ga-tool-link-label {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
+  .ga-tool-link-name {
+    margin-top: 6px;
+    font-family: var(--font-brand);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--color-text);
+  }
+  .ga-tool-link-actions {
+    margin-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .ga-tool-link-actions a {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 14px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    background: var(--color-bg);
+    font-family: var(--font-ui);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text);
+    text-decoration: none;
+    transition: border-color 140ms;
+  }
+  .ga-tool-link-actions a:hover { border-color: var(--color-text); }
 
   /* Share row */
   .ga-share-row {
