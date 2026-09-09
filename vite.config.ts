@@ -2189,6 +2189,9 @@ export default defineConfig(({ mode, isSsrBuild }) => {
   const useCatalogProjectionForFiche = env.VITE_CATALOG_PROJECTION_FICHE !== "false";
 
   return {
+  // The SSR bundle is an intermediate renderer. Static files are copied once
+  // by the client build into dist/ and are never read from dist-ssr/.
+  publicDir: isSsrBuild ? false : undefined,
   server: {
     host: "::",
     port: process.env.PORT ? Number(process.env.PORT) : undefined,

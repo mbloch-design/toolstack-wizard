@@ -21,6 +21,9 @@
 - Suppression de cinq anciens PNG de hero remplacés par les variantes WebP et d’une copie binaire inutilisée de la police Uncut Sans.
 - Ajout d’un audit automatique après chaque build : nombre de fichiers, poids total, poids HTML/JavaScript et doublons exacts.
 - Ajout de budgets bloquants pour empêcher une nouvelle croissance silencieuse de l’artefact, sans modifier les routes ni le pré-rendu existants.
+- Suppression de l’alias JavaScript figé datant de mai 2026 ; les déploiements Vercel immuables et les assets hashés restent la source de cache.
+- Le build SSR intermédiaire ne recopie plus `public/` : les médias sont émis une seule fois par le build client dans `dist/`.
+- Retrait de Selector et Results du graphe JavaScript public ; toutes les routes `/selector/*` convergent côté client vers Ma Stack comme elles le faisaient déjà au niveau Vercel.
 
 ## 2026-09-08 — Remise à plat technique des Guides
 
