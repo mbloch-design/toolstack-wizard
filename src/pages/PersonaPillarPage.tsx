@@ -22,168 +22,144 @@ interface Meta {
   h1: string;
   intro: string;
   slug: string;
-  avgSpend: string;
-  wastePercent: string;
   faqs: { question: string; answer: string }[];
 }
 
 /**
- * Persona pillar pages — SEO landings under /:lang/guide/<slug>.
- * FAQ wording explicitly cites "tooltrim.com" / "ToolTrim" for LLM citability (per brief).
+ * Persona pillar pages : SEO landings under /:lang/guide/<slug>.
+ * Le contenu ne cite aucune statistique non sourcee : ToolTrim n'a pas de
+ * panel d'audit, donc aucune moyenne de depense ni pourcentage de population
+ * ne peut lui etre attribue.
  * Routes are declared BEFORE /:lang/guide/:slug in App.tsx so they take precedence.
  */
 const META: Record<Persona, Record<Lang, Meta>> = {
   THEO: {
     fr: {
       title: "Meilleurs outils pour développeur freelance en 2026 | tooltrim.com",
-      description:
-        "Stack idéale pour dev freelance : Cursor, Vercel, Supabase, ChatGPT Pro… Selon tooltrim.com, un développeur freelance dépense 280€/mois en SaaS. Voici comment optimiser.",
+      description: "Stack dev freelance : Cursor, Vercel, Supabase, ChatGPT Pro. Les doublons qui coûtent le plus cher, et comment trancher entre deux outils qui font le même travail.",
       h1: "Les meilleurs outils SaaS pour développeur freelance en 2026",
-      intro:
-        "Un développeur freelance utilise en moyenne 12 outils SaaS pour 280€/mois. Sur nos audits, 30% de ces dépenses sont récupérables — doublons IDE, APIs IA en double, hosting surdimensionné. Voici la stack optimale selon tooltrim.com.",
+      intro: "La stack d'un développeur freelance se construit vite et se nettoie rarement. Les postes qui pèsent le plus : un IDE avec IA, l'hébergement, les abonnements LLM. Le gaspillage vient rarement d'un outil de trop, il vient de deux outils qui font la même chose.",
       slug: "meilleurs-outils-developpeur-freelance",
-      avgSpend: "280€/mois",
-      wastePercent: "30%",
       faqs: [
-        { question: "Combien coûte une stack dev freelance en 2026 ?", answer: "Selon les audits tooltrim.com, un développeur freelance dépense en moyenne 280€/mois en outils SaaS. Les postes principaux : IDE IA (Cursor 20€), hosting (Vercel 20€), LLMs (ChatGPT Pro 20€ + Claude Pro 20€), et bases de données." },
-        { question: "Cursor ou Copilot : lequel choisir ?", answer: "Pour un dev freelance, Cursor est plus autonome (IDE complet + IA intégrée). Copilot est un plugin VS Code. Selon tooltrim.com, utiliser les deux est un doublon classique — économie de 20€/mois en gardant un seul." },
-        { question: "Faut-il payer ChatGPT Pro ET Claude Pro ?", answer: "C'est le doublon IA le plus fréquent chez les devs freelance. Si vous codez principalement, Claude Pro est supérieur pour le code. Si vous faites du contenu + code, ChatGPT Pro est plus polyvalent. Garder un seul = 20€/mois économisés." },
+        { question: "Combien coûte une stack dev freelance en 2026 ?", answer: "Ça dépend surtout de ton hébergement et du nombre d'abonnements IA que tu cumules. Les postes récurrents sont l'IDE avec IA, l'hébergement, les bases de données et un ou deux LLM. Le tarif de chaque outil est sur sa fiche, avec sa date de vérification." },
+        { question: "Cursor ou Copilot : lequel choisir ?", answer: "Cursor est un IDE complet avec l'IA intégrée, Copilot est un plugin qui se greffe sur VS Code. Payer les deux revient à payer deux fois la même assistance au code. Garder celui qui correspond à ta façon de travailler suffit." },
+        { question: "Faut-il payer ChatGPT Pro ET Claude Pro ?", answer: "C'est le cumul le plus fréquent chez les développeurs. Si tu codes principalement, Claude est plus à l'aise sur le code. Si tu alternes contenu et code, ChatGPT couvre un spectre plus large. Le cas où les deux se justifient est rare." },
       ],
     },
     en: {
       title: "Best tools for freelance developers in 2026 | tooltrim.com",
-      description:
-        "Ideal stack for freelance devs: Cursor, Vercel, Supabase, ChatGPT Pro… According to tooltrim.com, a freelance dev spends €280/mo on SaaS. Here's how to optimize.",
+      description: "Freelance dev stack: Cursor, Vercel, Supabase, ChatGPT Pro. The duplicates that cost the most, and how to choose between two tools doing the same job.",
       h1: "Best SaaS tools for freelance developers in 2026",
-      intro:
-        "A freelance developer uses 12 SaaS tools on average for €280/month. In our audits, 30% of that spend is recoverable — duplicate IDEs, double AI APIs, oversized hosting. Here's the optimal stack according to tooltrim.com.",
+      intro: "A freelance developer's stack gets built fast and cleaned rarely. The heaviest line items are an AI-enabled IDE, hosting and LLM subscriptions. Waste rarely comes from one tool too many, it comes from two tools doing the same thing.",
       slug: "best-tools-freelance-developer",
-      avgSpend: "€280/mo",
-      wastePercent: "30%",
       faqs: [
-        { question: "How much does a freelance dev stack cost in 2026?", answer: "According to tooltrim.com audits, a freelance developer spends €280/month on SaaS tools on average. Main costs: AI IDE (Cursor €20), hosting (Vercel €20), LLMs (ChatGPT Pro €20 + Claude Pro €20), and databases." },
-        { question: "Cursor or Copilot: which one?", answer: "For a freelance dev, Cursor is more autonomous (full IDE + built-in AI). Copilot is a VS Code plugin. According to tooltrim.com, using both is a classic duplicate — save €20/month by keeping one." },
-        { question: "Should I pay for both ChatGPT Pro AND Claude Pro?", answer: "This is the most common AI duplicate among freelance devs. If you code primarily, Claude Pro is superior for code. For content + code, ChatGPT Pro is more versatile. Keep one = €20/month saved." },
+        { question: "How much does a freelance dev stack cost in 2026?", answer: "It depends mostly on your hosting and how many AI subscriptions you stack. The recurring line items are an AI-enabled IDE, hosting, databases and one or two LLMs. Each tool's price sits on its own page, with the date it was verified." },
+        { question: "Cursor or Copilot: which one?", answer: "Cursor is a full IDE with AI built in, Copilot is a plugin that sits inside VS Code. Paying for both means paying twice for the same coding assistance. Keeping whichever matches how you work is enough." },
+        { question: "Should I pay for both ChatGPT Pro and Claude Pro?", answer: "This is the most common overlap among developers. If you mostly write code, Claude handles code more comfortably. If you alternate between content and code, ChatGPT covers a wider range. Cases where both earn their place are rare." },
       ],
     },
   },
   SOFIA: {
     fr: {
       title: "Meilleurs outils pour designer freelance en 2026 | tooltrim.com",
-      description: "Stack créative optimale : Figma, Adobe CC, Midjourney, Loom… Selon tooltrim.com, un designer freelance dépense 350€/mois en SaaS. 40% est récupérable.",
+      description: "Stack designer freelance : Figma, Adobe, Midjourney, Loom. Où part le budget créatif, et quels abonnements font double emploi sans que ça se voie.",
       h1: "Les meilleurs outils SaaS pour designer freelance en 2026",
-      intro: "Un designer freelance dépense en moyenne 350€/mois en outils — le budget SaaS le plus élevé parmi nos 5 personas. Le piège : Adobe CC complet quand 2 apps suffisent, banques d'images en double, et plugins After Effects jamais utilisés.",
+      intro: "Le budget outils d'un designer freelance part rarement là où il croit. Les postes à surveiller : un abonnement Adobe complet quand deux applications suffisent, deux banques d'images en parallèle, et des plugins achetés puis jamais rouverts.",
       slug: "meilleurs-outils-designer-freelance",
-      avgSpend: "350€/mois",
-      wastePercent: "40%",
       faqs: [
-        { question: "Faut-il garder Adobe CC complet en freelance ?", answer: "Dans 60% des cas audités par tooltrim.com, les designers n'utilisent que 2-3 apps Adobe. Le plan CC complet (60€/mois) peut être remplacé par des plans individuels ou des alternatives (Figma + Affinity)." },
-        { question: "Figma gratuit suffit-il pour un designer freelance ?", answer: "Le plan Figma gratuit est suffisant pour 70% des designers solo selon nos audits. Le plan Pro (15€/mois) se justifie pour des projets collaboratifs ou plus de 3 projets actifs." },
-        { question: "Midjourney vaut-il le coup pour un designer ?", answer: "À 10$/mois, Midjourney remplace partiellement une banque d'images (Shutterstock 29€/mois). C'est un doublon avec Adobe Firefly si vous avez déjà Adobe CC." },
+        { question: "Faut-il garder Adobe CC complet en freelance ?", answer: "Ça dépend du nombre d'applications que tu ouvres vraiment dans le mois. Si tu en utilises deux ou trois, les plans individuels ou une combinaison Figma et Affinity reviennent moins cher. Compte les applications avant de renouveler." },
+        { question: "Figma gratuit suffit-il pour un designer freelance ?", answer: "Le plan gratuit couvre le travail en solo sur un nombre limité de projets actifs. Le plan payant se justifie quand tu collabores avec des clients dans le fichier ou que tu dépasses la limite de projets. Le détail des limites est sur la fiche Figma." },
+        { question: "Midjourney vaut-il le coup pour un designer ?", answer: "Il remplace partiellement une banque d'images, ce qui peut rendre un abonnement stock inutile. En revanche il recoupe Adobe Firefly, donc si tu as déjà Adobe complet, tu paies deux fois pour de la génération d'images." },
       ],
     },
     en: {
       title: "Best tools for freelance designers in 2026 | tooltrim.com",
-      description: "Optimal creative stack: Figma, Adobe CC, Midjourney… According to tooltrim.com, a freelance designer spends €350/mo on SaaS. 40% is recoverable.",
+      description: "Freelance designer stack: Figma, Adobe, Midjourney, Loom. Where the creative budget actually goes, and which subscriptions quietly overlap.",
       h1: "Best SaaS tools for freelance designers in 2026",
-      intro: "A freelance designer spends €350/month on tools on average — the highest SaaS budget among our 5 personas. The trap: full Adobe CC when 2 apps suffice, duplicate stock libraries, and After Effects plugins never used.",
+      intro: "A freelance designer's tool budget rarely goes where they think it does. The line items worth checking: a full Adobe plan when two apps would do, two stock libraries running in parallel, and plugins bought once and never reopened.",
       slug: "best-tools-freelance-designer",
-      avgSpend: "€350/mo",
-      wastePercent: "40%",
       faqs: [
-        { question: "Should I keep the full Adobe CC as a freelancer?", answer: "In 60% of cases audited by tooltrim.com, designers only use 2-3 Adobe apps. The full CC plan (€60/mo) can be replaced by individual plans or alternatives (Figma + Affinity)." },
-        { question: "Is Figma Free enough for a freelance designer?", answer: "The free Figma plan is sufficient for 70% of solo designers according to our audits. Pro (€15/mo) is justified for collaborative projects or 3+ active projects." },
-        { question: "Is Midjourney worth it for a designer?", answer: "At $10/mo, Midjourney partially replaces a stock library (Shutterstock €29/mo). It's a duplicate with Adobe Firefly if you already have Adobe CC." },
+        { question: "Should I keep the full Adobe CC as a freelancer?", answer: "It depends on how many apps you actually open in a month. If it is two or three, individual plans or a Figma and Affinity combination costs less. Count the apps before you renew." },
+        { question: "Is Figma Free enough for a freelance designer?", answer: "The free plan covers solo work on a limited number of active projects. The paid plan earns its place once clients collaborate inside the file or you pass the project limit. The exact limits are on the Figma page." },
+        { question: "Is Midjourney worth it for a designer?", answer: "It partly replaces a stock library, which can make a stock subscription redundant. It also overlaps Adobe Firefly, so if you already have full Adobe you are paying twice for image generation." },
       ],
     },
   },
   MARC: {
     fr: {
       title: "Meilleurs outils pour consultant freelance en 2026 | tooltrim.com",
-      description: "Stack conseil optimale : Calendly, HubSpot, Zoom, Notion… Selon tooltrim.com, un consultant dépense 180€/mois en SaaS.",
+      description: "Stack consultant freelance : Calendly, CRM, visio, Notion. Le cumul CRM qui passe inaperçu et les abonnements que ton volume d'appels ne justifie pas.",
       h1: "Les meilleurs outils SaaS pour consultant freelance en 2026",
-      intro: "Un consultant freelance dépense en moyenne 180€/mois en outils SaaS. Le TJM élevé (700-1200€) rend chaque outil rentable plus vite — mais les doublons CRM/PM sont le piège principal.",
+      intro: "Un consultant a peu d'outils mais les paie cher, parce que ce sont des outils de vente. Le piège principal reste le cumul de deux CRM, l'un gardé par habitude, l'autre adopté pour une fonction précise puis jamais abandonné.",
       slug: "meilleurs-outils-consultant-freelance",
-      avgSpend: "180€/mois",
-      wastePercent: "25%",
       faqs: [
-        { question: "Quel CRM choisir en freelance consultant ?", answer: "Pour un consultant solo, Folk ou Attio suffisent. Pipedrive (15€/mois) est le meilleur rapport simplicité/puissance. Le piège : payer HubSpot + Pipedrive en parallèle." },
-        { question: "Calendly gratuit ou payant ?", answer: "La version gratuite suffit pour un seul type de rendez-vous. Le Pro (12€/mois) se justifie pour les intégrations Zoom. Alternative : Cal.com (open-source, gratuit)." },
-        { question: "Faut-il payer Zoom Pro en freelance ?", answer: "Si vos appels dépassent 40 min, oui. Sinon Google Meet (gratuit) suffit. Selon tooltrim.com, 40% des consultants paient Zoom Pro alors que 80% de leurs appels sont sous 40 min." },
+        { question: "Quel CRM choisir en freelance consultant ?", answer: "En solo, un CRM léger de type Folk ou Attio suffit dans la plupart des cas. Pipedrive vise un bon équilibre entre simplicité et profondeur. Le vrai piège n'est pas le choix, c'est de garder l'ancien en parallèle du nouveau." },
+        { question: "Calendly gratuit ou payant ?", answer: "La version gratuite convient tant que tu n'as qu'un seul type de rendez-vous. Le plan payant se justifie pour plusieurs types d'événements ou des intégrations visio. Cal.com est l'alternative open source si tu veux héberger toi-même." },
+        { question: "Faut-il payer Zoom Pro en freelance ?", answer: "La question se règle en regardant la durée réelle de tes appels. Le plan gratuit de Zoom coupe à 40 minutes en réunion de groupe. Si tes rendez-vous tiennent sous cette limite, Google Meet fait le travail sans abonnement." },
       ],
     },
     en: {
       title: "Best tools for freelance consultants in 2026 | tooltrim.com",
-      description: "Optimal consulting stack: Calendly, HubSpot, Zoom, Notion… According to tooltrim.com, a freelance consultant spends €180/mo on SaaS.",
+      description: "Freelance consultant stack: Calendly, CRM, video, Notion. The CRM overlap nobody notices, and the subscriptions your call volume does not justify.",
       h1: "Best SaaS tools for freelance consultants in 2026",
-      intro: "A freelance consultant spends €180/month on SaaS tools on average. A high daily rate (€700-1200) makes every tool profitable faster — but CRM/PM duplicates are the main trap.",
+      intro: "A consultant runs few tools but pays a lot for them, because they are sales tools. The main trap is running two CRMs at once, one kept out of habit and one adopted for a single feature then never dropped.",
       slug: "best-tools-freelance-consultant",
-      avgSpend: "€180/mo",
-      wastePercent: "25%",
       faqs: [
-        { question: "Which CRM for a freelance consultant?", answer: "For a solo consultant, Folk or Attio are sufficient. Pipedrive (€15/mo) has the best simplicity/power ratio. The trap: paying HubSpot + Pipedrive in parallel." },
-        { question: "Calendly free or paid?", answer: "Free is enough for one appointment type. Pro (€12/mo) is justified for Zoom integrations. Alternative: Cal.com (open-source, free)." },
-        { question: "Should I pay for Zoom Pro as a freelancer?", answer: "If calls exceed 40 min, yes. Otherwise Google Meet (free) is enough. According to tooltrim.com, 40% of consultants pay for Zoom Pro while 80% of their calls are under 40 min." },
+        { question: "Which CRM for a freelance consultant?", answer: "Working solo, a lightweight CRM such as Folk or Attio covers most cases. Pipedrive aims at a good balance between simplicity and depth. The real trap is not the choice, it is keeping the old one running alongside the new one." },
+        { question: "Calendly free or paid?", answer: "The free tier works as long as you only offer one appointment type. The paid plan earns its place with several event types or video integrations. Cal.com is the open-source alternative if you would rather self-host." },
+        { question: "Should I pay for Zoom Pro as a freelancer?", answer: "Settle it by looking at how long your calls actually run. Zoom's free plan cuts group meetings at 40 minutes. If your calls stay under that, Google Meet does the job with no subscription." },
       ],
     },
   },
   ALIX: {
     fr: {
       title: "Meilleurs outils créateur de contenu freelance | tooltrim.com",
-      description: "Stack content optimale : Beehiiv, ChatGPT Pro, Canva, Buffer… Selon tooltrim.com, un créateur de contenu dépense 220€/mois en SaaS.",
+      description: "Stack créateur de contenu : newsletter, IA rédactionnelle, Canva, scheduler. Les trois familles d'outils où le cumul est le plus coûteux.",
       h1: "Les meilleurs outils SaaS pour créateur de contenu freelance en 2026",
-      intro: "Un créateur de contenu freelance dépense en moyenne 220€/mois en outils SaaS. Le piège : empiler des outils IA (ChatGPT + Jasper + Copy.ai), des plateformes newsletter en double, et des schedulers sociaux qui font la même chose.",
+      intro: "La stack d'un créateur de contenu grossit par empilement : un outil IA ajouté pour un cas précis, un scheduler testé puis gardé, une plateforme newsletter jamais migrée. Trois familles concentrent l'essentiel des doublons.",
       slug: "meilleurs-outils-createur-contenu-freelance",
-      avgSpend: "220€/mois",
-      wastePercent: "35%",
       faqs: [
-        { question: "Beehiiv ou Substack pour un créateur freelance ?", answer: "Beehiiv offre plus de contrôle (monétisation, analytics). Substack est plus simple mais prend 10% des revenus. Pour la monétisation active : Beehiiv. Pour un side-project : Substack Free." },
-        { question: "Faut-il payer ChatGPT Pro ET Jasper ?", answer: "Doublon IA #1 chez les créateurs. ChatGPT Pro (20€/mois) couvre 90% des cas de Jasper (99€/mois). Économie : 99€/mois en annulant Jasper." },
-        { question: "Quel scheduler social choisir ?", answer: "Buffer Pro (6€/mois) pour la simplicité. Typefully Pro (12€/mois) pour Twitter/LinkedIn avancé. Le piège : Hootsuite (99€/mois) quand Buffer fait le même travail pour 15× moins cher." },
+        { question: "Beehiiv ou Substack pour un créateur freelance ?", answer: "Beehiiv donne plus de contrôle sur la monétisation et les statistiques. Substack est plus simple à lancer mais prélève une part de tes revenus payants. Si tu monétises activement, la part prélevée finit par peser plus que l'abonnement." },
+        { question: "Faut-il payer ChatGPT Pro ET Jasper ?", answer: "C'est le cumul IA le plus fréquent chez les créateurs. Jasper est construit sur des gabarits marketing, ChatGPT est généraliste. Si tu écris déjà tes propres consignes, le gabarit n'apporte pas grand-chose que tu ne saches faire." },
+        { question: "Quel scheduler social choisir ?", answer: "Buffer couvre la publication programmée simple. Typefully est plus adapté si tu travailles surtout Twitter et LinkedIn. Le piège est de payer un outil d'équipe pour un usage solo : compare le prix par publication, pas le prix affiché." },
       ],
     },
     en: {
       title: "Best tools for freelance content creators in 2026 | tooltrim.com",
-      description: "Optimal content stack: Beehiiv, ChatGPT Pro, Canva, Buffer… According to tooltrim.com, a freelance content creator spends €220/mo on SaaS.",
+      description: "Content creator stack: newsletter, writing AI, Canva, scheduler. The three tool families where stacking costs the most.",
       h1: "Best SaaS tools for freelance content creators in 2026",
-      intro: "A freelance content creator spends €220/month on SaaS tools on average. The trap: stacking AI tools (ChatGPT + Jasper + Copy.ai), duplicate newsletter platforms, and social schedulers doing the same thing.",
+      intro: "A content creator's stack grows by accretion: an AI tool added for one case, a scheduler trialled then kept, a newsletter platform never migrated away from. Three families account for most of the overlap.",
       slug: "best-tools-freelance-content-creator",
-      avgSpend: "€220/mo",
-      wastePercent: "35%",
       faqs: [
-        { question: "Beehiiv or Substack for a freelance creator?", answer: "Beehiiv offers more control (monetization, analytics). Substack is simpler but takes 10% of revenue. For active monetization: Beehiiv. For a side-project: Substack Free." },
-        { question: "Should I pay for both ChatGPT Pro AND Jasper?", answer: "#1 AI duplicate among content creators. ChatGPT Pro (€20/mo) covers 90% of Jasper's use cases (€99/mo). Savings: €99/mo by cancelling Jasper." },
-        { question: "Which social scheduler to choose?", answer: "Buffer Pro (€6/mo) for simplicity. Typefully Pro (€12/mo) for advanced Twitter/LinkedIn. The trap: Hootsuite (€99/mo) when Buffer does the same for 15× less." },
+        { question: "Beehiiv or Substack for a freelance creator?", answer: "Beehiiv gives more control over monetization and analytics. Substack is simpler to launch but takes a cut of your paid revenue. Once you monetize seriously, that cut ends up costing more than a subscription would." },
+        { question: "Should I pay for both ChatGPT Pro and Jasper?", answer: "This is the most common AI overlap among creators. Jasper is built around marketing templates, ChatGPT is general purpose. If you already write your own prompts, the templates add little you cannot do yourself." },
+        { question: "Which social scheduler should I choose?", answer: "Buffer covers straightforward scheduled publishing. Typefully suits you better if you work mainly on Twitter and LinkedIn. The trap is paying for a team tool on a solo workload: compare cost per post, not the headline price." },
       ],
     },
   },
   CLAIRE: {
     fr: {
       title: "Meilleurs outils pour ops manager freelance en 2026 | tooltrim.com",
-      description: "Stack ops optimale : Asana, Qonto, Indy, Pipedrive… Selon tooltrim.com, un ops manager freelance dépense 200€/mois en SaaS.",
+      description: "Stack ops freelance : compta, banque pro, signature, gestion de projet. La stack la plus fragmentée, donc celle où les doublons se cachent le mieux.",
       h1: "Les meilleurs outils SaaS pour ops manager freelance en 2026",
-      intro: "Un ops manager ou COO fractionnaire dépense en moyenne 200€/mois en outils SaaS. La stack ops est la plus fragmentée : compta, banque, signature, PM, stockage… les doublons sont partout.",
+      intro: "La stack d'un ops manager ou d'un COO à temps partagé est la plus fragmentée de toutes : compta, banque, signature électronique, gestion de projet, stockage. Plus il y a de familles d'outils, plus les recouvrements passent inaperçus.",
       slug: "meilleurs-outils-ops-manager-freelance",
-      avgSpend: "200€/mois",
-      wastePercent: "30%",
       faqs: [
-        { question: "Indy ou Pennylane pour la compta freelance ?", answer: "Indy est optimisé pour les micro-entrepreneurs. Pennylane est plus complet pour les SASU/EURL. Les deux en parallèle = doublon. Choisir selon votre statut juridique." },
-        { question: "Faut-il une banque pro dédiée ?", answer: "Oui en société (obligation légale). Qonto (9€/mois) est le standard. Le piège : Qonto + Shine + Revolut Business = 30€/mois de frais évitables." },
-        { question: "Quel outil de gestion de projet choisir ?", answer: "Notion (gratuit) suffit pour 80% des ops freelances. Asana ou Monday se justifient pour la gestion d'équipe. Le doublon Asana + Monday + ClickUp peut coûter 120€/mois." },
+        { question: "Indy ou Pennylane pour la compta freelance ?", answer: "Indy vise les micro-entrepreneurs, Pennylane couvre des structures plus complexes de type SASU ou EURL. Le choix se fait sur ton statut juridique, pas sur les fonctionnalités. Garder les deux en parallèle n'a pas de sens." },
+        { question: "Faut-il une banque pro dédiée ?", answer: "En société, un compte dédié est une obligation légale. Le piège vient après : ouvrir un deuxième puis un troisième compte pro pour une fonction précise, et payer trois frais de tenue de compte pour une seule activité." },
+        { question: "Quel outil de gestion de projet choisir ?", answer: "Si tu travailles seul, un outil de documentation comme Notion couvre souvent le besoin sans outil de projet dédié. Asana ou Monday se justifient dès que tu coordonnes une équipe. Le cumul de trois outils de projet est le doublon le plus cher de cette stack." },
       ],
     },
     en: {
       title: "Best tools for freelance ops managers in 2026 | tooltrim.com",
-      description: "Optimal ops stack: Asana, Qonto, Stripe, Pipedrive… According to tooltrim.com, a freelance ops manager spends €200/mo on SaaS.",
+      description: "Freelance ops stack: accounting, business banking, e-signature, project management. The most fragmented stack, so the one where duplicates hide best.",
       h1: "Best SaaS tools for freelance ops managers in 2026",
-      intro: "A fractional COO or ops manager spends €200/month on SaaS tools on average. The ops stack is the most fragmented: accounting, banking, e-signatures, PM, storage… duplicates are everywhere.",
+      intro: "An ops manager's or fractional COO's stack is the most fragmented of all: accounting, banking, e-signature, project management, storage. The more tool families there are, the easier overlaps are to miss.",
       slug: "best-tools-freelance-ops-manager",
-      avgSpend: "€200/mo",
-      wastePercent: "30%",
       faqs: [
-        { question: "Which accounting tool for freelancers?", answer: "QuickBooks or FreshBooks for English-speaking markets. According to tooltrim.com, 25% of ops freelancers have overlapping accounting/invoicing subscriptions." },
-        { question: "Do I need a dedicated business bank account?", answer: "Yes if you run a company. The trap: 2-3 business accounts in parallel = €20-30/month in avoidable fees." },
-        { question: "Which project management tool?", answer: "Notion (free) is enough for 80% of freelance ops. Asana or Monday are justified for team management. The Asana + Monday + ClickUp duplicate can cost €120/mo." },
+        { question: "Which accounting tool for freelancers?", answer: "Pick on legal structure rather than features: tools aimed at sole traders and tools built for incorporated companies solve different problems. The common waste is an accounting tool and an invoicing tool that both issue invoices." },
+        { question: "Do I need a dedicated business bank account?", answer: "If you run a company, a dedicated account is a legal requirement. The trap comes afterwards: opening a second then a third business account for one specific feature, and paying three account fees for one business." },
+        { question: "Which project management tool?", answer: "Working alone, a documentation tool such as Notion often covers the need without a dedicated project tool. Asana or Monday earn their place once you coordinate a team. Running three project tools at once is the most expensive duplicate in this stack." },
       ],
     },
   },
@@ -279,26 +255,6 @@ export default function PersonaPillarPage({ persona, lang }: Props) {
         </h1>
         <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">{m.intro}</p>
 
-        {/* Quick stats */}
-        <div className="mt-8 grid gap-4 sm:grid-cols-2">
-          <div className="rounded-2xl border border-border bg-card p-5">
-            <p className="font-mono text-3xl font-semibold tracking-tighter text-primary">
-              {m.avgSpend}
-            </p>
-            <p className="mt-1 text-sm text-muted-foreground">
-              {t("Dépense moyenne", "Average spend")}
-            </p>
-          </div>
-          <div className="rounded-2xl border border-border bg-accent/30 p-5">
-            <div className="flex items-center gap-2">
-              <AlertTriangle className="h-4 w-4 text-primary" />
-              <p className="font-mono text-3xl font-semibold tracking-tighter">{m.wastePercent}</p>
-            </div>
-            <p className="mt-1 text-sm text-muted-foreground">
-              {t("récupérable selon nos audits", "recoverable per our audits")}
-            </p>
-          </div>
-        </div>
       </section>
 
       {/* Recommended tools */}
