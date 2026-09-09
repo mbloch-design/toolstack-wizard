@@ -41,6 +41,7 @@
     "audit:card-images": "node scripts/audit-card-images.mjs",
     "audit:editorial": "node scripts/audit-editorial-consistency.mjs",
     "audit:build-output": "node scripts/audit-build-output.mjs",
+    "optimize:critical-css": "node scripts/externalize-critical-css.mjs",
     "audit:guide-locales": "node scripts/audit-guide-locale-parity.mjs",
     "audit:seo-explorer": "node scripts/audit-explorer-seo.mjs",
     "validate:seo-generated": "node scripts/validate-generated-seo.mjs",

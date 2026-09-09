@@ -11,10 +11,11 @@ const MiB = 1024 * 1024;
 // lightweight. They stop silent regressions while the larger prerender/data
 // redesign is handled separately.
 const budgets = {
-  files: 12_100,
-  totalBytes: 1_110 * MiB,
-  htmlBytes: 1_050 * MiB,
+  files: 12_800,
+  totalBytes: 850 * MiB,
+  htmlBytes: 750 * MiB,
   javascriptBytes: 15 * MiB,
+  cssBytes: 30 * MiB,
   duplicateBytes: 3 * MiB,
 };
 
@@ -58,14 +59,27 @@ const duplicateBytes = duplicateGroups.reduce(
 );
 const htmlBytes = byExtension.get(".html")?.bytes || 0;
 const javascriptBytes = byExtension.get(".js")?.bytes || 0;
+const cssBytes = byExtension.get(".css")?.bytes || 0;
 const legacyFaqFiles = files.filter((file) => /^(fr|en)\/tool\/[^/]+\/faq\/index\.html$/.test(file.relative));
+const inlineCriticalStyles = files.filter((file) => {
+  if (!file.relative.endsWith(".html")) return false;
+  return fs.readFileSync(file.absolute, "utf8").includes('<style id="critical-css">');
+});
+const htmlWithoutCriticalCss = files.filter((file) => {
+  if (!file.relative.endsWith(".html") || file.relative.startsWith("verification/")) return false;
+  const html = fs.readFileSync(file.absolute, "utf8");
+  return !html.includes('id="critical-css"');
+});
 const formatMiB = (bytes) => `${(bytes / MiB).toFixed(1)} MiB`;
 
 console.log(`Build output: ${files.length} files, ${formatMiB(totalBytes)}`);
 console.log(`  HTML: ${byExtension.get(".html")?.files || 0} files, ${formatMiB(htmlBytes)}`);
 console.log(`  JavaScript: ${byExtension.get(".js")?.files || 0} files, ${formatMiB(javascriptBytes)}`);
+console.log(`  CSS: ${byExtension.get(".css")?.files || 0} files, ${formatMiB(cssBytes)}`);
 console.log(`  Exact duplicates: ${duplicateGroups.length} groups, ${formatMiB(duplicateBytes)} redundant`);
 console.log(`  Legacy tool FAQ files: ${legacyFaqFiles.length}`);
+console.log(`  Inline critical CSS blocks: ${inlineCriticalStyles.length}`);
+console.log(`  ToolTrim HTML files without critical CSS: ${htmlWithoutCriticalCss.length}`);
 
 for (const group of duplicateGroups
   .sort((a, b) => b[0].size * (b.length - 1) - a[0].size * (a.length - 1))
@@ -80,8 +94,11 @@ const failures = [
   [totalBytes, budgets.totalBytes, "total output", formatMiB],
   [htmlBytes, budgets.htmlBytes, "HTML output", formatMiB],
   [javascriptBytes, budgets.javascriptBytes, "JavaScript output", formatMiB],
+  [cssBytes, budgets.cssBytes, "CSS output", formatMiB],
   [duplicateBytes, budgets.duplicateBytes, "exact duplicate bytes", formatMiB],
   [legacyFaqFiles.length, 0, "legacy tool FAQ files", (value) => String(value)],
+  [inlineCriticalStyles.length, 0, "inline critical CSS blocks", (value) => String(value)],
+  [htmlWithoutCriticalCss.length, 0, "ToolTrim HTML files without critical CSS", (value) => String(value)],
 ].filter(([value, limit]) => value > limit);
 
 if (failures.length > 0) {
