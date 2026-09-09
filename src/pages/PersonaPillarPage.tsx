@@ -6,6 +6,7 @@ import FaqBlock from "@/components/FaqBlock";
 import ToolLogo from "@/components/ToolLogo";
 import { useToolSummaries } from "@/hooks/useSupabaseData";
 import { setSeoTags, SEO_BASE } from "@/lib/seo";
+import { computeToolTrimScore } from "@/lib/toolTrimScore";
 import { ArrowRight, Sparkles, AlertTriangle, HelpCircle, Layers, ShieldCheck } from "@/lib/icons";
 
 type Persona = "THEO" | "SOFIA" | "MARC" | "ALIX" | "CLAIRE";
@@ -185,18 +186,25 @@ export default function PersonaPillarPage({ persona, lang }: Props) {
   const enHref = `${SEO_BASE}/en/guide/${META[persona].en.slug}`;
   const canonicalHref = `${SEO_BASE}/${lang}/guide/${m.slug}`;
 
-  // Filter tools by persona pertinence (>= 60), fallback to first 12 by name.
+  // Les outils rattaches a ce profil, classes par score ToolTrim.
+  //
+  // Le filtre lisait auparavant `pertinence_by_persona >= 60`, un champ absent
+  // des 1171 outils : il ne remontait donc jamais rien et retombait sur les 12
+  // premiers du catalogue. Les 5 pages affichaient les memes 12 outils
+  // arbitraires sous une promesse de pertinence. Le champ reellement rempli est
+  // `personas`, un tableau de codes persona present sur 760 outils.
+  //
+  // Pas de repli sur le catalogue brut : si aucun outil n'est rattache au
+  // profil, mieux vaut ne rien afficher qu'afficher n'importe quoi.
   const recommendedTools = useMemo(() => {
     if (!tools.length) return [];
-    const scored = tools
-      .map((t: any) => ({
-        tool: t,
-        score: t.pertinence_by_persona?.[persona] ?? 0,
-      }))
-      .filter((x) => x.score >= 60)
-      .sort((a, b) => b.score - a.score)
+    return tools
+      .filter((t: any) => Array.isArray(t.personas) && t.personas.includes(persona))
+      .map((t: any) => ({ tool: t, score: computeToolTrimScore(t)?.score ?? 0 }))
+      // Departage par nom pour que SSR et client produisent le meme ordre.
+      .sort((a, b) => b.score - a.score || String(a.tool.name).localeCompare(String(b.tool.name)))
+      .slice(0, 12)
       .map((x) => x.tool);
-    return scored.length > 0 ? scored.slice(0, 12) : tools.slice(0, 12);
   }, [tools, persona]);
 
   const faqSchema = {
@@ -264,8 +272,8 @@ export default function PersonaPillarPage({ persona, lang }: Props) {
         </h2>
         <p className="mt-2 text-sm text-muted-foreground">
           {t(
-            "Sélectionnés par pertinence pour ce profil freelance.",
-            "Selected by relevance for this freelance profile."
+            "Les outils du catalogue rattachés à ce profil, classés par score ToolTrim.",
+            "Catalogue tools mapped to this profile, ranked by ToolTrim score."
           )}
         </p>
 
