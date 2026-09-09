@@ -515,7 +515,9 @@ function sitemapPlugin(): Plugin {
           addPair(`${BASE}/fr/tool/${slug}/prix`,         `${BASE}/en/tool/${slug}/pricing`,      "monthly", "0.7");
           addPair(`${BASE}/fr/tool/${slug}/alternatives`, `${BASE}/en/tool/${slug}/alternatives`, "monthly", "0.7");
           addPair(`${BASE}/fr/tool/${slug}/avis`,         `${BASE}/en/tool/${slug}/reviews`,      "monthly", "0.6");
-          addPair(`${BASE}/fr/tool/${slug}/faq`,          `${BASE}/en/tool/${slug}/faq`,          "monthly", "0.6");
+          // `/faq` is deliberately absent: it canonicalises to the fiche (see
+          // the prerenderer and DynamicCanonical), and a sitemap must not
+          // advertise a URL whose own canonical points elsewhere.
           // Mirrors staticPrerenderPlugin's explorer/around loop — one
           // prerendered, indexable page per tool, same slug set.
           addPair(`${BASE}/fr/explorer/around/${slug}`,   `${BASE}/en/explorer/around/${slug}`,   "monthly", "0.5");
@@ -1118,11 +1120,27 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
                 publisher: { "@type": "Organization", name: "ToolTrim", url: BASE },
               };
 
+              // `/faq` holds nothing the fiche does not already show: buildToolFaqs
+              // derives all six answers from shortDescription, the price and
+              // verdict.threshold, and the overrides meant to break that repetition
+              // cover 0 of 1171 tools for the price answer. GSC over the last three
+              // months: 8 clicks for 4648 impressions across the whole family, at an
+              // average position of 43 — while the same pricing queries it surfaces
+              // on ("datadog pricing", "dropbox pricing") are what /prix exists for.
+              // Pointing it at the fiche stops the two from splitting one signal.
+              // The page stays reachable and rendered; only the separate indexing
+              // claim is withdrawn. Mirrored in DynamicCanonical and dropped from
+              // the sitemap — keep the three in sync.
+              const isFaq = sub.path === "faq";
+              const canonicalUrl = isFaq ? mainUrl : url;
+              const frCanonical  = isFaq ? `${BASE}/fr/tool/${slug}` : frUrl;
+              const enCanonical  = isFaq ? `${BASE}/en/tool/${slug}` : enUrl;
+
               const metaTags = [
-                `<link rel="canonical" href="${url}" />`,
-                `<link rel="alternate" hreflang="fr" href="${frUrl}" />`,
-                `<link rel="alternate" hreflang="en" href="${enUrl}" />`,
-                `<link rel="alternate" hreflang="x-default" href="${enUrl}" />`,
+                `<link rel="canonical" href="${canonicalUrl}" />`,
+                `<link rel="alternate" hreflang="fr" href="${frCanonical}" />`,
+                `<link rel="alternate" hreflang="en" href="${enCanonical}" />`,
+                `<link rel="alternate" hreflang="x-default" href="${enCanonical}" />`,
                 `<title>${title}</title>`,
                 `<meta name="description" content="${desc.replace(/"/g, "&quot;")}" />`,
                 `<meta property="og:title" content="${title.replace(/"/g, "&quot;")}" />`,

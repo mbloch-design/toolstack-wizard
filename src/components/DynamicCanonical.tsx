@@ -22,8 +22,11 @@ export default function DynamicCanonical() {
   // ?type=outil&source= form is kept only as a client-side compatibility path.
   const canonical = `${SEO_BASE}${canonicalPath}`;
 
+  // Alternates are derived from the canonical path, not the visited one:
+  // hreflang has to name canonical URLs, and a page whose canonical points
+  // elsewhere (a tool `/faq`) must not advertise itself as the FR/EN pair.
   const localizedMatch = clean.match(/^\/(fr|en)(\/.*)?$/);
-  const alternates = localizedMatch ? getAlternateLinks(clean) : [];
+  const alternates = localizedMatch ? getAlternateLinks(canonicalPath) : [];
 
   const isEn = clean.startsWith("/en");
   const locale = isEn ? "en_US" : "fr_FR";
@@ -100,6 +103,14 @@ function getCanonicalPath(pathname: string) {
   if (!subPageAlias) return pathname;
 
   const [, lang, slug, subPage] = subPageAlias;
+
+  // `/faq` carries no content of its own — every answer is derived from fields
+  // the fiche already displays — and GSC gives the whole family 8 clicks for
+  // 4648 impressions over three months. It now points at the fiche so the two
+  // stop splitting one signal. Mirrored in the prerenderer and excluded from
+  // the sitemap — keep the three in sync.
+  if (subPage === "faq") return `/${lang}/tool/${slug}`;
+
   const localized = TOOL_SUBPAGE_ALIASES[subPage];
   if (!localized) return pathname;
 
