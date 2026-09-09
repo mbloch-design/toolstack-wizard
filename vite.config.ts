@@ -13,9 +13,8 @@ import { catalogProjectionRowsToTool, type CatalogProjectionRow } from "./src/li
 
 const BASE = "https://tooltrim.com";
 const LANGS = ["fr", "en"];
-// /selector excluded from sitemap (noindex tunnel)
 const STATIC_PAGES = ["", "tools", "category", "guides", "stacks", "about", "methodology", "transparency", "contact", "submit", "explorer"];
-const EXCLUDE_SITEMAP_PATTERNS = ["/selector/results", "/methodology"];
+const EXCLUDE_SITEMAP_PATTERNS = ["/methodology"];
 // Fiches doublons consolidées : ces slugs redirigent (301) vers leur canonique
 // dans vercel.json. On ne les prérend pas et on ne les liste pas au sitemap
 // pour éviter d'indexer des URLs redirigées. Canonique Adobe = adobe-creative-cloud.

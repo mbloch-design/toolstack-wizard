@@ -39,11 +39,13 @@ describe("canonical discovery surfaces", () => {
     const categories = fs.readFileSync(path.resolve(process.cwd(), "src/data/categories_index.json"), "utf8");
     const stacks = fs.readFileSync(path.resolve(process.cwd(), "src/data/stacks.ts"), "utf8");
     const categoryPage = fs.readFileSync(path.resolve(process.cwd(), "src/pages/CategoryPage.tsx"), "utf8");
+    const catalogueHook = fs.readFileSync(path.resolve(process.cwd(), "src/hooks/useSupabaseData.ts"), "utf8");
 
     expect(homepage).not.toContain("/category/ai-general");
     expect(homepage).not.toContain("/category/automation");
     expect(categories).not.toContain('"anthropic"');
     expect(stacks).not.toContain('"slug": "anthropic"');
     expect(categoryPage).toContain('REDIRECTED_TOOL_SLUGS = new Set(["anthropic"])');
+    expect(catalogueHook).toMatch(/DEPRECATED_TOOL_SLUGS[\s\S]*"anthropic"/);
   });
 });

@@ -4260,3 +4260,10 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Validation centralisée des liens externes avant rendu des CTA, liens officiels et données structurées des fiches outils.
 - Les valeurs catalogue corrompues ou relatives ne peuvent plus devenir des liens internes tels que `/rapports).` ou `/grammaire et clarté.`.
 - Ajout de tests couvrant les URL HTTP(S), le texte parasite, les chemins relatifs et les protocoles dangereux.
+
+# 2026-09-09 — Alias Anthropic encore exposé par Explorer
+
+- Ajout de `anthropic` à la liste client des slugs dépréciés, déjà appliquée au sitemap et au prérendu.
+- Suppression à la source des liens Explorer `/around/anthropic` qui continuaient à être générés depuis les recommandations associées.
+- Nettoyage de l'ancienne exception sitemap du sélecteur retiré.
+- Ajout d'un contrôle de régression sur le filtre du catalogue consommé par les surfaces clientes.
