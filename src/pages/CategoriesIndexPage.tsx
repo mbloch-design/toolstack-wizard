@@ -18,7 +18,9 @@ import {
   Sparkles,
   Workflow,
 } from "@/lib/icons";
-import { STACKS } from "@/data/stacks";
+import stackCatalog from "@/data/stacks-catalog-index.json";
+
+const STACKS = stackCatalog.stacks;
 
 const PRIORITY_CATEGORY_IDS = [
   "organization",

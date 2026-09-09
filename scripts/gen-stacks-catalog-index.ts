@@ -69,6 +69,7 @@ const stacks = STACKS.map((stack) => {
     persona: stack.persona,
     subProfiles: stack.subProfiles,
     monthlyBudget: stack.monthlyBudget,
+    savings: stack.savings,
     risk: stack.risk,
     riskEn: stack.riskEn,
     bestFor: stack.bestFor,
