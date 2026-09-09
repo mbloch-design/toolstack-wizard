@@ -9720,7 +9720,7 @@ export const STACKS: StackGuide[] = [
     tools: [
       { role: "Enregistrement", roleEn: "Recording", slug: "riverside", reason: "Audio/vidéo local propre pour interviews à distance.", reasonEn: "Clean local audio/video for remote interviews." },
       { role: "Montage par texte", roleEn: "Text-based editing", slug: "descript", reason: "Montage, transcription et clips à partir de contenus parlés.", reasonEn: "Editing, transcription, and clips from spoken content." },
-      { role: "Hébergement podcast", roleEn: "Podcast hosting", slug: "anchor-spotify", reason: "Solution simple pour démarrer sans coût fixe lourd.", reasonEn: "Simple way to start without heavy fixed cost." },
+      { role: "Hébergement podcast", roleEn: "Podcast hosting", slug: "spotify-for-podcasters", reason: "Solution simple pour démarrer sans coût fixe lourd.", reasonEn: "Simple way to start without heavy fixed cost." },
       { role: "Newsletter croissance", roleEn: "Growth newsletter", slug: "beehiiv", reason: "Utile si l'email devient un actif d'audience.", reasonEn: "Useful if email becomes an audience asset." },
       { role: "Newsletter simple", roleEn: "Simple newsletter", slug: "substack", reason: "Plus naturel si la relation auteur-lecteur prime.", reasonEn: "More natural if author-reader relationship matters most." },
       { role: "Calendrier", roleEn: "Calendar", slug: "notion", reason: "Pipeline épisode, idées, extraits et publications.", reasonEn: "Episode pipeline, ideas, extracts, and publishing." },

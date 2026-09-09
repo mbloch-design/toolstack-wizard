@@ -48,8 +48,9 @@ describe("canonical discovery surfaces", () => {
     expect(stacks).not.toContain('"slug": "convertkit"');
     expect(stacks).not.toContain('"slug": "docsend"');
     expect(stacks).not.toContain('"slug": "visible"');
+    expect(stacks).not.toContain('"slug": "anchor-spotify"');
     expect(stacks).toContain('"slug": "kit"');
-    expect(categoryPage).toContain('REDIRECTED_TOOL_SLUGS = new Set(["anthropic"])');
+    expect(categoryPage).toContain('"motion-app", "anchor-spotify"');
     expect(catalogueHook).toMatch(/DEPRECATED_TOOL_SLUGS[\s\S]*"anthropic"/);
   });
 });

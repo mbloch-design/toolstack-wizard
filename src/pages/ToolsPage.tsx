@@ -4,7 +4,7 @@ import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, useCategories, type ToolSummary } from "@/hooks/useSupabaseData";
 import { ArrowDown, ChevronDown, MoreHorizontal, Search, X } from "@/lib/icons";
 import ToolLogo from "@/components/ToolLogo";
-import { setSeoTags, setJsonLd, setHreflang, cleanupSeo } from "@/lib/seo";
+import { setSeoTags, setJsonLd, setHreflang, setNoindex, cleanupSeo, hasNonCanonicalSearchParams } from "@/lib/seo";
 import { stripLeadingEmoji } from "@/lib/text";
 import { ToolCardEditorial } from "@/components/ToolCardEditorial";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
@@ -230,6 +230,7 @@ const ToolsPage = () => {
       : `${tools.length} SaaS tools reviewed independently — verified pricing, visible alternatives, honest verdicts.`;
     const url = `https://tooltrim.com/${lang}/tools`;
     setSeoTags({ title, description: desc, url });
+    if (hasNonCanonicalSearchParams(searchParams)) setNoindex();
     setHreflang(`/${lang}/tools`);
     setJsonLd("tools-jsonld", {
       "@context": "https://schema.org", "@type": "CollectionPage",
@@ -243,7 +244,7 @@ const ToolsPage = () => {
       },
     });
     return () => cleanupSeo(["tools-jsonld"]);
-  }, [lang, tools]);
+  }, [lang, tools, searchParams]);
 
   const categoryCounts = useMemo(() => {
     const counts = new Map<string, number>();

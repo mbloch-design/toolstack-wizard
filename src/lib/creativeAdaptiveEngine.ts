@@ -749,7 +749,6 @@ const BASE_QUESTIONS: CreativeQuestion[] = [
       "campaign-measurement",
     ],
     explicitToolIds: [
-      "anchor-spotify",
       "spotify-for-podcasters",
       "buzzsprout",
       "ausha",
@@ -1406,7 +1405,7 @@ const LEGACY_WORKFLOW_TOOL_IDS: Record<CreativeWorkflowStageId, Set<string>> = {
   ]),
   publish: new Set([
     "buffer", "metricool", "later", "hootsuite", "sprout-social", "planoly",
-    "anchor-spotify", "spotify-for-podcasters", "buzzsprout", "ausha", "acast",
+    "spotify-for-podcasters", "buzzsprout", "ausha", "acast",
   ]),
   secure: new Set([
     "adobe-creative-cloud", "adobe-cc", "envato-elements", "brand-kits",

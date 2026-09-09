@@ -7,7 +7,7 @@ import ToolCardImage from "@/components/tool/ToolCardImage";
 import Breadcrumb from "@/components/Breadcrumb";
 import CatalogToolbar, { type ToolbarPill } from "@/components/catalog/CatalogToolbar";
 import { useLang } from "@/hooks/useLang";
-import { cleanupSeo, SEO_BASE, setHreflang, setJsonLd, setSeoTags } from "@/lib/seo";
+import { cleanupSeo, hasNonCanonicalSearchParams, SEO_BASE, setHreflang, setJsonLd, setNoindex, setSeoTags } from "@/lib/seo";
 import { useCatalogStickyToolbar } from "@/hooks/useCatalogStickyToolbar";
 import stackCatalog from "@/data/stacks-catalog-index.json";
 
@@ -714,6 +714,7 @@ const StacksPage = () => {
       ? "Explore des stacks SaaS recommandées selon ton profil, ton budget, ton niveau et tes usages pour savoir quels outils garder, couper ou challenger."
       : "Explore SaaS stacks recommended by profile, budget, level and real usage to know which tools to keep, cut or challenge.";
     setSeoTags({ title, description, url: `${SEO_BASE}/${lang}/stacks`, locale: lang === "fr" ? "fr_FR" : "en_US" });
+    if (hasNonCanonicalSearchParams(searchParams)) setNoindex();
     setHreflang(`/${lang}/stacks`);
     // A single ItemList of the stacks, each pointing at its own detail page,
     // is the standard schema for a listing page — lighter and more useful for
@@ -737,7 +738,7 @@ const StacksPage = () => {
       },
     });
     return () => cleanupSeo(["stacks-jsonld"]);
-  }, [lang]);
+  }, [lang, searchParams]);
 
   return (
     <div className="tt-catalog-page min-h-screen" style={{ "--page-accent": "#00E572" } as CSSProperties}>

@@ -5,6 +5,13 @@
 export const SEO_BASE = "https://tooltrim.com";
 export const OG_IMAGE = "https://tooltrim.com/og-image-v2.png";
 
+/** Facets, searches and tracking state never define an indexable document.
+ * Their canonical is the clean pathname and the rendered page must also carry
+ * noindex so crawlers do not spend time on combinatorial URL variants. */
+export function hasNonCanonicalSearchParams(params: URLSearchParams): boolean {
+  return params.toString().length > 0;
+}
+
 const GUIDE_SLUG_ALTERNATES: Record<string, string> = {
   "loom-prix-alternatives": "loom-pricing-alternatives",
   "conseils-ia-freelances-2026": "ai-tips-freelancers-2026",
@@ -76,19 +83,9 @@ export function setJsonLd(id: string, data: Record<string, unknown>) {
   el.textContent = JSON.stringify(data);
 }
 
-export function setHreflang(path: string, base = SEO_BASE) {
-  // Remove existing hreflang links
-  document.querySelectorAll('link[rel="alternate"][hreflang]').forEach((el) => el.remove());
-
-  const entries = getAlternateLinks(path, base);
-
-  for (const [lang, href] of entries) {
-    const link = document.createElement("link");
-    link.rel = "alternate";
-    link.hreflang = lang;
-    link.href = href;
-    document.head.appendChild(link);
-  }
+export function setHreflang(_path: string, _base = SEO_BASE) {
+  // no-op: hreflang is handled by <DynamicCanonical />. The build-time
+  // prerenderer still writes equivalent tags for crawlers without JavaScript.
 }
 
 export function getAlternateLinks(path: string, base = SEO_BASE): [string, string][] {
@@ -146,7 +143,6 @@ export function removeNoindex() {
 export function cleanupSeo(ids: string[]) {
   ids.forEach((id) => document.getElementById(id)?.remove());
   // canonical is managed by react-helmet-async, no manual cleanup needed
-  document.querySelectorAll('link[rel="alternate"][hreflang]').forEach((el) => el.remove());
   removeNoindex();
 }
 

@@ -34,6 +34,13 @@ describe("legacy article redirects", () => {
     expect(legacyRedirects.every(({ permanent }) => permanent)).toBe(true);
   });
 
+  it("consolidates duplicate product identities in one hop", () => {
+    expect(redirectMap.get("/:lang(fr|en)/tool/motion-app")?.destination).toBe("/:lang/tool/motion");
+    expect(redirectMap.get("/:lang(fr|en)/tool/anchor-spotify")?.destination).toBe(
+      "/:lang/tool/spotify-for-podcasters",
+    );
+  });
+
   it("keeps redirected audit landing aliases out of sitemap sources", () => {
     const sitemapSources = ["vite.config.ts", "supabase/functions/sitemap/index.ts"]
       .map((file) => fs.readFileSync(path.resolve(process.cwd(), file), "utf8"))

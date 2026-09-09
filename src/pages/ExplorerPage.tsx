@@ -10,7 +10,7 @@ import { useLang } from "@/hooks/useLang";
 import { useStackPins } from "@/hooks/useStackPins";
 import { classifyToolForStack } from "@/lib/stackAutoClassification";
 import { scrollToTop } from "@/lib/scroll";
-import { setSeoTags, setNoindex, removeNoindex, cleanupSeo, SEO_BASE } from "@/lib/seo";
+import { setSeoTags, setNoindex, removeNoindex, cleanupSeo, hasNonCanonicalSearchParams, SEO_BASE } from "@/lib/seo";
 import { trackEvent } from "@/lib/analytics";
 import {
   buildExplorationCandidates,
@@ -393,13 +393,13 @@ export default function ExplorerPage() {
         locale: lang === "en" ? "en_US" : "fr_FR",
       });
     }
-    if (source?.type === "objectif" || source?.type === "stack") setNoindex();
+    if (hasNonCanonicalSearchParams(searchParams) || source?.type === "objectif" || source?.type === "stack") setNoindex();
     else removeNoindex();
     return () => {
       removeNoindex();
       cleanupSeo([]);
     };
-  }, [lang, sourceKey, sourceLabel, source, sourceTool]);
+  }, [lang, sourceKey, sourceLabel, source, sourceTool, searchParams]);
 
   const fallbackHref = source?.type === "stack"
     ? `${prefix}/ma-stack`

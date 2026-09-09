@@ -1,5 +1,14 @@
 # ToolTrim — AI Changelog
 
+## 2026-09-09 — Garde-fous SEO des surfaces programmatiques
+
+- Les variantes à paramètres des catalogues Outils, Stacks, Comparatifs et Explorer reçoivent désormais `noindex, follow` tout en conservant leur canonical propre ; la recherche interne est toujours non indexable.
+- Ajout d'un validateur exhaustif du sitemap généré : URL HTTPS non-WWW sans paramètres, fichier HTML présent, self-canonical, absence de noindex et cibles hreflang réciproques.
+- Ajout d'un audit des pages `/explorer/around` qui contrôle titres uniques, canonical, H1, volume HTML pré-rendu et chemins crawlables vers les outils associés.
+- Ajout d'une sonde de production couvrant la normalisation HTTP/WWW, les anciennes routes Article, les anciens slugs outils et les suffixes localisés.
+- L'audit des 2 142 pages Explorer a révélé deux identités produit dupliquées : `motion-app` est consolidé vers `motion`, et `anchor-spotify` vers `spotify-for-podcasters`, avec redirections permanentes et retrait des surfaces de découverte.
+- Après hydratation, React devient l'unique propriétaire des canonical et hreflang : les copies statiques restent disponibles avant JavaScript puis sont retirées du DOM, ce qui élimine les balises dupliquées.
+
 ## 2026-09-09 — Slugs canoniques des stacks
 
 - Les huit références de stacks à l'ancien slug `convertkit` utilisent désormais la fiche canonique `kit`.

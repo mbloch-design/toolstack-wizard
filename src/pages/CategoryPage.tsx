@@ -14,7 +14,7 @@ import { useCatalogStickyToolbar } from "@/hooks/useCatalogStickyToolbar";
 type SortKey = "name" | "price-asc" | "price-desc" | "free-first" | "savings";
 type PriceFilter = "all" | "free" | "freemium" | "paid";
 const PER_PAGE = 20;
-const REDIRECTED_TOOL_SLUGS = new Set(["anthropic"]);
+const REDIRECTED_TOOL_SLUGS = new Set(["anthropic", "motion-app", "anchor-spotify"]);
 
 // ── Profile options (mapped from relevantFor values) ──
 const PROFILE_OPTIONS = [

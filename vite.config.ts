@@ -45,7 +45,7 @@ const DEPRECATED_TOOL_SLUGS = new Set([
   // Repasse creation vague 3 : webxr (standard W3C, pas un produit), topaz-video→topaz-video-ai (doublon).
   "webxr", "topaz-video",
   "relume-ai", "pageai", "liquid-web-partner-program", "are-na", "invision", "specify", "dovetail-ai", "shield-app", "seo-mode", "ga4", "sql", "wunderlist",
-  "openai", "anthropic", "descript", "flux", "kling-ai", "magnific-ai", "otter", "figma-weave", "elgato-stream-deck", "around", "monday", "fig-terminal", "reclaim-ai", "legifrance-pro", "captaindoc", "sendinblue", "clearbit", "quickbooks-online", "lemonsqueezy",
+  "openai", "anthropic", "motion-app", "anchor-spotify", "descript", "flux", "kling-ai", "magnific-ai", "otter", "figma-weave", "elgato-stream-deck", "around", "monday", "fig-terminal", "reclaim-ai", "legifrance-pro", "captaindoc", "sendinblue", "clearbit", "quickbooks-online", "lemonsqueezy",
 ]);
 
 /* CATEGORY_EN a ete supprimee : ces 16 traductions vivent desormais dans

@@ -6,6 +6,7 @@ import { useToolSummaries, useCategories, usePosts } from "@/hooks/useSupabaseDa
 import { useCatalogSearch } from "@/hooks/useCatalogSearch";
 import ToolCardCompact from "@/components/tool/ToolCardCompact";
 import { getExplorerHref } from "@/lib/toolExploration";
+import { cleanupSeo, SEO_BASE, setHreflang, setNoindex, setSeoTags } from "@/lib/seo";
 
 /* ────────────────────────────────────────────────────────────
    Types & constants
@@ -28,6 +29,18 @@ const SearchPage = () => {
   const { tools } = useToolSummaries();
   const { categories } = useCategories();
   const { posts } = usePosts(lang);
+
+  useEffect(() => {
+    const title = t("Recherche ToolTrim", "Search ToolTrim") as string;
+    const description = t(
+      "Rechercher un outil, une catégorie ou un guide dans ToolTrim.",
+      "Search for a tool, category or guide on ToolTrim.",
+    ) as string;
+    setSeoTags({ title, description, url: `${SEO_BASE}/${lang}/search`, locale: lang === "fr" ? "fr_FR" : "en_US" });
+    setHreflang(`/${lang}/search`);
+    setNoindex();
+    return () => cleanupSeo([]);
+  }, [lang, t]);
 
   /* Sync input → URL (debounced) */
   useEffect(() => {

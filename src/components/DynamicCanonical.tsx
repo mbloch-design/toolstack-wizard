@@ -31,6 +31,15 @@ export default function DynamicCanonical() {
   // become an unlimited family of thin, duplicate pages in search indexes.
   const isInternalSearch = /\/search$/.test(canonicalPath);
 
+  // The prerenderer writes crawlable canonical/hreflang tags into the static
+  // HTML. Once React hydrates, Helmet becomes the single owner: remove only
+  // the unmanaged static copies so the live DOM never exposes duplicates.
+  useEffect(() => {
+    document
+      .querySelectorAll('link[rel="canonical"]:not([data-rh]), link[rel="alternate"][hreflang]:not([data-rh])')
+      .forEach((element) => element.remove());
+  }, [canonical]);
+
   useEffect(() => {
     if (!isInternalSearch) return;
     const robots = document.querySelector<HTMLMetaElement>('meta[name="robots"]:not([data-rh])');

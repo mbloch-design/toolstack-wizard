@@ -1,5 +1,17 @@
 import { describe, expect, it } from "vitest";
-import { getLanguageSwitchPath } from "./seo";
+import { getLanguageSwitchPath, hasNonCanonicalSearchParams } from "./seo";
+
+describe("hasNonCanonicalSearchParams", () => {
+  it("keeps clean catalogue paths indexable", () => {
+    expect(hasNonCanonicalSearchParams(new URLSearchParams())).toBe(false);
+  });
+
+  it("marks every filter, search or tracking variant as non-canonical", () => {
+    for (const query of ["q=notion", "category=crm", "sort=name", "utm_source=test"]) {
+      expect(hasNonCanonicalSearchParams(new URLSearchParams(query))).toBe(true);
+    }
+  });
+});
 
 describe("getLanguageSwitchPath", () => {
   it("translates localized tool route suffixes", () => {

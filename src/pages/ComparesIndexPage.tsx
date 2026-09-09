@@ -3,7 +3,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import { ArrowUpDown, ArrowUpRight, Search, X } from "@/lib/icons";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, type ToolSummary } from "@/hooks/useSupabaseData";
-import { setSeoTags, setJsonLd, setHreflang, cleanupSeo, SEO_BASE } from "@/lib/seo";
+import { setSeoTags, setJsonLd, setHreflang, setNoindex, cleanupSeo, hasNonCanonicalSearchParams, SEO_BASE } from "@/lib/seo";
 import ToolLogo from "@/components/ToolLogo";
 import { FEATURED_COMPARISONS } from "@/data/comparisons";
 import { useCatalogStickyToolbar } from "@/hooks/useCatalogStickyToolbar";
@@ -167,6 +167,7 @@ const ComparesIndexPage = () => {
     );
     const url = `${SEO_BASE}/${lang}/comparatifs`;
     setSeoTags({ title, description: desc, url, locale: lang === "fr" ? "fr_FR" : "en_US" });
+    if (hasNonCanonicalSearchParams(searchParams)) setNoindex();
     setHreflang(`/${lang}/comparatifs`);
     setJsonLd("compares-index-jsonld", {
       "@context": "https://schema.org",
@@ -176,7 +177,7 @@ const ComparesIndexPage = () => {
       inLanguage: lang,
     });
     return () => cleanupSeo(["compares-index-jsonld"]);
-  }, [lang, t]);
+  }, [lang, t, searchParams]);
 
   {/* useToolSummaries() seeds `tools` synchronously from the bundled JSON
       fallback (see staticToolSummaries), so real data is already there even
