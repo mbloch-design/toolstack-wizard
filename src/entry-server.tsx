@@ -14,6 +14,8 @@ import { AppRoutes, LangLayout } from "@/App";
 import { SsrToolContext, SsrRelatedPostsContext, SsrComparePairContext, SsrPostContext, loadLocalPosts } from "@/hooks/useSupabaseData";
 import type { Post } from "@/hooks/useSupabaseData";
 import type { Tool } from "@/data/types";
+import type { StackGuide } from "@/data/stacks";
+import { SsrStackContext } from "@/hooks/useStackDetailData";
 import StackDetailPage from "@/pages/StackDetailPage";
 import CategoryPage from "@/pages/CategoryPage";
 import ToolsPage from "@/pages/ToolsPage";
@@ -168,7 +170,7 @@ export async function renderHomePage(path: string): Promise<string> {
 // is not pulled into /stacks. For prerendering, render the detail component
 // directly inside the matching route: SSR remains complete without making
 // the component eager in the browser application.
-export async function renderStackPage(path: string): Promise<string> {
+export async function renderStackPage(path: string, stack: StackGuide): Promise<string> {
   const queryClient = new QueryClient();
 
   return renderToString(
@@ -182,11 +184,13 @@ export async function renderStackPage(path: string): Promise<string> {
             <DynamicCanonical />
             <ErrorBoundary>
               <Suspense fallback={null}>
-                <Routes>
-                  <Route path="/:lang" element={<LangLayout />}>
-                    <Route path="stacks/:slug" element={<StackDetailPage />} />
-                  </Route>
-                </Routes>
+                <SsrStackContext.Provider value={stack}>
+                  <Routes>
+                    <Route path="/:lang" element={<LangLayout />}>
+                      <Route path="stacks/:slug" element={<StackDetailPage />} />
+                    </Route>
+                  </Routes>
+                </SsrStackContext.Provider>
               </Suspense>
             </ErrorBoundary>
           </StaticRouter>

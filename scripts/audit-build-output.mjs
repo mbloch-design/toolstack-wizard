@@ -80,6 +80,16 @@ const largestToolCatalogShard = toolCatalogShards.reduce(
   (largest, file) => Math.max(largest, file.size),
   0,
 );
+const monolithicStackCatalogChunks = files.filter((file) =>
+  /^assets\/data-stacks-[^/]+\.js$/.test(file.relative),
+);
+const stackCatalogShards = files.filter((file) =>
+  /^assets\/stack-catalog\/[^/]+\.json$/.test(file.relative),
+);
+const largestStackCatalogShard = stackCatalogShards.reduce(
+  (largest, file) => Math.max(largest, file.size),
+  0,
+);
 const formatMiB = (bytes) => `${(bytes / MiB).toFixed(1)} MiB`;
 
 console.log(`Build output: ${files.length} files, ${formatMiB(totalBytes)}`);
@@ -92,6 +102,8 @@ console.log(`  Inline critical CSS blocks: ${inlineCriticalStyles.length}`);
 console.log(`  ToolTrim HTML files without critical CSS: ${htmlWithoutCriticalCss.length}`);
 console.log(`  Monolithic tool catalogue chunks: ${monolithicToolCatalogChunks.length}`);
 console.log(`  Tool catalogue shards: ${toolCatalogShards.length}, largest ${formatMiB(largestToolCatalogShard)}`);
+console.log(`  Monolithic stack catalogue chunks: ${monolithicStackCatalogChunks.length}`);
+console.log(`  Stack catalogue shards: ${stackCatalogShards.length}, largest ${formatMiB(largestStackCatalogShard)}`);
 
 for (const group of duplicateGroups
   .sort((a, b) => b[0].size * (b.length - 1) - a[0].size * (a.length - 1))
@@ -114,6 +126,9 @@ const failures = [
   [monolithicToolCatalogChunks.length, 0, "monolithic tool catalogue chunks", (value) => String(value)],
   [toolCatalogShards.length < 1 ? 1 : 0, 0, "missing tool catalogue shards", (value) => String(value)],
   [largestToolCatalogShard, 1 * MiB, "largest tool catalogue shard", formatMiB],
+  [monolithicStackCatalogChunks.length, 0, "monolithic stack catalogue chunks", (value) => String(value)],
+  [stackCatalogShards.length < 1 ? 1 : 0, 0, "missing stack catalogue shards", (value) => String(value)],
+  [largestStackCatalogShard, 1 * MiB, "largest stack catalogue shard", formatMiB],
 ].filter(([value, limit]) => value > limit);
 
 if (failures.length > 0) {

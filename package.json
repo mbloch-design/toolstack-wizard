@@ -8,6 +8,7 @@
     "build": "node scripts/build-production.mjs",
     "gen:tools-index": "node scripts/gen-tools-index.mjs",
     "gen:tool-catalog-shards": "node scripts/emit-tool-catalog-shards.mjs",
+    "gen:stack-catalog-shards": "tsx scripts/emit-stack-catalog-shards.ts",
     "gen:icon-sprite": "node scripts/gen-icon-sprite.mjs",
     "indexnow": "node scripts/submit-indexnow.mjs",
     "build:dev": "vite build --mode development",

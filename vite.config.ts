@@ -682,7 +682,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
         let renderToolPage: ((path: string, tool: any, lang: string) => Promise<{ html: string; relatedPosts: any[] }>) | null = null;
         let renderComparePage: ((path: string, toolA: any, toolB: any) => Promise<string>) | null = null;
         let renderGuidePage: ((path: string, post: any) => Promise<string>) | null = null;
-        let renderStackPage: ((path: string) => Promise<string>) | null = null;
+        let renderStackPage: ((path: string, stack: any) => Promise<string>) | null = null;
         let renderHomePage: ((path: string) => Promise<string>) | null = null;
         let renderCategoryPage: ((path: string) => Promise<string>) | null = null;
         let renderToolsPage: ((path: string) => Promise<string>) | null = null;
@@ -1555,7 +1555,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
 
             if (renderStackPage) {
               try {
-                const markup = await renderStackPage(`/${lang}/stacks/${stack.slug}`);
+                const markup = await renderStackPage(`/${lang}/stacks/${stack.slug}`, stack);
                 html = html.replace('<div id="root"></div>', `<div id="root">${markup}</div>`);
                 if (compiledCssPath) {
                   const utilityCss = extractUsedUtilityCss(markup, compiledCssPath);
@@ -1563,6 +1563,11 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
                     html = html.replace('<style id="critical-css">', `<style id="critical-css">${utilityCss}`);
                   }
                 }
+                const ssrStackJson = JSON.stringify(stack).replace(/<\/script/gi, "<\\/script");
+                html = html.replace(
+                  "</body>",
+                  `    <script id="__SSR_STACK__" type="application/json">${ssrStackJson}</script>\n  </body>`,
+                );
                 stacksRendered++;
               } catch (e) {
                 console.warn(`⚠️ SSR render failed for ${lang}/stacks/${stack.slug}, falling back to meta-only:`, e);
@@ -2196,7 +2201,6 @@ export default defineConfig(({ mode, isSsrBuild }) => {
           if (id.includes("/src/data/content.json")) return "data-content";
           if (id.includes("/src/data/posts-fr.json")) return "data-posts-fr";
           if (id.includes("/src/data/posts-en.json")) return "data-posts-en";
-          if (id.includes("/src/data/stacks.ts")) return "data-stacks";
           return undefined;
         },
       },

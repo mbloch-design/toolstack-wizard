@@ -26,8 +26,9 @@
 - Retrait de Selector et Results du graphe JavaScript public ; toutes les routes `/selector/*` convergent côté client vers Ma Stack comme elles le faisaient déjà au niveau Vercel.
 - Les anciennes sous-pages outils `/faq`, déjà absentes du sitemap et canoniques vers la fiche, redirigent désormais définitivement vers celle-ci et ne sont plus générées dans `dist`.
 - Le CSS critique n’est plus recopié dans chaque document HTML : les variantes identiques deviennent des assets hashés mutualisés, chargés avant le rendu et réutilisables par le cache navigateur/CDN.
-- Le fallback client des fiches ne télécharge plus le catalogue éditorial complet : 36 fragments alphabétiques sont émis au build, une navigation n’en charge qu’un, et les guides persona utilisent désormais l’index léger déjà partagé.
+- Le fallback client des fiches ne télécharge plus le catalogue éditorial complet : 29 fragments alphabétiques sont émis au build, une navigation n’en charge qu’un, et les guides persona utilisent désormais l’index léger déjà partagé.
 - La page Catégories ne charge plus les 2,2 Mio de définitions détaillées des stacks pour cinq cartes : le budget et l’économie proviennent maintenant de l’index compact partagé avec le catalogue Stacks.
+- Les fiches stack hydratent désormais leur donnée SSR injectée et ne chargent plus les 212 définitions détaillées côté navigateur ; une navigation interne utilise seulement l’un des 15 fragments alphabétiques, avec l’index compact pour les suggestions.
 
 ## 2026-09-08 — Remise à plat technique des Guides
 

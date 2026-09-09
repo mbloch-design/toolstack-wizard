@@ -4,12 +4,13 @@ import { ChevronDown } from "@/lib/icons";
 import ToolLogo from "@/components/ToolLogo";
 import { useLang } from "@/hooks/useLang";
 import { useToolSummaries, type ToolSummary } from "@/hooks/useSupabaseData";
+import { useStackBySlug } from "@/hooks/useStackDetailData";
+import stackCatalog from "@/data/stacks-catalog-index.json";
 import { cleanupSeo, SEO_BASE, setHreflang, setJsonLd, setSeoTags } from "@/lib/seo";
 import {
   STACK_PERSONAS,
   STACK_SUB_PROFILES,
   STACK_STAGES,
-  STACKS,
   type StackGuide,
   type StackInsight,
   type StackPersona,
@@ -595,15 +596,16 @@ const StackDetailPage = () => {
     slug === "sites-ia-automation" ? "createur-sites-ia-automation" :
     slug === "consultant-b2b" ? "consultant-b2b-propre" :
     slug;
-  const stack = STACKS.find((item) => item.slug === resolvedSlug);
+  const { stack, loading } = useStackBySlug(resolvedSlug);
   const toolBySlug = useMemo(() => new Map(tools.map((tool) => [tool.slug || tool.id, tool])), [tools]);
 
   // Must be before conditional return (hooks rules)
   const relatedStacks = useMemo(() => {
     if (!stack) return [];
-    const samePersona = STACKS.filter((s) => s.slug !== stack.slug && s.persona === stack.persona);
+    const summaries = stackCatalog.stacks;
+    const samePersona = summaries.filter((s) => s.slug !== stack.slug && s.persona === stack.persona);
     if (samePersona.length >= 3) return samePersona.slice(0, 3);
-    const fill = STACKS.filter((s) => s.slug !== stack.slug && s.persona !== stack.persona);
+    const fill = summaries.filter((s) => s.slug !== stack.slug && s.persona !== stack.persona);
     return [...samePersona, ...fill].slice(0, 3);
   }, [stack]);
 
@@ -656,6 +658,9 @@ const StackDetailPage = () => {
     setExpandedToolLayers(new Set([getDefaultWorkflowStepId(stack.slug, fallbackSteps)]));
   }, [lang, stack, toolBySlug]);
 
+  if (loading) {
+    return <main className="min-h-screen bg-background" aria-busy="true" />;
+  }
   if (!stack) return <Navigate to={`${prefix}/stacks`} replace />;
 
   /* ── Derived data ───────────────────────────────────────────────────────── */

@@ -134,6 +134,11 @@ run("Build client", "vite", [
 ]);
 
 run("Fragments ciblés du catalogue outils", "node", ["scripts/emit-tool-catalog-shards.mjs"]);
+run(
+  "Fragments ciblés du catalogue stacks",
+  process.platform === "win32" ? "node_modules\\.bin\\tsx.cmd" : "node_modules/.bin/tsx",
+  ["scripts/emit-stack-catalog-shards.ts"],
+);
 run("Mutualisation du CSS critique", "node", ["scripts/externalize-critical-css.mjs"]);
 run("Validation SEO du sitemap généré", "node", ["scripts/validate-generated-seo.mjs"]);
 run("Audit SEO des pages Explorer", "node", ["scripts/audit-explorer-seo.mjs"]);

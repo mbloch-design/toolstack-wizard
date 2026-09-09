@@ -2,12 +2,14 @@ import { createRoot, hydrateRoot } from "react-dom/client";
 import { HelmetProvider } from "react-helmet-async";
 import App from "./App.tsx";
 import { SsrToolContext, SsrRelatedPostsContext, SsrComparePairContext, SsrPostContext } from "@/hooks/useSupabaseData";
+import { SsrStackContext } from "@/hooks/useStackDetailData";
 import "./index.css";
 
 const container = document.getElementById("root")!;
 const ssrToolEl = document.getElementById("__SSR_TOOL__");
 const ssrCompareEl = document.getElementById("__SSR_COMPARE__");
 const ssrPostEl = document.getElementById("__SSR_POST__");
+const ssrStackEl = document.getElementById("__SSR_STACK__");
 
 if (ssrToolEl) {
   // Server-rendered tool page (see entry-server.tsx / staticPrerenderPlugin):
@@ -38,6 +40,16 @@ if (ssrToolEl) {
       <SsrComparePairContext.Provider value={ssrCompare}>
         <App />
       </SsrComparePairContext.Provider>
+    </HelmetProvider>
+  );
+} else if (ssrStackEl) {
+  const ssrStack = JSON.parse(ssrStackEl.textContent || "null");
+  hydrateRoot(
+    container,
+    <HelmetProvider>
+      <SsrStackContext.Provider value={ssrStack}>
+        <App />
+      </SsrStackContext.Provider>
     </HelmetProvider>
   );
 } else if (ssrPostEl) {
