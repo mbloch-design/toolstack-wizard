@@ -1,5 +1,102 @@
 [
   {
+    "slug": "freshservice-alternatives-2026",
+    "title": "Freshservice alternatives: what to pick based on what is blocking you",
+    "excerpt": "Freshservice keeps the CMDB and automation for the Growth plan: $19 becomes $49 per agent. Alternatives compared by reason for leaving, with official prices.",
+    "date": "2026-09-09",
+    "category": "Comparatifs",
+    "toolId": "freshservice",
+    "readTime": "9 min",
+    "tags": [
+      "freshservice",
+      "itsm",
+      "helpdesk",
+      "cmdb",
+      "asset management",
+      "itil 4",
+      "esm",
+      "alternatives",
+      "comparison",
+      "ops",
+      "2026",
+      "monthly budget",
+      "snipe-it",
+      "deskpro"
+    ],
+    "content": "# Freshservice alternatives: what to pick based on what is blocking you\n\n<p class=\"ga-story-lead\">You are not looking for a Freshservice alternative because the product is bad. You are looking because one specific feature turned out to sit behind a pricing tier you had not planned for.</p>\n\n**The short answer: the CMDB and automation only exist from the Growth plan up.** Moving from Starter to Growth takes the bill from **$19 to $49 per agent per month**. For five agents, a line item goes from $95 to $245 without anything else changing in how you work.\n\nThat jump is what triggers the search, not disappointment with the product. So this article is organised by **reason for leaving** rather than as a ranked list of tools, because the right replacement depends entirely on what is blocking you.\n\nEvery price below is in **dollars**, because that is the currency these vendors bill in, and each one was read on the official pricing page on **9 September 2026**. Where pricing is quote-only, it says so, and no number is invented in its place.\n\n## What Freshservice actually costs\n\nThe official tiers, all billed annually:\n\n| Plan | Per agent | What it unlocks |\n|---|---|---|\n| Starter | $19 | Ticketing, no CMDB, no automation |\n| Growth | $49 | CMDB and automation |\n| Pro | $99 | Wider scope |\n| Enterprise | quote only | Bespoke |\n\nThe listed price is not the price you pay. For a five-agent team on Growth:\n\n| Line | Monthly |\n|---|---|\n| Subscription, 5 agents at $49 | $245 |\n| Service catalogue and workflow setup, 6h at $50/h amortised over 12 months | $25 |\n| Rule and CMDB upkeep, 1h a month | $50 |\n| **Real cost** | **$320** |\n\n**The real cost runs about 30% above the catalogue price.** That is not specific to Freshservice, it is true of any ITSM, but it rarely gets written down when you put two subscriptions side by side.\n\nOne detail that matters if you plan to wire your own scripts in: API calls are capped per hour and per day on Starter and on Growth alike.\n\nThe tier breakdown sits on the [Freshservice pricing page](/en/tool/freshservice/pricing).\n\n## If the CMDB is what you are missing\n\nThis is the most common reason to leave. You want to inventory your estate, track licences and know which machine belongs to whom, and you find that asset management starts at Growth.\n\n**The most direct replacement is Snipe-IT, at $39.99 a month, or $399.99 a year.** It is open-source IT asset management: hardware, licences and assignments.\n\n**The structural difference is how it bills.** Snipe-IT charges neither per agent nor per asset: users and assets are unlimited on every hosted plan. What separates the tiers is support level, API call limits and infrastructure, not capacity.\n\nThe arithmetic gets blunt. Five agents on Freshservice Growth is $245 a month. Snipe-IT is $39.99 whatever the size of your estate and your team. **On the inventory need alone, that is a factor of six.**\n\nThere is also a free self-hosted version, though free only in the software sense: the server, the updates and the backups are yours to run.\n\n**Its limit, and it is a real one:** Snipe-IT does asset management, not ticketing. Replace Freshservice with Snipe-IT alone and you lose your help desk. The setup that works is Snipe-IT for assets plus a cheaper ticketing tool alongside, and it only makes sense when your inventory need outweighs your ticket volume.\n\n**Who it works for:** an IT team of three to ten whose actual problem is the inventory, not the queue.\n\n## If automation is what is stuck\n\nThe second reason, often tied to the first since both features sit behind the same tier. You want tickets routed automatically, approvals triggered, follow-ups that happen without you.\n\nBefore migrating, do the arithmetic. **Growth costs you $30 more per agent per month.** For five agents that is $150 a month, or $1,800 a year.\n\n**So the threshold is three hours.** If the automation you set up saves the team more than three hours a month, valued at $50 an hour, Growth pays for itself and switching tools will cost you more in migration than in subscription.\n\nBelow that threshold, migrating becomes defensible. Above it, you are paying for a move you did not need.\n\nIf you do go ahead, the thing to check in a candidate is not whether it has a workflow builder: they all do. It is the API rate limit, because that is where serious automation runs into the wall.\n\n## If you have to stay ITIL 4 compliant\n\nCompliance changes the shortlist entirely. Plenty of ticketing tools handle incidents and requests; very few cover change and problem management the way ITIL 4 describes them.\n\n**SysAid is the serious candidate here**, with full ITSM scope including help desk and asset management. **Its pricing is quote-only, so no figure is published here.** A price not verified at source does not ship, even when competing comparisons print one. Ask for a quote before comparing it to anything, and budget the infrastructure cost if you go on-premise.\n\nThe same applies to ServiceNow, which appears in every alternatives list. The figures in circulation put it above $100 per agent per month before implementation, but none of them comes from direct verification. **Take the order of magnitude, not the number.** ServiceNow is an enterprise platform: at five agents, the question does not arise.\n\n## If you are moving from IT support to ESM\n\nESM is the moment HR, finance and facilities want their own queue. Your IT tool becomes the whole company's tool.\n\n**Deskpro covers that at $39 per agent per month on the Team plan.** It is an omnichannel help desk built for several departments with separate queues.\n\n**The point every comparison omits: the Team plan enforces a five-agent minimum.** Your floor is therefore $195 a month even if there are two of you. Against $245 for five agents on Freshservice Growth, the gap is real but far thinner than the unit price suggests. The higher tiers tighten the constraint: Professional starts at 10 agents, Enterprise at 25.\n\n**Its limit:** Deskpro is a help desk before it is an ITSM. Asset management is lighter than Freshservice's. Widen into ESM while keeping a strong CMDB need and you are back to running two tools.\n\n## If your data has to stay in Europe\n\nA location constraint is not a country constraint, it is an architecture constraint. It filters candidates harder than any feature criterion.\n\nDeskpro offers deployment either in the cloud or on your own servers, which makes it the credible answer when legal insists the data never leaves infrastructure you control.\n\nSnipe-IT, being open source, self-hosts too, and the self-hosted version costs nothing in licensing. The cost shifts from subscription to admin time, and that trade deserves open eyes: a server you maintain is not free, it is billed somewhere else.\n\n## The verdict by budget\n\n**Read this table with the billing column, not just the price.** A per-agent rate and a flat rate do not compare line to line: at five agents, Deskpro's $39 becomes $195, Snipe-IT's $39.99 stays $39.99.\n\n| Tool | Listed | Billing | Cost at 5 agents |\n|---|---|---|---|\n| Snipe-IT Basic | $39.99 | flat, unlimited | $39.99 |\n| Freshservice Starter | $19 | per agent, annual | $95 |\n| Deskpro Team | $39 | per agent, min. 5 | $195 |\n| Freshservice Growth | $49 | per agent, annual | $245 |\n| Freshservice Pro | $99 | per agent, annual | $495 |\n| SysAid | quote only | not published | to be quoted |\n\n**The default is Snipe-IT** if you are leaving purely for the CMDB and your ticket volume is low. It is the only one on this list whose bill does not move as the team grows.\n\n**The default is Deskpro** if you are leaving to widen beyond IT or to host your own data, and provided you are already at five agents or more.\n\n**And if you are leaving for automation alone, stay.** The three-hour calculation almost always favours Growth once the team passes three agents.\n\n## What this article does not do\n\nIt does not rank ten tools from best to worst. That ranking does not exist, because the right tool depends on the reason that sent you looking.\n\nIt does not publish unverified prices. Two tools appear here without a figure for exactly that reason.\n\nIt recommends no tool ToolTrim earns anything from, because there is no such tool.\n\nBefore migrating anything, the [45-minute stack audit](/en/guide/auditer-stack-saas-45-minutes) will save you time: plenty of ITSM migrations turn out to be a redundant tool to remove rather than a tool to replace. If your remit is wider than support, the [ops manager's full stack](/en/guide/best-tools-freelance-ops-manager) covers the rest.\n\n## Frequently asked questions\n\n### Why look for a Freshservice alternative?\n\nIn most cases because asset management (CMDB) and automation only exist from the Growth plan up. The budget goes from $19 to $49 per agent per month to unlock those two features, with nothing else changing in how you work.\n\n### Which Freshservice alternative handles the CMDB?\n\nSnipe-IT, at $39.99 a month or $399.99 a year. Users and assets are unlimited on every hosted plan, so the bill does not move as the team or the estate grows. Its limit: it does not do ticketing, so you need a ticketing tool alongside.\n\n### What does Freshservice really cost for 5 agents?\n\nAbout $320 a month on Growth: $245 of subscription, $25 of setup amortised over twelve months and $50 of monthly upkeep. The real cost runs about 30% above the listed catalogue price.\n\n### Is Deskpro cheaper than Freshservice?\n\nThe Team plan is listed at $39 per agent per month against $49 for Freshservice Growth, but it enforces a five-agent minimum. The floor is therefore $195 a month against $245 for five agents on Freshservice. The gap is real but thin.\n\n### Should you leave Freshservice for automation alone?\n\nRarely. Moving to Growth costs $30 more per agent per month, or $150 for five agents. If the automation saves the team more than three hours a month, valued at $50 an hour, staying on Growth costs less than migrating.\n",
+    "faq": [
+      {
+        "question": "Why look for a Freshservice alternative?",
+        "answer": "In most cases because asset management (CMDB) and automation only exist from the Growth plan up. The budget goes from $19 to $49 per agent per month to unlock those two features, with nothing else changing in how you work."
+      },
+      {
+        "question": "Which Freshservice alternative handles the CMDB?",
+        "answer": "Snipe-IT, at $39.99 a month or $399.99 a year. Users and assets are unlimited on every hosted plan, so the bill does not move as the team or the estate grows. Its limit: it does not do ticketing, so you need a ticketing tool alongside."
+      },
+      {
+        "question": "What does Freshservice really cost for 5 agents?",
+        "answer": "About $320 a month on Growth: $245 of subscription, $25 of setup amortised over twelve months and $50 of monthly upkeep. The real cost runs about 30% above the listed catalogue price."
+      },
+      {
+        "question": "Is Deskpro cheaper than Freshservice?",
+        "answer": "The Team plan is listed at $39 per agent per month against $49 for Freshservice Growth, but it enforces a five-agent minimum. The floor is therefore $195 a month against $245 for five agents on Freshservice. The gap is real but thin."
+      },
+      {
+        "question": "Should you leave Freshservice for automation alone?",
+        "answer": "Rarely. Moving to Growth costs $30 more per agent per month, or $150 for five agents. If the automation saves the team more than three hours a month, valued at $50 an hour, staying on Growth costs less than migrating."
+      }
+    ],
+    "seo": {
+      "metaDescription": "Freshservice keeps the CMDB and automation behind Growth, taking $19 to $49 per agent. Alternatives compared by reason for leaving, prices verified.",
+      "schema": {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Why look for a Freshservice alternative?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In most cases because asset management (CMDB) and automation only exist from the Growth plan up. The budget goes from $19 to $49 per agent per month to unlock those two features, with nothing else changing in how you work."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which Freshservice alternative handles the CMDB?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Snipe-IT, at $39.99 a month or $399.99 a year. Users and assets are unlimited on every hosted plan, so the bill does not move as the team or the estate grows. Its limit: it does not do ticketing, so you need a ticketing tool alongside."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does Freshservice really cost for 5 agents?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "About $320 a month on Growth: $245 of subscription, $25 of setup amortised over twelve months and $50 of monthly upkeep. The real cost runs about 30% above the listed catalogue price."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Deskpro cheaper than Freshservice?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The Team plan is listed at $39 per agent per month against $49 for Freshservice Growth, but it enforces a five-agent minimum. The floor is therefore $195 a month against $245 for five agents on Freshservice. The gap is real but thin."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Should you leave Freshservice for automation alone?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Rarely. Moving to Growth costs $30 more per agent per month, or $150 for five agents. If the automation saves the team more than three hours a month, valued at $50 an hour, staying on Growth costs less than migrating."
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
     "slug": "adobe-podcast-ai-free-limits-alternatives-2026",
     "title": "Adobe Podcast AI in 2026: Free Limits and 5 Alternatives",
     "excerpt": "Is Adobe Podcast Enhance Speech really free? Limits, Premium pricing, and a comparison with Auphonic, Cleanvoice, Descript, Async, and Riverside.",

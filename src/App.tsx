@@ -80,6 +80,7 @@ const GUIDE_SLUG_ALTERNATES: Record<string, string> = {
   "slack-vs-teams-comparatif-2026": "slack-vs-teams-comparison-2026",
   "stack-redactrice-freelance": "stack-freelance-writer",
   "adobe-podcast-ai-gratuit-alternatives-2026": "adobe-podcast-ai-free-limits-alternatives-2026",
+  "alternatives-freshservice-2026": "freshservice-alternatives-2026",
 };
 
 const GUIDE_EN_TO_FR = Object.fromEntries(

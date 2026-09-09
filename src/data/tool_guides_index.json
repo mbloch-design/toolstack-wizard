@@ -9,7 +9,14 @@
           "category": "Comparatifs"
         }
       ],
-      "en": []
+      "en": [
+        {
+          "slug": "freshservice-alternatives-2026",
+          "title": "Freshservice alternatives: what to pick based on what is blocking you",
+          "date": "2026-09-09",
+          "category": "Comparatifs"
+        }
+      ]
     },
     "adobe-podcast-ai": {
       "fr": [
@@ -470,6 +477,11 @@
     "fr:toggl-track-gratuit-ou-payant": {
       "slug": "toggl",
       "name": "Toggl Track",
+      "hasPricing": true
+    },
+    "en:freshservice-alternatives-2026": {
+      "slug": "freshservice",
+      "name": "Freshservice",
       "hasPricing": true
     },
     "en:adobe-podcast-ai-free-limits-alternatives-2026": {
