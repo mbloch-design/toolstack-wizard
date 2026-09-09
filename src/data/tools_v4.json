@@ -37318,7 +37318,7 @@
     "category": "organization",
     "pricing": {
       "free": "Pas de plan gratuit permanent : essai disponible.",
-      "paid": "Team 39$/agent/mois (facturation annuelle) ; Professional 59$/agent/mois ; Enterprise 99$/agent/mois. Déploiement on-premise disponible en alternative au cloud."
+      "paid": "Team 39$/agent/mois (minimum 5 agents) ; Professional 59$/agent/mois (minimum 10) ; Enterprise 99$/agent/mois (minimum 25). Déploiement on-premise disponible en alternative au cloud."
     },
     "website": "https://deskpro.com",
     "affiliateLink": "https://deskpro.com",
@@ -37395,27 +37395,29 @@
     "longDescriptionEn": "Deskpro centralizes email, chat, phone, social media, and web forms into a single helpdesk, with a rare specificity in the category: the choice between cloud hosting or on-premise depending on the company's infrastructure constraints.\n\nThe interface can feel cluttered with so many features, and some reviews mention hidden costs (logo removal, cloud transfer) added to the sticker price.",
     "pricingEn": {
       "free": "No permanent free plan: trial available.",
-      "paid": "Team $39/agent/month (annual billing); Professional $59/agent/month; Enterprise $99/agent/month. On-premise deployment available as an alternative to cloud."
+      "paid": "Team $39/agent/month (5-agent minimum); Professional $59/agent/month (10 minimum); Enterprise $99/agent/month (25 minimum). On-premise deployment available as an alternative to cloud."
     },
     "pricing_v5": {
       "cautions": [
+        "Chaque plan impose un nombre minimum d’agents : 5 sur Team, 10 sur Professional, 25 sur Enterprise. Le plancher réel du plan Team est donc de 195$/mois.",
         "Des coûts additionnels (suppression du logo, transfert cloud) sont rapportés en plus du prix de plan affiché."
       ],
       "cautionsEn": [
+        "Every plan enforces a minimum agent count: 5 on Team, 10 on Professional, 25 on Enterprise. The real floor for Team is therefore $195/month.",
         "Additional costs (logo removal, cloud transfer) are reported on top of the listed plan price."
       ],
-      "verified_on": "2026-06-27",
+      "verified_on": "2026-09-09",
       "tcoExampleEn": "For a 5-agent team on Team ($39/agent/month, annual): SaaS cost ≈ $195/month (~€180). Setup (SLAs, routing, channels) ≈ 6h at $50/h = $300, amortized over 12 months ≈ $25/month. Maintenance and reported additional costs (transfer, customization) ≈ $30/month. Real total cost ≈ $235/month.",
       "tcoExampleFr": "Pour une équipe de 5 agents sur Team (39$/agent/mois, annuel) : coût SaaS ≈ 195$/mois (~180€). Configuration (SLA, routage, canaux) ≈ 6h à 50€/h = 300€, amorti sur 12 mois ≈ 25€/mois. Maintenance et coûts additionnels rapportés (transfert, personnalisation) ≈ 30€/mois. Coût total réel ≈ 235€/mois.",
       "source_domain": "deskpro.com",
       "usage_sensitive": false,
       "compare_plan_kind": "seat",
-      "compare_plan_name": "Team (annuel)",
+      "compare_plan_name": "Team (min. 5 agents)",
       "price_reliability": "high",
       "location_sensitive": false,
       "official_source_url": "https://www.deskpro.com/pricing/cloud",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 36
+      "compare_price_monthly_eur": 39
     },
     "websiteUrl": "https://deskpro.com",
     "logo": "",
@@ -52660,11 +52662,11 @@
     "longDescriptionEn": "Freshservice covers IT ticketing, asset management (CMDB), change management and a service catalog, with ITIL alignment out of the box. The entry Starter plan covers ticketing and the knowledge base; asset management and automation workflows only arrive from Growth up. Lower tiers cap API calls per hour and per day, which can block heavier integrations.",
     "pricing": {
       "free": "Pas de plan gratuit permanent : essai de 14 jours.",
-      "paid": "Starter à partir de 19€/agent/mois (facturation annuelle, 29€ en mensuel) ; Growth 49€/59€ ; Pro 95€ ; Enterprise 119€/agent/mois."
+      "paid": "Starter 19$/agent/mois (facturation annuelle, 29$ en mensuel) ; Growth 49$/59$ ; Pro 99$ ; Enterprise sur devis."
     },
     "pricingEn": {
       "free": "No permanent free plan: 14-day trial only.",
-      "paid": "Starter from $19/agent/month (annual billing, $29 monthly); Growth $49/$59; Pro $95; Enterprise $119/agent/month."
+      "paid": "Starter $19/agent/month (billed annually, $29 monthly); Growth $49/$59; Pro $99; Enterprise on quote."
     },
     "defaultMonthlyPrice": 19,
     "pricing_v5": {
@@ -52676,9 +52678,9 @@
         "Asset management (CMDB) and automation only exist from the Growth plan up.",
         "API calls are capped per hour and per day on the Starter and Growth plans."
       ],
-      "verified_on": "2026-06-27",
-      "tcoExampleEn": "For a 5-agent support team on Growth ($59/agent/month, monthly billing): SaaS cost ≈ $295/month. Setting up the service catalog and automation workflows ≈ 6h at $50/h = $300, amortized over 12 months ≈ $25/month. Maintenance (rule tweaks, CMDB upkeep) ≈ 1h/month = $50/month. Real total cost ≈ $370/month, about 25% above the listed catalog price.",
-      "tcoExampleFr": "Pour une équipe support de 5 agents sur Growth (59€/agent/mois en mensuel) : coût SaaS ≈ 295€/mois. Configuration du catalogue de services et des workflows d'automatisation ≈ 6h à 50€/h = 300€, amorti sur 12 mois ≈ 25€/mois. Maintenance (ajustement des règles, mise à jour de la CMDB) ≈ 1h/mois = 50€/mois. Coût total réel ≈ 370€/mois, soit ~25% au-dessus du prix catalogue affiché.",
+      "verified_on": "2026-09-09",
+      "tcoExampleEn": "For a 5-agent support team on Growth ($49/agent/month, billed annually): SaaS cost ≈ $245/month. Setting up the service catalog and automation workflows ≈ 6h at $50/h = $300, amortized over 12 months ≈ $25/month. Maintenance (rule tweaks, CMDB upkeep) ≈ 1h/month = $50/month. Real total cost ≈ $320/month, about 30% above the listed catalog price.",
+      "tcoExampleFr": "Pour une équipe support de 5 agents sur Growth (49$/agent/mois en annuel) : coût SaaS ≈ 245$/mois. Configuration du catalogue de services et des workflows ≈ 6h à 50$/h = 300$, amorti sur 12 mois ≈ 25$/mois. Maintenance (ajustement des règles, mise à jour de la CMDB) ≈ 1h/mois = 50$/mois. Coût total réel ≈ 320$/mois, soit ~30% au-dessus du prix catalogue affiché.",
       "source_domain": "freshworks.com",
       "usage_sensitive": true,
       "compare_plan_kind": "seat",
@@ -52687,7 +52689,7 @@
       "location_sensitive": false,
       "official_source_url": "https://www.freshworks.com/freshservice/pricing/",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 18
+      "compare_price_monthly_eur": 19
     },
     "affiliateLink": "https://freshworks.com/freshservice",
     "websiteUrl": "https://freshworks.com/freshservice",
@@ -138254,34 +138256,34 @@
     "longDescriptionEn": "Snipe-IT tracks hardware assets, software licenses and consumables (who has what, since when, warranty, depreciation value). The self-hosted version is free and open source, with no limit on users or assets; you handle the server, updates and backups yourself. The vendor-managed cloud bills a flat fee by asset volume, not per user.",
     "pricing": {
       "free": "Version auto-hébergée gratuite et open source, utilisateurs et actifs illimités.",
-      "paid": "Cloud géré : Self-Hosted Hosting 39,99$/mois, Basic Hosting 99,99$/mois, Small Business Hosting 249,99$/mois (forfaits selon volume d'actifs, pas par utilisateur)."
+      "paid": "Cloud géré : Basic Hosting 39,99$/mois ou 399,99$/an ; Small Business 99,99$/mois ou 999,99$/an ; Dedicated 249,99$/mois ou 2499,99$/an. Utilisateurs et actifs illimités sur tous les plans."
     },
     "pricingEn": {
       "free": "Self-hosted version free and open source, unlimited users and assets.",
-      "paid": "Managed cloud: Self-Hosted Hosting $39.99/month, Basic Hosting $99.99/month, Small Business Hosting $249.99/month (flat tiers by asset volume, not per user)."
+      "paid": "Managed cloud: Basic Hosting $39.99/month or $399.99/year; Small Business $99.99/month or $999.99/year; Dedicated $249.99/month or $2,499.99/year. Unlimited users and assets on every plan."
     },
     "defaultMonthlyPrice": 0,
     "pricing_v5": {
       "cautions": [
         "La version gratuite est auto-hébergée : tu gères toi-même serveur, mises à jour et sauvegardes.",
-        "Le cloud géré facture par volume d'actifs, pas par utilisateur : vérifie le palier réel pour ton parc."
+        "Les paliers payants se distinguent par le niveau de support, les limites d’appels API et l’infrastructure, pas par la capacité : utilisateurs et actifs sont illimités partout."
       ],
       "cautionsEn": [
-        "The free version is self-hosted: you manage the server, updates and backups yourself.",
-        "Managed cloud bills by asset volume, not by user: check the real tier for your fleet size."
+        "The free version is self-hosted: you run the server, updates and backups yourself.",
+        "Paid tiers differ by support level, API call limits and infrastructure, not by capacity: users and assets are unlimited on every plan."
       ],
-      "verified_on": "2026-06-27",
-      "tcoExampleEn": "For a 200-device fleet self-hosted: SaaS cost = $0. Server setup and configuration ≈ 8h at $50/h = $400, amortized over 12 months ≈ $33/month. Maintenance (updates, backups, monitoring) ≈ 2h/month = $100/month. Real total cost ≈ $133/month — often pricier in human time than the Basic Hosting cloud tier (≈$100/month) at this volume.",
-      "tcoExampleFr": "Pour un parc de 200 appareils en auto-hébergé : coût SaaS = 0€. Installation et configuration du serveur ≈ 8h à 50€/h = 400€, amorti sur 12 mois ≈ 33€/mois. Maintenance (mises à jour, sauvegardes, supervision) ≈ 2h/mois = 100€/mois. Coût total réel ≈ 133€/mois — souvent plus cher en temps humain que le palier cloud Basic Hosting (≈92€/mois) pour ce volume.",
+      "verified_on": "2026-09-09",
+      "tcoExampleEn": "For a 200-device fleet self-hosted: SaaS cost = $0. Server setup and configuration ≈ 8h at $50/h = $400, amortized over 12 months ≈ $33/month. Maintenance (updates, backups, monitoring) ≈ 2h/month = $100/month. Real total cost ≈ $133/month, more than three times the Basic Hosting cloud tier at $39.99/month. Self-hosting only pays off here if infrastructure control matters more than cost.",
+      "tcoExampleFr": "Pour un parc de 200 appareils en auto-hébergé : coût SaaS = 0$. Installation et configuration du serveur ≈ 8h à 50$/h = 400$, amorti sur 12 mois ≈ 33$/mois. Maintenance (mises à jour, sauvegardes, supervision) ≈ 2h/mois = 100$/mois. Coût total réel ≈ 133$/mois, soit plus de trois fois le palier cloud Basic Hosting à 39,99$/mois. L’auto-hébergement ne se justifie donc que si la maîtrise de l’infrastructure compte davantage que le coût.",
       "source_domain": "snipeitapp.com",
       "usage_sensitive": true,
       "compare_plan_kind": "flat",
-      "compare_plan_name": "Self-Hosted Hosting (cloud géré)",
+      "compare_plan_name": "Basic Hosting",
       "price_reliability": "high",
       "location_sensitive": false,
       "official_source_url": "https://snipeitapp.com/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 37
+      "compare_price_monthly_eur": 39.99
     },
     "affiliateLink": "https://snipeitapp.com",
     "websiteUrl": "https://snipeitapp.com",
