@@ -25190,17 +25190,19 @@ section[id] {
 .asv2-topbar-breadcrumb > a {
   flex: 0 0 auto;
   color: color-mix(in srgb, var(--color-text) 62%, var(--color-muted));
-  font-weight: 600;
+  font-weight: 500;
   text-decoration: none;
   white-space: nowrap;
 }
 .asv2-topbar-breadcrumb > a:hover {
   color: var(--color-text);
+  font-weight: 600;
 }
 .asv2-topbar-breadcrumb > span {
   flex: 0 1 auto;
   overflow: hidden;
   color: var(--color-muted);
+  font-weight: 500;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
