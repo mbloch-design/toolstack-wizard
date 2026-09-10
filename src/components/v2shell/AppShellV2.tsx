@@ -171,6 +171,11 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
     ? location.pathname.slice(prefix.length).replace(/\/$/, "")
     : location.pathname;
   const isHome = relPath === "";
+  // A handful of routes intentionally have no breadcrumb and should keep
+  // showing the search bar by default, rather than the blank placeholder
+  // used everywhere else while a page's breadcrumb is still registering
+  // (avoids flashing the search bar for a frame on pages that do have one).
+  const showsSearchByDefault = relPath === "/search";
 
   // Ma stack changes view through query parameters while keeping the same
   // pathname. Always return the shared content rail to its canonical
@@ -313,7 +318,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
       <div className="asv2-workspace">
         <header
           className="asv2-topbar"
-          data-topbar-mode={isHome ? "home" : breadcrumb ? "breadcrumb" : "search"}
+          data-topbar-mode={isHome ? "home" : breadcrumb ? "breadcrumb" : showsSearchByDefault ? "search" : "pending"}
         >
           <Link to={prefix} className="asv2-mobile-logo">
             <img src={logoToolTrim} alt="ToolTrim" width={127} height={28} />

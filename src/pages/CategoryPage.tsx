@@ -10,6 +10,7 @@ import { hasGenuineFreeTier, isFreemiumPricing } from "@/lib/pricing";
 import { ToolCardEditorial } from "@/components/ToolCardEditorial";
 import { getExplorerHref } from "@/lib/toolExploration";
 import { useCatalogStickyToolbar } from "@/hooks/useCatalogStickyToolbar";
+import Breadcrumb from "@/components/Breadcrumb";
 
 type SortKey = "name" | "price-asc" | "price-desc" | "free-first" | "savings";
 type PriceFilter = "all" | "free" | "freemium" | "paid";
@@ -195,6 +196,13 @@ const CategoryPage = () => {
       {/* ── Body — same horizontal constraints used across the site
             (1280 max / 48px gutter). */}
       <div className="cat-body">
+        <Breadcrumb
+          items={[
+            { label: t("Outils", "Tools") as string, href: `${prefix}/tools` },
+            { label: displayName },
+          ]}
+          includeSchema={false}
+        />
         {/* ── Compact header: one title, then the catalogue controls. ── */}
         <div className="tt-catalog-compact-header">
           <h1 className="tt-catalog-compact-title">{displayName}</h1>

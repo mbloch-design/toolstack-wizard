@@ -11,11 +11,11 @@ interface BreadcrumbItem {
 interface BreadcrumbProps {
   items: BreadcrumbItem[];
   /**
-   * Whether to include "ToolTrim" (home) as the implicit first item.
+   * Whether to include the home item as the implicit first item.
    * Default true. Pass false when the page is itself the home (rare).
    */
   includeHome?: boolean;
-  /** Custom label for the home item. Defaults to "ToolTrim". */
+  /** Custom label for the home item. Defaults to "Accueil"/"Home". */
   homeLabel?: string;
   /**
    * Disable JSON-LD when the parent page already publishes its canonical
@@ -32,10 +32,11 @@ interface BreadcrumbProps {
  * renders the Schema.org BreadcrumbList JSON-LD for SEO.
  */
 const Breadcrumb = ({ items, includeHome = true, homeLabel, includeSchema = true }: BreadcrumbProps) => {
-  const { lang, prefix } = useLang();
+  const { lang, prefix, t } = useLang();
+  const resolvedHomeLabel = homeLabel ?? (t("Accueil", "Home") as string);
 
   // Schema items: home + provided items (canonical for crawlers).
-  const home = includeHome ? [{ label: homeLabel ?? "ToolTrim", href: `/${lang}` }] : [];
+  const home = includeHome ? [{ label: resolvedHomeLabel, href: `/${lang}` }] : [];
   const schemaItems = [...home, ...items];
   const schema = {
     "@context": "https://schema.org",
@@ -54,7 +55,7 @@ const Breadcrumb = ({ items, includeHome = true, homeLabel, includeSchema = true
 
   // Topbar items: home link (if requested) + provided items.
   const topbarItems: BreadcrumbItem[] = [
-    ...(includeHome ? [{ label: homeLabel ?? "ToolTrim", href: prefix || `/${lang}` }] : []),
+    ...(includeHome ? [{ label: resolvedHomeLabel, href: prefix || `/${lang}` }] : []),
     ...items,
   ];
   useTopbarBreadcrumb(topbarItems);

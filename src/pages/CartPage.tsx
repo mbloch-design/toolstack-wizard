@@ -5,6 +5,7 @@ import { ArrowLeft, Cloud, Compass, GripVertical, Heart, MoreHorizontal, Pencil,
 import { toast } from "sonner";
 import { ToolCardEditorial } from "@/components/ToolCardEditorial";
 import ToolLogo from "@/components/ToolLogo";
+import Breadcrumb from "@/components/Breadcrumb";
 import StackToolInspector from "@/components/stack/StackToolInspector";
 import StackNeedsManagerDialog from "@/components/stack/StackNeedsManagerDialog";
 import StackAccountDialog from "@/components/stack/StackAccountDialog";
@@ -2508,6 +2509,13 @@ const CartPage = () => {
 
   return (
     <div className={`stack-boards-page${zoomedBoard ? " stack-boards-page--zoomed" : ""}${pickerBoardId ? " stack-boards-page--adding" : ""}${stackMotion !== "idle" ? ` stack-boards-page--motion-${stackMotion}` : ""}`}>
+      <Breadcrumb
+        items={[
+          { label: t("Ma stack", "My stack") as string, href: zoomedBoard ? `${prefix}/ma-stack` : undefined },
+          ...(zoomedBoard ? [{ label: t(zoomedBoard.labelFr, zoomedBoard.labelEn) as string }] : []),
+        ]}
+        includeSchema={false}
+      />
       {zoomedBoard ? (
         quickTool ? null : <section className="stack-objective-hero" aria-labelledby="stack-objective-title">
           <div className="stack-objective-hero-inner">

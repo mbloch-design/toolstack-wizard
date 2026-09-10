@@ -3,6 +3,7 @@ import { ArrowLeft, Check, ChevronLeft, ChevronRight, Compass, Plus } from "@/li
 import { Link, useLocation, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { toast } from "sonner";
 import ToolLogo from "@/components/ToolLogo";
+import Breadcrumb from "@/components/Breadcrumb";
 import ToolCardImage from "@/components/tool/ToolCardImage";
 import StackSaveDialog from "@/components/stack/StackSaveDialog";
 import { useCategories, useToolSummaries, type ToolSummary } from "@/hooks/useSupabaseData";
@@ -611,6 +612,13 @@ export default function ExplorerPage() {
 
   return (
     <>
+    <Breadcrumb
+      items={[
+        { label: t("Explorer", "Explore") as string },
+        ...(sourceTool ? [{ label: sourceLabel }] : []),
+      ]}
+      includeSchema={false}
+    />
     <main className={`ex-page${isObjectiveSource ? "" : " ex-page--tool"}`} aria-labelledby="explorer-title">
       {!isObjectiveSource && !sourceTool && tagFilters}
       {isStackSource ? (

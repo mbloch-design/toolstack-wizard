@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useLang } from "@/hooks/useLang";
 import { setSeoTags, setHreflang, cleanupSeo } from "@/lib/seo";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const LegalNoticePage = () => {
   const { t, lang } = useLang();
@@ -17,6 +18,7 @@ const LegalNoticePage = () => {
 
   return (
     <div className="py-16 md:py-24">
+      <Breadcrumb items={[{ label: t("Mentions légales", "Legal Notice") as string }]} />
       <div className="container mx-auto max-w-3xl">
         <span className="inline-block rounded-full bg-accent px-4 py-1.5 text-xs font-medium text-accent-foreground mb-6">
           {t("Légal", "Legal")}

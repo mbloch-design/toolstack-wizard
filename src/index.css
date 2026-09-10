@@ -25128,10 +25128,13 @@ section[id] {
   display: none;
 }
 @media (min-width: 641px) {
-  .asv2-topbar[data-topbar-mode="home"] .asv2-search {
-    display: none;
-  }
-  .asv2-topbar[data-topbar-mode="breadcrumb"] .asv2-search {
+  /* "pending": route hasn't registered a breadcrumb yet (still hydrating,
+     or briefly between two routes). Show nothing rather than guessing —
+     a blank slot for a moment beats flashing the search bar then swapping
+     it out once the real breadcrumb commits. */
+  .asv2-topbar[data-topbar-mode="home"] .asv2-search,
+  .asv2-topbar[data-topbar-mode="breadcrumb"] .asv2-search,
+  .asv2-topbar[data-topbar-mode="pending"] .asv2-search {
     display: none;
   }
   .asv2-topbar[data-topbar-mode="home"] .asv2-topbar-tabs {
