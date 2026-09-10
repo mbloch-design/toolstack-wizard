@@ -192,9 +192,9 @@
        Use with color: var(--color-*) in custom CSS.
        For Tailwind, use the tokens above.
     ──────────────────────────────────────────── */
-    --color-bg:            #F6F5F4;
+    --color-bg:            #FFFFFF;
     --color-surface:       #FFFFFF;
-    --color-surface-soft:  #EDEBE9;
+    --color-surface-soft:  #F5F5F7;
     --color-chip:          #E0DBD7;    /* deeper warm taupe — tags/badges, one notch past surface-soft */
 
     --color-text:          #0F0F0F;
@@ -4902,9 +4902,9 @@
   --accent: 224 76% 96%;
   --accent-foreground: 224 76% 44%;
   /* semantic hex tokens */
-  --color-bg:            #F6F5F4;
+  --color-bg:            #FFFFFF;
   --color-surface:       #FFFFFF;
-  --color-surface-soft:  #EDEBE9;
+  --color-surface-soft:  #F5F5F7;
   --color-chip:          #E0DBD7;
   --color-text:          #0F0F0F;
   --color-text-strong:   #0F0F0F;
