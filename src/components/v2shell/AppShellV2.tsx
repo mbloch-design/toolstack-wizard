@@ -174,10 +174,39 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
   return (
     <div className={`asv2-root${sidebarExpanded ? " asv2-root--sidebar-expanded" : ""}`}>
       <aside className="asv2-sidebar" data-expanded={sidebarExpanded}>
-        <Link to={prefix} className="asv2-logo" aria-label="ToolTrim">
-          <img className="asv2-logo-mark" src={pictoToolTrim} alt="" width={32} height={32} aria-hidden />
-          <img className="asv2-logo-full" src={logoToolTrim} alt="" width={127} height={28} aria-hidden />
-        </Link>
+        <div className="asv2-sidebar-top">
+          <Link to={prefix} className="asv2-logo" aria-label="ToolTrim">
+            <img className="asv2-logo-mark" src={pictoToolTrim} alt="" width={24} height={24} aria-hidden />
+            <img className="asv2-logo-full" src={logoToolTrim} alt="" width={96} height={21} aria-hidden />
+          </Link>
+
+          <div className="asv2-sidebar-top-actions">
+            <button
+              type="button"
+              className="asv2-sidebar-search-btn"
+              onClick={() => setSearchOpen(true)}
+              aria-label={t("Rechercher un outil", "Search for a tool")}
+              data-tooltip={t("Rechercher", "Search")}
+            >
+              <Search style={{ width: 16, height: 16 }} aria-hidden />
+            </button>
+
+            <button
+              type="button"
+              className="asv2-sidebar-resizer"
+              onClick={toggleSidebar}
+              aria-expanded={sidebarExpanded}
+              aria-label={sidebarExpanded
+                ? t("Réduire la barre latérale", "Collapse sidebar")
+                : t("Déployer la barre latérale", "Expand sidebar")}
+            >
+              <span aria-hidden>
+                {sidebarExpanded ? <PanelLeftClose style={{ width: 16, height: 16 }} /> : <PanelLeftOpen style={{ width: 16, height: 16 }} />}
+              </span>
+              <b aria-hidden>{sidebarExpanded ? t("Réduire la barre", "Close sidebar") : t("Ouvrir la barre", "Open sidebar")}</b>
+            </button>
+          </div>
+        </div>
 
         <nav className="asv2-nav" aria-label={t("Navigation principale", "Main navigation")}>
           {NAV_ITEMS.map((item) => {
@@ -244,20 +273,6 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
           </div>
         </div>
 
-        <button
-          type="button"
-          className="asv2-sidebar-resizer"
-          onClick={toggleSidebar}
-          aria-expanded={sidebarExpanded}
-          aria-label={sidebarExpanded
-            ? t("Réduire la barre latérale", "Collapse sidebar")
-            : t("Déployer la barre latérale", "Expand sidebar")}
-        >
-          <span aria-hidden>
-            {sidebarExpanded ? <PanelLeftClose /> : <PanelLeftOpen />}
-          </span>
-          <b aria-hidden>{sidebarExpanded ? t("Réduire la barre", "Close sidebar") : t("Ouvrir la barre", "Open sidebar")}</b>
-        </button>
       </aside>
 
       <div className="asv2-workspace">

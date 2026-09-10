@@ -24613,12 +24613,27 @@ section[id] {
   background: var(--color-bg);
 }
 
+/* Top row: logo, search shortcut and the collapse toggle sit together in
+   one tight strip instead of the logo alone up top and a large 40px
+   toggle floating over the content below it — closer to the compact
+   sidebar header pattern of e.g. ChatGPT's own web app. */
+.asv2-sidebar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  min-height: 44px;
+  margin-bottom: 10px;
+  padding-inline: 7px;
+}
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-top {
+  justify-content: center;
+  padding-inline: 0;
+}
 .asv2-logo {
   display: flex;
   align-items: center;
-  justify-content: center;
-  min-height: 62px;
-  margin-bottom: 10px;
+  min-width: 0;
   color: var(--color-text);
   text-decoration: none;
 }
@@ -24627,22 +24642,47 @@ section[id] {
   flex-shrink: 0;
 }
 .asv2-logo-mark {
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   filter: grayscale(1) contrast(1.6);
 }
 .asv2-logo-full {
   display: none !important;
-}
-.asv2-root--sidebar-expanded .asv2-logo {
-  justify-content: flex-start;
-  padding-inline: 11px;
 }
 .asv2-root--sidebar-expanded .asv2-logo-mark {
   display: none;
 }
 .asv2-root--sidebar-expanded .asv2-logo-full {
   display: block !important;
+  width: 96px;
+  height: 21px;
+}
+.asv2-sidebar-top-actions {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  flex-shrink: 0;
+}
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-search-btn {
+  display: none;
+}
+.asv2-sidebar-search-btn {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-md);
+  background: transparent;
+  color: var(--color-muted);
+  cursor: pointer;
+  transition: background 140ms ease-out, color 140ms ease-out;
+}
+.asv2-sidebar-search-btn:hover,
+.asv2-sidebar-search-btn:focus-visible {
+  background: var(--color-surface-soft);
+  color: var(--color-text);
 }
 
 .asv2-topbar {
@@ -25092,19 +25132,21 @@ section[id] {
 .asv2-root--sidebar-expanded .asv2-utility-item {
   padding-right: 10px;
 }
+/* Base = expanded state: sits inline in .asv2-sidebar-top next to the logo
+   and search shortcut, not floating over the nav below it. Collapsed mode
+   (below) switches it back to an absolute, full-height edge strip — hover
+   anywhere on the sidebar's right edge to reveal the expand affordance. */
 .asv2-sidebar-resizer {
-  position: absolute;
-  top: 18px;
-  right: 14px;
+  position: relative;
   z-index: 60;
   display: grid;
   place-items: center;
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   padding: 0;
   border: 0;
   border-radius: var(--radius-md);
-  background: var(--color-surface-soft);
+  background: transparent;
   color: var(--color-muted);
   cursor: pointer;
   transition: background 140ms ease-out, color 140ms ease-out;
@@ -25142,7 +25184,7 @@ section[id] {
 }
 .asv2-sidebar-resizer:hover,
 .asv2-sidebar-resizer:focus-visible {
-  background: color-mix(in srgb, var(--color-surface-soft) 76%, var(--color-border));
+  background: var(--color-surface-soft);
   color: var(--color-text);
 }
 .asv2-sidebar-resizer:hover > b,
@@ -25154,6 +25196,7 @@ section[id] {
   outline: none;
 }
 .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-resizer {
+  position: absolute;
   top: 0;
   right: -10px;
   width: 20px;
@@ -25260,7 +25303,8 @@ section[id] {
    the user's preference, which becomes visible again at the next breakpoint. */
 @media (min-width: 641px) and (max-width: 900px) {
   .asv2-root--sidebar-expanded .asv2-sidebar { width: 76px; }
-  .asv2-root--sidebar-expanded .asv2-logo { justify-content: center; padding-inline: 0; }
+  .asv2-root--sidebar-expanded .asv2-sidebar-top { justify-content: center; padding-inline: 0; }
+  .asv2-root--sidebar-expanded .asv2-sidebar-search-btn { display: none; }
   .asv2-root--sidebar-expanded .asv2-logo-mark { display: block; }
   .asv2-root--sidebar-expanded .asv2-logo-full { display: none !important; }
   .asv2-root--sidebar-expanded .asv2-nav-label,
