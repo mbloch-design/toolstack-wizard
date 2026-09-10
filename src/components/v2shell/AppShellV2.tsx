@@ -6,6 +6,7 @@ import {
   Layers,
   Scale,
   BookOpen,
+  Compass,
   Search,
   Bookmark,
   Languages,
@@ -15,6 +16,7 @@ import {
   Sun,
   CircleDollarSign,
   Check,
+  Rocket,
 } from "@/lib/icons";
 import { useLang } from "@/hooks/useLang";
 import { useCurrency, type Currency } from "@/hooks/useCurrency";
@@ -40,7 +42,8 @@ type NavItem = {
 
 const NAV_ITEMS: NavItem[] = [
   { id: "home",       labelFr: "Accueil",     labelEn: "Home",       Icon: Home,     to: "",             match: [""] },
-  { id: "tools",      labelFr: "Outils",      labelEn: "Tools",      Icon: Wrench,   to: "/tools",       match: ["/tools", "/tool/", "/explorer"] },
+  { id: "tools",      labelFr: "Outils",      labelEn: "Tools",      Icon: Wrench,   to: "/tools",       match: ["/tools", "/tool/"] },
+  { id: "explorer",   labelFr: "Explorer",    labelEn: "Explore",    Icon: Compass,  to: "/explorer",    match: ["/explorer"] },
   { id: "stacks",     labelFr: "Stacks",      labelEn: "Stacks",     Icon: Layers,   to: "/stacks",      match: ["/stacks"] },
   { id: "compare",    labelFr: "Comparatifs", labelEn: "Compare",    Icon: Scale,    to: "/comparatifs", match: ["/comparatifs", "/comparatif/"] },
   { id: "guides",     labelFr: "Guides",      labelEn: "Guides",     Icon: BookOpen, to: "/guides",      match: ["/guides", "/guide/"] },
@@ -229,6 +232,18 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
             );
           })}
         </nav>
+
+        <Link
+          to={`${prefix}/submit`}
+          className="asv2-sidebar-submit"
+          aria-label={t("Soumettre un outil", "Submit a tool")}
+          data-tooltip={t("Soumettre un outil", "Submit a tool")}
+        >
+          <span className="asv2-nav-icon">
+            <Rocket style={{ width: 18, height: 18 }} />
+          </span>
+          <span className="asv2-nav-label">{t("Soumettre un outil", "Submit a tool")}</span>
+        </Link>
 
         <div className="asv2-sidebar-utility">
           <div className="asv2-utility-actions">

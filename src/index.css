@@ -24627,7 +24627,9 @@ section[id] {
   padding-inline: 7px;
 }
 .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-top {
+  flex-direction: column;
   justify-content: center;
+  gap: 8px;
   padding-inline: 0;
 }
 .asv2-logo {
@@ -24662,9 +24664,6 @@ section[id] {
   align-items: center;
   gap: 2px;
   flex-shrink: 0;
-}
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-search-btn {
-  display: none;
 }
 .asv2-sidebar-search-btn {
   display: grid;
@@ -25036,8 +25035,57 @@ section[id] {
   transform: translate(0, -50%);
 }
 
-.asv2-sidebar-utility {
+.asv2-sidebar-submit {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 36px;
   margin-top: auto;
+  padding: 2px 5px;
+  border: 1px solid color-mix(in srgb, var(--color-border-soft) 78%, transparent);
+  border-radius: var(--radius-md);
+  color: var(--color-text-strong);
+  text-decoration: none;
+  transition: background 140ms ease-out, border-color 140ms ease-out;
+}
+.asv2-sidebar-submit .asv2-nav-icon {
+  color: var(--color-text-strong);
+}
+.asv2-sidebar-submit:hover {
+  background: var(--color-surface-soft);
+  border-color: color-mix(in srgb, var(--color-border-soft) 40%, var(--color-text));
+}
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-submit::after {
+  position: absolute;
+  left: calc(100% + 10px);
+  top: 50%;
+  z-index: 80;
+  padding: 7px 11px;
+  border-radius: var(--radius-pill);
+  background: var(--color-text-strong);
+  color: var(--color-bg);
+  content: attr(data-tooltip);
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-4px, -50%);
+  transition: opacity 120ms ease-out, transform 120ms ease-out;
+  white-space: nowrap;
+}
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-submit:hover::after,
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-submit:focus-visible::after {
+  opacity: 1;
+  transform: translate(0, -50%);
+}
+
+.asv2-sidebar-utility {
+  margin-top: 4px;
   padding: 10px 0 2px;
   border-top: 0;
 }
