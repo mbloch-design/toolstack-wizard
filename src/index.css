@@ -25045,7 +25045,7 @@ section[id] {
   gap: 8px;
   width: 100%;
   min-height: 36px;
-  margin-top: 8px;
+  margin-top: 2px;
   padding: 2px 5px;
   border: 1px solid color-mix(in srgb, var(--color-border-soft) 78%, transparent);
   border-radius: var(--radius-md);
@@ -25059,10 +25059,19 @@ section[id] {
 .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-submit {
   justify-content: center;
   padding-inline: 0;
+  border-color: transparent;
 }
 .asv2-sidebar-submit:hover {
   background: var(--color-surface-soft);
   border-color: color-mix(in srgb, var(--color-border-soft) 40%, var(--color-text));
+}
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-submit:hover {
+  background: transparent;
+  border-color: transparent;
+}
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-submit:hover .asv2-nav-icon,
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-submit:focus-visible .asv2-nav-icon {
+  background: color-mix(in srgb, var(--color-surface-soft) 84%, var(--color-surface));
 }
 .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-submit::after {
   position: absolute;
@@ -25128,6 +25137,15 @@ section[id] {
   justify-content: center;
   padding-inline: 0;
 }
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-utility-item:hover,
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-utility-item:focus-visible {
+  background: transparent;
+}
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-utility-item:hover > svg,
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-utility-item:focus-visible > svg {
+  background: color-mix(in srgb, var(--color-surface-soft) 84%, var(--color-surface));
+  color: var(--color-text-strong);
+}
 .asv2-utility-item::after {
   position: absolute;
   left: calc(100% + 10px);
@@ -25161,6 +25179,14 @@ section[id] {
   width: 16px;
   height: 16px;
   justify-self: center;
+}
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-utility-item > svg {
+  box-sizing: content-box;
+  width: 16px;
+  height: 16px;
+  padding: 8px;
+  border-radius: var(--radius-md);
+  transition: background 120ms ease-out, color 120ms ease-out;
 }
 .asv2-utility-text,
 .asv2-utility-value {
