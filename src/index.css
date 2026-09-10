@@ -24630,7 +24630,7 @@ section[id] {
   flex-direction: column;
   justify-content: center;
   gap: 6px;
-  margin-bottom: 2px;
+  margin-bottom: 0;
   padding-inline: 0;
 }
 .asv2-logo {
@@ -24925,6 +24925,9 @@ section[id] {
   align-items: stretch;
   gap: 2px;
   padding: 6px 0;
+}
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav {
+  padding-top: 0;
 }
 
 .asv2-nav-item {
