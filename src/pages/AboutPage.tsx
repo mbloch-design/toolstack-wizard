@@ -154,8 +154,8 @@ const AboutPage = () => {
               <li>
                 <strong>{t("Indépendance éditoriale.", "Editorial independence.")}</strong>{" "}
                 {t(
-                  "Aucun éditeur ne paie pour apparaître. Le scoring vit dans le code, pas dans les commerciaux.",
-                  "No vendor pays to appear. Scoring lives in code, not in sales relationships.",
+                  "Un éditeur peut payer pour une publication prioritaire sans badge, jamais pour acheter un score ou une recommandation.",
+                  "A vendor may pay for priority publication without a badge, never to buy a score or recommendation.",
                 )}
               </li>
               <li>
@@ -174,14 +174,14 @@ const AboutPage = () => {
             <div className="ab-prose">
               <p>
                 {t(
-                  "Liens affiliés sur les outils que nous recommandons déjà. C'est tout. Le lien affilié n'influence jamais le verdict — il l'accompagne quand le verdict existe.",
-                  "Affiliate links on tools we already recommend. That's it. The affiliate link never influences the verdict — it accompanies it when the verdict exists.",
+                  "ToolTrim se finance par des liens affiliés sur les outils déjà recommandés et par des frais ponctuels de publication prioritaire. Ces revenus n'influencent jamais le verdict.",
+                  "ToolTrim is funded through affiliate links on tools already recommended and one-time priority-publication fees. Neither influences the verdict.",
                 )}
               </p>
               <p>
                 {t(
-                  "Pas de sponsoring. Pas de placement. Pas d'outils mis en avant contre paiement. Si un outil paie pour être recommandé ailleurs, c'est probablement une raison pour qu'il ne le soit pas ici.",
-                  "No sponsorship. No placement. No tools featured against payment. If a tool pays to be recommended elsewhere, that's probably a reason it isn't here.",
+                  "Pas de recommandation sponsorisée. Une publication prioritaire garantit une mise en ligne sans badge et un délai, jamais une conclusion éditoriale favorable.",
+                  "No sponsored recommendation. Priority publication guarantees a listing without a badge and a turnaround, never a favorable editorial conclusion.",
                 )}
               </p>
               <p>

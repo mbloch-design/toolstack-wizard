@@ -25,23 +25,31 @@ const TermsPage = () => {
           {t("Conditions générales d'utilisation", "Terms of Service")}
         </h1>
         <p className="mt-4 text-sm text-muted-foreground">
-          {t("Dernière mise à jour : 14 mars 2026", "Last updated: March 14, 2026")}
+          {t("Dernière mise à jour : 7 septembre 2026", "Last updated: September 7, 2026")}
         </p>
 
         <div className="mt-10 space-y-8 text-sm leading-relaxed text-muted-foreground">
           <section>
             <h2 className="mb-3 font-heading text-lg font-semibold text-foreground">{t("Objet", "Purpose")}</h2>
             <p>{t(
-              "Les présentes conditions régissent l'utilisation du site tooltrim.com et de ses services, notamment le comparateur d'outils SaaS et le diagnostic de stack.",
-              "These terms govern the use of the tooltrim.com website and its services, including the SaaS tool comparator and stack diagnostic."
+              "Les présentes conditions régissent l'utilisation du site tooltrim.com et de ses services, notamment le comparateur, le diagnostic de stack et les soumissions d'outils.",
+              "These terms govern the use of tooltrim.com and its services, including the comparator, stack diagnostic, and tool submissions."
             )}</p>
           </section>
 
           <section>
             <h2 className="mb-3 font-heading text-lg font-semibold text-foreground">{t("Accès au service", "Access to Service")}</h2>
             <p>{t(
-              "L'accès au site et à l'outil de diagnostic est gratuit. ToolTrim se réserve le droit de modifier, suspendre ou interrompre tout ou partie du service sans préavis.",
-              "Access to the site and diagnostic tool is free. ToolTrim reserves the right to modify, suspend, or discontinue all or part of the service without notice."
+              "L'accès au site et au diagnostic est gratuit. Certains services destinés aux éditeurs, dont la publication prioritaire, sont payants. ToolTrim se réserve le droit de modifier, suspendre ou interrompre tout ou partie du service sans préavis.",
+              "Access to the site and diagnostic is free. Some vendor services, including priority publication, are paid. ToolTrim reserves the right to modify, suspend, or discontinue all or part of the service without notice."
+            )}</p>
+          </section>
+
+          <section>
+            <h2 className="mb-3 font-heading text-lg font-semibold text-foreground">{t("Publication prioritaire d'un outil", "Priority Tool Publication")}</h2>
+            <p>{t(
+              "Les frais de publication prioritaire couvrent le travail éditorial, l'absence de badge et une mise en ligne sous cinq jours ouvrés. Ils ne garantissent ni un verdict favorable ni une position particulière dans ToolTrim. ToolTrim conserve le contrôle éditorial du contenu publié. Le paiement, les taxes applicables et les conditions de remboursement sont présentés par Creem lors du checkout.",
+              "The priority-publication fee covers editorial work, the badge-free option, and publication within five business days. It does not guarantee a favorable verdict or any particular position on ToolTrim. ToolTrim retains editorial control over published content. Payment, applicable taxes, and refund terms are presented by Creem at checkout."
             )}</p>
           </section>
 

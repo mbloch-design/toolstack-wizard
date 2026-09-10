@@ -1,102 +1,39 @@
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import Breadcrumb from "@/components/Breadcrumb";
+import ToolLogo from "@/components/ToolLogo";
 import { useLang } from "@/hooks/useLang";
+import { ArrowRight, Check, Clock, Copy, CreditCard, FileText, Globe, Mail, Scale, ShieldCheck, User } from "@/lib/icons";
 import { cleanupSeo, SEO_BASE, setHreflang, setSeoTags } from "@/lib/seo";
 import { trackEvent } from "@/lib/analytics";
-import { BadgeCheck, Briefcase, Check, Clock, Globe, Mail, MessageSquare, Minus, Plus, ShieldCheck, User, Zap } from "@/lib/icons";
 
 type Step = 1 | 2 | 3;
 type Status = "idle" | "saving" | "checking" | "submitting" | "success" | "error";
-type BadgeTheme = "light" | "dark";
-
+type ReviewPlan = "free" | "paid" | null;
 type Submission = {
-  toolName: string;
-  toolUrl: string;
-  submitterRole: string;
-  name: string;
-  email: string;
-  message: string;
-  badgeUrl: string;
-  verificationToken: string;
+  toolName: string; toolUrl: string; submitterRole: string; name: string;
+  email: string; message: string; badgeUrl: string; verificationToken: string;
 };
 
 const EMPTY_SUBMISSION: Submission = {
-  toolName: "",
-  toolUrl: "",
-  submitterRole: "",
-  name: "",
-  email: "",
-  message: "",
-  badgeUrl: "",
-  verificationToken: "",
+  toolName: "", toolUrl: "", submitterRole: "", name: "",
+  email: "", message: "", badgeUrl: "", verificationToken: "",
 };
-
-const SUBMIT_FAQ: { theme: string; themeEn: string; items: { q: string; qEn: string; a: string; aEn: string }[] }[] = [
-  {
-    theme: "Général",
-    themeEn: "General",
-    items: [
-      {
-        q: "Qu'est-ce que ToolTrim ?",
-        qEn: "What is ToolTrim?",
-        a: "ToolTrim est un site éditorial de comparaison d'outils SaaS pour freelances et petites équipes. Chaque fiche est écrite pour aider à choisir, pas pour empiler des logos.",
-        aEn: "ToolTrim is an editorial comparison site for SaaS tools, built for freelancers and small teams. Every listing is written to help with a decision, not to stack logos.",
-      },
-      {
-        q: "Combien de temps prend la revue éditoriale ?",
-        qEn: "How long does the editorial review take?",
-        a: "En général quelques jours ouvrés pour le badge gratuit. Les soumissions payantes sont traitées en priorité.",
-        aEn: "Usually a few business days for the free badge. Paid submissions are handled with priority.",
-      },
-    ],
-  },
-  {
-    theme: "Publication",
-    themeEn: "Publication",
-    items: [
-      {
-        q: "Quelle est la différence entre le badge gratuit et la publication payante ?",
-        qEn: "What's the difference between the free badge and the paid publication?",
-        a: "Le badge gratuit demande d'installer un lien vers ToolTrim sur ton site, puis ta soumission suit la revue éditoriale classique. La publication payante retire cette étape, passe devant la file et t'offre une révision avec le fondateur avant la mise en ligne.",
-        aEn: "The free badge asks you to install a link to ToolTrim on your website, then your submission follows the normal editorial review. The paid publication removes that step, jumps the queue, and gives you one review round with the founder before it goes live.",
-      },
-      {
-        q: "Le badge gratuit garantit-il la publication ?",
-        qEn: "Does the free badge guarantee publication?",
-        a: "Non. Une fois le badge vérifié, la soumission est complète et passe en revue. La publication payante, elle, garantit la mise en ligne.",
-        aEn: "No. Once the badge is verified, the submission is complete and goes to review. The paid publication, on the other hand, guarantees it goes live.",
-      },
-      {
-        q: "Puis-je modifier ma fiche une fois publiée ?",
-        qEn: "Can I update my listing after it's published?",
-        a: "Oui, écris-nous à contact@tooltrim.com avec les changements et nous mettons la fiche à jour.",
-        aEn: "Yes, email us at contact@tooltrim.com with the changes and we'll update the listing.",
-      },
-    ],
-  },
-];
-
-const SUBMIT_DRAFT_KEY = "tt_submit_draft";
-const CREEM_PAYMENT_LINK = "https://www.creem.io/payment/prod_2LMoN4zyRhNAb53r3rWpwX";
-const SKIP_BADGE_PRICE = "29 $";
-// Toggle off once the launch price ends — removes the "Special offer" flag without touching the rest of the copy.
-const SPECIAL_OFFER_ACTIVE = true;
+const DRAFT_KEY = "tt_submit_draft";
+const PAYMENT_URL = "https://www.creem.io/payment/prod_2LMoN4zyRhNAb53r3rWpwX";
 
 const SubmitToolPage = () => {
   const { t, lang, prefix } = useLang();
   const [searchParams, setSearchParams] = useSearchParams();
+  const [plan, setPlan] = useState<ReviewPlan>(null);
   const [step, setStep] = useState<Step>(1);
   const [status, setStatus] = useState<Status>("idle");
-  const [badgeTheme, setBadgeTheme] = useState<BadgeTheme>("light");
+  const [paid, setPaid] = useState(false);
+  const [badgeTheme, setBadgeTheme] = useState<"light" | "dark">("light");
   const [badgeInstalled, setBadgeInstalled] = useState(false);
   const [codeCopied, setCodeCopied] = useState(false);
   const [error, setError] = useState("");
   const [submission, setSubmission] = useState<Submission>(EMPTY_SUBMISSION);
-  const [paid, setPaid] = useState(false);
-  const [planChoice, setPlanChoice] = useState<"free" | "paid" | null>(null);
-  const [openFaqKey, setOpenFaqKey] = useState<string | null>(null);
-  const infoFormRef = useRef<HTMLFormElement>(null);
   const badgeUrlRef = useRef<HTMLInputElement>(null);
   const sentProgressRef = useRef(new Set<string>());
 
@@ -104,530 +41,269 @@ const SubmitToolPage = () => {
     if (searchParams.get("paid") !== "1") return;
     let draft: Submission | null = null;
     try {
-      const raw = window.localStorage.getItem(SUBMIT_DRAFT_KEY);
-      if (raw) {
-        draft = JSON.parse(raw) as Submission;
-        window.localStorage.removeItem(SUBMIT_DRAFT_KEY);
-      }
-    } catch {
-      draft = null;
-    }
-    if (draft && draft.toolName) {
-      setSubmission(draft);
-      setPaid(true);
-      setPlanChoice("paid");
-      setStep(3);
+      const stored = window.localStorage.getItem(DRAFT_KEY);
+      if (stored) draft = JSON.parse(stored) as Submission;
+      window.localStorage.removeItem(DRAFT_KEY);
+    } catch { draft = null; }
+    if (draft?.toolName) {
+      setSubmission(draft); setPaid(true); setPlan("paid"); setStep(3);
     } else {
       setError(t(
-        "Paiement reçu, mais tes informations n'ont pas pu être retrouvées sur cet appareil. Contacte-nous avec le nom de l'outil et le reçu de paiement.",
-        "Payment received, but your information could not be recovered on this device. Contact us with the tool name and payment receipt.",
+        "Paiement reçu, mais les informations de l'outil n'ont pas été retrouvées. Contacte-nous avec le reçu.",
+        "Payment received, but the tool details could not be recovered. Contact us with the receipt.",
       ));
     }
-    searchParams.delete("paid");
-    setSearchParams(searchParams, { replace: true });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    const next = new URLSearchParams(searchParams); next.delete("paid"); setSearchParams(next, { replace: true });
+  }, [searchParams, setSearchParams, t]);
 
   useEffect(() => {
     if (document.querySelector('script[src="https://www.creem.io/embed.js"]')) return;
     const script = document.createElement("script");
-    script.src = "https://www.creem.io/embed.js";
-    script.async = true;
-    document.body.appendChild(script);
+    script.src = "https://www.creem.io/embed.js"; script.async = true; document.body.appendChild(script);
   }, []);
 
   useEffect(() => {
     setSeoTags({
-      title: t("Soumettre un outil — ToolTrim", "Submit a tool — ToolTrim"),
+      title: t("Faire évaluer son outil | ToolTrim", "Get your tool reviewed | ToolTrim"),
       description: t(
-        "Soumets ton outil à ToolTrim. Nous analysons son site, son utilité et ses informations avant toute publication.",
-        "Submit your tool to ToolTrim. We review its website, usefulness, and information before publication.",
+        "Fais évaluer ton outil par ToolTrim et présente-le aux freelances et petites équipes qui comparent leur prochaine solution.",
+        "Get independently reviewed by ToolTrim and reach freelancers and small teams comparing their next software choice.",
       ),
       url: `${SEO_BASE}/${lang}/submit`,
     });
-    setHreflang(`/${lang}/submit`);
-    return () => cleanupSeo([]);
+    setHreflang(`/${lang}/submit`); return () => cleanupSeo([]);
   }, [lang, t]);
 
   const update = (field: keyof Submission, value: string) => {
-    setSubmission((current) => ({ ...current, [field]: value }));
-    setError("");
+    setSubmission((current) => ({ ...current, [field]: value })); setError("");
     if (status === "error") setStatus("idle");
   };
-
-  const trackingSource = submission.toolName.trim().toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-|-$/g, "") || "submitted-tool";
+  const source = submission.toolName.trim().toLowerCase().normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "submitted-tool";
   const badgeAsset = badgeTheme === "dark" ? "tooltrim-badge-dark.svg" : "tooltrim-badge.svg";
   const badgeAlt = `Discover ToolTrim via ${submission.toolName || "this tool"}`;
-  const badgeAltHtml = badgeAlt
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;");
-  const badgeHref = `https://tooltrim.com/?utm_source=${encodeURIComponent(trackingSource)}&utm_medium=badge&utm_campaign=tool_submission`;
-  const badgeHtml = `<a target="_blank" href="${badgeHref}"><img src="https://tooltrim.com/${badgeAsset}" alt="${badgeAltHtml}" height="54" loading="lazy"></a>`;
-  const badgeVerified = Boolean(submission.verificationToken);
+  const escapedAlt = badgeAlt.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+  const badgeHref = `https://tooltrim.com/?utm_source=${encodeURIComponent(source)}&utm_medium=badge&utm_campaign=tool_submission`;
+  const badgeHtml = `<a target="_blank" href="${badgeHref}"><img src="https://tooltrim.com/${badgeAsset}" alt="${escapedAlt}" height="54" loading="lazy"></a>`;
+  const price = t("29 $", "$29");
 
-  const copyBadgeCode = async () => {
-    try {
-      await navigator.clipboard.writeText(badgeHtml);
-    } catch {
-      const textarea = document.createElement("textarea");
-      textarea.value = badgeHtml;
-      textarea.style.position = "fixed";
-      textarea.style.opacity = "0";
-      document.body.appendChild(textarea);
-      textarea.select();
-      document.execCommand("copy");
-      textarea.remove();
-    }
-    setCodeCopied(true);
-    window.setTimeout(() => setCodeCopied(false), 1800);
+  const choosePlan = (next: Exclude<ReviewPlan, null>, source = "offers") => {
+    setPlan(next); setPaid(false); setStep(1); setStatus("idle"); setError("");
+    trackEvent("submit_plan_select", { plan: next, source });
+    requestAnimationFrame(() => document.getElementById("submit-form")?.scrollIntoView({ behavior: "smooth", block: "start" }));
   };
-
-  const sendProgressEmail = async (progressStep: 1 | 2, paidFlag = false) => {
-    const signature = `${progressStep}:${JSON.stringify(submission)}`;
+  const upgradeToPaid = () => {
+    setPlan("paid"); setPaid(false); setStep(2); setStatus("idle"); setError("");
+    trackEvent("submit_plan_upgrade", { from: "free", to: "paid", source: "badge_step" });
+    requestAnimationFrame(() => document.getElementById("submit-form")?.scrollIntoView({ behavior: "smooth", block: "start" }));
+  };
+  const sendProgress = async (progressStep: 1 | 2, paidPath = false) => {
+    const signature = `${progressStep}:${paidPath}:${JSON.stringify(submission)}`;
     if (sentProgressRef.current.has(signature)) return;
-    const endpoint = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
-      ? "https://tooltrim.com/api/submission-progress"
-      : "/api/submission-progress";
+    const endpoint = /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname)
+      ? "https://tooltrim.com/api/submission-progress" : "/api/submission-progress";
     const response = await fetch(endpoint, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...submission, progressStep, paid: paidFlag, lang }),
+      method: "POST", headers: { "Content-Type": "application/json" }, keepalive: true,
+      body: JSON.stringify({ ...submission, progressStep, paid: paidPath, lang }),
     });
     if (!response.ok) throw new Error("progress_email_failed");
     sentProgressRef.current.add(signature);
   };
-
-  const continueToPublication = async (event: FormEvent<HTMLFormElement>) => {
+  const continueFromContact = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (new URL(submission.toolUrl).protocol !== "https:") {
-      setStatus("error");
-      setError(t("Le site officiel doit utiliser une adresse https://.", "The official website must use an https:// address."));
-      return;
-    }
-    setStatus("saving");
-    setError("");
+    try { if (new URL(submission.toolUrl).protocol !== "https:") throw new Error(); }
+    catch { setStatus("error"); setError(t("Le site officiel doit utiliser une adresse https://.", "The official website must use an https:// address.")); return; }
+    setStatus("saving"); setError("");
     try {
-      await sendProgressEmail(1);
-      setStep(2);
-      setStatus("idle");
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    } catch {
-      setStatus("error");
-      setError(t(
-        "L’enregistrement de cette étape a échoué. Réessaie avant de continuer.",
-        "This step could not be saved. Try again before continuing.",
-      ));
-    }
-  };
-
-  const verifyBadge = async () => {
-    if (!submission.badgeUrl.trim()) {
-      setStatus("error");
-      setError(t(
-        "Indique d’abord l’URL exacte de la page où tu as installé le badge.",
-        "First enter the exact URL of the page where you installed the badge.",
-      ));
-      badgeUrlRef.current?.focus();
-      return;
-    }
-    try {
-      const badgePageUrl = new URL(submission.badgeUrl);
-      if (badgePageUrl.protocol !== "https:") throw new Error("https_required");
-    } catch {
-      setStatus("error");
-      setError(t(
-        "Saisis une URL publique complète commençant par https://.",
-        "Enter a complete public URL beginning with https://.",
-      ));
-      badgeUrlRef.current?.focus();
-      return;
-    }
-    setStatus("checking");
-    setError("");
-    try {
-      const verificationEndpoint = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
-        ? "https://tooltrim.com/api/verify-badge"
-        : "/api/verify-badge";
-      const response = await fetch(verificationEndpoint, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ badgeUrl: submission.badgeUrl, toolUrl: submission.toolUrl }),
-      });
-      const payload = await response.json().catch(() => ({}));
-      if (!response.ok) {
-        throw new Error(payload.error || "badge_not_found");
-      }
-      const verifiedSubmission = { ...submission, verificationToken: payload.token || "" };
-      setSubmission(verifiedSubmission);
-      await sendProgressEmail(2);
-      setStatus("idle");
-      setStep(3);
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    } catch (caughtError) {
-      setStatus("error");
-      const reason = caughtError instanceof Error ? caughtError.message : "verification_failed";
-      setError(reason === "progress_email_failed"
-        ? t("Le badge est valide, mais l’email de suivi n’a pas pu être envoyé. Réessaie.", "The badge is valid, but the progress email could not be sent. Try again.")
-        : reason === "verification_unavailable"
-        ? t("La vérification est temporairement indisponible. Réessaie dans quelques instants.", "Verification is temporarily unavailable. Try again in a moment.")
-        : reason === "badge_wrong_domain"
-          ? t("L’URL du badge doit appartenir au même site que l’outil soumis.", "The badge URL must be on the same website as the submitted tool.")
-          : reason === "page_unreachable"
-            ? t("La page indiquée est inaccessible. Vérifie son URL et qu’elle est publique.", "The page cannot be reached. Check its URL and make sure it is public.")
-            : t(
-              "Badge introuvable. Vérifie que le code fourni est présent dans le HTML public de la page.",
-              "Badge not found. Check that the provided code is present in the page’s public HTML.",
-            ));
-    }
-  };
-
-  const payToSkipBadge = () => {
-    try {
-      window.localStorage.setItem(SUBMIT_DRAFT_KEY, JSON.stringify({ ...submission, lang }));
-    } catch {
-      // ignore storage failure, checkout still opens
-    }
-    trackEvent("submit_pay_skip_badge", { tool_name: submission.toolName });
-    sendProgressEmail(2, true).catch(() => {
-      // best-effort notification, checkout still opens regardless
-    });
-  };
-
-  const choosePlan = (plan: "free" | "paid") => {
-    setPlanChoice(plan);
-    setStatus("idle");
-    setError("");
-    requestAnimationFrame(() => {
+      await sendProgress(1, plan === "paid"); setStep(2); setStatus("idle");
       document.getElementById("submit-form")?.scrollIntoView({ behavior: "smooth", block: "start" });
-    });
+    } catch { setStatus("error"); setError(t("L'enregistrement a échoué. Réessaie.", "This step could not be saved. Try again.")); }
   };
-
-  const handleFinalSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    submit();
+  const copyBadge = async () => {
+    try { await navigator.clipboard.writeText(badgeHtml); }
+    catch {
+      const area = document.createElement("textarea"); area.value = badgeHtml; area.style.position = "fixed"; area.style.opacity = "0";
+      document.body.appendChild(area); area.select(); document.execCommand("copy"); area.remove();
+    }
+    setCodeCopied(true); window.setTimeout(() => setCodeCopied(false), 1800);
   };
-
-  const submit = async () => {
-    setStatus("submitting");
-    setError("");
+  const verifyBadge = async () => {
     try {
-      const submissionEndpoint = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
-        ? "https://tooltrim.com/api/contact"
-        : "/api/contact";
-      const response = await fetch(submissionEndpoint, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...submission,
-          subject: t("Soumission d'un outil", "Tool submission"),
-          submissionType: "tool",
-          badgeReview: !paid,
-          paid,
-          lang,
-        }),
-      });
-      if (!response.ok) throw new Error("submit_failed");
-      trackEvent("submit_tool", { tool_name: submission.toolName, submitter_role: submission.submitterRole });
-      setStatus("success");
-    } catch {
-      setStatus("error");
-      setError(t(
-        "L'envoi n'a pas abouti. Réessaie ou contacte-nous directement.",
-        "The submission could not be sent. Try again or contact us directly.",
-      ));
+      if (!submission.badgeUrl.trim() || new URL(submission.badgeUrl).protocol !== "https:") throw new Error("invalid_url");
+    } catch { setStatus("error"); setError(t("Saisis l'URL publique complète de la page avec le badge.", "Enter the complete public URL of the page with the badge.")); badgeUrlRef.current?.focus(); return; }
+    setStatus("checking"); setError("");
+    try {
+      const endpoint = /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname) ? "https://tooltrim.com/api/verify-badge" : "/api/verify-badge";
+      const response = await fetch(endpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ badgeUrl: submission.badgeUrl, toolUrl: submission.toolUrl }) });
+      const payload = await response.json().catch(() => ({})); if (!response.ok) throw new Error(payload.error || "badge_not_found");
+      setSubmission((current) => ({ ...current, verificationToken: payload.token || "" }));
+      await sendProgress(2); setStep(3); setStatus("idle");
+    } catch (caught) {
+      const reason = caught instanceof Error ? caught.message : "verification_failed"; setStatus("error");
+      setError(reason === "badge_wrong_domain"
+        ? t("L'URL du badge doit appartenir au site soumis.", "The badge URL must be on the submitted website.")
+        : reason === "page_unreachable"
+          ? t("La page indiquée est inaccessible.", "The page cannot be reached.")
+          : t("Badge introuvable dans le HTML public de la page.", "Badge not found in the page's public HTML."));
     }
   };
+  const beginCheckout = () => {
+    try { window.localStorage.setItem(DRAFT_KEY, JSON.stringify(submission)); } catch { /* recovery message covers this */ }
+    trackEvent("submit_priority_checkout", { tool_name: submission.toolName, price: 29, currency: "USD" });
+    void sendProgress(2, true).catch(() => undefined);
+  };
+  const submit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault(); setStatus("submitting"); setError("");
+    try {
+      const endpoint = /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname) ? "https://tooltrim.com/api/contact" : "/api/contact";
+      const response = await fetch(endpoint, {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...submission, subject: t("Soumission d'un outil", "Tool submission"), submissionType: "tool", badgeReview: plan === "free", paid, lang }),
+      });
+      if (!response.ok) throw new Error();
+      trackEvent("submit_tool", { tool_name: submission.toolName, submitter_role: submission.submitterRole, plan: paid ? "paid" : "free" });
+      setStatus("success");
+    } catch { setStatus("error"); setError(t("L'envoi n'a pas abouti. Réessaie ou contacte-nous.", "The submission could not be sent. Try again or contact us.")); }
+  };
 
-  if (status === "success") {
-    return (
-      <div className="stp-page">
-        <section className="sp-success">
-          <span className="tt-page-hero-eyebrow">{t("Soumission reçue", "Submission received")}</span>
-          <h1>{paid ? t("Merci. Ta publication est garantie.", "Thank you. Your publication is guaranteed.") : t("Merci. Nous allons analyser le site.", "Thank you. We will review the website.")}</h1>
-          <p>{paid ? t(
-            "Le paiement est confirmé et la soumission est complète. Nous préparons ta fiche et te recontactons dès qu'elle est en ligne.",
-            "Payment is confirmed and the submission is complete. We're preparing your listing and will reach out as soon as it's live.",
-          ) : t(
-            "Le badge a été vérifié et la soumission est complète. Nous étudierons l'outil, ses informations et son intérêt pour les utilisateurs de ToolTrim avant toute publication.",
-            "The badge was verified and the submission is complete. We will review the tool, its information, and its value for ToolTrim users before any publication.",
-          )}</p>
-          <Link to={`${prefix}/tools`} className="tt-button-primary">{t("Explorer les outils →", "Explore tools →")}</Link>
-        </section>
-      </div>
-    );
-  }
-
-  return (
-    <div className="stp-page">
-      <header className="sp-hero">
-        <div className="sp-hero-crumb"><Breadcrumb items={[{ label: t("Soumettre un outil", "Submit a tool") }]} /></div>
-        <h1>{t("Présente ton produit à ToolTrim.", "Introduce your product to ToolTrim.")}</h1>
-        <p>{t(
-          "Remplis le formulaire une fois : nous analysons ensuite le site, les fonctionnalités et les informations disponibles avant de décider d'une publication.",
-          "Fill out the form once: we'll then review the website, features, and available information before deciding whether to publish it.",
-        )}</p>
-        <ul className="sp-trust-strip">
-          <li><BadgeCheck size={15} /><strong>{t("1 100+", "1,100+")}</strong>{t("outils déjà référencés", "tools already listed")}</li>
-          <li><Clock size={15} /><strong>{t("Quelques jours", "A few days")}</strong>{t("de délai de revue", "review turnaround")}</li>
-          <li><ShieldCheck size={15} /><strong>0 $</strong>{t("pour le badge gratuit", "for the free badge")}</li>
-        </ul>
-      </header>
-
-      <section className="sp-overview">
-        <div className="sp-overview-inner">
-        <div className="sp-overview-heading">
-          <h2>{t("Deux façons de rejoindre ToolTrim", "Two ways to join ToolTrim")}</h2>
-          <p>{t(
-            "Choisis l'option qui correspond à ton rythme. Les deux passent par le même formulaire ci-dessous.",
-            "Pick the option that fits your pace. Both go through the same form below.",
-          )}</p>
-        </div>
-        <div className="sp-plan-grid">
-          <div className="sp-plan-card">
-            <span className="sp-plan-tag sp-plan-tag--placeholder" aria-hidden="true">&nbsp;</span>
-            <div className="sp-plan-card-head">
-              <div><span className="sp-plan-price">0 $</span><span className="sp-plan-period">{t("pour toujours", "forever")}</span></div>
-              <span className="sp-plan-name">{t("Badge gratuit", "Free badge")}</span>
-            </div>
-            <p className="sp-plan-desc">{t(
-              "Installe notre badge de découverte sur ton site. Une fois vérifié, ta soumission passe en revue éditoriale.",
-              "Install our discovery badge on your site. Once verified, your submission goes to editorial review.",
-            )}</p>
-            <ul className="sp-plan-args">
-              <li><Check size={15} /><span>{t("Aucun paiement requis", "No payment required")}</span></li>
-              <li><Check size={15} /><span>{t("Vérification automatique du badge", "Automatic badge verification")}</span></li>
-              <li><Check size={15} /><span>{t("Lien dofollow une fois le badge vérifié", "Dofollow link once the badge is verified")}</span></li>
-              <li><Check size={15} /><span>{t("Revue éditoriale incluse", "Editorial review included")}</span></li>
-            </ul>
-            <button type="button" className="tt-button-secondary sp-plan-cta" onClick={() => choosePlan("free")}>{t("Choisir le badge gratuit →", "Choose the free badge →")}</button>
-          </div>
-          <div className="sp-plan-card sp-plan-card--highlight">
-            <span className="sp-plan-tag"><Zap size={13} />{t("Publication prioritaire", "Priority publication")}</span>
-            <div className="sp-plan-card-head">
-              <div><span className="sp-plan-price">{SKIP_BADGE_PRICE}</span><span className="sp-plan-period">{t("paiement unique", "one-time")}</span>{SPECIAL_OFFER_ACTIVE && <span className="sp-plan-flag">{t("Offre spéciale", "Special offer")}</span>}</div>
-              <span className="sp-plan-name">{t("Publication payante", "Paid publication")}</span>
-            </div>
-            <p className="sp-plan-desc">{t(
-              "Pas de badge à installer. Ta fiche est traitée en priorité, avec le fondateur de ToolTrim à l'écoute.",
-              "No badge to install. Your listing is handled with priority, with ToolTrim's founder on hand.",
-            )}</p>
-            <div className="sp-cert-badge"><BadgeCheck size={14} />{t("Certifié ToolTrim", "ToolTrim Certified")}</div>
-            <ul className="sp-plan-args">
-              <li><Check size={15} /><span>{t("Publication garantie, sans badge à installer", "Guaranteed publication, no badge to install")}</span></li>
-              <li><Check size={15} /><span>{t("Accès prioritaire à la file de revue", "Priority access ahead of the review queue")}</span></li>
-              <li><Check size={15} /><span>{t("Une révision avec le fondateur avant mise en ligne", "One review round with the founder before it goes live")}</span></li>
-              <li><Check size={15} /><span>{t("Flag de certification affiché sur ta fiche", "Certification flag shown on your listing")}</span></li>
-            </ul>
-            <button type="button" className="tt-button-primary sp-plan-cta" onClick={() => choosePlan("paid")}>{t(`Publier pour ${SKIP_BADGE_PRICE} →`, `Publish for ${SKIP_BADGE_PRICE} →`)}</button>
-          </div>
-        </div>
-        <div className="sp-note"><strong>{t("Tu préfères une autre solution ?", "Would you prefer another option?")}</strong><p>{t("Contacte-nous directement : nous étudierons avec toi une alternative.", "Contact us directly and we will discuss an alternative with you.")}</p><Link to={`${prefix}/contact?subject=partnership`}>{t("Contacter ToolTrim →", "Contact ToolTrim →")}</Link></div>
-        </div>
-      </section>
-
-      {planChoice && (
-      <div className="sp-shell" id="submit-form">
-      <div className="sp-shell-inner">
-        <ol className="sp-steps" aria-label={t("Étapes de la soumission", "Submission steps")}>
-          {[1, 2, 3].map((number) => (
-            <li key={number} className="sp-step-item">
-              <span className={`sp-step ${step === number ? "sp-step--active" : ""}${step > number ? " sp-step--done" : ""}`}>
-                <span className="sp-step-dot">{step > number ? <Check size={13} /> : number}</span>
-                <strong>{number === 1
-                  ? t("Contact", "Contact")
-                  : number === 2
-                    ? (planChoice === "paid" ? t("Paiement", "Payment") : t("Badge", "Badge"))
-                    : t("Finalisation", "Details")}</strong>
-              </span>
-              {number < 3 && <span className={`sp-step-connector${step > number ? " sp-step-connector--filled" : ""}`} aria-hidden="true" />}
-            </li>
-          ))}
-        </ol>
-
-        <main className="sp-card">
-          {step === 1 && (
-            <form ref={infoFormRef} onSubmit={continueToPublication} className="sp-form">
-              <div className="sp-section-heading">
-                <span>01</span>
-                <div><h2>{t("De quoi te recontacter", "Enough to reach you")}</h2><p>{t("Le nom de l'outil, son site et ton email. Le reste vient une fois l'étape suivante engagée.", "The tool's name, its website, and your email. The rest comes once the next step is underway.")}</p></div>
-              </div>
-              <div className="sp-form-grid">
-                <div className="tt-form-field"><label className="tt-form-label" htmlFor="submit-tool-name">{t("Nom de l'outil", "Tool name")}</label><div className="sp-input-wrap"><User size={16} className="sp-input-icon" /><input className="tt-form-input" id="submit-tool-name" required maxLength={100} value={submission.toolName} onChange={(e) => update("toolName", e.target.value)} placeholder="Acme" /></div></div>
-                <div className="tt-form-field"><label className="tt-form-label" htmlFor="submit-tool-url">{t("Site officiel", "Official website")}</label><div className="sp-input-wrap"><Globe size={16} className="sp-input-icon" /><input className="tt-form-input" id="submit-tool-url" required type="url" maxLength={300} value={submission.toolUrl} onChange={(e) => update("toolUrl", e.target.value)} placeholder="https://…" /></div></div>
-              </div>
-              <div className="tt-form-field"><label className="tt-form-label" htmlFor="submit-email">Email</label><div className="sp-input-wrap"><Mail size={16} className="sp-input-icon" /><input className="tt-form-input" id="submit-email" required type="email" maxLength={200} autoComplete="email" value={submission.email} onChange={(e) => update("email", e.target.value)} placeholder="you@example.com" /></div></div>
-              {error && <p className="tt-form-error" role="alert">{error}</p>}
-              <div className="sp-actions"><button type="submit" className="tt-button-primary" disabled={status === "saving"}>{status === "saving" ? t("Enregistrement…", "Saving…") : t("Continuer →", "Continue →")}</button></div>
-            </form>
-          )}
-
-          {step === 2 && planChoice === "paid" && (
-            <section className="sp-form">
-              <div className="sp-section-heading"><span>02</span><div><h2>{t("Publication payante", "Paid publication")}</h2><p>{t("Aucun badge à installer : le paiement débloque directement la dernière étape.", "No badge to install: payment unlocks the final step directly.")}</p></div></div>
-              <div className="sp-plan-card sp-plan-card--highlight">
-                <span className="sp-plan-tag"><Zap size={13} />{t("Publication prioritaire", "Priority publication")}</span>
-                <div className="sp-plan-card-head">
-                  <div><span className="sp-plan-price">{SKIP_BADGE_PRICE}</span><span className="sp-plan-period">{t("paiement unique", "one-time")}</span>{SPECIAL_OFFER_ACTIVE && <span className="sp-plan-flag">{t("Offre spéciale", "Special offer")}</span>}</div>
-                  <span className="sp-plan-name">{t("Publication payante", "Paid publication")}</span>
-                </div>
-                <p className="sp-plan-desc">{t("Pas de badge à installer : ta fiche est traitée en priorité, avec un vrai humain à l'écoute.", "No badge to install: your listing is handled with priority, with a real human on hand.")}</p>
-                <div className="sp-cert-badge"><BadgeCheck size={14} />{t("Certifié ToolTrim", "ToolTrim Certified")}</div>
-                <ul className="sp-plan-args">
-                  <li><Check size={15} /><span>{t(`${SKIP_BADGE_PRICE}, paiement unique — aucun abonnement`, `${SKIP_BADGE_PRICE}, one-time — no subscription`)}</span></li>
-                  <li><Check size={15} /><span>{t("Publication garantie, sans badge à installer", "Guaranteed publication, no badge to install")}</span></li>
-                  <li><Check size={15} /><span>{t("Accès prioritaire : ta soumission passe devant la file", "Priority access: your submission jumps the queue")}</span></li>
-                  <li><Check size={15} /><span>{t("Une révision incluse : je te montre ta fiche, tu ajustes, je publie", "One review round included: I show you the draft, you flag changes, then it's live")}</span></li>
-                  <li><Check size={15} /><span>{t("Flag de certification affiché sur ta fiche", "Certification flag shown on your listing")}</span></li>
-                  <li><Check size={15} /><span>{t("Lien dofollow permanent dès le paiement", "Permanent dofollow link as soon as you pay")}</span></li>
-                </ul>
-                <a
-                  href={CREEM_PAYMENT_LINK}
-                  data-creem-checkout
-                  className="tt-button-primary sp-plan-cta"
-                  onClick={payToSkipBadge}
-                >
-                  {t(`Publier pour ${SKIP_BADGE_PRICE} →`, `Publish for ${SKIP_BADGE_PRICE} →`)}
-                </a>
-              </div>
-              <div className="sp-note"><strong>{t("Tu préfères une autre solution ?", "Would you prefer another option?")}</strong><p>{t("Contacte-nous directement : nous étudierons avec toi une alternative.", "Contact us directly and we will discuss an alternative with you.")}</p><Link to={`${prefix}/contact?subject=partnership`}>{t("Contacter ToolTrim →", "Contact ToolTrim →")}</Link></div>
-              <div className="sp-actions sp-actions--split"><button type="button" className="tt-button-secondary" onClick={() => { setPlanChoice(null); setStatus("idle"); }}>{t("← Revoir les options", "← Review options")}</button><button type="button" className="tt-button-secondary" onClick={() => { setStep(1); setStatus("idle"); }}>{t("← Modifier les informations", "← Edit information")}</button></div>
-            </section>
-          )}
-
-          {step === 2 && planChoice === "free" && (
-            <section className="sp-form">
-              <div className="sp-section-heading"><span>02</span><div><h2>{t("Installer le badge de visibilité ToolTrim", "Install the ToolTrim visibility badge")}</h2><p>{t("Ce badge fait découvrir ToolTrim à ton audience et confirme le lien entre nos deux sites avant la validation finale.", "This badge introduces ToolTrim to your audience and confirms the connection between our websites before final confirmation.")}</p></div></div>
-              <div className="sp-verification-panel">
-                <div className="sp-badge-themes" role="group" aria-label={t("Version du badge", "Badge version")}>
-                  <button type="button" className={badgeTheme === "light" ? "sp-badge-theme--active" : ""} onClick={() => { setBadgeTheme("light"); setSubmission((current) => ({ ...current, verificationToken: "" })); }}>☀︎ Light</button>
-                  <button type="button" className={badgeTheme === "dark" ? "sp-badge-theme--active" : ""} onClick={() => { setBadgeTheme("dark"); setSubmission((current) => ({ ...current, verificationToken: "" })); }}>☾ Dark</button>
-                </div>
-                <div className={`sp-badge-preview sp-badge-preview--${badgeTheme}`}>
-                  <img src={`/${badgeAsset}`} alt={badgeAlt} width={216} height={54} />
-                </div>
-                <p className="sp-embed-label">{t("Ajoute ce code sur ton site", "Add this code to your website")}</p>
-                <div className="sp-code-wrap">
-                  <code className="sp-code">{badgeHtml}</code>
-                  <button type="button" className="sp-copy-button" onClick={copyBadgeCode} aria-label={t("Copier le code du badge", "Copy badge code")}>{codeCopied ? "✓" : "⧉"}</button>
-                </div>
-                <label className="sp-installed-check">
-                  <input type="checkbox" checked={badgeInstalled} onChange={(event) => setBadgeInstalled(event.target.checked)} />
-                  <span>{t("J’ai ajouté le badge sur mon site", "I've added the badge to my website")}</span>
-                </label>
-                <div className="tt-form-field"><label className="tt-form-label" htmlFor="submit-badge-url">{t("URL exacte de la page avec le badge", "Exact URL of the page with the badge")}</label><input ref={badgeUrlRef} className="tt-form-input" id="submit-badge-url" required type="url" value={submission.badgeUrl} onChange={(e) => { update("badgeUrl", e.target.value); update("verificationToken", ""); }} placeholder={`${submission.toolUrl.replace(/\/$/, "") || "https://example.com"}/partners`} aria-describedby={error ? "submit-badge-error" : undefined} /></div>
-                <button type="button" className="sp-skip-badge-link" onClick={() => choosePlan("paid")}>
-                  {t("Impossible d'installer le badge ? Passe à la publication payante →", "Can't install the badge? Switch to paid publication →")}
-                </button>
-                {badgeVerified && <div className="sp-verified">✓ {t("Badge vérifié — soumission débloquée", "Badge verified — submission unlocked")}</div>}
-              </div>
-              {error && <p id="submit-badge-error" className="tt-form-error" role="alert">{error}</p>}
-              <div className="sp-actions sp-actions--split"><button type="button" className="tt-button-secondary" onClick={() => { setPlanChoice(null); setStatus("idle"); }}>{t("← Revoir les options", "← Review options")}</button><button type="button" className="tt-button-primary" disabled={!badgeInstalled || status === "checking"} onClick={verifyBadge}>{status === "checking" ? t("Validation du badge…", "Validating badge…") : t("Valider le badge et continuer →", "Validate badge and continue →")}</button></div>
-            </section>
-          )}
-
-          {step === 3 && (
-            <form onSubmit={handleFinalSubmit} className="sp-form">
-              <div className="sp-section-heading"><span>03</span><div><h2>{t("Finaliser ta fiche", "Finish your listing")}</h2><p>{paid ? t("Le paiement est confirmé. Dis-nous qui tu es et présente l'outil avant l'envoi.", "Payment confirmed. Tell us who you are and introduce the tool before sending.") : t("Le badge est en place. Dis-nous qui tu es et présente l'outil avant l'envoi.", "The badge is in place. Tell us who you are and introduce the tool before sending.")}</p></div></div>
-              <div className="sp-verified">{paid ? t("Paiement reçu — publication garantie", "Payment received — publication guaranteed") : t("Badge vérifié sur le site présenté", "Badge verified on the submitted website")}</div>
-              <dl className="sp-summary"><div><dt>{t("Outil", "Tool")}</dt><dd>{submission.toolName}</dd></div><div><dt>{t("Site", "Website")}</dt><dd>{submission.toolUrl}</dd></div><div><dt>Email</dt><dd>{submission.email}</dd></div>{!paid && <div><dt>{t("Page du badge", "Badge page")}</dt><dd>{submission.badgeUrl}</dd></div>}</dl>
-              <div className="tt-form-field"><label className="tt-form-label" htmlFor="submit-role">{t("Ton lien avec l'outil", "Your relationship to the tool")}</label><div className="sp-input-wrap"><Briefcase size={16} className="sp-input-icon" /><select className="tt-form-input" id="submit-role" required value={submission.submitterRole} onChange={(e) => update("submitterRole", e.target.value)}><option value="" disabled>{t("Sélectionner…", "Select…")}</option><option value="founder">{t("Fondateur·rice / équipe", "Founder / team")}</option><option value="user">{t("Utilisateur·rice", "User")}</option><option value="agency">{t("Agence / partenaire", "Agency / partner")}</option><option value="other">{t("Autre", "Other")}</option></select></div></div>
-              <div className="tt-form-field"><label className="tt-form-label" htmlFor="submit-name">{t("Ton nom", "Your name")}</label><div className="sp-input-wrap"><User size={16} className="sp-input-icon" /><input className="tt-form-input" id="submit-name" required maxLength={100} autoComplete="name" value={submission.name} onChange={(e) => update("name", e.target.value)} /></div></div>
-              <div className="tt-form-field">
-                <label className="tt-form-label" htmlFor="submit-description">{t("Description courte", "Short description")}</label>
-                <div className="sp-input-wrap sp-input-wrap--textarea"><MessageSquare size={16} className="sp-input-icon" /><textarea className="tt-form-input tt-form-textarea" id="submit-description" required maxLength={2000} rows={6} value={submission.message} onChange={(e) => update("message", e.target.value)} placeholder={t("À qui s'adresse l'outil, quel problème résout-il et qu'est-ce qui le distingue ?", "Who is the tool for, what problem does it solve, and what makes it different?")} /></div>
-                <span className="sp-char-count">{submission.message.length} / 2000</span>
-              </div>
-              {paid && (
-                <div className="sp-editor-card">
-                  <span className="sp-editor-avatar">MB</span>
-                  <div className="sp-editor-body">
-                    <p className="sp-editor-name">{t("Michael, fondateur de ToolTrim", "Michael, ToolTrim's founder")}</p>
-                    <p className="sp-editor-text">{t(
-                      "Je m'occupe personnellement de chaque publication payante. Avant la mise en ligne, je te montre ta fiche : tu me dis ce qui doit changer, j'ajuste, puis je publie. Une seule tournée d'aller-retour, pour garder les délais courts.",
-                      "I personally handle every paid listing. Before it goes live, I'll show you the draft: tell me what needs to change, I'll adjust it, then publish. One round of back-and-forth, to keep turnaround fast.",
-                    )}</p>
-                    <a
-                      className="sp-editor-link"
-                      href={`mailto:contact@tooltrim.com?subject=${encodeURIComponent(t(`À propos de la publication de ${submission.toolName || "mon outil"}`, `About the listing for ${submission.toolName || "my tool"}`))}`}
-                    >
-                      <Mail size={15} />{t("Écrire à Michael →", "Write to Michael →")}
-                    </a>
-                  </div>
-                </div>
-              )}
-              <p className="sp-publication-note">{paid
-                ? t("Après l'envoi, ToolTrim publiera ton outil : le paiement garantit la publication, sans passer par la revue éditoriale du badge gratuit.", "After submission, ToolTrim will publish your tool: payment guarantees publication, without going through the free badge's editorial review.")
-                : t("Après l'envoi, ToolTrim analysera le site et les informations disponibles. Cette validation ne garantit pas la publication : elle confirme uniquement que la soumission est complète.", "After submission, ToolTrim will review the website and available information. This confirmation does not guarantee publication; it only confirms that the submission is complete.")}</p>
-              {error && <p className="tt-form-error" role="alert">{error}</p>}
-              <div className="sp-actions sp-actions--split">{!paid && <button type="button" className="tt-button-secondary" onClick={() => { setStep(2); setStatus("idle"); }}>{t("← Revoir le badge", "← Review badge")}</button>}<button type="submit" className="tt-button-primary" disabled={status === "submitting"}>{status === "submitting" ? t("Envoi…", "Submitting…") : t("Envoyer la soumission →", "Submit tool →")}</button></div>
-            </form>
-          )}
-        </main>
-      </div>
-      </div>
-      )}
-
-      <section className="sp-faq">
-        <div className="sp-faq-inner">
-          <div className="sp-faq-layout">
-            <div className="sp-faq-side">
-              <h2>{t("Questions fréquentes", "Frequently asked questions")}</h2>
-              <nav className="sp-faq-nav-list" aria-label={t("Catégories de la FAQ", "FAQ categories")}>
-                {SUBMIT_FAQ.map((group, gi) => (
-                  <a
-                    key={gi}
-                    href={`#faq-${gi}`}
-                    className="sp-faq-nav-pill"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      document.getElementById(`faq-${gi}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
-                    }}
-                  >
-                    {t(group.theme, group.themeEn)}
-                  </a>
-                ))}
-              </nav>
-            </div>
-            <div className="sp-faq-main">
-              {SUBMIT_FAQ.map((group, gi) => (
-                <div key={gi} id={`faq-${gi}`} className="sp-faq-group">
-                  {gi > 0 && <p className="sp-faq-group-title">{t(group.theme, group.themeEn)}</p>}
-                  {group.items.map((item, ii) => {
-                    const key = `${gi}-${ii}`;
-                    const isOpen = openFaqKey === key;
-                    return (
-                      <details
-                        key={key}
-                        className="sp-faq-item"
-                        open={isOpen}
-                        onToggle={(e) => {
-                          if ((e.currentTarget as HTMLDetailsElement).open) setOpenFaqKey(key);
-                          else if (isOpen) setOpenFaqKey(null);
-                        }}
-                      >
-                        <summary className="sp-faq-summary">
-                          {t(item.q, item.qEn)}
-                          <span className="sp-faq-icon">{isOpen ? <Minus size={16} /> : <Plus size={16} />}</span>
-                        </summary>
-                        <p className="sp-faq-answer">{t(item.a, item.aEn)}</p>
-                      </details>
-                    );
-                  })}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
+  if (status === "success") return (
+    <div className="stp-page"><section className="sp-success">
+      <span className="tt-page-hero-eyebrow">{t("Demande reçue", "Request received")}</span>
+      <h1>{paid ? t("Ta publication prioritaire est lancée.", "Your priority publication is underway.") : t("Ton outil rejoint la file éditoriale.", "Your tool is in the editorial queue.")}</h1>
+      <p>{paid
+        ? t("Ton outil sera publié sous cinq jours ouvrés, sans badge requis. Le paiement n'influence ni le verdict ni le classement.", "Your tool will be published within five business days, with no badge required. Payment does not influence the verdict or ranking.")
+        : t("Le badge est vérifié. Nous allons évaluer l'intérêt de l'outil pour les lecteurs avant toute publication.", "The badge is verified. We'll assess the tool's value for readers before any publication.")}</p>
+      <Link to={`${prefix}/tools`} className="tt-button-primary">{t("Explorer les outils →", "Explore tools →")}</Link>
+    </section></div>
   );
+
+  return <div className="stp-page">
+    <header className="sp-hero">
+      <div className="sp-hero-crumb"><Breadcrumb items={[{ label: t("Soumettre un outil", "Submit a tool") }]} /></div>
+      <div className="sp-pitch">
+        <div className="sp-pitch-copy">
+          <span className="tt-page-hero-eyebrow">{t("Pour les créateurs d’outils SaaS", "For SaaS builders")}</span>
+          <h1>{t("Ton outil mérite de faire partie du choix.", "Make your tool part of their next choice.")}</h1>
+          <p className="sp-pitch-lead">{t("Présente ton produit aux freelances et petites équipes qui comparent leurs outils. Nous préparons ta fiche pour qu’ils comprennent à qui il s’adresse, ce qu’il apporte et pourquoi le choisir.", "Introduce your product to freelancers and small teams comparing tools. We prepare your listing so they can understand who it serves, what it offers, and why to choose it.")}</p>
+          <div className="sp-hero-actions">
+            <button type="button" className="tt-button-primary" onClick={() => choosePlan("paid", "hero")}>{t(`Référencer mon outil · ${price}`, `List my tool · ${price}`)}<ArrowRight size={16} /></button>
+            <a className="sp-text-link" href="#submit-plans-title">{t("Ou choisir la formule gratuite avec badge", "Or choose the free option with a badge")}<ArrowRight size={15} /></a>
+          </div>
+          <p className="sp-pitch-reassurance"><Check size={15} />{t("Sans badge · paiement unique · publication sous 5 jours ouvrés", "No badge · one-time payment · published within 5 business days")}</p>
+        </div>
+        <aside className="sp-listing-preview" aria-label={t("Exemple de fiche publiée : Loyzia", "Published listing example: Loyzia")}>
+          <div className="sp-preview-caption"><FileText size={16} />{t("DÉJÀ DANS LE CATALOGUE", "ALREADY IN THE CATALOGUE")}</div>
+          <div className="sp-preview-identity"><ToolLogo tool={{ name: "Loyzia", slug: "loyzia", websiteUrl: "https://loyzia.com/" }} size={40} /><div><strong>Loyzia</strong><span>{t("Fidélisation et CRM pour les commerces", "Loyalty and CRM for local businesses")}</span></div></div>
+          <p className="sp-example-description">{t("Cartes de fidélité dans le Wallet, relation client et avis Google : une fiche pour comprendre où Loyzia trouve sa place.", "Wallet loyalty cards, customer relationships, and Google reviews: a listing that explains where Loyzia fits.")}</p>
+          <ul className="sp-example-topics"><li>{t("Usages et fonctionnalités", "Use cases and features")}</li><li>{t("Tarifs et alternatives", "Pricing and alternatives")}</li><li>{t("Avis éditorial ToolTrim", "ToolTrim’s editorial assessment")}</li></ul>
+          <Link className="sp-example-link" to={`${prefix}/tool/loyzia`}>{t("Voir la fiche publiée", "View the published listing")}<ArrowRight size={17} /></Link>
+        </aside>
+      </div>
+      <div className="sp-proof-line">
+        <div><strong>1 100+</strong><span>{t("outils au catalogue", "tools in the catalogue")}</span></div>
+        <div><strong>DR 28</strong><span>{t("Domain Rating · septembre 2026", "Domain Rating · September 2026")}</span></div>
+        <div><strong>{t("Lien dofollow", "Dofollow link")}</strong><span>{t("vers le site officiel", "to the official website")}</span></div>
+      </div>
+    </header>
+
+    <div className="sp-page-body">
+      <section className="sp-overview" aria-labelledby="submit-plans-title"><div className="sp-overview-inner">
+        <div className="sp-overview-heading"><span className="tt-page-hero-eyebrow">{t("Deux façons de nous rejoindre", "Two ways to join")}</span><h2 id="submit-plans-title">{t("Choisis comment rejoindre ToolTrim.", "Choose how to join ToolTrim.")}</h2><p>{t("Une fiche dédiée à ton produit, avec ses usages, ses tarifs et un lien vers ton site.", "A dedicated listing for your product, with its use cases, pricing, and a link to your website.")}</p></div>
+        <div className="sp-plan-grid">
+          <article className="sp-plan-card">
+            <span className="sp-plan-tag sp-plan-tag--quiet">{t("AVEC BADGE", "WITH A BADGE")}</span>
+            <div className="sp-plan-card-head"><div><span className="sp-plan-price">{t("0 $", "$0")}</span><span className="sp-plan-period">{t("sans paiement", "no payment")}</span></div><span className="sp-plan-name">{t("Soumission gratuite", "Free submission")}</span></div>
+            <p className="sp-plan-desc">{t("Pour proposer ton outil sans budget, en affichant le badge ToolTrim sur ton site.", "Submit your tool without a budget by displaying the ToolTrim badge on your website.")}</p>
+            <ul className="sp-plan-args"><li><Check size={16} />{t("Fiche préparée par ToolTrim", "Listing prepared by ToolTrim")}</li><li><Check size={16} />{t("Badge ToolTrim requis", "ToolTrim badge required")}</li><li><Check size={16} />{t("Revue dans la file standard", "Review in the standard queue")}</li><li><Check size={16} />{t("Publication si les critères sont remplis", "Publication if editorial criteria are met")}</li></ul>
+            <button type="button" className="tt-button-secondary sp-plan-cta" onClick={() => choosePlan("free")}>{t("Soumettre avec un badge →", "Submit with a badge →")}</button>
+          </article>
+          <article className="sp-plan-card sp-plan-card--highlight">
+            <span className="sp-plan-tag"><Clock size={14} />{t("SOUS 5 JOURS OUVRÉS", "WITHIN 5 BUSINESS DAYS")}</span>
+            <div className="sp-plan-card-head"><div><span className="sp-plan-price">{price}</span><span className="sp-plan-period">{t("une seule fois", "just once")}</span></div><span className="sp-plan-name">{t("Publication prioritaire", "Priority publication")}</span></div>
+            <p className="sp-plan-desc">{t("Pour être publié sous cinq jours ouvrés, sans installer de badge sur ton site.", "Get published within five business days, with no badge to install on your website.")}</p>
+            <ul className="sp-plan-args"><li><Check size={16} />{t("Aucun badge à installer", "No badge to install")}</li><li><User size={16} />{t("Fiche préparée par ToolTrim", "Listing prepared by ToolTrim")}</li><li><Check size={16} />{t("Un aller-retour pour vérifier les faits", "One round to check the facts")}</li><li><Check size={16} />{t("Publication sous cinq jours ouvrés", "Publication within five business days")}</li></ul>
+            <button type="button" className="tt-button-primary sp-plan-cta" onClick={() => choosePlan("paid")}>{t(`Référencer mon outil · ${price} →`, `List my tool · ${price} →`)}</button>
+          </article>
+        </div>
+        <div className="sp-editorial-rule"><Scale size={20} /><p><strong>{t("Une fiche crédible, un verdict indépendant.", "A credible listing, an independent verdict.")}</strong> {t("Le paiement couvre le service de publication. Le score, le classement et la conclusion éditoriale restent indépendants.", "Payment covers the publication service. Scores, rankings, and editorial conclusions remain independent.")} <Link to={`${prefix}/transparency`}>{t("Lire notre politique →", "Read our policy →")}</Link></p></div>
+      </div></section>
+
+      <section className="sp-delivery" aria-labelledby="submit-delivery-title">
+        <div className="sp-section-intro"><h2 id="submit-delivery-title">{t("Tu nous présentes ton outil. Nous prenons le relais.", "Tell us about your tool. We take it from there.")}</h2></div>
+        <ol className="sp-delivery-grid">
+          <li><span>01</span><h3>{t("Envoie les informations", "Share the details")}</h3><p>{t("L’URL, le nom de ton outil et ton email pour commencer, puis quelques précisions sur ton produit.", "Start with your tool’s URL, name, and your email, then add a little context about your product.")}</p></li>
+          <li><span>02</span><h3>{t("Nous préparons la fiche", "We prepare the listing")}</h3><p>{t("Dans la formule à 29 $, un aller-retour avec le rédacteur te permet de vérifier les faits avant publication.", "The $29 option includes one round with the editor to check the facts before publication.")}</p></li>
+          <li><span>03</span><h3>{t("Ton outil devient découvrable", "Your tool can be discovered")}</h3><p>{t("La fiche publiée rejoint le catalogue et donne aux lecteurs un accès à ton site.", "The published listing joins the catalogue and gives readers a link to your website.")}</p></li>
+        </ol>
+      </section>
+
+      {plan && <section className="sp-shell" id="submit-form">
+        <div className="sp-selected-plan"><span>{t("Ta formule", "Your option")} <strong>{plan === "paid" ? t(`Publication prioritaire · ${price}`, `Priority publication · ${price}`) : t("Avec badge · gratuit", "With a badge · free")}</strong></span><ShieldCheck size={18} /></div>
+        <ol className="sp-steps" aria-label={t("Étapes de la soumission", "Submission steps")}>{[1, 2, 3].map((number) => <li key={number} className={`${step === number ? "sp-step--active" : ""}${step > number ? " sp-step--done" : ""}`}><span>{step > number ? <Check size={14} /> : number}</span><strong>{number === 1 ? "Contact" : number === 2 ? plan === "paid" ? t("Paiement", "Payment") : "Badge" : t("Détails", "Details")}</strong></li>)}</ol>
+        <div className="sp-card">
+          {step === 1 && <form onSubmit={continueFromContact} className="sp-form">
+            <div className="sp-section-heading"><span>01</span><div><h2>{t("Commençons par ton outil.", "Let’s start with your tool.")}</h2><p>{t("Trois informations pour commencer. Tu pourras préciser les détails à la dernière étape.", "Three details to get started. You can add more context in the final step.")}</p></div></div>
+            <div className="sp-form-grid"><div className="tt-form-field"><label className="tt-form-label" htmlFor="submit-tool-url">{t("Site officiel", "Official website")}</label><div className="sp-input-wrap"><Globe size={16} /><input className="tt-form-input" id="submit-tool-url" required type="url" maxLength={300} value={submission.toolUrl} onChange={(event) => update("toolUrl", event.target.value)} placeholder="https://…" /></div></div><div className="tt-form-field"><label className="tt-form-label" htmlFor="submit-tool-name">{t("Nom de l'outil", "Tool name")}</label><div className="sp-input-wrap"><User size={16} /><input className="tt-form-input" id="submit-tool-name" required maxLength={100} value={submission.toolName} onChange={(event) => update("toolName", event.target.value)} placeholder="Acme" /></div></div></div>
+            <div className="tt-form-field"><label className="tt-form-label" htmlFor="submit-email">Email</label><div className="sp-input-wrap"><Mail size={16} /><input className="tt-form-input" id="submit-email" required type="email" maxLength={200} value={submission.email} onChange={(event) => update("email", event.target.value)} placeholder="you@example.com" /></div></div>
+            {error && <p className="tt-form-error" role="alert">{error}</p>}
+            <div className="sp-actions sp-actions--split"><button type="button" className="sp-button-secondary" onClick={() => setPlan(null)}>{t("← Revoir les offres", "← Review options")}</button><button type="submit" className="tt-button-primary" disabled={status === "saving"}>{status === "saving" ? t("Enregistrement…", "Saving…") : plan === "paid" ? t("Continuer vers le paiement →", "Continue to payment →") : t("Continuer vers le badge →", "Continue to the badge →")}</button></div>
+          </form>}
+
+          {step === 2 && plan === "paid" && <section className="sp-form">
+            <div className="sp-section-heading"><span>02</span><div><h2>{t("Confirmer la publication prioritaire", "Confirm priority publication")}</h2><p>{t("Ton outil passe directement à la rédaction, sans installation sur ton site.", "Your tool goes directly to the editorial team, with nothing to install on your site.")}</p></div></div>
+            <div className="sp-payment-summary"><div><span>{t("PUBLICATION PRIORITAIRE", "PRIORITY PUBLICATION")}</span><strong>{submission.toolName}</strong><small>{submission.toolUrl}</small></div><strong>{price}</strong></div>
+            <div className="sp-payment-promise"><ShieldCheck size={20} /><p>{t("Après la rédaction de la fiche, tu disposes d'un aller-retour avec le rédacteur avant sa publication sous cinq jours ouvrés.", "Once the listing is drafted, you get one review round with the editor before publication within five business days.")}</p></div>
+            <a href={PAYMENT_URL} data-creem-checkout className="tt-button-primary sp-payment-cta" onClick={beginCheckout}><CreditCard size={17} />{t(`Payer ${price}`, `Pay ${price}`)}</a>
+            <p className="sp-payment-meta">{t("Paiement unique sécurisé par Creem. Aucun abonnement.", "Secure one-time payment via Creem. No subscription.")}</p>
+            <div className="sp-actions"><button type="button" className="sp-button-secondary" onClick={() => setStep(1)}>{t("← Modifier les informations", "← Edit information")}</button></div>
+          </section>}
+
+          {step === 2 && plan === "free" && <section className="sp-form">
+            <div className="sp-section-heading"><span>02</span><div><h2>{t("Installer le badge ToolTrim", "Install the ToolTrim badge")}</h2><p>{t("Il débloque la file standard sans influencer notre décision.", "It unlocks the standard queue without influencing our decision.")}</p></div></div>
+            <div className="sp-verification-panel">
+              <div className="sp-badge-themes" role="group" aria-label={t("Version du badge", "Badge version")}><button type="button" className={badgeTheme === "light" ? "sp-badge-theme--active" : ""} onClick={() => setBadgeTheme("light")}>{t("Clair", "Light")}</button><button type="button" className={badgeTheme === "dark" ? "sp-badge-theme--active" : ""} onClick={() => setBadgeTheme("dark")}>{t("Sombre", "Dark")}</button></div>
+              <div className={`sp-badge-preview sp-badge-preview--${badgeTheme}`}><img src={`/${badgeAsset}`} alt={badgeAlt} width={216} height={54} /></div>
+              <p className="sp-embed-label">{t("Ajoute ce code sur ton site", "Add this code to your website")}</p><div className="sp-code-wrap"><code className="sp-code">{badgeHtml}</code><button type="button" className="sp-copy-button" onClick={copyBadge} aria-label={t("Copier le code du badge", "Copy badge code")}>{codeCopied ? <Check size={17} /> : <Copy size={17} />}</button></div>
+              <label className="sp-installed-check"><input type="checkbox" checked={badgeInstalled} onChange={(event) => setBadgeInstalled(event.target.checked)} />{t("J'ai ajouté le badge sur mon site", "I've added the badge to my website")}</label>
+              <div className="tt-form-field"><label className="tt-form-label" htmlFor="submit-badge-url">{t("URL de la page avec le badge", "URL of the page with the badge")}</label><input ref={badgeUrlRef} className="tt-form-input" id="submit-badge-url" type="url" value={submission.badgeUrl} onChange={(event) => update("badgeUrl", event.target.value)} placeholder={`${submission.toolUrl.replace(/\/$/, "") || "https://example.com"}/partners`} /></div>
+            </div>
+            <aside className="sp-upgrade-note">
+              <div><span>{t("Pas envie d'installer le badge ?", "Do not want to install the badge?")}</span><strong>{t("Passe à la publication prioritaire.", "Switch to priority publication.")}</strong><p>{t("Ta fiche est préparée par ToolTrim, avec un aller-retour avant publication sous cinq jours ouvrés.", "ToolTrim prepares your listing, with one review round before publication within five business days.")}</p></div>
+              <button type="button" className="sp-upgrade-cta" onClick={upgradeToPaid}>{t(`Choisir la formule à ${price} →`, `Choose the ${price} option →`)}</button>
+            </aside>
+            {error && <p className="tt-form-error" role="alert">{error}</p>}
+            <div className="sp-actions sp-actions--split"><button type="button" className="sp-button-secondary" onClick={() => setStep(1)}>{t("← Modifier", "← Edit")}</button><button type="button" className="tt-button-primary" disabled={!badgeInstalled || status === "checking"} onClick={verifyBadge}>{status === "checking" ? t("Validation…", "Validating…") : t("Valider et continuer →", "Validate and continue →")}</button></div>
+          </section>}
+
+          {step === 3 && <form className="sp-form" onSubmit={submit}>
+            <div className="sp-section-heading"><span>03</span><div><h2>{t("Aide-nous à évaluer le produit", "Help us evaluate the product")}</h2><p>{t("Donne le contexte nécessaire à la revue éditoriale.", "Give us the context needed for the editorial review.")}</p></div></div>
+            <div className="sp-verified"><Check size={16} />{paid ? t("Paiement confirmé : publication prioritaire", "Payment confirmed: priority publication") : t("Badge vérifié : file standard", "Badge verified: standard queue")}</div>
+            <div className="tt-form-field"><label className="tt-form-label" htmlFor="submit-role">{t("Ton lien avec l'outil", "Your relationship to the tool")}</label><select className="tt-form-input" id="submit-role" required value={submission.submitterRole} onChange={(event) => update("submitterRole", event.target.value)}><option value="" disabled>{t("Sélectionner…", "Select…")}</option><option value="founder">{t("Fondateur·rice / équipe", "Founder / team")}</option><option value="user">{t("Utilisateur·rice", "User")}</option><option value="agency">{t("Agence / partenaire", "Agency / partner")}</option><option value="other">{t("Autre", "Other")}</option></select></div>
+            <div className="tt-form-field"><label className="tt-form-label" htmlFor="submit-name">{t("Ton nom", "Your name")}</label><input className="tt-form-input" id="submit-name" required maxLength={100} value={submission.name} onChange={(event) => update("name", event.target.value)} /></div>
+            <div className="tt-form-field"><label className="tt-form-label" htmlFor="submit-description">{t("Ce que nous devons comprendre", "What we should understand")}</label><textarea className="tt-form-input tt-form-textarea" id="submit-description" required maxLength={2000} rows={6} value={submission.message} onChange={(event) => update("message", event.target.value)} placeholder={t("À qui s'adresse l'outil, quel problème résout-il et qu'est-ce qui le distingue ?", "Who is the tool for, what problem does it solve, and what makes it different?")} /></div>
+            <p className="sp-publication-note">{paid ? t("La publication est prioritaire. ToolTrim conserve le dernier mot sur le verdict et le contenu éditorial.", "Publication is prioritized. ToolTrim retains final say over the verdict and editorial content.") : t("ToolTrim choisit librement de publier et conserve le dernier mot sur le verdict. Les erreurs factuelles peuvent être corrigées.", "ToolTrim independently decides whether to publish and retains final say over the verdict. Factual errors can be corrected.")}</p>
+            {error && <p className="tt-form-error" role="alert">{error}</p>}<div className="sp-actions"><button type="submit" className="tt-button-primary" disabled={status === "submitting"}>{status === "submitting" ? t("Envoi…", "Submitting…") : t("Envoyer pour revue →", "Submit for review →")}</button></div>
+          </form>}
+        </div>
+      </section>}
+
+      <section className="sp-faq-section" aria-labelledby="submit-faq-title">
+        <div className="sp-section-intro"><span className="tt-page-hero-eyebrow">FAQ</span><h2 id="submit-faq-title">{t("Avant de te lancer.", "Before you get started.")}</h2></div>
+        <div className="sp-faq-list">
+          <details><summary>{t("Dois-je rédiger ma fiche moi-même ?", "Do I need to write my own listing?")}</summary><p>{t("Non. Tu nous transmets les informations sur ton produit et ToolTrim prépare la fiche. La publication prioritaire inclut un aller-retour pour vérifier les informations factuelles avant publication.", "No. You provide information about your product and ToolTrim prepares the listing. Priority publication includes one round to check factual information before publication.")}</p></details>
+          <details><summary>{t("Que garantit la publication prioritaire ?", "What does priority publication guarantee?")}</summary><p>{t("La mise en ligne sous cinq jours ouvrés, sans badge à installer. Le verdict et le classement restent indépendants.", "Publication within five business days, with no badge to install. The verdict and ranking remain independent.")}</p></details>
+          <details><summary>{t("Le paiement peut-il améliorer le verdict ?", "Can payment improve the verdict?")}</summary><p>{t("Non. Le score, le verdict, les alternatives et le classement sont indépendants du paiement.", "No. The score, verdict, alternatives, and ranking are independent of payment.")}</p></details>
+          <details><summary>{t("Quelle différence avec la soumission gratuite ?", "What's different about the free submission?")}</summary><p>{t("La version gratuite demande un badge et rejoint la file éditoriale standard. La formule prioritaire ne demande aucun badge et garantit la publication sous cinq jours ouvrés.", "The free version requires a badge and joins the standard editorial queue. Priority requires no badge and guarantees publication within five business days.")}</p></details>
+          <details><summary>{t("Puis-je échanger avec le rédacteur avant publication ?", "Can I speak with the editor before publication?")}</summary><p>{t("Oui. La formule à 29 $ inclut un aller-retour pour corriger ou préciser les informations factuelles. La conclusion éditoriale reste celle de ToolTrim.", "Yes. The $29 option includes one review round to correct or clarify factual information. The editorial conclusion remains ToolTrim's.")}</p></details>
+        </div>
+      </section>
+      <section className="sp-closing" aria-labelledby="submit-closing-title">
+        <div><h2 id="submit-closing-title">{t("Prêt à faire découvrir ton outil ?", "Ready to get your tool discovered?")}</h2><p>{t("Référencement prioritaire à 29 $, sans badge ni abonnement.", "Priority listing for $29, with no badge or subscription.")}</p></div>
+        <button type="button" className="tt-button-primary" onClick={() => choosePlan("paid", "closing")}>{t(`Référencer mon outil · ${price}`, `List my tool · ${price}`)}<ArrowRight size={16} /></button>
+      </section>
+      <p className="sp-contact-line">{t("Une question ou un projet de partenariat ?", "A question or partnership in mind?")} <Link className="sp-text-link" to={`${prefix}/contact?subject=partnership`}>{t("Parlons-en", "Let’s talk")}<ArrowRight size={15} /></Link></p>
+    </div>
+  </div>;
 };
 
 export default SubmitToolPage;
