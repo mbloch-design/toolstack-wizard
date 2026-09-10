@@ -60,11 +60,9 @@ type HomeTab = {
 // distinct from the sidebar's page-level nav, these jump straight into a
 // pre-filtered tools view.
 const HOME_TABS: HomeTab[] = [
-  { id: "all",      labelFr: "Tous les outils", labelEn: "All tools", path: "/tools" },
-  { id: "free",     labelFr: "Gratuits",        labelEn: "Free",      path: "/tools", query: "pricing=free" },
-  { id: "stacks",   labelFr: "Stacks",          labelEn: "Stacks",    path: "/stacks" },
-  { id: "compare",  labelFr: "Comparatifs",     labelEn: "Compare",   path: "/comparatifs" },
-  { id: "guides",   labelFr: "Guides",          labelEn: "Guides",    path: "/guides" },
+  { id: "all",  labelFr: "Tous les outils", labelEn: "All tools", path: "/tools" },
+  { id: "free", labelFr: "Gratuits",        labelEn: "Free",      path: "/tools", query: "pricing=free" },
+  { id: "paid", labelFr: "Payants",         labelEn: "Paid",      path: "/tools", query: "pricing=paid" },
 ];
 
 const CURRENCIES: Array<{ code: Currency; symbol: string; labelFr: string; labelEn: string }> = [
