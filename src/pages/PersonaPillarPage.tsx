@@ -247,7 +247,13 @@ export default function PersonaPillarPage({ persona, lang }: Props) {
         <link rel="canonical" href={canonicalHref} />
         <link rel="alternate" hrefLang="fr" href={frHref} />
         <link rel="alternate" hrefLang="en" href={enHref} />
-        <link rel="alternate" hrefLang="x-default" href={frHref} />
+        {/* x-default vers l'anglais, comme le prerendu (vite.config.ts) et comme
+            le positionnement international du site. Il pointait ici vers le
+            francais : Helmet ajoutait donc, apres hydratation, une seconde
+            balise x-default contradictoire a cote de celle deja servie. Google
+            execute le JS, et une annotation hreflang qui se contredit peut etre
+            ignoree en entier. */}
+        <link rel="alternate" hrefLang="x-default" href={enHref} />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
       </Helmet>
