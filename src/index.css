@@ -18404,6 +18404,8 @@ section[id] {
   top: 0;
   outline: 2px solid var(--color-surface);
   outline-offset: -4px;
+}
+
 /* ─────────────────────────────────────────────────────────────────────────
    Footer — editorial dark slab (Committed color strategy)
    ─────────────────────────────────────────────────────────────────────────
@@ -22879,8 +22881,6 @@ section[id] {
   .sp-proof-line > div { grid-template-columns: 100px minmax(0, 1fr); align-items: center; padding: var(--space-md) 0; gap: var(--space-md); }
   .sp-proof-line > div + div { border-left: 0; border-top: 1px solid var(--color-border); }
   .stp-page .sp-overview { padding-block: var(--space-2xl); }
-}
-
 }
 
 /* ─────────────────────────────────────────────────────────────────────────

@@ -200,7 +200,7 @@ const SubmitToolPage = () => {
         </aside>
       </div>
       <div className="sp-proof-line">
-        <div><strong>1 100+</strong><span>{t("outils au catalogue", "tools in the catalogue")}</span></div>
+        <div><strong>{t("1 100+", "1,100+")}</strong><span>{t("outils au catalogue", "tools in the catalogue")}</span></div>
         <div><strong>DR 28</strong><span>{t("Domain Rating · septembre 2026", "Domain Rating · September 2026")}</span></div>
         <div><strong>{t("Lien dofollow", "Dofollow link")}</strong><span>{t("vers le site officiel", "to the official website")}</span></div>
       </div>
