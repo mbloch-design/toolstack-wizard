@@ -22810,6 +22810,7 @@ section[id] {
 }
 
 /* Submission: current white canvas and an offer led by the editorial deliverable. */
+.sp-assurance { width: 100%; max-width: 1120px; margin-inline: auto; padding: 0 var(--layout-gutter, 48px) var(--space-2xl); }
 :root:not(.dark) .stp-page {
   --color-bg: #FFFFFF;
   --color-surface-soft: #F5F5F7;

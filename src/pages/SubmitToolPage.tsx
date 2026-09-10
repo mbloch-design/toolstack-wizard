@@ -63,6 +63,14 @@ const SubmitToolPage = () => {
   }, []);
 
   useEffect(() => {
+    if (!plan) return;
+    const frame = window.requestAnimationFrame(() => {
+      document.getElementById("submit-form")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, [plan]);
+
+  useEffect(() => {
     setSeoTags({
       title: t("Faire évaluer son outil | ToolTrim", "Get your tool reviewed | ToolTrim"),
       description: t(
@@ -90,12 +98,10 @@ const SubmitToolPage = () => {
   const choosePlan = (next: Exclude<ReviewPlan, null>, source = "offers") => {
     setPlan(next); setPaid(false); setStep(1); setStatus("idle"); setError("");
     trackEvent("submit_plan_select", { plan: next, source });
-    requestAnimationFrame(() => document.getElementById("submit-form")?.scrollIntoView({ behavior: "smooth", block: "start" }));
   };
   const upgradeToPaid = () => {
     setPlan("paid"); setPaid(false); setStep(2); setStatus("idle"); setError("");
     trackEvent("submit_plan_upgrade", { from: "free", to: "paid", source: "badge_step" });
-    requestAnimationFrame(() => document.getElementById("submit-form")?.scrollIntoView({ behavior: "smooth", block: "start" }));
   };
   const sendProgress = async (progressStep: 1 | 2, paidPath = false) => {
     const signature = `${progressStep}:${paidPath}:${JSON.stringify(submission)}`;
@@ -225,11 +231,6 @@ const SubmitToolPage = () => {
             <button type="button" className="tt-button-secondary sp-plan-cta" onClick={() => choosePlan("free")}>{t("Soumettre avec un badge →", "Submit with a badge →")}</button>
           </article>
         </div>
-        <div className="sp-guarantees" aria-label={t("Garanties de la publication prioritaire", "Priority publication guarantees")}>
-          <strong>{t("Ce qui est garanti", "What is guaranteed")}</strong>
-          <ul><li><Check size={15} />{t("Publication sous 5 jours ouvrés", "Publication within 5 business days")}</li><li><Check size={15} />{t("Fiche préparée par ToolTrim", "Listing prepared by ToolTrim")}</li><li><Check size={15} />{t("Vérification des faits avant publication", "Fact check before publication")}</li><li><Check size={15} />{t("Lien direct et aucun abonnement", "Direct link and no subscription")}</li></ul>
-        </div>
-        <div className="sp-editorial-rule"><Scale size={20} /><p><strong>{t("Une fiche crédible, un verdict indépendant.", "A credible listing, an independent verdict.")}</strong> {t("Le paiement couvre le service de publication. Le score, le classement et la conclusion éditoriale restent indépendants.", "Payment covers the publication service. Scores, rankings, and editorial conclusions remain independent.")} <Link to={`${prefix}/transparency`}>{t("Lire notre politique →", "Read our policy →")}</Link></p></div>
       </div></section>
 
       <section className="sp-delivery" aria-labelledby="submit-delivery-title">
@@ -239,6 +240,14 @@ const SubmitToolPage = () => {
           <li><span>02</span><h3>{t("Nous préparons la fiche", "We prepare the listing")}</h3><p>{t("Dans la formule à 29 $, un aller-retour avec le rédacteur te permet de vérifier les faits avant publication.", "The $29 option includes one round with the editor to check the facts before publication.")}</p></li>
           <li><span>03</span><h3>{t("Ton outil devient découvrable", "Your tool can be discovered")}</h3><p>{t("La fiche publiée rejoint le catalogue et donne aux lecteurs un accès à ton site.", "The published listing joins the catalogue and gives readers a link to your website.")}</p></li>
         </ol>
+      </section>
+
+      <section className="sp-assurance" aria-labelledby="submit-guarantees-title">
+        <div className="sp-guarantees">
+          <strong id="submit-guarantees-title">{t("Ce qui est garanti", "What is guaranteed")}</strong>
+          <ul><li><Check size={15} />{t("Publication sous 5 jours ouvrés", "Publication within 5 business days")}</li><li><Check size={15} />{t("Fiche préparée par ToolTrim", "Listing prepared by ToolTrim")}</li><li><Check size={15} />{t("Vérification des faits avant publication", "Fact check before publication")}</li><li><Check size={15} />{t("Lien direct et aucun abonnement", "Direct link and no subscription")}</li></ul>
+        </div>
+        <div className="sp-editorial-rule"><Scale size={20} /><p><strong>{t("Une fiche crédible, un verdict indépendant.", "A credible listing, an independent verdict.")}</strong> {t("Le paiement couvre le service de publication. Le score, le classement et la conclusion éditoriale restent indépendants.", "Payment covers the publication service. Scores, rankings, and editorial conclusions remain independent.")} <Link to={`${prefix}/transparency`}>{t("Lire notre politique →", "Read our policy →")}</Link></p></div>
       </section>
 
       {plan && <section className="sp-shell" id="submit-form">
@@ -305,11 +314,17 @@ const SubmitToolPage = () => {
       <section className="sp-faq-section" aria-labelledby="submit-faq-title">
         <div className="sp-section-intro"><span className="tt-page-hero-eyebrow">FAQ</span><h2 id="submit-faq-title">{t("Avant de te lancer.", "Before you get started.")}</h2></div>
         <div className="sp-faq-list">
+          <details><summary>{t("Que vais-je recevoir exactement ?", "What exactly will I receive?")}</summary><p>{t("Une fiche dédiée préparée par ToolTrim avec la présentation du produit, ses usages, ses fonctionnalités, ses tarifs, ses alternatives, notre verdict éditorial et un lien vers ton site officiel.", "A dedicated listing prepared by ToolTrim with your product overview, use cases, features, pricing, alternatives, our editorial verdict, and a link to your official website.")}</p></details>
           <details><summary>{t("Dois-je rédiger ma fiche moi-même ?", "Do I need to write my own listing?")}</summary><p>{t("Non. Tu nous transmets les informations sur ton produit et ToolTrim prépare la fiche. La publication prioritaire inclut un aller-retour pour vérifier les informations factuelles avant publication.", "No. You provide information about your product and ToolTrim prepares the listing. Priority publication includes one round to check factual information before publication.")}</p></details>
+          <details><summary>{t("Dois-je fournir les textes et les visuels ?", "Do I need to provide copy and visuals?")}</summary><p>{t("Non. L’URL de ton produit et quelques informations suffisent pour commencer. ToolTrim rédige la fiche et utilise les éléments officiels disponibles ; tu peux signaler une erreur factuelle avant publication.", "No. Your product URL and a few details are enough to get started. ToolTrim writes the listing and uses available official assets; you can flag a factual error before publication.")}</p></details>
           <details><summary>{t("Que garantit la publication prioritaire ?", "What does priority publication guarantee?")}</summary><p>{t("La mise en ligne sous cinq jours ouvrés, sans badge à installer. Le verdict et le classement restent indépendants.", "Publication within five business days, with no badge to install. The verdict and ranking remain independent.")}</p></details>
+          <details><summary>{t("Que se passe-t-il si le délai de cinq jours est dépassé ?", "What happens if the five-day deadline is missed?")}</summary><p>{t("Nous te contactons directement pour t’informer et finaliser la publication en priorité. Les conditions de remboursement applicables sont celles présentées par Creem au moment du paiement.", "We contact you directly with an update and prioritize completion of the listing. Any applicable refund terms are those shown by Creem at checkout.")}</p></details>
           <details><summary>{t("Le paiement peut-il améliorer le verdict ?", "Can payment improve the verdict?")}</summary><p>{t("Non. Le score, le verdict, les alternatives et le classement sont indépendants du paiement.", "No. The score, verdict, alternatives, and ranking are independent of payment.")}</p></details>
+          <details><summary>{t("Le lien vers mon site est-il dofollow et permanent ?", "Is the link to my website dofollow and permanent?")}</summary><p>{t("Le lien vers le site officiel est publié en dofollow. Il reste présent tant que la fiche est publiée et que l’URL demeure valide ; ToolTrim peut mettre à jour ou retirer une fiche devenue obsolète ou non conforme.", "The official website link is published as dofollow. It remains while the listing is published and the URL stays valid; ToolTrim may update or remove a listing that becomes outdated or non-compliant.")}</p></details>
           <details><summary>{t("Quelle différence avec la soumission gratuite ?", "What's different about the free submission?")}</summary><p>{t("La version gratuite demande un badge et rejoint la file éditoriale standard. La formule prioritaire ne demande aucun badge et garantit la publication sous cinq jours ouvrés.", "The free version requires a badge and joins the standard editorial queue. Priority requires no badge and guarantees publication within five business days.")}</p></details>
           <details><summary>{t("Puis-je échanger avec le rédacteur avant publication ?", "Can I speak with the editor before publication?")}</summary><p>{t("Oui. La formule à 29 $ inclut un aller-retour pour corriger ou préciser les informations factuelles. La conclusion éditoriale reste celle de ToolTrim.", "Yes. The $29 option includes one review round to correct or clarify factual information. The editorial conclusion remains ToolTrim's.")}</p></details>
+          <details><summary>{t("Puis-je mettre ma fiche à jour après sa publication ?", "Can I update my listing after publication?")}</summary><p>{t("Oui. Écris à contact@tooltrim.com avec les informations à actualiser. ToolTrim vérifie les changements factuels avant de mettre la fiche à jour.", "Yes. Email contact@tooltrim.com with the information that needs updating. ToolTrim verifies factual changes before updating the listing.")}</p></details>
+          <details><summary>{t("La publication comprend-elle le français et l’anglais ?", "Does publication include French and English?")}</summary><p>{t("Oui. La fiche rejoint les versions française et anglaise du catalogue afin d’être accessible aux deux audiences de ToolTrim.", "Yes. The listing joins the French and English versions of the catalogue so it can reach both ToolTrim audiences.")}</p></details>
         </div>
       </section>
       <section className="sp-closing" aria-labelledby="submit-closing-title">
