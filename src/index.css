@@ -78,13 +78,13 @@
 
     /* ── Page / surface ── */
     --background: 0 20% 99%;         /* #FDFCFC — soft near-white */
-    --foreground: 0 0% 13%;          /* #222222 — main text */
+    --foreground: 240 3% 12%;        /* #1D1D1F — main text */
 
     --card: 0 0% 100%;               /* #FFFFFF — pure white cards */
-    --card-foreground: 0 0% 13%;
+    --card-foreground: 240 3% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 13%;
+    --popover-foreground: 240 3% 12%;
 
     /* ── ToolTrim blue — sole accent, use sparingly ── */
     --primary: 224 76% 50%;          /* #1E4FCC — active, selected, links, rare CTAs */
@@ -92,10 +92,10 @@
 
     /* ── Secondary / muted surfaces ── */
     --secondary: 60 15% 94%;         /* #F1F1EC — secondary surface */
-    --secondary-foreground: 0 0% 13%;
+    --secondary-foreground: 240 3% 12%;
 
     --muted: 60 15% 94%;             /* #F1F1EC */
-    --muted-foreground: 60 3% 42%;   /* #6F6F68 — metadata */
+    --muted-foreground: 240 3% 12%;  /* high-contrast secondary copy */
 
     /* ── Accent tint (blue, very light) ── */
     --accent: 224 76% 96%;           /* near-white blue tint */
@@ -175,11 +175,11 @@
 
     /* ── Sidebar ── */
     --sidebar-background: 0 20% 99%;
-    --sidebar-foreground: 60 3% 42%;
+    --sidebar-foreground: 240 3% 12%;
     --sidebar-primary: 224 76% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 60 15% 94%;
-    --sidebar-accent-foreground: 0 0% 13%;
+    --sidebar-accent-foreground: 240 3% 12%;
     --sidebar-border: 60 7% 84%;
     --sidebar-ring: 224 76% 50%;
 
@@ -197,16 +197,16 @@
     --color-surface-soft:  #F5F5F7;
     --color-chip:          #E0DBD7;    /* deeper warm taupe — tags/badges, one notch past surface-soft */
 
-    --color-text:          #0F0F0F;
-    --color-text-strong:   #0F0F0F;
-    --color-muted:         #6F6F68;
-    --color-muted-light:   #9A9A92;
+    --color-text:          #1D1D1F;
+    --color-text-strong:   #1D1D1F;
+    --color-muted:         #1D1D1F;
+    --color-muted-light:   #1D1D1F;
 
     --color-border:        #E6E6E6;
     --color-border-soft:   #E7E7E0;
-    --color-border-strong: #0F0F0F;
+    --color-border-strong: #1D1D1F;
 
-    --color-hover:         #0F0F0F;
+    --color-hover:         #1D1D1F;
     --color-hover-text:    #FFFFFF;
     --color-hover-strong:  #000000;    /* deepest press state, one notch past --color-hover */
 
@@ -4888,17 +4888,17 @@
   color: var(--color-text);
   /* shadcn/tailwind tokens */
   --background: 0 20% 99%;
-  --foreground: 0 0% 13%;
+  --foreground: 240 3% 12%;
   --card: 0 0% 100%;
-  --card-foreground: 0 0% 13%;
+  --card-foreground: 240 3% 12%;
   --popover: 0 0% 100%;
-  --popover-foreground: 0 0% 13%;
+  --popover-foreground: 240 3% 12%;
   --muted: 60 15% 94%;
-  --muted-foreground: 60 3% 42%;
+  --muted-foreground: 240 3% 12%;
   --border: 60 7% 84%;
   --input: 60 7% 84%;
   --secondary: 60 15% 94%;
-  --secondary-foreground: 0 0% 13%;
+  --secondary-foreground: 240 3% 12%;
   --accent: 224 76% 96%;
   --accent-foreground: 224 76% 44%;
   /* semantic hex tokens */
@@ -4906,14 +4906,14 @@
   --color-surface:       #FFFFFF;
   --color-surface-soft:  #F5F5F7;
   --color-chip:          #E0DBD7;
-  --color-text:          #0F0F0F;
-  --color-text-strong:   #0F0F0F;
-  --color-muted:         #6F6F68;
-  --color-muted-light:   #9A9A92;
+  --color-text:          #1D1D1F;
+  --color-text-strong:   #1D1D1F;
+  --color-muted:         #1D1D1F;
+  --color-muted-light:   #1D1D1F;
   --color-border:        #E6E6E6;
   --color-border-soft:   #E7E7E0;
-  --color-border-strong: #0F0F0F;
-  --color-hover:         #0F0F0F;
+  --color-border-strong: #1D1D1F;
+  --color-hover:         #1D1D1F;
   --color-hover-text:    #FFFFFF;
 }
 
@@ -22819,7 +22819,7 @@ section[id] {
   --color-muted: #1D1D1F;
   --color-muted-light: #1D1D1F;
 }
-.stp-page .sp-title-muted { color: #86868B; }
+.tt-title-muted { color: #86868B; }
 .stp-page .sp-hero { padding-bottom: 0; }
 .sp-pitch {
   display: grid;

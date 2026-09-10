@@ -50,20 +50,21 @@ Aucun `<img>` direct, aucun composant local, aucun carré vide sans fallback.
 
 | Token | Valeur | Usage |
 |---|---|---|
-| `#0F0F0F` | Noir principal | Texte, titres, CTA primaire, borders actives |
+| `#1D1D1F` | Noir principal | Tous les textes de lecture en mode clair, titres, CTA primaire, bordures actives |
 | `#F6F5F4` | Crème clair | Backgrounds hero, sidebar, sections |
 | `#EDEBE9` | Crème medium | Mega-panel, bandes secondaires |
 | `#FFFFFF` | Blanc | Cards, inputs |
 | `#E6E6E6` | Bordure standard | Séparateurs, borders par défaut |
 | `#E7E7E0` | Bordure douce | Séparateurs internes (sidebar) |
 | `#E0DBD7` | Chip/tag | Badges, pills de catégorie |
-| `#6F6F68` | Gris métadonnée | Labels, contexte, texte secondaire |
-| `#9A9A92` | Gris doux | Placeholders, texte quaternaire |
+| `#86868B` | Gris d’accroche | Nuance sémantique volontaire dans un grand titre via `.tt-title-muted` |
 | `hsl(var(--primary))` | Bleu ToolTrim | **Usage très limité** — liens actifs, focus ring, rare accent |
 
 > Historique : ces valeurs remplacent l'ancienne palette (#222222 / #F8F8F4 / #EDEDE8 / #DADAD4), réchauffée en s'inspirant de details.so. Les centaines de valeurs hex codées en dur plus bas dans ce document (composants individuels) reflètent encore l'ancienne palette — non ré-alignées dans cette passe, à mettre à jour au fil de l'eau si un composant est retouché.
 
 **Règle bleue :** Le bleu ToolTrim ne doit pas apparaître sur des boutons CTA principaux de pages outils. Il est réservé aux états actifs (tab active, lien actif), au focus ring, et aux labels de score dans la StickyDecisionCard.
+
+**Règle de contraste :** Les textes secondaires restent en `#1D1D1F` en mode clair. Le gris `#86868B` ne remplace pas les descriptions ou métadonnées ; il souligne uniquement la seconde idée d’une accroche lorsque ce contraste sert le message.
 
 ---
 

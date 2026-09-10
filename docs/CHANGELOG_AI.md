@@ -4333,3 +4333,9 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Réécriture et découpage bicolore des titres français et anglais pour mieux distinguer promesse, cible, prise en charge et urgence.
 - Mise en bleu ToolTrim des liens secondaires utiles, sans concurrencer les appels à l’action principaux.
 - Harmonisation des boutons de la page avec la forme pilule du système de design ToolTrim.
+
+# 2026-09-10 — Palette de lecture globale
+
+- Adoption de `#1D1D1F` comme couleur de texte à fort contraste sur toutes les surfaces claires, y compris les anciens rôles muted et les pages de comparaison forcées en mode clair.
+- Conservation du bleu ToolTrim pour les liens et états interactifs déjà prévus par le système, sans colorer les CTA principaux ni la navigation entière.
+- Promotion de `#86868B` en nuance sémantique réutilisable pour la seconde idée de certaines grandes accroches via `.tt-title-muted`.
