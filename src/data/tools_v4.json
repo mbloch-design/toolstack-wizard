@@ -170192,7 +170192,7 @@
         "Push campaigns and CSV export require Pro.",
         "Mini-games and unlimited campaigns require Business."
       ],
-      "verified_on": "2026-09-02",
+      "verified_on": "2026-09-10",
       "source_domain": "loyzia.com",
       "usage_sensitive": false,
       "compare_plan_kind": "location",
@@ -170205,7 +170205,7 @@
     },
     "websiteUrl": "https://loyzia.com/",
     "affiliateLink": "",
-    "logo": "",
+    "logo": "https://logo.clearbit.com/loyzia.com",
     "verdict": {
       "keepIf": [
         "Vous exploitez un commerce physique avec des visites récurrentes.",
@@ -170237,14 +170237,14 @@
       "Fidélité, CRM et avis Google réunis.",
       "Configuration guidée des cartes et QR codes.",
       "Application de caisse sur mobile.",
-      "Données annoncées comme hébergées dans l'Union européenne."
+      "Données annoncées comme hébergées à 100 % en France."
     ],
     "prosEn": [
       "No customer app to install.",
       "Loyalty, CRM and Google reviews in one product.",
       "Guided card and QR-code setup.",
       "Mobile checkout application.",
-      "Data advertised as hosted in the European Union."
+      "Data advertised as hosted 100% in France."
     ],
     "cons": [
       "Pas de plan gratuit permanent.",
@@ -170330,7 +170330,30 @@
     },
     "ogImageUrl": "https://loyzia.com/_next/image?url=%2Fdemo-coffee.jpg&w=640&q=75",
     "galleryImages": [],
-    "force_silence": false
+    "force_silence": false,
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 3,
+      "utilisation": 3,
+      "puissance": 4,
+      "reversibilite": 3,
+      "evidence": {
+        "valeurAjoutee": "Remplace la fidélité papier, un CRM et la collecte d'avis Google par un seul abonnement dès 29 €/mois, sans application à installer côté client grâce aux cartes Apple/Google Wallet (source : loyzia.com, vérifié le 2026-09-10).",
+        "simplicite": "Le plan Starter ne comprend qu'un poster QR basique et une liste clients simple ; l'ergonomie réelle en caisse au quotidien n'est confirmée par aucun avis public indépendant à ce jour, seulement par les captures et le discours du site (source : loyzia.com, vérifié le 2026-09-10).",
+        "utilisation": "L'usage quotidien reste concentré sur le scan client, la gestion du programme de fidélité et l'envoi de campagnes ; aucune fonction ne dépasse le périmètre fidélité + CRM + avis (source : loyzia.com/#pricing, vérifié le 2026-09-10).",
+        "puissance": "CRM avec scoring RFM, géo-campagnes, notifications push, Review Studio complet et mini-jeux pour les avis Google sont réunis dans un seul outil, une combinaison inhabituelle à ce prix pour un commerce de proximité (source : loyzia.com/#pricing, vérifié le 2026-09-10).",
+        "reversibilite": "L'export CSV en libre-service est réservé aux plans Pro et Business, mais la politique de confidentialité garantit un export structuré CSV/JSON sur demande (droit à la portabilité, article 20 RGPD) sous 1 mois, quel que soit le plan souscrit (source : loyzia.com/privacy, vérifié le 2026-09-10)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Replaces paper loyalty, a CRM and Google review collection with one subscription from €29/month, with no customer-side app to install thanks to Apple/Google Wallet cards (source: loyzia.com, verified 2026-09-10).",
+        "simplicite": "The Starter plan only ships a basic QR poster and a simple client list; real day-to-day checkout ergonomics aren't confirmed by any independent public review yet, only by the site's own screenshots and copy (source: loyzia.com, verified 2026-09-10).",
+        "utilisation": "Daily usage stays concentrated on customer scanning, loyalty-program management and sending campaigns; no feature goes beyond the loyalty + CRM + reviews scope (source: loyzia.com/#pricing, verified 2026-09-10).",
+        "puissance": "RFM-based CRM scoring, geo-campaigns, push notifications, a full Review Studio and Google-review mini-games are combined in one tool, an unusual combination at this price for a local business (source: loyzia.com/#pricing, verified 2026-09-10).",
+        "reversibilite": "Self-service CSV export is limited to the Pro and Business plans, but the privacy policy guarantees a structured CSV/JSON export on request (GDPR Article 20 portability right) within 1 month, regardless of the plan subscribed (source: loyzia.com/privacy, verified 2026-09-10)."
+      },
+      "lastActivityVerifiedOn": "2026-09-10",
+      "notedOn": "2026-09-10"
+    }
   },
   {
     "id": "happia",

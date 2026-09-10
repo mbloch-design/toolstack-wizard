@@ -37,8 +37,6 @@ const BASE = "noopener noreferrer";
 const DOMAINES_EDITORIAUX_DOFOLLOW = new Set([
   "franklymail.com",
   "www.franklymail.com",
-  "loyzia.com",
-  "www.loyzia.com",
   "snappack.io",
   "www.snappack.io",
   "happia.fr",
