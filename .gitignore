@@ -8,6 +8,10 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+# Dépôt d'une installation corrompue, mise de côté puis jamais nettoyée. Le motif
+# `node_modules` ci-dessus ne matche qu'un segment de chemin exact, donc pas ce
+# dossier. 229 Mo non suivis qui rendaient chaque `git add -A` dangereux.
+node_modules.corrupt/
 dist
 dist-ssr
 .build-trash
