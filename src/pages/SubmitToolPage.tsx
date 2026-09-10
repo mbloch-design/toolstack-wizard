@@ -183,16 +183,16 @@ const SubmitToolPage = () => {
       <div className="sp-pitch">
         <div className="sp-pitch-copy">
           <span className="tt-page-hero-eyebrow">{t("Pour les créateurs d’outils SaaS", "For SaaS builders")}</span>
-          <h1>{t("Ton outil mérite de faire partie du choix.", "Make your tool part of their next choice.")}</h1>
-          <p className="sp-pitch-lead">{t("Présente ton produit aux freelances et petites équipes qui comparent leurs outils. Nous préparons ta fiche pour qu’ils comprennent à qui il s’adresse, ce qu’il apporte et pourquoi le choisir.", "Introduce your product to freelancers and small teams comparing tools. We prepare your listing so they can understand who it serves, what it offers, and why to choose it.")}</p>
+          <h1>{t("Fais de ton outil une option crédible pour les freelances et petites équipes.", "Make your tool a credible choice for freelancers and small teams.")}</h1>
+          <p className="sp-pitch-lead">{t("ToolTrim prépare et publie une fiche claire de ton produit : usages, tarifs, alternatives, verdict éditorial et lien direct vers ton site.", "ToolTrim prepares and publishes a clear product listing: use cases, pricing, alternatives, an editorial verdict, and a direct link to your website.")}</p>
           <div className="sp-hero-actions">
-            <button type="button" className="tt-button-primary" onClick={() => choosePlan("paid", "hero")}>{t(`Référencer mon outil · ${price}`, `List my tool · ${price}`)}<ArrowRight size={16} /></button>
+            <button type="button" className="tt-button-primary" onClick={() => choosePlan("paid", "hero")}>{t(`Publier ma fiche · ${price}`, `Publish my listing · ${price}`)}<ArrowRight size={16} /></button>
             <a className="sp-text-link" href="#submit-plans-title">{t("Ou choisir la formule gratuite avec badge", "Or choose the free option with a badge")}<ArrowRight size={15} /></a>
           </div>
-          <p className="sp-pitch-reassurance"><Check size={15} />{t("Sans badge · paiement unique · publication sous 5 jours ouvrés", "No badge · one-time payment · published within 5 business days")}</p>
+          <p className="sp-pitch-reassurance"><Clock size={15} />{t("Offre de rentrée : 29 $ jusqu’au 30 septembre · sans badge ni abonnement", "Back-to-work offer: $29 until September 30 · no badge or subscription")}</p>
         </div>
         <aside className="sp-listing-preview" aria-label={t("Exemple de fiche publiée : Loyzia", "Published listing example: Loyzia")}>
-          <div className="sp-preview-caption"><FileText size={16} />{t("DÉJÀ DANS LE CATALOGUE", "ALREADY IN THE CATALOGUE")}</div>
+          <div className="sp-preview-caption"><FileText size={16} />{t("CE QUE TU REÇOIS", "WHAT YOU GET")}</div>
           <div className="sp-preview-identity"><ToolLogo tool={{ name: "Loyzia", slug: "loyzia", websiteUrl: "https://loyzia.com/" }} size={40} /><div><strong>Loyzia</strong><span>{t("Fidélisation et CRM pour les commerces", "Loyalty and CRM for local businesses")}</span></div></div>
           <p className="sp-example-description">{t("Cartes de fidélité dans le Wallet, relation client et avis Google : une fiche pour comprendre où Loyzia trouve sa place.", "Wallet loyalty cards, customer relationships, and Google reviews: a listing that explains where Loyzia fits.")}</p>
           <ul className="sp-example-topics"><li>{t("Usages et fonctionnalités", "Use cases and features")}</li><li>{t("Tarifs et alternatives", "Pricing and alternatives")}</li><li>{t("Avis éditorial ToolTrim", "ToolTrim’s editorial assessment")}</li></ul>
@@ -200,7 +200,7 @@ const SubmitToolPage = () => {
         </aside>
       </div>
       <div className="sp-proof-line">
-        <div><strong>{t("1 100+", "1,100+")}</strong><span>{t("outils au catalogue", "tools in the catalogue")}</span></div>
+        <div><strong>{t("Sous 5 jours", "Within 5 days")}</strong><span>{t("délai de publication", "publication turnaround")}</span></div>
         <div><strong>DR 28</strong><span>{t("Domain Rating · septembre 2026", "Domain Rating · September 2026")}</span></div>
         <div><strong>{t("Lien dofollow", "Dofollow link")}</strong><span>{t("vers le site officiel", "to the official website")}</span></div>
       </div>
@@ -210,6 +210,13 @@ const SubmitToolPage = () => {
       <section className="sp-overview" aria-labelledby="submit-plans-title"><div className="sp-overview-inner">
         <div className="sp-overview-heading"><span className="tt-page-hero-eyebrow">{t("Deux façons de nous rejoindre", "Two ways to join")}</span><h2 id="submit-plans-title">{t("Choisis comment rejoindre ToolTrim.", "Choose how to join ToolTrim.")}</h2><p>{t("Une fiche dédiée à ton produit, avec ses usages, ses tarifs et un lien vers ton site.", "A dedicated listing for your product, with its use cases, pricing, and a link to your website.")}</p></div>
         <div className="sp-plan-grid">
+          <article className="sp-plan-card sp-plan-card--highlight">
+            <span className="sp-plan-tag"><Clock size={14} />{t("OFFRE DE RENTRÉE · JUSQU’AU 30 SEPTEMBRE", "BACK-TO-WORK OFFER · UNTIL SEPTEMBER 30")}</span>
+            <div className="sp-plan-card-head"><div><span className="sp-plan-price">{price}</span><span className="sp-plan-period">{t("une seule fois", "just once")}</span></div><span className="sp-plan-name">{t("Fiche publiée sous 5 jours", "Listing published within 5 days")}</span></div>
+            <p className="sp-plan-desc">{t("Pour être publié sous cinq jours ouvrés, sans installer de badge sur ton site.", "Get published within five business days, with no badge to install on your website.")}</p>
+            <ul className="sp-plan-args"><li><Check size={16} />{t("Aucun badge à installer", "No badge to install")}</li><li><User size={16} />{t("Fiche préparée par ToolTrim", "Listing prepared by ToolTrim")}</li><li><Check size={16} />{t("Un aller-retour pour vérifier les faits", "One round to check the facts")}</li><li><Check size={16} />{t("Publication sous cinq jours ouvrés", "Publication within five business days")}</li></ul>
+            <button type="button" className="tt-button-primary sp-plan-cta" onClick={() => choosePlan("paid")}>{t(`Lancer la création de ma fiche · ${price} →`, `Start creating my listing · ${price} →`)}</button>
+          </article>
           <article className="sp-plan-card">
             <span className="sp-plan-tag sp-plan-tag--quiet">{t("AVEC BADGE", "WITH A BADGE")}</span>
             <div className="sp-plan-card-head"><div><span className="sp-plan-price">{t("0 $", "$0")}</span><span className="sp-plan-period">{t("sans paiement", "no payment")}</span></div><span className="sp-plan-name">{t("Soumission gratuite", "Free submission")}</span></div>
@@ -217,13 +224,10 @@ const SubmitToolPage = () => {
             <ul className="sp-plan-args"><li><Check size={16} />{t("Fiche préparée par ToolTrim", "Listing prepared by ToolTrim")}</li><li><Check size={16} />{t("Badge ToolTrim requis", "ToolTrim badge required")}</li><li><Check size={16} />{t("Revue dans la file standard", "Review in the standard queue")}</li><li><Check size={16} />{t("Publication si les critères sont remplis", "Publication if editorial criteria are met")}</li></ul>
             <button type="button" className="tt-button-secondary sp-plan-cta" onClick={() => choosePlan("free")}>{t("Soumettre avec un badge →", "Submit with a badge →")}</button>
           </article>
-          <article className="sp-plan-card sp-plan-card--highlight">
-            <span className="sp-plan-tag"><Clock size={14} />{t("SOUS 5 JOURS OUVRÉS", "WITHIN 5 BUSINESS DAYS")}</span>
-            <div className="sp-plan-card-head"><div><span className="sp-plan-price">{price}</span><span className="sp-plan-period">{t("une seule fois", "just once")}</span></div><span className="sp-plan-name">{t("Publication prioritaire", "Priority publication")}</span></div>
-            <p className="sp-plan-desc">{t("Pour être publié sous cinq jours ouvrés, sans installer de badge sur ton site.", "Get published within five business days, with no badge to install on your website.")}</p>
-            <ul className="sp-plan-args"><li><Check size={16} />{t("Aucun badge à installer", "No badge to install")}</li><li><User size={16} />{t("Fiche préparée par ToolTrim", "Listing prepared by ToolTrim")}</li><li><Check size={16} />{t("Un aller-retour pour vérifier les faits", "One round to check the facts")}</li><li><Check size={16} />{t("Publication sous cinq jours ouvrés", "Publication within five business days")}</li></ul>
-            <button type="button" className="tt-button-primary sp-plan-cta" onClick={() => choosePlan("paid")}>{t(`Référencer mon outil · ${price} →`, `List my tool · ${price} →`)}</button>
-          </article>
+        </div>
+        <div className="sp-guarantees" aria-label={t("Garanties de la publication prioritaire", "Priority publication guarantees")}>
+          <strong>{t("Ce qui est garanti", "What is guaranteed")}</strong>
+          <ul><li><Check size={15} />{t("Publication sous 5 jours ouvrés", "Publication within 5 business days")}</li><li><Check size={15} />{t("Fiche préparée par ToolTrim", "Listing prepared by ToolTrim")}</li><li><Check size={15} />{t("Vérification des faits avant publication", "Fact check before publication")}</li><li><Check size={15} />{t("Lien direct et aucun abonnement", "Direct link and no subscription")}</li></ul>
         </div>
         <div className="sp-editorial-rule"><Scale size={20} /><p><strong>{t("Une fiche crédible, un verdict indépendant.", "A credible listing, an independent verdict.")}</strong> {t("Le paiement couvre le service de publication. Le score, le classement et la conclusion éditoriale restent indépendants.", "Payment covers the publication service. Scores, rankings, and editorial conclusions remain independent.")} <Link to={`${prefix}/transparency`}>{t("Lire notre politique →", "Read our policy →")}</Link></p></div>
       </div></section>
@@ -238,7 +242,7 @@ const SubmitToolPage = () => {
       </section>
 
       {plan && <section className="sp-shell" id="submit-form">
-        <div className="sp-selected-plan"><span>{t("Ta formule", "Your option")} <strong>{plan === "paid" ? t(`Publication prioritaire · ${price}`, `Priority publication · ${price}`) : t("Avec badge · gratuit", "With a badge · free")}</strong></span><ShieldCheck size={18} /></div>
+        <div className="sp-selected-plan"><span>{t("Ta formule", "Your option")} <strong>{plan === "paid" ? t(`Fiche publiée sous 5 jours · ${price}`, `Listing published within 5 days · ${price}`) : t("Avec badge · gratuit", "With a badge · free")}</strong></span><ShieldCheck size={18} /></div>
         <ol className="sp-steps" aria-label={t("Étapes de la soumission", "Submission steps")}>
           {[1, 2, 3].map((number) => (
             <li key={number} className="sp-step-item">
@@ -263,7 +267,8 @@ const SubmitToolPage = () => {
             <div className="sp-section-heading"><span>02</span><div><h2>{t("Confirmer la publication prioritaire", "Confirm priority publication")}</h2><p>{t("Ton outil passe directement à la rédaction, sans installation sur ton site.", "Your tool goes directly to the editorial team, with nothing to install on your site.")}</p></div></div>
             <div className="sp-payment-summary"><div><span>{t("PUBLICATION PRIORITAIRE", "PRIORITY PUBLICATION")}</span><strong>{submission.toolName}</strong><small>{submission.toolUrl}</small></div><strong>{price}</strong></div>
             <div className="sp-payment-promise"><ShieldCheck size={20} /><p>{t("Après la rédaction de la fiche, tu disposes d'un aller-retour avec le rédacteur avant sa publication sous cinq jours ouvrés.", "Once the listing is drafted, you get one review round with the editor before publication within five business days.")}</p></div>
-            <a href={PAYMENT_URL} data-creem-checkout className="tt-button-primary sp-payment-cta" onClick={beginCheckout}><CreditCard size={17} />{t(`Payer ${price}`, `Pay ${price}`)}</a>
+            <p className="sp-payment-urgency"><Clock size={15} />{t("Tarif de rentrée disponible jusqu’au 30 septembre 2026.", "Back-to-work price available until September 30, 2026.")}</p>
+            <a href={PAYMENT_URL} data-creem-checkout className="tt-button-primary sp-payment-cta" onClick={beginCheckout}><CreditCard size={17} />{t(`Payer ${price} et lancer ma fiche`, `Pay ${price} and start my listing`)}</a>
             <p className="sp-payment-meta">{t("Paiement unique sécurisé par Creem. Aucun abonnement.", "Secure one-time payment via Creem. No subscription.")}</p>
             <div className="sp-actions"><button type="button" className="sp-button-secondary" onClick={() => setStep(1)}>{t("← Modifier les informations", "← Edit information")}</button></div>
           </section>}
@@ -308,8 +313,8 @@ const SubmitToolPage = () => {
         </div>
       </section>
       <section className="sp-closing" aria-labelledby="submit-closing-title">
-        <div><h2 id="submit-closing-title">{t("Prêt à faire découvrir ton outil ?", "Ready to get your tool discovered?")}</h2><p>{t("Référencement prioritaire à 29 $, sans badge ni abonnement.", "Priority listing for $29, with no badge or subscription.")}</p></div>
-        <button type="button" className="tt-button-primary" onClick={() => choosePlan("paid", "closing")}>{t(`Référencer mon outil · ${price}`, `List my tool · ${price}`)}<ArrowRight size={16} /></button>
+        <div><h2 id="submit-closing-title">{t("Ta fiche peut être en ligne cette semaine.", "Your listing can be live this week.")}</h2><p>{t("Offre de rentrée à 29 $ jusqu’au 30 septembre, sans badge ni abonnement.", "Back-to-work offer at $29 until September 30, with no badge or subscription.")}</p></div>
+        <button type="button" className="tt-button-primary" onClick={() => choosePlan("paid", "closing")}>{t(`Publier ma fiche · ${price}`, `Publish my listing · ${price}`)}<ArrowRight size={16} /></button>
       </section>
       <p className="sp-contact-line">{t("Une question ou un projet de partenariat ?", "A question or partnership in mind?")} <Link className="sp-text-link" to={`${prefix}/contact?subject=partnership`}>{t("Parlons-en", "Let’s talk")}<ArrowRight size={15} /></Link></p>
     </div>
