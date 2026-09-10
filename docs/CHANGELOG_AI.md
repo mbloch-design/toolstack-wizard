@@ -4326,3 +4326,10 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Ajout du nom visible aux liens couvrant les cartes outils éditoriales et compactes, tout en conservant leur `aria-label`.
 - Le rendu reste inchangé grâce au texte réservé aux technologies d’assistance, mais les crawlers disposent désormais d’un véritable texte d’ancrage HTML.
 - Validation sur les 11 418 pages générées : aucun lien vers une fiche `/fr/tool/*` ou `/en/tool/*` ne reste sans texte d’ancrage.
+
+# 2026-09-10 — Finition visuelle de la page de soumission
+
+- Renforcement du contraste des textes en mode clair avec `#1D1D1F`, tout en réservant `#86868B` aux nuances sémantiques des grandes accroches.
+- Réécriture et découpage bicolore des titres français et anglais pour mieux distinguer promesse, cible, prise en charge et urgence.
+- Mise en bleu ToolTrim des liens secondaires utiles, sans concurrencer les appels à l’action principaux.
+- Harmonisation des boutons de la page avec la forme pilule du système de design ToolTrim.

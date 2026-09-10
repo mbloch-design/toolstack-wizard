@@ -189,7 +189,7 @@ const SubmitToolPage = () => {
       <div className="sp-pitch">
         <div className="sp-pitch-copy">
           <span className="tt-page-hero-eyebrow">{t("Pour les créateurs d’outils SaaS", "For SaaS builders")}</span>
-          <h1>{t("Fais de ton outil une option crédible pour les freelances et petites équipes.", "Make your tool a credible choice for freelancers and small teams.")}</h1>
+          <h1>{lang === "fr" ? <>Fais de ton outil un choix crédible. <span className="sp-title-muted">Auprès des freelances et petites équipes.</span></> : <>Make your tool a credible choice. <span className="sp-title-muted">For freelancers and small teams.</span></>}</h1>
           <p className="sp-pitch-lead">{t("ToolTrim prépare et publie une fiche claire de ton produit : usages, tarifs, alternatives, verdict éditorial et lien direct vers ton site.", "ToolTrim prepares and publishes a clear product listing: use cases, pricing, alternatives, an editorial verdict, and a direct link to your website.")}</p>
           <div className="sp-hero-actions">
             <button type="button" className="tt-button-primary" onClick={() => choosePlan("paid", "hero")}>{t(`Publier ma fiche · ${price}`, `Publish my listing · ${price}`)}<ArrowRight size={16} /></button>
@@ -214,7 +214,7 @@ const SubmitToolPage = () => {
 
     <div className="sp-page-body">
       <section className="sp-overview" aria-labelledby="submit-plans-title"><div className="sp-overview-inner">
-        <div className="sp-overview-heading"><span className="tt-page-hero-eyebrow">{t("Deux façons de nous rejoindre", "Two ways to join")}</span><h2 id="submit-plans-title">{t("Choisis comment rejoindre ToolTrim.", "Choose how to join ToolTrim.")}</h2><p>{t("Une fiche dédiée à ton produit, avec ses usages, ses tarifs et un lien vers ton site.", "A dedicated listing for your product, with its use cases, pricing, and a link to your website.")}</p></div>
+        <div className="sp-overview-heading"><span className="tt-page-hero-eyebrow">{t("Deux façons de nous rejoindre", "Two ways to join")}</span><h2 id="submit-plans-title">{lang === "fr" ? <>Choisis ton niveau de priorité. <span className="sp-title-muted">Nous préparons la fiche.</span></> : <>Choose your priority. <span className="sp-title-muted">We prepare the listing.</span></>}</h2><p>{t("Une fiche dédiée à ton produit, avec ses usages, ses tarifs et un lien vers ton site.", "A dedicated listing for your product, with its use cases, pricing, and a link to your website.")}</p></div>
         <div className="sp-plan-grid">
           <article className="sp-plan-card sp-plan-card--highlight">
             <span className="sp-plan-tag"><Clock size={14} />{t("OFFRE DE RENTRÉE · JUSQU’AU 30 SEPTEMBRE", "BACK-TO-WORK OFFER · UNTIL SEPTEMBER 30")}</span>
@@ -234,7 +234,7 @@ const SubmitToolPage = () => {
       </div></section>
 
       <section className="sp-delivery" aria-labelledby="submit-delivery-title">
-        <div className="sp-section-intro"><h2 id="submit-delivery-title">{t("Tu nous présentes ton outil. Nous prenons le relais.", "Tell us about your tool. We take it from there.")}</h2></div>
+        <div className="sp-section-intro"><h2 id="submit-delivery-title">{lang === "fr" ? <>Tu nous présentes ton outil. <span className="sp-title-muted">Nous prenons le relais.</span></> : <>Tell us about your tool. <span className="sp-title-muted">We take it from there.</span></>}</h2></div>
         <ol className="sp-delivery-grid">
           <li><span>01</span><h3>{t("Envoie les informations", "Share the details")}</h3><p>{t("L’URL, le nom de ton outil et ton email pour commencer, puis quelques précisions sur ton produit.", "Start with your tool’s URL, name, and your email, then add a little context about your product.")}</p></li>
           <li><span>02</span><h3>{t("Nous préparons la fiche", "We prepare the listing")}</h3><p>{t("Dans la formule à 29 $, un aller-retour avec le rédacteur te permet de vérifier les faits avant publication.", "The $29 option includes one round with the editor to check the facts before publication.")}</p></li>
@@ -312,7 +312,7 @@ const SubmitToolPage = () => {
       </section>}
 
       <section className="sp-faq-section" aria-labelledby="submit-faq-title">
-        <div className="sp-section-intro"><span className="tt-page-hero-eyebrow">FAQ</span><h2 id="submit-faq-title">{t("Avant de te lancer.", "Before you get started.")}</h2></div>
+        <div className="sp-section-intro"><span className="tt-page-hero-eyebrow">FAQ</span><h2 id="submit-faq-title">{lang === "fr" ? <>Tout savoir. <span className="sp-title-muted">Avant de publier ton outil.</span></> : <>Everything you need to know. <span className="sp-title-muted">Before publishing your tool.</span></>}</h2></div>
         <div className="sp-faq-list">
           <details><summary>{t("Que vais-je recevoir exactement ?", "What exactly will I receive?")}</summary><p>{t("Une fiche dédiée préparée par ToolTrim avec la présentation du produit, ses usages, ses fonctionnalités, ses tarifs, ses alternatives, notre verdict éditorial et un lien vers ton site officiel.", "A dedicated listing prepared by ToolTrim with your product overview, use cases, features, pricing, alternatives, our editorial verdict, and a link to your official website.")}</p></details>
           <details><summary>{t("Dois-je rédiger ma fiche moi-même ?", "Do I need to write my own listing?")}</summary><p>{t("Non. Tu nous transmets les informations sur ton produit et ToolTrim prépare la fiche. La publication prioritaire inclut un aller-retour pour vérifier les informations factuelles avant publication.", "No. You provide information about your product and ToolTrim prepares the listing. Priority publication includes one round to check factual information before publication.")}</p></details>
@@ -328,7 +328,7 @@ const SubmitToolPage = () => {
         </div>
       </section>
       <section className="sp-closing" aria-labelledby="submit-closing-title">
-        <div><h2 id="submit-closing-title">{t("Ta fiche peut être en ligne cette semaine.", "Your listing can be live this week.")}</h2><p>{t("Offre de rentrée à 29 $ jusqu’au 30 septembre, sans badge ni abonnement.", "Back-to-work offer at $29 until September 30, with no badge or subscription.")}</p></div>
+        <div><h2 id="submit-closing-title">{lang === "fr" ? <>Ta fiche peut être en ligne. <span className="sp-title-muted">Dès cette semaine.</span></> : <>Your listing can be live. <span className="sp-title-muted">As soon as this week.</span></>}</h2><p>{t("Offre de rentrée à 29 $ jusqu’au 30 septembre, sans badge ni abonnement.", "Back-to-work offer at $29 until September 30, with no badge or subscription.")}</p></div>
         <button type="button" className="tt-button-primary" onClick={() => choosePlan("paid", "closing")}>{t(`Publier ma fiche · ${price}`, `Publish my listing · ${price}`)}<ArrowRight size={16} /></button>
       </section>
       <p className="sp-contact-line">{t("Une question ou un projet de partenariat ?", "A question or partnership in mind?")} <Link className="sp-text-link" to={`${prefix}/contact?subject=partnership`}>{t("Parlons-en", "Let’s talk")}<ArrowRight size={15} /></Link></p>

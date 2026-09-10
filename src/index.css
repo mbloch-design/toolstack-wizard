@@ -22814,7 +22814,12 @@ section[id] {
 :root:not(.dark) .stp-page {
   --color-bg: #FFFFFF;
   --color-surface-soft: #F5F5F7;
+  --color-text: #1D1D1F;
+  --color-text-strong: #1D1D1F;
+  --color-muted: #1D1D1F;
+  --color-muted-light: #1D1D1F;
 }
+.stp-page .sp-title-muted { color: #86868B; }
 .stp-page .sp-hero { padding-bottom: 0; }
 .sp-pitch {
   display: grid;
@@ -22829,8 +22834,10 @@ section[id] {
 .sp-pitch-lead { margin: var(--space-lg) 0 0; font: 400 var(--tt-size-section-intro)/1.55 var(--font-ui); color: var(--color-muted); text-wrap: pretty; }
 .sp-pitch .sp-hero-actions { align-items: flex-start; flex-direction: column; gap: var(--space-md); margin-top: var(--space-lg); }
 .sp-pitch .tt-button-primary, .sp-closing .tt-button-primary { gap: var(--space-sm); min-height: 48px; }
+.stp-page :is(.tt-button-primary, .tt-button-secondary, .sp-button-secondary) { border-radius: var(--radius-pill); }
 .sp-text-link { display: inline-flex; align-items: center; gap: var(--space-xs); font: 600 var(--tt-size-card-body)/1.5 var(--font-ui); color: var(--color-text); text-decoration: none; }
 .sp-text-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+.stp-page :is(.sp-text-link, .sp-example-link, .sp-editorial-rule a) { color: hsl(var(--primary)); }
 .sp-pitch-reassurance { display: flex; align-items: flex-start; gap: var(--space-xs); margin: var(--space-md) 0 0; font: 400 12px/1.6 var(--font-ui); color: var(--color-muted); }
 .sp-pitch-reassurance svg { flex-shrink: 0; margin-top: 2px; }
 .sp-listing-preview { padding: var(--space-xl); background: var(--color-surface-soft); border-radius: var(--tt-surface-radius-panel); }
