@@ -24923,8 +24923,8 @@ section[id] {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: 6px;
-  padding: 8px 0;
+  gap: 2px;
+  padding: 6px 0;
 }
 
 .asv2-nav-item {
@@ -24932,11 +24932,11 @@ section[id] {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   width: 100%;
-  min-height: 48px;
-  padding: 3px 5px;
-  border-radius: 12px;
+  min-height: 36px;
+  padding: 2px 5px;
+  border-radius: var(--radius-md);
   color: color-mix(in srgb, var(--color-text) 78%, var(--color-muted));
   text-decoration: none;
   transition: background 140ms ease-out, color 140ms ease-out, transform 140ms ease-out;
@@ -24946,9 +24946,9 @@ section[id] {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 42px;
-  flex: 0 0 44px;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
   border-radius: var(--radius-md);
   color: var(--color-muted);
   transition: background 120ms ease-out, color 120ms ease-out;
@@ -25038,21 +25038,21 @@ section[id] {
 
 .asv2-sidebar-utility {
   margin-top: auto;
-  padding: 18px 0 4px;
+  padding: 10px 0 2px;
   border-top: 0;
 }
 .asv2-utility-actions {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
 }
 .asv2-utility-item {
   position: relative;
   display: grid;
-  grid-template-columns: 44px minmax(0, 1fr) auto;
+  grid-template-columns: 32px minmax(0, 1fr) auto;
   align-items: center;
   width: 100%;
-  min-height: 42px;
+  min-height: 36px;
   padding: 1px 5px;
   border: 0;
   border-radius: var(--radius-md);
@@ -25099,8 +25099,8 @@ section[id] {
   outline-offset: 2px;
 }
 .asv2-utility-item > svg {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   justify-self: center;
 }
 .asv2-utility-text,
@@ -25119,7 +25119,7 @@ section[id] {
   font-weight: 650;
 }
 .asv2-theme-toggle {
-  grid-template-columns: 44px minmax(0, 1fr);
+  grid-template-columns: 32px minmax(0, 1fr);
 }
 .asv2-theme-toggle .asv2-utility-value {
   display: none;

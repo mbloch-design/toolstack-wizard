@@ -222,7 +222,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
                 data-tooltip={t(item.labelFr, item.labelEn)}
               >
                 <span className="asv2-nav-icon">
-                  <item.Icon style={{ width: 20, height: 20 }} />
+                  <item.Icon style={{ width: 18, height: 18 }} />
                 </span>
                 <span className="asv2-nav-label">{t(item.labelFr, item.labelEn)}</span>
               </Link>
