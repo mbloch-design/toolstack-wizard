@@ -1109,7 +1109,9 @@ const StackDetailPage = () => {
                         <span className="sd-related-persona">
                           {t(personaLabel(related.persona, "fr"), personaLabel(related.persona, "en"))}
                         </span>
-                        <span className="sd-related-budget">≈ {related.monthlyBudget}€/mois</span>
+                        <span className="sd-related-budget">
+                          {t(`≈ ${related.monthlyBudget}€/mois`, `≈ ${usdFromEur(related.monthlyBudget)}/mo`)}
+                        </span>
                       </div>
                       <p className="sd-related-name">{t(related.title, related.titleEn)}</p>
                       <p className="sd-related-sub">{t(related.subtitle, related.subtitleEn)}</p>

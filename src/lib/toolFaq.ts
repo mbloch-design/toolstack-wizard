@@ -1,5 +1,6 @@
 import type { Tool } from "@/data/types";
 import { formatToolPrice } from "@/lib/currencyRates";
+import { localizePlanName } from "@/lib/planNames";
 
 export interface ToolFaqEntry {
   q: string;
@@ -23,8 +24,9 @@ export function buildToolFaqs(
   const isFr = lang !== "en";
   const freeAlts = alternatives.filter((a) => a.defaultMonthlyPrice === 0).slice(0, 3);
   const topAlts = alternatives.slice(0, 5).map((a) => a.name).join(", ");
-  const plan = tool.pricing_v5?.compare_plan_name
-    ? isFr ? ` (plan ${tool.pricing_v5.compare_plan_name})` : ` (${tool.pricing_v5.compare_plan_name} plan)`
+  const planLabel = localizePlanName(tool.pricing_v5?.compare_plan_name, lang);
+  const plan = planLabel
+    ? isFr ? ` (plan ${planLabel})` : ` (${planLabel} plan)`
     : "";
   const oneTime = tool.pricing_v5?.compare_plan_kind === "one_time";
 

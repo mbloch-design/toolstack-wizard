@@ -17,15 +17,35 @@ interface Props {
   t: (fr: string, en: string) => string;
 }
 
+// Marqueurs francais sans equivalent anglais : leur presence dans un champ
+// cense etre traduit signale une copie du texte source.
+const FRENCH_MARKERS = new RegExp([
+  "\\/mois", "par mois", "par an\\b", "factur", "utilisateur", "gratuit", "mensuel", "annuel",
+  "abonnement", "tous les", "environ", "à partir de", "sur devis", "offres?\\b", "voir la fiche",
+  "en entrée", "en sortie", "selon le", "selon la", "page officielle", "sièges?\\b", "licence",
+  "au-delà", "puis\\b", "jusqu", "chaque", "poste\\b",
+].join("|"), "i");
+
+function isUntranslated(en: { free?: string; paid?: string } | null | undefined, fr: { free?: string; paid?: string } | null | undefined): boolean {
+  if (!en?.paid || !fr?.paid) return false;
+  return en.paid === fr.paid && FRENCH_MARKERS.test(en.paid);
+}
+
 export default function ToolPricingSection({ tool, displayPrice, lang, t }: Props) {
   const { currency } = useCurrency();
+  // `pricingEn` existe sur 837 outils, mais 169 d'entre eux en sont une copie
+  // mot pour mot du francais : le texte n'a jamais ete traduit. On le detecte
+  // et on retombe sur la formulation generique anglaise plutot que de servir un
+  // paragraphe francais a un lecteur anglophone. Le prix chiffre du plan de
+  // comparaison, lui, reste affiche par ailleurs.
+  const enFallback = {
+    free: tool.pricing?.free
+      ? (hasGenuineFreeTier(tool.pricing.free) ? "Free plan available." : "No permanent free plan.")
+      : "",
+    paid: tool.pricing?.paid ? "Paid plans available. See the official pricing source for details." : "",
+  };
   const pricing = lang === "en"
-    ? (tool.pricingEn || {
-        free: tool.pricing?.free
-          ? (hasGenuineFreeTier(tool.pricing.free) ? "Free plan available." : "No permanent free plan.")
-          : "",
-        paid: tool.pricing?.paid ? "Paid plans available. See the official pricing source for details." : "",
-      })
+    ? (isUntranslated(tool.pricingEn, tool.pricing) ? enFallback : (tool.pricingEn || enFallback))
     : tool.pricing;
   // Variante de prix dans la langue de la page (résumés/plans localisés) ; repli sûr sur pricing_v5.
   const pv5 = lang === "en" && tool.pricing_v5En ? tool.pricing_v5En : tool.pricing_v5;

@@ -34,6 +34,7 @@ import { getGuidesForTool } from "@/lib/toolGuides";
 import ToolJsonLd from "@/components/tool/ToolJsonLd";
 import StickyDecisionCard from "@/components/tool/StickyDecisionCard";
 import { relPourLienOutil, relExterne, safeExternalUrl } from "@/lib/externalLink";
+import { localizePlanName } from "@/lib/planNames";
 
 /* ─────────────────────────────────────────────────────────────────────────────
    ToolDetailPage — editorial redesign
@@ -93,7 +94,8 @@ const ToolDetailPage = () => {
     const priceRounded = hasPrice ? Math.round(price as number) : 0;
     const planName = tool.pricing_v5?.compare_plan_name || null;
     const planSuffixFr = planName ? ` (plan ${planName})` : "";
-    const planSuffixEn = planName ? ` (${planName} plan)` : "";
+    const planNameEn = localizePlanName(planName, "en");
+    const planSuffixEn = planNameEn ? ` (${planNameEn} plan)` : "";
     // Les balises SEO sont figées au prérendu, donc elles suivent la devise de
     // la langue et non le sélecteur de l'utilisateur : sinon le titre de l'onglet
     // changerait au clic et le SSR ne correspondrait plus au premier rendu client.
@@ -153,7 +155,7 @@ const ToolDetailPage = () => {
         descEn: oneTime
           ? `How much does ${tool.name} cost in ${year}? Lifetime license with no subscription. Price, terms and alternatives explained.`
           : hasPrice
-          ? `How much does ${tool.name} cost in ${year}? ${enPrice}/mo${planName ? ` (${planName} plan)` : ""}${shortExcerpt ? `, ${shortExcerpt.charAt(0).toLowerCase() + shortExcerpt.slice(1)}.` : "."} All plans and cheaper alternatives.`
+          ? `How much does ${tool.name} cost in ${year}? ${enPrice}/mo${planNameEn ? ` (${planNameEn} plan)` : ""}${shortExcerpt ? `, ${shortExcerpt.charAt(0).toLowerCase() + shortExcerpt.slice(1)}.` : "."} All plans and cheaper alternatives.`
           : `Is ${tool.name} free in ${year}?${shortExcerpt ? ` ${shortExcerpt}.` : ""} Free, freemium and paid plans compared with top alternatives.`,
         suffix: "/prix",
       },

@@ -10,6 +10,7 @@ import { FEATURED_COMPARISONS } from "./src/data/comparisons";
 import { computeToolTrimScore } from "./src/lib/toolTrimScore";
 import { resolveMonthlyPrice } from "./src/lib/pricing";
 import { formatToolPrice } from "./src/lib/currencyRates";
+import { localizePlanName } from "./src/lib/planNames";
 import { catalogProjectionRowsToTool, type CatalogProjectionRow } from "./src/lib/catalogProjection";
 
 const BASE = "https://tooltrim.com";
@@ -950,8 +951,10 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
                 : (price ? `How much does ${name} really cost? Detailed plans, pricing breakdown, updated 2026. Is it worth ${usd(tool, price)}/mo?` : `${name} plans and pricing: free, freemium or paid? All options explained by ToolTrim.`),
             buildBody: (name, price, isFr, tool) => {
               const v5 = tool.pricing_v5;
-              const planNote = v5?.compare_plan_name ? (isFr ? ` (plan ${v5.compare_plan_name})` : ` (${v5.compare_plan_name} plan)`) : "";
-              const caution = v5?.cautions?.[0] ? ` ${v5.cautions[0]}` : "";
+              const planLabel = localizePlanName(v5?.compare_plan_name, isFr ? "fr" : "en");
+              const planNote = planLabel ? (isFr ? ` (plan ${planLabel})` : ` (${planLabel} plan)`) : "";
+              const cautionText = isFr ? v5?.cautions?.[0] : v5?.cautionsEn?.[0];
+              const caution = cautionText ? ` ${cautionText}` : "";
               if (v5?.compare_plan_kind === "one_time") {
                 return isFr
                   ? `Tous les tarifs de ${name} : licence à vie sans abonnement.${caution}`
