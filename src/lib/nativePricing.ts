@@ -6,7 +6,7 @@ import { convertCurrencyAmount } from "@/lib/currency";
 type NativePrice = {
   amount: number;
   currency: Currency;
-  source: "canonical_plan" | "pricing_truth" | "editorial_price";
+  source: "canonical_plan" | "pricing_truth";
 };
 
 export type ResolvedDisplayPrice = {
@@ -62,32 +62,28 @@ const pricingTruth = (() => {
   return result;
 })();
 
-function extractEditorialNativePrice(tool: Tool): NativePrice | null {
-  const text = [tool.pricing?.paid, tool.pricingEn?.paid].filter(Boolean).join(" ");
-  // "paid" text often lists the free tier first (e.g. "Free: 0 $ ; Pro: 22 $/mois"),
-  // so the first amount found isn't necessarily the actual paid price: skip zero matches.
-  const matches = text.matchAll(/(?:([$€£])\s*([0-9]+(?:[.,][0-9]+)?)|([0-9]+(?:[.,][0-9]+)?)\s*([$€£]))/g);
-  for (const match of matches) {
-    const symbol = match[1] || match[4];
-    const amount = Number((match[2] || match[3]).replace(",", "."));
-    if (Number.isFinite(amount) && amount > 0) {
-      return {
-        amount,
-        currency: symbol === "$" ? "USD" : symbol === "£" ? "GBP" : "EUR",
-        source: "editorial_price",
-      };
-    }
-  }
-  return null;
-}
 
+/**
+ * Prix natif atteste, ou rien.
+ *
+ * L'extraction par expression reguliere du texte tarifaire editorial a ete
+ * retiree de cette chaine : elle prenait le premier montant non nul trouve,
+ * sans verifier qu'il correspondait au plan de comparaison. Sur les 263 outils
+ * mesures, 109 la voyaient contredire la valeur normalisee d'une facon
+ * qu'aucune conversion n'explique (Adobe CC : 22,99 $ pour une application
+ * seule contre 64,90 pour la suite ; 3ds Max : 785 $ annuels contre 149 au
+ * mois). Un montant devine qui tombe juste reste un montant devine.
+ *
+ * Sans attestation, resolveDisplayPrice retombe sur la valeur normalisee du
+ * catalogue, convertie et signalee comme telle par le drapeau `converted`.
+ */
 export function getNativeComparePrice(tool: Tool): NativePrice | null {
   const plan = tool.pricing_v5?.plans?.find((item) => item.isComparePlan && !item.isFree && item.nativeAmount != null);
   if (plan && (plan.nativeCurrency === "EUR" || plan.nativeCurrency === "USD" || plan.nativeCurrency === "GBP")) {
     return { amount: plan.nativeAmount!, currency: plan.nativeCurrency, source: "canonical_plan" };
   }
   const id = tool.slug || tool.id;
-  return pricingTruth.get(id) || pricingTruth.get(tool.id) || extractEditorialNativePrice(tool);
+  return pricingTruth.get(id) || pricingTruth.get(tool.id) || null;
 }
 
 export function resolveDisplayPrice(

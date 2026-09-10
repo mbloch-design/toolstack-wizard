@@ -102,6 +102,7 @@ function run(label, command, args) {
 
 console.log("Tooltrim — build production reproductible");
 run("Index léger des outils", "node", ["scripts/gen-tools-index.mjs"]);
+run("Prix natifs attestés", "node", ["scripts/gen-native-prices.mjs"]);
 run("Fichiers llms canoniques", "node", ["scripts/gen-llms-files.mjs"]);
 run(
   "Index catalogue stacks",

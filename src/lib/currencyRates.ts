@@ -8,6 +8,10 @@
  * anglaises se contentaient donc d'un « € » codé en dur.
  */
 
+// Chemin relatif volontaire : vite.config.ts importe ce module sous Node pour
+// le prerendu, et l'alias @/ n'est pas resolu dans ses propres imports.
+import { NATIVE_PRICES } from "../data/nativePrices";
+
 export type Currency = "EUR" | "USD" | "GBP";
 
 // Taux de référence BCE publiés le 2026-08-27. Volontairement datés : les prix
@@ -60,19 +64,26 @@ export function usdFromEur(eurAmount: number): string {
 
 export type NativePrice = { amount: number; currency: Currency };
 
-const PRICE_IN_TEXT = /(?:([$€£])\s*([0-9]+(?:[.,][0-9]+)?)|([0-9]+(?:[.,][0-9]+)?)\s*([$€£]))/g;
-
-function currencyForSymbol(symbol: string): Currency {
-  return symbol === "$" ? "USD" : symbol === "£" ? "GBP" : "EUR";
-}
-
 /**
- * Devise réellement affichée par l'éditeur, quand elle est connaissable sans
- * lecture de fichier : le plan de comparaison canonique d'abord, sinon le
- * premier montant non nul du texte tarifaire éditorial.
+ * Devise et montant réellement publiés par l'éditeur, uniquement quand c'est
+ * attesté. Deux sources, et pas une de plus :
  *
- * Le texte « paid » liste souvent le palier gratuit en premier
- * (« Free: 0 $ ; Pro: 22 $/mois »), d'où le filtre sur les montants nuls.
+ * 1. le plan de comparaison canonique de `pricing_v5.plans`, qui porte sa
+ *    devise explicitement ;
+ * 2. `src/data/nativePrices.ts`, genere depuis pricing_truth.csv, ou chaque
+ *    ligne a ete relevee sur la page officielle a une date donnee.
+ *
+ * Une troisième source existait : le premier montant non nul trouvé dans le
+ * texte tarifaire éditorial, par expression régulière. Elle a été retirée. Elle
+ * attrapait régulièrement un autre plan ou une autre période que le plan de
+ * comparaison, et sur les 263 outils mesurés, 109 la voyaient contredire la
+ * valeur normalisée d'une façon qu'aucune conversion n'explique : Adobe CC
+ * remontait 22,99 $ (une application seule) contre 64,90 pour la suite,
+ * 3ds Max remontait 785 $ (un tarif annuel) contre 149 au mois. Un montant
+ * deviné qui tombe juste reste un montant deviné.
+ *
+ * Sans attestation, l'appelant retombe sur la valeur normalisée du catalogue,
+ * convertie et signalée comme telle.
  */
 export function nativePriceFromTool(tool: any): NativePrice | null {
   const plan = tool?.pricing_v5?.plans?.find(
@@ -82,13 +93,9 @@ export function nativePriceFromTool(tool: any): NativePrice | null {
     return { amount: Number(plan.nativeAmount), currency: plan.nativeCurrency };
   }
 
-  const text = [tool?.pricing?.paid, tool?.pricingEn?.paid].filter(Boolean).join(" ");
-  for (const match of text.matchAll(PRICE_IN_TEXT)) {
-    const amount = Number((match[2] || match[3]).replace(",", "."));
-    if (Number.isFinite(amount) && amount > 0) {
-      return { amount, currency: currencyForSymbol(match[1] || match[4]) };
-    }
-  }
+  const attested = NATIVE_PRICES[tool?.slug] || NATIVE_PRICES[tool?.id];
+  if (attested) return { amount: attested.amount, currency: attested.currency };
+
   return null;
 }
 
