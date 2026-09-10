@@ -45,6 +45,19 @@ export function formatAmount(amount: number, currency: Currency, lang: string): 
   }).format(amount);
 }
 
+/**
+ * Formate en dollars un montant catalogue normalise en euros.
+ *
+ * Sert aux budgets de stack, qui sont des sommes sur plusieurs outils et n'ont
+ * donc pas de devise native : contrairement au prix d'un outil, il n'existe
+ * aucun montant publie par un editeur a preferer. La conversion au taux date
+ * est ici le seul traitement possible, et le resultat est arrondi parce qu'une
+ * somme convertie n'a pas de centimes signifiants.
+ */
+export function usdFromEur(eurAmount: number): string {
+  return formatAmount(Math.round(convertAmount(eurAmount, "EUR", "USD")), "USD", "en");
+}
+
 export type NativePrice = { amount: number; currency: Currency };
 
 const PRICE_IN_TEXT = /(?:([$€£])\s*([0-9]+(?:[.,][0-9]+)?)|([0-9]+(?:[.,][0-9]+)?)\s*([$€£]))/g;

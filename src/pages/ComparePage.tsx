@@ -12,14 +12,19 @@ import type { Tool } from "@/data/types";
 import { FEATURED_COMPARISONS as COMPARISONS } from "@/data/comparisons";
 import { BATTLE_COMPARISON_DATA, type BattleComparisonSlug } from "@/data/comparisonBattles";
 import { trackEvent } from "@/lib/analytics";
+import { formatToolPrice } from "@/lib/currencyRates";
+
+// Prix d'un outil en dollars pour les chaines anglaises, figees a la langue.
+// Prefere le montant publie par l'editeur quand il est deja en dollars.
+const usdPrice = (tool: Tool, eur: number) => formatToolPrice(tool, eur, "USD", "en").text;
 
 /* ─── Helpers ────────────────────────────────────────────────────────────── */
 // findTool removed — useToolPair now resolves slugs directly via targeted query.
-function getPrice(tool: Tool): string {
+function getPrice(tool: Tool, lang: "fr" | "en" = "fr"): string {
   const v5 = tool.pricing_v5?.compare_price_monthly_eur;
-  if (v5 != null && v5 > 0) return `${v5}€/mois`;
-  if (tool.defaultMonthlyPrice > 0) return `${tool.defaultMonthlyPrice}€/mois`;
-  return "Gratuit";
+  const eur = v5 != null && v5 > 0 ? v5 : tool.defaultMonthlyPrice > 0 ? tool.defaultMonthlyPrice : 0;
+  if (eur <= 0) return lang === "en" ? "Free" : "Gratuit";
+  return lang === "en" ? `${usdPrice(tool, eur)}/mo` : `${eur}€/mois`;
 }
 function getPriceNum(tool: Tool): number {
   return tool.pricing_v5?.compare_price_monthly_eur || tool.defaultMonthlyPrice || 0;
@@ -1669,15 +1674,15 @@ function fallbackStrength(tool: Tool, lang: "fr" | "en"): string {
     : "its use case covers your main need";
 }
 
-function whenToPayCopy(price: number, perSeat: boolean, lang: "fr" | "en"): string {
+function whenToPayCopy(tool: Tool, price: number, perSeat: boolean, lang: "fr" | "en"): string {
   if (lang === "fr") {
     return perSeat
       ? `Passe au payant quand le coût par utilisateur (dès ${price}€/mois/personne) dépasse ce que l'équipe veut payer.`
       : `Passe au payant quand le plan gratuit bloque un usage régulier (à partir de ${price}€/mois, sans coût par siège).`;
   }
   return perSeat
-    ? `Move to paid when the per-user cost (from €${price}/month/user) exceeds what the team is willing to pay.`
-    : `Move to paid when the free plan blocks regular usage (from €${price}/month, no per-seat cost).`;
+    ? `Move to paid when the per-user cost (from ${usdPrice(tool, price)}/month/user) exceeds what the team is willing to pay.`
+    : `Move to paid when the free plan blocks regular usage (from ${usdPrice(tool, price)}/month, no per-seat cost).`;
 }
 
 function hiddenCostCopy(perSeat: boolean, lang: "fr" | "en"): string {
@@ -1777,9 +1782,9 @@ function buildFallbackContent(toolA: Tool, toolB: Tool, lang: "fr" | "en"): Comp
         verdictLabelEn: aFerme && !bFerme ? toolA.name : bFerme && !aFerme ? toolB.name : "Tie" },
       { criterion: "Prix de départ", criterionEn: "Starting price",
         toolA: priceA === 0 ? "Gratuit" : `${priceA}€/mois`,
-        toolAEn: priceA === 0 ? "Free" : `€${priceA}/mo`,
+        toolAEn: priceA === 0 ? "Free" : `${usdPrice(toolA, priceA)}/mo`,
         toolB: priceB === 0 ? "Gratuit" : `${priceB}€/mois`,
-        toolBEn: priceB === 0 ? "Free" : `€${priceB}/mo`,
+        toolBEn: priceB === 0 ? "Free" : `${usdPrice(toolB, priceB)}/mo`,
         winner: priceA <= priceB ? "A" : "B",
         verdictLabel: priceA <= priceB ? toolA.name : toolB.name,
         verdictLabelEn: priceA <= priceB ? toolA.name : toolB.name },
@@ -1828,9 +1833,9 @@ function buildFallbackContent(toolA: Tool, toolB: Tool, lang: "fr" | "en"): Comp
         title: "Coût réel",
         titleEn: "Real cost",
         toolA: priceA === 0 ? "Plan gratuit possible selon volume." : `Payant à prévoir dès ${priceA}€/mois.`,
-        toolAEn: priceA === 0 ? "Free plan possible depending on volume." : `Paid plan starts around €${priceA}/month.`,
+        toolAEn: priceA === 0 ? "Free plan possible depending on volume." : `Paid plan starts around ${usdPrice(toolA, priceA)}/month.`,
         toolB: priceB === 0 ? "Plan gratuit possible selon volume." : `Payant à prévoir dès ${priceB}€/mois.`,
-        toolBEn: priceB === 0 ? "Free plan possible depending on volume." : `Paid plan starts around €${priceB}/month.`,
+        toolBEn: priceB === 0 ? "Free plan possible depending on volume." : `Paid plan starts around ${usdPrice(toolB, priceB)}/month.`,
         decision: "Auditer si le coût monte avant que l'usage soit hebdomadaire.",
         decisionEn: "Audit if cost rises before weekly usage is real.",
       },
@@ -1872,19 +1877,19 @@ function buildFallbackContent(toolA: Tool, toolB: Tool, lang: "fr" | "en"): Comp
         label: "Prix affiché",
         labelEn: "Listed price",
         toolA: priceA === 0 ? "Gratuit ou prix à vérifier selon plan." : `À partir de ${priceA}€/mois.`,
-        toolAEn: priceA === 0 ? "Free or price to check by plan." : `From €${priceA}/month.`,
+        toolAEn: priceA === 0 ? "Free or price to check by plan." : `From ${usdPrice(toolA, priceA)}/month.`,
         toolB: priceB === 0 ? "Gratuit ou prix à vérifier selon plan." : `À partir de ${priceB}€/mois.`,
-        toolBEn: priceB === 0 ? "Free or price to check by plan." : `From €${priceB}/month.`,
+        toolBEn: priceB === 0 ? "Free or price to check by plan." : `From ${usdPrice(toolB, priceB)}/month.`,
         recommendation: "Vérifier le prix selon sièges, volume et options réellement utilisées.",
         recommendationEn: "Check price by seats, volume, and options actually used.",
       },
       {
         label: "Quand payer",
         labelEn: "When to pay",
-        toolA: whenToPayCopy(priceA, aPerSeat, "fr"),
-        toolAEn: whenToPayCopy(priceA, aPerSeat, "en"),
-        toolB: whenToPayCopy(priceB, bPerSeat, "fr"),
-        toolBEn: whenToPayCopy(priceB, bPerSeat, "en"),
+        toolA: whenToPayCopy(toolA, priceA, aPerSeat, "fr"),
+        toolAEn: whenToPayCopy(toolA, priceA, aPerSeat, "en"),
+        toolB: whenToPayCopy(toolB, priceB, bPerSeat, "fr"),
+        toolBEn: whenToPayCopy(toolB, priceB, bPerSeat, "en"),
         recommendation: "Ne paie pas pour une fonctionnalité que tu n'utilises pas chaque semaine.",
         recommendationEn: "Do not pay for a feature you do not use weekly.",
       },
@@ -1939,9 +1944,9 @@ function buildFallbackContent(toolA: Tool, toolB: Tool, lang: "fr" | "en"): Comp
     pricingFraming: `${toolA.name} et ${toolB.name} ont des modèles de prix différents. Vérifiez les plans officiels avant de décider.`,
     pricingFramingEn: `${toolA.name} and ${toolB.name} have different pricing models. Check official plans before deciding.`,
     pricingToolANotes: priceA === 0 ? "Plan gratuit disponible." : `À partir de **${priceA}€/mois**.`,
-    pricingToolANotesEn: priceA === 0 ? "Free plan available." : `From **€${priceA}/month**.`,
+    pricingToolANotesEn: priceA === 0 ? "Free plan available." : `From **${usdPrice(toolA, priceA)}/month**.`,
     pricingToolBNotes: priceB === 0 ? "Plan gratuit disponible." : `À partir de **${priceB}€/mois**.`,
-    pricingToolBNotesEn: priceB === 0 ? "Free plan available." : `From **€${priceB}/month**.`,
+    pricingToolBNotesEn: priceB === 0 ? "Free plan available." : `From **${usdPrice(toolB, priceB)}/month**.`,
     pricingReco: `Comparer les plans payants selon vos besoins réels.`,
     pricingRecoEn: `Compare paid plans based on your actual needs.`,
     /* ── Structured verdict bullet lists (fallback: derive from keepsA/B,
@@ -1967,7 +1972,7 @@ function buildFallbackContent(toolA: Tool, toolB: Tool, lang: "fr" | "en"): Comp
       { q: `${toolA.name} ou ${toolB.name} — lequel est moins cher ?`,
         qEn: `${toolA.name} or ${toolB.name} — which is cheaper?`,
         a: `${toolA.name} coûte ${getPrice(toolA)} et ${toolB.name} coûte ${getPrice(toolB)}.`,
-        aEn: `${toolA.name} costs ${getPrice(toolA)} and ${toolB.name} costs ${getPrice(toolB)}.` },
+        aEn: `${toolA.name} costs ${getPrice(toolA, "en")} and ${toolB.name} costs ${getPrice(toolB, "en")}.` },
       { q: `${toolA.name} vs ${toolB.name} — lequel choisir ?`,
         qEn: `${toolA.name} vs ${toolB.name} — which to choose?`,
         a: `Prends ${toolA.name} si ${effectiveKeepA.toLowerCase()}. Prends ${toolB.name} si ${effectiveKeepB.toLowerCase()}.`,

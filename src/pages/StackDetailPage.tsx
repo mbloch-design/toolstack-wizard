@@ -3,6 +3,7 @@ import { Link, Navigate, useParams } from "react-router-dom";
 import { ChevronDown } from "@/lib/icons";
 import ToolLogo from "@/components/ToolLogo";
 import { useLang } from "@/hooks/useLang";
+import { usdFromEur } from "@/lib/currencyRates";
 import { useToolSummaries, type ToolSummary } from "@/hooks/useSupabaseData";
 import { useStackBySlug } from "@/hooks/useStackDetailData";
 import stackCatalog from "@/data/stacks-catalog-index.json";
@@ -674,7 +675,9 @@ const StackDetailPage = () => {
   const workflowSteps = buildWorkflowSteps(stack, stackTools, lang);
   const stackLayers = workflowSteps.length > 0 ? workflowSteps : buildFallbackWorkflowSteps(stack, stackTools, lang);
   const stackMapFamilies = buildStackMapFamilies(stack, stackLayers);
-  const budgetTargetLabel = stack.monthlyBudget > 0 ? `≈${stack.monthlyBudget}€/mois` : t("Gratuit", "Free");
+  const budgetTargetLabel = stack.monthlyBudget > 0
+    ? t(`≈${stack.monthlyBudget}€/mois`, `≈${usdFromEur(stack.monthlyBudget)}/mo`)
+    : t("Gratuit", "Free");
   const toggleToolLayer = (layerId: string) => {
     setExpandedToolLayers((current) => {
       const next = new Set(current);
@@ -904,11 +907,11 @@ const StackDetailPage = () => {
           <span className="sd-section-eyebrow">{t("03 — BUDGET", "03 — BUDGET")}</span>
           <p className="sd-section-title sd-budget-title">
             {stack.slug === "developpeur-freelance-shipper"
-              ? t("Budget réel : de 0 à 32€/mois.", "Real budget: €0 to €32/month.")
+              ? t("Budget réel : de 0 à 32€/mois.", `Real budget: $0 to ${usdFromEur(32)}/month.`)
               : stack.monthlyBudget > 0
               ? t(
                   `${stack.monthlyBudget}€/mois, si le socle travaille vraiment.`,
-                  `€${stack.monthlyBudget}/month, when the core stack earns its keep.`,
+                  `${usdFromEur(stack.monthlyBudget)}/month, when the core stack earns its keep.`,
                 )
               : t("Le budget qui reste sain.", "A budget that stays healthy.")}
           </p>
@@ -965,7 +968,7 @@ const StackDetailPage = () => {
           ) : (
             <div className="sd-budget-thresholds" aria-label={t("Seuils de budget", "Budget thresholds")}>
               <div className="sd-budget-threshold">
-                <span className="sd-bt-range">{t("0–15€/mois", "0–15€/mo")}</span>
+                <span className="sd-bt-range">{t("0–15€/mois", `$0–${usdFromEur(15).replace("$", "")}/mo`)}</span>
                 <span className="sd-bt-label">{t("Tester", "Testing")}</span>
                 <span className="sd-bt-desc">{t("Plans gratuits + un outil payant maximum.", "Free plans + one paid tool maximum.")}</span>
               </div>
@@ -975,7 +978,7 @@ const StackDetailPage = () => {
                 <span className="sd-bt-desc">{t("Le socle est utilisé chaque semaine.", "The core stack is used every week.")}</span>
               </div>
               <div className="sd-budget-threshold">
-                <span className="sd-bt-range">{t("80–100€/mois", "80–100€/mo")}</span>
+                <span className="sd-bt-range">{t("80–100€/mois", `${usdFromEur(80)}–${usdFromEur(100).replace("$", "")}/mo`)}</span>
                 <span className="sd-bt-label">{t("Auditer", "Time to audit")}</span>
                 <span className="sd-bt-desc">{t("Doublons IA, CRM, projet ou automatisation à vérifier.", "Check for AI, CRM, project or automation overlaps.")}</span>
               </div>
@@ -1547,7 +1550,9 @@ function getHeroDecisionMap(stack: StackGuide, editorial: StackEditorialContent,
   const tools = Array.isArray(stack.tools) ? stack.tools : [];
   const toolCount = tools.length;
   const stageKey = stack.stage === "starter" ? (locale === "fr" ? "débutant" : "beginner") : stack.stage === "scale" ? (locale === "fr" ? "avancé" : "advanced") : (locale === "fr" ? "installé" : "established");
-  const budgetStr = stack.monthlyBudget > 0 ? `${stack.monthlyBudget}€/mois` : (locale === "fr" ? "Gratuit" : "Free");
+  const budgetStr = stack.monthlyBudget > 0
+    ? (locale === "fr" ? `${stack.monthlyBudget}€/mois` : `${usdFromEur(stack.monthlyBudget)}/mo`)
+    : (locale === "fr" ? "Gratuit" : "Free");
   const watchoutFallback = locale === "fr" ? (stack.riskSnippet ?? stack.risk) : (stack.riskSnippetEn ?? stack.riskEn);
   const watchoutShort = (str: string) => String(str).split(".")[0] + (String(str).includes(".") ? "." : "");
   // Truncate dynamic values to ~40 chars — table cells must contain facts, not sentences
@@ -1602,7 +1607,7 @@ function getHeroDecisionMap(stack: StackGuide, editorial: StackEditorialContent,
           watchout: "Team tools too early",
           reperes: [
             { label: "PROFILE",   value: "Solo freelance dev" },
-            { label: "BUDGET",    value: `${stack.monthlyBudget}€/mois` },
+            { label: "BUDGET",    value: `${usdFromEur(stack.monthlyBudget)}/mo` },
             { label: "TOOLS",     value: String(toolCount) },
             { label: "LEVEL",     value: stageKey },
             { label: "WORKFLOW",  value: "Code → preview → get paid" },
@@ -1636,7 +1641,7 @@ function getHeroDecisionMap(stack: StackGuide, editorial: StackEditorialContent,
           watchout: "AI tool stacking",
           reperes: [
             { label: "PROFILE",   value: "Solo no-code / AI" },
-            { label: "BUDGET",    value: `€96/month` },
+            { label: "BUDGET",    value: `${usdFromEur(96)}/month` },
             { label: "TOOLS",     value: "18" },
             { label: "LEVEL",     value: "Advanced" },
             { label: "WORKFLOW",  value: "Page → automation → measure" },
@@ -1670,7 +1675,7 @@ function getHeroDecisionMap(stack: StackGuide, editorial: StackEditorialContent,
           watchout: "Creative / AI / storage overlaps",
           reperes: [
             { label: "PROFILE",   value: "Freelance UI/UX designer" },
-            { label: "BUDGET",    value: `€118/month` },
+            { label: "BUDGET",    value: `${usdFromEur(118)}/month` },
             { label: "TOOLS",     value: "15" },
             { label: "LEVEL",     value: "Established" },
             { label: "WORKFLOW",  value: "Create → present → deliver" },
@@ -1704,7 +1709,7 @@ function getHeroDecisionMap(stack: StackGuide, editorial: StackEditorialContent,
           watchout: "BIM stack too early",
           reperes: [
             { label: "PROFILE",   value: "Independent interior architect" },
-            { label: "BUDGET",    value: `€148/month` },
+            { label: "BUDGET",    value: `${usdFromEur(148)}/month` },
             { label: "TOOLS",     value: "37" },
             { label: "LEVEL",     value: "Advanced" },
             { label: "WORKFLOW",  value: "Brief → plans → site" },
@@ -1738,7 +1743,7 @@ function getHeroDecisionMap(stack: StackGuide, editorial: StackEditorialContent,
           watchout: "CRM heavier than the project",
           reperes: [
             { label: "PROFILE",   value: "Solo B2B consultant" },
-            { label: "BUDGET",    value: "€37/month" },
+            { label: "BUDGET",    value: `${usdFromEur(37)}/month` },
             { label: "TOOLS",     value: "10" },
             { label: "LEVEL",     value: "Beginner" },
             { label: "WORKFLOW",  value: "Opportunity → call → proposal" },
@@ -1772,7 +1777,7 @@ function getHeroDecisionMap(stack: StackGuide, editorial: StackEditorialContent,
           watchout: "One tool per client or channel",
           reperes: [
             { label: "PROFILE",   value: "Marketing agency / growth studio" },
-            { label: "BUDGET",    value: "€420/month" },
+            { label: "BUDGET",    value: `${usdFromEur(420)}/month` },
             { label: "TOOLS",     value: "25" },
             { label: "LEVEL",     value: "Advanced" },
             { label: "WORKFLOW",  value: "Content → campaigns → reporting" },
@@ -1789,16 +1794,16 @@ function getStackMetaDescription(stack: StackGuide, locale: "fr" | "en"): string
   if (stack.slug === "developpeur-freelance-shipper") {
     return locale === "fr"
       ? `Stack dev freelance pour coder, partager une preview client, documenter et encaisser sans payer une stack produit trop lourde. Budget cible : ${stack.monthlyBudget}€/mois.`
-      : `Freelance dev stack to code, share a client preview, document, and get paid without paying for an overweight product stack. Target budget: €${stack.monthlyBudget}/month.`;
+      : `Freelance dev stack to code, share a client preview, document, and get paid without paying for an overweight product stack. Target budget: ${usdFromEur(stack.monthlyBudget)}/month.`;
   }
   if (stack.slug === "createur-sites-ia-automation") {
     return locale === "fr"
       ? `Stack sites IA & automation pour lancer une page, un prototype ou un workflow automatisé sans empiler les outils IA. Budget cible : ${stack.monthlyBudget}€/mois.`
-      : `AI sites and automation stack to launch a page, prototype, or automated workflow without stacking AI tools. Target budget: €${stack.monthlyBudget}/month.`;
+      : `AI sites and automation stack to launch a page, prototype, or automated workflow without stacking AI tools. Target budget: ${usdFromEur(stack.monthlyBudget)}/month.`;
   }
   return locale === "fr"
     ? `${stack.subtitle} Budget cible : ${stack.monthlyBudget}€/mois.`
-    : `${stack.subtitleEn} Target budget: €${stack.monthlyBudget}/month.`;
+    : `${stack.subtitleEn} Target budget: ${usdFromEur(stack.monthlyBudget)}/month.`;
 }
 
 function getToolDecisionStatus(slot: { role: string; decision?: "core" | "conditional" | "challenge" }) {
