@@ -25124,7 +25124,7 @@ section[id] {
   color: var(--color-text);
 }
 .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-utility-item {
-  grid-template-columns: 32px;
+  grid-template-columns: 32px 0 0;
   justify-content: center;
   padding-inline: 0;
 }
