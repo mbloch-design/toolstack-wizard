@@ -46,11 +46,18 @@ describe("robots SEO policy", () => {
     expect(seoSource).toContain(
       '"stack-saas-minimaliste-freelance-2026-moins-50-euros": "minimalist-saas-stack-freelancer-2026-under-50-euros"',
     );
-    expect(seoSource).toMatch(
-      /GUIDE_FR_ONLY_SLUGS[\s\S]*"agents-ia-freelances-2026-lesquels-valent-le-coup"/,
+    // Ces deux guides etaient marques francais seulement jusqu au 10/09/2026,
+    // date a laquelle leur version anglaise a ete redigee. Ils sont desormais
+    // apparies, et ce sont leurs paires qui doivent exister.
+    expect(seoSource).toContain(
+      '"agents-ia-freelances-2026-lesquels-valent-le-coup": "ai-agents-freelancers-2026"',
     );
+    expect(seoSource).toContain(
+      '"zapier-vs-make-vs-n8n-2026-automatiser-stack": "zapier-vs-make-vs-n8n-pricing"',
+    );
+    // Le mecanisme lui-meme reste teste sur un guide encore sans traduction.
     expect(seoSource).toMatch(
-      /GUIDE_FR_ONLY_SLUGS[\s\S]*"zapier-vs-make-vs-n8n-2026-automatiser-stack"/,
+      /GUIDE_FR_ONLY_SLUGS[\s\S]*"notion-gratuit-vs-payant-vrai-calcul"/,
     );
   });
 });

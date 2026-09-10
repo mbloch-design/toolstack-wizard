@@ -34,7 +34,7 @@ describe("getLanguageSwitchPath", () => {
   it("does not invent an English URL for a French-only guide", () => {
     expect(
       getLanguageSwitchPath(
-        "/fr/guide/claude-opus-4-6-guide-complet-freelances",
+        "/fr/guide/notion-gratuit-vs-payant-vrai-calcul",
         "en",
       ),
     ).toBe("/en/guides");

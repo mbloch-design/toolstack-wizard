@@ -78,6 +78,7 @@ const GUIDE_SLUG_ALTERNATES: Record<string, string> = {
   "alternatives-freshservice-2026": "freshservice-alternatives-2026",
   "zapier-vs-make-vs-n8n-2026-automatiser-stack": "zapier-vs-make-vs-n8n-pricing",
   "agents-ia-freelances-2026-lesquels-valent-le-coup": "ai-agents-freelancers-2026",
+  "stack-saas-minimaliste-freelance-2026-moins-50-euros": "minimalist-saas-stack-freelancer-2026-under-50-euros",
 };
 
 const GUIDE_EN_TO_FR = Object.fromEntries(
@@ -95,14 +96,17 @@ const GUIDE_COMPARISON_REDIRECTS: Record<string, string> = {
   "figma-vs-canva-comparison-2026": "figma-vs-canva",
 };
 
+// Guides servis uniquement en francais. Les 8 slugs d origine avaient tous une
+// traduction anglaise redigee depuis le 12/03/2026, soit deux mois avant que
+// cette liste n existe : leur URL /en/ renvoyait un 308 vers le francais alors
+// que l article anglais etait pret. 13 097 mots inaccessibles.
+//
+// Les 3 restants ne sont pas debloques : leur version anglaise entre en
+// concurrence directe avec un article anglais deja en ligne sur la meme
+// requete. A arbitrer article par article avant exposition.
 const GUIDE_FR_ONLY_SLUGS = new Set([
   "claude-sonnet-4-6-vs-chatgpt-vs-deepseek-vs-gemini-fevrier-2026",
-  "meilleurs-outils-ia-freelances-2026",
-  "claude-opus-4-6-guide-complet-freelances",
-  "alternatives-gratuites-notion-freelance-2026",
   "stack-minimaliste-freelance-2026",
-  "stripe-freelance-tarifs-alternatives",
-  "perplexity-vs-chatgpt-recherche",
   "notion-gratuit-vs-payant-vrai-calcul",
 ]);
 
