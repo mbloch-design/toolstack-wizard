@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect } from "react";
+import { createContext, useContext, useLayoutEffect } from "react";
 
 export interface TopbarBreadcrumbItem {
   label: string;
@@ -16,7 +16,10 @@ export function useTopbarBreadcrumb(items: TopbarBreadcrumbItem[] | null) {
   const ctx = useContext(TopbarBreadcrumbContext);
   const key = items ? JSON.stringify(items) : "";
 
-  useEffect(() => {
+  // Layout effect, not a passive one: it must commit before the browser
+  // paints so the topbar never flashes its search-bar fallback for a frame
+  // while the page's breadcrumb is still registering.
+  useLayoutEffect(() => {
     if (!ctx) return;
     ctx.setBreadcrumb(items && items.length > 0 ? items : null);
     return () => ctx.setBreadcrumb(null);
