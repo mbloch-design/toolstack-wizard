@@ -239,7 +239,17 @@ const SubmitToolPage = () => {
 
       {plan && <section className="sp-shell" id="submit-form">
         <div className="sp-selected-plan"><span>{t("Ta formule", "Your option")} <strong>{plan === "paid" ? t(`Publication prioritaire · ${price}`, `Priority publication · ${price}`) : t("Avec badge · gratuit", "With a badge · free")}</strong></span><ShieldCheck size={18} /></div>
-        <ol className="sp-steps" aria-label={t("Étapes de la soumission", "Submission steps")}>{[1, 2, 3].map((number) => <li key={number} className={`${step === number ? "sp-step--active" : ""}${step > number ? " sp-step--done" : ""}`}><span>{step > number ? <Check size={14} /> : number}</span><strong>{number === 1 ? "Contact" : number === 2 ? plan === "paid" ? t("Paiement", "Payment") : "Badge" : t("Détails", "Details")}</strong></li>)}</ol>
+        <ol className="sp-steps" aria-label={t("Étapes de la soumission", "Submission steps")}>
+          {[1, 2, 3].map((number) => (
+            <li key={number} className="sp-step-item">
+              <span className={`sp-step${step === number ? " sp-step--active" : ""}${step > number ? " sp-step--done" : ""}`}>
+                <span className="sp-step-dot">{step > number ? <Check size={14} /> : number}</span>
+                <strong>{number === 1 ? "Contact" : number === 2 ? plan === "paid" ? t("Paiement", "Payment") : "Badge" : t("Détails", "Details")}</strong>
+              </span>
+              {number < 3 && <span className={`sp-step-connector${step > number ? " sp-step-connector--filled" : ""}`} aria-hidden="true" />}
+            </li>
+          ))}
+        </ol>
         <div className="sp-card">
           {step === 1 && <form onSubmit={continueFromContact} className="sp-form">
             <div className="sp-section-heading"><span>01</span><div><h2>{t("Commençons par ton outil.", "Let’s start with your tool.")}</h2><p>{t("Trois informations pour commencer. Tu pourras préciser les détails à la dernière étape.", "Three details to get started. You can add more context in the final step.")}</p></div></div>
