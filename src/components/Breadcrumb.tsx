@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { useLang } from "@/hooks/useLang";
 import { SEO_BASE } from "@/lib/seo";
+import { useTopbarBreadcrumb } from "@/contexts/TopbarBreadcrumbContext";
 
 interface BreadcrumbItem {
   label: string;
@@ -25,18 +25,11 @@ interface BreadcrumbProps {
 }
 
 /**
- * Editorial breadcrumb — publication-mark signature pattern.
+ * Editorial breadcrumb.
  *
- * Renders as:
- *   ▪  TOOLTRIM  /  Parent  /  Current
- *      └── monospace uppercase tracked links ──┘  └─ sans-serif bold ─┘
- *
- * The visual chrome is owned by .cp-breadcrumb CSS so every page that
- * imports this component gets the same signature with zero per-page
- * styling. Direct children only (no wrapper spans) so the CSS selectors
- * (> a, > span:last-child) target the right nodes.
- *
- * Keeps Schema.org BreadcrumbList JSON-LD for SEO.
+ * The visual trail now lives in the sticky topbar (AppShellV2), not in the
+ * page body — this component registers `items` there via context and only
+ * renders the Schema.org BreadcrumbList JSON-LD for SEO.
  */
 const Breadcrumb = ({ items, includeHome = true, homeLabel, includeSchema = true }: BreadcrumbProps) => {
   const { lang, prefix } = useLang();
@@ -59,29 +52,19 @@ const Breadcrumb = ({ items, includeHome = true, homeLabel, includeSchema = true
     }),
   };
 
-  // Visible items: home link (if requested) + provided items.
-  // Built as a flat array so each element is a direct child of <nav>.
-  const visibleItems: BreadcrumbItem[] = [
+  // Topbar items: home link (if requested) + provided items.
+  const topbarItems: BreadcrumbItem[] = [
     ...(includeHome ? [{ label: homeLabel ?? "ToolTrim", href: prefix || `/${lang}` }] : []),
     ...items,
   ];
+  useTopbarBreadcrumb(topbarItems);
+
+  if (!includeSchema) return null;
 
   return (
-    <nav aria-label="Breadcrumb" className="cp-breadcrumb">
-      {includeSchema && (
-        <Helmet>
-          <script type="application/ld+json">{JSON.stringify(schema)}</script>
-        </Helmet>
-      )}
-      {visibleItems.flatMap((item, i) => {
-        const isLast = i === visibleItems.length - 1;
-        const sep = i > 0 ? [<span key={`sep-${i}`}>/</span>] : [];
-        const node = item.href && !isLast
-          ? <Link key={`l-${i}`} to={item.href}>{item.label}</Link>
-          : <span key={`s-${i}`}>{item.label}</span>;
-        return [...sep, node];
-      })}
-    </nav>
+    <Helmet>
+      <script type="application/ld+json">{JSON.stringify(schema)}</script>
+    </Helmet>
   );
 };
 

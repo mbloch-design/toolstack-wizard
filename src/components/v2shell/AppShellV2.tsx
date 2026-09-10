@@ -1,12 +1,11 @@
 import { Link, useLocation } from "react-router-dom";
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import {
   Home,
   Wrench,
   Layers,
   Scale,
   BookOpen,
-  Compass,
   Search,
   Bookmark,
   Languages,
@@ -29,6 +28,7 @@ import Footer from "@/components/Footer";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { trackEvent } from "@/lib/analytics";
 import { getLanguageSwitchPath } from "@/lib/seo";
+import { TopbarBreadcrumbContext, type TopbarBreadcrumbItem } from "@/contexts/TopbarBreadcrumbContext";
 
 type NavItem = {
   id: string;
@@ -43,10 +43,28 @@ type NavItem = {
 const NAV_ITEMS: NavItem[] = [
   { id: "home",       labelFr: "Accueil",     labelEn: "Home",       Icon: Home,     to: "",             match: [""] },
   { id: "tools",      labelFr: "Outils",      labelEn: "Tools",      Icon: Wrench,   to: "/tools",       match: ["/tools", "/tool/"] },
-  { id: "explorer",   labelFr: "Explorer",    labelEn: "Explore",    Icon: Compass,  to: "/explorer",    match: ["/explorer"] },
   { id: "stacks",     labelFr: "Stacks",      labelEn: "Stacks",     Icon: Layers,   to: "/stacks",      match: ["/stacks"] },
   { id: "compare",    labelFr: "Comparatifs", labelEn: "Compare",    Icon: Scale,    to: "/comparatifs", match: ["/comparatifs", "/comparatif/"] },
   { id: "guides",     labelFr: "Guides",      labelEn: "Guides",     Icon: BookOpen, to: "/guides",      match: ["/guides", "/guide/"] },
+];
+
+type HomeTab = {
+  id: string;
+  labelFr: string;
+  labelEn: string;
+  path: string;
+  query?: string;
+};
+
+// Quick, tool-focused launch points shown in the topbar on the homepage only —
+// distinct from the sidebar's page-level nav, these jump straight into a
+// pre-filtered tools view.
+const HOME_TABS: HomeTab[] = [
+  { id: "all",      labelFr: "Tous les outils", labelEn: "All tools", path: "/tools" },
+  { id: "free",     labelFr: "Gratuits",        labelEn: "Free",      path: "/tools", query: "pricing=free" },
+  { id: "stacks",   labelFr: "Stacks",          labelEn: "Stacks",    path: "/stacks" },
+  { id: "compare",  labelFr: "Comparatifs",     labelEn: "Compare",   path: "/comparatifs" },
+  { id: "guides",   labelFr: "Guides",          labelEn: "Guides",    path: "/guides" },
 ];
 
 const CURRENCIES: Array<{ code: Currency; symbol: string; labelFr: string; labelEn: string }> = [
@@ -142,16 +160,17 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
   const contentRef = useRef<HTMLElement>(null);
   const { state: cartState } = useStackPins();
   const cartCount = cartState.pinnedToolSlugs.length;
-  const cartLabel = cartCount > 0
-    ? `${t("Ma stack", "My stack")} · ${cartCount}`
-    : t("Ma stack", "My stack");
+  const cartLabel = t("Ma stack", "My stack");
   const otherLang = lang === "fr" ? "en" : "fr";
   const languageHref = `${getLanguageSwitchPath(location.pathname, otherLang)}${location.search}${location.hash}`;
+  const [breadcrumb, setBreadcrumb] = useState<TopbarBreadcrumbItem[] | null>(null);
+  const breadcrumbCtx = useMemo(() => ({ setBreadcrumb }), []);
 
   // Path relative to the /:lang prefix, e.g. "/tool/notion" or "" for the homepage.
   const relPath = location.pathname.startsWith(prefix)
     ? location.pathname.slice(prefix.length).replace(/\/$/, "")
     : location.pathname;
+  const isHome = relPath === "";
 
   // Ma stack changes view through query parameters while keeping the same
   // pathname. Always return the shared content rail to its canonical
@@ -175,6 +194,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
   };
 
   return (
+    <TopbarBreadcrumbContext.Provider value={breadcrumbCtx}>
     <div className={`asv2-root${sidebarExpanded ? " asv2-root--sidebar-expanded" : ""}`}>
       <aside className="asv2-sidebar" data-expanded={sidebarExpanded}>
         <div className="asv2-sidebar-top">
@@ -291,10 +311,46 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
       </aside>
 
       <div className="asv2-workspace">
-        <header className="asv2-topbar">
+        <header
+          className="asv2-topbar"
+          data-topbar-mode={isHome ? "home" : breadcrumb ? "breadcrumb" : "search"}
+        >
           <Link to={prefix} className="asv2-mobile-logo">
             <img src={logoToolTrim} alt="ToolTrim" width={127} height={28} />
           </Link>
+
+          {/* Desktop/tablet: exactly one of these three is visible, picked by
+              data-topbar-mode above. Mobile always forces the search bar
+              (see the max-width: 640px rules) regardless of that mode. */}
+          <nav className="asv2-topbar-tabs" aria-label={t("Raccourcis", "Shortcuts")}>
+            {HOME_TABS.map((tabItem) => {
+              const target = `${prefix}${tabItem.path}${tabItem.query ? `?${tabItem.query}` : ""}`;
+              const isActive = relPath === tabItem.path
+                && location.search.replace(/^\?/, "") === (tabItem.query || "");
+              return (
+                <Link
+                  key={tabItem.id}
+                  to={target}
+                  className={`asv2-topbar-tab${isActive ? " asv2-topbar-tab--active" : ""}`}
+                >
+                  {t(tabItem.labelFr, tabItem.labelEn)}
+                </Link>
+              );
+            })}
+          </nav>
+
+          {breadcrumb && (
+            <nav className="asv2-topbar-breadcrumb" aria-label={t("Fil d’Ariane", "Breadcrumb")}>
+              {breadcrumb.flatMap((item, i) => {
+                const isLast = i === breadcrumb.length - 1;
+                const sep = i > 0 ? [<span key={`sep-${i}`}>/</span>] : [];
+                const node = item.href && !isLast
+                  ? <Link key={`l-${i}`} to={item.href}>{item.label}</Link>
+                  : <span key={`s-${i}`}>{item.label}</span>;
+                return [...sep, node];
+              })}
+            </nav>
+          )}
 
           <button
             type="button"
@@ -310,8 +366,19 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
           </button>
 
           <div className="asv2-topbar-right">
-            <Link to={`${prefix}/ma-stack`} className="asv2-topbar-cta" aria-label={cartLabel}>
-              <Bookmark style={{ width: 15, height: 15 }} aria-hidden />
+            <Link
+              to={`${prefix}/ma-stack`}
+              className="asv2-topbar-cta"
+              aria-label={cartCount > 0 ? `${cartLabel} · ${cartCount}` : cartLabel}
+            >
+              <span className="asv2-topbar-cta-icon">
+                <Bookmark style={{ width: 15, height: 15 }} aria-hidden />
+                {cartCount > 0 && (
+                  <span className="asv2-topbar-cta-badge" aria-hidden>
+                    {cartCount > 99 ? "99+" : cartCount}
+                  </span>
+                )}
+              </span>
               <span>{cartLabel}</span>
             </Link>
           </div>
@@ -348,5 +415,6 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
 
       {searchOpen && <SearchModal onClose={() => setSearchOpen(false)} />}
     </div>
+    </TopbarBreadcrumbContext.Provider>
   );
 }

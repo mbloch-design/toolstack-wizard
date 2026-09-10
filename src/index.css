@@ -25111,6 +25111,95 @@ section[id] {
   padding: 3px 7px;
 }
 
+/* Homepage-only quick launch tabs and the per-page breadcrumb both take
+   over the search bar's slot — but only from the tablet breakpoint up.
+   Mobile always keeps the plain search bar (see max-width: 640px below);
+   data-topbar-mode on .asv2-topbar (set in AppShellV2) picks which of the
+   three elements below is visible at desktop widths. */
+.asv2-topbar-tabs,
+.asv2-topbar-breadcrumb {
+  display: none;
+}
+@media (min-width: 641px) {
+  .asv2-topbar[data-topbar-mode="home"] .asv2-search {
+    display: none;
+  }
+  .asv2-topbar[data-topbar-mode="breadcrumb"] .asv2-search {
+    display: none;
+  }
+  .asv2-topbar[data-topbar-mode="home"] .asv2-topbar-tabs {
+    display: flex;
+  }
+  .asv2-topbar[data-topbar-mode="breadcrumb"] .asv2-topbar-breadcrumb {
+    display: flex;
+  }
+}
+.asv2-topbar-tabs {
+  align-items: center;
+  gap: 4px;
+  height: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.asv2-topbar-tabs::-webkit-scrollbar { display: none; }
+.asv2-topbar-tab {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 4px;
+  border-bottom: 2px solid transparent;
+  color: color-mix(in srgb, var(--color-text) 62%, var(--color-muted));
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 140ms ease-out, border-color 140ms ease-out;
+}
+.asv2-topbar-tab:hover {
+  color: var(--color-text);
+}
+.asv2-topbar-tab--active {
+  border-color: var(--color-text-strong);
+  color: var(--color-text-strong);
+}
+
+/* Non-home pages: the search bar's slot is taken over by the page's
+   breadcrumb once it registers itself (src/contexts/TopbarBreadcrumbContext).
+   Full-text search stays one click away via the sidebar's search icon. */
+.asv2-topbar-breadcrumb {
+  align-items: center;
+  flex: 1 1 auto;
+  gap: 8px;
+  min-width: 0;
+  overflow: hidden;
+  font-family: var(--font-ui);
+  font-size: 14px;
+}
+.asv2-topbar-breadcrumb > a {
+  flex: 0 0 auto;
+  color: color-mix(in srgb, var(--color-text) 62%, var(--color-muted));
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.asv2-topbar-breadcrumb > a:hover {
+  color: var(--color-text);
+}
+.asv2-topbar-breadcrumb > span {
+  flex: 0 1 auto;
+  overflow: hidden;
+  color: var(--color-muted);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.asv2-topbar-breadcrumb > span:last-child {
+  flex-shrink: 1;
+  color: var(--color-text-strong);
+  font-weight: 650;
+}
+
 .asv2-topbar-right {
   display: flex;
   align-items: center;
@@ -25225,6 +25314,32 @@ section[id] {
   white-space: nowrap;
 }
 .asv2-topbar-cta:hover { opacity: 0.85; }
+.asv2-topbar-cta-icon {
+  position: relative;
+  display: inline-flex;
+}
+.asv2-topbar-cta-badge {
+  position: absolute;
+  top: -7px;
+  right: -9px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 15px;
+  height: 15px;
+  padding: 0 3px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--color-text-strong);
+  background: var(--color-accent);
+  color: #fff;
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+}
+.asv2-workspace:has(.td-tool-page) > .asv2-topbar .asv2-topbar-cta-badge {
+  border-color: var(--color-surface);
+}
 
 /* Sur une fiche outil, Ma stack est une destination de navigation et non le
    CTA de conversion de la page. Le bouton plein est réservé à l'ajout dans la
@@ -25936,7 +26051,7 @@ section[id] {
     padding: 0;
     justify-content: center;
   }
-  .asv2-topbar-cta > span { display: none; }
+  .asv2-topbar-cta > span:not(.asv2-topbar-cta-icon) { display: none; }
 }
 
 /* ══════════════════════════════════════════════════════════════════════

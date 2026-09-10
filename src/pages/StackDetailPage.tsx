@@ -2,6 +2,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Link, Navigate, useParams } from "react-router-dom";
 import { ChevronDown } from "@/lib/icons";
 import ToolLogo from "@/components/ToolLogo";
+import Breadcrumb from "@/components/Breadcrumb";
 import { useLang } from "@/hooks/useLang";
 import { usdFromEur } from "@/lib/currencyRates";
 import { useToolSummaries, type ToolSummary } from "@/hooks/useSupabaseData";
@@ -698,13 +699,12 @@ const StackDetailPage = () => {
           HERO — éditorial + table signalétique
       ════════════════════════════════════════════════════════════════════ */}
       <div className="sd-page-frame">
-          <nav className="cp-breadcrumb sd-hero-breadcrumb" aria-label={t("Fil d’Ariane", "Breadcrumb")}>
-            <Link to={`${prefix}`}>ToolTrim</Link>
-            <span>/</span>
-            <Link to={`${prefix}/stacks`}>{t("Stacks", "Stacks")}</Link>
-            <span>/</span>
-            <span>{detailTitle}</span>
-          </nav>
+          <Breadcrumb
+            items={[
+              { label: t("Stacks", "Stacks"), href: `${prefix}/stacks` },
+              { label: detailTitle },
+            ]}
+          />
 
             <header className="sd-hero-editorial">
               <span className="sd-hero-eyebrow">{t(`STACK ${personaText}`.toUpperCase(), `STACK ${personaText}`.toUpperCase())}</span>
