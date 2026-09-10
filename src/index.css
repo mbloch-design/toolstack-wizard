@@ -24943,6 +24943,7 @@ section[id] {
 }
 .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav-item {
   justify-content: center;
+  gap: 0;
   padding-inline: 0;
 }
 
@@ -25058,6 +25059,7 @@ section[id] {
 }
 .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-submit {
   justify-content: center;
+  gap: 0;
   padding-inline: 0;
   border-color: transparent;
 }
