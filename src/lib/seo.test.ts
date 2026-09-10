@@ -34,7 +34,9 @@ describe("getLanguageSwitchPath", () => {
   it("does not invent an English URL for a French-only guide", () => {
     expect(
       getLanguageSwitchPath(
-        "/fr/guide/notion-gratuit-vs-payant-vrai-calcul",
+        // Dernier guide sans version anglaise. Si la liste se vide un jour, ce
+        // test doit etre repointe ou reecrit sur un cas fictif.
+        "/fr/guide/claude-sonnet-4-6-vs-chatgpt-vs-deepseek-vs-gemini-fevrier-2026",
         "en",
       ),
     ).toBe("/en/guides");

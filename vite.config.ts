@@ -109,10 +109,23 @@ const GUIDE_COMPARISON_REDIRECTS = new Set([
   "slack-vs-teams-comparison-2026",
 ]);
 
+// Guides volontairement sortis de l'index, sans etre supprimes.
+//
+// Deux articles anglais traitaient la meme requete : une stack freelance
+// minimaliste. Le plus court (670 mots) restait seul en ligne pendant que le
+// plus complet (2788 mots) etait enterre par GUIDE_FR_ONLY_SLUGS. Le second est
+// desormais promu, et le premier passe en noindex plutot qu'a la poubelle : le
+// contenu reste accessible et lie, mais cesse de concurrencer son propre site.
+//
+// noindex, follow et non noindex, nofollow : les liens internes de la page
+// doivent continuer a transmettre vers les fiches qu'elle cite.
+const GUIDE_NOINDEX_SLUGS = new Set([
+  "stack-saas-minimaliste-freelance-2026-moins-50-euros",
+  "minimalist-saas-stack-freelancer-2026-under-50-euros",
+]);
+
 const GUIDE_FR_ONLY_SLUGS = new Set([
   "claude-sonnet-4-6-vs-chatgpt-vs-deepseek-vs-gemini-fevrier-2026",
-  "stack-minimaliste-freelance-2026",
-  "notion-gratuit-vs-payant-vrai-calcul",
 ]);
 
 // Les metadonnees anglaises sont figees au prerendu et servent un public
@@ -528,24 +541,32 @@ function sitemapPlugin(): Plugin {
           addPair(`${BASE}/fr/category/${c.slug}`, `${BASE}/en/category/${c.slug}`, "weekly", "0.7");
         }
 
-        // ── Articles from content.json (lang-specific, no guaranteed pair) ────
-        for (const a of data.articles || []) {
-          const lang = a.lang || "fr";
-          const articleDate = a.date || buildDate;
-          addSingle(`${BASE}/${lang}/guide/${a.slug}`, "monthly", "0.6", articleDate);
-        }
-
         // ── Posts from posts-fr.json / posts-en.json ──────────────────────────
         const postsFrRaw = fs.readFileSync(path.resolve(__dirname, "src/data/posts-fr.json"), "utf-8");
         const postsEnRaw = fs.readFileSync(path.resolve(__dirname, "src/data/posts-en.json"), "utf-8");
         const postsFr = JSON.parse(postsFrRaw) as any[];
         const postsEn = JSON.parse(postsEnRaw) as any[];
-        const contentArticleSlugs = new Set((data.articles || []).map((a: any) => a.slug));
+
+        // ── Articles from content.json (lang-specific, no guaranteed pair) ────
+        // content.json est un vestige : il ne contient plus qu un article, et cet
+        // article existe aussi comme guide apparie FR/EN. Le servir ici le sortait
+        // en URL unique sans hreflang, et faisait sauter la boucle des guides via
+        // contentArticleSlugs : la version anglaise n entrait jamais au sitemap.
+        // On ne garde donc ici que ce qui n existe pas comme guide.
+        const guideSlugs = new Set([...postsFr, ...postsEn].map((p: any) => p.slug));
+        for (const a of (data.articles || []).filter((a: any) => !guideSlugs.has(a.slug))) {
+          const lang = a.lang || "fr";
+          const articleDate = a.date || buildDate;
+          addSingle(`${BASE}/${lang}/guide/${a.slug}`, "monthly", "0.6", articleDate);
+        }
+
+        const contentArticleSlugs = new Set((data.articles || []).filter((a: any) => !guideSlugs.has(a.slug)).map((a: any) => a.slug));
         const enPostBySlug = new Map(postsEn.map((p: any) => [p.slug, p]));
         const pairedEnSlugs = new Set<string>();
 
         for (const post of postsFr) {
           if (contentArticleSlugs.has(post.slug)) continue;
+          if (GUIDE_NOINDEX_SLUGS.has(post.slug)) continue;
           const enSlug = GUIDE_SLUG_ALTERNATES[post.slug] || post.slug;
           const enPost = enPostBySlug.get(enSlug);
           if (!GUIDE_FR_ONLY_SLUGS.has(post.slug) && enPost) {
@@ -566,7 +587,8 @@ function sitemapPlugin(): Plugin {
             GUIDE_COMPARISON_REDIRECTS.has(post.slug) ||
             Object.prototype.hasOwnProperty.call(GUIDE_SLUG_ALTERNATES, post.slug) ||
             GUIDE_EN_TO_FR[post.slug] ||
-            GUIDE_FR_ONLY_SLUGS.has(post.slug)
+            GUIDE_FR_ONLY_SLUGS.has(post.slug) ||
+            GUIDE_NOINDEX_SLUGS.has(post.slug)
           ) continue;
           addSingle(`${BASE}/en/guide/${post.slug}`, "monthly", "0.7", post.date || buildDate);
         }
@@ -1858,6 +1880,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           }
 
           const postMetaTags = [
+            ...(GUIDE_NOINDEX_SLUGS.has(slug) ? [`<meta name="robots" content="noindex, follow" />`] : []),
             `<link rel="canonical" href="${url}" />`,
             ...(hasFrAlternate ? [`<link rel="alternate" hreflang="fr" href="${frUrl}" />`] : []),
             ...(hasEnAlternate ? [`<link rel="alternate" hreflang="en" href="${enUrl}" />`] : []),

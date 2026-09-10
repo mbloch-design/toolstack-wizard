@@ -47,8 +47,6 @@ const GUIDE_EN_TO_FR = Object.fromEntries(
 
 const GUIDE_FR_ONLY_SLUGS = new Set([
   "claude-sonnet-4-6-vs-chatgpt-vs-deepseek-vs-gemini-fevrier-2026",
-  "stack-minimaliste-freelance-2026",
-  "notion-gratuit-vs-payant-vrai-calcul",
 ]);
 
 export function setMeta(nameOrProp: string, content: string) {

@@ -57,7 +57,7 @@ describe("robots SEO policy", () => {
     );
     // Le mecanisme lui-meme reste teste sur un guide encore sans traduction.
     expect(seoSource).toMatch(
-      /GUIDE_FR_ONLY_SLUGS[\s\S]*"notion-gratuit-vs-payant-vrai-calcul"/,
+      /GUIDE_FR_ONLY_SLUGS[\s\S]*"claude-sonnet-4-6-vs-chatgpt-vs-deepseek-vs-gemini-fevrier-2026"/,
     );
   });
 });

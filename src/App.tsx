@@ -106,8 +106,6 @@ const GUIDE_COMPARISON_REDIRECTS: Record<string, string> = {
 // requete. A arbitrer article par article avant exposition.
 const GUIDE_FR_ONLY_SLUGS = new Set([
   "claude-sonnet-4-6-vs-chatgpt-vs-deepseek-vs-gemini-fevrier-2026",
-  "stack-minimaliste-freelance-2026",
-  "notion-gratuit-vs-payant-vrai-calcul",
 ]);
 
 export const LangLayout = () => {
