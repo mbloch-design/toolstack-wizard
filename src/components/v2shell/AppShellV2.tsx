@@ -233,18 +233,6 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
           })}
         </nav>
 
-        <Link
-          to={`${prefix}/submit`}
-          className="asv2-sidebar-submit"
-          aria-label={t("Soumettre un outil", "Submit a tool")}
-          data-tooltip={t("Soumettre un outil", "Submit a tool")}
-        >
-          <span className="asv2-nav-icon">
-            <Rocket style={{ width: 18, height: 18 }} />
-          </span>
-          <span className="asv2-nav-label">{t("Soumettre un outil", "Submit a tool")}</span>
-        </Link>
-
         <div className="asv2-sidebar-utility">
           <div className="asv2-utility-actions">
           <a
@@ -287,6 +275,18 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
           </button>
           </div>
         </div>
+
+        <Link
+          to={`${prefix}/submit`}
+          className="asv2-sidebar-submit"
+          aria-label={t("Soumettre un outil", "Submit a tool")}
+          data-tooltip={t("Soumettre un outil", "Submit a tool")}
+        >
+          <span className="asv2-nav-icon">
+            <Rocket style={{ width: 18, height: 18 }} />
+          </span>
+          <span className="asv2-nav-label">{t("Soumettre un outil", "Submit a tool")}</span>
+        </Link>
 
       </aside>
 

@@ -24629,7 +24629,8 @@ section[id] {
 .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-top {
   flex-direction: column;
   justify-content: center;
-  gap: 8px;
+  gap: 6px;
+  margin-bottom: 2px;
   padding-inline: 0;
 }
 .asv2-logo {
@@ -24940,6 +24941,10 @@ section[id] {
   text-decoration: none;
   transition: background 140ms ease-out, color 140ms ease-out, transform 140ms ease-out;
 }
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav-item {
+  justify-content: center;
+  padding-inline: 0;
+}
 
 .asv2-nav-icon {
   display: flex;
@@ -25001,13 +25006,10 @@ section[id] {
 
 /* In the compact rail the whole link is the hover/active pill, not only its
    glyph. The floating label keeps every destination identifiable. */
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav-item:hover,
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav-item:focus-visible,
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav-item--active {
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav-item:hover .asv2-nav-icon,
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav-item:focus-visible .asv2-nav-icon,
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav-item--active .asv2-nav-icon {
   background: color-mix(in srgb, var(--color-surface-soft) 84%, var(--color-surface));
-}
-.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav-item .asv2-nav-icon {
-  background: transparent;
 }
 .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav-item::after {
   position: absolute;
@@ -25043,7 +25045,7 @@ section[id] {
   gap: 8px;
   width: 100%;
   min-height: 36px;
-  margin-top: auto;
+  margin-top: 8px;
   padding: 2px 5px;
   border: 1px solid color-mix(in srgb, var(--color-border-soft) 78%, transparent);
   border-radius: var(--radius-md);
@@ -25053,6 +25055,10 @@ section[id] {
 }
 .asv2-sidebar-submit .asv2-nav-icon {
   color: var(--color-text-strong);
+}
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-sidebar-submit {
+  justify-content: center;
+  padding-inline: 0;
 }
 .asv2-sidebar-submit:hover {
   background: var(--color-surface-soft);
@@ -25085,7 +25091,7 @@ section[id] {
 }
 
 .asv2-sidebar-utility {
-  margin-top: 4px;
+  margin-top: auto;
   padding: 10px 0 2px;
   border-top: 0;
 }
@@ -25116,6 +25122,11 @@ section[id] {
 .asv2-utility-item:hover {
   background: color-mix(in srgb, var(--color-surface-soft) 72%, var(--color-surface));
   color: var(--color-text);
+}
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-utility-item {
+  grid-template-columns: 32px;
+  justify-content: center;
+  padding-inline: 0;
 }
 .asv2-utility-item::after {
   position: absolute;
@@ -25279,16 +25290,16 @@ section[id] {
 @media (min-width: 901px) {
   .asv2-root--sidebar-expanded .asv2-utility-actions {
     flex-direction: row;
-    justify-content: space-between;
-    gap: 0;
+    justify-content: flex-start;
+    gap: 2px;
   }
   .asv2-root--sidebar-expanded .asv2-utility-item {
     display: grid;
-    flex: 1 1 0;
+    flex: 0 0 auto;
     grid-template-columns: 1fr;
     min-width: 0;
-    max-width: 48px;
-    min-height: 48px;
+    width: 36px;
+    min-height: 36px;
     padding: 3px;
     border-radius: var(--radius-pill);
   }
