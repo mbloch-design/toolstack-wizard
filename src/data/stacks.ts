@@ -702,73 +702,73 @@ export const STACKS: StackGuide[] = [
               "title": "Concept spatial",
               "titleEn": "Concept spatial",
               "detail": "Moodboards, références, narration, volumes et premières pistes doivent converger vite.",
-              "detailEn": "Moodboards, références, narration, volumes et premières pistes doivent converger vite."
+              "detailEn": "Moodboards, references, narrative, volumes and first directions have to converge quickly."
           },
           {
               "title": "Production lisible",
               "titleEn": "Production lisible",
               "detail": "Plans, matériaux, fournisseurs, budget et contraintes doivent rester traçables.",
-              "detailEn": "Plans, matériaux, fournisseurs, budget et contraintes doivent rester traçables."
+              "detailEn": "Drawings, materials, suppliers, budget and constraints have to stay traceable."
           },
           {
               "title": "Validation client",
               "titleEn": "Validation client",
               "detail": "Le client doit valider une intention et comprendre les arbitrages de fabrication.",
-              "detailEn": "Le client doit valider une intention et comprendre les arbitrages de fabrication."
+              "detailEn": "The client has to approve an intent and understand the fabrication trade-offs."
           }
       ],
       "maturitySignals": [
           {
               "title": "Volume récurrent",
-              "titleEn": "Volume récurrent",
+              "titleEn": "Recurring volume",
               "detail": "La stack devient rentable quand le profil livre plusieurs projets ou variantes par mois.",
-              "detailEn": "La stack devient rentable quand le profil livre plusieurs projets ou variantes par mois."
+              "detailEn": "The stack pays for itself once you ship several projects or variants a month."
           },
           {
               "title": "Client plus exigeant",
-              "titleEn": "Client plus exigeant",
+              "titleEn": "A more demanding client",
               "detail": "Plus le client valide de livrables, plus les outils de feedback et documentation comptent.",
-              "detailEn": "Plus le client valide de livrables, plus les outils de feedback et documentation comptent."
+              "detailEn": "The more deliverables a client signs off, the more feedback and documentation tools matter."
           }
       ],
       "traps": [
           {
               "title": "Rendu sans production",
-              "titleEn": "Rendu sans production",
+              "titleEn": "Rendering with no production",
               "detail": "Une image séduisante ne suffit pas si elle ne peut pas devenir un plan ou un budget.",
-              "detailEn": "Une image séduisante ne suffit pas si elle ne peut pas devenir un plan ou un budget."
+              "detailEn": "An appealing image is not enough if it cannot become a drawing or a budget."
           },
           {
               "title": "Fichiers lourds",
               "titleEn": "Fichiers lourds",
               "detail": "Les assets importés peuvent tuer SketchUp si Transmutr et CleanUp ne sont pas utilisés.",
-              "detailEn": "Les assets importés peuvent tuer SketchUp si Transmutr et CleanUp ne sont pas utilisés."
+              "detailEn": "Imported assets can kill SketchUp unless Transmutr and CleanUp are used."
           },
           {
               "title": "Budget séparé",
-              "titleEn": "Budget séparé",
+              "titleEn": "Separate budget",
               "detail": "Un tableau budget isolé se déconnecte vite des choix créatifs.",
-              "detailEn": "Un tableau budget isolé se déconnecte vite des choix créatifs."
+              "detailEn": "A budget spreadsheet on its own drifts away from the creative decisions."
           }
       ],
       "checkpoints": [
           {
               "q": "Le client peut-il comprendre le projet sans réunion supplémentaire ?",
-              "qEn": "Le client peut-il comprendre le projet sans réunion supplémentaire ?",
+              "qEn": "Can the client understand the project without another meeting?",
               "hint": "Si non, la présentation ou le feedback ne sont pas assez structurés.",
-              "hintEn": "Si non, la présentation ou le feedback ne sont pas assez structurés."
+              "hintEn": "If not, the presentation or the feedback loop is not structured enough."
           },
           {
               "q": "Les fichiers sources, exports et décisions sont-ils au même endroit ?",
-              "qEn": "Les fichiers sources, exports et décisions sont-ils au même endroit ?",
+              "qEn": "Are source files, exports and decisions all in one place?",
               "hint": "Si non, Notion, Drive ou Eagle doivent reprendre leur rôle de source de vérité.",
-              "hintEn": "Si non, Notion, Drive ou Eagle doivent reprendre leur rôle de source de vérité."
+              "hintEn": "If not, Notion, Drive or Eagle should go back to being the source of truth."
           },
           {
               "q": "Chaque abonnement correspond-il à un livrable facturé ?",
-              "qEn": "Chaque abonnement correspond-il à un livrable facturé ?",
+              "qEn": "Does every subscription map to something you actually invoice?",
               "hint": "Si non, l’outil doit passer en test ponctuel ou être coupé.",
-              "hintEn": "Si non, l’outil doit passer en test ponctuel ou être coupé."
+              "hintEn": "If not, the tool should drop to occasional testing, or be cut."
           }
       ],
       "tools": [
@@ -777,14 +777,14 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Concept / 3D",
               "slug": "sketchup-pro",
               "reason": "Rapide pour volumes, scènes et variantes client.",
-              "reasonEn": "Rapide pour volumes, scènes et variantes client."
+              "reasonEn": "Fast for volumes, scenes and client variants."
           },
           {
               "role": "CAO événementielle",
-              "roleEn": "CAO événementielle",
+              "roleEn": "Event CAD",
               "slug": "vectorworks",
               "reason": "Solide pour plans, événements et implantation plus technique.",
-              "reasonEn": "Solide pour plans, événements et implantation plus technique.",
+              "reasonEn": "Solid for drawings, events and more technical layouts.",
               "decision": "conditional"
           },
           {
@@ -792,7 +792,7 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Plans 2D",
               "slug": "autocad",
               "reason": "Standard pour échanges techniques et prestataires.",
-              "reasonEn": "Standard pour échanges techniques et prestataires.",
+              "reasonEn": "The standard for technical exchanges and suppliers.",
               "decision": "conditional"
           },
           {
@@ -800,50 +800,50 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Rendu rapide",
               "slug": "d5-render",
               "reason": "Bon ratio vitesse / impact visuel pour validation.",
-              "reasonEn": "Bon ratio vitesse / impact visuel pour validation."
+              "reasonEn": "A good speed to visual impact ratio for sign-off."
           },
           {
               "role": "Vidéo immersive",
-              "roleEn": "Vidéo immersive",
+              "roleEn": "Immersive video",
               "slug": "twinmotion",
               "reason": "Utile pour parcours et ambiance événementielle.",
-              "reasonEn": "Utile pour parcours et ambiance événementielle.",
+              "reasonEn": "Useful for visitor journeys and event atmosphere.",
               "decision": "conditional"
           },
           {
               "role": "Présentation",
-              "roleEn": "Présentation",
+              "roleEn": "Presentation",
               "slug": "indesign",
               "reason": "Dossiers client, planches et rendus structurés.",
-              "reasonEn": "Dossiers client, planches et rendus structurés."
+              "reasonEn": "Client dossiers, boards and structured renders."
           },
           {
               "role": "Vectoriel / signalétique",
-              "roleEn": "Vectoriel / signalétique",
+              "roleEn": "Vector and signage",
               "slug": "adobe-illustrator",
               "reason": "Plans graphiques, pictos, signalétique et éléments de marque.",
-              "reasonEn": "Plans graphiques, pictos, signalétique et éléments de marque."
+              "reasonEn": "Graphic layouts, pictograms, signage and brand elements."
           },
           {
               "role": "Retouche",
               "roleEn": "Retouche",
               "slug": "adobe-photoshop",
               "reason": "Nettoyage de rendus, photomontages et moodboards.",
-              "reasonEn": "Nettoyage de rendus, photomontages et moodboards."
+              "reasonEn": "Cleaning up renders, photomontage and moodboards."
           },
           {
               "role": "Moodboard",
               "roleEn": "Moodboard",
               "slug": "milanote",
               "reason": "Références et narration visuelle.",
-              "reasonEn": "Références et narration visuelle."
+              "reasonEn": "References and visual narrative."
           },
           {
               "role": "Atelier client",
               "roleEn": "Atelier client",
               "slug": "miro",
               "reason": "Cadrage, parcours et workshop.",
-              "reasonEn": "Cadrage, parcours et workshop.",
+              "reasonEn": "Framing, journeys and workshops.",
               "decision": "conditional"
           },
           {
@@ -851,14 +851,14 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Pilotage",
               "slug": "notion",
               "reason": "Décisions, budget, fournisseurs et compte rendu.",
-              "reasonEn": "Décisions, budget, fournisseurs et compte rendu."
+              "reasonEn": "Decisions, budget, suppliers and minutes."
           },
           {
               "role": "Planning équipe",
-              "roleEn": "Planning équipe",
+              "roleEn": "Team scheduling",
               "slug": "monday",
               "reason": "Utile si plusieurs prestataires avancent en parallèle.",
-              "reasonEn": "Utile si plusieurs prestataires avancent en parallèle.",
+              "reasonEn": "Useful when several suppliers run in parallel.",
               "decision": "conditional"
           },
           {
@@ -866,21 +866,21 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Plugin profils",
               "slug": "profile-builder-3",
               "reason": "Structure répétitive, rails, cadres et éléments modulaires.",
-              "reasonEn": "Structure répétitive, rails, cadres et éléments modulaires."
+              "reasonEn": "Repeating structure, rails, frames and modular elements."
           },
           {
               "role": "Imports 3D",
               "roleEn": "Imports 3D",
               "slug": "transmutr",
               "reason": "Optimise les modèles téléchargés.",
-              "reasonEn": "Optimise les modèles téléchargés."
+              "reasonEn": "Optimises downloaded models."
           },
           {
               "role": "Décor répété",
-              "roleEn": "Décor répété",
+              "roleEn": "Repeated set",
               "slug": "skatter",
               "reason": "Décors, végétation, public et objets répétés.",
-              "reasonEn": "Décors, végétation, public et objets répétés.",
+              "reasonEn": "Sets, vegetation, crowds and repeated objects.",
               "decision": "conditional"
           },
           {
@@ -888,7 +888,7 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Liste de coupe",
               "slug": "open-cut-list",
               "reason": "Préparation fabrication et débits.",
-              "reasonEn": "Préparation fabrication et débits.",
+              "reasonEn": "Fabrication prep and cutting lists.",
               "decision": "conditional"
           },
           {
@@ -896,14 +896,14 @@ export const STACKS: StackGuide[] = [
               "roleEn": "IA concept",
               "slug": "chatgpt",
               "reason": "Structure brief, narration, livrables et comptes rendus.",
-              "reasonEn": "Structure brief, narration, livrables et comptes rendus."
+              "reasonEn": "Structures brief, narrative, deliverables and write-ups."
           },
           {
               "role": "IA ambiance",
               "roleEn": "IA ambiance",
               "slug": "midjourney",
               "reason": "Explore directions visuelles et atmosphères.",
-              "reasonEn": "Explore directions visuelles et atmosphères.",
+              "reasonEn": "Explores visual directions and atmospheres.",
               "decision": "conditional"
           },
           {
@@ -911,7 +911,7 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Retouche IA",
               "slug": "firefly",
               "reason": "Variations et nettoyage visuel.",
-              "reasonEn": "Variations et nettoyage visuel.",
+              "reasonEn": "Variants and visual cleanup.",
               "decision": "conditional"
           }
       ]
@@ -946,33 +946,33 @@ export const STACKS: StackGuide[] = [
               "title": "Concept vendable",
               "titleEn": "Concept vendable",
               "detail": "Le client doit comprendre l’expérience et la présence de marque.",
-              "detailEn": "Le client doit comprendre l’expérience et la présence de marque."
+              "detailEn": "The client has to understand the experience and the brand presence."
           },
           {
               "title": "Fabrication maîtrisée",
-              "titleEn": "Fabrication maîtrisée",
+              "titleEn": "Controlled production",
               "detail": "Plans, mobilier, matériaux et prestataires doivent être alignés.",
-              "detailEn": "Plans, mobilier, matériaux et prestataires doivent être alignés."
+              "detailEn": "Drawings, furniture, materials and suppliers have to line up."
           },
           {
               "title": "Budget vivant",
               "titleEn": "Budget vivant",
               "detail": "Chaque choix créatif doit avoir un impact prix visible.",
-              "detailEn": "Chaque choix créatif doit avoir un impact prix visible."
+              "detailEn": "Every creative decision should have a visible price impact."
           }
       ],
       "maturitySignals": [
           {
               "title": "Volume récurrent",
-              "titleEn": "Volume récurrent",
+              "titleEn": "Recurring volume",
               "detail": "La stack devient rentable quand le profil livre plusieurs projets ou variantes par mois.",
-              "detailEn": "La stack devient rentable quand le profil livre plusieurs projets ou variantes par mois."
+              "detailEn": "The stack pays for itself once you ship several projects or variants a month."
           },
           {
               "title": "Client plus exigeant",
-              "titleEn": "Client plus exigeant",
+              "titleEn": "A more demanding client",
               "detail": "Plus le client valide de livrables, plus les outils de feedback et documentation comptent.",
-              "detailEn": "Plus le client valide de livrables, plus les outils de feedback et documentation comptent."
+              "detailEn": "The more deliverables a client signs off, the more feedback and documentation tools matter."
           }
       ],
       "traps": [
@@ -980,39 +980,39 @@ export const STACKS: StackGuide[] = [
               "title": "Trop de 3D premium",
               "titleEn": "Trop de 3D premium",
               "detail": "V-Ray n’est utile que si l’image premium change la vente.",
-              "detailEn": "V-Ray n’est utile que si l’image premium change la vente."
+              "detailEn": "V-Ray only earns its place if a premium image changes the sale."
           },
           {
               "title": "Signalétique hors flux",
-              "titleEn": "Signalétique hors flux",
+              "titleEn": "Signage outside the flow",
               "detail": "Illustrator doit rester connecté au plan et aux contraintes de pose.",
-              "detailEn": "Illustrator doit rester connecté au plan et aux contraintes de pose."
+              "detailEn": "Illustrator has to stay connected to the drawing and to the installation constraints."
           },
           {
               "title": "Suivi fournisseur flou",
               "titleEn": "Suivi fournisseur flou",
               "detail": "Sans statuts et alternatives, le sourcing bloque la production.",
-              "detailEn": "Sans statuts et alternatives, le sourcing bloque la production."
+              "detailEn": "Without statuses and alternatives, sourcing blocks production."
           }
       ],
       "checkpoints": [
           {
               "q": "Le client peut-il comprendre le projet sans réunion supplémentaire ?",
-              "qEn": "Le client peut-il comprendre le projet sans réunion supplémentaire ?",
+              "qEn": "Can the client understand the project without another meeting?",
               "hint": "Si non, la présentation ou le feedback ne sont pas assez structurés.",
-              "hintEn": "Si non, la présentation ou le feedback ne sont pas assez structurés."
+              "hintEn": "If not, the presentation or the feedback loop is not structured enough."
           },
           {
               "q": "Les fichiers sources, exports et décisions sont-ils au même endroit ?",
-              "qEn": "Les fichiers sources, exports et décisions sont-ils au même endroit ?",
+              "qEn": "Are source files, exports and decisions all in one place?",
               "hint": "Si non, Notion, Drive ou Eagle doivent reprendre leur rôle de source de vérité.",
-              "hintEn": "Si non, Notion, Drive ou Eagle doivent reprendre leur rôle de source de vérité."
+              "hintEn": "If not, Notion, Drive or Eagle should go back to being the source of truth."
           },
           {
               "q": "Chaque abonnement correspond-il à un livrable facturé ?",
-              "qEn": "Chaque abonnement correspond-il à un livrable facturé ?",
+              "qEn": "Does every subscription map to something you actually invoice?",
               "hint": "Si non, l’outil doit passer en test ponctuel ou être coupé.",
-              "hintEn": "Si non, l’outil doit passer en test ponctuel ou être coupé."
+              "hintEn": "If not, the tool should drop to occasional testing, or be cut."
           }
       ],
       "tools": [
@@ -1021,14 +1021,14 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Volume rapide",
               "slug": "sketchup-pro",
               "reason": "Base efficace pour tester implantation, mobilier et circulation.",
-              "reasonEn": "Base efficace pour tester implantation, mobilier et circulation."
+              "reasonEn": "An effective base for testing layout, furniture and circulation."
           },
           {
               "role": "Formes complexes",
               "roleEn": "Formes complexes",
               "slug": "rhino",
               "reason": "Utile pour mobilier sur-mesure et formes sculpturales.",
-              "reasonEn": "Utile pour mobilier sur-mesure et formes sculpturales.",
+              "reasonEn": "Useful for bespoke furniture and sculptural shapes.",
               "decision": "conditional"
           },
           {
@@ -1036,14 +1036,14 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Plans techniques",
               "slug": "autocad",
               "reason": "Échanges avec fabricants et prestataires.",
-              "reasonEn": "Échanges avec fabricants et prestataires."
+              "reasonEn": "Exchanges with manufacturers and suppliers."
           },
           {
               "role": "CAO retail",
               "roleEn": "CAO retail",
               "slug": "vectorworks",
               "reason": "Option solide pour implantation et dossiers techniques.",
-              "reasonEn": "Option solide pour implantation et dossiers techniques.",
+              "reasonEn": "A solid option for layouts and technical dossiers.",
               "decision": "conditional"
           },
           {
@@ -1051,50 +1051,50 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Rendu quotidien",
               "slug": "d5-render",
               "reason": "Images rapides pour validation client.",
-              "reasonEn": "Images rapides pour validation client."
+              "reasonEn": "Quick images for client sign-off."
           },
           {
               "role": "Image premium",
               "roleEn": "Image premium",
               "slug": "v-ray",
               "reason": "À garder pour les rendus haut de gamme vendus.",
-              "reasonEn": "À garder pour les rendus haut de gamme vendus.",
+              "reasonEn": "Keep it for the high-end renders you actually sell.",
               "decision": "conditional"
           },
           {
               "role": "Signalétique",
-              "roleEn": "Signalétique",
+              "roleEn": "Signage",
               "slug": "adobe-illustrator",
               "reason": "Pictos, habillages, adhésifs, panneaux et formats print.",
-              "reasonEn": "Pictos, habillages, adhésifs, panneaux et formats print."
+              "reasonEn": "Pictograms, wraps, vinyls, panels and print formats."
           },
           {
               "role": "Dossier client",
               "roleEn": "Dossier client",
               "slug": "indesign",
               "reason": "Présentation propre des intentions, plans et options.",
-              "reasonEn": "Présentation propre des intentions, plans et options."
+              "reasonEn": "A clean presentation of intent, drawings and options."
           },
           {
               "role": "Retouche",
               "roleEn": "Retouche",
               "slug": "adobe-photoshop",
               "reason": "Photomontages et corrections de rendu.",
-              "reasonEn": "Photomontages et corrections de rendu."
+              "reasonEn": "Photomontage and render fixes."
           },
           {
               "role": "Pilotage",
               "roleEn": "Pilotage",
               "slug": "notion",
               "reason": "Décisions, coûts, prestataires et livrables.",
-              "reasonEn": "Décisions, coûts, prestataires et livrables."
+              "reasonEn": "Decisions, costs, suppliers and deliverables."
           },
           {
               "role": "Base production",
               "roleEn": "Base production",
               "slug": "airtable",
               "reason": "Utile si beaucoup d’items, fournisseurs et statuts.",
-              "reasonEn": "Utile si beaucoup d’items, fournisseurs et statuts.",
+              "reasonEn": "Useful when there are many items, suppliers and statuses.",
               "decision": "conditional"
           },
           {
@@ -1102,7 +1102,7 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Budget",
               "slug": "google-sheets",
               "reason": "Chiffrage simple et partagé.",
-              "reasonEn": "Chiffrage simple et partagé."
+              "reasonEn": "Simple shared costing."
           },
           {
               "role": "Planning",
@@ -1117,21 +1117,21 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Plugin profils",
               "slug": "profile-builder-3",
               "reason": "Structures répétitives, rails, cadres et modules.",
-              "reasonEn": "Structures répétitives, rails, cadres et modules."
+              "reasonEn": "Repeating structures, rails, frames and modules."
           },
           {
               "role": "Imports 3D",
               "roleEn": "Imports 3D",
               "slug": "transmutr",
               "reason": "Nettoie les assets importés.",
-              "reasonEn": "Nettoie les assets importés."
+              "reasonEn": "Cleans up imported assets."
           },
           {
               "role": "Débits",
-              "roleEn": "Débits",
+              "roleEn": "Throughput",
               "slug": "open-cut-list",
               "reason": "Prépare panneaux et fabrication.",
-              "reasonEn": "Prépare panneaux et fabrication.",
+              "reasonEn": "Prepares panels and fabrication.",
               "decision": "conditional"
           },
           {
@@ -1139,14 +1139,14 @@ export const STACKS: StackGuide[] = [
               "roleEn": "IA brief",
               "slug": "chatgpt",
               "reason": "Clarifie contraintes, planning, livrables et emails client.",
-              "reasonEn": "Clarifie contraintes, planning, livrables et emails client."
+              "reasonEn": "Clarifies constraints, schedule, deliverables and client emails."
           },
           {
               "role": "IA ambiance",
               "roleEn": "IA ambiance",
               "slug": "krea-ai",
               "reason": "Variations visuelles rapides sur matières et lumières.",
-              "reasonEn": "Variations visuelles rapides sur matières et lumières.",
+              "reasonEn": "Fast visual variations on materials and lighting.",
               "decision": "conditional"
           },
           {
@@ -1154,7 +1154,7 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Upscale",
               "slug": "magnific-ai",
               "reason": "À réserver aux rendus finaux.",
-              "reasonEn": "À réserver aux rendus finaux.",
+              "reasonEn": "Keep it for final renders.",
               "decision": "conditional"
           }
       ]
@@ -1189,33 +1189,33 @@ export const STACKS: StackGuide[] = [
               "title": "Production fiable",
               "titleEn": "Production fiable",
               "detail": "Vectoriel, image, mise en page et PDF doivent sortir proprement.",
-              "detailEn": "Vectoriel, image, mise en page et PDF doivent sortir proprement."
+              "detailEn": "Vector, image, layout and PDF all have to come out clean."
           },
           {
               "title": "Assets rangés",
-              "titleEn": "Assets rangés",
+              "titleEn": "Assets in order",
               "detail": "Polices, mockups, visuels et références doivent être retrouvables.",
-              "detailEn": "Polices, mockups, visuels et références doivent être retrouvables."
+              "detailEn": "Fonts, mockups, visuals and references have to be findable."
           },
           {
               "title": "Livraison claire",
               "titleEn": "Livraison claire",
               "detail": "Le client doit recevoir les bons formats et la bonne version.",
-              "detailEn": "Le client doit recevoir les bons formats et la bonne version."
+              "detailEn": "The client has to receive the right formats and the right version."
           }
       ],
       "maturitySignals": [
           {
               "title": "Volume récurrent",
-              "titleEn": "Volume récurrent",
+              "titleEn": "Recurring volume",
               "detail": "La stack devient rentable quand le profil livre plusieurs projets ou variantes par mois.",
-              "detailEn": "La stack devient rentable quand le profil livre plusieurs projets ou variantes par mois."
+              "detailEn": "The stack pays for itself once you ship several projects or variants a month."
           },
           {
               "title": "Client plus exigeant",
-              "titleEn": "Client plus exigeant",
+              "titleEn": "A more demanding client",
               "detail": "Plus le client valide de livrables, plus les outils de feedback et documentation comptent.",
-              "detailEn": "Plus le client valide de livrables, plus les outils de feedback et documentation comptent."
+              "detailEn": "The more deliverables a client signs off, the more feedback and documentation tools matter."
           }
       ],
       "traps": [
@@ -1223,39 +1223,39 @@ export const STACKS: StackGuide[] = [
               "title": "Canva comme source",
               "titleEn": "Canva comme source",
               "detail": "Canva est utile pour décliner, pas pour porter une identité complète.",
-              "detailEn": "Canva est utile pour décliner, pas pour porter une identité complète."
+              "detailEn": "Canva is useful for variants, not for carrying a whole identity."
           },
           {
               "title": "Fonts dispersées",
-              "titleEn": "Fonts dispersées",
+              "titleEn": "Scattered fonts",
               "detail": "Sans gestionnaire, les polices deviennent vite ingérables.",
-              "detailEn": "Sans gestionnaire, les polices deviennent vite ingérables."
+              "detailEn": "Without a manager, fonts get out of hand fast."
           },
           {
               "title": "PDF non contrôlés",
-              "titleEn": "PDF non contrôlés",
+              "titleEn": "Unchecked PDFs",
               "detail": "Acrobat reste utile dès que le print compte vraiment.",
-              "detailEn": "Acrobat reste utile dès que le print compte vraiment."
+              "detailEn": "Acrobat still earns its place as soon as print genuinely matters."
           }
       ],
       "checkpoints": [
           {
               "q": "Le client peut-il comprendre le projet sans réunion supplémentaire ?",
-              "qEn": "Le client peut-il comprendre le projet sans réunion supplémentaire ?",
+              "qEn": "Can the client understand the project without another meeting?",
               "hint": "Si non, la présentation ou le feedback ne sont pas assez structurés.",
-              "hintEn": "Si non, la présentation ou le feedback ne sont pas assez structurés."
+              "hintEn": "If not, the presentation or the feedback loop is not structured enough."
           },
           {
               "q": "Les fichiers sources, exports et décisions sont-ils au même endroit ?",
-              "qEn": "Les fichiers sources, exports et décisions sont-ils au même endroit ?",
+              "qEn": "Are source files, exports and decisions all in one place?",
               "hint": "Si non, Notion, Drive ou Eagle doivent reprendre leur rôle de source de vérité.",
-              "hintEn": "Si non, Notion, Drive ou Eagle doivent reprendre leur rôle de source de vérité."
+              "hintEn": "If not, Notion, Drive or Eagle should go back to being the source of truth."
           },
           {
               "q": "Chaque abonnement correspond-il à un livrable facturé ?",
-              "qEn": "Chaque abonnement correspond-il à un livrable facturé ?",
+              "qEn": "Does every subscription map to something you actually invoice?",
               "hint": "Si non, l’outil doit passer en test ponctuel ou être coupé.",
-              "hintEn": "Si non, l’outil doit passer en test ponctuel ou être coupé."
+              "hintEn": "If not, the tool should drop to occasional testing, or be cut."
           }
       ],
       "tools": [
@@ -1264,36 +1264,36 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Vectoriel",
               "slug": "adobe-illustrator",
               "reason": "Logo, pictos, formes, print et fichiers sources.",
-              "reasonEn": "Logo, pictos, formes, print et fichiers sources."
+              "reasonEn": "Logo, pictograms, shapes, print and source files."
           },
           {
               "role": "Retouche",
               "roleEn": "Retouche",
               "slug": "adobe-photoshop",
               "reason": "Images, mockups, détourages et photomontages.",
-              "reasonEn": "Images, mockups, détourages et photomontages."
+              "reasonEn": "Images, mockups, cut-outs and photomontage."
           },
           {
               "role": "Mise en page",
               "roleEn": "Mise en page",
               "slug": "indesign",
               "reason": "Brochures, dossiers, catalogues et exports print.",
-              "reasonEn": "Brochures, dossiers, catalogues et exports print."
+              "reasonEn": "Brochures, dossiers, catalogues and print exports."
           },
           {
               "role": "Système digital",
-              "roleEn": "Système digital",
+              "roleEn": "Digital system",
               "slug": "figma",
               "reason": "Templates digitaux, composants et validations rapides.",
-              "reasonEn": "Templates digitaux, composants et validations rapides.",
+              "reasonEn": "Digital templates, components and fast approvals.",
               "decision": "conditional"
           },
           {
               "role": "Déclinaisons",
-              "roleEn": "Déclinaisons",
+              "roleEn": "Variants",
               "slug": "canva",
               "reason": "Formats sociaux et supports simples.",
-              "reasonEn": "Formats sociaux et supports simples.",
+              "reasonEn": "Social formats and simple collateral.",
               "decision": "conditional"
           },
           {
@@ -1301,7 +1301,7 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Visuels rapides",
               "slug": "adobe-express",
               "reason": "Déclinaisons Adobe sans ouvrir toute la chaîne.",
-              "reasonEn": "Déclinaisons Adobe sans ouvrir toute la chaîne.",
+              "reasonEn": "Adobe variants without opening the whole chain.",
               "decision": "conditional"
           },
           {
@@ -1309,49 +1309,49 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Gestion fontes",
               "slug": "fontbase",
               "reason": "Organisation et activation des typographies.",
-              "reasonEn": "Organisation et activation des typographies."
+              "reasonEn": "Organising and activating fonts."
           },
           {
               "role": "Bibliothèque visuelle",
-              "roleEn": "Bibliothèque visuelle",
+              "roleEn": "Visual library",
               "slug": "eagle",
               "reason": "Références, mockups, images et textures.",
-              "reasonEn": "Références, mockups, images et textures."
+              "reasonEn": "References, mockups, images and textures."
           },
           {
               "role": "Contrôle PDF",
-              "roleEn": "Contrôle PDF",
+              "roleEn": "PDF checking",
               "slug": "adobe-acrobat",
               "reason": "Annotations, prépresse et PDF final.",
-              "reasonEn": "Annotations, prépresse et PDF final."
+              "reasonEn": "Annotations, prepress and final PDF."
           },
           {
               "role": "Projet",
               "roleEn": "Projet",
               "slug": "notion",
               "reason": "Brief, décisions, retours et suivi client.",
-              "reasonEn": "Brief, décisions, retours et suivi client."
+              "reasonEn": "Brief, decisions, feedback and client follow-up."
           },
           {
               "role": "Fichiers",
               "roleEn": "Fichiers",
               "slug": "google-drive",
               "reason": "Livrables, sources et archives partagées.",
-              "reasonEn": "Livrables, sources et archives partagées."
+              "reasonEn": "Deliverables, sources and shared archives."
           },
           {
               "role": "Facturation",
               "roleEn": "Facturation",
               "slug": "indy",
               "reason": "Devis, factures et suivi.",
-              "reasonEn": "Devis, factures et suivi."
+              "reasonEn": "Quotes, invoices and follow-up."
           },
           {
               "role": "Plugin Illustrator",
               "roleEn": "Plugin Illustrator",
               "slug": "astute-graphics",
               "reason": "Accélère vectoriel avancé et nettoyage.",
-              "reasonEn": "Accélère vectoriel avancé et nettoyage.",
+              "reasonEn": "Speeds up advanced vector work and cleanup.",
               "decision": "conditional"
           },
           {
@@ -1359,14 +1359,14 @@ export const STACKS: StackGuide[] = [
               "roleEn": "IA structure",
               "slug": "chatgpt",
               "reason": "Angles, textes, présentations et mails.",
-              "reasonEn": "Angles, textes, présentations et mails."
+              "reasonEn": "Angles, copy, presentations and emails."
           },
           {
               "role": "IA image",
               "roleEn": "IA image",
               "slug": "firefly",
               "reason": "Retouche générative dans le flux Adobe.",
-              "reasonEn": "Retouche générative dans le flux Adobe.",
+              "reasonEn": "Generative retouching inside the Adobe flow.",
               "decision": "conditional"
           },
           {
@@ -1374,7 +1374,7 @@ export const STACKS: StackGuide[] = [
               "roleEn": "IA exploration",
               "slug": "midjourney",
               "reason": "Univers visuels et moodboards.",
-              "reasonEn": "Univers visuels et moodboards.",
+              "reasonEn": "Visual worlds and moodboards.",
               "decision": "conditional"
           },
           {
@@ -1382,7 +1382,7 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Upscale",
               "slug": "topaz-gigapixel",
               "reason": "Qualité image ponctuelle.",
-              "reasonEn": "Qualité image ponctuelle.",
+              "reasonEn": "Occasional image quality work.",
               "decision": "conditional"
           }
       ]
@@ -1415,35 +1415,35 @@ export const STACKS: StackGuide[] = [
       "needs": [
           {
               "title": "Stratégie claire",
-              "titleEn": "Stratégie claire",
+              "titleEn": "Clear strategy",
               "detail": "Positionnement, références et territoire visuel doivent être lisibles.",
-              "detailEn": "Positionnement, références et territoire visuel doivent être lisibles."
+              "detailEn": "Positioning, references and visual territory have to be legible."
           },
           {
               "title": "Système exploitable",
-              "titleEn": "Système exploitable",
+              "titleEn": "A system you can use",
               "detail": "Guidelines, couleurs, typos, composants et templates doivent tenir ensemble.",
-              "detailEn": "Guidelines, couleurs, typos, composants et templates doivent tenir ensemble."
+              "detailEn": "Guidelines, colours, fonts, components and templates have to hold together."
           },
           {
               "title": "Livraison durable",
               "titleEn": "Livraison durable",
               "detail": "Le client doit pouvoir réutiliser la marque sans la dégrader.",
-              "detailEn": "Le client doit pouvoir réutiliser la marque sans la dégrader."
+              "detailEn": "The client has to be able to reuse the brand without degrading it."
           }
       ],
       "maturitySignals": [
           {
               "title": "Volume récurrent",
-              "titleEn": "Volume récurrent",
+              "titleEn": "Recurring volume",
               "detail": "La stack devient rentable quand le profil livre plusieurs projets ou variantes par mois.",
-              "detailEn": "La stack devient rentable quand le profil livre plusieurs projets ou variantes par mois."
+              "detailEn": "The stack pays for itself once you ship several projects or variants a month."
           },
           {
               "title": "Client plus exigeant",
-              "titleEn": "Client plus exigeant",
+              "titleEn": "A more demanding client",
               "detail": "Plus le client valide de livrables, plus les outils de feedback et documentation comptent.",
-              "detailEn": "Plus le client valide de livrables, plus les outils de feedback et documentation comptent."
+              "detailEn": "The more deliverables a client signs off, the more feedback and documentation tools matter."
           }
       ],
       "traps": [
@@ -1451,39 +1451,39 @@ export const STACKS: StackGuide[] = [
               "title": "Guidelines en PDF mort",
               "titleEn": "Guidelines en PDF mort",
               "detail": "Un PDF seul devient vite obsolète si la marque évolue.",
-              "detailEn": "Un PDF seul devient vite obsolète si la marque évolue."
+              "detailEn": "A PDF on its own goes stale as soon as the brand moves."
           },
           {
               "title": "Trop d’assets IA",
               "titleEn": "Trop d’assets IA",
               "detail": "L’exploration IA ne remplace pas une direction de marque.",
-              "detailEn": "L’exploration IA ne remplace pas une direction de marque."
+              "detailEn": "Exploring with AI does not replace a brand direction."
           },
           {
               "title": "Tokens inutiles",
               "titleEn": "Tokens inutiles",
               "detail": "Specify ou Tokens Studio ne servent que si le système va vers le digital ou le code.",
-              "detailEn": "Specify ou Tokens Studio ne servent que si le système va vers le digital ou le code."
+              "detailEn": "Specify and Tokens Studio only pay off if the system moves toward digital or code."
           }
       ],
       "checkpoints": [
           {
               "q": "Le client peut-il comprendre le projet sans réunion supplémentaire ?",
-              "qEn": "Le client peut-il comprendre le projet sans réunion supplémentaire ?",
+              "qEn": "Can the client understand the project without another meeting?",
               "hint": "Si non, la présentation ou le feedback ne sont pas assez structurés.",
-              "hintEn": "Si non, la présentation ou le feedback ne sont pas assez structurés."
+              "hintEn": "If not, the presentation or the feedback loop is not structured enough."
           },
           {
               "q": "Les fichiers sources, exports et décisions sont-ils au même endroit ?",
-              "qEn": "Les fichiers sources, exports et décisions sont-ils au même endroit ?",
+              "qEn": "Are source files, exports and decisions all in one place?",
               "hint": "Si non, Notion, Drive ou Eagle doivent reprendre leur rôle de source de vérité.",
-              "hintEn": "Si non, Notion, Drive ou Eagle doivent reprendre leur rôle de source de vérité."
+              "hintEn": "If not, Notion, Drive or Eagle should go back to being the source of truth."
           },
           {
               "q": "Chaque abonnement correspond-il à un livrable facturé ?",
-              "qEn": "Chaque abonnement correspond-il à un livrable facturé ?",
+              "qEn": "Does every subscription map to something you actually invoice?",
               "hint": "Si non, l’outil doit passer en test ponctuel ou être coupé.",
-              "hintEn": "Si non, l’outil doit passer en test ponctuel ou être coupé."
+              "hintEn": "If not, the tool should drop to occasional testing, or be cut."
           }
       ],
       "tools": [
@@ -1492,42 +1492,42 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Design system",
               "slug": "figma",
               "reason": "Système visuel, templates, composants et livrables digitaux.",
-              "reasonEn": "Système visuel, templates, composants et livrables digitaux."
+              "reasonEn": "Visual system, templates, components and digital deliverables."
           },
           {
               "role": "Vectoriel",
               "roleEn": "Vectoriel",
               "slug": "adobe-illustrator",
               "reason": "Logo, pictos et éléments de marque.",
-              "reasonEn": "Logo, pictos et éléments de marque."
+              "reasonEn": "Logo, pictograms and brand elements."
           },
           {
               "role": "Retouche",
               "roleEn": "Retouche",
               "slug": "adobe-photoshop",
               "reason": "Images de marque et mockups.",
-              "reasonEn": "Images de marque et mockups."
+              "reasonEn": "Brand imagery and mockups."
           },
           {
               "role": "Guidelines print",
               "roleEn": "Guidelines print",
               "slug": "indesign",
               "reason": "Brand book, règles et dossiers premium.",
-              "reasonEn": "Brand book, règles et dossiers premium."
+              "reasonEn": "Brand book, rules and premium dossiers."
           },
           {
               "role": "Présentation",
-              "roleEn": "Présentation",
+              "roleEn": "Presentation",
               "slug": "pitch",
               "reason": "Decks de marque et propositions.",
-              "reasonEn": "Decks de marque et propositions."
+              "reasonEn": "Brand decks and proposals."
           },
           {
               "role": "Présentation Apple",
-              "roleEn": "Présentation Apple",
+              "roleEn": "Apple presentation",
               "slug": "keynote",
               "reason": "Alternative fluide pour pitch visuel.",
-              "reasonEn": "Alternative fluide pour pitch visuel.",
+              "reasonEn": "A smooth option for a visual pitch.",
               "decision": "conditional"
           },
           {
@@ -1535,28 +1535,28 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Workshop",
               "slug": "miro",
               "reason": "Positionnement, mapping et ateliers.",
-              "reasonEn": "Positionnement, mapping et ateliers."
+              "reasonEn": "Positioning, mapping and workshops."
           },
           {
               "role": "Base projet",
               "roleEn": "Base projet",
               "slug": "notion",
               "reason": "Brief, décisions, livrables et liens.",
-              "reasonEn": "Brief, décisions, livrables et liens."
+              "reasonEn": "Brief, decisions, deliverables and links."
           },
           {
               "role": "Assets",
               "roleEn": "Assets",
               "slug": "eagle",
               "reason": "Références, logos, visuels, textures et exports.",
-              "reasonEn": "Références, logos, visuels, textures et exports."
+              "reasonEn": "References, logos, visuals, textures and exports."
           },
           {
               "role": "Veille",
               "roleEn": "Veille",
               "slug": "arena",
               "reason": "Références plus éditoriales et moins standardisées.",
-              "reasonEn": "Références plus éditoriales et moins standardisées.",
+              "reasonEn": "More editorial, less standardised references.",
               "decision": "conditional"
           },
           {
@@ -1564,14 +1564,14 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Recherche visuelle",
               "slug": "pinterest",
               "reason": "Inspiration client et moodboards rapides.",
-              "reasonEn": "Inspiration client et moodboards rapides."
+              "reasonEn": "Client inspiration and fast moodboards."
           },
           {
               "role": "Livraison guidelines",
               "roleEn": "Livraison guidelines",
               "slug": "brandpad",
               "reason": "Guidelines en ligne et assets maintenables.",
-              "reasonEn": "Guidelines en ligne et assets maintenables.",
+              "reasonEn": "Online guidelines and maintainable assets.",
               "decision": "conditional"
           },
           {
@@ -1579,7 +1579,7 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Design tokens",
               "slug": "specify",
               "reason": "Utile quand la marque devient système digital.",
-              "reasonEn": "Utile quand la marque devient système digital.",
+              "reasonEn": "Useful once the brand becomes a digital system.",
               "decision": "conditional"
           },
           {
@@ -1587,22 +1587,22 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Plugin tokens",
               "slug": "figma-tokens",
               "reason": "Variables et tokens Figma.",
-              "reasonEn": "Variables et tokens Figma.",
+              "reasonEn": "Figma variables and tokens.",
               "decision": "conditional"
           },
           {
               "role": "Plugin icônes",
-              "roleEn": "Plugin icônes",
+              "roleEn": "Icon plugin",
               "slug": "figma-iconify",
               "reason": "Accès rapide aux familles d’icônes.",
-              "reasonEn": "Accès rapide aux familles d’icônes."
+              "reasonEn": "Fast access to icon families."
           },
           {
               "role": "IA stratégie",
-              "roleEn": "IA stratégie",
+              "roleEn": "AI strategy",
               "slug": "chatgpt",
               "reason": "Structure plateforme, naming, textes et rationale.",
-              "reasonEn": "Structure plateforme, naming, textes et rationale."
+              "reasonEn": "Structures the brand platform, naming, copy and rationale."
           },
           {
               "role": "IA mood",
@@ -1617,7 +1617,7 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Retouche IA",
               "slug": "firefly",
               "reason": "Nettoyage et variations Adobe.",
-              "reasonEn": "Nettoyage et variations Adobe.",
+              "reasonEn": "Cleanup and variants inside Adobe.",
               "decision": "conditional"
           }
       ]
@@ -1652,33 +1652,33 @@ export const STACKS: StackGuide[] = [
               "title": "Veille solide",
               "titleEn": "Veille solide",
               "detail": "Références image, culture, style et benchmarks doivent être organisés.",
-              "detailEn": "Références image, culture, style et benchmarks doivent être organisés."
+              "detailEn": "Image references, culture, style and benchmarks have to be organised."
           },
           {
               "title": "Vision partageable",
               "titleEn": "Vision partageable",
               "detail": "Le concept doit être présenté de façon courte, claire et vendable.",
-              "detailEn": "Le concept doit être présenté de façon courte, claire et vendable."
+              "detailEn": "The concept has to be presented short, clear and sellable."
           },
           {
               "title": "Feedback précis",
-              "titleEn": "Feedback précis",
+              "titleEn": "Precise feedback",
               "detail": "Les retours doivent pointer une image, une scène ou une décision.",
-              "detailEn": "Les retours doivent pointer une image, une scène ou une décision."
+              "detailEn": "Feedback has to point at an image, a scene or a decision."
           }
       ],
       "maturitySignals": [
           {
               "title": "Volume récurrent",
-              "titleEn": "Volume récurrent",
+              "titleEn": "Recurring volume",
               "detail": "La stack devient rentable quand le profil livre plusieurs projets ou variantes par mois.",
-              "detailEn": "La stack devient rentable quand le profil livre plusieurs projets ou variantes par mois."
+              "detailEn": "The stack pays for itself once you ship several projects or variants a month."
           },
           {
               "title": "Client plus exigeant",
-              "titleEn": "Client plus exigeant",
+              "titleEn": "A more demanding client",
               "detail": "Plus le client valide de livrables, plus les outils de feedback et documentation comptent.",
-              "detailEn": "Plus le client valide de livrables, plus les outils de feedback et documentation comptent."
+              "detailEn": "The more deliverables a client signs off, the more feedback and documentation tools matter."
           }
       ],
       "traps": [
@@ -1686,39 +1686,39 @@ export const STACKS: StackGuide[] = [
               "title": "Moodboard infini",
               "titleEn": "Moodboard infini",
               "detail": "Chercher plus de références peut masquer une décision non prise.",
-              "detailEn": "Chercher plus de références peut masquer une décision non prise."
+              "detailEn": "Hunting for more references can hide a decision nobody has made."
           },
           {
               "title": "IA sans direction",
-              "titleEn": "IA sans direction",
+              "titleEn": "AI without direction",
               "detail": "Midjourney ou Krea amplifient une intention, ils ne la remplacent pas.",
-              "detailEn": "Midjourney ou Krea amplifient une intention, ils ne la remplacent pas."
+              "detailEn": "Midjourney and Krea amplify an intent, they do not supply one."
           },
           {
               "title": "Feedback oral perdu",
               "titleEn": "Feedback oral perdu",
               "detail": "Sans trace, la décision créative revient en arrière.",
-              "detailEn": "Sans trace, la décision créative revient en arrière."
+              "detailEn": "With no record, the creative decision gets reopened."
           }
       ],
       "checkpoints": [
           {
               "q": "Le client peut-il comprendre le projet sans réunion supplémentaire ?",
-              "qEn": "Le client peut-il comprendre le projet sans réunion supplémentaire ?",
+              "qEn": "Can the client understand the project without another meeting?",
               "hint": "Si non, la présentation ou le feedback ne sont pas assez structurés.",
-              "hintEn": "Si non, la présentation ou le feedback ne sont pas assez structurés."
+              "hintEn": "If not, the presentation or the feedback loop is not structured enough."
           },
           {
               "q": "Les fichiers sources, exports et décisions sont-ils au même endroit ?",
-              "qEn": "Les fichiers sources, exports et décisions sont-ils au même endroit ?",
+              "qEn": "Are source files, exports and decisions all in one place?",
               "hint": "Si non, Notion, Drive ou Eagle doivent reprendre leur rôle de source de vérité.",
-              "hintEn": "Si non, Notion, Drive ou Eagle doivent reprendre leur rôle de source de vérité."
+              "hintEn": "If not, Notion, Drive or Eagle should go back to being the source of truth."
           },
           {
               "q": "Chaque abonnement correspond-il à un livrable facturé ?",
-              "qEn": "Chaque abonnement correspond-il à un livrable facturé ?",
+              "qEn": "Does every subscription map to something you actually invoice?",
               "hint": "Si non, l’outil doit passer en test ponctuel ou être coupé.",
-              "hintEn": "Si non, l’outil doit passer en test ponctuel ou être coupé."
+              "hintEn": "If not, the tool should drop to occasional testing, or be cut."
           }
       ],
       "tools": [
@@ -1727,21 +1727,21 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Design / deck",
               "slug": "figma",
               "reason": "Boards, systèmes, présentations et annotations.",
-              "reasonEn": "Boards, systèmes, présentations et annotations."
+              "reasonEn": "Boards, systems, presentations and annotations."
           },
           {
               "role": "Présentation",
-              "roleEn": "Présentation",
+              "roleEn": "Presentation",
               "slug": "keynote",
               "reason": "Decks visuels rapides et très maîtrisables.",
-              "reasonEn": "Decks visuels rapides et très maîtrisables."
+              "reasonEn": "Fast visual decks you can keep under control."
           },
           {
               "role": "Présentation collaborative",
-              "roleEn": "Présentation collaborative",
+              "roleEn": "Collaborative presentation",
               "slug": "pitch",
               "reason": "Decks partagés et commentaires.",
-              "reasonEn": "Decks partagés et commentaires.",
+              "reasonEn": "Shared decks and comments.",
               "decision": "conditional"
           },
           {
@@ -1749,43 +1749,43 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Moodboard",
               "slug": "milanote",
               "reason": "Références, narration et planches.",
-              "reasonEn": "Références, narration et planches."
+              "reasonEn": "References, narrative and boards."
           },
           {
               "role": "Veille",
               "roleEn": "Veille",
               "slug": "arena",
               "reason": "Collecte éditoriale et références pointues.",
-              "reasonEn": "Collecte éditoriale et références pointues."
+              "reasonEn": "Editorial collection and specialised references."
           },
           {
               "role": "Bibliothèque",
-              "roleEn": "Bibliothèque",
+              "roleEn": "Library",
               "slug": "eagle",
               "reason": "Images, textures, assets et archives.",
-              "reasonEn": "Images, textures, assets et archives."
+              "reasonEn": "Images, textures, assets and archives."
           },
           {
               "role": "Recherche visuelle",
               "roleEn": "Recherche visuelle",
               "slug": "pinterest",
               "reason": "Références rapides et partage client.",
-              "reasonEn": "Références rapides et partage client."
+              "reasonEn": "Quick references and client sharing."
           },
           {
               "role": "Références cinéma",
-              "roleEn": "Références cinéma",
+              "roleEn": "Film references",
               "slug": "shotdeck",
               "reason": "Cadrage, lumière, couleur et direction image.",
-              "reasonEn": "Cadrage, lumière, couleur et direction image.",
+              "reasonEn": "Framing, light, colour and image direction.",
               "decision": "conditional"
           },
           {
               "role": "Feedback vidéo",
-              "roleEn": "Feedback vidéo",
+              "roleEn": "Video feedback",
               "slug": "frame-io",
               "reason": "Commentaires précis sur vidéos et visuels.",
-              "reasonEn": "Commentaires précis sur vidéos et visuels.",
+              "reasonEn": "Precise comments on videos and visuals.",
               "decision": "conditional"
           },
           {
@@ -1793,14 +1793,14 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Pilotage",
               "slug": "notion",
               "reason": "Rationale, décisions, statut et livrables.",
-              "reasonEn": "Rationale, décisions, statut et livrables."
+              "reasonEn": "Rationale, decisions, status and deliverables."
           },
           {
               "role": "Workshop",
               "roleEn": "Workshop",
               "slug": "miro",
               "reason": "Cadrage et co-création client.",
-              "reasonEn": "Cadrage et co-création client.",
+              "reasonEn": "Framing and co-creation with the client.",
               "decision": "conditional"
           },
           {
@@ -1808,14 +1808,14 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Fichiers",
               "slug": "google-drive",
               "reason": "Livraison et partage de sources.",
-              "reasonEn": "Livraison et partage de sources."
+              "reasonEn": "Delivery and source file sharing."
           },
           {
               "role": "IA concept",
               "roleEn": "IA concept",
               "slug": "chatgpt",
               "reason": "Rationale, structure de deck et notes de direction.",
-              "reasonEn": "Rationale, structure de deck et notes de direction."
+              "reasonEn": "Rationale, deck structure and direction notes."
           },
           {
               "role": "IA image",
@@ -1830,15 +1830,15 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Retouche IA",
               "slug": "firefly",
               "reason": "Nettoyage et variations image.",
-              "reasonEn": "Nettoyage et variations image.",
+              "reasonEn": "Image cleanup and variants.",
               "decision": "conditional"
           },
           {
               "role": "IA vidéo",
-              "roleEn": "IA vidéo",
+              "roleEn": "AI video",
               "slug": "runway",
               "reason": "Tests vidéo et animatiques.",
-              "reasonEn": "Tests vidéo et animatiques.",
+              "reasonEn": "Video tests and animatics.",
               "decision": "conditional"
           },
           {
@@ -1846,7 +1846,7 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Upscale",
               "slug": "magnific-ai",
               "reason": "Visuels finaux et détails.",
-              "reasonEn": "Visuels finaux et détails.",
+              "reasonEn": "Final visuals and detail work.",
               "decision": "conditional"
           }
       ]
@@ -1881,33 +1881,33 @@ export const STACKS: StackGuide[] = [
               "title": "Cadrer vite",
               "titleEn": "Cadrer vite",
               "detail": "Sitemap, wireframes et composants doivent sortir avant le build.",
-              "detailEn": "Sitemap, wireframes et composants doivent sortir avant le build."
+              "detailEn": "Sitemap, wireframes and components have to land before the build."
           },
           {
               "title": "Build maintenable",
               "titleEn": "Build maintenable",
               "detail": "Classes, CMS, interactions et scripts doivent rester lisibles.",
-              "detailEn": "Classes, CMS, interactions et scripts doivent rester lisibles."
+              "detailEn": "Classes, CMS, interactions and scripts have to stay readable."
           },
           {
               "title": "Mesurer utile",
               "titleEn": "Mesurer utile",
               "detail": "SEO, conversion et performance doivent être suivis sans usine analytics.",
-              "detailEn": "SEO, conversion et performance doivent être suivis sans usine analytics."
+              "detailEn": "SEO, conversion and performance have to be tracked without an analytics factory."
           }
       ],
       "maturitySignals": [
           {
               "title": "Volume récurrent",
-              "titleEn": "Volume récurrent",
+              "titleEn": "Recurring volume",
               "detail": "La stack devient rentable quand le profil livre plusieurs projets ou variantes par mois.",
-              "detailEn": "La stack devient rentable quand le profil livre plusieurs projets ou variantes par mois."
+              "detailEn": "The stack pays for itself once you ship several projects or variants a month."
           },
           {
               "title": "Client plus exigeant",
-              "titleEn": "Client plus exigeant",
+              "titleEn": "A more demanding client",
               "detail": "Plus le client valide de livrables, plus les outils de feedback et documentation comptent.",
-              "detailEn": "Plus le client valide de livrables, plus les outils de feedback et documentation comptent."
+              "detailEn": "The more deliverables a client signs off, the more feedback and documentation tools matter."
           }
       ],
       "traps": [
@@ -1915,39 +1915,39 @@ export const STACKS: StackGuide[] = [
               "title": "Scripts invisibles",
               "titleEn": "Scripts invisibles",
               "detail": "Un custom code non documenté casse la maintenance.",
-              "detailEn": "Un custom code non documenté casse la maintenance."
+              "detailEn": "Undocumented custom code breaks maintenance."
           },
           {
               "title": "Apps trop nombreuses",
               "titleEn": "Apps trop nombreuses",
               "detail": "Chaque app ralentit ou complexifie le site.",
-              "detailEn": "Chaque app ralentit ou complexifie le site."
+              "detailEn": "Every app slows the site down or makes it more complex."
           },
           {
               "title": "CMS mal pensé",
-              "titleEn": "CMS mal pensé",
+              "titleEn": "Poorly designed CMS",
               "detail": "Un CMS confus coûte cher au client après livraison.",
-              "detailEn": "Un CMS confus coûte cher au client après livraison."
+              "detailEn": "A confusing CMS costs the client dearly after handover."
           }
       ],
       "checkpoints": [
           {
               "q": "Le client peut-il comprendre le projet sans réunion supplémentaire ?",
-              "qEn": "Le client peut-il comprendre le projet sans réunion supplémentaire ?",
+              "qEn": "Can the client understand the project without another meeting?",
               "hint": "Si non, la présentation ou le feedback ne sont pas assez structurés.",
-              "hintEn": "Si non, la présentation ou le feedback ne sont pas assez structurés."
+              "hintEn": "If not, the presentation or the feedback loop is not structured enough."
           },
           {
               "q": "Les fichiers sources, exports et décisions sont-ils au même endroit ?",
-              "qEn": "Les fichiers sources, exports et décisions sont-ils au même endroit ?",
+              "qEn": "Are source files, exports and decisions all in one place?",
               "hint": "Si non, Notion, Drive ou Eagle doivent reprendre leur rôle de source de vérité.",
-              "hintEn": "Si non, Notion, Drive ou Eagle doivent reprendre leur rôle de source de vérité."
+              "hintEn": "If not, Notion, Drive or Eagle should go back to being the source of truth."
           },
           {
               "q": "Chaque abonnement correspond-il à un livrable facturé ?",
-              "qEn": "Chaque abonnement correspond-il à un livrable facturé ?",
+              "qEn": "Does every subscription map to something you actually invoice?",
               "hint": "Si non, l’outil doit passer en test ponctuel ou être coupé.",
-              "hintEn": "Si non, l’outil doit passer en test ponctuel ou être coupé."
+              "hintEn": "If not, the tool should drop to occasional testing, or be cut."
           }
       ],
       "tools": [
@@ -1956,28 +1956,28 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Build",
               "slug": "webflow",
               "reason": "CMS, pages, interactions et publication.",
-              "reasonEn": "CMS, pages, interactions et publication."
+              "reasonEn": "CMS, pages, interactions and publishing."
           },
           {
               "role": "Cadrage",
               "roleEn": "Cadrage",
               "slug": "relume",
               "reason": "Sitemap, wireframes et sections prêtes à adapter.",
-              "reasonEn": "Sitemap, wireframes et sections prêtes à adapter."
+              "reasonEn": "Sitemap, wireframes and sections ready to adapt."
           },
           {
               "role": "Design",
               "roleEn": "Design",
               "slug": "figma",
               "reason": "DA, composants et validation client.",
-              "reasonEn": "DA, composants et validation client."
+              "reasonEn": "Art direction, components and client sign-off."
           },
           {
               "role": "Prototype rapide",
               "roleEn": "Prototype rapide",
               "slug": "framer",
               "reason": "Option si le projet est plus landing que CMS.",
-              "reasonEn": "Option si le projet est plus landing que CMS.",
+              "reasonEn": "An option when the project is more landing page than CMS.",
               "decision": "conditional"
           },
           {
@@ -1985,22 +1985,22 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Automation",
               "slug": "make",
               "reason": "Connecte formulaires, CRM, emails et bases.",
-              "reasonEn": "Connecte formulaires, CRM, emails et bases."
+              "reasonEn": "Connects forms, CRM, email and databases."
           },
           {
               "role": "Automation simple",
               "roleEn": "Automation simple",
               "slug": "zapier",
               "reason": "Alternative plus simple pour intégrations rapides.",
-              "reasonEn": "Alternative plus simple pour intégrations rapides.",
+              "reasonEn": "A simpler option for fast integrations.",
               "decision": "conditional"
           },
           {
               "role": "Base de données",
-              "roleEn": "Base de données",
+              "roleEn": "Database",
               "slug": "airtable",
               "reason": "Back-office léger ou contenu structuré.",
-              "reasonEn": "Back-office léger ou contenu structuré.",
+              "reasonEn": "Lightweight back-office or structured content.",
               "decision": "conditional"
           },
           {
@@ -2008,7 +2008,7 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Membership",
               "slug": "memberstack",
               "reason": "Comptes membres et accès privés Webflow.",
-              "reasonEn": "Comptes membres et accès privés Webflow.",
+              "reasonEn": "Member accounts and private access on Webflow.",
               "decision": "conditional"
           },
           {
@@ -2016,7 +2016,7 @@ export const STACKS: StackGuide[] = [
               "roleEn": "App no-code",
               "slug": "wized",
               "reason": "Logique app et front dynamique au-dessus de Webflow.",
-              "reasonEn": "Logique app et front dynamique au-dessus de Webflow.",
+              "reasonEn": "App logic and a dynamic front end on top of Webflow.",
               "decision": "conditional"
           },
           {
@@ -2024,7 +2024,7 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Synchronisation",
               "slug": "whalesync",
               "reason": "Sync Webflow avec Airtable ou Notion.",
-              "reasonEn": "Sync Webflow avec Airtable ou Notion.",
+              "reasonEn": "Syncs Webflow with Airtable or Notion.",
               "decision": "conditional"
           },
           {
@@ -2032,14 +2032,14 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Formulaire",
               "slug": "tally",
               "reason": "Qualification et formulaires légers.",
-              "reasonEn": "Qualification et formulaires légers."
+              "reasonEn": "Qualification and lightweight forms."
           },
           {
               "role": "Formulaire avancé",
-              "roleEn": "Formulaire avancé",
+              "roleEn": "Advanced forms",
               "slug": "typeform",
               "reason": "À garder si l’expérience formulaire justifie le coût.",
-              "reasonEn": "À garder si l’expérience formulaire justifie le coût.",
+              "reasonEn": "Keep it if the form experience justifies the cost.",
               "decision": "conditional"
           },
           {
@@ -2047,7 +2047,7 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Paiement",
               "slug": "stripe",
               "reason": "Paiements, acomptes ou offres packagées.",
-              "reasonEn": "Paiements, acomptes ou offres packagées.",
+              "reasonEn": "Payments, deposits or packaged offers.",
               "decision": "conditional"
           },
           {
@@ -2055,28 +2055,28 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Analytics",
               "slug": "plausible",
               "reason": "Mesure simple et lisible.",
-              "reasonEn": "Mesure simple et lisible."
+              "reasonEn": "Simple, readable measurement."
           },
           {
               "role": "SEO",
               "roleEn": "SEO",
               "slug": "google-search-console",
               "reason": "Indexation, requêtes et erreurs SEO.",
-              "reasonEn": "Indexation, requêtes et erreurs SEO."
+              "reasonEn": "Indexing, queries and SEO errors."
           },
           {
               "role": "IA structure",
               "roleEn": "IA structure",
               "slug": "chatgpt",
               "reason": "Plans de pages, specs, scripts et debug.",
-              "reasonEn": "Plans de pages, specs, scripts et debug."
+              "reasonEn": "Page plans, specs, scripts and debugging."
           },
           {
               "role": "IA recherche",
               "roleEn": "IA recherche",
               "slug": "perplexity",
               "reason": "Benchmarks et vérifications rapides.",
-              "reasonEn": "Benchmarks et vérifications rapides.",
+              "reasonEn": "Benchmarks and quick checks.",
               "decision": "conditional"
           }
       ]
@@ -2110,73 +2110,73 @@ export const STACKS: StackGuide[] = [
               "title": "Montage stable",
               "titleEn": "Montage stable",
               "detail": "Un outil principal doit porter 80% du workflow.",
-              "detailEn": "Un outil principal doit porter 80% du workflow."
+              "detailEn": "One main tool should carry 80% of the workflow."
           },
           {
               "title": "Validation claire",
               "titleEn": "Validation claire",
               "detail": "Les retours doivent être timecodés et actionnables.",
-              "detailEn": "Les retours doivent être timecodés et actionnables."
+              "detailEn": "Feedback has to be timecoded and actionable."
           },
           {
               "title": "Livraison propre",
               "titleEn": "Livraison propre",
               "detail": "Sous-titres, exports, son et formats doivent être maîtrisés.",
-              "detailEn": "Sous-titres, exports, son et formats doivent être maîtrisés."
+              "detailEn": "Subtitles, exports, sound and formats have to be under control."
           }
       ],
       "maturitySignals": [
           {
               "title": "Volume récurrent",
-              "titleEn": "Volume récurrent",
+              "titleEn": "Recurring volume",
               "detail": "La stack devient rentable quand le profil livre plusieurs projets ou variantes par mois.",
-              "detailEn": "La stack devient rentable quand le profil livre plusieurs projets ou variantes par mois."
+              "detailEn": "The stack pays for itself once you ship several projects or variants a month."
           },
           {
               "title": "Client plus exigeant",
-              "titleEn": "Client plus exigeant",
+              "titleEn": "A more demanding client",
               "detail": "Plus le client valide de livrables, plus les outils de feedback et documentation comptent.",
-              "detailEn": "Plus le client valide de livrables, plus les outils de feedback et documentation comptent."
+              "detailEn": "The more deliverables a client signs off, the more feedback and documentation tools matter."
           }
       ],
       "traps": [
           {
               "title": "Deux NLE payés",
-              "titleEn": "Deux NLE payés",
+              "titleEn": "Two paid editing suites",
               "detail": "Premiere et DaVinci en parallèle doivent avoir des rôles distincts.",
-              "detailEn": "Premiere et DaVinci en parallèle doivent avoir des rôles distincts."
+              "detailEn": "Running Premiere and DaVinci side by side only works with distinct roles."
           },
           {
               "title": "IA partout",
               "titleEn": "IA partout",
               "detail": "L’IA doit accélérer sous-titres, nettoyage ou upscale, pas remplacer le montage.",
-              "detailEn": "L’IA doit accélérer sous-titres, nettoyage ou upscale, pas remplacer le montage."
+              "detailEn": "AI should speed up subtitles, cleanup or upscaling, not replace the edit."
           },
           {
               "title": "Audio négligé",
-              "titleEn": "Audio négligé",
+              "titleEn": "Neglected audio",
               "detail": "Un bon montage avec un son faible reste perçu comme amateur.",
-              "detailEn": "Un bon montage avec un son faible reste perçu comme amateur."
+              "detailEn": "A good edit with weak sound still reads as amateur."
           }
       ],
       "checkpoints": [
           {
               "q": "Le client peut-il comprendre le projet sans réunion supplémentaire ?",
-              "qEn": "Le client peut-il comprendre le projet sans réunion supplémentaire ?",
+              "qEn": "Can the client understand the project without another meeting?",
               "hint": "Si non, la présentation ou le feedback ne sont pas assez structurés.",
-              "hintEn": "Si non, la présentation ou le feedback ne sont pas assez structurés."
+              "hintEn": "If not, the presentation or the feedback loop is not structured enough."
           },
           {
               "q": "Les fichiers sources, exports et décisions sont-ils au même endroit ?",
-              "qEn": "Les fichiers sources, exports et décisions sont-ils au même endroit ?",
+              "qEn": "Are source files, exports and decisions all in one place?",
               "hint": "Si non, Notion, Drive ou Eagle doivent reprendre leur rôle de source de vérité.",
-              "hintEn": "Si non, Notion, Drive ou Eagle doivent reprendre leur rôle de source de vérité."
+              "hintEn": "If not, Notion, Drive or Eagle should go back to being the source of truth."
           },
           {
               "q": "Chaque abonnement correspond-il à un livrable facturé ?",
-              "qEn": "Chaque abonnement correspond-il à un livrable facturé ?",
+              "qEn": "Does every subscription map to something you actually invoice?",
               "hint": "Si non, l’outil doit passer en test ponctuel ou être coupé.",
-              "hintEn": "Si non, l’outil doit passer en test ponctuel ou être coupé."
+              "hintEn": "If not, the tool should drop to occasional testing, or be cut."
           }
       ],
       "tools": [
@@ -2185,14 +2185,14 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Montage principal",
               "slug": "davinci-resolve",
               "reason": "Montage, étalonnage, audio et exports dans une suite solide.",
-              "reasonEn": "Montage, étalonnage, audio et exports dans une suite solide."
+              "reasonEn": "Editing, grading, audio and exports in one solid suite."
           },
           {
               "role": "Montage Adobe",
               "roleEn": "Montage Adobe",
               "slug": "adobe-premiere-pro",
               "reason": "À garder si clients, templates ou équipe sont Adobe.",
-              "reasonEn": "À garder si clients, templates ou équipe sont Adobe.",
+              "reasonEn": "Keep it if clients, templates or the team are on Adobe.",
               "decision": "conditional"
           },
           {
@@ -2200,7 +2200,7 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Montage Mac",
               "slug": "final-cut-pro",
               "reason": "Rapide et efficace si ton workflow est 100% Apple.",
-              "reasonEn": "Rapide et efficace si ton workflow est 100% Apple.",
+              "reasonEn": "Fast and effective if your workflow is entirely Apple.",
               "decision": "conditional"
           },
           {
@@ -2208,14 +2208,14 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Validation",
               "slug": "frame-io",
               "reason": "Commentaires timecodés et validation client.",
-              "reasonEn": "Commentaires timecodés et validation client."
+              "reasonEn": "Timecoded comments and client sign-off."
           },
           {
               "role": "Sous-titres / dérush",
-              "roleEn": "Sous-titres / dérush",
+              "roleEn": "Subtitles and rushes",
               "slug": "descript",
               "reason": "Transcription, montage texte et formats courts.",
-              "reasonEn": "Transcription, montage texte et formats courts.",
+              "reasonEn": "Transcription, text-based editing and short formats.",
               "decision": "conditional"
           },
           {
@@ -2223,7 +2223,7 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Social court",
               "slug": "capcut",
               "reason": "Formats rapides et réseaux sociaux.",
-              "reasonEn": "Formats rapides et réseaux sociaux.",
+              "reasonEn": "Fast formats and social networks.",
               "decision": "conditional"
           },
           {
@@ -2231,7 +2231,7 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Post-audio",
               "slug": "adobe-audition",
               "reason": "Nettoyage voix, mixage et correction audio.",
-              "reasonEn": "Nettoyage voix, mixage et correction audio.",
+              "reasonEn": "Voice cleanup, mixing and audio correction.",
               "decision": "conditional"
           },
           {
@@ -2239,14 +2239,14 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Musique",
               "slug": "artlist",
               "reason": "Musique et assets sous licence.",
-              "reasonEn": "Musique et assets sous licence."
+              "reasonEn": "Licensed music and assets."
           },
           {
               "role": "SFX / musique",
               "roleEn": "SFX / musique",
               "slug": "epidemic-sound",
               "reason": "Alternative solide pour contenus récurrents.",
-              "reasonEn": "Alternative solide pour contenus récurrents.",
+              "reasonEn": "A solid option for recurring content.",
               "decision": "conditional"
           },
           {
@@ -2254,7 +2254,7 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Stockage",
               "slug": "dropbox",
               "reason": "Partage de fichiers lourds et versions.",
-              "reasonEn": "Partage de fichiers lourds et versions.",
+              "reasonEn": "Sharing large files and versions.",
               "decision": "conditional"
           },
           {
@@ -2262,22 +2262,22 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Drive client",
               "slug": "google-drive",
               "reason": "Livraison simple et accessible.",
-              "reasonEn": "Livraison simple et accessible."
+              "reasonEn": "Simple, accessible delivery."
           },
           {
               "role": "IA vidéo",
-              "roleEn": "IA vidéo",
+              "roleEn": "AI video",
               "slug": "runway",
               "reason": "Tests, plans générés ou retouches vidéo.",
-              "reasonEn": "Tests, plans générés ou retouches vidéo.",
+              "reasonEn": "Tests, generated shots or video retouching.",
               "decision": "conditional"
           },
           {
               "role": "Upscale vidéo",
-              "roleEn": "Upscale vidéo",
+              "roleEn": "Video upscaling",
               "slug": "topaz-video",
               "reason": "À réserver aux plans à sauver ou livrables premium.",
-              "reasonEn": "À réserver aux plans à sauver ou livrables premium.",
+              "reasonEn": "Keep it for shots worth rescuing or premium deliverables.",
               "decision": "conditional"
           },
           {
@@ -2285,7 +2285,7 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Voix IA",
               "slug": "elevenlabs",
               "reason": "Voix off, scratch voice ou variations.",
-              "reasonEn": "Voix off, scratch voice ou variations.",
+              "reasonEn": "Voiceover, scratch voice or variants.",
               "decision": "conditional"
           },
           {
@@ -2293,7 +2293,7 @@ export const STACKS: StackGuide[] = [
               "roleEn": "IA structure",
               "slug": "chatgpt",
               "reason": "Scripts, plan de montage, résumés et emails client.",
-              "reasonEn": "Scripts, plan de montage, résumés et emails client."
+              "reasonEn": "Scripts, edit plan, summaries and client emails."
           }
       ]
   },
@@ -2325,35 +2325,35 @@ export const STACKS: StackGuide[] = [
       "needs": [
           {
               "title": "Préproduction claire",
-              "titleEn": "Préproduction claire",
+              "titleEn": "Clear pre-production",
               "detail": "Brief, moodboard, shotlist, planning et autorisations doivent être prêts avant tournage.",
-              "detailEn": "Brief, moodboard, shotlist, planning et autorisations doivent être prêts avant tournage."
+              "detailEn": "Brief, moodboard, shotlist, schedule and permissions have to be ready before the shoot."
           },
           {
               "title": "Postproduction maîtrisée",
-              "titleEn": "Postproduction maîtrisée",
+              "titleEn": "Controlled post-production",
               "detail": "Montage, étalonnage, son et exports doivent être cohérents.",
-              "detailEn": "Montage, étalonnage, son et exports doivent être cohérents."
+              "detailEn": "Editing, grading, sound and exports have to stay coherent."
           },
           {
               "title": "Business fluide",
               "titleEn": "Business fluide",
               "detail": "Devis, validation, acompte et livraison ne doivent pas ralentir le projet.",
-              "detailEn": "Devis, validation, acompte et livraison ne doivent pas ralentir le projet."
+              "detailEn": "Quote, approval, deposit and delivery must not slow the project down."
           }
       ],
       "maturitySignals": [
           {
               "title": "Volume récurrent",
-              "titleEn": "Volume récurrent",
+              "titleEn": "Recurring volume",
               "detail": "La stack devient rentable quand le profil livre plusieurs projets ou variantes par mois.",
-              "detailEn": "La stack devient rentable quand le profil livre plusieurs projets ou variantes par mois."
+              "detailEn": "The stack pays for itself once you ship several projects or variants a month."
           },
           {
               "title": "Client plus exigeant",
-              "titleEn": "Client plus exigeant",
+              "titleEn": "A more demanding client",
               "detail": "Plus le client valide de livrables, plus les outils de feedback et documentation comptent.",
-              "detailEn": "Plus le client valide de livrables, plus les outils de feedback et documentation comptent."
+              "detailEn": "The more deliverables a client signs off, the more feedback and documentation tools matter."
           }
       ],
       "traps": [
@@ -2361,62 +2361,62 @@ export const STACKS: StackGuide[] = [
               "title": "Shotlist absente",
               "titleEn": "Shotlist absente",
               "detail": "Le tournage coûte trop cher pour improviser les décisions de base.",
-              "detailEn": "Le tournage coûte trop cher pour improviser les décisions de base."
+              "detailEn": "A shoot costs too much to improvise the basic decisions."
           },
           {
               "title": "Retour client flou",
               "titleEn": "Retour client flou",
               "detail": "Un commentaire non timecodé coûte des heures.",
-              "detailEn": "Un commentaire non timecodé coûte des heures."
+              "detailEn": "Feedback without a timecode costs hours."
           },
           {
               "title": "Musique sans licence",
-              "titleEn": "Musique sans licence",
+              "titleEn": "Unlicensed music",
               "detail": "La librairie audio doit sécuriser l’usage client.",
-              "detailEn": "La librairie audio doit sécuriser l’usage client."
+              "detailEn": "The audio library has to make client usage safe."
           }
       ],
       "checkpoints": [
           {
               "q": "Le client peut-il comprendre le projet sans réunion supplémentaire ?",
-              "qEn": "Le client peut-il comprendre le projet sans réunion supplémentaire ?",
+              "qEn": "Can the client understand the project without another meeting?",
               "hint": "Si non, la présentation ou le feedback ne sont pas assez structurés.",
-              "hintEn": "Si non, la présentation ou le feedback ne sont pas assez structurés."
+              "hintEn": "If not, the presentation or the feedback loop is not structured enough."
           },
           {
               "q": "Les fichiers sources, exports et décisions sont-ils au même endroit ?",
-              "qEn": "Les fichiers sources, exports et décisions sont-ils au même endroit ?",
+              "qEn": "Are source files, exports and decisions all in one place?",
               "hint": "Si non, Notion, Drive ou Eagle doivent reprendre leur rôle de source de vérité.",
-              "hintEn": "Si non, Notion, Drive ou Eagle doivent reprendre leur rôle de source de vérité."
+              "hintEn": "If not, Notion, Drive or Eagle should go back to being the source of truth."
           },
           {
               "q": "Chaque abonnement correspond-il à un livrable facturé ?",
-              "qEn": "Chaque abonnement correspond-il à un livrable facturé ?",
+              "qEn": "Does every subscription map to something you actually invoice?",
               "hint": "Si non, l’outil doit passer en test ponctuel ou être coupé.",
-              "hintEn": "Si non, l’outil doit passer en test ponctuel ou être coupé."
+              "hintEn": "If not, the tool should drop to occasional testing, or be cut."
           }
       ],
       "tools": [
           {
               "role": "Préproduction",
-              "roleEn": "Préproduction",
+              "roleEn": "Pre-production",
               "slug": "milanote",
               "reason": "Moodboard, références, séquences et intentions.",
-              "reasonEn": "Moodboard, références, séquences et intentions."
+              "reasonEn": "Moodboard, references, sequences and intent."
           },
           {
               "role": "Pilotage",
               "roleEn": "Pilotage",
               "slug": "notion",
               "reason": "Brief, planning, shotlist, décisions et livrables.",
-              "reasonEn": "Brief, planning, shotlist, décisions et livrables."
+              "reasonEn": "Brief, schedule, shotlist, decisions and deliverables."
           },
           {
               "role": "Références image",
-              "roleEn": "Références image",
+              "roleEn": "Image references",
               "slug": "shotdeck",
               "reason": "Cadrage, lumière et couleur.",
-              "reasonEn": "Cadrage, lumière et couleur.",
+              "reasonEn": "Framing, light and colour.",
               "decision": "conditional"
           },
           {
@@ -2424,21 +2424,21 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Validation",
               "slug": "frame-io",
               "reason": "Commentaires timecodés et versions.",
-              "reasonEn": "Commentaires timecodés et versions."
+              "reasonEn": "Timecoded comments and versions."
           },
           {
               "role": "Montage",
               "roleEn": "Montage",
               "slug": "davinci-resolve",
               "reason": "Montage, couleur, audio et livraison.",
-              "reasonEn": "Montage, couleur, audio et livraison."
+              "reasonEn": "Editing, colour, audio and delivery."
           },
           {
               "role": "Montage Adobe",
               "roleEn": "Montage Adobe",
               "slug": "adobe-premiere-pro",
               "reason": "À garder si le workflow client est Adobe.",
-              "reasonEn": "À garder si le workflow client est Adobe.",
+              "reasonEn": "Keep it if the client workflow is Adobe.",
               "decision": "conditional"
           },
           {
@@ -2446,7 +2446,7 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Montage Mac",
               "slug": "final-cut-pro",
               "reason": "Option rapide sur workflow Apple.",
-              "reasonEn": "Option rapide sur workflow Apple.",
+              "reasonEn": "A fast option on an Apple workflow.",
               "decision": "conditional"
           },
           {
@@ -2454,14 +2454,14 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Musique",
               "slug": "artlist",
               "reason": "Musique et SFX sous licence.",
-              "reasonEn": "Musique et SFX sous licence."
+              "reasonEn": "Licensed music and sound effects."
           },
           {
               "role": "Musique alternative",
               "roleEn": "Musique alternative",
               "slug": "epidemic-sound",
               "reason": "Bibliothèque audio récurrente.",
-              "reasonEn": "Bibliothèque audio récurrente.",
+              "reasonEn": "Recurring audio library.",
               "decision": "conditional"
           },
           {
@@ -2469,7 +2469,7 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Captation distante",
               "slug": "riverside",
               "reason": "Interviews à distance propres.",
-              "reasonEn": "Interviews à distance propres.",
+              "reasonEn": "Clean remote interviews.",
               "decision": "conditional"
           },
           {
@@ -2477,43 +2477,43 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Fichiers",
               "slug": "google-drive",
               "reason": "Partage client et livraison.",
-              "reasonEn": "Partage client et livraison."
+              "reasonEn": "Client sharing and delivery."
           },
           {
               "role": "Facturation",
               "roleEn": "Facturation",
               "slug": "indy",
               "reason": "Devis, factures et suivi.",
-              "reasonEn": "Devis, factures et suivi."
+              "reasonEn": "Quotes, invoices and follow-up."
           },
           {
               "role": "Signature",
               "roleEn": "Signature",
               "slug": "yousign",
               "reason": "Contrats, devis et autorisations signés.",
-              "reasonEn": "Contrats, devis et autorisations signés."
+              "reasonEn": "Contracts, quotes and signed permissions."
           },
           {
               "role": "IA structure",
               "roleEn": "IA structure",
               "slug": "chatgpt",
               "reason": "Questions d’interview, scripts, planning et comptes rendus.",
-              "reasonEn": "Questions d’interview, scripts, planning et comptes rendus."
+              "reasonEn": "Interview questions, scripts, scheduling and write-ups."
           },
           {
               "role": "IA vidéo",
-              "roleEn": "IA vidéo",
+              "roleEn": "AI video",
               "slug": "runway",
               "reason": "Tests, transitions et plans ponctuels.",
-              "reasonEn": "Tests, transitions et plans ponctuels.",
+              "reasonEn": "Tests, transitions and one-off shots.",
               "decision": "conditional"
           },
           {
               "role": "IA vidéo générative",
-              "roleEn": "IA vidéo générative",
+              "roleEn": "Generative AI video",
               "slug": "kling-ai",
               "reason": "À tester projet par projet.",
-              "reasonEn": "À tester projet par projet.",
+              "reasonEn": "Worth testing project by project.",
               "decision": "conditional"
           },
           {
@@ -2521,7 +2521,7 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Transcription",
               "slug": "descript",
               "reason": "Sous-titres, dérush et formats courts.",
-              "reasonEn": "Sous-titres, dérush et formats courts.",
+              "reasonEn": "Subtitles, rushes and short formats.",
               "decision": "conditional"
           },
           {
@@ -2529,7 +2529,7 @@ export const STACKS: StackGuide[] = [
               "roleEn": "Voix",
               "slug": "elevenlabs",
               "reason": "Voix off temporaire ou version alternative.",
-              "reasonEn": "Voix off temporaire ou version alternative.",
+              "reasonEn": "Temporary voiceover or an alternative take.",
               "decision": "conditional"
           }
       ]
@@ -2540,7 +2540,7 @@ export const STACKS: StackGuide[] = [
       "title": "Stack designer éditorial",
       "titleEn": "Designer editorial / print stack",
       "subtitle": "Livres, magazines, catalogues, rapports et dossiers print avec mise en page, typographie, prépresse, correction et livraison PDF.",
-      "subtitleEn": "Livres, magazines, catalogues, rapports et dossiers print avec mise en page, typographie, prépresse, correction et livraison PDF.",
+      "subtitleEn": "Books, magazines, catalogues, reports and print dossiers: layout, typography, prepress, proofing and PDF delivery.",
       "persona": "designer",
       "subProfiles": [
           "brand",
@@ -2554,43 +2554,43 @@ export const STACKS: StackGuide[] = [
       "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
       "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
       "bestFor": "Livres, magazines, catalogues, rapports et dossiers print avec mise en page, typographie, prépresse, correction et livraison PDF.",
-      "bestForEn": "Livres, magazines, catalogues, rapports et dossiers print avec mise en page, typographie, prépresse, correction et livraison PDF.",
+      "bestForEn": "Books, magazines, catalogues, reports and print dossiers: layout, typography, prepress, proofing and PDF delivery.",
       "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
       "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
       "editorial": "Cette stack sert un métier précis : Livres, magazines, catalogues, rapports et dossiers print avec mise en page, typographie, prépresse, correction et livraison PDF. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
-      "editorialEn": "This stack serves a precise role: Livres, magazines, catalogues, rapports et dossiers print avec mise en page, typographie, prépresse, correction et livraison PDF. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "editorialEn": "This stack serves a precise role: Books, magazines, catalogues, reports and print dossiers: layout, typography, prepress, proofing and PDF delivery. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
       "needs": [
           {
               "title": "Source de vérité",
-              "titleEn": "Source de vérité",
+              "titleEn": "Source of truth",
               "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
-              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+              "detailEn": "The brief, source files, exports and decisions have to stay connected."
           },
           {
               "title": "Production fiable",
               "titleEn": "Production fiable",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
-              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+              "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
               "titleEn": "Validation claire",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
-              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+              "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
       ],
       "maturitySignals": [
           {
               "title": "Volume récurrent",
-              "titleEn": "Volume récurrent",
+              "titleEn": "Recurring volume",
               "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
-              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+              "detailEn": "The stack pays for itself once the deliverable comes round several times a month."
           },
           {
               "title": "Plusieurs parties prenantes",
               "titleEn": "Plusieurs parties prenantes",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
-              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+              "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
       ],
       "traps": [
@@ -2598,39 +2598,39 @@ export const STACKS: StackGuide[] = [
               "title": "Abonnements dormants",
               "titleEn": "Abonnements dormants",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
-              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+              "detailEn": "A premium creative tool should map to something you invoice."
           },
           {
               "title": "Assets dispersés",
-              "titleEn": "Assets dispersés",
+              "titleEn": "Scattered assets",
               "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
-              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+              "detailEn": "Without organisation, references and source files become impossible to maintain."
           },
           {
               "title": "IA sans intention",
-              "titleEn": "IA sans intention",
+              "titleEn": "AI without intent",
               "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
-              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+              "detailEn": "AI should speed up a direction, not replace professional judgement."
           }
       ],
       "checkpoints": [
           {
               "q": "Le livrable final est-il clairement relié au brief initial ?",
-              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Is the final deliverable clearly tied back to the original brief?",
               "hint": "Si non, il manque une source de vérité projet.",
-              "hintEn": "Si non, il manque une source de vérité projet."
+              "hintEn": "If not, the project has no single source of truth."
           },
           {
               "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
-              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Does each tool play a distinct role in the chain?",
               "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
-              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+              "hintEn": "If two tools do the same job, one of them should be conditional."
           },
           {
               "q": "Le client sait-il quoi valider et où le faire ?",
-              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Does the client know what to approve, and where?",
               "hint": "Si non, le feedback va créer des allers-retours inutiles.",
-              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+              "hintEn": "If not, feedback will generate avoidable back and forth."
           }
       ],
       "tools": [
@@ -2744,7 +2744,7 @@ export const STACKS: StackGuide[] = [
       "title": "Stack packaging designer",
       "titleEn": "Packaging designer stack",
       "subtitle": "Packaging, étiquettes, coffrets, dielines, mockups, rendu 3D, prépresse, validation fournisseur et livraison.",
-      "subtitleEn": "Packaging, étiquettes, coffrets, dielines, mockups, rendu 3D, prépresse, validation fournisseur et livraison.",
+      "subtitleEn": "Packaging, labels, boxes, dielines, mockups, 3D rendering, prepress, supplier sign-off and delivery.",
       "persona": "designer",
       "subProfiles": [
           "brand",
@@ -2758,43 +2758,43 @@ export const STACKS: StackGuide[] = [
       "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
       "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
       "bestFor": "Packaging, étiquettes, coffrets, dielines, mockups, rendu 3D, prépresse, validation fournisseur et livraison.",
-      "bestForEn": "Packaging, étiquettes, coffrets, dielines, mockups, rendu 3D, prépresse, validation fournisseur et livraison.",
+      "bestForEn": "Packaging, labels, boxes, dielines, mockups, 3D rendering, prepress, supplier sign-off and delivery.",
       "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
       "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
       "editorial": "Cette stack sert un métier précis : Packaging, étiquettes, coffrets, dielines, mockups, rendu 3D, prépresse, validation fournisseur et livraison. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
-      "editorialEn": "This stack serves a precise role: Packaging, étiquettes, coffrets, dielines, mockups, rendu 3D, prépresse, validation fournisseur et livraison. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "editorialEn": "This stack serves a precise role: Packaging, labels, boxes, dielines, mockups, 3D rendering, prepress, supplier sign-off and delivery. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
       "needs": [
           {
               "title": "Source de vérité",
-              "titleEn": "Source de vérité",
+              "titleEn": "Source of truth",
               "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
-              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+              "detailEn": "The brief, source files, exports and decisions have to stay connected."
           },
           {
               "title": "Production fiable",
               "titleEn": "Production fiable",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
-              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+              "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
               "titleEn": "Validation claire",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
-              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+              "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
       ],
       "maturitySignals": [
           {
               "title": "Volume récurrent",
-              "titleEn": "Volume récurrent",
+              "titleEn": "Recurring volume",
               "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
-              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+              "detailEn": "The stack pays for itself once the deliverable comes round several times a month."
           },
           {
               "title": "Plusieurs parties prenantes",
               "titleEn": "Plusieurs parties prenantes",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
-              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+              "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
       ],
       "traps": [
@@ -2802,39 +2802,39 @@ export const STACKS: StackGuide[] = [
               "title": "Abonnements dormants",
               "titleEn": "Abonnements dormants",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
-              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+              "detailEn": "A premium creative tool should map to something you invoice."
           },
           {
               "title": "Assets dispersés",
-              "titleEn": "Assets dispersés",
+              "titleEn": "Scattered assets",
               "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
-              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+              "detailEn": "Without organisation, references and source files become impossible to maintain."
           },
           {
               "title": "IA sans intention",
-              "titleEn": "IA sans intention",
+              "titleEn": "AI without intent",
               "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
-              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+              "detailEn": "AI should speed up a direction, not replace professional judgement."
           }
       ],
       "checkpoints": [
           {
               "q": "Le livrable final est-il clairement relié au brief initial ?",
-              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Is the final deliverable clearly tied back to the original brief?",
               "hint": "Si non, il manque une source de vérité projet.",
-              "hintEn": "Si non, il manque une source de vérité projet."
+              "hintEn": "If not, the project has no single source of truth."
           },
           {
               "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
-              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Does each tool play a distinct role in the chain?",
               "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
-              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+              "hintEn": "If two tools do the same job, one of them should be conditional."
           },
           {
               "q": "Le client sait-il quoi valider et où le faire ?",
-              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Does the client know what to approve, and where?",
               "hint": "Si non, le feedback va créer des allers-retours inutiles.",
-              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+              "hintEn": "If not, feedback will generate avoidable back and forth."
           }
       ],
       "tools": [
@@ -2956,7 +2956,7 @@ export const STACKS: StackGuide[] = [
       "title": "Stack 3D produit",
       "titleEn": "Product visualization stack",
       "subtitle": "Modélisation, texturing, rendu, animation, packshot et postproduction pour objets, produits et scènes.",
-      "subtitleEn": "Modélisation, texturing, rendu, animation, packshot et postproduction pour objets, produits et scènes.",
+      "subtitleEn": "Modelling, texturing, rendering, animation, packshots and post-production for objects, products and scenes.",
       "persona": "designer",
       "subProfiles": [
           "art-direction",
@@ -2970,43 +2970,43 @@ export const STACKS: StackGuide[] = [
       "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
       "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
       "bestFor": "Modélisation, texturing, rendu, animation, packshot et postproduction pour objets, produits et scènes.",
-      "bestForEn": "Modélisation, texturing, rendu, animation, packshot et postproduction pour objets, produits et scènes.",
+      "bestForEn": "Modelling, texturing, rendering, animation, packshots and post-production for objects, products and scenes.",
       "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
       "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
       "editorial": "Cette stack sert un métier précis : Modélisation, texturing, rendu, animation, packshot et postproduction pour objets, produits et scènes. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
-      "editorialEn": "This stack serves a precise role: Modélisation, texturing, rendu, animation, packshot et postproduction pour objets, produits et scènes. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "editorialEn": "This stack serves a precise role: Modelling, texturing, rendering, animation, packshots and post-production for objects, products and scenes. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
       "needs": [
           {
               "title": "Source de vérité",
-              "titleEn": "Source de vérité",
+              "titleEn": "Source of truth",
               "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
-              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+              "detailEn": "The brief, source files, exports and decisions have to stay connected."
           },
           {
               "title": "Production fiable",
               "titleEn": "Production fiable",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
-              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+              "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
               "titleEn": "Validation claire",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
-              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+              "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
       ],
       "maturitySignals": [
           {
               "title": "Volume récurrent",
-              "titleEn": "Volume récurrent",
+              "titleEn": "Recurring volume",
               "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
-              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+              "detailEn": "The stack pays for itself once the deliverable comes round several times a month."
           },
           {
               "title": "Plusieurs parties prenantes",
               "titleEn": "Plusieurs parties prenantes",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
-              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+              "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
       ],
       "traps": [
@@ -3014,39 +3014,39 @@ export const STACKS: StackGuide[] = [
               "title": "Abonnements dormants",
               "titleEn": "Abonnements dormants",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
-              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+              "detailEn": "A premium creative tool should map to something you invoice."
           },
           {
               "title": "Assets dispersés",
-              "titleEn": "Assets dispersés",
+              "titleEn": "Scattered assets",
               "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
-              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+              "detailEn": "Without organisation, references and source files become impossible to maintain."
           },
           {
               "title": "IA sans intention",
-              "titleEn": "IA sans intention",
+              "titleEn": "AI without intent",
               "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
-              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+              "detailEn": "AI should speed up a direction, not replace professional judgement."
           }
       ],
       "checkpoints": [
           {
               "q": "Le livrable final est-il clairement relié au brief initial ?",
-              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Is the final deliverable clearly tied back to the original brief?",
               "hint": "Si non, il manque une source de vérité projet.",
-              "hintEn": "Si non, il manque une source de vérité projet."
+              "hintEn": "If not, the project has no single source of truth."
           },
           {
               "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
-              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Does each tool play a distinct role in the chain?",
               "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
-              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+              "hintEn": "If two tools do the same job, one of them should be conditional."
           },
           {
               "q": "Le client sait-il quoi valider et où le faire ?",
-              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Does the client know what to approve, and where?",
               "hint": "Si non, le feedback va créer des allers-retours inutiles.",
-              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+              "hintEn": "If not, feedback will generate avoidable back and forth."
           }
       ],
       "tools": [
@@ -3168,7 +3168,7 @@ export const STACKS: StackGuide[] = [
       "title": "Stack archviz artist",
       "titleEn": "Archviz artist stack",
       "subtitle": "Images d’architecture, intérieurs, extérieurs, scènes lourdes, matériaux, lumière, végétation et postproduction.",
-      "subtitleEn": "Images d’architecture, intérieurs, extérieurs, scènes lourdes, matériaux, lumière, végétation et postproduction.",
+      "subtitleEn": "Architectural images, interiors, exteriors, heavy scenes, materials, lighting, vegetation and post-production.",
       "persona": "designer",
       "subProfiles": [
           "interior-design",
@@ -3182,43 +3182,43 @@ export const STACKS: StackGuide[] = [
       "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
       "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
       "bestFor": "Images d’architecture, intérieurs, extérieurs, scènes lourdes, matériaux, lumière, végétation et postproduction.",
-      "bestForEn": "Images d’architecture, intérieurs, extérieurs, scènes lourdes, matériaux, lumière, végétation et postproduction.",
+      "bestForEn": "Architectural images, interiors, exteriors, heavy scenes, materials, lighting, vegetation and post-production.",
       "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
       "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
       "editorial": "Cette stack sert un métier précis : Images d’architecture, intérieurs, extérieurs, scènes lourdes, matériaux, lumière, végétation et postproduction. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
-      "editorialEn": "This stack serves a precise role: Images d’architecture, intérieurs, extérieurs, scènes lourdes, matériaux, lumière, végétation et postproduction. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "editorialEn": "This stack serves a precise role: Architectural images, interiors, exteriors, heavy scenes, materials, lighting, vegetation and post-production. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
       "needs": [
           {
               "title": "Source de vérité",
-              "titleEn": "Source de vérité",
+              "titleEn": "Source of truth",
               "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
-              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+              "detailEn": "The brief, source files, exports and decisions have to stay connected."
           },
           {
               "title": "Production fiable",
               "titleEn": "Production fiable",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
-              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+              "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
               "titleEn": "Validation claire",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
-              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+              "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
       ],
       "maturitySignals": [
           {
               "title": "Volume récurrent",
-              "titleEn": "Volume récurrent",
+              "titleEn": "Recurring volume",
               "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
-              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+              "detailEn": "The stack pays for itself once the deliverable comes round several times a month."
           },
           {
               "title": "Plusieurs parties prenantes",
               "titleEn": "Plusieurs parties prenantes",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
-              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+              "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
       ],
       "traps": [
@@ -3226,39 +3226,39 @@ export const STACKS: StackGuide[] = [
               "title": "Abonnements dormants",
               "titleEn": "Abonnements dormants",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
-              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+              "detailEn": "A premium creative tool should map to something you invoice."
           },
           {
               "title": "Assets dispersés",
-              "titleEn": "Assets dispersés",
+              "titleEn": "Scattered assets",
               "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
-              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+              "detailEn": "Without organisation, references and source files become impossible to maintain."
           },
           {
               "title": "IA sans intention",
-              "titleEn": "IA sans intention",
+              "titleEn": "AI without intent",
               "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
-              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+              "detailEn": "AI should speed up a direction, not replace professional judgement."
           }
       ],
       "checkpoints": [
           {
               "q": "Le livrable final est-il clairement relié au brief initial ?",
-              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Is the final deliverable clearly tied back to the original brief?",
               "hint": "Si non, il manque une source de vérité projet.",
-              "hintEn": "Si non, il manque une source de vérité projet."
+              "hintEn": "If not, the project has no single source of truth."
           },
           {
               "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
-              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Does each tool play a distinct role in the chain?",
               "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
-              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+              "hintEn": "If two tools do the same job, one of them should be conditional."
           },
           {
               "q": "Le client sait-il quoi valider et où le faire ?",
-              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Does the client know what to approve, and where?",
               "hint": "Si non, le feedback va créer des allers-retours inutiles.",
-              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+              "hintEn": "If not, feedback will generate avoidable back and forth."
           }
       ],
       "tools": [
@@ -3380,7 +3380,7 @@ export const STACKS: StackGuide[] = [
       "title": "Stack game artist",
       "titleEn": "Game artist stack",
       "subtitle": "Assets, personnages, environnements, textures, props, UI, optimisation et portfolio jeu vidéo.",
-      "subtitleEn": "Assets, personnages, environnements, textures, props, UI, optimisation et portfolio jeu vidéo.",
+      "subtitleEn": "Assets, characters, environments, textures, props, UI, optimisation and a game portfolio.",
       "persona": "designer",
       "subProfiles": [
           "illustration",
@@ -3394,43 +3394,43 @@ export const STACKS: StackGuide[] = [
       "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
       "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
       "bestFor": "Assets, personnages, environnements, textures, props, UI, optimisation et portfolio jeu vidéo.",
-      "bestForEn": "Assets, personnages, environnements, textures, props, UI, optimisation et portfolio jeu vidéo.",
+      "bestForEn": "Assets, characters, environments, textures, props, UI, optimisation and a game portfolio.",
       "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
       "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
       "editorial": "Cette stack sert un métier précis : Assets, personnages, environnements, textures, props, UI, optimisation et portfolio jeu vidéo. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
-      "editorialEn": "This stack serves a precise role: Assets, personnages, environnements, textures, props, UI, optimisation et portfolio jeu vidéo. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "editorialEn": "This stack serves a precise role: Assets, characters, environments, textures, props, UI, optimisation and a game portfolio. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
       "needs": [
           {
               "title": "Source de vérité",
-              "titleEn": "Source de vérité",
+              "titleEn": "Source of truth",
               "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
-              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+              "detailEn": "The brief, source files, exports and decisions have to stay connected."
           },
           {
               "title": "Production fiable",
               "titleEn": "Production fiable",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
-              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+              "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
               "titleEn": "Validation claire",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
-              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+              "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
       ],
       "maturitySignals": [
           {
               "title": "Volume récurrent",
-              "titleEn": "Volume récurrent",
+              "titleEn": "Recurring volume",
               "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
-              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+              "detailEn": "The stack pays for itself once the deliverable comes round several times a month."
           },
           {
               "title": "Plusieurs parties prenantes",
               "titleEn": "Plusieurs parties prenantes",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
-              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+              "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
       ],
       "traps": [
@@ -3438,39 +3438,39 @@ export const STACKS: StackGuide[] = [
               "title": "Abonnements dormants",
               "titleEn": "Abonnements dormants",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
-              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+              "detailEn": "A premium creative tool should map to something you invoice."
           },
           {
               "title": "Assets dispersés",
-              "titleEn": "Assets dispersés",
+              "titleEn": "Scattered assets",
               "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
-              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+              "detailEn": "Without organisation, references and source files become impossible to maintain."
           },
           {
               "title": "IA sans intention",
-              "titleEn": "IA sans intention",
+              "titleEn": "AI without intent",
               "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
-              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+              "detailEn": "AI should speed up a direction, not replace professional judgement."
           }
       ],
       "checkpoints": [
           {
               "q": "Le livrable final est-il clairement relié au brief initial ?",
-              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Is the final deliverable clearly tied back to the original brief?",
               "hint": "Si non, il manque une source de vérité projet.",
-              "hintEn": "Si non, il manque une source de vérité projet."
+              "hintEn": "If not, the project has no single source of truth."
           },
           {
               "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
-              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Does each tool play a distinct role in the chain?",
               "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
-              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+              "hintEn": "If two tools do the same job, one of them should be conditional."
           },
           {
               "q": "Le client sait-il quoi valider et où le faire ?",
-              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Does the client know what to approve, and where?",
               "hint": "Si non, le feedback va créer des allers-retours inutiles.",
-              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+              "hintEn": "If not, feedback will generate avoidable back and forth."
           }
       ],
       "tools": [
@@ -3584,7 +3584,7 @@ export const STACKS: StackGuide[] = [
       "title": "Stack concept artist",
       "titleEn": "Concept artist stack",
       "subtitle": "Univers, décors, personnages, ambiances, photobash, bases 3D, variantes et portfolio.",
-      "subtitleEn": "Univers, décors, personnages, ambiances, photobash, bases 3D, variantes et portfolio.",
+      "subtitleEn": "Worlds, sets, characters, moods, photobash, 3D bases, variants and portfolio.",
       "persona": "designer",
       "subProfiles": [
           "illustration",
@@ -3597,43 +3597,43 @@ export const STACKS: StackGuide[] = [
       "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
       "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
       "bestFor": "Univers, décors, personnages, ambiances, photobash, bases 3D, variantes et portfolio.",
-      "bestForEn": "Univers, décors, personnages, ambiances, photobash, bases 3D, variantes et portfolio.",
+      "bestForEn": "Worlds, sets, characters, moods, photobash, 3D bases, variants and portfolio.",
       "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
       "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
       "editorial": "Cette stack sert un métier précis : Univers, décors, personnages, ambiances, photobash, bases 3D, variantes et portfolio. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
-      "editorialEn": "This stack serves a precise role: Univers, décors, personnages, ambiances, photobash, bases 3D, variantes et portfolio. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "editorialEn": "This stack serves a precise role: Worlds, sets, characters, moods, photobash, 3D bases, variants and portfolio. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
       "needs": [
           {
               "title": "Source de vérité",
-              "titleEn": "Source de vérité",
+              "titleEn": "Source of truth",
               "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
-              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+              "detailEn": "The brief, source files, exports and decisions have to stay connected."
           },
           {
               "title": "Production fiable",
               "titleEn": "Production fiable",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
-              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+              "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
               "titleEn": "Validation claire",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
-              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+              "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
       ],
       "maturitySignals": [
           {
               "title": "Volume récurrent",
-              "titleEn": "Volume récurrent",
+              "titleEn": "Recurring volume",
               "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
-              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+              "detailEn": "The stack pays for itself once the deliverable comes round several times a month."
           },
           {
               "title": "Plusieurs parties prenantes",
               "titleEn": "Plusieurs parties prenantes",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
-              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+              "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
       ],
       "traps": [
@@ -3641,39 +3641,39 @@ export const STACKS: StackGuide[] = [
               "title": "Abonnements dormants",
               "titleEn": "Abonnements dormants",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
-              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+              "detailEn": "A premium creative tool should map to something you invoice."
           },
           {
               "title": "Assets dispersés",
-              "titleEn": "Assets dispersés",
+              "titleEn": "Scattered assets",
               "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
-              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+              "detailEn": "Without organisation, references and source files become impossible to maintain."
           },
           {
               "title": "IA sans intention",
-              "titleEn": "IA sans intention",
+              "titleEn": "AI without intent",
               "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
-              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+              "detailEn": "AI should speed up a direction, not replace professional judgement."
           }
       ],
       "checkpoints": [
           {
               "q": "Le livrable final est-il clairement relié au brief initial ?",
-              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Is the final deliverable clearly tied back to the original brief?",
               "hint": "Si non, il manque une source de vérité projet.",
-              "hintEn": "Si non, il manque une source de vérité projet."
+              "hintEn": "If not, the project has no single source of truth."
           },
           {
               "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
-              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Does each tool play a distinct role in the chain?",
               "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
-              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+              "hintEn": "If two tools do the same job, one of them should be conditional."
           },
           {
               "q": "Le client sait-il quoi valider et où le faire ?",
-              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Does the client know what to approve, and where?",
               "hint": "Si non, le feedback va créer des allers-retours inutiles.",
-              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+              "hintEn": "If not, feedback will generate avoidable back and forth."
           }
       ],
       "tools": [
@@ -3787,7 +3787,7 @@ export const STACKS: StackGuide[] = [
       "title": "Stack designer industriel",
       "titleEn": "Industrial product designer stack",
       "subtitle": "Recherche, croquis, CAO, rendu, prototypage, fichiers fabrication et documentation produit.",
-      "subtitleEn": "Recherche, croquis, CAO, rendu, prototypage, fichiers fabrication et documentation produit.",
+      "subtitleEn": "Research, sketching, CAD, rendering, prototyping, fabrication files and product documentation.",
       "persona": "designer",
       "subProfiles": [
           "product",
@@ -3801,43 +3801,43 @@ export const STACKS: StackGuide[] = [
       "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
       "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
       "bestFor": "Recherche, croquis, CAO, rendu, prototypage, fichiers fabrication et documentation produit.",
-      "bestForEn": "Recherche, croquis, CAO, rendu, prototypage, fichiers fabrication et documentation produit.",
+      "bestForEn": "Research, sketching, CAD, rendering, prototyping, fabrication files and product documentation.",
       "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
       "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
       "editorial": "Cette stack sert un métier précis : Recherche, croquis, CAO, rendu, prototypage, fichiers fabrication et documentation produit. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
-      "editorialEn": "This stack serves a precise role: Recherche, croquis, CAO, rendu, prototypage, fichiers fabrication et documentation produit. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "editorialEn": "This stack serves a precise role: Research, sketching, CAD, rendering, prototyping, fabrication files and product documentation. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
       "needs": [
           {
               "title": "Source de vérité",
-              "titleEn": "Source de vérité",
+              "titleEn": "Source of truth",
               "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
-              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+              "detailEn": "The brief, source files, exports and decisions have to stay connected."
           },
           {
               "title": "Production fiable",
               "titleEn": "Production fiable",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
-              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+              "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
               "titleEn": "Validation claire",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
-              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+              "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
       ],
       "maturitySignals": [
           {
               "title": "Volume récurrent",
-              "titleEn": "Volume récurrent",
+              "titleEn": "Recurring volume",
               "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
-              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+              "detailEn": "The stack pays for itself once the deliverable comes round several times a month."
           },
           {
               "title": "Plusieurs parties prenantes",
               "titleEn": "Plusieurs parties prenantes",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
-              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+              "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
       ],
       "traps": [
@@ -3845,39 +3845,39 @@ export const STACKS: StackGuide[] = [
               "title": "Abonnements dormants",
               "titleEn": "Abonnements dormants",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
-              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+              "detailEn": "A premium creative tool should map to something you invoice."
           },
           {
               "title": "Assets dispersés",
-              "titleEn": "Assets dispersés",
+              "titleEn": "Scattered assets",
               "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
-              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+              "detailEn": "Without organisation, references and source files become impossible to maintain."
           },
           {
               "title": "IA sans intention",
-              "titleEn": "IA sans intention",
+              "titleEn": "AI without intent",
               "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
-              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+              "detailEn": "AI should speed up a direction, not replace professional judgement."
           }
       ],
       "checkpoints": [
           {
               "q": "Le livrable final est-il clairement relié au brief initial ?",
-              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Is the final deliverable clearly tied back to the original brief?",
               "hint": "Si non, il manque une source de vérité projet.",
-              "hintEn": "Si non, il manque une source de vérité projet."
+              "hintEn": "If not, the project has no single source of truth."
           },
           {
               "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
-              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Does each tool play a distinct role in the chain?",
               "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
-              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+              "hintEn": "If two tools do the same job, one of them should be conditional."
           },
           {
               "q": "Le client sait-il quoi valider et où le faire ?",
-              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Does the client know what to approve, and where?",
               "hint": "Si non, le feedback va créer des allers-retours inutiles.",
-              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+              "hintEn": "If not, feedback will generate avoidable back and forth."
           }
       ],
       "tools": [
@@ -3999,7 +3999,7 @@ export const STACKS: StackGuide[] = [
       "title": "Stack designer mobilier",
       "titleEn": "Furniture designer stack",
       "subtitle": "Mobilier sur-mesure, 3D, plans techniques, rendu, matériaux, découpe, devis et fabrication.",
-      "subtitleEn": "Mobilier sur-mesure, 3D, plans techniques, rendu, matériaux, découpe, devis et fabrication.",
+      "subtitleEn": "Bespoke furniture, 3D, technical drawings, rendering, materials, cutting, quotes and fabrication.",
       "persona": "designer",
       "subProfiles": [
           "interior-design",
@@ -4013,43 +4013,43 @@ export const STACKS: StackGuide[] = [
       "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
       "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
       "bestFor": "Mobilier sur-mesure, 3D, plans techniques, rendu, matériaux, découpe, devis et fabrication.",
-      "bestForEn": "Mobilier sur-mesure, 3D, plans techniques, rendu, matériaux, découpe, devis et fabrication.",
+      "bestForEn": "Bespoke furniture, 3D, technical drawings, rendering, materials, cutting, quotes and fabrication.",
       "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
       "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
       "editorial": "Cette stack sert un métier précis : Mobilier sur-mesure, 3D, plans techniques, rendu, matériaux, découpe, devis et fabrication. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
-      "editorialEn": "This stack serves a precise role: Mobilier sur-mesure, 3D, plans techniques, rendu, matériaux, découpe, devis et fabrication. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "editorialEn": "This stack serves a precise role: Bespoke furniture, 3D, technical drawings, rendering, materials, cutting, quotes and fabrication. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
       "needs": [
           {
               "title": "Source de vérité",
-              "titleEn": "Source de vérité",
+              "titleEn": "Source of truth",
               "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
-              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+              "detailEn": "The brief, source files, exports and decisions have to stay connected."
           },
           {
               "title": "Production fiable",
               "titleEn": "Production fiable",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
-              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+              "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
               "titleEn": "Validation claire",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
-              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+              "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
       ],
       "maturitySignals": [
           {
               "title": "Volume récurrent",
-              "titleEn": "Volume récurrent",
+              "titleEn": "Recurring volume",
               "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
-              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+              "detailEn": "The stack pays for itself once the deliverable comes round several times a month."
           },
           {
               "title": "Plusieurs parties prenantes",
               "titleEn": "Plusieurs parties prenantes",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
-              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+              "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
       ],
       "traps": [
@@ -4057,39 +4057,39 @@ export const STACKS: StackGuide[] = [
               "title": "Abonnements dormants",
               "titleEn": "Abonnements dormants",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
-              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+              "detailEn": "A premium creative tool should map to something you invoice."
           },
           {
               "title": "Assets dispersés",
-              "titleEn": "Assets dispersés",
+              "titleEn": "Scattered assets",
               "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
-              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+              "detailEn": "Without organisation, references and source files become impossible to maintain."
           },
           {
               "title": "IA sans intention",
-              "titleEn": "IA sans intention",
+              "titleEn": "AI without intent",
               "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
-              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+              "detailEn": "AI should speed up a direction, not replace professional judgement."
           }
       ],
       "checkpoints": [
           {
               "q": "Le livrable final est-il clairement relié au brief initial ?",
-              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Is the final deliverable clearly tied back to the original brief?",
               "hint": "Si non, il manque une source de vérité projet.",
-              "hintEn": "Si non, il manque une source de vérité projet."
+              "hintEn": "If not, the project has no single source of truth."
           },
           {
               "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
-              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Does each tool play a distinct role in the chain?",
               "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
-              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+              "hintEn": "If two tools do the same job, one of them should be conditional."
           },
           {
               "q": "Le client sait-il quoi valider et où le faire ?",
-              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Does the client know what to approve, and where?",
               "hint": "Si non, le feedback va créer des allers-retours inutiles.",
-              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+              "hintEn": "If not, feedback will generate avoidable back and forth."
           }
       ],
       "tools": [
@@ -4211,7 +4211,7 @@ export const STACKS: StackGuide[] = [
       "title": "Stack textile & mode",
       "titleEn": "Textile and fashion stack",
       "subtitle": "Moodboards, dessin, motifs, patronage, simulation textile, fiches techniques, collection et production.",
-      "subtitleEn": "Moodboards, dessin, motifs, patronage, simulation textile, fiches techniques, collection et production.",
+      "subtitleEn": "Moodboards, drawing, prints, pattern making, textile simulation, tech packs, collection and production.",
       "persona": "designer",
       "subProfiles": [
           "illustration",
@@ -4225,43 +4225,43 @@ export const STACKS: StackGuide[] = [
       "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
       "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
       "bestFor": "Moodboards, dessin, motifs, patronage, simulation textile, fiches techniques, collection et production.",
-      "bestForEn": "Moodboards, dessin, motifs, patronage, simulation textile, fiches techniques, collection et production.",
+      "bestForEn": "Moodboards, drawing, prints, pattern making, textile simulation, tech packs, collection and production.",
       "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
       "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
       "editorial": "Cette stack sert un métier précis : Moodboards, dessin, motifs, patronage, simulation textile, fiches techniques, collection et production. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
-      "editorialEn": "This stack serves a precise role: Moodboards, dessin, motifs, patronage, simulation textile, fiches techniques, collection et production. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "editorialEn": "This stack serves a precise role: Moodboards, drawing, prints, pattern making, textile simulation, tech packs, collection and production. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
       "needs": [
           {
               "title": "Source de vérité",
-              "titleEn": "Source de vérité",
+              "titleEn": "Source of truth",
               "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
-              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+              "detailEn": "The brief, source files, exports and decisions have to stay connected."
           },
           {
               "title": "Production fiable",
               "titleEn": "Production fiable",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
-              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+              "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
               "titleEn": "Validation claire",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
-              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+              "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
       ],
       "maturitySignals": [
           {
               "title": "Volume récurrent",
-              "titleEn": "Volume récurrent",
+              "titleEn": "Recurring volume",
               "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
-              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+              "detailEn": "The stack pays for itself once the deliverable comes round several times a month."
           },
           {
               "title": "Plusieurs parties prenantes",
               "titleEn": "Plusieurs parties prenantes",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
-              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+              "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
       ],
       "traps": [
@@ -4269,39 +4269,39 @@ export const STACKS: StackGuide[] = [
               "title": "Abonnements dormants",
               "titleEn": "Abonnements dormants",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
-              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+              "detailEn": "A premium creative tool should map to something you invoice."
           },
           {
               "title": "Assets dispersés",
-              "titleEn": "Assets dispersés",
+              "titleEn": "Scattered assets",
               "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
-              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+              "detailEn": "Without organisation, references and source files become impossible to maintain."
           },
           {
               "title": "IA sans intention",
-              "titleEn": "IA sans intention",
+              "titleEn": "AI without intent",
               "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
-              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+              "detailEn": "AI should speed up a direction, not replace professional judgement."
           }
       ],
       "checkpoints": [
           {
               "q": "Le livrable final est-il clairement relié au brief initial ?",
-              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Is the final deliverable clearly tied back to the original brief?",
               "hint": "Si non, il manque une source de vérité projet.",
-              "hintEn": "Si non, il manque une source de vérité projet."
+              "hintEn": "If not, the project has no single source of truth."
           },
           {
               "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
-              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Does each tool play a distinct role in the chain?",
               "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
-              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+              "hintEn": "If two tools do the same job, one of them should be conditional."
           },
           {
               "q": "Le client sait-il quoi valider et où le faire ?",
-              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Does the client know what to approve, and where?",
               "hint": "Si non, le feedback va créer des allers-retours inutiles.",
-              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+              "hintEn": "If not, feedback will generate avoidable back and forth."
           }
       ],
       "tools": [
@@ -4423,7 +4423,7 @@ export const STACKS: StackGuide[] = [
       "title": "Stack social media designer",
       "titleEn": "Social media designer stack",
       "subtitle": "Visuels, vidéos courtes, carrousels, stories, reels, miniatures, calendrier éditorial et réutilisation contenu.",
-      "subtitleEn": "Visuels, vidéos courtes, carrousels, stories, reels, miniatures, calendrier éditorial et réutilisation contenu.",
+      "subtitleEn": "Visuals, short videos, carousels, stories, reels, thumbnails, editorial calendar and content reuse.",
       "persona": "content",
       "subProfiles": [
           "social-content",
@@ -4437,43 +4437,43 @@ export const STACKS: StackGuide[] = [
       "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
       "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
       "bestFor": "Visuels, vidéos courtes, carrousels, stories, reels, miniatures, calendrier éditorial et réutilisation contenu.",
-      "bestForEn": "Visuels, vidéos courtes, carrousels, stories, reels, miniatures, calendrier éditorial et réutilisation contenu.",
+      "bestForEn": "Visuals, short videos, carousels, stories, reels, thumbnails, editorial calendar and content reuse.",
       "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
       "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
       "editorial": "Cette stack sert un métier précis : Visuels, vidéos courtes, carrousels, stories, reels, miniatures, calendrier éditorial et réutilisation contenu. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
-      "editorialEn": "This stack serves a precise role: Visuels, vidéos courtes, carrousels, stories, reels, miniatures, calendrier éditorial et réutilisation contenu. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "editorialEn": "This stack serves a precise role: Visuals, short videos, carousels, stories, reels, thumbnails, editorial calendar and content reuse. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
       "needs": [
           {
               "title": "Source de vérité",
-              "titleEn": "Source de vérité",
+              "titleEn": "Source of truth",
               "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
-              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+              "detailEn": "The brief, source files, exports and decisions have to stay connected."
           },
           {
               "title": "Production fiable",
               "titleEn": "Production fiable",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
-              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+              "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
               "titleEn": "Validation claire",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
-              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+              "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
       ],
       "maturitySignals": [
           {
               "title": "Volume récurrent",
-              "titleEn": "Volume récurrent",
+              "titleEn": "Recurring volume",
               "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
-              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+              "detailEn": "The stack pays for itself once the deliverable comes round several times a month."
           },
           {
               "title": "Plusieurs parties prenantes",
               "titleEn": "Plusieurs parties prenantes",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
-              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+              "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
       ],
       "traps": [
@@ -4481,39 +4481,39 @@ export const STACKS: StackGuide[] = [
               "title": "Abonnements dormants",
               "titleEn": "Abonnements dormants",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
-              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+              "detailEn": "A premium creative tool should map to something you invoice."
           },
           {
               "title": "Assets dispersés",
-              "titleEn": "Assets dispersés",
+              "titleEn": "Scattered assets",
               "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
-              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+              "detailEn": "Without organisation, references and source files become impossible to maintain."
           },
           {
               "title": "IA sans intention",
-              "titleEn": "IA sans intention",
+              "titleEn": "AI without intent",
               "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
-              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+              "detailEn": "AI should speed up a direction, not replace professional judgement."
           }
       ],
       "checkpoints": [
           {
               "q": "Le livrable final est-il clairement relié au brief initial ?",
-              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Is the final deliverable clearly tied back to the original brief?",
               "hint": "Si non, il manque une source de vérité projet.",
-              "hintEn": "Si non, il manque une source de vérité projet."
+              "hintEn": "If not, the project has no single source of truth."
           },
           {
               "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
-              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Does each tool play a distinct role in the chain?",
               "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
-              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+              "hintEn": "If two tools do the same job, one of them should be conditional."
           },
           {
               "q": "Le client sait-il quoi valider et où le faire ?",
-              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Does the client know what to approve, and where?",
               "hint": "Si non, le feedback va créer des allers-retours inutiles.",
-              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+              "hintEn": "If not, feedback will generate avoidable back and forth."
           }
       ],
       "tools": [
@@ -4635,7 +4635,7 @@ export const STACKS: StackGuide[] = [
       "title": "Stack copywriter",
       "titleEn": "Copywriter stack",
       "subtitle": "Recherche, concepts, slogans, campagnes, sites, newsletters, scripts, pages de vente, correction et facturation.",
-      "subtitleEn": "Recherche, concepts, slogans, campagnes, sites, newsletters, scripts, pages de vente, correction et facturation.",
+      "subtitleEn": "Research, concepts, taglines, campaigns, websites, newsletters, scripts, sales pages, proofing and invoicing.",
       "persona": "content",
       "subProfiles": [
           "copywriting",
@@ -4649,43 +4649,43 @@ export const STACKS: StackGuide[] = [
       "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
       "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
       "bestFor": "Recherche, concepts, slogans, campagnes, sites, newsletters, scripts, pages de vente, correction et facturation.",
-      "bestForEn": "Recherche, concepts, slogans, campagnes, sites, newsletters, scripts, pages de vente, correction et facturation.",
+      "bestForEn": "Research, concepts, taglines, campaigns, websites, newsletters, scripts, sales pages, proofing and invoicing.",
       "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
       "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
       "editorial": "Cette stack sert un métier précis : Recherche, concepts, slogans, campagnes, sites, newsletters, scripts, pages de vente, correction et facturation. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
-      "editorialEn": "This stack serves a precise role: Recherche, concepts, slogans, campagnes, sites, newsletters, scripts, pages de vente, correction et facturation. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "editorialEn": "This stack serves a precise role: Research, concepts, taglines, campaigns, websites, newsletters, scripts, sales pages, proofing and invoicing. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
       "needs": [
           {
               "title": "Source de vérité",
-              "titleEn": "Source de vérité",
+              "titleEn": "Source of truth",
               "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
-              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+              "detailEn": "The brief, source files, exports and decisions have to stay connected."
           },
           {
               "title": "Production fiable",
               "titleEn": "Production fiable",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
-              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+              "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
               "titleEn": "Validation claire",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
-              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+              "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
       ],
       "maturitySignals": [
           {
               "title": "Volume récurrent",
-              "titleEn": "Volume récurrent",
+              "titleEn": "Recurring volume",
               "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
-              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+              "detailEn": "The stack pays for itself once the deliverable comes round several times a month."
           },
           {
               "title": "Plusieurs parties prenantes",
               "titleEn": "Plusieurs parties prenantes",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
-              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+              "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
       ],
       "traps": [
@@ -4693,39 +4693,39 @@ export const STACKS: StackGuide[] = [
               "title": "Abonnements dormants",
               "titleEn": "Abonnements dormants",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
-              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+              "detailEn": "A premium creative tool should map to something you invoice."
           },
           {
               "title": "Assets dispersés",
-              "titleEn": "Assets dispersés",
+              "titleEn": "Scattered assets",
               "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
-              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+              "detailEn": "Without organisation, references and source files become impossible to maintain."
           },
           {
               "title": "IA sans intention",
-              "titleEn": "IA sans intention",
+              "titleEn": "AI without intent",
               "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
-              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+              "detailEn": "AI should speed up a direction, not replace professional judgement."
           }
       ],
       "checkpoints": [
           {
               "q": "Le livrable final est-il clairement relié au brief initial ?",
-              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Is the final deliverable clearly tied back to the original brief?",
               "hint": "Si non, il manque une source de vérité projet.",
-              "hintEn": "Si non, il manque une source de vérité projet."
+              "hintEn": "If not, the project has no single source of truth."
           },
           {
               "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
-              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Does each tool play a distinct role in the chain?",
               "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
-              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+              "hintEn": "If two tools do the same job, one of them should be conditional."
           },
           {
               "q": "Le client sait-il quoi valider et où le faire ?",
-              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Does the client know what to approve, and where?",
               "hint": "Si non, le feedback va créer des allers-retours inutiles.",
-              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+              "hintEn": "If not, feedback will generate avoidable back and forth."
           }
       ],
       "tools": [
@@ -4823,7 +4823,7 @@ export const STACKS: StackGuide[] = [
       "title": "Stack content strategist",
       "titleEn": "Content strategist stack",
       "subtitle": "Recherche marché, SEO, calendrier éditorial, briefs, production, publication, reporting et optimisation.",
-      "subtitleEn": "Recherche marché, SEO, calendrier éditorial, briefs, production, publication, reporting et optimisation.",
+      "subtitleEn": "Market research, SEO, editorial calendar, briefs, production, publishing, reporting and optimisation.",
       "persona": "content",
       "subProfiles": [
           "seo",
@@ -4837,43 +4837,43 @@ export const STACKS: StackGuide[] = [
       "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
       "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
       "bestFor": "Recherche marché, SEO, calendrier éditorial, briefs, production, publication, reporting et optimisation.",
-      "bestForEn": "Recherche marché, SEO, calendrier éditorial, briefs, production, publication, reporting et optimisation.",
+      "bestForEn": "Market research, SEO, editorial calendar, briefs, production, publishing, reporting and optimisation.",
       "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
       "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
       "editorial": "Cette stack sert un métier précis : Recherche marché, SEO, calendrier éditorial, briefs, production, publication, reporting et optimisation. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
-      "editorialEn": "This stack serves a precise role: Recherche marché, SEO, calendrier éditorial, briefs, production, publication, reporting et optimisation. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "editorialEn": "This stack serves a precise role: Market research, SEO, editorial calendar, briefs, production, publishing, reporting and optimisation. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
       "needs": [
           {
               "title": "Source de vérité",
-              "titleEn": "Source de vérité",
+              "titleEn": "Source of truth",
               "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
-              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+              "detailEn": "The brief, source files, exports and decisions have to stay connected."
           },
           {
               "title": "Production fiable",
               "titleEn": "Production fiable",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
-              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+              "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
               "titleEn": "Validation claire",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
-              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+              "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
       ],
       "maturitySignals": [
           {
               "title": "Volume récurrent",
-              "titleEn": "Volume récurrent",
+              "titleEn": "Recurring volume",
               "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
-              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+              "detailEn": "The stack pays for itself once the deliverable comes round several times a month."
           },
           {
               "title": "Plusieurs parties prenantes",
               "titleEn": "Plusieurs parties prenantes",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
-              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+              "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
       ],
       "traps": [
@@ -4881,39 +4881,39 @@ export const STACKS: StackGuide[] = [
               "title": "Abonnements dormants",
               "titleEn": "Abonnements dormants",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
-              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+              "detailEn": "A premium creative tool should map to something you invoice."
           },
           {
               "title": "Assets dispersés",
-              "titleEn": "Assets dispersés",
+              "titleEn": "Scattered assets",
               "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
-              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+              "detailEn": "Without organisation, references and source files become impossible to maintain."
           },
           {
               "title": "IA sans intention",
-              "titleEn": "IA sans intention",
+              "titleEn": "AI without intent",
               "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
-              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+              "detailEn": "AI should speed up a direction, not replace professional judgement."
           }
       ],
       "checkpoints": [
           {
               "q": "Le livrable final est-il clairement relié au brief initial ?",
-              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Is the final deliverable clearly tied back to the original brief?",
               "hint": "Si non, il manque une source de vérité projet.",
-              "hintEn": "Si non, il manque une source de vérité projet."
+              "hintEn": "If not, the project has no single source of truth."
           },
           {
               "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
-              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Does each tool play a distinct role in the chain?",
               "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
-              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+              "hintEn": "If two tools do the same job, one of them should be conditional."
           },
           {
               "q": "Le client sait-il quoi valider et où le faire ?",
-              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Does the client know what to approve, and where?",
               "hint": "Si non, le feedback va créer des allers-retours inutiles.",
-              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+              "hintEn": "If not, feedback will generate avoidable back and forth."
           }
       ],
       "tools": [
@@ -5019,7 +5019,7 @@ export const STACKS: StackGuide[] = [
       "title": "Stack community manager créatif",
       "titleEn": "Creative community manager stack",
       "subtitle": "Planning, création visuelle, montage court, publication, modération, reporting et veille social media.",
-      "subtitleEn": "Planning, création visuelle, montage court, publication, modération, reporting et veille social media.",
+      "subtitleEn": "Scheduling, visual creation, short-form editing, publishing, moderation, reporting and social listening.",
       "persona": "content",
       "subProfiles": [
           "social-content",
@@ -5033,43 +5033,43 @@ export const STACKS: StackGuide[] = [
       "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
       "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
       "bestFor": "Planning, création visuelle, montage court, publication, modération, reporting et veille social media.",
-      "bestForEn": "Planning, création visuelle, montage court, publication, modération, reporting et veille social media.",
+      "bestForEn": "Scheduling, visual creation, short-form editing, publishing, moderation, reporting and social listening.",
       "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
       "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
       "editorial": "Cette stack sert un métier précis : Planning, création visuelle, montage court, publication, modération, reporting et veille social media. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
-      "editorialEn": "This stack serves a precise role: Planning, création visuelle, montage court, publication, modération, reporting et veille social media. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "editorialEn": "This stack serves a precise role: Scheduling, visual creation, short-form editing, publishing, moderation, reporting and social listening. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
       "needs": [
           {
               "title": "Source de vérité",
-              "titleEn": "Source de vérité",
+              "titleEn": "Source of truth",
               "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
-              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+              "detailEn": "The brief, source files, exports and decisions have to stay connected."
           },
           {
               "title": "Production fiable",
               "titleEn": "Production fiable",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
-              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+              "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
               "titleEn": "Validation claire",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
-              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+              "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
       ],
       "maturitySignals": [
           {
               "title": "Volume récurrent",
-              "titleEn": "Volume récurrent",
+              "titleEn": "Recurring volume",
               "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
-              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+              "detailEn": "The stack pays for itself once the deliverable comes round several times a month."
           },
           {
               "title": "Plusieurs parties prenantes",
               "titleEn": "Plusieurs parties prenantes",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
-              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+              "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
       ],
       "traps": [
@@ -5077,39 +5077,39 @@ export const STACKS: StackGuide[] = [
               "title": "Abonnements dormants",
               "titleEn": "Abonnements dormants",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
-              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+              "detailEn": "A premium creative tool should map to something you invoice."
           },
           {
               "title": "Assets dispersés",
-              "titleEn": "Assets dispersés",
+              "titleEn": "Scattered assets",
               "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
-              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+              "detailEn": "Without organisation, references and source files become impossible to maintain."
           },
           {
               "title": "IA sans intention",
-              "titleEn": "IA sans intention",
+              "titleEn": "AI without intent",
               "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
-              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+              "detailEn": "AI should speed up a direction, not replace professional judgement."
           }
       ],
       "checkpoints": [
           {
               "q": "Le livrable final est-il clairement relié au brief initial ?",
-              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Is the final deliverable clearly tied back to the original brief?",
               "hint": "Si non, il manque une source de vérité projet.",
-              "hintEn": "Si non, il manque une source de vérité projet."
+              "hintEn": "If not, the project has no single source of truth."
           },
           {
               "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
-              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Does each tool play a distinct role in the chain?",
               "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
-              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+              "hintEn": "If two tools do the same job, one of them should be conditional."
           },
           {
               "q": "Le client sait-il quoi valider et où le faire ?",
-              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Does the client know what to approve, and where?",
               "hint": "Si non, le feedback va créer des allers-retours inutiles.",
-              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+              "hintEn": "If not, feedback will generate avoidable back and forth."
           }
       ],
       "tools": [
@@ -5207,7 +5207,7 @@ export const STACKS: StackGuide[] = [
       "title": "Stack muséographe",
       "titleEn": "Exhibition designer stack",
       "subtitle": "Expositions, parcours visiteurs, dispositifs narratifs, signalétique, cartels, vitrines et production culturelle.",
-      "subtitleEn": "Expositions, parcours visiteurs, dispositifs narratifs, signalétique, cartels, vitrines et production culturelle.",
+      "subtitleEn": "Exhibitions, visitor journeys, narrative devices, signage, labels, display cases and cultural production.",
       "persona": "designer",
       "subProfiles": [
           "interior-design",
@@ -5221,43 +5221,43 @@ export const STACKS: StackGuide[] = [
       "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
       "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
       "bestFor": "Expositions, parcours visiteurs, dispositifs narratifs, signalétique, cartels, vitrines et production culturelle.",
-      "bestForEn": "Expositions, parcours visiteurs, dispositifs narratifs, signalétique, cartels, vitrines et production culturelle.",
+      "bestForEn": "Exhibitions, visitor journeys, narrative devices, signage, labels, display cases and cultural production.",
       "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
       "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
       "editorial": "Cette stack sert un métier précis : Expositions, parcours visiteurs, dispositifs narratifs, signalétique, cartels, vitrines et production culturelle. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
-      "editorialEn": "This stack serves a precise role: Expositions, parcours visiteurs, dispositifs narratifs, signalétique, cartels, vitrines et production culturelle. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "editorialEn": "This stack serves a precise role: Exhibitions, visitor journeys, narrative devices, signage, labels, display cases and cultural production. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
       "needs": [
           {
               "title": "Source de vérité",
-              "titleEn": "Source de vérité",
+              "titleEn": "Source of truth",
               "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
-              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+              "detailEn": "The brief, source files, exports and decisions have to stay connected."
           },
           {
               "title": "Production fiable",
               "titleEn": "Production fiable",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
-              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+              "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
               "titleEn": "Validation claire",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
-              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+              "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
       ],
       "maturitySignals": [
           {
               "title": "Volume récurrent",
-              "titleEn": "Volume récurrent",
+              "titleEn": "Recurring volume",
               "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
-              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+              "detailEn": "The stack pays for itself once the deliverable comes round several times a month."
           },
           {
               "title": "Plusieurs parties prenantes",
               "titleEn": "Plusieurs parties prenantes",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
-              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+              "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
       ],
       "traps": [
@@ -5265,39 +5265,39 @@ export const STACKS: StackGuide[] = [
               "title": "Abonnements dormants",
               "titleEn": "Abonnements dormants",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
-              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+              "detailEn": "A premium creative tool should map to something you invoice."
           },
           {
               "title": "Assets dispersés",
-              "titleEn": "Assets dispersés",
+              "titleEn": "Scattered assets",
               "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
-              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+              "detailEn": "Without organisation, references and source files become impossible to maintain."
           },
           {
               "title": "IA sans intention",
-              "titleEn": "IA sans intention",
+              "titleEn": "AI without intent",
               "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
-              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+              "detailEn": "AI should speed up a direction, not replace professional judgement."
           }
       ],
       "checkpoints": [
           {
               "q": "Le livrable final est-il clairement relié au brief initial ?",
-              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Is the final deliverable clearly tied back to the original brief?",
               "hint": "Si non, il manque une source de vérité projet.",
-              "hintEn": "Si non, il manque une source de vérité projet."
+              "hintEn": "If not, the project has no single source of truth."
           },
           {
               "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
-              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Does each tool play a distinct role in the chain?",
               "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
-              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+              "hintEn": "If two tools do the same job, one of them should be conditional."
           },
           {
               "q": "Le client sait-il quoi valider et où le faire ?",
-              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Does the client know what to approve, and where?",
               "hint": "Si non, le feedback va créer des allers-retours inutiles.",
-              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+              "hintEn": "If not, feedback will generate avoidable back and forth."
           }
       ],
       "tools": [
@@ -5419,7 +5419,7 @@ export const STACKS: StackGuide[] = [
       "title": "Stack signalétique",
       "titleEn": "Wayfinding designer stack",
       "subtitle": "Systèmes d’orientation, pictogrammes, plans, flux, typographie, supports imprimés, matériaux et pose.",
-      "subtitleEn": "Systèmes d’orientation, pictogrammes, plans, flux, typographie, supports imprimés, matériaux et pose.",
+      "subtitleEn": "Wayfinding systems, pictograms, plans, flows, typography, printed supports, materials and installation.",
       "persona": "designer",
       "subProfiles": [
           "brand",
@@ -5433,43 +5433,43 @@ export const STACKS: StackGuide[] = [
       "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
       "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
       "bestFor": "Systèmes d’orientation, pictogrammes, plans, flux, typographie, supports imprimés, matériaux et pose.",
-      "bestForEn": "Systèmes d’orientation, pictogrammes, plans, flux, typographie, supports imprimés, matériaux et pose.",
+      "bestForEn": "Wayfinding systems, pictograms, plans, flows, typography, printed supports, materials and installation.",
       "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
       "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
       "editorial": "Cette stack sert un métier précis : Systèmes d’orientation, pictogrammes, plans, flux, typographie, supports imprimés, matériaux et pose. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
-      "editorialEn": "This stack serves a precise role: Systèmes d’orientation, pictogrammes, plans, flux, typographie, supports imprimés, matériaux et pose. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "editorialEn": "This stack serves a precise role: Wayfinding systems, pictograms, plans, flows, typography, printed supports, materials and installation. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
       "needs": [
           {
               "title": "Source de vérité",
-              "titleEn": "Source de vérité",
+              "titleEn": "Source of truth",
               "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
-              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+              "detailEn": "The brief, source files, exports and decisions have to stay connected."
           },
           {
               "title": "Production fiable",
               "titleEn": "Production fiable",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
-              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+              "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
               "titleEn": "Validation claire",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
-              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+              "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
       ],
       "maturitySignals": [
           {
               "title": "Volume récurrent",
-              "titleEn": "Volume récurrent",
+              "titleEn": "Recurring volume",
               "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
-              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+              "detailEn": "The stack pays for itself once the deliverable comes round several times a month."
           },
           {
               "title": "Plusieurs parties prenantes",
               "titleEn": "Plusieurs parties prenantes",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
-              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+              "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
       ],
       "traps": [
@@ -5477,39 +5477,39 @@ export const STACKS: StackGuide[] = [
               "title": "Abonnements dormants",
               "titleEn": "Abonnements dormants",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
-              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+              "detailEn": "A premium creative tool should map to something you invoice."
           },
           {
               "title": "Assets dispersés",
-              "titleEn": "Assets dispersés",
+              "titleEn": "Scattered assets",
               "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
-              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+              "detailEn": "Without organisation, references and source files become impossible to maintain."
           },
           {
               "title": "IA sans intention",
-              "titleEn": "IA sans intention",
+              "titleEn": "AI without intent",
               "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
-              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+              "detailEn": "AI should speed up a direction, not replace professional judgement."
           }
       ],
       "checkpoints": [
           {
               "q": "Le livrable final est-il clairement relié au brief initial ?",
-              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Is the final deliverable clearly tied back to the original brief?",
               "hint": "Si non, il manque une source de vérité projet.",
-              "hintEn": "Si non, il manque une source de vérité projet."
+              "hintEn": "If not, the project has no single source of truth."
           },
           {
               "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
-              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Does each tool play a distinct role in the chain?",
               "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
-              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+              "hintEn": "If two tools do the same job, one of them should be conditional."
           },
           {
               "q": "Le client sait-il quoi valider et où le faire ?",
-              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Does the client know what to approve, and where?",
               "hint": "Si non, le feedback va créer des allers-retours inutiles.",
-              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+              "hintEn": "If not, feedback will generate avoidable back and forth."
           }
       ],
       "tools": [
@@ -5631,7 +5631,7 @@ export const STACKS: StackGuide[] = [
       "title": "Stack spatial brand designer",
       "titleEn": "Spatial brand designer stack",
       "subtitle": "Expériences de marque dans l’espace : événements, installations, activations, retail et parcours immersifs.",
-      "subtitleEn": "Expériences de marque dans l’espace : événements, installations, activations, retail et parcours immersifs.",
+      "subtitleEn": "Brand experiences in space: events, installations, activations, retail and immersive journeys.",
       "persona": "designer",
       "subProfiles": [
           "interior-design",
@@ -5645,43 +5645,43 @@ export const STACKS: StackGuide[] = [
       "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
       "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
       "bestFor": "Expériences de marque dans l’espace : événements, installations, activations, retail et parcours immersifs.",
-      "bestForEn": "Expériences de marque dans l’espace : événements, installations, activations, retail et parcours immersifs.",
+      "bestForEn": "Brand experiences in space: events, installations, activations, retail and immersive journeys.",
       "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
       "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
       "editorial": "Cette stack sert un métier précis : Expériences de marque dans l’espace : événements, installations, activations, retail et parcours immersifs. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
-      "editorialEn": "This stack serves a precise role: Expériences de marque dans l’espace : événements, installations, activations, retail et parcours immersifs. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "editorialEn": "This stack serves a precise role: Brand experiences in space: events, installations, activations, retail and immersive journeys. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
       "needs": [
           {
               "title": "Source de vérité",
-              "titleEn": "Source de vérité",
+              "titleEn": "Source of truth",
               "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
-              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+              "detailEn": "The brief, source files, exports and decisions have to stay connected."
           },
           {
               "title": "Production fiable",
               "titleEn": "Production fiable",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
-              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+              "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
               "titleEn": "Validation claire",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
-              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+              "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
       ],
       "maturitySignals": [
           {
               "title": "Volume récurrent",
-              "titleEn": "Volume récurrent",
+              "titleEn": "Recurring volume",
               "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
-              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+              "detailEn": "The stack pays for itself once the deliverable comes round several times a month."
           },
           {
               "title": "Plusieurs parties prenantes",
               "titleEn": "Plusieurs parties prenantes",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
-              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+              "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
       ],
       "traps": [
@@ -5689,39 +5689,39 @@ export const STACKS: StackGuide[] = [
               "title": "Abonnements dormants",
               "titleEn": "Abonnements dormants",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
-              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+              "detailEn": "A premium creative tool should map to something you invoice."
           },
           {
               "title": "Assets dispersés",
-              "titleEn": "Assets dispersés",
+              "titleEn": "Scattered assets",
               "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
-              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+              "detailEn": "Without organisation, references and source files become impossible to maintain."
           },
           {
               "title": "IA sans intention",
-              "titleEn": "IA sans intention",
+              "titleEn": "AI without intent",
               "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
-              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+              "detailEn": "AI should speed up a direction, not replace professional judgement."
           }
       ],
       "checkpoints": [
           {
               "q": "Le livrable final est-il clairement relié au brief initial ?",
-              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Is the final deliverable clearly tied back to the original brief?",
               "hint": "Si non, il manque une source de vérité projet.",
-              "hintEn": "Si non, il manque une source de vérité projet."
+              "hintEn": "If not, the project has no single source of truth."
           },
           {
               "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
-              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Does each tool play a distinct role in the chain?",
               "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
-              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+              "hintEn": "If two tools do the same job, one of them should be conditional."
           },
           {
               "q": "Le client sait-il quoi valider et où le faire ?",
-              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Does the client know what to approve, and where?",
               "hint": "Si non, le feedback va créer des allers-retours inutiles.",
-              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+              "hintEn": "If not, feedback will generate avoidable back and forth."
           }
       ],
       "tools": [
@@ -5851,7 +5851,7 @@ export const STACKS: StackGuide[] = [
       "title": "Stack sound designer / podcasteur",
       "titleEn": "Sound designer / podcaster stack",
       "subtitle": "Enregistrement, montage audio, nettoyage, mixage, habillage, transcription, publication et distribution.",
-      "subtitleEn": "Enregistrement, montage audio, nettoyage, mixage, habillage, transcription, publication et distribution.",
+      "subtitleEn": "Recording, audio editing, cleanup, mixing, sound design, transcription, publishing and distribution.",
       "persona": "content",
       "subProfiles": [
           "podcast",
@@ -5864,43 +5864,43 @@ export const STACKS: StackGuide[] = [
       "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
       "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
       "bestFor": "Enregistrement, montage audio, nettoyage, mixage, habillage, transcription, publication et distribution.",
-      "bestForEn": "Enregistrement, montage audio, nettoyage, mixage, habillage, transcription, publication et distribution.",
+      "bestForEn": "Recording, audio editing, cleanup, mixing, sound design, transcription, publishing and distribution.",
       "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
       "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
       "editorial": "Cette stack sert un métier précis : Enregistrement, montage audio, nettoyage, mixage, habillage, transcription, publication et distribution. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
-      "editorialEn": "This stack serves a precise role: Enregistrement, montage audio, nettoyage, mixage, habillage, transcription, publication et distribution. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "editorialEn": "This stack serves a precise role: Recording, audio editing, cleanup, mixing, sound design, transcription, publishing and distribution. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
       "needs": [
           {
               "title": "Source de vérité",
-              "titleEn": "Source de vérité",
+              "titleEn": "Source of truth",
               "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
-              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+              "detailEn": "The brief, source files, exports and decisions have to stay connected."
           },
           {
               "title": "Production fiable",
               "titleEn": "Production fiable",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
-              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+              "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
               "titleEn": "Validation claire",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
-              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+              "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
       ],
       "maturitySignals": [
           {
               "title": "Volume récurrent",
-              "titleEn": "Volume récurrent",
+              "titleEn": "Recurring volume",
               "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
-              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+              "detailEn": "The stack pays for itself once the deliverable comes round several times a month."
           },
           {
               "title": "Plusieurs parties prenantes",
               "titleEn": "Plusieurs parties prenantes",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
-              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+              "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
       ],
       "traps": [
@@ -5908,39 +5908,39 @@ export const STACKS: StackGuide[] = [
               "title": "Abonnements dormants",
               "titleEn": "Abonnements dormants",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
-              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+              "detailEn": "A premium creative tool should map to something you invoice."
           },
           {
               "title": "Assets dispersés",
-              "titleEn": "Assets dispersés",
+              "titleEn": "Scattered assets",
               "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
-              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+              "detailEn": "Without organisation, references and source files become impossible to maintain."
           },
           {
               "title": "IA sans intention",
-              "titleEn": "IA sans intention",
+              "titleEn": "AI without intent",
               "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
-              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+              "detailEn": "AI should speed up a direction, not replace professional judgement."
           }
       ],
       "checkpoints": [
           {
               "q": "Le livrable final est-il clairement relié au brief initial ?",
-              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Is the final deliverable clearly tied back to the original brief?",
               "hint": "Si non, il manque une source de vérité projet.",
-              "hintEn": "Si non, il manque une source de vérité projet."
+              "hintEn": "If not, the project has no single source of truth."
           },
           {
               "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
-              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Does each tool play a distinct role in the chain?",
               "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
-              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+              "hintEn": "If two tools do the same job, one of them should be conditional."
           },
           {
               "q": "Le client sait-il quoi valider et où le faire ?",
-              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Does the client know what to approve, and where?",
               "hint": "Si non, le feedback va créer des allers-retours inutiles.",
-              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+              "hintEn": "If not, feedback will generate avoidable back and forth."
           }
       ],
       "tools": [
@@ -6046,7 +6046,7 @@ export const STACKS: StackGuide[] = [
       "title": "Stack instructional designer",
       "titleEn": "Instructional designer stack",
       "subtitle": "Formations, modules e-learning, supports pédagogiques, vidéos, quiz et parcours d’apprentissage.",
-      "subtitleEn": "Formations, modules e-learning, supports pédagogiques, vidéos, quiz et parcours d’apprentissage.",
+      "subtitleEn": "Training courses, e-learning modules, teaching materials, videos, quizzes and learning paths.",
       "persona": "content",
       "subProfiles": [
           "training",
@@ -6060,43 +6060,43 @@ export const STACKS: StackGuide[] = [
       "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
       "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
       "bestFor": "Formations, modules e-learning, supports pédagogiques, vidéos, quiz et parcours d’apprentissage.",
-      "bestForEn": "Formations, modules e-learning, supports pédagogiques, vidéos, quiz et parcours d’apprentissage.",
+      "bestForEn": "Training courses, e-learning modules, teaching materials, videos, quizzes and learning paths.",
       "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
       "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
       "editorial": "Cette stack sert un métier précis : Formations, modules e-learning, supports pédagogiques, vidéos, quiz et parcours d’apprentissage. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
-      "editorialEn": "This stack serves a precise role: Formations, modules e-learning, supports pédagogiques, vidéos, quiz et parcours d’apprentissage. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "editorialEn": "This stack serves a precise role: Training courses, e-learning modules, teaching materials, videos, quizzes and learning paths. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
       "needs": [
           {
               "title": "Source de vérité",
-              "titleEn": "Source de vérité",
+              "titleEn": "Source of truth",
               "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
-              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+              "detailEn": "The brief, source files, exports and decisions have to stay connected."
           },
           {
               "title": "Production fiable",
               "titleEn": "Production fiable",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
-              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+              "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
               "titleEn": "Validation claire",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
-              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+              "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
       ],
       "maturitySignals": [
           {
               "title": "Volume récurrent",
-              "titleEn": "Volume récurrent",
+              "titleEn": "Recurring volume",
               "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
-              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+              "detailEn": "The stack pays for itself once the deliverable comes round several times a month."
           },
           {
               "title": "Plusieurs parties prenantes",
               "titleEn": "Plusieurs parties prenantes",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
-              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+              "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
       ],
       "traps": [
@@ -6104,39 +6104,39 @@ export const STACKS: StackGuide[] = [
               "title": "Abonnements dormants",
               "titleEn": "Abonnements dormants",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
-              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+              "detailEn": "A premium creative tool should map to something you invoice."
           },
           {
               "title": "Assets dispersés",
-              "titleEn": "Assets dispersés",
+              "titleEn": "Scattered assets",
               "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
-              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+              "detailEn": "Without organisation, references and source files become impossible to maintain."
           },
           {
               "title": "IA sans intention",
-              "titleEn": "IA sans intention",
+              "titleEn": "AI without intent",
               "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
-              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+              "detailEn": "AI should speed up a direction, not replace professional judgement."
           }
       ],
       "checkpoints": [
           {
               "q": "Le livrable final est-il clairement relié au brief initial ?",
-              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Is the final deliverable clearly tied back to the original brief?",
               "hint": "Si non, il manque une source de vérité projet.",
-              "hintEn": "Si non, il manque une source de vérité projet."
+              "hintEn": "If not, the project has no single source of truth."
           },
           {
               "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
-              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Does each tool play a distinct role in the chain?",
               "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
-              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+              "hintEn": "If two tools do the same job, one of them should be conditional."
           },
           {
               "q": "Le client sait-il quoi valider et où le faire ?",
-              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Does the client know what to approve, and where?",
               "hint": "Si non, le feedback va créer des allers-retours inutiles.",
-              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+              "hintEn": "If not, feedback will generate avoidable back and forth."
           }
       ],
       "tools": [
@@ -6258,7 +6258,7 @@ export const STACKS: StackGuide[] = [
       "title": "Stack créatif généraliste",
       "titleEn": "Generalist creative freelancer stack",
       "subtitle": "Prospection, proposition, création, gestion projet, livraison, facturation, signature et suivi client.",
-      "subtitleEn": "Prospection, proposition, création, gestion projet, livraison, facturation, signature et suivi client.",
+      "subtitleEn": "Prospecting, proposals, creative work, project management, delivery, invoicing, signing and client follow-up.",
       "persona": "solo",
       "subProfiles": [
           "admin",
@@ -6272,43 +6272,43 @@ export const STACKS: StackGuide[] = [
       "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
       "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
       "bestFor": "Prospection, proposition, création, gestion projet, livraison, facturation, signature et suivi client.",
-      "bestForEn": "Prospection, proposition, création, gestion projet, livraison, facturation, signature et suivi client.",
+      "bestForEn": "Prospecting, proposals, creative work, project management, delivery, invoicing, signing and client follow-up.",
       "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
       "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
       "editorial": "Cette stack sert un métier précis : Prospection, proposition, création, gestion projet, livraison, facturation, signature et suivi client. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
-      "editorialEn": "This stack serves a precise role: Prospection, proposition, création, gestion projet, livraison, facturation, signature et suivi client. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "editorialEn": "This stack serves a precise role: Prospecting, proposals, creative work, project management, delivery, invoicing, signing and client follow-up. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
       "needs": [
           {
               "title": "Source de vérité",
-              "titleEn": "Source de vérité",
+              "titleEn": "Source of truth",
               "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
-              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+              "detailEn": "The brief, source files, exports and decisions have to stay connected."
           },
           {
               "title": "Production fiable",
               "titleEn": "Production fiable",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
-              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+              "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
               "titleEn": "Validation claire",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
-              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+              "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
       ],
       "maturitySignals": [
           {
               "title": "Volume récurrent",
-              "titleEn": "Volume récurrent",
+              "titleEn": "Recurring volume",
               "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
-              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+              "detailEn": "The stack pays for itself once the deliverable comes round several times a month."
           },
           {
               "title": "Plusieurs parties prenantes",
               "titleEn": "Plusieurs parties prenantes",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
-              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+              "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
       ],
       "traps": [
@@ -6316,39 +6316,39 @@ export const STACKS: StackGuide[] = [
               "title": "Abonnements dormants",
               "titleEn": "Abonnements dormants",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
-              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+              "detailEn": "A premium creative tool should map to something you invoice."
           },
           {
               "title": "Assets dispersés",
-              "titleEn": "Assets dispersés",
+              "titleEn": "Scattered assets",
               "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
-              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+              "detailEn": "Without organisation, references and source files become impossible to maintain."
           },
           {
               "title": "IA sans intention",
-              "titleEn": "IA sans intention",
+              "titleEn": "AI without intent",
               "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
-              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+              "detailEn": "AI should speed up a direction, not replace professional judgement."
           }
       ],
       "checkpoints": [
           {
               "q": "Le livrable final est-il clairement relié au brief initial ?",
-              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Is the final deliverable clearly tied back to the original brief?",
               "hint": "Si non, il manque une source de vérité projet.",
-              "hintEn": "Si non, il manque une source de vérité projet."
+              "hintEn": "If not, the project has no single source of truth."
           },
           {
               "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
-              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Does each tool play a distinct role in the chain?",
               "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
-              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+              "hintEn": "If two tools do the same job, one of them should be conditional."
           },
           {
               "q": "Le client sait-il quoi valider et où le faire ?",
-              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Does the client know what to approve, and where?",
               "hint": "Si non, le feedback va créer des allers-retours inutiles.",
-              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+              "hintEn": "If not, feedback will generate avoidable back and forth."
           }
       ],
       "tools": [
@@ -6470,7 +6470,7 @@ export const STACKS: StackGuide[] = [
       "title": "Stack petit studio créatif",
       "titleEn": "Small creative studio stack",
       "subtitle": "Briefs, planning, tâches, production, feedback, assets, temps passé, budget, facturation et reporting.",
-      "subtitleEn": "Briefs, planning, tâches, production, feedback, assets, temps passé, budget, facturation et reporting.",
+      "subtitleEn": "Briefs, scheduling, tasks, production, feedback, assets, time spent, budget, invoicing and reporting.",
       "persona": "ops",
       "subProfiles": [
           "agency",
@@ -6484,43 +6484,43 @@ export const STACKS: StackGuide[] = [
       "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
       "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
       "bestFor": "Briefs, planning, tâches, production, feedback, assets, temps passé, budget, facturation et reporting.",
-      "bestForEn": "Briefs, planning, tâches, production, feedback, assets, temps passé, budget, facturation et reporting.",
+      "bestForEn": "Briefs, scheduling, tasks, production, feedback, assets, time spent, budget, invoicing and reporting.",
       "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
       "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
       "editorial": "Cette stack sert un métier précis : Briefs, planning, tâches, production, feedback, assets, temps passé, budget, facturation et reporting. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
-      "editorialEn": "This stack serves a precise role: Briefs, planning, tâches, production, feedback, assets, temps passé, budget, facturation et reporting. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "editorialEn": "This stack serves a precise role: Briefs, scheduling, tasks, production, feedback, assets, time spent, budget, invoicing and reporting. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
       "needs": [
           {
               "title": "Source de vérité",
-              "titleEn": "Source de vérité",
+              "titleEn": "Source of truth",
               "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
-              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+              "detailEn": "The brief, source files, exports and decisions have to stay connected."
           },
           {
               "title": "Production fiable",
               "titleEn": "Production fiable",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
-              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+              "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
               "titleEn": "Validation claire",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
-              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+              "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
       ],
       "maturitySignals": [
           {
               "title": "Volume récurrent",
-              "titleEn": "Volume récurrent",
+              "titleEn": "Recurring volume",
               "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
-              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+              "detailEn": "The stack pays for itself once the deliverable comes round several times a month."
           },
           {
               "title": "Plusieurs parties prenantes",
               "titleEn": "Plusieurs parties prenantes",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
-              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+              "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
       ],
       "traps": [
@@ -6528,39 +6528,39 @@ export const STACKS: StackGuide[] = [
               "title": "Abonnements dormants",
               "titleEn": "Abonnements dormants",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
-              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+              "detailEn": "A premium creative tool should map to something you invoice."
           },
           {
               "title": "Assets dispersés",
-              "titleEn": "Assets dispersés",
+              "titleEn": "Scattered assets",
               "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
-              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+              "detailEn": "Without organisation, references and source files become impossible to maintain."
           },
           {
               "title": "IA sans intention",
-              "titleEn": "IA sans intention",
+              "titleEn": "AI without intent",
               "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
-              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+              "detailEn": "AI should speed up a direction, not replace professional judgement."
           }
       ],
       "checkpoints": [
           {
               "q": "Le livrable final est-il clairement relié au brief initial ?",
-              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Is the final deliverable clearly tied back to the original brief?",
               "hint": "Si non, il manque une source de vérité projet.",
-              "hintEn": "Si non, il manque une source de vérité projet."
+              "hintEn": "If not, the project has no single source of truth."
           },
           {
               "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
-              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Does each tool play a distinct role in the chain?",
               "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
-              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+              "hintEn": "If two tools do the same job, one of them should be conditional."
           },
           {
               "q": "Le client sait-il quoi valider et où le faire ?",
-              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Does the client know what to approve, and where?",
               "hint": "Si non, le feedback va créer des allers-retours inutiles.",
-              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+              "hintEn": "If not, feedback will generate avoidable back and forth."
           }
       ],
       "tools": [
@@ -6690,7 +6690,7 @@ export const STACKS: StackGuide[] = [
       "title": "Stack créatif IA",
       "titleEn": "AI-augmented creative stack",
       "subtitle": "Recherche, moodboards, images, vidéos, textes, variantes, retouche, upscale, présentation et workflow client.",
-      "subtitleEn": "Recherche, moodboards, images, vidéos, textes, variantes, retouche, upscale, présentation et workflow client.",
+      "subtitleEn": "Research, moodboards, images, videos, copy, variants, retouching, upscaling, presentation and client workflow.",
       "persona": "designer",
       "subProfiles": [
           "art-direction",
@@ -6704,43 +6704,43 @@ export const STACKS: StackGuide[] = [
       "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
       "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
       "bestFor": "Recherche, moodboards, images, vidéos, textes, variantes, retouche, upscale, présentation et workflow client.",
-      "bestForEn": "Recherche, moodboards, images, vidéos, textes, variantes, retouche, upscale, présentation et workflow client.",
+      "bestForEn": "Research, moodboards, images, videos, copy, variants, retouching, upscaling, presentation and client workflow.",
       "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
       "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
       "editorial": "Cette stack sert un métier précis : Recherche, moodboards, images, vidéos, textes, variantes, retouche, upscale, présentation et workflow client. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
-      "editorialEn": "This stack serves a precise role: Recherche, moodboards, images, vidéos, textes, variantes, retouche, upscale, présentation et workflow client. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "editorialEn": "This stack serves a precise role: Research, moodboards, images, videos, copy, variants, retouching, upscaling, presentation and client workflow. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
       "needs": [
           {
               "title": "Source de vérité",
-              "titleEn": "Source de vérité",
+              "titleEn": "Source of truth",
               "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
-              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+              "detailEn": "The brief, source files, exports and decisions have to stay connected."
           },
           {
               "title": "Production fiable",
               "titleEn": "Production fiable",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
-              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+              "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
               "titleEn": "Validation claire",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
-              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+              "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
       ],
       "maturitySignals": [
           {
               "title": "Volume récurrent",
-              "titleEn": "Volume récurrent",
+              "titleEn": "Recurring volume",
               "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
-              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+              "detailEn": "The stack pays for itself once the deliverable comes round several times a month."
           },
           {
               "title": "Plusieurs parties prenantes",
               "titleEn": "Plusieurs parties prenantes",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
-              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+              "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
       ],
       "traps": [
@@ -6748,39 +6748,39 @@ export const STACKS: StackGuide[] = [
               "title": "Abonnements dormants",
               "titleEn": "Abonnements dormants",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
-              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+              "detailEn": "A premium creative tool should map to something you invoice."
           },
           {
               "title": "Assets dispersés",
-              "titleEn": "Assets dispersés",
+              "titleEn": "Scattered assets",
               "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
-              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+              "detailEn": "Without organisation, references and source files become impossible to maintain."
           },
           {
               "title": "IA sans intention",
-              "titleEn": "IA sans intention",
+              "titleEn": "AI without intent",
               "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
-              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+              "detailEn": "AI should speed up a direction, not replace professional judgement."
           }
       ],
       "checkpoints": [
           {
               "q": "Le livrable final est-il clairement relié au brief initial ?",
-              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Is the final deliverable clearly tied back to the original brief?",
               "hint": "Si non, il manque une source de vérité projet.",
-              "hintEn": "Si non, il manque une source de vérité projet."
+              "hintEn": "If not, the project has no single source of truth."
           },
           {
               "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
-              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Does each tool play a distinct role in the chain?",
               "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
-              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+              "hintEn": "If two tools do the same job, one of them should be conditional."
           },
           {
               "q": "Le client sait-il quoi valider et où le faire ?",
-              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Does the client know what to approve, and where?",
               "hint": "Si non, le feedback va créer des allers-retours inutiles.",
-              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+              "hintEn": "If not, feedback will generate avoidable back and forth."
           }
       ],
       "tools": [
@@ -6894,7 +6894,7 @@ export const STACKS: StackGuide[] = [
       "title": "Stack photo producer",
       "titleEn": "Photo producer / photo art director stack",
       "subtitle": "Shootings, castings, moodboards, décors, stylisme, planning, retouches, budget et livraison.",
-      "subtitleEn": "Shootings, castings, moodboards, décors, stylisme, planning, retouches, budget et livraison.",
+      "subtitleEn": "Shoots, casting, moodboards, sets, styling, scheduling, retouching, budget and delivery.",
       "persona": "designer",
       "subProfiles": [
           "photo",
@@ -6908,43 +6908,43 @@ export const STACKS: StackGuide[] = [
       "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
       "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
       "bestFor": "Shootings, castings, moodboards, décors, stylisme, planning, retouches, budget et livraison.",
-      "bestForEn": "Shootings, castings, moodboards, décors, stylisme, planning, retouches, budget et livraison.",
+      "bestForEn": "Shoots, casting, moodboards, sets, styling, scheduling, retouching, budget and delivery.",
       "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
       "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
       "editorial": "Cette stack sert un métier précis : Shootings, castings, moodboards, décors, stylisme, planning, retouches, budget et livraison. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
-      "editorialEn": "This stack serves a precise role: Shootings, castings, moodboards, décors, stylisme, planning, retouches, budget et livraison. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "editorialEn": "This stack serves a precise role: Shoots, casting, moodboards, sets, styling, scheduling, retouching, budget and delivery. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
       "needs": [
           {
               "title": "Source de vérité",
-              "titleEn": "Source de vérité",
+              "titleEn": "Source of truth",
               "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
-              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+              "detailEn": "The brief, source files, exports and decisions have to stay connected."
           },
           {
               "title": "Production fiable",
               "titleEn": "Production fiable",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
-              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+              "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
               "titleEn": "Validation claire",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
-              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+              "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
       ],
       "maturitySignals": [
           {
               "title": "Volume récurrent",
-              "titleEn": "Volume récurrent",
+              "titleEn": "Recurring volume",
               "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
-              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+              "detailEn": "The stack pays for itself once the deliverable comes round several times a month."
           },
           {
               "title": "Plusieurs parties prenantes",
               "titleEn": "Plusieurs parties prenantes",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
-              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+              "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
       ],
       "traps": [
@@ -6952,39 +6952,39 @@ export const STACKS: StackGuide[] = [
               "title": "Abonnements dormants",
               "titleEn": "Abonnements dormants",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
-              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+              "detailEn": "A premium creative tool should map to something you invoice."
           },
           {
               "title": "Assets dispersés",
-              "titleEn": "Assets dispersés",
+              "titleEn": "Scattered assets",
               "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
-              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+              "detailEn": "Without organisation, references and source files become impossible to maintain."
           },
           {
               "title": "IA sans intention",
-              "titleEn": "IA sans intention",
+              "titleEn": "AI without intent",
               "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
-              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+              "detailEn": "AI should speed up a direction, not replace professional judgement."
           }
       ],
       "checkpoints": [
           {
               "q": "Le livrable final est-il clairement relié au brief initial ?",
-              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Is the final deliverable clearly tied back to the original brief?",
               "hint": "Si non, il manque une source de vérité projet.",
-              "hintEn": "Si non, il manque une source de vérité projet."
+              "hintEn": "If not, the project has no single source of truth."
           },
           {
               "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
-              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Does each tool play a distinct role in the chain?",
               "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
-              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+              "hintEn": "If two tools do the same job, one of them should be conditional."
           },
           {
               "q": "Le client sait-il quoi valider et où le faire ?",
-              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Does the client know what to approve, and where?",
               "hint": "Si non, le feedback va créer des allers-retours inutiles.",
-              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+              "hintEn": "If not, feedback will generate avoidable back and forth."
           }
       ],
       "tools": [
@@ -7106,7 +7106,7 @@ export const STACKS: StackGuide[] = [
       "title": "Stack set designer",
       "titleEn": "Set designer stack",
       "subtitle": "Décors photo, vidéo, publicité, cinéma, événement ou contenu de marque : moodboard, plans, 3D, sourcing et budget.",
-      "subtitleEn": "Décors photo, vidéo, publicité, cinéma, événement ou contenu de marque : moodboard, plans, 3D, sourcing et budget.",
+      "subtitleEn": "Sets for photo, video, advertising, film, events or brand content: moodboard, drawings, 3D, sourcing and budget.",
       "persona": "designer",
       "subProfiles": [
           "interior-design",
@@ -7120,43 +7120,43 @@ export const STACKS: StackGuide[] = [
       "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
       "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
       "bestFor": "Décors photo, vidéo, publicité, cinéma, événement ou contenu de marque : moodboard, plans, 3D, sourcing et budget.",
-      "bestForEn": "Décors photo, vidéo, publicité, cinéma, événement ou contenu de marque : moodboard, plans, 3D, sourcing et budget.",
+      "bestForEn": "Sets for photo, video, advertising, film, events or brand content: moodboard, drawings, 3D, sourcing and budget.",
       "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
       "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
       "editorial": "Cette stack sert un métier précis : Décors photo, vidéo, publicité, cinéma, événement ou contenu de marque : moodboard, plans, 3D, sourcing et budget. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
-      "editorialEn": "This stack serves a precise role: Décors photo, vidéo, publicité, cinéma, événement ou contenu de marque : moodboard, plans, 3D, sourcing et budget. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "editorialEn": "This stack serves a precise role: Sets for photo, video, advertising, film, events or brand content: moodboard, drawings, 3D, sourcing and budget. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
       "needs": [
           {
               "title": "Source de vérité",
-              "titleEn": "Source de vérité",
+              "titleEn": "Source of truth",
               "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
-              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+              "detailEn": "The brief, source files, exports and decisions have to stay connected."
           },
           {
               "title": "Production fiable",
               "titleEn": "Production fiable",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
-              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+              "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
               "titleEn": "Validation claire",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
-              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+              "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
       ],
       "maturitySignals": [
           {
               "title": "Volume récurrent",
-              "titleEn": "Volume récurrent",
+              "titleEn": "Recurring volume",
               "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
-              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+              "detailEn": "The stack pays for itself once the deliverable comes round several times a month."
           },
           {
               "title": "Plusieurs parties prenantes",
               "titleEn": "Plusieurs parties prenantes",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
-              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+              "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
       ],
       "traps": [
@@ -7164,39 +7164,39 @@ export const STACKS: StackGuide[] = [
               "title": "Abonnements dormants",
               "titleEn": "Abonnements dormants",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
-              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+              "detailEn": "A premium creative tool should map to something you invoice."
           },
           {
               "title": "Assets dispersés",
-              "titleEn": "Assets dispersés",
+              "titleEn": "Scattered assets",
               "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
-              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+              "detailEn": "Without organisation, references and source files become impossible to maintain."
           },
           {
               "title": "IA sans intention",
-              "titleEn": "IA sans intention",
+              "titleEn": "AI without intent",
               "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
-              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+              "detailEn": "AI should speed up a direction, not replace professional judgement."
           }
       ],
       "checkpoints": [
           {
               "q": "Le livrable final est-il clairement relié au brief initial ?",
-              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Is the final deliverable clearly tied back to the original brief?",
               "hint": "Si non, il manque une source de vérité projet.",
-              "hintEn": "Si non, il manque une source de vérité projet."
+              "hintEn": "If not, the project has no single source of truth."
           },
           {
               "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
-              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Does each tool play a distinct role in the chain?",
               "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
-              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+              "hintEn": "If two tools do the same job, one of them should be conditional."
           },
           {
               "q": "Le client sait-il quoi valider et où le faire ?",
-              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Does the client know what to approve, and where?",
               "hint": "Si non, le feedback va créer des allers-retours inutiles.",
-              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+              "hintEn": "If not, feedback will generate avoidable back and forth."
           }
       ],
       "tools": [
@@ -7318,7 +7318,7 @@ export const STACKS: StackGuide[] = [
       "title": "Stack visual merchandiser",
       "titleEn": "Visual merchandiser stack",
       "subtitle": "Vitrines, mises en scène retail, parcours boutique, présentation produit, installation et reporting.",
-      "subtitleEn": "Vitrines, mises en scène retail, parcours boutique, présentation produit, installation et reporting.",
+      "subtitleEn": "Window displays, retail staging, store journeys, product presentation, installation and reporting.",
       "persona": "designer",
       "subProfiles": [
           "interior-design",
@@ -7332,43 +7332,43 @@ export const STACKS: StackGuide[] = [
       "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
       "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
       "bestFor": "Vitrines, mises en scène retail, parcours boutique, présentation produit, installation et reporting.",
-      "bestForEn": "Vitrines, mises en scène retail, parcours boutique, présentation produit, installation et reporting.",
+      "bestForEn": "Window displays, retail staging, store journeys, product presentation, installation and reporting.",
       "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
       "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
       "editorial": "Cette stack sert un métier précis : Vitrines, mises en scène retail, parcours boutique, présentation produit, installation et reporting. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
-      "editorialEn": "This stack serves a precise role: Vitrines, mises en scène retail, parcours boutique, présentation produit, installation et reporting. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "editorialEn": "This stack serves a precise role: Window displays, retail staging, store journeys, product presentation, installation and reporting. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
       "needs": [
           {
               "title": "Source de vérité",
-              "titleEn": "Source de vérité",
+              "titleEn": "Source of truth",
               "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
-              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+              "detailEn": "The brief, source files, exports and decisions have to stay connected."
           },
           {
               "title": "Production fiable",
               "titleEn": "Production fiable",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
-              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+              "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
               "titleEn": "Validation claire",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
-              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+              "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
       ],
       "maturitySignals": [
           {
               "title": "Volume récurrent",
-              "titleEn": "Volume récurrent",
+              "titleEn": "Recurring volume",
               "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
-              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+              "detailEn": "The stack pays for itself once the deliverable comes round several times a month."
           },
           {
               "title": "Plusieurs parties prenantes",
               "titleEn": "Plusieurs parties prenantes",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
-              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+              "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
       ],
       "traps": [
@@ -7376,39 +7376,39 @@ export const STACKS: StackGuide[] = [
               "title": "Abonnements dormants",
               "titleEn": "Abonnements dormants",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
-              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+              "detailEn": "A premium creative tool should map to something you invoice."
           },
           {
               "title": "Assets dispersés",
-              "titleEn": "Assets dispersés",
+              "titleEn": "Scattered assets",
               "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
-              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+              "detailEn": "Without organisation, references and source files become impossible to maintain."
           },
           {
               "title": "IA sans intention",
-              "titleEn": "IA sans intention",
+              "titleEn": "AI without intent",
               "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
-              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+              "detailEn": "AI should speed up a direction, not replace professional judgement."
           }
       ],
       "checkpoints": [
           {
               "q": "Le livrable final est-il clairement relié au brief initial ?",
-              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Is the final deliverable clearly tied back to the original brief?",
               "hint": "Si non, il manque une source de vérité projet.",
-              "hintEn": "Si non, il manque une source de vérité projet."
+              "hintEn": "If not, the project has no single source of truth."
           },
           {
               "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
-              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Does each tool play a distinct role in the chain?",
               "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
-              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+              "hintEn": "If two tools do the same job, one of them should be conditional."
           },
           {
               "q": "Le client sait-il quoi valider et où le faire ?",
-              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Does the client know what to approve, and where?",
               "hint": "Si non, le feedback va créer des allers-retours inutiles.",
-              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+              "hintEn": "If not, feedback will generate avoidable back and forth."
           }
       ],
       "tools": [
@@ -7530,7 +7530,7 @@ export const STACKS: StackGuide[] = [
       "title": "Stack designer végétal",
       "titleEn": "Floral designer stack",
       "subtitle": "Compositions florales, décors végétaux, installations événementielles, sourcing, devis, planning et photo.",
-      "subtitleEn": "Compositions florales, décors végétaux, installations événementielles, sourcing, devis, planning et photo.",
+      "subtitleEn": "Floral compositions, plant sets, event installations, sourcing, quotes, scheduling and photography.",
       "persona": "designer",
       "subProfiles": [
           "art-direction",
@@ -7544,43 +7544,43 @@ export const STACKS: StackGuide[] = [
       "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
       "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
       "bestFor": "Compositions florales, décors végétaux, installations événementielles, sourcing, devis, planning et photo.",
-      "bestForEn": "Compositions florales, décors végétaux, installations événementielles, sourcing, devis, planning et photo.",
+      "bestForEn": "Floral compositions, plant sets, event installations, sourcing, quotes, scheduling and photography.",
       "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
       "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
       "editorial": "Cette stack sert un métier précis : Compositions florales, décors végétaux, installations événementielles, sourcing, devis, planning et photo. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
-      "editorialEn": "This stack serves a precise role: Compositions florales, décors végétaux, installations événementielles, sourcing, devis, planning et photo. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "editorialEn": "This stack serves a precise role: Floral compositions, plant sets, event installations, sourcing, quotes, scheduling and photography. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
       "needs": [
           {
               "title": "Source de vérité",
-              "titleEn": "Source de vérité",
+              "titleEn": "Source of truth",
               "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
-              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+              "detailEn": "The brief, source files, exports and decisions have to stay connected."
           },
           {
               "title": "Production fiable",
               "titleEn": "Production fiable",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
-              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+              "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
               "titleEn": "Validation claire",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
-              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+              "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
       ],
       "maturitySignals": [
           {
               "title": "Volume récurrent",
-              "titleEn": "Volume récurrent",
+              "titleEn": "Recurring volume",
               "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
-              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+              "detailEn": "The stack pays for itself once the deliverable comes round several times a month."
           },
           {
               "title": "Plusieurs parties prenantes",
               "titleEn": "Plusieurs parties prenantes",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
-              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+              "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
       ],
       "traps": [
@@ -7588,39 +7588,39 @@ export const STACKS: StackGuide[] = [
               "title": "Abonnements dormants",
               "titleEn": "Abonnements dormants",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
-              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+              "detailEn": "A premium creative tool should map to something you invoice."
           },
           {
               "title": "Assets dispersés",
-              "titleEn": "Assets dispersés",
+              "titleEn": "Scattered assets",
               "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
-              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+              "detailEn": "Without organisation, references and source files become impossible to maintain."
           },
           {
               "title": "IA sans intention",
-              "titleEn": "IA sans intention",
+              "titleEn": "AI without intent",
               "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
-              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+              "detailEn": "AI should speed up a direction, not replace professional judgement."
           }
       ],
       "checkpoints": [
           {
               "q": "Le livrable final est-il clairement relié au brief initial ?",
-              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Is the final deliverable clearly tied back to the original brief?",
               "hint": "Si non, il manque une source de vérité projet.",
-              "hintEn": "Si non, il manque une source de vérité projet."
+              "hintEn": "If not, the project has no single source of truth."
           },
           {
               "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
-              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Does each tool play a distinct role in the chain?",
               "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
-              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+              "hintEn": "If two tools do the same job, one of them should be conditional."
           },
           {
               "q": "Le client sait-il quoi valider et où le faire ?",
-              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Does the client know what to approve, and where?",
               "hint": "Si non, le feedback va créer des allers-retours inutiles.",
-              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+              "hintEn": "If not, feedback will generate avoidable back and forth."
           }
       ],
       "tools": [
@@ -7734,7 +7734,7 @@ export const STACKS: StackGuide[] = [
       "title": "Stack event designer",
       "titleEn": "Event designer stack",
       "subtitle": "Concept événementiel, expérience participant, planning, scénographie, signalétique, budget, prestataires et run of show.",
-      "subtitleEn": "Concept événementiel, expérience participant, planning, scénographie, signalétique, budget, prestataires et run of show.",
+      "subtitleEn": "Event concept, attendee experience, scheduling, scenography, signage, budget, suppliers and run of show.",
       "persona": "ops",
       "subProfiles": [
           "agency",
@@ -7748,43 +7748,43 @@ export const STACKS: StackGuide[] = [
       "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
       "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
       "bestFor": "Concept événementiel, expérience participant, planning, scénographie, signalétique, budget, prestataires et run of show.",
-      "bestForEn": "Concept événementiel, expérience participant, planning, scénographie, signalétique, budget, prestataires et run of show.",
+      "bestForEn": "Event concept, attendee experience, scheduling, scenography, signage, budget, suppliers and run of show.",
       "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
       "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
       "editorial": "Cette stack sert un métier précis : Concept événementiel, expérience participant, planning, scénographie, signalétique, budget, prestataires et run of show. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
-      "editorialEn": "This stack serves a precise role: Concept événementiel, expérience participant, planning, scénographie, signalétique, budget, prestataires et run of show. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "editorialEn": "This stack serves a precise role: Event concept, attendee experience, scheduling, scenography, signage, budget, suppliers and run of show. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
       "needs": [
           {
               "title": "Source de vérité",
-              "titleEn": "Source de vérité",
+              "titleEn": "Source of truth",
               "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
-              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+              "detailEn": "The brief, source files, exports and decisions have to stay connected."
           },
           {
               "title": "Production fiable",
               "titleEn": "Production fiable",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
-              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+              "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
               "titleEn": "Validation claire",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
-              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+              "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
       ],
       "maturitySignals": [
           {
               "title": "Volume récurrent",
-              "titleEn": "Volume récurrent",
+              "titleEn": "Recurring volume",
               "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
-              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+              "detailEn": "The stack pays for itself once the deliverable comes round several times a month."
           },
           {
               "title": "Plusieurs parties prenantes",
               "titleEn": "Plusieurs parties prenantes",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
-              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+              "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
       ],
       "traps": [
@@ -7792,39 +7792,39 @@ export const STACKS: StackGuide[] = [
               "title": "Abonnements dormants",
               "titleEn": "Abonnements dormants",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
-              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+              "detailEn": "A premium creative tool should map to something you invoice."
           },
           {
               "title": "Assets dispersés",
-              "titleEn": "Assets dispersés",
+              "titleEn": "Scattered assets",
               "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
-              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+              "detailEn": "Without organisation, references and source files become impossible to maintain."
           },
           {
               "title": "IA sans intention",
-              "titleEn": "IA sans intention",
+              "titleEn": "AI without intent",
               "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
-              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+              "detailEn": "AI should speed up a direction, not replace professional judgement."
           }
       ],
       "checkpoints": [
           {
               "q": "Le livrable final est-il clairement relié au brief initial ?",
-              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Is the final deliverable clearly tied back to the original brief?",
               "hint": "Si non, il manque une source de vérité projet.",
-              "hintEn": "Si non, il manque une source de vérité projet."
+              "hintEn": "If not, the project has no single source of truth."
           },
           {
               "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
-              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Does each tool play a distinct role in the chain?",
               "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
-              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+              "hintEn": "If two tools do the same job, one of them should be conditional."
           },
           {
               "q": "Le client sait-il quoi valider et où le faire ?",
-              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Does the client know what to approve, and where?",
               "hint": "Si non, le feedback va créer des allers-retours inutiles.",
-              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+              "hintEn": "If not, feedback will generate avoidable back and forth."
           }
       ],
       "tools": [
@@ -7954,7 +7954,7 @@ export const STACKS: StackGuide[] = [
       "title": "Stack presentation designer",
       "titleEn": "Presentation designer stack",
       "subtitle": "Decks, pitchs, présentations commerciales, supports dirigeants, storytelling, graphiques, templates et exports.",
-      "subtitleEn": "Decks, pitchs, présentations commerciales, supports dirigeants, storytelling, graphiques, templates et exports.",
+      "subtitleEn": "Decks, pitches, sales presentations, executive materials, storytelling, charts, templates and exports.",
       "persona": "designer",
       "subProfiles": [
           "brand",
@@ -7968,43 +7968,43 @@ export const STACKS: StackGuide[] = [
       "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
       "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
       "bestFor": "Decks, pitchs, présentations commerciales, supports dirigeants, storytelling, graphiques, templates et exports.",
-      "bestForEn": "Decks, pitchs, présentations commerciales, supports dirigeants, storytelling, graphiques, templates et exports.",
+      "bestForEn": "Decks, pitches, sales presentations, executive materials, storytelling, charts, templates and exports.",
       "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
       "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
       "editorial": "Cette stack sert un métier précis : Decks, pitchs, présentations commerciales, supports dirigeants, storytelling, graphiques, templates et exports. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
-      "editorialEn": "This stack serves a precise role: Decks, pitchs, présentations commerciales, supports dirigeants, storytelling, graphiques, templates et exports. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "editorialEn": "This stack serves a precise role: Decks, pitches, sales presentations, executive materials, storytelling, charts, templates and exports. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
       "needs": [
           {
               "title": "Source de vérité",
-              "titleEn": "Source de vérité",
+              "titleEn": "Source of truth",
               "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
-              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+              "detailEn": "The brief, source files, exports and decisions have to stay connected."
           },
           {
               "title": "Production fiable",
               "titleEn": "Production fiable",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
-              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+              "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
               "titleEn": "Validation claire",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
-              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+              "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
       ],
       "maturitySignals": [
           {
               "title": "Volume récurrent",
-              "titleEn": "Volume récurrent",
+              "titleEn": "Recurring volume",
               "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
-              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+              "detailEn": "The stack pays for itself once the deliverable comes round several times a month."
           },
           {
               "title": "Plusieurs parties prenantes",
               "titleEn": "Plusieurs parties prenantes",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
-              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+              "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
       ],
       "traps": [
@@ -8012,39 +8012,39 @@ export const STACKS: StackGuide[] = [
               "title": "Abonnements dormants",
               "titleEn": "Abonnements dormants",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
-              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+              "detailEn": "A premium creative tool should map to something you invoice."
           },
           {
               "title": "Assets dispersés",
-              "titleEn": "Assets dispersés",
+              "titleEn": "Scattered assets",
               "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
-              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+              "detailEn": "Without organisation, references and source files become impossible to maintain."
           },
           {
               "title": "IA sans intention",
-              "titleEn": "IA sans intention",
+              "titleEn": "AI without intent",
               "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
-              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+              "detailEn": "AI should speed up a direction, not replace professional judgement."
           }
       ],
       "checkpoints": [
           {
               "q": "Le livrable final est-il clairement relié au brief initial ?",
-              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Is the final deliverable clearly tied back to the original brief?",
               "hint": "Si non, il manque une source de vérité projet.",
-              "hintEn": "Si non, il manque une source de vérité projet."
+              "hintEn": "If not, the project has no single source of truth."
           },
           {
               "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
-              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Does each tool play a distinct role in the chain?",
               "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
-              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+              "hintEn": "If two tools do the same job, one of them should be conditional."
           },
           {
               "q": "Le client sait-il quoi valider et où le faire ?",
-              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Does the client know what to approve, and where?",
               "hint": "Si non, le feedback va créer des allers-retours inutiles.",
-              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+              "hintEn": "If not, feedback will generate avoidable back and forth."
           }
       ],
       "tools": [
@@ -8158,7 +8158,7 @@ export const STACKS: StackGuide[] = [
       "title": "Stack dataviz designer",
       "titleEn": "Data visualization designer stack",
       "subtitle": "Données, nettoyage, graphiques, dashboards, infographies, rapports, storytelling et exports.",
-      "subtitleEn": "Données, nettoyage, graphiques, dashboards, infographies, rapports, storytelling et exports.",
+      "subtitleEn": "Data, cleaning, charts, dashboards, infographics, reports, storytelling and exports.",
       "persona": "designer",
       "subProfiles": [
           "analytics",
@@ -8172,43 +8172,43 @@ export const STACKS: StackGuide[] = [
       "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
       "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
       "bestFor": "Données, nettoyage, graphiques, dashboards, infographies, rapports, storytelling et exports.",
-      "bestForEn": "Données, nettoyage, graphiques, dashboards, infographies, rapports, storytelling et exports.",
+      "bestForEn": "Data, cleaning, charts, dashboards, infographics, reports, storytelling and exports.",
       "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
       "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
       "editorial": "Cette stack sert un métier précis : Données, nettoyage, graphiques, dashboards, infographies, rapports, storytelling et exports. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
-      "editorialEn": "This stack serves a precise role: Données, nettoyage, graphiques, dashboards, infographies, rapports, storytelling et exports. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "editorialEn": "This stack serves a precise role: Data, cleaning, charts, dashboards, infographics, reports, storytelling and exports. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
       "needs": [
           {
               "title": "Source de vérité",
-              "titleEn": "Source de vérité",
+              "titleEn": "Source of truth",
               "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
-              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+              "detailEn": "The brief, source files, exports and decisions have to stay connected."
           },
           {
               "title": "Production fiable",
               "titleEn": "Production fiable",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
-              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+              "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
               "titleEn": "Validation claire",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
-              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+              "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
       ],
       "maturitySignals": [
           {
               "title": "Volume récurrent",
-              "titleEn": "Volume récurrent",
+              "titleEn": "Recurring volume",
               "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
-              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+              "detailEn": "The stack pays for itself once the deliverable comes round several times a month."
           },
           {
               "title": "Plusieurs parties prenantes",
               "titleEn": "Plusieurs parties prenantes",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
-              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+              "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
       ],
       "traps": [
@@ -8216,39 +8216,39 @@ export const STACKS: StackGuide[] = [
               "title": "Abonnements dormants",
               "titleEn": "Abonnements dormants",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
-              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+              "detailEn": "A premium creative tool should map to something you invoice."
           },
           {
               "title": "Assets dispersés",
-              "titleEn": "Assets dispersés",
+              "titleEn": "Scattered assets",
               "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
-              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+              "detailEn": "Without organisation, references and source files become impossible to maintain."
           },
           {
               "title": "IA sans intention",
-              "titleEn": "IA sans intention",
+              "titleEn": "AI without intent",
               "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
-              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+              "detailEn": "AI should speed up a direction, not replace professional judgement."
           }
       ],
       "checkpoints": [
           {
               "q": "Le livrable final est-il clairement relié au brief initial ?",
-              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Is the final deliverable clearly tied back to the original brief?",
               "hint": "Si non, il manque une source de vérité projet.",
-              "hintEn": "Si non, il manque une source de vérité projet."
+              "hintEn": "If not, the project has no single source of truth."
           },
           {
               "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
-              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Does each tool play a distinct role in the chain?",
               "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
-              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+              "hintEn": "If two tools do the same job, one of them should be conditional."
           },
           {
               "q": "Le client sait-il quoi valider et où le faire ?",
-              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Does the client know what to approve, and where?",
               "hint": "Si non, le feedback va créer des allers-retours inutiles.",
-              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+              "hintEn": "If not, feedback will generate avoidable back and forth."
           }
       ],
       "tools": [
@@ -8346,7 +8346,7 @@ export const STACKS: StackGuide[] = [
       "title": "Stack designer cartographe",
       "titleEn": "Map designer stack",
       "subtitle": "Cartes éditoriales, touristiques, événementielles, patrimoniales ou data avec SIG, design et export print.",
-      "subtitleEn": "Cartes éditoriales, touristiques, événementielles, patrimoniales ou data avec SIG, design et export print.",
+      "subtitleEn": "Editorial, tourism, event, heritage and data maps, with GIS, design and print export.",
       "persona": "designer",
       "subProfiles": [
           "analytics",
@@ -8360,43 +8360,43 @@ export const STACKS: StackGuide[] = [
       "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
       "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
       "bestFor": "Cartes éditoriales, touristiques, événementielles, patrimoniales ou data avec SIG, design et export print.",
-      "bestForEn": "Cartes éditoriales, touristiques, événementielles, patrimoniales ou data avec SIG, design et export print.",
+      "bestForEn": "Editorial, tourism, event, heritage and data maps, with GIS, design and print export.",
       "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
       "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
       "editorial": "Cette stack sert un métier précis : Cartes éditoriales, touristiques, événementielles, patrimoniales ou data avec SIG, design et export print. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
-      "editorialEn": "This stack serves a precise role: Cartes éditoriales, touristiques, événementielles, patrimoniales ou data avec SIG, design et export print. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "editorialEn": "This stack serves a precise role: Editorial, tourism, event, heritage and data maps, with GIS, design and print export. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
       "needs": [
           {
               "title": "Source de vérité",
-              "titleEn": "Source de vérité",
+              "titleEn": "Source of truth",
               "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
-              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+              "detailEn": "The brief, source files, exports and decisions have to stay connected."
           },
           {
               "title": "Production fiable",
               "titleEn": "Production fiable",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
-              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+              "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
               "titleEn": "Validation claire",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
-              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+              "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
       ],
       "maturitySignals": [
           {
               "title": "Volume récurrent",
-              "titleEn": "Volume récurrent",
+              "titleEn": "Recurring volume",
               "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
-              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+              "detailEn": "The stack pays for itself once the deliverable comes round several times a month."
           },
           {
               "title": "Plusieurs parties prenantes",
               "titleEn": "Plusieurs parties prenantes",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
-              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+              "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
       ],
       "traps": [
@@ -8404,39 +8404,39 @@ export const STACKS: StackGuide[] = [
               "title": "Abonnements dormants",
               "titleEn": "Abonnements dormants",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
-              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+              "detailEn": "A premium creative tool should map to something you invoice."
           },
           {
               "title": "Assets dispersés",
-              "titleEn": "Assets dispersés",
+              "titleEn": "Scattered assets",
               "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
-              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+              "detailEn": "Without organisation, references and source files become impossible to maintain."
           },
           {
               "title": "IA sans intention",
-              "titleEn": "IA sans intention",
+              "titleEn": "AI without intent",
               "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
-              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+              "detailEn": "AI should speed up a direction, not replace professional judgement."
           }
       ],
       "checkpoints": [
           {
               "q": "Le livrable final est-il clairement relié au brief initial ?",
-              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Is the final deliverable clearly tied back to the original brief?",
               "hint": "Si non, il manque une source de vérité projet.",
-              "hintEn": "Si non, il manque une source de vérité projet."
+              "hintEn": "If not, the project has no single source of truth."
           },
           {
               "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
-              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Does each tool play a distinct role in the chain?",
               "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
-              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+              "hintEn": "If two tools do the same job, one of them should be conditional."
           },
           {
               "q": "Le client sait-il quoi valider et où le faire ?",
-              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Does the client know what to approve, and where?",
               "hint": "Si non, le feedback va créer des allers-retours inutiles.",
-              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+              "hintEn": "If not, feedback will generate avoidable back and forth."
           }
       ],
       "tools": [
@@ -8542,7 +8542,7 @@ export const STACKS: StackGuide[] = [
       "title": "Stack installation immersive",
       "titleEn": "Immersive installation designer stack",
       "subtitle": "Installations interactives, mapping, lumière, son, projection, 3D, prototype et production temps réel.",
-      "subtitleEn": "Installations interactives, mapping, lumière, son, projection, 3D, prototype et production temps réel.",
+      "subtitleEn": "Interactive installations, projection mapping, light, sound, 3D, prototyping and real-time production.",
       "persona": "designer",
       "subProfiles": [
           "motion",
@@ -8556,43 +8556,43 @@ export const STACKS: StackGuide[] = [
       "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
       "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
       "bestFor": "Installations interactives, mapping, lumière, son, projection, 3D, prototype et production temps réel.",
-      "bestForEn": "Installations interactives, mapping, lumière, son, projection, 3D, prototype et production temps réel.",
+      "bestForEn": "Interactive installations, projection mapping, light, sound, 3D, prototyping and real-time production.",
       "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
       "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
       "editorial": "Cette stack sert un métier précis : Installations interactives, mapping, lumière, son, projection, 3D, prototype et production temps réel. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
-      "editorialEn": "This stack serves a precise role: Installations interactives, mapping, lumière, son, projection, 3D, prototype et production temps réel. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "editorialEn": "This stack serves a precise role: Interactive installations, projection mapping, light, sound, 3D, prototyping and real-time production. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
       "needs": [
           {
               "title": "Source de vérité",
-              "titleEn": "Source de vérité",
+              "titleEn": "Source of truth",
               "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
-              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+              "detailEn": "The brief, source files, exports and decisions have to stay connected."
           },
           {
               "title": "Production fiable",
               "titleEn": "Production fiable",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
-              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+              "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
               "titleEn": "Validation claire",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
-              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+              "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
       ],
       "maturitySignals": [
           {
               "title": "Volume récurrent",
-              "titleEn": "Volume récurrent",
+              "titleEn": "Recurring volume",
               "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
-              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+              "detailEn": "The stack pays for itself once the deliverable comes round several times a month."
           },
           {
               "title": "Plusieurs parties prenantes",
               "titleEn": "Plusieurs parties prenantes",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
-              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+              "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
       ],
       "traps": [
@@ -8600,39 +8600,39 @@ export const STACKS: StackGuide[] = [
               "title": "Abonnements dormants",
               "titleEn": "Abonnements dormants",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
-              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+              "detailEn": "A premium creative tool should map to something you invoice."
           },
           {
               "title": "Assets dispersés",
-              "titleEn": "Assets dispersés",
+              "titleEn": "Scattered assets",
               "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
-              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+              "detailEn": "Without organisation, references and source files become impossible to maintain."
           },
           {
               "title": "IA sans intention",
-              "titleEn": "IA sans intention",
+              "titleEn": "AI without intent",
               "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
-              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+              "detailEn": "AI should speed up a direction, not replace professional judgement."
           }
       ],
       "checkpoints": [
           {
               "q": "Le livrable final est-il clairement relié au brief initial ?",
-              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Is the final deliverable clearly tied back to the original brief?",
               "hint": "Si non, il manque une source de vérité projet.",
-              "hintEn": "Si non, il manque une source de vérité projet."
+              "hintEn": "If not, the project has no single source of truth."
           },
           {
               "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
-              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Does each tool play a distinct role in the chain?",
               "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
-              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+              "hintEn": "If two tools do the same job, one of them should be conditional."
           },
           {
               "q": "Le client sait-il quoi valider et où le faire ?",
-              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Does the client know what to approve, and where?",
               "hint": "Si non, le feedback va créer des allers-retours inutiles.",
-              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+              "hintEn": "If not, feedback will generate avoidable back and forth."
           }
       ],
       "tools": [
@@ -8762,7 +8762,7 @@ export const STACKS: StackGuide[] = [
       "title": "Stack sites IA & automation",
       "titleEn": "AI sites and automation builder stack",
       "subtitle": "Outils, sites, prototypes, automatisations, agents, workflows IA, paiement, SEO, analytics et lancement.",
-      "subtitleEn": "Outils, sites, prototypes, automatisations, agents, workflows IA, paiement, SEO, analytics et lancement.",
+      "subtitleEn": "Tools, websites, prototypes, automations, agents, AI workflows, payments, SEO, analytics and launch.",
       "persona": "dev",
       "subProfiles": [
           "no-code",
@@ -8776,43 +8776,43 @@ export const STACKS: StackGuide[] = [
       "risk": "Empiler des outils créatifs sans relier brief, production, validation, livraison et facturation.",
       "riskEn": "Stacking creative tools without connecting brief, production, approval, delivery, and billing.",
       "bestFor": "Outils, sites, prototypes, automatisations, agents, workflows IA, paiement, SEO, analytics et lancement.",
-      "bestForEn": "Outils, sites, prototypes, automatisations, agents, workflows IA, paiement, SEO, analytics et lancement.",
+      "bestForEn": "Tools, websites, prototypes, automations, agents, AI workflows, payments, SEO, analytics and launch.",
       "avoidIf": "Tu n’as pas encore de livrable récurrent ou de workflow client à structurer.",
       "avoidIfEn": "You do not yet have a recurring deliverable or client workflow to structure.",
       "editorial": "Cette stack sert un métier précis : Outils, sites, prototypes, automatisations, agents, workflows IA, paiement, SEO, analytics et lancement. Le bon choix n’est pas d’avoir tous les outils, mais une chaîne claire entre recherche, production, validation et livraison.",
-      "editorialEn": "This stack serves a precise role: Outils, sites, prototypes, automatisations, agents, workflows IA, paiement, SEO, analytics et lancement. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
+      "editorialEn": "This stack serves a precise role: Tools, websites, prototypes, automations, agents, AI workflows, payments, SEO, analytics and launch. The right choice is not to own every tool, but to keep a clear chain between research, production, approval, and delivery.",
       "needs": [
           {
               "title": "Source de vérité",
-              "titleEn": "Source de vérité",
+              "titleEn": "Source of truth",
               "detail": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés.",
-              "detailEn": "Le brief, les fichiers sources, les exports et les décisions doivent rester reliés."
+              "detailEn": "The brief, source files, exports and decisions have to stay connected."
           },
           {
               "title": "Production fiable",
               "titleEn": "Production fiable",
               "detail": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons.",
-              "detailEn": "Les outils centraux doivent couvrir 80% du travail sans multiplier les doublons."
+              "detailEn": "The core tools should cover 80% of the work without piling up duplicates."
           },
           {
               "title": "Validation claire",
               "titleEn": "Validation claire",
               "detail": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté.",
-              "detailEn": "Le client doit pouvoir valider une version, un budget ou une direction sans ambiguïté."
+              "detailEn": "The client has to be able to approve a version, a budget or a direction without ambiguity."
           }
       ],
       "maturitySignals": [
           {
               "title": "Volume récurrent",
-              "titleEn": "Volume récurrent",
+              "titleEn": "Recurring volume",
               "detail": "La stack devient rentable quand le livrable revient plusieurs fois par mois.",
-              "detailEn": "La stack devient rentable quand le livrable revient plusieurs fois par mois."
+              "detailEn": "The stack pays for itself once the deliverable comes round several times a month."
           },
           {
               "title": "Plusieurs parties prenantes",
               "titleEn": "Plusieurs parties prenantes",
               "detail": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent.",
-              "detailEn": "Ajoute collaboration, feedback ou DAM quand les retours et assets se dispersent."
+              "detailEn": "Add collaboration, feedback or a DAM once feedback and assets start scattering."
           }
       ],
       "traps": [
@@ -8820,39 +8820,39 @@ export const STACKS: StackGuide[] = [
               "title": "Abonnements dormants",
               "titleEn": "Abonnements dormants",
               "detail": "Un outil créatif premium doit correspondre à un usage facturé.",
-              "detailEn": "Un outil créatif premium doit correspondre à un usage facturé."
+              "detailEn": "A premium creative tool should map to something you invoice."
           },
           {
               "title": "Assets dispersés",
-              "titleEn": "Assets dispersés",
+              "titleEn": "Scattered assets",
               "detail": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir.",
-              "detailEn": "Sans rangement, références et fichiers sources deviennent impossibles à maintenir."
+              "detailEn": "Without organisation, references and source files become impossible to maintain."
           },
           {
               "title": "IA sans intention",
-              "titleEn": "IA sans intention",
+              "titleEn": "AI without intent",
               "detail": "L’IA doit accélérer une direction, pas remplacer le jugement métier.",
-              "detailEn": "L’IA doit accélérer une direction, pas remplacer le jugement métier."
+              "detailEn": "AI should speed up a direction, not replace professional judgement."
           }
       ],
       "checkpoints": [
           {
               "q": "Le livrable final est-il clairement relié au brief initial ?",
-              "qEn": "Le livrable final est-il clairement relié au brief initial ?",
+              "qEn": "Is the final deliverable clearly tied back to the original brief?",
               "hint": "Si non, il manque une source de vérité projet.",
-              "hintEn": "Si non, il manque une source de vérité projet."
+              "hintEn": "If not, the project has no single source of truth."
           },
           {
               "q": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
-              "qEn": "Chaque outil a-t-il un rôle différent dans la chaîne ?",
+              "qEn": "Does each tool play a distinct role in the chain?",
               "hint": "Si deux outils font la même chose, l’un doit être conditionnel.",
-              "hintEn": "Si deux outils font la même chose, l’un doit être conditionnel."
+              "hintEn": "If two tools do the same job, one of them should be conditional."
           },
           {
               "q": "Le client sait-il quoi valider et où le faire ?",
-              "qEn": "Le client sait-il quoi valider et où le faire ?",
+              "qEn": "Does the client know what to approve, and where?",
               "hint": "Si non, le feedback va créer des allers-retours inutiles.",
-              "hintEn": "Si non, le feedback va créer des allers-retours inutiles."
+              "hintEn": "If not, feedback will generate avoidable back and forth."
           }
       ],
       "tools": [
@@ -10197,7 +10197,7 @@ export const STACKS: StackGuide[] = [
     "title": "Stack full-stack",
     "titleEn": "Full-stack stack",
     "subtitle": "Next.js, API, auth, DB, déploiement, monitoring et paiement dans une chaîne cohérente.",
-    "subtitleEn": "Next.js, API, auth, DB, déploiement, monitoring et paiement dans une chaîne cohérente.",
+    "subtitleEn": "Next.js, APIs, auth, database, deployment, monitoring and payments in one coherent chain.",
     "persona": "dev",
     "subProfiles": [
       "full-stack",
@@ -10208,13 +10208,13 @@ export const STACKS: StackGuide[] = [
     "monthlyBudget": 78,
     "savings": 140,
     "risk": "Le piège : empiler services front, back, DB et auth sans responsabilité claire. Un full-stack freelance doit livrer une app maintenable, pas une architecture de scale-up.",
-    "riskEn": "Le piège : empiler services front, back, DB et auth sans responsabilité claire. Un full-stack freelance doit livrer une app maintenable, pas une architecture de scale-up.",
+    "riskEn": "The trap: stacking front-end, back-end, database and auth services with no clear ownership. A freelance full-stack developer ships a maintainable app, not a scale-up architecture.",
     "bestFor": "Sites, apps métier, MVP et plateformes complètes pour clients PME/startups.",
-    "bestForEn": "Sites, apps métier, MVP et plateformes complètes pour clients PME/startups.",
+    "bestForEn": "Websites, business apps, MVPs and full platforms for SME and startup clients.",
     "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
     "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
     "editorial": "Le piège : empiler services front, back, DB et auth sans responsabilité claire. Un full-stack freelance doit livrer une app maintenable, pas une architecture de scale-up. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
-    "editorialEn": "Le piège : empiler services front, back, DB et auth sans responsabilité claire. Un full-stack freelance doit livrer une app maintenable, pas une architecture de scale-up. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "editorialEn": "The trap: stacking front-end, back-end, database and auth services with no clear ownership. A freelance full-stack developer ships a maintainable app, not a scale-up architecture. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
     "needs": [
       {
         "title": "Cadrer avant de coder",
@@ -10404,7 +10404,7 @@ export const STACKS: StackGuide[] = [
     "title": "Stack front-end",
     "titleEn": "Front-end stack",
     "subtitle": "La stack doit relier design, composants, tests visuels et preview client.",
-    "subtitleEn": "La stack doit relier design, composants, tests visuels et preview client.",
+    "subtitleEn": "The stack has to connect design, components, visual testing and client previews.",
     "persona": "dev",
     "subProfiles": [
       "front-end",
@@ -10415,13 +10415,13 @@ export const STACKS: StackGuide[] = [
     "monthlyBudget": 52,
     "savings": 110,
     "risk": "Le piège : confondre bibliothèque UI et design system. Sans Storybook, tests et règles d’accessibilité, les composants deviennent fragiles.",
-    "riskEn": "Le piège : confondre bibliothèque UI et design system. Sans Storybook, tests et règles d’accessibilité, les composants deviennent fragiles.",
+    "riskEn": "The trap: mistaking a UI library for a design system. Without Storybook, tests and accessibility rules, components turn brittle.",
     "bestFor": "Interfaces, design systems, performance, accessibilité et intégration produit.",
-    "bestForEn": "Interfaces, design systems, performance, accessibilité et intégration produit.",
+    "bestForEn": "Interfaces, design systems, performance, accessibility and product integration.",
     "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
     "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
     "editorial": "Le piège : confondre bibliothèque UI et design system. Sans Storybook, tests et règles d’accessibilité, les composants deviennent fragiles. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
-    "editorialEn": "Le piège : confondre bibliothèque UI et design system. Sans Storybook, tests et règles d’accessibilité, les composants deviennent fragiles. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "editorialEn": "The trap: mistaking a UI library for a design system. Without Storybook, tests and accessibility rules, components turn brittle. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
     "needs": [
       {
         "title": "Cadrer avant de coder",
@@ -10611,7 +10611,7 @@ export const STACKS: StackGuide[] = [
     "title": "Stack back-end",
     "titleEn": "Back-end stack",
     "subtitle": "La stack doit couvrir contrat API, DB, queues, logs, tests et secrets.",
-    "subtitleEn": "La stack doit couvrir contrat API, DB, queues, logs, tests et secrets.",
+    "subtitleEn": "The stack has to cover the API contract, database, queues, logs, tests and secrets.",
     "persona": "dev",
     "subProfiles": [
       "back-end",
@@ -10622,13 +10622,13 @@ export const STACKS: StackGuide[] = [
     "monthlyBudget": 68,
     "savings": 130,
     "risk": "Le piège : livrer une API qui marche en local mais sans logs, retries ni doc. En freelance, la maintenance se vend dès l’architecture.",
-    "riskEn": "Le piège : livrer une API qui marche en local mais sans logs, retries ni doc. En freelance, la maintenance se vend dès l’architecture.",
+    "riskEn": "The trap: shipping an API that runs locally but has no logs, retries or documentation. Freelance maintenance work is sold at the architecture stage.",
     "bestFor": "API, logique métier, intégrations, jobs et sécurité serveur.",
-    "bestForEn": "API, logique métier, intégrations, jobs et sécurité serveur.",
+    "bestForEn": "APIs, business logic, integrations, jobs and server-side security.",
     "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
     "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
     "editorial": "Le piège : livrer une API qui marche en local mais sans logs, retries ni doc. En freelance, la maintenance se vend dès l’architecture. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
-    "editorialEn": "Le piège : livrer une API qui marche en local mais sans logs, retries ni doc. En freelance, la maintenance se vend dès l’architecture. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "editorialEn": "The trap: shipping an API that runs locally but has no logs, retries or documentation. Freelance maintenance work is sold at the architecture stage. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
     "needs": [
       {
         "title": "Cadrer avant de coder",
@@ -10818,7 +10818,7 @@ export const STACKS: StackGuide[] = [
     "title": "Stack Next.js",
     "titleEn": "Next.js stack",
     "subtitle": "Next.js doit porter front, routing, API légère, SEO, auth et preview sans sur-ingénierie.",
-    "subtitleEn": "Next.js doit porter front, routing, API légère, SEO, auth et preview sans sur-ingénierie.",
+    "subtitleEn": "Next.js has to carry the front end, routing, a light API, SEO, auth and previews without over-engineering.",
     "persona": "dev",
     "subProfiles": [
       "next-react",
@@ -10829,13 +10829,13 @@ export const STACKS: StackGuide[] = [
     "monthlyBudget": 56,
     "savings": 120,
     "risk": "Le piège : ajouter un backend séparé trop tôt. Pour beaucoup de missions, Next.js + Supabase + Vercel suffit.",
-    "riskEn": "Le piège : ajouter un backend séparé trop tôt. Pour beaucoup de missions, Next.js + Supabase + Vercel suffit.",
+    "riskEn": "The trap: adding a separate backend too early. For many engagements, Next.js plus Supabase plus Vercel is enough.",
     "bestFor": "SaaS, dashboards, landing pages et applications React modernes.",
-    "bestForEn": "SaaS, dashboards, landing pages et applications React modernes.",
+    "bestForEn": "SaaS products, dashboards, landing pages and modern React applications.",
     "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
     "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
     "editorial": "Le piège : ajouter un backend séparé trop tôt. Pour beaucoup de missions, Next.js + Supabase + Vercel suffit. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
-    "editorialEn": "Le piège : ajouter un backend séparé trop tôt. Pour beaucoup de missions, Next.js + Supabase + Vercel suffit. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "editorialEn": "The trap: adding a separate backend too early. For many engagements, Next.js plus Supabase plus Vercel is enough. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
     "needs": [
       {
         "title": "Cadrer avant de coder",
@@ -11025,7 +11025,7 @@ export const STACKS: StackGuide[] = [
     "title": "Stack WordPress",
     "titleEn": "WordPress stack",
     "subtitle": "La stack doit sécuriser local, thème, plugins, cache, backup, SEO et maintenance multi-sites.",
-    "subtitleEn": "La stack doit sécuriser local, thème, plugins, cache, backup, SEO et maintenance multi-sites.",
+    "subtitleEn": "The stack has to secure local work, theme, plugins, caching, backups, SEO and multi-site maintenance.",
     "persona": "dev",
     "subProfiles": [
       "wordpress-dev",
@@ -11036,13 +11036,13 @@ export const STACKS: StackGuide[] = [
     "monthlyBudget": 82,
     "savings": 160,
     "risk": "Le piège : installer un plugin pour chaque problème. Un WordPress rentable est sobre, sauvegardé et surveillé.",
-    "riskEn": "Le piège : installer un plugin pour chaque problème. Un WordPress rentable est sobre, sauvegardé et surveillé.",
+    "riskEn": "The trap: installing a plugin for every problem. A profitable WordPress site is lean, backed up and monitored.",
     "bestFor": "Sites vitrines, WooCommerce, maintenance, performance et SEO technique.",
-    "bestForEn": "Sites vitrines, WooCommerce, maintenance, performance et SEO technique.",
+    "bestForEn": "Brochure sites, WooCommerce, maintenance, performance and technical SEO.",
     "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
     "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
     "editorial": "Le piège : installer un plugin pour chaque problème. Un WordPress rentable est sobre, sauvegardé et surveillé. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
-    "editorialEn": "Le piège : installer un plugin pour chaque problème. Un WordPress rentable est sobre, sauvegardé et surveillé. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "editorialEn": "The trap: installing a plugin for every problem. A profitable WordPress site is lean, backed up and monitored. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
     "needs": [
       {
         "title": "Cadrer avant de coder",
@@ -11232,7 +11232,7 @@ export const STACKS: StackGuide[] = [
     "title": "Stack Shopify",
     "titleEn": "Shopify stack",
     "subtitle": "La stack doit couvrir thème, Liquid, app dev, analytics, email, paiement, abonnement et logistique.",
-    "subtitleEn": "La stack doit couvrir thème, Liquid, app dev, analytics, email, paiement, abonnement et logistique.",
+    "subtitleEn": "The stack has to cover theme, Liquid, app development, analytics, email, payments, subscriptions and logistics.",
     "persona": "dev",
     "subProfiles": [
       "shopify-dev",
@@ -11243,13 +11243,13 @@ export const STACKS: StackGuide[] = [
     "monthlyBudget": 88,
     "savings": 170,
     "risk": "Le piège : vendre une boutique sans tracking, emails ni logique de conversion. Shopify dev doit penser revenus, pas seulement thème.",
-    "riskEn": "Le piège : vendre une boutique sans tracking, emails ni logique de conversion. Shopify dev doit penser revenus, pas seulement thème.",
+    "riskEn": "The trap: selling a store with no tracking, email or conversion logic. Shopify work has to think in revenue, not just theme.",
     "bestFor": "Thèmes, boutiques, apps, checkout, tracking et intégrations e-commerce.",
-    "bestForEn": "Thèmes, boutiques, apps, checkout, tracking et intégrations e-commerce.",
+    "bestForEn": "Themes, stores, apps, checkout, tracking and e-commerce integrations.",
     "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
     "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
     "editorial": "Le piège : vendre une boutique sans tracking, emails ni logique de conversion. Shopify dev doit penser revenus, pas seulement thème. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
-    "editorialEn": "Le piège : vendre une boutique sans tracking, emails ni logique de conversion. Shopify dev doit penser revenus, pas seulement thème. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "editorialEn": "The trap: selling a store with no tracking, email or conversion logic. Shopify work has to think in revenue, not just theme. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
     "needs": [
       {
         "title": "Cadrer avant de coder",
@@ -11439,7 +11439,7 @@ export const STACKS: StackGuide[] = [
     "title": "Stack Webflow",
     "titleEn": "Webflow stack",
     "subtitle": "Webflow doit rester maintenable : naming, CMS propre, scripts documentés, formulaires et analytics.",
-    "subtitleEn": "Webflow doit rester maintenable : naming, CMS propre, scripts documentés, formulaires et analytics.",
+    "subtitleEn": "Webflow has to stay maintainable: naming, a clean CMS, documented scripts, forms and analytics.",
     "persona": "dev",
     "subProfiles": [
       "webflow-dev",
@@ -11450,13 +11450,13 @@ export const STACKS: StackGuide[] = [
     "monthlyBudget": 64,
     "savings": 130,
     "risk": "Le piège : une pile de scripts invisibles. Sans convention Client-First et doc, le site devient impossible à reprendre.",
-    "riskEn": "Le piège : une pile de scripts invisibles. Sans convention Client-First et doc, le site devient impossible à reprendre.",
+    "riskEn": "The trap: a pile of invisible scripts. Without the Client-First convention and documentation, nobody can pick the site up again.",
     "bestFor": "Sites Webflow complexes, CMS, interactions, custom code et automatisations.",
-    "bestForEn": "Sites Webflow complexes, CMS, interactions, custom code et automatisations.",
+    "bestForEn": "Complex Webflow sites, CMS, interactions, custom code and automations.",
     "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
     "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
     "editorial": "Le piège : une pile de scripts invisibles. Sans convention Client-First et doc, le site devient impossible à reprendre. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
-    "editorialEn": "Le piège : une pile de scripts invisibles. Sans convention Client-First et doc, le site devient impossible à reprendre. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "editorialEn": "The trap: a pile of invisible scripts. Without the Client-First convention and documentation, nobody can pick the site up again. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
     "needs": [
       {
         "title": "Cadrer avant de coder",
@@ -11646,7 +11646,7 @@ export const STACKS: StackGuide[] = [
     "title": "Stack React Native",
     "titleEn": "React Native stack",
     "subtitle": "La stack doit inclure Expo, backend, push, achats, crash reporting et publication stores.",
-    "subtitleEn": "La stack doit inclure Expo, backend, push, achats, crash reporting et publication stores.",
+    "subtitleEn": "The stack has to include Expo, a backend, push, purchases, crash reporting and store releases.",
     "persona": "dev",
     "subProfiles": [
       "mobile-dev",
@@ -11657,13 +11657,13 @@ export const STACKS: StackGuide[] = [
     "monthlyBudget": 56,
     "savings": 115,
     "risk": "Le piège : sous-estimer build, certificats, stores et crash reporting. L’app mobile ne s’arrête pas au code.",
-    "riskEn": "Le piège : sous-estimer build, certificats, stores et crash reporting. L’app mobile ne s’arrête pas au code.",
+    "riskEn": "The trap: underestimating builds, certificates, app stores and crash reporting. A mobile app does not stop at the code.",
     "bestFor": "Apps iOS/Android en JS/TS avec auth, API, build et stores.",
-    "bestForEn": "Apps iOS/Android en JS/TS avec auth, API, build et stores.",
+    "bestForEn": "iOS and Android apps in JavaScript or TypeScript, with auth, APIs, builds and store releases.",
     "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
     "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
     "editorial": "Le piège : sous-estimer build, certificats, stores et crash reporting. L’app mobile ne s’arrête pas au code. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
-    "editorialEn": "Le piège : sous-estimer build, certificats, stores et crash reporting. L’app mobile ne s’arrête pas au code. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "editorialEn": "The trap: underestimating builds, certificates, app stores and crash reporting. A mobile app does not stop at the code. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
     "needs": [
       {
         "title": "Cadrer avant de coder",
@@ -11853,7 +11853,7 @@ export const STACKS: StackGuide[] = [
     "title": "Stack Flutter",
     "titleEn": "Flutter stack",
     "subtitle": "La stack doit cadrer UI, state management, backend, CI mobile, achats et stores.",
-    "subtitleEn": "La stack doit cadrer UI, state management, backend, CI mobile, achats et stores.",
+    "subtitleEn": "The stack has to frame UI, state management, backend, mobile CI, purchases and stores.",
     "persona": "dev",
     "subProfiles": [
       "mobile-dev",
@@ -11864,13 +11864,13 @@ export const STACKS: StackGuide[] = [
     "monthlyBudget": 48,
     "savings": 110,
     "risk": "Le piège : choisir Flutter pour aller vite puis bricoler state, builds et stores. La structure compte dès le départ.",
-    "riskEn": "Le piège : choisir Flutter pour aller vite puis bricoler state, builds et stores. La structure compte dès le départ.",
+    "riskEn": "The trap: picking Flutter for speed, then improvising state, builds and store releases. Structure matters from day one.",
     "bestFor": "Apps mobiles multiplateformes performantes avec Dart.",
-    "bestForEn": "Apps mobiles multiplateformes performantes avec Dart.",
+    "bestForEn": "Fast cross-platform mobile apps built with Dart.",
     "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
     "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
     "editorial": "Le piège : choisir Flutter pour aller vite puis bricoler state, builds et stores. La structure compte dès le départ. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
-    "editorialEn": "Le piège : choisir Flutter pour aller vite puis bricoler state, builds et stores. La structure compte dès le départ. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "editorialEn": "The trap: picking Flutter for speed, then improvising state, builds and store releases. Structure matters from day one. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
     "needs": [
       {
         "title": "Cadrer avant de coder",
@@ -12060,7 +12060,7 @@ export const STACKS: StackGuide[] = [
     "title": "Stack SaaS solo",
     "titleEn": "Solo SaaS stack",
     "subtitle": "La stack doit apprendre vite sans payer une stack scale-up. Auth, paiement, analytics et support doivent être simples.",
-    "subtitleEn": "La stack doit apprendre vite sans payer une stack scale-up. Auth, paiement, analytics et support doivent être simples.",
+    "subtitleEn": "The stack has to learn fast without paying scale-up prices. Auth, payments, analytics and support should stay simple.",
     "persona": "dev",
     "subProfiles": [
       "mvp-startup",
@@ -12071,13 +12071,13 @@ export const STACKS: StackGuide[] = [
     "monthlyBudget": 92,
     "savings": 220,
     "risk": "Le piège : construire une architecture de startup financée avant d’avoir activation, usage et clients payants.",
-    "riskEn": "Le piège : construire une architecture de startup financée avant d’avoir activation, usage et clients payants.",
+    "riskEn": "The trap: building funded-startup architecture before you have activation, usage and paying customers.",
     "bestFor": "Produit vendable : app, auth, paiement, emails, analytics, support et monitoring.",
-    "bestForEn": "Produit vendable : app, auth, paiement, emails, analytics, support et monitoring.",
+    "bestForEn": "A sellable product: app, auth, payments, email, analytics, support and monitoring.",
     "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
     "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
     "editorial": "Le piège : construire une architecture de startup financée avant d’avoir activation, usage et clients payants. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
-    "editorialEn": "Le piège : construire une architecture de startup financée avant d’avoir activation, usage et clients payants. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "editorialEn": "The trap: building funded-startup architecture before you have activation, usage and paying customers. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
     "needs": [
       {
         "title": "Cadrer avant de coder",
@@ -12267,7 +12267,7 @@ export const STACKS: StackGuide[] = [
     "title": "Stack IA / LLM",
     "titleEn": "AI / LLM stack",
     "subtitle": "La stack doit suivre prompts, coûts, latence, evals, sécurité et observabilité LLM.",
-    "subtitleEn": "La stack doit suivre prompts, coûts, latence, evals, sécurité et observabilité LLM.",
+    "subtitleEn": "The stack has to track prompts, cost, latency, evals, security and LLM observability.",
     "persona": "dev",
     "subProfiles": [
       "ai-coding",
@@ -12278,13 +12278,13 @@ export const STACKS: StackGuide[] = [
     "monthlyBudget": 74,
     "savings": 180,
     "risk": "Le piège : faire une démo magique sans traces, evals ni contrôle des coûts. Une app LLM sérieuse s’observe comme un produit.",
-    "riskEn": "Le piège : faire une démo magique sans traces, evals ni contrôle des coûts. Une app LLM sérieuse s’observe comme un produit.",
+    "riskEn": "The trap: a magical demo with no traces, evals or cost control. A serious LLM app is observed like a product.",
     "bestFor": "Apps avec API LLM, RAG, embeddings, agents et workflows IA.",
-    "bestForEn": "Apps avec API LLM, RAG, embeddings, agents et workflows IA.",
+    "bestForEn": "Apps built on LLM APIs, RAG, embeddings, agents and AI workflows.",
     "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
     "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
     "editorial": "Le piège : faire une démo magique sans traces, evals ni contrôle des coûts. Une app LLM sérieuse s’observe comme un produit. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
-    "editorialEn": "Le piège : faire une démo magique sans traces, evals ni contrôle des coûts. Une app LLM sérieuse s’observe comme un produit. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "editorialEn": "The trap: a magical demo with no traces, evals or cost control. A serious LLM app is observed like a product. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
     "needs": [
       {
         "title": "Cadrer avant de coder",
@@ -12474,7 +12474,7 @@ export const STACKS: StackGuide[] = [
     "title": "Stack automation",
     "titleEn": "Automation stack",
     "subtitle": "La stack doit sécuriser entrées, erreurs, logs, retries et documentation de chaque scénario.",
-    "subtitleEn": "La stack doit sécuriser entrées, erreurs, logs, retries et documentation de chaque scénario.",
+    "subtitleEn": "The stack has to secure inputs, errors, logs, retries and documentation for every scenario.",
     "persona": "dev",
     "subProfiles": [
       "automation",
@@ -12485,13 +12485,13 @@ export const STACKS: StackGuide[] = [
     "monthlyBudget": 58,
     "savings": 125,
     "risk": "Le piège : automatiser un process flou. Si le workflow manuel n’est pas stable, n8n ou Make automatisent juste le désordre.",
-    "riskEn": "Le piège : automatiser un process flou. Si le workflow manuel n’est pas stable, n8n ou Make automatisent juste le désordre.",
+    "riskEn": "The trap: automating a vague process. If the manual workflow is unstable, n8n or Make simply automate the mess.",
     "bestFor": "Automatisations métier, webhooks, API, CRM, reporting et workflows low-code.",
-    "bestForEn": "Automatisations métier, webhooks, API, CRM, reporting et workflows low-code.",
+    "bestForEn": "Business automations, webhooks, APIs, CRM, reporting and low-code workflows.",
     "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
     "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
     "editorial": "Le piège : automatiser un process flou. Si le workflow manuel n’est pas stable, n8n ou Make automatisent juste le désordre. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
-    "editorialEn": "Le piège : automatiser un process flou. Si le workflow manuel n’est pas stable, n8n ou Make automatisent juste le désordre. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "editorialEn": "The trap: automating a vague process. If the manual workflow is unstable, n8n or Make simply automate the mess. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
     "needs": [
       {
         "title": "Cadrer avant de coder",
@@ -12681,7 +12681,7 @@ export const STACKS: StackGuide[] = [
     "title": "Stack DevOps",
     "titleEn": "DevOps stack",
     "subtitle": "La stack doit choisir le bon niveau : Vercel/Railway pour simple, Terraform/Kubernetes seulement si besoin réel.",
-    "subtitleEn": "La stack doit choisir le bon niveau : Vercel/Railway pour simple, Terraform/Kubernetes seulement si besoin réel.",
+    "subtitleEn": "The stack has to pick the right level: Vercel or Railway when it is simple, Terraform or Kubernetes only on a real need.",
     "persona": "dev",
     "subProfiles": [
       "devops",
@@ -12692,13 +12692,13 @@ export const STACKS: StackGuide[] = [
     "monthlyBudget": 86,
     "savings": 210,
     "risk": "Le piège : vendre Kubernetes quand un déploiement Vercel ou Render répond au besoin. DevOps freelance = proportionner le risque.",
-    "riskEn": "Le piège : vendre Kubernetes quand un déploiement Vercel ou Render répond au besoin. DevOps freelance = proportionner le risque.",
+    "riskEn": "The trap: selling Kubernetes when a Vercel or Render deployment answers the need. Freelance DevOps means sizing the risk.",
     "bestFor": "CI/CD, cloud, Docker, monitoring, backups, secrets et infra as code.",
-    "bestForEn": "CI/CD, cloud, Docker, monitoring, backups, secrets et infra as code.",
+    "bestForEn": "CI/CD, cloud, Docker, monitoring, backups, secrets and infrastructure as code.",
     "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
     "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
     "editorial": "Le piège : vendre Kubernetes quand un déploiement Vercel ou Render répond au besoin. DevOps freelance = proportionner le risque. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
-    "editorialEn": "Le piège : vendre Kubernetes quand un déploiement Vercel ou Render répond au besoin. DevOps freelance = proportionner le risque. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "editorialEn": "The trap: selling Kubernetes when a Vercel or Render deployment answers the need. Freelance DevOps means sizing the risk. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
     "needs": [
       {
         "title": "Cadrer avant de coder",
@@ -12888,7 +12888,7 @@ export const STACKS: StackGuide[] = [
     "title": "Stack Python",
     "titleEn": "Python stack",
     "subtitle": "La stack doit gérer environnements, dépendances, tests, packaging, notebooks et déploiement.",
-    "subtitleEn": "La stack doit gérer environnements, dépendances, tests, packaging, notebooks et déploiement.",
+    "subtitleEn": "The stack has to handle environments, dependencies, tests, packaging, notebooks and deployment.",
     "persona": "dev",
     "subProfiles": [
       "python-dev",
@@ -12899,13 +12899,13 @@ export const STACKS: StackGuide[] = [
     "monthlyBudget": 42,
     "savings": 95,
     "risk": "Le piège : des scripts utiles mais impossibles à relancer. Un freelance Python doit livrer un environnement reproductible.",
-    "riskEn": "Le piège : des scripts utiles mais impossibles à relancer. Un freelance Python doit livrer un environnement reproductible.",
+    "riskEn": "The trap: useful scripts that nobody can run again. A freelance Python engagement ships a reproducible environment.",
     "bestFor": "Scripts, API, data, automatisation, scraping légal, IA légère et backends.",
-    "bestForEn": "Scripts, API, data, automatisation, scraping légal, IA légère et backends.",
+    "bestForEn": "Scripts, APIs, data, automation, lawful scraping, light AI and backends.",
     "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
     "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
     "editorial": "Le piège : des scripts utiles mais impossibles à relancer. Un freelance Python doit livrer un environnement reproductible. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
-    "editorialEn": "Le piège : des scripts utiles mais impossibles à relancer. Un freelance Python doit livrer un environnement reproductible. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "editorialEn": "The trap: useful scripts that nobody can run again. A freelance Python engagement ships a reproducible environment. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
     "needs": [
       {
         "title": "Cadrer avant de coder",
@@ -13095,7 +13095,7 @@ export const STACKS: StackGuide[] = [
     "title": "Stack data dev",
     "titleEn": "Data dev stack",
     "subtitle": "La stack doit relier collecte, transformation, documentation, visualisation et activation métier.",
-    "subtitleEn": "La stack doit relier collecte, transformation, documentation, visualisation et activation métier.",
+    "subtitleEn": "The stack has to connect collection, transformation, documentation, visualisation and business activation.",
     "persona": "dev",
     "subProfiles": [
       "data-dev",
@@ -13106,13 +13106,13 @@ export const STACKS: StackGuide[] = [
     "monthlyBudget": 72,
     "savings": 150,
     "risk": "Le piège : livrer un dashboard joli mais sans pipeline fiable. La valeur est dans la donnée propre et le rafraîchissement.",
-    "riskEn": "Le piège : livrer un dashboard joli mais sans pipeline fiable. La valeur est dans la donnée propre et le rafraîchissement.",
+    "riskEn": "The trap: delivering a good-looking dashboard on an unreliable pipeline. The value sits in clean data and in the refresh.",
     "bestFor": "Pipelines, dashboards, tracking, warehouse et nettoyage de données.",
-    "bestForEn": "Pipelines, dashboards, tracking, warehouse et nettoyage de données.",
+    "bestForEn": "Pipelines, dashboards, tracking, warehousing and data cleaning.",
     "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
     "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
     "editorial": "Le piège : livrer un dashboard joli mais sans pipeline fiable. La valeur est dans la donnée propre et le rafraîchissement. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
-    "editorialEn": "Le piège : livrer un dashboard joli mais sans pipeline fiable. La valeur est dans la donnée propre et le rafraîchissement. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "editorialEn": "The trap: delivering a good-looking dashboard on an unreliable pipeline. The value sits in clean data and in the refresh. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
     "needs": [
       {
         "title": "Cadrer avant de coder",
@@ -13302,7 +13302,7 @@ export const STACKS: StackGuide[] = [
     "title": "Stack e-commerce custom",
     "titleEn": "Custom e-commerce stack",
     "subtitle": "La stack doit couvrir catalogue, search, checkout, taxes, emails, analytics et back-office.",
-    "subtitleEn": "La stack doit couvrir catalogue, search, checkout, taxes, emails, analytics et back-office.",
+    "subtitleEn": "The stack has to cover catalogue, search, checkout, tax, email, analytics and back-office.",
     "persona": "dev",
     "subProfiles": [
       "ecommerce",
@@ -13313,13 +13313,13 @@ export const STACKS: StackGuide[] = [
     "monthlyBudget": 78,
     "savings": 180,
     "risk": "Le piège : refaire Shopify sans raison. Le custom se justifie par logique métier, marketplace ou intégrations fortes.",
-    "riskEn": "Le piège : refaire Shopify sans raison. Le custom se justifie par logique métier, marketplace ou intégrations fortes.",
+    "riskEn": "The trap: rebuilding Shopify for no reason. Custom work is justified by business logic, a marketplace, or heavy integrations.",
     "bestFor": "Commerce headless, marketplace, paiement, catalogue, stock et ERP léger.",
-    "bestForEn": "Commerce headless, marketplace, paiement, catalogue, stock et ERP léger.",
+    "bestForEn": "Headless commerce, marketplace, payments, catalogue, stock and light ERP.",
     "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
     "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
     "editorial": "Le piège : refaire Shopify sans raison. Le custom se justifie par logique métier, marketplace ou intégrations fortes. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
-    "editorialEn": "Le piège : refaire Shopify sans raison. Le custom se justifie par logique métier, marketplace ou intégrations fortes. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "editorialEn": "The trap: rebuilding Shopify for no reason. Custom work is justified by business logic, a marketplace, or heavy integrations. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
     "needs": [
       {
         "title": "Cadrer avant de coder",
@@ -13509,7 +13509,7 @@ export const STACKS: StackGuide[] = [
     "title": "Stack API intégrations",
     "titleEn": "API integrations stack",
     "subtitle": "La stack doit gérer OAuth, webhooks, retries, queues, logs, docs et secrets.",
-    "subtitleEn": "La stack doit gérer OAuth, webhooks, retries, queues, logs, docs et secrets.",
+    "subtitleEn": "The stack has to handle OAuth, webhooks, retries, queues, logs, docs and secrets.",
     "persona": "dev",
     "subProfiles": [
       "api-integration",
@@ -13520,13 +13520,13 @@ export const STACKS: StackGuide[] = [
     "monthlyBudget": 48,
     "savings": 105,
     "risk": "Le piège : un script de synchro sans logs ni retries. L’intégration est fiable seulement quand les erreurs sont prévues.",
-    "riskEn": "Le piège : un script de synchro sans logs ni retries. L’intégration est fiable seulement quand les erreurs sont prévues.",
+    "riskEn": "The trap: a sync script with no logs and no retries. An integration is only reliable once its failures are planned for.",
     "bestFor": "Connexions CRM, ERP, paiement, marketing, data et systèmes internes.",
-    "bestForEn": "Connexions CRM, ERP, paiement, marketing, data et systèmes internes.",
+    "bestForEn": "Connections to CRM, ERP, payments, marketing, data and internal systems.",
     "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
     "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
     "editorial": "Le piège : un script de synchro sans logs ni retries. L’intégration est fiable seulement quand les erreurs sont prévues. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
-    "editorialEn": "Le piège : un script de synchro sans logs ni retries. L’intégration est fiable seulement quand les erreurs sont prévues. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "editorialEn": "The trap: a sync script with no logs and no retries. An integration is only reliable once its failures are planned for. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
     "needs": [
       {
         "title": "Cadrer avant de coder",
@@ -13716,7 +13716,7 @@ export const STACKS: StackGuide[] = [
     "title": "Stack outils internes",
     "titleEn": "Internal tools stack",
     "subtitle": "La stack doit choisir entre low-code rapide et code custom selon complexité métier.",
-    "subtitleEn": "La stack doit choisir entre low-code rapide et code custom selon complexité métier.",
+    "subtitleEn": "The stack has to choose between fast low-code and custom code according to business complexity.",
     "persona": "dev",
     "subProfiles": [
       "internal-tools",
@@ -13727,13 +13727,13 @@ export const STACKS: StackGuide[] = [
     "monthlyBudget": 55,
     "savings": 140,
     "risk": "Le piège : coder un back-office complet quand Retool ou Appsmith suffisent. Le custom doit être réservé aux contraintes fortes.",
-    "riskEn": "Le piège : coder un back-office complet quand Retool ou Appsmith suffisent. Le custom doit être réservé aux contraintes fortes.",
+    "riskEn": "The trap: coding a full back-office when Retool or Appsmith would do. Keep custom work for genuinely hard constraints.",
     "bestFor": "Back-offices, dashboards, CRM custom, tables, rôles et workflows internes.",
-    "bestForEn": "Back-offices, dashboards, CRM custom, tables, rôles et workflows internes.",
+    "bestForEn": "Back-offices, dashboards, custom CRM, tables, roles and internal workflows.",
     "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
     "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
     "editorial": "Le piège : coder un back-office complet quand Retool ou Appsmith suffisent. Le custom doit être réservé aux contraintes fortes. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
-    "editorialEn": "Le piège : coder un back-office complet quand Retool ou Appsmith suffisent. Le custom doit être réservé aux contraintes fortes. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "editorialEn": "The trap: coding a full back-office when Retool or Appsmith would do. Keep custom work for genuinely hard constraints. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
     "needs": [
       {
         "title": "Cadrer avant de coder",
@@ -13923,7 +13923,7 @@ export const STACKS: StackGuide[] = [
     "title": "Stack sécurité applicative",
     "titleEn": "App security stack",
     "subtitle": "La stack doit combiner scan automatique, vérification manuelle et rapport exploitable par le client.",
-    "subtitleEn": "La stack doit combiner scan automatique, vérification manuelle et rapport exploitable par le client.",
+    "subtitleEn": "The stack has to combine automated scanning, manual verification and a report the client can act on.",
     "persona": "dev",
     "subProfiles": [
       "appsec",
@@ -13934,13 +13934,13 @@ export const STACKS: StackGuide[] = [
     "monthlyBudget": 64,
     "savings": 160,
     "risk": "Le piège : confondre scan et audit. Un bon livrable explique risque, impact, correction et priorité.",
-    "riskEn": "Le piège : confondre scan et audit. Un bon livrable explique risque, impact, correction et priorité.",
+    "riskEn": "The trap: confusing a scan with an audit. A good deliverable explains risk, impact, remediation and priority.",
     "bestFor": "Audit apps, dépendances, secrets, auth, headers, RGPD et rapports sécurité.",
-    "bestForEn": "Audit apps, dépendances, secrets, auth, headers, RGPD et rapports sécurité.",
+    "bestForEn": "Auditing apps, dependencies, secrets, auth, headers, GDPR and security reports.",
     "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
     "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
     "editorial": "Le piège : confondre scan et audit. Un bon livrable explique risque, impact, correction et priorité. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
-    "editorialEn": "Le piège : confondre scan et audit. Un bon livrable explique risque, impact, correction et priorité. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "editorialEn": "The trap: confusing a scan with an audit. A good deliverable explains risk, impact, remediation and priority. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
     "needs": [
       {
         "title": "Cadrer avant de coder",
@@ -14130,7 +14130,7 @@ export const STACKS: StackGuide[] = [
     "title": "Stack performance web",
     "titleEn": "Web performance stack",
     "subtitle": "La stack doit mesurer terrain + labo, puis prioriser les gains visibles utilisateur.",
-    "subtitleEn": "La stack doit mesurer terrain + labo, puis prioriser les gains visibles utilisateur.",
+    "subtitleEn": "The stack has to measure both field and lab data, then prioritise gains users can feel.",
     "persona": "dev",
     "subProfiles": [
       "performance-web",
@@ -14141,13 +14141,13 @@ export const STACKS: StackGuide[] = [
     "monthlyBudget": 39,
     "savings": 90,
     "risk": "Le piège : optimiser un score Lighthouse sans regarder les vrais utilisateurs, le business et les scripts tiers.",
-    "riskEn": "Le piège : optimiser un score Lighthouse sans regarder les vrais utilisateurs, le business et les scripts tiers.",
+    "riskEn": "The trap: optimising a Lighthouse score without looking at real users, the business, and third-party scripts.",
     "bestFor": "Core Web Vitals, bundle, images, cache, scripts tiers et monitoring vitesse.",
-    "bestForEn": "Core Web Vitals, bundle, images, cache, scripts tiers et monitoring vitesse.",
+    "bestForEn": "Core Web Vitals, bundle size, images, caching, third-party scripts and speed monitoring.",
     "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
     "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
     "editorial": "Le piège : optimiser un score Lighthouse sans regarder les vrais utilisateurs, le business et les scripts tiers. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
-    "editorialEn": "Le piège : optimiser un score Lighthouse sans regarder les vrais utilisateurs, le business et les scripts tiers. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "editorialEn": "The trap: optimising a Lighthouse score without looking at real users, the business, and third-party scripts. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
     "needs": [
       {
         "title": "Cadrer avant de coder",
@@ -14337,7 +14337,7 @@ export const STACKS: StackGuide[] = [
     "title": "Stack CMS headless",
     "titleEn": "Headless CMS stack",
     "subtitle": "La stack doit cadrer modèle de contenu, permissions, preview, recherche, médias et migrations.",
-    "subtitleEn": "La stack doit cadrer modèle de contenu, permissions, preview, recherche, médias et migrations.",
+    "subtitleEn": "The stack has to frame the content model, permissions, previews, search, media and migrations.",
     "persona": "dev",
     "subProfiles": [
       "headless-cms",
@@ -14348,13 +14348,13 @@ export const STACKS: StackGuide[] = [
     "monthlyBudget": 62,
     "savings": 135,
     "risk": "Le piège : choisir un CMS pour le dev au lieu de l’équipe éditoriale. Le meilleur CMS est celui que le client utilise proprement.",
-    "riskEn": "Le piège : choisir un CMS pour le dev au lieu de l’équipe éditoriale. Le meilleur CMS est celui que le client utilise proprement.",
+    "riskEn": "The trap: choosing a CMS for the developer rather than the editorial team. The best CMS is the one the client uses properly.",
     "bestFor": "Sites et apps avec contenus structurés, preview, API et SEO.",
-    "bestForEn": "Sites et apps avec contenus structurés, preview, API et SEO.",
+    "bestForEn": "Sites and apps with structured content, previews, APIs and SEO.",
     "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
     "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
     "editorial": "Le piège : choisir un CMS pour le dev au lieu de l’équipe éditoriale. Le meilleur CMS est celui que le client utilise proprement. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
-    "editorialEn": "Le piège : choisir un CMS pour le dev au lieu de l’équipe éditoriale. Le meilleur CMS est celui que le client utilise proprement. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "editorialEn": "The trap: choosing a CMS for the developer rather than the editorial team. The best CMS is the one the client uses properly. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
     "needs": [
       {
         "title": "Cadrer avant de coder",
@@ -14544,7 +14544,7 @@ export const STACKS: StackGuide[] = [
     "title": "Stack CRM dev",
     "titleEn": "CRM dev stack",
     "subtitle": "La stack doit relier CRM, automation, tracking, data qualité et documentation.",
-    "subtitleEn": "La stack doit relier CRM, automation, tracking, data qualité et documentation.",
+    "subtitleEn": "The stack has to connect CRM, automation, tracking, data quality and documentation.",
     "persona": "dev",
     "subProfiles": [
       "crm-sales",
@@ -14555,13 +14555,13 @@ export const STACKS: StackGuide[] = [
     "monthlyBudget": 66,
     "savings": 145,
     "risk": "Le piège : automatiser un CRM sale. Avant workflow, il faut clarifier champs, pipeline et responsabilités.",
-    "riskEn": "Le piège : automatiser un CRM sale. Avant workflow, il faut clarifier champs, pipeline et responsabilités.",
+    "riskEn": "The trap: automating a dirty CRM. Before any workflow, clarify fields, pipeline and ownership.",
     "bestFor": "Paramétrage CRM, formulaires, workflows, intégrations, reporting et API.",
-    "bestForEn": "Paramétrage CRM, formulaires, workflows, intégrations, reporting et API.",
+    "bestForEn": "CRM setup, forms, workflows, integrations, reporting and APIs.",
     "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
     "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
     "editorial": "Le piège : automatiser un CRM sale. Avant workflow, il faut clarifier champs, pipeline et responsabilités. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
-    "editorialEn": "Le piège : automatiser un CRM sale. Avant workflow, il faut clarifier champs, pipeline et responsabilités. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "editorialEn": "The trap: automating a dirty CRM. Before any workflow, clarify fields, pipeline and ownership. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
     "needs": [
       {
         "title": "Cadrer avant de coder",
@@ -14751,7 +14751,7 @@ export const STACKS: StackGuide[] = [
     "title": "Stack QA automation",
     "titleEn": "QA automation stack",
     "subtitle": "La stack doit intégrer tests navigateur, API, CI et rapports compréhensibles par l’équipe.",
-    "subtitleEn": "La stack doit intégrer tests navigateur, API, CI et rapports compréhensibles par l’équipe.",
+    "subtitleEn": "The stack has to bring together browser tests, API tests, CI and reports the team can read.",
     "persona": "dev",
     "subProfiles": [
       "qa-automation",
@@ -14762,13 +14762,13 @@ export const STACKS: StackGuide[] = [
     "monthlyBudget": 44,
     "savings": 110,
     "risk": "Le piège : écrire beaucoup de tests fragiles. Une bonne QA freelance teste les parcours qui coûtent cher quand ils cassent.",
-    "riskEn": "Le piège : écrire beaucoup de tests fragiles. Une bonne QA freelance teste les parcours qui coûtent cher quand ils cassent.",
+    "riskEn": "The trap: writing lots of brittle tests. Good freelance QA covers the journeys that cost real money when they break.",
     "bestFor": "Tests e2e, API, fixtures, CI, rapports qualité et régressions visuelles.",
-    "bestForEn": "Tests e2e, API, fixtures, CI, rapports qualité et régressions visuelles.",
+    "bestForEn": "End-to-end tests, API tests, fixtures, CI, quality reports and visual regressions.",
     "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
     "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
     "editorial": "Le piège : écrire beaucoup de tests fragiles. Une bonne QA freelance teste les parcours qui coûtent cher quand ils cassent. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
-    "editorialEn": "Le piège : écrire beaucoup de tests fragiles. Une bonne QA freelance teste les parcours qui coûtent cher quand ils cassent. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "editorialEn": "The trap: writing lots of brittle tests. Good freelance QA covers the journeys that cost real money when they break. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
     "needs": [
       {
         "title": "Cadrer avant de coder",
@@ -14958,7 +14958,7 @@ export const STACKS: StackGuide[] = [
     "title": "Stack game dev",
     "titleEn": "Game dev stack",
     "subtitle": "La stack doit couvrir moteur, assets, audio, versioning, QA et distribution.",
-    "subtitleEn": "La stack doit couvrir moteur, assets, audio, versioning, QA et distribution.",
+    "subtitleEn": "The stack has to cover engine, assets, audio, versioning, QA and distribution.",
     "persona": "dev",
     "subProfiles": [
       "game-dev",
@@ -14969,13 +14969,13 @@ export const STACKS: StackGuide[] = [
     "monthlyBudget": 52,
     "savings": 130,
     "risk": "Le piège : sous-estimer versioning gros fichiers, builds et QA. Un jeu freelance a besoin de pipeline autant que de gameplay.",
-    "riskEn": "Le piège : sous-estimer versioning gros fichiers, builds et QA. Un jeu freelance a besoin de pipeline autant que de gameplay.",
+    "riskEn": "The trap: underestimating large-file versioning, builds and QA. A freelance game needs a pipeline as much as it needs gameplay.",
     "bestFor": "Prototypes, jeux indés, expériences interactives, serious games et builds.",
-    "bestForEn": "Prototypes, jeux indés, expériences interactives, serious games et builds.",
+    "bestForEn": "Prototypes, indie games, interactive experiences, serious games and builds.",
     "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
     "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
     "editorial": "Le piège : sous-estimer versioning gros fichiers, builds et QA. Un jeu freelance a besoin de pipeline autant que de gameplay. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
-    "editorialEn": "Le piège : sous-estimer versioning gros fichiers, builds et QA. Un jeu freelance a besoin de pipeline autant que de gameplay. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "editorialEn": "The trap: underestimating large-file versioning, builds and QA. A freelance game needs a pipeline as much as it needs gameplay. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
     "needs": [
       {
         "title": "Cadrer avant de coder",
@@ -15165,7 +15165,7 @@ export const STACKS: StackGuide[] = [
     "title": "Stack AR/VR",
     "titleEn": "AR/VR stack",
     "subtitle": "La stack doit gérer moteur, assets 3D, performance device, tracking et tests sur matériel.",
-    "subtitleEn": "La stack doit gérer moteur, assets 3D, performance device, tracking et tests sur matériel.",
+    "subtitleEn": "The stack has to handle the engine, 3D assets, on-device performance, tracking and hardware testing.",
     "persona": "dev",
     "subProfiles": [
       "ar-vr",
@@ -15176,13 +15176,13 @@ export const STACKS: StackGuide[] = [
     "monthlyBudget": 58,
     "savings": 150,
     "risk": "Le piège : développer sans tester tôt sur device. En AR/VR, la performance et le confort se valident dans le casque.",
-    "riskEn": "Le piège : développer sans tester tôt sur device. En AR/VR, la performance et le confort se valident dans le casque.",
+    "riskEn": "The trap: developing without testing on device early. In AR and VR, performance and comfort are validated in the headset.",
     "bestFor": "Expériences immersives, WebXR, prototypes 3D et apps casque.",
-    "bestForEn": "Expériences immersives, WebXR, prototypes 3D et apps casque.",
+    "bestForEn": "Immersive experiences, WebXR, 3D prototypes and headset apps.",
     "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
     "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
     "editorial": "Le piège : développer sans tester tôt sur device. En AR/VR, la performance et le confort se valident dans le casque. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
-    "editorialEn": "Le piège : développer sans tester tôt sur device. En AR/VR, la performance et le confort se valident dans le casque. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "editorialEn": "The trap: developing without testing on device early. In AR and VR, performance and comfort are validated in the headset. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
     "needs": [
       {
         "title": "Cadrer avant de coder",
@@ -15362,7 +15362,7 @@ export const STACKS: StackGuide[] = [
     "title": "Stack creative coding",
     "titleEn": "Creative coding stack",
     "subtitle": "La stack doit favoriser prototypage rapide, export propre, performance et déploiement web.",
-    "subtitleEn": "La stack doit favoriser prototypage rapide, export propre, performance et déploiement web.",
+    "subtitleEn": "The stack has to favour fast prototyping, clean export, performance and web deployment.",
     "persona": "dev",
     "subProfiles": [
       "creative-coding",
@@ -15373,13 +15373,13 @@ export const STACKS: StackGuide[] = [
     "monthlyBudget": 42,
     "savings": 105,
     "risk": "Le piège : garder les prototypes dans un dossier local. Le client doit voir, tester et valider l’expérience en ligne.",
-    "riskEn": "Le piège : garder les prototypes dans un dossier local. Le client doit voir, tester et valider l’expérience en ligne.",
+    "riskEn": "The trap: keeping prototypes in a local folder. The client has to see, test and approve the experience online.",
     "bestFor": "Installations, génératif, motion web, shaders, canvas et expériences visuelles.",
-    "bestForEn": "Installations, génératif, motion web, shaders, canvas et expériences visuelles.",
+    "bestForEn": "Installations, generative work, web motion, shaders, canvas and visual experiences.",
     "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
     "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
     "editorial": "Le piège : garder les prototypes dans un dossier local. Le client doit voir, tester et valider l’expérience en ligne. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
-    "editorialEn": "Le piège : garder les prototypes dans un dossier local. Le client doit voir, tester et valider l’expérience en ligne. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "editorialEn": "The trap: keeping prototypes in a local folder. The client has to see, test and approve the experience online. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
     "needs": [
       {
         "title": "Cadrer avant de coder",
@@ -15559,7 +15559,7 @@ export const STACKS: StackGuide[] = [
     "title": "Stack maintenance dev",
     "titleEn": "Maintenance dev stack",
     "subtitle": "La stack doit auditer vite, sécuriser dépendances, suivre erreurs, documenter décisions et gérer tickets.",
-    "subtitleEn": "La stack doit auditer vite, sécuriser dépendances, suivre erreurs, documenter décisions et gérer tickets.",
+    "subtitleEn": "The stack has to audit quickly, secure dependencies, track errors, document decisions and manage tickets.",
     "persona": "dev",
     "subProfiles": [
       "maintenance-dev",
@@ -15570,13 +15570,13 @@ export const STACKS: StackGuide[] = [
     "monthlyBudget": 46,
     "savings": 120,
     "risk": "Le piège : corriger sans observer. Une mission de maintenance rentable commence par monitoring, inventaire et historique.",
-    "riskEn": "Le piège : corriger sans observer. Une mission de maintenance rentable commence par monitoring, inventaire et historique.",
+    "riskEn": "The trap: fixing without observing. A profitable maintenance engagement starts with monitoring, inventory and history.",
     "bestFor": "Reprise de projets, bugs, mises à jour, sécurité, documentation et support.",
-    "bestForEn": "Reprise de projets, bugs, mises à jour, sécurité, documentation et support.",
+    "bestForEn": "Taking over projects, bugs, updates, security, documentation and support.",
     "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
     "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
     "editorial": "Le piège : corriger sans observer. Une mission de maintenance rentable commence par monitoring, inventaire et historique. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
-    "editorialEn": "Le piège : corriger sans observer. Une mission de maintenance rentable commence par monitoring, inventaire et historique. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "editorialEn": "The trap: fixing without observing. A profitable maintenance engagement starts with monitoring, inventory and history. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
     "needs": [
       {
         "title": "Cadrer avant de coder",
@@ -15766,7 +15766,7 @@ export const STACKS: StackGuide[] = [
     "title": "Stack MVP startup",
     "titleEn": "Startup MVP stack",
     "subtitle": "La stack doit accélérer discovery, build, paiement, analytics, onboarding et feedback.",
-    "subtitleEn": "La stack doit accélérer discovery, build, paiement, analytics, onboarding et feedback.",
+    "subtitleEn": "The stack has to speed up discovery, build, payments, analytics, onboarding and feedback.",
     "persona": "dev",
     "subProfiles": [
       "mvp-startup",
@@ -15777,13 +15777,13 @@ export const STACKS: StackGuide[] = [
     "monthlyBudget": 68,
     "savings": 160,
     "risk": "Le piège : partir sur une architecture définitive avant d’avoir testé le problème. Le MVP doit apprendre, pas impressionner.",
-    "riskEn": "Le piège : partir sur une architecture définitive avant d’avoir testé le problème. Le MVP doit apprendre, pas impressionner.",
+    "riskEn": "The trap: committing to a final architecture before testing the problem. An MVP is there to learn, not to impress.",
     "bestFor": "Première version produit pour valider marché, usage et paiement.",
-    "bestForEn": "Première version produit pour valider marché, usage et paiement.",
+    "bestForEn": "A first product version to validate market, usage and willingness to pay.",
     "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
     "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
     "editorial": "Le piège : partir sur une architecture définitive avant d’avoir testé le problème. Le MVP doit apprendre, pas impressionner. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
-    "editorialEn": "Le piège : partir sur une architecture définitive avant d’avoir testé le problème. Le MVP doit apprendre, pas impressionner. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "editorialEn": "The trap: committing to a final architecture before testing the problem. An MVP is there to learn, not to impress. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
     "needs": [
       {
         "title": "Cadrer avant de coder",
@@ -15973,7 +15973,7 @@ export const STACKS: StackGuide[] = [
     "title": "Stack refonte web",
     "titleEn": "Web redesign stack",
     "subtitle": "La stack doit couvrir crawl, inventaire URL, tracking, redirections, performance et monitoring post-lancement.",
-    "subtitleEn": "La stack doit couvrir crawl, inventaire URL, tracking, redirections, performance et monitoring post-lancement.",
+    "subtitleEn": "The stack has to cover crawling, URL inventory, tracking, redirects, performance and post-launch monitoring.",
     "persona": "dev",
     "subProfiles": [
       "web-redesign",
@@ -15984,13 +15984,13 @@ export const STACKS: StackGuide[] = [
     "monthlyBudget": 58,
     "savings": 145,
     "risk": "Le piège : lancer une refonte sans plan de redirection. Le design peut être meilleur et le trafic s’effondrer.",
-    "riskEn": "Le piège : lancer une refonte sans plan de redirection. Le design peut être meilleur et le trafic s’effondrer.",
+    "riskEn": "The trap: launching a redesign with no redirect plan. The design can improve while the traffic collapses.",
     "bestFor": "Refonte UX, CMS, migration, SEO technique, redirections et performance.",
-    "bestForEn": "Refonte UX, CMS, migration, SEO technique, redirections et performance.",
+    "bestForEn": "UX redesign, CMS, migration, technical SEO, redirects and performance.",
     "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
     "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
     "editorial": "Le piège : lancer une refonte sans plan de redirection. Le design peut être meilleur et le trafic s’effondrer. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
-    "editorialEn": "Le piège : lancer une refonte sans plan de redirection. Le design peut être meilleur et le trafic s’effondrer. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "editorialEn": "The trap: launching a redesign with no redirect plan. The design can improve while the traffic collapses. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
     "needs": [
       {
         "title": "Cadrer avant de coder",
@@ -16180,7 +16180,7 @@ export const STACKS: StackGuide[] = [
     "title": "Stack accessibilité",
     "titleEn": "Accessibility stack",
     "subtitle": "La stack doit combiner audit automatique, test clavier, lecteur d’écran et correction composants.",
-    "subtitleEn": "La stack doit combiner audit automatique, test clavier, lecteur d’écran et correction composants.",
+    "subtitleEn": "The stack has to combine automated auditing, keyboard testing, screen readers and component fixes.",
     "persona": "dev",
     "subProfiles": [
       "accessibility-dev",
@@ -16191,13 +16191,13 @@ export const STACKS: StackGuide[] = [
     "monthlyBudget": 34,
     "savings": 90,
     "risk": "Le piège : croire qu’un score automatique suffit. L’accessibilité utile se valide avec parcours, clavier et technologie d’assistance.",
-    "riskEn": "Le piège : croire qu’un score automatique suffit. L’accessibilité utile se valide avec parcours, clavier et technologie d’assistance.",
+    "riskEn": "The trap: believing an automated score is enough. Real accessibility is validated with journeys, a keyboard, and assistive technology.",
     "bestFor": "Audit RGAA/WCAG, composants, contrastes, clavier, lecteurs d’écran et rapports.",
-    "bestForEn": "Audit RGAA/WCAG, composants, contrastes, clavier, lecteurs d’écran et rapports.",
+    "bestForEn": "RGAA and WCAG audits, components, contrast, keyboard, screen readers and reports.",
     "avoidIf": "Tu veux seulement une liste d’outils générique sans livrable, monitoring ni logique de maintenance.",
     "avoidIfEn": "You only want a generic tool list without delivery, monitoring, or maintenance logic.",
     "editorial": "Le piège : croire qu’un score automatique suffit. L’accessibilité utile se valide avec parcours, clavier et technologie d’assistance. La bonne approche ToolTrim : un outil par rôle, une source de vérité par sujet, et des garde-fous avant les outils premium.",
-    "editorialEn": "Le piège : croire qu’un score automatique suffit. L’accessibilité utile se valide avec parcours, clavier et technologie d’assistance. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
+    "editorialEn": "The trap: believing an automated score is enough. Real accessibility is validated with journeys, a keyboard, and assistive technology. ToolTrim approach: one tool per role, one source of truth per topic, and guardrails before premium tooling.",
     "needs": [
       {
         "title": "Cadrer avant de coder",
@@ -16400,7 +16400,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
     "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
     "bestFor": "Consultant stratégie",
-    "bestForEn": "Consultant stratégie",
+    "bestForEn": "Strategy consultant",
     "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
     "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
     "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
@@ -16408,7 +16408,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Recherche marché",
-        "titleEn": "Recherche marché",
+        "titleEn": "Market research",
         "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
         "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
       },
@@ -16476,13 +16476,13 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "IA généraliste",
-        "roleEn": "IA généraliste",
+        "roleEn": "General-purpose AI",
         "slug": "chatgpt",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "IA généraliste : utile pour sécuriser recherche marché sans disperser le workflow.",
-        "reasonEn": "Useful to secure recherche marché without scattering the workflow."
+        "reasonEn": "Useful to secure market research without scattering the workflow."
       },
       {
         "role": "Analyse longue",
@@ -16496,7 +16496,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Recherche sourcée",
-        "roleEn": "Recherche sourcée",
+        "roleEn": "Sourced research",
         "slug": "perplexity",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -16512,11 +16512,11 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Deck client : utile pour sécuriser recherche marché sans disperser le workflow.",
-        "reasonEn": "Useful to secure recherche marché without scattering the workflow."
+        "reasonEn": "Useful to secure market research without scattering the workflow."
       },
       {
         "role": "Deck exécutif",
-        "roleEn": "Deck exécutif",
+        "roleEn": "Executive deck",
         "slug": "powerpoint",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -16542,11 +16542,11 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Cockpit mission : utile pour sécuriser recherche marché sans disperser le workflow.",
-        "reasonEn": "Useful to secure recherche marché without scattering the workflow."
+        "reasonEn": "Useful to secure market research without scattering the workflow."
       },
       {
         "role": "Modèle chiffré",
-        "roleEn": "Modèle chiffré",
+        "roleEn": "Costed model",
         "slug": "excel",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -16572,7 +16572,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Signature : utile pour sécuriser recherche marché sans disperser le workflow.",
-        "reasonEn": "Useful to secure recherche marché without scattering the workflow."
+        "reasonEn": "Useful to secure market research without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -16731,7 +16731,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Deck exécutif",
-        "roleEn": "Deck exécutif",
+        "roleEn": "Executive deck",
         "slug": "powerpoint",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -16751,7 +16751,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Base structurée",
-        "roleEn": "Base structurée",
+        "roleEn": "Structured base",
         "slug": "airtable",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -16761,7 +16761,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Vidéo asynchrone",
-        "roleEn": "Vidéo asynchrone",
+        "roleEn": "Async video",
         "slug": "loom",
         "decision": "challenge",
         "tip": "À activer seulement si la mission le justifie.",
@@ -16790,7 +16790,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
     "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
     "bestFor": "Consultant opérations",
-    "bestForEn": "Consultant opérations",
+    "bestForEn": "Operations consultant",
     "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
     "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
     "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
@@ -16886,7 +16886,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Modèle chiffré",
-        "roleEn": "Modèle chiffré",
+        "roleEn": "Costed model",
         "slug": "excel",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -16896,7 +16896,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Base structurée",
-        "roleEn": "Base structurée",
+        "roleEn": "Structured base",
         "slug": "airtable",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -17071,7 +17071,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Base structurée",
-        "roleEn": "Base structurée",
+        "roleEn": "Structured base",
         "slug": "airtable",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -17131,7 +17131,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Vidéo asynchrone",
-        "roleEn": "Vidéo asynchrone",
+        "roleEn": "Async video",
         "slug": "loom",
         "decision": "challenge",
         "tip": "À activer seulement si la mission le justifie.",
@@ -17236,7 +17236,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "IA généraliste",
-        "roleEn": "IA généraliste",
+        "roleEn": "General-purpose AI",
         "slug": "chatgpt",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -17256,7 +17256,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Recherche sourcée",
-        "roleEn": "Recherche sourcée",
+        "roleEn": "Sourced research",
         "slug": "perplexity",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -17296,7 +17296,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Base structurée",
-        "roleEn": "Base structurée",
+        "roleEn": "Structured base",
         "slug": "airtable",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -17500,7 +17500,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Création rapide",
-        "roleEn": "Création rapide",
+        "roleEn": "Fast creation",
         "slug": "canva",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -17759,7 +17759,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "mots-clés",
-        "titleEn": "mots-clés",
+        "titleEn": "keywords",
         "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
         "detailEn": "The stack must stay legible for the client and profitable for the consultant."
       },
@@ -17837,7 +17837,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Outil métier : utile pour sécuriser mots-clés sans disperser le workflow.",
-        "reasonEn": "Useful to secure mots-clés without scattering the workflow."
+        "reasonEn": "Useful to secure keywords without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -17867,7 +17867,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Outil métier : utile pour sécuriser mots-clés sans disperser le workflow.",
-        "reasonEn": "Useful to secure mots-clés without scattering the workflow."
+        "reasonEn": "Useful to secure keywords without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -17897,7 +17897,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Reporting : utile pour sécuriser mots-clés sans disperser le workflow.",
-        "reasonEn": "Useful to secure mots-clés without scattering the workflow."
+        "reasonEn": "Useful to secure keywords without scattering the workflow."
       },
       {
         "role": "Cockpit mission",
@@ -17931,7 +17931,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
     "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
     "bestFor": "Consultant contenu / éditorial",
-    "bestForEn": "Consultant contenu / éditorial",
+    "bestForEn": "Content and editorial consultant",
     "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
     "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
     "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
@@ -18017,7 +18017,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Base structurée",
-        "roleEn": "Base structurée",
+        "roleEn": "Structured base",
         "slug": "airtable",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -18130,7 +18130,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "ligne éditoriale",
-        "titleEn": "ligne éditoriale",
+        "titleEn": "editorial line",
         "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
         "detailEn": "The stack must stay legible for the client and profitable for the consultant."
       },
@@ -18208,7 +18208,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Outil métier : utile pour sécuriser ligne éditoriale sans disperser le workflow.",
-        "reasonEn": "Useful to secure ligne éditoriale without scattering the workflow."
+        "reasonEn": "Useful to secure editorial line without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -18232,13 +18232,13 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Création rapide",
-        "roleEn": "Création rapide",
+        "roleEn": "Fast creation",
         "slug": "canva",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Création rapide : utile pour sécuriser ligne éditoriale sans disperser le workflow.",
-        "reasonEn": "Useful to secure ligne éditoriale without scattering the workflow."
+        "reasonEn": "Useful to secure editorial line without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -18268,7 +18268,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Outil métier : utile pour sécuriser ligne éditoriale sans disperser le workflow.",
-        "reasonEn": "Useful to secure ligne éditoriale without scattering the workflow."
+        "reasonEn": "Useful to secure editorial line without scattering the workflow."
       }
     ]
   },
@@ -18479,7 +18479,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "messages clés",
-        "titleEn": "messages clés",
+        "titleEn": "key messages",
         "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
         "detailEn": "The stack must stay legible for the client and profitable for the consultant."
       },
@@ -18557,11 +18557,11 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Suite collaborative : utile pour sécuriser messages clés sans disperser le workflow.",
-        "reasonEn": "Useful to secure messages clés without scattering the workflow."
+        "reasonEn": "Useful to secure key messages without scattering the workflow."
       },
       {
         "role": "Création rapide",
-        "roleEn": "Création rapide",
+        "roleEn": "Fast creation",
         "slug": "canva",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -18571,7 +18571,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Deck exécutif",
-        "roleEn": "Deck exécutif",
+        "roleEn": "Executive deck",
         "slug": "powerpoint",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -18587,7 +18587,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Atelier : utile pour sécuriser messages clés sans disperser le workflow.",
-        "reasonEn": "Useful to secure messages clés without scattering the workflow."
+        "reasonEn": "Useful to secure key messages without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -18617,7 +18617,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Formulaires : utile pour sécuriser messages clés sans disperser le workflow.",
-        "reasonEn": "Useful to secure messages clés without scattering the workflow."
+        "reasonEn": "Useful to secure key messages without scattering the workflow."
       }
     ]
   },
@@ -18654,7 +18654,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "communiqués",
-        "titleEn": "communiqués",
+        "titleEn": "press releases",
         "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
         "detailEn": "The stack must stay legible for the client and profitable for the consultant."
       },
@@ -18732,7 +18732,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Outil métier : utile pour sécuriser communiqués sans disperser le workflow.",
-        "reasonEn": "Useful to secure communiqués without scattering the workflow."
+        "reasonEn": "Useful to secure press releases without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -18756,13 +18756,13 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Base structurée",
-        "roleEn": "Base structurée",
+        "roleEn": "Structured base",
         "slug": "airtable",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Base structurée : utile pour sécuriser communiqués sans disperser le workflow.",
-        "reasonEn": "Useful to secure communiqués without scattering the workflow."
+        "reasonEn": "Useful to secure press releases without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -18786,13 +18786,13 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Création rapide",
-        "roleEn": "Création rapide",
+        "roleEn": "Fast creation",
         "slug": "canva",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Création rapide : utile pour sécuriser communiqués sans disperser le workflow.",
-        "reasonEn": "Useful to secure communiqués without scattering the workflow."
+        "reasonEn": "Useful to secure press releases without scattering the workflow."
       }
     ]
   },
@@ -19095,7 +19095,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Base structurée",
-        "roleEn": "Base structurée",
+        "roleEn": "Structured base",
         "slug": "airtable",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -19135,7 +19135,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Vidéo asynchrone",
-        "roleEn": "Vidéo asynchrone",
+        "roleEn": "Async video",
         "slug": "loom",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -19171,7 +19171,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Ingénierie pédagogique",
-        "titleEn": "Ingénierie pédagogique",
+        "titleEn": "Instructional design",
         "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
         "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
       },
@@ -19245,11 +19245,11 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Cockpit mission : utile pour sécuriser ingénierie pédagogique sans disperser le workflow.",
-        "reasonEn": "Useful to secure ingénierie pédagogique without scattering the workflow."
+        "reasonEn": "Useful to secure instructional design without scattering the workflow."
       },
       {
         "role": "Deck exécutif",
-        "roleEn": "Deck exécutif",
+        "roleEn": "Executive deck",
         "slug": "powerpoint",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -19259,7 +19259,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Création rapide",
-        "roleEn": "Création rapide",
+        "roleEn": "Fast creation",
         "slug": "canva",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -19275,7 +19275,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Outil métier : utile pour sécuriser ingénierie pédagogique sans disperser le workflow.",
-        "reasonEn": "Useful to secure ingénierie pédagogique without scattering the workflow."
+        "reasonEn": "Useful to secure instructional design without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -19305,7 +19305,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Outil métier : utile pour sécuriser ingénierie pédagogique sans disperser le workflow.",
-        "reasonEn": "Useful to secure ingénierie pédagogique without scattering the workflow."
+        "reasonEn": "Useful to secure instructional design without scattering the workflow."
       },
       {
         "role": "Formulaires",
@@ -19319,7 +19319,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Vidéo asynchrone",
-        "roleEn": "Vidéo asynchrone",
+        "roleEn": "Async video",
         "slug": "loom",
         "decision": "challenge",
         "tip": "À activer seulement si la mission le justifie.",
@@ -19362,7 +19362,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "séances",
-        "titleEn": "séances",
+        "titleEn": "sessions",
         "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
         "detailEn": "The stack must stay legible for the client and profitable for the consultant."
       },
@@ -19440,7 +19440,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Outil métier : utile pour sécuriser séances sans disperser le workflow.",
-        "reasonEn": "Useful to secure séances without scattering the workflow."
+        "reasonEn": "Useful to secure sessions without scattering the workflow."
       },
       {
         "role": "Cockpit mission",
@@ -19470,7 +19470,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Formulaires : utile pour sécuriser séances sans disperser le workflow.",
-        "reasonEn": "Useful to secure séances without scattering the workflow."
+        "reasonEn": "Useful to secure sessions without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -19500,7 +19500,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Signature : utile pour sécuriser séances sans disperser le workflow.",
-        "reasonEn": "Useful to secure séances without scattering the workflow."
+        "reasonEn": "Useful to secure sessions without scattering the workflow."
       }
     ]
   },
@@ -19532,7 +19532,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Modèles financiers",
-        "titleEn": "Modèles financiers",
+        "titleEn": "Financial models",
         "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
         "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
       },
@@ -19544,7 +19544,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "prévisionnel",
-        "titleEn": "prévisionnel",
+        "titleEn": "forecast",
         "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
         "detailEn": "Each tool needs a clear role in the engagement."
       }
@@ -19600,13 +19600,13 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Modèle chiffré",
-        "roleEn": "Modèle chiffré",
+        "roleEn": "Costed model",
         "slug": "excel",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Modèle chiffré : utile pour sécuriser modèles financiers sans disperser le workflow.",
-        "reasonEn": "Useful to secure modèles financiers without scattering the workflow."
+        "reasonEn": "Useful to secure financial models without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -19626,7 +19626,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Outil métier : utile pour sécuriser prévisionnel sans disperser le workflow.",
-        "reasonEn": "Useful to secure prévisionnel without scattering the workflow."
+        "reasonEn": "Useful to secure forecast without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -19636,7 +19636,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Outil métier : utile pour sécuriser modèles financiers sans disperser le workflow.",
-        "reasonEn": "Useful to secure modèles financiers without scattering the workflow."
+        "reasonEn": "Useful to secure financial models without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -19656,7 +19656,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "BI : utile pour sécuriser prévisionnel sans disperser le workflow.",
-        "reasonEn": "Useful to secure prévisionnel without scattering the workflow."
+        "reasonEn": "Useful to secure forecast without scattering the workflow."
       },
       {
         "role": "Reporting",
@@ -19666,7 +19666,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Reporting : utile pour sécuriser modèles financiers sans disperser le workflow.",
-        "reasonEn": "Useful to secure modèles financiers without scattering the workflow."
+        "reasonEn": "Useful to secure financial models without scattering the workflow."
       },
       {
         "role": "Cockpit mission",
@@ -19707,7 +19707,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Analyse coûts",
-        "titleEn": "Analyse coûts",
+        "titleEn": "Cost analysis",
         "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
         "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
       },
@@ -19775,17 +19775,17 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Modèle chiffré",
-        "roleEn": "Modèle chiffré",
+        "roleEn": "Costed model",
         "slug": "excel",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Modèle chiffré : utile pour sécuriser analyse coûts sans disperser le workflow.",
-        "reasonEn": "Useful to secure analyse coûts without scattering the workflow."
+        "reasonEn": "Useful to secure cost analysis without scattering the workflow."
       },
       {
         "role": "Base structurée",
-        "roleEn": "Base structurée",
+        "roleEn": "Structured base",
         "slug": "airtable",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -19811,7 +19811,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Formulaires : utile pour sécuriser analyse coûts sans disperser le workflow.",
-        "reasonEn": "Useful to secure analyse coûts without scattering the workflow."
+        "reasonEn": "Useful to secure cost analysis without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -19841,7 +19841,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Outil métier : utile pour sécuriser analyse coûts sans disperser le workflow.",
-        "reasonEn": "Useful to secure analyse coûts without scattering the workflow."
+        "reasonEn": "Useful to secure cost analysis without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -19904,7 +19904,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "séquences",
-        "titleEn": "séquences",
+        "titleEn": "sequences",
         "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
         "detailEn": "Each tool needs a clear role in the engagement."
       }
@@ -19986,7 +19986,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Outil métier : utile pour sécuriser séquences sans disperser le workflow.",
-        "reasonEn": "Useful to secure séquences without scattering the workflow."
+        "reasonEn": "Useful to secure sequences without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -20016,7 +20016,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Outil métier : utile pour sécuriser séquences sans disperser le workflow.",
-        "reasonEn": "Useful to secure séquences without scattering the workflow."
+        "reasonEn": "Useful to secure sequences without scattering the workflow."
       },
       {
         "role": "Cockpit mission",
@@ -20046,7 +20046,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Rendez-vous : utile pour sécuriser séquences sans disperser le workflow.",
-        "reasonEn": "Useful to secure séquences without scattering the workflow."
+        "reasonEn": "Useful to secure sequences without scattering the workflow."
       }
     ]
   },
@@ -20185,7 +20185,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Base structurée",
-        "roleEn": "Base structurée",
+        "roleEn": "Structured base",
         "slug": "airtable",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -20575,7 +20575,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Base structurée",
-        "roleEn": "Base structurée",
+        "roleEn": "Structured base",
         "slug": "airtable",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -20719,7 +20719,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Base structurée",
-        "roleEn": "Base structurée",
+        "roleEn": "Structured base",
         "slug": "airtable",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -20729,7 +20729,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Modèle chiffré",
-        "roleEn": "Modèle chiffré",
+        "roleEn": "Costed model",
         "slug": "excel",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -20854,7 +20854,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Base structurée",
-        "roleEn": "Base structurée",
+        "roleEn": "Structured base",
         "slug": "airtable",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -21322,7 +21322,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
     "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
     "bestFor": "Consultant IT / systèmes",
-    "bestForEn": "Consultant IT / systèmes",
+    "bestForEn": "IT and systems consultant",
     "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
     "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
     "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
@@ -21497,7 +21497,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
     "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
     "bestFor": "Consultant cybersécurité",
-    "bestForEn": "Consultant cybersécurité",
+    "bestForEn": "Cybersecurity consultant",
     "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
     "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
     "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
@@ -21505,7 +21505,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Audit sécurité",
-        "titleEn": "Audit sécurité",
+        "titleEn": "Security audit",
         "detail": "La stack doit aider à vendre la mission, cadrer vite, produire un livrable clair et garder une trace des décisions.",
         "detailEn": "The stack should help sell the mission, scope quickly, produce clear deliverables, and keep decision history."
       },
@@ -21579,7 +21579,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Outil métier : utile pour sécuriser audit sécurité sans disperser le workflow.",
-        "reasonEn": "Useful to secure audit sécurité without scattering the workflow."
+        "reasonEn": "Useful to secure security audit without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -21609,7 +21609,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Outil métier : utile pour sécuriser audit sécurité sans disperser le workflow.",
-        "reasonEn": "Useful to secure audit sécurité without scattering the workflow."
+        "reasonEn": "Useful to secure security audit without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -21639,7 +21639,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Cockpit mission : utile pour sécuriser audit sécurité sans disperser le workflow.",
-        "reasonEn": "Useful to secure audit sécurité without scattering the workflow."
+        "reasonEn": "Useful to secure security audit without scattering the workflow."
       },
       {
         "role": "Atelier",
@@ -21672,7 +21672,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
     "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
     "bestFor": "Consultant conformité / RGPD",
-    "bestForEn": "Consultant conformité / RGPD",
+    "bestForEn": "Compliance and GDPR consultant",
     "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
     "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
     "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
@@ -21758,7 +21758,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Base structurée",
-        "roleEn": "Base structurée",
+        "roleEn": "Structured base",
         "slug": "airtable",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -21861,7 +21861,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "matérialité",
-        "titleEn": "matérialité",
+        "titleEn": "materiality",
         "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
         "detailEn": "The stack must stay legible for the client and profitable for the consultant."
       },
@@ -21933,13 +21933,13 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Modèle chiffré",
-        "roleEn": "Modèle chiffré",
+        "roleEn": "Costed model",
         "slug": "excel",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Modèle chiffré : utile pour sécuriser matérialité sans disperser le workflow.",
-        "reasonEn": "Useful to secure matérialité without scattering the workflow."
+        "reasonEn": "Useful to secure materiality without scattering the workflow."
       },
       {
         "role": "BI",
@@ -21969,7 +21969,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Outil métier : utile pour sécuriser matérialité sans disperser le workflow.",
-        "reasonEn": "Useful to secure matérialité without scattering the workflow."
+        "reasonEn": "Useful to secure materiality without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -21999,7 +21999,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Suite collaborative : utile pour sécuriser matérialité sans disperser le workflow.",
-        "reasonEn": "Useful to secure matérialité without scattering the workflow."
+        "reasonEn": "Useful to secure materiality without scattering the workflow."
       }
     ]
   },
@@ -22098,7 +22098,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Modèle chiffré",
-        "roleEn": "Modèle chiffré",
+        "roleEn": "Costed model",
         "slug": "excel",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -22108,7 +22108,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Base structurée",
-        "roleEn": "Base structurée",
+        "roleEn": "Structured base",
         "slug": "airtable",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -22273,7 +22273,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Modèle chiffré",
-        "roleEn": "Modèle chiffré",
+        "roleEn": "Costed model",
         "slug": "excel",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -22333,7 +22333,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Base structurée",
-        "roleEn": "Base structurée",
+        "roleEn": "Structured base",
         "slug": "airtable",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -22372,7 +22372,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
     "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
     "bestFor": "Consultant qualité / ISO",
-    "bestForEn": "Consultant qualité / ISO",
+    "bestForEn": "Quality and ISO consultant",
     "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
     "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
     "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
@@ -22386,13 +22386,13 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "procédures",
-        "titleEn": "procédures",
+        "titleEn": "procedures",
         "detail": "La pile doit rester lisible pour le client et rentable pour le consultant.",
         "detailEn": "The stack must stay legible for the client and profitable for the consultant."
       },
       {
         "title": "non-conformités",
-        "titleEn": "non-conformités",
+        "titleEn": "non-conformities",
         "detail": "Chaque outil doit avoir un rôle clair dans la mission.",
         "detailEn": "Each tool needs a clear role in the engagement."
       }
@@ -22464,7 +22464,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Outil métier : utile pour sécuriser procédures sans disperser le workflow.",
-        "reasonEn": "Useful to secure procédures without scattering the workflow."
+        "reasonEn": "Useful to secure procedures without scattering the workflow."
       },
       {
         "role": "Atelier",
@@ -22474,7 +22474,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de mission.",
         "tipEn": "Keep it in the mission core.",
         "reason": "Atelier : utile pour sécuriser non-conformités sans disperser le workflow.",
-        "reasonEn": "Useful to secure non-conformités without scattering the workflow."
+        "reasonEn": "Useful to secure non-conformities without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -22488,23 +22488,23 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Modèle chiffré",
-        "roleEn": "Modèle chiffré",
+        "roleEn": "Costed model",
         "slug": "excel",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Modèle chiffré : utile pour sécuriser procédures sans disperser le workflow.",
-        "reasonEn": "Useful to secure procédures without scattering the workflow."
+        "reasonEn": "Useful to secure procedures without scattering the workflow."
       },
       {
         "role": "Base structurée",
-        "roleEn": "Base structurée",
+        "roleEn": "Structured base",
         "slug": "airtable",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Base structurée : utile pour sécuriser non-conformités sans disperser le workflow.",
-        "reasonEn": "Useful to secure non-conformités without scattering the workflow."
+        "reasonEn": "Useful to secure non-conformities without scattering the workflow."
       },
       {
         "role": "Outil métier",
@@ -22524,7 +22524,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer seulement si la mission le justifie.",
         "tipEn": "Activate only when the mission requires it.",
         "reason": "Outil métier : utile pour sécuriser procédures sans disperser le workflow.",
-        "reasonEn": "Useful to secure procédures without scattering the workflow."
+        "reasonEn": "Useful to secure procedures without scattering the workflow."
       }
     ]
   },
@@ -22662,7 +22662,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Base structurée",
-        "roleEn": "Base structurée",
+        "roleEn": "Structured base",
         "slug": "airtable",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -22807,7 +22807,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Modèle chiffré",
-        "roleEn": "Modèle chiffré",
+        "roleEn": "Costed model",
         "slug": "excel",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -22886,7 +22886,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
     "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
     "bestFor": "Consultant événementiel",
-    "bestForEn": "Consultant événementiel",
+    "bestForEn": "Events consultant",
     "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
     "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
     "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
@@ -22982,7 +22982,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Base structurée",
-        "roleEn": "Base structurée",
+        "roleEn": "Structured base",
         "slug": "airtable",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -23147,7 +23147,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Deck exécutif",
-        "roleEn": "Deck exécutif",
+        "roleEn": "Executive deck",
         "slug": "powerpoint",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -23177,7 +23177,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Modèle chiffré",
-        "roleEn": "Modèle chiffré",
+        "roleEn": "Costed model",
         "slug": "excel",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -23187,7 +23187,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Base structurée",
-        "roleEn": "Base structurée",
+        "roleEn": "Structured base",
         "slug": "airtable",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -23352,7 +23352,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Base structurée",
-        "roleEn": "Base structurée",
+        "roleEn": "Structured base",
         "slug": "airtable",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -23507,7 +23507,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Vidéo asynchrone",
-        "roleEn": "Vidéo asynchrone",
+        "roleEn": "Async video",
         "slug": "loom",
         "decision": "core",
         "tip": "À garder dans le socle de mission.",
@@ -23567,7 +23567,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Multiplier les plateformes sans améliorer le cadrage, la preuve ou la décision client.",
     "riskEn": "Adding platforms without improving scoping, proof, or client decisions.",
     "bestFor": "Consultant freelance généraliste / solopreneur",
-    "bestForEn": "Consultant freelance généraliste / solopreneur",
+    "bestForEn": "Generalist freelance consultant and solopreneur",
     "avoidIf": "Le besoin est ponctuel, sans livrable récurrent ni suivi après la recommandation.",
     "avoidIfEn": "The need is one-off, with no recurring deliverable or follow-up after the recommendation.",
     "editorial": "La stack doit couvrir la chaîne réelle : qualifier, analyser, produire, faire décider, suivre et facturer sans friction.",
@@ -23693,7 +23693,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Vidéo asynchrone",
-        "roleEn": "Vidéo asynchrone",
+        "roleEn": "Async video",
         "slug": "loom",
         "decision": "conditional",
         "tip": "À activer seulement si la mission le justifie.",
@@ -23733,7 +23733,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "IA généraliste",
-        "roleEn": "IA généraliste",
+        "roleEn": "General-purpose AI",
         "slug": "chatgpt",
         "decision": "challenge",
         "tip": "À activer seulement si la mission le justifie.",
@@ -23764,7 +23764,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
     "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
     "bestFor": "Créateur orienté vidéo courte verticale, rythme rapide, hooks forts, montage dynamique et publication très régulière.",
-    "bestForEn": "Créateur orienté vidéo courte verticale, rythme rapide, hooks forts, montage dynamique et publication très régulière.",
+    "bestForEn": "A creator focused on short vertical video: fast pace, strong hooks, dynamic editing and very regular publishing.",
     "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
     "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
     "editorial": "Ce profil a besoin d’une stack claire pour produire vite, recycler les contenus et analyser ce qui performe.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
@@ -23986,7 +23986,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Idées et scripts",
-        "roleEn": "Idées et scripts",
+        "roleEn": "Ideas and scripts",
         "slug": "chatgpt",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -24006,7 +24006,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Repurposing vidéo",
-        "roleEn": "Repurposing vidéo",
+        "roleEn": "Video repurposing",
         "slug": "opusclip",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -24045,7 +24045,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
     "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
     "bestFor": "Créateur de vidéos longues : face caméra, documentaire, analyse, tutoriel, divertissement ou expertise.",
-    "bestForEn": "Créateur de vidéos longues : face caméra, documentaire, analyse, tutoriel, divertissement ou expertise.",
+    "bestForEn": "A creator of long-form video: to camera, documentary, analysis, tutorial, entertainment or expertise.",
     "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
     "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
     "editorial": "Les YouTubers ont un besoin complet : production, optimisation, monétisation, sponsorship et réutilisation en shorts.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
@@ -24137,7 +24137,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Montage / étalonnage",
-        "roleEn": "Montage / étalonnage",
+        "roleEn": "Editing and colour grading",
         "slug": "davinci-resolve",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -24267,7 +24267,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Retouche avancée",
-        "roleEn": "Retouche avancée",
+        "roleEn": "Advanced retouching",
         "slug": "adobe-photoshop",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -24277,7 +24277,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Idées et scripts",
-        "roleEn": "Idées et scripts",
+        "roleEn": "Ideas and scripts",
         "slug": "chatgpt",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -24287,7 +24287,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Rédaction longue",
-        "roleEn": "Rédaction longue",
+        "roleEn": "Long-form writing",
         "slug": "claude",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -24326,7 +24326,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
     "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
     "bestFor": "Créateur d’émissions audio, interviews, récits, formats conversationnels ou expertises longues.",
-    "bestForEn": "Créateur d’émissions audio, interviews, récits, formats conversationnels ou expertises longues.",
+    "bestForEn": "A creator of audio shows, interviews, storytelling, conversational formats or long-form expertise.",
     "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
     "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
     "editorial": "Le podcast est un bon sujet Tooltrim car la stack couvre audio, vidéo, transcription, distribution et recyclage.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
@@ -24334,7 +24334,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Préparation",
-        "titleEn": "Préparation",
+        "titleEn": "Preparation",
         "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
         "detailEn": "The workflow should start from the real format, not a trendy tool."
       },
@@ -24352,7 +24352,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "nettoyage son",
-        "titleEn": "nettoyage son",
+        "titleEn": "sound cleanup",
         "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
         "detailEn": "The stack should keep files, rights, and approvals easy to find."
       }
@@ -24414,7 +24414,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Enregistrement : utile pour sécuriser préparation dans le workflow contenu.",
-        "reasonEn": "Useful to secure préparation in the content workflow."
+        "reasonEn": "Useful to secure preparation in the content workflow."
       },
       {
         "role": "Montage texte/audio",
@@ -24444,7 +24444,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Outil métier : utile pour sécuriser nettoyage son dans le workflow contenu.",
-        "reasonEn": "Useful to secure nettoyage son in the content workflow."
+        "reasonEn": "Useful to secure sound cleanup in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -24454,7 +24454,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Outil métier : utile pour sécuriser préparation dans le workflow contenu.",
-        "reasonEn": "Useful to secure préparation in the content workflow."
+        "reasonEn": "Useful to secure preparation in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -24484,7 +24484,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Cockpit contenu : utile pour sécuriser nettoyage son dans le workflow contenu.",
-        "reasonEn": "Useful to secure nettoyage son in the content workflow."
+        "reasonEn": "Useful to secure sound cleanup in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -24494,7 +24494,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser préparation dans le workflow contenu.",
-        "reasonEn": "Useful to secure préparation in the content workflow."
+        "reasonEn": "Useful to secure preparation in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -24524,7 +24524,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser nettoyage son dans le workflow contenu.",
-        "reasonEn": "Useful to secure nettoyage son in the content workflow."
+        "reasonEn": "Useful to secure sound cleanup in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -24534,11 +24534,11 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser préparation dans le workflow contenu.",
-        "reasonEn": "Useful to secure préparation in the content workflow."
+        "reasonEn": "Useful to secure preparation in the content workflow."
       },
       {
         "role": "Repurposing vidéo",
-        "roleEn": "Repurposing vidéo",
+        "roleEn": "Video repurposing",
         "slug": "opusclip",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -24548,7 +24548,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Idées et scripts",
-        "roleEn": "Idées et scripts",
+        "roleEn": "Ideas and scripts",
         "slug": "chatgpt",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -24564,7 +24564,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser nettoyage son dans le workflow contenu.",
-        "reasonEn": "Useful to secure nettoyage son in the content workflow."
+        "reasonEn": "Useful to secure sound cleanup in the content workflow."
       },
       {
         "role": "Voix IA",
@@ -24574,7 +24574,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Voix IA : utile pour sécuriser préparation dans le workflow contenu.",
-        "reasonEn": "Useful to secure préparation in the content workflow."
+        "reasonEn": "Useful to secure preparation in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -24607,7 +24607,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
     "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
     "bestFor": "Créateur expert qui publie idées, analyses, carrousels, posts longs, newsletters et contenus d’autorité.",
-    "bestForEn": "Créateur expert qui publie idées, analyses, carrousels, posts longs, newsletters et contenus d’autorité.",
+    "bestForEn": "An expert creator publishing ideas, analysis, carousels, long posts, newsletters and authority content.",
     "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
     "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
     "editorial": "Très pertinent pour Tooltrim : créateurs B2B, freelances, consultants et fondateurs cherchent des stacks très opérationnelles.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
@@ -24621,13 +24621,13 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "calendrier éditorial",
-        "titleEn": "calendrier éditorial",
+        "titleEn": "editorial calendar",
         "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
         "detailEn": "Production time saved should go back into concept, hook, and distribution."
       },
       {
         "title": "rédaction",
-        "titleEn": "rédaction",
+        "titleEn": "writing",
         "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
         "detailEn": "Paid tools should help publish, measure, or sell better."
       },
@@ -24705,7 +24705,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Outil métier : utile pour sécuriser calendrier éditorial dans le workflow contenu.",
-        "reasonEn": "Useful to secure calendrier éditorial in the content workflow."
+        "reasonEn": "Useful to secure editorial calendar in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -24715,7 +24715,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Outil métier : utile pour sécuriser rédaction dans le workflow contenu.",
-        "reasonEn": "Useful to secure rédaction in the content workflow."
+        "reasonEn": "Useful to secure writing in the content workflow."
       },
       {
         "role": "Design rapide",
@@ -24729,7 +24729,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Design avancé",
-        "roleEn": "Design avancé",
+        "roleEn": "Advanced design",
         "slug": "figma",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -24745,7 +24745,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser calendrier éditorial dans le workflow contenu.",
-        "reasonEn": "Useful to secure calendrier éditorial in the content workflow."
+        "reasonEn": "Useful to secure editorial calendar in the content workflow."
       },
       {
         "role": "Planification social",
@@ -24755,7 +24755,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Planification social : utile pour sécuriser rédaction dans le workflow contenu.",
-        "reasonEn": "Useful to secure rédaction in the content workflow."
+        "reasonEn": "Useful to secure writing in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -24785,7 +24785,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser calendrier éditorial dans le workflow contenu.",
-        "reasonEn": "Useful to secure calendrier éditorial in the content workflow."
+        "reasonEn": "Useful to secure editorial calendar in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -24795,7 +24795,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser rédaction dans le workflow contenu.",
-        "reasonEn": "Useful to secure rédaction in the content workflow."
+        "reasonEn": "Useful to secure writing in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -24825,7 +24825,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser calendrier éditorial dans le workflow contenu.",
-        "reasonEn": "Useful to secure calendrier éditorial in the content workflow."
+        "reasonEn": "Useful to secure editorial calendar in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -24835,11 +24835,11 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser rédaction dans le workflow contenu.",
-        "reasonEn": "Useful to secure rédaction in the content workflow."
+        "reasonEn": "Useful to secure writing in the content workflow."
       },
       {
         "role": "Idées et scripts",
-        "roleEn": "Idées et scripts",
+        "roleEn": "Ideas and scripts",
         "slug": "chatgpt",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -24849,7 +24849,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Rédaction longue",
-        "roleEn": "Rédaction longue",
+        "roleEn": "Long-form writing",
         "slug": "claude",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -24859,13 +24859,13 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Recherche sourcée",
-        "roleEn": "Recherche sourcée",
+        "roleEn": "Sourced research",
         "slug": "perplexity",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Recherche sourcée : utile pour sécuriser calendrier éditorial dans le workflow contenu.",
-        "reasonEn": "Useful to secure calendrier éditorial in the content workflow."
+        "reasonEn": "Useful to secure editorial calendar in the content workflow."
       }
     ]
   },
@@ -24888,7 +24888,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
     "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
     "bestFor": "Créateur qui construit une audience via email, avec contenus éditoriaux, curation ou expertise.",
-    "bestForEn": "Créateur qui construit une audience via email, avec contenus éditoriaux, curation ou expertise.",
+    "bestForEn": "A creator building an audience over email, through editorial content, curation or expertise.",
     "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
     "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
     "editorial": "La newsletter est un format idéal pour les fiches stack : outils de rédaction, growth, sponsorship, automation et analytics.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
@@ -24902,7 +24902,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "rédaction",
-        "titleEn": "rédaction",
+        "titleEn": "writing",
         "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
         "detailEn": "Production time saved should go back into concept, hook, and distribution."
       },
@@ -24986,7 +24986,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Newsletter : utile pour sécuriser rédaction dans le workflow contenu.",
-        "reasonEn": "Useful to secure rédaction in the content workflow."
+        "reasonEn": "Useful to secure writing in the content workflow."
       },
       {
         "role": "Email marketing",
@@ -25026,7 +25026,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Cockpit contenu : utile pour sécuriser rédaction dans le workflow contenu.",
-        "reasonEn": "Useful to secure rédaction in the content workflow."
+        "reasonEn": "Useful to secure writing in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -25066,7 +25066,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser rédaction dans le workflow contenu.",
-        "reasonEn": "Useful to secure rédaction in the content workflow."
+        "reasonEn": "Useful to secure writing in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -25106,7 +25106,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser rédaction dans le workflow contenu.",
-        "reasonEn": "Useful to secure rédaction in the content workflow."
+        "reasonEn": "Useful to secure writing in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -25120,7 +25120,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Idées et scripts",
-        "roleEn": "Idées et scripts",
+        "roleEn": "Ideas and scripts",
         "slug": "chatgpt",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -25130,7 +25130,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Rédaction longue",
-        "roleEn": "Rédaction longue",
+        "roleEn": "Long-form writing",
         "slug": "claude",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -25140,13 +25140,13 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Recherche sourcée",
-        "roleEn": "Recherche sourcée",
+        "roleEn": "Sourced research",
         "slug": "perplexity",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Recherche sourcée : utile pour sécuriser rédaction dans le workflow contenu.",
-        "reasonEn": "Useful to secure rédaction in the content workflow."
+        "reasonEn": "Useful to secure writing in the content workflow."
       }
     ]
   },
@@ -25170,7 +25170,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
     "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
     "bestFor": "Créateur visuel orienté photo, reels, stories, collaborations, esthétique et narration quotidienne.",
-    "bestForEn": "Créateur visuel orienté photo, reels, stories, collaborations, esthétique et narration quotidienne.",
+    "bestForEn": "A visual creator focused on photo, reels, stories, collaborations, aesthetics and daily storytelling.",
     "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
     "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
     "editorial": "Profil très demandeur d’outils simples, visuels, rapides et compatibles mobile.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
@@ -25262,7 +25262,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Retouche avancée",
-        "roleEn": "Retouche avancée",
+        "roleEn": "Advanced retouching",
         "slug": "adobe-photoshop",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -25402,7 +25402,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Idées et scripts",
-        "roleEn": "Idées et scripts",
+        "roleEn": "Ideas and scripts",
         "slug": "chatgpt",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -25452,7 +25452,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
     "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
     "bestFor": "Créateur qui produit du contenu pour les marques sans forcément publier sur ses propres comptes.",
-    "bestForEn": "Créateur qui produit du contenu pour les marques sans forcément publier sur ses propres comptes.",
+    "bestForEn": "A creator producing content for brands, without necessarily publishing on their own accounts.",
     "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
     "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
     "editorial": "Très bon profil business : besoin de stack de production, d’organisation, de contrat et de facturation.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
@@ -25674,7 +25674,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Idées et scripts",
-        "roleEn": "Idées et scripts",
+        "roleEn": "Ideas and scripts",
         "slug": "chatgpt",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -25733,7 +25733,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
     "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
     "bestFor": "Créateur qui monétise par partenariats, affiliation, produits, services ou communauté.",
-    "bestForEn": "Créateur qui monétise par partenariats, affiliation, produits, services ou communauté.",
+    "bestForEn": "A creator monetising through partnerships, affiliate deals, products, services or community.",
     "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
     "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
     "editorial": "Ce profil a besoin d’une stack monétisation très claire, au-delà de la simple création.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
@@ -25945,7 +25945,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Idées et scripts",
-        "roleEn": "Idées et scripts",
+        "roleEn": "Ideas and scripts",
         "slug": "chatgpt",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -25955,7 +25955,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Rédaction longue",
-        "roleEn": "Rédaction longue",
+        "roleEn": "Long-form writing",
         "slug": "claude",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -26014,7 +26014,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
     "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
     "bestFor": "Créateur qui explique, enseigne, vulgarise ou transforme une expertise en contenu accessible.",
-    "bestForEn": "Créateur qui explique, enseigne, vulgarise ou transforme une expertise en contenu accessible.",
+    "bestForEn": "A creator who explains, teaches, and turns expertise into content people can follow.",
     "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
     "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
     "editorial": "Excellent profil Tooltrim : forte valeur sur outils de pédagogie, production, visuels et distribution.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
@@ -26028,19 +26028,19 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "script pédagogique",
-        "titleEn": "script pédagogique",
+        "titleEn": "teaching script",
         "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
         "detailEn": "Production time saved should go back into concept, hook, and distribution."
       },
       {
         "title": "schémas",
-        "titleEn": "schémas",
+        "titleEn": "diagrams",
         "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
         "detailEn": "Paid tools should help publish, measure, or sell better."
       },
       {
         "title": "vidéos",
-        "titleEn": "vidéos",
+        "titleEn": "videos",
         "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
         "detailEn": "The stack should keep files, rights, and approvals easy to find."
       }
@@ -26112,17 +26112,17 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Design rapide : utile pour sécuriser script pédagogique dans le workflow contenu.",
-        "reasonEn": "Useful to secure script pédagogique in the content workflow."
+        "reasonEn": "Useful to secure teaching script in the content workflow."
       },
       {
         "role": "Design avancé",
-        "roleEn": "Design avancé",
+        "roleEn": "Advanced design",
         "slug": "figma",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Design avancé : utile pour sécuriser schémas dans le workflow contenu.",
-        "reasonEn": "Useful to secure schémas in the content workflow."
+        "reasonEn": "Useful to secure diagrams in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -26132,7 +26132,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Outil métier : utile pour sécuriser vidéos dans le workflow contenu.",
-        "reasonEn": "Useful to secure vidéos in the content workflow."
+        "reasonEn": "Useful to secure videos in the content workflow."
       },
       {
         "role": "Montage texte/audio",
@@ -26152,7 +26152,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Pilotage YouTube : utile pour sécuriser script pédagogique dans le workflow contenu.",
-        "reasonEn": "Useful to secure script pédagogique in the content workflow."
+        "reasonEn": "Useful to secure teaching script in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -26162,7 +26162,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser schémas dans le workflow contenu.",
-        "reasonEn": "Useful to secure schémas in the content workflow."
+        "reasonEn": "Useful to secure diagrams in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -26172,7 +26172,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser vidéos dans le workflow contenu.",
-        "reasonEn": "Useful to secure vidéos in the content workflow."
+        "reasonEn": "Useful to secure videos in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -26192,7 +26192,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser script pédagogique dans le workflow contenu.",
-        "reasonEn": "Useful to secure script pédagogique in the content workflow."
+        "reasonEn": "Useful to secure teaching script in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -26202,7 +26202,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser schémas dans le workflow contenu.",
-        "reasonEn": "Useful to secure schémas in the content workflow."
+        "reasonEn": "Useful to secure diagrams in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -26212,7 +26212,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser vidéos dans le workflow contenu.",
-        "reasonEn": "Useful to secure vidéos in the content workflow."
+        "reasonEn": "Useful to secure videos in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -26232,31 +26232,31 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser script pédagogique dans le workflow contenu.",
-        "reasonEn": "Useful to secure script pédagogique in the content workflow."
+        "reasonEn": "Useful to secure teaching script in the content workflow."
       },
       {
         "role": "Idées et scripts",
-        "roleEn": "Idées et scripts",
+        "roleEn": "Ideas and scripts",
         "slug": "chatgpt",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Idées et scripts : utile pour sécuriser schémas dans le workflow contenu.",
-        "reasonEn": "Useful to secure schémas in the content workflow."
+        "reasonEn": "Useful to secure diagrams in the content workflow."
       },
       {
         "role": "Rédaction longue",
-        "roleEn": "Rédaction longue",
+        "roleEn": "Long-form writing",
         "slug": "claude",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Rédaction longue : utile pour sécuriser vidéos dans le workflow contenu.",
-        "reasonEn": "Useful to secure vidéos in the content workflow."
+        "reasonEn": "Useful to secure videos in the content workflow."
       },
       {
         "role": "Recherche sourcée",
-        "roleEn": "Recherche sourcée",
+        "roleEn": "Sourced research",
         "slug": "perplexity",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -26272,7 +26272,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser script pédagogique dans le workflow contenu.",
-        "reasonEn": "Useful to secure script pédagogique in the content workflow."
+        "reasonEn": "Useful to secure teaching script in the content workflow."
       }
     ]
   },
@@ -26295,7 +26295,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
     "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
     "bestFor": "Créateur qui vend formations, templates, coaching, communautés ou produits numériques.",
-    "bestForEn": "Créateur qui vend formations, templates, coaching, communautés ou produits numériques.",
+    "bestForEn": "A creator selling courses, templates, coaching, communities or digital products.",
     "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
     "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
     "editorial": "Stack très monétisable : outils chers, vraie intention d’achat, besoin de comparaison.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
@@ -26321,7 +26321,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "vidéo",
-        "titleEn": "vidéo",
+        "titleEn": "video",
         "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
         "detailEn": "The stack should keep files, rights, and approvals easy to find."
       }
@@ -26413,7 +26413,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Outil métier : utile pour sécuriser vidéo dans le workflow contenu.",
-        "reasonEn": "Useful to secure vidéo in the content workflow."
+        "reasonEn": "Useful to secure video in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -26453,7 +26453,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Email marketing : utile pour sécuriser vidéo dans le workflow contenu.",
-        "reasonEn": "Useful to secure vidéo in the content workflow."
+        "reasonEn": "Useful to secure video in the content workflow."
       },
       {
         "role": "Cockpit contenu",
@@ -26493,7 +26493,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser vidéo dans le workflow contenu.",
-        "reasonEn": "Useful to secure vidéo in the content workflow."
+        "reasonEn": "Useful to secure video in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -26533,11 +26533,11 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser vidéo dans le workflow contenu.",
-        "reasonEn": "Useful to secure vidéo in the content workflow."
+        "reasonEn": "Useful to secure video in the content workflow."
       },
       {
         "role": "Idées et scripts",
-        "roleEn": "Idées et scripts",
+        "roleEn": "Ideas and scripts",
         "slug": "chatgpt",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -26547,7 +26547,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Rédaction longue",
-        "roleEn": "Rédaction longue",
+        "roleEn": "Long-form writing",
         "slug": "claude",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -26576,7 +26576,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
     "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
     "bestFor": "Créateur qui produit du contenu pour vendre produits, boutiques, ads ou live shopping.",
-    "bestForEn": "Créateur qui produit du contenu pour vendre produits, boutiques, ads ou live shopping.",
+    "bestForEn": "A creator producing content to sell products, stores, ads or live shopping.",
     "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
     "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
     "editorial": "Profil orienté performance et ROI, intéressant pour affiliation outils.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
@@ -26596,7 +26596,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "vidéos UGC",
-        "titleEn": "vidéos UGC",
+        "titleEn": "UGC videos",
         "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
         "detailEn": "Paid tools should help publish, measure, or sell better."
       },
@@ -26684,7 +26684,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Montage vertical : utile pour sécuriser vidéos ugc dans le workflow contenu.",
-        "reasonEn": "Useful to secure vidéos ugc in the content workflow."
+        "reasonEn": "Useful to secure uGC videos in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -26724,7 +26724,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Analytics : utile pour sécuriser vidéos ugc dans le workflow contenu.",
-        "reasonEn": "Useful to secure vidéos ugc in the content workflow."
+        "reasonEn": "Useful to secure uGC videos in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -26764,7 +26764,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser vidéos ugc dans le workflow contenu.",
-        "reasonEn": "Useful to secure vidéos ugc in the content workflow."
+        "reasonEn": "Useful to secure uGC videos in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -26798,17 +26798,17 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Idées et scripts",
-        "roleEn": "Idées et scripts",
+        "roleEn": "Ideas and scripts",
         "slug": "chatgpt",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Idées et scripts : utile pour sécuriser vidéos ugc dans le workflow contenu.",
-        "reasonEn": "Useful to secure vidéos ugc in the content workflow."
+        "reasonEn": "Useful to secure uGC videos in the content workflow."
       },
       {
         "role": "Rédaction longue",
-        "roleEn": "Rédaction longue",
+        "roleEn": "Long-form writing",
         "slug": "claude",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -26857,7 +26857,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
     "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
     "bestFor": "Créateur qui produit contenus comparatifs, guides, SEO, vidéos ou newsletters affiliées.",
-    "bestForEn": "Créateur qui produit contenus comparatifs, guides, SEO, vidéos ou newsletters affiliées.",
+    "bestForEn": "A creator producing comparisons, guides, SEO content, videos or affiliate newsletters.",
     "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
     "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
     "editorial": "Très proche de Tooltrim : stacks, comparatifs, affiliation, SEO et conversion.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
@@ -26865,7 +26865,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Recherche mots-clés",
-        "titleEn": "Recherche mots-clés",
+        "titleEn": "Keyword research",
         "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
         "detailEn": "The workflow should start from the real format, not a trendy tool."
       },
@@ -26945,7 +26945,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "SEO : utile pour sécuriser recherche mots-clés dans le workflow contenu.",
-        "reasonEn": "Useful to secure recherche mots-clés in the content workflow."
+        "reasonEn": "Useful to secure keyword research in the content workflow."
       },
       {
         "role": "SEO",
@@ -26985,7 +26985,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Site / landing : utile pour sécuriser recherche mots-clés dans le workflow contenu.",
-        "reasonEn": "Useful to secure recherche mots-clés in the content workflow."
+        "reasonEn": "Useful to secure keyword research in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -27025,7 +27025,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser recherche mots-clés dans le workflow contenu.",
-        "reasonEn": "Useful to secure recherche mots-clés in the content workflow."
+        "reasonEn": "Useful to secure keyword research in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -27065,11 +27065,11 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser recherche mots-clés dans le workflow contenu.",
-        "reasonEn": "Useful to secure recherche mots-clés in the content workflow."
+        "reasonEn": "Useful to secure keyword research in the content workflow."
       },
       {
         "role": "Idées et scripts",
-        "roleEn": "Idées et scripts",
+        "roleEn": "Ideas and scripts",
         "slug": "chatgpt",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -27079,7 +27079,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Rédaction longue",
-        "roleEn": "Rédaction longue",
+        "roleEn": "Long-form writing",
         "slug": "claude",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -27089,7 +27089,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Recherche sourcée",
-        "roleEn": "Recherche sourcée",
+        "roleEn": "Sourced research",
         "slug": "perplexity",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -27105,7 +27105,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser recherche mots-clés dans le workflow contenu.",
-        "reasonEn": "Useful to secure recherche mots-clés in the content workflow."
+        "reasonEn": "Useful to secure keyword research in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -27138,7 +27138,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
     "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
     "bestFor": "Créateur de contenus longs optimisés Google, guides, comparatifs, dossiers et contenus evergreen.",
-    "bestForEn": "Créateur de contenus longs optimisés Google, guides, comparatifs, dossiers et contenus evergreen.",
+    "bestForEn": "A creator of long-form content built for Google: guides, comparisons, dossiers and evergreen material.",
     "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
     "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
     "editorial": "Intéressant pour Tooltrim car la stack est technique, durable et directement liée à l’acquisition.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
@@ -27158,7 +27158,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "rédaction",
-        "titleEn": "rédaction",
+        "titleEn": "writing",
         "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
         "detailEn": "Paid tools should help publish, measure, or sell better."
       },
@@ -27246,7 +27246,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "SEO : utile pour sécuriser rédaction dans le workflow contenu.",
-        "reasonEn": "Useful to secure rédaction in the content workflow."
+        "reasonEn": "Useful to secure writing in the content workflow."
       },
       {
         "role": "SEO",
@@ -27286,7 +27286,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser rédaction dans le workflow contenu.",
-        "reasonEn": "Useful to secure rédaction in the content workflow."
+        "reasonEn": "Useful to secure writing in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -27326,7 +27326,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser rédaction dans le workflow contenu.",
-        "reasonEn": "Useful to secure rédaction in the content workflow."
+        "reasonEn": "Useful to secure writing in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -27360,17 +27360,17 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Idées et scripts",
-        "roleEn": "Idées et scripts",
+        "roleEn": "Ideas and scripts",
         "slug": "chatgpt",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Idées et scripts : utile pour sécuriser rédaction dans le workflow contenu.",
-        "reasonEn": "Useful to secure rédaction in the content workflow."
+        "reasonEn": "Useful to secure writing in the content workflow."
       },
       {
         "role": "Rédaction longue",
-        "roleEn": "Rédaction longue",
+        "roleEn": "Long-form writing",
         "slug": "claude",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -27380,7 +27380,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Recherche sourcée",
-        "roleEn": "Recherche sourcée",
+        "roleEn": "Sourced research",
         "slug": "perplexity",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -27419,7 +27419,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
     "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
     "bestFor": "Créateur en direct sur Twitch, YouTube Live, TikTok Live, LinkedIn Live ou événements virtuels.",
-    "bestForEn": "Créateur en direct sur Twitch, YouTube Live, TikTok Live, LinkedIn Live ou événements virtuels.",
+    "bestForEn": "A creator going live on Twitch, YouTube Live, TikTok Live, LinkedIn Live or virtual events.",
     "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
     "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
     "editorial": "Stack riche en matériel, logiciels et plugins ; très utile pour guides pratiques.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
@@ -27439,13 +27439,13 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "son",
-        "titleEn": "son",
+        "titleEn": "sound",
         "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
         "detailEn": "Paid tools should help publish, measure, or sell better."
       },
       {
         "title": "modération",
-        "titleEn": "modération",
+        "titleEn": "moderation",
         "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
         "detailEn": "The stack should keep files, rights, and approvals easy to find."
       }
@@ -27527,7 +27527,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Outil métier : utile pour sécuriser son dans le workflow contenu.",
-        "reasonEn": "Useful to secure son in the content workflow."
+        "reasonEn": "Useful to secure sound in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -27537,7 +27537,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Outil métier : utile pour sécuriser modération dans le workflow contenu.",
-        "reasonEn": "Useful to secure modération in the content workflow."
+        "reasonEn": "Useful to secure moderation in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -27551,7 +27551,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Communauté",
-        "roleEn": "Communauté",
+        "roleEn": "Community",
         "slug": "discord",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
@@ -27567,7 +27567,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser son dans le workflow contenu.",
-        "reasonEn": "Useful to secure son in the content workflow."
+        "reasonEn": "Useful to secure sound in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -27577,7 +27577,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser modération dans le workflow contenu.",
-        "reasonEn": "Useful to secure modération in the content workflow."
+        "reasonEn": "Useful to secure moderation in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -27607,7 +27607,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser son dans le workflow contenu.",
-        "reasonEn": "Useful to secure son in the content workflow."
+        "reasonEn": "Useful to secure sound in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -27617,11 +27617,11 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser modération dans le workflow contenu.",
-        "reasonEn": "Useful to secure modération in the content workflow."
+        "reasonEn": "Useful to secure moderation in the content workflow."
       },
       {
         "role": "Idées et scripts",
-        "roleEn": "Idées et scripts",
+        "roleEn": "Ideas and scripts",
         "slug": "chatgpt",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -27631,7 +27631,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Repurposing vidéo",
-        "roleEn": "Repurposing vidéo",
+        "roleEn": "Video repurposing",
         "slug": "opusclip",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -27647,7 +27647,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Sous-titres : utile pour sécuriser son dans le workflow contenu.",
-        "reasonEn": "Useful to secure son in the content workflow."
+        "reasonEn": "Useful to secure sound in the content workflow."
       },
       {
         "role": "Voix IA",
@@ -27657,11 +27657,11 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Voix IA : utile pour sécuriser modération dans le workflow contenu.",
-        "reasonEn": "Useful to secure modération in the content workflow."
+        "reasonEn": "Useful to secure moderation in the content workflow."
       },
       {
         "role": "Vidéo IA",
-        "roleEn": "Vidéo IA",
+        "roleEn": "AI video",
         "slug": "runway",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -27690,7 +27690,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
     "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
     "bestFor": "Créateur jeux vidéo : streaming, tests, highlights, tutoriels, communauté.",
-    "bestForEn": "Créateur jeux vidéo : streaming, tests, highlights, tutoriels, communauté.",
+    "bestForEn": "A gaming creator: streaming, reviews, highlights, tutorials and community.",
     "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
     "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
     "editorial": "Audience massive, stack spécifique et forte demande d’optimisation production.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
@@ -27782,7 +27782,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Communauté",
-        "roleEn": "Communauté",
+        "roleEn": "Community",
         "slug": "discord",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -27812,7 +27812,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Montage / étalonnage",
-        "roleEn": "Montage / étalonnage",
+        "roleEn": "Editing and colour grading",
         "slug": "davinci-resolve",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -27902,7 +27902,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Idées et scripts",
-        "roleEn": "Idées et scripts",
+        "roleEn": "Ideas and scripts",
         "slug": "chatgpt",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -27912,7 +27912,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Repurposing vidéo",
-        "roleEn": "Repurposing vidéo",
+        "roleEn": "Video repurposing",
         "slug": "opusclip",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -27971,7 +27971,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
     "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
     "bestFor": "Créateur orienté voyage, photo, récit visuel, blogs, reels et collaborations tourisme.",
-    "bestForEn": "Créateur orienté voyage, photo, récit visuel, blogs, reels et collaborations tourisme.",
+    "bestForEn": "A creator focused on travel, photography, visual storytelling, blogs, reels and tourism collaborations.",
     "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
     "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
     "editorial": "Profil très visuel avec besoins matériels et logiciels, mais parfois moins SaaS B2B.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
@@ -27985,7 +27985,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "vidéo mobile",
-        "titleEn": "vidéo mobile",
+        "titleEn": "mobile video",
         "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
         "detailEn": "Production time saved should go back into concept, hook, and distribution."
       },
@@ -28063,13 +28063,13 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Retouche avancée",
-        "roleEn": "Retouche avancée",
+        "roleEn": "Advanced retouching",
         "slug": "adobe-photoshop",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Retouche avancée : utile pour sécuriser vidéo mobile dans le workflow contenu.",
-        "reasonEn": "Useful to secure vidéo mobile in the content workflow."
+        "reasonEn": "Useful to secure mobile video in the content workflow."
       },
       {
         "role": "Montage vertical",
@@ -28109,7 +28109,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Cockpit contenu : utile pour sécuriser vidéo mobile dans le workflow contenu.",
-        "reasonEn": "Useful to secure vidéo mobile in the content workflow."
+        "reasonEn": "Useful to secure mobile video in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -28149,7 +28149,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser vidéo mobile dans le workflow contenu.",
-        "reasonEn": "Useful to secure vidéo mobile in the content workflow."
+        "reasonEn": "Useful to secure mobile video in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -28189,11 +28189,11 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser vidéo mobile dans le workflow contenu.",
-        "reasonEn": "Useful to secure vidéo mobile in the content workflow."
+        "reasonEn": "Useful to secure mobile video in the content workflow."
       },
       {
         "role": "Idées et scripts",
-        "roleEn": "Idées et scripts",
+        "roleEn": "Ideas and scripts",
         "slug": "chatgpt",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -28229,7 +28229,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Image IA : utile pour sécuriser vidéo mobile dans le workflow contenu.",
-        "reasonEn": "Useful to secure vidéo mobile in the content workflow."
+        "reasonEn": "Useful to secure mobile video in the content workflow."
       }
     ]
   },
@@ -28252,7 +28252,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
     "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
     "bestFor": "Créateur recettes, vidéos cuisine, photos, shorts, livres numériques, newsletters.",
-    "bestForEn": "Créateur recettes, vidéos cuisine, photos, shorts, livres numériques, newsletters.",
+    "bestForEn": "A creator of recipes, cooking videos, photography, shorts, ebooks and newsletters.",
     "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
     "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
     "editorial": "Très bon angle de fiche : tournage, lumière, montage, fiches recettes, monétisation.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
@@ -28454,7 +28454,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Idées et scripts",
-        "roleEn": "Idées et scripts",
+        "roleEn": "Ideas and scripts",
         "slug": "chatgpt",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -28523,7 +28523,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
     "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
     "bestFor": "Créateur looks, tutos, shopping, routines, collaborations, affiliation.",
-    "bestForEn": "Créateur looks, tutos, shopping, routines, collaborations, affiliation.",
+    "bestForEn": "A creator of looks, tutorials, shopping content, routines, collaborations and affiliate work.",
     "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
     "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
     "editorial": "Bonne niche, mais attention à l’angle : authenticité et transparence IA deviennent importantes.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
@@ -28735,7 +28735,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Idées et scripts",
-        "roleEn": "Idées et scripts",
+        "roleEn": "Ideas and scripts",
         "slug": "chatgpt",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -28794,7 +28794,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
     "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
     "bestFor": "Créateur d’analyses, threads, vidéos, newsletters, infographies, contenus éducatifs.",
-    "bestForEn": "Créateur d’analyses, threads, vidéos, newsletters, infographies, contenus éducatifs.",
+    "bestForEn": "A creator of analysis, threads, videos, newsletters, infographics and educational content.",
     "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
     "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
     "editorial": "Profil à fort revenu potentiel, avec besoin de fiabilité, sources et organisation.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
@@ -28916,7 +28916,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Design avancé",
-        "roleEn": "Design avancé",
+        "roleEn": "Advanced design",
         "slug": "figma",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -28996,7 +28996,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Idées et scripts",
-        "roleEn": "Idées et scripts",
+        "roleEn": "Ideas and scripts",
         "slug": "chatgpt",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -29006,7 +29006,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Rédaction longue",
-        "roleEn": "Rédaction longue",
+        "roleEn": "Long-form writing",
         "slug": "claude",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -29016,7 +29016,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Recherche sourcée",
-        "roleEn": "Recherche sourcée",
+        "roleEn": "Sourced research",
         "slug": "perplexity",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -29055,7 +29055,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
     "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
     "bestFor": "Créateur de programmes, vidéos, newsletters, challenges, coaching et communautés.",
-    "bestForEn": "Créateur de programmes, vidéos, newsletters, challenges, coaching et communautés.",
+    "bestForEn": "A creator of programmes, videos, newsletters, challenges, coaching and communities.",
     "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
     "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
     "editorial": "Stack utile, mais nécessite un cadre responsable et prudent sur les conseils santé.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
@@ -29069,7 +29069,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "vidéos",
-        "titleEn": "vidéos",
+        "titleEn": "videos",
         "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
         "detailEn": "Production time saved should go back into concept, hook, and distribution."
       },
@@ -29153,7 +29153,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Montage vertical : utile pour sécuriser vidéos dans le workflow contenu.",
-        "reasonEn": "Useful to secure vidéos in the content workflow."
+        "reasonEn": "Useful to secure videos in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -29193,7 +29193,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser vidéos dans le workflow contenu.",
-        "reasonEn": "Useful to secure vidéos in the content workflow."
+        "reasonEn": "Useful to secure videos in the content workflow."
       },
       {
         "role": "Paiement",
@@ -29233,7 +29233,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser vidéos dans le workflow contenu.",
-        "reasonEn": "Useful to secure vidéos in the content workflow."
+        "reasonEn": "Useful to secure videos in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -29267,17 +29267,17 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Idées et scripts",
-        "roleEn": "Idées et scripts",
+        "roleEn": "Ideas and scripts",
         "slug": "chatgpt",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Idées et scripts : utile pour sécuriser vidéos dans le workflow contenu.",
-        "reasonEn": "Useful to secure vidéos in the content workflow."
+        "reasonEn": "Useful to secure videos in the content workflow."
       },
       {
         "role": "Rédaction longue",
-        "roleEn": "Rédaction longue",
+        "roleEn": "Long-form writing",
         "slug": "claude",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -29326,7 +29326,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
     "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
     "bestFor": "Fondateur ou marketer qui crée du contenu pour vendre un SaaS, construire une audience et générer des leads.",
-    "bestForEn": "Fondateur ou marketer qui crée du contenu pour vendre un SaaS, construire une audience et générer des leads.",
+    "bestForEn": "A founder or marketer creating content to sell a SaaS product, build an audience and generate leads.",
     "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
     "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
     "editorial": "Profil ultra Tooltrim : outils, growth, conversion, stack commerciale et contenu.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
@@ -29346,13 +29346,13 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "vidéos",
-        "titleEn": "vidéos",
+        "titleEn": "videos",
         "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
         "detailEn": "Paid tools should help publish, measure, or sell better."
       },
       {
         "title": "démos",
-        "titleEn": "démos",
+        "titleEn": "demos",
         "detail": "La stack doit garder les fichiers, droits et validations faciles à retrouver.",
         "detailEn": "The stack should keep files, rights, and approvals easy to find."
       }
@@ -29418,7 +29418,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Design avancé",
-        "roleEn": "Design avancé",
+        "roleEn": "Advanced design",
         "slug": "figma",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -29434,7 +29434,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Outil métier : utile pour sécuriser vidéos dans le workflow contenu.",
-        "reasonEn": "Useful to secure vidéos in the content workflow."
+        "reasonEn": "Useful to secure videos in the content workflow."
       },
       {
         "role": "Montage texte/audio",
@@ -29444,7 +29444,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Montage texte/audio : utile pour sécuriser démos dans le workflow contenu.",
-        "reasonEn": "Useful to secure démos in the content workflow."
+        "reasonEn": "Useful to secure demos in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -29474,7 +29474,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Newsletter : utile pour sécuriser vidéos dans le workflow contenu.",
-        "reasonEn": "Useful to secure vidéos in the content workflow."
+        "reasonEn": "Useful to secure videos in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -29484,7 +29484,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser démos dans le workflow contenu.",
-        "reasonEn": "Useful to secure démos in the content workflow."
+        "reasonEn": "Useful to secure demos in the content workflow."
       },
       {
         "role": "Pilotage YouTube",
@@ -29514,7 +29514,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser vidéos dans le workflow contenu.",
-        "reasonEn": "Useful to secure vidéos in the content workflow."
+        "reasonEn": "Useful to secure videos in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -29524,7 +29524,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser démos dans le workflow contenu.",
-        "reasonEn": "Useful to secure démos in the content workflow."
+        "reasonEn": "Useful to secure demos in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -29554,7 +29554,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser vidéos dans le workflow contenu.",
-        "reasonEn": "Useful to secure vidéos in the content workflow."
+        "reasonEn": "Useful to secure videos in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -29564,11 +29564,11 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser démos dans le workflow contenu.",
-        "reasonEn": "Useful to secure démos in the content workflow."
+        "reasonEn": "Useful to secure demos in the content workflow."
       },
       {
         "role": "Idées et scripts",
-        "roleEn": "Idées et scripts",
+        "roleEn": "Ideas and scripts",
         "slug": "chatgpt",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -29578,7 +29578,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Rédaction longue",
-        "roleEn": "Rédaction longue",
+        "roleEn": "Long-form writing",
         "slug": "claude",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -29607,7 +29607,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
     "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
     "bestFor": "Créateur qui anime des cohortes, ateliers, masterclasses ou communautés payantes.",
-    "bestForEn": "Créateur qui anime des cohortes, ateliers, masterclasses ou communautés payantes.",
+    "bestForEn": "A creator running cohorts, workshops, masterclasses or paid communities.",
     "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
     "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
     "editorial": "Très intéressant car la stack va de la production au business model.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
@@ -29839,7 +29839,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Idées et scripts",
-        "roleEn": "Idées et scripts",
+        "roleEn": "Ideas and scripts",
         "slug": "chatgpt",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -29849,7 +29849,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Rédaction longue",
-        "roleEn": "Rédaction longue",
+        "roleEn": "Long-form writing",
         "slug": "claude",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -29888,7 +29888,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
     "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
     "bestFor": "Créateur qui vend templates Notion, Canva, Figma, prompts, presets, ebooks, fichiers numériques.",
-    "bestForEn": "Créateur qui vend templates Notion, Canva, Figma, prompts, presets, ebooks, fichiers numériques.",
+    "bestForEn": "A creator selling Notion, Canva and Figma templates, prompts, presets, ebooks and digital files.",
     "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
     "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
     "editorial": "Un des meilleurs profils pour Tooltrim : faible friction, forte intention d’achat, stack no-code/creator.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
@@ -29896,7 +29896,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Création produit",
-        "titleEn": "Création produit",
+        "titleEn": "Product creation",
         "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
         "detailEn": "The workflow should start from the real format, not a trendy tool."
       },
@@ -29976,11 +29976,11 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Cockpit contenu : utile pour sécuriser création produit dans le workflow contenu.",
-        "reasonEn": "Useful to secure création produit in the content workflow."
+        "reasonEn": "Useful to secure product creation in the content workflow."
       },
       {
         "role": "Design avancé",
-        "roleEn": "Design avancé",
+        "roleEn": "Advanced design",
         "slug": "figma",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -30016,7 +30016,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Outil métier : utile pour sécuriser création produit dans le workflow contenu.",
-        "reasonEn": "Useful to secure création produit in the content workflow."
+        "reasonEn": "Useful to secure product creation in the content workflow."
       },
       {
         "role": "Boutique",
@@ -30056,7 +30056,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser création produit dans le workflow contenu.",
-        "reasonEn": "Useful to secure création produit in the content workflow."
+        "reasonEn": "Useful to secure product creation in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -30096,7 +30096,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser création produit dans le workflow contenu.",
-        "reasonEn": "Useful to secure création produit in the content workflow."
+        "reasonEn": "Useful to secure product creation in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -30110,7 +30110,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Idées et scripts",
-        "roleEn": "Idées et scripts",
+        "roleEn": "Ideas and scripts",
         "slug": "chatgpt",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -30120,7 +30120,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Rédaction longue",
-        "roleEn": "Rédaction longue",
+        "roleEn": "Long-form writing",
         "slug": "claude",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -30136,7 +30136,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser création produit dans le workflow contenu.",
-        "reasonEn": "Useful to secure création produit in the content workflow."
+        "reasonEn": "Useful to secure product creation in the content workflow."
       },
       {
         "role": "Image IA",
@@ -30169,7 +30169,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
     "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
     "bestFor": "Créateur spécialisé dans contenus générés ou augmentés par IA : images, vidéos, avatars, voix, automation.",
-    "bestForEn": "Créateur spécialisé dans contenus générés ou augmentés par IA : images, vidéos, avatars, voix, automation.",
+    "bestForEn": "A creator specialising in AI-generated or AI-assisted content: images, video, avatars, voice and automation.",
     "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
     "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
     "editorial": "Niche en forte croissance, mais il faut insister sur authenticité, droits et transparence.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
@@ -30183,7 +30183,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "génération image/vidéo",
-        "titleEn": "génération image/vidéo",
+        "titleEn": "image and video generation",
         "detail": "Le temps gagné en production doit être réinvesti dans le concept, le hook et la distribution.",
         "detailEn": "Production time saved should go back into concept, hook, and distribution."
       },
@@ -30267,7 +30267,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Outil métier : utile pour sécuriser génération image/vidéo dans le workflow contenu.",
-        "reasonEn": "Useful to secure génération image/vidéo in the content workflow."
+        "reasonEn": "Useful to secure image and video generation in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -30281,7 +30281,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Vidéo IA",
-        "roleEn": "Vidéo IA",
+        "roleEn": "AI video",
         "slug": "runway",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -30307,7 +30307,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser génération image/vidéo dans le workflow contenu.",
-        "reasonEn": "Useful to secure génération image/vidéo in the content workflow."
+        "reasonEn": "Useful to secure image and video generation in the content workflow."
       },
       {
         "role": "Voix IA",
@@ -30347,7 +30347,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser génération image/vidéo dans le workflow contenu.",
-        "reasonEn": "Useful to secure génération image/vidéo in the content workflow."
+        "reasonEn": "Useful to secure image and video generation in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -30387,11 +30387,11 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser génération image/vidéo dans le workflow contenu.",
-        "reasonEn": "Useful to secure génération image/vidéo in the content workflow."
+        "reasonEn": "Useful to secure image and video generation in the content workflow."
       },
       {
         "role": "Idées et scripts",
-        "roleEn": "Idées et scripts",
+        "roleEn": "Ideas and scripts",
         "slug": "chatgpt",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -30401,7 +30401,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Rédaction longue",
-        "roleEn": "Rédaction longue",
+        "roleEn": "Long-form writing",
         "slug": "claude",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -30411,7 +30411,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Recherche sourcée",
-        "roleEn": "Recherche sourcée",
+        "roleEn": "Sourced research",
         "slug": "perplexity",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -30440,7 +30440,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
     "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
     "bestFor": "Créateur long format, investigation, récit, sources, interviews, archives.",
-    "bestForEn": "Créateur long format, investigation, récit, sources, interviews, archives.",
+    "bestForEn": "A long-form creator: investigation, storytelling, sourcing, interviews and archives.",
     "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
     "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
     "editorial": "Profil premium : gros besoin d’organisation, recherche et traçabilité des sources.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
@@ -30572,7 +30572,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Montage / étalonnage",
-        "roleEn": "Montage / étalonnage",
+        "roleEn": "Editing and colour grading",
         "slug": "davinci-resolve",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
@@ -30662,7 +30662,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Idées et scripts",
-        "roleEn": "Idées et scripts",
+        "roleEn": "Ideas and scripts",
         "slug": "chatgpt",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -30672,7 +30672,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Rédaction longue",
-        "roleEn": "Rédaction longue",
+        "roleEn": "Long-form writing",
         "slug": "claude",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -30682,7 +30682,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Recherche sourcée",
-        "roleEn": "Recherche sourcée",
+        "roleEn": "Sourced research",
         "slug": "perplexity",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -30721,7 +30721,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
     "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
     "bestFor": "Créateur réactif qui produit formats viraux, memes, remixes, posts culturels.",
-    "bestForEn": "Créateur réactif qui produit formats viraux, memes, remixes, posts culturels.",
+    "bestForEn": "A fast-reacting creator producing viral formats, memes, remixes and cultural posts.",
     "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
     "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
     "editorial": "Pertinent mais moins premium : valeur surtout sur rapidité, veille et publication.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
@@ -30823,7 +30823,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Retouche avancée",
-        "roleEn": "Retouche avancée",
+        "roleEn": "Advanced retouching",
         "slug": "adobe-photoshop",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -30863,7 +30863,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Communauté",
-        "roleEn": "Communauté",
+        "roleEn": "Community",
         "slug": "discord",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
@@ -30933,7 +30933,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Idées et scripts",
-        "roleEn": "Idées et scripts",
+        "roleEn": "Ideas and scripts",
         "slug": "chatgpt",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -30992,7 +30992,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
     "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
     "bestFor": "Créateur qui couvre événements, conférences, salons, festivals, lancements en temps réel.",
-    "bestForEn": "Créateur qui couvre événements, conférences, salons, festivals, lancements en temps réel.",
+    "bestForEn": "A creator covering events, conferences, trade shows, festivals and launches in real time.",
     "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
     "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
     "editorial": "Très utile pour agences, event designers, community managers et créateurs terrain.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
@@ -31204,7 +31204,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Idées et scripts",
-        "roleEn": "Idées et scripts",
+        "roleEn": "Ideas and scripts",
         "slug": "chatgpt",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -31263,7 +31263,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
     "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
     "bestFor": "Créateur qui produit contenus pour entreprises : interviews, posts, reels, vidéos internes, employer branding.",
-    "bestForEn": "Créateur qui produit contenus pour entreprises : interviews, posts, reels, vidéos internes, employer branding.",
+    "bestForEn": "A creator producing content for companies: interviews, posts, reels, internal video and employer branding.",
     "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
     "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
     "editorial": "Profil très monétisable : vraie demande B2B et stack complète de production client.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
@@ -31405,7 +31405,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Design avancé",
-        "roleEn": "Design avancé",
+        "roleEn": "Advanced design",
         "slug": "figma",
         "decision": "conditional",
         "tip": "À activer selon le format et la monétisation.",
@@ -31485,7 +31485,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Idées et scripts",
-        "roleEn": "Idées et scripts",
+        "roleEn": "Ideas and scripts",
         "slug": "chatgpt",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -31495,7 +31495,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Rédaction longue",
-        "roleEn": "Rédaction longue",
+        "roleEn": "Long-form writing",
         "slug": "claude",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -31515,7 +31515,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Vidéo IA",
-        "roleEn": "Vidéo IA",
+        "roleEn": "AI video",
         "slug": "runway",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -31544,7 +31544,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
     "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
     "bestFor": "Créateur ou assistant qui transforme un contenu long en posts, shorts, newsletters, carrousels, scripts.",
-    "bestForEn": "Créateur ou assistant qui transforme un contenu long en posts, shorts, newsletters, carrousels, scripts.",
+    "bestForEn": "A creator or assistant turning one long piece into posts, shorts, newsletters, carousels and scripts.",
     "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
     "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
     "editorial": "Très bon angle Tooltrim : le recyclage de contenu est un besoin transversal et très concret.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
@@ -31552,7 +31552,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Découpe",
-        "titleEn": "Découpe",
+        "titleEn": "Cutting",
         "detail": "Le workflow doit partir du format réel, pas d’un outil à la mode.",
         "detailEn": "The workflow should start from the real format, not a trendy tool."
       },
@@ -31564,7 +31564,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "réécriture",
-        "titleEn": "réécriture",
+        "titleEn": "rewriting",
         "detail": "Les outils payants doivent aider à publier, mesurer ou vendre mieux.",
         "detailEn": "Paid tools should help publish, measure, or sell better."
       },
@@ -31632,11 +31632,11 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Montage texte/audio : utile pour sécuriser découpe dans le workflow contenu.",
-        "reasonEn": "Useful to secure découpe in the content workflow."
+        "reasonEn": "Useful to secure cutting in the content workflow."
       },
       {
         "role": "Repurposing vidéo",
-        "roleEn": "Repurposing vidéo",
+        "roleEn": "Video repurposing",
         "slug": "opusclip",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -31652,7 +31652,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Outil métier : utile pour sécuriser réécriture dans le workflow contenu.",
-        "reasonEn": "Useful to secure réécriture in the content workflow."
+        "reasonEn": "Useful to secure rewriting in the content workflow."
       },
       {
         "role": "Cockpit contenu",
@@ -31672,7 +31672,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle de production.",
         "tipEn": "Keep it in the production core.",
         "reason": "Outil métier : utile pour sécuriser découpe dans le workflow contenu.",
-        "reasonEn": "Useful to secure découpe in the content workflow."
+        "reasonEn": "Useful to secure cutting in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -31692,7 +31692,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Planification social : utile pour sécuriser réécriture dans le workflow contenu.",
-        "reasonEn": "Useful to secure réécriture in the content workflow."
+        "reasonEn": "Useful to secure rewriting in the content workflow."
       },
       {
         "role": "Design rapide",
@@ -31712,7 +31712,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser découpe dans le workflow contenu.",
-        "reasonEn": "Useful to secure découpe in the content workflow."
+        "reasonEn": "Useful to secure cutting in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -31732,7 +31732,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser réécriture dans le workflow contenu.",
-        "reasonEn": "Useful to secure réécriture in the content workflow."
+        "reasonEn": "Useful to secure rewriting in the content workflow."
       },
       {
         "role": "Outil métier",
@@ -31752,11 +31752,11 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Outil métier : utile pour sécuriser découpe dans le workflow contenu.",
-        "reasonEn": "Useful to secure découpe in the content workflow."
+        "reasonEn": "Useful to secure cutting in the content workflow."
       },
       {
         "role": "Idées et scripts",
-        "roleEn": "Idées et scripts",
+        "roleEn": "Ideas and scripts",
         "slug": "chatgpt",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -31766,13 +31766,13 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Rédaction longue",
-        "roleEn": "Rédaction longue",
+        "roleEn": "Long-form writing",
         "slug": "claude",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
         "tipEn": "Activate based on format and monetization.",
         "reason": "Rédaction longue : utile pour sécuriser réécriture dans le workflow contenu.",
-        "reasonEn": "Useful to secure réécriture in the content workflow."
+        "reasonEn": "Useful to secure rewriting in the content workflow."
       },
       {
         "role": "Sous-titres",
@@ -31805,7 +31805,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Produire plus vite mais perdre la ligne éditoriale, la preuve d’origine ou le suivi business.",
     "riskEn": "Producing faster while losing editorial direction, provenance, or business tracking.",
     "bestFor": "Créateur qui construit une communauté sur Discord, Circle, Slack, WhatsApp, Patreon ou Substack.",
-    "bestForEn": "Créateur qui construit une communauté sur Discord, Circle, Slack, WhatsApp, Patreon ou Substack.",
+    "bestForEn": "A creator building a community on Discord, Circle, Slack, WhatsApp, Patreon or Substack.",
     "avoidIf": "Tu publies très ponctuellement sans calendrier, sans audience à développer ni enjeu de monétisation.",
     "avoidIfEn": "You publish only occasionally with no calendar, audience, or monetization goal.",
     "editorial": "La stack communauté devient centrale : contenu, relation, rétention et revenus récurrents.. La stack doit couvrir toute la chaîne : idée, production, publication, engagement, mesure, recyclage et monétisation, sans gommer la signature du créateur.",
@@ -31897,7 +31897,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Communauté",
-        "roleEn": "Communauté",
+        "roleEn": "Community",
         "slug": "discord",
         "decision": "core",
         "tip": "À garder dans le socle de production.",
@@ -32037,7 +32037,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Idées et scripts",
-        "roleEn": "Idées et scripts",
+        "roleEn": "Ideas and scripts",
         "slug": "chatgpt",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -32047,7 +32047,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Rédaction longue",
-        "roleEn": "Rédaction longue",
+        "roleEn": "Long-form writing",
         "slug": "claude",
         "decision": "challenge",
         "tip": "À activer selon le format et la monétisation.",
@@ -32086,7 +32086,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
     "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
     "bestFor": "Intervient à temps partiel auprès de dirigeants, startups, agences ou PME pour structurer les opérations.",
-    "bestForEn": "Intervient à temps partiel auprès de dirigeants, startups, agences ou PME pour structurer les opérations.",
+    "bestForEn": "Works part-time with founders, startups, agencies or small companies to structure operations.",
     "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
     "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
     "editorial": "Il doit comprendre vite, auditer, prioriser, mettre en place les bons rituels, choisir les outils, créer les dashboards et rendre l’entreprise plus pilotable.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
@@ -32094,7 +32094,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Audit opérationnel",
-        "titleEn": "Audit opérationnel",
+        "titleEn": "Operational audit",
         "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
         "detailEn": "The system should reduce back-and-forth and make the next action visible."
       },
@@ -32174,7 +32174,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Cockpit : utile pour sécuriser audit opérationnel sans alourdir le système.",
-        "reasonEn": "Useful to secure audit opérationnel without weighing down the system."
+        "reasonEn": "Useful to secure operational audit without weighing down the system."
       },
       {
         "role": "Gestion projet",
@@ -32198,7 +32198,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Base métier",
-        "roleEn": "Base métier",
+        "roleEn": "Business database",
         "slug": "airtable",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -32214,7 +32214,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Suite collaborative : utile pour sécuriser audit opérationnel sans alourdir le système.",
-        "reasonEn": "Useful to secure audit opérationnel without weighing down the system."
+        "reasonEn": "Useful to secure operational audit without weighing down the system."
       },
       {
         "role": "Communication",
@@ -32254,7 +32254,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Reporting : utile pour sécuriser audit opérationnel sans alourdir le système.",
-        "reasonEn": "Useful to secure audit opérationnel without weighing down the system."
+        "reasonEn": "Useful to secure operational audit without weighing down the system."
       },
       {
         "role": "Automatisation",
@@ -32288,13 +32288,13 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Comptabilité",
-        "roleEn": "Comptabilité",
+        "roleEn": "Accounting",
         "slug": "pennylane",
         "decision": "challenge",
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Comptabilité : utile pour sécuriser audit opérationnel sans alourdir le système.",
-        "reasonEn": "Useful to secure audit opérationnel without weighing down the system."
+        "reasonEn": "Useful to secure operational audit without weighing down the system."
       },
       {
         "role": "Compte pro",
@@ -32318,7 +32318,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "IA généraliste",
-        "roleEn": "IA généraliste",
+        "roleEn": "General-purpose AI",
         "slug": "chatgpt",
         "decision": "challenge",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -32334,7 +32334,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Analyse longue : utile pour sécuriser audit opérationnel sans alourdir le système.",
-        "reasonEn": "Useful to secure audit opérationnel without weighing down the system."
+        "reasonEn": "Useful to secure operational audit without weighing down the system."
       },
       {
         "role": "Recherche",
@@ -32367,7 +32367,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
     "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
     "bestFor": "Gère les opérations quotidiennes d’une activité ou d’une équipe.",
-    "bestForEn": "Gère les opérations quotidiennes d’une activité ou d’une équipe.",
+    "bestForEn": "Runs the day-to-day operations of a business or a team.",
     "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
     "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
     "editorial": "Il doit suivre les tâches, résoudre les blocages, documenter les process et fluidifier l’exécution.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
@@ -32519,7 +32519,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Base métier",
-        "roleEn": "Base métier",
+        "roleEn": "Business database",
         "slug": "airtable",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -32549,7 +32549,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "IA généraliste",
-        "roleEn": "IA généraliste",
+        "roleEn": "General-purpose AI",
         "slug": "chatgpt",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -32588,7 +32588,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
     "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
     "bestFor": "Connecte stratégie, data, finance, produit, sales et opérations.",
-    "bestForEn": "Connecte stratégie, data, finance, produit, sales et opérations.",
+    "bestForEn": "Connects strategy, data, finance, product, sales and operations.",
     "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
     "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
     "editorial": "Il doit transformer des objectifs business en systèmes mesurables et actionnables.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
@@ -32670,7 +32670,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Base métier",
-        "roleEn": "Base métier",
+        "roleEn": "Business database",
         "slug": "airtable",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -32700,7 +32700,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Modèle chiffré",
-        "roleEn": "Modèle chiffré",
+        "roleEn": "Costed model",
         "slug": "excel",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -32780,7 +32780,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "IA généraliste",
-        "roleEn": "IA généraliste",
+        "roleEn": "General-purpose AI",
         "slug": "chatgpt",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -32829,7 +32829,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
     "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
     "bestFor": "Aligne marketing, sales, CRM, pipeline, conversion et customer success.",
-    "bestForEn": "Aligne marketing, sales, CRM, pipeline, conversion et customer success.",
+    "bestForEn": "Aligns marketing, sales, CRM, pipeline, conversion and customer success.",
     "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
     "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
     "editorial": "Profil très Tooltrim-compatible car il a besoin de CRM, automation, attribution, reporting et process commerciaux.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
@@ -33021,7 +33021,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "IA généraliste",
-        "roleEn": "IA généraliste",
+        "roleEn": "General-purpose AI",
         "slug": "chatgpt",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -33060,7 +33060,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
     "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
     "bestFor": "Structure les process commerciaux, les séquences, le CRM et le reporting sales.",
-    "bestForEn": "Structure les process commerciaux, les séquences, le CRM et le reporting sales.",
+    "bestForEn": "Structures the sales process, sequences, CRM and sales reporting.",
     "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
     "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
     "editorial": "Il rend les commerciaux plus efficaces et donne de la visibilité au dirigeant.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
@@ -33232,7 +33232,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "IA généraliste",
-        "roleEn": "IA généraliste",
+        "roleEn": "General-purpose AI",
         "slug": "chatgpt",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -33271,7 +33271,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
     "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
     "bestFor": "Structure l’expérience client après la vente : onboarding, support, rétention, expansion.",
-    "bestForEn": "Structure l’expérience client après la vente : onboarding, support, rétention, expansion.",
+    "bestForEn": "Structures the post-sale customer experience: onboarding, support, retention and expansion.",
     "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
     "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
     "editorial": "Le besoin de stack est fort : base de connaissance, support, CRM, automatisation, scoring et reporting.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
@@ -33413,7 +33413,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Base métier",
-        "roleEn": "Base métier",
+        "roleEn": "Business database",
         "slug": "airtable",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -33453,7 +33453,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "IA généraliste",
-        "roleEn": "IA généraliste",
+        "roleEn": "General-purpose AI",
         "slug": "chatgpt",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -33492,7 +33492,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
     "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
     "bestFor": "Structure la livraison des projets dans une agence, un studio ou une société de service.",
-    "bestForEn": "Structure la livraison des projets dans une agence, un studio ou une société de service.",
+    "bestForEn": "Structures project delivery inside an agency, a studio or a services company.",
     "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
     "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
     "editorial": "Il doit fluidifier le passage de vente à production, réduire les retards et clarifier les responsabilités.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
@@ -33512,7 +33512,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "capacité",
-        "titleEn": "capacité",
+        "titleEn": "capacity",
         "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
         "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
       },
@@ -33600,7 +33600,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Gestion projet : utile pour sécuriser capacité sans alourdir le système.",
-        "reasonEn": "Useful to secure capacité without weighing down the system."
+        "reasonEn": "Useful to secure capacity without weighing down the system."
       },
       {
         "role": "Cockpit",
@@ -33640,7 +33640,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Outil métier : utile pour sécuriser capacité sans alourdir le système.",
-        "reasonEn": "Useful to secure capacité without weighing down the system."
+        "reasonEn": "Useful to secure capacity without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -33674,13 +33674,13 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "IA généraliste",
-        "roleEn": "IA généraliste",
+        "roleEn": "General-purpose AI",
         "slug": "chatgpt",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "IA généraliste : utile pour sécuriser capacité sans alourdir le système.",
-        "reasonEn": "Useful to secure capacité without weighing down the system."
+        "reasonEn": "Useful to secure capacity without weighing down the system."
       },
       {
         "role": "Analyse longue",
@@ -33723,7 +33723,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
     "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
     "bestFor": "Spécialiste des opérations pour agences créatives, studios, cabinets conseil ou production.",
-    "bestForEn": "Spécialiste des opérations pour agences créatives, studios, cabinets conseil ou production.",
+    "bestForEn": "An operations specialist for creative agencies, studios, consultancies and production companies.",
     "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
     "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
     "editorial": "Très intéressant pour Tooltrim car il mélange ressources, clients, budgets, fichiers, temps passé et validation.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
@@ -33731,7 +33731,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "Planning équipe",
-        "titleEn": "Planning équipe",
+        "titleEn": "Team scheduling",
         "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
         "detailEn": "The system should reduce back-and-forth and make the next action visible."
       },
@@ -33811,7 +33811,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Cockpit : utile pour sécuriser planning équipe sans alourdir le système.",
-        "reasonEn": "Useful to secure planning équipe without weighing down the system."
+        "reasonEn": "Useful to secure team scheduling without weighing down the system."
       },
       {
         "role": "Gestion projet",
@@ -33851,7 +33851,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Outil métier : utile pour sécuriser planning équipe sans alourdir le système.",
-        "reasonEn": "Useful to secure planning équipe without weighing down the system."
+        "reasonEn": "Useful to secure team scheduling without weighing down the system."
       },
       {
         "role": "Communication",
@@ -33885,13 +33885,13 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Comptabilité",
-        "roleEn": "Comptabilité",
+        "roleEn": "Accounting",
         "slug": "pennylane",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Comptabilité : utile pour sécuriser planning équipe sans alourdir le système.",
-        "reasonEn": "Useful to secure planning équipe without weighing down the system."
+        "reasonEn": "Useful to secure team scheduling without weighing down the system."
       },
       {
         "role": "Compte pro",
@@ -33905,7 +33905,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "IA généraliste",
-        "roleEn": "IA généraliste",
+        "roleEn": "General-purpose AI",
         "slug": "chatgpt",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -33931,7 +33931,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Outil métier : utile pour sécuriser planning équipe sans alourdir le système.",
-        "reasonEn": "Useful to secure planning équipe without weighing down the system."
+        "reasonEn": "Useful to secure team scheduling without weighing down the system."
       }
     ]
   },
@@ -33954,7 +33954,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
     "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
     "bestFor": "Structure les processus RH légers : recrutement, onboarding, rituels, feedback, documentation.",
-    "bestForEn": "Structure les processus RH légers : recrutement, onboarding, rituels, feedback, documentation.",
+    "bestForEn": "Structures lightweight HR processes: recruitment, onboarding, rituals, feedback and documentation.",
     "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
     "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
     "editorial": "Les petites équipes ont besoin de RH simples, pas d’un SIRH lourd.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
@@ -34126,7 +34126,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "IA généraliste",
-        "roleEn": "IA généraliste",
+        "roleEn": "General-purpose AI",
         "slug": "chatgpt",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -34175,7 +34175,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
     "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
     "bestFor": "Structure les flux financiers, devis, factures, relances, achats, budget et trésorerie.",
-    "bestForEn": "Structure les flux financiers, devis, factures, relances, achats, budget et trésorerie.",
+    "bestForEn": "Structures the money flows: quotes, invoices, chasing payments, purchasing, budget and cash.",
     "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
     "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
     "editorial": "La valeur est immédiate : moins d’oubli, plus de visibilité, meilleure marge.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
@@ -34189,7 +34189,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "trésorerie",
-        "titleEn": "trésorerie",
+        "titleEn": "cash flow",
         "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
         "detailEn": "Data should support decisions, not decorate dashboards."
       },
@@ -34257,7 +34257,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Comptabilité",
-        "roleEn": "Comptabilité",
+        "roleEn": "Accounting",
         "slug": "pennylane",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -34273,7 +34273,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Compte pro : utile pour sécuriser trésorerie sans alourdir le système.",
-        "reasonEn": "Useful to secure trésorerie without weighing down the system."
+        "reasonEn": "Useful to secure cash flow without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -34313,11 +34313,11 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Tableur : utile pour sécuriser trésorerie sans alourdir le système.",
-        "reasonEn": "Useful to secure trésorerie without weighing down the system."
+        "reasonEn": "Useful to secure cash flow without weighing down the system."
       },
       {
         "role": "Base métier",
-        "roleEn": "Base métier",
+        "roleEn": "Business database",
         "slug": "airtable",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -34353,11 +34353,11 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Outil métier : utile pour sécuriser trésorerie sans alourdir le système.",
-        "reasonEn": "Useful to secure trésorerie without weighing down the system."
+        "reasonEn": "Useful to secure cash flow without weighing down the system."
       },
       {
         "role": "IA généraliste",
-        "roleEn": "IA généraliste",
+        "roleEn": "General-purpose AI",
         "slug": "chatgpt",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -34406,7 +34406,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
     "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
     "bestFor": "Gère fournisseurs, prestataires, achats, devis, commandes et suivi budgétaire.",
-    "bestForEn": "Gère fournisseurs, prestataires, achats, devis, commandes et suivi budgétaire.",
+    "bestForEn": "Handles suppliers, contractors, purchasing, quotes, orders and budget tracking.",
     "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
     "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
     "editorial": "Très utile pour agences, événements, retail, production, e-commerce.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
@@ -34488,7 +34488,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "Base métier",
-        "roleEn": "Base métier",
+        "roleEn": "Business database",
         "slug": "airtable",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -34538,7 +34538,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Comptabilité",
-        "roleEn": "Comptabilité",
+        "roleEn": "Accounting",
         "slug": "pennylane",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -34578,7 +34578,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "IA généraliste",
-        "roleEn": "IA généraliste",
+        "roleEn": "General-purpose AI",
         "slug": "chatgpt",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -34627,7 +34627,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
     "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
     "bestFor": "Connecte campagnes, outils marketing, CRM, tracking, data et automatisation.",
-    "bestForEn": "Connecte campagnes, outils marketing, CRM, tracking, data et automatisation.",
+    "bestForEn": "Connects campaigns, marketing tools, CRM, tracking, data and automation.",
     "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
     "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
     "editorial": "Besoin fort de stack car le métier est fragmenté entre contenu, analytics, email, ads et CRM.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
@@ -34799,7 +34799,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "IA généraliste",
-        "roleEn": "IA généraliste",
+        "roleEn": "General-purpose AI",
         "slug": "chatgpt",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -34848,7 +34848,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
     "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
     "bestFor": "Aide les équipes produit à mieux gérer feedback, roadmap, discovery, releases et documentation.",
-    "bestForEn": "Aide les équipes produit à mieux gérer feedback, roadmap, discovery, releases et documentation.",
+    "bestForEn": "Helps product teams handle feedback, roadmap, discovery, releases and documentation better.",
     "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
     "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
     "editorial": "Très pertinent pour SaaS et startups.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
@@ -35020,7 +35020,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "IA généraliste",
-        "roleEn": "IA généraliste",
+        "roleEn": "General-purpose AI",
         "slug": "chatgpt",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -35069,7 +35069,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
     "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
     "bestFor": "Crée les dashboards et la visibilité opérationnelle pour une équipe ou un dirigeant.",
-    "bestForEn": "Crée les dashboards et la visibilité opérationnelle pour une équipe ou un dirigeant.",
+    "bestForEn": "Builds the dashboards and operational visibility for a team or a founder.",
     "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
     "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
     "editorial": "Il doit relier les sources, nettoyer les données, produire des indicateurs lisibles.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
@@ -35191,7 +35191,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Modèle chiffré",
-        "roleEn": "Modèle chiffré",
+        "roleEn": "Costed model",
         "slug": "excel",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -35201,7 +35201,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Base métier",
-        "roleEn": "Base métier",
+        "roleEn": "Business database",
         "slug": "airtable",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -35241,7 +35241,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "IA généraliste",
-        "roleEn": "IA généraliste",
+        "roleEn": "General-purpose AI",
         "slug": "chatgpt",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -35300,7 +35300,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
     "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
     "bestFor": "Automatise les tâches répétitives entre CRM, formulaires, email, fichiers, facturation et reporting.",
-    "bestForEn": "Automatise les tâches répétitives entre CRM, formulaires, email, fichiers, facturation et reporting.",
+    "bestForEn": "Automates repetitive work across CRM, forms, email, files, invoicing and reporting.",
     "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
     "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
     "editorial": "Très fort potentiel Tooltrim, car le choix entre Zapier, Make, n8n, Airtable et agents IA est complexe.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
@@ -35412,7 +35412,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Base métier",
-        "roleEn": "Base métier",
+        "roleEn": "Business database",
         "slug": "airtable",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -35472,7 +35472,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "IA généraliste",
-        "roleEn": "IA généraliste",
+        "roleEn": "General-purpose AI",
         "slug": "chatgpt",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -35511,7 +35511,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
     "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
     "bestFor": "Conçoit des workflows intégrant IA, agents, automatisations, bases de connaissance et validation humaine.",
-    "bestForEn": "Conçoit des workflows intégrant IA, agents, automatisations, bases de connaissance et validation humaine.",
+    "bestForEn": "Designs workflows combining AI, agents, automation, knowledge bases and human approval.",
     "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
     "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
     "editorial": "Profil émergent mais stratégique, proche du nouveau cœur de Tooltrim.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
@@ -35593,7 +35593,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "IA généraliste",
-        "roleEn": "IA généraliste",
+        "roleEn": "General-purpose AI",
         "slug": "chatgpt",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -35663,7 +35663,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Base métier",
-        "roleEn": "Base métier",
+        "roleEn": "Business database",
         "slug": "airtable",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -35722,7 +35722,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
     "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
     "bestFor": "Structure le travail à distance : documentation, rituels, asynchrone, suivi et outils.",
-    "bestForEn": "Structure le travail à distance : documentation, rituels, asynchrone, suivi et outils.",
+    "bestForEn": "Structures remote work: documentation, rituals, async practice, tracking and tooling.",
     "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
     "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
     "editorial": "Les équipes distribuées ont besoin de clarté, pas de plus de réunions.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
@@ -35894,7 +35894,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "IA généraliste",
-        "roleEn": "IA généraliste",
+        "roleEn": "General-purpose AI",
         "slug": "chatgpt",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -35933,7 +35933,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
     "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
     "bestFor": "Met en place contrats, signatures, RGPD, dossiers administratifs et processus de conformité simple.",
-    "bestForEn": "Met en place contrats, signatures, RGPD, dossiers administratifs et processus de conformité simple.",
+    "bestForEn": "Puts in place contracts, signatures, GDPR, administrative files and simple compliance processes.",
     "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
     "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
     "editorial": "Très utile pour petites structures qui n’ont pas de juriste interne.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
@@ -36134,7 +36134,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
     "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
     "bestFor": "Gère les opérations e-commerce : catalogue, stocks, commandes, support, retours, reporting.",
-    "bestForEn": "Gère les opérations e-commerce : catalogue, stocks, commandes, support, retours, reporting.",
+    "bestForEn": "Runs e-commerce operations: catalogue, stock, orders, support, returns and reporting.",
     "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
     "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
     "editorial": "Stack très complète : Shopify, support, analytics, finance, automation.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
@@ -36266,7 +36266,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Base métier",
-        "roleEn": "Base métier",
+        "roleEn": "Business database",
         "slug": "airtable",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -36306,7 +36306,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Comptabilité",
-        "roleEn": "Comptabilité",
+        "roleEn": "Accounting",
         "slug": "pennylane",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -36316,7 +36316,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "IA généraliste",
-        "roleEn": "IA généraliste",
+        "roleEn": "General-purpose AI",
         "slug": "chatgpt",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -36355,7 +36355,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
     "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
     "bestFor": "Structure les opérations d’événements : planning, prestataires, budget, inscriptions, logistique.",
-    "bestForEn": "Structure les opérations d’événements : planning, prestataires, budget, inscriptions, logistique.",
+    "bestForEn": "Structures event operations: scheduling, suppliers, budget, registrations and logistics.",
     "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
     "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
     "editorial": "Très fort besoin de coordination, deadlines, versions, validations et documents.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
@@ -36447,7 +36447,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Base métier",
-        "roleEn": "Base métier",
+        "roleEn": "Business database",
         "slug": "airtable",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -36527,7 +36527,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "IA généraliste",
-        "roleEn": "IA généraliste",
+        "roleEn": "General-purpose AI",
         "slug": "chatgpt",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -36566,7 +36566,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
     "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
     "bestFor": "Personne seule qui pilote une activité complète : offre, acquisition, production, admin et relation client.",
-    "bestForEn": "Personne seule qui pilote une activité complète : offre, acquisition, production, admin et relation client.",
+    "bestForEn": "One person running a whole business: offer, acquisition, production, admin and client relationships.",
     "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
     "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
     "editorial": "Il a besoin d’un système simple qui remplace un mini back-office.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
@@ -36574,7 +36574,7 @@ export const STACKS: StackGuide[] = [
     "needs": [
       {
         "title": "CRM léger",
-        "titleEn": "CRM léger",
+        "titleEn": "Lightweight CRM",
         "detail": "Le système doit réduire les allers-retours et rendre la prochaine action visible.",
         "detailEn": "The system should reduce back-and-forth and make the next action visible."
       },
@@ -36654,7 +36654,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Cockpit : utile pour sécuriser crm léger sans alourdir le système.",
-        "reasonEn": "Useful to secure crm léger without weighing down the system."
+        "reasonEn": "Useful to secure lightweight CRM without weighing down the system."
       },
       {
         "role": "Suite collaborative",
@@ -36694,7 +36694,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Paiement : utile pour sécuriser crm léger sans alourdir le système.",
-        "reasonEn": "Useful to secure crm léger without weighing down the system."
+        "reasonEn": "Useful to secure lightweight CRM without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -36728,13 +36728,13 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "IA généraliste",
-        "roleEn": "IA généraliste",
+        "roleEn": "General-purpose AI",
         "slug": "chatgpt",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "IA généraliste : utile pour sécuriser crm léger sans alourdir le système.",
-        "reasonEn": "Useful to secure crm léger without weighing down the system."
+        "reasonEn": "Useful to secure lightweight CRM without weighing down the system."
       },
       {
         "role": "Design rapide",
@@ -36774,7 +36774,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Recherche : utile pour sécuriser crm léger sans alourdir le système.",
-        "reasonEn": "Useful to secure crm léger without weighing down the system."
+        "reasonEn": "Useful to secure lightweight CRM without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -36807,7 +36807,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
     "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
     "bestFor": "Freelance qui fait conseil, création, gestion client, contenu et admin.",
-    "bestForEn": "Freelance qui fait conseil, création, gestion client, contenu et admin.",
+    "bestForEn": "A freelancer doing advisory work, creative work, client management, content and admin.",
     "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
     "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
     "editorial": "Il doit éviter l’empilement d’outils et se construire un cockpit unique.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
@@ -36989,7 +36989,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "IA généraliste",
-        "roleEn": "IA généraliste",
+        "roleEn": "General-purpose AI",
         "slug": "chatgpt",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -37048,7 +37048,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
     "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
     "bestFor": "Consultant indépendant qui accompagne dirigeants, PME ou startups sur plusieurs sujets.",
-    "bestForEn": "Consultant indépendant qui accompagne dirigeants, PME ou startups sur plusieurs sujets.",
+    "bestForEn": "An independent consultant advising founders, small companies or startups across several topics.",
     "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
     "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
     "editorial": "Il vend surtout de la clarté, des livrables, des ateliers et du suivi.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
@@ -37210,7 +37210,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "IA généraliste",
-        "roleEn": "IA généraliste",
+        "roleEn": "General-purpose AI",
         "slug": "chatgpt",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -37269,7 +37269,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
     "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
     "bestFor": "Créateur d’un produit, SaaS, annuaire, newsletter, outil ou service digital.",
-    "bestForEn": "Créateur d’un produit, SaaS, annuaire, newsletter, outil ou service digital.",
+    "bestForEn": "The maker of a product, SaaS, directory, newsletter, tool or digital service.",
     "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
     "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
     "editorial": "Il doit construire, lancer, mesurer, vendre et supporter seul.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
@@ -37451,7 +37451,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "IA généraliste",
-        "roleEn": "IA généraliste",
+        "roleEn": "General-purpose AI",
         "slug": "chatgpt",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -37500,7 +37500,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
     "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
     "bestFor": "Créateur de contenu qui vend aussi des services, produits, formations ou abonnements.",
-    "bestForEn": "Créateur de contenu qui vend aussi des services, produits, formations ou abonnements.",
+    "bestForEn": "A content creator who also sells services, products, courses or subscriptions.",
     "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
     "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
     "editorial": "Il a besoin d’un système contenu + business + audience.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
@@ -37514,7 +37514,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "création",
-        "titleEn": "création",
+        "titleEn": "creation",
         "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
         "detailEn": "Data should support decisions, not decorate dashboards."
       },
@@ -37598,7 +37598,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Design rapide : utile pour sécuriser création sans alourdir le système.",
-        "reasonEn": "Useful to secure création without weighing down the system."
+        "reasonEn": "Useful to secure creation without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -37638,7 +37638,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Outil métier : utile pour sécuriser création sans alourdir le système.",
-        "reasonEn": "Useful to secure création without weighing down the system."
+        "reasonEn": "Useful to secure creation without weighing down the system."
       },
       {
         "role": "Paiement",
@@ -37672,13 +37672,13 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "IA généraliste",
-        "roleEn": "IA généraliste",
+        "roleEn": "General-purpose AI",
         "slug": "chatgpt",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "IA généraliste : utile pour sécuriser création sans alourdir le système.",
-        "reasonEn": "Useful to secure création without weighing down the system."
+        "reasonEn": "Useful to secure creation without weighing down the system."
       },
       {
         "role": "Analyse longue",
@@ -37718,7 +37718,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Outil métier : utile pour sécuriser création sans alourdir le système.",
-        "reasonEn": "Useful to secure création without weighing down the system."
+        "reasonEn": "Useful to secure creation without weighing down the system."
       }
     ]
   },
@@ -37741,7 +37741,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
     "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
     "bestFor": "Freelance qui vend une prestation packagée : audit, design sprint, setup, accompagnement.",
-    "bestForEn": "Freelance qui vend une prestation packagée : audit, design sprint, setup, accompagnement.",
+    "bestForEn": "A freelancer selling a packaged engagement: audit, design sprint, setup or ongoing support.",
     "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
     "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
     "editorial": "Il doit standardiser la vente, l’onboarding, la production et la livraison.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
@@ -37863,7 +37863,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Base métier",
-        "roleEn": "Base métier",
+        "roleEn": "Business database",
         "slug": "airtable",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -37913,7 +37913,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "IA généraliste",
-        "roleEn": "IA généraliste",
+        "roleEn": "General-purpose AI",
         "slug": "chatgpt",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -37952,7 +37952,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
     "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
     "bestFor": "Vend accompagnements, sessions, formations, ateliers ou programmes.",
-    "bestForEn": "Vend accompagnements, sessions, formations, ateliers ou programmes.",
+    "bestForEn": "Sells coaching, sessions, training, workshops or programmes.",
     "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
     "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
     "editorial": "Il doit gérer rendez-vous, contenus, clients, paiements et suivi.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
@@ -38124,7 +38124,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "IA généraliste",
-        "roleEn": "IA généraliste",
+        "roleEn": "General-purpose AI",
         "slug": "chatgpt",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -38193,7 +38193,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
     "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
     "bestFor": "Solo qui vend comme une agence mais produit seul ou avec quelques freelances.",
-    "bestForEn": "Solo qui vend comme une agence mais produit seul ou avec quelques freelances.",
+    "bestForEn": "A solo operator who sells like an agency but delivers alone or with a few freelancers.",
     "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
     "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
     "editorial": "Il a besoin d’une stack plus robuste : CRM, projets, sous-traitants, marges, livraison.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
@@ -38315,7 +38315,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Base métier",
-        "roleEn": "Base métier",
+        "roleEn": "Business database",
         "slug": "airtable",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -38355,7 +38355,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "IA généraliste",
-        "roleEn": "IA généraliste",
+        "roleEn": "General-purpose AI",
         "slug": "chatgpt",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -38404,7 +38404,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
     "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
     "bestFor": "Aide entrepreneurs et petites équipes à gérer admin, contenu, outils, planning et process.",
-    "bestForEn": "Aide entrepreneurs et petites équipes à gérer admin, contenu, outils, planning et process.",
+    "bestForEn": "Helps entrepreneurs and small teams handle admin, content, tools, scheduling and process.",
     "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
     "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
     "editorial": "Le métier repose entièrement sur les outils, les automatisations et l’organisation.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
@@ -38516,7 +38516,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Base métier",
-        "roleEn": "Base métier",
+        "roleEn": "Business database",
         "slug": "airtable",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -38576,7 +38576,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "IA généraliste",
-        "roleEn": "IA généraliste",
+        "roleEn": "General-purpose AI",
         "slug": "chatgpt",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -38615,7 +38615,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
     "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
     "bestFor": "Construit sites, apps internes, automatisations ou MVP sans code classique.",
-    "bestForEn": "Construit sites, apps internes, automatisations ou MVP sans code classique.",
+    "bestForEn": "Builds websites, internal apps, automations or MVPs without conventional code.",
     "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
     "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
     "editorial": "Stack très Tooltrim-compatible grâce aux arbitrages entre outils.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
@@ -38629,7 +38629,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "base de données",
-        "titleEn": "base de données",
+        "titleEn": "database",
         "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
         "detailEn": "Data should support decisions, not decorate dashboards."
       },
@@ -38713,7 +38713,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Outil métier : utile pour sécuriser base de données sans alourdir le système.",
-        "reasonEn": "Useful to secure base de données without weighing down the system."
+        "reasonEn": "Useful to secure database without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -38737,7 +38737,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Base métier",
-        "roleEn": "Base métier",
+        "roleEn": "Business database",
         "slug": "airtable",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -38753,7 +38753,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Outil métier : utile pour sécuriser base de données sans alourdir le système.",
-        "reasonEn": "Useful to secure base de données without weighing down the system."
+        "reasonEn": "Useful to secure database without weighing down the system."
       },
       {
         "role": "Automatisation",
@@ -38793,11 +38793,11 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Paiement : utile pour sécuriser base de données sans alourdir le système.",
-        "reasonEn": "Useful to secure base de données without weighing down the system."
+        "reasonEn": "Useful to secure database without weighing down the system."
       },
       {
         "role": "IA généraliste",
-        "roleEn": "IA généraliste",
+        "roleEn": "General-purpose AI",
         "slug": "chatgpt",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -38833,7 +38833,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Outil métier : utile pour sécuriser base de données sans alourdir le système.",
-        "reasonEn": "Useful to secure base de données without weighing down the system."
+        "reasonEn": "Useful to secure database without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -38876,7 +38876,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
     "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
     "bestFor": "Vend des automatisations IA, agents, workflows, bots et systèmes internes.",
-    "bestForEn": "Vend des automatisations IA, agents, workflows, bots et systèmes internes.",
+    "bestForEn": "Sells AI automations, agents, workflows, bots and internal systems.",
     "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
     "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
     "editorial": "Profil d’avenir : il a besoin d’une stack précise et d’un discours très clair.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
@@ -38988,7 +38988,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Base métier",
-        "roleEn": "Base métier",
+        "roleEn": "Business database",
         "slug": "airtable",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -39048,7 +39048,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "IA généraliste",
-        "roleEn": "IA généraliste",
+        "roleEn": "General-purpose AI",
         "slug": "chatgpt",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -39107,7 +39107,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
     "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
     "bestFor": "Génère des leads, prospecte, qualifie et vend pour lui-même ou pour des clients.",
-    "bestForEn": "Génère des leads, prospecte, qualifie et vend pour lui-même ou pour des clients.",
+    "bestForEn": "Generates leads, prospects, qualifies and sells, for themselves or for clients.",
     "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
     "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
     "editorial": "Le besoin est clair : CRM, prospection, enrichissement, email, suivi, reporting.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
@@ -39127,7 +39127,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "séquences",
-        "titleEn": "séquences",
+        "titleEn": "sequences",
         "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
         "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
       },
@@ -39215,7 +39215,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Outil métier : utile pour sécuriser séquences sans alourdir le système.",
-        "reasonEn": "Useful to secure séquences without weighing down the system."
+        "reasonEn": "Useful to secure sequences without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -39255,7 +39255,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Rendez-vous : utile pour sécuriser séquences sans alourdir le système.",
-        "reasonEn": "Useful to secure séquences without weighing down the system."
+        "reasonEn": "Useful to secure sequences without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -39279,7 +39279,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "IA généraliste",
-        "roleEn": "IA généraliste",
+        "roleEn": "General-purpose AI",
         "slug": "chatgpt",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -39295,7 +39295,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Analyse longue : utile pour sécuriser séquences sans alourdir le système.",
-        "reasonEn": "Useful to secure séquences without weighing down the system."
+        "reasonEn": "Useful to secure sequences without weighing down the system."
       }
     ]
   },
@@ -39318,7 +39318,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
     "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
     "bestFor": "Travaille avec commerces, artisans, PME locales, associations ou institutions.",
-    "bestForEn": "Travaille avec commerces, artisans, PME locales, associations ou institutions.",
+    "bestForEn": "Works with shops, tradespeople, local businesses, non-profits and public bodies.",
     "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
     "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
     "editorial": "Il a besoin d’une stack simple, rassurante, pas trop technique.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
@@ -39480,7 +39480,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "IA généraliste",
-        "roleEn": "IA généraliste",
+        "roleEn": "General-purpose AI",
         "slug": "chatgpt",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -39529,7 +39529,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
     "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
     "bestFor": "Gère l’administratif, facturation, relances, documents et organisation pour plusieurs clients.",
-    "bestForEn": "Gère l’administratif, facturation, relances, documents et organisation pour plusieurs clients.",
+    "bestForEn": "Handles admin, invoicing, chasing payments, documents and organisation for several clients.",
     "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
     "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
     "editorial": "Profil très opérationnel avec besoin de process et confidentialité.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
@@ -39641,7 +39641,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Comptabilité",
-        "roleEn": "Comptabilité",
+        "roleEn": "Accounting",
         "slug": "pennylane",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -39691,7 +39691,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "IA généraliste",
-        "roleEn": "IA généraliste",
+        "roleEn": "General-purpose AI",
         "slug": "chatgpt",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -39730,7 +39730,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
     "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
     "bestFor": "Construit une audience via newsletter, veille, curation, articles ou contenu expert.",
-    "bestForEn": "Construit une audience via newsletter, veille, curation, articles ou contenu expert.",
+    "bestForEn": "Builds an audience through a newsletter, field watching, curation, articles or expert content.",
     "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
     "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
     "editorial": "Il doit produire régulièrement et convertir l’attention en revenus.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
@@ -39744,7 +39744,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "rédaction",
-        "titleEn": "rédaction",
+        "titleEn": "writing",
         "detail": "La donnée doit servir à décider, pas à remplir un dashboard décoratif.",
         "detailEn": "Data should support decisions, not decorate dashboards."
       },
@@ -39828,7 +39828,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Outil métier : utile pour sécuriser rédaction sans alourdir le système.",
-        "reasonEn": "Useful to secure rédaction without weighing down the system."
+        "reasonEn": "Useful to secure writing without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -39868,7 +39868,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Outil métier : utile pour sécuriser rédaction sans alourdir le système.",
-        "reasonEn": "Useful to secure rédaction without weighing down the system."
+        "reasonEn": "Useful to secure writing without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -39902,13 +39902,13 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "IA généraliste",
-        "roleEn": "IA généraliste",
+        "roleEn": "General-purpose AI",
         "slug": "chatgpt",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "IA généraliste : utile pour sécuriser rédaction sans alourdir le système.",
-        "reasonEn": "Useful to secure rédaction without weighing down the system."
+        "reasonEn": "Useful to secure writing without weighing down the system."
       },
       {
         "role": "Analyse longue",
@@ -39941,7 +39941,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
     "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
     "bestFor": "Vend produits physiques, digitaux ou drops légers seul ou avec prestataires.",
-    "bestForEn": "Vend produits physiques, digitaux ou drops légers seul ou avec prestataires.",
+    "bestForEn": "Sells physical products, digital products or light drops, alone or with contractors.",
     "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
     "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
     "editorial": "Stack très complète malgré la petite taille : boutique, paiement, support, email, logistique.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
@@ -40073,7 +40073,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "Base métier",
-        "roleEn": "Base métier",
+        "roleEn": "Business database",
         "slug": "airtable",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -40113,7 +40113,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "IA généraliste",
-        "roleEn": "IA généraliste",
+        "roleEn": "General-purpose AI",
         "slug": "chatgpt",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -40152,7 +40152,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
     "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
     "bestFor": "Produit et vend formations, templates, masterclass ou accompagnements.",
-    "bestForEn": "Produit et vend formations, templates, masterclass ou accompagnements.",
+    "bestForEn": "Produces and sells courses, templates, masterclasses or coaching.",
     "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
     "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
     "editorial": "Il doit créer, héberger, vendre, suivre et animer une audience.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
@@ -40172,7 +40172,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "vidéo",
-        "titleEn": "vidéo",
+        "titleEn": "video",
         "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
         "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
       },
@@ -40260,7 +40260,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Async : utile pour sécuriser vidéo sans alourdir le système.",
-        "reasonEn": "Useful to secure vidéo without weighing down the system."
+        "reasonEn": "Useful to secure video without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -40300,7 +40300,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Paiement : utile pour sécuriser vidéo sans alourdir le système.",
-        "reasonEn": "Useful to secure vidéo without weighing down the system."
+        "reasonEn": "Useful to secure video without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -40324,7 +40324,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "IA généraliste",
-        "roleEn": "IA généraliste",
+        "roleEn": "General-purpose AI",
         "slug": "chatgpt",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -40340,7 +40340,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Analyse longue : utile pour sécuriser vidéo sans alourdir le système.",
-        "reasonEn": "Useful to secure vidéo without weighing down the system."
+        "reasonEn": "Useful to secure video without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -40383,7 +40383,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
     "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
     "bestFor": "Profil expert qui vend de l’analyse, des livrables, de la stratégie ou de la synthèse.",
-    "bestForEn": "Profil expert qui vend de l’analyse, des livrables, de la stratégie ou de la synthèse.",
+    "bestForEn": "An expert profile selling analysis, deliverables, strategy or synthesis.",
     "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
     "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
     "editorial": "Sa valeur repose sur la qualité de pensée, la recherche et la restitution.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
@@ -40403,7 +40403,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "rédaction",
-        "titleEn": "rédaction",
+        "titleEn": "writing",
         "detail": "Chaque outil doit porter un rôle clair : capturer, produire, valider, mesurer ou encaisser.",
         "detailEn": "Each tool needs a clear role: capture, produce, approve, measure, or collect payment."
       },
@@ -40491,7 +40491,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Outil métier : utile pour sécuriser rédaction sans alourdir le système.",
-        "reasonEn": "Useful to secure rédaction without weighing down the system."
+        "reasonEn": "Useful to secure writing without weighing down the system."
       },
       {
         "role": "Recherche",
@@ -40531,7 +40531,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Atelier : utile pour sécuriser rédaction sans alourdir le système.",
-        "reasonEn": "Useful to secure rédaction without weighing down the system."
+        "reasonEn": "Useful to secure writing without weighing down the system."
       },
       {
         "role": "Signature",
@@ -40555,7 +40555,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "IA généraliste",
-        "roleEn": "IA généraliste",
+        "roleEn": "General-purpose AI",
         "slug": "chatgpt",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -40571,7 +40571,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Analyse longue : utile pour sécuriser rédaction sans alourdir le système.",
-        "reasonEn": "Useful to secure rédaction without weighing down the system."
+        "reasonEn": "Useful to secure writing without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -40604,7 +40604,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
     "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
     "bestFor": "Profil transversal qui utilise l’IA comme assistant de recherche, production, automatisation et décision.",
-    "bestForEn": "Profil transversal qui utilise l’IA comme assistant de recherche, production, automatisation et décision.",
+    "bestForEn": "A cross-functional profile using AI as an assistant for research, production, automation and decisions.",
     "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
     "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
     "editorial": "C’est probablement le profil le plus actuel pour Tooltrim : il a besoin d’un système cohérent, pas d’un catalogue d’IA.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
@@ -40630,7 +40630,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "title": "rédaction",
-        "titleEn": "rédaction",
+        "titleEn": "writing",
         "detail": "La stack doit rester maintenable par une petite équipe ou une personne seule.",
         "detailEn": "The stack must remain maintainable by a small team or solo operator."
       }
@@ -40686,7 +40686,7 @@ export const STACKS: StackGuide[] = [
     "tools": [
       {
         "role": "IA généraliste",
-        "roleEn": "IA généraliste",
+        "roleEn": "General-purpose AI",
         "slug": "chatgpt",
         "decision": "core",
         "tip": "À garder dans le socle opérationnel.",
@@ -40722,7 +40722,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À garder dans le socle opérationnel.",
         "tipEn": "Keep it in the operations core.",
         "reason": "Outil métier : utile pour sécuriser rédaction sans alourdir le système.",
-        "reasonEn": "Useful to secure rédaction without weighing down the system."
+        "reasonEn": "Useful to secure writing without weighing down the system."
       },
       {
         "role": "Cockpit",
@@ -40762,7 +40762,7 @@ export const STACKS: StackGuide[] = [
         "tip": "À activer si le volume ou la complexité le justifie.",
         "tipEn": "Activate if volume or complexity justifies it.",
         "reason": "Design rapide : utile pour sécuriser rédaction sans alourdir le système.",
-        "reasonEn": "Useful to secure rédaction without weighing down the system."
+        "reasonEn": "Useful to secure writing without weighing down the system."
       },
       {
         "role": "Outil métier",
@@ -40805,7 +40805,7 @@ export const STACKS: StackGuide[] = [
     "risk": "Empiler des outils de pilotage sans clarifier les responsabilités, les rituels et les données qui comptent.",
     "riskEn": "Stacking management tools without clarifying responsibilities, rituals, and the data that matters.",
     "bestFor": "Profil qui vend un accompagnement complet à des petites entreprises : site, contenu, CRM, outils, automation.",
-    "bestForEn": "Profil qui vend un accompagnement complet à des petites entreprises : site, contenu, CRM, outils, automation.",
+    "bestForEn": "A profile selling small companies the whole package: website, content, CRM, tooling and automation.",
     "avoidIf": "Le besoin est ponctuel et ne demande ni process récurrent, ni reporting, ni coordination client ou équipe.",
     "avoidIfEn": "The need is one-off and requires no recurring process, reporting, or client/team coordination.",
     "editorial": "Très bon angle Tooltrim car il mélange plusieurs familles déjà couvertes.. La stack doit rendre l’activité plus pilotable : entrée du travail, priorités, exécution, validation, reporting, finance et amélioration continue.",
@@ -40967,7 +40967,7 @@ export const STACKS: StackGuide[] = [
       },
       {
         "role": "IA généraliste",
-        "roleEn": "IA généraliste",
+        "roleEn": "General-purpose AI",
         "slug": "chatgpt",
         "decision": "conditional",
         "tip": "À activer si le volume ou la complexité le justifie.",
@@ -41219,9 +41219,9 @@ export const STACK_USES: Record<string, StackUseCase[]> = {
   "scenographe-evenementiel":   [
       {
           "title": "Concept et intention",
-          "titleEn": "Concept et intention",
+          "titleEn": "Concept and intent",
           "description": "Structurer narration, moodboard et premières vues avant de passer en production.",
-          "descriptionEn": "Structurer narration, moodboard et premières vues avant de passer en production.",
+          "descriptionEn": "Structure narrative, moodboard and first views before moving into production.",
           "toolSlugs": [
               "notion",
               "milanote",
@@ -41241,9 +41241,9 @@ export const STACK_USES: Record<string, StackUseCase[]> = {
       },
       {
           "title": "3D et validation",
-          "titleEn": "3D et validation",
+          "titleEn": "3D and sign-off",
           "description": "Construire le volume, rendre l’intention et faire valider les arbitrages.",
-          "descriptionEn": "Construire le volume, rendre l’intention et faire valider les arbitrages.",
+          "descriptionEn": "Build the volume, render the intent, and get the trade-offs approved.",
           "toolSlugs": [
               "sketchup-pro",
               "d5-render",
@@ -41265,7 +41265,7 @@ export const STACK_USES: Record<string, StackUseCase[]> = {
           "title": "Production",
           "titleEn": "Production",
           "description": "Suivre plans, fournisseurs, budget et fabrication.",
-          "descriptionEn": "Suivre plans, fournisseurs, budget et fabrication.",
+          "descriptionEn": "Track drawings, suppliers, budget and fabrication.",
           "toolSlugs": [
               "vectorworks",
               "indesign",
@@ -41289,7 +41289,7 @@ export const STACK_USES: Record<string, StackUseCase[]> = {
           "title": "Concept retail",
           "titleEn": "Concept retail",
           "description": "Aligner marque, circulation, mobilier et expérience.",
-          "descriptionEn": "Aligner marque, circulation, mobilier et expérience.",
+          "descriptionEn": "Align brand, circulation, furniture and experience.",
           "toolSlugs": [
               "figma",
               "adobe-illustrator",
@@ -41311,7 +41311,7 @@ export const STACK_USES: Record<string, StackUseCase[]> = {
           "title": "Dossier fabrication",
           "titleEn": "Dossier fabrication",
           "description": "Transformer le concept en plans, matériaux et éléments produits.",
-          "descriptionEn": "Transformer le concept en plans, matériaux et éléments produits.",
+          "descriptionEn": "Turn the concept into drawings, materials and produced elements.",
           "toolSlugs": [
               "autocad",
               "indesign",
@@ -41333,7 +41333,7 @@ export const STACK_USES: Record<string, StackUseCase[]> = {
           "title": "Suivi production",
           "titleEn": "Suivi production",
           "description": "Piloter prestataires, coûts et alternatives.",
-          "descriptionEn": "Piloter prestataires, coûts et alternatives.",
+          "descriptionEn": "Steer suppliers, costs and alternatives.",
           "toolSlugs": [
               "notion",
               "airtable",
@@ -41355,9 +41355,9 @@ export const STACK_USES: Record<string, StackUseCase[]> = {
   "designer-graphique-pro":   [
       {
           "title": "Identité et supports",
-          "titleEn": "Identité et supports",
+          "titleEn": "Identity and collateral",
           "description": "Créer les sources visuelles, déclinaisons et fichiers propres.",
-          "descriptionEn": "Créer les sources visuelles, déclinaisons et fichiers propres.",
+          "descriptionEn": "Create the visual sources, variants and clean files.",
           "toolSlugs": [
               "adobe-illustrator",
               "adobe-photoshop",
@@ -41377,9 +41377,9 @@ export const STACK_USES: Record<string, StackUseCase[]> = {
       },
       {
           "title": "Assets et typos",
-          "titleEn": "Assets et typos",
+          "titleEn": "Assets and fonts",
           "description": "Ranger références, polices, mockups et exports.",
-          "descriptionEn": "Ranger références, polices, mockups et exports.",
+          "descriptionEn": "Organise references, fonts, mockups and exports.",
           "toolSlugs": [
               "eagle",
               "fontbase",
@@ -41401,7 +41401,7 @@ export const STACK_USES: Record<string, StackUseCase[]> = {
           "title": "Livraison client",
           "titleEn": "Livraison client",
           "description": "Suivre brief, retours, facturation et versions.",
-          "descriptionEn": "Suivre brief, retours, facturation et versions.",
+          "descriptionEn": "Track brief, feedback, invoicing and versions.",
           "toolSlugs": [
               "notion",
               "indy",
@@ -41425,7 +41425,7 @@ export const STACK_USES: Record<string, StackUseCase[]> = {
           "title": "Plateforme de marque",
           "titleEn": "Plateforme de marque",
           "description": "Structurer stratégie, moodboard et territoire visuel.",
-          "descriptionEn": "Structurer stratégie, moodboard et territoire visuel.",
+          "descriptionEn": "Structure strategy, moodboard and visual territory.",
           "toolSlugs": [
               "notion",
               "miro",
@@ -41445,9 +41445,9 @@ export const STACK_USES: Record<string, StackUseCase[]> = {
       },
       {
           "title": "Système visuel",
-          "titleEn": "Système visuel",
+          "titleEn": "Visual system",
           "description": "Créer identité, guidelines et templates maintenables.",
-          "descriptionEn": "Créer identité, guidelines et templates maintenables.",
+          "descriptionEn": "Create a maintainable identity, guidelines and templates.",
           "toolSlugs": [
               "figma",
               "adobe-illustrator",
@@ -41469,7 +41469,7 @@ export const STACK_USES: Record<string, StackUseCase[]> = {
           "title": "Livraison",
           "titleEn": "Livraison",
           "description": "Organiser assets, variantes et règles d’usage.",
-          "descriptionEn": "Organiser assets, variantes et règles d’usage.",
+          "descriptionEn": "Organise assets, variants and usage rules.",
           "toolSlugs": [
               "eagle",
               "google-drive",
@@ -41491,9 +41491,9 @@ export const STACK_USES: Record<string, StackUseCase[]> = {
   "directeur-artistique-creative-lead":   [
       {
           "title": "Veille et direction",
-          "titleEn": "Veille et direction",
+          "titleEn": "Watching the field and setting direction",
           "description": "Construire une vision avec références et narration.",
-          "descriptionEn": "Construire une vision avec références et narration.",
+          "descriptionEn": "Build a vision from references and narrative.",
           "toolSlugs": [
               "arena",
               "shotdeck",
@@ -41513,9 +41513,9 @@ export const STACK_USES: Record<string, StackUseCase[]> = {
       },
       {
           "title": "Présentation client",
-          "titleEn": "Présentation client",
+          "titleEn": "Client presentation",
           "description": "Vendre l’intention et documenter les choix.",
-          "descriptionEn": "Vendre l’intention et documenter les choix.",
+          "descriptionEn": "Sell the intent and document the decisions.",
           "toolSlugs": [
               "figma",
               "keynote",
@@ -41535,9 +41535,9 @@ export const STACK_USES: Record<string, StackUseCase[]> = {
       },
       {
           "title": "Feedback et production",
-          "titleEn": "Feedback et production",
+          "titleEn": "Feedback and production",
           "description": "Centraliser retours, assets et versions.",
-          "descriptionEn": "Centraliser retours, assets et versions.",
+          "descriptionEn": "Centralise feedback, assets and versions.",
           "toolSlugs": [
               "frame-io",
               "eagle",
@@ -41561,7 +41561,7 @@ export const STACK_USES: Record<string, StackUseCase[]> = {
           "title": "Cadrage site",
           "titleEn": "Cadrage site",
           "description": "Poser sitemap, wireframes et DA avant build.",
-          "descriptionEn": "Poser sitemap, wireframes et DA avant build.",
+          "descriptionEn": "Set sitemap, wireframes and art direction before the build.",
           "toolSlugs": [
               "relume",
               "figma",
@@ -41583,7 +41583,7 @@ export const STACK_USES: Record<string, StackUseCase[]> = {
           "title": "Build Webflow",
           "titleEn": "Build Webflow",
           "description": "Construire CMS, pages, interactions et formulaires.",
-          "descriptionEn": "Construire CMS, pages, interactions et formulaires.",
+          "descriptionEn": "Build the CMS, pages, interactions and forms.",
           "toolSlugs": [
               "webflow",
               "wized",
@@ -41603,9 +41603,9 @@ export const STACK_USES: Record<string, StackUseCase[]> = {
       },
       {
           "title": "Mesure et automation",
-          "titleEn": "Mesure et automation",
+          "titleEn": "Measurement and automation",
           "description": "Connecter paiements, bases, formulaires et analytics.",
-          "descriptionEn": "Connecter paiements, bases, formulaires et analytics.",
+          "descriptionEn": "Connect payments, databases, forms and analytics.",
           "toolSlugs": [
               "make",
               "stripe",
@@ -41627,9 +41627,9 @@ export const STACK_USES: Record<string, StackUseCase[]> = {
   "monteur-video-pro":   [
       {
           "title": "Montage et dérush",
-          "titleEn": "Montage et dérush",
+          "titleEn": "Editing and rushes",
           "description": "Structurer rushs, montage et premières versions.",
-          "descriptionEn": "Structurer rushs, montage et premières versions.",
+          "descriptionEn": "Structure rushes, editing and first cuts.",
           "toolSlugs": [
               "davinci-resolve",
               "adobe-premiere-pro",
@@ -41651,7 +41651,7 @@ export const STACK_USES: Record<string, StackUseCase[]> = {
           "title": "Validation",
           "titleEn": "Validation",
           "description": "Faire commenter au bon endroit et livrer les bons exports.",
-          "descriptionEn": "Faire commenter au bon endroit et livrer les bons exports.",
+          "descriptionEn": "Get comments in the right place and ship the right exports.",
           "toolSlugs": [
               "frame-io",
               "google-drive",
@@ -41673,7 +41673,7 @@ export const STACK_USES: Record<string, StackUseCase[]> = {
           "title": "Finition",
           "titleEn": "Finition",
           "description": "Améliorer son, sous-titres, couleur et plans faibles.",
-          "descriptionEn": "Améliorer son, sous-titres, couleur et plans faibles.",
+          "descriptionEn": "Improve sound, subtitles, colour and weak shots.",
           "toolSlugs": [
               "adobe-audition",
               "topaz-video",
@@ -41695,9 +41695,9 @@ export const STACK_USES: Record<string, StackUseCase[]> = {
   "realisateur-videaste-marque":   [
       {
           "title": "Préproduction",
-          "titleEn": "Préproduction",
+          "titleEn": "Pre-production",
           "description": "Préparer brief, moodboard, shotlist et planning.",
-          "descriptionEn": "Préparer brief, moodboard, shotlist et planning.",
+          "descriptionEn": "Prepare brief, moodboard, shotlist and schedule.",
           "toolSlugs": [
               "notion",
               "milanote",
@@ -41719,7 +41719,7 @@ export const STACK_USES: Record<string, StackUseCase[]> = {
           "title": "Postproduction",
           "titleEn": "Postproduction",
           "description": "Monter, étalonner, nettoyer et faire valider.",
-          "descriptionEn": "Monter, étalonner, nettoyer et faire valider.",
+          "descriptionEn": "Edit, grade, clean up and get sign-off.",
           "toolSlugs": [
               "davinci-resolve",
               "frame-io",
@@ -41741,7 +41741,7 @@ export const STACK_USES: Record<string, StackUseCase[]> = {
           "title": "Business",
           "titleEn": "Business",
           "description": "Signer, facturer, livrer et archiver.",
-          "descriptionEn": "Signer, facturer, livrer et archiver.",
+          "descriptionEn": "Sign, invoice, deliver and archive.",
           "toolSlugs": [
               "yousign",
               "indy",
