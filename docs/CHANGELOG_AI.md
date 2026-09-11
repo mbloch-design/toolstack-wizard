@@ -4350,3 +4350,11 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Recentrage des deux formules sur leur vraie différence commerciale : publication garantie sous cinq jours pour l’offre à 29 $, sélection éditoriale standard avec badge pour l’option gratuite.
 - Ajout après les offres d’une explication accessible du nouveau score ToolTrim, avec CommuteBar comme exemple anglophone déjà noté selon ce contrat.
 - Mention de la note expliquée dans la promesse, les livrables et la FAQ, en supprimant le vocabulaire technique et en rappelant que le paiement ne peut jamais influencer le résultat.
+
+# 2026-09-11 — Emails du parcours de soumission
+
+- Localisation de l’email de confirmation selon la langue du parcours, y compris les liens, l’objet et les prochaines étapes.
+- Distinction claire entre publication prioritaire sous cinq jours et sélection éditoriale standard avec badge.
+- Distinction immédiate des suivis internes avec les libellés `PAYANT 29 $` et `GRATUIT + BADGE` dans l’objet et dans un bandeau en tête du message, ainsi que l’étape et le nom de l’outil.
+- Conservation d’un seul email automatique côté déposant après validation complète du formulaire ; les échanges éditoriaux suivants restent manuels.
+- Remplacement des statuts administratifs par `Création de la fiche lancée` et `Demande enregistrée`, puis ajout dans la version gratuite de trois angles de sélection et d’un passage discret vers l’offre prioritaire à 29 $.

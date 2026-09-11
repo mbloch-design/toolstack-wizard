@@ -45,19 +45,26 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   // Steps mirror the on-page funnel: 1 Contact, 2 Publication (badge or payment), 3 Details (contact.ts).
   const stepLabel = progressStep === 1
-    ? "Contact — coordonnées reçues"
-    : isPaid ? "Publication — paiement lancé (Creem)" : "Publication — badge vérifié";
-  const paidTag = isPaid ? "[Payante] " : "";
+    ? "Coordonnées reçues"
+    : isPaid ? "Paiement lancé" : "Badge vérifié";
+  const offerLabel = isPaid ? "PAYANT 29 $" : "GRATUIT + BADGE";
+  const offerDetail = isPaid
+    ? "Publication sous 5 jours · paiement non encore confirmé à cette étape"
+    : "Sélection éditoriale standard · badge requis";
   const fallback = (value: unknown) => (value ? escapeHtml(value) : "—");
   const { error } = await resend.emails.send({
     from: "ToolTrim Submissions <contact@tooltrim.com>",
     to: "contact@tooltrim.com",
     replyTo: String(email),
-    subject: `${paidTag}[Soumission — étape ${progressStep}/3] ${String(toolName).replace(/[\r\n]/g, " ")} — ${stepLabel}`,
+    subject: `[${offerLabel}][${progressStep}/3] ${String(toolName).replace(/[\r\n]/g, " ")} — ${stepLabel}`,
     html: `
-      <h1>Soumission d’un outil — étape ${progressStep}/3</h1>
-      <p><strong>État :</strong> ${stepLabel}</p>
-      <p><strong>Type de soumission :</strong> ${isPaid ? "Payante — publication garantie" : "Gratuite — badge"}</p>
+      <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin:0 0 24px;border-collapse:separate;">
+        <tr><td style="padding:18px 20px;background:${isPaid ? "#111111" : "#F1F1ED"};color:${isPaid ? "#FFFFFF" : "#1D1D1F"};border-radius:10px;">
+          <p style="margin:0 0 6px;font-size:12px;font-weight:700;letter-spacing:.8px;">${offerLabel}</p>
+          <p style="margin:0;font-size:18px;font-weight:700;">Étape ${progressStep}/3 · ${stepLabel}</p>
+        </td></tr>
+      </table>
+      <p><strong>Parcours choisi :</strong> ${offerDetail}</p>
       <p><strong>Langue du parcours :</strong> ${escapeHtml(lang)}</p>
       <hr />
       <p><strong>Outil :</strong> ${escapeHtml(toolName)}</p>
