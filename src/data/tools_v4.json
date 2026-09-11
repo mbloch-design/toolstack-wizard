@@ -170858,6 +170858,230 @@
     }
   },
   {
+    "id": "traceo",
+    "slug": "traceo",
+    "name": "Traceo",
+    "category": "ui-components",
+    "shortDescription": "Extension Chrome pour inspecter le CSS visuellement et enregistrer des bugs d'interface en captures ou vidéo, sans DevTools.",
+    "shortDescriptionEn": "Chrome extension to inspect CSS visually and record UI bugs as screenshots or video, without DevTools.",
+    "description": "Traceo est une extension Chrome qui remplace l'inspecteur DevTools pour un usage quotidien de vérification d'interface : cliquer sur un élément affiche ses espacements, dimensions, couleurs, typographie et styles calculés, avec extraction de la palette et des polices de la page.\n\nLe mode enregistrement capture des captures d'écran ou des vidéos pendant la reproduction d'un bug, avec annotation (dessin, surlignage, texte, flou des détails sensibles) et inclusion optionnelle des logs console et des requêtes réseau. Responsify prévisualise le rendu sur plusieurs appareils. VibeGrab extrait la structure d'un composant pour la réinjecter dans un outil de code IA.\n\nL'outil est local-first par défaut : l'inspection et la capture se font sur l'appareil, sans compte requis. Un compte n'est nécessaire que pour la synchronisation du quota gratuit ou les liens de partage de vidéo. Le plan Free (0 $, 50 captures et 30 enregistrements par mois) est un vrai plan permanent ; Pro (7 $/mois ou 70 $/an soit 5,83 $/mois) lève les limites et ajoute VibeGrab et l'inspecteur avancé.\n\nTraceo est un produit jeune et indépendant, sans structure légale précisée sur le site, mais avec une note de 4,9/5 sur 25 avis vérifiables sur le Chrome Web Store.",
+    "longDescription": "Traceo est une extension Chrome qui remplace l'inspecteur DevTools pour un usage quotidien de vérification d'interface : cliquer sur un élément affiche ses espacements, dimensions, couleurs, typographie et styles calculés, avec extraction de la palette et des polices de la page.\n\nLe mode enregistrement capture des captures d'écran ou des vidéos pendant la reproduction d'un bug, avec annotation (dessin, surlignage, texte, flou des détails sensibles) et inclusion optionnelle des logs console et des requêtes réseau. Responsify prévisualise le rendu sur plusieurs appareils. VibeGrab extrait la structure d'un composant pour la réinjecter dans un outil de code IA.\n\nL'outil est local-first par défaut : l'inspection et la capture se font sur l'appareil, sans compte requis. Un compte n'est nécessaire que pour la synchronisation du quota gratuit ou les liens de partage de vidéo. Le plan Free (0 $, 50 captures et 30 enregistrements par mois) est un vrai plan permanent ; Pro (7 $/mois ou 70 $/an soit 5,83 $/mois) lève les limites et ajoute VibeGrab et l'inspecteur avancé.\n\nTraceo est un produit jeune et indépendant, sans structure légale précisée sur le site, mais avec une note de 4,9/5 sur 25 avis vérifiables sur le Chrome Web Store.",
+    "longDescriptionEn": "Traceo is a Chrome extension that replaces the DevTools inspector for day-to-day interface checking: click any element to see its spacing, dimensions, colors, typography and computed styles, with page color and font extraction.\n\nRecorder mode captures screenshots or video while reproducing an issue, with annotation (draw, highlight, text, blur sensitive details) and optional inclusion of console logs and network requests. Responsify previews rendering across devices. VibeGrab extracts a component's structure to feed into an AI coding tool.\n\nThe tool is local-first by default: inspection and capture happen on-device, no account required. An account is only needed for free-tier quota syncing or video share links. The Free plan (30/50 screenshots and recordings per month) is a genuine permanent tier; Pro ($7/month or $70/year, i.e. $5.83/month) lifts the limits and adds VibeGrab and the advanced inspector.\n\nTraceo is a young, independent product with no legal entity disclosed on the site, but a 4.9/5 rating across 25 verifiable Chrome Web Store reviews.",
+    "pricing": {
+      "free": "Plan Free permanent : 50 captures/annotations et 30 enregistrements par mois, sans compte requis",
+      "paid": "Pro : 7 $/mois (mensuel) ou 70 $/an soit 5,83 $/mois (annuel)"
+    },
+    "pricingEn": {
+      "free": "Permanent Free plan: 50 screenshots/annotations and 30 recordings per month, no account required",
+      "paid": "Pro: $7/month (monthly) or $70/year, i.e. $5.83/month (annual)"
+    },
+    "defaultMonthlyPrice": 5.01,
+    "pricing_v5": {
+      "cautions": [
+        "Prix officiels en dollars ; le tarif mensuel réduit exige un engagement annuel.",
+        "Aucune structure légale (société, adresse) n'est précisée sur le site.",
+        "Le plan Pro reste individuel : pas de fonction d'équipe ou de siège documentée."
+      ],
+      "cautionsEn": [
+        "Official prices are in US dollars; the lower monthly rate requires an annual commitment.",
+        "No legal entity (company, address) is disclosed on the site.",
+        "The Pro plan stays individual: no team or seat feature is documented."
+      ],
+      "verified_on": "2026-09-11",
+      "source_domain": "traceo.dev",
+      "usage_sensitive": false,
+      "compare_plan_kind": "account",
+      "compare_plan_name": "Pro (facturation annuelle)",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://www.traceo.dev/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 5.01,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "summary": "Inspection CSS de base, 50 captures et 30 enregistrements par mois, sans compte requis.",
+          "featureHighlights": [
+            "50 captures/annotations par mois",
+            "30 enregistrements/mois (5 min max)",
+            "Partage vers Slack inclus"
+          ],
+          "detailsSourceUrl": "https://www.traceo.dev/pricing",
+          "pricingUnit": "par compte",
+          "isFree": true,
+          "isComparePlan": false
+        },
+        {
+          "planKey": "pro",
+          "displayName": "Pro",
+          "summary": "Inspecteur avancé, VibeGrab et captures/enregistrements illimités.",
+          "featureHighlights": [
+            "VibeGrab pour outils de code IA",
+            "Inspecteur avancé (typographie, contraste, palette complète)",
+            "Captures et enregistrements illimités (15 min max)"
+          ],
+          "detailsSourceUrl": "https://www.traceo.dev/pricing",
+          "pricingUnit": "par compte",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 5.83,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid"
+        }
+      ]
+    },
+    "websiteUrl": "https://www.traceo.dev/",
+    "affiliateLink": "",
+    "logo": "https://logo.clearbit.com/traceo.dev",
+    "verdict": {
+      "keepIf": [
+        "Vous voulez vérifier des espacements, couleurs et polices sans ouvrir DevTools.",
+        "Vous devez régulièrement remonter des bugs d'interface avec capture et contexte technique.",
+        "Le quota gratuit (50 captures, 30 enregistrements par mois) couvre votre usage réel."
+      ],
+      "avoidIf": [
+        "Vous travaillez déjà à l'aise dans l'inspecteur DevTools natif de Chrome.",
+        "Vous avez besoin d'une remontée de bug collaborative côté client non technique, comme un tableau Kanban partagé.",
+        "L'absence de structure légale précisée sur le site est un frein pour votre organisation."
+      ],
+      "threshold": "Choisissez Traceo si vous inspectez et reproduisez des bugs d'interface au quotidien et que le plan gratuit ou les 7 $/mois du plan Pro restent proportionnés à cet usage. Si le besoin est plutôt une remontée de bug par des clients non techniques, une fiche comme BugHerd correspond mieux."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You want to check spacing, colors and fonts without opening DevTools.",
+        "You regularly need to report UI bugs with capture and technical context.",
+        "The free quota (50 screenshots, 30 recordings per month) covers your real usage."
+      ],
+      "avoidIf": [
+        "You're already comfortable in Chrome's native DevTools inspector.",
+        "You need collaborative bug reporting from non-technical clients, like a shared Kanban board.",
+        "The lack of a disclosed legal entity on the site is a blocker for your organization."
+      ],
+      "threshold": "Choose Traceo if you inspect and reproduce UI bugs daily and the free plan or the Pro plan's $7/month stay proportionate to that use. If the need is more about bug reporting from non-technical clients, a tool like BugHerd fits better."
+    },
+    "pros": [
+      "Plan gratuit permanent réellement utilisable, sans compte requis pour l'usage local.",
+      "Inspection CSS complète (espacements, couleurs, typographie) directement au clic.",
+      "Capture et enregistrement de bugs avec annotation et contexte technique inclus.",
+      "Architecture local-first : les captures restent sur l'appareil par défaut.",
+      "Note de 4,9/5 sur 25 avis vérifiables sur le Chrome Web Store."
+    ],
+    "prosEn": [
+      "Genuinely usable permanent free plan, no account required for local use.",
+      "Full CSS inspection (spacing, colors, typography) directly on click.",
+      "Bug capture and recording with annotation and technical context included.",
+      "Local-first architecture: captures stay on-device by default.",
+      "4.9/5 rating across 25 verifiable Chrome Web Store reviews."
+    ],
+    "cons": [
+      "Aucune structure légale ou adresse d'éditeur communiquée sur le site.",
+      "Le tarif réduit du plan Pro exige un engagement annuel.",
+      "Reste un outil individuel, sans fonction d'équipe ou de siège.",
+      "Jeune produit avec un volume d'usage encore limité (187 utilisateurs Chrome Web Store)."
+    ],
+    "consEn": [
+      "No legal entity or publisher address disclosed on the site.",
+      "The Pro plan's lower rate requires an annual commitment.",
+      "Stays an individual tool, with no team or seat feature.",
+      "Young product with still-limited usage volume (187 Chrome Web Store users)."
+    ],
+    "useCases": [
+      "Vérifier les espacements et couleurs d'une interface sans ouvrir DevTools.",
+      "Enregistrer une vidéo de bug avec logs console pour un rapport technique.",
+      "Extraire la structure d'un composant pour la réinjecter dans un outil de code IA.",
+      "Prévisualiser le rendu responsive d'une page sur plusieurs appareils."
+    ],
+    "useCasesEn": [
+      "Check an interface's spacing and colors without opening DevTools.",
+      "Record a bug video with console logs for a technical report.",
+      "Extract a component's structure to feed into an AI coding tool.",
+      "Preview a page's responsive rendering across devices."
+    ],
+    "covers": [
+      "inspection-css",
+      "bug-report-visuel"
+    ],
+    "functional_needs": [
+      "inspection-css",
+      "bug-report-visuel"
+    ],
+    "relevantFor": [
+      "Développeurs front-end",
+      "Designers UI",
+      "QA et testeurs"
+    ],
+    "alternatives": [
+      "bugherd"
+    ],
+    "seo": {
+      "idealForFr": "Idéal pour un développeur ou designer qui veut inspecter le CSS et remonter des bugs d'interface sans ouvrir DevTools.",
+      "idealForEn": "Ideal for a developer or designer who wants to inspect CSS and report UI bugs without opening DevTools.",
+      "metaDescription": "Traceo : avis, tarifs Free et Pro, inspection CSS, capture de bugs d'interface et alternatives pour développeurs et designers."
+    },
+    "articles": [],
+    "soloRelevance": "high",
+    "teamRelevance": "low",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "developpeur",
+      "ux-ui"
+    ],
+    "ia_use_case": null,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "personas": [],
+    "timeGainedHoursPerMonth": 2,
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [
+      "inspection_frequency",
+      "bug_report_audience"
+    ],
+    "substitution_cluster_v2": "ui-inspection-bug-capture",
+    "decision_policy_v3": {
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": true,
+      "default_decision_lane": "review_then_prescribe",
+      "auto_downgrade_allowed": true,
+      "never_auto_cancel_reason": null,
+      "requires_context_questions": true
+    },
+    "ogImageUrl": "https://www.traceo.dev/og-traceo-share.png",
+    "galleryImages": [],
+    "force_silence": false,
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 3,
+      "reversibilite": 4,
+      "evidence": {
+        "valeurAjoutee": "Réunit l'inspection CSS, la capture de bugs (écran et vidéo) et l'extraction de composants pour outils IA dans une seule extension gratuite en permanence, ce qui remplace plusieurs outils séparés pour un développeur ou designer (source : traceo.dev/pricing, vérifié le 2026-09-11).",
+        "simplicite": "Aucun compte n'est requis pour l'usage local d'après la politique de confidentialité, et la note de 4,9/5 sur 25 avis du Chrome Web Store est une preuve tierce vérifiable, plus solide qu'un simple témoignage marketing (source : Chrome Web Store, vérifié le 2026-09-11).",
+        "utilisation": "L'usage quotidien couvre l'inspection au clic, l'enregistrement de bugs avec annotation, la prévisualisation responsive et l'export d'assets, un périmètre large pour un usage dev/design/QA (source : chromewebstore.google.com, vérifié le 2026-09-11).",
+        "puissance": "VibeGrab (extraction de composant pour IA) est une capacité différenciante réelle, mais le produit reste jeune (187 utilisateurs Chrome Web Store) et le plan Pro lève surtout les limites du plan gratuit plutôt que d'ajouter une capacité catégoriquement nouvelle (source : chromewebstore.google.com, vérifié le 2026-09-11).",
+        "reversibilite": "Architecture local-first documentée dans la politique de confidentialité : captures et enregistrements restent sur l'appareil par défaut (chrome.storage.local, IndexedDB), sans dépendance réseau obligatoire hors connexion optionnelle pour le compte ou le partage de lien (source : traceo.dev/privacy, vérifié le 2026-09-11)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Combines CSS inspection, bug capture (screenshot and video) and AI-tool component extraction into one permanently free extension, replacing several separate tools for a developer or designer (source: traceo.dev/pricing, verified 2026-09-11).",
+        "simplicite": "No account is required for local use per the privacy policy, and the 4.9/5 rating across 25 Chrome Web Store reviews is verifiable third-party proof, stronger than plain marketing testimonials (source: Chrome Web Store, verified 2026-09-11).",
+        "utilisation": "Daily usage spans click-to-inspect, bug recording with annotation, responsive preview and asset export, a broad scope for dev/design/QA work (source: chromewebstore.google.com, verified 2026-09-11).",
+        "puissance": "VibeGrab (AI-tool component extraction) is a real differentiating capability, but the product stays young (187 Chrome Web Store users) and the Pro plan mostly lifts free-plan caps rather than adding a categorically new capability (source: chromewebstore.google.com, verified 2026-09-11).",
+        "reversibilite": "Local-first architecture documented in the privacy policy: captures and recordings stay on-device by default (chrome.storage.local, IndexedDB), with no mandatory network dependency outside optional account sign-in or link sharing (source: traceo.dev/privacy, verified 2026-09-11)."
+      },
+      "lastActivityVerifiedOn": "2026-09-11",
+      "notedOn": "2026-09-11"
+    }
+  },
+  {
     "id": "happia",
     "slug": "happia",
     "name": "Happia",

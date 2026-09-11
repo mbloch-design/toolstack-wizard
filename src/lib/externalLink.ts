@@ -59,6 +59,8 @@ const DOMAINES_EDITORIAUX_DOFOLLOW = new Set([
   "www.commute.bar",
   "inspoai.io",
   "www.inspoai.io",
+  "traceo.dev",
+  "www.traceo.dev",
 ]);
 
 /** Refuse les valeurs éditoriales corrompues que le navigateur interpréterait

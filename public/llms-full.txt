@@ -1,6 +1,6 @@
 # ToolTrim canonical tool catalogue
 # Generated from src/data/tools_index.json
-# Records: 1173
+# Records: 1174
 # Prices can change; verify current vendor pricing before citation.
 
 [
@@ -17487,6 +17487,21 @@
     },
     "description_fr": "Recherche visuelle IA dans une base de plus de 200 000 écrans, moodboards collaboratifs et génération d'interface par description texte.",
     "description_en": "AI visual search across a 200,000+ screen index, collaborative moodboards and text-to-interface generation."
+  },
+  {
+    "name": "Traceo",
+    "slug": "traceo",
+    "url_fr": "https://tooltrim.com/fr/tool/traceo",
+    "url_en": "https://tooltrim.com/en/tool/traceo",
+    "website": "https://www.traceo.dev/",
+    "category": "ui-components",
+    "monthly_price_eur": 5.01,
+    "pricing": {
+      "free": "Plan Free permanent : 50 captures/annotations et 30 enregistrements par mois, sans compte requis",
+      "paid": "Pro : 7 $/mois (mensuel) ou 70 $/an soit 5,83 $/mois (annuel)"
+    },
+    "description_fr": "Extension Chrome pour inspecter le CSS visuellement et enregistrer des bugs d'interface en captures ou vidéo, sans DevTools.",
+    "description_en": "Chrome extension to inspect CSS visually and record UI bugs as screenshots or video, without DevTools."
   },
   {
     "name": "Happia",

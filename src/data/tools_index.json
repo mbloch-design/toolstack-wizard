@@ -35628,6 +35628,38 @@
     ]
   },
   {
+    "id": "traceo",
+    "slug": "traceo",
+    "name": "Traceo",
+    "categoryId": "ui-components",
+    "shortDescription": "Extension Chrome pour inspecter le CSS visuellement et enregistrer des bugs d'interface en captures ou vidéo, sans DevTools.",
+    "shortDescriptionEn": "Chrome extension to inspect CSS visually and record UI bugs as screenshots or video, without DevTools.",
+    "pricing": {
+      "free": "Plan Free permanent : 50 captures/annotations et 30 enregistrements par mois, sans compte requis",
+      "paid": "Pro : 7 $/mois (mensuel) ou 70 $/an soit 5,83 $/mois (annuel)"
+    },
+    "defaultMonthlyPrice": 5.01,
+    "compareMonthlyPrice": 5.01,
+    "websiteUrl": "https://www.traceo.dev/",
+    "ogImageUrl": "https://www.traceo.dev/og-traceo-share.png",
+    "logo": "https://logo.clearbit.com/traceo.dev",
+    "tool_type": "specialise",
+    "substitution_cluster_v2": "ui-inspection-bug-capture",
+    "functional_needs": [
+      "inspection-css",
+      "bug-report-visuel"
+    ],
+    "verticals": [
+      "developpeur",
+      "ux-ui"
+    ],
+    "relevantFor": [
+      "Développeurs front-end",
+      "Designers UI",
+      "QA et testeurs"
+    ]
+  },
+  {
     "id": "happia",
     "slug": "happia",
     "name": "Happia",
