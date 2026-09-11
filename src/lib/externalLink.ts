@@ -57,6 +57,8 @@ const DOMAINES_EDITORIAUX_DOFOLLOW = new Set([
   "www.autophotos.ai",
   "commute.bar",
   "www.commute.bar",
+  "inspoai.io",
+  "www.inspoai.io",
 ]);
 
 /** Refuse les valeurs éditoriales corrompues que le navigateur interpréterait

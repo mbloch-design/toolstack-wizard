@@ -2,8 +2,8 @@ import type { Tool } from "@/data/types";
 import { CreditCard, Sparkles, Package } from "@/lib/icons";
 import { hasGenuineFreeTier } from "@/lib/pricing";
 import { relExterne, safeExternalUrl } from "@/lib/externalLink";
-import { CURRENCY_RATE_DATE, EUR_TO_GBP, EUR_TO_USD, useCurrency, type Currency } from "@/hooks/useCurrency";
-import { convertCurrencyAmount, formatCurrencyAmount } from "@/lib/currency";
+import { useCurrency } from "@/hooks/useCurrency";
+import { formatCurrencyAmount } from "@/lib/currency";
 import { resolveDisplayPrice } from "@/lib/nativePricing";
 
 // Slug de bundle -> nom lisible (ex. "adobe-creative-cloud" -> "Adobe Creative Cloud").
@@ -58,18 +58,12 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t }: Prop
   const officialUrl = safeExternalUrl(pv5?.official_source_url);
   const isOneTime = pv5?.compare_plan_kind === "one_time";
   const displayPaidPrice = resolveDisplayPrice(tool, displayPrice, currency);
-  const hasConvertedPrice = (
-    (canonicalPlans.length === 0 && displayPrice > 0 && displayPaidPrice.converted)
-    || canonicalPlans.some((plan) => !plan.isFree && plan.nativeAmount != null && plan.nativeCurrency !== currency)
-  );
 
+  // Toujours le montant publié par l'éditeur, dans sa devise réelle : jamais
+  // de conversion, cf. resolveDisplayPrice/formatToolPrice.
   const formatNativeAmount = (amount: number, nativeCurrency: string | null) => {
-    const source = nativeCurrency === "USD" || nativeCurrency === "EUR" || nativeCurrency === "GBP" ? nativeCurrency : null;
-    if (!source) return new Intl.NumberFormat(lang === "en" ? "en-US" : "fr-FR", {
-      style: "currency", currency: nativeCurrency || "EUR", maximumFractionDigits: 2,
-    }).format(amount);
-    const converted = convertCurrencyAmount(amount, source as Currency, currency);
-    return `${source === currency ? "" : "≈ "}${formatCurrencyAmount(converted, currency, lang || "fr")}`;
+    const source = nativeCurrency === "USD" || nativeCurrency === "EUR" || nativeCurrency === "GBP" ? nativeCurrency : "EUR";
+    return formatCurrencyAmount(amount, source, lang || "fr");
   };
 
   const bundleParent = tool.bundle_parent;
@@ -92,7 +86,7 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t }: Prop
         <div className="td-pricing-plans td-pricing-plans--catalog">
           {canonicalPlans.map((plan) => (
             <article
-              className={`td-pricing-plan${plan.isFree ? " td-pricing-plan--free" : ""}`}
+              className={`td-pricing-plan${plan.isFree ? " td-pricing-plan--free" : ""}${plan.comingSoon ? " td-pricing-plan--soon" : ""}`}
               key={plan.planKey}
             >
               <div className="td-pricing-plan-head">
@@ -101,6 +95,7 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t }: Prop
                   {plan.isFree
                     ? (plan.pricingUnit === "open_source" ? t("Open source", "Open source") : t("Gratuit", "Free"))
                     : plan.displayName}
+                  {plan.comingSoon && <span className="td-pricing-plan-soon-badge">{t("Bientôt", "Coming soon")}</span>}
                 </span>
                 {(plan.isFree || plan.nativeAmount != null) && (
                   <strong className="td-pricing-price">
@@ -119,7 +114,9 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t }: Prop
                 </ul>
               )}
               <p className="td-pricing-plan-meta">
-                {plan.isFree
+                {plan.comingSoon
+                  ? t("Pas encore disponible à l’achat", "Not purchasable yet")
+                  : plan.isFree
                   ? (freeCard
                       ?? (plan.pricingUnit === "open_source"
                             ? t("Licence open source — infrastructure et exploitation à votre charge",
@@ -133,7 +130,7 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t }: Prop
                       plan.pricingUnit === "site" ? t("par site", "per site") : null,
                     ].filter(Boolean).join(" · ")}
               </p>
-              {plan.detailsSourceUrl && (
+              {plan.detailsSourceUrl && !plan.comingSoon && (
                 <a className="td-pricing-plan-source" href={plan.detailsSourceUrl} target="_blank" rel={relExterne("source")}>
                   {t("Détail officiel de l’offre", "Official plan details")}
                 </a>
@@ -193,15 +190,6 @@ export default function ToolPricingSection({ tool, displayPrice, lang, t }: Prop
               {t("vérifié le", "verified on")} <time dateTime={verifiedOn}>{verifiedOn}</time>
             </>
           )}
-        </p>
-      )}
-
-      {hasConvertedPrice && (
-        <p className="td-pricing-evidence td-pricing-conversion-note">
-          {t("Conversion indicative", "Indicative conversion")} · 1 EUR = {EUR_TO_USD} USD / {EUR_TO_GBP} GBP ·
-          <a href="https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html" target="_blank" rel={relExterne("source")}>
-            {t(` taux BCE du ${CURRENCY_RATE_DATE}`, ` ECB rate from ${CURRENCY_RATE_DATE}`)}
-          </a>
         </p>
       )}
 

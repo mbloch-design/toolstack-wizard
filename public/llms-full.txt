@@ -1,6 +1,6 @@
 # ToolTrim canonical tool catalogue
 # Generated from src/data/tools_index.json
-# Records: 1172
+# Records: 1173
 # Prices can change; verify current vendor pricing before citation.
 
 [
@@ -17472,6 +17472,21 @@
     },
     "description_fr": "Éditeur vidéo en ligne à base de modèles, avec une suite d'outils IA pour créer des vidéos marketing sans logiciel de montage.",
     "description_en": "Template-based online video editor with a suite of AI tools for making marketing videos without editing software."
+  },
+  {
+    "name": "Inspo AI",
+    "slug": "inspoai",
+    "url_fr": "https://tooltrim.com/fr/tool/inspoai",
+    "url_en": "https://tooltrim.com/en/tool/inspoai",
+    "website": "https://inspoai.io/",
+    "category": "design-tools",
+    "monthly_price_eur": 0,
+    "pricing": {
+      "free": "Free Forever : 5 crédits IA/jour (40-50 écrans), 25 recherches/jour, 3 moodboards, sans carte bancaire",
+      "paid": "Aucune offre payante active à ce jour ; Lite (12 $/mois), Freelancer (22 $/mois) et Pro (39 $/mois) sont annoncés « Coming Soon »"
+    },
+    "description_fr": "Recherche visuelle IA dans une base de plus de 200 000 écrans, moodboards collaboratifs et génération d'interface par description texte.",
+    "description_en": "AI visual search across a 200,000+ screen index, collaborative moodboards and text-to-interface generation."
   },
   {
     "name": "Happia",
