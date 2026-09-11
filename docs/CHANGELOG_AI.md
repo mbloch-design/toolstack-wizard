@@ -4339,3 +4339,8 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Adoption de `#1D1D1F` comme couleur de texte à fort contraste sur toutes les surfaces claires, y compris les anciens rôles muted et les pages de comparaison forcées en mode clair.
 - Conservation du bleu ToolTrim pour les liens et états interactifs déjà prévus par le système, sans colorer les CTA principaux ni la navigation entière.
 - Promotion de `#86868B` en nuance sémantique réutilisable pour la seconde idée de certaines grandes accroches via `.tt-title-muted`.
+
+# 2026-09-11 — Preuve éditoriale de la page de soumission
+
+- Mise à jour de la preuve de traction de ToolTrim de DR 28 à DR 31.
+- Remplacement de Loyzia par la fiche anglophone Screen Studio dans l’aperçu, avec une proposition immédiatement lisible pour les créateurs SaaS et un lien vers la fiche publiée.

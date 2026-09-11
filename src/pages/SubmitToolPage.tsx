@@ -197,17 +197,17 @@ const SubmitToolPage = () => {
           </div>
           <p className="sp-pitch-reassurance"><Clock size={15} />{t("Offre de rentrée : 29 $ jusqu’au 30 septembre · sans badge ni abonnement", "Back-to-work offer: $29 until September 30 · no badge or subscription")}</p>
         </div>
-        <aside className="sp-listing-preview" aria-label={t("Exemple de fiche publiée : Loyzia", "Published listing example: Loyzia")}>
+        <aside className="sp-listing-preview" aria-label={t("Exemple de fiche publiée : Screen Studio", "Published listing example: Screen Studio")}>
           <div className="sp-preview-caption"><FileText size={16} />{t("CE QUE TU REÇOIS", "WHAT YOU GET")}</div>
-          <div className="sp-preview-identity"><ToolLogo tool={{ name: "Loyzia", slug: "loyzia", websiteUrl: "https://loyzia.com/" }} size={40} /><div><strong>Loyzia</strong><span>{t("Fidélisation et CRM pour les commerces", "Loyalty and CRM for local businesses")}</span></div></div>
-          <p className="sp-example-description">{t("Cartes de fidélité dans le Wallet, relation client et avis Google : une fiche pour comprendre où Loyzia trouve sa place.", "Wallet loyalty cards, customer relationships, and Google reviews: a listing that explains where Loyzia fits.")}</p>
+          <div className="sp-preview-identity"><ToolLogo tool={{ name: "Screen Studio", slug: "screen-studio", websiteUrl: "https://screen.studio/" }} size={40} /><div><strong>Screen Studio</strong><span>{t("Des démos produit soignées, sans montage lourd", "Polished product demos without heavy editing")}</span></div></div>
+          <p className="sp-example-description">{t("Zooms automatiques, mouvements fluides et exports prêts à partager : une fiche pour savoir quand Screen Studio vaut son abonnement.", "Automatic zooms, smooth motion, and share-ready exports: a listing that shows when Screen Studio is worth the subscription.")}</p>
           <ul className="sp-example-topics"><li>{t("Usages et fonctionnalités", "Use cases and features")}</li><li>{t("Tarifs et alternatives", "Pricing and alternatives")}</li><li>{t("Avis éditorial ToolTrim", "ToolTrim’s editorial assessment")}</li></ul>
-          <Link className="sp-example-link" to={`${prefix}/tool/loyzia`}>{t("Voir la fiche publiée", "View the published listing")}<ArrowRight size={17} /></Link>
+          <Link className="sp-example-link" to={`${prefix}/tool/screen-studio`}>{t("Voir la fiche publiée", "View the published listing")}<ArrowRight size={17} /></Link>
         </aside>
       </div>
       <div className="sp-proof-line">
         <div><strong>{t("Sous 5 jours", "Within 5 days")}</strong><span>{t("délai de publication", "publication turnaround")}</span></div>
-        <div><strong>DR 28</strong><span>{t("Domain Rating · septembre 2026", "Domain Rating · September 2026")}</span></div>
+        <div><strong>DR 31</strong><span>{t("Domain Rating · septembre 2026", "Domain Rating · September 2026")}</span></div>
         <div><strong>{t("Lien dofollow", "Dofollow link")}</strong><span>{t("vers le site officiel", "to the official website")}</span></div>
       </div>
     </header>
