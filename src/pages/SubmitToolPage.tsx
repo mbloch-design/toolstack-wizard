@@ -3,7 +3,7 @@ import { Link, useSearchParams } from "react-router-dom";
 import Breadcrumb from "@/components/Breadcrumb";
 import ToolLogo from "@/components/ToolLogo";
 import { useLang } from "@/hooks/useLang";
-import { ArrowRight, Check, Clock, Copy, CreditCard, FileText, Globe, Mail, Scale, ShieldCheck, User } from "@/lib/icons";
+import { ArrowRight, Check, Clock, Copy, CreditCard, FileText, Globe, Mail, Scale, ShieldCheck, StarSolid, User } from "@/lib/icons";
 import { cleanupSeo, SEO_BASE, setHreflang, setSeoTags } from "@/lib/seo";
 import { trackEvent } from "@/lib/analytics";
 
@@ -190,19 +190,19 @@ const SubmitToolPage = () => {
         <div className="sp-pitch-copy">
           <span className="tt-page-hero-eyebrow">{t("Pour les créateurs d’outils SaaS", "For SaaS builders")}</span>
           <h1>{lang === "fr" ? <>Fais de ton outil un choix crédible. <span className="tt-title-muted">Auprès des freelances et petites équipes.</span></> : <>Make your tool a credible choice. <span className="tt-title-muted">For freelancers and small teams.</span></>}</h1>
-          <p className="sp-pitch-lead">{t("ToolTrim prépare et publie une fiche claire de ton produit : usages, tarifs, alternatives, verdict éditorial et lien direct vers ton site.", "ToolTrim prepares and publishes a clear product listing: use cases, pricing, alternatives, an editorial verdict, and a direct link to your website.")}</p>
+          <p className="sp-pitch-lead">{t("ToolTrim prépare et publie une fiche claire de ton produit : usages, tarifs, alternatives, note expliquée, verdict éditorial et lien direct vers ton site.", "ToolTrim prepares and publishes a clear product listing: use cases, pricing, alternatives, an explained score, an editorial verdict, and a direct link to your website.")}</p>
           <div className="sp-hero-actions">
             <button type="button" className="tt-button-primary" onClick={() => choosePlan("paid", "hero")}>{t(`Publier ma fiche · ${price}`, `Publish my listing · ${price}`)}<ArrowRight size={16} /></button>
             <a className="sp-text-link" href="#submit-plans-title">{t("Ou choisir la formule gratuite avec badge", "Or choose the free option with a badge")}<ArrowRight size={15} /></a>
           </div>
           <p className="sp-pitch-reassurance"><Clock size={15} />{t("Offre de rentrée : 29 $ jusqu’au 30 septembre · sans badge ni abonnement", "Back-to-work offer: $29 until September 30 · no badge or subscription")}</p>
         </div>
-        <aside className="sp-listing-preview" aria-label={t("Exemple de fiche publiée : Screen Studio", "Published listing example: Screen Studio")}>
+        <aside className="sp-listing-preview" aria-label={t("Exemple de fiche publiée : CommuteBar", "Published listing example: CommuteBar")}>
           <div className="sp-preview-caption"><FileText size={16} />{t("CE QUE TU REÇOIS", "WHAT YOU GET")}</div>
-          <div className="sp-preview-identity"><ToolLogo tool={{ name: "Screen Studio", slug: "screen-studio", websiteUrl: "https://screen.studio/" }} size={40} /><div><strong>Screen Studio</strong><span>{t("Des démos produit soignées, sans montage lourd", "Polished product demos without heavy editing")}</span></div></div>
-          <p className="sp-example-description">{t("Zooms automatiques, mouvements fluides et exports prêts à partager : une fiche pour savoir quand Screen Studio vaut son abonnement.", "Automatic zooms, smooth motion, and share-ready exports: a listing that shows when Screen Studio is worth the subscription.")}</p>
-          <ul className="sp-example-topics"><li>{t("Usages et fonctionnalités", "Use cases and features")}</li><li>{t("Tarifs et alternatives", "Pricing and alternatives")}</li><li>{t("Avis éditorial ToolTrim", "ToolTrim’s editorial assessment")}</li></ul>
-          <Link className="sp-example-link" to={`${prefix}/tool/screen-studio`}>{t("Voir la fiche publiée", "View the published listing")}<ArrowRight size={17} /></Link>
+          <div className="sp-preview-identity"><ToolLogo tool={{ name: "CommuteBar", slug: "commutebar", websiteUrl: "https://commute.bar/" }} size={40} /><div><strong>CommuteBar</strong><span>{t("Le temps de trajet Apple Maps dans la barre des menus", "Apple Maps commute times in the Mac menu bar")}</span></div></div>
+          <p className="sp-example-description">{t("Une fiche qui confronte le gain quotidien, la licence à vie et les limites d’un outil Mac spécialisé.", "A listing that weighs the daily time saved, lifetime price, and limits of a focused Mac utility.")}</p>
+          <ul className="sp-example-topics"><li>{t("Une note ToolTrim et les faits qui l’expliquent", "A ToolTrim score and the facts behind it")}</li><li>{t("Tarifs et alternatives", "Pricing and alternatives")}</li><li>{t("Avis éditorial ToolTrim", "ToolTrim’s editorial assessment")}</li></ul>
+          <Link className="sp-example-link" to={`${prefix}/tool/commutebar`}>{t("Voir la fiche et son scoring", "View the listing and its score")}<ArrowRight size={17} /></Link>
         </aside>
       </div>
       <div className="sp-proof-line">
@@ -214,23 +214,35 @@ const SubmitToolPage = () => {
 
     <div className="sp-page-body">
       <section className="sp-overview" aria-labelledby="submit-plans-title"><div className="sp-overview-inner">
-        <div className="sp-overview-heading"><span className="tt-page-hero-eyebrow">{t("Deux façons de nous rejoindre", "Two ways to join")}</span><h2 id="submit-plans-title">{lang === "fr" ? <>Choisis ton niveau de priorité. <span className="tt-title-muted">Nous préparons la fiche.</span></> : <>Choose your priority. <span className="tt-title-muted">We prepare the listing.</span></>}</h2><p>{t("Une fiche dédiée à ton produit, avec ses usages, ses tarifs et un lien vers ton site.", "A dedicated listing for your product, with its use cases, pricing, and a link to your website.")}</p></div>
+        <div className="sp-overview-heading"><span className="tt-page-hero-eyebrow">{t("Deux délais, une même indépendance", "Two timelines, the same independence")}</span><h2 id="submit-plans-title">{lang === "fr" ? <>Choisis ton délai. <span className="tt-title-muted">L’évaluation reste indépendante.</span></> : <>Choose your timeline. <span className="tt-title-muted">The assessment stays independent.</span></>}</h2><p>{t("Chaque fiche publiée reçoit le même traitement éditorial et une note ToolTrim expliquée. La formule à 29 $ garantit simplement le délai de publication.", "Every published listing gets the same editorial treatment and an explained ToolTrim score. The $29 option simply guarantees the publication timeline.")}</p></div>
         <div className="sp-plan-grid">
           <article className="sp-plan-card sp-plan-card--highlight">
-            <span className="sp-plan-tag"><Clock size={14} />{t("OFFRE DE RENTRÉE · JUSQU’AU 30 SEPTEMBRE", "BACK-TO-WORK OFFER · UNTIL SEPTEMBER 30")}</span>
+            <span className="sp-plan-tag"><Clock size={14} />{t("LE PLUS DIRECT · OFFRE JUSQU’AU 30 SEPTEMBRE", "MOST DIRECT · OFFER UNTIL SEPTEMBER 30")}</span>
             <div className="sp-plan-card-head"><div><span className="sp-plan-price">{price}</span><span className="sp-plan-period">{t("une seule fois", "just once")}</span></div><span className="sp-plan-name">{t("Fiche publiée sous 5 jours", "Listing published within 5 days")}</span></div>
-            <p className="sp-plan-desc">{t("Pour être publié sous cinq jours ouvrés, sans installer de badge sur ton site.", "Get published within five business days, with no badge to install on your website.")}</p>
-            <ul className="sp-plan-args"><li><Check size={16} />{t("Aucun badge à installer", "No badge to install")}</li><li><User size={16} />{t("Fiche préparée par ToolTrim", "Listing prepared by ToolTrim")}</li><li><Check size={16} />{t("Un aller-retour pour vérifier les faits", "One round to check the facts")}</li><li><Check size={16} />{t("Publication sous cinq jours ouvrés", "Publication within five business days")}</li></ul>
-            <button type="button" className="tt-button-primary sp-plan-cta" onClick={() => choosePlan("paid")}>{t(`Lancer la création de ma fiche · ${price} →`, `Start creating my listing · ${price} →`)}</button>
+            <p className="sp-plan-desc">{t("Le chemin court pour obtenir une fiche complète, sans rien installer sur ton site.", "The shortest path to a complete listing, with nothing to install on your website.")}</p>
+            <ul className="sp-plan-args"><li><User size={16} />{t("Fiche préparée par ToolTrim", "Listing prepared by ToolTrim")}</li><li><StarSolid size={16} />{t("Note ToolTrim expliquée par des faits", "ToolTrim score explained with supporting facts")}</li><li><Check size={16} />{t("Un aller-retour pour vérifier les faits", "One round to check the facts")}</li><li><Clock size={16} />{t("Publication garantie sous cinq jours ouvrés", "Publication guaranteed within five business days")}</li></ul>
+            <button type="button" className="tt-button-primary sp-plan-cta" onClick={() => choosePlan("paid")}>{t(`Obtenir la publication prioritaire · ${price} →`, `Get priority publication · ${price} →`)}</button>
           </article>
           <article className="sp-plan-card">
-            <span className="sp-plan-tag sp-plan-tag--quiet">{t("AVEC BADGE", "WITH A BADGE")}</span>
-            <div className="sp-plan-card-head"><div><span className="sp-plan-price">{t("0 $", "$0")}</span><span className="sp-plan-period">{t("sans paiement", "no payment")}</span></div><span className="sp-plan-name">{t("Soumission gratuite", "Free submission")}</span></div>
-            <p className="sp-plan-desc">{t("Pour proposer ton outil sans budget, en affichant le badge ToolTrim sur ton site.", "Submit your tool without a budget by displaying the ToolTrim badge on your website.")}</p>
-            <ul className="sp-plan-args"><li><Check size={16} />{t("Fiche préparée par ToolTrim", "Listing prepared by ToolTrim")}</li><li><Check size={16} />{t("Badge ToolTrim requis", "ToolTrim badge required")}</li><li><Check size={16} />{t("Revue dans la file standard", "Review in the standard queue")}</li><li><Check size={16} />{t("Publication si les critères sont remplis", "Publication if editorial criteria are met")}</li></ul>
-            <button type="button" className="tt-button-secondary sp-plan-cta" onClick={() => choosePlan("free")}>{t("Soumettre avec un badge →", "Submit with a badge →")}</button>
+            <span className="sp-plan-tag sp-plan-tag--quiet">{t("GRATUIT · AVEC BADGE", "FREE · WITH A BADGE")}</span>
+            <div className="sp-plan-card-head"><div><span className="sp-plan-price">{t("0 $", "$0")}</span><span className="sp-plan-period">{t("sans paiement", "no payment")}</span></div><span className="sp-plan-name">{t("Revue éditoriale standard", "Standard editorial review")}</span></div>
+            <p className="sp-plan-desc">{t("Pour proposer ton outil sans budget et rejoindre notre file de sélection.", "Submit your tool without a budget and join our standard selection queue.")}</p>
+            <ul className="sp-plan-args"><li><Check size={16} />{t("Badge ToolTrim requis sur ton site", "ToolTrim badge required on your website")}</li><li><StarSolid size={16} />{t("Fiche et note ToolTrim si l’outil est retenu", "Listing and ToolTrim score if the tool is selected")}</li><li><Check size={16} />{t("Revue dans la file standard", "Review in the standard queue")}</li><li><Check size={16} />{t("Publication selon les critères éditoriaux", "Publication based on editorial criteria")}</li></ul>
+            <button type="button" className="tt-button-secondary sp-plan-cta" onClick={() => choosePlan("free")}>{t("Rejoindre la revue standard →", "Join the standard review →")}</button>
           </article>
         </div>
+        <aside className="sp-rating-proof" id="submit-score" aria-label={t("Présentation de la note ToolTrim", "ToolTrim score overview")}>
+          <div className="sp-rating-proof-copy">
+            <span className="tt-page-hero-eyebrow">{t("LE SCORE TOOLTRIM", "THE TOOLTRIM SCORE")}</span>
+            <h3>{lang === "fr" ? <>Aide ta cible à choisir ton outil. <span className="tt-title-muted">Avec une note claire et argumentée.</span></> : <>Help your audience choose your tool. <span className="tt-title-muted">With a clear, reasoned score.</span></>}</h3>
+            <p>{t("Nous évaluons ce que ton outil apporte aux freelances, indépendants et petites équipes : son utilité réelle, sa simplicité au quotidien et la liberté de changer de solution. Chaque note est expliquée. Le paiement ne change jamais le résultat.", "We assess what your tool brings to freelancers, solopreneurs, and small teams: real usefulness, everyday simplicity, and the freedom to switch. Every score is explained. Payment never changes the result.")}</p>
+          </div>
+          <div className="sp-rating-example">
+            <div className="sp-rating-example-head"><div><span>{t("EXEMPLE PUBLIÉ", "PUBLISHED EXAMPLE")}</span><strong>CommuteBar</strong></div><div className="sp-rating-total"><StarSolid size={17} /><strong>3.8</strong><span>/5 · {t("Très bon", "Great")}</span></div></div>
+            <p className="sp-rating-example-note">{t("Utile et simple pour les indépendants qui veulent rester concentrés pendant leurs appels. Sa note reste mesurée, car l’outil est spécialisé et réservé au Mac.", "Useful and simple for independent professionals who want to stay focused during calls. Its score stays measured because the product is specialized and Mac-only.")}</p>
+            <Link className="sp-rating-example-link" to={`${prefix}/tool/commutebar`}>{t("Voir les raisons de la note", "See what explains the score")}<ArrowRight size={15} /></Link>
+          </div>
+        </aside>
       </div></section>
 
       <section className="sp-delivery" aria-labelledby="submit-delivery-title">
@@ -314,7 +326,7 @@ const SubmitToolPage = () => {
       <section className="sp-faq-section" aria-labelledby="submit-faq-title">
         <div className="sp-section-intro"><span className="tt-page-hero-eyebrow">FAQ</span><h2 id="submit-faq-title">{lang === "fr" ? <>Tout savoir. <span className="tt-title-muted">Avant de publier ton outil.</span></> : <>Everything you need to know. <span className="tt-title-muted">Before publishing your tool.</span></>}</h2></div>
         <div className="sp-faq-list">
-          <details><summary>{t("Que vais-je recevoir exactement ?", "What exactly will I receive?")}</summary><p>{t("Une fiche dédiée préparée par ToolTrim avec la présentation du produit, ses usages, ses fonctionnalités, ses tarifs, ses alternatives, notre verdict éditorial et un lien vers ton site officiel.", "A dedicated listing prepared by ToolTrim with your product overview, use cases, features, pricing, alternatives, our editorial verdict, and a link to your official website.")}</p></details>
+          <details><summary>{t("Que vais-je recevoir exactement ?", "What exactly will I receive?")}</summary><p>{t("Une fiche dédiée préparée par ToolTrim avec la présentation du produit, ses usages, ses tarifs, ses alternatives, une note expliquée par des faits, notre verdict éditorial et un lien vers ton site officiel.", "A dedicated listing prepared by ToolTrim with your product overview, use cases, pricing, alternatives, a score explained with supporting facts, our editorial verdict, and a link to your official website.")}</p></details>
           <details><summary>{t("Dois-je rédiger ma fiche moi-même ?", "Do I need to write my own listing?")}</summary><p>{t("Non. Tu nous transmets les informations sur ton produit et ToolTrim prépare la fiche. La publication prioritaire inclut un aller-retour pour vérifier les informations factuelles avant publication.", "No. You provide information about your product and ToolTrim prepares the listing. Priority publication includes one round to check factual information before publication.")}</p></details>
           <details><summary>{t("Dois-je fournir les textes et les visuels ?", "Do I need to provide copy and visuals?")}</summary><p>{t("Non. L’URL de ton produit et quelques informations suffisent pour commencer. ToolTrim rédige la fiche et utilise les éléments officiels disponibles ; tu peux signaler une erreur factuelle avant publication.", "No. Your product URL and a few details are enough to get started. ToolTrim writes the listing and uses available official assets; you can flag a factual error before publication.")}</p></details>
           <details><summary>{t("Que garantit la publication prioritaire ?", "What does priority publication guarantee?")}</summary><p>{t("La mise en ligne sous cinq jours ouvrés, sans badge à installer. Le verdict et le classement restent indépendants.", "Publication within five business days, with no badge to install. The verdict and ranking remain independent.")}</p></details>

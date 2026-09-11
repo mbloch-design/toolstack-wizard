@@ -22653,7 +22653,22 @@ section[id] {
 .sp-overview-heading h2,
 .sp-overview-heading > p { text-wrap: balance; }
 .sp-overview-heading > p { max-width: 62ch; margin-inline: auto; }
-.sp-plan-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--space-lg); }
+.sp-rating-proof { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(360px, .95fr); gap: var(--space-xl); align-items: center; margin-top: var(--space-xl); padding: var(--space-xl); background: var(--color-surface-soft); border-radius: var(--tt-surface-radius-panel); scroll-margin-top: var(--space-lg); }
+.sp-rating-proof-copy h3 { max-width: 18ch; margin: var(--space-sm) 0; font: 600 var(--tt-size-section-h)/1.1 var(--font-brand); letter-spacing: -.035em; text-wrap: balance; }
+.sp-rating-proof-copy p { max-width: 55ch; margin: 0; font: 400 var(--tt-size-card-body)/1.6 var(--font-ui); color: var(--color-text); }
+.sp-rating-example { padding: var(--space-lg); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--tt-surface-radius-info); }
+.sp-rating-example-head { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--space-md); padding-bottom: var(--space-md); border-bottom: 1px solid var(--color-border); }
+.sp-rating-example-head > div:first-child { display: grid; gap: var(--space-2xs); }
+.sp-rating-example-head > div:first-child span { font: 700 var(--tt-size-kicker)/1.2 var(--font-ui); letter-spacing: .07em; }
+.sp-rating-example-head > div:first-child strong { font: 600 var(--tt-size-body-large)/1.2 var(--font-brand); }
+.sp-rating-total { display: flex; align-items: baseline; gap: 4px; color: hsl(var(--primary)); white-space: nowrap; }
+.sp-rating-total svg { align-self: center; fill: currentColor; }
+.sp-rating-total strong { font: 650 28px/1 var(--font-brand); letter-spacing: -.04em; }
+.sp-rating-total span { font: 600 12px/1 var(--font-ui); }
+.sp-rating-example-note { margin: var(--space-md) 0; font: 400 var(--tt-size-card-body)/1.55 var(--font-ui); color: var(--color-text); }
+.sp-rating-example-link { display: flex; align-items: center; justify-content: space-between; gap: var(--space-sm); padding-top: var(--space-md); border-top: 1px solid var(--color-border); color: hsl(var(--primary)); font: 600 var(--tt-size-card-body)/1.4 var(--font-ui); text-decoration: none; }
+.sp-rating-example-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+.sp-plan-grid { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); gap: var(--space-lg); }
 .sp-plan-card {
   display: grid;
   grid-row: span 5;
@@ -22665,7 +22680,7 @@ section[id] {
   border: 1px solid var(--color-border);
   border-radius: var(--tt-surface-radius-info);
 }
-.sp-plan-card--highlight { border-color: var(--color-border); }
+.sp-plan-card--highlight { background: var(--color-surface-soft); border-color: var(--color-border-strong); }
 .sp-plan-tag {
   display: inline-flex;
   align-items: center;
@@ -22690,6 +22705,7 @@ section[id] {
 .sp-plan-args { display: grid; gap: 13px; margin: 0 0 30px; padding: 22px 0 0; border-top: 1px solid var(--color-border); list-style: none; }
 .sp-plan-args li { display: flex; gap: 10px; align-items: flex-start; font: 14px/1.4 var(--font-ui); color: var(--color-text); }
 .sp-plan-args svg { flex: 0 0 auto; margin-top: 2px; color: var(--color-text-strong); }
+.sp-plan-args li:nth-child(2) svg { color: hsl(var(--primary)); }
 .sp-plan-cta { width: 100%; justify-content: center; min-height: 48px; }
 .sp-partnership-note {
   display: flex;
@@ -22892,6 +22908,7 @@ section[id] {
 @media (max-width: 760px) {
   .sp-pitch { grid-template-columns: minmax(0, 1fr); padding-block: var(--space-xl); }
   .sp-listing-preview { margin-top: var(--space-md); }
+  .sp-rating-proof { grid-template-columns: minmax(0, 1fr); }
   .sp-delivery-grid { grid-template-columns: minmax(0, 1fr); gap: var(--space-lg); }
   .sp-guarantees { grid-template-columns: minmax(0, 1fr); }
 }
@@ -22906,6 +22923,8 @@ section[id] {
   .sp-proof-line { grid-template-columns: minmax(0, 1fr); padding: var(--space-xs) var(--space-lg); }
   .sp-proof-line > div { grid-template-columns: 100px minmax(0, 1fr); align-items: center; padding: var(--space-md) 0; gap: var(--space-md); }
   .sp-proof-line > div + div { border-left: 0; border-top: 1px solid var(--color-border); }
+  .sp-rating-proof { padding: var(--space-lg); }
+  .sp-rating-example { padding: var(--space-md); }
   .stp-page .sp-overview { padding-block: var(--space-2xl); }
   .sp-guarantees ul { grid-template-columns: minmax(0, 1fr); }
 }

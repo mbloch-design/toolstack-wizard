@@ -4344,3 +4344,9 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 
 - Mise à jour de la preuve de traction de ToolTrim de DR 28 à DR 31.
 - Remplacement de Loyzia par la fiche anglophone Screen Studio dans l’aperçu, avec une proposition immédiatement lisible pour les créateurs SaaS et un lien vers la fiche publiée.
+
+# 2026-09-11 — Pricing et scoring v2 de la page de soumission
+
+- Recentrage des deux formules sur leur vraie différence commerciale : publication garantie sous cinq jours pour l’offre à 29 $, sélection éditoriale standard avec badge pour l’option gratuite.
+- Ajout après les offres d’une explication accessible du nouveau score ToolTrim, avec CommuteBar comme exemple anglophone déjà noté selon ce contrat.
+- Mention de la note expliquée dans la promesse, les livrables et la FAQ, en supprimant le vocabulaire technique et en rappelant que le paiement ne peut jamais influencer le résultat.
