@@ -4358,3 +4358,9 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Distinction immédiate des suivis internes avec les libellés `PAYANT 29 $` et `GRATUIT + BADGE` dans l’objet et dans un bandeau en tête du message, ainsi que l’étape et le nom de l’outil.
 - Conservation d’un seul email automatique côté déposant après validation complète du formulaire ; les échanges éditoriaux suivants restent manuels.
 - Remplacement des statuts administratifs par `Création de la fiche lancée` et `Demande enregistrée`, puis ajout dans la version gratuite de trois angles de sélection et d’un passage discret vers l’offre prioritaire à 29 $.
+
+# 2026-09-11 — Durcissement de la validation du badge
+
+- Confirmation sur les trois soumissions gratuites du jour que le badge avait disparu après le contrôle initial.
+- Nouvelle vérification distante du badge au moment de l’envoi final du formulaire, en complément du jeton temporaire.
+- Validation plus stricte : l’image officielle doit se trouver dans le lien ToolTrim, sur les domaines attendus, et ne pas être masquée par un style inline évident.

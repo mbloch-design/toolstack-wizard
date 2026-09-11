@@ -166,10 +166,17 @@ const SubmitToolPage = () => {
         method: "POST", headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...submission, subject: t("Soumission d'un outil", "Tool submission"), submissionType: "tool", badgeReview: plan === "free", paid, lang }),
       });
-      if (!response.ok) throw new Error();
+      const payload = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(payload.error || "submission_failed");
       trackEvent("submit_tool", { tool_name: submission.toolName, submitter_role: submission.submitterRole, plan: paid ? "paid" : "free" });
       setStatus("success");
-    } catch { setStatus("error"); setError(t("L'envoi n'a pas abouti. Réessaie ou contacte-nous.", "The submission could not be sent. Try again or contact us.")); }
+    } catch (caught) {
+      const reason = caught instanceof Error ? caught.message : "submission_failed";
+      setStatus("error");
+      setError(reason === "Badge must still be installed when the submission is sent"
+        ? t("Le badge n’est plus détecté sur la page indiquée. Réinstalle-le avant d’envoyer le formulaire.", "The badge is no longer detected on the submitted page. Reinstall it before sending the form.")
+        : t("L'envoi n'a pas abouti. Réessaie ou contacte-nous.", "The submission could not be sent. Try again or contact us."));
+    }
   };
 
   if (status === "success") return (

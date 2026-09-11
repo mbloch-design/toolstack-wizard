@@ -1,6 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { Resend } from "resend";
 import { createHmac, timingSafeEqual } from "node:crypto";
+import { verifyBadgeOnPage } from "./_badge-verification";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -167,6 +168,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   }
   if (isToolSubmission && badgeReview && !hasValidBadgeToken(verificationToken, badgeUrl, toolUrl)) {
     return res.status(400).json({ error: "Badge verification required" });
+  }
+  if (isToolSubmission && badgeReview) {
+    try {
+      await verifyBadgeOnPage(badgeUrl, toolUrl);
+    } catch {
+      return res.status(400).json({ error: "Badge must still be installed when the submission is sent" });
+    }
   }
 
   const submissionLang: "fr" | "en" = lang === "fr" ? "fr" : "en";
