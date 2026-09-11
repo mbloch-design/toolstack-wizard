@@ -1036,8 +1036,10 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           {
             path: "avis",
             buildTitle: (name, isFr) => isFr
-              ? `Avis ${name} 2026 : Note ToolTrim & retours d'expérience | ToolTrim`
-              : `${name} Reviews 2026: ToolTrim Rating & User Feedback | ToolTrim`,
+              // Voir ToolDetailPage : gabarit raccourci, ToolTrim n'y figure
+              // plus qu'une fois. Les deux copies doivent rester alignees.
+              ? `Avis ${name} 2026 : note et retours | ToolTrim`
+              : `${name} reviews 2026: rating and feedback | ToolTrim`,
             buildDesc: (name, _price, isFr, tool) => {
               const short = (isFr ? tool.shortDescription : tool.shortDescriptionEn || tool.shortDescription) || "";
               const excerpt = short.split(/[.!?]/)[0]?.trim() || "";

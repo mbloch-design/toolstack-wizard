@@ -181,8 +181,12 @@ const ToolDetailPage = () => {
         suffix: "/alternatives",
       },
       avis: {
-        titleFr: `Avis ${tool.name} ${year} : Note ToolTrim & Retours d'expérience | ToolTrim`,
-        titleEn: `${tool.name} Reviews ${year}: ToolTrim Rating & User Feedback | ToolTrim`,
+        // Le gabarit precedent citait ToolTrim deux fois et faisait 48 caracteres
+        // de remplissage apres le nom : 895 titres francais et 487 anglais
+        // depassaient 65 caracteres, donc etaient tronques en resultat de
+        // recherche. Le nom reste en tete, pour coller a la requete reelle.
+        titleFr: `Avis ${tool.name} ${year} : note et retours | ToolTrim`,
+        titleEn: `${tool.name} reviews ${year}: rating and feedback | ToolTrim`,
         descFr: shortExcerpt
           ? `${shortExcerpt}. Score ToolTrim, analyse indépendante et retours d'utilisateurs sur ${tool.name} en ${year}.`
           : `Score ToolTrim pour ${tool.name}, analyse indépendante et retours d'utilisateurs. Verdict honnête sur la valeur réelle en ${year}.`,
