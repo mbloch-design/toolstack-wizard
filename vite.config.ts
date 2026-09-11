@@ -9,7 +9,7 @@ import { STACKS } from "./src/data/stacks";
 import { FEATURED_COMPARISONS } from "./src/data/comparisons";
 import { computeToolTrimScore } from "./src/lib/toolTrimScore";
 import { resolveMonthlyPrice } from "./src/lib/pricing";
-import { formatToolPrice } from "./src/lib/currencyRates";
+import { formatToolPrice, usdFromEur } from "./src/lib/currencyRates";
 import { hasEditorialSubstance } from "./src/lib/editorialSubstance";
 import { localizePlanName } from "./src/lib/planNames";
 import { catalogProjectionRowsToTool, type CatalogProjectionRow } from "./src/lib/catalogProjection";
@@ -1600,10 +1600,16 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             const description = stack.slug === "developpeur-freelance-shipper"
               ? isFr
                 ? "Stack dev freelance pour coder, partager une preview client, documenter et encaisser sans payer une stack produit trop lourde. Budget cible : 32€/mois."
-                : "Freelance dev stack to code, share a client preview, document, and get paid without paying for an overweight product stack. Target budget: €32/month."
+                : `Freelance dev stack to code, share a client preview, document, and get paid without paying for an overweight product stack. Target budget: ${usdFromEur(32)}/month.`
               : isFr
                 ? `${stack.subtitle} Budget cible : ${stack.monthlyBudget}€/mois. Stack organisée par workflow, budget, risques et calibrage.`
-                : `${stack.subtitleEn} Target budget: €${stack.monthlyBudget}/month. Stack organized by workflow, budget, risks and calibration.`;
+                // `subtitleEn` est generique sur 111 stacks ("Recommended tools
+                // for this consulting profile."), la ou `subtitle` est propre a
+                // chaque metier. Construite dessus, la description anglaise
+                // n'existait qu'en 107 exemplaires pour 212 pages : la moitie du
+                // catalogue anglais se presentait a Google avec la description
+                // d'une autre page. On repart de `titleEn`, qui est unique.
+                : `${stack.titleEn}: the tools recommended for this profile, with a target budget of ${usdFromEur(stack.monthlyBudget)}/month, organized by workflow, budget, risks and calibration.`;
             const url = `${BASE}/${lang}/stacks/${stack.slug}`;
             const frUrl = `${BASE}/fr/stacks/${stack.slug}`;
             const enUrl = `${BASE}/en/stacks/${stack.slug}`;
