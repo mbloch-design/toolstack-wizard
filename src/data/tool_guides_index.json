@@ -119,6 +119,12 @@
       ],
       "en": [
         {
+          "slug": "chatgpt-pro-worth-it",
+          "title": "GPT-6 Astra: is ChatGPT Pro actually worth it?",
+          "date": "2026-09-07",
+          "category": "IA Généraliste"
+        },
+        {
           "slug": "ai-tips-freelancers-2026",
           "title": "AI Tips for Freelancers in 2026: Minimal Stack, Prompts That Actually Work, and Cutting the Waste",
           "date": "2026-04-29",
@@ -500,6 +506,11 @@
     "fr:toggl-track-gratuit-ou-payant": {
       "slug": "toggl",
       "name": "Toggl Track",
+      "hasPricing": true
+    },
+    "en:chatgpt-pro-worth-it": {
+      "slug": "chatgpt",
+      "name": "ChatGPT",
       "hasPricing": true
     },
     "en:zapier-vs-make-vs-n8n-pricing": {

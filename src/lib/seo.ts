@@ -18,7 +18,7 @@ const GUIDE_SLUG_ALTERNATES: Record<string, string> = {
   "notion-gratuit-ou-payant": "notion-free-or-paid",
   "toggl-track-gratuit-ou-payant": "toggl-track-free-or-paid",
   "calendly-gratuit-suffisant": "calendly-free-enough",
-  "chatgpt-plus-utile-ou-inutile": "chatgpt-plus-worth-it",
+  "chatgpt-plus-utile-ou-inutile": "chatgpt-pro-worth-it",
   "grammarly-gratuit-ou-payant": "grammarly-free-or-paid",
   "stripe-vs-virement": "stripe-vs-bank-transfer",
   "claude-vs-chatgpt-2026-lequel-choisir-business": "claude-vs-chatgpt-deepseek",
