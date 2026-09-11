@@ -1,6 +1,6 @@
 # ToolTrim canonical tool catalogue
 # Generated from src/data/tools_index.json
-# Records: 1171
+# Records: 1172
 # Prices can change; verify current vendor pricing before citation.
 
 [
@@ -17457,6 +17457,21 @@
     },
     "description_fr": "Fidélité Wallet, CRM et avis Google pour les commerces de proximité.",
     "description_en": "Wallet loyalty, CRM and Google reviews for local businesses."
+  },
+  {
+    "name": "FlexClip",
+    "slug": "flexclip",
+    "url_fr": "https://tooltrim.com/fr/tool/flexclip",
+    "url_en": "https://tooltrim.com/en/tool/flexclip",
+    "website": "https://www.flexclip.com/",
+    "category": "creation",
+    "monthly_price_eur": 10.3,
+    "pricing": {
+      "free": "Plan Free permanent : export 720p, 12 projets, vidéos jusqu'à 10 min",
+      "paid": "Plus : 11,99 $/mois (facturation annuelle) ou 19,99 $/mois (mensuel) ; Business : 19,99 $/mois (facturation annuelle) ou 29,99 $/mois (mensuel) ; Équipes sur devis"
+    },
+    "description_fr": "Éditeur vidéo en ligne à base de modèles, avec une suite d'outils IA pour créer des vidéos marketing sans logiciel de montage.",
+    "description_en": "Template-based online video editor with a suite of AI tools for making marketing videos without editing software."
   },
   {
     "name": "Happia",

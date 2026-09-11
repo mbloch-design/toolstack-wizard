@@ -35563,6 +35563,40 @@
     ]
   },
   {
+    "id": "flexclip",
+    "slug": "flexclip",
+    "name": "FlexClip",
+    "categoryId": "creation",
+    "shortDescription": "Éditeur vidéo en ligne à base de modèles, avec une suite d'outils IA pour créer des vidéos marketing sans logiciel de montage.",
+    "shortDescriptionEn": "Template-based online video editor with a suite of AI tools for making marketing videos without editing software.",
+    "pricing": {
+      "free": "Plan Free permanent : export 720p, 12 projets, vidéos jusqu'à 10 min",
+      "paid": "Plus : 11,99 $/mois (facturation annuelle) ou 19,99 $/mois (mensuel) ; Business : 19,99 $/mois (facturation annuelle) ou 29,99 $/mois (mensuel) ; Équipes sur devis"
+    },
+    "defaultMonthlyPrice": 10.3,
+    "compareMonthlyPrice": 10.3,
+    "websiteUrl": "https://www.flexclip.com/",
+    "ogImageUrl": "https://resource.flexclip.com/share/current.webp",
+    "logo": "https://logo.clearbit.com/flexclip.com",
+    "tool_type": "specialise",
+    "substitution_cluster_v2": "content-creation",
+    "functional_needs": [
+      "montage-video",
+      "creation-contenu-video"
+    ],
+    "verticals": [
+      "createur-contenu",
+      "community-manager",
+      "motion-video"
+    ],
+    "relevantFor": [
+      "Créateurs de contenu",
+      "Community managers",
+      "Petites marques et commerces",
+      "Équipes marketing"
+    ]
+  },
+  {
     "id": "happia",
     "slug": "happia",
     "name": "Happia",

@@ -1,7 +1,6 @@
 import pricingTruthCsv from "@/data/pricing_truth.csv?raw";
 import type { Tool } from "@/data/types";
 import type { Currency } from "@/hooks/useCurrency";
-import { convertCurrencyAmount } from "@/lib/currency";
 
 type NativePrice = {
   amount: number;
@@ -86,22 +85,23 @@ export function getNativeComparePrice(tool: Tool): NativePrice | null {
   return pricingTruth.get(id) || pricingTruth.get(tool.id) || null;
 }
 
+/**
+ * Prix affiché : toujours la devise réelle, jamais une conversion.
+ *
+ * Un outil a toujours une devise, soit celle attestée par l'éditeur
+ * (pricing_v5.plans ou pricing_truth.csv), soit à défaut l'euro dans lequel
+ * le catalogue normalise ses prix — jamais un montant recalculé dans la
+ * devise de la page. Sans attestation, le vrai défaut est un manque de
+ * sourcing, pas un taux de change à appliquer.
+ */
 export function resolveDisplayPrice(
   tool: Tool,
   normalizedEur: number,
-  selectedCurrency: Currency,
+  _selectedCurrency: Currency,
 ): ResolvedDisplayPrice {
   const nativePrice = getNativeComparePrice(tool);
-  if (nativePrice?.currency === selectedCurrency) {
-    return { amount: nativePrice.amount, currency: selectedCurrency, converted: false, nativePrice };
+  if (nativePrice) {
+    return { amount: nativePrice.amount, currency: nativePrice.currency, converted: false, nativePrice };
   }
-  if (selectedCurrency === "EUR") {
-    return { amount: normalizedEur, currency: "EUR", converted: false, nativePrice };
-  }
-  return {
-    amount: convertCurrencyAmount(normalizedEur, "EUR", selectedCurrency),
-    currency: selectedCurrency,
-    converted: true,
-    nativePrice,
-  };
+  return { amount: normalizedEur, currency: "EUR", converted: false, nativePrice: null };
 }

@@ -170356,6 +170356,248 @@
     }
   },
   {
+    "id": "flexclip",
+    "slug": "flexclip",
+    "name": "FlexClip",
+    "category": "creation",
+    "shortDescription": "Éditeur vidéo en ligne à base de modèles, avec une suite d'outils IA pour créer des vidéos marketing sans logiciel de montage.",
+    "shortDescriptionEn": "Template-based online video editor with a suite of AI tools for making marketing videos without editing software.",
+    "description": "FlexClip est un éditeur vidéo qui tourne entièrement dans le navigateur (Chrome, Safari, Firefox), pensé pour créer une vidéo à partir d'un modèle plutôt que sur une timeline vierge. Le catalogue dépasse 6 000 modèles, complétés par plus de 4 millions de vidéos et photos libres de droits, 74 000 pistes audio et 3 millions d'éléments graphiques.\n\nLa suite IA couvre le texte-vers-vidéo, la synthèse vocale, la génération de script, la génération d'image, le sous-titrage automatique, la suppression d'arrière-plan, la réduction de bruit, la suppression de voix et plusieurs outils photo (colorisation, restauration, agrandissement). Un enregistreur d'écran et de webcam ainsi que des utilitaires de compression et de conversion vidéo sont inclus dans l'outil.\n\nLe plan gratuit exporte en 720p avec 12 projets maximum et une vidéo limitée à 10 minutes ; il reste utilisable pour un premier test réel, pas seulement une démo. Le plan Plus (11,99 $/mois facturé annuellement) lève l'essentiel des limites (export 1080p, projets et durée illimités) et retire le filigrane FlexClip ; Business (19,99 $/mois facturé annuellement) ajoute l'export 4K et les ressources illimitées. Un plan Équipes à sièges (1-3, 5 ou 10) existe séparément sur devis.",
+    "longDescription": "FlexClip est un éditeur vidéo qui tourne entièrement dans le navigateur (Chrome, Safari, Firefox), pensé pour créer une vidéo à partir d'un modèle plutôt que sur une timeline vierge. Le catalogue dépasse 6 000 modèles, complétés par plus de 4 millions de vidéos et photos libres de droits, 74 000 pistes audio et 3 millions d'éléments graphiques.\n\nLa suite IA couvre le texte-vers-vidéo, la synthèse vocale, la génération de script, la génération d'image, le sous-titrage automatique, la suppression d'arrière-plan, la réduction de bruit, la suppression de voix et plusieurs outils photo (colorisation, restauration, agrandissement). Un enregistreur d'écran et de webcam ainsi que des utilitaires de compression et de conversion vidéo sont inclus dans l'outil.\n\nLe plan gratuit exporte en 720p avec 12 projets maximum et une vidéo limitée à 10 minutes ; il reste utilisable pour un premier test réel, pas seulement une démo. Le plan Plus (11,99 $/mois facturé annuellement) lève l'essentiel des limites (export 1080p, projets et durée illimités) et retire le filigrane FlexClip ; Business (19,99 $/mois facturé annuellement) ajoute l'export 4K et les ressources illimitées. Un plan Équipes à sièges (1-3, 5 ou 10) existe séparément sur devis.\n\nFlexClip est édité par PearlMountain Limited.",
+    "longDescriptionEn": "FlexClip is a video editor that runs entirely in the browser (Chrome, Safari, Firefox), built around starting from a template rather than a blank timeline. The library exceeds 6,000 templates, backed by more than 4 million royalty-free videos and photos, 74,000 audio tracks and 3 million graphic elements.\n\nThe AI suite covers text-to-video, text-to-speech, script generation, image generation, auto-subtitling, background removal, noise reduction, vocal removal and several photo tools (colorization, restoration, upscaling). A built-in screen and webcam recorder plus video compression and conversion utilities ship inside the tool.\n\nThe free plan exports at 720p with a 12-project cap and a 10-minute video limit; it stays usable for a genuine first test, not just a demo. The Plus plan ($11.99/month billed annually) lifts most limits (1080p export, unlimited projects and length) and removes the FlexClip watermark; Business ($19.99/month billed annually) adds 4K export and unlimited resources. A seat-based Teams plan (1-3, 5 or 10 seats) exists separately, quote-based.\n\nFlexClip is published by PearlMountain Limited.",
+    "pricing": {
+      "free": "Plan Free permanent : export 720p, 12 projets, vidéos jusqu'à 10 min",
+      "paid": "Plus : 11,99 $/mois (facturation annuelle) ou 19,99 $/mois (mensuel) ; Business : 19,99 $/mois (facturation annuelle) ou 29,99 $/mois (mensuel) ; Équipes sur devis"
+    },
+    "pricingEn": {
+      "free": "Permanent Free plan: 720p export, 12 projects, videos up to 10 min",
+      "paid": "Plus: $11.99/month (billed annually) or $19.99/month (monthly); Business: $19.99/month (billed annually) or $29.99/month (monthly); Teams on quote"
+    },
+    "defaultMonthlyPrice": 10.3,
+    "pricing_v5": {
+      "cautions": [
+        "Prix officiels en dollars ; le tarif mensuel réduit exige un engagement annuel.",
+        "Le filigrane FlexClip s'applique dès que l'usage dépasse les ressources du plan (stock vidéo/audio).",
+        "Le plan Équipes (sièges) n'a pas de prix public, uniquement un formulaire de contact."
+      ],
+      "cautionsEn": [
+        "Official prices are in US dollars; the lower monthly rate requires an annual commitment.",
+        "The FlexClip watermark applies as soon as usage exceeds the plan's resources (stock video/audio).",
+        "The Teams (seats) plan has no public price, only a contact form."
+      ],
+      "verified_on": "2026-09-11",
+      "source_domain": "flexclip.com",
+      "usage_sensitive": false,
+      "compare_plan_kind": "account",
+      "compare_plan_name": "Plus (facturation annuelle)",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://www.flexclip.com/pricing.html",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 10.3,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "summary": "Export 720p, 12 projets maximum, vidéos jusqu'à 10 minutes.",
+          "featureHighlights": [
+            "Export 720p",
+            "1 vidéo et 1 audio de stock par projet",
+            "12 projets maximum"
+          ],
+          "detailsSourceUrl": "https://www.flexclip.com/pricing.html",
+          "pricingUnit": "par compte",
+          "isFree": true,
+          "isComparePlan": false
+        },
+        {
+          "planKey": "plus",
+          "displayName": "Plus",
+          "summary": "Export 1080p, projets et durée illimités, sans filigrane.",
+          "featureHighlights": [
+            "Export 1080p Full-HD",
+            "3600 crédits IA offerts par an",
+            "30 Go d'espace cloud, sans filigrane FlexClip"
+          ],
+          "detailsSourceUrl": "https://www.flexclip.com/pricing.html",
+          "pricingUnit": "par compte",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 11.99,
+          "nativeCurrency": "USD"
+        },
+        {
+          "planKey": "business",
+          "displayName": "Business",
+          "summary": "Export 4K, stock illimité, 100 Go de cloud et 1 To d'hébergement vidéo.",
+          "featureHighlights": [
+            "Export 4K Ultra HD",
+            "9600 crédits IA offerts par an",
+            "Stock vidéo et audio illimité"
+          ],
+          "detailsSourceUrl": "https://www.flexclip.com/pricing.html",
+          "pricingUnit": "par compte",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 19.99,
+          "nativeCurrency": "USD"
+        }
+      ]
+    },
+    "websiteUrl": "https://www.flexclip.com/",
+    "affiliateLink": "",
+    "logo": "https://logo.clearbit.com/flexclip.com",
+    "verdict": {
+      "keepIf": [
+        "Vous produisez régulièrement des vidéos marketing ou promotionnelles courtes.",
+        "Vous voulez partir d'un modèle plutôt que d'une timeline vide.",
+        "Les outils IA (sous-titres, texte-vers-vidéo, retrait d'arrière-plan) couvrent l'essentiel de vos besoins de montage."
+      ],
+      "avoidIf": [
+        "Vous faites du montage professionnel exigeant (broadcast, cinéma, étalonnage fin).",
+        "Vous avez déjà un éditeur avancé (Premiere Pro, DaVinci Resolve) intégré à votre workflow.",
+        "Le plan gratuit ne suffit pas et le tarif annuel de 11,99 $/mois ne convient pas à votre budget."
+      ],
+      "threshold": "Choisissez FlexClip si l'essentiel de votre besoin est de produire vite des vidéos marketing à partir de modèles, avec des outils IA intégrés plutôt qu'un montage image par image. Testez le plan gratuit sur un vrai projet avant de passer au plan Plus pour lever le filigrane et les limites."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You regularly produce short marketing or promotional videos.",
+        "You want to start from a template rather than a blank timeline.",
+        "The AI tools (subtitles, text-to-video, background removal) cover most of your editing needs."
+      ],
+      "avoidIf": [
+        "You do demanding professional editing (broadcast, film, fine color grading).",
+        "You already have an advanced editor (Premiere Pro, DaVinci Resolve) built into your workflow.",
+        "The free plan isn't enough and the $11.99/month annual rate doesn't fit your budget."
+      ],
+      "threshold": "Choose FlexClip when your main need is producing marketing videos quickly from templates, with built-in AI tools rather than frame-by-frame editing. Test the free plan on a real project before upgrading to Plus to remove the watermark and limits."
+    },
+    "pros": [
+      "Plan gratuit réellement utilisable, pas seulement une démo limitée.",
+      "Plus de 6 000 modèles et une bibliothèque de stock très large incluse.",
+      "Suite IA large : texte-vers-vidéo, sous-titres, retrait d'arrière-plan, retrait de voix.",
+      "Fonctionne entièrement dans le navigateur, aucune installation.",
+      "Export de la vidéo finale toujours possible, à toutes les formules."
+    ],
+    "prosEn": [
+      "Genuinely usable free plan, not just a limited demo.",
+      "Over 6,000 templates plus a very large stock library included.",
+      "Broad AI suite: text-to-video, subtitles, background removal, vocal removal.",
+      "Runs entirely in the browser, no installation.",
+      "Exporting the finished video is always possible, on every plan."
+    ],
+    "cons": [
+      "Filigrane appliqué dès que l'usage dépasse les ressources du plan gratuit.",
+      "Tarif réduit réservé à l'engagement annuel, sinon le mensuel coûte 60 à 65 % plus cher.",
+      "Plan Équipes sans prix public, seulement un formulaire de contact.",
+      "Reste un outil de montage par modèles, pas un logiciel de montage professionnel avancé."
+    ],
+    "consEn": [
+      "Watermark applies as soon as usage exceeds the free plan's resources.",
+      "The lower rate requires an annual commitment; monthly billing costs 60-65% more.",
+      "Teams plan has no public price, only a contact form.",
+      "Remains a template-based editor, not an advanced professional editing tool."
+    ],
+    "useCases": [
+      "Créer une vidéo promotionnelle pour les réseaux sociaux à partir d'un modèle.",
+      "Sous-titrer automatiquement une vidéo brute avant publication.",
+      "Générer une vidéo à partir d'un texte ou d'un script pour une annonce produit.",
+      "Enregistrer un écran ou une webcam pour un tutoriel rapide."
+    ],
+    "useCasesEn": [
+      "Create a social media promotional video from a template.",
+      "Auto-subtitle a raw video before publishing.",
+      "Generate a video from text or a script for a product announcement.",
+      "Record a screen or webcam for a quick tutorial."
+    ],
+    "covers": [
+      "montage-video",
+      "creation-contenu-video",
+      "sous-titrage-video"
+    ],
+    "functional_needs": [
+      "montage-video",
+      "creation-contenu-video"
+    ],
+    "relevantFor": [
+      "Créateurs de contenu",
+      "Community managers",
+      "Petites marques et commerces",
+      "Équipes marketing"
+    ],
+    "alternatives": [
+      "capcut"
+    ],
+    "seo": {
+      "idealForFr": "Idéal pour créer rapidement des vidéos marketing à partir de modèles, sans logiciel de montage.",
+      "idealForEn": "Ideal for quickly creating marketing videos from templates, with no editing software.",
+      "metaDescription": "FlexClip : avis, tarifs Free, Plus et Business, éditeur vidéo à modèles, suite IA et limites pour créateurs et petites marques."
+    },
+    "articles": [],
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "createur-contenu",
+      "community-manager",
+      "motion-video"
+    ],
+    "ia_use_case": "generation-video",
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "personas": [],
+    "timeGainedHoursPerMonth": 3,
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [
+      "video_frequency",
+      "editing_depth_requirement",
+      "team_requirement"
+    ],
+    "substitution_cluster_v2": "content-creation",
+    "decision_policy_v3": {
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": true,
+      "default_decision_lane": "review_then_prescribe",
+      "auto_downgrade_allowed": true,
+      "never_auto_cancel_reason": null,
+      "requires_context_questions": true
+    },
+    "ogImageUrl": "https://resource.flexclip.com/share/current.webp",
+    "galleryImages": [],
+    "force_silence": false,
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 4,
+      "evidence": {
+        "valeurAjoutee": "Le plan gratuit permanent (12 projets, export 720p) est réellement utilisable pour un premier projet complet, pas seulement une démo bridée, et remplace à lui seul un accès à une banque d'images/vidéos, un outil de sous-titrage et un éditeur basique (source : flexclip.com/pricing.html, vérifié le 2026-09-11).",
+        "simplicite": "L'édition par modèle et l'absence d'installation abaissent la barrière d'entrée, mais les avis mis en avant sur le site ne citent que des prénoms sans lien vérifiable vers un profil réel, donc sans validation indépendante de l'ergonomie au quotidien (source : flexclip.com, vérifié le 2026-09-11).",
+        "utilisation": "L'usage quotidien couvre le montage par modèles, l'enregistrement d'écran/webcam, la conversion et la compression vidéo, en plus d'une douzaine d'outils IA (texte-vers-vidéo, script, sous-titres, suppression de bruit et de voix), un périmètre large pour un créateur ou une petite équipe marketing (source : flexclip.com, vérifié le 2026-09-11).",
+        "puissance": "La combinaison modèles + banque de 4M+ médias + suite IA complète (texte-vers-vidéo, TTS, retrait d'arrière-plan, upscaling photo) est rare à ce prix, mais reste un outil de montage assisté par modèles, pas un logiciel de montage professionnel avec étalonnage ou mixage audio avancé (source : flexclip.com, vérifié le 2026-09-11).",
+        "reversibilite": "L'export de la vidéo finale est la fonction même du produit et reste possible à tous les plans (avec filigrane et résolution réduite en gratuit) ; la politique de confidentialité garantit en plus les droits RGPD d'accès, de suppression et de portabilité pour les résidents de l'Espace économique européen (source : flexclip.com/privacy.html, vérifié le 2026-09-11)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "The permanent free plan (12 projects, 720p export) is genuinely usable for a first complete project, not just a capped demo, and on its own replaces access to a stock media library, a subtitling tool and a basic editor (source: flexclip.com/pricing.html, verified 2026-09-11).",
+        "simplicite": "Template-based editing and no installation lower the entry barrier, but the testimonials featured on the site cite only first names with no verifiable link to a real profile, so there's no independent validation of day-to-day ergonomics (source: flexclip.com, verified 2026-09-11).",
+        "utilisation": "Daily usage spans template-based editing, screen/webcam recording, video conversion and compression, plus a dozen AI tools (text-to-video, script, subtitles, noise and vocal removal), a broad scope for a creator or a small marketing team (source: flexclip.com, verified 2026-09-11).",
+        "puissance": "The combination of templates plus a 4M+ media library plus a full AI suite (text-to-video, TTS, background removal, photo upscaling) is unusual at this price, but it remains a template-assisted editor, not professional editing software with advanced color grading or audio mixing (source: flexclip.com, verified 2026-09-11).",
+        "reversibilite": "Exporting the finished video is the product's core function and stays possible on every plan (with a watermark and lower resolution on Free); the privacy policy additionally guarantees GDPR access, deletion and portability rights for European Economic Area residents (source: flexclip.com/privacy.html, verified 2026-09-11)."
+      },
+      "lastActivityVerifiedOn": "2026-09-11",
+      "notedOn": "2026-09-11"
+    }
+  },
+  {
     "id": "happia",
     "slug": "happia",
     "name": "Happia",

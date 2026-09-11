@@ -108,23 +108,26 @@ export type ToolPriceDisplay = {
 };
 
 /**
- * Formate un prix catalogue (normalisé en euros) dans la devise demandée.
- * Le prix natif de l'éditeur prime quand il est déjà dans la bonne devise :
- * $19.99 vaut mieux qu'un €17.31 reconverti.
+ * Formate le prix catalogue d'un outil : toujours sa devise réelle, jamais
+ * une conversion dans la devise de la page.
+ *
+ * Un outil a toujours une devise : celle attestée par l'éditeur, ou à défaut
+ * l'euro dans lequel le catalogue normalise ses prix. Le paramètre `currency`
+ * (dérivé de la langue de la page) ne sert plus qu'à choisir le format
+ * d'affichage `Intl.NumberFormat`, jamais à recalculer un montant. Un outil
+ * sans devise attestée est un manque de sourcing à combler, pas un taux de
+ * change à appliquer.
  */
 export function formatToolPrice(
   tool: any,
   normalizedEur: number,
-  currency: Currency,
+  _currency: Currency,
   lang: string,
   options: { round?: boolean } = {},
 ): ToolPriceDisplay {
   const native = nativePriceFromTool(tool);
-  const useNative = native?.currency === currency;
-  const raw = useNative ? native!.amount : convertAmount(normalizedEur, "EUR", currency);
-  const converted = !useNative && currency !== "EUR";
-  // Un montant converti est arrondi d'office : afficher « $22.13 » pour un
-  // éditeur qui publie 19 € invente une précision au centime qui n'existe pas.
-  const amount = options.round || converted ? Math.round(raw) : raw;
-  return { amount, currency, converted, text: formatAmount(amount, currency, lang) };
+  const currency = native?.currency ?? "EUR";
+  const raw = native?.amount ?? normalizedEur;
+  const amount = options.round ? Math.round(raw) : raw;
+  return { amount, currency, converted: false, text: formatAmount(amount, currency, lang) };
 }
