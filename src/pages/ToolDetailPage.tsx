@@ -32,6 +32,7 @@ import { findSimilarTools } from "@/lib/alternativesSimilarity";
 import ToolFAQSection from "@/components/tool/ToolFAQSection";
 import { getGuidesForTool } from "@/lib/toolGuides";
 import ToolJsonLd from "@/components/tool/ToolJsonLd";
+import PinToolButton from "@/components/PinToolButton";
 import StickyDecisionCard from "@/components/tool/StickyDecisionCard";
 import { relPourLienOutil, relExterne, safeExternalUrl } from "@/lib/externalLink";
 import { localizePlanName } from "@/lib/planNames";
@@ -443,10 +444,6 @@ const ToolDetailPage = () => {
                 both the expanded and compact sticky states. */}
             <div ref={heroRef} className={`td-hero${showCompactHeader ? " is-compact" : ""}`}>
             {(() => {
-              const ogImg = (tool.ogImageUrl ?? (tool as any).og_image_url) as string | null;
-              const extra = tool.galleryImages ?? ((tool as any).gallery_images as string[] | null) ?? [];
-              const imgs = [ogImg, ...extra].filter((u): u is string => !!u);
-              const hasHeroMedia = imgs.length > 0 || tutorials.length > 0;
               // Keep the hero factual. The verdict belongs to the decision
               // card and to the analysis below, so repeating it here made the
               // first screen say the same thing three times.
@@ -468,6 +465,7 @@ const ToolDetailPage = () => {
                           )}
                         </div>
 
+                        <div className="td-hero-actions">
                         {primaryCtaUrl && <a
                           href={primaryCtaUrl}
                           target="_blank"
@@ -486,15 +484,16 @@ const ToolDetailPage = () => {
                           {primaryCtaLabel}
                           <ExternalLink aria-hidden />
                         </a>}
+                        <PinToolButton slug={tool.slug || tool.id} label={tool.name} t={t} labelMode="icon" />
+                        </div>
                       </div>
 
                     </div>
                   </div>
-                  {hasHeroMedia && (
-                    <div className="td-hero-media">
-                      <ToolGallery images={imgs} videos={tutorials} toolName={tool.name} lang={lang} variant="hero" />
-                    </div>
-                  )}
+                  <div className="td-sidebar-mobile td-opening-verdict">
+                    <StickyDecisionCard {...cardProps} section="verdict" />
+                  </div>
+
 
                 </>
               );
@@ -513,10 +512,16 @@ const ToolDetailPage = () => {
               ))}
             </nav>
 
-            {/* Mobile completes the opening fiche with its decision card. */}
-            <div className="td-sidebar-mobile">
-              <StickyDecisionCard {...cardProps} />
-            </div>
+            {showAnalysis && (() => {
+              const cover = tool.ogImageUrl ?? (tool as any).og_image_url;
+              const images = [cover, ...(tool.galleryImages ?? (tool as any).gallery_images ?? [])]
+                .filter((url): url is string => !!url);
+              return images.length > 0 || tutorials.length > 0 ? (
+                <div className="td-hero-media">
+                  <ToolGallery images={images} videos={tutorials} toolName={tool.name} lang={lang} variant="hero" />
+                </div>
+              ) : null;
+            })()}
 
             {/* Editorial overview: the reference layout is reproduced inside
                 the content itself — analysis on the left, factual rail on the
@@ -1028,6 +1033,10 @@ const ToolDetailPage = () => {
 
             </div>
 
+            <div className="td-sidebar-mobile td-reading-actions">
+              <h2>{t("Et maintenant ?", "What’s next?")}</h2>
+              <StickyDecisionCard {...cardProps} section="actions" />
+            </div>
           </main>
           {/* end main content */}
 

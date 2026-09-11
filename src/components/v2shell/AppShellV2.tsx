@@ -244,6 +244,7 @@ export default function AppShellV2({ children }: { children: ReactNode }) {
                 key={item.id}
                 to={`${prefix}${item.to}`}
                 className={`asv2-nav-item${isActive ? " asv2-nav-item--active" : ""}`}
+                aria-current={isActive ? "page" : undefined}
                 aria-label={t(item.labelFr, item.labelEn)}
                 data-tooltip={t(item.labelFr, item.labelEn)}
               >

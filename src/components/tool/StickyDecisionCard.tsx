@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Check, Compass, Copy, Flag, Info, Linkedin, Mail, MessageCircle, Share2 } from "@/lib/icons";
 import ToolLogo from "@/components/ToolLogo";
-import PinToolButton from "@/components/PinToolButton";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import type { Tool } from "@/data/types";
 import { getExplorerHref } from "@/lib/toolExploration";
@@ -14,9 +13,10 @@ interface Props {
   prefix: string;
   t: (fr: string, en: string) => string;
   alternatives: Tool[];
+  section?: "all" | "verdict" | "actions";
 }
 
-export default function StickyDecisionCard({ tool, prefix, t, alternatives }: Props) {
+export default function StickyDecisionCard({ tool, prefix, t, alternatives, section = "all" }: Props) {
   const [shareStatus, setShareStatus] = useState<"idle" | "shared" | "copied" | "error">("idle");
   const [shareOpen, setShareOpen] = useState(false);
   const slug = tool.slug || tool.id;
@@ -100,7 +100,7 @@ export default function StickyDecisionCard({ tool, prefix, t, alternatives }: Pr
 
   return (
     <div className="td-decision-card td-decision-card--utility">
-      <div className="td-decision-verdict">
+      {section !== "actions" && <div className="td-decision-verdict">
         <span className="td-decision-verdict-label">
           {t("L’avis ToolTrim", "ToolTrim verdict")}
           <Link
@@ -130,9 +130,9 @@ export default function StickyDecisionCard({ tool, prefix, t, alternatives }: Pr
           <span>/ 5</span>
         </span>
         <span className="td-decision-verdict-copy">{t(toolTrimScore.labelFr, toolTrimScore.labelEn)}</span>
-      </div>
+      </div>}
 
-      <nav className="td-decision-utility-actions" aria-label={t("Actions sur l’outil", "Tool actions")}>
+      {section !== "verdict" && <nav className="td-decision-utility-actions" aria-label={t("Actions sur l’outil", "Tool actions")}>
         <Link
           to={getExplorerHref(prefix, { type: "outil", slug })}
           className="td-decision-explore"
@@ -141,7 +141,6 @@ export default function StickyDecisionCard({ tool, prefix, t, alternatives }: Pr
           <Compass aria-hidden />
           <span>{t("Explorer autour de cet outil", "Explore around this tool")}</span>
         </Link>
-        <PinToolButton slug={slug} label={tool.name} t={t} labelMode="full" />
         <Popover open={shareOpen} onOpenChange={setShareOpen}>
           <PopoverTrigger asChild>
             <button type="button" className="td-decision-share" aria-expanded={shareOpen}>
@@ -179,9 +178,9 @@ export default function StickyDecisionCard({ tool, prefix, t, alternatives }: Pr
           <Flag aria-hidden />
           <span>{t("Signaler un problème", "Report a problem")}</span>
         </a>
-      </nav>
+      </nav>}
 
-      {similar.length > 0 && (
+      {section === "all" && similar.length > 0 && (
         <section className="td-decision-similar">
           <div className="td-decision-similar-head">
             <h2>{t("Outils similaires", "Similar tools")}</h2>

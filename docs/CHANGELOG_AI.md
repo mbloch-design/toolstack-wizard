@@ -4364,3 +4364,22 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Confirmation sur les trois soumissions gratuites du jour que le badge avait disparu après le contrôle initial.
 - Nouvelle vérification distante du badge au moment de l’envoi final du formulaire, en complément du jeton temporaire.
 - Validation plus stricte : l’image officielle doit se trouver dans le lien ToolTrim, sur les domaines attendus, et ne pas être masquée par un style inline évident.
+
+# 2026-09-11 — Densité de la fiche outil et repère du rail compact
+
+- Réduction de la gouttière gauche des fiches outils sur grand écran afin de rapprocher le contenu du rail sans modifier les autres gabarits.
+- Ajout d’un repère actif sobre dans la navigation compacte et de `aria-current="page"` sur la destination courante.
+- Conservation du périmètre actuel du rail : aucune destination supplémentaire ne vient concurrencer le fil d’Ariane ou la colonne de décision.
+# 2026-09-11 — Refonte responsive des fiches outils
+
+- Le rail principal passe automatiquement en mode compact jusqu’à 1180 px afin de préserver la largeur utile sur tablette et petit ordinateur.
+- Le rail de décision latéral est réservé aux grands écrans (à partir de 1351 px) ; en dessous, le verdict et les actions rejoignent le flux de lecture.
+- Sur mobile, la décision précède la navigation locale, les actions secondaires sont condensées et les outils similaires sont retirés de ce bloc initial pour alléger le premier écran.
+
+## 2026-09-11 — Hiérarchie produit des fiches responsive
+
+- Le verdict mobile/tablette est séparé des actions et placé sous l’identité ; la visite du site reste l’action principale du hero.
+- Les onglets précèdent les visuels, désormais réservés à la présentation.
+- Explorer, partager et signaler sont regroupés en fin de lecture sur petit écran ; le rail desktop conserve ses actions.
+- L’enregistrement dans la stack devient un bouton marque-page de 44 px à côté de la visite du site, sans doublon dans le rail.
+- Validation : build complet et budgets PASS ; rendu et ouverture du menu vérifiés à 390, 768 et 1440 px.

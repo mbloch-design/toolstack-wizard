@@ -8026,6 +8026,9 @@
     padding-left: var(--layout-gutter);
     padding-right: var(--layout-gutter);
   }
+  @media (min-width: 1200px) {
+    .td-tool-page .td-container { padding-left: 32px; }
+  }
   @media (max-width: 768px) {
     .td-container { padding-left: var(--layout-gutter-mobile); padding-right: var(--layout-gutter-mobile); }
   }
@@ -8050,7 +8053,7 @@
     min-width: 0;
     display: flow-root;
   }
-  @media (max-width: 1100px) {
+  @media (max-width: 1350px) {
     .td-body-grid {
       grid-template-columns: minmax(0, 1fr);
       gap: 40px;
@@ -8069,15 +8072,25 @@
     scrollbar-width: none;
   }
   .td-sidebar-desktop::-webkit-scrollbar { display: none; }
-  @media (max-width: 1100px) {
+  @media (max-width: 1350px) {
     .td-sidebar-desktop {
       position: static;
       display: none;
     }
   }
-  /* Only ever rendered below 1101px, where it needs air under it. */
+  /* Below the wide desktop split, the decision card becomes part of the
+     reading flow and appears before the local navigation. */
   .td-sidebar-mobile { margin-bottom: 32px; }
-  @media (min-width: 1101px) {
+  .td-sidebar-mobile .td-decision-card { padding: 0; border: 0; gap: 16px; }
+  .td-sidebar-mobile .td-decision-similar { display: none; }
+  .td-sidebar-mobile .td-decision-utility-actions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .td-sidebar-mobile .td-decision-share { margin-top: 0; }
+  .td-opening-verdict { margin: 16px 0 0; }
+  .td-scroll-body > .td-hero-media { margin: 0 0 28px; }
+  .td-reading-actions { margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--color-border); }
+  .td-reading-actions h2 { margin-bottom: 16px; font-size: 22px; }
+  .td-hero.is-compact .td-opening-verdict { display: none; }
+  @media (min-width: 1351px) {
     .td-sidebar-mobile { display: none; }
   }
   /* td-sidebar is now just a semantic wrapper — no position override */
@@ -8293,6 +8306,13 @@
     min-height: 58px !important;
   }
   .td-hero-logo-image { transition: width 220ms ease-out, height 220ms ease-out; }
+  .td-hero-actions { display: flex; align-items: center; gap: 10px; }
+  .td-hero-actions .pin-tool-button { position: static; flex: 0 0 44px; width: 44px; height: 44px; padding: 0; border: 1px solid var(--color-border); border-radius: 50%; background: var(--color-surface); color: var(--color-text); display: inline-flex; align-items: center; justify-content: center; }
+  .td-hero-actions .pin-tool-button--active { background: var(--color-text); color: var(--color-surface); }
+  @media (max-width: 640px) {
+    .td-hero-actions { grid-column: 1 / -1; }
+    .td-hero-actions .td-hero-site-link { flex: 1; }
+  }
   .td-hero-site-link {
     display: inline-flex;
     align-items: center;
@@ -9791,11 +9811,18 @@
     }
     .td-tool-subnav::-webkit-scrollbar { display: none; }
     .td-tool-subnav a { flex: 0 0 auto; }
+    .td-sidebar-mobile { margin: 20px 0 26px; }
+    .td-sidebar-mobile .td-decision-explore,
+    .td-sidebar-mobile .pin-tool-button { grid-column: 1 / -1; }
     .td-decision-card {
-      padding: 18px 0 0;
-      border-top: 1px solid var(--color-border-soft);
+      gap: 18px;
+      padding: 0;
+      border-top: 0;
       border-left: 0;
     }
+    .td-decision-verdict { padding: 16px; }
+    .td-decision-utility-actions .td-decision-share { margin-top: 0; }
+    .td-decision-similar { display: none; }
     .td-review-rationale { grid-template-columns: 1fr; gap: 14px; }
   }
 
@@ -25501,6 +25528,16 @@ section[id] {
 .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav-item--active .asv2-nav-icon {
   background: color-mix(in srgb, var(--color-surface-soft) 84%, var(--color-surface));
 }
+.asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav-item--active::before {
+  position: absolute;
+  top: 9px;
+  bottom: 9px;
+  left: -7px;
+  width: 3px;
+  border-radius: var(--radius-pill);
+  background: var(--color-text-strong);
+  content: "";
+}
 .asv2-root:not(.asv2-root--sidebar-expanded) .asv2-nav-item::after {
   position: absolute;
   left: calc(100% + 10px);
@@ -25877,7 +25914,7 @@ section[id] {
 
 /* Preserve content width on compact laptop layouts. The control still keeps
    the user's preference, which becomes visible again at the next breakpoint. */
-@media (min-width: 641px) and (max-width: 900px) {
+@media (min-width: 641px) and (max-width: 1180px) {
   .asv2-root--sidebar-expanded .asv2-sidebar { width: 76px; }
   .asv2-root--sidebar-expanded .asv2-sidebar-top { justify-content: center; padding-inline: 0; }
   .asv2-root--sidebar-expanded .asv2-sidebar-search-btn { display: none; }
