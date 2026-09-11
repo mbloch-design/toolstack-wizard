@@ -6,6 +6,7 @@ import { useLang } from "@/hooks/useLang";
 import { ArrowRight, Check, Clock, Copy, CreditCard, FileText, Globe, Mail, Scale, ShieldCheck, StarSolid, User } from "@/lib/icons";
 import { cleanupSeo, SEO_BASE, setHreflang, setSeoTags } from "@/lib/seo";
 import { trackEvent } from "@/lib/analytics";
+import { normalizeSiteUrl, type NormalizeUrlFailure } from "@/lib/normalizeSiteUrl";
 
 type Step = 1 | 2 | 3;
 type Status = "idle" | "saving" | "checking" | "submitting" | "success" | "error";
@@ -86,6 +87,19 @@ const SubmitToolPage = () => {
     setSubmission((current) => ({ ...current, [field]: value })); setError("");
     if (status === "error") setStatus("idle");
   };
+  const urlErrorMessage = (reason: NormalizeUrlFailure) => {
+    if (reason === "empty") return t("Indique l'adresse du site.", "Enter the website address.");
+    if (reason === "unsupported_scheme") return t("Indique une adresse de site web, pas un autre type de lien.", "Enter a website address, not another kind of link.");
+    if (reason === "port_not_allowed") return t("Les adresses avec un numéro de port ne peuvent pas être vérifiées.", "Addresses with a port number cannot be verified.");
+    return t("Cette adresse ne semble pas valide. Exemple : exemple.com", "This address does not look valid. Example: example.com");
+  };
+  /** Rewrites the field in place so the person sees exactly what we will fetch. */
+  const tidyUrlField = (field: "toolUrl" | "badgeUrl") => {
+    const current = submission[field];
+    if (!current.trim()) return;
+    const result = normalizeSiteUrl(current);
+    if (result.ok && result.changed) update(field, result.url);
+  };
   const source = submission.toolName.trim().toLowerCase().normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "submitted-tool";
   const badgeAsset = badgeTheme === "dark" ? "tooltrim-badge-dark.svg" : "tooltrim-badge.svg";
@@ -103,25 +117,28 @@ const SubmitToolPage = () => {
     setPlan("paid"); setPaid(false); setStep(2); setStatus("idle"); setError("");
     trackEvent("submit_plan_upgrade", { from: "free", to: "paid", source: "badge_step" });
   };
-  const sendProgress = async (progressStep: 1 | 2, paidPath = false) => {
-    const signature = `${progressStep}:${paidPath}:${JSON.stringify(submission)}`;
+  const sendProgress = async (progressStep: 1 | 2, paidPath = false, overrides: Partial<Submission> = {}) => {
+    // State updates are not applied yet when this runs, so normalised values are passed in.
+    const payload = { ...submission, ...overrides };
+    const signature = `${progressStep}:${paidPath}:${JSON.stringify(payload)}`;
     if (sentProgressRef.current.has(signature)) return;
     const endpoint = /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname)
       ? "https://tooltrim.com/api/submission-progress" : "/api/submission-progress";
     const response = await fetch(endpoint, {
       method: "POST", headers: { "Content-Type": "application/json" }, keepalive: true,
-      body: JSON.stringify({ ...submission, progressStep, paid: paidPath, lang }),
+      body: JSON.stringify({ ...payload, progressStep, paid: paidPath, lang }),
     });
     if (!response.ok) throw new Error("progress_email_failed");
     sentProgressRef.current.add(signature);
   };
   const continueFromContact = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    try { if (new URL(submission.toolUrl).protocol !== "https:") throw new Error(); }
-    catch { setStatus("error"); setError(t("Le site officiel doit utiliser une adresse https://.", "The official website must use an https:// address.")); return; }
+    const site = normalizeSiteUrl(submission.toolUrl);
+    if (!site.ok) { setStatus("error"); setError(urlErrorMessage(site.reason)); return; }
+    if (site.changed) update("toolUrl", site.url);
     setStatus("saving"); setError("");
     try {
-      await sendProgress(1, plan === "paid"); setStep(2); setStatus("idle");
+      await sendProgress(1, plan === "paid", { toolUrl: site.url }); setStep(2); setStatus("idle");
       document.getElementById("submit-form")?.scrollIntoView({ behavior: "smooth", block: "start" });
     } catch { setStatus("error"); setError(t("L'enregistrement a échoué. Réessaie.", "This step could not be saved. Try again.")); }
   };
@@ -134,17 +151,24 @@ const SubmitToolPage = () => {
     setCodeCopied(true); window.setTimeout(() => setCodeCopied(false), 1800);
   };
   const verifyBadge = async () => {
-    try {
-      if (!submission.badgeUrl.trim() || new URL(submission.badgeUrl).protocol !== "https:") throw new Error("invalid_url");
-    } catch { setStatus("error"); setError(t("Saisis l'URL publique complète de la page avec le badge.", "Enter the complete public URL of the page with the badge.")); badgeUrlRef.current?.focus(); return; }
+    const badgePage = normalizeSiteUrl(submission.badgeUrl);
+    if (!badgePage.ok) {
+      setStatus("error");
+      setError(badgePage.reason === "empty"
+        ? t("Saisis l'URL publique complète de la page avec le badge.", "Enter the complete public URL of the page with the badge.")
+        : urlErrorMessage(badgePage.reason));
+      badgeUrlRef.current?.focus();
+      return;
+    }
+    if (badgePage.changed) update("badgeUrl", badgePage.url);
     setStatus("checking"); setError("");
     try {
       const endpoint = /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname) ? "https://tooltrim.com/api/verify-badge" : "/api/verify-badge";
-      const response = await fetch(endpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ badgeUrl: submission.badgeUrl, toolUrl: submission.toolUrl }) });
+      const response = await fetch(endpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ badgeUrl: badgePage.url, toolUrl: submission.toolUrl }) });
       const payload = await response.json().catch(() => ({}));
       if (!response.ok) throw new Error(payload.error || (response.status >= 500 ? "server_unavailable" : "badge_not_found"));
       setSubmission((current) => ({ ...current, verificationToken: payload.token || "" }));
-      await sendProgress(2); setStep(3); setStatus("idle");
+      await sendProgress(2, false, { badgeUrl: badgePage.url }); setStep(3); setStatus("idle");
     } catch (caught) {
       const reason = caught instanceof TypeError ? "server_unavailable" : caught instanceof Error ? caught.message : "verification_failed";
       setStatus("error");
@@ -289,7 +313,7 @@ const SubmitToolPage = () => {
         <div className="sp-card">
           {step === 1 && <form onSubmit={continueFromContact} className="sp-form">
             <div className="sp-section-heading"><span>01</span><div><h2>{t("Commençons par ton outil.", "Let’s start with your tool.")}</h2><p>{t("Trois informations pour commencer. Tu pourras préciser les détails à la dernière étape.", "Three details to get started. You can add more context in the final step.")}</p></div></div>
-            <div className="sp-form-grid"><div className="tt-form-field"><label className="tt-form-label" htmlFor="submit-tool-url">{t("Site officiel", "Official website")}</label><div className="sp-input-wrap"><Globe size={16} /><input className="tt-form-input" id="submit-tool-url" required type="url" maxLength={300} value={submission.toolUrl} onChange={(event) => update("toolUrl", event.target.value)} placeholder="https://…" /></div></div><div className="tt-form-field"><label className="tt-form-label" htmlFor="submit-tool-name">{t("Nom de l'outil", "Tool name")}</label><div className="sp-input-wrap"><User size={16} /><input className="tt-form-input" id="submit-tool-name" required maxLength={100} value={submission.toolName} onChange={(event) => update("toolName", event.target.value)} placeholder="Acme" /></div></div></div>
+            <div className="sp-form-grid"><div className="tt-form-field"><label className="tt-form-label" htmlFor="submit-tool-url">{t("Site officiel", "Official website")}</label><div className="sp-input-wrap"><Globe size={16} /><input className="tt-form-input" id="submit-tool-url" required type="text" inputMode="url" autoComplete="url" spellCheck={false} maxLength={300} value={submission.toolUrl} onChange={(event) => update("toolUrl", event.target.value)} onBlur={() => tidyUrlField("toolUrl")} placeholder={t("exemple.com", "example.com")} /></div></div><div className="tt-form-field"><label className="tt-form-label" htmlFor="submit-tool-name">{t("Nom de l'outil", "Tool name")}</label><div className="sp-input-wrap"><User size={16} /><input className="tt-form-input" id="submit-tool-name" required maxLength={100} value={submission.toolName} onChange={(event) => update("toolName", event.target.value)} placeholder="Acme" /></div></div></div>
             <div className="tt-form-field"><label className="tt-form-label" htmlFor="submit-email">Email</label><div className="sp-input-wrap"><Mail size={16} /><input className="tt-form-input" id="submit-email" required type="email" maxLength={200} value={submission.email} onChange={(event) => update("email", event.target.value)} placeholder="you@example.com" /></div></div>
             {error && <p className="tt-form-error" role="alert">{error}</p>}
             <div className="sp-actions sp-actions--split"><button type="button" className="sp-button-secondary" onClick={() => setPlan(null)}>{t("← Revoir les offres", "← Review options")}</button><button type="submit" className="tt-button-primary" disabled={status === "saving"}>{status === "saving" ? t("Enregistrement…", "Saving…") : plan === "paid" ? t("Continuer vers le paiement →", "Continue to payment →") : t("Continuer vers le badge →", "Continue to the badge →")}</button></div>
@@ -312,7 +336,7 @@ const SubmitToolPage = () => {
               <div className={`sp-badge-preview sp-badge-preview--${badgeTheme}`}><img src={`/${badgeAsset}`} alt={badgeAlt} width={216} height={54} /></div>
               <p className="sp-embed-label">{t("Ajoute ce code sur ton site", "Add this code to your website")}</p><div className="sp-code-wrap"><code className="sp-code">{badgeHtml}</code><button type="button" className="sp-copy-button" onClick={copyBadge} aria-label={t("Copier le code du badge", "Copy badge code")}>{codeCopied ? <Check size={17} /> : <Copy size={17} />}</button></div>
               <label className="sp-installed-check"><input type="checkbox" checked={badgeInstalled} onChange={(event) => setBadgeInstalled(event.target.checked)} />{t("J'ai ajouté le badge sur mon site", "I've added the badge to my website")}</label>
-              <div className="tt-form-field"><label className="tt-form-label" htmlFor="submit-badge-url">{t("URL de la page avec le badge", "URL of the page with the badge")}</label><input ref={badgeUrlRef} className="tt-form-input" id="submit-badge-url" type="url" value={submission.badgeUrl} onChange={(event) => update("badgeUrl", event.target.value)} placeholder={`${submission.toolUrl.replace(/\/$/, "") || "https://example.com"}/partners`} /></div>
+              <div className="tt-form-field"><label className="tt-form-label" htmlFor="submit-badge-url">{t("URL de la page avec le badge", "URL of the page with the badge")}</label><input ref={badgeUrlRef} className="tt-form-input" id="submit-badge-url" type="text" inputMode="url" autoComplete="url" spellCheck={false} maxLength={300} value={submission.badgeUrl} onChange={(event) => update("badgeUrl", event.target.value)} onBlur={() => tidyUrlField("badgeUrl")} placeholder={`${submission.toolUrl.replace(/\/$/, "") || "https://example.com"}/partners`} /></div>
             </div>
             <aside className="sp-upgrade-note">
               <div><span>{t("Pas envie d'installer le badge ?", "Do not want to install the badge?")}</span><strong>{t("Passe à la publication prioritaire.", "Switch to priority publication.")}</strong><p>{t("Ta fiche est préparée par ToolTrim, avec un aller-retour avant publication sous cinq jours ouvrés.", "ToolTrim prepares your listing, with one review round before publication within five business days.")}</p></div>
