@@ -180,7 +180,7 @@ const GuideDetailPage = () => {
             ) : null}
 
             <div className={`ga-share-row${isStory ? " ga-share-row--story" : ""}`}>
-              <span className="ga-share-label">{t("Cet article vous a été utile ?", "Found this useful?")}</span>
+              <span className="ga-share-label">{t("Cet article t'a été utile ?", "Found this useful?")}</span>
               <button type="button" onClick={copyLink} className="ga-share-btn" aria-label={t("Copier le lien", "Copy link") as string}>
                 {copied ? <Check aria-hidden="true" /> : <Link2 aria-hidden="true" />}
               </button>
