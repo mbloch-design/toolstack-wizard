@@ -10,6 +10,7 @@ import { FEATURED_COMPARISONS } from "./src/data/comparisons";
 import { computeToolTrimScore } from "./src/lib/toolTrimScore";
 import { resolveMonthlyPrice } from "./src/lib/pricing";
 import { formatToolPrice } from "./src/lib/currencyRates";
+import { hasEditorialSubstance } from "./src/lib/editorialSubstance";
 import { localizePlanName } from "./src/lib/planNames";
 import { catalogProjectionRowsToTool, type CatalogProjectionRow } from "./src/lib/catalogProjection";
 
@@ -463,12 +464,29 @@ async function getMergedTools(jsonTools: any[]): Promise<any[]> {
     }
     const bySlug = new Map<string, any>();
     for (const t of jsonTools) bySlug.set(t.slug || t.id, t);
+    // Supabase remplace l'objet entier. Un champ editorial vide ou rempli d'un
+    // gabarit cote Supabase effacait donc silencieusement le texte local, sans
+    // erreur ni trace dans le build. C'est arrive aux descriptions anglaises
+    // redigees pendant l'indisponibilite de Supabase (HTTP 402, septembre 2026).
+    // Supabase reste prioritaire des qu'il porte un vrai texte ; il ne peut
+    // simplement pas effacer avec du vide. A retirer une fois les textes
+    // reinjectes dans Supabase (voir docs/SUPABASE_REPRISE.md).
+    let rescued = 0;
     for (const row of _sbToolsCache) {
       if (!row.slug) continue;
-      bySlug.set(row.slug, sbRowToTool(row));
+      const local = bySlug.get(row.slug);
+      const merged = sbRowToTool(row);
+      for (const field of ["longDescriptionEn", "longDescription"]) {
+        if (hasEditorialSubstance(merged[field])) continue;
+        if (!hasEditorialSubstance(local?.[field])) continue;
+        merged[field] = local[field];
+        rescued++;
+      }
+      bySlug.set(row.slug, merged);
     }
     console.log(
       `✓ Build SEO source: ${jsonTools.length} JSON + ${_sbToolsCache.length} Supabase = ${bySlug.size} fiches`
+      + (rescued ? ` (${rescued} champs editoriaux conserves depuis le JSON)` : "")
     );
     return [...bySlug.values()];
   } catch (e: any) {
