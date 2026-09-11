@@ -132,6 +132,42 @@ const GUIDE_FR_ONLY_SLUGS = new Set([
 // Les metadonnees anglaises sont figees au prerendu et servent un public
 // international : elles sortent en dollars, pas en euros. Le prix affiche par
 // l editeur prime quand il est deja en dollars, sinon on convertit au taux date.
+// Champs du catalogue qui existent en deux langues. Le SSR embarquait l'objet
+// outil entier dans `__SSR_TOOL__`, donc une fiche anglaise expediait aussi les
+// huit champs francais et inversement : 2,2 Kio par page sur 4280 pages, pour
+// du texte que la page ne peut pas afficher.
+//
+// On ne retire la langue non servie que si la langue de la page porte deja une
+// valeur : les composants retombent volontairement sur l'autre langue quand la
+// traduction manque, et ce filet doit rester.
+const SSR_LOCALIZED_FIELDS: [string, string][] = [
+  ["shortDescription", "shortDescriptionEn"],
+  ["longDescription", "longDescriptionEn"],
+  ["pricing", "pricingEn"],
+  ["verdict", "verdictEn"],
+  ["pros", "prosEn"],
+  ["cons", "consEn"],
+  ["useCases", "useCasesEn"],
+  ["cautions", "cautionsEn"],
+];
+
+function hasValue(value: any): boolean {
+  if (value == null) return false;
+  if (typeof value === "string") return value.trim().length > 0;
+  if (Array.isArray(value)) return value.length > 0;
+  if (typeof value === "object") return Object.keys(value).length > 0;
+  return true;
+}
+
+function stripUnservedLocale(tool: any, lang: string): any {
+  const out = { ...tool };
+  for (const [fr, en] of SSR_LOCALIZED_FIELDS) {
+    const [served, other] = lang === "en" ? [en, fr] : [fr, en];
+    if (hasValue(out[served])) delete out[other];
+  }
+  return out;
+}
+
 function usd(tool: any, eur: number, round = false): string {
   return formatToolPrice(tool, eur, "USD", "en", { round }).text;
 }
@@ -942,7 +978,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
                     html = html.replace('<style id="critical-css">', `<style id="critical-css">${utilityCss}`);
                   }
                 }
-                const ssrJson = JSON.stringify(tool).replace(/<\/script/gi, "<\\/script");
+                const ssrJson = JSON.stringify(stripUnservedLocale(tool, lang)).replace(/<\/script/gi, "<\\/script");
                 const relatedPostsJson = JSON.stringify(relatedPosts).replace(/<\/script/gi, "<\\/script");
                 html = html.replace(
                   "</body>",
@@ -1182,7 +1218,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
                       html = html.replace('<style id="critical-css">', `<style id="critical-css">${utilityCss}`);
                     }
                   }
-                  const ssrJson = JSON.stringify(tool).replace(/<\/script/gi, "<\\/script");
+                  const ssrJson = JSON.stringify(stripUnservedLocale(tool, lang)).replace(/<\/script/gi, "<\\/script");
                   const relatedPostsJson = JSON.stringify(relatedPosts).replace(/<\/script/gi, "<\\/script");
                   html = html.replace(
                     "</body>",
