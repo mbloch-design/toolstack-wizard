@@ -141,16 +141,20 @@ const SubmitToolPage = () => {
     try {
       const endpoint = /^(localhost|127\.0\.0\.1)$/.test(window.location.hostname) ? "https://tooltrim.com/api/verify-badge" : "/api/verify-badge";
       const response = await fetch(endpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ badgeUrl: submission.badgeUrl, toolUrl: submission.toolUrl }) });
-      const payload = await response.json().catch(() => ({})); if (!response.ok) throw new Error(payload.error || "badge_not_found");
+      const payload = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(payload.error || (response.status >= 500 ? "server_unavailable" : "badge_not_found"));
       setSubmission((current) => ({ ...current, verificationToken: payload.token || "" }));
       await sendProgress(2); setStep(3); setStatus("idle");
     } catch (caught) {
-      const reason = caught instanceof Error ? caught.message : "verification_failed"; setStatus("error");
+      const reason = caught instanceof TypeError ? "server_unavailable" : caught instanceof Error ? caught.message : "verification_failed";
+      setStatus("error");
       setError(reason === "badge_wrong_domain"
         ? t("L'URL du badge doit appartenir au site soumis.", "The badge URL must be on the submitted website.")
         : reason === "page_unreachable"
           ? t("La page indiquée est inaccessible.", "The page cannot be reached.")
-          : t("Badge introuvable dans le HTML public de la page.", "Badge not found in the page's public HTML."));
+          : reason === "server_unavailable" || reason === "verification_unavailable"
+            ? t("La vérification est momentanément indisponible de notre côté. Ton badge n'est pas en cause : réessaie dans quelques minutes ou écris à contact@tooltrim.com.", "Verification is temporarily unavailable on our side. Your badge is not the problem: try again in a few minutes or email contact@tooltrim.com.")
+            : t("Badge introuvable dans le HTML public de la page.", "Badge not found in the page's public HTML."));
     }
   };
   const beginCheckout = () => {

@@ -1,6 +1,6 @@
 import { createHmac } from "node:crypto";
 import type { VercelRequest, VercelResponse } from "@vercel/node";
-import { verifyBadgeOnPage } from "./_badge-verification";
+import { verifyBadgeOnPage } from "./_badge-verification.js";
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   const requestOrigin = String(req.headers.origin || "");

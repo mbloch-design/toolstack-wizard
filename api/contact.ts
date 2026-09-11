@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { Resend } from "resend";
 import { createHmac, timingSafeEqual } from "node:crypto";
-import { verifyBadgeOnPage } from "./_badge-verification";
+import { verifyBadgeOnPage } from "./_badge-verification.js";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
