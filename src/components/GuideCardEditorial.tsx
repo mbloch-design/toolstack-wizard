@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Clock } from "@/lib/icons";
 import type { Post } from "@/hooks/useSupabaseData";
+import { localizeGuideCategory } from "@/lib/guideCategory";
 
 /* ─────────────────────────────────────────────────────────────────────────────
    GuideCardEditorial — editorial card for article / guide listings
@@ -18,7 +19,7 @@ interface GuideCardEditorialProps {
 export function GuideCardEditorial({ post, prefix, ctaLabel = "Lire →" }: GuideCardEditorialProps) {
   return (
     <Link to={`${prefix}/guide/${post.slug}`} className="ec-card">
-      <span className="ec-label">{post.category || "GUIDE"}</span>
+      <span className="ec-label">{localizeGuideCategory(post.category, prefix.startsWith("/en") ? "en" : "fr") || "GUIDE"}</span>
 
       <div
         className="ec-title"

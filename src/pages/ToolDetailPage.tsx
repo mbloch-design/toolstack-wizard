@@ -36,6 +36,7 @@ import PinToolButton from "@/components/PinToolButton";
 import StickyDecisionCard from "@/components/tool/StickyDecisionCard";
 import { relPourLienOutil, relExterne, safeExternalUrl } from "@/lib/externalLink";
 import { localizePlanName } from "@/lib/planNames";
+import { hasEditorialSubstance } from "@/lib/editorialSubstance";
 
 /* ─────────────────────────────────────────────────────────────────────────────
    ToolDetailPage — editorial redesign
@@ -369,10 +370,12 @@ const ToolDetailPage = () => {
 
   /* Shared card props */
   const cardProps = { tool, prefix, t, alternatives };
+  // Pas de retombee sur le francais : une fiche anglaise sans texte anglais
+  // n'affiche pas le bloc plutot que de servir du francais.
   const editorialLongDesc = lang === "en"
-    ? ((tool as any).longDescriptionEn || (tool as any).longDescription || "")
+    ? ((tool as any).longDescriptionEn || "")
     : ((tool as any).longDescription || "");
-  const hasEditorialIntro = editorialLongDesc.length >= 80;
+  const hasEditorialIntro = hasEditorialSubstance(editorialLongDesc);
   const editorialParas = hasEditorialIntro
     ? editorialLongDesc.split(/\n\n+/).map((p: string) => p.trim()).filter(Boolean)
     : [];

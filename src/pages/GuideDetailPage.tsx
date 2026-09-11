@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Breadcrumb from "@/components/Breadcrumb";
 import { useLang } from "@/hooks/useLang";
+import { localizeGuideCategory } from "@/lib/guideCategory";
 import { usePostBySlug, type Post } from "@/hooks/useSupabaseData";
 import { Check, Clock, Link2 } from "@/lib/icons";
 import { buildGuideToc, renderGuideMarkdown, type GuideTocItem } from "@/lib/guideMarkdown";
@@ -133,7 +134,7 @@ const GuideDetailPage = () => {
                   {isStory ? formattedDate : `${lang === "fr" ? "Mis à jour le" : "Updated"} ${formattedDate}`}
                 </time>
               ) : null}
-              {post.category ? <span className="ga-eyebrow-item">{post.category}</span> : null}
+              {post.category ? <span className="ga-eyebrow-item">{localizeGuideCategory(post.category, lang)}</span> : null}
               {post.readTime ? (
                 <span className="ga-eyebrow-item ga-eyebrow-time">
                   <Clock aria-hidden="true" />
@@ -180,7 +181,7 @@ const GuideDetailPage = () => {
             ) : null}
 
             <div className={`ga-share-row${isStory ? " ga-share-row--story" : ""}`}>
-              <span className="ga-share-label">{t("Cet article vous a été utile ?", "Found this useful?")}</span>
+              <span className="ga-share-label">{t("Cet article t'a été utile ?", "Found this useful?")}</span>
               <button type="button" onClick={copyLink} className="ga-share-btn" aria-label={t("Copier le lien", "Copy link") as string}>
                 {copied ? <Check aria-hidden="true" /> : <Link2 aria-hidden="true" />}
               </button>

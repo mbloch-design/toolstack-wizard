@@ -7,6 +7,8 @@ import ToolLogo from "@/components/ToolLogo";
 import { useToolSummaries } from "@/hooks/useSupabaseData";
 import { setSeoTags, SEO_BASE } from "@/lib/seo";
 import { computeToolTrimScore } from "@/lib/toolTrimScore";
+import { useCurrency } from "@/hooks/useCurrency";
+import { formatToolPrice } from "@/lib/currencyRates";
 import { ArrowRight, Sparkles, AlertTriangle, HelpCircle, Layers, ShieldCheck } from "@/lib/icons";
 
 type Persona = "THEO" | "SOFIA" | "MARC" | "ALIX" | "CLAIRE";
@@ -167,6 +169,7 @@ const META: Record<Persona, Record<Lang, Meta>> = {
 };
 
 export default function PersonaPillarPage({ persona, lang }: Props) {
+  const { currency } = useCurrency();
   const m = META[persona][lang];
   const { tools, loading } = useToolSummaries({ refreshRemote: false });
 
@@ -302,13 +305,19 @@ export default function PersonaPillarPage({ persona, lang }: Props) {
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             {recommendedTools.map((tool: any) => {
               const slug = tool.slug || tool.id;
+              // Le champ s'appelle `shortDescriptionEn`. Les deux variantes
+              // testees ici n'existent nulle part dans le catalogue, donc la
+              // retombee sur le francais etait systematique : les cinq pages
+              // piliers anglaises servaient les descriptions francaises de
+              // leurs douze outils.
               const desc =
                 lang === "en"
-                  ? tool.shortDescription_en || tool.short_description_en || tool.shortDescription
+                  ? tool.shortDescriptionEn || tool.shortDescription
                   : tool.shortDescription;
-              const price = tool.compareMonthlyPrice != null && tool.compareMonthlyPrice > 0
+              const eurPrice = tool.compareMonthlyPrice != null && tool.compareMonthlyPrice > 0
                 ? tool.compareMonthlyPrice
                 : tool.defaultMonthlyPrice ?? 0;
+              const price = formatToolPrice(tool, eurPrice, currency, lang, { round: true }).text;
               return (
                 <Link
                   key={tool.id}
@@ -322,7 +331,7 @@ export default function PersonaPillarPage({ persona, lang }: Props) {
                         {tool.name}
                       </p>
                       <span className="shrink-0 font-mono text-xs text-muted-foreground">
-                        {price > 0 ? `${price}€/${t("mois", "mo")}` : t("Gratuit", "Free")}
+                        {eurPrice > 0 ? `${price}/${t("mois", "mo")}` : t("Gratuit", "Free")}
                       </span>
                     </div>
                     {desc && (
