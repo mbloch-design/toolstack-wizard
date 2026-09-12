@@ -17495,10 +17495,10 @@
     "url_en": "https://tooltrim.com/en/tool/traceo",
     "website": "https://www.traceo.dev/",
     "category": "ui-components",
-    "monthly_price_eur": 5.01,
+    "monthly_price_eur": 6.01,
     "pricing": {
       "free": "Plan Free permanent : 50 captures/annotations et 30 enregistrements par mois, sans compte requis",
-      "paid": "Pro : 7 $/mois (mensuel) ou 70 $/an soit 5,83 $/mois (annuel)"
+      "paid": "Pro : 7 $/mois, ou 70 $/an (17 % de remise)"
     },
     "description_fr": "Extension Chrome pour inspecter le CSS visuellement et enregistrer des bugs d'interface en captures ou vidéo, sans DevTools.",
     "description_en": "Chrome extension to inspect CSS visually and record UI bugs as screenshots or video, without DevTools."

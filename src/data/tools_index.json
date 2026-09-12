@@ -35636,10 +35636,10 @@
     "shortDescriptionEn": "Chrome extension to inspect CSS visually and record UI bugs as screenshots or video, without DevTools.",
     "pricing": {
       "free": "Plan Free permanent : 50 captures/annotations et 30 enregistrements par mois, sans compte requis",
-      "paid": "Pro : 7 $/mois (mensuel) ou 70 $/an soit 5,83 $/mois (annuel)"
+      "paid": "Pro : 7 $/mois, ou 70 $/an (17 % de remise)"
     },
-    "defaultMonthlyPrice": 5.01,
-    "compareMonthlyPrice": 5.01,
+    "defaultMonthlyPrice": 6.01,
+    "compareMonthlyPrice": 6.01,
     "websiteUrl": "https://www.traceo.dev/",
     "ogImageUrl": "https://www.traceo.dev/og-traceo-share.png",
     "logo": "https://logo.clearbit.com/traceo.dev",

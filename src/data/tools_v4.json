@@ -170870,26 +170870,26 @@
     "category": "ui-components",
     "shortDescription": "Extension Chrome pour inspecter le CSS visuellement et enregistrer des bugs d'interface en captures ou vidéo, sans DevTools.",
     "shortDescriptionEn": "Chrome extension to inspect CSS visually and record UI bugs as screenshots or video, without DevTools.",
-    "description": "Traceo est une extension Chrome qui remplace l'inspecteur DevTools pour un usage quotidien de vérification d'interface : cliquer sur un élément affiche ses espacements, dimensions, couleurs, typographie et styles calculés, avec extraction de la palette et des polices de la page.\n\nLe mode enregistrement capture des captures d'écran ou des vidéos pendant la reproduction d'un bug, avec annotation (dessin, surlignage, texte, flou des détails sensibles) et inclusion optionnelle des logs console et des requêtes réseau. Responsify prévisualise le rendu sur plusieurs appareils. VibeGrab extrait la structure d'un composant pour la réinjecter dans un outil de code IA.\n\nL'outil est local-first par défaut : l'inspection et la capture se font sur l'appareil, sans compte requis. Un compte n'est nécessaire que pour la synchronisation du quota gratuit ou les liens de partage de vidéo. Le plan Free (0 $, 50 captures et 30 enregistrements par mois) est un vrai plan permanent ; Pro (7 $/mois ou 70 $/an soit 5,83 $/mois) lève les limites et ajoute VibeGrab et l'inspecteur avancé.\n\nTraceo est un produit jeune et indépendant, sans structure légale précisée sur le site, mais avec une note de 4,9/5 sur 25 avis vérifiables sur le Chrome Web Store.",
-    "longDescription": "Traceo est une extension Chrome qui remplace l'inspecteur DevTools pour un usage quotidien de vérification d'interface : cliquer sur un élément affiche ses espacements, dimensions, couleurs, typographie et styles calculés, avec extraction de la palette et des polices de la page.\n\nLe mode enregistrement capture des captures d'écran ou des vidéos pendant la reproduction d'un bug, avec annotation (dessin, surlignage, texte, flou des détails sensibles) et inclusion optionnelle des logs console et des requêtes réseau. Responsify prévisualise le rendu sur plusieurs appareils. VibeGrab extrait la structure d'un composant pour la réinjecter dans un outil de code IA.\n\nL'outil est local-first par défaut : l'inspection et la capture se font sur l'appareil, sans compte requis. Un compte n'est nécessaire que pour la synchronisation du quota gratuit ou les liens de partage de vidéo. Le plan Free (0 $, 50 captures et 30 enregistrements par mois) est un vrai plan permanent ; Pro (7 $/mois ou 70 $/an soit 5,83 $/mois) lève les limites et ajoute VibeGrab et l'inspecteur avancé.\n\nTraceo est un produit jeune et indépendant, sans structure légale précisée sur le site, mais avec une note de 4,9/5 sur 25 avis vérifiables sur le Chrome Web Store.",
-    "longDescriptionEn": "Traceo is a Chrome extension that replaces the DevTools inspector for day-to-day interface checking: click any element to see its spacing, dimensions, colors, typography and computed styles, with page color and font extraction.\n\nRecorder mode captures screenshots or video while reproducing an issue, with annotation (draw, highlight, text, blur sensitive details) and optional inclusion of console logs and network requests. Responsify previews rendering across devices. VibeGrab extracts a component's structure to feed into an AI coding tool.\n\nThe tool is local-first by default: inspection and capture happen on-device, no account required. An account is only needed for free-tier quota syncing or video share links. The Free plan (30/50 screenshots and recordings per month) is a genuine permanent tier; Pro ($7/month or $70/year, i.e. $5.83/month) lifts the limits and adds VibeGrab and the advanced inspector.\n\nTraceo is a young, independent product with no legal entity disclosed on the site, but a 4.9/5 rating across 25 verifiable Chrome Web Store reviews.",
+    "description": "Traceo est une extension Chrome qui remplace l'inspecteur DevTools pour un usage quotidien de vérification d'interface : cliquer sur un élément affiche ses espacements, dimensions, couleurs, typographie et styles calculés, avec extraction de la palette et des polices de la page.\n\nLe mode enregistrement capture des captures d'écran ou des vidéos pendant la reproduction d'un bug, avec annotation (dessin, surlignage, texte, flou des détails sensibles) et inclusion optionnelle des logs console et des requêtes réseau. Responsify prévisualise le rendu sur plusieurs appareils. VibeGrab extrait la structure d'un composant pour la réinjecter dans un outil de code IA.\n\nL'outil est local-first par défaut : l'inspection et la capture se font sur l'appareil, sans compte requis. Un compte n'est nécessaire que pour la synchronisation du quota gratuit ou les liens de partage de vidéo. Le plan Free (0 $, 50 captures et 30 enregistrements par mois) est un vrai plan permanent ; Pro (7 $/mois, ou 70 $/an avec 17 % de remise) lève les limites et ajoute VibeGrab et l'inspecteur avancé.\n\nTraceo est un produit jeune et indépendant, sans structure légale précisée sur le site, mais avec une note de 4,9/5 sur 25 avis vérifiables sur le Chrome Web Store.",
+    "longDescription": "Traceo est une extension Chrome qui remplace l'inspecteur DevTools pour un usage quotidien de vérification d'interface : cliquer sur un élément affiche ses espacements, dimensions, couleurs, typographie et styles calculés, avec extraction de la palette et des polices de la page.\n\nLe mode enregistrement capture des captures d'écran ou des vidéos pendant la reproduction d'un bug, avec annotation (dessin, surlignage, texte, flou des détails sensibles) et inclusion optionnelle des logs console et des requêtes réseau. Responsify prévisualise le rendu sur plusieurs appareils. VibeGrab extrait la structure d'un composant pour la réinjecter dans un outil de code IA.\n\nL'outil est local-first par défaut : l'inspection et la capture se font sur l'appareil, sans compte requis. Un compte n'est nécessaire que pour la synchronisation du quota gratuit ou les liens de partage de vidéo. Le plan Free (0 $, 50 captures et 30 enregistrements par mois) est un vrai plan permanent ; Pro (7 $/mois, ou 70 $/an avec 17 % de remise) lève les limites et ajoute VibeGrab et l'inspecteur avancé.\n\nTraceo est un produit jeune et indépendant, sans structure légale précisée sur le site, mais avec une note de 4,9/5 sur 25 avis vérifiables sur le Chrome Web Store.",
+    "longDescriptionEn": "Traceo is a Chrome extension that replaces the DevTools inspector for day-to-day interface checking: click any element to see its spacing, dimensions, colors, typography and computed styles, with page color and font extraction.\n\nRecorder mode captures screenshots or video while reproducing an issue, with annotation (draw, highlight, text, blur sensitive details) and optional inclusion of console logs and network requests. Responsify previews rendering across devices. VibeGrab extracts a component's structure to feed into an AI coding tool.\n\nThe tool is local-first by default: inspection and capture happen on-device, no account required. An account is only needed for free-tier quota syncing or video share links. The Free plan (30/50 screenshots and recordings per month) is a genuine permanent tier; Pro ($7/month, or $70/year with a 17% discount) lifts the limits and adds VibeGrab and the advanced inspector.\n\nTraceo is a young, independent product with no legal entity disclosed on the site, but a 4.9/5 rating across 25 verifiable Chrome Web Store reviews.",
     "pricing": {
       "free": "Plan Free permanent : 50 captures/annotations et 30 enregistrements par mois, sans compte requis",
-      "paid": "Pro : 7 $/mois (mensuel) ou 70 $/an soit 5,83 $/mois (annuel)"
+      "paid": "Pro : 7 $/mois, ou 70 $/an (17 % de remise)"
     },
     "pricingEn": {
       "free": "Permanent Free plan: 50 screenshots/annotations and 30 recordings per month, no account required",
-      "paid": "Pro: $7/month (monthly) or $70/year, i.e. $5.83/month (annual)"
+      "paid": "Pro: $7/month, or $70/year (17% discount)"
     },
-    "defaultMonthlyPrice": 5.01,
+    "defaultMonthlyPrice": 6.01,
     "pricing_v5": {
       "cautions": [
-        "Prix officiels en dollars ; le tarif mensuel réduit exige un engagement annuel.",
+        "Prix officiels en dollars ; la remise de 17 % exige un engagement annuel (70 $/an au lieu de 7 $/mois).",
         "Aucune structure légale (société, adresse) n'est précisée sur le site.",
         "Le plan Pro reste individuel : pas de fonction d'équipe ou de siège documentée."
       ],
       "cautionsEn": [
-        "Official prices are in US dollars; the lower monthly rate requires an annual commitment.",
+        "Official prices are in US dollars; the 17% discount requires an annual commitment ($70/year instead of $7/month).",
         "No legal entity (company, address) is disclosed on the site.",
         "The Pro plan stays individual: no team or seat feature is documented."
       ],
@@ -170897,12 +170897,12 @@
       "source_domain": "traceo.dev",
       "usage_sensitive": false,
       "compare_plan_kind": "account",
-      "compare_plan_name": "Pro (facturation annuelle)",
+      "compare_plan_name": "Pro",
       "price_reliability": "high",
       "location_sensitive": false,
       "official_source_url": "https://www.traceo.dev/pricing",
       "verification_status": "official_explicit",
-      "compare_price_monthly_eur": 5.01,
+      "compare_price_monthly_eur": 6.01,
       "plans": [
         {
           "planKey": "free",
@@ -170931,10 +170931,10 @@
           "pricingUnit": "par compte",
           "isFree": false,
           "isComparePlan": true,
-          "nativeAmount": 5.83,
+          "nativeAmount": 7,
           "nativeCurrency": "USD",
           "billingPeriod": "monthly",
-          "billingCommitment": "annual_prepaid"
+          "billingCommitment": "monthly"
         }
       ]
     },
