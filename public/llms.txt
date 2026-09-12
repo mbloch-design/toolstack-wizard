@@ -30,7 +30,7 @@ ToolTrim documents software pricing, positioning, alternatives, and editorial ve
 
 ## Catalogue
 
-- 1171 canonical tool records are included in the generated catalogue.
+- 1174 canonical tool records are included in the generated catalogue.
 - [Machine-readable catalogue](https://tooltrim.com/llms-full.txt)
 - Prices and descriptions are editorial data, not a promise that a vendor has not changed its offer since publication.
 - Check the cited vendor website and the relevant ToolTrim page before quoting a current price.

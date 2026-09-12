@@ -170356,6 +170356,732 @@
     }
   },
   {
+    "id": "flexclip",
+    "slug": "flexclip",
+    "name": "FlexClip",
+    "category": "creation",
+    "shortDescription": "Éditeur vidéo en ligne à base de modèles, avec une suite d'outils IA pour créer des vidéos marketing sans logiciel de montage.",
+    "shortDescriptionEn": "Template-based online video editor with a suite of AI tools for making marketing videos without editing software.",
+    "description": "FlexClip est un éditeur vidéo qui tourne entièrement dans le navigateur (Chrome, Safari, Firefox), pensé pour créer une vidéo à partir d'un modèle plutôt que sur une timeline vierge. Le catalogue dépasse 6 000 modèles, complétés par plus de 4 millions de vidéos et photos libres de droits, 74 000 pistes audio et 3 millions d'éléments graphiques.\n\nLa suite IA couvre le texte-vers-vidéo, la synthèse vocale, la génération de script, la génération d'image, le sous-titrage automatique, la suppression d'arrière-plan, la réduction de bruit, la suppression de voix et plusieurs outils photo (colorisation, restauration, agrandissement). Un enregistreur d'écran et de webcam ainsi que des utilitaires de compression et de conversion vidéo sont inclus dans l'outil.\n\nLe plan gratuit exporte en 720p avec 12 projets maximum et une vidéo limitée à 10 minutes ; il reste utilisable pour un premier test réel, pas seulement une démo. Le plan Plus (11,99 $/mois facturé annuellement) lève l'essentiel des limites (export 1080p, projets et durée illimités) et retire le filigrane FlexClip ; Business (19,99 $/mois facturé annuellement) ajoute l'export 4K et les ressources illimitées. Un plan Équipes à sièges (1-3, 5 ou 10) existe séparément sur devis.",
+    "longDescription": "FlexClip est un éditeur vidéo qui tourne entièrement dans le navigateur (Chrome, Safari, Firefox), pensé pour créer une vidéo à partir d'un modèle plutôt que sur une timeline vierge. Le catalogue dépasse 6 000 modèles, complétés par plus de 4 millions de vidéos et photos libres de droits, 74 000 pistes audio et 3 millions d'éléments graphiques.\n\nLa suite IA couvre le texte-vers-vidéo, la synthèse vocale, la génération de script, la génération d'image, le sous-titrage automatique, la suppression d'arrière-plan, la réduction de bruit, la suppression de voix et plusieurs outils photo (colorisation, restauration, agrandissement). Un enregistreur d'écran et de webcam ainsi que des utilitaires de compression et de conversion vidéo sont inclus dans l'outil.\n\nLe plan gratuit exporte en 720p avec 12 projets maximum et une vidéo limitée à 10 minutes ; il reste utilisable pour un premier test réel, pas seulement une démo. Le plan Plus (11,99 $/mois facturé annuellement) lève l'essentiel des limites (export 1080p, projets et durée illimités) et retire le filigrane FlexClip ; Business (19,99 $/mois facturé annuellement) ajoute l'export 4K et les ressources illimitées. Un plan Équipes à sièges (1-3, 5 ou 10) existe séparément sur devis.\n\nFlexClip est édité par PearlMountain Limited.",
+    "longDescriptionEn": "FlexClip is a video editor that runs entirely in the browser (Chrome, Safari, Firefox), built around starting from a template rather than a blank timeline. The library exceeds 6,000 templates, backed by more than 4 million royalty-free videos and photos, 74,000 audio tracks and 3 million graphic elements.\n\nThe AI suite covers text-to-video, text-to-speech, script generation, image generation, auto-subtitling, background removal, noise reduction, vocal removal and several photo tools (colorization, restoration, upscaling). A built-in screen and webcam recorder plus video compression and conversion utilities ship inside the tool.\n\nThe free plan exports at 720p with a 12-project cap and a 10-minute video limit; it stays usable for a genuine first test, not just a demo. The Plus plan ($11.99/month billed annually) lifts most limits (1080p export, unlimited projects and length) and removes the FlexClip watermark; Business ($19.99/month billed annually) adds 4K export and unlimited resources. A seat-based Teams plan (1-3, 5 or 10 seats) exists separately, quote-based.\n\nFlexClip is published by PearlMountain Limited.",
+    "pricing": {
+      "free": "Plan Free permanent : export 720p, 12 projets, vidéos jusqu'à 10 min",
+      "paid": "Plus : 11,99 $/mois (facturation annuelle) ou 19,99 $/mois (mensuel) ; Business : 19,99 $/mois (facturation annuelle) ou 29,99 $/mois (mensuel) ; Équipes sur devis"
+    },
+    "pricingEn": {
+      "free": "Permanent Free plan: 720p export, 12 projects, videos up to 10 min",
+      "paid": "Plus: $11.99/month (billed annually) or $19.99/month (monthly); Business: $19.99/month (billed annually) or $29.99/month (monthly); Teams on quote"
+    },
+    "defaultMonthlyPrice": 10.3,
+    "pricing_v5": {
+      "cautions": [
+        "Prix officiels en dollars ; le tarif mensuel réduit exige un engagement annuel.",
+        "Le filigrane FlexClip s'applique dès que l'usage dépasse les ressources du plan (stock vidéo/audio).",
+        "Le plan Équipes (sièges) n'a pas de prix public, uniquement un formulaire de contact."
+      ],
+      "cautionsEn": [
+        "Official prices are in US dollars; the lower monthly rate requires an annual commitment.",
+        "The FlexClip watermark applies as soon as usage exceeds the plan's resources (stock video/audio).",
+        "The Teams (seats) plan has no public price, only a contact form."
+      ],
+      "verified_on": "2026-09-11",
+      "source_domain": "flexclip.com",
+      "usage_sensitive": false,
+      "compare_plan_kind": "account",
+      "compare_plan_name": "Plus (facturation annuelle)",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://www.flexclip.com/pricing.html",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 10.3,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "summary": "Export 720p, 12 projets maximum, vidéos jusqu'à 10 minutes.",
+          "featureHighlights": [
+            "Export 720p",
+            "1 vidéo et 1 audio de stock par projet",
+            "12 projets maximum"
+          ],
+          "detailsSourceUrl": "https://www.flexclip.com/pricing.html",
+          "pricingUnit": "par compte",
+          "isFree": true,
+          "isComparePlan": false
+        },
+        {
+          "planKey": "plus",
+          "displayName": "Plus",
+          "summary": "Export 1080p, projets et durée illimités, sans filigrane.",
+          "featureHighlights": [
+            "Export 1080p Full-HD",
+            "3600 crédits IA offerts par an",
+            "30 Go d'espace cloud, sans filigrane FlexClip"
+          ],
+          "detailsSourceUrl": "https://www.flexclip.com/pricing.html",
+          "pricingUnit": "par compte",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 11.99,
+          "nativeCurrency": "USD"
+        },
+        {
+          "planKey": "business",
+          "displayName": "Business",
+          "summary": "Export 4K, stock illimité, 100 Go de cloud et 1 To d'hébergement vidéo.",
+          "featureHighlights": [
+            "Export 4K Ultra HD",
+            "9600 crédits IA offerts par an",
+            "Stock vidéo et audio illimité"
+          ],
+          "detailsSourceUrl": "https://www.flexclip.com/pricing.html",
+          "pricingUnit": "par compte",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 19.99,
+          "nativeCurrency": "USD"
+        }
+      ]
+    },
+    "websiteUrl": "https://www.flexclip.com/",
+    "affiliateLink": "",
+    "logo": "https://logo.clearbit.com/flexclip.com",
+    "verdict": {
+      "keepIf": [
+        "Vous produisez régulièrement des vidéos marketing ou promotionnelles courtes.",
+        "Vous voulez partir d'un modèle plutôt que d'une timeline vide.",
+        "Les outils IA (sous-titres, texte-vers-vidéo, retrait d'arrière-plan) couvrent l'essentiel de vos besoins de montage."
+      ],
+      "avoidIf": [
+        "Vous faites du montage professionnel exigeant (broadcast, cinéma, étalonnage fin).",
+        "Vous avez déjà un éditeur avancé (Premiere Pro, DaVinci Resolve) intégré à votre workflow.",
+        "Le plan gratuit ne suffit pas et le tarif annuel de 11,99 $/mois ne convient pas à votre budget."
+      ],
+      "threshold": "Choisissez FlexClip si l'essentiel de votre besoin est de produire vite des vidéos marketing à partir de modèles, avec des outils IA intégrés plutôt qu'un montage image par image. Testez le plan gratuit sur un vrai projet avant de passer au plan Plus pour lever le filigrane et les limites."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You regularly produce short marketing or promotional videos.",
+        "You want to start from a template rather than a blank timeline.",
+        "The AI tools (subtitles, text-to-video, background removal) cover most of your editing needs."
+      ],
+      "avoidIf": [
+        "You do demanding professional editing (broadcast, film, fine color grading).",
+        "You already have an advanced editor (Premiere Pro, DaVinci Resolve) built into your workflow.",
+        "The free plan isn't enough and the $11.99/month annual rate doesn't fit your budget."
+      ],
+      "threshold": "Choose FlexClip when your main need is producing marketing videos quickly from templates, with built-in AI tools rather than frame-by-frame editing. Test the free plan on a real project before upgrading to Plus to remove the watermark and limits."
+    },
+    "pros": [
+      "Plan gratuit réellement utilisable, pas seulement une démo limitée.",
+      "Plus de 6 000 modèles et une bibliothèque de stock très large incluse.",
+      "Suite IA large : texte-vers-vidéo, sous-titres, retrait d'arrière-plan, retrait de voix.",
+      "Fonctionne entièrement dans le navigateur, aucune installation.",
+      "Export de la vidéo finale toujours possible, à toutes les formules."
+    ],
+    "prosEn": [
+      "Genuinely usable free plan, not just a limited demo.",
+      "Over 6,000 templates plus a very large stock library included.",
+      "Broad AI suite: text-to-video, subtitles, background removal, vocal removal.",
+      "Runs entirely in the browser, no installation.",
+      "Exporting the finished video is always possible, on every plan."
+    ],
+    "cons": [
+      "Filigrane appliqué dès que l'usage dépasse les ressources du plan gratuit.",
+      "Tarif réduit réservé à l'engagement annuel, sinon le mensuel coûte 60 à 65 % plus cher.",
+      "Plan Équipes sans prix public, seulement un formulaire de contact.",
+      "Reste un outil de montage par modèles, pas un logiciel de montage professionnel avancé."
+    ],
+    "consEn": [
+      "Watermark applies as soon as usage exceeds the free plan's resources.",
+      "The lower rate requires an annual commitment; monthly billing costs 60-65% more.",
+      "Teams plan has no public price, only a contact form.",
+      "Remains a template-based editor, not an advanced professional editing tool."
+    ],
+    "useCases": [
+      "Créer une vidéo promotionnelle pour les réseaux sociaux à partir d'un modèle.",
+      "Sous-titrer automatiquement une vidéo brute avant publication.",
+      "Générer une vidéo à partir d'un texte ou d'un script pour une annonce produit.",
+      "Enregistrer un écran ou une webcam pour un tutoriel rapide."
+    ],
+    "useCasesEn": [
+      "Create a social media promotional video from a template.",
+      "Auto-subtitle a raw video before publishing.",
+      "Generate a video from text or a script for a product announcement.",
+      "Record a screen or webcam for a quick tutorial."
+    ],
+    "covers": [
+      "montage-video",
+      "creation-contenu-video",
+      "sous-titrage-video"
+    ],
+    "functional_needs": [
+      "montage-video",
+      "creation-contenu-video"
+    ],
+    "relevantFor": [
+      "Créateurs de contenu",
+      "Community managers",
+      "Petites marques et commerces",
+      "Équipes marketing"
+    ],
+    "alternatives": [
+      "capcut"
+    ],
+    "seo": {
+      "idealForFr": "Idéal pour créer rapidement des vidéos marketing à partir de modèles, sans logiciel de montage.",
+      "idealForEn": "Ideal for quickly creating marketing videos from templates, with no editing software.",
+      "metaDescription": "FlexClip : avis, tarifs Free, Plus et Business, éditeur vidéo à modèles, suite IA et limites pour créateurs et petites marques."
+    },
+    "articles": [],
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "createur-contenu",
+      "community-manager",
+      "motion-video"
+    ],
+    "ia_use_case": "generation-video",
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "personas": [],
+    "timeGainedHoursPerMonth": 3,
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [
+      "video_frequency",
+      "editing_depth_requirement",
+      "team_requirement"
+    ],
+    "substitution_cluster_v2": "content-creation",
+    "decision_policy_v3": {
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": true,
+      "default_decision_lane": "review_then_prescribe",
+      "auto_downgrade_allowed": true,
+      "never_auto_cancel_reason": null,
+      "requires_context_questions": true
+    },
+    "ogImageUrl": "https://resource.flexclip.com/share/current.webp",
+    "galleryImages": [],
+    "force_silence": false,
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 4,
+      "reversibilite": 4,
+      "evidence": {
+        "valeurAjoutee": "Le plan gratuit permanent (12 projets, export 720p) est réellement utilisable pour un premier projet complet, pas seulement une démo bridée, et remplace à lui seul un accès à une banque d'images/vidéos, un outil de sous-titrage et un éditeur basique (source : flexclip.com/pricing.html, vérifié le 2026-09-11).",
+        "simplicite": "L'édition par modèle et l'absence d'installation abaissent la barrière d'entrée, mais les avis mis en avant sur le site ne citent que des prénoms sans lien vérifiable vers un profil réel, donc sans validation indépendante de l'ergonomie au quotidien (source : flexclip.com, vérifié le 2026-09-11).",
+        "utilisation": "L'usage quotidien couvre le montage par modèles, l'enregistrement d'écran/webcam, la conversion et la compression vidéo, en plus d'une douzaine d'outils IA (texte-vers-vidéo, script, sous-titres, suppression de bruit et de voix), un périmètre large pour un créateur ou une petite équipe marketing (source : flexclip.com, vérifié le 2026-09-11).",
+        "puissance": "La combinaison modèles + banque de 4M+ médias + suite IA complète (texte-vers-vidéo, TTS, retrait d'arrière-plan, upscaling photo) est rare à ce prix, mais reste un outil de montage assisté par modèles, pas un logiciel de montage professionnel avec étalonnage ou mixage audio avancé (source : flexclip.com, vérifié le 2026-09-11).",
+        "reversibilite": "L'export de la vidéo finale est la fonction même du produit et reste possible à tous les plans (avec filigrane et résolution réduite en gratuit) ; la politique de confidentialité garantit en plus les droits RGPD d'accès, de suppression et de portabilité pour les résidents de l'Espace économique européen (source : flexclip.com/privacy.html, vérifié le 2026-09-11)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "The permanent free plan (12 projects, 720p export) is genuinely usable for a first complete project, not just a capped demo, and on its own replaces access to a stock media library, a subtitling tool and a basic editor (source: flexclip.com/pricing.html, verified 2026-09-11).",
+        "simplicite": "Template-based editing and no installation lower the entry barrier, but the testimonials featured on the site cite only first names with no verifiable link to a real profile, so there's no independent validation of day-to-day ergonomics (source: flexclip.com, verified 2026-09-11).",
+        "utilisation": "Daily usage spans template-based editing, screen/webcam recording, video conversion and compression, plus a dozen AI tools (text-to-video, script, subtitles, noise and vocal removal), a broad scope for a creator or a small marketing team (source: flexclip.com, verified 2026-09-11).",
+        "puissance": "The combination of templates plus a 4M+ media library plus a full AI suite (text-to-video, TTS, background removal, photo upscaling) is unusual at this price, but it remains a template-assisted editor, not professional editing software with advanced color grading or audio mixing (source: flexclip.com, verified 2026-09-11).",
+        "reversibilite": "Exporting the finished video is the product's core function and stays possible on every plan (with a watermark and lower resolution on Free); the privacy policy additionally guarantees GDPR access, deletion and portability rights for European Economic Area residents (source: flexclip.com/privacy.html, verified 2026-09-11)."
+      },
+      "lastActivityVerifiedOn": "2026-09-11",
+      "notedOn": "2026-09-11"
+    }
+  },
+  {
+    "id": "inspoai",
+    "slug": "inspoai",
+    "name": "Inspo AI",
+    "category": "design-tools",
+    "shortDescription": "Recherche visuelle IA dans une base de plus de 200 000 écrans, moodboards collaboratifs et génération d'interface par description texte.",
+    "shortDescriptionEn": "AI visual search across a 200,000+ screen index, collaborative moodboards and text-to-interface generation.",
+    "description": "Inspo AI combine un moteur de recherche visuelle (interroger en langage naturel une base de plus de 200 000 écrans indexés), un générateur d'interface par description texte (Creator Studio, actuellement en bêta), des moodboards collaboratifs partageables et un scanner de marque qui relève couleurs, polices, stack technique et positionnement tarifaire d'un site concurrent.\n\nLe plan Free Forever, sans carte bancaire, inclut 5 crédits de génération par jour (40 à 50 écrans), 25 recherches par jour, 3 moodboards, 5 audits de marque, l'export HTML/CSS, un pont vers Figma et une extension Chrome. C'est l'offre réellement disponible aujourd'hui : les paliers payants affichés sur la page tarifs (Lite 12 $, Freelancer 22 $, Pro 39 $ par mois) sont explicitement marqués « Coming Soon » et non achetables. Une page légale distincte mentionne un plan à vie à 199 $, mais elle n'est reliée à aucun bouton d'achat actif sur le site actuel.\n\nInspo AI est un produit jeune (équipe basée à Chennai, en Inde), avec une note Trustpilot de 4,2/5 affichée sur le site mais un volume d'avis non vérifié indépendamment.",
+    "longDescription": "Inspo AI combine un moteur de recherche visuelle (interroger en langage naturel une base de plus de 200 000 écrans indexés), un générateur d'interface par description texte (Creator Studio, actuellement en bêta), des moodboards collaboratifs partageables et un scanner de marque qui relève couleurs, polices, stack technique et positionnement tarifaire d'un site concurrent.\n\nLe plan Free Forever, sans carte bancaire, inclut 5 crédits de génération par jour (40 à 50 écrans), 25 recherches par jour, 3 moodboards, 5 audits de marque, l'export HTML/CSS, un pont vers Figma et une extension Chrome. C'est l'offre réellement disponible aujourd'hui : les paliers payants affichés sur la page tarifs (Lite 12 $, Freelancer 22 $, Pro 39 $ par mois) sont explicitement marqués « Coming Soon » et non achetables. Une page légale distincte mentionne un plan à vie à 199 $, mais elle n'est reliée à aucun bouton d'achat actif sur le site actuel.\n\nInspo AI est un produit jeune (équipe basée à Chennai, en Inde), avec une note Trustpilot de 4,2/5 affichée sur le site mais un volume d'avis non vérifié indépendamment.",
+    "longDescriptionEn": "Inspo AI combines a visual search engine (natural-language queries across a 200,000+ indexed screen database), a text-to-interface generator (Creator Studio, currently in beta), shareable collaborative moodboards, and a brand scanner that pulls colors, fonts, tech stack and pricing positioning from a competitor's site.\n\nThe Free Forever plan, no card required, includes 5 generation credits per day (40 to 50 screens), 25 searches per day, 3 moodboards, 5 brand audits, HTML/CSS export, a Figma bridge and a Chrome extension. This is the offer actually available today: the paid tiers shown on the pricing page (Lite $12, Freelancer $22, Pro $39 per month) are explicitly marked \"Coming Soon\" and aren't purchasable. A separate legal page mentions a $199 lifetime plan, but it isn't linked from any active purchase button on the current site.\n\nInspo AI is a young product (team based in Chennai, India), with a 4.2/5 Trustpilot rating displayed on the site but a review volume that isn't independently verified.",
+    "pricing": {
+      "free": "Free Forever : 5 crédits IA/jour (40-50 écrans), 25 recherches/jour, 3 moodboards, sans carte bancaire",
+      "paid": "Aucune offre payante active à ce jour ; Lite (12 $/mois), Freelancer (22 $/mois) et Pro (39 $/mois) sont annoncés « Coming Soon »"
+    },
+    "pricingEn": {
+      "free": "Free Forever: 5 AI credits/day (40-50 screens), 25 searches/day, 3 moodboards, no card required",
+      "paid": "No active paid offer today; Lite ($12/mo), Freelancer ($22/mo) and Pro ($39/mo) are announced as \"Coming Soon\""
+    },
+    "defaultMonthlyPrice": 0,
+    "pricing_v5": {
+      "cautions": [
+        "Les paliers payants (Lite, Freelancer, Pro) sont affichés mais marqués « Coming Soon », donc non disponibles à l'achat aujourd'hui.",
+        "Un plan à vie à 199 $ existe sur une page légale distincte mais sans bouton d'achat actif trouvé sur le site.",
+        "Creator Studio, le générateur d'interface, est annoncé comme fonctionnalité bêta encore en développement sur la page du plan à vie."
+      ],
+      "cautionsEn": [
+        "The paid tiers (Lite, Freelancer, Pro) are displayed but marked \"Coming Soon\", so not purchasable today.",
+        "A $199 lifetime plan exists on a separate legal page but with no active purchase button found on the site.",
+        "Creator Studio, the interface generator, is described as a beta feature still in development on the lifetime plan page."
+      ],
+      "verified_on": "2026-09-11",
+      "source_domain": "inspoai.io",
+      "usage_sensitive": true,
+      "compare_plan_kind": "free",
+      "compare_plan_name": "Free Forever",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://inspoai.io/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 0,
+      "plans": [
+        {
+          "planKey": "free-forever",
+          "displayName": "Free Forever",
+          "summary": "5 crédits de génération et 25 recherches par jour, sans carte bancaire.",
+          "featureHighlights": [
+            "5 crédits IA/jour (40-50 écrans générés)",
+            "25 recherches visuelles/jour sur 200 000+ écrans",
+            "3 moodboards, export HTML/CSS, pont Figma"
+          ],
+          "detailsSourceUrl": "https://inspoai.io/pricing",
+          "pricingUnit": "par compte",
+          "isFree": true,
+          "isComparePlan": true
+        },
+        {
+          "planKey": "lite",
+          "displayName": "Lite",
+          "summary": "Limites étendues pour un designer solo, annoncé sur la roadmap.",
+          "featureHighlights": [
+            "30 générations IA/mois",
+            "100 recherches/jour",
+            "10 moodboards"
+          ],
+          "detailsSourceUrl": "https://inspoai.io/pricing",
+          "pricingUnit": "par compte",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 12,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "comingSoon": true
+        },
+        {
+          "planKey": "freelancer",
+          "displayName": "Freelancer",
+          "summary": "Pour freelances actifs et petits studios, annoncé sur la roadmap.",
+          "featureHighlights": [
+            "60 générations IA/mois",
+            "Recherches illimitées/jour",
+            "Moodboards et partages illimités"
+          ],
+          "detailsSourceUrl": "https://inspoai.io/pricing",
+          "pricingUnit": "par compte",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 22,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "comingSoon": true
+        },
+        {
+          "planKey": "pro",
+          "displayName": "Pro",
+          "summary": "Capacité de génération maximale et espaces d'équipe, annoncé sur la roadmap.",
+          "featureHighlights": [
+            "150+ générations IA/mois",
+            "File de calcul prioritaire",
+            "Espaces d'équipe synchronisés"
+          ],
+          "detailsSourceUrl": "https://inspoai.io/pricing",
+          "pricingUnit": "par compte",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 39,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "comingSoon": true
+        }
+      ]
+    },
+    "websiteUrl": "https://inspoai.io/",
+    "affiliateLink": "",
+    "logo": "https://logo.clearbit.com/inspoai.io",
+    "verdict": {
+      "keepIf": [
+        "Vous cherchez des références d'interface par description en langage naturel plutôt qu'en parcourant des galeries.",
+        "Le quota gratuit (5 générations et 25 recherches par jour) suffit à votre rythme de travail.",
+        "Vous voulez un premier jet d'interface ou un audit de marque rapide avant de passer en production."
+      ],
+      "avoidIf": [
+        "Vous avez besoin dès maintenant d'un palier payant à volume : les offres Lite, Freelancer et Pro ne sont pas encore achetables.",
+        "Vous attendez un générateur d'interface stable en production plutôt qu'une fonctionnalité bêta.",
+        "Une base de référence plus établie et déjà éprouvée (type Mobbin) est indispensable à votre veille design."
+      ],
+      "threshold": "Choisissez Inspo AI si le plan Free Forever couvre votre volume réel de recherches et de générations quotidiennes. N'achetez rien en anticipation d'un palier payant : aucun n'est disponible à ce jour, seule une page légale évoque un plan à vie sans lien d'achat actif."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You want interface references from a natural-language description rather than browsing galleries.",
+        "The free quota (5 generations and 25 searches per day) fits your actual pace of work.",
+        "You want a first-draft interface or a quick brand audit before moving to production."
+      ],
+      "avoidIf": [
+        "You need a high-volume paid tier right now: the Lite, Freelancer and Pro plans aren't purchasable yet.",
+        "You expect a stable, production-ready interface generator rather than a beta feature.",
+        "A more established, already-proven reference base (like Mobbin) is essential to your design research."
+      ],
+      "threshold": "Choose Inspo AI if the Free Forever plan covers your actual daily search and generation volume. Don't pay in anticipation of a paid tier: none is available today, only a legal page mentions a lifetime plan with no active purchase link."
+    },
+    "pros": [
+      "Plan gratuit permanent généreux, sans carte bancaire, avec un vrai quota quotidien exploitable.",
+      "Base de recherche visuelle large (plus de 200 000 écrans indexés).",
+      "Génération d'interface par description texte avec export HTML/CSS et pont Figma.",
+      "Scanner de marque utile pour un audit rapide d'un concurrent.",
+      "Droits d'accès, de suppression et de portabilité des données explicitement listés dans la politique de confidentialité."
+    ],
+    "prosEn": [
+      "Generous permanent free plan, no card required, with a real usable daily quota.",
+      "Large visual search base (200,000+ indexed screens).",
+      "Text-to-interface generation with HTML/CSS export and a Figma bridge.",
+      "Brand scanner useful for a quick competitor audit.",
+      "Access, deletion and portability rights explicitly listed in the privacy policy."
+    ],
+    "cons": [
+      "Aucun palier payant n'est achetable à ce jour, seulement annoncé « Coming Soon ».",
+      "Creator Studio, le générateur d'interface, est encore en bêta selon la page du plan à vie.",
+      "Produit jeune, sans recul public indépendant au-delà de la note Trustpilot affichée sur le site.",
+      "Base de recherche moins établie que des alternatives déjà éprouvées du secteur."
+    ],
+    "consEn": [
+      "No paid tier is purchasable today, only announced as \"Coming Soon\".",
+      "Creator Studio, the interface generator, is still in beta per the lifetime plan page.",
+      "Young product, with no independent public track record beyond the Trustpilot rating shown on the site.",
+      "Search index less established than already-proven alternatives in the space."
+    ],
+    "useCases": [
+      "Chercher des références d'interface pour un écran précis en langage naturel.",
+      "Construire un moodboard partagé avec une équipe pour un brief créatif.",
+      "Générer un premier jet d'interface à partir d'une description texte.",
+      "Auditer rapidement la marque, les couleurs et le positionnement d'un concurrent."
+    ],
+    "useCasesEn": [
+      "Search for interface references for a specific screen in natural language.",
+      "Build a shared moodboard with a team for a creative brief.",
+      "Generate a first-draft interface from a text description.",
+      "Quickly audit a competitor's brand, colors and positioning."
+    ],
+    "covers": [
+      "moodboard",
+      "references"
+    ],
+    "functional_needs": [
+      "moodboard",
+      "references"
+    ],
+    "relevantFor": [
+      "Designers UX/UI",
+      "Product designers",
+      "Freelances en design d'interface"
+    ],
+    "alternatives": [],
+    "seo": {
+      "idealForFr": "Idéal pour chercher des références d'interface et générer un premier jet de design sans budget, tant que le quota gratuit suffit.",
+      "idealForEn": "Ideal for searching interface references and generating a first design draft with no budget, as long as the free quota is enough.",
+      "metaDescription": "Inspo AI : avis, plan Free Forever, paliers payants à venir, recherche visuelle et génération d'interface pour designers."
+    },
+    "articles": [],
+    "soloRelevance": "high",
+    "teamRelevance": "low",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "ux-ui",
+      "graphiste-da"
+    ],
+    "ia_use_case": "ui-generation",
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "personas": [],
+    "timeGainedHoursPerMonth": 2,
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [
+      "offre-payante-indisponible"
+    ],
+    "prescription_context_questions": [
+      "search_volume_requirement",
+      "generation_volume_requirement"
+    ],
+    "substitution_cluster_v2": "design-inspiration-search",
+    "decision_policy_v3": {
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": false,
+      "default_decision_lane": "review_then_prescribe",
+      "auto_downgrade_allowed": false,
+      "never_auto_cancel_reason": null,
+      "requires_context_questions": true
+    },
+    "ogImageUrl": "/tool-media/inspoai/hero.jpg",
+    "galleryImages": [],
+    "force_silence": false,
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 3,
+      "utilisation": 4,
+      "puissance": 3,
+      "reversibilite": 4,
+      "evidence": {
+        "valeurAjoutee": "Le plan Free Forever (5 générations/jour, 25 recherches/jour, 3 moodboards) est utilisable sans carte bancaire et sans limite de durée, à un moment où aucune offre payante n'est même achetable sur le site (source : inspoai.io/pricing, vérifié le 2026-09-11).",
+        "simplicite": "La génération par description en langage naturel et la recherche conversationnelle abaissent la barrière d'entrée d'après la démonstration du site, mais la note 4,2/5 et le chiffre « 180+ teams » ne sont pas vérifiables indépendamment au-delà du widget Trustpilot affiché (source : inspoai.io, vérifié le 2026-09-11).",
+        "utilisation": "L'usage couvre la recherche de références, la création de moodboards collaboratifs, la génération d'interface et l'audit de marque d'un concurrent, un périmètre large pour le travail quotidien d'un designer (source : inspoai.io/solutions, vérifié le 2026-09-11).",
+        "puissance": "L'index de plus de 200 000 écrans et le scanner de marque (couleurs, polices, stack technique, tarifs) sont des capacités réelles, mais Creator Studio, le générateur d'interface, est décrit comme une fonctionnalité bêta encore en développement par la page du plan à vie elle-même (source : inspoai.io/lifetime-plan-policy, vérifié le 2026-09-11).",
+        "reversibilite": "L'export HTML/CSS et le pont vers Figma sont inclus dès le plan gratuit, et la politique de confidentialité liste explicitement les droits d'accès, de correction, de suppression et de portabilité des données (source : inspoai.io/privacy-policy, vérifié le 2026-09-11)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "The Free Forever plan (5 generations/day, 25 searches/day, 3 moodboards) is usable with no card and no time limit, at a time when no paid offer is even purchasable on the site (source: inspoai.io/pricing, verified 2026-09-11).",
+        "simplicite": "Natural-language generation and conversational search lower the entry barrier per the site's own demo, but the 4.2/5 rating and the \"180+ teams\" figure aren't independently verifiable beyond the Trustpilot widget shown (source: inspoai.io, verified 2026-09-11).",
+        "utilisation": "Usage spans reference search, collaborative moodboard creation, interface generation and competitor brand auditing, a broad scope for a designer's daily work (source: inspoai.io/solutions, verified 2026-09-11).",
+        "puissance": "The 200,000+ screen index and the brand scanner (colors, fonts, tech stack, pricing) are real capabilities, but Creator Studio, the interface generator, is described as a beta feature still in development by the lifetime plan page itself (source: inspoai.io/lifetime-plan-policy, verified 2026-09-11).",
+        "reversibilite": "HTML/CSS export and the Figma bridge are included from the free plan up, and the privacy policy explicitly lists access, correction, deletion and portability rights (source: inspoai.io/privacy-policy, verified 2026-09-11)."
+      },
+      "lastActivityVerifiedOn": "2026-09-11",
+      "notedOn": "2026-09-11"
+    }
+  },
+  {
+    "id": "traceo",
+    "slug": "traceo",
+    "name": "Traceo",
+    "category": "ui-components",
+    "shortDescription": "Extension Chrome pour inspecter le CSS visuellement et enregistrer des bugs d'interface en captures ou vidéo, sans DevTools.",
+    "shortDescriptionEn": "Chrome extension to inspect CSS visually and record UI bugs as screenshots or video, without DevTools.",
+    "description": "Traceo est une extension Chrome qui remplace l'inspecteur DevTools pour un usage quotidien de vérification d'interface : cliquer sur un élément affiche ses espacements, dimensions, couleurs, typographie et styles calculés, avec extraction de la palette et des polices de la page.\n\nLe mode enregistrement capture des captures d'écran ou des vidéos pendant la reproduction d'un bug, avec annotation (dessin, surlignage, texte, flou des détails sensibles) et inclusion optionnelle des logs console et des requêtes réseau. Responsify prévisualise le rendu sur plusieurs appareils. VibeGrab extrait la structure d'un composant pour la réinjecter dans un outil de code IA.\n\nL'outil est local-first par défaut : l'inspection et la capture se font sur l'appareil, sans compte requis. Un compte n'est nécessaire que pour la synchronisation du quota gratuit ou les liens de partage de vidéo. Le plan Free (0 $, 50 captures et 30 enregistrements par mois) est un vrai plan permanent ; Pro (7 $/mois ou 70 $/an soit 5,83 $/mois) lève les limites et ajoute VibeGrab et l'inspecteur avancé.\n\nTraceo est un produit jeune et indépendant, sans structure légale précisée sur le site, mais avec une note de 4,9/5 sur 25 avis vérifiables sur le Chrome Web Store.",
+    "longDescription": "Traceo est une extension Chrome qui remplace l'inspecteur DevTools pour un usage quotidien de vérification d'interface : cliquer sur un élément affiche ses espacements, dimensions, couleurs, typographie et styles calculés, avec extraction de la palette et des polices de la page.\n\nLe mode enregistrement capture des captures d'écran ou des vidéos pendant la reproduction d'un bug, avec annotation (dessin, surlignage, texte, flou des détails sensibles) et inclusion optionnelle des logs console et des requêtes réseau. Responsify prévisualise le rendu sur plusieurs appareils. VibeGrab extrait la structure d'un composant pour la réinjecter dans un outil de code IA.\n\nL'outil est local-first par défaut : l'inspection et la capture se font sur l'appareil, sans compte requis. Un compte n'est nécessaire que pour la synchronisation du quota gratuit ou les liens de partage de vidéo. Le plan Free (0 $, 50 captures et 30 enregistrements par mois) est un vrai plan permanent ; Pro (7 $/mois ou 70 $/an soit 5,83 $/mois) lève les limites et ajoute VibeGrab et l'inspecteur avancé.\n\nTraceo est un produit jeune et indépendant, sans structure légale précisée sur le site, mais avec une note de 4,9/5 sur 25 avis vérifiables sur le Chrome Web Store.",
+    "longDescriptionEn": "Traceo is a Chrome extension that replaces the DevTools inspector for day-to-day interface checking: click any element to see its spacing, dimensions, colors, typography and computed styles, with page color and font extraction.\n\nRecorder mode captures screenshots or video while reproducing an issue, with annotation (draw, highlight, text, blur sensitive details) and optional inclusion of console logs and network requests. Responsify previews rendering across devices. VibeGrab extracts a component's structure to feed into an AI coding tool.\n\nThe tool is local-first by default: inspection and capture happen on-device, no account required. An account is only needed for free-tier quota syncing or video share links. The Free plan (30/50 screenshots and recordings per month) is a genuine permanent tier; Pro ($7/month or $70/year, i.e. $5.83/month) lifts the limits and adds VibeGrab and the advanced inspector.\n\nTraceo is a young, independent product with no legal entity disclosed on the site, but a 4.9/5 rating across 25 verifiable Chrome Web Store reviews.",
+    "pricing": {
+      "free": "Plan Free permanent : 50 captures/annotations et 30 enregistrements par mois, sans compte requis",
+      "paid": "Pro : 7 $/mois (mensuel) ou 70 $/an soit 5,83 $/mois (annuel)"
+    },
+    "pricingEn": {
+      "free": "Permanent Free plan: 50 screenshots/annotations and 30 recordings per month, no account required",
+      "paid": "Pro: $7/month (monthly) or $70/year, i.e. $5.83/month (annual)"
+    },
+    "defaultMonthlyPrice": 5.01,
+    "pricing_v5": {
+      "cautions": [
+        "Prix officiels en dollars ; le tarif mensuel réduit exige un engagement annuel.",
+        "Aucune structure légale (société, adresse) n'est précisée sur le site.",
+        "Le plan Pro reste individuel : pas de fonction d'équipe ou de siège documentée."
+      ],
+      "cautionsEn": [
+        "Official prices are in US dollars; the lower monthly rate requires an annual commitment.",
+        "No legal entity (company, address) is disclosed on the site.",
+        "The Pro plan stays individual: no team or seat feature is documented."
+      ],
+      "verified_on": "2026-09-11",
+      "source_domain": "traceo.dev",
+      "usage_sensitive": false,
+      "compare_plan_kind": "account",
+      "compare_plan_name": "Pro (facturation annuelle)",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://www.traceo.dev/pricing",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 5.01,
+      "plans": [
+        {
+          "planKey": "free",
+          "displayName": "Free",
+          "summary": "Inspection CSS de base, 50 captures et 30 enregistrements par mois, sans compte requis.",
+          "featureHighlights": [
+            "50 captures/annotations par mois",
+            "30 enregistrements/mois (5 min max)",
+            "Partage vers Slack inclus"
+          ],
+          "detailsSourceUrl": "https://www.traceo.dev/pricing",
+          "pricingUnit": "par compte",
+          "isFree": true,
+          "isComparePlan": false
+        },
+        {
+          "planKey": "pro",
+          "displayName": "Pro",
+          "summary": "Inspecteur avancé, VibeGrab et captures/enregistrements illimités.",
+          "featureHighlights": [
+            "VibeGrab pour outils de code IA",
+            "Inspecteur avancé (typographie, contraste, palette complète)",
+            "Captures et enregistrements illimités (15 min max)"
+          ],
+          "detailsSourceUrl": "https://www.traceo.dev/pricing",
+          "pricingUnit": "par compte",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 5.83,
+          "nativeCurrency": "USD",
+          "billingPeriod": "monthly",
+          "billingCommitment": "annual_prepaid"
+        }
+      ]
+    },
+    "websiteUrl": "https://www.traceo.dev/",
+    "affiliateLink": "",
+    "logo": "https://logo.clearbit.com/traceo.dev",
+    "verdict": {
+      "keepIf": [
+        "Vous voulez vérifier des espacements, couleurs et polices sans ouvrir DevTools.",
+        "Vous devez régulièrement remonter des bugs d'interface avec capture et contexte technique.",
+        "Le quota gratuit (50 captures, 30 enregistrements par mois) couvre votre usage réel."
+      ],
+      "avoidIf": [
+        "Vous travaillez déjà à l'aise dans l'inspecteur DevTools natif de Chrome.",
+        "Vous avez besoin d'une remontée de bug collaborative côté client non technique, comme un tableau Kanban partagé.",
+        "L'absence de structure légale précisée sur le site est un frein pour votre organisation."
+      ],
+      "threshold": "Choisissez Traceo si vous inspectez et reproduisez des bugs d'interface au quotidien et que le plan gratuit ou les 7 $/mois du plan Pro restent proportionnés à cet usage. Si le besoin est plutôt une remontée de bug par des clients non techniques, une fiche comme BugHerd correspond mieux."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You want to check spacing, colors and fonts without opening DevTools.",
+        "You regularly need to report UI bugs with capture and technical context.",
+        "The free quota (50 screenshots, 30 recordings per month) covers your real usage."
+      ],
+      "avoidIf": [
+        "You're already comfortable in Chrome's native DevTools inspector.",
+        "You need collaborative bug reporting from non-technical clients, like a shared Kanban board.",
+        "The lack of a disclosed legal entity on the site is a blocker for your organization."
+      ],
+      "threshold": "Choose Traceo if you inspect and reproduce UI bugs daily and the free plan or the Pro plan's $7/month stay proportionate to that use. If the need is more about bug reporting from non-technical clients, a tool like BugHerd fits better."
+    },
+    "pros": [
+      "Plan gratuit permanent réellement utilisable, sans compte requis pour l'usage local.",
+      "Inspection CSS complète (espacements, couleurs, typographie) directement au clic.",
+      "Capture et enregistrement de bugs avec annotation et contexte technique inclus.",
+      "Architecture local-first : les captures restent sur l'appareil par défaut.",
+      "Note de 4,9/5 sur 25 avis vérifiables sur le Chrome Web Store."
+    ],
+    "prosEn": [
+      "Genuinely usable permanent free plan, no account required for local use.",
+      "Full CSS inspection (spacing, colors, typography) directly on click.",
+      "Bug capture and recording with annotation and technical context included.",
+      "Local-first architecture: captures stay on-device by default.",
+      "4.9/5 rating across 25 verifiable Chrome Web Store reviews."
+    ],
+    "cons": [
+      "Aucune structure légale ou adresse d'éditeur communiquée sur le site.",
+      "Le tarif réduit du plan Pro exige un engagement annuel.",
+      "Reste un outil individuel, sans fonction d'équipe ou de siège.",
+      "Jeune produit avec un volume d'usage encore limité (187 utilisateurs Chrome Web Store)."
+    ],
+    "consEn": [
+      "No legal entity or publisher address disclosed on the site.",
+      "The Pro plan's lower rate requires an annual commitment.",
+      "Stays an individual tool, with no team or seat feature.",
+      "Young product with still-limited usage volume (187 Chrome Web Store users)."
+    ],
+    "useCases": [
+      "Vérifier les espacements et couleurs d'une interface sans ouvrir DevTools.",
+      "Enregistrer une vidéo de bug avec logs console pour un rapport technique.",
+      "Extraire la structure d'un composant pour la réinjecter dans un outil de code IA.",
+      "Prévisualiser le rendu responsive d'une page sur plusieurs appareils."
+    ],
+    "useCasesEn": [
+      "Check an interface's spacing and colors without opening DevTools.",
+      "Record a bug video with console logs for a technical report.",
+      "Extract a component's structure to feed into an AI coding tool.",
+      "Preview a page's responsive rendering across devices."
+    ],
+    "covers": [
+      "inspection-css",
+      "bug-report-visuel"
+    ],
+    "functional_needs": [
+      "inspection-css",
+      "bug-report-visuel"
+    ],
+    "relevantFor": [
+      "Développeurs front-end",
+      "Designers UI",
+      "QA et testeurs"
+    ],
+    "alternatives": [
+      "bugherd"
+    ],
+    "seo": {
+      "idealForFr": "Idéal pour un développeur ou designer qui veut inspecter le CSS et remonter des bugs d'interface sans ouvrir DevTools.",
+      "idealForEn": "Ideal for a developer or designer who wants to inspect CSS and report UI bugs without opening DevTools.",
+      "metaDescription": "Traceo : avis, tarifs Free et Pro, inspection CSS, capture de bugs d'interface et alternatives pour développeurs et designers."
+    },
+    "articles": [],
+    "soloRelevance": "high",
+    "teamRelevance": "low",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "developpeur",
+      "ux-ui"
+    ],
+    "ia_use_case": null,
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "personas": [],
+    "timeGainedHoursPerMonth": 2,
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [
+      "inspection_frequency",
+      "bug_report_audience"
+    ],
+    "substitution_cluster_v2": "ui-inspection-bug-capture",
+    "decision_policy_v3": {
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": true,
+      "default_decision_lane": "review_then_prescribe",
+      "auto_downgrade_allowed": true,
+      "never_auto_cancel_reason": null,
+      "requires_context_questions": true
+    },
+    "ogImageUrl": "https://www.traceo.dev/og-traceo-share.png",
+    "galleryImages": [],
+    "force_silence": false,
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 4,
+      "utilisation": 4,
+      "puissance": 3,
+      "reversibilite": 4,
+      "evidence": {
+        "valeurAjoutee": "Réunit l'inspection CSS, la capture de bugs (écran et vidéo) et l'extraction de composants pour outils IA dans une seule extension gratuite en permanence, ce qui remplace plusieurs outils séparés pour un développeur ou designer (source : traceo.dev/pricing, vérifié le 2026-09-11).",
+        "simplicite": "Aucun compte n'est requis pour l'usage local d'après la politique de confidentialité, et la note de 4,9/5 sur 25 avis du Chrome Web Store est une preuve tierce vérifiable, plus solide qu'un simple témoignage marketing (source : Chrome Web Store, vérifié le 2026-09-11).",
+        "utilisation": "L'usage quotidien couvre l'inspection au clic, l'enregistrement de bugs avec annotation, la prévisualisation responsive et l'export d'assets, un périmètre large pour un usage dev/design/QA (source : chromewebstore.google.com, vérifié le 2026-09-11).",
+        "puissance": "VibeGrab (extraction de composant pour IA) est une capacité différenciante réelle, mais le produit reste jeune (187 utilisateurs Chrome Web Store) et le plan Pro lève surtout les limites du plan gratuit plutôt que d'ajouter une capacité catégoriquement nouvelle (source : chromewebstore.google.com, vérifié le 2026-09-11).",
+        "reversibilite": "Architecture local-first documentée dans la politique de confidentialité : captures et enregistrements restent sur l'appareil par défaut (chrome.storage.local, IndexedDB), sans dépendance réseau obligatoire hors connexion optionnelle pour le compte ou le partage de lien (source : traceo.dev/privacy, vérifié le 2026-09-11)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Combines CSS inspection, bug capture (screenshot and video) and AI-tool component extraction into one permanently free extension, replacing several separate tools for a developer or designer (source: traceo.dev/pricing, verified 2026-09-11).",
+        "simplicite": "No account is required for local use per the privacy policy, and the 4.9/5 rating across 25 Chrome Web Store reviews is verifiable third-party proof, stronger than plain marketing testimonials (source: Chrome Web Store, verified 2026-09-11).",
+        "utilisation": "Daily usage spans click-to-inspect, bug recording with annotation, responsive preview and asset export, a broad scope for dev/design/QA work (source: chromewebstore.google.com, verified 2026-09-11).",
+        "puissance": "VibeGrab (AI-tool component extraction) is a real differentiating capability, but the product stays young (187 Chrome Web Store users) and the Pro plan mostly lifts free-plan caps rather than adding a categorically new capability (source: chromewebstore.google.com, verified 2026-09-11).",
+        "reversibilite": "Local-first architecture documented in the privacy policy: captures and recordings stay on-device by default (chrome.storage.local, IndexedDB), with no mandatory network dependency outside optional account sign-in or link sharing (source: traceo.dev/privacy, verified 2026-09-11)."
+      },
+      "lastActivityVerifiedOn": "2026-09-11",
+      "notedOn": "2026-09-11"
+    }
+  },
+  {
     "id": "happia",
     "slug": "happia",
     "name": "Happia",

@@ -40,6 +40,7 @@ function canonicalPricingV5(row: CatalogProjectionRow): PricingV5 | null {
     observedLocale: text(plan.observed_locale) || null,
     observedOn: text(plan.observed_on) || null,
     lastConfirmedOn: text(plan.last_confirmed_on) || null,
+    comingSoon: plan.is_coming_soon === true,
   }));
   if (row.compare_monthly_eur == null && !row.pricing_guidance && plans.length === 0) return null;
   return {

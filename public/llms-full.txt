@@ -1,6 +1,6 @@
 # ToolTrim canonical tool catalogue
 # Generated from src/data/tools_index.json
-# Records: 1171
+# Records: 1174
 # Prices can change; verify current vendor pricing before citation.
 
 [
@@ -17457,6 +17457,51 @@
     },
     "description_fr": "Fidélité Wallet, CRM et avis Google pour les commerces de proximité.",
     "description_en": "Wallet loyalty, CRM and Google reviews for local businesses."
+  },
+  {
+    "name": "FlexClip",
+    "slug": "flexclip",
+    "url_fr": "https://tooltrim.com/fr/tool/flexclip",
+    "url_en": "https://tooltrim.com/en/tool/flexclip",
+    "website": "https://www.flexclip.com/",
+    "category": "creation",
+    "monthly_price_eur": 10.3,
+    "pricing": {
+      "free": "Plan Free permanent : export 720p, 12 projets, vidéos jusqu'à 10 min",
+      "paid": "Plus : 11,99 $/mois (facturation annuelle) ou 19,99 $/mois (mensuel) ; Business : 19,99 $/mois (facturation annuelle) ou 29,99 $/mois (mensuel) ; Équipes sur devis"
+    },
+    "description_fr": "Éditeur vidéo en ligne à base de modèles, avec une suite d'outils IA pour créer des vidéos marketing sans logiciel de montage.",
+    "description_en": "Template-based online video editor with a suite of AI tools for making marketing videos without editing software."
+  },
+  {
+    "name": "Inspo AI",
+    "slug": "inspoai",
+    "url_fr": "https://tooltrim.com/fr/tool/inspoai",
+    "url_en": "https://tooltrim.com/en/tool/inspoai",
+    "website": "https://inspoai.io/",
+    "category": "design-tools",
+    "monthly_price_eur": 0,
+    "pricing": {
+      "free": "Free Forever : 5 crédits IA/jour (40-50 écrans), 25 recherches/jour, 3 moodboards, sans carte bancaire",
+      "paid": "Aucune offre payante active à ce jour ; Lite (12 $/mois), Freelancer (22 $/mois) et Pro (39 $/mois) sont annoncés « Coming Soon »"
+    },
+    "description_fr": "Recherche visuelle IA dans une base de plus de 200 000 écrans, moodboards collaboratifs et génération d'interface par description texte.",
+    "description_en": "AI visual search across a 200,000+ screen index, collaborative moodboards and text-to-interface generation."
+  },
+  {
+    "name": "Traceo",
+    "slug": "traceo",
+    "url_fr": "https://tooltrim.com/fr/tool/traceo",
+    "url_en": "https://tooltrim.com/en/tool/traceo",
+    "website": "https://www.traceo.dev/",
+    "category": "ui-components",
+    "monthly_price_eur": 5.01,
+    "pricing": {
+      "free": "Plan Free permanent : 50 captures/annotations et 30 enregistrements par mois, sans compte requis",
+      "paid": "Pro : 7 $/mois (mensuel) ou 70 $/an soit 5,83 $/mois (annuel)"
+    },
+    "description_fr": "Extension Chrome pour inspecter le CSS visuellement et enregistrer des bugs d'interface en captures ou vidéo, sans DevTools.",
+    "description_en": "Chrome extension to inspect CSS visually and record UI bugs as screenshots or video, without DevTools."
   },
   {
     "name": "Happia",

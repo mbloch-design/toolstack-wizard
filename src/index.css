@@ -9127,6 +9127,20 @@
   .td-pricing-plan-highlights li::before { content: ""; position: absolute; left: 0; top: 0.58em; width: 4px; height: 4px; border-radius: var(--radius-pill); background: var(--color-muted-light); }
   .td-pricing-plan-meta { margin: 0; font-family: var(--font-ui); font-size: 14px; line-height: 1.55; color: var(--color-muted); }
   .td-pricing-plan-source { width: fit-content; font-family: var(--font-ui); font-size: 13px; color: var(--color-muted); text-underline-offset: 3px; }
+  /* Plan annoncé mais pas encore achetable : visible, mais visuellement en retrait. */
+  .td-pricing-plan--soon { opacity: 0.68; }
+  .td-pricing-plan-soon-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 8px;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--color-border);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+  }
   .td-pricing-evidence {
     display: flex;
     flex-wrap: wrap;

@@ -189,6 +189,9 @@ export interface ToolPricingPlan {
   observedLocale?: string | null;
   observedOn?: string | null;
   lastConfirmedOn?: string | null;
+  /** Plan annoncé publiquement mais pas encore achetable (page "Coming soon"
+   * sans bouton d'achat actif). Affiché à titre indicatif, sans lien d'achat. */
+  comingSoon?: boolean;
 }
 
 export interface ToolCostRow {

@@ -35563,6 +35563,103 @@
     ]
   },
   {
+    "id": "flexclip",
+    "slug": "flexclip",
+    "name": "FlexClip",
+    "categoryId": "creation",
+    "shortDescription": "Éditeur vidéo en ligne à base de modèles, avec une suite d'outils IA pour créer des vidéos marketing sans logiciel de montage.",
+    "shortDescriptionEn": "Template-based online video editor with a suite of AI tools for making marketing videos without editing software.",
+    "pricing": {
+      "free": "Plan Free permanent : export 720p, 12 projets, vidéos jusqu'à 10 min",
+      "paid": "Plus : 11,99 $/mois (facturation annuelle) ou 19,99 $/mois (mensuel) ; Business : 19,99 $/mois (facturation annuelle) ou 29,99 $/mois (mensuel) ; Équipes sur devis"
+    },
+    "defaultMonthlyPrice": 10.3,
+    "compareMonthlyPrice": 10.3,
+    "websiteUrl": "https://www.flexclip.com/",
+    "ogImageUrl": "https://resource.flexclip.com/share/current.webp",
+    "logo": "https://logo.clearbit.com/flexclip.com",
+    "tool_type": "specialise",
+    "substitution_cluster_v2": "content-creation",
+    "functional_needs": [
+      "montage-video",
+      "creation-contenu-video"
+    ],
+    "verticals": [
+      "createur-contenu",
+      "community-manager",
+      "motion-video"
+    ],
+    "relevantFor": [
+      "Créateurs de contenu",
+      "Community managers",
+      "Petites marques et commerces",
+      "Équipes marketing"
+    ]
+  },
+  {
+    "id": "inspoai",
+    "slug": "inspoai",
+    "name": "Inspo AI",
+    "categoryId": "design-tools",
+    "shortDescription": "Recherche visuelle IA dans une base de plus de 200 000 écrans, moodboards collaboratifs et génération d'interface par description texte.",
+    "shortDescriptionEn": "AI visual search across a 200,000+ screen index, collaborative moodboards and text-to-interface generation.",
+    "pricing": {
+      "free": "Free Forever : 5 crédits IA/jour (40-50 écrans), 25 recherches/jour, 3 moodboards, sans carte bancaire",
+      "paid": "Aucune offre payante active à ce jour ; Lite (12 $/mois), Freelancer (22 $/mois) et Pro (39 $/mois) sont annoncés « Coming Soon »"
+    },
+    "compareMonthlyPrice": 0,
+    "websiteUrl": "https://inspoai.io/",
+    "ogImageUrl": "/tool-media/inspoai/hero.jpg",
+    "logo": "https://logo.clearbit.com/inspoai.io",
+    "tool_type": "specialise",
+    "substitution_cluster_v2": "design-inspiration-search",
+    "functional_needs": [
+      "moodboard",
+      "references"
+    ],
+    "verticals": [
+      "ux-ui",
+      "graphiste-da"
+    ],
+    "relevantFor": [
+      "Designers UX/UI",
+      "Product designers",
+      "Freelances en design d'interface"
+    ]
+  },
+  {
+    "id": "traceo",
+    "slug": "traceo",
+    "name": "Traceo",
+    "categoryId": "ui-components",
+    "shortDescription": "Extension Chrome pour inspecter le CSS visuellement et enregistrer des bugs d'interface en captures ou vidéo, sans DevTools.",
+    "shortDescriptionEn": "Chrome extension to inspect CSS visually and record UI bugs as screenshots or video, without DevTools.",
+    "pricing": {
+      "free": "Plan Free permanent : 50 captures/annotations et 30 enregistrements par mois, sans compte requis",
+      "paid": "Pro : 7 $/mois (mensuel) ou 70 $/an soit 5,83 $/mois (annuel)"
+    },
+    "defaultMonthlyPrice": 5.01,
+    "compareMonthlyPrice": 5.01,
+    "websiteUrl": "https://www.traceo.dev/",
+    "ogImageUrl": "https://www.traceo.dev/og-traceo-share.png",
+    "logo": "https://logo.clearbit.com/traceo.dev",
+    "tool_type": "specialise",
+    "substitution_cluster_v2": "ui-inspection-bug-capture",
+    "functional_needs": [
+      "inspection-css",
+      "bug-report-visuel"
+    ],
+    "verticals": [
+      "developpeur",
+      "ux-ui"
+    ],
+    "relevantFor": [
+      "Développeurs front-end",
+      "Designers UI",
+      "QA et testeurs"
+    ]
+  },
+  {
     "id": "happia",
     "slug": "happia",
     "name": "Happia",
