@@ -22,6 +22,7 @@ export default function StickyDecisionCard({ tool, prefix, t, alternatives, sect
   const slug = tool.slug || tool.id;
   const similar = alternatives.slice(0, 4);
   const toolTrimScore = computeToolTrimScore(tool);
+  const conclusion = (prefix === "/en" ? tool.verdictEn : tool.verdict)?.threshold?.trim();
   const verdictLevel = toolTrimScore.score >= 4 ? "high" : toolTrimScore.score >= 3.5 ? "mid" : "low";
   // Circular gauge: the ring itself carries the score (arc length = score / 5),
   // replacing the old trend arrow with an actual proportional visualization.
@@ -130,6 +131,7 @@ export default function StickyDecisionCard({ tool, prefix, t, alternatives, sect
           <span>/ 5</span>
         </span>
         <span className="td-decision-verdict-copy">{t(toolTrimScore.labelFr, toolTrimScore.labelEn)}</span>
+        {conclusion && <p className="td-decision-conclusion">{conclusion}</p>}
       </div>}
 
       {section !== "verdict" && <nav className="td-decision-utility-actions" aria-label={t("Actions sur l’outil", "Tool actions")}>

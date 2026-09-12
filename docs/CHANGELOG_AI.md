@@ -4383,3 +4383,32 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Explorer, partager et signaler sont regroupés en fin de lecture sur petit écran ; le rail desktop conserve ses actions.
 - L’enregistrement dans la stack devient un bouton marque-page de 44 px à côté de la visite du site, sans doublon dans le rail.
 - Validation : build complet et budgets PASS ; rendu et ouverture du menu vérifiés à 390, 768 et 1440 px.
+
+## 2026-09-11 — Charte Submit appliquée aux fiches outils
+
+- Surfaces neutres, rayons partagés, suppression des ombres du hero et du dégradé du verdict.
+- CTA principal sombre en pilule, enregistrement compact conservé, liens éditoriaux bleus.
+- Titres éditoriaux en police de marque et accroches bicolores FR/EN ; textes de lecture foncés conservés.
+
+- Correction du bandeau au défilement : nom et actions seuls en mode compact, suppression du masque dégradé qui brouillait la galerie.
+
+## 2026-09-11 — Composition éditoriale des fiches
+
+- Identité ouverte sans cadre, CTA sous la promesse ; description pleine largeur sur mobile.
+- Verdict accompagné de la conclusion éditoriale disponible dans la langue de la fiche.
+- Navigation délimitée et accroche de présentation centrée sur les usages.
+
+## 2026-09-11 — Audit typographique par section
+
+- Échelle de lecture harmonisée : titres équilibrés, largeur de prose limitée à 65ch, sous-titres fonctionnels et labels plus lisibles.
+- FAQ alignée sur les chapitres, police UI unique et questions/réponses 16px ; accordéons natifs conservés.
+- Focus clavier explicite et interlignage des actions finales corrigé.
+- Build complet et budgets PASS ; FAQ interactive FR/EN contrôlée à 390, 768 et 1440 px sans débordement horizontal.
+- Détail des constats et décisions : `docs/TOOL_DETAIL_TYPOGRAPHY_AUDIT.md`.
+
+## 2026-09-12 — Contraste et cohérence des blocs de décision
+
+- Suppression définitive de l’ombre du bandeau compact et ajout d’une bordure nette.
+- L’état enregistré du marque-page reste secondaire et n’est plus rendu comme un disque noir.
+- Les cartes Avantages/Inconvénients et À garder/À challenger utilisent des surfaces pleines, sans dégradé, avec le même contraste de lecture.
+- Rythme et largeur des paragraphes de présentation resserrés pour rendre les niveaux éditoriaux plus lisibles.
