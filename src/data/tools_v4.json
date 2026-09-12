@@ -170621,13 +170621,15 @@
         "Les paliers payants (Lite, Freelancer, Pro) sont affichés mais marqués « Coming Soon », donc non disponibles à l'achat aujourd'hui.",
         "Un plan à vie à 199 $ existe sur une page légale distincte mais sans bouton d'achat actif trouvé sur le site.",
         "Creator Studio, le générateur d'interface, est annoncé comme fonctionnalité bêta encore en développement sur la page du plan à vie.",
-        "Le volet API/MCP a lui aussi ses paliers payants (Growth 49 $, Scale 199 $) marqués « Coming Soon », seul le palier Hobbyist gratuit (10 appels/mois) est actif."
+        "Le volet API/MCP a lui aussi ses paliers payants (Growth 49 $, Scale 199 $) marqués « Coming Soon », seul le palier Hobbyist gratuit (10 appels/mois) est actif.",
+        "L'éditeur annonce une transition de positionnement vers un « AI Design Workspace » (génération de code React + Tailwind CSS, Brand DNA scanning, audits de conformité automatisés), confirmée directement par le fondateur mais pas encore déployée sur le site public au moment de la vérification."
       ],
       "cautionsEn": [
         "The paid tiers (Lite, Freelancer, Pro) are displayed but marked \"Coming Soon\", so not purchasable today.",
         "A $199 lifetime plan exists on a separate legal page but with no active purchase button found on the site.",
         "Creator Studio, the interface generator, is described as a beta feature still in development on the lifetime plan page.",
-        "The API/MCP track also has paid tiers (Growth $49, Scale $199) marked \"Coming Soon\"; only the free Hobbyist tier (10 calls/month) is active."
+        "The API/MCP track also has paid tiers (Growth $49, Scale $199) marked \"Coming Soon\"; only the free Hobbyist tier (10 calls/month) is active.",
+        "The publisher has announced a repositioning toward an \"AI Design Workspace\" (React + Tailwind CSS code generation, Brand DNA scanning, automated compliance audits), confirmed directly by the founder but not yet live on the public site at the time of verification."
       ],
       "verified_on": "2026-09-11",
       "source_domain": "inspoai.io",
