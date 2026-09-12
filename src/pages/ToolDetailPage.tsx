@@ -263,13 +263,7 @@ const ToolDetailPage = () => {
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(() => {
         setShowCompactHeader(scrollRoot.scrollTop >= compactAt);
-        const scrollBody = scrollBodyRef.current;
-        const heroCard = hero.querySelector<HTMLElement>(".td-hero-card");
-        if (scrollBody && heroCard) {
-          const fadeStart = Math.max(0, heroCard.getBoundingClientRect().bottom - scrollBody.getBoundingClientRect().top);
-          scrollBody.style.setProperty("--td-scroll-fade-start", `${fadeStart}px`);
-          scrollBody.style.setProperty("--td-scroll-fade-end", `${fadeStart + 64}px`);
-        }
+
       });
     };
     const handleResize = () => {
@@ -535,7 +529,7 @@ const ToolDetailPage = () => {
                   <header className="td-editorial-intro-head">
                     <span className="td-eyebrow">{t("À propos", "About")}</span>
                     <h2 className="td-editorial-intro-title">
-                      {t(`Comprendre ${tool.name}.`, `Understanding ${tool.name}.`)}
+                      {t("En pratique.", "In practice.")} <span className="tt-title-muted">{t(`Ce que ${tool.name} permet de faire.`, `What you can do with ${tool.name}.`)}</span>
                     </h2>
                   </header>
                   <div className="td-editorial-intro-copy">
@@ -753,7 +747,7 @@ const ToolDetailPage = () => {
               <div id="prix" className="td-subpage-content">
                 <div className="td-section">
                   <h2 className="td-title">
-                    {t(`Combien coûte ${tool.name} ?`, `How much does ${tool.name} cost?`)}
+                    {t("Tarifs.", "Pricing.")} <span className="tt-title-muted">{t(`Quel budget pour ${tool.name} ?`, `What does ${tool.name} cost?`)}</span>
                   </h2>
                   <ToolPricingSection
                     tool={tool} displayPrice={displayPrice}
@@ -774,7 +768,7 @@ const ToolDetailPage = () => {
               <div id="alternatives" className="td-subpage-content">
                 <div className="td-section">
                   <h2 className="td-title">
-                    {t(`Meilleures alternatives à ${tool.name}.`, `Best alternatives to ${tool.name}.`)}
+                    {t("Alternatives.", "Alternatives.")} <span className="tt-title-muted">{t(`Que choisir à la place de ${tool.name} ?`, `What could replace ${tool.name}?`)}</span>
                   </h2>
 
                   {alternatives.length > 0 && (
@@ -928,7 +922,7 @@ const ToolDetailPage = () => {
                   return (
                     <div className="td-section">
                       <h2 className="td-title">
-                        {t(`Notre avis sur ${tool.name}.`, `Our verdict on ${tool.name}.`)}
+                        {t("Notre avis.", "Our verdict.")} <span className="tt-title-muted">{t(`Ce qu’il faut retenir de ${tool.name}.`, `What to know about ${tool.name}.`)}</span>
                       </h2>
 
                       {/* The numeric score already lives in the sticky/mobile

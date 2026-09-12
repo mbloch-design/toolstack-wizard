@@ -8095,6 +8095,46 @@
   }
   /* td-sidebar is now just a semantic wrapper — no position override */
 
+  /* The opening identity stays open; the editorial verdict owns the surface. */
+  .td-tool-page .td-hero:not(.is-compact) .td-hero-card { background: transparent; overflow: visible; }
+  .td-tool-page .td-hero:not(.is-compact) .td-hero-heading { padding: 16px 0 28px; }
+  .td-tool-page .td-hero:not(.is-compact) .td-hero-identity-grid { grid-template-columns: 72px minmax(0, 1fr); align-items: start; gap: 20px 24px; }
+  .td-tool-page .td-hero:not(.is-compact) .td-hero-actions { grid-column: 2; }
+  .td-tool-page .td-hero:not(.is-compact) .td-hero-h1 { font-size: var(--tt-size-page-title); line-height: 1.05; letter-spacing: -.04em; }
+  .td-tool-page .td-hero:not(.is-compact) .td-hero-desc { max-width: 48ch; margin-top: 8px; font-size: var(--tt-size-section-intro); }
+  .td-decision-conclusion { grid-column: 1 / -1; margin: 12px 0 0; padding-top: 12px; border-top: 1px solid var(--color-border); font: 400 var(--tt-size-card-body)/1.55 var(--font-ui); color: var(--color-text); text-wrap: pretty; }
+  .td-tool-page .td-tool-subnav { border-bottom: 1px solid var(--color-border); padding-bottom: 16px; }
+  @media (max-width: 640px) {
+    .td-tool-page .td-hero:not(.is-compact) .td-hero-identity-grid { grid-template-columns: 52px minmax(0, 1fr); gap: 16px; }
+    .td-tool-page .td-hero:not(.is-compact) .td-hero-name-block { display: contents; }
+    .td-tool-page .td-hero:not(.is-compact) .td-hero-h1 { align-self: center; font-size: 36px; overflow-wrap: anywhere; }
+    .td-tool-page .td-hero:not(.is-compact) .td-hero-desc,
+    .td-tool-page .td-hero:not(.is-compact) .td-hero-actions { grid-column: 1 / -1; margin: 0; }
+  }
+
+  /* Reading scale: chapter / functional subtitle / prose / metadata. */
+  .td-tool-page :is(.td-title, .td-editorial-intro-title, .td-overview-title) { text-wrap: balance; max-width: 32ch; }
+  .td-tool-page :is(.td-analysis-lead, .td-analysis-paragraph, .td-editorial-intro-copy) { max-width: 65ch; }
+  .td-tool-page .td-analysis-paragraph { line-height: 1.65; letter-spacing: 0; }
+  .td-tool-page .td-analysis-lead { line-height: 1.5; letter-spacing: -.015em; }
+  .td-tool-page .td-subtitle { font-size: 22px; line-height: 1.3; font-weight: 600; }
+  .td-tool-page :is(.td-eyebrow, .td-editorial-facts h3) { font-size: 12px; line-height: 1.5; letter-spacing: .06em; }
+  .td-tool-page :is(.td-title, .td-editorial-intro-title) { margin-bottom: 20px; }
+  .td-tool-page .td-editorial-intro-head { gap: 8px; margin-bottom: 24px; }
+  .td-tool-page .td-editorial-intro-head .td-editorial-intro-title { margin-bottom: 0; }
+  .td-tool-page .td-reading-actions h2 { line-height: 1.3; }
+  .td-tool-page :is(button, a, summary):focus-visible { outline: 2px solid hsl(var(--primary)); outline-offset: 4px; }
+  .td-faq-heading { margin-bottom: 24px; }
+  .td-faq-heading > p { font: 400 var(--tt-size-body)/1.6 var(--font-ui); color: var(--color-text); max-width: 60ch; }
+  .td-faq-list details { border-bottom: 1px solid var(--color-border); }
+  .td-faq-list details:first-child { border-top: 1px solid var(--color-border); }
+  .td-faq-list summary { padding: 20px 0; font: 600 var(--tt-size-body)/1.5 var(--font-ui); color: var(--color-text); cursor: pointer; }
+  .td-faq-list details > p { padding: 0 0 24px; margin: 0; max-width: 65ch; font: 400 var(--tt-size-body)/1.65 var(--font-ui); color: var(--color-text); }
+  @media (max-width: 640px) {
+    .td-tool-page .td-subtitle { font-size: 20px; }
+    .td-tool-page .td-main { --td-chapter-gap: 48px; --td-block-gap: 28px; }
+  }
+
   /* Hero — single column: identity + positioning only (legacy, unused) */
 
   /* ── Hero CARD — Ma-stack inspector gabarit (.stack-tool-profile-hero):
@@ -8104,8 +8144,8 @@
     border: 0;
     border-radius: var(--tt-surface-radius-panel);
     overflow: hidden;
-    background: color-mix(in srgb, var(--color-surface-soft) 94%, var(--color-text));
-    box-shadow: 0 10px 30px color-mix(in srgb, var(--color-text) 5%, transparent);
+    background: var(--color-surface-soft);
+    box-shadow: none;
   }
   /* Keep the identity visible while reading on both tablet and desktop.
      768px and below retain the simpler non-sticky mobile flow. */
@@ -8126,24 +8166,6 @@
     }
     .td-hero.is-compact + .td-scroll-body {
       padding-top: calc(var(--td-hero-compact-h) + 12px + 8px);
-    }
-    .td-tool-page--compact .td-scroll-body {
-      -webkit-mask-image: linear-gradient(
-        180deg,
-        transparent 0,
-        transparent var(--td-scroll-fade-start, 0px),
-        #000 var(--td-scroll-fade-end, 64px),
-        #000 100%
-      );
-      mask-image: linear-gradient(
-        180deg,
-        transparent 0,
-        transparent var(--td-scroll-fade-start, 0px),
-        #000 var(--td-scroll-fade-end, 64px),
-        #000 100%
-      );
-      -webkit-mask-repeat: no-repeat;
-      mask-repeat: no-repeat;
     }
     .td-hero-card {
       position: static;
@@ -8174,6 +8196,16 @@
         margin-top 260ms cubic-bezier(0.22, 1, 0.36, 1);
     }
     .td-hero.is-compact { pointer-events: none; }
+    .td-hero.is-compact::before {
+      content: "";
+      position: absolute;
+      top: -12px;
+      right: -1px;
+      bottom: -12px;
+      left: -1px;
+      z-index: -1;
+      background: var(--color-bg);
+    }
     .td-hero.is-compact .td-hero-card { pointer-events: auto; }
     .td-hero.is-compact .td-hero-card {
       display: block;
@@ -8202,7 +8234,8 @@
       height: 56px;
     }
     .td-hero.is-compact .td-hero-name-block {
-      grid-template-rows: 34px 20px;
+      grid-template-rows: 1fr;
+      align-items: center;
       gap: 0;
       height: 56px;
       overflow: hidden;
@@ -8214,12 +8247,7 @@
       text-transform: none;
     }
     .td-hero.is-compact .td-hero-cat svg { display: none; }
-    .td-hero.is-compact .td-hero-desc {
-      margin: 0;
-      overflow: hidden;
-      opacity: 1;
-      transform: none;
-    }
+    .td-hero.is-compact .td-hero-desc { display: none; }
     .td-hero.is-compact .td-hero-h1 {
       overflow: hidden;
       font-size: 30px;
@@ -8313,6 +8341,20 @@
     .td-hero-actions { grid-column: 1 / -1; }
     .td-hero-actions .td-hero-site-link { flex: 1; }
   }
+  .td-tool-page .td-hero-site-link {
+    background: var(--color-text);
+    color: var(--color-surface);
+    box-shadow: none;
+    font-family: var(--font-ui);
+    min-height: 48px;
+  }
+  .td-tool-page .td-hero-site-link:hover {
+    background: color-mix(in srgb, var(--color-text) 88%, var(--color-surface));
+    box-shadow: none;
+    transform: none;
+  }
+  .td-tool-page .td-hero-desc { color: var(--color-text); line-height: 1.55; }
+  .td-tool-page .td-hero-logo { box-shadow: none; border: 1px solid var(--color-border); }
   .td-hero-site-link {
     display: inline-flex;
     align-items: center;
@@ -9074,28 +9116,28 @@
   .td-pricing-plan + .td-pricing-plan { border-left: 1px solid var(--color-border); }
   .td-pricing-plan--free { background: var(--color-surface-soft); }
   .td-pricing-plan-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-  .td-pricing-plan-name { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-ui); font-size: 14px; font-weight: 600; color: var(--color-text); }
+  .td-pricing-plan-name { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-ui); font-size: 16px; font-weight: 600; color: var(--color-text); }
   .td-pricing-plan-name svg { width: 15px; height: 15px; color: var(--color-muted); }
-  .td-pricing-price { font-family: var(--font-brand); font-size: 17px; font-weight: 600; color: var(--color-text); white-space: nowrap; }
-  .td-pricing-price small { font-family: var(--font-ui); font-size: 12px; font-weight: 400; color: var(--color-muted); }
+  .td-pricing-price { font-family: var(--font-brand); font-size: 20px; font-weight: 600; font-variant-numeric: tabular-nums; color: var(--color-text); white-space: nowrap; }
+  .td-pricing-price small { font-family: var(--font-ui); font-size: 14px; font-weight: 400; color: var(--color-muted); }
   .td-pricing-copy { font-family: var(--font-ui); font-size: 14px; line-height: 1.5; color: var(--color-muted); }
-  .td-pricing-plan-summary { margin: 0; font-family: var(--font-ui); font-size: 14px; font-weight: 500; line-height: 1.45; color: var(--color-text); }
+  .td-pricing-plan-summary { margin: 0; font-family: var(--font-ui); font-size: 14px; font-weight: 500; line-height: 1.55; color: var(--color-text); }
   .td-pricing-plan-highlights { display: grid; gap: 5px; margin: 0; padding: 0; list-style: none; }
-  .td-pricing-plan-highlights li { position: relative; padding-left: 13px; font-family: var(--font-ui); font-size: 12px; line-height: 1.4; color: var(--color-muted); }
+  .td-pricing-plan-highlights li { position: relative; padding-left: 13px; font-family: var(--font-ui); font-size: 14px; line-height: 1.5; color: var(--color-muted); }
   .td-pricing-plan-highlights li::before { content: ""; position: absolute; left: 0; top: 0.58em; width: 4px; height: 4px; border-radius: var(--radius-pill); background: var(--color-muted-light); }
-  .td-pricing-plan-meta { margin: 0; font-family: var(--font-ui); font-size: 12px; line-height: 1.45; color: var(--color-muted); }
-  .td-pricing-plan-source { width: fit-content; font-family: var(--font-ui); font-size: 11px; color: var(--color-muted); text-underline-offset: 3px; }
+  .td-pricing-plan-meta { margin: 0; font-family: var(--font-ui); font-size: 14px; line-height: 1.55; color: var(--color-muted); }
+  .td-pricing-plan-source { width: fit-content; font-family: var(--font-ui); font-size: 13px; color: var(--color-muted); text-underline-offset: 3px; }
   .td-pricing-evidence {
     display: flex;
     flex-wrap: wrap;
     gap: 4px 7px;
     margin: 0;
     font-family: var(--font-ui);
-    font-size: 11px;
-    line-height: 1.4;
+    font-size: 13px;
+    line-height: 1.5;
     color: var(--color-muted-light);
   }
-  .td-pricing-evidence a { color: var(--color-muted); text-underline-offset: 3px; }
+  .td-pricing-evidence a { color: hsl(var(--primary)); text-decoration: underline; text-underline-offset: 3px; }
   @media (max-width: 640px) {
     .td-pricing-plans--split { grid-template-columns: 1fr; }
     .td-pricing-plans--catalog { grid-template-columns: 1fr; }
@@ -9546,11 +9588,8 @@
     padding: 18px;
     border: 1px solid var(--color-border-soft);
     border-radius: var(--radius-lg);
-    /* A whisper of brand blue — the one spot in this card allowed a trace
-       of color, per an explicit exception to the "no gradient" rule. Radial
-       glow anchored top-left rather than a full diagonal wash, so it reads
-       as light hitting a corner instead of a flat color fill. */
-    background: radial-gradient(120% 120% at 0% 0%, hsl(var(--primary) / 0.1) 0%, var(--color-surface-soft) 62%);
+    /* Neutral editorial surface, shared with the submission page. */
+    background: var(--color-surface-soft);
     color: var(--color-text);
   }
   .td-decision-verdict-label {
@@ -30408,7 +30447,9 @@ section[id] {
 .td-title,
 .td-editorial-intro-title,
 .td-overview-title {
-  font-weight: 500;
+  font-family: var(--font-brand);
+  font-weight: 600;
+  line-height: 1.15;
 }
 
 .td-analysis-lead {
@@ -30422,7 +30463,7 @@ section[id] {
 }
 
 .td-editorial-fact-link {
-  color: inherit;
+  color: hsl(var(--primary));
   text-decoration: underline;
   text-decoration-color: var(--color-border-strong);
   text-decoration-thickness: 1px;
@@ -30451,7 +30492,7 @@ section[id] {
 .td-tool-page .td-tutorials,
 .td-tool-page .td-tutorial-card,
 .td-tool-page .td-tool-faq .rounded-xl {
-  border-radius: 10px;
+  border-radius: var(--tt-surface-radius-info);
 }
 
 .td-overview-group-title,
@@ -30507,7 +30548,7 @@ section[id] {
    the canonical editorial typography block: a product identity is not an
    article page title and must keep the same proportions across every slug. */
 .td-hero-h1 {
-  font-family: Inter, system-ui, arial, sans-serif;
+  font-family: var(--font-brand);
   font-size: clamp(34px, 2.6vw, 40px);
   font-weight: 500;
   line-height: 1.05;
@@ -30516,7 +30557,7 @@ section[id] {
 .td-hero-desc {
   max-width: 56ch;
   margin: 0;
-  font-family: Inter, system-ui, arial, sans-serif;
+  font-family: var(--font-ui);
   font-size: 16px;
   font-weight: 400;
   line-height: 1.42;
