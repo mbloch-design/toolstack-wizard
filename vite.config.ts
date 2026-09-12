@@ -172,6 +172,13 @@ function usd(tool: any, eur: number, round = false): string {
   return formatToolPrice(tool, eur, "USD", "en", { round }).text;
 }
 
+// Devise reelle cote francais aussi : un outil facture en dollars (Traceo,
+// FlexClip) ne doit jamais s'afficher avec un symbole euro invente sur les
+// balises SEO prerendues, memes celles generees hors du composant React.
+function fr(tool: any, eur: number, round = false): string {
+  return formatToolPrice(tool, eur, "EUR", "fr", { round }).text;
+}
+
 function buildToolMetaDesc(tool: any, lang: string): string {
   // Snippet SERP orienté CTR : valeur (description courte) + signal PRIX
   // (l'intention dominante) + crochet aligné sur le titre. Borné à 160c.
@@ -199,7 +206,7 @@ function buildToolMetaDesc(tool: any, lang: string): string {
     || /licence|à vie|perp[ée]tuel|one-?time|perpetual/i.test(tool.pricing?.paid || "");
   const per = isFr ? (oneTime ? "" : "/mois") : (oneTime ? "" : "/mo");
   const priceClause = isFr
-    ? (oneTime ? "Licence à vie, sans abonnement." : price > 0 ? `Prix dès ${price}€${per}.` : (hasFree && !mentionsFree ? "Version gratuite." : ""))
+    ? (oneTime ? "Licence à vie, sans abonnement." : price > 0 ? `Prix dès ${fr(tool, price, true)}${per}.` : (hasFree && !mentionsFree ? "Version gratuite." : ""))
     : (oneTime ? "Lifetime license with no subscription." : price > 0 ? `From ${usd(tool, price)}${per}.` : (hasFree && !mentionsFree ? "Free version." : ""));
   const hook = isFr
     ? "Avis ToolTrim et alternatives moins chères."
@@ -269,7 +276,7 @@ function buildToolFaqSchema(params: {
             const hasFree = toolHasFreePlan(tool);
             if (isFr) {
               if (priceDisplay === 0) return `${name} est gratuit. Prix vérifié par ToolTrim.`;
-              if (priceDisplay) return `${name} propose ${hasFree ? "un plan gratuit, puis des offres payantes à partir de" : "des offres à partir de"} ${priceDisplay}€/mois. Prix vérifié par ToolTrim.`;
+              if (priceDisplay) return `${name} propose ${hasFree ? "un plan gratuit, puis des offres payantes à partir de" : "des offres à partir de"} ${fr(tool, priceDisplay)}/mois. Prix vérifié par ToolTrim.`;
               return `${name} a un tarif variable selon le plan${hasFree ? ", avec une offre gratuite" : ""}. Prix vérifié par ToolTrim.`;
             }
             if (priceDisplay === 0) return `${name} is free. Price verified by ToolTrim.`;
@@ -834,7 +841,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             // Titre mené par le prix : la requête dominante est "combien ça coûte".
             // Prix concret si payant, "gratuit" si offre gratuite, sinon "prix".
             const priceTag = isFr
-              ? (oneTime ? "licence à vie" : priceDisplay && priceDisplay > 0 ? `prix dès ${priceDisplay}€` : (tool.pricing?.free ? "gratuit" : "prix"))
+              ? (oneTime ? "licence à vie" : priceDisplay && priceDisplay > 0 ? `prix dès ${fr(tool, priceDisplay, true)}` : (tool.pricing?.free ? "gratuit" : "prix"))
               : (oneTime ? "lifetime license" : priceDisplay && priceDisplay > 0 ? `pricing from ${usd(tool, priceDisplay, true)}` : (tool.pricing?.free ? "free" : "pricing"));
             const presentationOverride = isFr ? tool.seo?.presentationTitleFr : tool.seo?.presentationTitleEn;
             // Drop the " | ToolTrim" brand suffix when the full title would
@@ -1021,7 +1028,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
             buildDesc: (name, price, isFr, tool) => tool.pricing_v5?.compare_plan_kind === "one_time"
               ? (isFr ? `${name} est vendu en licence à vie, sans abonnement. Tarif, conditions et alternatives analysés par ToolTrim.` : `${name} is sold as a lifetime license with no subscription. Price, terms and alternatives reviewed by ToolTrim.`)
               : isFr
-                ? (price ? `Combien coûte vraiment ${name} ? Plans, tarifs détaillés et comparaison, à jour 2026. Vaut-il ses ${price}€/mois ?` : `Plans et tarifs de ${name} : gratuit, freemium ou payant ? Toutes les options décryptées par ToolTrim.`)
+                ? (price ? `Combien coûte vraiment ${name} ? Plans, tarifs détaillés et comparaison, à jour 2026. Vaut-il ses ${fr(tool, price)}/mois ?` : `Plans et tarifs de ${name} : gratuit, freemium ou payant ? Toutes les options décryptées par ToolTrim.`)
                 : (price ? `How much does ${name} really cost? Detailed plans, pricing breakdown, updated 2026. Is it worth ${usd(tool, price)}/mo?` : `${name} plans and pricing: free, freemium or paid? All options explained by ToolTrim.`),
             buildBody: (name, price, isFr, tool) => {
               const v5 = tool.pricing_v5;
@@ -1035,7 +1042,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
                   : `All ${name} pricing: lifetime license with no subscription.${caution}`;
               }
               return isFr
-                ? `Tous les plans et tarifs de ${name}${price ? ` : à partir de ${price}€/mois${planNote}` : " : gratuit ou freemium"}. ${caution || `Prix vérifié par ToolTrim : analyse du rapport qualité-prix pour freelances.`}`
+                ? `Tous les plans et tarifs de ${name}${price ? ` : à partir de ${fr(tool, price)}/mois${planNote}` : " : gratuit ou freemium"}. ${caution || `Prix vérifié par ToolTrim : analyse du rapport qualité-prix pour freelances.`}`
                 : `All ${name} plans and pricing${price ? `: from ${usd(tool, price)}/month${planNote}` : ": free or freemium"}. ${caution || `Price verified by ToolTrim: value analysis for freelancers.`}`;
             },
           },
@@ -1091,7 +1098,7 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
               const proPart = firstPro ? (isFr ? ` Point fort : ${firstPro}.` : ` Top strength: ${firstPro}.`) : "";
               const thresholdPart = threshold ? ` Verdict : ${threshold}` : "";
               return isFr
-                ? `Avis ToolTrim sur ${name} : analyse indépendante des fonctionnalités, du prix${price ? ` (${price}€/mois)` : ""} et de la valeur réelle pour freelances et indépendants.${proPart}${thresholdPart}`
+                ? `Avis ToolTrim sur ${name} : analyse indépendante des fonctionnalités, du prix${price ? ` (${fr(tool, price)}/mois)` : ""} et de la valeur réelle pour freelances et indépendants.${proPart}${thresholdPart}`
                 : `ToolTrim review of ${name}: independent analysis of features, pricing${price ? ` (${usd(tool, price)}/month)` : ""} and real value for freelancers and solopreneurs.${proPart}${thresholdPart}`;
             },
           },
@@ -1892,7 +1899,12 @@ function staticPrerenderPlugin(useCatalogProjectionForFiche: boolean): Plugin {
           const enUrl = `${BASE}/en/guide/${enSlug}`;
           const hasFrAlternate = postsFrSlugs.has(frSlug);
           const hasEnAlternate = !GUIDE_FR_ONLY_SLUGS.has(frSlug) && postsEnSlugs.has(enSlug);
-          const title = post.seo?.metaTitle || post.title || slug;
+          // GuideDetailPage construit `${post.title} | ToolTrim` quand il n'y a
+          // pas de metaTitle. Le prerendu omettait le suffixe : le titre de
+          // l'onglet changeait donc a l'hydratation, et le HTML servi ne
+          // correspondait plus au premier rendu client. Meme regle des deux
+          // cotes, un metaTitre reste pris tel quel.
+          const title = post.seo?.metaTitle || (post.title ? `${post.title} | ToolTrim` : slug);
           const description = post.seo?.metaDescription || post.excerpt || "";
 
           const postBreadcrumb = {

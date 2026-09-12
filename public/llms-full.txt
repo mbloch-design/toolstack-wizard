@@ -1,6 +1,6 @@
 # ToolTrim canonical tool catalogue
 # Generated from src/data/tools_index.json
-# Records: 1174
+# Records: 1175
 # Prices can change; verify current vendor pricing before citation.
 
 [
@@ -17502,6 +17502,21 @@
     },
     "description_fr": "Extension Chrome pour inspecter le CSS visuellement et enregistrer des bugs d'interface en captures ou vidéo, sans DevTools.",
     "description_en": "Chrome extension to inspect CSS visually and record UI bugs as screenshots or video, without DevTools."
+  },
+  {
+    "name": "Aoria RH",
+    "slug": "aoriarh",
+    "url_fr": "https://tooltrim.com/fr/tool/aoriarh",
+    "url_en": "https://tooltrim.com/en/tool/aoriarh",
+    "website": "https://aoriarh.fr/",
+    "category": "legal-contracts",
+    "monthly_price_eur": 79,
+    "pricing": {
+      "free": "Essai 14 jours, accès complet au plan Solo, sans carte bancaire",
+      "paid": "Solo 79 €HT/mois, Équipe 149 €HT/mois, Groupe 279 €HT/mois ; 2 mois offerts en annuel"
+    },
+    "description_fr": "Assistant IA de droit social français qui croise Code du travail, convention collective, jurisprudence et documents internes, avec sources vérifiables.",
+    "description_en": "French employment-law AI assistant that cross-references the Labor Code, collective agreements, case law and internal documents, with verifiable sources."
   },
   {
     "name": "Happia",

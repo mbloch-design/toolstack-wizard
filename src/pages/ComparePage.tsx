@@ -24,7 +24,7 @@ function getPrice(tool: Tool, lang: "fr" | "en" = "fr"): string {
   const v5 = tool.pricing_v5?.compare_price_monthly_eur;
   const eur = v5 != null && v5 > 0 ? v5 : tool.defaultMonthlyPrice > 0 ? tool.defaultMonthlyPrice : 0;
   if (eur <= 0) return lang === "en" ? "Free" : "Gratuit";
-  return lang === "en" ? `${usdPrice(tool, eur)}/mo` : `${eur}€/mois`;
+  return lang === "en" ? `${usdPrice(tool, eur)}/mo` : `${formatToolPrice(tool, eur, "EUR", "fr").text}/mois`;
 }
 function getPriceNum(tool: Tool): number {
   return tool.pricing_v5?.compare_price_monthly_eur || tool.defaultMonthlyPrice || 0;
@@ -1676,9 +1676,10 @@ function fallbackStrength(tool: Tool, lang: "fr" | "en"): string {
 
 function whenToPayCopy(tool: Tool, price: number, perSeat: boolean, lang: "fr" | "en"): string {
   if (lang === "fr") {
+    const frPrice = formatToolPrice(tool, price, "EUR", "fr").text;
     return perSeat
-      ? `Passe au payant quand le coût par utilisateur (dès ${price}€/mois/personne) dépasse ce que l'équipe veut payer.`
-      : `Passe au payant quand le plan gratuit bloque un usage régulier (à partir de ${price}€/mois, sans coût par siège).`;
+      ? `Passe au payant quand le coût par utilisateur (dès ${frPrice}/mois/personne) dépasse ce que l'équipe veut payer.`
+      : `Passe au payant quand le plan gratuit bloque un usage régulier (à partir de ${frPrice}/mois, sans coût par siège).`;
   }
   return perSeat
     ? `Move to paid when the per-user cost (from ${usdPrice(tool, price)}/month/user) exceeds what the team is willing to pay.`
@@ -1781,9 +1782,9 @@ function buildFallbackContent(toolA: Tool, toolB: Tool, lang: "fr" | "en"): Comp
         verdictLabel: aFerme && !bFerme ? toolA.name : bFerme && !aFerme ? toolB.name : "Égalité",
         verdictLabelEn: aFerme && !bFerme ? toolA.name : bFerme && !aFerme ? toolB.name : "Tie" },
       { criterion: "Prix de départ", criterionEn: "Starting price",
-        toolA: priceA === 0 ? "Gratuit" : `${priceA}€/mois`,
+        toolA: priceA === 0 ? "Gratuit" : `${formatToolPrice(toolA, priceA, "EUR", "fr").text}/mois`,
         toolAEn: priceA === 0 ? "Free" : `${usdPrice(toolA, priceA)}/mo`,
-        toolB: priceB === 0 ? "Gratuit" : `${priceB}€/mois`,
+        toolB: priceB === 0 ? "Gratuit" : `${formatToolPrice(toolB, priceB, "EUR", "fr").text}/mois`,
         toolBEn: priceB === 0 ? "Free" : `${usdPrice(toolB, priceB)}/mo`,
         winner: priceA <= priceB ? "A" : "B",
         verdictLabel: priceA <= priceB ? toolA.name : toolB.name,
@@ -1832,9 +1833,9 @@ function buildFallbackContent(toolA: Tool, toolB: Tool, lang: "fr" | "en"): Comp
       {
         title: "Coût réel",
         titleEn: "Real cost",
-        toolA: priceA === 0 ? "Plan gratuit possible selon volume." : `Payant à prévoir dès ${priceA}€/mois.`,
+        toolA: priceA === 0 ? "Plan gratuit possible selon volume." : `Payant à prévoir dès ${formatToolPrice(toolA, priceA, "EUR", "fr").text}/mois.`,
         toolAEn: priceA === 0 ? "Free plan possible depending on volume." : `Paid plan starts around ${usdPrice(toolA, priceA)}/month.`,
-        toolB: priceB === 0 ? "Plan gratuit possible selon volume." : `Payant à prévoir dès ${priceB}€/mois.`,
+        toolB: priceB === 0 ? "Plan gratuit possible selon volume." : `Payant à prévoir dès ${formatToolPrice(toolB, priceB, "EUR", "fr").text}/mois.`,
         toolBEn: priceB === 0 ? "Free plan possible depending on volume." : `Paid plan starts around ${usdPrice(toolB, priceB)}/month.`,
         decision: "Auditer si le coût monte avant que l'usage soit hebdomadaire.",
         decisionEn: "Audit if cost rises before weekly usage is real.",
@@ -1876,9 +1877,9 @@ function buildFallbackContent(toolA: Tool, toolB: Tool, lang: "fr" | "en"): Comp
       {
         label: "Prix affiché",
         labelEn: "Listed price",
-        toolA: priceA === 0 ? "Gratuit ou prix à vérifier selon plan." : `À partir de ${priceA}€/mois.`,
+        toolA: priceA === 0 ? "Gratuit ou prix à vérifier selon plan." : `À partir de ${formatToolPrice(toolA, priceA, "EUR", "fr").text}/mois.`,
         toolAEn: priceA === 0 ? "Free or price to check by plan." : `From ${usdPrice(toolA, priceA)}/month.`,
-        toolB: priceB === 0 ? "Gratuit ou prix à vérifier selon plan." : `À partir de ${priceB}€/mois.`,
+        toolB: priceB === 0 ? "Gratuit ou prix à vérifier selon plan." : `À partir de ${formatToolPrice(toolB, priceB, "EUR", "fr").text}/mois.`,
         toolBEn: priceB === 0 ? "Free or price to check by plan." : `From ${usdPrice(toolB, priceB)}/month.`,
         recommendation: "Vérifier le prix selon sièges, volume et options réellement utilisées.",
         recommendationEn: "Check price by seats, volume, and options actually used.",
@@ -1943,9 +1944,9 @@ function buildFallbackContent(toolA: Tool, toolB: Tool, lang: "fr" | "en"): Comp
 
     pricingFraming: `${toolA.name} et ${toolB.name} ont des modèles de prix différents. Vérifiez les plans officiels avant de décider.`,
     pricingFramingEn: `${toolA.name} and ${toolB.name} have different pricing models. Check official plans before deciding.`,
-    pricingToolANotes: priceA === 0 ? "Plan gratuit disponible." : `À partir de **${priceA}€/mois**.`,
+    pricingToolANotes: priceA === 0 ? "Plan gratuit disponible." : `À partir de **${formatToolPrice(toolA, priceA, "EUR", "fr").text}/mois**.`,
     pricingToolANotesEn: priceA === 0 ? "Free plan available." : `From **${usdPrice(toolA, priceA)}/month**.`,
-    pricingToolBNotes: priceB === 0 ? "Plan gratuit disponible." : `À partir de **${priceB}€/mois**.`,
+    pricingToolBNotes: priceB === 0 ? "Plan gratuit disponible." : `À partir de **${formatToolPrice(toolB, priceB, "EUR", "fr").text}/mois**.`,
     pricingToolBNotesEn: priceB === 0 ? "Free plan available." : `From **${usdPrice(toolB, priceB)}/month**.`,
     pricingReco: `Comparer les plans payants selon vos besoins réels.`,
     pricingRecoEn: `Compare paid plans based on your actual needs.`,

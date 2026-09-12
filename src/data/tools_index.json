@@ -35660,6 +35660,40 @@
     ]
   },
   {
+    "id": "aoriarh",
+    "slug": "aoriarh",
+    "name": "Aoria RH",
+    "categoryId": "legal-contracts",
+    "shortDescription": "Assistant IA de droit social français qui croise Code du travail, convention collective, jurisprudence et documents internes, avec sources vérifiables.",
+    "shortDescriptionEn": "French employment-law AI assistant that cross-references the Labor Code, collective agreements, case law and internal documents, with verifiable sources.",
+    "pricing": {
+      "free": "Essai 14 jours, accès complet au plan Solo, sans carte bancaire",
+      "paid": "Solo 79 €HT/mois, Équipe 149 €HT/mois, Groupe 279 €HT/mois ; 2 mois offerts en annuel"
+    },
+    "defaultMonthlyPrice": 79,
+    "compareMonthlyPrice": 79,
+    "websiteUrl": "https://aoriarh.fr/",
+    "ogImageUrl": "/tool-media/aoriarh/demo.jpg",
+    "logo": "https://logo.clearbit.com/aoriarh.fr",
+    "tool_type": "specialise",
+    "substitution_cluster_v2": "droit-social-rh",
+    "functional_needs": [
+      "droit-social",
+      "conformite-rh"
+    ],
+    "verticals": [
+      "rh",
+      "consultant-b2b",
+      "dirigeant-tpe-pme"
+    ],
+    "relevantFor": [
+      "DRH et responsables RH",
+      "Dirigeants de TPE/PME",
+      "Consultants RH et juristes",
+      "Élus de CSE"
+    ]
+  },
+  {
     "id": "happia",
     "slug": "happia",
     "name": "Happia",

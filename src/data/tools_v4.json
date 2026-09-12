@@ -171082,6 +171082,253 @@
     }
   },
   {
+    "id": "aoriarh",
+    "slug": "aoriarh",
+    "name": "Aoria RH",
+    "category": "legal-contracts",
+    "shortDescription": "Assistant IA de droit social français qui croise Code du travail, convention collective, jurisprudence et documents internes, avec sources vérifiables.",
+    "shortDescriptionEn": "French employment-law AI assistant that cross-references the Labor Code, collective agreements, case law and internal documents, with verifiable sources.",
+    "description": "Aoria RH répond à une question de droit social en croisant le Code du travail, la convention collective de l'organisation, la jurisprudence et ses documents internes (accords d'entreprise, règlement intérieur). Chaque réponse affiche les sources utilisées, numérotées et consultables, pour permettre de les vérifier plutôt que de faire confiance à une réponse générique.\n\nL'outil génère aussi des fiches pratiques PDF (étapes, délais, points de vigilance, références) à partir d'une réponse, et cloisonne les documents de chaque organisation dans un corpus propre. Il cible six profils : DRH, chargés RH, dirigeants, consultants RH, juristes et élus de CSE. Aoria RH précise lui-même ne pas remplacer un avis juridique personnalisé d'un avocat.\n\nTrois plans à partir de 79 €HT/mois (Solo, 1 utilisateur), 149 €HT/mois (Équipe, 5 utilisateurs) et 279 €HT/mois (Groupe, 10 utilisateurs), avec 2 mois offerts en facturation annuelle. L'essai de 14 jours donne un accès complet au plan Solo, sans carte bancaire. Aoria RH est édité par TOSIKA SAS (Brie-Comte-Robert, France), avec des données hébergées chez OVHcloud en France.",
+    "longDescription": "Aoria RH répond à une question de droit social en croisant le Code du travail, la convention collective de l'organisation, la jurisprudence et ses documents internes (accords d'entreprise, règlement intérieur). Chaque réponse affiche les sources utilisées, numérotées et consultables, pour permettre de les vérifier plutôt que de faire confiance à une réponse générique.\n\nL'outil génère aussi des fiches pratiques PDF (étapes, délais, points de vigilance, références) à partir d'une réponse, et cloisonne les documents de chaque organisation dans un corpus propre. Il cible six profils : DRH, chargés RH, dirigeants, consultants RH, juristes et élus de CSE. Aoria RH précise lui-même ne pas remplacer un avis juridique personnalisé d'un avocat.\n\nTrois plans à partir de 79 €HT/mois (Solo, 1 utilisateur), 149 €HT/mois (Équipe, 5 utilisateurs) et 279 €HT/mois (Groupe, 10 utilisateurs), avec 2 mois offerts en facturation annuelle. L'essai de 14 jours donne un accès complet au plan Solo, sans carte bancaire. Aoria RH est édité par TOSIKA SAS (Brie-Comte-Robert, France), avec des données hébergées chez OVHcloud en France.",
+    "longDescriptionEn": "Aoria RH answers a French employment-law question by cross-referencing the Labor Code, the organization's collective agreement, case law and its internal documents (company agreements, internal regulations). Each answer displays the numbered, checkable sources it used, so you verify them instead of trusting a generic answer.\n\nThe tool also generates PDF practice sheets (steps, deadlines, points of caution, references) from an answer, and keeps each organization's documents siloed in its own corpus. It targets six profiles: HR directors, HR managers, executives, HR consultants, in-house lawyers and works-council (CSE) representatives. Aoria RH itself states it does not replace personalized legal advice from a lawyer.\n\nThree plans from €79 excl. VAT/month (Solo, 1 user), €149 excl. VAT/month (Team, 5 users) and €279 excl. VAT/month (Group, 10 users), with 2 months free on annual billing. The 14-day trial gives full access to the Solo plan, no card required. Aoria RH is published by TOSIKA SAS (Brie-Comte-Robert, France), with data hosted at OVHcloud in France.",
+    "pricing": {
+      "free": "Essai 14 jours, accès complet au plan Solo, sans carte bancaire",
+      "paid": "Solo 79 €HT/mois, Équipe 149 €HT/mois, Groupe 279 €HT/mois ; 2 mois offerts en annuel"
+    },
+    "pricingEn": {
+      "free": "14-day trial, full access to the Solo plan, no card required",
+      "paid": "Solo €79 excl. VAT/month, Team €149 excl. VAT/month, Group €279 excl. VAT/month; 2 months free on annual billing"
+    },
+    "defaultMonthlyPrice": 79,
+    "pricing_v5": {
+      "cautions": [
+        "Prix affichés HT ; TVA française 20 % en supplément.",
+        "Pas de plan gratuit permanent, seulement un essai de 14 jours.",
+        "Add-ons séparés pour dépasser les quotas (utilisateur, organisation, documents, questions)."
+      ],
+      "cautionsEn": [
+        "Prices shown exclude VAT; French 20% VAT is added on top.",
+        "No permanent free plan, only a 14-day trial.",
+        "Separate add-ons to exceed quotas (user, organization, documents, questions)."
+      ],
+      "verified_on": "2026-09-11",
+      "source_domain": "aoriarh.fr",
+      "usage_sensitive": true,
+      "compare_plan_kind": "account",
+      "compare_plan_name": "Solo",
+      "price_reliability": "high",
+      "location_sensitive": false,
+      "official_source_url": "https://aoriarh.fr/tarifs",
+      "verification_status": "official_explicit",
+      "compare_price_monthly_eur": 79,
+      "plans": [
+        {
+          "planKey": "solo",
+          "displayName": "Solo",
+          "summary": "Pour le dirigeant TPE, le RH unique d'une PME ou l'élu CSE solo.",
+          "featureHighlights": [
+            "1 utilisateur, 1 organisation, 100 documents internes",
+            "1 convention collective intégrée",
+            "300 questions par mois"
+          ],
+          "detailsSourceUrl": "https://aoriarh.fr/tarifs",
+          "pricingUnit": "par compte",
+          "isFree": false,
+          "isComparePlan": true,
+          "nativeAmount": 79,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "taxInclusion": "ht"
+        },
+        {
+          "planKey": "equipe",
+          "displayName": "Équipe",
+          "summary": "Pour l'équipe RH d'une PME, le CSE moyen ou le DRH unique.",
+          "featureHighlights": [
+            "5 utilisateurs, 3 organisations, 300 documents/organisation",
+            "5 conventions collectives intégrées",
+            "900 questions par mois"
+          ],
+          "detailsSourceUrl": "https://aoriarh.fr/tarifs",
+          "pricingUnit": "par compte",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 149,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "taxInclusion": "ht"
+        },
+        {
+          "planKey": "groupe",
+          "displayName": "Groupe",
+          "summary": "Pour le DRH multi-entités, le CSE central ou le cabinet conseil RH.",
+          "featureHighlights": [
+            "10 utilisateurs, 10 organisations, 1 000 documents/organisation",
+            "Conventions collectives illimitées",
+            "2 400 questions par mois, onboarding inclus"
+          ],
+          "detailsSourceUrl": "https://aoriarh.fr/tarifs",
+          "pricingUnit": "par compte",
+          "isFree": false,
+          "isComparePlan": false,
+          "nativeAmount": 279,
+          "nativeCurrency": "EUR",
+          "billingPeriod": "monthly",
+          "taxInclusion": "ht"
+        }
+      ]
+    },
+    "websiteUrl": "https://aoriarh.fr/",
+    "affiliateLink": "",
+    "logo": "https://logo.clearbit.com/aoriarh.fr",
+    "verdict": {
+      "keepIf": [
+        "Vous devez régulièrement identifier la règle de droit social applicable à une situation précise.",
+        "Vous voulez des sources vérifiables (Code du travail, jurisprudence, convention collective) plutôt qu'une réponse générique.",
+        "Votre organisation a des documents internes (accords, règlement intérieur) à intégrer au raisonnement."
+      ],
+      "avoidIf": [
+        "Votre besoin est un avis juridique personnalisé, qu'un avocat doit trancher, pas un outil de recherche documentaire.",
+        "Votre volume de questions mensuel est trop faible pour justifier 79 €HT/mois au-delà de l'essai.",
+        "Vous cherchez un outil déjà éprouvé avec un historique d'avis publics indépendants."
+      ],
+      "threshold": "Choisissez Aoria RH si vous devez trancher des questions de droit social avec des sources vérifiables plutôt qu'une réponse générique d'assistant généraliste. Testez les 14 jours gratuits sur de vraies questions de votre organisation avant de vous engager sur un plan payant."
+    },
+    "verdictEn": {
+      "keepIf": [
+        "You regularly need to identify the applicable employment-law rule for a specific situation.",
+        "You want verifiable sources (Labor Code, case law, collective agreement) rather than a generic answer.",
+        "Your organization has internal documents (agreements, internal rules) to factor into the reasoning."
+      ],
+      "avoidIf": [
+        "Your need is personalized legal advice that only a lawyer should give, not a document-research tool.",
+        "Your monthly question volume is too low to justify €79 excl. VAT/month beyond the trial.",
+        "You're looking for an already-proven tool with a track record of independent public reviews."
+      ],
+      "threshold": "Choose Aoria RH if you need to settle employment-law questions with verifiable sources rather than a generic assistant's answer. Test the 14-day free trial on your organization's real questions before committing to a paid plan."
+    },
+    "pros": [
+      "Sources numérotées et consultables pour chaque réponse, pas une affirmation seule.",
+      "Croise Code du travail, convention collective, jurisprudence et documents internes.",
+      "Fiches pratiques PDF prêtes à l'emploi à partir d'une réponse.",
+      "Documents de chaque organisation cloisonnés dans un corpus propre.",
+      "Éditeur français identifié (TOSIKA SAS) avec hébergement en France et garanties RGPD documentées."
+    ],
+    "prosEn": [
+      "Numbered, checkable sources for every answer, not a bare claim.",
+      "Cross-references the Labor Code, collective agreement, case law and internal documents.",
+      "Ready-to-use PDF practice sheets generated from an answer.",
+      "Each organization's documents kept siloed in its own corpus.",
+      "Identified French publisher (TOSIKA SAS) with France-based hosting and documented GDPR guarantees."
+    ],
+    "cons": [
+      "Pas de plan gratuit permanent, seulement un essai de 14 jours.",
+      "Aucun avis public indépendant trouvé au-delà de la démonstration du site.",
+      "Add-ons séparés dès qu'un quota (utilisateur, document, question) est dépassé.",
+      "Ne remplace pas un avis juridique personnalisé, l'éditeur le précise lui-même."
+    ],
+    "consEn": [
+      "No permanent free plan, only a 14-day trial.",
+      "No independent public review found beyond the site's own demonstration.",
+      "Separate add-ons as soon as a quota (user, document, question) is exceeded.",
+      "Doesn't replace personalized legal advice, as the publisher itself states."
+    ],
+    "useCases": [
+      "Identifier la règle applicable avant de gérer un cas de télétravail ou d'arrêt maladie.",
+      "Vérifier une obligation issue de la convention collective avant une décision RH.",
+      "Générer une fiche pratique PDF pour une procédure de licenciement ou de rupture.",
+      "Confronter le règlement intérieur et le Code du travail sur un point précis."
+    ],
+    "useCasesEn": [
+      "Identify the applicable rule before handling a remote-work or sick-leave case.",
+      "Check an obligation from the collective agreement before an HR decision.",
+      "Generate a PDF practice sheet for a termination or dismissal procedure.",
+      "Cross-check internal rules against the Labor Code on a specific point."
+    ],
+    "covers": [
+      "droit-social",
+      "conformite-rh"
+    ],
+    "functional_needs": [
+      "droit-social",
+      "conformite-rh"
+    ],
+    "relevantFor": [
+      "DRH et responsables RH",
+      "Dirigeants de TPE/PME",
+      "Consultants RH et juristes",
+      "Élus de CSE"
+    ],
+    "alternatives": [],
+    "seo": {
+      "idealForFr": "Idéal pour un professionnel RH qui doit trancher une question de droit social avec des sources vérifiables.",
+      "idealForEn": "Ideal for an HR professional who needs to settle an employment-law question with verifiable sources.",
+      "metaDescription": "Aoria RH : avis, tarifs Solo, Équipe et Groupe, assistant IA de droit social français avec sources vérifiables pour RH et CSE."
+    },
+    "articles": [],
+    "soloRelevance": "high",
+    "teamRelevance": "medium",
+    "tool_type": "specialise",
+    "substitutable": true,
+    "host_app": null,
+    "bundle_parent": null,
+    "verticals": [
+      "rh",
+      "consultant-b2b",
+      "dirigeant-tpe-pme"
+    ],
+    "ia_use_case": "recherche-juridique",
+    "freeAlternative": null,
+    "betterAlternative": null,
+    "migrationGuide": null,
+    "downgradePlan": null,
+    "personas": [],
+    "timeGainedHoursPerMonth": 3,
+    "prescription_quality": "question",
+    "prescription_output": null,
+    "prescription_block_reasons": [],
+    "prescription_context_questions": [
+      "question_volume_requirement",
+      "organization_count",
+      "team_size"
+    ],
+    "substitution_cluster_v2": "droit-social-rh",
+    "decision_policy_v3": {
+      "auto_cancel_allowed": false,
+      "auto_replace_allowed": true,
+      "default_decision_lane": "review_then_prescribe",
+      "auto_downgrade_allowed": true,
+      "never_auto_cancel_reason": null,
+      "requires_context_questions": true
+    },
+    "ogImageUrl": "/tool-media/aoriarh/demo.jpg",
+    "galleryImages": [],
+    "force_silence": false,
+    "toolTrimRating": {
+      "valeurAjoutee": 4,
+      "simplicite": 3,
+      "utilisation": 3,
+      "puissance": 4,
+      "reversibilite": 4,
+      "evidence": {
+        "valeurAjoutee": "Remplace le croisement manuel du Code du travail, de la convention collective, de la jurisprudence et des documents internes par une réponse sourcée et vérifiable, avec fiche pratique PDF prête à l'emploi, testable 14 jours sans carte bancaire (source : aoriarh.fr/tarifs, vérifié le 2026-09-11).",
+        "simplicite": "La démonstration du site présente un parcours en 3 étapes (qualifier la question, rechercher dans les sources, présenter la réponse avec références), mais aucun avis public indépendant n'a été trouvé pour confirmer l'ergonomie réelle au-delà de cette démonstration (source : aoriarh.fr, vérifié le 2026-09-11).",
+        "utilisation": "L'outil répond à un besoin ponctuel et récurrent (trancher une question de droit social) plutôt qu'à un usage quotidien continu, ce qui limite la fréquence d'utilisation par rapport à un outil de gestion RH au sens large (source : aoriarh.fr, vérifié le 2026-09-11).",
+        "puissance": "Le croisement de 4 types de sources (Code du travail, convention collective, jurisprudence, documents internes) avec citations numérotées et cloisonnement des documents par organisation est une capacité réelle, différenciante face à un assistant généraliste sans corpus social dédié (source : aoriarh.fr, vérifié le 2026-09-11).",
+        "reversibilite": "La politique de confidentialité liste explicitement les droits d'accès, de rectification, d'effacement et de portabilité (articles 15 à 22 du RGPD), avec un tableau détaillé des durées de conservation et une résiliation possible depuis le compte sans engagement en mensuel (source : aoriarh.fr/confidentialite, vérifié le 2026-09-11)."
+      },
+      "evidenceEn": {
+        "valeurAjoutee": "Replaces manually cross-referencing the Labor Code, collective agreement, case law and internal documents with a sourced, verifiable answer plus a ready-to-use PDF practice sheet, testable for 14 days with no card required (source: aoriarh.fr/tarifs, verified 2026-09-11).",
+        "simplicite": "The site's own demo shows a 3-step flow (qualify the question, search the sources, present the answer with references), but no independent public review was found to confirm real-world ergonomics beyond this demo (source: aoriarh.fr, verified 2026-09-11).",
+        "utilisation": "The tool answers a recurring but situational need (settling an employment-law question) rather than continuous daily use, which limits usage frequency compared to a broader HR management tool (source: aoriarh.fr, verified 2026-09-11).",
+        "puissance": "Cross-referencing 4 source types (Labor Code, collective agreement, case law, internal documents) with numbered citations and per-organization document siloing is a real, differentiating capability versus a generalist assistant with no dedicated employment-law corpus (source: aoriarh.fr, verified 2026-09-11).",
+        "reversibilite": "The privacy policy explicitly lists access, rectification, erasure and portability rights (GDPR Articles 15 to 22), with a detailed retention-period table and cancellation available from the account with no commitment on monthly billing (source: aoriarh.fr/confidentialite, verified 2026-09-11)."
+      },
+      "lastActivityVerifiedOn": "2026-09-11",
+      "notedOn": "2026-09-11"
+    }
+  },
+  {
     "id": "happia",
     "slug": "happia",
     "name": "Happia",

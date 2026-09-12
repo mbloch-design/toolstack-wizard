@@ -42,7 +42,9 @@ export function getToolPresentation(tool: ToolPresentationInput, lang: "fr" | "e
       : oneTime
         ? (lang === "fr" ? "Licence à vie" : "Lifetime license")
       : monthlyPrice > 0
-        ? (lang === "fr" ? `${monthlyPrice} €/mois` : `${formatToolPrice(tool, monthlyPrice, "USD", "en").text}/mo`)
+        ? (lang === "fr"
+            ? `${formatToolPrice(tool, monthlyPrice, "EUR", "fr").text}/mois`
+            : `${formatToolPrice(tool, monthlyPrice, "USD", "en").text}/mo`)
         : "N/A";
   const replaceability: ToolReplaceability = tool.substitutable === true
     ? "replaceable"
