@@ -8212,7 +8212,8 @@
       min-height: var(--td-hero-compact-h);
       max-height: var(--td-hero-compact-h);
       border-radius: var(--radius-lg);
-      box-shadow: 0 4px 12px color-mix(in srgb, var(--color-text) 5%, transparent);
+      border: 1px solid var(--color-border);
+      box-shadow: none;
     }
     .td-hero.is-compact .td-hero-media {
       max-height: 0;
@@ -8336,7 +8337,11 @@
   .td-hero-logo-image { transition: width 220ms ease-out, height 220ms ease-out; }
   .td-hero-actions { display: flex; align-items: center; gap: 10px; }
   .td-hero-actions .pin-tool-button { position: static; flex: 0 0 44px; width: 44px; height: 44px; padding: 0; border: 1px solid var(--color-border); border-radius: 50%; background: var(--color-surface); color: var(--color-text); display: inline-flex; align-items: center; justify-content: center; }
-  .td-hero-actions .pin-tool-button--active { background: var(--color-text); color: var(--color-surface); }
+  .td-hero-actions .pin-tool-button--active {
+    border-color: var(--color-text);
+    background: var(--color-surface);
+    color: var(--color-text);
+  }
   @media (max-width: 640px) {
     .td-hero-actions { grid-column: 1 / -1; }
     .td-hero-actions .td-hero-site-link { flex: 1; }
@@ -8544,7 +8549,7 @@
   }
   .td-editorial-intro {
     min-width: 0;
-    padding: 36px 36px 40px 0;
+    padding: 44px 44px 48px 0;
   }
   .td-editorial-intro-head {
     display: grid;
@@ -8569,17 +8574,18 @@
     max-width: none;
   }
   .td-editorial-intro .td-analysis-lead {
-    max-width: 860px;
+    max-width: 62ch;
     font-family: var(--font-ui);
-    font-size: var(--tt-size-body-large);
-    line-height: 1.42;
-    letter-spacing: -0.03em;
+    font-size: clamp(18px, 1.35vw, 20px);
+    line-height: 1.55;
+    letter-spacing: -0.018em;
   }
   .td-editorial-intro .td-analysis-paragraph {
-    max-width: 820px;
+    max-width: 65ch;
     font-family: var(--font-ui);
     font-size: 16px;
-    line-height: 1.55;
+    line-height: 1.65;
+    color: var(--color-text);
   }
   .td-editorial-intro-usecases {
     margin-top: 40px;
@@ -8600,7 +8606,7 @@
     display: grid;
     align-content: start;
     gap: 28px;
-    padding: 36px 0 40px 28px;
+    padding: 44px 0 48px 32px;
     border-left: 1px solid var(--color-border-soft);
   }
   .td-editorial-fact-group { display: grid; gap: 12px; }
@@ -8645,7 +8651,7 @@
   .td-editorial-facts .td-relevance-item { padding: 9px 10px; }
   @media (max-width: 760px) {
     .td-editorial-overview { grid-template-columns: 1fr; }
-    .td-editorial-intro { padding: 28px 0; }
+    .td-editorial-intro { padding: 32px 0; }
     .td-editorial-facts { padding: 28px 0; border-top: 1px solid var(--color-border-soft); border-left: 0; }
     .td-editorial-intro-head { margin-bottom: 20px; }
     .td-editorial-intro-usecases { margin-top: 28px; }
@@ -8832,13 +8838,15 @@
     gap: 18px;
   }
   .td-overview-group {
-    padding: 22px;
+    padding: 28px;
+    border: 1px solid var(--color-border);
     border-radius: var(--tt-surface-radius-panel);
     background: var(--color-surface-soft);
   }
   .td-overview-group--uses {
     background: transparent;
     padding: 0;
+    border: 0;
   }
   .td-overview-decision-head { margin-bottom: 20px; }
   .td-overview-title {
@@ -8876,9 +8884,7 @@
     color: var(--color-text);
   }
   .td-overview-group--limits .td-overview-group-title,
-  .td-overview-group--limits .td-overview-group-title svg {
-    color: var(--color-muted);
-  }
+  .td-overview-group--limits .td-overview-group-title svg { color: var(--color-text); }
   .td-overview-group ul {
     display: grid;
     gap: 10px;
@@ -8916,13 +8922,9 @@
     line-height: 1.35;
     color: var(--color-muted);
   }
-  /* Same whisper-of-blue as the verdict / "Keep if" cards — Pros reads as
-     an affirmative surface, Cons stays neutral gray. */
-  .td-overview-group--pros {
-    background: radial-gradient(120% 120% at 0% 0%, hsl(var(--primary) / 0.07) 0%, var(--color-surface-soft) 62%);
-  }
-  .td-overview-group--limits { background: color-mix(in srgb, var(--color-surface-soft) 72%, var(--color-bg)); }
-  .td-overview-group--limits li::before { content: "—"; color: var(--color-muted); }
+  .td-overview-group--pros { background: var(--color-surface-soft); }
+  .td-overview-group--limits { background: var(--color-surface); }
+  .td-overview-group--limits li::before { content: "—"; color: var(--color-text); }
   .td-overview-tags { display: flex; flex-wrap: wrap; gap: 6px; }
   .td-overview-tags span {
     padding: 6px 10px;
@@ -9903,17 +9905,12 @@
     color: var(--color-text);
   }
   .td-profit-card {
-    padding: 24px;
-    border: 1px solid var(--color-border-soft);
+    padding: 28px;
+    border: 1px solid var(--color-border);
     border-radius: var(--tt-surface-radius-info);
     background: var(--color-surface);
   }
-  /* Same whisper-of-blue principle as the verdict card: radial glow
-     anchored top-left, only on the positive card — the negative one stays
-     neutral so the color still reads as an affirmative signal, not decor. */
-  .td-profit-card--positive {
-    background: radial-gradient(120% 120% at 0% 0%, hsl(var(--primary) / 0.08) 0%, var(--color-surface) 62%);
-  }
+  .td-profit-card--positive { background: var(--color-surface-soft); }
   .td-profit-card-head {
     display: flex;
     align-items: center;
@@ -9921,7 +9918,7 @@
     margin-bottom: 16px;
   }
   .td-profit-card-head svg { width: 22px; height: 22px; color: var(--color-text); }
-  .td-profit-card--negative .td-profit-card-head svg { color: var(--color-muted); }
+  .td-profit-card--negative .td-profit-card-head svg { color: var(--color-text); }
   .td-profit-card-head p {
     margin: 0;
     font-family: var(--font-ui);
@@ -9931,7 +9928,7 @@
     text-transform: uppercase;
     color: var(--color-text-strong);
   }
-  .td-profit-card--negative .td-profit-card-head p { color: var(--color-muted); }
+  .td-profit-card--negative .td-profit-card-head p { color: var(--color-text-strong); }
   .td-profit-fit {
     margin: 0;
     font-family: var(--font-ui);
@@ -9940,7 +9937,7 @@
     letter-spacing: -0.015em;
     color: var(--color-text);
   }
-  .td-profit-card--negative .td-profit-fit { color: var(--color-muted); }
+  .td-profit-card--negative .td-profit-fit { color: var(--color-text); }
   .td-profit-threshold { margin-top: 24px; }
   .td-profit-threshold > span {
     display: block;

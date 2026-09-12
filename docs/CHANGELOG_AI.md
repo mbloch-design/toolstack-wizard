@@ -4405,3 +4405,10 @@ Rendre les fiches outils plus rapides à parcourir, réduire la hauteur du premi
 - Focus clavier explicite et interlignage des actions finales corrigé.
 - Build complet et budgets PASS ; FAQ interactive FR/EN contrôlée à 390, 768 et 1440 px sans débordement horizontal.
 - Détail des constats et décisions : `docs/TOOL_DETAIL_TYPOGRAPHY_AUDIT.md`.
+
+## 2026-09-12 — Contraste et cohérence des blocs de décision
+
+- Suppression définitive de l’ombre du bandeau compact et ajout d’une bordure nette.
+- L’état enregistré du marque-page reste secondaire et n’est plus rendu comme un disque noir.
+- Les cartes Avantages/Inconvénients et À garder/À challenger utilisent des surfaces pleines, sans dégradé, avec le même contraste de lecture.
+- Rythme et largeur des paragraphes de présentation resserrés pour rendre les niveaux éditoriaux plus lisibles.
