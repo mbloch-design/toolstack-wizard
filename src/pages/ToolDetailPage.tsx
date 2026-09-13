@@ -381,6 +381,19 @@ const ToolDetailPage = () => {
     ? editorialLongDesc.split(/\n\n+/).map((p: string) => p.trim()).filter(Boolean)
     : [];
   const editorialOverview = resolveToolOverview(tool, lang);
+  // Le bloc "Comprendre X" ne porte pas que le paragraphe d'intro : il porte
+  // aussi les cas d'usage, les fonctionnalites et l'audience. Le conditionner
+  // au seul paragraphe masquait ces trois sous-blocs sur 143 fiches, alors que
+  // 142 d'entre elles declarent des fonctionnalites et une audience. On ouvre
+  // donc la section des qu'un de ses contenus existe, et le paragraphe reste
+  // conditionne a sa propre substance.
+  const hasEditorialFacts =
+    editorialOverview.useCases.length > 0 ||
+    (tool as any).covers?.length > 0 ||
+    (tool as any).functional_needs?.length > 0 ||
+    (tool as any).relevantFor?.length > 0 ||
+    (tool as any).verticals?.length > 0;
+  const showEditorialOverview = hasEditorialIntro || hasEditorialFacts;
   const isPresentation = subPage === "presentation";
   const showAnalysis = isPresentation || subPage === "avis";
   const showPricing = isPresentation || subPage === "prix";
@@ -530,7 +543,7 @@ const ToolDetailPage = () => {
             {/* Editorial overview: the reference layout is reproduced inside
                 the content itself — analysis on the left, factual rail on the
                 right. The global sticky decision card remains action-only. */}
-            {showAnalysis && hasEditorialIntro && (
+            {showAnalysis && showEditorialOverview && (
               <section className="td-editorial-overview">
                 <div className="td-editorial-intro">
                   <header className="td-editorial-intro-head">
@@ -654,7 +667,7 @@ const ToolDetailPage = () => {
                   if (!ov.pros.length && !ov.cons.length && !ov.useCases.length) return null;
                   return (
                     <>
-                      {!hasEditorialIntro && ov.useCases.length > 0 && (
+                      {!showEditorialOverview && ov.useCases.length > 0 && (
                         <div className="td-section td-tool-overview td-tool-overview--uses">
                           <h2 className="td-eyebrow">{t("Usages concrets", "Practical uses")}</h2>
                           <section className="td-overview-group td-overview-group--uses">

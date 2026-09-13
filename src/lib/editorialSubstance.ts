@@ -26,13 +26,21 @@ const FILLER_PATTERNS: RegExp[] = [
 ];
 
 /**
- * Seuil en mots. Cale empiriquement : a 10, le francais ne perd que 5 blocs
- * par rapport aux 80 caracteres d'origine, et l'anglais en gagne une
- * cinquantaine. A 12, le francais en perdait 121 sans que l'anglais y gagne.
- * Les gabarits de remplissage font 8 et 16 mots, donc le seuil ne suffit pas
- * a les ecarter : c'est le role de FILLER_PATTERNS.
+ * Plancher de bon sens, pas un critere de qualite.
+ *
+ * Le seuil a d'abord ete pose a 10 mots, en transposant les 80 caracteres
+ * d'origine. Mesure ensuite sur le catalogue : il masquait 143 fiches dont la
+ * description tient en une phrase juste en dessous, alors que la phrase est
+ * reelle. "Widely used JavaScript testing framework" fait 5 mots et decrit
+ * Jest correctement ; "Plugin WordPress pour structurer champs, contenus et
+ * interfaces d'administration" en fait 9 et decrit ACF correctement.
+ *
+ * C'est FILLER_PATTERNS qui fait le tri utile, pas la longueur. A 4 mots, les
+ * deux langues ouvrent le bloc sur un nombre quasi identique de fiches
+ * (1112 et 1111) et les seules ecartees sont les 60 gabarits de remplissage.
+ * A 10, on en ecartait 143 dont 83 portaient un vrai texte.
  */
-export const EDITORIAL_MIN_WORDS = 10;
+export const EDITORIAL_MIN_WORDS = 4;
 
 export function isEditorialFiller(text: string): boolean {
   return FILLER_PATTERNS.some((pattern) => pattern.test(text.trim()));
