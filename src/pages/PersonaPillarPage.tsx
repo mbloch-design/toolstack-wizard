@@ -38,7 +38,7 @@ interface Meta {
 const META: Record<Persona, Record<Lang, Meta>> = {
   THEO: {
     fr: {
-      title: "Meilleurs outils pour développeur freelance en 2026 | tooltrim.com",
+      title: "Meilleurs outils pour développeur freelance en 2026",
       description: "Stack dev freelance : Cursor, Vercel, Supabase, ChatGPT Pro. Les doublons qui coûtent le plus cher, et comment trancher entre deux outils qui font le même travail.",
       h1: "Les meilleurs outils SaaS pour développeur freelance en 2026",
       intro: "La stack d'un développeur freelance se construit vite et se nettoie rarement. Les postes qui pèsent le plus : un IDE avec IA, l'hébergement, les abonnements LLM. Le gaspillage vient rarement d'un outil de trop, il vient de deux outils qui font la même chose.",
@@ -50,7 +50,7 @@ const META: Record<Persona, Record<Lang, Meta>> = {
       ],
     },
     en: {
-      title: "Best tools for freelance developers in 2026 | tooltrim.com",
+      title: "Best tools for freelance developers in 2026",
       description: "Freelance dev stack: Cursor, Vercel, Supabase, ChatGPT Pro. The duplicates that cost the most, and how to choose between two tools doing the same job.",
       h1: "Best SaaS tools for freelance developers in 2026",
       intro: "A freelance developer's stack gets built fast and cleaned rarely. The heaviest line items are an AI-enabled IDE, hosting and LLM subscriptions. Waste rarely comes from one tool too many, it comes from two tools doing the same thing.",
@@ -64,7 +64,7 @@ const META: Record<Persona, Record<Lang, Meta>> = {
   },
   SOFIA: {
     fr: {
-      title: "Meilleurs outils pour designer freelance en 2026 | tooltrim.com",
+      title: "Meilleurs outils pour designer freelance en 2026",
       description: "Stack designer freelance : Figma, Adobe, Midjourney, Loom. Où part le budget créatif, et quels abonnements font double emploi sans que ça se voie.",
       h1: "Les meilleurs outils SaaS pour designer freelance en 2026",
       intro: "Le budget outils d'un designer freelance part rarement là où il croit. Les postes à surveiller : un abonnement Adobe complet quand deux applications suffisent, deux banques d'images en parallèle, et des plugins achetés puis jamais rouverts.",
@@ -76,7 +76,7 @@ const META: Record<Persona, Record<Lang, Meta>> = {
       ],
     },
     en: {
-      title: "Best tools for freelance designers in 2026 | tooltrim.com",
+      title: "Best tools for freelance designers in 2026",
       description: "Freelance designer stack: Figma, Adobe, Midjourney, Loom. Where the creative budget actually goes, and which subscriptions quietly overlap.",
       h1: "Best SaaS tools for freelance designers in 2026",
       intro: "A freelance designer's tool budget rarely goes where they think it does. The line items worth checking: a full Adobe plan when two apps would do, two stock libraries running in parallel, and plugins bought once and never reopened.",
@@ -90,7 +90,7 @@ const META: Record<Persona, Record<Lang, Meta>> = {
   },
   MARC: {
     fr: {
-      title: "Meilleurs outils pour consultant freelance en 2026 | tooltrim.com",
+      title: "Meilleurs outils pour consultant freelance en 2026",
       description: "Stack consultant freelance : Calendly, CRM, visio, Notion. Le cumul CRM qui passe inaperçu et les abonnements que ton volume d'appels ne justifie pas.",
       h1: "Les meilleurs outils SaaS pour consultant freelance en 2026",
       intro: "Un consultant a peu d'outils mais les paie cher, parce que ce sont des outils de vente. Le piège principal reste le cumul de deux CRM, l'un gardé par habitude, l'autre adopté pour une fonction précise puis jamais abandonné.",
@@ -102,7 +102,7 @@ const META: Record<Persona, Record<Lang, Meta>> = {
       ],
     },
     en: {
-      title: "Best tools for freelance consultants in 2026 | tooltrim.com",
+      title: "Best tools for freelance consultants in 2026",
       description: "Freelance consultant stack: Calendly, CRM, video, Notion. The CRM overlap nobody notices, and the subscriptions your call volume does not justify.",
       h1: "Best SaaS tools for freelance consultants in 2026",
       intro: "A consultant runs few tools but pays a lot for them, because they are sales tools. The main trap is running two CRMs at once, one kept out of habit and one adopted for a single feature then never dropped.",
@@ -116,7 +116,7 @@ const META: Record<Persona, Record<Lang, Meta>> = {
   },
   ALIX: {
     fr: {
-      title: "Meilleurs outils créateur de contenu freelance | tooltrim.com",
+      title: "Meilleurs outils pour créateur de contenu freelance",
       description: "Stack créateur de contenu : newsletter, IA rédactionnelle, Canva, scheduler. Les trois familles d'outils où le cumul est le plus coûteux.",
       h1: "Les meilleurs outils SaaS pour créateur de contenu freelance en 2026",
       intro: "La stack d'un créateur de contenu grossit par empilement : un outil IA ajouté pour un cas précis, un scheduler testé puis gardé, une plateforme newsletter jamais migrée. Trois familles concentrent l'essentiel des doublons.",
@@ -128,7 +128,7 @@ const META: Record<Persona, Record<Lang, Meta>> = {
       ],
     },
     en: {
-      title: "Best tools for freelance content creators in 2026 | tooltrim.com",
+      title: "Best tools for freelance content creators in 2026",
       description: "Content creator stack: newsletter, writing AI, Canva, scheduler. The three tool families where stacking costs the most.",
       h1: "Best SaaS tools for freelance content creators in 2026",
       intro: "A content creator's stack grows by accretion: an AI tool added for one case, a scheduler trialled then kept, a newsletter platform never migrated away from. Three families account for most of the overlap.",
@@ -142,7 +142,7 @@ const META: Record<Persona, Record<Lang, Meta>> = {
   },
   CLAIRE: {
     fr: {
-      title: "Meilleurs outils pour ops manager freelance en 2026 | tooltrim.com",
+      title: "Meilleurs outils pour ops manager freelance en 2026",
       description: "Stack ops freelance : compta, banque pro, signature, gestion de projet. La stack la plus fragmentée, donc celle où les doublons se cachent le mieux.",
       h1: "Les meilleurs outils SaaS pour ops manager freelance en 2026",
       intro: "La stack d'un ops manager ou d'un COO à temps partagé est la plus fragmentée de toutes : compta, banque, signature électronique, gestion de projet, stockage. Plus il y a de familles d'outils, plus les recouvrements passent inaperçus.",
@@ -154,7 +154,7 @@ const META: Record<Persona, Record<Lang, Meta>> = {
       ],
     },
     en: {
-      title: "Best tools for freelance ops managers in 2026 | tooltrim.com",
+      title: "Best tools for freelance ops managers in 2026",
       description: "Freelance ops stack: accounting, business banking, e-signature, project management. The most fragmented stack, so the one where duplicates hide best.",
       h1: "Best SaaS tools for freelance ops managers in 2026",
       intro: "An ops manager's or fractional COO's stack is the most fragmented of all: accounting, banking, e-signature, project management, storage. The more tool families there are, the easier overlaps are to miss.",
