@@ -1,18 +1,56 @@
-import { Helmet } from "react-helmet-async";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { SEO_BASE, OG_IMAGE, getAlternateLinks } from "@/lib/seo";
 
 /**
- * Auto-referencing canonical + hreflang FR/EN/x-default for every page.
- * Also injects:
- *  - og:locale + og:site_name + og:type + og:url + og:image (default)
- *  - twitter:card defaults
- *  - <html lang="fr|en">
+ * Canonical auto-référent + hreflang FR/EN/x-default de chaque page, plus les
+ * valeurs par défaut Open Graph et Twitter, et l'attribut `lang` du document.
  *
- * Page-specific title / description / og:title / og:image continue to be set
- * imperatively via setSeoTags() in each page — Helmet here only fills universal defaults.
+ * Écrit directement dans le DOM, et non via react-helmet-async.
+ *
+ * Le composant déléguait à Helmet, en supprimant au passage les balises
+ * statiques du prérendu « puisque Helmet en devient le seul propriétaire ».
+ * Helmet ne les reprenait jamais : sur une page servie, le canonical et les
+ * hreflang étaient présents dans le HTML, puis disparaissaient du DOM une
+ * seconde après l'hydratation. Aucune balise `data-rh` n'apparaissait, en
+ * hydratation comme en navigation interne, et le résultat de Helmet n'est de
+ * toute façon jamais lu par le prérendu, qui écrit ses balises lui-même.
+ * Le nettoyage supprimait donc sans remplacer.
+ *
+ * Comme Google exécute le JavaScript, les pages finissaient rendues sans
+ * canonical ni hreflang, alors que tout l'appariement FR/EN repose dessus.
+ *
+ * On met donc à jour les balises existantes au lieu de les détruire : le
+ * prérendu reste la source pour les robots sans JavaScript, et la navigation
+ * interne garde des balises justes.
+ *
+ * Le titre, la description et og:title restent posés par setSeoTags() dans
+ * chaque page.
  */
+
+/** Met à jour une balise existante, ou la crée si le prérendu ne l'a pas posée. */
+function upsertTag<E extends HTMLElement>(
+  selector: string,
+  create: () => E,
+  apply: (element: E) => void,
+): void {
+  const existing = document.head.querySelector<E>(selector);
+  const element = existing ?? create();
+  apply(element);
+  if (!existing) document.head.appendChild(element);
+}
+
+function upsertMeta(attribute: "name" | "property", key: string, content: string): void {
+  upsertTag<HTMLMetaElement>(
+    `meta[${attribute}="${key}"]`,
+    () => {
+      const meta = document.createElement("meta");
+      meta.setAttribute(attribute, key);
+      return meta;
+    },
+    (meta) => { meta.content = content; },
+  );
+}
 export default function DynamicCanonical() {
   const { pathname } = useLocation();
   const clean = pathname.replace(/\/+$/, "") || "";
@@ -34,14 +72,46 @@ export default function DynamicCanonical() {
   // become an unlimited family of thin, duplicate pages in search indexes.
   const isInternalSearch = /\/search$/.test(canonicalPath);
 
-  // The prerenderer writes crawlable canonical/hreflang tags into the static
-  // HTML. Once React hydrates, Helmet becomes the single owner: remove only
-  // the unmanaged static copies so the live DOM never exposes duplicates.
+  const alternatesKey = alternates.map(([lang, href]) => `${lang}|${href}`).join(",");
+
   useEffect(() => {
+    document.documentElement.lang = isEn ? "en" : "fr";
+
+    upsertTag<HTMLLinkElement>(
+      'link[rel="canonical"]',
+      () => {
+        const link = document.createElement("link");
+        link.rel = "canonical";
+        return link;
+      },
+      (link) => { link.href = canonical; },
+    );
+
+    // Les hreflang forment un ensemble : on remplace l'ensemble plutôt que de
+    // réconcilier balise par balise, sinon une paire retirée survivrait.
     document
-      .querySelectorAll('link[rel="canonical"]:not([data-rh]), link[rel="alternate"][hreflang]:not([data-rh])')
+      .head
+      .querySelectorAll('link[rel="alternate"][hreflang]')
       .forEach((element) => element.remove());
-  }, [canonical]);
+    for (const [hrefLang, href] of alternates) {
+      const link = document.createElement("link");
+      link.rel = "alternate";
+      link.hreflang = hrefLang;
+      link.href = href;
+      document.head.appendChild(link);
+    }
+
+    upsertMeta("property", "og:type", "website");
+    upsertMeta("property", "og:url", canonical);
+    upsertMeta("property", "og:site_name", "ToolTrim");
+    upsertMeta("property", "og:locale", locale);
+    upsertMeta("property", "og:image", OG_IMAGE);
+
+    // twitter:site est volontairement absent : c'est une constante deja posee
+    // dans le <head> statique d'index.html, la redeclarer creait un doublon.
+    upsertMeta("name", "twitter:card", "summary_large_image");
+    upsertMeta("name", "twitter:image", OG_IMAGE);
+  }, [canonical, alternatesKey, isEn, locale]);
 
   useEffect(() => {
     if (!isInternalSearch) return;
@@ -59,31 +129,8 @@ export default function DynamicCanonical() {
     };
   }, [isInternalSearch]);
 
-  return (
-    <Helmet>
-      <html lang={isEn ? "en" : "fr"} />
-      <link rel="canonical" href={canonical} />
-      {alternates.map(([hrefLang, href]) => (
-        <link key={hrefLang} rel="alternate" hrefLang={hrefLang} href={href} />
-      ))}
-
-      {/* Universal OG defaults */}
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content={canonical} />
-      <meta property="og:site_name" content="ToolTrim" />
-      <meta property="og:locale" content={locale} />
-      <meta property="og:image" content={OG_IMAGE} />
-
-      {/* Twitter defaults. twitter:site is intentionally omitted here — it's
-          a static constant already baked into index.html's <head>, and
-          Helmet doesn't recognise that pre-existing tag as its own, so
-          re-declaring it here produced a duplicate <meta name="twitter:site">
-          once the page hydrated. */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:image" content={OG_IMAGE} />
-
-    </Helmet>
-  );
+  // Tout passe par les effets ci-dessus : le composant ne rend rien.
+  return null;
 }
 
 /**
